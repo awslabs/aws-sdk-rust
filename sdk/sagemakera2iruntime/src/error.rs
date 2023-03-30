@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct StopHumanLoopError {
     /// Kind of error that occurred.
-    pub kind: StopHumanLoopErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StopHumanLoopErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StopHumanLoopError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StopHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -28,24 +28,34 @@ pub enum StopHumanLoopErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request isn't valid. Check the syntax and try again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopHumanLoopError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StopHumanLoopErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            StopHumanLoopErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            StopHumanLoopErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            StopHumanLoopErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            StopHumanLoopErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            StopHumanLoopErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopHumanLoopErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopHumanLoopErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopHumanLoopErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopHumanLoopErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -59,59 +69,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for StopHumanLoopError {
 }
 impl StopHumanLoopError {
     /// Creates a new `StopHumanLoopError`.
-    pub fn new(kind: StopHumanLoopErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StopHumanLoopError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StopHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StopHumanLoopError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StopHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StopHumanLoopErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StopHumanLoopError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StopHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StopHumanLoopError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StopHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StopHumanLoopErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopHumanLoopErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, StopHumanLoopErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `StopHumanLoopErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopHumanLoopErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, StopHumanLoopErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `StopHumanLoopErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -125,11 +129,21 @@ impl StopHumanLoopError {
 impl std::error::Error for StopHumanLoopError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StopHumanLoopErrorKind::InternalServerException(_inner) => Some(_inner),
-            StopHumanLoopErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            StopHumanLoopErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StopHumanLoopErrorKind::ValidationException(_inner) => Some(_inner),
-            StopHumanLoopErrorKind::Unhandled(_inner) => Some(_inner),
+            StopHumanLoopErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            StopHumanLoopErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            StopHumanLoopErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            StopHumanLoopErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            StopHumanLoopErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -137,22 +151,20 @@ impl std::error::Error for StopHumanLoopError {
 /// <p>The request isn't valid. Check the syntax and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationException {
+pub struct ValidationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -162,7 +174,7 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException).
 pub mod validation_exception {
-
+    
     /// A builder for [`ValidationException`](crate::error::ValidationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -176,16 +188,18 @@ pub mod validation_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException).
         pub fn build(self) -> crate::error::ValidationException {
             crate::error::ValidationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationException {
     /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException).
@@ -197,22 +211,20 @@ impl ValidationException {
 /// <p>You exceeded the maximum number of requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -222,7 +234,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException).
 pub mod throttling_exception {
-
+    
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -236,16 +248,18 @@ pub mod throttling_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
         pub fn build(self) -> crate::error::ThrottlingException {
             crate::error::ThrottlingException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
@@ -257,22 +271,20 @@ impl ThrottlingException {
 /// <p>We couldn't find the requested resource. Check that your resources exists and were created in the same AWS Region as your request, and try your request again. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -282,7 +294,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -296,16 +308,18 @@ pub mod resource_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -317,22 +331,20 @@ impl ResourceNotFoundException {
 /// <p>We couldn't process your request because of an issue with the server. Try again later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerException {
+pub struct InternalServerException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServerException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -342,7 +354,7 @@ impl std::fmt::Display for InternalServerException {
 impl std::error::Error for InternalServerException {}
 /// See [`InternalServerException`](crate::error::InternalServerException).
 pub mod internal_server_exception {
-
+    
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -356,16 +368,18 @@ pub mod internal_server_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InternalServerException`](crate::error::InternalServerException).
         pub fn build(self) -> crate::error::InternalServerException {
             crate::error::InternalServerException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServerException {
     /// Creates a new builder-style object to manufacture [`InternalServerException`](crate::error::InternalServerException).
@@ -379,15 +393,15 @@ impl InternalServerException {
 #[derive(std::fmt::Debug)]
 pub struct StartHumanLoopError {
     /// Kind of error that occurred.
-    pub kind: StartHumanLoopErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StartHumanLoopErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartHumanLoopError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StartHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -405,25 +419,37 @@ pub enum StartHumanLoopErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request isn't valid. Check the syntax and try again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartHumanLoopError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartHumanLoopErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            StartHumanLoopErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            StartHumanLoopErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
-            StartHumanLoopErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            StartHumanLoopErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            StartHumanLoopErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            StartHumanLoopErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartHumanLoopErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartHumanLoopErrorKind::ServiceQuotaExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartHumanLoopErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartHumanLoopErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartHumanLoopErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -437,63 +463,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartHumanLoopError {
 }
 impl StartHumanLoopError {
     /// Creates a new `StartHumanLoopError`.
-    pub fn new(kind: StartHumanLoopErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StartHumanLoopError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StartHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StartHumanLoopError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StartHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StartHumanLoopErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StartHumanLoopError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StartHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StartHumanLoopError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StartHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StartHumanLoopErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StartHumanLoopErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `StartHumanLoopErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartHumanLoopErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, StartHumanLoopErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `StartHumanLoopErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartHumanLoopErrorKind::ServiceQuotaExceededException(_)
-        )
+        matches!(&self.kind, StartHumanLoopErrorKind::ServiceQuotaExceededException(_))
     }
     /// Returns `true` if the error kind is `StartHumanLoopErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -507,12 +527,24 @@ impl StartHumanLoopError {
 impl std::error::Error for StartHumanLoopError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartHumanLoopErrorKind::ConflictException(_inner) => Some(_inner),
-            StartHumanLoopErrorKind::InternalServerException(_inner) => Some(_inner),
-            StartHumanLoopErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
-            StartHumanLoopErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartHumanLoopErrorKind::ValidationException(_inner) => Some(_inner),
-            StartHumanLoopErrorKind::Unhandled(_inner) => Some(_inner),
+            StartHumanLoopErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            StartHumanLoopErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            StartHumanLoopErrorKind::ServiceQuotaExceededException(_inner) =>
+            Some(_inner)
+            ,
+            StartHumanLoopErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            StartHumanLoopErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            StartHumanLoopErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -520,22 +552,20 @@ impl std::error::Error for StartHumanLoopError {
 /// <p>You exceeded your service quota. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your AWS account. For a list of Amazon A2I service quotes, see <a href="https://docs.aws.amazon.com/general/latest/gr/a2i.html">Amazon Augmented AI Service Quotes</a>. Delete some resources or request an increase in your service quota. You can request a quota increase using Service Quotas or the AWS Support Center. To request an increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Quotas</a> in the <i>AWS General Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceQuotaExceededException {
+pub struct ServiceQuotaExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceQuotaExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -545,7 +575,7 @@ impl std::fmt::Display for ServiceQuotaExceededException {
 impl std::error::Error for ServiceQuotaExceededException {}
 /// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
 pub mod service_quota_exceeded_exception {
-
+    
     /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -559,16 +589,18 @@ pub mod service_quota_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
         pub fn build(self) -> crate::error::ServiceQuotaExceededException {
             crate::error::ServiceQuotaExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceQuotaExceededException {
     /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
@@ -580,22 +612,20 @@ impl ServiceQuotaExceededException {
 /// <p>Your request has the same name as another active human loop but has different input data. You cannot start two human loops with the same name and different input data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -605,7 +635,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
-
+    
     /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -619,16 +649,18 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
@@ -642,15 +674,15 @@ impl ConflictException {
 #[derive(std::fmt::Debug)]
 pub struct ListHumanLoopsError {
     /// Kind of error that occurred.
-    pub kind: ListHumanLoopsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListHumanLoopsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListHumanLoopsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListHumanLoopsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -666,24 +698,34 @@ pub enum ListHumanLoopsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request isn't valid. Check the syntax and try again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListHumanLoopsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListHumanLoopsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            ListHumanLoopsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListHumanLoopsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ListHumanLoopsErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListHumanLoopsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListHumanLoopsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListHumanLoopsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListHumanLoopsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListHumanLoopsErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListHumanLoopsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -697,59 +739,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListHumanLoopsError {
 }
 impl ListHumanLoopsError {
     /// Creates a new `ListHumanLoopsError`.
-    pub fn new(kind: ListHumanLoopsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListHumanLoopsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListHumanLoopsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListHumanLoopsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListHumanLoopsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListHumanLoopsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListHumanLoopsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListHumanLoopsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListHumanLoopsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListHumanLoopsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListHumanLoopsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListHumanLoopsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ListHumanLoopsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ListHumanLoopsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListHumanLoopsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListHumanLoopsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListHumanLoopsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -763,11 +799,21 @@ impl ListHumanLoopsError {
 impl std::error::Error for ListHumanLoopsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListHumanLoopsErrorKind::InternalServerException(_inner) => Some(_inner),
-            ListHumanLoopsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListHumanLoopsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListHumanLoopsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListHumanLoopsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListHumanLoopsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListHumanLoopsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListHumanLoopsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ListHumanLoopsErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListHumanLoopsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -777,15 +823,15 @@ impl std::error::Error for ListHumanLoopsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeHumanLoopError {
     /// Kind of error that occurred.
-    pub kind: DescribeHumanLoopErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeHumanLoopErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeHumanLoopError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -801,24 +847,34 @@ pub enum DescribeHumanLoopErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request isn't valid. Check the syntax and try again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeHumanLoopError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeHumanLoopErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            DescribeHumanLoopErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DescribeHumanLoopErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DescribeHumanLoopErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            DescribeHumanLoopErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeHumanLoopErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeHumanLoopErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeHumanLoopErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeHumanLoopErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeHumanLoopErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -832,83 +888,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeHumanLoopError {
 }
 impl DescribeHumanLoopError {
     /// Creates a new `DescribeHumanLoopError`.
-    pub fn new(kind: DescribeHumanLoopErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeHumanLoopError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeHumanLoopError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeHumanLoopErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeHumanLoopError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeHumanLoopError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeHumanLoopErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeHumanLoopErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, DescribeHumanLoopErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `DescribeHumanLoopErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeHumanLoopErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeHumanLoopErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeHumanLoopErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeHumanLoopErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DescribeHumanLoopErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `DescribeHumanLoopErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeHumanLoopErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, DescribeHumanLoopErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for DescribeHumanLoopError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeHumanLoopErrorKind::InternalServerException(_inner) => Some(_inner),
-            DescribeHumanLoopErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeHumanLoopErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeHumanLoopErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeHumanLoopErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeHumanLoopErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeHumanLoopErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeHumanLoopErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeHumanLoopErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeHumanLoopErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -918,15 +972,15 @@ impl std::error::Error for DescribeHumanLoopError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteHumanLoopError {
     /// Kind of error that occurred.
-    pub kind: DeleteHumanLoopErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteHumanLoopErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteHumanLoopError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -942,24 +996,34 @@ pub enum DeleteHumanLoopErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request isn't valid. Check the syntax and try again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteHumanLoopError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteHumanLoopErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            DeleteHumanLoopErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DeleteHumanLoopErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DeleteHumanLoopErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            DeleteHumanLoopErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteHumanLoopErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteHumanLoopErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteHumanLoopErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteHumanLoopErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteHumanLoopErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -973,59 +1037,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteHumanLoopError {
 }
 impl DeleteHumanLoopError {
     /// Creates a new `DeleteHumanLoopError`.
-    pub fn new(kind: DeleteHumanLoopErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteHumanLoopError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteHumanLoopError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteHumanLoopErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteHumanLoopError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteHumanLoopError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteHumanLoopErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteHumanLoopErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, DeleteHumanLoopErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `DeleteHumanLoopErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteHumanLoopErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteHumanLoopErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteHumanLoopErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -1039,40 +1097,51 @@ impl DeleteHumanLoopError {
 impl std::error::Error for DeleteHumanLoopError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteHumanLoopErrorKind::InternalServerException(_inner) => Some(_inner),
-            DeleteHumanLoopErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteHumanLoopErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteHumanLoopErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteHumanLoopErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteHumanLoopErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteHumanLoopErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteHumanLoopErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteHumanLoopErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteHumanLoopErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

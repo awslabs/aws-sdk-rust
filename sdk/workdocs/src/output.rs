@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUserOutput {
+pub struct UpdateUserOutput  {
     /// <p>The user information.</p>
     #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl UpdateUserOutput {
     /// <p>The user information.</p>
-    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+    pub fn user(&self) -> std::option::Option<& crate::model::User> {
         self.user.as_ref()
     }
 }
 /// See [`UpdateUserOutput`](crate::output::UpdateUserOutput).
 pub mod update_user_output {
-
+    
     /// A builder for [`UpdateUserOutput`](crate::output::UpdateUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,14 +29,18 @@ pub mod update_user_output {
         }
         /// <p>The user information.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::User>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// Consumes the builder and constructs a [`UpdateUserOutput`](crate::output::UpdateUserOutput).
         pub fn build(self) -> crate::output::UpdateUserOutput {
-            crate::output::UpdateUserOutput { user: self.user }
+            crate::output::UpdateUserOutput {
+                user: self.user
+                ,
+            }
         }
     }
+    
+    
 }
 impl UpdateUserOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserOutput`](crate::output::UpdateUserOutput).
@@ -48,19 +52,24 @@ impl UpdateUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFolderOutput {}
+pub struct UpdateFolderOutput  {
+}
 /// See [`UpdateFolderOutput`](crate::output::UpdateFolderOutput).
 pub mod update_folder_output {
-
+    
     /// A builder for [`UpdateFolderOutput`](crate::output::UpdateFolderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateFolderOutput`](crate::output::UpdateFolderOutput).
         pub fn build(self) -> crate::output::UpdateFolderOutput {
-            crate::output::UpdateFolderOutput {}
+            crate::output::UpdateFolderOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateFolderOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFolderOutput`](crate::output::UpdateFolderOutput).
@@ -72,19 +81,24 @@ impl UpdateFolderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDocumentVersionOutput {}
+pub struct UpdateDocumentVersionOutput  {
+}
 /// See [`UpdateDocumentVersionOutput`](crate::output::UpdateDocumentVersionOutput).
 pub mod update_document_version_output {
-
+    
     /// A builder for [`UpdateDocumentVersionOutput`](crate::output::UpdateDocumentVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDocumentVersionOutput`](crate::output::UpdateDocumentVersionOutput).
         pub fn build(self) -> crate::output::UpdateDocumentVersionOutput {
-            crate::output::UpdateDocumentVersionOutput {}
+            crate::output::UpdateDocumentVersionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateDocumentVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDocumentVersionOutput`](crate::output::UpdateDocumentVersionOutput).
@@ -96,19 +110,24 @@ impl UpdateDocumentVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDocumentOutput {}
+pub struct UpdateDocumentOutput  {
+}
 /// See [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput).
 pub mod update_document_output {
-
+    
     /// A builder for [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput).
         pub fn build(self) -> crate::output::UpdateDocumentOutput {
-            crate::output::UpdateDocumentOutput {}
+            crate::output::UpdateDocumentOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateDocumentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput).
@@ -120,19 +139,24 @@ impl UpdateDocumentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreDocumentVersionsOutput {}
+pub struct RestoreDocumentVersionsOutput  {
+}
 /// See [`RestoreDocumentVersionsOutput`](crate::output::RestoreDocumentVersionsOutput).
 pub mod restore_document_versions_output {
-
+    
     /// A builder for [`RestoreDocumentVersionsOutput`](crate::output::RestoreDocumentVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RestoreDocumentVersionsOutput`](crate::output::RestoreDocumentVersionsOutput).
         pub fn build(self) -> crate::output::RestoreDocumentVersionsOutput {
-            crate::output::RestoreDocumentVersionsOutput {}
+            crate::output::RestoreDocumentVersionsOutput {
+            }
         }
     }
+    
+    
 }
 impl RestoreDocumentVersionsOutput {
     /// Creates a new builder-style object to manufacture [`RestoreDocumentVersionsOutput`](crate::output::RestoreDocumentVersionsOutput).
@@ -144,19 +168,24 @@ impl RestoreDocumentVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveResourcePermissionOutput {}
+pub struct RemoveResourcePermissionOutput  {
+}
 /// See [`RemoveResourcePermissionOutput`](crate::output::RemoveResourcePermissionOutput).
 pub mod remove_resource_permission_output {
-
+    
     /// A builder for [`RemoveResourcePermissionOutput`](crate::output::RemoveResourcePermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveResourcePermissionOutput`](crate::output::RemoveResourcePermissionOutput).
         pub fn build(self) -> crate::output::RemoveResourcePermissionOutput {
-            crate::output::RemoveResourcePermissionOutput {}
+            crate::output::RemoveResourcePermissionOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveResourcePermissionOutput {
     /// Creates a new builder-style object to manufacture [`RemoveResourcePermissionOutput`](crate::output::RemoveResourcePermissionOutput).
@@ -168,19 +197,24 @@ impl RemoveResourcePermissionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveAllResourcePermissionsOutput {}
+pub struct RemoveAllResourcePermissionsOutput  {
+}
 /// See [`RemoveAllResourcePermissionsOutput`](crate::output::RemoveAllResourcePermissionsOutput).
 pub mod remove_all_resource_permissions_output {
-
+    
     /// A builder for [`RemoveAllResourcePermissionsOutput`](crate::output::RemoveAllResourcePermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveAllResourcePermissionsOutput`](crate::output::RemoveAllResourcePermissionsOutput).
         pub fn build(self) -> crate::output::RemoveAllResourcePermissionsOutput {
-            crate::output::RemoveAllResourcePermissionsOutput {}
+            crate::output::RemoveAllResourcePermissionsOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveAllResourcePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveAllResourcePermissionsOutput`](crate::output::RemoveAllResourcePermissionsOutput).
@@ -192,7 +226,7 @@ impl RemoveAllResourcePermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InitiateDocumentVersionUploadOutput {
+pub struct InitiateDocumentVersionUploadOutput  {
     /// <p>The document metadata.</p>
     #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -202,17 +236,17 @@ pub struct InitiateDocumentVersionUploadOutput {
 }
 impl InitiateDocumentVersionUploadOutput {
     /// <p>The document metadata.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::DocumentMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The upload metadata.</p>
-    pub fn upload_metadata(&self) -> std::option::Option<&crate::model::UploadMetadata> {
+    pub fn upload_metadata(&self) -> std::option::Option<& crate::model::UploadMetadata> {
         self.upload_metadata.as_ref()
     }
 }
 /// See [`InitiateDocumentVersionUploadOutput`](crate::output::InitiateDocumentVersionUploadOutput).
 pub mod initiate_document_version_upload_output {
-
+    
     /// A builder for [`InitiateDocumentVersionUploadOutput`](crate::output::InitiateDocumentVersionUploadOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -226,12 +260,8 @@ pub mod initiate_document_version_upload_output {
             self
         }
         /// <p>The document metadata.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DocumentMetadata>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<crate::model::DocumentMetadata>) -> Self {
+            self.metadata = input; self
         }
         /// <p>The upload metadata.</p>
         pub fn upload_metadata(mut self, input: crate::model::UploadMetadata) -> Self {
@@ -239,21 +269,21 @@ pub mod initiate_document_version_upload_output {
             self
         }
         /// <p>The upload metadata.</p>
-        pub fn set_upload_metadata(
-            mut self,
-            input: std::option::Option<crate::model::UploadMetadata>,
-        ) -> Self {
-            self.upload_metadata = input;
-            self
+        pub fn set_upload_metadata(mut self, input: std::option::Option<crate::model::UploadMetadata>) -> Self {
+            self.upload_metadata = input; self
         }
         /// Consumes the builder and constructs a [`InitiateDocumentVersionUploadOutput`](crate::output::InitiateDocumentVersionUploadOutput).
         pub fn build(self) -> crate::output::InitiateDocumentVersionUploadOutput {
             crate::output::InitiateDocumentVersionUploadOutput {
-                metadata: self.metadata,
-                upload_metadata: self.upload_metadata,
+                metadata: self.metadata
+                ,
+                upload_metadata: self.upload_metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl InitiateDocumentVersionUploadOutput {
     /// Creates a new builder-style object to manufacture [`InitiateDocumentVersionUploadOutput`](crate::output::InitiateDocumentVersionUploadOutput).
@@ -265,7 +295,7 @@ impl InitiateDocumentVersionUploadOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourcesOutput {
+pub struct GetResourcesOutput  {
     /// <p>The folders in the specified folder.</p>
     #[doc(hidden)]
     pub folders: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>,
@@ -278,21 +308,21 @@ pub struct GetResourcesOutput {
 }
 impl GetResourcesOutput {
     /// <p>The folders in the specified folder.</p>
-    pub fn folders(&self) -> std::option::Option<&[crate::model::FolderMetadata]> {
+    pub fn folders(&self) -> std::option::Option<& [crate::model::FolderMetadata]> {
         self.folders.as_deref()
     }
     /// <p>The documents in the specified collection.</p>
-    pub fn documents(&self) -> std::option::Option<&[crate::model::DocumentMetadata]> {
+    pub fn documents(&self) -> std::option::Option<& [crate::model::DocumentMetadata]> {
         self.documents.as_deref()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`GetResourcesOutput`](crate::output::GetResourcesOutput).
 pub mod get_resources_output {
-
+    
     /// A builder for [`GetResourcesOutput`](crate::output::GetResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -308,17 +338,13 @@ pub mod get_resources_output {
         /// <p>The folders in the specified folder.</p>
         pub fn folders(mut self, input: crate::model::FolderMetadata) -> Self {
             let mut v = self.folders.unwrap_or_default();
-            v.push(input);
-            self.folders = Some(v);
-            self
+                            v.push(input);
+                            self.folders = Some(v);
+                            self
         }
         /// <p>The folders in the specified folder.</p>
-        pub fn set_folders(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>,
-        ) -> Self {
-            self.folders = input;
-            self
+        pub fn set_folders(mut self, input: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>) -> Self {
+            self.folders = input; self
         }
         /// Appends an item to `documents`.
         ///
@@ -327,17 +353,13 @@ pub mod get_resources_output {
         /// <p>The documents in the specified collection.</p>
         pub fn documents(mut self, input: crate::model::DocumentMetadata) -> Self {
             let mut v = self.documents.unwrap_or_default();
-            v.push(input);
-            self.documents = Some(v);
-            self
+                            v.push(input);
+                            self.documents = Some(v);
+                            self
         }
         /// <p>The documents in the specified collection.</p>
-        pub fn set_documents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DocumentMetadata>>,
-        ) -> Self {
-            self.documents = input;
-            self
+        pub fn set_documents(mut self, input: std::option::Option<std::vec::Vec<crate::model::DocumentMetadata>>) -> Self {
+            self.documents = input; self
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -346,18 +368,22 @@ pub mod get_resources_output {
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`GetResourcesOutput`](crate::output::GetResourcesOutput).
         pub fn build(self) -> crate::output::GetResourcesOutput {
             crate::output::GetResourcesOutput {
-                folders: self.folders,
-                documents: self.documents,
-                marker: self.marker,
+                folders: self.folders
+                ,
+                documents: self.documents
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResourcesOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcesOutput`](crate::output::GetResourcesOutput).
@@ -369,20 +395,20 @@ impl GetResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFolderPathOutput {
+pub struct GetFolderPathOutput  {
     /// <p>The path information.</p>
     #[doc(hidden)]
     pub path: std::option::Option<crate::model::ResourcePath>,
 }
 impl GetFolderPathOutput {
     /// <p>The path information.</p>
-    pub fn path(&self) -> std::option::Option<&crate::model::ResourcePath> {
+    pub fn path(&self) -> std::option::Option<& crate::model::ResourcePath> {
         self.path.as_ref()
     }
 }
 /// See [`GetFolderPathOutput`](crate::output::GetFolderPathOutput).
 pub mod get_folder_path_output {
-
+    
     /// A builder for [`GetFolderPathOutput`](crate::output::GetFolderPathOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -396,14 +422,18 @@ pub mod get_folder_path_output {
         }
         /// <p>The path information.</p>
         pub fn set_path(mut self, input: std::option::Option<crate::model::ResourcePath>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// Consumes the builder and constructs a [`GetFolderPathOutput`](crate::output::GetFolderPathOutput).
         pub fn build(self) -> crate::output::GetFolderPathOutput {
-            crate::output::GetFolderPathOutput { path: self.path }
+            crate::output::GetFolderPathOutput {
+                path: self.path
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetFolderPathOutput {
     /// Creates a new builder-style object to manufacture [`GetFolderPathOutput`](crate::output::GetFolderPathOutput).
@@ -415,38 +445,32 @@ impl GetFolderPathOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFolderOutput {
+pub struct GetFolderOutput  {
     /// <p>The metadata of the folder.</p>
     #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::FolderMetadata>,
     /// <p>The custom metadata on the folder.</p>
     #[doc(hidden)]
-    pub custom_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub custom_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetFolderOutput {
     /// <p>The metadata of the folder.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::model::FolderMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::FolderMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The custom metadata on the folder.</p>
-    pub fn custom_metadata(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn custom_metadata(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.custom_metadata.as_ref()
     }
 }
 /// See [`GetFolderOutput`](crate::output::GetFolderOutput).
 pub mod get_folder_output {
-
+    
     /// A builder for [`GetFolderOutput`](crate::output::GetFolderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metadata: std::option::Option<crate::model::FolderMetadata>,
-        pub(crate) custom_metadata: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) custom_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The metadata of the folder.</p>
@@ -455,46 +479,36 @@ pub mod get_folder_output {
             self
         }
         /// <p>The metadata of the folder.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::FolderMetadata>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<crate::model::FolderMetadata>) -> Self {
+            self.metadata = input; self
         }
         /// Adds a key-value pair to `custom_metadata`.
         ///
         /// To override the contents of this collection use [`set_custom_metadata`](Self::set_custom_metadata).
         ///
         /// <p>The custom metadata on the folder.</p>
-        pub fn custom_metadata(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn custom_metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.custom_metadata.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.custom_metadata = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.custom_metadata = Some(hash_map);
+                            self
         }
         /// <p>The custom metadata on the folder.</p>
-        pub fn set_custom_metadata(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.custom_metadata = input;
-            self
+        pub fn set_custom_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.custom_metadata = input; self
         }
         /// Consumes the builder and constructs a [`GetFolderOutput`](crate::output::GetFolderOutput).
         pub fn build(self) -> crate::output::GetFolderOutput {
             crate::output::GetFolderOutput {
-                metadata: self.metadata,
-                custom_metadata: self.custom_metadata,
+                metadata: self.metadata
+                ,
+                custom_metadata: self.custom_metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFolderOutput {
     /// Creates a new builder-style object to manufacture [`GetFolderOutput`](crate::output::GetFolderOutput).
@@ -506,38 +520,32 @@ impl GetFolderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDocumentVersionOutput {
+pub struct GetDocumentVersionOutput  {
     /// <p>The version metadata.</p>
     #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::DocumentVersionMetadata>,
     /// <p>The custom metadata on the document version.</p>
     #[doc(hidden)]
-    pub custom_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub custom_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetDocumentVersionOutput {
     /// <p>The version metadata.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::model::DocumentVersionMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::DocumentVersionMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The custom metadata on the document version.</p>
-    pub fn custom_metadata(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn custom_metadata(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.custom_metadata.as_ref()
     }
 }
 /// See [`GetDocumentVersionOutput`](crate::output::GetDocumentVersionOutput).
 pub mod get_document_version_output {
-
+    
     /// A builder for [`GetDocumentVersionOutput`](crate::output::GetDocumentVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metadata: std::option::Option<crate::model::DocumentVersionMetadata>,
-        pub(crate) custom_metadata: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) custom_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The version metadata.</p>
@@ -546,46 +554,36 @@ pub mod get_document_version_output {
             self
         }
         /// <p>The version metadata.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DocumentVersionMetadata>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<crate::model::DocumentVersionMetadata>) -> Self {
+            self.metadata = input; self
         }
         /// Adds a key-value pair to `custom_metadata`.
         ///
         /// To override the contents of this collection use [`set_custom_metadata`](Self::set_custom_metadata).
         ///
         /// <p>The custom metadata on the document version.</p>
-        pub fn custom_metadata(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn custom_metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.custom_metadata.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.custom_metadata = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.custom_metadata = Some(hash_map);
+                            self
         }
         /// <p>The custom metadata on the document version.</p>
-        pub fn set_custom_metadata(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.custom_metadata = input;
-            self
+        pub fn set_custom_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.custom_metadata = input; self
         }
         /// Consumes the builder and constructs a [`GetDocumentVersionOutput`](crate::output::GetDocumentVersionOutput).
         pub fn build(self) -> crate::output::GetDocumentVersionOutput {
             crate::output::GetDocumentVersionOutput {
-                metadata: self.metadata,
-                custom_metadata: self.custom_metadata,
+                metadata: self.metadata
+                ,
+                custom_metadata: self.custom_metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDocumentVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetDocumentVersionOutput`](crate::output::GetDocumentVersionOutput).
@@ -597,20 +595,20 @@ impl GetDocumentVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDocumentPathOutput {
+pub struct GetDocumentPathOutput  {
     /// <p>The path information.</p>
     #[doc(hidden)]
     pub path: std::option::Option<crate::model::ResourcePath>,
 }
 impl GetDocumentPathOutput {
     /// <p>The path information.</p>
-    pub fn path(&self) -> std::option::Option<&crate::model::ResourcePath> {
+    pub fn path(&self) -> std::option::Option<& crate::model::ResourcePath> {
         self.path.as_ref()
     }
 }
 /// See [`GetDocumentPathOutput`](crate::output::GetDocumentPathOutput).
 pub mod get_document_path_output {
-
+    
     /// A builder for [`GetDocumentPathOutput`](crate::output::GetDocumentPathOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -624,14 +622,18 @@ pub mod get_document_path_output {
         }
         /// <p>The path information.</p>
         pub fn set_path(mut self, input: std::option::Option<crate::model::ResourcePath>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// Consumes the builder and constructs a [`GetDocumentPathOutput`](crate::output::GetDocumentPathOutput).
         pub fn build(self) -> crate::output::GetDocumentPathOutput {
-            crate::output::GetDocumentPathOutput { path: self.path }
+            crate::output::GetDocumentPathOutput {
+                path: self.path
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetDocumentPathOutput {
     /// Creates a new builder-style object to manufacture [`GetDocumentPathOutput`](crate::output::GetDocumentPathOutput).
@@ -643,38 +645,32 @@ impl GetDocumentPathOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDocumentOutput {
+pub struct GetDocumentOutput  {
     /// <p>The metadata details of the document.</p>
     #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::DocumentMetadata>,
     /// <p>The custom metadata on the document.</p>
     #[doc(hidden)]
-    pub custom_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub custom_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetDocumentOutput {
     /// <p>The metadata details of the document.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::DocumentMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The custom metadata on the document.</p>
-    pub fn custom_metadata(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn custom_metadata(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.custom_metadata.as_ref()
     }
 }
 /// See [`GetDocumentOutput`](crate::output::GetDocumentOutput).
 pub mod get_document_output {
-
+    
     /// A builder for [`GetDocumentOutput`](crate::output::GetDocumentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metadata: std::option::Option<crate::model::DocumentMetadata>,
-        pub(crate) custom_metadata: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) custom_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The metadata details of the document.</p>
@@ -683,46 +679,36 @@ pub mod get_document_output {
             self
         }
         /// <p>The metadata details of the document.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DocumentMetadata>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<crate::model::DocumentMetadata>) -> Self {
+            self.metadata = input; self
         }
         /// Adds a key-value pair to `custom_metadata`.
         ///
         /// To override the contents of this collection use [`set_custom_metadata`](Self::set_custom_metadata).
         ///
         /// <p>The custom metadata on the document.</p>
-        pub fn custom_metadata(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn custom_metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.custom_metadata.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.custom_metadata = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.custom_metadata = Some(hash_map);
+                            self
         }
         /// <p>The custom metadata on the document.</p>
-        pub fn set_custom_metadata(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.custom_metadata = input;
-            self
+        pub fn set_custom_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.custom_metadata = input; self
         }
         /// Consumes the builder and constructs a [`GetDocumentOutput`](crate::output::GetDocumentOutput).
         pub fn build(self) -> crate::output::GetDocumentOutput {
             crate::output::GetDocumentOutput {
-                metadata: self.metadata,
-                custom_metadata: self.custom_metadata,
+                metadata: self.metadata
+                ,
+                custom_metadata: self.custom_metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDocumentOutput {
     /// Creates a new builder-style object to manufacture [`GetDocumentOutput`](crate::output::GetDocumentOutput).
@@ -734,20 +720,20 @@ impl GetDocumentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCurrentUserOutput {
+pub struct GetCurrentUserOutput  {
     /// <p>Metadata of the user.</p>
     #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl GetCurrentUserOutput {
     /// <p>Metadata of the user.</p>
-    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+    pub fn user(&self) -> std::option::Option<& crate::model::User> {
         self.user.as_ref()
     }
 }
 /// See [`GetCurrentUserOutput`](crate::output::GetCurrentUserOutput).
 pub mod get_current_user_output {
-
+    
     /// A builder for [`GetCurrentUserOutput`](crate::output::GetCurrentUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -761,14 +747,18 @@ pub mod get_current_user_output {
         }
         /// <p>Metadata of the user.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::User>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// Consumes the builder and constructs a [`GetCurrentUserOutput`](crate::output::GetCurrentUserOutput).
         pub fn build(self) -> crate::output::GetCurrentUserOutput {
-            crate::output::GetCurrentUserOutput { user: self.user }
+            crate::output::GetCurrentUserOutput {
+                user: self.user
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetCurrentUserOutput {
     /// Creates a new builder-style object to manufacture [`GetCurrentUserOutput`](crate::output::GetCurrentUserOutput).
@@ -780,7 +770,7 @@ impl GetCurrentUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUsersOutput {
+pub struct DescribeUsersOutput  {
     /// <p>The users.</p>
     #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -794,7 +784,7 @@ pub struct DescribeUsersOutput {
 }
 impl DescribeUsersOutput {
     /// <p>The users.</p>
-    pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
+    pub fn users(&self) -> std::option::Option<& [crate::model::User]> {
         self.users.as_deref()
     }
     /// <p>The total number of users included in the results.</p>
@@ -803,13 +793,13 @@ impl DescribeUsersOutput {
         self.total_number_of_users
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
 pub mod describe_users_output {
-
+    
     /// A builder for [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -825,17 +815,13 @@ pub mod describe_users_output {
         /// <p>The users.</p>
         pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input);
-            self.users = Some(v);
-            self
+                            v.push(input);
+                            self.users = Some(v);
+                            self
         }
         /// <p>The users.</p>
-        pub fn set_users(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::User>>,
-        ) -> Self {
-            self.users = input;
-            self
+        pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::model::User>>) -> Self {
+            self.users = input; self
         }
         /// <p>The total number of users included in the results.</p>
         #[deprecated]
@@ -846,8 +832,7 @@ pub mod describe_users_output {
         /// <p>The total number of users included in the results.</p>
         #[deprecated]
         pub fn set_total_number_of_users(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_number_of_users = input;
-            self
+            self.total_number_of_users = input; self
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -856,18 +841,22 @@ pub mod describe_users_output {
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
         pub fn build(self) -> crate::output::DescribeUsersOutput {
             crate::output::DescribeUsersOutput {
-                users: self.users,
-                total_number_of_users: self.total_number_of_users,
-                marker: self.marker,
+                users: self.users
+                ,
+                total_number_of_users: self.total_number_of_users
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeUsersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
@@ -879,7 +868,7 @@ impl DescribeUsersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRootFoldersOutput {
+pub struct DescribeRootFoldersOutput  {
     /// <p>The user's special folders.</p>
     #[doc(hidden)]
     pub folders: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>,
@@ -889,17 +878,17 @@ pub struct DescribeRootFoldersOutput {
 }
 impl DescribeRootFoldersOutput {
     /// <p>The user's special folders.</p>
-    pub fn folders(&self) -> std::option::Option<&[crate::model::FolderMetadata]> {
+    pub fn folders(&self) -> std::option::Option<& [crate::model::FolderMetadata]> {
         self.folders.as_deref()
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeRootFoldersOutput`](crate::output::DescribeRootFoldersOutput).
 pub mod describe_root_folders_output {
-
+    
     /// A builder for [`DescribeRootFoldersOutput`](crate::output::DescribeRootFoldersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -914,17 +903,13 @@ pub mod describe_root_folders_output {
         /// <p>The user's special folders.</p>
         pub fn folders(mut self, input: crate::model::FolderMetadata) -> Self {
             let mut v = self.folders.unwrap_or_default();
-            v.push(input);
-            self.folders = Some(v);
-            self
+                            v.push(input);
+                            self.folders = Some(v);
+                            self
         }
         /// <p>The user's special folders.</p>
-        pub fn set_folders(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>,
-        ) -> Self {
-            self.folders = input;
-            self
+        pub fn set_folders(mut self, input: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>) -> Self {
+            self.folders = input; self
         }
         /// <p>The marker for the next set of results.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -933,17 +918,20 @@ pub mod describe_root_folders_output {
         }
         /// <p>The marker for the next set of results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRootFoldersOutput`](crate::output::DescribeRootFoldersOutput).
         pub fn build(self) -> crate::output::DescribeRootFoldersOutput {
             crate::output::DescribeRootFoldersOutput {
-                folders: self.folders,
-                marker: self.marker,
+                folders: self.folders
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeRootFoldersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRootFoldersOutput`](crate::output::DescribeRootFoldersOutput).
@@ -955,7 +943,7 @@ impl DescribeRootFoldersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeResourcePermissionsOutput {
+pub struct DescribeResourcePermissionsOutput  {
     /// <p>The principals.</p>
     #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<crate::model::Principal>>,
@@ -965,17 +953,17 @@ pub struct DescribeResourcePermissionsOutput {
 }
 impl DescribeResourcePermissionsOutput {
     /// <p>The principals.</p>
-    pub fn principals(&self) -> std::option::Option<&[crate::model::Principal]> {
+    pub fn principals(&self) -> std::option::Option<& [crate::model::Principal]> {
         self.principals.as_deref()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeResourcePermissionsOutput`](crate::output::DescribeResourcePermissionsOutput).
 pub mod describe_resource_permissions_output {
-
+    
     /// A builder for [`DescribeResourcePermissionsOutput`](crate::output::DescribeResourcePermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -990,17 +978,13 @@ pub mod describe_resource_permissions_output {
         /// <p>The principals.</p>
         pub fn principals(mut self, input: crate::model::Principal) -> Self {
             let mut v = self.principals.unwrap_or_default();
-            v.push(input);
-            self.principals = Some(v);
-            self
+                            v.push(input);
+                            self.principals = Some(v);
+                            self
         }
         /// <p>The principals.</p>
-        pub fn set_principals(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
-        ) -> Self {
-            self.principals = input;
-            self
+        pub fn set_principals(mut self, input: std::option::Option<std::vec::Vec<crate::model::Principal>>) -> Self {
+            self.principals = input; self
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1009,17 +993,20 @@ pub mod describe_resource_permissions_output {
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeResourcePermissionsOutput`](crate::output::DescribeResourcePermissionsOutput).
         pub fn build(self) -> crate::output::DescribeResourcePermissionsOutput {
             crate::output::DescribeResourcePermissionsOutput {
-                principals: self.principals,
-                marker: self.marker,
+                principals: self.principals
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeResourcePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourcePermissionsOutput`](crate::output::DescribeResourcePermissionsOutput).
@@ -1031,7 +1018,7 @@ impl DescribeResourcePermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNotificationSubscriptionsOutput {
+pub struct DescribeNotificationSubscriptionsOutput  {
     /// <p>The subscriptions.</p>
     #[doc(hidden)]
     pub subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
@@ -1041,17 +1028,17 @@ pub struct DescribeNotificationSubscriptionsOutput {
 }
 impl DescribeNotificationSubscriptionsOutput {
     /// <p>The subscriptions.</p>
-    pub fn subscriptions(&self) -> std::option::Option<&[crate::model::Subscription]> {
+    pub fn subscriptions(&self) -> std::option::Option<& [crate::model::Subscription]> {
         self.subscriptions.as_deref()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeNotificationSubscriptionsOutput`](crate::output::DescribeNotificationSubscriptionsOutput).
 pub mod describe_notification_subscriptions_output {
-
+    
     /// A builder for [`DescribeNotificationSubscriptionsOutput`](crate::output::DescribeNotificationSubscriptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1066,17 +1053,13 @@ pub mod describe_notification_subscriptions_output {
         /// <p>The subscriptions.</p>
         pub fn subscriptions(mut self, input: crate::model::Subscription) -> Self {
             let mut v = self.subscriptions.unwrap_or_default();
-            v.push(input);
-            self.subscriptions = Some(v);
-            self
+                            v.push(input);
+                            self.subscriptions = Some(v);
+                            self
         }
         /// <p>The subscriptions.</p>
-        pub fn set_subscriptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
-        ) -> Self {
-            self.subscriptions = input;
-            self
+        pub fn set_subscriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Subscription>>) -> Self {
+            self.subscriptions = input; self
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1085,17 +1068,20 @@ pub mod describe_notification_subscriptions_output {
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeNotificationSubscriptionsOutput`](crate::output::DescribeNotificationSubscriptionsOutput).
         pub fn build(self) -> crate::output::DescribeNotificationSubscriptionsOutput {
             crate::output::DescribeNotificationSubscriptionsOutput {
-                subscriptions: self.subscriptions,
-                marker: self.marker,
+                subscriptions: self.subscriptions
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeNotificationSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNotificationSubscriptionsOutput`](crate::output::DescribeNotificationSubscriptionsOutput).
@@ -1107,7 +1093,7 @@ impl DescribeNotificationSubscriptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGroupsOutput {
+pub struct DescribeGroupsOutput  {
     /// <p>The list of groups.</p>
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupMetadata>>,
@@ -1117,17 +1103,17 @@ pub struct DescribeGroupsOutput {
 }
 impl DescribeGroupsOutput {
     /// <p>The list of groups.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupMetadata]> {
+    pub fn groups(&self) -> std::option::Option<& [crate::model::GroupMetadata]> {
         self.groups.as_deref()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeGroupsOutput`](crate::output::DescribeGroupsOutput).
 pub mod describe_groups_output {
-
+    
     /// A builder for [`DescribeGroupsOutput`](crate::output::DescribeGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1142,17 +1128,13 @@ pub mod describe_groups_output {
         /// <p>The list of groups.</p>
         pub fn groups(mut self, input: crate::model::GroupMetadata) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input);
-            self.groups = Some(v);
-            self
+                            v.push(input);
+                            self.groups = Some(v);
+                            self
         }
         /// <p>The list of groups.</p>
-        pub fn set_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GroupMetadata>>,
-        ) -> Self {
-            self.groups = input;
-            self
+        pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroupMetadata>>) -> Self {
+            self.groups = input; self
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1161,17 +1143,20 @@ pub mod describe_groups_output {
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGroupsOutput`](crate::output::DescribeGroupsOutput).
         pub fn build(self) -> crate::output::DescribeGroupsOutput {
             crate::output::DescribeGroupsOutput {
-                groups: self.groups,
-                marker: self.marker,
+                groups: self.groups
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGroupsOutput`](crate::output::DescribeGroupsOutput).
@@ -1183,7 +1168,7 @@ impl DescribeGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFolderContentsOutput {
+pub struct DescribeFolderContentsOutput  {
     /// <p>The subfolders in the specified folder.</p>
     #[doc(hidden)]
     pub folders: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>,
@@ -1196,21 +1181,21 @@ pub struct DescribeFolderContentsOutput {
 }
 impl DescribeFolderContentsOutput {
     /// <p>The subfolders in the specified folder.</p>
-    pub fn folders(&self) -> std::option::Option<&[crate::model::FolderMetadata]> {
+    pub fn folders(&self) -> std::option::Option<& [crate::model::FolderMetadata]> {
         self.folders.as_deref()
     }
     /// <p>The documents in the specified folder.</p>
-    pub fn documents(&self) -> std::option::Option<&[crate::model::DocumentMetadata]> {
+    pub fn documents(&self) -> std::option::Option<& [crate::model::DocumentMetadata]> {
         self.documents.as_deref()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeFolderContentsOutput`](crate::output::DescribeFolderContentsOutput).
 pub mod describe_folder_contents_output {
-
+    
     /// A builder for [`DescribeFolderContentsOutput`](crate::output::DescribeFolderContentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1226,17 +1211,13 @@ pub mod describe_folder_contents_output {
         /// <p>The subfolders in the specified folder.</p>
         pub fn folders(mut self, input: crate::model::FolderMetadata) -> Self {
             let mut v = self.folders.unwrap_or_default();
-            v.push(input);
-            self.folders = Some(v);
-            self
+                            v.push(input);
+                            self.folders = Some(v);
+                            self
         }
         /// <p>The subfolders in the specified folder.</p>
-        pub fn set_folders(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>,
-        ) -> Self {
-            self.folders = input;
-            self
+        pub fn set_folders(mut self, input: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>) -> Self {
+            self.folders = input; self
         }
         /// Appends an item to `documents`.
         ///
@@ -1245,17 +1226,13 @@ pub mod describe_folder_contents_output {
         /// <p>The documents in the specified folder.</p>
         pub fn documents(mut self, input: crate::model::DocumentMetadata) -> Self {
             let mut v = self.documents.unwrap_or_default();
-            v.push(input);
-            self.documents = Some(v);
-            self
+                            v.push(input);
+                            self.documents = Some(v);
+                            self
         }
         /// <p>The documents in the specified folder.</p>
-        pub fn set_documents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DocumentMetadata>>,
-        ) -> Self {
-            self.documents = input;
-            self
+        pub fn set_documents(mut self, input: std::option::Option<std::vec::Vec<crate::model::DocumentMetadata>>) -> Self {
+            self.documents = input; self
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1264,18 +1241,22 @@ pub mod describe_folder_contents_output {
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFolderContentsOutput`](crate::output::DescribeFolderContentsOutput).
         pub fn build(self) -> crate::output::DescribeFolderContentsOutput {
             crate::output::DescribeFolderContentsOutput {
-                folders: self.folders,
-                documents: self.documents,
-                marker: self.marker,
+                folders: self.folders
+                ,
+                documents: self.documents
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFolderContentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFolderContentsOutput`](crate::output::DescribeFolderContentsOutput).
@@ -1287,35 +1268,31 @@ impl DescribeFolderContentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDocumentVersionsOutput {
+pub struct DescribeDocumentVersionsOutput  {
     /// <p>The document versions.</p>
     #[doc(hidden)]
-    pub document_versions:
-        std::option::Option<std::vec::Vec<crate::model::DocumentVersionMetadata>>,
+    pub document_versions: std::option::Option<std::vec::Vec<crate::model::DocumentVersionMetadata>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentVersionsOutput {
     /// <p>The document versions.</p>
-    pub fn document_versions(
-        &self,
-    ) -> std::option::Option<&[crate::model::DocumentVersionMetadata]> {
+    pub fn document_versions(&self) -> std::option::Option<& [crate::model::DocumentVersionMetadata]> {
         self.document_versions.as_deref()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeDocumentVersionsOutput`](crate::output::DescribeDocumentVersionsOutput).
 pub mod describe_document_versions_output {
-
+    
     /// A builder for [`DescribeDocumentVersionsOutput`](crate::output::DescribeDocumentVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) document_versions:
-            std::option::Option<std::vec::Vec<crate::model::DocumentVersionMetadata>>,
+        pub(crate) document_versions: std::option::Option<std::vec::Vec<crate::model::DocumentVersionMetadata>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1326,17 +1303,13 @@ pub mod describe_document_versions_output {
         /// <p>The document versions.</p>
         pub fn document_versions(mut self, input: crate::model::DocumentVersionMetadata) -> Self {
             let mut v = self.document_versions.unwrap_or_default();
-            v.push(input);
-            self.document_versions = Some(v);
-            self
+                            v.push(input);
+                            self.document_versions = Some(v);
+                            self
         }
         /// <p>The document versions.</p>
-        pub fn set_document_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DocumentVersionMetadata>>,
-        ) -> Self {
-            self.document_versions = input;
-            self
+        pub fn set_document_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DocumentVersionMetadata>>) -> Self {
+            self.document_versions = input; self
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1345,17 +1318,20 @@ pub mod describe_document_versions_output {
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDocumentVersionsOutput`](crate::output::DescribeDocumentVersionsOutput).
         pub fn build(self) -> crate::output::DescribeDocumentVersionsOutput {
             crate::output::DescribeDocumentVersionsOutput {
-                document_versions: self.document_versions,
-                marker: self.marker,
+                document_versions: self.document_versions
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDocumentVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentVersionsOutput`](crate::output::DescribeDocumentVersionsOutput).
@@ -1367,7 +1343,7 @@ impl DescribeDocumentVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCommentsOutput {
+pub struct DescribeCommentsOutput  {
     /// <p>The list of comments for the specified document version.</p>
     #[doc(hidden)]
     pub comments: std::option::Option<std::vec::Vec<crate::model::Comment>>,
@@ -1377,17 +1353,17 @@ pub struct DescribeCommentsOutput {
 }
 impl DescribeCommentsOutput {
     /// <p>The list of comments for the specified document version.</p>
-    pub fn comments(&self) -> std::option::Option<&[crate::model::Comment]> {
+    pub fn comments(&self) -> std::option::Option<& [crate::model::Comment]> {
         self.comments.as_deref()
     }
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeCommentsOutput`](crate::output::DescribeCommentsOutput).
 pub mod describe_comments_output {
-
+    
     /// A builder for [`DescribeCommentsOutput`](crate::output::DescribeCommentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1402,17 +1378,13 @@ pub mod describe_comments_output {
         /// <p>The list of comments for the specified document version.</p>
         pub fn comments(mut self, input: crate::model::Comment) -> Self {
             let mut v = self.comments.unwrap_or_default();
-            v.push(input);
-            self.comments = Some(v);
-            self
+                            v.push(input);
+                            self.comments = Some(v);
+                            self
         }
         /// <p>The list of comments for the specified document version.</p>
-        pub fn set_comments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Comment>>,
-        ) -> Self {
-            self.comments = input;
-            self
+        pub fn set_comments(mut self, input: std::option::Option<std::vec::Vec<crate::model::Comment>>) -> Self {
+            self.comments = input; self
         }
         /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1421,17 +1393,20 @@ pub mod describe_comments_output {
         }
         /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCommentsOutput`](crate::output::DescribeCommentsOutput).
         pub fn build(self) -> crate::output::DescribeCommentsOutput {
             crate::output::DescribeCommentsOutput {
-                comments: self.comments,
-                marker: self.marker,
+                comments: self.comments
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCommentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCommentsOutput`](crate::output::DescribeCommentsOutput).
@@ -1443,7 +1418,7 @@ impl DescribeCommentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeActivitiesOutput {
+pub struct DescribeActivitiesOutput  {
     /// <p>The list of activities for the specified user and time period.</p>
     #[doc(hidden)]
     pub user_activities: std::option::Option<std::vec::Vec<crate::model::Activity>>,
@@ -1453,17 +1428,17 @@ pub struct DescribeActivitiesOutput {
 }
 impl DescribeActivitiesOutput {
     /// <p>The list of activities for the specified user and time period.</p>
-    pub fn user_activities(&self) -> std::option::Option<&[crate::model::Activity]> {
+    pub fn user_activities(&self) -> std::option::Option<& [crate::model::Activity]> {
         self.user_activities.as_deref()
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeActivitiesOutput`](crate::output::DescribeActivitiesOutput).
 pub mod describe_activities_output {
-
+    
     /// A builder for [`DescribeActivitiesOutput`](crate::output::DescribeActivitiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1478,17 +1453,13 @@ pub mod describe_activities_output {
         /// <p>The list of activities for the specified user and time period.</p>
         pub fn user_activities(mut self, input: crate::model::Activity) -> Self {
             let mut v = self.user_activities.unwrap_or_default();
-            v.push(input);
-            self.user_activities = Some(v);
-            self
+                            v.push(input);
+                            self.user_activities = Some(v);
+                            self
         }
         /// <p>The list of activities for the specified user and time period.</p>
-        pub fn set_user_activities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Activity>>,
-        ) -> Self {
-            self.user_activities = input;
-            self
+        pub fn set_user_activities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Activity>>) -> Self {
+            self.user_activities = input; self
         }
         /// <p>The marker for the next set of results.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1497,17 +1468,20 @@ pub mod describe_activities_output {
         }
         /// <p>The marker for the next set of results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeActivitiesOutput`](crate::output::DescribeActivitiesOutput).
         pub fn build(self) -> crate::output::DescribeActivitiesOutput {
             crate::output::DescribeActivitiesOutput {
-                user_activities: self.user_activities,
-                marker: self.marker,
+                user_activities: self.user_activities
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeActivitiesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActivitiesOutput`](crate::output::DescribeActivitiesOutput).
@@ -1519,19 +1493,24 @@ impl DescribeActivitiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserOutput {}
+pub struct DeleteUserOutput  {
+}
 /// See [`DeleteUserOutput`](crate::output::DeleteUserOutput).
 pub mod delete_user_output {
-
+    
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserOutput`](crate::output::DeleteUserOutput).
         pub fn build(self) -> crate::output::DeleteUserOutput {
-            crate::output::DeleteUserOutput {}
+            crate::output::DeleteUserOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteUserOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserOutput`](crate::output::DeleteUserOutput).
@@ -1543,19 +1522,24 @@ impl DeleteUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNotificationSubscriptionOutput {}
+pub struct DeleteNotificationSubscriptionOutput  {
+}
 /// See [`DeleteNotificationSubscriptionOutput`](crate::output::DeleteNotificationSubscriptionOutput).
 pub mod delete_notification_subscription_output {
-
+    
     /// A builder for [`DeleteNotificationSubscriptionOutput`](crate::output::DeleteNotificationSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteNotificationSubscriptionOutput`](crate::output::DeleteNotificationSubscriptionOutput).
         pub fn build(self) -> crate::output::DeleteNotificationSubscriptionOutput {
-            crate::output::DeleteNotificationSubscriptionOutput {}
+            crate::output::DeleteNotificationSubscriptionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteNotificationSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNotificationSubscriptionOutput`](crate::output::DeleteNotificationSubscriptionOutput).
@@ -1567,19 +1551,24 @@ impl DeleteNotificationSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLabelsOutput {}
+pub struct DeleteLabelsOutput  {
+}
 /// See [`DeleteLabelsOutput`](crate::output::DeleteLabelsOutput).
 pub mod delete_labels_output {
-
+    
     /// A builder for [`DeleteLabelsOutput`](crate::output::DeleteLabelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLabelsOutput`](crate::output::DeleteLabelsOutput).
         pub fn build(self) -> crate::output::DeleteLabelsOutput {
-            crate::output::DeleteLabelsOutput {}
+            crate::output::DeleteLabelsOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLabelsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLabelsOutput`](crate::output::DeleteLabelsOutput).
@@ -1591,19 +1580,24 @@ impl DeleteLabelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFolderContentsOutput {}
+pub struct DeleteFolderContentsOutput  {
+}
 /// See [`DeleteFolderContentsOutput`](crate::output::DeleteFolderContentsOutput).
 pub mod delete_folder_contents_output {
-
+    
     /// A builder for [`DeleteFolderContentsOutput`](crate::output::DeleteFolderContentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFolderContentsOutput`](crate::output::DeleteFolderContentsOutput).
         pub fn build(self) -> crate::output::DeleteFolderContentsOutput {
-            crate::output::DeleteFolderContentsOutput {}
+            crate::output::DeleteFolderContentsOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFolderContentsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFolderContentsOutput`](crate::output::DeleteFolderContentsOutput).
@@ -1615,19 +1609,24 @@ impl DeleteFolderContentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFolderOutput {}
+pub struct DeleteFolderOutput  {
+}
 /// See [`DeleteFolderOutput`](crate::output::DeleteFolderOutput).
 pub mod delete_folder_output {
-
+    
     /// A builder for [`DeleteFolderOutput`](crate::output::DeleteFolderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFolderOutput`](crate::output::DeleteFolderOutput).
         pub fn build(self) -> crate::output::DeleteFolderOutput {
-            crate::output::DeleteFolderOutput {}
+            crate::output::DeleteFolderOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFolderOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFolderOutput`](crate::output::DeleteFolderOutput).
@@ -1639,19 +1638,24 @@ impl DeleteFolderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDocumentVersionOutput {}
+pub struct DeleteDocumentVersionOutput  {
+}
 /// See [`DeleteDocumentVersionOutput`](crate::output::DeleteDocumentVersionOutput).
 pub mod delete_document_version_output {
-
+    
     /// A builder for [`DeleteDocumentVersionOutput`](crate::output::DeleteDocumentVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDocumentVersionOutput`](crate::output::DeleteDocumentVersionOutput).
         pub fn build(self) -> crate::output::DeleteDocumentVersionOutput {
-            crate::output::DeleteDocumentVersionOutput {}
+            crate::output::DeleteDocumentVersionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDocumentVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDocumentVersionOutput`](crate::output::DeleteDocumentVersionOutput).
@@ -1663,19 +1667,24 @@ impl DeleteDocumentVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDocumentOutput {}
+pub struct DeleteDocumentOutput  {
+}
 /// See [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput).
 pub mod delete_document_output {
-
+    
     /// A builder for [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput).
         pub fn build(self) -> crate::output::DeleteDocumentOutput {
-            crate::output::DeleteDocumentOutput {}
+            crate::output::DeleteDocumentOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDocumentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput).
@@ -1687,19 +1696,24 @@ impl DeleteDocumentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomMetadataOutput {}
+pub struct DeleteCustomMetadataOutput  {
+}
 /// See [`DeleteCustomMetadataOutput`](crate::output::DeleteCustomMetadataOutput).
 pub mod delete_custom_metadata_output {
-
+    
     /// A builder for [`DeleteCustomMetadataOutput`](crate::output::DeleteCustomMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCustomMetadataOutput`](crate::output::DeleteCustomMetadataOutput).
         pub fn build(self) -> crate::output::DeleteCustomMetadataOutput {
-            crate::output::DeleteCustomMetadataOutput {}
+            crate::output::DeleteCustomMetadataOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCustomMetadataOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomMetadataOutput`](crate::output::DeleteCustomMetadataOutput).
@@ -1711,19 +1725,24 @@ impl DeleteCustomMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCommentOutput {}
+pub struct DeleteCommentOutput  {
+}
 /// See [`DeleteCommentOutput`](crate::output::DeleteCommentOutput).
 pub mod delete_comment_output {
-
+    
     /// A builder for [`DeleteCommentOutput`](crate::output::DeleteCommentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCommentOutput`](crate::output::DeleteCommentOutput).
         pub fn build(self) -> crate::output::DeleteCommentOutput {
-            crate::output::DeleteCommentOutput {}
+            crate::output::DeleteCommentOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCommentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCommentOutput`](crate::output::DeleteCommentOutput).
@@ -1735,19 +1754,24 @@ impl DeleteCommentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeactivateUserOutput {}
+pub struct DeactivateUserOutput  {
+}
 /// See [`DeactivateUserOutput`](crate::output::DeactivateUserOutput).
 pub mod deactivate_user_output {
-
+    
     /// A builder for [`DeactivateUserOutput`](crate::output::DeactivateUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeactivateUserOutput`](crate::output::DeactivateUserOutput).
         pub fn build(self) -> crate::output::DeactivateUserOutput {
-            crate::output::DeactivateUserOutput {}
+            crate::output::DeactivateUserOutput {
+            }
         }
     }
+    
+    
 }
 impl DeactivateUserOutput {
     /// Creates a new builder-style object to manufacture [`DeactivateUserOutput`](crate::output::DeactivateUserOutput).
@@ -1759,20 +1783,20 @@ impl DeactivateUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateUserOutput {
+pub struct CreateUserOutput  {
     /// <p>The user information.</p>
     #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl CreateUserOutput {
     /// <p>The user information.</p>
-    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+    pub fn user(&self) -> std::option::Option<& crate::model::User> {
         self.user.as_ref()
     }
 }
 /// See [`CreateUserOutput`](crate::output::CreateUserOutput).
 pub mod create_user_output {
-
+    
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1786,14 +1810,18 @@ pub mod create_user_output {
         }
         /// <p>The user information.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::User>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// Consumes the builder and constructs a [`CreateUserOutput`](crate::output::CreateUserOutput).
         pub fn build(self) -> crate::output::CreateUserOutput {
-            crate::output::CreateUserOutput { user: self.user }
+            crate::output::CreateUserOutput {
+                user: self.user
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateUserOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserOutput`](crate::output::CreateUserOutput).
@@ -1805,20 +1833,20 @@ impl CreateUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNotificationSubscriptionOutput {
+pub struct CreateNotificationSubscriptionOutput  {
     /// <p>The subscription.</p>
     #[doc(hidden)]
     pub subscription: std::option::Option<crate::model::Subscription>,
 }
 impl CreateNotificationSubscriptionOutput {
     /// <p>The subscription.</p>
-    pub fn subscription(&self) -> std::option::Option<&crate::model::Subscription> {
+    pub fn subscription(&self) -> std::option::Option<& crate::model::Subscription> {
         self.subscription.as_ref()
     }
 }
 /// See [`CreateNotificationSubscriptionOutput`](crate::output::CreateNotificationSubscriptionOutput).
 pub mod create_notification_subscription_output {
-
+    
     /// A builder for [`CreateNotificationSubscriptionOutput`](crate::output::CreateNotificationSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1831,20 +1859,19 @@ pub mod create_notification_subscription_output {
             self
         }
         /// <p>The subscription.</p>
-        pub fn set_subscription(
-            mut self,
-            input: std::option::Option<crate::model::Subscription>,
-        ) -> Self {
-            self.subscription = input;
-            self
+        pub fn set_subscription(mut self, input: std::option::Option<crate::model::Subscription>) -> Self {
+            self.subscription = input; self
         }
         /// Consumes the builder and constructs a [`CreateNotificationSubscriptionOutput`](crate::output::CreateNotificationSubscriptionOutput).
         pub fn build(self) -> crate::output::CreateNotificationSubscriptionOutput {
             crate::output::CreateNotificationSubscriptionOutput {
-                subscription: self.subscription,
+                subscription: self.subscription
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateNotificationSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateNotificationSubscriptionOutput`](crate::output::CreateNotificationSubscriptionOutput).
@@ -1856,19 +1883,24 @@ impl CreateNotificationSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLabelsOutput {}
+pub struct CreateLabelsOutput  {
+}
 /// See [`CreateLabelsOutput`](crate::output::CreateLabelsOutput).
 pub mod create_labels_output {
-
+    
     /// A builder for [`CreateLabelsOutput`](crate::output::CreateLabelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateLabelsOutput`](crate::output::CreateLabelsOutput).
         pub fn build(self) -> crate::output::CreateLabelsOutput {
-            crate::output::CreateLabelsOutput {}
+            crate::output::CreateLabelsOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateLabelsOutput {
     /// Creates a new builder-style object to manufacture [`CreateLabelsOutput`](crate::output::CreateLabelsOutput).
@@ -1880,20 +1912,20 @@ impl CreateLabelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFolderOutput {
+pub struct CreateFolderOutput  {
     /// <p>The metadata of the folder.</p>
     #[doc(hidden)]
     pub metadata: std::option::Option<crate::model::FolderMetadata>,
 }
 impl CreateFolderOutput {
     /// <p>The metadata of the folder.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::model::FolderMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::FolderMetadata> {
         self.metadata.as_ref()
     }
 }
 /// See [`CreateFolderOutput`](crate::output::CreateFolderOutput).
 pub mod create_folder_output {
-
+    
     /// A builder for [`CreateFolderOutput`](crate::output::CreateFolderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1906,20 +1938,19 @@ pub mod create_folder_output {
             self
         }
         /// <p>The metadata of the folder.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::FolderMetadata>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<crate::model::FolderMetadata>) -> Self {
+            self.metadata = input; self
         }
         /// Consumes the builder and constructs a [`CreateFolderOutput`](crate::output::CreateFolderOutput).
         pub fn build(self) -> crate::output::CreateFolderOutput {
             crate::output::CreateFolderOutput {
-                metadata: self.metadata,
+                metadata: self.metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFolderOutput {
     /// Creates a new builder-style object to manufacture [`CreateFolderOutput`](crate::output::CreateFolderOutput).
@@ -1931,19 +1962,24 @@ impl CreateFolderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCustomMetadataOutput {}
+pub struct CreateCustomMetadataOutput  {
+}
 /// See [`CreateCustomMetadataOutput`](crate::output::CreateCustomMetadataOutput).
 pub mod create_custom_metadata_output {
-
+    
     /// A builder for [`CreateCustomMetadataOutput`](crate::output::CreateCustomMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateCustomMetadataOutput`](crate::output::CreateCustomMetadataOutput).
         pub fn build(self) -> crate::output::CreateCustomMetadataOutput {
-            crate::output::CreateCustomMetadataOutput {}
+            crate::output::CreateCustomMetadataOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateCustomMetadataOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomMetadataOutput`](crate::output::CreateCustomMetadataOutput).
@@ -1955,20 +1991,20 @@ impl CreateCustomMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCommentOutput {
+pub struct CreateCommentOutput  {
     /// <p>The comment that has been created.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
 }
 impl CreateCommentOutput {
     /// <p>The comment that has been created.</p>
-    pub fn comment(&self) -> std::option::Option<&crate::model::Comment> {
+    pub fn comment(&self) -> std::option::Option<& crate::model::Comment> {
         self.comment.as_ref()
     }
 }
 /// See [`CreateCommentOutput`](crate::output::CreateCommentOutput).
 pub mod create_comment_output {
-
+    
     /// A builder for [`CreateCommentOutput`](crate::output::CreateCommentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1982,16 +2018,18 @@ pub mod create_comment_output {
         }
         /// <p>The comment that has been created.</p>
         pub fn set_comment(mut self, input: std::option::Option<crate::model::Comment>) -> Self {
-            self.comment = input;
-            self
+            self.comment = input; self
         }
         /// Consumes the builder and constructs a [`CreateCommentOutput`](crate::output::CreateCommentOutput).
         pub fn build(self) -> crate::output::CreateCommentOutput {
             crate::output::CreateCommentOutput {
-                comment: self.comment,
+                comment: self.comment
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCommentOutput {
     /// Creates a new builder-style object to manufacture [`CreateCommentOutput`](crate::output::CreateCommentOutput).
@@ -2003,20 +2041,20 @@ impl CreateCommentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddResourcePermissionsOutput {
+pub struct AddResourcePermissionsOutput  {
     /// <p>The share results.</p>
     #[doc(hidden)]
     pub share_results: std::option::Option<std::vec::Vec<crate::model::ShareResult>>,
 }
 impl AddResourcePermissionsOutput {
     /// <p>The share results.</p>
-    pub fn share_results(&self) -> std::option::Option<&[crate::model::ShareResult]> {
+    pub fn share_results(&self) -> std::option::Option<& [crate::model::ShareResult]> {
         self.share_results.as_deref()
     }
 }
 /// See [`AddResourcePermissionsOutput`](crate::output::AddResourcePermissionsOutput).
 pub mod add_resource_permissions_output {
-
+    
     /// A builder for [`AddResourcePermissionsOutput`](crate::output::AddResourcePermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2030,25 +2068,24 @@ pub mod add_resource_permissions_output {
         /// <p>The share results.</p>
         pub fn share_results(mut self, input: crate::model::ShareResult) -> Self {
             let mut v = self.share_results.unwrap_or_default();
-            v.push(input);
-            self.share_results = Some(v);
-            self
+                            v.push(input);
+                            self.share_results = Some(v);
+                            self
         }
         /// <p>The share results.</p>
-        pub fn set_share_results(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ShareResult>>,
-        ) -> Self {
-            self.share_results = input;
-            self
+        pub fn set_share_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::ShareResult>>) -> Self {
+            self.share_results = input; self
         }
         /// Consumes the builder and constructs a [`AddResourcePermissionsOutput`](crate::output::AddResourcePermissionsOutput).
         pub fn build(self) -> crate::output::AddResourcePermissionsOutput {
             crate::output::AddResourcePermissionsOutput {
-                share_results: self.share_results,
+                share_results: self.share_results
+                ,
             }
         }
     }
+    
+    
 }
 impl AddResourcePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`AddResourcePermissionsOutput`](crate::output::AddResourcePermissionsOutput).
@@ -2060,20 +2097,20 @@ impl AddResourcePermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivateUserOutput {
+pub struct ActivateUserOutput  {
     /// <p>The user information.</p>
     #[doc(hidden)]
     pub user: std::option::Option<crate::model::User>,
 }
 impl ActivateUserOutput {
     /// <p>The user information.</p>
-    pub fn user(&self) -> std::option::Option<&crate::model::User> {
+    pub fn user(&self) -> std::option::Option<& crate::model::User> {
         self.user.as_ref()
     }
 }
 /// See [`ActivateUserOutput`](crate::output::ActivateUserOutput).
 pub mod activate_user_output {
-
+    
     /// A builder for [`ActivateUserOutput`](crate::output::ActivateUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2087,14 +2124,18 @@ pub mod activate_user_output {
         }
         /// <p>The user information.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::User>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
         /// Consumes the builder and constructs a [`ActivateUserOutput`](crate::output::ActivateUserOutput).
         pub fn build(self) -> crate::output::ActivateUserOutput {
-            crate::output::ActivateUserOutput { user: self.user }
+            crate::output::ActivateUserOutput {
+                user: self.user
+                ,
+            }
         }
     }
+    
+    
 }
 impl ActivateUserOutput {
     /// Creates a new builder-style object to manufacture [`ActivateUserOutput`](crate::output::ActivateUserOutput).
@@ -2106,19 +2147,24 @@ impl ActivateUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AbortDocumentVersionUploadOutput {}
+pub struct AbortDocumentVersionUploadOutput  {
+}
 /// See [`AbortDocumentVersionUploadOutput`](crate::output::AbortDocumentVersionUploadOutput).
 pub mod abort_document_version_upload_output {
-
+    
     /// A builder for [`AbortDocumentVersionUploadOutput`](crate::output::AbortDocumentVersionUploadOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AbortDocumentVersionUploadOutput`](crate::output::AbortDocumentVersionUploadOutput).
         pub fn build(self) -> crate::output::AbortDocumentVersionUploadOutput {
-            crate::output::AbortDocumentVersionUploadOutput {}
+            crate::output::AbortDocumentVersionUploadOutput {
+            }
         }
     }
+    
+    
 }
 impl AbortDocumentVersionUploadOutput {
     /// Creates a new builder-style object to manufacture [`AbortDocumentVersionUploadOutput`](crate::output::AbortDocumentVersionUploadOutput).
@@ -2126,3 +2172,4 @@ impl AbortDocumentVersionUploadOutput {
         crate::output::abort_document_version_upload_output::Builder::default()
     }
 }
+

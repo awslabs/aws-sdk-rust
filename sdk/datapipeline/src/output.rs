@@ -3,7 +3,7 @@
 /// <p>Contains the output of ValidatePipelineDefinition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidatePipelineDefinitionOutput {
+pub struct ValidatePipelineDefinitionOutput  {
     /// <p>Any validation errors that were found.</p>
     #[doc(hidden)]
     pub validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
@@ -16,11 +16,11 @@ pub struct ValidatePipelineDefinitionOutput {
 }
 impl ValidatePipelineDefinitionOutput {
     /// <p>Any validation errors that were found.</p>
-    pub fn validation_errors(&self) -> std::option::Option<&[crate::model::ValidationError]> {
+    pub fn validation_errors(&self) -> std::option::Option<& [crate::model::ValidationError]> {
         self.validation_errors.as_deref()
     }
     /// <p>Any validation warnings that were found.</p>
-    pub fn validation_warnings(&self) -> std::option::Option<&[crate::model::ValidationWarning]> {
+    pub fn validation_warnings(&self) -> std::option::Option<& [crate::model::ValidationWarning]> {
         self.validation_warnings.as_deref()
     }
     /// <p>Indicates whether there were validation errors.</p>
@@ -30,14 +30,12 @@ impl ValidatePipelineDefinitionOutput {
 }
 /// See [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput).
 pub mod validate_pipeline_definition_output {
-
+    
     /// A builder for [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) validation_errors:
-            std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
-        pub(crate) validation_warnings:
-            std::option::Option<std::vec::Vec<crate::model::ValidationWarning>>,
+        pub(crate) validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
+        pub(crate) validation_warnings: std::option::Option<std::vec::Vec<crate::model::ValidationWarning>>,
         pub(crate) errored: std::option::Option<bool>,
     }
     impl Builder {
@@ -48,17 +46,13 @@ pub mod validate_pipeline_definition_output {
         /// <p>Any validation errors that were found.</p>
         pub fn validation_errors(mut self, input: crate::model::ValidationError) -> Self {
             let mut v = self.validation_errors.unwrap_or_default();
-            v.push(input);
-            self.validation_errors = Some(v);
-            self
+                            v.push(input);
+                            self.validation_errors = Some(v);
+                            self
         }
         /// <p>Any validation errors that were found.</p>
-        pub fn set_validation_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
-        ) -> Self {
-            self.validation_errors = input;
-            self
+        pub fn set_validation_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ValidationError>>) -> Self {
+            self.validation_errors = input; self
         }
         /// Appends an item to `validation_warnings`.
         ///
@@ -67,17 +61,13 @@ pub mod validate_pipeline_definition_output {
         /// <p>Any validation warnings that were found.</p>
         pub fn validation_warnings(mut self, input: crate::model::ValidationWarning) -> Self {
             let mut v = self.validation_warnings.unwrap_or_default();
-            v.push(input);
-            self.validation_warnings = Some(v);
-            self
+                            v.push(input);
+                            self.validation_warnings = Some(v);
+                            self
         }
         /// <p>Any validation warnings that were found.</p>
-        pub fn set_validation_warnings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ValidationWarning>>,
-        ) -> Self {
-            self.validation_warnings = input;
-            self
+        pub fn set_validation_warnings(mut self, input: std::option::Option<std::vec::Vec<crate::model::ValidationWarning>>) -> Self {
+            self.validation_warnings = input; self
         }
         /// <p>Indicates whether there were validation errors.</p>
         pub fn errored(mut self, input: bool) -> Self {
@@ -86,18 +76,23 @@ pub mod validate_pipeline_definition_output {
         }
         /// <p>Indicates whether there were validation errors.</p>
         pub fn set_errored(mut self, input: std::option::Option<bool>) -> Self {
-            self.errored = input;
-            self
+            self.errored = input; self
         }
         /// Consumes the builder and constructs a [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput).
         pub fn build(self) -> crate::output::ValidatePipelineDefinitionOutput {
             crate::output::ValidatePipelineDefinitionOutput {
-                validation_errors: self.validation_errors,
-                validation_warnings: self.validation_warnings,
-                errored: self.errored.unwrap_or_default(),
+                validation_errors: self.validation_errors
+                ,
+                validation_warnings: self.validation_warnings
+                ,
+                errored: self.errored
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidatePipelineDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput).
@@ -109,19 +104,24 @@ impl ValidatePipelineDefinitionOutput {
 /// <p>Contains the output of SetTaskStatus.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetTaskStatusOutput {}
+pub struct SetTaskStatusOutput  {
+}
 /// See [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput).
 pub mod set_task_status_output {
-
+    
     /// A builder for [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput).
         pub fn build(self) -> crate::output::SetTaskStatusOutput {
-            crate::output::SetTaskStatusOutput {}
+            crate::output::SetTaskStatusOutput {
+            }
         }
     }
+    
+    
 }
 impl SetTaskStatusOutput {
     /// Creates a new builder-style object to manufacture [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput).
@@ -133,19 +133,24 @@ impl SetTaskStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetStatusOutput {}
+pub struct SetStatusOutput  {
+}
 /// See [`SetStatusOutput`](crate::output::SetStatusOutput).
 pub mod set_status_output {
-
+    
     /// A builder for [`SetStatusOutput`](crate::output::SetStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SetStatusOutput`](crate::output::SetStatusOutput).
         pub fn build(self) -> crate::output::SetStatusOutput {
-            crate::output::SetStatusOutput {}
+            crate::output::SetStatusOutput {
+            }
         }
     }
+    
+    
 }
 impl SetStatusOutput {
     /// Creates a new builder-style object to manufacture [`SetStatusOutput`](crate::output::SetStatusOutput).
@@ -157,7 +162,7 @@ impl SetStatusOutput {
 /// <p>Contains the output of ReportTaskRunnerHeartbeat.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReportTaskRunnerHeartbeatOutput {
+pub struct ReportTaskRunnerHeartbeatOutput  {
     /// <p>Indicates whether the calling task runner should terminate.</p>
     #[doc(hidden)]
     pub terminate: bool,
@@ -170,7 +175,7 @@ impl ReportTaskRunnerHeartbeatOutput {
 }
 /// See [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput).
 pub mod report_task_runner_heartbeat_output {
-
+    
     /// A builder for [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -184,16 +189,19 @@ pub mod report_task_runner_heartbeat_output {
         }
         /// <p>Indicates whether the calling task runner should terminate.</p>
         pub fn set_terminate(mut self, input: std::option::Option<bool>) -> Self {
-            self.terminate = input;
-            self
+            self.terminate = input; self
         }
         /// Consumes the builder and constructs a [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput).
         pub fn build(self) -> crate::output::ReportTaskRunnerHeartbeatOutput {
             crate::output::ReportTaskRunnerHeartbeatOutput {
-                terminate: self.terminate.unwrap_or_default(),
+                terminate: self.terminate
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ReportTaskRunnerHeartbeatOutput {
     /// Creates a new builder-style object to manufacture [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput).
@@ -205,7 +213,7 @@ impl ReportTaskRunnerHeartbeatOutput {
 /// <p>Contains the output of ReportTaskProgress.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReportTaskProgressOutput {
+pub struct ReportTaskProgressOutput  {
     /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
     #[doc(hidden)]
     pub canceled: bool,
@@ -218,7 +226,7 @@ impl ReportTaskProgressOutput {
 }
 /// See [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput).
 pub mod report_task_progress_output {
-
+    
     /// A builder for [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -232,16 +240,19 @@ pub mod report_task_progress_output {
         }
         /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
         pub fn set_canceled(mut self, input: std::option::Option<bool>) -> Self {
-            self.canceled = input;
-            self
+            self.canceled = input; self
         }
         /// Consumes the builder and constructs a [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput).
         pub fn build(self) -> crate::output::ReportTaskProgressOutput {
             crate::output::ReportTaskProgressOutput {
-                canceled: self.canceled.unwrap_or_default(),
+                canceled: self.canceled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ReportTaskProgressOutput {
     /// Creates a new builder-style object to manufacture [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput).
@@ -253,19 +264,24 @@ impl ReportTaskProgressOutput {
 /// <p>Contains the output of RemoveTags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsOutput {}
+pub struct RemoveTagsOutput  {
+}
 /// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
-
+    
     /// A builder for [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
         pub fn build(self) -> crate::output::RemoveTagsOutput {
-            crate::output::RemoveTagsOutput {}
+            crate::output::RemoveTagsOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveTagsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
@@ -277,7 +293,7 @@ impl RemoveTagsOutput {
 /// <p>Contains the output of QueryObjects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryObjectsOutput {
+pub struct QueryObjectsOutput  {
     /// <p>The identifiers that match the query selectors.</p>
     #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -290,11 +306,11 @@ pub struct QueryObjectsOutput {
 }
 impl QueryObjectsOutput {
     /// <p>The identifiers that match the query selectors.</p>
-    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ids(&self) -> std::option::Option<& [std::string::String]> {
         self.ids.as_deref()
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
@@ -304,7 +320,7 @@ impl QueryObjectsOutput {
 }
 /// See [`QueryObjectsOutput`](crate::output::QueryObjectsOutput).
 pub mod query_objects_output {
-
+    
     /// A builder for [`QueryObjectsOutput`](crate::output::QueryObjectsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -320,17 +336,13 @@ pub mod query_objects_output {
         /// <p>The identifiers that match the query selectors.</p>
         pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ids.unwrap_or_default();
-            v.push(input.into());
-            self.ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.ids = Some(v);
+                            self
         }
         /// <p>The identifiers that match the query selectors.</p>
-        pub fn set_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ids = input;
-            self
+        pub fn set_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ids = input; self
         }
         /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -339,8 +351,7 @@ pub mod query_objects_output {
         }
         /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
         pub fn has_more_results(mut self, input: bool) -> Self {
@@ -349,18 +360,23 @@ pub mod query_objects_output {
         }
         /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
         pub fn set_has_more_results(mut self, input: std::option::Option<bool>) -> Self {
-            self.has_more_results = input;
-            self
+            self.has_more_results = input; self
         }
         /// Consumes the builder and constructs a [`QueryObjectsOutput`](crate::output::QueryObjectsOutput).
         pub fn build(self) -> crate::output::QueryObjectsOutput {
             crate::output::QueryObjectsOutput {
-                ids: self.ids,
-                marker: self.marker,
-                has_more_results: self.has_more_results.unwrap_or_default(),
+                ids: self.ids
+                ,
+                marker: self.marker
+                ,
+                has_more_results: self.has_more_results
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl QueryObjectsOutput {
     /// Creates a new builder-style object to manufacture [`QueryObjectsOutput`](crate::output::QueryObjectsOutput).
@@ -372,7 +388,7 @@ impl QueryObjectsOutput {
 /// <p>Contains the output of PutPipelineDefinition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPipelineDefinitionOutput {
+pub struct PutPipelineDefinitionOutput  {
     /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
     #[doc(hidden)]
     pub validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
@@ -385,11 +401,11 @@ pub struct PutPipelineDefinitionOutput {
 }
 impl PutPipelineDefinitionOutput {
     /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-    pub fn validation_errors(&self) -> std::option::Option<&[crate::model::ValidationError]> {
+    pub fn validation_errors(&self) -> std::option::Option<& [crate::model::ValidationError]> {
         self.validation_errors.as_deref()
     }
     /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-    pub fn validation_warnings(&self) -> std::option::Option<&[crate::model::ValidationWarning]> {
+    pub fn validation_warnings(&self) -> std::option::Option<& [crate::model::ValidationWarning]> {
         self.validation_warnings.as_deref()
     }
     /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
@@ -399,14 +415,12 @@ impl PutPipelineDefinitionOutput {
 }
 /// See [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput).
 pub mod put_pipeline_definition_output {
-
+    
     /// A builder for [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) validation_errors:
-            std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
-        pub(crate) validation_warnings:
-            std::option::Option<std::vec::Vec<crate::model::ValidationWarning>>,
+        pub(crate) validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
+        pub(crate) validation_warnings: std::option::Option<std::vec::Vec<crate::model::ValidationWarning>>,
         pub(crate) errored: std::option::Option<bool>,
     }
     impl Builder {
@@ -417,17 +431,13 @@ pub mod put_pipeline_definition_output {
         /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
         pub fn validation_errors(mut self, input: crate::model::ValidationError) -> Self {
             let mut v = self.validation_errors.unwrap_or_default();
-            v.push(input);
-            self.validation_errors = Some(v);
-            self
+                            v.push(input);
+                            self.validation_errors = Some(v);
+                            self
         }
         /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-        pub fn set_validation_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
-        ) -> Self {
-            self.validation_errors = input;
-            self
+        pub fn set_validation_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ValidationError>>) -> Self {
+            self.validation_errors = input; self
         }
         /// Appends an item to `validation_warnings`.
         ///
@@ -436,17 +446,13 @@ pub mod put_pipeline_definition_output {
         /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
         pub fn validation_warnings(mut self, input: crate::model::ValidationWarning) -> Self {
             let mut v = self.validation_warnings.unwrap_or_default();
-            v.push(input);
-            self.validation_warnings = Some(v);
-            self
+                            v.push(input);
+                            self.validation_warnings = Some(v);
+                            self
         }
         /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-        pub fn set_validation_warnings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ValidationWarning>>,
-        ) -> Self {
-            self.validation_warnings = input;
-            self
+        pub fn set_validation_warnings(mut self, input: std::option::Option<std::vec::Vec<crate::model::ValidationWarning>>) -> Self {
+            self.validation_warnings = input; self
         }
         /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
         pub fn errored(mut self, input: bool) -> Self {
@@ -455,18 +461,23 @@ pub mod put_pipeline_definition_output {
         }
         /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
         pub fn set_errored(mut self, input: std::option::Option<bool>) -> Self {
-            self.errored = input;
-            self
+            self.errored = input; self
         }
         /// Consumes the builder and constructs a [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput).
         pub fn build(self) -> crate::output::PutPipelineDefinitionOutput {
             crate::output::PutPipelineDefinitionOutput {
-                validation_errors: self.validation_errors,
-                validation_warnings: self.validation_warnings,
-                errored: self.errored.unwrap_or_default(),
+                validation_errors: self.validation_errors
+                ,
+                validation_warnings: self.validation_warnings
+                ,
+                errored: self.errored
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl PutPipelineDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput).
@@ -478,20 +489,20 @@ impl PutPipelineDefinitionOutput {
 /// <p>Contains the output of PollForTask.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PollForTaskOutput {
+pub struct PollForTaskOutput  {
     /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
     #[doc(hidden)]
     pub task_object: std::option::Option<crate::model::TaskObject>,
 }
 impl PollForTaskOutput {
     /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
-    pub fn task_object(&self) -> std::option::Option<&crate::model::TaskObject> {
+    pub fn task_object(&self) -> std::option::Option<& crate::model::TaskObject> {
         self.task_object.as_ref()
     }
 }
 /// See [`PollForTaskOutput`](crate::output::PollForTaskOutput).
 pub mod poll_for_task_output {
-
+    
     /// A builder for [`PollForTaskOutput`](crate::output::PollForTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -504,20 +515,19 @@ pub mod poll_for_task_output {
             self
         }
         /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
-        pub fn set_task_object(
-            mut self,
-            input: std::option::Option<crate::model::TaskObject>,
-        ) -> Self {
-            self.task_object = input;
-            self
+        pub fn set_task_object(mut self, input: std::option::Option<crate::model::TaskObject>) -> Self {
+            self.task_object = input; self
         }
         /// Consumes the builder and constructs a [`PollForTaskOutput`](crate::output::PollForTaskOutput).
         pub fn build(self) -> crate::output::PollForTaskOutput {
             crate::output::PollForTaskOutput {
-                task_object: self.task_object,
+                task_object: self.task_object
+                ,
             }
         }
     }
+    
+    
 }
 impl PollForTaskOutput {
     /// Creates a new builder-style object to manufacture [`PollForTaskOutput`](crate::output::PollForTaskOutput).
@@ -529,7 +539,7 @@ impl PollForTaskOutput {
 /// <p>Contains the output of ListPipelines.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPipelinesOutput {
+pub struct ListPipelinesOutput  {
     /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
     #[doc(hidden)]
     pub pipeline_id_list: std::option::Option<std::vec::Vec<crate::model::PipelineIdName>>,
@@ -542,11 +552,11 @@ pub struct ListPipelinesOutput {
 }
 impl ListPipelinesOutput {
     /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
-    pub fn pipeline_id_list(&self) -> std::option::Option<&[crate::model::PipelineIdName]> {
+    pub fn pipeline_id_list(&self) -> std::option::Option<& [crate::model::PipelineIdName]> {
         self.pipeline_id_list.as_deref()
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
@@ -556,12 +566,11 @@ impl ListPipelinesOutput {
 }
 /// See [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
 pub mod list_pipelines_output {
-
+    
     /// A builder for [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) pipeline_id_list:
-            std::option::Option<std::vec::Vec<crate::model::PipelineIdName>>,
+        pub(crate) pipeline_id_list: std::option::Option<std::vec::Vec<crate::model::PipelineIdName>>,
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) has_more_results: std::option::Option<bool>,
     }
@@ -573,17 +582,13 @@ pub mod list_pipelines_output {
         /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
         pub fn pipeline_id_list(mut self, input: crate::model::PipelineIdName) -> Self {
             let mut v = self.pipeline_id_list.unwrap_or_default();
-            v.push(input);
-            self.pipeline_id_list = Some(v);
-            self
+                            v.push(input);
+                            self.pipeline_id_list = Some(v);
+                            self
         }
         /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
-        pub fn set_pipeline_id_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PipelineIdName>>,
-        ) -> Self {
-            self.pipeline_id_list = input;
-            self
+        pub fn set_pipeline_id_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::PipelineIdName>>) -> Self {
+            self.pipeline_id_list = input; self
         }
         /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -592,8 +597,7 @@ pub mod list_pipelines_output {
         }
         /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
         pub fn has_more_results(mut self, input: bool) -> Self {
@@ -602,18 +606,23 @@ pub mod list_pipelines_output {
         }
         /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
         pub fn set_has_more_results(mut self, input: std::option::Option<bool>) -> Self {
-            self.has_more_results = input;
-            self
+            self.has_more_results = input; self
         }
         /// Consumes the builder and constructs a [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
         pub fn build(self) -> crate::output::ListPipelinesOutput {
             crate::output::ListPipelinesOutput {
-                pipeline_id_list: self.pipeline_id_list,
-                marker: self.marker,
-                has_more_results: self.has_more_results.unwrap_or_default(),
+                pipeline_id_list: self.pipeline_id_list
+                ,
+                marker: self.marker
+                ,
+                has_more_results: self.has_more_results
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPipelinesOutput {
     /// Creates a new builder-style object to manufacture [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
@@ -625,7 +634,7 @@ impl ListPipelinesOutput {
 /// <p>Contains the output of GetPipelineDefinition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPipelineDefinitionOutput {
+pub struct GetPipelineDefinitionOutput  {
     /// <p>The objects defined in the pipeline.</p>
     #[doc(hidden)]
     pub pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
@@ -638,30 +647,27 @@ pub struct GetPipelineDefinitionOutput {
 }
 impl GetPipelineDefinitionOutput {
     /// <p>The objects defined in the pipeline.</p>
-    pub fn pipeline_objects(&self) -> std::option::Option<&[crate::model::PipelineObject]> {
+    pub fn pipeline_objects(&self) -> std::option::Option<& [crate::model::PipelineObject]> {
         self.pipeline_objects.as_deref()
     }
     /// <p>The parameter objects used in the pipeline definition.</p>
-    pub fn parameter_objects(&self) -> std::option::Option<&[crate::model::ParameterObject]> {
+    pub fn parameter_objects(&self) -> std::option::Option<& [crate::model::ParameterObject]> {
         self.parameter_objects.as_deref()
     }
     /// <p>The parameter values used in the pipeline definition.</p>
-    pub fn parameter_values(&self) -> std::option::Option<&[crate::model::ParameterValue]> {
+    pub fn parameter_values(&self) -> std::option::Option<& [crate::model::ParameterValue]> {
         self.parameter_values.as_deref()
     }
 }
 /// See [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput).
 pub mod get_pipeline_definition_output {
-
+    
     /// A builder for [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) pipeline_objects:
-            std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
-        pub(crate) parameter_objects:
-            std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
-        pub(crate) parameter_values:
-            std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
+        pub(crate) pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
+        pub(crate) parameter_objects: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
+        pub(crate) parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
     }
     impl Builder {
         /// Appends an item to `pipeline_objects`.
@@ -671,17 +677,13 @@ pub mod get_pipeline_definition_output {
         /// <p>The objects defined in the pipeline.</p>
         pub fn pipeline_objects(mut self, input: crate::model::PipelineObject) -> Self {
             let mut v = self.pipeline_objects.unwrap_or_default();
-            v.push(input);
-            self.pipeline_objects = Some(v);
-            self
+                            v.push(input);
+                            self.pipeline_objects = Some(v);
+                            self
         }
         /// <p>The objects defined in the pipeline.</p>
-        pub fn set_pipeline_objects(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
-        ) -> Self {
-            self.pipeline_objects = input;
-            self
+        pub fn set_pipeline_objects(mut self, input: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>) -> Self {
+            self.pipeline_objects = input; self
         }
         /// Appends an item to `parameter_objects`.
         ///
@@ -690,17 +692,13 @@ pub mod get_pipeline_definition_output {
         /// <p>The parameter objects used in the pipeline definition.</p>
         pub fn parameter_objects(mut self, input: crate::model::ParameterObject) -> Self {
             let mut v = self.parameter_objects.unwrap_or_default();
-            v.push(input);
-            self.parameter_objects = Some(v);
-            self
+                            v.push(input);
+                            self.parameter_objects = Some(v);
+                            self
         }
         /// <p>The parameter objects used in the pipeline definition.</p>
-        pub fn set_parameter_objects(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
-        ) -> Self {
-            self.parameter_objects = input;
-            self
+        pub fn set_parameter_objects(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>) -> Self {
+            self.parameter_objects = input; self
         }
         /// Appends an item to `parameter_values`.
         ///
@@ -709,27 +707,28 @@ pub mod get_pipeline_definition_output {
         /// <p>The parameter values used in the pipeline definition.</p>
         pub fn parameter_values(mut self, input: crate::model::ParameterValue) -> Self {
             let mut v = self.parameter_values.unwrap_or_default();
-            v.push(input);
-            self.parameter_values = Some(v);
-            self
+                            v.push(input);
+                            self.parameter_values = Some(v);
+                            self
         }
         /// <p>The parameter values used in the pipeline definition.</p>
-        pub fn set_parameter_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
-        ) -> Self {
-            self.parameter_values = input;
-            self
+        pub fn set_parameter_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>) -> Self {
+            self.parameter_values = input; self
         }
         /// Consumes the builder and constructs a [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput).
         pub fn build(self) -> crate::output::GetPipelineDefinitionOutput {
             crate::output::GetPipelineDefinitionOutput {
-                pipeline_objects: self.pipeline_objects,
-                parameter_objects: self.parameter_objects,
-                parameter_values: self.parameter_values,
+                pipeline_objects: self.pipeline_objects
+                ,
+                parameter_objects: self.parameter_objects
+                ,
+                parameter_values: self.parameter_values
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPipelineDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput).
@@ -741,20 +740,20 @@ impl GetPipelineDefinitionOutput {
 /// <p>Contains the output of EvaluateExpression.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EvaluateExpressionOutput {
+pub struct EvaluateExpressionOutput  {
     /// <p>The evaluated expression.</p>
     #[doc(hidden)]
     pub evaluated_expression: std::option::Option<std::string::String>,
 }
 impl EvaluateExpressionOutput {
     /// <p>The evaluated expression.</p>
-    pub fn evaluated_expression(&self) -> std::option::Option<&str> {
+    pub fn evaluated_expression(&self) -> std::option::Option<& str> {
         self.evaluated_expression.as_deref()
     }
 }
 /// See [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput).
 pub mod evaluate_expression_output {
-
+    
     /// A builder for [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -767,20 +766,19 @@ pub mod evaluate_expression_output {
             self
         }
         /// <p>The evaluated expression.</p>
-        pub fn set_evaluated_expression(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.evaluated_expression = input;
-            self
+        pub fn set_evaluated_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.evaluated_expression = input; self
         }
         /// Consumes the builder and constructs a [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput).
         pub fn build(self) -> crate::output::EvaluateExpressionOutput {
             crate::output::EvaluateExpressionOutput {
-                evaluated_expression: self.evaluated_expression,
+                evaluated_expression: self.evaluated_expression
+                ,
             }
         }
     }
+    
+    
 }
 impl EvaluateExpressionOutput {
     /// Creates a new builder-style object to manufacture [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput).
@@ -792,28 +790,24 @@ impl EvaluateExpressionOutput {
 /// <p>Contains the output of DescribePipelines.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePipelinesOutput {
+pub struct DescribePipelinesOutput  {
     /// <p>An array of descriptions for the specified pipelines.</p>
     #[doc(hidden)]
-    pub pipeline_description_list:
-        std::option::Option<std::vec::Vec<crate::model::PipelineDescription>>,
+    pub pipeline_description_list: std::option::Option<std::vec::Vec<crate::model::PipelineDescription>>,
 }
 impl DescribePipelinesOutput {
     /// <p>An array of descriptions for the specified pipelines.</p>
-    pub fn pipeline_description_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::PipelineDescription]> {
+    pub fn pipeline_description_list(&self) -> std::option::Option<& [crate::model::PipelineDescription]> {
         self.pipeline_description_list.as_deref()
     }
 }
 /// See [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput).
 pub mod describe_pipelines_output {
-
+    
     /// A builder for [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) pipeline_description_list:
-            std::option::Option<std::vec::Vec<crate::model::PipelineDescription>>,
+        pub(crate) pipeline_description_list: std::option::Option<std::vec::Vec<crate::model::PipelineDescription>>,
     }
     impl Builder {
         /// Appends an item to `pipeline_description_list`.
@@ -821,30 +815,26 @@ pub mod describe_pipelines_output {
         /// To override the contents of this collection use [`set_pipeline_description_list`](Self::set_pipeline_description_list).
         ///
         /// <p>An array of descriptions for the specified pipelines.</p>
-        pub fn pipeline_description_list(
-            mut self,
-            input: crate::model::PipelineDescription,
-        ) -> Self {
+        pub fn pipeline_description_list(mut self, input: crate::model::PipelineDescription) -> Self {
             let mut v = self.pipeline_description_list.unwrap_or_default();
-            v.push(input);
-            self.pipeline_description_list = Some(v);
-            self
+                            v.push(input);
+                            self.pipeline_description_list = Some(v);
+                            self
         }
         /// <p>An array of descriptions for the specified pipelines.</p>
-        pub fn set_pipeline_description_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PipelineDescription>>,
-        ) -> Self {
-            self.pipeline_description_list = input;
-            self
+        pub fn set_pipeline_description_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::PipelineDescription>>) -> Self {
+            self.pipeline_description_list = input; self
         }
         /// Consumes the builder and constructs a [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput).
         pub fn build(self) -> crate::output::DescribePipelinesOutput {
             crate::output::DescribePipelinesOutput {
-                pipeline_description_list: self.pipeline_description_list,
+                pipeline_description_list: self.pipeline_description_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePipelinesOutput {
     /// Creates a new builder-style object to manufacture [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput).
@@ -856,7 +846,7 @@ impl DescribePipelinesOutput {
 /// <p>Contains the output of DescribeObjects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeObjectsOutput {
+pub struct DescribeObjectsOutput  {
     /// <p>An array of object definitions.</p>
     #[doc(hidden)]
     pub pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
@@ -869,11 +859,11 @@ pub struct DescribeObjectsOutput {
 }
 impl DescribeObjectsOutput {
     /// <p>An array of object definitions.</p>
-    pub fn pipeline_objects(&self) -> std::option::Option<&[crate::model::PipelineObject]> {
+    pub fn pipeline_objects(&self) -> std::option::Option<& [crate::model::PipelineObject]> {
         self.pipeline_objects.as_deref()
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Indicates whether there are more results to return.</p>
@@ -883,12 +873,11 @@ impl DescribeObjectsOutput {
 }
 /// See [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput).
 pub mod describe_objects_output {
-
+    
     /// A builder for [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) pipeline_objects:
-            std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
+        pub(crate) pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) has_more_results: std::option::Option<bool>,
     }
@@ -900,17 +889,13 @@ pub mod describe_objects_output {
         /// <p>An array of object definitions.</p>
         pub fn pipeline_objects(mut self, input: crate::model::PipelineObject) -> Self {
             let mut v = self.pipeline_objects.unwrap_or_default();
-            v.push(input);
-            self.pipeline_objects = Some(v);
-            self
+                            v.push(input);
+                            self.pipeline_objects = Some(v);
+                            self
         }
         /// <p>An array of object definitions.</p>
-        pub fn set_pipeline_objects(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
-        ) -> Self {
-            self.pipeline_objects = input;
-            self
+        pub fn set_pipeline_objects(mut self, input: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>) -> Self {
+            self.pipeline_objects = input; self
         }
         /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -919,8 +904,7 @@ pub mod describe_objects_output {
         }
         /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// <p>Indicates whether there are more results to return.</p>
         pub fn has_more_results(mut self, input: bool) -> Self {
@@ -929,18 +913,23 @@ pub mod describe_objects_output {
         }
         /// <p>Indicates whether there are more results to return.</p>
         pub fn set_has_more_results(mut self, input: std::option::Option<bool>) -> Self {
-            self.has_more_results = input;
-            self
+            self.has_more_results = input; self
         }
         /// Consumes the builder and constructs a [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput).
         pub fn build(self) -> crate::output::DescribeObjectsOutput {
             crate::output::DescribeObjectsOutput {
-                pipeline_objects: self.pipeline_objects,
-                marker: self.marker,
-                has_more_results: self.has_more_results.unwrap_or_default(),
+                pipeline_objects: self.pipeline_objects
+                ,
+                marker: self.marker
+                ,
+                has_more_results: self.has_more_results
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeObjectsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput).
@@ -952,19 +941,24 @@ impl DescribeObjectsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePipelineOutput {}
+pub struct DeletePipelineOutput  {
+}
 /// See [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
 pub mod delete_pipeline_output {
-
+    
     /// A builder for [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
         pub fn build(self) -> crate::output::DeletePipelineOutput {
-            crate::output::DeletePipelineOutput {}
+            crate::output::DeletePipelineOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePipelineOutput {
     /// Creates a new builder-style object to manufacture [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
@@ -976,19 +970,24 @@ impl DeletePipelineOutput {
 /// <p>Contains the output of DeactivatePipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeactivatePipelineOutput {}
+pub struct DeactivatePipelineOutput  {
+}
 /// See [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput).
 pub mod deactivate_pipeline_output {
-
+    
     /// A builder for [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput).
         pub fn build(self) -> crate::output::DeactivatePipelineOutput {
-            crate::output::DeactivatePipelineOutput {}
+            crate::output::DeactivatePipelineOutput {
+            }
         }
     }
+    
+    
 }
 impl DeactivatePipelineOutput {
     /// Creates a new builder-style object to manufacture [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput).
@@ -1000,20 +999,20 @@ impl DeactivatePipelineOutput {
 /// <p>Contains the output of CreatePipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePipelineOutput {
+pub struct CreatePipelineOutput  {
     /// <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
     #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
 }
 impl CreatePipelineOutput {
     /// <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
 }
 /// See [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
 pub mod create_pipeline_output {
-
+    
     /// A builder for [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1027,16 +1026,18 @@ pub mod create_pipeline_output {
         }
         /// <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_id = input;
-            self
+            self.pipeline_id = input; self
         }
         /// Consumes the builder and constructs a [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
         pub fn build(self) -> crate::output::CreatePipelineOutput {
             crate::output::CreatePipelineOutput {
-                pipeline_id: self.pipeline_id,
+                pipeline_id: self.pipeline_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePipelineOutput {
     /// Creates a new builder-style object to manufacture [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
@@ -1048,19 +1049,24 @@ impl CreatePipelineOutput {
 /// <p>Contains the output of AddTags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsOutput {}
+pub struct AddTagsOutput  {
+}
 /// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
-
+    
     /// A builder for [`AddTagsOutput`](crate::output::AddTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsOutput`](crate::output::AddTagsOutput).
         pub fn build(self) -> crate::output::AddTagsOutput {
-            crate::output::AddTagsOutput {}
+            crate::output::AddTagsOutput {
+            }
         }
     }
+    
+    
 }
 impl AddTagsOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput).
@@ -1072,19 +1078,24 @@ impl AddTagsOutput {
 /// <p>Contains the output of ActivatePipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivatePipelineOutput {}
+pub struct ActivatePipelineOutput  {
+}
 /// See [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput).
 pub mod activate_pipeline_output {
-
+    
     /// A builder for [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput).
         pub fn build(self) -> crate::output::ActivatePipelineOutput {
-            crate::output::ActivatePipelineOutput {}
+            crate::output::ActivatePipelineOutput {
+            }
         }
     }
+    
+    
 }
 impl ActivatePipelineOutput {
     /// Creates a new builder-style object to manufacture [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput).
@@ -1092,3 +1103,4 @@ impl ActivatePipelineOutput {
         crate::output::activate_pipeline_output::Builder::default()
     }
 }
+

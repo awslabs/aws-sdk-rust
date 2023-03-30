@@ -3,16 +3,14 @@ use std::fmt::Write;
 
 /// See [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
 pub mod create_environment_input {
-
+    
     /// A builder for [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) federation_mode: std::option::Option<crate::model::FederationMode>,
         pub(crate) federation_parameters: std::option::Option<crate::model::FederationParameters>,
         pub(crate) superuser_parameters: std::option::Option<crate::model::SuperuserParameters>,
@@ -26,8 +24,7 @@ pub mod create_environment_input {
         }
         /// <p>The name of the FinSpace environment to be created.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the FinSpace environment to be created.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -36,8 +33,7 @@ pub mod create_environment_input {
         }
         /// <p>The description of the FinSpace environment to be created.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -46,54 +42,39 @@ pub mod create_environment_input {
         }
         /// <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Add tags to your FinSpace environment.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Add tags to your FinSpace environment.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
-        /// <p>Authentication mode for the environment.</p>
-        /// <ul>
-        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+        /// <p>Authentication mode for the environment.</p> 
+        /// <ul> 
+        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li> 
+        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li> 
         /// </ul>
         pub fn federation_mode(mut self, input: crate::model::FederationMode) -> Self {
             self.federation_mode = Some(input);
             self
         }
-        /// <p>Authentication mode for the environment.</p>
-        /// <ul>
-        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+        /// <p>Authentication mode for the environment.</p> 
+        /// <ul> 
+        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li> 
+        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li> 
         /// </ul>
-        pub fn set_federation_mode(
-            mut self,
-            input: std::option::Option<crate::model::FederationMode>,
-        ) -> Self {
-            self.federation_mode = input;
-            self
+        pub fn set_federation_mode(mut self, input: std::option::Option<crate::model::FederationMode>) -> Self {
+            self.federation_mode = input; self
         }
         /// <p>Configuration information when authentication mode is FEDERATED.</p>
         pub fn federation_parameters(mut self, input: crate::model::FederationParameters) -> Self {
@@ -101,12 +82,8 @@ pub mod create_environment_input {
             self
         }
         /// <p>Configuration information when authentication mode is FEDERATED.</p>
-        pub fn set_federation_parameters(
-            mut self,
-            input: std::option::Option<crate::model::FederationParameters>,
-        ) -> Self {
-            self.federation_parameters = input;
-            self
+        pub fn set_federation_parameters(mut self, input: std::option::Option<crate::model::FederationParameters>) -> Self {
+            self.federation_parameters = input; self
         }
         /// <p>Configuration information for the superuser.</p>
         pub fn superuser_parameters(mut self, input: crate::model::SuperuserParameters) -> Self {
@@ -114,178 +91,126 @@ pub mod create_environment_input {
             self
         }
         /// <p>Configuration information for the superuser.</p>
-        pub fn set_superuser_parameters(
-            mut self,
-            input: std::option::Option<crate::model::SuperuserParameters>,
-        ) -> Self {
-            self.superuser_parameters = input;
-            self
+        pub fn set_superuser_parameters(mut self, input: std::option::Option<crate::model::SuperuserParameters>) -> Self {
+            self.superuser_parameters = input; self
         }
         /// Appends an item to `data_bundles`.
         ///
         /// To override the contents of this collection use [`set_data_bundles`](Self::set_data_bundles).
         ///
-        /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
-        /// <ul>
-        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
-        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
+        /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p> 
+        /// <ul> 
+        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li> 
+        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li> 
         /// </ul>
         pub fn data_bundles(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.data_bundles.unwrap_or_default();
-            v.push(input.into());
-            self.data_bundles = Some(v);
-            self
+                            v.push(input.into());
+                            self.data_bundles = Some(v);
+                            self
         }
-        /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
-        /// <ul>
-        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
-        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
+        /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p> 
+        /// <ul> 
+        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li> 
+        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li> 
         /// </ul>
-        pub fn set_data_bundles(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.data_bundles = input;
-            self
+        pub fn set_data_bundles(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.data_bundles = input; self
         }
         /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateEnvironmentInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateEnvironmentInput {
-                name: self.name,
-                description: self.description,
-                kms_key_id: self.kms_key_id,
-                tags: self.tags,
-                federation_mode: self.federation_mode,
-                federation_parameters: self.federation_parameters,
-                superuser_parameters: self.superuser_parameters,
-                data_bundles: self.data_bundles,
-            })
+        pub fn build(self) -> Result<crate::input::CreateEnvironmentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateEnvironmentInput {
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    kms_key_id: self.kms_key_id
+                    ,
+                    tags: self.tags
+                    ,
+                    federation_mode: self.federation_mode
+                    ,
+                    federation_parameters: self.federation_parameters
+                    ,
+                    superuser_parameters: self.superuser_parameters
+                    ,
+                    data_bundles: self.data_bundles
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateEnvironment`](crate::operation::CreateEnvironment)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateEnvironment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateEnvironment, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateEnvironmentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateEnvironmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/environment").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateEnvironmentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateEnvironmentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_environment(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_environment(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateEnvironment::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateEnvironment",
-            "finspace",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateEnvironment::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateEnvironment", "finspace"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -297,7 +222,7 @@ impl CreateEnvironmentInput {
 
 /// See [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput).
 pub mod delete_environment_input {
-
+    
     /// A builder for [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -310,100 +235,54 @@ pub mod delete_environment_input {
             self
         }
         /// <p>The identifier for the FinSpace environment.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteEnvironmentInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteEnvironmentInput {
-                environment_id: self.environment_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteEnvironmentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteEnvironmentInput {
+                    environment_id: self.environment_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEnvironment`](crate::operation::DeleteEnvironment)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteEnvironment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteEnvironment, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteEnvironmentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteEnvironmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.environment_id;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "environment_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let environment_id = aws_smithy_http::label::fmt_string(
-                    input_1,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_1 = input_1.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("environment_id", "cannot be empty or unset"))?;
+                let environment_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "environment_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/environment/{environmentId}",
-                    environmentId = environment_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("environment_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/environment/{environmentId}", environmentId = environment_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteEnvironmentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteEnvironmentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -413,51 +292,34 @@ impl DeleteEnvironmentInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteEnvironment::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteEnvironment",
-            "finspace",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteEnvironment::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteEnvironment", "finspace"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -469,7 +331,7 @@ impl DeleteEnvironmentInput {
 
 /// See [`GetEnvironmentInput`](crate::input::GetEnvironmentInput).
 pub mod get_environment_input {
-
+    
     /// A builder for [`GetEnvironmentInput`](crate::input::GetEnvironmentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -482,98 +344,54 @@ pub mod get_environment_input {
             self
         }
         /// <p>The identifier of the FinSpace environment.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// Consumes the builder and constructs a [`GetEnvironmentInput`](crate::input::GetEnvironmentInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetEnvironmentInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetEnvironmentInput {
-                environment_id: self.environment_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetEnvironmentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetEnvironmentInput {
+                    environment_id: self.environment_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`GetEnvironment`](crate::operation::GetEnvironment)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetEnvironment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetEnvironment, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetEnvironmentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetEnvironmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.environment_id;
-                let input_2 = input_2.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "environment_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let environment_id = aws_smithy_http::label::fmt_string(
-                    input_2,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_2 = input_2.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("environment_id", "cannot be empty or unset"))?;
+                let environment_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "environment_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/environment/{environmentId}",
-                    environmentId = environment_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("environment_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/environment/{environmentId}", environmentId = environment_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetEnvironmentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetEnvironmentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -583,51 +401,34 @@ impl GetEnvironmentInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetEnvironment::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetEnvironment",
-            "finspace",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetEnvironment::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetEnvironment", "finspace"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -639,7 +440,7 @@ impl GetEnvironmentInput {
 
 /// See [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput).
 pub mod list_environments_input {
-
+    
     /// A builder for [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -654,8 +455,7 @@ pub mod list_environments_input {
         }
         /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the nextToken value from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return in this request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -664,91 +464,62 @@ pub mod list_environments_input {
         }
         /// <p>The maximum number of results to return in this request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListEnvironmentsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListEnvironmentsInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListEnvironmentsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListEnvironmentsInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListEnvironmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListEnvironments`](crate::operation::ListEnvironments)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListEnvironments,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListEnvironments, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListEnvironmentsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListEnvironmentsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/environment").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListEnvironmentsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListEnvironmentsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListEnvironmentsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListEnvironmentsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -759,51 +530,34 @@ impl ListEnvironmentsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListEnvironments::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListEnvironments",
-            "finspace",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListEnvironments::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListEnvironments", "finspace"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -815,7 +569,7 @@ impl ListEnvironmentsInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -829,92 +583,53 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListTagsForResourceInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.resource_arn;
-                let input_4 = input_4.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_4,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_4 = input_4.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -924,51 +639,34 @@ impl ListTagsForResourceInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "finspace",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "finspace"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -980,14 +678,12 @@ impl ListTagsForResourceInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the resource.</p>
@@ -997,184 +693,111 @@ pub mod tag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) for the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>One or more tags to be assigned to the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.resource_arn;
-                let input_5 = input_5.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_5,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_5 = input_5.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "finspace",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "finspace"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1186,7 +809,7 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1201,8 +824,7 @@ pub mod untag_resource_input {
         }
         /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -1211,104 +833,60 @@ pub mod untag_resource_input {
         /// <p>The tag keys (names) of one or more tags to be removed.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p>The tag keys (names) of one or more tags to be removed.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.resource_arn;
-                let input_6 = input_6.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_6,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_6 = input_6.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::UntagResourceInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_7 = &_input.tag_keys;
-                let inner_7 = inner_7.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "tag_keys",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_7 = inner_7.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("tag_keys", "cannot be empty or unset"))?;
                 for inner_8 in inner_7 {
                     query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_8));
                 }
@@ -1316,12 +894,9 @@ impl UntagResourceInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1332,51 +907,34 @@ impl UntagResourceInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "finspace",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "finspace"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1388,7 +946,7 @@ impl UntagResourceInput {
 
 /// See [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
 pub mod update_environment_input {
-
+    
     /// A builder for [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1405,12 +963,8 @@ pub mod update_environment_input {
             self
         }
         /// <p>The identifier of the FinSpace environment.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The name of the environment.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1419,8 +973,7 @@ pub mod update_environment_input {
         }
         /// <p>The name of the environment.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the environment.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1429,29 +982,24 @@ pub mod update_environment_input {
         }
         /// <p>The description of the environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
-        /// <p>Authentication mode for the environment.</p>
-        /// <ul>
-        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+        /// <p>Authentication mode for the environment.</p> 
+        /// <ul> 
+        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li> 
+        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li> 
         /// </ul>
         pub fn federation_mode(mut self, input: crate::model::FederationMode) -> Self {
             self.federation_mode = Some(input);
             self
         }
-        /// <p>Authentication mode for the environment.</p>
-        /// <ul>
-        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+        /// <p>Authentication mode for the environment.</p> 
+        /// <ul> 
+        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li> 
+        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li> 
         /// </ul>
-        pub fn set_federation_mode(
-            mut self,
-            input: std::option::Option<crate::model::FederationMode>,
-        ) -> Self {
-            self.federation_mode = input;
-            self
+        pub fn set_federation_mode(mut self, input: std::option::Option<crate::model::FederationMode>) -> Self {
+            self.federation_mode = input; self
         }
         /// <p>Configuration information when authentication mode is FEDERATED.</p>
         pub fn federation_parameters(mut self, input: crate::model::FederationParameters) -> Self {
@@ -1459,172 +1007,103 @@ pub mod update_environment_input {
             self
         }
         /// <p>Configuration information when authentication mode is FEDERATED.</p>
-        pub fn set_federation_parameters(
-            mut self,
-            input: std::option::Option<crate::model::FederationParameters>,
-        ) -> Self {
-            self.federation_parameters = input;
-            self
+        pub fn set_federation_parameters(mut self, input: std::option::Option<crate::model::FederationParameters>) -> Self {
+            self.federation_parameters = input; self
         }
         /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateEnvironmentInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateEnvironmentInput {
-                environment_id: self.environment_id,
-                name: self.name,
-                description: self.description,
-                federation_mode: self.federation_mode,
-                federation_parameters: self.federation_parameters,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateEnvironmentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateEnvironmentInput {
+                    environment_id: self.environment_id
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    federation_mode: self.federation_mode
+                    ,
+                    federation_parameters: self.federation_parameters
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEnvironment`](crate::operation::UpdateEnvironment)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateEnvironment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateEnvironment, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateEnvironmentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateEnvironmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.environment_id;
-                let input_9 = input_9.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "environment_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let environment_id = aws_smithy_http::label::fmt_string(
-                    input_9,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_9 = input_9.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("environment_id", "cannot be empty or unset"))?;
+                let environment_id = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "environment_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/environment/{environmentId}",
-                    environmentId = environment_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("environment_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/environment/{environmentId}", environmentId = environment_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateEnvironmentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateEnvironmentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_environment(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_environment(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateEnvironment::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateEnvironment",
-            "finspace",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateEnvironment::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateEnvironment", "finspace"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1637,7 +1116,7 @@ impl UpdateEnvironmentInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEnvironmentInput {
+pub struct UpdateEnvironmentInput  {
     /// <p>The identifier of the FinSpace environment.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
@@ -1647,10 +1126,10 @@ pub struct UpdateEnvironmentInput {
     /// <p>The description of the environment.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>Authentication mode for the environment.</p>
-    /// <ul>
-    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+    /// <p>Authentication mode for the environment.</p> 
+    /// <ul> 
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li> 
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub federation_mode: std::option::Option<crate::model::FederationMode>,
@@ -1660,29 +1139,27 @@ pub struct UpdateEnvironmentInput {
 }
 impl UpdateEnvironmentInput {
     /// <p>The identifier of the FinSpace environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the environment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>Authentication mode for the environment.</p>
-    /// <ul>
-    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+    /// <p>Authentication mode for the environment.</p> 
+    /// <ul> 
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li> 
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li> 
     /// </ul>
-    pub fn federation_mode(&self) -> std::option::Option<&crate::model::FederationMode> {
+    pub fn federation_mode(&self) -> std::option::Option<& crate::model::FederationMode> {
         self.federation_mode.as_ref()
     }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
-    pub fn federation_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::FederationParameters> {
+    pub fn federation_parameters(&self) -> std::option::Option<& crate::model::FederationParameters> {
         self.federation_parameters.as_ref()
     }
 }
@@ -1690,7 +1167,7 @@ impl UpdateEnvironmentInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -1700,11 +1177,11 @@ pub struct UntagResourceInput {
 }
 impl UntagResourceInput {
     /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tag keys (names) of one or more tags to be removed.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -1712,25 +1189,21 @@ impl UntagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceInput {
+pub struct TagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) for the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tags to be assigned to the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>One or more tags to be assigned to the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -1738,14 +1211,14 @@ impl TagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
+pub struct ListTagsForResourceInput  {
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -1753,7 +1226,7 @@ impl ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEnvironmentsInput {
+pub struct ListEnvironmentsInput  {
     /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the nextToken value from the response object of the previous page call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1763,7 +1236,7 @@ pub struct ListEnvironmentsInput {
 }
 impl ListEnvironmentsInput {
     /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the nextToken value from the response object of the previous page call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in this request.</p>
@@ -1775,14 +1248,14 @@ impl ListEnvironmentsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEnvironmentInput {
+pub struct GetEnvironmentInput  {
     /// <p>The identifier of the FinSpace environment.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl GetEnvironmentInput {
     /// <p>The identifier of the FinSpace environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
 }
@@ -1790,14 +1263,14 @@ impl GetEnvironmentInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEnvironmentInput {
+pub struct DeleteEnvironmentInput  {
     /// <p>The identifier for the FinSpace environment.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl DeleteEnvironmentInput {
     /// <p>The identifier for the FinSpace environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
 }
@@ -1805,7 +1278,7 @@ impl DeleteEnvironmentInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEnvironmentInput {
+pub struct CreateEnvironmentInput  {
     /// <p>The name of the FinSpace environment to be created.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1817,12 +1290,11 @@ pub struct CreateEnvironmentInput {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Add tags to your FinSpace environment.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Authentication mode for the environment.</p>
-    /// <ul>
-    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Authentication mode for the environment.</p> 
+    /// <ul> 
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li> 
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub federation_mode: std::option::Option<crate::model::FederationMode>,
@@ -1832,58 +1304,54 @@ pub struct CreateEnvironmentInput {
     /// <p>Configuration information for the superuser.</p>
     #[doc(hidden)]
     pub superuser_parameters: std::option::Option<crate::model::SuperuserParameters>,
-    /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
-    /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
+    /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p> 
+    /// <ul> 
+    /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li> 
+    /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub data_bundles: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateEnvironmentInput {
     /// <p>The name of the FinSpace environment to be created.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the FinSpace environment to be created.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Add tags to your FinSpace environment.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Authentication mode for the environment.</p>
-    /// <ul>
-    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
-    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+    /// <p>Authentication mode for the environment.</p> 
+    /// <ul> 
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li> 
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li> 
     /// </ul>
-    pub fn federation_mode(&self) -> std::option::Option<&crate::model::FederationMode> {
+    pub fn federation_mode(&self) -> std::option::Option<& crate::model::FederationMode> {
         self.federation_mode.as_ref()
     }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
-    pub fn federation_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::FederationParameters> {
+    pub fn federation_parameters(&self) -> std::option::Option<& crate::model::FederationParameters> {
         self.federation_parameters.as_ref()
     }
     /// <p>Configuration information for the superuser.</p>
-    pub fn superuser_parameters(&self) -> std::option::Option<&crate::model::SuperuserParameters> {
+    pub fn superuser_parameters(&self) -> std::option::Option<& crate::model::SuperuserParameters> {
         self.superuser_parameters.as_ref()
     }
-    /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
-    /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
+    /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p> 
+    /// <ul> 
+    /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li> 
+    /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li> 
     /// </ul>
-    pub fn data_bundles(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn data_bundles(&self) -> std::option::Option<& [std::string::String]> {
         self.data_bundles.as_deref()
     }
 }
+

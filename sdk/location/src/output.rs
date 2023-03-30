@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTrackerConsumersOutput {
+pub struct ListTrackerConsumersOutput  {
     /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
     #[doc(hidden)]
     pub consumer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12,17 +12,17 @@ pub struct ListTrackerConsumersOutput {
 }
 impl ListTrackerConsumersOutput {
     /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
-    pub fn consumer_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn consumer_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.consumer_arns.as_deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTrackerConsumersOutput`](crate::output::ListTrackerConsumersOutput).
 pub mod list_tracker_consumers_output {
-
+    
     /// A builder for [`ListTrackerConsumersOutput`](crate::output::ListTrackerConsumersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,17 +37,13 @@ pub mod list_tracker_consumers_output {
         /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
         pub fn consumer_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.consumer_arns.unwrap_or_default();
-            v.push(input.into());
-            self.consumer_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.consumer_arns = Some(v);
+                            self
         }
         /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
-        pub fn set_consumer_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.consumer_arns = input;
-            self
+        pub fn set_consumer_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.consumer_arns = input; self
         }
         /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,17 +52,20 @@ pub mod list_tracker_consumers_output {
         }
         /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTrackerConsumersOutput`](crate::output::ListTrackerConsumersOutput).
         pub fn build(self) -> crate::output::ListTrackerConsumersOutput {
             crate::output::ListTrackerConsumersOutput {
-                consumer_arns: self.consumer_arns,
-                next_token: self.next_token,
+                consumer_arns: self.consumer_arns
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTrackerConsumersOutput {
     /// Creates a new builder-style object to manufacture [`ListTrackerConsumersOutput`](crate::output::ListTrackerConsumersOutput).
@@ -78,7 +77,7 @@ impl ListTrackerConsumersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDevicePositionsOutput {
+pub struct ListDevicePositionsOutput  {
     /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
     #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::ListDevicePositionsResponseEntry>>,
@@ -88,24 +87,21 @@ pub struct ListDevicePositionsOutput {
 }
 impl ListDevicePositionsOutput {
     /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
-    pub fn entries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ListDevicePositionsResponseEntry]> {
+    pub fn entries(&self) -> std::option::Option<& [crate::model::ListDevicePositionsResponseEntry]> {
         self.entries.as_deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDevicePositionsOutput`](crate::output::ListDevicePositionsOutput).
 pub mod list_device_positions_output {
-
+    
     /// A builder for [`ListDevicePositionsOutput`](crate::output::ListDevicePositionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entries:
-            std::option::Option<std::vec::Vec<crate::model::ListDevicePositionsResponseEntry>>,
+        pub(crate) entries: std::option::Option<std::vec::Vec<crate::model::ListDevicePositionsResponseEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -116,19 +112,13 @@ pub mod list_device_positions_output {
         /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
         pub fn entries(mut self, input: crate::model::ListDevicePositionsResponseEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input);
-            self.entries = Some(v);
-            self
+                            v.push(input);
+                            self.entries = Some(v);
+                            self
         }
         /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
-        pub fn set_entries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ListDevicePositionsResponseEntry>,
-            >,
-        ) -> Self {
-            self.entries = input;
-            self
+        pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListDevicePositionsResponseEntry>>) -> Self {
+            self.entries = input; self
         }
         /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,17 +127,20 @@ pub mod list_device_positions_output {
         }
         /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDevicePositionsOutput`](crate::output::ListDevicePositionsOutput).
         pub fn build(self) -> crate::output::ListDevicePositionsOutput {
             crate::output::ListDevicePositionsOutput {
-                entries: self.entries,
-                next_token: self.next_token,
+                entries: self.entries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDevicePositionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDevicePositionsOutput`](crate::output::ListDevicePositionsOutput).
@@ -159,7 +152,7 @@ impl ListDevicePositionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDevicePositionHistoryOutput {
+pub struct GetDevicePositionHistoryOutput  {
     /// <p>Contains the position history details for the requested device.</p>
     #[doc(hidden)]
     pub device_positions: std::option::Option<std::vec::Vec<crate::model::DevicePosition>>,
@@ -169,22 +162,21 @@ pub struct GetDevicePositionHistoryOutput {
 }
 impl GetDevicePositionHistoryOutput {
     /// <p>Contains the position history details for the requested device.</p>
-    pub fn device_positions(&self) -> std::option::Option<&[crate::model::DevicePosition]> {
+    pub fn device_positions(&self) -> std::option::Option<& [crate::model::DevicePosition]> {
         self.device_positions.as_deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetDevicePositionHistoryOutput`](crate::output::GetDevicePositionHistoryOutput).
 pub mod get_device_position_history_output {
-
+    
     /// A builder for [`GetDevicePositionHistoryOutput`](crate::output::GetDevicePositionHistoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) device_positions:
-            std::option::Option<std::vec::Vec<crate::model::DevicePosition>>,
+        pub(crate) device_positions: std::option::Option<std::vec::Vec<crate::model::DevicePosition>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -195,17 +187,13 @@ pub mod get_device_position_history_output {
         /// <p>Contains the position history details for the requested device.</p>
         pub fn device_positions(mut self, input: crate::model::DevicePosition) -> Self {
             let mut v = self.device_positions.unwrap_or_default();
-            v.push(input);
-            self.device_positions = Some(v);
-            self
+                            v.push(input);
+                            self.device_positions = Some(v);
+                            self
         }
         /// <p>Contains the position history details for the requested device.</p>
-        pub fn set_device_positions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DevicePosition>>,
-        ) -> Self {
-            self.device_positions = input;
-            self
+        pub fn set_device_positions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DevicePosition>>) -> Self {
+            self.device_positions = input; self
         }
         /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -214,17 +202,20 @@ pub mod get_device_position_history_output {
         }
         /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetDevicePositionHistoryOutput`](crate::output::GetDevicePositionHistoryOutput).
         pub fn build(self) -> crate::output::GetDevicePositionHistoryOutput {
             crate::output::GetDevicePositionHistoryOutput {
-                device_positions: self.device_positions,
-                next_token: self.next_token,
+                device_positions: self.device_positions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDevicePositionHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetDevicePositionHistoryOutput`](crate::output::GetDevicePositionHistoryOutput).
@@ -236,7 +227,7 @@ impl GetDevicePositionHistoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetDevicePositionOutput {
+pub struct GetDevicePositionOutput  {
     /// <p>The device whose position you retrieved.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
@@ -254,39 +245,35 @@ pub struct GetDevicePositionOutput {
     pub accuracy: std::option::Option<crate::model::PositionalAccuracy>,
     /// <p>The properties associated with the position.</p>
     #[doc(hidden)]
-    pub position_properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub position_properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetDevicePositionOutput {
     /// <p>The device whose position you retrieved.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn sample_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn received_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn received_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.received_time.as_ref()
     }
     /// <p>The last known device position.</p>
-    pub fn position(&self) -> std::option::Option<&[f64]> {
+    pub fn position(&self) -> std::option::Option<& [f64]> {
         self.position.as_deref()
     }
     /// <p>The accuracy of the device position.</p>
-    pub fn accuracy(&self) -> std::option::Option<&crate::model::PositionalAccuracy> {
+    pub fn accuracy(&self) -> std::option::Option<& crate::model::PositionalAccuracy> {
         self.accuracy.as_ref()
     }
     /// <p>The properties associated with the position.</p>
-    pub fn position_properties(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn position_properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.position_properties.as_ref()
     }
 }
-impl std::fmt::Debug for GetDevicePositionOutput {
+impl  std::fmt::Debug for GetDevicePositionOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDevicePositionOutput");
         formatter.field("device_id", &self.device_id);
@@ -300,7 +287,7 @@ impl std::fmt::Debug for GetDevicePositionOutput {
 }
 /// See [`GetDevicePositionOutput`](crate::output::GetDevicePositionOutput).
 pub mod get_device_position_output {
-
+    
     /// A builder for [`GetDevicePositionOutput`](crate::output::GetDevicePositionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -309,9 +296,7 @@ pub mod get_device_position_output {
         pub(crate) received_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) accuracy: std::option::Option<crate::model::PositionalAccuracy>,
-        pub(crate) position_properties: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) position_properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The device whose position you retrieved.</p>
@@ -321,8 +306,7 @@ pub mod get_device_position_output {
         }
         /// <p>The device whose position you retrieved.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -330,12 +314,8 @@ pub mod get_device_position_output {
             self
         }
         /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_sample_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.sample_time = input;
-            self
+        pub fn set_sample_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.sample_time = input; self
         }
         /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn received_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -343,12 +323,8 @@ pub mod get_device_position_output {
             self
         }
         /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_received_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.received_time = input;
-            self
+        pub fn set_received_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.received_time = input; self
         }
         /// Appends an item to `position`.
         ///
@@ -357,14 +333,13 @@ pub mod get_device_position_output {
         /// <p>The last known device position.</p>
         pub fn position(mut self, input: f64) -> Self {
             let mut v = self.position.unwrap_or_default();
-            v.push(input);
-            self.position = Some(v);
-            self
+                            v.push(input);
+                            self.position = Some(v);
+                            self
         }
         /// <p>The last known device position.</p>
         pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.position = input;
-            self
+            self.position = input; self
         }
         /// <p>The accuracy of the device position.</p>
         pub fn accuracy(mut self, input: crate::model::PositionalAccuracy) -> Self {
@@ -372,47 +347,39 @@ pub mod get_device_position_output {
             self
         }
         /// <p>The accuracy of the device position.</p>
-        pub fn set_accuracy(
-            mut self,
-            input: std::option::Option<crate::model::PositionalAccuracy>,
-        ) -> Self {
-            self.accuracy = input;
-            self
+        pub fn set_accuracy(mut self, input: std::option::Option<crate::model::PositionalAccuracy>) -> Self {
+            self.accuracy = input; self
         }
         /// Adds a key-value pair to `position_properties`.
         ///
         /// To override the contents of this collection use [`set_position_properties`](Self::set_position_properties).
         ///
         /// <p>The properties associated with the position.</p>
-        pub fn position_properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn position_properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.position_properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.position_properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.position_properties = Some(hash_map);
+                            self
         }
         /// <p>The properties associated with the position.</p>
-        pub fn set_position_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.position_properties = input;
-            self
+        pub fn set_position_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.position_properties = input; self
         }
         /// Consumes the builder and constructs a [`GetDevicePositionOutput`](crate::output::GetDevicePositionOutput).
         pub fn build(self) -> crate::output::GetDevicePositionOutput {
             crate::output::GetDevicePositionOutput {
-                device_id: self.device_id,
-                sample_time: self.sample_time,
-                received_time: self.received_time,
-                position: self.position,
-                accuracy: self.accuracy,
-                position_properties: self.position_properties,
+                device_id: self.device_id
+                ,
+                sample_time: self.sample_time
+                ,
+                received_time: self.received_time
+                ,
+                position: self.position
+                ,
+                accuracy: self.accuracy
+                ,
+                position_properties: self.position_properties
+                ,
             }
         }
     }
@@ -428,6 +395,8 @@ pub mod get_device_position_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetDevicePositionOutput {
     /// Creates a new builder-style object to manufacture [`GetDevicePositionOutput`](crate::output::GetDevicePositionOutput).
@@ -439,19 +408,24 @@ impl GetDevicePositionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateTrackerConsumerOutput {}
+pub struct DisassociateTrackerConsumerOutput  {
+}
 /// See [`DisassociateTrackerConsumerOutput`](crate::output::DisassociateTrackerConsumerOutput).
 pub mod disassociate_tracker_consumer_output {
-
+    
     /// A builder for [`DisassociateTrackerConsumerOutput`](crate::output::DisassociateTrackerConsumerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateTrackerConsumerOutput`](crate::output::DisassociateTrackerConsumerOutput).
         pub fn build(self) -> crate::output::DisassociateTrackerConsumerOutput {
-            crate::output::DisassociateTrackerConsumerOutput {}
+            crate::output::DisassociateTrackerConsumerOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateTrackerConsumerOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateTrackerConsumerOutput`](crate::output::DisassociateTrackerConsumerOutput).
@@ -463,25 +437,24 @@ impl DisassociateTrackerConsumerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateDevicePositionOutput {
+pub struct BatchUpdateDevicePositionOutput  {
     /// <p>Contains error details for each device that failed to update its position.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchUpdateDevicePositionError>>,
 }
 impl BatchUpdateDevicePositionOutput {
     /// <p>Contains error details for each device that failed to update its position.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchUpdateDevicePositionError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::BatchUpdateDevicePositionError]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchUpdateDevicePositionOutput`](crate::output::BatchUpdateDevicePositionOutput).
 pub mod batch_update_device_position_output {
-
+    
     /// A builder for [`BatchUpdateDevicePositionOutput`](crate::output::BatchUpdateDevicePositionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) errors:
-            std::option::Option<std::vec::Vec<crate::model::BatchUpdateDevicePositionError>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchUpdateDevicePositionError>>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -491,25 +464,24 @@ pub mod batch_update_device_position_output {
         /// <p>Contains error details for each device that failed to update its position.</p>
         pub fn errors(mut self, input: crate::model::BatchUpdateDevicePositionError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>Contains error details for each device that failed to update its position.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchUpdateDevicePositionError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchUpdateDevicePositionError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchUpdateDevicePositionOutput`](crate::output::BatchUpdateDevicePositionOutput).
         pub fn build(self) -> crate::output::BatchUpdateDevicePositionOutput {
             crate::output::BatchUpdateDevicePositionOutput {
-                errors: self.errors,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchUpdateDevicePositionOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateDevicePositionOutput`](crate::output::BatchUpdateDevicePositionOutput).
@@ -521,7 +493,7 @@ impl BatchUpdateDevicePositionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetDevicePositionOutput {
+pub struct BatchGetDevicePositionOutput  {
     /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchGetDevicePositionError>>,
@@ -531,24 +503,22 @@ pub struct BatchGetDevicePositionOutput {
 }
 impl BatchGetDevicePositionOutput {
     /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchGetDevicePositionError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::BatchGetDevicePositionError]> {
         self.errors.as_deref()
     }
     /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
-    pub fn device_positions(&self) -> std::option::Option<&[crate::model::DevicePosition]> {
+    pub fn device_positions(&self) -> std::option::Option<& [crate::model::DevicePosition]> {
         self.device_positions.as_deref()
     }
 }
 /// See [`BatchGetDevicePositionOutput`](crate::output::BatchGetDevicePositionOutput).
 pub mod batch_get_device_position_output {
-
+    
     /// A builder for [`BatchGetDevicePositionOutput`](crate::output::BatchGetDevicePositionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) errors:
-            std::option::Option<std::vec::Vec<crate::model::BatchGetDevicePositionError>>,
-        pub(crate) device_positions:
-            std::option::Option<std::vec::Vec<crate::model::DevicePosition>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchGetDevicePositionError>>,
+        pub(crate) device_positions: std::option::Option<std::vec::Vec<crate::model::DevicePosition>>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -558,17 +528,13 @@ pub mod batch_get_device_position_output {
         /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
         pub fn errors(mut self, input: crate::model::BatchGetDevicePositionError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchGetDevicePositionError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetDevicePositionError>>) -> Self {
+            self.errors = input; self
         }
         /// Appends an item to `device_positions`.
         ///
@@ -577,26 +543,26 @@ pub mod batch_get_device_position_output {
         /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
         pub fn device_positions(mut self, input: crate::model::DevicePosition) -> Self {
             let mut v = self.device_positions.unwrap_or_default();
-            v.push(input);
-            self.device_positions = Some(v);
-            self
+                            v.push(input);
+                            self.device_positions = Some(v);
+                            self
         }
         /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
-        pub fn set_device_positions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DevicePosition>>,
-        ) -> Self {
-            self.device_positions = input;
-            self
+        pub fn set_device_positions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DevicePosition>>) -> Self {
+            self.device_positions = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetDevicePositionOutput`](crate::output::BatchGetDevicePositionOutput).
         pub fn build(self) -> crate::output::BatchGetDevicePositionOutput {
             crate::output::BatchGetDevicePositionOutput {
-                errors: self.errors,
-                device_positions: self.device_positions,
+                errors: self.errors
+                ,
+                device_positions: self.device_positions
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetDevicePositionOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDevicePositionOutput`](crate::output::BatchGetDevicePositionOutput).
@@ -608,28 +574,24 @@ impl BatchGetDevicePositionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteDevicePositionHistoryOutput {
+pub struct BatchDeleteDevicePositionHistoryOutput  {
     /// <p>Contains error details for each device history that failed to delete.</p>
     #[doc(hidden)]
-    pub errors:
-        std::option::Option<std::vec::Vec<crate::model::BatchDeleteDevicePositionHistoryError>>,
+    pub errors: std::option::Option<std::vec::Vec<crate::model::BatchDeleteDevicePositionHistoryError>>,
 }
 impl BatchDeleteDevicePositionHistoryOutput {
     /// <p>Contains error details for each device history that failed to delete.</p>
-    pub fn errors(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchDeleteDevicePositionHistoryError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::BatchDeleteDevicePositionHistoryError]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchDeleteDevicePositionHistoryOutput`](crate::output::BatchDeleteDevicePositionHistoryOutput).
 pub mod batch_delete_device_position_history_output {
-
+    
     /// A builder for [`BatchDeleteDevicePositionHistoryOutput`](crate::output::BatchDeleteDevicePositionHistoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) errors:
-            std::option::Option<std::vec::Vec<crate::model::BatchDeleteDevicePositionHistoryError>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchDeleteDevicePositionHistoryError>>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -637,32 +599,26 @@ pub mod batch_delete_device_position_history_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Contains error details for each device history that failed to delete.</p>
-        pub fn errors(
-            mut self,
-            input: crate::model::BatchDeleteDevicePositionHistoryError,
-        ) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchDeleteDevicePositionHistoryError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>Contains error details for each device history that failed to delete.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchDeleteDevicePositionHistoryError>,
-            >,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchDeleteDevicePositionHistoryError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchDeleteDevicePositionHistoryOutput`](crate::output::BatchDeleteDevicePositionHistoryOutput).
         pub fn build(self) -> crate::output::BatchDeleteDevicePositionHistoryOutput {
             crate::output::BatchDeleteDevicePositionHistoryOutput {
-                errors: self.errors,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDeleteDevicePositionHistoryOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteDevicePositionHistoryOutput`](crate::output::BatchDeleteDevicePositionHistoryOutput).
@@ -674,19 +630,24 @@ impl BatchDeleteDevicePositionHistoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateTrackerConsumerOutput {}
+pub struct AssociateTrackerConsumerOutput  {
+}
 /// See [`AssociateTrackerConsumerOutput`](crate::output::AssociateTrackerConsumerOutput).
 pub mod associate_tracker_consumer_output {
-
+    
     /// A builder for [`AssociateTrackerConsumerOutput`](crate::output::AssociateTrackerConsumerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateTrackerConsumerOutput`](crate::output::AssociateTrackerConsumerOutput).
         pub fn build(self) -> crate::output::AssociateTrackerConsumerOutput {
-            crate::output::AssociateTrackerConsumerOutput {}
+            crate::output::AssociateTrackerConsumerOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateTrackerConsumerOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTrackerConsumerOutput`](crate::output::AssociateTrackerConsumerOutput).
@@ -698,7 +659,7 @@ impl AssociateTrackerConsumerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTrackersOutput {
+pub struct ListTrackersOutput  {
     /// <p>Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
     #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::ListTrackersResponseEntry>>,
@@ -708,22 +669,21 @@ pub struct ListTrackersOutput {
 }
 impl ListTrackersOutput {
     /// <p>Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
-    pub fn entries(&self) -> std::option::Option<&[crate::model::ListTrackersResponseEntry]> {
+    pub fn entries(&self) -> std::option::Option<& [crate::model::ListTrackersResponseEntry]> {
         self.entries.as_deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTrackersOutput`](crate::output::ListTrackersOutput).
 pub mod list_trackers_output {
-
+    
     /// A builder for [`ListTrackersOutput`](crate::output::ListTrackersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entries:
-            std::option::Option<std::vec::Vec<crate::model::ListTrackersResponseEntry>>,
+        pub(crate) entries: std::option::Option<std::vec::Vec<crate::model::ListTrackersResponseEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -734,17 +694,13 @@ pub mod list_trackers_output {
         /// <p>Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
         pub fn entries(mut self, input: crate::model::ListTrackersResponseEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input);
-            self.entries = Some(v);
-            self
+                            v.push(input);
+                            self.entries = Some(v);
+                            self
         }
         /// <p>Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
-        pub fn set_entries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListTrackersResponseEntry>>,
-        ) -> Self {
-            self.entries = input;
-            self
+        pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListTrackersResponseEntry>>) -> Self {
+            self.entries = input; self
         }
         /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -753,17 +709,20 @@ pub mod list_trackers_output {
         }
         /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTrackersOutput`](crate::output::ListTrackersOutput).
         pub fn build(self) -> crate::output::ListTrackersOutput {
             crate::output::ListTrackersOutput {
-                entries: self.entries,
-                next_token: self.next_token,
+                entries: self.entries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTrackersOutput {
     /// Creates a new builder-style object to manufacture [`ListTrackersOutput`](crate::output::ListTrackersOutput).
@@ -775,13 +734,13 @@ impl ListTrackersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTrackerOutput {
+pub struct CreateTrackerOutput  {
     /// <p>The name of the tracker resource.</p>
     #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub tracker_arn: std::option::Option<std::string::String>,
@@ -791,24 +750,24 @@ pub struct CreateTrackerOutput {
 }
 impl CreateTrackerOutput {
     /// <p>The name of the tracker resource.</p>
-    pub fn tracker_name(&self) -> std::option::Option<&str> {
+    pub fn tracker_name(&self) -> std::option::Option<& str> {
         self.tracker_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
     /// </ul>
-    pub fn tracker_arn(&self) -> std::option::Option<&str> {
+    pub fn tracker_arn(&self) -> std::option::Option<& str> {
         self.tracker_arn.as_deref()
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
 /// See [`CreateTrackerOutput`](crate::output::CreateTrackerOutput).
 pub mod create_tracker_output {
-
+    
     /// A builder for [`CreateTrackerOutput`](crate::output::CreateTrackerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -824,24 +783,22 @@ pub mod create_tracker_output {
         }
         /// <p>The name of the tracker resource.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tracker_name = input;
-            self
+            self.tracker_name = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
         /// </ul>
         pub fn tracker_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.tracker_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
         /// </ul>
         pub fn set_tracker_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tracker_arn = input;
-            self
+            self.tracker_arn = input; self
         }
         /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -849,22 +806,23 @@ pub mod create_tracker_output {
             self
         }
         /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateTrackerOutput`](crate::output::CreateTrackerOutput).
         pub fn build(self) -> crate::output::CreateTrackerOutput {
             crate::output::CreateTrackerOutput {
-                tracker_name: self.tracker_name,
-                tracker_arn: self.tracker_arn,
-                create_time: self.create_time,
+                tracker_name: self.tracker_name
+                ,
+                tracker_arn: self.tracker_arn
+                ,
+                create_time: self.create_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateTrackerOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrackerOutput`](crate::output::CreateTrackerOutput).
@@ -876,19 +834,24 @@ impl CreateTrackerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTrackerOutput {}
+pub struct DeleteTrackerOutput  {
+}
 /// See [`DeleteTrackerOutput`](crate::output::DeleteTrackerOutput).
 pub mod delete_tracker_output {
-
+    
     /// A builder for [`DeleteTrackerOutput`](crate::output::DeleteTrackerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTrackerOutput`](crate::output::DeleteTrackerOutput).
         pub fn build(self) -> crate::output::DeleteTrackerOutput {
-            crate::output::DeleteTrackerOutput {}
+            crate::output::DeleteTrackerOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteTrackerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTrackerOutput`](crate::output::DeleteTrackerOutput).
@@ -900,13 +863,13 @@ impl DeleteTrackerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTrackerOutput {
+pub struct UpdateTrackerOutput  {
     /// <p>The name of the updated tracker resource.</p>
     #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub tracker_arn: std::option::Option<std::string::String>,
@@ -916,24 +879,24 @@ pub struct UpdateTrackerOutput {
 }
 impl UpdateTrackerOutput {
     /// <p>The name of the updated tracker resource.</p>
-    pub fn tracker_name(&self) -> std::option::Option<&str> {
+    pub fn tracker_name(&self) -> std::option::Option<& str> {
         self.tracker_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
     /// </ul>
-    pub fn tracker_arn(&self) -> std::option::Option<&str> {
+    pub fn tracker_arn(&self) -> std::option::Option<& str> {
         self.tracker_arn.as_deref()
     }
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`UpdateTrackerOutput`](crate::output::UpdateTrackerOutput).
 pub mod update_tracker_output {
-
+    
     /// A builder for [`UpdateTrackerOutput`](crate::output::UpdateTrackerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -949,24 +912,22 @@ pub mod update_tracker_output {
         }
         /// <p>The name of the updated tracker resource.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tracker_name = input;
-            self
+            self.tracker_name = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
         /// </ul>
         pub fn tracker_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.tracker_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
         /// </ul>
         pub fn set_tracker_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tracker_arn = input;
-            self
+            self.tracker_arn = input; self
         }
         /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -974,22 +935,23 @@ pub mod update_tracker_output {
             self
         }
         /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdateTrackerOutput`](crate::output::UpdateTrackerOutput).
         pub fn build(self) -> crate::output::UpdateTrackerOutput {
             crate::output::UpdateTrackerOutput {
-                tracker_name: self.tracker_name,
-                tracker_arn: self.tracker_arn,
-                update_time: self.update_time,
+                tracker_name: self.tracker_name
+                ,
+                tracker_arn: self.tracker_arn
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateTrackerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTrackerOutput`](crate::output::UpdateTrackerOutput).
@@ -1001,13 +963,13 @@ impl UpdateTrackerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrackerOutput {
+pub struct DescribeTrackerOutput  {
     /// <p>The name of the tracker resource.</p>
     #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub tracker_arn: std::option::Option<std::string::String>,
@@ -1015,10 +977,7 @@ pub struct DescribeTrackerOutput {
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>No longer used. Always returns an empty string.</p>
@@ -1027,8 +986,7 @@ pub struct DescribeTrackerOutput {
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>The tags associated with the tracker resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1044,60 +1002,54 @@ pub struct DescribeTrackerOutput {
 }
 impl DescribeTrackerOutput {
     /// <p>The name of the tracker resource.</p>
-    pub fn tracker_name(&self) -> std::option::Option<&str> {
+    pub fn tracker_name(&self) -> std::option::Option<& str> {
         self.tracker_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
     /// </ul>
-    pub fn tracker_arn(&self) -> std::option::Option<&str> {
+    pub fn tracker_arn(&self) -> std::option::Option<& str> {
         self.tracker_arn.as_deref()
     }
     /// <p>The optional description for the tracker resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    pub fn pricing_plan(&self) -> std::option::Option<& crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
-    pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
+    pub fn pricing_plan_data_source(&self) -> std::option::Option<& str> {
         self.pricing_plan_data_source.as_deref()
     }
     /// <p>The tags associated with the tracker resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The position filtering method of the tracker resource.</p>
-    pub fn position_filtering(&self) -> std::option::Option<&crate::model::PositionFiltering> {
+    pub fn position_filtering(&self) -> std::option::Option<& crate::model::PositionFiltering> {
         self.position_filtering.as_ref()
     }
 }
 /// See [`DescribeTrackerOutput`](crate::output::DescribeTrackerOutput).
 pub mod describe_tracker_output {
-
+    
     /// A builder for [`DescribeTrackerOutput`](crate::output::DescribeTrackerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1106,9 +1058,7 @@ pub mod describe_tracker_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
         pub(crate) pricing_plan_data_source: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -1122,24 +1072,22 @@ pub mod describe_tracker_output {
         }
         /// <p>The name of the tracker resource.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tracker_name = input;
-            self
+            self.tracker_name = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
         /// </ul>
         pub fn tracker_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.tracker_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
         /// </ul>
         pub fn set_tracker_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tracker_arn = input;
-            self
+            self.tracker_arn = input; self
         }
         /// <p>The optional description for the tracker resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1148,29 +1096,18 @@ pub mod describe_tracker_output {
         }
         /// <p>The optional description for the tracker resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
-        pub fn set_pricing_plan(
-            mut self,
-            input: std::option::Option<crate::model::PricingPlan>,
-        ) -> Self {
-            self.pricing_plan = input;
-            self
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+        pub fn set_pricing_plan(mut self, input: std::option::Option<crate::model::PricingPlan>) -> Self {
+            self.pricing_plan = input; self
         }
         /// <p>No longer used. Always returns an empty string.</p>
         #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
@@ -1180,37 +1117,23 @@ pub mod describe_tracker_output {
         }
         /// <p>No longer used. Always returns an empty string.</p>
         #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
-        pub fn set_pricing_plan_data_source(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pricing_plan_data_source = input;
-            self
+        pub fn set_pricing_plan_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pricing_plan_data_source = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the tracker resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags associated with the tracker resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1218,12 +1141,8 @@ pub mod describe_tracker_output {
             self
         }
         /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1231,12 +1150,8 @@ pub mod describe_tracker_output {
             self
         }
         /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1245,8 +1160,7 @@ pub mod describe_tracker_output {
         }
         /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The position filtering method of the tracker resource.</p>
         pub fn position_filtering(mut self, input: crate::model::PositionFiltering) -> Self {
@@ -1254,29 +1168,37 @@ pub mod describe_tracker_output {
             self
         }
         /// <p>The position filtering method of the tracker resource.</p>
-        pub fn set_position_filtering(
-            mut self,
-            input: std::option::Option<crate::model::PositionFiltering>,
-        ) -> Self {
-            self.position_filtering = input;
-            self
+        pub fn set_position_filtering(mut self, input: std::option::Option<crate::model::PositionFiltering>) -> Self {
+            self.position_filtering = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTrackerOutput`](crate::output::DescribeTrackerOutput).
         pub fn build(self) -> crate::output::DescribeTrackerOutput {
             crate::output::DescribeTrackerOutput {
-                tracker_name: self.tracker_name,
-                tracker_arn: self.tracker_arn,
-                description: self.description,
-                pricing_plan: self.pricing_plan,
-                pricing_plan_data_source: self.pricing_plan_data_source,
-                tags: self.tags,
-                create_time: self.create_time,
-                update_time: self.update_time,
-                kms_key_id: self.kms_key_id,
-                position_filtering: self.position_filtering,
+                tracker_name: self.tracker_name
+                ,
+                tracker_arn: self.tracker_arn
+                ,
+                description: self.description
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                pricing_plan_data_source: self.pricing_plan_data_source
+                ,
+                tags: self.tags
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                position_filtering: self.position_filtering
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTrackerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrackerOutput`](crate::output::DescribeTrackerOutput).
@@ -1288,11 +1210,10 @@ impl DescribeTrackerOutput {
 /// <p>Returns the result of the route matrix calculation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CalculateRouteMatrixOutput {
+pub struct CalculateRouteMatrixOutput  {
     /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
     #[doc(hidden)]
-    pub route_matrix:
-        std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::RouteMatrixEntry>>>,
+    pub route_matrix: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::RouteMatrixEntry>>>,
     /// <p>For routes calculated using an Esri route calculator resource, departure positions are snapped to the closest road. For Esri route calculator resources, this returns the list of departure/origin positions used for calculation of the <code>RouteMatrix</code>.</p>
     #[doc(hidden)]
     pub snapped_departure_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
@@ -1305,36 +1226,31 @@ pub struct CalculateRouteMatrixOutput {
 }
 impl CalculateRouteMatrixOutput {
     /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
-    pub fn route_matrix(
-        &self,
-    ) -> std::option::Option<&[std::vec::Vec<crate::model::RouteMatrixEntry>]> {
+    pub fn route_matrix(&self) -> std::option::Option<& [std::vec::Vec<crate::model::RouteMatrixEntry>]> {
         self.route_matrix.as_deref()
     }
     /// <p>For routes calculated using an Esri route calculator resource, departure positions are snapped to the closest road. For Esri route calculator resources, this returns the list of departure/origin positions used for calculation of the <code>RouteMatrix</code>.</p>
-    pub fn snapped_departure_positions(&self) -> std::option::Option<&[std::vec::Vec<f64>]> {
+    pub fn snapped_departure_positions(&self) -> std::option::Option<& [std::vec::Vec<f64>]> {
         self.snapped_departure_positions.as_deref()
     }
     /// <p>The list of destination positions for the route matrix used for calculation of the <code>RouteMatrix</code>.</p>
-    pub fn snapped_destination_positions(&self) -> std::option::Option<&[std::vec::Vec<f64>]> {
+    pub fn snapped_destination_positions(&self) -> std::option::Option<& [std::vec::Vec<f64>]> {
         self.snapped_destination_positions.as_deref()
     }
     /// <p>Contains information about the route matrix, <code>DataSource</code>, <code>DistanceUnit</code>, <code>RouteCount</code> and <code>ErrorCount</code>.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::model::CalculateRouteMatrixSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::model::CalculateRouteMatrixSummary> {
         self.summary.as_ref()
     }
 }
 /// See [`CalculateRouteMatrixOutput`](crate::output::CalculateRouteMatrixOutput).
 pub mod calculate_route_matrix_output {
-
+    
     /// A builder for [`CalculateRouteMatrixOutput`](crate::output::CalculateRouteMatrixOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) route_matrix:
-            std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::RouteMatrixEntry>>>,
-        pub(crate) snapped_departure_positions:
-            std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
-        pub(crate) snapped_destination_positions:
-            std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+        pub(crate) route_matrix: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::RouteMatrixEntry>>>,
+        pub(crate) snapped_departure_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+        pub(crate) snapped_destination_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
         pub(crate) summary: std::option::Option<crate::model::CalculateRouteMatrixSummary>,
     }
     impl Builder {
@@ -1343,24 +1259,15 @@ pub mod calculate_route_matrix_output {
         /// To override the contents of this collection use [`set_route_matrix`](Self::set_route_matrix).
         ///
         /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
-        pub fn route_matrix(
-            mut self,
-            input: std::vec::Vec<crate::model::RouteMatrixEntry>,
-        ) -> Self {
+        pub fn route_matrix(mut self, input: std::vec::Vec<crate::model::RouteMatrixEntry>) -> Self {
             let mut v = self.route_matrix.unwrap_or_default();
-            v.push(input);
-            self.route_matrix = Some(v);
-            self
+                            v.push(input);
+                            self.route_matrix = Some(v);
+                            self
         }
         /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
-        pub fn set_route_matrix(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<std::vec::Vec<crate::model::RouteMatrixEntry>>,
-            >,
-        ) -> Self {
-            self.route_matrix = input;
-            self
+        pub fn set_route_matrix(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::RouteMatrixEntry>>>) -> Self {
+            self.route_matrix = input; self
         }
         /// Appends an item to `snapped_departure_positions`.
         ///
@@ -1369,17 +1276,13 @@ pub mod calculate_route_matrix_output {
         /// <p>For routes calculated using an Esri route calculator resource, departure positions are snapped to the closest road. For Esri route calculator resources, this returns the list of departure/origin positions used for calculation of the <code>RouteMatrix</code>.</p>
         pub fn snapped_departure_positions(mut self, input: std::vec::Vec<f64>) -> Self {
             let mut v = self.snapped_departure_positions.unwrap_or_default();
-            v.push(input);
-            self.snapped_departure_positions = Some(v);
-            self
+                            v.push(input);
+                            self.snapped_departure_positions = Some(v);
+                            self
         }
         /// <p>For routes calculated using an Esri route calculator resource, departure positions are snapped to the closest road. For Esri route calculator resources, this returns the list of departure/origin positions used for calculation of the <code>RouteMatrix</code>.</p>
-        pub fn set_snapped_departure_positions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
-        ) -> Self {
-            self.snapped_departure_positions = input;
-            self
+        pub fn set_snapped_departure_positions(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>) -> Self {
+            self.snapped_departure_positions = input; self
         }
         /// Appends an item to `snapped_destination_positions`.
         ///
@@ -1388,17 +1291,13 @@ pub mod calculate_route_matrix_output {
         /// <p>The list of destination positions for the route matrix used for calculation of the <code>RouteMatrix</code>.</p>
         pub fn snapped_destination_positions(mut self, input: std::vec::Vec<f64>) -> Self {
             let mut v = self.snapped_destination_positions.unwrap_or_default();
-            v.push(input);
-            self.snapped_destination_positions = Some(v);
-            self
+                            v.push(input);
+                            self.snapped_destination_positions = Some(v);
+                            self
         }
         /// <p>The list of destination positions for the route matrix used for calculation of the <code>RouteMatrix</code>.</p>
-        pub fn set_snapped_destination_positions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
-        ) -> Self {
-            self.snapped_destination_positions = input;
-            self
+        pub fn set_snapped_destination_positions(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>) -> Self {
+            self.snapped_destination_positions = input; self
         }
         /// <p>Contains information about the route matrix, <code>DataSource</code>, <code>DistanceUnit</code>, <code>RouteCount</code> and <code>ErrorCount</code>.</p>
         pub fn summary(mut self, input: crate::model::CalculateRouteMatrixSummary) -> Self {
@@ -1406,23 +1305,25 @@ pub mod calculate_route_matrix_output {
             self
         }
         /// <p>Contains information about the route matrix, <code>DataSource</code>, <code>DistanceUnit</code>, <code>RouteCount</code> and <code>ErrorCount</code>.</p>
-        pub fn set_summary(
-            mut self,
-            input: std::option::Option<crate::model::CalculateRouteMatrixSummary>,
-        ) -> Self {
-            self.summary = input;
-            self
+        pub fn set_summary(mut self, input: std::option::Option<crate::model::CalculateRouteMatrixSummary>) -> Self {
+            self.summary = input; self
         }
         /// Consumes the builder and constructs a [`CalculateRouteMatrixOutput`](crate::output::CalculateRouteMatrixOutput).
         pub fn build(self) -> crate::output::CalculateRouteMatrixOutput {
             crate::output::CalculateRouteMatrixOutput {
-                route_matrix: self.route_matrix,
-                snapped_departure_positions: self.snapped_departure_positions,
-                snapped_destination_positions: self.snapped_destination_positions,
-                summary: self.summary,
+                route_matrix: self.route_matrix
+                ,
+                snapped_departure_positions: self.snapped_departure_positions
+                ,
+                snapped_destination_positions: self.snapped_destination_positions
+                ,
+                summary: self.summary
+                ,
             }
         }
     }
+    
+    
 }
 impl CalculateRouteMatrixOutput {
     /// Creates a new builder-style object to manufacture [`CalculateRouteMatrixOutput`](crate::output::CalculateRouteMatrixOutput).
@@ -1434,17 +1335,17 @@ impl CalculateRouteMatrixOutput {
 /// <p>Returns the result of the route calculation. Metadata includes legs and route summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CalculateRouteOutput {
-    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
-    /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
-    /// <ul>
-    /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
-    /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
-    /// </ul>
-    /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
-    /// <ul>
-    /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
-    /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
+pub struct CalculateRouteOutput  {
+    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p> 
+    /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p> 
+    /// <ul> 
+    /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li> 
+    /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li> 
+    /// </ul> 
+    /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p> 
+    /// <ul> 
+    /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li> 
+    /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub legs: std::option::Option<std::vec::Vec<crate::model::Leg>>,
@@ -1453,28 +1354,28 @@ pub struct CalculateRouteOutput {
     pub summary: std::option::Option<crate::model::CalculateRouteSummary>,
 }
 impl CalculateRouteOutput {
-    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
-    /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
-    /// <ul>
-    /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
-    /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
+    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p> 
+    /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p> 
+    /// <ul> 
+    /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li> 
+    /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li> 
+    /// </ul> 
+    /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p> 
+    /// <ul> 
+    /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li> 
+    /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li> 
     /// </ul>
-    /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
-    /// <ul>
-    /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
-    /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
-    /// </ul>
-    pub fn legs(&self) -> std::option::Option<&[crate::model::Leg]> {
+    pub fn legs(&self) -> std::option::Option<& [crate::model::Leg]> {
         self.legs.as_deref()
     }
     /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::model::CalculateRouteSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::model::CalculateRouteSummary> {
         self.summary.as_ref()
     }
 }
 /// See [`CalculateRouteOutput`](crate::output::CalculateRouteOutput).
 pub mod calculate_route_output {
-
+    
     /// A builder for [`CalculateRouteOutput`](crate::output::CalculateRouteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1486,40 +1387,36 @@ pub mod calculate_route_output {
         ///
         /// To override the contents of this collection use [`set_legs`](Self::set_legs).
         ///
-        /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
-        /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
-        /// <ul>
-        /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
-        /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
-        /// </ul>
-        /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
-        /// <ul>
-        /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
-        /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
+        /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p> 
+        /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p> 
+        /// <ul> 
+        /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li> 
+        /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li> 
+        /// </ul> 
+        /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p> 
+        /// <ul> 
+        /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li> 
+        /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li> 
         /// </ul>
         pub fn legs(mut self, input: crate::model::Leg) -> Self {
             let mut v = self.legs.unwrap_or_default();
-            v.push(input);
-            self.legs = Some(v);
-            self
+                            v.push(input);
+                            self.legs = Some(v);
+                            self
         }
-        /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
-        /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
-        /// <ul>
-        /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
-        /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
+        /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p> 
+        /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p> 
+        /// <ul> 
+        /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li> 
+        /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li> 
+        /// </ul> 
+        /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p> 
+        /// <ul> 
+        /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li> 
+        /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li> 
         /// </ul>
-        /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
-        /// <ul>
-        /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
-        /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
-        /// </ul>
-        pub fn set_legs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Leg>>,
-        ) -> Self {
-            self.legs = input;
-            self
+        pub fn set_legs(mut self, input: std::option::Option<std::vec::Vec<crate::model::Leg>>) -> Self {
+            self.legs = input; self
         }
         /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
         pub fn summary(mut self, input: crate::model::CalculateRouteSummary) -> Self {
@@ -1527,21 +1424,21 @@ pub mod calculate_route_output {
             self
         }
         /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
-        pub fn set_summary(
-            mut self,
-            input: std::option::Option<crate::model::CalculateRouteSummary>,
-        ) -> Self {
-            self.summary = input;
-            self
+        pub fn set_summary(mut self, input: std::option::Option<crate::model::CalculateRouteSummary>) -> Self {
+            self.summary = input; self
         }
         /// Consumes the builder and constructs a [`CalculateRouteOutput`](crate::output::CalculateRouteOutput).
         pub fn build(self) -> crate::output::CalculateRouteOutput {
             crate::output::CalculateRouteOutput {
-                legs: self.legs,
-                summary: self.summary,
+                legs: self.legs
+                ,
+                summary: self.summary
+                ,
             }
         }
     }
+    
+    
 }
 impl CalculateRouteOutput {
     /// Creates a new builder-style object to manufacture [`CalculateRouteOutput`](crate::output::CalculateRouteOutput).
@@ -1553,35 +1450,31 @@ impl CalculateRouteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRouteCalculatorsOutput {
+pub struct ListRouteCalculatorsOutput  {
     /// <p>Lists the route calculator resources that exist in your AWS account</p>
     #[doc(hidden)]
-    pub entries:
-        std::option::Option<std::vec::Vec<crate::model::ListRouteCalculatorsResponseEntry>>,
+    pub entries: std::option::Option<std::vec::Vec<crate::model::ListRouteCalculatorsResponseEntry>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a subsequent request to fetch the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRouteCalculatorsOutput {
     /// <p>Lists the route calculator resources that exist in your AWS account</p>
-    pub fn entries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ListRouteCalculatorsResponseEntry]> {
+    pub fn entries(&self) -> std::option::Option<& [crate::model::ListRouteCalculatorsResponseEntry]> {
         self.entries.as_deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a subsequent request to fetch the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRouteCalculatorsOutput`](crate::output::ListRouteCalculatorsOutput).
 pub mod list_route_calculators_output {
-
+    
     /// A builder for [`ListRouteCalculatorsOutput`](crate::output::ListRouteCalculatorsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entries:
-            std::option::Option<std::vec::Vec<crate::model::ListRouteCalculatorsResponseEntry>>,
+        pub(crate) entries: std::option::Option<std::vec::Vec<crate::model::ListRouteCalculatorsResponseEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1592,19 +1485,13 @@ pub mod list_route_calculators_output {
         /// <p>Lists the route calculator resources that exist in your AWS account</p>
         pub fn entries(mut self, input: crate::model::ListRouteCalculatorsResponseEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input);
-            self.entries = Some(v);
-            self
+                            v.push(input);
+                            self.entries = Some(v);
+                            self
         }
         /// <p>Lists the route calculator resources that exist in your AWS account</p>
-        pub fn set_entries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ListRouteCalculatorsResponseEntry>,
-            >,
-        ) -> Self {
-            self.entries = input;
-            self
+        pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListRouteCalculatorsResponseEntry>>) -> Self {
+            self.entries = input; self
         }
         /// <p>A pagination token indicating there are additional pages available. You can use the token in a subsequent request to fetch the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1613,17 +1500,20 @@ pub mod list_route_calculators_output {
         }
         /// <p>A pagination token indicating there are additional pages available. You can use the token in a subsequent request to fetch the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRouteCalculatorsOutput`](crate::output::ListRouteCalculatorsOutput).
         pub fn build(self) -> crate::output::ListRouteCalculatorsOutput {
             crate::output::ListRouteCalculatorsOutput {
-                entries: self.entries,
-                next_token: self.next_token,
+                entries: self.entries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRouteCalculatorsOutput {
     /// Creates a new builder-style object to manufacture [`ListRouteCalculatorsOutput`](crate::output::ListRouteCalculatorsOutput).
@@ -1635,52 +1525,52 @@ impl ListRouteCalculatorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRouteCalculatorOutput {
-    /// <p>The name of the route calculator resource. </p>
-    /// <ul>
-    /// <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li>
+pub struct CreateRouteCalculatorOutput  {
+    /// <p>The name of the route calculator resource. </p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub calculator_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub calculator_arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    /// <ul>
-    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateRouteCalculatorOutput {
-    /// <p>The name of the route calculator resource. </p>
-    /// <ul>
-    /// <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li>
+    /// <p>The name of the route calculator resource. </p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li> 
     /// </ul>
-    pub fn calculator_name(&self) -> std::option::Option<&str> {
+    pub fn calculator_name(&self) -> std::option::Option<& str> {
         self.calculator_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li> 
     /// </ul>
-    pub fn calculator_arn(&self) -> std::option::Option<&str> {
+    pub fn calculator_arn(&self) -> std::option::Option<& str> {
         self.calculator_arn.as_deref()
     }
-    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    /// <ul>
-    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
     /// </ul>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
 /// See [`CreateRouteCalculatorOutput`](crate::output::CreateRouteCalculatorOutput).
 pub mod create_route_calculator_output {
-
+    
     /// A builder for [`CreateRouteCalculatorOutput`](crate::output::CreateRouteCalculatorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1689,72 +1579,65 @@ pub mod create_route_calculator_output {
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The name of the route calculator resource. </p>
-        /// <ul>
-        /// <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li>
+        /// <p>The name of the route calculator resource. </p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li> 
         /// </ul>
         pub fn calculator_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.calculator_name = Some(input.into());
             self
         }
-        /// <p>The name of the route calculator resource. </p>
-        /// <ul>
-        /// <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li>
+        /// <p>The name of the route calculator resource. </p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li> 
         /// </ul>
-        pub fn set_calculator_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.calculator_name = input;
-            self
+        pub fn set_calculator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.calculator_name = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li> 
         /// </ul>
         pub fn calculator_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.calculator_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li> 
         /// </ul>
-        pub fn set_calculator_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.calculator_arn = input;
-            self
+        pub fn set_calculator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.calculator_arn = input; self
         }
-        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        /// <ul>
-        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
         /// </ul>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        /// <ul>
-        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
         /// </ul>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateRouteCalculatorOutput`](crate::output::CreateRouteCalculatorOutput).
         pub fn build(self) -> crate::output::CreateRouteCalculatorOutput {
             crate::output::CreateRouteCalculatorOutput {
-                calculator_name: self.calculator_name,
-                calculator_arn: self.calculator_arn,
-                create_time: self.create_time,
+                calculator_name: self.calculator_name
+                ,
+                calculator_arn: self.calculator_arn
+                ,
+                create_time: self.create_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRouteCalculatorOutput {
     /// Creates a new builder-style object to manufacture [`CreateRouteCalculatorOutput`](crate::output::CreateRouteCalculatorOutput).
@@ -1766,19 +1649,24 @@ impl CreateRouteCalculatorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRouteCalculatorOutput {}
+pub struct DeleteRouteCalculatorOutput  {
+}
 /// See [`DeleteRouteCalculatorOutput`](crate::output::DeleteRouteCalculatorOutput).
 pub mod delete_route_calculator_output {
-
+    
     /// A builder for [`DeleteRouteCalculatorOutput`](crate::output::DeleteRouteCalculatorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRouteCalculatorOutput`](crate::output::DeleteRouteCalculatorOutput).
         pub fn build(self) -> crate::output::DeleteRouteCalculatorOutput {
-            crate::output::DeleteRouteCalculatorOutput {}
+            crate::output::DeleteRouteCalculatorOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteRouteCalculatorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRouteCalculatorOutput`](crate::output::DeleteRouteCalculatorOutput).
@@ -1790,13 +1678,13 @@ impl DeleteRouteCalculatorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRouteCalculatorOutput {
+pub struct UpdateRouteCalculatorOutput  {
     /// <p>The name of the updated route calculator resource.</p>
     #[doc(hidden)]
     pub calculator_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub calculator_arn: std::option::Option<std::string::String>,
@@ -1806,24 +1694,24 @@ pub struct UpdateRouteCalculatorOutput {
 }
 impl UpdateRouteCalculatorOutput {
     /// <p>The name of the updated route calculator resource.</p>
-    pub fn calculator_name(&self) -> std::option::Option<&str> {
+    pub fn calculator_name(&self) -> std::option::Option<& str> {
         self.calculator_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li> 
     /// </ul>
-    pub fn calculator_arn(&self) -> std::option::Option<&str> {
+    pub fn calculator_arn(&self) -> std::option::Option<& str> {
         self.calculator_arn.as_deref()
     }
     /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`UpdateRouteCalculatorOutput`](crate::output::UpdateRouteCalculatorOutput).
 pub mod update_route_calculator_output {
-
+    
     /// A builder for [`UpdateRouteCalculatorOutput`](crate::output::UpdateRouteCalculatorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1838,31 +1726,23 @@ pub mod update_route_calculator_output {
             self
         }
         /// <p>The name of the updated route calculator resource.</p>
-        pub fn set_calculator_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.calculator_name = input;
-            self
+        pub fn set_calculator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.calculator_name = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li> 
         /// </ul>
         pub fn calculator_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.calculator_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li> 
         /// </ul>
-        pub fn set_calculator_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.calculator_arn = input;
-            self
+        pub fn set_calculator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.calculator_arn = input; self
         }
         /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1870,22 +1750,23 @@ pub mod update_route_calculator_output {
             self
         }
         /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRouteCalculatorOutput`](crate::output::UpdateRouteCalculatorOutput).
         pub fn build(self) -> crate::output::UpdateRouteCalculatorOutput {
             crate::output::UpdateRouteCalculatorOutput {
-                calculator_name: self.calculator_name,
-                calculator_arn: self.calculator_arn,
-                update_time: self.update_time,
+                calculator_name: self.calculator_name
+                ,
+                calculator_arn: self.calculator_arn
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRouteCalculatorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRouteCalculatorOutput`](crate::output::UpdateRouteCalculatorOutput).
@@ -1897,111 +1778,101 @@ impl UpdateRouteCalculatorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRouteCalculatorOutput {
+pub struct DescribeRouteCalculatorOutput  {
     /// <p>The name of the route calculator resource being described.</p>
     #[doc(hidden)]
     pub calculator_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub calculator_arn: std::option::Option<std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description of the route calculator resource.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    /// <ul>
-    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    /// <ul>
-    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+    /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
-    /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
-    /// </ul>
+    /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Esri</code> </p> </li> 
+    /// <li> <p> <code>Grab</code> </p> </li> 
+    /// <li> <p> <code>Here</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>Tags associated with route calculator resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DescribeRouteCalculatorOutput {
     /// <p>The name of the route calculator resource being described.</p>
-    pub fn calculator_name(&self) -> std::option::Option<&str> {
+    pub fn calculator_name(&self) -> std::option::Option<& str> {
         self.calculator_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li> 
     /// </ul>
-    pub fn calculator_arn(&self) -> std::option::Option<&str> {
+    pub fn calculator_arn(&self) -> std::option::Option<& str> {
         self.calculator_arn.as_deref()
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    pub fn pricing_plan(&self) -> std::option::Option<& crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>The optional description of the route calculator resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    /// <ul>
-    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
     /// </ul>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    /// <ul>
-    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+    /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
     /// </ul>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
-    /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
-    /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
-    /// </ul>
+    /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Esri</code> </p> </li> 
+    /// <li> <p> <code>Grab</code> </p> </li> 
+    /// <li> <p> <code>Here</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(&self) -> std::option::Option<&str> {
+    pub fn data_source(&self) -> std::option::Option<& str> {
         self.data_source.as_deref()
     }
     /// <p>Tags associated with route calculator resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DescribeRouteCalculatorOutput`](crate::output::DescribeRouteCalculatorOutput).
 pub mod describe_route_calculator_output {
-
+    
     /// A builder for [`DescribeRouteCalculatorOutput`](crate::output::DescribeRouteCalculatorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2012,9 +1883,7 @@ pub mod describe_route_calculator_output {
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_source: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the route calculator resource being described.</p>
@@ -2023,52 +1892,34 @@ pub mod describe_route_calculator_output {
             self
         }
         /// <p>The name of the route calculator resource being described.</p>
-        pub fn set_calculator_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.calculator_name = input;
-            self
+        pub fn set_calculator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.calculator_name = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li> 
         /// </ul>
         pub fn calculator_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.calculator_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li> 
         /// </ul>
-        pub fn set_calculator_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.calculator_arn = input;
-            self
+        pub fn set_calculator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.calculator_arn = input; self
         }
         /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
-        pub fn set_pricing_plan(
-            mut self,
-            input: std::option::Option<crate::model::PricingPlan>,
-        ) -> Self {
-            self.pricing_plan = input;
-            self
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+        pub fn set_pricing_plan(mut self, input: std::option::Option<crate::model::PricingPlan>) -> Self {
+            self.pricing_plan = input; self
         }
         /// <p>The optional description of the route calculator resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2077,108 +1928,98 @@ pub mod describe_route_calculator_output {
         }
         /// <p>The optional description of the route calculator resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
-        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        /// <ul>
-        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
         /// </ul>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        /// <ul>
-        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
         /// </ul>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
-        /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        /// <ul>
-        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+        /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
         /// </ul>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
-        /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        /// <ul>
-        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+        /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
         /// </ul>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
-        /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
-        /// <ul>
-        /// <li> <p> <code>Esri</code> </p> </li>
-        /// <li> <p> <code>Grab</code> </p> </li>
-        /// <li> <p> <code>Here</code> </p> </li>
-        /// </ul>
+        /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Esri</code> </p> </li> 
+        /// <li> <p> <code>Grab</code> </p> </li> 
+        /// <li> <p> <code>Here</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
-        /// <ul>
-        /// <li> <p> <code>Esri</code> </p> </li>
-        /// <li> <p> <code>Grab</code> </p> </li>
-        /// <li> <p> <code>Here</code> </p> </li>
-        /// </ul>
+        /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Esri</code> </p> </li> 
+        /// <li> <p> <code>Grab</code> </p> </li> 
+        /// <li> <p> <code>Here</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_source = input;
-            self
+            self.data_source = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags associated with route calculator resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags associated with route calculator resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRouteCalculatorOutput`](crate::output::DescribeRouteCalculatorOutput).
         pub fn build(self) -> crate::output::DescribeRouteCalculatorOutput {
             crate::output::DescribeRouteCalculatorOutput {
-                calculator_name: self.calculator_name,
-                calculator_arn: self.calculator_arn,
-                pricing_plan: self.pricing_plan,
-                description: self.description,
-                create_time: self.create_time,
-                update_time: self.update_time,
-                data_source: self.data_source,
-                tags: self.tags,
+                calculator_name: self.calculator_name
+                ,
+                calculator_arn: self.calculator_arn
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                description: self.description
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
+                data_source: self.data_source
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeRouteCalculatorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRouteCalculatorOutput`](crate::output::DescribeRouteCalculatorOutput).
@@ -2190,29 +2031,29 @@ impl DescribeRouteCalculatorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchPlaceIndexForTextOutput {
+pub struct SearchPlaceIndexForTextOutput  {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::model::SearchPlaceIndexForTextSummary>,
-    /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
+    /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p> 
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
     #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::SearchForTextResult>>,
 }
 impl SearchPlaceIndexForTextOutput {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
-    pub fn summary(&self) -> std::option::Option<&crate::model::SearchPlaceIndexForTextSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::model::SearchPlaceIndexForTextSummary> {
         self.summary.as_ref()
     }
-    /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
+    /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p> 
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
-    pub fn results(&self) -> std::option::Option<&[crate::model::SearchForTextResult]> {
+    pub fn results(&self) -> std::option::Option<& [crate::model::SearchForTextResult]> {
         self.results.as_deref()
     }
 }
 /// See [`SearchPlaceIndexForTextOutput`](crate::output::SearchPlaceIndexForTextOutput).
 pub mod search_place_index_for_text_output {
-
+    
     /// A builder for [`SearchPlaceIndexForTextOutput`](crate::output::SearchPlaceIndexForTextOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2226,42 +2067,38 @@ pub mod search_place_index_for_text_output {
             self
         }
         /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
-        pub fn set_summary(
-            mut self,
-            input: std::option::Option<crate::model::SearchPlaceIndexForTextSummary>,
-        ) -> Self {
-            self.summary = input;
-            self
+        pub fn set_summary(mut self, input: std::option::Option<crate::model::SearchPlaceIndexForTextSummary>) -> Self {
+            self.summary = input; self
         }
         /// Appends an item to `results`.
         ///
         /// To override the contents of this collection use [`set_results`](Self::set_results).
         ///
-        /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
+        /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p> 
         /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
         pub fn results(mut self, input: crate::model::SearchForTextResult) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input);
-            self.results = Some(v);
-            self
+                            v.push(input);
+                            self.results = Some(v);
+                            self
         }
-        /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
+        /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p> 
         /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
-        pub fn set_results(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SearchForTextResult>>,
-        ) -> Self {
-            self.results = input;
-            self
+        pub fn set_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::SearchForTextResult>>) -> Self {
+            self.results = input; self
         }
         /// Consumes the builder and constructs a [`SearchPlaceIndexForTextOutput`](crate::output::SearchPlaceIndexForTextOutput).
         pub fn build(self) -> crate::output::SearchPlaceIndexForTextOutput {
             crate::output::SearchPlaceIndexForTextOutput {
-                summary: self.summary,
-                results: self.results,
+                summary: self.summary
+                ,
+                results: self.results
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchPlaceIndexForTextOutput {
     /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForTextOutput`](crate::output::SearchPlaceIndexForTextOutput).
@@ -2273,7 +2110,7 @@ impl SearchPlaceIndexForTextOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchPlaceIndexForSuggestionsOutput {
+pub struct SearchPlaceIndexForSuggestionsOutput  {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::model::SearchPlaceIndexForSuggestionsSummary>,
@@ -2283,43 +2120,32 @@ pub struct SearchPlaceIndexForSuggestionsOutput {
 }
 impl SearchPlaceIndexForSuggestionsOutput {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
-    pub fn summary(
-        &self,
-    ) -> std::option::Option<&crate::model::SearchPlaceIndexForSuggestionsSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::model::SearchPlaceIndexForSuggestionsSummary> {
         self.summary.as_ref()
     }
     /// <p>A list of place suggestions that best match the search text.</p>
-    pub fn results(&self) -> std::option::Option<&[crate::model::SearchForSuggestionsResult]> {
+    pub fn results(&self) -> std::option::Option<& [crate::model::SearchForSuggestionsResult]> {
         self.results.as_deref()
     }
 }
 /// See [`SearchPlaceIndexForSuggestionsOutput`](crate::output::SearchPlaceIndexForSuggestionsOutput).
 pub mod search_place_index_for_suggestions_output {
-
+    
     /// A builder for [`SearchPlaceIndexForSuggestionsOutput`](crate::output::SearchPlaceIndexForSuggestionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) summary:
-            std::option::Option<crate::model::SearchPlaceIndexForSuggestionsSummary>,
-        pub(crate) results:
-            std::option::Option<std::vec::Vec<crate::model::SearchForSuggestionsResult>>,
+        pub(crate) summary: std::option::Option<crate::model::SearchPlaceIndexForSuggestionsSummary>,
+        pub(crate) results: std::option::Option<std::vec::Vec<crate::model::SearchForSuggestionsResult>>,
     }
     impl Builder {
         /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
-        pub fn summary(
-            mut self,
-            input: crate::model::SearchPlaceIndexForSuggestionsSummary,
-        ) -> Self {
+        pub fn summary(mut self, input: crate::model::SearchPlaceIndexForSuggestionsSummary) -> Self {
             self.summary = Some(input);
             self
         }
         /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
-        pub fn set_summary(
-            mut self,
-            input: std::option::Option<crate::model::SearchPlaceIndexForSuggestionsSummary>,
-        ) -> Self {
-            self.summary = input;
-            self
+        pub fn set_summary(mut self, input: std::option::Option<crate::model::SearchPlaceIndexForSuggestionsSummary>) -> Self {
+            self.summary = input; self
         }
         /// Appends an item to `results`.
         ///
@@ -2328,26 +2154,26 @@ pub mod search_place_index_for_suggestions_output {
         /// <p>A list of place suggestions that best match the search text.</p>
         pub fn results(mut self, input: crate::model::SearchForSuggestionsResult) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input);
-            self.results = Some(v);
-            self
+                            v.push(input);
+                            self.results = Some(v);
+                            self
         }
         /// <p>A list of place suggestions that best match the search text.</p>
-        pub fn set_results(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SearchForSuggestionsResult>>,
-        ) -> Self {
-            self.results = input;
-            self
+        pub fn set_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::SearchForSuggestionsResult>>) -> Self {
+            self.results = input; self
         }
         /// Consumes the builder and constructs a [`SearchPlaceIndexForSuggestionsOutput`](crate::output::SearchPlaceIndexForSuggestionsOutput).
         pub fn build(self) -> crate::output::SearchPlaceIndexForSuggestionsOutput {
             crate::output::SearchPlaceIndexForSuggestionsOutput {
-                summary: self.summary,
-                results: self.results,
+                summary: self.summary
+                ,
+                results: self.results
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchPlaceIndexForSuggestionsOutput {
     /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForSuggestionsOutput`](crate::output::SearchPlaceIndexForSuggestionsOutput).
@@ -2359,7 +2185,7 @@ impl SearchPlaceIndexForSuggestionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchPlaceIndexForPositionOutput {
+pub struct SearchPlaceIndexForPositionOutput  {
     /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::model::SearchPlaceIndexForPositionSummary>,
@@ -2369,25 +2195,22 @@ pub struct SearchPlaceIndexForPositionOutput {
 }
 impl SearchPlaceIndexForPositionOutput {
     /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
-    pub fn summary(
-        &self,
-    ) -> std::option::Option<&crate::model::SearchPlaceIndexForPositionSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::model::SearchPlaceIndexForPositionSummary> {
         self.summary.as_ref()
     }
     /// <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
-    pub fn results(&self) -> std::option::Option<&[crate::model::SearchForPositionResult]> {
+    pub fn results(&self) -> std::option::Option<& [crate::model::SearchForPositionResult]> {
         self.results.as_deref()
     }
 }
 /// See [`SearchPlaceIndexForPositionOutput`](crate::output::SearchPlaceIndexForPositionOutput).
 pub mod search_place_index_for_position_output {
-
+    
     /// A builder for [`SearchPlaceIndexForPositionOutput`](crate::output::SearchPlaceIndexForPositionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::SearchPlaceIndexForPositionSummary>,
-        pub(crate) results:
-            std::option::Option<std::vec::Vec<crate::model::SearchForPositionResult>>,
+        pub(crate) results: std::option::Option<std::vec::Vec<crate::model::SearchForPositionResult>>,
     }
     impl Builder {
         /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
@@ -2396,12 +2219,8 @@ pub mod search_place_index_for_position_output {
             self
         }
         /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
-        pub fn set_summary(
-            mut self,
-            input: std::option::Option<crate::model::SearchPlaceIndexForPositionSummary>,
-        ) -> Self {
-            self.summary = input;
-            self
+        pub fn set_summary(mut self, input: std::option::Option<crate::model::SearchPlaceIndexForPositionSummary>) -> Self {
+            self.summary = input; self
         }
         /// Appends an item to `results`.
         ///
@@ -2410,26 +2229,26 @@ pub mod search_place_index_for_position_output {
         /// <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
         pub fn results(mut self, input: crate::model::SearchForPositionResult) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input);
-            self.results = Some(v);
-            self
+                            v.push(input);
+                            self.results = Some(v);
+                            self
         }
         /// <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
-        pub fn set_results(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SearchForPositionResult>>,
-        ) -> Self {
-            self.results = input;
-            self
+        pub fn set_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::SearchForPositionResult>>) -> Self {
+            self.results = input; self
         }
         /// Consumes the builder and constructs a [`SearchPlaceIndexForPositionOutput`](crate::output::SearchPlaceIndexForPositionOutput).
         pub fn build(self) -> crate::output::SearchPlaceIndexForPositionOutput {
             crate::output::SearchPlaceIndexForPositionOutput {
-                summary: self.summary,
-                results: self.results,
+                summary: self.summary
+                ,
+                results: self.results
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchPlaceIndexForPositionOutput {
     /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForPositionOutput`](crate::output::SearchPlaceIndexForPositionOutput).
@@ -2441,20 +2260,20 @@ impl SearchPlaceIndexForPositionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPlaceOutput {
+pub struct GetPlaceOutput  {
     /// <p>Details about the result, such as its address and position.</p>
     #[doc(hidden)]
     pub place: std::option::Option<crate::model::Place>,
 }
 impl GetPlaceOutput {
     /// <p>Details about the result, such as its address and position.</p>
-    pub fn place(&self) -> std::option::Option<&crate::model::Place> {
+    pub fn place(&self) -> std::option::Option<& crate::model::Place> {
         self.place.as_ref()
     }
 }
 /// See [`GetPlaceOutput`](crate::output::GetPlaceOutput).
 pub mod get_place_output {
-
+    
     /// A builder for [`GetPlaceOutput`](crate::output::GetPlaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2468,14 +2287,18 @@ pub mod get_place_output {
         }
         /// <p>Details about the result, such as its address and position.</p>
         pub fn set_place(mut self, input: std::option::Option<crate::model::Place>) -> Self {
-            self.place = input;
-            self
+            self.place = input; self
         }
         /// Consumes the builder and constructs a [`GetPlaceOutput`](crate::output::GetPlaceOutput).
         pub fn build(self) -> crate::output::GetPlaceOutput {
-            crate::output::GetPlaceOutput { place: self.place }
+            crate::output::GetPlaceOutput {
+                place: self.place
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetPlaceOutput {
     /// Creates a new builder-style object to manufacture [`GetPlaceOutput`](crate::output::GetPlaceOutput).
@@ -2487,7 +2310,7 @@ impl GetPlaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPlaceIndexesOutput {
+pub struct ListPlaceIndexesOutput  {
     /// <p>Lists the place index resources that exist in your AWS account</p>
     #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::ListPlaceIndexesResponseEntry>>,
@@ -2497,22 +2320,21 @@ pub struct ListPlaceIndexesOutput {
 }
 impl ListPlaceIndexesOutput {
     /// <p>Lists the place index resources that exist in your AWS account</p>
-    pub fn entries(&self) -> std::option::Option<&[crate::model::ListPlaceIndexesResponseEntry]> {
+    pub fn entries(&self) -> std::option::Option<& [crate::model::ListPlaceIndexesResponseEntry]> {
         self.entries.as_deref()
     }
     /// <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPlaceIndexesOutput`](crate::output::ListPlaceIndexesOutput).
 pub mod list_place_indexes_output {
-
+    
     /// A builder for [`ListPlaceIndexesOutput`](crate::output::ListPlaceIndexesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entries:
-            std::option::Option<std::vec::Vec<crate::model::ListPlaceIndexesResponseEntry>>,
+        pub(crate) entries: std::option::Option<std::vec::Vec<crate::model::ListPlaceIndexesResponseEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2523,17 +2345,13 @@ pub mod list_place_indexes_output {
         /// <p>Lists the place index resources that exist in your AWS account</p>
         pub fn entries(mut self, input: crate::model::ListPlaceIndexesResponseEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input);
-            self.entries = Some(v);
-            self
+                            v.push(input);
+                            self.entries = Some(v);
+                            self
         }
         /// <p>Lists the place index resources that exist in your AWS account</p>
-        pub fn set_entries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListPlaceIndexesResponseEntry>>,
-        ) -> Self {
-            self.entries = input;
-            self
+        pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListPlaceIndexesResponseEntry>>) -> Self {
+            self.entries = input; self
         }
         /// <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2542,17 +2360,20 @@ pub mod list_place_indexes_output {
         }
         /// <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPlaceIndexesOutput`](crate::output::ListPlaceIndexesOutput).
         pub fn build(self) -> crate::output::ListPlaceIndexesOutput {
             crate::output::ListPlaceIndexesOutput {
-                entries: self.entries,
-                next_token: self.next_token,
+                entries: self.entries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPlaceIndexesOutput {
     /// Creates a new builder-style object to manufacture [`ListPlaceIndexesOutput`](crate::output::ListPlaceIndexesOutput).
@@ -2564,13 +2385,13 @@ impl ListPlaceIndexesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePlaceIndexOutput {
+pub struct CreatePlaceIndexOutput  {
     /// <p>The name for the place index resource.</p>
     #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub index_arn: std::option::Option<std::string::String>,
@@ -2580,24 +2401,24 @@ pub struct CreatePlaceIndexOutput {
 }
 impl CreatePlaceIndexOutput {
     /// <p>The name for the place index resource.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> std::option::Option<& str> {
         self.index_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li> 
     /// </ul>
-    pub fn index_arn(&self) -> std::option::Option<&str> {
+    pub fn index_arn(&self) -> std::option::Option<& str> {
         self.index_arn.as_deref()
     }
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
 /// See [`CreatePlaceIndexOutput`](crate::output::CreatePlaceIndexOutput).
 pub mod create_place_index_output {
-
+    
     /// A builder for [`CreatePlaceIndexOutput`](crate::output::CreatePlaceIndexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2613,24 +2434,22 @@ pub mod create_place_index_output {
         }
         /// <p>The name for the place index resource.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.index_name = input;
-            self
+            self.index_name = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li> 
         /// </ul>
         pub fn index_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li> 
         /// </ul>
         pub fn set_index_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.index_arn = input;
-            self
+            self.index_arn = input; self
         }
         /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2638,22 +2457,23 @@ pub mod create_place_index_output {
             self
         }
         /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// Consumes the builder and constructs a [`CreatePlaceIndexOutput`](crate::output::CreatePlaceIndexOutput).
         pub fn build(self) -> crate::output::CreatePlaceIndexOutput {
             crate::output::CreatePlaceIndexOutput {
-                index_name: self.index_name,
-                index_arn: self.index_arn,
-                create_time: self.create_time,
+                index_name: self.index_name
+                ,
+                index_arn: self.index_arn
+                ,
+                create_time: self.create_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePlaceIndexOutput {
     /// Creates a new builder-style object to manufacture [`CreatePlaceIndexOutput`](crate::output::CreatePlaceIndexOutput).
@@ -2665,19 +2485,24 @@ impl CreatePlaceIndexOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePlaceIndexOutput {}
+pub struct DeletePlaceIndexOutput  {
+}
 /// See [`DeletePlaceIndexOutput`](crate::output::DeletePlaceIndexOutput).
 pub mod delete_place_index_output {
-
+    
     /// A builder for [`DeletePlaceIndexOutput`](crate::output::DeletePlaceIndexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePlaceIndexOutput`](crate::output::DeletePlaceIndexOutput).
         pub fn build(self) -> crate::output::DeletePlaceIndexOutput {
-            crate::output::DeletePlaceIndexOutput {}
+            crate::output::DeletePlaceIndexOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePlaceIndexOutput {
     /// Creates a new builder-style object to manufacture [`DeletePlaceIndexOutput`](crate::output::DeletePlaceIndexOutput).
@@ -2689,13 +2514,13 @@ impl DeletePlaceIndexOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePlaceIndexOutput {
+pub struct UpdatePlaceIndexOutput  {
     /// <p>The name of the updated place index resource.</p>
     #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub index_arn: std::option::Option<std::string::String>,
@@ -2705,24 +2530,24 @@ pub struct UpdatePlaceIndexOutput {
 }
 impl UpdatePlaceIndexOutput {
     /// <p>The name of the updated place index resource.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> std::option::Option<& str> {
         self.index_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li> 
     /// </ul>
-    pub fn index_arn(&self) -> std::option::Option<&str> {
+    pub fn index_arn(&self) -> std::option::Option<& str> {
         self.index_arn.as_deref()
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`UpdatePlaceIndexOutput`](crate::output::UpdatePlaceIndexOutput).
 pub mod update_place_index_output {
-
+    
     /// A builder for [`UpdatePlaceIndexOutput`](crate::output::UpdatePlaceIndexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2738,24 +2563,22 @@ pub mod update_place_index_output {
         }
         /// <p>The name of the updated place index resource.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.index_name = input;
-            self
+            self.index_name = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li> 
         /// </ul>
         pub fn index_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li> 
         /// </ul>
         pub fn set_index_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.index_arn = input;
-            self
+            self.index_arn = input; self
         }
         /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2763,22 +2586,23 @@ pub mod update_place_index_output {
             self
         }
         /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePlaceIndexOutput`](crate::output::UpdatePlaceIndexOutput).
         pub fn build(self) -> crate::output::UpdatePlaceIndexOutput {
             crate::output::UpdatePlaceIndexOutput {
-                index_name: self.index_name,
-                index_arn: self.index_arn,
-                update_time: self.update_time,
+                index_name: self.index_name
+                ,
+                index_arn: self.index_arn
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePlaceIndexOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePlaceIndexOutput`](crate::output::UpdatePlaceIndexOutput).
@@ -2790,21 +2614,18 @@ impl UpdatePlaceIndexOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePlaceIndexOutput {
+pub struct DescribePlaceIndexOutput  {
     /// <p>The name of the place index resource being described.</p>
     #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub index_arn: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description for the place index resource.</p>
@@ -2816,12 +2637,12 @@ pub struct DescribePlaceIndexOutput {
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The data provider of geospatial data. Values can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
-    /// </ul>
+    /// <p>The data provider of geospatial data. Values can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Esri</code> </p> </li> 
+    /// <li> <p> <code>Grab</code> </p> </li> 
+    /// <li> <p> <code>Here</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
@@ -2830,68 +2651,59 @@ pub struct DescribePlaceIndexOutput {
     pub data_source_configuration: std::option::Option<crate::model::DataSourceConfiguration>,
     /// <p>Tags associated with place index resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DescribePlaceIndexOutput {
     /// <p>The name of the place index resource being described.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> std::option::Option<& str> {
         self.index_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li> 
     /// </ul>
-    pub fn index_arn(&self) -> std::option::Option<&str> {
+    pub fn index_arn(&self) -> std::option::Option<& str> {
         self.index_arn.as_deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    pub fn pricing_plan(&self) -> std::option::Option<& crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>The optional description for the place index resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
-    /// <p>The data provider of geospatial data. Values can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
-    /// </ul>
+    /// <p>The data provider of geospatial data. Values can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Esri</code> </p> </li> 
+    /// <li> <p> <code>Grab</code> </p> </li> 
+    /// <li> <p> <code>Here</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(&self) -> std::option::Option<&str> {
+    pub fn data_source(&self) -> std::option::Option<& str> {
         self.data_source.as_deref()
     }
     /// <p>The specified data storage option for requesting Places.</p>
-    pub fn data_source_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::DataSourceConfiguration> {
+    pub fn data_source_configuration(&self) -> std::option::Option<& crate::model::DataSourceConfiguration> {
         self.data_source_configuration.as_ref()
     }
     /// <p>Tags associated with place index resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DescribePlaceIndexOutput`](crate::output::DescribePlaceIndexOutput).
 pub mod describe_place_index_output {
-
+    
     /// A builder for [`DescribePlaceIndexOutput`](crate::output::DescribePlaceIndexOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2902,11 +2714,8 @@ pub mod describe_place_index_output {
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_source: std::option::Option<std::string::String>,
-        pub(crate) data_source_configuration:
-            std::option::Option<crate::model::DataSourceConfiguration>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) data_source_configuration: std::option::Option<crate::model::DataSourceConfiguration>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the place index resource being described.</p>
@@ -2916,45 +2725,33 @@ pub mod describe_place_index_output {
         }
         /// <p>The name of the place index resource being described.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.index_name = input;
-            self
+            self.index_name = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li> 
         /// </ul>
         pub fn index_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li> 
         /// </ul>
         pub fn set_index_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.index_arn = input;
-            self
+            self.index_arn = input; self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
-        pub fn set_pricing_plan(
-            mut self,
-            input: std::option::Option<crate::model::PricingPlan>,
-        ) -> Self {
-            self.pricing_plan = input;
-            self
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+        pub fn set_pricing_plan(mut self, input: std::option::Option<crate::model::PricingPlan>) -> Self {
+            self.pricing_plan = input; self
         }
         /// <p>The optional description for the place index resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2963,8 +2760,7 @@ pub mod describe_place_index_output {
         }
         /// <p>The optional description for the place index resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2972,12 +2768,8 @@ pub mod describe_place_index_output {
             self
         }
         /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2985,91 +2777,80 @@ pub mod describe_place_index_output {
             self
         }
         /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
-        /// <p>The data provider of geospatial data. Values can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>Esri</code> </p> </li>
-        /// <li> <p> <code>Grab</code> </p> </li>
-        /// <li> <p> <code>Here</code> </p> </li>
-        /// </ul>
+        /// <p>The data provider of geospatial data. Values can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Esri</code> </p> </li> 
+        /// <li> <p> <code>Grab</code> </p> </li> 
+        /// <li> <p> <code>Here</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>The data provider of geospatial data. Values can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>Esri</code> </p> </li>
-        /// <li> <p> <code>Grab</code> </p> </li>
-        /// <li> <p> <code>Here</code> </p> </li>
-        /// </ul>
+        /// <p>The data provider of geospatial data. Values can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Esri</code> </p> </li> 
+        /// <li> <p> <code>Grab</code> </p> </li> 
+        /// <li> <p> <code>Here</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_source = input;
-            self
+            self.data_source = input; self
         }
         /// <p>The specified data storage option for requesting Places.</p>
-        pub fn data_source_configuration(
-            mut self,
-            input: crate::model::DataSourceConfiguration,
-        ) -> Self {
+        pub fn data_source_configuration(mut self, input: crate::model::DataSourceConfiguration) -> Self {
             self.data_source_configuration = Some(input);
             self
         }
         /// <p>The specified data storage option for requesting Places.</p>
-        pub fn set_data_source_configuration(
-            mut self,
-            input: std::option::Option<crate::model::DataSourceConfiguration>,
-        ) -> Self {
-            self.data_source_configuration = input;
-            self
+        pub fn set_data_source_configuration(mut self, input: std::option::Option<crate::model::DataSourceConfiguration>) -> Self {
+            self.data_source_configuration = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags associated with place index resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags associated with place index resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DescribePlaceIndexOutput`](crate::output::DescribePlaceIndexOutput).
         pub fn build(self) -> crate::output::DescribePlaceIndexOutput {
             crate::output::DescribePlaceIndexOutput {
-                index_name: self.index_name,
-                index_arn: self.index_arn,
-                pricing_plan: self.pricing_plan,
-                description: self.description,
-                create_time: self.create_time,
-                update_time: self.update_time,
-                data_source: self.data_source,
-                data_source_configuration: self.data_source_configuration,
-                tags: self.tags,
+                index_name: self.index_name
+                ,
+                index_arn: self.index_arn
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                description: self.description
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
+                data_source: self.data_source
+                ,
+                data_source_configuration: self.data_source_configuration
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePlaceIndexOutput {
     /// Creates a new builder-style object to manufacture [`DescribePlaceIndexOutput`](crate::output::DescribePlaceIndexOutput).
@@ -3081,7 +2862,7 @@ impl DescribePlaceIndexOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMapTileOutput {
+pub struct GetMapTileOutput  {
     /// <p>Contains Mapbox Vector Tile (MVT) data.</p>
     #[doc(hidden)]
     pub blob: std::option::Option<aws_smithy_types::Blob>,
@@ -3091,17 +2872,17 @@ pub struct GetMapTileOutput {
 }
 impl GetMapTileOutput {
     /// <p>Contains Mapbox Vector Tile (MVT) data.</p>
-    pub fn blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn blob(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.blob.as_ref()
     }
     /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
 }
 /// See [`GetMapTileOutput`](crate::output::GetMapTileOutput).
 pub mod get_map_tile_output {
-
+    
     /// A builder for [`GetMapTileOutput`](crate::output::GetMapTileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3116,8 +2897,7 @@ pub mod get_map_tile_output {
         }
         /// <p>Contains Mapbox Vector Tile (MVT) data.</p>
         pub fn set_blob(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.blob = input;
-            self
+            self.blob = input; self
         }
         /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3126,17 +2906,20 @@ pub mod get_map_tile_output {
         }
         /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// Consumes the builder and constructs a [`GetMapTileOutput`](crate::output::GetMapTileOutput).
         pub fn build(self) -> crate::output::GetMapTileOutput {
             crate::output::GetMapTileOutput {
-                blob: self.blob,
-                content_type: self.content_type,
+                blob: self.blob
+                ,
+                content_type: self.content_type
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMapTileOutput {
     /// Creates a new builder-style object to manufacture [`GetMapTileOutput`](crate::output::GetMapTileOutput).
@@ -3148,7 +2931,7 @@ impl GetMapTileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMapStyleDescriptorOutput {
+pub struct GetMapStyleDescriptorOutput  {
     /// <p>Contains the body of the style descriptor.</p>
     #[doc(hidden)]
     pub blob: std::option::Option<aws_smithy_types::Blob>,
@@ -3158,17 +2941,17 @@ pub struct GetMapStyleDescriptorOutput {
 }
 impl GetMapStyleDescriptorOutput {
     /// <p>Contains the body of the style descriptor.</p>
-    pub fn blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn blob(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.blob.as_ref()
     }
     /// <p>The style descriptor's content type. For example, <code>application/json</code>.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
 }
 /// See [`GetMapStyleDescriptorOutput`](crate::output::GetMapStyleDescriptorOutput).
 pub mod get_map_style_descriptor_output {
-
+    
     /// A builder for [`GetMapStyleDescriptorOutput`](crate::output::GetMapStyleDescriptorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3183,8 +2966,7 @@ pub mod get_map_style_descriptor_output {
         }
         /// <p>Contains the body of the style descriptor.</p>
         pub fn set_blob(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.blob = input;
-            self
+            self.blob = input; self
         }
         /// <p>The style descriptor's content type. For example, <code>application/json</code>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3193,17 +2975,20 @@ pub mod get_map_style_descriptor_output {
         }
         /// <p>The style descriptor's content type. For example, <code>application/json</code>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// Consumes the builder and constructs a [`GetMapStyleDescriptorOutput`](crate::output::GetMapStyleDescriptorOutput).
         pub fn build(self) -> crate::output::GetMapStyleDescriptorOutput {
             crate::output::GetMapStyleDescriptorOutput {
-                blob: self.blob,
-                content_type: self.content_type,
+                blob: self.blob
+                ,
+                content_type: self.content_type
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMapStyleDescriptorOutput {
     /// Creates a new builder-style object to manufacture [`GetMapStyleDescriptorOutput`](crate::output::GetMapStyleDescriptorOutput).
@@ -3215,7 +3000,7 @@ impl GetMapStyleDescriptorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMapSpritesOutput {
+pub struct GetMapSpritesOutput  {
     /// <p>Contains the body of the sprite sheet or JSON offset ﬁle.</p>
     #[doc(hidden)]
     pub blob: std::option::Option<aws_smithy_types::Blob>,
@@ -3225,17 +3010,17 @@ pub struct GetMapSpritesOutput {
 }
 impl GetMapSpritesOutput {
     /// <p>Contains the body of the sprite sheet or JSON offset ﬁle.</p>
-    pub fn blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn blob(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.blob.as_ref()
     }
     /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
 }
 /// See [`GetMapSpritesOutput`](crate::output::GetMapSpritesOutput).
 pub mod get_map_sprites_output {
-
+    
     /// A builder for [`GetMapSpritesOutput`](crate::output::GetMapSpritesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3250,8 +3035,7 @@ pub mod get_map_sprites_output {
         }
         /// <p>Contains the body of the sprite sheet or JSON offset ﬁle.</p>
         pub fn set_blob(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.blob = input;
-            self
+            self.blob = input; self
         }
         /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3260,17 +3044,20 @@ pub mod get_map_sprites_output {
         }
         /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// Consumes the builder and constructs a [`GetMapSpritesOutput`](crate::output::GetMapSpritesOutput).
         pub fn build(self) -> crate::output::GetMapSpritesOutput {
             crate::output::GetMapSpritesOutput {
-                blob: self.blob,
-                content_type: self.content_type,
+                blob: self.blob
+                ,
+                content_type: self.content_type
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMapSpritesOutput {
     /// Creates a new builder-style object to manufacture [`GetMapSpritesOutput`](crate::output::GetMapSpritesOutput).
@@ -3282,7 +3069,7 @@ impl GetMapSpritesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMapGlyphsOutput {
+pub struct GetMapGlyphsOutput  {
     /// <p>The blob's content type.</p>
     #[doc(hidden)]
     pub blob: std::option::Option<aws_smithy_types::Blob>,
@@ -3292,17 +3079,17 @@ pub struct GetMapGlyphsOutput {
 }
 impl GetMapGlyphsOutput {
     /// <p>The blob's content type.</p>
-    pub fn blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn blob(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.blob.as_ref()
     }
     /// <p>The map glyph content type. For example, <code>application/octet-stream</code>.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
 }
 /// See [`GetMapGlyphsOutput`](crate::output::GetMapGlyphsOutput).
 pub mod get_map_glyphs_output {
-
+    
     /// A builder for [`GetMapGlyphsOutput`](crate::output::GetMapGlyphsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3317,8 +3104,7 @@ pub mod get_map_glyphs_output {
         }
         /// <p>The blob's content type.</p>
         pub fn set_blob(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.blob = input;
-            self
+            self.blob = input; self
         }
         /// <p>The map glyph content type. For example, <code>application/octet-stream</code>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3327,17 +3113,20 @@ pub mod get_map_glyphs_output {
         }
         /// <p>The map glyph content type. For example, <code>application/octet-stream</code>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// Consumes the builder and constructs a [`GetMapGlyphsOutput`](crate::output::GetMapGlyphsOutput).
         pub fn build(self) -> crate::output::GetMapGlyphsOutput {
             crate::output::GetMapGlyphsOutput {
-                blob: self.blob,
-                content_type: self.content_type,
+                blob: self.blob
+                ,
+                content_type: self.content_type
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMapGlyphsOutput {
     /// Creates a new builder-style object to manufacture [`GetMapGlyphsOutput`](crate::output::GetMapGlyphsOutput).
@@ -3349,7 +3138,7 @@ impl GetMapGlyphsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMapsOutput {
+pub struct ListMapsOutput  {
     /// <p>Contains a list of maps in your AWS account</p>
     #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::ListMapsResponseEntry>>,
@@ -3359,17 +3148,17 @@ pub struct ListMapsOutput {
 }
 impl ListMapsOutput {
     /// <p>Contains a list of maps in your AWS account</p>
-    pub fn entries(&self) -> std::option::Option<&[crate::model::ListMapsResponseEntry]> {
+    pub fn entries(&self) -> std::option::Option<& [crate::model::ListMapsResponseEntry]> {
         self.entries.as_deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListMapsOutput`](crate::output::ListMapsOutput).
 pub mod list_maps_output {
-
+    
     /// A builder for [`ListMapsOutput`](crate::output::ListMapsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3384,17 +3173,13 @@ pub mod list_maps_output {
         /// <p>Contains a list of maps in your AWS account</p>
         pub fn entries(mut self, input: crate::model::ListMapsResponseEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input);
-            self.entries = Some(v);
-            self
+                            v.push(input);
+                            self.entries = Some(v);
+                            self
         }
         /// <p>Contains a list of maps in your AWS account</p>
-        pub fn set_entries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListMapsResponseEntry>>,
-        ) -> Self {
-            self.entries = input;
-            self
+        pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListMapsResponseEntry>>) -> Self {
+            self.entries = input; self
         }
         /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3403,17 +3188,20 @@ pub mod list_maps_output {
         }
         /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListMapsOutput`](crate::output::ListMapsOutput).
         pub fn build(self) -> crate::output::ListMapsOutput {
             crate::output::ListMapsOutput {
-                entries: self.entries,
-                next_token: self.next_token,
+                entries: self.entries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMapsOutput {
     /// Creates a new builder-style object to manufacture [`ListMapsOutput`](crate::output::ListMapsOutput).
@@ -3425,13 +3213,13 @@ impl ListMapsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMapOutput {
+pub struct CreateMapOutput  {
     /// <p>The name of the map resource.</p>
     #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub map_arn: std::option::Option<std::string::String>,
@@ -3441,24 +3229,24 @@ pub struct CreateMapOutput {
 }
 impl CreateMapOutput {
     /// <p>The name of the map resource.</p>
-    pub fn map_name(&self) -> std::option::Option<&str> {
+    pub fn map_name(&self) -> std::option::Option<& str> {
         self.map_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> 
     /// </ul>
-    pub fn map_arn(&self) -> std::option::Option<&str> {
+    pub fn map_arn(&self) -> std::option::Option<& str> {
         self.map_arn.as_deref()
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
 /// See [`CreateMapOutput`](crate::output::CreateMapOutput).
 pub mod create_map_output {
-
+    
     /// A builder for [`CreateMapOutput`](crate::output::CreateMapOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3474,24 +3262,22 @@ pub mod create_map_output {
         }
         /// <p>The name of the map resource.</p>
         pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.map_name = input;
-            self
+            self.map_name = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> 
         /// </ul>
         pub fn map_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.map_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> 
         /// </ul>
         pub fn set_map_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.map_arn = input;
-            self
+            self.map_arn = input; self
         }
         /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3499,22 +3285,23 @@ pub mod create_map_output {
             self
         }
         /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateMapOutput`](crate::output::CreateMapOutput).
         pub fn build(self) -> crate::output::CreateMapOutput {
             crate::output::CreateMapOutput {
-                map_name: self.map_name,
-                map_arn: self.map_arn,
-                create_time: self.create_time,
+                map_name: self.map_name
+                ,
+                map_arn: self.map_arn
+                ,
+                create_time: self.create_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateMapOutput {
     /// Creates a new builder-style object to manufacture [`CreateMapOutput`](crate::output::CreateMapOutput).
@@ -3526,19 +3313,24 @@ impl CreateMapOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMapOutput {}
+pub struct DeleteMapOutput  {
+}
 /// See [`DeleteMapOutput`](crate::output::DeleteMapOutput).
 pub mod delete_map_output {
-
+    
     /// A builder for [`DeleteMapOutput`](crate::output::DeleteMapOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMapOutput`](crate::output::DeleteMapOutput).
         pub fn build(self) -> crate::output::DeleteMapOutput {
-            crate::output::DeleteMapOutput {}
+            crate::output::DeleteMapOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteMapOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMapOutput`](crate::output::DeleteMapOutput).
@@ -3550,13 +3342,13 @@ impl DeleteMapOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMapOutput {
+pub struct UpdateMapOutput  {
     /// <p>The name of the updated map resource.</p>
     #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub map_arn: std::option::Option<std::string::String>,
@@ -3566,24 +3358,24 @@ pub struct UpdateMapOutput {
 }
 impl UpdateMapOutput {
     /// <p>The name of the updated map resource.</p>
-    pub fn map_name(&self) -> std::option::Option<&str> {
+    pub fn map_name(&self) -> std::option::Option<& str> {
         self.map_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> 
     /// </ul>
-    pub fn map_arn(&self) -> std::option::Option<&str> {
+    pub fn map_arn(&self) -> std::option::Option<& str> {
         self.map_arn.as_deref()
     }
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`UpdateMapOutput`](crate::output::UpdateMapOutput).
 pub mod update_map_output {
-
+    
     /// A builder for [`UpdateMapOutput`](crate::output::UpdateMapOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3599,24 +3391,22 @@ pub mod update_map_output {
         }
         /// <p>The name of the updated map resource.</p>
         pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.map_name = input;
-            self
+            self.map_name = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> 
         /// </ul>
         pub fn map_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.map_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> 
         /// </ul>
         pub fn set_map_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.map_arn = input;
-            self
+            self.map_arn = input; self
         }
         /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3624,22 +3414,23 @@ pub mod update_map_output {
             self
         }
         /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdateMapOutput`](crate::output::UpdateMapOutput).
         pub fn build(self) -> crate::output::UpdateMapOutput {
             crate::output::UpdateMapOutput {
-                map_name: self.map_name,
-                map_arn: self.map_arn,
-                update_time: self.update_time,
+                map_name: self.map_name
+                ,
+                map_arn: self.map_arn
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateMapOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMapOutput`](crate::output::UpdateMapOutput).
@@ -3651,21 +3442,18 @@ impl UpdateMapOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMapOutput {
+pub struct DescribeMapOutput  {
     /// <p>The map style selected from an available provider.</p>
     #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub map_arn: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>Specifies the data provider for the associated map tiles.</p>
@@ -3679,8 +3467,7 @@ pub struct DescribeMapOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Tags associated with the map resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3690,55 +3477,49 @@ pub struct DescribeMapOutput {
 }
 impl DescribeMapOutput {
     /// <p>The map style selected from an available provider.</p>
-    pub fn map_name(&self) -> std::option::Option<&str> {
+    pub fn map_name(&self) -> std::option::Option<& str> {
         self.map_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> 
     /// </ul>
-    pub fn map_arn(&self) -> std::option::Option<&str> {
+    pub fn map_arn(&self) -> std::option::Option<& str> {
         self.map_arn.as_deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    pub fn pricing_plan(&self) -> std::option::Option<& crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>Specifies the data provider for the associated map tiles.</p>
-    pub fn data_source(&self) -> std::option::Option<&str> {
+    pub fn data_source(&self) -> std::option::Option<& str> {
         self.data_source.as_deref()
     }
     /// <p>Specifies the map tile style selected from a partner data provider.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::model::MapConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::MapConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The optional description for the map resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Tags associated with the map resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`DescribeMapOutput`](crate::output::DescribeMapOutput).
 pub mod describe_map_output {
-
+    
     /// A builder for [`DescribeMapOutput`](crate::output::DescribeMapOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3748,9 +3529,7 @@ pub mod describe_map_output {
         pub(crate) data_source: std::option::Option<std::string::String>,
         pub(crate) configuration: std::option::Option<crate::model::MapConfiguration>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -3762,45 +3541,33 @@ pub mod describe_map_output {
         }
         /// <p>The map style selected from an available provider.</p>
         pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.map_name = input;
-            self
+            self.map_name = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> 
         /// </ul>
         pub fn map_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.map_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> 
         /// </ul>
         pub fn set_map_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.map_arn = input;
-            self
+            self.map_arn = input; self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
-        pub fn set_pricing_plan(
-            mut self,
-            input: std::option::Option<crate::model::PricingPlan>,
-        ) -> Self {
-            self.pricing_plan = input;
-            self
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+        pub fn set_pricing_plan(mut self, input: std::option::Option<crate::model::PricingPlan>) -> Self {
+            self.pricing_plan = input; self
         }
         /// <p>Specifies the data provider for the associated map tiles.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3809,8 +3576,7 @@ pub mod describe_map_output {
         }
         /// <p>Specifies the data provider for the associated map tiles.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_source = input;
-            self
+            self.data_source = input; self
         }
         /// <p>Specifies the map tile style selected from a partner data provider.</p>
         pub fn configuration(mut self, input: crate::model::MapConfiguration) -> Self {
@@ -3818,12 +3584,8 @@ pub mod describe_map_output {
             self
         }
         /// <p>Specifies the map tile style selected from a partner data provider.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::MapConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::MapConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// <p>The optional description for the map resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3832,33 +3594,22 @@ pub mod describe_map_output {
         }
         /// <p>The optional description for the map resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags associated with the map resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags associated with the map resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3866,12 +3617,8 @@ pub mod describe_map_output {
             self
         }
         /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3879,28 +3626,35 @@ pub mod describe_map_output {
             self
         }
         /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMapOutput`](crate::output::DescribeMapOutput).
         pub fn build(self) -> crate::output::DescribeMapOutput {
             crate::output::DescribeMapOutput {
-                map_name: self.map_name,
-                map_arn: self.map_arn,
-                pricing_plan: self.pricing_plan,
-                data_source: self.data_source,
-                configuration: self.configuration,
-                description: self.description,
-                tags: self.tags,
-                create_time: self.create_time,
-                update_time: self.update_time,
+                map_name: self.map_name
+                ,
+                map_arn: self.map_arn
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                data_source: self.data_source
+                ,
+                configuration: self.configuration
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMapOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMapOutput`](crate::output::DescribeMapOutput).
@@ -3912,7 +3666,7 @@ impl DescribeMapOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutGeofenceOutput {
+pub struct PutGeofenceOutput  {
     /// <p>The geofence identifier entered in the request.</p>
     #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
@@ -3925,21 +3679,21 @@ pub struct PutGeofenceOutput {
 }
 impl PutGeofenceOutput {
     /// <p>The geofence identifier entered in the request.</p>
-    pub fn geofence_id(&self) -> std::option::Option<&str> {
+    pub fn geofence_id(&self) -> std::option::Option<& str> {
         self.geofence_id.as_deref()
     }
     /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`PutGeofenceOutput`](crate::output::PutGeofenceOutput).
 pub mod put_geofence_output {
-
+    
     /// A builder for [`PutGeofenceOutput`](crate::output::PutGeofenceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3955,8 +3709,7 @@ pub mod put_geofence_output {
         }
         /// <p>The geofence identifier entered in the request.</p>
         pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.geofence_id = input;
-            self
+            self.geofence_id = input; self
         }
         /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3964,12 +3717,8 @@ pub mod put_geofence_output {
             self
         }
         /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3977,22 +3726,23 @@ pub mod put_geofence_output {
             self
         }
         /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`PutGeofenceOutput`](crate::output::PutGeofenceOutput).
         pub fn build(self) -> crate::output::PutGeofenceOutput {
             crate::output::PutGeofenceOutput {
-                geofence_id: self.geofence_id,
-                create_time: self.create_time,
-                update_time: self.update_time,
+                geofence_id: self.geofence_id
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl PutGeofenceOutput {
     /// Creates a new builder-style object to manufacture [`PutGeofenceOutput`](crate::output::PutGeofenceOutput).
@@ -4004,7 +3754,7 @@ impl PutGeofenceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGeofencesOutput {
+pub struct ListGeofencesOutput  {
     /// <p>Contains a list of geofences stored in the geofence collection.</p>
     #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::model::ListGeofenceResponseEntry>>,
@@ -4014,22 +3764,21 @@ pub struct ListGeofencesOutput {
 }
 impl ListGeofencesOutput {
     /// <p>Contains a list of geofences stored in the geofence collection.</p>
-    pub fn entries(&self) -> std::option::Option<&[crate::model::ListGeofenceResponseEntry]> {
+    pub fn entries(&self) -> std::option::Option<& [crate::model::ListGeofenceResponseEntry]> {
         self.entries.as_deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListGeofencesOutput`](crate::output::ListGeofencesOutput).
 pub mod list_geofences_output {
-
+    
     /// A builder for [`ListGeofencesOutput`](crate::output::ListGeofencesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entries:
-            std::option::Option<std::vec::Vec<crate::model::ListGeofenceResponseEntry>>,
+        pub(crate) entries: std::option::Option<std::vec::Vec<crate::model::ListGeofenceResponseEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4040,17 +3789,13 @@ pub mod list_geofences_output {
         /// <p>Contains a list of geofences stored in the geofence collection.</p>
         pub fn entries(mut self, input: crate::model::ListGeofenceResponseEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input);
-            self.entries = Some(v);
-            self
+                            v.push(input);
+                            self.entries = Some(v);
+                            self
         }
         /// <p>Contains a list of geofences stored in the geofence collection.</p>
-        pub fn set_entries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListGeofenceResponseEntry>>,
-        ) -> Self {
-            self.entries = input;
-            self
+        pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListGeofenceResponseEntry>>) -> Self {
+            self.entries = input; self
         }
         /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4059,17 +3804,20 @@ pub mod list_geofences_output {
         }
         /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListGeofencesOutput`](crate::output::ListGeofencesOutput).
         pub fn build(self) -> crate::output::ListGeofencesOutput {
             crate::output::ListGeofencesOutput {
-                entries: self.entries,
-                next_token: self.next_token,
+                entries: self.entries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGeofencesOutput {
     /// Creates a new builder-style object to manufacture [`ListGeofencesOutput`](crate::output::ListGeofencesOutput).
@@ -4081,20 +3829,20 @@ impl ListGeofencesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGeofenceOutput {
+pub struct GetGeofenceOutput  {
     /// <p>The geofence identifier.</p>
     #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
     #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::GeofenceGeometry>,
-    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
-    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
-    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
-    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
-    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -4107,36 +3855,36 @@ pub struct GetGeofenceOutput {
 }
 impl GetGeofenceOutput {
     /// <p>The geofence identifier.</p>
-    pub fn geofence_id(&self) -> std::option::Option<&str> {
+    pub fn geofence_id(&self) -> std::option::Option<& str> {
         self.geofence_id.as_deref()
     }
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
-    pub fn geometry(&self) -> std::option::Option<&crate::model::GeofenceGeometry> {
+    pub fn geometry(&self) -> std::option::Option<& crate::model::GeofenceGeometry> {
         self.geometry.as_ref()
     }
-    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
-    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
-    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
-    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
-    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`GetGeofenceOutput`](crate::output::GetGeofenceOutput).
 pub mod get_geofence_output {
-
+    
     /// A builder for [`GetGeofenceOutput`](crate::output::GetGeofenceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4154,8 +3902,7 @@ pub mod get_geofence_output {
         }
         /// <p>The geofence identifier.</p>
         pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.geofence_id = input;
-            self
+            self.geofence_id = input; self
         }
         /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
         pub fn geometry(mut self, input: crate::model::GeofenceGeometry) -> Self {
@@ -4163,36 +3910,31 @@ pub mod get_geofence_output {
             self
         }
         /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
-        pub fn set_geometry(
-            mut self,
-            input: std::option::Option<crate::model::GeofenceGeometry>,
-        ) -> Self {
-            self.geometry = input;
-            self
+        pub fn set_geometry(mut self, input: std::option::Option<crate::model::GeofenceGeometry>) -> Self {
+            self.geometry = input; self
         }
-        /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
-        /// <ul>
-        /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
-        /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
-        /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
-        /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
-        /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+        /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+        /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+        /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+        /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+        /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
-        /// <ul>
-        /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
-        /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
-        /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
-        /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
-        /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+        /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+        /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+        /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+        /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+        /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4200,12 +3942,8 @@ pub mod get_geofence_output {
             self
         }
         /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4213,24 +3951,27 @@ pub mod get_geofence_output {
             self
         }
         /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`GetGeofenceOutput`](crate::output::GetGeofenceOutput).
         pub fn build(self) -> crate::output::GetGeofenceOutput {
             crate::output::GetGeofenceOutput {
-                geofence_id: self.geofence_id,
-                geometry: self.geometry,
-                status: self.status,
-                create_time: self.create_time,
-                update_time: self.update_time,
+                geofence_id: self.geofence_id
+                ,
+                geometry: self.geometry
+                ,
+                status: self.status
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl GetGeofenceOutput {
     /// Creates a new builder-style object to manufacture [`GetGeofenceOutput`](crate::output::GetGeofenceOutput).
@@ -4242,7 +3983,7 @@ impl GetGeofenceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutGeofenceOutput {
+pub struct BatchPutGeofenceOutput  {
     /// <p>Contains each geofence that was successfully stored in a geofence collection.</p>
     #[doc(hidden)]
     pub successes: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceSuccess>>,
@@ -4252,22 +3993,21 @@ pub struct BatchPutGeofenceOutput {
 }
 impl BatchPutGeofenceOutput {
     /// <p>Contains each geofence that was successfully stored in a geofence collection.</p>
-    pub fn successes(&self) -> std::option::Option<&[crate::model::BatchPutGeofenceSuccess]> {
+    pub fn successes(&self) -> std::option::Option<& [crate::model::BatchPutGeofenceSuccess]> {
         self.successes.as_deref()
     }
     /// <p>Contains additional error details for each geofence that failed to be stored in a geofence collection.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchPutGeofenceError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::BatchPutGeofenceError]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchPutGeofenceOutput`](crate::output::BatchPutGeofenceOutput).
 pub mod batch_put_geofence_output {
-
+    
     /// A builder for [`BatchPutGeofenceOutput`](crate::output::BatchPutGeofenceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) successes:
-            std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceSuccess>>,
+        pub(crate) successes: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceSuccess>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceError>>,
     }
     impl Builder {
@@ -4278,17 +4018,13 @@ pub mod batch_put_geofence_output {
         /// <p>Contains each geofence that was successfully stored in a geofence collection.</p>
         pub fn successes(mut self, input: crate::model::BatchPutGeofenceSuccess) -> Self {
             let mut v = self.successes.unwrap_or_default();
-            v.push(input);
-            self.successes = Some(v);
-            self
+                            v.push(input);
+                            self.successes = Some(v);
+                            self
         }
         /// <p>Contains each geofence that was successfully stored in a geofence collection.</p>
-        pub fn set_successes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceSuccess>>,
-        ) -> Self {
-            self.successes = input;
-            self
+        pub fn set_successes(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceSuccess>>) -> Self {
+            self.successes = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -4297,26 +4033,26 @@ pub mod batch_put_geofence_output {
         /// <p>Contains additional error details for each geofence that failed to be stored in a geofence collection.</p>
         pub fn errors(mut self, input: crate::model::BatchPutGeofenceError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>Contains additional error details for each geofence that failed to be stored in a geofence collection.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchPutGeofenceOutput`](crate::output::BatchPutGeofenceOutput).
         pub fn build(self) -> crate::output::BatchPutGeofenceOutput {
             crate::output::BatchPutGeofenceOutput {
-                successes: self.successes,
-                errors: self.errors,
+                successes: self.successes
+                ,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchPutGeofenceOutput {
     /// Creates a new builder-style object to manufacture [`BatchPutGeofenceOutput`](crate::output::BatchPutGeofenceOutput).
@@ -4328,25 +4064,24 @@ impl BatchPutGeofenceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchEvaluateGeofencesOutput {
+pub struct BatchEvaluateGeofencesOutput  {
     /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchEvaluateGeofencesError>>,
 }
 impl BatchEvaluateGeofencesOutput {
     /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchEvaluateGeofencesError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::BatchEvaluateGeofencesError]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchEvaluateGeofencesOutput`](crate::output::BatchEvaluateGeofencesOutput).
 pub mod batch_evaluate_geofences_output {
-
+    
     /// A builder for [`BatchEvaluateGeofencesOutput`](crate::output::BatchEvaluateGeofencesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) errors:
-            std::option::Option<std::vec::Vec<crate::model::BatchEvaluateGeofencesError>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchEvaluateGeofencesError>>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -4356,25 +4091,24 @@ pub mod batch_evaluate_geofences_output {
         /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
         pub fn errors(mut self, input: crate::model::BatchEvaluateGeofencesError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchEvaluateGeofencesError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchEvaluateGeofencesError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchEvaluateGeofencesOutput`](crate::output::BatchEvaluateGeofencesOutput).
         pub fn build(self) -> crate::output::BatchEvaluateGeofencesOutput {
             crate::output::BatchEvaluateGeofencesOutput {
-                errors: self.errors,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchEvaluateGeofencesOutput {
     /// Creates a new builder-style object to manufacture [`BatchEvaluateGeofencesOutput`](crate::output::BatchEvaluateGeofencesOutput).
@@ -4386,25 +4120,24 @@ impl BatchEvaluateGeofencesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteGeofenceOutput {
+pub struct BatchDeleteGeofenceOutput  {
     /// <p>Contains error details for each geofence that failed to delete.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchDeleteGeofenceError>>,
 }
 impl BatchDeleteGeofenceOutput {
     /// <p>Contains error details for each geofence that failed to delete.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchDeleteGeofenceError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::BatchDeleteGeofenceError]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchDeleteGeofenceOutput`](crate::output::BatchDeleteGeofenceOutput).
 pub mod batch_delete_geofence_output {
-
+    
     /// A builder for [`BatchDeleteGeofenceOutput`](crate::output::BatchDeleteGeofenceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) errors:
-            std::option::Option<std::vec::Vec<crate::model::BatchDeleteGeofenceError>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchDeleteGeofenceError>>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -4414,25 +4147,24 @@ pub mod batch_delete_geofence_output {
         /// <p>Contains error details for each geofence that failed to delete.</p>
         pub fn errors(mut self, input: crate::model::BatchDeleteGeofenceError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>Contains error details for each geofence that failed to delete.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchDeleteGeofenceError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchDeleteGeofenceError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchDeleteGeofenceOutput`](crate::output::BatchDeleteGeofenceOutput).
         pub fn build(self) -> crate::output::BatchDeleteGeofenceOutput {
             crate::output::BatchDeleteGeofenceOutput {
-                errors: self.errors,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDeleteGeofenceOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteGeofenceOutput`](crate::output::BatchDeleteGeofenceOutput).
@@ -4444,35 +4176,31 @@ impl BatchDeleteGeofenceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGeofenceCollectionsOutput {
+pub struct ListGeofenceCollectionsOutput  {
     /// <p>Lists the geofence collections that exist in your AWS account.</p>
     #[doc(hidden)]
-    pub entries:
-        std::option::Option<std::vec::Vec<crate::model::ListGeofenceCollectionsResponseEntry>>,
+    pub entries: std::option::Option<std::vec::Vec<crate::model::ListGeofenceCollectionsResponseEntry>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGeofenceCollectionsOutput {
     /// <p>Lists the geofence collections that exist in your AWS account.</p>
-    pub fn entries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ListGeofenceCollectionsResponseEntry]> {
+    pub fn entries(&self) -> std::option::Option<& [crate::model::ListGeofenceCollectionsResponseEntry]> {
         self.entries.as_deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListGeofenceCollectionsOutput`](crate::output::ListGeofenceCollectionsOutput).
 pub mod list_geofence_collections_output {
-
+    
     /// A builder for [`ListGeofenceCollectionsOutput`](crate::output::ListGeofenceCollectionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entries:
-            std::option::Option<std::vec::Vec<crate::model::ListGeofenceCollectionsResponseEntry>>,
+        pub(crate) entries: std::option::Option<std::vec::Vec<crate::model::ListGeofenceCollectionsResponseEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4481,24 +4209,15 @@ pub mod list_geofence_collections_output {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>Lists the geofence collections that exist in your AWS account.</p>
-        pub fn entries(
-            mut self,
-            input: crate::model::ListGeofenceCollectionsResponseEntry,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::ListGeofenceCollectionsResponseEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input);
-            self.entries = Some(v);
-            self
+                            v.push(input);
+                            self.entries = Some(v);
+                            self
         }
         /// <p>Lists the geofence collections that exist in your AWS account.</p>
-        pub fn set_entries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ListGeofenceCollectionsResponseEntry>,
-            >,
-        ) -> Self {
-            self.entries = input;
-            self
+        pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListGeofenceCollectionsResponseEntry>>) -> Self {
+            self.entries = input; self
         }
         /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4507,17 +4226,20 @@ pub mod list_geofence_collections_output {
         }
         /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListGeofenceCollectionsOutput`](crate::output::ListGeofenceCollectionsOutput).
         pub fn build(self) -> crate::output::ListGeofenceCollectionsOutput {
             crate::output::ListGeofenceCollectionsOutput {
-                entries: self.entries,
-                next_token: self.next_token,
+                entries: self.entries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGeofenceCollectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListGeofenceCollectionsOutput`](crate::output::ListGeofenceCollectionsOutput).
@@ -4529,13 +4251,13 @@ impl ListGeofenceCollectionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGeofenceCollectionOutput {
+pub struct CreateGeofenceCollectionOutput  {
     /// <p>The name for the geofence collection.</p>
     #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub collection_arn: std::option::Option<std::string::String>,
@@ -4545,24 +4267,24 @@ pub struct CreateGeofenceCollectionOutput {
 }
 impl CreateGeofenceCollectionOutput {
     /// <p>The name for the geofence collection.</p>
-    pub fn collection_name(&self) -> std::option::Option<&str> {
+    pub fn collection_name(&self) -> std::option::Option<& str> {
         self.collection_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li> 
     /// </ul>
-    pub fn collection_arn(&self) -> std::option::Option<&str> {
+    pub fn collection_arn(&self) -> std::option::Option<& str> {
         self.collection_arn.as_deref()
     }
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
 /// See [`CreateGeofenceCollectionOutput`](crate::output::CreateGeofenceCollectionOutput).
 pub mod create_geofence_collection_output {
-
+    
     /// A builder for [`CreateGeofenceCollectionOutput`](crate::output::CreateGeofenceCollectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4577,31 +4299,23 @@ pub mod create_geofence_collection_output {
             self
         }
         /// <p>The name for the geofence collection.</p>
-        pub fn set_collection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collection_name = input;
-            self
+        pub fn set_collection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collection_name = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li> 
         /// </ul>
         pub fn collection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.collection_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li> 
         /// </ul>
-        pub fn set_collection_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collection_arn = input;
-            self
+        pub fn set_collection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collection_arn = input; self
         }
         /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4609,22 +4323,23 @@ pub mod create_geofence_collection_output {
             self
         }
         /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateGeofenceCollectionOutput`](crate::output::CreateGeofenceCollectionOutput).
         pub fn build(self) -> crate::output::CreateGeofenceCollectionOutput {
             crate::output::CreateGeofenceCollectionOutput {
-                collection_name: self.collection_name,
-                collection_arn: self.collection_arn,
-                create_time: self.create_time,
+                collection_name: self.collection_name
+                ,
+                collection_arn: self.collection_arn
+                ,
+                create_time: self.create_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGeofenceCollectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateGeofenceCollectionOutput`](crate::output::CreateGeofenceCollectionOutput).
@@ -4636,19 +4351,24 @@ impl CreateGeofenceCollectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGeofenceCollectionOutput {}
+pub struct DeleteGeofenceCollectionOutput  {
+}
 /// See [`DeleteGeofenceCollectionOutput`](crate::output::DeleteGeofenceCollectionOutput).
 pub mod delete_geofence_collection_output {
-
+    
     /// A builder for [`DeleteGeofenceCollectionOutput`](crate::output::DeleteGeofenceCollectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteGeofenceCollectionOutput`](crate::output::DeleteGeofenceCollectionOutput).
         pub fn build(self) -> crate::output::DeleteGeofenceCollectionOutput {
-            crate::output::DeleteGeofenceCollectionOutput {}
+            crate::output::DeleteGeofenceCollectionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteGeofenceCollectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGeofenceCollectionOutput`](crate::output::DeleteGeofenceCollectionOutput).
@@ -4660,13 +4380,13 @@ impl DeleteGeofenceCollectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGeofenceCollectionOutput {
+pub struct UpdateGeofenceCollectionOutput  {
     /// <p>The name of the updated geofence collection.</p>
     #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub collection_arn: std::option::Option<std::string::String>,
@@ -4676,24 +4396,24 @@ pub struct UpdateGeofenceCollectionOutput {
 }
 impl UpdateGeofenceCollectionOutput {
     /// <p>The name of the updated geofence collection.</p>
-    pub fn collection_name(&self) -> std::option::Option<&str> {
+    pub fn collection_name(&self) -> std::option::Option<& str> {
         self.collection_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li> 
     /// </ul>
-    pub fn collection_arn(&self) -> std::option::Option<&str> {
+    pub fn collection_arn(&self) -> std::option::Option<& str> {
         self.collection_arn.as_deref()
     }
     /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`UpdateGeofenceCollectionOutput`](crate::output::UpdateGeofenceCollectionOutput).
 pub mod update_geofence_collection_output {
-
+    
     /// A builder for [`UpdateGeofenceCollectionOutput`](crate::output::UpdateGeofenceCollectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4708,31 +4428,23 @@ pub mod update_geofence_collection_output {
             self
         }
         /// <p>The name of the updated geofence collection.</p>
-        pub fn set_collection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collection_name = input;
-            self
+        pub fn set_collection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collection_name = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li> 
         /// </ul>
         pub fn collection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.collection_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li> 
         /// </ul>
-        pub fn set_collection_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collection_arn = input;
-            self
+        pub fn set_collection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collection_arn = input; self
         }
         /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4740,22 +4452,23 @@ pub mod update_geofence_collection_output {
             self
         }
         /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGeofenceCollectionOutput`](crate::output::UpdateGeofenceCollectionOutput).
         pub fn build(self) -> crate::output::UpdateGeofenceCollectionOutput {
             crate::output::UpdateGeofenceCollectionOutput {
-                collection_name: self.collection_name,
-                collection_arn: self.collection_arn,
-                update_time: self.update_time,
+                collection_name: self.collection_name
+                ,
+                collection_arn: self.collection_arn
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateGeofenceCollectionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGeofenceCollectionOutput`](crate::output::UpdateGeofenceCollectionOutput).
@@ -4767,13 +4480,13 @@ impl UpdateGeofenceCollectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGeofenceCollectionOutput {
+pub struct DescribeGeofenceCollectionOutput  {
     /// <p>The name of the geofence collection.</p>
     #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub collection_arn: std::option::Option<std::string::String>,
@@ -4781,10 +4494,7 @@ pub struct DescribeGeofenceCollectionOutput {
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>No longer used. Always returns an empty string.</p>
@@ -4796,8 +4506,7 @@ pub struct DescribeGeofenceCollectionOutput {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Displays the key, value pairs of tags associated with this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4807,56 +4516,50 @@ pub struct DescribeGeofenceCollectionOutput {
 }
 impl DescribeGeofenceCollectionOutput {
     /// <p>The name of the geofence collection.</p>
-    pub fn collection_name(&self) -> std::option::Option<&str> {
+    pub fn collection_name(&self) -> std::option::Option<& str> {
         self.collection_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li> 
     /// </ul>
-    pub fn collection_arn(&self) -> std::option::Option<&str> {
+    pub fn collection_arn(&self) -> std::option::Option<& str> {
         self.collection_arn.as_deref()
     }
     /// <p>The optional description for the geofence collection.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    pub fn pricing_plan(&self) -> std::option::Option<& crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
-    pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
+    pub fn pricing_plan_data_source(&self) -> std::option::Option<& str> {
         self.pricing_plan_data_source.as_deref()
     }
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Displays the key, value pairs of tags associated with this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`DescribeGeofenceCollectionOutput`](crate::output::DescribeGeofenceCollectionOutput).
 pub mod describe_geofence_collection_output {
-
+    
     /// A builder for [`DescribeGeofenceCollectionOutput`](crate::output::DescribeGeofenceCollectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4866,9 +4569,7 @@ pub mod describe_geofence_collection_output {
         pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
         pub(crate) pricing_plan_data_source: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -4879,31 +4580,23 @@ pub mod describe_geofence_collection_output {
             self
         }
         /// <p>The name of the geofence collection.</p>
-        pub fn set_collection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collection_name = input;
-            self
+        pub fn set_collection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collection_name = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li> 
         /// </ul>
         pub fn collection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.collection_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
-        /// <ul>
-        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
+        /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li> 
         /// </ul>
-        pub fn set_collection_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collection_arn = input;
-            self
+        pub fn set_collection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collection_arn = input; self
         }
         /// <p>The optional description for the geofence collection.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4912,29 +4605,18 @@ pub mod describe_geofence_collection_output {
         }
         /// <p>The optional description for the geofence collection.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
-        pub fn set_pricing_plan(
-            mut self,
-            input: std::option::Option<crate::model::PricingPlan>,
-        ) -> Self {
-            self.pricing_plan = input;
-            self
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+        pub fn set_pricing_plan(mut self, input: std::option::Option<crate::model::PricingPlan>) -> Self {
+            self.pricing_plan = input; self
         }
         /// <p>No longer used. Always returns an empty string.</p>
         #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
@@ -4944,12 +4626,8 @@ pub mod describe_geofence_collection_output {
         }
         /// <p>No longer used. Always returns an empty string.</p>
         #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
-        pub fn set_pricing_plan_data_source(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pricing_plan_data_source = input;
-            self
+        pub fn set_pricing_plan_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pricing_plan_data_source = input; self
         }
         /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4958,33 +4636,22 @@ pub mod describe_geofence_collection_output {
         }
         /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Displays the key, value pairs of tags associated with this resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Displays the key, value pairs of tags associated with this resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4992,12 +4659,8 @@ pub mod describe_geofence_collection_output {
             self
         }
         /// <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5005,28 +4668,35 @@ pub mod describe_geofence_collection_output {
             self
         }
         /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGeofenceCollectionOutput`](crate::output::DescribeGeofenceCollectionOutput).
         pub fn build(self) -> crate::output::DescribeGeofenceCollectionOutput {
             crate::output::DescribeGeofenceCollectionOutput {
-                collection_name: self.collection_name,
-                collection_arn: self.collection_arn,
-                description: self.description,
-                pricing_plan: self.pricing_plan,
-                pricing_plan_data_source: self.pricing_plan_data_source,
-                kms_key_id: self.kms_key_id,
-                tags: self.tags,
-                create_time: self.create_time,
-                update_time: self.update_time,
+                collection_name: self.collection_name
+                ,
+                collection_arn: self.collection_arn
+                ,
+                description: self.description
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                pricing_plan_data_source: self.pricing_plan_data_source
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                tags: self.tags
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGeofenceCollectionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGeofenceCollectionOutput`](crate::output::DescribeGeofenceCollectionOutput).
@@ -5038,19 +4708,24 @@ impl DescribeGeofenceCollectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -5062,19 +4737,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -5086,74 +4766,63 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
-    /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p> </li>
+pub struct ListTagsForResourceOutput  {
+    /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p> </li>
+    /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p> </li> 
     /// </ul>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p> </li>
+        /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p> </li> 
         /// </ul>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
-        /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
-        /// <ul>
-        /// <li> <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p> </li>
+        /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p> 
+        /// <ul> 
+        /// <li> <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p> </li> 
         /// </ul>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -5161,3 +4830,4 @@ impl ListTagsForResourceOutput {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
+

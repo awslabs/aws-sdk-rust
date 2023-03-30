@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRumMetricDefinitionOutput {}
+pub struct UpdateRumMetricDefinitionOutput  {
+}
 /// See [`UpdateRumMetricDefinitionOutput`](crate::output::UpdateRumMetricDefinitionOutput).
 pub mod update_rum_metric_definition_output {
-
+    
     /// A builder for [`UpdateRumMetricDefinitionOutput`](crate::output::UpdateRumMetricDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateRumMetricDefinitionOutput`](crate::output::UpdateRumMetricDefinitionOutput).
         pub fn build(self) -> crate::output::UpdateRumMetricDefinitionOutput {
-            crate::output::UpdateRumMetricDefinitionOutput {}
+            crate::output::UpdateRumMetricDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateRumMetricDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRumMetricDefinitionOutput`](crate::output::UpdateRumMetricDefinitionOutput).
@@ -26,19 +31,24 @@ impl UpdateRumMetricDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRumMetricsDestinationOutput {}
+pub struct PutRumMetricsDestinationOutput  {
+}
 /// See [`PutRumMetricsDestinationOutput`](crate::output::PutRumMetricsDestinationOutput).
 pub mod put_rum_metrics_destination_output {
-
+    
     /// A builder for [`PutRumMetricsDestinationOutput`](crate::output::PutRumMetricsDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutRumMetricsDestinationOutput`](crate::output::PutRumMetricsDestinationOutput).
         pub fn build(self) -> crate::output::PutRumMetricsDestinationOutput {
-            crate::output::PutRumMetricsDestinationOutput {}
+            crate::output::PutRumMetricsDestinationOutput {
+            }
         }
     }
+    
+    
 }
 impl PutRumMetricsDestinationOutput {
     /// Creates a new builder-style object to manufacture [`PutRumMetricsDestinationOutput`](crate::output::PutRumMetricsDestinationOutput).
@@ -50,7 +60,7 @@ impl PutRumMetricsDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRumMetricsDestinationsOutput {
+pub struct ListRumMetricsDestinationsOutput  {
     /// <p>The list of CloudWatch RUM extended metrics destinations associated with the app monitor that you specified.</p>
     #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::MetricDestinationSummary>>,
@@ -60,22 +70,21 @@ pub struct ListRumMetricsDestinationsOutput {
 }
 impl ListRumMetricsDestinationsOutput {
     /// <p>The list of CloudWatch RUM extended metrics destinations associated with the app monitor that you specified.</p>
-    pub fn destinations(&self) -> std::option::Option<&[crate::model::MetricDestinationSummary]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::model::MetricDestinationSummary]> {
         self.destinations.as_deref()
     }
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRumMetricsDestinationsOutput`](crate::output::ListRumMetricsDestinationsOutput).
 pub mod list_rum_metrics_destinations_output {
-
+    
     /// A builder for [`ListRumMetricsDestinationsOutput`](crate::output::ListRumMetricsDestinationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) destinations:
-            std::option::Option<std::vec::Vec<crate::model::MetricDestinationSummary>>,
+        pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::MetricDestinationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -86,17 +95,13 @@ pub mod list_rum_metrics_destinations_output {
         /// <p>The list of CloudWatch RUM extended metrics destinations associated with the app monitor that you specified.</p>
         pub fn destinations(mut self, input: crate::model::MetricDestinationSummary) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input);
-            self.destinations = Some(v);
-            self
+                            v.push(input);
+                            self.destinations = Some(v);
+                            self
         }
         /// <p>The list of CloudWatch RUM extended metrics destinations associated with the app monitor that you specified.</p>
-        pub fn set_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDestinationSummary>>,
-        ) -> Self {
-            self.destinations = input;
-            self
+        pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricDestinationSummary>>) -> Self {
+            self.destinations = input; self
         }
         /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,17 +110,20 @@ pub mod list_rum_metrics_destinations_output {
         }
         /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRumMetricsDestinationsOutput`](crate::output::ListRumMetricsDestinationsOutput).
         pub fn build(self) -> crate::output::ListRumMetricsDestinationsOutput {
             crate::output::ListRumMetricsDestinationsOutput {
-                destinations: self.destinations,
-                next_token: self.next_token,
+                destinations: self.destinations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRumMetricsDestinationsOutput {
     /// Creates a new builder-style object to manufacture [`ListRumMetricsDestinationsOutput`](crate::output::ListRumMetricsDestinationsOutput).
@@ -127,7 +135,7 @@ impl ListRumMetricsDestinationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAppMonitorDataOutput {
+pub struct GetAppMonitorDataOutput  {
     /// <p>The events that RUM collected that match your request.</p>
     #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -137,17 +145,17 @@ pub struct GetAppMonitorDataOutput {
 }
 impl GetAppMonitorDataOutput {
     /// <p>The events that RUM collected that match your request.</p>
-    pub fn events(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn events(&self) -> std::option::Option<& [std::string::String]> {
         self.events.as_deref()
     }
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput).
 pub mod get_app_monitor_data_output {
-
+    
     /// A builder for [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -162,17 +170,13 @@ pub mod get_app_monitor_data_output {
         /// <p>The events that RUM collected that match your request.</p>
         pub fn events(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
-            self.events = Some(v);
-            self
+                            v.push(input.into());
+                            self.events = Some(v);
+                            self
         }
         /// <p>The events that RUM collected that match your request.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.events = input; self
         }
         /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,17 +185,20 @@ pub mod get_app_monitor_data_output {
         }
         /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput).
         pub fn build(self) -> crate::output::GetAppMonitorDataOutput {
             crate::output::GetAppMonitorDataOutput {
-                events: self.events,
-                next_token: self.next_token,
+                events: self.events
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAppMonitorDataOutput {
     /// Creates a new builder-style object to manufacture [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput).
@@ -203,19 +210,24 @@ impl GetAppMonitorDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRumMetricsDestinationOutput {}
+pub struct DeleteRumMetricsDestinationOutput  {
+}
 /// See [`DeleteRumMetricsDestinationOutput`](crate::output::DeleteRumMetricsDestinationOutput).
 pub mod delete_rum_metrics_destination_output {
-
+    
     /// A builder for [`DeleteRumMetricsDestinationOutput`](crate::output::DeleteRumMetricsDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRumMetricsDestinationOutput`](crate::output::DeleteRumMetricsDestinationOutput).
         pub fn build(self) -> crate::output::DeleteRumMetricsDestinationOutput {
-            crate::output::DeleteRumMetricsDestinationOutput {}
+            crate::output::DeleteRumMetricsDestinationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteRumMetricsDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRumMetricsDestinationOutput`](crate::output::DeleteRumMetricsDestinationOutput).
@@ -227,20 +239,20 @@ impl DeleteRumMetricsDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAppMonitorOutput {
+pub struct CreateAppMonitorOutput  {
     /// <p>The unique ID of the new app monitor.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateAppMonitorOutput {
     /// <p>The unique ID of the new app monitor.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput).
 pub mod create_app_monitor_output {
-
+    
     /// A builder for [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -254,14 +266,18 @@ pub mod create_app_monitor_output {
         }
         /// <p>The unique ID of the new app monitor.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput).
         pub fn build(self) -> crate::output::CreateAppMonitorOutput {
-            crate::output::CreateAppMonitorOutput { id: self.id }
+            crate::output::CreateAppMonitorOutput {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateAppMonitorOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput).
@@ -273,7 +289,7 @@ impl CreateAppMonitorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetRumMetricDefinitionsOutput {
+pub struct BatchGetRumMetricDefinitionsOutput  {
     /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
     #[doc(hidden)]
     pub metric_definitions: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
@@ -283,22 +299,21 @@ pub struct BatchGetRumMetricDefinitionsOutput {
 }
 impl BatchGetRumMetricDefinitionsOutput {
     /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
-    pub fn metric_definitions(&self) -> std::option::Option<&[crate::model::MetricDefinition]> {
+    pub fn metric_definitions(&self) -> std::option::Option<& [crate::model::MetricDefinition]> {
         self.metric_definitions.as_deref()
     }
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchGetRumMetricDefinitionsOutput`](crate::output::BatchGetRumMetricDefinitionsOutput).
 pub mod batch_get_rum_metric_definitions_output {
-
+    
     /// A builder for [`BatchGetRumMetricDefinitionsOutput`](crate::output::BatchGetRumMetricDefinitionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) metric_definitions:
-            std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
+        pub(crate) metric_definitions: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -309,17 +324,13 @@ pub mod batch_get_rum_metric_definitions_output {
         /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
         pub fn metric_definitions(mut self, input: crate::model::MetricDefinition) -> Self {
             let mut v = self.metric_definitions.unwrap_or_default();
-            v.push(input);
-            self.metric_definitions = Some(v);
-            self
+                            v.push(input);
+                            self.metric_definitions = Some(v);
+                            self
         }
         /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
-        pub fn set_metric_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
-        ) -> Self {
-            self.metric_definitions = input;
-            self
+        pub fn set_metric_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>) -> Self {
+            self.metric_definitions = input; self
         }
         /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -328,17 +339,20 @@ pub mod batch_get_rum_metric_definitions_output {
         }
         /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetRumMetricDefinitionsOutput`](crate::output::BatchGetRumMetricDefinitionsOutput).
         pub fn build(self) -> crate::output::BatchGetRumMetricDefinitionsOutput {
             crate::output::BatchGetRumMetricDefinitionsOutput {
-                metric_definitions: self.metric_definitions,
-                next_token: self.next_token,
+                metric_definitions: self.metric_definitions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetRumMetricDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetRumMetricDefinitionsOutput`](crate::output::BatchGetRumMetricDefinitionsOutput).
@@ -350,35 +364,31 @@ impl BatchGetRumMetricDefinitionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteRumMetricDefinitionsOutput {
+pub struct BatchDeleteRumMetricDefinitionsOutput  {
     /// <p>An array of error objects, if the operation caused any errors.</p>
     #[doc(hidden)]
-    pub errors:
-        std::option::Option<std::vec::Vec<crate::model::BatchDeleteRumMetricDefinitionsError>>,
+    pub errors: std::option::Option<std::vec::Vec<crate::model::BatchDeleteRumMetricDefinitionsError>>,
     /// <p>The IDs of the metric definitions that were deleted.</p>
     #[doc(hidden)]
     pub metric_definition_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteRumMetricDefinitionsOutput {
     /// <p>An array of error objects, if the operation caused any errors.</p>
-    pub fn errors(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchDeleteRumMetricDefinitionsError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::BatchDeleteRumMetricDefinitionsError]> {
         self.errors.as_deref()
     }
     /// <p>The IDs of the metric definitions that were deleted.</p>
-    pub fn metric_definition_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn metric_definition_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.metric_definition_ids.as_deref()
     }
 }
 /// See [`BatchDeleteRumMetricDefinitionsOutput`](crate::output::BatchDeleteRumMetricDefinitionsOutput).
 pub mod batch_delete_rum_metric_definitions_output {
-
+    
     /// A builder for [`BatchDeleteRumMetricDefinitionsOutput`](crate::output::BatchDeleteRumMetricDefinitionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) errors:
-            std::option::Option<std::vec::Vec<crate::model::BatchDeleteRumMetricDefinitionsError>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchDeleteRumMetricDefinitionsError>>,
         pub(crate) metric_definition_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
@@ -389,19 +399,13 @@ pub mod batch_delete_rum_metric_definitions_output {
         /// <p>An array of error objects, if the operation caused any errors.</p>
         pub fn errors(mut self, input: crate::model::BatchDeleteRumMetricDefinitionsError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>An array of error objects, if the operation caused any errors.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchDeleteRumMetricDefinitionsError>,
-            >,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchDeleteRumMetricDefinitionsError>>) -> Self {
+            self.errors = input; self
         }
         /// Appends an item to `metric_definition_ids`.
         ///
@@ -410,26 +414,26 @@ pub mod batch_delete_rum_metric_definitions_output {
         /// <p>The IDs of the metric definitions that were deleted.</p>
         pub fn metric_definition_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metric_definition_ids.unwrap_or_default();
-            v.push(input.into());
-            self.metric_definition_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.metric_definition_ids = Some(v);
+                            self
         }
         /// <p>The IDs of the metric definitions that were deleted.</p>
-        pub fn set_metric_definition_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.metric_definition_ids = input;
-            self
+        pub fn set_metric_definition_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.metric_definition_ids = input; self
         }
         /// Consumes the builder and constructs a [`BatchDeleteRumMetricDefinitionsOutput`](crate::output::BatchDeleteRumMetricDefinitionsOutput).
         pub fn build(self) -> crate::output::BatchDeleteRumMetricDefinitionsOutput {
             crate::output::BatchDeleteRumMetricDefinitionsOutput {
-                errors: self.errors,
-                metric_definition_ids: self.metric_definition_ids,
+                errors: self.errors
+                ,
+                metric_definition_ids: self.metric_definition_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDeleteRumMetricDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteRumMetricDefinitionsOutput`](crate::output::BatchDeleteRumMetricDefinitionsOutput).
@@ -441,37 +445,32 @@ impl BatchDeleteRumMetricDefinitionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchCreateRumMetricDefinitionsOutput {
+pub struct BatchCreateRumMetricDefinitionsOutput  {
     /// <p>An array of error objects, if the operation caused any errors.</p>
     #[doc(hidden)]
-    pub errors:
-        std::option::Option<std::vec::Vec<crate::model::BatchCreateRumMetricDefinitionsError>>,
+    pub errors: std::option::Option<std::vec::Vec<crate::model::BatchCreateRumMetricDefinitionsError>>,
     /// <p>An array of structures that define the extended metrics.</p>
     #[doc(hidden)]
     pub metric_definitions: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
 }
 impl BatchCreateRumMetricDefinitionsOutput {
     /// <p>An array of error objects, if the operation caused any errors.</p>
-    pub fn errors(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchCreateRumMetricDefinitionsError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::BatchCreateRumMetricDefinitionsError]> {
         self.errors.as_deref()
     }
     /// <p>An array of structures that define the extended metrics.</p>
-    pub fn metric_definitions(&self) -> std::option::Option<&[crate::model::MetricDefinition]> {
+    pub fn metric_definitions(&self) -> std::option::Option<& [crate::model::MetricDefinition]> {
         self.metric_definitions.as_deref()
     }
 }
 /// See [`BatchCreateRumMetricDefinitionsOutput`](crate::output::BatchCreateRumMetricDefinitionsOutput).
 pub mod batch_create_rum_metric_definitions_output {
-
+    
     /// A builder for [`BatchCreateRumMetricDefinitionsOutput`](crate::output::BatchCreateRumMetricDefinitionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) errors:
-            std::option::Option<std::vec::Vec<crate::model::BatchCreateRumMetricDefinitionsError>>,
-        pub(crate) metric_definitions:
-            std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchCreateRumMetricDefinitionsError>>,
+        pub(crate) metric_definitions: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -481,19 +480,13 @@ pub mod batch_create_rum_metric_definitions_output {
         /// <p>An array of error objects, if the operation caused any errors.</p>
         pub fn errors(mut self, input: crate::model::BatchCreateRumMetricDefinitionsError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>An array of error objects, if the operation caused any errors.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchCreateRumMetricDefinitionsError>,
-            >,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchCreateRumMetricDefinitionsError>>) -> Self {
+            self.errors = input; self
         }
         /// Appends an item to `metric_definitions`.
         ///
@@ -502,26 +495,26 @@ pub mod batch_create_rum_metric_definitions_output {
         /// <p>An array of structures that define the extended metrics.</p>
         pub fn metric_definitions(mut self, input: crate::model::MetricDefinition) -> Self {
             let mut v = self.metric_definitions.unwrap_or_default();
-            v.push(input);
-            self.metric_definitions = Some(v);
-            self
+                            v.push(input);
+                            self.metric_definitions = Some(v);
+                            self
         }
         /// <p>An array of structures that define the extended metrics.</p>
-        pub fn set_metric_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
-        ) -> Self {
-            self.metric_definitions = input;
-            self
+        pub fn set_metric_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>) -> Self {
+            self.metric_definitions = input; self
         }
         /// Consumes the builder and constructs a [`BatchCreateRumMetricDefinitionsOutput`](crate::output::BatchCreateRumMetricDefinitionsOutput).
         pub fn build(self) -> crate::output::BatchCreateRumMetricDefinitionsOutput {
             crate::output::BatchCreateRumMetricDefinitionsOutput {
-                errors: self.errors,
-                metric_definitions: self.metric_definitions,
+                errors: self.errors
+                ,
+                metric_definitions: self.metric_definitions
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchCreateRumMetricDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`BatchCreateRumMetricDefinitionsOutput`](crate::output::BatchCreateRumMetricDefinitionsOutput).
@@ -533,7 +526,7 @@ impl BatchCreateRumMetricDefinitionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppMonitorsOutput {
+pub struct ListAppMonitorsOutput  {
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -543,23 +536,22 @@ pub struct ListAppMonitorsOutput {
 }
 impl ListAppMonitorsOutput {
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of structures that contain information about the returned app monitors.</p>
-    pub fn app_monitor_summaries(&self) -> std::option::Option<&[crate::model::AppMonitorSummary]> {
+    pub fn app_monitor_summaries(&self) -> std::option::Option<& [crate::model::AppMonitorSummary]> {
         self.app_monitor_summaries.as_deref()
     }
 }
 /// See [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput).
 pub mod list_app_monitors_output {
-
+    
     /// A builder for [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) app_monitor_summaries:
-            std::option::Option<std::vec::Vec<crate::model::AppMonitorSummary>>,
+        pub(crate) app_monitor_summaries: std::option::Option<std::vec::Vec<crate::model::AppMonitorSummary>>,
     }
     impl Builder {
         /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
@@ -569,8 +561,7 @@ pub mod list_app_monitors_output {
         }
         /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `app_monitor_summaries`.
         ///
@@ -579,26 +570,26 @@ pub mod list_app_monitors_output {
         /// <p>An array of structures that contain information about the returned app monitors.</p>
         pub fn app_monitor_summaries(mut self, input: crate::model::AppMonitorSummary) -> Self {
             let mut v = self.app_monitor_summaries.unwrap_or_default();
-            v.push(input);
-            self.app_monitor_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.app_monitor_summaries = Some(v);
+                            self
         }
         /// <p>An array of structures that contain information about the returned app monitors.</p>
-        pub fn set_app_monitor_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AppMonitorSummary>>,
-        ) -> Self {
-            self.app_monitor_summaries = input;
-            self
+        pub fn set_app_monitor_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::AppMonitorSummary>>) -> Self {
+            self.app_monitor_summaries = input; self
         }
         /// Consumes the builder and constructs a [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput).
         pub fn build(self) -> crate::output::ListAppMonitorsOutput {
             crate::output::ListAppMonitorsOutput {
-                next_token: self.next_token,
-                app_monitor_summaries: self.app_monitor_summaries,
+                next_token: self.next_token
+                ,
+                app_monitor_summaries: self.app_monitor_summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAppMonitorsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput).
@@ -610,19 +601,24 @@ impl ListAppMonitorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppMonitorOutput {}
+pub struct DeleteAppMonitorOutput  {
+}
 /// See [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
 pub mod delete_app_monitor_output {
-
+    
     /// A builder for [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
         pub fn build(self) -> crate::output::DeleteAppMonitorOutput {
-            crate::output::DeleteAppMonitorOutput {}
+            crate::output::DeleteAppMonitorOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAppMonitorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
@@ -634,19 +630,24 @@ impl DeleteAppMonitorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAppMonitorOutput {}
+pub struct UpdateAppMonitorOutput  {
+}
 /// See [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
 pub mod update_app_monitor_output {
-
+    
     /// A builder for [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
         pub fn build(self) -> crate::output::UpdateAppMonitorOutput {
-            crate::output::UpdateAppMonitorOutput {}
+            crate::output::UpdateAppMonitorOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateAppMonitorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
@@ -658,20 +659,20 @@ impl UpdateAppMonitorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAppMonitorOutput {
+pub struct GetAppMonitorOutput  {
     /// <p>A structure containing all the configuration information for the app monitor.</p>
     #[doc(hidden)]
     pub app_monitor: std::option::Option<crate::model::AppMonitor>,
 }
 impl GetAppMonitorOutput {
     /// <p>A structure containing all the configuration information for the app monitor.</p>
-    pub fn app_monitor(&self) -> std::option::Option<&crate::model::AppMonitor> {
+    pub fn app_monitor(&self) -> std::option::Option<& crate::model::AppMonitor> {
         self.app_monitor.as_ref()
     }
 }
 /// See [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput).
 pub mod get_app_monitor_output {
-
+    
     /// A builder for [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -684,20 +685,19 @@ pub mod get_app_monitor_output {
             self
         }
         /// <p>A structure containing all the configuration information for the app monitor.</p>
-        pub fn set_app_monitor(
-            mut self,
-            input: std::option::Option<crate::model::AppMonitor>,
-        ) -> Self {
-            self.app_monitor = input;
-            self
+        pub fn set_app_monitor(mut self, input: std::option::Option<crate::model::AppMonitor>) -> Self {
+            self.app_monitor = input; self
         }
         /// Consumes the builder and constructs a [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput).
         pub fn build(self) -> crate::output::GetAppMonitorOutput {
             crate::output::GetAppMonitorOutput {
-                app_monitor: self.app_monitor,
+                app_monitor: self.app_monitor
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAppMonitorOutput {
     /// Creates a new builder-style object to manufacture [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput).
@@ -709,19 +709,24 @@ impl GetAppMonitorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -733,19 +738,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -757,19 +767,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRumEventsOutput {}
+pub struct PutRumEventsOutput  {
+}
 /// See [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
 pub mod put_rum_events_output {
-
+    
     /// A builder for [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
         pub fn build(self) -> crate::output::PutRumEventsOutput {
-            crate::output::PutRumEventsOutput {}
+            crate::output::PutRumEventsOutput {
+            }
         }
     }
+    
+    
 }
 impl PutRumEventsOutput {
     /// Creates a new builder-style object to manufacture [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
@@ -781,38 +796,32 @@ impl PutRumEventsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The ARN of the resource that you are viewing.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys and values associated with the resource you specified.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The ARN of the resource that you are viewing.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The list of tag keys and values associated with the resource you specified.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ARN of the resource that you are viewing.</p>
@@ -822,42 +831,35 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>The ARN of the resource that you are viewing.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tag keys and values associated with the resource you specified.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of tag keys and values associated with the resource you specified.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
+                resource_arn: self.resource_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -865,3 +867,4 @@ impl ListTagsForResourceOutput {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
+

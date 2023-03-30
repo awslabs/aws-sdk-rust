@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let partnerintegrationstatus = unimplemented!();
 /// match partnerintegrationstatus {
@@ -32,22 +32,14 @@
 /// Specifically, when `partnerintegrationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PartnerIntegrationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PartnerIntegrationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -58,7 +50,7 @@ pub enum PartnerIntegrationStatus {
     #[allow(missing_docs)] // documentation missing in model
     RuntimeFailure,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PartnerIntegrationStatus {
     fn from(s: &str) -> Self {
@@ -67,19 +59,17 @@ impl std::convert::From<&str> for PartnerIntegrationStatus {
             "ConnectionFailure" => PartnerIntegrationStatus::ConnectionFailure,
             "Inactive" => PartnerIntegrationStatus::Inactive,
             "RuntimeFailure" => PartnerIntegrationStatus::RuntimeFailure,
-            other => PartnerIntegrationStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PartnerIntegrationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PartnerIntegrationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PartnerIntegrationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PartnerIntegrationStatus::from(s))
+                }
+            }
 impl PartnerIntegrationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -88,12 +78,14 @@ impl PartnerIntegrationStatus {
             PartnerIntegrationStatus::ConnectionFailure => "ConnectionFailure",
             PartnerIntegrationStatus::Inactive => "Inactive",
             PartnerIntegrationStatus::RuntimeFailure => "RuntimeFailure",
-            PartnerIntegrationStatus::Unknown(value) => value.as_str(),
+            PartnerIntegrationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Active", "ConnectionFailure", "Inactive", "RuntimeFailure"]
+        &[
+            "Active", "ConnectionFailure", "Inactive", "RuntimeFailure"
+        ]
     }
 }
 impl AsRef<str> for PartnerIntegrationStatus {
@@ -105,45 +97,45 @@ impl AsRef<str> for PartnerIntegrationStatus {
 /// <p>Describes a cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Cluster {
+pub struct Cluster  {
     /// <p>The unique identifier of the cluster.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The node type for the nodes in the cluster.</p>
     #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
-    /// <p> The current state of the cluster. Possible values are the following:</p>
-    /// <ul>
-    /// <li> <p> <code>available</code> </p> </li>
-    /// <li> <p> <code>available, prep-for-resize</code> </p> </li>
-    /// <li> <p> <code>available, resize-cleanup</code> </p> </li>
-    /// <li> <p> <code>cancelling-resize</code> </p> </li>
-    /// <li> <p> <code>creating</code> </p> </li>
-    /// <li> <p> <code>deleting</code> </p> </li>
-    /// <li> <p> <code>final-snapshot</code> </p> </li>
-    /// <li> <p> <code>hardware-failure</code> </p> </li>
-    /// <li> <p> <code>incompatible-hsm</code> </p> </li>
-    /// <li> <p> <code>incompatible-network</code> </p> </li>
-    /// <li> <p> <code>incompatible-parameters</code> </p> </li>
-    /// <li> <p> <code>incompatible-restore</code> </p> </li>
-    /// <li> <p> <code>modifying</code> </p> </li>
-    /// <li> <p> <code>paused</code> </p> </li>
-    /// <li> <p> <code>rebooting</code> </p> </li>
-    /// <li> <p> <code>renaming</code> </p> </li>
-    /// <li> <p> <code>resizing</code> </p> </li>
-    /// <li> <p> <code>rotating-keys</code> </p> </li>
-    /// <li> <p> <code>storage-full</code> </p> </li>
-    /// <li> <p> <code>updating-hsm</code> </p> </li>
+    /// <p> The current state of the cluster. Possible values are the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>available</code> </p> </li> 
+    /// <li> <p> <code>available, prep-for-resize</code> </p> </li> 
+    /// <li> <p> <code>available, resize-cleanup</code> </p> </li> 
+    /// <li> <p> <code>cancelling-resize</code> </p> </li> 
+    /// <li> <p> <code>creating</code> </p> </li> 
+    /// <li> <p> <code>deleting</code> </p> </li> 
+    /// <li> <p> <code>final-snapshot</code> </p> </li> 
+    /// <li> <p> <code>hardware-failure</code> </p> </li> 
+    /// <li> <p> <code>incompatible-hsm</code> </p> </li> 
+    /// <li> <p> <code>incompatible-network</code> </p> </li> 
+    /// <li> <p> <code>incompatible-parameters</code> </p> </li> 
+    /// <li> <p> <code>incompatible-restore</code> </p> </li> 
+    /// <li> <p> <code>modifying</code> </p> </li> 
+    /// <li> <p> <code>paused</code> </p> </li> 
+    /// <li> <p> <code>rebooting</code> </p> </li> 
+    /// <li> <p> <code>renaming</code> </p> </li> 
+    /// <li> <p> <code>resizing</code> </p> </li> 
+    /// <li> <p> <code>rotating-keys</code> </p> </li> 
+    /// <li> <p> <code>storage-full</code> </p> </li> 
+    /// <li> <p> <code>updating-hsm</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub cluster_status: std::option::Option<std::string::String>,
-    /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
-    /// <ul>
-    /// <li> <p>Available - The cluster is available for queries. </p> </li>
-    /// <li> <p>Unavailable - The cluster is not available for queries.</p> </li>
-    /// <li> <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p> </li>
-    /// <li> <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
-    /// <li> <p>Failed - The cluster failed and is not available for queries.</p> </li>
+    /// <p>The availability status of the cluster for queries. Possible values are the following:</p> 
+    /// <ul> 
+    /// <li> <p>Available - The cluster is available for queries. </p> </li> 
+    /// <li> <p>Unavailable - The cluster is not available for queries.</p> </li> 
+    /// <li> <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p> </li> 
+    /// <li> <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li> 
+    /// <li> <p>Failed - The cluster failed and is not available for queries.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub cluster_availability_status: std::option::Option<std::string::String>,
@@ -165,23 +157,20 @@ pub struct Cluster {
     /// <p>The number of days that automatic cluster snapshots are retained.</p>
     #[doc(hidden)]
     pub automated_snapshot_retention_period: i32,
-    /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
+    /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p> 
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     #[doc(hidden)]
     pub manual_snapshot_retention_period: i32,
-    /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p>
+    /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p> 
     /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter. </p>
     #[doc(hidden)]
-    pub cluster_security_groups:
-        std::option::Option<std::vec::Vec<crate::model::ClusterSecurityGroupMembership>>,
+    pub cluster_security_groups: std::option::Option<std::vec::Vec<crate::model::ClusterSecurityGroupMembership>>,
     /// <p>A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that are associated with the cluster. This parameter is returned only if the cluster is in a VPC.</p>
     #[doc(hidden)]
-    pub vpc_security_groups:
-        std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
+    pub vpc_security_groups: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
     /// <p>The list of cluster parameter groups that are associated with this cluster. Each parameter group in the list is returned with its status.</p>
     #[doc(hidden)]
-    pub cluster_parameter_groups:
-        std::option::Option<std::vec::Vec<crate::model::ClusterParameterGroupStatus>>,
+    pub cluster_parameter_groups: std::option::Option<std::vec::Vec<crate::model::ClusterParameterGroupStatus>>,
     /// <p>The name of the subnet group that is associated with the cluster. This parameter is valid only when the cluster is in a VPC.</p>
     #[doc(hidden)]
     pub cluster_subnet_group_name: std::option::Option<std::string::String>,
@@ -218,7 +207,7 @@ pub struct Cluster {
     /// <p></p>
     #[doc(hidden)]
     pub data_transfer_progress: std::option::Option<crate::model::DataTransferProgress>,
-    /// <p>A value that reports whether the Amazon Redshift cluster has finished applying any hardware security module (HSM) settings changes specified in a modify cluster command.</p>
+    /// <p>A value that reports whether the Amazon Redshift cluster has finished applying any hardware security module (HSM) settings changes specified in a modify cluster command.</p> 
     /// <p>Values: active, applying</p>
     #[doc(hidden)]
     pub hsm_status: std::option::Option<crate::model::HsmStatus>,
@@ -243,8 +232,8 @@ pub struct Cluster {
     /// <p>The Key Management Service (KMS) key ID of the encryption key used to encrypt data in the cluster.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> 
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> 
     /// <p>Default: false</p>
     #[doc(hidden)]
     pub enhanced_vpc_routing: bool,
@@ -262,8 +251,7 @@ pub struct Cluster {
     pub elastic_resize_number_of_node_options: std::option::Option<std::string::String>,
     /// <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
     #[doc(hidden)]
-    pub deferred_maintenance_windows:
-        std::option::Option<std::vec::Vec<crate::model::DeferredMaintenanceWindow>>,
+    pub deferred_maintenance_windows: std::option::Option<std::vec::Vec<crate::model::DeferredMaintenanceWindow>>,
     /// <p>A unique identifier for the cluster snapshot schedule.</p>
     #[doc(hidden)]
     pub snapshot_schedule_identifier: std::option::Option<std::string::String>,
@@ -273,20 +261,20 @@ pub struct Cluster {
     /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled. </p>
     #[doc(hidden)]
     pub expected_next_snapshot_schedule_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
-    /// <ul>
-    /// <li> <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li>
-    /// <li> <p>Pending - The next snapshot is pending to be taken. </p> </li>
+    /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p> 
+    /// <ul> 
+    /// <li> <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li> 
+    /// <li> <p>Pending - The next snapshot is pending to be taken. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub expected_next_snapshot_schedule_time_status: std::option::Option<std::string::String>,
     /// <p>The date and time in UTC when system maintenance can begin.</p>
     #[doc(hidden)]
     pub next_maintenance_window_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Returns the following:</p>
-    /// <ul>
-    /// <li> <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p> </li>
-    /// <li> <p>ResizeType: Returns ClassicResize</p> </li>
+    /// <p>Returns the following:</p> 
+    /// <ul> 
+    /// <li> <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p> </li> 
+    /// <li> <p>ResizeType: Returns ClassicResize</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub resize_info: std::option::Option<crate::model::ResizeInfo>,
@@ -307,127 +295,118 @@ pub struct Cluster {
     pub default_iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
     #[doc(hidden)]
-    pub reserved_node_exchange_status:
-        std::option::Option<crate::model::ReservedNodeExchangeStatus>,
+    pub reserved_node_exchange_status: std::option::Option<crate::model::ReservedNodeExchangeStatus>,
 }
 impl Cluster {
     /// <p>The unique identifier of the cluster.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The node type for the nodes in the cluster.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> std::option::Option<& str> {
         self.node_type.as_deref()
     }
-    /// <p> The current state of the cluster. Possible values are the following:</p>
-    /// <ul>
-    /// <li> <p> <code>available</code> </p> </li>
-    /// <li> <p> <code>available, prep-for-resize</code> </p> </li>
-    /// <li> <p> <code>available, resize-cleanup</code> </p> </li>
-    /// <li> <p> <code>cancelling-resize</code> </p> </li>
-    /// <li> <p> <code>creating</code> </p> </li>
-    /// <li> <p> <code>deleting</code> </p> </li>
-    /// <li> <p> <code>final-snapshot</code> </p> </li>
-    /// <li> <p> <code>hardware-failure</code> </p> </li>
-    /// <li> <p> <code>incompatible-hsm</code> </p> </li>
-    /// <li> <p> <code>incompatible-network</code> </p> </li>
-    /// <li> <p> <code>incompatible-parameters</code> </p> </li>
-    /// <li> <p> <code>incompatible-restore</code> </p> </li>
-    /// <li> <p> <code>modifying</code> </p> </li>
-    /// <li> <p> <code>paused</code> </p> </li>
-    /// <li> <p> <code>rebooting</code> </p> </li>
-    /// <li> <p> <code>renaming</code> </p> </li>
-    /// <li> <p> <code>resizing</code> </p> </li>
-    /// <li> <p> <code>rotating-keys</code> </p> </li>
-    /// <li> <p> <code>storage-full</code> </p> </li>
-    /// <li> <p> <code>updating-hsm</code> </p> </li>
+    /// <p> The current state of the cluster. Possible values are the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>available</code> </p> </li> 
+    /// <li> <p> <code>available, prep-for-resize</code> </p> </li> 
+    /// <li> <p> <code>available, resize-cleanup</code> </p> </li> 
+    /// <li> <p> <code>cancelling-resize</code> </p> </li> 
+    /// <li> <p> <code>creating</code> </p> </li> 
+    /// <li> <p> <code>deleting</code> </p> </li> 
+    /// <li> <p> <code>final-snapshot</code> </p> </li> 
+    /// <li> <p> <code>hardware-failure</code> </p> </li> 
+    /// <li> <p> <code>incompatible-hsm</code> </p> </li> 
+    /// <li> <p> <code>incompatible-network</code> </p> </li> 
+    /// <li> <p> <code>incompatible-parameters</code> </p> </li> 
+    /// <li> <p> <code>incompatible-restore</code> </p> </li> 
+    /// <li> <p> <code>modifying</code> </p> </li> 
+    /// <li> <p> <code>paused</code> </p> </li> 
+    /// <li> <p> <code>rebooting</code> </p> </li> 
+    /// <li> <p> <code>renaming</code> </p> </li> 
+    /// <li> <p> <code>resizing</code> </p> </li> 
+    /// <li> <p> <code>rotating-keys</code> </p> </li> 
+    /// <li> <p> <code>storage-full</code> </p> </li> 
+    /// <li> <p> <code>updating-hsm</code> </p> </li> 
     /// </ul>
-    pub fn cluster_status(&self) -> std::option::Option<&str> {
+    pub fn cluster_status(&self) -> std::option::Option<& str> {
         self.cluster_status.as_deref()
     }
-    /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
-    /// <ul>
-    /// <li> <p>Available - The cluster is available for queries. </p> </li>
-    /// <li> <p>Unavailable - The cluster is not available for queries.</p> </li>
-    /// <li> <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p> </li>
-    /// <li> <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
-    /// <li> <p>Failed - The cluster failed and is not available for queries.</p> </li>
+    /// <p>The availability status of the cluster for queries. Possible values are the following:</p> 
+    /// <ul> 
+    /// <li> <p>Available - The cluster is available for queries. </p> </li> 
+    /// <li> <p>Unavailable - The cluster is not available for queries.</p> </li> 
+    /// <li> <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p> </li> 
+    /// <li> <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li> 
+    /// <li> <p>Failed - The cluster failed and is not available for queries.</p> </li> 
     /// </ul>
-    pub fn cluster_availability_status(&self) -> std::option::Option<&str> {
+    pub fn cluster_availability_status(&self) -> std::option::Option<& str> {
         self.cluster_availability_status.as_deref()
     }
     /// <p>The status of a modify operation, if any, initiated for the cluster.</p>
-    pub fn modify_status(&self) -> std::option::Option<&str> {
+    pub fn modify_status(&self) -> std::option::Option<& str> {
         self.modify_status.as_deref()
     }
     /// <p>The admin user name for the cluster. This name is used to connect to the database that is specified in the <b>DBName</b> parameter. </p>
-    pub fn master_username(&self) -> std::option::Option<&str> {
+    pub fn master_username(&self) -> std::option::Option<& str> {
         self.master_username.as_deref()
     }
     /// <p>The name of the initial database that was created when the cluster was created. This same name is returned for the life of the cluster. If an initial database was not specified, a database named <code>dev</code>dev was created by default. </p>
-    pub fn db_name(&self) -> std::option::Option<&str> {
+    pub fn db_name(&self) -> std::option::Option<& str> {
         self.db_name.as_deref()
     }
     /// <p>The connection endpoint.</p>
-    pub fn endpoint(&self) -> std::option::Option<&crate::model::Endpoint> {
+    pub fn endpoint(&self) -> std::option::Option<& crate::model::Endpoint> {
         self.endpoint.as_ref()
     }
     /// <p>The date and time that the cluster was created.</p>
-    pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn cluster_create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.cluster_create_time.as_ref()
     }
     /// <p>The number of days that automatic cluster snapshots are retained.</p>
     pub fn automated_snapshot_retention_period(&self) -> i32 {
         self.automated_snapshot_retention_period
     }
-    /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
+    /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p> 
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub fn manual_snapshot_retention_period(&self) -> i32 {
         self.manual_snapshot_retention_period
     }
-    /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p>
+    /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p> 
     /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter. </p>
-    pub fn cluster_security_groups(
-        &self,
-    ) -> std::option::Option<&[crate::model::ClusterSecurityGroupMembership]> {
+    pub fn cluster_security_groups(&self) -> std::option::Option<& [crate::model::ClusterSecurityGroupMembership]> {
         self.cluster_security_groups.as_deref()
     }
     /// <p>A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that are associated with the cluster. This parameter is returned only if the cluster is in a VPC.</p>
-    pub fn vpc_security_groups(
-        &self,
-    ) -> std::option::Option<&[crate::model::VpcSecurityGroupMembership]> {
+    pub fn vpc_security_groups(&self) -> std::option::Option<& [crate::model::VpcSecurityGroupMembership]> {
         self.vpc_security_groups.as_deref()
     }
     /// <p>The list of cluster parameter groups that are associated with this cluster. Each parameter group in the list is returned with its status.</p>
-    pub fn cluster_parameter_groups(
-        &self,
-    ) -> std::option::Option<&[crate::model::ClusterParameterGroupStatus]> {
+    pub fn cluster_parameter_groups(&self) -> std::option::Option<& [crate::model::ClusterParameterGroupStatus]> {
         self.cluster_parameter_groups.as_deref()
     }
     /// <p>The name of the subnet group that is associated with the cluster. This parameter is valid only when the cluster is in a VPC.</p>
-    pub fn cluster_subnet_group_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_subnet_group_name(&self) -> std::option::Option<& str> {
         self.cluster_subnet_group_name.as_deref()
     }
     /// <p>The identifier of the VPC the cluster is in, if the cluster is in a VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The name of the Availability Zone in which the cluster is located.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
-    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>A value that, if present, indicates that changes to the cluster are pending. Specific pending changes are identified by subelements.</p>
-    pub fn pending_modified_values(
-        &self,
-    ) -> std::option::Option<&crate::model::PendingModifiedValues> {
+    pub fn pending_modified_values(&self) -> std::option::Option<& crate::model::PendingModifiedValues> {
         self.pending_modified_values.as_ref()
     }
     /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
-    pub fn cluster_version(&self) -> std::option::Option<&str> {
+    pub fn cluster_version(&self) -> std::option::Option<& str> {
         self.cluster_version.as_deref()
     }
     /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
@@ -447,120 +426,110 @@ impl Cluster {
         self.encrypted
     }
     /// <p>A value that describes the status of a cluster restore action. This parameter returns null if the cluster was not created by restoring a snapshot.</p>
-    pub fn restore_status(&self) -> std::option::Option<&crate::model::RestoreStatus> {
+    pub fn restore_status(&self) -> std::option::Option<& crate::model::RestoreStatus> {
         self.restore_status.as_ref()
     }
     /// <p></p>
-    pub fn data_transfer_progress(
-        &self,
-    ) -> std::option::Option<&crate::model::DataTransferProgress> {
+    pub fn data_transfer_progress(&self) -> std::option::Option<& crate::model::DataTransferProgress> {
         self.data_transfer_progress.as_ref()
     }
-    /// <p>A value that reports whether the Amazon Redshift cluster has finished applying any hardware security module (HSM) settings changes specified in a modify cluster command.</p>
+    /// <p>A value that reports whether the Amazon Redshift cluster has finished applying any hardware security module (HSM) settings changes specified in a modify cluster command.</p> 
     /// <p>Values: active, applying</p>
-    pub fn hsm_status(&self) -> std::option::Option<&crate::model::HsmStatus> {
+    pub fn hsm_status(&self) -> std::option::Option<& crate::model::HsmStatus> {
         self.hsm_status.as_ref()
     }
     /// <p>A value that returns the destination region and retention period that are configured for cross-region snapshot copy.</p>
-    pub fn cluster_snapshot_copy_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ClusterSnapshotCopyStatus> {
+    pub fn cluster_snapshot_copy_status(&self) -> std::option::Option<& crate::model::ClusterSnapshotCopyStatus> {
         self.cluster_snapshot_copy_status.as_ref()
     }
     /// <p>The public key for the cluster.</p>
-    pub fn cluster_public_key(&self) -> std::option::Option<&str> {
+    pub fn cluster_public_key(&self) -> std::option::Option<& str> {
         self.cluster_public_key.as_deref()
     }
     /// <p>The nodes in the cluster.</p>
-    pub fn cluster_nodes(&self) -> std::option::Option<&[crate::model::ClusterNode]> {
+    pub fn cluster_nodes(&self) -> std::option::Option<& [crate::model::ClusterNode]> {
         self.cluster_nodes.as_deref()
     }
     /// <p>The status of the elastic IP (EIP) address.</p>
-    pub fn elastic_ip_status(&self) -> std::option::Option<&crate::model::ElasticIpStatus> {
+    pub fn elastic_ip_status(&self) -> std::option::Option<& crate::model::ElasticIpStatus> {
         self.elastic_ip_status.as_ref()
     }
     /// <p>The specific revision number of the database in the cluster.</p>
-    pub fn cluster_revision_number(&self) -> std::option::Option<&str> {
+    pub fn cluster_revision_number(&self) -> std::option::Option<& str> {
         self.cluster_revision_number.as_deref()
     }
     /// <p>The list of tags for the cluster.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The Key Management Service (KMS) key ID of the encryption key used to encrypt data in the cluster.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> 
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> 
     /// <p>Default: false</p>
     pub fn enhanced_vpc_routing(&self) -> bool {
         self.enhanced_vpc_routing
     }
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p>
-    pub fn iam_roles(&self) -> std::option::Option<&[crate::model::ClusterIamRole]> {
+    pub fn iam_roles(&self) -> std::option::Option<& [crate::model::ClusterIamRole]> {
         self.iam_roles.as_deref()
     }
     /// <p>Cluster operations that are waiting to be started.</p>
-    pub fn pending_actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn pending_actions(&self) -> std::option::Option<& [std::string::String]> {
         self.pending_actions.as_deref()
     }
     /// <p>The name of the maintenance track for the cluster.</p>
-    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+    pub fn maintenance_track_name(&self) -> std::option::Option<& str> {
         self.maintenance_track_name.as_deref()
     }
     /// <p>The number of nodes that you can resize the cluster to with the elastic resize method. </p>
-    pub fn elastic_resize_number_of_node_options(&self) -> std::option::Option<&str> {
+    pub fn elastic_resize_number_of_node_options(&self) -> std::option::Option<& str> {
         self.elastic_resize_number_of_node_options.as_deref()
     }
     /// <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
-    pub fn deferred_maintenance_windows(
-        &self,
-    ) -> std::option::Option<&[crate::model::DeferredMaintenanceWindow]> {
+    pub fn deferred_maintenance_windows(&self) -> std::option::Option<& [crate::model::DeferredMaintenanceWindow]> {
         self.deferred_maintenance_windows.as_deref()
     }
     /// <p>A unique identifier for the cluster snapshot schedule.</p>
-    pub fn snapshot_schedule_identifier(&self) -> std::option::Option<&str> {
+    pub fn snapshot_schedule_identifier(&self) -> std::option::Option<& str> {
         self.snapshot_schedule_identifier.as_deref()
     }
     /// <p>The current state of the cluster snapshot schedule.</p>
-    pub fn snapshot_schedule_state(&self) -> std::option::Option<&crate::model::ScheduleState> {
+    pub fn snapshot_schedule_state(&self) -> std::option::Option<& crate::model::ScheduleState> {
         self.snapshot_schedule_state.as_ref()
     }
     /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled. </p>
-    pub fn expected_next_snapshot_schedule_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expected_next_snapshot_schedule_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expected_next_snapshot_schedule_time.as_ref()
     }
-    /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
-    /// <ul>
-    /// <li> <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li>
-    /// <li> <p>Pending - The next snapshot is pending to be taken. </p> </li>
+    /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p> 
+    /// <ul> 
+    /// <li> <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li> 
+    /// <li> <p>Pending - The next snapshot is pending to be taken. </p> </li> 
     /// </ul>
-    pub fn expected_next_snapshot_schedule_time_status(&self) -> std::option::Option<&str> {
+    pub fn expected_next_snapshot_schedule_time_status(&self) -> std::option::Option<& str> {
         self.expected_next_snapshot_schedule_time_status.as_deref()
     }
     /// <p>The date and time in UTC when system maintenance can begin.</p>
-    pub fn next_maintenance_window_start_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn next_maintenance_window_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.next_maintenance_window_start_time.as_ref()
     }
-    /// <p>Returns the following:</p>
-    /// <ul>
-    /// <li> <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p> </li>
-    /// <li> <p>ResizeType: Returns ClassicResize</p> </li>
+    /// <p>Returns the following:</p> 
+    /// <ul> 
+    /// <li> <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p> </li> 
+    /// <li> <p>ResizeType: Returns ClassicResize</p> </li> 
     /// </ul>
-    pub fn resize_info(&self) -> std::option::Option<&crate::model::ResizeInfo> {
+    pub fn resize_info(&self) -> std::option::Option<& crate::model::ResizeInfo> {
         self.resize_info.as_ref()
     }
     /// <p>Describes the status of the Availability Zone relocation operation.</p>
-    pub fn availability_zone_relocation_status(&self) -> std::option::Option<&str> {
+    pub fn availability_zone_relocation_status(&self) -> std::option::Option<& str> {
         self.availability_zone_relocation_status.as_deref()
     }
     /// <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_namespace_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_namespace_arn(&self) -> std::option::Option<& str> {
         self.cluster_namespace_arn.as_deref()
     }
     /// <p>The total storage capacity of the cluster in megabytes. </p>
@@ -568,23 +537,21 @@ impl Cluster {
         self.total_storage_capacity_in_mega_bytes
     }
     /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    pub fn aqua_configuration(&self) -> std::option::Option<&crate::model::AquaConfiguration> {
+    pub fn aqua_configuration(&self) -> std::option::Option<& crate::model::AquaConfiguration> {
         self.aqua_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.</p>
-    pub fn default_iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn default_iam_role_arn(&self) -> std::option::Option<& str> {
         self.default_iam_role_arn.as_deref()
     }
     /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
-    pub fn reserved_node_exchange_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ReservedNodeExchangeStatus> {
+    pub fn reserved_node_exchange_status(&self) -> std::option::Option<& crate::model::ReservedNodeExchangeStatus> {
         self.reserved_node_exchange_status.as_ref()
     }
 }
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
-
+    
     /// A builder for [`Cluster`](crate::model::Cluster).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -599,18 +566,14 @@ pub mod cluster {
         pub(crate) cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) automated_snapshot_retention_period: std::option::Option<i32>,
         pub(crate) manual_snapshot_retention_period: std::option::Option<i32>,
-        pub(crate) cluster_security_groups:
-            std::option::Option<std::vec::Vec<crate::model::ClusterSecurityGroupMembership>>,
-        pub(crate) vpc_security_groups:
-            std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
-        pub(crate) cluster_parameter_groups:
-            std::option::Option<std::vec::Vec<crate::model::ClusterParameterGroupStatus>>,
+        pub(crate) cluster_security_groups: std::option::Option<std::vec::Vec<crate::model::ClusterSecurityGroupMembership>>,
+        pub(crate) vpc_security_groups: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
+        pub(crate) cluster_parameter_groups: std::option::Option<std::vec::Vec<crate::model::ClusterParameterGroupStatus>>,
         pub(crate) cluster_subnet_group_name: std::option::Option<std::string::String>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
         pub(crate) preferred_maintenance_window: std::option::Option<std::string::String>,
-        pub(crate) pending_modified_values:
-            std::option::Option<crate::model::PendingModifiedValues>,
+        pub(crate) pending_modified_values: std::option::Option<crate::model::PendingModifiedValues>,
         pub(crate) cluster_version: std::option::Option<std::string::String>,
         pub(crate) allow_version_upgrade: std::option::Option<bool>,
         pub(crate) number_of_nodes: std::option::Option<i32>,
@@ -619,8 +582,7 @@ pub mod cluster {
         pub(crate) restore_status: std::option::Option<crate::model::RestoreStatus>,
         pub(crate) data_transfer_progress: std::option::Option<crate::model::DataTransferProgress>,
         pub(crate) hsm_status: std::option::Option<crate::model::HsmStatus>,
-        pub(crate) cluster_snapshot_copy_status:
-            std::option::Option<crate::model::ClusterSnapshotCopyStatus>,
+        pub(crate) cluster_snapshot_copy_status: std::option::Option<crate::model::ClusterSnapshotCopyStatus>,
         pub(crate) cluster_public_key: std::option::Option<std::string::String>,
         pub(crate) cluster_nodes: std::option::Option<std::vec::Vec<crate::model::ClusterNode>>,
         pub(crate) elastic_ip_status: std::option::Option<crate::model::ElasticIpStatus>,
@@ -632,24 +594,19 @@ pub mod cluster {
         pub(crate) pending_actions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) maintenance_track_name: std::option::Option<std::string::String>,
         pub(crate) elastic_resize_number_of_node_options: std::option::Option<std::string::String>,
-        pub(crate) deferred_maintenance_windows:
-            std::option::Option<std::vec::Vec<crate::model::DeferredMaintenanceWindow>>,
+        pub(crate) deferred_maintenance_windows: std::option::Option<std::vec::Vec<crate::model::DeferredMaintenanceWindow>>,
         pub(crate) snapshot_schedule_identifier: std::option::Option<std::string::String>,
         pub(crate) snapshot_schedule_state: std::option::Option<crate::model::ScheduleState>,
-        pub(crate) expected_next_snapshot_schedule_time:
-            std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) expected_next_snapshot_schedule_time_status:
-            std::option::Option<std::string::String>,
-        pub(crate) next_maintenance_window_start_time:
-            std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) expected_next_snapshot_schedule_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) expected_next_snapshot_schedule_time_status: std::option::Option<std::string::String>,
+        pub(crate) next_maintenance_window_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resize_info: std::option::Option<crate::model::ResizeInfo>,
         pub(crate) availability_zone_relocation_status: std::option::Option<std::string::String>,
         pub(crate) cluster_namespace_arn: std::option::Option<std::string::String>,
         pub(crate) total_storage_capacity_in_mega_bytes: std::option::Option<i64>,
         pub(crate) aqua_configuration: std::option::Option<crate::model::AquaConfiguration>,
         pub(crate) default_iam_role_arn: std::option::Option<std::string::String>,
-        pub(crate) reserved_node_exchange_status:
-            std::option::Option<crate::model::ReservedNodeExchangeStatus>,
+        pub(crate) reserved_node_exchange_status: std::option::Option<crate::model::ReservedNodeExchangeStatus>,
     }
     impl Builder {
         /// <p>The unique identifier of the cluster.</p>
@@ -658,12 +615,8 @@ pub mod cluster {
             self
         }
         /// <p>The unique identifier of the cluster.</p>
-        pub fn set_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_identifier = input;
-            self
+        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_identifier = input; self
         }
         /// <p>The node type for the nodes in the cluster.</p>
         pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -672,95 +625,83 @@ pub mod cluster {
         }
         /// <p>The node type for the nodes in the cluster.</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_type = input;
-            self
+            self.node_type = input; self
         }
-        /// <p> The current state of the cluster. Possible values are the following:</p>
-        /// <ul>
-        /// <li> <p> <code>available</code> </p> </li>
-        /// <li> <p> <code>available, prep-for-resize</code> </p> </li>
-        /// <li> <p> <code>available, resize-cleanup</code> </p> </li>
-        /// <li> <p> <code>cancelling-resize</code> </p> </li>
-        /// <li> <p> <code>creating</code> </p> </li>
-        /// <li> <p> <code>deleting</code> </p> </li>
-        /// <li> <p> <code>final-snapshot</code> </p> </li>
-        /// <li> <p> <code>hardware-failure</code> </p> </li>
-        /// <li> <p> <code>incompatible-hsm</code> </p> </li>
-        /// <li> <p> <code>incompatible-network</code> </p> </li>
-        /// <li> <p> <code>incompatible-parameters</code> </p> </li>
-        /// <li> <p> <code>incompatible-restore</code> </p> </li>
-        /// <li> <p> <code>modifying</code> </p> </li>
-        /// <li> <p> <code>paused</code> </p> </li>
-        /// <li> <p> <code>rebooting</code> </p> </li>
-        /// <li> <p> <code>renaming</code> </p> </li>
-        /// <li> <p> <code>resizing</code> </p> </li>
-        /// <li> <p> <code>rotating-keys</code> </p> </li>
-        /// <li> <p> <code>storage-full</code> </p> </li>
-        /// <li> <p> <code>updating-hsm</code> </p> </li>
+        /// <p> The current state of the cluster. Possible values are the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>available</code> </p> </li> 
+        /// <li> <p> <code>available, prep-for-resize</code> </p> </li> 
+        /// <li> <p> <code>available, resize-cleanup</code> </p> </li> 
+        /// <li> <p> <code>cancelling-resize</code> </p> </li> 
+        /// <li> <p> <code>creating</code> </p> </li> 
+        /// <li> <p> <code>deleting</code> </p> </li> 
+        /// <li> <p> <code>final-snapshot</code> </p> </li> 
+        /// <li> <p> <code>hardware-failure</code> </p> </li> 
+        /// <li> <p> <code>incompatible-hsm</code> </p> </li> 
+        /// <li> <p> <code>incompatible-network</code> </p> </li> 
+        /// <li> <p> <code>incompatible-parameters</code> </p> </li> 
+        /// <li> <p> <code>incompatible-restore</code> </p> </li> 
+        /// <li> <p> <code>modifying</code> </p> </li> 
+        /// <li> <p> <code>paused</code> </p> </li> 
+        /// <li> <p> <code>rebooting</code> </p> </li> 
+        /// <li> <p> <code>renaming</code> </p> </li> 
+        /// <li> <p> <code>resizing</code> </p> </li> 
+        /// <li> <p> <code>rotating-keys</code> </p> </li> 
+        /// <li> <p> <code>storage-full</code> </p> </li> 
+        /// <li> <p> <code>updating-hsm</code> </p> </li> 
         /// </ul>
         pub fn cluster_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_status = Some(input.into());
             self
         }
-        /// <p> The current state of the cluster. Possible values are the following:</p>
-        /// <ul>
-        /// <li> <p> <code>available</code> </p> </li>
-        /// <li> <p> <code>available, prep-for-resize</code> </p> </li>
-        /// <li> <p> <code>available, resize-cleanup</code> </p> </li>
-        /// <li> <p> <code>cancelling-resize</code> </p> </li>
-        /// <li> <p> <code>creating</code> </p> </li>
-        /// <li> <p> <code>deleting</code> </p> </li>
-        /// <li> <p> <code>final-snapshot</code> </p> </li>
-        /// <li> <p> <code>hardware-failure</code> </p> </li>
-        /// <li> <p> <code>incompatible-hsm</code> </p> </li>
-        /// <li> <p> <code>incompatible-network</code> </p> </li>
-        /// <li> <p> <code>incompatible-parameters</code> </p> </li>
-        /// <li> <p> <code>incompatible-restore</code> </p> </li>
-        /// <li> <p> <code>modifying</code> </p> </li>
-        /// <li> <p> <code>paused</code> </p> </li>
-        /// <li> <p> <code>rebooting</code> </p> </li>
-        /// <li> <p> <code>renaming</code> </p> </li>
-        /// <li> <p> <code>resizing</code> </p> </li>
-        /// <li> <p> <code>rotating-keys</code> </p> </li>
-        /// <li> <p> <code>storage-full</code> </p> </li>
-        /// <li> <p> <code>updating-hsm</code> </p> </li>
+        /// <p> The current state of the cluster. Possible values are the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>available</code> </p> </li> 
+        /// <li> <p> <code>available, prep-for-resize</code> </p> </li> 
+        /// <li> <p> <code>available, resize-cleanup</code> </p> </li> 
+        /// <li> <p> <code>cancelling-resize</code> </p> </li> 
+        /// <li> <p> <code>creating</code> </p> </li> 
+        /// <li> <p> <code>deleting</code> </p> </li> 
+        /// <li> <p> <code>final-snapshot</code> </p> </li> 
+        /// <li> <p> <code>hardware-failure</code> </p> </li> 
+        /// <li> <p> <code>incompatible-hsm</code> </p> </li> 
+        /// <li> <p> <code>incompatible-network</code> </p> </li> 
+        /// <li> <p> <code>incompatible-parameters</code> </p> </li> 
+        /// <li> <p> <code>incompatible-restore</code> </p> </li> 
+        /// <li> <p> <code>modifying</code> </p> </li> 
+        /// <li> <p> <code>paused</code> </p> </li> 
+        /// <li> <p> <code>rebooting</code> </p> </li> 
+        /// <li> <p> <code>renaming</code> </p> </li> 
+        /// <li> <p> <code>resizing</code> </p> </li> 
+        /// <li> <p> <code>rotating-keys</code> </p> </li> 
+        /// <li> <p> <code>storage-full</code> </p> </li> 
+        /// <li> <p> <code>updating-hsm</code> </p> </li> 
         /// </ul>
-        pub fn set_cluster_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_status = input;
-            self
+        pub fn set_cluster_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_status = input; self
         }
-        /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
-        /// <ul>
-        /// <li> <p>Available - The cluster is available for queries. </p> </li>
-        /// <li> <p>Unavailable - The cluster is not available for queries.</p> </li>
-        /// <li> <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p> </li>
-        /// <li> <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
-        /// <li> <p>Failed - The cluster failed and is not available for queries.</p> </li>
+        /// <p>The availability status of the cluster for queries. Possible values are the following:</p> 
+        /// <ul> 
+        /// <li> <p>Available - The cluster is available for queries. </p> </li> 
+        /// <li> <p>Unavailable - The cluster is not available for queries.</p> </li> 
+        /// <li> <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p> </li> 
+        /// <li> <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li> 
+        /// <li> <p>Failed - The cluster failed and is not available for queries.</p> </li> 
         /// </ul>
-        pub fn cluster_availability_status(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn cluster_availability_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_availability_status = Some(input.into());
             self
         }
-        /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
-        /// <ul>
-        /// <li> <p>Available - The cluster is available for queries. </p> </li>
-        /// <li> <p>Unavailable - The cluster is not available for queries.</p> </li>
-        /// <li> <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p> </li>
-        /// <li> <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
-        /// <li> <p>Failed - The cluster failed and is not available for queries.</p> </li>
+        /// <p>The availability status of the cluster for queries. Possible values are the following:</p> 
+        /// <ul> 
+        /// <li> <p>Available - The cluster is available for queries. </p> </li> 
+        /// <li> <p>Unavailable - The cluster is not available for queries.</p> </li> 
+        /// <li> <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p> </li> 
+        /// <li> <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li> 
+        /// <li> <p>Failed - The cluster failed and is not available for queries.</p> </li> 
         /// </ul>
-        pub fn set_cluster_availability_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_availability_status = input;
-            self
+        pub fn set_cluster_availability_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_availability_status = input; self
         }
         /// <p>The status of a modify operation, if any, initiated for the cluster.</p>
         pub fn modify_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -768,12 +709,8 @@ pub mod cluster {
             self
         }
         /// <p>The status of a modify operation, if any, initiated for the cluster.</p>
-        pub fn set_modify_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.modify_status = input;
-            self
+        pub fn set_modify_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.modify_status = input; self
         }
         /// <p>The admin user name for the cluster. This name is used to connect to the database that is specified in the <b>DBName</b> parameter. </p>
         pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -781,12 +718,8 @@ pub mod cluster {
             self
         }
         /// <p>The admin user name for the cluster. This name is used to connect to the database that is specified in the <b>DBName</b> parameter. </p>
-        pub fn set_master_username(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.master_username = input;
-            self
+        pub fn set_master_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_username = input; self
         }
         /// <p>The name of the initial database that was created when the cluster was created. This same name is returned for the life of the cluster. If an initial database was not specified, a database named <code>dev</code>dev was created by default. </p>
         pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -795,8 +728,7 @@ pub mod cluster {
         }
         /// <p>The name of the initial database that was created when the cluster was created. This same name is returned for the life of the cluster. If an initial database was not specified, a database named <code>dev</code>dev was created by default. </p>
         pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.db_name = input;
-            self
+            self.db_name = input; self
         }
         /// <p>The connection endpoint.</p>
         pub fn endpoint(mut self, input: crate::model::Endpoint) -> Self {
@@ -805,8 +737,7 @@ pub mod cluster {
         }
         /// <p>The connection endpoint.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<crate::model::Endpoint>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// <p>The date and time that the cluster was created.</p>
         pub fn cluster_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -814,12 +745,8 @@ pub mod cluster {
             self
         }
         /// <p>The date and time that the cluster was created.</p>
-        pub fn set_cluster_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.cluster_create_time = input;
-            self
+        pub fn set_cluster_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.cluster_create_time = input; self
         }
         /// <p>The number of days that automatic cluster snapshots are retained.</p>
         pub fn automated_snapshot_retention_period(mut self, input: i32) -> Self {
@@ -827,95 +754,66 @@ pub mod cluster {
             self
         }
         /// <p>The number of days that automatic cluster snapshots are retained.</p>
-        pub fn set_automated_snapshot_retention_period(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.automated_snapshot_retention_period = input;
-            self
+        pub fn set_automated_snapshot_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.automated_snapshot_retention_period = input; self
         }
-        /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
+        /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p> 
         /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
         pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
             self.manual_snapshot_retention_period = Some(input);
             self
         }
-        /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
+        /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p> 
         /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-        pub fn set_manual_snapshot_retention_period(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.manual_snapshot_retention_period = input;
-            self
+        pub fn set_manual_snapshot_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.manual_snapshot_retention_period = input; self
         }
         /// Appends an item to `cluster_security_groups`.
         ///
         /// To override the contents of this collection use [`set_cluster_security_groups`](Self::set_cluster_security_groups).
         ///
-        /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p>
+        /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p> 
         /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter. </p>
-        pub fn cluster_security_groups(
-            mut self,
-            input: crate::model::ClusterSecurityGroupMembership,
-        ) -> Self {
+        pub fn cluster_security_groups(mut self, input: crate::model::ClusterSecurityGroupMembership) -> Self {
             let mut v = self.cluster_security_groups.unwrap_or_default();
-            v.push(input);
-            self.cluster_security_groups = Some(v);
-            self
+                            v.push(input);
+                            self.cluster_security_groups = Some(v);
+                            self
         }
-        /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p>
+        /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p> 
         /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter. </p>
-        pub fn set_cluster_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ClusterSecurityGroupMembership>>,
-        ) -> Self {
-            self.cluster_security_groups = input;
-            self
+        pub fn set_cluster_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::ClusterSecurityGroupMembership>>) -> Self {
+            self.cluster_security_groups = input; self
         }
         /// Appends an item to `vpc_security_groups`.
         ///
         /// To override the contents of this collection use [`set_vpc_security_groups`](Self::set_vpc_security_groups).
         ///
         /// <p>A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that are associated with the cluster. This parameter is returned only if the cluster is in a VPC.</p>
-        pub fn vpc_security_groups(
-            mut self,
-            input: crate::model::VpcSecurityGroupMembership,
-        ) -> Self {
+        pub fn vpc_security_groups(mut self, input: crate::model::VpcSecurityGroupMembership) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input);
-            self.vpc_security_groups = Some(v);
-            self
+                            v.push(input);
+                            self.vpc_security_groups = Some(v);
+                            self
         }
         /// <p>A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that are associated with the cluster. This parameter is returned only if the cluster is in a VPC.</p>
-        pub fn set_vpc_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
-        ) -> Self {
-            self.vpc_security_groups = input;
-            self
+        pub fn set_vpc_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>) -> Self {
+            self.vpc_security_groups = input; self
         }
         /// Appends an item to `cluster_parameter_groups`.
         ///
         /// To override the contents of this collection use [`set_cluster_parameter_groups`](Self::set_cluster_parameter_groups).
         ///
         /// <p>The list of cluster parameter groups that are associated with this cluster. Each parameter group in the list is returned with its status.</p>
-        pub fn cluster_parameter_groups(
-            mut self,
-            input: crate::model::ClusterParameterGroupStatus,
-        ) -> Self {
+        pub fn cluster_parameter_groups(mut self, input: crate::model::ClusterParameterGroupStatus) -> Self {
             let mut v = self.cluster_parameter_groups.unwrap_or_default();
-            v.push(input);
-            self.cluster_parameter_groups = Some(v);
-            self
+                            v.push(input);
+                            self.cluster_parameter_groups = Some(v);
+                            self
         }
         /// <p>The list of cluster parameter groups that are associated with this cluster. Each parameter group in the list is returned with its status.</p>
-        pub fn set_cluster_parameter_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ClusterParameterGroupStatus>>,
-        ) -> Self {
-            self.cluster_parameter_groups = input;
-            self
+        pub fn set_cluster_parameter_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::ClusterParameterGroupStatus>>) -> Self {
+            self.cluster_parameter_groups = input; self
         }
         /// <p>The name of the subnet group that is associated with the cluster. This parameter is valid only when the cluster is in a VPC.</p>
         pub fn cluster_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -923,12 +821,8 @@ pub mod cluster {
             self
         }
         /// <p>The name of the subnet group that is associated with the cluster. This parameter is valid only when the cluster is in a VPC.</p>
-        pub fn set_cluster_subnet_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_subnet_group_name = input;
-            self
+        pub fn set_cluster_subnet_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_subnet_group_name = input; self
         }
         /// <p>The identifier of the VPC the cluster is in, if the cluster is in a VPC.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -937,8 +831,7 @@ pub mod cluster {
         }
         /// <p>The identifier of the VPC the cluster is in, if the cluster is in a VPC.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>The name of the Availability Zone in which the cluster is located.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -946,44 +839,26 @@ pub mod cluster {
             self
         }
         /// <p>The name of the Availability Zone in which the cluster is located.</p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
-        pub fn preferred_maintenance_window(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn preferred_maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
         /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
-        pub fn set_preferred_maintenance_window(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.preferred_maintenance_window = input;
-            self
+        pub fn set_preferred_maintenance_window(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.preferred_maintenance_window = input; self
         }
         /// <p>A value that, if present, indicates that changes to the cluster are pending. Specific pending changes are identified by subelements.</p>
-        pub fn pending_modified_values(
-            mut self,
-            input: crate::model::PendingModifiedValues,
-        ) -> Self {
+        pub fn pending_modified_values(mut self, input: crate::model::PendingModifiedValues) -> Self {
             self.pending_modified_values = Some(input);
             self
         }
         /// <p>A value that, if present, indicates that changes to the cluster are pending. Specific pending changes are identified by subelements.</p>
-        pub fn set_pending_modified_values(
-            mut self,
-            input: std::option::Option<crate::model::PendingModifiedValues>,
-        ) -> Self {
-            self.pending_modified_values = input;
-            self
+        pub fn set_pending_modified_values(mut self, input: std::option::Option<crate::model::PendingModifiedValues>) -> Self {
+            self.pending_modified_values = input; self
         }
         /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
         pub fn cluster_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -991,12 +866,8 @@ pub mod cluster {
             self
         }
         /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
-        pub fn set_cluster_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_version = input;
-            self
+        pub fn set_cluster_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_version = input; self
         }
         /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
         pub fn allow_version_upgrade(mut self, input: bool) -> Self {
@@ -1005,8 +876,7 @@ pub mod cluster {
         }
         /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
         pub fn set_allow_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_version_upgrade = input;
-            self
+            self.allow_version_upgrade = input; self
         }
         /// <p>The number of compute nodes in the cluster.</p>
         pub fn number_of_nodes(mut self, input: i32) -> Self {
@@ -1015,8 +885,7 @@ pub mod cluster {
         }
         /// <p>The number of compute nodes in the cluster.</p>
         pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_nodes = input;
-            self
+            self.number_of_nodes = input; self
         }
         /// <p>A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.</p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
@@ -1025,8 +894,7 @@ pub mod cluster {
         }
         /// <p>A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
-            self.publicly_accessible = input;
-            self
+            self.publicly_accessible = input; self
         }
         /// <p>A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
@@ -1035,8 +903,7 @@ pub mod cluster {
         }
         /// <p>A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-            self.encrypted = input;
-            self
+            self.encrypted = input; self
         }
         /// <p>A value that describes the status of a cluster restore action. This parameter returns null if the cluster was not created by restoring a snapshot.</p>
         pub fn restore_status(mut self, input: crate::model::RestoreStatus) -> Self {
@@ -1044,12 +911,8 @@ pub mod cluster {
             self
         }
         /// <p>A value that describes the status of a cluster restore action. This parameter returns null if the cluster was not created by restoring a snapshot.</p>
-        pub fn set_restore_status(
-            mut self,
-            input: std::option::Option<crate::model::RestoreStatus>,
-        ) -> Self {
-            self.restore_status = input;
-            self
+        pub fn set_restore_status(mut self, input: std::option::Option<crate::model::RestoreStatus>) -> Self {
+            self.restore_status = input; self
         }
         /// <p></p>
         pub fn data_transfer_progress(mut self, input: crate::model::DataTransferProgress) -> Self {
@@ -1057,43 +920,28 @@ pub mod cluster {
             self
         }
         /// <p></p>
-        pub fn set_data_transfer_progress(
-            mut self,
-            input: std::option::Option<crate::model::DataTransferProgress>,
-        ) -> Self {
-            self.data_transfer_progress = input;
-            self
+        pub fn set_data_transfer_progress(mut self, input: std::option::Option<crate::model::DataTransferProgress>) -> Self {
+            self.data_transfer_progress = input; self
         }
-        /// <p>A value that reports whether the Amazon Redshift cluster has finished applying any hardware security module (HSM) settings changes specified in a modify cluster command.</p>
+        /// <p>A value that reports whether the Amazon Redshift cluster has finished applying any hardware security module (HSM) settings changes specified in a modify cluster command.</p> 
         /// <p>Values: active, applying</p>
         pub fn hsm_status(mut self, input: crate::model::HsmStatus) -> Self {
             self.hsm_status = Some(input);
             self
         }
-        /// <p>A value that reports whether the Amazon Redshift cluster has finished applying any hardware security module (HSM) settings changes specified in a modify cluster command.</p>
+        /// <p>A value that reports whether the Amazon Redshift cluster has finished applying any hardware security module (HSM) settings changes specified in a modify cluster command.</p> 
         /// <p>Values: active, applying</p>
-        pub fn set_hsm_status(
-            mut self,
-            input: std::option::Option<crate::model::HsmStatus>,
-        ) -> Self {
-            self.hsm_status = input;
-            self
+        pub fn set_hsm_status(mut self, input: std::option::Option<crate::model::HsmStatus>) -> Self {
+            self.hsm_status = input; self
         }
         /// <p>A value that returns the destination region and retention period that are configured for cross-region snapshot copy.</p>
-        pub fn cluster_snapshot_copy_status(
-            mut self,
-            input: crate::model::ClusterSnapshotCopyStatus,
-        ) -> Self {
+        pub fn cluster_snapshot_copy_status(mut self, input: crate::model::ClusterSnapshotCopyStatus) -> Self {
             self.cluster_snapshot_copy_status = Some(input);
             self
         }
         /// <p>A value that returns the destination region and retention period that are configured for cross-region snapshot copy.</p>
-        pub fn set_cluster_snapshot_copy_status(
-            mut self,
-            input: std::option::Option<crate::model::ClusterSnapshotCopyStatus>,
-        ) -> Self {
-            self.cluster_snapshot_copy_status = input;
-            self
+        pub fn set_cluster_snapshot_copy_status(mut self, input: std::option::Option<crate::model::ClusterSnapshotCopyStatus>) -> Self {
+            self.cluster_snapshot_copy_status = input; self
         }
         /// <p>The public key for the cluster.</p>
         pub fn cluster_public_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1101,12 +949,8 @@ pub mod cluster {
             self
         }
         /// <p>The public key for the cluster.</p>
-        pub fn set_cluster_public_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_public_key = input;
-            self
+        pub fn set_cluster_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_public_key = input; self
         }
         /// Appends an item to `cluster_nodes`.
         ///
@@ -1115,17 +959,13 @@ pub mod cluster {
         /// <p>The nodes in the cluster.</p>
         pub fn cluster_nodes(mut self, input: crate::model::ClusterNode) -> Self {
             let mut v = self.cluster_nodes.unwrap_or_default();
-            v.push(input);
-            self.cluster_nodes = Some(v);
-            self
+                            v.push(input);
+                            self.cluster_nodes = Some(v);
+                            self
         }
         /// <p>The nodes in the cluster.</p>
-        pub fn set_cluster_nodes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ClusterNode>>,
-        ) -> Self {
-            self.cluster_nodes = input;
-            self
+        pub fn set_cluster_nodes(mut self, input: std::option::Option<std::vec::Vec<crate::model::ClusterNode>>) -> Self {
+            self.cluster_nodes = input; self
         }
         /// <p>The status of the elastic IP (EIP) address.</p>
         pub fn elastic_ip_status(mut self, input: crate::model::ElasticIpStatus) -> Self {
@@ -1133,12 +973,8 @@ pub mod cluster {
             self
         }
         /// <p>The status of the elastic IP (EIP) address.</p>
-        pub fn set_elastic_ip_status(
-            mut self,
-            input: std::option::Option<crate::model::ElasticIpStatus>,
-        ) -> Self {
-            self.elastic_ip_status = input;
-            self
+        pub fn set_elastic_ip_status(mut self, input: std::option::Option<crate::model::ElasticIpStatus>) -> Self {
+            self.elastic_ip_status = input; self
         }
         /// <p>The specific revision number of the database in the cluster.</p>
         pub fn cluster_revision_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1146,12 +982,8 @@ pub mod cluster {
             self
         }
         /// <p>The specific revision number of the database in the cluster.</p>
-        pub fn set_cluster_revision_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_revision_number = input;
-            self
+        pub fn set_cluster_revision_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_revision_number = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1160,17 +992,13 @@ pub mod cluster {
         /// <p>The list of tags for the cluster.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags for the cluster.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The Key Management Service (KMS) key ID of the encryption key used to encrypt data in the cluster.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1179,22 +1007,20 @@ pub mod cluster {
         }
         /// <p>The Key Management Service (KMS) key ID of the encryption key used to encrypt data in the cluster.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
-        /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-        /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+        /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> 
+        /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> 
         /// <p>Default: false</p>
         pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
             self.enhanced_vpc_routing = Some(input);
             self
         }
-        /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-        /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+        /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> 
+        /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> 
         /// <p>Default: false</p>
         pub fn set_enhanced_vpc_routing(mut self, input: std::option::Option<bool>) -> Self {
-            self.enhanced_vpc_routing = input;
-            self
+            self.enhanced_vpc_routing = input; self
         }
         /// Appends an item to `iam_roles`.
         ///
@@ -1203,17 +1029,13 @@ pub mod cluster {
         /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p>
         pub fn iam_roles(mut self, input: crate::model::ClusterIamRole) -> Self {
             let mut v = self.iam_roles.unwrap_or_default();
-            v.push(input);
-            self.iam_roles = Some(v);
-            self
+                            v.push(input);
+                            self.iam_roles = Some(v);
+                            self
         }
         /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p>
-        pub fn set_iam_roles(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ClusterIamRole>>,
-        ) -> Self {
-            self.iam_roles = input;
-            self
+        pub fn set_iam_roles(mut self, input: std::option::Option<std::vec::Vec<crate::model::ClusterIamRole>>) -> Self {
+            self.iam_roles = input; self
         }
         /// Appends an item to `pending_actions`.
         ///
@@ -1222,17 +1044,13 @@ pub mod cluster {
         /// <p>Cluster operations that are waiting to be started.</p>
         pub fn pending_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pending_actions.unwrap_or_default();
-            v.push(input.into());
-            self.pending_actions = Some(v);
-            self
+                            v.push(input.into());
+                            self.pending_actions = Some(v);
+                            self
         }
         /// <p>Cluster operations that are waiting to be started.</p>
-        pub fn set_pending_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.pending_actions = input;
-            self
+        pub fn set_pending_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.pending_actions = input; self
         }
         /// <p>The name of the maintenance track for the cluster.</p>
         pub fn maintenance_track_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1240,66 +1058,41 @@ pub mod cluster {
             self
         }
         /// <p>The name of the maintenance track for the cluster.</p>
-        pub fn set_maintenance_track_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.maintenance_track_name = input;
-            self
+        pub fn set_maintenance_track_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.maintenance_track_name = input; self
         }
         /// <p>The number of nodes that you can resize the cluster to with the elastic resize method. </p>
-        pub fn elastic_resize_number_of_node_options(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn elastic_resize_number_of_node_options(mut self, input: impl Into<std::string::String>) -> Self {
             self.elastic_resize_number_of_node_options = Some(input.into());
             self
         }
         /// <p>The number of nodes that you can resize the cluster to with the elastic resize method. </p>
-        pub fn set_elastic_resize_number_of_node_options(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.elastic_resize_number_of_node_options = input;
-            self
+        pub fn set_elastic_resize_number_of_node_options(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.elastic_resize_number_of_node_options = input; self
         }
         /// Appends an item to `deferred_maintenance_windows`.
         ///
         /// To override the contents of this collection use [`set_deferred_maintenance_windows`](Self::set_deferred_maintenance_windows).
         ///
         /// <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
-        pub fn deferred_maintenance_windows(
-            mut self,
-            input: crate::model::DeferredMaintenanceWindow,
-        ) -> Self {
+        pub fn deferred_maintenance_windows(mut self, input: crate::model::DeferredMaintenanceWindow) -> Self {
             let mut v = self.deferred_maintenance_windows.unwrap_or_default();
-            v.push(input);
-            self.deferred_maintenance_windows = Some(v);
-            self
+                            v.push(input);
+                            self.deferred_maintenance_windows = Some(v);
+                            self
         }
         /// <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
-        pub fn set_deferred_maintenance_windows(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeferredMaintenanceWindow>>,
-        ) -> Self {
-            self.deferred_maintenance_windows = input;
-            self
+        pub fn set_deferred_maintenance_windows(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeferredMaintenanceWindow>>) -> Self {
+            self.deferred_maintenance_windows = input; self
         }
         /// <p>A unique identifier for the cluster snapshot schedule.</p>
-        pub fn snapshot_schedule_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn snapshot_schedule_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_schedule_identifier = Some(input.into());
             self
         }
         /// <p>A unique identifier for the cluster snapshot schedule.</p>
-        pub fn set_snapshot_schedule_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_schedule_identifier = input;
-            self
+        pub fn set_snapshot_schedule_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_schedule_identifier = input; self
         }
         /// <p>The current state of the cluster snapshot schedule.</p>
         pub fn snapshot_schedule_state(mut self, input: crate::model::ScheduleState) -> Self {
@@ -1307,105 +1100,69 @@ pub mod cluster {
             self
         }
         /// <p>The current state of the cluster snapshot schedule.</p>
-        pub fn set_snapshot_schedule_state(
-            mut self,
-            input: std::option::Option<crate::model::ScheduleState>,
-        ) -> Self {
-            self.snapshot_schedule_state = input;
-            self
+        pub fn set_snapshot_schedule_state(mut self, input: std::option::Option<crate::model::ScheduleState>) -> Self {
+            self.snapshot_schedule_state = input; self
         }
         /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled. </p>
-        pub fn expected_next_snapshot_schedule_time(
-            mut self,
-            input: aws_smithy_types::DateTime,
-        ) -> Self {
+        pub fn expected_next_snapshot_schedule_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expected_next_snapshot_schedule_time = Some(input);
             self
         }
         /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled. </p>
-        pub fn set_expected_next_snapshot_schedule_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expected_next_snapshot_schedule_time = input;
-            self
+        pub fn set_expected_next_snapshot_schedule_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expected_next_snapshot_schedule_time = input; self
         }
-        /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
-        /// <ul>
-        /// <li> <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li>
-        /// <li> <p>Pending - The next snapshot is pending to be taken. </p> </li>
+        /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p> 
+        /// <ul> 
+        /// <li> <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li> 
+        /// <li> <p>Pending - The next snapshot is pending to be taken. </p> </li> 
         /// </ul>
-        pub fn expected_next_snapshot_schedule_time_status(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn expected_next_snapshot_schedule_time_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_next_snapshot_schedule_time_status = Some(input.into());
             self
         }
-        /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
-        /// <ul>
-        /// <li> <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li>
-        /// <li> <p>Pending - The next snapshot is pending to be taken. </p> </li>
+        /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p> 
+        /// <ul> 
+        /// <li> <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li> 
+        /// <li> <p>Pending - The next snapshot is pending to be taken. </p> </li> 
         /// </ul>
-        pub fn set_expected_next_snapshot_schedule_time_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.expected_next_snapshot_schedule_time_status = input;
-            self
+        pub fn set_expected_next_snapshot_schedule_time_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expected_next_snapshot_schedule_time_status = input; self
         }
         /// <p>The date and time in UTC when system maintenance can begin.</p>
-        pub fn next_maintenance_window_start_time(
-            mut self,
-            input: aws_smithy_types::DateTime,
-        ) -> Self {
+        pub fn next_maintenance_window_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.next_maintenance_window_start_time = Some(input);
             self
         }
         /// <p>The date and time in UTC when system maintenance can begin.</p>
-        pub fn set_next_maintenance_window_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.next_maintenance_window_start_time = input;
-            self
+        pub fn set_next_maintenance_window_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.next_maintenance_window_start_time = input; self
         }
-        /// <p>Returns the following:</p>
-        /// <ul>
-        /// <li> <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p> </li>
-        /// <li> <p>ResizeType: Returns ClassicResize</p> </li>
+        /// <p>Returns the following:</p> 
+        /// <ul> 
+        /// <li> <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p> </li> 
+        /// <li> <p>ResizeType: Returns ClassicResize</p> </li> 
         /// </ul>
         pub fn resize_info(mut self, input: crate::model::ResizeInfo) -> Self {
             self.resize_info = Some(input);
             self
         }
-        /// <p>Returns the following:</p>
-        /// <ul>
-        /// <li> <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p> </li>
-        /// <li> <p>ResizeType: Returns ClassicResize</p> </li>
+        /// <p>Returns the following:</p> 
+        /// <ul> 
+        /// <li> <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p> </li> 
+        /// <li> <p>ResizeType: Returns ClassicResize</p> </li> 
         /// </ul>
-        pub fn set_resize_info(
-            mut self,
-            input: std::option::Option<crate::model::ResizeInfo>,
-        ) -> Self {
-            self.resize_info = input;
-            self
+        pub fn set_resize_info(mut self, input: std::option::Option<crate::model::ResizeInfo>) -> Self {
+            self.resize_info = input; self
         }
         /// <p>Describes the status of the Availability Zone relocation operation.</p>
-        pub fn availability_zone_relocation_status(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn availability_zone_relocation_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone_relocation_status = Some(input.into());
             self
         }
         /// <p>Describes the status of the Availability Zone relocation operation.</p>
-        pub fn set_availability_zone_relocation_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone_relocation_status = input;
-            self
+        pub fn set_availability_zone_relocation_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone_relocation_status = input; self
         }
         /// <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
         pub fn cluster_namespace_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1413,12 +1170,8 @@ pub mod cluster {
             self
         }
         /// <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
-        pub fn set_cluster_namespace_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_namespace_arn = input;
-            self
+        pub fn set_cluster_namespace_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_namespace_arn = input; self
         }
         /// <p>The total storage capacity of the cluster in megabytes. </p>
         pub fn total_storage_capacity_in_mega_bytes(mut self, input: i64) -> Self {
@@ -1426,12 +1179,8 @@ pub mod cluster {
             self
         }
         /// <p>The total storage capacity of the cluster in megabytes. </p>
-        pub fn set_total_storage_capacity_in_mega_bytes(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.total_storage_capacity_in_mega_bytes = input;
-            self
+        pub fn set_total_storage_capacity_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
+            self.total_storage_capacity_in_mega_bytes = input; self
         }
         /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
         pub fn aqua_configuration(mut self, input: crate::model::AquaConfiguration) -> Self {
@@ -1439,12 +1188,8 @@ pub mod cluster {
             self
         }
         /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-        pub fn set_aqua_configuration(
-            mut self,
-            input: std::option::Option<crate::model::AquaConfiguration>,
-        ) -> Self {
-            self.aqua_configuration = input;
-            self
+        pub fn set_aqua_configuration(mut self, input: std::option::Option<crate::model::AquaConfiguration>) -> Self {
+            self.aqua_configuration = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.</p>
         pub fn default_iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1452,92 +1197,137 @@ pub mod cluster {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.</p>
-        pub fn set_default_iam_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_iam_role_arn = input;
-            self
+        pub fn set_default_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_iam_role_arn = input; self
         }
         /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
-        pub fn reserved_node_exchange_status(
-            mut self,
-            input: crate::model::ReservedNodeExchangeStatus,
-        ) -> Self {
+        pub fn reserved_node_exchange_status(mut self, input: crate::model::ReservedNodeExchangeStatus) -> Self {
             self.reserved_node_exchange_status = Some(input);
             self
         }
         /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
-        pub fn set_reserved_node_exchange_status(
-            mut self,
-            input: std::option::Option<crate::model::ReservedNodeExchangeStatus>,
-        ) -> Self {
-            self.reserved_node_exchange_status = input;
-            self
+        pub fn set_reserved_node_exchange_status(mut self, input: std::option::Option<crate::model::ReservedNodeExchangeStatus>) -> Self {
+            self.reserved_node_exchange_status = input; self
         }
         /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster).
         pub fn build(self) -> crate::model::Cluster {
             crate::model::Cluster {
-                cluster_identifier: self.cluster_identifier,
-                node_type: self.node_type,
-                cluster_status: self.cluster_status,
-                cluster_availability_status: self.cluster_availability_status,
-                modify_status: self.modify_status,
-                master_username: self.master_username,
-                db_name: self.db_name,
-                endpoint: self.endpoint,
-                cluster_create_time: self.cluster_create_time,
-                automated_snapshot_retention_period: self
-                    .automated_snapshot_retention_period
-                    .unwrap_or_default(),
-                manual_snapshot_retention_period: self
-                    .manual_snapshot_retention_period
-                    .unwrap_or_default(),
-                cluster_security_groups: self.cluster_security_groups,
-                vpc_security_groups: self.vpc_security_groups,
-                cluster_parameter_groups: self.cluster_parameter_groups,
-                cluster_subnet_group_name: self.cluster_subnet_group_name,
-                vpc_id: self.vpc_id,
-                availability_zone: self.availability_zone,
-                preferred_maintenance_window: self.preferred_maintenance_window,
-                pending_modified_values: self.pending_modified_values,
-                cluster_version: self.cluster_version,
-                allow_version_upgrade: self.allow_version_upgrade.unwrap_or_default(),
-                number_of_nodes: self.number_of_nodes.unwrap_or_default(),
-                publicly_accessible: self.publicly_accessible.unwrap_or_default(),
-                encrypted: self.encrypted.unwrap_or_default(),
-                restore_status: self.restore_status,
-                data_transfer_progress: self.data_transfer_progress,
-                hsm_status: self.hsm_status,
-                cluster_snapshot_copy_status: self.cluster_snapshot_copy_status,
-                cluster_public_key: self.cluster_public_key,
-                cluster_nodes: self.cluster_nodes,
-                elastic_ip_status: self.elastic_ip_status,
-                cluster_revision_number: self.cluster_revision_number,
-                tags: self.tags,
-                kms_key_id: self.kms_key_id,
-                enhanced_vpc_routing: self.enhanced_vpc_routing.unwrap_or_default(),
-                iam_roles: self.iam_roles,
-                pending_actions: self.pending_actions,
-                maintenance_track_name: self.maintenance_track_name,
-                elastic_resize_number_of_node_options: self.elastic_resize_number_of_node_options,
-                deferred_maintenance_windows: self.deferred_maintenance_windows,
-                snapshot_schedule_identifier: self.snapshot_schedule_identifier,
-                snapshot_schedule_state: self.snapshot_schedule_state,
-                expected_next_snapshot_schedule_time: self.expected_next_snapshot_schedule_time,
-                expected_next_snapshot_schedule_time_status: self
-                    .expected_next_snapshot_schedule_time_status,
-                next_maintenance_window_start_time: self.next_maintenance_window_start_time,
-                resize_info: self.resize_info,
-                availability_zone_relocation_status: self.availability_zone_relocation_status,
-                cluster_namespace_arn: self.cluster_namespace_arn,
-                total_storage_capacity_in_mega_bytes: self.total_storage_capacity_in_mega_bytes,
-                aqua_configuration: self.aqua_configuration,
-                default_iam_role_arn: self.default_iam_role_arn,
-                reserved_node_exchange_status: self.reserved_node_exchange_status,
+                cluster_identifier: self.cluster_identifier
+                ,
+                node_type: self.node_type
+                ,
+                cluster_status: self.cluster_status
+                ,
+                cluster_availability_status: self.cluster_availability_status
+                ,
+                modify_status: self.modify_status
+                ,
+                master_username: self.master_username
+                ,
+                db_name: self.db_name
+                ,
+                endpoint: self.endpoint
+                ,
+                cluster_create_time: self.cluster_create_time
+                ,
+                automated_snapshot_retention_period: self.automated_snapshot_retention_period
+                    .unwrap_or_default()
+                ,
+                manual_snapshot_retention_period: self.manual_snapshot_retention_period
+                    .unwrap_or_default()
+                ,
+                cluster_security_groups: self.cluster_security_groups
+                ,
+                vpc_security_groups: self.vpc_security_groups
+                ,
+                cluster_parameter_groups: self.cluster_parameter_groups
+                ,
+                cluster_subnet_group_name: self.cluster_subnet_group_name
+                ,
+                vpc_id: self.vpc_id
+                ,
+                availability_zone: self.availability_zone
+                ,
+                preferred_maintenance_window: self.preferred_maintenance_window
+                ,
+                pending_modified_values: self.pending_modified_values
+                ,
+                cluster_version: self.cluster_version
+                ,
+                allow_version_upgrade: self.allow_version_upgrade
+                    .unwrap_or_default()
+                ,
+                number_of_nodes: self.number_of_nodes
+                    .unwrap_or_default()
+                ,
+                publicly_accessible: self.publicly_accessible
+                    .unwrap_or_default()
+                ,
+                encrypted: self.encrypted
+                    .unwrap_or_default()
+                ,
+                restore_status: self.restore_status
+                ,
+                data_transfer_progress: self.data_transfer_progress
+                ,
+                hsm_status: self.hsm_status
+                ,
+                cluster_snapshot_copy_status: self.cluster_snapshot_copy_status
+                ,
+                cluster_public_key: self.cluster_public_key
+                ,
+                cluster_nodes: self.cluster_nodes
+                ,
+                elastic_ip_status: self.elastic_ip_status
+                ,
+                cluster_revision_number: self.cluster_revision_number
+                ,
+                tags: self.tags
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                enhanced_vpc_routing: self.enhanced_vpc_routing
+                    .unwrap_or_default()
+                ,
+                iam_roles: self.iam_roles
+                ,
+                pending_actions: self.pending_actions
+                ,
+                maintenance_track_name: self.maintenance_track_name
+                ,
+                elastic_resize_number_of_node_options: self.elastic_resize_number_of_node_options
+                ,
+                deferred_maintenance_windows: self.deferred_maintenance_windows
+                ,
+                snapshot_schedule_identifier: self.snapshot_schedule_identifier
+                ,
+                snapshot_schedule_state: self.snapshot_schedule_state
+                ,
+                expected_next_snapshot_schedule_time: self.expected_next_snapshot_schedule_time
+                ,
+                expected_next_snapshot_schedule_time_status: self.expected_next_snapshot_schedule_time_status
+                ,
+                next_maintenance_window_start_time: self.next_maintenance_window_start_time
+                ,
+                resize_info: self.resize_info
+                ,
+                availability_zone_relocation_status: self.availability_zone_relocation_status
+                ,
+                cluster_namespace_arn: self.cluster_namespace_arn
+                ,
+                total_storage_capacity_in_mega_bytes: self.total_storage_capacity_in_mega_bytes
+                ,
+                aqua_configuration: self.aqua_configuration
+                ,
+                default_iam_role_arn: self.default_iam_role_arn
+                ,
+                reserved_node_exchange_status: self.reserved_node_exchange_status
+                ,
             }
         }
     }
+    
+    
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
@@ -1549,7 +1339,7 @@ impl Cluster {
 /// <p>Reserved-node status details, such as the source reserved-node identifier, the target reserved-node identifier, the node type, the node count, and other details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservedNodeExchangeStatus {
+pub struct ReservedNodeExchangeStatus  {
     /// <p>The identifier of the reserved-node exchange request.</p>
     #[doc(hidden)]
     pub reserved_node_exchange_request_id: std::option::Option<std::string::String>,
@@ -1580,23 +1370,23 @@ pub struct ReservedNodeExchangeStatus {
 }
 impl ReservedNodeExchangeStatus {
     /// <p>The identifier of the reserved-node exchange request.</p>
-    pub fn reserved_node_exchange_request_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_node_exchange_request_id(&self) -> std::option::Option<& str> {
         self.reserved_node_exchange_request_id.as_deref()
     }
     /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ReservedNodeExchangeStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ReservedNodeExchangeStatusType> {
         self.status.as_ref()
     }
     /// <p>A date and time that indicate when the reserved-node exchange was requested.</p>
-    pub fn request_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn request_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.request_time.as_ref()
     }
     /// <p>The identifier of the source reserved node.</p>
-    pub fn source_reserved_node_id(&self) -> std::option::Option<&str> {
+    pub fn source_reserved_node_id(&self) -> std::option::Option<& str> {
         self.source_reserved_node_id.as_deref()
     }
     /// <p>The source reserved-node type, for example ds2.xlarge.</p>
-    pub fn source_reserved_node_type(&self) -> std::option::Option<&str> {
+    pub fn source_reserved_node_type(&self) -> std::option::Option<& str> {
         self.source_reserved_node_type.as_deref()
     }
     /// <p>The source reserved-node count in the cluster.</p>
@@ -1604,11 +1394,11 @@ impl ReservedNodeExchangeStatus {
         self.source_reserved_node_count
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn target_reserved_node_offering_id(&self) -> std::option::Option<&str> {
+    pub fn target_reserved_node_offering_id(&self) -> std::option::Option<& str> {
         self.target_reserved_node_offering_id.as_deref()
     }
     /// <p>The node type of the target reserved node, for example ra3.4xlarge.</p>
-    pub fn target_reserved_node_type(&self) -> std::option::Option<&str> {
+    pub fn target_reserved_node_type(&self) -> std::option::Option<& str> {
         self.target_reserved_node_type.as_deref()
     }
     /// <p>The count of target reserved nodes in the cluster.</p>
@@ -1618,7 +1408,7 @@ impl ReservedNodeExchangeStatus {
 }
 /// See [`ReservedNodeExchangeStatus`](crate::model::ReservedNodeExchangeStatus).
 pub mod reserved_node_exchange_status {
-
+    
     /// A builder for [`ReservedNodeExchangeStatus`](crate::model::ReservedNodeExchangeStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1634,20 +1424,13 @@ pub mod reserved_node_exchange_status {
     }
     impl Builder {
         /// <p>The identifier of the reserved-node exchange request.</p>
-        pub fn reserved_node_exchange_request_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn reserved_node_exchange_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.reserved_node_exchange_request_id = Some(input.into());
             self
         }
         /// <p>The identifier of the reserved-node exchange request.</p>
-        pub fn set_reserved_node_exchange_request_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reserved_node_exchange_request_id = input;
-            self
+        pub fn set_reserved_node_exchange_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reserved_node_exchange_request_id = input; self
         }
         /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
         pub fn status(mut self, input: crate::model::ReservedNodeExchangeStatusType) -> Self {
@@ -1655,12 +1438,8 @@ pub mod reserved_node_exchange_status {
             self
         }
         /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ReservedNodeExchangeStatusType>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ReservedNodeExchangeStatusType>) -> Self {
+            self.status = input; self
         }
         /// <p>A date and time that indicate when the reserved-node exchange was requested.</p>
         pub fn request_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1668,12 +1447,8 @@ pub mod reserved_node_exchange_status {
             self
         }
         /// <p>A date and time that indicate when the reserved-node exchange was requested.</p>
-        pub fn set_request_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.request_time = input;
-            self
+        pub fn set_request_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.request_time = input; self
         }
         /// <p>The identifier of the source reserved node.</p>
         pub fn source_reserved_node_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1681,12 +1456,8 @@ pub mod reserved_node_exchange_status {
             self
         }
         /// <p>The identifier of the source reserved node.</p>
-        pub fn set_source_reserved_node_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_reserved_node_id = input;
-            self
+        pub fn set_source_reserved_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_reserved_node_id = input; self
         }
         /// <p>The source reserved-node type, for example ds2.xlarge.</p>
         pub fn source_reserved_node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1694,12 +1465,8 @@ pub mod reserved_node_exchange_status {
             self
         }
         /// <p>The source reserved-node type, for example ds2.xlarge.</p>
-        pub fn set_source_reserved_node_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_reserved_node_type = input;
-            self
+        pub fn set_source_reserved_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_reserved_node_type = input; self
         }
         /// <p>The source reserved-node count in the cluster.</p>
         pub fn source_reserved_node_count(mut self, input: i32) -> Self {
@@ -1708,24 +1475,16 @@ pub mod reserved_node_exchange_status {
         }
         /// <p>The source reserved-node count in the cluster.</p>
         pub fn set_source_reserved_node_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.source_reserved_node_count = input;
-            self
+            self.source_reserved_node_count = input; self
         }
         /// <p>The identifier of the target reserved node offering.</p>
-        pub fn target_reserved_node_offering_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn target_reserved_node_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_reserved_node_offering_id = Some(input.into());
             self
         }
         /// <p>The identifier of the target reserved node offering.</p>
-        pub fn set_target_reserved_node_offering_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_reserved_node_offering_id = input;
-            self
+        pub fn set_target_reserved_node_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_reserved_node_offering_id = input; self
         }
         /// <p>The node type of the target reserved node, for example ra3.4xlarge.</p>
         pub fn target_reserved_node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1733,12 +1492,8 @@ pub mod reserved_node_exchange_status {
             self
         }
         /// <p>The node type of the target reserved node, for example ra3.4xlarge.</p>
-        pub fn set_target_reserved_node_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_reserved_node_type = input;
-            self
+        pub fn set_target_reserved_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_reserved_node_type = input; self
         }
         /// <p>The count of target reserved nodes in the cluster.</p>
         pub fn target_reserved_node_count(mut self, input: i32) -> Self {
@@ -1747,24 +1502,36 @@ pub mod reserved_node_exchange_status {
         }
         /// <p>The count of target reserved nodes in the cluster.</p>
         pub fn set_target_reserved_node_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.target_reserved_node_count = input;
-            self
+            self.target_reserved_node_count = input; self
         }
         /// Consumes the builder and constructs a [`ReservedNodeExchangeStatus`](crate::model::ReservedNodeExchangeStatus).
         pub fn build(self) -> crate::model::ReservedNodeExchangeStatus {
             crate::model::ReservedNodeExchangeStatus {
-                reserved_node_exchange_request_id: self.reserved_node_exchange_request_id,
-                status: self.status,
-                request_time: self.request_time,
-                source_reserved_node_id: self.source_reserved_node_id,
-                source_reserved_node_type: self.source_reserved_node_type,
-                source_reserved_node_count: self.source_reserved_node_count.unwrap_or_default(),
-                target_reserved_node_offering_id: self.target_reserved_node_offering_id,
-                target_reserved_node_type: self.target_reserved_node_type,
-                target_reserved_node_count: self.target_reserved_node_count.unwrap_or_default(),
+                reserved_node_exchange_request_id: self.reserved_node_exchange_request_id
+                ,
+                status: self.status
+                ,
+                request_time: self.request_time
+                ,
+                source_reserved_node_id: self.source_reserved_node_id
+                ,
+                source_reserved_node_type: self.source_reserved_node_type
+                ,
+                source_reserved_node_count: self.source_reserved_node_count
+                    .unwrap_or_default()
+                ,
+                target_reserved_node_offering_id: self.target_reserved_node_offering_id
+                ,
+                target_reserved_node_type: self.target_reserved_node_type
+                ,
+                target_reserved_node_count: self.target_reserved_node_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ReservedNodeExchangeStatus {
     /// Creates a new builder-style object to manufacture [`ReservedNodeExchangeStatus`](crate::model::ReservedNodeExchangeStatus).
@@ -1779,9 +1546,9 @@ impl ReservedNodeExchangeStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reservednodeexchangestatustype = unimplemented!();
 /// match reservednodeexchangestatustype {
@@ -1807,22 +1574,14 @@ impl ReservedNodeExchangeStatus {
 /// Specifically, when `reservednodeexchangestatustype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReservedNodeExchangeStatusType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReservedNodeExchangeStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -1837,7 +1596,7 @@ pub enum ReservedNodeExchangeStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReservedNodeExchangeStatusType {
     fn from(s: &str) -> Self {
@@ -1848,19 +1607,17 @@ impl std::convert::From<&str> for ReservedNodeExchangeStatusType {
             "REQUESTED" => ReservedNodeExchangeStatusType::Requested,
             "RETRYING" => ReservedNodeExchangeStatusType::Retrying,
             "SUCCEEDED" => ReservedNodeExchangeStatusType::Succeeded,
-            other => ReservedNodeExchangeStatusType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ReservedNodeExchangeStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReservedNodeExchangeStatusType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReservedNodeExchangeStatusType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReservedNodeExchangeStatusType::from(s))
+                }
+            }
 impl ReservedNodeExchangeStatusType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1871,18 +1628,13 @@ impl ReservedNodeExchangeStatusType {
             ReservedNodeExchangeStatusType::Requested => "REQUESTED",
             ReservedNodeExchangeStatusType::Retrying => "RETRYING",
             ReservedNodeExchangeStatusType::Succeeded => "SUCCEEDED",
-            ReservedNodeExchangeStatusType::Unknown(value) => value.as_str(),
+            ReservedNodeExchangeStatusType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "FAILED",
-            "IN_PROGRESS",
-            "PENDING",
-            "REQUESTED",
-            "RETRYING",
-            "SUCCEEDED",
+            "FAILED", "IN_PROGRESS", "PENDING", "REQUESTED", "RETRYING", "SUCCEEDED"
         ]
     }
 }
@@ -1895,7 +1647,7 @@ impl AsRef<str> for ReservedNodeExchangeStatusType {
 /// <p>The operation that uses this structure is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AquaConfiguration {
+pub struct AquaConfiguration  {
     /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     #[doc(hidden)]
     pub aqua_status: std::option::Option<crate::model::AquaStatus>,
@@ -1905,25 +1657,22 @@ pub struct AquaConfiguration {
 }
 impl AquaConfiguration {
     /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    pub fn aqua_status(&self) -> std::option::Option<&crate::model::AquaStatus> {
+    pub fn aqua_status(&self) -> std::option::Option<& crate::model::AquaStatus> {
         self.aqua_status.as_ref()
     }
     /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    pub fn aqua_configuration_status(
-        &self,
-    ) -> std::option::Option<&crate::model::AquaConfigurationStatus> {
+    pub fn aqua_configuration_status(&self) -> std::option::Option<& crate::model::AquaConfigurationStatus> {
         self.aqua_configuration_status.as_ref()
     }
 }
 /// See [`AquaConfiguration`](crate::model::AquaConfiguration).
 pub mod aqua_configuration {
-
+    
     /// A builder for [`AquaConfiguration`](crate::model::AquaConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aqua_status: std::option::Option<crate::model::AquaStatus>,
-        pub(crate) aqua_configuration_status:
-            std::option::Option<crate::model::AquaConfigurationStatus>,
+        pub(crate) aqua_configuration_status: std::option::Option<crate::model::AquaConfigurationStatus>,
     }
     impl Builder {
         /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
@@ -1932,37 +1681,30 @@ pub mod aqua_configuration {
             self
         }
         /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-        pub fn set_aqua_status(
-            mut self,
-            input: std::option::Option<crate::model::AquaStatus>,
-        ) -> Self {
-            self.aqua_status = input;
-            self
+        pub fn set_aqua_status(mut self, input: std::option::Option<crate::model::AquaStatus>) -> Self {
+            self.aqua_status = input; self
         }
         /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-        pub fn aqua_configuration_status(
-            mut self,
-            input: crate::model::AquaConfigurationStatus,
-        ) -> Self {
+        pub fn aqua_configuration_status(mut self, input: crate::model::AquaConfigurationStatus) -> Self {
             self.aqua_configuration_status = Some(input);
             self
         }
         /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-        pub fn set_aqua_configuration_status(
-            mut self,
-            input: std::option::Option<crate::model::AquaConfigurationStatus>,
-        ) -> Self {
-            self.aqua_configuration_status = input;
-            self
+        pub fn set_aqua_configuration_status(mut self, input: std::option::Option<crate::model::AquaConfigurationStatus>) -> Self {
+            self.aqua_configuration_status = input; self
         }
         /// Consumes the builder and constructs a [`AquaConfiguration`](crate::model::AquaConfiguration).
         pub fn build(self) -> crate::model::AquaConfiguration {
             crate::model::AquaConfiguration {
-                aqua_status: self.aqua_status,
-                aqua_configuration_status: self.aqua_configuration_status,
+                aqua_status: self.aqua_status
+                ,
+                aqua_configuration_status: self.aqua_configuration_status
+                ,
             }
         }
     }
+    
+    
 }
 impl AquaConfiguration {
     /// Creates a new builder-style object to manufacture [`AquaConfiguration`](crate::model::AquaConfiguration).
@@ -1977,9 +1719,9 @@ impl AquaConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let aquaconfigurationstatus = unimplemented!();
 /// match aquaconfigurationstatus {
@@ -2002,22 +1744,14 @@ impl AquaConfiguration {
 /// Specifically, when `aquaconfigurationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AquaConfigurationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AquaConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
@@ -2026,7 +1760,7 @@ pub enum AquaConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AquaConfigurationStatus {
     fn from(s: &str) -> Self {
@@ -2034,19 +1768,17 @@ impl std::convert::From<&str> for AquaConfigurationStatus {
             "auto" => AquaConfigurationStatus::Auto,
             "disabled" => AquaConfigurationStatus::Disabled,
             "enabled" => AquaConfigurationStatus::Enabled,
-            other => AquaConfigurationStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AquaConfigurationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AquaConfigurationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AquaConfigurationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AquaConfigurationStatus::from(s))
+                }
+            }
 impl AquaConfigurationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2054,12 +1786,14 @@ impl AquaConfigurationStatus {
             AquaConfigurationStatus::Auto => "auto",
             AquaConfigurationStatus::Disabled => "disabled",
             AquaConfigurationStatus::Enabled => "enabled",
-            AquaConfigurationStatus::Unknown(value) => value.as_str(),
+            AquaConfigurationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["auto", "disabled", "enabled"]
+        &[
+            "auto", "disabled", "enabled"
+        ]
     }
 }
 impl AsRef<str> for AquaConfigurationStatus {
@@ -2074,9 +1808,9 @@ impl AsRef<str> for AquaConfigurationStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let aquastatus = unimplemented!();
 /// match aquastatus {
@@ -2099,22 +1833,14 @@ impl AsRef<str> for AquaConfigurationStatus {
 /// Specifically, when `aquastatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AquaStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AquaStatus {
     #[allow(missing_docs)] // documentation missing in model
     Applying,
@@ -2123,7 +1849,7 @@ pub enum AquaStatus {
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AquaStatus {
     fn from(s: &str) -> Self {
@@ -2131,17 +1857,17 @@ impl std::convert::From<&str> for AquaStatus {
             "applying" => AquaStatus::Applying,
             "disabled" => AquaStatus::Disabled,
             "enabled" => AquaStatus::Enabled,
-            other => AquaStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AquaStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AquaStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AquaStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AquaStatus::from(s))
+                }
+            }
 impl AquaStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2149,12 +1875,14 @@ impl AquaStatus {
             AquaStatus::Applying => "applying",
             AquaStatus::Disabled => "disabled",
             AquaStatus::Enabled => "enabled",
-            AquaStatus::Unknown(value) => value.as_str(),
+            AquaStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["applying", "disabled", "enabled"]
+        &[
+            "applying", "disabled", "enabled"
+        ]
     }
 }
 impl AsRef<str> for AquaStatus {
@@ -2166,7 +1894,7 @@ impl AsRef<str> for AquaStatus {
 /// <p>Describes a resize operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResizeInfo {
+pub struct ResizeInfo  {
     /// <p>Returns the value <code>ClassicResize</code>.</p>
     #[doc(hidden)]
     pub resize_type: std::option::Option<std::string::String>,
@@ -2176,7 +1904,7 @@ pub struct ResizeInfo {
 }
 impl ResizeInfo {
     /// <p>Returns the value <code>ClassicResize</code>.</p>
-    pub fn resize_type(&self) -> std::option::Option<&str> {
+    pub fn resize_type(&self) -> std::option::Option<& str> {
         self.resize_type.as_deref()
     }
     /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
@@ -2186,7 +1914,7 @@ impl ResizeInfo {
 }
 /// See [`ResizeInfo`](crate::model::ResizeInfo).
 pub mod resize_info {
-
+    
     /// A builder for [`ResizeInfo`](crate::model::ResizeInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2201,8 +1929,7 @@ pub mod resize_info {
         }
         /// <p>Returns the value <code>ClassicResize</code>.</p>
         pub fn set_resize_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resize_type = input;
-            self
+            self.resize_type = input; self
         }
         /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
         pub fn allow_cancel_resize(mut self, input: bool) -> Self {
@@ -2211,17 +1938,21 @@ pub mod resize_info {
         }
         /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
         pub fn set_allow_cancel_resize(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_cancel_resize = input;
-            self
+            self.allow_cancel_resize = input; self
         }
         /// Consumes the builder and constructs a [`ResizeInfo`](crate::model::ResizeInfo).
         pub fn build(self) -> crate::model::ResizeInfo {
             crate::model::ResizeInfo {
-                resize_type: self.resize_type,
-                allow_cancel_resize: self.allow_cancel_resize.unwrap_or_default(),
+                resize_type: self.resize_type
+                ,
+                allow_cancel_resize: self.allow_cancel_resize
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ResizeInfo {
     /// Creates a new builder-style object to manufacture [`ResizeInfo`](crate::model::ResizeInfo).
@@ -2236,9 +1967,9 @@ impl ResizeInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let schedulestate = unimplemented!();
 /// match schedulestate {
@@ -2261,22 +1992,14 @@ impl ResizeInfo {
 /// Specifically, when `schedulestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScheduleState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ScheduleState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -2285,7 +2008,7 @@ pub enum ScheduleState {
     #[allow(missing_docs)] // documentation missing in model
     Modifying,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScheduleState {
     fn from(s: &str) -> Self {
@@ -2293,17 +2016,17 @@ impl std::convert::From<&str> for ScheduleState {
             "ACTIVE" => ScheduleState::Active,
             "FAILED" => ScheduleState::Failed,
             "MODIFYING" => ScheduleState::Modifying,
-            other => ScheduleState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ScheduleState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ScheduleState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScheduleState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ScheduleState::from(s))
+                }
+            }
 impl ScheduleState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2311,12 +2034,14 @@ impl ScheduleState {
             ScheduleState::Active => "ACTIVE",
             ScheduleState::Failed => "FAILED",
             ScheduleState::Modifying => "MODIFYING",
-            ScheduleState::Unknown(value) => value.as_str(),
+            ScheduleState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "FAILED", "MODIFYING"]
+        &[
+            "ACTIVE", "FAILED", "MODIFYING"
+        ]
     }
 }
 impl AsRef<str> for ScheduleState {
@@ -2328,7 +2053,7 @@ impl AsRef<str> for ScheduleState {
 /// <p>Describes a deferred maintenance window</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeferredMaintenanceWindow {
+pub struct DeferredMaintenanceWindow  {
     /// <p>A unique identifier for the maintenance window.</p>
     #[doc(hidden)]
     pub defer_maintenance_identifier: std::option::Option<std::string::String>,
@@ -2341,21 +2066,21 @@ pub struct DeferredMaintenanceWindow {
 }
 impl DeferredMaintenanceWindow {
     /// <p>A unique identifier for the maintenance window.</p>
-    pub fn defer_maintenance_identifier(&self) -> std::option::Option<&str> {
+    pub fn defer_maintenance_identifier(&self) -> std::option::Option<& str> {
         self.defer_maintenance_identifier.as_deref()
     }
     /// <p> A timestamp for the beginning of the time period when we defer maintenance.</p>
-    pub fn defer_maintenance_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn defer_maintenance_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.defer_maintenance_start_time.as_ref()
     }
     /// <p> A timestamp for the end of the time period when we defer maintenance.</p>
-    pub fn defer_maintenance_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn defer_maintenance_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.defer_maintenance_end_time.as_ref()
     }
 }
 /// See [`DeferredMaintenanceWindow`](crate::model::DeferredMaintenanceWindow).
 pub mod deferred_maintenance_window {
-
+    
     /// A builder for [`DeferredMaintenanceWindow`](crate::model::DeferredMaintenanceWindow).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2365,20 +2090,13 @@ pub mod deferred_maintenance_window {
     }
     impl Builder {
         /// <p>A unique identifier for the maintenance window.</p>
-        pub fn defer_maintenance_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn defer_maintenance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.defer_maintenance_identifier = Some(input.into());
             self
         }
         /// <p>A unique identifier for the maintenance window.</p>
-        pub fn set_defer_maintenance_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.defer_maintenance_identifier = input;
-            self
+        pub fn set_defer_maintenance_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.defer_maintenance_identifier = input; self
         }
         /// <p> A timestamp for the beginning of the time period when we defer maintenance.</p>
         pub fn defer_maintenance_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2386,12 +2104,8 @@ pub mod deferred_maintenance_window {
             self
         }
         /// <p> A timestamp for the beginning of the time period when we defer maintenance.</p>
-        pub fn set_defer_maintenance_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.defer_maintenance_start_time = input;
-            self
+        pub fn set_defer_maintenance_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.defer_maintenance_start_time = input; self
         }
         /// <p> A timestamp for the end of the time period when we defer maintenance.</p>
         pub fn defer_maintenance_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2399,22 +2113,23 @@ pub mod deferred_maintenance_window {
             self
         }
         /// <p> A timestamp for the end of the time period when we defer maintenance.</p>
-        pub fn set_defer_maintenance_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.defer_maintenance_end_time = input;
-            self
+        pub fn set_defer_maintenance_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.defer_maintenance_end_time = input; self
         }
         /// Consumes the builder and constructs a [`DeferredMaintenanceWindow`](crate::model::DeferredMaintenanceWindow).
         pub fn build(self) -> crate::model::DeferredMaintenanceWindow {
             crate::model::DeferredMaintenanceWindow {
-                defer_maintenance_identifier: self.defer_maintenance_identifier,
-                defer_maintenance_start_time: self.defer_maintenance_start_time,
-                defer_maintenance_end_time: self.defer_maintenance_end_time,
+                defer_maintenance_identifier: self.defer_maintenance_identifier
+                ,
+                defer_maintenance_start_time: self.defer_maintenance_start_time
+                ,
+                defer_maintenance_end_time: self.defer_maintenance_end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DeferredMaintenanceWindow {
     /// Creates a new builder-style object to manufacture [`DeferredMaintenanceWindow`](crate::model::DeferredMaintenanceWindow).
@@ -2426,39 +2141,39 @@ impl DeferredMaintenanceWindow {
 /// <p>An Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other Amazon Web Services services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterIamRole {
+pub struct ClusterIamRole  {
     /// <p>The Amazon Resource Name (ARN) of the IAM role, for example, <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
     #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p>
-    /// <p>The following are possible statuses and descriptions.</p>
-    /// <ul>
-    /// <li> <p> <code>in-sync</code>: The role is available for use by the cluster.</p> </li>
-    /// <li> <p> <code>adding</code>: The role is in the process of being associated with the cluster.</p> </li>
-    /// <li> <p> <code>removing</code>: The role is in the process of being disassociated with the cluster.</p> </li>
+    /// <p>A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p> 
+    /// <p>The following are possible statuses and descriptions.</p> 
+    /// <ul> 
+    /// <li> <p> <code>in-sync</code>: The role is available for use by the cluster.</p> </li> 
+    /// <li> <p> <code>adding</code>: The role is in the process of being associated with the cluster.</p> </li> 
+    /// <li> <p> <code>removing</code>: The role is in the process of being disassociated with the cluster.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub apply_status: std::option::Option<std::string::String>,
 }
 impl ClusterIamRole {
     /// <p>The Amazon Resource Name (ARN) of the IAM role, for example, <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
-    /// <p>A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p>
-    /// <p>The following are possible statuses and descriptions.</p>
-    /// <ul>
-    /// <li> <p> <code>in-sync</code>: The role is available for use by the cluster.</p> </li>
-    /// <li> <p> <code>adding</code>: The role is in the process of being associated with the cluster.</p> </li>
-    /// <li> <p> <code>removing</code>: The role is in the process of being disassociated with the cluster.</p> </li>
+    /// <p>A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p> 
+    /// <p>The following are possible statuses and descriptions.</p> 
+    /// <ul> 
+    /// <li> <p> <code>in-sync</code>: The role is available for use by the cluster.</p> </li> 
+    /// <li> <p> <code>adding</code>: The role is in the process of being associated with the cluster.</p> </li> 
+    /// <li> <p> <code>removing</code>: The role is in the process of being disassociated with the cluster.</p> </li> 
     /// </ul>
-    pub fn apply_status(&self) -> std::option::Option<&str> {
+    pub fn apply_status(&self) -> std::option::Option<& str> {
         self.apply_status.as_deref()
     }
 }
 /// See [`ClusterIamRole`](crate::model::ClusterIamRole).
 pub mod cluster_iam_role {
-
+    
     /// A builder for [`ClusterIamRole`](crate::model::ClusterIamRole).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2473,39 +2188,41 @@ pub mod cluster_iam_role {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role, for example, <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = input;
-            self
+            self.iam_role_arn = input; self
         }
-        /// <p>A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p>
-        /// <p>The following are possible statuses and descriptions.</p>
-        /// <ul>
-        /// <li> <p> <code>in-sync</code>: The role is available for use by the cluster.</p> </li>
-        /// <li> <p> <code>adding</code>: The role is in the process of being associated with the cluster.</p> </li>
-        /// <li> <p> <code>removing</code>: The role is in the process of being disassociated with the cluster.</p> </li>
+        /// <p>A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p> 
+        /// <p>The following are possible statuses and descriptions.</p> 
+        /// <ul> 
+        /// <li> <p> <code>in-sync</code>: The role is available for use by the cluster.</p> </li> 
+        /// <li> <p> <code>adding</code>: The role is in the process of being associated with the cluster.</p> </li> 
+        /// <li> <p> <code>removing</code>: The role is in the process of being disassociated with the cluster.</p> </li> 
         /// </ul>
         pub fn apply_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.apply_status = Some(input.into());
             self
         }
-        /// <p>A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p>
-        /// <p>The following are possible statuses and descriptions.</p>
-        /// <ul>
-        /// <li> <p> <code>in-sync</code>: The role is available for use by the cluster.</p> </li>
-        /// <li> <p> <code>adding</code>: The role is in the process of being associated with the cluster.</p> </li>
-        /// <li> <p> <code>removing</code>: The role is in the process of being disassociated with the cluster.</p> </li>
+        /// <p>A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p> 
+        /// <p>The following are possible statuses and descriptions.</p> 
+        /// <ul> 
+        /// <li> <p> <code>in-sync</code>: The role is available for use by the cluster.</p> </li> 
+        /// <li> <p> <code>adding</code>: The role is in the process of being associated with the cluster.</p> </li> 
+        /// <li> <p> <code>removing</code>: The role is in the process of being disassociated with the cluster.</p> </li> 
         /// </ul>
         pub fn set_apply_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.apply_status = input;
-            self
+            self.apply_status = input; self
         }
         /// Consumes the builder and constructs a [`ClusterIamRole`](crate::model::ClusterIamRole).
         pub fn build(self) -> crate::model::ClusterIamRole {
             crate::model::ClusterIamRole {
-                iam_role_arn: self.iam_role_arn,
-                apply_status: self.apply_status,
+                iam_role_arn: self.iam_role_arn
+                ,
+                apply_status: self.apply_status
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterIamRole {
     /// Creates a new builder-style object to manufacture [`ClusterIamRole`](crate::model::ClusterIamRole).
@@ -2517,7 +2234,7 @@ impl ClusterIamRole {
 /// <p>A tag consisting of a name/value pair for a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key, or name, for the resource tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -2527,17 +2244,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key, or name, for the resource tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value for the resource tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2552,8 +2269,7 @@ pub mod tag {
         }
         /// <p>The key, or name, for the resource tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value for the resource tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2562,17 +2278,20 @@ pub mod tag {
         }
         /// <p>The value for the resource tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -2584,7 +2303,7 @@ impl Tag {
 /// <p>Describes the status of the elastic IP (EIP) address.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ElasticIpStatus {
+pub struct ElasticIpStatus  {
     /// <p>The elastic IP (EIP) address for the cluster.</p>
     #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
@@ -2594,17 +2313,17 @@ pub struct ElasticIpStatus {
 }
 impl ElasticIpStatus {
     /// <p>The elastic IP (EIP) address for the cluster.</p>
-    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+    pub fn elastic_ip(&self) -> std::option::Option<& str> {
         self.elastic_ip.as_deref()
     }
     /// <p>The status of the elastic IP (EIP) address.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`ElasticIpStatus`](crate::model::ElasticIpStatus).
 pub mod elastic_ip_status {
-
+    
     /// A builder for [`ElasticIpStatus`](crate::model::ElasticIpStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2619,8 +2338,7 @@ pub mod elastic_ip_status {
         }
         /// <p>The elastic IP (EIP) address for the cluster.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.elastic_ip = input;
-            self
+            self.elastic_ip = input; self
         }
         /// <p>The status of the elastic IP (EIP) address.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2629,17 +2347,20 @@ pub mod elastic_ip_status {
         }
         /// <p>The status of the elastic IP (EIP) address.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ElasticIpStatus`](crate::model::ElasticIpStatus).
         pub fn build(self) -> crate::model::ElasticIpStatus {
             crate::model::ElasticIpStatus {
-                elastic_ip: self.elastic_ip,
-                status: self.status,
+                elastic_ip: self.elastic_ip
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl ElasticIpStatus {
     /// Creates a new builder-style object to manufacture [`ElasticIpStatus`](crate::model::ElasticIpStatus).
@@ -2651,7 +2372,7 @@ impl ElasticIpStatus {
 /// <p>The identifier of a node in a cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterNode {
+pub struct ClusterNode  {
     /// <p>Whether the node is a leader node or a compute node.</p>
     #[doc(hidden)]
     pub node_role: std::option::Option<std::string::String>,
@@ -2664,21 +2385,21 @@ pub struct ClusterNode {
 }
 impl ClusterNode {
     /// <p>Whether the node is a leader node or a compute node.</p>
-    pub fn node_role(&self) -> std::option::Option<&str> {
+    pub fn node_role(&self) -> std::option::Option<& str> {
         self.node_role.as_deref()
     }
     /// <p>The private IP address of a node within a cluster.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
     /// <p>The public IP address of a node within a cluster.</p>
-    pub fn public_ip_address(&self) -> std::option::Option<&str> {
+    pub fn public_ip_address(&self) -> std::option::Option<& str> {
         self.public_ip_address.as_deref()
     }
 }
 /// See [`ClusterNode`](crate::model::ClusterNode).
 pub mod cluster_node {
-
+    
     /// A builder for [`ClusterNode`](crate::model::ClusterNode).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2694,8 +2415,7 @@ pub mod cluster_node {
         }
         /// <p>Whether the node is a leader node or a compute node.</p>
         pub fn set_node_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_role = input;
-            self
+            self.node_role = input; self
         }
         /// <p>The private IP address of a node within a cluster.</p>
         pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2703,12 +2423,8 @@ pub mod cluster_node {
             self
         }
         /// <p>The private IP address of a node within a cluster.</p>
-        pub fn set_private_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.private_ip_address = input;
-            self
+        pub fn set_private_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.private_ip_address = input; self
         }
         /// <p>The public IP address of a node within a cluster.</p>
         pub fn public_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2716,22 +2432,23 @@ pub mod cluster_node {
             self
         }
         /// <p>The public IP address of a node within a cluster.</p>
-        pub fn set_public_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.public_ip_address = input;
-            self
+        pub fn set_public_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_ip_address = input; self
         }
         /// Consumes the builder and constructs a [`ClusterNode`](crate::model::ClusterNode).
         pub fn build(self) -> crate::model::ClusterNode {
             crate::model::ClusterNode {
-                node_role: self.node_role,
-                private_ip_address: self.private_ip_address,
-                public_ip_address: self.public_ip_address,
+                node_role: self.node_role
+                ,
+                private_ip_address: self.private_ip_address
+                ,
+                public_ip_address: self.public_ip_address
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterNode {
     /// Creates a new builder-style object to manufacture [`ClusterNode`](crate::model::ClusterNode).
@@ -2743,14 +2460,14 @@ impl ClusterNode {
 /// <p>Returns the destination region and retention period that are configured for cross-region snapshot copy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterSnapshotCopyStatus {
+pub struct ClusterSnapshotCopyStatus  {
     /// <p>The destination region that snapshots are automatically copied to when cross-region snapshot copy is enabled.</p>
     #[doc(hidden)]
     pub destination_region: std::option::Option<std::string::String>,
     /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region.</p>
     #[doc(hidden)]
     pub retention_period: i64,
-    /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p> 
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     #[doc(hidden)]
     pub manual_snapshot_retention_period: i32,
@@ -2760,26 +2477,26 @@ pub struct ClusterSnapshotCopyStatus {
 }
 impl ClusterSnapshotCopyStatus {
     /// <p>The destination region that snapshots are automatically copied to when cross-region snapshot copy is enabled.</p>
-    pub fn destination_region(&self) -> std::option::Option<&str> {
+    pub fn destination_region(&self) -> std::option::Option<& str> {
         self.destination_region.as_deref()
     }
     /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region.</p>
     pub fn retention_period(&self) -> i64 {
         self.retention_period
     }
-    /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p> 
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub fn manual_snapshot_retention_period(&self) -> i32 {
         self.manual_snapshot_retention_period
     }
     /// <p>The name of the snapshot copy grant.</p>
-    pub fn snapshot_copy_grant_name(&self) -> std::option::Option<&str> {
+    pub fn snapshot_copy_grant_name(&self) -> std::option::Option<& str> {
         self.snapshot_copy_grant_name.as_deref()
     }
 }
 /// See [`ClusterSnapshotCopyStatus`](crate::model::ClusterSnapshotCopyStatus).
 pub mod cluster_snapshot_copy_status {
-
+    
     /// A builder for [`ClusterSnapshotCopyStatus`](crate::model::ClusterSnapshotCopyStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2795,12 +2512,8 @@ pub mod cluster_snapshot_copy_status {
             self
         }
         /// <p>The destination region that snapshots are automatically copied to when cross-region snapshot copy is enabled.</p>
-        pub fn set_destination_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_region = input;
-            self
+        pub fn set_destination_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_region = input; self
         }
         /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region.</p>
         pub fn retention_period(mut self, input: i64) -> Self {
@@ -2809,23 +2522,18 @@ pub mod cluster_snapshot_copy_status {
         }
         /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region.</p>
         pub fn set_retention_period(mut self, input: std::option::Option<i64>) -> Self {
-            self.retention_period = input;
-            self
+            self.retention_period = input; self
         }
-        /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+        /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p> 
         /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
         pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
             self.manual_snapshot_retention_period = Some(input);
             self
         }
-        /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+        /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p> 
         /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-        pub fn set_manual_snapshot_retention_period(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.manual_snapshot_retention_period = input;
-            self
+        pub fn set_manual_snapshot_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.manual_snapshot_retention_period = input; self
         }
         /// <p>The name of the snapshot copy grant.</p>
         pub fn snapshot_copy_grant_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2833,25 +2541,27 @@ pub mod cluster_snapshot_copy_status {
             self
         }
         /// <p>The name of the snapshot copy grant.</p>
-        pub fn set_snapshot_copy_grant_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_copy_grant_name = input;
-            self
+        pub fn set_snapshot_copy_grant_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_copy_grant_name = input; self
         }
         /// Consumes the builder and constructs a [`ClusterSnapshotCopyStatus`](crate::model::ClusterSnapshotCopyStatus).
         pub fn build(self) -> crate::model::ClusterSnapshotCopyStatus {
             crate::model::ClusterSnapshotCopyStatus {
-                destination_region: self.destination_region,
-                retention_period: self.retention_period.unwrap_or_default(),
-                manual_snapshot_retention_period: self
-                    .manual_snapshot_retention_period
-                    .unwrap_or_default(),
-                snapshot_copy_grant_name: self.snapshot_copy_grant_name,
+                destination_region: self.destination_region
+                ,
+                retention_period: self.retention_period
+                    .unwrap_or_default()
+                ,
+                manual_snapshot_retention_period: self.manual_snapshot_retention_period
+                    .unwrap_or_default()
+                ,
+                snapshot_copy_grant_name: self.snapshot_copy_grant_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterSnapshotCopyStatus {
     /// Creates a new builder-style object to manufacture [`ClusterSnapshotCopyStatus`](crate::model::ClusterSnapshotCopyStatus).
@@ -2863,36 +2573,36 @@ impl ClusterSnapshotCopyStatus {
 /// <p>Describes the status of changes to HSM settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HsmStatus {
+pub struct HsmStatus  {
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
     #[doc(hidden)]
     pub hsm_client_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
     #[doc(hidden)]
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
-    /// <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p>
+    /// <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p> 
     /// <p>Values: active, applying</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl HsmStatus {
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    pub fn hsm_client_certificate_identifier(&self) -> std::option::Option<&str> {
+    pub fn hsm_client_certificate_identifier(&self) -> std::option::Option<& str> {
         self.hsm_client_certificate_identifier.as_deref()
     }
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
+    pub fn hsm_configuration_identifier(&self) -> std::option::Option<& str> {
         self.hsm_configuration_identifier.as_deref()
     }
-    /// <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p>
+    /// <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p> 
     /// <p>Values: active, applying</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`HsmStatus`](crate::model::HsmStatus).
 pub mod hsm_status {
-
+    
     /// A builder for [`HsmStatus`](crate::model::HsmStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2902,58 +2612,48 @@ pub mod hsm_status {
     }
     impl Builder {
         /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-        pub fn hsm_client_certificate_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn hsm_client_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.hsm_client_certificate_identifier = Some(input.into());
             self
         }
         /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-        pub fn set_hsm_client_certificate_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hsm_client_certificate_identifier = input;
-            self
+        pub fn set_hsm_client_certificate_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hsm_client_certificate_identifier = input; self
         }
         /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-        pub fn hsm_configuration_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn hsm_configuration_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.hsm_configuration_identifier = Some(input.into());
             self
         }
         /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-        pub fn set_hsm_configuration_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hsm_configuration_identifier = input;
-            self
+        pub fn set_hsm_configuration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hsm_configuration_identifier = input; self
         }
-        /// <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p>
+        /// <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p> 
         /// <p>Values: active, applying</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p>
+        /// <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p> 
         /// <p>Values: active, applying</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`HsmStatus`](crate::model::HsmStatus).
         pub fn build(self) -> crate::model::HsmStatus {
             crate::model::HsmStatus {
-                hsm_client_certificate_identifier: self.hsm_client_certificate_identifier,
-                hsm_configuration_identifier: self.hsm_configuration_identifier,
-                status: self.status,
+                hsm_client_certificate_identifier: self.hsm_client_certificate_identifier
+                ,
+                hsm_configuration_identifier: self.hsm_configuration_identifier
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl HsmStatus {
     /// Creates a new builder-style object to manufacture [`HsmStatus`](crate::model::HsmStatus).
@@ -2965,7 +2665,7 @@ impl HsmStatus {
 /// <p>Describes the status of a cluster while it is in the process of resizing with an incremental resize.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataTransferProgress {
+pub struct DataTransferProgress  {
     /// <p>Describes the status of the cluster. While the transfer is in progress the status is <code>transferringdata</code>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -2987,7 +2687,7 @@ pub struct DataTransferProgress {
 }
 impl DataTransferProgress {
     /// <p>Describes the status of the cluster. While the transfer is in progress the status is <code>transferringdata</code>.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Describes the data transfer rate in MB's per second.</p>
@@ -3013,7 +2713,7 @@ impl DataTransferProgress {
 }
 /// See [`DataTransferProgress`](crate::model::DataTransferProgress).
 pub mod data_transfer_progress {
-
+    
     /// A builder for [`DataTransferProgress`](crate::model::DataTransferProgress).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3032,8 +2732,7 @@ pub mod data_transfer_progress {
         }
         /// <p>Describes the status of the cluster. While the transfer is in progress the status is <code>transferringdata</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Describes the data transfer rate in MB's per second.</p>
         pub fn current_rate_in_mega_bytes_per_second(mut self, input: f64) -> Self {
@@ -3041,12 +2740,8 @@ pub mod data_transfer_progress {
             self
         }
         /// <p>Describes the data transfer rate in MB's per second.</p>
-        pub fn set_current_rate_in_mega_bytes_per_second(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.current_rate_in_mega_bytes_per_second = input;
-            self
+        pub fn set_current_rate_in_mega_bytes_per_second(mut self, input: std::option::Option<f64>) -> Self {
+            self.current_rate_in_mega_bytes_per_second = input; self
         }
         /// <p>Describes the total amount of data to be transfered in megabytes.</p>
         pub fn total_data_in_mega_bytes(mut self, input: i64) -> Self {
@@ -3055,8 +2750,7 @@ pub mod data_transfer_progress {
         }
         /// <p>Describes the total amount of data to be transfered in megabytes.</p>
         pub fn set_total_data_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_data_in_mega_bytes = input;
-            self
+            self.total_data_in_mega_bytes = input; self
         }
         /// <p>Describes the total amount of data that has been transfered in MB's.</p>
         pub fn data_transferred_in_mega_bytes(mut self, input: i64) -> Self {
@@ -3064,12 +2758,8 @@ pub mod data_transfer_progress {
             self
         }
         /// <p>Describes the total amount of data that has been transfered in MB's.</p>
-        pub fn set_data_transferred_in_mega_bytes(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.data_transferred_in_mega_bytes = input;
-            self
+        pub fn set_data_transferred_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
+            self.data_transferred_in_mega_bytes = input; self
         }
         /// <p>Describes the estimated number of seconds remaining to complete the transfer.</p>
         pub fn estimated_time_to_completion_in_seconds(mut self, input: i64) -> Self {
@@ -3077,12 +2767,8 @@ pub mod data_transfer_progress {
             self
         }
         /// <p>Describes the estimated number of seconds remaining to complete the transfer.</p>
-        pub fn set_estimated_time_to_completion_in_seconds(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.estimated_time_to_completion_in_seconds = input;
-            self
+        pub fn set_estimated_time_to_completion_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+            self.estimated_time_to_completion_in_seconds = input; self
         }
         /// <p>Describes the number of seconds that have elapsed during the data transfer.</p>
         pub fn elapsed_time_in_seconds(mut self, input: i64) -> Self {
@@ -3091,24 +2777,30 @@ pub mod data_transfer_progress {
         }
         /// <p>Describes the number of seconds that have elapsed during the data transfer.</p>
         pub fn set_elapsed_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.elapsed_time_in_seconds = input;
-            self
+            self.elapsed_time_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`DataTransferProgress`](crate::model::DataTransferProgress).
         pub fn build(self) -> crate::model::DataTransferProgress {
             crate::model::DataTransferProgress {
-                status: self.status,
-                current_rate_in_mega_bytes_per_second: self.current_rate_in_mega_bytes_per_second,
-                total_data_in_mega_bytes: self.total_data_in_mega_bytes.unwrap_or_default(),
-                data_transferred_in_mega_bytes: self
-                    .data_transferred_in_mega_bytes
-                    .unwrap_or_default(),
-                estimated_time_to_completion_in_seconds: self
-                    .estimated_time_to_completion_in_seconds,
-                elapsed_time_in_seconds: self.elapsed_time_in_seconds,
+                status: self.status
+                ,
+                current_rate_in_mega_bytes_per_second: self.current_rate_in_mega_bytes_per_second
+                ,
+                total_data_in_mega_bytes: self.total_data_in_mega_bytes
+                    .unwrap_or_default()
+                ,
+                data_transferred_in_mega_bytes: self.data_transferred_in_mega_bytes
+                    .unwrap_or_default()
+                ,
+                estimated_time_to_completion_in_seconds: self.estimated_time_to_completion_in_seconds
+                ,
+                elapsed_time_in_seconds: self.elapsed_time_in_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl DataTransferProgress {
     /// Creates a new builder-style object to manufacture [`DataTransferProgress`](crate::model::DataTransferProgress).
@@ -3120,7 +2812,7 @@ impl DataTransferProgress {
 /// <p>Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreStatus {
+pub struct RestoreStatus  {
     /// <p>The status of the restore action. Returns starting, restoring, completed, or failed.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -3142,7 +2834,7 @@ pub struct RestoreStatus {
 }
 impl RestoreStatus {
     /// <p>The status of the restore action. Returns starting, restoring, completed, or failed.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup. This field is only updated when you restore to DC2 and DS2 node types. </p>
@@ -3168,7 +2860,7 @@ impl RestoreStatus {
 }
 /// See [`RestoreStatus`](crate::model::RestoreStatus).
 pub mod restore_status {
-
+    
     /// A builder for [`RestoreStatus`](crate::model::RestoreStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3187,8 +2879,7 @@ pub mod restore_status {
         }
         /// <p>The status of the restore action. Returns starting, restoring, completed, or failed.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup. This field is only updated when you restore to DC2 and DS2 node types. </p>
         pub fn current_restore_rate_in_mega_bytes_per_second(mut self, input: f64) -> Self {
@@ -3196,12 +2887,8 @@ pub mod restore_status {
             self
         }
         /// <p>The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup. This field is only updated when you restore to DC2 and DS2 node types. </p>
-        pub fn set_current_restore_rate_in_mega_bytes_per_second(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.current_restore_rate_in_mega_bytes_per_second = input;
-            self
+        pub fn set_current_restore_rate_in_mega_bytes_per_second(mut self, input: std::option::Option<f64>) -> Self {
+            self.current_restore_rate_in_mega_bytes_per_second = input; self
         }
         /// <p>The size of the set of snapshot data used to restore the cluster. This field is only updated when you restore to DC2 and DS2 node types. </p>
         pub fn snapshot_size_in_mega_bytes(mut self, input: i64) -> Self {
@@ -3210,8 +2897,7 @@ pub mod restore_status {
         }
         /// <p>The size of the set of snapshot data used to restore the cluster. This field is only updated when you restore to DC2 and DS2 node types. </p>
         pub fn set_snapshot_size_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.snapshot_size_in_mega_bytes = input;
-            self
+            self.snapshot_size_in_mega_bytes = input; self
         }
         /// <p>The number of megabytes that have been transferred from snapshot storage. This field is only updated when you restore to DC2 and DS2 node types. </p>
         pub fn progress_in_mega_bytes(mut self, input: i64) -> Self {
@@ -3220,8 +2906,7 @@ pub mod restore_status {
         }
         /// <p>The number of megabytes that have been transferred from snapshot storage. This field is only updated when you restore to DC2 and DS2 node types. </p>
         pub fn set_progress_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.progress_in_mega_bytes = input;
-            self
+            self.progress_in_mega_bytes = input; self
         }
         /// <p>The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish. This field is only updated when you restore to DC2 and DS2 node types. </p>
         pub fn elapsed_time_in_seconds(mut self, input: i64) -> Self {
@@ -3230,8 +2915,7 @@ pub mod restore_status {
         }
         /// <p>The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish. This field is only updated when you restore to DC2 and DS2 node types. </p>
         pub fn set_elapsed_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.elapsed_time_in_seconds = input;
-            self
+            self.elapsed_time_in_seconds = input; self
         }
         /// <p>The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. This field is only updated when you restore to DC2 and DS2 node types. </p>
         pub fn estimated_time_to_completion_in_seconds(mut self, input: i64) -> Self {
@@ -3239,29 +2923,34 @@ pub mod restore_status {
             self
         }
         /// <p>The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. This field is only updated when you restore to DC2 and DS2 node types. </p>
-        pub fn set_estimated_time_to_completion_in_seconds(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.estimated_time_to_completion_in_seconds = input;
-            self
+        pub fn set_estimated_time_to_completion_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+            self.estimated_time_to_completion_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`RestoreStatus`](crate::model::RestoreStatus).
         pub fn build(self) -> crate::model::RestoreStatus {
             crate::model::RestoreStatus {
-                status: self.status,
-                current_restore_rate_in_mega_bytes_per_second: self
-                    .current_restore_rate_in_mega_bytes_per_second
-                    .unwrap_or_default(),
-                snapshot_size_in_mega_bytes: self.snapshot_size_in_mega_bytes.unwrap_or_default(),
-                progress_in_mega_bytes: self.progress_in_mega_bytes.unwrap_or_default(),
-                elapsed_time_in_seconds: self.elapsed_time_in_seconds.unwrap_or_default(),
-                estimated_time_to_completion_in_seconds: self
-                    .estimated_time_to_completion_in_seconds
-                    .unwrap_or_default(),
+                status: self.status
+                ,
+                current_restore_rate_in_mega_bytes_per_second: self.current_restore_rate_in_mega_bytes_per_second
+                    .unwrap_or_default()
+                ,
+                snapshot_size_in_mega_bytes: self.snapshot_size_in_mega_bytes
+                    .unwrap_or_default()
+                ,
+                progress_in_mega_bytes: self.progress_in_mega_bytes
+                    .unwrap_or_default()
+                ,
+                elapsed_time_in_seconds: self.elapsed_time_in_seconds
+                    .unwrap_or_default()
+                ,
+                estimated_time_to_completion_in_seconds: self.estimated_time_to_completion_in_seconds
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl RestoreStatus {
     /// Creates a new builder-style object to manufacture [`RestoreStatus`](crate::model::RestoreStatus).
@@ -3273,7 +2962,7 @@ impl RestoreStatus {
 /// <p>Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PendingModifiedValues {
+pub struct PendingModifiedValues  {
     /// <p>The pending or in-progress change of the admin user password for the cluster.</p>
     #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
@@ -3298,8 +2987,8 @@ pub struct PendingModifiedValues {
     /// <p>The pending or in-progress change of the ability to connect to the cluster from the public network.</p>
     #[doc(hidden)]
     pub publicly_accessible: std::option::Option<bool>,
-    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> 
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> 
     /// <p>Default: false</p>
     #[doc(hidden)]
     pub enhanced_vpc_routing: std::option::Option<bool>,
@@ -3312,11 +3001,11 @@ pub struct PendingModifiedValues {
 }
 impl PendingModifiedValues {
     /// <p>The pending or in-progress change of the admin user password for the cluster.</p>
-    pub fn master_user_password(&self) -> std::option::Option<&str> {
+    pub fn master_user_password(&self) -> std::option::Option<& str> {
         self.master_user_password.as_deref()
     }
     /// <p>The pending or in-progress change of the cluster's node type.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The pending or in-progress change of the number of nodes in the cluster.</p>
@@ -3324,11 +3013,11 @@ impl PendingModifiedValues {
         self.number_of_nodes
     }
     /// <p>The pending or in-progress change of the cluster type.</p>
-    pub fn cluster_type(&self) -> std::option::Option<&str> {
+    pub fn cluster_type(&self) -> std::option::Option<& str> {
         self.cluster_type.as_deref()
     }
     /// <p>The pending or in-progress change of the service version.</p>
-    pub fn cluster_version(&self) -> std::option::Option<&str> {
+    pub fn cluster_version(&self) -> std::option::Option<& str> {
         self.cluster_version.as_deref()
     }
     /// <p>The pending or in-progress change of the automated snapshot retention period.</p>
@@ -3336,31 +3025,31 @@ impl PendingModifiedValues {
         self.automated_snapshot_retention_period
     }
     /// <p>The pending or in-progress change of the new identifier for the cluster.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The pending or in-progress change of the ability to connect to the cluster from the public network.</p>
     pub fn publicly_accessible(&self) -> std::option::Option<bool> {
         self.publicly_accessible
     }
-    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> 
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> 
     /// <p>Default: false</p>
     pub fn enhanced_vpc_routing(&self) -> std::option::Option<bool> {
         self.enhanced_vpc_routing
     }
     /// <p>The name of the maintenance track that the cluster will change to during the next maintenance window.</p>
-    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+    pub fn maintenance_track_name(&self) -> std::option::Option<& str> {
         self.maintenance_track_name.as_deref()
     }
     /// <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
-    pub fn encryption_type(&self) -> std::option::Option<&str> {
+    pub fn encryption_type(&self) -> std::option::Option<& str> {
         self.encryption_type.as_deref()
     }
 }
 /// See [`PendingModifiedValues`](crate::model::PendingModifiedValues).
 pub mod pending_modified_values {
-
+    
     /// A builder for [`PendingModifiedValues`](crate::model::PendingModifiedValues).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3383,12 +3072,8 @@ pub mod pending_modified_values {
             self
         }
         /// <p>The pending or in-progress change of the admin user password for the cluster.</p>
-        pub fn set_master_user_password(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.master_user_password = input;
-            self
+        pub fn set_master_user_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_user_password = input; self
         }
         /// <p>The pending or in-progress change of the cluster's node type.</p>
         pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3397,8 +3082,7 @@ pub mod pending_modified_values {
         }
         /// <p>The pending or in-progress change of the cluster's node type.</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_type = input;
-            self
+            self.node_type = input; self
         }
         /// <p>The pending or in-progress change of the number of nodes in the cluster.</p>
         pub fn number_of_nodes(mut self, input: i32) -> Self {
@@ -3407,8 +3091,7 @@ pub mod pending_modified_values {
         }
         /// <p>The pending or in-progress change of the number of nodes in the cluster.</p>
         pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_nodes = input;
-            self
+            self.number_of_nodes = input; self
         }
         /// <p>The pending or in-progress change of the cluster type.</p>
         pub fn cluster_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3417,8 +3100,7 @@ pub mod pending_modified_values {
         }
         /// <p>The pending or in-progress change of the cluster type.</p>
         pub fn set_cluster_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_type = input;
-            self
+            self.cluster_type = input; self
         }
         /// <p>The pending or in-progress change of the service version.</p>
         pub fn cluster_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3426,12 +3108,8 @@ pub mod pending_modified_values {
             self
         }
         /// <p>The pending or in-progress change of the service version.</p>
-        pub fn set_cluster_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_version = input;
-            self
+        pub fn set_cluster_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_version = input; self
         }
         /// <p>The pending or in-progress change of the automated snapshot retention period.</p>
         pub fn automated_snapshot_retention_period(mut self, input: i32) -> Self {
@@ -3439,12 +3117,8 @@ pub mod pending_modified_values {
             self
         }
         /// <p>The pending or in-progress change of the automated snapshot retention period.</p>
-        pub fn set_automated_snapshot_retention_period(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.automated_snapshot_retention_period = input;
-            self
+        pub fn set_automated_snapshot_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.automated_snapshot_retention_period = input; self
         }
         /// <p>The pending or in-progress change of the new identifier for the cluster.</p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3452,12 +3126,8 @@ pub mod pending_modified_values {
             self
         }
         /// <p>The pending or in-progress change of the new identifier for the cluster.</p>
-        pub fn set_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_identifier = input;
-            self
+        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_identifier = input; self
         }
         /// <p>The pending or in-progress change of the ability to connect to the cluster from the public network.</p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
@@ -3466,22 +3136,20 @@ pub mod pending_modified_values {
         }
         /// <p>The pending or in-progress change of the ability to connect to the cluster from the public network.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
-            self.publicly_accessible = input;
-            self
+            self.publicly_accessible = input; self
         }
-        /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-        /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+        /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> 
+        /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> 
         /// <p>Default: false</p>
         pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
             self.enhanced_vpc_routing = Some(input);
             self
         }
-        /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-        /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+        /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> 
+        /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> 
         /// <p>Default: false</p>
         pub fn set_enhanced_vpc_routing(mut self, input: std::option::Option<bool>) -> Self {
-            self.enhanced_vpc_routing = input;
-            self
+            self.enhanced_vpc_routing = input; self
         }
         /// <p>The name of the maintenance track that the cluster will change to during the next maintenance window.</p>
         pub fn maintenance_track_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3489,12 +3157,8 @@ pub mod pending_modified_values {
             self
         }
         /// <p>The name of the maintenance track that the cluster will change to during the next maintenance window.</p>
-        pub fn set_maintenance_track_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.maintenance_track_name = input;
-            self
+        pub fn set_maintenance_track_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.maintenance_track_name = input; self
         }
         /// <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
         pub fn encryption_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3502,30 +3166,39 @@ pub mod pending_modified_values {
             self
         }
         /// <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
-        pub fn set_encryption_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_type = input;
-            self
+        pub fn set_encryption_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_type = input; self
         }
         /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::model::PendingModifiedValues).
         pub fn build(self) -> crate::model::PendingModifiedValues {
             crate::model::PendingModifiedValues {
-                master_user_password: self.master_user_password,
-                node_type: self.node_type,
-                number_of_nodes: self.number_of_nodes,
-                cluster_type: self.cluster_type,
-                cluster_version: self.cluster_version,
-                automated_snapshot_retention_period: self.automated_snapshot_retention_period,
-                cluster_identifier: self.cluster_identifier,
-                publicly_accessible: self.publicly_accessible,
-                enhanced_vpc_routing: self.enhanced_vpc_routing,
-                maintenance_track_name: self.maintenance_track_name,
-                encryption_type: self.encryption_type,
+                master_user_password: self.master_user_password
+                ,
+                node_type: self.node_type
+                ,
+                number_of_nodes: self.number_of_nodes
+                ,
+                cluster_type: self.cluster_type
+                ,
+                cluster_version: self.cluster_version
+                ,
+                automated_snapshot_retention_period: self.automated_snapshot_retention_period
+                ,
+                cluster_identifier: self.cluster_identifier
+                ,
+                publicly_accessible: self.publicly_accessible
+                ,
+                enhanced_vpc_routing: self.enhanced_vpc_routing
+                ,
+                maintenance_track_name: self.maintenance_track_name
+                ,
+                encryption_type: self.encryption_type
+                ,
             }
         }
     }
+    
+    
 }
 impl PendingModifiedValues {
     /// Creates a new builder-style object to manufacture [`PendingModifiedValues`](crate::model::PendingModifiedValues).
@@ -3537,46 +3210,42 @@ impl PendingModifiedValues {
 /// <p>Describes the status of a parameter group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterParameterGroupStatus {
+pub struct ClusterParameterGroupStatus  {
     /// <p>The name of the cluster parameter group.</p>
     #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The status of parameter updates.</p>
     #[doc(hidden)]
     pub parameter_apply_status: std::option::Option<std::string::String>,
-    /// <p>The list of parameter statuses.</p>
+    /// <p>The list of parameter statuses.</p> 
     /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     #[doc(hidden)]
-    pub cluster_parameter_status_list:
-        std::option::Option<std::vec::Vec<crate::model::ClusterParameterStatus>>,
+    pub cluster_parameter_status_list: std::option::Option<std::vec::Vec<crate::model::ClusterParameterStatus>>,
 }
 impl ClusterParameterGroupStatus {
     /// <p>The name of the cluster parameter group.</p>
-    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>The status of parameter updates.</p>
-    pub fn parameter_apply_status(&self) -> std::option::Option<&str> {
+    pub fn parameter_apply_status(&self) -> std::option::Option<& str> {
         self.parameter_apply_status.as_deref()
     }
-    /// <p>The list of parameter statuses.</p>
+    /// <p>The list of parameter statuses.</p> 
     /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub fn cluster_parameter_status_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ClusterParameterStatus]> {
+    pub fn cluster_parameter_status_list(&self) -> std::option::Option<& [crate::model::ClusterParameterStatus]> {
         self.cluster_parameter_status_list.as_deref()
     }
 }
 /// See [`ClusterParameterGroupStatus`](crate::model::ClusterParameterGroupStatus).
 pub mod cluster_parameter_group_status {
-
+    
     /// A builder for [`ClusterParameterGroupStatus`](crate::model::ClusterParameterGroupStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) parameter_apply_status: std::option::Option<std::string::String>,
-        pub(crate) cluster_parameter_status_list:
-            std::option::Option<std::vec::Vec<crate::model::ClusterParameterStatus>>,
+        pub(crate) cluster_parameter_status_list: std::option::Option<std::vec::Vec<crate::model::ClusterParameterStatus>>,
     }
     impl Builder {
         /// <p>The name of the cluster parameter group.</p>
@@ -3585,12 +3254,8 @@ pub mod cluster_parameter_group_status {
             self
         }
         /// <p>The name of the cluster parameter group.</p>
-        pub fn set_parameter_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parameter_group_name = input;
-            self
+        pub fn set_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameter_group_name = input; self
         }
         /// <p>The status of parameter updates.</p>
         pub fn parameter_apply_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3598,46 +3263,40 @@ pub mod cluster_parameter_group_status {
             self
         }
         /// <p>The status of parameter updates.</p>
-        pub fn set_parameter_apply_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parameter_apply_status = input;
-            self
+        pub fn set_parameter_apply_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameter_apply_status = input; self
         }
         /// Appends an item to `cluster_parameter_status_list`.
         ///
         /// To override the contents of this collection use [`set_cluster_parameter_status_list`](Self::set_cluster_parameter_status_list).
         ///
-        /// <p>The list of parameter statuses.</p>
+        /// <p>The list of parameter statuses.</p> 
         /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-        pub fn cluster_parameter_status_list(
-            mut self,
-            input: crate::model::ClusterParameterStatus,
-        ) -> Self {
+        pub fn cluster_parameter_status_list(mut self, input: crate::model::ClusterParameterStatus) -> Self {
             let mut v = self.cluster_parameter_status_list.unwrap_or_default();
-            v.push(input);
-            self.cluster_parameter_status_list = Some(v);
-            self
+                            v.push(input);
+                            self.cluster_parameter_status_list = Some(v);
+                            self
         }
-        /// <p>The list of parameter statuses.</p>
+        /// <p>The list of parameter statuses.</p> 
         /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-        pub fn set_cluster_parameter_status_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ClusterParameterStatus>>,
-        ) -> Self {
-            self.cluster_parameter_status_list = input;
-            self
+        pub fn set_cluster_parameter_status_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ClusterParameterStatus>>) -> Self {
+            self.cluster_parameter_status_list = input; self
         }
         /// Consumes the builder and constructs a [`ClusterParameterGroupStatus`](crate::model::ClusterParameterGroupStatus).
         pub fn build(self) -> crate::model::ClusterParameterGroupStatus {
             crate::model::ClusterParameterGroupStatus {
-                parameter_group_name: self.parameter_group_name,
-                parameter_apply_status: self.parameter_apply_status,
-                cluster_parameter_status_list: self.cluster_parameter_status_list,
+                parameter_group_name: self.parameter_group_name
+                ,
+                parameter_apply_status: self.parameter_apply_status
+                ,
+                cluster_parameter_status_list: self.cluster_parameter_status_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterParameterGroupStatus {
     /// Creates a new builder-style object to manufacture [`ClusterParameterGroupStatus`](crate::model::ClusterParameterGroupStatus).
@@ -3649,20 +3308,20 @@ impl ClusterParameterGroupStatus {
 /// <p>Describes the status of a parameter group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterParameterStatus {
+pub struct ClusterParameterStatus  {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
     pub parameter_name: std::option::Option<std::string::String>,
-    /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
-    /// <p>The following are possible statuses and descriptions.</p>
-    /// <ul>
-    /// <li> <p> <code>in-sync</code>: The parameter value is in sync with the database.</p> </li>
-    /// <li> <p> <code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p> </li>
-    /// <li> <p> <code>applying</code>: The parameter value is being applied to the database.</p> </li>
-    /// <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p> </li>
-    /// <li> <p> <code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p> </li>
-    /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li>
-    /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li>
+    /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p> 
+    /// <p>The following are possible statuses and descriptions.</p> 
+    /// <ul> 
+    /// <li> <p> <code>in-sync</code>: The parameter value is in sync with the database.</p> </li> 
+    /// <li> <p> <code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p> </li> 
+    /// <li> <p> <code>applying</code>: The parameter value is being applied to the database.</p> </li> 
+    /// <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p> </li> 
+    /// <li> <p> <code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p> </li> 
+    /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li> 
+    /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub parameter_apply_status: std::option::Option<std::string::String>,
@@ -3672,31 +3331,31 @@ pub struct ClusterParameterStatus {
 }
 impl ClusterParameterStatus {
     /// <p>The name of the parameter.</p>
-    pub fn parameter_name(&self) -> std::option::Option<&str> {
+    pub fn parameter_name(&self) -> std::option::Option<& str> {
         self.parameter_name.as_deref()
     }
-    /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
-    /// <p>The following are possible statuses and descriptions.</p>
-    /// <ul>
-    /// <li> <p> <code>in-sync</code>: The parameter value is in sync with the database.</p> </li>
-    /// <li> <p> <code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p> </li>
-    /// <li> <p> <code>applying</code>: The parameter value is being applied to the database.</p> </li>
-    /// <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p> </li>
-    /// <li> <p> <code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p> </li>
-    /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li>
-    /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li>
+    /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p> 
+    /// <p>The following are possible statuses and descriptions.</p> 
+    /// <ul> 
+    /// <li> <p> <code>in-sync</code>: The parameter value is in sync with the database.</p> </li> 
+    /// <li> <p> <code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p> </li> 
+    /// <li> <p> <code>applying</code>: The parameter value is being applied to the database.</p> </li> 
+    /// <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p> </li> 
+    /// <li> <p> <code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p> </li> 
+    /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li> 
+    /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li> 
     /// </ul>
-    pub fn parameter_apply_status(&self) -> std::option::Option<&str> {
+    pub fn parameter_apply_status(&self) -> std::option::Option<& str> {
         self.parameter_apply_status.as_deref()
     }
     /// <p>The error that prevented the parameter from being applied to the database.</p>
-    pub fn parameter_apply_error_description(&self) -> std::option::Option<&str> {
+    pub fn parameter_apply_error_description(&self) -> std::option::Option<& str> {
         self.parameter_apply_error_description.as_deref()
     }
 }
 /// See [`ClusterParameterStatus`](crate::model::ClusterParameterStatus).
 pub mod cluster_parameter_status {
-
+    
     /// A builder for [`ClusterParameterStatus`](crate::model::ClusterParameterStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3711,71 +3370,61 @@ pub mod cluster_parameter_status {
             self
         }
         /// <p>The name of the parameter.</p>
-        pub fn set_parameter_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parameter_name = input;
-            self
+        pub fn set_parameter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameter_name = input; self
         }
-        /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
-        /// <p>The following are possible statuses and descriptions.</p>
-        /// <ul>
-        /// <li> <p> <code>in-sync</code>: The parameter value is in sync with the database.</p> </li>
-        /// <li> <p> <code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p> </li>
-        /// <li> <p> <code>applying</code>: The parameter value is being applied to the database.</p> </li>
-        /// <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p> </li>
-        /// <li> <p> <code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p> </li>
-        /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li>
-        /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li>
+        /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p> 
+        /// <p>The following are possible statuses and descriptions.</p> 
+        /// <ul> 
+        /// <li> <p> <code>in-sync</code>: The parameter value is in sync with the database.</p> </li> 
+        /// <li> <p> <code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p> </li> 
+        /// <li> <p> <code>applying</code>: The parameter value is being applied to the database.</p> </li> 
+        /// <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p> </li> 
+        /// <li> <p> <code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p> </li> 
+        /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li> 
+        /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li> 
         /// </ul>
         pub fn parameter_apply_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.parameter_apply_status = Some(input.into());
             self
         }
-        /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
-        /// <p>The following are possible statuses and descriptions.</p>
-        /// <ul>
-        /// <li> <p> <code>in-sync</code>: The parameter value is in sync with the database.</p> </li>
-        /// <li> <p> <code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p> </li>
-        /// <li> <p> <code>applying</code>: The parameter value is being applied to the database.</p> </li>
-        /// <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p> </li>
-        /// <li> <p> <code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p> </li>
-        /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li>
-        /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li>
+        /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p> 
+        /// <p>The following are possible statuses and descriptions.</p> 
+        /// <ul> 
+        /// <li> <p> <code>in-sync</code>: The parameter value is in sync with the database.</p> </li> 
+        /// <li> <p> <code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p> </li> 
+        /// <li> <p> <code>applying</code>: The parameter value is being applied to the database.</p> </li> 
+        /// <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p> </li> 
+        /// <li> <p> <code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p> </li> 
+        /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li> 
+        /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li> 
         /// </ul>
-        pub fn set_parameter_apply_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parameter_apply_status = input;
-            self
+        pub fn set_parameter_apply_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameter_apply_status = input; self
         }
         /// <p>The error that prevented the parameter from being applied to the database.</p>
-        pub fn parameter_apply_error_description(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameter_apply_error_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.parameter_apply_error_description = Some(input.into());
             self
         }
         /// <p>The error that prevented the parameter from being applied to the database.</p>
-        pub fn set_parameter_apply_error_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parameter_apply_error_description = input;
-            self
+        pub fn set_parameter_apply_error_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameter_apply_error_description = input; self
         }
         /// Consumes the builder and constructs a [`ClusterParameterStatus`](crate::model::ClusterParameterStatus).
         pub fn build(self) -> crate::model::ClusterParameterStatus {
             crate::model::ClusterParameterStatus {
-                parameter_name: self.parameter_name,
-                parameter_apply_status: self.parameter_apply_status,
-                parameter_apply_error_description: self.parameter_apply_error_description,
+                parameter_name: self.parameter_name
+                ,
+                parameter_apply_status: self.parameter_apply_status
+                ,
+                parameter_apply_error_description: self.parameter_apply_error_description
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterParameterStatus {
     /// Creates a new builder-style object to manufacture [`ClusterParameterStatus`](crate::model::ClusterParameterStatus).
@@ -3787,7 +3436,7 @@ impl ClusterParameterStatus {
 /// <p>Describes the members of a VPC security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcSecurityGroupMembership {
+pub struct VpcSecurityGroupMembership  {
     /// <p>The identifier of the VPC security group.</p>
     #[doc(hidden)]
     pub vpc_security_group_id: std::option::Option<std::string::String>,
@@ -3797,17 +3446,17 @@ pub struct VpcSecurityGroupMembership {
 }
 impl VpcSecurityGroupMembership {
     /// <p>The identifier of the VPC security group.</p>
-    pub fn vpc_security_group_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_security_group_id(&self) -> std::option::Option<& str> {
         self.vpc_security_group_id.as_deref()
     }
     /// <p>The status of the VPC security group.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
 pub mod vpc_security_group_membership {
-
+    
     /// A builder for [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3821,12 +3470,8 @@ pub mod vpc_security_group_membership {
             self
         }
         /// <p>The identifier of the VPC security group.</p>
-        pub fn set_vpc_security_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpc_security_group_id = input;
-            self
+        pub fn set_vpc_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_security_group_id = input; self
         }
         /// <p>The status of the VPC security group.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3835,17 +3480,20 @@ pub mod vpc_security_group_membership {
         }
         /// <p>The status of the VPC security group.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
         pub fn build(self) -> crate::model::VpcSecurityGroupMembership {
             crate::model::VpcSecurityGroupMembership {
-                vpc_security_group_id: self.vpc_security_group_id,
-                status: self.status,
+                vpc_security_group_id: self.vpc_security_group_id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcSecurityGroupMembership {
     /// Creates a new builder-style object to manufacture [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
@@ -3857,7 +3505,7 @@ impl VpcSecurityGroupMembership {
 /// <p>Describes a cluster security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterSecurityGroupMembership {
+pub struct ClusterSecurityGroupMembership  {
     /// <p>The name of the cluster security group.</p>
     #[doc(hidden)]
     pub cluster_security_group_name: std::option::Option<std::string::String>,
@@ -3867,17 +3515,17 @@ pub struct ClusterSecurityGroupMembership {
 }
 impl ClusterSecurityGroupMembership {
     /// <p>The name of the cluster security group.</p>
-    pub fn cluster_security_group_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_security_group_name(&self) -> std::option::Option<& str> {
         self.cluster_security_group_name.as_deref()
     }
     /// <p>The status of the cluster security group.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`ClusterSecurityGroupMembership`](crate::model::ClusterSecurityGroupMembership).
 pub mod cluster_security_group_membership {
-
+    
     /// A builder for [`ClusterSecurityGroupMembership`](crate::model::ClusterSecurityGroupMembership).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3886,20 +3534,13 @@ pub mod cluster_security_group_membership {
     }
     impl Builder {
         /// <p>The name of the cluster security group.</p>
-        pub fn cluster_security_group_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn cluster_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_security_group_name = Some(input.into());
             self
         }
         /// <p>The name of the cluster security group.</p>
-        pub fn set_cluster_security_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_security_group_name = input;
-            self
+        pub fn set_cluster_security_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_security_group_name = input; self
         }
         /// <p>The status of the cluster security group.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3908,17 +3549,20 @@ pub mod cluster_security_group_membership {
         }
         /// <p>The status of the cluster security group.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ClusterSecurityGroupMembership`](crate::model::ClusterSecurityGroupMembership).
         pub fn build(self) -> crate::model::ClusterSecurityGroupMembership {
             crate::model::ClusterSecurityGroupMembership {
-                cluster_security_group_name: self.cluster_security_group_name,
-                status: self.status,
+                cluster_security_group_name: self.cluster_security_group_name
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterSecurityGroupMembership {
     /// Creates a new builder-style object to manufacture [`ClusterSecurityGroupMembership`](crate::model::ClusterSecurityGroupMembership).
@@ -3930,7 +3574,7 @@ impl ClusterSecurityGroupMembership {
 /// <p>Describes a connection endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Endpoint {
+pub struct Endpoint  {
     /// <p>The DNS address of the Cluster.</p>
     #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
@@ -3943,7 +3587,7 @@ pub struct Endpoint {
 }
 impl Endpoint {
     /// <p>The DNS address of the Cluster.</p>
-    pub fn address(&self) -> std::option::Option<&str> {
+    pub fn address(&self) -> std::option::Option<& str> {
         self.address.as_deref()
     }
     /// <p>The port that the database engine is listening on.</p>
@@ -3951,13 +3595,13 @@ impl Endpoint {
         self.port
     }
     /// <p>Describes a connection endpoint.</p>
-    pub fn vpc_endpoints(&self) -> std::option::Option<&[crate::model::VpcEndpoint]> {
+    pub fn vpc_endpoints(&self) -> std::option::Option<& [crate::model::VpcEndpoint]> {
         self.vpc_endpoints.as_deref()
     }
 }
 /// See [`Endpoint`](crate::model::Endpoint).
 pub mod endpoint {
-
+    
     /// A builder for [`Endpoint`](crate::model::Endpoint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3973,8 +3617,7 @@ pub mod endpoint {
         }
         /// <p>The DNS address of the Cluster.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address = input;
-            self
+            self.address = input; self
         }
         /// <p>The port that the database engine is listening on.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -3983,8 +3626,7 @@ pub mod endpoint {
         }
         /// <p>The port that the database engine is listening on.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// Appends an item to `vpc_endpoints`.
         ///
@@ -3993,27 +3635,29 @@ pub mod endpoint {
         /// <p>Describes a connection endpoint.</p>
         pub fn vpc_endpoints(mut self, input: crate::model::VpcEndpoint) -> Self {
             let mut v = self.vpc_endpoints.unwrap_or_default();
-            v.push(input);
-            self.vpc_endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.vpc_endpoints = Some(v);
+                            self
         }
         /// <p>Describes a connection endpoint.</p>
-        pub fn set_vpc_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>,
-        ) -> Self {
-            self.vpc_endpoints = input;
-            self
+        pub fn set_vpc_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>) -> Self {
+            self.vpc_endpoints = input; self
         }
         /// Consumes the builder and constructs a [`Endpoint`](crate::model::Endpoint).
         pub fn build(self) -> crate::model::Endpoint {
             crate::model::Endpoint {
-                address: self.address,
-                port: self.port.unwrap_or_default(),
-                vpc_endpoints: self.vpc_endpoints,
+                address: self.address
+                ,
+                port: self.port
+                    .unwrap_or_default()
+                ,
+                vpc_endpoints: self.vpc_endpoints
+                ,
             }
         }
     }
+    
+    
 }
 impl Endpoint {
     /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
@@ -4025,7 +3669,7 @@ impl Endpoint {
 /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcEndpoint {
+pub struct VpcEndpoint  {
     /// <p>The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.</p>
     #[doc(hidden)]
     pub vpc_endpoint_id: std::option::Option<std::string::String>,
@@ -4038,28 +3682,27 @@ pub struct VpcEndpoint {
 }
 impl VpcEndpoint {
     /// <p>The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.</p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The VPC identifier that the endpoint is associated. </p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>
-    pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
+    pub fn network_interfaces(&self) -> std::option::Option<& [crate::model::NetworkInterface]> {
         self.network_interfaces.as_deref()
     }
 }
 /// See [`VpcEndpoint`](crate::model::VpcEndpoint).
 pub mod vpc_endpoint {
-
+    
     /// A builder for [`VpcEndpoint`](crate::model::VpcEndpoint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
-        pub(crate) network_interfaces:
-            std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
+        pub(crate) network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
     }
     impl Builder {
         /// <p>The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.</p>
@@ -4068,12 +3711,8 @@ pub mod vpc_endpoint {
             self
         }
         /// <p>The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.</p>
-        pub fn set_vpc_endpoint_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpc_endpoint_id = input;
-            self
+        pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_endpoint_id = input; self
         }
         /// <p>The VPC identifier that the endpoint is associated. </p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4082,8 +3721,7 @@ pub mod vpc_endpoint {
         }
         /// <p>The VPC identifier that the endpoint is associated. </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Appends an item to `network_interfaces`.
         ///
@@ -4092,27 +3730,28 @@ pub mod vpc_endpoint {
         /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>
         pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(input);
-            self.network_interfaces = Some(v);
-            self
+                            v.push(input);
+                            self.network_interfaces = Some(v);
+                            self
         }
         /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>
-        pub fn set_network_interfaces(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
-        ) -> Self {
-            self.network_interfaces = input;
-            self
+        pub fn set_network_interfaces(mut self, input: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>) -> Self {
+            self.network_interfaces = input; self
         }
         /// Consumes the builder and constructs a [`VpcEndpoint`](crate::model::VpcEndpoint).
         pub fn build(self) -> crate::model::VpcEndpoint {
             crate::model::VpcEndpoint {
-                vpc_endpoint_id: self.vpc_endpoint_id,
-                vpc_id: self.vpc_id,
-                network_interfaces: self.network_interfaces,
+                vpc_endpoint_id: self.vpc_endpoint_id
+                ,
+                vpc_id: self.vpc_id
+                ,
+                network_interfaces: self.network_interfaces
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcEndpoint {
     /// Creates a new builder-style object to manufacture [`VpcEndpoint`](crate::model::VpcEndpoint).
@@ -4124,7 +3763,7 @@ impl VpcEndpoint {
 /// <p>Describes a network interface. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkInterface {
+pub struct NetworkInterface  {
     /// <p>The network interface identifier. </p>
     #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
@@ -4140,25 +3779,25 @@ pub struct NetworkInterface {
 }
 impl NetworkInterface {
     /// <p>The network interface identifier. </p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The subnet identifier. </p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The IPv4 address of the network interface within the subnet. </p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
     /// <p>The Availability Zone. </p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
-
+    
     /// A builder for [`NetworkInterface`](crate::model::NetworkInterface).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4174,12 +3813,8 @@ pub mod network_interface {
             self
         }
         /// <p>The network interface identifier. </p>
-        pub fn set_network_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_interface_id = input;
-            self
+        pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_interface_id = input; self
         }
         /// <p>The subnet identifier. </p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4188,8 +3823,7 @@ pub mod network_interface {
         }
         /// <p>The subnet identifier. </p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subnet_id = input;
-            self
+            self.subnet_id = input; self
         }
         /// <p>The IPv4 address of the network interface within the subnet. </p>
         pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4197,12 +3831,8 @@ pub mod network_interface {
             self
         }
         /// <p>The IPv4 address of the network interface within the subnet. </p>
-        pub fn set_private_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.private_ip_address = input;
-            self
+        pub fn set_private_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.private_ip_address = input; self
         }
         /// <p>The Availability Zone. </p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4210,23 +3840,25 @@ pub mod network_interface {
             self
         }
         /// <p>The Availability Zone. </p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// Consumes the builder and constructs a [`NetworkInterface`](crate::model::NetworkInterface).
         pub fn build(self) -> crate::model::NetworkInterface {
             crate::model::NetworkInterface {
-                network_interface_id: self.network_interface_id,
-                subnet_id: self.subnet_id,
-                private_ip_address: self.private_ip_address,
-                availability_zone: self.availability_zone,
+                network_interface_id: self.network_interface_id
+                ,
+                subnet_id: self.subnet_id
+                ,
+                private_ip_address: self.private_ip_address
+                ,
+                availability_zone: self.availability_zone
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkInterface {
     /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
@@ -4238,7 +3870,7 @@ impl NetworkInterface {
 /// <p>Describes a snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Snapshot {
+pub struct Snapshot  {
     /// <p>The snapshot identifier that is provided in the request.</p>
     #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
@@ -4248,11 +3880,11 @@ pub struct Snapshot {
     /// <p>The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as of this exact time.</p>
     #[doc(hidden)]
     pub snapshot_create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The snapshot status. The value of the status depends on the API operation used: </p>
-    /// <ul>
-    /// <li> <p> <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating". </p> </li>
-    /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li>
-    /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li>
+    /// <p>The snapshot status. The value of the status depends on the API operation used: </p> 
+    /// <ul> 
+    /// <li> <p> <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating". </p> </li> 
+    /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li> 
+    /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -4300,8 +3932,7 @@ pub struct Snapshot {
     pub encrypted_with_hsm: bool,
     /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
     #[doc(hidden)]
-    pub accounts_with_restore_access:
-        std::option::Option<std::vec::Vec<crate::model::AccountWithRestoreAccess>>,
+    pub accounts_with_restore_access: std::option::Option<std::vec::Vec<crate::model::AccountWithRestoreAccess>>,
     /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -4332,15 +3963,15 @@ pub struct Snapshot {
     /// <p>The list of node types that this cluster snapshot is able to restore into.</p>
     #[doc(hidden)]
     pub restorable_node_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> 
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> 
     /// <p>Default: false</p>
     #[doc(hidden)]
     pub enhanced_vpc_routing: bool,
     /// <p>The name of the maintenance track for the snapshot.</p>
     #[doc(hidden)]
     pub maintenance_track_name: std::option::Option<std::string::String>,
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> 
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     #[doc(hidden)]
     pub manual_snapshot_retention_period: std::option::Option<i32>,
@@ -4353,24 +3984,24 @@ pub struct Snapshot {
 }
 impl Snapshot {
     /// <p>The snapshot identifier that is provided in the request.</p>
-    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>The identifier of the cluster for which the snapshot was taken.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as of this exact time.</p>
-    pub fn snapshot_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn snapshot_create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.snapshot_create_time.as_ref()
     }
-    /// <p>The snapshot status. The value of the status depends on the API operation used: </p>
-    /// <ul>
-    /// <li> <p> <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating". </p> </li>
-    /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li>
-    /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li>
+    /// <p>The snapshot status. The value of the status depends on the API operation used: </p> 
+    /// <ul> 
+    /// <li> <p> <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating". </p> </li> 
+    /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li> 
+    /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The port that the cluster is listening on.</p>
@@ -4378,31 +4009,31 @@ impl Snapshot {
         self.port
     }
     /// <p>The Availability Zone in which the cluster was created.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The time (UTC) when the cluster was originally created.</p>
-    pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn cluster_create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.cluster_create_time.as_ref()
     }
     /// <p>The admin user name for the cluster.</p>
-    pub fn master_username(&self) -> std::option::Option<&str> {
+    pub fn master_username(&self) -> std::option::Option<& str> {
         self.master_username.as_deref()
     }
     /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
-    pub fn cluster_version(&self) -> std::option::Option<&str> {
+    pub fn cluster_version(&self) -> std::option::Option<& str> {
         self.cluster_version.as_deref()
     }
     /// <p>The cluster version of the cluster used to create the snapshot. For example, 1.0.15503. </p>
-    pub fn engine_full_version(&self) -> std::option::Option<&str> {
+    pub fn engine_full_version(&self) -> std::option::Option<& str> {
         self.engine_full_version.as_deref()
     }
     /// <p>The snapshot type. Snapshots created using <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> are of type "manual". </p>
-    pub fn snapshot_type(&self) -> std::option::Option<&str> {
+    pub fn snapshot_type(&self) -> std::option::Option<& str> {
         self.snapshot_type.as_deref()
     }
     /// <p>The node type of the nodes in the cluster.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The number of nodes in the cluster.</p>
@@ -4410,11 +4041,11 @@ impl Snapshot {
         self.number_of_nodes
     }
     /// <p>The name of the database that was created when the cluster was created.</p>
-    pub fn db_name(&self) -> std::option::Option<&str> {
+    pub fn db_name(&self) -> std::option::Option<& str> {
         self.db_name.as_deref()
     }
     /// <p>The VPC identifier of the cluster if the snapshot is from a cluster in a VPC. Otherwise, this field is not in the output.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>If <code>true</code>, the data in the snapshot is encrypted at rest.</p>
@@ -4422,7 +4053,7 @@ impl Snapshot {
         self.encrypted
     }
     /// <p>The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster from which the snapshot was taken.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A boolean that indicates whether the snapshot data is encrypted using the HSM keys of the source cluster. <code>true</code> indicates that the data is encrypted using HSM keys.</p>
@@ -4430,13 +4061,11 @@ impl Snapshot {
         self.encrypted_with_hsm
     }
     /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
-    pub fn accounts_with_restore_access(
-        &self,
-    ) -> std::option::Option<&[crate::model::AccountWithRestoreAccess]> {
+    pub fn accounts_with_restore_access(&self) -> std::option::Option<& [crate::model::AccountWithRestoreAccess]> {
         self.accounts_with_restore_access.as_deref()
     }
     /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The size of the complete set of backup data that would be used to restore the cluster.</p>
@@ -4464,28 +4093,28 @@ impl Snapshot {
         self.elapsed_time_in_seconds
     }
     /// <p>The source region from which the snapshot was copied.</p>
-    pub fn source_region(&self) -> std::option::Option<&str> {
+    pub fn source_region(&self) -> std::option::Option<& str> {
         self.source_region.as_deref()
     }
     /// <p>The list of tags for the cluster snapshot.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The list of node types that this cluster snapshot is able to restore into.</p>
-    pub fn restorable_node_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn restorable_node_types(&self) -> std::option::Option<& [std::string::String]> {
         self.restorable_node_types.as_deref()
     }
-    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> 
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> 
     /// <p>Default: false</p>
     pub fn enhanced_vpc_routing(&self) -> bool {
         self.enhanced_vpc_routing
     }
     /// <p>The name of the maintenance track for the snapshot.</p>
-    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+    pub fn maintenance_track_name(&self) -> std::option::Option<& str> {
         self.maintenance_track_name.as_deref()
     }
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> 
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub fn manual_snapshot_retention_period(&self) -> std::option::Option<i32> {
         self.manual_snapshot_retention_period
@@ -4495,15 +4124,13 @@ impl Snapshot {
         self.manual_snapshot_remaining_days
     }
     /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
-    pub fn snapshot_retention_start_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn snapshot_retention_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.snapshot_retention_start_time.as_ref()
     }
 }
 /// See [`Snapshot`](crate::model::Snapshot).
 pub mod snapshot {
-
+    
     /// A builder for [`Snapshot`](crate::model::Snapshot).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4525,8 +4152,7 @@ pub mod snapshot {
         pub(crate) encrypted: std::option::Option<bool>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) encrypted_with_hsm: std::option::Option<bool>,
-        pub(crate) accounts_with_restore_access:
-            std::option::Option<std::vec::Vec<crate::model::AccountWithRestoreAccess>>,
+        pub(crate) accounts_with_restore_access: std::option::Option<std::vec::Vec<crate::model::AccountWithRestoreAccess>>,
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) total_backup_size_in_mega_bytes: std::option::Option<f64>,
         pub(crate) actual_incremental_backup_size_in_mega_bytes: std::option::Option<f64>,
@@ -4550,12 +4176,8 @@ pub mod snapshot {
             self
         }
         /// <p>The snapshot identifier that is provided in the request.</p>
-        pub fn set_snapshot_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_identifier = input;
-            self
+        pub fn set_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_identifier = input; self
         }
         /// <p>The identifier of the cluster for which the snapshot was taken.</p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4563,12 +4185,8 @@ pub mod snapshot {
             self
         }
         /// <p>The identifier of the cluster for which the snapshot was taken.</p>
-        pub fn set_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_identifier = input;
-            self
+        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_identifier = input; self
         }
         /// <p>The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as of this exact time.</p>
         pub fn snapshot_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4576,32 +4194,27 @@ pub mod snapshot {
             self
         }
         /// <p>The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as of this exact time.</p>
-        pub fn set_snapshot_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.snapshot_create_time = input;
-            self
+        pub fn set_snapshot_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.snapshot_create_time = input; self
         }
-        /// <p>The snapshot status. The value of the status depends on the API operation used: </p>
-        /// <ul>
-        /// <li> <p> <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating". </p> </li>
-        /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li>
-        /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li>
+        /// <p>The snapshot status. The value of the status depends on the API operation used: </p> 
+        /// <ul> 
+        /// <li> <p> <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating". </p> </li> 
+        /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li> 
+        /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The snapshot status. The value of the status depends on the API operation used: </p>
-        /// <ul>
-        /// <li> <p> <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating". </p> </li>
-        /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li>
-        /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li>
+        /// <p>The snapshot status. The value of the status depends on the API operation used: </p> 
+        /// <ul> 
+        /// <li> <p> <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating". </p> </li> 
+        /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li> 
+        /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The port that the cluster is listening on.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -4610,8 +4223,7 @@ pub mod snapshot {
         }
         /// <p>The port that the cluster is listening on.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// <p>The Availability Zone in which the cluster was created.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4619,12 +4231,8 @@ pub mod snapshot {
             self
         }
         /// <p>The Availability Zone in which the cluster was created.</p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// <p>The time (UTC) when the cluster was originally created.</p>
         pub fn cluster_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4632,12 +4240,8 @@ pub mod snapshot {
             self
         }
         /// <p>The time (UTC) when the cluster was originally created.</p>
-        pub fn set_cluster_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.cluster_create_time = input;
-            self
+        pub fn set_cluster_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.cluster_create_time = input; self
         }
         /// <p>The admin user name for the cluster.</p>
         pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4645,12 +4249,8 @@ pub mod snapshot {
             self
         }
         /// <p>The admin user name for the cluster.</p>
-        pub fn set_master_username(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.master_username = input;
-            self
+        pub fn set_master_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_username = input; self
         }
         /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
         pub fn cluster_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4658,12 +4258,8 @@ pub mod snapshot {
             self
         }
         /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
-        pub fn set_cluster_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_version = input;
-            self
+        pub fn set_cluster_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_version = input; self
         }
         /// <p>The cluster version of the cluster used to create the snapshot. For example, 1.0.15503. </p>
         pub fn engine_full_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4671,12 +4267,8 @@ pub mod snapshot {
             self
         }
         /// <p>The cluster version of the cluster used to create the snapshot. For example, 1.0.15503. </p>
-        pub fn set_engine_full_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.engine_full_version = input;
-            self
+        pub fn set_engine_full_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine_full_version = input; self
         }
         /// <p>The snapshot type. Snapshots created using <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> are of type "manual". </p>
         pub fn snapshot_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4684,12 +4276,8 @@ pub mod snapshot {
             self
         }
         /// <p>The snapshot type. Snapshots created using <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> are of type "manual". </p>
-        pub fn set_snapshot_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_type = input;
-            self
+        pub fn set_snapshot_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_type = input; self
         }
         /// <p>The node type of the nodes in the cluster.</p>
         pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4698,8 +4286,7 @@ pub mod snapshot {
         }
         /// <p>The node type of the nodes in the cluster.</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_type = input;
-            self
+            self.node_type = input; self
         }
         /// <p>The number of nodes in the cluster.</p>
         pub fn number_of_nodes(mut self, input: i32) -> Self {
@@ -4708,8 +4295,7 @@ pub mod snapshot {
         }
         /// <p>The number of nodes in the cluster.</p>
         pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_nodes = input;
-            self
+            self.number_of_nodes = input; self
         }
         /// <p>The name of the database that was created when the cluster was created.</p>
         pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4718,8 +4304,7 @@ pub mod snapshot {
         }
         /// <p>The name of the database that was created when the cluster was created.</p>
         pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.db_name = input;
-            self
+            self.db_name = input; self
         }
         /// <p>The VPC identifier of the cluster if the snapshot is from a cluster in a VPC. Otherwise, this field is not in the output.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4728,8 +4313,7 @@ pub mod snapshot {
         }
         /// <p>The VPC identifier of the cluster if the snapshot is from a cluster in a VPC. Otherwise, this field is not in the output.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>If <code>true</code>, the data in the snapshot is encrypted at rest.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
@@ -4738,8 +4322,7 @@ pub mod snapshot {
         }
         /// <p>If <code>true</code>, the data in the snapshot is encrypted at rest.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-            self.encrypted = input;
-            self
+            self.encrypted = input; self
         }
         /// <p>The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster from which the snapshot was taken.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4748,8 +4331,7 @@ pub mod snapshot {
         }
         /// <p>The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster from which the snapshot was taken.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>A boolean that indicates whether the snapshot data is encrypted using the HSM keys of the source cluster. <code>true</code> indicates that the data is encrypted using HSM keys.</p>
         pub fn encrypted_with_hsm(mut self, input: bool) -> Self {
@@ -4758,30 +4340,22 @@ pub mod snapshot {
         }
         /// <p>A boolean that indicates whether the snapshot data is encrypted using the HSM keys of the source cluster. <code>true</code> indicates that the data is encrypted using HSM keys.</p>
         pub fn set_encrypted_with_hsm(mut self, input: std::option::Option<bool>) -> Self {
-            self.encrypted_with_hsm = input;
-            self
+            self.encrypted_with_hsm = input; self
         }
         /// Appends an item to `accounts_with_restore_access`.
         ///
         /// To override the contents of this collection use [`set_accounts_with_restore_access`](Self::set_accounts_with_restore_access).
         ///
         /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
-        pub fn accounts_with_restore_access(
-            mut self,
-            input: crate::model::AccountWithRestoreAccess,
-        ) -> Self {
+        pub fn accounts_with_restore_access(mut self, input: crate::model::AccountWithRestoreAccess) -> Self {
             let mut v = self.accounts_with_restore_access.unwrap_or_default();
-            v.push(input);
-            self.accounts_with_restore_access = Some(v);
-            self
+                            v.push(input);
+                            self.accounts_with_restore_access = Some(v);
+                            self
         }
         /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
-        pub fn set_accounts_with_restore_access(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccountWithRestoreAccess>>,
-        ) -> Self {
-            self.accounts_with_restore_access = input;
-            self
+        pub fn set_accounts_with_restore_access(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccountWithRestoreAccess>>) -> Self {
+            self.accounts_with_restore_access = input; self
         }
         /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4789,12 +4363,8 @@ pub mod snapshot {
             self
         }
         /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The size of the complete set of backup data that would be used to restore the cluster.</p>
         pub fn total_backup_size_in_mega_bytes(mut self, input: f64) -> Self {
@@ -4802,12 +4372,8 @@ pub mod snapshot {
             self
         }
         /// <p>The size of the complete set of backup data that would be used to restore the cluster.</p>
-        pub fn set_total_backup_size_in_mega_bytes(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.total_backup_size_in_mega_bytes = input;
-            self
+        pub fn set_total_backup_size_in_mega_bytes(mut self, input: std::option::Option<f64>) -> Self {
+            self.total_backup_size_in_mega_bytes = input; self
         }
         /// <p>The size of the incremental backup.</p>
         pub fn actual_incremental_backup_size_in_mega_bytes(mut self, input: f64) -> Self {
@@ -4815,12 +4381,8 @@ pub mod snapshot {
             self
         }
         /// <p>The size of the incremental backup.</p>
-        pub fn set_actual_incremental_backup_size_in_mega_bytes(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.actual_incremental_backup_size_in_mega_bytes = input;
-            self
+        pub fn set_actual_incremental_backup_size_in_mega_bytes(mut self, input: std::option::Option<f64>) -> Self {
+            self.actual_incremental_backup_size_in_mega_bytes = input; self
         }
         /// <p>The number of megabytes that have been transferred to the snapshot backup.</p>
         pub fn backup_progress_in_mega_bytes(mut self, input: f64) -> Self {
@@ -4828,12 +4390,8 @@ pub mod snapshot {
             self
         }
         /// <p>The number of megabytes that have been transferred to the snapshot backup.</p>
-        pub fn set_backup_progress_in_mega_bytes(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.backup_progress_in_mega_bytes = input;
-            self
+        pub fn set_backup_progress_in_mega_bytes(mut self, input: std::option::Option<f64>) -> Self {
+            self.backup_progress_in_mega_bytes = input; self
         }
         /// <p>The number of megabytes per second being transferred to the snapshot backup. Returns <code>0</code> for a completed backup. </p>
         pub fn current_backup_rate_in_mega_bytes_per_second(mut self, input: f64) -> Self {
@@ -4841,12 +4399,8 @@ pub mod snapshot {
             self
         }
         /// <p>The number of megabytes per second being transferred to the snapshot backup. Returns <code>0</code> for a completed backup. </p>
-        pub fn set_current_backup_rate_in_mega_bytes_per_second(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.current_backup_rate_in_mega_bytes_per_second = input;
-            self
+        pub fn set_current_backup_rate_in_mega_bytes_per_second(mut self, input: std::option::Option<f64>) -> Self {
+            self.current_backup_rate_in_mega_bytes_per_second = input; self
         }
         /// <p>The estimate of the time remaining before the snapshot backup will complete. Returns <code>0</code> for a completed backup. </p>
         pub fn estimated_seconds_to_completion(mut self, input: i64) -> Self {
@@ -4854,12 +4408,8 @@ pub mod snapshot {
             self
         }
         /// <p>The estimate of the time remaining before the snapshot backup will complete. Returns <code>0</code> for a completed backup. </p>
-        pub fn set_estimated_seconds_to_completion(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.estimated_seconds_to_completion = input;
-            self
+        pub fn set_estimated_seconds_to_completion(mut self, input: std::option::Option<i64>) -> Self {
+            self.estimated_seconds_to_completion = input; self
         }
         /// <p>The amount of time an in-progress snapshot backup has been running, or the amount of time it took a completed backup to finish.</p>
         pub fn elapsed_time_in_seconds(mut self, input: i64) -> Self {
@@ -4868,8 +4418,7 @@ pub mod snapshot {
         }
         /// <p>The amount of time an in-progress snapshot backup has been running, or the amount of time it took a completed backup to finish.</p>
         pub fn set_elapsed_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.elapsed_time_in_seconds = input;
-            self
+            self.elapsed_time_in_seconds = input; self
         }
         /// <p>The source region from which the snapshot was copied.</p>
         pub fn source_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4877,12 +4426,8 @@ pub mod snapshot {
             self
         }
         /// <p>The source region from which the snapshot was copied.</p>
-        pub fn set_source_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_region = input;
-            self
+        pub fn set_source_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_region = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -4891,17 +4436,13 @@ pub mod snapshot {
         /// <p>The list of tags for the cluster snapshot.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags for the cluster snapshot.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Appends an item to `restorable_node_types`.
         ///
@@ -4910,31 +4451,26 @@ pub mod snapshot {
         /// <p>The list of node types that this cluster snapshot is able to restore into.</p>
         pub fn restorable_node_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.restorable_node_types.unwrap_or_default();
-            v.push(input.into());
-            self.restorable_node_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.restorable_node_types = Some(v);
+                            self
         }
         /// <p>The list of node types that this cluster snapshot is able to restore into.</p>
-        pub fn set_restorable_node_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.restorable_node_types = input;
-            self
+        pub fn set_restorable_node_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.restorable_node_types = input; self
         }
-        /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-        /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+        /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> 
+        /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> 
         /// <p>Default: false</p>
         pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
             self.enhanced_vpc_routing = Some(input);
             self
         }
-        /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-        /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+        /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> 
+        /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> 
         /// <p>Default: false</p>
         pub fn set_enhanced_vpc_routing(mut self, input: std::option::Option<bool>) -> Self {
-            self.enhanced_vpc_routing = input;
-            self
+            self.enhanced_vpc_routing = input; self
         }
         /// <p>The name of the maintenance track for the snapshot.</p>
         pub fn maintenance_track_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4942,27 +4478,19 @@ pub mod snapshot {
             self
         }
         /// <p>The name of the maintenance track for the snapshot.</p>
-        pub fn set_maintenance_track_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.maintenance_track_name = input;
-            self
+        pub fn set_maintenance_track_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.maintenance_track_name = input; self
         }
-        /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
+        /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> 
         /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
         pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
             self.manual_snapshot_retention_period = Some(input);
             self
         }
-        /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
+        /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> 
         /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-        pub fn set_manual_snapshot_retention_period(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.manual_snapshot_retention_period = input;
-            self
+        pub fn set_manual_snapshot_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.manual_snapshot_retention_period = input; self
         }
         /// <p>The number of days until a manual snapshot will pass its retention period.</p>
         pub fn manual_snapshot_remaining_days(mut self, input: i32) -> Self {
@@ -4970,12 +4498,8 @@ pub mod snapshot {
             self
         }
         /// <p>The number of days until a manual snapshot will pass its retention period.</p>
-        pub fn set_manual_snapshot_remaining_days(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.manual_snapshot_remaining_days = input;
-            self
+        pub fn set_manual_snapshot_remaining_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.manual_snapshot_remaining_days = input; self
         }
         /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
         pub fn snapshot_retention_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4983,63 +4507,96 @@ pub mod snapshot {
             self
         }
         /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
-        pub fn set_snapshot_retention_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.snapshot_retention_start_time = input;
-            self
+        pub fn set_snapshot_retention_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.snapshot_retention_start_time = input; self
         }
         /// Consumes the builder and constructs a [`Snapshot`](crate::model::Snapshot).
         pub fn build(self) -> crate::model::Snapshot {
             crate::model::Snapshot {
-                snapshot_identifier: self.snapshot_identifier,
-                cluster_identifier: self.cluster_identifier,
-                snapshot_create_time: self.snapshot_create_time,
-                status: self.status,
-                port: self.port.unwrap_or_default(),
-                availability_zone: self.availability_zone,
-                cluster_create_time: self.cluster_create_time,
-                master_username: self.master_username,
-                cluster_version: self.cluster_version,
-                engine_full_version: self.engine_full_version,
-                snapshot_type: self.snapshot_type,
-                node_type: self.node_type,
-                number_of_nodes: self.number_of_nodes.unwrap_or_default(),
-                db_name: self.db_name,
-                vpc_id: self.vpc_id,
-                encrypted: self.encrypted.unwrap_or_default(),
-                kms_key_id: self.kms_key_id,
-                encrypted_with_hsm: self.encrypted_with_hsm.unwrap_or_default(),
-                accounts_with_restore_access: self.accounts_with_restore_access,
-                owner_account: self.owner_account,
-                total_backup_size_in_mega_bytes: self
-                    .total_backup_size_in_mega_bytes
-                    .unwrap_or_default(),
-                actual_incremental_backup_size_in_mega_bytes: self
-                    .actual_incremental_backup_size_in_mega_bytes
-                    .unwrap_or_default(),
-                backup_progress_in_mega_bytes: self
-                    .backup_progress_in_mega_bytes
-                    .unwrap_or_default(),
-                current_backup_rate_in_mega_bytes_per_second: self
-                    .current_backup_rate_in_mega_bytes_per_second
-                    .unwrap_or_default(),
-                estimated_seconds_to_completion: self
-                    .estimated_seconds_to_completion
-                    .unwrap_or_default(),
-                elapsed_time_in_seconds: self.elapsed_time_in_seconds.unwrap_or_default(),
-                source_region: self.source_region,
-                tags: self.tags,
-                restorable_node_types: self.restorable_node_types,
-                enhanced_vpc_routing: self.enhanced_vpc_routing.unwrap_or_default(),
-                maintenance_track_name: self.maintenance_track_name,
-                manual_snapshot_retention_period: self.manual_snapshot_retention_period,
-                manual_snapshot_remaining_days: self.manual_snapshot_remaining_days,
-                snapshot_retention_start_time: self.snapshot_retention_start_time,
+                snapshot_identifier: self.snapshot_identifier
+                ,
+                cluster_identifier: self.cluster_identifier
+                ,
+                snapshot_create_time: self.snapshot_create_time
+                ,
+                status: self.status
+                ,
+                port: self.port
+                    .unwrap_or_default()
+                ,
+                availability_zone: self.availability_zone
+                ,
+                cluster_create_time: self.cluster_create_time
+                ,
+                master_username: self.master_username
+                ,
+                cluster_version: self.cluster_version
+                ,
+                engine_full_version: self.engine_full_version
+                ,
+                snapshot_type: self.snapshot_type
+                ,
+                node_type: self.node_type
+                ,
+                number_of_nodes: self.number_of_nodes
+                    .unwrap_or_default()
+                ,
+                db_name: self.db_name
+                ,
+                vpc_id: self.vpc_id
+                ,
+                encrypted: self.encrypted
+                    .unwrap_or_default()
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                encrypted_with_hsm: self.encrypted_with_hsm
+                    .unwrap_or_default()
+                ,
+                accounts_with_restore_access: self.accounts_with_restore_access
+                ,
+                owner_account: self.owner_account
+                ,
+                total_backup_size_in_mega_bytes: self.total_backup_size_in_mega_bytes
+                    .unwrap_or_default()
+                ,
+                actual_incremental_backup_size_in_mega_bytes: self.actual_incremental_backup_size_in_mega_bytes
+                    .unwrap_or_default()
+                ,
+                backup_progress_in_mega_bytes: self.backup_progress_in_mega_bytes
+                    .unwrap_or_default()
+                ,
+                current_backup_rate_in_mega_bytes_per_second: self.current_backup_rate_in_mega_bytes_per_second
+                    .unwrap_or_default()
+                ,
+                estimated_seconds_to_completion: self.estimated_seconds_to_completion
+                    .unwrap_or_default()
+                ,
+                elapsed_time_in_seconds: self.elapsed_time_in_seconds
+                    .unwrap_or_default()
+                ,
+                source_region: self.source_region
+                ,
+                tags: self.tags
+                ,
+                restorable_node_types: self.restorable_node_types
+                ,
+                enhanced_vpc_routing: self.enhanced_vpc_routing
+                    .unwrap_or_default()
+                ,
+                maintenance_track_name: self.maintenance_track_name
+                ,
+                manual_snapshot_retention_period: self.manual_snapshot_retention_period
+                ,
+                manual_snapshot_remaining_days: self.manual_snapshot_remaining_days
+                ,
+                snapshot_retention_start_time: self.snapshot_retention_start_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Snapshot {
     /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
@@ -5051,7 +4608,7 @@ impl Snapshot {
 /// <p>Describes an Amazon Web Services account authorized to restore a snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountWithRestoreAccess {
+pub struct AccountWithRestoreAccess  {
     /// <p>The identifier of an Amazon Web Services account authorized to restore a snapshot.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5061,17 +4618,17 @@ pub struct AccountWithRestoreAccess {
 }
 impl AccountWithRestoreAccess {
     /// <p>The identifier of an Amazon Web Services account authorized to restore a snapshot.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. </p>
-    pub fn account_alias(&self) -> std::option::Option<&str> {
+    pub fn account_alias(&self) -> std::option::Option<& str> {
         self.account_alias.as_deref()
     }
 }
 /// See [`AccountWithRestoreAccess`](crate::model::AccountWithRestoreAccess).
 pub mod account_with_restore_access {
-
+    
     /// A builder for [`AccountWithRestoreAccess`](crate::model::AccountWithRestoreAccess).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5086,8 +4643,7 @@ pub mod account_with_restore_access {
         }
         /// <p>The identifier of an Amazon Web Services account authorized to restore a snapshot.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. </p>
         pub fn account_alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5095,21 +4651,21 @@ pub mod account_with_restore_access {
             self
         }
         /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. </p>
-        pub fn set_account_alias(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.account_alias = input;
-            self
+        pub fn set_account_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_alias = input; self
         }
         /// Consumes the builder and constructs a [`AccountWithRestoreAccess`](crate::model::AccountWithRestoreAccess).
         pub fn build(self) -> crate::model::AccountWithRestoreAccess {
             crate::model::AccountWithRestoreAccess {
-                account_id: self.account_id,
-                account_alias: self.account_alias,
+                account_id: self.account_id
+                ,
+                account_alias: self.account_alias
+                ,
             }
         }
     }
+    
+    
 }
 impl AccountWithRestoreAccess {
     /// Creates a new builder-style object to manufacture [`AccountWithRestoreAccess`](crate::model::AccountWithRestoreAccess).
@@ -5124,9 +4680,9 @@ impl AccountWithRestoreAccess {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let authorizationstatus = unimplemented!();
 /// match authorizationstatus {
@@ -5148,60 +4704,52 @@ impl AccountWithRestoreAccess {
 /// Specifically, when `authorizationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AuthorizationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AuthorizationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Authorized,
     #[allow(missing_docs)] // documentation missing in model
     Revoking,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AuthorizationStatus {
     fn from(s: &str) -> Self {
         match s {
             "Authorized" => AuthorizationStatus::Authorized,
             "Revoking" => AuthorizationStatus::Revoking,
-            other => {
-                AuthorizationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AuthorizationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AuthorizationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthorizationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AuthorizationStatus::from(s))
+                }
+            }
 impl AuthorizationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthorizationStatus::Authorized => "Authorized",
             AuthorizationStatus::Revoking => "Revoking",
-            AuthorizationStatus::Unknown(value) => value.as_str(),
+            AuthorizationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Authorized", "Revoking"]
+        &[
+            "Authorized", "Revoking"
+        ]
     }
 }
 impl AsRef<str> for AuthorizationStatus {
@@ -5213,7 +4761,7 @@ impl AsRef<str> for AuthorizationStatus {
 /// <p>Describes a security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterSecurityGroup {
+pub struct ClusterSecurityGroup  {
     /// <p>The name of the cluster security group to which the operation was applied.</p>
     #[doc(hidden)]
     pub cluster_security_group_name: std::option::Option<std::string::String>,
@@ -5232,55 +4780,47 @@ pub struct ClusterSecurityGroup {
 }
 impl ClusterSecurityGroup {
     /// <p>The name of the cluster security group to which the operation was applied.</p>
-    pub fn cluster_security_group_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_security_group_name(&self) -> std::option::Option<& str> {
         self.cluster_security_group_name.as_deref()
     }
     /// <p>A description of the security group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of EC2 security groups that are permitted to access clusters associated with this cluster security group.</p>
-    pub fn ec2_security_groups(&self) -> std::option::Option<&[crate::model::Ec2SecurityGroup]> {
+    pub fn ec2_security_groups(&self) -> std::option::Option<& [crate::model::Ec2SecurityGroup]> {
         self.ec2_security_groups.as_deref()
     }
     /// <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters associated with this cluster security group.</p>
-    pub fn ip_ranges(&self) -> std::option::Option<&[crate::model::IpRange]> {
+    pub fn ip_ranges(&self) -> std::option::Option<& [crate::model::IpRange]> {
         self.ip_ranges.as_deref()
     }
     /// <p>The list of tags for the cluster security group.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ClusterSecurityGroup`](crate::model::ClusterSecurityGroup).
 pub mod cluster_security_group {
-
+    
     /// A builder for [`ClusterSecurityGroup`](crate::model::ClusterSecurityGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_security_group_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) ec2_security_groups:
-            std::option::Option<std::vec::Vec<crate::model::Ec2SecurityGroup>>,
+        pub(crate) ec2_security_groups: std::option::Option<std::vec::Vec<crate::model::Ec2SecurityGroup>>,
         pub(crate) ip_ranges: std::option::Option<std::vec::Vec<crate::model::IpRange>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
         /// <p>The name of the cluster security group to which the operation was applied.</p>
-        pub fn cluster_security_group_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn cluster_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_security_group_name = Some(input.into());
             self
         }
         /// <p>The name of the cluster security group to which the operation was applied.</p>
-        pub fn set_cluster_security_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_security_group_name = input;
-            self
+        pub fn set_cluster_security_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_security_group_name = input; self
         }
         /// <p>A description of the security group.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5289,8 +4829,7 @@ pub mod cluster_security_group {
         }
         /// <p>A description of the security group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `ec2_security_groups`.
         ///
@@ -5299,17 +4838,13 @@ pub mod cluster_security_group {
         /// <p>A list of EC2 security groups that are permitted to access clusters associated with this cluster security group.</p>
         pub fn ec2_security_groups(mut self, input: crate::model::Ec2SecurityGroup) -> Self {
             let mut v = self.ec2_security_groups.unwrap_or_default();
-            v.push(input);
-            self.ec2_security_groups = Some(v);
-            self
+                            v.push(input);
+                            self.ec2_security_groups = Some(v);
+                            self
         }
         /// <p>A list of EC2 security groups that are permitted to access clusters associated with this cluster security group.</p>
-        pub fn set_ec2_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Ec2SecurityGroup>>,
-        ) -> Self {
-            self.ec2_security_groups = input;
-            self
+        pub fn set_ec2_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::Ec2SecurityGroup>>) -> Self {
+            self.ec2_security_groups = input; self
         }
         /// Appends an item to `ip_ranges`.
         ///
@@ -5318,17 +4853,13 @@ pub mod cluster_security_group {
         /// <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters associated with this cluster security group.</p>
         pub fn ip_ranges(mut self, input: crate::model::IpRange) -> Self {
             let mut v = self.ip_ranges.unwrap_or_default();
-            v.push(input);
-            self.ip_ranges = Some(v);
-            self
+                            v.push(input);
+                            self.ip_ranges = Some(v);
+                            self
         }
         /// <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters associated with this cluster security group.</p>
-        pub fn set_ip_ranges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IpRange>>,
-        ) -> Self {
-            self.ip_ranges = input;
-            self
+        pub fn set_ip_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::model::IpRange>>) -> Self {
+            self.ip_ranges = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -5337,29 +4868,32 @@ pub mod cluster_security_group {
         /// <p>The list of tags for the cluster security group.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags for the cluster security group.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ClusterSecurityGroup`](crate::model::ClusterSecurityGroup).
         pub fn build(self) -> crate::model::ClusterSecurityGroup {
             crate::model::ClusterSecurityGroup {
-                cluster_security_group_name: self.cluster_security_group_name,
-                description: self.description,
-                ec2_security_groups: self.ec2_security_groups,
-                ip_ranges: self.ip_ranges,
-                tags: self.tags,
+                cluster_security_group_name: self.cluster_security_group_name
+                ,
+                description: self.description
+                ,
+                ec2_security_groups: self.ec2_security_groups
+                ,
+                ip_ranges: self.ip_ranges
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterSecurityGroup {
     /// Creates a new builder-style object to manufacture [`ClusterSecurityGroup`](crate::model::ClusterSecurityGroup).
@@ -5371,7 +4905,7 @@ impl ClusterSecurityGroup {
 /// <p>Describes an IP range used in a security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IpRange {
+pub struct IpRange  {
     /// <p>The status of the IP range, for example, "authorized".</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -5384,21 +4918,21 @@ pub struct IpRange {
 }
 impl IpRange {
     /// <p>The status of the IP range, for example, "authorized".</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
-    pub fn cidrip(&self) -> std::option::Option<&str> {
+    pub fn cidrip(&self) -> std::option::Option<& str> {
         self.cidrip.as_deref()
     }
     /// <p>The list of tags for the IP range.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`IpRange`](crate::model::IpRange).
 pub mod ip_range {
-
+    
     /// A builder for [`IpRange`](crate::model::IpRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5414,8 +4948,7 @@ pub mod ip_range {
         }
         /// <p>The status of the IP range, for example, "authorized".</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
         pub fn cidrip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5424,8 +4957,7 @@ pub mod ip_range {
         }
         /// <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
         pub fn set_cidrip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cidrip = input;
-            self
+            self.cidrip = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -5434,27 +4966,28 @@ pub mod ip_range {
         /// <p>The list of tags for the IP range.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags for the IP range.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`IpRange`](crate::model::IpRange).
         pub fn build(self) -> crate::model::IpRange {
             crate::model::IpRange {
-                status: self.status,
-                cidrip: self.cidrip,
-                tags: self.tags,
+                status: self.status
+                ,
+                cidrip: self.cidrip
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl IpRange {
     /// Creates a new builder-style object to manufacture [`IpRange`](crate::model::IpRange).
@@ -5466,7 +4999,7 @@ impl IpRange {
 /// <p>Describes an Amazon EC2 security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2SecurityGroup {
+pub struct Ec2SecurityGroup  {
     /// <p>The status of the EC2 security group.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -5482,25 +5015,25 @@ pub struct Ec2SecurityGroup {
 }
 impl Ec2SecurityGroup {
     /// <p>The status of the EC2 security group.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The name of the EC2 Security Group.</p>
-    pub fn ec2_security_group_name(&self) -> std::option::Option<&str> {
+    pub fn ec2_security_group_name(&self) -> std::option::Option<& str> {
         self.ec2_security_group_name.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
-    pub fn ec2_security_group_owner_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_security_group_owner_id(&self) -> std::option::Option<& str> {
         self.ec2_security_group_owner_id.as_deref()
     }
     /// <p>The list of tags for the EC2 security group.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`Ec2SecurityGroup`](crate::model::Ec2SecurityGroup).
 pub mod ec2_security_group {
-
+    
     /// A builder for [`Ec2SecurityGroup`](crate::model::Ec2SecurityGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5517,8 +5050,7 @@ pub mod ec2_security_group {
         }
         /// <p>The status of the EC2 security group.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The name of the EC2 Security Group.</p>
         pub fn ec2_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5526,28 +5058,17 @@ pub mod ec2_security_group {
             self
         }
         /// <p>The name of the EC2 Security Group.</p>
-        pub fn set_ec2_security_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_security_group_name = input;
-            self
+        pub fn set_ec2_security_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_security_group_name = input; self
         }
         /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
-        pub fn ec2_security_group_owner_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn ec2_security_group_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ec2_security_group_owner_id = Some(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
-        pub fn set_ec2_security_group_owner_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_security_group_owner_id = input;
-            self
+        pub fn set_ec2_security_group_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_security_group_owner_id = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -5556,28 +5077,30 @@ pub mod ec2_security_group {
         /// <p>The list of tags for the EC2 security group.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags for the EC2 security group.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`Ec2SecurityGroup`](crate::model::Ec2SecurityGroup).
         pub fn build(self) -> crate::model::Ec2SecurityGroup {
             crate::model::Ec2SecurityGroup {
-                status: self.status,
-                ec2_security_group_name: self.ec2_security_group_name,
-                ec2_security_group_owner_id: self.ec2_security_group_owner_id,
-                tags: self.tags,
+                status: self.status
+                ,
+                ec2_security_group_name: self.ec2_security_group_name
+                ,
+                ec2_security_group_owner_id: self.ec2_security_group_owner_id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl Ec2SecurityGroup {
     /// Creates a new builder-style object to manufacture [`Ec2SecurityGroup`](crate::model::Ec2SecurityGroup).
@@ -5589,11 +5112,11 @@ impl Ec2SecurityGroup {
 /// <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableRestoreStatus {
+pub struct TableRestoreStatus  {
     /// <p>The unique identifier for the table restore request.</p>
     #[doc(hidden)]
     pub table_restore_request_id: std::option::Option<std::string::String>,
-    /// <p>A value that describes the current state of the table restore request.</p>
+    /// <p>A value that describes the current state of the table restore request.</p> 
     /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::TableRestoreStatusType>,
@@ -5636,20 +5159,20 @@ pub struct TableRestoreStatus {
 }
 impl TableRestoreStatus {
     /// <p>The unique identifier for the table restore request.</p>
-    pub fn table_restore_request_id(&self) -> std::option::Option<&str> {
+    pub fn table_restore_request_id(&self) -> std::option::Option<& str> {
         self.table_restore_request_id.as_deref()
     }
-    /// <p>A value that describes the current state of the table restore request.</p>
+    /// <p>A value that describes the current state of the table restore request.</p> 
     /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::TableRestoreStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::model::TableRestoreStatusType> {
         self.status.as_ref()
     }
     /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
-    pub fn request_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn request_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.request_time.as_ref()
     }
     /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
@@ -5661,41 +5184,41 @@ impl TableRestoreStatus {
         self.total_data_in_mega_bytes
     }
     /// <p>The identifier of the Amazon Redshift cluster that the table is being restored to.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The identifier of the snapshot that the table is being restored from.</p>
-    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>The name of the source database that contains the table being restored.</p>
-    pub fn source_database_name(&self) -> std::option::Option<&str> {
+    pub fn source_database_name(&self) -> std::option::Option<& str> {
         self.source_database_name.as_deref()
     }
     /// <p>The name of the source schema that contains the table being restored.</p>
-    pub fn source_schema_name(&self) -> std::option::Option<&str> {
+    pub fn source_schema_name(&self) -> std::option::Option<& str> {
         self.source_schema_name.as_deref()
     }
     /// <p>The name of the source table being restored.</p>
-    pub fn source_table_name(&self) -> std::option::Option<&str> {
+    pub fn source_table_name(&self) -> std::option::Option<& str> {
         self.source_table_name.as_deref()
     }
     /// <p>The name of the database to restore the table to.</p>
-    pub fn target_database_name(&self) -> std::option::Option<&str> {
+    pub fn target_database_name(&self) -> std::option::Option<& str> {
         self.target_database_name.as_deref()
     }
     /// <p>The name of the schema to restore the table to.</p>
-    pub fn target_schema_name(&self) -> std::option::Option<&str> {
+    pub fn target_schema_name(&self) -> std::option::Option<& str> {
         self.target_schema_name.as_deref()
     }
     /// <p>The name of the table to create as a result of the table restore request.</p>
-    pub fn new_table_name(&self) -> std::option::Option<&str> {
+    pub fn new_table_name(&self) -> std::option::Option<& str> {
         self.new_table_name.as_deref()
     }
 }
 /// See [`TableRestoreStatus`](crate::model::TableRestoreStatus).
 pub mod table_restore_status {
-
+    
     /// A builder for [`TableRestoreStatus`](crate::model::TableRestoreStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5721,27 +5244,19 @@ pub mod table_restore_status {
             self
         }
         /// <p>The unique identifier for the table restore request.</p>
-        pub fn set_table_restore_request_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.table_restore_request_id = input;
-            self
+        pub fn set_table_restore_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_restore_request_id = input; self
         }
-        /// <p>A value that describes the current state of the table restore request.</p>
+        /// <p>A value that describes the current state of the table restore request.</p> 
         /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
         pub fn status(mut self, input: crate::model::TableRestoreStatusType) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>A value that describes the current state of the table restore request.</p>
+        /// <p>A value that describes the current state of the table restore request.</p> 
         /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::TableRestoreStatusType>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::TableRestoreStatusType>) -> Self {
+            self.status = input; self
         }
         /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5750,8 +5265,7 @@ pub mod table_restore_status {
         }
         /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
         pub fn request_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5759,12 +5273,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
-        pub fn set_request_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.request_time = input;
-            self
+        pub fn set_request_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.request_time = input; self
         }
         /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
         pub fn progress_in_mega_bytes(mut self, input: i64) -> Self {
@@ -5773,8 +5283,7 @@ pub mod table_restore_status {
         }
         /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
         pub fn set_progress_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.progress_in_mega_bytes = input;
-            self
+            self.progress_in_mega_bytes = input; self
         }
         /// <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
         pub fn total_data_in_mega_bytes(mut self, input: i64) -> Self {
@@ -5783,8 +5292,7 @@ pub mod table_restore_status {
         }
         /// <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
         pub fn set_total_data_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_data_in_mega_bytes = input;
-            self
+            self.total_data_in_mega_bytes = input; self
         }
         /// <p>The identifier of the Amazon Redshift cluster that the table is being restored to.</p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5792,12 +5300,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The identifier of the Amazon Redshift cluster that the table is being restored to.</p>
-        pub fn set_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_identifier = input;
-            self
+        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_identifier = input; self
         }
         /// <p>The identifier of the snapshot that the table is being restored from.</p>
         pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5805,12 +5309,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The identifier of the snapshot that the table is being restored from.</p>
-        pub fn set_snapshot_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_identifier = input;
-            self
+        pub fn set_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_identifier = input; self
         }
         /// <p>The name of the source database that contains the table being restored.</p>
         pub fn source_database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5818,12 +5318,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The name of the source database that contains the table being restored.</p>
-        pub fn set_source_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_database_name = input;
-            self
+        pub fn set_source_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_database_name = input; self
         }
         /// <p>The name of the source schema that contains the table being restored.</p>
         pub fn source_schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5831,12 +5327,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The name of the source schema that contains the table being restored.</p>
-        pub fn set_source_schema_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_schema_name = input;
-            self
+        pub fn set_source_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_schema_name = input; self
         }
         /// <p>The name of the source table being restored.</p>
         pub fn source_table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5844,12 +5336,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The name of the source table being restored.</p>
-        pub fn set_source_table_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_table_name = input;
-            self
+        pub fn set_source_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_table_name = input; self
         }
         /// <p>The name of the database to restore the table to.</p>
         pub fn target_database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5857,12 +5345,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The name of the database to restore the table to.</p>
-        pub fn set_target_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_database_name = input;
-            self
+        pub fn set_target_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_database_name = input; self
         }
         /// <p>The name of the schema to restore the table to.</p>
         pub fn target_schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5870,12 +5354,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The name of the schema to restore the table to.</p>
-        pub fn set_target_schema_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_schema_name = input;
-            self
+        pub fn set_target_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_schema_name = input; self
         }
         /// <p>The name of the table to create as a result of the table restore request.</p>
         pub fn new_table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5883,33 +5363,45 @@ pub mod table_restore_status {
             self
         }
         /// <p>The name of the table to create as a result of the table restore request.</p>
-        pub fn set_new_table_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.new_table_name = input;
-            self
+        pub fn set_new_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.new_table_name = input; self
         }
         /// Consumes the builder and constructs a [`TableRestoreStatus`](crate::model::TableRestoreStatus).
         pub fn build(self) -> crate::model::TableRestoreStatus {
             crate::model::TableRestoreStatus {
-                table_restore_request_id: self.table_restore_request_id,
-                status: self.status,
-                message: self.message,
-                request_time: self.request_time,
-                progress_in_mega_bytes: self.progress_in_mega_bytes,
-                total_data_in_mega_bytes: self.total_data_in_mega_bytes,
-                cluster_identifier: self.cluster_identifier,
-                snapshot_identifier: self.snapshot_identifier,
-                source_database_name: self.source_database_name,
-                source_schema_name: self.source_schema_name,
-                source_table_name: self.source_table_name,
-                target_database_name: self.target_database_name,
-                target_schema_name: self.target_schema_name,
-                new_table_name: self.new_table_name,
+                table_restore_request_id: self.table_restore_request_id
+                ,
+                status: self.status
+                ,
+                message: self.message
+                ,
+                request_time: self.request_time
+                ,
+                progress_in_mega_bytes: self.progress_in_mega_bytes
+                ,
+                total_data_in_mega_bytes: self.total_data_in_mega_bytes
+                ,
+                cluster_identifier: self.cluster_identifier
+                ,
+                snapshot_identifier: self.snapshot_identifier
+                ,
+                source_database_name: self.source_database_name
+                ,
+                source_schema_name: self.source_schema_name
+                ,
+                source_table_name: self.source_table_name
+                ,
+                target_database_name: self.target_database_name
+                ,
+                target_schema_name: self.target_schema_name
+                ,
+                new_table_name: self.new_table_name
+                ,
             }
         }
     }
+    
+    
 }
 impl TableRestoreStatus {
     /// Creates a new builder-style object to manufacture [`TableRestoreStatus`](crate::model::TableRestoreStatus).
@@ -5924,9 +5416,9 @@ impl TableRestoreStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tablerestorestatustype = unimplemented!();
 /// match tablerestorestatustype {
@@ -5951,22 +5443,14 @@ impl TableRestoreStatus {
 /// Specifically, when `tablerestorestatustype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TableRestoreStatusType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TableRestoreStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -5979,7 +5463,7 @@ pub enum TableRestoreStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TableRestoreStatusType {
     fn from(s: &str) -> Self {
@@ -5989,19 +5473,17 @@ impl std::convert::From<&str> for TableRestoreStatusType {
             "IN_PROGRESS" => TableRestoreStatusType::InProgress,
             "PENDING" => TableRestoreStatusType::Pending,
             "SUCCEEDED" => TableRestoreStatusType::Succeeded,
-            other => {
-                TableRestoreStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => TableRestoreStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TableRestoreStatusType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TableRestoreStatusType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TableRestoreStatusType::from(s))
+                }
+            }
 impl TableRestoreStatusType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6011,12 +5493,14 @@ impl TableRestoreStatusType {
             TableRestoreStatusType::InProgress => "IN_PROGRESS",
             TableRestoreStatusType::Pending => "PENDING",
             TableRestoreStatusType::Succeeded => "SUCCEEDED",
-            TableRestoreStatusType::Unknown(value) => value.as_str(),
+            TableRestoreStatusType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CANCELED", "FAILED", "IN_PROGRESS", "PENDING", "SUCCEEDED"]
+        &[
+            "CANCELED", "FAILED", "IN_PROGRESS", "PENDING", "SUCCEEDED"
+        ]
     }
 }
 impl AsRef<str> for TableRestoreStatusType {
@@ -6028,7 +5512,7 @@ impl AsRef<str> for TableRestoreStatusType {
 /// <p>Describes a parameter in a cluster parameter group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Parameter {
+pub struct Parameter  {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
     pub parameter_name: std::option::Option<std::string::String>,
@@ -6059,31 +5543,31 @@ pub struct Parameter {
 }
 impl Parameter {
     /// <p>The name of the parameter.</p>
-    pub fn parameter_name(&self) -> std::option::Option<&str> {
+    pub fn parameter_name(&self) -> std::option::Option<& str> {
         self.parameter_name.as_deref()
     }
     /// <p>The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then the maximum size of <code>ParameterValue</code> is 8000 characters.</p>
-    pub fn parameter_value(&self) -> std::option::Option<&str> {
+    pub fn parameter_value(&self) -> std::option::Option<& str> {
         self.parameter_value.as_deref()
     }
     /// <p>A description of the parameter.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The source of the parameter value, such as "engine-default" or "user".</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The data type of the parameter.</p>
-    pub fn data_type(&self) -> std::option::Option<&str> {
+    pub fn data_type(&self) -> std::option::Option<& str> {
         self.data_type.as_deref()
     }
     /// <p>The valid range of values for the parameter.</p>
-    pub fn allowed_values(&self) -> std::option::Option<&str> {
+    pub fn allowed_values(&self) -> std::option::Option<& str> {
         self.allowed_values.as_deref()
     }
     /// <p>Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other properties require that any associated clusters be rebooted for the configuration changes to be applied. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub fn apply_type(&self) -> std::option::Option<&crate::model::ParameterApplyType> {
+    pub fn apply_type(&self) -> std::option::Option<& crate::model::ParameterApplyType> {
         self.apply_type.as_ref()
     }
     /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
@@ -6091,13 +5575,13 @@ impl Parameter {
         self.is_modifiable
     }
     /// <p>The earliest engine version to which the parameter can apply.</p>
-    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+    pub fn minimum_engine_version(&self) -> std::option::Option<& str> {
         self.minimum_engine_version.as_deref()
     }
 }
 /// See [`Parameter`](crate::model::Parameter).
 pub mod parameter {
-
+    
     /// A builder for [`Parameter`](crate::model::Parameter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6118,12 +5602,8 @@ pub mod parameter {
             self
         }
         /// <p>The name of the parameter.</p>
-        pub fn set_parameter_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parameter_name = input;
-            self
+        pub fn set_parameter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameter_name = input; self
         }
         /// <p>The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then the maximum size of <code>ParameterValue</code> is 8000 characters.</p>
         pub fn parameter_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6131,12 +5611,8 @@ pub mod parameter {
             self
         }
         /// <p>The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then the maximum size of <code>ParameterValue</code> is 8000 characters.</p>
-        pub fn set_parameter_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parameter_value = input;
-            self
+        pub fn set_parameter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameter_value = input; self
         }
         /// <p>A description of the parameter.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6145,8 +5621,7 @@ pub mod parameter {
         }
         /// <p>A description of the parameter.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The source of the parameter value, such as "engine-default" or "user".</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6155,8 +5630,7 @@ pub mod parameter {
         }
         /// <p>The source of the parameter value, such as "engine-default" or "user".</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// <p>The data type of the parameter.</p>
         pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6165,8 +5639,7 @@ pub mod parameter {
         }
         /// <p>The data type of the parameter.</p>
         pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_type = input;
-            self
+            self.data_type = input; self
         }
         /// <p>The valid range of values for the parameter.</p>
         pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6174,12 +5647,8 @@ pub mod parameter {
             self
         }
         /// <p>The valid range of values for the parameter.</p>
-        pub fn set_allowed_values(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.allowed_values = input;
-            self
+        pub fn set_allowed_values(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.allowed_values = input; self
         }
         /// <p>Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other properties require that any associated clusters be rebooted for the configuration changes to be applied. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
         pub fn apply_type(mut self, input: crate::model::ParameterApplyType) -> Self {
@@ -6187,12 +5656,8 @@ pub mod parameter {
             self
         }
         /// <p>Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other properties require that any associated clusters be rebooted for the configuration changes to be applied. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-        pub fn set_apply_type(
-            mut self,
-            input: std::option::Option<crate::model::ParameterApplyType>,
-        ) -> Self {
-            self.apply_type = input;
-            self
+        pub fn set_apply_type(mut self, input: std::option::Option<crate::model::ParameterApplyType>) -> Self {
+            self.apply_type = input; self
         }
         /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
         pub fn is_modifiable(mut self, input: bool) -> Self {
@@ -6201,8 +5666,7 @@ pub mod parameter {
         }
         /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
         pub fn set_is_modifiable(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_modifiable = input;
-            self
+            self.is_modifiable = input; self
         }
         /// <p>The earliest engine version to which the parameter can apply.</p>
         pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6210,28 +5674,36 @@ pub mod parameter {
             self
         }
         /// <p>The earliest engine version to which the parameter can apply.</p>
-        pub fn set_minimum_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.minimum_engine_version = input;
-            self
+        pub fn set_minimum_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.minimum_engine_version = input; self
         }
         /// Consumes the builder and constructs a [`Parameter`](crate::model::Parameter).
         pub fn build(self) -> crate::model::Parameter {
             crate::model::Parameter {
-                parameter_name: self.parameter_name,
-                parameter_value: self.parameter_value,
-                description: self.description,
-                source: self.source,
-                data_type: self.data_type,
-                allowed_values: self.allowed_values,
-                apply_type: self.apply_type,
-                is_modifiable: self.is_modifiable.unwrap_or_default(),
-                minimum_engine_version: self.minimum_engine_version,
+                parameter_name: self.parameter_name
+                ,
+                parameter_value: self.parameter_value
+                ,
+                description: self.description
+                ,
+                source: self.source
+                ,
+                data_type: self.data_type
+                ,
+                allowed_values: self.allowed_values
+                ,
+                apply_type: self.apply_type
+                ,
+                is_modifiable: self.is_modifiable
+                    .unwrap_or_default()
+                ,
+                minimum_engine_version: self.minimum_engine_version
+                ,
             }
         }
     }
+    
+    
 }
 impl Parameter {
     /// Creates a new builder-style object to manufacture [`Parameter`](crate::model::Parameter).
@@ -6246,9 +5718,9 @@ impl Parameter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let parameterapplytype = unimplemented!();
 /// match parameterapplytype {
@@ -6270,60 +5742,52 @@ impl Parameter {
 /// Specifically, when `parameterapplytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ParameterApplyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ParameterApplyType {
     #[allow(missing_docs)] // documentation missing in model
     Dynamic,
     #[allow(missing_docs)] // documentation missing in model
     Static,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ParameterApplyType {
     fn from(s: &str) -> Self {
         match s {
             "dynamic" => ParameterApplyType::Dynamic,
             "static" => ParameterApplyType::Static,
-            other => {
-                ParameterApplyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ParameterApplyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ParameterApplyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ParameterApplyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ParameterApplyType::from(s))
+                }
+            }
 impl ParameterApplyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ParameterApplyType::Dynamic => "dynamic",
             ParameterApplyType::Static => "static",
-            ParameterApplyType::Unknown(value) => value.as_str(),
+            ParameterApplyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["dynamic", "static"]
+        &[
+            "dynamic", "static"
+        ]
     }
 }
 impl AsRef<str> for ParameterApplyType {
@@ -6335,7 +5799,7 @@ impl AsRef<str> for ParameterApplyType {
 /// <p>The association of a datashare from a producer account with a data consumer. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataShareAssociation {
+pub struct DataShareAssociation  {
     /// <p>The name of the consumer accounts that have an association with a producer datashare.</p>
     #[doc(hidden)]
     pub consumer_identifier: std::option::Option<std::string::String>,
@@ -6354,29 +5818,29 @@ pub struct DataShareAssociation {
 }
 impl DataShareAssociation {
     /// <p>The name of the consumer accounts that have an association with a producer datashare.</p>
-    pub fn consumer_identifier(&self) -> std::option::Option<&str> {
+    pub fn consumer_identifier(&self) -> std::option::Option<& str> {
         self.consumer_identifier.as_deref()
     }
     /// <p>The status of the datashare that is associated.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DataShareStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DataShareStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
-    pub fn consumer_region(&self) -> std::option::Option<&str> {
+    pub fn consumer_region(&self) -> std::option::Option<& str> {
         self.consumer_region.as_deref()
     }
     /// <p>The creation date of the datashare that is associated.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The status change data of the datashare that is associated.</p>
-    pub fn status_change_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn status_change_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.status_change_date.as_ref()
     }
 }
 /// See [`DataShareAssociation`](crate::model::DataShareAssociation).
 pub mod data_share_association {
-
+    
     /// A builder for [`DataShareAssociation`](crate::model::DataShareAssociation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6393,12 +5857,8 @@ pub mod data_share_association {
             self
         }
         /// <p>The name of the consumer accounts that have an association with a producer datashare.</p>
-        pub fn set_consumer_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.consumer_identifier = input;
-            self
+        pub fn set_consumer_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.consumer_identifier = input; self
         }
         /// <p>The status of the datashare that is associated.</p>
         pub fn status(mut self, input: crate::model::DataShareStatus) -> Self {
@@ -6406,12 +5866,8 @@ pub mod data_share_association {
             self
         }
         /// <p>The status of the datashare that is associated.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DataShareStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DataShareStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
         pub fn consumer_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6419,12 +5875,8 @@ pub mod data_share_association {
             self
         }
         /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
-        pub fn set_consumer_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.consumer_region = input;
-            self
+        pub fn set_consumer_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.consumer_region = input; self
         }
         /// <p>The creation date of the datashare that is associated.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6432,12 +5884,8 @@ pub mod data_share_association {
             self
         }
         /// <p>The creation date of the datashare that is associated.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The status change data of the datashare that is associated.</p>
         pub fn status_change_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6445,24 +5893,27 @@ pub mod data_share_association {
             self
         }
         /// <p>The status change data of the datashare that is associated.</p>
-        pub fn set_status_change_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.status_change_date = input;
-            self
+        pub fn set_status_change_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.status_change_date = input; self
         }
         /// Consumes the builder and constructs a [`DataShareAssociation`](crate::model::DataShareAssociation).
         pub fn build(self) -> crate::model::DataShareAssociation {
             crate::model::DataShareAssociation {
-                consumer_identifier: self.consumer_identifier,
-                status: self.status,
-                consumer_region: self.consumer_region,
-                created_date: self.created_date,
-                status_change_date: self.status_change_date,
+                consumer_identifier: self.consumer_identifier
+                ,
+                status: self.status
+                ,
+                consumer_region: self.consumer_region
+                ,
+                created_date: self.created_date
+                ,
+                status_change_date: self.status_change_date
+                ,
             }
         }
     }
+    
+    
 }
 impl DataShareAssociation {
     /// Creates a new builder-style object to manufacture [`DataShareAssociation`](crate::model::DataShareAssociation).
@@ -6477,9 +5928,9 @@ impl DataShareAssociation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datasharestatus = unimplemented!();
 /// match datasharestatus {
@@ -6505,22 +5956,14 @@ impl DataShareAssociation {
 /// Specifically, when `datasharestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataShareStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataShareStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -6535,7 +5978,7 @@ pub enum DataShareStatus {
     #[allow(missing_docs)] // documentation missing in model
     Rejected,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataShareStatus {
     fn from(s: &str) -> Self {
@@ -6546,17 +5989,17 @@ impl std::convert::From<&str> for DataShareStatus {
             "DEAUTHORIZED" => DataShareStatus::Deauthorized,
             "PENDING_AUTHORIZATION" => DataShareStatus::PendingAuthorization,
             "REJECTED" => DataShareStatus::Rejected,
-            other => DataShareStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DataShareStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataShareStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataShareStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataShareStatus::from(s))
+                }
+            }
 impl DataShareStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6567,18 +6010,13 @@ impl DataShareStatus {
             DataShareStatus::Deauthorized => "DEAUTHORIZED",
             DataShareStatus::PendingAuthorization => "PENDING_AUTHORIZATION",
             DataShareStatus::Rejected => "REJECTED",
-            DataShareStatus::Unknown(value) => value.as_str(),
+            DataShareStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "AUTHORIZED",
-            "AVAILABLE",
-            "DEAUTHORIZED",
-            "PENDING_AUTHORIZATION",
-            "REJECTED",
+            "ACTIVE", "AUTHORIZED", "AVAILABLE", "DEAUTHORIZED", "PENDING_AUTHORIZATION", "REJECTED"
         ]
     }
 }
@@ -6591,7 +6029,7 @@ impl AsRef<str> for DataShareStatus {
 /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservedNode {
+pub struct ReservedNode  {
     /// <p>The unique identifier for the reservation.</p>
     #[doc(hidden)]
     pub reserved_node_id: std::option::Option<std::string::String>,
@@ -6619,14 +6057,14 @@ pub struct ReservedNode {
     /// <p>The number of reserved compute nodes.</p>
     #[doc(hidden)]
     pub node_count: i32,
-    /// <p>The state of the reserved compute node.</p>
-    /// <p>Possible Values:</p>
-    /// <ul>
-    /// <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li>
-    /// <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li>
-    /// <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li>
-    /// <li> <p>retired-The reserved node is no longer available. </p> </li>
-    /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li>
+    /// <p>The state of the reserved compute node.</p> 
+    /// <p>Possible Values:</p> 
+    /// <ul> 
+    /// <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li> 
+    /// <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li> 
+    /// <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li> 
+    /// <li> <p>retired-The reserved node is no longer available. </p> </li> 
+    /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
@@ -6642,19 +6080,19 @@ pub struct ReservedNode {
 }
 impl ReservedNode {
     /// <p>The unique identifier for the reservation.</p>
-    pub fn reserved_node_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_node_id(&self) -> std::option::Option<& str> {
         self.reserved_node_id.as_deref()
     }
     /// <p>The identifier for the reserved node offering.</p>
-    pub fn reserved_node_offering_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_node_offering_id(&self) -> std::option::Option<& str> {
         self.reserved_node_offering_id.as_deref()
     }
     /// <p>The node type of the reserved node.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of that duration.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The duration of the node reservation in seconds.</p>
@@ -6670,43 +6108,41 @@ impl ReservedNode {
         self.usage_price
     }
     /// <p>The currency code for the reserved cluster.</p>
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>The number of reserved compute nodes.</p>
     pub fn node_count(&self) -> i32 {
         self.node_count
     }
-    /// <p>The state of the reserved compute node.</p>
-    /// <p>Possible Values:</p>
-    /// <ul>
-    /// <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li>
-    /// <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li>
-    /// <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li>
-    /// <li> <p>retired-The reserved node is no longer available. </p> </li>
-    /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li>
+    /// <p>The state of the reserved compute node.</p> 
+    /// <p>Possible Values:</p> 
+    /// <ul> 
+    /// <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li> 
+    /// <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li> 
+    /// <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li> 
+    /// <li> <p>retired-The reserved node is no longer available. </p> </li> 
+    /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li> 
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
-    pub fn offering_type(&self) -> std::option::Option<&str> {
+    pub fn offering_type(&self) -> std::option::Option<& str> {
         self.offering_type.as_deref()
     }
     /// <p>The recurring charges for the reserved node.</p>
-    pub fn recurring_charges(&self) -> std::option::Option<&[crate::model::RecurringCharge]> {
+    pub fn recurring_charges(&self) -> std::option::Option<& [crate::model::RecurringCharge]> {
         self.recurring_charges.as_deref()
     }
     /// <p></p>
-    pub fn reserved_node_offering_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ReservedNodeOfferingType> {
+    pub fn reserved_node_offering_type(&self) -> std::option::Option<& crate::model::ReservedNodeOfferingType> {
         self.reserved_node_offering_type.as_ref()
     }
 }
 /// See [`ReservedNode`](crate::model::ReservedNode).
 pub mod reserved_node {
-
+    
     /// A builder for [`ReservedNode`](crate::model::ReservedNode).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6721,10 +6157,8 @@ pub mod reserved_node {
         pub(crate) node_count: std::option::Option<i32>,
         pub(crate) state: std::option::Option<std::string::String>,
         pub(crate) offering_type: std::option::Option<std::string::String>,
-        pub(crate) recurring_charges:
-            std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
-        pub(crate) reserved_node_offering_type:
-            std::option::Option<crate::model::ReservedNodeOfferingType>,
+        pub(crate) recurring_charges: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
+        pub(crate) reserved_node_offering_type: std::option::Option<crate::model::ReservedNodeOfferingType>,
     }
     impl Builder {
         /// <p>The unique identifier for the reservation.</p>
@@ -6733,12 +6167,8 @@ pub mod reserved_node {
             self
         }
         /// <p>The unique identifier for the reservation.</p>
-        pub fn set_reserved_node_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reserved_node_id = input;
-            self
+        pub fn set_reserved_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reserved_node_id = input; self
         }
         /// <p>The identifier for the reserved node offering.</p>
         pub fn reserved_node_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6746,12 +6176,8 @@ pub mod reserved_node {
             self
         }
         /// <p>The identifier for the reserved node offering.</p>
-        pub fn set_reserved_node_offering_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reserved_node_offering_id = input;
-            self
+        pub fn set_reserved_node_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reserved_node_offering_id = input; self
         }
         /// <p>The node type of the reserved node.</p>
         pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6760,8 +6186,7 @@ pub mod reserved_node {
         }
         /// <p>The node type of the reserved node.</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_type = input;
-            self
+            self.node_type = input; self
         }
         /// <p>The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of that duration.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6769,12 +6194,8 @@ pub mod reserved_node {
             self
         }
         /// <p>The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of that duration.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The duration of the node reservation in seconds.</p>
         pub fn duration(mut self, input: i32) -> Self {
@@ -6783,8 +6204,7 @@ pub mod reserved_node {
         }
         /// <p>The duration of the node reservation in seconds.</p>
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration = input;
-            self
+            self.duration = input; self
         }
         /// <p>The fixed cost Amazon Redshift charges you for this reserved node.</p>
         pub fn fixed_price(mut self, input: f64) -> Self {
@@ -6793,8 +6213,7 @@ pub mod reserved_node {
         }
         /// <p>The fixed cost Amazon Redshift charges you for this reserved node.</p>
         pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
-            self.fixed_price = input;
-            self
+            self.fixed_price = input; self
         }
         /// <p>The hourly rate Amazon Redshift charges you for this reserved node.</p>
         pub fn usage_price(mut self, input: f64) -> Self {
@@ -6803,8 +6222,7 @@ pub mod reserved_node {
         }
         /// <p>The hourly rate Amazon Redshift charges you for this reserved node.</p>
         pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
-            self.usage_price = input;
-            self
+            self.usage_price = input; self
         }
         /// <p>The currency code for the reserved cluster.</p>
         pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6812,12 +6230,8 @@ pub mod reserved_node {
             self
         }
         /// <p>The currency code for the reserved cluster.</p>
-        pub fn set_currency_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.currency_code = input;
-            self
+        pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.currency_code = input; self
         }
         /// <p>The number of reserved compute nodes.</p>
         pub fn node_count(mut self, input: i32) -> Self {
@@ -6826,34 +6240,32 @@ pub mod reserved_node {
         }
         /// <p>The number of reserved compute nodes.</p>
         pub fn set_node_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.node_count = input;
-            self
+            self.node_count = input; self
         }
-        /// <p>The state of the reserved compute node.</p>
-        /// <p>Possible Values:</p>
-        /// <ul>
-        /// <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li>
-        /// <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li>
-        /// <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li>
-        /// <li> <p>retired-The reserved node is no longer available. </p> </li>
-        /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li>
+        /// <p>The state of the reserved compute node.</p> 
+        /// <p>Possible Values:</p> 
+        /// <ul> 
+        /// <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li> 
+        /// <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li> 
+        /// <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li> 
+        /// <li> <p>retired-The reserved node is no longer available. </p> </li> 
+        /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li> 
         /// </ul>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
             self.state = Some(input.into());
             self
         }
-        /// <p>The state of the reserved compute node.</p>
-        /// <p>Possible Values:</p>
-        /// <ul>
-        /// <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li>
-        /// <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li>
-        /// <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li>
-        /// <li> <p>retired-The reserved node is no longer available. </p> </li>
-        /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li>
+        /// <p>The state of the reserved compute node.</p> 
+        /// <p>Possible Values:</p> 
+        /// <ul> 
+        /// <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li> 
+        /// <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li> 
+        /// <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li> 
+        /// <li> <p>retired-The reserved node is no longer available. </p> </li> 
+        /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li> 
         /// </ul>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
         pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6861,12 +6273,8 @@ pub mod reserved_node {
             self
         }
         /// <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
-        pub fn set_offering_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.offering_type = input;
-            self
+        pub fn set_offering_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.offering_type = input; self
         }
         /// Appends an item to `recurring_charges`.
         ///
@@ -6875,53 +6283,61 @@ pub mod reserved_node {
         /// <p>The recurring charges for the reserved node.</p>
         pub fn recurring_charges(mut self, input: crate::model::RecurringCharge) -> Self {
             let mut v = self.recurring_charges.unwrap_or_default();
-            v.push(input);
-            self.recurring_charges = Some(v);
-            self
+                            v.push(input);
+                            self.recurring_charges = Some(v);
+                            self
         }
         /// <p>The recurring charges for the reserved node.</p>
-        pub fn set_recurring_charges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
-        ) -> Self {
-            self.recurring_charges = input;
-            self
+        pub fn set_recurring_charges(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>) -> Self {
+            self.recurring_charges = input; self
         }
         /// <p></p>
-        pub fn reserved_node_offering_type(
-            mut self,
-            input: crate::model::ReservedNodeOfferingType,
-        ) -> Self {
+        pub fn reserved_node_offering_type(mut self, input: crate::model::ReservedNodeOfferingType) -> Self {
             self.reserved_node_offering_type = Some(input);
             self
         }
         /// <p></p>
-        pub fn set_reserved_node_offering_type(
-            mut self,
-            input: std::option::Option<crate::model::ReservedNodeOfferingType>,
-        ) -> Self {
-            self.reserved_node_offering_type = input;
-            self
+        pub fn set_reserved_node_offering_type(mut self, input: std::option::Option<crate::model::ReservedNodeOfferingType>) -> Self {
+            self.reserved_node_offering_type = input; self
         }
         /// Consumes the builder and constructs a [`ReservedNode`](crate::model::ReservedNode).
         pub fn build(self) -> crate::model::ReservedNode {
             crate::model::ReservedNode {
-                reserved_node_id: self.reserved_node_id,
-                reserved_node_offering_id: self.reserved_node_offering_id,
-                node_type: self.node_type,
-                start_time: self.start_time,
-                duration: self.duration.unwrap_or_default(),
-                fixed_price: self.fixed_price.unwrap_or_default(),
-                usage_price: self.usage_price.unwrap_or_default(),
-                currency_code: self.currency_code,
-                node_count: self.node_count.unwrap_or_default(),
-                state: self.state,
-                offering_type: self.offering_type,
-                recurring_charges: self.recurring_charges,
-                reserved_node_offering_type: self.reserved_node_offering_type,
+                reserved_node_id: self.reserved_node_id
+                ,
+                reserved_node_offering_id: self.reserved_node_offering_id
+                ,
+                node_type: self.node_type
+                ,
+                start_time: self.start_time
+                ,
+                duration: self.duration
+                    .unwrap_or_default()
+                ,
+                fixed_price: self.fixed_price
+                    .unwrap_or_default()
+                ,
+                usage_price: self.usage_price
+                    .unwrap_or_default()
+                ,
+                currency_code: self.currency_code
+                ,
+                node_count: self.node_count
+                    .unwrap_or_default()
+                ,
+                state: self.state
+                ,
+                offering_type: self.offering_type
+                ,
+                recurring_charges: self.recurring_charges
+                ,
+                reserved_node_offering_type: self.reserved_node_offering_type
+                ,
             }
         }
     }
+    
+    
 }
 impl ReservedNode {
     /// Creates a new builder-style object to manufacture [`ReservedNode`](crate::model::ReservedNode).
@@ -6936,9 +6352,9 @@ impl ReservedNode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reservednodeofferingtype = unimplemented!();
 /// match reservednodeofferingtype {
@@ -6960,60 +6376,52 @@ impl ReservedNode {
 /// Specifically, when `reservednodeofferingtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReservedNodeOfferingType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReservedNodeOfferingType {
     #[allow(missing_docs)] // documentation missing in model
     Regular,
     #[allow(missing_docs)] // documentation missing in model
     Upgradable,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReservedNodeOfferingType {
     fn from(s: &str) -> Self {
         match s {
             "Regular" => ReservedNodeOfferingType::Regular,
             "Upgradable" => ReservedNodeOfferingType::Upgradable,
-            other => ReservedNodeOfferingType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ReservedNodeOfferingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReservedNodeOfferingType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReservedNodeOfferingType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReservedNodeOfferingType::from(s))
+                }
+            }
 impl ReservedNodeOfferingType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReservedNodeOfferingType::Regular => "Regular",
             ReservedNodeOfferingType::Upgradable => "Upgradable",
-            ReservedNodeOfferingType::Unknown(value) => value.as_str(),
+            ReservedNodeOfferingType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Regular", "Upgradable"]
+        &[
+            "Regular", "Upgradable"
+        ]
     }
 }
 impl AsRef<str> for ReservedNodeOfferingType {
@@ -7025,7 +6433,7 @@ impl AsRef<str> for ReservedNodeOfferingType {
 /// <p>Describes a recurring charge.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecurringCharge {
+pub struct RecurringCharge  {
     /// <p>The amount charged per the period of time specified by the recurring charge frequency.</p>
     #[doc(hidden)]
     pub recurring_charge_amount: f64,
@@ -7039,13 +6447,13 @@ impl RecurringCharge {
         self.recurring_charge_amount
     }
     /// <p>The frequency at which the recurring charge amount is applied.</p>
-    pub fn recurring_charge_frequency(&self) -> std::option::Option<&str> {
+    pub fn recurring_charge_frequency(&self) -> std::option::Option<& str> {
         self.recurring_charge_frequency.as_deref()
     }
 }
 /// See [`RecurringCharge`](crate::model::RecurringCharge).
 pub mod recurring_charge {
-
+    
     /// A builder for [`RecurringCharge`](crate::model::RecurringCharge).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7060,8 +6468,7 @@ pub mod recurring_charge {
         }
         /// <p>The amount charged per the period of time specified by the recurring charge frequency.</p>
         pub fn set_recurring_charge_amount(mut self, input: std::option::Option<f64>) -> Self {
-            self.recurring_charge_amount = input;
-            self
+            self.recurring_charge_amount = input; self
         }
         /// <p>The frequency at which the recurring charge amount is applied.</p>
         pub fn recurring_charge_frequency(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7069,21 +6476,22 @@ pub mod recurring_charge {
             self
         }
         /// <p>The frequency at which the recurring charge amount is applied.</p>
-        pub fn set_recurring_charge_frequency(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recurring_charge_frequency = input;
-            self
+        pub fn set_recurring_charge_frequency(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recurring_charge_frequency = input; self
         }
         /// Consumes the builder and constructs a [`RecurringCharge`](crate::model::RecurringCharge).
         pub fn build(self) -> crate::model::RecurringCharge {
             crate::model::RecurringCharge {
-                recurring_charge_amount: self.recurring_charge_amount.unwrap_or_default(),
-                recurring_charge_frequency: self.recurring_charge_frequency,
+                recurring_charge_amount: self.recurring_charge_amount
+                    .unwrap_or_default()
+                ,
+                recurring_charge_frequency: self.recurring_charge_frequency
+                ,
             }
         }
     }
+    
+    
 }
 impl RecurringCharge {
     /// Creates a new builder-style object to manufacture [`RecurringCharge`](crate::model::RecurringCharge).
@@ -7098,9 +6506,9 @@ impl RecurringCharge {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let usagelimitbreachaction = unimplemented!();
 /// match usagelimitbreachaction {
@@ -7123,22 +6531,14 @@ impl RecurringCharge {
 /// Specifically, when `usagelimitbreachaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UsageLimitBreachAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UsageLimitBreachAction {
     #[allow(missing_docs)] // documentation missing in model
     Disable,
@@ -7147,7 +6547,7 @@ pub enum UsageLimitBreachAction {
     #[allow(missing_docs)] // documentation missing in model
     Log,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UsageLimitBreachAction {
     fn from(s: &str) -> Self {
@@ -7155,19 +6555,17 @@ impl std::convert::From<&str> for UsageLimitBreachAction {
             "disable" => UsageLimitBreachAction::Disable,
             "emit-metric" => UsageLimitBreachAction::EmitMetric,
             "log" => UsageLimitBreachAction::Log,
-            other => {
-                UsageLimitBreachAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => UsageLimitBreachAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UsageLimitBreachAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UsageLimitBreachAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UsageLimitBreachAction::from(s))
+                }
+            }
 impl UsageLimitBreachAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7175,12 +6573,14 @@ impl UsageLimitBreachAction {
             UsageLimitBreachAction::Disable => "disable",
             UsageLimitBreachAction::EmitMetric => "emit-metric",
             UsageLimitBreachAction::Log => "log",
-            UsageLimitBreachAction::Unknown(value) => value.as_str(),
+            UsageLimitBreachAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["disable", "emit-metric", "log"]
+        &[
+            "disable", "emit-metric", "log"
+        ]
     }
 }
 impl AsRef<str> for UsageLimitBreachAction {
@@ -7195,9 +6595,9 @@ impl AsRef<str> for UsageLimitBreachAction {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let usagelimitperiod = unimplemented!();
 /// match usagelimitperiod {
@@ -7220,22 +6620,14 @@ impl AsRef<str> for UsageLimitBreachAction {
 /// Specifically, when `usagelimitperiod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UsageLimitPeriod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UsageLimitPeriod {
     #[allow(missing_docs)] // documentation missing in model
     Daily,
@@ -7244,7 +6636,7 @@ pub enum UsageLimitPeriod {
     #[allow(missing_docs)] // documentation missing in model
     Weekly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UsageLimitPeriod {
     fn from(s: &str) -> Self {
@@ -7252,17 +6644,17 @@ impl std::convert::From<&str> for UsageLimitPeriod {
             "daily" => UsageLimitPeriod::Daily,
             "monthly" => UsageLimitPeriod::Monthly,
             "weekly" => UsageLimitPeriod::Weekly,
-            other => UsageLimitPeriod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UsageLimitPeriod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UsageLimitPeriod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UsageLimitPeriod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UsageLimitPeriod::from(s))
+                }
+            }
 impl UsageLimitPeriod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7270,12 +6662,14 @@ impl UsageLimitPeriod {
             UsageLimitPeriod::Daily => "daily",
             UsageLimitPeriod::Monthly => "monthly",
             UsageLimitPeriod::Weekly => "weekly",
-            UsageLimitPeriod::Unknown(value) => value.as_str(),
+            UsageLimitPeriod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["daily", "monthly", "weekly"]
+        &[
+            "daily", "monthly", "weekly"
+        ]
     }
 }
 impl AsRef<str> for UsageLimitPeriod {
@@ -7290,9 +6684,9 @@ impl AsRef<str> for UsageLimitPeriod {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let usagelimitlimittype = unimplemented!();
 /// match usagelimitlimittype {
@@ -7314,60 +6708,52 @@ impl AsRef<str> for UsageLimitPeriod {
 /// Specifically, when `usagelimitlimittype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UsageLimitLimitType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UsageLimitLimitType {
     #[allow(missing_docs)] // documentation missing in model
     DataScanned,
     #[allow(missing_docs)] // documentation missing in model
     Time,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UsageLimitLimitType {
     fn from(s: &str) -> Self {
         match s {
             "data-scanned" => UsageLimitLimitType::DataScanned,
             "time" => UsageLimitLimitType::Time,
-            other => {
-                UsageLimitLimitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => UsageLimitLimitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UsageLimitLimitType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UsageLimitLimitType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UsageLimitLimitType::from(s))
+                }
+            }
 impl UsageLimitLimitType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UsageLimitLimitType::DataScanned => "data-scanned",
             UsageLimitLimitType::Time => "time",
-            UsageLimitLimitType::Unknown(value) => value.as_str(),
+            UsageLimitLimitType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["data-scanned", "time"]
+        &[
+            "data-scanned", "time"
+        ]
     }
 }
 impl AsRef<str> for UsageLimitLimitType {
@@ -7382,9 +6768,9 @@ impl AsRef<str> for UsageLimitLimitType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let usagelimitfeaturetype = unimplemented!();
 /// match usagelimitfeaturetype {
@@ -7407,22 +6793,14 @@ impl AsRef<str> for UsageLimitLimitType {
 /// Specifically, when `usagelimitfeaturetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UsageLimitFeatureType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UsageLimitFeatureType {
     #[allow(missing_docs)] // documentation missing in model
     ConcurrencyScaling,
@@ -7431,7 +6809,7 @@ pub enum UsageLimitFeatureType {
     #[allow(missing_docs)] // documentation missing in model
     Spectrum,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UsageLimitFeatureType {
     fn from(s: &str) -> Self {
@@ -7439,19 +6817,17 @@ impl std::convert::From<&str> for UsageLimitFeatureType {
             "concurrency-scaling" => UsageLimitFeatureType::ConcurrencyScaling,
             "cross-region-datasharing" => UsageLimitFeatureType::CrossRegionDatasharing,
             "spectrum" => UsageLimitFeatureType::Spectrum,
-            other => {
-                UsageLimitFeatureType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => UsageLimitFeatureType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UsageLimitFeatureType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UsageLimitFeatureType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UsageLimitFeatureType::from(s))
+                }
+            }
 impl UsageLimitFeatureType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7459,15 +6835,13 @@ impl UsageLimitFeatureType {
             UsageLimitFeatureType::ConcurrencyScaling => "concurrency-scaling",
             UsageLimitFeatureType::CrossRegionDatasharing => "cross-region-datasharing",
             UsageLimitFeatureType::Spectrum => "spectrum",
-            UsageLimitFeatureType::Unknown(value) => value.as_str(),
+            UsageLimitFeatureType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "concurrency-scaling",
-            "cross-region-datasharing",
-            "spectrum",
+            "concurrency-scaling", "cross-region-datasharing", "spectrum"
         ]
     }
 }
@@ -7480,7 +6854,7 @@ impl AsRef<str> for UsageLimitFeatureType {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterAssociatedToSchedule {
+pub struct ClusterAssociatedToSchedule  {
     /// <p></p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -7490,17 +6864,17 @@ pub struct ClusterAssociatedToSchedule {
 }
 impl ClusterAssociatedToSchedule {
     /// <p></p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p></p>
-    pub fn schedule_association_state(&self) -> std::option::Option<&crate::model::ScheduleState> {
+    pub fn schedule_association_state(&self) -> std::option::Option<& crate::model::ScheduleState> {
         self.schedule_association_state.as_ref()
     }
 }
 /// See [`ClusterAssociatedToSchedule`](crate::model::ClusterAssociatedToSchedule).
 pub mod cluster_associated_to_schedule {
-
+    
     /// A builder for [`ClusterAssociatedToSchedule`](crate::model::ClusterAssociatedToSchedule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7514,12 +6888,8 @@ pub mod cluster_associated_to_schedule {
             self
         }
         /// <p></p>
-        pub fn set_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_identifier = input;
-            self
+        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_identifier = input; self
         }
         /// <p></p>
         pub fn schedule_association_state(mut self, input: crate::model::ScheduleState) -> Self {
@@ -7527,21 +6897,21 @@ pub mod cluster_associated_to_schedule {
             self
         }
         /// <p></p>
-        pub fn set_schedule_association_state(
-            mut self,
-            input: std::option::Option<crate::model::ScheduleState>,
-        ) -> Self {
-            self.schedule_association_state = input;
-            self
+        pub fn set_schedule_association_state(mut self, input: std::option::Option<crate::model::ScheduleState>) -> Self {
+            self.schedule_association_state = input; self
         }
         /// Consumes the builder and constructs a [`ClusterAssociatedToSchedule`](crate::model::ClusterAssociatedToSchedule).
         pub fn build(self) -> crate::model::ClusterAssociatedToSchedule {
             crate::model::ClusterAssociatedToSchedule {
-                cluster_identifier: self.cluster_identifier,
-                schedule_association_state: self.schedule_association_state,
+                cluster_identifier: self.cluster_identifier
+                ,
+                schedule_association_state: self.schedule_association_state
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterAssociatedToSchedule {
     /// Creates a new builder-style object to manufacture [`ClusterAssociatedToSchedule`](crate::model::ClusterAssociatedToSchedule).
@@ -7556,9 +6926,9 @@ impl ClusterAssociatedToSchedule {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let scheduledactionstate = unimplemented!();
 /// match scheduledactionstate {
@@ -7580,60 +6950,52 @@ impl ClusterAssociatedToSchedule {
 /// Specifically, when `scheduledactionstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScheduledActionState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ScheduledActionState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScheduledActionState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => ScheduledActionState::Active,
             "DISABLED" => ScheduledActionState::Disabled,
-            other => {
-                ScheduledActionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ScheduledActionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ScheduledActionState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScheduledActionState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ScheduledActionState::from(s))
+                }
+            }
 impl ScheduledActionState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScheduledActionState::Active => "ACTIVE",
             ScheduledActionState::Disabled => "DISABLED",
-            ScheduledActionState::Unknown(value) => value.as_str(),
+            ScheduledActionState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DISABLED"]
+        &[
+            "ACTIVE", "DISABLED"
+        ]
     }
 }
 impl AsRef<str> for ScheduledActionState {
@@ -7645,7 +7007,7 @@ impl AsRef<str> for ScheduledActionState {
 /// <p>The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduledActionType {
+pub struct ScheduledActionType  {
     /// <p>An action that runs a <code>ResizeCluster</code> API operation. </p>
     #[doc(hidden)]
     pub resize_cluster: std::option::Option<crate::model::ResizeClusterMessage>,
@@ -7658,21 +7020,21 @@ pub struct ScheduledActionType {
 }
 impl ScheduledActionType {
     /// <p>An action that runs a <code>ResizeCluster</code> API operation. </p>
-    pub fn resize_cluster(&self) -> std::option::Option<&crate::model::ResizeClusterMessage> {
+    pub fn resize_cluster(&self) -> std::option::Option<& crate::model::ResizeClusterMessage> {
         self.resize_cluster.as_ref()
     }
     /// <p>An action that runs a <code>PauseCluster</code> API operation. </p>
-    pub fn pause_cluster(&self) -> std::option::Option<&crate::model::PauseClusterMessage> {
+    pub fn pause_cluster(&self) -> std::option::Option<& crate::model::PauseClusterMessage> {
         self.pause_cluster.as_ref()
     }
     /// <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
-    pub fn resume_cluster(&self) -> std::option::Option<&crate::model::ResumeClusterMessage> {
+    pub fn resume_cluster(&self) -> std::option::Option<& crate::model::ResumeClusterMessage> {
         self.resume_cluster.as_ref()
     }
 }
 /// See [`ScheduledActionType`](crate::model::ScheduledActionType).
 pub mod scheduled_action_type {
-
+    
     /// A builder for [`ScheduledActionType`](crate::model::ScheduledActionType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7687,12 +7049,8 @@ pub mod scheduled_action_type {
             self
         }
         /// <p>An action that runs a <code>ResizeCluster</code> API operation. </p>
-        pub fn set_resize_cluster(
-            mut self,
-            input: std::option::Option<crate::model::ResizeClusterMessage>,
-        ) -> Self {
-            self.resize_cluster = input;
-            self
+        pub fn set_resize_cluster(mut self, input: std::option::Option<crate::model::ResizeClusterMessage>) -> Self {
+            self.resize_cluster = input; self
         }
         /// <p>An action that runs a <code>PauseCluster</code> API operation. </p>
         pub fn pause_cluster(mut self, input: crate::model::PauseClusterMessage) -> Self {
@@ -7700,12 +7058,8 @@ pub mod scheduled_action_type {
             self
         }
         /// <p>An action that runs a <code>PauseCluster</code> API operation. </p>
-        pub fn set_pause_cluster(
-            mut self,
-            input: std::option::Option<crate::model::PauseClusterMessage>,
-        ) -> Self {
-            self.pause_cluster = input;
-            self
+        pub fn set_pause_cluster(mut self, input: std::option::Option<crate::model::PauseClusterMessage>) -> Self {
+            self.pause_cluster = input; self
         }
         /// <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
         pub fn resume_cluster(mut self, input: crate::model::ResumeClusterMessage) -> Self {
@@ -7713,22 +7067,23 @@ pub mod scheduled_action_type {
             self
         }
         /// <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
-        pub fn set_resume_cluster(
-            mut self,
-            input: std::option::Option<crate::model::ResumeClusterMessage>,
-        ) -> Self {
-            self.resume_cluster = input;
-            self
+        pub fn set_resume_cluster(mut self, input: std::option::Option<crate::model::ResumeClusterMessage>) -> Self {
+            self.resume_cluster = input; self
         }
         /// Consumes the builder and constructs a [`ScheduledActionType`](crate::model::ScheduledActionType).
         pub fn build(self) -> crate::model::ScheduledActionType {
             crate::model::ScheduledActionType {
-                resize_cluster: self.resize_cluster,
-                pause_cluster: self.pause_cluster,
-                resume_cluster: self.resume_cluster,
+                resize_cluster: self.resize_cluster
+                ,
+                pause_cluster: self.pause_cluster
+                ,
+                resume_cluster: self.resume_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl ScheduledActionType {
     /// Creates a new builder-style object to manufacture [`ScheduledActionType`](crate::model::ScheduledActionType).
@@ -7740,20 +7095,20 @@ impl ScheduledActionType {
 /// <p>Describes a resume cluster operation. For example, a scheduled action to run the <code>ResumeCluster</code> API operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResumeClusterMessage {
+pub struct ResumeClusterMessage  {
     /// <p>The identifier of the cluster to be resumed.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
 impl ResumeClusterMessage {
     /// <p>The identifier of the cluster to be resumed.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
 }
 /// See [`ResumeClusterMessage`](crate::model::ResumeClusterMessage).
 pub mod resume_cluster_message {
-
+    
     /// A builder for [`ResumeClusterMessage`](crate::model::ResumeClusterMessage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7766,20 +7121,19 @@ pub mod resume_cluster_message {
             self
         }
         /// <p>The identifier of the cluster to be resumed.</p>
-        pub fn set_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_identifier = input;
-            self
+        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_identifier = input; self
         }
         /// Consumes the builder and constructs a [`ResumeClusterMessage`](crate::model::ResumeClusterMessage).
         pub fn build(self) -> crate::model::ResumeClusterMessage {
             crate::model::ResumeClusterMessage {
-                cluster_identifier: self.cluster_identifier,
+                cluster_identifier: self.cluster_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl ResumeClusterMessage {
     /// Creates a new builder-style object to manufacture [`ResumeClusterMessage`](crate::model::ResumeClusterMessage).
@@ -7791,20 +7145,20 @@ impl ResumeClusterMessage {
 /// <p>Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PauseClusterMessage {
+pub struct PauseClusterMessage  {
     /// <p>The identifier of the cluster to be paused.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
 impl PauseClusterMessage {
     /// <p>The identifier of the cluster to be paused.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
 }
 /// See [`PauseClusterMessage`](crate::model::PauseClusterMessage).
 pub mod pause_cluster_message {
-
+    
     /// A builder for [`PauseClusterMessage`](crate::model::PauseClusterMessage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7817,20 +7171,19 @@ pub mod pause_cluster_message {
             self
         }
         /// <p>The identifier of the cluster to be paused.</p>
-        pub fn set_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_identifier = input;
-            self
+        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_identifier = input; self
         }
         /// Consumes the builder and constructs a [`PauseClusterMessage`](crate::model::PauseClusterMessage).
         pub fn build(self) -> crate::model::PauseClusterMessage {
             crate::model::PauseClusterMessage {
-                cluster_identifier: self.cluster_identifier,
+                cluster_identifier: self.cluster_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl PauseClusterMessage {
     /// Creates a new builder-style object to manufacture [`PauseClusterMessage`](crate::model::PauseClusterMessage).
@@ -7842,7 +7195,7 @@ impl PauseClusterMessage {
 /// <p>Describes a resize cluster operation. For example, a scheduled action to run the <code>ResizeCluster</code> API operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResizeClusterMessage {
+pub struct ResizeClusterMessage  {
     /// <p>The unique identifier for the cluster to resize.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -7867,15 +7220,15 @@ pub struct ResizeClusterMessage {
 }
 impl ResizeClusterMessage {
     /// <p>The unique identifier for the cluster to resize.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The new cluster type for the specified cluster.</p>
-    pub fn cluster_type(&self) -> std::option::Option<&str> {
+    pub fn cluster_type(&self) -> std::option::Option<& str> {
         self.cluster_type.as_deref()
     }
     /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
@@ -7887,17 +7240,17 @@ impl ResizeClusterMessage {
         self.classic
     }
     /// <p>The identifier of the reserved node.</p>
-    pub fn reserved_node_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_node_id(&self) -> std::option::Option<& str> {
         self.reserved_node_id.as_deref()
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn target_reserved_node_offering_id(&self) -> std::option::Option<&str> {
+    pub fn target_reserved_node_offering_id(&self) -> std::option::Option<& str> {
         self.target_reserved_node_offering_id.as_deref()
     }
 }
 /// See [`ResizeClusterMessage`](crate::model::ResizeClusterMessage).
 pub mod resize_cluster_message {
-
+    
     /// A builder for [`ResizeClusterMessage`](crate::model::ResizeClusterMessage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7916,12 +7269,8 @@ pub mod resize_cluster_message {
             self
         }
         /// <p>The unique identifier for the cluster to resize.</p>
-        pub fn set_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_identifier = input;
-            self
+        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_identifier = input; self
         }
         /// <p>The new cluster type for the specified cluster.</p>
         pub fn cluster_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7930,8 +7279,7 @@ pub mod resize_cluster_message {
         }
         /// <p>The new cluster type for the specified cluster.</p>
         pub fn set_cluster_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_type = input;
-            self
+            self.cluster_type = input; self
         }
         /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
         pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7940,8 +7288,7 @@ pub mod resize_cluster_message {
         }
         /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_type = input;
-            self
+            self.node_type = input; self
         }
         /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
         pub fn number_of_nodes(mut self, input: i32) -> Self {
@@ -7950,8 +7297,7 @@ pub mod resize_cluster_message {
         }
         /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
         pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_nodes = input;
-            self
+            self.number_of_nodes = input; self
         }
         /// <p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. </p>
         pub fn classic(mut self, input: bool) -> Self {
@@ -7960,8 +7306,7 @@ pub mod resize_cluster_message {
         }
         /// <p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. </p>
         pub fn set_classic(mut self, input: std::option::Option<bool>) -> Self {
-            self.classic = input;
-            self
+            self.classic = input; self
         }
         /// <p>The identifier of the reserved node.</p>
         pub fn reserved_node_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7969,42 +7314,40 @@ pub mod resize_cluster_message {
             self
         }
         /// <p>The identifier of the reserved node.</p>
-        pub fn set_reserved_node_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reserved_node_id = input;
-            self
+        pub fn set_reserved_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reserved_node_id = input; self
         }
         /// <p>The identifier of the target reserved node offering.</p>
-        pub fn target_reserved_node_offering_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn target_reserved_node_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_reserved_node_offering_id = Some(input.into());
             self
         }
         /// <p>The identifier of the target reserved node offering.</p>
-        pub fn set_target_reserved_node_offering_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_reserved_node_offering_id = input;
-            self
+        pub fn set_target_reserved_node_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_reserved_node_offering_id = input; self
         }
         /// Consumes the builder and constructs a [`ResizeClusterMessage`](crate::model::ResizeClusterMessage).
         pub fn build(self) -> crate::model::ResizeClusterMessage {
             crate::model::ResizeClusterMessage {
-                cluster_identifier: self.cluster_identifier,
-                cluster_type: self.cluster_type,
-                node_type: self.node_type,
-                number_of_nodes: self.number_of_nodes,
-                classic: self.classic,
-                reserved_node_id: self.reserved_node_id,
-                target_reserved_node_offering_id: self.target_reserved_node_offering_id,
+                cluster_identifier: self.cluster_identifier
+                ,
+                cluster_type: self.cluster_type
+                ,
+                node_type: self.node_type
+                ,
+                number_of_nodes: self.number_of_nodes
+                ,
+                classic: self.classic
+                ,
+                reserved_node_id: self.reserved_node_id
+                ,
+                target_reserved_node_offering_id: self.target_reserved_node_offering_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ResizeClusterMessage {
     /// Creates a new builder-style object to manufacture [`ResizeClusterMessage`](crate::model::ResizeClusterMessage).
@@ -8016,7 +7359,7 @@ impl ResizeClusterMessage {
 /// <p>Describes event subscriptions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventSubscription {
+pub struct EventSubscription  {
     /// <p>The Amazon Web Services account associated with the Amazon Redshift event notification subscription.</p>
     #[doc(hidden)]
     pub customer_aws_id: std::option::Option<std::string::String>,
@@ -8026,11 +7369,11 @@ pub struct EventSubscription {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event notification subscription.</p>
     #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the Amazon Redshift event notification subscription.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Can be one of the following: active | no-permission | topic-not-exist</p> </li>
-    /// <li> <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p> </li>
+    /// <p>The status of the Amazon Redshift event notification subscription.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Can be one of the following: active | no-permission | topic-not-exist</p> </li> 
+    /// <li> <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -8043,11 +7386,11 @@ pub struct EventSubscription {
     /// <p>A list of the sources that publish events to the Amazon Redshift event notification subscription.</p>
     #[doc(hidden)]
     pub source_ids_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The list of Amazon Redshift event categories specified in the event notification subscription.</p>
+    /// <p>The list of Amazon Redshift event categories specified in the event notification subscription.</p> 
     /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
     #[doc(hidden)]
     pub event_categories_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The event severity specified in the Amazon Redshift event notification subscription.</p>
+    /// <p>The event severity specified in the Amazon Redshift event notification subscription.</p> 
     /// <p>Values: ERROR, INFO</p>
     #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
@@ -8060,46 +7403,46 @@ pub struct EventSubscription {
 }
 impl EventSubscription {
     /// <p>The Amazon Web Services account associated with the Amazon Redshift event notification subscription.</p>
-    pub fn customer_aws_id(&self) -> std::option::Option<&str> {
+    pub fn customer_aws_id(&self) -> std::option::Option<& str> {
         self.customer_aws_id.as_deref()
     }
     /// <p>The name of the Amazon Redshift event notification subscription.</p>
-    pub fn cust_subscription_id(&self) -> std::option::Option<&str> {
+    pub fn cust_subscription_id(&self) -> std::option::Option<& str> {
         self.cust_subscription_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event notification subscription.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
-    /// <p>The status of the Amazon Redshift event notification subscription.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Can be one of the following: active | no-permission | topic-not-exist</p> </li>
-    /// <li> <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p> </li>
+    /// <p>The status of the Amazon Redshift event notification subscription.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Can be one of the following: active | no-permission | topic-not-exist</p> </li> 
+    /// <li> <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time the Amazon Redshift event notification subscription was created.</p>
-    pub fn subscription_creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn subscription_creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.subscription_creation_time.as_ref()
     }
     /// <p>The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action. </p>
-    pub fn source_type(&self) -> std::option::Option<&str> {
+    pub fn source_type(&self) -> std::option::Option<& str> {
         self.source_type.as_deref()
     }
     /// <p>A list of the sources that publish events to the Amazon Redshift event notification subscription.</p>
-    pub fn source_ids_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn source_ids_list(&self) -> std::option::Option<& [std::string::String]> {
         self.source_ids_list.as_deref()
     }
-    /// <p>The list of Amazon Redshift event categories specified in the event notification subscription.</p>
+    /// <p>The list of Amazon Redshift event categories specified in the event notification subscription.</p> 
     /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
-    pub fn event_categories_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn event_categories_list(&self) -> std::option::Option<& [std::string::String]> {
         self.event_categories_list.as_deref()
     }
-    /// <p>The event severity specified in the Amazon Redshift event notification subscription.</p>
+    /// <p>The event severity specified in the Amazon Redshift event notification subscription.</p> 
     /// <p>Values: ERROR, INFO</p>
-    pub fn severity(&self) -> std::option::Option<&str> {
+    pub fn severity(&self) -> std::option::Option<& str> {
         self.severity.as_deref()
     }
     /// <p>A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription is enabled.</p>
@@ -8107,13 +7450,13 @@ impl EventSubscription {
         self.enabled
     }
     /// <p>The list of tags for the event subscription.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`EventSubscription`](crate::model::EventSubscription).
 pub mod event_subscription {
-
+    
     /// A builder for [`EventSubscription`](crate::model::EventSubscription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8136,12 +7479,8 @@ pub mod event_subscription {
             self
         }
         /// <p>The Amazon Web Services account associated with the Amazon Redshift event notification subscription.</p>
-        pub fn set_customer_aws_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_aws_id = input;
-            self
+        pub fn set_customer_aws_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_aws_id = input; self
         }
         /// <p>The name of the Amazon Redshift event notification subscription.</p>
         pub fn cust_subscription_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8149,12 +7488,8 @@ pub mod event_subscription {
             self
         }
         /// <p>The name of the Amazon Redshift event notification subscription.</p>
-        pub fn set_cust_subscription_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cust_subscription_id = input;
-            self
+        pub fn set_cust_subscription_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cust_subscription_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event notification subscription.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8162,32 +7497,27 @@ pub mod event_subscription {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event notification subscription.</p>
-        pub fn set_sns_topic_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sns_topic_arn = input;
-            self
+        pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_topic_arn = input; self
         }
-        /// <p>The status of the Amazon Redshift event notification subscription.</p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li> <p>Can be one of the following: active | no-permission | topic-not-exist</p> </li>
-        /// <li> <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p> </li>
+        /// <p>The status of the Amazon Redshift event notification subscription.</p> 
+        /// <p>Constraints:</p> 
+        /// <ul> 
+        /// <li> <p>Can be one of the following: active | no-permission | topic-not-exist</p> </li> 
+        /// <li> <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the Amazon Redshift event notification subscription.</p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li> <p>Can be one of the following: active | no-permission | topic-not-exist</p> </li>
-        /// <li> <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p> </li>
+        /// <p>The status of the Amazon Redshift event notification subscription.</p> 
+        /// <p>Constraints:</p> 
+        /// <ul> 
+        /// <li> <p>Can be one of the following: active | no-permission | topic-not-exist</p> </li> 
+        /// <li> <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time the Amazon Redshift event notification subscription was created.</p>
         pub fn subscription_creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8195,12 +7525,8 @@ pub mod event_subscription {
             self
         }
         /// <p>The date and time the Amazon Redshift event notification subscription was created.</p>
-        pub fn set_subscription_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.subscription_creation_time = input;
-            self
+        pub fn set_subscription_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.subscription_creation_time = input; self
         }
         /// <p>The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action. </p>
         pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8209,8 +7535,7 @@ pub mod event_subscription {
         }
         /// <p>The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action. </p>
         pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_type = input;
-            self
+            self.source_type = input; self
         }
         /// Appends an item to `source_ids_list`.
         ///
@@ -8219,50 +7544,41 @@ pub mod event_subscription {
         /// <p>A list of the sources that publish events to the Amazon Redshift event notification subscription.</p>
         pub fn source_ids_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source_ids_list.unwrap_or_default();
-            v.push(input.into());
-            self.source_ids_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.source_ids_list = Some(v);
+                            self
         }
         /// <p>A list of the sources that publish events to the Amazon Redshift event notification subscription.</p>
-        pub fn set_source_ids_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.source_ids_list = input;
-            self
+        pub fn set_source_ids_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.source_ids_list = input; self
         }
         /// Appends an item to `event_categories_list`.
         ///
         /// To override the contents of this collection use [`set_event_categories_list`](Self::set_event_categories_list).
         ///
-        /// <p>The list of Amazon Redshift event categories specified in the event notification subscription.</p>
+        /// <p>The list of Amazon Redshift event categories specified in the event notification subscription.</p> 
         /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
         pub fn event_categories_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_categories_list.unwrap_or_default();
-            v.push(input.into());
-            self.event_categories_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.event_categories_list = Some(v);
+                            self
         }
-        /// <p>The list of Amazon Redshift event categories specified in the event notification subscription.</p>
+        /// <p>The list of Amazon Redshift event categories specified in the event notification subscription.</p> 
         /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
-        pub fn set_event_categories_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.event_categories_list = input;
-            self
+        pub fn set_event_categories_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.event_categories_list = input; self
         }
-        /// <p>The event severity specified in the Amazon Redshift event notification subscription.</p>
+        /// <p>The event severity specified in the Amazon Redshift event notification subscription.</p> 
         /// <p>Values: ERROR, INFO</p>
         pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
             self.severity = Some(input.into());
             self
         }
-        /// <p>The event severity specified in the Amazon Redshift event notification subscription.</p>
+        /// <p>The event severity specified in the Amazon Redshift event notification subscription.</p> 
         /// <p>Values: ERROR, INFO</p>
         pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.severity = input;
-            self
+            self.severity = input; self
         }
         /// <p>A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription is enabled.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -8271,8 +7587,7 @@ pub mod event_subscription {
         }
         /// <p>A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -8281,35 +7596,45 @@ pub mod event_subscription {
         /// <p>The list of tags for the event subscription.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags for the event subscription.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`EventSubscription`](crate::model::EventSubscription).
         pub fn build(self) -> crate::model::EventSubscription {
             crate::model::EventSubscription {
-                customer_aws_id: self.customer_aws_id,
-                cust_subscription_id: self.cust_subscription_id,
-                sns_topic_arn: self.sns_topic_arn,
-                status: self.status,
-                subscription_creation_time: self.subscription_creation_time,
-                source_type: self.source_type,
-                source_ids_list: self.source_ids_list,
-                event_categories_list: self.event_categories_list,
-                severity: self.severity,
-                enabled: self.enabled.unwrap_or_default(),
-                tags: self.tags,
+                customer_aws_id: self.customer_aws_id
+                ,
+                cust_subscription_id: self.cust_subscription_id
+                ,
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                status: self.status
+                ,
+                subscription_creation_time: self.subscription_creation_time
+                ,
+                source_type: self.source_type
+                ,
+                source_ids_list: self.source_ids_list
+                ,
+                event_categories_list: self.event_categories_list
+                ,
+                severity: self.severity
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl EventSubscription {
     /// Creates a new builder-style object to manufacture [`EventSubscription`](crate::model::EventSubscription).
@@ -8321,7 +7646,7 @@ impl EventSubscription {
 /// <p>Describes a subnet group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterSubnetGroup {
+pub struct ClusterSubnetGroup  {
     /// <p>The name of the cluster subnet group.</p>
     #[doc(hidden)]
     pub cluster_subnet_group_name: std::option::Option<std::string::String>,
@@ -8343,33 +7668,33 @@ pub struct ClusterSubnetGroup {
 }
 impl ClusterSubnetGroup {
     /// <p>The name of the cluster subnet group.</p>
-    pub fn cluster_subnet_group_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_subnet_group_name(&self) -> std::option::Option<& str> {
         self.cluster_subnet_group_name.as_deref()
     }
     /// <p>The description of the cluster subnet group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The VPC ID of the cluster subnet group.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
-    pub fn subnet_group_status(&self) -> std::option::Option<&str> {
+    pub fn subnet_group_status(&self) -> std::option::Option<& str> {
         self.subnet_group_status.as_deref()
     }
     /// <p>A list of the VPC <code>Subnet</code> elements. </p>
-    pub fn subnets(&self) -> std::option::Option<&[crate::model::Subnet]> {
+    pub fn subnets(&self) -> std::option::Option<& [crate::model::Subnet]> {
         self.subnets.as_deref()
     }
     /// <p>The list of tags for the cluster subnet group.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ClusterSubnetGroup`](crate::model::ClusterSubnetGroup).
 pub mod cluster_subnet_group {
-
+    
     /// A builder for [`ClusterSubnetGroup`](crate::model::ClusterSubnetGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8387,12 +7712,8 @@ pub mod cluster_subnet_group {
             self
         }
         /// <p>The name of the cluster subnet group.</p>
-        pub fn set_cluster_subnet_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_subnet_group_name = input;
-            self
+        pub fn set_cluster_subnet_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_subnet_group_name = input; self
         }
         /// <p>The description of the cluster subnet group.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8401,8 +7722,7 @@ pub mod cluster_subnet_group {
         }
         /// <p>The description of the cluster subnet group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The VPC ID of the cluster subnet group.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8411,8 +7731,7 @@ pub mod cluster_subnet_group {
         }
         /// <p>The VPC ID of the cluster subnet group.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
         pub fn subnet_group_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8420,12 +7739,8 @@ pub mod cluster_subnet_group {
             self
         }
         /// <p>The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
-        pub fn set_subnet_group_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subnet_group_status = input;
-            self
+        pub fn set_subnet_group_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subnet_group_status = input; self
         }
         /// Appends an item to `subnets`.
         ///
@@ -8434,17 +7749,13 @@ pub mod cluster_subnet_group {
         /// <p>A list of the VPC <code>Subnet</code> elements. </p>
         pub fn subnets(mut self, input: crate::model::Subnet) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input);
-            self.subnets = Some(v);
-            self
+                            v.push(input);
+                            self.subnets = Some(v);
+                            self
         }
         /// <p>A list of the VPC <code>Subnet</code> elements. </p>
-        pub fn set_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
-        ) -> Self {
-            self.subnets = input;
-            self
+        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<crate::model::Subnet>>) -> Self {
+            self.subnets = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -8453,30 +7764,34 @@ pub mod cluster_subnet_group {
         /// <p>The list of tags for the cluster subnet group.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags for the cluster subnet group.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ClusterSubnetGroup`](crate::model::ClusterSubnetGroup).
         pub fn build(self) -> crate::model::ClusterSubnetGroup {
             crate::model::ClusterSubnetGroup {
-                cluster_subnet_group_name: self.cluster_subnet_group_name,
-                description: self.description,
-                vpc_id: self.vpc_id,
-                subnet_group_status: self.subnet_group_status,
-                subnets: self.subnets,
-                tags: self.tags,
+                cluster_subnet_group_name: self.cluster_subnet_group_name
+                ,
+                description: self.description
+                ,
+                vpc_id: self.vpc_id
+                ,
+                subnet_group_status: self.subnet_group_status
+                ,
+                subnets: self.subnets
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterSubnetGroup {
     /// Creates a new builder-style object to manufacture [`ClusterSubnetGroup`](crate::model::ClusterSubnetGroup).
@@ -8488,7 +7803,7 @@ impl ClusterSubnetGroup {
 /// <p>Describes a subnet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Subnet {
+pub struct Subnet  {
     /// <p>The identifier of the subnet.</p>
     #[doc(hidden)]
     pub subnet_identifier: std::option::Option<std::string::String>,
@@ -8501,21 +7816,21 @@ pub struct Subnet {
 }
 impl Subnet {
     /// <p>The identifier of the subnet.</p>
-    pub fn subnet_identifier(&self) -> std::option::Option<&str> {
+    pub fn subnet_identifier(&self) -> std::option::Option<& str> {
         self.subnet_identifier.as_deref()
     }
     /// <p></p>
-    pub fn subnet_availability_zone(&self) -> std::option::Option<&crate::model::AvailabilityZone> {
+    pub fn subnet_availability_zone(&self) -> std::option::Option<& crate::model::AvailabilityZone> {
         self.subnet_availability_zone.as_ref()
     }
     /// <p>The status of the subnet.</p>
-    pub fn subnet_status(&self) -> std::option::Option<&str> {
+    pub fn subnet_status(&self) -> std::option::Option<& str> {
         self.subnet_status.as_deref()
     }
 }
 /// See [`Subnet`](crate::model::Subnet).
 pub mod subnet {
-
+    
     /// A builder for [`Subnet`](crate::model::Subnet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8530,12 +7845,8 @@ pub mod subnet {
             self
         }
         /// <p>The identifier of the subnet.</p>
-        pub fn set_subnet_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subnet_identifier = input;
-            self
+        pub fn set_subnet_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subnet_identifier = input; self
         }
         /// <p></p>
         pub fn subnet_availability_zone(mut self, input: crate::model::AvailabilityZone) -> Self {
@@ -8543,12 +7854,8 @@ pub mod subnet {
             self
         }
         /// <p></p>
-        pub fn set_subnet_availability_zone(
-            mut self,
-            input: std::option::Option<crate::model::AvailabilityZone>,
-        ) -> Self {
-            self.subnet_availability_zone = input;
-            self
+        pub fn set_subnet_availability_zone(mut self, input: std::option::Option<crate::model::AvailabilityZone>) -> Self {
+            self.subnet_availability_zone = input; self
         }
         /// <p>The status of the subnet.</p>
         pub fn subnet_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8556,22 +7863,23 @@ pub mod subnet {
             self
         }
         /// <p>The status of the subnet.</p>
-        pub fn set_subnet_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subnet_status = input;
-            self
+        pub fn set_subnet_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subnet_status = input; self
         }
         /// Consumes the builder and constructs a [`Subnet`](crate::model::Subnet).
         pub fn build(self) -> crate::model::Subnet {
             crate::model::Subnet {
-                subnet_identifier: self.subnet_identifier,
-                subnet_availability_zone: self.subnet_availability_zone,
-                subnet_status: self.subnet_status,
+                subnet_identifier: self.subnet_identifier
+                ,
+                subnet_availability_zone: self.subnet_availability_zone
+                ,
+                subnet_status: self.subnet_status
+                ,
             }
         }
     }
+    
+    
 }
 impl Subnet {
     /// Creates a new builder-style object to manufacture [`Subnet`](crate::model::Subnet).
@@ -8583,7 +7891,7 @@ impl Subnet {
 /// <p>Describes an availability zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AvailabilityZone {
+pub struct AvailabilityZone  {
     /// <p>The name of the availability zone.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -8593,23 +7901,22 @@ pub struct AvailabilityZone {
 }
 impl AvailabilityZone {
     /// <p>The name of the availability zone.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p></p>
-    pub fn supported_platforms(&self) -> std::option::Option<&[crate::model::SupportedPlatform]> {
+    pub fn supported_platforms(&self) -> std::option::Option<& [crate::model::SupportedPlatform]> {
         self.supported_platforms.as_deref()
     }
 }
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
 pub mod availability_zone {
-
+    
     /// A builder for [`AvailabilityZone`](crate::model::AvailabilityZone).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) supported_platforms:
-            std::option::Option<std::vec::Vec<crate::model::SupportedPlatform>>,
+        pub(crate) supported_platforms: std::option::Option<std::vec::Vec<crate::model::SupportedPlatform>>,
     }
     impl Builder {
         /// <p>The name of the availability zone.</p>
@@ -8619,8 +7926,7 @@ pub mod availability_zone {
         }
         /// <p>The name of the availability zone.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `supported_platforms`.
         ///
@@ -8629,26 +7935,26 @@ pub mod availability_zone {
         /// <p></p>
         pub fn supported_platforms(mut self, input: crate::model::SupportedPlatform) -> Self {
             let mut v = self.supported_platforms.unwrap_or_default();
-            v.push(input);
-            self.supported_platforms = Some(v);
-            self
+                            v.push(input);
+                            self.supported_platforms = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_supported_platforms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SupportedPlatform>>,
-        ) -> Self {
-            self.supported_platforms = input;
-            self
+        pub fn set_supported_platforms(mut self, input: std::option::Option<std::vec::Vec<crate::model::SupportedPlatform>>) -> Self {
+            self.supported_platforms = input; self
         }
         /// Consumes the builder and constructs a [`AvailabilityZone`](crate::model::AvailabilityZone).
         pub fn build(self) -> crate::model::AvailabilityZone {
             crate::model::AvailabilityZone {
-                name: self.name,
-                supported_platforms: self.supported_platforms,
+                name: self.name
+                ,
+                supported_platforms: self.supported_platforms
+                ,
             }
         }
     }
+    
+    
 }
 impl AvailabilityZone {
     /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
@@ -8660,20 +7966,20 @@ impl AvailabilityZone {
 /// <p>A list of supported platforms for orderable clusters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SupportedPlatform {
+pub struct SupportedPlatform  {
     /// <p></p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl SupportedPlatform {
     /// <p></p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`SupportedPlatform`](crate::model::SupportedPlatform).
 pub mod supported_platform {
-
+    
     /// A builder for [`SupportedPlatform`](crate::model::SupportedPlatform).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8687,14 +7993,18 @@ pub mod supported_platform {
         }
         /// <p></p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`SupportedPlatform`](crate::model::SupportedPlatform).
         pub fn build(self) -> crate::model::SupportedPlatform {
-            crate::model::SupportedPlatform { name: self.name }
+            crate::model::SupportedPlatform {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl SupportedPlatform {
     /// Creates a new builder-style object to manufacture [`SupportedPlatform`](crate::model::SupportedPlatform).
@@ -8706,7 +8016,7 @@ impl SupportedPlatform {
 /// <p>Describes a reserved node offering.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservedNodeOffering {
+pub struct ReservedNodeOffering  {
     /// <p>The offering identifier.</p>
     #[doc(hidden)]
     pub reserved_node_offering_id: std::option::Option<std::string::String>,
@@ -8737,11 +8047,11 @@ pub struct ReservedNodeOffering {
 }
 impl ReservedNodeOffering {
     /// <p>The offering identifier.</p>
-    pub fn reserved_node_offering_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_node_offering_id(&self) -> std::option::Option<& str> {
         self.reserved_node_offering_id.as_deref()
     }
     /// <p>The node type offered by the reserved node offering.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The duration, in seconds, for which the offering will reserve the node.</p>
@@ -8757,27 +8067,25 @@ impl ReservedNodeOffering {
         self.usage_price
     }
     /// <p>The currency code for the compute nodes offering.</p>
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
-    pub fn offering_type(&self) -> std::option::Option<&str> {
+    pub fn offering_type(&self) -> std::option::Option<& str> {
         self.offering_type.as_deref()
     }
     /// <p>The charge to your account regardless of whether you are creating any clusters using the node offering. Recurring charges are only in effect for heavy-utilization reserved nodes.</p>
-    pub fn recurring_charges(&self) -> std::option::Option<&[crate::model::RecurringCharge]> {
+    pub fn recurring_charges(&self) -> std::option::Option<& [crate::model::RecurringCharge]> {
         self.recurring_charges.as_deref()
     }
     /// <p></p>
-    pub fn reserved_node_offering_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ReservedNodeOfferingType> {
+    pub fn reserved_node_offering_type(&self) -> std::option::Option<& crate::model::ReservedNodeOfferingType> {
         self.reserved_node_offering_type.as_ref()
     }
 }
 /// See [`ReservedNodeOffering`](crate::model::ReservedNodeOffering).
 pub mod reserved_node_offering {
-
+    
     /// A builder for [`ReservedNodeOffering`](crate::model::ReservedNodeOffering).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8788,10 +8096,8 @@ pub mod reserved_node_offering {
         pub(crate) usage_price: std::option::Option<f64>,
         pub(crate) currency_code: std::option::Option<std::string::String>,
         pub(crate) offering_type: std::option::Option<std::string::String>,
-        pub(crate) recurring_charges:
-            std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
-        pub(crate) reserved_node_offering_type:
-            std::option::Option<crate::model::ReservedNodeOfferingType>,
+        pub(crate) recurring_charges: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
+        pub(crate) reserved_node_offering_type: std::option::Option<crate::model::ReservedNodeOfferingType>,
     }
     impl Builder {
         /// <p>The offering identifier.</p>
@@ -8800,12 +8106,8 @@ pub mod reserved_node_offering {
             self
         }
         /// <p>The offering identifier.</p>
-        pub fn set_reserved_node_offering_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.reserved_node_offering_id = input;
-            self
+        pub fn set_reserved_node_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reserved_node_offering_id = input; self
         }
         /// <p>The node type offered by the reserved node offering.</p>
         pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8814,8 +8116,7 @@ pub mod reserved_node_offering {
         }
         /// <p>The node type offered by the reserved node offering.</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_type = input;
-            self
+            self.node_type = input; self
         }
         /// <p>The duration, in seconds, for which the offering will reserve the node.</p>
         pub fn duration(mut self, input: i32) -> Self {
@@ -8824,8 +8125,7 @@ pub mod reserved_node_offering {
         }
         /// <p>The duration, in seconds, for which the offering will reserve the node.</p>
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration = input;
-            self
+            self.duration = input; self
         }
         /// <p>The upfront fixed charge you will pay to purchase the specific reserved node offering.</p>
         pub fn fixed_price(mut self, input: f64) -> Self {
@@ -8834,8 +8134,7 @@ pub mod reserved_node_offering {
         }
         /// <p>The upfront fixed charge you will pay to purchase the specific reserved node offering.</p>
         pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
-            self.fixed_price = input;
-            self
+            self.fixed_price = input; self
         }
         /// <p>The rate you are charged for each hour the cluster that is using the offering is running.</p>
         pub fn usage_price(mut self, input: f64) -> Self {
@@ -8844,8 +8143,7 @@ pub mod reserved_node_offering {
         }
         /// <p>The rate you are charged for each hour the cluster that is using the offering is running.</p>
         pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
-            self.usage_price = input;
-            self
+            self.usage_price = input; self
         }
         /// <p>The currency code for the compute nodes offering.</p>
         pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8853,12 +8151,8 @@ pub mod reserved_node_offering {
             self
         }
         /// <p>The currency code for the compute nodes offering.</p>
-        pub fn set_currency_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.currency_code = input;
-            self
+        pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.currency_code = input; self
         }
         /// <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
         pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8866,12 +8160,8 @@ pub mod reserved_node_offering {
             self
         }
         /// <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
-        pub fn set_offering_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.offering_type = input;
-            self
+        pub fn set_offering_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.offering_type = input; self
         }
         /// Appends an item to `recurring_charges`.
         ///
@@ -8880,49 +8170,52 @@ pub mod reserved_node_offering {
         /// <p>The charge to your account regardless of whether you are creating any clusters using the node offering. Recurring charges are only in effect for heavy-utilization reserved nodes.</p>
         pub fn recurring_charges(mut self, input: crate::model::RecurringCharge) -> Self {
             let mut v = self.recurring_charges.unwrap_or_default();
-            v.push(input);
-            self.recurring_charges = Some(v);
-            self
+                            v.push(input);
+                            self.recurring_charges = Some(v);
+                            self
         }
         /// <p>The charge to your account regardless of whether you are creating any clusters using the node offering. Recurring charges are only in effect for heavy-utilization reserved nodes.</p>
-        pub fn set_recurring_charges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
-        ) -> Self {
-            self.recurring_charges = input;
-            self
+        pub fn set_recurring_charges(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>) -> Self {
+            self.recurring_charges = input; self
         }
         /// <p></p>
-        pub fn reserved_node_offering_type(
-            mut self,
-            input: crate::model::ReservedNodeOfferingType,
-        ) -> Self {
+        pub fn reserved_node_offering_type(mut self, input: crate::model::ReservedNodeOfferingType) -> Self {
             self.reserved_node_offering_type = Some(input);
             self
         }
         /// <p></p>
-        pub fn set_reserved_node_offering_type(
-            mut self,
-            input: std::option::Option<crate::model::ReservedNodeOfferingType>,
-        ) -> Self {
-            self.reserved_node_offering_type = input;
-            self
+        pub fn set_reserved_node_offering_type(mut self, input: std::option::Option<crate::model::ReservedNodeOfferingType>) -> Self {
+            self.reserved_node_offering_type = input; self
         }
         /// Consumes the builder and constructs a [`ReservedNodeOffering`](crate::model::ReservedNodeOffering).
         pub fn build(self) -> crate::model::ReservedNodeOffering {
             crate::model::ReservedNodeOffering {
-                reserved_node_offering_id: self.reserved_node_offering_id,
-                node_type: self.node_type,
-                duration: self.duration.unwrap_or_default(),
-                fixed_price: self.fixed_price.unwrap_or_default(),
-                usage_price: self.usage_price.unwrap_or_default(),
-                currency_code: self.currency_code,
-                offering_type: self.offering_type,
-                recurring_charges: self.recurring_charges,
-                reserved_node_offering_type: self.reserved_node_offering_type,
+                reserved_node_offering_id: self.reserved_node_offering_id
+                ,
+                node_type: self.node_type
+                ,
+                duration: self.duration
+                    .unwrap_or_default()
+                ,
+                fixed_price: self.fixed_price
+                    .unwrap_or_default()
+                ,
+                usage_price: self.usage_price
+                    .unwrap_or_default()
+                ,
+                currency_code: self.currency_code
+                ,
+                offering_type: self.offering_type
+                ,
+                recurring_charges: self.recurring_charges
+                ,
+                reserved_node_offering_type: self.reserved_node_offering_type
+                ,
             }
         }
     }
+    
+    
 }
 impl ReservedNodeOffering {
     /// Creates a new builder-style object to manufacture [`ReservedNodeOffering`](crate::model::ReservedNodeOffering).
@@ -8934,7 +8227,7 @@ impl ReservedNodeOffering {
 /// <p>Details for a reserved-node exchange. Examples include the node type for a reserved node, the price for a node, the node's state, and other details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservedNodeConfigurationOption {
+pub struct ReservedNodeConfigurationOption  {
     /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
     #[doc(hidden)]
     pub source_reserved_node: std::option::Option<crate::model::ReservedNode>,
@@ -8947,7 +8240,7 @@ pub struct ReservedNodeConfigurationOption {
 }
 impl ReservedNodeConfigurationOption {
     /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
-    pub fn source_reserved_node(&self) -> std::option::Option<&crate::model::ReservedNode> {
+    pub fn source_reserved_node(&self) -> std::option::Option<& crate::model::ReservedNode> {
         self.source_reserved_node.as_ref()
     }
     /// <p>The target reserved-node count.</p>
@@ -8955,22 +8248,19 @@ impl ReservedNodeConfigurationOption {
         self.target_reserved_node_count
     }
     /// <p>Describes a reserved node offering.</p>
-    pub fn target_reserved_node_offering(
-        &self,
-    ) -> std::option::Option<&crate::model::ReservedNodeOffering> {
+    pub fn target_reserved_node_offering(&self) -> std::option::Option<& crate::model::ReservedNodeOffering> {
         self.target_reserved_node_offering.as_ref()
     }
 }
 /// See [`ReservedNodeConfigurationOption`](crate::model::ReservedNodeConfigurationOption).
 pub mod reserved_node_configuration_option {
-
+    
     /// A builder for [`ReservedNodeConfigurationOption`](crate::model::ReservedNodeConfigurationOption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_reserved_node: std::option::Option<crate::model::ReservedNode>,
         pub(crate) target_reserved_node_count: std::option::Option<i32>,
-        pub(crate) target_reserved_node_offering:
-            std::option::Option<crate::model::ReservedNodeOffering>,
+        pub(crate) target_reserved_node_offering: std::option::Option<crate::model::ReservedNodeOffering>,
     }
     impl Builder {
         /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
@@ -8979,12 +8269,8 @@ pub mod reserved_node_configuration_option {
             self
         }
         /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
-        pub fn set_source_reserved_node(
-            mut self,
-            input: std::option::Option<crate::model::ReservedNode>,
-        ) -> Self {
-            self.source_reserved_node = input;
-            self
+        pub fn set_source_reserved_node(mut self, input: std::option::Option<crate::model::ReservedNode>) -> Self {
+            self.source_reserved_node = input; self
         }
         /// <p>The target reserved-node count.</p>
         pub fn target_reserved_node_count(mut self, input: i32) -> Self {
@@ -8993,34 +8279,32 @@ pub mod reserved_node_configuration_option {
         }
         /// <p>The target reserved-node count.</p>
         pub fn set_target_reserved_node_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.target_reserved_node_count = input;
-            self
+            self.target_reserved_node_count = input; self
         }
         /// <p>Describes a reserved node offering.</p>
-        pub fn target_reserved_node_offering(
-            mut self,
-            input: crate::model::ReservedNodeOffering,
-        ) -> Self {
+        pub fn target_reserved_node_offering(mut self, input: crate::model::ReservedNodeOffering) -> Self {
             self.target_reserved_node_offering = Some(input);
             self
         }
         /// <p>Describes a reserved node offering.</p>
-        pub fn set_target_reserved_node_offering(
-            mut self,
-            input: std::option::Option<crate::model::ReservedNodeOffering>,
-        ) -> Self {
-            self.target_reserved_node_offering = input;
-            self
+        pub fn set_target_reserved_node_offering(mut self, input: std::option::Option<crate::model::ReservedNodeOffering>) -> Self {
+            self.target_reserved_node_offering = input; self
         }
         /// Consumes the builder and constructs a [`ReservedNodeConfigurationOption`](crate::model::ReservedNodeConfigurationOption).
         pub fn build(self) -> crate::model::ReservedNodeConfigurationOption {
             crate::model::ReservedNodeConfigurationOption {
-                source_reserved_node: self.source_reserved_node,
-                target_reserved_node_count: self.target_reserved_node_count.unwrap_or_default(),
-                target_reserved_node_offering: self.target_reserved_node_offering,
+                source_reserved_node: self.source_reserved_node
+                ,
+                target_reserved_node_count: self.target_reserved_node_count
+                    .unwrap_or_default()
+                ,
+                target_reserved_node_offering: self.target_reserved_node_offering
+                ,
             }
         }
     }
+    
+    
 }
 impl ReservedNodeConfigurationOption {
     /// Creates a new builder-style object to manufacture [`ReservedNodeConfigurationOption`](crate::model::ReservedNodeConfigurationOption).
@@ -9035,9 +8319,9 @@ impl ReservedNodeConfigurationOption {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reservednodeexchangeactiontype = unimplemented!();
 /// match reservednodeexchangeactiontype {
@@ -9059,60 +8343,52 @@ impl ReservedNodeConfigurationOption {
 /// Specifically, when `reservednodeexchangeactiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReservedNodeExchangeActionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReservedNodeExchangeActionType {
     #[allow(missing_docs)] // documentation missing in model
     ResizeCluster,
     #[allow(missing_docs)] // documentation missing in model
     RestoreCluster,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReservedNodeExchangeActionType {
     fn from(s: &str) -> Self {
         match s {
             "resize-cluster" => ReservedNodeExchangeActionType::ResizeCluster,
             "restore-cluster" => ReservedNodeExchangeActionType::RestoreCluster,
-            other => ReservedNodeExchangeActionType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ReservedNodeExchangeActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReservedNodeExchangeActionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReservedNodeExchangeActionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReservedNodeExchangeActionType::from(s))
+                }
+            }
 impl ReservedNodeExchangeActionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReservedNodeExchangeActionType::ResizeCluster => "resize-cluster",
             ReservedNodeExchangeActionType::RestoreCluster => "restore-cluster",
-            ReservedNodeExchangeActionType::Unknown(value) => value.as_str(),
+            ReservedNodeExchangeActionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["resize-cluster", "restore-cluster"]
+        &[
+            "resize-cluster", "restore-cluster"
+        ]
     }
 }
 impl AsRef<str> for ReservedNodeExchangeActionType {
@@ -9127,9 +8403,9 @@ impl AsRef<str> for ReservedNodeExchangeActionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let logdestinationtype = unimplemented!();
 /// match logdestinationtype {
@@ -9151,60 +8427,52 @@ impl AsRef<str> for ReservedNodeExchangeActionType {
 /// Specifically, when `logdestinationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LogDestinationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LogDestinationType {
     #[allow(missing_docs)] // documentation missing in model
     Cloudwatch,
     #[allow(missing_docs)] // documentation missing in model
     S3,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LogDestinationType {
     fn from(s: &str) -> Self {
         match s {
             "cloudwatch" => LogDestinationType::Cloudwatch,
             "s3" => LogDestinationType::S3,
-            other => {
-                LogDestinationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => LogDestinationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LogDestinationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LogDestinationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LogDestinationType::from(s))
+                }
+            }
 impl LogDestinationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogDestinationType::Cloudwatch => "cloudwatch",
             LogDestinationType::S3 => "s3",
-            LogDestinationType::Unknown(value) => value.as_str(),
+            LogDestinationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["cloudwatch", "s3"]
+        &[
+            "cloudwatch", "s3"
+        ]
     }
 }
 impl AsRef<str> for LogDestinationType {
@@ -9216,7 +8484,7 @@ impl AsRef<str> for LogDestinationType {
 /// <p>Describes a usage limit object for a cluster. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UsageLimit {
+pub struct UsageLimit  {
     /// <p>The identifier of the usage limit.</p>
     #[doc(hidden)]
     pub usage_limit_id: std::option::Option<std::string::String>,
@@ -9235,11 +8503,11 @@ pub struct UsageLimit {
     /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
     #[doc(hidden)]
     pub period: std::option::Option<crate::model::UsageLimitPeriod>,
-    /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
-    /// <ul>
-    /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li>
-    /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>
-    /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>
+    /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p> 
+    /// <ul> 
+    /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li> 
+    /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li> 
+    /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub breach_action: std::option::Option<crate::model::UsageLimitBreachAction>,
@@ -9249,19 +8517,19 @@ pub struct UsageLimit {
 }
 impl UsageLimit {
     /// <p>The identifier of the usage limit.</p>
-    pub fn usage_limit_id(&self) -> std::option::Option<&str> {
+    pub fn usage_limit_id(&self) -> std::option::Option<& str> {
         self.usage_limit_id.as_deref()
     }
     /// <p>The identifier of the cluster with a usage limit.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The Amazon Redshift feature to which the limit applies.</p>
-    pub fn feature_type(&self) -> std::option::Option<&crate::model::UsageLimitFeatureType> {
+    pub fn feature_type(&self) -> std::option::Option<& crate::model::UsageLimitFeatureType> {
         self.feature_type.as_ref()
     }
     /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.</p>
-    pub fn limit_type(&self) -> std::option::Option<&crate::model::UsageLimitLimitType> {
+    pub fn limit_type(&self) -> std::option::Option<& crate::model::UsageLimitLimitType> {
         self.limit_type.as_ref()
     }
     /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).</p>
@@ -9269,26 +8537,26 @@ impl UsageLimit {
         self.amount
     }
     /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
-    pub fn period(&self) -> std::option::Option<&crate::model::UsageLimitPeriod> {
+    pub fn period(&self) -> std::option::Option<& crate::model::UsageLimitPeriod> {
         self.period.as_ref()
     }
-    /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
-    /// <ul>
-    /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li>
-    /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>
-    /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>
+    /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p> 
+    /// <ul> 
+    /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li> 
+    /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li> 
+    /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li> 
     /// </ul>
-    pub fn breach_action(&self) -> std::option::Option<&crate::model::UsageLimitBreachAction> {
+    pub fn breach_action(&self) -> std::option::Option<& crate::model::UsageLimitBreachAction> {
         self.breach_action.as_ref()
     }
     /// <p>A list of tag instances.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`UsageLimit`](crate::model::UsageLimit).
 pub mod usage_limit {
-
+    
     /// A builder for [`UsageLimit`](crate::model::UsageLimit).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9308,12 +8576,8 @@ pub mod usage_limit {
             self
         }
         /// <p>The identifier of the usage limit.</p>
-        pub fn set_usage_limit_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.usage_limit_id = input;
-            self
+        pub fn set_usage_limit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.usage_limit_id = input; self
         }
         /// <p>The identifier of the cluster with a usage limit.</p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9321,12 +8585,8 @@ pub mod usage_limit {
             self
         }
         /// <p>The identifier of the cluster with a usage limit.</p>
-        pub fn set_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_identifier = input;
-            self
+        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_identifier = input; self
         }
         /// <p>The Amazon Redshift feature to which the limit applies.</p>
         pub fn feature_type(mut self, input: crate::model::UsageLimitFeatureType) -> Self {
@@ -9334,12 +8594,8 @@ pub mod usage_limit {
             self
         }
         /// <p>The Amazon Redshift feature to which the limit applies.</p>
-        pub fn set_feature_type(
-            mut self,
-            input: std::option::Option<crate::model::UsageLimitFeatureType>,
-        ) -> Self {
-            self.feature_type = input;
-            self
+        pub fn set_feature_type(mut self, input: std::option::Option<crate::model::UsageLimitFeatureType>) -> Self {
+            self.feature_type = input; self
         }
         /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.</p>
         pub fn limit_type(mut self, input: crate::model::UsageLimitLimitType) -> Self {
@@ -9347,12 +8603,8 @@ pub mod usage_limit {
             self
         }
         /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.</p>
-        pub fn set_limit_type(
-            mut self,
-            input: std::option::Option<crate::model::UsageLimitLimitType>,
-        ) -> Self {
-            self.limit_type = input;
-            self
+        pub fn set_limit_type(mut self, input: std::option::Option<crate::model::UsageLimitLimitType>) -> Self {
+            self.limit_type = input; self
         }
         /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).</p>
         pub fn amount(mut self, input: i64) -> Self {
@@ -9361,8 +8613,7 @@ pub mod usage_limit {
         }
         /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).</p>
         pub fn set_amount(mut self, input: std::option::Option<i64>) -> Self {
-            self.amount = input;
-            self
+            self.amount = input; self
         }
         /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
         pub fn period(mut self, input: crate::model::UsageLimitPeriod) -> Self {
@@ -9370,35 +8621,27 @@ pub mod usage_limit {
             self
         }
         /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
-        pub fn set_period(
-            mut self,
-            input: std::option::Option<crate::model::UsageLimitPeriod>,
-        ) -> Self {
-            self.period = input;
-            self
+        pub fn set_period(mut self, input: std::option::Option<crate::model::UsageLimitPeriod>) -> Self {
+            self.period = input; self
         }
-        /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
-        /// <ul>
-        /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li>
-        /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>
-        /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>
+        /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p> 
+        /// <ul> 
+        /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li> 
+        /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li> 
+        /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li> 
         /// </ul>
         pub fn breach_action(mut self, input: crate::model::UsageLimitBreachAction) -> Self {
             self.breach_action = Some(input);
             self
         }
-        /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
-        /// <ul>
-        /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li>
-        /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>
-        /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>
+        /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p> 
+        /// <ul> 
+        /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li> 
+        /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li> 
+        /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li> 
         /// </ul>
-        pub fn set_breach_action(
-            mut self,
-            input: std::option::Option<crate::model::UsageLimitBreachAction>,
-        ) -> Self {
-            self.breach_action = input;
-            self
+        pub fn set_breach_action(mut self, input: std::option::Option<crate::model::UsageLimitBreachAction>) -> Self {
+            self.breach_action = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -9407,32 +8650,39 @@ pub mod usage_limit {
         /// <p>A list of tag instances.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tag instances.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UsageLimit`](crate::model::UsageLimit).
         pub fn build(self) -> crate::model::UsageLimit {
             crate::model::UsageLimit {
-                usage_limit_id: self.usage_limit_id,
-                cluster_identifier: self.cluster_identifier,
-                feature_type: self.feature_type,
-                limit_type: self.limit_type,
-                amount: self.amount.unwrap_or_default(),
-                period: self.period,
-                breach_action: self.breach_action,
-                tags: self.tags,
+                usage_limit_id: self.usage_limit_id
+                ,
+                cluster_identifier: self.cluster_identifier
+                ,
+                feature_type: self.feature_type
+                ,
+                limit_type: self.limit_type
+                ,
+                amount: self.amount
+                    .unwrap_or_default()
+                ,
+                period: self.period
+                ,
+                breach_action: self.breach_action
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl UsageLimit {
     /// Creates a new builder-style object to manufacture [`UsageLimit`](crate::model::UsageLimit).
@@ -9444,58 +8694,58 @@ impl UsageLimit {
 /// <p>A tag and its associated resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaggedResource {
+pub struct TaggedResource  {
     /// <p>The tag for the resource.</p>
     #[doc(hidden)]
     pub tag: std::option::Option<crate::model::Tag>,
     /// <p>The Amazon Resource Name (ARN) with which the tag is associated, for example: <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.</p>
     #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
-    /// <p>The type of resource with which the tag is associated. Valid resource types are: </p>
-    /// <ul>
-    /// <li> <p>Cluster</p> </li>
-    /// <li> <p>CIDR/IP</p> </li>
-    /// <li> <p>EC2 security group</p> </li>
-    /// <li> <p>Snapshot</p> </li>
-    /// <li> <p>Cluster security group</p> </li>
-    /// <li> <p>Subnet group</p> </li>
-    /// <li> <p>HSM connection</p> </li>
-    /// <li> <p>HSM certificate</p> </li>
-    /// <li> <p>Parameter group</p> </li>
-    /// </ul>
+    /// <p>The type of resource with which the tag is associated. Valid resource types are: </p> 
+    /// <ul> 
+    /// <li> <p>Cluster</p> </li> 
+    /// <li> <p>CIDR/IP</p> </li> 
+    /// <li> <p>EC2 security group</p> </li> 
+    /// <li> <p>Snapshot</p> </li> 
+    /// <li> <p>Cluster security group</p> </li> 
+    /// <li> <p>Subnet group</p> </li> 
+    /// <li> <p>HSM connection</p> </li> 
+    /// <li> <p>HSM certificate</p> </li> 
+    /// <li> <p>Parameter group</p> </li> 
+    /// </ul> 
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl TaggedResource {
     /// <p>The tag for the resource.</p>
-    pub fn tag(&self) -> std::option::Option<&crate::model::Tag> {
+    pub fn tag(&self) -> std::option::Option<& crate::model::Tag> {
         self.tag.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) with which the tag is associated, for example: <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> std::option::Option<& str> {
         self.resource_name.as_deref()
     }
-    /// <p>The type of resource with which the tag is associated. Valid resource types are: </p>
-    /// <ul>
-    /// <li> <p>Cluster</p> </li>
-    /// <li> <p>CIDR/IP</p> </li>
-    /// <li> <p>EC2 security group</p> </li>
-    /// <li> <p>Snapshot</p> </li>
-    /// <li> <p>Cluster security group</p> </li>
-    /// <li> <p>Subnet group</p> </li>
-    /// <li> <p>HSM connection</p> </li>
-    /// <li> <p>HSM certificate</p> </li>
-    /// <li> <p>Parameter group</p> </li>
-    /// </ul>
+    /// <p>The type of resource with which the tag is associated. Valid resource types are: </p> 
+    /// <ul> 
+    /// <li> <p>Cluster</p> </li> 
+    /// <li> <p>CIDR/IP</p> </li> 
+    /// <li> <p>EC2 security group</p> </li> 
+    /// <li> <p>Snapshot</p> </li> 
+    /// <li> <p>Cluster security group</p> </li> 
+    /// <li> <p>Subnet group</p> </li> 
+    /// <li> <p>HSM connection</p> </li> 
+    /// <li> <p>HSM certificate</p> </li> 
+    /// <li> <p>Parameter group</p> </li> 
+    /// </ul> 
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
 /// See [`TaggedResource`](crate::model::TaggedResource).
 pub mod tagged_resource {
-
+    
     /// A builder for [`TaggedResource`](crate::model::TaggedResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9511,8 +8761,7 @@ pub mod tagged_resource {
         }
         /// <p>The tag for the resource.</p>
         pub fn set_tag(mut self, input: std::option::Option<crate::model::Tag>) -> Self {
-            self.tag = input;
-            self
+            self.tag = input; self
         }
         /// <p>The Amazon Resource Name (ARN) with which the tag is associated, for example: <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9520,59 +8769,56 @@ pub mod tagged_resource {
             self
         }
         /// <p>The Amazon Resource Name (ARN) with which the tag is associated, for example: <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.</p>
-        pub fn set_resource_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_name = input;
-            self
+        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_name = input; self
         }
-        /// <p>The type of resource with which the tag is associated. Valid resource types are: </p>
-        /// <ul>
-        /// <li> <p>Cluster</p> </li>
-        /// <li> <p>CIDR/IP</p> </li>
-        /// <li> <p>EC2 security group</p> </li>
-        /// <li> <p>Snapshot</p> </li>
-        /// <li> <p>Cluster security group</p> </li>
-        /// <li> <p>Subnet group</p> </li>
-        /// <li> <p>HSM connection</p> </li>
-        /// <li> <p>HSM certificate</p> </li>
-        /// <li> <p>Parameter group</p> </li>
-        /// </ul>
+        /// <p>The type of resource with which the tag is associated. Valid resource types are: </p> 
+        /// <ul> 
+        /// <li> <p>Cluster</p> </li> 
+        /// <li> <p>CIDR/IP</p> </li> 
+        /// <li> <p>EC2 security group</p> </li> 
+        /// <li> <p>Snapshot</p> </li> 
+        /// <li> <p>Cluster security group</p> </li> 
+        /// <li> <p>Subnet group</p> </li> 
+        /// <li> <p>HSM connection</p> </li> 
+        /// <li> <p>HSM certificate</p> </li> 
+        /// <li> <p>Parameter group</p> </li> 
+        /// </ul> 
         /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The type of resource with which the tag is associated. Valid resource types are: </p>
-        /// <ul>
-        /// <li> <p>Cluster</p> </li>
-        /// <li> <p>CIDR/IP</p> </li>
-        /// <li> <p>EC2 security group</p> </li>
-        /// <li> <p>Snapshot</p> </li>
-        /// <li> <p>Cluster security group</p> </li>
-        /// <li> <p>Subnet group</p> </li>
-        /// <li> <p>HSM connection</p> </li>
-        /// <li> <p>HSM certificate</p> </li>
-        /// <li> <p>Parameter group</p> </li>
-        /// </ul>
+        /// <p>The type of resource with which the tag is associated. Valid resource types are: </p> 
+        /// <ul> 
+        /// <li> <p>Cluster</p> </li> 
+        /// <li> <p>CIDR/IP</p> </li> 
+        /// <li> <p>EC2 security group</p> </li> 
+        /// <li> <p>Snapshot</p> </li> 
+        /// <li> <p>Cluster security group</p> </li> 
+        /// <li> <p>Subnet group</p> </li> 
+        /// <li> <p>HSM connection</p> </li> 
+        /// <li> <p>HSM certificate</p> </li> 
+        /// <li> <p>Parameter group</p> </li> 
+        /// </ul> 
         /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// Consumes the builder and constructs a [`TaggedResource`](crate::model::TaggedResource).
         pub fn build(self) -> crate::model::TaggedResource {
             crate::model::TaggedResource {
-                tag: self.tag,
-                resource_name: self.resource_name,
-                resource_type: self.resource_type,
+                tag: self.tag
+                ,
+                resource_name: self.resource_name
+                ,
+                resource_type: self.resource_type
+                ,
             }
         }
     }
+    
+    
 }
 impl TaggedResource {
     /// Creates a new builder-style object to manufacture [`TaggedResource`](crate::model::TaggedResource).
@@ -9584,7 +8830,7 @@ impl TaggedResource {
 /// <p>Describes a snapshot schedule. You can set a regular interval for creating snapshots of a cluster. You can also schedule snapshots for specific dates. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotSchedule {
+pub struct SnapshotSchedule  {
     /// <p>A list of ScheduleDefinitions.</p>
     #[doc(hidden)]
     pub schedule_definitions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9605,28 +8851,27 @@ pub struct SnapshotSchedule {
     pub associated_cluster_count: std::option::Option<i32>,
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
     #[doc(hidden)]
-    pub associated_clusters:
-        std::option::Option<std::vec::Vec<crate::model::ClusterAssociatedToSchedule>>,
+    pub associated_clusters: std::option::Option<std::vec::Vec<crate::model::ClusterAssociatedToSchedule>>,
 }
 impl SnapshotSchedule {
     /// <p>A list of ScheduleDefinitions.</p>
-    pub fn schedule_definitions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn schedule_definitions(&self) -> std::option::Option<& [std::string::String]> {
         self.schedule_definitions.as_deref()
     }
     /// <p>A unique identifier for the schedule.</p>
-    pub fn schedule_identifier(&self) -> std::option::Option<&str> {
+    pub fn schedule_identifier(&self) -> std::option::Option<& str> {
         self.schedule_identifier.as_deref()
     }
     /// <p>The description of the schedule.</p>
-    pub fn schedule_description(&self) -> std::option::Option<&str> {
+    pub fn schedule_description(&self) -> std::option::Option<& str> {
         self.schedule_description.as_deref()
     }
     /// <p>An optional set of tags describing the schedule.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p></p>
-    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
+    pub fn next_invocations(&self) -> std::option::Option<& [aws_smithy_types::DateTime]> {
         self.next_invocations.as_deref()
     }
     /// <p>The number of clusters associated with the schedule.</p>
@@ -9634,15 +8879,13 @@ impl SnapshotSchedule {
         self.associated_cluster_count
     }
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
-    pub fn associated_clusters(
-        &self,
-    ) -> std::option::Option<&[crate::model::ClusterAssociatedToSchedule]> {
+    pub fn associated_clusters(&self) -> std::option::Option<& [crate::model::ClusterAssociatedToSchedule]> {
         self.associated_clusters.as_deref()
     }
 }
 /// See [`SnapshotSchedule`](crate::model::SnapshotSchedule).
 pub mod snapshot_schedule {
-
+    
     /// A builder for [`SnapshotSchedule`](crate::model::SnapshotSchedule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9652,8 +8895,7 @@ pub mod snapshot_schedule {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
         pub(crate) associated_cluster_count: std::option::Option<i32>,
-        pub(crate) associated_clusters:
-            std::option::Option<std::vec::Vec<crate::model::ClusterAssociatedToSchedule>>,
+        pub(crate) associated_clusters: std::option::Option<std::vec::Vec<crate::model::ClusterAssociatedToSchedule>>,
     }
     impl Builder {
         /// Appends an item to `schedule_definitions`.
@@ -9663,17 +8905,13 @@ pub mod snapshot_schedule {
         /// <p>A list of ScheduleDefinitions.</p>
         pub fn schedule_definitions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.schedule_definitions.unwrap_or_default();
-            v.push(input.into());
-            self.schedule_definitions = Some(v);
-            self
+                            v.push(input.into());
+                            self.schedule_definitions = Some(v);
+                            self
         }
         /// <p>A list of ScheduleDefinitions.</p>
-        pub fn set_schedule_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.schedule_definitions = input;
-            self
+        pub fn set_schedule_definitions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.schedule_definitions = input; self
         }
         /// <p>A unique identifier for the schedule.</p>
         pub fn schedule_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9681,12 +8919,8 @@ pub mod snapshot_schedule {
             self
         }
         /// <p>A unique identifier for the schedule.</p>
-        pub fn set_schedule_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schedule_identifier = input;
-            self
+        pub fn set_schedule_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schedule_identifier = input; self
         }
         /// <p>The description of the schedule.</p>
         pub fn schedule_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9694,12 +8928,8 @@ pub mod snapshot_schedule {
             self
         }
         /// <p>The description of the schedule.</p>
-        pub fn set_schedule_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schedule_description = input;
-            self
+        pub fn set_schedule_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schedule_description = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -9708,17 +8938,13 @@ pub mod snapshot_schedule {
         /// <p>An optional set of tags describing the schedule.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An optional set of tags describing the schedule.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Appends an item to `next_invocations`.
         ///
@@ -9727,17 +8953,13 @@ pub mod snapshot_schedule {
         /// <p></p>
         pub fn next_invocations(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
-            v.push(input);
-            self.next_invocations = Some(v);
-            self
+                            v.push(input);
+                            self.next_invocations = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_next_invocations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
-        ) -> Self {
-            self.next_invocations = input;
-            self
+        pub fn set_next_invocations(mut self, input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>) -> Self {
+            self.next_invocations = input; self
         }
         /// <p>The number of clusters associated with the schedule.</p>
         pub fn associated_cluster_count(mut self, input: i32) -> Self {
@@ -9746,44 +8968,45 @@ pub mod snapshot_schedule {
         }
         /// <p>The number of clusters associated with the schedule.</p>
         pub fn set_associated_cluster_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.associated_cluster_count = input;
-            self
+            self.associated_cluster_count = input; self
         }
         /// Appends an item to `associated_clusters`.
         ///
         /// To override the contents of this collection use [`set_associated_clusters`](Self::set_associated_clusters).
         ///
         /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
-        pub fn associated_clusters(
-            mut self,
-            input: crate::model::ClusterAssociatedToSchedule,
-        ) -> Self {
+        pub fn associated_clusters(mut self, input: crate::model::ClusterAssociatedToSchedule) -> Self {
             let mut v = self.associated_clusters.unwrap_or_default();
-            v.push(input);
-            self.associated_clusters = Some(v);
-            self
+                            v.push(input);
+                            self.associated_clusters = Some(v);
+                            self
         }
         /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
-        pub fn set_associated_clusters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ClusterAssociatedToSchedule>>,
-        ) -> Self {
-            self.associated_clusters = input;
-            self
+        pub fn set_associated_clusters(mut self, input: std::option::Option<std::vec::Vec<crate::model::ClusterAssociatedToSchedule>>) -> Self {
+            self.associated_clusters = input; self
         }
         /// Consumes the builder and constructs a [`SnapshotSchedule`](crate::model::SnapshotSchedule).
         pub fn build(self) -> crate::model::SnapshotSchedule {
             crate::model::SnapshotSchedule {
-                schedule_definitions: self.schedule_definitions,
-                schedule_identifier: self.schedule_identifier,
-                schedule_description: self.schedule_description,
-                tags: self.tags,
-                next_invocations: self.next_invocations,
-                associated_cluster_count: self.associated_cluster_count,
-                associated_clusters: self.associated_clusters,
+                schedule_definitions: self.schedule_definitions
+                ,
+                schedule_identifier: self.schedule_identifier
+                ,
+                schedule_description: self.schedule_description
+                ,
+                tags: self.tags
+                ,
+                next_invocations: self.next_invocations
+                ,
+                associated_cluster_count: self.associated_cluster_count
+                ,
+                associated_clusters: self.associated_clusters
+                ,
             }
         }
     }
+    
+    
 }
 impl SnapshotSchedule {
     /// Creates a new builder-style object to manufacture [`SnapshotSchedule`](crate::model::SnapshotSchedule).
@@ -9792,11 +9015,11 @@ impl SnapshotSchedule {
     }
 }
 
-/// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region.</p>
+/// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region.</p> 
 /// <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotCopyGrant {
+pub struct SnapshotCopyGrant  {
     /// <p>The name of the snapshot copy grant.</p>
     #[doc(hidden)]
     pub snapshot_copy_grant_name: std::option::Option<std::string::String>,
@@ -9809,21 +9032,21 @@ pub struct SnapshotCopyGrant {
 }
 impl SnapshotCopyGrant {
     /// <p>The name of the snapshot copy grant.</p>
-    pub fn snapshot_copy_grant_name(&self) -> std::option::Option<&str> {
+    pub fn snapshot_copy_grant_name(&self) -> std::option::Option<& str> {
         self.snapshot_copy_grant_name.as_deref()
     }
     /// <p>The unique identifier of the encrypted symmetric key in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of tag instances.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`SnapshotCopyGrant`](crate::model::SnapshotCopyGrant).
 pub mod snapshot_copy_grant {
-
+    
     /// A builder for [`SnapshotCopyGrant`](crate::model::SnapshotCopyGrant).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9838,12 +9061,8 @@ pub mod snapshot_copy_grant {
             self
         }
         /// <p>The name of the snapshot copy grant.</p>
-        pub fn set_snapshot_copy_grant_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_copy_grant_name = input;
-            self
+        pub fn set_snapshot_copy_grant_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_copy_grant_name = input; self
         }
         /// <p>The unique identifier of the encrypted symmetric key in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9852,8 +9071,7 @@ pub mod snapshot_copy_grant {
         }
         /// <p>The unique identifier of the encrypted symmetric key in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -9862,27 +9080,28 @@ pub mod snapshot_copy_grant {
         /// <p>A list of tag instances.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tag instances.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`SnapshotCopyGrant`](crate::model::SnapshotCopyGrant).
         pub fn build(self) -> crate::model::SnapshotCopyGrant {
             crate::model::SnapshotCopyGrant {
-                snapshot_copy_grant_name: self.snapshot_copy_grant_name,
-                kms_key_id: self.kms_key_id,
-                tags: self.tags,
+                snapshot_copy_grant_name: self.snapshot_copy_grant_name
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl SnapshotCopyGrant {
     /// Creates a new builder-style object to manufacture [`SnapshotCopyGrant`](crate::model::SnapshotCopyGrant).
@@ -9894,16 +9113,16 @@ impl SnapshotCopyGrant {
 /// <p>Describes a scheduled action. You can use a scheduled action to trigger some Amazon Redshift API operations on a schedule. For information about which API operations can be scheduled, see <code>ScheduledActionType</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduledAction {
+pub struct ScheduledAction  {
     /// <p>The name of the scheduled action. </p>
     #[doc(hidden)]
     pub scheduled_action_name: std::option::Option<std::string::String>,
-    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>
+    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p> 
     /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
     #[doc(hidden)]
     pub target_action: std::option::Option<crate::model::ScheduledActionType>,
-    /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
-    /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
+    /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p> 
+    /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p> 
     /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
     #[doc(hidden)]
     pub schedule: std::option::Option<std::string::String>,
@@ -9928,48 +9147,48 @@ pub struct ScheduledAction {
 }
 impl ScheduledAction {
     /// <p>The name of the scheduled action. </p>
-    pub fn scheduled_action_name(&self) -> std::option::Option<&str> {
+    pub fn scheduled_action_name(&self) -> std::option::Option<& str> {
         self.scheduled_action_name.as_deref()
     }
-    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>
+    /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p> 
     /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
-    pub fn target_action(&self) -> std::option::Option<&crate::model::ScheduledActionType> {
+    pub fn target_action(&self) -> std::option::Option<& crate::model::ScheduledActionType> {
         self.target_action.as_ref()
     }
-    /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
-    /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
+    /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p> 
+    /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p> 
     /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
-    pub fn schedule(&self) -> std::option::Option<&str> {
+    pub fn schedule(&self) -> std::option::Option<& str> {
         self.schedule.as_deref()
     }
     /// <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    pub fn iam_role(&self) -> std::option::Option<&str> {
+    pub fn iam_role(&self) -> std::option::Option<& str> {
         self.iam_role.as_deref()
     }
     /// <p>The description of the scheduled action. </p>
-    pub fn scheduled_action_description(&self) -> std::option::Option<&str> {
+    pub fn scheduled_action_description(&self) -> std::option::Option<& str> {
         self.scheduled_action_description.as_deref()
     }
     /// <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ScheduledActionState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ScheduledActionState> {
         self.state.as_ref()
     }
     /// <p>List of times when the scheduled action will run. </p>
-    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
+    pub fn next_invocations(&self) -> std::option::Option<& [aws_smithy_types::DateTime]> {
         self.next_invocations.as_deref()
     }
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
 /// See [`ScheduledAction`](crate::model::ScheduledAction).
 pub mod scheduled_action {
-
+    
     /// A builder for [`ScheduledAction`](crate::model::ScheduledAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9990,41 +9209,32 @@ pub mod scheduled_action {
             self
         }
         /// <p>The name of the scheduled action. </p>
-        pub fn set_scheduled_action_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.scheduled_action_name = input;
-            self
+        pub fn set_scheduled_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.scheduled_action_name = input; self
         }
-        /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>
+        /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p> 
         /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
         pub fn target_action(mut self, input: crate::model::ScheduledActionType) -> Self {
             self.target_action = Some(input);
             self
         }
-        /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>
+        /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p> 
         /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
-        pub fn set_target_action(
-            mut self,
-            input: std::option::Option<crate::model::ScheduledActionType>,
-        ) -> Self {
-            self.target_action = input;
-            self
+        pub fn set_target_action(mut self, input: std::option::Option<crate::model::ScheduledActionType>) -> Self {
+            self.target_action = input; self
         }
-        /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
-        /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
+        /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p> 
+        /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p> 
         /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule = Some(input.into());
             self
         }
-        /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
-        /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
+        /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p> 
+        /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p> 
         /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schedule = input;
-            self
+            self.schedule = input; self
         }
         /// <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10033,24 +9243,16 @@ pub mod scheduled_action {
         }
         /// <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role = input;
-            self
+            self.iam_role = input; self
         }
         /// <p>The description of the scheduled action. </p>
-        pub fn scheduled_action_description(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn scheduled_action_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.scheduled_action_description = Some(input.into());
             self
         }
         /// <p>The description of the scheduled action. </p>
-        pub fn set_scheduled_action_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.scheduled_action_description = input;
-            self
+        pub fn set_scheduled_action_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.scheduled_action_description = input; self
         }
         /// <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
         pub fn state(mut self, input: crate::model::ScheduledActionState) -> Self {
@@ -10058,12 +9260,8 @@ pub mod scheduled_action {
             self
         }
         /// <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ScheduledActionState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ScheduledActionState>) -> Self {
+            self.state = input; self
         }
         /// Appends an item to `next_invocations`.
         ///
@@ -10072,17 +9270,13 @@ pub mod scheduled_action {
         /// <p>List of times when the scheduled action will run. </p>
         pub fn next_invocations(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
-            v.push(input);
-            self.next_invocations = Some(v);
-            self
+                            v.push(input);
+                            self.next_invocations = Some(v);
+                            self
         }
         /// <p>List of times when the scheduled action will run. </p>
-        pub fn set_next_invocations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
-        ) -> Self {
-            self.next_invocations = input;
-            self
+        pub fn set_next_invocations(mut self, input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>) -> Self {
+            self.next_invocations = input; self
         }
         /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10090,12 +9284,8 @@ pub mod scheduled_action {
             self
         }
         /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10103,28 +9293,35 @@ pub mod scheduled_action {
             self
         }
         /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Consumes the builder and constructs a [`ScheduledAction`](crate::model::ScheduledAction).
         pub fn build(self) -> crate::model::ScheduledAction {
             crate::model::ScheduledAction {
-                scheduled_action_name: self.scheduled_action_name,
-                target_action: self.target_action,
-                schedule: self.schedule,
-                iam_role: self.iam_role,
-                scheduled_action_description: self.scheduled_action_description,
-                state: self.state,
-                next_invocations: self.next_invocations,
-                start_time: self.start_time,
-                end_time: self.end_time,
+                scheduled_action_name: self.scheduled_action_name
+                ,
+                target_action: self.target_action
+                ,
+                schedule: self.schedule
+                ,
+                iam_role: self.iam_role
+                ,
+                scheduled_action_description: self.scheduled_action_description
+                ,
+                state: self.state
+                ,
+                next_invocations: self.next_invocations
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ScheduledAction {
     /// Creates a new builder-style object to manufacture [`ScheduledAction`](crate::model::ScheduledAction).
@@ -10136,7 +9333,7 @@ impl ScheduledAction {
 /// <p>A set of elements to filter the returned scheduled actions. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduledActionFilter {
+pub struct ScheduledActionFilter  {
     /// <p>The type of element to filter. </p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::ScheduledActionFilterName>,
@@ -10146,17 +9343,17 @@ pub struct ScheduledActionFilter {
 }
 impl ScheduledActionFilter {
     /// <p>The type of element to filter. </p>
-    pub fn name(&self) -> std::option::Option<&crate::model::ScheduledActionFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::ScheduledActionFilterName> {
         self.name.as_ref()
     }
     /// <p>List of values. Compare if the value (of type defined by <code>Name</code>) equals an item in the list of scheduled actions. </p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`ScheduledActionFilter`](crate::model::ScheduledActionFilter).
 pub mod scheduled_action_filter {
-
+    
     /// A builder for [`ScheduledActionFilter`](crate::model::ScheduledActionFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10170,12 +9367,8 @@ pub mod scheduled_action_filter {
             self
         }
         /// <p>The type of element to filter. </p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::ScheduledActionFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::ScheduledActionFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -10184,26 +9377,26 @@ pub mod scheduled_action_filter {
         /// <p>List of values. Compare if the value (of type defined by <code>Name</code>) equals an item in the list of scheduled actions. </p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>List of values. Compare if the value (of type defined by <code>Name</code>) equals an item in the list of scheduled actions. </p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`ScheduledActionFilter`](crate::model::ScheduledActionFilter).
         pub fn build(self) -> crate::model::ScheduledActionFilter {
             crate::model::ScheduledActionFilter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl ScheduledActionFilter {
     /// Creates a new builder-style object to manufacture [`ScheduledActionFilter`](crate::model::ScheduledActionFilter).
@@ -10218,9 +9411,9 @@ impl ScheduledActionFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let scheduledactionfiltername = unimplemented!();
 /// match scheduledactionfiltername {
@@ -10242,60 +9435,52 @@ impl ScheduledActionFilter {
 /// Specifically, when `scheduledactionfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScheduledActionFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ScheduledActionFilterName {
     #[allow(missing_docs)] // documentation missing in model
     ClusterIdentifier,
     #[allow(missing_docs)] // documentation missing in model
     IamRole,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScheduledActionFilterName {
     fn from(s: &str) -> Self {
         match s {
             "cluster-identifier" => ScheduledActionFilterName::ClusterIdentifier,
             "iam-role" => ScheduledActionFilterName::IamRole,
-            other => ScheduledActionFilterName::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ScheduledActionFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ScheduledActionFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScheduledActionFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ScheduledActionFilterName::from(s))
+                }
+            }
 impl ScheduledActionFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScheduledActionFilterName::ClusterIdentifier => "cluster-identifier",
             ScheduledActionFilterName::IamRole => "iam-role",
-            ScheduledActionFilterName::Unknown(value) => value.as_str(),
+            ScheduledActionFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["cluster-identifier", "iam-role"]
+        &[
+            "cluster-identifier", "iam-role"
+        ]
     }
 }
 impl AsRef<str> for ScheduledActionFilterName {
@@ -10310,9 +9495,9 @@ impl AsRef<str> for ScheduledActionFilterName {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let scheduledactiontypevalues = unimplemented!();
 /// match scheduledactiontypevalues {
@@ -10335,22 +9520,14 @@ impl AsRef<str> for ScheduledActionFilterName {
 /// Specifically, when `scheduledactiontypevalues` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScheduledActionTypeValues::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ScheduledActionTypeValues {
     #[allow(missing_docs)] // documentation missing in model
     PauseCluster,
@@ -10359,7 +9536,7 @@ pub enum ScheduledActionTypeValues {
     #[allow(missing_docs)] // documentation missing in model
     ResumeCluster,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScheduledActionTypeValues {
     fn from(s: &str) -> Self {
@@ -10367,19 +9544,17 @@ impl std::convert::From<&str> for ScheduledActionTypeValues {
             "PauseCluster" => ScheduledActionTypeValues::PauseCluster,
             "ResizeCluster" => ScheduledActionTypeValues::ResizeCluster,
             "ResumeCluster" => ScheduledActionTypeValues::ResumeCluster,
-            other => ScheduledActionTypeValues::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ScheduledActionTypeValues::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ScheduledActionTypeValues {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScheduledActionTypeValues::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ScheduledActionTypeValues::from(s))
+                }
+            }
 impl ScheduledActionTypeValues {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -10387,12 +9562,14 @@ impl ScheduledActionTypeValues {
             ScheduledActionTypeValues::PauseCluster => "PauseCluster",
             ScheduledActionTypeValues::ResizeCluster => "ResizeCluster",
             ScheduledActionTypeValues::ResumeCluster => "ResumeCluster",
-            ScheduledActionTypeValues::Unknown(value) => value.as_str(),
+            ScheduledActionTypeValues::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PauseCluster", "ResizeCluster", "ResumeCluster"]
+        &[
+            "PauseCluster", "ResizeCluster", "ResumeCluster"
+        ]
     }
 }
 impl AsRef<str> for ScheduledActionTypeValues {
@@ -10404,7 +9581,7 @@ impl AsRef<str> for ScheduledActionTypeValues {
 /// <p>Describes a partner integration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PartnerIntegrationInfo {
+pub struct PartnerIntegrationInfo  {
     /// <p>The name of the database that receives data from a partner.</p>
     #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
@@ -10426,33 +9603,33 @@ pub struct PartnerIntegrationInfo {
 }
 impl PartnerIntegrationInfo {
     /// <p>The name of the database that receives data from a partner.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the partner.</p>
-    pub fn partner_name(&self) -> std::option::Option<&str> {
+    pub fn partner_name(&self) -> std::option::Option<& str> {
         self.partner_name.as_deref()
     }
     /// <p>The partner integration status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::PartnerIntegrationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PartnerIntegrationStatus> {
         self.status.as_ref()
     }
     /// <p>The status message provided by the partner.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The date (UTC) that the partner integration was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`PartnerIntegrationInfo`](crate::model::PartnerIntegrationInfo).
 pub mod partner_integration_info {
-
+    
     /// A builder for [`PartnerIntegrationInfo`](crate::model::PartnerIntegrationInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10470,12 +9647,8 @@ pub mod partner_integration_info {
             self
         }
         /// <p>The name of the database that receives data from a partner.</p>
-        pub fn set_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_name = input;
-            self
+        pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_name = input; self
         }
         /// <p>The name of the partner.</p>
         pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10484,8 +9657,7 @@ pub mod partner_integration_info {
         }
         /// <p>The name of the partner.</p>
         pub fn set_partner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.partner_name = input;
-            self
+            self.partner_name = input; self
         }
         /// <p>The partner integration status.</p>
         pub fn status(mut self, input: crate::model::PartnerIntegrationStatus) -> Self {
@@ -10493,12 +9665,8 @@ pub mod partner_integration_info {
             self
         }
         /// <p>The partner integration status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PartnerIntegrationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::PartnerIntegrationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The status message provided by the partner.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10506,12 +9674,8 @@ pub mod partner_integration_info {
             self
         }
         /// <p>The status message provided by the partner.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The date (UTC) that the partner integration was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10519,12 +9683,8 @@ pub mod partner_integration_info {
             self
         }
         /// <p>The date (UTC) that the partner integration was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10532,25 +9692,29 @@ pub mod partner_integration_info {
             self
         }
         /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`PartnerIntegrationInfo`](crate::model::PartnerIntegrationInfo).
         pub fn build(self) -> crate::model::PartnerIntegrationInfo {
             crate::model::PartnerIntegrationInfo {
-                database_name: self.database_name,
-                partner_name: self.partner_name,
-                status: self.status,
-                status_message: self.status_message,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
+                database_name: self.database_name
+                ,
+                partner_name: self.partner_name
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl PartnerIntegrationInfo {
     /// Creates a new builder-style object to manufacture [`PartnerIntegrationInfo`](crate::model::PartnerIntegrationInfo).
@@ -10562,7 +9726,7 @@ impl PartnerIntegrationInfo {
 /// <p>Describes an orderable cluster option.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OrderableClusterOption {
+pub struct OrderableClusterOption  {
     /// <p>The version of the orderable cluster.</p>
     #[doc(hidden)]
     pub cluster_version: std::option::Option<std::string::String>,
@@ -10578,33 +9742,32 @@ pub struct OrderableClusterOption {
 }
 impl OrderableClusterOption {
     /// <p>The version of the orderable cluster.</p>
-    pub fn cluster_version(&self) -> std::option::Option<&str> {
+    pub fn cluster_version(&self) -> std::option::Option<& str> {
         self.cluster_version.as_deref()
     }
     /// <p>The cluster type, for example <code>multi-node</code>. </p>
-    pub fn cluster_type(&self) -> std::option::Option<&str> {
+    pub fn cluster_type(&self) -> std::option::Option<& str> {
         self.cluster_type.as_deref()
     }
     /// <p>The node type for the orderable cluster.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>A list of availability zones for the orderable cluster.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[crate::model::AvailabilityZone]> {
+    pub fn availability_zones(&self) -> std::option::Option<& [crate::model::AvailabilityZone]> {
         self.availability_zones.as_deref()
     }
 }
 /// See [`OrderableClusterOption`](crate::model::OrderableClusterOption).
 pub mod orderable_cluster_option {
-
+    
     /// A builder for [`OrderableClusterOption`](crate::model::OrderableClusterOption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_version: std::option::Option<std::string::String>,
         pub(crate) cluster_type: std::option::Option<std::string::String>,
         pub(crate) node_type: std::option::Option<std::string::String>,
-        pub(crate) availability_zones:
-            std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
+        pub(crate) availability_zones: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
     }
     impl Builder {
         /// <p>The version of the orderable cluster.</p>
@@ -10613,12 +9776,8 @@ pub mod orderable_cluster_option {
             self
         }
         /// <p>The version of the orderable cluster.</p>
-        pub fn set_cluster_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_version = input;
-            self
+        pub fn set_cluster_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_version = input; self
         }
         /// <p>The cluster type, for example <code>multi-node</code>. </p>
         pub fn cluster_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10627,8 +9786,7 @@ pub mod orderable_cluster_option {
         }
         /// <p>The cluster type, for example <code>multi-node</code>. </p>
         pub fn set_cluster_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_type = input;
-            self
+            self.cluster_type = input; self
         }
         /// <p>The node type for the orderable cluster.</p>
         pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10637,8 +9795,7 @@ pub mod orderable_cluster_option {
         }
         /// <p>The node type for the orderable cluster.</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_type = input;
-            self
+            self.node_type = input; self
         }
         /// Appends an item to `availability_zones`.
         ///
@@ -10647,28 +9804,30 @@ pub mod orderable_cluster_option {
         /// <p>A list of availability zones for the orderable cluster.</p>
         pub fn availability_zones(mut self, input: crate::model::AvailabilityZone) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input);
-            self.availability_zones = Some(v);
-            self
+                            v.push(input);
+                            self.availability_zones = Some(v);
+                            self
         }
         /// <p>A list of availability zones for the orderable cluster.</p>
-        pub fn set_availability_zones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
-        ) -> Self {
-            self.availability_zones = input;
-            self
+        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>) -> Self {
+            self.availability_zones = input; self
         }
         /// Consumes the builder and constructs a [`OrderableClusterOption`](crate::model::OrderableClusterOption).
         pub fn build(self) -> crate::model::OrderableClusterOption {
             crate::model::OrderableClusterOption {
-                cluster_version: self.cluster_version,
-                cluster_type: self.cluster_type,
-                node_type: self.node_type,
-                availability_zones: self.availability_zones,
+                cluster_version: self.cluster_version
+                ,
+                cluster_type: self.cluster_type
+                ,
+                node_type: self.node_type
+                ,
+                availability_zones: self.availability_zones
+                ,
             }
         }
     }
+    
+    
 }
 impl OrderableClusterOption {
     /// Creates a new builder-style object to manufacture [`OrderableClusterOption`](crate::model::OrderableClusterOption).
@@ -10680,7 +9839,7 @@ impl OrderableClusterOption {
 /// <p>A list of node configurations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeConfigurationOption {
+pub struct NodeConfigurationOption  {
     /// <p>The node type, such as, "ds2.8xlarge".</p>
     #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
@@ -10696,7 +9855,7 @@ pub struct NodeConfigurationOption {
 }
 impl NodeConfigurationOption {
     /// <p>The node type, such as, "ds2.8xlarge".</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The number of nodes.</p>
@@ -10708,13 +9867,13 @@ impl NodeConfigurationOption {
         self.estimated_disk_utilization_percent
     }
     /// <p>The category of the node configuration recommendation.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::model::Mode> {
+    pub fn mode(&self) -> std::option::Option<& crate::model::Mode> {
         self.mode.as_ref()
     }
 }
 /// See [`NodeConfigurationOption`](crate::model::NodeConfigurationOption).
 pub mod node_configuration_option {
-
+    
     /// A builder for [`NodeConfigurationOption`](crate::model::NodeConfigurationOption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10731,8 +9890,7 @@ pub mod node_configuration_option {
         }
         /// <p>The node type, such as, "ds2.8xlarge".</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_type = input;
-            self
+            self.node_type = input; self
         }
         /// <p>The number of nodes.</p>
         pub fn number_of_nodes(mut self, input: i32) -> Self {
@@ -10741,8 +9899,7 @@ pub mod node_configuration_option {
         }
         /// <p>The number of nodes.</p>
         pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_nodes = input;
-            self
+            self.number_of_nodes = input; self
         }
         /// <p>The estimated disk utilizaton percentage.</p>
         pub fn estimated_disk_utilization_percent(mut self, input: f64) -> Self {
@@ -10750,12 +9907,8 @@ pub mod node_configuration_option {
             self
         }
         /// <p>The estimated disk utilizaton percentage.</p>
-        pub fn set_estimated_disk_utilization_percent(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.estimated_disk_utilization_percent = input;
-            self
+        pub fn set_estimated_disk_utilization_percent(mut self, input: std::option::Option<f64>) -> Self {
+            self.estimated_disk_utilization_percent = input; self
         }
         /// <p>The category of the node configuration recommendation.</p>
         pub fn mode(mut self, input: crate::model::Mode) -> Self {
@@ -10764,19 +9917,25 @@ pub mod node_configuration_option {
         }
         /// <p>The category of the node configuration recommendation.</p>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::Mode>) -> Self {
-            self.mode = input;
-            self
+            self.mode = input; self
         }
         /// Consumes the builder and constructs a [`NodeConfigurationOption`](crate::model::NodeConfigurationOption).
         pub fn build(self) -> crate::model::NodeConfigurationOption {
             crate::model::NodeConfigurationOption {
-                node_type: self.node_type,
-                number_of_nodes: self.number_of_nodes.unwrap_or_default(),
-                estimated_disk_utilization_percent: self.estimated_disk_utilization_percent,
-                mode: self.mode,
+                node_type: self.node_type
+                ,
+                number_of_nodes: self.number_of_nodes
+                    .unwrap_or_default()
+                ,
+                estimated_disk_utilization_percent: self.estimated_disk_utilization_percent
+                ,
+                mode: self.mode
+                ,
             }
         }
     }
+    
+    
 }
 impl NodeConfigurationOption {
     /// Creates a new builder-style object to manufacture [`NodeConfigurationOption`](crate::model::NodeConfigurationOption).
@@ -10791,9 +9950,9 @@ impl NodeConfigurationOption {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mode = unimplemented!();
 /// match mode {
@@ -10815,58 +9974,52 @@ impl NodeConfigurationOption {
 /// Specifically, when `mode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Mode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Mode {
     #[allow(missing_docs)] // documentation missing in model
     HighPerformance,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Mode {
     fn from(s: &str) -> Self {
         match s {
             "high-performance" => Mode::HighPerformance,
             "standard" => Mode::Standard,
-            other => Mode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Mode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Mode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Mode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Mode::from(s))
+                }
+            }
 impl Mode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Mode::HighPerformance => "high-performance",
             Mode::Standard => "standard",
-            Mode::Unknown(value) => value.as_str(),
+            Mode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["high-performance", "standard"]
+        &[
+            "high-performance", "standard"
+        ]
     }
 }
 impl AsRef<str> for Mode {
@@ -10878,7 +10031,7 @@ impl AsRef<str> for Mode {
 /// <p>A set of elements to filter the returned node configurations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeConfigurationOptionsFilter {
+pub struct NodeConfigurationOptionsFilter  {
     /// <p>The name of the element to filter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::NodeConfigurationOptionsFilterName>,
@@ -10891,21 +10044,21 @@ pub struct NodeConfigurationOptionsFilter {
 }
 impl NodeConfigurationOptionsFilter {
     /// <p>The name of the element to filter.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::NodeConfigurationOptionsFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::NodeConfigurationOptionsFilterName> {
         self.name.as_ref()
     }
     /// <p>The filter operator. If filter Name is NodeType only the 'in' operator is supported. Provide one value to evaluate for 'eq', 'lt', 'le', 'gt', and 'ge'. Provide two values to evaluate for 'between'. Provide a list of values for 'in'.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::model::OperatorType> {
+    pub fn operator(&self) -> std::option::Option<& crate::model::OperatorType> {
         self.operator.as_ref()
     }
     /// <p>List of values. Compare Name using Operator to Values. If filter Name is NumberOfNodes, then values can range from 0 to 200. If filter Name is EstimatedDiskUtilizationPercent, then values can range from 0 to 100. For example, filter NumberOfNodes (name) GT (operator) 3 (values).</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`NodeConfigurationOptionsFilter`](crate::model::NodeConfigurationOptionsFilter).
 pub mod node_configuration_options_filter {
-
+    
     /// A builder for [`NodeConfigurationOptionsFilter`](crate::model::NodeConfigurationOptionsFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10920,12 +10073,8 @@ pub mod node_configuration_options_filter {
             self
         }
         /// <p>The name of the element to filter.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::NodeConfigurationOptionsFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::NodeConfigurationOptionsFilterName>) -> Self {
+            self.name = input; self
         }
         /// <p>The filter operator. If filter Name is NodeType only the 'in' operator is supported. Provide one value to evaluate for 'eq', 'lt', 'le', 'gt', and 'ge'. Provide two values to evaluate for 'between'. Provide a list of values for 'in'.</p>
         pub fn operator(mut self, input: crate::model::OperatorType) -> Self {
@@ -10933,12 +10082,8 @@ pub mod node_configuration_options_filter {
             self
         }
         /// <p>The filter operator. If filter Name is NodeType only the 'in' operator is supported. Provide one value to evaluate for 'eq', 'lt', 'le', 'gt', and 'ge'. Provide two values to evaluate for 'between'. Provide a list of values for 'in'.</p>
-        pub fn set_operator(
-            mut self,
-            input: std::option::Option<crate::model::OperatorType>,
-        ) -> Self {
-            self.operator = input;
-            self
+        pub fn set_operator(mut self, input: std::option::Option<crate::model::OperatorType>) -> Self {
+            self.operator = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -10947,27 +10092,28 @@ pub mod node_configuration_options_filter {
         /// <p>List of values. Compare Name using Operator to Values. If filter Name is NumberOfNodes, then values can range from 0 to 200. If filter Name is EstimatedDiskUtilizationPercent, then values can range from 0 to 100. For example, filter NumberOfNodes (name) GT (operator) 3 (values).</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>List of values. Compare Name using Operator to Values. If filter Name is NumberOfNodes, then values can range from 0 to 200. If filter Name is EstimatedDiskUtilizationPercent, then values can range from 0 to 100. For example, filter NumberOfNodes (name) GT (operator) 3 (values).</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`NodeConfigurationOptionsFilter`](crate::model::NodeConfigurationOptionsFilter).
         pub fn build(self) -> crate::model::NodeConfigurationOptionsFilter {
             crate::model::NodeConfigurationOptionsFilter {
-                name: self.name,
-                operator: self.operator,
-                values: self.values,
+                name: self.name
+                ,
+                operator: self.operator
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl NodeConfigurationOptionsFilter {
     /// Creates a new builder-style object to manufacture [`NodeConfigurationOptionsFilter`](crate::model::NodeConfigurationOptionsFilter).
@@ -10982,9 +10128,9 @@ impl NodeConfigurationOptionsFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let operatortype = unimplemented!();
 /// match operatortype {
@@ -11011,22 +10157,14 @@ impl NodeConfigurationOptionsFilter {
 /// Specifically, when `operatortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OperatorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OperatorType {
     #[allow(missing_docs)] // documentation missing in model
     Between,
@@ -11043,7 +10181,7 @@ pub enum OperatorType {
     #[allow(missing_docs)] // documentation missing in model
     Lt,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OperatorType {
     fn from(s: &str) -> Self {
@@ -11055,17 +10193,17 @@ impl std::convert::From<&str> for OperatorType {
             "in" => OperatorType::In,
             "le" => OperatorType::Le,
             "lt" => OperatorType::Lt,
-            other => OperatorType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OperatorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OperatorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OperatorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OperatorType::from(s))
+                }
+            }
 impl OperatorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -11077,12 +10215,14 @@ impl OperatorType {
             OperatorType::In => "in",
             OperatorType::Le => "le",
             OperatorType::Lt => "lt",
-            OperatorType::Unknown(value) => value.as_str(),
+            OperatorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["between", "eq", "ge", "gt", "in", "le", "lt"]
+        &[
+            "between", "eq", "ge", "gt", "in", "le", "lt"
+        ]
     }
 }
 impl AsRef<str> for OperatorType {
@@ -11097,9 +10237,9 @@ impl AsRef<str> for OperatorType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let nodeconfigurationoptionsfiltername = unimplemented!();
 /// match nodeconfigurationoptionsfiltername {
@@ -11123,22 +10263,14 @@ impl AsRef<str> for OperatorType {
 /// Specifically, when `nodeconfigurationoptionsfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NodeConfigurationOptionsFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NodeConfigurationOptionsFilterName {
     #[allow(missing_docs)] // documentation missing in model
     EstimatedDiskUtilizationPercent,
@@ -11149,50 +10281,41 @@ pub enum NodeConfigurationOptionsFilterName {
     #[allow(missing_docs)] // documentation missing in model
     NumNodes,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NodeConfigurationOptionsFilterName {
     fn from(s: &str) -> Self {
         match s {
-            "EstimatedDiskUtilizationPercent" => {
-                NodeConfigurationOptionsFilterName::EstimatedDiskUtilizationPercent
-            }
+            "EstimatedDiskUtilizationPercent" => NodeConfigurationOptionsFilterName::EstimatedDiskUtilizationPercent,
             "Mode" => NodeConfigurationOptionsFilterName::Mode,
             "NodeType" => NodeConfigurationOptionsFilterName::NodeType,
             "NumberOfNodes" => NodeConfigurationOptionsFilterName::NumNodes,
-            other => NodeConfigurationOptionsFilterName::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => NodeConfigurationOptionsFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NodeConfigurationOptionsFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NodeConfigurationOptionsFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NodeConfigurationOptionsFilterName::from(s))
+                }
+            }
 impl NodeConfigurationOptionsFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            NodeConfigurationOptionsFilterName::EstimatedDiskUtilizationPercent => {
-                "EstimatedDiskUtilizationPercent"
-            }
+            NodeConfigurationOptionsFilterName::EstimatedDiskUtilizationPercent => "EstimatedDiskUtilizationPercent",
             NodeConfigurationOptionsFilterName::Mode => "Mode",
             NodeConfigurationOptionsFilterName::NodeType => "NodeType",
             NodeConfigurationOptionsFilterName::NumNodes => "NumberOfNodes",
-            NodeConfigurationOptionsFilterName::Unknown(value) => value.as_str(),
+            NodeConfigurationOptionsFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "EstimatedDiskUtilizationPercent",
-            "Mode",
-            "NodeType",
-            "NumberOfNodes",
+            "EstimatedDiskUtilizationPercent", "Mode", "NodeType", "NumberOfNodes"
         ]
     }
 }
@@ -11208,9 +10331,9 @@ impl AsRef<str> for NodeConfigurationOptionsFilterName {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let actiontype = unimplemented!();
 /// match actiontype {
@@ -11233,22 +10356,14 @@ impl AsRef<str> for NodeConfigurationOptionsFilterName {
 /// Specifically, when `actiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ActionType {
     #[allow(missing_docs)] // documentation missing in model
     RecommendNodeConfig,
@@ -11257,7 +10372,7 @@ pub enum ActionType {
     #[allow(missing_docs)] // documentation missing in model
     RestoreCluster,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActionType {
     fn from(s: &str) -> Self {
@@ -11265,17 +10380,17 @@ impl std::convert::From<&str> for ActionType {
             "recommend-node-config" => ActionType::RecommendNodeConfig,
             "resize-cluster" => ActionType::ResizeCluster,
             "restore-cluster" => ActionType::RestoreCluster,
-            other => ActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ActionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ActionType::from(s))
+                }
+            }
 impl ActionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -11283,12 +10398,14 @@ impl ActionType {
             ActionType::RecommendNodeConfig => "recommend-node-config",
             ActionType::ResizeCluster => "resize-cluster",
             ActionType::RestoreCluster => "restore-cluster",
-            ActionType::Unknown(value) => value.as_str(),
+            ActionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["recommend-node-config", "resize-cluster", "restore-cluster"]
+        &[
+            "recommend-node-config", "resize-cluster", "restore-cluster"
+        ]
     }
 }
 impl AsRef<str> for ActionType {
@@ -11300,7 +10417,7 @@ impl AsRef<str> for ActionType {
 /// <p>Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HsmConfiguration {
+pub struct HsmConfiguration  {
     /// <p>The name of the Amazon Redshift HSM configuration.</p>
     #[doc(hidden)]
     pub hsm_configuration_identifier: std::option::Option<std::string::String>,
@@ -11319,29 +10436,29 @@ pub struct HsmConfiguration {
 }
 impl HsmConfiguration {
     /// <p>The name of the Amazon Redshift HSM configuration.</p>
-    pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
+    pub fn hsm_configuration_identifier(&self) -> std::option::Option<& str> {
         self.hsm_configuration_identifier.as_deref()
     }
     /// <p>A text description of the HSM configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
-    pub fn hsm_ip_address(&self) -> std::option::Option<&str> {
+    pub fn hsm_ip_address(&self) -> std::option::Option<& str> {
         self.hsm_ip_address.as_deref()
     }
     /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
-    pub fn hsm_partition_name(&self) -> std::option::Option<&str> {
+    pub fn hsm_partition_name(&self) -> std::option::Option<& str> {
         self.hsm_partition_name.as_deref()
     }
     /// <p>The list of tags for the HSM configuration.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`HsmConfiguration`](crate::model::HsmConfiguration).
 pub mod hsm_configuration {
-
+    
     /// A builder for [`HsmConfiguration`](crate::model::HsmConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11353,20 +10470,13 @@ pub mod hsm_configuration {
     }
     impl Builder {
         /// <p>The name of the Amazon Redshift HSM configuration.</p>
-        pub fn hsm_configuration_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn hsm_configuration_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.hsm_configuration_identifier = Some(input.into());
             self
         }
         /// <p>The name of the Amazon Redshift HSM configuration.</p>
-        pub fn set_hsm_configuration_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hsm_configuration_identifier = input;
-            self
+        pub fn set_hsm_configuration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hsm_configuration_identifier = input; self
         }
         /// <p>A text description of the HSM configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11375,8 +10485,7 @@ pub mod hsm_configuration {
         }
         /// <p>A text description of the HSM configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
         pub fn hsm_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11384,12 +10493,8 @@ pub mod hsm_configuration {
             self
         }
         /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
-        pub fn set_hsm_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hsm_ip_address = input;
-            self
+        pub fn set_hsm_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hsm_ip_address = input; self
         }
         /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
         pub fn hsm_partition_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11397,12 +10502,8 @@ pub mod hsm_configuration {
             self
         }
         /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
-        pub fn set_hsm_partition_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hsm_partition_name = input;
-            self
+        pub fn set_hsm_partition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hsm_partition_name = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -11411,29 +10512,32 @@ pub mod hsm_configuration {
         /// <p>The list of tags for the HSM configuration.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags for the HSM configuration.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`HsmConfiguration`](crate::model::HsmConfiguration).
         pub fn build(self) -> crate::model::HsmConfiguration {
             crate::model::HsmConfiguration {
-                hsm_configuration_identifier: self.hsm_configuration_identifier,
-                description: self.description,
-                hsm_ip_address: self.hsm_ip_address,
-                hsm_partition_name: self.hsm_partition_name,
-                tags: self.tags,
+                hsm_configuration_identifier: self.hsm_configuration_identifier
+                ,
+                description: self.description
+                ,
+                hsm_ip_address: self.hsm_ip_address
+                ,
+                hsm_partition_name: self.hsm_partition_name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl HsmConfiguration {
     /// Creates a new builder-style object to manufacture [`HsmConfiguration`](crate::model::HsmConfiguration).
@@ -11445,7 +10549,7 @@ impl HsmConfiguration {
 /// <p>Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HsmClientCertificate {
+pub struct HsmClientCertificate  {
     /// <p>The identifier of the HSM client certificate.</p>
     #[doc(hidden)]
     pub hsm_client_certificate_identifier: std::option::Option<std::string::String>,
@@ -11458,21 +10562,21 @@ pub struct HsmClientCertificate {
 }
 impl HsmClientCertificate {
     /// <p>The identifier of the HSM client certificate.</p>
-    pub fn hsm_client_certificate_identifier(&self) -> std::option::Option<&str> {
+    pub fn hsm_client_certificate_identifier(&self) -> std::option::Option<& str> {
         self.hsm_client_certificate_identifier.as_deref()
     }
     /// <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
-    pub fn hsm_client_certificate_public_key(&self) -> std::option::Option<&str> {
+    pub fn hsm_client_certificate_public_key(&self) -> std::option::Option<& str> {
         self.hsm_client_certificate_public_key.as_deref()
     }
     /// <p>The list of tags for the HSM client certificate.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`HsmClientCertificate`](crate::model::HsmClientCertificate).
 pub mod hsm_client_certificate {
-
+    
     /// A builder for [`HsmClientCertificate`](crate::model::HsmClientCertificate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11482,36 +10586,22 @@ pub mod hsm_client_certificate {
     }
     impl Builder {
         /// <p>The identifier of the HSM client certificate.</p>
-        pub fn hsm_client_certificate_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn hsm_client_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.hsm_client_certificate_identifier = Some(input.into());
             self
         }
         /// <p>The identifier of the HSM client certificate.</p>
-        pub fn set_hsm_client_certificate_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hsm_client_certificate_identifier = input;
-            self
+        pub fn set_hsm_client_certificate_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hsm_client_certificate_identifier = input; self
         }
         /// <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
-        pub fn hsm_client_certificate_public_key(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn hsm_client_certificate_public_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.hsm_client_certificate_public_key = Some(input.into());
             self
         }
         /// <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
-        pub fn set_hsm_client_certificate_public_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hsm_client_certificate_public_key = input;
-            self
+        pub fn set_hsm_client_certificate_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hsm_client_certificate_public_key = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -11520,27 +10610,28 @@ pub mod hsm_client_certificate {
         /// <p>The list of tags for the HSM client certificate.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags for the HSM client certificate.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`HsmClientCertificate`](crate::model::HsmClientCertificate).
         pub fn build(self) -> crate::model::HsmClientCertificate {
             crate::model::HsmClientCertificate {
-                hsm_client_certificate_identifier: self.hsm_client_certificate_identifier,
-                hsm_client_certificate_public_key: self.hsm_client_certificate_public_key,
-                tags: self.tags,
+                hsm_client_certificate_identifier: self.hsm_client_certificate_identifier
+                ,
+                hsm_client_certificate_public_key: self.hsm_client_certificate_public_key
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl HsmClientCertificate {
     /// Creates a new builder-style object to manufacture [`HsmClientCertificate`](crate::model::HsmClientCertificate).
@@ -11552,7 +10643,7 @@ impl HsmClientCertificate {
 /// <p>Describes an event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Event {
+pub struct Event  {
     /// <p>The identifier for the source of the event.</p>
     #[doc(hidden)]
     pub source_identifier: std::option::Option<std::string::String>,
@@ -11562,11 +10653,11 @@ pub struct Event {
     /// <p>The text of this event.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-    /// <p>A list of the event categories.</p>
+    /// <p>A list of the event categories.</p> 
     /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
     #[doc(hidden)]
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The severity of the event.</p>
+    /// <p>The severity of the event.</p> 
     /// <p>Values: ERROR, INFO</p>
     #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
@@ -11579,39 +10670,39 @@ pub struct Event {
 }
 impl Event {
     /// <p>The identifier for the source of the event.</p>
-    pub fn source_identifier(&self) -> std::option::Option<&str> {
+    pub fn source_identifier(&self) -> std::option::Option<& str> {
         self.source_identifier.as_deref()
     }
     /// <p>The source type for this event.</p>
-    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+    pub fn source_type(&self) -> std::option::Option<& crate::model::SourceType> {
         self.source_type.as_ref()
     }
     /// <p>The text of this event.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
-    /// <p>A list of the event categories.</p>
+    /// <p>A list of the event categories.</p> 
     /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
-    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn event_categories(&self) -> std::option::Option<& [std::string::String]> {
         self.event_categories.as_deref()
     }
-    /// <p>The severity of the event.</p>
+    /// <p>The severity of the event.</p> 
     /// <p>Values: ERROR, INFO</p>
-    pub fn severity(&self) -> std::option::Option<&str> {
+    pub fn severity(&self) -> std::option::Option<& str> {
         self.severity.as_deref()
     }
     /// <p>The date and time of the event.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>The identifier of the event.</p>
-    pub fn event_id(&self) -> std::option::Option<&str> {
+    pub fn event_id(&self) -> std::option::Option<& str> {
         self.event_id.as_deref()
     }
 }
 /// See [`Event`](crate::model::Event).
 pub mod event {
-
+    
     /// A builder for [`Event`](crate::model::Event).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11630,12 +10721,8 @@ pub mod event {
             self
         }
         /// <p>The identifier for the source of the event.</p>
-        pub fn set_source_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_identifier = input;
-            self
+        pub fn set_source_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_identifier = input; self
         }
         /// <p>The source type for this event.</p>
         pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
@@ -11643,12 +10730,8 @@ pub mod event {
             self
         }
         /// <p>The source type for this event.</p>
-        pub fn set_source_type(
-            mut self,
-            input: std::option::Option<crate::model::SourceType>,
-        ) -> Self {
-            self.source_type = input;
-            self
+        pub fn set_source_type(mut self, input: std::option::Option<crate::model::SourceType>) -> Self {
+            self.source_type = input; self
         }
         /// <p>The text of this event.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11657,41 +10740,35 @@ pub mod event {
         }
         /// <p>The text of this event.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Appends an item to `event_categories`.
         ///
         /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
         ///
-        /// <p>A list of the event categories.</p>
+        /// <p>A list of the event categories.</p> 
         /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
         pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_categories.unwrap_or_default();
-            v.push(input.into());
-            self.event_categories = Some(v);
-            self
+                            v.push(input.into());
+                            self.event_categories = Some(v);
+                            self
         }
-        /// <p>A list of the event categories.</p>
+        /// <p>A list of the event categories.</p> 
         /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
-        pub fn set_event_categories(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.event_categories = input;
-            self
+        pub fn set_event_categories(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.event_categories = input; self
         }
-        /// <p>The severity of the event.</p>
+        /// <p>The severity of the event.</p> 
         /// <p>Values: ERROR, INFO</p>
         pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
             self.severity = Some(input.into());
             self
         }
-        /// <p>The severity of the event.</p>
+        /// <p>The severity of the event.</p> 
         /// <p>Values: ERROR, INFO</p>
         pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.severity = input;
-            self
+            self.severity = input; self
         }
         /// <p>The date and time of the event.</p>
         pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11700,8 +10777,7 @@ pub mod event {
         }
         /// <p>The date and time of the event.</p>
         pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.date = input;
-            self
+            self.date = input; self
         }
         /// <p>The identifier of the event.</p>
         pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11710,22 +10786,30 @@ pub mod event {
         }
         /// <p>The identifier of the event.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_id = input;
-            self
+            self.event_id = input; self
         }
         /// Consumes the builder and constructs a [`Event`](crate::model::Event).
         pub fn build(self) -> crate::model::Event {
             crate::model::Event {
-                source_identifier: self.source_identifier,
-                source_type: self.source_type,
-                message: self.message,
-                event_categories: self.event_categories,
-                severity: self.severity,
-                date: self.date,
-                event_id: self.event_id,
+                source_identifier: self.source_identifier
+                ,
+                source_type: self.source_type
+                ,
+                message: self.message
+                ,
+                event_categories: self.event_categories
+                ,
+                severity: self.severity
+                ,
+                date: self.date
+                ,
+                event_id: self.event_id
+                ,
             }
         }
     }
+    
+    
 }
 impl Event {
     /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
@@ -11740,9 +10824,9 @@ impl Event {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sourcetype = unimplemented!();
 /// match sourcetype {
@@ -11767,22 +10851,14 @@ impl Event {
 /// Specifically, when `sourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SourceType {
     #[allow(missing_docs)] // documentation missing in model
     Cluster,
@@ -11795,7 +10871,7 @@ pub enum SourceType {
     #[allow(missing_docs)] // documentation missing in model
     ScheduledAction,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SourceType {
     fn from(s: &str) -> Self {
@@ -11805,17 +10881,17 @@ impl std::convert::From<&str> for SourceType {
             "cluster-security-group" => SourceType::ClusterSecurityGroup,
             "cluster-snapshot" => SourceType::ClusterSnapshot,
             "scheduled-action" => SourceType::ScheduledAction,
-            other => SourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SourceType::from(s))
+                }
+            }
 impl SourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -11825,17 +10901,13 @@ impl SourceType {
             SourceType::ClusterSecurityGroup => "cluster-security-group",
             SourceType::ClusterSnapshot => "cluster-snapshot",
             SourceType::ScheduledAction => "scheduled-action",
-            SourceType::Unknown(value) => value.as_str(),
+            SourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "cluster",
-            "cluster-parameter-group",
-            "cluster-security-group",
-            "cluster-snapshot",
-            "scheduled-action",
+            "cluster", "cluster-parameter-group", "cluster-security-group", "cluster-snapshot", "scheduled-action"
         ]
     }
 }
@@ -11848,7 +10920,7 @@ impl AsRef<str> for SourceType {
 /// <p>Describes event categories.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventCategoriesMap {
+pub struct EventCategoriesMap  {
     /// <p>The source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
     #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
@@ -11858,17 +10930,17 @@ pub struct EventCategoriesMap {
 }
 impl EventCategoriesMap {
     /// <p>The source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
-    pub fn source_type(&self) -> std::option::Option<&str> {
+    pub fn source_type(&self) -> std::option::Option<& str> {
         self.source_type.as_deref()
     }
     /// <p>The events in the event category.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::model::EventInfoMap]> {
+    pub fn events(&self) -> std::option::Option<& [crate::model::EventInfoMap]> {
         self.events.as_deref()
     }
 }
 /// See [`EventCategoriesMap`](crate::model::EventCategoriesMap).
 pub mod event_categories_map {
-
+    
     /// A builder for [`EventCategoriesMap`](crate::model::EventCategoriesMap).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11883,8 +10955,7 @@ pub mod event_categories_map {
         }
         /// <p>The source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
         pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_type = input;
-            self
+            self.source_type = input; self
         }
         /// Appends an item to `events`.
         ///
@@ -11893,26 +10964,26 @@ pub mod event_categories_map {
         /// <p>The events in the event category.</p>
         pub fn events(mut self, input: crate::model::EventInfoMap) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input);
-            self.events = Some(v);
-            self
+                            v.push(input);
+                            self.events = Some(v);
+                            self
         }
         /// <p>The events in the event category.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventInfoMap>>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventInfoMap>>) -> Self {
+            self.events = input; self
         }
         /// Consumes the builder and constructs a [`EventCategoriesMap`](crate::model::EventCategoriesMap).
         pub fn build(self) -> crate::model::EventCategoriesMap {
             crate::model::EventCategoriesMap {
-                source_type: self.source_type,
-                events: self.events,
+                source_type: self.source_type
+                ,
+                events: self.events
+                ,
             }
         }
     }
+    
+    
 }
 impl EventCategoriesMap {
     /// Creates a new builder-style object to manufacture [`EventCategoriesMap`](crate::model::EventCategoriesMap).
@@ -11924,7 +10995,7 @@ impl EventCategoriesMap {
 /// <p>Describes event information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventInfoMap {
+pub struct EventInfoMap  {
     /// <p>The identifier of an Amazon Redshift event.</p>
     #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
@@ -11934,33 +11005,33 @@ pub struct EventInfoMap {
     /// <p>The description of an Amazon Redshift event.</p>
     #[doc(hidden)]
     pub event_description: std::option::Option<std::string::String>,
-    /// <p>The severity of the event.</p>
+    /// <p>The severity of the event.</p> 
     /// <p>Values: ERROR, INFO</p>
     #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
 }
 impl EventInfoMap {
     /// <p>The identifier of an Amazon Redshift event.</p>
-    pub fn event_id(&self) -> std::option::Option<&str> {
+    pub fn event_id(&self) -> std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The category of an Amazon Redshift event.</p>
-    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn event_categories(&self) -> std::option::Option<& [std::string::String]> {
         self.event_categories.as_deref()
     }
     /// <p>The description of an Amazon Redshift event.</p>
-    pub fn event_description(&self) -> std::option::Option<&str> {
+    pub fn event_description(&self) -> std::option::Option<& str> {
         self.event_description.as_deref()
     }
-    /// <p>The severity of the event.</p>
+    /// <p>The severity of the event.</p> 
     /// <p>Values: ERROR, INFO</p>
-    pub fn severity(&self) -> std::option::Option<&str> {
+    pub fn severity(&self) -> std::option::Option<& str> {
         self.severity.as_deref()
     }
 }
 /// See [`EventInfoMap`](crate::model::EventInfoMap).
 pub mod event_info_map {
-
+    
     /// A builder for [`EventInfoMap`](crate::model::EventInfoMap).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11977,8 +11048,7 @@ pub mod event_info_map {
         }
         /// <p>The identifier of an Amazon Redshift event.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_id = input;
-            self
+            self.event_id = input; self
         }
         /// Appends an item to `event_categories`.
         ///
@@ -11987,17 +11057,13 @@ pub mod event_info_map {
         /// <p>The category of an Amazon Redshift event.</p>
         pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_categories.unwrap_or_default();
-            v.push(input.into());
-            self.event_categories = Some(v);
-            self
+                            v.push(input.into());
+                            self.event_categories = Some(v);
+                            self
         }
         /// <p>The category of an Amazon Redshift event.</p>
-        pub fn set_event_categories(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.event_categories = input;
-            self
+        pub fn set_event_categories(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.event_categories = input; self
         }
         /// <p>The description of an Amazon Redshift event.</p>
         pub fn event_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12005,35 +11071,36 @@ pub mod event_info_map {
             self
         }
         /// <p>The description of an Amazon Redshift event.</p>
-        pub fn set_event_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_description = input;
-            self
+        pub fn set_event_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_description = input; self
         }
-        /// <p>The severity of the event.</p>
+        /// <p>The severity of the event.</p> 
         /// <p>Values: ERROR, INFO</p>
         pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
             self.severity = Some(input.into());
             self
         }
-        /// <p>The severity of the event.</p>
+        /// <p>The severity of the event.</p> 
         /// <p>Values: ERROR, INFO</p>
         pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.severity = input;
-            self
+            self.severity = input; self
         }
         /// Consumes the builder and constructs a [`EventInfoMap`](crate::model::EventInfoMap).
         pub fn build(self) -> crate::model::EventInfoMap {
             crate::model::EventInfoMap {
-                event_id: self.event_id,
-                event_categories: self.event_categories,
-                event_description: self.event_description,
-                severity: self.severity,
+                event_id: self.event_id
+                ,
+                event_categories: self.event_categories
+                ,
+                event_description: self.event_description
+                ,
+                severity: self.severity
+                ,
             }
         }
     }
+    
+    
 }
 impl EventInfoMap {
     /// Creates a new builder-style object to manufacture [`EventInfoMap`](crate::model::EventInfoMap).
@@ -12045,7 +11112,7 @@ impl EventInfoMap {
 /// <p>Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across Amazon Web Services accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointAuthorization {
+pub struct EndpointAuthorization  {
     /// <p>The Amazon Web Services account ID of the cluster owner.</p>
     #[doc(hidden)]
     pub grantor: std::option::Option<std::string::String>,
@@ -12076,27 +11143,27 @@ pub struct EndpointAuthorization {
 }
 impl EndpointAuthorization {
     /// <p>The Amazon Web Services account ID of the cluster owner.</p>
-    pub fn grantor(&self) -> std::option::Option<&str> {
+    pub fn grantor(&self) -> std::option::Option<& str> {
         self.grantor.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
-    pub fn grantee(&self) -> std::option::Option<&str> {
+    pub fn grantee(&self) -> std::option::Option<& str> {
         self.grantee.as_deref()
     }
     /// <p>The cluster identifier.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The time (UTC) when the authorization was created.</p>
-    pub fn authorize_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn authorize_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.authorize_time.as_ref()
     }
     /// <p>The status of the cluster.</p>
-    pub fn cluster_status(&self) -> std::option::Option<&str> {
+    pub fn cluster_status(&self) -> std::option::Option<& str> {
         self.cluster_status.as_deref()
     }
     /// <p>The status of the authorization action.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AuthorizationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AuthorizationStatus> {
         self.status.as_ref()
     }
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
@@ -12104,7 +11171,7 @@ impl EndpointAuthorization {
         self.allowed_all_vp_cs
     }
     /// <p>The VPCs allowed access to the cluster.</p>
-    pub fn allowed_vp_cs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_vp_cs(&self) -> std::option::Option<& [std::string::String]> {
         self.allowed_vp_cs.as_deref()
     }
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
@@ -12114,7 +11181,7 @@ impl EndpointAuthorization {
 }
 /// See [`EndpointAuthorization`](crate::model::EndpointAuthorization).
 pub mod endpoint_authorization {
-
+    
     /// A builder for [`EndpointAuthorization`](crate::model::EndpointAuthorization).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12136,8 +11203,7 @@ pub mod endpoint_authorization {
         }
         /// <p>The Amazon Web Services account ID of the cluster owner.</p>
         pub fn set_grantor(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grantor = input;
-            self
+            self.grantor = input; self
         }
         /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
         pub fn grantee(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12146,8 +11212,7 @@ pub mod endpoint_authorization {
         }
         /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
         pub fn set_grantee(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grantee = input;
-            self
+            self.grantee = input; self
         }
         /// <p>The cluster identifier.</p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12155,12 +11220,8 @@ pub mod endpoint_authorization {
             self
         }
         /// <p>The cluster identifier.</p>
-        pub fn set_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_identifier = input;
-            self
+        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_identifier = input; self
         }
         /// <p>The time (UTC) when the authorization was created.</p>
         pub fn authorize_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12168,12 +11229,8 @@ pub mod endpoint_authorization {
             self
         }
         /// <p>The time (UTC) when the authorization was created.</p>
-        pub fn set_authorize_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.authorize_time = input;
-            self
+        pub fn set_authorize_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.authorize_time = input; self
         }
         /// <p>The status of the cluster.</p>
         pub fn cluster_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12181,12 +11238,8 @@ pub mod endpoint_authorization {
             self
         }
         /// <p>The status of the cluster.</p>
-        pub fn set_cluster_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_status = input;
-            self
+        pub fn set_cluster_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_status = input; self
         }
         /// <p>The status of the authorization action.</p>
         pub fn status(mut self, input: crate::model::AuthorizationStatus) -> Self {
@@ -12194,12 +11247,8 @@ pub mod endpoint_authorization {
             self
         }
         /// <p>The status of the authorization action.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AuthorizationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AuthorizationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
         pub fn allowed_all_vp_cs(mut self, input: bool) -> Self {
@@ -12208,8 +11257,7 @@ pub mod endpoint_authorization {
         }
         /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
         pub fn set_allowed_all_vp_cs(mut self, input: std::option::Option<bool>) -> Self {
-            self.allowed_all_vp_cs = input;
-            self
+            self.allowed_all_vp_cs = input; self
         }
         /// Appends an item to `allowed_vp_cs`.
         ///
@@ -12218,17 +11266,13 @@ pub mod endpoint_authorization {
         /// <p>The VPCs allowed access to the cluster.</p>
         pub fn allowed_vp_cs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_vp_cs.unwrap_or_default();
-            v.push(input.into());
-            self.allowed_vp_cs = Some(v);
-            self
+                            v.push(input.into());
+                            self.allowed_vp_cs = Some(v);
+                            self
         }
         /// <p>The VPCs allowed access to the cluster.</p>
-        pub fn set_allowed_vp_cs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.allowed_vp_cs = input;
-            self
+        pub fn set_allowed_vp_cs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.allowed_vp_cs = input; self
         }
         /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
         pub fn endpoint_count(mut self, input: i32) -> Self {
@@ -12237,24 +11281,36 @@ pub mod endpoint_authorization {
         }
         /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
         pub fn set_endpoint_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.endpoint_count = input;
-            self
+            self.endpoint_count = input; self
         }
         /// Consumes the builder and constructs a [`EndpointAuthorization`](crate::model::EndpointAuthorization).
         pub fn build(self) -> crate::model::EndpointAuthorization {
             crate::model::EndpointAuthorization {
-                grantor: self.grantor,
-                grantee: self.grantee,
-                cluster_identifier: self.cluster_identifier,
-                authorize_time: self.authorize_time,
-                cluster_status: self.cluster_status,
-                status: self.status,
-                allowed_all_vp_cs: self.allowed_all_vp_cs.unwrap_or_default(),
-                allowed_vp_cs: self.allowed_vp_cs,
-                endpoint_count: self.endpoint_count.unwrap_or_default(),
+                grantor: self.grantor
+                ,
+                grantee: self.grantee
+                ,
+                cluster_identifier: self.cluster_identifier
+                ,
+                authorize_time: self.authorize_time
+                ,
+                cluster_status: self.cluster_status
+                ,
+                status: self.status
+                ,
+                allowed_all_vp_cs: self.allowed_all_vp_cs
+                    .unwrap_or_default()
+                ,
+                allowed_vp_cs: self.allowed_vp_cs
+                ,
+                endpoint_count: self.endpoint_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl EndpointAuthorization {
     /// Creates a new builder-style object to manufacture [`EndpointAuthorization`](crate::model::EndpointAuthorization).
@@ -12266,7 +11322,7 @@ impl EndpointAuthorization {
 /// <p>Describes a Redshift-managed VPC endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointAccess {
+pub struct EndpointAccess  {
     /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -12293,35 +11349,34 @@ pub struct EndpointAccess {
     pub address: std::option::Option<std::string::String>,
     /// <p>The security groups associated with the endpoint.</p>
     #[doc(hidden)]
-    pub vpc_security_groups:
-        std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
+    pub vpc_security_groups: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
     /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
     #[doc(hidden)]
     pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
 }
 impl EndpointAccess {
     /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
-    pub fn resource_owner(&self) -> std::option::Option<&str> {
+    pub fn resource_owner(&self) -> std::option::Option<& str> {
         self.resource_owner.as_deref()
     }
     /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
-    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
+    pub fn subnet_group_name(&self) -> std::option::Option<& str> {
         self.subnet_group_name.as_deref()
     }
     /// <p>The status of the endpoint.</p>
-    pub fn endpoint_status(&self) -> std::option::Option<&str> {
+    pub fn endpoint_status(&self) -> std::option::Option<& str> {
         self.endpoint_status.as_deref()
     }
     /// <p>The name of the endpoint.</p>
-    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
     /// <p>The time (UTC) that the endpoint was created.</p>
-    pub fn endpoint_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn endpoint_create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.endpoint_create_time.as_ref()
     }
     /// <p>The port number on which the cluster accepts incoming connections.</p>
@@ -12329,23 +11384,21 @@ impl EndpointAccess {
         self.port
     }
     /// <p>The DNS address of the endpoint.</p>
-    pub fn address(&self) -> std::option::Option<&str> {
+    pub fn address(&self) -> std::option::Option<& str> {
         self.address.as_deref()
     }
     /// <p>The security groups associated with the endpoint.</p>
-    pub fn vpc_security_groups(
-        &self,
-    ) -> std::option::Option<&[crate::model::VpcSecurityGroupMembership]> {
+    pub fn vpc_security_groups(&self) -> std::option::Option<& [crate::model::VpcSecurityGroupMembership]> {
         self.vpc_security_groups.as_deref()
     }
     /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
-    pub fn vpc_endpoint(&self) -> std::option::Option<&crate::model::VpcEndpoint> {
+    pub fn vpc_endpoint(&self) -> std::option::Option<& crate::model::VpcEndpoint> {
         self.vpc_endpoint.as_ref()
     }
 }
 /// See [`EndpointAccess`](crate::model::EndpointAccess).
 pub mod endpoint_access {
-
+    
     /// A builder for [`EndpointAccess`](crate::model::EndpointAccess).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12357,8 +11410,7 @@ pub mod endpoint_access {
         pub(crate) endpoint_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) port: std::option::Option<i32>,
         pub(crate) address: std::option::Option<std::string::String>,
-        pub(crate) vpc_security_groups:
-            std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
+        pub(crate) vpc_security_groups: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
         pub(crate) vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
     }
     impl Builder {
@@ -12368,12 +11420,8 @@ pub mod endpoint_access {
             self
         }
         /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
-        pub fn set_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_identifier = input;
-            self
+        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_identifier = input; self
         }
         /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12381,12 +11429,8 @@ pub mod endpoint_access {
             self
         }
         /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
-        pub fn set_resource_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner = input;
-            self
+        pub fn set_resource_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner = input; self
         }
         /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
         pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12394,12 +11438,8 @@ pub mod endpoint_access {
             self
         }
         /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
-        pub fn set_subnet_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subnet_group_name = input;
-            self
+        pub fn set_subnet_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subnet_group_name = input; self
         }
         /// <p>The status of the endpoint.</p>
         pub fn endpoint_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12407,12 +11447,8 @@ pub mod endpoint_access {
             self
         }
         /// <p>The status of the endpoint.</p>
-        pub fn set_endpoint_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.endpoint_status = input;
-            self
+        pub fn set_endpoint_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_status = input; self
         }
         /// <p>The name of the endpoint.</p>
         pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12420,12 +11456,8 @@ pub mod endpoint_access {
             self
         }
         /// <p>The name of the endpoint.</p>
-        pub fn set_endpoint_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.endpoint_name = input;
-            self
+        pub fn set_endpoint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_name = input; self
         }
         /// <p>The time (UTC) that the endpoint was created.</p>
         pub fn endpoint_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12433,12 +11465,8 @@ pub mod endpoint_access {
             self
         }
         /// <p>The time (UTC) that the endpoint was created.</p>
-        pub fn set_endpoint_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.endpoint_create_time = input;
-            self
+        pub fn set_endpoint_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.endpoint_create_time = input; self
         }
         /// <p>The port number on which the cluster accepts incoming connections.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -12447,8 +11475,7 @@ pub mod endpoint_access {
         }
         /// <p>The port number on which the cluster accepts incoming connections.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// <p>The DNS address of the endpoint.</p>
         pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12457,30 +11484,22 @@ pub mod endpoint_access {
         }
         /// <p>The DNS address of the endpoint.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address = input;
-            self
+            self.address = input; self
         }
         /// Appends an item to `vpc_security_groups`.
         ///
         /// To override the contents of this collection use [`set_vpc_security_groups`](Self::set_vpc_security_groups).
         ///
         /// <p>The security groups associated with the endpoint.</p>
-        pub fn vpc_security_groups(
-            mut self,
-            input: crate::model::VpcSecurityGroupMembership,
-        ) -> Self {
+        pub fn vpc_security_groups(mut self, input: crate::model::VpcSecurityGroupMembership) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input);
-            self.vpc_security_groups = Some(v);
-            self
+                            v.push(input);
+                            self.vpc_security_groups = Some(v);
+                            self
         }
         /// <p>The security groups associated with the endpoint.</p>
-        pub fn set_vpc_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
-        ) -> Self {
-            self.vpc_security_groups = input;
-            self
+        pub fn set_vpc_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>) -> Self {
+            self.vpc_security_groups = input; self
         }
         /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
         pub fn vpc_endpoint(mut self, input: crate::model::VpcEndpoint) -> Self {
@@ -12488,29 +11507,38 @@ pub mod endpoint_access {
             self
         }
         /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
-        pub fn set_vpc_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::VpcEndpoint>,
-        ) -> Self {
-            self.vpc_endpoint = input;
-            self
+        pub fn set_vpc_endpoint(mut self, input: std::option::Option<crate::model::VpcEndpoint>) -> Self {
+            self.vpc_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`EndpointAccess`](crate::model::EndpointAccess).
         pub fn build(self) -> crate::model::EndpointAccess {
             crate::model::EndpointAccess {
-                cluster_identifier: self.cluster_identifier,
-                resource_owner: self.resource_owner,
-                subnet_group_name: self.subnet_group_name,
-                endpoint_status: self.endpoint_status,
-                endpoint_name: self.endpoint_name,
-                endpoint_create_time: self.endpoint_create_time,
-                port: self.port.unwrap_or_default(),
-                address: self.address,
-                vpc_security_groups: self.vpc_security_groups,
-                vpc_endpoint: self.vpc_endpoint,
+                cluster_identifier: self.cluster_identifier
+                ,
+                resource_owner: self.resource_owner
+                ,
+                subnet_group_name: self.subnet_group_name
+                ,
+                endpoint_status: self.endpoint_status
+                ,
+                endpoint_name: self.endpoint_name
+                ,
+                endpoint_create_time: self.endpoint_create_time
+                ,
+                port: self.port
+                    .unwrap_or_default()
+                ,
+                address: self.address
+                ,
+                vpc_security_groups: self.vpc_security_groups
+                ,
+                vpc_endpoint: self.vpc_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl EndpointAccess {
     /// Creates a new builder-style object to manufacture [`EndpointAccess`](crate::model::EndpointAccess).
@@ -12522,7 +11550,7 @@ impl EndpointAccess {
 /// <p>Describes the default cluster parameters for a parameter group family.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefaultClusterParameters {
+pub struct DefaultClusterParameters  {
     /// <p>The name of the cluster parameter group family to which the engine default parameters apply.</p>
     #[doc(hidden)]
     pub parameter_group_family: std::option::Option<std::string::String>,
@@ -12535,21 +11563,21 @@ pub struct DefaultClusterParameters {
 }
 impl DefaultClusterParameters {
     /// <p>The name of the cluster parameter group family to which the engine default parameters apply.</p>
-    pub fn parameter_group_family(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_family(&self) -> std::option::Option<& str> {
         self.parameter_group_family.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The list of cluster default parameters.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::Parameter]> {
         self.parameters.as_deref()
     }
 }
 /// See [`DefaultClusterParameters`](crate::model::DefaultClusterParameters).
 pub mod default_cluster_parameters {
-
+    
     /// A builder for [`DefaultClusterParameters`](crate::model::DefaultClusterParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12564,12 +11592,8 @@ pub mod default_cluster_parameters {
             self
         }
         /// <p>The name of the cluster parameter group family to which the engine default parameters apply.</p>
-        pub fn set_parameter_group_family(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parameter_group_family = input;
-            self
+        pub fn set_parameter_group_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameter_group_family = input; self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12578,8 +11602,7 @@ pub mod default_cluster_parameters {
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `parameters`.
         ///
@@ -12588,27 +11611,28 @@ pub mod default_cluster_parameters {
         /// <p>The list of cluster default parameters.</p>
         pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>The list of cluster default parameters.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Parameter>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`DefaultClusterParameters`](crate::model::DefaultClusterParameters).
         pub fn build(self) -> crate::model::DefaultClusterParameters {
             crate::model::DefaultClusterParameters {
-                parameter_group_family: self.parameter_group_family,
-                marker: self.marker,
-                parameters: self.parameters,
+                parameter_group_family: self.parameter_group_family
+                ,
+                marker: self.marker
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl DefaultClusterParameters {
     /// Creates a new builder-style object to manufacture [`DefaultClusterParameters`](crate::model::DefaultClusterParameters).
@@ -12620,7 +11644,7 @@ impl DefaultClusterParameters {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataShare {
+pub struct DataShare  {
     /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
     #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
@@ -12632,19 +11656,18 @@ pub struct DataShare {
     pub allow_publicly_accessible_consumers: bool,
     /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     #[doc(hidden)]
-    pub data_share_associations:
-        std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+    pub data_share_associations: std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
     /// <p>The identifier of a datashare to show its managing entity.</p>
     #[doc(hidden)]
     pub managed_by: std::option::Option<std::string::String>,
 }
 impl DataShare {
     /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
-    pub fn data_share_arn(&self) -> std::option::Option<&str> {
+    pub fn data_share_arn(&self) -> std::option::Option<& str> {
         self.data_share_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the producer.</p>
-    pub fn producer_arn(&self) -> std::option::Option<&str> {
+    pub fn producer_arn(&self) -> std::option::Option<& str> {
         self.producer_arn.as_deref()
     }
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
@@ -12652,27 +11675,24 @@ impl DataShare {
         self.allow_publicly_accessible_consumers
     }
     /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
-    pub fn data_share_associations(
-        &self,
-    ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
+    pub fn data_share_associations(&self) -> std::option::Option<& [crate::model::DataShareAssociation]> {
         self.data_share_associations.as_deref()
     }
     /// <p>The identifier of a datashare to show its managing entity.</p>
-    pub fn managed_by(&self) -> std::option::Option<&str> {
+    pub fn managed_by(&self) -> std::option::Option<& str> {
         self.managed_by.as_deref()
     }
 }
 /// See [`DataShare`](crate::model::DataShare).
 pub mod data_share {
-
+    
     /// A builder for [`DataShare`](crate::model::DataShare).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_share_arn: std::option::Option<std::string::String>,
         pub(crate) producer_arn: std::option::Option<std::string::String>,
         pub(crate) allow_publicly_accessible_consumers: std::option::Option<bool>,
-        pub(crate) data_share_associations:
-            std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+        pub(crate) data_share_associations: std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
         pub(crate) managed_by: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -12682,12 +11702,8 @@ pub mod data_share {
             self
         }
         /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
-        pub fn set_data_share_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_share_arn = input;
-            self
+        pub fn set_data_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_share_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the producer.</p>
         pub fn producer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12696,8 +11712,7 @@ pub mod data_share {
         }
         /// <p>The Amazon Resource Name (ARN) of the producer.</p>
         pub fn set_producer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.producer_arn = input;
-            self
+            self.producer_arn = input; self
         }
         /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
         pub fn allow_publicly_accessible_consumers(mut self, input: bool) -> Self {
@@ -12705,34 +11720,23 @@ pub mod data_share {
             self
         }
         /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
-        pub fn set_allow_publicly_accessible_consumers(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.allow_publicly_accessible_consumers = input;
-            self
+        pub fn set_allow_publicly_accessible_consumers(mut self, input: std::option::Option<bool>) -> Self {
+            self.allow_publicly_accessible_consumers = input; self
         }
         /// Appends an item to `data_share_associations`.
         ///
         /// To override the contents of this collection use [`set_data_share_associations`](Self::set_data_share_associations).
         ///
         /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
-        pub fn data_share_associations(
-            mut self,
-            input: crate::model::DataShareAssociation,
-        ) -> Self {
+        pub fn data_share_associations(mut self, input: crate::model::DataShareAssociation) -> Self {
             let mut v = self.data_share_associations.unwrap_or_default();
-            v.push(input);
-            self.data_share_associations = Some(v);
-            self
+                            v.push(input);
+                            self.data_share_associations = Some(v);
+                            self
         }
         /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
-        pub fn set_data_share_associations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
-        ) -> Self {
-            self.data_share_associations = input;
-            self
+        pub fn set_data_share_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>) -> Self {
+            self.data_share_associations = input; self
         }
         /// <p>The identifier of a datashare to show its managing entity.</p>
         pub fn managed_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12741,22 +11745,27 @@ pub mod data_share {
         }
         /// <p>The identifier of a datashare to show its managing entity.</p>
         pub fn set_managed_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.managed_by = input;
-            self
+            self.managed_by = input; self
         }
         /// Consumes the builder and constructs a [`DataShare`](crate::model::DataShare).
         pub fn build(self) -> crate::model::DataShare {
             crate::model::DataShare {
-                data_share_arn: self.data_share_arn,
-                producer_arn: self.producer_arn,
-                allow_publicly_accessible_consumers: self
-                    .allow_publicly_accessible_consumers
-                    .unwrap_or_default(),
-                data_share_associations: self.data_share_associations,
-                managed_by: self.managed_by,
+                data_share_arn: self.data_share_arn
+                ,
+                producer_arn: self.producer_arn
+                ,
+                allow_publicly_accessible_consumers: self.allow_publicly_accessible_consumers
+                    .unwrap_or_default()
+                ,
+                data_share_associations: self.data_share_associations
+                ,
+                managed_by: self.managed_by
+                ,
             }
         }
     }
+    
+    
 }
 impl DataShare {
     /// Creates a new builder-style object to manufacture [`DataShare`](crate::model::DataShare).
@@ -12771,9 +11780,9 @@ impl DataShare {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datasharestatusforproducer = unimplemented!();
 /// match datasharestatusforproducer {
@@ -12798,22 +11807,14 @@ impl DataShare {
 /// Specifically, when `datasharestatusforproducer` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataShareStatusForProducer::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataShareStatusForProducer {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -12826,7 +11827,7 @@ pub enum DataShareStatusForProducer {
     #[allow(missing_docs)] // documentation missing in model
     Rejected,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataShareStatusForProducer {
     fn from(s: &str) -> Self {
@@ -12836,19 +11837,17 @@ impl std::convert::From<&str> for DataShareStatusForProducer {
             "DEAUTHORIZED" => DataShareStatusForProducer::Deauthorized,
             "PENDING_AUTHORIZATION" => DataShareStatusForProducer::PendingAuthorization,
             "REJECTED" => DataShareStatusForProducer::Rejected,
-            other => DataShareStatusForProducer::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DataShareStatusForProducer::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataShareStatusForProducer {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataShareStatusForProducer::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataShareStatusForProducer::from(s))
+                }
+            }
 impl DataShareStatusForProducer {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -12858,17 +11857,13 @@ impl DataShareStatusForProducer {
             DataShareStatusForProducer::Deauthorized => "DEAUTHORIZED",
             DataShareStatusForProducer::PendingAuthorization => "PENDING_AUTHORIZATION",
             DataShareStatusForProducer::Rejected => "REJECTED",
-            DataShareStatusForProducer::Unknown(value) => value.as_str(),
+            DataShareStatusForProducer::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "AUTHORIZED",
-            "DEAUTHORIZED",
-            "PENDING_AUTHORIZATION",
-            "REJECTED",
+            "ACTIVE", "AUTHORIZED", "DEAUTHORIZED", "PENDING_AUTHORIZATION", "REJECTED"
         ]
     }
 }
@@ -12884,9 +11879,9 @@ impl AsRef<str> for DataShareStatusForProducer {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datasharestatusforconsumer = unimplemented!();
 /// match datasharestatusforconsumer {
@@ -12908,60 +11903,52 @@ impl AsRef<str> for DataShareStatusForProducer {
 /// Specifically, when `datasharestatusforconsumer` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataShareStatusForConsumer::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataShareStatusForConsumer {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Available,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataShareStatusForConsumer {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => DataShareStatusForConsumer::Active,
             "AVAILABLE" => DataShareStatusForConsumer::Available,
-            other => DataShareStatusForConsumer::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DataShareStatusForConsumer::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataShareStatusForConsumer {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataShareStatusForConsumer::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataShareStatusForConsumer::from(s))
+                }
+            }
 impl DataShareStatusForConsumer {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataShareStatusForConsumer::Active => "ACTIVE",
             DataShareStatusForConsumer::Available => "AVAILABLE",
-            DataShareStatusForConsumer::Unknown(value) => value.as_str(),
+            DataShareStatusForConsumer::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "AVAILABLE"]
+        &[
+            "ACTIVE", "AVAILABLE"
+        ]
     }
 }
 impl AsRef<str> for DataShareStatusForConsumer {
@@ -12973,7 +11960,7 @@ impl AsRef<str> for DataShareStatusForConsumer {
 /// <p>Describes a cluster version, including the parameter group family and description of the version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterVersion {
+pub struct ClusterVersion  {
     /// <p>The version number used by the cluster.</p>
     #[doc(hidden)]
     pub cluster_version: std::option::Option<std::string::String>,
@@ -12986,21 +11973,21 @@ pub struct ClusterVersion {
 }
 impl ClusterVersion {
     /// <p>The version number used by the cluster.</p>
-    pub fn cluster_version(&self) -> std::option::Option<&str> {
+    pub fn cluster_version(&self) -> std::option::Option<& str> {
         self.cluster_version.as_deref()
     }
     /// <p>The name of the cluster parameter group family for the cluster.</p>
-    pub fn cluster_parameter_group_family(&self) -> std::option::Option<&str> {
+    pub fn cluster_parameter_group_family(&self) -> std::option::Option<& str> {
         self.cluster_parameter_group_family.as_deref()
     }
     /// <p>The description of the cluster version.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`ClusterVersion`](crate::model::ClusterVersion).
 pub mod cluster_version {
-
+    
     /// A builder for [`ClusterVersion`](crate::model::ClusterVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13015,28 +12002,17 @@ pub mod cluster_version {
             self
         }
         /// <p>The version number used by the cluster.</p>
-        pub fn set_cluster_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_version = input;
-            self
+        pub fn set_cluster_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_version = input; self
         }
         /// <p>The name of the cluster parameter group family for the cluster.</p>
-        pub fn cluster_parameter_group_family(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn cluster_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_parameter_group_family = Some(input.into());
             self
         }
         /// <p>The name of the cluster parameter group family for the cluster.</p>
-        pub fn set_cluster_parameter_group_family(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_parameter_group_family = input;
-            self
+        pub fn set_cluster_parameter_group_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_parameter_group_family = input; self
         }
         /// <p>The description of the cluster version.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13045,18 +12021,22 @@ pub mod cluster_version {
         }
         /// <p>The description of the cluster version.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`ClusterVersion`](crate::model::ClusterVersion).
         pub fn build(self) -> crate::model::ClusterVersion {
             crate::model::ClusterVersion {
-                cluster_version: self.cluster_version,
-                cluster_parameter_group_family: self.cluster_parameter_group_family,
-                description: self.description,
+                cluster_version: self.cluster_version
+                ,
+                cluster_parameter_group_family: self.cluster_parameter_group_family
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterVersion {
     /// Creates a new builder-style object to manufacture [`ClusterVersion`](crate::model::ClusterVersion).
@@ -13068,7 +12048,7 @@ impl ClusterVersion {
 /// <p>Defines a maintenance track that determines which Amazon Redshift version to apply during a maintenance window. If the value for <code>MaintenanceTrack</code> is <code>current</code>, the cluster is updated to the most recently certified maintenance release. If the value is <code>trailing</code>, the cluster is updated to the previously certified maintenance release. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MaintenanceTrack {
+pub struct MaintenanceTrack  {
     /// <p>The name of the maintenance track. Possible values are <code>current</code> and <code>trailing</code>.</p>
     #[doc(hidden)]
     pub maintenance_track_name: std::option::Option<std::string::String>,
@@ -13081,21 +12061,21 @@ pub struct MaintenanceTrack {
 }
 impl MaintenanceTrack {
     /// <p>The name of the maintenance track. Possible values are <code>current</code> and <code>trailing</code>.</p>
-    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+    pub fn maintenance_track_name(&self) -> std::option::Option<& str> {
         self.maintenance_track_name.as_deref()
     }
     /// <p>The version number for the cluster release.</p>
-    pub fn database_version(&self) -> std::option::Option<&str> {
+    pub fn database_version(&self) -> std::option::Option<& str> {
         self.database_version.as_deref()
     }
     /// <p>An array of <code>UpdateTarget</code> objects to update with the maintenance track. </p>
-    pub fn update_targets(&self) -> std::option::Option<&[crate::model::UpdateTarget]> {
+    pub fn update_targets(&self) -> std::option::Option<& [crate::model::UpdateTarget]> {
         self.update_targets.as_deref()
     }
 }
 /// See [`MaintenanceTrack`](crate::model::MaintenanceTrack).
 pub mod maintenance_track {
-
+    
     /// A builder for [`MaintenanceTrack`](crate::model::MaintenanceTrack).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13110,12 +12090,8 @@ pub mod maintenance_track {
             self
         }
         /// <p>The name of the maintenance track. Possible values are <code>current</code> and <code>trailing</code>.</p>
-        pub fn set_maintenance_track_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.maintenance_track_name = input;
-            self
+        pub fn set_maintenance_track_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.maintenance_track_name = input; self
         }
         /// <p>The version number for the cluster release.</p>
         pub fn database_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13123,12 +12099,8 @@ pub mod maintenance_track {
             self
         }
         /// <p>The version number for the cluster release.</p>
-        pub fn set_database_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_version = input;
-            self
+        pub fn set_database_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_version = input; self
         }
         /// Appends an item to `update_targets`.
         ///
@@ -13137,27 +12109,28 @@ pub mod maintenance_track {
         /// <p>An array of <code>UpdateTarget</code> objects to update with the maintenance track. </p>
         pub fn update_targets(mut self, input: crate::model::UpdateTarget) -> Self {
             let mut v = self.update_targets.unwrap_or_default();
-            v.push(input);
-            self.update_targets = Some(v);
-            self
+                            v.push(input);
+                            self.update_targets = Some(v);
+                            self
         }
         /// <p>An array of <code>UpdateTarget</code> objects to update with the maintenance track. </p>
-        pub fn set_update_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UpdateTarget>>,
-        ) -> Self {
-            self.update_targets = input;
-            self
+        pub fn set_update_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpdateTarget>>) -> Self {
+            self.update_targets = input; self
         }
         /// Consumes the builder and constructs a [`MaintenanceTrack`](crate::model::MaintenanceTrack).
         pub fn build(self) -> crate::model::MaintenanceTrack {
             crate::model::MaintenanceTrack {
-                maintenance_track_name: self.maintenance_track_name,
-                database_version: self.database_version,
-                update_targets: self.update_targets,
+                maintenance_track_name: self.maintenance_track_name
+                ,
+                database_version: self.database_version
+                ,
+                update_targets: self.update_targets
+                ,
             }
         }
     }
+    
+    
 }
 impl MaintenanceTrack {
     /// Creates a new builder-style object to manufacture [`MaintenanceTrack`](crate::model::MaintenanceTrack).
@@ -13169,7 +12142,7 @@ impl MaintenanceTrack {
 /// <p>A maintenance track that you can switch the current track to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTarget {
+pub struct UpdateTarget  {
     /// <p>The name of the new maintenance track.</p>
     #[doc(hidden)]
     pub maintenance_track_name: std::option::Option<std::string::String>,
@@ -13182,28 +12155,27 @@ pub struct UpdateTarget {
 }
 impl UpdateTarget {
     /// <p>The name of the new maintenance track.</p>
-    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+    pub fn maintenance_track_name(&self) -> std::option::Option<& str> {
         self.maintenance_track_name.as_deref()
     }
     /// <p>The cluster version for the new maintenance track.</p>
-    pub fn database_version(&self) -> std::option::Option<&str> {
+    pub fn database_version(&self) -> std::option::Option<& str> {
         self.database_version.as_deref()
     }
     /// <p>A list of operations supported by the maintenance track.</p>
-    pub fn supported_operations(&self) -> std::option::Option<&[crate::model::SupportedOperation]> {
+    pub fn supported_operations(&self) -> std::option::Option<& [crate::model::SupportedOperation]> {
         self.supported_operations.as_deref()
     }
 }
 /// See [`UpdateTarget`](crate::model::UpdateTarget).
 pub mod update_target {
-
+    
     /// A builder for [`UpdateTarget`](crate::model::UpdateTarget).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maintenance_track_name: std::option::Option<std::string::String>,
         pub(crate) database_version: std::option::Option<std::string::String>,
-        pub(crate) supported_operations:
-            std::option::Option<std::vec::Vec<crate::model::SupportedOperation>>,
+        pub(crate) supported_operations: std::option::Option<std::vec::Vec<crate::model::SupportedOperation>>,
     }
     impl Builder {
         /// <p>The name of the new maintenance track.</p>
@@ -13212,12 +12184,8 @@ pub mod update_target {
             self
         }
         /// <p>The name of the new maintenance track.</p>
-        pub fn set_maintenance_track_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.maintenance_track_name = input;
-            self
+        pub fn set_maintenance_track_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.maintenance_track_name = input; self
         }
         /// <p>The cluster version for the new maintenance track.</p>
         pub fn database_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13225,12 +12193,8 @@ pub mod update_target {
             self
         }
         /// <p>The cluster version for the new maintenance track.</p>
-        pub fn set_database_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_version = input;
-            self
+        pub fn set_database_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_version = input; self
         }
         /// Appends an item to `supported_operations`.
         ///
@@ -13239,27 +12203,28 @@ pub mod update_target {
         /// <p>A list of operations supported by the maintenance track.</p>
         pub fn supported_operations(mut self, input: crate::model::SupportedOperation) -> Self {
             let mut v = self.supported_operations.unwrap_or_default();
-            v.push(input);
-            self.supported_operations = Some(v);
-            self
+                            v.push(input);
+                            self.supported_operations = Some(v);
+                            self
         }
         /// <p>A list of operations supported by the maintenance track.</p>
-        pub fn set_supported_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SupportedOperation>>,
-        ) -> Self {
-            self.supported_operations = input;
-            self
+        pub fn set_supported_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::SupportedOperation>>) -> Self {
+            self.supported_operations = input; self
         }
         /// Consumes the builder and constructs a [`UpdateTarget`](crate::model::UpdateTarget).
         pub fn build(self) -> crate::model::UpdateTarget {
             crate::model::UpdateTarget {
-                maintenance_track_name: self.maintenance_track_name,
-                database_version: self.database_version,
-                supported_operations: self.supported_operations,
+                maintenance_track_name: self.maintenance_track_name
+                ,
+                database_version: self.database_version
+                ,
+                supported_operations: self.supported_operations
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateTarget {
     /// Creates a new builder-style object to manufacture [`UpdateTarget`](crate::model::UpdateTarget).
@@ -13271,20 +12236,20 @@ impl UpdateTarget {
 /// <p>Describes the operations that are allowed on a maintenance track.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SupportedOperation {
+pub struct SupportedOperation  {
     /// <p>A list of the supported operations.</p>
     #[doc(hidden)]
     pub operation_name: std::option::Option<std::string::String>,
 }
 impl SupportedOperation {
     /// <p>A list of the supported operations.</p>
-    pub fn operation_name(&self) -> std::option::Option<&str> {
+    pub fn operation_name(&self) -> std::option::Option<& str> {
         self.operation_name.as_deref()
     }
 }
 /// See [`SupportedOperation`](crate::model::SupportedOperation).
 pub mod supported_operation {
-
+    
     /// A builder for [`SupportedOperation`](crate::model::SupportedOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13297,20 +12262,19 @@ pub mod supported_operation {
             self
         }
         /// <p>A list of the supported operations.</p>
-        pub fn set_operation_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.operation_name = input;
-            self
+        pub fn set_operation_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_name = input; self
         }
         /// Consumes the builder and constructs a [`SupportedOperation`](crate::model::SupportedOperation).
         pub fn build(self) -> crate::model::SupportedOperation {
             crate::model::SupportedOperation {
-                operation_name: self.operation_name,
+                operation_name: self.operation_name
+                ,
             }
         }
     }
+    
+    
 }
 impl SupportedOperation {
     /// Creates a new builder-style object to manufacture [`SupportedOperation`](crate::model::SupportedOperation).
@@ -13322,7 +12286,7 @@ impl SupportedOperation {
 /// <p>Describes a sorting entity</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotSortingEntity {
+pub struct SnapshotSortingEntity  {
     /// <p>The category for sorting the snapshots.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::SnapshotAttributeToSortBy>,
@@ -13332,17 +12296,17 @@ pub struct SnapshotSortingEntity {
 }
 impl SnapshotSortingEntity {
     /// <p>The category for sorting the snapshots.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::model::SnapshotAttributeToSortBy> {
+    pub fn attribute(&self) -> std::option::Option<& crate::model::SnapshotAttributeToSortBy> {
         self.attribute.as_ref()
     }
     /// <p>The order for listing the attributes.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortByOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortByOrder> {
         self.sort_order.as_ref()
     }
 }
 /// See [`SnapshotSortingEntity`](crate::model::SnapshotSortingEntity).
 pub mod snapshot_sorting_entity {
-
+    
     /// A builder for [`SnapshotSortingEntity`](crate::model::SnapshotSortingEntity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13356,12 +12320,8 @@ pub mod snapshot_sorting_entity {
             self
         }
         /// <p>The category for sorting the snapshots.</p>
-        pub fn set_attribute(
-            mut self,
-            input: std::option::Option<crate::model::SnapshotAttributeToSortBy>,
-        ) -> Self {
-            self.attribute = input;
-            self
+        pub fn set_attribute(mut self, input: std::option::Option<crate::model::SnapshotAttributeToSortBy>) -> Self {
+            self.attribute = input; self
         }
         /// <p>The order for listing the attributes.</p>
         pub fn sort_order(mut self, input: crate::model::SortByOrder) -> Self {
@@ -13369,21 +12329,21 @@ pub mod snapshot_sorting_entity {
             self
         }
         /// <p>The order for listing the attributes.</p>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortByOrder>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortByOrder>) -> Self {
+            self.sort_order = input; self
         }
         /// Consumes the builder and constructs a [`SnapshotSortingEntity`](crate::model::SnapshotSortingEntity).
         pub fn build(self) -> crate::model::SnapshotSortingEntity {
             crate::model::SnapshotSortingEntity {
-                attribute: self.attribute,
-                sort_order: self.sort_order,
+                attribute: self.attribute
+                ,
+                sort_order: self.sort_order
+                ,
             }
         }
     }
+    
+    
 }
 impl SnapshotSortingEntity {
     /// Creates a new builder-style object to manufacture [`SnapshotSortingEntity`](crate::model::SnapshotSortingEntity).
@@ -13398,9 +12358,9 @@ impl SnapshotSortingEntity {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sortbyorder = unimplemented!();
 /// match sortbyorder {
@@ -13422,58 +12382,52 @@ impl SnapshotSortingEntity {
 /// Specifically, when `sortbyorder` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SortByOrder::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SortByOrder {
     #[allow(missing_docs)] // documentation missing in model
     Ascending,
     #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortByOrder {
     fn from(s: &str) -> Self {
         match s {
             "ASC" => SortByOrder::Ascending,
             "DESC" => SortByOrder::Descending,
-            other => SortByOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SortByOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SortByOrder {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SortByOrder::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SortByOrder::from(s))
+                }
+            }
 impl SortByOrder {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortByOrder::Ascending => "ASC",
             SortByOrder::Descending => "DESC",
-            SortByOrder::Unknown(value) => value.as_str(),
+            SortByOrder::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASC", "DESC"]
+        &[
+            "ASC", "DESC"
+        ]
     }
 }
 impl AsRef<str> for SortByOrder {
@@ -13488,9 +12442,9 @@ impl AsRef<str> for SortByOrder {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let snapshotattributetosortby = unimplemented!();
 /// match snapshotattributetosortby {
@@ -13513,22 +12467,14 @@ impl AsRef<str> for SortByOrder {
 /// Specifically, when `snapshotattributetosortby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SnapshotAttributeToSortBy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SnapshotAttributeToSortBy {
     #[allow(missing_docs)] // documentation missing in model
     CreateTime,
@@ -13537,7 +12483,7 @@ pub enum SnapshotAttributeToSortBy {
     #[allow(missing_docs)] // documentation missing in model
     TotalSize,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SnapshotAttributeToSortBy {
     fn from(s: &str) -> Self {
@@ -13545,19 +12491,17 @@ impl std::convert::From<&str> for SnapshotAttributeToSortBy {
             "CREATE_TIME" => SnapshotAttributeToSortBy::CreateTime,
             "SOURCE_TYPE" => SnapshotAttributeToSortBy::SourceType,
             "TOTAL_SIZE" => SnapshotAttributeToSortBy::TotalSize,
-            other => SnapshotAttributeToSortBy::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SnapshotAttributeToSortBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SnapshotAttributeToSortBy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SnapshotAttributeToSortBy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SnapshotAttributeToSortBy::from(s))
+                }
+            }
 impl SnapshotAttributeToSortBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -13565,12 +12509,14 @@ impl SnapshotAttributeToSortBy {
             SnapshotAttributeToSortBy::CreateTime => "CREATE_TIME",
             SnapshotAttributeToSortBy::SourceType => "SOURCE_TYPE",
             SnapshotAttributeToSortBy::TotalSize => "TOTAL_SIZE",
-            SnapshotAttributeToSortBy::Unknown(value) => value.as_str(),
+            SnapshotAttributeToSortBy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATE_TIME", "SOURCE_TYPE", "TOTAL_SIZE"]
+        &[
+            "CREATE_TIME", "SOURCE_TYPE", "TOTAL_SIZE"
+        ]
     }
 }
 impl AsRef<str> for SnapshotAttributeToSortBy {
@@ -13582,7 +12528,7 @@ impl AsRef<str> for SnapshotAttributeToSortBy {
 /// <p>Describes a parameter group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterParameterGroup {
+pub struct ClusterParameterGroup  {
     /// <p>The name of the cluster parameter group.</p>
     #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
@@ -13598,25 +12544,25 @@ pub struct ClusterParameterGroup {
 }
 impl ClusterParameterGroup {
     /// <p>The name of the cluster parameter group.</p>
-    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>The name of the cluster parameter group family that this cluster parameter group is compatible with.</p>
-    pub fn parameter_group_family(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_family(&self) -> std::option::Option<& str> {
         self.parameter_group_family.as_deref()
     }
     /// <p>The description of the parameter group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The list of tags for the cluster parameter group.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ClusterParameterGroup`](crate::model::ClusterParameterGroup).
 pub mod cluster_parameter_group {
-
+    
     /// A builder for [`ClusterParameterGroup`](crate::model::ClusterParameterGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13632,12 +12578,8 @@ pub mod cluster_parameter_group {
             self
         }
         /// <p>The name of the cluster parameter group.</p>
-        pub fn set_parameter_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parameter_group_name = input;
-            self
+        pub fn set_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameter_group_name = input; self
         }
         /// <p>The name of the cluster parameter group family that this cluster parameter group is compatible with.</p>
         pub fn parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13645,12 +12587,8 @@ pub mod cluster_parameter_group {
             self
         }
         /// <p>The name of the cluster parameter group family that this cluster parameter group is compatible with.</p>
-        pub fn set_parameter_group_family(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parameter_group_family = input;
-            self
+        pub fn set_parameter_group_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameter_group_family = input; self
         }
         /// <p>The description of the parameter group.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13659,8 +12597,7 @@ pub mod cluster_parameter_group {
         }
         /// <p>The description of the parameter group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -13669,28 +12606,30 @@ pub mod cluster_parameter_group {
         /// <p>The list of tags for the cluster parameter group.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags for the cluster parameter group.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ClusterParameterGroup`](crate::model::ClusterParameterGroup).
         pub fn build(self) -> crate::model::ClusterParameterGroup {
             crate::model::ClusterParameterGroup {
-                parameter_group_name: self.parameter_group_name,
-                parameter_group_family: self.parameter_group_family,
-                description: self.description,
-                tags: self.tags,
+                parameter_group_name: self.parameter_group_name
+                ,
+                parameter_group_family: self.parameter_group_family
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterParameterGroup {
     /// Creates a new builder-style object to manufacture [`ClusterParameterGroup`](crate::model::ClusterParameterGroup).
@@ -13702,7 +12641,7 @@ impl ClusterParameterGroup {
 /// <p>Describes a <code>ClusterDbRevision</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterDbRevision {
+pub struct ClusterDbRevision  {
     /// <p>The unique identifier of the cluster.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -13718,35 +12657,32 @@ pub struct ClusterDbRevision {
 }
 impl ClusterDbRevision {
     /// <p>The unique identifier of the cluster.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>A string representing the current cluster version.</p>
-    pub fn current_database_revision(&self) -> std::option::Option<&str> {
+    pub fn current_database_revision(&self) -> std::option::Option<& str> {
         self.current_database_revision.as_deref()
     }
     /// <p>The date on which the database revision was released.</p>
-    pub fn database_revision_release_date(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn database_revision_release_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.database_revision_release_date.as_ref()
     }
     /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the database revision that a cluster can be updated to.</p>
-    pub fn revision_targets(&self) -> std::option::Option<&[crate::model::RevisionTarget]> {
+    pub fn revision_targets(&self) -> std::option::Option<& [crate::model::RevisionTarget]> {
         self.revision_targets.as_deref()
     }
 }
 /// See [`ClusterDbRevision`](crate::model::ClusterDbRevision).
 pub mod cluster_db_revision {
-
+    
     /// A builder for [`ClusterDbRevision`](crate::model::ClusterDbRevision).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) current_database_revision: std::option::Option<std::string::String>,
         pub(crate) database_revision_release_date: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) revision_targets:
-            std::option::Option<std::vec::Vec<crate::model::RevisionTarget>>,
+        pub(crate) revision_targets: std::option::Option<std::vec::Vec<crate::model::RevisionTarget>>,
     }
     impl Builder {
         /// <p>The unique identifier of the cluster.</p>
@@ -13755,12 +12691,8 @@ pub mod cluster_db_revision {
             self
         }
         /// <p>The unique identifier of the cluster.</p>
-        pub fn set_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_identifier = input;
-            self
+        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_identifier = input; self
         }
         /// <p>A string representing the current cluster version.</p>
         pub fn current_database_revision(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13768,12 +12700,8 @@ pub mod cluster_db_revision {
             self
         }
         /// <p>A string representing the current cluster version.</p>
-        pub fn set_current_database_revision(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.current_database_revision = input;
-            self
+        pub fn set_current_database_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.current_database_revision = input; self
         }
         /// <p>The date on which the database revision was released.</p>
         pub fn database_revision_release_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -13781,12 +12709,8 @@ pub mod cluster_db_revision {
             self
         }
         /// <p>The date on which the database revision was released.</p>
-        pub fn set_database_revision_release_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.database_revision_release_date = input;
-            self
+        pub fn set_database_revision_release_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.database_revision_release_date = input; self
         }
         /// Appends an item to `revision_targets`.
         ///
@@ -13795,28 +12719,30 @@ pub mod cluster_db_revision {
         /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the database revision that a cluster can be updated to.</p>
         pub fn revision_targets(mut self, input: crate::model::RevisionTarget) -> Self {
             let mut v = self.revision_targets.unwrap_or_default();
-            v.push(input);
-            self.revision_targets = Some(v);
-            self
+                            v.push(input);
+                            self.revision_targets = Some(v);
+                            self
         }
         /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the database revision that a cluster can be updated to.</p>
-        pub fn set_revision_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RevisionTarget>>,
-        ) -> Self {
-            self.revision_targets = input;
-            self
+        pub fn set_revision_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::RevisionTarget>>) -> Self {
+            self.revision_targets = input; self
         }
         /// Consumes the builder and constructs a [`ClusterDbRevision`](crate::model::ClusterDbRevision).
         pub fn build(self) -> crate::model::ClusterDbRevision {
             crate::model::ClusterDbRevision {
-                cluster_identifier: self.cluster_identifier,
-                current_database_revision: self.current_database_revision,
-                database_revision_release_date: self.database_revision_release_date,
-                revision_targets: self.revision_targets,
+                cluster_identifier: self.cluster_identifier
+                ,
+                current_database_revision: self.current_database_revision
+                ,
+                database_revision_release_date: self.database_revision_release_date
+                ,
+                revision_targets: self.revision_targets
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterDbRevision {
     /// Creates a new builder-style object to manufacture [`ClusterDbRevision`](crate::model::ClusterDbRevision).
@@ -13828,7 +12754,7 @@ impl ClusterDbRevision {
 /// <p>Describes a <code>RevisionTarget</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevisionTarget {
+pub struct RevisionTarget  {
     /// <p>A unique string that identifies the version to update the cluster to. You can use this value in <code>ModifyClusterDbRevision</code>.</p>
     #[doc(hidden)]
     pub database_revision: std::option::Option<std::string::String>,
@@ -13841,23 +12767,21 @@ pub struct RevisionTarget {
 }
 impl RevisionTarget {
     /// <p>A unique string that identifies the version to update the cluster to. You can use this value in <code>ModifyClusterDbRevision</code>.</p>
-    pub fn database_revision(&self) -> std::option::Option<&str> {
+    pub fn database_revision(&self) -> std::option::Option<& str> {
         self.database_revision.as_deref()
     }
     /// <p>A string that describes the changes and features that will be applied to the cluster when it is updated to the corresponding <code>ClusterDbRevision</code>.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date on which the database revision was released.</p>
-    pub fn database_revision_release_date(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn database_revision_release_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.database_revision_release_date.as_ref()
     }
 }
 /// See [`RevisionTarget`](crate::model::RevisionTarget).
 pub mod revision_target {
-
+    
     /// A builder for [`RevisionTarget`](crate::model::RevisionTarget).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13872,12 +12796,8 @@ pub mod revision_target {
             self
         }
         /// <p>A unique string that identifies the version to update the cluster to. You can use this value in <code>ModifyClusterDbRevision</code>.</p>
-        pub fn set_database_revision(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_revision = input;
-            self
+        pub fn set_database_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_revision = input; self
         }
         /// <p>A string that describes the changes and features that will be applied to the cluster when it is updated to the corresponding <code>ClusterDbRevision</code>.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13886,8 +12806,7 @@ pub mod revision_target {
         }
         /// <p>A string that describes the changes and features that will be applied to the cluster when it is updated to the corresponding <code>ClusterDbRevision</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date on which the database revision was released.</p>
         pub fn database_revision_release_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -13895,22 +12814,23 @@ pub mod revision_target {
             self
         }
         /// <p>The date on which the database revision was released.</p>
-        pub fn set_database_revision_release_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.database_revision_release_date = input;
-            self
+        pub fn set_database_revision_release_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.database_revision_release_date = input; self
         }
         /// Consumes the builder and constructs a [`RevisionTarget`](crate::model::RevisionTarget).
         pub fn build(self) -> crate::model::RevisionTarget {
             crate::model::RevisionTarget {
-                database_revision: self.database_revision,
-                description: self.description,
-                database_revision_release_date: self.database_revision_release_date,
+                database_revision: self.database_revision
+                ,
+                description: self.description
+                ,
+                database_revision_release_date: self.database_revision_release_date
+                ,
             }
         }
     }
+    
+    
 }
 impl RevisionTarget {
     /// Creates a new builder-style object to manufacture [`RevisionTarget`](crate::model::RevisionTarget).
@@ -13922,7 +12842,7 @@ impl RevisionTarget {
 /// <p>Describes an authentication profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthenticationProfile {
+pub struct AuthenticationProfile  {
     /// <p>The name of the authentication profile.</p>
     #[doc(hidden)]
     pub authentication_profile_name: std::option::Option<std::string::String>,
@@ -13932,17 +12852,17 @@ pub struct AuthenticationProfile {
 }
 impl AuthenticationProfile {
     /// <p>The name of the authentication profile.</p>
-    pub fn authentication_profile_name(&self) -> std::option::Option<&str> {
+    pub fn authentication_profile_name(&self) -> std::option::Option<& str> {
         self.authentication_profile_name.as_deref()
     }
     /// <p>The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
-    pub fn authentication_profile_content(&self) -> std::option::Option<&str> {
+    pub fn authentication_profile_content(&self) -> std::option::Option<& str> {
         self.authentication_profile_content.as_deref()
     }
 }
 /// See [`AuthenticationProfile`](crate::model::AuthenticationProfile).
 pub mod authentication_profile {
-
+    
     /// A builder for [`AuthenticationProfile`](crate::model::AuthenticationProfile).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13951,45 +12871,35 @@ pub mod authentication_profile {
     }
     impl Builder {
         /// <p>The name of the authentication profile.</p>
-        pub fn authentication_profile_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn authentication_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.authentication_profile_name = Some(input.into());
             self
         }
         /// <p>The name of the authentication profile.</p>
-        pub fn set_authentication_profile_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.authentication_profile_name = input;
-            self
+        pub fn set_authentication_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.authentication_profile_name = input; self
         }
         /// <p>The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
-        pub fn authentication_profile_content(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn authentication_profile_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.authentication_profile_content = Some(input.into());
             self
         }
         /// <p>The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
-        pub fn set_authentication_profile_content(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.authentication_profile_content = input;
-            self
+        pub fn set_authentication_profile_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.authentication_profile_content = input; self
         }
         /// Consumes the builder and constructs a [`AuthenticationProfile`](crate::model::AuthenticationProfile).
         pub fn build(self) -> crate::model::AuthenticationProfile {
             crate::model::AuthenticationProfile {
-                authentication_profile_name: self.authentication_profile_name,
-                authentication_profile_content: self.authentication_profile_content,
+                authentication_profile_name: self.authentication_profile_name
+                ,
+                authentication_profile_content: self.authentication_profile_content
+                ,
             }
         }
     }
+    
+    
 }
 impl AuthenticationProfile {
     /// Creates a new builder-style object to manufacture [`AuthenticationProfile`](crate::model::AuthenticationProfile).
@@ -14001,7 +12911,7 @@ impl AuthenticationProfile {
 /// <p>A name value pair that describes an aspect of an account. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountAttribute {
+pub struct AccountAttribute  {
     /// <p>The name of the attribute.</p>
     #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
@@ -14011,23 +12921,22 @@ pub struct AccountAttribute {
 }
 impl AccountAttribute {
     /// <p>The name of the attribute.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>A list of attribute values.</p>
-    pub fn attribute_values(&self) -> std::option::Option<&[crate::model::AttributeValueTarget]> {
+    pub fn attribute_values(&self) -> std::option::Option<& [crate::model::AttributeValueTarget]> {
         self.attribute_values.as_deref()
     }
 }
 /// See [`AccountAttribute`](crate::model::AccountAttribute).
 pub mod account_attribute {
-
+    
     /// A builder for [`AccountAttribute`](crate::model::AccountAttribute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
-        pub(crate) attribute_values:
-            std::option::Option<std::vec::Vec<crate::model::AttributeValueTarget>>,
+        pub(crate) attribute_values: std::option::Option<std::vec::Vec<crate::model::AttributeValueTarget>>,
     }
     impl Builder {
         /// <p>The name of the attribute.</p>
@@ -14036,12 +12945,8 @@ pub mod account_attribute {
             self
         }
         /// <p>The name of the attribute.</p>
-        pub fn set_attribute_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_name = input;
-            self
+        pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_name = input; self
         }
         /// Appends an item to `attribute_values`.
         ///
@@ -14050,26 +12955,26 @@ pub mod account_attribute {
         /// <p>A list of attribute values.</p>
         pub fn attribute_values(mut self, input: crate::model::AttributeValueTarget) -> Self {
             let mut v = self.attribute_values.unwrap_or_default();
-            v.push(input);
-            self.attribute_values = Some(v);
-            self
+                            v.push(input);
+                            self.attribute_values = Some(v);
+                            self
         }
         /// <p>A list of attribute values.</p>
-        pub fn set_attribute_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttributeValueTarget>>,
-        ) -> Self {
-            self.attribute_values = input;
-            self
+        pub fn set_attribute_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttributeValueTarget>>) -> Self {
+            self.attribute_values = input; self
         }
         /// Consumes the builder and constructs a [`AccountAttribute`](crate::model::AccountAttribute).
         pub fn build(self) -> crate::model::AccountAttribute {
             crate::model::AccountAttribute {
-                attribute_name: self.attribute_name,
-                attribute_values: self.attribute_values,
+                attribute_name: self.attribute_name
+                ,
+                attribute_values: self.attribute_values
+                ,
             }
         }
     }
+    
+    
 }
 impl AccountAttribute {
     /// Creates a new builder-style object to manufacture [`AccountAttribute`](crate::model::AccountAttribute).
@@ -14081,20 +12986,20 @@ impl AccountAttribute {
 /// <p>Describes an attribute value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeValueTarget {
+pub struct AttributeValueTarget  {
     /// <p>The value of the attribute.</p>
     #[doc(hidden)]
     pub attribute_value: std::option::Option<std::string::String>,
 }
 impl AttributeValueTarget {
     /// <p>The value of the attribute.</p>
-    pub fn attribute_value(&self) -> std::option::Option<&str> {
+    pub fn attribute_value(&self) -> std::option::Option<& str> {
         self.attribute_value.as_deref()
     }
 }
 /// See [`AttributeValueTarget`](crate::model::AttributeValueTarget).
 pub mod attribute_value_target {
-
+    
     /// A builder for [`AttributeValueTarget`](crate::model::AttributeValueTarget).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14107,20 +13012,19 @@ pub mod attribute_value_target {
             self
         }
         /// <p>The value of the attribute.</p>
-        pub fn set_attribute_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_value = input;
-            self
+        pub fn set_attribute_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_value = input; self
         }
         /// Consumes the builder and constructs a [`AttributeValueTarget`](crate::model::AttributeValueTarget).
         pub fn build(self) -> crate::model::AttributeValueTarget {
             crate::model::AttributeValueTarget {
-                attribute_value: self.attribute_value,
+                attribute_value: self.attribute_value
+                ,
             }
         }
     }
+    
+    
 }
 impl AttributeValueTarget {
     /// Creates a new builder-style object to manufacture [`AttributeValueTarget`](crate::model::AttributeValueTarget).
@@ -14132,7 +13036,7 @@ impl AttributeValueTarget {
 /// <p>Describes the errors returned by a snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotErrorMessage {
+pub struct SnapshotErrorMessage  {
     /// <p>A unique identifier for the snapshot returning the error.</p>
     #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
@@ -14148,25 +13052,25 @@ pub struct SnapshotErrorMessage {
 }
 impl SnapshotErrorMessage {
     /// <p>A unique identifier for the snapshot returning the error.</p>
-    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>A unique identifier for the cluster.</p>
-    pub fn snapshot_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn snapshot_cluster_identifier(&self) -> std::option::Option<& str> {
         self.snapshot_cluster_identifier.as_deref()
     }
     /// <p>The failure code for the error.</p>
-    pub fn failure_code(&self) -> std::option::Option<&str> {
+    pub fn failure_code(&self) -> std::option::Option<& str> {
         self.failure_code.as_deref()
     }
     /// <p>The text message describing the error.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
 /// See [`SnapshotErrorMessage`](crate::model::SnapshotErrorMessage).
 pub mod snapshot_error_message {
-
+    
     /// A builder for [`SnapshotErrorMessage`](crate::model::SnapshotErrorMessage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14182,28 +13086,17 @@ pub mod snapshot_error_message {
             self
         }
         /// <p>A unique identifier for the snapshot returning the error.</p>
-        pub fn set_snapshot_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_identifier = input;
-            self
+        pub fn set_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_identifier = input; self
         }
         /// <p>A unique identifier for the cluster.</p>
-        pub fn snapshot_cluster_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn snapshot_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_cluster_identifier = Some(input.into());
             self
         }
         /// <p>A unique identifier for the cluster.</p>
-        pub fn set_snapshot_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_cluster_identifier = input;
-            self
+        pub fn set_snapshot_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_cluster_identifier = input; self
         }
         /// <p>The failure code for the error.</p>
         pub fn failure_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14212,8 +13105,7 @@ pub mod snapshot_error_message {
         }
         /// <p>The failure code for the error.</p>
         pub fn set_failure_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.failure_code = input;
-            self
+            self.failure_code = input; self
         }
         /// <p>The text message describing the error.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14221,23 +13113,25 @@ pub mod snapshot_error_message {
             self
         }
         /// <p>The text message describing the error.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// Consumes the builder and constructs a [`SnapshotErrorMessage`](crate::model::SnapshotErrorMessage).
         pub fn build(self) -> crate::model::SnapshotErrorMessage {
             crate::model::SnapshotErrorMessage {
-                snapshot_identifier: self.snapshot_identifier,
-                snapshot_cluster_identifier: self.snapshot_cluster_identifier,
-                failure_code: self.failure_code,
-                failure_reason: self.failure_reason,
+                snapshot_identifier: self.snapshot_identifier
+                ,
+                snapshot_cluster_identifier: self.snapshot_cluster_identifier
+                ,
+                failure_code: self.failure_code
+                ,
+                failure_reason: self.failure_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl SnapshotErrorMessage {
     /// Creates a new builder-style object to manufacture [`SnapshotErrorMessage`](crate::model::SnapshotErrorMessage).
@@ -14249,31 +13143,31 @@ impl SnapshotErrorMessage {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteClusterSnapshotMessage {
-    /// <p>The unique identifier of the manual snapshot to be deleted.</p>
+pub struct DeleteClusterSnapshotMessage  {
+    /// <p>The unique identifier of the manual snapshot to be deleted.</p> 
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
     #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> 
     /// <p>Constraints: Must be the name of valid cluster.</p>
     #[doc(hidden)]
     pub snapshot_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteClusterSnapshotMessage {
-    /// <p>The unique identifier of the manual snapshot to be deleted.</p>
+    /// <p>The unique identifier of the manual snapshot to be deleted.</p> 
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
-    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
-    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> 
     /// <p>Constraints: Must be the name of valid cluster.</p>
-    pub fn snapshot_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn snapshot_cluster_identifier(&self) -> std::option::Option<& str> {
         self.snapshot_cluster_identifier.as_deref()
     }
 }
 /// See [`DeleteClusterSnapshotMessage`](crate::model::DeleteClusterSnapshotMessage).
 pub mod delete_cluster_snapshot_message {
-
+    
     /// A builder for [`DeleteClusterSnapshotMessage`](crate::model::DeleteClusterSnapshotMessage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14281,47 +13175,40 @@ pub mod delete_cluster_snapshot_message {
         pub(crate) snapshot_cluster_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the manual snapshot to be deleted.</p>
+        /// <p>The unique identifier of the manual snapshot to be deleted.</p> 
         /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
         pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_identifier = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the manual snapshot to be deleted.</p>
+        /// <p>The unique identifier of the manual snapshot to be deleted.</p> 
         /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
-        pub fn set_snapshot_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_identifier = input;
-            self
+        pub fn set_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_identifier = input; self
         }
-        /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+        /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> 
         /// <p>Constraints: Must be the name of valid cluster.</p>
-        pub fn snapshot_cluster_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn snapshot_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+        /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> 
         /// <p>Constraints: Must be the name of valid cluster.</p>
-        pub fn set_snapshot_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_cluster_identifier = input;
-            self
+        pub fn set_snapshot_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_cluster_identifier = input; self
         }
         /// Consumes the builder and constructs a [`DeleteClusterSnapshotMessage`](crate::model::DeleteClusterSnapshotMessage).
         pub fn build(self) -> crate::model::DeleteClusterSnapshotMessage {
             crate::model::DeleteClusterSnapshotMessage {
-                snapshot_identifier: self.snapshot_identifier,
-                snapshot_cluster_identifier: self.snapshot_cluster_identifier,
+                snapshot_identifier: self.snapshot_identifier
+                ,
+                snapshot_cluster_identifier: self.snapshot_cluster_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteClusterSnapshotMessage {
     /// Creates a new builder-style object to manufacture [`DeleteClusterSnapshotMessage`](crate::model::DeleteClusterSnapshotMessage).
@@ -14329,3 +13216,4 @@ impl DeleteClusterSnapshotMessage {
         crate::model::delete_cluster_snapshot_message::Builder::default()
     }
 }
+

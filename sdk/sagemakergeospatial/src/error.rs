@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct StopVectorEnrichmentJobError {
     /// Kind of error that occurred.
-    pub kind: StopVectorEnrichmentJobErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StopVectorEnrichmentJobErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StopVectorEnrichmentJobError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StopVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -32,26 +32,40 @@ pub enum StopVectorEnrichmentJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopVectorEnrichmentJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StopVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            StopVectorEnrichmentJobErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            StopVectorEnrichmentJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            StopVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            StopVectorEnrichmentJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            StopVectorEnrichmentJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            StopVectorEnrichmentJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            StopVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopVectorEnrichmentJobErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopVectorEnrichmentJobErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopVectorEnrichmentJobErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopVectorEnrichmentJobErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopVectorEnrichmentJobErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -65,103 +79,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for StopVectorEnrichmentJobError 
 }
 impl StopVectorEnrichmentJobError {
     /// Creates a new `StopVectorEnrichmentJobError`.
-    pub fn new(kind: StopVectorEnrichmentJobErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StopVectorEnrichmentJobError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StopVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StopVectorEnrichmentJobError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StopVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StopVectorEnrichmentJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StopVectorEnrichmentJobError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StopVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StopVectorEnrichmentJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StopVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StopVectorEnrichmentJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopVectorEnrichmentJobErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, StopVectorEnrichmentJobErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `StopVectorEnrichmentJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopVectorEnrichmentJobErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, StopVectorEnrichmentJobErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `StopVectorEnrichmentJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopVectorEnrichmentJobErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, StopVectorEnrichmentJobErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `StopVectorEnrichmentJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopVectorEnrichmentJobErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, StopVectorEnrichmentJobErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `StopVectorEnrichmentJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopVectorEnrichmentJobErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, StopVectorEnrichmentJobErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `StopVectorEnrichmentJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopVectorEnrichmentJobErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, StopVectorEnrichmentJobErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for StopVectorEnrichmentJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StopVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            StopVectorEnrichmentJobErrorKind::ConflictException(_inner) => Some(_inner),
-            StopVectorEnrichmentJobErrorKind::InternalServerException(_inner) => Some(_inner),
-            StopVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            StopVectorEnrichmentJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StopVectorEnrichmentJobErrorKind::ValidationException(_inner) => Some(_inner),
-            StopVectorEnrichmentJobErrorKind::Unhandled(_inner) => Some(_inner),
+            StopVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            StopVectorEnrichmentJobErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            StopVectorEnrichmentJobErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            StopVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            StopVectorEnrichmentJobErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            StopVectorEnrichmentJobErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            StopVectorEnrichmentJobErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -169,7 +175,7 @@ impl std::error::Error for StopVectorEnrichmentJobError {
 /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationException {
+pub struct ValidationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -179,21 +185,19 @@ pub struct ValidationException {
 }
 impl ValidationException {
     /// <p></p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -203,7 +207,7 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException).
 pub mod validation_exception {
-
+    
     /// A builder for [`ValidationException`](crate::error::ValidationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -218,8 +222,7 @@ pub mod validation_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p></p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -228,17 +231,20 @@ pub mod validation_exception {
         }
         /// <p></p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException).
         pub fn build(self) -> crate::error::ValidationException {
             crate::error::ValidationException {
-                message: self.message,
-                resource_id: self.resource_id,
+                message: self.message
+                ,
+                resource_id: self.resource_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationException {
     /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException).
@@ -250,7 +256,7 @@ impl ValidationException {
 /// <p>The request was denied due to request throttling.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -260,21 +266,19 @@ pub struct ThrottlingException {
 }
 impl ThrottlingException {
     /// <p></p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -284,7 +288,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException).
 pub mod throttling_exception {
-
+    
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -299,8 +303,7 @@ pub mod throttling_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p></p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -309,17 +312,20 @@ pub mod throttling_exception {
         }
         /// <p></p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
         pub fn build(self) -> crate::error::ThrottlingException {
             crate::error::ThrottlingException {
-                message: self.message,
-                resource_id: self.resource_id,
+                message: self.message
+                ,
+                resource_id: self.resource_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
@@ -331,7 +337,7 @@ impl ThrottlingException {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -341,21 +347,19 @@ pub struct ResourceNotFoundException {
 }
 impl ResourceNotFoundException {
     /// <p></p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -365,7 +369,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -380,8 +384,7 @@ pub mod resource_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p></p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -390,17 +393,20 @@ pub mod resource_not_found_exception {
         }
         /// <p></p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
-                resource_id: self.resource_id,
+                message: self.message
+                ,
+                resource_id: self.resource_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -412,7 +418,7 @@ impl ResourceNotFoundException {
 /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerException {
+pub struct InternalServerException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -422,21 +428,19 @@ pub struct InternalServerException {
 }
 impl InternalServerException {
     /// <p></p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
 impl InternalServerException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -446,7 +450,7 @@ impl std::fmt::Display for InternalServerException {
 impl std::error::Error for InternalServerException {}
 /// See [`InternalServerException`](crate::error::InternalServerException).
 pub mod internal_server_exception {
-
+    
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -461,8 +465,7 @@ pub mod internal_server_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p></p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -471,17 +474,20 @@ pub mod internal_server_exception {
         }
         /// <p></p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// Consumes the builder and constructs a [`InternalServerException`](crate::error::InternalServerException).
         pub fn build(self) -> crate::error::InternalServerException {
             crate::error::InternalServerException {
-                message: self.message,
-                resource_id: self.resource_id,
+                message: self.message
+                ,
+                resource_id: self.resource_id
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServerException {
     /// Creates a new builder-style object to manufacture [`InternalServerException`](crate::error::InternalServerException).
@@ -493,7 +499,7 @@ impl InternalServerException {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -503,21 +509,19 @@ pub struct ConflictException {
 }
 impl ConflictException {
     /// <p></p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -527,7 +531,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
-
+    
     /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -542,8 +546,7 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p></p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -552,17 +555,20 @@ pub mod conflict_exception {
         }
         /// <p></p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
-                message: self.message,
-                resource_id: self.resource_id,
+                message: self.message
+                ,
+                resource_id: self.resource_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
@@ -574,22 +580,20 @@ impl ConflictException {
 /// <p>You do not have sufficient access to perform this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -599,7 +603,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
-
+    
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -613,16 +617,18 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
@@ -636,17 +642,15 @@ impl AccessDeniedException {
 #[derive(std::fmt::Debug)]
 pub struct ExportVectorEnrichmentJobError {
     /// Kind of error that occurred.
-    pub kind: ExportVectorEnrichmentJobErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ExportVectorEnrichmentJobErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ExportVectorEnrichmentJobError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ExportVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ExportVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -668,29 +672,43 @@ pub enum ExportVectorEnrichmentJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportVectorEnrichmentJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExportVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ExportVectorEnrichmentJobErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            ExportVectorEnrichmentJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            ExportVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ExportVectorEnrichmentJobErrorKind::ServiceQuotaExceededException(_inner) => {
+            ExportVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportVectorEnrichmentJobErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportVectorEnrichmentJobErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportVectorEnrichmentJobErrorKind::ServiceQuotaExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportVectorEnrichmentJobErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportVectorEnrichmentJobErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportVectorEnrichmentJobErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ExportVectorEnrichmentJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ExportVectorEnrichmentJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ExportVectorEnrichmentJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -704,113 +722,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ExportVectorEnrichmentJobErro
 }
 impl ExportVectorEnrichmentJobError {
     /// Creates a new `ExportVectorEnrichmentJobError`.
-    pub fn new(kind: ExportVectorEnrichmentJobErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ExportVectorEnrichmentJobError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ExportVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ExportVectorEnrichmentJobError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ExportVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ExportVectorEnrichmentJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ExportVectorEnrichmentJobError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ExportVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ExportVectorEnrichmentJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ExportVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ExportVectorEnrichmentJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportVectorEnrichmentJobErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ExportVectorEnrichmentJobErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ExportVectorEnrichmentJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportVectorEnrichmentJobErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, ExportVectorEnrichmentJobErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `ExportVectorEnrichmentJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportVectorEnrichmentJobErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ExportVectorEnrichmentJobErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ExportVectorEnrichmentJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportVectorEnrichmentJobErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ExportVectorEnrichmentJobErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ExportVectorEnrichmentJobErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportVectorEnrichmentJobErrorKind::ServiceQuotaExceededException(_)
-        )
+        matches!(&self.kind, ExportVectorEnrichmentJobErrorKind::ServiceQuotaExceededException(_))
     }
     /// Returns `true` if the error kind is `ExportVectorEnrichmentJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportVectorEnrichmentJobErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, ExportVectorEnrichmentJobErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `ExportVectorEnrichmentJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportVectorEnrichmentJobErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ExportVectorEnrichmentJobErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ExportVectorEnrichmentJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExportVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ExportVectorEnrichmentJobErrorKind::ConflictException(_inner) => Some(_inner),
-            ExportVectorEnrichmentJobErrorKind::InternalServerException(_inner) => Some(_inner),
-            ExportVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ExportVectorEnrichmentJobErrorKind::ServiceQuotaExceededException(_inner) => {
+            ExportVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ExportVectorEnrichmentJobErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            ExportVectorEnrichmentJobErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ExportVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ExportVectorEnrichmentJobErrorKind::ServiceQuotaExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ExportVectorEnrichmentJobErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ExportVectorEnrichmentJobErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ExportVectorEnrichmentJobErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ExportVectorEnrichmentJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ExportVectorEnrichmentJobErrorKind::ValidationException(_inner) => Some(_inner),
-            ExportVectorEnrichmentJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -818,7 +825,7 @@ impl std::error::Error for ExportVectorEnrichmentJobError {
 /// <p>You have exceeded the service quota.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceQuotaExceededException {
+pub struct ServiceQuotaExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -828,21 +835,19 @@ pub struct ServiceQuotaExceededException {
 }
 impl ServiceQuotaExceededException {
     /// <p></p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
 impl ServiceQuotaExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -852,7 +857,7 @@ impl std::fmt::Display for ServiceQuotaExceededException {
 impl std::error::Error for ServiceQuotaExceededException {}
 /// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
 pub mod service_quota_exceeded_exception {
-
+    
     /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -867,8 +872,7 @@ pub mod service_quota_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p></p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -877,17 +881,20 @@ pub mod service_quota_exceeded_exception {
         }
         /// <p></p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
         pub fn build(self) -> crate::error::ServiceQuotaExceededException {
             crate::error::ServiceQuotaExceededException {
-                message: self.message,
-                resource_id: self.resource_id,
+                message: self.message
+                ,
+                resource_id: self.resource_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceQuotaExceededException {
     /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
@@ -901,17 +908,15 @@ impl ServiceQuotaExceededException {
 #[derive(std::fmt::Debug)]
 pub struct ListVectorEnrichmentJobsError {
     /// Kind of error that occurred.
-    pub kind: ListVectorEnrichmentJobsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListVectorEnrichmentJobsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListVectorEnrichmentJobsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListVectorEnrichmentJobsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListVectorEnrichmentJobsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -929,25 +934,37 @@ pub enum ListVectorEnrichmentJobsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVectorEnrichmentJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListVectorEnrichmentJobsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListVectorEnrichmentJobsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            ListVectorEnrichmentJobsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListVectorEnrichmentJobsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ListVectorEnrichmentJobsErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListVectorEnrichmentJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListVectorEnrichmentJobsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVectorEnrichmentJobsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVectorEnrichmentJobsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVectorEnrichmentJobsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVectorEnrichmentJobsErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVectorEnrichmentJobsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -961,95 +978,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListVectorEnrichmentJobsError
 }
 impl ListVectorEnrichmentJobsError {
     /// Creates a new `ListVectorEnrichmentJobsError`.
-    pub fn new(kind: ListVectorEnrichmentJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListVectorEnrichmentJobsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListVectorEnrichmentJobsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListVectorEnrichmentJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListVectorEnrichmentJobsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListVectorEnrichmentJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListVectorEnrichmentJobsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListVectorEnrichmentJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListVectorEnrichmentJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListVectorEnrichmentJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListVectorEnrichmentJobsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVectorEnrichmentJobsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListVectorEnrichmentJobsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListVectorEnrichmentJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVectorEnrichmentJobsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ListVectorEnrichmentJobsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ListVectorEnrichmentJobsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVectorEnrichmentJobsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListVectorEnrichmentJobsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListVectorEnrichmentJobsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVectorEnrichmentJobsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, ListVectorEnrichmentJobsErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `ListVectorEnrichmentJobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVectorEnrichmentJobsErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListVectorEnrichmentJobsErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListVectorEnrichmentJobsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListVectorEnrichmentJobsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListVectorEnrichmentJobsErrorKind::InternalServerException(_inner) => Some(_inner),
-            ListVectorEnrichmentJobsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListVectorEnrichmentJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListVectorEnrichmentJobsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListVectorEnrichmentJobsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListVectorEnrichmentJobsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListVectorEnrichmentJobsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListVectorEnrichmentJobsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListVectorEnrichmentJobsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ListVectorEnrichmentJobsErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListVectorEnrichmentJobsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1059,17 +1069,15 @@ impl std::error::Error for ListVectorEnrichmentJobsError {
 #[derive(std::fmt::Debug)]
 pub struct StartVectorEnrichmentJobError {
     /// Kind of error that occurred.
-    pub kind: StartVectorEnrichmentJobErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StartVectorEnrichmentJobErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartVectorEnrichmentJobError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: StartVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: StartVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1091,29 +1099,43 @@ pub enum StartVectorEnrichmentJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartVectorEnrichmentJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            StartVectorEnrichmentJobErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            StartVectorEnrichmentJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            StartVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            StartVectorEnrichmentJobErrorKind::ServiceQuotaExceededException(_inner) => {
+            StartVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartVectorEnrichmentJobErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartVectorEnrichmentJobErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartVectorEnrichmentJobErrorKind::ServiceQuotaExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartVectorEnrichmentJobErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartVectorEnrichmentJobErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartVectorEnrichmentJobErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            StartVectorEnrichmentJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            StartVectorEnrichmentJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            StartVectorEnrichmentJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1127,113 +1149,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartVectorEnrichmentJobError
 }
 impl StartVectorEnrichmentJobError {
     /// Creates a new `StartVectorEnrichmentJobError`.
-    pub fn new(kind: StartVectorEnrichmentJobErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StartVectorEnrichmentJobError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StartVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StartVectorEnrichmentJobError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StartVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StartVectorEnrichmentJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StartVectorEnrichmentJobError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StartVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StartVectorEnrichmentJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StartVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StartVectorEnrichmentJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartVectorEnrichmentJobErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, StartVectorEnrichmentJobErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `StartVectorEnrichmentJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartVectorEnrichmentJobErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, StartVectorEnrichmentJobErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `StartVectorEnrichmentJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartVectorEnrichmentJobErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, StartVectorEnrichmentJobErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `StartVectorEnrichmentJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartVectorEnrichmentJobErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, StartVectorEnrichmentJobErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `StartVectorEnrichmentJobErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartVectorEnrichmentJobErrorKind::ServiceQuotaExceededException(_)
-        )
+        matches!(&self.kind, StartVectorEnrichmentJobErrorKind::ServiceQuotaExceededException(_))
     }
     /// Returns `true` if the error kind is `StartVectorEnrichmentJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartVectorEnrichmentJobErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, StartVectorEnrichmentJobErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `StartVectorEnrichmentJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartVectorEnrichmentJobErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, StartVectorEnrichmentJobErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for StartVectorEnrichmentJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            StartVectorEnrichmentJobErrorKind::ConflictException(_inner) => Some(_inner),
-            StartVectorEnrichmentJobErrorKind::InternalServerException(_inner) => Some(_inner),
-            StartVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            StartVectorEnrichmentJobErrorKind::ServiceQuotaExceededException(_inner) => {
+            StartVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            StartVectorEnrichmentJobErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            StartVectorEnrichmentJobErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            StartVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            StartVectorEnrichmentJobErrorKind::ServiceQuotaExceededException(_inner) =>
+            Some(_inner)
+            ,
+            StartVectorEnrichmentJobErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            StartVectorEnrichmentJobErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            StartVectorEnrichmentJobErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            StartVectorEnrichmentJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartVectorEnrichmentJobErrorKind::ValidationException(_inner) => Some(_inner),
-            StartVectorEnrichmentJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1243,17 +1254,15 @@ impl std::error::Error for StartVectorEnrichmentJobError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteVectorEnrichmentJobError {
     /// Kind of error that occurred.
-    pub kind: DeleteVectorEnrichmentJobErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteVectorEnrichmentJobErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteVectorEnrichmentJobError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1273,26 +1282,40 @@ pub enum DeleteVectorEnrichmentJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVectorEnrichmentJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteVectorEnrichmentJobErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DeleteVectorEnrichmentJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            DeleteVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DeleteVectorEnrichmentJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DeleteVectorEnrichmentJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            DeleteVectorEnrichmentJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVectorEnrichmentJobErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVectorEnrichmentJobErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVectorEnrichmentJobErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVectorEnrichmentJobErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVectorEnrichmentJobErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1306,103 +1329,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteVectorEnrichmentJobErro
 }
 impl DeleteVectorEnrichmentJobError {
     /// Creates a new `DeleteVectorEnrichmentJobError`.
-    pub fn new(kind: DeleteVectorEnrichmentJobErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteVectorEnrichmentJobError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteVectorEnrichmentJobError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteVectorEnrichmentJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteVectorEnrichmentJobError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteVectorEnrichmentJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteVectorEnrichmentJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVectorEnrichmentJobErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DeleteVectorEnrichmentJobErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteVectorEnrichmentJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVectorEnrichmentJobErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, DeleteVectorEnrichmentJobErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteVectorEnrichmentJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVectorEnrichmentJobErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, DeleteVectorEnrichmentJobErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `DeleteVectorEnrichmentJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVectorEnrichmentJobErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteVectorEnrichmentJobErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteVectorEnrichmentJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVectorEnrichmentJobErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DeleteVectorEnrichmentJobErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `DeleteVectorEnrichmentJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVectorEnrichmentJobErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, DeleteVectorEnrichmentJobErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for DeleteVectorEnrichmentJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeleteVectorEnrichmentJobErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteVectorEnrichmentJobErrorKind::InternalServerException(_inner) => Some(_inner),
-            DeleteVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteVectorEnrichmentJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteVectorEnrichmentJobErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteVectorEnrichmentJobErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVectorEnrichmentJobErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVectorEnrichmentJobErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVectorEnrichmentJobErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVectorEnrichmentJobErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVectorEnrichmentJobErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1412,15 +1427,15 @@ impl std::error::Error for DeleteVectorEnrichmentJobError {
 #[derive(std::fmt::Debug)]
 pub struct GetVectorEnrichmentJobError {
     /// Kind of error that occurred.
-    pub kind: GetVectorEnrichmentJobErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetVectorEnrichmentJobErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetVectorEnrichmentJobError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1438,25 +1453,37 @@ pub enum GetVectorEnrichmentJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetVectorEnrichmentJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetVectorEnrichmentJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            GetVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetVectorEnrichmentJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetVectorEnrichmentJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            GetVectorEnrichmentJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVectorEnrichmentJobErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVectorEnrichmentJobErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVectorEnrichmentJobErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVectorEnrichmentJobErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1470,95 +1497,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetVectorEnrichmentJobError {
 }
 impl GetVectorEnrichmentJobError {
     /// Creates a new `GetVectorEnrichmentJobError`.
-    pub fn new(kind: GetVectorEnrichmentJobErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetVectorEnrichmentJobError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetVectorEnrichmentJobError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetVectorEnrichmentJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetVectorEnrichmentJobError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetVectorEnrichmentJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetVectorEnrichmentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetVectorEnrichmentJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVectorEnrichmentJobErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetVectorEnrichmentJobErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetVectorEnrichmentJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVectorEnrichmentJobErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetVectorEnrichmentJobErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetVectorEnrichmentJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVectorEnrichmentJobErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetVectorEnrichmentJobErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetVectorEnrichmentJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVectorEnrichmentJobErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetVectorEnrichmentJobErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `GetVectorEnrichmentJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVectorEnrichmentJobErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, GetVectorEnrichmentJobErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for GetVectorEnrichmentJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetVectorEnrichmentJobErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetVectorEnrichmentJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetVectorEnrichmentJobErrorKind::ValidationException(_inner) => Some(_inner),
-            GetVectorEnrichmentJobErrorKind::Unhandled(_inner) => Some(_inner),
+            GetVectorEnrichmentJobErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetVectorEnrichmentJobErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetVectorEnrichmentJobErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetVectorEnrichmentJobErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetVectorEnrichmentJobErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            GetVectorEnrichmentJobErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1568,17 +1588,15 @@ impl std::error::Error for GetVectorEnrichmentJobError {
 #[derive(std::fmt::Debug)]
 pub struct SearchRasterDataCollectionError {
     /// Kind of error that occurred.
-    pub kind: SearchRasterDataCollectionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: SearchRasterDataCollectionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for SearchRasterDataCollectionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: SearchRasterDataCollectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: SearchRasterDataCollectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1596,25 +1614,37 @@ pub enum SearchRasterDataCollectionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchRasterDataCollectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SearchRasterDataCollectionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            SearchRasterDataCollectionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            SearchRasterDataCollectionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            SearchRasterDataCollectionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            SearchRasterDataCollectionErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            SearchRasterDataCollectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            SearchRasterDataCollectionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchRasterDataCollectionErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchRasterDataCollectionErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchRasterDataCollectionErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchRasterDataCollectionErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchRasterDataCollectionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1628,95 +1658,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for SearchRasterDataCollectionErr
 }
 impl SearchRasterDataCollectionError {
     /// Creates a new `SearchRasterDataCollectionError`.
-    pub fn new(kind: SearchRasterDataCollectionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `SearchRasterDataCollectionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SearchRasterDataCollectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `SearchRasterDataCollectionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SearchRasterDataCollectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: SearchRasterDataCollectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `SearchRasterDataCollectionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: SearchRasterDataCollectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `SearchRasterDataCollectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: SearchRasterDataCollectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `SearchRasterDataCollectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SearchRasterDataCollectionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, SearchRasterDataCollectionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `SearchRasterDataCollectionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SearchRasterDataCollectionErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, SearchRasterDataCollectionErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `SearchRasterDataCollectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SearchRasterDataCollectionErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, SearchRasterDataCollectionErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `SearchRasterDataCollectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SearchRasterDataCollectionErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, SearchRasterDataCollectionErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `SearchRasterDataCollectionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SearchRasterDataCollectionErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, SearchRasterDataCollectionErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for SearchRasterDataCollectionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SearchRasterDataCollectionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            SearchRasterDataCollectionErrorKind::InternalServerException(_inner) => Some(_inner),
-            SearchRasterDataCollectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            SearchRasterDataCollectionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            SearchRasterDataCollectionErrorKind::ValidationException(_inner) => Some(_inner),
-            SearchRasterDataCollectionErrorKind::Unhandled(_inner) => Some(_inner),
+            SearchRasterDataCollectionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            SearchRasterDataCollectionErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            SearchRasterDataCollectionErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            SearchRasterDataCollectionErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            SearchRasterDataCollectionErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            SearchRasterDataCollectionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1726,17 +1749,15 @@ impl std::error::Error for SearchRasterDataCollectionError {
 #[derive(std::fmt::Debug)]
 pub struct ListRasterDataCollectionsError {
     /// Kind of error that occurred.
-    pub kind: ListRasterDataCollectionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListRasterDataCollectionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListRasterDataCollectionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListRasterDataCollectionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListRasterDataCollectionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1754,25 +1775,37 @@ pub enum ListRasterDataCollectionsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRasterDataCollectionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListRasterDataCollectionsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListRasterDataCollectionsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            ListRasterDataCollectionsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListRasterDataCollectionsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ListRasterDataCollectionsErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListRasterDataCollectionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListRasterDataCollectionsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRasterDataCollectionsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRasterDataCollectionsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRasterDataCollectionsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRasterDataCollectionsErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRasterDataCollectionsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1786,95 +1819,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListRasterDataCollectionsErro
 }
 impl ListRasterDataCollectionsError {
     /// Creates a new `ListRasterDataCollectionsError`.
-    pub fn new(kind: ListRasterDataCollectionsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListRasterDataCollectionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListRasterDataCollectionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListRasterDataCollectionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListRasterDataCollectionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListRasterDataCollectionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListRasterDataCollectionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListRasterDataCollectionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListRasterDataCollectionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListRasterDataCollectionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListRasterDataCollectionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRasterDataCollectionsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListRasterDataCollectionsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListRasterDataCollectionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRasterDataCollectionsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ListRasterDataCollectionsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ListRasterDataCollectionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRasterDataCollectionsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListRasterDataCollectionsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListRasterDataCollectionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRasterDataCollectionsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, ListRasterDataCollectionsErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `ListRasterDataCollectionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRasterDataCollectionsErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListRasterDataCollectionsErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListRasterDataCollectionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListRasterDataCollectionsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListRasterDataCollectionsErrorKind::InternalServerException(_inner) => Some(_inner),
-            ListRasterDataCollectionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListRasterDataCollectionsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListRasterDataCollectionsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListRasterDataCollectionsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListRasterDataCollectionsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListRasterDataCollectionsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListRasterDataCollectionsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListRasterDataCollectionsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ListRasterDataCollectionsErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListRasterDataCollectionsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1884,15 +1910,15 @@ impl std::error::Error for ListRasterDataCollectionsError {
 #[derive(std::fmt::Debug)]
 pub struct GetRasterDataCollectionError {
     /// Kind of error that occurred.
-    pub kind: GetRasterDataCollectionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetRasterDataCollectionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetRasterDataCollectionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetRasterDataCollectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1910,25 +1936,37 @@ pub enum GetRasterDataCollectionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRasterDataCollectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetRasterDataCollectionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetRasterDataCollectionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            GetRasterDataCollectionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetRasterDataCollectionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetRasterDataCollectionErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            GetRasterDataCollectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetRasterDataCollectionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRasterDataCollectionErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRasterDataCollectionErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRasterDataCollectionErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRasterDataCollectionErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRasterDataCollectionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1942,95 +1980,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetRasterDataCollectionError 
 }
 impl GetRasterDataCollectionError {
     /// Creates a new `GetRasterDataCollectionError`.
-    pub fn new(kind: GetRasterDataCollectionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetRasterDataCollectionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetRasterDataCollectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetRasterDataCollectionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetRasterDataCollectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetRasterDataCollectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetRasterDataCollectionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetRasterDataCollectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetRasterDataCollectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetRasterDataCollectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetRasterDataCollectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRasterDataCollectionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetRasterDataCollectionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetRasterDataCollectionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRasterDataCollectionErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetRasterDataCollectionErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetRasterDataCollectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRasterDataCollectionErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetRasterDataCollectionErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetRasterDataCollectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRasterDataCollectionErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetRasterDataCollectionErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `GetRasterDataCollectionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRasterDataCollectionErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, GetRasterDataCollectionErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for GetRasterDataCollectionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetRasterDataCollectionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetRasterDataCollectionErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetRasterDataCollectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetRasterDataCollectionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetRasterDataCollectionErrorKind::ValidationException(_inner) => Some(_inner),
-            GetRasterDataCollectionErrorKind::Unhandled(_inner) => Some(_inner),
+            GetRasterDataCollectionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetRasterDataCollectionErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetRasterDataCollectionErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetRasterDataCollectionErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetRasterDataCollectionErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            GetRasterDataCollectionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2040,15 +2071,15 @@ impl std::error::Error for GetRasterDataCollectionError {
 #[derive(std::fmt::Debug)]
 pub struct StopEarthObservationJobError {
     /// Kind of error that occurred.
-    pub kind: StopEarthObservationJobErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StopEarthObservationJobErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StopEarthObservationJobError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StopEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2068,26 +2099,40 @@ pub enum StopEarthObservationJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopEarthObservationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StopEarthObservationJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            StopEarthObservationJobErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            StopEarthObservationJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            StopEarthObservationJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            StopEarthObservationJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            StopEarthObservationJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            StopEarthObservationJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            StopEarthObservationJobErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopEarthObservationJobErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopEarthObservationJobErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopEarthObservationJobErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopEarthObservationJobErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopEarthObservationJobErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopEarthObservationJobErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2101,103 +2146,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for StopEarthObservationJobError 
 }
 impl StopEarthObservationJobError {
     /// Creates a new `StopEarthObservationJobError`.
-    pub fn new(kind: StopEarthObservationJobErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StopEarthObservationJobError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StopEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StopEarthObservationJobError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StopEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StopEarthObservationJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StopEarthObservationJobError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StopEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StopEarthObservationJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StopEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StopEarthObservationJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopEarthObservationJobErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, StopEarthObservationJobErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `StopEarthObservationJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopEarthObservationJobErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, StopEarthObservationJobErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `StopEarthObservationJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopEarthObservationJobErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, StopEarthObservationJobErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `StopEarthObservationJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopEarthObservationJobErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, StopEarthObservationJobErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `StopEarthObservationJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopEarthObservationJobErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, StopEarthObservationJobErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `StopEarthObservationJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopEarthObservationJobErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, StopEarthObservationJobErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for StopEarthObservationJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StopEarthObservationJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            StopEarthObservationJobErrorKind::ConflictException(_inner) => Some(_inner),
-            StopEarthObservationJobErrorKind::InternalServerException(_inner) => Some(_inner),
-            StopEarthObservationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            StopEarthObservationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StopEarthObservationJobErrorKind::ValidationException(_inner) => Some(_inner),
-            StopEarthObservationJobErrorKind::Unhandled(_inner) => Some(_inner),
+            StopEarthObservationJobErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            StopEarthObservationJobErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            StopEarthObservationJobErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            StopEarthObservationJobErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            StopEarthObservationJobErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            StopEarthObservationJobErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            StopEarthObservationJobErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2207,15 +2244,15 @@ impl std::error::Error for StopEarthObservationJobError {
 #[derive(std::fmt::Debug)]
 pub struct GetTileError {
     /// Kind of error that occurred.
-    pub kind: GetTileErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetTileErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetTileError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetTileErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2233,25 +2270,37 @@ pub enum GetTileErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetTileErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetTileErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            GetTileErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetTileErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetTileErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            GetTileErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetTileErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTileErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTileErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTileErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTileErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTileErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2265,46 +2314,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetTileError {
 }
 impl GetTileError {
     /// Creates a new `GetTileError`.
-    pub fn new(kind: GetTileErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetTileError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetTileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetTileError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetTileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetTileErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetTileError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetTileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetTileError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetTileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetTileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetTileErrorKind::AccessDeniedException(_))
@@ -2329,12 +2378,24 @@ impl GetTileError {
 impl std::error::Error for GetTileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetTileErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetTileErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetTileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetTileErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetTileErrorKind::ValidationException(_inner) => Some(_inner),
-            GetTileErrorKind::Unhandled(_inner) => Some(_inner),
+            GetTileErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetTileErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetTileErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetTileErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetTileErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            GetTileErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2344,17 +2405,15 @@ impl std::error::Error for GetTileError {
 #[derive(std::fmt::Debug)]
 pub struct ExportEarthObservationJobError {
     /// Kind of error that occurred.
-    pub kind: ExportEarthObservationJobErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ExportEarthObservationJobErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ExportEarthObservationJobError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ExportEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ExportEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2376,29 +2435,43 @@ pub enum ExportEarthObservationJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportEarthObservationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExportEarthObservationJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ExportEarthObservationJobErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            ExportEarthObservationJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            ExportEarthObservationJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ExportEarthObservationJobErrorKind::ServiceQuotaExceededException(_inner) => {
+            ExportEarthObservationJobErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEarthObservationJobErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEarthObservationJobErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEarthObservationJobErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEarthObservationJobErrorKind::ServiceQuotaExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEarthObservationJobErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEarthObservationJobErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEarthObservationJobErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ExportEarthObservationJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ExportEarthObservationJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ExportEarthObservationJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2412,113 +2485,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ExportEarthObservationJobErro
 }
 impl ExportEarthObservationJobError {
     /// Creates a new `ExportEarthObservationJobError`.
-    pub fn new(kind: ExportEarthObservationJobErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ExportEarthObservationJobError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ExportEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ExportEarthObservationJobError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ExportEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ExportEarthObservationJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ExportEarthObservationJobError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ExportEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ExportEarthObservationJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ExportEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ExportEarthObservationJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEarthObservationJobErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ExportEarthObservationJobErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ExportEarthObservationJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEarthObservationJobErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, ExportEarthObservationJobErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `ExportEarthObservationJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEarthObservationJobErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ExportEarthObservationJobErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ExportEarthObservationJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEarthObservationJobErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ExportEarthObservationJobErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ExportEarthObservationJobErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEarthObservationJobErrorKind::ServiceQuotaExceededException(_)
-        )
+        matches!(&self.kind, ExportEarthObservationJobErrorKind::ServiceQuotaExceededException(_))
     }
     /// Returns `true` if the error kind is `ExportEarthObservationJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEarthObservationJobErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, ExportEarthObservationJobErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `ExportEarthObservationJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEarthObservationJobErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ExportEarthObservationJobErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ExportEarthObservationJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExportEarthObservationJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ExportEarthObservationJobErrorKind::ConflictException(_inner) => Some(_inner),
-            ExportEarthObservationJobErrorKind::InternalServerException(_inner) => Some(_inner),
-            ExportEarthObservationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ExportEarthObservationJobErrorKind::ServiceQuotaExceededException(_inner) => {
+            ExportEarthObservationJobErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEarthObservationJobErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEarthObservationJobErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEarthObservationJobErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEarthObservationJobErrorKind::ServiceQuotaExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEarthObservationJobErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEarthObservationJobErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEarthObservationJobErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ExportEarthObservationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ExportEarthObservationJobErrorKind::ValidationException(_inner) => Some(_inner),
-            ExportEarthObservationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2528,17 +2590,15 @@ impl std::error::Error for ExportEarthObservationJobError {
 #[derive(std::fmt::Debug)]
 pub struct ListEarthObservationJobsError {
     /// Kind of error that occurred.
-    pub kind: ListEarthObservationJobsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListEarthObservationJobsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListEarthObservationJobsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListEarthObservationJobsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListEarthObservationJobsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2556,25 +2616,37 @@ pub enum ListEarthObservationJobsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEarthObservationJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListEarthObservationJobsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListEarthObservationJobsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            ListEarthObservationJobsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListEarthObservationJobsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ListEarthObservationJobsErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListEarthObservationJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListEarthObservationJobsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListEarthObservationJobsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListEarthObservationJobsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListEarthObservationJobsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListEarthObservationJobsErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListEarthObservationJobsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2588,95 +2660,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListEarthObservationJobsError
 }
 impl ListEarthObservationJobsError {
     /// Creates a new `ListEarthObservationJobsError`.
-    pub fn new(kind: ListEarthObservationJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListEarthObservationJobsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListEarthObservationJobsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListEarthObservationJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListEarthObservationJobsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListEarthObservationJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListEarthObservationJobsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListEarthObservationJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListEarthObservationJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListEarthObservationJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListEarthObservationJobsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListEarthObservationJobsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListEarthObservationJobsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListEarthObservationJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListEarthObservationJobsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ListEarthObservationJobsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ListEarthObservationJobsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListEarthObservationJobsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListEarthObservationJobsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListEarthObservationJobsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListEarthObservationJobsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, ListEarthObservationJobsErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `ListEarthObservationJobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListEarthObservationJobsErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListEarthObservationJobsErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListEarthObservationJobsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListEarthObservationJobsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListEarthObservationJobsErrorKind::InternalServerException(_inner) => Some(_inner),
-            ListEarthObservationJobsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListEarthObservationJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListEarthObservationJobsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListEarthObservationJobsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListEarthObservationJobsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListEarthObservationJobsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListEarthObservationJobsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListEarthObservationJobsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ListEarthObservationJobsErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListEarthObservationJobsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2686,17 +2751,15 @@ impl std::error::Error for ListEarthObservationJobsError {
 #[derive(std::fmt::Debug)]
 pub struct StartEarthObservationJobError {
     /// Kind of error that occurred.
-    pub kind: StartEarthObservationJobErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StartEarthObservationJobErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartEarthObservationJobError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: StartEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: StartEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2718,29 +2781,43 @@ pub enum StartEarthObservationJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartEarthObservationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartEarthObservationJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            StartEarthObservationJobErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            StartEarthObservationJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            StartEarthObservationJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            StartEarthObservationJobErrorKind::ServiceQuotaExceededException(_inner) => {
+            StartEarthObservationJobErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartEarthObservationJobErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartEarthObservationJobErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartEarthObservationJobErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartEarthObservationJobErrorKind::ServiceQuotaExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartEarthObservationJobErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartEarthObservationJobErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartEarthObservationJobErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            StartEarthObservationJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            StartEarthObservationJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            StartEarthObservationJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2754,113 +2831,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartEarthObservationJobError
 }
 impl StartEarthObservationJobError {
     /// Creates a new `StartEarthObservationJobError`.
-    pub fn new(kind: StartEarthObservationJobErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StartEarthObservationJobError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StartEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StartEarthObservationJobError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StartEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StartEarthObservationJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StartEarthObservationJobError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StartEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StartEarthObservationJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StartEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StartEarthObservationJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartEarthObservationJobErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, StartEarthObservationJobErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `StartEarthObservationJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartEarthObservationJobErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, StartEarthObservationJobErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `StartEarthObservationJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartEarthObservationJobErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, StartEarthObservationJobErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `StartEarthObservationJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartEarthObservationJobErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, StartEarthObservationJobErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `StartEarthObservationJobErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartEarthObservationJobErrorKind::ServiceQuotaExceededException(_)
-        )
+        matches!(&self.kind, StartEarthObservationJobErrorKind::ServiceQuotaExceededException(_))
     }
     /// Returns `true` if the error kind is `StartEarthObservationJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartEarthObservationJobErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, StartEarthObservationJobErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `StartEarthObservationJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartEarthObservationJobErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, StartEarthObservationJobErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for StartEarthObservationJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartEarthObservationJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            StartEarthObservationJobErrorKind::ConflictException(_inner) => Some(_inner),
-            StartEarthObservationJobErrorKind::InternalServerException(_inner) => Some(_inner),
-            StartEarthObservationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            StartEarthObservationJobErrorKind::ServiceQuotaExceededException(_inner) => {
+            StartEarthObservationJobErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            StartEarthObservationJobErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            StartEarthObservationJobErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            StartEarthObservationJobErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            StartEarthObservationJobErrorKind::ServiceQuotaExceededException(_inner) =>
+            Some(_inner)
+            ,
+            StartEarthObservationJobErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            StartEarthObservationJobErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            StartEarthObservationJobErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            StartEarthObservationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartEarthObservationJobErrorKind::ValidationException(_inner) => Some(_inner),
-            StartEarthObservationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2870,17 +2936,15 @@ impl std::error::Error for StartEarthObservationJobError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteEarthObservationJobError {
     /// Kind of error that occurred.
-    pub kind: DeleteEarthObservationJobErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteEarthObservationJobErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteEarthObservationJobError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2900,26 +2964,40 @@ pub enum DeleteEarthObservationJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEarthObservationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteEarthObservationJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteEarthObservationJobErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DeleteEarthObservationJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            DeleteEarthObservationJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DeleteEarthObservationJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DeleteEarthObservationJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            DeleteEarthObservationJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteEarthObservationJobErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEarthObservationJobErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEarthObservationJobErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEarthObservationJobErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEarthObservationJobErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEarthObservationJobErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEarthObservationJobErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2933,103 +3011,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteEarthObservationJobErro
 }
 impl DeleteEarthObservationJobError {
     /// Creates a new `DeleteEarthObservationJobError`.
-    pub fn new(kind: DeleteEarthObservationJobErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteEarthObservationJobError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteEarthObservationJobError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteEarthObservationJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteEarthObservationJobError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteEarthObservationJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteEarthObservationJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEarthObservationJobErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DeleteEarthObservationJobErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteEarthObservationJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEarthObservationJobErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, DeleteEarthObservationJobErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteEarthObservationJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEarthObservationJobErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, DeleteEarthObservationJobErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `DeleteEarthObservationJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEarthObservationJobErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteEarthObservationJobErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteEarthObservationJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEarthObservationJobErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DeleteEarthObservationJobErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `DeleteEarthObservationJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteEarthObservationJobErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, DeleteEarthObservationJobErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for DeleteEarthObservationJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteEarthObservationJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeleteEarthObservationJobErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteEarthObservationJobErrorKind::InternalServerException(_inner) => Some(_inner),
-            DeleteEarthObservationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteEarthObservationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteEarthObservationJobErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteEarthObservationJobErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteEarthObservationJobErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEarthObservationJobErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEarthObservationJobErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEarthObservationJobErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEarthObservationJobErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEarthObservationJobErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEarthObservationJobErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3039,15 +3109,15 @@ impl std::error::Error for DeleteEarthObservationJobError {
 #[derive(std::fmt::Debug)]
 pub struct GetEarthObservationJobError {
     /// Kind of error that occurred.
-    pub kind: GetEarthObservationJobErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetEarthObservationJobErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetEarthObservationJobError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3065,25 +3135,37 @@ pub enum GetEarthObservationJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEarthObservationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetEarthObservationJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetEarthObservationJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            GetEarthObservationJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetEarthObservationJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetEarthObservationJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            GetEarthObservationJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetEarthObservationJobErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEarthObservationJobErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEarthObservationJobErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEarthObservationJobErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEarthObservationJobErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEarthObservationJobErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3097,95 +3179,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetEarthObservationJobError {
 }
 impl GetEarthObservationJobError {
     /// Creates a new `GetEarthObservationJobError`.
-    pub fn new(kind: GetEarthObservationJobErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetEarthObservationJobError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetEarthObservationJobError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetEarthObservationJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetEarthObservationJobError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetEarthObservationJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetEarthObservationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetEarthObservationJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEarthObservationJobErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetEarthObservationJobErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetEarthObservationJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEarthObservationJobErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetEarthObservationJobErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetEarthObservationJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEarthObservationJobErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetEarthObservationJobErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetEarthObservationJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEarthObservationJobErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetEarthObservationJobErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `GetEarthObservationJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEarthObservationJobErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, GetEarthObservationJobErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for GetEarthObservationJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetEarthObservationJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetEarthObservationJobErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetEarthObservationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetEarthObservationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetEarthObservationJobErrorKind::ValidationException(_inner) => Some(_inner),
-            GetEarthObservationJobErrorKind::Unhandled(_inner) => Some(_inner),
+            GetEarthObservationJobErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetEarthObservationJobErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetEarthObservationJobErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetEarthObservationJobErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetEarthObservationJobErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            GetEarthObservationJobErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3195,15 +3270,15 @@ impl std::error::Error for GetEarthObservationJobError {
 #[derive(std::fmt::Debug)]
 pub struct UntagResourceError {
     /// Kind of error that occurred.
-    pub kind: UntagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3221,25 +3296,37 @@ pub enum UntagResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3253,63 +3340,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
 }
 impl UntagResourceError {
     /// Creates a new `UntagResourceError`.
-    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -3323,12 +3404,24 @@ impl UntagResourceError {
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UntagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagResourceErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3338,15 +3431,15 @@ impl std::error::Error for UntagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     /// Kind of error that occurred.
-    pub kind: TagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3364,25 +3457,37 @@ pub enum TagResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3396,46 +3501,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
 }
 impl TagResourceError {
     /// Creates a new `TagResourceError`.
-    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
@@ -3446,10 +3551,7 @@ impl TagResourceError {
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -3463,12 +3565,24 @@ impl TagResourceError {
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            TagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
-            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            TagResourceErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3478,15 +3592,15 @@ impl std::error::Error for TagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsForResourceError {
     /// Kind of error that occurred.
-    pub kind: ListTagsForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3504,25 +3618,37 @@ pub enum ListTagsForResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3536,120 +3662,118 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
 }
 impl ListTagsForResourceError {
     /// Creates a new `ListTagsForResourceError`.
-    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::InternalServerException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

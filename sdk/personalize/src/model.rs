@@ -3,21 +3,17 @@
 /// <p>The configuration details of the recommender.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecommenderConfig {
+pub struct RecommenderConfig  {
     /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your recommenders generate personalized recommendations for a user (not popular items or similar items).</p>
     #[doc(hidden)]
-    pub item_exploration_config:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub item_exploration_config: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will support.</p>
     #[doc(hidden)]
     pub min_recommendation_requests_per_second: std::option::Option<i32>,
 }
 impl RecommenderConfig {
     /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your recommenders generate personalized recommendations for a user (not popular items or similar items).</p>
-    pub fn item_exploration_config(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn item_exploration_config(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.item_exploration_config.as_ref()
     }
     /// <p>Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will support.</p>
@@ -27,13 +23,11 @@ impl RecommenderConfig {
 }
 /// See [`RecommenderConfig`](crate::model::RecommenderConfig).
 pub mod recommender_config {
-
+    
     /// A builder for [`RecommenderConfig`](crate::model::RecommenderConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) item_exploration_config: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) item_exploration_config: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) min_recommendation_requests_per_second: std::option::Option<i32>,
     }
     impl Builder {
@@ -42,25 +36,15 @@ pub mod recommender_config {
         /// To override the contents of this collection use [`set_item_exploration_config`](Self::set_item_exploration_config).
         ///
         /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your recommenders generate personalized recommendations for a user (not popular items or similar items).</p>
-        pub fn item_exploration_config(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn item_exploration_config(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.item_exploration_config.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.item_exploration_config = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.item_exploration_config = Some(hash_map);
+                            self
         }
         /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your recommenders generate personalized recommendations for a user (not popular items or similar items).</p>
-        pub fn set_item_exploration_config(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.item_exploration_config = input;
-            self
+        pub fn set_item_exploration_config(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.item_exploration_config = input; self
         }
         /// <p>Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will support.</p>
         pub fn min_recommendation_requests_per_second(mut self, input: i32) -> Self {
@@ -68,21 +52,21 @@ pub mod recommender_config {
             self
         }
         /// <p>Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will support.</p>
-        pub fn set_min_recommendation_requests_per_second(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.min_recommendation_requests_per_second = input;
-            self
+        pub fn set_min_recommendation_requests_per_second(mut self, input: std::option::Option<i32>) -> Self {
+            self.min_recommendation_requests_per_second = input; self
         }
         /// Consumes the builder and constructs a [`RecommenderConfig`](crate::model::RecommenderConfig).
         pub fn build(self) -> crate::model::RecommenderConfig {
             crate::model::RecommenderConfig {
-                item_exploration_config: self.item_exploration_config,
-                min_recommendation_requests_per_second: self.min_recommendation_requests_per_second,
+                item_exploration_config: self.item_exploration_config
+                ,
+                min_recommendation_requests_per_second: self.min_recommendation_requests_per_second
+                ,
             }
         }
     }
+    
+    
 }
 impl RecommenderConfig {
     /// Creates a new builder-style object to manufacture [`RecommenderConfig`](crate::model::RecommenderConfig).
@@ -94,7 +78,7 @@ impl RecommenderConfig {
 /// <p>The output configuration details for a metric attribution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricAttributionOutput {
+pub struct MetricAttributionOutput  {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     #[doc(hidden)]
     pub s3_data_destination: std::option::Option<crate::model::S3DataConfig>,
@@ -104,17 +88,17 @@ pub struct MetricAttributionOutput {
 }
 impl MetricAttributionOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-    pub fn s3_data_destination(&self) -> std::option::Option<&crate::model::S3DataConfig> {
+    pub fn s3_data_destination(&self) -> std::option::Option<& crate::model::S3DataConfig> {
         self.s3_data_destination.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 /// See [`MetricAttributionOutput`](crate::model::MetricAttributionOutput).
 pub mod metric_attribution_output {
-
+    
     /// A builder for [`MetricAttributionOutput`](crate::model::MetricAttributionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -128,12 +112,8 @@ pub mod metric_attribution_output {
             self
         }
         /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-        pub fn set_s3_data_destination(
-            mut self,
-            input: std::option::Option<crate::model::S3DataConfig>,
-        ) -> Self {
-            self.s3_data_destination = input;
-            self
+        pub fn set_s3_data_destination(mut self, input: std::option::Option<crate::model::S3DataConfig>) -> Self {
+            self.s3_data_destination = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,17 +122,20 @@ pub mod metric_attribution_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Consumes the builder and constructs a [`MetricAttributionOutput`](crate::model::MetricAttributionOutput).
         pub fn build(self) -> crate::model::MetricAttributionOutput {
             crate::model::MetricAttributionOutput {
-                s3_data_destination: self.s3_data_destination,
-                role_arn: self.role_arn,
+                s3_data_destination: self.s3_data_destination
+                ,
+                role_arn: self.role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricAttributionOutput {
     /// Creates a new builder-style object to manufacture [`MetricAttributionOutput`](crate::model::MetricAttributionOutput).
@@ -164,7 +147,7 @@ impl MetricAttributionOutput {
 /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3DataConfig {
+pub struct S3DataConfig  {
     /// <p>The file path of the Amazon S3 bucket.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
@@ -174,17 +157,17 @@ pub struct S3DataConfig {
 }
 impl S3DataConfig {
     /// <p>The file path of the Amazon S3 bucket.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
 /// See [`S3DataConfig`](crate::model::S3DataConfig).
 pub mod s3_data_config {
-
+    
     /// A builder for [`S3DataConfig`](crate::model::S3DataConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -199,8 +182,7 @@ pub mod s3_data_config {
         }
         /// <p>The file path of the Amazon S3 bucket.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -209,17 +191,20 @@ pub mod s3_data_config {
         }
         /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// Consumes the builder and constructs a [`S3DataConfig`](crate::model::S3DataConfig).
         pub fn build(self) -> crate::model::S3DataConfig {
             crate::model::S3DataConfig {
-                path: self.path,
-                kms_key_arn: self.kms_key_arn,
+                path: self.path
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl S3DataConfig {
     /// Creates a new builder-style object to manufacture [`S3DataConfig`](crate::model::S3DataConfig).
@@ -231,7 +216,7 @@ impl S3DataConfig {
 /// <p>Contains information on a metric that a metric attribution reports on. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricAttribute {
+pub struct MetricAttribute  {
     /// <p>The metric's event type.</p>
     #[doc(hidden)]
     pub event_type: std::option::Option<std::string::String>,
@@ -244,21 +229,21 @@ pub struct MetricAttribute {
 }
 impl MetricAttribute {
     /// <p>The metric's event type.</p>
-    pub fn event_type(&self) -> std::option::Option<&str> {
+    pub fn event_type(&self) -> std::option::Option<& str> {
         self.event_type.as_deref()
     }
     /// <p>The metric's name. The name helps you identify the metric in Amazon CloudWatch or Amazon S3.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The attribute's expression. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
 }
 /// See [`MetricAttribute`](crate::model::MetricAttribute).
 pub mod metric_attribute {
-
+    
     /// A builder for [`MetricAttribute`](crate::model::MetricAttribute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -274,8 +259,7 @@ pub mod metric_attribute {
         }
         /// <p>The metric's event type.</p>
         pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_type = input;
-            self
+            self.event_type = input; self
         }
         /// <p>The metric's name. The name helps you identify the metric in Amazon CloudWatch or Amazon S3.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -284,8 +268,7 @@ pub mod metric_attribute {
         }
         /// <p>The metric's name. The name helps you identify the metric in Amazon CloudWatch or Amazon S3.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// <p>The attribute's expression. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -294,18 +277,22 @@ pub mod metric_attribute {
         }
         /// <p>The attribute's expression. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expression = input;
-            self
+            self.expression = input; self
         }
         /// Consumes the builder and constructs a [`MetricAttribute`](crate::model::MetricAttribute).
         pub fn build(self) -> crate::model::MetricAttribute {
             crate::model::MetricAttribute {
-                event_type: self.event_type,
-                metric_name: self.metric_name,
-                expression: self.expression,
+                event_type: self.event_type
+                ,
+                metric_name: self.metric_name
+                ,
+                expression: self.expression
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricAttribute {
     /// Creates a new builder-style object to manufacture [`MetricAttribute`](crate::model::MetricAttribute).
@@ -317,30 +304,24 @@ impl MetricAttribute {
 /// <p>The configuration details of a campaign.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CampaignConfig {
+pub struct CampaignConfig  {
     /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your solution uses the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe.</p>
     #[doc(hidden)]
-    pub item_exploration_config:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub item_exploration_config: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CampaignConfig {
     /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your solution uses the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe.</p>
-    pub fn item_exploration_config(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn item_exploration_config(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.item_exploration_config.as_ref()
     }
 }
 /// See [`CampaignConfig`](crate::model::CampaignConfig).
 pub mod campaign_config {
-
+    
     /// A builder for [`CampaignConfig`](crate::model::CampaignConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) item_exploration_config: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) item_exploration_config: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `item_exploration_config`.
@@ -348,33 +329,26 @@ pub mod campaign_config {
         /// To override the contents of this collection use [`set_item_exploration_config`](Self::set_item_exploration_config).
         ///
         /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your solution uses the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe.</p>
-        pub fn item_exploration_config(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn item_exploration_config(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.item_exploration_config.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.item_exploration_config = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.item_exploration_config = Some(hash_map);
+                            self
         }
         /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your solution uses the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe.</p>
-        pub fn set_item_exploration_config(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.item_exploration_config = input;
-            self
+        pub fn set_item_exploration_config(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.item_exploration_config = input; self
         }
         /// Consumes the builder and constructs a [`CampaignConfig`](crate::model::CampaignConfig).
         pub fn build(self) -> crate::model::CampaignConfig {
             crate::model::CampaignConfig {
-                item_exploration_config: self.item_exploration_config,
+                item_exploration_config: self.item_exploration_config
+                ,
             }
         }
     }
+    
+    
 }
 impl CampaignConfig {
     /// Creates a new builder-style object to manufacture [`CampaignConfig`](crate::model::CampaignConfig).
@@ -386,7 +360,7 @@ impl CampaignConfig {
 /// <p>The optional metadata that you apply to resources to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize resources</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
@@ -396,17 +370,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> std::option::Option<& str> {
         self.tag_key.as_deref()
     }
     /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
-    pub fn tag_value(&self) -> std::option::Option<&str> {
+    pub fn tag_value(&self) -> std::option::Option<& str> {
         self.tag_value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -421,8 +395,7 @@ pub mod tag {
         }
         /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tag_key = input;
-            self
+            self.tag_key = input; self
         }
         /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
         pub fn tag_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -431,17 +404,20 @@ pub mod tag {
         }
         /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
         pub fn set_tag_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tag_value = input;
-            self
+            self.tag_value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                tag_key: self.tag_key,
-                tag_value: self.tag_value,
+                tag_key: self.tag_key
+                ,
+                tag_value: self.tag_value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -453,14 +429,14 @@ impl Tag {
 /// <p>Provides a summary of the properties of a solution version. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SolutionVersionSummary {
+pub struct SolutionVersionSummary  {
     /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
     #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the solution version.</p>
-    /// <p>A solution version can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <p>The status of the solution version.</p> 
+    /// <p>A solution version can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -476,33 +452,33 @@ pub struct SolutionVersionSummary {
 }
 impl SolutionVersionSummary {
     /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
-    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+    pub fn solution_version_arn(&self) -> std::option::Option<& str> {
         self.solution_version_arn.as_deref()
     }
-    /// <p>The status of the solution version.</p>
-    /// <p>A solution version can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <p>The status of the solution version.</p> 
+    /// <p>A solution version can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that this version of a solution was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the solution version was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If a solution version fails, the reason behind the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
 /// See [`SolutionVersionSummary`](crate::model::SolutionVersionSummary).
 pub mod solution_version_summary {
-
+    
     /// A builder for [`SolutionVersionSummary`](crate::model::SolutionVersionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -519,30 +495,25 @@ pub mod solution_version_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
-        pub fn set_solution_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.solution_version_arn = input;
-            self
+        pub fn set_solution_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.solution_version_arn = input; self
         }
-        /// <p>The status of the solution version.</p>
-        /// <p>A solution version can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <p>The status of the solution version.</p> 
+        /// <p>A solution version can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the solution version.</p>
-        /// <p>A solution version can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <p>The status of the solution version.</p> 
+        /// <p>A solution version can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time (in Unix time) that this version of a solution was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -550,12 +521,8 @@ pub mod solution_version_summary {
             self
         }
         /// <p>The date and time (in Unix time) that this version of a solution was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the solution version was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -563,12 +530,8 @@ pub mod solution_version_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the solution version was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>If a solution version fails, the reason behind the failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -576,24 +539,27 @@ pub mod solution_version_summary {
             self
         }
         /// <p>If a solution version fails, the reason behind the failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// Consumes the builder and constructs a [`SolutionVersionSummary`](crate::model::SolutionVersionSummary).
         pub fn build(self) -> crate::model::SolutionVersionSummary {
             crate::model::SolutionVersionSummary {
-                solution_version_arn: self.solution_version_arn,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                failure_reason: self.failure_reason,
+                solution_version_arn: self.solution_version_arn
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                failure_reason: self.failure_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl SolutionVersionSummary {
     /// Creates a new builder-style object to manufacture [`SolutionVersionSummary`](crate::model::SolutionVersionSummary).
@@ -605,18 +571,18 @@ impl SolutionVersionSummary {
 /// <p>Provides a summary of the properties of a solution. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SolutionSummary {
+pub struct SolutionSummary  {
     /// <p>The name of the solution.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution.</p>
     #[doc(hidden)]
     pub solution_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the solution.</p>
-    /// <p>A solution can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the solution.</p> 
+    /// <p>A solution can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -632,38 +598,38 @@ pub struct SolutionSummary {
 }
 impl SolutionSummary {
     /// <p>The name of the solution.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the solution.</p>
-    pub fn solution_arn(&self) -> std::option::Option<&str> {
+    pub fn solution_arn(&self) -> std::option::Option<& str> {
         self.solution_arn.as_deref()
     }
-    /// <p>The status of the solution.</p>
-    /// <p>A solution can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the solution.</p> 
+    /// <p>A solution can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the solution was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
-    pub fn recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn recipe_arn(&self) -> std::option::Option<& str> {
         self.recipe_arn.as_deref()
     }
 }
 /// See [`SolutionSummary`](crate::model::SolutionSummary).
 pub mod solution_summary {
-
+    
     /// A builder for [`SolutionSummary`](crate::model::SolutionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -682,8 +648,7 @@ pub mod solution_summary {
         }
         /// <p>The name of the solution.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution.</p>
         pub fn solution_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -692,28 +657,26 @@ pub mod solution_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the solution.</p>
         pub fn set_solution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.solution_arn = input;
-            self
+            self.solution_arn = input; self
         }
-        /// <p>The status of the solution.</p>
-        /// <p>A solution can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the solution.</p> 
+        /// <p>A solution can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the solution.</p>
-        /// <p>A solution can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the solution.</p> 
+        /// <p>A solution can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time (in Unix time) that the solution was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -721,12 +684,8 @@ pub mod solution_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the solution was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the solution was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -734,12 +693,8 @@ pub mod solution_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
         pub fn recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -748,21 +703,28 @@ pub mod solution_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
         pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.recipe_arn = input;
-            self
+            self.recipe_arn = input; self
         }
         /// Consumes the builder and constructs a [`SolutionSummary`](crate::model::SolutionSummary).
         pub fn build(self) -> crate::model::SolutionSummary {
             crate::model::SolutionSummary {
-                name: self.name,
-                solution_arn: self.solution_arn,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                recipe_arn: self.recipe_arn,
+                name: self.name
+                ,
+                solution_arn: self.solution_arn
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                recipe_arn: self.recipe_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl SolutionSummary {
     /// Creates a new builder-style object to manufacture [`SolutionSummary`](crate::model::SolutionSummary).
@@ -774,7 +736,7 @@ impl SolutionSummary {
 /// <p>Provides a summary of the properties of a dataset schema. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSchema.html">DescribeSchema</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetSchemaSummary {
+pub struct DatasetSchemaSummary  {
     /// <p>The name of the schema.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -793,29 +755,29 @@ pub struct DatasetSchemaSummary {
 }
 impl DatasetSchemaSummary {
     /// <p>The name of the schema.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The date and time (in Unix time) that the schema was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
-    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+    pub fn domain(&self) -> std::option::Option<& crate::model::Domain> {
         self.domain.as_ref()
     }
 }
 /// See [`DatasetSchemaSummary`](crate::model::DatasetSchemaSummary).
 pub mod dataset_schema_summary {
-
+    
     /// A builder for [`DatasetSchemaSummary`](crate::model::DatasetSchemaSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -833,8 +795,7 @@ pub mod dataset_schema_summary {
         }
         /// <p>The name of the schema.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the schema.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -843,8 +804,7 @@ pub mod dataset_schema_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the schema.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_arn = input;
-            self
+            self.schema_arn = input; self
         }
         /// <p>The date and time (in Unix time) that the schema was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -852,12 +812,8 @@ pub mod dataset_schema_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the schema was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the schema was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -865,12 +821,8 @@ pub mod dataset_schema_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the schema was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
@@ -879,20 +831,26 @@ pub mod dataset_schema_summary {
         }
         /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// Consumes the builder and constructs a [`DatasetSchemaSummary`](crate::model::DatasetSchemaSummary).
         pub fn build(self) -> crate::model::DatasetSchemaSummary {
             crate::model::DatasetSchemaSummary {
-                name: self.name,
-                schema_arn: self.schema_arn,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                domain: self.domain,
+                name: self.name
+                ,
+                schema_arn: self.schema_arn
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                domain: self.domain
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetSchemaSummary {
     /// Creates a new builder-style object to manufacture [`DatasetSchemaSummary`](crate::model::DatasetSchemaSummary).
@@ -907,9 +865,9 @@ impl DatasetSchemaSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let domain = unimplemented!();
 /// match domain {
@@ -931,58 +889,52 @@ impl DatasetSchemaSummary {
 /// Specifically, when `domain` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Domain::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Domain {
     #[allow(missing_docs)] // documentation missing in model
     Ecommerce,
     #[allow(missing_docs)] // documentation missing in model
     VideoOnDemand,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Domain {
     fn from(s: &str) -> Self {
         match s {
             "ECOMMERCE" => Domain::Ecommerce,
             "VIDEO_ON_DEMAND" => Domain::VideoOnDemand,
-            other => Domain::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Domain::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Domain {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Domain::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Domain::from(s))
+                }
+            }
 impl Domain {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Domain::Ecommerce => "ECOMMERCE",
             Domain::VideoOnDemand => "VIDEO_ON_DEMAND",
-            Domain::Unknown(value) => value.as_str(),
+            Domain::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ECOMMERCE", "VIDEO_ON_DEMAND"]
+        &[
+            "ECOMMERCE", "VIDEO_ON_DEMAND"
+        ]
     }
 }
 impl AsRef<str> for Domain {
@@ -994,7 +946,7 @@ impl AsRef<str> for Domain {
 /// <p>Provides a summary of the properties of the recommender.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecommenderSummary {
+pub struct RecommenderSummary  {
     /// <p>The name of the recommender.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1010,11 +962,11 @@ pub struct RecommenderSummary {
     /// <p>The configuration details of the recommender.</p>
     #[doc(hidden)]
     pub recommender_config: std::option::Option<crate::model::RecommenderConfig>,
-    /// <p>The status of the recommender. A recommender can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the recommender. A recommender can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -1027,46 +979,46 @@ pub struct RecommenderSummary {
 }
 impl RecommenderSummary {
     /// <p>The name of the recommender.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
-    pub fn recommender_arn(&self) -> std::option::Option<&str> {
+    pub fn recommender_arn(&self) -> std::option::Option<& str> {
         self.recommender_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for.</p>
-    pub fn recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn recipe_arn(&self) -> std::option::Option<& str> {
         self.recipe_arn.as_deref()
     }
     /// <p>The configuration details of the recommender.</p>
-    pub fn recommender_config(&self) -> std::option::Option<&crate::model::RecommenderConfig> {
+    pub fn recommender_config(&self) -> std::option::Option<& crate::model::RecommenderConfig> {
         self.recommender_config.as_ref()
     }
-    /// <p>The status of the recommender. A recommender can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the recommender. A recommender can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix format) that the recommender was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`RecommenderSummary`](crate::model::RecommenderSummary).
 pub mod recommender_summary {
-
+    
     /// A builder for [`RecommenderSummary`](crate::model::RecommenderSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1087,8 +1039,7 @@ pub mod recommender_summary {
         }
         /// <p>The name of the recommender.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
         pub fn recommender_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1096,12 +1047,8 @@ pub mod recommender_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
-        pub fn set_recommender_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommender_arn = input;
-            self
+        pub fn set_recommender_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommender_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1109,12 +1056,8 @@ pub mod recommender_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
-        pub fn set_dataset_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_group_arn = input;
-            self
+        pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_group_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for.</p>
         pub fn recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1123,8 +1066,7 @@ pub mod recommender_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for.</p>
         pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.recipe_arn = input;
-            self
+            self.recipe_arn = input; self
         }
         /// <p>The configuration details of the recommender.</p>
         pub fn recommender_config(mut self, input: crate::model::RecommenderConfig) -> Self {
@@ -1132,32 +1074,27 @@ pub mod recommender_summary {
             self
         }
         /// <p>The configuration details of the recommender.</p>
-        pub fn set_recommender_config(
-            mut self,
-            input: std::option::Option<crate::model::RecommenderConfig>,
-        ) -> Self {
-            self.recommender_config = input;
-            self
+        pub fn set_recommender_config(mut self, input: std::option::Option<crate::model::RecommenderConfig>) -> Self {
+            self.recommender_config = input; self
         }
-        /// <p>The status of the recommender. A recommender can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the recommender. A recommender can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the recommender. A recommender can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the recommender. A recommender can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time (in Unix format) that the recommender was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1165,12 +1102,8 @@ pub mod recommender_summary {
             self
         }
         /// <p>The date and time (in Unix format) that the recommender was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1178,27 +1111,33 @@ pub mod recommender_summary {
             self
         }
         /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`RecommenderSummary`](crate::model::RecommenderSummary).
         pub fn build(self) -> crate::model::RecommenderSummary {
             crate::model::RecommenderSummary {
-                name: self.name,
-                recommender_arn: self.recommender_arn,
-                dataset_group_arn: self.dataset_group_arn,
-                recipe_arn: self.recipe_arn,
-                recommender_config: self.recommender_config,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                name: self.name
+                ,
+                recommender_arn: self.recommender_arn
+                ,
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                recipe_arn: self.recipe_arn
+                ,
+                recommender_config: self.recommender_config
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl RecommenderSummary {
     /// Creates a new builder-style object to manufacture [`RecommenderSummary`](crate::model::RecommenderSummary).
@@ -1210,7 +1149,7 @@ impl RecommenderSummary {
 /// <p>Provides a summary of the properties of a recipe. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecipe.html">DescribeRecipe</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecipeSummary {
+pub struct RecipeSummary  {
     /// <p>The name of the recipe.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1232,33 +1171,33 @@ pub struct RecipeSummary {
 }
 impl RecipeSummary {
     /// <p>The name of the recipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe.</p>
-    pub fn recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn recipe_arn(&self) -> std::option::Option<& str> {
         self.recipe_arn.as_deref()
     }
     /// <p>The status of the recipe.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the recipe was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the recipe was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The domain of the recipe (if the recipe is a Domain dataset group use case).</p>
-    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+    pub fn domain(&self) -> std::option::Option<& crate::model::Domain> {
         self.domain.as_ref()
     }
 }
 /// See [`RecipeSummary`](crate::model::RecipeSummary).
 pub mod recipe_summary {
-
+    
     /// A builder for [`RecipeSummary`](crate::model::RecipeSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1277,8 +1216,7 @@ pub mod recipe_summary {
         }
         /// <p>The name of the recipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the recipe.</p>
         pub fn recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1287,8 +1225,7 @@ pub mod recipe_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the recipe.</p>
         pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.recipe_arn = input;
-            self
+            self.recipe_arn = input; self
         }
         /// <p>The status of the recipe.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1297,8 +1234,7 @@ pub mod recipe_summary {
         }
         /// <p>The status of the recipe.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time (in Unix time) that the recipe was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1306,12 +1242,8 @@ pub mod recipe_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the recipe was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the recipe was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1319,12 +1251,8 @@ pub mod recipe_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the recipe was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>The domain of the recipe (if the recipe is a Domain dataset group use case).</p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
@@ -1333,21 +1261,28 @@ pub mod recipe_summary {
         }
         /// <p>The domain of the recipe (if the recipe is a Domain dataset group use case).</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// Consumes the builder and constructs a [`RecipeSummary`](crate::model::RecipeSummary).
         pub fn build(self) -> crate::model::RecipeSummary {
             crate::model::RecipeSummary {
-                name: self.name,
-                recipe_arn: self.recipe_arn,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                domain: self.domain,
+                name: self.name
+                ,
+                recipe_arn: self.recipe_arn
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                domain: self.domain
+                ,
             }
         }
     }
+    
+    
 }
 impl RecipeSummary {
     /// Creates a new builder-style object to manufacture [`RecipeSummary`](crate::model::RecipeSummary).
@@ -1362,9 +1297,9 @@ impl RecipeSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let recipeprovider = unimplemented!();
 /// match recipeprovider {
@@ -1385,54 +1320,48 @@ impl RecipeSummary {
 /// Specifically, when `recipeprovider` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RecipeProvider::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RecipeProvider {
     #[allow(missing_docs)] // documentation missing in model
     Service,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecipeProvider {
     fn from(s: &str) -> Self {
         match s {
             "SERVICE" => RecipeProvider::Service,
-            other => RecipeProvider::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RecipeProvider::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RecipeProvider {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RecipeProvider::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RecipeProvider::from(s))
+                }
+            }
 impl RecipeProvider {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecipeProvider::Service => "SERVICE",
-            RecipeProvider::Unknown(value) => value.as_str(),
+            RecipeProvider::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SERVICE"]
+        &[
+            "SERVICE"
+        ]
     }
 }
 impl AsRef<str> for RecipeProvider {
@@ -1444,7 +1373,7 @@ impl AsRef<str> for RecipeProvider {
 /// <p>Provides a summary of the properties of a metric attribution. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeMetricAttribution.html">DescribeMetricAttribution</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricAttributionSummary {
+pub struct MetricAttributionSummary  {
     /// <p>The name of the metric attribution.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1466,33 +1395,33 @@ pub struct MetricAttributionSummary {
 }
 impl MetricAttributionSummary {
     /// <p>The name of the metric attribution.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
-    pub fn metric_attribution_arn(&self) -> std::option::Option<&str> {
+    pub fn metric_attribution_arn(&self) -> std::option::Option<& str> {
         self.metric_attribution_arn.as_deref()
     }
     /// <p>The metric attribution's status.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The metric attribution's creation date time.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The metric attribution's last updated date time.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The metric attribution's failure reason.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
 /// See [`MetricAttributionSummary`](crate::model::MetricAttributionSummary).
 pub mod metric_attribution_summary {
-
+    
     /// A builder for [`MetricAttributionSummary`](crate::model::MetricAttributionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1511,8 +1440,7 @@ pub mod metric_attribution_summary {
         }
         /// <p>The name of the metric attribution.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
         pub fn metric_attribution_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1520,12 +1448,8 @@ pub mod metric_attribution_summary {
             self
         }
         /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
-        pub fn set_metric_attribution_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.metric_attribution_arn = input;
-            self
+        pub fn set_metric_attribution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_attribution_arn = input; self
         }
         /// <p>The metric attribution's status.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1534,8 +1458,7 @@ pub mod metric_attribution_summary {
         }
         /// <p>The metric attribution's status.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The metric attribution's creation date time.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1543,12 +1466,8 @@ pub mod metric_attribution_summary {
             self
         }
         /// <p>The metric attribution's creation date time.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The metric attribution's last updated date time.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1556,12 +1475,8 @@ pub mod metric_attribution_summary {
             self
         }
         /// <p>The metric attribution's last updated date time.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>The metric attribution's failure reason.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1569,25 +1484,29 @@ pub mod metric_attribution_summary {
             self
         }
         /// <p>The metric attribution's failure reason.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// Consumes the builder and constructs a [`MetricAttributionSummary`](crate::model::MetricAttributionSummary).
         pub fn build(self) -> crate::model::MetricAttributionSummary {
             crate::model::MetricAttributionSummary {
-                name: self.name,
-                metric_attribution_arn: self.metric_attribution_arn,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                failure_reason: self.failure_reason,
+                name: self.name
+                ,
+                metric_attribution_arn: self.metric_attribution_arn
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                failure_reason: self.failure_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricAttributionSummary {
     /// Creates a new builder-style object to manufacture [`MetricAttributionSummary`](crate::model::MetricAttributionSummary).
@@ -1599,7 +1518,7 @@ impl MetricAttributionSummary {
 /// <p>A short summary of a filter's attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterSummary {
+pub struct FilterSummary  {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1624,37 +1543,37 @@ pub struct FilterSummary {
 }
 impl FilterSummary {
     /// <p>The name of the filter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the filter.</p>
-    pub fn filter_arn(&self) -> std::option::Option<&str> {
+    pub fn filter_arn(&self) -> std::option::Option<& str> {
         self.filter_arn.as_deref()
     }
     /// <p>The time at which the filter was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The time at which the filter was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The ARN of the dataset group to which the filter belongs.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>If the filter failed, the reason for the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The status of the filter.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`FilterSummary`](crate::model::FilterSummary).
 pub mod filter_summary {
-
+    
     /// A builder for [`FilterSummary`](crate::model::FilterSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1674,8 +1593,7 @@ pub mod filter_summary {
         }
         /// <p>The name of the filter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN of the filter.</p>
         pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1684,8 +1602,7 @@ pub mod filter_summary {
         }
         /// <p>The ARN of the filter.</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.filter_arn = input;
-            self
+            self.filter_arn = input; self
         }
         /// <p>The time at which the filter was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1693,12 +1610,8 @@ pub mod filter_summary {
             self
         }
         /// <p>The time at which the filter was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The time at which the filter was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1706,12 +1619,8 @@ pub mod filter_summary {
             self
         }
         /// <p>The time at which the filter was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>The ARN of the dataset group to which the filter belongs.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1719,12 +1628,8 @@ pub mod filter_summary {
             self
         }
         /// <p>The ARN of the dataset group to which the filter belongs.</p>
-        pub fn set_dataset_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_group_arn = input;
-            self
+        pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_group_arn = input; self
         }
         /// <p>If the filter failed, the reason for the failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1732,12 +1637,8 @@ pub mod filter_summary {
             self
         }
         /// <p>If the filter failed, the reason for the failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The status of the filter.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1746,22 +1647,30 @@ pub mod filter_summary {
         }
         /// <p>The status of the filter.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`FilterSummary`](crate::model::FilterSummary).
         pub fn build(self) -> crate::model::FilterSummary {
             crate::model::FilterSummary {
-                name: self.name,
-                filter_arn: self.filter_arn,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                dataset_group_arn: self.dataset_group_arn,
-                failure_reason: self.failure_reason,
-                status: self.status,
+                name: self.name
+                ,
+                filter_arn: self.filter_arn
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                failure_reason: self.failure_reason
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl FilterSummary {
     /// Creates a new builder-style object to manufacture [`FilterSummary`](crate::model::FilterSummary).
@@ -1773,18 +1682,18 @@ impl FilterSummary {
 /// <p>Provides a summary of the properties of an event tracker. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html">DescribeEventTracker</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventTrackerSummary {
+pub struct EventTrackerSummary  {
     /// <p>The name of the event tracker.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the event tracker.</p>
     #[doc(hidden)]
     pub event_tracker_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the event tracker.</p>
-    /// <p>An event tracker can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the event tracker.</p> 
+    /// <p>An event tracker can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -1797,34 +1706,34 @@ pub struct EventTrackerSummary {
 }
 impl EventTrackerSummary {
     /// <p>The name of the event tracker.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the event tracker.</p>
-    pub fn event_tracker_arn(&self) -> std::option::Option<&str> {
+    pub fn event_tracker_arn(&self) -> std::option::Option<& str> {
         self.event_tracker_arn.as_deref()
     }
-    /// <p>The status of the event tracker.</p>
-    /// <p>An event tracker can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the event tracker.</p> 
+    /// <p>An event tracker can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the event tracker was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`EventTrackerSummary`](crate::model::EventTrackerSummary).
 pub mod event_tracker_summary {
-
+    
     /// A builder for [`EventTrackerSummary`](crate::model::EventTrackerSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1842,8 +1751,7 @@ pub mod event_tracker_summary {
         }
         /// <p>The name of the event tracker.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the event tracker.</p>
         pub fn event_tracker_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1851,32 +1759,27 @@ pub mod event_tracker_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the event tracker.</p>
-        pub fn set_event_tracker_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_tracker_arn = input;
-            self
+        pub fn set_event_tracker_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_tracker_arn = input; self
         }
-        /// <p>The status of the event tracker.</p>
-        /// <p>An event tracker can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the event tracker.</p> 
+        /// <p>An event tracker can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the event tracker.</p>
-        /// <p>An event tracker can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the event tracker.</p> 
+        /// <p>An event tracker can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time (in Unix time) that the event tracker was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1884,12 +1787,8 @@ pub mod event_tracker_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the event tracker was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1897,24 +1796,27 @@ pub mod event_tracker_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`EventTrackerSummary`](crate::model::EventTrackerSummary).
         pub fn build(self) -> crate::model::EventTrackerSummary {
             crate::model::EventTrackerSummary {
-                name: self.name,
-                event_tracker_arn: self.event_tracker_arn,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                name: self.name
+                ,
+                event_tracker_arn: self.event_tracker_arn
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl EventTrackerSummary {
     /// Creates a new builder-style object to manufacture [`EventTrackerSummary`](crate::model::EventTrackerSummary).
@@ -1926,27 +1828,27 @@ impl EventTrackerSummary {
 /// <p>Provides a summary of the properties of a dataset. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetSummary {
+pub struct DatasetSummary  {
     /// <p>The name of the dataset.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
-    /// <p>The dataset type. One of the following values:</p>
-    /// <ul>
-    /// <li> <p>Interactions</p> </li>
-    /// <li> <p>Items</p> </li>
-    /// <li> <p>Users</p> </li>
-    /// <li> <p>Event-Interactions</p> </li>
+    /// <p>The dataset type. One of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>Interactions</p> </li> 
+    /// <li> <p>Items</p> </li> 
+    /// <li> <p>Users</p> </li> 
+    /// <li> <p>Event-Interactions</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub dataset_type: std::option::Option<std::string::String>,
-    /// <p>The status of the dataset.</p>
-    /// <p>A dataset can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the dataset.</p> 
+    /// <p>A dataset can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -1959,44 +1861,44 @@ pub struct DatasetSummary {
 }
 impl DatasetSummary {
     /// <p>The name of the dataset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>The dataset type. One of the following values:</p>
-    /// <ul>
-    /// <li> <p>Interactions</p> </li>
-    /// <li> <p>Items</p> </li>
-    /// <li> <p>Users</p> </li>
-    /// <li> <p>Event-Interactions</p> </li>
+    /// <p>The dataset type. One of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>Interactions</p> </li> 
+    /// <li> <p>Items</p> </li> 
+    /// <li> <p>Users</p> </li> 
+    /// <li> <p>Event-Interactions</p> </li> 
     /// </ul>
-    pub fn dataset_type(&self) -> std::option::Option<&str> {
+    pub fn dataset_type(&self) -> std::option::Option<& str> {
         self.dataset_type.as_deref()
     }
-    /// <p>The status of the dataset.</p>
-    /// <p>A dataset can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the dataset.</p> 
+    /// <p>A dataset can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the dataset was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`DatasetSummary`](crate::model::DatasetSummary).
 pub mod dataset_summary {
-
+    
     /// A builder for [`DatasetSummary`](crate::model::DatasetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2015,8 +1917,7 @@ pub mod dataset_summary {
         }
         /// <p>The name of the dataset.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2025,50 +1926,47 @@ pub mod dataset_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_arn = input;
-            self
+            self.dataset_arn = input; self
         }
-        /// <p>The dataset type. One of the following values:</p>
-        /// <ul>
-        /// <li> <p>Interactions</p> </li>
-        /// <li> <p>Items</p> </li>
-        /// <li> <p>Users</p> </li>
-        /// <li> <p>Event-Interactions</p> </li>
+        /// <p>The dataset type. One of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>Interactions</p> </li> 
+        /// <li> <p>Items</p> </li> 
+        /// <li> <p>Users</p> </li> 
+        /// <li> <p>Event-Interactions</p> </li> 
         /// </ul>
         pub fn dataset_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_type = Some(input.into());
             self
         }
-        /// <p>The dataset type. One of the following values:</p>
-        /// <ul>
-        /// <li> <p>Interactions</p> </li>
-        /// <li> <p>Items</p> </li>
-        /// <li> <p>Users</p> </li>
-        /// <li> <p>Event-Interactions</p> </li>
+        /// <p>The dataset type. One of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>Interactions</p> </li> 
+        /// <li> <p>Items</p> </li> 
+        /// <li> <p>Users</p> </li> 
+        /// <li> <p>Event-Interactions</p> </li> 
         /// </ul>
         pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_type = input;
-            self
+            self.dataset_type = input; self
         }
-        /// <p>The status of the dataset.</p>
-        /// <p>A dataset can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the dataset.</p> 
+        /// <p>A dataset can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the dataset.</p>
-        /// <p>A dataset can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the dataset.</p> 
+        /// <p>A dataset can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time (in Unix time) that the dataset was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2076,12 +1974,8 @@ pub mod dataset_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the dataset was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2089,25 +1983,29 @@ pub mod dataset_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`DatasetSummary`](crate::model::DatasetSummary).
         pub fn build(self) -> crate::model::DatasetSummary {
             crate::model::DatasetSummary {
-                name: self.name,
-                dataset_arn: self.dataset_arn,
-                dataset_type: self.dataset_type,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                name: self.name
+                ,
+                dataset_arn: self.dataset_arn
+                ,
+                dataset_type: self.dataset_type
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetSummary {
     /// Creates a new builder-style object to manufacture [`DatasetSummary`](crate::model::DatasetSummary).
@@ -2119,17 +2017,17 @@ impl DatasetSummary {
 /// <p>Provides a summary of the properties of a dataset import job. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetImportJobSummary {
+pub struct DatasetImportJobSummary  {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
     #[doc(hidden)]
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the dataset import job.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The status of the dataset import job.</p>
-    /// <p>A dataset import job can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <p>The status of the dataset import job.</p> 
+    /// <p>A dataset import job can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -2148,41 +2046,41 @@ pub struct DatasetImportJobSummary {
 }
 impl DatasetImportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-    pub fn dataset_import_job_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_import_job_arn(&self) -> std::option::Option<& str> {
         self.dataset_import_job_arn.as_deref()
     }
     /// <p>The name of the dataset import job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
-    /// <p>The status of the dataset import job.</p>
-    /// <p>A dataset import job can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <p>The status of the dataset import job.</p> 
+    /// <p>A dataset import job can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the dataset import job was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If a dataset import job fails, the reason behind the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>. </p>
-    pub fn import_mode(&self) -> std::option::Option<&crate::model::ImportMode> {
+    pub fn import_mode(&self) -> std::option::Option<& crate::model::ImportMode> {
         self.import_mode.as_ref()
     }
 }
 /// See [`DatasetImportJobSummary`](crate::model::DatasetImportJobSummary).
 pub mod dataset_import_job_summary {
-
+    
     /// A builder for [`DatasetImportJobSummary`](crate::model::DatasetImportJobSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2201,12 +2099,8 @@ pub mod dataset_import_job_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-        pub fn set_dataset_import_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_import_job_arn = input;
-            self
+        pub fn set_dataset_import_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_import_job_arn = input; self
         }
         /// <p>The name of the dataset import job.</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2215,26 +2109,24 @@ pub mod dataset_import_job_summary {
         }
         /// <p>The name of the dataset import job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
-        /// <p>The status of the dataset import job.</p>
-        /// <p>A dataset import job can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <p>The status of the dataset import job.</p> 
+        /// <p>A dataset import job can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the dataset import job.</p>
-        /// <p>A dataset import job can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <p>The status of the dataset import job.</p> 
+        /// <p>A dataset import job can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time (in Unix time) that the dataset import job was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2242,12 +2134,8 @@ pub mod dataset_import_job_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the dataset import job was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2255,12 +2143,8 @@ pub mod dataset_import_job_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>If a dataset import job fails, the reason behind the failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2268,12 +2152,8 @@ pub mod dataset_import_job_summary {
             self
         }
         /// <p>If a dataset import job fails, the reason behind the failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>. </p>
         pub fn import_mode(mut self, input: crate::model::ImportMode) -> Self {
@@ -2281,26 +2161,31 @@ pub mod dataset_import_job_summary {
             self
         }
         /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>. </p>
-        pub fn set_import_mode(
-            mut self,
-            input: std::option::Option<crate::model::ImportMode>,
-        ) -> Self {
-            self.import_mode = input;
-            self
+        pub fn set_import_mode(mut self, input: std::option::Option<crate::model::ImportMode>) -> Self {
+            self.import_mode = input; self
         }
         /// Consumes the builder and constructs a [`DatasetImportJobSummary`](crate::model::DatasetImportJobSummary).
         pub fn build(self) -> crate::model::DatasetImportJobSummary {
             crate::model::DatasetImportJobSummary {
-                dataset_import_job_arn: self.dataset_import_job_arn,
-                job_name: self.job_name,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                failure_reason: self.failure_reason,
-                import_mode: self.import_mode,
+                dataset_import_job_arn: self.dataset_import_job_arn
+                ,
+                job_name: self.job_name
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                failure_reason: self.failure_reason
+                ,
+                import_mode: self.import_mode
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetImportJobSummary {
     /// Creates a new builder-style object to manufacture [`DatasetImportJobSummary`](crate::model::DatasetImportJobSummary).
@@ -2315,9 +2200,9 @@ impl DatasetImportJobSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let importmode = unimplemented!();
 /// match importmode {
@@ -2339,58 +2224,52 @@ impl DatasetImportJobSummary {
 /// Specifically, when `importmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImportMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImportMode {
     #[allow(missing_docs)] // documentation missing in model
     Full,
     #[allow(missing_docs)] // documentation missing in model
     Incremental,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImportMode {
     fn from(s: &str) -> Self {
         match s {
             "FULL" => ImportMode::Full,
             "INCREMENTAL" => ImportMode::Incremental,
-            other => ImportMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ImportMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImportMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImportMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImportMode::from(s))
+                }
+            }
 impl ImportMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImportMode::Full => "FULL",
             ImportMode::Incremental => "INCREMENTAL",
-            ImportMode::Unknown(value) => value.as_str(),
+            ImportMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FULL", "INCREMENTAL"]
+        &[
+            "FULL", "INCREMENTAL"
+        ]
     }
 }
 impl AsRef<str> for ImportMode {
@@ -2402,18 +2281,18 @@ impl AsRef<str> for ImportMode {
 /// <p>Provides a summary of the properties of a dataset group. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetGroupSummary {
+pub struct DatasetGroupSummary  {
     /// <p>The name of the dataset group.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the dataset group.</p>
-    /// <p>A dataset group can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING</p> </li>
+    /// <p>The status of the dataset group.</p> 
+    /// <p>A dataset group can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -2432,42 +2311,42 @@ pub struct DatasetGroupSummary {
 }
 impl DatasetGroupSummary {
     /// <p>The name of the dataset group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>The status of the dataset group.</p>
-    /// <p>A dataset group can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING</p> </li>
+    /// <p>The status of the dataset group.</p> 
+    /// <p>A dataset group can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the dataset group was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the dataset group was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If creating a dataset group fails, the reason behind the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The domain of a Domain dataset group.</p>
-    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+    pub fn domain(&self) -> std::option::Option<& crate::model::Domain> {
         self.domain.as_ref()
     }
 }
 /// See [`DatasetGroupSummary`](crate::model::DatasetGroupSummary).
 pub mod dataset_group_summary {
-
+    
     /// A builder for [`DatasetGroupSummary`](crate::model::DatasetGroupSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2487,8 +2366,7 @@ pub mod dataset_group_summary {
         }
         /// <p>The name of the dataset group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2496,32 +2374,27 @@ pub mod dataset_group_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-        pub fn set_dataset_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_group_arn = input;
-            self
+        pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_group_arn = input; self
         }
-        /// <p>The status of the dataset group.</p>
-        /// <p>A dataset group can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING</p> </li>
+        /// <p>The status of the dataset group.</p> 
+        /// <p>A dataset group can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the dataset group.</p>
-        /// <p>A dataset group can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING</p> </li>
+        /// <p>The status of the dataset group.</p> 
+        /// <p>A dataset group can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time (in Unix time) that the dataset group was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2529,12 +2402,8 @@ pub mod dataset_group_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the dataset group was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the dataset group was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2542,12 +2411,8 @@ pub mod dataset_group_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the dataset group was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>If creating a dataset group fails, the reason behind the failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2555,12 +2420,8 @@ pub mod dataset_group_summary {
             self
         }
         /// <p>If creating a dataset group fails, the reason behind the failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The domain of a Domain dataset group.</p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
@@ -2569,22 +2430,30 @@ pub mod dataset_group_summary {
         }
         /// <p>The domain of a Domain dataset group.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// Consumes the builder and constructs a [`DatasetGroupSummary`](crate::model::DatasetGroupSummary).
         pub fn build(self) -> crate::model::DatasetGroupSummary {
             crate::model::DatasetGroupSummary {
-                name: self.name,
-                dataset_group_arn: self.dataset_group_arn,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                failure_reason: self.failure_reason,
-                domain: self.domain,
+                name: self.name
+                ,
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                failure_reason: self.failure_reason
+                ,
+                domain: self.domain
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetGroupSummary {
     /// Creates a new builder-style object to manufacture [`DatasetGroupSummary`](crate::model::DatasetGroupSummary).
@@ -2596,17 +2465,17 @@ impl DatasetGroupSummary {
 /// <p>Provides a summary of the properties of a dataset export job. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetExportJob.html">DescribeDatasetExportJob</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetExportJobSummary {
+pub struct DatasetExportJobSummary  {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
     #[doc(hidden)]
     pub dataset_export_job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the dataset export job.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The status of the dataset export job.</p>
-    /// <p>A dataset export job can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <p>The status of the dataset export job.</p> 
+    /// <p>A dataset export job can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -2622,37 +2491,37 @@ pub struct DatasetExportJobSummary {
 }
 impl DatasetExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
-    pub fn dataset_export_job_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_export_job_arn(&self) -> std::option::Option<& str> {
         self.dataset_export_job_arn.as_deref()
     }
     /// <p>The name of the dataset export job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
-    /// <p>The status of the dataset export job.</p>
-    /// <p>A dataset export job can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <p>The status of the dataset export job.</p> 
+    /// <p>A dataset export job can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the dataset export job was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the dataset export job status was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If a dataset export job fails, the reason behind the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
 /// See [`DatasetExportJobSummary`](crate::model::DatasetExportJobSummary).
 pub mod dataset_export_job_summary {
-
+    
     /// A builder for [`DatasetExportJobSummary`](crate::model::DatasetExportJobSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2670,12 +2539,8 @@ pub mod dataset_export_job_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
-        pub fn set_dataset_export_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_export_job_arn = input;
-            self
+        pub fn set_dataset_export_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_export_job_arn = input; self
         }
         /// <p>The name of the dataset export job.</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2684,26 +2549,24 @@ pub mod dataset_export_job_summary {
         }
         /// <p>The name of the dataset export job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
-        /// <p>The status of the dataset export job.</p>
-        /// <p>A dataset export job can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <p>The status of the dataset export job.</p> 
+        /// <p>A dataset export job can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the dataset export job.</p>
-        /// <p>A dataset export job can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <p>The status of the dataset export job.</p> 
+        /// <p>A dataset export job can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time (in Unix time) that the dataset export job was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2711,12 +2574,8 @@ pub mod dataset_export_job_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the dataset export job was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the dataset export job status was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2724,12 +2583,8 @@ pub mod dataset_export_job_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the dataset export job status was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>If a dataset export job fails, the reason behind the failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2737,25 +2592,29 @@ pub mod dataset_export_job_summary {
             self
         }
         /// <p>If a dataset export job fails, the reason behind the failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// Consumes the builder and constructs a [`DatasetExportJobSummary`](crate::model::DatasetExportJobSummary).
         pub fn build(self) -> crate::model::DatasetExportJobSummary {
             crate::model::DatasetExportJobSummary {
-                dataset_export_job_arn: self.dataset_export_job_arn,
-                job_name: self.job_name,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                failure_reason: self.failure_reason,
+                dataset_export_job_arn: self.dataset_export_job_arn
+                ,
+                job_name: self.job_name
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                failure_reason: self.failure_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetExportJobSummary {
     /// Creates a new builder-style object to manufacture [`DatasetExportJobSummary`](crate::model::DatasetExportJobSummary).
@@ -2767,18 +2626,18 @@ impl DatasetExportJobSummary {
 /// <p>Provides a summary of the properties of a campaign. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CampaignSummary {
+pub struct CampaignSummary  {
     /// <p>The name of the campaign.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     #[doc(hidden)]
     pub campaign_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the campaign.</p>
-    /// <p>A campaign can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the campaign.</p> 
+    /// <p>A campaign can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -2794,38 +2653,38 @@ pub struct CampaignSummary {
 }
 impl CampaignSummary {
     /// <p>The name of the campaign.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
-    pub fn campaign_arn(&self) -> std::option::Option<&str> {
+    pub fn campaign_arn(&self) -> std::option::Option<& str> {
         self.campaign_arn.as_deref()
     }
-    /// <p>The status of the campaign.</p>
-    /// <p>A campaign can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the campaign.</p> 
+    /// <p>A campaign can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the campaign was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the campaign was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If a campaign fails, the reason behind the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
 /// See [`CampaignSummary`](crate::model::CampaignSummary).
 pub mod campaign_summary {
-
+    
     /// A builder for [`CampaignSummary`](crate::model::CampaignSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2844,8 +2703,7 @@ pub mod campaign_summary {
         }
         /// <p>The name of the campaign.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
         pub fn campaign_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2854,28 +2712,26 @@ pub mod campaign_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
         pub fn set_campaign_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.campaign_arn = input;
-            self
+            self.campaign_arn = input; self
         }
-        /// <p>The status of the campaign.</p>
-        /// <p>A campaign can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the campaign.</p> 
+        /// <p>A campaign can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the campaign.</p>
-        /// <p>A campaign can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the campaign.</p> 
+        /// <p>A campaign can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time (in Unix time) that the campaign was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2883,12 +2739,8 @@ pub mod campaign_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the campaign was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the campaign was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2896,12 +2748,8 @@ pub mod campaign_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the campaign was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>If a campaign fails, the reason behind the failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2909,25 +2757,29 @@ pub mod campaign_summary {
             self
         }
         /// <p>If a campaign fails, the reason behind the failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// Consumes the builder and constructs a [`CampaignSummary`](crate::model::CampaignSummary).
         pub fn build(self) -> crate::model::CampaignSummary {
             crate::model::CampaignSummary {
-                name: self.name,
-                campaign_arn: self.campaign_arn,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                failure_reason: self.failure_reason,
+                name: self.name
+                ,
+                campaign_arn: self.campaign_arn
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                failure_reason: self.failure_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl CampaignSummary {
     /// Creates a new builder-style object to manufacture [`CampaignSummary`](crate::model::CampaignSummary).
@@ -2939,19 +2791,19 @@ impl CampaignSummary {
 /// <p>A truncated version of the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_BatchSegmentJob.html">BatchSegmentJob</a> datatype. <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchSegmentJobs.html">ListBatchSegmentJobs</a> operation returns a list of batch segment job summaries.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchSegmentJobSummary {
+pub struct BatchSegmentJobSummary  {
     /// <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
     #[doc(hidden)]
     pub batch_segment_job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the batch segment job.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The status of the batch segment job. The status is one of the following values:</p>
-    /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <p>The status of the batch segment job. The status is one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>IN PROGRESS</p> </li> 
+    /// <li> <p>ACTIVE</p> </li> 
+    /// <li> <p>CREATE FAILED</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -2970,43 +2822,43 @@ pub struct BatchSegmentJobSummary {
 }
 impl BatchSegmentJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
-    pub fn batch_segment_job_arn(&self) -> std::option::Option<&str> {
+    pub fn batch_segment_job_arn(&self) -> std::option::Option<& str> {
         self.batch_segment_job_arn.as_deref()
     }
     /// <p>The name of the batch segment job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
-    /// <p>The status of the batch segment job. The status is one of the following values:</p>
-    /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <p>The status of the batch segment job. The status is one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>IN PROGRESS</p> </li> 
+    /// <li> <p>ACTIVE</p> </li> 
+    /// <li> <p>CREATE FAILED</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The time at which the batch segment job was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The time at which the batch segment job was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If the batch segment job failed, the reason for the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version used by the batch segment job to generate batch segments.</p>
-    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+    pub fn solution_version_arn(&self) -> std::option::Option<& str> {
         self.solution_version_arn.as_deref()
     }
 }
 /// See [`BatchSegmentJobSummary`](crate::model::BatchSegmentJobSummary).
 pub mod batch_segment_job_summary {
-
+    
     /// A builder for [`BatchSegmentJobSummary`](crate::model::BatchSegmentJobSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3025,12 +2877,8 @@ pub mod batch_segment_job_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
-        pub fn set_batch_segment_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.batch_segment_job_arn = input;
-            self
+        pub fn set_batch_segment_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.batch_segment_job_arn = input; self
         }
         /// <p>The name of the batch segment job.</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3039,30 +2887,28 @@ pub mod batch_segment_job_summary {
         }
         /// <p>The name of the batch segment job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
-        /// <p>The status of the batch segment job. The status is one of the following values:</p>
-        /// <ul>
-        /// <li> <p>PENDING</p> </li>
-        /// <li> <p>IN PROGRESS</p> </li>
-        /// <li> <p>ACTIVE</p> </li>
-        /// <li> <p>CREATE FAILED</p> </li>
+        /// <p>The status of the batch segment job. The status is one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>PENDING</p> </li> 
+        /// <li> <p>IN PROGRESS</p> </li> 
+        /// <li> <p>ACTIVE</p> </li> 
+        /// <li> <p>CREATE FAILED</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the batch segment job. The status is one of the following values:</p>
-        /// <ul>
-        /// <li> <p>PENDING</p> </li>
-        /// <li> <p>IN PROGRESS</p> </li>
-        /// <li> <p>ACTIVE</p> </li>
-        /// <li> <p>CREATE FAILED</p> </li>
+        /// <p>The status of the batch segment job. The status is one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>PENDING</p> </li> 
+        /// <li> <p>IN PROGRESS</p> </li> 
+        /// <li> <p>ACTIVE</p> </li> 
+        /// <li> <p>CREATE FAILED</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The time at which the batch segment job was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3070,12 +2916,8 @@ pub mod batch_segment_job_summary {
             self
         }
         /// <p>The time at which the batch segment job was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The time at which the batch segment job was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3083,12 +2925,8 @@ pub mod batch_segment_job_summary {
             self
         }
         /// <p>The time at which the batch segment job was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>If the batch segment job failed, the reason for the failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3096,12 +2934,8 @@ pub mod batch_segment_job_summary {
             self
         }
         /// <p>If the batch segment job failed, the reason for the failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version used by the batch segment job to generate batch segments.</p>
         pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3109,26 +2943,31 @@ pub mod batch_segment_job_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version used by the batch segment job to generate batch segments.</p>
-        pub fn set_solution_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.solution_version_arn = input;
-            self
+        pub fn set_solution_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.solution_version_arn = input; self
         }
         /// Consumes the builder and constructs a [`BatchSegmentJobSummary`](crate::model::BatchSegmentJobSummary).
         pub fn build(self) -> crate::model::BatchSegmentJobSummary {
             crate::model::BatchSegmentJobSummary {
-                batch_segment_job_arn: self.batch_segment_job_arn,
-                job_name: self.job_name,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                failure_reason: self.failure_reason,
-                solution_version_arn: self.solution_version_arn,
+                batch_segment_job_arn: self.batch_segment_job_arn
+                ,
+                job_name: self.job_name
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                failure_reason: self.failure_reason
+                ,
+                solution_version_arn: self.solution_version_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchSegmentJobSummary {
     /// Creates a new builder-style object to manufacture [`BatchSegmentJobSummary`](crate::model::BatchSegmentJobSummary).
@@ -3140,19 +2979,19 @@ impl BatchSegmentJobSummary {
 /// <p>A truncated version of the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_BatchInferenceJob.html">BatchInferenceJob</a>. The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchInferenceJobs.html">ListBatchInferenceJobs</a> operation returns a list of batch inference job summaries.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchInferenceJobSummary {
+pub struct BatchInferenceJobSummary  {
     /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
     #[doc(hidden)]
     pub batch_inference_job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the batch inference job.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The status of the batch inference job. The status is one of the following values:</p>
-    /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <p>The status of the batch inference job. The status is one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>IN PROGRESS</p> </li> 
+    /// <li> <p>ACTIVE</p> </li> 
+    /// <li> <p>CREATE FAILED</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -3171,43 +3010,43 @@ pub struct BatchInferenceJobSummary {
 }
 impl BatchInferenceJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
-    pub fn batch_inference_job_arn(&self) -> std::option::Option<&str> {
+    pub fn batch_inference_job_arn(&self) -> std::option::Option<& str> {
         self.batch_inference_job_arn.as_deref()
     }
     /// <p>The name of the batch inference job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
-    /// <p>The status of the batch inference job. The status is one of the following values:</p>
-    /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <p>The status of the batch inference job. The status is one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>IN PROGRESS</p> </li> 
+    /// <li> <p>ACTIVE</p> </li> 
+    /// <li> <p>CREATE FAILED</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The time at which the batch inference job was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The time at which the batch inference job was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If the batch inference job failed, the reason for the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The ARN of the solution version used by the batch inference job.</p>
-    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+    pub fn solution_version_arn(&self) -> std::option::Option<& str> {
         self.solution_version_arn.as_deref()
     }
 }
 /// See [`BatchInferenceJobSummary`](crate::model::BatchInferenceJobSummary).
 pub mod batch_inference_job_summary {
-
+    
     /// A builder for [`BatchInferenceJobSummary`](crate::model::BatchInferenceJobSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3226,12 +3065,8 @@ pub mod batch_inference_job_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
-        pub fn set_batch_inference_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.batch_inference_job_arn = input;
-            self
+        pub fn set_batch_inference_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.batch_inference_job_arn = input; self
         }
         /// <p>The name of the batch inference job.</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3240,30 +3075,28 @@ pub mod batch_inference_job_summary {
         }
         /// <p>The name of the batch inference job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
-        /// <p>The status of the batch inference job. The status is one of the following values:</p>
-        /// <ul>
-        /// <li> <p>PENDING</p> </li>
-        /// <li> <p>IN PROGRESS</p> </li>
-        /// <li> <p>ACTIVE</p> </li>
-        /// <li> <p>CREATE FAILED</p> </li>
+        /// <p>The status of the batch inference job. The status is one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>PENDING</p> </li> 
+        /// <li> <p>IN PROGRESS</p> </li> 
+        /// <li> <p>ACTIVE</p> </li> 
+        /// <li> <p>CREATE FAILED</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the batch inference job. The status is one of the following values:</p>
-        /// <ul>
-        /// <li> <p>PENDING</p> </li>
-        /// <li> <p>IN PROGRESS</p> </li>
-        /// <li> <p>ACTIVE</p> </li>
-        /// <li> <p>CREATE FAILED</p> </li>
+        /// <p>The status of the batch inference job. The status is one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>PENDING</p> </li> 
+        /// <li> <p>IN PROGRESS</p> </li> 
+        /// <li> <p>ACTIVE</p> </li> 
+        /// <li> <p>CREATE FAILED</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The time at which the batch inference job was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3271,12 +3104,8 @@ pub mod batch_inference_job_summary {
             self
         }
         /// <p>The time at which the batch inference job was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The time at which the batch inference job was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3284,12 +3113,8 @@ pub mod batch_inference_job_summary {
             self
         }
         /// <p>The time at which the batch inference job was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>If the batch inference job failed, the reason for the failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3297,12 +3122,8 @@ pub mod batch_inference_job_summary {
             self
         }
         /// <p>If the batch inference job failed, the reason for the failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The ARN of the solution version used by the batch inference job.</p>
         pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3310,26 +3131,31 @@ pub mod batch_inference_job_summary {
             self
         }
         /// <p>The ARN of the solution version used by the batch inference job.</p>
-        pub fn set_solution_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.solution_version_arn = input;
-            self
+        pub fn set_solution_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.solution_version_arn = input; self
         }
         /// Consumes the builder and constructs a [`BatchInferenceJobSummary`](crate::model::BatchInferenceJobSummary).
         pub fn build(self) -> crate::model::BatchInferenceJobSummary {
             crate::model::BatchInferenceJobSummary {
-                batch_inference_job_arn: self.batch_inference_job_arn,
-                job_name: self.job_name,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                failure_reason: self.failure_reason,
-                solution_version_arn: self.solution_version_arn,
+                batch_inference_job_arn: self.batch_inference_job_arn
+                ,
+                job_name: self.job_name
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                failure_reason: self.failure_reason
+                ,
+                solution_version_arn: self.solution_version_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchInferenceJobSummary {
     /// Creates a new builder-style object to manufacture [`BatchInferenceJobSummary`](crate::model::BatchInferenceJobSummary).
@@ -3341,7 +3167,7 @@ impl BatchInferenceJobSummary {
 /// <p>An object that provides information about a specific version of a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_Solution.html">Solution</a> in a Custom dataset group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SolutionVersion {
+pub struct SolutionVersion  {
     /// <p>The name of the solution version.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3372,23 +3198,23 @@ pub struct SolutionVersion {
     /// <p>The time used to train the model. You are billed for the time it takes to train a model. This field is visible only after Amazon Personalize successfully trains a model.</p>
     #[doc(hidden)]
     pub training_hours: std::option::Option<f64>,
-    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
-    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important> 
+    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p> 
     /// </important>
     #[doc(hidden)]
     pub training_mode: std::option::Option<crate::model::TrainingMode>,
     /// <p>If hyperparameter optimization was performed, contains the hyperparameter values of the best performing model.</p>
     #[doc(hidden)]
     pub tuned_hpo_params: std::option::Option<crate::model::TunedHpoParams>,
-    /// <p>The status of the solution version.</p>
-    /// <p>A solution version can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING</p> </li>
-    /// <li> <p>CREATE IN_PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
-    /// <li> <p>CREATE STOPPING</p> </li>
-    /// <li> <p>CREATE STOPPED</p> </li>
+    /// <p>The status of the solution version.</p> 
+    /// <p>A solution version can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING</p> </li> 
+    /// <li> <p>CREATE IN_PROGRESS</p> </li> 
+    /// <li> <p>ACTIVE</p> </li> 
+    /// <li> <p>CREATE FAILED</p> </li> 
+    /// <li> <p>CREATE STOPPING</p> </li> 
+    /// <li> <p>CREATE STOPPED</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -3404,15 +3230,15 @@ pub struct SolutionVersion {
 }
 impl SolutionVersion {
     /// <p>The name of the solution version.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the solution version.</p>
-    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+    pub fn solution_version_arn(&self) -> std::option::Option<& str> {
         self.solution_version_arn.as_deref()
     }
     /// <p>The ARN of the solution.</p>
-    pub fn solution_arn(&self) -> std::option::Option<&str> {
+    pub fn solution_arn(&self) -> std::option::Option<& str> {
         self.solution_arn.as_deref()
     }
     /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default is <code>false</code>.</p>
@@ -3424,64 +3250,64 @@ impl SolutionVersion {
         self.perform_auto_ml
     }
     /// <p>The ARN of the recipe used in the solution.</p>
-    pub fn recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn recipe_arn(&self) -> std::option::Option<& str> {
         self.recipe_arn.as_deref()
     }
     /// <p>The event type (for example, 'click' or 'like') that is used for training the model.</p>
-    pub fn event_type(&self) -> std::option::Option<&str> {
+    pub fn event_type(&self) -> std::option::Option<& str> {
         self.event_type.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group providing the training data.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>Describes the configuration properties for the solution.</p>
-    pub fn solution_config(&self) -> std::option::Option<&crate::model::SolutionConfig> {
+    pub fn solution_config(&self) -> std::option::Option<& crate::model::SolutionConfig> {
         self.solution_config.as_ref()
     }
     /// <p>The time used to train the model. You are billed for the time it takes to train a model. This field is visible only after Amazon Personalize successfully trains a model.</p>
     pub fn training_hours(&self) -> std::option::Option<f64> {
         self.training_hours
     }
-    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
-    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important> 
+    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p> 
     /// </important>
-    pub fn training_mode(&self) -> std::option::Option<&crate::model::TrainingMode> {
+    pub fn training_mode(&self) -> std::option::Option<& crate::model::TrainingMode> {
         self.training_mode.as_ref()
     }
     /// <p>If hyperparameter optimization was performed, contains the hyperparameter values of the best performing model.</p>
-    pub fn tuned_hpo_params(&self) -> std::option::Option<&crate::model::TunedHpoParams> {
+    pub fn tuned_hpo_params(&self) -> std::option::Option<& crate::model::TunedHpoParams> {
         self.tuned_hpo_params.as_ref()
     }
-    /// <p>The status of the solution version.</p>
-    /// <p>A solution version can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING</p> </li>
-    /// <li> <p>CREATE IN_PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
-    /// <li> <p>CREATE STOPPING</p> </li>
-    /// <li> <p>CREATE STOPPED</p> </li>
+    /// <p>The status of the solution version.</p> 
+    /// <p>A solution version can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING</p> </li> 
+    /// <li> <p>CREATE IN_PROGRESS</p> </li> 
+    /// <li> <p>ACTIVE</p> </li> 
+    /// <li> <p>CREATE FAILED</p> </li> 
+    /// <li> <p>CREATE STOPPING</p> </li> 
+    /// <li> <p>CREATE STOPPED</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>If training a solution version fails, the reason for the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The date and time (in Unix time) that this version of the solution was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`SolutionVersion`](crate::model::SolutionVersion).
 pub mod solution_version {
-
+    
     /// A builder for [`SolutionVersion`](crate::model::SolutionVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3510,8 +3336,7 @@ pub mod solution_version {
         }
         /// <p>The name of the solution version.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN of the solution version.</p>
         pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3519,12 +3344,8 @@ pub mod solution_version {
             self
         }
         /// <p>The ARN of the solution version.</p>
-        pub fn set_solution_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.solution_version_arn = input;
-            self
+        pub fn set_solution_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.solution_version_arn = input; self
         }
         /// <p>The ARN of the solution.</p>
         pub fn solution_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3533,8 +3354,7 @@ pub mod solution_version {
         }
         /// <p>The ARN of the solution.</p>
         pub fn set_solution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.solution_arn = input;
-            self
+            self.solution_arn = input; self
         }
         /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default is <code>false</code>.</p>
         pub fn perform_hpo(mut self, input: bool) -> Self {
@@ -3543,8 +3363,7 @@ pub mod solution_version {
         }
         /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default is <code>false</code>.</p>
         pub fn set_perform_hpo(mut self, input: std::option::Option<bool>) -> Self {
-            self.perform_hpo = input;
-            self
+            self.perform_hpo = input; self
         }
         /// <p>When true, Amazon Personalize searches for the most optimal recipe according to the solution configuration. When false (the default), Amazon Personalize uses <code>recipeArn</code>.</p>
         pub fn perform_auto_ml(mut self, input: bool) -> Self {
@@ -3553,8 +3372,7 @@ pub mod solution_version {
         }
         /// <p>When true, Amazon Personalize searches for the most optimal recipe according to the solution configuration. When false (the default), Amazon Personalize uses <code>recipeArn</code>.</p>
         pub fn set_perform_auto_ml(mut self, input: std::option::Option<bool>) -> Self {
-            self.perform_auto_ml = input;
-            self
+            self.perform_auto_ml = input; self
         }
         /// <p>The ARN of the recipe used in the solution.</p>
         pub fn recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3563,8 +3381,7 @@ pub mod solution_version {
         }
         /// <p>The ARN of the recipe used in the solution.</p>
         pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.recipe_arn = input;
-            self
+            self.recipe_arn = input; self
         }
         /// <p>The event type (for example, 'click' or 'like') that is used for training the model.</p>
         pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3573,8 +3390,7 @@ pub mod solution_version {
         }
         /// <p>The event type (for example, 'click' or 'like') that is used for training the model.</p>
         pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_type = input;
-            self
+            self.event_type = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group providing the training data.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3582,12 +3398,8 @@ pub mod solution_version {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group providing the training data.</p>
-        pub fn set_dataset_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_group_arn = input;
-            self
+        pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_group_arn = input; self
         }
         /// <p>Describes the configuration properties for the solution.</p>
         pub fn solution_config(mut self, input: crate::model::SolutionConfig) -> Self {
@@ -3595,12 +3407,8 @@ pub mod solution_version {
             self
         }
         /// <p>Describes the configuration properties for the solution.</p>
-        pub fn set_solution_config(
-            mut self,
-            input: std::option::Option<crate::model::SolutionConfig>,
-        ) -> Self {
-            self.solution_config = input;
-            self
+        pub fn set_solution_config(mut self, input: std::option::Option<crate::model::SolutionConfig>) -> Self {
+            self.solution_config = input; self
         }
         /// <p>The time used to train the model. You are billed for the time it takes to train a model. This field is visible only after Amazon Personalize successfully trains a model.</p>
         pub fn training_hours(mut self, input: f64) -> Self {
@@ -3609,25 +3417,20 @@ pub mod solution_version {
         }
         /// <p>The time used to train the model. You are billed for the time it takes to train a model. This field is visible only after Amazon Personalize successfully trains a model.</p>
         pub fn set_training_hours(mut self, input: std::option::Option<f64>) -> Self {
-            self.training_hours = input;
-            self
+            self.training_hours = input; self
         }
-        /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
-        /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+        /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important> 
+        /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p> 
         /// </important>
         pub fn training_mode(mut self, input: crate::model::TrainingMode) -> Self {
             self.training_mode = Some(input);
             self
         }
-        /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
-        /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+        /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important> 
+        /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p> 
         /// </important>
-        pub fn set_training_mode(
-            mut self,
-            input: std::option::Option<crate::model::TrainingMode>,
-        ) -> Self {
-            self.training_mode = input;
-            self
+        pub fn set_training_mode(mut self, input: std::option::Option<crate::model::TrainingMode>) -> Self {
+            self.training_mode = input; self
         }
         /// <p>If hyperparameter optimization was performed, contains the hyperparameter values of the best performing model.</p>
         pub fn tuned_hpo_params(mut self, input: crate::model::TunedHpoParams) -> Self {
@@ -3635,40 +3438,35 @@ pub mod solution_version {
             self
         }
         /// <p>If hyperparameter optimization was performed, contains the hyperparameter values of the best performing model.</p>
-        pub fn set_tuned_hpo_params(
-            mut self,
-            input: std::option::Option<crate::model::TunedHpoParams>,
-        ) -> Self {
-            self.tuned_hpo_params = input;
-            self
+        pub fn set_tuned_hpo_params(mut self, input: std::option::Option<crate::model::TunedHpoParams>) -> Self {
+            self.tuned_hpo_params = input; self
         }
-        /// <p>The status of the solution version.</p>
-        /// <p>A solution version can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING</p> </li>
-        /// <li> <p>CREATE IN_PROGRESS</p> </li>
-        /// <li> <p>ACTIVE</p> </li>
-        /// <li> <p>CREATE FAILED</p> </li>
-        /// <li> <p>CREATE STOPPING</p> </li>
-        /// <li> <p>CREATE STOPPED</p> </li>
+        /// <p>The status of the solution version.</p> 
+        /// <p>A solution version can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING</p> </li> 
+        /// <li> <p>CREATE IN_PROGRESS</p> </li> 
+        /// <li> <p>ACTIVE</p> </li> 
+        /// <li> <p>CREATE FAILED</p> </li> 
+        /// <li> <p>CREATE STOPPING</p> </li> 
+        /// <li> <p>CREATE STOPPED</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the solution version.</p>
-        /// <p>A solution version can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING</p> </li>
-        /// <li> <p>CREATE IN_PROGRESS</p> </li>
-        /// <li> <p>ACTIVE</p> </li>
-        /// <li> <p>CREATE FAILED</p> </li>
-        /// <li> <p>CREATE STOPPING</p> </li>
-        /// <li> <p>CREATE STOPPED</p> </li>
+        /// <p>The status of the solution version.</p> 
+        /// <p>A solution version can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING</p> </li> 
+        /// <li> <p>CREATE IN_PROGRESS</p> </li> 
+        /// <li> <p>ACTIVE</p> </li> 
+        /// <li> <p>CREATE FAILED</p> </li> 
+        /// <li> <p>CREATE STOPPING</p> </li> 
+        /// <li> <p>CREATE STOPPED</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>If training a solution version fails, the reason for the failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3676,12 +3474,8 @@ pub mod solution_version {
             self
         }
         /// <p>If training a solution version fails, the reason for the failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The date and time (in Unix time) that this version of the solution was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3689,12 +3483,8 @@ pub mod solution_version {
             self
         }
         /// <p>The date and time (in Unix time) that this version of the solution was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the solution was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3702,35 +3492,51 @@ pub mod solution_version {
             self
         }
         /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`SolutionVersion`](crate::model::SolutionVersion).
         pub fn build(self) -> crate::model::SolutionVersion {
             crate::model::SolutionVersion {
-                name: self.name,
-                solution_version_arn: self.solution_version_arn,
-                solution_arn: self.solution_arn,
-                perform_hpo: self.perform_hpo.unwrap_or_default(),
-                perform_auto_ml: self.perform_auto_ml.unwrap_or_default(),
-                recipe_arn: self.recipe_arn,
-                event_type: self.event_type,
-                dataset_group_arn: self.dataset_group_arn,
-                solution_config: self.solution_config,
-                training_hours: self.training_hours,
-                training_mode: self.training_mode,
-                tuned_hpo_params: self.tuned_hpo_params,
-                status: self.status,
-                failure_reason: self.failure_reason,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                name: self.name
+                ,
+                solution_version_arn: self.solution_version_arn
+                ,
+                solution_arn: self.solution_arn
+                ,
+                perform_hpo: self.perform_hpo
+                    .unwrap_or_default()
+                ,
+                perform_auto_ml: self.perform_auto_ml
+                    .unwrap_or_default()
+                ,
+                recipe_arn: self.recipe_arn
+                ,
+                event_type: self.event_type
+                ,
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                solution_config: self.solution_config
+                ,
+                training_hours: self.training_hours
+                ,
+                training_mode: self.training_mode
+                ,
+                tuned_hpo_params: self.tuned_hpo_params
+                ,
+                status: self.status
+                ,
+                failure_reason: self.failure_reason
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl SolutionVersion {
     /// Creates a new builder-style object to manufacture [`SolutionVersion`](crate::model::SolutionVersion).
@@ -3742,30 +3548,24 @@ impl SolutionVersion {
 /// <p>If hyperparameter optimization (HPO) was performed, contains the hyperparameter values of the best performing model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TunedHpoParams {
+pub struct TunedHpoParams  {
     /// <p>A list of the hyperparameter values of the best performing model.</p>
     #[doc(hidden)]
-    pub algorithm_hyper_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub algorithm_hyper_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TunedHpoParams {
     /// <p>A list of the hyperparameter values of the best performing model.</p>
-    pub fn algorithm_hyper_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn algorithm_hyper_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.algorithm_hyper_parameters.as_ref()
     }
 }
 /// See [`TunedHpoParams`](crate::model::TunedHpoParams).
 pub mod tuned_hpo_params {
-
+    
     /// A builder for [`TunedHpoParams`](crate::model::TunedHpoParams).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) algorithm_hyper_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) algorithm_hyper_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `algorithm_hyper_parameters`.
@@ -3773,33 +3573,26 @@ pub mod tuned_hpo_params {
         /// To override the contents of this collection use [`set_algorithm_hyper_parameters`](Self::set_algorithm_hyper_parameters).
         ///
         /// <p>A list of the hyperparameter values of the best performing model.</p>
-        pub fn algorithm_hyper_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn algorithm_hyper_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.algorithm_hyper_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.algorithm_hyper_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.algorithm_hyper_parameters = Some(hash_map);
+                            self
         }
         /// <p>A list of the hyperparameter values of the best performing model.</p>
-        pub fn set_algorithm_hyper_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.algorithm_hyper_parameters = input;
-            self
+        pub fn set_algorithm_hyper_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.algorithm_hyper_parameters = input; self
         }
         /// Consumes the builder and constructs a [`TunedHpoParams`](crate::model::TunedHpoParams).
         pub fn build(self) -> crate::model::TunedHpoParams {
             crate::model::TunedHpoParams {
-                algorithm_hyper_parameters: self.algorithm_hyper_parameters,
+                algorithm_hyper_parameters: self.algorithm_hyper_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl TunedHpoParams {
     /// Creates a new builder-style object to manufacture [`TunedHpoParams`](crate::model::TunedHpoParams).
@@ -3814,9 +3607,9 @@ impl TunedHpoParams {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let trainingmode = unimplemented!();
 /// match trainingmode {
@@ -3838,58 +3631,52 @@ impl TunedHpoParams {
 /// Specifically, when `trainingmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TrainingMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TrainingMode {
     #[allow(missing_docs)] // documentation missing in model
     Full,
     #[allow(missing_docs)] // documentation missing in model
     Update,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TrainingMode {
     fn from(s: &str) -> Self {
         match s {
             "FULL" => TrainingMode::Full,
             "UPDATE" => TrainingMode::Update,
-            other => TrainingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TrainingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TrainingMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TrainingMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TrainingMode::from(s))
+                }
+            }
 impl TrainingMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TrainingMode::Full => "FULL",
             TrainingMode::Update => "UPDATE",
-            TrainingMode::Unknown(value) => value.as_str(),
+            TrainingMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FULL", "UPDATE"]
+        &[
+            "FULL", "UPDATE"
+        ]
     }
 }
 impl AsRef<str> for TrainingMode {
@@ -3901,7 +3688,7 @@ impl AsRef<str> for TrainingMode {
 /// <p>Describes the configuration properties for the solution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SolutionConfig {
+pub struct SolutionConfig  {
     /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
     #[doc(hidden)]
     pub event_value_threshold: std::option::Option<std::string::String>,
@@ -3910,12 +3697,10 @@ pub struct SolutionConfig {
     pub hpo_config: std::option::Option<crate::model::HpoConfig>,
     /// <p>Lists the hyperparameter names and ranges.</p>
     #[doc(hidden)]
-    pub algorithm_hyper_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub algorithm_hyper_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Lists the feature transformation parameters.</p>
     #[doc(hidden)]
-    pub feature_transformation_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub feature_transformation_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
     #[doc(hidden)]
     pub auto_ml_config: std::option::Option<crate::model::AutoMlConfig>,
@@ -3925,52 +3710,40 @@ pub struct SolutionConfig {
 }
 impl SolutionConfig {
     /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
-    pub fn event_value_threshold(&self) -> std::option::Option<&str> {
+    pub fn event_value_threshold(&self) -> std::option::Option<& str> {
         self.event_value_threshold.as_deref()
     }
     /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
-    pub fn hpo_config(&self) -> std::option::Option<&crate::model::HpoConfig> {
+    pub fn hpo_config(&self) -> std::option::Option<& crate::model::HpoConfig> {
         self.hpo_config.as_ref()
     }
     /// <p>Lists the hyperparameter names and ranges.</p>
-    pub fn algorithm_hyper_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn algorithm_hyper_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.algorithm_hyper_parameters.as_ref()
     }
     /// <p>Lists the feature transformation parameters.</p>
-    pub fn feature_transformation_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn feature_transformation_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.feature_transformation_parameters.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
-    pub fn auto_ml_config(&self) -> std::option::Option<&crate::model::AutoMlConfig> {
+    pub fn auto_ml_config(&self) -> std::option::Option<& crate::model::AutoMlConfig> {
         self.auto_ml_config.as_ref()
     }
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
-    pub fn optimization_objective(
-        &self,
-    ) -> std::option::Option<&crate::model::OptimizationObjective> {
+    pub fn optimization_objective(&self) -> std::option::Option<& crate::model::OptimizationObjective> {
         self.optimization_objective.as_ref()
     }
 }
 /// See [`SolutionConfig`](crate::model::SolutionConfig).
 pub mod solution_config {
-
+    
     /// A builder for [`SolutionConfig`](crate::model::SolutionConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_value_threshold: std::option::Option<std::string::String>,
         pub(crate) hpo_config: std::option::Option<crate::model::HpoConfig>,
-        pub(crate) algorithm_hyper_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) feature_transformation_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) algorithm_hyper_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) feature_transformation_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) auto_ml_config: std::option::Option<crate::model::AutoMlConfig>,
         pub(crate) optimization_objective: std::option::Option<crate::model::OptimizationObjective>,
     }
@@ -3981,12 +3754,8 @@ pub mod solution_config {
             self
         }
         /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
-        pub fn set_event_value_threshold(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_value_threshold = input;
-            self
+        pub fn set_event_value_threshold(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_value_threshold = input; self
         }
         /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
         pub fn hpo_config(mut self, input: crate::model::HpoConfig) -> Self {
@@ -3994,62 +3763,38 @@ pub mod solution_config {
             self
         }
         /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
-        pub fn set_hpo_config(
-            mut self,
-            input: std::option::Option<crate::model::HpoConfig>,
-        ) -> Self {
-            self.hpo_config = input;
-            self
+        pub fn set_hpo_config(mut self, input: std::option::Option<crate::model::HpoConfig>) -> Self {
+            self.hpo_config = input; self
         }
         /// Adds a key-value pair to `algorithm_hyper_parameters`.
         ///
         /// To override the contents of this collection use [`set_algorithm_hyper_parameters`](Self::set_algorithm_hyper_parameters).
         ///
         /// <p>Lists the hyperparameter names and ranges.</p>
-        pub fn algorithm_hyper_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn algorithm_hyper_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.algorithm_hyper_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.algorithm_hyper_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.algorithm_hyper_parameters = Some(hash_map);
+                            self
         }
         /// <p>Lists the hyperparameter names and ranges.</p>
-        pub fn set_algorithm_hyper_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.algorithm_hyper_parameters = input;
-            self
+        pub fn set_algorithm_hyper_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.algorithm_hyper_parameters = input; self
         }
         /// Adds a key-value pair to `feature_transformation_parameters`.
         ///
         /// To override the contents of this collection use [`set_feature_transformation_parameters`](Self::set_feature_transformation_parameters).
         ///
         /// <p>Lists the feature transformation parameters.</p>
-        pub fn feature_transformation_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn feature_transformation_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.feature_transformation_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.feature_transformation_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.feature_transformation_parameters = Some(hash_map);
+                            self
         }
         /// <p>Lists the feature transformation parameters.</p>
-        pub fn set_feature_transformation_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.feature_transformation_parameters = input;
-            self
+        pub fn set_feature_transformation_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.feature_transformation_parameters = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
         pub fn auto_ml_config(mut self, input: crate::model::AutoMlConfig) -> Self {
@@ -4057,41 +3802,38 @@ pub mod solution_config {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
-        pub fn set_auto_ml_config(
-            mut self,
-            input: std::option::Option<crate::model::AutoMlConfig>,
-        ) -> Self {
-            self.auto_ml_config = input;
-            self
+        pub fn set_auto_ml_config(mut self, input: std::option::Option<crate::model::AutoMlConfig>) -> Self {
+            self.auto_ml_config = input; self
         }
         /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
-        pub fn optimization_objective(
-            mut self,
-            input: crate::model::OptimizationObjective,
-        ) -> Self {
+        pub fn optimization_objective(mut self, input: crate::model::OptimizationObjective) -> Self {
             self.optimization_objective = Some(input);
             self
         }
         /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
-        pub fn set_optimization_objective(
-            mut self,
-            input: std::option::Option<crate::model::OptimizationObjective>,
-        ) -> Self {
-            self.optimization_objective = input;
-            self
+        pub fn set_optimization_objective(mut self, input: std::option::Option<crate::model::OptimizationObjective>) -> Self {
+            self.optimization_objective = input; self
         }
         /// Consumes the builder and constructs a [`SolutionConfig`](crate::model::SolutionConfig).
         pub fn build(self) -> crate::model::SolutionConfig {
             crate::model::SolutionConfig {
-                event_value_threshold: self.event_value_threshold,
-                hpo_config: self.hpo_config,
-                algorithm_hyper_parameters: self.algorithm_hyper_parameters,
-                feature_transformation_parameters: self.feature_transformation_parameters,
-                auto_ml_config: self.auto_ml_config,
-                optimization_objective: self.optimization_objective,
+                event_value_threshold: self.event_value_threshold
+                ,
+                hpo_config: self.hpo_config
+                ,
+                algorithm_hyper_parameters: self.algorithm_hyper_parameters
+                ,
+                feature_transformation_parameters: self.feature_transformation_parameters
+                ,
+                auto_ml_config: self.auto_ml_config
+                ,
+                optimization_objective: self.optimization_objective
+                ,
             }
         }
     }
+    
+    
 }
 impl SolutionConfig {
     /// Creates a new builder-style object to manufacture [`SolutionConfig`](crate::model::SolutionConfig).
@@ -4103,7 +3845,7 @@ impl SolutionConfig {
 /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OptimizationObjective {
+pub struct OptimizationObjective  {
     /// <p>The numerical metadata column in an Items dataset related to the optimization objective. For example, VIDEO_LENGTH (to maximize streaming minutes), or PRICE (to maximize revenue).</p>
     #[doc(hidden)]
     pub item_attribute: std::option::Option<std::string::String>,
@@ -4113,19 +3855,17 @@ pub struct OptimizationObjective {
 }
 impl OptimizationObjective {
     /// <p>The numerical metadata column in an Items dataset related to the optimization objective. For example, VIDEO_LENGTH (to maximize streaming minutes), or PRICE (to maximize revenue).</p>
-    pub fn item_attribute(&self) -> std::option::Option<&str> {
+    pub fn item_attribute(&self) -> std::option::Option<& str> {
         self.item_attribute.as_deref()
     }
     /// <p>Specifies how Amazon Personalize balances the importance of your optimization objective versus relevance.</p>
-    pub fn objective_sensitivity(
-        &self,
-    ) -> std::option::Option<&crate::model::ObjectiveSensitivity> {
+    pub fn objective_sensitivity(&self) -> std::option::Option<& crate::model::ObjectiveSensitivity> {
         self.objective_sensitivity.as_ref()
     }
 }
 /// See [`OptimizationObjective`](crate::model::OptimizationObjective).
 pub mod optimization_objective {
-
+    
     /// A builder for [`OptimizationObjective`](crate::model::OptimizationObjective).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4139,12 +3879,8 @@ pub mod optimization_objective {
             self
         }
         /// <p>The numerical metadata column in an Items dataset related to the optimization objective. For example, VIDEO_LENGTH (to maximize streaming minutes), or PRICE (to maximize revenue).</p>
-        pub fn set_item_attribute(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.item_attribute = input;
-            self
+        pub fn set_item_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.item_attribute = input; self
         }
         /// <p>Specifies how Amazon Personalize balances the importance of your optimization objective versus relevance.</p>
         pub fn objective_sensitivity(mut self, input: crate::model::ObjectiveSensitivity) -> Self {
@@ -4152,21 +3888,21 @@ pub mod optimization_objective {
             self
         }
         /// <p>Specifies how Amazon Personalize balances the importance of your optimization objective versus relevance.</p>
-        pub fn set_objective_sensitivity(
-            mut self,
-            input: std::option::Option<crate::model::ObjectiveSensitivity>,
-        ) -> Self {
-            self.objective_sensitivity = input;
-            self
+        pub fn set_objective_sensitivity(mut self, input: std::option::Option<crate::model::ObjectiveSensitivity>) -> Self {
+            self.objective_sensitivity = input; self
         }
         /// Consumes the builder and constructs a [`OptimizationObjective`](crate::model::OptimizationObjective).
         pub fn build(self) -> crate::model::OptimizationObjective {
             crate::model::OptimizationObjective {
-                item_attribute: self.item_attribute,
-                objective_sensitivity: self.objective_sensitivity,
+                item_attribute: self.item_attribute
+                ,
+                objective_sensitivity: self.objective_sensitivity
+                ,
             }
         }
     }
+    
+    
 }
 impl OptimizationObjective {
     /// Creates a new builder-style object to manufacture [`OptimizationObjective`](crate::model::OptimizationObjective).
@@ -4181,9 +3917,9 @@ impl OptimizationObjective {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let objectivesensitivity = unimplemented!();
 /// match objectivesensitivity {
@@ -4207,22 +3943,14 @@ impl OptimizationObjective {
 /// Specifically, when `objectivesensitivity` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ObjectiveSensitivity::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ObjectiveSensitivity {
     #[allow(missing_docs)] // documentation missing in model
     High,
@@ -4233,7 +3961,7 @@ pub enum ObjectiveSensitivity {
     #[allow(missing_docs)] // documentation missing in model
     Off,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ObjectiveSensitivity {
     fn from(s: &str) -> Self {
@@ -4242,19 +3970,17 @@ impl std::convert::From<&str> for ObjectiveSensitivity {
             "LOW" => ObjectiveSensitivity::Low,
             "MEDIUM" => ObjectiveSensitivity::Medium,
             "OFF" => ObjectiveSensitivity::Off,
-            other => {
-                ObjectiveSensitivity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ObjectiveSensitivity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ObjectiveSensitivity {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ObjectiveSensitivity::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ObjectiveSensitivity::from(s))
+                }
+            }
 impl ObjectiveSensitivity {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4263,12 +3989,14 @@ impl ObjectiveSensitivity {
             ObjectiveSensitivity::Low => "LOW",
             ObjectiveSensitivity::Medium => "MEDIUM",
             ObjectiveSensitivity::Off => "OFF",
-            ObjectiveSensitivity::Unknown(value) => value.as_str(),
+            ObjectiveSensitivity::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HIGH", "LOW", "MEDIUM", "OFF"]
+        &[
+            "HIGH", "LOW", "MEDIUM", "OFF"
+        ]
     }
 }
 impl AsRef<str> for ObjectiveSensitivity {
@@ -4280,7 +4008,7 @@ impl AsRef<str> for ObjectiveSensitivity {
 /// <p>When the solution performs AutoML (<code>performAutoML</code> is true in <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoMlConfig {
+pub struct AutoMlConfig  {
     /// <p>The metric to optimize.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -4290,17 +4018,17 @@ pub struct AutoMlConfig {
 }
 impl AutoMlConfig {
     /// <p>The metric to optimize.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The list of candidate recipes.</p>
-    pub fn recipe_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn recipe_list(&self) -> std::option::Option<& [std::string::String]> {
         self.recipe_list.as_deref()
     }
 }
 /// See [`AutoMlConfig`](crate::model::AutoMlConfig).
 pub mod auto_ml_config {
-
+    
     /// A builder for [`AutoMlConfig`](crate::model::AutoMlConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4315,8 +4043,7 @@ pub mod auto_ml_config {
         }
         /// <p>The metric to optimize.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// Appends an item to `recipe_list`.
         ///
@@ -4325,26 +4052,26 @@ pub mod auto_ml_config {
         /// <p>The list of candidate recipes.</p>
         pub fn recipe_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.recipe_list.unwrap_or_default();
-            v.push(input.into());
-            self.recipe_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.recipe_list = Some(v);
+                            self
         }
         /// <p>The list of candidate recipes.</p>
-        pub fn set_recipe_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.recipe_list = input;
-            self
+        pub fn set_recipe_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.recipe_list = input; self
         }
         /// Consumes the builder and constructs a [`AutoMlConfig`](crate::model::AutoMlConfig).
         pub fn build(self) -> crate::model::AutoMlConfig {
             crate::model::AutoMlConfig {
-                metric_name: self.metric_name,
-                recipe_list: self.recipe_list,
+                metric_name: self.metric_name
+                ,
+                recipe_list: self.recipe_list
+                ,
             }
         }
     }
+    
+    
 }
 impl AutoMlConfig {
     /// Creates a new builder-style object to manufacture [`AutoMlConfig`](crate::model::AutoMlConfig).
@@ -4356,9 +4083,9 @@ impl AutoMlConfig {
 /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HpoConfig {
-    /// <p>The metric to optimize during HPO.</p> <note>
-    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
+pub struct HpoConfig  {
+    /// <p>The metric to optimize during HPO.</p> <note> 
+    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p> 
     /// </note>
     #[doc(hidden)]
     pub hpo_objective: std::option::Option<crate::model::HpoObjective>,
@@ -4370,51 +4097,44 @@ pub struct HpoConfig {
     pub algorithm_hyper_parameter_ranges: std::option::Option<crate::model::HyperParameterRanges>,
 }
 impl HpoConfig {
-    /// <p>The metric to optimize during HPO.</p> <note>
-    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
+    /// <p>The metric to optimize during HPO.</p> <note> 
+    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p> 
     /// </note>
-    pub fn hpo_objective(&self) -> std::option::Option<&crate::model::HpoObjective> {
+    pub fn hpo_objective(&self) -> std::option::Option<& crate::model::HpoObjective> {
         self.hpo_objective.as_ref()
     }
     /// <p>Describes the resource configuration for HPO.</p>
-    pub fn hpo_resource_config(&self) -> std::option::Option<&crate::model::HpoResourceConfig> {
+    pub fn hpo_resource_config(&self) -> std::option::Option<& crate::model::HpoResourceConfig> {
         self.hpo_resource_config.as_ref()
     }
     /// <p>The hyperparameters and their allowable ranges.</p>
-    pub fn algorithm_hyper_parameter_ranges(
-        &self,
-    ) -> std::option::Option<&crate::model::HyperParameterRanges> {
+    pub fn algorithm_hyper_parameter_ranges(&self) -> std::option::Option<& crate::model::HyperParameterRanges> {
         self.algorithm_hyper_parameter_ranges.as_ref()
     }
 }
 /// See [`HpoConfig`](crate::model::HpoConfig).
 pub mod hpo_config {
-
+    
     /// A builder for [`HpoConfig`](crate::model::HpoConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hpo_objective: std::option::Option<crate::model::HpoObjective>,
         pub(crate) hpo_resource_config: std::option::Option<crate::model::HpoResourceConfig>,
-        pub(crate) algorithm_hyper_parameter_ranges:
-            std::option::Option<crate::model::HyperParameterRanges>,
+        pub(crate) algorithm_hyper_parameter_ranges: std::option::Option<crate::model::HyperParameterRanges>,
     }
     impl Builder {
-        /// <p>The metric to optimize during HPO.</p> <note>
-        /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
+        /// <p>The metric to optimize during HPO.</p> <note> 
+        /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p> 
         /// </note>
         pub fn hpo_objective(mut self, input: crate::model::HpoObjective) -> Self {
             self.hpo_objective = Some(input);
             self
         }
-        /// <p>The metric to optimize during HPO.</p> <note>
-        /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
+        /// <p>The metric to optimize during HPO.</p> <note> 
+        /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p> 
         /// </note>
-        pub fn set_hpo_objective(
-            mut self,
-            input: std::option::Option<crate::model::HpoObjective>,
-        ) -> Self {
-            self.hpo_objective = input;
-            self
+        pub fn set_hpo_objective(mut self, input: std::option::Option<crate::model::HpoObjective>) -> Self {
+            self.hpo_objective = input; self
         }
         /// <p>Describes the resource configuration for HPO.</p>
         pub fn hpo_resource_config(mut self, input: crate::model::HpoResourceConfig) -> Self {
@@ -4422,38 +4142,32 @@ pub mod hpo_config {
             self
         }
         /// <p>Describes the resource configuration for HPO.</p>
-        pub fn set_hpo_resource_config(
-            mut self,
-            input: std::option::Option<crate::model::HpoResourceConfig>,
-        ) -> Self {
-            self.hpo_resource_config = input;
-            self
+        pub fn set_hpo_resource_config(mut self, input: std::option::Option<crate::model::HpoResourceConfig>) -> Self {
+            self.hpo_resource_config = input; self
         }
         /// <p>The hyperparameters and their allowable ranges.</p>
-        pub fn algorithm_hyper_parameter_ranges(
-            mut self,
-            input: crate::model::HyperParameterRanges,
-        ) -> Self {
+        pub fn algorithm_hyper_parameter_ranges(mut self, input: crate::model::HyperParameterRanges) -> Self {
             self.algorithm_hyper_parameter_ranges = Some(input);
             self
         }
         /// <p>The hyperparameters and their allowable ranges.</p>
-        pub fn set_algorithm_hyper_parameter_ranges(
-            mut self,
-            input: std::option::Option<crate::model::HyperParameterRanges>,
-        ) -> Self {
-            self.algorithm_hyper_parameter_ranges = input;
-            self
+        pub fn set_algorithm_hyper_parameter_ranges(mut self, input: std::option::Option<crate::model::HyperParameterRanges>) -> Self {
+            self.algorithm_hyper_parameter_ranges = input; self
         }
         /// Consumes the builder and constructs a [`HpoConfig`](crate::model::HpoConfig).
         pub fn build(self) -> crate::model::HpoConfig {
             crate::model::HpoConfig {
-                hpo_objective: self.hpo_objective,
-                hpo_resource_config: self.hpo_resource_config,
-                algorithm_hyper_parameter_ranges: self.algorithm_hyper_parameter_ranges,
+                hpo_objective: self.hpo_objective
+                ,
+                hpo_resource_config: self.hpo_resource_config
+                ,
+                algorithm_hyper_parameter_ranges: self.algorithm_hyper_parameter_ranges
+                ,
             }
         }
     }
+    
+    
 }
 impl HpoConfig {
     /// Creates a new builder-style object to manufacture [`HpoConfig`](crate::model::HpoConfig).
@@ -4465,52 +4179,40 @@ impl HpoConfig {
 /// <p>Specifies the hyperparameters and their ranges. Hyperparameters can be categorical, continuous, or integer-valued.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HyperParameterRanges {
+pub struct HyperParameterRanges  {
     /// <p>The integer-valued hyperparameters and their ranges.</p>
     #[doc(hidden)]
-    pub integer_hyper_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::model::IntegerHyperParameterRange>>,
+    pub integer_hyper_parameter_ranges: std::option::Option<std::vec::Vec<crate::model::IntegerHyperParameterRange>>,
     /// <p>The continuous hyperparameters and their ranges.</p>
     #[doc(hidden)]
-    pub continuous_hyper_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::model::ContinuousHyperParameterRange>>,
+    pub continuous_hyper_parameter_ranges: std::option::Option<std::vec::Vec<crate::model::ContinuousHyperParameterRange>>,
     /// <p>The categorical hyperparameters and their ranges.</p>
     #[doc(hidden)]
-    pub categorical_hyper_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::model::CategoricalHyperParameterRange>>,
+    pub categorical_hyper_parameter_ranges: std::option::Option<std::vec::Vec<crate::model::CategoricalHyperParameterRange>>,
 }
 impl HyperParameterRanges {
     /// <p>The integer-valued hyperparameters and their ranges.</p>
-    pub fn integer_hyper_parameter_ranges(
-        &self,
-    ) -> std::option::Option<&[crate::model::IntegerHyperParameterRange]> {
+    pub fn integer_hyper_parameter_ranges(&self) -> std::option::Option<& [crate::model::IntegerHyperParameterRange]> {
         self.integer_hyper_parameter_ranges.as_deref()
     }
     /// <p>The continuous hyperparameters and their ranges.</p>
-    pub fn continuous_hyper_parameter_ranges(
-        &self,
-    ) -> std::option::Option<&[crate::model::ContinuousHyperParameterRange]> {
+    pub fn continuous_hyper_parameter_ranges(&self) -> std::option::Option<& [crate::model::ContinuousHyperParameterRange]> {
         self.continuous_hyper_parameter_ranges.as_deref()
     }
     /// <p>The categorical hyperparameters and their ranges.</p>
-    pub fn categorical_hyper_parameter_ranges(
-        &self,
-    ) -> std::option::Option<&[crate::model::CategoricalHyperParameterRange]> {
+    pub fn categorical_hyper_parameter_ranges(&self) -> std::option::Option<& [crate::model::CategoricalHyperParameterRange]> {
         self.categorical_hyper_parameter_ranges.as_deref()
     }
 }
 /// See [`HyperParameterRanges`](crate::model::HyperParameterRanges).
 pub mod hyper_parameter_ranges {
-
+    
     /// A builder for [`HyperParameterRanges`](crate::model::HyperParameterRanges).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) integer_hyper_parameter_ranges:
-            std::option::Option<std::vec::Vec<crate::model::IntegerHyperParameterRange>>,
-        pub(crate) continuous_hyper_parameter_ranges:
-            std::option::Option<std::vec::Vec<crate::model::ContinuousHyperParameterRange>>,
-        pub(crate) categorical_hyper_parameter_ranges:
-            std::option::Option<std::vec::Vec<crate::model::CategoricalHyperParameterRange>>,
+        pub(crate) integer_hyper_parameter_ranges: std::option::Option<std::vec::Vec<crate::model::IntegerHyperParameterRange>>,
+        pub(crate) continuous_hyper_parameter_ranges: std::option::Option<std::vec::Vec<crate::model::ContinuousHyperParameterRange>>,
+        pub(crate) categorical_hyper_parameter_ranges: std::option::Option<std::vec::Vec<crate::model::CategoricalHyperParameterRange>>,
     }
     impl Builder {
         /// Appends an item to `integer_hyper_parameter_ranges`.
@@ -4518,76 +4220,60 @@ pub mod hyper_parameter_ranges {
         /// To override the contents of this collection use [`set_integer_hyper_parameter_ranges`](Self::set_integer_hyper_parameter_ranges).
         ///
         /// <p>The integer-valued hyperparameters and their ranges.</p>
-        pub fn integer_hyper_parameter_ranges(
-            mut self,
-            input: crate::model::IntegerHyperParameterRange,
-        ) -> Self {
+        pub fn integer_hyper_parameter_ranges(mut self, input: crate::model::IntegerHyperParameterRange) -> Self {
             let mut v = self.integer_hyper_parameter_ranges.unwrap_or_default();
-            v.push(input);
-            self.integer_hyper_parameter_ranges = Some(v);
-            self
+                            v.push(input);
+                            self.integer_hyper_parameter_ranges = Some(v);
+                            self
         }
         /// <p>The integer-valued hyperparameters and their ranges.</p>
-        pub fn set_integer_hyper_parameter_ranges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IntegerHyperParameterRange>>,
-        ) -> Self {
-            self.integer_hyper_parameter_ranges = input;
-            self
+        pub fn set_integer_hyper_parameter_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::model::IntegerHyperParameterRange>>) -> Self {
+            self.integer_hyper_parameter_ranges = input; self
         }
         /// Appends an item to `continuous_hyper_parameter_ranges`.
         ///
         /// To override the contents of this collection use [`set_continuous_hyper_parameter_ranges`](Self::set_continuous_hyper_parameter_ranges).
         ///
         /// <p>The continuous hyperparameters and their ranges.</p>
-        pub fn continuous_hyper_parameter_ranges(
-            mut self,
-            input: crate::model::ContinuousHyperParameterRange,
-        ) -> Self {
+        pub fn continuous_hyper_parameter_ranges(mut self, input: crate::model::ContinuousHyperParameterRange) -> Self {
             let mut v = self.continuous_hyper_parameter_ranges.unwrap_or_default();
-            v.push(input);
-            self.continuous_hyper_parameter_ranges = Some(v);
-            self
+                            v.push(input);
+                            self.continuous_hyper_parameter_ranges = Some(v);
+                            self
         }
         /// <p>The continuous hyperparameters and their ranges.</p>
-        pub fn set_continuous_hyper_parameter_ranges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ContinuousHyperParameterRange>>,
-        ) -> Self {
-            self.continuous_hyper_parameter_ranges = input;
-            self
+        pub fn set_continuous_hyper_parameter_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::model::ContinuousHyperParameterRange>>) -> Self {
+            self.continuous_hyper_parameter_ranges = input; self
         }
         /// Appends an item to `categorical_hyper_parameter_ranges`.
         ///
         /// To override the contents of this collection use [`set_categorical_hyper_parameter_ranges`](Self::set_categorical_hyper_parameter_ranges).
         ///
         /// <p>The categorical hyperparameters and their ranges.</p>
-        pub fn categorical_hyper_parameter_ranges(
-            mut self,
-            input: crate::model::CategoricalHyperParameterRange,
-        ) -> Self {
+        pub fn categorical_hyper_parameter_ranges(mut self, input: crate::model::CategoricalHyperParameterRange) -> Self {
             let mut v = self.categorical_hyper_parameter_ranges.unwrap_or_default();
-            v.push(input);
-            self.categorical_hyper_parameter_ranges = Some(v);
-            self
+                            v.push(input);
+                            self.categorical_hyper_parameter_ranges = Some(v);
+                            self
         }
         /// <p>The categorical hyperparameters and their ranges.</p>
-        pub fn set_categorical_hyper_parameter_ranges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CategoricalHyperParameterRange>>,
-        ) -> Self {
-            self.categorical_hyper_parameter_ranges = input;
-            self
+        pub fn set_categorical_hyper_parameter_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::model::CategoricalHyperParameterRange>>) -> Self {
+            self.categorical_hyper_parameter_ranges = input; self
         }
         /// Consumes the builder and constructs a [`HyperParameterRanges`](crate::model::HyperParameterRanges).
         pub fn build(self) -> crate::model::HyperParameterRanges {
             crate::model::HyperParameterRanges {
-                integer_hyper_parameter_ranges: self.integer_hyper_parameter_ranges,
-                continuous_hyper_parameter_ranges: self.continuous_hyper_parameter_ranges,
-                categorical_hyper_parameter_ranges: self.categorical_hyper_parameter_ranges,
+                integer_hyper_parameter_ranges: self.integer_hyper_parameter_ranges
+                ,
+                continuous_hyper_parameter_ranges: self.continuous_hyper_parameter_ranges
+                ,
+                categorical_hyper_parameter_ranges: self.categorical_hyper_parameter_ranges
+                ,
             }
         }
     }
+    
+    
 }
 impl HyperParameterRanges {
     /// Creates a new builder-style object to manufacture [`HyperParameterRanges`](crate::model::HyperParameterRanges).
@@ -4599,7 +4285,7 @@ impl HyperParameterRanges {
 /// <p>Provides the name and range of a categorical hyperparameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CategoricalHyperParameterRange {
+pub struct CategoricalHyperParameterRange  {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4609,17 +4295,17 @@ pub struct CategoricalHyperParameterRange {
 }
 impl CategoricalHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of the categories for the hyperparameter.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`CategoricalHyperParameterRange`](crate::model::CategoricalHyperParameterRange).
 pub mod categorical_hyper_parameter_range {
-
+    
     /// A builder for [`CategoricalHyperParameterRange`](crate::model::CategoricalHyperParameterRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4634,8 +4320,7 @@ pub mod categorical_hyper_parameter_range {
         }
         /// <p>The name of the hyperparameter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -4644,26 +4329,26 @@ pub mod categorical_hyper_parameter_range {
         /// <p>A list of the categories for the hyperparameter.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>A list of the categories for the hyperparameter.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`CategoricalHyperParameterRange`](crate::model::CategoricalHyperParameterRange).
         pub fn build(self) -> crate::model::CategoricalHyperParameterRange {
             crate::model::CategoricalHyperParameterRange {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl CategoricalHyperParameterRange {
     /// Creates a new builder-style object to manufacture [`CategoricalHyperParameterRange`](crate::model::CategoricalHyperParameterRange).
@@ -4675,7 +4360,7 @@ impl CategoricalHyperParameterRange {
 /// <p>Provides the name and range of a continuous hyperparameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContinuousHyperParameterRange {
+pub struct ContinuousHyperParameterRange  {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4688,7 +4373,7 @@ pub struct ContinuousHyperParameterRange {
 }
 impl ContinuousHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
@@ -4702,7 +4387,7 @@ impl ContinuousHyperParameterRange {
 }
 /// See [`ContinuousHyperParameterRange`](crate::model::ContinuousHyperParameterRange).
 pub mod continuous_hyper_parameter_range {
-
+    
     /// A builder for [`ContinuousHyperParameterRange`](crate::model::ContinuousHyperParameterRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4718,8 +4403,7 @@ pub mod continuous_hyper_parameter_range {
         }
         /// <p>The name of the hyperparameter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The minimum allowable value for the hyperparameter.</p>
         pub fn min_value(mut self, input: f64) -> Self {
@@ -4728,8 +4412,7 @@ pub mod continuous_hyper_parameter_range {
         }
         /// <p>The minimum allowable value for the hyperparameter.</p>
         pub fn set_min_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.min_value = input;
-            self
+            self.min_value = input; self
         }
         /// <p>The maximum allowable value for the hyperparameter.</p>
         pub fn max_value(mut self, input: f64) -> Self {
@@ -4738,18 +4421,24 @@ pub mod continuous_hyper_parameter_range {
         }
         /// <p>The maximum allowable value for the hyperparameter.</p>
         pub fn set_max_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.max_value = input;
-            self
+            self.max_value = input; self
         }
         /// Consumes the builder and constructs a [`ContinuousHyperParameterRange`](crate::model::ContinuousHyperParameterRange).
         pub fn build(self) -> crate::model::ContinuousHyperParameterRange {
             crate::model::ContinuousHyperParameterRange {
-                name: self.name,
-                min_value: self.min_value.unwrap_or_default(),
-                max_value: self.max_value.unwrap_or_default(),
+                name: self.name
+                ,
+                min_value: self.min_value
+                    .unwrap_or_default()
+                ,
+                max_value: self.max_value
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ContinuousHyperParameterRange {
     /// Creates a new builder-style object to manufacture [`ContinuousHyperParameterRange`](crate::model::ContinuousHyperParameterRange).
@@ -4761,7 +4450,7 @@ impl ContinuousHyperParameterRange {
 /// <p>Provides the name and range of an integer-valued hyperparameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntegerHyperParameterRange {
+pub struct IntegerHyperParameterRange  {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4774,7 +4463,7 @@ pub struct IntegerHyperParameterRange {
 }
 impl IntegerHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
@@ -4788,7 +4477,7 @@ impl IntegerHyperParameterRange {
 }
 /// See [`IntegerHyperParameterRange`](crate::model::IntegerHyperParameterRange).
 pub mod integer_hyper_parameter_range {
-
+    
     /// A builder for [`IntegerHyperParameterRange`](crate::model::IntegerHyperParameterRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4804,8 +4493,7 @@ pub mod integer_hyper_parameter_range {
         }
         /// <p>The name of the hyperparameter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The minimum allowable value for the hyperparameter.</p>
         pub fn min_value(mut self, input: i32) -> Self {
@@ -4814,8 +4502,7 @@ pub mod integer_hyper_parameter_range {
         }
         /// <p>The minimum allowable value for the hyperparameter.</p>
         pub fn set_min_value(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_value = input;
-            self
+            self.min_value = input; self
         }
         /// <p>The maximum allowable value for the hyperparameter.</p>
         pub fn max_value(mut self, input: i32) -> Self {
@@ -4824,18 +4511,24 @@ pub mod integer_hyper_parameter_range {
         }
         /// <p>The maximum allowable value for the hyperparameter.</p>
         pub fn set_max_value(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_value = input;
-            self
+            self.max_value = input; self
         }
         /// Consumes the builder and constructs a [`IntegerHyperParameterRange`](crate::model::IntegerHyperParameterRange).
         pub fn build(self) -> crate::model::IntegerHyperParameterRange {
             crate::model::IntegerHyperParameterRange {
-                name: self.name,
-                min_value: self.min_value.unwrap_or_default(),
-                max_value: self.max_value.unwrap_or_default(),
+                name: self.name
+                ,
+                min_value: self.min_value
+                    .unwrap_or_default()
+                ,
+                max_value: self.max_value
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl IntegerHyperParameterRange {
     /// Creates a new builder-style object to manufacture [`IntegerHyperParameterRange`](crate::model::IntegerHyperParameterRange).
@@ -4847,7 +4540,7 @@ impl IntegerHyperParameterRange {
 /// <p>Describes the resource configuration for hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HpoResourceConfig {
+pub struct HpoResourceConfig  {
     /// <p>The maximum number of training jobs when you create a solution version. The maximum value for <code>maxNumberOfTrainingJobs</code> is <code>40</code>.</p>
     #[doc(hidden)]
     pub max_number_of_training_jobs: std::option::Option<std::string::String>,
@@ -4857,17 +4550,17 @@ pub struct HpoResourceConfig {
 }
 impl HpoResourceConfig {
     /// <p>The maximum number of training jobs when you create a solution version. The maximum value for <code>maxNumberOfTrainingJobs</code> is <code>40</code>.</p>
-    pub fn max_number_of_training_jobs(&self) -> std::option::Option<&str> {
+    pub fn max_number_of_training_jobs(&self) -> std::option::Option<& str> {
         self.max_number_of_training_jobs.as_deref()
     }
     /// <p>The maximum number of parallel training jobs when you create a solution version. The maximum value for <code>maxParallelTrainingJobs</code> is <code>10</code>.</p>
-    pub fn max_parallel_training_jobs(&self) -> std::option::Option<&str> {
+    pub fn max_parallel_training_jobs(&self) -> std::option::Option<& str> {
         self.max_parallel_training_jobs.as_deref()
     }
 }
 /// See [`HpoResourceConfig`](crate::model::HpoResourceConfig).
 pub mod hpo_resource_config {
-
+    
     /// A builder for [`HpoResourceConfig`](crate::model::HpoResourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4876,20 +4569,13 @@ pub mod hpo_resource_config {
     }
     impl Builder {
         /// <p>The maximum number of training jobs when you create a solution version. The maximum value for <code>maxNumberOfTrainingJobs</code> is <code>40</code>.</p>
-        pub fn max_number_of_training_jobs(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn max_number_of_training_jobs(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_number_of_training_jobs = Some(input.into());
             self
         }
         /// <p>The maximum number of training jobs when you create a solution version. The maximum value for <code>maxNumberOfTrainingJobs</code> is <code>40</code>.</p>
-        pub fn set_max_number_of_training_jobs(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.max_number_of_training_jobs = input;
-            self
+        pub fn set_max_number_of_training_jobs(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_number_of_training_jobs = input; self
         }
         /// <p>The maximum number of parallel training jobs when you create a solution version. The maximum value for <code>maxParallelTrainingJobs</code> is <code>10</code>.</p>
         pub fn max_parallel_training_jobs(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4897,21 +4583,21 @@ pub mod hpo_resource_config {
             self
         }
         /// <p>The maximum number of parallel training jobs when you create a solution version. The maximum value for <code>maxParallelTrainingJobs</code> is <code>10</code>.</p>
-        pub fn set_max_parallel_training_jobs(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.max_parallel_training_jobs = input;
-            self
+        pub fn set_max_parallel_training_jobs(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.max_parallel_training_jobs = input; self
         }
         /// Consumes the builder and constructs a [`HpoResourceConfig`](crate::model::HpoResourceConfig).
         pub fn build(self) -> crate::model::HpoResourceConfig {
             crate::model::HpoResourceConfig {
-                max_number_of_training_jobs: self.max_number_of_training_jobs,
-                max_parallel_training_jobs: self.max_parallel_training_jobs,
+                max_number_of_training_jobs: self.max_number_of_training_jobs
+                ,
+                max_parallel_training_jobs: self.max_parallel_training_jobs
+                ,
             }
         }
     }
+    
+    
 }
 impl HpoResourceConfig {
     /// Creates a new builder-style object to manufacture [`HpoResourceConfig`](crate::model::HpoResourceConfig).
@@ -4920,12 +4606,12 @@ impl HpoResourceConfig {
     }
 }
 
-/// <p>The metric to optimize during hyperparameter optimization (HPO).</p> <note>
-/// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
+/// <p>The metric to optimize during hyperparameter optimization (HPO).</p> <note> 
+/// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HpoObjective {
+pub struct HpoObjective  {
     /// <p>The type of the metric. Valid values are <code>Maximize</code> and <code>Minimize</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -4938,21 +4624,21 @@ pub struct HpoObjective {
 }
 impl HpoObjective {
     /// <p>The type of the metric. Valid values are <code>Maximize</code> and <code>Minimize</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>A regular expression for finding the metric in the training job logs.</p>
-    pub fn metric_regex(&self) -> std::option::Option<&str> {
+    pub fn metric_regex(&self) -> std::option::Option<& str> {
         self.metric_regex.as_deref()
     }
 }
 /// See [`HpoObjective`](crate::model::HpoObjective).
 pub mod hpo_objective {
-
+    
     /// A builder for [`HpoObjective`](crate::model::HpoObjective).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4968,8 +4654,7 @@ pub mod hpo_objective {
         }
         /// <p>The type of the metric. Valid values are <code>Maximize</code> and <code>Minimize</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The name of the metric.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4978,8 +4663,7 @@ pub mod hpo_objective {
         }
         /// <p>The name of the metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// <p>A regular expression for finding the metric in the training job logs.</p>
         pub fn metric_regex(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4988,18 +4672,22 @@ pub mod hpo_objective {
         }
         /// <p>A regular expression for finding the metric in the training job logs.</p>
         pub fn set_metric_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_regex = input;
-            self
+            self.metric_regex = input; self
         }
         /// Consumes the builder and constructs a [`HpoObjective`](crate::model::HpoObjective).
         pub fn build(self) -> crate::model::HpoObjective {
             crate::model::HpoObjective {
-                r#type: self.r#type,
-                metric_name: self.metric_name,
-                metric_regex: self.metric_regex,
+                r#type: self.r#type
+                ,
+                metric_name: self.metric_name
+                ,
+                metric_regex: self.metric_regex
+                ,
             }
         }
     }
+    
+    
 }
 impl HpoObjective {
     /// Creates a new builder-style object to manufacture [`HpoObjective`](crate::model::HpoObjective).
@@ -5011,7 +4699,7 @@ impl HpoObjective {
 /// <p>An object that provides information about a solution. A solution is a trained model that can be deployed as a campaign.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Solution {
+pub struct Solution  {
     /// <p>The name of the solution.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5039,11 +4727,11 @@ pub struct Solution {
     /// <p>When <code>performAutoML</code> is true, specifies the best recipe found.</p>
     #[doc(hidden)]
     pub auto_ml_result: std::option::Option<crate::model::AutoMlResult>,
-    /// <p>The status of the solution.</p>
-    /// <p>A solution can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the solution.</p> 
+    /// <p>A solution can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -5059,11 +4747,11 @@ pub struct Solution {
 }
 impl Solution {
     /// <p>The name of the solution.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the solution.</p>
-    pub fn solution_arn(&self) -> std::option::Option<&str> {
+    pub fn solution_arn(&self) -> std::option::Option<& str> {
         self.solution_arn.as_deref()
     }
     /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default is <code>false</code>.</p>
@@ -5075,52 +4763,50 @@ impl Solution {
         self.perform_auto_ml
     }
     /// <p>The ARN of the recipe used to create the solution.</p>
-    pub fn recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn recipe_arn(&self) -> std::option::Option<& str> {
         self.recipe_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>The event type (for example, 'click' or 'like') that is used for training the model. If no <code>eventType</code> is provided, Amazon Personalize uses all interactions for training with equal weight regardless of type.</p>
-    pub fn event_type(&self) -> std::option::Option<&str> {
+    pub fn event_type(&self) -> std::option::Option<& str> {
         self.event_type.as_deref()
     }
     /// <p>Describes the configuration properties for the solution.</p>
-    pub fn solution_config(&self) -> std::option::Option<&crate::model::SolutionConfig> {
+    pub fn solution_config(&self) -> std::option::Option<& crate::model::SolutionConfig> {
         self.solution_config.as_ref()
     }
     /// <p>When <code>performAutoML</code> is true, specifies the best recipe found.</p>
-    pub fn auto_ml_result(&self) -> std::option::Option<&crate::model::AutoMlResult> {
+    pub fn auto_ml_result(&self) -> std::option::Option<& crate::model::AutoMlResult> {
         self.auto_ml_result.as_ref()
     }
-    /// <p>The status of the solution.</p>
-    /// <p>A solution can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the solution.</p> 
+    /// <p>A solution can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The creation date and time (in Unix time) of the solution.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>Describes the latest version of the solution, including the status and the ARN.</p>
-    pub fn latest_solution_version(
-        &self,
-    ) -> std::option::Option<&crate::model::SolutionVersionSummary> {
+    pub fn latest_solution_version(&self) -> std::option::Option<& crate::model::SolutionVersionSummary> {
         self.latest_solution_version.as_ref()
     }
 }
 /// See [`Solution`](crate::model::Solution).
 pub mod solution {
-
+    
     /// A builder for [`Solution`](crate::model::Solution).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5136,8 +4822,7 @@ pub mod solution {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) latest_solution_version:
-            std::option::Option<crate::model::SolutionVersionSummary>,
+        pub(crate) latest_solution_version: std::option::Option<crate::model::SolutionVersionSummary>,
     }
     impl Builder {
         /// <p>The name of the solution.</p>
@@ -5147,8 +4832,7 @@ pub mod solution {
         }
         /// <p>The name of the solution.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN of the solution.</p>
         pub fn solution_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5157,8 +4841,7 @@ pub mod solution {
         }
         /// <p>The ARN of the solution.</p>
         pub fn set_solution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.solution_arn = input;
-            self
+            self.solution_arn = input; self
         }
         /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default is <code>false</code>.</p>
         pub fn perform_hpo(mut self, input: bool) -> Self {
@@ -5167,8 +4850,7 @@ pub mod solution {
         }
         /// <p>Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default is <code>false</code>.</p>
         pub fn set_perform_hpo(mut self, input: std::option::Option<bool>) -> Self {
-            self.perform_hpo = input;
-            self
+            self.perform_hpo = input; self
         }
         /// <p>When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list specified in the solution configuration (<code>recipeArn</code> must not be specified). When false (the default), Amazon Personalize uses <code>recipeArn</code> for training.</p>
         pub fn perform_auto_ml(mut self, input: bool) -> Self {
@@ -5177,8 +4859,7 @@ pub mod solution {
         }
         /// <p>When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION recipe from the list specified in the solution configuration (<code>recipeArn</code> must not be specified). When false (the default), Amazon Personalize uses <code>recipeArn</code> for training.</p>
         pub fn set_perform_auto_ml(mut self, input: std::option::Option<bool>) -> Self {
-            self.perform_auto_ml = input;
-            self
+            self.perform_auto_ml = input; self
         }
         /// <p>The ARN of the recipe used to create the solution.</p>
         pub fn recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5187,8 +4868,7 @@ pub mod solution {
         }
         /// <p>The ARN of the recipe used to create the solution.</p>
         pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.recipe_arn = input;
-            self
+            self.recipe_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5196,12 +4876,8 @@ pub mod solution {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
-        pub fn set_dataset_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_group_arn = input;
-            self
+        pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_group_arn = input; self
         }
         /// <p>The event type (for example, 'click' or 'like') that is used for training the model. If no <code>eventType</code> is provided, Amazon Personalize uses all interactions for training with equal weight regardless of type.</p>
         pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5210,8 +4886,7 @@ pub mod solution {
         }
         /// <p>The event type (for example, 'click' or 'like') that is used for training the model. If no <code>eventType</code> is provided, Amazon Personalize uses all interactions for training with equal weight regardless of type.</p>
         pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_type = input;
-            self
+            self.event_type = input; self
         }
         /// <p>Describes the configuration properties for the solution.</p>
         pub fn solution_config(mut self, input: crate::model::SolutionConfig) -> Self {
@@ -5219,12 +4894,8 @@ pub mod solution {
             self
         }
         /// <p>Describes the configuration properties for the solution.</p>
-        pub fn set_solution_config(
-            mut self,
-            input: std::option::Option<crate::model::SolutionConfig>,
-        ) -> Self {
-            self.solution_config = input;
-            self
+        pub fn set_solution_config(mut self, input: std::option::Option<crate::model::SolutionConfig>) -> Self {
+            self.solution_config = input; self
         }
         /// <p>When <code>performAutoML</code> is true, specifies the best recipe found.</p>
         pub fn auto_ml_result(mut self, input: crate::model::AutoMlResult) -> Self {
@@ -5232,32 +4903,27 @@ pub mod solution {
             self
         }
         /// <p>When <code>performAutoML</code> is true, specifies the best recipe found.</p>
-        pub fn set_auto_ml_result(
-            mut self,
-            input: std::option::Option<crate::model::AutoMlResult>,
-        ) -> Self {
-            self.auto_ml_result = input;
-            self
+        pub fn set_auto_ml_result(mut self, input: std::option::Option<crate::model::AutoMlResult>) -> Self {
+            self.auto_ml_result = input; self
         }
-        /// <p>The status of the solution.</p>
-        /// <p>A solution can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the solution.</p> 
+        /// <p>A solution can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the solution.</p>
-        /// <p>A solution can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the solution.</p> 
+        /// <p>A solution can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The creation date and time (in Unix time) of the solution.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5265,12 +4931,8 @@ pub mod solution {
             self
         }
         /// <p>The creation date and time (in Unix time) of the solution.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the solution was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5278,48 +4940,54 @@ pub mod solution {
             self
         }
         /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>Describes the latest version of the solution, including the status and the ARN.</p>
-        pub fn latest_solution_version(
-            mut self,
-            input: crate::model::SolutionVersionSummary,
-        ) -> Self {
+        pub fn latest_solution_version(mut self, input: crate::model::SolutionVersionSummary) -> Self {
             self.latest_solution_version = Some(input);
             self
         }
         /// <p>Describes the latest version of the solution, including the status and the ARN.</p>
-        pub fn set_latest_solution_version(
-            mut self,
-            input: std::option::Option<crate::model::SolutionVersionSummary>,
-        ) -> Self {
-            self.latest_solution_version = input;
-            self
+        pub fn set_latest_solution_version(mut self, input: std::option::Option<crate::model::SolutionVersionSummary>) -> Self {
+            self.latest_solution_version = input; self
         }
         /// Consumes the builder and constructs a [`Solution`](crate::model::Solution).
         pub fn build(self) -> crate::model::Solution {
             crate::model::Solution {
-                name: self.name,
-                solution_arn: self.solution_arn,
-                perform_hpo: self.perform_hpo.unwrap_or_default(),
-                perform_auto_ml: self.perform_auto_ml.unwrap_or_default(),
-                recipe_arn: self.recipe_arn,
-                dataset_group_arn: self.dataset_group_arn,
-                event_type: self.event_type,
-                solution_config: self.solution_config,
-                auto_ml_result: self.auto_ml_result,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                latest_solution_version: self.latest_solution_version,
+                name: self.name
+                ,
+                solution_arn: self.solution_arn
+                ,
+                perform_hpo: self.perform_hpo
+                    .unwrap_or_default()
+                ,
+                perform_auto_ml: self.perform_auto_ml
+                    .unwrap_or_default()
+                ,
+                recipe_arn: self.recipe_arn
+                ,
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                event_type: self.event_type
+                ,
+                solution_config: self.solution_config
+                ,
+                auto_ml_result: self.auto_ml_result
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                latest_solution_version: self.latest_solution_version
+                ,
             }
         }
     }
+    
+    
 }
 impl Solution {
     /// Creates a new builder-style object to manufacture [`Solution`](crate::model::Solution).
@@ -5331,20 +4999,20 @@ impl Solution {
 /// <p>When the solution performs AutoML (<code>performAutoML</code> is true in <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>), specifies the recipe that best optimized the specified metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoMlResult {
+pub struct AutoMlResult  {
     /// <p>The Amazon Resource Name (ARN) of the best recipe.</p>
     #[doc(hidden)]
     pub best_recipe_arn: std::option::Option<std::string::String>,
 }
 impl AutoMlResult {
     /// <p>The Amazon Resource Name (ARN) of the best recipe.</p>
-    pub fn best_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn best_recipe_arn(&self) -> std::option::Option<& str> {
         self.best_recipe_arn.as_deref()
     }
 }
 /// See [`AutoMlResult`](crate::model::AutoMlResult).
 pub mod auto_ml_result {
-
+    
     /// A builder for [`AutoMlResult`](crate::model::AutoMlResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5357,20 +5025,19 @@ pub mod auto_ml_result {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the best recipe.</p>
-        pub fn set_best_recipe_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.best_recipe_arn = input;
-            self
+        pub fn set_best_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.best_recipe_arn = input; self
         }
         /// Consumes the builder and constructs a [`AutoMlResult`](crate::model::AutoMlResult).
         pub fn build(self) -> crate::model::AutoMlResult {
             crate::model::AutoMlResult {
-                best_recipe_arn: self.best_recipe_arn,
+                best_recipe_arn: self.best_recipe_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl AutoMlResult {
     /// Creates a new builder-style object to manufacture [`AutoMlResult`](crate::model::AutoMlResult).
@@ -5382,7 +5049,7 @@ impl AutoMlResult {
 /// <p>Describes the schema for a dataset. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetSchema {
+pub struct DatasetSchema  {
     /// <p>The name of the schema.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5404,33 +5071,33 @@ pub struct DatasetSchema {
 }
 impl DatasetSchema {
     /// <p>The name of the schema.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The schema.</p>
-    pub fn schema(&self) -> std::option::Option<&str> {
+    pub fn schema(&self) -> std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>The date and time (in Unix time) that the schema was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
-    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+    pub fn domain(&self) -> std::option::Option<& crate::model::Domain> {
         self.domain.as_ref()
     }
 }
 /// See [`DatasetSchema`](crate::model::DatasetSchema).
 pub mod dataset_schema {
-
+    
     /// A builder for [`DatasetSchema`](crate::model::DatasetSchema).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5449,8 +5116,7 @@ pub mod dataset_schema {
         }
         /// <p>The name of the schema.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the schema.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5459,8 +5125,7 @@ pub mod dataset_schema {
         }
         /// <p>The Amazon Resource Name (ARN) of the schema.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_arn = input;
-            self
+            self.schema_arn = input; self
         }
         /// <p>The schema.</p>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5469,8 +5134,7 @@ pub mod dataset_schema {
         }
         /// <p>The schema.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema = input;
-            self
+            self.schema = input; self
         }
         /// <p>The date and time (in Unix time) that the schema was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5478,12 +5142,8 @@ pub mod dataset_schema {
             self
         }
         /// <p>The date and time (in Unix time) that the schema was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the schema was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5491,12 +5151,8 @@ pub mod dataset_schema {
             self
         }
         /// <p>The date and time (in Unix time) that the schema was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
@@ -5505,21 +5161,28 @@ pub mod dataset_schema {
         }
         /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// Consumes the builder and constructs a [`DatasetSchema`](crate::model::DatasetSchema).
         pub fn build(self) -> crate::model::DatasetSchema {
             crate::model::DatasetSchema {
-                name: self.name,
-                schema_arn: self.schema_arn,
-                schema: self.schema,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                domain: self.domain,
+                name: self.name
+                ,
+                schema_arn: self.schema_arn
+                ,
+                schema: self.schema
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                domain: self.domain
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetSchema {
     /// Creates a new builder-style object to manufacture [`DatasetSchema`](crate::model::DatasetSchema).
@@ -5531,7 +5194,7 @@ impl DatasetSchema {
 /// <p>Describes a recommendation generator for a Domain dataset group. You create a recommender in a Domain dataset group for a specific domain use case (domain recipe), and specify the recommender in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Recommender {
+pub struct Recommender  {
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
     #[doc(hidden)]
     pub recommender_arn: std::option::Option<std::string::String>,
@@ -5553,12 +5216,12 @@ pub struct Recommender {
     /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
     #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the recommender.</p>
-    /// <p>A recommender can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the recommender.</p> 
+    /// <p>A recommender can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -5574,63 +5237,59 @@ pub struct Recommender {
 }
 impl Recommender {
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
-    pub fn recommender_arn(&self) -> std::option::Option<&str> {
+    pub fn recommender_arn(&self) -> std::option::Option<& str> {
         self.recommender_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>The name of the recommender.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for. </p>
-    pub fn recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn recipe_arn(&self) -> std::option::Option<& str> {
         self.recipe_arn.as_deref()
     }
     /// <p>The configuration details of the recommender.</p>
-    pub fn recommender_config(&self) -> std::option::Option<&crate::model::RecommenderConfig> {
+    pub fn recommender_config(&self) -> std::option::Option<& crate::model::RecommenderConfig> {
         self.recommender_config.as_ref()
     }
     /// <p>The date and time (in Unix format) that the recommender was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
-    /// <p>The status of the recommender.</p>
-    /// <p>A recommender can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the recommender.</p> 
+    /// <p>A recommender can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>If a recommender fails, the reason behind the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>Provides a summary of the latest updates to the recommender. </p>
-    pub fn latest_recommender_update(
-        &self,
-    ) -> std::option::Option<&crate::model::RecommenderUpdateSummary> {
+    pub fn latest_recommender_update(&self) -> std::option::Option<& crate::model::RecommenderUpdateSummary> {
         self.latest_recommender_update.as_ref()
     }
     /// <p>Provides evaluation metrics that help you determine the performance of a recommender. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a recommender</a>.</p>
-    pub fn model_metrics(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
+    pub fn model_metrics(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, f64>> {
         self.model_metrics.as_ref()
     }
 }
 /// See [`Recommender`](crate::model::Recommender).
 pub mod recommender {
-
+    
     /// A builder for [`Recommender`](crate::model::Recommender).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5643,10 +5302,8 @@ pub mod recommender {
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
-        pub(crate) latest_recommender_update:
-            std::option::Option<crate::model::RecommenderUpdateSummary>,
-        pub(crate) model_metrics:
-            std::option::Option<std::collections::HashMap<std::string::String, f64>>,
+        pub(crate) latest_recommender_update: std::option::Option<crate::model::RecommenderUpdateSummary>,
+        pub(crate) model_metrics: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
@@ -5655,12 +5312,8 @@ pub mod recommender {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
-        pub fn set_recommender_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommender_arn = input;
-            self
+        pub fn set_recommender_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommender_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5668,12 +5321,8 @@ pub mod recommender {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
-        pub fn set_dataset_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_group_arn = input;
-            self
+        pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_group_arn = input; self
         }
         /// <p>The name of the recommender.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5682,8 +5331,7 @@ pub mod recommender {
         }
         /// <p>The name of the recommender.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for. </p>
         pub fn recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5692,8 +5340,7 @@ pub mod recommender {
         }
         /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for. </p>
         pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.recipe_arn = input;
-            self
+            self.recipe_arn = input; self
         }
         /// <p>The configuration details of the recommender.</p>
         pub fn recommender_config(mut self, input: crate::model::RecommenderConfig) -> Self {
@@ -5701,12 +5348,8 @@ pub mod recommender {
             self
         }
         /// <p>The configuration details of the recommender.</p>
-        pub fn set_recommender_config(
-            mut self,
-            input: std::option::Option<crate::model::RecommenderConfig>,
-        ) -> Self {
-            self.recommender_config = input;
-            self
+        pub fn set_recommender_config(mut self, input: std::option::Option<crate::model::RecommenderConfig>) -> Self {
+            self.recommender_config = input; self
         }
         /// <p>The date and time (in Unix format) that the recommender was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5714,12 +5357,8 @@ pub mod recommender {
             self
         }
         /// <p>The date and time (in Unix format) that the recommender was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5727,34 +5366,29 @@ pub mod recommender {
             self
         }
         /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
-        /// <p>The status of the recommender.</p>
-        /// <p>A recommender can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the recommender.</p> 
+        /// <p>A recommender can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the recommender.</p>
-        /// <p>A recommender can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the recommender.</p> 
+        /// <p>A recommender can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>If a recommender fails, the reason behind the failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5762,28 +5396,17 @@ pub mod recommender {
             self
         }
         /// <p>If a recommender fails, the reason behind the failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>Provides a summary of the latest updates to the recommender. </p>
-        pub fn latest_recommender_update(
-            mut self,
-            input: crate::model::RecommenderUpdateSummary,
-        ) -> Self {
+        pub fn latest_recommender_update(mut self, input: crate::model::RecommenderUpdateSummary) -> Self {
             self.latest_recommender_update = Some(input);
             self
         }
         /// <p>Provides a summary of the latest updates to the recommender. </p>
-        pub fn set_latest_recommender_update(
-            mut self,
-            input: std::option::Option<crate::model::RecommenderUpdateSummary>,
-        ) -> Self {
-            self.latest_recommender_update = input;
-            self
+        pub fn set_latest_recommender_update(mut self, input: std::option::Option<crate::model::RecommenderUpdateSummary>) -> Self {
+            self.latest_recommender_update = input; self
         }
         /// Adds a key-value pair to `model_metrics`.
         ///
@@ -5792,35 +5415,44 @@ pub mod recommender {
         /// <p>Provides evaluation metrics that help you determine the performance of a recommender. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a recommender</a>.</p>
         pub fn model_metrics(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
             let mut hash_map = self.model_metrics.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.model_metrics = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.model_metrics = Some(hash_map);
+                            self
         }
         /// <p>Provides evaluation metrics that help you determine the performance of a recommender. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a recommender</a>.</p>
-        pub fn set_model_metrics(
-            mut self,
-            input: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
-        ) -> Self {
-            self.model_metrics = input;
-            self
+        pub fn set_model_metrics(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, f64>>) -> Self {
+            self.model_metrics = input; self
         }
         /// Consumes the builder and constructs a [`Recommender`](crate::model::Recommender).
         pub fn build(self) -> crate::model::Recommender {
             crate::model::Recommender {
-                recommender_arn: self.recommender_arn,
-                dataset_group_arn: self.dataset_group_arn,
-                name: self.name,
-                recipe_arn: self.recipe_arn,
-                recommender_config: self.recommender_config,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                status: self.status,
-                failure_reason: self.failure_reason,
-                latest_recommender_update: self.latest_recommender_update,
-                model_metrics: self.model_metrics,
+                recommender_arn: self.recommender_arn
+                ,
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                name: self.name
+                ,
+                recipe_arn: self.recipe_arn
+                ,
+                recommender_config: self.recommender_config
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                status: self.status
+                ,
+                failure_reason: self.failure_reason
+                ,
+                latest_recommender_update: self.latest_recommender_update
+                ,
+                model_metrics: self.model_metrics
+                ,
             }
         }
     }
+    
+    
 }
 impl Recommender {
     /// Creates a new builder-style object to manufacture [`Recommender`](crate::model::Recommender).
@@ -5832,7 +5464,7 @@ impl Recommender {
 /// <p>Provides a summary of the properties of a recommender update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecommenderUpdateSummary {
+pub struct RecommenderUpdateSummary  {
     /// <p>The configuration details of the recommender update.</p>
     #[doc(hidden)]
     pub recommender_config: std::option::Option<crate::model::RecommenderConfig>,
@@ -5842,12 +5474,12 @@ pub struct RecommenderUpdateSummary {
     /// <p>The date and time (in Unix time) that the recommender update was last updated.</p>
     #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the recommender update.</p>
-    /// <p>A recommender can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the recommender update.</p> 
+    /// <p>A recommender can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -5857,35 +5489,35 @@ pub struct RecommenderUpdateSummary {
 }
 impl RecommenderUpdateSummary {
     /// <p>The configuration details of the recommender update.</p>
-    pub fn recommender_config(&self) -> std::option::Option<&crate::model::RecommenderConfig> {
+    pub fn recommender_config(&self) -> std::option::Option<& crate::model::RecommenderConfig> {
         self.recommender_config.as_ref()
     }
     /// <p>The date and time (in Unix format) that the recommender update was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the recommender update was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
-    /// <p>The status of the recommender update.</p>
-    /// <p>A recommender can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the recommender update.</p> 
+    /// <p>A recommender can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>If a recommender update fails, the reason behind the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
 /// See [`RecommenderUpdateSummary`](crate::model::RecommenderUpdateSummary).
 pub mod recommender_update_summary {
-
+    
     /// A builder for [`RecommenderUpdateSummary`](crate::model::RecommenderUpdateSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5902,12 +5534,8 @@ pub mod recommender_update_summary {
             self
         }
         /// <p>The configuration details of the recommender update.</p>
-        pub fn set_recommender_config(
-            mut self,
-            input: std::option::Option<crate::model::RecommenderConfig>,
-        ) -> Self {
-            self.recommender_config = input;
-            self
+        pub fn set_recommender_config(mut self, input: std::option::Option<crate::model::RecommenderConfig>) -> Self {
+            self.recommender_config = input; self
         }
         /// <p>The date and time (in Unix format) that the recommender update was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5915,12 +5543,8 @@ pub mod recommender_update_summary {
             self
         }
         /// <p>The date and time (in Unix format) that the recommender update was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the recommender update was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5928,34 +5552,29 @@ pub mod recommender_update_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the recommender update was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
-        /// <p>The status of the recommender update.</p>
-        /// <p>A recommender can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the recommender update.</p> 
+        /// <p>A recommender can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the recommender update.</p>
-        /// <p>A recommender can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the recommender update.</p> 
+        /// <p>A recommender can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>If a recommender update fails, the reason behind the failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5963,24 +5582,27 @@ pub mod recommender_update_summary {
             self
         }
         /// <p>If a recommender update fails, the reason behind the failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// Consumes the builder and constructs a [`RecommenderUpdateSummary`](crate::model::RecommenderUpdateSummary).
         pub fn build(self) -> crate::model::RecommenderUpdateSummary {
             crate::model::RecommenderUpdateSummary {
-                recommender_config: self.recommender_config,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                status: self.status,
-                failure_reason: self.failure_reason,
+                recommender_config: self.recommender_config
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                status: self.status
+                ,
+                failure_reason: self.failure_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl RecommenderUpdateSummary {
     /// Creates a new builder-style object to manufacture [`RecommenderUpdateSummary`](crate::model::RecommenderUpdateSummary).
@@ -5992,7 +5614,7 @@ impl RecommenderUpdateSummary {
 /// <p>Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Recipe {
+pub struct Recipe  {
     /// <p>The name of the recipe.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6014,11 +5636,11 @@ pub struct Recipe {
     /// <p>The date and time (in Unix format) that the recipe was created.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>One of the following values:</p>
-    /// <ul>
-    /// <li> <p>PERSONALIZED_RANKING</p> </li>
-    /// <li> <p>RELATED_ITEMS</p> </li>
-    /// <li> <p>USER_PERSONALIZATION</p> </li>
+    /// <p>One of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PERSONALIZED_RANKING</p> </li> 
+    /// <li> <p>RELATED_ITEMS</p> </li> 
+    /// <li> <p>USER_PERSONALIZATION</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub recipe_type: std::option::Option<std::string::String>,
@@ -6028,50 +5650,50 @@ pub struct Recipe {
 }
 impl Recipe {
     /// <p>The name of the recipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe.</p>
-    pub fn recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn recipe_arn(&self) -> std::option::Option<& str> {
         self.recipe_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm that Amazon Personalize uses to train the model.</p>
-    pub fn algorithm_arn(&self) -> std::option::Option<&str> {
+    pub fn algorithm_arn(&self) -> std::option::Option<& str> {
         self.algorithm_arn.as_deref()
     }
     /// <p>The ARN of the FeatureTransformation object.</p>
-    pub fn feature_transformation_arn(&self) -> std::option::Option<&str> {
+    pub fn feature_transformation_arn(&self) -> std::option::Option<& str> {
         self.feature_transformation_arn.as_deref()
     }
     /// <p>The status of the recipe.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The description of the recipe.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time (in Unix format) that the recipe was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
-    /// <p>One of the following values:</p>
-    /// <ul>
-    /// <li> <p>PERSONALIZED_RANKING</p> </li>
-    /// <li> <p>RELATED_ITEMS</p> </li>
-    /// <li> <p>USER_PERSONALIZATION</p> </li>
+    /// <p>One of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PERSONALIZED_RANKING</p> </li> 
+    /// <li> <p>RELATED_ITEMS</p> </li> 
+    /// <li> <p>USER_PERSONALIZATION</p> </li> 
     /// </ul>
-    pub fn recipe_type(&self) -> std::option::Option<&str> {
+    pub fn recipe_type(&self) -> std::option::Option<& str> {
         self.recipe_type.as_deref()
     }
     /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`Recipe`](crate::model::Recipe).
 pub mod recipe {
-
+    
     /// A builder for [`Recipe`](crate::model::Recipe).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6093,8 +5715,7 @@ pub mod recipe {
         }
         /// <p>The name of the recipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the recipe.</p>
         pub fn recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6103,8 +5724,7 @@ pub mod recipe {
         }
         /// <p>The Amazon Resource Name (ARN) of the recipe.</p>
         pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.recipe_arn = input;
-            self
+            self.recipe_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the algorithm that Amazon Personalize uses to train the model.</p>
         pub fn algorithm_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6112,12 +5732,8 @@ pub mod recipe {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the algorithm that Amazon Personalize uses to train the model.</p>
-        pub fn set_algorithm_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.algorithm_arn = input;
-            self
+        pub fn set_algorithm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.algorithm_arn = input; self
         }
         /// <p>The ARN of the FeatureTransformation object.</p>
         pub fn feature_transformation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6125,12 +5741,8 @@ pub mod recipe {
             self
         }
         /// <p>The ARN of the FeatureTransformation object.</p>
-        pub fn set_feature_transformation_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.feature_transformation_arn = input;
-            self
+        pub fn set_feature_transformation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_transformation_arn = input; self
         }
         /// <p>The status of the recipe.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6139,8 +5751,7 @@ pub mod recipe {
         }
         /// <p>The status of the recipe.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The description of the recipe.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6149,8 +5760,7 @@ pub mod recipe {
         }
         /// <p>The description of the recipe.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date and time (in Unix format) that the recipe was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6158,32 +5768,27 @@ pub mod recipe {
             self
         }
         /// <p>The date and time (in Unix format) that the recipe was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
-        /// <p>One of the following values:</p>
-        /// <ul>
-        /// <li> <p>PERSONALIZED_RANKING</p> </li>
-        /// <li> <p>RELATED_ITEMS</p> </li>
-        /// <li> <p>USER_PERSONALIZATION</p> </li>
+        /// <p>One of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>PERSONALIZED_RANKING</p> </li> 
+        /// <li> <p>RELATED_ITEMS</p> </li> 
+        /// <li> <p>USER_PERSONALIZATION</p> </li> 
         /// </ul>
         pub fn recipe_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.recipe_type = Some(input.into());
             self
         }
-        /// <p>One of the following values:</p>
-        /// <ul>
-        /// <li> <p>PERSONALIZED_RANKING</p> </li>
-        /// <li> <p>RELATED_ITEMS</p> </li>
-        /// <li> <p>USER_PERSONALIZATION</p> </li>
+        /// <p>One of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>PERSONALIZED_RANKING</p> </li> 
+        /// <li> <p>RELATED_ITEMS</p> </li> 
+        /// <li> <p>USER_PERSONALIZATION</p> </li> 
         /// </ul>
         pub fn set_recipe_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.recipe_type = input;
-            self
+            self.recipe_type = input; self
         }
         /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6191,28 +5796,35 @@ pub mod recipe {
             self
         }
         /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`Recipe`](crate::model::Recipe).
         pub fn build(self) -> crate::model::Recipe {
             crate::model::Recipe {
-                name: self.name,
-                recipe_arn: self.recipe_arn,
-                algorithm_arn: self.algorithm_arn,
-                feature_transformation_arn: self.feature_transformation_arn,
-                status: self.status,
-                description: self.description,
-                creation_date_time: self.creation_date_time,
-                recipe_type: self.recipe_type,
-                last_updated_date_time: self.last_updated_date_time,
+                name: self.name
+                ,
+                recipe_arn: self.recipe_arn
+                ,
+                algorithm_arn: self.algorithm_arn
+                ,
+                feature_transformation_arn: self.feature_transformation_arn
+                ,
+                status: self.status
+                ,
+                description: self.description
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                recipe_type: self.recipe_type
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Recipe {
     /// Creates a new builder-style object to manufacture [`Recipe`](crate::model::Recipe).
@@ -6224,7 +5836,7 @@ impl Recipe {
 /// <p>Contains information on a metric attribution. A metric attribution creates reports on the data that you import into Amazon Personalize. Depending on how you import the data, you can view reports in Amazon CloudWatch or Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricAttribution {
+pub struct MetricAttribution  {
     /// <p>The metric attribution's name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6252,51 +5864,48 @@ pub struct MetricAttribution {
 }
 impl MetricAttribution {
     /// <p>The metric attribution's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
-    pub fn metric_attribution_arn(&self) -> std::option::Option<&str> {
+    pub fn metric_attribution_arn(&self) -> std::option::Option<& str> {
         self.metric_attribution_arn.as_deref()
     }
     /// <p>The metric attribution's dataset group Amazon Resource Name (ARN).</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>The metric attribution's output configuration.</p>
-    pub fn metrics_output_config(
-        &self,
-    ) -> std::option::Option<&crate::model::MetricAttributionOutput> {
+    pub fn metrics_output_config(&self) -> std::option::Option<& crate::model::MetricAttributionOutput> {
         self.metrics_output_config.as_ref()
     }
     /// <p>The metric attribution's status.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The metric attribution's creation date time.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The metric attribution's last updated date time.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The metric attribution's failure reason.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
 /// See [`MetricAttribution`](crate::model::MetricAttribution).
 pub mod metric_attribution {
-
+    
     /// A builder for [`MetricAttribution`](crate::model::MetricAttribution).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) metric_attribution_arn: std::option::Option<std::string::String>,
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
-        pub(crate) metrics_output_config:
-            std::option::Option<crate::model::MetricAttributionOutput>,
+        pub(crate) metrics_output_config: std::option::Option<crate::model::MetricAttributionOutput>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -6310,8 +5919,7 @@ pub mod metric_attribution {
         }
         /// <p>The metric attribution's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
         pub fn metric_attribution_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6319,12 +5927,8 @@ pub mod metric_attribution {
             self
         }
         /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
-        pub fn set_metric_attribution_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.metric_attribution_arn = input;
-            self
+        pub fn set_metric_attribution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_attribution_arn = input; self
         }
         /// <p>The metric attribution's dataset group Amazon Resource Name (ARN).</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6332,28 +5936,17 @@ pub mod metric_attribution {
             self
         }
         /// <p>The metric attribution's dataset group Amazon Resource Name (ARN).</p>
-        pub fn set_dataset_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_group_arn = input;
-            self
+        pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_group_arn = input; self
         }
         /// <p>The metric attribution's output configuration.</p>
-        pub fn metrics_output_config(
-            mut self,
-            input: crate::model::MetricAttributionOutput,
-        ) -> Self {
+        pub fn metrics_output_config(mut self, input: crate::model::MetricAttributionOutput) -> Self {
             self.metrics_output_config = Some(input);
             self
         }
         /// <p>The metric attribution's output configuration.</p>
-        pub fn set_metrics_output_config(
-            mut self,
-            input: std::option::Option<crate::model::MetricAttributionOutput>,
-        ) -> Self {
-            self.metrics_output_config = input;
-            self
+        pub fn set_metrics_output_config(mut self, input: std::option::Option<crate::model::MetricAttributionOutput>) -> Self {
+            self.metrics_output_config = input; self
         }
         /// <p>The metric attribution's status.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6362,8 +5955,7 @@ pub mod metric_attribution {
         }
         /// <p>The metric attribution's status.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The metric attribution's creation date time.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6371,12 +5963,8 @@ pub mod metric_attribution {
             self
         }
         /// <p>The metric attribution's creation date time.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The metric attribution's last updated date time.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6384,12 +5972,8 @@ pub mod metric_attribution {
             self
         }
         /// <p>The metric attribution's last updated date time.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>The metric attribution's failure reason.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6397,27 +5981,33 @@ pub mod metric_attribution {
             self
         }
         /// <p>The metric attribution's failure reason.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// Consumes the builder and constructs a [`MetricAttribution`](crate::model::MetricAttribution).
         pub fn build(self) -> crate::model::MetricAttribution {
             crate::model::MetricAttribution {
-                name: self.name,
-                metric_attribution_arn: self.metric_attribution_arn,
-                dataset_group_arn: self.dataset_group_arn,
-                metrics_output_config: self.metrics_output_config,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                failure_reason: self.failure_reason,
+                name: self.name
+                ,
+                metric_attribution_arn: self.metric_attribution_arn
+                ,
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                metrics_output_config: self.metrics_output_config
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                failure_reason: self.failure_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricAttribution {
     /// Creates a new builder-style object to manufacture [`MetricAttribution`](crate::model::MetricAttribution).
@@ -6429,7 +6019,7 @@ impl MetricAttribution {
 /// <p>Contains information on a recommendation filter, including its ARN, status, and filter expression.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6457,39 +6047,39 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The name of the filter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the filter.</p>
-    pub fn filter_arn(&self) -> std::option::Option<&str> {
+    pub fn filter_arn(&self) -> std::option::Option<& str> {
         self.filter_arn.as_deref()
     }
     /// <p>The time at which the filter was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The time at which the filter was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The ARN of the dataset group to which the filter belongs.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>If the filter failed, the reason for its failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
-    pub fn filter_expression(&self) -> std::option::Option<&str> {
+    pub fn filter_expression(&self) -> std::option::Option<& str> {
         self.filter_expression.as_deref()
     }
     /// <p>The status of the filter.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
-impl std::fmt::Debug for Filter {
+impl  std::fmt::Debug for Filter  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
         formatter.field("name", &self.name);
@@ -6505,7 +6095,7 @@ impl std::fmt::Debug for Filter {
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6526,8 +6116,7 @@ pub mod filter {
         }
         /// <p>The name of the filter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN of the filter.</p>
         pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6536,8 +6125,7 @@ pub mod filter {
         }
         /// <p>The ARN of the filter.</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.filter_arn = input;
-            self
+            self.filter_arn = input; self
         }
         /// <p>The time at which the filter was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6545,12 +6133,8 @@ pub mod filter {
             self
         }
         /// <p>The time at which the filter was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The time at which the filter was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6558,12 +6142,8 @@ pub mod filter {
             self
         }
         /// <p>The time at which the filter was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>The ARN of the dataset group to which the filter belongs.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6571,12 +6151,8 @@ pub mod filter {
             self
         }
         /// <p>The ARN of the dataset group to which the filter belongs.</p>
-        pub fn set_dataset_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_group_arn = input;
-            self
+        pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_group_arn = input; self
         }
         /// <p>If the filter failed, the reason for its failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6584,12 +6160,8 @@ pub mod filter {
             self
         }
         /// <p>If the filter failed, the reason for its failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
         pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6597,12 +6169,8 @@ pub mod filter {
             self
         }
         /// <p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
-        pub fn set_filter_expression(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.filter_expression = input;
-            self
+        pub fn set_filter_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.filter_expression = input; self
         }
         /// <p>The status of the filter.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6611,20 +6179,27 @@ pub mod filter {
         }
         /// <p>The status of the filter.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                name: self.name,
-                filter_arn: self.filter_arn,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                dataset_group_arn: self.dataset_group_arn,
-                failure_reason: self.failure_reason,
-                filter_expression: self.filter_expression,
-                status: self.status,
+                name: self.name
+                ,
+                filter_arn: self.filter_arn
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                failure_reason: self.failure_reason
+                ,
+                filter_expression: self.filter_expression
+                ,
+                status: self.status
+                ,
             }
         }
     }
@@ -6642,6 +6217,8 @@ pub mod filter {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -6653,7 +6230,7 @@ impl Filter {
 /// <p>Provides feature transformation information. Feature transformation is the process of modifying raw input data into a form more suitable for model training.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FeatureTransformation {
+pub struct FeatureTransformation  {
     /// <p>The name of the feature transformation.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6662,66 +6239,60 @@ pub struct FeatureTransformation {
     pub feature_transformation_arn: std::option::Option<std::string::String>,
     /// <p>Provides the default parameters for feature transformation.</p>
     #[doc(hidden)]
-    pub default_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub default_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last update date and time (in Unix time) of the feature transformation.</p>
     #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the feature transformation.</p>
-    /// <p>A feature transformation can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <p>The status of the feature transformation.</p> 
+    /// <p>A feature transformation can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl FeatureTransformation {
     /// <p>The name of the feature transformation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the FeatureTransformation object.</p>
-    pub fn feature_transformation_arn(&self) -> std::option::Option<&str> {
+    pub fn feature_transformation_arn(&self) -> std::option::Option<& str> {
         self.feature_transformation_arn.as_deref()
     }
     /// <p>Provides the default parameters for feature transformation.</p>
-    pub fn default_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn default_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.default_parameters.as_ref()
     }
     /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The last update date and time (in Unix time) of the feature transformation.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
-    /// <p>The status of the feature transformation.</p>
-    /// <p>A feature transformation can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <p>The status of the feature transformation.</p> 
+    /// <p>A feature transformation can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`FeatureTransformation`](crate::model::FeatureTransformation).
 pub mod feature_transformation {
-
+    
     /// A builder for [`FeatureTransformation`](crate::model::FeatureTransformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) feature_transformation_arn: std::option::Option<std::string::String>,
-        pub(crate) default_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) default_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<std::string::String>,
@@ -6734,8 +6305,7 @@ pub mod feature_transformation {
         }
         /// <p>The name of the feature transformation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the FeatureTransformation object.</p>
         pub fn feature_transformation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6743,37 +6313,23 @@ pub mod feature_transformation {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the FeatureTransformation object.</p>
-        pub fn set_feature_transformation_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.feature_transformation_arn = input;
-            self
+        pub fn set_feature_transformation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_transformation_arn = input; self
         }
         /// Adds a key-value pair to `default_parameters`.
         ///
         /// To override the contents of this collection use [`set_default_parameters`](Self::set_default_parameters).
         ///
         /// <p>Provides the default parameters for feature transformation.</p>
-        pub fn default_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn default_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.default_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.default_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.default_parameters = Some(hash_map);
+                            self
         }
         /// <p>Provides the default parameters for feature transformation.</p>
-        pub fn set_default_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.default_parameters = input;
-            self
+        pub fn set_default_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.default_parameters = input; self
         }
         /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6781,12 +6337,8 @@ pub mod feature_transformation {
             self
         }
         /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The last update date and time (in Unix time) of the feature transformation.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6794,43 +6346,46 @@ pub mod feature_transformation {
             self
         }
         /// <p>The last update date and time (in Unix time) of the feature transformation.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
-        /// <p>The status of the feature transformation.</p>
-        /// <p>A feature transformation can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <p>The status of the feature transformation.</p> 
+        /// <p>A feature transformation can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the feature transformation.</p>
-        /// <p>A feature transformation can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <p>The status of the feature transformation.</p> 
+        /// <p>A feature transformation can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`FeatureTransformation`](crate::model::FeatureTransformation).
         pub fn build(self) -> crate::model::FeatureTransformation {
             crate::model::FeatureTransformation {
-                name: self.name,
-                feature_transformation_arn: self.feature_transformation_arn,
-                default_parameters: self.default_parameters,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                status: self.status,
+                name: self.name
+                ,
+                feature_transformation_arn: self.feature_transformation_arn
+                ,
+                default_parameters: self.default_parameters
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl FeatureTransformation {
     /// Creates a new builder-style object to manufacture [`FeatureTransformation`](crate::model::FeatureTransformation).
@@ -6842,7 +6397,7 @@ impl FeatureTransformation {
 /// <p>Provides information about an event tracker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventTracker {
+pub struct EventTracker  {
     /// <p>The name of the event tracker.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6858,11 +6413,11 @@ pub struct EventTracker {
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
     #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the event tracker.</p>
-    /// <p>An event tracker can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the event tracker.</p> 
+    /// <p>An event tracker can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -6875,46 +6430,46 @@ pub struct EventTracker {
 }
 impl EventTracker {
     /// <p>The name of the event tracker.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the event tracker.</p>
-    pub fn event_tracker_arn(&self) -> std::option::Option<&str> {
+    pub fn event_tracker_arn(&self) -> std::option::Option<& str> {
         self.event_tracker_arn.as_deref()
     }
     /// <p>The Amazon Web Services account that owns the event tracker.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
-    pub fn tracking_id(&self) -> std::option::Option<&str> {
+    pub fn tracking_id(&self) -> std::option::Option<& str> {
         self.tracking_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>The status of the event tracker.</p>
-    /// <p>An event tracker can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the event tracker.</p> 
+    /// <p>An event tracker can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix format) that the event tracker was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`EventTracker`](crate::model::EventTracker).
 pub mod event_tracker {
-
+    
     /// A builder for [`EventTracker`](crate::model::EventTracker).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6935,8 +6490,7 @@ pub mod event_tracker {
         }
         /// <p>The name of the event tracker.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN of the event tracker.</p>
         pub fn event_tracker_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6944,12 +6498,8 @@ pub mod event_tracker {
             self
         }
         /// <p>The ARN of the event tracker.</p>
-        pub fn set_event_tracker_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_tracker_arn = input;
-            self
+        pub fn set_event_tracker_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_tracker_arn = input; self
         }
         /// <p>The Amazon Web Services account that owns the event tracker.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6958,8 +6508,7 @@ pub mod event_tracker {
         }
         /// <p>The Amazon Web Services account that owns the event tracker.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
         pub fn tracking_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6968,8 +6517,7 @@ pub mod event_tracker {
         }
         /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
         pub fn set_tracking_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tracking_id = input;
-            self
+            self.tracking_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6977,32 +6525,27 @@ pub mod event_tracker {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
-        pub fn set_dataset_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_group_arn = input;
-            self
+        pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_group_arn = input; self
         }
-        /// <p>The status of the event tracker.</p>
-        /// <p>An event tracker can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the event tracker.</p> 
+        /// <p>An event tracker can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the event tracker.</p>
-        /// <p>An event tracker can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the event tracker.</p> 
+        /// <p>An event tracker can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time (in Unix format) that the event tracker was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7010,12 +6553,8 @@ pub mod event_tracker {
             self
         }
         /// <p>The date and time (in Unix format) that the event tracker was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7023,27 +6562,33 @@ pub mod event_tracker {
             self
         }
         /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`EventTracker`](crate::model::EventTracker).
         pub fn build(self) -> crate::model::EventTracker {
             crate::model::EventTracker {
-                name: self.name,
-                event_tracker_arn: self.event_tracker_arn,
-                account_id: self.account_id,
-                tracking_id: self.tracking_id,
-                dataset_group_arn: self.dataset_group_arn,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                name: self.name
+                ,
+                event_tracker_arn: self.event_tracker_arn
+                ,
+                account_id: self.account_id
+                ,
+                tracking_id: self.tracking_id
+                ,
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl EventTracker {
     /// Creates a new builder-style object to manufacture [`EventTracker`](crate::model::EventTracker).
@@ -7052,14 +6597,14 @@ impl EventTracker {
     }
 }
 
-/// <p>Describes a job that imports training data from a data source (Amazon S3 bucket) to an Amazon Personalize dataset. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>.</p>
-/// <p>A dataset import job can be in one of the following states:</p>
-/// <ul>
-/// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+/// <p>Describes a job that imports training data from a data source (Amazon S3 bucket) to an Amazon Personalize dataset. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>.</p> 
+/// <p>A dataset import job can be in one of the following states:</p> 
+/// <ul> 
+/// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetImportJob {
+pub struct DatasetImportJob  {
     /// <p>The name of the import job.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
@@ -7075,10 +6620,10 @@ pub struct DatasetImportJob {
     /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the dataset import job.</p>
-    /// <p>A dataset import job can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <p>The status of the dataset import job.</p> 
+    /// <p>A dataset import job can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -7100,47 +6645,47 @@ pub struct DatasetImportJob {
 }
 impl DatasetImportJob {
     /// <p>The name of the import job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The ARN of the dataset import job.</p>
-    pub fn dataset_import_job_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_import_job_arn(&self) -> std::option::Option<& str> {
         self.dataset_import_job_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that receives the imported data.</p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The Amazon S3 bucket that contains the training data to import.</p>
-    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+    pub fn data_source(&self) -> std::option::Option<& crate::model::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
-    /// <p>The status of the dataset import job.</p>
-    /// <p>A dataset import job can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <p>The status of the dataset import job.</p> 
+    /// <p>A dataset import job can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The creation date and time (in Unix time) of the dataset import job.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) the dataset was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If a dataset import job fails, provides the reason why.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The import mode used by the dataset import job to import new records.</p>
-    pub fn import_mode(&self) -> std::option::Option<&crate::model::ImportMode> {
+    pub fn import_mode(&self) -> std::option::Option<& crate::model::ImportMode> {
         self.import_mode.as_ref()
     }
     /// <p>Whether the job publishes metrics to Amazon S3 for a metric attribution.</p>
@@ -7150,7 +6695,7 @@ impl DatasetImportJob {
 }
 /// See [`DatasetImportJob`](crate::model::DatasetImportJob).
 pub mod dataset_import_job {
-
+    
     /// A builder for [`DatasetImportJob`](crate::model::DatasetImportJob).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7174,8 +6719,7 @@ pub mod dataset_import_job {
         }
         /// <p>The name of the import job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
         /// <p>The ARN of the dataset import job.</p>
         pub fn dataset_import_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7183,12 +6727,8 @@ pub mod dataset_import_job {
             self
         }
         /// <p>The ARN of the dataset import job.</p>
-        pub fn set_dataset_import_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_import_job_arn = input;
-            self
+        pub fn set_dataset_import_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_import_job_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset that receives the imported data.</p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7197,8 +6737,7 @@ pub mod dataset_import_job {
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset that receives the imported data.</p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_arn = input;
-            self
+            self.dataset_arn = input; self
         }
         /// <p>The Amazon S3 bucket that contains the training data to import.</p>
         pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
@@ -7206,12 +6745,8 @@ pub mod dataset_import_job {
             self
         }
         /// <p>The Amazon S3 bucket that contains the training data to import.</p>
-        pub fn set_data_source(
-            mut self,
-            input: std::option::Option<crate::model::DataSource>,
-        ) -> Self {
-            self.data_source = input;
-            self
+        pub fn set_data_source(mut self, input: std::option::Option<crate::model::DataSource>) -> Self {
+            self.data_source = input; self
         }
         /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7220,26 +6755,24 @@ pub mod dataset_import_job {
         }
         /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
-        /// <p>The status of the dataset import job.</p>
-        /// <p>A dataset import job can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <p>The status of the dataset import job.</p> 
+        /// <p>A dataset import job can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the dataset import job.</p>
-        /// <p>A dataset import job can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <p>The status of the dataset import job.</p> 
+        /// <p>A dataset import job can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The creation date and time (in Unix time) of the dataset import job.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7247,12 +6780,8 @@ pub mod dataset_import_job {
             self
         }
         /// <p>The creation date and time (in Unix time) of the dataset import job.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) the dataset was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7260,12 +6789,8 @@ pub mod dataset_import_job {
             self
         }
         /// <p>The date and time (in Unix time) the dataset was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>If a dataset import job fails, provides the reason why.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7273,12 +6798,8 @@ pub mod dataset_import_job {
             self
         }
         /// <p>If a dataset import job fails, provides the reason why.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The import mode used by the dataset import job to import new records.</p>
         pub fn import_mode(mut self, input: crate::model::ImportMode) -> Self {
@@ -7286,12 +6807,8 @@ pub mod dataset_import_job {
             self
         }
         /// <p>The import mode used by the dataset import job to import new records.</p>
-        pub fn set_import_mode(
-            mut self,
-            input: std::option::Option<crate::model::ImportMode>,
-        ) -> Self {
-            self.import_mode = input;
-            self
+        pub fn set_import_mode(mut self, input: std::option::Option<crate::model::ImportMode>) -> Self {
+            self.import_mode = input; self
         }
         /// <p>Whether the job publishes metrics to Amazon S3 for a metric attribution.</p>
         pub fn publish_attribution_metrics_to_s3(mut self, input: bool) -> Self {
@@ -7299,30 +6816,39 @@ pub mod dataset_import_job {
             self
         }
         /// <p>Whether the job publishes metrics to Amazon S3 for a metric attribution.</p>
-        pub fn set_publish_attribution_metrics_to_s3(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.publish_attribution_metrics_to_s3 = input;
-            self
+        pub fn set_publish_attribution_metrics_to_s3(mut self, input: std::option::Option<bool>) -> Self {
+            self.publish_attribution_metrics_to_s3 = input; self
         }
         /// Consumes the builder and constructs a [`DatasetImportJob`](crate::model::DatasetImportJob).
         pub fn build(self) -> crate::model::DatasetImportJob {
             crate::model::DatasetImportJob {
-                job_name: self.job_name,
-                dataset_import_job_arn: self.dataset_import_job_arn,
-                dataset_arn: self.dataset_arn,
-                data_source: self.data_source,
-                role_arn: self.role_arn,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                failure_reason: self.failure_reason,
-                import_mode: self.import_mode,
-                publish_attribution_metrics_to_s3: self.publish_attribution_metrics_to_s3,
+                job_name: self.job_name
+                ,
+                dataset_import_job_arn: self.dataset_import_job_arn
+                ,
+                dataset_arn: self.dataset_arn
+                ,
+                data_source: self.data_source
+                ,
+                role_arn: self.role_arn
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                failure_reason: self.failure_reason
+                ,
+                import_mode: self.import_mode
+                ,
+                publish_attribution_metrics_to_s3: self.publish_attribution_metrics_to_s3
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetImportJob {
     /// Creates a new builder-style object to manufacture [`DatasetImportJob`](crate::model::DatasetImportJob).
@@ -7334,50 +6860,49 @@ impl DatasetImportJob {
 /// <p>Describes the data source that contains the data to upload to a dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSource {
-    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
+pub struct DataSource  {
+    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p> 
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
     #[doc(hidden)]
     pub data_location: std::option::Option<std::string::String>,
 }
 impl DataSource {
-    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
+    /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p> 
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
-    pub fn data_location(&self) -> std::option::Option<&str> {
+    pub fn data_location(&self) -> std::option::Option<& str> {
         self.data_location.as_deref()
     }
 }
 /// See [`DataSource`](crate::model::DataSource).
 pub mod data_source {
-
+    
     /// A builder for [`DataSource`](crate::model::DataSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
+        /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p> 
         /// <p> <code>s3://bucket-name/folder-name/</code> </p>
         pub fn data_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_location = Some(input.into());
             self
         }
-        /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
+        /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p> 
         /// <p> <code>s3://bucket-name/folder-name/</code> </p>
-        pub fn set_data_location(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_location = input;
-            self
+        pub fn set_data_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_location = input; self
         }
         /// Consumes the builder and constructs a [`DataSource`](crate::model::DataSource).
         pub fn build(self) -> crate::model::DataSource {
             crate::model::DataSource {
-                data_location: self.data_location,
+                data_location: self.data_location
+                ,
             }
         }
     }
+    
+    
 }
 impl DataSource {
     /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
@@ -7386,22 +6911,22 @@ impl DataSource {
     }
 }
 
-/// <p>A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>. The dataset group is used to create and train a solution by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>. A dataset group can contain only one of each type of dataset.</p>
+/// <p>A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>. The dataset group is used to create and train a solution by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>. A dataset group can contain only one of each type of dataset.</p> 
 /// <p>You can specify an Key Management Service (KMS) key to encrypt the datasets in the group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetGroup {
+pub struct DatasetGroup  {
     /// <p>The name of the dataset group.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>The current status of the dataset group.</p>
-    /// <p>A dataset group can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING</p> </li>
+    /// <p>The current status of the dataset group.</p> 
+    /// <p>A dataset group can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -7426,50 +6951,50 @@ pub struct DatasetGroup {
 }
 impl DatasetGroup {
     /// <p>The name of the dataset group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>The current status of the dataset group.</p>
-    /// <p>A dataset group can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING</p> </li>
+    /// <p>The current status of the dataset group.</p> 
+    /// <p>A dataset group can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The creation date and time (in Unix time) of the dataset group.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The last update date and time (in Unix time) of the dataset group.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If creating a dataset group fails, provides the reason why.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The domain of a Domain dataset group.</p>
-    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+    pub fn domain(&self) -> std::option::Option<& crate::model::Domain> {
         self.domain.as_ref()
     }
 }
 /// See [`DatasetGroup`](crate::model::DatasetGroup).
 pub mod dataset_group {
-
+    
     /// A builder for [`DatasetGroup`](crate::model::DatasetGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7491,8 +7016,7 @@ pub mod dataset_group {
         }
         /// <p>The name of the dataset group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7500,32 +7024,27 @@ pub mod dataset_group {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-        pub fn set_dataset_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_group_arn = input;
-            self
+        pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_group_arn = input; self
         }
-        /// <p>The current status of the dataset group.</p>
-        /// <p>A dataset group can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING</p> </li>
+        /// <p>The current status of the dataset group.</p> 
+        /// <p>A dataset group can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The current status of the dataset group.</p>
-        /// <p>A dataset group can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING</p> </li>
+        /// <p>The current status of the dataset group.</p> 
+        /// <p>A dataset group can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7534,8 +7053,7 @@ pub mod dataset_group {
         }
         /// <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7544,8 +7062,7 @@ pub mod dataset_group {
         }
         /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The creation date and time (in Unix time) of the dataset group.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7553,12 +7070,8 @@ pub mod dataset_group {
             self
         }
         /// <p>The creation date and time (in Unix time) of the dataset group.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The last update date and time (in Unix time) of the dataset group.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7566,12 +7079,8 @@ pub mod dataset_group {
             self
         }
         /// <p>The last update date and time (in Unix time) of the dataset group.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>If creating a dataset group fails, provides the reason why.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7579,12 +7088,8 @@ pub mod dataset_group {
             self
         }
         /// <p>If creating a dataset group fails, provides the reason why.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The domain of a Domain dataset group.</p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
@@ -7593,24 +7098,34 @@ pub mod dataset_group {
         }
         /// <p>The domain of a Domain dataset group.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// Consumes the builder and constructs a [`DatasetGroup`](crate::model::DatasetGroup).
         pub fn build(self) -> crate::model::DatasetGroup {
             crate::model::DatasetGroup {
-                name: self.name,
-                dataset_group_arn: self.dataset_group_arn,
-                status: self.status,
-                role_arn: self.role_arn,
-                kms_key_arn: self.kms_key_arn,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                failure_reason: self.failure_reason,
-                domain: self.domain,
+                name: self.name
+                ,
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                status: self.status
+                ,
+                role_arn: self.role_arn
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                failure_reason: self.failure_reason
+                ,
+                domain: self.domain
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetGroup {
     /// Creates a new builder-style object to manufacture [`DatasetGroup`](crate::model::DatasetGroup).
@@ -7619,14 +7134,14 @@ impl DatasetGroup {
     }
 }
 
-/// <p>Describes a job that exports a dataset to an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>.</p>
-/// <p>A dataset export job can be in one of the following states:</p>
-/// <ul>
-/// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+/// <p>Describes a job that exports a dataset to an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>.</p> 
+/// <p>A dataset export job can be in one of the following states:</p> 
+/// <ul> 
+/// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetExportJob {
+pub struct DatasetExportJob  {
     /// <p>The name of the export job.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
@@ -7642,14 +7157,14 @@ pub struct DatasetExportJob {
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the dataset export job.</p>
-    /// <p>A dataset export job can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <p>The status of the dataset export job.</p> 
+    /// <p>A dataset export job can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
-    /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
+    /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p> 
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
     #[doc(hidden)]
     pub job_output: std::option::Option<crate::model::DatasetExportJobOutput>,
@@ -7665,54 +7180,54 @@ pub struct DatasetExportJob {
 }
 impl DatasetExportJob {
     /// <p>The name of the export job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
-    pub fn dataset_export_job_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_export_job_arn(&self) -> std::option::Option<& str> {
         self.dataset_export_job_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset to export.</p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
-    pub fn ingestion_mode(&self) -> std::option::Option<&crate::model::IngestionMode> {
+    pub fn ingestion_mode(&self) -> std::option::Option<& crate::model::IngestionMode> {
         self.ingestion_mode.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
-    /// <p>The status of the dataset export job.</p>
-    /// <p>A dataset export job can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <p>The status of the dataset export job.</p> 
+    /// <p>A dataset export job can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
-    /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
+    /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p> 
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
-    pub fn job_output(&self) -> std::option::Option<&crate::model::DatasetExportJobOutput> {
+    pub fn job_output(&self) -> std::option::Option<& crate::model::DatasetExportJobOutput> {
         self.job_output.as_ref()
     }
     /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If a dataset export job fails, provides the reason why.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
 /// See [`DatasetExportJob`](crate::model::DatasetExportJob).
 pub mod dataset_export_job {
-
+    
     /// A builder for [`DatasetExportJob`](crate::model::DatasetExportJob).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7735,8 +7250,7 @@ pub mod dataset_export_job {
         }
         /// <p>The name of the export job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
         pub fn dataset_export_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7744,12 +7258,8 @@ pub mod dataset_export_job {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
-        pub fn set_dataset_export_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_export_job_arn = input;
-            self
+        pub fn set_dataset_export_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_export_job_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset to export.</p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7758,8 +7268,7 @@ pub mod dataset_export_job {
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset to export.</p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_arn = input;
-            self
+            self.dataset_arn = input; self
         }
         /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
         pub fn ingestion_mode(mut self, input: crate::model::IngestionMode) -> Self {
@@ -7767,12 +7276,8 @@ pub mod dataset_export_job {
             self
         }
         /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
-        pub fn set_ingestion_mode(
-            mut self,
-            input: std::option::Option<crate::model::IngestionMode>,
-        ) -> Self {
-            self.ingestion_mode = input;
-            self
+        pub fn set_ingestion_mode(mut self, input: std::option::Option<crate::model::IngestionMode>) -> Self {
+            self.ingestion_mode = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7781,41 +7286,35 @@ pub mod dataset_export_job {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
-        /// <p>The status of the dataset export job.</p>
-        /// <p>A dataset export job can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <p>The status of the dataset export job.</p> 
+        /// <p>A dataset export job can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the dataset export job.</p>
-        /// <p>A dataset export job can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+        /// <p>The status of the dataset export job.</p> 
+        /// <p>A dataset export job can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
-        /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
+        /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p> 
         /// <p> <code>s3://bucket-name/folder-name/</code> </p>
         pub fn job_output(mut self, input: crate::model::DatasetExportJobOutput) -> Self {
             self.job_output = Some(input);
             self
         }
-        /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
+        /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p> 
         /// <p> <code>s3://bucket-name/folder-name/</code> </p>
-        pub fn set_job_output(
-            mut self,
-            input: std::option::Option<crate::model::DatasetExportJobOutput>,
-        ) -> Self {
-            self.job_output = input;
-            self
+        pub fn set_job_output(mut self, input: std::option::Option<crate::model::DatasetExportJobOutput>) -> Self {
+            self.job_output = input; self
         }
         /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7823,12 +7322,8 @@ pub mod dataset_export_job {
             self
         }
         /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7836,12 +7331,8 @@ pub mod dataset_export_job {
             self
         }
         /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>If a dataset export job fails, provides the reason why.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7849,29 +7340,37 @@ pub mod dataset_export_job {
             self
         }
         /// <p>If a dataset export job fails, provides the reason why.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// Consumes the builder and constructs a [`DatasetExportJob`](crate::model::DatasetExportJob).
         pub fn build(self) -> crate::model::DatasetExportJob {
             crate::model::DatasetExportJob {
-                job_name: self.job_name,
-                dataset_export_job_arn: self.dataset_export_job_arn,
-                dataset_arn: self.dataset_arn,
-                ingestion_mode: self.ingestion_mode,
-                role_arn: self.role_arn,
-                status: self.status,
-                job_output: self.job_output,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                failure_reason: self.failure_reason,
+                job_name: self.job_name
+                ,
+                dataset_export_job_arn: self.dataset_export_job_arn
+                ,
+                dataset_arn: self.dataset_arn
+                ,
+                ingestion_mode: self.ingestion_mode
+                ,
+                role_arn: self.role_arn
+                ,
+                status: self.status
+                ,
+                job_output: self.job_output
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                failure_reason: self.failure_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetExportJob {
     /// Creates a new builder-style object to manufacture [`DatasetExportJob`](crate::model::DatasetExportJob).
@@ -7883,20 +7382,20 @@ impl DatasetExportJob {
 /// <p>The output configuration parameters of a dataset export job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetExportJobOutput {
+pub struct DatasetExportJobOutput  {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     #[doc(hidden)]
     pub s3_data_destination: std::option::Option<crate::model::S3DataConfig>,
 }
 impl DatasetExportJobOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-    pub fn s3_data_destination(&self) -> std::option::Option<&crate::model::S3DataConfig> {
+    pub fn s3_data_destination(&self) -> std::option::Option<& crate::model::S3DataConfig> {
         self.s3_data_destination.as_ref()
     }
 }
 /// See [`DatasetExportJobOutput`](crate::model::DatasetExportJobOutput).
 pub mod dataset_export_job_output {
-
+    
     /// A builder for [`DatasetExportJobOutput`](crate::model::DatasetExportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7909,20 +7408,19 @@ pub mod dataset_export_job_output {
             self
         }
         /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-        pub fn set_s3_data_destination(
-            mut self,
-            input: std::option::Option<crate::model::S3DataConfig>,
-        ) -> Self {
-            self.s3_data_destination = input;
-            self
+        pub fn set_s3_data_destination(mut self, input: std::option::Option<crate::model::S3DataConfig>) -> Self {
+            self.s3_data_destination = input; self
         }
         /// Consumes the builder and constructs a [`DatasetExportJobOutput`](crate::model::DatasetExportJobOutput).
         pub fn build(self) -> crate::model::DatasetExportJobOutput {
             crate::model::DatasetExportJobOutput {
-                s3_data_destination: self.s3_data_destination,
+                s3_data_destination: self.s3_data_destination
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetExportJobOutput {
     /// Creates a new builder-style object to manufacture [`DatasetExportJobOutput`](crate::model::DatasetExportJobOutput).
@@ -7937,9 +7435,9 @@ impl DatasetExportJobOutput {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ingestionmode = unimplemented!();
 /// match ingestionmode {
@@ -7962,22 +7460,14 @@ impl DatasetExportJobOutput {
 /// Specifically, when `ingestionmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IngestionMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IngestionMode {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -7986,7 +7476,7 @@ pub enum IngestionMode {
     #[allow(missing_docs)] // documentation missing in model
     Put,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IngestionMode {
     fn from(s: &str) -> Self {
@@ -7994,17 +7484,17 @@ impl std::convert::From<&str> for IngestionMode {
             "ALL" => IngestionMode::All,
             "BULK" => IngestionMode::Bulk,
             "PUT" => IngestionMode::Put,
-            other => IngestionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => IngestionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IngestionMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IngestionMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IngestionMode::from(s))
+                }
+            }
 impl IngestionMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8012,12 +7502,14 @@ impl IngestionMode {
             IngestionMode::All => "ALL",
             IngestionMode::Bulk => "BULK",
             IngestionMode::Put => "PUT",
-            IngestionMode::Unknown(value) => value.as_str(),
+            IngestionMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "BULK", "PUT"]
+        &[
+            "ALL", "BULK", "PUT"
+        ]
     }
 }
 impl AsRef<str> for IngestionMode {
@@ -8029,7 +7521,7 @@ impl AsRef<str> for IngestionMode {
 /// <p>Provides metadata for a dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Dataset {
+pub struct Dataset  {
     /// <p>The name of the dataset.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -8039,22 +7531,22 @@ pub struct Dataset {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>One of the following values:</p>
-    /// <ul>
-    /// <li> <p>Interactions</p> </li>
-    /// <li> <p>Items</p> </li>
-    /// <li> <p>Users</p> </li>
+    /// <p>One of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>Interactions</p> </li> 
+    /// <li> <p>Items</p> </li> 
+    /// <li> <p>Users</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub dataset_type: std::option::Option<std::string::String>,
     /// <p>The ARN of the associated schema.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the dataset.</p>
-    /// <p>A dataset can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the dataset.</p> 
+    /// <p>A dataset can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -8067,51 +7559,51 @@ pub struct Dataset {
 }
 impl Dataset {
     /// <p>The name of the dataset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want metadata for.</p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>One of the following values:</p>
-    /// <ul>
-    /// <li> <p>Interactions</p> </li>
-    /// <li> <p>Items</p> </li>
-    /// <li> <p>Users</p> </li>
+    /// <p>One of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>Interactions</p> </li> 
+    /// <li> <p>Items</p> </li> 
+    /// <li> <p>Users</p> </li> 
     /// </ul>
-    pub fn dataset_type(&self) -> std::option::Option<&str> {
+    pub fn dataset_type(&self) -> std::option::Option<& str> {
         self.dataset_type.as_deref()
     }
     /// <p>The ARN of the associated schema.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
-    /// <p>The status of the dataset.</p>
-    /// <p>A dataset can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the dataset.</p> 
+    /// <p>A dataset can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The creation date and time (in Unix time) of the dataset.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A time stamp that shows when the dataset was updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`Dataset`](crate::model::Dataset).
 pub mod dataset {
-
+    
     /// A builder for [`Dataset`](crate::model::Dataset).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8132,8 +7624,7 @@ pub mod dataset {
         }
         /// <p>The name of the dataset.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset that you want metadata for.</p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8142,8 +7633,7 @@ pub mod dataset {
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset that you want metadata for.</p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_arn = input;
-            self
+            self.dataset_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8151,32 +7641,27 @@ pub mod dataset {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-        pub fn set_dataset_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_group_arn = input;
-            self
+        pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_group_arn = input; self
         }
-        /// <p>One of the following values:</p>
-        /// <ul>
-        /// <li> <p>Interactions</p> </li>
-        /// <li> <p>Items</p> </li>
-        /// <li> <p>Users</p> </li>
+        /// <p>One of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>Interactions</p> </li> 
+        /// <li> <p>Items</p> </li> 
+        /// <li> <p>Users</p> </li> 
         /// </ul>
         pub fn dataset_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_type = Some(input.into());
             self
         }
-        /// <p>One of the following values:</p>
-        /// <ul>
-        /// <li> <p>Interactions</p> </li>
-        /// <li> <p>Items</p> </li>
-        /// <li> <p>Users</p> </li>
+        /// <p>One of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>Interactions</p> </li> 
+        /// <li> <p>Items</p> </li> 
+        /// <li> <p>Users</p> </li> 
         /// </ul>
         pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_type = input;
-            self
+            self.dataset_type = input; self
         }
         /// <p>The ARN of the associated schema.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8185,28 +7670,26 @@ pub mod dataset {
         }
         /// <p>The ARN of the associated schema.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_arn = input;
-            self
+            self.schema_arn = input; self
         }
-        /// <p>The status of the dataset.</p>
-        /// <p>A dataset can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the dataset.</p> 
+        /// <p>A dataset can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the dataset.</p>
-        /// <p>A dataset can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the dataset.</p> 
+        /// <p>A dataset can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The creation date and time (in Unix time) of the dataset.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8214,12 +7697,8 @@ pub mod dataset {
             self
         }
         /// <p>The creation date and time (in Unix time) of the dataset.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>A time stamp that shows when the dataset was updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8227,27 +7706,33 @@ pub mod dataset {
             self
         }
         /// <p>A time stamp that shows when the dataset was updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`Dataset`](crate::model::Dataset).
         pub fn build(self) -> crate::model::Dataset {
             crate::model::Dataset {
-                name: self.name,
-                dataset_arn: self.dataset_arn,
-                dataset_group_arn: self.dataset_group_arn,
-                dataset_type: self.dataset_type,
-                schema_arn: self.schema_arn,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                name: self.name
+                ,
+                dataset_arn: self.dataset_arn
+                ,
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                dataset_type: self.dataset_type
+                ,
+                schema_arn: self.schema_arn
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Dataset {
     /// Creates a new builder-style object to manufacture [`Dataset`](crate::model::Dataset).
@@ -8259,7 +7744,7 @@ impl Dataset {
 /// <p>An object that describes the deployment of a solution version. For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Campaign {
+pub struct Campaign  {
     /// <p>The name of the campaign.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -8275,11 +7760,11 @@ pub struct Campaign {
     /// <p>The configuration details of a campaign.</p>
     #[doc(hidden)]
     pub campaign_config: std::option::Option<crate::model::CampaignConfig>,
-    /// <p>The status of the campaign.</p>
-    /// <p>A campaign can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the campaign.</p> 
+    /// <p>A campaign can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -8298,15 +7783,15 @@ pub struct Campaign {
 }
 impl Campaign {
     /// <p>The name of the campaign.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the campaign. </p>
-    pub fn campaign_arn(&self) -> std::option::Option<&str> {
+    pub fn campaign_arn(&self) -> std::option::Option<& str> {
         self.campaign_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
-    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+    pub fn solution_version_arn(&self) -> std::option::Option<& str> {
         self.solution_version_arn.as_deref()
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second.</p>
@@ -8314,40 +7799,38 @@ impl Campaign {
         self.min_provisioned_tps
     }
     /// <p>The configuration details of a campaign.</p>
-    pub fn campaign_config(&self) -> std::option::Option<&crate::model::CampaignConfig> {
+    pub fn campaign_config(&self) -> std::option::Option<& crate::model::CampaignConfig> {
         self.campaign_config.as_ref()
     }
-    /// <p>The status of the campaign.</p>
-    /// <p>A campaign can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the campaign.</p> 
+    /// <p>A campaign can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>If a campaign fails, the reason behind the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The date and time (in Unix format) that the campaign was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix format) that the campaign was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
-    pub fn latest_campaign_update(
-        &self,
-    ) -> std::option::Option<&crate::model::CampaignUpdateSummary> {
+    pub fn latest_campaign_update(&self) -> std::option::Option<& crate::model::CampaignUpdateSummary> {
         self.latest_campaign_update.as_ref()
     }
 }
 /// See [`Campaign`](crate::model::Campaign).
 pub mod campaign {
-
+    
     /// A builder for [`Campaign`](crate::model::Campaign).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8370,8 +7853,7 @@ pub mod campaign {
         }
         /// <p>The name of the campaign.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the campaign. </p>
         pub fn campaign_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8380,8 +7862,7 @@ pub mod campaign {
         }
         /// <p>The Amazon Resource Name (ARN) of the campaign. </p>
         pub fn set_campaign_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.campaign_arn = input;
-            self
+            self.campaign_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
         pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8389,12 +7870,8 @@ pub mod campaign {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
-        pub fn set_solution_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.solution_version_arn = input;
-            self
+        pub fn set_solution_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.solution_version_arn = input; self
         }
         /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second.</p>
         pub fn min_provisioned_tps(mut self, input: i32) -> Self {
@@ -8403,8 +7880,7 @@ pub mod campaign {
         }
         /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second.</p>
         pub fn set_min_provisioned_tps(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_provisioned_tps = input;
-            self
+            self.min_provisioned_tps = input; self
         }
         /// <p>The configuration details of a campaign.</p>
         pub fn campaign_config(mut self, input: crate::model::CampaignConfig) -> Self {
@@ -8412,32 +7888,27 @@ pub mod campaign {
             self
         }
         /// <p>The configuration details of a campaign.</p>
-        pub fn set_campaign_config(
-            mut self,
-            input: std::option::Option<crate::model::CampaignConfig>,
-        ) -> Self {
-            self.campaign_config = input;
-            self
+        pub fn set_campaign_config(mut self, input: std::option::Option<crate::model::CampaignConfig>) -> Self {
+            self.campaign_config = input; self
         }
-        /// <p>The status of the campaign.</p>
-        /// <p>A campaign can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the campaign.</p> 
+        /// <p>A campaign can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the campaign.</p>
-        /// <p>A campaign can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the campaign.</p> 
+        /// <p>A campaign can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>If a campaign fails, the reason behind the failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8445,12 +7916,8 @@ pub mod campaign {
             self
         }
         /// <p>If a campaign fails, the reason behind the failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The date and time (in Unix format) that the campaign was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8458,12 +7925,8 @@ pub mod campaign {
             self
         }
         /// <p>The date and time (in Unix format) that the campaign was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix format) that the campaign was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8471,45 +7934,46 @@ pub mod campaign {
             self
         }
         /// <p>The date and time (in Unix format) that the campaign was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
-        pub fn latest_campaign_update(
-            mut self,
-            input: crate::model::CampaignUpdateSummary,
-        ) -> Self {
+        pub fn latest_campaign_update(mut self, input: crate::model::CampaignUpdateSummary) -> Self {
             self.latest_campaign_update = Some(input);
             self
         }
         /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
-        pub fn set_latest_campaign_update(
-            mut self,
-            input: std::option::Option<crate::model::CampaignUpdateSummary>,
-        ) -> Self {
-            self.latest_campaign_update = input;
-            self
+        pub fn set_latest_campaign_update(mut self, input: std::option::Option<crate::model::CampaignUpdateSummary>) -> Self {
+            self.latest_campaign_update = input; self
         }
         /// Consumes the builder and constructs a [`Campaign`](crate::model::Campaign).
         pub fn build(self) -> crate::model::Campaign {
             crate::model::Campaign {
-                name: self.name,
-                campaign_arn: self.campaign_arn,
-                solution_version_arn: self.solution_version_arn,
-                min_provisioned_tps: self.min_provisioned_tps,
-                campaign_config: self.campaign_config,
-                status: self.status,
-                failure_reason: self.failure_reason,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
-                latest_campaign_update: self.latest_campaign_update,
+                name: self.name
+                ,
+                campaign_arn: self.campaign_arn
+                ,
+                solution_version_arn: self.solution_version_arn
+                ,
+                min_provisioned_tps: self.min_provisioned_tps
+                ,
+                campaign_config: self.campaign_config
+                ,
+                status: self.status
+                ,
+                failure_reason: self.failure_reason
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                latest_campaign_update: self.latest_campaign_update
+                ,
             }
         }
     }
+    
+    
 }
 impl Campaign {
     /// Creates a new builder-style object to manufacture [`Campaign`](crate::model::Campaign).
@@ -8521,7 +7985,7 @@ impl Campaign {
 /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CampaignUpdateSummary {
+pub struct CampaignUpdateSummary  {
     /// <p>The Amazon Resource Name (ARN) of the deployed solution version.</p>
     #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
@@ -8531,11 +7995,11 @@ pub struct CampaignUpdateSummary {
     /// <p>The configuration details of a campaign.</p>
     #[doc(hidden)]
     pub campaign_config: std::option::Option<crate::model::CampaignConfig>,
-    /// <p>The status of the campaign update.</p>
-    /// <p>A campaign update can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the campaign update.</p> 
+    /// <p>A campaign update can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -8551,7 +8015,7 @@ pub struct CampaignUpdateSummary {
 }
 impl CampaignUpdateSummary {
     /// <p>The Amazon Resource Name (ARN) of the deployed solution version.</p>
-    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+    pub fn solution_version_arn(&self) -> std::option::Option<& str> {
         self.solution_version_arn.as_deref()
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
@@ -8559,34 +8023,34 @@ impl CampaignUpdateSummary {
         self.min_provisioned_tps
     }
     /// <p>The configuration details of a campaign.</p>
-    pub fn campaign_config(&self) -> std::option::Option<&crate::model::CampaignConfig> {
+    pub fn campaign_config(&self) -> std::option::Option<& crate::model::CampaignConfig> {
         self.campaign_config.as_ref()
     }
-    /// <p>The status of the campaign update.</p>
-    /// <p>A campaign update can be in one of the following states:</p>
-    /// <ul>
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// <p>The status of the campaign update.</p> 
+    /// <p>A campaign update can be in one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>If a campaign update fails, the reason behind the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The date and time (in Unix time) that the campaign update was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the campaign update was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`CampaignUpdateSummary`](crate::model::CampaignUpdateSummary).
 pub mod campaign_update_summary {
-
+    
     /// A builder for [`CampaignUpdateSummary`](crate::model::CampaignUpdateSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8605,12 +8069,8 @@ pub mod campaign_update_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the deployed solution version.</p>
-        pub fn set_solution_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.solution_version_arn = input;
-            self
+        pub fn set_solution_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.solution_version_arn = input; self
         }
         /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
         pub fn min_provisioned_tps(mut self, input: i32) -> Self {
@@ -8619,8 +8079,7 @@ pub mod campaign_update_summary {
         }
         /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
         pub fn set_min_provisioned_tps(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_provisioned_tps = input;
-            self
+            self.min_provisioned_tps = input; self
         }
         /// <p>The configuration details of a campaign.</p>
         pub fn campaign_config(mut self, input: crate::model::CampaignConfig) -> Self {
@@ -8628,32 +8087,27 @@ pub mod campaign_update_summary {
             self
         }
         /// <p>The configuration details of a campaign.</p>
-        pub fn set_campaign_config(
-            mut self,
-            input: std::option::Option<crate::model::CampaignConfig>,
-        ) -> Self {
-            self.campaign_config = input;
-            self
+        pub fn set_campaign_config(mut self, input: std::option::Option<crate::model::CampaignConfig>) -> Self {
+            self.campaign_config = input; self
         }
-        /// <p>The status of the campaign update.</p>
-        /// <p>A campaign update can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the campaign update.</p> 
+        /// <p>A campaign update can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the campaign update.</p>
-        /// <p>A campaign update can be in one of the following states:</p>
-        /// <ul>
-        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
-        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+        /// <p>The status of the campaign update.</p> 
+        /// <p>A campaign update can be in one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
+        /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>If a campaign update fails, the reason behind the failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8661,12 +8115,8 @@ pub mod campaign_update_summary {
             self
         }
         /// <p>If a campaign update fails, the reason behind the failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The date and time (in Unix time) that the campaign update was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8674,12 +8124,8 @@ pub mod campaign_update_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the campaign update was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the campaign update was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8687,26 +8133,31 @@ pub mod campaign_update_summary {
             self
         }
         /// <p>The date and time (in Unix time) that the campaign update was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`CampaignUpdateSummary`](crate::model::CampaignUpdateSummary).
         pub fn build(self) -> crate::model::CampaignUpdateSummary {
             crate::model::CampaignUpdateSummary {
-                solution_version_arn: self.solution_version_arn,
-                min_provisioned_tps: self.min_provisioned_tps,
-                campaign_config: self.campaign_config,
-                status: self.status,
-                failure_reason: self.failure_reason,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                solution_version_arn: self.solution_version_arn
+                ,
+                min_provisioned_tps: self.min_provisioned_tps
+                ,
+                campaign_config: self.campaign_config
+                ,
+                status: self.status
+                ,
+                failure_reason: self.failure_reason
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CampaignUpdateSummary {
     /// Creates a new builder-style object to manufacture [`CampaignUpdateSummary`](crate::model::CampaignUpdateSummary).
@@ -8718,7 +8169,7 @@ impl CampaignUpdateSummary {
 /// <p>Contains information on a batch segment job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchSegmentJob {
+pub struct BatchSegmentJob  {
     /// <p>The name of the batch segment job.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
@@ -8746,12 +8197,12 @@ pub struct BatchSegmentJob {
     /// <p>The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch segment job.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the batch segment job. The status is one of the following values:</p>
-    /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <p>The status of the batch segment job. The status is one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>IN PROGRESS</p> </li> 
+    /// <li> <p>ACTIVE</p> </li> 
+    /// <li> <p>CREATE FAILED</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -8764,23 +8215,23 @@ pub struct BatchSegmentJob {
 }
 impl BatchSegmentJob {
     /// <p>The name of the batch segment job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
-    pub fn batch_segment_job_arn(&self) -> std::option::Option<&str> {
+    pub fn batch_segment_job_arn(&self) -> std::option::Option<& str> {
         self.batch_segment_job_arn.as_deref()
     }
     /// <p>The ARN of the filter used on the batch segment job.</p>
-    pub fn filter_arn(&self) -> std::option::Option<&str> {
+    pub fn filter_arn(&self) -> std::option::Option<& str> {
         self.filter_arn.as_deref()
     }
     /// <p>If the batch segment job failed, the reason for the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version used by the batch segment job to generate batch segments.</p>
-    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+    pub fn solution_version_arn(&self) -> std::option::Option<& str> {
         self.solution_version_arn.as_deref()
     }
     /// <p>The number of predicted users generated by the batch segment job for each line of input data.</p>
@@ -8788,39 +8239,39 @@ impl BatchSegmentJob {
         self.num_results
     }
     /// <p>The Amazon S3 path that leads to the input data used to generate the batch segment job.</p>
-    pub fn job_input(&self) -> std::option::Option<&crate::model::BatchSegmentJobInput> {
+    pub fn job_input(&self) -> std::option::Option<& crate::model::BatchSegmentJobInput> {
         self.job_input.as_ref()
     }
     /// <p>The Amazon S3 bucket that contains the output data generated by the batch segment job.</p>
-    pub fn job_output(&self) -> std::option::Option<&crate::model::BatchSegmentJobOutput> {
+    pub fn job_output(&self) -> std::option::Option<& crate::model::BatchSegmentJobOutput> {
         self.job_output.as_ref()
     }
     /// <p>The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch segment job.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
-    /// <p>The status of the batch segment job. The status is one of the following values:</p>
-    /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <p>The status of the batch segment job. The status is one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>IN PROGRESS</p> </li> 
+    /// <li> <p>ACTIVE</p> </li> 
+    /// <li> <p>CREATE FAILED</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The time at which the batch segment job was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The time at which the batch segment job last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`BatchSegmentJob`](crate::model::BatchSegmentJob).
 pub mod batch_segment_job {
-
+    
     /// A builder for [`BatchSegmentJob`](crate::model::BatchSegmentJob).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8845,8 +8296,7 @@ pub mod batch_segment_job {
         }
         /// <p>The name of the batch segment job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
         pub fn batch_segment_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8854,12 +8304,8 @@ pub mod batch_segment_job {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
-        pub fn set_batch_segment_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.batch_segment_job_arn = input;
-            self
+        pub fn set_batch_segment_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.batch_segment_job_arn = input; self
         }
         /// <p>The ARN of the filter used on the batch segment job.</p>
         pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8868,8 +8314,7 @@ pub mod batch_segment_job {
         }
         /// <p>The ARN of the filter used on the batch segment job.</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.filter_arn = input;
-            self
+            self.filter_arn = input; self
         }
         /// <p>If the batch segment job failed, the reason for the failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8877,12 +8322,8 @@ pub mod batch_segment_job {
             self
         }
         /// <p>If the batch segment job failed, the reason for the failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version used by the batch segment job to generate batch segments.</p>
         pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8890,12 +8331,8 @@ pub mod batch_segment_job {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version used by the batch segment job to generate batch segments.</p>
-        pub fn set_solution_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.solution_version_arn = input;
-            self
+        pub fn set_solution_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.solution_version_arn = input; self
         }
         /// <p>The number of predicted users generated by the batch segment job for each line of input data.</p>
         pub fn num_results(mut self, input: i32) -> Self {
@@ -8904,8 +8341,7 @@ pub mod batch_segment_job {
         }
         /// <p>The number of predicted users generated by the batch segment job for each line of input data.</p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.num_results = input;
-            self
+            self.num_results = input; self
         }
         /// <p>The Amazon S3 path that leads to the input data used to generate the batch segment job.</p>
         pub fn job_input(mut self, input: crate::model::BatchSegmentJobInput) -> Self {
@@ -8913,12 +8349,8 @@ pub mod batch_segment_job {
             self
         }
         /// <p>The Amazon S3 path that leads to the input data used to generate the batch segment job.</p>
-        pub fn set_job_input(
-            mut self,
-            input: std::option::Option<crate::model::BatchSegmentJobInput>,
-        ) -> Self {
-            self.job_input = input;
-            self
+        pub fn set_job_input(mut self, input: std::option::Option<crate::model::BatchSegmentJobInput>) -> Self {
+            self.job_input = input; self
         }
         /// <p>The Amazon S3 bucket that contains the output data generated by the batch segment job.</p>
         pub fn job_output(mut self, input: crate::model::BatchSegmentJobOutput) -> Self {
@@ -8926,12 +8358,8 @@ pub mod batch_segment_job {
             self
         }
         /// <p>The Amazon S3 bucket that contains the output data generated by the batch segment job.</p>
-        pub fn set_job_output(
-            mut self,
-            input: std::option::Option<crate::model::BatchSegmentJobOutput>,
-        ) -> Self {
-            self.job_output = input;
-            self
+        pub fn set_job_output(mut self, input: std::option::Option<crate::model::BatchSegmentJobOutput>) -> Self {
+            self.job_output = input; self
         }
         /// <p>The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch segment job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8940,30 +8368,28 @@ pub mod batch_segment_job {
         }
         /// <p>The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch segment job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
-        /// <p>The status of the batch segment job. The status is one of the following values:</p>
-        /// <ul>
-        /// <li> <p>PENDING</p> </li>
-        /// <li> <p>IN PROGRESS</p> </li>
-        /// <li> <p>ACTIVE</p> </li>
-        /// <li> <p>CREATE FAILED</p> </li>
+        /// <p>The status of the batch segment job. The status is one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>PENDING</p> </li> 
+        /// <li> <p>IN PROGRESS</p> </li> 
+        /// <li> <p>ACTIVE</p> </li> 
+        /// <li> <p>CREATE FAILED</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the batch segment job. The status is one of the following values:</p>
-        /// <ul>
-        /// <li> <p>PENDING</p> </li>
-        /// <li> <p>IN PROGRESS</p> </li>
-        /// <li> <p>ACTIVE</p> </li>
-        /// <li> <p>CREATE FAILED</p> </li>
+        /// <p>The status of the batch segment job. The status is one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>PENDING</p> </li> 
+        /// <li> <p>IN PROGRESS</p> </li> 
+        /// <li> <p>ACTIVE</p> </li> 
+        /// <li> <p>CREATE FAILED</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The time at which the batch segment job was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8971,12 +8397,8 @@ pub mod batch_segment_job {
             self
         }
         /// <p>The time at which the batch segment job was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The time at which the batch segment job last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8984,31 +8406,41 @@ pub mod batch_segment_job {
             self
         }
         /// <p>The time at which the batch segment job last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`BatchSegmentJob`](crate::model::BatchSegmentJob).
         pub fn build(self) -> crate::model::BatchSegmentJob {
             crate::model::BatchSegmentJob {
-                job_name: self.job_name,
-                batch_segment_job_arn: self.batch_segment_job_arn,
-                filter_arn: self.filter_arn,
-                failure_reason: self.failure_reason,
-                solution_version_arn: self.solution_version_arn,
-                num_results: self.num_results,
-                job_input: self.job_input,
-                job_output: self.job_output,
-                role_arn: self.role_arn,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                job_name: self.job_name
+                ,
+                batch_segment_job_arn: self.batch_segment_job_arn
+                ,
+                filter_arn: self.filter_arn
+                ,
+                failure_reason: self.failure_reason
+                ,
+                solution_version_arn: self.solution_version_arn
+                ,
+                num_results: self.num_results
+                ,
+                job_input: self.job_input
+                ,
+                job_output: self.job_output
+                ,
+                role_arn: self.role_arn
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchSegmentJob {
     /// Creates a new builder-style object to manufacture [`BatchSegmentJob`](crate::model::BatchSegmentJob).
@@ -9020,20 +8452,20 @@ impl BatchSegmentJob {
 /// <p>The output configuration parameters of a batch segment job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchSegmentJobOutput {
+pub struct BatchSegmentJobOutput  {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     #[doc(hidden)]
     pub s3_data_destination: std::option::Option<crate::model::S3DataConfig>,
 }
 impl BatchSegmentJobOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-    pub fn s3_data_destination(&self) -> std::option::Option<&crate::model::S3DataConfig> {
+    pub fn s3_data_destination(&self) -> std::option::Option<& crate::model::S3DataConfig> {
         self.s3_data_destination.as_ref()
     }
 }
 /// See [`BatchSegmentJobOutput`](crate::model::BatchSegmentJobOutput).
 pub mod batch_segment_job_output {
-
+    
     /// A builder for [`BatchSegmentJobOutput`](crate::model::BatchSegmentJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9046,20 +8478,19 @@ pub mod batch_segment_job_output {
             self
         }
         /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-        pub fn set_s3_data_destination(
-            mut self,
-            input: std::option::Option<crate::model::S3DataConfig>,
-        ) -> Self {
-            self.s3_data_destination = input;
-            self
+        pub fn set_s3_data_destination(mut self, input: std::option::Option<crate::model::S3DataConfig>) -> Self {
+            self.s3_data_destination = input; self
         }
         /// Consumes the builder and constructs a [`BatchSegmentJobOutput`](crate::model::BatchSegmentJobOutput).
         pub fn build(self) -> crate::model::BatchSegmentJobOutput {
             crate::model::BatchSegmentJobOutput {
-                s3_data_destination: self.s3_data_destination,
+                s3_data_destination: self.s3_data_destination
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchSegmentJobOutput {
     /// Creates a new builder-style object to manufacture [`BatchSegmentJobOutput`](crate::model::BatchSegmentJobOutput).
@@ -9071,20 +8502,20 @@ impl BatchSegmentJobOutput {
 /// <p>The input configuration of a batch segment job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchSegmentJobInput {
+pub struct BatchSegmentJobInput  {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     #[doc(hidden)]
     pub s3_data_source: std::option::Option<crate::model::S3DataConfig>,
 }
 impl BatchSegmentJobInput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-    pub fn s3_data_source(&self) -> std::option::Option<&crate::model::S3DataConfig> {
+    pub fn s3_data_source(&self) -> std::option::Option<& crate::model::S3DataConfig> {
         self.s3_data_source.as_ref()
     }
 }
 /// See [`BatchSegmentJobInput`](crate::model::BatchSegmentJobInput).
 pub mod batch_segment_job_input {
-
+    
     /// A builder for [`BatchSegmentJobInput`](crate::model::BatchSegmentJobInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9097,20 +8528,19 @@ pub mod batch_segment_job_input {
             self
         }
         /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-        pub fn set_s3_data_source(
-            mut self,
-            input: std::option::Option<crate::model::S3DataConfig>,
-        ) -> Self {
-            self.s3_data_source = input;
-            self
+        pub fn set_s3_data_source(mut self, input: std::option::Option<crate::model::S3DataConfig>) -> Self {
+            self.s3_data_source = input; self
         }
         /// Consumes the builder and constructs a [`BatchSegmentJobInput`](crate::model::BatchSegmentJobInput).
         pub fn build(self) -> crate::model::BatchSegmentJobInput {
             crate::model::BatchSegmentJobInput {
-                s3_data_source: self.s3_data_source,
+                s3_data_source: self.s3_data_source
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchSegmentJobInput {
     /// Creates a new builder-style object to manufacture [`BatchSegmentJobInput`](crate::model::BatchSegmentJobInput).
@@ -9122,7 +8552,7 @@ impl BatchSegmentJobInput {
 /// <p>Contains information on a batch inference job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchInferenceJob {
+pub struct BatchInferenceJob  {
     /// <p>The name of the batch inference job.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
@@ -9153,12 +8583,12 @@ pub struct BatchInferenceJob {
     /// <p>The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch inference job.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the batch inference job. The status is one of the following values:</p>
-    /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <p>The status of the batch inference job. The status is one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>IN PROGRESS</p> </li> 
+    /// <li> <p>ACTIVE</p> </li> 
+    /// <li> <p>CREATE FAILED</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -9171,23 +8601,23 @@ pub struct BatchInferenceJob {
 }
 impl BatchInferenceJob {
     /// <p>The name of the batch inference job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
-    pub fn batch_inference_job_arn(&self) -> std::option::Option<&str> {
+    pub fn batch_inference_job_arn(&self) -> std::option::Option<& str> {
         self.batch_inference_job_arn.as_deref()
     }
     /// <p>The ARN of the filter used on the batch inference job.</p>
-    pub fn filter_arn(&self) -> std::option::Option<&str> {
+    pub fn filter_arn(&self) -> std::option::Option<& str> {
         self.filter_arn.as_deref()
     }
     /// <p>If the batch inference job failed, the reason for the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference job was created.</p>
-    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
+    pub fn solution_version_arn(&self) -> std::option::Option<& str> {
         self.solution_version_arn.as_deref()
     }
     /// <p>The number of recommendations generated by the batch inference job. This number includes the error messages generated for failed input records.</p>
@@ -9195,45 +8625,43 @@ impl BatchInferenceJob {
         self.num_results
     }
     /// <p>The Amazon S3 path that leads to the input data used to generate the batch inference job.</p>
-    pub fn job_input(&self) -> std::option::Option<&crate::model::BatchInferenceJobInput> {
+    pub fn job_input(&self) -> std::option::Option<& crate::model::BatchInferenceJobInput> {
         self.job_input.as_ref()
     }
     /// <p>The Amazon S3 bucket that contains the output data generated by the batch inference job.</p>
-    pub fn job_output(&self) -> std::option::Option<&crate::model::BatchInferenceJobOutput> {
+    pub fn job_output(&self) -> std::option::Option<& crate::model::BatchInferenceJobOutput> {
         self.job_output.as_ref()
     }
     /// <p>A string to string map of the configuration details of a batch inference job.</p>
-    pub fn batch_inference_job_config(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchInferenceJobConfig> {
+    pub fn batch_inference_job_config(&self) -> std::option::Option<& crate::model::BatchInferenceJobConfig> {
         self.batch_inference_job_config.as_ref()
     }
     /// <p>The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch inference job.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
-    /// <p>The status of the batch inference job. The status is one of the following values:</p>
-    /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <p>The status of the batch inference job. The status is one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>IN PROGRESS</p> </li> 
+    /// <li> <p>ACTIVE</p> </li> 
+    /// <li> <p>CREATE FAILED</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The time at which the batch inference job was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The time at which the batch inference job was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`BatchInferenceJob`](crate::model::BatchInferenceJob).
 pub mod batch_inference_job {
-
+    
     /// A builder for [`BatchInferenceJob`](crate::model::BatchInferenceJob).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9245,8 +8673,7 @@ pub mod batch_inference_job {
         pub(crate) num_results: std::option::Option<i32>,
         pub(crate) job_input: std::option::Option<crate::model::BatchInferenceJobInput>,
         pub(crate) job_output: std::option::Option<crate::model::BatchInferenceJobOutput>,
-        pub(crate) batch_inference_job_config:
-            std::option::Option<crate::model::BatchInferenceJobConfig>,
+        pub(crate) batch_inference_job_config: std::option::Option<crate::model::BatchInferenceJobConfig>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -9260,8 +8687,7 @@ pub mod batch_inference_job {
         }
         /// <p>The name of the batch inference job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
         pub fn batch_inference_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9269,12 +8695,8 @@ pub mod batch_inference_job {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
-        pub fn set_batch_inference_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.batch_inference_job_arn = input;
-            self
+        pub fn set_batch_inference_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.batch_inference_job_arn = input; self
         }
         /// <p>The ARN of the filter used on the batch inference job.</p>
         pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9283,8 +8705,7 @@ pub mod batch_inference_job {
         }
         /// <p>The ARN of the filter used on the batch inference job.</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.filter_arn = input;
-            self
+            self.filter_arn = input; self
         }
         /// <p>If the batch inference job failed, the reason for the failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9292,12 +8713,8 @@ pub mod batch_inference_job {
             self
         }
         /// <p>If the batch inference job failed, the reason for the failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference job was created.</p>
         pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9305,12 +8722,8 @@ pub mod batch_inference_job {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference job was created.</p>
-        pub fn set_solution_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.solution_version_arn = input;
-            self
+        pub fn set_solution_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.solution_version_arn = input; self
         }
         /// <p>The number of recommendations generated by the batch inference job. This number includes the error messages generated for failed input records.</p>
         pub fn num_results(mut self, input: i32) -> Self {
@@ -9319,8 +8732,7 @@ pub mod batch_inference_job {
         }
         /// <p>The number of recommendations generated by the batch inference job. This number includes the error messages generated for failed input records.</p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.num_results = input;
-            self
+            self.num_results = input; self
         }
         /// <p>The Amazon S3 path that leads to the input data used to generate the batch inference job.</p>
         pub fn job_input(mut self, input: crate::model::BatchInferenceJobInput) -> Self {
@@ -9328,12 +8740,8 @@ pub mod batch_inference_job {
             self
         }
         /// <p>The Amazon S3 path that leads to the input data used to generate the batch inference job.</p>
-        pub fn set_job_input(
-            mut self,
-            input: std::option::Option<crate::model::BatchInferenceJobInput>,
-        ) -> Self {
-            self.job_input = input;
-            self
+        pub fn set_job_input(mut self, input: std::option::Option<crate::model::BatchInferenceJobInput>) -> Self {
+            self.job_input = input; self
         }
         /// <p>The Amazon S3 bucket that contains the output data generated by the batch inference job.</p>
         pub fn job_output(mut self, input: crate::model::BatchInferenceJobOutput) -> Self {
@@ -9341,28 +8749,17 @@ pub mod batch_inference_job {
             self
         }
         /// <p>The Amazon S3 bucket that contains the output data generated by the batch inference job.</p>
-        pub fn set_job_output(
-            mut self,
-            input: std::option::Option<crate::model::BatchInferenceJobOutput>,
-        ) -> Self {
-            self.job_output = input;
-            self
+        pub fn set_job_output(mut self, input: std::option::Option<crate::model::BatchInferenceJobOutput>) -> Self {
+            self.job_output = input; self
         }
         /// <p>A string to string map of the configuration details of a batch inference job.</p>
-        pub fn batch_inference_job_config(
-            mut self,
-            input: crate::model::BatchInferenceJobConfig,
-        ) -> Self {
+        pub fn batch_inference_job_config(mut self, input: crate::model::BatchInferenceJobConfig) -> Self {
             self.batch_inference_job_config = Some(input);
             self
         }
         /// <p>A string to string map of the configuration details of a batch inference job.</p>
-        pub fn set_batch_inference_job_config(
-            mut self,
-            input: std::option::Option<crate::model::BatchInferenceJobConfig>,
-        ) -> Self {
-            self.batch_inference_job_config = input;
-            self
+        pub fn set_batch_inference_job_config(mut self, input: std::option::Option<crate::model::BatchInferenceJobConfig>) -> Self {
+            self.batch_inference_job_config = input; self
         }
         /// <p>The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch inference job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9371,30 +8768,28 @@ pub mod batch_inference_job {
         }
         /// <p>The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch inference job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
-        /// <p>The status of the batch inference job. The status is one of the following values:</p>
-        /// <ul>
-        /// <li> <p>PENDING</p> </li>
-        /// <li> <p>IN PROGRESS</p> </li>
-        /// <li> <p>ACTIVE</p> </li>
-        /// <li> <p>CREATE FAILED</p> </li>
+        /// <p>The status of the batch inference job. The status is one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>PENDING</p> </li> 
+        /// <li> <p>IN PROGRESS</p> </li> 
+        /// <li> <p>ACTIVE</p> </li> 
+        /// <li> <p>CREATE FAILED</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the batch inference job. The status is one of the following values:</p>
-        /// <ul>
-        /// <li> <p>PENDING</p> </li>
-        /// <li> <p>IN PROGRESS</p> </li>
-        /// <li> <p>ACTIVE</p> </li>
-        /// <li> <p>CREATE FAILED</p> </li>
+        /// <p>The status of the batch inference job. The status is one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p>PENDING</p> </li> 
+        /// <li> <p>IN PROGRESS</p> </li> 
+        /// <li> <p>ACTIVE</p> </li> 
+        /// <li> <p>CREATE FAILED</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The time at which the batch inference job was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9402,12 +8797,8 @@ pub mod batch_inference_job {
             self
         }
         /// <p>The time at which the batch inference job was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The time at which the batch inference job was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9415,32 +8806,43 @@ pub mod batch_inference_job {
             self
         }
         /// <p>The time at which the batch inference job was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`BatchInferenceJob`](crate::model::BatchInferenceJob).
         pub fn build(self) -> crate::model::BatchInferenceJob {
             crate::model::BatchInferenceJob {
-                job_name: self.job_name,
-                batch_inference_job_arn: self.batch_inference_job_arn,
-                filter_arn: self.filter_arn,
-                failure_reason: self.failure_reason,
-                solution_version_arn: self.solution_version_arn,
-                num_results: self.num_results,
-                job_input: self.job_input,
-                job_output: self.job_output,
-                batch_inference_job_config: self.batch_inference_job_config,
-                role_arn: self.role_arn,
-                status: self.status,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                job_name: self.job_name
+                ,
+                batch_inference_job_arn: self.batch_inference_job_arn
+                ,
+                filter_arn: self.filter_arn
+                ,
+                failure_reason: self.failure_reason
+                ,
+                solution_version_arn: self.solution_version_arn
+                ,
+                num_results: self.num_results
+                ,
+                job_input: self.job_input
+                ,
+                job_output: self.job_output
+                ,
+                batch_inference_job_config: self.batch_inference_job_config
+                ,
+                role_arn: self.role_arn
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchInferenceJob {
     /// Creates a new builder-style object to manufacture [`BatchInferenceJob`](crate::model::BatchInferenceJob).
@@ -9452,30 +8854,24 @@ impl BatchInferenceJob {
 /// <p>The configuration details of a batch inference job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchInferenceJobConfig {
+pub struct BatchInferenceJobConfig  {
     /// <p>A string to string map specifying the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. See <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>.</p>
     #[doc(hidden)]
-    pub item_exploration_config:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub item_exploration_config: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl BatchInferenceJobConfig {
     /// <p>A string to string map specifying the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. See <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>.</p>
-    pub fn item_exploration_config(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn item_exploration_config(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.item_exploration_config.as_ref()
     }
 }
 /// See [`BatchInferenceJobConfig`](crate::model::BatchInferenceJobConfig).
 pub mod batch_inference_job_config {
-
+    
     /// A builder for [`BatchInferenceJobConfig`](crate::model::BatchInferenceJobConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) item_exploration_config: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) item_exploration_config: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `item_exploration_config`.
@@ -9483,33 +8879,26 @@ pub mod batch_inference_job_config {
         /// To override the contents of this collection use [`set_item_exploration_config`](Self::set_item_exploration_config).
         ///
         /// <p>A string to string map specifying the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. See <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>.</p>
-        pub fn item_exploration_config(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn item_exploration_config(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.item_exploration_config.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.item_exploration_config = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.item_exploration_config = Some(hash_map);
+                            self
         }
         /// <p>A string to string map specifying the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. See <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>.</p>
-        pub fn set_item_exploration_config(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.item_exploration_config = input;
-            self
+        pub fn set_item_exploration_config(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.item_exploration_config = input; self
         }
         /// Consumes the builder and constructs a [`BatchInferenceJobConfig`](crate::model::BatchInferenceJobConfig).
         pub fn build(self) -> crate::model::BatchInferenceJobConfig {
             crate::model::BatchInferenceJobConfig {
-                item_exploration_config: self.item_exploration_config,
+                item_exploration_config: self.item_exploration_config
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchInferenceJobConfig {
     /// Creates a new builder-style object to manufacture [`BatchInferenceJobConfig`](crate::model::BatchInferenceJobConfig).
@@ -9521,20 +8910,20 @@ impl BatchInferenceJobConfig {
 /// <p>The output configuration parameters of a batch inference job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchInferenceJobOutput {
+pub struct BatchInferenceJobOutput  {
     /// <p>Information on the Amazon S3 bucket in which the batch inference job's output is stored.</p>
     #[doc(hidden)]
     pub s3_data_destination: std::option::Option<crate::model::S3DataConfig>,
 }
 impl BatchInferenceJobOutput {
     /// <p>Information on the Amazon S3 bucket in which the batch inference job's output is stored.</p>
-    pub fn s3_data_destination(&self) -> std::option::Option<&crate::model::S3DataConfig> {
+    pub fn s3_data_destination(&self) -> std::option::Option<& crate::model::S3DataConfig> {
         self.s3_data_destination.as_ref()
     }
 }
 /// See [`BatchInferenceJobOutput`](crate::model::BatchInferenceJobOutput).
 pub mod batch_inference_job_output {
-
+    
     /// A builder for [`BatchInferenceJobOutput`](crate::model::BatchInferenceJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9547,20 +8936,19 @@ pub mod batch_inference_job_output {
             self
         }
         /// <p>Information on the Amazon S3 bucket in which the batch inference job's output is stored.</p>
-        pub fn set_s3_data_destination(
-            mut self,
-            input: std::option::Option<crate::model::S3DataConfig>,
-        ) -> Self {
-            self.s3_data_destination = input;
-            self
+        pub fn set_s3_data_destination(mut self, input: std::option::Option<crate::model::S3DataConfig>) -> Self {
+            self.s3_data_destination = input; self
         }
         /// Consumes the builder and constructs a [`BatchInferenceJobOutput`](crate::model::BatchInferenceJobOutput).
         pub fn build(self) -> crate::model::BatchInferenceJobOutput {
             crate::model::BatchInferenceJobOutput {
-                s3_data_destination: self.s3_data_destination,
+                s3_data_destination: self.s3_data_destination
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`BatchInferenceJobOutput`](crate::model::BatchInferenceJobOutput).
@@ -9572,20 +8960,20 @@ impl BatchInferenceJobOutput {
 /// <p>The input configuration of a batch inference job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchInferenceJobInput {
+pub struct BatchInferenceJobInput  {
     /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the same region as the API endpoint you are calling.</p>
     #[doc(hidden)]
     pub s3_data_source: std::option::Option<crate::model::S3DataConfig>,
 }
 impl BatchInferenceJobInput {
     /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the same region as the API endpoint you are calling.</p>
-    pub fn s3_data_source(&self) -> std::option::Option<&crate::model::S3DataConfig> {
+    pub fn s3_data_source(&self) -> std::option::Option<& crate::model::S3DataConfig> {
         self.s3_data_source.as_ref()
     }
 }
 /// See [`BatchInferenceJobInput`](crate::model::BatchInferenceJobInput).
 pub mod batch_inference_job_input {
-
+    
     /// A builder for [`BatchInferenceJobInput`](crate::model::BatchInferenceJobInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9598,20 +8986,19 @@ pub mod batch_inference_job_input {
             self
         }
         /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the same region as the API endpoint you are calling.</p>
-        pub fn set_s3_data_source(
-            mut self,
-            input: std::option::Option<crate::model::S3DataConfig>,
-        ) -> Self {
-            self.s3_data_source = input;
-            self
+        pub fn set_s3_data_source(mut self, input: std::option::Option<crate::model::S3DataConfig>) -> Self {
+            self.s3_data_source = input; self
         }
         /// Consumes the builder and constructs a [`BatchInferenceJobInput`](crate::model::BatchInferenceJobInput).
         pub fn build(self) -> crate::model::BatchInferenceJobInput {
             crate::model::BatchInferenceJobInput {
-                s3_data_source: self.s3_data_source,
+                s3_data_source: self.s3_data_source
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchInferenceJobInput {
     /// Creates a new builder-style object to manufacture [`BatchInferenceJobInput`](crate::model::BatchInferenceJobInput).
@@ -9623,7 +9010,7 @@ impl BatchInferenceJobInput {
 /// <p>Describes a custom algorithm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Algorithm {
+pub struct Algorithm  {
     /// <p>The name of the algorithm.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -9635,16 +9022,13 @@ pub struct Algorithm {
     pub algorithm_image: std::option::Option<crate::model::AlgorithmImage>,
     /// <p>Specifies the default hyperparameters.</p>
     #[doc(hidden)]
-    pub default_hyper_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub default_hyper_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the default hyperparameters, their ranges, and whether they are tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
     #[doc(hidden)]
-    pub default_hyper_parameter_ranges:
-        std::option::Option<crate::model::DefaultHyperParameterRanges>,
+    pub default_hyper_parameter_ranges: std::option::Option<crate::model::DefaultHyperParameterRanges>,
     /// <p>Specifies the default maximum number of training jobs and parallel training jobs.</p>
     #[doc(hidden)]
-    pub default_resource_config:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub default_resource_config: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The training input mode.</p>
     #[doc(hidden)]
     pub training_input_mode: std::option::Option<std::string::String>,
@@ -9660,71 +9044,58 @@ pub struct Algorithm {
 }
 impl Algorithm {
     /// <p>The name of the algorithm.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
-    pub fn algorithm_arn(&self) -> std::option::Option<&str> {
+    pub fn algorithm_arn(&self) -> std::option::Option<& str> {
         self.algorithm_arn.as_deref()
     }
     /// <p>The URI of the Docker container for the algorithm image.</p>
-    pub fn algorithm_image(&self) -> std::option::Option<&crate::model::AlgorithmImage> {
+    pub fn algorithm_image(&self) -> std::option::Option<& crate::model::AlgorithmImage> {
         self.algorithm_image.as_ref()
     }
     /// <p>Specifies the default hyperparameters.</p>
-    pub fn default_hyper_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn default_hyper_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.default_hyper_parameters.as_ref()
     }
     /// <p>Specifies the default hyperparameters, their ranges, and whether they are tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
-    pub fn default_hyper_parameter_ranges(
-        &self,
-    ) -> std::option::Option<&crate::model::DefaultHyperParameterRanges> {
+    pub fn default_hyper_parameter_ranges(&self) -> std::option::Option<& crate::model::DefaultHyperParameterRanges> {
         self.default_hyper_parameter_ranges.as_ref()
     }
     /// <p>Specifies the default maximum number of training jobs and parallel training jobs.</p>
-    pub fn default_resource_config(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn default_resource_config(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.default_resource_config.as_ref()
     }
     /// <p>The training input mode.</p>
-    pub fn training_input_mode(&self) -> std::option::Option<&str> {
+    pub fn training_input_mode(&self) -> std::option::Option<& str> {
         self.training_input_mode.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The date and time (in Unix time) that the algorithm was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 /// See [`Algorithm`](crate::model::Algorithm).
 pub mod algorithm {
-
+    
     /// A builder for [`Algorithm`](crate::model::Algorithm).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) algorithm_arn: std::option::Option<std::string::String>,
         pub(crate) algorithm_image: std::option::Option<crate::model::AlgorithmImage>,
-        pub(crate) default_hyper_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) default_hyper_parameter_ranges:
-            std::option::Option<crate::model::DefaultHyperParameterRanges>,
-        pub(crate) default_resource_config: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) default_hyper_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) default_hyper_parameter_ranges: std::option::Option<crate::model::DefaultHyperParameterRanges>,
+        pub(crate) default_resource_config: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) training_input_mode: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -9738,8 +9109,7 @@ pub mod algorithm {
         }
         /// <p>The name of the algorithm.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
         pub fn algorithm_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9747,12 +9117,8 @@ pub mod algorithm {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
-        pub fn set_algorithm_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.algorithm_arn = input;
-            self
+        pub fn set_algorithm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.algorithm_arn = input; self
         }
         /// <p>The URI of the Docker container for the algorithm image.</p>
         pub fn algorithm_image(mut self, input: crate::model::AlgorithmImage) -> Self {
@@ -9760,78 +9126,47 @@ pub mod algorithm {
             self
         }
         /// <p>The URI of the Docker container for the algorithm image.</p>
-        pub fn set_algorithm_image(
-            mut self,
-            input: std::option::Option<crate::model::AlgorithmImage>,
-        ) -> Self {
-            self.algorithm_image = input;
-            self
+        pub fn set_algorithm_image(mut self, input: std::option::Option<crate::model::AlgorithmImage>) -> Self {
+            self.algorithm_image = input; self
         }
         /// Adds a key-value pair to `default_hyper_parameters`.
         ///
         /// To override the contents of this collection use [`set_default_hyper_parameters`](Self::set_default_hyper_parameters).
         ///
         /// <p>Specifies the default hyperparameters.</p>
-        pub fn default_hyper_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn default_hyper_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.default_hyper_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.default_hyper_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.default_hyper_parameters = Some(hash_map);
+                            self
         }
         /// <p>Specifies the default hyperparameters.</p>
-        pub fn set_default_hyper_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.default_hyper_parameters = input;
-            self
+        pub fn set_default_hyper_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.default_hyper_parameters = input; self
         }
         /// <p>Specifies the default hyperparameters, their ranges, and whether they are tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
-        pub fn default_hyper_parameter_ranges(
-            mut self,
-            input: crate::model::DefaultHyperParameterRanges,
-        ) -> Self {
+        pub fn default_hyper_parameter_ranges(mut self, input: crate::model::DefaultHyperParameterRanges) -> Self {
             self.default_hyper_parameter_ranges = Some(input);
             self
         }
         /// <p>Specifies the default hyperparameters, their ranges, and whether they are tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
-        pub fn set_default_hyper_parameter_ranges(
-            mut self,
-            input: std::option::Option<crate::model::DefaultHyperParameterRanges>,
-        ) -> Self {
-            self.default_hyper_parameter_ranges = input;
-            self
+        pub fn set_default_hyper_parameter_ranges(mut self, input: std::option::Option<crate::model::DefaultHyperParameterRanges>) -> Self {
+            self.default_hyper_parameter_ranges = input; self
         }
         /// Adds a key-value pair to `default_resource_config`.
         ///
         /// To override the contents of this collection use [`set_default_resource_config`](Self::set_default_resource_config).
         ///
         /// <p>Specifies the default maximum number of training jobs and parallel training jobs.</p>
-        pub fn default_resource_config(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn default_resource_config(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.default_resource_config.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.default_resource_config = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.default_resource_config = Some(hash_map);
+                            self
         }
         /// <p>Specifies the default maximum number of training jobs and parallel training jobs.</p>
-        pub fn set_default_resource_config(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.default_resource_config = input;
-            self
+        pub fn set_default_resource_config(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.default_resource_config = input; self
         }
         /// <p>The training input mode.</p>
         pub fn training_input_mode(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9839,12 +9174,8 @@ pub mod algorithm {
             self
         }
         /// <p>The training input mode.</p>
-        pub fn set_training_input_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.training_input_mode = input;
-            self
+        pub fn set_training_input_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.training_input_mode = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the role.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9853,8 +9184,7 @@ pub mod algorithm {
         }
         /// <p>The Amazon Resource Name (ARN) of the role.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The date and time (in Unix time) that the algorithm was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9862,12 +9192,8 @@ pub mod algorithm {
             self
         }
         /// <p>The date and time (in Unix time) that the algorithm was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
         pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9875,29 +9201,37 @@ pub mod algorithm {
             self
         }
         /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// Consumes the builder and constructs a [`Algorithm`](crate::model::Algorithm).
         pub fn build(self) -> crate::model::Algorithm {
             crate::model::Algorithm {
-                name: self.name,
-                algorithm_arn: self.algorithm_arn,
-                algorithm_image: self.algorithm_image,
-                default_hyper_parameters: self.default_hyper_parameters,
-                default_hyper_parameter_ranges: self.default_hyper_parameter_ranges,
-                default_resource_config: self.default_resource_config,
-                training_input_mode: self.training_input_mode,
-                role_arn: self.role_arn,
-                creation_date_time: self.creation_date_time,
-                last_updated_date_time: self.last_updated_date_time,
+                name: self.name
+                ,
+                algorithm_arn: self.algorithm_arn
+                ,
+                algorithm_image: self.algorithm_image
+                ,
+                default_hyper_parameters: self.default_hyper_parameters
+                ,
+                default_hyper_parameter_ranges: self.default_hyper_parameter_ranges
+                ,
+                default_resource_config: self.default_resource_config
+                ,
+                training_input_mode: self.training_input_mode
+                ,
+                role_arn: self.role_arn
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Algorithm {
     /// Creates a new builder-style object to manufacture [`Algorithm`](crate::model::Algorithm).
@@ -9909,52 +9243,40 @@ impl Algorithm {
 /// <p>Specifies the hyperparameters and their default ranges. Hyperparameters can be categorical, continuous, or integer-valued.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefaultHyperParameterRanges {
+pub struct DefaultHyperParameterRanges  {
     /// <p>The integer-valued hyperparameters and their default ranges.</p>
     #[doc(hidden)]
-    pub integer_hyper_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::model::DefaultIntegerHyperParameterRange>>,
+    pub integer_hyper_parameter_ranges: std::option::Option<std::vec::Vec<crate::model::DefaultIntegerHyperParameterRange>>,
     /// <p>The continuous hyperparameters and their default ranges.</p>
     #[doc(hidden)]
-    pub continuous_hyper_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::model::DefaultContinuousHyperParameterRange>>,
+    pub continuous_hyper_parameter_ranges: std::option::Option<std::vec::Vec<crate::model::DefaultContinuousHyperParameterRange>>,
     /// <p>The categorical hyperparameters and their default ranges.</p>
     #[doc(hidden)]
-    pub categorical_hyper_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::model::DefaultCategoricalHyperParameterRange>>,
+    pub categorical_hyper_parameter_ranges: std::option::Option<std::vec::Vec<crate::model::DefaultCategoricalHyperParameterRange>>,
 }
 impl DefaultHyperParameterRanges {
     /// <p>The integer-valued hyperparameters and their default ranges.</p>
-    pub fn integer_hyper_parameter_ranges(
-        &self,
-    ) -> std::option::Option<&[crate::model::DefaultIntegerHyperParameterRange]> {
+    pub fn integer_hyper_parameter_ranges(&self) -> std::option::Option<& [crate::model::DefaultIntegerHyperParameterRange]> {
         self.integer_hyper_parameter_ranges.as_deref()
     }
     /// <p>The continuous hyperparameters and their default ranges.</p>
-    pub fn continuous_hyper_parameter_ranges(
-        &self,
-    ) -> std::option::Option<&[crate::model::DefaultContinuousHyperParameterRange]> {
+    pub fn continuous_hyper_parameter_ranges(&self) -> std::option::Option<& [crate::model::DefaultContinuousHyperParameterRange]> {
         self.continuous_hyper_parameter_ranges.as_deref()
     }
     /// <p>The categorical hyperparameters and their default ranges.</p>
-    pub fn categorical_hyper_parameter_ranges(
-        &self,
-    ) -> std::option::Option<&[crate::model::DefaultCategoricalHyperParameterRange]> {
+    pub fn categorical_hyper_parameter_ranges(&self) -> std::option::Option<& [crate::model::DefaultCategoricalHyperParameterRange]> {
         self.categorical_hyper_parameter_ranges.as_deref()
     }
 }
 /// See [`DefaultHyperParameterRanges`](crate::model::DefaultHyperParameterRanges).
 pub mod default_hyper_parameter_ranges {
-
+    
     /// A builder for [`DefaultHyperParameterRanges`](crate::model::DefaultHyperParameterRanges).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) integer_hyper_parameter_ranges:
-            std::option::Option<std::vec::Vec<crate::model::DefaultIntegerHyperParameterRange>>,
-        pub(crate) continuous_hyper_parameter_ranges:
-            std::option::Option<std::vec::Vec<crate::model::DefaultContinuousHyperParameterRange>>,
-        pub(crate) categorical_hyper_parameter_ranges:
-            std::option::Option<std::vec::Vec<crate::model::DefaultCategoricalHyperParameterRange>>,
+        pub(crate) integer_hyper_parameter_ranges: std::option::Option<std::vec::Vec<crate::model::DefaultIntegerHyperParameterRange>>,
+        pub(crate) continuous_hyper_parameter_ranges: std::option::Option<std::vec::Vec<crate::model::DefaultContinuousHyperParameterRange>>,
+        pub(crate) categorical_hyper_parameter_ranges: std::option::Option<std::vec::Vec<crate::model::DefaultCategoricalHyperParameterRange>>,
     }
     impl Builder {
         /// Appends an item to `integer_hyper_parameter_ranges`.
@@ -9962,82 +9284,60 @@ pub mod default_hyper_parameter_ranges {
         /// To override the contents of this collection use [`set_integer_hyper_parameter_ranges`](Self::set_integer_hyper_parameter_ranges).
         ///
         /// <p>The integer-valued hyperparameters and their default ranges.</p>
-        pub fn integer_hyper_parameter_ranges(
-            mut self,
-            input: crate::model::DefaultIntegerHyperParameterRange,
-        ) -> Self {
+        pub fn integer_hyper_parameter_ranges(mut self, input: crate::model::DefaultIntegerHyperParameterRange) -> Self {
             let mut v = self.integer_hyper_parameter_ranges.unwrap_or_default();
-            v.push(input);
-            self.integer_hyper_parameter_ranges = Some(v);
-            self
+                            v.push(input);
+                            self.integer_hyper_parameter_ranges = Some(v);
+                            self
         }
         /// <p>The integer-valued hyperparameters and their default ranges.</p>
-        pub fn set_integer_hyper_parameter_ranges(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DefaultIntegerHyperParameterRange>,
-            >,
-        ) -> Self {
-            self.integer_hyper_parameter_ranges = input;
-            self
+        pub fn set_integer_hyper_parameter_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::model::DefaultIntegerHyperParameterRange>>) -> Self {
+            self.integer_hyper_parameter_ranges = input; self
         }
         /// Appends an item to `continuous_hyper_parameter_ranges`.
         ///
         /// To override the contents of this collection use [`set_continuous_hyper_parameter_ranges`](Self::set_continuous_hyper_parameter_ranges).
         ///
         /// <p>The continuous hyperparameters and their default ranges.</p>
-        pub fn continuous_hyper_parameter_ranges(
-            mut self,
-            input: crate::model::DefaultContinuousHyperParameterRange,
-        ) -> Self {
+        pub fn continuous_hyper_parameter_ranges(mut self, input: crate::model::DefaultContinuousHyperParameterRange) -> Self {
             let mut v = self.continuous_hyper_parameter_ranges.unwrap_or_default();
-            v.push(input);
-            self.continuous_hyper_parameter_ranges = Some(v);
-            self
+                            v.push(input);
+                            self.continuous_hyper_parameter_ranges = Some(v);
+                            self
         }
         /// <p>The continuous hyperparameters and their default ranges.</p>
-        pub fn set_continuous_hyper_parameter_ranges(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DefaultContinuousHyperParameterRange>,
-            >,
-        ) -> Self {
-            self.continuous_hyper_parameter_ranges = input;
-            self
+        pub fn set_continuous_hyper_parameter_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::model::DefaultContinuousHyperParameterRange>>) -> Self {
+            self.continuous_hyper_parameter_ranges = input; self
         }
         /// Appends an item to `categorical_hyper_parameter_ranges`.
         ///
         /// To override the contents of this collection use [`set_categorical_hyper_parameter_ranges`](Self::set_categorical_hyper_parameter_ranges).
         ///
         /// <p>The categorical hyperparameters and their default ranges.</p>
-        pub fn categorical_hyper_parameter_ranges(
-            mut self,
-            input: crate::model::DefaultCategoricalHyperParameterRange,
-        ) -> Self {
+        pub fn categorical_hyper_parameter_ranges(mut self, input: crate::model::DefaultCategoricalHyperParameterRange) -> Self {
             let mut v = self.categorical_hyper_parameter_ranges.unwrap_or_default();
-            v.push(input);
-            self.categorical_hyper_parameter_ranges = Some(v);
-            self
+                            v.push(input);
+                            self.categorical_hyper_parameter_ranges = Some(v);
+                            self
         }
         /// <p>The categorical hyperparameters and their default ranges.</p>
-        pub fn set_categorical_hyper_parameter_ranges(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DefaultCategoricalHyperParameterRange>,
-            >,
-        ) -> Self {
-            self.categorical_hyper_parameter_ranges = input;
-            self
+        pub fn set_categorical_hyper_parameter_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::model::DefaultCategoricalHyperParameterRange>>) -> Self {
+            self.categorical_hyper_parameter_ranges = input; self
         }
         /// Consumes the builder and constructs a [`DefaultHyperParameterRanges`](crate::model::DefaultHyperParameterRanges).
         pub fn build(self) -> crate::model::DefaultHyperParameterRanges {
             crate::model::DefaultHyperParameterRanges {
-                integer_hyper_parameter_ranges: self.integer_hyper_parameter_ranges,
-                continuous_hyper_parameter_ranges: self.continuous_hyper_parameter_ranges,
-                categorical_hyper_parameter_ranges: self.categorical_hyper_parameter_ranges,
+                integer_hyper_parameter_ranges: self.integer_hyper_parameter_ranges
+                ,
+                continuous_hyper_parameter_ranges: self.continuous_hyper_parameter_ranges
+                ,
+                categorical_hyper_parameter_ranges: self.categorical_hyper_parameter_ranges
+                ,
             }
         }
     }
+    
+    
 }
 impl DefaultHyperParameterRanges {
     /// Creates a new builder-style object to manufacture [`DefaultHyperParameterRanges`](crate::model::DefaultHyperParameterRanges).
@@ -10049,7 +9349,7 @@ impl DefaultHyperParameterRanges {
 /// <p>Provides the name and default range of a categorical hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefaultCategoricalHyperParameterRange {
+pub struct DefaultCategoricalHyperParameterRange  {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -10062,11 +9362,11 @@ pub struct DefaultCategoricalHyperParameterRange {
 }
 impl DefaultCategoricalHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of the categories for the hyperparameter.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
     /// <p>Whether the hyperparameter is tunable.</p>
@@ -10076,7 +9376,7 @@ impl DefaultCategoricalHyperParameterRange {
 }
 /// See [`DefaultCategoricalHyperParameterRange`](crate::model::DefaultCategoricalHyperParameterRange).
 pub mod default_categorical_hyper_parameter_range {
-
+    
     /// A builder for [`DefaultCategoricalHyperParameterRange`](crate::model::DefaultCategoricalHyperParameterRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10092,8 +9392,7 @@ pub mod default_categorical_hyper_parameter_range {
         }
         /// <p>The name of the hyperparameter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -10102,17 +9401,13 @@ pub mod default_categorical_hyper_parameter_range {
         /// <p>A list of the categories for the hyperparameter.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>A list of the categories for the hyperparameter.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// <p>Whether the hyperparameter is tunable.</p>
         pub fn is_tunable(mut self, input: bool) -> Self {
@@ -10121,18 +9416,23 @@ pub mod default_categorical_hyper_parameter_range {
         }
         /// <p>Whether the hyperparameter is tunable.</p>
         pub fn set_is_tunable(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_tunable = input;
-            self
+            self.is_tunable = input; self
         }
         /// Consumes the builder and constructs a [`DefaultCategoricalHyperParameterRange`](crate::model::DefaultCategoricalHyperParameterRange).
         pub fn build(self) -> crate::model::DefaultCategoricalHyperParameterRange {
             crate::model::DefaultCategoricalHyperParameterRange {
-                name: self.name,
-                values: self.values,
-                is_tunable: self.is_tunable.unwrap_or_default(),
+                name: self.name
+                ,
+                values: self.values
+                ,
+                is_tunable: self.is_tunable
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DefaultCategoricalHyperParameterRange {
     /// Creates a new builder-style object to manufacture [`DefaultCategoricalHyperParameterRange`](crate::model::DefaultCategoricalHyperParameterRange).
@@ -10144,7 +9444,7 @@ impl DefaultCategoricalHyperParameterRange {
 /// <p>Provides the name and default range of a continuous hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefaultContinuousHyperParameterRange {
+pub struct DefaultContinuousHyperParameterRange  {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -10160,7 +9460,7 @@ pub struct DefaultContinuousHyperParameterRange {
 }
 impl DefaultContinuousHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
@@ -10178,7 +9478,7 @@ impl DefaultContinuousHyperParameterRange {
 }
 /// See [`DefaultContinuousHyperParameterRange`](crate::model::DefaultContinuousHyperParameterRange).
 pub mod default_continuous_hyper_parameter_range {
-
+    
     /// A builder for [`DefaultContinuousHyperParameterRange`](crate::model::DefaultContinuousHyperParameterRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10195,8 +9495,7 @@ pub mod default_continuous_hyper_parameter_range {
         }
         /// <p>The name of the hyperparameter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The minimum allowable value for the hyperparameter.</p>
         pub fn min_value(mut self, input: f64) -> Self {
@@ -10205,8 +9504,7 @@ pub mod default_continuous_hyper_parameter_range {
         }
         /// <p>The minimum allowable value for the hyperparameter.</p>
         pub fn set_min_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.min_value = input;
-            self
+            self.min_value = input; self
         }
         /// <p>The maximum allowable value for the hyperparameter.</p>
         pub fn max_value(mut self, input: f64) -> Self {
@@ -10215,8 +9513,7 @@ pub mod default_continuous_hyper_parameter_range {
         }
         /// <p>The maximum allowable value for the hyperparameter.</p>
         pub fn set_max_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.max_value = input;
-            self
+            self.max_value = input; self
         }
         /// <p>Whether the hyperparameter is tunable.</p>
         pub fn is_tunable(mut self, input: bool) -> Self {
@@ -10225,19 +9522,27 @@ pub mod default_continuous_hyper_parameter_range {
         }
         /// <p>Whether the hyperparameter is tunable.</p>
         pub fn set_is_tunable(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_tunable = input;
-            self
+            self.is_tunable = input; self
         }
         /// Consumes the builder and constructs a [`DefaultContinuousHyperParameterRange`](crate::model::DefaultContinuousHyperParameterRange).
         pub fn build(self) -> crate::model::DefaultContinuousHyperParameterRange {
             crate::model::DefaultContinuousHyperParameterRange {
-                name: self.name,
-                min_value: self.min_value.unwrap_or_default(),
-                max_value: self.max_value.unwrap_or_default(),
-                is_tunable: self.is_tunable.unwrap_or_default(),
+                name: self.name
+                ,
+                min_value: self.min_value
+                    .unwrap_or_default()
+                ,
+                max_value: self.max_value
+                    .unwrap_or_default()
+                ,
+                is_tunable: self.is_tunable
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DefaultContinuousHyperParameterRange {
     /// Creates a new builder-style object to manufacture [`DefaultContinuousHyperParameterRange`](crate::model::DefaultContinuousHyperParameterRange).
@@ -10249,7 +9554,7 @@ impl DefaultContinuousHyperParameterRange {
 /// <p>Provides the name and default range of a integer-valued hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefaultIntegerHyperParameterRange {
+pub struct DefaultIntegerHyperParameterRange  {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -10265,7 +9570,7 @@ pub struct DefaultIntegerHyperParameterRange {
 }
 impl DefaultIntegerHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
@@ -10283,7 +9588,7 @@ impl DefaultIntegerHyperParameterRange {
 }
 /// See [`DefaultIntegerHyperParameterRange`](crate::model::DefaultIntegerHyperParameterRange).
 pub mod default_integer_hyper_parameter_range {
-
+    
     /// A builder for [`DefaultIntegerHyperParameterRange`](crate::model::DefaultIntegerHyperParameterRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10300,8 +9605,7 @@ pub mod default_integer_hyper_parameter_range {
         }
         /// <p>The name of the hyperparameter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The minimum allowable value for the hyperparameter.</p>
         pub fn min_value(mut self, input: i32) -> Self {
@@ -10310,8 +9614,7 @@ pub mod default_integer_hyper_parameter_range {
         }
         /// <p>The minimum allowable value for the hyperparameter.</p>
         pub fn set_min_value(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_value = input;
-            self
+            self.min_value = input; self
         }
         /// <p>The maximum allowable value for the hyperparameter.</p>
         pub fn max_value(mut self, input: i32) -> Self {
@@ -10320,8 +9623,7 @@ pub mod default_integer_hyper_parameter_range {
         }
         /// <p>The maximum allowable value for the hyperparameter.</p>
         pub fn set_max_value(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_value = input;
-            self
+            self.max_value = input; self
         }
         /// <p>Indicates whether the hyperparameter is tunable.</p>
         pub fn is_tunable(mut self, input: bool) -> Self {
@@ -10330,19 +9632,27 @@ pub mod default_integer_hyper_parameter_range {
         }
         /// <p>Indicates whether the hyperparameter is tunable.</p>
         pub fn set_is_tunable(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_tunable = input;
-            self
+            self.is_tunable = input; self
         }
         /// Consumes the builder and constructs a [`DefaultIntegerHyperParameterRange`](crate::model::DefaultIntegerHyperParameterRange).
         pub fn build(self) -> crate::model::DefaultIntegerHyperParameterRange {
             crate::model::DefaultIntegerHyperParameterRange {
-                name: self.name,
-                min_value: self.min_value.unwrap_or_default(),
-                max_value: self.max_value.unwrap_or_default(),
-                is_tunable: self.is_tunable.unwrap_or_default(),
+                name: self.name
+                ,
+                min_value: self.min_value
+                    .unwrap_or_default()
+                ,
+                max_value: self.max_value
+                    .unwrap_or_default()
+                ,
+                is_tunable: self.is_tunable
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DefaultIntegerHyperParameterRange {
     /// Creates a new builder-style object to manufacture [`DefaultIntegerHyperParameterRange`](crate::model::DefaultIntegerHyperParameterRange).
@@ -10354,7 +9664,7 @@ impl DefaultIntegerHyperParameterRange {
 /// <p>Describes an algorithm image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlgorithmImage {
+pub struct AlgorithmImage  {
     /// <p>The name of the algorithm image.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -10364,17 +9674,17 @@ pub struct AlgorithmImage {
 }
 impl AlgorithmImage {
     /// <p>The name of the algorithm image.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The URI of the Docker container for the algorithm image.</p>
-    pub fn docker_uri(&self) -> std::option::Option<&str> {
+    pub fn docker_uri(&self) -> std::option::Option<& str> {
         self.docker_uri.as_deref()
     }
 }
 /// See [`AlgorithmImage`](crate::model::AlgorithmImage).
 pub mod algorithm_image {
-
+    
     /// A builder for [`AlgorithmImage`](crate::model::AlgorithmImage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10389,8 +9699,7 @@ pub mod algorithm_image {
         }
         /// <p>The name of the algorithm image.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The URI of the Docker container for the algorithm image.</p>
         pub fn docker_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10399,17 +9708,20 @@ pub mod algorithm_image {
         }
         /// <p>The URI of the Docker container for the algorithm image.</p>
         pub fn set_docker_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.docker_uri = input;
-            self
+            self.docker_uri = input; self
         }
         /// Consumes the builder and constructs a [`AlgorithmImage`](crate::model::AlgorithmImage).
         pub fn build(self) -> crate::model::AlgorithmImage {
             crate::model::AlgorithmImage {
-                name: self.name,
-                docker_uri: self.docker_uri,
+                name: self.name
+                ,
+                docker_uri: self.docker_uri
+                ,
             }
         }
     }
+    
+    
 }
 impl AlgorithmImage {
     /// Creates a new builder-style object to manufacture [`AlgorithmImage`](crate::model::AlgorithmImage).
@@ -10417,3 +9729,4 @@ impl AlgorithmImage {
         crate::model::algorithm_image::Builder::default()
     }
 }
+

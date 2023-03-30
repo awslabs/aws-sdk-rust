@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateThingRuntimeConfigurationOutput {}
+pub struct UpdateThingRuntimeConfigurationOutput  {
+}
 /// See [`UpdateThingRuntimeConfigurationOutput`](crate::output::UpdateThingRuntimeConfigurationOutput).
 pub mod update_thing_runtime_configuration_output {
-
+    
     /// A builder for [`UpdateThingRuntimeConfigurationOutput`](crate::output::UpdateThingRuntimeConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateThingRuntimeConfigurationOutput`](crate::output::UpdateThingRuntimeConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateThingRuntimeConfigurationOutput {
-            crate::output::UpdateThingRuntimeConfigurationOutput {}
+            crate::output::UpdateThingRuntimeConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateThingRuntimeConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateThingRuntimeConfigurationOutput`](crate::output::UpdateThingRuntimeConfigurationOutput).
@@ -26,19 +31,24 @@ impl UpdateThingRuntimeConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSubscriptionDefinitionOutput {}
+pub struct UpdateSubscriptionDefinitionOutput  {
+}
 /// See [`UpdateSubscriptionDefinitionOutput`](crate::output::UpdateSubscriptionDefinitionOutput).
 pub mod update_subscription_definition_output {
-
+    
     /// A builder for [`UpdateSubscriptionDefinitionOutput`](crate::output::UpdateSubscriptionDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateSubscriptionDefinitionOutput`](crate::output::UpdateSubscriptionDefinitionOutput).
         pub fn build(self) -> crate::output::UpdateSubscriptionDefinitionOutput {
-            crate::output::UpdateSubscriptionDefinitionOutput {}
+            crate::output::UpdateSubscriptionDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateSubscriptionDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriptionDefinitionOutput`](crate::output::UpdateSubscriptionDefinitionOutput).
@@ -50,19 +60,24 @@ impl UpdateSubscriptionDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResourceDefinitionOutput {}
+pub struct UpdateResourceDefinitionOutput  {
+}
 /// See [`UpdateResourceDefinitionOutput`](crate::output::UpdateResourceDefinitionOutput).
 pub mod update_resource_definition_output {
-
+    
     /// A builder for [`UpdateResourceDefinitionOutput`](crate::output::UpdateResourceDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateResourceDefinitionOutput`](crate::output::UpdateResourceDefinitionOutput).
         pub fn build(self) -> crate::output::UpdateResourceDefinitionOutput {
-            crate::output::UpdateResourceDefinitionOutput {}
+            crate::output::UpdateResourceDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateResourceDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceDefinitionOutput`](crate::output::UpdateResourceDefinitionOutput).
@@ -74,19 +89,24 @@ impl UpdateResourceDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLoggerDefinitionOutput {}
+pub struct UpdateLoggerDefinitionOutput  {
+}
 /// See [`UpdateLoggerDefinitionOutput`](crate::output::UpdateLoggerDefinitionOutput).
 pub mod update_logger_definition_output {
-
+    
     /// A builder for [`UpdateLoggerDefinitionOutput`](crate::output::UpdateLoggerDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLoggerDefinitionOutput`](crate::output::UpdateLoggerDefinitionOutput).
         pub fn build(self) -> crate::output::UpdateLoggerDefinitionOutput {
-            crate::output::UpdateLoggerDefinitionOutput {}
+            crate::output::UpdateLoggerDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateLoggerDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLoggerDefinitionOutput`](crate::output::UpdateLoggerDefinitionOutput).
@@ -98,7 +118,7 @@ impl UpdateLoggerDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGroupCertificateConfigurationOutput {
+pub struct UpdateGroupCertificateConfigurationOutput  {
     /// The amount of time remaining before the certificate authority expires, in milliseconds.
     #[doc(hidden)]
     pub certificate_authority_expiry_in_milliseconds: std::option::Option<std::string::String>,
@@ -111,61 +131,46 @@ pub struct UpdateGroupCertificateConfigurationOutput {
 }
 impl UpdateGroupCertificateConfigurationOutput {
     /// The amount of time remaining before the certificate authority expires, in milliseconds.
-    pub fn certificate_authority_expiry_in_milliseconds(&self) -> std::option::Option<&str> {
+    pub fn certificate_authority_expiry_in_milliseconds(&self) -> std::option::Option<& str> {
         self.certificate_authority_expiry_in_milliseconds.as_deref()
     }
     /// The amount of time remaining before the certificate expires, in milliseconds.
-    pub fn certificate_expiry_in_milliseconds(&self) -> std::option::Option<&str> {
+    pub fn certificate_expiry_in_milliseconds(&self) -> std::option::Option<& str> {
         self.certificate_expiry_in_milliseconds.as_deref()
     }
     /// The ID of the group certificate configuration.
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
 /// See [`UpdateGroupCertificateConfigurationOutput`](crate::output::UpdateGroupCertificateConfigurationOutput).
 pub mod update_group_certificate_configuration_output {
-
+    
     /// A builder for [`UpdateGroupCertificateConfigurationOutput`](crate::output::UpdateGroupCertificateConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) certificate_authority_expiry_in_milliseconds:
-            std::option::Option<std::string::String>,
+        pub(crate) certificate_authority_expiry_in_milliseconds: std::option::Option<std::string::String>,
         pub(crate) certificate_expiry_in_milliseconds: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// The amount of time remaining before the certificate authority expires, in milliseconds.
-        pub fn certificate_authority_expiry_in_milliseconds(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn certificate_authority_expiry_in_milliseconds(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_expiry_in_milliseconds = Some(input.into());
             self
         }
         /// The amount of time remaining before the certificate authority expires, in milliseconds.
-        pub fn set_certificate_authority_expiry_in_milliseconds(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_authority_expiry_in_milliseconds = input;
-            self
+        pub fn set_certificate_authority_expiry_in_milliseconds(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_authority_expiry_in_milliseconds = input; self
         }
         /// The amount of time remaining before the certificate expires, in milliseconds.
-        pub fn certificate_expiry_in_milliseconds(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn certificate_expiry_in_milliseconds(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_expiry_in_milliseconds = Some(input.into());
             self
         }
         /// The amount of time remaining before the certificate expires, in milliseconds.
-        pub fn set_certificate_expiry_in_milliseconds(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_expiry_in_milliseconds = input;
-            self
+        pub fn set_certificate_expiry_in_milliseconds(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_expiry_in_milliseconds = input; self
         }
         /// The ID of the group certificate configuration.
         pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,19 +179,22 @@ pub mod update_group_certificate_configuration_output {
         }
         /// The ID of the group certificate configuration.
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_id = input;
-            self
+            self.group_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGroupCertificateConfigurationOutput`](crate::output::UpdateGroupCertificateConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateGroupCertificateConfigurationOutput {
             crate::output::UpdateGroupCertificateConfigurationOutput {
-                certificate_authority_expiry_in_milliseconds: self
-                    .certificate_authority_expiry_in_milliseconds,
-                certificate_expiry_in_milliseconds: self.certificate_expiry_in_milliseconds,
-                group_id: self.group_id,
+                certificate_authority_expiry_in_milliseconds: self.certificate_authority_expiry_in_milliseconds
+                ,
+                certificate_expiry_in_milliseconds: self.certificate_expiry_in_milliseconds
+                ,
+                group_id: self.group_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateGroupCertificateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupCertificateConfigurationOutput`](crate::output::UpdateGroupCertificateConfigurationOutput).
@@ -198,19 +206,24 @@ impl UpdateGroupCertificateConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGroupOutput {}
+pub struct UpdateGroupOutput  {
+}
 /// See [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
 pub mod update_group_output {
-
+    
     /// A builder for [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
         pub fn build(self) -> crate::output::UpdateGroupOutput {
-            crate::output::UpdateGroupOutput {}
+            crate::output::UpdateGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
@@ -222,19 +235,24 @@ impl UpdateGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFunctionDefinitionOutput {}
+pub struct UpdateFunctionDefinitionOutput  {
+}
 /// See [`UpdateFunctionDefinitionOutput`](crate::output::UpdateFunctionDefinitionOutput).
 pub mod update_function_definition_output {
-
+    
     /// A builder for [`UpdateFunctionDefinitionOutput`](crate::output::UpdateFunctionDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateFunctionDefinitionOutput`](crate::output::UpdateFunctionDefinitionOutput).
         pub fn build(self) -> crate::output::UpdateFunctionDefinitionOutput {
-            crate::output::UpdateFunctionDefinitionOutput {}
+            crate::output::UpdateFunctionDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateFunctionDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFunctionDefinitionOutput`](crate::output::UpdateFunctionDefinitionOutput).
@@ -246,19 +264,24 @@ impl UpdateFunctionDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDeviceDefinitionOutput {}
+pub struct UpdateDeviceDefinitionOutput  {
+}
 /// See [`UpdateDeviceDefinitionOutput`](crate::output::UpdateDeviceDefinitionOutput).
 pub mod update_device_definition_output {
-
+    
     /// A builder for [`UpdateDeviceDefinitionOutput`](crate::output::UpdateDeviceDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDeviceDefinitionOutput`](crate::output::UpdateDeviceDefinitionOutput).
         pub fn build(self) -> crate::output::UpdateDeviceDefinitionOutput {
-            crate::output::UpdateDeviceDefinitionOutput {}
+            crate::output::UpdateDeviceDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateDeviceDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDeviceDefinitionOutput`](crate::output::UpdateDeviceDefinitionOutput).
@@ -270,19 +293,24 @@ impl UpdateDeviceDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCoreDefinitionOutput {}
+pub struct UpdateCoreDefinitionOutput  {
+}
 /// See [`UpdateCoreDefinitionOutput`](crate::output::UpdateCoreDefinitionOutput).
 pub mod update_core_definition_output {
-
+    
     /// A builder for [`UpdateCoreDefinitionOutput`](crate::output::UpdateCoreDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateCoreDefinitionOutput`](crate::output::UpdateCoreDefinitionOutput).
         pub fn build(self) -> crate::output::UpdateCoreDefinitionOutput {
-            crate::output::UpdateCoreDefinitionOutput {}
+            crate::output::UpdateCoreDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateCoreDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCoreDefinitionOutput`](crate::output::UpdateCoreDefinitionOutput).
@@ -294,19 +322,24 @@ impl UpdateCoreDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConnectorDefinitionOutput {}
+pub struct UpdateConnectorDefinitionOutput  {
+}
 /// See [`UpdateConnectorDefinitionOutput`](crate::output::UpdateConnectorDefinitionOutput).
 pub mod update_connector_definition_output {
-
+    
     /// A builder for [`UpdateConnectorDefinitionOutput`](crate::output::UpdateConnectorDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateConnectorDefinitionOutput`](crate::output::UpdateConnectorDefinitionOutput).
         pub fn build(self) -> crate::output::UpdateConnectorDefinitionOutput {
-            crate::output::UpdateConnectorDefinitionOutput {}
+            crate::output::UpdateConnectorDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateConnectorDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectorDefinitionOutput`](crate::output::UpdateConnectorDefinitionOutput).
@@ -318,7 +351,7 @@ impl UpdateConnectorDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConnectivityInfoOutput {
+pub struct UpdateConnectivityInfoOutput  {
     /// A message about the connectivity info update request.
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -328,17 +361,17 @@ pub struct UpdateConnectivityInfoOutput {
 }
 impl UpdateConnectivityInfoOutput {
     /// A message about the connectivity info update request.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// The new version of the connectivity info.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`UpdateConnectivityInfoOutput`](crate::output::UpdateConnectivityInfoOutput).
 pub mod update_connectivity_info_output {
-
+    
     /// A builder for [`UpdateConnectivityInfoOutput`](crate::output::UpdateConnectivityInfoOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -353,8 +386,7 @@ pub mod update_connectivity_info_output {
         }
         /// A message about the connectivity info update request.
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// The new version of the connectivity info.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -363,17 +395,20 @@ pub mod update_connectivity_info_output {
         }
         /// The new version of the connectivity info.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConnectivityInfoOutput`](crate::output::UpdateConnectivityInfoOutput).
         pub fn build(self) -> crate::output::UpdateConnectivityInfoOutput {
             crate::output::UpdateConnectivityInfoOutput {
-                message: self.message,
-                version: self.version,
+                message: self.message
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateConnectivityInfoOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectivityInfoOutput`](crate::output::UpdateConnectivityInfoOutput).
@@ -385,19 +420,24 @@ impl UpdateConnectivityInfoOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -409,19 +449,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -433,19 +478,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopBulkDeploymentOutput {}
+pub struct StopBulkDeploymentOutput  {
+}
 /// See [`StopBulkDeploymentOutput`](crate::output::StopBulkDeploymentOutput).
 pub mod stop_bulk_deployment_output {
-
+    
     /// A builder for [`StopBulkDeploymentOutput`](crate::output::StopBulkDeploymentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopBulkDeploymentOutput`](crate::output::StopBulkDeploymentOutput).
         pub fn build(self) -> crate::output::StopBulkDeploymentOutput {
-            crate::output::StopBulkDeploymentOutput {}
+            crate::output::StopBulkDeploymentOutput {
+            }
         }
     }
+    
+    
 }
 impl StopBulkDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`StopBulkDeploymentOutput`](crate::output::StopBulkDeploymentOutput).
@@ -457,7 +507,7 @@ impl StopBulkDeploymentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartBulkDeploymentOutput {
+pub struct StartBulkDeploymentOutput  {
     /// The ARN of the bulk deployment.
     #[doc(hidden)]
     pub bulk_deployment_arn: std::option::Option<std::string::String>,
@@ -467,17 +517,17 @@ pub struct StartBulkDeploymentOutput {
 }
 impl StartBulkDeploymentOutput {
     /// The ARN of the bulk deployment.
-    pub fn bulk_deployment_arn(&self) -> std::option::Option<&str> {
+    pub fn bulk_deployment_arn(&self) -> std::option::Option<& str> {
         self.bulk_deployment_arn.as_deref()
     }
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(&self) -> std::option::Option<&str> {
+    pub fn bulk_deployment_id(&self) -> std::option::Option<& str> {
         self.bulk_deployment_id.as_deref()
     }
 }
 /// See [`StartBulkDeploymentOutput`](crate::output::StartBulkDeploymentOutput).
 pub mod start_bulk_deployment_output {
-
+    
     /// A builder for [`StartBulkDeploymentOutput`](crate::output::StartBulkDeploymentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -491,12 +541,8 @@ pub mod start_bulk_deployment_output {
             self
         }
         /// The ARN of the bulk deployment.
-        pub fn set_bulk_deployment_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bulk_deployment_arn = input;
-            self
+        pub fn set_bulk_deployment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bulk_deployment_arn = input; self
         }
         /// The ID of the bulk deployment.
         pub fn bulk_deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -504,21 +550,21 @@ pub mod start_bulk_deployment_output {
             self
         }
         /// The ID of the bulk deployment.
-        pub fn set_bulk_deployment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bulk_deployment_id = input;
-            self
+        pub fn set_bulk_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bulk_deployment_id = input; self
         }
         /// Consumes the builder and constructs a [`StartBulkDeploymentOutput`](crate::output::StartBulkDeploymentOutput).
         pub fn build(self) -> crate::output::StartBulkDeploymentOutput {
             crate::output::StartBulkDeploymentOutput {
-                bulk_deployment_arn: self.bulk_deployment_arn,
-                bulk_deployment_id: self.bulk_deployment_id,
+                bulk_deployment_arn: self.bulk_deployment_arn
+                ,
+                bulk_deployment_id: self.bulk_deployment_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartBulkDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`StartBulkDeploymentOutput`](crate::output::StartBulkDeploymentOutput).
@@ -530,7 +576,7 @@ impl StartBulkDeploymentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetDeploymentsOutput {
+pub struct ResetDeploymentsOutput  {
     /// The ARN of the deployment.
     #[doc(hidden)]
     pub deployment_arn: std::option::Option<std::string::String>,
@@ -540,17 +586,17 @@ pub struct ResetDeploymentsOutput {
 }
 impl ResetDeploymentsOutput {
     /// The ARN of the deployment.
-    pub fn deployment_arn(&self) -> std::option::Option<&str> {
+    pub fn deployment_arn(&self) -> std::option::Option<& str> {
         self.deployment_arn.as_deref()
     }
     /// The ID of the deployment.
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
 }
 /// See [`ResetDeploymentsOutput`](crate::output::ResetDeploymentsOutput).
 pub mod reset_deployments_output {
-
+    
     /// A builder for [`ResetDeploymentsOutput`](crate::output::ResetDeploymentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -564,12 +610,8 @@ pub mod reset_deployments_output {
             self
         }
         /// The ARN of the deployment.
-        pub fn set_deployment_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_arn = input;
-            self
+        pub fn set_deployment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_arn = input; self
         }
         /// The ID of the deployment.
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -577,21 +619,21 @@ pub mod reset_deployments_output {
             self
         }
         /// The ID of the deployment.
-        pub fn set_deployment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_id = input;
-            self
+        pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_id = input; self
         }
         /// Consumes the builder and constructs a [`ResetDeploymentsOutput`](crate::output::ResetDeploymentsOutput).
         pub fn build(self) -> crate::output::ResetDeploymentsOutput {
             crate::output::ResetDeploymentsOutput {
-                deployment_arn: self.deployment_arn,
-                deployment_id: self.deployment_id,
+                deployment_arn: self.deployment_arn
+                ,
+                deployment_id: self.deployment_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ResetDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`ResetDeploymentsOutput`](crate::output::ResetDeploymentsOutput).
@@ -603,30 +645,24 @@ impl ResetDeploymentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// The key-value pair for the resource tag.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// The key-value pair for the resource tag.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -634,31 +670,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// The key-value pair for the resource tag.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// The key-value pair for the resource tag.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -670,7 +701,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSubscriptionDefinitionVersionsOutput {
+pub struct ListSubscriptionDefinitionVersionsOutput  {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -680,17 +711,17 @@ pub struct ListSubscriptionDefinitionVersionsOutput {
 }
 impl ListSubscriptionDefinitionVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// Information about a version.
-    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionInformation]> {
+    pub fn versions(&self) -> std::option::Option<& [crate::model::VersionInformation]> {
         self.versions.as_deref()
     }
 }
 /// See [`ListSubscriptionDefinitionVersionsOutput`](crate::output::ListSubscriptionDefinitionVersionsOutput).
 pub mod list_subscription_definition_versions_output {
-
+    
     /// A builder for [`ListSubscriptionDefinitionVersionsOutput`](crate::output::ListSubscriptionDefinitionVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -705,8 +736,7 @@ pub mod list_subscription_definition_versions_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `versions`.
         ///
@@ -715,26 +745,26 @@ pub mod list_subscription_definition_versions_output {
         /// Information about a version.
         pub fn versions(mut self, input: crate::model::VersionInformation) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input);
-            self.versions = Some(v);
-            self
+                            v.push(input);
+                            self.versions = Some(v);
+                            self
         }
         /// Information about a version.
-        pub fn set_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
-        ) -> Self {
-            self.versions = input;
-            self
+        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>) -> Self {
+            self.versions = input; self
         }
         /// Consumes the builder and constructs a [`ListSubscriptionDefinitionVersionsOutput`](crate::output::ListSubscriptionDefinitionVersionsOutput).
         pub fn build(self) -> crate::output::ListSubscriptionDefinitionVersionsOutput {
             crate::output::ListSubscriptionDefinitionVersionsOutput {
-                next_token: self.next_token,
-                versions: self.versions,
+                next_token: self.next_token
+                ,
+                versions: self.versions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSubscriptionDefinitionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSubscriptionDefinitionVersionsOutput`](crate::output::ListSubscriptionDefinitionVersionsOutput).
@@ -746,7 +776,7 @@ impl ListSubscriptionDefinitionVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSubscriptionDefinitionsOutput {
+pub struct ListSubscriptionDefinitionsOutput  {
     /// Information about a definition.
     #[doc(hidden)]
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
@@ -756,22 +786,21 @@ pub struct ListSubscriptionDefinitionsOutput {
 }
 impl ListSubscriptionDefinitionsOutput {
     /// Information about a definition.
-    pub fn definitions(&self) -> std::option::Option<&[crate::model::DefinitionInformation]> {
+    pub fn definitions(&self) -> std::option::Option<& [crate::model::DefinitionInformation]> {
         self.definitions.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSubscriptionDefinitionsOutput`](crate::output::ListSubscriptionDefinitionsOutput).
 pub mod list_subscription_definitions_output {
-
+    
     /// A builder for [`ListSubscriptionDefinitionsOutput`](crate::output::ListSubscriptionDefinitionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) definitions:
-            std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
+        pub(crate) definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -782,17 +811,13 @@ pub mod list_subscription_definitions_output {
         /// Information about a definition.
         pub fn definitions(mut self, input: crate::model::DefinitionInformation) -> Self {
             let mut v = self.definitions.unwrap_or_default();
-            v.push(input);
-            self.definitions = Some(v);
-            self
+                            v.push(input);
+                            self.definitions = Some(v);
+                            self
         }
         /// Information about a definition.
-        pub fn set_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
-        ) -> Self {
-            self.definitions = input;
-            self
+        pub fn set_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>) -> Self {
+            self.definitions = input; self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -801,17 +826,20 @@ pub mod list_subscription_definitions_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSubscriptionDefinitionsOutput`](crate::output::ListSubscriptionDefinitionsOutput).
         pub fn build(self) -> crate::output::ListSubscriptionDefinitionsOutput {
             crate::output::ListSubscriptionDefinitionsOutput {
-                definitions: self.definitions,
-                next_token: self.next_token,
+                definitions: self.definitions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSubscriptionDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSubscriptionDefinitionsOutput`](crate::output::ListSubscriptionDefinitionsOutput).
@@ -823,7 +851,7 @@ impl ListSubscriptionDefinitionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourceDefinitionVersionsOutput {
+pub struct ListResourceDefinitionVersionsOutput  {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -833,17 +861,17 @@ pub struct ListResourceDefinitionVersionsOutput {
 }
 impl ListResourceDefinitionVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// Information about a version.
-    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionInformation]> {
+    pub fn versions(&self) -> std::option::Option<& [crate::model::VersionInformation]> {
         self.versions.as_deref()
     }
 }
 /// See [`ListResourceDefinitionVersionsOutput`](crate::output::ListResourceDefinitionVersionsOutput).
 pub mod list_resource_definition_versions_output {
-
+    
     /// A builder for [`ListResourceDefinitionVersionsOutput`](crate::output::ListResourceDefinitionVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -858,8 +886,7 @@ pub mod list_resource_definition_versions_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `versions`.
         ///
@@ -868,26 +895,26 @@ pub mod list_resource_definition_versions_output {
         /// Information about a version.
         pub fn versions(mut self, input: crate::model::VersionInformation) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input);
-            self.versions = Some(v);
-            self
+                            v.push(input);
+                            self.versions = Some(v);
+                            self
         }
         /// Information about a version.
-        pub fn set_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
-        ) -> Self {
-            self.versions = input;
-            self
+        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>) -> Self {
+            self.versions = input; self
         }
         /// Consumes the builder and constructs a [`ListResourceDefinitionVersionsOutput`](crate::output::ListResourceDefinitionVersionsOutput).
         pub fn build(self) -> crate::output::ListResourceDefinitionVersionsOutput {
             crate::output::ListResourceDefinitionVersionsOutput {
-                next_token: self.next_token,
-                versions: self.versions,
+                next_token: self.next_token
+                ,
+                versions: self.versions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResourceDefinitionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceDefinitionVersionsOutput`](crate::output::ListResourceDefinitionVersionsOutput).
@@ -899,7 +926,7 @@ impl ListResourceDefinitionVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourceDefinitionsOutput {
+pub struct ListResourceDefinitionsOutput  {
     /// Information about a definition.
     #[doc(hidden)]
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
@@ -909,22 +936,21 @@ pub struct ListResourceDefinitionsOutput {
 }
 impl ListResourceDefinitionsOutput {
     /// Information about a definition.
-    pub fn definitions(&self) -> std::option::Option<&[crate::model::DefinitionInformation]> {
+    pub fn definitions(&self) -> std::option::Option<& [crate::model::DefinitionInformation]> {
         self.definitions.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListResourceDefinitionsOutput`](crate::output::ListResourceDefinitionsOutput).
 pub mod list_resource_definitions_output {
-
+    
     /// A builder for [`ListResourceDefinitionsOutput`](crate::output::ListResourceDefinitionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) definitions:
-            std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
+        pub(crate) definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -935,17 +961,13 @@ pub mod list_resource_definitions_output {
         /// Information about a definition.
         pub fn definitions(mut self, input: crate::model::DefinitionInformation) -> Self {
             let mut v = self.definitions.unwrap_or_default();
-            v.push(input);
-            self.definitions = Some(v);
-            self
+                            v.push(input);
+                            self.definitions = Some(v);
+                            self
         }
         /// Information about a definition.
-        pub fn set_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
-        ) -> Self {
-            self.definitions = input;
-            self
+        pub fn set_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>) -> Self {
+            self.definitions = input; self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -954,17 +976,20 @@ pub mod list_resource_definitions_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListResourceDefinitionsOutput`](crate::output::ListResourceDefinitionsOutput).
         pub fn build(self) -> crate::output::ListResourceDefinitionsOutput {
             crate::output::ListResourceDefinitionsOutput {
-                definitions: self.definitions,
-                next_token: self.next_token,
+                definitions: self.definitions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResourceDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceDefinitionsOutput`](crate::output::ListResourceDefinitionsOutput).
@@ -976,7 +1001,7 @@ impl ListResourceDefinitionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLoggerDefinitionVersionsOutput {
+pub struct ListLoggerDefinitionVersionsOutput  {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -986,17 +1011,17 @@ pub struct ListLoggerDefinitionVersionsOutput {
 }
 impl ListLoggerDefinitionVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// Information about a version.
-    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionInformation]> {
+    pub fn versions(&self) -> std::option::Option<& [crate::model::VersionInformation]> {
         self.versions.as_deref()
     }
 }
 /// See [`ListLoggerDefinitionVersionsOutput`](crate::output::ListLoggerDefinitionVersionsOutput).
 pub mod list_logger_definition_versions_output {
-
+    
     /// A builder for [`ListLoggerDefinitionVersionsOutput`](crate::output::ListLoggerDefinitionVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1011,8 +1036,7 @@ pub mod list_logger_definition_versions_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `versions`.
         ///
@@ -1021,26 +1045,26 @@ pub mod list_logger_definition_versions_output {
         /// Information about a version.
         pub fn versions(mut self, input: crate::model::VersionInformation) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input);
-            self.versions = Some(v);
-            self
+                            v.push(input);
+                            self.versions = Some(v);
+                            self
         }
         /// Information about a version.
-        pub fn set_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
-        ) -> Self {
-            self.versions = input;
-            self
+        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>) -> Self {
+            self.versions = input; self
         }
         /// Consumes the builder and constructs a [`ListLoggerDefinitionVersionsOutput`](crate::output::ListLoggerDefinitionVersionsOutput).
         pub fn build(self) -> crate::output::ListLoggerDefinitionVersionsOutput {
             crate::output::ListLoggerDefinitionVersionsOutput {
-                next_token: self.next_token,
-                versions: self.versions,
+                next_token: self.next_token
+                ,
+                versions: self.versions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLoggerDefinitionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListLoggerDefinitionVersionsOutput`](crate::output::ListLoggerDefinitionVersionsOutput).
@@ -1052,7 +1076,7 @@ impl ListLoggerDefinitionVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLoggerDefinitionsOutput {
+pub struct ListLoggerDefinitionsOutput  {
     /// Information about a definition.
     #[doc(hidden)]
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
@@ -1062,22 +1086,21 @@ pub struct ListLoggerDefinitionsOutput {
 }
 impl ListLoggerDefinitionsOutput {
     /// Information about a definition.
-    pub fn definitions(&self) -> std::option::Option<&[crate::model::DefinitionInformation]> {
+    pub fn definitions(&self) -> std::option::Option<& [crate::model::DefinitionInformation]> {
         self.definitions.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLoggerDefinitionsOutput`](crate::output::ListLoggerDefinitionsOutput).
 pub mod list_logger_definitions_output {
-
+    
     /// A builder for [`ListLoggerDefinitionsOutput`](crate::output::ListLoggerDefinitionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) definitions:
-            std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
+        pub(crate) definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1088,17 +1111,13 @@ pub mod list_logger_definitions_output {
         /// Information about a definition.
         pub fn definitions(mut self, input: crate::model::DefinitionInformation) -> Self {
             let mut v = self.definitions.unwrap_or_default();
-            v.push(input);
-            self.definitions = Some(v);
-            self
+                            v.push(input);
+                            self.definitions = Some(v);
+                            self
         }
         /// Information about a definition.
-        pub fn set_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
-        ) -> Self {
-            self.definitions = input;
-            self
+        pub fn set_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>) -> Self {
+            self.definitions = input; self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1107,17 +1126,20 @@ pub mod list_logger_definitions_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLoggerDefinitionsOutput`](crate::output::ListLoggerDefinitionsOutput).
         pub fn build(self) -> crate::output::ListLoggerDefinitionsOutput {
             crate::output::ListLoggerDefinitionsOutput {
-                definitions: self.definitions,
-                next_token: self.next_token,
+                definitions: self.definitions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLoggerDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListLoggerDefinitionsOutput`](crate::output::ListLoggerDefinitionsOutput).
@@ -1129,7 +1151,7 @@ impl ListLoggerDefinitionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupVersionsOutput {
+pub struct ListGroupVersionsOutput  {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1139,17 +1161,17 @@ pub struct ListGroupVersionsOutput {
 }
 impl ListGroupVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// Information about a version.
-    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionInformation]> {
+    pub fn versions(&self) -> std::option::Option<& [crate::model::VersionInformation]> {
         self.versions.as_deref()
     }
 }
 /// See [`ListGroupVersionsOutput`](crate::output::ListGroupVersionsOutput).
 pub mod list_group_versions_output {
-
+    
     /// A builder for [`ListGroupVersionsOutput`](crate::output::ListGroupVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1164,8 +1186,7 @@ pub mod list_group_versions_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `versions`.
         ///
@@ -1174,26 +1195,26 @@ pub mod list_group_versions_output {
         /// Information about a version.
         pub fn versions(mut self, input: crate::model::VersionInformation) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input);
-            self.versions = Some(v);
-            self
+                            v.push(input);
+                            self.versions = Some(v);
+                            self
         }
         /// Information about a version.
-        pub fn set_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
-        ) -> Self {
-            self.versions = input;
-            self
+        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>) -> Self {
+            self.versions = input; self
         }
         /// Consumes the builder and constructs a [`ListGroupVersionsOutput`](crate::output::ListGroupVersionsOutput).
         pub fn build(self) -> crate::output::ListGroupVersionsOutput {
             crate::output::ListGroupVersionsOutput {
-                next_token: self.next_token,
-                versions: self.versions,
+                next_token: self.next_token
+                ,
+                versions: self.versions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGroupVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupVersionsOutput`](crate::output::ListGroupVersionsOutput).
@@ -1205,7 +1226,7 @@ impl ListGroupVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupsOutput {
+pub struct ListGroupsOutput  {
     /// Information about a group.
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupInformation>>,
@@ -1215,17 +1236,17 @@ pub struct ListGroupsOutput {
 }
 impl ListGroupsOutput {
     /// Information about a group.
-    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupInformation]> {
+    pub fn groups(&self) -> std::option::Option<& [crate::model::GroupInformation]> {
         self.groups.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListGroupsOutput`](crate::output::ListGroupsOutput).
 pub mod list_groups_output {
-
+    
     /// A builder for [`ListGroupsOutput`](crate::output::ListGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1240,17 +1261,13 @@ pub mod list_groups_output {
         /// Information about a group.
         pub fn groups(mut self, input: crate::model::GroupInformation) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input);
-            self.groups = Some(v);
-            self
+                            v.push(input);
+                            self.groups = Some(v);
+                            self
         }
         /// Information about a group.
-        pub fn set_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GroupInformation>>,
-        ) -> Self {
-            self.groups = input;
-            self
+        pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroupInformation>>) -> Self {
+            self.groups = input; self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1259,17 +1276,20 @@ pub mod list_groups_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListGroupsOutput`](crate::output::ListGroupsOutput).
         pub fn build(self) -> crate::output::ListGroupsOutput {
             crate::output::ListGroupsOutput {
-                groups: self.groups,
-                next_token: self.next_token,
+                groups: self.groups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupsOutput`](crate::output::ListGroupsOutput).
@@ -1281,28 +1301,24 @@ impl ListGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupCertificateAuthoritiesOutput {
+pub struct ListGroupCertificateAuthoritiesOutput  {
     /// A list of certificate authorities associated with the group.
     #[doc(hidden)]
-    pub group_certificate_authorities:
-        std::option::Option<std::vec::Vec<crate::model::GroupCertificateAuthorityProperties>>,
+    pub group_certificate_authorities: std::option::Option<std::vec::Vec<crate::model::GroupCertificateAuthorityProperties>>,
 }
 impl ListGroupCertificateAuthoritiesOutput {
     /// A list of certificate authorities associated with the group.
-    pub fn group_certificate_authorities(
-        &self,
-    ) -> std::option::Option<&[crate::model::GroupCertificateAuthorityProperties]> {
+    pub fn group_certificate_authorities(&self) -> std::option::Option<& [crate::model::GroupCertificateAuthorityProperties]> {
         self.group_certificate_authorities.as_deref()
     }
 }
 /// See [`ListGroupCertificateAuthoritiesOutput`](crate::output::ListGroupCertificateAuthoritiesOutput).
 pub mod list_group_certificate_authorities_output {
-
+    
     /// A builder for [`ListGroupCertificateAuthoritiesOutput`](crate::output::ListGroupCertificateAuthoritiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) group_certificate_authorities:
-            std::option::Option<std::vec::Vec<crate::model::GroupCertificateAuthorityProperties>>,
+        pub(crate) group_certificate_authorities: std::option::Option<std::vec::Vec<crate::model::GroupCertificateAuthorityProperties>>,
     }
     impl Builder {
         /// Appends an item to `group_certificate_authorities`.
@@ -1310,32 +1326,26 @@ pub mod list_group_certificate_authorities_output {
         /// To override the contents of this collection use [`set_group_certificate_authorities`](Self::set_group_certificate_authorities).
         ///
         /// A list of certificate authorities associated with the group.
-        pub fn group_certificate_authorities(
-            mut self,
-            input: crate::model::GroupCertificateAuthorityProperties,
-        ) -> Self {
+        pub fn group_certificate_authorities(mut self, input: crate::model::GroupCertificateAuthorityProperties) -> Self {
             let mut v = self.group_certificate_authorities.unwrap_or_default();
-            v.push(input);
-            self.group_certificate_authorities = Some(v);
-            self
+                            v.push(input);
+                            self.group_certificate_authorities = Some(v);
+                            self
         }
         /// A list of certificate authorities associated with the group.
-        pub fn set_group_certificate_authorities(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::GroupCertificateAuthorityProperties>,
-            >,
-        ) -> Self {
-            self.group_certificate_authorities = input;
-            self
+        pub fn set_group_certificate_authorities(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroupCertificateAuthorityProperties>>) -> Self {
+            self.group_certificate_authorities = input; self
         }
         /// Consumes the builder and constructs a [`ListGroupCertificateAuthoritiesOutput`](crate::output::ListGroupCertificateAuthoritiesOutput).
         pub fn build(self) -> crate::output::ListGroupCertificateAuthoritiesOutput {
             crate::output::ListGroupCertificateAuthoritiesOutput {
-                group_certificate_authorities: self.group_certificate_authorities,
+                group_certificate_authorities: self.group_certificate_authorities
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGroupCertificateAuthoritiesOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupCertificateAuthoritiesOutput`](crate::output::ListGroupCertificateAuthoritiesOutput).
@@ -1347,7 +1357,7 @@ impl ListGroupCertificateAuthoritiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFunctionDefinitionVersionsOutput {
+pub struct ListFunctionDefinitionVersionsOutput  {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1357,17 +1367,17 @@ pub struct ListFunctionDefinitionVersionsOutput {
 }
 impl ListFunctionDefinitionVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// Information about a version.
-    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionInformation]> {
+    pub fn versions(&self) -> std::option::Option<& [crate::model::VersionInformation]> {
         self.versions.as_deref()
     }
 }
 /// See [`ListFunctionDefinitionVersionsOutput`](crate::output::ListFunctionDefinitionVersionsOutput).
 pub mod list_function_definition_versions_output {
-
+    
     /// A builder for [`ListFunctionDefinitionVersionsOutput`](crate::output::ListFunctionDefinitionVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1382,8 +1392,7 @@ pub mod list_function_definition_versions_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `versions`.
         ///
@@ -1392,26 +1401,26 @@ pub mod list_function_definition_versions_output {
         /// Information about a version.
         pub fn versions(mut self, input: crate::model::VersionInformation) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input);
-            self.versions = Some(v);
-            self
+                            v.push(input);
+                            self.versions = Some(v);
+                            self
         }
         /// Information about a version.
-        pub fn set_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
-        ) -> Self {
-            self.versions = input;
-            self
+        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>) -> Self {
+            self.versions = input; self
         }
         /// Consumes the builder and constructs a [`ListFunctionDefinitionVersionsOutput`](crate::output::ListFunctionDefinitionVersionsOutput).
         pub fn build(self) -> crate::output::ListFunctionDefinitionVersionsOutput {
             crate::output::ListFunctionDefinitionVersionsOutput {
-                next_token: self.next_token,
-                versions: self.versions,
+                next_token: self.next_token
+                ,
+                versions: self.versions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFunctionDefinitionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListFunctionDefinitionVersionsOutput`](crate::output::ListFunctionDefinitionVersionsOutput).
@@ -1423,7 +1432,7 @@ impl ListFunctionDefinitionVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFunctionDefinitionsOutput {
+pub struct ListFunctionDefinitionsOutput  {
     /// Information about a definition.
     #[doc(hidden)]
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
@@ -1433,22 +1442,21 @@ pub struct ListFunctionDefinitionsOutput {
 }
 impl ListFunctionDefinitionsOutput {
     /// Information about a definition.
-    pub fn definitions(&self) -> std::option::Option<&[crate::model::DefinitionInformation]> {
+    pub fn definitions(&self) -> std::option::Option<& [crate::model::DefinitionInformation]> {
         self.definitions.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFunctionDefinitionsOutput`](crate::output::ListFunctionDefinitionsOutput).
 pub mod list_function_definitions_output {
-
+    
     /// A builder for [`ListFunctionDefinitionsOutput`](crate::output::ListFunctionDefinitionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) definitions:
-            std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
+        pub(crate) definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1459,17 +1467,13 @@ pub mod list_function_definitions_output {
         /// Information about a definition.
         pub fn definitions(mut self, input: crate::model::DefinitionInformation) -> Self {
             let mut v = self.definitions.unwrap_or_default();
-            v.push(input);
-            self.definitions = Some(v);
-            self
+                            v.push(input);
+                            self.definitions = Some(v);
+                            self
         }
         /// Information about a definition.
-        pub fn set_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
-        ) -> Self {
-            self.definitions = input;
-            self
+        pub fn set_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>) -> Self {
+            self.definitions = input; self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1478,17 +1482,20 @@ pub mod list_function_definitions_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFunctionDefinitionsOutput`](crate::output::ListFunctionDefinitionsOutput).
         pub fn build(self) -> crate::output::ListFunctionDefinitionsOutput {
             crate::output::ListFunctionDefinitionsOutput {
-                definitions: self.definitions,
-                next_token: self.next_token,
+                definitions: self.definitions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFunctionDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListFunctionDefinitionsOutput`](crate::output::ListFunctionDefinitionsOutput).
@@ -1500,7 +1507,7 @@ impl ListFunctionDefinitionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeviceDefinitionVersionsOutput {
+pub struct ListDeviceDefinitionVersionsOutput  {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1510,17 +1517,17 @@ pub struct ListDeviceDefinitionVersionsOutput {
 }
 impl ListDeviceDefinitionVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// Information about a version.
-    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionInformation]> {
+    pub fn versions(&self) -> std::option::Option<& [crate::model::VersionInformation]> {
         self.versions.as_deref()
     }
 }
 /// See [`ListDeviceDefinitionVersionsOutput`](crate::output::ListDeviceDefinitionVersionsOutput).
 pub mod list_device_definition_versions_output {
-
+    
     /// A builder for [`ListDeviceDefinitionVersionsOutput`](crate::output::ListDeviceDefinitionVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1535,8 +1542,7 @@ pub mod list_device_definition_versions_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `versions`.
         ///
@@ -1545,26 +1551,26 @@ pub mod list_device_definition_versions_output {
         /// Information about a version.
         pub fn versions(mut self, input: crate::model::VersionInformation) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input);
-            self.versions = Some(v);
-            self
+                            v.push(input);
+                            self.versions = Some(v);
+                            self
         }
         /// Information about a version.
-        pub fn set_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
-        ) -> Self {
-            self.versions = input;
-            self
+        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>) -> Self {
+            self.versions = input; self
         }
         /// Consumes the builder and constructs a [`ListDeviceDefinitionVersionsOutput`](crate::output::ListDeviceDefinitionVersionsOutput).
         pub fn build(self) -> crate::output::ListDeviceDefinitionVersionsOutput {
             crate::output::ListDeviceDefinitionVersionsOutput {
-                next_token: self.next_token,
-                versions: self.versions,
+                next_token: self.next_token
+                ,
+                versions: self.versions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDeviceDefinitionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeviceDefinitionVersionsOutput`](crate::output::ListDeviceDefinitionVersionsOutput).
@@ -1576,7 +1582,7 @@ impl ListDeviceDefinitionVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeviceDefinitionsOutput {
+pub struct ListDeviceDefinitionsOutput  {
     /// Information about a definition.
     #[doc(hidden)]
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
@@ -1586,22 +1592,21 @@ pub struct ListDeviceDefinitionsOutput {
 }
 impl ListDeviceDefinitionsOutput {
     /// Information about a definition.
-    pub fn definitions(&self) -> std::option::Option<&[crate::model::DefinitionInformation]> {
+    pub fn definitions(&self) -> std::option::Option<& [crate::model::DefinitionInformation]> {
         self.definitions.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDeviceDefinitionsOutput`](crate::output::ListDeviceDefinitionsOutput).
 pub mod list_device_definitions_output {
-
+    
     /// A builder for [`ListDeviceDefinitionsOutput`](crate::output::ListDeviceDefinitionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) definitions:
-            std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
+        pub(crate) definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1612,17 +1617,13 @@ pub mod list_device_definitions_output {
         /// Information about a definition.
         pub fn definitions(mut self, input: crate::model::DefinitionInformation) -> Self {
             let mut v = self.definitions.unwrap_or_default();
-            v.push(input);
-            self.definitions = Some(v);
-            self
+                            v.push(input);
+                            self.definitions = Some(v);
+                            self
         }
         /// Information about a definition.
-        pub fn set_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
-        ) -> Self {
-            self.definitions = input;
-            self
+        pub fn set_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>) -> Self {
+            self.definitions = input; self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1631,17 +1632,20 @@ pub mod list_device_definitions_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDeviceDefinitionsOutput`](crate::output::ListDeviceDefinitionsOutput).
         pub fn build(self) -> crate::output::ListDeviceDefinitionsOutput {
             crate::output::ListDeviceDefinitionsOutput {
-                definitions: self.definitions,
-                next_token: self.next_token,
+                definitions: self.definitions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDeviceDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeviceDefinitionsOutput`](crate::output::ListDeviceDefinitionsOutput).
@@ -1653,7 +1657,7 @@ impl ListDeviceDefinitionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeploymentsOutput {
+pub struct ListDeploymentsOutput  {
     /// A list of deployments for the requested groups.
     #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
@@ -1663,17 +1667,17 @@ pub struct ListDeploymentsOutput {
 }
 impl ListDeploymentsOutput {
     /// A list of deployments for the requested groups.
-    pub fn deployments(&self) -> std::option::Option<&[crate::model::Deployment]> {
+    pub fn deployments(&self) -> std::option::Option<& [crate::model::Deployment]> {
         self.deployments.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
 pub mod list_deployments_output {
-
+    
     /// A builder for [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1688,17 +1692,13 @@ pub mod list_deployments_output {
         /// A list of deployments for the requested groups.
         pub fn deployments(mut self, input: crate::model::Deployment) -> Self {
             let mut v = self.deployments.unwrap_or_default();
-            v.push(input);
-            self.deployments = Some(v);
-            self
+                            v.push(input);
+                            self.deployments = Some(v);
+                            self
         }
         /// A list of deployments for the requested groups.
-        pub fn set_deployments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
-        ) -> Self {
-            self.deployments = input;
-            self
+        pub fn set_deployments(mut self, input: std::option::Option<std::vec::Vec<crate::model::Deployment>>) -> Self {
+            self.deployments = input; self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1707,17 +1707,20 @@ pub mod list_deployments_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
         pub fn build(self) -> crate::output::ListDeploymentsOutput {
             crate::output::ListDeploymentsOutput {
-                deployments: self.deployments,
-                next_token: self.next_token,
+                deployments: self.deployments
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
@@ -1729,7 +1732,7 @@ impl ListDeploymentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCoreDefinitionVersionsOutput {
+pub struct ListCoreDefinitionVersionsOutput  {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1739,17 +1742,17 @@ pub struct ListCoreDefinitionVersionsOutput {
 }
 impl ListCoreDefinitionVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// Information about a version.
-    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionInformation]> {
+    pub fn versions(&self) -> std::option::Option<& [crate::model::VersionInformation]> {
         self.versions.as_deref()
     }
 }
 /// See [`ListCoreDefinitionVersionsOutput`](crate::output::ListCoreDefinitionVersionsOutput).
 pub mod list_core_definition_versions_output {
-
+    
     /// A builder for [`ListCoreDefinitionVersionsOutput`](crate::output::ListCoreDefinitionVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1764,8 +1767,7 @@ pub mod list_core_definition_versions_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `versions`.
         ///
@@ -1774,26 +1776,26 @@ pub mod list_core_definition_versions_output {
         /// Information about a version.
         pub fn versions(mut self, input: crate::model::VersionInformation) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input);
-            self.versions = Some(v);
-            self
+                            v.push(input);
+                            self.versions = Some(v);
+                            self
         }
         /// Information about a version.
-        pub fn set_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
-        ) -> Self {
-            self.versions = input;
-            self
+        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>) -> Self {
+            self.versions = input; self
         }
         /// Consumes the builder and constructs a [`ListCoreDefinitionVersionsOutput`](crate::output::ListCoreDefinitionVersionsOutput).
         pub fn build(self) -> crate::output::ListCoreDefinitionVersionsOutput {
             crate::output::ListCoreDefinitionVersionsOutput {
-                next_token: self.next_token,
-                versions: self.versions,
+                next_token: self.next_token
+                ,
+                versions: self.versions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCoreDefinitionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListCoreDefinitionVersionsOutput`](crate::output::ListCoreDefinitionVersionsOutput).
@@ -1805,7 +1807,7 @@ impl ListCoreDefinitionVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCoreDefinitionsOutput {
+pub struct ListCoreDefinitionsOutput  {
     /// Information about a definition.
     #[doc(hidden)]
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
@@ -1815,22 +1817,21 @@ pub struct ListCoreDefinitionsOutput {
 }
 impl ListCoreDefinitionsOutput {
     /// Information about a definition.
-    pub fn definitions(&self) -> std::option::Option<&[crate::model::DefinitionInformation]> {
+    pub fn definitions(&self) -> std::option::Option<& [crate::model::DefinitionInformation]> {
         self.definitions.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCoreDefinitionsOutput`](crate::output::ListCoreDefinitionsOutput).
 pub mod list_core_definitions_output {
-
+    
     /// A builder for [`ListCoreDefinitionsOutput`](crate::output::ListCoreDefinitionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) definitions:
-            std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
+        pub(crate) definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1841,17 +1842,13 @@ pub mod list_core_definitions_output {
         /// Information about a definition.
         pub fn definitions(mut self, input: crate::model::DefinitionInformation) -> Self {
             let mut v = self.definitions.unwrap_or_default();
-            v.push(input);
-            self.definitions = Some(v);
-            self
+                            v.push(input);
+                            self.definitions = Some(v);
+                            self
         }
         /// Information about a definition.
-        pub fn set_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
-        ) -> Self {
-            self.definitions = input;
-            self
+        pub fn set_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>) -> Self {
+            self.definitions = input; self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1860,17 +1857,20 @@ pub mod list_core_definitions_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCoreDefinitionsOutput`](crate::output::ListCoreDefinitionsOutput).
         pub fn build(self) -> crate::output::ListCoreDefinitionsOutput {
             crate::output::ListCoreDefinitionsOutput {
-                definitions: self.definitions,
-                next_token: self.next_token,
+                definitions: self.definitions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCoreDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListCoreDefinitionsOutput`](crate::output::ListCoreDefinitionsOutput).
@@ -1882,7 +1882,7 @@ impl ListCoreDefinitionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConnectorDefinitionVersionsOutput {
+pub struct ListConnectorDefinitionVersionsOutput  {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1892,17 +1892,17 @@ pub struct ListConnectorDefinitionVersionsOutput {
 }
 impl ListConnectorDefinitionVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// Information about a version.
-    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionInformation]> {
+    pub fn versions(&self) -> std::option::Option<& [crate::model::VersionInformation]> {
         self.versions.as_deref()
     }
 }
 /// See [`ListConnectorDefinitionVersionsOutput`](crate::output::ListConnectorDefinitionVersionsOutput).
 pub mod list_connector_definition_versions_output {
-
+    
     /// A builder for [`ListConnectorDefinitionVersionsOutput`](crate::output::ListConnectorDefinitionVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1917,8 +1917,7 @@ pub mod list_connector_definition_versions_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `versions`.
         ///
@@ -1927,26 +1926,26 @@ pub mod list_connector_definition_versions_output {
         /// Information about a version.
         pub fn versions(mut self, input: crate::model::VersionInformation) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input);
-            self.versions = Some(v);
-            self
+                            v.push(input);
+                            self.versions = Some(v);
+                            self
         }
         /// Information about a version.
-        pub fn set_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>,
-        ) -> Self {
-            self.versions = input;
-            self
+        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::VersionInformation>>) -> Self {
+            self.versions = input; self
         }
         /// Consumes the builder and constructs a [`ListConnectorDefinitionVersionsOutput`](crate::output::ListConnectorDefinitionVersionsOutput).
         pub fn build(self) -> crate::output::ListConnectorDefinitionVersionsOutput {
             crate::output::ListConnectorDefinitionVersionsOutput {
-                next_token: self.next_token,
-                versions: self.versions,
+                next_token: self.next_token
+                ,
+                versions: self.versions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListConnectorDefinitionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListConnectorDefinitionVersionsOutput`](crate::output::ListConnectorDefinitionVersionsOutput).
@@ -1958,7 +1957,7 @@ impl ListConnectorDefinitionVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConnectorDefinitionsOutput {
+pub struct ListConnectorDefinitionsOutput  {
     /// Information about a definition.
     #[doc(hidden)]
     pub definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
@@ -1968,22 +1967,21 @@ pub struct ListConnectorDefinitionsOutput {
 }
 impl ListConnectorDefinitionsOutput {
     /// Information about a definition.
-    pub fn definitions(&self) -> std::option::Option<&[crate::model::DefinitionInformation]> {
+    pub fn definitions(&self) -> std::option::Option<& [crate::model::DefinitionInformation]> {
         self.definitions.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListConnectorDefinitionsOutput`](crate::output::ListConnectorDefinitionsOutput).
 pub mod list_connector_definitions_output {
-
+    
     /// A builder for [`ListConnectorDefinitionsOutput`](crate::output::ListConnectorDefinitionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) definitions:
-            std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
+        pub(crate) definitions: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1994,17 +1992,13 @@ pub mod list_connector_definitions_output {
         /// Information about a definition.
         pub fn definitions(mut self, input: crate::model::DefinitionInformation) -> Self {
             let mut v = self.definitions.unwrap_or_default();
-            v.push(input);
-            self.definitions = Some(v);
-            self
+                            v.push(input);
+                            self.definitions = Some(v);
+                            self
         }
         /// Information about a definition.
-        pub fn set_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>,
-        ) -> Self {
-            self.definitions = input;
-            self
+        pub fn set_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DefinitionInformation>>) -> Self {
+            self.definitions = input; self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2013,17 +2007,20 @@ pub mod list_connector_definitions_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListConnectorDefinitionsOutput`](crate::output::ListConnectorDefinitionsOutput).
         pub fn build(self) -> crate::output::ListConnectorDefinitionsOutput {
             crate::output::ListConnectorDefinitionsOutput {
-                definitions: self.definitions,
-                next_token: self.next_token,
+                definitions: self.definitions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListConnectorDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListConnectorDefinitionsOutput`](crate::output::ListConnectorDefinitionsOutput).
@@ -2035,7 +2032,7 @@ impl ListConnectorDefinitionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBulkDeploymentsOutput {
+pub struct ListBulkDeploymentsOutput  {
     /// A list of bulk deployments.
     #[doc(hidden)]
     pub bulk_deployments: std::option::Option<std::vec::Vec<crate::model::BulkDeployment>>,
@@ -2045,22 +2042,21 @@ pub struct ListBulkDeploymentsOutput {
 }
 impl ListBulkDeploymentsOutput {
     /// A list of bulk deployments.
-    pub fn bulk_deployments(&self) -> std::option::Option<&[crate::model::BulkDeployment]> {
+    pub fn bulk_deployments(&self) -> std::option::Option<& [crate::model::BulkDeployment]> {
         self.bulk_deployments.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListBulkDeploymentsOutput`](crate::output::ListBulkDeploymentsOutput).
 pub mod list_bulk_deployments_output {
-
+    
     /// A builder for [`ListBulkDeploymentsOutput`](crate::output::ListBulkDeploymentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) bulk_deployments:
-            std::option::Option<std::vec::Vec<crate::model::BulkDeployment>>,
+        pub(crate) bulk_deployments: std::option::Option<std::vec::Vec<crate::model::BulkDeployment>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2071,17 +2067,13 @@ pub mod list_bulk_deployments_output {
         /// A list of bulk deployments.
         pub fn bulk_deployments(mut self, input: crate::model::BulkDeployment) -> Self {
             let mut v = self.bulk_deployments.unwrap_or_default();
-            v.push(input);
-            self.bulk_deployments = Some(v);
-            self
+                            v.push(input);
+                            self.bulk_deployments = Some(v);
+                            self
         }
         /// A list of bulk deployments.
-        pub fn set_bulk_deployments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BulkDeployment>>,
-        ) -> Self {
-            self.bulk_deployments = input;
-            self
+        pub fn set_bulk_deployments(mut self, input: std::option::Option<std::vec::Vec<crate::model::BulkDeployment>>) -> Self {
+            self.bulk_deployments = input; self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2090,17 +2082,20 @@ pub mod list_bulk_deployments_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListBulkDeploymentsOutput`](crate::output::ListBulkDeploymentsOutput).
         pub fn build(self) -> crate::output::ListBulkDeploymentsOutput {
             crate::output::ListBulkDeploymentsOutput {
-                bulk_deployments: self.bulk_deployments,
-                next_token: self.next_token,
+                bulk_deployments: self.bulk_deployments
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBulkDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`ListBulkDeploymentsOutput`](crate::output::ListBulkDeploymentsOutput).
@@ -2112,7 +2107,7 @@ impl ListBulkDeploymentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBulkDeploymentDetailedReportsOutput {
+pub struct ListBulkDeploymentDetailedReportsOutput  {
     /// A list of the individual group deployments in the bulk deployment operation.
     #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<crate::model::BulkDeploymentResult>>,
@@ -2122,22 +2117,21 @@ pub struct ListBulkDeploymentDetailedReportsOutput {
 }
 impl ListBulkDeploymentDetailedReportsOutput {
     /// A list of the individual group deployments in the bulk deployment operation.
-    pub fn deployments(&self) -> std::option::Option<&[crate::model::BulkDeploymentResult]> {
+    pub fn deployments(&self) -> std::option::Option<& [crate::model::BulkDeploymentResult]> {
         self.deployments.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListBulkDeploymentDetailedReportsOutput`](crate::output::ListBulkDeploymentDetailedReportsOutput).
 pub mod list_bulk_deployment_detailed_reports_output {
-
+    
     /// A builder for [`ListBulkDeploymentDetailedReportsOutput`](crate::output::ListBulkDeploymentDetailedReportsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) deployments:
-            std::option::Option<std::vec::Vec<crate::model::BulkDeploymentResult>>,
+        pub(crate) deployments: std::option::Option<std::vec::Vec<crate::model::BulkDeploymentResult>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2148,17 +2142,13 @@ pub mod list_bulk_deployment_detailed_reports_output {
         /// A list of the individual group deployments in the bulk deployment operation.
         pub fn deployments(mut self, input: crate::model::BulkDeploymentResult) -> Self {
             let mut v = self.deployments.unwrap_or_default();
-            v.push(input);
-            self.deployments = Some(v);
-            self
+                            v.push(input);
+                            self.deployments = Some(v);
+                            self
         }
         /// A list of the individual group deployments in the bulk deployment operation.
-        pub fn set_deployments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BulkDeploymentResult>>,
-        ) -> Self {
-            self.deployments = input;
-            self
+        pub fn set_deployments(mut self, input: std::option::Option<std::vec::Vec<crate::model::BulkDeploymentResult>>) -> Self {
+            self.deployments = input; self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2167,17 +2157,20 @@ pub mod list_bulk_deployment_detailed_reports_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListBulkDeploymentDetailedReportsOutput`](crate::output::ListBulkDeploymentDetailedReportsOutput).
         pub fn build(self) -> crate::output::ListBulkDeploymentDetailedReportsOutput {
             crate::output::ListBulkDeploymentDetailedReportsOutput {
-                deployments: self.deployments,
-                next_token: self.next_token,
+                deployments: self.deployments
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBulkDeploymentDetailedReportsOutput {
     /// Creates a new builder-style object to manufacture [`ListBulkDeploymentDetailedReportsOutput`](crate::output::ListBulkDeploymentDetailedReportsOutput).
@@ -2189,22 +2182,20 @@ impl ListBulkDeploymentDetailedReportsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetThingRuntimeConfigurationOutput {
+pub struct GetThingRuntimeConfigurationOutput  {
     /// Runtime configuration for a thing.
     #[doc(hidden)]
     pub runtime_configuration: std::option::Option<crate::model::RuntimeConfiguration>,
 }
 impl GetThingRuntimeConfigurationOutput {
     /// Runtime configuration for a thing.
-    pub fn runtime_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::RuntimeConfiguration> {
+    pub fn runtime_configuration(&self) -> std::option::Option<& crate::model::RuntimeConfiguration> {
         self.runtime_configuration.as_ref()
     }
 }
 /// See [`GetThingRuntimeConfigurationOutput`](crate::output::GetThingRuntimeConfigurationOutput).
 pub mod get_thing_runtime_configuration_output {
-
+    
     /// A builder for [`GetThingRuntimeConfigurationOutput`](crate::output::GetThingRuntimeConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2217,20 +2208,19 @@ pub mod get_thing_runtime_configuration_output {
             self
         }
         /// Runtime configuration for a thing.
-        pub fn set_runtime_configuration(
-            mut self,
-            input: std::option::Option<crate::model::RuntimeConfiguration>,
-        ) -> Self {
-            self.runtime_configuration = input;
-            self
+        pub fn set_runtime_configuration(mut self, input: std::option::Option<crate::model::RuntimeConfiguration>) -> Self {
+            self.runtime_configuration = input; self
         }
         /// Consumes the builder and constructs a [`GetThingRuntimeConfigurationOutput`](crate::output::GetThingRuntimeConfigurationOutput).
         pub fn build(self) -> crate::output::GetThingRuntimeConfigurationOutput {
             crate::output::GetThingRuntimeConfigurationOutput {
-                runtime_configuration: self.runtime_configuration,
+                runtime_configuration: self.runtime_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl GetThingRuntimeConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetThingRuntimeConfigurationOutput`](crate::output::GetThingRuntimeConfigurationOutput).
@@ -2242,7 +2232,7 @@ impl GetThingRuntimeConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSubscriptionDefinitionVersionOutput {
+pub struct GetSubscriptionDefinitionVersionOutput  {
     /// The ARN of the subscription definition version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2264,33 +2254,33 @@ pub struct GetSubscriptionDefinitionVersionOutput {
 }
 impl GetSubscriptionDefinitionVersionOutput {
     /// The ARN of the subscription definition version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the subscription definition version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// Information about the subscription definition version.
-    pub fn definition(&self) -> std::option::Option<&crate::model::SubscriptionDefinitionVersion> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::SubscriptionDefinitionVersion> {
         self.definition.as_ref()
     }
     /// The ID of the subscription definition version.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// The version of the subscription definition version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`GetSubscriptionDefinitionVersionOutput`](crate::output::GetSubscriptionDefinitionVersionOutput).
 pub mod get_subscription_definition_version_output {
-
+    
     /// A builder for [`GetSubscriptionDefinitionVersionOutput`](crate::output::GetSubscriptionDefinitionVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2309,8 +2299,7 @@ pub mod get_subscription_definition_version_output {
         }
         /// The ARN of the subscription definition version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the subscription definition version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2318,12 +2307,8 @@ pub mod get_subscription_definition_version_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the subscription definition version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// Information about the subscription definition version.
         pub fn definition(mut self, input: crate::model::SubscriptionDefinitionVersion) -> Self {
@@ -2331,12 +2316,8 @@ pub mod get_subscription_definition_version_output {
             self
         }
         /// Information about the subscription definition version.
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::SubscriptionDefinitionVersion>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::SubscriptionDefinitionVersion>) -> Self {
+            self.definition = input; self
         }
         /// The ID of the subscription definition version.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2345,8 +2326,7 @@ pub mod get_subscription_definition_version_output {
         }
         /// The ID of the subscription definition version.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2355,8 +2335,7 @@ pub mod get_subscription_definition_version_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// The version of the subscription definition version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2365,21 +2344,28 @@ pub mod get_subscription_definition_version_output {
         }
         /// The version of the subscription definition version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`GetSubscriptionDefinitionVersionOutput`](crate::output::GetSubscriptionDefinitionVersionOutput).
         pub fn build(self) -> crate::output::GetSubscriptionDefinitionVersionOutput {
             crate::output::GetSubscriptionDefinitionVersionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                definition: self.definition,
-                id: self.id,
-                next_token: self.next_token,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                definition: self.definition
+                ,
+                id: self.id
+                ,
+                next_token: self.next_token
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSubscriptionDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetSubscriptionDefinitionVersionOutput`](crate::output::GetSubscriptionDefinitionVersionOutput).
@@ -2391,7 +2377,7 @@ impl GetSubscriptionDefinitionVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSubscriptionDefinitionOutput {
+pub struct GetSubscriptionDefinitionOutput  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2415,49 +2401,45 @@ pub struct GetSubscriptionDefinitionOutput {
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetSubscriptionDefinitionOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Tag(s) attached to the resource arn.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetSubscriptionDefinitionOutput`](crate::output::GetSubscriptionDefinitionOutput).
 pub mod get_subscription_definition_output {
-
+    
     /// A builder for [`GetSubscriptionDefinitionOutput`](crate::output::GetSubscriptionDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2468,9 +2450,7 @@ pub mod get_subscription_definition_output {
         pub(crate) latest_version: std::option::Option<std::string::String>,
         pub(crate) latest_version_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the definition.
@@ -2480,8 +2460,7 @@ pub mod get_subscription_definition_output {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2489,12 +2468,8 @@ pub mod get_subscription_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2503,8 +2478,7 @@ pub mod get_subscription_definition_output {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2512,12 +2486,8 @@ pub mod get_subscription_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2525,12 +2495,8 @@ pub mod get_subscription_definition_output {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2538,12 +2504,8 @@ pub mod get_subscription_definition_output {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2552,48 +2514,47 @@ pub mod get_subscription_definition_output {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// Tag(s) attached to the resource arn.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// Tag(s) attached to the resource arn.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetSubscriptionDefinitionOutput`](crate::output::GetSubscriptionDefinitionOutput).
         pub fn build(self) -> crate::output::GetSubscriptionDefinitionOutput {
             crate::output::GetSubscriptionDefinitionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSubscriptionDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`GetSubscriptionDefinitionOutput`](crate::output::GetSubscriptionDefinitionOutput).
@@ -2605,7 +2566,7 @@ impl GetSubscriptionDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceRoleForAccountOutput {
+pub struct GetServiceRoleForAccountOutput  {
     /// The time when the service role was associated with the account.
     #[doc(hidden)]
     pub associated_at: std::option::Option<std::string::String>,
@@ -2615,17 +2576,17 @@ pub struct GetServiceRoleForAccountOutput {
 }
 impl GetServiceRoleForAccountOutput {
     /// The time when the service role was associated with the account.
-    pub fn associated_at(&self) -> std::option::Option<&str> {
+    pub fn associated_at(&self) -> std::option::Option<& str> {
         self.associated_at.as_deref()
     }
     /// The ARN of the role which is associated with the account.
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 /// See [`GetServiceRoleForAccountOutput`](crate::output::GetServiceRoleForAccountOutput).
 pub mod get_service_role_for_account_output {
-
+    
     /// A builder for [`GetServiceRoleForAccountOutput`](crate::output::GetServiceRoleForAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2639,12 +2600,8 @@ pub mod get_service_role_for_account_output {
             self
         }
         /// The time when the service role was associated with the account.
-        pub fn set_associated_at(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.associated_at = input;
-            self
+        pub fn set_associated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.associated_at = input; self
         }
         /// The ARN of the role which is associated with the account.
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2653,17 +2610,20 @@ pub mod get_service_role_for_account_output {
         }
         /// The ARN of the role which is associated with the account.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetServiceRoleForAccountOutput`](crate::output::GetServiceRoleForAccountOutput).
         pub fn build(self) -> crate::output::GetServiceRoleForAccountOutput {
             crate::output::GetServiceRoleForAccountOutput {
-                associated_at: self.associated_at,
-                role_arn: self.role_arn,
+                associated_at: self.associated_at
+                ,
+                role_arn: self.role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GetServiceRoleForAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceRoleForAccountOutput`](crate::output::GetServiceRoleForAccountOutput).
@@ -2675,7 +2635,7 @@ impl GetServiceRoleForAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceDefinitionVersionOutput {
+pub struct GetResourceDefinitionVersionOutput  {
     /// Arn of the resource definition version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2694,29 +2654,29 @@ pub struct GetResourceDefinitionVersionOutput {
 }
 impl GetResourceDefinitionVersionOutput {
     /// Arn of the resource definition version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the resource definition version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// Information about the definition.
-    pub fn definition(&self) -> std::option::Option<&crate::model::ResourceDefinitionVersion> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::ResourceDefinitionVersion> {
         self.definition.as_ref()
     }
     /// The ID of the resource definition version.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The version of the resource definition version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`GetResourceDefinitionVersionOutput`](crate::output::GetResourceDefinitionVersionOutput).
 pub mod get_resource_definition_version_output {
-
+    
     /// A builder for [`GetResourceDefinitionVersionOutput`](crate::output::GetResourceDefinitionVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2734,8 +2694,7 @@ pub mod get_resource_definition_version_output {
         }
         /// Arn of the resource definition version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the resource definition version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2743,12 +2702,8 @@ pub mod get_resource_definition_version_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the resource definition version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// Information about the definition.
         pub fn definition(mut self, input: crate::model::ResourceDefinitionVersion) -> Self {
@@ -2756,12 +2711,8 @@ pub mod get_resource_definition_version_output {
             self
         }
         /// Information about the definition.
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::ResourceDefinitionVersion>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::ResourceDefinitionVersion>) -> Self {
+            self.definition = input; self
         }
         /// The ID of the resource definition version.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2770,8 +2721,7 @@ pub mod get_resource_definition_version_output {
         }
         /// The ID of the resource definition version.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The version of the resource definition version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2780,20 +2730,26 @@ pub mod get_resource_definition_version_output {
         }
         /// The version of the resource definition version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`GetResourceDefinitionVersionOutput`](crate::output::GetResourceDefinitionVersionOutput).
         pub fn build(self) -> crate::output::GetResourceDefinitionVersionOutput {
             crate::output::GetResourceDefinitionVersionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                definition: self.definition,
-                id: self.id,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                definition: self.definition
+                ,
+                id: self.id
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResourceDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceDefinitionVersionOutput`](crate::output::GetResourceDefinitionVersionOutput).
@@ -2805,7 +2761,7 @@ impl GetResourceDefinitionVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceDefinitionOutput {
+pub struct GetResourceDefinitionOutput  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2829,49 +2785,45 @@ pub struct GetResourceDefinitionOutput {
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetResourceDefinitionOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Tag(s) attached to the resource arn.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetResourceDefinitionOutput`](crate::output::GetResourceDefinitionOutput).
 pub mod get_resource_definition_output {
-
+    
     /// A builder for [`GetResourceDefinitionOutput`](crate::output::GetResourceDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2882,9 +2834,7 @@ pub mod get_resource_definition_output {
         pub(crate) latest_version: std::option::Option<std::string::String>,
         pub(crate) latest_version_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the definition.
@@ -2894,8 +2844,7 @@ pub mod get_resource_definition_output {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2903,12 +2852,8 @@ pub mod get_resource_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2917,8 +2862,7 @@ pub mod get_resource_definition_output {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2926,12 +2870,8 @@ pub mod get_resource_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2939,12 +2879,8 @@ pub mod get_resource_definition_output {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2952,12 +2888,8 @@ pub mod get_resource_definition_output {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2966,48 +2898,47 @@ pub mod get_resource_definition_output {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// Tag(s) attached to the resource arn.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// Tag(s) attached to the resource arn.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetResourceDefinitionOutput`](crate::output::GetResourceDefinitionOutput).
         pub fn build(self) -> crate::output::GetResourceDefinitionOutput {
             crate::output::GetResourceDefinitionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResourceDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceDefinitionOutput`](crate::output::GetResourceDefinitionOutput).
@@ -3019,7 +2950,7 @@ impl GetResourceDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLoggerDefinitionVersionOutput {
+pub struct GetLoggerDefinitionVersionOutput  {
     /// The ARN of the logger definition version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3038,29 +2969,29 @@ pub struct GetLoggerDefinitionVersionOutput {
 }
 impl GetLoggerDefinitionVersionOutput {
     /// The ARN of the logger definition version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the logger definition version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// Information about the logger definition version.
-    pub fn definition(&self) -> std::option::Option<&crate::model::LoggerDefinitionVersion> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::LoggerDefinitionVersion> {
         self.definition.as_ref()
     }
     /// The ID of the logger definition version.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The version of the logger definition version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`GetLoggerDefinitionVersionOutput`](crate::output::GetLoggerDefinitionVersionOutput).
 pub mod get_logger_definition_version_output {
-
+    
     /// A builder for [`GetLoggerDefinitionVersionOutput`](crate::output::GetLoggerDefinitionVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3078,8 +3009,7 @@ pub mod get_logger_definition_version_output {
         }
         /// The ARN of the logger definition version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the logger definition version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3087,12 +3017,8 @@ pub mod get_logger_definition_version_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the logger definition version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// Information about the logger definition version.
         pub fn definition(mut self, input: crate::model::LoggerDefinitionVersion) -> Self {
@@ -3100,12 +3026,8 @@ pub mod get_logger_definition_version_output {
             self
         }
         /// Information about the logger definition version.
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::LoggerDefinitionVersion>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::LoggerDefinitionVersion>) -> Self {
+            self.definition = input; self
         }
         /// The ID of the logger definition version.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3114,8 +3036,7 @@ pub mod get_logger_definition_version_output {
         }
         /// The ID of the logger definition version.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The version of the logger definition version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3124,20 +3045,26 @@ pub mod get_logger_definition_version_output {
         }
         /// The version of the logger definition version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`GetLoggerDefinitionVersionOutput`](crate::output::GetLoggerDefinitionVersionOutput).
         pub fn build(self) -> crate::output::GetLoggerDefinitionVersionOutput {
             crate::output::GetLoggerDefinitionVersionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                definition: self.definition,
-                id: self.id,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                definition: self.definition
+                ,
+                id: self.id
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLoggerDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetLoggerDefinitionVersionOutput`](crate::output::GetLoggerDefinitionVersionOutput).
@@ -3149,7 +3076,7 @@ impl GetLoggerDefinitionVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLoggerDefinitionOutput {
+pub struct GetLoggerDefinitionOutput  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3173,49 +3100,45 @@ pub struct GetLoggerDefinitionOutput {
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetLoggerDefinitionOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Tag(s) attached to the resource arn.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetLoggerDefinitionOutput`](crate::output::GetLoggerDefinitionOutput).
 pub mod get_logger_definition_output {
-
+    
     /// A builder for [`GetLoggerDefinitionOutput`](crate::output::GetLoggerDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3226,9 +3149,7 @@ pub mod get_logger_definition_output {
         pub(crate) latest_version: std::option::Option<std::string::String>,
         pub(crate) latest_version_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the definition.
@@ -3238,8 +3159,7 @@ pub mod get_logger_definition_output {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3247,12 +3167,8 @@ pub mod get_logger_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3261,8 +3177,7 @@ pub mod get_logger_definition_output {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3270,12 +3185,8 @@ pub mod get_logger_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3283,12 +3194,8 @@ pub mod get_logger_definition_output {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3296,12 +3203,8 @@ pub mod get_logger_definition_output {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3310,48 +3213,47 @@ pub mod get_logger_definition_output {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// Tag(s) attached to the resource arn.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// Tag(s) attached to the resource arn.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetLoggerDefinitionOutput`](crate::output::GetLoggerDefinitionOutput).
         pub fn build(self) -> crate::output::GetLoggerDefinitionOutput {
             crate::output::GetLoggerDefinitionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLoggerDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`GetLoggerDefinitionOutput`](crate::output::GetLoggerDefinitionOutput).
@@ -3363,7 +3265,7 @@ impl GetLoggerDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupVersionOutput {
+pub struct GetGroupVersionOutput  {
     /// The ARN of the group version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3382,29 +3284,29 @@ pub struct GetGroupVersionOutput {
 }
 impl GetGroupVersionOutput {
     /// The ARN of the group version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the group version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// Information about the group version definition.
-    pub fn definition(&self) -> std::option::Option<&crate::model::GroupVersion> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::GroupVersion> {
         self.definition.as_ref()
     }
     /// The ID of the group that the version is associated with.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the group version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`GetGroupVersionOutput`](crate::output::GetGroupVersionOutput).
 pub mod get_group_version_output {
-
+    
     /// A builder for [`GetGroupVersionOutput`](crate::output::GetGroupVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3422,8 +3324,7 @@ pub mod get_group_version_output {
         }
         /// The ARN of the group version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the group version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3431,12 +3332,8 @@ pub mod get_group_version_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the group version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// Information about the group version definition.
         pub fn definition(mut self, input: crate::model::GroupVersion) -> Self {
@@ -3444,12 +3341,8 @@ pub mod get_group_version_output {
             self
         }
         /// Information about the group version definition.
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::GroupVersion>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::GroupVersion>) -> Self {
+            self.definition = input; self
         }
         /// The ID of the group that the version is associated with.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3458,8 +3351,7 @@ pub mod get_group_version_output {
         }
         /// The ID of the group that the version is associated with.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The ID of the group version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3468,20 +3360,26 @@ pub mod get_group_version_output {
         }
         /// The ID of the group version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`GetGroupVersionOutput`](crate::output::GetGroupVersionOutput).
         pub fn build(self) -> crate::output::GetGroupVersionOutput {
             crate::output::GetGroupVersionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                definition: self.definition,
-                id: self.id,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                definition: self.definition
+                ,
+                id: self.id
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl GetGroupVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupVersionOutput`](crate::output::GetGroupVersionOutput).
@@ -3493,7 +3391,7 @@ impl GetGroupVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupCertificateConfigurationOutput {
+pub struct GetGroupCertificateConfigurationOutput  {
     /// The amount of time remaining before the certificate authority expires, in milliseconds.
     #[doc(hidden)]
     pub certificate_authority_expiry_in_milliseconds: std::option::Option<std::string::String>,
@@ -3506,61 +3404,46 @@ pub struct GetGroupCertificateConfigurationOutput {
 }
 impl GetGroupCertificateConfigurationOutput {
     /// The amount of time remaining before the certificate authority expires, in milliseconds.
-    pub fn certificate_authority_expiry_in_milliseconds(&self) -> std::option::Option<&str> {
+    pub fn certificate_authority_expiry_in_milliseconds(&self) -> std::option::Option<& str> {
         self.certificate_authority_expiry_in_milliseconds.as_deref()
     }
     /// The amount of time remaining before the certificate expires, in milliseconds.
-    pub fn certificate_expiry_in_milliseconds(&self) -> std::option::Option<&str> {
+    pub fn certificate_expiry_in_milliseconds(&self) -> std::option::Option<& str> {
         self.certificate_expiry_in_milliseconds.as_deref()
     }
     /// The ID of the group certificate configuration.
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
 /// See [`GetGroupCertificateConfigurationOutput`](crate::output::GetGroupCertificateConfigurationOutput).
 pub mod get_group_certificate_configuration_output {
-
+    
     /// A builder for [`GetGroupCertificateConfigurationOutput`](crate::output::GetGroupCertificateConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) certificate_authority_expiry_in_milliseconds:
-            std::option::Option<std::string::String>,
+        pub(crate) certificate_authority_expiry_in_milliseconds: std::option::Option<std::string::String>,
         pub(crate) certificate_expiry_in_milliseconds: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// The amount of time remaining before the certificate authority expires, in milliseconds.
-        pub fn certificate_authority_expiry_in_milliseconds(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn certificate_authority_expiry_in_milliseconds(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_expiry_in_milliseconds = Some(input.into());
             self
         }
         /// The amount of time remaining before the certificate authority expires, in milliseconds.
-        pub fn set_certificate_authority_expiry_in_milliseconds(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_authority_expiry_in_milliseconds = input;
-            self
+        pub fn set_certificate_authority_expiry_in_milliseconds(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_authority_expiry_in_milliseconds = input; self
         }
         /// The amount of time remaining before the certificate expires, in milliseconds.
-        pub fn certificate_expiry_in_milliseconds(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn certificate_expiry_in_milliseconds(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_expiry_in_milliseconds = Some(input.into());
             self
         }
         /// The amount of time remaining before the certificate expires, in milliseconds.
-        pub fn set_certificate_expiry_in_milliseconds(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_expiry_in_milliseconds = input;
-            self
+        pub fn set_certificate_expiry_in_milliseconds(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_expiry_in_milliseconds = input; self
         }
         /// The ID of the group certificate configuration.
         pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3569,19 +3452,22 @@ pub mod get_group_certificate_configuration_output {
         }
         /// The ID of the group certificate configuration.
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_id = input;
-            self
+            self.group_id = input; self
         }
         /// Consumes the builder and constructs a [`GetGroupCertificateConfigurationOutput`](crate::output::GetGroupCertificateConfigurationOutput).
         pub fn build(self) -> crate::output::GetGroupCertificateConfigurationOutput {
             crate::output::GetGroupCertificateConfigurationOutput {
-                certificate_authority_expiry_in_milliseconds: self
-                    .certificate_authority_expiry_in_milliseconds,
-                certificate_expiry_in_milliseconds: self.certificate_expiry_in_milliseconds,
-                group_id: self.group_id,
+                certificate_authority_expiry_in_milliseconds: self.certificate_authority_expiry_in_milliseconds
+                ,
+                certificate_expiry_in_milliseconds: self.certificate_expiry_in_milliseconds
+                ,
+                group_id: self.group_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GetGroupCertificateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupCertificateConfigurationOutput`](crate::output::GetGroupCertificateConfigurationOutput).
@@ -3593,7 +3479,7 @@ impl GetGroupCertificateConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupCertificateAuthorityOutput {
+pub struct GetGroupCertificateAuthorityOutput  {
     /// The ARN of the certificate authority for the group.
     #[doc(hidden)]
     pub group_certificate_authority_arn: std::option::Option<std::string::String>,
@@ -3606,21 +3492,21 @@ pub struct GetGroupCertificateAuthorityOutput {
 }
 impl GetGroupCertificateAuthorityOutput {
     /// The ARN of the certificate authority for the group.
-    pub fn group_certificate_authority_arn(&self) -> std::option::Option<&str> {
+    pub fn group_certificate_authority_arn(&self) -> std::option::Option<& str> {
         self.group_certificate_authority_arn.as_deref()
     }
     /// The ID of the certificate authority for the group.
-    pub fn group_certificate_authority_id(&self) -> std::option::Option<&str> {
+    pub fn group_certificate_authority_id(&self) -> std::option::Option<& str> {
         self.group_certificate_authority_id.as_deref()
     }
     /// The PEM encoded certificate for the group.
-    pub fn pem_encoded_certificate(&self) -> std::option::Option<&str> {
+    pub fn pem_encoded_certificate(&self) -> std::option::Option<& str> {
         self.pem_encoded_certificate.as_deref()
     }
 }
 /// See [`GetGroupCertificateAuthorityOutput`](crate::output::GetGroupCertificateAuthorityOutput).
 pub mod get_group_certificate_authority_output {
-
+    
     /// A builder for [`GetGroupCertificateAuthorityOutput`](crate::output::GetGroupCertificateAuthorityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3630,36 +3516,22 @@ pub mod get_group_certificate_authority_output {
     }
     impl Builder {
         /// The ARN of the certificate authority for the group.
-        pub fn group_certificate_authority_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn group_certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_certificate_authority_arn = Some(input.into());
             self
         }
         /// The ARN of the certificate authority for the group.
-        pub fn set_group_certificate_authority_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.group_certificate_authority_arn = input;
-            self
+        pub fn set_group_certificate_authority_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_certificate_authority_arn = input; self
         }
         /// The ID of the certificate authority for the group.
-        pub fn group_certificate_authority_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn group_certificate_authority_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_certificate_authority_id = Some(input.into());
             self
         }
         /// The ID of the certificate authority for the group.
-        pub fn set_group_certificate_authority_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.group_certificate_authority_id = input;
-            self
+        pub fn set_group_certificate_authority_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_certificate_authority_id = input; self
         }
         /// The PEM encoded certificate for the group.
         pub fn pem_encoded_certificate(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3667,22 +3539,23 @@ pub mod get_group_certificate_authority_output {
             self
         }
         /// The PEM encoded certificate for the group.
-        pub fn set_pem_encoded_certificate(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pem_encoded_certificate = input;
-            self
+        pub fn set_pem_encoded_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pem_encoded_certificate = input; self
         }
         /// Consumes the builder and constructs a [`GetGroupCertificateAuthorityOutput`](crate::output::GetGroupCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::GetGroupCertificateAuthorityOutput {
             crate::output::GetGroupCertificateAuthorityOutput {
-                group_certificate_authority_arn: self.group_certificate_authority_arn,
-                group_certificate_authority_id: self.group_certificate_authority_id,
-                pem_encoded_certificate: self.pem_encoded_certificate,
+                group_certificate_authority_arn: self.group_certificate_authority_arn
+                ,
+                group_certificate_authority_id: self.group_certificate_authority_id
+                ,
+                pem_encoded_certificate: self.pem_encoded_certificate
+                ,
             }
         }
     }
+    
+    
 }
 impl GetGroupCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupCertificateAuthorityOutput`](crate::output::GetGroupCertificateAuthorityOutput).
@@ -3694,7 +3567,7 @@ impl GetGroupCertificateAuthorityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupOutput {
+pub struct GetGroupOutput  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3718,49 +3591,45 @@ pub struct GetGroupOutput {
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetGroupOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Tag(s) attached to the resource arn.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetGroupOutput`](crate::output::GetGroupOutput).
 pub mod get_group_output {
-
+    
     /// A builder for [`GetGroupOutput`](crate::output::GetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3771,9 +3640,7 @@ pub mod get_group_output {
         pub(crate) latest_version: std::option::Option<std::string::String>,
         pub(crate) latest_version_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the definition.
@@ -3783,8 +3650,7 @@ pub mod get_group_output {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3792,12 +3658,8 @@ pub mod get_group_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3806,8 +3668,7 @@ pub mod get_group_output {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3815,12 +3676,8 @@ pub mod get_group_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3828,12 +3685,8 @@ pub mod get_group_output {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3841,12 +3694,8 @@ pub mod get_group_output {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3855,48 +3704,47 @@ pub mod get_group_output {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// Tag(s) attached to the resource arn.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// Tag(s) attached to the resource arn.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetGroupOutput`](crate::output::GetGroupOutput).
         pub fn build(self) -> crate::output::GetGroupOutput {
             crate::output::GetGroupOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupOutput`](crate::output::GetGroupOutput).
@@ -3908,7 +3756,7 @@ impl GetGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFunctionDefinitionVersionOutput {
+pub struct GetFunctionDefinitionVersionOutput  {
     /// The ARN of the function definition version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3930,33 +3778,33 @@ pub struct GetFunctionDefinitionVersionOutput {
 }
 impl GetFunctionDefinitionVersionOutput {
     /// The ARN of the function definition version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the function definition version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// Information on the definition.
-    pub fn definition(&self) -> std::option::Option<&crate::model::FunctionDefinitionVersion> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::FunctionDefinitionVersion> {
         self.definition.as_ref()
     }
     /// The ID of the function definition version.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// The version of the function definition version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`GetFunctionDefinitionVersionOutput`](crate::output::GetFunctionDefinitionVersionOutput).
 pub mod get_function_definition_version_output {
-
+    
     /// A builder for [`GetFunctionDefinitionVersionOutput`](crate::output::GetFunctionDefinitionVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3975,8 +3823,7 @@ pub mod get_function_definition_version_output {
         }
         /// The ARN of the function definition version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the function definition version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3984,12 +3831,8 @@ pub mod get_function_definition_version_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the function definition version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// Information on the definition.
         pub fn definition(mut self, input: crate::model::FunctionDefinitionVersion) -> Self {
@@ -3997,12 +3840,8 @@ pub mod get_function_definition_version_output {
             self
         }
         /// Information on the definition.
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::FunctionDefinitionVersion>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::FunctionDefinitionVersion>) -> Self {
+            self.definition = input; self
         }
         /// The ID of the function definition version.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4011,8 +3850,7 @@ pub mod get_function_definition_version_output {
         }
         /// The ID of the function definition version.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4021,8 +3859,7 @@ pub mod get_function_definition_version_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// The version of the function definition version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4031,21 +3868,28 @@ pub mod get_function_definition_version_output {
         }
         /// The version of the function definition version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`GetFunctionDefinitionVersionOutput`](crate::output::GetFunctionDefinitionVersionOutput).
         pub fn build(self) -> crate::output::GetFunctionDefinitionVersionOutput {
             crate::output::GetFunctionDefinitionVersionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                definition: self.definition,
-                id: self.id,
-                next_token: self.next_token,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                definition: self.definition
+                ,
+                id: self.id
+                ,
+                next_token: self.next_token
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFunctionDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionDefinitionVersionOutput`](crate::output::GetFunctionDefinitionVersionOutput).
@@ -4057,7 +3901,7 @@ impl GetFunctionDefinitionVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFunctionDefinitionOutput {
+pub struct GetFunctionDefinitionOutput  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4081,49 +3925,45 @@ pub struct GetFunctionDefinitionOutput {
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetFunctionDefinitionOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Tag(s) attached to the resource arn.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetFunctionDefinitionOutput`](crate::output::GetFunctionDefinitionOutput).
 pub mod get_function_definition_output {
-
+    
     /// A builder for [`GetFunctionDefinitionOutput`](crate::output::GetFunctionDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4134,9 +3974,7 @@ pub mod get_function_definition_output {
         pub(crate) latest_version: std::option::Option<std::string::String>,
         pub(crate) latest_version_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the definition.
@@ -4146,8 +3984,7 @@ pub mod get_function_definition_output {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4155,12 +3992,8 @@ pub mod get_function_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4169,8 +4002,7 @@ pub mod get_function_definition_output {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4178,12 +4010,8 @@ pub mod get_function_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4191,12 +4019,8 @@ pub mod get_function_definition_output {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4204,12 +4028,8 @@ pub mod get_function_definition_output {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4218,48 +4038,47 @@ pub mod get_function_definition_output {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// Tag(s) attached to the resource arn.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// Tag(s) attached to the resource arn.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetFunctionDefinitionOutput`](crate::output::GetFunctionDefinitionOutput).
         pub fn build(self) -> crate::output::GetFunctionDefinitionOutput {
             crate::output::GetFunctionDefinitionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFunctionDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionDefinitionOutput`](crate::output::GetFunctionDefinitionOutput).
@@ -4271,7 +4090,7 @@ impl GetFunctionDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeviceDefinitionVersionOutput {
+pub struct GetDeviceDefinitionVersionOutput  {
     /// The ARN of the device definition version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4293,33 +4112,33 @@ pub struct GetDeviceDefinitionVersionOutput {
 }
 impl GetDeviceDefinitionVersionOutput {
     /// The ARN of the device definition version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the device definition version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// Information about the device definition version.
-    pub fn definition(&self) -> std::option::Option<&crate::model::DeviceDefinitionVersion> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::DeviceDefinitionVersion> {
         self.definition.as_ref()
     }
     /// The ID of the device definition version.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// The version of the device definition version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`GetDeviceDefinitionVersionOutput`](crate::output::GetDeviceDefinitionVersionOutput).
 pub mod get_device_definition_version_output {
-
+    
     /// A builder for [`GetDeviceDefinitionVersionOutput`](crate::output::GetDeviceDefinitionVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4338,8 +4157,7 @@ pub mod get_device_definition_version_output {
         }
         /// The ARN of the device definition version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the device definition version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4347,12 +4165,8 @@ pub mod get_device_definition_version_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the device definition version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// Information about the device definition version.
         pub fn definition(mut self, input: crate::model::DeviceDefinitionVersion) -> Self {
@@ -4360,12 +4174,8 @@ pub mod get_device_definition_version_output {
             self
         }
         /// Information about the device definition version.
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::DeviceDefinitionVersion>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::DeviceDefinitionVersion>) -> Self {
+            self.definition = input; self
         }
         /// The ID of the device definition version.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4374,8 +4184,7 @@ pub mod get_device_definition_version_output {
         }
         /// The ID of the device definition version.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4384,8 +4193,7 @@ pub mod get_device_definition_version_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// The version of the device definition version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4394,21 +4202,28 @@ pub mod get_device_definition_version_output {
         }
         /// The version of the device definition version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`GetDeviceDefinitionVersionOutput`](crate::output::GetDeviceDefinitionVersionOutput).
         pub fn build(self) -> crate::output::GetDeviceDefinitionVersionOutput {
             crate::output::GetDeviceDefinitionVersionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                definition: self.definition,
-                id: self.id,
-                next_token: self.next_token,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                definition: self.definition
+                ,
+                id: self.id
+                ,
+                next_token: self.next_token
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeviceDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceDefinitionVersionOutput`](crate::output::GetDeviceDefinitionVersionOutput).
@@ -4420,7 +4235,7 @@ impl GetDeviceDefinitionVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeviceDefinitionOutput {
+pub struct GetDeviceDefinitionOutput  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4444,49 +4259,45 @@ pub struct GetDeviceDefinitionOutput {
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetDeviceDefinitionOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Tag(s) attached to the resource arn.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetDeviceDefinitionOutput`](crate::output::GetDeviceDefinitionOutput).
 pub mod get_device_definition_output {
-
+    
     /// A builder for [`GetDeviceDefinitionOutput`](crate::output::GetDeviceDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4497,9 +4308,7 @@ pub mod get_device_definition_output {
         pub(crate) latest_version: std::option::Option<std::string::String>,
         pub(crate) latest_version_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the definition.
@@ -4509,8 +4318,7 @@ pub mod get_device_definition_output {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4518,12 +4326,8 @@ pub mod get_device_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4532,8 +4336,7 @@ pub mod get_device_definition_output {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4541,12 +4344,8 @@ pub mod get_device_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4554,12 +4353,8 @@ pub mod get_device_definition_output {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4567,12 +4362,8 @@ pub mod get_device_definition_output {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4581,48 +4372,47 @@ pub mod get_device_definition_output {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// Tag(s) attached to the resource arn.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// Tag(s) attached to the resource arn.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetDeviceDefinitionOutput`](crate::output::GetDeviceDefinitionOutput).
         pub fn build(self) -> crate::output::GetDeviceDefinitionOutput {
             crate::output::GetDeviceDefinitionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeviceDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceDefinitionOutput`](crate::output::GetDeviceDefinitionOutput).
@@ -4634,7 +4424,7 @@ impl GetDeviceDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentStatusOutput {
+pub struct GetDeploymentStatusOutput  {
     /// The status of the deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
     #[doc(hidden)]
     pub deployment_status: std::option::Option<std::string::String>,
@@ -4653,29 +4443,29 @@ pub struct GetDeploymentStatusOutput {
 }
 impl GetDeploymentStatusOutput {
     /// The status of the deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
-    pub fn deployment_status(&self) -> std::option::Option<&str> {
+    pub fn deployment_status(&self) -> std::option::Option<& str> {
         self.deployment_status.as_deref()
     }
     /// The type of the deployment.
-    pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentType> {
+    pub fn deployment_type(&self) -> std::option::Option<& crate::model::DeploymentType> {
         self.deployment_type.as_ref()
     }
     /// Error details
-    pub fn error_details(&self) -> std::option::Option<&[crate::model::ErrorDetail]> {
+    pub fn error_details(&self) -> std::option::Option<& [crate::model::ErrorDetail]> {
         self.error_details.as_deref()
     }
     /// Error message
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the deployment status was updated.
-    pub fn updated_at(&self) -> std::option::Option<&str> {
+    pub fn updated_at(&self) -> std::option::Option<& str> {
         self.updated_at.as_deref()
     }
 }
 /// See [`GetDeploymentStatusOutput`](crate::output::GetDeploymentStatusOutput).
 pub mod get_deployment_status_output {
-
+    
     /// A builder for [`GetDeploymentStatusOutput`](crate::output::GetDeploymentStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4692,12 +4482,8 @@ pub mod get_deployment_status_output {
             self
         }
         /// The status of the deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
-        pub fn set_deployment_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_status = input;
-            self
+        pub fn set_deployment_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_status = input; self
         }
         /// The type of the deployment.
         pub fn deployment_type(mut self, input: crate::model::DeploymentType) -> Self {
@@ -4705,12 +4491,8 @@ pub mod get_deployment_status_output {
             self
         }
         /// The type of the deployment.
-        pub fn set_deployment_type(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentType>,
-        ) -> Self {
-            self.deployment_type = input;
-            self
+        pub fn set_deployment_type(mut self, input: std::option::Option<crate::model::DeploymentType>) -> Self {
+            self.deployment_type = input; self
         }
         /// Appends an item to `error_details`.
         ///
@@ -4719,17 +4501,13 @@ pub mod get_deployment_status_output {
         /// Error details
         pub fn error_details(mut self, input: crate::model::ErrorDetail) -> Self {
             let mut v = self.error_details.unwrap_or_default();
-            v.push(input);
-            self.error_details = Some(v);
-            self
+                            v.push(input);
+                            self.error_details = Some(v);
+                            self
         }
         /// Error details
-        pub fn set_error_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
-        ) -> Self {
-            self.error_details = input;
-            self
+        pub fn set_error_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>) -> Self {
+            self.error_details = input; self
         }
         /// Error message
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4737,12 +4515,8 @@ pub mod get_deployment_status_output {
             self
         }
         /// Error message
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// The time, in milliseconds since the epoch, when the deployment status was updated.
         pub fn updated_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4751,20 +4525,26 @@ pub mod get_deployment_status_output {
         }
         /// The time, in milliseconds since the epoch, when the deployment status was updated.
         pub fn set_updated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.updated_at = input;
-            self
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`GetDeploymentStatusOutput`](crate::output::GetDeploymentStatusOutput).
         pub fn build(self) -> crate::output::GetDeploymentStatusOutput {
             crate::output::GetDeploymentStatusOutput {
-                deployment_status: self.deployment_status,
-                deployment_type: self.deployment_type,
-                error_details: self.error_details,
-                error_message: self.error_message,
-                updated_at: self.updated_at,
+                deployment_status: self.deployment_status
+                ,
+                deployment_type: self.deployment_type
+                ,
+                error_details: self.error_details
+                ,
+                error_message: self.error_message
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeploymentStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentStatusOutput`](crate::output::GetDeploymentStatusOutput).
@@ -4776,7 +4556,7 @@ impl GetDeploymentStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCoreDefinitionVersionOutput {
+pub struct GetCoreDefinitionVersionOutput  {
     /// The ARN of the core definition version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4798,33 +4578,33 @@ pub struct GetCoreDefinitionVersionOutput {
 }
 impl GetCoreDefinitionVersionOutput {
     /// The ARN of the core definition version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the core definition version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// Information about the core definition version.
-    pub fn definition(&self) -> std::option::Option<&crate::model::CoreDefinitionVersion> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::CoreDefinitionVersion> {
         self.definition.as_ref()
     }
     /// The ID of the core definition version.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// The version of the core definition version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`GetCoreDefinitionVersionOutput`](crate::output::GetCoreDefinitionVersionOutput).
 pub mod get_core_definition_version_output {
-
+    
     /// A builder for [`GetCoreDefinitionVersionOutput`](crate::output::GetCoreDefinitionVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4843,8 +4623,7 @@ pub mod get_core_definition_version_output {
         }
         /// The ARN of the core definition version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the core definition version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4852,12 +4631,8 @@ pub mod get_core_definition_version_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the core definition version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// Information about the core definition version.
         pub fn definition(mut self, input: crate::model::CoreDefinitionVersion) -> Self {
@@ -4865,12 +4640,8 @@ pub mod get_core_definition_version_output {
             self
         }
         /// Information about the core definition version.
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::CoreDefinitionVersion>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::CoreDefinitionVersion>) -> Self {
+            self.definition = input; self
         }
         /// The ID of the core definition version.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4879,8 +4650,7 @@ pub mod get_core_definition_version_output {
         }
         /// The ID of the core definition version.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4889,8 +4659,7 @@ pub mod get_core_definition_version_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// The version of the core definition version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4899,21 +4668,28 @@ pub mod get_core_definition_version_output {
         }
         /// The version of the core definition version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`GetCoreDefinitionVersionOutput`](crate::output::GetCoreDefinitionVersionOutput).
         pub fn build(self) -> crate::output::GetCoreDefinitionVersionOutput {
             crate::output::GetCoreDefinitionVersionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                definition: self.definition,
-                id: self.id,
-                next_token: self.next_token,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                definition: self.definition
+                ,
+                id: self.id
+                ,
+                next_token: self.next_token
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCoreDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetCoreDefinitionVersionOutput`](crate::output::GetCoreDefinitionVersionOutput).
@@ -4925,7 +4701,7 @@ impl GetCoreDefinitionVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCoreDefinitionOutput {
+pub struct GetCoreDefinitionOutput  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4949,49 +4725,45 @@ pub struct GetCoreDefinitionOutput {
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetCoreDefinitionOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Tag(s) attached to the resource arn.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetCoreDefinitionOutput`](crate::output::GetCoreDefinitionOutput).
 pub mod get_core_definition_output {
-
+    
     /// A builder for [`GetCoreDefinitionOutput`](crate::output::GetCoreDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5002,9 +4774,7 @@ pub mod get_core_definition_output {
         pub(crate) latest_version: std::option::Option<std::string::String>,
         pub(crate) latest_version_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the definition.
@@ -5014,8 +4784,7 @@ pub mod get_core_definition_output {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5023,12 +4792,8 @@ pub mod get_core_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5037,8 +4802,7 @@ pub mod get_core_definition_output {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5046,12 +4810,8 @@ pub mod get_core_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5059,12 +4819,8 @@ pub mod get_core_definition_output {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5072,12 +4828,8 @@ pub mod get_core_definition_output {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5086,48 +4838,47 @@ pub mod get_core_definition_output {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// Tag(s) attached to the resource arn.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// Tag(s) attached to the resource arn.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetCoreDefinitionOutput`](crate::output::GetCoreDefinitionOutput).
         pub fn build(self) -> crate::output::GetCoreDefinitionOutput {
             crate::output::GetCoreDefinitionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCoreDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`GetCoreDefinitionOutput`](crate::output::GetCoreDefinitionOutput).
@@ -5139,7 +4890,7 @@ impl GetCoreDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConnectorDefinitionVersionOutput {
+pub struct GetConnectorDefinitionVersionOutput  {
     /// The ARN of the connector definition version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5161,33 +4912,33 @@ pub struct GetConnectorDefinitionVersionOutput {
 }
 impl GetConnectorDefinitionVersionOutput {
     /// The ARN of the connector definition version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the connector definition version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// Information about the connector definition version.
-    pub fn definition(&self) -> std::option::Option<&crate::model::ConnectorDefinitionVersion> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::ConnectorDefinitionVersion> {
         self.definition.as_ref()
     }
     /// The ID of the connector definition version.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// The version of the connector definition version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`GetConnectorDefinitionVersionOutput`](crate::output::GetConnectorDefinitionVersionOutput).
 pub mod get_connector_definition_version_output {
-
+    
     /// A builder for [`GetConnectorDefinitionVersionOutput`](crate::output::GetConnectorDefinitionVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5206,8 +4957,7 @@ pub mod get_connector_definition_version_output {
         }
         /// The ARN of the connector definition version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the connector definition version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5215,12 +4965,8 @@ pub mod get_connector_definition_version_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the connector definition version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// Information about the connector definition version.
         pub fn definition(mut self, input: crate::model::ConnectorDefinitionVersion) -> Self {
@@ -5228,12 +4974,8 @@ pub mod get_connector_definition_version_output {
             self
         }
         /// Information about the connector definition version.
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::ConnectorDefinitionVersion>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::ConnectorDefinitionVersion>) -> Self {
+            self.definition = input; self
         }
         /// The ID of the connector definition version.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5242,8 +4984,7 @@ pub mod get_connector_definition_version_output {
         }
         /// The ID of the connector definition version.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5252,8 +4993,7 @@ pub mod get_connector_definition_version_output {
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// The version of the connector definition version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5262,21 +5002,28 @@ pub mod get_connector_definition_version_output {
         }
         /// The version of the connector definition version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`GetConnectorDefinitionVersionOutput`](crate::output::GetConnectorDefinitionVersionOutput).
         pub fn build(self) -> crate::output::GetConnectorDefinitionVersionOutput {
             crate::output::GetConnectorDefinitionVersionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                definition: self.definition,
-                id: self.id,
-                next_token: self.next_token,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                definition: self.definition
+                ,
+                id: self.id
+                ,
+                next_token: self.next_token
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl GetConnectorDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectorDefinitionVersionOutput`](crate::output::GetConnectorDefinitionVersionOutput).
@@ -5288,7 +5035,7 @@ impl GetConnectorDefinitionVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConnectorDefinitionOutput {
+pub struct GetConnectorDefinitionOutput  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5312,49 +5059,45 @@ pub struct GetConnectorDefinitionOutput {
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetConnectorDefinitionOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Tag(s) attached to the resource arn.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetConnectorDefinitionOutput`](crate::output::GetConnectorDefinitionOutput).
 pub mod get_connector_definition_output {
-
+    
     /// A builder for [`GetConnectorDefinitionOutput`](crate::output::GetConnectorDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5365,9 +5108,7 @@ pub mod get_connector_definition_output {
         pub(crate) latest_version: std::option::Option<std::string::String>,
         pub(crate) latest_version_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the definition.
@@ -5377,8 +5118,7 @@ pub mod get_connector_definition_output {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5386,12 +5126,8 @@ pub mod get_connector_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5400,8 +5136,7 @@ pub mod get_connector_definition_output {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5409,12 +5144,8 @@ pub mod get_connector_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5422,12 +5153,8 @@ pub mod get_connector_definition_output {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5435,12 +5162,8 @@ pub mod get_connector_definition_output {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5449,48 +5172,47 @@ pub mod get_connector_definition_output {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// Tag(s) attached to the resource arn.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// Tag(s) attached to the resource arn.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetConnectorDefinitionOutput`](crate::output::GetConnectorDefinitionOutput).
         pub fn build(self) -> crate::output::GetConnectorDefinitionOutput {
             crate::output::GetConnectorDefinitionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetConnectorDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectorDefinitionOutput`](crate::output::GetConnectorDefinitionOutput).
@@ -5502,7 +5224,7 @@ impl GetConnectorDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConnectivityInfoOutput {
+pub struct GetConnectivityInfoOutput  {
     /// Connectivity info list.
     #[doc(hidden)]
     pub connectivity_info: std::option::Option<std::vec::Vec<crate::model::ConnectivityInfo>>,
@@ -5512,22 +5234,21 @@ pub struct GetConnectivityInfoOutput {
 }
 impl GetConnectivityInfoOutput {
     /// Connectivity info list.
-    pub fn connectivity_info(&self) -> std::option::Option<&[crate::model::ConnectivityInfo]> {
+    pub fn connectivity_info(&self) -> std::option::Option<& [crate::model::ConnectivityInfo]> {
         self.connectivity_info.as_deref()
     }
     /// A message about the connectivity info request.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`GetConnectivityInfoOutput`](crate::output::GetConnectivityInfoOutput).
 pub mod get_connectivity_info_output {
-
+    
     /// A builder for [`GetConnectivityInfoOutput`](crate::output::GetConnectivityInfoOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) connectivity_info:
-            std::option::Option<std::vec::Vec<crate::model::ConnectivityInfo>>,
+        pub(crate) connectivity_info: std::option::Option<std::vec::Vec<crate::model::ConnectivityInfo>>,
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5538,17 +5259,13 @@ pub mod get_connectivity_info_output {
         /// Connectivity info list.
         pub fn connectivity_info(mut self, input: crate::model::ConnectivityInfo) -> Self {
             let mut v = self.connectivity_info.unwrap_or_default();
-            v.push(input);
-            self.connectivity_info = Some(v);
-            self
+                            v.push(input);
+                            self.connectivity_info = Some(v);
+                            self
         }
         /// Connectivity info list.
-        pub fn set_connectivity_info(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConnectivityInfo>>,
-        ) -> Self {
-            self.connectivity_info = input;
-            self
+        pub fn set_connectivity_info(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConnectivityInfo>>) -> Self {
+            self.connectivity_info = input; self
         }
         /// A message about the connectivity info request.
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5557,17 +5274,20 @@ pub mod get_connectivity_info_output {
         }
         /// A message about the connectivity info request.
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`GetConnectivityInfoOutput`](crate::output::GetConnectivityInfoOutput).
         pub fn build(self) -> crate::output::GetConnectivityInfoOutput {
             crate::output::GetConnectivityInfoOutput {
-                connectivity_info: self.connectivity_info,
-                message: self.message,
+                connectivity_info: self.connectivity_info
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl GetConnectivityInfoOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectivityInfoOutput`](crate::output::GetConnectivityInfoOutput).
@@ -5579,7 +5299,7 @@ impl GetConnectivityInfoOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBulkDeploymentStatusOutput {
+pub struct GetBulkDeploymentStatusOutput  {
     /// Relevant metrics on input records processed during bulk deployment.
     #[doc(hidden)]
     pub bulk_deployment_metrics: std::option::Option<crate::model::BulkDeploymentMetrics>,
@@ -5597,74 +5317,56 @@ pub struct GetBulkDeploymentStatusOutput {
     pub error_message: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetBulkDeploymentStatusOutput {
     /// Relevant metrics on input records processed during bulk deployment.
-    pub fn bulk_deployment_metrics(
-        &self,
-    ) -> std::option::Option<&crate::model::BulkDeploymentMetrics> {
+    pub fn bulk_deployment_metrics(&self) -> std::option::Option<& crate::model::BulkDeploymentMetrics> {
         self.bulk_deployment_metrics.as_ref()
     }
     /// The status of the bulk deployment.
-    pub fn bulk_deployment_status(
-        &self,
-    ) -> std::option::Option<&crate::model::BulkDeploymentStatus> {
+    pub fn bulk_deployment_status(&self) -> std::option::Option<& crate::model::BulkDeploymentStatus> {
         self.bulk_deployment_status.as_ref()
     }
     /// The time, in ISO format, when the deployment was created.
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// Error details
-    pub fn error_details(&self) -> std::option::Option<&[crate::model::ErrorDetail]> {
+    pub fn error_details(&self) -> std::option::Option<& [crate::model::ErrorDetail]> {
         self.error_details.as_deref()
     }
     /// Error message
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// Tag(s) attached to the resource arn.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetBulkDeploymentStatusOutput`](crate::output::GetBulkDeploymentStatusOutput).
 pub mod get_bulk_deployment_status_output {
-
+    
     /// A builder for [`GetBulkDeploymentStatusOutput`](crate::output::GetBulkDeploymentStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) bulk_deployment_metrics:
-            std::option::Option<crate::model::BulkDeploymentMetrics>,
+        pub(crate) bulk_deployment_metrics: std::option::Option<crate::model::BulkDeploymentMetrics>,
         pub(crate) bulk_deployment_status: std::option::Option<crate::model::BulkDeploymentStatus>,
         pub(crate) created_at: std::option::Option<std::string::String>,
         pub(crate) error_details: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Relevant metrics on input records processed during bulk deployment.
-        pub fn bulk_deployment_metrics(
-            mut self,
-            input: crate::model::BulkDeploymentMetrics,
-        ) -> Self {
+        pub fn bulk_deployment_metrics(mut self, input: crate::model::BulkDeploymentMetrics) -> Self {
             self.bulk_deployment_metrics = Some(input);
             self
         }
         /// Relevant metrics on input records processed during bulk deployment.
-        pub fn set_bulk_deployment_metrics(
-            mut self,
-            input: std::option::Option<crate::model::BulkDeploymentMetrics>,
-        ) -> Self {
-            self.bulk_deployment_metrics = input;
-            self
+        pub fn set_bulk_deployment_metrics(mut self, input: std::option::Option<crate::model::BulkDeploymentMetrics>) -> Self {
+            self.bulk_deployment_metrics = input; self
         }
         /// The status of the bulk deployment.
         pub fn bulk_deployment_status(mut self, input: crate::model::BulkDeploymentStatus) -> Self {
@@ -5672,12 +5374,8 @@ pub mod get_bulk_deployment_status_output {
             self
         }
         /// The status of the bulk deployment.
-        pub fn set_bulk_deployment_status(
-            mut self,
-            input: std::option::Option<crate::model::BulkDeploymentStatus>,
-        ) -> Self {
-            self.bulk_deployment_status = input;
-            self
+        pub fn set_bulk_deployment_status(mut self, input: std::option::Option<crate::model::BulkDeploymentStatus>) -> Self {
+            self.bulk_deployment_status = input; self
         }
         /// The time, in ISO format, when the deployment was created.
         pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5686,8 +5384,7 @@ pub mod get_bulk_deployment_status_output {
         }
         /// The time, in ISO format, when the deployment was created.
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
         /// Appends an item to `error_details`.
         ///
@@ -5696,17 +5393,13 @@ pub mod get_bulk_deployment_status_output {
         /// Error details
         pub fn error_details(mut self, input: crate::model::ErrorDetail) -> Self {
             let mut v = self.error_details.unwrap_or_default();
-            v.push(input);
-            self.error_details = Some(v);
-            self
+                            v.push(input);
+                            self.error_details = Some(v);
+                            self
         }
         /// Error details
-        pub fn set_error_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
-        ) -> Self {
-            self.error_details = input;
-            self
+        pub fn set_error_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>) -> Self {
+            self.error_details = input; self
         }
         /// Error message
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5714,50 +5407,44 @@ pub mod get_bulk_deployment_status_output {
             self
         }
         /// Error message
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// Tag(s) attached to the resource arn.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// Tag(s) attached to the resource arn.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetBulkDeploymentStatusOutput`](crate::output::GetBulkDeploymentStatusOutput).
         pub fn build(self) -> crate::output::GetBulkDeploymentStatusOutput {
             crate::output::GetBulkDeploymentStatusOutput {
-                bulk_deployment_metrics: self.bulk_deployment_metrics,
-                bulk_deployment_status: self.bulk_deployment_status,
-                created_at: self.created_at,
-                error_details: self.error_details,
-                error_message: self.error_message,
-                tags: self.tags,
+                bulk_deployment_metrics: self.bulk_deployment_metrics
+                ,
+                bulk_deployment_status: self.bulk_deployment_status
+                ,
+                created_at: self.created_at
+                ,
+                error_details: self.error_details
+                ,
+                error_message: self.error_message
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBulkDeploymentStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetBulkDeploymentStatusOutput`](crate::output::GetBulkDeploymentStatusOutput).
@@ -5769,7 +5456,7 @@ impl GetBulkDeploymentStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssociatedRoleOutput {
+pub struct GetAssociatedRoleOutput  {
     /// The time when the role was associated with the group.
     #[doc(hidden)]
     pub associated_at: std::option::Option<std::string::String>,
@@ -5779,17 +5466,17 @@ pub struct GetAssociatedRoleOutput {
 }
 impl GetAssociatedRoleOutput {
     /// The time when the role was associated with the group.
-    pub fn associated_at(&self) -> std::option::Option<&str> {
+    pub fn associated_at(&self) -> std::option::Option<& str> {
         self.associated_at.as_deref()
     }
     /// The ARN of the role that is associated with the group.
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 /// See [`GetAssociatedRoleOutput`](crate::output::GetAssociatedRoleOutput).
 pub mod get_associated_role_output {
-
+    
     /// A builder for [`GetAssociatedRoleOutput`](crate::output::GetAssociatedRoleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5803,12 +5490,8 @@ pub mod get_associated_role_output {
             self
         }
         /// The time when the role was associated with the group.
-        pub fn set_associated_at(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.associated_at = input;
-            self
+        pub fn set_associated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.associated_at = input; self
         }
         /// The ARN of the role that is associated with the group.
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5817,17 +5500,20 @@ pub mod get_associated_role_output {
         }
         /// The ARN of the role that is associated with the group.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetAssociatedRoleOutput`](crate::output::GetAssociatedRoleOutput).
         pub fn build(self) -> crate::output::GetAssociatedRoleOutput {
             crate::output::GetAssociatedRoleOutput {
-                associated_at: self.associated_at,
-                role_arn: self.role_arn,
+                associated_at: self.associated_at
+                ,
+                role_arn: self.role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAssociatedRoleOutput {
     /// Creates a new builder-style object to manufacture [`GetAssociatedRoleOutput`](crate::output::GetAssociatedRoleOutput).
@@ -5839,20 +5525,20 @@ impl GetAssociatedRoleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateServiceRoleFromAccountOutput {
+pub struct DisassociateServiceRoleFromAccountOutput  {
     /// The time when the service role was disassociated from the account.
     #[doc(hidden)]
     pub disassociated_at: std::option::Option<std::string::String>,
 }
 impl DisassociateServiceRoleFromAccountOutput {
     /// The time when the service role was disassociated from the account.
-    pub fn disassociated_at(&self) -> std::option::Option<&str> {
+    pub fn disassociated_at(&self) -> std::option::Option<& str> {
         self.disassociated_at.as_deref()
     }
 }
 /// See [`DisassociateServiceRoleFromAccountOutput`](crate::output::DisassociateServiceRoleFromAccountOutput).
 pub mod disassociate_service_role_from_account_output {
-
+    
     /// A builder for [`DisassociateServiceRoleFromAccountOutput`](crate::output::DisassociateServiceRoleFromAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5865,20 +5551,19 @@ pub mod disassociate_service_role_from_account_output {
             self
         }
         /// The time when the service role was disassociated from the account.
-        pub fn set_disassociated_at(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.disassociated_at = input;
-            self
+        pub fn set_disassociated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.disassociated_at = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateServiceRoleFromAccountOutput`](crate::output::DisassociateServiceRoleFromAccountOutput).
         pub fn build(self) -> crate::output::DisassociateServiceRoleFromAccountOutput {
             crate::output::DisassociateServiceRoleFromAccountOutput {
-                disassociated_at: self.disassociated_at,
+                disassociated_at: self.disassociated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateServiceRoleFromAccountOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateServiceRoleFromAccountOutput`](crate::output::DisassociateServiceRoleFromAccountOutput).
@@ -5890,20 +5575,20 @@ impl DisassociateServiceRoleFromAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateRoleFromGroupOutput {
+pub struct DisassociateRoleFromGroupOutput  {
     /// The time, in milliseconds since the epoch, when the role was disassociated from the group.
     #[doc(hidden)]
     pub disassociated_at: std::option::Option<std::string::String>,
 }
 impl DisassociateRoleFromGroupOutput {
     /// The time, in milliseconds since the epoch, when the role was disassociated from the group.
-    pub fn disassociated_at(&self) -> std::option::Option<&str> {
+    pub fn disassociated_at(&self) -> std::option::Option<& str> {
         self.disassociated_at.as_deref()
     }
 }
 /// See [`DisassociateRoleFromGroupOutput`](crate::output::DisassociateRoleFromGroupOutput).
 pub mod disassociate_role_from_group_output {
-
+    
     /// A builder for [`DisassociateRoleFromGroupOutput`](crate::output::DisassociateRoleFromGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5916,20 +5601,19 @@ pub mod disassociate_role_from_group_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the role was disassociated from the group.
-        pub fn set_disassociated_at(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.disassociated_at = input;
-            self
+        pub fn set_disassociated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.disassociated_at = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateRoleFromGroupOutput`](crate::output::DisassociateRoleFromGroupOutput).
         pub fn build(self) -> crate::output::DisassociateRoleFromGroupOutput {
             crate::output::DisassociateRoleFromGroupOutput {
-                disassociated_at: self.disassociated_at,
+                disassociated_at: self.disassociated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateRoleFromGroupOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateRoleFromGroupOutput`](crate::output::DisassociateRoleFromGroupOutput).
@@ -5941,19 +5625,24 @@ impl DisassociateRoleFromGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSubscriptionDefinitionOutput {}
+pub struct DeleteSubscriptionDefinitionOutput  {
+}
 /// See [`DeleteSubscriptionDefinitionOutput`](crate::output::DeleteSubscriptionDefinitionOutput).
 pub mod delete_subscription_definition_output {
-
+    
     /// A builder for [`DeleteSubscriptionDefinitionOutput`](crate::output::DeleteSubscriptionDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSubscriptionDefinitionOutput`](crate::output::DeleteSubscriptionDefinitionOutput).
         pub fn build(self) -> crate::output::DeleteSubscriptionDefinitionOutput {
-            crate::output::DeleteSubscriptionDefinitionOutput {}
+            crate::output::DeleteSubscriptionDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSubscriptionDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSubscriptionDefinitionOutput`](crate::output::DeleteSubscriptionDefinitionOutput).
@@ -5965,19 +5654,24 @@ impl DeleteSubscriptionDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourceDefinitionOutput {}
+pub struct DeleteResourceDefinitionOutput  {
+}
 /// See [`DeleteResourceDefinitionOutput`](crate::output::DeleteResourceDefinitionOutput).
 pub mod delete_resource_definition_output {
-
+    
     /// A builder for [`DeleteResourceDefinitionOutput`](crate::output::DeleteResourceDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourceDefinitionOutput`](crate::output::DeleteResourceDefinitionOutput).
         pub fn build(self) -> crate::output::DeleteResourceDefinitionOutput {
-            crate::output::DeleteResourceDefinitionOutput {}
+            crate::output::DeleteResourceDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteResourceDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceDefinitionOutput`](crate::output::DeleteResourceDefinitionOutput).
@@ -5989,19 +5683,24 @@ impl DeleteResourceDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoggerDefinitionOutput {}
+pub struct DeleteLoggerDefinitionOutput  {
+}
 /// See [`DeleteLoggerDefinitionOutput`](crate::output::DeleteLoggerDefinitionOutput).
 pub mod delete_logger_definition_output {
-
+    
     /// A builder for [`DeleteLoggerDefinitionOutput`](crate::output::DeleteLoggerDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLoggerDefinitionOutput`](crate::output::DeleteLoggerDefinitionOutput).
         pub fn build(self) -> crate::output::DeleteLoggerDefinitionOutput {
-            crate::output::DeleteLoggerDefinitionOutput {}
+            crate::output::DeleteLoggerDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLoggerDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLoggerDefinitionOutput`](crate::output::DeleteLoggerDefinitionOutput).
@@ -6013,19 +5712,24 @@ impl DeleteLoggerDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGroupOutput {}
+pub struct DeleteGroupOutput  {
+}
 /// See [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
 pub mod delete_group_output {
-
+    
     /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
         pub fn build(self) -> crate::output::DeleteGroupOutput {
-            crate::output::DeleteGroupOutput {}
+            crate::output::DeleteGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
@@ -6037,19 +5741,24 @@ impl DeleteGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFunctionDefinitionOutput {}
+pub struct DeleteFunctionDefinitionOutput  {
+}
 /// See [`DeleteFunctionDefinitionOutput`](crate::output::DeleteFunctionDefinitionOutput).
 pub mod delete_function_definition_output {
-
+    
     /// A builder for [`DeleteFunctionDefinitionOutput`](crate::output::DeleteFunctionDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFunctionDefinitionOutput`](crate::output::DeleteFunctionDefinitionOutput).
         pub fn build(self) -> crate::output::DeleteFunctionDefinitionOutput {
-            crate::output::DeleteFunctionDefinitionOutput {}
+            crate::output::DeleteFunctionDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFunctionDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFunctionDefinitionOutput`](crate::output::DeleteFunctionDefinitionOutput).
@@ -6061,19 +5770,24 @@ impl DeleteFunctionDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDeviceDefinitionOutput {}
+pub struct DeleteDeviceDefinitionOutput  {
+}
 /// See [`DeleteDeviceDefinitionOutput`](crate::output::DeleteDeviceDefinitionOutput).
 pub mod delete_device_definition_output {
-
+    
     /// A builder for [`DeleteDeviceDefinitionOutput`](crate::output::DeleteDeviceDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDeviceDefinitionOutput`](crate::output::DeleteDeviceDefinitionOutput).
         pub fn build(self) -> crate::output::DeleteDeviceDefinitionOutput {
-            crate::output::DeleteDeviceDefinitionOutput {}
+            crate::output::DeleteDeviceDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDeviceDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDeviceDefinitionOutput`](crate::output::DeleteDeviceDefinitionOutput).
@@ -6085,19 +5799,24 @@ impl DeleteDeviceDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCoreDefinitionOutput {}
+pub struct DeleteCoreDefinitionOutput  {
+}
 /// See [`DeleteCoreDefinitionOutput`](crate::output::DeleteCoreDefinitionOutput).
 pub mod delete_core_definition_output {
-
+    
     /// A builder for [`DeleteCoreDefinitionOutput`](crate::output::DeleteCoreDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCoreDefinitionOutput`](crate::output::DeleteCoreDefinitionOutput).
         pub fn build(self) -> crate::output::DeleteCoreDefinitionOutput {
-            crate::output::DeleteCoreDefinitionOutput {}
+            crate::output::DeleteCoreDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCoreDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCoreDefinitionOutput`](crate::output::DeleteCoreDefinitionOutput).
@@ -6109,19 +5828,24 @@ impl DeleteCoreDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConnectorDefinitionOutput {}
+pub struct DeleteConnectorDefinitionOutput  {
+}
 /// See [`DeleteConnectorDefinitionOutput`](crate::output::DeleteConnectorDefinitionOutput).
 pub mod delete_connector_definition_output {
-
+    
     /// A builder for [`DeleteConnectorDefinitionOutput`](crate::output::DeleteConnectorDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteConnectorDefinitionOutput`](crate::output::DeleteConnectorDefinitionOutput).
         pub fn build(self) -> crate::output::DeleteConnectorDefinitionOutput {
-            crate::output::DeleteConnectorDefinitionOutput {}
+            crate::output::DeleteConnectorDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteConnectorDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectorDefinitionOutput`](crate::output::DeleteConnectorDefinitionOutput).
@@ -6133,7 +5857,7 @@ impl DeleteConnectorDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSubscriptionDefinitionVersionOutput {
+pub struct CreateSubscriptionDefinitionVersionOutput  {
     /// The ARN of the version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6149,25 +5873,25 @@ pub struct CreateSubscriptionDefinitionVersionOutput {
 }
 impl CreateSubscriptionDefinitionVersionOutput {
     /// The ARN of the version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the parent definition that the version is associated with.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`CreateSubscriptionDefinitionVersionOutput`](crate::output::CreateSubscriptionDefinitionVersionOutput).
 pub mod create_subscription_definition_version_output {
-
+    
     /// A builder for [`CreateSubscriptionDefinitionVersionOutput`](crate::output::CreateSubscriptionDefinitionVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6184,8 +5908,7 @@ pub mod create_subscription_definition_version_output {
         }
         /// The ARN of the version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6193,12 +5916,8 @@ pub mod create_subscription_definition_version_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6207,8 +5926,7 @@ pub mod create_subscription_definition_version_output {
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The ID of the version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6217,19 +5935,24 @@ pub mod create_subscription_definition_version_output {
         }
         /// The ID of the version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`CreateSubscriptionDefinitionVersionOutput`](crate::output::CreateSubscriptionDefinitionVersionOutput).
         pub fn build(self) -> crate::output::CreateSubscriptionDefinitionVersionOutput {
             crate::output::CreateSubscriptionDefinitionVersionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSubscriptionDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriptionDefinitionVersionOutput`](crate::output::CreateSubscriptionDefinitionVersionOutput).
@@ -6241,7 +5964,7 @@ impl CreateSubscriptionDefinitionVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSubscriptionDefinitionOutput {
+pub struct CreateSubscriptionDefinitionOutput  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6266,37 +5989,37 @@ pub struct CreateSubscriptionDefinitionOutput {
 }
 impl CreateSubscriptionDefinitionOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`CreateSubscriptionDefinitionOutput`](crate::output::CreateSubscriptionDefinitionOutput).
 pub mod create_subscription_definition_output {
-
+    
     /// A builder for [`CreateSubscriptionDefinitionOutput`](crate::output::CreateSubscriptionDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6316,8 +6039,7 @@ pub mod create_subscription_definition_output {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6325,12 +6047,8 @@ pub mod create_subscription_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6339,8 +6057,7 @@ pub mod create_subscription_definition_output {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6348,12 +6065,8 @@ pub mod create_subscription_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6361,12 +6074,8 @@ pub mod create_subscription_definition_output {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6374,12 +6083,8 @@ pub mod create_subscription_definition_output {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6388,22 +6093,30 @@ pub mod create_subscription_definition_output {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`CreateSubscriptionDefinitionOutput`](crate::output::CreateSubscriptionDefinitionOutput).
         pub fn build(self) -> crate::output::CreateSubscriptionDefinitionOutput {
             crate::output::CreateSubscriptionDefinitionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSubscriptionDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriptionDefinitionOutput`](crate::output::CreateSubscriptionDefinitionOutput).
@@ -6415,7 +6128,7 @@ impl CreateSubscriptionDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSoftwareUpdateJobOutput {
+pub struct CreateSoftwareUpdateJobOutput  {
     /// The IoT Job ARN corresponding to this update.
     #[doc(hidden)]
     pub iot_job_arn: std::option::Option<std::string::String>,
@@ -6428,21 +6141,21 @@ pub struct CreateSoftwareUpdateJobOutput {
 }
 impl CreateSoftwareUpdateJobOutput {
     /// The IoT Job ARN corresponding to this update.
-    pub fn iot_job_arn(&self) -> std::option::Option<&str> {
+    pub fn iot_job_arn(&self) -> std::option::Option<& str> {
         self.iot_job_arn.as_deref()
     }
     /// The IoT Job Id corresponding to this update.
-    pub fn iot_job_id(&self) -> std::option::Option<&str> {
+    pub fn iot_job_id(&self) -> std::option::Option<& str> {
         self.iot_job_id.as_deref()
     }
     /// The software version installed on the device or devices after the update.
-    pub fn platform_software_version(&self) -> std::option::Option<&str> {
+    pub fn platform_software_version(&self) -> std::option::Option<& str> {
         self.platform_software_version.as_deref()
     }
 }
 /// See [`CreateSoftwareUpdateJobOutput`](crate::output::CreateSoftwareUpdateJobOutput).
 pub mod create_software_update_job_output {
-
+    
     /// A builder for [`CreateSoftwareUpdateJobOutput`](crate::output::CreateSoftwareUpdateJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6458,8 +6171,7 @@ pub mod create_software_update_job_output {
         }
         /// The IoT Job ARN corresponding to this update.
         pub fn set_iot_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iot_job_arn = input;
-            self
+            self.iot_job_arn = input; self
         }
         /// The IoT Job Id corresponding to this update.
         pub fn iot_job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6468,8 +6180,7 @@ pub mod create_software_update_job_output {
         }
         /// The IoT Job Id corresponding to this update.
         pub fn set_iot_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iot_job_id = input;
-            self
+            self.iot_job_id = input; self
         }
         /// The software version installed on the device or devices after the update.
         pub fn platform_software_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6477,22 +6188,23 @@ pub mod create_software_update_job_output {
             self
         }
         /// The software version installed on the device or devices after the update.
-        pub fn set_platform_software_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_software_version = input;
-            self
+        pub fn set_platform_software_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_software_version = input; self
         }
         /// Consumes the builder and constructs a [`CreateSoftwareUpdateJobOutput`](crate::output::CreateSoftwareUpdateJobOutput).
         pub fn build(self) -> crate::output::CreateSoftwareUpdateJobOutput {
             crate::output::CreateSoftwareUpdateJobOutput {
-                iot_job_arn: self.iot_job_arn,
-                iot_job_id: self.iot_job_id,
-                platform_software_version: self.platform_software_version,
+                iot_job_arn: self.iot_job_arn
+                ,
+                iot_job_id: self.iot_job_id
+                ,
+                platform_software_version: self.platform_software_version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSoftwareUpdateJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateSoftwareUpdateJobOutput`](crate::output::CreateSoftwareUpdateJobOutput).
@@ -6504,7 +6216,7 @@ impl CreateSoftwareUpdateJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateResourceDefinitionVersionOutput {
+pub struct CreateResourceDefinitionVersionOutput  {
     /// The ARN of the version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6520,25 +6232,25 @@ pub struct CreateResourceDefinitionVersionOutput {
 }
 impl CreateResourceDefinitionVersionOutput {
     /// The ARN of the version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the parent definition that the version is associated with.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`CreateResourceDefinitionVersionOutput`](crate::output::CreateResourceDefinitionVersionOutput).
 pub mod create_resource_definition_version_output {
-
+    
     /// A builder for [`CreateResourceDefinitionVersionOutput`](crate::output::CreateResourceDefinitionVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6555,8 +6267,7 @@ pub mod create_resource_definition_version_output {
         }
         /// The ARN of the version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6564,12 +6275,8 @@ pub mod create_resource_definition_version_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6578,8 +6285,7 @@ pub mod create_resource_definition_version_output {
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The ID of the version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6588,19 +6294,24 @@ pub mod create_resource_definition_version_output {
         }
         /// The ID of the version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`CreateResourceDefinitionVersionOutput`](crate::output::CreateResourceDefinitionVersionOutput).
         pub fn build(self) -> crate::output::CreateResourceDefinitionVersionOutput {
             crate::output::CreateResourceDefinitionVersionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateResourceDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateResourceDefinitionVersionOutput`](crate::output::CreateResourceDefinitionVersionOutput).
@@ -6612,7 +6323,7 @@ impl CreateResourceDefinitionVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateResourceDefinitionOutput {
+pub struct CreateResourceDefinitionOutput  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6637,37 +6348,37 @@ pub struct CreateResourceDefinitionOutput {
 }
 impl CreateResourceDefinitionOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`CreateResourceDefinitionOutput`](crate::output::CreateResourceDefinitionOutput).
 pub mod create_resource_definition_output {
-
+    
     /// A builder for [`CreateResourceDefinitionOutput`](crate::output::CreateResourceDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6687,8 +6398,7 @@ pub mod create_resource_definition_output {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6696,12 +6406,8 @@ pub mod create_resource_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6710,8 +6416,7 @@ pub mod create_resource_definition_output {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6719,12 +6424,8 @@ pub mod create_resource_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6732,12 +6433,8 @@ pub mod create_resource_definition_output {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6745,12 +6442,8 @@ pub mod create_resource_definition_output {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6759,22 +6452,30 @@ pub mod create_resource_definition_output {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`CreateResourceDefinitionOutput`](crate::output::CreateResourceDefinitionOutput).
         pub fn build(self) -> crate::output::CreateResourceDefinitionOutput {
             crate::output::CreateResourceDefinitionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateResourceDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`CreateResourceDefinitionOutput`](crate::output::CreateResourceDefinitionOutput).
@@ -6786,7 +6487,7 @@ impl CreateResourceDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLoggerDefinitionVersionOutput {
+pub struct CreateLoggerDefinitionVersionOutput  {
     /// The ARN of the version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6802,25 +6503,25 @@ pub struct CreateLoggerDefinitionVersionOutput {
 }
 impl CreateLoggerDefinitionVersionOutput {
     /// The ARN of the version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the parent definition that the version is associated with.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`CreateLoggerDefinitionVersionOutput`](crate::output::CreateLoggerDefinitionVersionOutput).
 pub mod create_logger_definition_version_output {
-
+    
     /// A builder for [`CreateLoggerDefinitionVersionOutput`](crate::output::CreateLoggerDefinitionVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6837,8 +6538,7 @@ pub mod create_logger_definition_version_output {
         }
         /// The ARN of the version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6846,12 +6546,8 @@ pub mod create_logger_definition_version_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6860,8 +6556,7 @@ pub mod create_logger_definition_version_output {
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The ID of the version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6870,19 +6565,24 @@ pub mod create_logger_definition_version_output {
         }
         /// The ID of the version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`CreateLoggerDefinitionVersionOutput`](crate::output::CreateLoggerDefinitionVersionOutput).
         pub fn build(self) -> crate::output::CreateLoggerDefinitionVersionOutput {
             crate::output::CreateLoggerDefinitionVersionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLoggerDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoggerDefinitionVersionOutput`](crate::output::CreateLoggerDefinitionVersionOutput).
@@ -6894,7 +6594,7 @@ impl CreateLoggerDefinitionVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLoggerDefinitionOutput {
+pub struct CreateLoggerDefinitionOutput  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6919,37 +6619,37 @@ pub struct CreateLoggerDefinitionOutput {
 }
 impl CreateLoggerDefinitionOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`CreateLoggerDefinitionOutput`](crate::output::CreateLoggerDefinitionOutput).
 pub mod create_logger_definition_output {
-
+    
     /// A builder for [`CreateLoggerDefinitionOutput`](crate::output::CreateLoggerDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6969,8 +6669,7 @@ pub mod create_logger_definition_output {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6978,12 +6677,8 @@ pub mod create_logger_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6992,8 +6687,7 @@ pub mod create_logger_definition_output {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7001,12 +6695,8 @@ pub mod create_logger_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7014,12 +6704,8 @@ pub mod create_logger_definition_output {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7027,12 +6713,8 @@ pub mod create_logger_definition_output {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7041,22 +6723,30 @@ pub mod create_logger_definition_output {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`CreateLoggerDefinitionOutput`](crate::output::CreateLoggerDefinitionOutput).
         pub fn build(self) -> crate::output::CreateLoggerDefinitionOutput {
             crate::output::CreateLoggerDefinitionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLoggerDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoggerDefinitionOutput`](crate::output::CreateLoggerDefinitionOutput).
@@ -7068,7 +6758,7 @@ impl CreateLoggerDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGroupVersionOutput {
+pub struct CreateGroupVersionOutput  {
     /// The ARN of the version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7084,25 +6774,25 @@ pub struct CreateGroupVersionOutput {
 }
 impl CreateGroupVersionOutput {
     /// The ARN of the version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the parent definition that the version is associated with.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`CreateGroupVersionOutput`](crate::output::CreateGroupVersionOutput).
 pub mod create_group_version_output {
-
+    
     /// A builder for [`CreateGroupVersionOutput`](crate::output::CreateGroupVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7119,8 +6809,7 @@ pub mod create_group_version_output {
         }
         /// The ARN of the version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7128,12 +6817,8 @@ pub mod create_group_version_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7142,8 +6827,7 @@ pub mod create_group_version_output {
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The ID of the version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7152,19 +6836,24 @@ pub mod create_group_version_output {
         }
         /// The ID of the version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`CreateGroupVersionOutput`](crate::output::CreateGroupVersionOutput).
         pub fn build(self) -> crate::output::CreateGroupVersionOutput {
             crate::output::CreateGroupVersionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGroupVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateGroupVersionOutput`](crate::output::CreateGroupVersionOutput).
@@ -7176,20 +6865,20 @@ impl CreateGroupVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGroupCertificateAuthorityOutput {
+pub struct CreateGroupCertificateAuthorityOutput  {
     /// The ARN of the group certificate authority.
     #[doc(hidden)]
     pub group_certificate_authority_arn: std::option::Option<std::string::String>,
 }
 impl CreateGroupCertificateAuthorityOutput {
     /// The ARN of the group certificate authority.
-    pub fn group_certificate_authority_arn(&self) -> std::option::Option<&str> {
+    pub fn group_certificate_authority_arn(&self) -> std::option::Option<& str> {
         self.group_certificate_authority_arn.as_deref()
     }
 }
 /// See [`CreateGroupCertificateAuthorityOutput`](crate::output::CreateGroupCertificateAuthorityOutput).
 pub mod create_group_certificate_authority_output {
-
+    
     /// A builder for [`CreateGroupCertificateAuthorityOutput`](crate::output::CreateGroupCertificateAuthorityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7197,28 +6886,24 @@ pub mod create_group_certificate_authority_output {
     }
     impl Builder {
         /// The ARN of the group certificate authority.
-        pub fn group_certificate_authority_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn group_certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_certificate_authority_arn = Some(input.into());
             self
         }
         /// The ARN of the group certificate authority.
-        pub fn set_group_certificate_authority_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.group_certificate_authority_arn = input;
-            self
+        pub fn set_group_certificate_authority_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_certificate_authority_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateGroupCertificateAuthorityOutput`](crate::output::CreateGroupCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::CreateGroupCertificateAuthorityOutput {
             crate::output::CreateGroupCertificateAuthorityOutput {
-                group_certificate_authority_arn: self.group_certificate_authority_arn,
+                group_certificate_authority_arn: self.group_certificate_authority_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGroupCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`CreateGroupCertificateAuthorityOutput`](crate::output::CreateGroupCertificateAuthorityOutput).
@@ -7230,7 +6915,7 @@ impl CreateGroupCertificateAuthorityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGroupOutput {
+pub struct CreateGroupOutput  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7255,37 +6940,37 @@ pub struct CreateGroupOutput {
 }
 impl CreateGroupOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`CreateGroupOutput`](crate::output::CreateGroupOutput).
 pub mod create_group_output {
-
+    
     /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7305,8 +6990,7 @@ pub mod create_group_output {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7314,12 +6998,8 @@ pub mod create_group_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7328,8 +7008,7 @@ pub mod create_group_output {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7337,12 +7016,8 @@ pub mod create_group_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7350,12 +7025,8 @@ pub mod create_group_output {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7363,12 +7034,8 @@ pub mod create_group_output {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7377,22 +7044,30 @@ pub mod create_group_output {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`CreateGroupOutput`](crate::output::CreateGroupOutput).
         pub fn build(self) -> crate::output::CreateGroupOutput {
             crate::output::CreateGroupOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateGroupOutput`](crate::output::CreateGroupOutput).
@@ -7404,7 +7079,7 @@ impl CreateGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFunctionDefinitionVersionOutput {
+pub struct CreateFunctionDefinitionVersionOutput  {
     /// The ARN of the version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7420,25 +7095,25 @@ pub struct CreateFunctionDefinitionVersionOutput {
 }
 impl CreateFunctionDefinitionVersionOutput {
     /// The ARN of the version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the parent definition that the version is associated with.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`CreateFunctionDefinitionVersionOutput`](crate::output::CreateFunctionDefinitionVersionOutput).
 pub mod create_function_definition_version_output {
-
+    
     /// A builder for [`CreateFunctionDefinitionVersionOutput`](crate::output::CreateFunctionDefinitionVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7455,8 +7130,7 @@ pub mod create_function_definition_version_output {
         }
         /// The ARN of the version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7464,12 +7138,8 @@ pub mod create_function_definition_version_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7478,8 +7148,7 @@ pub mod create_function_definition_version_output {
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The ID of the version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7488,19 +7157,24 @@ pub mod create_function_definition_version_output {
         }
         /// The ID of the version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`CreateFunctionDefinitionVersionOutput`](crate::output::CreateFunctionDefinitionVersionOutput).
         pub fn build(self) -> crate::output::CreateFunctionDefinitionVersionOutput {
             crate::output::CreateFunctionDefinitionVersionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFunctionDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateFunctionDefinitionVersionOutput`](crate::output::CreateFunctionDefinitionVersionOutput).
@@ -7512,7 +7186,7 @@ impl CreateFunctionDefinitionVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFunctionDefinitionOutput {
+pub struct CreateFunctionDefinitionOutput  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7537,37 +7211,37 @@ pub struct CreateFunctionDefinitionOutput {
 }
 impl CreateFunctionDefinitionOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`CreateFunctionDefinitionOutput`](crate::output::CreateFunctionDefinitionOutput).
 pub mod create_function_definition_output {
-
+    
     /// A builder for [`CreateFunctionDefinitionOutput`](crate::output::CreateFunctionDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7587,8 +7261,7 @@ pub mod create_function_definition_output {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7596,12 +7269,8 @@ pub mod create_function_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7610,8 +7279,7 @@ pub mod create_function_definition_output {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7619,12 +7287,8 @@ pub mod create_function_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7632,12 +7296,8 @@ pub mod create_function_definition_output {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7645,12 +7305,8 @@ pub mod create_function_definition_output {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7659,22 +7315,30 @@ pub mod create_function_definition_output {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`CreateFunctionDefinitionOutput`](crate::output::CreateFunctionDefinitionOutput).
         pub fn build(self) -> crate::output::CreateFunctionDefinitionOutput {
             crate::output::CreateFunctionDefinitionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFunctionDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`CreateFunctionDefinitionOutput`](crate::output::CreateFunctionDefinitionOutput).
@@ -7686,7 +7350,7 @@ impl CreateFunctionDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeviceDefinitionVersionOutput {
+pub struct CreateDeviceDefinitionVersionOutput  {
     /// The ARN of the version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7702,25 +7366,25 @@ pub struct CreateDeviceDefinitionVersionOutput {
 }
 impl CreateDeviceDefinitionVersionOutput {
     /// The ARN of the version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the parent definition that the version is associated with.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`CreateDeviceDefinitionVersionOutput`](crate::output::CreateDeviceDefinitionVersionOutput).
 pub mod create_device_definition_version_output {
-
+    
     /// A builder for [`CreateDeviceDefinitionVersionOutput`](crate::output::CreateDeviceDefinitionVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7737,8 +7401,7 @@ pub mod create_device_definition_version_output {
         }
         /// The ARN of the version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7746,12 +7409,8 @@ pub mod create_device_definition_version_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7760,8 +7419,7 @@ pub mod create_device_definition_version_output {
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The ID of the version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7770,19 +7428,24 @@ pub mod create_device_definition_version_output {
         }
         /// The ID of the version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`CreateDeviceDefinitionVersionOutput`](crate::output::CreateDeviceDefinitionVersionOutput).
         pub fn build(self) -> crate::output::CreateDeviceDefinitionVersionOutput {
             crate::output::CreateDeviceDefinitionVersionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDeviceDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeviceDefinitionVersionOutput`](crate::output::CreateDeviceDefinitionVersionOutput).
@@ -7794,7 +7457,7 @@ impl CreateDeviceDefinitionVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeviceDefinitionOutput {
+pub struct CreateDeviceDefinitionOutput  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -7819,37 +7482,37 @@ pub struct CreateDeviceDefinitionOutput {
 }
 impl CreateDeviceDefinitionOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`CreateDeviceDefinitionOutput`](crate::output::CreateDeviceDefinitionOutput).
 pub mod create_device_definition_output {
-
+    
     /// A builder for [`CreateDeviceDefinitionOutput`](crate::output::CreateDeviceDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7869,8 +7532,7 @@ pub mod create_device_definition_output {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7878,12 +7540,8 @@ pub mod create_device_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7892,8 +7550,7 @@ pub mod create_device_definition_output {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7901,12 +7558,8 @@ pub mod create_device_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7914,12 +7567,8 @@ pub mod create_device_definition_output {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7927,12 +7576,8 @@ pub mod create_device_definition_output {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7941,22 +7586,30 @@ pub mod create_device_definition_output {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`CreateDeviceDefinitionOutput`](crate::output::CreateDeviceDefinitionOutput).
         pub fn build(self) -> crate::output::CreateDeviceDefinitionOutput {
             crate::output::CreateDeviceDefinitionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDeviceDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeviceDefinitionOutput`](crate::output::CreateDeviceDefinitionOutput).
@@ -7968,7 +7621,7 @@ impl CreateDeviceDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeploymentOutput {
+pub struct CreateDeploymentOutput  {
     /// The ARN of the deployment.
     #[doc(hidden)]
     pub deployment_arn: std::option::Option<std::string::String>,
@@ -7978,17 +7631,17 @@ pub struct CreateDeploymentOutput {
 }
 impl CreateDeploymentOutput {
     /// The ARN of the deployment.
-    pub fn deployment_arn(&self) -> std::option::Option<&str> {
+    pub fn deployment_arn(&self) -> std::option::Option<& str> {
         self.deployment_arn.as_deref()
     }
     /// The ID of the deployment.
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
 }
 /// See [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
 pub mod create_deployment_output {
-
+    
     /// A builder for [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8002,12 +7655,8 @@ pub mod create_deployment_output {
             self
         }
         /// The ARN of the deployment.
-        pub fn set_deployment_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_arn = input;
-            self
+        pub fn set_deployment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_arn = input; self
         }
         /// The ID of the deployment.
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8015,21 +7664,21 @@ pub mod create_deployment_output {
             self
         }
         /// The ID of the deployment.
-        pub fn set_deployment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_id = input;
-            self
+        pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
         pub fn build(self) -> crate::output::CreateDeploymentOutput {
             crate::output::CreateDeploymentOutput {
-                deployment_arn: self.deployment_arn,
-                deployment_id: self.deployment_id,
+                deployment_arn: self.deployment_arn
+                ,
+                deployment_id: self.deployment_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
@@ -8041,7 +7690,7 @@ impl CreateDeploymentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCoreDefinitionVersionOutput {
+pub struct CreateCoreDefinitionVersionOutput  {
     /// The ARN of the version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -8057,25 +7706,25 @@ pub struct CreateCoreDefinitionVersionOutput {
 }
 impl CreateCoreDefinitionVersionOutput {
     /// The ARN of the version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the parent definition that the version is associated with.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`CreateCoreDefinitionVersionOutput`](crate::output::CreateCoreDefinitionVersionOutput).
 pub mod create_core_definition_version_output {
-
+    
     /// A builder for [`CreateCoreDefinitionVersionOutput`](crate::output::CreateCoreDefinitionVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8092,8 +7741,7 @@ pub mod create_core_definition_version_output {
         }
         /// The ARN of the version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8101,12 +7749,8 @@ pub mod create_core_definition_version_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8115,8 +7759,7 @@ pub mod create_core_definition_version_output {
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The ID of the version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8125,19 +7768,24 @@ pub mod create_core_definition_version_output {
         }
         /// The ID of the version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`CreateCoreDefinitionVersionOutput`](crate::output::CreateCoreDefinitionVersionOutput).
         pub fn build(self) -> crate::output::CreateCoreDefinitionVersionOutput {
             crate::output::CreateCoreDefinitionVersionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCoreDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateCoreDefinitionVersionOutput`](crate::output::CreateCoreDefinitionVersionOutput).
@@ -8149,7 +7797,7 @@ impl CreateCoreDefinitionVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCoreDefinitionOutput {
+pub struct CreateCoreDefinitionOutput  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -8174,37 +7822,37 @@ pub struct CreateCoreDefinitionOutput {
 }
 impl CreateCoreDefinitionOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`CreateCoreDefinitionOutput`](crate::output::CreateCoreDefinitionOutput).
 pub mod create_core_definition_output {
-
+    
     /// A builder for [`CreateCoreDefinitionOutput`](crate::output::CreateCoreDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8224,8 +7872,7 @@ pub mod create_core_definition_output {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8233,12 +7880,8 @@ pub mod create_core_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8247,8 +7890,7 @@ pub mod create_core_definition_output {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8256,12 +7898,8 @@ pub mod create_core_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8269,12 +7907,8 @@ pub mod create_core_definition_output {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8282,12 +7916,8 @@ pub mod create_core_definition_output {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8296,22 +7926,30 @@ pub mod create_core_definition_output {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`CreateCoreDefinitionOutput`](crate::output::CreateCoreDefinitionOutput).
         pub fn build(self) -> crate::output::CreateCoreDefinitionOutput {
             crate::output::CreateCoreDefinitionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCoreDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`CreateCoreDefinitionOutput`](crate::output::CreateCoreDefinitionOutput).
@@ -8323,7 +7961,7 @@ impl CreateCoreDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConnectorDefinitionVersionOutput {
+pub struct CreateConnectorDefinitionVersionOutput  {
     /// The ARN of the version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -8339,25 +7977,25 @@ pub struct CreateConnectorDefinitionVersionOutput {
 }
 impl CreateConnectorDefinitionVersionOutput {
     /// The ARN of the version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the parent definition that the version is associated with.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`CreateConnectorDefinitionVersionOutput`](crate::output::CreateConnectorDefinitionVersionOutput).
 pub mod create_connector_definition_version_output {
-
+    
     /// A builder for [`CreateConnectorDefinitionVersionOutput`](crate::output::CreateConnectorDefinitionVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8374,8 +8012,7 @@ pub mod create_connector_definition_version_output {
         }
         /// The ARN of the version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8383,12 +8020,8 @@ pub mod create_connector_definition_version_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8397,8 +8030,7 @@ pub mod create_connector_definition_version_output {
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The ID of the version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8407,19 +8039,24 @@ pub mod create_connector_definition_version_output {
         }
         /// The ID of the version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`CreateConnectorDefinitionVersionOutput`](crate::output::CreateConnectorDefinitionVersionOutput).
         pub fn build(self) -> crate::output::CreateConnectorDefinitionVersionOutput {
             crate::output::CreateConnectorDefinitionVersionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateConnectorDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectorDefinitionVersionOutput`](crate::output::CreateConnectorDefinitionVersionOutput).
@@ -8431,7 +8068,7 @@ impl CreateConnectorDefinitionVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConnectorDefinitionOutput {
+pub struct CreateConnectorDefinitionOutput  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -8456,37 +8093,37 @@ pub struct CreateConnectorDefinitionOutput {
 }
 impl CreateConnectorDefinitionOutput {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`CreateConnectorDefinitionOutput`](crate::output::CreateConnectorDefinitionOutput).
 pub mod create_connector_definition_output {
-
+    
     /// A builder for [`CreateConnectorDefinitionOutput`](crate::output::CreateConnectorDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8506,8 +8143,7 @@ pub mod create_connector_definition_output {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8515,12 +8151,8 @@ pub mod create_connector_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8529,8 +8161,7 @@ pub mod create_connector_definition_output {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8538,12 +8169,8 @@ pub mod create_connector_definition_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8551,12 +8178,8 @@ pub mod create_connector_definition_output {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8564,12 +8187,8 @@ pub mod create_connector_definition_output {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8578,22 +8197,30 @@ pub mod create_connector_definition_output {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`CreateConnectorDefinitionOutput`](crate::output::CreateConnectorDefinitionOutput).
         pub fn build(self) -> crate::output::CreateConnectorDefinitionOutput {
             crate::output::CreateConnectorDefinitionOutput {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateConnectorDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectorDefinitionOutput`](crate::output::CreateConnectorDefinitionOutput).
@@ -8605,20 +8232,20 @@ impl CreateConnectorDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateServiceRoleToAccountOutput {
+pub struct AssociateServiceRoleToAccountOutput  {
     /// The time when the service role was associated with the account.
     #[doc(hidden)]
     pub associated_at: std::option::Option<std::string::String>,
 }
 impl AssociateServiceRoleToAccountOutput {
     /// The time when the service role was associated with the account.
-    pub fn associated_at(&self) -> std::option::Option<&str> {
+    pub fn associated_at(&self) -> std::option::Option<& str> {
         self.associated_at.as_deref()
     }
 }
 /// See [`AssociateServiceRoleToAccountOutput`](crate::output::AssociateServiceRoleToAccountOutput).
 pub mod associate_service_role_to_account_output {
-
+    
     /// A builder for [`AssociateServiceRoleToAccountOutput`](crate::output::AssociateServiceRoleToAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8631,20 +8258,19 @@ pub mod associate_service_role_to_account_output {
             self
         }
         /// The time when the service role was associated with the account.
-        pub fn set_associated_at(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.associated_at = input;
-            self
+        pub fn set_associated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.associated_at = input; self
         }
         /// Consumes the builder and constructs a [`AssociateServiceRoleToAccountOutput`](crate::output::AssociateServiceRoleToAccountOutput).
         pub fn build(self) -> crate::output::AssociateServiceRoleToAccountOutput {
             crate::output::AssociateServiceRoleToAccountOutput {
-                associated_at: self.associated_at,
+                associated_at: self.associated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateServiceRoleToAccountOutput {
     /// Creates a new builder-style object to manufacture [`AssociateServiceRoleToAccountOutput`](crate::output::AssociateServiceRoleToAccountOutput).
@@ -8656,20 +8282,20 @@ impl AssociateServiceRoleToAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateRoleToGroupOutput {
+pub struct AssociateRoleToGroupOutput  {
     /// The time, in milliseconds since the epoch, when the role ARN was associated with the group.
     #[doc(hidden)]
     pub associated_at: std::option::Option<std::string::String>,
 }
 impl AssociateRoleToGroupOutput {
     /// The time, in milliseconds since the epoch, when the role ARN was associated with the group.
-    pub fn associated_at(&self) -> std::option::Option<&str> {
+    pub fn associated_at(&self) -> std::option::Option<& str> {
         self.associated_at.as_deref()
     }
 }
 /// See [`AssociateRoleToGroupOutput`](crate::output::AssociateRoleToGroupOutput).
 pub mod associate_role_to_group_output {
-
+    
     /// A builder for [`AssociateRoleToGroupOutput`](crate::output::AssociateRoleToGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8682,20 +8308,19 @@ pub mod associate_role_to_group_output {
             self
         }
         /// The time, in milliseconds since the epoch, when the role ARN was associated with the group.
-        pub fn set_associated_at(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.associated_at = input;
-            self
+        pub fn set_associated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.associated_at = input; self
         }
         /// Consumes the builder and constructs a [`AssociateRoleToGroupOutput`](crate::output::AssociateRoleToGroupOutput).
         pub fn build(self) -> crate::output::AssociateRoleToGroupOutput {
             crate::output::AssociateRoleToGroupOutput {
-                associated_at: self.associated_at,
+                associated_at: self.associated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateRoleToGroupOutput {
     /// Creates a new builder-style object to manufacture [`AssociateRoleToGroupOutput`](crate::output::AssociateRoleToGroupOutput).
@@ -8703,3 +8328,4 @@ impl AssociateRoleToGroupOutput {
         crate::output::associate_role_to_group_output::Builder::default()
     }
 }
+

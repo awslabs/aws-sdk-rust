@@ -3,7 +3,7 @@
 /// Stores information about a field passed inside a request that resulted in an exception.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// The field name.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// The field name.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Message describing why the field failed validation.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_exception_field {
         }
         /// The field name.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Message describing why the field failed validation.
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod validation_exception_field {
         }
         /// Message describing why the field failed validation.
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -73,9 +75,9 @@ impl ValidationExceptionField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -99,22 +101,14 @@ impl ValidationExceptionField {
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Possible reasons a request failed validation.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotParse,
@@ -125,7 +119,7 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -134,19 +128,17 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
             "OTHER" => ValidationExceptionReason::Other,
             "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -155,16 +147,13 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
             ValidationExceptionReason::Other => "OTHER",
             ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANNOT_PARSE",
-            "FIELD_VALIDATION_FAILED",
-            "OTHER",
-            "UNKNOWN_OPERATION",
+            "CANNOT_PARSE", "FIELD_VALIDATION_FAILED", "OTHER", "UNKNOWN_OPERATION"
         ]
     }
 }
@@ -177,7 +166,7 @@ impl AsRef<str> for ValidationExceptionReason {
 /// Represents a summary of the properties of a workspace.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkspaceSummary {
+pub struct WorkspaceSummary  {
     /// Unique string identifying this workspace.
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
@@ -195,41 +184,37 @@ pub struct WorkspaceSummary {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The tags of this workspace.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl WorkspaceSummary {
     /// Unique string identifying this workspace.
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// Alias of this workspace.
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// The AmazonResourceName of this workspace.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The status of this workspace.
-    pub fn status(&self) -> std::option::Option<&crate::model::WorkspaceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::WorkspaceStatus> {
         self.status.as_ref()
     }
     /// The time when the workspace was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// The tags of this workspace.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`WorkspaceSummary`](crate::model::WorkspaceSummary).
 pub mod workspace_summary {
-
+    
     /// A builder for [`WorkspaceSummary`](crate::model::WorkspaceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -238,9 +223,7 @@ pub mod workspace_summary {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorkspaceStatus>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Unique string identifying this workspace.
@@ -250,8 +233,7 @@ pub mod workspace_summary {
         }
         /// Unique string identifying this workspace.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workspace_id = input;
-            self
+            self.workspace_id = input; self
         }
         /// Alias of this workspace.
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -260,8 +242,7 @@ pub mod workspace_summary {
         }
         /// Alias of this workspace.
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// The AmazonResourceName of this workspace.
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -270,8 +251,7 @@ pub mod workspace_summary {
         }
         /// The AmazonResourceName of this workspace.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The status of this workspace.
         pub fn status(mut self, input: crate::model::WorkspaceStatus) -> Self {
@@ -279,12 +259,8 @@ pub mod workspace_summary {
             self
         }
         /// The status of this workspace.
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::WorkspaceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::WorkspaceStatus>) -> Self {
+            self.status = input; self
         }
         /// The time when the workspace was created.
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -292,50 +268,44 @@ pub mod workspace_summary {
             self
         }
         /// The time when the workspace was created.
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// The tags of this workspace.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// The tags of this workspace.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`WorkspaceSummary`](crate::model::WorkspaceSummary).
         pub fn build(self) -> crate::model::WorkspaceSummary {
             crate::model::WorkspaceSummary {
-                workspace_id: self.workspace_id,
-                alias: self.alias,
-                arn: self.arn,
-                status: self.status,
-                created_at: self.created_at,
-                tags: self.tags,
+                workspace_id: self.workspace_id
+                ,
+                alias: self.alias
+                ,
+                arn: self.arn
+                ,
+                status: self.status
+                ,
+                created_at: self.created_at
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl WorkspaceSummary {
     /// Creates a new builder-style object to manufacture [`WorkspaceSummary`](crate::model::WorkspaceSummary).
@@ -347,20 +317,20 @@ impl WorkspaceSummary {
 /// Represents the status of a workspace.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkspaceStatus {
+pub struct WorkspaceStatus  {
     /// Status code of this workspace.
     #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::WorkspaceStatusCode>,
 }
 impl WorkspaceStatus {
     /// Status code of this workspace.
-    pub fn status_code(&self) -> std::option::Option<&crate::model::WorkspaceStatusCode> {
+    pub fn status_code(&self) -> std::option::Option<& crate::model::WorkspaceStatusCode> {
         self.status_code.as_ref()
     }
 }
 /// See [`WorkspaceStatus`](crate::model::WorkspaceStatus).
 pub mod workspace_status {
-
+    
     /// A builder for [`WorkspaceStatus`](crate::model::WorkspaceStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -373,20 +343,19 @@ pub mod workspace_status {
             self
         }
         /// Status code of this workspace.
-        pub fn set_status_code(
-            mut self,
-            input: std::option::Option<crate::model::WorkspaceStatusCode>,
-        ) -> Self {
-            self.status_code = input;
-            self
+        pub fn set_status_code(mut self, input: std::option::Option<crate::model::WorkspaceStatusCode>) -> Self {
+            self.status_code = input; self
         }
         /// Consumes the builder and constructs a [`WorkspaceStatus`](crate::model::WorkspaceStatus).
         pub fn build(self) -> crate::model::WorkspaceStatus {
             crate::model::WorkspaceStatus {
-                status_code: self.status_code,
+                status_code: self.status_code
+                ,
             }
         }
     }
+    
+    
 }
 impl WorkspaceStatus {
     /// Creates a new builder-style object to manufacture [`WorkspaceStatus`](crate::model::WorkspaceStatus).
@@ -401,9 +370,9 @@ impl WorkspaceStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let workspacestatuscode = unimplemented!();
 /// match workspacestatuscode {
@@ -428,22 +397,14 @@ impl WorkspaceStatus {
 /// Specifically, when `workspacestatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WorkspaceStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// State of a workspace.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WorkspaceStatusCode {
     /// Workspace has been created and is usable.
     Active,
@@ -456,7 +417,7 @@ pub enum WorkspaceStatusCode {
     /// Workspace is being updated. Updates are allowed only when status is ACTIVE.
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WorkspaceStatusCode {
     fn from(s: &str) -> Self {
@@ -466,19 +427,17 @@ impl std::convert::From<&str> for WorkspaceStatusCode {
             "CREATION_FAILED" => WorkspaceStatusCode::CreationFailed,
             "DELETING" => WorkspaceStatusCode::Deleting,
             "UPDATING" => WorkspaceStatusCode::Updating,
-            other => {
-                WorkspaceStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => WorkspaceStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WorkspaceStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WorkspaceStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WorkspaceStatusCode::from(s))
+                }
+            }
 impl WorkspaceStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -488,17 +447,13 @@ impl WorkspaceStatusCode {
             WorkspaceStatusCode::CreationFailed => "CREATION_FAILED",
             WorkspaceStatusCode::Deleting => "DELETING",
             WorkspaceStatusCode::Updating => "UPDATING",
-            WorkspaceStatusCode::Unknown(value) => value.as_str(),
+            WorkspaceStatusCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATING",
-            "CREATION_FAILED",
-            "DELETING",
-            "UPDATING",
+            "ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATING"
         ]
     }
 }
@@ -511,7 +466,7 @@ impl AsRef<str> for WorkspaceStatusCode {
 /// Represents the properties of a workspace.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkspaceDescription {
+pub struct WorkspaceDescription  {
     /// Unique string identifying this workspace.
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
@@ -532,45 +487,41 @@ pub struct WorkspaceDescription {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The tags of this workspace.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl WorkspaceDescription {
     /// Unique string identifying this workspace.
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// Alias of this workspace.
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// The Amazon Resource Name (ARN) of this workspace.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The status of this workspace.
-    pub fn status(&self) -> std::option::Option<&crate::model::WorkspaceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::WorkspaceStatus> {
         self.status.as_ref()
     }
     /// Prometheus endpoint URI.
-    pub fn prometheus_endpoint(&self) -> std::option::Option<&str> {
+    pub fn prometheus_endpoint(&self) -> std::option::Option<& str> {
         self.prometheus_endpoint.as_deref()
     }
     /// The time when the workspace was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// The tags of this workspace.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`WorkspaceDescription`](crate::model::WorkspaceDescription).
 pub mod workspace_description {
-
+    
     /// A builder for [`WorkspaceDescription`](crate::model::WorkspaceDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -580,9 +531,7 @@ pub mod workspace_description {
         pub(crate) status: std::option::Option<crate::model::WorkspaceStatus>,
         pub(crate) prometheus_endpoint: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Unique string identifying this workspace.
@@ -592,8 +541,7 @@ pub mod workspace_description {
         }
         /// Unique string identifying this workspace.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workspace_id = input;
-            self
+            self.workspace_id = input; self
         }
         /// Alias of this workspace.
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -602,8 +550,7 @@ pub mod workspace_description {
         }
         /// Alias of this workspace.
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// The Amazon Resource Name (ARN) of this workspace.
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -612,8 +559,7 @@ pub mod workspace_description {
         }
         /// The Amazon Resource Name (ARN) of this workspace.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The status of this workspace.
         pub fn status(mut self, input: crate::model::WorkspaceStatus) -> Self {
@@ -621,12 +567,8 @@ pub mod workspace_description {
             self
         }
         /// The status of this workspace.
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::WorkspaceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::WorkspaceStatus>) -> Self {
+            self.status = input; self
         }
         /// Prometheus endpoint URI.
         pub fn prometheus_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -634,12 +576,8 @@ pub mod workspace_description {
             self
         }
         /// Prometheus endpoint URI.
-        pub fn set_prometheus_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.prometheus_endpoint = input;
-            self
+        pub fn set_prometheus_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prometheus_endpoint = input; self
         }
         /// The time when the workspace was created.
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -647,51 +585,46 @@ pub mod workspace_description {
             self
         }
         /// The time when the workspace was created.
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// The tags of this workspace.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// The tags of this workspace.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`WorkspaceDescription`](crate::model::WorkspaceDescription).
         pub fn build(self) -> crate::model::WorkspaceDescription {
             crate::model::WorkspaceDescription {
-                workspace_id: self.workspace_id,
-                alias: self.alias,
-                arn: self.arn,
-                status: self.status,
-                prometheus_endpoint: self.prometheus_endpoint,
-                created_at: self.created_at,
-                tags: self.tags,
+                workspace_id: self.workspace_id
+                ,
+                alias: self.alias
+                ,
+                arn: self.arn
+                ,
+                status: self.status
+                ,
+                prometheus_endpoint: self.prometheus_endpoint
+                ,
+                created_at: self.created_at
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl WorkspaceDescription {
     /// Creates a new builder-style object to manufacture [`WorkspaceDescription`](crate::model::WorkspaceDescription).
@@ -703,7 +636,7 @@ impl WorkspaceDescription {
 /// Represents a summary of the rule groups namespace.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleGroupsNamespaceSummary {
+pub struct RuleGroupsNamespaceSummary  {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -721,41 +654,37 @@ pub struct RuleGroupsNamespaceSummary {
     pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The tags of this rule groups namespace.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl RuleGroupsNamespaceSummary {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The rule groups namespace name.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The status of rule groups namespace.
-    pub fn status(&self) -> std::option::Option<&crate::model::RuleGroupsNamespaceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RuleGroupsNamespaceStatus> {
         self.status.as_ref()
     }
     /// The time when the rule groups namespace was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// The time when the rule groups namespace was modified.
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// The tags of this rule groups namespace.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`RuleGroupsNamespaceSummary`](crate::model::RuleGroupsNamespaceSummary).
 pub mod rule_groups_namespace_summary {
-
+    
     /// A builder for [`RuleGroupsNamespaceSummary`](crate::model::RuleGroupsNamespaceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -764,9 +693,7 @@ pub mod rule_groups_namespace_summary {
         pub(crate) status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) of this rule groups namespace.
@@ -776,8 +703,7 @@ pub mod rule_groups_namespace_summary {
         }
         /// The Amazon Resource Name (ARN) of this rule groups namespace.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The rule groups namespace name.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -786,8 +712,7 @@ pub mod rule_groups_namespace_summary {
         }
         /// The rule groups namespace name.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The status of rule groups namespace.
         pub fn status(mut self, input: crate::model::RuleGroupsNamespaceStatus) -> Self {
@@ -795,12 +720,8 @@ pub mod rule_groups_namespace_summary {
             self
         }
         /// The status of rule groups namespace.
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::RuleGroupsNamespaceStatus>) -> Self {
+            self.status = input; self
         }
         /// The time when the rule groups namespace was created.
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -808,12 +729,8 @@ pub mod rule_groups_namespace_summary {
             self
         }
         /// The time when the rule groups namespace was created.
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// The time when the rule groups namespace was modified.
         pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -821,50 +738,44 @@ pub mod rule_groups_namespace_summary {
             self
         }
         /// The time when the rule groups namespace was modified.
-        pub fn set_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified_at = input;
-            self
+        pub fn set_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified_at = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// The tags of this rule groups namespace.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// The tags of this rule groups namespace.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`RuleGroupsNamespaceSummary`](crate::model::RuleGroupsNamespaceSummary).
         pub fn build(self) -> crate::model::RuleGroupsNamespaceSummary {
             crate::model::RuleGroupsNamespaceSummary {
-                arn: self.arn,
-                name: self.name,
-                status: self.status,
-                created_at: self.created_at,
-                modified_at: self.modified_at,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                created_at: self.created_at
+                ,
+                modified_at: self.modified_at
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl RuleGroupsNamespaceSummary {
     /// Creates a new builder-style object to manufacture [`RuleGroupsNamespaceSummary`](crate::model::RuleGroupsNamespaceSummary).
@@ -876,7 +787,7 @@ impl RuleGroupsNamespaceSummary {
 /// Represents the status of a namespace.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleGroupsNamespaceStatus {
+pub struct RuleGroupsNamespaceStatus  {
     /// Status code of this namespace.
     #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::RuleGroupsNamespaceStatusCode>,
@@ -886,17 +797,17 @@ pub struct RuleGroupsNamespaceStatus {
 }
 impl RuleGroupsNamespaceStatus {
     /// Status code of this namespace.
-    pub fn status_code(&self) -> std::option::Option<&crate::model::RuleGroupsNamespaceStatusCode> {
+    pub fn status_code(&self) -> std::option::Option<& crate::model::RuleGroupsNamespaceStatusCode> {
         self.status_code.as_ref()
     }
     /// The reason for failure if any.
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
 }
 /// See [`RuleGroupsNamespaceStatus`](crate::model::RuleGroupsNamespaceStatus).
 pub mod rule_groups_namespace_status {
-
+    
     /// A builder for [`RuleGroupsNamespaceStatus`](crate::model::RuleGroupsNamespaceStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -910,12 +821,8 @@ pub mod rule_groups_namespace_status {
             self
         }
         /// Status code of this namespace.
-        pub fn set_status_code(
-            mut self,
-            input: std::option::Option<crate::model::RuleGroupsNamespaceStatusCode>,
-        ) -> Self {
-            self.status_code = input;
-            self
+        pub fn set_status_code(mut self, input: std::option::Option<crate::model::RuleGroupsNamespaceStatusCode>) -> Self {
+            self.status_code = input; self
         }
         /// The reason for failure if any.
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -923,21 +830,21 @@ pub mod rule_groups_namespace_status {
             self
         }
         /// The reason for failure if any.
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// Consumes the builder and constructs a [`RuleGroupsNamespaceStatus`](crate::model::RuleGroupsNamespaceStatus).
         pub fn build(self) -> crate::model::RuleGroupsNamespaceStatus {
             crate::model::RuleGroupsNamespaceStatus {
-                status_code: self.status_code,
-                status_reason: self.status_reason,
+                status_code: self.status_code
+                ,
+                status_reason: self.status_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl RuleGroupsNamespaceStatus {
     /// Creates a new builder-style object to manufacture [`RuleGroupsNamespaceStatus`](crate::model::RuleGroupsNamespaceStatus).
@@ -952,9 +859,9 @@ impl RuleGroupsNamespaceStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let rulegroupsnamespacestatuscode = unimplemented!();
 /// match rulegroupsnamespacestatuscode {
@@ -980,22 +887,14 @@ impl RuleGroupsNamespaceStatus {
 /// Specifically, when `rulegroupsnamespacestatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RuleGroupsNamespaceStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// State of a namespace.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RuleGroupsNamespaceStatusCode {
     /// Namespace has been created/updated. Update/Deletion is disallowed until namespace is ACTIVE and workspace status is ACTIVE.
     Active,
@@ -1010,7 +909,7 @@ pub enum RuleGroupsNamespaceStatusCode {
     /// Namespace is being updated. Update/Deletion is disallowed until namespace is ACTIVE and workspace status is ACTIVE.
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RuleGroupsNamespaceStatusCode {
     fn from(s: &str) -> Self {
@@ -1021,19 +920,17 @@ impl std::convert::From<&str> for RuleGroupsNamespaceStatusCode {
             "DELETING" => RuleGroupsNamespaceStatusCode::Deleting,
             "UPDATE_FAILED" => RuleGroupsNamespaceStatusCode::UpdateFailed,
             "UPDATING" => RuleGroupsNamespaceStatusCode::Updating,
-            other => RuleGroupsNamespaceStatusCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RuleGroupsNamespaceStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RuleGroupsNamespaceStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RuleGroupsNamespaceStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RuleGroupsNamespaceStatusCode::from(s))
+                }
+            }
 impl RuleGroupsNamespaceStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1044,18 +941,13 @@ impl RuleGroupsNamespaceStatusCode {
             RuleGroupsNamespaceStatusCode::Deleting => "DELETING",
             RuleGroupsNamespaceStatusCode::UpdateFailed => "UPDATE_FAILED",
             RuleGroupsNamespaceStatusCode::Updating => "UPDATING",
-            RuleGroupsNamespaceStatusCode::Unknown(value) => value.as_str(),
+            RuleGroupsNamespaceStatusCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATING",
-            "CREATION_FAILED",
-            "DELETING",
-            "UPDATE_FAILED",
-            "UPDATING",
+            "ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"
         ]
     }
 }
@@ -1068,7 +960,7 @@ impl AsRef<str> for RuleGroupsNamespaceStatusCode {
 /// Represents a description of the rule groups namespace.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleGroupsNamespaceDescription {
+pub struct RuleGroupsNamespaceDescription  {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1089,45 +981,41 @@ pub struct RuleGroupsNamespaceDescription {
     pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The tags of this rule groups namespace.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl RuleGroupsNamespaceDescription {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The rule groups namespace name.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The status of rule groups namespace.
-    pub fn status(&self) -> std::option::Option<&crate::model::RuleGroupsNamespaceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RuleGroupsNamespaceStatus> {
         self.status.as_ref()
     }
     /// The rule groups namespace data.
-    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn data(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// The time when the rule groups namespace was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// The time when the rule groups namespace was modified.
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// The tags of this rule groups namespace.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`RuleGroupsNamespaceDescription`](crate::model::RuleGroupsNamespaceDescription).
 pub mod rule_groups_namespace_description {
-
+    
     /// A builder for [`RuleGroupsNamespaceDescription`](crate::model::RuleGroupsNamespaceDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1137,9 +1025,7 @@ pub mod rule_groups_namespace_description {
         pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) of this rule groups namespace.
@@ -1149,8 +1035,7 @@ pub mod rule_groups_namespace_description {
         }
         /// The Amazon Resource Name (ARN) of this rule groups namespace.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The rule groups namespace name.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1159,8 +1044,7 @@ pub mod rule_groups_namespace_description {
         }
         /// The rule groups namespace name.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The status of rule groups namespace.
         pub fn status(mut self, input: crate::model::RuleGroupsNamespaceStatus) -> Self {
@@ -1168,12 +1052,8 @@ pub mod rule_groups_namespace_description {
             self
         }
         /// The status of rule groups namespace.
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::RuleGroupsNamespaceStatus>) -> Self {
+            self.status = input; self
         }
         /// The rule groups namespace data.
         pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -1182,8 +1062,7 @@ pub mod rule_groups_namespace_description {
         }
         /// The rule groups namespace data.
         pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.data = input;
-            self
+            self.data = input; self
         }
         /// The time when the rule groups namespace was created.
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1191,12 +1070,8 @@ pub mod rule_groups_namespace_description {
             self
         }
         /// The time when the rule groups namespace was created.
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// The time when the rule groups namespace was modified.
         pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1204,51 +1079,46 @@ pub mod rule_groups_namespace_description {
             self
         }
         /// The time when the rule groups namespace was modified.
-        pub fn set_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified_at = input;
-            self
+        pub fn set_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified_at = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// The tags of this rule groups namespace.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// The tags of this rule groups namespace.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`RuleGroupsNamespaceDescription`](crate::model::RuleGroupsNamespaceDescription).
         pub fn build(self) -> crate::model::RuleGroupsNamespaceDescription {
             crate::model::RuleGroupsNamespaceDescription {
-                arn: self.arn,
-                name: self.name,
-                status: self.status,
-                data: self.data,
-                created_at: self.created_at,
-                modified_at: self.modified_at,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                data: self.data
+                ,
+                created_at: self.created_at
+                ,
+                modified_at: self.modified_at
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl RuleGroupsNamespaceDescription {
     /// Creates a new builder-style object to manufacture [`RuleGroupsNamespaceDescription`](crate::model::RuleGroupsNamespaceDescription).
@@ -1260,7 +1130,7 @@ impl RuleGroupsNamespaceDescription {
 /// Represents the status of a logging configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingConfigurationStatus {
+pub struct LoggingConfigurationStatus  {
     /// Status code of the logging configuration.
     #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::LoggingConfigurationStatusCode>,
@@ -1270,19 +1140,17 @@ pub struct LoggingConfigurationStatus {
 }
 impl LoggingConfigurationStatus {
     /// Status code of the logging configuration.
-    pub fn status_code(
-        &self,
-    ) -> std::option::Option<&crate::model::LoggingConfigurationStatusCode> {
+    pub fn status_code(&self) -> std::option::Option<& crate::model::LoggingConfigurationStatusCode> {
         self.status_code.as_ref()
     }
     /// The reason for failure if any.
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
 }
 /// See [`LoggingConfigurationStatus`](crate::model::LoggingConfigurationStatus).
 pub mod logging_configuration_status {
-
+    
     /// A builder for [`LoggingConfigurationStatus`](crate::model::LoggingConfigurationStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1296,12 +1164,8 @@ pub mod logging_configuration_status {
             self
         }
         /// Status code of the logging configuration.
-        pub fn set_status_code(
-            mut self,
-            input: std::option::Option<crate::model::LoggingConfigurationStatusCode>,
-        ) -> Self {
-            self.status_code = input;
-            self
+        pub fn set_status_code(mut self, input: std::option::Option<crate::model::LoggingConfigurationStatusCode>) -> Self {
+            self.status_code = input; self
         }
         /// The reason for failure if any.
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1309,21 +1173,21 @@ pub mod logging_configuration_status {
             self
         }
         /// The reason for failure if any.
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// Consumes the builder and constructs a [`LoggingConfigurationStatus`](crate::model::LoggingConfigurationStatus).
         pub fn build(self) -> crate::model::LoggingConfigurationStatus {
             crate::model::LoggingConfigurationStatus {
-                status_code: self.status_code,
-                status_reason: self.status_reason,
+                status_code: self.status_code
+                ,
+                status_reason: self.status_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl LoggingConfigurationStatus {
     /// Creates a new builder-style object to manufacture [`LoggingConfigurationStatus`](crate::model::LoggingConfigurationStatus).
@@ -1338,9 +1202,9 @@ impl LoggingConfigurationStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let loggingconfigurationstatuscode = unimplemented!();
 /// match loggingconfigurationstatuscode {
@@ -1366,22 +1230,14 @@ impl LoggingConfigurationStatus {
 /// Specifically, when `loggingconfigurationstatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LoggingConfigurationStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// State of a logging configuration.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LoggingConfigurationStatusCode {
     /// Logging configuration has been created/updated. Update/Deletion is disallowed until logging configuration is ACTIVE and workspace status is ACTIVE.
     Active,
@@ -1396,7 +1252,7 @@ pub enum LoggingConfigurationStatusCode {
     /// Logging configuration is being updated. Update/Deletion is disallowed until logging configuration is ACTIVE and workspace status is ACTIVE.
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LoggingConfigurationStatusCode {
     fn from(s: &str) -> Self {
@@ -1407,19 +1263,17 @@ impl std::convert::From<&str> for LoggingConfigurationStatusCode {
             "DELETING" => LoggingConfigurationStatusCode::Deleting,
             "UPDATE_FAILED" => LoggingConfigurationStatusCode::UpdateFailed,
             "UPDATING" => LoggingConfigurationStatusCode::Updating,
-            other => LoggingConfigurationStatusCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LoggingConfigurationStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LoggingConfigurationStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LoggingConfigurationStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LoggingConfigurationStatusCode::from(s))
+                }
+            }
 impl LoggingConfigurationStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1430,18 +1284,13 @@ impl LoggingConfigurationStatusCode {
             LoggingConfigurationStatusCode::Deleting => "DELETING",
             LoggingConfigurationStatusCode::UpdateFailed => "UPDATE_FAILED",
             LoggingConfigurationStatusCode::Updating => "UPDATING",
-            LoggingConfigurationStatusCode::Unknown(value) => value.as_str(),
+            LoggingConfigurationStatusCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATING",
-            "CREATION_FAILED",
-            "DELETING",
-            "UPDATE_FAILED",
-            "UPDATING",
+            "ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"
         ]
     }
 }
@@ -1454,7 +1303,7 @@ impl AsRef<str> for LoggingConfigurationStatusCode {
 /// Represents the properties of a logging configuration metadata.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingConfigurationMetadata {
+pub struct LoggingConfigurationMetadata  {
     /// The status of the logging configuration.
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::LoggingConfigurationStatus>,
@@ -1473,29 +1322,29 @@ pub struct LoggingConfigurationMetadata {
 }
 impl LoggingConfigurationMetadata {
     /// The status of the logging configuration.
-    pub fn status(&self) -> std::option::Option<&crate::model::LoggingConfigurationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::LoggingConfigurationStatus> {
         self.status.as_ref()
     }
     /// The workspace where the logging configuration exists.
-    pub fn workspace(&self) -> std::option::Option<&str> {
+    pub fn workspace(&self) -> std::option::Option<& str> {
         self.workspace.as_deref()
     }
     /// The ARN of the CW log group to which the vended log data will be published.
-    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn log_group_arn(&self) -> std::option::Option<& str> {
         self.log_group_arn.as_deref()
     }
     /// The time when the logging configuration was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// The time when the logging configuration was modified.
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
 /// See [`LoggingConfigurationMetadata`](crate::model::LoggingConfigurationMetadata).
 pub mod logging_configuration_metadata {
-
+    
     /// A builder for [`LoggingConfigurationMetadata`](crate::model::LoggingConfigurationMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1512,12 +1361,8 @@ pub mod logging_configuration_metadata {
             self
         }
         /// The status of the logging configuration.
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::LoggingConfigurationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::LoggingConfigurationStatus>) -> Self {
+            self.status = input; self
         }
         /// The workspace where the logging configuration exists.
         pub fn workspace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1526,8 +1371,7 @@ pub mod logging_configuration_metadata {
         }
         /// The workspace where the logging configuration exists.
         pub fn set_workspace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workspace = input;
-            self
+            self.workspace = input; self
         }
         /// The ARN of the CW log group to which the vended log data will be published.
         pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1535,12 +1379,8 @@ pub mod logging_configuration_metadata {
             self
         }
         /// The ARN of the CW log group to which the vended log data will be published.
-        pub fn set_log_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_arn = input;
-            self
+        pub fn set_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_arn = input; self
         }
         /// The time when the logging configuration was created.
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1548,12 +1388,8 @@ pub mod logging_configuration_metadata {
             self
         }
         /// The time when the logging configuration was created.
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// The time when the logging configuration was modified.
         pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1561,24 +1397,27 @@ pub mod logging_configuration_metadata {
             self
         }
         /// The time when the logging configuration was modified.
-        pub fn set_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified_at = input;
-            self
+        pub fn set_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified_at = input; self
         }
         /// Consumes the builder and constructs a [`LoggingConfigurationMetadata`](crate::model::LoggingConfigurationMetadata).
         pub fn build(self) -> crate::model::LoggingConfigurationMetadata {
             crate::model::LoggingConfigurationMetadata {
-                status: self.status,
-                workspace: self.workspace,
-                log_group_arn: self.log_group_arn,
-                created_at: self.created_at,
-                modified_at: self.modified_at,
+                status: self.status
+                ,
+                workspace: self.workspace
+                ,
+                log_group_arn: self.log_group_arn
+                ,
+                created_at: self.created_at
+                ,
+                modified_at: self.modified_at
+                ,
             }
         }
     }
+    
+    
 }
 impl LoggingConfigurationMetadata {
     /// Creates a new builder-style object to manufacture [`LoggingConfigurationMetadata`](crate::model::LoggingConfigurationMetadata).
@@ -1590,7 +1429,7 @@ impl LoggingConfigurationMetadata {
 /// Represents the status of a definition.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlertManagerDefinitionStatus {
+pub struct AlertManagerDefinitionStatus  {
     /// Status code of this definition.
     #[doc(hidden)]
     pub status_code: std::option::Option<crate::model::AlertManagerDefinitionStatusCode>,
@@ -1600,19 +1439,17 @@ pub struct AlertManagerDefinitionStatus {
 }
 impl AlertManagerDefinitionStatus {
     /// Status code of this definition.
-    pub fn status_code(
-        &self,
-    ) -> std::option::Option<&crate::model::AlertManagerDefinitionStatusCode> {
+    pub fn status_code(&self) -> std::option::Option<& crate::model::AlertManagerDefinitionStatusCode> {
         self.status_code.as_ref()
     }
     /// The reason for failure if any.
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
 }
 /// See [`AlertManagerDefinitionStatus`](crate::model::AlertManagerDefinitionStatus).
 pub mod alert_manager_definition_status {
-
+    
     /// A builder for [`AlertManagerDefinitionStatus`](crate::model::AlertManagerDefinitionStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1621,20 +1458,13 @@ pub mod alert_manager_definition_status {
     }
     impl Builder {
         /// Status code of this definition.
-        pub fn status_code(
-            mut self,
-            input: crate::model::AlertManagerDefinitionStatusCode,
-        ) -> Self {
+        pub fn status_code(mut self, input: crate::model::AlertManagerDefinitionStatusCode) -> Self {
             self.status_code = Some(input);
             self
         }
         /// Status code of this definition.
-        pub fn set_status_code(
-            mut self,
-            input: std::option::Option<crate::model::AlertManagerDefinitionStatusCode>,
-        ) -> Self {
-            self.status_code = input;
-            self
+        pub fn set_status_code(mut self, input: std::option::Option<crate::model::AlertManagerDefinitionStatusCode>) -> Self {
+            self.status_code = input; self
         }
         /// The reason for failure if any.
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1642,21 +1472,21 @@ pub mod alert_manager_definition_status {
             self
         }
         /// The reason for failure if any.
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// Consumes the builder and constructs a [`AlertManagerDefinitionStatus`](crate::model::AlertManagerDefinitionStatus).
         pub fn build(self) -> crate::model::AlertManagerDefinitionStatus {
             crate::model::AlertManagerDefinitionStatus {
-                status_code: self.status_code,
-                status_reason: self.status_reason,
+                status_code: self.status_code
+                ,
+                status_reason: self.status_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl AlertManagerDefinitionStatus {
     /// Creates a new builder-style object to manufacture [`AlertManagerDefinitionStatus`](crate::model::AlertManagerDefinitionStatus).
@@ -1671,9 +1501,9 @@ impl AlertManagerDefinitionStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let alertmanagerdefinitionstatuscode = unimplemented!();
 /// match alertmanagerdefinitionstatuscode {
@@ -1699,22 +1529,14 @@ impl AlertManagerDefinitionStatus {
 /// Specifically, when `alertmanagerdefinitionstatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AlertManagerDefinitionStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// State of an alert manager definition.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AlertManagerDefinitionStatusCode {
     /// Definition has been created/updated. Update/Deletion is disallowed until definition is ACTIVE and workspace status is ACTIVE.
     Active,
@@ -1729,7 +1551,7 @@ pub enum AlertManagerDefinitionStatusCode {
     /// Definition is being updated. Update/Deletion is disallowed until definition is ACTIVE and workspace status is ACTIVE.
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AlertManagerDefinitionStatusCode {
     fn from(s: &str) -> Self {
@@ -1740,19 +1562,17 @@ impl std::convert::From<&str> for AlertManagerDefinitionStatusCode {
             "DELETING" => AlertManagerDefinitionStatusCode::Deleting,
             "UPDATE_FAILED" => AlertManagerDefinitionStatusCode::UpdateFailed,
             "UPDATING" => AlertManagerDefinitionStatusCode::Updating,
-            other => AlertManagerDefinitionStatusCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AlertManagerDefinitionStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AlertManagerDefinitionStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AlertManagerDefinitionStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AlertManagerDefinitionStatusCode::from(s))
+                }
+            }
 impl AlertManagerDefinitionStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1763,18 +1583,13 @@ impl AlertManagerDefinitionStatusCode {
             AlertManagerDefinitionStatusCode::Deleting => "DELETING",
             AlertManagerDefinitionStatusCode::UpdateFailed => "UPDATE_FAILED",
             AlertManagerDefinitionStatusCode::Updating => "UPDATING",
-            AlertManagerDefinitionStatusCode::Unknown(value) => value.as_str(),
+            AlertManagerDefinitionStatusCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATING",
-            "CREATION_FAILED",
-            "DELETING",
-            "UPDATE_FAILED",
-            "UPDATING",
+            "ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"
         ]
     }
 }
@@ -1787,7 +1602,7 @@ impl AsRef<str> for AlertManagerDefinitionStatusCode {
 /// Represents the properties of an alert manager definition.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlertManagerDefinitionDescription {
+pub struct AlertManagerDefinitionDescription  {
     /// The status of alert manager definition.
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
@@ -1803,25 +1618,25 @@ pub struct AlertManagerDefinitionDescription {
 }
 impl AlertManagerDefinitionDescription {
     /// The status of alert manager definition.
-    pub fn status(&self) -> std::option::Option<&crate::model::AlertManagerDefinitionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AlertManagerDefinitionStatus> {
         self.status.as_ref()
     }
     /// The alert manager definition.
-    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn data(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// The time when the alert manager definition was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// The time when the alert manager definition was modified.
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
 /// See [`AlertManagerDefinitionDescription`](crate::model::AlertManagerDefinitionDescription).
 pub mod alert_manager_definition_description {
-
+    
     /// A builder for [`AlertManagerDefinitionDescription`](crate::model::AlertManagerDefinitionDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1837,12 +1652,8 @@ pub mod alert_manager_definition_description {
             self
         }
         /// The status of alert manager definition.
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AlertManagerDefinitionStatus>) -> Self {
+            self.status = input; self
         }
         /// The alert manager definition.
         pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -1851,8 +1662,7 @@ pub mod alert_manager_definition_description {
         }
         /// The alert manager definition.
         pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.data = input;
-            self
+            self.data = input; self
         }
         /// The time when the alert manager definition was created.
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1860,12 +1670,8 @@ pub mod alert_manager_definition_description {
             self
         }
         /// The time when the alert manager definition was created.
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// The time when the alert manager definition was modified.
         pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1873,23 +1679,25 @@ pub mod alert_manager_definition_description {
             self
         }
         /// The time when the alert manager definition was modified.
-        pub fn set_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified_at = input;
-            self
+        pub fn set_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified_at = input; self
         }
         /// Consumes the builder and constructs a [`AlertManagerDefinitionDescription`](crate::model::AlertManagerDefinitionDescription).
         pub fn build(self) -> crate::model::AlertManagerDefinitionDescription {
             crate::model::AlertManagerDefinitionDescription {
-                status: self.status,
-                data: self.data,
-                created_at: self.created_at,
-                modified_at: self.modified_at,
+                status: self.status
+                ,
+                data: self.data
+                ,
+                created_at: self.created_at
+                ,
+                modified_at: self.modified_at
+                ,
             }
         }
     }
+    
+    
 }
 impl AlertManagerDefinitionDescription {
     /// Creates a new builder-style object to manufacture [`AlertManagerDefinitionDescription`](crate::model::AlertManagerDefinitionDescription).
@@ -1897,3 +1705,4 @@ impl AlertManagerDefinitionDescription {
         crate::model::alert_manager_definition_description::Builder::default()
     }
 }
+

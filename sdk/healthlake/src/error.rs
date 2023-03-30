@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UntagResourceError {
     /// Kind of error that occurred.
-    pub kind: UntagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -24,22 +24,28 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -53,52 +59,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
 }
 impl UntagResourceError {
     /// Creates a new `UntagResourceError`.
-    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -108,9 +111,15 @@ impl UntagResourceError {
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -118,22 +127,20 @@ impl std::error::Error for UntagResourceError {
 /// <p>The user input parameter was invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationException {
+pub struct ValidationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -143,7 +150,7 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException).
 pub mod validation_exception {
-
+    
     /// A builder for [`ValidationException`](crate::error::ValidationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -157,16 +164,18 @@ pub mod validation_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException).
         pub fn build(self) -> crate::error::ValidationException {
             crate::error::ValidationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationException {
     /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException).
@@ -178,22 +187,20 @@ impl ValidationException {
 /// <p> The requested Data Store was not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -203,7 +210,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -217,16 +224,18 @@ pub mod resource_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -240,15 +249,15 @@ impl ResourceNotFoundException {
 #[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     /// Kind of error that occurred.
-    pub kind: TagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -260,22 +269,28 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -289,52 +304,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
 }
 impl TagResourceError {
     /// Creates a new `TagResourceError`.
-    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -344,9 +356,15 @@ impl TagResourceError {
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -356,15 +374,15 @@ impl std::error::Error for TagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct StartFHIRImportJobError {
     /// Kind of error that occurred.
-    pub kind: StartFHIRImportJobErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StartFHIRImportJobErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartFHIRImportJobError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StartFHIRImportJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -382,25 +400,37 @@ pub enum StartFHIRImportJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartFHIRImportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartFHIRImportJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            StartFHIRImportJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            StartFHIRImportJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            StartFHIRImportJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            StartFHIRImportJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            StartFHIRImportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            StartFHIRImportJobErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartFHIRImportJobErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartFHIRImportJobErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartFHIRImportJobErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartFHIRImportJobErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartFHIRImportJobErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -414,91 +444,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartFHIRImportJobError {
 }
 impl StartFHIRImportJobError {
     /// Creates a new `StartFHIRImportJobError`.
-    pub fn new(kind: StartFHIRImportJobErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StartFHIRImportJobError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StartFHIRImportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StartFHIRImportJobError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StartFHIRImportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StartFHIRImportJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StartFHIRImportJobError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StartFHIRImportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StartFHIRImportJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StartFHIRImportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StartFHIRImportJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartFHIRImportJobErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, StartFHIRImportJobErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `StartFHIRImportJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartFHIRImportJobErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, StartFHIRImportJobErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `StartFHIRImportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartFHIRImportJobErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, StartFHIRImportJobErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `StartFHIRImportJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartFHIRImportJobErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, StartFHIRImportJobErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `StartFHIRImportJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartFHIRImportJobErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, StartFHIRImportJobErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for StartFHIRImportJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartFHIRImportJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            StartFHIRImportJobErrorKind::InternalServerException(_inner) => Some(_inner),
-            StartFHIRImportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            StartFHIRImportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartFHIRImportJobErrorKind::ValidationException(_inner) => Some(_inner),
-            StartFHIRImportJobErrorKind::Unhandled(_inner) => Some(_inner),
+            StartFHIRImportJobErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            StartFHIRImportJobErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            StartFHIRImportJobErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            StartFHIRImportJobErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            StartFHIRImportJobErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            StartFHIRImportJobErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -506,22 +533,20 @@ impl std::error::Error for StartFHIRImportJobError {
 /// <p>The user has exceeded their maximum number of allowed calls to the given API. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -531,7 +556,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException).
 pub mod throttling_exception {
-
+    
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -545,16 +570,18 @@ pub mod throttling_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
         pub fn build(self) -> crate::error::ThrottlingException {
             crate::error::ThrottlingException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
@@ -566,22 +593,20 @@ impl ThrottlingException {
 /// <p>Unknown error occurs in the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerException {
+pub struct InternalServerException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServerException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -591,7 +616,7 @@ impl std::fmt::Display for InternalServerException {
 impl std::error::Error for InternalServerException {}
 /// See [`InternalServerException`](crate::error::InternalServerException).
 pub mod internal_server_exception {
-
+    
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -605,16 +630,18 @@ pub mod internal_server_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InternalServerException`](crate::error::InternalServerException).
         pub fn build(self) -> crate::error::InternalServerException {
             crate::error::InternalServerException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServerException {
     /// Creates a new builder-style object to manufacture [`InternalServerException`](crate::error::InternalServerException).
@@ -626,22 +653,20 @@ impl InternalServerException {
 /// <p>Access is denied. Your account is not authorized to perform this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -651,7 +676,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
-
+    
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -665,16 +690,18 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
@@ -688,15 +715,15 @@ impl AccessDeniedException {
 #[derive(std::fmt::Debug)]
 pub struct StartFHIRExportJobError {
     /// Kind of error that occurred.
-    pub kind: StartFHIRExportJobErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StartFHIRExportJobErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartFHIRExportJobError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StartFHIRExportJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -714,25 +741,37 @@ pub enum StartFHIRExportJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartFHIRExportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartFHIRExportJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            StartFHIRExportJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            StartFHIRExportJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            StartFHIRExportJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            StartFHIRExportJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            StartFHIRExportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            StartFHIRExportJobErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartFHIRExportJobErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartFHIRExportJobErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartFHIRExportJobErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartFHIRExportJobErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartFHIRExportJobErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -746,91 +785,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartFHIRExportJobError {
 }
 impl StartFHIRExportJobError {
     /// Creates a new `StartFHIRExportJobError`.
-    pub fn new(kind: StartFHIRExportJobErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StartFHIRExportJobError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StartFHIRExportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StartFHIRExportJobError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StartFHIRExportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StartFHIRExportJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StartFHIRExportJobError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StartFHIRExportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StartFHIRExportJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StartFHIRExportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StartFHIRExportJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartFHIRExportJobErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, StartFHIRExportJobErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `StartFHIRExportJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartFHIRExportJobErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, StartFHIRExportJobErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `StartFHIRExportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartFHIRExportJobErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, StartFHIRExportJobErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `StartFHIRExportJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartFHIRExportJobErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, StartFHIRExportJobErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `StartFHIRExportJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartFHIRExportJobErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, StartFHIRExportJobErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for StartFHIRExportJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartFHIRExportJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            StartFHIRExportJobErrorKind::InternalServerException(_inner) => Some(_inner),
-            StartFHIRExportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            StartFHIRExportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartFHIRExportJobErrorKind::ValidationException(_inner) => Some(_inner),
-            StartFHIRExportJobErrorKind::Unhandled(_inner) => Some(_inner),
+            StartFHIRExportJobErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            StartFHIRExportJobErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            StartFHIRExportJobErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            StartFHIRExportJobErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            StartFHIRExportJobErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            StartFHIRExportJobErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -840,15 +876,15 @@ impl std::error::Error for StartFHIRExportJobError {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsForResourceError {
     /// Kind of error that occurred.
-    pub kind: ListTagsForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -860,22 +896,28 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -889,67 +931,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
 }
 impl ListTagsForResourceError {
     /// Creates a new `ListTagsForResourceError`.
-    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -959,15 +1001,15 @@ impl std::error::Error for ListTagsForResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ListFHIRImportJobsError {
     /// Kind of error that occurred.
-    pub kind: ListFHIRImportJobsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListFHIRImportJobsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListFHIRImportJobsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListFHIRImportJobsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -985,25 +1027,37 @@ pub enum ListFHIRImportJobsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFHIRImportJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListFHIRImportJobsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListFHIRImportJobsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            ListFHIRImportJobsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListFHIRImportJobsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ListFHIRImportJobsErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListFHIRImportJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListFHIRImportJobsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFHIRImportJobsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFHIRImportJobsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFHIRImportJobsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFHIRImportJobsErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFHIRImportJobsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1017,91 +1071,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListFHIRImportJobsError {
 }
 impl ListFHIRImportJobsError {
     /// Creates a new `ListFHIRImportJobsError`.
-    pub fn new(kind: ListFHIRImportJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListFHIRImportJobsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListFHIRImportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListFHIRImportJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListFHIRImportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListFHIRImportJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListFHIRImportJobsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListFHIRImportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListFHIRImportJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListFHIRImportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListFHIRImportJobsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFHIRImportJobsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListFHIRImportJobsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListFHIRImportJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFHIRImportJobsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ListFHIRImportJobsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ListFHIRImportJobsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFHIRImportJobsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListFHIRImportJobsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListFHIRImportJobsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFHIRImportJobsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, ListFHIRImportJobsErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `ListFHIRImportJobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFHIRImportJobsErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListFHIRImportJobsErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListFHIRImportJobsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListFHIRImportJobsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListFHIRImportJobsErrorKind::InternalServerException(_inner) => Some(_inner),
-            ListFHIRImportJobsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListFHIRImportJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListFHIRImportJobsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListFHIRImportJobsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListFHIRImportJobsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListFHIRImportJobsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListFHIRImportJobsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListFHIRImportJobsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ListFHIRImportJobsErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListFHIRImportJobsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1111,15 +1162,15 @@ impl std::error::Error for ListFHIRImportJobsError {
 #[derive(std::fmt::Debug)]
 pub struct ListFHIRExportJobsError {
     /// Kind of error that occurred.
-    pub kind: ListFHIRExportJobsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListFHIRExportJobsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListFHIRExportJobsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListFHIRExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1137,25 +1188,37 @@ pub enum ListFHIRExportJobsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFHIRExportJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListFHIRExportJobsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListFHIRExportJobsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            ListFHIRExportJobsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListFHIRExportJobsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ListFHIRExportJobsErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListFHIRExportJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListFHIRExportJobsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFHIRExportJobsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFHIRExportJobsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFHIRExportJobsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFHIRExportJobsErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFHIRExportJobsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1169,91 +1232,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListFHIRExportJobsError {
 }
 impl ListFHIRExportJobsError {
     /// Creates a new `ListFHIRExportJobsError`.
-    pub fn new(kind: ListFHIRExportJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListFHIRExportJobsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListFHIRExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListFHIRExportJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListFHIRExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListFHIRExportJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListFHIRExportJobsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListFHIRExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListFHIRExportJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListFHIRExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListFHIRExportJobsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFHIRExportJobsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListFHIRExportJobsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListFHIRExportJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFHIRExportJobsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ListFHIRExportJobsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ListFHIRExportJobsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFHIRExportJobsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListFHIRExportJobsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListFHIRExportJobsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFHIRExportJobsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, ListFHIRExportJobsErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `ListFHIRExportJobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFHIRExportJobsErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListFHIRExportJobsErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListFHIRExportJobsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListFHIRExportJobsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListFHIRExportJobsErrorKind::InternalServerException(_inner) => Some(_inner),
-            ListFHIRExportJobsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListFHIRExportJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListFHIRExportJobsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListFHIRExportJobsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListFHIRExportJobsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListFHIRExportJobsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListFHIRExportJobsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListFHIRExportJobsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ListFHIRExportJobsErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListFHIRExportJobsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1263,15 +1323,15 @@ impl std::error::Error for ListFHIRExportJobsError {
 #[derive(std::fmt::Debug)]
 pub struct ListFHIRDatastoresError {
     /// Kind of error that occurred.
-    pub kind: ListFHIRDatastoresErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListFHIRDatastoresErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListFHIRDatastoresError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListFHIRDatastoresErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1285,23 +1345,31 @@ pub enum ListFHIRDatastoresErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFHIRDatastoresError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListFHIRDatastoresErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            ListFHIRDatastoresErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ListFHIRDatastoresErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListFHIRDatastoresErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListFHIRDatastoresErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFHIRDatastoresErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFHIRDatastoresErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListFHIRDatastoresErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1315,75 +1383,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListFHIRDatastoresError {
 }
 impl ListFHIRDatastoresError {
     /// Creates a new `ListFHIRDatastoresError`.
-    pub fn new(kind: ListFHIRDatastoresErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListFHIRDatastoresError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListFHIRDatastoresErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListFHIRDatastoresError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListFHIRDatastoresErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListFHIRDatastoresErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListFHIRDatastoresError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListFHIRDatastoresErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListFHIRDatastoresError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListFHIRDatastoresErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListFHIRDatastoresErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFHIRDatastoresErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ListFHIRDatastoresErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ListFHIRDatastoresErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFHIRDatastoresErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, ListFHIRDatastoresErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `ListFHIRDatastoresErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFHIRDatastoresErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListFHIRDatastoresErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListFHIRDatastoresError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListFHIRDatastoresErrorKind::InternalServerException(_inner) => Some(_inner),
-            ListFHIRDatastoresErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListFHIRDatastoresErrorKind::ValidationException(_inner) => Some(_inner),
-            ListFHIRDatastoresErrorKind::Unhandled(_inner) => Some(_inner),
+            ListFHIRDatastoresErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListFHIRDatastoresErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ListFHIRDatastoresErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListFHIRDatastoresErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1393,15 +1460,15 @@ impl std::error::Error for ListFHIRDatastoresError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeFHIRImportJobError {
     /// Kind of error that occurred.
-    pub kind: DescribeFHIRImportJobErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeFHIRImportJobErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeFHIRImportJobError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeFHIRImportJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1417,24 +1484,34 @@ pub enum DescribeFHIRImportJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeFHIRImportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeFHIRImportJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            DescribeFHIRImportJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DescribeFHIRImportJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DescribeFHIRImportJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            DescribeFHIRImportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeFHIRImportJobErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeFHIRImportJobErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeFHIRImportJobErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeFHIRImportJobErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeFHIRImportJobErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1448,87 +1525,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeFHIRImportJobError {
 }
 impl DescribeFHIRImportJobError {
     /// Creates a new `DescribeFHIRImportJobError`.
-    pub fn new(kind: DescribeFHIRImportJobErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeFHIRImportJobError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeFHIRImportJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeFHIRImportJobError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeFHIRImportJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeFHIRImportJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeFHIRImportJobError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeFHIRImportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeFHIRImportJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeFHIRImportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeFHIRImportJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeFHIRImportJobErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, DescribeFHIRImportJobErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `DescribeFHIRImportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeFHIRImportJobErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeFHIRImportJobErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeFHIRImportJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeFHIRImportJobErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DescribeFHIRImportJobErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `DescribeFHIRImportJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeFHIRImportJobErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, DescribeFHIRImportJobErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for DescribeFHIRImportJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeFHIRImportJobErrorKind::InternalServerException(_inner) => Some(_inner),
-            DescribeFHIRImportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeFHIRImportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeFHIRImportJobErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeFHIRImportJobErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeFHIRImportJobErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeFHIRImportJobErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeFHIRImportJobErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeFHIRImportJobErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeFHIRImportJobErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1538,15 +1609,15 @@ impl std::error::Error for DescribeFHIRImportJobError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeFHIRExportJobError {
     /// Kind of error that occurred.
-    pub kind: DescribeFHIRExportJobErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeFHIRExportJobErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeFHIRExportJobError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeFHIRExportJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1562,24 +1633,34 @@ pub enum DescribeFHIRExportJobErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeFHIRExportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeFHIRExportJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            DescribeFHIRExportJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DescribeFHIRExportJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DescribeFHIRExportJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            DescribeFHIRExportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeFHIRExportJobErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeFHIRExportJobErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeFHIRExportJobErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeFHIRExportJobErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeFHIRExportJobErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1593,87 +1674,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeFHIRExportJobError {
 }
 impl DescribeFHIRExportJobError {
     /// Creates a new `DescribeFHIRExportJobError`.
-    pub fn new(kind: DescribeFHIRExportJobErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeFHIRExportJobError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeFHIRExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeFHIRExportJobError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeFHIRExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeFHIRExportJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeFHIRExportJobError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeFHIRExportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeFHIRExportJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeFHIRExportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeFHIRExportJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeFHIRExportJobErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, DescribeFHIRExportJobErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `DescribeFHIRExportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeFHIRExportJobErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeFHIRExportJobErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeFHIRExportJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeFHIRExportJobErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DescribeFHIRExportJobErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `DescribeFHIRExportJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeFHIRExportJobErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, DescribeFHIRExportJobErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for DescribeFHIRExportJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeFHIRExportJobErrorKind::InternalServerException(_inner) => Some(_inner),
-            DescribeFHIRExportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeFHIRExportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeFHIRExportJobErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeFHIRExportJobErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeFHIRExportJobErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeFHIRExportJobErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeFHIRExportJobErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeFHIRExportJobErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeFHIRExportJobErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1683,15 +1758,15 @@ impl std::error::Error for DescribeFHIRExportJobError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeFHIRDatastoreError {
     /// Kind of error that occurred.
-    pub kind: DescribeFHIRDatastoreErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeFHIRDatastoreErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeFHIRDatastoreError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1707,24 +1782,34 @@ pub enum DescribeFHIRDatastoreErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeFHIRDatastoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeFHIRDatastoreErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            DescribeFHIRDatastoreErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DescribeFHIRDatastoreErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DescribeFHIRDatastoreErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            DescribeFHIRDatastoreErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeFHIRDatastoreErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeFHIRDatastoreErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeFHIRDatastoreErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeFHIRDatastoreErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeFHIRDatastoreErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1738,87 +1823,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeFHIRDatastoreError {
 }
 impl DescribeFHIRDatastoreError {
     /// Creates a new `DescribeFHIRDatastoreError`.
-    pub fn new(kind: DescribeFHIRDatastoreErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeFHIRDatastoreError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeFHIRDatastoreError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeFHIRDatastoreErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeFHIRDatastoreError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeFHIRDatastoreError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeFHIRDatastoreErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeFHIRDatastoreErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, DescribeFHIRDatastoreErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `DescribeFHIRDatastoreErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeFHIRDatastoreErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeFHIRDatastoreErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeFHIRDatastoreErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeFHIRDatastoreErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DescribeFHIRDatastoreErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `DescribeFHIRDatastoreErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeFHIRDatastoreErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, DescribeFHIRDatastoreErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for DescribeFHIRDatastoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeFHIRDatastoreErrorKind::InternalServerException(_inner) => Some(_inner),
-            DescribeFHIRDatastoreErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeFHIRDatastoreErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeFHIRDatastoreErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeFHIRDatastoreErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeFHIRDatastoreErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeFHIRDatastoreErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeFHIRDatastoreErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeFHIRDatastoreErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeFHIRDatastoreErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1828,15 +1907,15 @@ impl std::error::Error for DescribeFHIRDatastoreError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteFHIRDatastoreError {
     /// Kind of error that occurred.
-    pub kind: DeleteFHIRDatastoreErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteFHIRDatastoreErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteFHIRDatastoreError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1856,26 +1935,40 @@ pub enum DeleteFHIRDatastoreErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFHIRDatastoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteFHIRDatastoreErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteFHIRDatastoreErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DeleteFHIRDatastoreErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            DeleteFHIRDatastoreErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DeleteFHIRDatastoreErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DeleteFHIRDatastoreErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            DeleteFHIRDatastoreErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteFHIRDatastoreErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteFHIRDatastoreErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteFHIRDatastoreErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteFHIRDatastoreErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteFHIRDatastoreErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteFHIRDatastoreErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteFHIRDatastoreErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1889,99 +1982,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteFHIRDatastoreError {
 }
 impl DeleteFHIRDatastoreError {
     /// Creates a new `DeleteFHIRDatastoreError`.
-    pub fn new(kind: DeleteFHIRDatastoreErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteFHIRDatastoreError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteFHIRDatastoreError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteFHIRDatastoreErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteFHIRDatastoreError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteFHIRDatastoreError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteFHIRDatastoreErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteFHIRDatastoreErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DeleteFHIRDatastoreErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteFHIRDatastoreErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteFHIRDatastoreErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, DeleteFHIRDatastoreErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteFHIRDatastoreErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteFHIRDatastoreErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, DeleteFHIRDatastoreErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `DeleteFHIRDatastoreErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteFHIRDatastoreErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteFHIRDatastoreErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteFHIRDatastoreErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteFHIRDatastoreErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DeleteFHIRDatastoreErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `DeleteFHIRDatastoreErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteFHIRDatastoreErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, DeleteFHIRDatastoreErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for DeleteFHIRDatastoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteFHIRDatastoreErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeleteFHIRDatastoreErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteFHIRDatastoreErrorKind::InternalServerException(_inner) => Some(_inner),
-            DeleteFHIRDatastoreErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteFHIRDatastoreErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteFHIRDatastoreErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteFHIRDatastoreErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteFHIRDatastoreErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteFHIRDatastoreErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteFHIRDatastoreErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteFHIRDatastoreErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteFHIRDatastoreErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteFHIRDatastoreErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteFHIRDatastoreErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1989,22 +2078,20 @@ impl std::error::Error for DeleteFHIRDatastoreError {
 /// <p>The Data Store is in a transition state and the user requested action can not be performed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -2014,7 +2101,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
-
+    
     /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2028,16 +2115,18 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
@@ -2051,15 +2140,15 @@ impl ConflictException {
 #[derive(std::fmt::Debug)]
 pub struct CreateFHIRDatastoreError {
     /// Kind of error that occurred.
-    pub kind: CreateFHIRDatastoreErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateFHIRDatastoreErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateFHIRDatastoreError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2075,24 +2164,34 @@ pub enum CreateFHIRDatastoreErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateFHIRDatastoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateFHIRDatastoreErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateFHIRDatastoreErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            CreateFHIRDatastoreErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            CreateFHIRDatastoreErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            CreateFHIRDatastoreErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateFHIRDatastoreErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateFHIRDatastoreErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateFHIRDatastoreErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateFHIRDatastoreErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateFHIRDatastoreErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2106,112 +2205,111 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateFHIRDatastoreError {
 }
 impl CreateFHIRDatastoreError {
     /// Creates a new `CreateFHIRDatastoreError`.
-    pub fn new(kind: CreateFHIRDatastoreErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateFHIRDatastoreError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateFHIRDatastoreError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateFHIRDatastoreErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateFHIRDatastoreError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateFHIRDatastoreError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateFHIRDatastoreErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateFHIRDatastoreErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateFHIRDatastoreErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateFHIRDatastoreErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateFHIRDatastoreErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, CreateFHIRDatastoreErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `CreateFHIRDatastoreErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateFHIRDatastoreErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, CreateFHIRDatastoreErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `CreateFHIRDatastoreErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateFHIRDatastoreErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, CreateFHIRDatastoreErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for CreateFHIRDatastoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateFHIRDatastoreErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateFHIRDatastoreErrorKind::InternalServerException(_inner) => Some(_inner),
-            CreateFHIRDatastoreErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateFHIRDatastoreErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateFHIRDatastoreErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateFHIRDatastoreErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateFHIRDatastoreErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            CreateFHIRDatastoreErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            CreateFHIRDatastoreErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateFHIRDatastoreErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

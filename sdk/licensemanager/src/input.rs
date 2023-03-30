@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`AcceptGrantInput`](crate::input::AcceptGrantInput).
 pub mod accept_grant_input {
-
+    
     /// A builder for [`AcceptGrantInput`](crate::input::AcceptGrantInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17,143 +17,93 @@ pub mod accept_grant_input {
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grant_arn = input;
-            self
+            self.grant_arn = input; self
         }
         /// Consumes the builder and constructs a [`AcceptGrantInput`](crate::input::AcceptGrantInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::AcceptGrantInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::AcceptGrantInput {
-                grant_arn: self.grant_arn,
-            })
+        pub fn build(self) -> Result<crate::input::AcceptGrantInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::AcceptGrantInput {
+                    grant_arn: self.grant_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl AcceptGrantInput {
     /// Consumes the builder and constructs an Operation<[`AcceptGrant`](crate::operation::AcceptGrant)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::AcceptGrant,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AcceptGrant, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::AcceptGrantInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::AcceptGrantInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::AcceptGrantInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::AcceptGrantInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.AcceptGrant",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.AcceptGrant"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_accept_grant(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_accept_grant(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::AcceptGrant::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "AcceptGrant",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AcceptGrant::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("AcceptGrant", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -165,7 +115,7 @@ impl AcceptGrantInput {
 
 /// See [`CheckInLicenseInput`](crate::input::CheckInLicenseInput).
 pub mod check_in_license_input {
-
+    
     /// A builder for [`CheckInLicenseInput`](crate::input::CheckInLicenseInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -179,12 +129,8 @@ pub mod check_in_license_input {
             self
         }
         /// <p>License consumption token.</p>
-        pub fn set_license_consumption_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_consumption_token = input;
-            self
+        pub fn set_license_consumption_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_consumption_token = input; self
         }
         /// <p>License beneficiary.</p>
         pub fn beneficiary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,144 +139,95 @@ pub mod check_in_license_input {
         }
         /// <p>License beneficiary.</p>
         pub fn set_beneficiary(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.beneficiary = input;
-            self
+            self.beneficiary = input; self
         }
         /// Consumes the builder and constructs a [`CheckInLicenseInput`](crate::input::CheckInLicenseInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CheckInLicenseInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CheckInLicenseInput {
-                license_consumption_token: self.license_consumption_token,
-                beneficiary: self.beneficiary,
-            })
+        pub fn build(self) -> Result<crate::input::CheckInLicenseInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CheckInLicenseInput {
+                    license_consumption_token: self.license_consumption_token
+                    ,
+                    beneficiary: self.beneficiary
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CheckInLicenseInput {
     /// Consumes the builder and constructs an Operation<[`CheckInLicense`](crate::operation::CheckInLicense)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CheckInLicense,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CheckInLicense, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CheckInLicenseInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CheckInLicenseInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CheckInLicenseInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CheckInLicenseInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.CheckInLicense",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.CheckInLicense"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_check_in_license(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_check_in_license(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CheckInLicense::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CheckInLicense",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CheckInLicense::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CheckInLicense", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -342,14 +239,13 @@ impl CheckInLicenseInput {
 
 /// See [`CheckoutBorrowLicenseInput`](crate::input::CheckoutBorrowLicenseInput).
 pub mod checkout_borrow_license_input {
-
+    
     /// A builder for [`CheckoutBorrowLicenseInput`](crate::input::CheckoutBorrowLicenseInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arn: std::option::Option<std::string::String>,
         pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
-        pub(crate) digital_signature_method:
-            std::option::Option<crate::model::DigitalSignatureMethod>,
+        pub(crate) digital_signature_method: std::option::Option<crate::model::DigitalSignatureMethod>,
         pub(crate) node_id: std::option::Option<std::string::String>,
         pub(crate) checkout_metadata: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -362,8 +258,7 @@ pub mod checkout_borrow_license_input {
         }
         /// <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// Appends an item to `entitlements`.
         ///
@@ -372,33 +267,22 @@ pub mod checkout_borrow_license_input {
         /// <p>License entitlements. Partial checkouts are not supported.</p>
         pub fn entitlements(mut self, input: crate::model::EntitlementData) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input);
-            self.entitlements = Some(v);
-            self
+                            v.push(input);
+                            self.entitlements = Some(v);
+                            self
         }
         /// <p>License entitlements. Partial checkouts are not supported.</p>
-        pub fn set_entitlements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
-        ) -> Self {
-            self.entitlements = input;
-            self
+        pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>) -> Self {
+            self.entitlements = input; self
         }
         /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
-        pub fn digital_signature_method(
-            mut self,
-            input: crate::model::DigitalSignatureMethod,
-        ) -> Self {
+        pub fn digital_signature_method(mut self, input: crate::model::DigitalSignatureMethod) -> Self {
             self.digital_signature_method = Some(input);
             self
         }
         /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
-        pub fn set_digital_signature_method(
-            mut self,
-            input: std::option::Option<crate::model::DigitalSignatureMethod>,
-        ) -> Self {
-            self.digital_signature_method = input;
-            self
+        pub fn set_digital_signature_method(mut self, input: std::option::Option<crate::model::DigitalSignatureMethod>) -> Self {
+            self.digital_signature_method = input; self
         }
         /// <p>Node ID.</p>
         pub fn node_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -407,8 +291,7 @@ pub mod checkout_borrow_license_input {
         }
         /// <p>Node ID.</p>
         pub fn set_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_id = input;
-            self
+            self.node_id = input; self
         }
         /// Appends an item to `checkout_metadata`.
         ///
@@ -417,17 +300,13 @@ pub mod checkout_borrow_license_input {
         /// <p>Information about constraints.</p>
         pub fn checkout_metadata(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.checkout_metadata.unwrap_or_default();
-            v.push(input);
-            self.checkout_metadata = Some(v);
-            self
+                            v.push(input);
+                            self.checkout_metadata = Some(v);
+                            self
         }
         /// <p>Information about constraints.</p>
-        pub fn set_checkout_metadata(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
-        ) -> Self {
-            self.checkout_metadata = input;
-            self
+        pub fn set_checkout_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::model::Metadata>>) -> Self {
+            self.checkout_metadata = input; self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -436,152 +315,103 @@ pub mod checkout_borrow_license_input {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`CheckoutBorrowLicenseInput`](crate::input::CheckoutBorrowLicenseInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CheckoutBorrowLicenseInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CheckoutBorrowLicenseInput {
-                license_arn: self.license_arn,
-                entitlements: self.entitlements,
-                digital_signature_method: self.digital_signature_method,
-                node_id: self.node_id,
-                checkout_metadata: self.checkout_metadata,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::CheckoutBorrowLicenseInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CheckoutBorrowLicenseInput {
+                    license_arn: self.license_arn
+                    ,
+                    entitlements: self.entitlements
+                    ,
+                    digital_signature_method: self.digital_signature_method
+                    ,
+                    node_id: self.node_id
+                    ,
+                    checkout_metadata: self.checkout_metadata
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CheckoutBorrowLicenseInput {
     /// Consumes the builder and constructs an Operation<[`CheckoutBorrowLicense`](crate::operation::CheckoutBorrowLicense)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CheckoutBorrowLicense,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CheckoutBorrowLicense, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CheckoutBorrowLicenseInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CheckoutBorrowLicenseInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CheckoutBorrowLicenseInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CheckoutBorrowLicenseInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.CheckoutBorrowLicense",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.CheckoutBorrowLicense"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_checkout_borrow_license(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_checkout_borrow_license(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CheckoutBorrowLicense::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CheckoutBorrowLicense",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CheckoutBorrowLicense::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CheckoutBorrowLicense", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -593,7 +423,7 @@ impl CheckoutBorrowLicenseInput {
 
 /// See [`CheckoutLicenseInput`](crate::input::CheckoutLicenseInput).
 pub mod checkout_license_input {
-
+    
     /// A builder for [`CheckoutLicenseInput`](crate::input::CheckoutLicenseInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -613,8 +443,7 @@ pub mod checkout_license_input {
         }
         /// <p>Product SKU.</p>
         pub fn set_product_sku(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.product_sku = input;
-            self
+            self.product_sku = input; self
         }
         /// <p>Checkout type.</p>
         pub fn checkout_type(mut self, input: crate::model::CheckoutType) -> Self {
@@ -622,12 +451,8 @@ pub mod checkout_license_input {
             self
         }
         /// <p>Checkout type.</p>
-        pub fn set_checkout_type(
-            mut self,
-            input: std::option::Option<crate::model::CheckoutType>,
-        ) -> Self {
-            self.checkout_type = input;
-            self
+        pub fn set_checkout_type(mut self, input: std::option::Option<crate::model::CheckoutType>) -> Self {
+            self.checkout_type = input; self
         }
         /// <p>Key fingerprint identifying the license.</p>
         pub fn key_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -635,12 +460,8 @@ pub mod checkout_license_input {
             self
         }
         /// <p>Key fingerprint identifying the license.</p>
-        pub fn set_key_fingerprint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.key_fingerprint = input;
-            self
+        pub fn set_key_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_fingerprint = input; self
         }
         /// Appends an item to `entitlements`.
         ///
@@ -649,17 +470,13 @@ pub mod checkout_license_input {
         /// <p>License entitlements.</p>
         pub fn entitlements(mut self, input: crate::model::EntitlementData) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input);
-            self.entitlements = Some(v);
-            self
+                            v.push(input);
+                            self.entitlements = Some(v);
+                            self
         }
         /// <p>License entitlements.</p>
-        pub fn set_entitlements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
-        ) -> Self {
-            self.entitlements = input;
-            self
+        pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>) -> Self {
+            self.entitlements = input; self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -668,8 +485,7 @@ pub mod checkout_license_input {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// <p>License beneficiary.</p>
         pub fn beneficiary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -678,8 +494,7 @@ pub mod checkout_license_input {
         }
         /// <p>License beneficiary.</p>
         pub fn set_beneficiary(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.beneficiary = input;
-            self
+            self.beneficiary = input; self
         }
         /// <p>Node ID.</p>
         pub fn node_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -688,149 +503,105 @@ pub mod checkout_license_input {
         }
         /// <p>Node ID.</p>
         pub fn set_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_id = input;
-            self
+            self.node_id = input; self
         }
         /// Consumes the builder and constructs a [`CheckoutLicenseInput`](crate::input::CheckoutLicenseInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CheckoutLicenseInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CheckoutLicenseInput {
-                product_sku: self.product_sku,
-                checkout_type: self.checkout_type,
-                key_fingerprint: self.key_fingerprint,
-                entitlements: self.entitlements,
-                client_token: self.client_token,
-                beneficiary: self.beneficiary,
-                node_id: self.node_id,
-            })
+        pub fn build(self) -> Result<crate::input::CheckoutLicenseInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CheckoutLicenseInput {
+                    product_sku: self.product_sku
+                    ,
+                    checkout_type: self.checkout_type
+                    ,
+                    key_fingerprint: self.key_fingerprint
+                    ,
+                    entitlements: self.entitlements
+                    ,
+                    client_token: self.client_token
+                    ,
+                    beneficiary: self.beneficiary
+                    ,
+                    node_id: self.node_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CheckoutLicenseInput {
     /// Consumes the builder and constructs an Operation<[`CheckoutLicense`](crate::operation::CheckoutLicense)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CheckoutLicense,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CheckoutLicense, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CheckoutLicenseInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CheckoutLicenseInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CheckoutLicenseInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CheckoutLicenseInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.CheckoutLicense",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.CheckoutLicense"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_checkout_license(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_checkout_license(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CheckoutLicense::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CheckoutLicense",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CheckoutLicense::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CheckoutLicense", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -842,7 +613,7 @@ impl CheckoutLicenseInput {
 
 /// See [`CreateGrantInput`](crate::input::CreateGrantInput).
 pub mod create_grant_input {
-
+    
     /// A builder for [`CreateGrantInput`](crate::input::CreateGrantInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -851,8 +622,7 @@ pub mod create_grant_input {
         pub(crate) license_arn: std::option::Option<std::string::String>,
         pub(crate) principals: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) home_region: std::option::Option<std::string::String>,
-        pub(crate) allowed_operations:
-            std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
+        pub(crate) allowed_operations: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
     }
     impl Builder {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -862,8 +632,7 @@ pub mod create_grant_input {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// <p>Grant name.</p>
         pub fn grant_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -872,8 +641,7 @@ pub mod create_grant_input {
         }
         /// <p>Grant name.</p>
         pub fn set_grant_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grant_name = input;
-            self
+            self.grant_name = input; self
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn license_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -882,8 +650,7 @@ pub mod create_grant_input {
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// Appends an item to `principals`.
         ///
@@ -892,17 +659,13 @@ pub mod create_grant_input {
         /// <p>The grant principals. This value should be specified as an Amazon Resource Name (ARN).</p>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
-            v.push(input.into());
-            self.principals = Some(v);
-            self
+                            v.push(input.into());
+                            self.principals = Some(v);
+                            self
         }
         /// <p>The grant principals. This value should be specified as an Amazon Resource Name (ARN).</p>
-        pub fn set_principals(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.principals = input;
-            self
+        pub fn set_principals(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.principals = input; self
         }
         /// <p>Home Region of the grant.</p>
         pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -911,8 +674,7 @@ pub mod create_grant_input {
         }
         /// <p>Home Region of the grant.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.home_region = input;
-            self
+            self.home_region = input; self
         }
         /// Appends an item to `allowed_operations`.
         ///
@@ -921,157 +683,109 @@ pub mod create_grant_input {
         /// <p>Allowed operations for the grant.</p>
         pub fn allowed_operations(mut self, input: crate::model::AllowedOperation) -> Self {
             let mut v = self.allowed_operations.unwrap_or_default();
-            v.push(input);
-            self.allowed_operations = Some(v);
-            self
+                            v.push(input);
+                            self.allowed_operations = Some(v);
+                            self
         }
         /// <p>Allowed operations for the grant.</p>
-        pub fn set_allowed_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
-        ) -> Self {
-            self.allowed_operations = input;
-            self
+        pub fn set_allowed_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>) -> Self {
+            self.allowed_operations = input; self
         }
         /// Consumes the builder and constructs a [`CreateGrantInput`](crate::input::CreateGrantInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateGrantInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateGrantInput {
-                client_token: self.client_token,
-                grant_name: self.grant_name,
-                license_arn: self.license_arn,
-                principals: self.principals,
-                home_region: self.home_region,
-                allowed_operations: self.allowed_operations,
-            })
+        pub fn build(self) -> Result<crate::input::CreateGrantInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateGrantInput {
+                    client_token: self.client_token
+                    ,
+                    grant_name: self.grant_name
+                    ,
+                    license_arn: self.license_arn
+                    ,
+                    principals: self.principals
+                    ,
+                    home_region: self.home_region
+                    ,
+                    allowed_operations: self.allowed_operations
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateGrantInput {
     /// Consumes the builder and constructs an Operation<[`CreateGrant`](crate::operation::CreateGrant)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateGrant,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateGrant, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateGrantInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateGrantInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateGrantInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateGrantInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.CreateGrant",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.CreateGrant"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_grant(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_grant(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateGrant::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateGrant",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateGrant::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateGrant", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1083,15 +797,14 @@ impl CreateGrantInput {
 
 /// See [`CreateGrantVersionInput`](crate::input::CreateGrantVersionInput).
 pub mod create_grant_version_input {
-
+    
     /// A builder for [`CreateGrantVersionInput`](crate::input::CreateGrantVersionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) grant_arn: std::option::Option<std::string::String>,
         pub(crate) grant_name: std::option::Option<std::string::String>,
-        pub(crate) allowed_operations:
-            std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
+        pub(crate) allowed_operations: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
         pub(crate) status: std::option::Option<crate::model::GrantStatus>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
         pub(crate) source_version: std::option::Option<std::string::String>,
@@ -1104,8 +817,7 @@ pub mod create_grant_version_input {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
         pub fn grant_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1114,8 +826,7 @@ pub mod create_grant_version_input {
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grant_arn = input;
-            self
+            self.grant_arn = input; self
         }
         /// <p>Grant name.</p>
         pub fn grant_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1124,8 +835,7 @@ pub mod create_grant_version_input {
         }
         /// <p>Grant name.</p>
         pub fn set_grant_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grant_name = input;
-            self
+            self.grant_name = input; self
         }
         /// Appends an item to `allowed_operations`.
         ///
@@ -1134,17 +844,13 @@ pub mod create_grant_version_input {
         /// <p>Allowed operations for the grant.</p>
         pub fn allowed_operations(mut self, input: crate::model::AllowedOperation) -> Self {
             let mut v = self.allowed_operations.unwrap_or_default();
-            v.push(input);
-            self.allowed_operations = Some(v);
-            self
+                            v.push(input);
+                            self.allowed_operations = Some(v);
+                            self
         }
         /// <p>Allowed operations for the grant.</p>
-        pub fn set_allowed_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
-        ) -> Self {
-            self.allowed_operations = input;
-            self
+        pub fn set_allowed_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>) -> Self {
+            self.allowed_operations = input; self
         }
         /// <p>Grant status.</p>
         pub fn status(mut self, input: crate::model::GrantStatus) -> Self {
@@ -1153,8 +859,7 @@ pub mod create_grant_version_input {
         }
         /// <p>Grant status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::GrantStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Grant status reason.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1162,12 +867,8 @@ pub mod create_grant_version_input {
             self
         }
         /// <p>Grant status reason.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// <p>Current version of the grant.</p>
         pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1175,155 +876,106 @@ pub mod create_grant_version_input {
             self
         }
         /// <p>Current version of the grant.</p>
-        pub fn set_source_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_version = input;
-            self
+        pub fn set_source_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_version = input; self
         }
         /// Consumes the builder and constructs a [`CreateGrantVersionInput`](crate::input::CreateGrantVersionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateGrantVersionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateGrantVersionInput {
-                client_token: self.client_token,
-                grant_arn: self.grant_arn,
-                grant_name: self.grant_name,
-                allowed_operations: self.allowed_operations,
-                status: self.status,
-                status_reason: self.status_reason,
-                source_version: self.source_version,
-            })
+        pub fn build(self) -> Result<crate::input::CreateGrantVersionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateGrantVersionInput {
+                    client_token: self.client_token
+                    ,
+                    grant_arn: self.grant_arn
+                    ,
+                    grant_name: self.grant_name
+                    ,
+                    allowed_operations: self.allowed_operations
+                    ,
+                    status: self.status
+                    ,
+                    status_reason: self.status_reason
+                    ,
+                    source_version: self.source_version
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateGrantVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateGrantVersion`](crate::operation::CreateGrantVersion)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateGrantVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateGrantVersion, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateGrantVersionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateGrantVersionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateGrantVersionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateGrantVersionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.CreateGrantVersion",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.CreateGrantVersion"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_grant_version(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_grant_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateGrantVersion::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateGrantVersion",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateGrantVersion::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateGrantVersion", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1335,7 +987,7 @@ impl CreateGrantVersionInput {
 
 /// See [`CreateLicenseInput`](crate::input::CreateLicenseInput).
 pub mod create_license_input {
-
+    
     /// A builder for [`CreateLicenseInput`](crate::input::CreateLicenseInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1347,8 +999,7 @@ pub mod create_license_input {
         pub(crate) validity: std::option::Option<crate::model::DatetimeRange>,
         pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
         pub(crate) beneficiary: std::option::Option<std::string::String>,
-        pub(crate) consumption_configuration:
-            std::option::Option<crate::model::ConsumptionConfiguration>,
+        pub(crate) consumption_configuration: std::option::Option<crate::model::ConsumptionConfiguration>,
         pub(crate) license_metadata: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
@@ -1360,8 +1011,7 @@ pub mod create_license_input {
         }
         /// <p>License name.</p>
         pub fn set_license_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_name = input;
-            self
+            self.license_name = input; self
         }
         /// <p>Product name.</p>
         pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1370,8 +1020,7 @@ pub mod create_license_input {
         }
         /// <p>Product name.</p>
         pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.product_name = input;
-            self
+            self.product_name = input; self
         }
         /// <p>Product SKU.</p>
         pub fn product_sku(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1380,8 +1029,7 @@ pub mod create_license_input {
         }
         /// <p>Product SKU.</p>
         pub fn set_product_sku(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.product_sku = input;
-            self
+            self.product_sku = input; self
         }
         /// <p>License issuer.</p>
         pub fn issuer(mut self, input: crate::model::Issuer) -> Self {
@@ -1390,8 +1038,7 @@ pub mod create_license_input {
         }
         /// <p>License issuer.</p>
         pub fn set_issuer(mut self, input: std::option::Option<crate::model::Issuer>) -> Self {
-            self.issuer = input;
-            self
+            self.issuer = input; self
         }
         /// <p>Home Region for the license.</p>
         pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1400,8 +1047,7 @@ pub mod create_license_input {
         }
         /// <p>Home Region for the license.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.home_region = input;
-            self
+            self.home_region = input; self
         }
         /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
         pub fn validity(mut self, input: crate::model::DatetimeRange) -> Self {
@@ -1409,12 +1055,8 @@ pub mod create_license_input {
             self
         }
         /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
-        pub fn set_validity(
-            mut self,
-            input: std::option::Option<crate::model::DatetimeRange>,
-        ) -> Self {
-            self.validity = input;
-            self
+        pub fn set_validity(mut self, input: std::option::Option<crate::model::DatetimeRange>) -> Self {
+            self.validity = input; self
         }
         /// Appends an item to `entitlements`.
         ///
@@ -1423,17 +1065,13 @@ pub mod create_license_input {
         /// <p>License entitlements.</p>
         pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input);
-            self.entitlements = Some(v);
-            self
+                            v.push(input);
+                            self.entitlements = Some(v);
+                            self
         }
         /// <p>License entitlements.</p>
-        pub fn set_entitlements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
-        ) -> Self {
-            self.entitlements = input;
-            self
+        pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>) -> Self {
+            self.entitlements = input; self
         }
         /// <p>License beneficiary.</p>
         pub fn beneficiary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1442,24 +1080,16 @@ pub mod create_license_input {
         }
         /// <p>License beneficiary.</p>
         pub fn set_beneficiary(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.beneficiary = input;
-            self
+            self.beneficiary = input; self
         }
         /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
-        pub fn consumption_configuration(
-            mut self,
-            input: crate::model::ConsumptionConfiguration,
-        ) -> Self {
+        pub fn consumption_configuration(mut self, input: crate::model::ConsumptionConfiguration) -> Self {
             self.consumption_configuration = Some(input);
             self
         }
         /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
-        pub fn set_consumption_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ConsumptionConfiguration>,
-        ) -> Self {
-            self.consumption_configuration = input;
-            self
+        pub fn set_consumption_configuration(mut self, input: std::option::Option<crate::model::ConsumptionConfiguration>) -> Self {
+            self.consumption_configuration = input; self
         }
         /// Appends an item to `license_metadata`.
         ///
@@ -1468,17 +1098,13 @@ pub mod create_license_input {
         /// <p>Information about the license.</p>
         pub fn license_metadata(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.license_metadata.unwrap_or_default();
-            v.push(input);
-            self.license_metadata = Some(v);
-            self
+                            v.push(input);
+                            self.license_metadata = Some(v);
+                            self
         }
         /// <p>Information about the license.</p>
-        pub fn set_license_metadata(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
-        ) -> Self {
-            self.license_metadata = input;
-            self
+        pub fn set_license_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::model::Metadata>>) -> Self {
+            self.license_metadata = input; self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1487,153 +1113,113 @@ pub mod create_license_input {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateLicenseInput`](crate::input::CreateLicenseInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateLicenseInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateLicenseInput {
-                license_name: self.license_name,
-                product_name: self.product_name,
-                product_sku: self.product_sku,
-                issuer: self.issuer,
-                home_region: self.home_region,
-                validity: self.validity,
-                entitlements: self.entitlements,
-                beneficiary: self.beneficiary,
-                consumption_configuration: self.consumption_configuration,
-                license_metadata: self.license_metadata,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLicenseInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateLicenseInput {
+                    license_name: self.license_name
+                    ,
+                    product_name: self.product_name
+                    ,
+                    product_sku: self.product_sku
+                    ,
+                    issuer: self.issuer
+                    ,
+                    home_region: self.home_region
+                    ,
+                    validity: self.validity
+                    ,
+                    entitlements: self.entitlements
+                    ,
+                    beneficiary: self.beneficiary
+                    ,
+                    consumption_configuration: self.consumption_configuration
+                    ,
+                    license_metadata: self.license_metadata
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLicenseInput {
     /// Consumes the builder and constructs an Operation<[`CreateLicense`](crate::operation::CreateLicense)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLicense,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLicense, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLicenseInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLicenseInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateLicenseInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateLicenseInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.CreateLicense",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.CreateLicense"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_license(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_license(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLicense::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLicense",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLicense::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLicense", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1645,7 +1231,7 @@ impl CreateLicenseInput {
 
 /// See [`CreateLicenseConfigurationInput`](crate::input::CreateLicenseConfigurationInput).
 pub mod create_license_configuration_input {
-
+    
     /// A builder for [`CreateLicenseConfigurationInput`](crate::input::CreateLicenseConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1657,8 +1243,7 @@ pub mod create_license_configuration_input {
         pub(crate) license_rules: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) disassociate_when_not_found: std::option::Option<bool>,
-        pub(crate) product_information_list:
-            std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
+        pub(crate) product_information_list: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
     }
     impl Builder {
         /// <p>Name of the license configuration.</p>
@@ -1668,8 +1253,7 @@ pub mod create_license_configuration_input {
         }
         /// <p>Name of the license configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Description of the license configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1678,8 +1262,7 @@ pub mod create_license_configuration_input {
         }
         /// <p>Description of the license configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Dimension used to track the license inventory.</p>
         pub fn license_counting_type(mut self, input: crate::model::LicenseCountingType) -> Self {
@@ -1687,12 +1270,8 @@ pub mod create_license_configuration_input {
             self
         }
         /// <p>Dimension used to track the license inventory.</p>
-        pub fn set_license_counting_type(
-            mut self,
-            input: std::option::Option<crate::model::LicenseCountingType>,
-        ) -> Self {
-            self.license_counting_type = input;
-            self
+        pub fn set_license_counting_type(mut self, input: std::option::Option<crate::model::LicenseCountingType>) -> Self {
+            self.license_counting_type = input; self
         }
         /// <p>Number of licenses managed by the license configuration.</p>
         pub fn license_count(mut self, input: i64) -> Self {
@@ -1701,8 +1280,7 @@ pub mod create_license_configuration_input {
         }
         /// <p>Number of licenses managed by the license configuration.</p>
         pub fn set_license_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.license_count = input;
-            self
+            self.license_count = input; self
         }
         /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
         pub fn license_count_hard_limit(mut self, input: bool) -> Self {
@@ -1711,41 +1289,36 @@ pub mod create_license_configuration_input {
         }
         /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
         pub fn set_license_count_hard_limit(mut self, input: std::option::Option<bool>) -> Self {
-            self.license_count_hard_limit = input;
-            self
+            self.license_count_hard_limit = input; self
         }
         /// Appends an item to `license_rules`.
         ///
         /// To override the contents of this collection use [`set_license_rules`](Self::set_license_rules).
         ///
-        /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p>
-        /// <ul>
-        /// <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumCores</code> | <code>minimumCores</code> </p> </li>
-        /// <li> <p> <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
-        /// <li> <p> <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li>
-        /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
-        /// </ul>
+        /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p> 
+        /// <ul> 
+        /// <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumCores</code> | <code>minimumCores</code> </p> </li> 
+        /// <li> <p> <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> 
+        /// <li> <p> <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> 
+        /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> 
+        /// </ul> 
         /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
         pub fn license_rules(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_rules.unwrap_or_default();
-            v.push(input.into());
-            self.license_rules = Some(v);
-            self
+                            v.push(input.into());
+                            self.license_rules = Some(v);
+                            self
         }
-        /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p>
-        /// <ul>
-        /// <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumCores</code> | <code>minimumCores</code> </p> </li>
-        /// <li> <p> <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
-        /// <li> <p> <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li>
-        /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
-        /// </ul>
+        /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p> 
+        /// <ul> 
+        /// <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumCores</code> | <code>minimumCores</code> </p> </li> 
+        /// <li> <p> <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> 
+        /// <li> <p> <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> 
+        /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> 
+        /// </ul> 
         /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
-        pub fn set_license_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.license_rules = input;
-            self
+        pub fn set_license_rules(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.license_rules = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1754,17 +1327,13 @@ pub mod create_license_configuration_input {
         /// <p>Tags to add to the license configuration.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Tags to add to the license configuration.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>When true, disassociates a resource when software is uninstalled.</p>
         pub fn disassociate_when_not_found(mut self, input: bool) -> Self {
@@ -1773,8 +1342,7 @@ pub mod create_license_configuration_input {
         }
         /// <p>When true, disassociates a resource when software is uninstalled.</p>
         pub fn set_disassociate_when_not_found(mut self, input: std::option::Option<bool>) -> Self {
-            self.disassociate_when_not_found = input;
-            self
+            self.disassociate_when_not_found = input; self
         }
         /// Appends an item to `product_information_list`.
         ///
@@ -1783,164 +1351,115 @@ pub mod create_license_configuration_input {
         /// <p>Product information.</p>
         pub fn product_information_list(mut self, input: crate::model::ProductInformation) -> Self {
             let mut v = self.product_information_list.unwrap_or_default();
-            v.push(input);
-            self.product_information_list = Some(v);
-            self
+                            v.push(input);
+                            self.product_information_list = Some(v);
+                            self
         }
         /// <p>Product information.</p>
-        pub fn set_product_information_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
-        ) -> Self {
-            self.product_information_list = input;
-            self
+        pub fn set_product_information_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>) -> Self {
+            self.product_information_list = input; self
         }
         /// Consumes the builder and constructs a [`CreateLicenseConfigurationInput`](crate::input::CreateLicenseConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateLicenseConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateLicenseConfigurationInput {
-                name: self.name,
-                description: self.description,
-                license_counting_type: self.license_counting_type,
-                license_count: self.license_count,
-                license_count_hard_limit: self.license_count_hard_limit,
-                license_rules: self.license_rules,
-                tags: self.tags,
-                disassociate_when_not_found: self.disassociate_when_not_found,
-                product_information_list: self.product_information_list,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLicenseConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateLicenseConfigurationInput {
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    license_counting_type: self.license_counting_type
+                    ,
+                    license_count: self.license_count
+                    ,
+                    license_count_hard_limit: self.license_count_hard_limit
+                    ,
+                    license_rules: self.license_rules
+                    ,
+                    tags: self.tags
+                    ,
+                    disassociate_when_not_found: self.disassociate_when_not_found
+                    ,
+                    product_information_list: self.product_information_list
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateLicenseConfiguration`](crate::operation::CreateLicenseConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLicenseConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLicenseConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLicenseConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLicenseConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateLicenseConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateLicenseConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.CreateLicenseConfiguration",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.CreateLicenseConfiguration"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_license_configuration(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_create_license_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLicenseConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLicenseConfiguration",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLicenseConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLicenseConfiguration", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1952,15 +1471,13 @@ impl CreateLicenseConfigurationInput {
 
 /// See [`CreateLicenseConversionTaskForResourceInput`](crate::input::CreateLicenseConversionTaskForResourceInput).
 pub mod create_license_conversion_task_for_resource_input {
-
+    
     /// A builder for [`CreateLicenseConversionTaskForResourceInput`](crate::input::CreateLicenseConversionTaskForResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) source_license_context:
-            std::option::Option<crate::model::LicenseConversionContext>,
-        pub(crate) destination_license_context:
-            std::option::Option<crate::model::LicenseConversionContext>,
+        pub(crate) source_license_context: std::option::Option<crate::model::LicenseConversionContext>,
+        pub(crate) destination_license_context: std::option::Option<crate::model::LicenseConversionContext>,
     }
     impl Builder {
         /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
@@ -1970,121 +1487,80 @@ pub mod create_license_conversion_task_for_resource_input {
         }
         /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
-        pub fn source_license_context(
-            mut self,
-            input: crate::model::LicenseConversionContext,
-        ) -> Self {
+        pub fn source_license_context(mut self, input: crate::model::LicenseConversionContext) -> Self {
             self.source_license_context = Some(input);
             self
         }
         /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
-        pub fn set_source_license_context(
-            mut self,
-            input: std::option::Option<crate::model::LicenseConversionContext>,
-        ) -> Self {
-            self.source_license_context = input;
-            self
+        pub fn set_source_license_context(mut self, input: std::option::Option<crate::model::LicenseConversionContext>) -> Self {
+            self.source_license_context = input; self
         }
         /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
-        pub fn destination_license_context(
-            mut self,
-            input: crate::model::LicenseConversionContext,
-        ) -> Self {
+        pub fn destination_license_context(mut self, input: crate::model::LicenseConversionContext) -> Self {
             self.destination_license_context = Some(input);
             self
         }
         /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
-        pub fn set_destination_license_context(
-            mut self,
-            input: std::option::Option<crate::model::LicenseConversionContext>,
-        ) -> Self {
-            self.destination_license_context = input;
-            self
+        pub fn set_destination_license_context(mut self, input: std::option::Option<crate::model::LicenseConversionContext>) -> Self {
+            self.destination_license_context = input; self
         }
         /// Consumes the builder and constructs a [`CreateLicenseConversionTaskForResourceInput`](crate::input::CreateLicenseConversionTaskForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateLicenseConversionTaskForResourceInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateLicenseConversionTaskForResourceInput {
-                resource_arn: self.resource_arn,
-                source_license_context: self.source_license_context,
-                destination_license_context: self.destination_license_context,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLicenseConversionTaskForResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateLicenseConversionTaskForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    source_license_context: self.source_license_context
+                    ,
+                    destination_license_context: self.destination_license_context
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLicenseConversionTaskForResourceInput {
     /// Consumes the builder and constructs an Operation<[`CreateLicenseConversionTaskForResource`](crate::operation::CreateLicenseConversionTaskForResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLicenseConversionTaskForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLicenseConversionTaskForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLicenseConversionTaskForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLicenseConversionTaskForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateLicenseConversionTaskForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateLicenseConversionTaskForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.CreateLicenseConversionTaskForResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.CreateLicenseConversionTaskForResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2093,56 +1569,33 @@ impl CreateLicenseConversionTaskForResourceInput {
             crate::operation_ser::serialize_operation_crate_operation_create_license_conversion_task_for_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLicenseConversionTaskForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLicenseConversionTaskForResource",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLicenseConversionTaskForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLicenseConversionTaskForResource", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2154,7 +1607,7 @@ impl CreateLicenseConversionTaskForResourceInput {
 
 /// See [`CreateLicenseManagerReportGeneratorInput`](crate::input::CreateLicenseManagerReportGeneratorInput).
 pub mod create_license_manager_report_generator_input {
-
+    
     /// A builder for [`CreateLicenseManagerReportGeneratorInput`](crate::input::CreateLicenseManagerReportGeneratorInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2173,39 +1626,31 @@ pub mod create_license_manager_report_generator_input {
             self
         }
         /// <p>Name of the report generator.</p>
-        pub fn set_report_generator_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.report_generator_name = input;
-            self
+        pub fn set_report_generator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.report_generator_name = input; self
         }
         /// Appends an item to `r#type`.
         ///
         /// To override the contents of this collection use [`set_type`](Self::set_type).
         ///
-        /// <p>Type of reports to generate. The following report types an be generated:</p>
-        /// <ul>
-        /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
-        /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
+        /// <p>Type of reports to generate. The following report types an be generated:</p> 
+        /// <ul> 
+        /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li> 
+        /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ReportType) -> Self {
             let mut v = self.r#type.unwrap_or_default();
-            v.push(input);
-            self.r#type = Some(v);
-            self
+                            v.push(input);
+                            self.r#type = Some(v);
+                            self
         }
-        /// <p>Type of reports to generate. The following report types an be generated:</p>
-        /// <ul>
-        /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
-        /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
+        /// <p>Type of reports to generate. The following report types an be generated:</p> 
+        /// <ul> 
+        /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li> 
+        /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li> 
         /// </ul>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReportType>>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReportType>>) -> Self {
+            self.r#type = input; self
         }
         /// <p>Defines the type of license configuration the report generator tracks.</p>
         pub fn report_context(mut self, input: crate::model::ReportContext) -> Self {
@@ -2213,12 +1658,8 @@ pub mod create_license_manager_report_generator_input {
             self
         }
         /// <p>Defines the type of license configuration the report generator tracks.</p>
-        pub fn set_report_context(
-            mut self,
-            input: std::option::Option<crate::model::ReportContext>,
-        ) -> Self {
-            self.report_context = input;
-            self
+        pub fn set_report_context(mut self, input: std::option::Option<crate::model::ReportContext>) -> Self {
+            self.report_context = input; self
         }
         /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
         pub fn report_frequency(mut self, input: crate::model::ReportFrequency) -> Self {
@@ -2226,12 +1667,8 @@ pub mod create_license_manager_report_generator_input {
             self
         }
         /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
-        pub fn set_report_frequency(
-            mut self,
-            input: std::option::Option<crate::model::ReportFrequency>,
-        ) -> Self {
-            self.report_frequency = input;
-            self
+        pub fn set_report_frequency(mut self, input: std::option::Option<crate::model::ReportFrequency>) -> Self {
+            self.report_frequency = input; self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2240,8 +1677,7 @@ pub mod create_license_manager_report_generator_input {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// <p>Description of the report generator.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2250,8 +1686,7 @@ pub mod create_license_manager_report_generator_input {
         }
         /// <p>Description of the report generator.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2260,102 +1695,76 @@ pub mod create_license_manager_report_generator_input {
         /// <p>Tags to add to the report generator.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Tags to add to the report generator.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateLicenseManagerReportGeneratorInput`](crate::input::CreateLicenseManagerReportGeneratorInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateLicenseManagerReportGeneratorInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateLicenseManagerReportGeneratorInput {
-                report_generator_name: self.report_generator_name,
-                r#type: self.r#type,
-                report_context: self.report_context,
-                report_frequency: self.report_frequency,
-                client_token: self.client_token,
-                description: self.description,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLicenseManagerReportGeneratorInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateLicenseManagerReportGeneratorInput {
+                    report_generator_name: self.report_generator_name
+                    ,
+                    r#type: self.r#type
+                    ,
+                    report_context: self.report_context
+                    ,
+                    report_frequency: self.report_frequency
+                    ,
+                    client_token: self.client_token
+                    ,
+                    description: self.description
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLicenseManagerReportGeneratorInput {
     /// Consumes the builder and constructs an Operation<[`CreateLicenseManagerReportGenerator`](crate::operation::CreateLicenseManagerReportGenerator)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLicenseManagerReportGenerator,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLicenseManagerReportGenerator, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLicenseManagerReportGeneratorInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLicenseManagerReportGeneratorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateLicenseManagerReportGeneratorInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateLicenseManagerReportGeneratorInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.CreateLicenseManagerReportGenerator",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.CreateLicenseManagerReportGenerator"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2364,56 +1773,33 @@ impl CreateLicenseManagerReportGeneratorInput {
             crate::operation_ser::serialize_operation_crate_operation_create_license_manager_report_generator(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLicenseManagerReportGenerator::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLicenseManagerReportGenerator",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLicenseManagerReportGenerator::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLicenseManagerReportGenerator", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2425,7 +1811,7 @@ impl CreateLicenseManagerReportGeneratorInput {
 
 /// See [`CreateLicenseVersionInput`](crate::input::CreateLicenseVersionInput).
 pub mod create_license_version_input {
-
+    
     /// A builder for [`CreateLicenseVersionInput`](crate::input::CreateLicenseVersionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2437,8 +1823,7 @@ pub mod create_license_version_input {
         pub(crate) validity: std::option::Option<crate::model::DatetimeRange>,
         pub(crate) license_metadata: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
         pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
-        pub(crate) consumption_configuration:
-            std::option::Option<crate::model::ConsumptionConfiguration>,
+        pub(crate) consumption_configuration: std::option::Option<crate::model::ConsumptionConfiguration>,
         pub(crate) status: std::option::Option<crate::model::LicenseStatus>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) source_version: std::option::Option<std::string::String>,
@@ -2451,8 +1836,7 @@ pub mod create_license_version_input {
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// <p>License name.</p>
         pub fn license_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2461,8 +1845,7 @@ pub mod create_license_version_input {
         }
         /// <p>License name.</p>
         pub fn set_license_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_name = input;
-            self
+            self.license_name = input; self
         }
         /// <p>Product name.</p>
         pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2471,8 +1854,7 @@ pub mod create_license_version_input {
         }
         /// <p>Product name.</p>
         pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.product_name = input;
-            self
+            self.product_name = input; self
         }
         /// <p>License issuer.</p>
         pub fn issuer(mut self, input: crate::model::Issuer) -> Self {
@@ -2481,8 +1863,7 @@ pub mod create_license_version_input {
         }
         /// <p>License issuer.</p>
         pub fn set_issuer(mut self, input: std::option::Option<crate::model::Issuer>) -> Self {
-            self.issuer = input;
-            self
+            self.issuer = input; self
         }
         /// <p>Home Region of the license.</p>
         pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2491,8 +1872,7 @@ pub mod create_license_version_input {
         }
         /// <p>Home Region of the license.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.home_region = input;
-            self
+            self.home_region = input; self
         }
         /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
         pub fn validity(mut self, input: crate::model::DatetimeRange) -> Self {
@@ -2500,12 +1880,8 @@ pub mod create_license_version_input {
             self
         }
         /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
-        pub fn set_validity(
-            mut self,
-            input: std::option::Option<crate::model::DatetimeRange>,
-        ) -> Self {
-            self.validity = input;
-            self
+        pub fn set_validity(mut self, input: std::option::Option<crate::model::DatetimeRange>) -> Self {
+            self.validity = input; self
         }
         /// Appends an item to `license_metadata`.
         ///
@@ -2514,17 +1890,13 @@ pub mod create_license_version_input {
         /// <p>Information about the license.</p>
         pub fn license_metadata(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.license_metadata.unwrap_or_default();
-            v.push(input);
-            self.license_metadata = Some(v);
-            self
+                            v.push(input);
+                            self.license_metadata = Some(v);
+                            self
         }
         /// <p>Information about the license.</p>
-        pub fn set_license_metadata(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
-        ) -> Self {
-            self.license_metadata = input;
-            self
+        pub fn set_license_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::model::Metadata>>) -> Self {
+            self.license_metadata = input; self
         }
         /// Appends an item to `entitlements`.
         ///
@@ -2533,33 +1905,22 @@ pub mod create_license_version_input {
         /// <p>License entitlements.</p>
         pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input);
-            self.entitlements = Some(v);
-            self
+                            v.push(input);
+                            self.entitlements = Some(v);
+                            self
         }
         /// <p>License entitlements.</p>
-        pub fn set_entitlements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
-        ) -> Self {
-            self.entitlements = input;
-            self
+        pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>) -> Self {
+            self.entitlements = input; self
         }
         /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
-        pub fn consumption_configuration(
-            mut self,
-            input: crate::model::ConsumptionConfiguration,
-        ) -> Self {
+        pub fn consumption_configuration(mut self, input: crate::model::ConsumptionConfiguration) -> Self {
             self.consumption_configuration = Some(input);
             self
         }
         /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
-        pub fn set_consumption_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ConsumptionConfiguration>,
-        ) -> Self {
-            self.consumption_configuration = input;
-            self
+        pub fn set_consumption_configuration(mut self, input: std::option::Option<crate::model::ConsumptionConfiguration>) -> Self {
+            self.consumption_configuration = input; self
         }
         /// <p>License status.</p>
         pub fn status(mut self, input: crate::model::LicenseStatus) -> Self {
@@ -2567,12 +1928,8 @@ pub mod create_license_version_input {
             self
         }
         /// <p>License status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::LicenseStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::LicenseStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2581,8 +1938,7 @@ pub mod create_license_version_input {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// <p>Current version of the license.</p>
         pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2590,162 +1946,116 @@ pub mod create_license_version_input {
             self
         }
         /// <p>Current version of the license.</p>
-        pub fn set_source_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_version = input;
-            self
+        pub fn set_source_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_version = input; self
         }
         /// Consumes the builder and constructs a [`CreateLicenseVersionInput`](crate::input::CreateLicenseVersionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateLicenseVersionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateLicenseVersionInput {
-                license_arn: self.license_arn,
-                license_name: self.license_name,
-                product_name: self.product_name,
-                issuer: self.issuer,
-                home_region: self.home_region,
-                validity: self.validity,
-                license_metadata: self.license_metadata,
-                entitlements: self.entitlements,
-                consumption_configuration: self.consumption_configuration,
-                status: self.status,
-                client_token: self.client_token,
-                source_version: self.source_version,
-            })
+        pub fn build(self) -> Result<crate::input::CreateLicenseVersionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateLicenseVersionInput {
+                    license_arn: self.license_arn
+                    ,
+                    license_name: self.license_name
+                    ,
+                    product_name: self.product_name
+                    ,
+                    issuer: self.issuer
+                    ,
+                    home_region: self.home_region
+                    ,
+                    validity: self.validity
+                    ,
+                    license_metadata: self.license_metadata
+                    ,
+                    entitlements: self.entitlements
+                    ,
+                    consumption_configuration: self.consumption_configuration
+                    ,
+                    status: self.status
+                    ,
+                    client_token: self.client_token
+                    ,
+                    source_version: self.source_version
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateLicenseVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateLicenseVersion`](crate::operation::CreateLicenseVersion)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateLicenseVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateLicenseVersion, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateLicenseVersionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateLicenseVersionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateLicenseVersionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateLicenseVersionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.CreateLicenseVersion",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.CreateLicenseVersion"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_license_version(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_create_license_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateLicenseVersion::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateLicenseVersion",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateLicenseVersion::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateLicenseVersion", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2757,7 +2067,7 @@ impl CreateLicenseVersionInput {
 
 /// See [`CreateTokenInput`](crate::input::CreateTokenInput).
 pub mod create_token_input {
-
+    
     /// A builder for [`CreateTokenInput`](crate::input::CreateTokenInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2775,8 +2085,7 @@ pub mod create_token_input {
         }
         /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// Appends an item to `role_arns`.
         ///
@@ -2785,17 +2094,13 @@ pub mod create_token_input {
         /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
         pub fn role_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.role_arns.unwrap_or_default();
-            v.push(input.into());
-            self.role_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.role_arns = Some(v);
+                            self
         }
         /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
-        pub fn set_role_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.role_arns = input;
-            self
+        pub fn set_role_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.role_arns = input; self
         }
         /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
         pub fn expiration_in_days(mut self, input: i32) -> Self {
@@ -2804,8 +2109,7 @@ pub mod create_token_input {
         }
         /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
         pub fn set_expiration_in_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.expiration_in_days = input;
-            self
+            self.expiration_in_days = input; self
         }
         /// Appends an item to `token_properties`.
         ///
@@ -2814,17 +2118,13 @@ pub mod create_token_input {
         /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
         pub fn token_properties(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.token_properties.unwrap_or_default();
-            v.push(input.into());
-            self.token_properties = Some(v);
-            self
+                            v.push(input.into());
+                            self.token_properties = Some(v);
+                            self
         }
         /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
-        pub fn set_token_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.token_properties = input;
-            self
+        pub fn set_token_properties(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.token_properties = input; self
         }
         /// <p>Idempotency token, valid for 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2833,147 +2133,101 @@ pub mod create_token_input {
         }
         /// <p>Idempotency token, valid for 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateTokenInput`](crate::input::CreateTokenInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateTokenInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateTokenInput {
-                license_arn: self.license_arn,
-                role_arns: self.role_arns,
-                expiration_in_days: self.expiration_in_days,
-                token_properties: self.token_properties,
-                client_token: self.client_token,
-            })
+        pub fn build(self) -> Result<crate::input::CreateTokenInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateTokenInput {
+                    license_arn: self.license_arn
+                    ,
+                    role_arns: self.role_arns
+                    ,
+                    expiration_in_days: self.expiration_in_days
+                    ,
+                    token_properties: self.token_properties
+                    ,
+                    client_token: self.client_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateTokenInput {
     /// Consumes the builder and constructs an Operation<[`CreateToken`](crate::operation::CreateToken)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateToken,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateToken, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateTokenInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateTokenInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateTokenInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateTokenInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.CreateToken",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.CreateToken"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_token(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_token(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateToken::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateToken",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateToken::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateToken", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2985,7 +2239,7 @@ impl CreateTokenInput {
 
 /// See [`DeleteGrantInput`](crate::input::DeleteGrantInput).
 pub mod delete_grant_input {
-
+    
     /// A builder for [`DeleteGrantInput`](crate::input::DeleteGrantInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3001,8 +2255,7 @@ pub mod delete_grant_input {
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grant_arn = input;
-            self
+            self.grant_arn = input; self
         }
         /// <p>The Status reason for the delete request.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3010,12 +2263,8 @@ pub mod delete_grant_input {
             self
         }
         /// <p>The Status reason for the delete request.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// <p>Current version of the grant.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3024,145 +2273,97 @@ pub mod delete_grant_input {
         }
         /// <p>Current version of the grant.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`DeleteGrantInput`](crate::input::DeleteGrantInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteGrantInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteGrantInput {
-                grant_arn: self.grant_arn,
-                status_reason: self.status_reason,
-                version: self.version,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteGrantInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteGrantInput {
+                    grant_arn: self.grant_arn
+                    ,
+                    status_reason: self.status_reason
+                    ,
+                    version: self.version
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteGrantInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGrant`](crate::operation::DeleteGrant)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteGrant,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteGrant, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteGrantInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteGrantInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteGrantInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteGrantInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.DeleteGrant",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.DeleteGrant"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_grant(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_grant(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteGrant::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteGrant",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteGrant::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteGrant", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3174,7 +2375,7 @@ impl DeleteGrantInput {
 
 /// See [`DeleteLicenseInput`](crate::input::DeleteLicenseInput).
 pub mod delete_license_input {
-
+    
     /// A builder for [`DeleteLicenseInput`](crate::input::DeleteLicenseInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3189,8 +2390,7 @@ pub mod delete_license_input {
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// <p>Current version of the license.</p>
         pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3198,148 +2398,96 @@ pub mod delete_license_input {
             self
         }
         /// <p>Current version of the license.</p>
-        pub fn set_source_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_version = input;
-            self
+        pub fn set_source_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_version = input; self
         }
         /// Consumes the builder and constructs a [`DeleteLicenseInput`](crate::input::DeleteLicenseInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteLicenseInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteLicenseInput {
-                license_arn: self.license_arn,
-                source_version: self.source_version,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteLicenseInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteLicenseInput {
+                    license_arn: self.license_arn
+                    ,
+                    source_version: self.source_version
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteLicenseInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLicense`](crate::operation::DeleteLicense)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteLicense,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteLicense, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteLicenseInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteLicenseInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteLicenseInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteLicenseInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.DeleteLicense",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.DeleteLicense"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_license(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_license(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteLicense::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteLicense",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteLicense::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteLicense", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3351,7 +2499,7 @@ impl DeleteLicenseInput {
 
 /// See [`DeleteLicenseConfigurationInput`](crate::input::DeleteLicenseConfigurationInput).
 pub mod delete_license_configuration_input {
-
+    
     /// A builder for [`DeleteLicenseConfigurationInput`](crate::input::DeleteLicenseConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3364,151 +2512,94 @@ pub mod delete_license_configuration_input {
             self
         }
         /// <p>ID of the license configuration.</p>
-        pub fn set_license_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_configuration_arn = input;
-            self
+        pub fn set_license_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_configuration_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteLicenseConfigurationInput`](crate::input::DeleteLicenseConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteLicenseConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteLicenseConfigurationInput {
-                license_configuration_arn: self.license_configuration_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteLicenseConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteLicenseConfigurationInput {
+                    license_configuration_arn: self.license_configuration_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLicenseConfiguration`](crate::operation::DeleteLicenseConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteLicenseConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteLicenseConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteLicenseConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteLicenseConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteLicenseConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteLicenseConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.DeleteLicenseConfiguration",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.DeleteLicenseConfiguration"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_license_configuration(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_license_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteLicenseConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteLicenseConfiguration",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteLicenseConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteLicenseConfiguration", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3520,7 +2611,7 @@ impl DeleteLicenseConfigurationInput {
 
 /// See [`DeleteLicenseManagerReportGeneratorInput`](crate::input::DeleteLicenseManagerReportGeneratorInput).
 pub mod delete_license_manager_report_generator_input {
-
+    
     /// A builder for [`DeleteLicenseManagerReportGeneratorInput`](crate::input::DeleteLicenseManagerReportGeneratorInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3528,99 +2619,64 @@ pub mod delete_license_manager_report_generator_input {
     }
     impl Builder {
         /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
-        pub fn license_manager_report_generator_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn license_manager_report_generator_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.license_manager_report_generator_arn = Some(input.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
-        pub fn set_license_manager_report_generator_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_manager_report_generator_arn = input;
-            self
+        pub fn set_license_manager_report_generator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_manager_report_generator_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteLicenseManagerReportGeneratorInput`](crate::input::DeleteLicenseManagerReportGeneratorInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteLicenseManagerReportGeneratorInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteLicenseManagerReportGeneratorInput {
-                license_manager_report_generator_arn: self.license_manager_report_generator_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteLicenseManagerReportGeneratorInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteLicenseManagerReportGeneratorInput {
+                    license_manager_report_generator_arn: self.license_manager_report_generator_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteLicenseManagerReportGeneratorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLicenseManagerReportGenerator`](crate::operation::DeleteLicenseManagerReportGenerator)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteLicenseManagerReportGenerator,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteLicenseManagerReportGenerator, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteLicenseManagerReportGeneratorInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteLicenseManagerReportGeneratorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteLicenseManagerReportGeneratorInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteLicenseManagerReportGeneratorInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.DeleteLicenseManagerReportGenerator",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.DeleteLicenseManagerReportGenerator"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3629,56 +2685,33 @@ impl DeleteLicenseManagerReportGeneratorInput {
             crate::operation_ser::serialize_operation_crate_operation_delete_license_manager_report_generator(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteLicenseManagerReportGenerator::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteLicenseManagerReportGenerator",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteLicenseManagerReportGenerator::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteLicenseManagerReportGenerator", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3690,7 +2723,7 @@ impl DeleteLicenseManagerReportGeneratorInput {
 
 /// See [`DeleteTokenInput`](crate::input::DeleteTokenInput).
 pub mod delete_token_input {
-
+    
     /// A builder for [`DeleteTokenInput`](crate::input::DeleteTokenInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3704,143 +2737,93 @@ pub mod delete_token_input {
         }
         /// <p>Token ID.</p>
         pub fn set_token_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.token_id = input;
-            self
+            self.token_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteTokenInput`](crate::input::DeleteTokenInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteTokenInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteTokenInput {
-                token_id: self.token_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteTokenInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteTokenInput {
+                    token_id: self.token_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteTokenInput {
     /// Consumes the builder and constructs an Operation<[`DeleteToken`](crate::operation::DeleteToken)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteToken,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteToken, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteTokenInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteTokenInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteTokenInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteTokenInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.DeleteToken",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.DeleteToken"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_token(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_token(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteToken::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteToken",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteToken::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteToken", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3852,7 +2835,7 @@ impl DeleteTokenInput {
 
 /// See [`ExtendLicenseConsumptionInput`](crate::input::ExtendLicenseConsumptionInput).
 pub mod extend_license_consumption_input {
-
+    
     /// A builder for [`ExtendLicenseConsumptionInput`](crate::input::ExtendLicenseConsumptionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3866,12 +2849,8 @@ pub mod extend_license_consumption_input {
             self
         }
         /// <p>License consumption token.</p>
-        pub fn set_license_consumption_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_consumption_token = input;
-            self
+        pub fn set_license_consumption_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_consumption_token = input; self
         }
         /// <p>Checks whether you have the required permissions for the action, without actually making the request. Provides an error response if you do not have the required permissions.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
@@ -3880,148 +2859,96 @@ pub mod extend_license_consumption_input {
         }
         /// <p>Checks whether you have the required permissions for the action, without actually making the request. Provides an error response if you do not have the required permissions.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-            self.dry_run = input;
-            self
+            self.dry_run = input; self
         }
         /// Consumes the builder and constructs a [`ExtendLicenseConsumptionInput`](crate::input::ExtendLicenseConsumptionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ExtendLicenseConsumptionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ExtendLicenseConsumptionInput {
-                license_consumption_token: self.license_consumption_token,
-                dry_run: self.dry_run.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ExtendLicenseConsumptionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ExtendLicenseConsumptionInput {
+                    license_consumption_token: self.license_consumption_token
+                    ,
+                    dry_run: self.dry_run
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ExtendLicenseConsumptionInput {
     /// Consumes the builder and constructs an Operation<[`ExtendLicenseConsumption`](crate::operation::ExtendLicenseConsumption)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ExtendLicenseConsumption,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ExtendLicenseConsumption, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ExtendLicenseConsumptionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ExtendLicenseConsumptionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ExtendLicenseConsumptionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ExtendLicenseConsumptionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ExtendLicenseConsumption",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ExtendLicenseConsumption"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_extend_license_consumption(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_extend_license_consumption(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ExtendLicenseConsumption::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ExtendLicenseConsumption",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ExtendLicenseConsumption::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ExtendLicenseConsumption", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4033,7 +2960,7 @@ impl ExtendLicenseConsumptionInput {
 
 /// See [`GetAccessTokenInput`](crate::input::GetAccessTokenInput).
 pub mod get_access_token_input {
-
+    
     /// A builder for [`GetAccessTokenInput`](crate::input::GetAccessTokenInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4048,8 +2975,7 @@ pub mod get_access_token_input {
         }
         /// <p>Refresh token, encoded as a JWT token.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.token = input;
-            self
+            self.token = input; self
         }
         /// Appends an item to `token_properties`.
         ///
@@ -4058,153 +2984,101 @@ pub mod get_access_token_input {
         /// <p>Token properties to validate against those present in the JWT token.</p>
         pub fn token_properties(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.token_properties.unwrap_or_default();
-            v.push(input.into());
-            self.token_properties = Some(v);
-            self
+                            v.push(input.into());
+                            self.token_properties = Some(v);
+                            self
         }
         /// <p>Token properties to validate against those present in the JWT token.</p>
-        pub fn set_token_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.token_properties = input;
-            self
+        pub fn set_token_properties(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.token_properties = input; self
         }
         /// Consumes the builder and constructs a [`GetAccessTokenInput`](crate::input::GetAccessTokenInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetAccessTokenInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetAccessTokenInput {
-                token: self.token,
-                token_properties: self.token_properties,
-            })
+        pub fn build(self) -> Result<crate::input::GetAccessTokenInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetAccessTokenInput {
+                    token: self.token
+                    ,
+                    token_properties: self.token_properties
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetAccessTokenInput {
     /// Consumes the builder and constructs an Operation<[`GetAccessToken`](crate::operation::GetAccessToken)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetAccessToken,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetAccessToken, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetAccessTokenInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetAccessTokenInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetAccessTokenInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetAccessTokenInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.GetAccessToken",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.GetAccessToken"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_access_token(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_get_access_token(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetAccessToken::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetAccessToken",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetAccessToken::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetAccessToken", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4216,7 +3090,7 @@ impl GetAccessTokenInput {
 
 /// See [`GetGrantInput`](crate::input::GetGrantInput).
 pub mod get_grant_input {
-
+    
     /// A builder for [`GetGrantInput`](crate::input::GetGrantInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4231,8 +3105,7 @@ pub mod get_grant_input {
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grant_arn = input;
-            self
+            self.grant_arn = input; self
         }
         /// <p>Grant version.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4241,142 +3114,95 @@ pub mod get_grant_input {
         }
         /// <p>Grant version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`GetGrantInput`](crate::input::GetGrantInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetGrantInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetGrantInput {
-                grant_arn: self.grant_arn,
-                version: self.version,
-            })
+        pub fn build(self) -> Result<crate::input::GetGrantInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetGrantInput {
+                    grant_arn: self.grant_arn
+                    ,
+                    version: self.version
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetGrantInput {
     /// Consumes the builder and constructs an Operation<[`GetGrant`](crate::operation::GetGrant)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetGrant,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetGrant, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetGrantInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetGrantInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetGrantInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetGrantInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.GetGrant",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.GetGrant"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_grant(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_get_grant(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::GetGrant::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "GetGrant",
-                    "licensemanager",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetGrant::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetGrant", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4388,7 +3214,7 @@ impl GetGrantInput {
 
 /// See [`GetLicenseInput`](crate::input::GetLicenseInput).
 pub mod get_license_input {
-
+    
     /// A builder for [`GetLicenseInput`](crate::input::GetLicenseInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4403,8 +3229,7 @@ pub mod get_license_input {
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// <p>License version.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4413,144 +3238,95 @@ pub mod get_license_input {
         }
         /// <p>License version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`GetLicenseInput`](crate::input::GetLicenseInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetLicenseInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetLicenseInput {
-                license_arn: self.license_arn,
-                version: self.version,
-            })
+        pub fn build(self) -> Result<crate::input::GetLicenseInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetLicenseInput {
+                    license_arn: self.license_arn
+                    ,
+                    version: self.version
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetLicenseInput {
     /// Consumes the builder and constructs an Operation<[`GetLicense`](crate::operation::GetLicense)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetLicense,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetLicense, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetLicenseInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetLicenseInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetLicenseInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetLicenseInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.GetLicense",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.GetLicense"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_license(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_get_license(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetLicense::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetLicense",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetLicense::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetLicense", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4562,7 +3338,7 @@ impl GetLicenseInput {
 
 /// See [`GetLicenseConfigurationInput`](crate::input::GetLicenseConfigurationInput).
 pub mod get_license_configuration_input {
-
+    
     /// A builder for [`GetLicenseConfigurationInput`](crate::input::GetLicenseConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4575,151 +3351,94 @@ pub mod get_license_configuration_input {
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-        pub fn set_license_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_configuration_arn = input;
-            self
+        pub fn set_license_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_configuration_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetLicenseConfigurationInput`](crate::input::GetLicenseConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetLicenseConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetLicenseConfigurationInput {
-                license_configuration_arn: self.license_configuration_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetLicenseConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetLicenseConfigurationInput {
+                    license_configuration_arn: self.license_configuration_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetLicenseConfiguration`](crate::operation::GetLicenseConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetLicenseConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetLicenseConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetLicenseConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetLicenseConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetLicenseConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetLicenseConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.GetLicenseConfiguration",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.GetLicenseConfiguration"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_license_configuration(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_get_license_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetLicenseConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetLicenseConfiguration",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetLicenseConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetLicenseConfiguration", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4731,7 +3450,7 @@ impl GetLicenseConfigurationInput {
 
 /// See [`GetLicenseConversionTaskInput`](crate::input::GetLicenseConversionTaskInput).
 pub mod get_license_conversion_task_input {
-
+    
     /// A builder for [`GetLicenseConversionTaskInput`](crate::input::GetLicenseConversionTaskInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4744,151 +3463,94 @@ pub mod get_license_conversion_task_input {
             self
         }
         /// <p>ID of the license type conversion task to retrieve information on.</p>
-        pub fn set_license_conversion_task_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_conversion_task_id = input;
-            self
+        pub fn set_license_conversion_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_conversion_task_id = input; self
         }
         /// Consumes the builder and constructs a [`GetLicenseConversionTaskInput`](crate::input::GetLicenseConversionTaskInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetLicenseConversionTaskInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetLicenseConversionTaskInput {
-                license_conversion_task_id: self.license_conversion_task_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetLicenseConversionTaskInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetLicenseConversionTaskInput {
+                    license_conversion_task_id: self.license_conversion_task_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetLicenseConversionTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetLicenseConversionTask`](crate::operation::GetLicenseConversionTask)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetLicenseConversionTask,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetLicenseConversionTask, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetLicenseConversionTaskInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetLicenseConversionTaskInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetLicenseConversionTaskInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetLicenseConversionTaskInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.GetLicenseConversionTask",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.GetLicenseConversionTask"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_license_conversion_task(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_get_license_conversion_task(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetLicenseConversionTask::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetLicenseConversionTask",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetLicenseConversionTask::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetLicenseConversionTask", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4900,7 +3562,7 @@ impl GetLicenseConversionTaskInput {
 
 /// See [`GetLicenseManagerReportGeneratorInput`](crate::input::GetLicenseManagerReportGeneratorInput).
 pub mod get_license_manager_report_generator_input {
-
+    
     /// A builder for [`GetLicenseManagerReportGeneratorInput`](crate::input::GetLicenseManagerReportGeneratorInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4908,99 +3570,64 @@ pub mod get_license_manager_report_generator_input {
     }
     impl Builder {
         /// <p>Amazon Resource Name (ARN) of the report generator.</p>
-        pub fn license_manager_report_generator_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn license_manager_report_generator_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.license_manager_report_generator_arn = Some(input.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the report generator.</p>
-        pub fn set_license_manager_report_generator_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_manager_report_generator_arn = input;
-            self
+        pub fn set_license_manager_report_generator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_manager_report_generator_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetLicenseManagerReportGeneratorInput`](crate::input::GetLicenseManagerReportGeneratorInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetLicenseManagerReportGeneratorInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetLicenseManagerReportGeneratorInput {
-                license_manager_report_generator_arn: self.license_manager_report_generator_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetLicenseManagerReportGeneratorInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetLicenseManagerReportGeneratorInput {
+                    license_manager_report_generator_arn: self.license_manager_report_generator_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetLicenseManagerReportGeneratorInput {
     /// Consumes the builder and constructs an Operation<[`GetLicenseManagerReportGenerator`](crate::operation::GetLicenseManagerReportGenerator)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetLicenseManagerReportGenerator,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetLicenseManagerReportGenerator, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetLicenseManagerReportGeneratorInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetLicenseManagerReportGeneratorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetLicenseManagerReportGeneratorInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetLicenseManagerReportGeneratorInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.GetLicenseManagerReportGenerator",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.GetLicenseManagerReportGenerator"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5009,56 +3636,33 @@ impl GetLicenseManagerReportGeneratorInput {
             crate::operation_ser::serialize_operation_crate_operation_get_license_manager_report_generator(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetLicenseManagerReportGenerator::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetLicenseManagerReportGenerator",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetLicenseManagerReportGenerator::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetLicenseManagerReportGenerator", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5070,7 +3674,7 @@ impl GetLicenseManagerReportGeneratorInput {
 
 /// See [`GetLicenseUsageInput`](crate::input::GetLicenseUsageInput).
 pub mod get_license_usage_input {
-
+    
     /// A builder for [`GetLicenseUsageInput`](crate::input::GetLicenseUsageInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5084,143 +3688,93 @@ pub mod get_license_usage_input {
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetLicenseUsageInput`](crate::input::GetLicenseUsageInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetLicenseUsageInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetLicenseUsageInput {
-                license_arn: self.license_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetLicenseUsageInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetLicenseUsageInput {
+                    license_arn: self.license_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetLicenseUsageInput {
     /// Consumes the builder and constructs an Operation<[`GetLicenseUsage`](crate::operation::GetLicenseUsage)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetLicenseUsage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetLicenseUsage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetLicenseUsageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetLicenseUsageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetLicenseUsageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetLicenseUsageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.GetLicenseUsage",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.GetLicenseUsage"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_license_usage(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_get_license_usage(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetLicenseUsage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetLicenseUsage",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetLicenseUsage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetLicenseUsage", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5232,138 +3786,92 @@ impl GetLicenseUsageInput {
 
 /// See [`GetServiceSettingsInput`](crate::input::GetServiceSettingsInput).
 pub mod get_service_settings_input {
-
+    
     /// A builder for [`GetServiceSettingsInput`](crate::input::GetServiceSettingsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`GetServiceSettingsInput`](crate::input::GetServiceSettingsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetServiceSettingsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetServiceSettingsInput {})
+        pub fn build(self) -> Result<crate::input::GetServiceSettingsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetServiceSettingsInput {
+                }
+            )
         }
     }
+    
+    
 }
 impl GetServiceSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceSettings`](crate::operation::GetServiceSettings)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetServiceSettings,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetServiceSettings, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetServiceSettingsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetServiceSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetServiceSettingsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetServiceSettingsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.GetServiceSettings",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.GetServiceSettings"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_service_settings(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_get_service_settings(&self)?
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetServiceSettings::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetServiceSettings",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetServiceSettings::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetServiceSettings", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5375,7 +3883,7 @@ impl GetServiceSettingsInput {
 
 /// See [`ListAssociationsForLicenseConfigurationInput`](crate::input::ListAssociationsForLicenseConfigurationInput).
 pub mod list_associations_for_license_configuration_input {
-
+    
     /// A builder for [`ListAssociationsForLicenseConfigurationInput`](crate::input::ListAssociationsForLicenseConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5390,12 +3898,8 @@ pub mod list_associations_for_license_configuration_input {
             self
         }
         /// <p>Amazon Resource Name (ARN) of a license configuration.</p>
-        pub fn set_license_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_configuration_arn = input;
-            self
+        pub fn set_license_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_configuration_arn = input; self
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5404,8 +3908,7 @@ pub mod list_associations_for_license_configuration_input {
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5414,89 +3917,62 @@ pub mod list_associations_for_license_configuration_input {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAssociationsForLicenseConfigurationInput`](crate::input::ListAssociationsForLicenseConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListAssociationsForLicenseConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListAssociationsForLicenseConfigurationInput {
-                license_configuration_arn: self.license_configuration_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListAssociationsForLicenseConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListAssociationsForLicenseConfigurationInput {
+                    license_configuration_arn: self.license_configuration_arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListAssociationsForLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`ListAssociationsForLicenseConfiguration`](crate::operation::ListAssociationsForLicenseConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListAssociationsForLicenseConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListAssociationsForLicenseConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListAssociationsForLicenseConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListAssociationsForLicenseConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListAssociationsForLicenseConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListAssociationsForLicenseConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListAssociationsForLicenseConfiguration",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListAssociationsForLicenseConfiguration"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5505,56 +3981,33 @@ impl ListAssociationsForLicenseConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_list_associations_for_license_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListAssociationsForLicenseConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListAssociationsForLicenseConfiguration",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListAssociationsForLicenseConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListAssociationsForLicenseConfiguration", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5566,7 +4019,7 @@ impl ListAssociationsForLicenseConfigurationInput {
 
 /// See [`ListDistributedGrantsInput`](crate::input::ListDistributedGrantsInput).
 pub mod list_distributed_grants_input {
-
+    
     /// A builder for [`ListDistributedGrantsInput`](crate::input::ListDistributedGrantsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5583,50 +4036,42 @@ pub mod list_distributed_grants_input {
         /// <p>Amazon Resource Names (ARNs) of the grants.</p>
         pub fn grant_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_arns.unwrap_or_default();
-            v.push(input.into());
-            self.grant_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.grant_arns = Some(v);
+                            self
         }
         /// <p>Amazon Resource Names (ARNs) of the grants.</p>
-        pub fn set_grant_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.grant_arns = input;
-            self
+        pub fn set_grant_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.grant_arns = input; self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filters are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>LicenseArn</code> </p> </li>
-        /// <li> <p> <code>GrantStatus</code> </p> </li>
-        /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
-        /// <li> <p> <code>ProductSKU</code> </p> </li>
-        /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
+        /// <p>Filters to scope the results. The following filters are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>LicenseArn</code> </p> </li> 
+        /// <li> <p> <code>GrantStatus</code> </p> </li> 
+        /// <li> <p> <code>GranteePrincipalARN</code> </p> </li> 
+        /// <li> <p> <code>ProductSKU</code> </p> </li> 
+        /// <li> <p> <code>LicenseIssuerName</code> </p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Filters to scope the results. The following filters are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>LicenseArn</code> </p> </li>
-        /// <li> <p> <code>GrantStatus</code> </p> </li>
-        /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
-        /// <li> <p> <code>ProductSKU</code> </p> </li>
-        /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
+        /// <p>Filters to scope the results. The following filters are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>LicenseArn</code> </p> </li> 
+        /// <li> <p> <code>GrantStatus</code> </p> </li> 
+        /// <li> <p> <code>GranteePrincipalARN</code> </p> </li> 
+        /// <li> <p> <code>ProductSKU</code> </p> </li> 
+        /// <li> <p> <code>LicenseIssuerName</code> </p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5635,8 +4080,7 @@ pub mod list_distributed_grants_input {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5645,150 +4089,99 @@ pub mod list_distributed_grants_input {
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListDistributedGrantsInput`](crate::input::ListDistributedGrantsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListDistributedGrantsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListDistributedGrantsInput {
-                grant_arns: self.grant_arns,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListDistributedGrantsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListDistributedGrantsInput {
+                    grant_arns: self.grant_arns
+                    ,
+                    filters: self.filters
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListDistributedGrantsInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributedGrants`](crate::operation::ListDistributedGrants)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListDistributedGrants,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDistributedGrants, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListDistributedGrantsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListDistributedGrantsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListDistributedGrantsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListDistributedGrantsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListDistributedGrants",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListDistributedGrants"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_distributed_grants(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_distributed_grants(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListDistributedGrants::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListDistributedGrants",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDistributedGrants::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDistributedGrants", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5800,7 +4193,7 @@ impl ListDistributedGrantsInput {
 
 /// See [`ListFailuresForLicenseConfigurationOperationsInput`](crate::input::ListFailuresForLicenseConfigurationOperationsInput).
 pub mod list_failures_for_license_configuration_operations_input {
-
+    
     /// A builder for [`ListFailuresForLicenseConfigurationOperationsInput`](crate::input::ListFailuresForLicenseConfigurationOperationsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5815,12 +4208,8 @@ pub mod list_failures_for_license_configuration_operations_input {
             self
         }
         /// <p>Amazon Resource Name of the license configuration.</p>
-        pub fn set_license_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_configuration_arn = input;
-            self
+        pub fn set_license_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_configuration_arn = input; self
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5829,8 +4218,7 @@ pub mod list_failures_for_license_configuration_operations_input {
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5839,91 +4227,62 @@ pub mod list_failures_for_license_configuration_operations_input {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFailuresForLicenseConfigurationOperationsInput`](crate::input::ListFailuresForLicenseConfigurationOperationsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListFailuresForLicenseConfigurationOperationsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
+        pub fn build(self) -> Result<crate::input::ListFailuresForLicenseConfigurationOperationsInput, aws_smithy_http::operation::error::BuildError> {
             Ok(
                 crate::input::ListFailuresForLicenseConfigurationOperationsInput {
-                    license_configuration_arn: self.license_configuration_arn,
-                    max_results: self.max_results,
-                    next_token: self.next_token,
-                },
+                    license_configuration_arn: self.license_configuration_arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
             )
         }
     }
+    
+    
 }
 impl ListFailuresForLicenseConfigurationOperationsInput {
     /// Consumes the builder and constructs an Operation<[`ListFailuresForLicenseConfigurationOperations`](crate::operation::ListFailuresForLicenseConfigurationOperations)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListFailuresForLicenseConfigurationOperations,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListFailuresForLicenseConfigurationOperations, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListFailuresForLicenseConfigurationOperationsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListFailuresForLicenseConfigurationOperationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListFailuresForLicenseConfigurationOperationsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListFailuresForLicenseConfigurationOperationsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListFailuresForLicenseConfigurationOperations",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListFailuresForLicenseConfigurationOperations"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5932,74 +4291,49 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
             crate::operation_ser::serialize_operation_crate_operation_list_failures_for_license_configuration_operations(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListFailuresForLicenseConfigurationOperations::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListFailuresForLicenseConfigurationOperations",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListFailuresForLicenseConfigurationOperations::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListFailuresForLicenseConfigurationOperations", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListFailuresForLicenseConfigurationOperationsInput`](crate::input::ListFailuresForLicenseConfigurationOperationsInput).
-    pub fn builder(
-    ) -> crate::input::list_failures_for_license_configuration_operations_input::Builder {
+    pub fn builder() -> crate::input::list_failures_for_license_configuration_operations_input::Builder {
         crate::input::list_failures_for_license_configuration_operations_input::Builder::default()
     }
 }
 
 /// See [`ListLicenseConfigurationsInput`](crate::input::ListLicenseConfigurationsInput).
 pub mod list_license_configurations_input {
-
+    
     /// A builder for [`ListLicenseConfigurationsInput`](crate::input::ListLicenseConfigurationsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) license_configuration_arns:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) license_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6012,17 +4346,13 @@ pub mod list_license_configurations_input {
         /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
         pub fn license_configuration_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_configuration_arns.unwrap_or_default();
-            v.push(input.into());
-            self.license_configuration_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.license_configuration_arns = Some(v);
+                            self
         }
         /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
-        pub fn set_license_configuration_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.license_configuration_arns = input;
-            self
+        pub fn set_license_configuration_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.license_configuration_arns = input; self
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -6031,8 +4361,7 @@ pub mod list_license_configurations_input {
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6041,179 +4370,124 @@ pub mod list_license_configurations_input {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-        /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-        /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-        /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-        /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// Consumes the builder and constructs a [`ListLicenseConfigurationsInput`](crate::input::ListLicenseConfigurationsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListLicenseConfigurationsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListLicenseConfigurationsInput {
-                license_configuration_arns: self.license_configuration_arns,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            })
+        pub fn build(self) -> Result<crate::input::ListLicenseConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListLicenseConfigurationsInput {
+                    license_configuration_arns: self.license_configuration_arns
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                    filters: self.filters
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListLicenseConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenseConfigurations`](crate::operation::ListLicenseConfigurations)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListLicenseConfigurations,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListLicenseConfigurations, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListLicenseConfigurationsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListLicenseConfigurationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListLicenseConfigurationsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListLicenseConfigurationsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListLicenseConfigurations",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListLicenseConfigurations"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_license_configurations(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_license_configurations(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListLicenseConfigurations::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListLicenseConfigurations",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListLicenseConfigurations::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListLicenseConfigurations", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6225,7 +4499,7 @@ impl ListLicenseConfigurationsInput {
 
 /// See [`ListLicenseConversionTasksInput`](crate::input::ListLicenseConversionTasksInput).
 pub mod list_license_conversion_tasks_input {
-
+    
     /// A builder for [`ListLicenseConversionTasksInput`](crate::input::ListLicenseConversionTasksInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6241,8 +4515,7 @@ pub mod list_license_conversion_tasks_input {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -6251,8 +4524,7 @@ pub mod list_license_conversion_tasks_input {
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Appends an item to `filters`.
         ///
@@ -6261,98 +4533,68 @@ pub mod list_license_conversion_tasks_input {
         /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// Consumes the builder and constructs a [`ListLicenseConversionTasksInput`](crate::input::ListLicenseConversionTasksInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListLicenseConversionTasksInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListLicenseConversionTasksInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-            })
+        pub fn build(self) -> Result<crate::input::ListLicenseConversionTasksInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListLicenseConversionTasksInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                    filters: self.filters
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListLicenseConversionTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenseConversionTasks`](crate::operation::ListLicenseConversionTasks)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListLicenseConversionTasks,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListLicenseConversionTasks, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListLicenseConversionTasksInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListLicenseConversionTasksInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListLicenseConversionTasksInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListLicenseConversionTasksInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListLicenseConversionTasks",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListLicenseConversionTasks"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6361,56 +4603,33 @@ impl ListLicenseConversionTasksInput {
             crate::operation_ser::serialize_operation_crate_operation_list_license_conversion_tasks(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListLicenseConversionTasks::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListLicenseConversionTasks",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListLicenseConversionTasks::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListLicenseConversionTasks", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6422,7 +4641,7 @@ impl ListLicenseConversionTasksInput {
 
 /// See [`ListLicenseManagerReportGeneratorsInput`](crate::input::ListLicenseManagerReportGeneratorsInput).
 pub mod list_license_manager_report_generators_input {
-
+    
     /// A builder for [`ListLicenseManagerReportGeneratorsInput`](crate::input::ListLicenseManagerReportGeneratorsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6435,26 +4654,22 @@ pub mod list_license_manager_report_generators_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filters are supported: </p>
-        /// <ul>
-        /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
+        /// <p>Filters to scope the results. The following filters are supported: </p> 
+        /// <ul> 
+        /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Filters to scope the results. The following filters are supported: </p>
-        /// <ul>
-        /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
+        /// <p>Filters to scope the results. The following filters are supported: </p> 
+        /// <ul> 
+        /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6463,8 +4678,7 @@ pub mod list_license_manager_report_generators_input {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -6473,89 +4687,62 @@ pub mod list_license_manager_report_generators_input {
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListLicenseManagerReportGeneratorsInput`](crate::input::ListLicenseManagerReportGeneratorsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListLicenseManagerReportGeneratorsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListLicenseManagerReportGeneratorsInput {
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListLicenseManagerReportGeneratorsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListLicenseManagerReportGeneratorsInput {
+                    filters: self.filters
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListLicenseManagerReportGeneratorsInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenseManagerReportGenerators`](crate::operation::ListLicenseManagerReportGenerators)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListLicenseManagerReportGenerators,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListLicenseManagerReportGenerators, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListLicenseManagerReportGeneratorsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListLicenseManagerReportGeneratorsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListLicenseManagerReportGeneratorsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListLicenseManagerReportGeneratorsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListLicenseManagerReportGenerators",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListLicenseManagerReportGenerators"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6564,56 +4751,33 @@ impl ListLicenseManagerReportGeneratorsInput {
             crate::operation_ser::serialize_operation_crate_operation_list_license_manager_report_generators(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListLicenseManagerReportGenerators::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListLicenseManagerReportGenerators",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListLicenseManagerReportGenerators::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListLicenseManagerReportGenerators", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6625,7 +4789,7 @@ impl ListLicenseManagerReportGeneratorsInput {
 
 /// See [`ListLicensesInput`](crate::input::ListLicensesInput).
 pub mod list_licenses_input {
-
+    
     /// A builder for [`ListLicensesInput`](crate::input::ListLicensesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6642,48 +4806,40 @@ pub mod list_licenses_input {
         /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
         pub fn license_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_arns.unwrap_or_default();
-            v.push(input.into());
-            self.license_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.license_arns = Some(v);
+                            self
         }
         /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
-        pub fn set_license_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.license_arns = input;
-            self
+        pub fn set_license_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.license_arns = input; self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filters are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>Beneficiary</code> </p> </li>
-        /// <li> <p> <code>ProductSKU</code> </p> </li>
-        /// <li> <p> <code>Fingerprint</code> </p> </li>
-        /// <li> <p> <code>Status</code> </p> </li>
+        /// <p>Filters to scope the results. The following filters are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Beneficiary</code> </p> </li> 
+        /// <li> <p> <code>ProductSKU</code> </p> </li> 
+        /// <li> <p> <code>Fingerprint</code> </p> </li> 
+        /// <li> <p> <code>Status</code> </p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Filters to scope the results. The following filters are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>Beneficiary</code> </p> </li>
-        /// <li> <p> <code>ProductSKU</code> </p> </li>
-        /// <li> <p> <code>Fingerprint</code> </p> </li>
-        /// <li> <p> <code>Status</code> </p> </li>
+        /// <p>Filters to scope the results. The following filters are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Beneficiary</code> </p> </li> 
+        /// <li> <p> <code>ProductSKU</code> </p> </li> 
+        /// <li> <p> <code>Fingerprint</code> </p> </li> 
+        /// <li> <p> <code>Status</code> </p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6692,8 +4848,7 @@ pub mod list_licenses_input {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -6702,146 +4857,99 @@ pub mod list_licenses_input {
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListLicensesInput`](crate::input::ListLicensesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListLicensesInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListLicensesInput {
-                license_arns: self.license_arns,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListLicensesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListLicensesInput {
+                    license_arns: self.license_arns
+                    ,
+                    filters: self.filters
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListLicensesInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenses`](crate::operation::ListLicenses)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListLicenses,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListLicenses, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListLicensesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListLicensesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListLicensesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListLicensesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListLicenses",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListLicenses"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_licenses(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_licenses(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListLicenses::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListLicenses",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListLicenses::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListLicenses", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6853,7 +4961,7 @@ impl ListLicensesInput {
 
 /// See [`ListLicenseSpecificationsForResourceInput`](crate::input::ListLicenseSpecificationsForResourceInput).
 pub mod list_license_specifications_for_resource_input {
-
+    
     /// A builder for [`ListLicenseSpecificationsForResourceInput`](crate::input::ListLicenseSpecificationsForResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6869,8 +4977,7 @@ pub mod list_license_specifications_for_resource_input {
         }
         /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -6879,8 +4986,7 @@ pub mod list_license_specifications_for_resource_input {
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6889,89 +4995,62 @@ pub mod list_license_specifications_for_resource_input {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLicenseSpecificationsForResourceInput`](crate::input::ListLicenseSpecificationsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListLicenseSpecificationsForResourceInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListLicenseSpecificationsForResourceInput {
-                resource_arn: self.resource_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListLicenseSpecificationsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListLicenseSpecificationsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListLicenseSpecificationsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenseSpecificationsForResource`](crate::operation::ListLicenseSpecificationsForResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListLicenseSpecificationsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListLicenseSpecificationsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListLicenseSpecificationsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListLicenseSpecificationsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListLicenseSpecificationsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListLicenseSpecificationsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListLicenseSpecificationsForResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListLicenseSpecificationsForResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6980,56 +5059,33 @@ impl ListLicenseSpecificationsForResourceInput {
             crate::operation_ser::serialize_operation_crate_operation_list_license_specifications_for_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListLicenseSpecificationsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListLicenseSpecificationsForResource",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListLicenseSpecificationsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListLicenseSpecificationsForResource", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7041,7 +5097,7 @@ impl ListLicenseSpecificationsForResourceInput {
 
 /// See [`ListLicenseVersionsInput`](crate::input::ListLicenseVersionsInput).
 pub mod list_license_versions_input {
-
+    
     /// A builder for [`ListLicenseVersionsInput`](crate::input::ListLicenseVersionsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7057,8 +5113,7 @@ pub mod list_license_versions_input {
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7067,8 +5122,7 @@ pub mod list_license_versions_input {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -7077,147 +5131,97 @@ pub mod list_license_versions_input {
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListLicenseVersionsInput`](crate::input::ListLicenseVersionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListLicenseVersionsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListLicenseVersionsInput {
-                license_arn: self.license_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListLicenseVersionsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListLicenseVersionsInput {
+                    license_arn: self.license_arn
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListLicenseVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenseVersions`](crate::operation::ListLicenseVersions)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListLicenseVersions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListLicenseVersions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListLicenseVersionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListLicenseVersionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListLicenseVersionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListLicenseVersionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListLicenseVersions",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListLicenseVersions"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_license_versions(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_license_versions(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListLicenseVersions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListLicenseVersions",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListLicenseVersions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListLicenseVersions", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7229,7 +5233,7 @@ impl ListLicenseVersionsInput {
 
 /// See [`ListReceivedGrantsInput`](crate::input::ListReceivedGrantsInput).
 pub mod list_received_grants_input {
-
+    
     /// A builder for [`ListReceivedGrantsInput`](crate::input::ListReceivedGrantsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7246,50 +5250,42 @@ pub mod list_received_grants_input {
         /// <p>Amazon Resource Names (ARNs) of the grants.</p>
         pub fn grant_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_arns.unwrap_or_default();
-            v.push(input.into());
-            self.grant_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.grant_arns = Some(v);
+                            self
         }
         /// <p>Amazon Resource Names (ARNs) of the grants.</p>
-        pub fn set_grant_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.grant_arns = input;
-            self
+        pub fn set_grant_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.grant_arns = input; self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filters are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>ProductSKU</code> </p> </li>
-        /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
-        /// <li> <p> <code>LicenseArn</code> </p> </li>
-        /// <li> <p> <code>GrantStatus</code> </p> </li>
-        /// <li> <p> <code>GranterAccountId</code> </p> </li>
+        /// <p>Filters to scope the results. The following filters are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ProductSKU</code> </p> </li> 
+        /// <li> <p> <code>LicenseIssuerName</code> </p> </li> 
+        /// <li> <p> <code>LicenseArn</code> </p> </li> 
+        /// <li> <p> <code>GrantStatus</code> </p> </li> 
+        /// <li> <p> <code>GranterAccountId</code> </p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Filters to scope the results. The following filters are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>ProductSKU</code> </p> </li>
-        /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
-        /// <li> <p> <code>LicenseArn</code> </p> </li>
-        /// <li> <p> <code>GrantStatus</code> </p> </li>
-        /// <li> <p> <code>GranterAccountId</code> </p> </li>
+        /// <p>Filters to scope the results. The following filters are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ProductSKU</code> </p> </li> 
+        /// <li> <p> <code>LicenseIssuerName</code> </p> </li> 
+        /// <li> <p> <code>LicenseArn</code> </p> </li> 
+        /// <li> <p> <code>GrantStatus</code> </p> </li> 
+        /// <li> <p> <code>GranterAccountId</code> </p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7298,8 +5294,7 @@ pub mod list_received_grants_input {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -7308,148 +5303,99 @@ pub mod list_received_grants_input {
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListReceivedGrantsInput`](crate::input::ListReceivedGrantsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListReceivedGrantsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListReceivedGrantsInput {
-                grant_arns: self.grant_arns,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListReceivedGrantsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListReceivedGrantsInput {
+                    grant_arns: self.grant_arns
+                    ,
+                    filters: self.filters
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListReceivedGrantsInput {
     /// Consumes the builder and constructs an Operation<[`ListReceivedGrants`](crate::operation::ListReceivedGrants)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListReceivedGrants,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListReceivedGrants, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListReceivedGrantsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListReceivedGrantsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListReceivedGrantsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListReceivedGrantsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListReceivedGrants",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListReceivedGrants"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_received_grants(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_received_grants(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListReceivedGrants::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListReceivedGrants",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListReceivedGrants::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListReceivedGrants", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7461,7 +5407,7 @@ impl ListReceivedGrantsInput {
 
 /// See [`ListReceivedGrantsForOrganizationInput`](crate::input::ListReceivedGrantsForOrganizationInput).
 pub mod list_received_grants_for_organization_input {
-
+    
     /// A builder for [`ListReceivedGrantsForOrganizationInput`](crate::input::ListReceivedGrantsForOrganizationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7478,35 +5424,30 @@ pub mod list_received_grants_for_organization_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the received license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filters are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>ParentArn</code> </p> </li>
-        /// <li> <p> <code>GranteePrincipalArn</code> </p> </li>
+        /// <p>Filters to scope the results. The following filters are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ParentArn</code> </p> </li> 
+        /// <li> <p> <code>GranteePrincipalArn</code> </p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Filters to scope the results. The following filters are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>ParentArn</code> </p> </li>
-        /// <li> <p> <code>GranteePrincipalArn</code> </p> </li>
+        /// <p>Filters to scope the results. The following filters are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ParentArn</code> </p> </li> 
+        /// <li> <p> <code>GranteePrincipalArn</code> </p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7515,8 +5456,7 @@ pub mod list_received_grants_for_organization_input {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -7525,90 +5465,64 @@ pub mod list_received_grants_for_organization_input {
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListReceivedGrantsForOrganizationInput`](crate::input::ListReceivedGrantsForOrganizationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListReceivedGrantsForOrganizationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListReceivedGrantsForOrganizationInput {
-                license_arn: self.license_arn,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListReceivedGrantsForOrganizationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListReceivedGrantsForOrganizationInput {
+                    license_arn: self.license_arn
+                    ,
+                    filters: self.filters
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListReceivedGrantsForOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`ListReceivedGrantsForOrganization`](crate::operation::ListReceivedGrantsForOrganization)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListReceivedGrantsForOrganization,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListReceivedGrantsForOrganization, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListReceivedGrantsForOrganizationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListReceivedGrantsForOrganizationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListReceivedGrantsForOrganizationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListReceivedGrantsForOrganizationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListReceivedGrantsForOrganization",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListReceivedGrantsForOrganization"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -7617,56 +5531,33 @@ impl ListReceivedGrantsForOrganizationInput {
             crate::operation_ser::serialize_operation_crate_operation_list_received_grants_for_organization(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListReceivedGrantsForOrganization::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListReceivedGrantsForOrganization",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListReceivedGrantsForOrganization::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListReceivedGrantsForOrganization", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7678,7 +5569,7 @@ impl ListReceivedGrantsForOrganizationInput {
 
 /// See [`ListReceivedLicensesInput`](crate::input::ListReceivedLicensesInput).
 pub mod list_received_licenses_input {
-
+    
     /// A builder for [`ListReceivedLicensesInput`](crate::input::ListReceivedLicensesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7695,50 +5586,42 @@ pub mod list_received_licenses_input {
         /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
         pub fn license_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_arns.unwrap_or_default();
-            v.push(input.into());
-            self.license_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.license_arns = Some(v);
+                            self
         }
         /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
-        pub fn set_license_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.license_arns = input;
-            self
+        pub fn set_license_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.license_arns = input; self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filters are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>ProductSKU</code> </p> </li>
-        /// <li> <p> <code>Status</code> </p> </li>
-        /// <li> <p> <code>Fingerprint</code> </p> </li>
-        /// <li> <p> <code>IssuerName</code> </p> </li>
-        /// <li> <p> <code>Beneficiary</code> </p> </li>
+        /// <p>Filters to scope the results. The following filters are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ProductSKU</code> </p> </li> 
+        /// <li> <p> <code>Status</code> </p> </li> 
+        /// <li> <p> <code>Fingerprint</code> </p> </li> 
+        /// <li> <p> <code>IssuerName</code> </p> </li> 
+        /// <li> <p> <code>Beneficiary</code> </p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Filters to scope the results. The following filters are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>ProductSKU</code> </p> </li>
-        /// <li> <p> <code>Status</code> </p> </li>
-        /// <li> <p> <code>Fingerprint</code> </p> </li>
-        /// <li> <p> <code>IssuerName</code> </p> </li>
-        /// <li> <p> <code>Beneficiary</code> </p> </li>
+        /// <p>Filters to scope the results. The following filters are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ProductSKU</code> </p> </li> 
+        /// <li> <p> <code>Status</code> </p> </li> 
+        /// <li> <p> <code>Fingerprint</code> </p> </li> 
+        /// <li> <p> <code>IssuerName</code> </p> </li> 
+        /// <li> <p> <code>Beneficiary</code> </p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7747,8 +5630,7 @@ pub mod list_received_licenses_input {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -7757,150 +5639,99 @@ pub mod list_received_licenses_input {
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListReceivedLicensesInput`](crate::input::ListReceivedLicensesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListReceivedLicensesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListReceivedLicensesInput {
-                license_arns: self.license_arns,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListReceivedLicensesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListReceivedLicensesInput {
+                    license_arns: self.license_arns
+                    ,
+                    filters: self.filters
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListReceivedLicensesInput {
     /// Consumes the builder and constructs an Operation<[`ListReceivedLicenses`](crate::operation::ListReceivedLicenses)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListReceivedLicenses,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListReceivedLicenses, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListReceivedLicensesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListReceivedLicensesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListReceivedLicensesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListReceivedLicensesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListReceivedLicenses",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListReceivedLicenses"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_received_licenses(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_received_licenses(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListReceivedLicenses::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListReceivedLicenses",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListReceivedLicenses::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListReceivedLicenses", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7912,7 +5743,7 @@ impl ListReceivedLicensesInput {
 
 /// See [`ListReceivedLicensesForOrganizationInput`](crate::input::ListReceivedLicensesForOrganizationInput).
 pub mod list_received_licenses_for_organization_input {
-
+    
     /// A builder for [`ListReceivedLicensesForOrganizationInput`](crate::input::ListReceivedLicensesForOrganizationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7925,28 +5756,24 @@ pub mod list_received_licenses_for_organization_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filters are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>Beneficiary</code> </p> </li>
-        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <p>Filters to scope the results. The following filters are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Beneficiary</code> </p> </li> 
+        /// <li> <p> <code>ProductSKU</code> </p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Filters to scope the results. The following filters are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>Beneficiary</code> </p> </li>
-        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <p>Filters to scope the results. The following filters are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Beneficiary</code> </p> </li> 
+        /// <li> <p> <code>ProductSKU</code> </p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7955,8 +5782,7 @@ pub mod list_received_licenses_for_organization_input {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -7965,89 +5791,62 @@ pub mod list_received_licenses_for_organization_input {
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListReceivedLicensesForOrganizationInput`](crate::input::ListReceivedLicensesForOrganizationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListReceivedLicensesForOrganizationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListReceivedLicensesForOrganizationInput {
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListReceivedLicensesForOrganizationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListReceivedLicensesForOrganizationInput {
+                    filters: self.filters
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListReceivedLicensesForOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`ListReceivedLicensesForOrganization`](crate::operation::ListReceivedLicensesForOrganization)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListReceivedLicensesForOrganization,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListReceivedLicensesForOrganization, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListReceivedLicensesForOrganizationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListReceivedLicensesForOrganizationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListReceivedLicensesForOrganizationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListReceivedLicensesForOrganizationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListReceivedLicensesForOrganization",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListReceivedLicensesForOrganization"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -8056,56 +5855,33 @@ impl ListReceivedLicensesForOrganizationInput {
             crate::operation_ser::serialize_operation_crate_operation_list_received_licenses_for_organization(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListReceivedLicensesForOrganization::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListReceivedLicensesForOrganization",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListReceivedLicensesForOrganization::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListReceivedLicensesForOrganization", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8117,7 +5893,7 @@ impl ListReceivedLicensesForOrganizationInput {
 
 /// See [`ListResourceInventoryInput`](crate::input::ListResourceInventoryInput).
 pub mod list_resource_inventory_input {
-
+    
     /// A builder for [`ListResourceInventoryInput`](crate::input::ListResourceInventoryInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8133,8 +5909,7 @@ pub mod list_resource_inventory_input {
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8143,186 +5918,130 @@ pub mod list_resource_inventory_input {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-        /// <li> <p> <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
-        /// <li> <p> <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
-        /// <li> <p> <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
-        /// <li> <p> <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li> 
+        /// <li> <p> <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li> 
+        /// <li> <p> <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li> 
+        /// <li> <p> <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
         /// <li> <p> <code>tag:
-        /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li>
+        /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::InventoryFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-        /// <li> <p> <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
-        /// <li> <p> <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
-        /// <li> <p> <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
-        /// <li> <p> <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li> 
+        /// <li> <p> <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li> 
+        /// <li> <p> <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li> 
+        /// <li> <p> <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
         /// <li> <p> <code>tag:
-        /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li>
+        /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InventoryFilter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::InventoryFilter>>) -> Self {
+            self.filters = input; self
         }
         /// Consumes the builder and constructs a [`ListResourceInventoryInput`](crate::input::ListResourceInventoryInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListResourceInventoryInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListResourceInventoryInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            })
+        pub fn build(self) -> Result<crate::input::ListResourceInventoryInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListResourceInventoryInput {
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                    filters: self.filters
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListResourceInventoryInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceInventory`](crate::operation::ListResourceInventory)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListResourceInventory,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListResourceInventory, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListResourceInventoryInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListResourceInventoryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListResourceInventoryInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListResourceInventoryInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListResourceInventory",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListResourceInventory"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_resource_inventory(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_resource_inventory(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListResourceInventory::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListResourceInventory",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListResourceInventory::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListResourceInventory", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8334,7 +6053,7 @@ impl ListResourceInventoryInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8348,147 +6067,93 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListTagsForResourceInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListTagsForResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListTagsForResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8500,7 +6165,7 @@ impl ListTagsForResourceInput {
 
 /// See [`ListTokensInput`](crate::input::ListTokensInput).
 pub mod list_tokens_input {
-
+    
     /// A builder for [`ListTokensInput`](crate::input::ListTokensInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8517,42 +6182,34 @@ pub mod list_tokens_input {
         /// <p>Token IDs.</p>
         pub fn token_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.token_ids.unwrap_or_default();
-            v.push(input.into());
-            self.token_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.token_ids = Some(v);
+                            self
         }
         /// <p>Token IDs.</p>
-        pub fn set_token_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.token_ids = input;
-            self
+        pub fn set_token_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.token_ids = input; self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filter is supported:</p>
-        /// <ul>
-        /// <li> <p> <code>LicenseArns</code> </p> </li>
+        /// <p>Filters to scope the results. The following filter is supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>LicenseArns</code> </p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Filters to scope the results. The following filter is supported:</p>
-        /// <ul>
-        /// <li> <p> <code>LicenseArns</code> </p> </li>
+        /// <p>Filters to scope the results. The following filter is supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>LicenseArns</code> </p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8561,8 +6218,7 @@ pub mod list_tokens_input {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -8571,146 +6227,99 @@ pub mod list_tokens_input {
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListTokensInput`](crate::input::ListTokensInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListTokensInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListTokensInput {
-                token_ids: self.token_ids,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListTokensInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListTokensInput {
+                    token_ids: self.token_ids
+                    ,
+                    filters: self.filters
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTokensInput {
     /// Consumes the builder and constructs an Operation<[`ListTokens`](crate::operation::ListTokens)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTokens,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTokens, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTokensInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListTokensInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListTokensInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListTokensInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListTokens",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListTokens"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tokens(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_tokens(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTokens::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTokens",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTokens::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTokens", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8722,7 +6331,7 @@ impl ListTokensInput {
 
 /// See [`ListUsageForLicenseConfigurationInput`](crate::input::ListUsageForLicenseConfigurationInput).
 pub mod list_usage_for_license_configuration_input {
-
+    
     /// A builder for [`ListUsageForLicenseConfigurationInput`](crate::input::ListUsageForLicenseConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8738,12 +6347,8 @@ pub mod list_usage_for_license_configuration_input {
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-        pub fn set_license_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_configuration_arn = input;
-            self
+        pub fn set_license_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_configuration_arn = input; self
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -8752,8 +6357,7 @@ pub mod list_usage_for_license_configuration_input {
         }
         /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8762,119 +6366,89 @@ pub mod list_usage_for_license_configuration_input {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-        /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-        /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
-        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
-        /// <ul>
-        /// <li> <p> <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-        /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-        /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
         /// </ul>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// Consumes the builder and constructs a [`ListUsageForLicenseConfigurationInput`](crate::input::ListUsageForLicenseConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListUsageForLicenseConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListUsageForLicenseConfigurationInput {
-                license_configuration_arn: self.license_configuration_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            })
+        pub fn build(self) -> Result<crate::input::ListUsageForLicenseConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListUsageForLicenseConfigurationInput {
+                    license_configuration_arn: self.license_configuration_arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                    filters: self.filters
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListUsageForLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`ListUsageForLicenseConfiguration`](crate::operation::ListUsageForLicenseConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListUsageForLicenseConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListUsageForLicenseConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListUsageForLicenseConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListUsageForLicenseConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListUsageForLicenseConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListUsageForLicenseConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.ListUsageForLicenseConfiguration",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.ListUsageForLicenseConfiguration"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -8883,56 +6457,33 @@ impl ListUsageForLicenseConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_list_usage_for_license_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListUsageForLicenseConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListUsageForLicenseConfiguration",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListUsageForLicenseConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListUsageForLicenseConfiguration", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8944,7 +6495,7 @@ impl ListUsageForLicenseConfigurationInput {
 
 /// See [`RejectGrantInput`](crate::input::RejectGrantInput).
 pub mod reject_grant_input {
-
+    
     /// A builder for [`RejectGrantInput`](crate::input::RejectGrantInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8958,143 +6509,93 @@ pub mod reject_grant_input {
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grant_arn = input;
-            self
+            self.grant_arn = input; self
         }
         /// Consumes the builder and constructs a [`RejectGrantInput`](crate::input::RejectGrantInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::RejectGrantInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::RejectGrantInput {
-                grant_arn: self.grant_arn,
-            })
+        pub fn build(self) -> Result<crate::input::RejectGrantInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RejectGrantInput {
+                    grant_arn: self.grant_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RejectGrantInput {
     /// Consumes the builder and constructs an Operation<[`RejectGrant`](crate::operation::RejectGrant)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RejectGrant,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RejectGrant, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RejectGrantInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RejectGrantInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RejectGrantInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RejectGrantInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.RejectGrant",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.RejectGrant"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_reject_grant(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_reject_grant(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RejectGrant::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RejectGrant",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RejectGrant::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RejectGrant", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -9106,7 +6607,7 @@ impl RejectGrantInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9121,8 +6622,7 @@ pub mod tag_resource_input {
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -9131,153 +6631,101 @@ pub mod tag_resource_input {
         /// <p>One or more tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>One or more tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.TagResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.TagResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -9289,7 +6737,7 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9304,8 +6752,7 @@ pub mod untag_resource_input {
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -9314,153 +6761,101 @@ pub mod untag_resource_input {
         /// <p>Keys identifying the tags to remove.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p>Keys identifying the tags to remove.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.UntagResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.UntagResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -9472,20 +6867,18 @@ impl UntagResourceInput {
 
 /// See [`UpdateLicenseConfigurationInput`](crate::input::UpdateLicenseConfigurationInput).
 pub mod update_license_configuration_input {
-
+    
     /// A builder for [`UpdateLicenseConfigurationInput`](crate::input::UpdateLicenseConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_arn: std::option::Option<std::string::String>,
-        pub(crate) license_configuration_status:
-            std::option::Option<crate::model::LicenseConfigurationStatus>,
+        pub(crate) license_configuration_status: std::option::Option<crate::model::LicenseConfigurationStatus>,
         pub(crate) license_rules: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) license_count: std::option::Option<i64>,
         pub(crate) license_count_hard_limit: std::option::Option<bool>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) product_information_list:
-            std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
+        pub(crate) product_information_list: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
         pub(crate) disassociate_when_not_found: std::option::Option<bool>,
     }
     impl Builder {
@@ -9495,28 +6888,17 @@ pub mod update_license_configuration_input {
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-        pub fn set_license_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_configuration_arn = input;
-            self
+        pub fn set_license_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_configuration_arn = input; self
         }
         /// <p>New status of the license configuration.</p>
-        pub fn license_configuration_status(
-            mut self,
-            input: crate::model::LicenseConfigurationStatus,
-        ) -> Self {
+        pub fn license_configuration_status(mut self, input: crate::model::LicenseConfigurationStatus) -> Self {
             self.license_configuration_status = Some(input);
             self
         }
         /// <p>New status of the license configuration.</p>
-        pub fn set_license_configuration_status(
-            mut self,
-            input: std::option::Option<crate::model::LicenseConfigurationStatus>,
-        ) -> Self {
-            self.license_configuration_status = input;
-            self
+        pub fn set_license_configuration_status(mut self, input: std::option::Option<crate::model::LicenseConfigurationStatus>) -> Self {
+            self.license_configuration_status = input; self
         }
         /// Appends an item to `license_rules`.
         ///
@@ -9525,17 +6907,13 @@ pub mod update_license_configuration_input {
         /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
         pub fn license_rules(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_rules.unwrap_or_default();
-            v.push(input.into());
-            self.license_rules = Some(v);
-            self
+                            v.push(input.into());
+                            self.license_rules = Some(v);
+                            self
         }
         /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
-        pub fn set_license_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.license_rules = input;
-            self
+        pub fn set_license_rules(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.license_rules = input; self
         }
         /// <p>New number of licenses managed by the license configuration.</p>
         pub fn license_count(mut self, input: i64) -> Self {
@@ -9544,8 +6922,7 @@ pub mod update_license_configuration_input {
         }
         /// <p>New number of licenses managed by the license configuration.</p>
         pub fn set_license_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.license_count = input;
-            self
+            self.license_count = input; self
         }
         /// <p>New hard limit of the number of available licenses.</p>
         pub fn license_count_hard_limit(mut self, input: bool) -> Self {
@@ -9554,8 +6931,7 @@ pub mod update_license_configuration_input {
         }
         /// <p>New hard limit of the number of available licenses.</p>
         pub fn set_license_count_hard_limit(mut self, input: std::option::Option<bool>) -> Self {
-            self.license_count_hard_limit = input;
-            self
+            self.license_count_hard_limit = input; self
         }
         /// <p>New name of the license configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9564,8 +6940,7 @@ pub mod update_license_configuration_input {
         }
         /// <p>New name of the license configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>New description of the license configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9574,8 +6949,7 @@ pub mod update_license_configuration_input {
         }
         /// <p>New description of the license configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `product_information_list`.
         ///
@@ -9584,17 +6958,13 @@ pub mod update_license_configuration_input {
         /// <p>New product information.</p>
         pub fn product_information_list(mut self, input: crate::model::ProductInformation) -> Self {
             let mut v = self.product_information_list.unwrap_or_default();
-            v.push(input);
-            self.product_information_list = Some(v);
-            self
+                            v.push(input);
+                            self.product_information_list = Some(v);
+                            self
         }
         /// <p>New product information.</p>
-        pub fn set_product_information_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
-        ) -> Self {
-            self.product_information_list = input;
-            self
+        pub fn set_product_information_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>) -> Self {
+            self.product_information_list = input; self
         }
         /// <p>When true, disassociates a resource when software is uninstalled.</p>
         pub fn disassociate_when_not_found(mut self, input: bool) -> Self {
@@ -9603,155 +6973,109 @@ pub mod update_license_configuration_input {
         }
         /// <p>When true, disassociates a resource when software is uninstalled.</p>
         pub fn set_disassociate_when_not_found(mut self, input: std::option::Option<bool>) -> Self {
-            self.disassociate_when_not_found = input;
-            self
+            self.disassociate_when_not_found = input; self
         }
         /// Consumes the builder and constructs a [`UpdateLicenseConfigurationInput`](crate::input::UpdateLicenseConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateLicenseConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateLicenseConfigurationInput {
-                license_configuration_arn: self.license_configuration_arn,
-                license_configuration_status: self.license_configuration_status,
-                license_rules: self.license_rules,
-                license_count: self.license_count,
-                license_count_hard_limit: self.license_count_hard_limit,
-                name: self.name,
-                description: self.description,
-                product_information_list: self.product_information_list,
-                disassociate_when_not_found: self.disassociate_when_not_found,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateLicenseConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateLicenseConfigurationInput {
+                    license_configuration_arn: self.license_configuration_arn
+                    ,
+                    license_configuration_status: self.license_configuration_status
+                    ,
+                    license_rules: self.license_rules
+                    ,
+                    license_count: self.license_count
+                    ,
+                    license_count_hard_limit: self.license_count_hard_limit
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    product_information_list: self.product_information_list
+                    ,
+                    disassociate_when_not_found: self.disassociate_when_not_found
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLicenseConfiguration`](crate::operation::UpdateLicenseConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateLicenseConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateLicenseConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateLicenseConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateLicenseConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateLicenseConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateLicenseConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.UpdateLicenseConfiguration",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.UpdateLicenseConfiguration"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_license_configuration(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_update_license_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateLicenseConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateLicenseConfiguration",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateLicenseConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateLicenseConfiguration", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -9763,7 +7087,7 @@ impl UpdateLicenseConfigurationInput {
 
 /// See [`UpdateLicenseManagerReportGeneratorInput`](crate::input::UpdateLicenseManagerReportGeneratorInput).
 pub mod update_license_manager_report_generator_input {
-
+    
     /// A builder for [`UpdateLicenseManagerReportGeneratorInput`](crate::input::UpdateLicenseManagerReportGeneratorInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9777,20 +7101,13 @@ pub mod update_license_manager_report_generator_input {
     }
     impl Builder {
         /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
-        pub fn license_manager_report_generator_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn license_manager_report_generator_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.license_manager_report_generator_arn = Some(input.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
-        pub fn set_license_manager_report_generator_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_manager_report_generator_arn = input;
-            self
+        pub fn set_license_manager_report_generator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_manager_report_generator_arn = input; self
         }
         /// <p>Name of the report generator.</p>
         pub fn report_generator_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9798,39 +7115,31 @@ pub mod update_license_manager_report_generator_input {
             self
         }
         /// <p>Name of the report generator.</p>
-        pub fn set_report_generator_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.report_generator_name = input;
-            self
+        pub fn set_report_generator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.report_generator_name = input; self
         }
         /// Appends an item to `r#type`.
         ///
         /// To override the contents of this collection use [`set_type`](Self::set_type).
         ///
-        /// <p>Type of reports to generate. The following report types are supported:</p>
-        /// <ul>
-        /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
-        /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
+        /// <p>Type of reports to generate. The following report types are supported:</p> 
+        /// <ul> 
+        /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li> 
+        /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ReportType) -> Self {
             let mut v = self.r#type.unwrap_or_default();
-            v.push(input);
-            self.r#type = Some(v);
-            self
+                            v.push(input);
+                            self.r#type = Some(v);
+                            self
         }
-        /// <p>Type of reports to generate. The following report types are supported:</p>
-        /// <ul>
-        /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
-        /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
+        /// <p>Type of reports to generate. The following report types are supported:</p> 
+        /// <ul> 
+        /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li> 
+        /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li> 
         /// </ul>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReportType>>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReportType>>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The report context.</p>
         pub fn report_context(mut self, input: crate::model::ReportContext) -> Self {
@@ -9838,12 +7147,8 @@ pub mod update_license_manager_report_generator_input {
             self
         }
         /// <p>The report context.</p>
-        pub fn set_report_context(
-            mut self,
-            input: std::option::Option<crate::model::ReportContext>,
-        ) -> Self {
-            self.report_context = input;
-            self
+        pub fn set_report_context(mut self, input: std::option::Option<crate::model::ReportContext>) -> Self {
+            self.report_context = input; self
         }
         /// <p>Frequency by which reports are generated.</p>
         pub fn report_frequency(mut self, input: crate::model::ReportFrequency) -> Self {
@@ -9851,12 +7156,8 @@ pub mod update_license_manager_report_generator_input {
             self
         }
         /// <p>Frequency by which reports are generated.</p>
-        pub fn set_report_frequency(
-            mut self,
-            input: std::option::Option<crate::model::ReportFrequency>,
-        ) -> Self {
-            self.report_frequency = input;
-            self
+        pub fn set_report_frequency(mut self, input: std::option::Option<crate::model::ReportFrequency>) -> Self {
+            self.report_frequency = input; self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9865,8 +7166,7 @@ pub mod update_license_manager_report_generator_input {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// <p>Description of the report generator.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9875,93 +7175,70 @@ pub mod update_license_manager_report_generator_input {
         }
         /// <p>Description of the report generator.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateLicenseManagerReportGeneratorInput`](crate::input::UpdateLicenseManagerReportGeneratorInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateLicenseManagerReportGeneratorInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateLicenseManagerReportGeneratorInput {
-                license_manager_report_generator_arn: self.license_manager_report_generator_arn,
-                report_generator_name: self.report_generator_name,
-                r#type: self.r#type,
-                report_context: self.report_context,
-                report_frequency: self.report_frequency,
-                client_token: self.client_token,
-                description: self.description,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateLicenseManagerReportGeneratorInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateLicenseManagerReportGeneratorInput {
+                    license_manager_report_generator_arn: self.license_manager_report_generator_arn
+                    ,
+                    report_generator_name: self.report_generator_name
+                    ,
+                    r#type: self.r#type
+                    ,
+                    report_context: self.report_context
+                    ,
+                    report_frequency: self.report_frequency
+                    ,
+                    client_token: self.client_token
+                    ,
+                    description: self.description
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateLicenseManagerReportGeneratorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLicenseManagerReportGenerator`](crate::operation::UpdateLicenseManagerReportGenerator)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateLicenseManagerReportGenerator,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateLicenseManagerReportGenerator, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateLicenseManagerReportGeneratorInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateLicenseManagerReportGeneratorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateLicenseManagerReportGeneratorInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateLicenseManagerReportGeneratorInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.UpdateLicenseManagerReportGenerator",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.UpdateLicenseManagerReportGenerator"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -9970,56 +7247,33 @@ impl UpdateLicenseManagerReportGeneratorInput {
             crate::operation_ser::serialize_operation_crate_operation_update_license_manager_report_generator(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateLicenseManagerReportGenerator::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateLicenseManagerReportGenerator",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateLicenseManagerReportGenerator::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateLicenseManagerReportGenerator", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -10031,15 +7285,13 @@ impl UpdateLicenseManagerReportGeneratorInput {
 
 /// See [`UpdateLicenseSpecificationsForResourceInput`](crate::input::UpdateLicenseSpecificationsForResourceInput).
 pub mod update_license_specifications_for_resource_input {
-
+    
     /// A builder for [`UpdateLicenseSpecificationsForResourceInput`](crate::input::UpdateLicenseSpecificationsForResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) add_license_specifications:
-            std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
-        pub(crate) remove_license_specifications:
-            std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
+        pub(crate) add_license_specifications: std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
+        pub(crate) remove_license_specifications: std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
     }
     impl Builder {
         /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
@@ -10049,133 +7301,92 @@ pub mod update_license_specifications_for_resource_input {
         }
         /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `add_license_specifications`.
         ///
         /// To override the contents of this collection use [`set_add_license_specifications`](Self::set_add_license_specifications).
         ///
         /// <p>ARNs of the license configurations to add.</p>
-        pub fn add_license_specifications(
-            mut self,
-            input: crate::model::LicenseSpecification,
-        ) -> Self {
+        pub fn add_license_specifications(mut self, input: crate::model::LicenseSpecification) -> Self {
             let mut v = self.add_license_specifications.unwrap_or_default();
-            v.push(input);
-            self.add_license_specifications = Some(v);
-            self
+                            v.push(input);
+                            self.add_license_specifications = Some(v);
+                            self
         }
         /// <p>ARNs of the license configurations to add.</p>
-        pub fn set_add_license_specifications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
-        ) -> Self {
-            self.add_license_specifications = input;
-            self
+        pub fn set_add_license_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>) -> Self {
+            self.add_license_specifications = input; self
         }
         /// Appends an item to `remove_license_specifications`.
         ///
         /// To override the contents of this collection use [`set_remove_license_specifications`](Self::set_remove_license_specifications).
         ///
         /// <p>ARNs of the license configurations to remove.</p>
-        pub fn remove_license_specifications(
-            mut self,
-            input: crate::model::LicenseSpecification,
-        ) -> Self {
+        pub fn remove_license_specifications(mut self, input: crate::model::LicenseSpecification) -> Self {
             let mut v = self.remove_license_specifications.unwrap_or_default();
-            v.push(input);
-            self.remove_license_specifications = Some(v);
-            self
+                            v.push(input);
+                            self.remove_license_specifications = Some(v);
+                            self
         }
         /// <p>ARNs of the license configurations to remove.</p>
-        pub fn set_remove_license_specifications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
-        ) -> Self {
-            self.remove_license_specifications = input;
-            self
+        pub fn set_remove_license_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>) -> Self {
+            self.remove_license_specifications = input; self
         }
         /// Consumes the builder and constructs a [`UpdateLicenseSpecificationsForResourceInput`](crate::input::UpdateLicenseSpecificationsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateLicenseSpecificationsForResourceInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateLicenseSpecificationsForResourceInput {
-                resource_arn: self.resource_arn,
-                add_license_specifications: self.add_license_specifications,
-                remove_license_specifications: self.remove_license_specifications,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateLicenseSpecificationsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateLicenseSpecificationsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    add_license_specifications: self.add_license_specifications
+                    ,
+                    remove_license_specifications: self.remove_license_specifications
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateLicenseSpecificationsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLicenseSpecificationsForResource`](crate::operation::UpdateLicenseSpecificationsForResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateLicenseSpecificationsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateLicenseSpecificationsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateLicenseSpecificationsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateLicenseSpecificationsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateLicenseSpecificationsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateLicenseSpecificationsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.UpdateLicenseSpecificationsForResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.UpdateLicenseSpecificationsForResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -10184,56 +7395,33 @@ impl UpdateLicenseSpecificationsForResourceInput {
             crate::operation_ser::serialize_operation_crate_operation_update_license_specifications_for_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateLicenseSpecificationsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateLicenseSpecificationsForResource",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateLicenseSpecificationsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateLicenseSpecificationsForResource", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -10245,14 +7433,13 @@ impl UpdateLicenseSpecificationsForResourceInput {
 
 /// See [`UpdateServiceSettingsInput`](crate::input::UpdateServiceSettingsInput).
 pub mod update_service_settings_input {
-
+    
     /// A builder for [`UpdateServiceSettingsInput`](crate::input::UpdateServiceSettingsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket_arn: std::option::Option<std::string::String>,
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
-        pub(crate) organization_configuration:
-            std::option::Option<crate::model::OrganizationConfiguration>,
+        pub(crate) organization_configuration: std::option::Option<crate::model::OrganizationConfiguration>,
         pub(crate) enable_cross_accounts_discovery: std::option::Option<bool>,
     }
     impl Builder {
@@ -10262,12 +7449,8 @@ pub mod update_service_settings_input {
             self
         }
         /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
-        pub fn set_s3_bucket_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_arn = input;
-            self
+        pub fn set_s3_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_arn = input; self
         }
         /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10275,28 +7458,17 @@ pub mod update_service_settings_input {
             self
         }
         /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
-        pub fn set_sns_topic_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sns_topic_arn = input;
-            self
+        pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_topic_arn = input; self
         }
         /// <p>Enables integration with Organizations for cross-account discovery.</p>
-        pub fn organization_configuration(
-            mut self,
-            input: crate::model::OrganizationConfiguration,
-        ) -> Self {
+        pub fn organization_configuration(mut self, input: crate::model::OrganizationConfiguration) -> Self {
             self.organization_configuration = Some(input);
             self
         }
         /// <p>Enables integration with Organizations for cross-account discovery.</p>
-        pub fn set_organization_configuration(
-            mut self,
-            input: std::option::Option<crate::model::OrganizationConfiguration>,
-        ) -> Self {
-            self.organization_configuration = input;
-            self
+        pub fn set_organization_configuration(mut self, input: std::option::Option<crate::model::OrganizationConfiguration>) -> Self {
+            self.organization_configuration = input; self
         }
         /// <p>Activates cross-account discovery.</p>
         pub fn enable_cross_accounts_discovery(mut self, input: bool) -> Self {
@@ -10304,154 +7476,100 @@ pub mod update_service_settings_input {
             self
         }
         /// <p>Activates cross-account discovery.</p>
-        pub fn set_enable_cross_accounts_discovery(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enable_cross_accounts_discovery = input;
-            self
+        pub fn set_enable_cross_accounts_discovery(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_cross_accounts_discovery = input; self
         }
         /// Consumes the builder and constructs a [`UpdateServiceSettingsInput`](crate::input::UpdateServiceSettingsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateServiceSettingsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateServiceSettingsInput {
-                s3_bucket_arn: self.s3_bucket_arn,
-                sns_topic_arn: self.sns_topic_arn,
-                organization_configuration: self.organization_configuration,
-                enable_cross_accounts_discovery: self.enable_cross_accounts_discovery,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateServiceSettingsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateServiceSettingsInput {
+                    s3_bucket_arn: self.s3_bucket_arn
+                    ,
+                    sns_topic_arn: self.sns_topic_arn
+                    ,
+                    organization_configuration: self.organization_configuration
+                    ,
+                    enable_cross_accounts_discovery: self.enable_cross_accounts_discovery
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateServiceSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServiceSettings`](crate::operation::UpdateServiceSettings)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateServiceSettings,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateServiceSettings, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateServiceSettingsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateServiceSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateServiceSettingsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateServiceSettingsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLicenseManager.UpdateServiceSettings",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSLicenseManager.UpdateServiceSettings"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_service_settings(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_update_service_settings(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateServiceSettings::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateServiceSettings",
-            "licensemanager",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateServiceSettings::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateServiceSettings", "licensemanager"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -10464,7 +7582,7 @@ impl UpdateServiceSettingsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServiceSettingsInput {
+pub struct UpdateServiceSettingsInput  {
     /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
     #[doc(hidden)]
     pub s3_bucket_arn: std::option::Option<std::string::String>,
@@ -10480,17 +7598,15 @@ pub struct UpdateServiceSettingsInput {
 }
 impl UpdateServiceSettingsInput {
     /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
-    pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_arn(&self) -> std::option::Option<& str> {
         self.s3_bucket_arn.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>Enables integration with Organizations for cross-account discovery.</p>
-    pub fn organization_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::OrganizationConfiguration> {
+    pub fn organization_configuration(&self) -> std::option::Option<& crate::model::OrganizationConfiguration> {
         self.organization_configuration.as_ref()
     }
     /// <p>Activates cross-account discovery.</p>
@@ -10502,34 +7618,28 @@ impl UpdateServiceSettingsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLicenseSpecificationsForResourceInput {
+pub struct UpdateLicenseSpecificationsForResourceInput  {
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>ARNs of the license configurations to add.</p>
     #[doc(hidden)]
-    pub add_license_specifications:
-        std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
+    pub add_license_specifications: std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
     /// <p>ARNs of the license configurations to remove.</p>
     #[doc(hidden)]
-    pub remove_license_specifications:
-        std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
+    pub remove_license_specifications: std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
 }
 impl UpdateLicenseSpecificationsForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>ARNs of the license configurations to add.</p>
-    pub fn add_license_specifications(
-        &self,
-    ) -> std::option::Option<&[crate::model::LicenseSpecification]> {
+    pub fn add_license_specifications(&self) -> std::option::Option<& [crate::model::LicenseSpecification]> {
         self.add_license_specifications.as_deref()
     }
     /// <p>ARNs of the license configurations to remove.</p>
-    pub fn remove_license_specifications(
-        &self,
-    ) -> std::option::Option<&[crate::model::LicenseSpecification]> {
+    pub fn remove_license_specifications(&self) -> std::option::Option<& [crate::model::LicenseSpecification]> {
         self.remove_license_specifications.as_deref()
     }
 }
@@ -10537,17 +7647,17 @@ impl UpdateLicenseSpecificationsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLicenseManagerReportGeneratorInput {
+pub struct UpdateLicenseManagerReportGeneratorInput  {
     /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
     #[doc(hidden)]
     pub license_manager_report_generator_arn: std::option::Option<std::string::String>,
     /// <p>Name of the report generator.</p>
     #[doc(hidden)]
     pub report_generator_name: std::option::Option<std::string::String>,
-    /// <p>Type of reports to generate. The following report types are supported:</p>
-    /// <ul>
-    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
-    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
+    /// <p>Type of reports to generate. The following report types are supported:</p> 
+    /// <ul> 
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li> 
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::vec::Vec<crate::model::ReportType>>,
@@ -10566,35 +7676,35 @@ pub struct UpdateLicenseManagerReportGeneratorInput {
 }
 impl UpdateLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
-    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<&str> {
+    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<& str> {
         self.license_manager_report_generator_arn.as_deref()
     }
     /// <p>Name of the report generator.</p>
-    pub fn report_generator_name(&self) -> std::option::Option<&str> {
+    pub fn report_generator_name(&self) -> std::option::Option<& str> {
         self.report_generator_name.as_deref()
     }
-    /// <p>Type of reports to generate. The following report types are supported:</p>
-    /// <ul>
-    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
-    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
+    /// <p>Type of reports to generate. The following report types are supported:</p> 
+    /// <ul> 
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li> 
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&[crate::model::ReportType]> {
+    pub fn r#type(&self) -> std::option::Option<& [crate::model::ReportType]> {
         self.r#type.as_deref()
     }
     /// <p>The report context.</p>
-    pub fn report_context(&self) -> std::option::Option<&crate::model::ReportContext> {
+    pub fn report_context(&self) -> std::option::Option<& crate::model::ReportContext> {
         self.report_context.as_ref()
     }
     /// <p>Frequency by which reports are generated.</p>
-    pub fn report_frequency(&self) -> std::option::Option<&crate::model::ReportFrequency> {
+    pub fn report_frequency(&self) -> std::option::Option<& crate::model::ReportFrequency> {
         self.report_frequency.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Description of the report generator.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -10602,7 +7712,7 @@ impl UpdateLicenseManagerReportGeneratorInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLicenseConfigurationInput {
+pub struct UpdateLicenseConfigurationInput  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
@@ -10626,25 +7736,22 @@ pub struct UpdateLicenseConfigurationInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>New product information.</p>
     #[doc(hidden)]
-    pub product_information_list:
-        std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
+    pub product_information_list: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     #[doc(hidden)]
     pub disassociate_when_not_found: std::option::Option<bool>,
 }
 impl UpdateLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
     /// <p>New status of the license configuration.</p>
-    pub fn license_configuration_status(
-        &self,
-    ) -> std::option::Option<&crate::model::LicenseConfigurationStatus> {
+    pub fn license_configuration_status(&self) -> std::option::Option<& crate::model::LicenseConfigurationStatus> {
         self.license_configuration_status.as_ref()
     }
     /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
-    pub fn license_rules(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn license_rules(&self) -> std::option::Option<& [std::string::String]> {
         self.license_rules.as_deref()
     }
     /// <p>New number of licenses managed by the license configuration.</p>
@@ -10656,17 +7763,15 @@ impl UpdateLicenseConfigurationInput {
         self.license_count_hard_limit
     }
     /// <p>New name of the license configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>New description of the license configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>New product information.</p>
-    pub fn product_information_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProductInformation]> {
+    pub fn product_information_list(&self) -> std::option::Option<& [crate::model::ProductInformation]> {
         self.product_information_list.as_deref()
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
@@ -10678,7 +7783,7 @@ impl UpdateLicenseConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -10688,11 +7793,11 @@ pub struct UntagResourceInput {
 }
 impl UntagResourceInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Keys identifying the tags to remove.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -10700,7 +7805,7 @@ impl UntagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceInput {
+pub struct TagResourceInput  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -10710,11 +7815,11 @@ pub struct TagResourceInput {
 }
 impl TagResourceInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>One or more tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -10722,14 +7827,14 @@ impl TagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectGrantInput {
+pub struct RejectGrantInput  {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
 }
 impl RejectGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    pub fn grant_arn(&self) -> std::option::Option<&str> {
+    pub fn grant_arn(&self) -> std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
 }
@@ -10737,7 +7842,7 @@ impl RejectGrantInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUsageForLicenseConfigurationInput {
+pub struct ListUsageForLicenseConfigurationInput  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
@@ -10747,18 +7852,18 @@ pub struct ListUsageForLicenseConfigurationInput {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-    /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-    /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListUsageForLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -10766,16 +7871,16 @@ impl ListUsageForLicenseConfigurationInput {
         self.max_results
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-    /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-    /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
 }
@@ -10783,13 +7888,13 @@ impl ListUsageForLicenseConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTokensInput {
+pub struct ListTokensInput  {
     /// <p>Token IDs.</p>
     #[doc(hidden)]
     pub token_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Filters to scope the results. The following filter is supported:</p>
-    /// <ul>
-    /// <li> <p> <code>LicenseArns</code> </p> </li>
+    /// <p>Filters to scope the results. The following filter is supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LicenseArns</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -10802,18 +7907,18 @@ pub struct ListTokensInput {
 }
 impl ListTokensInput {
     /// <p>Token IDs.</p>
-    pub fn token_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn token_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.token_ids.as_deref()
     }
-    /// <p>Filters to scope the results. The following filter is supported:</p>
-    /// <ul>
-    /// <li> <p> <code>LicenseArns</code> </p> </li>
+    /// <p>Filters to scope the results. The following filter is supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LicenseArns</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -10825,14 +7930,14 @@ impl ListTokensInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
+pub struct ListTagsForResourceInput  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -10840,22 +7945,22 @@ impl ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourceInventoryInput {
+pub struct ListResourceInventoryInput  {
     /// <p>Maximum number of results to return in a single call.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-    /// <li> <p> <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
-    /// <li> <p> <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
-    /// <li> <p> <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
-    /// <li> <p> <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li> 
+    /// <li> <p> <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li> 
+    /// <li> <p> <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li> 
+    /// <li> <p> <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
     /// <li> <p> <code>tag:
-    /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li>
+    /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::InventoryFilter>>,
@@ -10866,20 +7971,20 @@ impl ListResourceInventoryInput {
         self.max_results
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-    /// <li> <p> <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
-    /// <li> <p> <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
-    /// <li> <p> <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
-    /// <li> <p> <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li> 
+    /// <li> <p> <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li> 
+    /// <li> <p> <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li> 
+    /// <li> <p> <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
     /// <li> <p> <code>tag:
-    /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li>
+    /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::InventoryFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::InventoryFilter]> {
         self.filters.as_deref()
     }
 }
@@ -10887,11 +7992,11 @@ impl ListResourceInventoryInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReceivedLicensesForOrganizationInput {
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>Beneficiary</code> </p> </li>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
+pub struct ListReceivedLicensesForOrganizationInput  {
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Beneficiary</code> </p> </li> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -10903,16 +8008,16 @@ pub struct ListReceivedLicensesForOrganizationInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListReceivedLicensesForOrganizationInput {
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>Beneficiary</code> </p> </li>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Beneficiary</code> </p> </li> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -10924,17 +8029,17 @@ impl ListReceivedLicensesForOrganizationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReceivedLicensesInput {
+pub struct ListReceivedLicensesInput  {
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
     #[doc(hidden)]
     pub license_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>Status</code> </p> </li>
-    /// <li> <p> <code>Fingerprint</code> </p> </li>
-    /// <li> <p> <code>IssuerName</code> </p> </li>
-    /// <li> <p> <code>Beneficiary</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
+    /// <li> <p> <code>Status</code> </p> </li> 
+    /// <li> <p> <code>Fingerprint</code> </p> </li> 
+    /// <li> <p> <code>IssuerName</code> </p> </li> 
+    /// <li> <p> <code>Beneficiary</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -10947,22 +8052,22 @@ pub struct ListReceivedLicensesInput {
 }
 impl ListReceivedLicensesInput {
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
-    pub fn license_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn license_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.license_arns.as_deref()
     }
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>Status</code> </p> </li>
-    /// <li> <p> <code>Fingerprint</code> </p> </li>
-    /// <li> <p> <code>IssuerName</code> </p> </li>
-    /// <li> <p> <code>Beneficiary</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
+    /// <li> <p> <code>Status</code> </p> </li> 
+    /// <li> <p> <code>Fingerprint</code> </p> </li> 
+    /// <li> <p> <code>IssuerName</code> </p> </li> 
+    /// <li> <p> <code>Beneficiary</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -10974,14 +8079,14 @@ impl ListReceivedLicensesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReceivedGrantsForOrganizationInput {
+pub struct ListReceivedGrantsForOrganizationInput  {
     /// <p>The Amazon Resource Name (ARN) of the received license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>ParentArn</code> </p> </li>
-    /// <li> <p> <code>GranteePrincipalArn</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ParentArn</code> </p> </li> 
+    /// <li> <p> <code>GranteePrincipalArn</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -10994,19 +8099,19 @@ pub struct ListReceivedGrantsForOrganizationInput {
 }
 impl ListReceivedGrantsForOrganizationInput {
     /// <p>The Amazon Resource Name (ARN) of the received license.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>ParentArn</code> </p> </li>
-    /// <li> <p> <code>GranteePrincipalArn</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ParentArn</code> </p> </li> 
+    /// <li> <p> <code>GranteePrincipalArn</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -11018,17 +8123,17 @@ impl ListReceivedGrantsForOrganizationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReceivedGrantsInput {
+pub struct ListReceivedGrantsInput  {
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
     #[doc(hidden)]
     pub grant_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
-    /// <li> <p> <code>LicenseArn</code> </p> </li>
-    /// <li> <p> <code>GrantStatus</code> </p> </li>
-    /// <li> <p> <code>GranterAccountId</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li> 
+    /// <li> <p> <code>LicenseArn</code> </p> </li> 
+    /// <li> <p> <code>GrantStatus</code> </p> </li> 
+    /// <li> <p> <code>GranterAccountId</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -11041,22 +8146,22 @@ pub struct ListReceivedGrantsInput {
 }
 impl ListReceivedGrantsInput {
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
-    pub fn grant_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn grant_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.grant_arns.as_deref()
     }
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
-    /// <li> <p> <code>LicenseArn</code> </p> </li>
-    /// <li> <p> <code>GrantStatus</code> </p> </li>
-    /// <li> <p> <code>GranterAccountId</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li> 
+    /// <li> <p> <code>LicenseArn</code> </p> </li> 
+    /// <li> <p> <code>GrantStatus</code> </p> </li> 
+    /// <li> <p> <code>GranterAccountId</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -11068,7 +8173,7 @@ impl ListReceivedGrantsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLicenseVersionsInput {
+pub struct ListLicenseVersionsInput  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
@@ -11081,11 +8186,11 @@ pub struct ListLicenseVersionsInput {
 }
 impl ListLicenseVersionsInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -11097,7 +8202,7 @@ impl ListLicenseVersionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLicenseSpecificationsForResourceInput {
+pub struct ListLicenseSpecificationsForResourceInput  {
     /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -11110,7 +8215,7 @@ pub struct ListLicenseSpecificationsForResourceInput {
 }
 impl ListLicenseSpecificationsForResourceInput {
     /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -11118,7 +8223,7 @@ impl ListLicenseSpecificationsForResourceInput {
         self.max_results
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -11126,16 +8231,16 @@ impl ListLicenseSpecificationsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLicensesInput {
+pub struct ListLicensesInput  {
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
     #[doc(hidden)]
     pub license_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>Beneficiary</code> </p> </li>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>Fingerprint</code> </p> </li>
-    /// <li> <p> <code>Status</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Beneficiary</code> </p> </li> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
+    /// <li> <p> <code>Fingerprint</code> </p> </li> 
+    /// <li> <p> <code>Status</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -11148,21 +8253,21 @@ pub struct ListLicensesInput {
 }
 impl ListLicensesInput {
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
-    pub fn license_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn license_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.license_arns.as_deref()
     }
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>Beneficiary</code> </p> </li>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>Fingerprint</code> </p> </li>
-    /// <li> <p> <code>Status</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Beneficiary</code> </p> </li> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
+    /// <li> <p> <code>Fingerprint</code> </p> </li> 
+    /// <li> <p> <code>Status</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -11174,10 +8279,10 @@ impl ListLicensesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLicenseManagerReportGeneratorsInput {
-    /// <p>Filters to scope the results. The following filters are supported: </p>
-    /// <ul>
-    /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
+pub struct ListLicenseManagerReportGeneratorsInput  {
+    /// <p>Filters to scope the results. The following filters are supported: </p> 
+    /// <ul> 
+    /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -11189,15 +8294,15 @@ pub struct ListLicenseManagerReportGeneratorsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListLicenseManagerReportGeneratorsInput {
-    /// <p>Filters to scope the results. The following filters are supported: </p>
-    /// <ul>
-    /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported: </p> 
+    /// <ul> 
+    /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -11209,7 +8314,7 @@ impl ListLicenseManagerReportGeneratorsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLicenseConversionTasksInput {
+pub struct ListLicenseConversionTasksInput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -11222,7 +8327,7 @@ pub struct ListLicenseConversionTasksInput {
 }
 impl ListLicenseConversionTasksInput {
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -11230,7 +8335,7 @@ impl ListLicenseConversionTasksInput {
         self.max_results
     }
     /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
 }
@@ -11238,7 +8343,7 @@ impl ListLicenseConversionTasksInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLicenseConfigurationsInput {
+pub struct ListLicenseConfigurationsInput  {
     /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
     #[doc(hidden)]
     pub license_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11248,18 +8353,18 @@ pub struct ListLicenseConfigurationsInput {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-    /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-    /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListLicenseConfigurationsInput {
     /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
-    pub fn license_configuration_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn license_configuration_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.license_configuration_arns.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -11267,16 +8372,16 @@ impl ListLicenseConfigurationsInput {
         self.max_results
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-    /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
-    /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
 }
@@ -11284,7 +8389,7 @@ impl ListLicenseConfigurationsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFailuresForLicenseConfigurationOperationsInput {
+pub struct ListFailuresForLicenseConfigurationOperationsInput  {
     /// <p>Amazon Resource Name of the license configuration.</p>
     #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
@@ -11297,7 +8402,7 @@ pub struct ListFailuresForLicenseConfigurationOperationsInput {
 }
 impl ListFailuresForLicenseConfigurationOperationsInput {
     /// <p>Amazon Resource Name of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -11305,7 +8410,7 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
         self.max_results
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -11313,17 +8418,17 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDistributedGrantsInput {
+pub struct ListDistributedGrantsInput  {
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
     #[doc(hidden)]
     pub grant_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>LicenseArn</code> </p> </li>
-    /// <li> <p> <code>GrantStatus</code> </p> </li>
-    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LicenseArn</code> </p> </li> 
+    /// <li> <p> <code>GrantStatus</code> </p> </li> 
+    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -11336,22 +8441,22 @@ pub struct ListDistributedGrantsInput {
 }
 impl ListDistributedGrantsInput {
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
-    pub fn grant_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn grant_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.grant_arns.as_deref()
     }
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>LicenseArn</code> </p> </li>
-    /// <li> <p> <code>GrantStatus</code> </p> </li>
-    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LicenseArn</code> </p> </li> 
+    /// <li> <p> <code>GrantStatus</code> </p> </li> 
+    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -11363,7 +8468,7 @@ impl ListDistributedGrantsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssociationsForLicenseConfigurationInput {
+pub struct ListAssociationsForLicenseConfigurationInput  {
     /// <p>Amazon Resource Name (ARN) of a license configuration.</p>
     #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
@@ -11376,7 +8481,7 @@ pub struct ListAssociationsForLicenseConfigurationInput {
 }
 impl ListAssociationsForLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of a license configuration.</p>
-    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -11384,7 +8489,7 @@ impl ListAssociationsForLicenseConfigurationInput {
         self.max_results
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -11392,19 +8497,20 @@ impl ListAssociationsForLicenseConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceSettingsInput {}
+pub struct GetServiceSettingsInput  {
+}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLicenseUsageInput {
+pub struct GetLicenseUsageInput  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
 }
 impl GetLicenseUsageInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
 }
@@ -11412,14 +8518,14 @@ impl GetLicenseUsageInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLicenseManagerReportGeneratorInput {
+pub struct GetLicenseManagerReportGeneratorInput  {
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
     #[doc(hidden)]
     pub license_manager_report_generator_arn: std::option::Option<std::string::String>,
 }
 impl GetLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
-    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<&str> {
+    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<& str> {
         self.license_manager_report_generator_arn.as_deref()
     }
 }
@@ -11427,14 +8533,14 @@ impl GetLicenseManagerReportGeneratorInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLicenseConversionTaskInput {
+pub struct GetLicenseConversionTaskInput  {
     /// <p>ID of the license type conversion task to retrieve information on.</p>
     #[doc(hidden)]
     pub license_conversion_task_id: std::option::Option<std::string::String>,
 }
 impl GetLicenseConversionTaskInput {
     /// <p>ID of the license type conversion task to retrieve information on.</p>
-    pub fn license_conversion_task_id(&self) -> std::option::Option<&str> {
+    pub fn license_conversion_task_id(&self) -> std::option::Option<& str> {
         self.license_conversion_task_id.as_deref()
     }
 }
@@ -11442,14 +8548,14 @@ impl GetLicenseConversionTaskInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLicenseConfigurationInput {
+pub struct GetLicenseConfigurationInput  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
 }
 impl GetLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
 }
@@ -11457,7 +8563,7 @@ impl GetLicenseConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLicenseInput {
+pub struct GetLicenseInput  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
@@ -11467,11 +8573,11 @@ pub struct GetLicenseInput {
 }
 impl GetLicenseInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>License version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -11479,7 +8585,7 @@ impl GetLicenseInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGrantInput {
+pub struct GetGrantInput  {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
@@ -11489,11 +8595,11 @@ pub struct GetGrantInput {
 }
 impl GetGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    pub fn grant_arn(&self) -> std::option::Option<&str> {
+    pub fn grant_arn(&self) -> std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
     /// <p>Grant version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -11501,7 +8607,7 @@ impl GetGrantInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessTokenInput {
+pub struct GetAccessTokenInput  {
     /// <p>Refresh token, encoded as a JWT token.</p>
     #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
@@ -11511,11 +8617,11 @@ pub struct GetAccessTokenInput {
 }
 impl GetAccessTokenInput {
     /// <p>Refresh token, encoded as a JWT token.</p>
-    pub fn token(&self) -> std::option::Option<&str> {
+    pub fn token(&self) -> std::option::Option<& str> {
         self.token.as_deref()
     }
     /// <p>Token properties to validate against those present in the JWT token.</p>
-    pub fn token_properties(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn token_properties(&self) -> std::option::Option<& [std::string::String]> {
         self.token_properties.as_deref()
     }
 }
@@ -11523,7 +8629,7 @@ impl GetAccessTokenInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExtendLicenseConsumptionInput {
+pub struct ExtendLicenseConsumptionInput  {
     /// <p>License consumption token.</p>
     #[doc(hidden)]
     pub license_consumption_token: std::option::Option<std::string::String>,
@@ -11533,7 +8639,7 @@ pub struct ExtendLicenseConsumptionInput {
 }
 impl ExtendLicenseConsumptionInput {
     /// <p>License consumption token.</p>
-    pub fn license_consumption_token(&self) -> std::option::Option<&str> {
+    pub fn license_consumption_token(&self) -> std::option::Option<& str> {
         self.license_consumption_token.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request. Provides an error response if you do not have the required permissions.</p>
@@ -11545,14 +8651,14 @@ impl ExtendLicenseConsumptionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTokenInput {
+pub struct DeleteTokenInput  {
     /// <p>Token ID.</p>
     #[doc(hidden)]
     pub token_id: std::option::Option<std::string::String>,
 }
 impl DeleteTokenInput {
     /// <p>Token ID.</p>
-    pub fn token_id(&self) -> std::option::Option<&str> {
+    pub fn token_id(&self) -> std::option::Option<& str> {
         self.token_id.as_deref()
     }
 }
@@ -11560,14 +8666,14 @@ impl DeleteTokenInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLicenseManagerReportGeneratorInput {
+pub struct DeleteLicenseManagerReportGeneratorInput  {
     /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
     #[doc(hidden)]
     pub license_manager_report_generator_arn: std::option::Option<std::string::String>,
 }
 impl DeleteLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
-    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<&str> {
+    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<& str> {
         self.license_manager_report_generator_arn.as_deref()
     }
 }
@@ -11575,14 +8681,14 @@ impl DeleteLicenseManagerReportGeneratorInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLicenseConfigurationInput {
+pub struct DeleteLicenseConfigurationInput  {
     /// <p>ID of the license configuration.</p>
     #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DeleteLicenseConfigurationInput {
     /// <p>ID of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
 }
@@ -11590,7 +8696,7 @@ impl DeleteLicenseConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLicenseInput {
+pub struct DeleteLicenseInput  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
@@ -11600,11 +8706,11 @@ pub struct DeleteLicenseInput {
 }
 impl DeleteLicenseInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>Current version of the license.</p>
-    pub fn source_version(&self) -> std::option::Option<&str> {
+    pub fn source_version(&self) -> std::option::Option<& str> {
         self.source_version.as_deref()
     }
 }
@@ -11612,7 +8718,7 @@ impl DeleteLicenseInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGrantInput {
+pub struct DeleteGrantInput  {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
@@ -11625,15 +8731,15 @@ pub struct DeleteGrantInput {
 }
 impl DeleteGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    pub fn grant_arn(&self) -> std::option::Option<&str> {
+    pub fn grant_arn(&self) -> std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
     /// <p>The Status reason for the delete request.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>Current version of the grant.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -11641,7 +8747,7 @@ impl DeleteGrantInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTokenInput {
+pub struct CreateTokenInput  {
     /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
@@ -11660,11 +8766,11 @@ pub struct CreateTokenInput {
 }
 impl CreateTokenInput {
     /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
-    pub fn role_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn role_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.role_arns.as_deref()
     }
     /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
@@ -11672,11 +8778,11 @@ impl CreateTokenInput {
         self.expiration_in_days
     }
     /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
-    pub fn token_properties(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn token_properties(&self) -> std::option::Option<& [std::string::String]> {
         self.token_properties.as_deref()
     }
     /// <p>Idempotency token, valid for 10 minutes.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -11684,7 +8790,7 @@ impl CreateTokenInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLicenseVersionInput {
+pub struct CreateLicenseVersionInput  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
@@ -11724,53 +8830,51 @@ pub struct CreateLicenseVersionInput {
 }
 impl CreateLicenseVersionInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>License name.</p>
-    pub fn license_name(&self) -> std::option::Option<&str> {
+    pub fn license_name(&self) -> std::option::Option<& str> {
         self.license_name.as_deref()
     }
     /// <p>Product name.</p>
-    pub fn product_name(&self) -> std::option::Option<&str> {
+    pub fn product_name(&self) -> std::option::Option<& str> {
         self.product_name.as_deref()
     }
     /// <p>License issuer.</p>
-    pub fn issuer(&self) -> std::option::Option<&crate::model::Issuer> {
+    pub fn issuer(&self) -> std::option::Option<& crate::model::Issuer> {
         self.issuer.as_ref()
     }
     /// <p>Home Region of the license.</p>
-    pub fn home_region(&self) -> std::option::Option<&str> {
+    pub fn home_region(&self) -> std::option::Option<& str> {
         self.home_region.as_deref()
     }
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
-    pub fn validity(&self) -> std::option::Option<&crate::model::DatetimeRange> {
+    pub fn validity(&self) -> std::option::Option<& crate::model::DatetimeRange> {
         self.validity.as_ref()
     }
     /// <p>Information about the license.</p>
-    pub fn license_metadata(&self) -> std::option::Option<&[crate::model::Metadata]> {
+    pub fn license_metadata(&self) -> std::option::Option<& [crate::model::Metadata]> {
         self.license_metadata.as_deref()
     }
     /// <p>License entitlements.</p>
-    pub fn entitlements(&self) -> std::option::Option<&[crate::model::Entitlement]> {
+    pub fn entitlements(&self) -> std::option::Option<& [crate::model::Entitlement]> {
         self.entitlements.as_deref()
     }
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
-    pub fn consumption_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ConsumptionConfiguration> {
+    pub fn consumption_configuration(&self) -> std::option::Option<& crate::model::ConsumptionConfiguration> {
         self.consumption_configuration.as_ref()
     }
     /// <p>License status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::LicenseStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::LicenseStatus> {
         self.status.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Current version of the license.</p>
-    pub fn source_version(&self) -> std::option::Option<&str> {
+    pub fn source_version(&self) -> std::option::Option<& str> {
         self.source_version.as_deref()
     }
 }
@@ -11778,14 +8882,14 @@ impl CreateLicenseVersionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLicenseManagerReportGeneratorInput {
+pub struct CreateLicenseManagerReportGeneratorInput  {
     /// <p>Name of the report generator.</p>
     #[doc(hidden)]
     pub report_generator_name: std::option::Option<std::string::String>,
-    /// <p>Type of reports to generate. The following report types an be generated:</p>
-    /// <ul>
-    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
-    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
+    /// <p>Type of reports to generate. The following report types an be generated:</p> 
+    /// <ul> 
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li> 
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::vec::Vec<crate::model::ReportType>>,
@@ -11807,35 +8911,35 @@ pub struct CreateLicenseManagerReportGeneratorInput {
 }
 impl CreateLicenseManagerReportGeneratorInput {
     /// <p>Name of the report generator.</p>
-    pub fn report_generator_name(&self) -> std::option::Option<&str> {
+    pub fn report_generator_name(&self) -> std::option::Option<& str> {
         self.report_generator_name.as_deref()
     }
-    /// <p>Type of reports to generate. The following report types an be generated:</p>
-    /// <ul>
-    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
-    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
+    /// <p>Type of reports to generate. The following report types an be generated:</p> 
+    /// <ul> 
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li> 
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&[crate::model::ReportType]> {
+    pub fn r#type(&self) -> std::option::Option<& [crate::model::ReportType]> {
         self.r#type.as_deref()
     }
     /// <p>Defines the type of license configuration the report generator tracks.</p>
-    pub fn report_context(&self) -> std::option::Option<&crate::model::ReportContext> {
+    pub fn report_context(&self) -> std::option::Option<& crate::model::ReportContext> {
         self.report_context.as_ref()
     }
     /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
-    pub fn report_frequency(&self) -> std::option::Option<&crate::model::ReportFrequency> {
+    pub fn report_frequency(&self) -> std::option::Option<& crate::model::ReportFrequency> {
         self.report_frequency.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Description of the report generator.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Tags to add to the report generator.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -11843,7 +8947,7 @@ impl CreateLicenseManagerReportGeneratorInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLicenseConversionTaskForResourceInput {
+pub struct CreateLicenseConversionTaskForResourceInput  {
     /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -11856,19 +8960,15 @@ pub struct CreateLicenseConversionTaskForResourceInput {
 }
 impl CreateLicenseConversionTaskForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
-    pub fn source_license_context(
-        &self,
-    ) -> std::option::Option<&crate::model::LicenseConversionContext> {
+    pub fn source_license_context(&self) -> std::option::Option<& crate::model::LicenseConversionContext> {
         self.source_license_context.as_ref()
     }
     /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.</p>
-    pub fn destination_license_context(
-        &self,
-    ) -> std::option::Option<&crate::model::LicenseConversionContext> {
+    pub fn destination_license_context(&self) -> std::option::Option<& crate::model::LicenseConversionContext> {
         self.destination_license_context.as_ref()
     }
 }
@@ -11876,7 +8976,7 @@ impl CreateLicenseConversionTaskForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLicenseConfigurationInput {
+pub struct CreateLicenseConfigurationInput  {
     /// <p>Name of the license configuration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -11892,13 +8992,13 @@ pub struct CreateLicenseConfigurationInput {
     /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
     #[doc(hidden)]
     pub license_count_hard_limit: std::option::Option<bool>,
-    /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p>
-    /// <ul>
-    /// <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumCores</code> | <code>minimumCores</code> </p> </li>
-    /// <li> <p> <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
-    /// <li> <p> <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li>
-    /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
-    /// </ul>
+    /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumCores</code> | <code>minimumCores</code> </p> </li> 
+    /// <li> <p> <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> 
+    /// <li> <p> <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> 
+    /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> 
+    /// </ul> 
     /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
     #[doc(hidden)]
     pub license_rules: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11910,20 +9010,19 @@ pub struct CreateLicenseConfigurationInput {
     pub disassociate_when_not_found: std::option::Option<bool>,
     /// <p>Product information.</p>
     #[doc(hidden)]
-    pub product_information_list:
-        std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
+    pub product_information_list: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
 }
 impl CreateLicenseConfigurationInput {
     /// <p>Name of the license configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Description of the license configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Dimension used to track the license inventory.</p>
-    pub fn license_counting_type(&self) -> std::option::Option<&crate::model::LicenseCountingType> {
+    pub fn license_counting_type(&self) -> std::option::Option<& crate::model::LicenseCountingType> {
         self.license_counting_type.as_ref()
     }
     /// <p>Number of licenses managed by the license configuration.</p>
@@ -11934,19 +9033,19 @@ impl CreateLicenseConfigurationInput {
     pub fn license_count_hard_limit(&self) -> std::option::Option<bool> {
         self.license_count_hard_limit
     }
-    /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p>
-    /// <ul>
-    /// <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumCores</code> | <code>minimumCores</code> </p> </li>
-    /// <li> <p> <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
-    /// <li> <p> <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li>
-    /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
-    /// </ul>
+    /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumCores</code> | <code>minimumCores</code> </p> </li> 
+    /// <li> <p> <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> 
+    /// <li> <p> <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> 
+    /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> 
+    /// </ul> 
     /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
-    pub fn license_rules(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn license_rules(&self) -> std::option::Option<& [std::string::String]> {
         self.license_rules.as_deref()
     }
     /// <p>Tags to add to the license configuration.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
@@ -11954,9 +9053,7 @@ impl CreateLicenseConfigurationInput {
         self.disassociate_when_not_found
     }
     /// <p>Product information.</p>
-    pub fn product_information_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProductInformation]> {
+    pub fn product_information_list(&self) -> std::option::Option<& [crate::model::ProductInformation]> {
         self.product_information_list.as_deref()
     }
 }
@@ -11964,7 +9061,7 @@ impl CreateLicenseConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLicenseInput {
+pub struct CreateLicenseInput  {
     /// <p>License name.</p>
     #[doc(hidden)]
     pub license_name: std::option::Option<std::string::String>,
@@ -12001,49 +9098,47 @@ pub struct CreateLicenseInput {
 }
 impl CreateLicenseInput {
     /// <p>License name.</p>
-    pub fn license_name(&self) -> std::option::Option<&str> {
+    pub fn license_name(&self) -> std::option::Option<& str> {
         self.license_name.as_deref()
     }
     /// <p>Product name.</p>
-    pub fn product_name(&self) -> std::option::Option<&str> {
+    pub fn product_name(&self) -> std::option::Option<& str> {
         self.product_name.as_deref()
     }
     /// <p>Product SKU.</p>
-    pub fn product_sku(&self) -> std::option::Option<&str> {
+    pub fn product_sku(&self) -> std::option::Option<& str> {
         self.product_sku.as_deref()
     }
     /// <p>License issuer.</p>
-    pub fn issuer(&self) -> std::option::Option<&crate::model::Issuer> {
+    pub fn issuer(&self) -> std::option::Option<& crate::model::Issuer> {
         self.issuer.as_ref()
     }
     /// <p>Home Region for the license.</p>
-    pub fn home_region(&self) -> std::option::Option<&str> {
+    pub fn home_region(&self) -> std::option::Option<& str> {
         self.home_region.as_deref()
     }
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
-    pub fn validity(&self) -> std::option::Option<&crate::model::DatetimeRange> {
+    pub fn validity(&self) -> std::option::Option<& crate::model::DatetimeRange> {
         self.validity.as_ref()
     }
     /// <p>License entitlements.</p>
-    pub fn entitlements(&self) -> std::option::Option<&[crate::model::Entitlement]> {
+    pub fn entitlements(&self) -> std::option::Option<& [crate::model::Entitlement]> {
         self.entitlements.as_deref()
     }
     /// <p>License beneficiary.</p>
-    pub fn beneficiary(&self) -> std::option::Option<&str> {
+    pub fn beneficiary(&self) -> std::option::Option<& str> {
         self.beneficiary.as_deref()
     }
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
-    pub fn consumption_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ConsumptionConfiguration> {
+    pub fn consumption_configuration(&self) -> std::option::Option<& crate::model::ConsumptionConfiguration> {
         self.consumption_configuration.as_ref()
     }
     /// <p>Information about the license.</p>
-    pub fn license_metadata(&self) -> std::option::Option<&[crate::model::Metadata]> {
+    pub fn license_metadata(&self) -> std::option::Option<& [crate::model::Metadata]> {
         self.license_metadata.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -12051,7 +9146,7 @@ impl CreateLicenseInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGrantVersionInput {
+pub struct CreateGrantVersionInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -12076,31 +9171,31 @@ pub struct CreateGrantVersionInput {
 }
 impl CreateGrantVersionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    pub fn grant_arn(&self) -> std::option::Option<&str> {
+    pub fn grant_arn(&self) -> std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
     /// <p>Grant name.</p>
-    pub fn grant_name(&self) -> std::option::Option<&str> {
+    pub fn grant_name(&self) -> std::option::Option<& str> {
         self.grant_name.as_deref()
     }
     /// <p>Allowed operations for the grant.</p>
-    pub fn allowed_operations(&self) -> std::option::Option<&[crate::model::AllowedOperation]> {
+    pub fn allowed_operations(&self) -> std::option::Option<& [crate::model::AllowedOperation]> {
         self.allowed_operations.as_deref()
     }
     /// <p>Grant status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::GrantStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::GrantStatus> {
         self.status.as_ref()
     }
     /// <p>Grant status reason.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>Current version of the grant.</p>
-    pub fn source_version(&self) -> std::option::Option<&str> {
+    pub fn source_version(&self) -> std::option::Option<& str> {
         self.source_version.as_deref()
     }
 }
@@ -12108,7 +9203,7 @@ impl CreateGrantVersionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGrantInput {
+pub struct CreateGrantInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -12130,27 +9225,27 @@ pub struct CreateGrantInput {
 }
 impl CreateGrantInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Grant name.</p>
-    pub fn grant_name(&self) -> std::option::Option<&str> {
+    pub fn grant_name(&self) -> std::option::Option<& str> {
         self.grant_name.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>The grant principals. This value should be specified as an Amazon Resource Name (ARN).</p>
-    pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn principals(&self) -> std::option::Option<& [std::string::String]> {
         self.principals.as_deref()
     }
     /// <p>Home Region of the grant.</p>
-    pub fn home_region(&self) -> std::option::Option<&str> {
+    pub fn home_region(&self) -> std::option::Option<& str> {
         self.home_region.as_deref()
     }
     /// <p>Allowed operations for the grant.</p>
-    pub fn allowed_operations(&self) -> std::option::Option<&[crate::model::AllowedOperation]> {
+    pub fn allowed_operations(&self) -> std::option::Option<& [crate::model::AllowedOperation]> {
         self.allowed_operations.as_deref()
     }
 }
@@ -12158,7 +9253,7 @@ impl CreateGrantInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CheckoutLicenseInput {
+pub struct CheckoutLicenseInput  {
     /// <p>Product SKU.</p>
     #[doc(hidden)]
     pub product_sku: std::option::Option<std::string::String>,
@@ -12183,31 +9278,31 @@ pub struct CheckoutLicenseInput {
 }
 impl CheckoutLicenseInput {
     /// <p>Product SKU.</p>
-    pub fn product_sku(&self) -> std::option::Option<&str> {
+    pub fn product_sku(&self) -> std::option::Option<& str> {
         self.product_sku.as_deref()
     }
     /// <p>Checkout type.</p>
-    pub fn checkout_type(&self) -> std::option::Option<&crate::model::CheckoutType> {
+    pub fn checkout_type(&self) -> std::option::Option<& crate::model::CheckoutType> {
         self.checkout_type.as_ref()
     }
     /// <p>Key fingerprint identifying the license.</p>
-    pub fn key_fingerprint(&self) -> std::option::Option<&str> {
+    pub fn key_fingerprint(&self) -> std::option::Option<& str> {
         self.key_fingerprint.as_deref()
     }
     /// <p>License entitlements.</p>
-    pub fn entitlements(&self) -> std::option::Option<&[crate::model::EntitlementData]> {
+    pub fn entitlements(&self) -> std::option::Option<& [crate::model::EntitlementData]> {
         self.entitlements.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>License beneficiary.</p>
-    pub fn beneficiary(&self) -> std::option::Option<&str> {
+    pub fn beneficiary(&self) -> std::option::Option<& str> {
         self.beneficiary.as_deref()
     }
     /// <p>Node ID.</p>
-    pub fn node_id(&self) -> std::option::Option<&str> {
+    pub fn node_id(&self) -> std::option::Option<& str> {
         self.node_id.as_deref()
     }
 }
@@ -12215,7 +9310,7 @@ impl CheckoutLicenseInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CheckoutBorrowLicenseInput {
+pub struct CheckoutBorrowLicenseInput  {
     /// <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
@@ -12237,29 +9332,27 @@ pub struct CheckoutBorrowLicenseInput {
 }
 impl CheckoutBorrowLicenseInput {
     /// <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>License entitlements. Partial checkouts are not supported.</p>
-    pub fn entitlements(&self) -> std::option::Option<&[crate::model::EntitlementData]> {
+    pub fn entitlements(&self) -> std::option::Option<& [crate::model::EntitlementData]> {
         self.entitlements.as_deref()
     }
     /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
-    pub fn digital_signature_method(
-        &self,
-    ) -> std::option::Option<&crate::model::DigitalSignatureMethod> {
+    pub fn digital_signature_method(&self) -> std::option::Option<& crate::model::DigitalSignatureMethod> {
         self.digital_signature_method.as_ref()
     }
     /// <p>Node ID.</p>
-    pub fn node_id(&self) -> std::option::Option<&str> {
+    pub fn node_id(&self) -> std::option::Option<& str> {
         self.node_id.as_deref()
     }
     /// <p>Information about constraints.</p>
-    pub fn checkout_metadata(&self) -> std::option::Option<&[crate::model::Metadata]> {
+    pub fn checkout_metadata(&self) -> std::option::Option<& [crate::model::Metadata]> {
         self.checkout_metadata.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -12267,7 +9360,7 @@ impl CheckoutBorrowLicenseInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CheckInLicenseInput {
+pub struct CheckInLicenseInput  {
     /// <p>License consumption token.</p>
     #[doc(hidden)]
     pub license_consumption_token: std::option::Option<std::string::String>,
@@ -12277,11 +9370,11 @@ pub struct CheckInLicenseInput {
 }
 impl CheckInLicenseInput {
     /// <p>License consumption token.</p>
-    pub fn license_consumption_token(&self) -> std::option::Option<&str> {
+    pub fn license_consumption_token(&self) -> std::option::Option<& str> {
         self.license_consumption_token.as_deref()
     }
     /// <p>License beneficiary.</p>
-    pub fn beneficiary(&self) -> std::option::Option<&str> {
+    pub fn beneficiary(&self) -> std::option::Option<& str> {
         self.beneficiary.as_deref()
     }
 }
@@ -12289,14 +9382,15 @@ impl CheckInLicenseInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptGrantInput {
+pub struct AcceptGrantInput  {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
 }
 impl AcceptGrantInput {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    pub fn grant_arn(&self) -> std::option::Option<&str> {
+    pub fn grant_arn(&self) -> std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
 }
+

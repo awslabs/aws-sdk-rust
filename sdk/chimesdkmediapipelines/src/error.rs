@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UntagResourceError {
     /// Kind of error that occurred.
-    pub kind: UntagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -34,27 +34,43 @@ pub enum UntagResourceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -68,46 +84,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
 }
 impl UntagResourceError {
     /// Creates a new `UntagResourceError`.
-    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
@@ -122,44 +138,48 @@ impl UntagResourceError {
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            UntagResourceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagResourceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -167,7 +187,7 @@ impl std::error::Error for UntagResourceError {
 /// <p>The client is not currently authorized to make the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnauthorizedClientException {
+pub struct UnauthorizedClientException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -180,25 +200,23 @@ pub struct UnauthorizedClientException {
 }
 impl UnauthorizedClientException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
     /// <p>The request id associated with the call responsible for the exception.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl UnauthorizedClientException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnauthorizedClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnauthorizedClientException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -208,7 +226,7 @@ impl std::fmt::Display for UnauthorizedClientException {
 impl std::error::Error for UnauthorizedClientException {}
 /// See [`UnauthorizedClientException`](crate::error::UnauthorizedClientException).
 pub mod unauthorized_client_exception {
-
+    
     /// A builder for [`UnauthorizedClientException`](crate::error::UnauthorizedClientException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -224,8 +242,7 @@ pub mod unauthorized_client_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -234,8 +251,7 @@ pub mod unauthorized_client_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The request id associated with the call responsible for the exception.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -244,18 +260,22 @@ pub mod unauthorized_client_exception {
         }
         /// <p>The request id associated with the call responsible for the exception.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`UnauthorizedClientException`](crate::error::UnauthorizedClientException).
         pub fn build(self) -> crate::error::UnauthorizedClientException {
             crate::error::UnauthorizedClientException {
-                code: self.code,
-                message: self.message,
-                request_id: self.request_id,
+                code: self.code
+                ,
+                message: self.message
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UnauthorizedClientException {
     /// Creates a new builder-style object to manufacture [`UnauthorizedClientException`](crate::error::UnauthorizedClientException).
@@ -267,7 +287,7 @@ impl UnauthorizedClientException {
 /// <p>The client exceeded its request rate limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottledClientException {
+pub struct ThrottledClientException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -280,25 +300,23 @@ pub struct ThrottledClientException {
 }
 impl ThrottledClientException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
     /// <p>The request id associated with the call responsible for the exception.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl ThrottledClientException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottledClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottledClientException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -308,7 +326,7 @@ impl std::fmt::Display for ThrottledClientException {
 impl std::error::Error for ThrottledClientException {}
 /// See [`ThrottledClientException`](crate::error::ThrottledClientException).
 pub mod throttled_client_exception {
-
+    
     /// A builder for [`ThrottledClientException`](crate::error::ThrottledClientException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -324,8 +342,7 @@ pub mod throttled_client_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -334,8 +351,7 @@ pub mod throttled_client_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The request id associated with the call responsible for the exception.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -344,18 +360,22 @@ pub mod throttled_client_exception {
         }
         /// <p>The request id associated with the call responsible for the exception.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`ThrottledClientException`](crate::error::ThrottledClientException).
         pub fn build(self) -> crate::error::ThrottledClientException {
             crate::error::ThrottledClientException {
-                code: self.code,
-                message: self.message,
-                request_id: self.request_id,
+                code: self.code
+                ,
+                message: self.message
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottledClientException {
     /// Creates a new builder-style object to manufacture [`ThrottledClientException`](crate::error::ThrottledClientException).
@@ -367,7 +387,7 @@ impl ThrottledClientException {
 /// <p>The service is currently unavailable.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceUnavailableException {
+pub struct ServiceUnavailableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -380,25 +400,23 @@ pub struct ServiceUnavailableException {
 }
 impl ServiceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
     /// <p>The request id associated with the call responsible for the exception.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl ServiceUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUnavailableException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -408,7 +426,7 @@ impl std::fmt::Display for ServiceUnavailableException {
 impl std::error::Error for ServiceUnavailableException {}
 /// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
 pub mod service_unavailable_exception {
-
+    
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -424,8 +442,7 @@ pub mod service_unavailable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -434,8 +451,7 @@ pub mod service_unavailable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The request id associated with the call responsible for the exception.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -444,18 +460,22 @@ pub mod service_unavailable_exception {
         }
         /// <p>The request id associated with the call responsible for the exception.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
         pub fn build(self) -> crate::error::ServiceUnavailableException {
             crate::error::ServiceUnavailableException {
-                code: self.code,
-                message: self.message,
-                request_id: self.request_id,
+                code: self.code
+                ,
+                message: self.message
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceUnavailableException {
     /// Creates a new builder-style object to manufacture [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
@@ -467,7 +487,7 @@ impl ServiceUnavailableException {
 /// <p>The service encountered an unexpected error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceFailureException {
+pub struct ServiceFailureException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -480,25 +500,23 @@ pub struct ServiceFailureException {
 }
 impl ServiceFailureException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
     /// <p>The request id associated with the call responsible for the exception.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl ServiceFailureException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceFailureException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -508,7 +526,7 @@ impl std::fmt::Display for ServiceFailureException {
 impl std::error::Error for ServiceFailureException {}
 /// See [`ServiceFailureException`](crate::error::ServiceFailureException).
 pub mod service_failure_exception {
-
+    
     /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -524,8 +542,7 @@ pub mod service_failure_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -534,8 +551,7 @@ pub mod service_failure_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The request id associated with the call responsible for the exception.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -544,18 +560,22 @@ pub mod service_failure_exception {
         }
         /// <p>The request id associated with the call responsible for the exception.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`ServiceFailureException`](crate::error::ServiceFailureException).
         pub fn build(self) -> crate::error::ServiceFailureException {
             crate::error::ServiceFailureException {
-                code: self.code,
-                message: self.message,
-                request_id: self.request_id,
+                code: self.code
+                ,
+                message: self.message
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceFailureException {
     /// Creates a new builder-style object to manufacture [`ServiceFailureException`](crate::error::ServiceFailureException).
@@ -567,7 +587,7 @@ impl ServiceFailureException {
 /// <p>One or more of the resources in the request does not exist in the system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotFoundException {
+pub struct NotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -580,25 +600,23 @@ pub struct NotFoundException {
 }
 impl NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
     /// <p>The request id associated with the call responsible for the exception.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl NotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -608,7 +626,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException).
 pub mod not_found_exception {
-
+    
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -624,8 +642,7 @@ pub mod not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -634,8 +651,7 @@ pub mod not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The request id associated with the call responsible for the exception.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -644,18 +660,22 @@ pub mod not_found_exception {
         }
         /// <p>The request id associated with the call responsible for the exception.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException).
         pub fn build(self) -> crate::error::NotFoundException {
             crate::error::NotFoundException {
-                code: self.code,
-                message: self.message,
-                request_id: self.request_id,
+                code: self.code
+                ,
+                message: self.message
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl NotFoundException {
     /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
@@ -667,7 +687,7 @@ impl NotFoundException {
 /// <p>The client is permanently forbidden from making the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ForbiddenException {
+pub struct ForbiddenException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -680,25 +700,23 @@ pub struct ForbiddenException {
 }
 impl ForbiddenException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
     /// <p>The request id associated with the call responsible for the exception.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl ForbiddenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ForbiddenException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -708,7 +726,7 @@ impl std::fmt::Display for ForbiddenException {
 impl std::error::Error for ForbiddenException {}
 /// See [`ForbiddenException`](crate::error::ForbiddenException).
 pub mod forbidden_exception {
-
+    
     /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -724,8 +742,7 @@ pub mod forbidden_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -734,8 +751,7 @@ pub mod forbidden_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The request id associated with the call responsible for the exception.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -744,18 +760,22 @@ pub mod forbidden_exception {
         }
         /// <p>The request id associated with the call responsible for the exception.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException).
         pub fn build(self) -> crate::error::ForbiddenException {
             crate::error::ForbiddenException {
-                code: self.code,
-                message: self.message,
-                request_id: self.request_id,
+                code: self.code
+                ,
+                message: self.message
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ForbiddenException {
     /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException).
@@ -767,7 +787,7 @@ impl ForbiddenException {
 /// <p>The input parameters don't match the service's restrictions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadRequestException {
+pub struct BadRequestException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -780,25 +800,23 @@ pub struct BadRequestException {
 }
 impl BadRequestException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
     /// <p>The request id associated with the call responsible for the exception.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl BadRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -808,7 +826,7 @@ impl std::fmt::Display for BadRequestException {
 impl std::error::Error for BadRequestException {}
 /// See [`BadRequestException`](crate::error::BadRequestException).
 pub mod bad_request_exception {
-
+    
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -824,8 +842,7 @@ pub mod bad_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -834,8 +851,7 @@ pub mod bad_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The request id associated with the call responsible for the exception.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -844,18 +860,22 @@ pub mod bad_request_exception {
         }
         /// <p>The request id associated with the call responsible for the exception.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException).
         pub fn build(self) -> crate::error::BadRequestException {
             crate::error::BadRequestException {
-                code: self.code,
-                message: self.message,
-                request_id: self.request_id,
+                code: self.code
+                ,
+                message: self.message
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl BadRequestException {
     /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException).
@@ -869,15 +889,15 @@ impl BadRequestException {
 #[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     /// Kind of error that occurred.
-    pub kind: TagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -899,27 +919,43 @@ pub enum TagResourceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -933,46 +969,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
 }
 impl TagResourceError {
     /// Creates a new `TagResourceError`.
-    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
@@ -991,37 +1027,44 @@ impl TagResourceError {
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
-            TagResourceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            TagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            TagResourceErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            TagResourceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            TagResourceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1031,15 +1074,15 @@ impl std::error::Error for TagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsForResourceError {
     /// Kind of error that occurred.
-    pub kind: ListTagsForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1061,27 +1104,43 @@ pub enum ListTagsForResourceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1095,107 +1154,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
 }
 impl ListTagsForResourceError {
     /// Creates a new `ListTagsForResourceError`.
-    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1205,15 +1259,15 @@ impl std::error::Error for ListTagsForResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ListMediaPipelinesError {
     /// Kind of error that occurred.
-    pub kind: ListMediaPipelinesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListMediaPipelinesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListMediaPipelinesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListMediaPipelinesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1235,27 +1289,43 @@ pub enum ListMediaPipelinesErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListMediaPipelinesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListMediaPipelinesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListMediaPipelinesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListMediaPipelinesErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            ListMediaPipelinesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListMediaPipelinesErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListMediaPipelinesErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            ListMediaPipelinesErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            ListMediaPipelinesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListMediaPipelinesErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMediaPipelinesErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMediaPipelinesErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMediaPipelinesErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMediaPipelinesErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMediaPipelinesErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMediaPipelinesErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMediaPipelinesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1269,107 +1339,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListMediaPipelinesError {
 }
 impl ListMediaPipelinesError {
     /// Creates a new `ListMediaPipelinesError`.
-    pub fn new(kind: ListMediaPipelinesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListMediaPipelinesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListMediaPipelinesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListMediaPipelinesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListMediaPipelinesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListMediaPipelinesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListMediaPipelinesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListMediaPipelinesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListMediaPipelinesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListMediaPipelinesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListMediaPipelinesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMediaPipelinesErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListMediaPipelinesErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListMediaPipelinesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMediaPipelinesErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListMediaPipelinesErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListMediaPipelinesErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMediaPipelinesErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, ListMediaPipelinesErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListMediaPipelinesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMediaPipelinesErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListMediaPipelinesErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListMediaPipelinesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMediaPipelinesErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListMediaPipelinesErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListMediaPipelinesErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMediaPipelinesErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListMediaPipelinesErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListMediaPipelinesErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMediaPipelinesErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListMediaPipelinesErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListMediaPipelinesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListMediaPipelinesErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListMediaPipelinesErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListMediaPipelinesErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            ListMediaPipelinesErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListMediaPipelinesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListMediaPipelinesErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            ListMediaPipelinesErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListMediaPipelinesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListMediaPipelinesErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListMediaPipelinesErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListMediaPipelinesErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListMediaPipelinesErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListMediaPipelinesErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListMediaPipelinesErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListMediaPipelinesErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListMediaPipelinesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1377,7 +1442,7 @@ impl std::error::Error for ListMediaPipelinesError {
 /// <p>The request exceeds the resource limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceLimitExceededException {
+pub struct ResourceLimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -1390,25 +1455,23 @@ pub struct ResourceLimitExceededException {
 }
 impl ResourceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
     /// <p>The request id associated with the call responsible for the exception.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl ResourceLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceLimitExceededException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -1418,7 +1481,7 @@ impl std::fmt::Display for ResourceLimitExceededException {
 impl std::error::Error for ResourceLimitExceededException {}
 /// See [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
 pub mod resource_limit_exceeded_exception {
-
+    
     /// A builder for [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1434,8 +1497,7 @@ pub mod resource_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1444,8 +1506,7 @@ pub mod resource_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The request id associated with the call responsible for the exception.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1454,18 +1515,22 @@ pub mod resource_limit_exceeded_exception {
         }
         /// <p>The request id associated with the call responsible for the exception.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// Consumes the builder and constructs a [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
         pub fn build(self) -> crate::error::ResourceLimitExceededException {
             crate::error::ResourceLimitExceededException {
-                code: self.code,
-                message: self.message,
-                request_id: self.request_id,
+                code: self.code
+                ,
+                message: self.message
+                ,
+                request_id: self.request_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceLimitExceededException {
     /// Creates a new builder-style object to manufacture [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
@@ -1479,17 +1544,15 @@ impl ResourceLimitExceededException {
 #[derive(std::fmt::Debug)]
 pub struct ListMediaCapturePipelinesError {
     /// Kind of error that occurred.
-    pub kind: ListMediaCapturePipelinesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListMediaCapturePipelinesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListMediaCapturePipelinesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListMediaCapturePipelinesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListMediaCapturePipelinesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1511,33 +1574,43 @@ pub enum ListMediaCapturePipelinesErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListMediaCapturePipelinesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListMediaCapturePipelinesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListMediaCapturePipelinesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListMediaCapturePipelinesErrorKind::ResourceLimitExceededException(_inner) => {
+            ListMediaCapturePipelinesErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMediaCapturePipelinesErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMediaCapturePipelinesErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMediaCapturePipelinesErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMediaCapturePipelinesErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMediaCapturePipelinesErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListMediaCapturePipelinesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListMediaCapturePipelinesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListMediaCapturePipelinesErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListMediaCapturePipelinesErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListMediaCapturePipelinesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1551,113 +1624,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListMediaCapturePipelinesErro
 }
 impl ListMediaCapturePipelinesError {
     /// Creates a new `ListMediaCapturePipelinesError`.
-    pub fn new(kind: ListMediaCapturePipelinesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListMediaCapturePipelinesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListMediaCapturePipelinesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListMediaCapturePipelinesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListMediaCapturePipelinesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListMediaCapturePipelinesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListMediaCapturePipelinesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListMediaCapturePipelinesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListMediaCapturePipelinesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListMediaCapturePipelinesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListMediaCapturePipelinesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMediaCapturePipelinesErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListMediaCapturePipelinesErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListMediaCapturePipelinesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMediaCapturePipelinesErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListMediaCapturePipelinesErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListMediaCapturePipelinesErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMediaCapturePipelinesErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, ListMediaCapturePipelinesErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListMediaCapturePipelinesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMediaCapturePipelinesErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListMediaCapturePipelinesErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListMediaCapturePipelinesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMediaCapturePipelinesErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListMediaCapturePipelinesErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListMediaCapturePipelinesErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMediaCapturePipelinesErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListMediaCapturePipelinesErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListMediaCapturePipelinesErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListMediaCapturePipelinesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListMediaCapturePipelinesErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListMediaCapturePipelinesErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListMediaCapturePipelinesErrorKind::ResourceLimitExceededException(_inner) => {
+            ListMediaCapturePipelinesErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListMediaCapturePipelinesErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListMediaCapturePipelinesErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListMediaCapturePipelinesErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListMediaCapturePipelinesErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListMediaCapturePipelinesErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListMediaCapturePipelinesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListMediaCapturePipelinesErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListMediaCapturePipelinesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListMediaCapturePipelinesErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListMediaCapturePipelinesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1667,15 +1729,15 @@ impl std::error::Error for ListMediaCapturePipelinesError {
 #[derive(std::fmt::Debug)]
 pub struct GetMediaPipelineError {
     /// Kind of error that occurred.
-    pub kind: GetMediaPipelineErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetMediaPipelineErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetMediaPipelineError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetMediaPipelineErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1697,27 +1759,43 @@ pub enum GetMediaPipelineErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMediaPipelineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetMediaPipelineErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetMediaPipelineErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetMediaPipelineErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetMediaPipelineErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            GetMediaPipelineErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            GetMediaPipelineErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            GetMediaPipelineErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            GetMediaPipelineErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetMediaPipelineErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaPipelineErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaPipelineErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaPipelineErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaPipelineErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaPipelineErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaPipelineErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaPipelineErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1731,52 +1809,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetMediaPipelineError {
 }
 impl GetMediaPipelineError {
     /// Creates a new `GetMediaPipelineError`.
-    pub fn new(kind: GetMediaPipelineErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetMediaPipelineError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetMediaPipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetMediaPipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetMediaPipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetMediaPipelineErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetMediaPipelineError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetMediaPipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetMediaPipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetMediaPipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetMediaPipelineErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMediaPipelineErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetMediaPipelineErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetMediaPipelineErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
@@ -1788,44 +1863,48 @@ impl GetMediaPipelineError {
     }
     /// Returns `true` if the error kind is `GetMediaPipelineErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMediaPipelineErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetMediaPipelineErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetMediaPipelineErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMediaPipelineErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetMediaPipelineErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetMediaPipelineErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMediaPipelineErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetMediaPipelineErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetMediaPipelineErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMediaPipelineErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetMediaPipelineErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetMediaPipelineError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetMediaPipelineErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetMediaPipelineErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetMediaPipelineErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetMediaPipelineErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetMediaPipelineErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetMediaPipelineErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            GetMediaPipelineErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            GetMediaPipelineErrorKind::Unhandled(_inner) => Some(_inner),
+            GetMediaPipelineErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaPipelineErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaPipelineErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaPipelineErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaPipelineErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaPipelineErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaPipelineErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaPipelineErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1835,15 +1914,15 @@ impl std::error::Error for GetMediaPipelineError {
 #[derive(std::fmt::Debug)]
 pub struct GetMediaCapturePipelineError {
     /// Kind of error that occurred.
-    pub kind: GetMediaCapturePipelineErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetMediaCapturePipelineErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetMediaCapturePipelineError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1865,27 +1944,43 @@ pub enum GetMediaCapturePipelineErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMediaCapturePipelineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetMediaCapturePipelineErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetMediaCapturePipelineErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetMediaCapturePipelineErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetMediaCapturePipelineErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            GetMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            GetMediaCapturePipelineErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            GetMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            GetMediaCapturePipelineErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetMediaCapturePipelineErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaCapturePipelineErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaCapturePipelineErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaCapturePipelineErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaCapturePipelineErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetMediaCapturePipelineErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1899,111 +1994,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetMediaCapturePipelineError 
 }
 impl GetMediaCapturePipelineError {
     /// Creates a new `GetMediaCapturePipelineError`.
-    pub fn new(kind: GetMediaCapturePipelineErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetMediaCapturePipelineError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetMediaCapturePipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetMediaCapturePipelineErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetMediaCapturePipelineError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetMediaCapturePipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetMediaCapturePipelineErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMediaCapturePipelineErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetMediaCapturePipelineErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetMediaCapturePipelineErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMediaCapturePipelineErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetMediaCapturePipelineErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetMediaCapturePipelineErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMediaCapturePipelineErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetMediaCapturePipelineErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetMediaCapturePipelineErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMediaCapturePipelineErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetMediaCapturePipelineErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetMediaCapturePipelineErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMediaCapturePipelineErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetMediaCapturePipelineErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetMediaCapturePipelineErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMediaCapturePipelineErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetMediaCapturePipelineErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetMediaCapturePipelineErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetMediaCapturePipelineErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetMediaCapturePipelineErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetMediaCapturePipelineError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetMediaCapturePipelineErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetMediaCapturePipelineErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetMediaCapturePipelineErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetMediaCapturePipelineErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetMediaCapturePipelineErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            GetMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            GetMediaCapturePipelineErrorKind::Unhandled(_inner) => Some(_inner),
+            GetMediaCapturePipelineErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaCapturePipelineErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaCapturePipelineErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaCapturePipelineErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaCapturePipelineErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetMediaCapturePipelineErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2013,15 +2099,15 @@ impl std::error::Error for GetMediaCapturePipelineError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteMediaPipelineError {
     /// Kind of error that occurred.
-    pub kind: DeleteMediaPipelineErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteMediaPipelineErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteMediaPipelineError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteMediaPipelineErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2043,27 +2129,43 @@ pub enum DeleteMediaPipelineErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteMediaPipelineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteMediaPipelineErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteMediaPipelineErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteMediaPipelineErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteMediaPipelineErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DeleteMediaPipelineErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DeleteMediaPipelineErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            DeleteMediaPipelineErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            DeleteMediaPipelineErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteMediaPipelineErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMediaPipelineErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMediaPipelineErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMediaPipelineErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMediaPipelineErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMediaPipelineErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMediaPipelineErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMediaPipelineErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2077,107 +2179,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteMediaPipelineError {
 }
 impl DeleteMediaPipelineError {
     /// Creates a new `DeleteMediaPipelineError`.
-    pub fn new(kind: DeleteMediaPipelineErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteMediaPipelineError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteMediaPipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteMediaPipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteMediaPipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteMediaPipelineErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteMediaPipelineError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteMediaPipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteMediaPipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteMediaPipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteMediaPipelineErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteMediaPipelineErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteMediaPipelineErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteMediaPipelineErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteMediaPipelineErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteMediaPipelineErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteMediaPipelineErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteMediaPipelineErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteMediaPipelineErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteMediaPipelineErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteMediaPipelineErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteMediaPipelineErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteMediaPipelineErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteMediaPipelineErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteMediaPipelineErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteMediaPipelineErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteMediaPipelineErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeleteMediaPipelineErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteMediaPipelineErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteMediaPipelineErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeleteMediaPipelineErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeleteMediaPipelineError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteMediaPipelineErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteMediaPipelineErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteMediaPipelineErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteMediaPipelineErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DeleteMediaPipelineErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteMediaPipelineErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            DeleteMediaPipelineErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteMediaPipelineErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteMediaPipelineErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMediaPipelineErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMediaPipelineErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMediaPipelineErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMediaPipelineErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMediaPipelineErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMediaPipelineErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMediaPipelineErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2187,17 +2284,15 @@ impl std::error::Error for DeleteMediaPipelineError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteMediaCapturePipelineError {
     /// Kind of error that occurred.
-    pub kind: DeleteMediaCapturePipelineErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteMediaCapturePipelineErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteMediaCapturePipelineError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2219,31 +2314,43 @@ pub enum DeleteMediaCapturePipelineErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteMediaCapturePipelineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteMediaCapturePipelineErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteMediaCapturePipelineErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteMediaCapturePipelineErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteMediaCapturePipelineErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) => {
+            DeleteMediaCapturePipelineErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMediaCapturePipelineErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMediaCapturePipelineErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMediaCapturePipelineErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMediaCapturePipelineErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteMediaCapturePipelineErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteMediaCapturePipelineErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteMediaCapturePipelineErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2257,115 +2364,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteMediaCapturePipelineErr
 }
 impl DeleteMediaCapturePipelineError {
     /// Creates a new `DeleteMediaCapturePipelineError`.
-    pub fn new(kind: DeleteMediaCapturePipelineErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteMediaCapturePipelineError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteMediaCapturePipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteMediaCapturePipelineErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteMediaCapturePipelineError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteMediaCapturePipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteMediaCapturePipelineErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteMediaCapturePipelineErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteMediaCapturePipelineErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteMediaCapturePipelineErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteMediaCapturePipelineErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteMediaCapturePipelineErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteMediaCapturePipelineErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteMediaCapturePipelineErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteMediaCapturePipelineErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteMediaCapturePipelineErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteMediaCapturePipelineErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteMediaCapturePipelineErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteMediaCapturePipelineErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteMediaCapturePipelineErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeleteMediaCapturePipelineErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeleteMediaCapturePipelineError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteMediaCapturePipelineErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteMediaCapturePipelineErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteMediaCapturePipelineErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteMediaCapturePipelineErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) => {
+            DeleteMediaCapturePipelineErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMediaCapturePipelineErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMediaCapturePipelineErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMediaCapturePipelineErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMediaCapturePipelineErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteMediaCapturePipelineErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteMediaCapturePipelineErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            DeleteMediaCapturePipelineErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2375,17 +2469,15 @@ impl std::error::Error for DeleteMediaCapturePipelineError {
 #[derive(std::fmt::Debug)]
 pub struct CreateMediaLiveConnectorPipelineError {
     /// Kind of error that occurred.
-    pub kind: CreateMediaLiveConnectorPipelineErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateMediaLiveConnectorPipelineErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateMediaLiveConnectorPipelineError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateMediaLiveConnectorPipelineErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: CreateMediaLiveConnectorPipelineErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2407,37 +2499,43 @@ pub enum CreateMediaLiveConnectorPipelineErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateMediaLiveConnectorPipelineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateMediaLiveConnectorPipelineErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateMediaLiveConnectorPipelineErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateMediaLiveConnectorPipelineErrorKind::ResourceLimitExceededException(_inner) => {
+            CreateMediaLiveConnectorPipelineErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaLiveConnectorPipelineErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaLiveConnectorPipelineErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaLiveConnectorPipelineErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaLiveConnectorPipelineErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaLiveConnectorPipelineErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaLiveConnectorPipelineErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaLiveConnectorPipelineErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateMediaLiveConnectorPipelineErrorKind::ServiceFailureException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateMediaLiveConnectorPipelineErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateMediaLiveConnectorPipelineErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateMediaLiveConnectorPipelineErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateMediaLiveConnectorPipelineErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2451,124 +2549,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateMediaLiveConnectorPipel
 }
 impl CreateMediaLiveConnectorPipelineError {
     /// Creates a new `CreateMediaLiveConnectorPipelineError`.
-    pub fn new(
-        kind: CreateMediaLiveConnectorPipelineErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateMediaLiveConnectorPipelineError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateMediaLiveConnectorPipelineErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateMediaLiveConnectorPipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateMediaLiveConnectorPipelineErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateMediaLiveConnectorPipelineErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateMediaLiveConnectorPipelineError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateMediaLiveConnectorPipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateMediaLiveConnectorPipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateMediaLiveConnectorPipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateMediaLiveConnectorPipelineErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaLiveConnectorPipelineErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateMediaLiveConnectorPipelineErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaLiveConnectorPipelineErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaLiveConnectorPipelineErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateMediaLiveConnectorPipelineErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaLiveConnectorPipelineErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaLiveConnectorPipelineErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateMediaLiveConnectorPipelineErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaLiveConnectorPipelineErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaLiveConnectorPipelineErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, CreateMediaLiveConnectorPipelineErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaLiveConnectorPipelineErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaLiveConnectorPipelineErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateMediaLiveConnectorPipelineErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaLiveConnectorPipelineErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaLiveConnectorPipelineErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, CreateMediaLiveConnectorPipelineErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaLiveConnectorPipelineErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaLiveConnectorPipelineErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, CreateMediaLiveConnectorPipelineErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for CreateMediaLiveConnectorPipelineError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateMediaLiveConnectorPipelineErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateMediaLiveConnectorPipelineErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateMediaLiveConnectorPipelineErrorKind::ResourceLimitExceededException(_inner) => {
+            CreateMediaLiveConnectorPipelineErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaLiveConnectorPipelineErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaLiveConnectorPipelineErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaLiveConnectorPipelineErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaLiveConnectorPipelineErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaLiveConnectorPipelineErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaLiveConnectorPipelineErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaLiveConnectorPipelineErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateMediaLiveConnectorPipelineErrorKind::ServiceFailureException(_inner) => {
-                Some(_inner)
-            }
-            CreateMediaLiveConnectorPipelineErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            CreateMediaLiveConnectorPipelineErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            CreateMediaLiveConnectorPipelineErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            CreateMediaLiveConnectorPipelineErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2578,17 +2654,15 @@ impl std::error::Error for CreateMediaLiveConnectorPipelineError {
 #[derive(std::fmt::Debug)]
 pub struct CreateMediaConcatenationPipelineError {
     /// Kind of error that occurred.
-    pub kind: CreateMediaConcatenationPipelineErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateMediaConcatenationPipelineErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateMediaConcatenationPipelineError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateMediaConcatenationPipelineErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: CreateMediaConcatenationPipelineErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2610,37 +2684,43 @@ pub enum CreateMediaConcatenationPipelineErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateMediaConcatenationPipelineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateMediaConcatenationPipelineErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateMediaConcatenationPipelineErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateMediaConcatenationPipelineErrorKind::ResourceLimitExceededException(_inner) => {
+            CreateMediaConcatenationPipelineErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaConcatenationPipelineErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaConcatenationPipelineErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaConcatenationPipelineErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaConcatenationPipelineErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaConcatenationPipelineErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaConcatenationPipelineErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaConcatenationPipelineErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateMediaConcatenationPipelineErrorKind::ServiceFailureException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateMediaConcatenationPipelineErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateMediaConcatenationPipelineErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateMediaConcatenationPipelineErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateMediaConcatenationPipelineErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2654,124 +2734,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateMediaConcatenationPipel
 }
 impl CreateMediaConcatenationPipelineError {
     /// Creates a new `CreateMediaConcatenationPipelineError`.
-    pub fn new(
-        kind: CreateMediaConcatenationPipelineErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateMediaConcatenationPipelineError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateMediaConcatenationPipelineErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateMediaConcatenationPipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateMediaConcatenationPipelineErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateMediaConcatenationPipelineErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateMediaConcatenationPipelineError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateMediaConcatenationPipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateMediaConcatenationPipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateMediaConcatenationPipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateMediaConcatenationPipelineErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaConcatenationPipelineErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateMediaConcatenationPipelineErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaConcatenationPipelineErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaConcatenationPipelineErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateMediaConcatenationPipelineErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaConcatenationPipelineErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaConcatenationPipelineErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateMediaConcatenationPipelineErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaConcatenationPipelineErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaConcatenationPipelineErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, CreateMediaConcatenationPipelineErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaConcatenationPipelineErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaConcatenationPipelineErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateMediaConcatenationPipelineErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaConcatenationPipelineErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaConcatenationPipelineErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, CreateMediaConcatenationPipelineErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaConcatenationPipelineErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaConcatenationPipelineErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, CreateMediaConcatenationPipelineErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for CreateMediaConcatenationPipelineError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateMediaConcatenationPipelineErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateMediaConcatenationPipelineErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateMediaConcatenationPipelineErrorKind::ResourceLimitExceededException(_inner) => {
+            CreateMediaConcatenationPipelineErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaConcatenationPipelineErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaConcatenationPipelineErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaConcatenationPipelineErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaConcatenationPipelineErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaConcatenationPipelineErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaConcatenationPipelineErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaConcatenationPipelineErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateMediaConcatenationPipelineErrorKind::ServiceFailureException(_inner) => {
-                Some(_inner)
-            }
-            CreateMediaConcatenationPipelineErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            CreateMediaConcatenationPipelineErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            CreateMediaConcatenationPipelineErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            CreateMediaConcatenationPipelineErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2781,17 +2839,15 @@ impl std::error::Error for CreateMediaConcatenationPipelineError {
 #[derive(std::fmt::Debug)]
 pub struct CreateMediaCapturePipelineError {
     /// Kind of error that occurred.
-    pub kind: CreateMediaCapturePipelineErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateMediaCapturePipelineErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateMediaCapturePipelineError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: CreateMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2813,33 +2869,43 @@ pub enum CreateMediaCapturePipelineErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateMediaCapturePipelineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateMediaCapturePipelineErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateMediaCapturePipelineErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException(_inner) => {
+            CreateMediaCapturePipelineErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaCapturePipelineErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaCapturePipelineErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaCapturePipelineErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateMediaCapturePipelineErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateMediaCapturePipelineErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            CreateMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateMediaCapturePipelineErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            CreateMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateMediaCapturePipelineErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2853,146 +2919,132 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateMediaCapturePipelineErr
 }
 impl CreateMediaCapturePipelineError {
     /// Creates a new `CreateMediaCapturePipelineError`.
-    pub fn new(kind: CreateMediaCapturePipelineErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateMediaCapturePipelineError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateMediaCapturePipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateMediaCapturePipelineErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateMediaCapturePipelineError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateMediaCapturePipelineError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateMediaCapturePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateMediaCapturePipelineErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaCapturePipelineErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateMediaCapturePipelineErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaCapturePipelineErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaCapturePipelineErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateMediaCapturePipelineErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaCapturePipelineErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaCapturePipelineErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, CreateMediaCapturePipelineErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaCapturePipelineErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaCapturePipelineErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateMediaCapturePipelineErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaCapturePipelineErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaCapturePipelineErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, CreateMediaCapturePipelineErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `CreateMediaCapturePipelineErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateMediaCapturePipelineErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, CreateMediaCapturePipelineErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for CreateMediaCapturePipelineError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateMediaCapturePipelineErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateMediaCapturePipelineErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException(_inner) => {
+            CreateMediaCapturePipelineErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaCapturePipelineErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaCapturePipelineErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaCapturePipelineErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateMediaCapturePipelineErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateMediaCapturePipelineErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            CreateMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            CreateMediaCapturePipelineErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            CreateMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            CreateMediaCapturePipelineErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

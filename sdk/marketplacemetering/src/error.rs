@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct ResolveCustomerError {
     /// Kind of error that occurred.
-    pub kind: ResolveCustomerErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ResolveCustomerErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ResolveCustomerError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ResolveCustomerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -30,25 +30,37 @@ pub enum ResolveCustomerErrorKind {
     InvalidTokenException(crate::error::InvalidTokenException),
     /// <p>The calls to the API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ResolveCustomerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ResolveCustomerErrorKind::DisabledApiException(_inner) => _inner.fmt(f),
-            ResolveCustomerErrorKind::ExpiredTokenException(_inner) => _inner.fmt(f),
-            ResolveCustomerErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            ResolveCustomerErrorKind::InvalidTokenException(_inner) => _inner.fmt(f),
-            ResolveCustomerErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ResolveCustomerErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ResolveCustomerErrorKind::DisabledApiException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResolveCustomerErrorKind::ExpiredTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResolveCustomerErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResolveCustomerErrorKind::InvalidTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResolveCustomerErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResolveCustomerErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -62,73 +74,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for ResolveCustomerError {
 }
 impl ResolveCustomerError {
     /// Creates a new `ResolveCustomerError`.
-    pub fn new(kind: ResolveCustomerErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ResolveCustomerError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ResolveCustomerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ResolveCustomerError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ResolveCustomerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ResolveCustomerErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ResolveCustomerError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ResolveCustomerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ResolveCustomerError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ResolveCustomerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ResolveCustomerErrorKind::DisabledApiException`.
     pub fn is_disabled_api_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResolveCustomerErrorKind::DisabledApiException(_)
-        )
+        matches!(&self.kind, ResolveCustomerErrorKind::DisabledApiException(_))
     }
     /// Returns `true` if the error kind is `ResolveCustomerErrorKind::ExpiredTokenException`.
     pub fn is_expired_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResolveCustomerErrorKind::ExpiredTokenException(_)
-        )
+        matches!(&self.kind, ResolveCustomerErrorKind::ExpiredTokenException(_))
     }
     /// Returns `true` if the error kind is `ResolveCustomerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResolveCustomerErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ResolveCustomerErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ResolveCustomerErrorKind::InvalidTokenException`.
     pub fn is_invalid_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResolveCustomerErrorKind::InvalidTokenException(_)
-        )
+        matches!(&self.kind, ResolveCustomerErrorKind::InvalidTokenException(_))
     }
     /// Returns `true` if the error kind is `ResolveCustomerErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -138,12 +138,24 @@ impl ResolveCustomerError {
 impl std::error::Error for ResolveCustomerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ResolveCustomerErrorKind::DisabledApiException(_inner) => Some(_inner),
-            ResolveCustomerErrorKind::ExpiredTokenException(_inner) => Some(_inner),
-            ResolveCustomerErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            ResolveCustomerErrorKind::InvalidTokenException(_inner) => Some(_inner),
-            ResolveCustomerErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ResolveCustomerErrorKind::Unhandled(_inner) => Some(_inner),
+            ResolveCustomerErrorKind::DisabledApiException(_inner) =>
+            Some(_inner)
+            ,
+            ResolveCustomerErrorKind::ExpiredTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ResolveCustomerErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ResolveCustomerErrorKind::InvalidTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ResolveCustomerErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ResolveCustomerErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -151,22 +163,20 @@ impl std::error::Error for ResolveCustomerError {
 /// <p>The calls to the API are throttled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -176,7 +186,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException).
 pub mod throttling_exception {
-
+    
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -190,16 +200,18 @@ pub mod throttling_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
         pub fn build(self) -> crate::error::ThrottlingException {
             crate::error::ThrottlingException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
@@ -211,22 +223,20 @@ impl ThrottlingException {
 /// <p>Registration token is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidTokenException {
+pub struct InvalidTokenException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTokenException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -236,7 +246,7 @@ impl std::fmt::Display for InvalidTokenException {
 impl std::error::Error for InvalidTokenException {}
 /// See [`InvalidTokenException`](crate::error::InvalidTokenException).
 pub mod invalid_token_exception {
-
+    
     /// A builder for [`InvalidTokenException`](crate::error::InvalidTokenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -250,16 +260,18 @@ pub mod invalid_token_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidTokenException`](crate::error::InvalidTokenException).
         pub fn build(self) -> crate::error::InvalidTokenException {
             crate::error::InvalidTokenException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidTokenException {
     /// Creates a new builder-style object to manufacture [`InvalidTokenException`](crate::error::InvalidTokenException).
@@ -271,22 +283,20 @@ impl InvalidTokenException {
 /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServiceErrorException {
+pub struct InternalServiceErrorException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServiceErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServiceErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServiceErrorException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -296,7 +306,7 @@ impl std::fmt::Display for InternalServiceErrorException {
 impl std::error::Error for InternalServiceErrorException {}
 /// See [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
 pub mod internal_service_error_exception {
-
+    
     /// A builder for [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -310,16 +320,18 @@ pub mod internal_service_error_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
         pub fn build(self) -> crate::error::InternalServiceErrorException {
             crate::error::InternalServiceErrorException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServiceErrorException {
     /// Creates a new builder-style object to manufacture [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
@@ -331,22 +343,20 @@ impl InternalServiceErrorException {
 /// <p>The submitted registration token has expired. This can happen if the buyer's browser takes too long to redirect to your page, the buyer has resubmitted the registration token, or your application has held on to the registration token for too long. Your SaaS registration website should redeem this token as soon as it is submitted by the buyer's browser.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExpiredTokenException {
+pub struct ExpiredTokenException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ExpiredTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ExpiredTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredTokenException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -356,7 +366,7 @@ impl std::fmt::Display for ExpiredTokenException {
 impl std::error::Error for ExpiredTokenException {}
 /// See [`ExpiredTokenException`](crate::error::ExpiredTokenException).
 pub mod expired_token_exception {
-
+    
     /// A builder for [`ExpiredTokenException`](crate::error::ExpiredTokenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -370,16 +380,18 @@ pub mod expired_token_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ExpiredTokenException`](crate::error::ExpiredTokenException).
         pub fn build(self) -> crate::error::ExpiredTokenException {
             crate::error::ExpiredTokenException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ExpiredTokenException {
     /// Creates a new builder-style object to manufacture [`ExpiredTokenException`](crate::error::ExpiredTokenException).
@@ -391,22 +403,20 @@ impl ExpiredTokenException {
 /// <p>The API is disabled in the Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisabledApiException {
+pub struct DisabledApiException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DisabledApiException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DisabledApiException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DisabledApiException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -416,7 +426,7 @@ impl std::fmt::Display for DisabledApiException {
 impl std::error::Error for DisabledApiException {}
 /// See [`DisabledApiException`](crate::error::DisabledApiException).
 pub mod disabled_api_exception {
-
+    
     /// A builder for [`DisabledApiException`](crate::error::DisabledApiException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -430,16 +440,18 @@ pub mod disabled_api_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DisabledApiException`](crate::error::DisabledApiException).
         pub fn build(self) -> crate::error::DisabledApiException {
             crate::error::DisabledApiException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DisabledApiException {
     /// Creates a new builder-style object to manufacture [`DisabledApiException`](crate::error::DisabledApiException).
@@ -453,15 +465,15 @@ impl DisabledApiException {
 #[derive(std::fmt::Debug)]
 pub struct RegisterUsageError {
     /// Kind of error that occurred.
-    pub kind: RegisterUsageErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RegisterUsageErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RegisterUsageError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RegisterUsageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -485,28 +497,46 @@ pub enum RegisterUsageErrorKind {
     PlatformNotSupportedException(crate::error::PlatformNotSupportedException),
     /// <p>The calls to the API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RegisterUsageErrorKind::CustomerNotEntitledException(_inner) => _inner.fmt(f),
-            RegisterUsageErrorKind::DisabledApiException(_inner) => _inner.fmt(f),
-            RegisterUsageErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            RegisterUsageErrorKind::InvalidProductCodeException(_inner) => _inner.fmt(f),
-            RegisterUsageErrorKind::InvalidPublicKeyVersionException(_inner) => _inner.fmt(f),
-            RegisterUsageErrorKind::InvalidRegionException(_inner) => _inner.fmt(f),
-            RegisterUsageErrorKind::PlatformNotSupportedException(_inner) => _inner.fmt(f),
-            RegisterUsageErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            RegisterUsageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RegisterUsageErrorKind::CustomerNotEntitledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterUsageErrorKind::DisabledApiException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterUsageErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterUsageErrorKind::InvalidProductCodeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterUsageErrorKind::InvalidPublicKeyVersionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterUsageErrorKind::InvalidRegionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterUsageErrorKind::PlatformNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterUsageErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterUsageErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -520,52 +550,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for RegisterUsageError {
 }
 impl RegisterUsageError {
     /// Creates a new `RegisterUsageError`.
-    pub fn new(kind: RegisterUsageErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RegisterUsageError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RegisterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RegisterUsageError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RegisterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RegisterUsageErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RegisterUsageError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RegisterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RegisterUsageError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RegisterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RegisterUsageErrorKind::CustomerNotEntitledException`.
     pub fn is_customer_not_entitled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterUsageErrorKind::CustomerNotEntitledException(_)
-        )
+        matches!(&self.kind, RegisterUsageErrorKind::CustomerNotEntitledException(_))
     }
     /// Returns `true` if the error kind is `RegisterUsageErrorKind::DisabledApiException`.
     pub fn is_disabled_api_exception(&self) -> bool {
@@ -573,38 +600,23 @@ impl RegisterUsageError {
     }
     /// Returns `true` if the error kind is `RegisterUsageErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterUsageErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, RegisterUsageErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `RegisterUsageErrorKind::InvalidProductCodeException`.
     pub fn is_invalid_product_code_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterUsageErrorKind::InvalidProductCodeException(_)
-        )
+        matches!(&self.kind, RegisterUsageErrorKind::InvalidProductCodeException(_))
     }
     /// Returns `true` if the error kind is `RegisterUsageErrorKind::InvalidPublicKeyVersionException`.
     pub fn is_invalid_public_key_version_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterUsageErrorKind::InvalidPublicKeyVersionException(_)
-        )
+        matches!(&self.kind, RegisterUsageErrorKind::InvalidPublicKeyVersionException(_))
     }
     /// Returns `true` if the error kind is `RegisterUsageErrorKind::InvalidRegionException`.
     pub fn is_invalid_region_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterUsageErrorKind::InvalidRegionException(_)
-        )
+        matches!(&self.kind, RegisterUsageErrorKind::InvalidRegionException(_))
     }
     /// Returns `true` if the error kind is `RegisterUsageErrorKind::PlatformNotSupportedException`.
     pub fn is_platform_not_supported_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterUsageErrorKind::PlatformNotSupportedException(_)
-        )
+        matches!(&self.kind, RegisterUsageErrorKind::PlatformNotSupportedException(_))
     }
     /// Returns `true` if the error kind is `RegisterUsageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -614,15 +626,33 @@ impl RegisterUsageError {
 impl std::error::Error for RegisterUsageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RegisterUsageErrorKind::CustomerNotEntitledException(_inner) => Some(_inner),
-            RegisterUsageErrorKind::DisabledApiException(_inner) => Some(_inner),
-            RegisterUsageErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            RegisterUsageErrorKind::InvalidProductCodeException(_inner) => Some(_inner),
-            RegisterUsageErrorKind::InvalidPublicKeyVersionException(_inner) => Some(_inner),
-            RegisterUsageErrorKind::InvalidRegionException(_inner) => Some(_inner),
-            RegisterUsageErrorKind::PlatformNotSupportedException(_inner) => Some(_inner),
-            RegisterUsageErrorKind::ThrottlingException(_inner) => Some(_inner),
-            RegisterUsageErrorKind::Unhandled(_inner) => Some(_inner),
+            RegisterUsageErrorKind::CustomerNotEntitledException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterUsageErrorKind::DisabledApiException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterUsageErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterUsageErrorKind::InvalidProductCodeException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterUsageErrorKind::InvalidPublicKeyVersionException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterUsageErrorKind::InvalidRegionException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterUsageErrorKind::PlatformNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterUsageErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterUsageErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -630,22 +660,20 @@ impl std::error::Error for RegisterUsageError {
 /// <p>AWS Marketplace does not support metering usage from the underlying platform. Currently, Amazon ECS, Amazon EKS, and AWS Fargate are supported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlatformNotSupportedException {
+pub struct PlatformNotSupportedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PlatformNotSupportedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for PlatformNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PlatformNotSupportedException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -655,7 +683,7 @@ impl std::fmt::Display for PlatformNotSupportedException {
 impl std::error::Error for PlatformNotSupportedException {}
 /// See [`PlatformNotSupportedException`](crate::error::PlatformNotSupportedException).
 pub mod platform_not_supported_exception {
-
+    
     /// A builder for [`PlatformNotSupportedException`](crate::error::PlatformNotSupportedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -669,16 +697,18 @@ pub mod platform_not_supported_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`PlatformNotSupportedException`](crate::error::PlatformNotSupportedException).
         pub fn build(self) -> crate::error::PlatformNotSupportedException {
             crate::error::PlatformNotSupportedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl PlatformNotSupportedException {
     /// Creates a new builder-style object to manufacture [`PlatformNotSupportedException`](crate::error::PlatformNotSupportedException).
@@ -690,22 +720,20 @@ impl PlatformNotSupportedException {
 /// <p> <code>RegisterUsage</code> must be called in the same AWS Region the ECS task was launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when calling <code>RegisterUsage</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidRegionException {
+pub struct InvalidRegionException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidRegionException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidRegionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRegionException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -715,7 +743,7 @@ impl std::fmt::Display for InvalidRegionException {
 impl std::error::Error for InvalidRegionException {}
 /// See [`InvalidRegionException`](crate::error::InvalidRegionException).
 pub mod invalid_region_exception {
-
+    
     /// A builder for [`InvalidRegionException`](crate::error::InvalidRegionException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -729,16 +757,18 @@ pub mod invalid_region_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidRegionException`](crate::error::InvalidRegionException).
         pub fn build(self) -> crate::error::InvalidRegionException {
             crate::error::InvalidRegionException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidRegionException {
     /// Creates a new builder-style object to manufacture [`InvalidRegionException`](crate::error::InvalidRegionException).
@@ -750,22 +780,20 @@ impl InvalidRegionException {
 /// <p>Public Key version is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidPublicKeyVersionException {
+pub struct InvalidPublicKeyVersionException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidPublicKeyVersionException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidPublicKeyVersionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPublicKeyVersionException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -775,7 +803,7 @@ impl std::fmt::Display for InvalidPublicKeyVersionException {
 impl std::error::Error for InvalidPublicKeyVersionException {}
 /// See [`InvalidPublicKeyVersionException`](crate::error::InvalidPublicKeyVersionException).
 pub mod invalid_public_key_version_exception {
-
+    
     /// A builder for [`InvalidPublicKeyVersionException`](crate::error::InvalidPublicKeyVersionException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -789,16 +817,18 @@ pub mod invalid_public_key_version_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidPublicKeyVersionException`](crate::error::InvalidPublicKeyVersionException).
         pub fn build(self) -> crate::error::InvalidPublicKeyVersionException {
             crate::error::InvalidPublicKeyVersionException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidPublicKeyVersionException {
     /// Creates a new builder-style object to manufacture [`InvalidPublicKeyVersionException`](crate::error::InvalidPublicKeyVersionException).
@@ -810,22 +840,20 @@ impl InvalidPublicKeyVersionException {
 /// <p>The product code passed does not match the product code used for publishing the product.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidProductCodeException {
+pub struct InvalidProductCodeException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidProductCodeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidProductCodeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidProductCodeException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -835,7 +863,7 @@ impl std::fmt::Display for InvalidProductCodeException {
 impl std::error::Error for InvalidProductCodeException {}
 /// See [`InvalidProductCodeException`](crate::error::InvalidProductCodeException).
 pub mod invalid_product_code_exception {
-
+    
     /// A builder for [`InvalidProductCodeException`](crate::error::InvalidProductCodeException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -849,16 +877,18 @@ pub mod invalid_product_code_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidProductCodeException`](crate::error::InvalidProductCodeException).
         pub fn build(self) -> crate::error::InvalidProductCodeException {
             crate::error::InvalidProductCodeException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidProductCodeException {
     /// Creates a new builder-style object to manufacture [`InvalidProductCodeException`](crate::error::InvalidProductCodeException).
@@ -870,22 +900,20 @@ impl InvalidProductCodeException {
 /// <p>Exception thrown when the customer does not have a valid subscription for the product.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomerNotEntitledException {
+pub struct CustomerNotEntitledException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CustomerNotEntitledException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CustomerNotEntitledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CustomerNotEntitledException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -895,7 +923,7 @@ impl std::fmt::Display for CustomerNotEntitledException {
 impl std::error::Error for CustomerNotEntitledException {}
 /// See [`CustomerNotEntitledException`](crate::error::CustomerNotEntitledException).
 pub mod customer_not_entitled_exception {
-
+    
     /// A builder for [`CustomerNotEntitledException`](crate::error::CustomerNotEntitledException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -909,16 +937,18 @@ pub mod customer_not_entitled_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CustomerNotEntitledException`](crate::error::CustomerNotEntitledException).
         pub fn build(self) -> crate::error::CustomerNotEntitledException {
             crate::error::CustomerNotEntitledException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomerNotEntitledException {
     /// Creates a new builder-style object to manufacture [`CustomerNotEntitledException`](crate::error::CustomerNotEntitledException).
@@ -932,15 +962,15 @@ impl CustomerNotEntitledException {
 #[derive(std::fmt::Debug)]
 pub struct MeterUsageError {
     /// Kind of error that occurred.
-    pub kind: MeterUsageErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: MeterUsageErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for MeterUsageError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: MeterUsageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -966,33 +996,55 @@ pub enum MeterUsageErrorKind {
     InvalidUsageDimensionException(crate::error::InvalidUsageDimensionException),
     /// <p>The calls to the API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The <code>timestamp</code> value passed in the <code>UsageRecord</code> is out of allowed range.</p>
+    /// <p>The <code>timestamp</code> value passed in the <code>UsageRecord</code> is out of allowed range.</p> 
     /// <p>For <code>BatchMeterUsage</code>, if any of the records are outside of the allowed range, the entire batch is not processed. You must remove invalid records and try again.</p>
     TimestampOutOfBoundsException(crate::error::TimestampOutOfBoundsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for MeterUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            MeterUsageErrorKind::CustomerNotEntitledException(_inner) => _inner.fmt(f),
-            MeterUsageErrorKind::DuplicateRequestException(_inner) => _inner.fmt(f),
-            MeterUsageErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            MeterUsageErrorKind::InvalidEndpointRegionException(_inner) => _inner.fmt(f),
-            MeterUsageErrorKind::InvalidProductCodeException(_inner) => _inner.fmt(f),
-            MeterUsageErrorKind::InvalidTagException(_inner) => _inner.fmt(f),
-            MeterUsageErrorKind::InvalidUsageAllocationsException(_inner) => _inner.fmt(f),
-            MeterUsageErrorKind::InvalidUsageDimensionException(_inner) => _inner.fmt(f),
-            MeterUsageErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            MeterUsageErrorKind::TimestampOutOfBoundsException(_inner) => _inner.fmt(f),
-            MeterUsageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            MeterUsageErrorKind::CustomerNotEntitledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            MeterUsageErrorKind::DuplicateRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            MeterUsageErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            MeterUsageErrorKind::InvalidEndpointRegionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            MeterUsageErrorKind::InvalidProductCodeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            MeterUsageErrorKind::InvalidTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            MeterUsageErrorKind::InvalidUsageAllocationsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            MeterUsageErrorKind::InvalidUsageDimensionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            MeterUsageErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            MeterUsageErrorKind::TimestampOutOfBoundsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            MeterUsageErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1006,80 +1058,65 @@ impl aws_smithy_types::retry::ProvideErrorKind for MeterUsageError {
 }
 impl MeterUsageError {
     /// Creates a new `MeterUsageError`.
-    pub fn new(kind: MeterUsageErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `MeterUsageError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: MeterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `MeterUsageError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: MeterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: MeterUsageErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `MeterUsageError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: MeterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `MeterUsageError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: MeterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `MeterUsageErrorKind::CustomerNotEntitledException`.
     pub fn is_customer_not_entitled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            MeterUsageErrorKind::CustomerNotEntitledException(_)
-        )
+        matches!(&self.kind, MeterUsageErrorKind::CustomerNotEntitledException(_))
     }
     /// Returns `true` if the error kind is `MeterUsageErrorKind::DuplicateRequestException`.
     pub fn is_duplicate_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            MeterUsageErrorKind::DuplicateRequestException(_)
-        )
+        matches!(&self.kind, MeterUsageErrorKind::DuplicateRequestException(_))
     }
     /// Returns `true` if the error kind is `MeterUsageErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            MeterUsageErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, MeterUsageErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `MeterUsageErrorKind::InvalidEndpointRegionException`.
     pub fn is_invalid_endpoint_region_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            MeterUsageErrorKind::InvalidEndpointRegionException(_)
-        )
+        matches!(&self.kind, MeterUsageErrorKind::InvalidEndpointRegionException(_))
     }
     /// Returns `true` if the error kind is `MeterUsageErrorKind::InvalidProductCodeException`.
     pub fn is_invalid_product_code_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            MeterUsageErrorKind::InvalidProductCodeException(_)
-        )
+        matches!(&self.kind, MeterUsageErrorKind::InvalidProductCodeException(_))
     }
     /// Returns `true` if the error kind is `MeterUsageErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
@@ -1087,17 +1124,11 @@ impl MeterUsageError {
     }
     /// Returns `true` if the error kind is `MeterUsageErrorKind::InvalidUsageAllocationsException`.
     pub fn is_invalid_usage_allocations_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            MeterUsageErrorKind::InvalidUsageAllocationsException(_)
-        )
+        matches!(&self.kind, MeterUsageErrorKind::InvalidUsageAllocationsException(_))
     }
     /// Returns `true` if the error kind is `MeterUsageErrorKind::InvalidUsageDimensionException`.
     pub fn is_invalid_usage_dimension_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            MeterUsageErrorKind::InvalidUsageDimensionException(_)
-        )
+        matches!(&self.kind, MeterUsageErrorKind::InvalidUsageDimensionException(_))
     }
     /// Returns `true` if the error kind is `MeterUsageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -1105,50 +1136,67 @@ impl MeterUsageError {
     }
     /// Returns `true` if the error kind is `MeterUsageErrorKind::TimestampOutOfBoundsException`.
     pub fn is_timestamp_out_of_bounds_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            MeterUsageErrorKind::TimestampOutOfBoundsException(_)
-        )
+        matches!(&self.kind, MeterUsageErrorKind::TimestampOutOfBoundsException(_))
     }
 }
 impl std::error::Error for MeterUsageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            MeterUsageErrorKind::CustomerNotEntitledException(_inner) => Some(_inner),
-            MeterUsageErrorKind::DuplicateRequestException(_inner) => Some(_inner),
-            MeterUsageErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            MeterUsageErrorKind::InvalidEndpointRegionException(_inner) => Some(_inner),
-            MeterUsageErrorKind::InvalidProductCodeException(_inner) => Some(_inner),
-            MeterUsageErrorKind::InvalidTagException(_inner) => Some(_inner),
-            MeterUsageErrorKind::InvalidUsageAllocationsException(_inner) => Some(_inner),
-            MeterUsageErrorKind::InvalidUsageDimensionException(_inner) => Some(_inner),
-            MeterUsageErrorKind::ThrottlingException(_inner) => Some(_inner),
-            MeterUsageErrorKind::TimestampOutOfBoundsException(_inner) => Some(_inner),
-            MeterUsageErrorKind::Unhandled(_inner) => Some(_inner),
+            MeterUsageErrorKind::CustomerNotEntitledException(_inner) =>
+            Some(_inner)
+            ,
+            MeterUsageErrorKind::DuplicateRequestException(_inner) =>
+            Some(_inner)
+            ,
+            MeterUsageErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            MeterUsageErrorKind::InvalidEndpointRegionException(_inner) =>
+            Some(_inner)
+            ,
+            MeterUsageErrorKind::InvalidProductCodeException(_inner) =>
+            Some(_inner)
+            ,
+            MeterUsageErrorKind::InvalidTagException(_inner) =>
+            Some(_inner)
+            ,
+            MeterUsageErrorKind::InvalidUsageAllocationsException(_inner) =>
+            Some(_inner)
+            ,
+            MeterUsageErrorKind::InvalidUsageDimensionException(_inner) =>
+            Some(_inner)
+            ,
+            MeterUsageErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            MeterUsageErrorKind::TimestampOutOfBoundsException(_inner) =>
+            Some(_inner)
+            ,
+            MeterUsageErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-/// <p>The <code>timestamp</code> value passed in the <code>UsageRecord</code> is out of allowed range.</p>
+/// <p>The <code>timestamp</code> value passed in the <code>UsageRecord</code> is out of allowed range.</p> 
 /// <p>For <code>BatchMeterUsage</code>, if any of the records are outside of the allowed range, the entire batch is not processed. You must remove invalid records and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimestampOutOfBoundsException {
+pub struct TimestampOutOfBoundsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TimestampOutOfBoundsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TimestampOutOfBoundsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TimestampOutOfBoundsException")?;
         if let Some(inner_11) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_11)?;
             }
         }
@@ -1158,7 +1206,7 @@ impl std::fmt::Display for TimestampOutOfBoundsException {
 impl std::error::Error for TimestampOutOfBoundsException {}
 /// See [`TimestampOutOfBoundsException`](crate::error::TimestampOutOfBoundsException).
 pub mod timestamp_out_of_bounds_exception {
-
+    
     /// A builder for [`TimestampOutOfBoundsException`](crate::error::TimestampOutOfBoundsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1172,16 +1220,18 @@ pub mod timestamp_out_of_bounds_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TimestampOutOfBoundsException`](crate::error::TimestampOutOfBoundsException).
         pub fn build(self) -> crate::error::TimestampOutOfBoundsException {
             crate::error::TimestampOutOfBoundsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TimestampOutOfBoundsException {
     /// Creates a new builder-style object to manufacture [`TimestampOutOfBoundsException`](crate::error::TimestampOutOfBoundsException).
@@ -1193,22 +1243,20 @@ impl TimestampOutOfBoundsException {
 /// <p>The usage dimension does not match one of the <code>UsageDimensions</code> associated with products.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidUsageDimensionException {
+pub struct InvalidUsageDimensionException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidUsageDimensionException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidUsageDimensionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidUsageDimensionException")?;
         if let Some(inner_12) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_12)?;
             }
         }
@@ -1218,7 +1266,7 @@ impl std::fmt::Display for InvalidUsageDimensionException {
 impl std::error::Error for InvalidUsageDimensionException {}
 /// See [`InvalidUsageDimensionException`](crate::error::InvalidUsageDimensionException).
 pub mod invalid_usage_dimension_exception {
-
+    
     /// A builder for [`InvalidUsageDimensionException`](crate::error::InvalidUsageDimensionException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1232,16 +1280,18 @@ pub mod invalid_usage_dimension_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidUsageDimensionException`](crate::error::InvalidUsageDimensionException).
         pub fn build(self) -> crate::error::InvalidUsageDimensionException {
             crate::error::InvalidUsageDimensionException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidUsageDimensionException {
     /// Creates a new builder-style object to manufacture [`InvalidUsageDimensionException`](crate::error::InvalidUsageDimensionException).
@@ -1253,22 +1303,20 @@ impl InvalidUsageDimensionException {
 /// <p>The usage allocation objects are invalid, or the number of allocations is greater than 500 for a single usage record.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidUsageAllocationsException {
+pub struct InvalidUsageAllocationsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidUsageAllocationsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidUsageAllocationsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidUsageAllocationsException")?;
         if let Some(inner_13) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_13)?;
             }
         }
@@ -1278,7 +1326,7 @@ impl std::fmt::Display for InvalidUsageAllocationsException {
 impl std::error::Error for InvalidUsageAllocationsException {}
 /// See [`InvalidUsageAllocationsException`](crate::error::InvalidUsageAllocationsException).
 pub mod invalid_usage_allocations_exception {
-
+    
     /// A builder for [`InvalidUsageAllocationsException`](crate::error::InvalidUsageAllocationsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1292,16 +1340,18 @@ pub mod invalid_usage_allocations_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidUsageAllocationsException`](crate::error::InvalidUsageAllocationsException).
         pub fn build(self) -> crate::error::InvalidUsageAllocationsException {
             crate::error::InvalidUsageAllocationsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidUsageAllocationsException {
     /// Creates a new builder-style object to manufacture [`InvalidUsageAllocationsException`](crate::error::InvalidUsageAllocationsException).
@@ -1313,22 +1363,20 @@ impl InvalidUsageAllocationsException {
 /// <p>The tag is invalid, or the number of tags is greater than 5.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidTagException {
+pub struct InvalidTagException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidTagException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidTagException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTagException")?;
         if let Some(inner_14) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_14)?;
             }
         }
@@ -1338,7 +1386,7 @@ impl std::fmt::Display for InvalidTagException {
 impl std::error::Error for InvalidTagException {}
 /// See [`InvalidTagException`](crate::error::InvalidTagException).
 pub mod invalid_tag_exception {
-
+    
     /// A builder for [`InvalidTagException`](crate::error::InvalidTagException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1352,16 +1400,18 @@ pub mod invalid_tag_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidTagException`](crate::error::InvalidTagException).
         pub fn build(self) -> crate::error::InvalidTagException {
             crate::error::InvalidTagException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidTagException {
     /// Creates a new builder-style object to manufacture [`InvalidTagException`](crate::error::InvalidTagException).
@@ -1373,22 +1423,20 @@ impl InvalidTagException {
 /// <p>The endpoint being called is in a AWS Region different from your EC2 instance, ECS task, or EKS pod. The Region of the Metering Service endpoint and the AWS Region of the resource must match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidEndpointRegionException {
+pub struct InvalidEndpointRegionException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidEndpointRegionException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidEndpointRegionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEndpointRegionException")?;
         if let Some(inner_15) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_15)?;
             }
         }
@@ -1398,7 +1446,7 @@ impl std::fmt::Display for InvalidEndpointRegionException {
 impl std::error::Error for InvalidEndpointRegionException {}
 /// See [`InvalidEndpointRegionException`](crate::error::InvalidEndpointRegionException).
 pub mod invalid_endpoint_region_exception {
-
+    
     /// A builder for [`InvalidEndpointRegionException`](crate::error::InvalidEndpointRegionException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1412,16 +1460,18 @@ pub mod invalid_endpoint_region_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidEndpointRegionException`](crate::error::InvalidEndpointRegionException).
         pub fn build(self) -> crate::error::InvalidEndpointRegionException {
             crate::error::InvalidEndpointRegionException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidEndpointRegionException {
     /// Creates a new builder-style object to manufacture [`InvalidEndpointRegionException`](crate::error::InvalidEndpointRegionException).
@@ -1433,22 +1483,20 @@ impl InvalidEndpointRegionException {
 /// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given {<code>usageDimension</code>, <code>timestamp</code>} with a different <code>usageQuantity</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DuplicateRequestException {
+pub struct DuplicateRequestException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DuplicateRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DuplicateRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateRequestException")?;
         if let Some(inner_16) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_16)?;
             }
         }
@@ -1458,7 +1506,7 @@ impl std::fmt::Display for DuplicateRequestException {
 impl std::error::Error for DuplicateRequestException {}
 /// See [`DuplicateRequestException`](crate::error::DuplicateRequestException).
 pub mod duplicate_request_exception {
-
+    
     /// A builder for [`DuplicateRequestException`](crate::error::DuplicateRequestException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1472,16 +1520,18 @@ pub mod duplicate_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DuplicateRequestException`](crate::error::DuplicateRequestException).
         pub fn build(self) -> crate::error::DuplicateRequestException {
             crate::error::DuplicateRequestException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DuplicateRequestException {
     /// Creates a new builder-style object to manufacture [`DuplicateRequestException`](crate::error::DuplicateRequestException).
@@ -1495,15 +1545,15 @@ impl DuplicateRequestException {
 #[derive(std::fmt::Debug)]
 pub struct BatchMeterUsageError {
     /// Kind of error that occurred.
-    pub kind: BatchMeterUsageErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: BatchMeterUsageErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for BatchMeterUsageError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: BatchMeterUsageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1527,32 +1577,52 @@ pub enum BatchMeterUsageErrorKind {
     InvalidUsageDimensionException(crate::error::InvalidUsageDimensionException),
     /// <p>The calls to the API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The <code>timestamp</code> value passed in the <code>UsageRecord</code> is out of allowed range.</p>
+    /// <p>The <code>timestamp</code> value passed in the <code>UsageRecord</code> is out of allowed range.</p> 
     /// <p>For <code>BatchMeterUsage</code>, if any of the records are outside of the allowed range, the entire batch is not processed. You must remove invalid records and try again.</p>
     TimestampOutOfBoundsException(crate::error::TimestampOutOfBoundsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchMeterUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchMeterUsageErrorKind::DisabledApiException(_inner) => _inner.fmt(f),
-            BatchMeterUsageErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            BatchMeterUsageErrorKind::InvalidCustomerIdentifierException(_inner) => _inner.fmt(f),
-            BatchMeterUsageErrorKind::InvalidProductCodeException(_inner) => _inner.fmt(f),
-            BatchMeterUsageErrorKind::InvalidTagException(_inner) => _inner.fmt(f),
-            BatchMeterUsageErrorKind::InvalidUsageAllocationsException(_inner) => _inner.fmt(f),
-            BatchMeterUsageErrorKind::InvalidUsageDimensionException(_inner) => _inner.fmt(f),
-            BatchMeterUsageErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            BatchMeterUsageErrorKind::TimestampOutOfBoundsException(_inner) => _inner.fmt(f),
-            BatchMeterUsageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            BatchMeterUsageErrorKind::DisabledApiException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchMeterUsageErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchMeterUsageErrorKind::InvalidCustomerIdentifierException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchMeterUsageErrorKind::InvalidProductCodeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchMeterUsageErrorKind::InvalidTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchMeterUsageErrorKind::InvalidUsageAllocationsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchMeterUsageErrorKind::InvalidUsageDimensionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchMeterUsageErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchMeterUsageErrorKind::TimestampOutOfBoundsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchMeterUsageErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1566,73 +1636,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchMeterUsageError {
 }
 impl BatchMeterUsageError {
     /// Creates a new `BatchMeterUsageError`.
-    pub fn new(kind: BatchMeterUsageErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `BatchMeterUsageError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: BatchMeterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `BatchMeterUsageError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: BatchMeterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: BatchMeterUsageErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `BatchMeterUsageError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: BatchMeterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `BatchMeterUsageError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: BatchMeterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::DisabledApiException`.
     pub fn is_disabled_api_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchMeterUsageErrorKind::DisabledApiException(_)
-        )
+        matches!(&self.kind, BatchMeterUsageErrorKind::DisabledApiException(_))
     }
     /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchMeterUsageErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, BatchMeterUsageErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::InvalidCustomerIdentifierException`.
     pub fn is_invalid_customer_identifier_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchMeterUsageErrorKind::InvalidCustomerIdentifierException(_)
-        )
+        matches!(&self.kind, BatchMeterUsageErrorKind::InvalidCustomerIdentifierException(_))
     }
     /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::InvalidProductCodeException`.
     pub fn is_invalid_product_code_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchMeterUsageErrorKind::InvalidProductCodeException(_)
-        )
+        matches!(&self.kind, BatchMeterUsageErrorKind::InvalidProductCodeException(_))
     }
     /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
@@ -1640,17 +1698,11 @@ impl BatchMeterUsageError {
     }
     /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::InvalidUsageAllocationsException`.
     pub fn is_invalid_usage_allocations_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchMeterUsageErrorKind::InvalidUsageAllocationsException(_)
-        )
+        matches!(&self.kind, BatchMeterUsageErrorKind::InvalidUsageAllocationsException(_))
     }
     /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::InvalidUsageDimensionException`.
     pub fn is_invalid_usage_dimension_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchMeterUsageErrorKind::InvalidUsageDimensionException(_)
-        )
+        matches!(&self.kind, BatchMeterUsageErrorKind::InvalidUsageDimensionException(_))
     }
     /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -1658,25 +1710,42 @@ impl BatchMeterUsageError {
     }
     /// Returns `true` if the error kind is `BatchMeterUsageErrorKind::TimestampOutOfBoundsException`.
     pub fn is_timestamp_out_of_bounds_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchMeterUsageErrorKind::TimestampOutOfBoundsException(_)
-        )
+        matches!(&self.kind, BatchMeterUsageErrorKind::TimestampOutOfBoundsException(_))
     }
 }
 impl std::error::Error for BatchMeterUsageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchMeterUsageErrorKind::DisabledApiException(_inner) => Some(_inner),
-            BatchMeterUsageErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            BatchMeterUsageErrorKind::InvalidCustomerIdentifierException(_inner) => Some(_inner),
-            BatchMeterUsageErrorKind::InvalidProductCodeException(_inner) => Some(_inner),
-            BatchMeterUsageErrorKind::InvalidTagException(_inner) => Some(_inner),
-            BatchMeterUsageErrorKind::InvalidUsageAllocationsException(_inner) => Some(_inner),
-            BatchMeterUsageErrorKind::InvalidUsageDimensionException(_inner) => Some(_inner),
-            BatchMeterUsageErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchMeterUsageErrorKind::TimestampOutOfBoundsException(_inner) => Some(_inner),
-            BatchMeterUsageErrorKind::Unhandled(_inner) => Some(_inner),
+            BatchMeterUsageErrorKind::DisabledApiException(_inner) =>
+            Some(_inner)
+            ,
+            BatchMeterUsageErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            BatchMeterUsageErrorKind::InvalidCustomerIdentifierException(_inner) =>
+            Some(_inner)
+            ,
+            BatchMeterUsageErrorKind::InvalidProductCodeException(_inner) =>
+            Some(_inner)
+            ,
+            BatchMeterUsageErrorKind::InvalidTagException(_inner) =>
+            Some(_inner)
+            ,
+            BatchMeterUsageErrorKind::InvalidUsageAllocationsException(_inner) =>
+            Some(_inner)
+            ,
+            BatchMeterUsageErrorKind::InvalidUsageDimensionException(_inner) =>
+            Some(_inner)
+            ,
+            BatchMeterUsageErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            BatchMeterUsageErrorKind::TimestampOutOfBoundsException(_inner) =>
+            Some(_inner)
+            ,
+            BatchMeterUsageErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1684,22 +1753,20 @@ impl std::error::Error for BatchMeterUsageError {
 /// <p>You have metered usage for a <code>CustomerIdentifier</code> that does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidCustomerIdentifierException {
+pub struct InvalidCustomerIdentifierException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidCustomerIdentifierException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidCustomerIdentifierException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCustomerIdentifierException")?;
         if let Some(inner_17) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_17)?;
             }
         }
@@ -1709,7 +1776,7 @@ impl std::fmt::Display for InvalidCustomerIdentifierException {
 impl std::error::Error for InvalidCustomerIdentifierException {}
 /// See [`InvalidCustomerIdentifierException`](crate::error::InvalidCustomerIdentifierException).
 pub mod invalid_customer_identifier_exception {
-
+    
     /// A builder for [`InvalidCustomerIdentifierException`](crate::error::InvalidCustomerIdentifierException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1723,16 +1790,18 @@ pub mod invalid_customer_identifier_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidCustomerIdentifierException`](crate::error::InvalidCustomerIdentifierException).
         pub fn build(self) -> crate::error::InvalidCustomerIdentifierException {
             crate::error::InvalidCustomerIdentifierException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidCustomerIdentifierException {
     /// Creates a new builder-style object to manufacture [`InvalidCustomerIdentifierException`](crate::error::InvalidCustomerIdentifierException).
@@ -1741,31 +1810,32 @@ impl InvalidCustomerIdentifierException {
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

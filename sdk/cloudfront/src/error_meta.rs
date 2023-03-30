@@ -16,9 +16,7 @@ pub enum Error {
     /// <p>You can't change the value of a public key.</p>
     CannotChangeImmutablePublicKeyFields(crate::error::CannotChangeImmutablePublicKeyFields),
     /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
-    CloudFrontOriginAccessIdentityAlreadyExists(
-        crate::error::CloudFrontOriginAccessIdentityAlreadyExists,
-    ),
+    CloudFrontOriginAccessIdentityAlreadyExists(crate::error::CloudFrontOriginAccessIdentityAlreadyExists),
     /// <p>The Origin Access Identity specified is already in use.</p>
     CloudFrontOriginAccessIdentityInUse(crate::error::CloudFrontOriginAccessIdentityInUse),
     /// <p>A continuous deployment policy with this configuration already exists.</p>
@@ -34,9 +32,7 @@ pub enum Error {
     /// <p>The specified configuration for field-level encryption is in use.</p>
     FieldLevelEncryptionConfigInUse(crate::error::FieldLevelEncryptionConfigInUse),
     /// <p>The specified profile for field-level encryption already exists.</p>
-    FieldLevelEncryptionProfileAlreadyExists(
-        crate::error::FieldLevelEncryptionProfileAlreadyExists,
-    ),
+    FieldLevelEncryptionProfileAlreadyExists(crate::error::FieldLevelEncryptionProfileAlreadyExists),
     /// <p>The specified profile for field-level encryption is in use.</p>
     FieldLevelEncryptionProfileInUse(crate::error::FieldLevelEncryptionProfileInUse),
     /// <p>The maximum size of a profile for field-level encryption was exceeded.</p>
@@ -50,9 +46,7 @@ pub enum Error {
     /// <p>You cannot delete a managed policy.</p>
     IllegalDelete(crate::error::IllegalDelete),
     /// <p>The specified configuration for field-level encryption can't be associated with the specified cache behavior.</p>
-    IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(
-        crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior,
-    ),
+    IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior),
     /// <p>An origin cannot contain both an origin access control (OAC) and an origin access identity (OAI).</p>
     IllegalOriginAccessConfiguration(crate::error::IllegalOriginAccessConfiguration),
     /// <p>The update contains modifications that are not allowed.</p>
@@ -187,7 +181,7 @@ pub enum Error {
     StreamingDistributionNotDisabled(crate::error::StreamingDistributionNotDisabled),
     /// <p>The CloudFront function failed.</p>
     TestFunctionFailed(crate::error::TestFunctionFailed),
-    /// <p>The length of the <code>Content-Security-Policy</code> header value in the response headers policy exceeds the maximum.</p>
+    /// <p>The length of the <code>Content-Security-Policy</code> header value in the response headers policy exceeds the maximum.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooLongCspInResponseHeadersPolicy(crate::error::TooLongCspInResponseHeadersPolicy),
     /// <p>You cannot create more cache behaviors for the distribution.</p>
@@ -206,73 +200,45 @@ pub enum Error {
     TooManyCookiesInCachePolicy(crate::error::TooManyCookiesInCachePolicy),
     /// <p>The number of cookies in the origin request policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyCookiesInOriginRequestPolicy(crate::error::TooManyCookiesInOriginRequestPolicy),
-    /// <p>The number of custom headers in the response headers policy exceeds the maximum.</p>
+    /// <p>The number of custom headers in the response headers policy exceeds the maximum.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyCustomHeadersInResponseHeadersPolicy(
-        crate::error::TooManyCustomHeadersInResponseHeadersPolicy,
-    ),
+    TooManyCustomHeadersInResponseHeadersPolicy(crate::error::TooManyCustomHeadersInResponseHeadersPolicy),
     /// <p>Your request contains more CNAMEs than are allowed per distribution.</p>
     TooManyDistributionCnamEs(crate::error::TooManyDistributionCnamEs),
     /// <p>Processing your request would cause you to exceed the maximum number of distributions allowed.</p>
     TooManyDistributions(crate::error::TooManyDistributions),
     /// <p>The maximum number of distributions have been associated with the specified cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyDistributionsAssociatedToCachePolicy(
-        crate::error::TooManyDistributionsAssociatedToCachePolicy,
-    ),
+    TooManyDistributionsAssociatedToCachePolicy(crate::error::TooManyDistributionsAssociatedToCachePolicy),
     /// <p>The maximum number of distributions have been associated with the specified configuration for field-level encryption.</p>
-    TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(
-        crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig,
-    ),
+    TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig),
     /// <p>The number of distributions that reference this key group is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyDistributionsAssociatedToKeyGroup(
-        crate::error::TooManyDistributionsAssociatedToKeyGroup,
-    ),
-    /// <p>The maximum number of distributions have been associated with the specified origin access control.</p>
+    TooManyDistributionsAssociatedToKeyGroup(crate::error::TooManyDistributionsAssociatedToKeyGroup),
+    /// <p>The maximum number of distributions have been associated with the specified origin access control.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyDistributionsAssociatedToOriginAccessControl(
-        crate::error::TooManyDistributionsAssociatedToOriginAccessControl,
-    ),
+    TooManyDistributionsAssociatedToOriginAccessControl(crate::error::TooManyDistributionsAssociatedToOriginAccessControl),
     /// <p>The maximum number of distributions have been associated with the specified origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyDistributionsAssociatedToOriginRequestPolicy(
-        crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy,
-    ),
-    /// <p>The maximum number of distributions have been associated with the specified response headers policy.</p>
+    TooManyDistributionsAssociatedToOriginRequestPolicy(crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy),
+    /// <p>The maximum number of distributions have been associated with the specified response headers policy.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyDistributionsAssociatedToResponseHeadersPolicy(
-        crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy,
-    ),
+    TooManyDistributionsAssociatedToResponseHeadersPolicy(crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy),
     /// <p>You have reached the maximum number of distributions that are associated with a CloudFront function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyDistributionsWithFunctionAssociations(
-        crate::error::TooManyDistributionsWithFunctionAssociations,
-    ),
+    TooManyDistributionsWithFunctionAssociations(crate::error::TooManyDistributionsWithFunctionAssociations),
     /// <p>Processing your request would cause the maximum number of distributions with Lambda@Edge function associations per owner to be exceeded.</p>
-    TooManyDistributionsWithLambdaAssociations(
-        crate::error::TooManyDistributionsWithLambdaAssociations,
-    ),
+    TooManyDistributionsWithLambdaAssociations(crate::error::TooManyDistributionsWithLambdaAssociations),
     /// <p>The maximum number of distributions have been associated with the specified Lambda@Edge function.</p>
-    TooManyDistributionsWithSingleFunctionArn(
-        crate::error::TooManyDistributionsWithSingleFunctionArn,
-    ),
+    TooManyDistributionsWithSingleFunctionArn(crate::error::TooManyDistributionsWithSingleFunctionArn),
     /// <p>The maximum number of configurations for field-level encryption have been created.</p>
     TooManyFieldLevelEncryptionConfigs(crate::error::TooManyFieldLevelEncryptionConfigs),
     /// <p>The maximum number of content type profiles for field-level encryption have been created.</p>
-    TooManyFieldLevelEncryptionContentTypeProfiles(
-        crate::error::TooManyFieldLevelEncryptionContentTypeProfiles,
-    ),
+    TooManyFieldLevelEncryptionContentTypeProfiles(crate::error::TooManyFieldLevelEncryptionContentTypeProfiles),
     /// <p>The maximum number of encryption entities for field-level encryption have been created.</p>
-    TooManyFieldLevelEncryptionEncryptionEntities(
-        crate::error::TooManyFieldLevelEncryptionEncryptionEntities,
-    ),
+    TooManyFieldLevelEncryptionEncryptionEntities(crate::error::TooManyFieldLevelEncryptionEncryptionEntities),
     /// <p>The maximum number of field patterns for field-level encryption have been created.</p>
-    TooManyFieldLevelEncryptionFieldPatterns(
-        crate::error::TooManyFieldLevelEncryptionFieldPatterns,
-    ),
+    TooManyFieldLevelEncryptionFieldPatterns(crate::error::TooManyFieldLevelEncryptionFieldPatterns),
     /// <p>The maximum number of profiles for field-level encryption have been created.</p>
     TooManyFieldLevelEncryptionProfiles(crate::error::TooManyFieldLevelEncryptionProfiles),
     /// <p>The maximum number of query arg profiles for field-level encryption have been created.</p>
-    TooManyFieldLevelEncryptionQueryArgProfiles(
-        crate::error::TooManyFieldLevelEncryptionQueryArgProfiles,
-    ),
+    TooManyFieldLevelEncryptionQueryArgProfiles(crate::error::TooManyFieldLevelEncryptionQueryArgProfiles),
     /// <p>You have reached the maximum number of CloudFront function associations for this distribution. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyFunctionAssociations(crate::error::TooManyFunctionAssociations),
     /// <p>You have reached the maximum number of CloudFront functions for this Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -288,12 +254,10 @@ pub enum Error {
     /// <p>You have reached the maximum number of key groups for this Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyKeyGroups(crate::error::TooManyKeyGroups),
     /// <p>The number of key groups referenced by this distribution is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyKeyGroupsAssociatedToDistribution(
-        crate::error::TooManyKeyGroupsAssociatedToDistribution,
-    ),
+    TooManyKeyGroupsAssociatedToDistribution(crate::error::TooManyKeyGroupsAssociatedToDistribution),
     /// <p>Your request contains more Lambda@Edge function associations than are allowed per distribution.</p>
     TooManyLambdaFunctionAssociations(crate::error::TooManyLambdaFunctionAssociations),
-    /// <p>The number of origin access controls in your Amazon Web Services account exceeds the maximum allowed.</p>
+    /// <p>The number of origin access controls in your Amazon Web Services account exceeds the maximum allowed.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyOriginAccessControls(crate::error::TooManyOriginAccessControls),
     /// <p>Your request contains too many origin custom headers.</p>
@@ -313,17 +277,13 @@ pub enum Error {
     /// <p>The number of query strings in the cache policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyQueryStringsInCachePolicy(crate::error::TooManyQueryStringsInCachePolicy),
     /// <p>The number of query strings in the origin request policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyQueryStringsInOriginRequestPolicy(
-        crate::error::TooManyQueryStringsInOriginRequestPolicy,
-    ),
+    TooManyQueryStringsInOriginRequestPolicy(crate::error::TooManyQueryStringsInOriginRequestPolicy),
     /// <p>You have reached the maximum number of real-time log configurations for this Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyRealtimeLogConfigs(crate::error::TooManyRealtimeLogConfigs),
-    /// <p>The number of headers in <code>RemoveHeadersConfig</code> in the response headers policy exceeds the maximum.</p>
+    /// <p>The number of headers in <code>RemoveHeadersConfig</code> in the response headers policy exceeds the maximum.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyRemoveHeadersInResponseHeadersPolicy(
-        crate::error::TooManyRemoveHeadersInResponseHeadersPolicy,
-    ),
-    /// <p>You have reached the maximum number of response headers policies for this Amazon Web Services account.</p>
+    TooManyRemoveHeadersInResponseHeadersPolicy(crate::error::TooManyRemoveHeadersInResponseHeadersPolicy),
+    /// <p>You have reached the maximum number of response headers policies for this Amazon Web Services account.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyResponseHeadersPolicies(crate::error::TooManyResponseHeadersPolicies),
     /// <p>Your request contains more CNAMEs than are allowed per distribution.</p>
@@ -338,15 +298,15 @@ pub enum Error {
     TrustedSignerDoesNotExist(crate::error::TrustedSignerDoesNotExist),
     /// <p>This operation is not supported in this region.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -372,9 +332,7 @@ impl std::fmt::Display for Error {
             Error::FunctionInUse(inner) => inner.fmt(f),
             Error::FunctionSizeLimitExceeded(inner) => inner.fmt(f),
             Error::IllegalDelete(inner) => inner.fmt(f),
-            Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => {
-                inner.fmt(f)
-            }
+            Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => inner.fmt(f),
             Error::IllegalOriginAccessConfiguration(inner) => inner.fmt(f),
             Error::IllegalUpdate(inner) => inner.fmt(f),
             Error::InconsistentQuantities(inner) => inner.fmt(f),
@@ -455,9 +413,7 @@ impl std::fmt::Display for Error {
             Error::TooManyDistributionCnamEs(inner) => inner.fmt(f),
             Error::TooManyDistributions(inner) => inner.fmt(f),
             Error::TooManyDistributionsAssociatedToCachePolicy(inner) => inner.fmt(f),
-            Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => {
-                inner.fmt(f)
-            }
+            Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => inner.fmt(f),
             Error::TooManyDistributionsAssociatedToKeyGroup(inner) => inner.fmt(f),
             Error::TooManyDistributionsAssociatedToOriginAccessControl(inner) => inner.fmt(f),
             Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => inner.fmt(f),
@@ -499,19 +455,14 @@ impl std::fmt::Display for Error {
             Error::TrustedKeyGroupDoesNotExist(inner) => inner.fmt(f),
             Error::TrustedSignerDoesNotExist(inner) => inner.fmt(f),
             Error::UnsupportedOperation(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateAliasError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateAliasError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AssociateAliasError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -519,38 +470,19 @@ where
 impl From<crate::error::AssociateAliasError> for Error {
     fn from(err: crate::error::AssociateAliasError) -> Self {
         match err.kind {
-            crate::error::AssociateAliasErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::AssociateAliasErrorKind::IllegalUpdate(inner) => {
-                Error::IllegalUpdate(inner)
-            }
-            crate::error::AssociateAliasErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::AssociateAliasErrorKind::NoSuchDistribution(inner) => {
-                Error::NoSuchDistribution(inner)
-            }
-            crate::error::AssociateAliasErrorKind::TooManyDistributionCnamEs(inner) => {
-                Error::TooManyDistributionCnamEs(inner)
-            }
-            crate::error::AssociateAliasErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::AssociateAliasErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::AssociateAliasErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+            crate::error::AssociateAliasErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::AssociateAliasErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::error::AssociateAliasErrorKind::TooManyDistributionCnamEs(inner) => Error::TooManyDistributionCnamEs(inner),
+            crate::error::AssociateAliasErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CopyDistributionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CopyDistributionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CopyDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CopyDistributionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -625,17 +557,10 @@ impl From<crate::error::CopyDistributionError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCachePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateCachePolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCachePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateCachePolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -643,56 +568,22 @@ where
 impl From<crate::error::CreateCachePolicyError> for Error {
     fn from(err: crate::error::CreateCachePolicyError) -> Self {
         match err.kind {
-            crate::error::CreateCachePolicyErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::CreateCachePolicyErrorKind::CachePolicyAlreadyExists(inner) => {
-                Error::CachePolicyAlreadyExists(inner)
-            }
-            crate::error::CreateCachePolicyErrorKind::InconsistentQuantities(inner) => {
-                Error::InconsistentQuantities(inner)
-            }
-            crate::error::CreateCachePolicyErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::CreateCachePolicyErrorKind::TooManyCachePolicies(inner) => {
-                Error::TooManyCachePolicies(inner)
-            }
-            crate::error::CreateCachePolicyErrorKind::TooManyCookiesInCachePolicy(inner) => {
-                Error::TooManyCookiesInCachePolicy(inner)
-            }
-            crate::error::CreateCachePolicyErrorKind::TooManyHeadersInCachePolicy(inner) => {
-                Error::TooManyHeadersInCachePolicy(inner)
-            }
-            crate::error::CreateCachePolicyErrorKind::TooManyQueryStringsInCachePolicy(inner) => {
-                Error::TooManyQueryStringsInCachePolicy(inner)
-            }
-            crate::error::CreateCachePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateCachePolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::CreateCachePolicyErrorKind::CachePolicyAlreadyExists(inner) => Error::CachePolicyAlreadyExists(inner),
+            crate::error::CreateCachePolicyErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::CreateCachePolicyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreateCachePolicyErrorKind::TooManyCachePolicies(inner) => Error::TooManyCachePolicies(inner),
+            crate::error::CreateCachePolicyErrorKind::TooManyCookiesInCachePolicy(inner) => Error::TooManyCookiesInCachePolicy(inner),
+            crate::error::CreateCachePolicyErrorKind::TooManyHeadersInCachePolicy(inner) => Error::TooManyHeadersInCachePolicy(inner),
+            crate::error::CreateCachePolicyErrorKind::TooManyQueryStringsInCachePolicy(inner) => Error::TooManyQueryStringsInCachePolicy(inner),
+            crate::error::CreateCachePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::CreateCloudFrontOriginAccessIdentityError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::CreateCloudFrontOriginAccessIdentityError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCloudFrontOriginAccessIdentityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateCloudFrontOriginAccessIdentityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -709,22 +600,10 @@ impl From<crate::error::CreateCloudFrontOriginAccessIdentityError> for Error {
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::CreateContinuousDeploymentPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::CreateContinuousDeploymentPolicyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateContinuousDeploymentPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateContinuousDeploymentPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -742,17 +621,10 @@ impl From<crate::error::CreateContinuousDeploymentPolicyError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDistributionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateDistributionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateDistributionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -829,18 +701,10 @@ impl From<crate::error::CreateDistributionError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDistributionWithTagsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateDistributionWithTagsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDistributionWithTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateDistributionWithTagsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -916,22 +780,10 @@ impl From<crate::error::CreateDistributionWithTagsError> for Error {
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::CreateFieldLevelEncryptionConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::CreateFieldLevelEncryptionConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFieldLevelEncryptionConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateFieldLevelEncryptionConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -951,22 +803,10 @@ impl From<crate::error::CreateFieldLevelEncryptionConfigError> for Error {
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::CreateFieldLevelEncryptionProfileError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::CreateFieldLevelEncryptionProfileError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFieldLevelEncryptionProfileError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateFieldLevelEncryptionProfileError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -986,15 +826,10 @@ impl From<crate::error::CreateFieldLevelEncryptionProfileError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFunctionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFunctionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateFunctionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1002,38 +837,19 @@ where
 impl From<crate::error::CreateFunctionError> for Error {
     fn from(err: crate::error::CreateFunctionError) -> Self {
         match err.kind {
-            crate::error::CreateFunctionErrorKind::FunctionAlreadyExists(inner) => {
-                Error::FunctionAlreadyExists(inner)
-            }
-            crate::error::CreateFunctionErrorKind::FunctionSizeLimitExceeded(inner) => {
-                Error::FunctionSizeLimitExceeded(inner)
-            }
-            crate::error::CreateFunctionErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::CreateFunctionErrorKind::TooManyFunctions(inner) => {
-                Error::TooManyFunctions(inner)
-            }
-            crate::error::CreateFunctionErrorKind::UnsupportedOperation(inner) => {
-                Error::UnsupportedOperation(inner)
-            }
-            crate::error::CreateFunctionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateFunctionErrorKind::FunctionAlreadyExists(inner) => Error::FunctionAlreadyExists(inner),
+            crate::error::CreateFunctionErrorKind::FunctionSizeLimitExceeded(inner) => Error::FunctionSizeLimitExceeded(inner),
+            crate::error::CreateFunctionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreateFunctionErrorKind::TooManyFunctions(inner) => Error::TooManyFunctions(inner),
+            crate::error::CreateFunctionErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::error::CreateFunctionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateInvalidationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateInvalidationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateInvalidationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateInvalidationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1041,42 +857,21 @@ where
 impl From<crate::error::CreateInvalidationError> for Error {
     fn from(err: crate::error::CreateInvalidationError) -> Self {
         match err.kind {
-            crate::error::CreateInvalidationErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::CreateInvalidationErrorKind::BatchTooLarge(inner) => {
-                Error::BatchTooLarge(inner)
-            }
-            crate::error::CreateInvalidationErrorKind::InconsistentQuantities(inner) => {
-                Error::InconsistentQuantities(inner)
-            }
-            crate::error::CreateInvalidationErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::CreateInvalidationErrorKind::MissingBody(inner) => {
-                Error::MissingBody(inner)
-            }
-            crate::error::CreateInvalidationErrorKind::NoSuchDistribution(inner) => {
-                Error::NoSuchDistribution(inner)
-            }
-            crate::error::CreateInvalidationErrorKind::TooManyInvalidationsInProgress(inner) => {
-                Error::TooManyInvalidationsInProgress(inner)
-            }
-            crate::error::CreateInvalidationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateInvalidationErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::CreateInvalidationErrorKind::BatchTooLarge(inner) => Error::BatchTooLarge(inner),
+            crate::error::CreateInvalidationErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::CreateInvalidationErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreateInvalidationErrorKind::MissingBody(inner) => Error::MissingBody(inner),
+            crate::error::CreateInvalidationErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::error::CreateInvalidationErrorKind::TooManyInvalidationsInProgress(inner) => Error::TooManyInvalidationsInProgress(inner),
+            crate::error::CreateInvalidationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateKeyGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateKeyGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateKeyGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1084,36 +879,18 @@ where
 impl From<crate::error::CreateKeyGroupError> for Error {
     fn from(err: crate::error::CreateKeyGroupError) -> Self {
         match err.kind {
-            crate::error::CreateKeyGroupErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::CreateKeyGroupErrorKind::KeyGroupAlreadyExists(inner) => {
-                Error::KeyGroupAlreadyExists(inner)
-            }
-            crate::error::CreateKeyGroupErrorKind::TooManyKeyGroups(inner) => {
-                Error::TooManyKeyGroups(inner)
-            }
-            crate::error::CreateKeyGroupErrorKind::TooManyPublicKeysInKeyGroup(inner) => {
-                Error::TooManyPublicKeysInKeyGroup(inner)
-            }
-            crate::error::CreateKeyGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateKeyGroupErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreateKeyGroupErrorKind::KeyGroupAlreadyExists(inner) => Error::KeyGroupAlreadyExists(inner),
+            crate::error::CreateKeyGroupErrorKind::TooManyKeyGroups(inner) => Error::TooManyKeyGroups(inner),
+            crate::error::CreateKeyGroupErrorKind::TooManyPublicKeysInKeyGroup(inner) => Error::TooManyPublicKeysInKeyGroup(inner),
+            crate::error::CreateKeyGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMonitoringSubscriptionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateMonitoringSubscriptionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMonitoringSubscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateMonitoringSubscriptionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1129,18 +906,10 @@ impl From<crate::error::CreateMonitoringSubscriptionError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateOriginAccessControlError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateOriginAccessControlError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateOriginAccessControlError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateOriginAccessControlError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1148,33 +917,17 @@ where
 impl From<crate::error::CreateOriginAccessControlError> for Error {
     fn from(err: crate::error::CreateOriginAccessControlError) -> Self {
         match err.kind {
-            crate::error::CreateOriginAccessControlErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::CreateOriginAccessControlErrorKind::OriginAccessControlAlreadyExists(
-                inner,
-            ) => Error::OriginAccessControlAlreadyExists(inner),
-            crate::error::CreateOriginAccessControlErrorKind::TooManyOriginAccessControls(
-                inner,
-            ) => Error::TooManyOriginAccessControls(inner),
-            crate::error::CreateOriginAccessControlErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateOriginAccessControlErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreateOriginAccessControlErrorKind::OriginAccessControlAlreadyExists(inner) => Error::OriginAccessControlAlreadyExists(inner),
+            crate::error::CreateOriginAccessControlErrorKind::TooManyOriginAccessControls(inner) => Error::TooManyOriginAccessControls(inner),
+            crate::error::CreateOriginAccessControlErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateOriginRequestPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateOriginRequestPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateOriginRequestPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateOriginRequestPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1194,15 +947,10 @@ impl From<crate::error::CreateOriginRequestPolicyError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePublicKeyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePublicKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreatePublicKeyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1210,33 +958,17 @@ where
 impl From<crate::error::CreatePublicKeyError> for Error {
     fn from(err: crate::error::CreatePublicKeyError) -> Self {
         match err.kind {
-            crate::error::CreatePublicKeyErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::CreatePublicKeyErrorKind::PublicKeyAlreadyExists(inner) => {
-                Error::PublicKeyAlreadyExists(inner)
-            }
-            crate::error::CreatePublicKeyErrorKind::TooManyPublicKeys(inner) => {
-                Error::TooManyPublicKeys(inner)
-            }
-            crate::error::CreatePublicKeyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreatePublicKeyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreatePublicKeyErrorKind::PublicKeyAlreadyExists(inner) => Error::PublicKeyAlreadyExists(inner),
+            crate::error::CreatePublicKeyErrorKind::TooManyPublicKeys(inner) => Error::TooManyPublicKeys(inner),
+            crate::error::CreatePublicKeyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRealtimeLogConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateRealtimeLogConfigError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRealtimeLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateRealtimeLogConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1244,36 +976,18 @@ where
 impl From<crate::error::CreateRealtimeLogConfigError> for Error {
     fn from(err: crate::error::CreateRealtimeLogConfigError) -> Self {
         match err.kind {
-            crate::error::CreateRealtimeLogConfigErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::CreateRealtimeLogConfigErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::CreateRealtimeLogConfigErrorKind::RealtimeLogConfigAlreadyExists(
-                inner,
-            ) => Error::RealtimeLogConfigAlreadyExists(inner),
-            crate::error::CreateRealtimeLogConfigErrorKind::TooManyRealtimeLogConfigs(inner) => {
-                Error::TooManyRealtimeLogConfigs(inner)
-            }
-            crate::error::CreateRealtimeLogConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateRealtimeLogConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::CreateRealtimeLogConfigErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreateRealtimeLogConfigErrorKind::RealtimeLogConfigAlreadyExists(inner) => Error::RealtimeLogConfigAlreadyExists(inner),
+            crate::error::CreateRealtimeLogConfigErrorKind::TooManyRealtimeLogConfigs(inner) => Error::TooManyRealtimeLogConfigs(inner),
+            crate::error::CreateRealtimeLogConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateResponseHeadersPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateResponseHeadersPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateResponseHeadersPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateResponseHeadersPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1293,18 +1007,10 @@ impl From<crate::error::CreateResponseHeadersPolicyError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateStreamingDistributionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateStreamingDistributionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateStreamingDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateStreamingDistributionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1329,26 +1035,10 @@ impl From<crate::error::CreateStreamingDistributionError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::CreateStreamingDistributionWithTagsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::CreateStreamingDistributionWithTagsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateStreamingDistributionWithTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateStreamingDistributionWithTagsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1374,17 +1064,10 @@ impl From<crate::error::CreateStreamingDistributionWithTagsError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCachePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteCachePolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCachePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteCachePolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1392,50 +1075,20 @@ where
 impl From<crate::error::DeleteCachePolicyError> for Error {
     fn from(err: crate::error::DeleteCachePolicyError) -> Self {
         match err.kind {
-            crate::error::DeleteCachePolicyErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::DeleteCachePolicyErrorKind::CachePolicyInUse(inner) => {
-                Error::CachePolicyInUse(inner)
-            }
-            crate::error::DeleteCachePolicyErrorKind::IllegalDelete(inner) => {
-                Error::IllegalDelete(inner)
-            }
-            crate::error::DeleteCachePolicyErrorKind::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::error::DeleteCachePolicyErrorKind::NoSuchCachePolicy(inner) => {
-                Error::NoSuchCachePolicy(inner)
-            }
-            crate::error::DeleteCachePolicyErrorKind::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::error::DeleteCachePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteCachePolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::DeleteCachePolicyErrorKind::CachePolicyInUse(inner) => Error::CachePolicyInUse(inner),
+            crate::error::DeleteCachePolicyErrorKind::IllegalDelete(inner) => Error::IllegalDelete(inner),
+            crate::error::DeleteCachePolicyErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::DeleteCachePolicyErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
+            crate::error::DeleteCachePolicyErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::DeleteCachePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DeleteCloudFrontOriginAccessIdentityError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteCloudFrontOriginAccessIdentityError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCloudFrontOriginAccessIdentityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteCloudFrontOriginAccessIdentityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1452,22 +1105,10 @@ impl From<crate::error::DeleteCloudFrontOriginAccessIdentityError> for Error {
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteContinuousDeploymentPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteContinuousDeploymentPolicyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteContinuousDeploymentPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteContinuousDeploymentPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1485,17 +1126,10 @@ impl From<crate::error::DeleteContinuousDeploymentPolicyError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDistributionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteDistributionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteDistributionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1503,43 +1137,19 @@ where
 impl From<crate::error::DeleteDistributionError> for Error {
     fn from(err: crate::error::DeleteDistributionError) -> Self {
         match err.kind {
-            crate::error::DeleteDistributionErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::DeleteDistributionErrorKind::DistributionNotDisabled(inner) => {
-                Error::DistributionNotDisabled(inner)
-            }
-            crate::error::DeleteDistributionErrorKind::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::error::DeleteDistributionErrorKind::NoSuchDistribution(inner) => {
-                Error::NoSuchDistribution(inner)
-            }
-            crate::error::DeleteDistributionErrorKind::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::error::DeleteDistributionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::DeleteDistributionErrorKind::DistributionNotDisabled(inner) => Error::DistributionNotDisabled(inner),
+            crate::error::DeleteDistributionErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::DeleteDistributionErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::error::DeleteDistributionErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::DeleteDistributionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteFieldLevelEncryptionConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteFieldLevelEncryptionConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFieldLevelEncryptionConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFieldLevelEncryptionConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1556,22 +1166,10 @@ impl From<crate::error::DeleteFieldLevelEncryptionConfigError> for Error {
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteFieldLevelEncryptionProfileError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteFieldLevelEncryptionProfileError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFieldLevelEncryptionProfileError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFieldLevelEncryptionProfileError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1588,15 +1186,10 @@ impl From<crate::error::DeleteFieldLevelEncryptionProfileError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFunctionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFunctionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFunctionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1604,36 +1197,19 @@ where
 impl From<crate::error::DeleteFunctionError> for Error {
     fn from(err: crate::error::DeleteFunctionError) -> Self {
         match err.kind {
-            crate::error::DeleteFunctionErrorKind::FunctionInUse(inner) => {
-                Error::FunctionInUse(inner)
-            }
-            crate::error::DeleteFunctionErrorKind::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::error::DeleteFunctionErrorKind::NoSuchFunctionExists(inner) => {
-                Error::NoSuchFunctionExists(inner)
-            }
-            crate::error::DeleteFunctionErrorKind::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::error::DeleteFunctionErrorKind::UnsupportedOperation(inner) => {
-                Error::UnsupportedOperation(inner)
-            }
-            crate::error::DeleteFunctionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteFunctionErrorKind::FunctionInUse(inner) => Error::FunctionInUse(inner),
+            crate::error::DeleteFunctionErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::DeleteFunctionErrorKind::NoSuchFunctionExists(inner) => Error::NoSuchFunctionExists(inner),
+            crate::error::DeleteFunctionErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::DeleteFunctionErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::error::DeleteFunctionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteKeyGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteKeyGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteKeyGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1641,36 +1217,18 @@ where
 impl From<crate::error::DeleteKeyGroupError> for Error {
     fn from(err: crate::error::DeleteKeyGroupError) -> Self {
         match err.kind {
-            crate::error::DeleteKeyGroupErrorKind::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::error::DeleteKeyGroupErrorKind::NoSuchResource(inner) => {
-                Error::NoSuchResource(inner)
-            }
-            crate::error::DeleteKeyGroupErrorKind::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::error::DeleteKeyGroupErrorKind::ResourceInUse(inner) => {
-                Error::ResourceInUse(inner)
-            }
-            crate::error::DeleteKeyGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteKeyGroupErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::DeleteKeyGroupErrorKind::NoSuchResource(inner) => Error::NoSuchResource(inner),
+            crate::error::DeleteKeyGroupErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::DeleteKeyGroupErrorKind::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::error::DeleteKeyGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMonitoringSubscriptionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteMonitoringSubscriptionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMonitoringSubscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteMonitoringSubscriptionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1678,36 +1236,18 @@ where
 impl From<crate::error::DeleteMonitoringSubscriptionError> for Error {
     fn from(err: crate::error::DeleteMonitoringSubscriptionError) -> Self {
         match err.kind {
-            crate::error::DeleteMonitoringSubscriptionErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::DeleteMonitoringSubscriptionErrorKind::NoSuchDistribution(inner) => {
-                Error::NoSuchDistribution(inner)
-            }
-            crate::error::DeleteMonitoringSubscriptionErrorKind::NoSuchMonitoringSubscription(
-                inner,
-            ) => Error::NoSuchMonitoringSubscription(inner),
-            crate::error::DeleteMonitoringSubscriptionErrorKind::UnsupportedOperation(inner) => {
-                Error::UnsupportedOperation(inner)
-            }
-            crate::error::DeleteMonitoringSubscriptionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteMonitoringSubscriptionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::DeleteMonitoringSubscriptionErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::error::DeleteMonitoringSubscriptionErrorKind::NoSuchMonitoringSubscription(inner) => Error::NoSuchMonitoringSubscription(inner),
+            crate::error::DeleteMonitoringSubscriptionErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::error::DeleteMonitoringSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteOriginAccessControlError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteOriginAccessControlError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteOriginAccessControlError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteOriginAccessControlError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1715,39 +1255,19 @@ where
 impl From<crate::error::DeleteOriginAccessControlError> for Error {
     fn from(err: crate::error::DeleteOriginAccessControlError) -> Self {
         match err.kind {
-            crate::error::DeleteOriginAccessControlErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::DeleteOriginAccessControlErrorKind::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::error::DeleteOriginAccessControlErrorKind::NoSuchOriginAccessControl(inner) => {
-                Error::NoSuchOriginAccessControl(inner)
-            }
-            crate::error::DeleteOriginAccessControlErrorKind::OriginAccessControlInUse(inner) => {
-                Error::OriginAccessControlInUse(inner)
-            }
-            crate::error::DeleteOriginAccessControlErrorKind::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::error::DeleteOriginAccessControlErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteOriginAccessControlErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::DeleteOriginAccessControlErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::DeleteOriginAccessControlErrorKind::NoSuchOriginAccessControl(inner) => Error::NoSuchOriginAccessControl(inner),
+            crate::error::DeleteOriginAccessControlErrorKind::OriginAccessControlInUse(inner) => Error::OriginAccessControlInUse(inner),
+            crate::error::DeleteOriginAccessControlErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::DeleteOriginAccessControlErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteOriginRequestPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteOriginRequestPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteOriginRequestPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteOriginRequestPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1755,39 +1275,20 @@ where
 impl From<crate::error::DeleteOriginRequestPolicyError> for Error {
     fn from(err: crate::error::DeleteOriginRequestPolicyError) -> Self {
         match err.kind {
-            crate::error::DeleteOriginRequestPolicyErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::DeleteOriginRequestPolicyErrorKind::IllegalDelete(inner) => {
-                Error::IllegalDelete(inner)
-            }
-            crate::error::DeleteOriginRequestPolicyErrorKind::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::error::DeleteOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy(inner) => {
-                Error::NoSuchOriginRequestPolicy(inner)
-            }
-            crate::error::DeleteOriginRequestPolicyErrorKind::OriginRequestPolicyInUse(inner) => {
-                Error::OriginRequestPolicyInUse(inner)
-            }
-            crate::error::DeleteOriginRequestPolicyErrorKind::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::error::DeleteOriginRequestPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteOriginRequestPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::DeleteOriginRequestPolicyErrorKind::IllegalDelete(inner) => Error::IllegalDelete(inner),
+            crate::error::DeleteOriginRequestPolicyErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::DeleteOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
+            crate::error::DeleteOriginRequestPolicyErrorKind::OriginRequestPolicyInUse(inner) => Error::OriginRequestPolicyInUse(inner),
+            crate::error::DeleteOriginRequestPolicyErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::DeleteOriginRequestPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePublicKeyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePublicKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeletePublicKeyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1795,39 +1296,19 @@ where
 impl From<crate::error::DeletePublicKeyError> for Error {
     fn from(err: crate::error::DeletePublicKeyError) -> Self {
         match err.kind {
-            crate::error::DeletePublicKeyErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::DeletePublicKeyErrorKind::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::error::DeletePublicKeyErrorKind::NoSuchPublicKey(inner) => {
-                Error::NoSuchPublicKey(inner)
-            }
-            crate::error::DeletePublicKeyErrorKind::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::error::DeletePublicKeyErrorKind::PublicKeyInUse(inner) => {
-                Error::PublicKeyInUse(inner)
-            }
-            crate::error::DeletePublicKeyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeletePublicKeyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::DeletePublicKeyErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::DeletePublicKeyErrorKind::NoSuchPublicKey(inner) => Error::NoSuchPublicKey(inner),
+            crate::error::DeletePublicKeyErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::DeletePublicKeyErrorKind::PublicKeyInUse(inner) => Error::PublicKeyInUse(inner),
+            crate::error::DeletePublicKeyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRealtimeLogConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteRealtimeLogConfigError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRealtimeLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteRealtimeLogConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1835,36 +1316,18 @@ where
 impl From<crate::error::DeleteRealtimeLogConfigError> for Error {
     fn from(err: crate::error::DeleteRealtimeLogConfigError) -> Self {
         match err.kind {
-            crate::error::DeleteRealtimeLogConfigErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::DeleteRealtimeLogConfigErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::DeleteRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig(inner) => {
-                Error::NoSuchRealtimeLogConfig(inner)
-            }
-            crate::error::DeleteRealtimeLogConfigErrorKind::RealtimeLogConfigInUse(inner) => {
-                Error::RealtimeLogConfigInUse(inner)
-            }
-            crate::error::DeleteRealtimeLogConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteRealtimeLogConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::DeleteRealtimeLogConfigErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::DeleteRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
+            crate::error::DeleteRealtimeLogConfigErrorKind::RealtimeLogConfigInUse(inner) => Error::RealtimeLogConfigInUse(inner),
+            crate::error::DeleteRealtimeLogConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResponseHeadersPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteResponseHeadersPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResponseHeadersPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteResponseHeadersPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1872,42 +1335,20 @@ where
 impl From<crate::error::DeleteResponseHeadersPolicyError> for Error {
     fn from(err: crate::error::DeleteResponseHeadersPolicyError) -> Self {
         match err.kind {
-            crate::error::DeleteResponseHeadersPolicyErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::DeleteResponseHeadersPolicyErrorKind::IllegalDelete(inner) => {
-                Error::IllegalDelete(inner)
-            }
-            crate::error::DeleteResponseHeadersPolicyErrorKind::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::error::DeleteResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(
-                inner,
-            ) => Error::NoSuchResponseHeadersPolicy(inner),
-            crate::error::DeleteResponseHeadersPolicyErrorKind::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::error::DeleteResponseHeadersPolicyErrorKind::ResponseHeadersPolicyInUse(
-                inner,
-            ) => Error::ResponseHeadersPolicyInUse(inner),
-            crate::error::DeleteResponseHeadersPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteResponseHeadersPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::DeleteResponseHeadersPolicyErrorKind::IllegalDelete(inner) => Error::IllegalDelete(inner),
+            crate::error::DeleteResponseHeadersPolicyErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::DeleteResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::error::DeleteResponseHeadersPolicyErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::DeleteResponseHeadersPolicyErrorKind::ResponseHeadersPolicyInUse(inner) => Error::ResponseHeadersPolicyInUse(inner),
+            crate::error::DeleteResponseHeadersPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteStreamingDistributionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteStreamingDistributionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteStreamingDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteStreamingDistributionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1924,17 +1365,10 @@ impl From<crate::error::DeleteStreamingDistributionError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFunctionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeFunctionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFunctionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeFunctionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1942,27 +1376,16 @@ where
 impl From<crate::error::DescribeFunctionError> for Error {
     fn from(err: crate::error::DescribeFunctionError) -> Self {
         match err.kind {
-            crate::error::DescribeFunctionErrorKind::NoSuchFunctionExists(inner) => {
-                Error::NoSuchFunctionExists(inner)
-            }
-            crate::error::DescribeFunctionErrorKind::UnsupportedOperation(inner) => {
-                Error::UnsupportedOperation(inner)
-            }
-            crate::error::DescribeFunctionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeFunctionErrorKind::NoSuchFunctionExists(inner) => Error::NoSuchFunctionExists(inner),
+            crate::error::DescribeFunctionErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::error::DescribeFunctionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCachePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCachePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCachePolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1970,30 +1393,16 @@ where
 impl From<crate::error::GetCachePolicyError> for Error {
     fn from(err: crate::error::GetCachePolicyError) -> Self {
         match err.kind {
-            crate::error::GetCachePolicyErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetCachePolicyErrorKind::NoSuchCachePolicy(inner) => {
-                Error::NoSuchCachePolicy(inner)
-            }
-            crate::error::GetCachePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetCachePolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetCachePolicyErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
+            crate::error::GetCachePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCachePolicyConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetCachePolicyConfigError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCachePolicyConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCachePolicyConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2001,34 +1410,16 @@ where
 impl From<crate::error::GetCachePolicyConfigError> for Error {
     fn from(err: crate::error::GetCachePolicyConfigError) -> Self {
         match err.kind {
-            crate::error::GetCachePolicyConfigErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetCachePolicyConfigErrorKind::NoSuchCachePolicy(inner) => {
-                Error::NoSuchCachePolicy(inner)
-            }
-            crate::error::GetCachePolicyConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetCachePolicyConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetCachePolicyConfigErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
+            crate::error::GetCachePolicyConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetCloudFrontOriginAccessIdentityError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetCloudFrontOriginAccessIdentityError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCloudFrontOriginAccessIdentityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCloudFrontOriginAccessIdentityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2042,26 +1433,10 @@ impl From<crate::error::GetCloudFrontOriginAccessIdentityError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetCloudFrontOriginAccessIdentityConfigError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetCloudFrontOriginAccessIdentityConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCloudFrontOriginAccessIdentityConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCloudFrontOriginAccessIdentityConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2075,18 +1450,10 @@ impl From<crate::error::GetCloudFrontOriginAccessIdentityConfigError> for Error 
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContinuousDeploymentPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetContinuousDeploymentPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContinuousDeploymentPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetContinuousDeploymentPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2100,26 +1467,10 @@ impl From<crate::error::GetContinuousDeploymentPolicyError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetContinuousDeploymentPolicyConfigError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetContinuousDeploymentPolicyConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContinuousDeploymentPolicyConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetContinuousDeploymentPolicyConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2133,15 +1484,10 @@ impl From<crate::error::GetContinuousDeploymentPolicyConfigError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDistributionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDistributionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2149,30 +1495,16 @@ where
 impl From<crate::error::GetDistributionError> for Error {
     fn from(err: crate::error::GetDistributionError) -> Self {
         match err.kind {
-            crate::error::GetDistributionErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetDistributionErrorKind::NoSuchDistribution(inner) => {
-                Error::NoSuchDistribution(inner)
-            }
-            crate::error::GetDistributionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetDistributionErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::error::GetDistributionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDistributionConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetDistributionConfigError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDistributionConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDistributionConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2180,30 +1512,16 @@ where
 impl From<crate::error::GetDistributionConfigError> for Error {
     fn from(err: crate::error::GetDistributionConfigError) -> Self {
         match err.kind {
-            crate::error::GetDistributionConfigErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetDistributionConfigErrorKind::NoSuchDistribution(inner) => {
-                Error::NoSuchDistribution(inner)
-            }
-            crate::error::GetDistributionConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetDistributionConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetDistributionConfigErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::error::GetDistributionConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2211,30 +1529,16 @@ where
 impl From<crate::error::GetFieldLevelEncryptionError> for Error {
     fn from(err: crate::error::GetFieldLevelEncryptionError) -> Self {
         match err.kind {
-            crate::error::GetFieldLevelEncryptionErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetFieldLevelEncryptionErrorKind::NoSuchFieldLevelEncryptionConfig(
-                inner,
-            ) => Error::NoSuchFieldLevelEncryptionConfig(inner),
-            crate::error::GetFieldLevelEncryptionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetFieldLevelEncryptionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetFieldLevelEncryptionErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
+            crate::error::GetFieldLevelEncryptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionConfigError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2248,22 +1552,10 @@ impl From<crate::error::GetFieldLevelEncryptionConfigError> for Error {
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionProfileError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetFieldLevelEncryptionProfileError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionProfileError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionProfileError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2277,26 +1569,10 @@ impl From<crate::error::GetFieldLevelEncryptionProfileError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetFieldLevelEncryptionProfileConfigError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetFieldLevelEncryptionProfileConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionProfileConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionProfileConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2310,15 +1586,10 @@ impl From<crate::error::GetFieldLevelEncryptionProfileConfigError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFunctionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFunctionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFunctionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2326,27 +1597,16 @@ where
 impl From<crate::error::GetFunctionError> for Error {
     fn from(err: crate::error::GetFunctionError) -> Self {
         match err.kind {
-            crate::error::GetFunctionErrorKind::NoSuchFunctionExists(inner) => {
-                Error::NoSuchFunctionExists(inner)
-            }
-            crate::error::GetFunctionErrorKind::UnsupportedOperation(inner) => {
-                Error::UnsupportedOperation(inner)
-            }
-            crate::error::GetFunctionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetFunctionErrorKind::NoSuchFunctionExists(inner) => Error::NoSuchFunctionExists(inner),
+            crate::error::GetFunctionErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::error::GetFunctionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInvalidationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInvalidationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetInvalidationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2354,30 +1614,17 @@ where
 impl From<crate::error::GetInvalidationError> for Error {
     fn from(err: crate::error::GetInvalidationError) -> Self {
         match err.kind {
-            crate::error::GetInvalidationErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetInvalidationErrorKind::NoSuchDistribution(inner) => {
-                Error::NoSuchDistribution(inner)
-            }
-            crate::error::GetInvalidationErrorKind::NoSuchInvalidation(inner) => {
-                Error::NoSuchInvalidation(inner)
-            }
-            crate::error::GetInvalidationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetInvalidationErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetInvalidationErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::error::GetInvalidationErrorKind::NoSuchInvalidation(inner) => Error::NoSuchInvalidation(inner),
+            crate::error::GetInvalidationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetKeyGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetKeyGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetKeyGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2385,26 +1632,15 @@ where
 impl From<crate::error::GetKeyGroupError> for Error {
     fn from(err: crate::error::GetKeyGroupError) -> Self {
         match err.kind {
-            crate::error::GetKeyGroupErrorKind::NoSuchResource(inner) => {
-                Error::NoSuchResource(inner)
-            }
-            crate::error::GetKeyGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetKeyGroupErrorKind::NoSuchResource(inner) => Error::NoSuchResource(inner),
+            crate::error::GetKeyGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetKeyGroupConfigError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetKeyGroupConfigError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetKeyGroupConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetKeyGroupConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2412,27 +1648,15 @@ where
 impl From<crate::error::GetKeyGroupConfigError> for Error {
     fn from(err: crate::error::GetKeyGroupConfigError) -> Self {
         match err.kind {
-            crate::error::GetKeyGroupConfigErrorKind::NoSuchResource(inner) => {
-                Error::NoSuchResource(inner)
-            }
-            crate::error::GetKeyGroupConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetKeyGroupConfigErrorKind::NoSuchResource(inner) => Error::NoSuchResource(inner),
+            crate::error::GetKeyGroupConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMonitoringSubscriptionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetMonitoringSubscriptionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMonitoringSubscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMonitoringSubscriptionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2440,36 +1664,18 @@ where
 impl From<crate::error::GetMonitoringSubscriptionError> for Error {
     fn from(err: crate::error::GetMonitoringSubscriptionError) -> Self {
         match err.kind {
-            crate::error::GetMonitoringSubscriptionErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetMonitoringSubscriptionErrorKind::NoSuchDistribution(inner) => {
-                Error::NoSuchDistribution(inner)
-            }
-            crate::error::GetMonitoringSubscriptionErrorKind::NoSuchMonitoringSubscription(
-                inner,
-            ) => Error::NoSuchMonitoringSubscription(inner),
-            crate::error::GetMonitoringSubscriptionErrorKind::UnsupportedOperation(inner) => {
-                Error::UnsupportedOperation(inner)
-            }
-            crate::error::GetMonitoringSubscriptionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetMonitoringSubscriptionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetMonitoringSubscriptionErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::error::GetMonitoringSubscriptionErrorKind::NoSuchMonitoringSubscription(inner) => Error::NoSuchMonitoringSubscription(inner),
+            crate::error::GetMonitoringSubscriptionErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::error::GetMonitoringSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2477,30 +1683,16 @@ where
 impl From<crate::error::GetOriginAccessControlError> for Error {
     fn from(err: crate::error::GetOriginAccessControlError) -> Self {
         match err.kind {
-            crate::error::GetOriginAccessControlErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetOriginAccessControlErrorKind::NoSuchOriginAccessControl(inner) => {
-                Error::NoSuchOriginAccessControl(inner)
-            }
-            crate::error::GetOriginAccessControlErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetOriginAccessControlErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetOriginAccessControlErrorKind::NoSuchOriginAccessControl(inner) => Error::NoSuchOriginAccessControl(inner),
+            crate::error::GetOriginAccessControlErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlConfigError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2508,30 +1700,16 @@ where
 impl From<crate::error::GetOriginAccessControlConfigError> for Error {
     fn from(err: crate::error::GetOriginAccessControlConfigError) -> Self {
         match err.kind {
-            crate::error::GetOriginAccessControlConfigErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetOriginAccessControlConfigErrorKind::NoSuchOriginAccessControl(
-                inner,
-            ) => Error::NoSuchOriginAccessControl(inner),
-            crate::error::GetOriginAccessControlConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetOriginAccessControlConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetOriginAccessControlConfigErrorKind::NoSuchOriginAccessControl(inner) => Error::NoSuchOriginAccessControl(inner),
+            crate::error::GetOriginAccessControlConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOriginRequestPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetOriginRequestPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOriginRequestPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetOriginRequestPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2539,30 +1717,16 @@ where
 impl From<crate::error::GetOriginRequestPolicyError> for Error {
     fn from(err: crate::error::GetOriginRequestPolicyError) -> Self {
         match err.kind {
-            crate::error::GetOriginRequestPolicyErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy(inner) => {
-                Error::NoSuchOriginRequestPolicy(inner)
-            }
-            crate::error::GetOriginRequestPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetOriginRequestPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
+            crate::error::GetOriginRequestPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOriginRequestPolicyConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetOriginRequestPolicyConfigError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOriginRequestPolicyConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetOriginRequestPolicyConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2570,27 +1734,16 @@ where
 impl From<crate::error::GetOriginRequestPolicyConfigError> for Error {
     fn from(err: crate::error::GetOriginRequestPolicyConfigError) -> Self {
         match err.kind {
-            crate::error::GetOriginRequestPolicyConfigErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetOriginRequestPolicyConfigErrorKind::NoSuchOriginRequestPolicy(
-                inner,
-            ) => Error::NoSuchOriginRequestPolicy(inner),
-            crate::error::GetOriginRequestPolicyConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetOriginRequestPolicyConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetOriginRequestPolicyConfigErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
+            crate::error::GetOriginRequestPolicyConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPublicKeyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPublicKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPublicKeyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2599,26 +1752,15 @@ impl From<crate::error::GetPublicKeyError> for Error {
     fn from(err: crate::error::GetPublicKeyError) -> Self {
         match err.kind {
             crate::error::GetPublicKeyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::error::GetPublicKeyErrorKind::NoSuchPublicKey(inner) => {
-                Error::NoSuchPublicKey(inner)
-            }
-            crate::error::GetPublicKeyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetPublicKeyErrorKind::NoSuchPublicKey(inner) => Error::NoSuchPublicKey(inner),
+            crate::error::GetPublicKeyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPublicKeyConfigError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetPublicKeyConfigError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPublicKeyConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPublicKeyConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2626,30 +1768,16 @@ where
 impl From<crate::error::GetPublicKeyConfigError> for Error {
     fn from(err: crate::error::GetPublicKeyConfigError) -> Self {
         match err.kind {
-            crate::error::GetPublicKeyConfigErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetPublicKeyConfigErrorKind::NoSuchPublicKey(inner) => {
-                Error::NoSuchPublicKey(inner)
-            }
-            crate::error::GetPublicKeyConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetPublicKeyConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetPublicKeyConfigErrorKind::NoSuchPublicKey(inner) => Error::NoSuchPublicKey(inner),
+            crate::error::GetPublicKeyConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRealtimeLogConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetRealtimeLogConfigError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRealtimeLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRealtimeLogConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2657,33 +1785,17 @@ where
 impl From<crate::error::GetRealtimeLogConfigError> for Error {
     fn from(err: crate::error::GetRealtimeLogConfigError) -> Self {
         match err.kind {
-            crate::error::GetRealtimeLogConfigErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetRealtimeLogConfigErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::GetRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig(inner) => {
-                Error::NoSuchRealtimeLogConfig(inner)
-            }
-            crate::error::GetRealtimeLogConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetRealtimeLogConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetRealtimeLogConfigErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::GetRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
+            crate::error::GetRealtimeLogConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2691,34 +1803,16 @@ where
 impl From<crate::error::GetResponseHeadersPolicyError> for Error {
     fn from(err: crate::error::GetResponseHeadersPolicyError) -> Self {
         match err.kind {
-            crate::error::GetResponseHeadersPolicyErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(inner) => {
-                Error::NoSuchResponseHeadersPolicy(inner)
-            }
-            crate::error::GetResponseHeadersPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetResponseHeadersPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::error::GetResponseHeadersPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetResponseHeadersPolicyConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2726,30 +1820,16 @@ where
 impl From<crate::error::GetResponseHeadersPolicyConfigError> for Error {
     fn from(err: crate::error::GetResponseHeadersPolicyConfigError) -> Self {
         match err.kind {
-            crate::error::GetResponseHeadersPolicyConfigErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetResponseHeadersPolicyConfigErrorKind::NoSuchResponseHeadersPolicy(
-                inner,
-            ) => Error::NoSuchResponseHeadersPolicy(inner),
-            crate::error::GetResponseHeadersPolicyConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetResponseHeadersPolicyConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetResponseHeadersPolicyConfigErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::error::GetResponseHeadersPolicyConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetStreamingDistributionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetStreamingDistributionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetStreamingDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetStreamingDistributionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2757,34 +1837,16 @@ where
 impl From<crate::error::GetStreamingDistributionError> for Error {
     fn from(err: crate::error::GetStreamingDistributionError) -> Self {
         match err.kind {
-            crate::error::GetStreamingDistributionErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetStreamingDistributionErrorKind::NoSuchStreamingDistribution(inner) => {
-                Error::NoSuchStreamingDistribution(inner)
-            }
-            crate::error::GetStreamingDistributionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetStreamingDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetStreamingDistributionErrorKind::NoSuchStreamingDistribution(inner) => Error::NoSuchStreamingDistribution(inner),
+            crate::error::GetStreamingDistributionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetStreamingDistributionConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetStreamingDistributionConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetStreamingDistributionConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetStreamingDistributionConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2792,29 +1854,16 @@ where
 impl From<crate::error::GetStreamingDistributionConfigError> for Error {
     fn from(err: crate::error::GetStreamingDistributionConfigError) -> Self {
         match err.kind {
-            crate::error::GetStreamingDistributionConfigErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::GetStreamingDistributionConfigErrorKind::NoSuchStreamingDistribution(
-                inner,
-            ) => Error::NoSuchStreamingDistribution(inner),
-            crate::error::GetStreamingDistributionConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetStreamingDistributionConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetStreamingDistributionConfigErrorKind::NoSuchStreamingDistribution(inner) => Error::NoSuchStreamingDistribution(inner),
+            crate::error::GetStreamingDistributionConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCachePoliciesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListCachePoliciesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCachePoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListCachePoliciesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2822,41 +1871,17 @@ where
 impl From<crate::error::ListCachePoliciesError> for Error {
     fn from(err: crate::error::ListCachePoliciesError) -> Self {
         match err.kind {
-            crate::error::ListCachePoliciesErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::ListCachePoliciesErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListCachePoliciesErrorKind::NoSuchCachePolicy(inner) => {
-                Error::NoSuchCachePolicy(inner)
-            }
-            crate::error::ListCachePoliciesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListCachePoliciesErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::ListCachePoliciesErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListCachePoliciesErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
+            crate::error::ListCachePoliciesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::ListCloudFrontOriginAccessIdentitiesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListCloudFrontOriginAccessIdentitiesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCloudFrontOriginAccessIdentitiesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListCloudFrontOriginAccessIdentitiesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2864,27 +1889,15 @@ where
 impl From<crate::error::ListCloudFrontOriginAccessIdentitiesError> for Error {
     fn from(err: crate::error::ListCloudFrontOriginAccessIdentitiesError) -> Self {
         match err.kind {
-            crate::error::ListCloudFrontOriginAccessIdentitiesErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListCloudFrontOriginAccessIdentitiesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListCloudFrontOriginAccessIdentitiesErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListCloudFrontOriginAccessIdentitiesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListConflictingAliasesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListConflictingAliasesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListConflictingAliasesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListConflictingAliasesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2892,34 +1905,16 @@ where
 impl From<crate::error::ListConflictingAliasesError> for Error {
     fn from(err: crate::error::ListConflictingAliasesError) -> Self {
         match err.kind {
-            crate::error::ListConflictingAliasesErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListConflictingAliasesErrorKind::NoSuchDistribution(inner) => {
-                Error::NoSuchDistribution(inner)
-            }
-            crate::error::ListConflictingAliasesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListConflictingAliasesErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListConflictingAliasesErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::error::ListConflictingAliasesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ListContinuousDeploymentPoliciesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListContinuousDeploymentPoliciesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListContinuousDeploymentPoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListContinuousDeploymentPoliciesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2934,17 +1929,10 @@ impl From<crate::error::ListContinuousDeploymentPoliciesError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDistributionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListDistributionsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDistributionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDistributionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2952,31 +1940,15 @@ where
 impl From<crate::error::ListDistributionsError> for Error {
     fn from(err: crate::error::ListDistributionsError) -> Self {
         match err.kind {
-            crate::error::ListDistributionsErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListDistributionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListDistributionsErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListDistributionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ListDistributionsByCachePolicyIdError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListDistributionsByCachePolicyIdError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDistributionsByCachePolicyIdError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDistributionsByCachePolicyIdError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2984,33 +1956,17 @@ where
 impl From<crate::error::ListDistributionsByCachePolicyIdError> for Error {
     fn from(err: crate::error::ListDistributionsByCachePolicyIdError) -> Self {
         match err.kind {
-            crate::error::ListDistributionsByCachePolicyIdErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::ListDistributionsByCachePolicyIdErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListDistributionsByCachePolicyIdErrorKind::NoSuchCachePolicy(inner) => {
-                Error::NoSuchCachePolicy(inner)
-            }
-            crate::error::ListDistributionsByCachePolicyIdErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListDistributionsByCachePolicyIdErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::ListDistributionsByCachePolicyIdErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListDistributionsByCachePolicyIdErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
+            crate::error::ListDistributionsByCachePolicyIdErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDistributionsByKeyGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListDistributionsByKeyGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDistributionsByKeyGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDistributionsByKeyGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3018,38 +1974,16 @@ where
 impl From<crate::error::ListDistributionsByKeyGroupError> for Error {
     fn from(err: crate::error::ListDistributionsByKeyGroupError) -> Self {
         match err.kind {
-            crate::error::ListDistributionsByKeyGroupErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListDistributionsByKeyGroupErrorKind::NoSuchResource(inner) => {
-                Error::NoSuchResource(inner)
-            }
-            crate::error::ListDistributionsByKeyGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListDistributionsByKeyGroupErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListDistributionsByKeyGroupErrorKind::NoSuchResource(inner) => Error::NoSuchResource(inner),
+            crate::error::ListDistributionsByKeyGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::ListDistributionsByOriginRequestPolicyIdError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListDistributionsByOriginRequestPolicyIdError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDistributionsByOriginRequestPolicyIdError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDistributionsByOriginRequestPolicyIdError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3064,26 +1998,10 @@ impl From<crate::error::ListDistributionsByOriginRequestPolicyIdError> for Error
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::ListDistributionsByRealtimeLogConfigError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListDistributionsByRealtimeLogConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDistributionsByRealtimeLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDistributionsByRealtimeLogConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3091,35 +2009,15 @@ where
 impl From<crate::error::ListDistributionsByRealtimeLogConfigError> for Error {
     fn from(err: crate::error::ListDistributionsByRealtimeLogConfigError) -> Self {
         match err.kind {
-            crate::error::ListDistributionsByRealtimeLogConfigErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListDistributionsByRealtimeLogConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListDistributionsByRealtimeLogConfigErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListDistributionsByRealtimeLogConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::ListDistributionsByResponseHeadersPolicyIdError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListDistributionsByResponseHeadersPolicyIdError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDistributionsByResponseHeadersPolicyIdError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDistributionsByResponseHeadersPolicyIdError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3134,18 +2032,10 @@ impl From<crate::error::ListDistributionsByResponseHeadersPolicyIdError> for Err
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDistributionsByWebACLIdError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListDistributionsByWebACLIdError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDistributionsByWebACLIdError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDistributionsByWebACLIdError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3153,34 +2043,16 @@ where
 impl From<crate::error::ListDistributionsByWebACLIdError> for Error {
     fn from(err: crate::error::ListDistributionsByWebACLIdError) -> Self {
         match err.kind {
-            crate::error::ListDistributionsByWebACLIdErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListDistributionsByWebACLIdErrorKind::InvalidWebAclId(inner) => {
-                Error::InvalidWebAclId(inner)
-            }
-            crate::error::ListDistributionsByWebACLIdErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListDistributionsByWebACLIdErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListDistributionsByWebACLIdErrorKind::InvalidWebAclId(inner) => Error::InvalidWebAclId(inner),
+            crate::error::ListDistributionsByWebACLIdErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ListFieldLevelEncryptionConfigsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListFieldLevelEncryptionConfigsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFieldLevelEncryptionConfigsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFieldLevelEncryptionConfigsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3188,31 +2060,15 @@ where
 impl From<crate::error::ListFieldLevelEncryptionConfigsError> for Error {
     fn from(err: crate::error::ListFieldLevelEncryptionConfigsError) -> Self {
         match err.kind {
-            crate::error::ListFieldLevelEncryptionConfigsErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListFieldLevelEncryptionConfigsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListFieldLevelEncryptionConfigsErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListFieldLevelEncryptionConfigsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ListFieldLevelEncryptionProfilesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListFieldLevelEncryptionProfilesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFieldLevelEncryptionProfilesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFieldLevelEncryptionProfilesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3220,24 +2076,15 @@ where
 impl From<crate::error::ListFieldLevelEncryptionProfilesError> for Error {
     fn from(err: crate::error::ListFieldLevelEncryptionProfilesError) -> Self {
         match err.kind {
-            crate::error::ListFieldLevelEncryptionProfilesErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListFieldLevelEncryptionProfilesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListFieldLevelEncryptionProfilesErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListFieldLevelEncryptionProfilesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFunctionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFunctionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFunctionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3245,29 +2092,16 @@ where
 impl From<crate::error::ListFunctionsError> for Error {
     fn from(err: crate::error::ListFunctionsError) -> Self {
         match err.kind {
-            crate::error::ListFunctionsErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListFunctionsErrorKind::UnsupportedOperation(inner) => {
-                Error::UnsupportedOperation(inner)
-            }
-            crate::error::ListFunctionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListFunctionsErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListFunctionsErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::error::ListFunctionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListInvalidationsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListInvalidationsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListInvalidationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListInvalidationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3275,30 +2109,17 @@ where
 impl From<crate::error::ListInvalidationsError> for Error {
     fn from(err: crate::error::ListInvalidationsError) -> Self {
         match err.kind {
-            crate::error::ListInvalidationsErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::ListInvalidationsErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListInvalidationsErrorKind::NoSuchDistribution(inner) => {
-                Error::NoSuchDistribution(inner)
-            }
-            crate::error::ListInvalidationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListInvalidationsErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::ListInvalidationsErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListInvalidationsErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::error::ListInvalidationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListKeyGroupsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListKeyGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListKeyGroupsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3306,27 +2127,15 @@ where
 impl From<crate::error::ListKeyGroupsError> for Error {
     fn from(err: crate::error::ListKeyGroupsError) -> Self {
         match err.kind {
-            crate::error::ListKeyGroupsErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListKeyGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListKeyGroupsErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListKeyGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListOriginAccessControlsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListOriginAccessControlsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListOriginAccessControlsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListOriginAccessControlsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3334,27 +2143,15 @@ where
 impl From<crate::error::ListOriginAccessControlsError> for Error {
     fn from(err: crate::error::ListOriginAccessControlsError) -> Self {
         match err.kind {
-            crate::error::ListOriginAccessControlsErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListOriginAccessControlsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListOriginAccessControlsErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListOriginAccessControlsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListOriginRequestPoliciesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListOriginRequestPoliciesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListOriginRequestPoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListOriginRequestPoliciesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3362,30 +2159,17 @@ where
 impl From<crate::error::ListOriginRequestPoliciesError> for Error {
     fn from(err: crate::error::ListOriginRequestPoliciesError) -> Self {
         match err.kind {
-            crate::error::ListOriginRequestPoliciesErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::ListOriginRequestPoliciesErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListOriginRequestPoliciesErrorKind::NoSuchOriginRequestPolicy(inner) => {
-                Error::NoSuchOriginRequestPolicy(inner)
-            }
-            crate::error::ListOriginRequestPoliciesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListOriginRequestPoliciesErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::ListOriginRequestPoliciesErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListOriginRequestPoliciesErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
+            crate::error::ListOriginRequestPoliciesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPublicKeysError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPublicKeysError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPublicKeysError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3393,27 +2177,15 @@ where
 impl From<crate::error::ListPublicKeysError> for Error {
     fn from(err: crate::error::ListPublicKeysError) -> Self {
         match err.kind {
-            crate::error::ListPublicKeysErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListPublicKeysErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListPublicKeysErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListPublicKeysErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRealtimeLogConfigsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListRealtimeLogConfigsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRealtimeLogConfigsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRealtimeLogConfigsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3421,33 +2193,17 @@ where
 impl From<crate::error::ListRealtimeLogConfigsError> for Error {
     fn from(err: crate::error::ListRealtimeLogConfigsError) -> Self {
         match err.kind {
-            crate::error::ListRealtimeLogConfigsErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::ListRealtimeLogConfigsErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListRealtimeLogConfigsErrorKind::NoSuchRealtimeLogConfig(inner) => {
-                Error::NoSuchRealtimeLogConfig(inner)
-            }
-            crate::error::ListRealtimeLogConfigsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListRealtimeLogConfigsErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::ListRealtimeLogConfigsErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListRealtimeLogConfigsErrorKind::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
+            crate::error::ListRealtimeLogConfigsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResponseHeadersPoliciesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListResponseHeadersPoliciesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResponseHeadersPoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListResponseHeadersPoliciesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3455,33 +2211,17 @@ where
 impl From<crate::error::ListResponseHeadersPoliciesError> for Error {
     fn from(err: crate::error::ListResponseHeadersPoliciesError) -> Self {
         match err.kind {
-            crate::error::ListResponseHeadersPoliciesErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::ListResponseHeadersPoliciesErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListResponseHeadersPoliciesErrorKind::NoSuchResponseHeadersPolicy(
-                inner,
-            ) => Error::NoSuchResponseHeadersPolicy(inner),
-            crate::error::ListResponseHeadersPoliciesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListResponseHeadersPoliciesErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::ListResponseHeadersPoliciesErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListResponseHeadersPoliciesErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::error::ListResponseHeadersPoliciesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListStreamingDistributionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListStreamingDistributionsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListStreamingDistributionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListStreamingDistributionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3489,26 +2229,15 @@ where
 impl From<crate::error::ListStreamingDistributionsError> for Error {
     fn from(err: crate::error::ListStreamingDistributionsError) -> Self {
         match err.kind {
-            crate::error::ListStreamingDistributionsErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListStreamingDistributionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListStreamingDistributionsErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListStreamingDistributionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3516,33 +2245,18 @@ where
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
         match err.kind {
-            crate::error::ListTagsForResourceErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::InvalidTagging(inner) => {
-                Error::InvalidTagging(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::NoSuchResource(inner) => {
-                Error::NoSuchResource(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::ListTagsForResourceErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListTagsForResourceErrorKind::InvalidTagging(inner) => Error::InvalidTagging(inner),
+            crate::error::ListTagsForResourceErrorKind::NoSuchResource(inner) => Error::NoSuchResource(inner),
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PublishFunctionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PublishFunctionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PublishFunctionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3550,36 +2264,19 @@ where
 impl From<crate::error::PublishFunctionError> for Error {
     fn from(err: crate::error::PublishFunctionError) -> Self {
         match err.kind {
-            crate::error::PublishFunctionErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::PublishFunctionErrorKind::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::error::PublishFunctionErrorKind::NoSuchFunctionExists(inner) => {
-                Error::NoSuchFunctionExists(inner)
-            }
-            crate::error::PublishFunctionErrorKind::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::error::PublishFunctionErrorKind::UnsupportedOperation(inner) => {
-                Error::UnsupportedOperation(inner)
-            }
-            crate::error::PublishFunctionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PublishFunctionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::PublishFunctionErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::PublishFunctionErrorKind::NoSuchFunctionExists(inner) => Error::NoSuchFunctionExists(inner),
+            crate::error::PublishFunctionErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::PublishFunctionErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::error::PublishFunctionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3588,30 +2285,17 @@ impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
         match err.kind {
             crate::error::TagResourceErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::error::TagResourceErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::TagResourceErrorKind::InvalidTagging(inner) => {
-                Error::InvalidTagging(inner)
-            }
-            crate::error::TagResourceErrorKind::NoSuchResource(inner) => {
-                Error::NoSuchResource(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::TagResourceErrorKind::InvalidTagging(inner) => Error::InvalidTagging(inner),
+            crate::error::TagResourceErrorKind::NoSuchResource(inner) => Error::NoSuchResource(inner),
+            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TestFunctionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TestFunctionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TestFunctionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3619,36 +2303,19 @@ where
 impl From<crate::error::TestFunctionError> for Error {
     fn from(err: crate::error::TestFunctionError) -> Self {
         match err.kind {
-            crate::error::TestFunctionErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::TestFunctionErrorKind::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::error::TestFunctionErrorKind::NoSuchFunctionExists(inner) => {
-                Error::NoSuchFunctionExists(inner)
-            }
-            crate::error::TestFunctionErrorKind::TestFunctionFailed(inner) => {
-                Error::TestFunctionFailed(inner)
-            }
-            crate::error::TestFunctionErrorKind::UnsupportedOperation(inner) => {
-                Error::UnsupportedOperation(inner)
-            }
-            crate::error::TestFunctionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TestFunctionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::TestFunctionErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::TestFunctionErrorKind::NoSuchFunctionExists(inner) => Error::NoSuchFunctionExists(inner),
+            crate::error::TestFunctionErrorKind::TestFunctionFailed(inner) => Error::TestFunctionFailed(inner),
+            crate::error::TestFunctionErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::error::TestFunctionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3657,32 +2324,17 @@ impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
         match err.kind {
             crate::error::UntagResourceErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::error::UntagResourceErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::UntagResourceErrorKind::InvalidTagging(inner) => {
-                Error::InvalidTagging(inner)
-            }
-            crate::error::UntagResourceErrorKind::NoSuchResource(inner) => {
-                Error::NoSuchResource(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::UntagResourceErrorKind::InvalidTagging(inner) => Error::InvalidTagging(inner),
+            crate::error::UntagResourceErrorKind::NoSuchResource(inner) => Error::NoSuchResource(inner),
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateCachePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateCachePolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateCachePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateCachePolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3690,65 +2342,25 @@ where
 impl From<crate::error::UpdateCachePolicyError> for Error {
     fn from(err: crate::error::UpdateCachePolicyError) -> Self {
         match err.kind {
-            crate::error::UpdateCachePolicyErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::UpdateCachePolicyErrorKind::CachePolicyAlreadyExists(inner) => {
-                Error::CachePolicyAlreadyExists(inner)
-            }
-            crate::error::UpdateCachePolicyErrorKind::IllegalUpdate(inner) => {
-                Error::IllegalUpdate(inner)
-            }
-            crate::error::UpdateCachePolicyErrorKind::InconsistentQuantities(inner) => {
-                Error::InconsistentQuantities(inner)
-            }
-            crate::error::UpdateCachePolicyErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::UpdateCachePolicyErrorKind::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::error::UpdateCachePolicyErrorKind::NoSuchCachePolicy(inner) => {
-                Error::NoSuchCachePolicy(inner)
-            }
-            crate::error::UpdateCachePolicyErrorKind::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::error::UpdateCachePolicyErrorKind::TooManyCookiesInCachePolicy(inner) => {
-                Error::TooManyCookiesInCachePolicy(inner)
-            }
-            crate::error::UpdateCachePolicyErrorKind::TooManyHeadersInCachePolicy(inner) => {
-                Error::TooManyHeadersInCachePolicy(inner)
-            }
-            crate::error::UpdateCachePolicyErrorKind::TooManyQueryStringsInCachePolicy(inner) => {
-                Error::TooManyQueryStringsInCachePolicy(inner)
-            }
-            crate::error::UpdateCachePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateCachePolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::UpdateCachePolicyErrorKind::CachePolicyAlreadyExists(inner) => Error::CachePolicyAlreadyExists(inner),
+            crate::error::UpdateCachePolicyErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+            crate::error::UpdateCachePolicyErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::UpdateCachePolicyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::UpdateCachePolicyErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::UpdateCachePolicyErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
+            crate::error::UpdateCachePolicyErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::UpdateCachePolicyErrorKind::TooManyCookiesInCachePolicy(inner) => Error::TooManyCookiesInCachePolicy(inner),
+            crate::error::UpdateCachePolicyErrorKind::TooManyHeadersInCachePolicy(inner) => Error::TooManyHeadersInCachePolicy(inner),
+            crate::error::UpdateCachePolicyErrorKind::TooManyQueryStringsInCachePolicy(inner) => Error::TooManyQueryStringsInCachePolicy(inner),
+            crate::error::UpdateCachePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::UpdateCloudFrontOriginAccessIdentityError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateCloudFrontOriginAccessIdentityError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateCloudFrontOriginAccessIdentityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateCloudFrontOriginAccessIdentityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3768,22 +2380,10 @@ impl From<crate::error::UpdateCloudFrontOriginAccessIdentityError> for Error {
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::UpdateContinuousDeploymentPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateContinuousDeploymentPolicyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateContinuousDeploymentPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateContinuousDeploymentPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3802,17 +2402,10 @@ impl From<crate::error::UpdateContinuousDeploymentPolicyError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDistributionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateDistributionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateDistributionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3889,26 +2482,10 @@ impl From<crate::error::UpdateDistributionError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::UpdateDistributionWithStagingConfigError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateDistributionWithStagingConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDistributionWithStagingConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateDistributionWithStagingConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3980,22 +2557,10 @@ impl From<crate::error::UpdateDistributionWithStagingConfigError> for Error {
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::UpdateFieldLevelEncryptionConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateFieldLevelEncryptionConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFieldLevelEncryptionConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateFieldLevelEncryptionConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4018,22 +2583,10 @@ impl From<crate::error::UpdateFieldLevelEncryptionConfigError> for Error {
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::UpdateFieldLevelEncryptionProfileError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateFieldLevelEncryptionProfileError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFieldLevelEncryptionProfileError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateFieldLevelEncryptionProfileError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4057,15 +2610,10 @@ impl From<crate::error::UpdateFieldLevelEncryptionProfileError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFunctionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFunctionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateFunctionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4073,39 +2621,20 @@ where
 impl From<crate::error::UpdateFunctionError> for Error {
     fn from(err: crate::error::UpdateFunctionError) -> Self {
         match err.kind {
-            crate::error::UpdateFunctionErrorKind::FunctionSizeLimitExceeded(inner) => {
-                Error::FunctionSizeLimitExceeded(inner)
-            }
-            crate::error::UpdateFunctionErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::UpdateFunctionErrorKind::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::error::UpdateFunctionErrorKind::NoSuchFunctionExists(inner) => {
-                Error::NoSuchFunctionExists(inner)
-            }
-            crate::error::UpdateFunctionErrorKind::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::error::UpdateFunctionErrorKind::UnsupportedOperation(inner) => {
-                Error::UnsupportedOperation(inner)
-            }
-            crate::error::UpdateFunctionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateFunctionErrorKind::FunctionSizeLimitExceeded(inner) => Error::FunctionSizeLimitExceeded(inner),
+            crate::error::UpdateFunctionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::UpdateFunctionErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::UpdateFunctionErrorKind::NoSuchFunctionExists(inner) => Error::NoSuchFunctionExists(inner),
+            crate::error::UpdateFunctionErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::UpdateFunctionErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::error::UpdateFunctionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateKeyGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateKeyGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateKeyGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4113,42 +2642,20 @@ where
 impl From<crate::error::UpdateKeyGroupError> for Error {
     fn from(err: crate::error::UpdateKeyGroupError) -> Self {
         match err.kind {
-            crate::error::UpdateKeyGroupErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::UpdateKeyGroupErrorKind::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::error::UpdateKeyGroupErrorKind::KeyGroupAlreadyExists(inner) => {
-                Error::KeyGroupAlreadyExists(inner)
-            }
-            crate::error::UpdateKeyGroupErrorKind::NoSuchResource(inner) => {
-                Error::NoSuchResource(inner)
-            }
-            crate::error::UpdateKeyGroupErrorKind::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::error::UpdateKeyGroupErrorKind::TooManyPublicKeysInKeyGroup(inner) => {
-                Error::TooManyPublicKeysInKeyGroup(inner)
-            }
-            crate::error::UpdateKeyGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateKeyGroupErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::UpdateKeyGroupErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::UpdateKeyGroupErrorKind::KeyGroupAlreadyExists(inner) => Error::KeyGroupAlreadyExists(inner),
+            crate::error::UpdateKeyGroupErrorKind::NoSuchResource(inner) => Error::NoSuchResource(inner),
+            crate::error::UpdateKeyGroupErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::UpdateKeyGroupErrorKind::TooManyPublicKeysInKeyGroup(inner) => Error::TooManyPublicKeysInKeyGroup(inner),
+            crate::error::UpdateKeyGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateOriginAccessControlError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateOriginAccessControlError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateOriginAccessControlError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateOriginAccessControlError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4156,45 +2663,21 @@ where
 impl From<crate::error::UpdateOriginAccessControlError> for Error {
     fn from(err: crate::error::UpdateOriginAccessControlError) -> Self {
         match err.kind {
-            crate::error::UpdateOriginAccessControlErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::UpdateOriginAccessControlErrorKind::IllegalUpdate(inner) => {
-                Error::IllegalUpdate(inner)
-            }
-            crate::error::UpdateOriginAccessControlErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::UpdateOriginAccessControlErrorKind::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::error::UpdateOriginAccessControlErrorKind::NoSuchOriginAccessControl(inner) => {
-                Error::NoSuchOriginAccessControl(inner)
-            }
-            crate::error::UpdateOriginAccessControlErrorKind::OriginAccessControlAlreadyExists(
-                inner,
-            ) => Error::OriginAccessControlAlreadyExists(inner),
-            crate::error::UpdateOriginAccessControlErrorKind::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::error::UpdateOriginAccessControlErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateOriginAccessControlErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::UpdateOriginAccessControlErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+            crate::error::UpdateOriginAccessControlErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::UpdateOriginAccessControlErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::UpdateOriginAccessControlErrorKind::NoSuchOriginAccessControl(inner) => Error::NoSuchOriginAccessControl(inner),
+            crate::error::UpdateOriginAccessControlErrorKind::OriginAccessControlAlreadyExists(inner) => Error::OriginAccessControlAlreadyExists(inner),
+            crate::error::UpdateOriginAccessControlErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::UpdateOriginAccessControlErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateOriginRequestPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateOriginRequestPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateOriginRequestPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateOriginRequestPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4217,15 +2700,10 @@ impl From<crate::error::UpdateOriginRequestPolicyError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePublicKeyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePublicKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdatePublicKeyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4233,45 +2711,21 @@ where
 impl From<crate::error::UpdatePublicKeyError> for Error {
     fn from(err: crate::error::UpdatePublicKeyError) -> Self {
         match err.kind {
-            crate::error::UpdatePublicKeyErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::UpdatePublicKeyErrorKind::CannotChangeImmutablePublicKeyFields(inner) => {
-                Error::CannotChangeImmutablePublicKeyFields(inner)
-            }
-            crate::error::UpdatePublicKeyErrorKind::IllegalUpdate(inner) => {
-                Error::IllegalUpdate(inner)
-            }
-            crate::error::UpdatePublicKeyErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::UpdatePublicKeyErrorKind::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::error::UpdatePublicKeyErrorKind::NoSuchPublicKey(inner) => {
-                Error::NoSuchPublicKey(inner)
-            }
-            crate::error::UpdatePublicKeyErrorKind::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::error::UpdatePublicKeyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdatePublicKeyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::UpdatePublicKeyErrorKind::CannotChangeImmutablePublicKeyFields(inner) => Error::CannotChangeImmutablePublicKeyFields(inner),
+            crate::error::UpdatePublicKeyErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+            crate::error::UpdatePublicKeyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::UpdatePublicKeyErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::UpdatePublicKeyErrorKind::NoSuchPublicKey(inner) => Error::NoSuchPublicKey(inner),
+            crate::error::UpdatePublicKeyErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::UpdatePublicKeyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRealtimeLogConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateRealtimeLogConfigError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRealtimeLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateRealtimeLogConfigError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4279,33 +2733,17 @@ where
 impl From<crate::error::UpdateRealtimeLogConfigError> for Error {
     fn from(err: crate::error::UpdateRealtimeLogConfigError) -> Self {
         match err.kind {
-            crate::error::UpdateRealtimeLogConfigErrorKind::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::error::UpdateRealtimeLogConfigErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::UpdateRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig(inner) => {
-                Error::NoSuchRealtimeLogConfig(inner)
-            }
-            crate::error::UpdateRealtimeLogConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateRealtimeLogConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::UpdateRealtimeLogConfigErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::UpdateRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
+            crate::error::UpdateRealtimeLogConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResponseHeadersPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateResponseHeadersPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResponseHeadersPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateResponseHeadersPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4328,18 +2766,10 @@ impl From<crate::error::UpdateResponseHeadersPolicyError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateStreamingDistributionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateStreamingDistributionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateStreamingDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateStreamingDistributionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4366,3 +2796,4 @@ impl From<crate::error::UpdateStreamingDistributionError> for Error {
     }
 }
 impl std::error::Error for Error {}
+

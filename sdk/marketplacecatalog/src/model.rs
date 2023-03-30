@@ -3,7 +3,7 @@
 /// <p>A list of objects specifying each key name and value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key associated with the tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key associated with the tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value associated with the tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod tag {
         }
         /// <p>The key associated with the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value associated with the tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod tag {
         }
         /// <p>The value associated with the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -70,7 +72,7 @@ impl Tag {
 /// <p>An object that contains the <code>ChangeType</code>, <code>Details</code>, and <code>Entity</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Change {
+pub struct Change  {
     /// <p>Change types are single string values that describe your intention for the change. Each change type is unique for each <code>EntityType</code> provided in the change's scope.</p>
     #[doc(hidden)]
     pub change_type: std::option::Option<std::string::String>,
@@ -89,29 +91,29 @@ pub struct Change {
 }
 impl Change {
     /// <p>Change types are single string values that describe your intention for the change. Each change type is unique for each <code>EntityType</code> provided in the change's scope.</p>
-    pub fn change_type(&self) -> std::option::Option<&str> {
+    pub fn change_type(&self) -> std::option::Option<& str> {
         self.change_type.as_deref()
     }
     /// <p>The entity to be changed.</p>
-    pub fn entity(&self) -> std::option::Option<&crate::model::Entity> {
+    pub fn entity(&self) -> std::option::Option<& crate::model::Entity> {
         self.entity.as_ref()
     }
     /// <p>The tags associated with the change.</p>
-    pub fn entity_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn entity_tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.entity_tags.as_deref()
     }
     /// <p>This object contains details specific to the change type of the requested change.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> std::option::Option<& str> {
         self.details.as_deref()
     }
     /// <p>Optional name for the change.</p>
-    pub fn change_name(&self) -> std::option::Option<&str> {
+    pub fn change_name(&self) -> std::option::Option<& str> {
         self.change_name.as_deref()
     }
 }
 /// See [`Change`](crate::model::Change).
 pub mod change {
-
+    
     /// A builder for [`Change`](crate::model::Change).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -129,8 +131,7 @@ pub mod change {
         }
         /// <p>Change types are single string values that describe your intention for the change. Each change type is unique for each <code>EntityType</code> provided in the change's scope.</p>
         pub fn set_change_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_type = input;
-            self
+            self.change_type = input; self
         }
         /// <p>The entity to be changed.</p>
         pub fn entity(mut self, input: crate::model::Entity) -> Self {
@@ -139,8 +140,7 @@ pub mod change {
         }
         /// <p>The entity to be changed.</p>
         pub fn set_entity(mut self, input: std::option::Option<crate::model::Entity>) -> Self {
-            self.entity = input;
-            self
+            self.entity = input; self
         }
         /// Appends an item to `entity_tags`.
         ///
@@ -149,17 +149,13 @@ pub mod change {
         /// <p>The tags associated with the change.</p>
         pub fn entity_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.entity_tags.unwrap_or_default();
-            v.push(input);
-            self.entity_tags = Some(v);
-            self
+                            v.push(input);
+                            self.entity_tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the change.</p>
-        pub fn set_entity_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.entity_tags = input;
-            self
+        pub fn set_entity_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.entity_tags = input; self
         }
         /// <p>This object contains details specific to the change type of the requested change.</p>
         pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,8 +164,7 @@ pub mod change {
         }
         /// <p>This object contains details specific to the change type of the requested change.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.details = input;
-            self
+            self.details = input; self
         }
         /// <p>Optional name for the change.</p>
         pub fn change_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -178,20 +173,26 @@ pub mod change {
         }
         /// <p>Optional name for the change.</p>
         pub fn set_change_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_name = input;
-            self
+            self.change_name = input; self
         }
         /// Consumes the builder and constructs a [`Change`](crate::model::Change).
         pub fn build(self) -> crate::model::Change {
             crate::model::Change {
-                change_type: self.change_type,
-                entity: self.entity,
-                entity_tags: self.entity_tags,
-                details: self.details,
-                change_name: self.change_name,
+                change_type: self.change_type
+                ,
+                entity: self.entity
+                ,
+                entity_tags: self.entity_tags
+                ,
+                details: self.details
+                ,
+                change_name: self.change_name
+                ,
             }
         }
     }
+    
+    
 }
 impl Change {
     /// Creates a new builder-style object to manufacture [`Change`](crate::model::Change).
@@ -203,7 +204,7 @@ impl Change {
 /// <p>An entity contains data that describes your product, its supported features, and how it can be used or launched by your customer. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Entity {
+pub struct Entity  {
     /// <p>The type of entity.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -213,17 +214,17 @@ pub struct Entity {
 }
 impl Entity {
     /// <p>The type of entity.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The identifier for the entity.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
 /// See [`Entity`](crate::model::Entity).
 pub mod entity {
-
+    
     /// A builder for [`Entity`](crate::model::Entity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -238,8 +239,7 @@ pub mod entity {
         }
         /// <p>The type of entity.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The identifier for the entity.</p>
         pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -248,17 +248,20 @@ pub mod entity {
         }
         /// <p>The identifier for the entity.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identifier = input;
-            self
+            self.identifier = input; self
         }
         /// Consumes the builder and constructs a [`Entity`](crate::model::Entity).
         pub fn build(self) -> crate::model::Entity {
             crate::model::Entity {
-                r#type: self.r#type,
-                identifier: self.identifier,
+                r#type: self.r#type
+                ,
+                identifier: self.identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl Entity {
     /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity).
@@ -270,7 +273,7 @@ impl Entity {
 /// <p>This object is a container for common summary information about the entity. The summary doesn't contain the whole entity structure, but it does contain information common across all entities.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntitySummary {
+pub struct EntitySummary  {
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -292,33 +295,33 @@ pub struct EntitySummary {
 }
 impl EntitySummary {
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the entity.</p>
-    pub fn entity_type(&self) -> std::option::Option<&str> {
+    pub fn entity_type(&self) -> std::option::Option<& str> {
         self.entity_type.as_deref()
     }
     /// <p>The unique identifier for the entity.</p>
-    pub fn entity_id(&self) -> std::option::Option<&str> {
+    pub fn entity_id(&self) -> std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The ARN associated with the unique identifier for the entity.</p>
-    pub fn entity_arn(&self) -> std::option::Option<&str> {
+    pub fn entity_arn(&self) -> std::option::Option<& str> {
         self.entity_arn.as_deref()
     }
     /// <p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+    pub fn last_modified_date(&self) -> std::option::Option<& str> {
         self.last_modified_date.as_deref()
     }
     /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
-    pub fn visibility(&self) -> std::option::Option<&str> {
+    pub fn visibility(&self) -> std::option::Option<& str> {
         self.visibility.as_deref()
     }
 }
 /// See [`EntitySummary`](crate::model::EntitySummary).
 pub mod entity_summary {
-
+    
     /// A builder for [`EntitySummary`](crate::model::EntitySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -337,8 +340,7 @@ pub mod entity_summary {
         }
         /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of the entity.</p>
         pub fn entity_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -347,8 +349,7 @@ pub mod entity_summary {
         }
         /// <p>The type of the entity.</p>
         pub fn set_entity_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entity_type = input;
-            self
+            self.entity_type = input; self
         }
         /// <p>The unique identifier for the entity.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -357,8 +358,7 @@ pub mod entity_summary {
         }
         /// <p>The unique identifier for the entity.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entity_id = input;
-            self
+            self.entity_id = input; self
         }
         /// <p>The ARN associated with the unique identifier for the entity.</p>
         pub fn entity_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -367,8 +367,7 @@ pub mod entity_summary {
         }
         /// <p>The ARN associated with the unique identifier for the entity.</p>
         pub fn set_entity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entity_arn = input;
-            self
+            self.entity_arn = input; self
         }
         /// <p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>
         pub fn last_modified_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -376,12 +375,8 @@ pub mod entity_summary {
             self
         }
         /// <p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_date = input; self
         }
         /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
         pub fn visibility(mut self, input: impl Into<std::string::String>) -> Self {
@@ -390,21 +385,28 @@ pub mod entity_summary {
         }
         /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
         pub fn set_visibility(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.visibility = input;
-            self
+            self.visibility = input; self
         }
         /// Consumes the builder and constructs a [`EntitySummary`](crate::model::EntitySummary).
         pub fn build(self) -> crate::model::EntitySummary {
             crate::model::EntitySummary {
-                name: self.name,
-                entity_type: self.entity_type,
-                entity_id: self.entity_id,
-                entity_arn: self.entity_arn,
-                last_modified_date: self.last_modified_date,
-                visibility: self.visibility,
+                name: self.name
+                ,
+                entity_type: self.entity_type
+                ,
+                entity_id: self.entity_id
+                ,
+                entity_arn: self.entity_arn
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                visibility: self.visibility
+                ,
             }
         }
     }
+    
+    
 }
 impl EntitySummary {
     /// Creates a new builder-style object to manufacture [`EntitySummary`](crate::model::EntitySummary).
@@ -416,8 +418,8 @@ impl EntitySummary {
 /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Sort {
-    /// <p>For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p>
+pub struct Sort  {
+    /// <p>For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p> 
     /// <p>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and <code>EndTime</code>.</p>
     #[doc(hidden)]
     pub sort_by: std::option::Option<std::string::String>,
@@ -426,19 +428,19 @@ pub struct Sort {
     pub sort_order: std::option::Option<crate::model::SortOrder>,
 }
 impl Sort {
-    /// <p>For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p>
+    /// <p>For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p> 
     /// <p>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and <code>EndTime</code>.</p>
-    pub fn sort_by(&self) -> std::option::Option<&str> {
+    pub fn sort_by(&self) -> std::option::Option<& str> {
         self.sort_by.as_deref()
     }
     /// <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.sort_order.as_ref()
     }
 }
 /// See [`Sort`](crate::model::Sort).
 pub mod sort {
-
+    
     /// A builder for [`Sort`](crate::model::Sort).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -446,17 +448,16 @@ pub mod sort {
         pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
     }
     impl Builder {
-        /// <p>For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p>
+        /// <p>For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p> 
         /// <p>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and <code>EndTime</code>.</p>
         pub fn sort_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.sort_by = Some(input.into());
             self
         }
-        /// <p>For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p>
+        /// <p>For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p> 
         /// <p>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and <code>EndTime</code>.</p>
         pub fn set_sort_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sort_by = input;
-            self
+            self.sort_by = input; self
         }
         /// <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
@@ -464,21 +465,21 @@ pub mod sort {
             self
         }
         /// <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrder>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
+            self.sort_order = input; self
         }
         /// Consumes the builder and constructs a [`Sort`](crate::model::Sort).
         pub fn build(self) -> crate::model::Sort {
             crate::model::Sort {
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
             }
         }
     }
+    
+    
 }
 impl Sort {
     /// Creates a new builder-style object to manufacture [`Sort`](crate::model::Sort).
@@ -493,9 +494,9 @@ impl Sort {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sortorder = unimplemented!();
 /// match sortorder {
@@ -517,58 +518,52 @@ impl Sort {
 /// Specifically, when `sortorder` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SortOrder::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SortOrder {
     #[allow(missing_docs)] // documentation missing in model
     Ascending,
     #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortOrder {
     fn from(s: &str) -> Self {
         match s {
             "ASCENDING" => SortOrder::Ascending,
             "DESCENDING" => SortOrder::Descending,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SortOrder {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SortOrder::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SortOrder::from(s))
+                }
+            }
 impl SortOrder {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortOrder::Ascending => "ASCENDING",
             SortOrder::Descending => "DESCENDING",
-            SortOrder::Unknown(value) => value.as_str(),
+            SortOrder::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASCENDING", "DESCENDING"]
+        &[
+            "ASCENDING", "DESCENDING"
+        ]
     }
 }
 impl AsRef<str> for SortOrder {
@@ -580,49 +575,49 @@ impl AsRef<str> for SortOrder {
 /// <p>A filter object, used to optionally filter results from calls to the <code>ListEntities</code> and <code>ListChangeSets</code> actions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter {
-    /// <p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p>
+pub struct Filter  {
+    /// <p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p> 
     /// <p>For <code>ListChangeSets</code>, the supported values are as follows:</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
-    /// <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li>
-    /// <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li>
-    /// <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li>
-    /// <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li>
-    /// <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li>
-    /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li>
-    /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li>
+    /// <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p> 
+    /// <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li> 
+    /// <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li> 
+    /// <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li> 
+    /// <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li> 
+    /// <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li> 
+    /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li> 
+    /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub value_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Filter {
-    /// <p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p>
+    /// <p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p> 
     /// <p>For <code>ListChangeSets</code>, the supported values are as follows:</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
-    /// <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li>
-    /// <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li>
-    /// <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li>
-    /// <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li>
-    /// <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li>
-    /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li>
-    /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li>
+    /// <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p> 
+    /// <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li> 
+    /// <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li> 
+    /// <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li> 
+    /// <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li> 
+    /// <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li> 
+    /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li> 
+    /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li> 
     /// </ul>
-    pub fn value_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn value_list(&self) -> std::option::Option<& [std::string::String]> {
         self.value_list.as_deref()
     }
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -630,65 +625,64 @@ pub mod filter {
         pub(crate) value_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p>
+        /// <p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p> 
         /// <p>For <code>ListChangeSets</code>, the supported values are as follows:</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p>
+        /// <p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p> 
         /// <p>For <code>ListChangeSets</code>, the supported values are as follows:</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `value_list`.
         ///
         /// To override the contents of this collection use [`set_value_list`](Self::set_value_list).
         ///
-        /// <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
-        /// <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li>
-        /// <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li>
-        /// <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li>
-        /// <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li>
-        /// <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li>
-        /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li>
-        /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li>
+        /// <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p> 
+        /// <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li> 
+        /// <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li> 
+        /// <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li> 
+        /// <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li> 
+        /// <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li> 
+        /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li> 
+        /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li> 
         /// </ul>
         pub fn value_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.value_list.unwrap_or_default();
-            v.push(input.into());
-            self.value_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.value_list = Some(v);
+                            self
         }
-        /// <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
-        /// <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li>
-        /// <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li>
-        /// <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li>
-        /// <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li>
-        /// <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li>
-        /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li>
-        /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li>
+        /// <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p> 
+        /// <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li> 
+        /// <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li> 
+        /// <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li> 
+        /// <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li> 
+        /// <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li> 
+        /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li> 
+        /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li> 
         /// </ul>
-        pub fn set_value_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.value_list = input;
-            self
+        pub fn set_value_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.value_list = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                name: self.name,
-                value_list: self.value_list,
+                name: self.name
+                ,
+                value_list: self.value_list
+                ,
             }
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -700,7 +694,7 @@ impl Filter {
 /// <p>A summary of a change set returned in a list of change sets when the <code>ListChangeSets</code> action is called.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChangeSetSummaryListItem {
+pub struct ChangeSetSummaryListItem  {
     /// <p>The unique identifier for a change set.</p>
     #[doc(hidden)]
     pub change_set_id: std::option::Option<std::string::String>,
@@ -728,41 +722,41 @@ pub struct ChangeSetSummaryListItem {
 }
 impl ChangeSetSummaryListItem {
     /// <p>The unique identifier for a change set.</p>
-    pub fn change_set_id(&self) -> std::option::Option<&str> {
+    pub fn change_set_id(&self) -> std::option::Option<& str> {
         self.change_set_id.as_deref()
     }
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
-    pub fn change_set_arn(&self) -> std::option::Option<&str> {
+    pub fn change_set_arn(&self) -> std::option::Option<& str> {
         self.change_set_arn.as_deref()
     }
     /// <p>The non-unique name for the change set.</p>
-    pub fn change_set_name(&self) -> std::option::Option<&str> {
+    pub fn change_set_name(&self) -> std::option::Option<& str> {
         self.change_set_name.as_deref()
     }
     /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started.</p>
-    pub fn start_time(&self) -> std::option::Option<&str> {
+    pub fn start_time(&self) -> std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished.</p>
-    pub fn end_time(&self) -> std::option::Option<&str> {
+    pub fn end_time(&self) -> std::option::Option<& str> {
         self.end_time.as_deref()
     }
     /// <p>The current status of the change set.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ChangeStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ChangeStatus> {
         self.status.as_ref()
     }
     /// <p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
-    pub fn entity_id_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn entity_id_list(&self) -> std::option::Option<& [std::string::String]> {
         self.entity_id_list.as_deref()
     }
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
-    pub fn failure_code(&self) -> std::option::Option<&crate::model::FailureCode> {
+    pub fn failure_code(&self) -> std::option::Option<& crate::model::FailureCode> {
         self.failure_code.as_ref()
     }
 }
 /// See [`ChangeSetSummaryListItem`](crate::model::ChangeSetSummaryListItem).
 pub mod change_set_summary_list_item {
-
+    
     /// A builder for [`ChangeSetSummaryListItem`](crate::model::ChangeSetSummaryListItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -782,12 +776,8 @@ pub mod change_set_summary_list_item {
             self
         }
         /// <p>The unique identifier for a change set.</p>
-        pub fn set_change_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_set_id = input;
-            self
+        pub fn set_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_set_id = input; self
         }
         /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
         pub fn change_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -795,12 +785,8 @@ pub mod change_set_summary_list_item {
             self
         }
         /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
-        pub fn set_change_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_set_arn = input;
-            self
+        pub fn set_change_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_set_arn = input; self
         }
         /// <p>The non-unique name for the change set.</p>
         pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -808,12 +794,8 @@ pub mod change_set_summary_list_item {
             self
         }
         /// <p>The non-unique name for the change set.</p>
-        pub fn set_change_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_set_name = input;
-            self
+        pub fn set_change_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_set_name = input; self
         }
         /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started.</p>
         pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -822,8 +804,7 @@ pub mod change_set_summary_list_item {
         }
         /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started.</p>
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start_time = input;
-            self
+            self.start_time = input; self
         }
         /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished.</p>
         pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -832,8 +813,7 @@ pub mod change_set_summary_list_item {
         }
         /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished.</p>
         pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end_time = input;
-            self
+            self.end_time = input; self
         }
         /// <p>The current status of the change set.</p>
         pub fn status(mut self, input: crate::model::ChangeStatus) -> Self {
@@ -841,12 +821,8 @@ pub mod change_set_summary_list_item {
             self
         }
         /// <p>The current status of the change set.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ChangeStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ChangeStatus>) -> Self {
+            self.status = input; self
         }
         /// Appends an item to `entity_id_list`.
         ///
@@ -855,17 +831,13 @@ pub mod change_set_summary_list_item {
         /// <p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
         pub fn entity_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entity_id_list.unwrap_or_default();
-            v.push(input.into());
-            self.entity_id_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.entity_id_list = Some(v);
+                            self
         }
         /// <p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
-        pub fn set_entity_id_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.entity_id_list = input;
-            self
+        pub fn set_entity_id_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.entity_id_list = input; self
         }
         /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
         pub fn failure_code(mut self, input: crate::model::FailureCode) -> Self {
@@ -873,27 +845,33 @@ pub mod change_set_summary_list_item {
             self
         }
         /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
-        pub fn set_failure_code(
-            mut self,
-            input: std::option::Option<crate::model::FailureCode>,
-        ) -> Self {
-            self.failure_code = input;
-            self
+        pub fn set_failure_code(mut self, input: std::option::Option<crate::model::FailureCode>) -> Self {
+            self.failure_code = input; self
         }
         /// Consumes the builder and constructs a [`ChangeSetSummaryListItem`](crate::model::ChangeSetSummaryListItem).
         pub fn build(self) -> crate::model::ChangeSetSummaryListItem {
             crate::model::ChangeSetSummaryListItem {
-                change_set_id: self.change_set_id,
-                change_set_arn: self.change_set_arn,
-                change_set_name: self.change_set_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                status: self.status,
-                entity_id_list: self.entity_id_list,
-                failure_code: self.failure_code,
+                change_set_id: self.change_set_id
+                ,
+                change_set_arn: self.change_set_arn
+                ,
+                change_set_name: self.change_set_name
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                status: self.status
+                ,
+                entity_id_list: self.entity_id_list
+                ,
+                failure_code: self.failure_code
+                ,
             }
         }
     }
+    
+    
 }
 impl ChangeSetSummaryListItem {
     /// Creates a new builder-style object to manufacture [`ChangeSetSummaryListItem`](crate::model::ChangeSetSummaryListItem).
@@ -908,9 +886,9 @@ impl ChangeSetSummaryListItem {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let failurecode = unimplemented!();
 /// match failurecode {
@@ -932,58 +910,52 @@ impl ChangeSetSummaryListItem {
 /// Specifically, when `failurecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FailureCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FailureCode {
     #[allow(missing_docs)] // documentation missing in model
     ClientError,
     #[allow(missing_docs)] // documentation missing in model
     ServerFault,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FailureCode {
     fn from(s: &str) -> Self {
         match s {
             "CLIENT_ERROR" => FailureCode::ClientError,
             "SERVER_FAULT" => FailureCode::ServerFault,
-            other => FailureCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FailureCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FailureCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FailureCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FailureCode::from(s))
+                }
+            }
 impl FailureCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FailureCode::ClientError => "CLIENT_ERROR",
             FailureCode::ServerFault => "SERVER_FAULT",
-            FailureCode::Unknown(value) => value.as_str(),
+            FailureCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLIENT_ERROR", "SERVER_FAULT"]
+        &[
+            "CLIENT_ERROR", "SERVER_FAULT"
+        ]
     }
 }
 impl AsRef<str> for FailureCode {
@@ -998,9 +970,9 @@ impl AsRef<str> for FailureCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let changestatus = unimplemented!();
 /// match changestatus {
@@ -1025,22 +997,14 @@ impl AsRef<str> for FailureCode {
 /// Specifically, when `changestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChangeStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChangeStatus {
     #[allow(missing_docs)] // documentation missing in model
     Applying,
@@ -1053,7 +1017,7 @@ pub enum ChangeStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChangeStatus {
     fn from(s: &str) -> Self {
@@ -1063,17 +1027,17 @@ impl std::convert::From<&str> for ChangeStatus {
             "FAILED" => ChangeStatus::Failed,
             "PREPARING" => ChangeStatus::Preparing,
             "SUCCEEDED" => ChangeStatus::Succeeded,
-            other => ChangeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ChangeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChangeStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChangeStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChangeStatus::from(s))
+                }
+            }
 impl ChangeStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1083,12 +1047,14 @@ impl ChangeStatus {
             ChangeStatus::Failed => "FAILED",
             ChangeStatus::Preparing => "PREPARING",
             ChangeStatus::Succeeded => "SUCCEEDED",
-            ChangeStatus::Unknown(value) => value.as_str(),
+            ChangeStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["APPLYING", "CANCELLED", "FAILED", "PREPARING", "SUCCEEDED"]
+        &[
+            "APPLYING", "CANCELLED", "FAILED", "PREPARING", "SUCCEEDED"
+        ]
     }
 }
 impl AsRef<str> for ChangeStatus {
@@ -1100,7 +1066,7 @@ impl AsRef<str> for ChangeStatus {
 /// <p>This object is a container for common summary information about the change. The summary doesn't contain the whole change structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChangeSummary {
+pub struct ChangeSummary  {
     /// <p>The type of the change.</p>
     #[doc(hidden)]
     pub change_type: std::option::Option<std::string::String>,
@@ -1119,29 +1085,29 @@ pub struct ChangeSummary {
 }
 impl ChangeSummary {
     /// <p>The type of the change.</p>
-    pub fn change_type(&self) -> std::option::Option<&str> {
+    pub fn change_type(&self) -> std::option::Option<& str> {
         self.change_type.as_deref()
     }
     /// <p>The entity to be changed.</p>
-    pub fn entity(&self) -> std::option::Option<&crate::model::Entity> {
+    pub fn entity(&self) -> std::option::Option<& crate::model::Entity> {
         self.entity.as_ref()
     }
     /// <p>This object contains details specific to the change type of the requested change.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> std::option::Option<& str> {
         self.details.as_deref()
     }
     /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
-    pub fn error_detail_list(&self) -> std::option::Option<&[crate::model::ErrorDetail]> {
+    pub fn error_detail_list(&self) -> std::option::Option<& [crate::model::ErrorDetail]> {
         self.error_detail_list.as_deref()
     }
     /// <p>Optional name for the change.</p>
-    pub fn change_name(&self) -> std::option::Option<&str> {
+    pub fn change_name(&self) -> std::option::Option<& str> {
         self.change_name.as_deref()
     }
 }
 /// See [`ChangeSummary`](crate::model::ChangeSummary).
 pub mod change_summary {
-
+    
     /// A builder for [`ChangeSummary`](crate::model::ChangeSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1159,8 +1125,7 @@ pub mod change_summary {
         }
         /// <p>The type of the change.</p>
         pub fn set_change_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_type = input;
-            self
+            self.change_type = input; self
         }
         /// <p>The entity to be changed.</p>
         pub fn entity(mut self, input: crate::model::Entity) -> Self {
@@ -1169,8 +1134,7 @@ pub mod change_summary {
         }
         /// <p>The entity to be changed.</p>
         pub fn set_entity(mut self, input: std::option::Option<crate::model::Entity>) -> Self {
-            self.entity = input;
-            self
+            self.entity = input; self
         }
         /// <p>This object contains details specific to the change type of the requested change.</p>
         pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1179,8 +1143,7 @@ pub mod change_summary {
         }
         /// <p>This object contains details specific to the change type of the requested change.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.details = input;
-            self
+            self.details = input; self
         }
         /// Appends an item to `error_detail_list`.
         ///
@@ -1189,17 +1152,13 @@ pub mod change_summary {
         /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
         pub fn error_detail_list(mut self, input: crate::model::ErrorDetail) -> Self {
             let mut v = self.error_detail_list.unwrap_or_default();
-            v.push(input);
-            self.error_detail_list = Some(v);
-            self
+                            v.push(input);
+                            self.error_detail_list = Some(v);
+                            self
         }
         /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
-        pub fn set_error_detail_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
-        ) -> Self {
-            self.error_detail_list = input;
-            self
+        pub fn set_error_detail_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>) -> Self {
+            self.error_detail_list = input; self
         }
         /// <p>Optional name for the change.</p>
         pub fn change_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1208,20 +1167,26 @@ pub mod change_summary {
         }
         /// <p>Optional name for the change.</p>
         pub fn set_change_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.change_name = input;
-            self
+            self.change_name = input; self
         }
         /// Consumes the builder and constructs a [`ChangeSummary`](crate::model::ChangeSummary).
         pub fn build(self) -> crate::model::ChangeSummary {
             crate::model::ChangeSummary {
-                change_type: self.change_type,
-                entity: self.entity,
-                details: self.details,
-                error_detail_list: self.error_detail_list,
-                change_name: self.change_name,
+                change_type: self.change_type
+                ,
+                entity: self.entity
+                ,
+                details: self.details
+                ,
+                error_detail_list: self.error_detail_list
+                ,
+                change_name: self.change_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ChangeSummary {
     /// Creates a new builder-style object to manufacture [`ChangeSummary`](crate::model::ChangeSummary).
@@ -1233,7 +1198,7 @@ impl ChangeSummary {
 /// <p>Details about the error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorDetail {
+pub struct ErrorDetail  {
     /// <p>The error code that identifies the type of error.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
@@ -1243,17 +1208,17 @@ pub struct ErrorDetail {
 }
 impl ErrorDetail {
     /// <p>The error code that identifies the type of error.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The message for the error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`ErrorDetail`](crate::model::ErrorDetail).
 pub mod error_detail {
-
+    
     /// A builder for [`ErrorDetail`](crate::model::ErrorDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1268,8 +1233,7 @@ pub mod error_detail {
         }
         /// <p>The error code that identifies the type of error.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>The message for the error.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1277,21 +1241,21 @@ pub mod error_detail {
             self
         }
         /// <p>The message for the error.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`ErrorDetail`](crate::model::ErrorDetail).
         pub fn build(self) -> crate::model::ErrorDetail {
             crate::model::ErrorDetail {
-                error_code: self.error_code,
-                error_message: self.error_message,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl ErrorDetail {
     /// Creates a new builder-style object to manufacture [`ErrorDetail`](crate::model::ErrorDetail).
@@ -1299,3 +1263,4 @@ impl ErrorDetail {
         crate::model::error_detail::Builder::default()
     }
 }
+

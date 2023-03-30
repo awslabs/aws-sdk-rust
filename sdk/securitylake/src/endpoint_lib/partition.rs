@@ -612,3 +612,4 @@ mod test {
         assert_eq!(resolve(&resolver, "mars-east-2").dns_suffix, "mars.aws");
     }
 }
+

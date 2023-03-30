@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateJobStatusOutput {
+pub struct UpdateJobStatusOutput  {
     /// <p>The ID for the job whose status was updated.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct UpdateJobStatusOutput {
 }
 impl UpdateJobStatusOutput {
     /// <p>The ID for the job whose status was updated.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current status for the specified job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.status.as_ref()
     }
     /// <p>The reason that the specified job's status was updated.</p>
-    pub fn status_update_reason(&self) -> std::option::Option<&str> {
+    pub fn status_update_reason(&self) -> std::option::Option<& str> {
         self.status_update_reason.as_deref()
     }
 }
 /// See [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput).
 pub mod update_job_status_output {
-
+    
     /// A builder for [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -45,8 +45,7 @@ pub mod update_job_status_output {
         }
         /// <p>The ID for the job whose status was updated.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The current status for the specified job.</p>
         pub fn status(mut self, input: crate::model::JobStatus) -> Self {
@@ -55,8 +54,7 @@ pub mod update_job_status_output {
         }
         /// <p>The current status for the specified job.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The reason that the specified job's status was updated.</p>
         pub fn status_update_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,22 +62,23 @@ pub mod update_job_status_output {
             self
         }
         /// <p>The reason that the specified job's status was updated.</p>
-        pub fn set_status_update_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_update_reason = input;
-            self
+        pub fn set_status_update_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_update_reason = input; self
         }
         /// Consumes the builder and constructs a [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput).
         pub fn build(self) -> crate::output::UpdateJobStatusOutput {
             crate::output::UpdateJobStatusOutput {
-                job_id: self.job_id,
-                status: self.status,
-                status_update_reason: self.status_update_reason,
+                job_id: self.job_id
+                ,
+                status: self.status
+                ,
+                status_update_reason: self.status_update_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateJobStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput).
@@ -91,7 +90,7 @@ impl UpdateJobStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateJobPriorityOutput {
+pub struct UpdateJobPriorityOutput  {
     /// <p>The ID for the job whose priority Amazon S3 updated.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -101,7 +100,7 @@ pub struct UpdateJobPriorityOutput {
 }
 impl UpdateJobPriorityOutput {
     /// <p>The ID for the job whose priority Amazon S3 updated.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The new priority assigned to the specified job.</p>
@@ -111,7 +110,7 @@ impl UpdateJobPriorityOutput {
 }
 /// See [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput).
 pub mod update_job_priority_output {
-
+    
     /// A builder for [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -126,8 +125,7 @@ pub mod update_job_priority_output {
         }
         /// <p>The ID for the job whose priority Amazon S3 updated.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The new priority assigned to the specified job.</p>
         pub fn priority(mut self, input: i32) -> Self {
@@ -136,17 +134,21 @@ pub mod update_job_priority_output {
         }
         /// <p>The new priority assigned to the specified job.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
         /// Consumes the builder and constructs a [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput).
         pub fn build(self) -> crate::output::UpdateJobPriorityOutput {
             crate::output::UpdateJobPriorityOutput {
-                job_id: self.job_id,
-                priority: self.priority.unwrap_or_default(),
+                job_id: self.job_id
+                ,
+                priority: self.priority
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateJobPriorityOutput {
     /// Creates a new builder-style object to manufacture [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput).
@@ -158,19 +160,24 @@ impl UpdateJobPriorityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubmitMultiRegionAccessPointRoutesOutput {}
+pub struct SubmitMultiRegionAccessPointRoutesOutput  {
+}
 /// See [`SubmitMultiRegionAccessPointRoutesOutput`](crate::output::SubmitMultiRegionAccessPointRoutesOutput).
 pub mod submit_multi_region_access_point_routes_output {
-
+    
     /// A builder for [`SubmitMultiRegionAccessPointRoutesOutput`](crate::output::SubmitMultiRegionAccessPointRoutesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SubmitMultiRegionAccessPointRoutesOutput`](crate::output::SubmitMultiRegionAccessPointRoutesOutput).
         pub fn build(self) -> crate::output::SubmitMultiRegionAccessPointRoutesOutput {
-            crate::output::SubmitMultiRegionAccessPointRoutesOutput {}
+            crate::output::SubmitMultiRegionAccessPointRoutesOutput {
+            }
         }
     }
+    
+    
 }
 impl SubmitMultiRegionAccessPointRoutesOutput {
     /// Creates a new builder-style object to manufacture [`SubmitMultiRegionAccessPointRoutesOutput`](crate::output::SubmitMultiRegionAccessPointRoutesOutput).
@@ -182,19 +189,24 @@ impl SubmitMultiRegionAccessPointRoutesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutStorageLensConfigurationTaggingOutput {}
+pub struct PutStorageLensConfigurationTaggingOutput  {
+}
 /// See [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput).
 pub mod put_storage_lens_configuration_tagging_output {
-
+    
     /// A builder for [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput).
         pub fn build(self) -> crate::output::PutStorageLensConfigurationTaggingOutput {
-            crate::output::PutStorageLensConfigurationTaggingOutput {}
+            crate::output::PutStorageLensConfigurationTaggingOutput {
+            }
         }
     }
+    
+    
 }
 impl PutStorageLensConfigurationTaggingOutput {
     /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput).
@@ -206,19 +218,24 @@ impl PutStorageLensConfigurationTaggingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutStorageLensConfigurationOutput {}
+pub struct PutStorageLensConfigurationOutput  {
+}
 /// See [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput).
 pub mod put_storage_lens_configuration_output {
-
+    
     /// A builder for [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput).
         pub fn build(self) -> crate::output::PutStorageLensConfigurationOutput {
-            crate::output::PutStorageLensConfigurationOutput {}
+            crate::output::PutStorageLensConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl PutStorageLensConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput).
@@ -230,19 +247,24 @@ impl PutStorageLensConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPublicAccessBlockOutput {}
+pub struct PutPublicAccessBlockOutput  {
+}
 /// See [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput).
 pub mod put_public_access_block_output {
-
+    
     /// A builder for [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput).
         pub fn build(self) -> crate::output::PutPublicAccessBlockOutput {
-            crate::output::PutPublicAccessBlockOutput {}
+            crate::output::PutPublicAccessBlockOutput {
+            }
         }
     }
+    
+    
 }
 impl PutPublicAccessBlockOutput {
     /// Creates a new builder-style object to manufacture [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput).
@@ -254,20 +276,20 @@ impl PutPublicAccessBlockOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutMultiRegionAccessPointPolicyOutput {
+pub struct PutMultiRegionAccessPointPolicyOutput  {
     /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
     #[doc(hidden)]
     pub request_token_arn: std::option::Option<std::string::String>,
 }
 impl PutMultiRegionAccessPointPolicyOutput {
     /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
-    pub fn request_token_arn(&self) -> std::option::Option<&str> {
+    pub fn request_token_arn(&self) -> std::option::Option<& str> {
         self.request_token_arn.as_deref()
     }
 }
 /// See [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput).
 pub mod put_multi_region_access_point_policy_output {
-
+    
     /// A builder for [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -280,20 +302,19 @@ pub mod put_multi_region_access_point_policy_output {
             self
         }
         /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
-        pub fn set_request_token_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.request_token_arn = input;
-            self
+        pub fn set_request_token_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_token_arn = input; self
         }
         /// Consumes the builder and constructs a [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput).
         pub fn build(self) -> crate::output::PutMultiRegionAccessPointPolicyOutput {
             crate::output::PutMultiRegionAccessPointPolicyOutput {
-                request_token_arn: self.request_token_arn,
+                request_token_arn: self.request_token_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PutMultiRegionAccessPointPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput).
@@ -305,19 +326,24 @@ impl PutMultiRegionAccessPointPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutJobTaggingOutput {}
+pub struct PutJobTaggingOutput  {
+}
 /// See [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput).
 pub mod put_job_tagging_output {
-
+    
     /// A builder for [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput).
         pub fn build(self) -> crate::output::PutJobTaggingOutput {
-            crate::output::PutJobTaggingOutput {}
+            crate::output::PutJobTaggingOutput {
+            }
         }
     }
+    
+    
 }
 impl PutJobTaggingOutput {
     /// Creates a new builder-style object to manufacture [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput).
@@ -329,19 +355,24 @@ impl PutJobTaggingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutBucketVersioningOutput {}
+pub struct PutBucketVersioningOutput  {
+}
 /// See [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput).
 pub mod put_bucket_versioning_output {
-
+    
     /// A builder for [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput).
         pub fn build(self) -> crate::output::PutBucketVersioningOutput {
-            crate::output::PutBucketVersioningOutput {}
+            crate::output::PutBucketVersioningOutput {
+            }
         }
     }
+    
+    
 }
 impl PutBucketVersioningOutput {
     /// Creates a new builder-style object to manufacture [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput).
@@ -353,19 +384,24 @@ impl PutBucketVersioningOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutBucketTaggingOutput {}
+pub struct PutBucketTaggingOutput  {
+}
 /// See [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput).
 pub mod put_bucket_tagging_output {
-
+    
     /// A builder for [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput).
         pub fn build(self) -> crate::output::PutBucketTaggingOutput {
-            crate::output::PutBucketTaggingOutput {}
+            crate::output::PutBucketTaggingOutput {
+            }
         }
     }
+    
+    
 }
 impl PutBucketTaggingOutput {
     /// Creates a new builder-style object to manufacture [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput).
@@ -377,19 +413,24 @@ impl PutBucketTaggingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutBucketPolicyOutput {}
+pub struct PutBucketPolicyOutput  {
+}
 /// See [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput).
 pub mod put_bucket_policy_output {
-
+    
     /// A builder for [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput).
         pub fn build(self) -> crate::output::PutBucketPolicyOutput {
-            crate::output::PutBucketPolicyOutput {}
+            crate::output::PutBucketPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl PutBucketPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput).
@@ -401,19 +442,24 @@ impl PutBucketPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutBucketLifecycleConfigurationOutput {}
+pub struct PutBucketLifecycleConfigurationOutput  {
+}
 /// See [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput).
 pub mod put_bucket_lifecycle_configuration_output {
-
+    
     /// A builder for [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput).
         pub fn build(self) -> crate::output::PutBucketLifecycleConfigurationOutput {
-            crate::output::PutBucketLifecycleConfigurationOutput {}
+            crate::output::PutBucketLifecycleConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl PutBucketLifecycleConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput).
@@ -425,19 +471,24 @@ impl PutBucketLifecycleConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccessPointPolicyForObjectLambdaOutput {}
+pub struct PutAccessPointPolicyForObjectLambdaOutput  {
+}
 /// See [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput).
 pub mod put_access_point_policy_for_object_lambda_output {
-
+    
     /// A builder for [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput).
         pub fn build(self) -> crate::output::PutAccessPointPolicyForObjectLambdaOutput {
-            crate::output::PutAccessPointPolicyForObjectLambdaOutput {}
+            crate::output::PutAccessPointPolicyForObjectLambdaOutput {
+            }
         }
     }
+    
+    
 }
 impl PutAccessPointPolicyForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput).
@@ -449,19 +500,24 @@ impl PutAccessPointPolicyForObjectLambdaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccessPointPolicyOutput {}
+pub struct PutAccessPointPolicyOutput  {
+}
 /// See [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput).
 pub mod put_access_point_policy_output {
-
+    
     /// A builder for [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput).
         pub fn build(self) -> crate::output::PutAccessPointPolicyOutput {
-            crate::output::PutAccessPointPolicyOutput {}
+            crate::output::PutAccessPointPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl PutAccessPointPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput).
@@ -473,24 +529,28 @@ impl PutAccessPointPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccessPointConfigurationForObjectLambdaOutput {}
+pub struct PutAccessPointConfigurationForObjectLambdaOutput  {
+}
 /// See [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput).
 pub mod put_access_point_configuration_for_object_lambda_output {
-
+    
     /// A builder for [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput).
         pub fn build(self) -> crate::output::PutAccessPointConfigurationForObjectLambdaOutput {
-            crate::output::PutAccessPointConfigurationForObjectLambdaOutput {}
+            crate::output::PutAccessPointConfigurationForObjectLambdaOutput {
+            }
         }
     }
+    
+    
 }
 impl PutAccessPointConfigurationForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput).
-    pub fn builder(
-    ) -> crate::output::put_access_point_configuration_for_object_lambda_output::Builder {
+    pub fn builder() -> crate::output::put_access_point_configuration_for_object_lambda_output::Builder {
         crate::output::put_access_point_configuration_for_object_lambda_output::Builder::default()
     }
 }
@@ -498,36 +558,32 @@ impl PutAccessPointConfigurationForObjectLambdaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStorageLensConfigurationsOutput {
+pub struct ListStorageLensConfigurationsOutput  {
     /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of S3 Storage Lens configurations.</p>
     #[doc(hidden)]
-    pub storage_lens_configuration_list:
-        std::option::Option<std::vec::Vec<crate::model::ListStorageLensConfigurationEntry>>,
+    pub storage_lens_configuration_list: std::option::Option<std::vec::Vec<crate::model::ListStorageLensConfigurationEntry>>,
 }
 impl ListStorageLensConfigurationsOutput {
     /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of S3 Storage Lens configurations.</p>
-    pub fn storage_lens_configuration_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ListStorageLensConfigurationEntry]> {
+    pub fn storage_lens_configuration_list(&self) -> std::option::Option<& [crate::model::ListStorageLensConfigurationEntry]> {
         self.storage_lens_configuration_list.as_deref()
     }
 }
 /// See [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput).
 pub mod list_storage_lens_configurations_output {
-
+    
     /// A builder for [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) storage_lens_configuration_list:
-            std::option::Option<std::vec::Vec<crate::model::ListStorageLensConfigurationEntry>>,
+        pub(crate) storage_lens_configuration_list: std::option::Option<std::vec::Vec<crate::model::ListStorageLensConfigurationEntry>>,
     }
     impl Builder {
         /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
@@ -537,41 +593,35 @@ pub mod list_storage_lens_configurations_output {
         }
         /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `storage_lens_configuration_list`.
         ///
         /// To override the contents of this collection use [`set_storage_lens_configuration_list`](Self::set_storage_lens_configuration_list).
         ///
         /// <p>A list of S3 Storage Lens configurations.</p>
-        pub fn storage_lens_configuration_list(
-            mut self,
-            input: crate::model::ListStorageLensConfigurationEntry,
-        ) -> Self {
+        pub fn storage_lens_configuration_list(mut self, input: crate::model::ListStorageLensConfigurationEntry) -> Self {
             let mut v = self.storage_lens_configuration_list.unwrap_or_default();
-            v.push(input);
-            self.storage_lens_configuration_list = Some(v);
-            self
+                            v.push(input);
+                            self.storage_lens_configuration_list = Some(v);
+                            self
         }
         /// <p>A list of S3 Storage Lens configurations.</p>
-        pub fn set_storage_lens_configuration_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ListStorageLensConfigurationEntry>,
-            >,
-        ) -> Self {
-            self.storage_lens_configuration_list = input;
-            self
+        pub fn set_storage_lens_configuration_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListStorageLensConfigurationEntry>>) -> Self {
+            self.storage_lens_configuration_list = input; self
         }
         /// Consumes the builder and constructs a [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput).
         pub fn build(self) -> crate::output::ListStorageLensConfigurationsOutput {
             crate::output::ListStorageLensConfigurationsOutput {
-                next_token: self.next_token,
-                storage_lens_configuration_list: self.storage_lens_configuration_list,
+                next_token: self.next_token
+                ,
+                storage_lens_configuration_list: self.storage_lens_configuration_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListStorageLensConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput).
@@ -583,7 +633,7 @@ impl ListStorageLensConfigurationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRegionalBucketsOutput {
+pub struct ListRegionalBucketsOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub regional_bucket_list: std::option::Option<std::vec::Vec<crate::model::RegionalBucket>>,
@@ -593,22 +643,21 @@ pub struct ListRegionalBucketsOutput {
 }
 impl ListRegionalBucketsOutput {
     /// <p></p>
-    pub fn regional_bucket_list(&self) -> std::option::Option<&[crate::model::RegionalBucket]> {
+    pub fn regional_bucket_list(&self) -> std::option::Option<& [crate::model::RegionalBucket]> {
         self.regional_bucket_list.as_deref()
     }
     /// <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means there are more buckets that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextToken</code>. <code>NextToken</code> is obfuscated and is not a real key.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput).
 pub mod list_regional_buckets_output {
-
+    
     /// A builder for [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) regional_bucket_list:
-            std::option::Option<std::vec::Vec<crate::model::RegionalBucket>>,
+        pub(crate) regional_bucket_list: std::option::Option<std::vec::Vec<crate::model::RegionalBucket>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -619,17 +668,13 @@ pub mod list_regional_buckets_output {
         /// <p></p>
         pub fn regional_bucket_list(mut self, input: crate::model::RegionalBucket) -> Self {
             let mut v = self.regional_bucket_list.unwrap_or_default();
-            v.push(input);
-            self.regional_bucket_list = Some(v);
-            self
+                            v.push(input);
+                            self.regional_bucket_list = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_regional_bucket_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RegionalBucket>>,
-        ) -> Self {
-            self.regional_bucket_list = input;
-            self
+        pub fn set_regional_bucket_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::RegionalBucket>>) -> Self {
+            self.regional_bucket_list = input; self
         }
         /// <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means there are more buckets that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextToken</code>. <code>NextToken</code> is obfuscated and is not a real key.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -638,17 +683,20 @@ pub mod list_regional_buckets_output {
         }
         /// <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means there are more buckets that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextToken</code>. <code>NextToken</code> is obfuscated and is not a real key.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput).
         pub fn build(self) -> crate::output::ListRegionalBucketsOutput {
             crate::output::ListRegionalBucketsOutput {
-                regional_bucket_list: self.regional_bucket_list,
-                next_token: self.next_token,
+                regional_bucket_list: self.regional_bucket_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRegionalBucketsOutput {
     /// Creates a new builder-style object to manufacture [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput).
@@ -660,35 +708,31 @@ impl ListRegionalBucketsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMultiRegionAccessPointsOutput {
+pub struct ListMultiRegionAccessPointsOutput  {
     /// <p>The list of Multi-Region Access Points associated with the user.</p>
     #[doc(hidden)]
-    pub access_points:
-        std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointReport>>,
+    pub access_points: std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointReport>>,
     /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMultiRegionAccessPointsOutput {
     /// <p>The list of Multi-Region Access Points associated with the user.</p>
-    pub fn access_points(
-        &self,
-    ) -> std::option::Option<&[crate::model::MultiRegionAccessPointReport]> {
+    pub fn access_points(&self) -> std::option::Option<& [crate::model::MultiRegionAccessPointReport]> {
         self.access_points.as_deref()
     }
     /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput).
 pub mod list_multi_region_access_points_output {
-
+    
     /// A builder for [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) access_points:
-            std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointReport>>,
+        pub(crate) access_points: std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointReport>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -699,17 +743,13 @@ pub mod list_multi_region_access_points_output {
         /// <p>The list of Multi-Region Access Points associated with the user.</p>
         pub fn access_points(mut self, input: crate::model::MultiRegionAccessPointReport) -> Self {
             let mut v = self.access_points.unwrap_or_default();
-            v.push(input);
-            self.access_points = Some(v);
-            self
+                            v.push(input);
+                            self.access_points = Some(v);
+                            self
         }
         /// <p>The list of Multi-Region Access Points associated with the user.</p>
-        pub fn set_access_points(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointReport>>,
-        ) -> Self {
-            self.access_points = input;
-            self
+        pub fn set_access_points(mut self, input: std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointReport>>) -> Self {
+            self.access_points = input; self
         }
         /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -718,17 +758,20 @@ pub mod list_multi_region_access_points_output {
         }
         /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput).
         pub fn build(self) -> crate::output::ListMultiRegionAccessPointsOutput {
             crate::output::ListMultiRegionAccessPointsOutput {
-                access_points: self.access_points,
-                next_token: self.next_token,
+                access_points: self.access_points
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMultiRegionAccessPointsOutput {
     /// Creates a new builder-style object to manufacture [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput).
@@ -740,7 +783,7 @@ impl ListMultiRegionAccessPointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobsOutput {
+pub struct ListJobsOutput  {
     /// <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -750,17 +793,17 @@ pub struct ListJobsOutput {
 }
 impl ListJobsOutput {
     /// <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of current jobs and jobs that have ended within the last 30 days.</p>
-    pub fn jobs(&self) -> std::option::Option<&[crate::model::JobListDescriptor]> {
+    pub fn jobs(&self) -> std::option::Option<& [crate::model::JobListDescriptor]> {
         self.jobs.as_deref()
     }
 }
 /// See [`ListJobsOutput`](crate::output::ListJobsOutput).
 pub mod list_jobs_output {
-
+    
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -775,8 +818,7 @@ pub mod list_jobs_output {
         }
         /// <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `jobs`.
         ///
@@ -785,26 +827,26 @@ pub mod list_jobs_output {
         /// <p>The list of current jobs and jobs that have ended within the last 30 days.</p>
         pub fn jobs(mut self, input: crate::model::JobListDescriptor) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input);
-            self.jobs = Some(v);
-            self
+                            v.push(input);
+                            self.jobs = Some(v);
+                            self
         }
         /// <p>The list of current jobs and jobs that have ended within the last 30 days.</p>
-        pub fn set_jobs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobListDescriptor>>,
-        ) -> Self {
-            self.jobs = input;
-            self
+        pub fn set_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobListDescriptor>>) -> Self {
+            self.jobs = input; self
         }
         /// Consumes the builder and constructs a [`ListJobsOutput`](crate::output::ListJobsOutput).
         pub fn build(self) -> crate::output::ListJobsOutput {
             crate::output::ListJobsOutput {
-                next_token: self.next_token,
-                jobs: self.jobs,
+                next_token: self.next_token
+                ,
+                jobs: self.jobs
+                ,
             }
         }
     }
+    
+    
 }
 impl ListJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListJobsOutput`](crate::output::ListJobsOutput).
@@ -816,35 +858,31 @@ impl ListJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccessPointsForObjectLambdaOutput {
+pub struct ListAccessPointsForObjectLambdaOutput  {
     /// <p>Returns list of Object Lambda Access Points.</p>
     #[doc(hidden)]
-    pub object_lambda_access_point_list:
-        std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAccessPoint>>,
+    pub object_lambda_access_point_list: std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAccessPoint>>,
     /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccessPointsForObjectLambdaOutput {
     /// <p>Returns list of Object Lambda Access Points.</p>
-    pub fn object_lambda_access_point_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ObjectLambdaAccessPoint]> {
+    pub fn object_lambda_access_point_list(&self) -> std::option::Option<& [crate::model::ObjectLambdaAccessPoint]> {
         self.object_lambda_access_point_list.as_deref()
     }
     /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput).
 pub mod list_access_points_for_object_lambda_output {
-
+    
     /// A builder for [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) object_lambda_access_point_list:
-            std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAccessPoint>>,
+        pub(crate) object_lambda_access_point_list: std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAccessPoint>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -853,22 +891,15 @@ pub mod list_access_points_for_object_lambda_output {
         /// To override the contents of this collection use [`set_object_lambda_access_point_list`](Self::set_object_lambda_access_point_list).
         ///
         /// <p>Returns list of Object Lambda Access Points.</p>
-        pub fn object_lambda_access_point_list(
-            mut self,
-            input: crate::model::ObjectLambdaAccessPoint,
-        ) -> Self {
+        pub fn object_lambda_access_point_list(mut self, input: crate::model::ObjectLambdaAccessPoint) -> Self {
             let mut v = self.object_lambda_access_point_list.unwrap_or_default();
-            v.push(input);
-            self.object_lambda_access_point_list = Some(v);
-            self
+                            v.push(input);
+                            self.object_lambda_access_point_list = Some(v);
+                            self
         }
         /// <p>Returns list of Object Lambda Access Points.</p>
-        pub fn set_object_lambda_access_point_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAccessPoint>>,
-        ) -> Self {
-            self.object_lambda_access_point_list = input;
-            self
+        pub fn set_object_lambda_access_point_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAccessPoint>>) -> Self {
+            self.object_lambda_access_point_list = input; self
         }
         /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -877,17 +908,20 @@ pub mod list_access_points_for_object_lambda_output {
         }
         /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput).
         pub fn build(self) -> crate::output::ListAccessPointsForObjectLambdaOutput {
             crate::output::ListAccessPointsForObjectLambdaOutput {
-                object_lambda_access_point_list: self.object_lambda_access_point_list,
-                next_token: self.next_token,
+                object_lambda_access_point_list: self.object_lambda_access_point_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAccessPointsForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput).
@@ -899,7 +933,7 @@ impl ListAccessPointsForObjectLambdaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccessPointsOutput {
+pub struct ListAccessPointsOutput  {
     /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
     #[doc(hidden)]
     pub access_point_list: std::option::Option<std::vec::Vec<crate::model::AccessPoint>>,
@@ -909,17 +943,17 @@ pub struct ListAccessPointsOutput {
 }
 impl ListAccessPointsOutput {
     /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
-    pub fn access_point_list(&self) -> std::option::Option<&[crate::model::AccessPoint]> {
+    pub fn access_point_list(&self) -> std::option::Option<& [crate::model::AccessPoint]> {
         self.access_point_list.as_deref()
     }
     /// <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput).
 pub mod list_access_points_output {
-
+    
     /// A builder for [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -934,17 +968,13 @@ pub mod list_access_points_output {
         /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
         pub fn access_point_list(mut self, input: crate::model::AccessPoint) -> Self {
             let mut v = self.access_point_list.unwrap_or_default();
-            v.push(input);
-            self.access_point_list = Some(v);
-            self
+                            v.push(input);
+                            self.access_point_list = Some(v);
+                            self
         }
         /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
-        pub fn set_access_point_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccessPoint>>,
-        ) -> Self {
-            self.access_point_list = input;
-            self
+        pub fn set_access_point_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccessPoint>>) -> Self {
+            self.access_point_list = input; self
         }
         /// <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -953,17 +983,20 @@ pub mod list_access_points_output {
         }
         /// <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput).
         pub fn build(self) -> crate::output::ListAccessPointsOutput {
             crate::output::ListAccessPointsOutput {
-                access_point_list: self.access_point_list,
-                next_token: self.next_token,
+                access_point_list: self.access_point_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAccessPointsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput).
@@ -975,20 +1008,20 @@ impl ListAccessPointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStorageLensConfigurationTaggingOutput {
+pub struct GetStorageLensConfigurationTaggingOutput  {
     /// <p>The tags of S3 Storage Lens configuration requested.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::StorageLensTag>>,
 }
 impl GetStorageLensConfigurationTaggingOutput {
     /// <p>The tags of S3 Storage Lens configuration requested.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::StorageLensTag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::StorageLensTag]> {
         self.tags.as_deref()
     }
 }
 /// See [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput).
 pub mod get_storage_lens_configuration_tagging_output {
-
+    
     /// A builder for [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1002,23 +1035,24 @@ pub mod get_storage_lens_configuration_tagging_output {
         /// <p>The tags of S3 Storage Lens configuration requested.</p>
         pub fn tags(mut self, input: crate::model::StorageLensTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags of S3 Storage Lens configuration requested.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StorageLensTag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::StorageLensTag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput).
         pub fn build(self) -> crate::output::GetStorageLensConfigurationTaggingOutput {
-            crate::output::GetStorageLensConfigurationTaggingOutput { tags: self.tags }
+            crate::output::GetStorageLensConfigurationTaggingOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetStorageLensConfigurationTaggingOutput {
     /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput).
@@ -1030,52 +1064,45 @@ impl GetStorageLensConfigurationTaggingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStorageLensConfigurationOutput {
+pub struct GetStorageLensConfigurationOutput  {
     /// <p>The S3 Storage Lens configuration requested.</p>
     #[doc(hidden)]
     pub storage_lens_configuration: std::option::Option<crate::model::StorageLensConfiguration>,
 }
 impl GetStorageLensConfigurationOutput {
     /// <p>The S3 Storage Lens configuration requested.</p>
-    pub fn storage_lens_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::StorageLensConfiguration> {
+    pub fn storage_lens_configuration(&self) -> std::option::Option<& crate::model::StorageLensConfiguration> {
         self.storage_lens_configuration.as_ref()
     }
 }
 /// See [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput).
 pub mod get_storage_lens_configuration_output {
-
+    
     /// A builder for [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) storage_lens_configuration:
-            std::option::Option<crate::model::StorageLensConfiguration>,
+        pub(crate) storage_lens_configuration: std::option::Option<crate::model::StorageLensConfiguration>,
     }
     impl Builder {
         /// <p>The S3 Storage Lens configuration requested.</p>
-        pub fn storage_lens_configuration(
-            mut self,
-            input: crate::model::StorageLensConfiguration,
-        ) -> Self {
+        pub fn storage_lens_configuration(mut self, input: crate::model::StorageLensConfiguration) -> Self {
             self.storage_lens_configuration = Some(input);
             self
         }
         /// <p>The S3 Storage Lens configuration requested.</p>
-        pub fn set_storage_lens_configuration(
-            mut self,
-            input: std::option::Option<crate::model::StorageLensConfiguration>,
-        ) -> Self {
-            self.storage_lens_configuration = input;
-            self
+        pub fn set_storage_lens_configuration(mut self, input: std::option::Option<crate::model::StorageLensConfiguration>) -> Self {
+            self.storage_lens_configuration = input; self
         }
         /// Consumes the builder and constructs a [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput).
         pub fn build(self) -> crate::output::GetStorageLensConfigurationOutput {
             crate::output::GetStorageLensConfigurationOutput {
-                storage_lens_configuration: self.storage_lens_configuration,
+                storage_lens_configuration: self.storage_lens_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl GetStorageLensConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput).
@@ -1087,53 +1114,45 @@ impl GetStorageLensConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPublicAccessBlockOutput {
+pub struct GetPublicAccessBlockOutput  {
     /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub public_access_block_configuration:
-        std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+    pub public_access_block_configuration: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
 }
 impl GetPublicAccessBlockOutput {
     /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.</p>
-    pub fn public_access_block_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
+    pub fn public_access_block_configuration(&self) -> std::option::Option<& crate::model::PublicAccessBlockConfiguration> {
         self.public_access_block_configuration.as_ref()
     }
 }
 /// See [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput).
 pub mod get_public_access_block_output {
-
+    
     /// A builder for [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) public_access_block_configuration:
-            std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+        pub(crate) public_access_block_configuration: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     }
     impl Builder {
         /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.</p>
-        pub fn public_access_block_configuration(
-            mut self,
-            input: crate::model::PublicAccessBlockConfiguration,
-        ) -> Self {
+        pub fn public_access_block_configuration(mut self, input: crate::model::PublicAccessBlockConfiguration) -> Self {
             self.public_access_block_configuration = Some(input);
             self
         }
         /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.</p>
-        pub fn set_public_access_block_configuration(
-            mut self,
-            input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
-        ) -> Self {
-            self.public_access_block_configuration = input;
-            self
+        pub fn set_public_access_block_configuration(mut self, input: std::option::Option<crate::model::PublicAccessBlockConfiguration>) -> Self {
+            self.public_access_block_configuration = input; self
         }
         /// Consumes the builder and constructs a [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput).
         pub fn build(self) -> crate::output::GetPublicAccessBlockOutput {
             crate::output::GetPublicAccessBlockOutput {
-                public_access_block_configuration: self.public_access_block_configuration,
+                public_access_block_configuration: self.public_access_block_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPublicAccessBlockOutput {
     /// Creates a new builder-style object to manufacture [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput).
@@ -1145,7 +1164,7 @@ impl GetPublicAccessBlockOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMultiRegionAccessPointRoutesOutput {
+pub struct GetMultiRegionAccessPointRoutesOutput  {
     /// <p>The Multi-Region Access Point ARN.</p>
     #[doc(hidden)]
     pub mrap: std::option::Option<std::string::String>,
@@ -1155,23 +1174,22 @@ pub struct GetMultiRegionAccessPointRoutesOutput {
 }
 impl GetMultiRegionAccessPointRoutesOutput {
     /// <p>The Multi-Region Access Point ARN.</p>
-    pub fn mrap(&self) -> std::option::Option<&str> {
+    pub fn mrap(&self) -> std::option::Option<& str> {
         self.mrap.as_deref()
     }
     /// <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
-    pub fn routes(&self) -> std::option::Option<&[crate::model::MultiRegionAccessPointRoute]> {
+    pub fn routes(&self) -> std::option::Option<& [crate::model::MultiRegionAccessPointRoute]> {
         self.routes.as_deref()
     }
 }
 /// See [`GetMultiRegionAccessPointRoutesOutput`](crate::output::GetMultiRegionAccessPointRoutesOutput).
 pub mod get_multi_region_access_point_routes_output {
-
+    
     /// A builder for [`GetMultiRegionAccessPointRoutesOutput`](crate::output::GetMultiRegionAccessPointRoutesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mrap: std::option::Option<std::string::String>,
-        pub(crate) routes:
-            std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRoute>>,
+        pub(crate) routes: std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRoute>>,
     }
     impl Builder {
         /// <p>The Multi-Region Access Point ARN.</p>
@@ -1181,8 +1199,7 @@ pub mod get_multi_region_access_point_routes_output {
         }
         /// <p>The Multi-Region Access Point ARN.</p>
         pub fn set_mrap(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mrap = input;
-            self
+            self.mrap = input; self
         }
         /// Appends an item to `routes`.
         ///
@@ -1191,26 +1208,26 @@ pub mod get_multi_region_access_point_routes_output {
         /// <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
         pub fn routes(mut self, input: crate::model::MultiRegionAccessPointRoute) -> Self {
             let mut v = self.routes.unwrap_or_default();
-            v.push(input);
-            self.routes = Some(v);
-            self
+                            v.push(input);
+                            self.routes = Some(v);
+                            self
         }
         /// <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
-        pub fn set_routes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRoute>>,
-        ) -> Self {
-            self.routes = input;
-            self
+        pub fn set_routes(mut self, input: std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointRoute>>) -> Self {
+            self.routes = input; self
         }
         /// Consumes the builder and constructs a [`GetMultiRegionAccessPointRoutesOutput`](crate::output::GetMultiRegionAccessPointRoutesOutput).
         pub fn build(self) -> crate::output::GetMultiRegionAccessPointRoutesOutput {
             crate::output::GetMultiRegionAccessPointRoutesOutput {
-                mrap: self.mrap,
-                routes: self.routes,
+                mrap: self.mrap
+                ,
+                routes: self.routes
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMultiRegionAccessPointRoutesOutput {
     /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointRoutesOutput`](crate::output::GetMultiRegionAccessPointRoutesOutput).
@@ -1222,20 +1239,20 @@ impl GetMultiRegionAccessPointRoutesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMultiRegionAccessPointPolicyStatusOutput {
+pub struct GetMultiRegionAccessPointPolicyStatusOutput  {
     /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
     #[doc(hidden)]
     pub established: std::option::Option<crate::model::PolicyStatus>,
 }
 impl GetMultiRegionAccessPointPolicyStatusOutput {
     /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
-    pub fn established(&self) -> std::option::Option<&crate::model::PolicyStatus> {
+    pub fn established(&self) -> std::option::Option<& crate::model::PolicyStatus> {
         self.established.as_ref()
     }
 }
 /// See [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput).
 pub mod get_multi_region_access_point_policy_status_output {
-
+    
     /// A builder for [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1248,20 +1265,19 @@ pub mod get_multi_region_access_point_policy_status_output {
             self
         }
         /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
-        pub fn set_established(
-            mut self,
-            input: std::option::Option<crate::model::PolicyStatus>,
-        ) -> Self {
-            self.established = input;
-            self
+        pub fn set_established(mut self, input: std::option::Option<crate::model::PolicyStatus>) -> Self {
+            self.established = input; self
         }
         /// Consumes the builder and constructs a [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput).
         pub fn build(self) -> crate::output::GetMultiRegionAccessPointPolicyStatusOutput {
             crate::output::GetMultiRegionAccessPointPolicyStatusOutput {
-                established: self.established,
+                established: self.established
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMultiRegionAccessPointPolicyStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput).
@@ -1273,22 +1289,20 @@ impl GetMultiRegionAccessPointPolicyStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMultiRegionAccessPointPolicyOutput {
+pub struct GetMultiRegionAccessPointPolicyOutput  {
     /// <p>The policy associated with the specified Multi-Region Access Point.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::MultiRegionAccessPointPolicyDocument>,
 }
 impl GetMultiRegionAccessPointPolicyOutput {
     /// <p>The policy associated with the specified Multi-Region Access Point.</p>
-    pub fn policy(
-        &self,
-    ) -> std::option::Option<&crate::model::MultiRegionAccessPointPolicyDocument> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::MultiRegionAccessPointPolicyDocument> {
         self.policy.as_ref()
     }
 }
 /// See [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput).
 pub mod get_multi_region_access_point_policy_output {
-
+    
     /// A builder for [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1301,20 +1315,19 @@ pub mod get_multi_region_access_point_policy_output {
             self
         }
         /// <p>The policy associated with the specified Multi-Region Access Point.</p>
-        pub fn set_policy(
-            mut self,
-            input: std::option::Option<crate::model::MultiRegionAccessPointPolicyDocument>,
-        ) -> Self {
-            self.policy = input;
-            self
+        pub fn set_policy(mut self, input: std::option::Option<crate::model::MultiRegionAccessPointPolicyDocument>) -> Self {
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput).
         pub fn build(self) -> crate::output::GetMultiRegionAccessPointPolicyOutput {
             crate::output::GetMultiRegionAccessPointPolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMultiRegionAccessPointPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput).
@@ -1326,20 +1339,20 @@ impl GetMultiRegionAccessPointPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMultiRegionAccessPointOutput {
+pub struct GetMultiRegionAccessPointOutput  {
     /// <p>A container element containing the details of the requested Multi-Region Access Point.</p>
     #[doc(hidden)]
     pub access_point: std::option::Option<crate::model::MultiRegionAccessPointReport>,
 }
 impl GetMultiRegionAccessPointOutput {
     /// <p>A container element containing the details of the requested Multi-Region Access Point.</p>
-    pub fn access_point(&self) -> std::option::Option<&crate::model::MultiRegionAccessPointReport> {
+    pub fn access_point(&self) -> std::option::Option<& crate::model::MultiRegionAccessPointReport> {
         self.access_point.as_ref()
     }
 }
 /// See [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput).
 pub mod get_multi_region_access_point_output {
-
+    
     /// A builder for [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1352,20 +1365,19 @@ pub mod get_multi_region_access_point_output {
             self
         }
         /// <p>A container element containing the details of the requested Multi-Region Access Point.</p>
-        pub fn set_access_point(
-            mut self,
-            input: std::option::Option<crate::model::MultiRegionAccessPointReport>,
-        ) -> Self {
-            self.access_point = input;
-            self
+        pub fn set_access_point(mut self, input: std::option::Option<crate::model::MultiRegionAccessPointReport>) -> Self {
+            self.access_point = input; self
         }
         /// Consumes the builder and constructs a [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput).
         pub fn build(self) -> crate::output::GetMultiRegionAccessPointOutput {
             crate::output::GetMultiRegionAccessPointOutput {
-                access_point: self.access_point,
+                access_point: self.access_point
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMultiRegionAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput).
@@ -1377,20 +1389,20 @@ impl GetMultiRegionAccessPointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJobTaggingOutput {
+pub struct GetJobTaggingOutput  {
     /// <p>The set of tags associated with the S3 Batch Operations job.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
 }
 impl GetJobTaggingOutput {
     /// <p>The set of tags associated with the S3 Batch Operations job.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::S3Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::S3Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput).
 pub mod get_job_tagging_output {
-
+    
     /// A builder for [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1404,23 +1416,24 @@ pub mod get_job_tagging_output {
         /// <p>The set of tags associated with the S3 Batch Operations job.</p>
         pub fn tags(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The set of tags associated with the S3 Batch Operations job.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput).
         pub fn build(self) -> crate::output::GetJobTaggingOutput {
-            crate::output::GetJobTaggingOutput { tags: self.tags }
+            crate::output::GetJobTaggingOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetJobTaggingOutput {
     /// Creates a new builder-style object to manufacture [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput).
@@ -1432,7 +1445,7 @@ impl GetJobTaggingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketVersioningOutput {
+pub struct GetBucketVersioningOutput  {
     /// <p>The versioning state of the S3 on Outposts bucket.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::BucketVersioningStatus>,
@@ -1442,17 +1455,17 @@ pub struct GetBucketVersioningOutput {
 }
 impl GetBucketVersioningOutput {
     /// <p>The versioning state of the S3 on Outposts bucket.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::BucketVersioningStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::BucketVersioningStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is returned only if the bucket has been configured with MFA delete. If MFA delete has never been configured for the bucket, this element is not returned.</p>
-    pub fn mfa_delete(&self) -> std::option::Option<&crate::model::MfaDeleteStatus> {
+    pub fn mfa_delete(&self) -> std::option::Option<& crate::model::MfaDeleteStatus> {
         self.mfa_delete.as_ref()
     }
 }
 /// See [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput).
 pub mod get_bucket_versioning_output {
-
+    
     /// A builder for [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1466,12 +1479,8 @@ pub mod get_bucket_versioning_output {
             self
         }
         /// <p>The versioning state of the S3 on Outposts bucket.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::BucketVersioningStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::BucketVersioningStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is returned only if the bucket has been configured with MFA delete. If MFA delete has never been configured for the bucket, this element is not returned.</p>
         pub fn mfa_delete(mut self, input: crate::model::MfaDeleteStatus) -> Self {
@@ -1479,21 +1488,21 @@ pub mod get_bucket_versioning_output {
             self
         }
         /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is returned only if the bucket has been configured with MFA delete. If MFA delete has never been configured for the bucket, this element is not returned.</p>
-        pub fn set_mfa_delete(
-            mut self,
-            input: std::option::Option<crate::model::MfaDeleteStatus>,
-        ) -> Self {
-            self.mfa_delete = input;
-            self
+        pub fn set_mfa_delete(mut self, input: std::option::Option<crate::model::MfaDeleteStatus>) -> Self {
+            self.mfa_delete = input; self
         }
         /// Consumes the builder and constructs a [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput).
         pub fn build(self) -> crate::output::GetBucketVersioningOutput {
             crate::output::GetBucketVersioningOutput {
-                status: self.status,
-                mfa_delete: self.mfa_delete,
+                status: self.status
+                ,
+                mfa_delete: self.mfa_delete
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBucketVersioningOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput).
@@ -1505,20 +1514,20 @@ impl GetBucketVersioningOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketTaggingOutput {
+pub struct GetBucketTaggingOutput  {
     /// <p>The tags set of the Outposts bucket.</p>
     #[doc(hidden)]
     pub tag_set: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
 }
 impl GetBucketTaggingOutput {
     /// <p>The tags set of the Outposts bucket.</p>
-    pub fn tag_set(&self) -> std::option::Option<&[crate::model::S3Tag]> {
+    pub fn tag_set(&self) -> std::option::Option<& [crate::model::S3Tag]> {
         self.tag_set.as_deref()
     }
 }
 /// See [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput).
 pub mod get_bucket_tagging_output {
-
+    
     /// A builder for [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1532,25 +1541,24 @@ pub mod get_bucket_tagging_output {
         /// <p>The tags set of the Outposts bucket.</p>
         pub fn tag_set(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.tag_set.unwrap_or_default();
-            v.push(input);
-            self.tag_set = Some(v);
-            self
+                            v.push(input);
+                            self.tag_set = Some(v);
+                            self
         }
         /// <p>The tags set of the Outposts bucket.</p>
-        pub fn set_tag_set(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
-        ) -> Self {
-            self.tag_set = input;
-            self
+        pub fn set_tag_set(mut self, input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>) -> Self {
+            self.tag_set = input; self
         }
         /// Consumes the builder and constructs a [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput).
         pub fn build(self) -> crate::output::GetBucketTaggingOutput {
             crate::output::GetBucketTaggingOutput {
-                tag_set: self.tag_set,
+                tag_set: self.tag_set
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBucketTaggingOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput).
@@ -1562,20 +1570,20 @@ impl GetBucketTaggingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketPolicyOutput {
+pub struct GetBucketPolicyOutput  {
     /// <p>The policy of the Outposts bucket.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetBucketPolicyOutput {
     /// <p>The policy of the Outposts bucket.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput).
 pub mod get_bucket_policy_output {
-
+    
     /// A builder for [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1589,16 +1597,18 @@ pub mod get_bucket_policy_output {
         }
         /// <p>The policy of the Outposts bucket.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput).
         pub fn build(self) -> crate::output::GetBucketPolicyOutput {
             crate::output::GetBucketPolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBucketPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput).
@@ -1610,20 +1620,20 @@ impl GetBucketPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketLifecycleConfigurationOutput {
+pub struct GetBucketLifecycleConfigurationOutput  {
     /// <p>Container for the lifecycle rule of the Outposts bucket.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
 }
 impl GetBucketLifecycleConfigurationOutput {
     /// <p>Container for the lifecycle rule of the Outposts bucket.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::model::LifecycleRule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::model::LifecycleRule]> {
         self.rules.as_deref()
     }
 }
 /// See [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput).
 pub mod get_bucket_lifecycle_configuration_output {
-
+    
     /// A builder for [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1637,23 +1647,24 @@ pub mod get_bucket_lifecycle_configuration_output {
         /// <p>Container for the lifecycle rule of the Outposts bucket.</p>
         pub fn rules(mut self, input: crate::model::LifecycleRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input);
-            self.rules = Some(v);
-            self
+                            v.push(input);
+                            self.rules = Some(v);
+                            self
         }
         /// <p>Container for the lifecycle rule of the Outposts bucket.</p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>) -> Self {
+            self.rules = input; self
         }
         /// Consumes the builder and constructs a [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput).
         pub fn build(self) -> crate::output::GetBucketLifecycleConfigurationOutput {
-            crate::output::GetBucketLifecycleConfigurationOutput { rules: self.rules }
+            crate::output::GetBucketLifecycleConfigurationOutput {
+                rules: self.rules
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetBucketLifecycleConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput).
@@ -1665,7 +1676,7 @@ impl GetBucketLifecycleConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketOutput {
+pub struct GetBucketOutput  {
     /// <p>The Outposts bucket requested.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -1678,7 +1689,7 @@ pub struct GetBucketOutput {
 }
 impl GetBucketOutput {
     /// <p>The Outposts bucket requested.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p></p>
@@ -1686,13 +1697,13 @@ impl GetBucketOutput {
         self.public_access_block_enabled
     }
     /// <p>The creation date of the Outposts bucket.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
 /// See [`GetBucketOutput`](crate::output::GetBucketOutput).
 pub mod get_bucket_output {
-
+    
     /// A builder for [`GetBucketOutput`](crate::output::GetBucketOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1708,8 +1719,7 @@ pub mod get_bucket_output {
         }
         /// <p>The Outposts bucket requested.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p></p>
         pub fn public_access_block_enabled(mut self, input: bool) -> Self {
@@ -1718,8 +1728,7 @@ pub mod get_bucket_output {
         }
         /// <p></p>
         pub fn set_public_access_block_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.public_access_block_enabled = input;
-            self
+            self.public_access_block_enabled = input; self
         }
         /// <p>The creation date of the Outposts bucket.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1727,22 +1736,24 @@ pub mod get_bucket_output {
             self
         }
         /// <p>The creation date of the Outposts bucket.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// Consumes the builder and constructs a [`GetBucketOutput`](crate::output::GetBucketOutput).
         pub fn build(self) -> crate::output::GetBucketOutput {
             crate::output::GetBucketOutput {
-                bucket: self.bucket,
-                public_access_block_enabled: self.public_access_block_enabled.unwrap_or_default(),
-                creation_date: self.creation_date,
+                bucket: self.bucket
+                ,
+                public_access_block_enabled: self.public_access_block_enabled
+                    .unwrap_or_default()
+                ,
+                creation_date: self.creation_date
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBucketOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketOutput`](crate::output::GetBucketOutput).
@@ -1754,20 +1765,20 @@ impl GetBucketOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessPointPolicyStatusForObjectLambdaOutput {
+pub struct GetAccessPointPolicyStatusForObjectLambdaOutput  {
     /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
     #[doc(hidden)]
     pub policy_status: std::option::Option<crate::model::PolicyStatus>,
 }
 impl GetAccessPointPolicyStatusForObjectLambdaOutput {
     /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
-    pub fn policy_status(&self) -> std::option::Option<&crate::model::PolicyStatus> {
+    pub fn policy_status(&self) -> std::option::Option<& crate::model::PolicyStatus> {
         self.policy_status.as_ref()
     }
 }
 /// See [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput).
 pub mod get_access_point_policy_status_for_object_lambda_output {
-
+    
     /// A builder for [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1780,25 +1791,23 @@ pub mod get_access_point_policy_status_for_object_lambda_output {
             self
         }
         /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
-        pub fn set_policy_status(
-            mut self,
-            input: std::option::Option<crate::model::PolicyStatus>,
-        ) -> Self {
-            self.policy_status = input;
-            self
+        pub fn set_policy_status(mut self, input: std::option::Option<crate::model::PolicyStatus>) -> Self {
+            self.policy_status = input; self
         }
         /// Consumes the builder and constructs a [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput).
         pub fn build(self) -> crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput {
             crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput {
-                policy_status: self.policy_status,
+                policy_status: self.policy_status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccessPointPolicyStatusForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput).
-    pub fn builder(
-    ) -> crate::output::get_access_point_policy_status_for_object_lambda_output::Builder {
+    pub fn builder() -> crate::output::get_access_point_policy_status_for_object_lambda_output::Builder {
         crate::output::get_access_point_policy_status_for_object_lambda_output::Builder::default()
     }
 }
@@ -1806,20 +1815,20 @@ impl GetAccessPointPolicyStatusForObjectLambdaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessPointPolicyStatusOutput {
+pub struct GetAccessPointPolicyStatusOutput  {
     /// <p>Indicates the current policy status of the specified access point.</p>
     #[doc(hidden)]
     pub policy_status: std::option::Option<crate::model::PolicyStatus>,
 }
 impl GetAccessPointPolicyStatusOutput {
     /// <p>Indicates the current policy status of the specified access point.</p>
-    pub fn policy_status(&self) -> std::option::Option<&crate::model::PolicyStatus> {
+    pub fn policy_status(&self) -> std::option::Option<& crate::model::PolicyStatus> {
         self.policy_status.as_ref()
     }
 }
 /// See [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput).
 pub mod get_access_point_policy_status_output {
-
+    
     /// A builder for [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1832,20 +1841,19 @@ pub mod get_access_point_policy_status_output {
             self
         }
         /// <p>Indicates the current policy status of the specified access point.</p>
-        pub fn set_policy_status(
-            mut self,
-            input: std::option::Option<crate::model::PolicyStatus>,
-        ) -> Self {
-            self.policy_status = input;
-            self
+        pub fn set_policy_status(mut self, input: std::option::Option<crate::model::PolicyStatus>) -> Self {
+            self.policy_status = input; self
         }
         /// Consumes the builder and constructs a [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput).
         pub fn build(self) -> crate::output::GetAccessPointPolicyStatusOutput {
             crate::output::GetAccessPointPolicyStatusOutput {
-                policy_status: self.policy_status,
+                policy_status: self.policy_status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccessPointPolicyStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput).
@@ -1857,20 +1865,20 @@ impl GetAccessPointPolicyStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessPointPolicyForObjectLambdaOutput {
+pub struct GetAccessPointPolicyForObjectLambdaOutput  {
     /// <p>Object Lambda Access Point resource policy document.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetAccessPointPolicyForObjectLambdaOutput {
     /// <p>Object Lambda Access Point resource policy document.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput).
 pub mod get_access_point_policy_for_object_lambda_output {
-
+    
     /// A builder for [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1884,16 +1892,18 @@ pub mod get_access_point_policy_for_object_lambda_output {
         }
         /// <p>Object Lambda Access Point resource policy document.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput).
         pub fn build(self) -> crate::output::GetAccessPointPolicyForObjectLambdaOutput {
             crate::output::GetAccessPointPolicyForObjectLambdaOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccessPointPolicyForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput).
@@ -1905,20 +1915,20 @@ impl GetAccessPointPolicyForObjectLambdaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessPointPolicyOutput {
+pub struct GetAccessPointPolicyOutput  {
     /// <p>The access point policy associated with the specified access point.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetAccessPointPolicyOutput {
     /// <p>The access point policy associated with the specified access point.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput).
 pub mod get_access_point_policy_output {
-
+    
     /// A builder for [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1932,16 +1942,18 @@ pub mod get_access_point_policy_output {
         }
         /// <p>The access point policy associated with the specified access point.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput).
         pub fn build(self) -> crate::output::GetAccessPointPolicyOutput {
             crate::output::GetAccessPointPolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccessPointPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput).
@@ -1953,43 +1965,39 @@ impl GetAccessPointPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessPointForObjectLambdaOutput {
+pub struct GetAccessPointForObjectLambdaOutput  {
     /// <p>The name of the Object Lambda Access Point.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
     #[doc(hidden)]
-    pub public_access_block_configuration:
-        std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+    pub public_access_block_configuration: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetAccessPointForObjectLambdaOutput {
     /// <p>The name of the Object Lambda Access Point.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
-    pub fn public_access_block_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
+    pub fn public_access_block_configuration(&self) -> std::option::Option<& crate::model::PublicAccessBlockConfiguration> {
         self.public_access_block_configuration.as_ref()
     }
     /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
 /// See [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput).
 pub mod get_access_point_for_object_lambda_output {
-
+    
     /// A builder for [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) public_access_block_configuration:
-            std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+        pub(crate) public_access_block_configuration: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
@@ -2000,24 +2008,16 @@ pub mod get_access_point_for_object_lambda_output {
         }
         /// <p>The name of the Object Lambda Access Point.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
-        pub fn public_access_block_configuration(
-            mut self,
-            input: crate::model::PublicAccessBlockConfiguration,
-        ) -> Self {
+        pub fn public_access_block_configuration(mut self, input: crate::model::PublicAccessBlockConfiguration) -> Self {
             self.public_access_block_configuration = Some(input);
             self
         }
         /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
-        pub fn set_public_access_block_configuration(
-            mut self,
-            input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
-        ) -> Self {
-            self.public_access_block_configuration = input;
-            self
+        pub fn set_public_access_block_configuration(mut self, input: std::option::Option<crate::model::PublicAccessBlockConfiguration>) -> Self {
+            self.public_access_block_configuration = input; self
         }
         /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2025,22 +2025,23 @@ pub mod get_access_point_for_object_lambda_output {
             self
         }
         /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// Consumes the builder and constructs a [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput).
         pub fn build(self) -> crate::output::GetAccessPointForObjectLambdaOutput {
             crate::output::GetAccessPointForObjectLambdaOutput {
-                name: self.name,
-                public_access_block_configuration: self.public_access_block_configuration,
-                creation_date: self.creation_date,
+                name: self.name
+                ,
+                public_access_block_configuration: self.public_access_block_configuration
+                ,
+                creation_date: self.creation_date
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccessPointForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput).
@@ -2052,20 +2053,20 @@ impl GetAccessPointForObjectLambdaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessPointConfigurationForObjectLambdaOutput {
+pub struct GetAccessPointConfigurationForObjectLambdaOutput  {
     /// <p>Object Lambda Access Point configuration document.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ObjectLambdaConfiguration>,
 }
 impl GetAccessPointConfigurationForObjectLambdaOutput {
     /// <p>Object Lambda Access Point configuration document.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::model::ObjectLambdaConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::ObjectLambdaConfiguration> {
         self.configuration.as_ref()
     }
 }
 /// See [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput).
 pub mod get_access_point_configuration_for_object_lambda_output {
-
+    
     /// A builder for [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2078,25 +2079,23 @@ pub mod get_access_point_configuration_for_object_lambda_output {
             self
         }
         /// <p>Object Lambda Access Point configuration document.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ObjectLambdaConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::ObjectLambdaConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput).
         pub fn build(self) -> crate::output::GetAccessPointConfigurationForObjectLambdaOutput {
             crate::output::GetAccessPointConfigurationForObjectLambdaOutput {
-                configuration: self.configuration,
+                configuration: self.configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccessPointConfigurationForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput).
-    pub fn builder(
-    ) -> crate::output::get_access_point_configuration_for_object_lambda_output::Builder {
+    pub fn builder() -> crate::output::get_access_point_configuration_for_object_lambda_output::Builder {
         crate::output::get_access_point_configuration_for_object_lambda_output::Builder::default()
     }
 }
@@ -2104,27 +2103,26 @@ impl GetAccessPointConfigurationForObjectLambdaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessPointOutput {
+pub struct GetAccessPointOutput  {
     /// <p>The name of the specified access point.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the bucket associated with the specified access point.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
+    /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p> 
     /// <p>This will always be true for an Amazon S3 on Outposts access point</p>
     #[doc(hidden)]
     pub network_origin: std::option::Option<crate::model::NetworkOrigin>,
-    /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>
-    /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
+    /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note> 
+    /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p> 
     /// </note>
     #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
     #[doc(hidden)]
-    pub public_access_block_configuration:
-        std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+    pub public_access_block_configuration: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     /// <p>The date and time when the specified access point was created.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -2136,66 +2134,60 @@ pub struct GetAccessPointOutput {
     pub access_point_arn: std::option::Option<std::string::String>,
     /// <p>The VPC endpoint for the access point.</p>
     #[doc(hidden)]
-    pub endpoints:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub endpoints: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
     #[doc(hidden)]
     pub bucket_account_id: std::option::Option<std::string::String>,
 }
 impl GetAccessPointOutput {
     /// <p>The name of the specified access point.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the bucket associated with the specified access point.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
-    /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
+    /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p> 
     /// <p>This will always be true for an Amazon S3 on Outposts access point</p>
-    pub fn network_origin(&self) -> std::option::Option<&crate::model::NetworkOrigin> {
+    pub fn network_origin(&self) -> std::option::Option<& crate::model::NetworkOrigin> {
         self.network_origin.as_ref()
     }
-    /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>
-    /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
+    /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note> 
+    /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p> 
     /// </note>
-    pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> std::option::Option<& crate::model::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-    pub fn public_access_block_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
+    pub fn public_access_block_configuration(&self) -> std::option::Option<& crate::model::PublicAccessBlockConfiguration> {
         self.public_access_block_configuration.as_ref()
     }
     /// <p>The date and time when the specified access point was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The name or alias of the access point.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The ARN of the access point.</p>
-    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+    pub fn access_point_arn(&self) -> std::option::Option<& str> {
         self.access_point_arn.as_deref()
     }
     /// <p>The VPC endpoint for the access point.</p>
-    pub fn endpoints(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn endpoints(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.endpoints.as_ref()
     }
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
-    pub fn bucket_account_id(&self) -> std::option::Option<&str> {
+    pub fn bucket_account_id(&self) -> std::option::Option<& str> {
         self.bucket_account_id.as_deref()
     }
 }
 /// See [`GetAccessPointOutput`](crate::output::GetAccessPointOutput).
 pub mod get_access_point_output {
-
+    
     /// A builder for [`GetAccessPointOutput`](crate::output::GetAccessPointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2203,14 +2195,11 @@ pub mod get_access_point_output {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) network_origin: std::option::Option<crate::model::NetworkOrigin>,
         pub(crate) vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
-        pub(crate) public_access_block_configuration:
-            std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+        pub(crate) public_access_block_configuration: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) alias: std::option::Option<std::string::String>,
         pub(crate) access_point_arn: std::option::Option<std::string::String>,
-        pub(crate) endpoints: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) endpoints: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) bucket_account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2221,8 +2210,7 @@ pub mod get_access_point_output {
         }
         /// <p>The name of the specified access point.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The name of the bucket associated with the specified access point.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2231,58 +2219,42 @@ pub mod get_access_point_output {
         }
         /// <p>The name of the bucket associated with the specified access point.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
-        /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
+        /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p> 
         /// <p>This will always be true for an Amazon S3 on Outposts access point</p>
         pub fn network_origin(mut self, input: crate::model::NetworkOrigin) -> Self {
             self.network_origin = Some(input);
             self
         }
-        /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
+        /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p> 
         /// <p>This will always be true for an Amazon S3 on Outposts access point</p>
-        pub fn set_network_origin(
-            mut self,
-            input: std::option::Option<crate::model::NetworkOrigin>,
-        ) -> Self {
-            self.network_origin = input;
-            self
+        pub fn set_network_origin(mut self, input: std::option::Option<crate::model::NetworkOrigin>) -> Self {
+            self.network_origin = input; self
         }
-        /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>
-        /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
+        /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note> 
+        /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p> 
         /// </note>
         pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
             self.vpc_configuration = Some(input);
             self
         }
-        /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>
-        /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
+        /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note> 
+        /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p> 
         /// </note>
-        pub fn set_vpc_configuration(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfiguration>,
-        ) -> Self {
-            self.vpc_configuration = input;
-            self
+        pub fn set_vpc_configuration(mut self, input: std::option::Option<crate::model::VpcConfiguration>) -> Self {
+            self.vpc_configuration = input; self
         }
-        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
         /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-        pub fn public_access_block_configuration(
-            mut self,
-            input: crate::model::PublicAccessBlockConfiguration,
-        ) -> Self {
+        pub fn public_access_block_configuration(mut self, input: crate::model::PublicAccessBlockConfiguration) -> Self {
             self.public_access_block_configuration = Some(input);
             self
         }
-        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
         /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-        pub fn set_public_access_block_configuration(
-            mut self,
-            input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
-        ) -> Self {
-            self.public_access_block_configuration = input;
-            self
+        pub fn set_public_access_block_configuration(mut self, input: std::option::Option<crate::model::PublicAccessBlockConfiguration>) -> Self {
+            self.public_access_block_configuration = input; self
         }
         /// <p>The date and time when the specified access point was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2290,12 +2262,8 @@ pub mod get_access_point_output {
             self
         }
         /// <p>The date and time when the specified access point was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The name or alias of the access point.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2304,8 +2272,7 @@ pub mod get_access_point_output {
         }
         /// <p>The name or alias of the access point.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// <p>The ARN of the access point.</p>
         pub fn access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2313,37 +2280,23 @@ pub mod get_access_point_output {
             self
         }
         /// <p>The ARN of the access point.</p>
-        pub fn set_access_point_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_point_arn = input;
-            self
+        pub fn set_access_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_point_arn = input; self
         }
         /// Adds a key-value pair to `endpoints`.
         ///
         /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
         ///
         /// <p>The VPC endpoint for the access point.</p>
-        pub fn endpoints(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn endpoints(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.endpoints.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.endpoints = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.endpoints = Some(hash_map);
+                            self
         }
         /// <p>The VPC endpoint for the access point.</p>
-        pub fn set_endpoints(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.endpoints = input;
-            self
+        pub fn set_endpoints(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.endpoints = input; self
         }
         /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
         pub fn bucket_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2351,29 +2304,37 @@ pub mod get_access_point_output {
             self
         }
         /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
-        pub fn set_bucket_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bucket_account_id = input;
-            self
+        pub fn set_bucket_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket_account_id = input; self
         }
         /// Consumes the builder and constructs a [`GetAccessPointOutput`](crate::output::GetAccessPointOutput).
         pub fn build(self) -> crate::output::GetAccessPointOutput {
             crate::output::GetAccessPointOutput {
-                name: self.name,
-                bucket: self.bucket,
-                network_origin: self.network_origin,
-                vpc_configuration: self.vpc_configuration,
-                public_access_block_configuration: self.public_access_block_configuration,
-                creation_date: self.creation_date,
-                alias: self.alias,
-                access_point_arn: self.access_point_arn,
-                endpoints: self.endpoints,
-                bucket_account_id: self.bucket_account_id,
+                name: self.name
+                ,
+                bucket: self.bucket
+                ,
+                network_origin: self.network_origin
+                ,
+                vpc_configuration: self.vpc_configuration
+                ,
+                public_access_block_configuration: self.public_access_block_configuration
+                ,
+                creation_date: self.creation_date
+                ,
+                alias: self.alias
+                ,
+                access_point_arn: self.access_point_arn
+                ,
+                endpoints: self.endpoints
+                ,
+                bucket_account_id: self.bucket_account_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointOutput`](crate::output::GetAccessPointOutput).
@@ -2385,20 +2346,20 @@ impl GetAccessPointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMultiRegionAccessPointOperationOutput {
+pub struct DescribeMultiRegionAccessPointOperationOutput  {
     /// <p>A container element containing the details of the asynchronous operation.</p>
     #[doc(hidden)]
     pub async_operation: std::option::Option<crate::model::AsyncOperation>,
 }
 impl DescribeMultiRegionAccessPointOperationOutput {
     /// <p>A container element containing the details of the asynchronous operation.</p>
-    pub fn async_operation(&self) -> std::option::Option<&crate::model::AsyncOperation> {
+    pub fn async_operation(&self) -> std::option::Option<& crate::model::AsyncOperation> {
         self.async_operation.as_ref()
     }
 }
 /// See [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput).
 pub mod describe_multi_region_access_point_operation_output {
-
+    
     /// A builder for [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2411,25 +2372,23 @@ pub mod describe_multi_region_access_point_operation_output {
             self
         }
         /// <p>A container element containing the details of the asynchronous operation.</p>
-        pub fn set_async_operation(
-            mut self,
-            input: std::option::Option<crate::model::AsyncOperation>,
-        ) -> Self {
-            self.async_operation = input;
-            self
+        pub fn set_async_operation(mut self, input: std::option::Option<crate::model::AsyncOperation>) -> Self {
+            self.async_operation = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput).
         pub fn build(self) -> crate::output::DescribeMultiRegionAccessPointOperationOutput {
             crate::output::DescribeMultiRegionAccessPointOperationOutput {
-                async_operation: self.async_operation,
+                async_operation: self.async_operation
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMultiRegionAccessPointOperationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput).
-    pub fn builder() -> crate::output::describe_multi_region_access_point_operation_output::Builder
-    {
+    pub fn builder() -> crate::output::describe_multi_region_access_point_operation_output::Builder {
         crate::output::describe_multi_region_access_point_operation_output::Builder::default()
     }
 }
@@ -2437,20 +2396,20 @@ impl DescribeMultiRegionAccessPointOperationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobOutput {
+pub struct DescribeJobOutput  {
     /// <p>Contains the configuration parameters and status for the job specified in the <code>Describe Job</code> request.</p>
     #[doc(hidden)]
     pub job: std::option::Option<crate::model::JobDescriptor>,
 }
 impl DescribeJobOutput {
     /// <p>Contains the configuration parameters and status for the job specified in the <code>Describe Job</code> request.</p>
-    pub fn job(&self) -> std::option::Option<&crate::model::JobDescriptor> {
+    pub fn job(&self) -> std::option::Option<& crate::model::JobDescriptor> {
         self.job.as_ref()
     }
 }
 /// See [`DescribeJobOutput`](crate::output::DescribeJobOutput).
 pub mod describe_job_output {
-
+    
     /// A builder for [`DescribeJobOutput`](crate::output::DescribeJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2464,14 +2423,18 @@ pub mod describe_job_output {
         }
         /// <p>Contains the configuration parameters and status for the job specified in the <code>Describe Job</code> request.</p>
         pub fn set_job(mut self, input: std::option::Option<crate::model::JobDescriptor>) -> Self {
-            self.job = input;
-            self
+            self.job = input; self
         }
         /// Consumes the builder and constructs a [`DescribeJobOutput`](crate::output::DescribeJobOutput).
         pub fn build(self) -> crate::output::DescribeJobOutput {
-            crate::output::DescribeJobOutput { job: self.job }
+            crate::output::DescribeJobOutput {
+                job: self.job
+                ,
+            }
         }
     }
+    
+    
 }
 impl DescribeJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobOutput`](crate::output::DescribeJobOutput).
@@ -2483,19 +2446,24 @@ impl DescribeJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStorageLensConfigurationTaggingOutput {}
+pub struct DeleteStorageLensConfigurationTaggingOutput  {
+}
 /// See [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput).
 pub mod delete_storage_lens_configuration_tagging_output {
-
+    
     /// A builder for [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput).
         pub fn build(self) -> crate::output::DeleteStorageLensConfigurationTaggingOutput {
-            crate::output::DeleteStorageLensConfigurationTaggingOutput {}
+            crate::output::DeleteStorageLensConfigurationTaggingOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteStorageLensConfigurationTaggingOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput).
@@ -2507,19 +2475,24 @@ impl DeleteStorageLensConfigurationTaggingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStorageLensConfigurationOutput {}
+pub struct DeleteStorageLensConfigurationOutput  {
+}
 /// See [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput).
 pub mod delete_storage_lens_configuration_output {
-
+    
     /// A builder for [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteStorageLensConfigurationOutput {
-            crate::output::DeleteStorageLensConfigurationOutput {}
+            crate::output::DeleteStorageLensConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteStorageLensConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput).
@@ -2531,19 +2504,24 @@ impl DeleteStorageLensConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePublicAccessBlockOutput {}
+pub struct DeletePublicAccessBlockOutput  {
+}
 /// See [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput).
 pub mod delete_public_access_block_output {
-
+    
     /// A builder for [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput).
         pub fn build(self) -> crate::output::DeletePublicAccessBlockOutput {
-            crate::output::DeletePublicAccessBlockOutput {}
+            crate::output::DeletePublicAccessBlockOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePublicAccessBlockOutput {
     /// Creates a new builder-style object to manufacture [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput).
@@ -2555,20 +2533,20 @@ impl DeletePublicAccessBlockOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMultiRegionAccessPointOutput {
+pub struct DeleteMultiRegionAccessPointOutput  {
     /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
     #[doc(hidden)]
     pub request_token_arn: std::option::Option<std::string::String>,
 }
 impl DeleteMultiRegionAccessPointOutput {
     /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
-    pub fn request_token_arn(&self) -> std::option::Option<&str> {
+    pub fn request_token_arn(&self) -> std::option::Option<& str> {
         self.request_token_arn.as_deref()
     }
 }
 /// See [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput).
 pub mod delete_multi_region_access_point_output {
-
+    
     /// A builder for [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2581,20 +2559,19 @@ pub mod delete_multi_region_access_point_output {
             self
         }
         /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
-        pub fn set_request_token_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.request_token_arn = input;
-            self
+        pub fn set_request_token_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_token_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput).
         pub fn build(self) -> crate::output::DeleteMultiRegionAccessPointOutput {
             crate::output::DeleteMultiRegionAccessPointOutput {
-                request_token_arn: self.request_token_arn,
+                request_token_arn: self.request_token_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteMultiRegionAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput).
@@ -2606,19 +2583,24 @@ impl DeleteMultiRegionAccessPointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteJobTaggingOutput {}
+pub struct DeleteJobTaggingOutput  {
+}
 /// See [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput).
 pub mod delete_job_tagging_output {
-
+    
     /// A builder for [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput).
         pub fn build(self) -> crate::output::DeleteJobTaggingOutput {
-            crate::output::DeleteJobTaggingOutput {}
+            crate::output::DeleteJobTaggingOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteJobTaggingOutput {
     /// Creates a new builder-style object to manufacture [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput).
@@ -2630,19 +2612,24 @@ impl DeleteJobTaggingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBucketTaggingOutput {}
+pub struct DeleteBucketTaggingOutput  {
+}
 /// See [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput).
 pub mod delete_bucket_tagging_output {
-
+    
     /// A builder for [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput).
         pub fn build(self) -> crate::output::DeleteBucketTaggingOutput {
-            crate::output::DeleteBucketTaggingOutput {}
+            crate::output::DeleteBucketTaggingOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteBucketTaggingOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput).
@@ -2654,19 +2641,24 @@ impl DeleteBucketTaggingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBucketPolicyOutput {}
+pub struct DeleteBucketPolicyOutput  {
+}
 /// See [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput).
 pub mod delete_bucket_policy_output {
-
+    
     /// A builder for [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput).
         pub fn build(self) -> crate::output::DeleteBucketPolicyOutput {
-            crate::output::DeleteBucketPolicyOutput {}
+            crate::output::DeleteBucketPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteBucketPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput).
@@ -2678,19 +2670,24 @@ impl DeleteBucketPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBucketLifecycleConfigurationOutput {}
+pub struct DeleteBucketLifecycleConfigurationOutput  {
+}
 /// See [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput).
 pub mod delete_bucket_lifecycle_configuration_output {
-
+    
     /// A builder for [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteBucketLifecycleConfigurationOutput {
-            crate::output::DeleteBucketLifecycleConfigurationOutput {}
+            crate::output::DeleteBucketLifecycleConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteBucketLifecycleConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput).
@@ -2702,19 +2699,24 @@ impl DeleteBucketLifecycleConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBucketOutput {}
+pub struct DeleteBucketOutput  {
+}
 /// See [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
 pub mod delete_bucket_output {
-
+    
     /// A builder for [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
         pub fn build(self) -> crate::output::DeleteBucketOutput {
-            crate::output::DeleteBucketOutput {}
+            crate::output::DeleteBucketOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteBucketOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
@@ -2726,24 +2728,28 @@ impl DeleteBucketOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccessPointPolicyForObjectLambdaOutput {}
+pub struct DeleteAccessPointPolicyForObjectLambdaOutput  {
+}
 /// See [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput).
 pub mod delete_access_point_policy_for_object_lambda_output {
-
+    
     /// A builder for [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput).
         pub fn build(self) -> crate::output::DeleteAccessPointPolicyForObjectLambdaOutput {
-            crate::output::DeleteAccessPointPolicyForObjectLambdaOutput {}
+            crate::output::DeleteAccessPointPolicyForObjectLambdaOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAccessPointPolicyForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput).
-    pub fn builder() -> crate::output::delete_access_point_policy_for_object_lambda_output::Builder
-    {
+    pub fn builder() -> crate::output::delete_access_point_policy_for_object_lambda_output::Builder {
         crate::output::delete_access_point_policy_for_object_lambda_output::Builder::default()
     }
 }
@@ -2751,19 +2757,24 @@ impl DeleteAccessPointPolicyForObjectLambdaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccessPointPolicyOutput {}
+pub struct DeleteAccessPointPolicyOutput  {
+}
 /// See [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput).
 pub mod delete_access_point_policy_output {
-
+    
     /// A builder for [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput).
         pub fn build(self) -> crate::output::DeleteAccessPointPolicyOutput {
-            crate::output::DeleteAccessPointPolicyOutput {}
+            crate::output::DeleteAccessPointPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAccessPointPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput).
@@ -2775,19 +2786,24 @@ impl DeleteAccessPointPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccessPointForObjectLambdaOutput {}
+pub struct DeleteAccessPointForObjectLambdaOutput  {
+}
 /// See [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput).
 pub mod delete_access_point_for_object_lambda_output {
-
+    
     /// A builder for [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput).
         pub fn build(self) -> crate::output::DeleteAccessPointForObjectLambdaOutput {
-            crate::output::DeleteAccessPointForObjectLambdaOutput {}
+            crate::output::DeleteAccessPointForObjectLambdaOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAccessPointForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput).
@@ -2799,19 +2815,24 @@ impl DeleteAccessPointForObjectLambdaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccessPointOutput {}
+pub struct DeleteAccessPointOutput  {
+}
 /// See [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput).
 pub mod delete_access_point_output {
-
+    
     /// A builder for [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput).
         pub fn build(self) -> crate::output::DeleteAccessPointOutput {
-            crate::output::DeleteAccessPointOutput {}
+            crate::output::DeleteAccessPointOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput).
@@ -2823,20 +2844,20 @@ impl DeleteAccessPointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMultiRegionAccessPointOutput {
+pub struct CreateMultiRegionAccessPointOutput  {
     /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
     #[doc(hidden)]
     pub request_token_arn: std::option::Option<std::string::String>,
 }
 impl CreateMultiRegionAccessPointOutput {
     /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
-    pub fn request_token_arn(&self) -> std::option::Option<&str> {
+    pub fn request_token_arn(&self) -> std::option::Option<& str> {
         self.request_token_arn.as_deref()
     }
 }
 /// See [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput).
 pub mod create_multi_region_access_point_output {
-
+    
     /// A builder for [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2849,20 +2870,19 @@ pub mod create_multi_region_access_point_output {
             self
         }
         /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
-        pub fn set_request_token_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.request_token_arn = input;
-            self
+        pub fn set_request_token_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_token_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput).
         pub fn build(self) -> crate::output::CreateMultiRegionAccessPointOutput {
             crate::output::CreateMultiRegionAccessPointOutput {
-                request_token_arn: self.request_token_arn,
+                request_token_arn: self.request_token_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateMultiRegionAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput).
@@ -2874,20 +2894,20 @@ impl CreateMultiRegionAccessPointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateJobOutput {
+pub struct CreateJobOutput  {
     /// <p>The ID for this job. Amazon S3 generates this ID automatically and returns it after a successful <code>Create Job</code> request.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CreateJobOutput {
     /// <p>The ID for this job. Amazon S3 generates this ID automatically and returns it after a successful <code>Create Job</code> request.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`CreateJobOutput`](crate::output::CreateJobOutput).
 pub mod create_job_output {
-
+    
     /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2901,16 +2921,18 @@ pub mod create_job_output {
         }
         /// <p>The ID for this job. Amazon S3 generates this ID automatically and returns it after a successful <code>Create Job</code> request.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateJobOutput`](crate::output::CreateJobOutput).
         pub fn build(self) -> crate::output::CreateJobOutput {
             crate::output::CreateJobOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::output::CreateJobOutput).
@@ -2922,12 +2944,12 @@ impl CreateJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBucketOutput {
+pub struct CreateBucketOutput  {
     /// <p>The location of the bucket.</p>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
-    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bucket.</p> 
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> 
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
     /// <region>
     /// :
@@ -2944,11 +2966,11 @@ pub struct CreateBucketOutput {
 }
 impl CreateBucketOutput {
     /// <p>The location of the bucket.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
-    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bucket.</p> 
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> 
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
     /// <region>
     /// :
@@ -2960,13 +2982,13 @@ impl CreateBucketOutput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
-    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn bucket_arn(&self) -> std::option::Option<& str> {
         self.bucket_arn.as_deref()
     }
 }
 /// See [`CreateBucketOutput`](crate::output::CreateBucketOutput).
 pub mod create_bucket_output {
-
+    
     /// A builder for [`CreateBucketOutput`](crate::output::CreateBucketOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2981,11 +3003,10 @@ pub mod create_bucket_output {
         }
         /// <p>The location of the bucket.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
-        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bucket.</p> 
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> 
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
         /// <region>
         /// :
@@ -3001,8 +3022,8 @@ pub mod create_bucket_output {
             self.bucket_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
-        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bucket.</p> 
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> 
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
         /// <region>
         /// :
@@ -3015,17 +3036,20 @@ pub mod create_bucket_output {
         /// </account-id>
         /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_arn = input;
-            self
+            self.bucket_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateBucketOutput`](crate::output::CreateBucketOutput).
         pub fn build(self) -> crate::output::CreateBucketOutput {
             crate::output::CreateBucketOutput {
-                location: self.location,
-                bucket_arn: self.bucket_arn,
+                location: self.location
+                ,
+                bucket_arn: self.bucket_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBucketOutput {
     /// Creates a new builder-style object to manufacture [`CreateBucketOutput`](crate::output::CreateBucketOutput).
@@ -3037,20 +3061,20 @@ impl CreateBucketOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccessPointForObjectLambdaOutput {
+pub struct CreateAccessPointForObjectLambdaOutput  {
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
     #[doc(hidden)]
     pub object_lambda_access_point_arn: std::option::Option<std::string::String>,
 }
 impl CreateAccessPointForObjectLambdaOutput {
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
-    pub fn object_lambda_access_point_arn(&self) -> std::option::Option<&str> {
+    pub fn object_lambda_access_point_arn(&self) -> std::option::Option<& str> {
         self.object_lambda_access_point_arn.as_deref()
     }
 }
 /// See [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput).
 pub mod create_access_point_for_object_lambda_output {
-
+    
     /// A builder for [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3058,28 +3082,24 @@ pub mod create_access_point_for_object_lambda_output {
     }
     impl Builder {
         /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
-        pub fn object_lambda_access_point_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn object_lambda_access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.object_lambda_access_point_arn = Some(input.into());
             self
         }
         /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
-        pub fn set_object_lambda_access_point_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_lambda_access_point_arn = input;
-            self
+        pub fn set_object_lambda_access_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_lambda_access_point_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput).
         pub fn build(self) -> crate::output::CreateAccessPointForObjectLambdaOutput {
             crate::output::CreateAccessPointForObjectLambdaOutput {
-                object_lambda_access_point_arn: self.object_lambda_access_point_arn,
+                object_lambda_access_point_arn: self.object_lambda_access_point_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAccessPointForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput).
@@ -3091,9 +3111,9 @@ impl CreateAccessPointForObjectLambdaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccessPointOutput {
-    /// <p>The ARN of the access point.</p> <note>
-    /// <p>This is only supported by Amazon S3 on Outposts.</p>
+pub struct CreateAccessPointOutput  {
+    /// <p>The ARN of the access point.</p> <note> 
+    /// <p>This is only supported by Amazon S3 on Outposts.</p> 
     /// </note>
     #[doc(hidden)]
     pub access_point_arn: std::option::Option<std::string::String>,
@@ -3102,20 +3122,20 @@ pub struct CreateAccessPointOutput {
     pub alias: std::option::Option<std::string::String>,
 }
 impl CreateAccessPointOutput {
-    /// <p>The ARN of the access point.</p> <note>
-    /// <p>This is only supported by Amazon S3 on Outposts.</p>
+    /// <p>The ARN of the access point.</p> <note> 
+    /// <p>This is only supported by Amazon S3 on Outposts.</p> 
     /// </note>
-    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+    pub fn access_point_arn(&self) -> std::option::Option<& str> {
         self.access_point_arn.as_deref()
     }
     /// <p>The name or alias of the access point.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
 }
 /// See [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput).
 pub mod create_access_point_output {
-
+    
     /// A builder for [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3123,22 +3143,18 @@ pub mod create_access_point_output {
         pub(crate) alias: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the access point.</p> <note>
-        /// <p>This is only supported by Amazon S3 on Outposts.</p>
+        /// <p>The ARN of the access point.</p> <note> 
+        /// <p>This is only supported by Amazon S3 on Outposts.</p> 
         /// </note>
         pub fn access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_point_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the access point.</p> <note>
-        /// <p>This is only supported by Amazon S3 on Outposts.</p>
+        /// <p>The ARN of the access point.</p> <note> 
+        /// <p>This is only supported by Amazon S3 on Outposts.</p> 
         /// </note>
-        pub fn set_access_point_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_point_arn = input;
-            self
+        pub fn set_access_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_point_arn = input; self
         }
         /// <p>The name or alias of the access point.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3147,17 +3163,20 @@ pub mod create_access_point_output {
         }
         /// <p>The name or alias of the access point.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// Consumes the builder and constructs a [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput).
         pub fn build(self) -> crate::output::CreateAccessPointOutput {
             crate::output::CreateAccessPointOutput {
-                access_point_arn: self.access_point_arn,
-                alias: self.alias,
+                access_point_arn: self.access_point_arn
+                ,
+                alias: self.alias
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput).
@@ -3165,3 +3184,4 @@ impl CreateAccessPointOutput {
         crate::output::create_access_point_output::Builder::default()
     }
 }
+

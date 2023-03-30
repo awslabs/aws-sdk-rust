@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct TestFailoverError {
     /// Kind of error that occurred.
-    pub kind: TestFailoverErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TestFailoverErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TestFailoverError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TestFailoverErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -38,29 +38,49 @@ pub enum TestFailoverErrorKind {
     ReplicationGroupNotFoundFault(crate::error::ReplicationGroupNotFoundFault),
     /// <p>The <code>TestFailover</code> action is not available.</p>
     TestFailoverNotAvailableFault(crate::error::TestFailoverNotAvailableFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TestFailoverError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TestFailoverErrorKind::ApiCallRateForCustomerExceededFault(_inner) => _inner.fmt(f),
-            TestFailoverErrorKind::InvalidCacheClusterStateFault(_inner) => _inner.fmt(f),
-            TestFailoverErrorKind::InvalidKmsKeyFault(_inner) => _inner.fmt(f),
-            TestFailoverErrorKind::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
-            TestFailoverErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            TestFailoverErrorKind::InvalidReplicationGroupStateFault(_inner) => _inner.fmt(f),
-            TestFailoverErrorKind::NodeGroupNotFoundFault(_inner) => _inner.fmt(f),
-            TestFailoverErrorKind::ReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
-            TestFailoverErrorKind::TestFailoverNotAvailableFault(_inner) => _inner.fmt(f),
-            TestFailoverErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TestFailoverErrorKind::ApiCallRateForCustomerExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            TestFailoverErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            TestFailoverErrorKind::InvalidKmsKeyFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            TestFailoverErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TestFailoverErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TestFailoverErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            TestFailoverErrorKind::NodeGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            TestFailoverErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            TestFailoverErrorKind::TestFailoverNotAvailableFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            TestFailoverErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -74,59 +94,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for TestFailoverError {
 }
 impl TestFailoverError {
     /// Creates a new `TestFailoverError`.
-    pub fn new(kind: TestFailoverErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TestFailoverError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TestFailoverErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TestFailoverError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TestFailoverErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TestFailoverErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TestFailoverError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TestFailoverErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TestFailoverError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TestFailoverErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TestFailoverErrorKind::ApiCallRateForCustomerExceededFault`.
     pub fn is_api_call_rate_for_customer_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            TestFailoverErrorKind::ApiCallRateForCustomerExceededFault(_)
-        )
+        matches!(&self.kind, TestFailoverErrorKind::ApiCallRateForCustomerExceededFault(_))
     }
     /// Returns `true` if the error kind is `TestFailoverErrorKind::InvalidCacheClusterStateFault`.
     pub fn is_invalid_cache_cluster_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            TestFailoverErrorKind::InvalidCacheClusterStateFault(_)
-        )
+        matches!(&self.kind, TestFailoverErrorKind::InvalidCacheClusterStateFault(_))
     }
     /// Returns `true` if the error kind is `TestFailoverErrorKind::InvalidKmsKeyFault`.
     pub fn is_invalid_kms_key_fault(&self) -> bool {
@@ -134,24 +148,15 @@ impl TestFailoverError {
     }
     /// Returns `true` if the error kind is `TestFailoverErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TestFailoverErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, TestFailoverErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `TestFailoverErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TestFailoverErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, TestFailoverErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `TestFailoverErrorKind::InvalidReplicationGroupStateFault`.
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            TestFailoverErrorKind::InvalidReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, TestFailoverErrorKind::InvalidReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `TestFailoverErrorKind::NodeGroupNotFoundFault`.
     pub fn is_node_group_not_found_fault(&self) -> bool {
@@ -159,32 +164,46 @@ impl TestFailoverError {
     }
     /// Returns `true` if the error kind is `TestFailoverErrorKind::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            TestFailoverErrorKind::ReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, TestFailoverErrorKind::ReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `TestFailoverErrorKind::TestFailoverNotAvailableFault`.
     pub fn is_test_failover_not_available_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            TestFailoverErrorKind::TestFailoverNotAvailableFault(_)
-        )
+        matches!(&self.kind, TestFailoverErrorKind::TestFailoverNotAvailableFault(_))
     }
 }
 impl std::error::Error for TestFailoverError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TestFailoverErrorKind::ApiCallRateForCustomerExceededFault(_inner) => Some(_inner),
-            TestFailoverErrorKind::InvalidCacheClusterStateFault(_inner) => Some(_inner),
-            TestFailoverErrorKind::InvalidKmsKeyFault(_inner) => Some(_inner),
-            TestFailoverErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
-            TestFailoverErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            TestFailoverErrorKind::InvalidReplicationGroupStateFault(_inner) => Some(_inner),
-            TestFailoverErrorKind::NodeGroupNotFoundFault(_inner) => Some(_inner),
-            TestFailoverErrorKind::ReplicationGroupNotFoundFault(_inner) => Some(_inner),
-            TestFailoverErrorKind::TestFailoverNotAvailableFault(_inner) => Some(_inner),
-            TestFailoverErrorKind::Unhandled(_inner) => Some(_inner),
+            TestFailoverErrorKind::ApiCallRateForCustomerExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            TestFailoverErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            Some(_inner)
+            ,
+            TestFailoverErrorKind::InvalidKmsKeyFault(_inner) =>
+            Some(_inner)
+            ,
+            TestFailoverErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            TestFailoverErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            TestFailoverErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            TestFailoverErrorKind::NodeGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            TestFailoverErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            TestFailoverErrorKind::TestFailoverNotAvailableFault(_inner) =>
+            Some(_inner)
+            ,
+            TestFailoverErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -192,22 +211,20 @@ impl std::error::Error for TestFailoverError {
 /// <p>The <code>TestFailover</code> action is not available.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestFailoverNotAvailableFault {
+pub struct TestFailoverNotAvailableFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TestFailoverNotAvailableFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TestFailoverNotAvailableFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TestFailoverNotAvailableFault")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -217,7 +234,7 @@ impl std::fmt::Display for TestFailoverNotAvailableFault {
 impl std::error::Error for TestFailoverNotAvailableFault {}
 /// See [`TestFailoverNotAvailableFault`](crate::error::TestFailoverNotAvailableFault).
 pub mod test_failover_not_available_fault {
-
+    
     /// A builder for [`TestFailoverNotAvailableFault`](crate::error::TestFailoverNotAvailableFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -231,16 +248,18 @@ pub mod test_failover_not_available_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TestFailoverNotAvailableFault`](crate::error::TestFailoverNotAvailableFault).
         pub fn build(self) -> crate::error::TestFailoverNotAvailableFault {
             crate::error::TestFailoverNotAvailableFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TestFailoverNotAvailableFault {
     /// Creates a new builder-style object to manufacture [`TestFailoverNotAvailableFault`](crate::error::TestFailoverNotAvailableFault).
@@ -252,22 +271,20 @@ impl TestFailoverNotAvailableFault {
 /// <p>The specified replication group does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationGroupNotFoundFault {
+pub struct ReplicationGroupNotFoundFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ReplicationGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ReplicationGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReplicationGroupNotFoundFault")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -277,7 +294,7 @@ impl std::fmt::Display for ReplicationGroupNotFoundFault {
 impl std::error::Error for ReplicationGroupNotFoundFault {}
 /// See [`ReplicationGroupNotFoundFault`](crate::error::ReplicationGroupNotFoundFault).
 pub mod replication_group_not_found_fault {
-
+    
     /// A builder for [`ReplicationGroupNotFoundFault`](crate::error::ReplicationGroupNotFoundFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -291,16 +308,18 @@ pub mod replication_group_not_found_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ReplicationGroupNotFoundFault`](crate::error::ReplicationGroupNotFoundFault).
         pub fn build(self) -> crate::error::ReplicationGroupNotFoundFault {
             crate::error::ReplicationGroupNotFoundFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ReplicationGroupNotFoundFault {
     /// Creates a new builder-style object to manufacture [`ReplicationGroupNotFoundFault`](crate::error::ReplicationGroupNotFoundFault).
@@ -312,22 +331,20 @@ impl ReplicationGroupNotFoundFault {
 /// <p>The node group specified by the <code>NodeGroupId</code> parameter could not be found. Please verify that the node group exists and that you spelled the <code>NodeGroupId</code> value correctly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeGroupNotFoundFault {
+pub struct NodeGroupNotFoundFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NodeGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NodeGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NodeGroupNotFoundFault")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -337,7 +354,7 @@ impl std::fmt::Display for NodeGroupNotFoundFault {
 impl std::error::Error for NodeGroupNotFoundFault {}
 /// See [`NodeGroupNotFoundFault`](crate::error::NodeGroupNotFoundFault).
 pub mod node_group_not_found_fault {
-
+    
     /// A builder for [`NodeGroupNotFoundFault`](crate::error::NodeGroupNotFoundFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -351,16 +368,18 @@ pub mod node_group_not_found_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NodeGroupNotFoundFault`](crate::error::NodeGroupNotFoundFault).
         pub fn build(self) -> crate::error::NodeGroupNotFoundFault {
             crate::error::NodeGroupNotFoundFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NodeGroupNotFoundFault {
     /// Creates a new builder-style object to manufacture [`NodeGroupNotFoundFault`](crate::error::NodeGroupNotFoundFault).
@@ -372,22 +391,20 @@ impl NodeGroupNotFoundFault {
 /// <p>The requested replication group is not in the <code>available</code> state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidReplicationGroupStateFault {
+pub struct InvalidReplicationGroupStateFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidReplicationGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidReplicationGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidReplicationGroupStateFault")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -397,7 +414,7 @@ impl std::fmt::Display for InvalidReplicationGroupStateFault {
 impl std::error::Error for InvalidReplicationGroupStateFault {}
 /// See [`InvalidReplicationGroupStateFault`](crate::error::InvalidReplicationGroupStateFault).
 pub mod invalid_replication_group_state_fault {
-
+    
     /// A builder for [`InvalidReplicationGroupStateFault`](crate::error::InvalidReplicationGroupStateFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -411,16 +428,18 @@ pub mod invalid_replication_group_state_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidReplicationGroupStateFault`](crate::error::InvalidReplicationGroupStateFault).
         pub fn build(self) -> crate::error::InvalidReplicationGroupStateFault {
             crate::error::InvalidReplicationGroupStateFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidReplicationGroupStateFault {
     /// Creates a new builder-style object to manufacture [`InvalidReplicationGroupStateFault`](crate::error::InvalidReplicationGroupStateFault).
@@ -432,22 +451,20 @@ impl InvalidReplicationGroupStateFault {
 /// <p>The value for a parameter is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidParameterValueException {
+pub struct InvalidParameterValueException  {
     /// <p>A parameter value is invalid.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidParameterValueException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterValueException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -457,7 +474,7 @@ impl std::fmt::Display for InvalidParameterValueException {
 impl std::error::Error for InvalidParameterValueException {}
 /// See [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
 pub mod invalid_parameter_value_exception {
-
+    
     /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -471,16 +488,18 @@ pub mod invalid_parameter_value_exception {
         }
         /// <p>A parameter value is invalid.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
         pub fn build(self) -> crate::error::InvalidParameterValueException {
             crate::error::InvalidParameterValueException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidParameterValueException {
     /// Creates a new builder-style object to manufacture [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
@@ -492,22 +511,20 @@ impl InvalidParameterValueException {
 /// <p>Two or more incompatible parameters were specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidParameterCombinationException {
+pub struct InvalidParameterCombinationException  {
     /// <p>Two or more parameters that must not be used together were used together.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidParameterCombinationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidParameterCombinationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterCombinationException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -517,7 +534,7 @@ impl std::fmt::Display for InvalidParameterCombinationException {
 impl std::error::Error for InvalidParameterCombinationException {}
 /// See [`InvalidParameterCombinationException`](crate::error::InvalidParameterCombinationException).
 pub mod invalid_parameter_combination_exception {
-
+    
     /// A builder for [`InvalidParameterCombinationException`](crate::error::InvalidParameterCombinationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -531,16 +548,18 @@ pub mod invalid_parameter_combination_exception {
         }
         /// <p>Two or more parameters that must not be used together were used together.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidParameterCombinationException`](crate::error::InvalidParameterCombinationException).
         pub fn build(self) -> crate::error::InvalidParameterCombinationException {
             crate::error::InvalidParameterCombinationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidParameterCombinationException {
     /// Creates a new builder-style object to manufacture [`InvalidParameterCombinationException`](crate::error::InvalidParameterCombinationException).
@@ -552,22 +571,20 @@ impl InvalidParameterCombinationException {
 /// <p>The KMS key supplied is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidKmsKeyFault {
+pub struct InvalidKmsKeyFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidKmsKeyFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidKmsKeyFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidKmsKeyFault [InvalidKMSKeyFault]")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -577,7 +594,7 @@ impl std::fmt::Display for InvalidKmsKeyFault {
 impl std::error::Error for InvalidKmsKeyFault {}
 /// See [`InvalidKmsKeyFault`](crate::error::InvalidKmsKeyFault).
 pub mod invalid_kms_key_fault {
-
+    
     /// A builder for [`InvalidKmsKeyFault`](crate::error::InvalidKmsKeyFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -591,16 +608,18 @@ pub mod invalid_kms_key_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidKmsKeyFault`](crate::error::InvalidKmsKeyFault).
         pub fn build(self) -> crate::error::InvalidKmsKeyFault {
             crate::error::InvalidKmsKeyFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidKmsKeyFault {
     /// Creates a new builder-style object to manufacture [`InvalidKmsKeyFault`](crate::error::InvalidKmsKeyFault).
@@ -612,22 +631,20 @@ impl InvalidKmsKeyFault {
 /// <p>The requested cluster is not in the <code>available</code> state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidCacheClusterStateFault {
+pub struct InvalidCacheClusterStateFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidCacheClusterStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidCacheClusterStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCacheClusterStateFault")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -637,7 +654,7 @@ impl std::fmt::Display for InvalidCacheClusterStateFault {
 impl std::error::Error for InvalidCacheClusterStateFault {}
 /// See [`InvalidCacheClusterStateFault`](crate::error::InvalidCacheClusterStateFault).
 pub mod invalid_cache_cluster_state_fault {
-
+    
     /// A builder for [`InvalidCacheClusterStateFault`](crate::error::InvalidCacheClusterStateFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -651,16 +668,18 @@ pub mod invalid_cache_cluster_state_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidCacheClusterStateFault`](crate::error::InvalidCacheClusterStateFault).
         pub fn build(self) -> crate::error::InvalidCacheClusterStateFault {
             crate::error::InvalidCacheClusterStateFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidCacheClusterStateFault {
     /// Creates a new builder-style object to manufacture [`InvalidCacheClusterStateFault`](crate::error::InvalidCacheClusterStateFault).
@@ -672,25 +691,20 @@ impl InvalidCacheClusterStateFault {
 /// <p>The customer has exceeded the allowed rate of API calls.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApiCallRateForCustomerExceededFault {
+pub struct ApiCallRateForCustomerExceededFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ApiCallRateForCustomerExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ApiCallRateForCustomerExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "ApiCallRateForCustomerExceededFault [APICallRateForCustomerExceededFault]"
-        )?;
+        write!(f, "ApiCallRateForCustomerExceededFault [APICallRateForCustomerExceededFault]")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -700,7 +714,7 @@ impl std::fmt::Display for ApiCallRateForCustomerExceededFault {
 impl std::error::Error for ApiCallRateForCustomerExceededFault {}
 /// See [`ApiCallRateForCustomerExceededFault`](crate::error::ApiCallRateForCustomerExceededFault).
 pub mod api_call_rate_for_customer_exceeded_fault {
-
+    
     /// A builder for [`ApiCallRateForCustomerExceededFault`](crate::error::ApiCallRateForCustomerExceededFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -714,16 +728,18 @@ pub mod api_call_rate_for_customer_exceeded_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ApiCallRateForCustomerExceededFault`](crate::error::ApiCallRateForCustomerExceededFault).
         pub fn build(self) -> crate::error::ApiCallRateForCustomerExceededFault {
             crate::error::ApiCallRateForCustomerExceededFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ApiCallRateForCustomerExceededFault {
     /// Creates a new builder-style object to manufacture [`ApiCallRateForCustomerExceededFault`](crate::error::ApiCallRateForCustomerExceededFault).
@@ -737,15 +753,15 @@ impl ApiCallRateForCustomerExceededFault {
 #[derive(std::fmt::Debug)]
 pub struct StartMigrationError {
     /// Kind of error that occurred.
-    pub kind: StartMigrationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StartMigrationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartMigrationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StartMigrationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -758,31 +774,37 @@ pub enum StartMigrationErrorKind {
     /// <p>The requested replication group is not in the <code>available</code> state.</p>
     InvalidReplicationGroupStateFault(crate::error::InvalidReplicationGroupStateFault),
     /// <p>The targeted replication group is not available. </p>
-    ReplicationGroupAlreadyUnderMigrationFault(
-        crate::error::ReplicationGroupAlreadyUnderMigrationFault,
-    ),
+    ReplicationGroupAlreadyUnderMigrationFault(crate::error::ReplicationGroupAlreadyUnderMigrationFault),
     /// <p>The specified replication group does not exist.</p>
     ReplicationGroupNotFoundFault(crate::error::ReplicationGroupNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartMigrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartMigrationErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            StartMigrationErrorKind::InvalidReplicationGroupStateFault(_inner) => _inner.fmt(f),
-            StartMigrationErrorKind::ReplicationGroupAlreadyUnderMigrationFault(_inner) => {
+            StartMigrationErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartMigrationErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartMigrationErrorKind::ReplicationGroupAlreadyUnderMigrationFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartMigrationErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartMigrationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            StartMigrationErrorKind::ReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
-            StartMigrationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -796,85 +818,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartMigrationError {
 }
 impl StartMigrationError {
     /// Creates a new `StartMigrationError`.
-    pub fn new(kind: StartMigrationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StartMigrationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StartMigrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StartMigrationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StartMigrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StartMigrationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StartMigrationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StartMigrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StartMigrationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StartMigrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StartMigrationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartMigrationErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, StartMigrationErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `StartMigrationErrorKind::InvalidReplicationGroupStateFault`.
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartMigrationErrorKind::InvalidReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, StartMigrationErrorKind::InvalidReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `StartMigrationErrorKind::ReplicationGroupAlreadyUnderMigrationFault`.
     pub fn is_replication_group_already_under_migration_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartMigrationErrorKind::ReplicationGroupAlreadyUnderMigrationFault(_)
-        )
+        matches!(&self.kind, StartMigrationErrorKind::ReplicationGroupAlreadyUnderMigrationFault(_))
     }
     /// Returns `true` if the error kind is `StartMigrationErrorKind::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartMigrationErrorKind::ReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, StartMigrationErrorKind::ReplicationGroupNotFoundFault(_))
     }
 }
 impl std::error::Error for StartMigrationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartMigrationErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            StartMigrationErrorKind::InvalidReplicationGroupStateFault(_inner) => Some(_inner),
-            StartMigrationErrorKind::ReplicationGroupAlreadyUnderMigrationFault(_inner) => {
+            StartMigrationErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            StartMigrationErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            StartMigrationErrorKind::ReplicationGroupAlreadyUnderMigrationFault(_inner) =>
+            Some(_inner)
+            ,
+            StartMigrationErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            StartMigrationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            StartMigrationErrorKind::ReplicationGroupNotFoundFault(_inner) => Some(_inner),
-            StartMigrationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -882,22 +900,20 @@ impl std::error::Error for StartMigrationError {
 /// <p>The targeted replication group is not available. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationGroupAlreadyUnderMigrationFault {
+pub struct ReplicationGroupAlreadyUnderMigrationFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ReplicationGroupAlreadyUnderMigrationFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ReplicationGroupAlreadyUnderMigrationFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReplicationGroupAlreadyUnderMigrationFault")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -907,7 +923,7 @@ impl std::fmt::Display for ReplicationGroupAlreadyUnderMigrationFault {
 impl std::error::Error for ReplicationGroupAlreadyUnderMigrationFault {}
 /// See [`ReplicationGroupAlreadyUnderMigrationFault`](crate::error::ReplicationGroupAlreadyUnderMigrationFault).
 pub mod replication_group_already_under_migration_fault {
-
+    
     /// A builder for [`ReplicationGroupAlreadyUnderMigrationFault`](crate::error::ReplicationGroupAlreadyUnderMigrationFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -921,16 +937,18 @@ pub mod replication_group_already_under_migration_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ReplicationGroupAlreadyUnderMigrationFault`](crate::error::ReplicationGroupAlreadyUnderMigrationFault).
         pub fn build(self) -> crate::error::ReplicationGroupAlreadyUnderMigrationFault {
             crate::error::ReplicationGroupAlreadyUnderMigrationFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ReplicationGroupAlreadyUnderMigrationFault {
     /// Creates a new builder-style object to manufacture [`ReplicationGroupAlreadyUnderMigrationFault`](crate::error::ReplicationGroupAlreadyUnderMigrationFault).
@@ -944,17 +962,15 @@ impl ReplicationGroupAlreadyUnderMigrationFault {
 #[derive(std::fmt::Debug)]
 pub struct RevokeCacheSecurityGroupIngressError {
     /// Kind of error that occurred.
-    pub kind: RevokeCacheSecurityGroupIngressErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RevokeCacheSecurityGroupIngressErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RevokeCacheSecurityGroupIngressError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: RevokeCacheSecurityGroupIngressErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: RevokeCacheSecurityGroupIngressErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -972,35 +988,37 @@ pub enum RevokeCacheSecurityGroupIngressErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RevokeCacheSecurityGroupIngressError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RevokeCacheSecurityGroupIngressErrorKind::AuthorizationNotFoundFault(_inner) => {
+            RevokeCacheSecurityGroupIngressErrorKind::AuthorizationNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeCacheSecurityGroupIngressErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            RevokeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault(_inner) => {
-                _inner.fmt(f)
-            }
-            RevokeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault(
-                _inner,
-            ) => _inner.fmt(f),
-            RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException(
-                _inner,
-            ) => _inner.fmt(f),
-            RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            RevokeCacheSecurityGroupIngressErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1014,108 +1032,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for RevokeCacheSecurityGroupIngre
 }
 impl RevokeCacheSecurityGroupIngressError {
     /// Creates a new `RevokeCacheSecurityGroupIngressError`.
-    pub fn new(
-        kind: RevokeCacheSecurityGroupIngressErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RevokeCacheSecurityGroupIngressError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RevokeCacheSecurityGroupIngressErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RevokeCacheSecurityGroupIngressError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RevokeCacheSecurityGroupIngressErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RevokeCacheSecurityGroupIngressErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RevokeCacheSecurityGroupIngressError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RevokeCacheSecurityGroupIngressErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RevokeCacheSecurityGroupIngressError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RevokeCacheSecurityGroupIngressErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RevokeCacheSecurityGroupIngressErrorKind::AuthorizationNotFoundFault`.
     pub fn is_authorization_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RevokeCacheSecurityGroupIngressErrorKind::AuthorizationNotFoundFault(_)
-        )
+        matches!(&self.kind, RevokeCacheSecurityGroupIngressErrorKind::AuthorizationNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RevokeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault`.
     pub fn is_cache_security_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RevokeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, RevokeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RevokeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault`.
     pub fn is_invalid_cache_security_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RevokeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault(_)
-        )
+        matches!(&self.kind, RevokeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for RevokeCacheSecurityGroupIngressError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RevokeCacheSecurityGroupIngressErrorKind::AuthorizationNotFoundFault(_inner) => {
+            RevokeCacheSecurityGroupIngressErrorKind::AuthorizationNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            RevokeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            RevokeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeCacheSecurityGroupIngressErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            RevokeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault(_inner) => {
-                Some(_inner)
-            }
-            RevokeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault(
-                _inner,
-            ) => Some(_inner),
-            RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException(
-                _inner,
-            ) => Some(_inner),
-            RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            RevokeCacheSecurityGroupIngressErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1123,22 +1121,20 @@ impl std::error::Error for RevokeCacheSecurityGroupIngressError {
 /// <p>The current state of the cache security group does not allow deletion.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidCacheSecurityGroupStateFault {
+pub struct InvalidCacheSecurityGroupStateFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidCacheSecurityGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidCacheSecurityGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCacheSecurityGroupStateFault")?;
         if let Some(inner_11) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_11)?;
             }
         }
@@ -1148,7 +1144,7 @@ impl std::fmt::Display for InvalidCacheSecurityGroupStateFault {
 impl std::error::Error for InvalidCacheSecurityGroupStateFault {}
 /// See [`InvalidCacheSecurityGroupStateFault`](crate::error::InvalidCacheSecurityGroupStateFault).
 pub mod invalid_cache_security_group_state_fault {
-
+    
     /// A builder for [`InvalidCacheSecurityGroupStateFault`](crate::error::InvalidCacheSecurityGroupStateFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1162,16 +1158,18 @@ pub mod invalid_cache_security_group_state_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidCacheSecurityGroupStateFault`](crate::error::InvalidCacheSecurityGroupStateFault).
         pub fn build(self) -> crate::error::InvalidCacheSecurityGroupStateFault {
             crate::error::InvalidCacheSecurityGroupStateFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidCacheSecurityGroupStateFault {
     /// Creates a new builder-style object to manufacture [`InvalidCacheSecurityGroupStateFault`](crate::error::InvalidCacheSecurityGroupStateFault).
@@ -1183,22 +1181,20 @@ impl InvalidCacheSecurityGroupStateFault {
 /// <p>The requested cache security group name does not refer to an existing cache security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CacheSecurityGroupNotFoundFault {
+pub struct CacheSecurityGroupNotFoundFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CacheSecurityGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CacheSecurityGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CacheSecurityGroupNotFoundFault")?;
         if let Some(inner_12) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_12)?;
             }
         }
@@ -1208,7 +1204,7 @@ impl std::fmt::Display for CacheSecurityGroupNotFoundFault {
 impl std::error::Error for CacheSecurityGroupNotFoundFault {}
 /// See [`CacheSecurityGroupNotFoundFault`](crate::error::CacheSecurityGroupNotFoundFault).
 pub mod cache_security_group_not_found_fault {
-
+    
     /// A builder for [`CacheSecurityGroupNotFoundFault`](crate::error::CacheSecurityGroupNotFoundFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1222,16 +1218,18 @@ pub mod cache_security_group_not_found_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CacheSecurityGroupNotFoundFault`](crate::error::CacheSecurityGroupNotFoundFault).
         pub fn build(self) -> crate::error::CacheSecurityGroupNotFoundFault {
             crate::error::CacheSecurityGroupNotFoundFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CacheSecurityGroupNotFoundFault {
     /// Creates a new builder-style object to manufacture [`CacheSecurityGroupNotFoundFault`](crate::error::CacheSecurityGroupNotFoundFault).
@@ -1243,22 +1241,20 @@ impl CacheSecurityGroupNotFoundFault {
 /// <p>The specified Amazon EC2 security group is not authorized for the specified cache security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthorizationNotFoundFault {
+pub struct AuthorizationNotFoundFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AuthorizationNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AuthorizationNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationNotFoundFault")?;
         if let Some(inner_13) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_13)?;
             }
         }
@@ -1268,7 +1264,7 @@ impl std::fmt::Display for AuthorizationNotFoundFault {
 impl std::error::Error for AuthorizationNotFoundFault {}
 /// See [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
 pub mod authorization_not_found_fault {
-
+    
     /// A builder for [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1282,16 +1278,18 @@ pub mod authorization_not_found_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
         pub fn build(self) -> crate::error::AuthorizationNotFoundFault {
             crate::error::AuthorizationNotFoundFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AuthorizationNotFoundFault {
     /// Creates a new builder-style object to manufacture [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
@@ -1305,17 +1303,15 @@ impl AuthorizationNotFoundFault {
 #[derive(std::fmt::Debug)]
 pub struct ResetCacheParameterGroupError {
     /// Kind of error that occurred.
-    pub kind: ResetCacheParameterGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ResetCacheParameterGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ResetCacheParameterGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ResetCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ResetCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1333,35 +1329,37 @@ pub enum ResetCacheParameterGroupErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ResetCacheParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ResetCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) => {
+            ResetCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResetCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResetCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResetCacheParameterGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResetCacheParameterGroupErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResetCacheParameterGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ResetCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_inner) => {
-                _inner.fmt(f)
-            }
-            ResetCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) => {
-                _inner.fmt(f)
-            }
-            ResetCacheParameterGroupErrorKind::InvalidParameterCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            ResetCacheParameterGroupErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            ResetCacheParameterGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1375,105 +1373,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ResetCacheParameterGroupError
 }
 impl ResetCacheParameterGroupError {
     /// Creates a new `ResetCacheParameterGroupError`.
-    pub fn new(kind: ResetCacheParameterGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ResetCacheParameterGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ResetCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ResetCacheParameterGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ResetCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ResetCacheParameterGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ResetCacheParameterGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ResetCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ResetCacheParameterGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ResetCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ResetCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault`.
     pub fn is_cache_parameter_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResetCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ResetCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ResetCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault`.
     pub fn is_invalid_cache_parameter_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResetCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_)
-        )
+        matches!(&self.kind, ResetCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `ResetCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault`.
     pub fn is_invalid_global_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResetCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, ResetCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `ResetCacheParameterGroupErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResetCacheParameterGroupErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, ResetCacheParameterGroupErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `ResetCacheParameterGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResetCacheParameterGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ResetCacheParameterGroupErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for ResetCacheParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ResetCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) => {
+            ResetCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ResetCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            ResetCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            ResetCacheParameterGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            ResetCacheParameterGroupErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ResetCacheParameterGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ResetCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_inner) => {
-                Some(_inner)
-            }
-            ResetCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) => {
-                Some(_inner)
-            }
-            ResetCacheParameterGroupErrorKind::InvalidParameterCombinationException(_inner) => {
-                Some(_inner)
-            }
-            ResetCacheParameterGroupErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            ResetCacheParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1481,22 +1462,20 @@ impl std::error::Error for ResetCacheParameterGroupError {
 /// <p>The Global datastore is not available or in primary-only state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidGlobalReplicationGroupStateFault {
+pub struct InvalidGlobalReplicationGroupStateFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidGlobalReplicationGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidGlobalReplicationGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidGlobalReplicationGroupStateFault")?;
         if let Some(inner_14) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_14)?;
             }
         }
@@ -1506,7 +1485,7 @@ impl std::fmt::Display for InvalidGlobalReplicationGroupStateFault {
 impl std::error::Error for InvalidGlobalReplicationGroupStateFault {}
 /// See [`InvalidGlobalReplicationGroupStateFault`](crate::error::InvalidGlobalReplicationGroupStateFault).
 pub mod invalid_global_replication_group_state_fault {
-
+    
     /// A builder for [`InvalidGlobalReplicationGroupStateFault`](crate::error::InvalidGlobalReplicationGroupStateFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1520,16 +1499,18 @@ pub mod invalid_global_replication_group_state_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidGlobalReplicationGroupStateFault`](crate::error::InvalidGlobalReplicationGroupStateFault).
         pub fn build(self) -> crate::error::InvalidGlobalReplicationGroupStateFault {
             crate::error::InvalidGlobalReplicationGroupStateFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidGlobalReplicationGroupStateFault {
     /// Creates a new builder-style object to manufacture [`InvalidGlobalReplicationGroupStateFault`](crate::error::InvalidGlobalReplicationGroupStateFault).
@@ -1541,22 +1522,20 @@ impl InvalidGlobalReplicationGroupStateFault {
 /// <p>The current state of the cache parameter group does not allow the requested operation to occur.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidCacheParameterGroupStateFault {
+pub struct InvalidCacheParameterGroupStateFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidCacheParameterGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidCacheParameterGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCacheParameterGroupStateFault")?;
         if let Some(inner_15) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_15)?;
             }
         }
@@ -1566,7 +1545,7 @@ impl std::fmt::Display for InvalidCacheParameterGroupStateFault {
 impl std::error::Error for InvalidCacheParameterGroupStateFault {}
 /// See [`InvalidCacheParameterGroupStateFault`](crate::error::InvalidCacheParameterGroupStateFault).
 pub mod invalid_cache_parameter_group_state_fault {
-
+    
     /// A builder for [`InvalidCacheParameterGroupStateFault`](crate::error::InvalidCacheParameterGroupStateFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1580,16 +1559,18 @@ pub mod invalid_cache_parameter_group_state_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidCacheParameterGroupStateFault`](crate::error::InvalidCacheParameterGroupStateFault).
         pub fn build(self) -> crate::error::InvalidCacheParameterGroupStateFault {
             crate::error::InvalidCacheParameterGroupStateFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidCacheParameterGroupStateFault {
     /// Creates a new builder-style object to manufacture [`InvalidCacheParameterGroupStateFault`](crate::error::InvalidCacheParameterGroupStateFault).
@@ -1601,22 +1582,20 @@ impl InvalidCacheParameterGroupStateFault {
 /// <p>The requested cache parameter group name does not refer to an existing cache parameter group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CacheParameterGroupNotFoundFault {
+pub struct CacheParameterGroupNotFoundFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CacheParameterGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CacheParameterGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CacheParameterGroupNotFoundFault")?;
         if let Some(inner_16) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_16)?;
             }
         }
@@ -1626,7 +1605,7 @@ impl std::fmt::Display for CacheParameterGroupNotFoundFault {
 impl std::error::Error for CacheParameterGroupNotFoundFault {}
 /// See [`CacheParameterGroupNotFoundFault`](crate::error::CacheParameterGroupNotFoundFault).
 pub mod cache_parameter_group_not_found_fault {
-
+    
     /// A builder for [`CacheParameterGroupNotFoundFault`](crate::error::CacheParameterGroupNotFoundFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1640,16 +1619,18 @@ pub mod cache_parameter_group_not_found_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CacheParameterGroupNotFoundFault`](crate::error::CacheParameterGroupNotFoundFault).
         pub fn build(self) -> crate::error::CacheParameterGroupNotFoundFault {
             crate::error::CacheParameterGroupNotFoundFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CacheParameterGroupNotFoundFault {
     /// Creates a new builder-style object to manufacture [`CacheParameterGroupNotFoundFault`](crate::error::CacheParameterGroupNotFoundFault).
@@ -1663,15 +1644,15 @@ impl CacheParameterGroupNotFoundFault {
 #[derive(std::fmt::Debug)]
 pub struct RemoveTagsFromResourceError {
     /// Kind of error that occurred.
-    pub kind: RemoveTagsFromResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RemoveTagsFromResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RemoveTagsFromResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RemoveTagsFromResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1703,40 +1684,58 @@ pub enum RemoveTagsFromResourceErrorKind {
     UserGroupNotFoundFault(crate::error::UserGroupNotFoundFault),
     /// <p>The user does not exist or could not be found.</p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveTagsFromResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemoveTagsFromResourceErrorKind::CacheClusterNotFoundFault(_inner) => _inner.fmt(f),
-            RemoveTagsFromResourceErrorKind::CacheParameterGroupNotFoundFault(_inner) => {
+            RemoveTagsFromResourceErrorKind::CacheClusterNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromResourceErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromResourceErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromResourceErrorKind::CacheSubnetGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromResourceErrorKind::InvalidArnFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromResourceErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromResourceErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromResourceErrorKind::ReservedCacheNodeNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromResourceErrorKind::SnapshotNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromResourceErrorKind::TagNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromResourceErrorKind::UserGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromResourceErrorKind::UserNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromResourceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            RemoveTagsFromResourceErrorKind::CacheSecurityGroupNotFoundFault(_inner) => {
-                _inner.fmt(f)
-            }
-            RemoveTagsFromResourceErrorKind::CacheSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
-            RemoveTagsFromResourceErrorKind::InvalidArnFault(_inner) => _inner.fmt(f),
-            RemoveTagsFromResourceErrorKind::InvalidReplicationGroupStateFault(_inner) => {
-                _inner.fmt(f)
-            }
-            RemoveTagsFromResourceErrorKind::ReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
-            RemoveTagsFromResourceErrorKind::ReservedCacheNodeNotFoundFault(_inner) => {
-                _inner.fmt(f)
-            }
-            RemoveTagsFromResourceErrorKind::SnapshotNotFoundFault(_inner) => _inner.fmt(f),
-            RemoveTagsFromResourceErrorKind::TagNotFoundFault(_inner) => _inner.fmt(f),
-            RemoveTagsFromResourceErrorKind::UserGroupNotFoundFault(_inner) => _inner.fmt(f),
-            RemoveTagsFromResourceErrorKind::UserNotFoundFault(_inner) => _inner.fmt(f),
-            RemoveTagsFromResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1750,157 +1749,137 @@ impl aws_smithy_types::retry::ProvideErrorKind for RemoveTagsFromResourceError {
 }
 impl RemoveTagsFromResourceError {
     /// Creates a new `RemoveTagsFromResourceError`.
-    pub fn new(kind: RemoveTagsFromResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RemoveTagsFromResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RemoveTagsFromResourceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RemoveTagsFromResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RemoveTagsFromResourceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RemoveTagsFromResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RemoveTagsFromResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RemoveTagsFromResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RemoveTagsFromResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RemoveTagsFromResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::CacheClusterNotFoundFault`.
     pub fn is_cache_cluster_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromResourceErrorKind::CacheClusterNotFoundFault(_)
-        )
+        matches!(&self.kind, RemoveTagsFromResourceErrorKind::CacheClusterNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::CacheParameterGroupNotFoundFault`.
     pub fn is_cache_parameter_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromResourceErrorKind::CacheParameterGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, RemoveTagsFromResourceErrorKind::CacheParameterGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::CacheSecurityGroupNotFoundFault`.
     pub fn is_cache_security_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromResourceErrorKind::CacheSecurityGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, RemoveTagsFromResourceErrorKind::CacheSecurityGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::CacheSubnetGroupNotFoundFault`.
     pub fn is_cache_subnet_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromResourceErrorKind::CacheSubnetGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, RemoveTagsFromResourceErrorKind::CacheSubnetGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::InvalidArnFault`.
     pub fn is_invalid_arn_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromResourceErrorKind::InvalidArnFault(_)
-        )
+        matches!(&self.kind, RemoveTagsFromResourceErrorKind::InvalidArnFault(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::InvalidReplicationGroupStateFault`.
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromResourceErrorKind::InvalidReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, RemoveTagsFromResourceErrorKind::InvalidReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromResourceErrorKind::ReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, RemoveTagsFromResourceErrorKind::ReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::ReservedCacheNodeNotFoundFault`.
     pub fn is_reserved_cache_node_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromResourceErrorKind::ReservedCacheNodeNotFoundFault(_)
-        )
+        matches!(&self.kind, RemoveTagsFromResourceErrorKind::ReservedCacheNodeNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::SnapshotNotFoundFault`.
     pub fn is_snapshot_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromResourceErrorKind::SnapshotNotFoundFault(_)
-        )
+        matches!(&self.kind, RemoveTagsFromResourceErrorKind::SnapshotNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::TagNotFoundFault`.
     pub fn is_tag_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromResourceErrorKind::TagNotFoundFault(_)
-        )
+        matches!(&self.kind, RemoveTagsFromResourceErrorKind::TagNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::UserGroupNotFoundFault`.
     pub fn is_user_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromResourceErrorKind::UserGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, RemoveTagsFromResourceErrorKind::UserGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromResourceErrorKind::UserNotFoundFault(_)
-        )
+        matches!(&self.kind, RemoveTagsFromResourceErrorKind::UserNotFoundFault(_))
     }
 }
 impl std::error::Error for RemoveTagsFromResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemoveTagsFromResourceErrorKind::CacheClusterNotFoundFault(_inner) => Some(_inner),
-            RemoveTagsFromResourceErrorKind::CacheParameterGroupNotFoundFault(_inner) => {
+            RemoveTagsFromResourceErrorKind::CacheClusterNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromResourceErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromResourceErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromResourceErrorKind::CacheSubnetGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromResourceErrorKind::InvalidArnFault(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromResourceErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromResourceErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromResourceErrorKind::ReservedCacheNodeNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromResourceErrorKind::SnapshotNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromResourceErrorKind::TagNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromResourceErrorKind::UserGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromResourceErrorKind::UserNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromResourceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            RemoveTagsFromResourceErrorKind::CacheSecurityGroupNotFoundFault(_inner) => {
-                Some(_inner)
-            }
-            RemoveTagsFromResourceErrorKind::CacheSubnetGroupNotFoundFault(_inner) => Some(_inner),
-            RemoveTagsFromResourceErrorKind::InvalidArnFault(_inner) => Some(_inner),
-            RemoveTagsFromResourceErrorKind::InvalidReplicationGroupStateFault(_inner) => {
-                Some(_inner)
-            }
-            RemoveTagsFromResourceErrorKind::ReplicationGroupNotFoundFault(_inner) => Some(_inner),
-            RemoveTagsFromResourceErrorKind::ReservedCacheNodeNotFoundFault(_inner) => Some(_inner),
-            RemoveTagsFromResourceErrorKind::SnapshotNotFoundFault(_inner) => Some(_inner),
-            RemoveTagsFromResourceErrorKind::TagNotFoundFault(_inner) => Some(_inner),
-            RemoveTagsFromResourceErrorKind::UserGroupNotFoundFault(_inner) => Some(_inner),
-            RemoveTagsFromResourceErrorKind::UserNotFoundFault(_inner) => Some(_inner),
-            RemoveTagsFromResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1908,22 +1887,20 @@ impl std::error::Error for RemoveTagsFromResourceError {
 /// <p>The user does not exist or could not be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserNotFoundFault {
+pub struct UserNotFoundFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UserNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UserNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserNotFoundFault")?;
         if let Some(inner_17) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_17)?;
             }
         }
@@ -1933,7 +1910,7 @@ impl std::fmt::Display for UserNotFoundFault {
 impl std::error::Error for UserNotFoundFault {}
 /// See [`UserNotFoundFault`](crate::error::UserNotFoundFault).
 pub mod user_not_found_fault {
-
+    
     /// A builder for [`UserNotFoundFault`](crate::error::UserNotFoundFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1947,16 +1924,18 @@ pub mod user_not_found_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UserNotFoundFault`](crate::error::UserNotFoundFault).
         pub fn build(self) -> crate::error::UserNotFoundFault {
             crate::error::UserNotFoundFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UserNotFoundFault {
     /// Creates a new builder-style object to manufacture [`UserNotFoundFault`](crate::error::UserNotFoundFault).
@@ -1968,22 +1947,20 @@ impl UserNotFoundFault {
 /// <p>The user group was not found or does not exist</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserGroupNotFoundFault {
+pub struct UserGroupNotFoundFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UserGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UserGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserGroupNotFoundFault")?;
         if let Some(inner_18) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_18)?;
             }
         }
@@ -1993,7 +1970,7 @@ impl std::fmt::Display for UserGroupNotFoundFault {
 impl std::error::Error for UserGroupNotFoundFault {}
 /// See [`UserGroupNotFoundFault`](crate::error::UserGroupNotFoundFault).
 pub mod user_group_not_found_fault {
-
+    
     /// A builder for [`UserGroupNotFoundFault`](crate::error::UserGroupNotFoundFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2007,16 +1984,18 @@ pub mod user_group_not_found_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UserGroupNotFoundFault`](crate::error::UserGroupNotFoundFault).
         pub fn build(self) -> crate::error::UserGroupNotFoundFault {
             crate::error::UserGroupNotFoundFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UserGroupNotFoundFault {
     /// Creates a new builder-style object to manufacture [`UserGroupNotFoundFault`](crate::error::UserGroupNotFoundFault).
@@ -2028,22 +2007,20 @@ impl UserGroupNotFoundFault {
 /// <p>The requested tag was not found on this resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagNotFoundFault {
+pub struct TagNotFoundFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TagNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TagNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagNotFoundFault")?;
         if let Some(inner_19) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_19)?;
             }
         }
@@ -2053,7 +2030,7 @@ impl std::fmt::Display for TagNotFoundFault {
 impl std::error::Error for TagNotFoundFault {}
 /// See [`TagNotFoundFault`](crate::error::TagNotFoundFault).
 pub mod tag_not_found_fault {
-
+    
     /// A builder for [`TagNotFoundFault`](crate::error::TagNotFoundFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2067,16 +2044,18 @@ pub mod tag_not_found_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TagNotFoundFault`](crate::error::TagNotFoundFault).
         pub fn build(self) -> crate::error::TagNotFoundFault {
             crate::error::TagNotFoundFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TagNotFoundFault {
     /// Creates a new builder-style object to manufacture [`TagNotFoundFault`](crate::error::TagNotFoundFault).
@@ -2088,22 +2067,20 @@ impl TagNotFoundFault {
 /// <p>The requested snapshot name does not refer to an existing snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotNotFoundFault {
+pub struct SnapshotNotFoundFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl SnapshotNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for SnapshotNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotNotFoundFault")?;
         if let Some(inner_20) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_20)?;
             }
         }
@@ -2113,7 +2090,7 @@ impl std::fmt::Display for SnapshotNotFoundFault {
 impl std::error::Error for SnapshotNotFoundFault {}
 /// See [`SnapshotNotFoundFault`](crate::error::SnapshotNotFoundFault).
 pub mod snapshot_not_found_fault {
-
+    
     /// A builder for [`SnapshotNotFoundFault`](crate::error::SnapshotNotFoundFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2127,16 +2104,18 @@ pub mod snapshot_not_found_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`SnapshotNotFoundFault`](crate::error::SnapshotNotFoundFault).
         pub fn build(self) -> crate::error::SnapshotNotFoundFault {
             crate::error::SnapshotNotFoundFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl SnapshotNotFoundFault {
     /// Creates a new builder-style object to manufacture [`SnapshotNotFoundFault`](crate::error::SnapshotNotFoundFault).
@@ -2148,22 +2127,20 @@ impl SnapshotNotFoundFault {
 /// <p>The requested reserved cache node was not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservedCacheNodeNotFoundFault {
+pub struct ReservedCacheNodeNotFoundFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ReservedCacheNodeNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ReservedCacheNodeNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReservedCacheNodeNotFoundFault")?;
         if let Some(inner_21) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_21)?;
             }
         }
@@ -2173,7 +2150,7 @@ impl std::fmt::Display for ReservedCacheNodeNotFoundFault {
 impl std::error::Error for ReservedCacheNodeNotFoundFault {}
 /// See [`ReservedCacheNodeNotFoundFault`](crate::error::ReservedCacheNodeNotFoundFault).
 pub mod reserved_cache_node_not_found_fault {
-
+    
     /// A builder for [`ReservedCacheNodeNotFoundFault`](crate::error::ReservedCacheNodeNotFoundFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2187,16 +2164,18 @@ pub mod reserved_cache_node_not_found_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ReservedCacheNodeNotFoundFault`](crate::error::ReservedCacheNodeNotFoundFault).
         pub fn build(self) -> crate::error::ReservedCacheNodeNotFoundFault {
             crate::error::ReservedCacheNodeNotFoundFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ReservedCacheNodeNotFoundFault {
     /// Creates a new builder-style object to manufacture [`ReservedCacheNodeNotFoundFault`](crate::error::ReservedCacheNodeNotFoundFault).
@@ -2208,22 +2187,20 @@ impl ReservedCacheNodeNotFoundFault {
 /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidArnFault {
+pub struct InvalidArnFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidArnFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidArnFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidArnFault [InvalidARNFault]")?;
         if let Some(inner_22) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_22)?;
             }
         }
@@ -2233,7 +2210,7 @@ impl std::fmt::Display for InvalidArnFault {
 impl std::error::Error for InvalidArnFault {}
 /// See [`InvalidArnFault`](crate::error::InvalidArnFault).
 pub mod invalid_arn_fault {
-
+    
     /// A builder for [`InvalidArnFault`](crate::error::InvalidArnFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2247,16 +2224,18 @@ pub mod invalid_arn_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidArnFault`](crate::error::InvalidArnFault).
         pub fn build(self) -> crate::error::InvalidArnFault {
             crate::error::InvalidArnFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidArnFault {
     /// Creates a new builder-style object to manufacture [`InvalidArnFault`](crate::error::InvalidArnFault).
@@ -2268,22 +2247,20 @@ impl InvalidArnFault {
 /// <p>The requested cache subnet group name does not refer to an existing cache subnet group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CacheSubnetGroupNotFoundFault {
+pub struct CacheSubnetGroupNotFoundFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CacheSubnetGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CacheSubnetGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CacheSubnetGroupNotFoundFault")?;
         if let Some(inner_23) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_23)?;
             }
         }
@@ -2293,7 +2270,7 @@ impl std::fmt::Display for CacheSubnetGroupNotFoundFault {
 impl std::error::Error for CacheSubnetGroupNotFoundFault {}
 /// See [`CacheSubnetGroupNotFoundFault`](crate::error::CacheSubnetGroupNotFoundFault).
 pub mod cache_subnet_group_not_found_fault {
-
+    
     /// A builder for [`CacheSubnetGroupNotFoundFault`](crate::error::CacheSubnetGroupNotFoundFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2307,16 +2284,18 @@ pub mod cache_subnet_group_not_found_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CacheSubnetGroupNotFoundFault`](crate::error::CacheSubnetGroupNotFoundFault).
         pub fn build(self) -> crate::error::CacheSubnetGroupNotFoundFault {
             crate::error::CacheSubnetGroupNotFoundFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CacheSubnetGroupNotFoundFault {
     /// Creates a new builder-style object to manufacture [`CacheSubnetGroupNotFoundFault`](crate::error::CacheSubnetGroupNotFoundFault).
@@ -2328,22 +2307,20 @@ impl CacheSubnetGroupNotFoundFault {
 /// <p>The requested cluster ID does not refer to an existing cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CacheClusterNotFoundFault {
+pub struct CacheClusterNotFoundFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CacheClusterNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CacheClusterNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CacheClusterNotFoundFault")?;
         if let Some(inner_24) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_24)?;
             }
         }
@@ -2353,7 +2330,7 @@ impl std::fmt::Display for CacheClusterNotFoundFault {
 impl std::error::Error for CacheClusterNotFoundFault {}
 /// See [`CacheClusterNotFoundFault`](crate::error::CacheClusterNotFoundFault).
 pub mod cache_cluster_not_found_fault {
-
+    
     /// A builder for [`CacheClusterNotFoundFault`](crate::error::CacheClusterNotFoundFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2367,16 +2344,18 @@ pub mod cache_cluster_not_found_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CacheClusterNotFoundFault`](crate::error::CacheClusterNotFoundFault).
         pub fn build(self) -> crate::error::CacheClusterNotFoundFault {
             crate::error::CacheClusterNotFoundFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CacheClusterNotFoundFault {
     /// Creates a new builder-style object to manufacture [`CacheClusterNotFoundFault`](crate::error::CacheClusterNotFoundFault).
@@ -2390,15 +2369,15 @@ impl CacheClusterNotFoundFault {
 #[derive(std::fmt::Debug)]
 pub struct RebootCacheClusterError {
     /// Kind of error that occurred.
-    pub kind: RebootCacheClusterErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RebootCacheClusterErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RebootCacheClusterError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RebootCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2410,22 +2389,28 @@ pub enum RebootCacheClusterErrorKind {
     CacheClusterNotFoundFault(crate::error::CacheClusterNotFoundFault),
     /// <p>The requested cluster is not in the <code>available</code> state.</p>
     InvalidCacheClusterStateFault(crate::error::InvalidCacheClusterStateFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RebootCacheClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RebootCacheClusterErrorKind::CacheClusterNotFoundFault(_inner) => _inner.fmt(f),
-            RebootCacheClusterErrorKind::InvalidCacheClusterStateFault(_inner) => _inner.fmt(f),
-            RebootCacheClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RebootCacheClusterErrorKind::CacheClusterNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RebootCacheClusterErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            RebootCacheClusterErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2439,67 +2424,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for RebootCacheClusterError {
 }
 impl RebootCacheClusterError {
     /// Creates a new `RebootCacheClusterError`.
-    pub fn new(kind: RebootCacheClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RebootCacheClusterError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RebootCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RebootCacheClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RebootCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RebootCacheClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RebootCacheClusterError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RebootCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RebootCacheClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RebootCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RebootCacheClusterErrorKind::CacheClusterNotFoundFault`.
     pub fn is_cache_cluster_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RebootCacheClusterErrorKind::CacheClusterNotFoundFault(_)
-        )
+        matches!(&self.kind, RebootCacheClusterErrorKind::CacheClusterNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RebootCacheClusterErrorKind::InvalidCacheClusterStateFault`.
     pub fn is_invalid_cache_cluster_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RebootCacheClusterErrorKind::InvalidCacheClusterStateFault(_)
-        )
+        matches!(&self.kind, RebootCacheClusterErrorKind::InvalidCacheClusterStateFault(_))
     }
 }
 impl std::error::Error for RebootCacheClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RebootCacheClusterErrorKind::CacheClusterNotFoundFault(_inner) => Some(_inner),
-            RebootCacheClusterErrorKind::InvalidCacheClusterStateFault(_inner) => Some(_inner),
-            RebootCacheClusterErrorKind::Unhandled(_inner) => Some(_inner),
+            RebootCacheClusterErrorKind::CacheClusterNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            RebootCacheClusterErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            Some(_inner)
+            ,
+            RebootCacheClusterErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2509,17 +2494,15 @@ impl std::error::Error for RebootCacheClusterError {
 #[derive(std::fmt::Debug)]
 pub struct RebalanceSlotsInGlobalReplicationGroupError {
     /// Kind of error that occurred.
-    pub kind: RebalanceSlotsInGlobalReplicationGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RebalanceSlotsInGlobalReplicationGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RebalanceSlotsInGlobalReplicationGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: RebalanceSlotsInGlobalReplicationGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: RebalanceSlotsInGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2533,14 +2516,14 @@ pub enum RebalanceSlotsInGlobalReplicationGroupErrorKind {
     InvalidGlobalReplicationGroupStateFault(crate::error::InvalidGlobalReplicationGroupStateFault),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RebalanceSlotsInGlobalReplicationGroupError {
@@ -2571,59 +2554,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for RebalanceSlotsInGlobalReplica
 }
 impl RebalanceSlotsInGlobalReplicationGroupError {
     /// Creates a new `RebalanceSlotsInGlobalReplicationGroupError`.
-    pub fn new(
-        kind: RebalanceSlotsInGlobalReplicationGroupErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RebalanceSlotsInGlobalReplicationGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RebalanceSlotsInGlobalReplicationGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RebalanceSlotsInGlobalReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RebalanceSlotsInGlobalReplicationGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RebalanceSlotsInGlobalReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RebalanceSlotsInGlobalReplicationGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RebalanceSlotsInGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RebalanceSlotsInGlobalReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RebalanceSlotsInGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RebalanceSlotsInGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault`.
     pub fn is_global_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            RebalanceSlotsInGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, RebalanceSlotsInGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RebalanceSlotsInGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault`.
     pub fn is_invalid_global_replication_group_state_fault(&self) -> bool {
@@ -2631,10 +2604,7 @@ impl RebalanceSlotsInGlobalReplicationGroupError {
     }
     /// Returns `true` if the error kind is `RebalanceSlotsInGlobalReplicationGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RebalanceSlotsInGlobalReplicationGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, RebalanceSlotsInGlobalReplicationGroupErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for RebalanceSlotsInGlobalReplicationGroupError {
@@ -2659,22 +2629,20 @@ impl std::error::Error for RebalanceSlotsInGlobalReplicationGroupError {
 /// <p>The Global datastore does not exist</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GlobalReplicationGroupNotFoundFault {
+pub struct GlobalReplicationGroupNotFoundFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl GlobalReplicationGroupNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for GlobalReplicationGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlobalReplicationGroupNotFoundFault")?;
         if let Some(inner_25) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_25)?;
             }
         }
@@ -2684,7 +2652,7 @@ impl std::fmt::Display for GlobalReplicationGroupNotFoundFault {
 impl std::error::Error for GlobalReplicationGroupNotFoundFault {}
 /// See [`GlobalReplicationGroupNotFoundFault`](crate::error::GlobalReplicationGroupNotFoundFault).
 pub mod global_replication_group_not_found_fault {
-
+    
     /// A builder for [`GlobalReplicationGroupNotFoundFault`](crate::error::GlobalReplicationGroupNotFoundFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2698,16 +2666,18 @@ pub mod global_replication_group_not_found_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`GlobalReplicationGroupNotFoundFault`](crate::error::GlobalReplicationGroupNotFoundFault).
         pub fn build(self) -> crate::error::GlobalReplicationGroupNotFoundFault {
             crate::error::GlobalReplicationGroupNotFoundFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl GlobalReplicationGroupNotFoundFault {
     /// Creates a new builder-style object to manufacture [`GlobalReplicationGroupNotFoundFault`](crate::error::GlobalReplicationGroupNotFoundFault).
@@ -2721,17 +2691,15 @@ impl GlobalReplicationGroupNotFoundFault {
 #[derive(std::fmt::Debug)]
 pub struct PurchaseReservedCacheNodesOfferingError {
     /// Kind of error that occurred.
-    pub kind: PurchaseReservedCacheNodesOfferingErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PurchaseReservedCacheNodesOfferingErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PurchaseReservedCacheNodesOfferingError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: PurchaseReservedCacheNodesOfferingErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: PurchaseReservedCacheNodesOfferingErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2751,14 +2719,14 @@ pub enum PurchaseReservedCacheNodesOfferingErrorKind {
     ReservedCacheNodesOfferingNotFoundFault(crate::error::ReservedCacheNodesOfferingNotFoundFault),
     /// <p>The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The maximum number of tags permitted on a resource is 50.</p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PurchaseReservedCacheNodesOfferingError {
@@ -2798,94 +2766,69 @@ impl aws_smithy_types::retry::ProvideErrorKind for PurchaseReservedCacheNodesOff
 }
 impl PurchaseReservedCacheNodesOfferingError {
     /// Creates a new `PurchaseReservedCacheNodesOfferingError`.
-    pub fn new(
-        kind: PurchaseReservedCacheNodesOfferingErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PurchaseReservedCacheNodesOfferingError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PurchaseReservedCacheNodesOfferingErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PurchaseReservedCacheNodesOfferingError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PurchaseReservedCacheNodesOfferingErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PurchaseReservedCacheNodesOfferingErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PurchaseReservedCacheNodesOfferingError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PurchaseReservedCacheNodesOfferingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PurchaseReservedCacheNodesOfferingError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PurchaseReservedCacheNodesOfferingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PurchaseReservedCacheNodesOfferingErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PurchaseReservedCacheNodesOfferingErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, PurchaseReservedCacheNodesOfferingErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `PurchaseReservedCacheNodesOfferingErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PurchaseReservedCacheNodesOfferingErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, PurchaseReservedCacheNodesOfferingErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodeAlreadyExistsFault`.
     pub fn is_reserved_cache_node_already_exists_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodeAlreadyExistsFault(_)
-        )
+        matches!(&self.kind, PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodeAlreadyExistsFault(_))
     }
     /// Returns `true` if the error kind is `PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodeQuotaExceededFault`.
     pub fn is_reserved_cache_node_quota_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodeQuotaExceededFault(_)
-        )
+        matches!(&self.kind, PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodeQuotaExceededFault(_))
     }
     /// Returns `true` if the error kind is `PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodesOfferingNotFoundFault`.
     pub fn is_reserved_cache_nodes_offering_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodesOfferingNotFoundFault(_)
-        )
+        matches!(&self.kind, PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodesOfferingNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `PurchaseReservedCacheNodesOfferingErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            PurchaseReservedCacheNodesOfferingErrorKind::TagQuotaPerResourceExceeded(_)
-        )
+        matches!(&self.kind, PurchaseReservedCacheNodesOfferingErrorKind::TagQuotaPerResourceExceeded(_))
     }
 }
 impl std::error::Error for PurchaseReservedCacheNodesOfferingError {
@@ -2919,22 +2862,20 @@ impl std::error::Error for PurchaseReservedCacheNodesOfferingError {
 /// <p>The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The maximum number of tags permitted on a resource is 50.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagQuotaPerResourceExceeded {
+pub struct TagQuotaPerResourceExceeded  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TagQuotaPerResourceExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TagQuotaPerResourceExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagQuotaPerResourceExceeded")?;
         if let Some(inner_26) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_26)?;
             }
         }
@@ -2944,7 +2885,7 @@ impl std::fmt::Display for TagQuotaPerResourceExceeded {
 impl std::error::Error for TagQuotaPerResourceExceeded {}
 /// See [`TagQuotaPerResourceExceeded`](crate::error::TagQuotaPerResourceExceeded).
 pub mod tag_quota_per_resource_exceeded {
-
+    
     /// A builder for [`TagQuotaPerResourceExceeded`](crate::error::TagQuotaPerResourceExceeded).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2958,16 +2899,18 @@ pub mod tag_quota_per_resource_exceeded {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TagQuotaPerResourceExceeded`](crate::error::TagQuotaPerResourceExceeded).
         pub fn build(self) -> crate::error::TagQuotaPerResourceExceeded {
             crate::error::TagQuotaPerResourceExceeded {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TagQuotaPerResourceExceeded {
     /// Creates a new builder-style object to manufacture [`TagQuotaPerResourceExceeded`](crate::error::TagQuotaPerResourceExceeded).
@@ -2979,22 +2922,20 @@ impl TagQuotaPerResourceExceeded {
 /// <p>The requested cache node offering does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservedCacheNodesOfferingNotFoundFault {
+pub struct ReservedCacheNodesOfferingNotFoundFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ReservedCacheNodesOfferingNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ReservedCacheNodesOfferingNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReservedCacheNodesOfferingNotFoundFault")?;
         if let Some(inner_27) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_27)?;
             }
         }
@@ -3004,7 +2945,7 @@ impl std::fmt::Display for ReservedCacheNodesOfferingNotFoundFault {
 impl std::error::Error for ReservedCacheNodesOfferingNotFoundFault {}
 /// See [`ReservedCacheNodesOfferingNotFoundFault`](crate::error::ReservedCacheNodesOfferingNotFoundFault).
 pub mod reserved_cache_nodes_offering_not_found_fault {
-
+    
     /// A builder for [`ReservedCacheNodesOfferingNotFoundFault`](crate::error::ReservedCacheNodesOfferingNotFoundFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3018,16 +2959,18 @@ pub mod reserved_cache_nodes_offering_not_found_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ReservedCacheNodesOfferingNotFoundFault`](crate::error::ReservedCacheNodesOfferingNotFoundFault).
         pub fn build(self) -> crate::error::ReservedCacheNodesOfferingNotFoundFault {
             crate::error::ReservedCacheNodesOfferingNotFoundFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ReservedCacheNodesOfferingNotFoundFault {
     /// Creates a new builder-style object to manufacture [`ReservedCacheNodesOfferingNotFoundFault`](crate::error::ReservedCacheNodesOfferingNotFoundFault).
@@ -3039,22 +2982,20 @@ impl ReservedCacheNodesOfferingNotFoundFault {
 /// <p>The request cannot be processed because it would exceed the user's cache node quota.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservedCacheNodeQuotaExceededFault {
+pub struct ReservedCacheNodeQuotaExceededFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ReservedCacheNodeQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ReservedCacheNodeQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReservedCacheNodeQuotaExceededFault")?;
         if let Some(inner_28) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_28)?;
             }
         }
@@ -3064,7 +3005,7 @@ impl std::fmt::Display for ReservedCacheNodeQuotaExceededFault {
 impl std::error::Error for ReservedCacheNodeQuotaExceededFault {}
 /// See [`ReservedCacheNodeQuotaExceededFault`](crate::error::ReservedCacheNodeQuotaExceededFault).
 pub mod reserved_cache_node_quota_exceeded_fault {
-
+    
     /// A builder for [`ReservedCacheNodeQuotaExceededFault`](crate::error::ReservedCacheNodeQuotaExceededFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3078,16 +3019,18 @@ pub mod reserved_cache_node_quota_exceeded_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ReservedCacheNodeQuotaExceededFault`](crate::error::ReservedCacheNodeQuotaExceededFault).
         pub fn build(self) -> crate::error::ReservedCacheNodeQuotaExceededFault {
             crate::error::ReservedCacheNodeQuotaExceededFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ReservedCacheNodeQuotaExceededFault {
     /// Creates a new builder-style object to manufacture [`ReservedCacheNodeQuotaExceededFault`](crate::error::ReservedCacheNodeQuotaExceededFault).
@@ -3099,22 +3042,20 @@ impl ReservedCacheNodeQuotaExceededFault {
 /// <p>You already have a reservation with the given identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservedCacheNodeAlreadyExistsFault {
+pub struct ReservedCacheNodeAlreadyExistsFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ReservedCacheNodeAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ReservedCacheNodeAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReservedCacheNodeAlreadyExistsFault")?;
         if let Some(inner_29) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_29)?;
             }
         }
@@ -3124,7 +3065,7 @@ impl std::fmt::Display for ReservedCacheNodeAlreadyExistsFault {
 impl std::error::Error for ReservedCacheNodeAlreadyExistsFault {}
 /// See [`ReservedCacheNodeAlreadyExistsFault`](crate::error::ReservedCacheNodeAlreadyExistsFault).
 pub mod reserved_cache_node_already_exists_fault {
-
+    
     /// A builder for [`ReservedCacheNodeAlreadyExistsFault`](crate::error::ReservedCacheNodeAlreadyExistsFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3138,16 +3079,18 @@ pub mod reserved_cache_node_already_exists_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ReservedCacheNodeAlreadyExistsFault`](crate::error::ReservedCacheNodeAlreadyExistsFault).
         pub fn build(self) -> crate::error::ReservedCacheNodeAlreadyExistsFault {
             crate::error::ReservedCacheNodeAlreadyExistsFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ReservedCacheNodeAlreadyExistsFault {
     /// Creates a new builder-style object to manufacture [`ReservedCacheNodeAlreadyExistsFault`](crate::error::ReservedCacheNodeAlreadyExistsFault).
@@ -3161,15 +3104,15 @@ impl ReservedCacheNodeAlreadyExistsFault {
 #[derive(std::fmt::Debug)]
 pub struct ModifyUserGroupError {
     /// Kind of error that occurred.
-    pub kind: ModifyUserGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ModifyUserGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ModifyUserGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ModifyUserGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3193,28 +3136,46 @@ pub enum ModifyUserGroupErrorKind {
     UserGroupNotFoundFault(crate::error::UserGroupNotFoundFault),
     /// <p>The user does not exist or could not be found.</p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyUserGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyUserGroupErrorKind::DefaultUserRequired(_inner) => _inner.fmt(f),
-            ModifyUserGroupErrorKind::DuplicateUserNameFault(_inner) => _inner.fmt(f),
-            ModifyUserGroupErrorKind::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
-            ModifyUserGroupErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            ModifyUserGroupErrorKind::InvalidUserGroupStateFault(_inner) => _inner.fmt(f),
-            ModifyUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyUserGroupErrorKind::UserGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyUserGroupErrorKind::UserNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyUserGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ModifyUserGroupErrorKind::DefaultUserRequired(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyUserGroupErrorKind::DuplicateUserNameFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyUserGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyUserGroupErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyUserGroupErrorKind::InvalidUserGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyUserGroupErrorKind::UserGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyUserGroupErrorKind::UserNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyUserGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3228,91 +3189,73 @@ impl aws_smithy_types::retry::ProvideErrorKind for ModifyUserGroupError {
 }
 impl ModifyUserGroupError {
     /// Creates a new `ModifyUserGroupError`.
-    pub fn new(kind: ModifyUserGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ModifyUserGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ModifyUserGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ModifyUserGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ModifyUserGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ModifyUserGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ModifyUserGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ModifyUserGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ModifyUserGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ModifyUserGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ModifyUserGroupErrorKind::DefaultUserRequired`.
     pub fn is_default_user_required(&self) -> bool {
         matches!(&self.kind, ModifyUserGroupErrorKind::DefaultUserRequired(_))
     }
     /// Returns `true` if the error kind is `ModifyUserGroupErrorKind::DuplicateUserNameFault`.
     pub fn is_duplicate_user_name_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyUserGroupErrorKind::DuplicateUserNameFault(_)
-        )
+        matches!(&self.kind, ModifyUserGroupErrorKind::DuplicateUserNameFault(_))
     }
     /// Returns `true` if the error kind is `ModifyUserGroupErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyUserGroupErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, ModifyUserGroupErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `ModifyUserGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyUserGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ModifyUserGroupErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ModifyUserGroupErrorKind::InvalidUserGroupStateFault`.
     pub fn is_invalid_user_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyUserGroupErrorKind::InvalidUserGroupStateFault(_)
-        )
+        matches!(&self.kind, ModifyUserGroupErrorKind::InvalidUserGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `ModifyUserGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_)
-        )
+        matches!(&self.kind, ModifyUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ModifyUserGroupErrorKind::UserGroupNotFoundFault`.
     pub fn is_user_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyUserGroupErrorKind::UserGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ModifyUserGroupErrorKind::UserGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ModifyUserGroupErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
@@ -3322,15 +3265,33 @@ impl ModifyUserGroupError {
 impl std::error::Error for ModifyUserGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyUserGroupErrorKind::DefaultUserRequired(_inner) => Some(_inner),
-            ModifyUserGroupErrorKind::DuplicateUserNameFault(_inner) => Some(_inner),
-            ModifyUserGroupErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
-            ModifyUserGroupErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            ModifyUserGroupErrorKind::InvalidUserGroupStateFault(_inner) => Some(_inner),
-            ModifyUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            ModifyUserGroupErrorKind::UserGroupNotFoundFault(_inner) => Some(_inner),
-            ModifyUserGroupErrorKind::UserNotFoundFault(_inner) => Some(_inner),
-            ModifyUserGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            ModifyUserGroupErrorKind::DefaultUserRequired(_inner) =>
+            Some(_inner)
+            ,
+            ModifyUserGroupErrorKind::DuplicateUserNameFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyUserGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyUserGroupErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyUserGroupErrorKind::InvalidUserGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyUserGroupErrorKind::UserGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyUserGroupErrorKind::UserNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyUserGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3338,22 +3299,20 @@ impl std::error::Error for ModifyUserGroupError {
 /// <p>The specified service linked role (SLR) was not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceLinkedRoleNotFoundFault {
+pub struct ServiceLinkedRoleNotFoundFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceLinkedRoleNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceLinkedRoleNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceLinkedRoleNotFoundFault")?;
         if let Some(inner_30) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_30)?;
             }
         }
@@ -3363,7 +3322,7 @@ impl std::fmt::Display for ServiceLinkedRoleNotFoundFault {
 impl std::error::Error for ServiceLinkedRoleNotFoundFault {}
 /// See [`ServiceLinkedRoleNotFoundFault`](crate::error::ServiceLinkedRoleNotFoundFault).
 pub mod service_linked_role_not_found_fault {
-
+    
     /// A builder for [`ServiceLinkedRoleNotFoundFault`](crate::error::ServiceLinkedRoleNotFoundFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3377,16 +3336,18 @@ pub mod service_linked_role_not_found_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceLinkedRoleNotFoundFault`](crate::error::ServiceLinkedRoleNotFoundFault).
         pub fn build(self) -> crate::error::ServiceLinkedRoleNotFoundFault {
             crate::error::ServiceLinkedRoleNotFoundFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceLinkedRoleNotFoundFault {
     /// Creates a new builder-style object to manufacture [`ServiceLinkedRoleNotFoundFault`](crate::error::ServiceLinkedRoleNotFoundFault).
@@ -3398,22 +3359,20 @@ impl ServiceLinkedRoleNotFoundFault {
 /// <p>The user group is not in an active state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidUserGroupStateFault {
+pub struct InvalidUserGroupStateFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidUserGroupStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidUserGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidUserGroupStateFault")?;
         if let Some(inner_31) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_31)?;
             }
         }
@@ -3423,7 +3382,7 @@ impl std::fmt::Display for InvalidUserGroupStateFault {
 impl std::error::Error for InvalidUserGroupStateFault {}
 /// See [`InvalidUserGroupStateFault`](crate::error::InvalidUserGroupStateFault).
 pub mod invalid_user_group_state_fault {
-
+    
     /// A builder for [`InvalidUserGroupStateFault`](crate::error::InvalidUserGroupStateFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3437,16 +3396,18 @@ pub mod invalid_user_group_state_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidUserGroupStateFault`](crate::error::InvalidUserGroupStateFault).
         pub fn build(self) -> crate::error::InvalidUserGroupStateFault {
             crate::error::InvalidUserGroupStateFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidUserGroupStateFault {
     /// Creates a new builder-style object to manufacture [`InvalidUserGroupStateFault`](crate::error::InvalidUserGroupStateFault).
@@ -3458,22 +3419,20 @@ impl InvalidUserGroupStateFault {
 /// <p>A user with this username already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DuplicateUserNameFault {
+pub struct DuplicateUserNameFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DuplicateUserNameFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DuplicateUserNameFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateUserNameFault")?;
         if let Some(inner_32) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_32)?;
             }
         }
@@ -3483,7 +3442,7 @@ impl std::fmt::Display for DuplicateUserNameFault {
 impl std::error::Error for DuplicateUserNameFault {}
 /// See [`DuplicateUserNameFault`](crate::error::DuplicateUserNameFault).
 pub mod duplicate_user_name_fault {
-
+    
     /// A builder for [`DuplicateUserNameFault`](crate::error::DuplicateUserNameFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3497,16 +3456,18 @@ pub mod duplicate_user_name_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DuplicateUserNameFault`](crate::error::DuplicateUserNameFault).
         pub fn build(self) -> crate::error::DuplicateUserNameFault {
             crate::error::DuplicateUserNameFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DuplicateUserNameFault {
     /// Creates a new builder-style object to manufacture [`DuplicateUserNameFault`](crate::error::DuplicateUserNameFault).
@@ -3518,22 +3479,20 @@ impl DuplicateUserNameFault {
 /// <p>You must add default user to a user group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefaultUserRequired {
+pub struct DefaultUserRequired  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DefaultUserRequired {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DefaultUserRequired {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DefaultUserRequired")?;
         if let Some(inner_33) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_33)?;
             }
         }
@@ -3543,7 +3502,7 @@ impl std::fmt::Display for DefaultUserRequired {
 impl std::error::Error for DefaultUserRequired {}
 /// See [`DefaultUserRequired`](crate::error::DefaultUserRequired).
 pub mod default_user_required {
-
+    
     /// A builder for [`DefaultUserRequired`](crate::error::DefaultUserRequired).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3557,16 +3516,18 @@ pub mod default_user_required {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DefaultUserRequired`](crate::error::DefaultUserRequired).
         pub fn build(self) -> crate::error::DefaultUserRequired {
             crate::error::DefaultUserRequired {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DefaultUserRequired {
     /// Creates a new builder-style object to manufacture [`DefaultUserRequired`](crate::error::DefaultUserRequired).
@@ -3580,15 +3541,15 @@ impl DefaultUserRequired {
 #[derive(std::fmt::Debug)]
 pub struct ModifyUserError {
     /// Kind of error that occurred.
-    pub kind: ModifyUserErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ModifyUserErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ModifyUserError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ModifyUserErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3606,25 +3567,37 @@ pub enum ModifyUserErrorKind {
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The user does not exist or could not be found.</p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyUserErrorKind::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
-            ModifyUserErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            ModifyUserErrorKind::InvalidUserStateFault(_inner) => _inner.fmt(f),
-            ModifyUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyUserErrorKind::UserNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ModifyUserErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyUserErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyUserErrorKind::InvalidUserStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyUserErrorKind::UserNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyUserErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3638,59 +3611,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for ModifyUserError {
 }
 impl ModifyUserError {
     /// Creates a new `ModifyUserError`.
-    pub fn new(kind: ModifyUserErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ModifyUserError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ModifyUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ModifyUserError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ModifyUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ModifyUserErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ModifyUserError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ModifyUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ModifyUserError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ModifyUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ModifyUserErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyUserErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, ModifyUserErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `ModifyUserErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyUserErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ModifyUserErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ModifyUserErrorKind::InvalidUserStateFault`.
     pub fn is_invalid_user_state_fault(&self) -> bool {
@@ -3698,10 +3665,7 @@ impl ModifyUserError {
     }
     /// Returns `true` if the error kind is `ModifyUserErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyUserErrorKind::ServiceLinkedRoleNotFoundFault(_)
-        )
+        matches!(&self.kind, ModifyUserErrorKind::ServiceLinkedRoleNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ModifyUserErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
@@ -3711,12 +3675,24 @@ impl ModifyUserError {
 impl std::error::Error for ModifyUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyUserErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
-            ModifyUserErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            ModifyUserErrorKind::InvalidUserStateFault(_inner) => Some(_inner),
-            ModifyUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            ModifyUserErrorKind::UserNotFoundFault(_inner) => Some(_inner),
-            ModifyUserErrorKind::Unhandled(_inner) => Some(_inner),
+            ModifyUserErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyUserErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyUserErrorKind::InvalidUserStateFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyUserErrorKind::UserNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyUserErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3724,22 +3700,20 @@ impl std::error::Error for ModifyUserError {
 /// <p>The user is not in active state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidUserStateFault {
+pub struct InvalidUserStateFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidUserStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidUserStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidUserStateFault")?;
         if let Some(inner_34) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_34)?;
             }
         }
@@ -3749,7 +3723,7 @@ impl std::fmt::Display for InvalidUserStateFault {
 impl std::error::Error for InvalidUserStateFault {}
 /// See [`InvalidUserStateFault`](crate::error::InvalidUserStateFault).
 pub mod invalid_user_state_fault {
-
+    
     /// A builder for [`InvalidUserStateFault`](crate::error::InvalidUserStateFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3763,16 +3737,18 @@ pub mod invalid_user_state_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidUserStateFault`](crate::error::InvalidUserStateFault).
         pub fn build(self) -> crate::error::InvalidUserStateFault {
             crate::error::InvalidUserStateFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidUserStateFault {
     /// Creates a new builder-style object to manufacture [`InvalidUserStateFault`](crate::error::InvalidUserStateFault).
@@ -3786,19 +3762,15 @@ impl InvalidUserStateFault {
 #[derive(std::fmt::Debug)]
 pub struct ModifyReplicationGroupShardConfigurationError {
     /// Kind of error that occurred.
-    pub kind: ModifyReplicationGroupShardConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ModifyReplicationGroupShardConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for ModifyReplicationGroupShardConfigurationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for ModifyReplicationGroupShardConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ModifyReplicationGroupShardConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ModifyReplicationGroupShardConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3821,21 +3793,19 @@ pub enum ModifyReplicationGroupShardConfigurationErrorKind {
     /// <p>The VPC network is in an invalid state.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
-    NodeGroupsPerReplicationGroupQuotaExceededFault(
-        crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault,
-    ),
+    NodeGroupsPerReplicationGroupQuotaExceededFault(crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault),
     /// <p>The request cannot be processed because it would exceed the allowed number of cache nodes per customer.</p>
     NodeQuotaForCustomerExceededFault(crate::error::NodeQuotaForCustomerExceededFault),
     /// <p>The specified replication group does not exist.</p>
     ReplicationGroupNotFoundFault(crate::error::ReplicationGroupNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyReplicationGroupShardConfigurationError {
@@ -3887,100 +3857,73 @@ impl aws_smithy_types::retry::ProvideErrorKind for ModifyReplicationGroupShardCo
 }
 impl ModifyReplicationGroupShardConfigurationError {
     /// Creates a new `ModifyReplicationGroupShardConfigurationError`.
-    pub fn new(
-        kind: ModifyReplicationGroupShardConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ModifyReplicationGroupShardConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ModifyReplicationGroupShardConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ModifyReplicationGroupShardConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ModifyReplicationGroupShardConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ModifyReplicationGroupShardConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ModifyReplicationGroupShardConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ModifyReplicationGroupShardConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ModifyReplicationGroupShardConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ModifyReplicationGroupShardConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ModifyReplicationGroupShardConfigurationErrorKind::InsufficientCacheClusterCapacityFault`.
     pub fn is_insufficient_cache_cluster_capacity_fault(&self) -> bool {
         matches!(&self.kind, ModifyReplicationGroupShardConfigurationErrorKind::InsufficientCacheClusterCapacityFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupShardConfigurationErrorKind::InvalidCacheClusterStateFault`.
     pub fn is_invalid_cache_cluster_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupShardConfigurationErrorKind::InvalidCacheClusterStateFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupShardConfigurationErrorKind::InvalidCacheClusterStateFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupShardConfigurationErrorKind::InvalidKmsKeyFault`.
     pub fn is_invalid_kms_key_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupShardConfigurationErrorKind::InvalidKmsKeyFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupShardConfigurationErrorKind::InvalidKmsKeyFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupShardConfigurationErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupShardConfigurationErrorKind::InvalidParameterCombinationException(
-                _
-            )
-        )
+        matches!(&self.kind, ModifyReplicationGroupShardConfigurationErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupShardConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupShardConfigurationErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupShardConfigurationErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupShardConfigurationErrorKind::InvalidReplicationGroupStateFault`.
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupShardConfigurationErrorKind::InvalidReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupShardConfigurationErrorKind::InvalidReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupShardConfigurationErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupShardConfigurationErrorKind::InvalidVpcNetworkStateFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupShardConfigurationErrorKind::InvalidVpcNetworkStateFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupShardConfigurationErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault`.
     pub fn is_node_groups_per_replication_group_quota_exceeded_fault(&self) -> bool {
@@ -3988,17 +3931,11 @@ impl ModifyReplicationGroupShardConfigurationError {
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupShardConfigurationErrorKind::NodeQuotaForCustomerExceededFault`.
     pub fn is_node_quota_for_customer_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupShardConfigurationErrorKind::NodeQuotaForCustomerExceededFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupShardConfigurationErrorKind::NodeQuotaForCustomerExceededFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupShardConfigurationErrorKind::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupShardConfigurationErrorKind::ReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupShardConfigurationErrorKind::ReplicationGroupNotFoundFault(_))
     }
 }
 impl std::error::Error for ModifyReplicationGroupShardConfigurationError {
@@ -4044,22 +3981,20 @@ impl std::error::Error for ModifyReplicationGroupShardConfigurationError {
 /// <p>The request cannot be processed because it would exceed the allowed number of cache nodes per customer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeQuotaForCustomerExceededFault {
+pub struct NodeQuotaForCustomerExceededFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NodeQuotaForCustomerExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NodeQuotaForCustomerExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NodeQuotaForCustomerExceededFault")?;
         if let Some(inner_35) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_35)?;
             }
         }
@@ -4069,7 +4004,7 @@ impl std::fmt::Display for NodeQuotaForCustomerExceededFault {
 impl std::error::Error for NodeQuotaForCustomerExceededFault {}
 /// See [`NodeQuotaForCustomerExceededFault`](crate::error::NodeQuotaForCustomerExceededFault).
 pub mod node_quota_for_customer_exceeded_fault {
-
+    
     /// A builder for [`NodeQuotaForCustomerExceededFault`](crate::error::NodeQuotaForCustomerExceededFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4083,16 +4018,18 @@ pub mod node_quota_for_customer_exceeded_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NodeQuotaForCustomerExceededFault`](crate::error::NodeQuotaForCustomerExceededFault).
         pub fn build(self) -> crate::error::NodeQuotaForCustomerExceededFault {
             crate::error::NodeQuotaForCustomerExceededFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NodeQuotaForCustomerExceededFault {
     /// Creates a new builder-style object to manufacture [`NodeQuotaForCustomerExceededFault`](crate::error::NodeQuotaForCustomerExceededFault).
@@ -4104,22 +4041,20 @@ impl NodeQuotaForCustomerExceededFault {
 /// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeGroupsPerReplicationGroupQuotaExceededFault {
+pub struct NodeGroupsPerReplicationGroupQuotaExceededFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NodeGroupsPerReplicationGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NodeGroupsPerReplicationGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NodeGroupsPerReplicationGroupQuotaExceededFault")?;
         if let Some(inner_36) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_36)?;
             }
         }
@@ -4129,7 +4064,7 @@ impl std::fmt::Display for NodeGroupsPerReplicationGroupQuotaExceededFault {
 impl std::error::Error for NodeGroupsPerReplicationGroupQuotaExceededFault {}
 /// See [`NodeGroupsPerReplicationGroupQuotaExceededFault`](crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault).
 pub mod node_groups_per_replication_group_quota_exceeded_fault {
-
+    
     /// A builder for [`NodeGroupsPerReplicationGroupQuotaExceededFault`](crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4143,21 +4078,22 @@ pub mod node_groups_per_replication_group_quota_exceeded_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NodeGroupsPerReplicationGroupQuotaExceededFault`](crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault).
         pub fn build(self) -> crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault {
             crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NodeGroupsPerReplicationGroupQuotaExceededFault {
     /// Creates a new builder-style object to manufacture [`NodeGroupsPerReplicationGroupQuotaExceededFault`](crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault).
-    pub fn builder() -> crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder
-    {
+    pub fn builder() -> crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder {
         crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder::default()
     }
 }
@@ -4165,25 +4101,20 @@ impl NodeGroupsPerReplicationGroupQuotaExceededFault {
 /// <p>The VPC network is in an invalid state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidVpcNetworkStateFault {
+pub struct InvalidVpcNetworkStateFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidVpcNetworkStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidVpcNetworkStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "InvalidVpcNetworkStateFault [InvalidVPCNetworkStateFault]"
-        )?;
+        write!(f, "InvalidVpcNetworkStateFault [InvalidVPCNetworkStateFault]")?;
         if let Some(inner_37) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_37)?;
             }
         }
@@ -4193,7 +4124,7 @@ impl std::fmt::Display for InvalidVpcNetworkStateFault {
 impl std::error::Error for InvalidVpcNetworkStateFault {}
 /// See [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
 pub mod invalid_vpc_network_state_fault {
-
+    
     /// A builder for [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4207,16 +4138,18 @@ pub mod invalid_vpc_network_state_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
         pub fn build(self) -> crate::error::InvalidVpcNetworkStateFault {
             crate::error::InvalidVpcNetworkStateFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidVpcNetworkStateFault {
     /// Creates a new builder-style object to manufacture [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
@@ -4228,22 +4161,20 @@ impl InvalidVpcNetworkStateFault {
 /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InsufficientCacheClusterCapacityFault {
+pub struct InsufficientCacheClusterCapacityFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InsufficientCacheClusterCapacityFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InsufficientCacheClusterCapacityFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientCacheClusterCapacityFault")?;
         if let Some(inner_38) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_38)?;
             }
         }
@@ -4253,7 +4184,7 @@ impl std::fmt::Display for InsufficientCacheClusterCapacityFault {
 impl std::error::Error for InsufficientCacheClusterCapacityFault {}
 /// See [`InsufficientCacheClusterCapacityFault`](crate::error::InsufficientCacheClusterCapacityFault).
 pub mod insufficient_cache_cluster_capacity_fault {
-
+    
     /// A builder for [`InsufficientCacheClusterCapacityFault`](crate::error::InsufficientCacheClusterCapacityFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4267,16 +4198,18 @@ pub mod insufficient_cache_cluster_capacity_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InsufficientCacheClusterCapacityFault`](crate::error::InsufficientCacheClusterCapacityFault).
         pub fn build(self) -> crate::error::InsufficientCacheClusterCapacityFault {
             crate::error::InsufficientCacheClusterCapacityFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InsufficientCacheClusterCapacityFault {
     /// Creates a new builder-style object to manufacture [`InsufficientCacheClusterCapacityFault`](crate::error::InsufficientCacheClusterCapacityFault).
@@ -4290,15 +4223,15 @@ impl InsufficientCacheClusterCapacityFault {
 #[derive(std::fmt::Debug)]
 pub struct ModifyReplicationGroupError {
     /// Kind of error that occurred.
-    pub kind: ModifyReplicationGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ModifyReplicationGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ModifyReplicationGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ModifyReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4338,54 +4271,70 @@ pub enum ModifyReplicationGroupErrorKind {
     ReplicationGroupNotFoundFault(crate::error::ReplicationGroupNotFoundFault),
     /// <p>The user group was not found or does not exist</p>
     UserGroupNotFoundFault(crate::error::UserGroupNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyReplicationGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyReplicationGroupErrorKind::CacheClusterNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyReplicationGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) => {
+            ModifyReplicationGroupErrorKind::CacheClusterNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyReplicationGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyReplicationGroupErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyReplicationGroupErrorKind::InvalidCacheSecurityGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyReplicationGroupErrorKind::InvalidKmsKeyFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyReplicationGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyReplicationGroupErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyReplicationGroupErrorKind::InvalidUserGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyReplicationGroupErrorKind::InvalidVpcNetworkStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyReplicationGroupErrorKind::NodeQuotaForClusterExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyReplicationGroupErrorKind::UserGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyReplicationGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyReplicationGroupErrorKind::InvalidCacheClusterStateFault(_inner) => _inner.fmt(f),
-            ModifyReplicationGroupErrorKind::InvalidCacheSecurityGroupStateFault(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyReplicationGroupErrorKind::InvalidKmsKeyFault(_inner) => _inner.fmt(f),
-            ModifyReplicationGroupErrorKind::InvalidParameterCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyReplicationGroupErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyReplicationGroupErrorKind::InvalidUserGroupStateFault(_inner) => _inner.fmt(f),
-            ModifyReplicationGroupErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
-            ModifyReplicationGroupErrorKind::NodeQuotaForClusterExceededFault(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyReplicationGroupErrorKind::UserGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyReplicationGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4399,199 +4348,165 @@ impl aws_smithy_types::retry::ProvideErrorKind for ModifyReplicationGroupError {
 }
 impl ModifyReplicationGroupError {
     /// Creates a new `ModifyReplicationGroupError`.
-    pub fn new(kind: ModifyReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ModifyReplicationGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ModifyReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ModifyReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ModifyReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ModifyReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ModifyReplicationGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ModifyReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ModifyReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ModifyReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ModifyReplicationGroupErrorKind::CacheClusterNotFoundFault`.
     pub fn is_cache_cluster_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupErrorKind::CacheClusterNotFoundFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupErrorKind::CacheClusterNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupErrorKind::CacheParameterGroupNotFoundFault`.
     pub fn is_cache_parameter_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupErrorKind::CacheParameterGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupErrorKind::CacheParameterGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault`.
     pub fn is_cache_security_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault`.
     pub fn is_insufficient_cache_cluster_capacity_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupErrorKind::InvalidCacheClusterStateFault`.
     pub fn is_invalid_cache_cluster_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupErrorKind::InvalidCacheClusterStateFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupErrorKind::InvalidCacheClusterStateFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupErrorKind::InvalidCacheSecurityGroupStateFault`.
     pub fn is_invalid_cache_security_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupErrorKind::InvalidCacheSecurityGroupStateFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupErrorKind::InvalidCacheSecurityGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupErrorKind::InvalidKmsKeyFault`.
     pub fn is_invalid_kms_key_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupErrorKind::InvalidKmsKeyFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupErrorKind::InvalidKmsKeyFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupErrorKind::InvalidReplicationGroupStateFault`.
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupErrorKind::InvalidUserGroupStateFault`.
     pub fn is_invalid_user_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupErrorKind::InvalidUserGroupStateFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupErrorKind::InvalidUserGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupErrorKind::InvalidVpcNetworkStateFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupErrorKind::InvalidVpcNetworkStateFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupErrorKind::NodeQuotaForClusterExceededFault`.
     pub fn is_node_quota_for_cluster_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupErrorKind::NodeQuotaForClusterExceededFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupErrorKind::NodeQuotaForClusterExceededFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault`.
     pub fn is_node_quota_for_customer_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupErrorKind::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ModifyReplicationGroupErrorKind::UserGroupNotFoundFault`.
     pub fn is_user_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyReplicationGroupErrorKind::UserGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ModifyReplicationGroupErrorKind::UserGroupNotFoundFault(_))
     }
 }
 impl std::error::Error for ModifyReplicationGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyReplicationGroupErrorKind::CacheClusterNotFoundFault(_inner) => Some(_inner),
-            ModifyReplicationGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) => {
+            ModifyReplicationGroupErrorKind::CacheClusterNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyReplicationGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyReplicationGroupErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyReplicationGroupErrorKind::InvalidCacheSecurityGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyReplicationGroupErrorKind::InvalidKmsKeyFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyReplicationGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyReplicationGroupErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyReplicationGroupErrorKind::InvalidUserGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyReplicationGroupErrorKind::InvalidVpcNetworkStateFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyReplicationGroupErrorKind::NodeQuotaForClusterExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyReplicationGroupErrorKind::UserGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyReplicationGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ModifyReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault(_inner) => {
-                Some(_inner)
-            }
-            ModifyReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault(_inner) => {
-                Some(_inner)
-            }
-            ModifyReplicationGroupErrorKind::InvalidCacheClusterStateFault(_inner) => Some(_inner),
-            ModifyReplicationGroupErrorKind::InvalidCacheSecurityGroupStateFault(_inner) => {
-                Some(_inner)
-            }
-            ModifyReplicationGroupErrorKind::InvalidKmsKeyFault(_inner) => Some(_inner),
-            ModifyReplicationGroupErrorKind::InvalidParameterCombinationException(_inner) => {
-                Some(_inner)
-            }
-            ModifyReplicationGroupErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            ModifyReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_inner) => {
-                Some(_inner)
-            }
-            ModifyReplicationGroupErrorKind::InvalidUserGroupStateFault(_inner) => Some(_inner),
-            ModifyReplicationGroupErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
-            ModifyReplicationGroupErrorKind::NodeQuotaForClusterExceededFault(_inner) => {
-                Some(_inner)
-            }
-            ModifyReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(_inner) => {
-                Some(_inner)
-            }
-            ModifyReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_inner) => Some(_inner),
-            ModifyReplicationGroupErrorKind::UserGroupNotFoundFault(_inner) => Some(_inner),
-            ModifyReplicationGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4599,22 +4514,20 @@ impl std::error::Error for ModifyReplicationGroupError {
 /// <p>The request cannot be processed because it would exceed the allowed number of cache nodes in a single cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeQuotaForClusterExceededFault {
+pub struct NodeQuotaForClusterExceededFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NodeQuotaForClusterExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NodeQuotaForClusterExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NodeQuotaForClusterExceededFault")?;
         if let Some(inner_39) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_39)?;
             }
         }
@@ -4624,7 +4537,7 @@ impl std::fmt::Display for NodeQuotaForClusterExceededFault {
 impl std::error::Error for NodeQuotaForClusterExceededFault {}
 /// See [`NodeQuotaForClusterExceededFault`](crate::error::NodeQuotaForClusterExceededFault).
 pub mod node_quota_for_cluster_exceeded_fault {
-
+    
     /// A builder for [`NodeQuotaForClusterExceededFault`](crate::error::NodeQuotaForClusterExceededFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4638,16 +4551,18 @@ pub mod node_quota_for_cluster_exceeded_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NodeQuotaForClusterExceededFault`](crate::error::NodeQuotaForClusterExceededFault).
         pub fn build(self) -> crate::error::NodeQuotaForClusterExceededFault {
             crate::error::NodeQuotaForClusterExceededFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NodeQuotaForClusterExceededFault {
     /// Creates a new builder-style object to manufacture [`NodeQuotaForClusterExceededFault`](crate::error::NodeQuotaForClusterExceededFault).
@@ -4661,17 +4576,15 @@ impl NodeQuotaForClusterExceededFault {
 #[derive(std::fmt::Debug)]
 pub struct ModifyGlobalReplicationGroupError {
     /// Kind of error that occurred.
-    pub kind: ModifyGlobalReplicationGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ModifyGlobalReplicationGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ModifyGlobalReplicationGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ModifyGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ModifyGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4685,29 +4598,31 @@ pub enum ModifyGlobalReplicationGroupErrorKind {
     InvalidGlobalReplicationGroupStateFault(crate::error::InvalidGlobalReplicationGroupStateFault),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyGlobalReplicationGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_inner) => {
+            ModifyGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyGlobalReplicationGroupErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyGlobalReplicationGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(
-                _inner,
-            ) => _inner.fmt(f),
-            ModifyGlobalReplicationGroupErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyGlobalReplicationGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4721,85 +4636,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ModifyGlobalReplicationGroupE
 }
 impl ModifyGlobalReplicationGroupError {
     /// Creates a new `ModifyGlobalReplicationGroupError`.
-    pub fn new(kind: ModifyGlobalReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ModifyGlobalReplicationGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ModifyGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ModifyGlobalReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ModifyGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ModifyGlobalReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ModifyGlobalReplicationGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ModifyGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ModifyGlobalReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ModifyGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ModifyGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault`.
     pub fn is_global_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ModifyGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ModifyGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault`.
     pub fn is_invalid_global_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, ModifyGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `ModifyGlobalReplicationGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyGlobalReplicationGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ModifyGlobalReplicationGroupErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for ModifyGlobalReplicationGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_inner) => {
+            ModifyGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyGlobalReplicationGroupErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyGlobalReplicationGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ModifyGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(
-                _inner,
-            ) => Some(_inner),
-            ModifyGlobalReplicationGroupErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            ModifyGlobalReplicationGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4809,15 +4713,15 @@ impl std::error::Error for ModifyGlobalReplicationGroupError {
 #[derive(std::fmt::Debug)]
 pub struct ModifyCacheSubnetGroupError {
     /// Kind of error that occurred.
-    pub kind: ModifyCacheSubnetGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ModifyCacheSubnetGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ModifyCacheSubnetGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ModifyCacheSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4835,25 +4739,37 @@ pub enum ModifyCacheSubnetGroupErrorKind {
     SubnetInUse(crate::error::SubnetInUse),
     /// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
     SubnetNotAllowedFault(crate::error::SubnetNotAllowedFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyCacheSubnetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyCacheSubnetGroupErrorKind::CacheSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyCacheSubnetGroupErrorKind::CacheSubnetQuotaExceededFault(_inner) => _inner.fmt(f),
-            ModifyCacheSubnetGroupErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
-            ModifyCacheSubnetGroupErrorKind::SubnetInUse(_inner) => _inner.fmt(f),
-            ModifyCacheSubnetGroupErrorKind::SubnetNotAllowedFault(_inner) => _inner.fmt(f),
-            ModifyCacheSubnetGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ModifyCacheSubnetGroupErrorKind::CacheSubnetGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheSubnetGroupErrorKind::CacheSubnetQuotaExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheSubnetGroupErrorKind::InvalidSubnet(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheSubnetGroupErrorKind::SubnetInUse(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheSubnetGroupErrorKind::SubnetNotAllowedFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheSubnetGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4867,70 +4783,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for ModifyCacheSubnetGroupError {
 }
 impl ModifyCacheSubnetGroupError {
     /// Creates a new `ModifyCacheSubnetGroupError`.
-    pub fn new(kind: ModifyCacheSubnetGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ModifyCacheSubnetGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ModifyCacheSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ModifyCacheSubnetGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ModifyCacheSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ModifyCacheSubnetGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ModifyCacheSubnetGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ModifyCacheSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ModifyCacheSubnetGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ModifyCacheSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ModifyCacheSubnetGroupErrorKind::CacheSubnetGroupNotFoundFault`.
     pub fn is_cache_subnet_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheSubnetGroupErrorKind::CacheSubnetGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ModifyCacheSubnetGroupErrorKind::CacheSubnetGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheSubnetGroupErrorKind::CacheSubnetQuotaExceededFault`.
     pub fn is_cache_subnet_quota_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheSubnetGroupErrorKind::CacheSubnetQuotaExceededFault(_)
-        )
+        matches!(&self.kind, ModifyCacheSubnetGroupErrorKind::CacheSubnetQuotaExceededFault(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheSubnetGroupErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheSubnetGroupErrorKind::InvalidSubnet(_)
-        )
+        matches!(&self.kind, ModifyCacheSubnetGroupErrorKind::InvalidSubnet(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheSubnetGroupErrorKind::SubnetInUse`.
     pub fn is_subnet_in_use(&self) -> bool {
@@ -4938,21 +4841,30 @@ impl ModifyCacheSubnetGroupError {
     }
     /// Returns `true` if the error kind is `ModifyCacheSubnetGroupErrorKind::SubnetNotAllowedFault`.
     pub fn is_subnet_not_allowed_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheSubnetGroupErrorKind::SubnetNotAllowedFault(_)
-        )
+        matches!(&self.kind, ModifyCacheSubnetGroupErrorKind::SubnetNotAllowedFault(_))
     }
 }
 impl std::error::Error for ModifyCacheSubnetGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyCacheSubnetGroupErrorKind::CacheSubnetGroupNotFoundFault(_inner) => Some(_inner),
-            ModifyCacheSubnetGroupErrorKind::CacheSubnetQuotaExceededFault(_inner) => Some(_inner),
-            ModifyCacheSubnetGroupErrorKind::InvalidSubnet(_inner) => Some(_inner),
-            ModifyCacheSubnetGroupErrorKind::SubnetInUse(_inner) => Some(_inner),
-            ModifyCacheSubnetGroupErrorKind::SubnetNotAllowedFault(_inner) => Some(_inner),
-            ModifyCacheSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            ModifyCacheSubnetGroupErrorKind::CacheSubnetGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheSubnetGroupErrorKind::CacheSubnetQuotaExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheSubnetGroupErrorKind::InvalidSubnet(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheSubnetGroupErrorKind::SubnetInUse(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheSubnetGroupErrorKind::SubnetNotAllowedFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheSubnetGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4960,22 +4872,20 @@ impl std::error::Error for ModifyCacheSubnetGroupError {
 /// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubnetNotAllowedFault {
+pub struct SubnetNotAllowedFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl SubnetNotAllowedFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for SubnetNotAllowedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubnetNotAllowedFault")?;
         if let Some(inner_40) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_40)?;
             }
         }
@@ -4985,7 +4895,7 @@ impl std::fmt::Display for SubnetNotAllowedFault {
 impl std::error::Error for SubnetNotAllowedFault {}
 /// See [`SubnetNotAllowedFault`](crate::error::SubnetNotAllowedFault).
 pub mod subnet_not_allowed_fault {
-
+    
     /// A builder for [`SubnetNotAllowedFault`](crate::error::SubnetNotAllowedFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4999,16 +4909,18 @@ pub mod subnet_not_allowed_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`SubnetNotAllowedFault`](crate::error::SubnetNotAllowedFault).
         pub fn build(self) -> crate::error::SubnetNotAllowedFault {
             crate::error::SubnetNotAllowedFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl SubnetNotAllowedFault {
     /// Creates a new builder-style object to manufacture [`SubnetNotAllowedFault`](crate::error::SubnetNotAllowedFault).
@@ -5020,22 +4932,20 @@ impl SubnetNotAllowedFault {
 /// <p>The requested subnet is being used by another cache subnet group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubnetInUse {
+pub struct SubnetInUse  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl SubnetInUse {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for SubnetInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubnetInUse")?;
         if let Some(inner_41) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_41)?;
             }
         }
@@ -5045,7 +4955,7 @@ impl std::fmt::Display for SubnetInUse {
 impl std::error::Error for SubnetInUse {}
 /// See [`SubnetInUse`](crate::error::SubnetInUse).
 pub mod subnet_in_use {
-
+    
     /// A builder for [`SubnetInUse`](crate::error::SubnetInUse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5059,16 +4969,18 @@ pub mod subnet_in_use {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`SubnetInUse`](crate::error::SubnetInUse).
         pub fn build(self) -> crate::error::SubnetInUse {
             crate::error::SubnetInUse {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl SubnetInUse {
     /// Creates a new builder-style object to manufacture [`SubnetInUse`](crate::error::SubnetInUse).
@@ -5080,22 +4992,20 @@ impl SubnetInUse {
 /// <p>An invalid subnet identifier was specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSubnet {
+pub struct InvalidSubnet  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidSubnet {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidSubnet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSubnet")?;
         if let Some(inner_42) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_42)?;
             }
         }
@@ -5105,7 +5015,7 @@ impl std::fmt::Display for InvalidSubnet {
 impl std::error::Error for InvalidSubnet {}
 /// See [`InvalidSubnet`](crate::error::InvalidSubnet).
 pub mod invalid_subnet {
-
+    
     /// A builder for [`InvalidSubnet`](crate::error::InvalidSubnet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5119,16 +5029,18 @@ pub mod invalid_subnet {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidSubnet`](crate::error::InvalidSubnet).
         pub fn build(self) -> crate::error::InvalidSubnet {
             crate::error::InvalidSubnet {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidSubnet {
     /// Creates a new builder-style object to manufacture [`InvalidSubnet`](crate::error::InvalidSubnet).
@@ -5140,22 +5052,20 @@ impl InvalidSubnet {
 /// <p>The request cannot be processed because it would exceed the allowed number of subnets in a cache subnet group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CacheSubnetQuotaExceededFault {
+pub struct CacheSubnetQuotaExceededFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CacheSubnetQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CacheSubnetQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CacheSubnetQuotaExceededFault")?;
         if let Some(inner_43) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_43)?;
             }
         }
@@ -5165,7 +5075,7 @@ impl std::fmt::Display for CacheSubnetQuotaExceededFault {
 impl std::error::Error for CacheSubnetQuotaExceededFault {}
 /// See [`CacheSubnetQuotaExceededFault`](crate::error::CacheSubnetQuotaExceededFault).
 pub mod cache_subnet_quota_exceeded_fault {
-
+    
     /// A builder for [`CacheSubnetQuotaExceededFault`](crate::error::CacheSubnetQuotaExceededFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5179,16 +5089,18 @@ pub mod cache_subnet_quota_exceeded_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CacheSubnetQuotaExceededFault`](crate::error::CacheSubnetQuotaExceededFault).
         pub fn build(self) -> crate::error::CacheSubnetQuotaExceededFault {
             crate::error::CacheSubnetQuotaExceededFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CacheSubnetQuotaExceededFault {
     /// Creates a new builder-style object to manufacture [`CacheSubnetQuotaExceededFault`](crate::error::CacheSubnetQuotaExceededFault).
@@ -5202,17 +5114,15 @@ impl CacheSubnetQuotaExceededFault {
 #[derive(std::fmt::Debug)]
 pub struct ModifyCacheParameterGroupError {
     /// Kind of error that occurred.
-    pub kind: ModifyCacheParameterGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ModifyCacheParameterGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ModifyCacheParameterGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ModifyCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ModifyCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5230,35 +5140,37 @@ pub enum ModifyCacheParameterGroupErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyCacheParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) => {
+            ModifyCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheParameterGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheParameterGroupErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheParameterGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyCacheParameterGroupErrorKind::InvalidParameterCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyCacheParameterGroupErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyCacheParameterGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5272,105 +5184,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ModifyCacheParameterGroupErro
 }
 impl ModifyCacheParameterGroupError {
     /// Creates a new `ModifyCacheParameterGroupError`.
-    pub fn new(kind: ModifyCacheParameterGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ModifyCacheParameterGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ModifyCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ModifyCacheParameterGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ModifyCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ModifyCacheParameterGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ModifyCacheParameterGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ModifyCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ModifyCacheParameterGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ModifyCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ModifyCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault`.
     pub fn is_cache_parameter_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ModifyCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault`.
     pub fn is_invalid_cache_parameter_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_)
-        )
+        matches!(&self.kind, ModifyCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault`.
     pub fn is_invalid_global_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, ModifyCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheParameterGroupErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheParameterGroupErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, ModifyCacheParameterGroupErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheParameterGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheParameterGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ModifyCacheParameterGroupErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for ModifyCacheParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) => {
+            ModifyCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheParameterGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheParameterGroupErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheParameterGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ModifyCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_inner) => {
-                Some(_inner)
-            }
-            ModifyCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) => {
-                Some(_inner)
-            }
-            ModifyCacheParameterGroupErrorKind::InvalidParameterCombinationException(_inner) => {
-                Some(_inner)
-            }
-            ModifyCacheParameterGroupErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            ModifyCacheParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5380,15 +5275,15 @@ impl std::error::Error for ModifyCacheParameterGroupError {
 #[derive(std::fmt::Debug)]
 pub struct ModifyCacheClusterError {
     /// Kind of error that occurred.
-    pub kind: ModifyCacheClusterErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ModifyCacheClusterErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ModifyCacheClusterError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ModifyCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5418,37 +5313,55 @@ pub enum ModifyCacheClusterErrorKind {
     NodeQuotaForClusterExceededFault(crate::error::NodeQuotaForClusterExceededFault),
     /// <p>The request cannot be processed because it would exceed the allowed number of cache nodes per customer.</p>
     NodeQuotaForCustomerExceededFault(crate::error::NodeQuotaForCustomerExceededFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyCacheClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyCacheClusterErrorKind::CacheClusterNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyCacheClusterErrorKind::CacheParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyCacheClusterErrorKind::CacheSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyCacheClusterErrorKind::InsufficientCacheClusterCapacityFault(_inner) => {
+            ModifyCacheClusterErrorKind::CacheClusterNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheClusterErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheClusterErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheClusterErrorKind::InsufficientCacheClusterCapacityFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheClusterErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheClusterErrorKind::InvalidCacheSecurityGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheClusterErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheClusterErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheClusterErrorKind::InvalidVpcNetworkStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheClusterErrorKind::NodeQuotaForClusterExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheClusterErrorKind::NodeQuotaForCustomerExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyCacheClusterErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyCacheClusterErrorKind::InvalidCacheClusterStateFault(_inner) => _inner.fmt(f),
-            ModifyCacheClusterErrorKind::InvalidCacheSecurityGroupStateFault(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyCacheClusterErrorKind::InvalidParameterCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyCacheClusterErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            ModifyCacheClusterErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
-            ModifyCacheClusterErrorKind::NodeQuotaForClusterExceededFault(_inner) => _inner.fmt(f),
-            ModifyCacheClusterErrorKind::NodeQuotaForCustomerExceededFault(_inner) => _inner.fmt(f),
-            ModifyCacheClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5462,145 +5375,130 @@ impl aws_smithy_types::retry::ProvideErrorKind for ModifyCacheClusterError {
 }
 impl ModifyCacheClusterError {
     /// Creates a new `ModifyCacheClusterError`.
-    pub fn new(kind: ModifyCacheClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ModifyCacheClusterError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ModifyCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ModifyCacheClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ModifyCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ModifyCacheClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ModifyCacheClusterError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ModifyCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ModifyCacheClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ModifyCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ModifyCacheClusterErrorKind::CacheClusterNotFoundFault`.
     pub fn is_cache_cluster_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheClusterErrorKind::CacheClusterNotFoundFault(_)
-        )
+        matches!(&self.kind, ModifyCacheClusterErrorKind::CacheClusterNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheClusterErrorKind::CacheParameterGroupNotFoundFault`.
     pub fn is_cache_parameter_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheClusterErrorKind::CacheParameterGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ModifyCacheClusterErrorKind::CacheParameterGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheClusterErrorKind::CacheSecurityGroupNotFoundFault`.
     pub fn is_cache_security_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheClusterErrorKind::CacheSecurityGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ModifyCacheClusterErrorKind::CacheSecurityGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheClusterErrorKind::InsufficientCacheClusterCapacityFault`.
     pub fn is_insufficient_cache_cluster_capacity_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheClusterErrorKind::InsufficientCacheClusterCapacityFault(_)
-        )
+        matches!(&self.kind, ModifyCacheClusterErrorKind::InsufficientCacheClusterCapacityFault(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheClusterErrorKind::InvalidCacheClusterStateFault`.
     pub fn is_invalid_cache_cluster_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheClusterErrorKind::InvalidCacheClusterStateFault(_)
-        )
+        matches!(&self.kind, ModifyCacheClusterErrorKind::InvalidCacheClusterStateFault(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheClusterErrorKind::InvalidCacheSecurityGroupStateFault`.
     pub fn is_invalid_cache_security_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheClusterErrorKind::InvalidCacheSecurityGroupStateFault(_)
-        )
+        matches!(&self.kind, ModifyCacheClusterErrorKind::InvalidCacheSecurityGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheClusterErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheClusterErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, ModifyCacheClusterErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheClusterErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheClusterErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ModifyCacheClusterErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheClusterErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheClusterErrorKind::InvalidVpcNetworkStateFault(_)
-        )
+        matches!(&self.kind, ModifyCacheClusterErrorKind::InvalidVpcNetworkStateFault(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheClusterErrorKind::NodeQuotaForClusterExceededFault`.
     pub fn is_node_quota_for_cluster_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheClusterErrorKind::NodeQuotaForClusterExceededFault(_)
-        )
+        matches!(&self.kind, ModifyCacheClusterErrorKind::NodeQuotaForClusterExceededFault(_))
     }
     /// Returns `true` if the error kind is `ModifyCacheClusterErrorKind::NodeQuotaForCustomerExceededFault`.
     pub fn is_node_quota_for_customer_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyCacheClusterErrorKind::NodeQuotaForCustomerExceededFault(_)
-        )
+        matches!(&self.kind, ModifyCacheClusterErrorKind::NodeQuotaForCustomerExceededFault(_))
     }
 }
 impl std::error::Error for ModifyCacheClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyCacheClusterErrorKind::CacheClusterNotFoundFault(_inner) => Some(_inner),
-            ModifyCacheClusterErrorKind::CacheParameterGroupNotFoundFault(_inner) => Some(_inner),
-            ModifyCacheClusterErrorKind::CacheSecurityGroupNotFoundFault(_inner) => Some(_inner),
-            ModifyCacheClusterErrorKind::InsufficientCacheClusterCapacityFault(_inner) => {
+            ModifyCacheClusterErrorKind::CacheClusterNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheClusterErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheClusterErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheClusterErrorKind::InsufficientCacheClusterCapacityFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheClusterErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheClusterErrorKind::InvalidCacheSecurityGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheClusterErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheClusterErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheClusterErrorKind::InvalidVpcNetworkStateFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheClusterErrorKind::NodeQuotaForClusterExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheClusterErrorKind::NodeQuotaForCustomerExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            ModifyCacheClusterErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ModifyCacheClusterErrorKind::InvalidCacheClusterStateFault(_inner) => Some(_inner),
-            ModifyCacheClusterErrorKind::InvalidCacheSecurityGroupStateFault(_inner) => {
-                Some(_inner)
-            }
-            ModifyCacheClusterErrorKind::InvalidParameterCombinationException(_inner) => {
-                Some(_inner)
-            }
-            ModifyCacheClusterErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            ModifyCacheClusterErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
-            ModifyCacheClusterErrorKind::NodeQuotaForClusterExceededFault(_inner) => Some(_inner),
-            ModifyCacheClusterErrorKind::NodeQuotaForCustomerExceededFault(_inner) => Some(_inner),
-            ModifyCacheClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5610,15 +5508,15 @@ impl std::error::Error for ModifyCacheClusterError {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsForResourceError {
     /// Kind of error that occurred.
-    pub kind: ListTagsForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5648,33 +5546,55 @@ pub enum ListTagsForResourceErrorKind {
     UserGroupNotFoundFault(crate::error::UserGroupNotFoundFault),
     /// <p>The user does not exist or could not be found.</p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::CacheClusterNotFoundFault(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::CacheParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::CacheSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::CacheSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::InvalidArnFault(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::InvalidReplicationGroupStateFault(_inner) => {
+            ListTagsForResourceErrorKind::CacheClusterNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::CacheSubnetGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::InvalidArnFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ReservedCacheNodeNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::SnapshotNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::UserGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::UserNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListTagsForResourceErrorKind::ReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ReservedCacheNodeNotFoundFault(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::SnapshotNotFoundFault(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::UserGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::UserNotFoundFault(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5688,73 +5608,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
 }
 impl ListTagsForResourceError {
     /// Creates a new `ListTagsForResourceError`.
-    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::CacheClusterNotFoundFault`.
     pub fn is_cache_cluster_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::CacheClusterNotFoundFault(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::CacheClusterNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::CacheParameterGroupNotFoundFault`.
     pub fn is_cache_parameter_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::CacheParameterGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::CacheParameterGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::CacheSecurityGroupNotFoundFault`.
     pub fn is_cache_security_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::CacheSecurityGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::CacheSecurityGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::CacheSubnetGroupNotFoundFault`.
     pub fn is_cache_subnet_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::CacheSubnetGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::CacheSubnetGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidArnFault`.
     pub fn is_invalid_arn_fault(&self) -> bool {
@@ -5762,62 +5670,68 @@ impl ListTagsForResourceError {
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidReplicationGroupStateFault`.
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::InvalidReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::InvalidReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ReservedCacheNodeNotFoundFault`.
     pub fn is_reserved_cache_node_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ReservedCacheNodeNotFoundFault(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ReservedCacheNodeNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::SnapshotNotFoundFault`.
     pub fn is_snapshot_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::SnapshotNotFoundFault(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::SnapshotNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::UserGroupNotFoundFault`.
     pub fn is_user_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::UserGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::UserGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::UserNotFoundFault(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::UserNotFoundFault(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::CacheClusterNotFoundFault(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::CacheParameterGroupNotFoundFault(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::CacheSecurityGroupNotFoundFault(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::CacheSubnetGroupNotFoundFault(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::InvalidArnFault(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::InvalidReplicationGroupStateFault(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ReplicationGroupNotFoundFault(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ReservedCacheNodeNotFoundFault(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::SnapshotNotFoundFault(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::UserGroupNotFoundFault(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::UserNotFoundFault(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::CacheClusterNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::CacheSubnetGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::InvalidArnFault(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ReservedCacheNodeNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::SnapshotNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::UserGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::UserNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5827,17 +5741,15 @@ impl std::error::Error for ListTagsForResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ListAllowedNodeTypeModificationsError {
     /// Kind of error that occurred.
-    pub kind: ListAllowedNodeTypeModificationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListAllowedNodeTypeModificationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListAllowedNodeTypeModificationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListAllowedNodeTypeModificationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ListAllowedNodeTypeModificationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5853,32 +5765,34 @@ pub enum ListAllowedNodeTypeModificationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The specified replication group does not exist.</p>
     ReplicationGroupNotFoundFault(crate::error::ReplicationGroupNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAllowedNodeTypeModificationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAllowedNodeTypeModificationsErrorKind::CacheClusterNotFoundFault(_inner) => {
+            ListAllowedNodeTypeModificationsErrorKind::CacheClusterNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAllowedNodeTypeModificationsErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAllowedNodeTypeModificationsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAllowedNodeTypeModificationsErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAllowedNodeTypeModificationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListAllowedNodeTypeModificationsErrorKind::InvalidParameterCombinationException(
-                _inner,
-            ) => _inner.fmt(f),
-            ListAllowedNodeTypeModificationsErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListAllowedNodeTypeModificationsErrorKind::ReplicationGroupNotFoundFault(_inner) => {
-                _inner.fmt(f)
-            }
-            ListAllowedNodeTypeModificationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5892,98 +5806,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListAllowedNodeTypeModificati
 }
 impl ListAllowedNodeTypeModificationsError {
     /// Creates a new `ListAllowedNodeTypeModificationsError`.
-    pub fn new(
-        kind: ListAllowedNodeTypeModificationsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListAllowedNodeTypeModificationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListAllowedNodeTypeModificationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListAllowedNodeTypeModificationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListAllowedNodeTypeModificationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListAllowedNodeTypeModificationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListAllowedNodeTypeModificationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListAllowedNodeTypeModificationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListAllowedNodeTypeModificationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListAllowedNodeTypeModificationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListAllowedNodeTypeModificationsErrorKind::CacheClusterNotFoundFault`.
     pub fn is_cache_cluster_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAllowedNodeTypeModificationsErrorKind::CacheClusterNotFoundFault(_)
-        )
+        matches!(&self.kind, ListAllowedNodeTypeModificationsErrorKind::CacheClusterNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ListAllowedNodeTypeModificationsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAllowedNodeTypeModificationsErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, ListAllowedNodeTypeModificationsErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `ListAllowedNodeTypeModificationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAllowedNodeTypeModificationsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ListAllowedNodeTypeModificationsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListAllowedNodeTypeModificationsErrorKind::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAllowedNodeTypeModificationsErrorKind::ReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, ListAllowedNodeTypeModificationsErrorKind::ReplicationGroupNotFoundFault(_))
     }
 }
 impl std::error::Error for ListAllowedNodeTypeModificationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAllowedNodeTypeModificationsErrorKind::CacheClusterNotFoundFault(_inner) => {
+            ListAllowedNodeTypeModificationsErrorKind::CacheClusterNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ListAllowedNodeTypeModificationsErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            ListAllowedNodeTypeModificationsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ListAllowedNodeTypeModificationsErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            ListAllowedNodeTypeModificationsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListAllowedNodeTypeModificationsErrorKind::InvalidParameterCombinationException(
-                _inner,
-            ) => Some(_inner),
-            ListAllowedNodeTypeModificationsErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            ListAllowedNodeTypeModificationsErrorKind::ReplicationGroupNotFoundFault(_inner) => {
-                Some(_inner)
-            }
-            ListAllowedNodeTypeModificationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5993,15 +5890,15 @@ impl std::error::Error for ListAllowedNodeTypeModificationsError {
 #[derive(std::fmt::Debug)]
 pub struct IncreaseReplicaCountError {
     /// Kind of error that occurred.
-    pub kind: IncreaseReplicaCountErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: IncreaseReplicaCountErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for IncreaseReplicaCountError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: IncreaseReplicaCountErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6026,53 +5923,65 @@ pub enum IncreaseReplicaCountErrorKind {
     /// <p>The VPC network is in an invalid state.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
-    NodeGroupsPerReplicationGroupQuotaExceededFault(
-        crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault,
-    ),
+    NodeGroupsPerReplicationGroupQuotaExceededFault(crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault),
     /// <p>The request cannot be processed because it would exceed the allowed number of cache nodes per customer.</p>
     NodeQuotaForCustomerExceededFault(crate::error::NodeQuotaForCustomerExceededFault),
     /// <p>The operation was not performed because no changes were required.</p>
     NoOperationFault(crate::error::NoOperationFault),
     /// <p>The specified replication group does not exist.</p>
     ReplicationGroupNotFoundFault(crate::error::ReplicationGroupNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for IncreaseReplicaCountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            IncreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault(_inner) => {
+            IncreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            IncreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            IncreaseReplicaCountErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            IncreaseReplicaCountErrorKind::InvalidKmsKeyFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            IncreaseReplicaCountErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            IncreaseReplicaCountErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            IncreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            IncreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            IncreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            IncreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            IncreaseReplicaCountErrorKind::NoOperationFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            IncreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            IncreaseReplicaCountErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            IncreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault(_inner) => {
-                _inner.fmt(f)
-            }
-            IncreaseReplicaCountErrorKind::InvalidCacheClusterStateFault(_inner) => _inner.fmt(f),
-            IncreaseReplicaCountErrorKind::InvalidKmsKeyFault(_inner) => _inner.fmt(f),
-            IncreaseReplicaCountErrorKind::InvalidParameterCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            IncreaseReplicaCountErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            IncreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault(_inner) => {
-                _inner.fmt(f)
-            }
-            IncreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
-            IncreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(
-                _inner,
-            ) => _inner.fmt(f),
-            IncreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault(_inner) => {
-                _inner.fmt(f)
-            }
-            IncreaseReplicaCountErrorKind::NoOperationFault(_inner) => _inner.fmt(f),
-            IncreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
-            IncreaseReplicaCountErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6086,163 +5995,137 @@ impl aws_smithy_types::retry::ProvideErrorKind for IncreaseReplicaCountError {
 }
 impl IncreaseReplicaCountError {
     /// Creates a new `IncreaseReplicaCountError`.
-    pub fn new(kind: IncreaseReplicaCountErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `IncreaseReplicaCountError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: IncreaseReplicaCountErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `IncreaseReplicaCountError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: IncreaseReplicaCountErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: IncreaseReplicaCountErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `IncreaseReplicaCountError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: IncreaseReplicaCountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `IncreaseReplicaCountError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: IncreaseReplicaCountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `IncreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault`.
     pub fn is_cluster_quota_for_customer_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            IncreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault(_)
-        )
+        matches!(&self.kind, IncreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault(_))
     }
     /// Returns `true` if the error kind is `IncreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault`.
     pub fn is_insufficient_cache_cluster_capacity_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            IncreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault(_)
-        )
+        matches!(&self.kind, IncreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault(_))
     }
     /// Returns `true` if the error kind is `IncreaseReplicaCountErrorKind::InvalidCacheClusterStateFault`.
     pub fn is_invalid_cache_cluster_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            IncreaseReplicaCountErrorKind::InvalidCacheClusterStateFault(_)
-        )
+        matches!(&self.kind, IncreaseReplicaCountErrorKind::InvalidCacheClusterStateFault(_))
     }
     /// Returns `true` if the error kind is `IncreaseReplicaCountErrorKind::InvalidKmsKeyFault`.
     pub fn is_invalid_kms_key_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            IncreaseReplicaCountErrorKind::InvalidKmsKeyFault(_)
-        )
+        matches!(&self.kind, IncreaseReplicaCountErrorKind::InvalidKmsKeyFault(_))
     }
     /// Returns `true` if the error kind is `IncreaseReplicaCountErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            IncreaseReplicaCountErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, IncreaseReplicaCountErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `IncreaseReplicaCountErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            IncreaseReplicaCountErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, IncreaseReplicaCountErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `IncreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault`.
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            IncreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, IncreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `IncreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            IncreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault(_)
-        )
+        matches!(&self.kind, IncreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault(_))
     }
     /// Returns `true` if the error kind is `IncreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault`.
     pub fn is_node_groups_per_replication_group_quota_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            IncreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(_)
-        )
+        matches!(&self.kind, IncreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(_))
     }
     /// Returns `true` if the error kind is `IncreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault`.
     pub fn is_node_quota_for_customer_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            IncreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault(_)
-        )
+        matches!(&self.kind, IncreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault(_))
     }
     /// Returns `true` if the error kind is `IncreaseReplicaCountErrorKind::NoOperationFault`.
     pub fn is_no_operation_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            IncreaseReplicaCountErrorKind::NoOperationFault(_)
-        )
+        matches!(&self.kind, IncreaseReplicaCountErrorKind::NoOperationFault(_))
     }
     /// Returns `true` if the error kind is `IncreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            IncreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, IncreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault(_))
     }
 }
 impl std::error::Error for IncreaseReplicaCountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            IncreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault(_inner) => {
+            IncreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            IncreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault(_inner) =>
+            Some(_inner)
+            ,
+            IncreaseReplicaCountErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            Some(_inner)
+            ,
+            IncreaseReplicaCountErrorKind::InvalidKmsKeyFault(_inner) =>
+            Some(_inner)
+            ,
+            IncreaseReplicaCountErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            IncreaseReplicaCountErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            IncreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            IncreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault(_inner) =>
+            Some(_inner)
+            ,
+            IncreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            IncreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            IncreaseReplicaCountErrorKind::NoOperationFault(_inner) =>
+            Some(_inner)
+            ,
+            IncreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            IncreaseReplicaCountErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            IncreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault(_inner) => {
-                Some(_inner)
-            }
-            IncreaseReplicaCountErrorKind::InvalidCacheClusterStateFault(_inner) => Some(_inner),
-            IncreaseReplicaCountErrorKind::InvalidKmsKeyFault(_inner) => Some(_inner),
-            IncreaseReplicaCountErrorKind::InvalidParameterCombinationException(_inner) => {
-                Some(_inner)
-            }
-            IncreaseReplicaCountErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            IncreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault(_inner) => {
-                Some(_inner)
-            }
-            IncreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
-            IncreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(
-                _inner,
-            ) => Some(_inner),
-            IncreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault(_inner) => {
-                Some(_inner)
-            }
-            IncreaseReplicaCountErrorKind::NoOperationFault(_inner) => Some(_inner),
-            IncreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault(_inner) => Some(_inner),
-            IncreaseReplicaCountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6250,22 +6133,20 @@ impl std::error::Error for IncreaseReplicaCountError {
 /// <p>The operation was not performed because no changes were required.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NoOperationFault {
+pub struct NoOperationFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NoOperationFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NoOperationFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoOperationFault")?;
         if let Some(inner_44) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_44)?;
             }
         }
@@ -6275,7 +6156,7 @@ impl std::fmt::Display for NoOperationFault {
 impl std::error::Error for NoOperationFault {}
 /// See [`NoOperationFault`](crate::error::NoOperationFault).
 pub mod no_operation_fault {
-
+    
     /// A builder for [`NoOperationFault`](crate::error::NoOperationFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6289,16 +6170,18 @@ pub mod no_operation_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NoOperationFault`](crate::error::NoOperationFault).
         pub fn build(self) -> crate::error::NoOperationFault {
             crate::error::NoOperationFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NoOperationFault {
     /// Creates a new builder-style object to manufacture [`NoOperationFault`](crate::error::NoOperationFault).
@@ -6310,22 +6193,20 @@ impl NoOperationFault {
 /// <p>The request cannot be processed because it would exceed the allowed number of clusters per customer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterQuotaForCustomerExceededFault {
+pub struct ClusterQuotaForCustomerExceededFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ClusterQuotaForCustomerExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ClusterQuotaForCustomerExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterQuotaForCustomerExceededFault")?;
         if let Some(inner_45) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_45)?;
             }
         }
@@ -6335,7 +6216,7 @@ impl std::fmt::Display for ClusterQuotaForCustomerExceededFault {
 impl std::error::Error for ClusterQuotaForCustomerExceededFault {}
 /// See [`ClusterQuotaForCustomerExceededFault`](crate::error::ClusterQuotaForCustomerExceededFault).
 pub mod cluster_quota_for_customer_exceeded_fault {
-
+    
     /// A builder for [`ClusterQuotaForCustomerExceededFault`](crate::error::ClusterQuotaForCustomerExceededFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6349,16 +6230,18 @@ pub mod cluster_quota_for_customer_exceeded_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ClusterQuotaForCustomerExceededFault`](crate::error::ClusterQuotaForCustomerExceededFault).
         pub fn build(self) -> crate::error::ClusterQuotaForCustomerExceededFault {
             crate::error::ClusterQuotaForCustomerExceededFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterQuotaForCustomerExceededFault {
     /// Creates a new builder-style object to manufacture [`ClusterQuotaForCustomerExceededFault`](crate::error::ClusterQuotaForCustomerExceededFault).
@@ -6372,19 +6255,15 @@ impl ClusterQuotaForCustomerExceededFault {
 #[derive(std::fmt::Debug)]
 pub struct IncreaseNodeGroupsInGlobalReplicationGroupError {
     /// Kind of error that occurred.
-    pub kind: IncreaseNodeGroupsInGlobalReplicationGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: IncreaseNodeGroupsInGlobalReplicationGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for IncreaseNodeGroupsInGlobalReplicationGroupError
-{
+impl aws_smithy_http::result::CreateUnhandledError for IncreaseNodeGroupsInGlobalReplicationGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6398,14 +6277,14 @@ pub enum IncreaseNodeGroupsInGlobalReplicationGroupErrorKind {
     InvalidGlobalReplicationGroupStateFault(crate::error::InvalidGlobalReplicationGroupStateFault),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for IncreaseNodeGroupsInGlobalReplicationGroupError {
@@ -6436,53 +6315,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for IncreaseNodeGroupsInGlobalRep
 }
 impl IncreaseNodeGroupsInGlobalReplicationGroupError {
     /// Creates a new `IncreaseNodeGroupsInGlobalReplicationGroupError`.
-    pub fn new(
-        kind: IncreaseNodeGroupsInGlobalReplicationGroupErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `IncreaseNodeGroupsInGlobalReplicationGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `IncreaseNodeGroupsInGlobalReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: IncreaseNodeGroupsInGlobalReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `IncreaseNodeGroupsInGlobalReplicationGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `IncreaseNodeGroupsInGlobalReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault`.
     pub fn is_global_replication_group_not_found_fault(&self) -> bool {
         matches!(&self.kind, IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_))
@@ -6493,10 +6365,7 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupError {
     }
     /// Returns `true` if the error kind is `IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for IncreaseNodeGroupsInGlobalReplicationGroupError {
@@ -6523,17 +6392,15 @@ impl std::error::Error for IncreaseNodeGroupsInGlobalReplicationGroupError {
 #[derive(std::fmt::Debug)]
 pub struct FailoverGlobalReplicationGroupError {
     /// Kind of error that occurred.
-    pub kind: FailoverGlobalReplicationGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: FailoverGlobalReplicationGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for FailoverGlobalReplicationGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: FailoverGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: FailoverGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6549,32 +6416,34 @@ pub enum FailoverGlobalReplicationGroupErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for FailoverGlobalReplicationGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            FailoverGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(
-                _inner,
-            ) => _inner.fmt(f),
-            FailoverGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(
-                _inner,
-            ) => _inner.fmt(f),
-            FailoverGlobalReplicationGroupErrorKind::InvalidParameterCombinationException(
-                _inner,
-            ) => _inner.fmt(f),
-            FailoverGlobalReplicationGroupErrorKind::InvalidParameterValueException(_inner) => {
+            FailoverGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            FailoverGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            FailoverGlobalReplicationGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            FailoverGlobalReplicationGroupErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            FailoverGlobalReplicationGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            FailoverGlobalReplicationGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6588,98 +6457,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for FailoverGlobalReplicationGrou
 }
 impl FailoverGlobalReplicationGroupError {
     /// Creates a new `FailoverGlobalReplicationGroupError`.
-    pub fn new(
-        kind: FailoverGlobalReplicationGroupErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `FailoverGlobalReplicationGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: FailoverGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `FailoverGlobalReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: FailoverGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: FailoverGlobalReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `FailoverGlobalReplicationGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: FailoverGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `FailoverGlobalReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: FailoverGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `FailoverGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault`.
     pub fn is_global_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            FailoverGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, FailoverGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `FailoverGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault`.
     pub fn is_invalid_global_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            FailoverGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, FailoverGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `FailoverGlobalReplicationGroupErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            FailoverGlobalReplicationGroupErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, FailoverGlobalReplicationGroupErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `FailoverGlobalReplicationGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            FailoverGlobalReplicationGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, FailoverGlobalReplicationGroupErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for FailoverGlobalReplicationGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            FailoverGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(
-                _inner,
-            ) => Some(_inner),
-            FailoverGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(
-                _inner,
-            ) => Some(_inner),
-            FailoverGlobalReplicationGroupErrorKind::InvalidParameterCombinationException(
-                _inner,
-            ) => Some(_inner),
-            FailoverGlobalReplicationGroupErrorKind::InvalidParameterValueException(_inner) => {
+            FailoverGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            FailoverGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            FailoverGlobalReplicationGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            FailoverGlobalReplicationGroupErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            FailoverGlobalReplicationGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            FailoverGlobalReplicationGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6689,17 +6541,15 @@ impl std::error::Error for FailoverGlobalReplicationGroupError {
 #[derive(std::fmt::Debug)]
 pub struct DisassociateGlobalReplicationGroupError {
     /// Kind of error that occurred.
-    pub kind: DisassociateGlobalReplicationGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DisassociateGlobalReplicationGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DisassociateGlobalReplicationGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DisassociateGlobalReplicationGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DisassociateGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6715,14 +6565,14 @@ pub enum DisassociateGlobalReplicationGroupErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateGlobalReplicationGroupError {
@@ -6756,80 +6606,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for DisassociateGlobalReplication
 }
 impl DisassociateGlobalReplicationGroupError {
     /// Creates a new `DisassociateGlobalReplicationGroupError`.
-    pub fn new(
-        kind: DisassociateGlobalReplicationGroupErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DisassociateGlobalReplicationGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DisassociateGlobalReplicationGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DisassociateGlobalReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DisassociateGlobalReplicationGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DisassociateGlobalReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DisassociateGlobalReplicationGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DisassociateGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DisassociateGlobalReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DisassociateGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DisassociateGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault`.
     pub fn is_global_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, DisassociateGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DisassociateGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault`.
     pub fn is_invalid_global_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, DisassociateGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `DisassociateGlobalReplicationGroupErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateGlobalReplicationGroupErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DisassociateGlobalReplicationGroupErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DisassociateGlobalReplicationGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateGlobalReplicationGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DisassociateGlobalReplicationGroupErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for DisassociateGlobalReplicationGroupError {
@@ -6859,15 +6690,15 @@ impl std::error::Error for DisassociateGlobalReplicationGroupError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeUsersError {
     /// Kind of error that occurred.
-    pub kind: DescribeUsersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeUsersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeUsersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeUsersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6881,23 +6712,31 @@ pub enum DescribeUsersErrorKind {
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The user does not exist or could not be found.</p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeUsersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeUsersErrorKind::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
-            DescribeUsersErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
-            DescribeUsersErrorKind::UserNotFoundFault(_inner) => _inner.fmt(f),
-            DescribeUsersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeUsersErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeUsersErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeUsersErrorKind::UserNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeUsersErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6911,59 +6750,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeUsersError {
 }
 impl DescribeUsersError {
     /// Creates a new `DescribeUsersError`.
-    pub fn new(kind: DescribeUsersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeUsersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeUsersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeUsersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeUsersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeUsersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeUsersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeUsersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeUsersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeUsersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeUsersErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeUsersErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DescribeUsersErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DescribeUsersErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeUsersErrorKind::ServiceLinkedRoleNotFoundFault(_)
-        )
+        matches!(&self.kind, DescribeUsersErrorKind::ServiceLinkedRoleNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DescribeUsersErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
@@ -6973,10 +6806,18 @@ impl DescribeUsersError {
 impl std::error::Error for DescribeUsersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeUsersErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
-            DescribeUsersErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            DescribeUsersErrorKind::UserNotFoundFault(_inner) => Some(_inner),
-            DescribeUsersErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeUsersErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeUsersErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DescribeUsersErrorKind::UserNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DescribeUsersErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6986,15 +6827,15 @@ impl std::error::Error for DescribeUsersError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeUserGroupsError {
     /// Kind of error that occurred.
-    pub kind: DescribeUserGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeUserGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeUserGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeUserGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7008,25 +6849,31 @@ pub enum DescribeUserGroupsErrorKind {
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The user group was not found or does not exist</p>
     UserGroupNotFoundFault(crate::error::UserGroupNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeUserGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeUserGroupsErrorKind::InvalidParameterCombinationException(_inner) => {
+            DescribeUserGroupsErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeUserGroupsErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeUserGroupsErrorKind::UserGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeUserGroupsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeUserGroupsErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
-            DescribeUserGroupsErrorKind::UserGroupNotFoundFault(_inner) => _inner.fmt(f),
-            DescribeUserGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7040,77 +6887,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeUserGroupsError {
 }
 impl DescribeUserGroupsError {
     /// Creates a new `DescribeUserGroupsError`.
-    pub fn new(kind: DescribeUserGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeUserGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeUserGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeUserGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeUserGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeUserGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeUserGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeUserGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeUserGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeUserGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeUserGroupsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeUserGroupsErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DescribeUserGroupsErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DescribeUserGroupsErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeUserGroupsErrorKind::ServiceLinkedRoleNotFoundFault(_)
-        )
+        matches!(&self.kind, DescribeUserGroupsErrorKind::ServiceLinkedRoleNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DescribeUserGroupsErrorKind::UserGroupNotFoundFault`.
     pub fn is_user_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeUserGroupsErrorKind::UserGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, DescribeUserGroupsErrorKind::UserGroupNotFoundFault(_))
     }
 }
 impl std::error::Error for DescribeUserGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeUserGroupsErrorKind::InvalidParameterCombinationException(_inner) => {
+            DescribeUserGroupsErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeUserGroupsErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DescribeUserGroupsErrorKind::UserGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DescribeUserGroupsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeUserGroupsErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            DescribeUserGroupsErrorKind::UserGroupNotFoundFault(_inner) => Some(_inner),
-            DescribeUserGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7120,15 +6964,15 @@ impl std::error::Error for DescribeUserGroupsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeUpdateActionsError {
     /// Kind of error that occurred.
-    pub kind: DescribeUpdateActionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeUpdateActionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeUpdateActionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeUpdateActionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7140,24 +6984,28 @@ pub enum DescribeUpdateActionsErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeUpdateActionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeUpdateActionsErrorKind::InvalidParameterCombinationException(_inner) => {
+            DescribeUpdateActionsErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeUpdateActionsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeUpdateActionsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeUpdateActionsErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            DescribeUpdateActionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7171,73 +7019,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeUpdateActionsError {
 }
 impl DescribeUpdateActionsError {
     /// Creates a new `DescribeUpdateActionsError`.
-    pub fn new(kind: DescribeUpdateActionsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeUpdateActionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeUpdateActionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeUpdateActionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeUpdateActionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeUpdateActionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeUpdateActionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeUpdateActionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeUpdateActionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeUpdateActionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeUpdateActionsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeUpdateActionsErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DescribeUpdateActionsErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DescribeUpdateActionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeUpdateActionsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DescribeUpdateActionsErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for DescribeUpdateActionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeUpdateActionsErrorKind::InvalidParameterCombinationException(_inner) => {
+            DescribeUpdateActionsErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeUpdateActionsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeUpdateActionsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeUpdateActionsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            DescribeUpdateActionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7247,15 +7089,15 @@ impl std::error::Error for DescribeUpdateActionsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeSnapshotsError {
     /// Kind of error that occurred.
-    pub kind: DescribeSnapshotsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeSnapshotsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeSnapshotsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7271,26 +7113,34 @@ pub enum DescribeSnapshotsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The requested snapshot name does not refer to an existing snapshot.</p>
     SnapshotNotFoundFault(crate::error::SnapshotNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSnapshotsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeSnapshotsErrorKind::CacheClusterNotFoundFault(_inner) => _inner.fmt(f),
-            DescribeSnapshotsErrorKind::InvalidParameterCombinationException(_inner) => {
+            DescribeSnapshotsErrorKind::CacheClusterNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeSnapshotsErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeSnapshotsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeSnapshotsErrorKind::SnapshotNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeSnapshotsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeSnapshotsErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            DescribeSnapshotsErrorKind::SnapshotNotFoundFault(_inner) => _inner.fmt(f),
-            DescribeSnapshotsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7304,85 +7154,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeSnapshotsError {
 }
 impl DescribeSnapshotsError {
     /// Creates a new `DescribeSnapshotsError`.
-    pub fn new(kind: DescribeSnapshotsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeSnapshotsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeSnapshotsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeSnapshotsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeSnapshotsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeSnapshotsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeSnapshotsErrorKind::CacheClusterNotFoundFault`.
     pub fn is_cache_cluster_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeSnapshotsErrorKind::CacheClusterNotFoundFault(_)
-        )
+        matches!(&self.kind, DescribeSnapshotsErrorKind::CacheClusterNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DescribeSnapshotsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeSnapshotsErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DescribeSnapshotsErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DescribeSnapshotsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeSnapshotsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DescribeSnapshotsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DescribeSnapshotsErrorKind::SnapshotNotFoundFault`.
     pub fn is_snapshot_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeSnapshotsErrorKind::SnapshotNotFoundFault(_)
-        )
+        matches!(&self.kind, DescribeSnapshotsErrorKind::SnapshotNotFoundFault(_))
     }
 }
 impl std::error::Error for DescribeSnapshotsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeSnapshotsErrorKind::CacheClusterNotFoundFault(_inner) => Some(_inner),
-            DescribeSnapshotsErrorKind::InvalidParameterCombinationException(_inner) => {
+            DescribeSnapshotsErrorKind::CacheClusterNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DescribeSnapshotsErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeSnapshotsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeSnapshotsErrorKind::SnapshotNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DescribeSnapshotsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeSnapshotsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            DescribeSnapshotsErrorKind::SnapshotNotFoundFault(_inner) => Some(_inner),
-            DescribeSnapshotsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7392,15 +7238,15 @@ impl std::error::Error for DescribeSnapshotsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeServiceUpdatesError {
     /// Kind of error that occurred.
-    pub kind: DescribeServiceUpdatesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeServiceUpdatesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeServiceUpdatesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeServiceUpdatesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7414,27 +7260,31 @@ pub enum DescribeServiceUpdatesErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The service update doesn't exist</p>
     ServiceUpdateNotFoundFault(crate::error::ServiceUpdateNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeServiceUpdatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeServiceUpdatesErrorKind::InvalidParameterCombinationException(_inner) => {
+            DescribeServiceUpdatesErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeServiceUpdatesErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeServiceUpdatesErrorKind::ServiceUpdateNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeServiceUpdatesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeServiceUpdatesErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeServiceUpdatesErrorKind::ServiceUpdateNotFoundFault(_inner) => _inner.fmt(f),
-            DescribeServiceUpdatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7448,81 +7298,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeServiceUpdatesError {
 }
 impl DescribeServiceUpdatesError {
     /// Creates a new `DescribeServiceUpdatesError`.
-    pub fn new(kind: DescribeServiceUpdatesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeServiceUpdatesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeServiceUpdatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeServiceUpdatesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeServiceUpdatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeServiceUpdatesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeServiceUpdatesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeServiceUpdatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeServiceUpdatesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeServiceUpdatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeServiceUpdatesErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeServiceUpdatesErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DescribeServiceUpdatesErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DescribeServiceUpdatesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeServiceUpdatesErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DescribeServiceUpdatesErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DescribeServiceUpdatesErrorKind::ServiceUpdateNotFoundFault`.
     pub fn is_service_update_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeServiceUpdatesErrorKind::ServiceUpdateNotFoundFault(_)
-        )
+        matches!(&self.kind, DescribeServiceUpdatesErrorKind::ServiceUpdateNotFoundFault(_))
     }
 }
 impl std::error::Error for DescribeServiceUpdatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeServiceUpdatesErrorKind::InvalidParameterCombinationException(_inner) => {
+            DescribeServiceUpdatesErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeServiceUpdatesErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeServiceUpdatesErrorKind::ServiceUpdateNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DescribeServiceUpdatesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeServiceUpdatesErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            DescribeServiceUpdatesErrorKind::ServiceUpdateNotFoundFault(_inner) => Some(_inner),
-            DescribeServiceUpdatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7530,22 +7373,20 @@ impl std::error::Error for DescribeServiceUpdatesError {
 /// <p>The service update doesn't exist</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceUpdateNotFoundFault {
+pub struct ServiceUpdateNotFoundFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceUpdateNotFoundFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceUpdateNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUpdateNotFoundFault")?;
         if let Some(inner_46) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_46)?;
             }
         }
@@ -7555,7 +7396,7 @@ impl std::fmt::Display for ServiceUpdateNotFoundFault {
 impl std::error::Error for ServiceUpdateNotFoundFault {}
 /// See [`ServiceUpdateNotFoundFault`](crate::error::ServiceUpdateNotFoundFault).
 pub mod service_update_not_found_fault {
-
+    
     /// A builder for [`ServiceUpdateNotFoundFault`](crate::error::ServiceUpdateNotFoundFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7569,16 +7410,18 @@ pub mod service_update_not_found_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceUpdateNotFoundFault`](crate::error::ServiceUpdateNotFoundFault).
         pub fn build(self) -> crate::error::ServiceUpdateNotFoundFault {
             crate::error::ServiceUpdateNotFoundFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceUpdateNotFoundFault {
     /// Creates a new builder-style object to manufacture [`ServiceUpdateNotFoundFault`](crate::error::ServiceUpdateNotFoundFault).
@@ -7592,17 +7435,15 @@ impl ServiceUpdateNotFoundFault {
 #[derive(std::fmt::Debug)]
 pub struct DescribeReservedCacheNodesOfferingsError {
     /// Kind of error that occurred.
-    pub kind: DescribeReservedCacheNodesOfferingsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeReservedCacheNodesOfferingsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeReservedCacheNodesOfferingsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeReservedCacheNodesOfferingsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeReservedCacheNodesOfferingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7616,14 +7457,14 @@ pub enum DescribeReservedCacheNodesOfferingsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The requested cache node offering does not exist.</p>
     ReservedCacheNodesOfferingNotFoundFault(crate::error::ReservedCacheNodesOfferingNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeReservedCacheNodesOfferingsError {
@@ -7654,75 +7495,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeReservedCacheNodesOff
 }
 impl DescribeReservedCacheNodesOfferingsError {
     /// Creates a new `DescribeReservedCacheNodesOfferingsError`.
-    pub fn new(
-        kind: DescribeReservedCacheNodesOfferingsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeReservedCacheNodesOfferingsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeReservedCacheNodesOfferingsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeReservedCacheNodesOfferingsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeReservedCacheNodesOfferingsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeReservedCacheNodesOfferingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeReservedCacheNodesOfferingsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeReservedCacheNodesOfferingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeReservedCacheNodesOfferingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeReservedCacheNodesOfferingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeReservedCacheNodesOfferingsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeReservedCacheNodesOfferingsErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DescribeReservedCacheNodesOfferingsErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DescribeReservedCacheNodesOfferingsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeReservedCacheNodesOfferingsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DescribeReservedCacheNodesOfferingsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DescribeReservedCacheNodesOfferingsErrorKind::ReservedCacheNodesOfferingNotFoundFault`.
     pub fn is_reserved_cache_nodes_offering_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeReservedCacheNodesOfferingsErrorKind::ReservedCacheNodesOfferingNotFoundFault(
-                _
-            )
-        )
+        matches!(&self.kind, DescribeReservedCacheNodesOfferingsErrorKind::ReservedCacheNodesOfferingNotFoundFault(_))
     }
 }
 impl std::error::Error for DescribeReservedCacheNodesOfferingsError {
@@ -7749,17 +7572,15 @@ impl std::error::Error for DescribeReservedCacheNodesOfferingsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeReservedCacheNodesError {
     /// Kind of error that occurred.
-    pub kind: DescribeReservedCacheNodesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeReservedCacheNodesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeReservedCacheNodesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeReservedCacheNodesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeReservedCacheNodesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7773,29 +7594,31 @@ pub enum DescribeReservedCacheNodesErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The requested reserved cache node was not found.</p>
     ReservedCacheNodeNotFoundFault(crate::error::ReservedCacheNodeNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeReservedCacheNodesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeReservedCacheNodesErrorKind::InvalidParameterCombinationException(_inner) => {
+            DescribeReservedCacheNodesErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeReservedCacheNodesErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeReservedCacheNodesErrorKind::ReservedCacheNodeNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeReservedCacheNodesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeReservedCacheNodesErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeReservedCacheNodesErrorKind::ReservedCacheNodeNotFoundFault(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeReservedCacheNodesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7809,85 +7632,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeReservedCacheNodesErr
 }
 impl DescribeReservedCacheNodesError {
     /// Creates a new `DescribeReservedCacheNodesError`.
-    pub fn new(kind: DescribeReservedCacheNodesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeReservedCacheNodesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeReservedCacheNodesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeReservedCacheNodesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeReservedCacheNodesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeReservedCacheNodesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeReservedCacheNodesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeReservedCacheNodesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeReservedCacheNodesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeReservedCacheNodesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeReservedCacheNodesErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeReservedCacheNodesErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DescribeReservedCacheNodesErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DescribeReservedCacheNodesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeReservedCacheNodesErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DescribeReservedCacheNodesErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DescribeReservedCacheNodesErrorKind::ReservedCacheNodeNotFoundFault`.
     pub fn is_reserved_cache_node_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeReservedCacheNodesErrorKind::ReservedCacheNodeNotFoundFault(_)
-        )
+        matches!(&self.kind, DescribeReservedCacheNodesErrorKind::ReservedCacheNodeNotFoundFault(_))
     }
 }
 impl std::error::Error for DescribeReservedCacheNodesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeReservedCacheNodesErrorKind::InvalidParameterCombinationException(_inner) => {
+            DescribeReservedCacheNodesErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeReservedCacheNodesErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeReservedCacheNodesErrorKind::ReservedCacheNodeNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DescribeReservedCacheNodesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeReservedCacheNodesErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            DescribeReservedCacheNodesErrorKind::ReservedCacheNodeNotFoundFault(_inner) => {
-                Some(_inner)
-            }
-            DescribeReservedCacheNodesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7897,17 +7709,15 @@ impl std::error::Error for DescribeReservedCacheNodesError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeReplicationGroupsError {
     /// Kind of error that occurred.
-    pub kind: DescribeReplicationGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeReplicationGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeReplicationGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeReplicationGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeReplicationGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7921,29 +7731,31 @@ pub enum DescribeReplicationGroupsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The specified replication group does not exist.</p>
     ReplicationGroupNotFoundFault(crate::error::ReplicationGroupNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeReplicationGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeReplicationGroupsErrorKind::InvalidParameterCombinationException(_inner) => {
+            DescribeReplicationGroupsErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeReplicationGroupsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeReplicationGroupsErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeReplicationGroupsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeReplicationGroupsErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeReplicationGroupsErrorKind::ReplicationGroupNotFoundFault(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeReplicationGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7957,85 +7769,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeReplicationGroupsErro
 }
 impl DescribeReplicationGroupsError {
     /// Creates a new `DescribeReplicationGroupsError`.
-    pub fn new(kind: DescribeReplicationGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeReplicationGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeReplicationGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeReplicationGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeReplicationGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeReplicationGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeReplicationGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeReplicationGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeReplicationGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeReplicationGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeReplicationGroupsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeReplicationGroupsErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DescribeReplicationGroupsErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DescribeReplicationGroupsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeReplicationGroupsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DescribeReplicationGroupsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DescribeReplicationGroupsErrorKind::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeReplicationGroupsErrorKind::ReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, DescribeReplicationGroupsErrorKind::ReplicationGroupNotFoundFault(_))
     }
 }
 impl std::error::Error for DescribeReplicationGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeReplicationGroupsErrorKind::InvalidParameterCombinationException(_inner) => {
+            DescribeReplicationGroupsErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeReplicationGroupsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeReplicationGroupsErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DescribeReplicationGroupsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeReplicationGroupsErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            DescribeReplicationGroupsErrorKind::ReplicationGroupNotFoundFault(_inner) => {
-                Some(_inner)
-            }
-            DescribeReplicationGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8045,17 +7846,15 @@ impl std::error::Error for DescribeReplicationGroupsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeGlobalReplicationGroupsError {
     /// Kind of error that occurred.
-    pub kind: DescribeGlobalReplicationGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeGlobalReplicationGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeGlobalReplicationGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeGlobalReplicationGroupsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeGlobalReplicationGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8069,29 +7868,31 @@ pub enum DescribeGlobalReplicationGroupsErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGlobalReplicationGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeGlobalReplicationGroupsErrorKind::GlobalReplicationGroupNotFoundFault(
-                _inner,
-            ) => _inner.fmt(f),
-            DescribeGlobalReplicationGroupsErrorKind::InvalidParameterCombinationException(
-                _inner,
-            ) => _inner.fmt(f),
-            DescribeGlobalReplicationGroupsErrorKind::InvalidParameterValueException(_inner) => {
+            DescribeGlobalReplicationGroupsErrorKind::GlobalReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeGlobalReplicationGroupsErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeGlobalReplicationGroupsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeGlobalReplicationGroupsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeGlobalReplicationGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8105,88 +7906,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeGlobalReplicationGrou
 }
 impl DescribeGlobalReplicationGroupsError {
     /// Creates a new `DescribeGlobalReplicationGroupsError`.
-    pub fn new(
-        kind: DescribeGlobalReplicationGroupsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeGlobalReplicationGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeGlobalReplicationGroupsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeGlobalReplicationGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeGlobalReplicationGroupsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeGlobalReplicationGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeGlobalReplicationGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeGlobalReplicationGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeGlobalReplicationGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeGlobalReplicationGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeGlobalReplicationGroupsErrorKind::GlobalReplicationGroupNotFoundFault`.
     pub fn is_global_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeGlobalReplicationGroupsErrorKind::GlobalReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, DescribeGlobalReplicationGroupsErrorKind::GlobalReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DescribeGlobalReplicationGroupsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeGlobalReplicationGroupsErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DescribeGlobalReplicationGroupsErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DescribeGlobalReplicationGroupsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeGlobalReplicationGroupsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DescribeGlobalReplicationGroupsErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for DescribeGlobalReplicationGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeGlobalReplicationGroupsErrorKind::GlobalReplicationGroupNotFoundFault(
-                _inner,
-            ) => Some(_inner),
-            DescribeGlobalReplicationGroupsErrorKind::InvalidParameterCombinationException(
-                _inner,
-            ) => Some(_inner),
-            DescribeGlobalReplicationGroupsErrorKind::InvalidParameterValueException(_inner) => {
+            DescribeGlobalReplicationGroupsErrorKind::GlobalReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DescribeGlobalReplicationGroupsErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeGlobalReplicationGroupsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeGlobalReplicationGroupsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeGlobalReplicationGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8196,15 +7983,15 @@ impl std::error::Error for DescribeGlobalReplicationGroupsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeEventsError {
     /// Kind of error that occurred.
-    pub kind: DescribeEventsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeEventsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeEventsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8216,22 +8003,28 @@ pub enum DescribeEventsErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeEventsErrorKind::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
-            DescribeEventsErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            DescribeEventsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeEventsErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEventsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEventsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8245,67 +8038,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeEventsError {
 }
 impl DescribeEventsError {
     /// Creates a new `DescribeEventsError`.
-    pub fn new(kind: DescribeEventsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeEventsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeEventsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeEventsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeEventsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeEventsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeEventsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEventsErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DescribeEventsErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DescribeEventsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEventsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DescribeEventsErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for DescribeEventsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEventsErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
-            DescribeEventsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            DescribeEventsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeEventsErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEventsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEventsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8315,17 +8108,15 @@ impl std::error::Error for DescribeEventsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeEngineDefaultParametersError {
     /// Kind of error that occurred.
-    pub kind: DescribeEngineDefaultParametersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeEngineDefaultParametersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeEngineDefaultParametersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeEngineDefaultParametersErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeEngineDefaultParametersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8337,26 +8128,28 @@ pub enum DescribeEngineDefaultParametersErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEngineDefaultParametersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeEngineDefaultParametersErrorKind::InvalidParameterCombinationException(
-                _inner,
-            ) => _inner.fmt(f),
-            DescribeEngineDefaultParametersErrorKind::InvalidParameterValueException(_inner) => {
+            DescribeEngineDefaultParametersErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEngineDefaultParametersErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEngineDefaultParametersErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeEngineDefaultParametersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8370,78 +8163,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeEngineDefaultParamete
 }
 impl DescribeEngineDefaultParametersError {
     /// Creates a new `DescribeEngineDefaultParametersError`.
-    pub fn new(
-        kind: DescribeEngineDefaultParametersErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeEngineDefaultParametersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeEngineDefaultParametersErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeEngineDefaultParametersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeEngineDefaultParametersErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeEngineDefaultParametersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeEngineDefaultParametersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeEngineDefaultParametersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeEngineDefaultParametersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeEngineDefaultParametersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeEngineDefaultParametersErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEngineDefaultParametersErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DescribeEngineDefaultParametersErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DescribeEngineDefaultParametersErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEngineDefaultParametersErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DescribeEngineDefaultParametersErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for DescribeEngineDefaultParametersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEngineDefaultParametersErrorKind::InvalidParameterCombinationException(
-                _inner,
-            ) => Some(_inner),
-            DescribeEngineDefaultParametersErrorKind::InvalidParameterValueException(_inner) => {
+            DescribeEngineDefaultParametersErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEngineDefaultParametersErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEngineDefaultParametersErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeEngineDefaultParametersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8451,17 +8233,15 @@ impl std::error::Error for DescribeEngineDefaultParametersError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeCacheSubnetGroupsError {
     /// Kind of error that occurred.
-    pub kind: DescribeCacheSubnetGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeCacheSubnetGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeCacheSubnetGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeCacheSubnetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeCacheSubnetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8471,23 +8251,25 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeCacheSubnetGroups
 pub enum DescribeCacheSubnetGroupsErrorKind {
     /// <p>The requested cache subnet group name does not refer to an existing cache subnet group.</p>
     CacheSubnetGroupNotFoundFault(crate::error::CacheSubnetGroupNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCacheSubnetGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeCacheSubnetGroupsErrorKind::CacheSubnetGroupNotFoundFault(_inner) => {
+            DescribeCacheSubnetGroupsErrorKind::CacheSubnetGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCacheSubnetGroupsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeCacheSubnetGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8501,65 +8283,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeCacheSubnetGroupsErro
 }
 impl DescribeCacheSubnetGroupsError {
     /// Creates a new `DescribeCacheSubnetGroupsError`.
-    pub fn new(kind: DescribeCacheSubnetGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeCacheSubnetGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeCacheSubnetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeCacheSubnetGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeCacheSubnetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeCacheSubnetGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeCacheSubnetGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeCacheSubnetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeCacheSubnetGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeCacheSubnetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeCacheSubnetGroupsErrorKind::CacheSubnetGroupNotFoundFault`.
     pub fn is_cache_subnet_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCacheSubnetGroupsErrorKind::CacheSubnetGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, DescribeCacheSubnetGroupsErrorKind::CacheSubnetGroupNotFoundFault(_))
     }
 }
 impl std::error::Error for DescribeCacheSubnetGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeCacheSubnetGroupsErrorKind::CacheSubnetGroupNotFoundFault(_inner) => {
+            DescribeCacheSubnetGroupsErrorKind::CacheSubnetGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCacheSubnetGroupsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeCacheSubnetGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8569,17 +8346,15 @@ impl std::error::Error for DescribeCacheSubnetGroupsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeCacheSecurityGroupsError {
     /// Kind of error that occurred.
-    pub kind: DescribeCacheSecurityGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeCacheSecurityGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeCacheSecurityGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeCacheSecurityGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeCacheSecurityGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8593,29 +8368,31 @@ pub enum DescribeCacheSecurityGroupsErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCacheSecurityGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeCacheSecurityGroupsErrorKind::CacheSecurityGroupNotFoundFault(_inner) => {
+            DescribeCacheSecurityGroupsErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCacheSecurityGroupsErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCacheSecurityGroupsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCacheSecurityGroupsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeCacheSecurityGroupsErrorKind::InvalidParameterCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeCacheSecurityGroupsErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeCacheSecurityGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8629,85 +8406,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeCacheSecurityGroupsEr
 }
 impl DescribeCacheSecurityGroupsError {
     /// Creates a new `DescribeCacheSecurityGroupsError`.
-    pub fn new(kind: DescribeCacheSecurityGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeCacheSecurityGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeCacheSecurityGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeCacheSecurityGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeCacheSecurityGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeCacheSecurityGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeCacheSecurityGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeCacheSecurityGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeCacheSecurityGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeCacheSecurityGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeCacheSecurityGroupsErrorKind::CacheSecurityGroupNotFoundFault`.
     pub fn is_cache_security_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCacheSecurityGroupsErrorKind::CacheSecurityGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, DescribeCacheSecurityGroupsErrorKind::CacheSecurityGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DescribeCacheSecurityGroupsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCacheSecurityGroupsErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DescribeCacheSecurityGroupsErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DescribeCacheSecurityGroupsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCacheSecurityGroupsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DescribeCacheSecurityGroupsErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for DescribeCacheSecurityGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeCacheSecurityGroupsErrorKind::CacheSecurityGroupNotFoundFault(_inner) => {
+            DescribeCacheSecurityGroupsErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCacheSecurityGroupsErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCacheSecurityGroupsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCacheSecurityGroupsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeCacheSecurityGroupsErrorKind::InvalidParameterCombinationException(_inner) => {
-                Some(_inner)
-            }
-            DescribeCacheSecurityGroupsErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            DescribeCacheSecurityGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8717,15 +8483,15 @@ impl std::error::Error for DescribeCacheSecurityGroupsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeCacheParametersError {
     /// Kind of error that occurred.
-    pub kind: DescribeCacheParametersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeCacheParametersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeCacheParametersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeCacheParametersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8739,29 +8505,31 @@ pub enum DescribeCacheParametersErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCacheParametersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeCacheParametersErrorKind::CacheParameterGroupNotFoundFault(_inner) => {
+            DescribeCacheParametersErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCacheParametersErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCacheParametersErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCacheParametersErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeCacheParametersErrorKind::InvalidParameterCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeCacheParametersErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeCacheParametersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8775,85 +8543,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeCacheParametersError 
 }
 impl DescribeCacheParametersError {
     /// Creates a new `DescribeCacheParametersError`.
-    pub fn new(kind: DescribeCacheParametersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeCacheParametersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeCacheParametersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeCacheParametersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeCacheParametersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeCacheParametersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeCacheParametersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeCacheParametersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeCacheParametersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeCacheParametersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeCacheParametersErrorKind::CacheParameterGroupNotFoundFault`.
     pub fn is_cache_parameter_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCacheParametersErrorKind::CacheParameterGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, DescribeCacheParametersErrorKind::CacheParameterGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DescribeCacheParametersErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCacheParametersErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DescribeCacheParametersErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DescribeCacheParametersErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCacheParametersErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DescribeCacheParametersErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for DescribeCacheParametersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeCacheParametersErrorKind::CacheParameterGroupNotFoundFault(_inner) => {
+            DescribeCacheParametersErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCacheParametersErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCacheParametersErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCacheParametersErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeCacheParametersErrorKind::InvalidParameterCombinationException(_inner) => {
-                Some(_inner)
-            }
-            DescribeCacheParametersErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            DescribeCacheParametersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8863,17 +8620,15 @@ impl std::error::Error for DescribeCacheParametersError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeCacheParameterGroupsError {
     /// Kind of error that occurred.
-    pub kind: DescribeCacheParameterGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeCacheParameterGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeCacheParameterGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeCacheParameterGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeCacheParameterGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8887,29 +8642,31 @@ pub enum DescribeCacheParameterGroupsErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCacheParameterGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeCacheParameterGroupsErrorKind::CacheParameterGroupNotFoundFault(_inner) => {
+            DescribeCacheParameterGroupsErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCacheParameterGroupsErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCacheParameterGroupsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCacheParameterGroupsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeCacheParameterGroupsErrorKind::InvalidParameterCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeCacheParameterGroupsErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeCacheParameterGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8923,85 +8680,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeCacheParameterGroupsE
 }
 impl DescribeCacheParameterGroupsError {
     /// Creates a new `DescribeCacheParameterGroupsError`.
-    pub fn new(kind: DescribeCacheParameterGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeCacheParameterGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeCacheParameterGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeCacheParameterGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeCacheParameterGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeCacheParameterGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeCacheParameterGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeCacheParameterGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeCacheParameterGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeCacheParameterGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeCacheParameterGroupsErrorKind::CacheParameterGroupNotFoundFault`.
     pub fn is_cache_parameter_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCacheParameterGroupsErrorKind::CacheParameterGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, DescribeCacheParameterGroupsErrorKind::CacheParameterGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DescribeCacheParameterGroupsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCacheParameterGroupsErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DescribeCacheParameterGroupsErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DescribeCacheParameterGroupsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCacheParameterGroupsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DescribeCacheParameterGroupsErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for DescribeCacheParameterGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeCacheParameterGroupsErrorKind::CacheParameterGroupNotFoundFault(_inner) => {
+            DescribeCacheParameterGroupsErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCacheParameterGroupsErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCacheParameterGroupsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCacheParameterGroupsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeCacheParameterGroupsErrorKind::InvalidParameterCombinationException(_inner) => {
-                Some(_inner)
-            }
-            DescribeCacheParameterGroupsErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            DescribeCacheParameterGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9011,17 +8757,15 @@ impl std::error::Error for DescribeCacheParameterGroupsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeCacheEngineVersionsError {
     /// Kind of error that occurred.
-    pub kind: DescribeCacheEngineVersionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeCacheEngineVersionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeCacheEngineVersionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeCacheEngineVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeCacheEngineVersionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -9029,20 +8773,22 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeCacheEngineVersio
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCacheEngineVersionsErrorKind {
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCacheEngineVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeCacheEngineVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeCacheEngineVersionsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9056,55 +8802,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeCacheEngineVersionsEr
 }
 impl DescribeCacheEngineVersionsError {
     /// Creates a new `DescribeCacheEngineVersionsError`.
-    pub fn new(kind: DescribeCacheEngineVersionsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeCacheEngineVersionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeCacheEngineVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeCacheEngineVersionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeCacheEngineVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeCacheEngineVersionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeCacheEngineVersionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeCacheEngineVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeCacheEngineVersionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeCacheEngineVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
 }
 impl std::error::Error for DescribeCacheEngineVersionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeCacheEngineVersionsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeCacheEngineVersionsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9114,15 +8858,15 @@ impl std::error::Error for DescribeCacheEngineVersionsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeCacheClustersError {
     /// Kind of error that occurred.
-    pub kind: DescribeCacheClustersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeCacheClustersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeCacheClustersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeCacheClustersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9136,25 +8880,31 @@ pub enum DescribeCacheClustersErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCacheClustersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeCacheClustersErrorKind::CacheClusterNotFoundFault(_inner) => _inner.fmt(f),
-            DescribeCacheClustersErrorKind::InvalidParameterCombinationException(_inner) => {
+            DescribeCacheClustersErrorKind::CacheClusterNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCacheClustersErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCacheClustersErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCacheClustersErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeCacheClustersErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            DescribeCacheClustersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -9168,81 +8918,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeCacheClustersError {
 }
 impl DescribeCacheClustersError {
     /// Creates a new `DescribeCacheClustersError`.
-    pub fn new(kind: DescribeCacheClustersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeCacheClustersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeCacheClustersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeCacheClustersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeCacheClustersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeCacheClustersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeCacheClustersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeCacheClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeCacheClustersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeCacheClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeCacheClustersErrorKind::CacheClusterNotFoundFault`.
     pub fn is_cache_cluster_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCacheClustersErrorKind::CacheClusterNotFoundFault(_)
-        )
+        matches!(&self.kind, DescribeCacheClustersErrorKind::CacheClusterNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DescribeCacheClustersErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCacheClustersErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DescribeCacheClustersErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DescribeCacheClustersErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCacheClustersErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DescribeCacheClustersErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for DescribeCacheClustersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeCacheClustersErrorKind::CacheClusterNotFoundFault(_inner) => Some(_inner),
-            DescribeCacheClustersErrorKind::InvalidParameterCombinationException(_inner) => {
+            DescribeCacheClustersErrorKind::CacheClusterNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCacheClustersErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCacheClustersErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCacheClustersErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeCacheClustersErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            DescribeCacheClustersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9252,15 +8995,15 @@ impl std::error::Error for DescribeCacheClustersError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteUserGroupError {
     /// Kind of error that occurred.
-    pub kind: DeleteUserGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteUserGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteUserGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteUserGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9276,24 +9019,34 @@ pub enum DeleteUserGroupErrorKind {
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The user group was not found or does not exist</p>
     UserGroupNotFoundFault(crate::error::UserGroupNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteUserGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteUserGroupErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            DeleteUserGroupErrorKind::InvalidUserGroupStateFault(_inner) => _inner.fmt(f),
-            DeleteUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
-            DeleteUserGroupErrorKind::UserGroupNotFoundFault(_inner) => _inner.fmt(f),
-            DeleteUserGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteUserGroupErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteUserGroupErrorKind::InvalidUserGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteUserGroupErrorKind::UserGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteUserGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9307,83 +9060,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteUserGroupError {
 }
 impl DeleteUserGroupError {
     /// Creates a new `DeleteUserGroupError`.
-    pub fn new(kind: DeleteUserGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteUserGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteUserGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteUserGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteUserGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteUserGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteUserGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteUserGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteUserGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteUserGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteUserGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteUserGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DeleteUserGroupErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DeleteUserGroupErrorKind::InvalidUserGroupStateFault`.
     pub fn is_invalid_user_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteUserGroupErrorKind::InvalidUserGroupStateFault(_)
-        )
+        matches!(&self.kind, DeleteUserGroupErrorKind::InvalidUserGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `DeleteUserGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_)
-        )
+        matches!(&self.kind, DeleteUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DeleteUserGroupErrorKind::UserGroupNotFoundFault`.
     pub fn is_user_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteUserGroupErrorKind::UserGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, DeleteUserGroupErrorKind::UserGroupNotFoundFault(_))
     }
 }
 impl std::error::Error for DeleteUserGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteUserGroupErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            DeleteUserGroupErrorKind::InvalidUserGroupStateFault(_inner) => Some(_inner),
-            DeleteUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            DeleteUserGroupErrorKind::UserGroupNotFoundFault(_inner) => Some(_inner),
-            DeleteUserGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteUserGroupErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteUserGroupErrorKind::InvalidUserGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteUserGroupErrorKind::UserGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteUserGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9393,15 +9144,15 @@ impl std::error::Error for DeleteUserGroupError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteUserError {
     /// Kind of error that occurred.
-    pub kind: DeleteUserErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteUserErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteUserError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteUserErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9419,25 +9170,37 @@ pub enum DeleteUserErrorKind {
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The user does not exist or could not be found.</p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteUserErrorKind::DefaultUserAssociatedToUserGroupFault(_inner) => _inner.fmt(f),
-            DeleteUserErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            DeleteUserErrorKind::InvalidUserStateFault(_inner) => _inner.fmt(f),
-            DeleteUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
-            DeleteUserErrorKind::UserNotFoundFault(_inner) => _inner.fmt(f),
-            DeleteUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteUserErrorKind::DefaultUserAssociatedToUserGroupFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteUserErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteUserErrorKind::InvalidUserStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteUserErrorKind::UserNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteUserErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9451,59 +9214,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteUserError {
 }
 impl DeleteUserError {
     /// Creates a new `DeleteUserError`.
-    pub fn new(kind: DeleteUserErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteUserError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteUserError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteUserErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteUserError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteUserError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteUserErrorKind::DefaultUserAssociatedToUserGroupFault`.
     pub fn is_default_user_associated_to_user_group_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteUserErrorKind::DefaultUserAssociatedToUserGroupFault(_)
-        )
+        matches!(&self.kind, DeleteUserErrorKind::DefaultUserAssociatedToUserGroupFault(_))
     }
     /// Returns `true` if the error kind is `DeleteUserErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteUserErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DeleteUserErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DeleteUserErrorKind::InvalidUserStateFault`.
     pub fn is_invalid_user_state_fault(&self) -> bool {
@@ -9511,10 +9268,7 @@ impl DeleteUserError {
     }
     /// Returns `true` if the error kind is `DeleteUserErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteUserErrorKind::ServiceLinkedRoleNotFoundFault(_)
-        )
+        matches!(&self.kind, DeleteUserErrorKind::ServiceLinkedRoleNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DeleteUserErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
@@ -9524,12 +9278,24 @@ impl DeleteUserError {
 impl std::error::Error for DeleteUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteUserErrorKind::DefaultUserAssociatedToUserGroupFault(_inner) => Some(_inner),
-            DeleteUserErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            DeleteUserErrorKind::InvalidUserStateFault(_inner) => Some(_inner),
-            DeleteUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            DeleteUserErrorKind::UserNotFoundFault(_inner) => Some(_inner),
-            DeleteUserErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteUserErrorKind::DefaultUserAssociatedToUserGroupFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteUserErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteUserErrorKind::InvalidUserStateFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteUserErrorKind::UserNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteUserErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9537,22 +9303,20 @@ impl std::error::Error for DeleteUserError {
 /// <p>The default user assigned to the user group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefaultUserAssociatedToUserGroupFault {
+pub struct DefaultUserAssociatedToUserGroupFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DefaultUserAssociatedToUserGroupFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DefaultUserAssociatedToUserGroupFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DefaultUserAssociatedToUserGroupFault")?;
         if let Some(inner_47) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_47)?;
             }
         }
@@ -9562,7 +9326,7 @@ impl std::fmt::Display for DefaultUserAssociatedToUserGroupFault {
 impl std::error::Error for DefaultUserAssociatedToUserGroupFault {}
 /// See [`DefaultUserAssociatedToUserGroupFault`](crate::error::DefaultUserAssociatedToUserGroupFault).
 pub mod default_user_associated_to_user_group_fault {
-
+    
     /// A builder for [`DefaultUserAssociatedToUserGroupFault`](crate::error::DefaultUserAssociatedToUserGroupFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9576,16 +9340,18 @@ pub mod default_user_associated_to_user_group_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DefaultUserAssociatedToUserGroupFault`](crate::error::DefaultUserAssociatedToUserGroupFault).
         pub fn build(self) -> crate::error::DefaultUserAssociatedToUserGroupFault {
             crate::error::DefaultUserAssociatedToUserGroupFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DefaultUserAssociatedToUserGroupFault {
     /// Creates a new builder-style object to manufacture [`DefaultUserAssociatedToUserGroupFault`](crate::error::DefaultUserAssociatedToUserGroupFault).
@@ -9599,15 +9365,15 @@ impl DefaultUserAssociatedToUserGroupFault {
 #[derive(std::fmt::Debug)]
 pub struct DeleteSnapshotError {
     /// Kind of error that occurred.
-    pub kind: DeleteSnapshotErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteSnapshotErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteSnapshotError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9623,24 +9389,34 @@ pub enum DeleteSnapshotErrorKind {
     InvalidSnapshotStateFault(crate::error::InvalidSnapshotStateFault),
     /// <p>The requested snapshot name does not refer to an existing snapshot.</p>
     SnapshotNotFoundFault(crate::error::SnapshotNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteSnapshotErrorKind::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
-            DeleteSnapshotErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            DeleteSnapshotErrorKind::InvalidSnapshotStateFault(_inner) => _inner.fmt(f),
-            DeleteSnapshotErrorKind::SnapshotNotFoundFault(_inner) => _inner.fmt(f),
-            DeleteSnapshotErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteSnapshotErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSnapshotErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSnapshotErrorKind::InvalidSnapshotStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSnapshotErrorKind::SnapshotNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSnapshotErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9654,83 +9430,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteSnapshotError {
 }
 impl DeleteSnapshotError {
     /// Creates a new `DeleteSnapshotError`.
-    pub fn new(kind: DeleteSnapshotErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteSnapshotError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteSnapshotError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteSnapshotErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteSnapshotError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteSnapshotError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteSnapshotErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSnapshotErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DeleteSnapshotErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DeleteSnapshotErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSnapshotErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DeleteSnapshotErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DeleteSnapshotErrorKind::InvalidSnapshotStateFault`.
     pub fn is_invalid_snapshot_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSnapshotErrorKind::InvalidSnapshotStateFault(_)
-        )
+        matches!(&self.kind, DeleteSnapshotErrorKind::InvalidSnapshotStateFault(_))
     }
     /// Returns `true` if the error kind is `DeleteSnapshotErrorKind::SnapshotNotFoundFault`.
     pub fn is_snapshot_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSnapshotErrorKind::SnapshotNotFoundFault(_)
-        )
+        matches!(&self.kind, DeleteSnapshotErrorKind::SnapshotNotFoundFault(_))
     }
 }
 impl std::error::Error for DeleteSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteSnapshotErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
-            DeleteSnapshotErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            DeleteSnapshotErrorKind::InvalidSnapshotStateFault(_inner) => Some(_inner),
-            DeleteSnapshotErrorKind::SnapshotNotFoundFault(_inner) => Some(_inner),
-            DeleteSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteSnapshotErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSnapshotErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSnapshotErrorKind::InvalidSnapshotStateFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSnapshotErrorKind::SnapshotNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSnapshotErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9738,22 +9512,20 @@ impl std::error::Error for DeleteSnapshotError {
 /// <p>The current state of the snapshot does not allow the requested operation to occur.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSnapshotStateFault {
+pub struct InvalidSnapshotStateFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidSnapshotStateFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidSnapshotStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSnapshotStateFault")?;
         if let Some(inner_48) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_48)?;
             }
         }
@@ -9763,7 +9535,7 @@ impl std::fmt::Display for InvalidSnapshotStateFault {
 impl std::error::Error for InvalidSnapshotStateFault {}
 /// See [`InvalidSnapshotStateFault`](crate::error::InvalidSnapshotStateFault).
 pub mod invalid_snapshot_state_fault {
-
+    
     /// A builder for [`InvalidSnapshotStateFault`](crate::error::InvalidSnapshotStateFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9777,16 +9549,18 @@ pub mod invalid_snapshot_state_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidSnapshotStateFault`](crate::error::InvalidSnapshotStateFault).
         pub fn build(self) -> crate::error::InvalidSnapshotStateFault {
             crate::error::InvalidSnapshotStateFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidSnapshotStateFault {
     /// Creates a new builder-style object to manufacture [`InvalidSnapshotStateFault`](crate::error::InvalidSnapshotStateFault).
@@ -9800,15 +9574,15 @@ impl InvalidSnapshotStateFault {
 #[derive(std::fmt::Debug)]
 pub struct DeleteReplicationGroupError {
     /// Kind of error that occurred.
-    pub kind: DeleteReplicationGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteReplicationGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteReplicationGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9826,44 +9600,52 @@ pub enum DeleteReplicationGroupErrorKind {
     ReplicationGroupNotFoundFault(crate::error::ReplicationGroupNotFoundFault),
     /// <p>You already have a snapshot with the given name.</p>
     SnapshotAlreadyExistsFault(crate::error::SnapshotAlreadyExistsFault),
-    /// <p>You attempted one of the following operations:</p>
-    /// <ul>
-    /// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li>
-    /// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li>
-    /// </ul>
+    /// <p>You attempted one of the following operations:</p> 
+    /// <ul> 
+    /// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li> 
+    /// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li> 
+    /// </ul> 
     /// <p>Neither of these are supported by ElastiCache.</p>
     SnapshotFeatureNotSupportedFault(crate::error::SnapshotFeatureNotSupportedFault),
     /// <p>The request cannot be processed because it would exceed the maximum number of snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteReplicationGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteReplicationGroupErrorKind::InvalidParameterCombinationException(_inner) => {
+            DeleteReplicationGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteReplicationGroupErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteReplicationGroupErrorKind::SnapshotAlreadyExistsFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteReplicationGroupErrorKind::SnapshotFeatureNotSupportedFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteReplicationGroupErrorKind::SnapshotQuotaExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteReplicationGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteReplicationGroupErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
-            DeleteReplicationGroupErrorKind::SnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
-            DeleteReplicationGroupErrorKind::SnapshotFeatureNotSupportedFault(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteReplicationGroupErrorKind::SnapshotQuotaExceededFault(_inner) => _inner.fmt(f),
-            DeleteReplicationGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -9877,117 +9659,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteReplicationGroupError {
 }
 impl DeleteReplicationGroupError {
     /// Creates a new `DeleteReplicationGroupError`.
-    pub fn new(kind: DeleteReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteReplicationGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteReplicationGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteReplicationGroupErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteReplicationGroupErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DeleteReplicationGroupErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DeleteReplicationGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteReplicationGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DeleteReplicationGroupErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DeleteReplicationGroupErrorKind::InvalidReplicationGroupStateFault`.
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, DeleteReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `DeleteReplicationGroupErrorKind::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, DeleteReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DeleteReplicationGroupErrorKind::SnapshotAlreadyExistsFault`.
     pub fn is_snapshot_already_exists_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteReplicationGroupErrorKind::SnapshotAlreadyExistsFault(_)
-        )
+        matches!(&self.kind, DeleteReplicationGroupErrorKind::SnapshotAlreadyExistsFault(_))
     }
     /// Returns `true` if the error kind is `DeleteReplicationGroupErrorKind::SnapshotFeatureNotSupportedFault`.
     pub fn is_snapshot_feature_not_supported_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteReplicationGroupErrorKind::SnapshotFeatureNotSupportedFault(_)
-        )
+        matches!(&self.kind, DeleteReplicationGroupErrorKind::SnapshotFeatureNotSupportedFault(_))
     }
     /// Returns `true` if the error kind is `DeleteReplicationGroupErrorKind::SnapshotQuotaExceededFault`.
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteReplicationGroupErrorKind::SnapshotQuotaExceededFault(_)
-        )
+        matches!(&self.kind, DeleteReplicationGroupErrorKind::SnapshotQuotaExceededFault(_))
     }
 }
 impl std::error::Error for DeleteReplicationGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteReplicationGroupErrorKind::InvalidParameterCombinationException(_inner) => {
+            DeleteReplicationGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteReplicationGroupErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteReplicationGroupErrorKind::SnapshotAlreadyExistsFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteReplicationGroupErrorKind::SnapshotFeatureNotSupportedFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteReplicationGroupErrorKind::SnapshotQuotaExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteReplicationGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteReplicationGroupErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            DeleteReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_inner) => {
-                Some(_inner)
-            }
-            DeleteReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_inner) => Some(_inner),
-            DeleteReplicationGroupErrorKind::SnapshotAlreadyExistsFault(_inner) => Some(_inner),
-            DeleteReplicationGroupErrorKind::SnapshotFeatureNotSupportedFault(_inner) => {
-                Some(_inner)
-            }
-            DeleteReplicationGroupErrorKind::SnapshotQuotaExceededFault(_inner) => Some(_inner),
-            DeleteReplicationGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9995,22 +9762,20 @@ impl std::error::Error for DeleteReplicationGroupError {
 /// <p>The request cannot be processed because it would exceed the maximum number of snapshots.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotQuotaExceededFault {
+pub struct SnapshotQuotaExceededFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl SnapshotQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for SnapshotQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotQuotaExceededFault")?;
         if let Some(inner_49) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_49)?;
             }
         }
@@ -10020,7 +9785,7 @@ impl std::fmt::Display for SnapshotQuotaExceededFault {
 impl std::error::Error for SnapshotQuotaExceededFault {}
 /// See [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault).
 pub mod snapshot_quota_exceeded_fault {
-
+    
     /// A builder for [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10034,16 +9799,18 @@ pub mod snapshot_quota_exceeded_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault).
         pub fn build(self) -> crate::error::SnapshotQuotaExceededFault {
             crate::error::SnapshotQuotaExceededFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl SnapshotQuotaExceededFault {
     /// Creates a new builder-style object to manufacture [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault).
@@ -10052,30 +9819,28 @@ impl SnapshotQuotaExceededFault {
     }
 }
 
-/// <p>You attempted one of the following operations:</p>
-/// <ul>
-/// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li>
-/// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li>
-/// </ul>
+/// <p>You attempted one of the following operations:</p> 
+/// <ul> 
+/// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li> 
+/// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li> 
+/// </ul> 
 /// <p>Neither of these are supported by ElastiCache.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotFeatureNotSupportedFault {
+pub struct SnapshotFeatureNotSupportedFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl SnapshotFeatureNotSupportedFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for SnapshotFeatureNotSupportedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotFeatureNotSupportedFault")?;
         if let Some(inner_50) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_50)?;
             }
         }
@@ -10085,7 +9850,7 @@ impl std::fmt::Display for SnapshotFeatureNotSupportedFault {
 impl std::error::Error for SnapshotFeatureNotSupportedFault {}
 /// See [`SnapshotFeatureNotSupportedFault`](crate::error::SnapshotFeatureNotSupportedFault).
 pub mod snapshot_feature_not_supported_fault {
-
+    
     /// A builder for [`SnapshotFeatureNotSupportedFault`](crate::error::SnapshotFeatureNotSupportedFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10099,16 +9864,18 @@ pub mod snapshot_feature_not_supported_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`SnapshotFeatureNotSupportedFault`](crate::error::SnapshotFeatureNotSupportedFault).
         pub fn build(self) -> crate::error::SnapshotFeatureNotSupportedFault {
             crate::error::SnapshotFeatureNotSupportedFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl SnapshotFeatureNotSupportedFault {
     /// Creates a new builder-style object to manufacture [`SnapshotFeatureNotSupportedFault`](crate::error::SnapshotFeatureNotSupportedFault).
@@ -10120,22 +9887,20 @@ impl SnapshotFeatureNotSupportedFault {
 /// <p>You already have a snapshot with the given name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotAlreadyExistsFault {
+pub struct SnapshotAlreadyExistsFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl SnapshotAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for SnapshotAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotAlreadyExistsFault")?;
         if let Some(inner_51) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_51)?;
             }
         }
@@ -10145,7 +9910,7 @@ impl std::fmt::Display for SnapshotAlreadyExistsFault {
 impl std::error::Error for SnapshotAlreadyExistsFault {}
 /// See [`SnapshotAlreadyExistsFault`](crate::error::SnapshotAlreadyExistsFault).
 pub mod snapshot_already_exists_fault {
-
+    
     /// A builder for [`SnapshotAlreadyExistsFault`](crate::error::SnapshotAlreadyExistsFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10159,16 +9924,18 @@ pub mod snapshot_already_exists_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`SnapshotAlreadyExistsFault`](crate::error::SnapshotAlreadyExistsFault).
         pub fn build(self) -> crate::error::SnapshotAlreadyExistsFault {
             crate::error::SnapshotAlreadyExistsFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl SnapshotAlreadyExistsFault {
     /// Creates a new builder-style object to manufacture [`SnapshotAlreadyExistsFault`](crate::error::SnapshotAlreadyExistsFault).
@@ -10182,17 +9949,15 @@ impl SnapshotAlreadyExistsFault {
 #[derive(std::fmt::Debug)]
 pub struct DeleteGlobalReplicationGroupError {
     /// Kind of error that occurred.
-    pub kind: DeleteGlobalReplicationGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteGlobalReplicationGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteGlobalReplicationGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -10206,29 +9971,31 @@ pub enum DeleteGlobalReplicationGroupErrorKind {
     InvalidGlobalReplicationGroupStateFault(crate::error::InvalidGlobalReplicationGroupStateFault),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGlobalReplicationGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_inner) => {
+            DeleteGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGlobalReplicationGroupErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGlobalReplicationGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(
-                _inner,
-            ) => _inner.fmt(f),
-            DeleteGlobalReplicationGroupErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteGlobalReplicationGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -10242,85 +10009,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteGlobalReplicationGroupE
 }
 impl DeleteGlobalReplicationGroupError {
     /// Creates a new `DeleteGlobalReplicationGroupError`.
-    pub fn new(kind: DeleteGlobalReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteGlobalReplicationGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteGlobalReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteGlobalReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteGlobalReplicationGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteGlobalReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault`.
     pub fn is_global_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, DeleteGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DeleteGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault`.
     pub fn is_invalid_global_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, DeleteGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `DeleteGlobalReplicationGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGlobalReplicationGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DeleteGlobalReplicationGroupErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for DeleteGlobalReplicationGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_inner) => {
+            DeleteGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGlobalReplicationGroupErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGlobalReplicationGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(
-                _inner,
-            ) => Some(_inner),
-            DeleteGlobalReplicationGroupErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            DeleteGlobalReplicationGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10330,15 +10086,15 @@ impl std::error::Error for DeleteGlobalReplicationGroupError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteCacheSubnetGroupError {
     /// Kind of error that occurred.
-    pub kind: DeleteCacheSubnetGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteCacheSubnetGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteCacheSubnetGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteCacheSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -10350,22 +10106,28 @@ pub enum DeleteCacheSubnetGroupErrorKind {
     CacheSubnetGroupInUse(crate::error::CacheSubnetGroupInUse),
     /// <p>The requested cache subnet group name does not refer to an existing cache subnet group.</p>
     CacheSubnetGroupNotFoundFault(crate::error::CacheSubnetGroupNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCacheSubnetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteCacheSubnetGroupErrorKind::CacheSubnetGroupInUse(_inner) => _inner.fmt(f),
-            DeleteCacheSubnetGroupErrorKind::CacheSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
-            DeleteCacheSubnetGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteCacheSubnetGroupErrorKind::CacheSubnetGroupInUse(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheSubnetGroupErrorKind::CacheSubnetGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheSubnetGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -10379,71 +10141,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteCacheSubnetGroupError {
 }
 impl DeleteCacheSubnetGroupError {
     /// Creates a new `DeleteCacheSubnetGroupError`.
-    pub fn new(kind: DeleteCacheSubnetGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteCacheSubnetGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteCacheSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteCacheSubnetGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteCacheSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteCacheSubnetGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteCacheSubnetGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteCacheSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteCacheSubnetGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteCacheSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteCacheSubnetGroupErrorKind::CacheSubnetGroupInUse`.
     pub fn is_cache_subnet_group_in_use(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheSubnetGroupErrorKind::CacheSubnetGroupInUse(_)
-        )
+        matches!(&self.kind, DeleteCacheSubnetGroupErrorKind::CacheSubnetGroupInUse(_))
     }
     /// Returns `true` if the error kind is `DeleteCacheSubnetGroupErrorKind::CacheSubnetGroupNotFoundFault`.
     pub fn is_cache_subnet_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheSubnetGroupErrorKind::CacheSubnetGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, DeleteCacheSubnetGroupErrorKind::CacheSubnetGroupNotFoundFault(_))
     }
 }
 impl std::error::Error for DeleteCacheSubnetGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteCacheSubnetGroupErrorKind::CacheSubnetGroupInUse(_inner) => Some(_inner),
-            DeleteCacheSubnetGroupErrorKind::CacheSubnetGroupNotFoundFault(_inner) => Some(_inner),
-            DeleteCacheSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteCacheSubnetGroupErrorKind::CacheSubnetGroupInUse(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheSubnetGroupErrorKind::CacheSubnetGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheSubnetGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -10451,22 +10209,20 @@ impl std::error::Error for DeleteCacheSubnetGroupError {
 /// <p>The requested cache subnet group is currently in use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CacheSubnetGroupInUse {
+pub struct CacheSubnetGroupInUse  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CacheSubnetGroupInUse {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CacheSubnetGroupInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CacheSubnetGroupInUse")?;
         if let Some(inner_52) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_52)?;
             }
         }
@@ -10476,7 +10232,7 @@ impl std::fmt::Display for CacheSubnetGroupInUse {
 impl std::error::Error for CacheSubnetGroupInUse {}
 /// See [`CacheSubnetGroupInUse`](crate::error::CacheSubnetGroupInUse).
 pub mod cache_subnet_group_in_use {
-
+    
     /// A builder for [`CacheSubnetGroupInUse`](crate::error::CacheSubnetGroupInUse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10490,16 +10246,18 @@ pub mod cache_subnet_group_in_use {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CacheSubnetGroupInUse`](crate::error::CacheSubnetGroupInUse).
         pub fn build(self) -> crate::error::CacheSubnetGroupInUse {
             crate::error::CacheSubnetGroupInUse {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CacheSubnetGroupInUse {
     /// Creates a new builder-style object to manufacture [`CacheSubnetGroupInUse`](crate::error::CacheSubnetGroupInUse).
@@ -10513,17 +10271,15 @@ impl CacheSubnetGroupInUse {
 #[derive(std::fmt::Debug)]
 pub struct DeleteCacheSecurityGroupError {
     /// Kind of error that occurred.
-    pub kind: DeleteCacheSecurityGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteCacheSecurityGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteCacheSecurityGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteCacheSecurityGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteCacheSecurityGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -10539,32 +10295,34 @@ pub enum DeleteCacheSecurityGroupErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCacheSecurityGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteCacheSecurityGroupErrorKind::CacheSecurityGroupNotFoundFault(_inner) => {
+            DeleteCacheSecurityGroupErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheSecurityGroupErrorKind::InvalidCacheSecurityGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheSecurityGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheSecurityGroupErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheSecurityGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteCacheSecurityGroupErrorKind::InvalidCacheSecurityGroupStateFault(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteCacheSecurityGroupErrorKind::InvalidParameterCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteCacheSecurityGroupErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteCacheSecurityGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -10578,95 +10336,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteCacheSecurityGroupError
 }
 impl DeleteCacheSecurityGroupError {
     /// Creates a new `DeleteCacheSecurityGroupError`.
-    pub fn new(kind: DeleteCacheSecurityGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteCacheSecurityGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteCacheSecurityGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteCacheSecurityGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteCacheSecurityGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteCacheSecurityGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteCacheSecurityGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteCacheSecurityGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteCacheSecurityGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteCacheSecurityGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteCacheSecurityGroupErrorKind::CacheSecurityGroupNotFoundFault`.
     pub fn is_cache_security_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheSecurityGroupErrorKind::CacheSecurityGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, DeleteCacheSecurityGroupErrorKind::CacheSecurityGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DeleteCacheSecurityGroupErrorKind::InvalidCacheSecurityGroupStateFault`.
     pub fn is_invalid_cache_security_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheSecurityGroupErrorKind::InvalidCacheSecurityGroupStateFault(_)
-        )
+        matches!(&self.kind, DeleteCacheSecurityGroupErrorKind::InvalidCacheSecurityGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `DeleteCacheSecurityGroupErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheSecurityGroupErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DeleteCacheSecurityGroupErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DeleteCacheSecurityGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheSecurityGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DeleteCacheSecurityGroupErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for DeleteCacheSecurityGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteCacheSecurityGroupErrorKind::CacheSecurityGroupNotFoundFault(_inner) => {
+            DeleteCacheSecurityGroupErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheSecurityGroupErrorKind::InvalidCacheSecurityGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheSecurityGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheSecurityGroupErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheSecurityGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteCacheSecurityGroupErrorKind::InvalidCacheSecurityGroupStateFault(_inner) => {
-                Some(_inner)
-            }
-            DeleteCacheSecurityGroupErrorKind::InvalidParameterCombinationException(_inner) => {
-                Some(_inner)
-            }
-            DeleteCacheSecurityGroupErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            DeleteCacheSecurityGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10676,17 +10420,15 @@ impl std::error::Error for DeleteCacheSecurityGroupError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteCacheParameterGroupError {
     /// Kind of error that occurred.
-    pub kind: DeleteCacheParameterGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteCacheParameterGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteCacheParameterGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -10702,32 +10444,34 @@ pub enum DeleteCacheParameterGroupErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCacheParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) => {
+            DeleteCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheParameterGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheParameterGroupErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheParameterGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteCacheParameterGroupErrorKind::InvalidParameterCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteCacheParameterGroupErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteCacheParameterGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -10741,95 +10485,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteCacheParameterGroupErro
 }
 impl DeleteCacheParameterGroupError {
     /// Creates a new `DeleteCacheParameterGroupError`.
-    pub fn new(kind: DeleteCacheParameterGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteCacheParameterGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteCacheParameterGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteCacheParameterGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteCacheParameterGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteCacheParameterGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault`.
     pub fn is_cache_parameter_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, DeleteCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DeleteCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault`.
     pub fn is_invalid_cache_parameter_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_)
-        )
+        matches!(&self.kind, DeleteCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `DeleteCacheParameterGroupErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheParameterGroupErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DeleteCacheParameterGroupErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DeleteCacheParameterGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheParameterGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DeleteCacheParameterGroupErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for DeleteCacheParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) => {
+            DeleteCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheParameterGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheParameterGroupErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheParameterGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_inner) => {
-                Some(_inner)
-            }
-            DeleteCacheParameterGroupErrorKind::InvalidParameterCombinationException(_inner) => {
-                Some(_inner)
-            }
-            DeleteCacheParameterGroupErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            DeleteCacheParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10839,15 +10569,15 @@ impl std::error::Error for DeleteCacheParameterGroupError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteCacheClusterError {
     /// Kind of error that occurred.
-    pub kind: DeleteCacheClusterErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteCacheClusterErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteCacheClusterError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -10865,38 +10595,52 @@ pub enum DeleteCacheClusterErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>You already have a snapshot with the given name.</p>
     SnapshotAlreadyExistsFault(crate::error::SnapshotAlreadyExistsFault),
-    /// <p>You attempted one of the following operations:</p>
-    /// <ul>
-    /// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li>
-    /// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li>
-    /// </ul>
+    /// <p>You attempted one of the following operations:</p> 
+    /// <ul> 
+    /// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li> 
+    /// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li> 
+    /// </ul> 
     /// <p>Neither of these are supported by ElastiCache.</p>
     SnapshotFeatureNotSupportedFault(crate::error::SnapshotFeatureNotSupportedFault),
     /// <p>The request cannot be processed because it would exceed the maximum number of snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCacheClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteCacheClusterErrorKind::CacheClusterNotFoundFault(_inner) => _inner.fmt(f),
-            DeleteCacheClusterErrorKind::InvalidCacheClusterStateFault(_inner) => _inner.fmt(f),
-            DeleteCacheClusterErrorKind::InvalidParameterCombinationException(_inner) => {
+            DeleteCacheClusterErrorKind::CacheClusterNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheClusterErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheClusterErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheClusterErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheClusterErrorKind::SnapshotAlreadyExistsFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheClusterErrorKind::SnapshotFeatureNotSupportedFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheClusterErrorKind::SnapshotQuotaExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCacheClusterErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteCacheClusterErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            DeleteCacheClusterErrorKind::SnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
-            DeleteCacheClusterErrorKind::SnapshotFeatureNotSupportedFault(_inner) => _inner.fmt(f),
-            DeleteCacheClusterErrorKind::SnapshotQuotaExceededFault(_inner) => _inner.fmt(f),
-            DeleteCacheClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -10910,109 +10654,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteCacheClusterError {
 }
 impl DeleteCacheClusterError {
     /// Creates a new `DeleteCacheClusterError`.
-    pub fn new(kind: DeleteCacheClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteCacheClusterError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteCacheClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteCacheClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteCacheClusterError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteCacheClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteCacheClusterErrorKind::CacheClusterNotFoundFault`.
     pub fn is_cache_cluster_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheClusterErrorKind::CacheClusterNotFoundFault(_)
-        )
+        matches!(&self.kind, DeleteCacheClusterErrorKind::CacheClusterNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DeleteCacheClusterErrorKind::InvalidCacheClusterStateFault`.
     pub fn is_invalid_cache_cluster_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheClusterErrorKind::InvalidCacheClusterStateFault(_)
-        )
+        matches!(&self.kind, DeleteCacheClusterErrorKind::InvalidCacheClusterStateFault(_))
     }
     /// Returns `true` if the error kind is `DeleteCacheClusterErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheClusterErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DeleteCacheClusterErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DeleteCacheClusterErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheClusterErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DeleteCacheClusterErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DeleteCacheClusterErrorKind::SnapshotAlreadyExistsFault`.
     pub fn is_snapshot_already_exists_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheClusterErrorKind::SnapshotAlreadyExistsFault(_)
-        )
+        matches!(&self.kind, DeleteCacheClusterErrorKind::SnapshotAlreadyExistsFault(_))
     }
     /// Returns `true` if the error kind is `DeleteCacheClusterErrorKind::SnapshotFeatureNotSupportedFault`.
     pub fn is_snapshot_feature_not_supported_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheClusterErrorKind::SnapshotFeatureNotSupportedFault(_)
-        )
+        matches!(&self.kind, DeleteCacheClusterErrorKind::SnapshotFeatureNotSupportedFault(_))
     }
     /// Returns `true` if the error kind is `DeleteCacheClusterErrorKind::SnapshotQuotaExceededFault`.
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCacheClusterErrorKind::SnapshotQuotaExceededFault(_)
-        )
+        matches!(&self.kind, DeleteCacheClusterErrorKind::SnapshotQuotaExceededFault(_))
     }
 }
 impl std::error::Error for DeleteCacheClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteCacheClusterErrorKind::CacheClusterNotFoundFault(_inner) => Some(_inner),
-            DeleteCacheClusterErrorKind::InvalidCacheClusterStateFault(_inner) => Some(_inner),
-            DeleteCacheClusterErrorKind::InvalidParameterCombinationException(_inner) => {
+            DeleteCacheClusterErrorKind::CacheClusterNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheClusterErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheClusterErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheClusterErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheClusterErrorKind::SnapshotAlreadyExistsFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheClusterErrorKind::SnapshotFeatureNotSupportedFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheClusterErrorKind::SnapshotQuotaExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCacheClusterErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteCacheClusterErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            DeleteCacheClusterErrorKind::SnapshotAlreadyExistsFault(_inner) => Some(_inner),
-            DeleteCacheClusterErrorKind::SnapshotFeatureNotSupportedFault(_inner) => Some(_inner),
-            DeleteCacheClusterErrorKind::SnapshotQuotaExceededFault(_inner) => Some(_inner),
-            DeleteCacheClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11022,15 +10759,15 @@ impl std::error::Error for DeleteCacheClusterError {
 #[derive(std::fmt::Debug)]
 pub struct DecreaseReplicaCountError {
     /// Kind of error that occurred.
-    pub kind: DecreaseReplicaCountErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DecreaseReplicaCountErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DecreaseReplicaCountError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DecreaseReplicaCountErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -11053,9 +10790,7 @@ pub enum DecreaseReplicaCountErrorKind {
     /// <p>The VPC network is in an invalid state.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
-    NodeGroupsPerReplicationGroupQuotaExceededFault(
-        crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault,
-    ),
+    NodeGroupsPerReplicationGroupQuotaExceededFault(crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault),
     /// <p>The request cannot be processed because it would exceed the allowed number of cache nodes per customer.</p>
     NodeQuotaForCustomerExceededFault(crate::error::NodeQuotaForCustomerExceededFault),
     /// <p>The operation was not performed because no changes were required.</p>
@@ -11064,44 +10799,58 @@ pub enum DecreaseReplicaCountErrorKind {
     ReplicationGroupNotFoundFault(crate::error::ReplicationGroupNotFoundFault),
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DecreaseReplicaCountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DecreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault(_inner) => {
+            DecreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecreaseReplicaCountErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecreaseReplicaCountErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecreaseReplicaCountErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecreaseReplicaCountErrorKind::NoOperationFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecreaseReplicaCountErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecreaseReplicaCountErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DecreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault(_inner) => {
-                _inner.fmt(f)
-            }
-            DecreaseReplicaCountErrorKind::InvalidCacheClusterStateFault(_inner) => _inner.fmt(f),
-            DecreaseReplicaCountErrorKind::InvalidParameterCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            DecreaseReplicaCountErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            DecreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault(_inner) => {
-                _inner.fmt(f)
-            }
-            DecreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
-            DecreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(
-                _inner,
-            ) => _inner.fmt(f),
-            DecreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault(_inner) => {
-                _inner.fmt(f)
-            }
-            DecreaseReplicaCountErrorKind::NoOperationFault(_inner) => _inner.fmt(f),
-            DecreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
-            DecreaseReplicaCountErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
-            DecreaseReplicaCountErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -11115,163 +10864,137 @@ impl aws_smithy_types::retry::ProvideErrorKind for DecreaseReplicaCountError {
 }
 impl DecreaseReplicaCountError {
     /// Creates a new `DecreaseReplicaCountError`.
-    pub fn new(kind: DecreaseReplicaCountErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DecreaseReplicaCountError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DecreaseReplicaCountErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DecreaseReplicaCountError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DecreaseReplicaCountErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DecreaseReplicaCountErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DecreaseReplicaCountError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DecreaseReplicaCountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DecreaseReplicaCountError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DecreaseReplicaCountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DecreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault`.
     pub fn is_cluster_quota_for_customer_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DecreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault(_)
-        )
+        matches!(&self.kind, DecreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault(_))
     }
     /// Returns `true` if the error kind is `DecreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault`.
     pub fn is_insufficient_cache_cluster_capacity_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DecreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault(_)
-        )
+        matches!(&self.kind, DecreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault(_))
     }
     /// Returns `true` if the error kind is `DecreaseReplicaCountErrorKind::InvalidCacheClusterStateFault`.
     pub fn is_invalid_cache_cluster_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DecreaseReplicaCountErrorKind::InvalidCacheClusterStateFault(_)
-        )
+        matches!(&self.kind, DecreaseReplicaCountErrorKind::InvalidCacheClusterStateFault(_))
     }
     /// Returns `true` if the error kind is `DecreaseReplicaCountErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DecreaseReplicaCountErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, DecreaseReplicaCountErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `DecreaseReplicaCountErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DecreaseReplicaCountErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DecreaseReplicaCountErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DecreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault`.
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DecreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, DecreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `DecreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DecreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault(_)
-        )
+        matches!(&self.kind, DecreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault(_))
     }
     /// Returns `true` if the error kind is `DecreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault`.
     pub fn is_node_groups_per_replication_group_quota_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DecreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(_)
-        )
+        matches!(&self.kind, DecreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(_))
     }
     /// Returns `true` if the error kind is `DecreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault`.
     pub fn is_node_quota_for_customer_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DecreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault(_)
-        )
+        matches!(&self.kind, DecreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault(_))
     }
     /// Returns `true` if the error kind is `DecreaseReplicaCountErrorKind::NoOperationFault`.
     pub fn is_no_operation_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DecreaseReplicaCountErrorKind::NoOperationFault(_)
-        )
+        matches!(&self.kind, DecreaseReplicaCountErrorKind::NoOperationFault(_))
     }
     /// Returns `true` if the error kind is `DecreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DecreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, DecreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `DecreaseReplicaCountErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            DecreaseReplicaCountErrorKind::ServiceLinkedRoleNotFoundFault(_)
-        )
+        matches!(&self.kind, DecreaseReplicaCountErrorKind::ServiceLinkedRoleNotFoundFault(_))
     }
 }
 impl std::error::Error for DecreaseReplicaCountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DecreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault(_inner) => {
+            DecreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            DecreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault(_inner) =>
+            Some(_inner)
+            ,
+            DecreaseReplicaCountErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            Some(_inner)
+            ,
+            DecreaseReplicaCountErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            DecreaseReplicaCountErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DecreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            DecreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault(_inner) =>
+            Some(_inner)
+            ,
+            DecreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            DecreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            DecreaseReplicaCountErrorKind::NoOperationFault(_inner) =>
+            Some(_inner)
+            ,
+            DecreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DecreaseReplicaCountErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            DecreaseReplicaCountErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DecreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault(_inner) => {
-                Some(_inner)
-            }
-            DecreaseReplicaCountErrorKind::InvalidCacheClusterStateFault(_inner) => Some(_inner),
-            DecreaseReplicaCountErrorKind::InvalidParameterCombinationException(_inner) => {
-                Some(_inner)
-            }
-            DecreaseReplicaCountErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            DecreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault(_inner) => {
-                Some(_inner)
-            }
-            DecreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
-            DecreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(
-                _inner,
-            ) => Some(_inner),
-            DecreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault(_inner) => {
-                Some(_inner)
-            }
-            DecreaseReplicaCountErrorKind::NoOperationFault(_inner) => Some(_inner),
-            DecreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault(_inner) => Some(_inner),
-            DecreaseReplicaCountErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            DecreaseReplicaCountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11281,19 +11004,15 @@ impl std::error::Error for DecreaseReplicaCountError {
 #[derive(std::fmt::Debug)]
 pub struct DecreaseNodeGroupsInGlobalReplicationGroupError {
     /// Kind of error that occurred.
-    pub kind: DecreaseNodeGroupsInGlobalReplicationGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DecreaseNodeGroupsInGlobalReplicationGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for DecreaseNodeGroupsInGlobalReplicationGroupError
-{
+impl aws_smithy_http::result::CreateUnhandledError for DecreaseNodeGroupsInGlobalReplicationGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -11309,14 +11028,14 @@ pub enum DecreaseNodeGroupsInGlobalReplicationGroupErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DecreaseNodeGroupsInGlobalReplicationGroupError {
@@ -11350,53 +11069,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for DecreaseNodeGroupsInGlobalRep
 }
 impl DecreaseNodeGroupsInGlobalReplicationGroupError {
     /// Creates a new `DecreaseNodeGroupsInGlobalReplicationGroupError`.
-    pub fn new(
-        kind: DecreaseNodeGroupsInGlobalReplicationGroupErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DecreaseNodeGroupsInGlobalReplicationGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DecreaseNodeGroupsInGlobalReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DecreaseNodeGroupsInGlobalReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DecreaseNodeGroupsInGlobalReplicationGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DecreaseNodeGroupsInGlobalReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault`.
     pub fn is_global_replication_group_not_found_fault(&self) -> bool {
         matches!(&self.kind, DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_))
@@ -11411,10 +11123,7 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupError {
     }
     /// Returns `true` if the error kind is `DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for DecreaseNodeGroupsInGlobalReplicationGroupError {
@@ -11444,15 +11153,15 @@ impl std::error::Error for DecreaseNodeGroupsInGlobalReplicationGroupError {
 #[derive(std::fmt::Debug)]
 pub struct CreateUserGroupError {
     /// Kind of error that occurred.
-    pub kind: CreateUserGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateUserGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateUserGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateUserGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -11476,28 +11185,46 @@ pub enum CreateUserGroupErrorKind {
     UserGroupQuotaExceededFault(crate::error::UserGroupQuotaExceededFault),
     /// <p>The user does not exist or could not be found.</p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateUserGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateUserGroupErrorKind::DefaultUserRequired(_inner) => _inner.fmt(f),
-            CreateUserGroupErrorKind::DuplicateUserNameFault(_inner) => _inner.fmt(f),
-            CreateUserGroupErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            CreateUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
-            CreateUserGroupErrorKind::TagQuotaPerResourceExceeded(_inner) => _inner.fmt(f),
-            CreateUserGroupErrorKind::UserGroupAlreadyExistsFault(_inner) => _inner.fmt(f),
-            CreateUserGroupErrorKind::UserGroupQuotaExceededFault(_inner) => _inner.fmt(f),
-            CreateUserGroupErrorKind::UserNotFoundFault(_inner) => _inner.fmt(f),
-            CreateUserGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateUserGroupErrorKind::DefaultUserRequired(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateUserGroupErrorKind::DuplicateUserNameFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateUserGroupErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateUserGroupErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateUserGroupErrorKind::UserGroupAlreadyExistsFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateUserGroupErrorKind::UserGroupQuotaExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateUserGroupErrorKind::UserNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateUserGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -11511,91 +11238,73 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateUserGroupError {
 }
 impl CreateUserGroupError {
     /// Creates a new `CreateUserGroupError`.
-    pub fn new(kind: CreateUserGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateUserGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateUserGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateUserGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateUserGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateUserGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateUserGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateUserGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateUserGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateUserGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateUserGroupErrorKind::DefaultUserRequired`.
     pub fn is_default_user_required(&self) -> bool {
         matches!(&self.kind, CreateUserGroupErrorKind::DefaultUserRequired(_))
     }
     /// Returns `true` if the error kind is `CreateUserGroupErrorKind::DuplicateUserNameFault`.
     pub fn is_duplicate_user_name_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateUserGroupErrorKind::DuplicateUserNameFault(_)
-        )
+        matches!(&self.kind, CreateUserGroupErrorKind::DuplicateUserNameFault(_))
     }
     /// Returns `true` if the error kind is `CreateUserGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateUserGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CreateUserGroupErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CreateUserGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_)
-        )
+        matches!(&self.kind, CreateUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateUserGroupErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateUserGroupErrorKind::TagQuotaPerResourceExceeded(_)
-        )
+        matches!(&self.kind, CreateUserGroupErrorKind::TagQuotaPerResourceExceeded(_))
     }
     /// Returns `true` if the error kind is `CreateUserGroupErrorKind::UserGroupAlreadyExistsFault`.
     pub fn is_user_group_already_exists_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateUserGroupErrorKind::UserGroupAlreadyExistsFault(_)
-        )
+        matches!(&self.kind, CreateUserGroupErrorKind::UserGroupAlreadyExistsFault(_))
     }
     /// Returns `true` if the error kind is `CreateUserGroupErrorKind::UserGroupQuotaExceededFault`.
     pub fn is_user_group_quota_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateUserGroupErrorKind::UserGroupQuotaExceededFault(_)
-        )
+        matches!(&self.kind, CreateUserGroupErrorKind::UserGroupQuotaExceededFault(_))
     }
     /// Returns `true` if the error kind is `CreateUserGroupErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
@@ -11605,15 +11314,33 @@ impl CreateUserGroupError {
 impl std::error::Error for CreateUserGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateUserGroupErrorKind::DefaultUserRequired(_inner) => Some(_inner),
-            CreateUserGroupErrorKind::DuplicateUserNameFault(_inner) => Some(_inner),
-            CreateUserGroupErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            CreateUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            CreateUserGroupErrorKind::TagQuotaPerResourceExceeded(_inner) => Some(_inner),
-            CreateUserGroupErrorKind::UserGroupAlreadyExistsFault(_inner) => Some(_inner),
-            CreateUserGroupErrorKind::UserGroupQuotaExceededFault(_inner) => Some(_inner),
-            CreateUserGroupErrorKind::UserNotFoundFault(_inner) => Some(_inner),
-            CreateUserGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateUserGroupErrorKind::DefaultUserRequired(_inner) =>
+            Some(_inner)
+            ,
+            CreateUserGroupErrorKind::DuplicateUserNameFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateUserGroupErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateUserGroupErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            Some(_inner)
+            ,
+            CreateUserGroupErrorKind::UserGroupAlreadyExistsFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateUserGroupErrorKind::UserGroupQuotaExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateUserGroupErrorKind::UserNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateUserGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -11621,22 +11348,20 @@ impl std::error::Error for CreateUserGroupError {
 /// <p>The number of users exceeds the user group limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserGroupQuotaExceededFault {
+pub struct UserGroupQuotaExceededFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UserGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UserGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserGroupQuotaExceededFault")?;
         if let Some(inner_53) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_53)?;
             }
         }
@@ -11646,7 +11371,7 @@ impl std::fmt::Display for UserGroupQuotaExceededFault {
 impl std::error::Error for UserGroupQuotaExceededFault {}
 /// See [`UserGroupQuotaExceededFault`](crate::error::UserGroupQuotaExceededFault).
 pub mod user_group_quota_exceeded_fault {
-
+    
     /// A builder for [`UserGroupQuotaExceededFault`](crate::error::UserGroupQuotaExceededFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11660,16 +11385,18 @@ pub mod user_group_quota_exceeded_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UserGroupQuotaExceededFault`](crate::error::UserGroupQuotaExceededFault).
         pub fn build(self) -> crate::error::UserGroupQuotaExceededFault {
             crate::error::UserGroupQuotaExceededFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UserGroupQuotaExceededFault {
     /// Creates a new builder-style object to manufacture [`UserGroupQuotaExceededFault`](crate::error::UserGroupQuotaExceededFault).
@@ -11681,22 +11408,20 @@ impl UserGroupQuotaExceededFault {
 /// <p>The user group with this ID already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserGroupAlreadyExistsFault {
+pub struct UserGroupAlreadyExistsFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UserGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UserGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserGroupAlreadyExistsFault")?;
         if let Some(inner_54) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_54)?;
             }
         }
@@ -11706,7 +11431,7 @@ impl std::fmt::Display for UserGroupAlreadyExistsFault {
 impl std::error::Error for UserGroupAlreadyExistsFault {}
 /// See [`UserGroupAlreadyExistsFault`](crate::error::UserGroupAlreadyExistsFault).
 pub mod user_group_already_exists_fault {
-
+    
     /// A builder for [`UserGroupAlreadyExistsFault`](crate::error::UserGroupAlreadyExistsFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11720,16 +11445,18 @@ pub mod user_group_already_exists_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UserGroupAlreadyExistsFault`](crate::error::UserGroupAlreadyExistsFault).
         pub fn build(self) -> crate::error::UserGroupAlreadyExistsFault {
             crate::error::UserGroupAlreadyExistsFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UserGroupAlreadyExistsFault {
     /// Creates a new builder-style object to manufacture [`UserGroupAlreadyExistsFault`](crate::error::UserGroupAlreadyExistsFault).
@@ -11743,15 +11470,15 @@ impl UserGroupAlreadyExistsFault {
 #[derive(std::fmt::Debug)]
 pub struct CreateUserError {
     /// Kind of error that occurred.
-    pub kind: CreateUserErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateUserErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateUserError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateUserErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -11773,27 +11500,43 @@ pub enum CreateUserErrorKind {
     UserAlreadyExistsFault(crate::error::UserAlreadyExistsFault),
     /// <p>The quota of users has been exceeded.</p>
     UserQuotaExceededFault(crate::error::UserQuotaExceededFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateUserErrorKind::DuplicateUserNameFault(_inner) => _inner.fmt(f),
-            CreateUserErrorKind::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
-            CreateUserErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            CreateUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
-            CreateUserErrorKind::TagQuotaPerResourceExceeded(_inner) => _inner.fmt(f),
-            CreateUserErrorKind::UserAlreadyExistsFault(_inner) => _inner.fmt(f),
-            CreateUserErrorKind::UserQuotaExceededFault(_inner) => _inner.fmt(f),
-            CreateUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateUserErrorKind::DuplicateUserNameFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateUserErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateUserErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateUserErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateUserErrorKind::UserAlreadyExistsFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateUserErrorKind::UserQuotaExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateUserErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -11807,77 +11550,65 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateUserError {
 }
 impl CreateUserError {
     /// Creates a new `CreateUserError`.
-    pub fn new(kind: CreateUserErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateUserError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateUserError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateUserErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateUserError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateUserError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateUserErrorKind::DuplicateUserNameFault`.
     pub fn is_duplicate_user_name_fault(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::DuplicateUserNameFault(_))
     }
     /// Returns `true` if the error kind is `CreateUserErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateUserErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, CreateUserErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `CreateUserErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateUserErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CreateUserErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CreateUserErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateUserErrorKind::ServiceLinkedRoleNotFoundFault(_)
-        )
+        matches!(&self.kind, CreateUserErrorKind::ServiceLinkedRoleNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateUserErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateUserErrorKind::TagQuotaPerResourceExceeded(_)
-        )
+        matches!(&self.kind, CreateUserErrorKind::TagQuotaPerResourceExceeded(_))
     }
     /// Returns `true` if the error kind is `CreateUserErrorKind::UserAlreadyExistsFault`.
     pub fn is_user_already_exists_fault(&self) -> bool {
@@ -11891,14 +11622,30 @@ impl CreateUserError {
 impl std::error::Error for CreateUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateUserErrorKind::DuplicateUserNameFault(_inner) => Some(_inner),
-            CreateUserErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
-            CreateUserErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            CreateUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            CreateUserErrorKind::TagQuotaPerResourceExceeded(_inner) => Some(_inner),
-            CreateUserErrorKind::UserAlreadyExistsFault(_inner) => Some(_inner),
-            CreateUserErrorKind::UserQuotaExceededFault(_inner) => Some(_inner),
-            CreateUserErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateUserErrorKind::DuplicateUserNameFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateUserErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateUserErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateUserErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            Some(_inner)
+            ,
+            CreateUserErrorKind::UserAlreadyExistsFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateUserErrorKind::UserQuotaExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateUserErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -11906,22 +11653,20 @@ impl std::error::Error for CreateUserError {
 /// <p>The quota of users has been exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserQuotaExceededFault {
+pub struct UserQuotaExceededFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UserQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UserQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserQuotaExceededFault")?;
         if let Some(inner_55) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_55)?;
             }
         }
@@ -11931,7 +11676,7 @@ impl std::fmt::Display for UserQuotaExceededFault {
 impl std::error::Error for UserQuotaExceededFault {}
 /// See [`UserQuotaExceededFault`](crate::error::UserQuotaExceededFault).
 pub mod user_quota_exceeded_fault {
-
+    
     /// A builder for [`UserQuotaExceededFault`](crate::error::UserQuotaExceededFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11945,16 +11690,18 @@ pub mod user_quota_exceeded_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UserQuotaExceededFault`](crate::error::UserQuotaExceededFault).
         pub fn build(self) -> crate::error::UserQuotaExceededFault {
             crate::error::UserQuotaExceededFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UserQuotaExceededFault {
     /// Creates a new builder-style object to manufacture [`UserQuotaExceededFault`](crate::error::UserQuotaExceededFault).
@@ -11966,22 +11713,20 @@ impl UserQuotaExceededFault {
 /// <p>A user with this ID already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserAlreadyExistsFault {
+pub struct UserAlreadyExistsFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UserAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UserAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserAlreadyExistsFault")?;
         if let Some(inner_56) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_56)?;
             }
         }
@@ -11991,7 +11736,7 @@ impl std::fmt::Display for UserAlreadyExistsFault {
 impl std::error::Error for UserAlreadyExistsFault {}
 /// See [`UserAlreadyExistsFault`](crate::error::UserAlreadyExistsFault).
 pub mod user_already_exists_fault {
-
+    
     /// A builder for [`UserAlreadyExistsFault`](crate::error::UserAlreadyExistsFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12005,16 +11750,18 @@ pub mod user_already_exists_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UserAlreadyExistsFault`](crate::error::UserAlreadyExistsFault).
         pub fn build(self) -> crate::error::UserAlreadyExistsFault {
             crate::error::UserAlreadyExistsFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UserAlreadyExistsFault {
     /// Creates a new builder-style object to manufacture [`UserAlreadyExistsFault`](crate::error::UserAlreadyExistsFault).
@@ -12028,15 +11775,15 @@ impl UserAlreadyExistsFault {
 #[derive(std::fmt::Debug)]
 pub struct CreateSnapshotError {
     /// Kind of error that occurred.
-    pub kind: CreateSnapshotErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateSnapshotErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateSnapshotError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -12058,41 +11805,63 @@ pub enum CreateSnapshotErrorKind {
     ReplicationGroupNotFoundFault(crate::error::ReplicationGroupNotFoundFault),
     /// <p>You already have a snapshot with the given name.</p>
     SnapshotAlreadyExistsFault(crate::error::SnapshotAlreadyExistsFault),
-    /// <p>You attempted one of the following operations:</p>
-    /// <ul>
-    /// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li>
-    /// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li>
-    /// </ul>
+    /// <p>You attempted one of the following operations:</p> 
+    /// <ul> 
+    /// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li> 
+    /// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li> 
+    /// </ul> 
     /// <p>Neither of these are supported by ElastiCache.</p>
     SnapshotFeatureNotSupportedFault(crate::error::SnapshotFeatureNotSupportedFault),
     /// <p>The request cannot be processed because it would exceed the maximum number of snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
     /// <p>The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The maximum number of tags permitted on a resource is 50.</p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateSnapshotErrorKind::CacheClusterNotFoundFault(_inner) => _inner.fmt(f),
-            CreateSnapshotErrorKind::InvalidCacheClusterStateFault(_inner) => _inner.fmt(f),
-            CreateSnapshotErrorKind::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
-            CreateSnapshotErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            CreateSnapshotErrorKind::InvalidReplicationGroupStateFault(_inner) => _inner.fmt(f),
-            CreateSnapshotErrorKind::ReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
-            CreateSnapshotErrorKind::SnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
-            CreateSnapshotErrorKind::SnapshotFeatureNotSupportedFault(_inner) => _inner.fmt(f),
-            CreateSnapshotErrorKind::SnapshotQuotaExceededFault(_inner) => _inner.fmt(f),
-            CreateSnapshotErrorKind::TagQuotaPerResourceExceeded(_inner) => _inner.fmt(f),
-            CreateSnapshotErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateSnapshotErrorKind::CacheClusterNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSnapshotErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSnapshotErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSnapshotErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSnapshotErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSnapshotErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSnapshotErrorKind::SnapshotAlreadyExistsFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSnapshotErrorKind::SnapshotFeatureNotSupportedFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSnapshotErrorKind::SnapshotQuotaExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSnapshotErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSnapshotErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -12106,131 +11875,123 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateSnapshotError {
 }
 impl CreateSnapshotError {
     /// Creates a new `CreateSnapshotError`.
-    pub fn new(kind: CreateSnapshotErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateSnapshotError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateSnapshotError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateSnapshotErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateSnapshotError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateSnapshotError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateSnapshotErrorKind::CacheClusterNotFoundFault`.
     pub fn is_cache_cluster_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSnapshotErrorKind::CacheClusterNotFoundFault(_)
-        )
+        matches!(&self.kind, CreateSnapshotErrorKind::CacheClusterNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateSnapshotErrorKind::InvalidCacheClusterStateFault`.
     pub fn is_invalid_cache_cluster_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSnapshotErrorKind::InvalidCacheClusterStateFault(_)
-        )
+        matches!(&self.kind, CreateSnapshotErrorKind::InvalidCacheClusterStateFault(_))
     }
     /// Returns `true` if the error kind is `CreateSnapshotErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSnapshotErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, CreateSnapshotErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `CreateSnapshotErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSnapshotErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CreateSnapshotErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CreateSnapshotErrorKind::InvalidReplicationGroupStateFault`.
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSnapshotErrorKind::InvalidReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, CreateSnapshotErrorKind::InvalidReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `CreateSnapshotErrorKind::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSnapshotErrorKind::ReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, CreateSnapshotErrorKind::ReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateSnapshotErrorKind::SnapshotAlreadyExistsFault`.
     pub fn is_snapshot_already_exists_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSnapshotErrorKind::SnapshotAlreadyExistsFault(_)
-        )
+        matches!(&self.kind, CreateSnapshotErrorKind::SnapshotAlreadyExistsFault(_))
     }
     /// Returns `true` if the error kind is `CreateSnapshotErrorKind::SnapshotFeatureNotSupportedFault`.
     pub fn is_snapshot_feature_not_supported_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSnapshotErrorKind::SnapshotFeatureNotSupportedFault(_)
-        )
+        matches!(&self.kind, CreateSnapshotErrorKind::SnapshotFeatureNotSupportedFault(_))
     }
     /// Returns `true` if the error kind is `CreateSnapshotErrorKind::SnapshotQuotaExceededFault`.
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSnapshotErrorKind::SnapshotQuotaExceededFault(_)
-        )
+        matches!(&self.kind, CreateSnapshotErrorKind::SnapshotQuotaExceededFault(_))
     }
     /// Returns `true` if the error kind is `CreateSnapshotErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSnapshotErrorKind::TagQuotaPerResourceExceeded(_)
-        )
+        matches!(&self.kind, CreateSnapshotErrorKind::TagQuotaPerResourceExceeded(_))
     }
 }
 impl std::error::Error for CreateSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateSnapshotErrorKind::CacheClusterNotFoundFault(_inner) => Some(_inner),
-            CreateSnapshotErrorKind::InvalidCacheClusterStateFault(_inner) => Some(_inner),
-            CreateSnapshotErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
-            CreateSnapshotErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            CreateSnapshotErrorKind::InvalidReplicationGroupStateFault(_inner) => Some(_inner),
-            CreateSnapshotErrorKind::ReplicationGroupNotFoundFault(_inner) => Some(_inner),
-            CreateSnapshotErrorKind::SnapshotAlreadyExistsFault(_inner) => Some(_inner),
-            CreateSnapshotErrorKind::SnapshotFeatureNotSupportedFault(_inner) => Some(_inner),
-            CreateSnapshotErrorKind::SnapshotQuotaExceededFault(_inner) => Some(_inner),
-            CreateSnapshotErrorKind::TagQuotaPerResourceExceeded(_inner) => Some(_inner),
-            CreateSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateSnapshotErrorKind::CacheClusterNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateSnapshotErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateSnapshotErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSnapshotErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSnapshotErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateSnapshotErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateSnapshotErrorKind::SnapshotAlreadyExistsFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateSnapshotErrorKind::SnapshotFeatureNotSupportedFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateSnapshotErrorKind::SnapshotQuotaExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateSnapshotErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            Some(_inner)
+            ,
+            CreateSnapshotErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -12240,15 +12001,15 @@ impl std::error::Error for CreateSnapshotError {
 #[derive(std::fmt::Debug)]
 pub struct CreateReplicationGroupError {
     /// Kind of error that occurred.
-    pub kind: CreateReplicationGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateReplicationGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateReplicationGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -12283,9 +12044,7 @@ pub enum CreateReplicationGroupErrorKind {
     /// <p>The VPC network is in an invalid state.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
-    NodeGroupsPerReplicationGroupQuotaExceededFault(
-        crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault,
-    ),
+    NodeGroupsPerReplicationGroupQuotaExceededFault(crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault),
     /// <p>The request cannot be processed because it would exceed the allowed number of cache nodes in a single cluster.</p>
     NodeQuotaForClusterExceededFault(crate::error::NodeQuotaForClusterExceededFault),
     /// <p>The request cannot be processed because it would exceed the allowed number of cache nodes per customer.</p>
@@ -12296,63 +12055,79 @@ pub enum CreateReplicationGroupErrorKind {
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
     /// <p>The user group was not found or does not exist</p>
     UserGroupNotFoundFault(crate::error::UserGroupNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateReplicationGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateReplicationGroupErrorKind::CacheClusterNotFoundFault(_inner) => _inner.fmt(f),
-            CreateReplicationGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) => {
+            CreateReplicationGroupErrorKind::CacheClusterNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::CacheSubnetGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::ClusterQuotaForCustomerExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::InvalidUserGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::InvalidVpcNetworkStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::NodeQuotaForClusterExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::ReplicationGroupAlreadyExistsFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::UserGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateReplicationGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateReplicationGroupErrorKind::CacheSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
-            CreateReplicationGroupErrorKind::ClusterQuotaForCustomerExceededFault(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateReplicationGroupErrorKind::InvalidCacheClusterStateFault(_inner) => _inner.fmt(f),
-            CreateReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateReplicationGroupErrorKind::InvalidParameterCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateReplicationGroupErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateReplicationGroupErrorKind::InvalidUserGroupStateFault(_inner) => _inner.fmt(f),
-            CreateReplicationGroupErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
-            CreateReplicationGroupErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(
-                _inner,
-            ) => _inner.fmt(f),
-            CreateReplicationGroupErrorKind::NodeQuotaForClusterExceededFault(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateReplicationGroupErrorKind::ReplicationGroupAlreadyExistsFault(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateReplicationGroupErrorKind::TagQuotaPerResourceExceeded(_inner) => _inner.fmt(f),
-            CreateReplicationGroupErrorKind::UserGroupNotFoundFault(_inner) => _inner.fmt(f),
-            CreateReplicationGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -12366,229 +12141,186 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateReplicationGroupError {
 }
 impl CreateReplicationGroupError {
     /// Creates a new `CreateReplicationGroupError`.
-    pub fn new(kind: CreateReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateReplicationGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateReplicationGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::CacheClusterNotFoundFault`.
     pub fn is_cache_cluster_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::CacheClusterNotFoundFault(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::CacheClusterNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::CacheParameterGroupNotFoundFault`.
     pub fn is_cache_parameter_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::CacheParameterGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::CacheParameterGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault`.
     pub fn is_cache_security_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::CacheSubnetGroupNotFoundFault`.
     pub fn is_cache_subnet_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::CacheSubnetGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::CacheSubnetGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::ClusterQuotaForCustomerExceededFault`.
     pub fn is_cluster_quota_for_customer_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::ClusterQuotaForCustomerExceededFault(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::ClusterQuotaForCustomerExceededFault(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault`.
     pub fn is_global_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault`.
     pub fn is_insufficient_cache_cluster_capacity_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::InvalidCacheClusterStateFault`.
     pub fn is_invalid_cache_cluster_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::InvalidCacheClusterStateFault(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::InvalidCacheClusterStateFault(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault`.
     pub fn is_invalid_global_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::InvalidUserGroupStateFault`.
     pub fn is_invalid_user_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::InvalidUserGroupStateFault(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::InvalidUserGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::InvalidVpcNetworkStateFault(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::InvalidVpcNetworkStateFault(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault`.
     pub fn is_node_groups_per_replication_group_quota_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::NodeQuotaForClusterExceededFault`.
     pub fn is_node_quota_for_cluster_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::NodeQuotaForClusterExceededFault(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::NodeQuotaForClusterExceededFault(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault`.
     pub fn is_node_quota_for_customer_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::ReplicationGroupAlreadyExistsFault`.
     pub fn is_replication_group_already_exists_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::ReplicationGroupAlreadyExistsFault(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::ReplicationGroupAlreadyExistsFault(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::TagQuotaPerResourceExceeded(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::TagQuotaPerResourceExceeded(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationGroupErrorKind::UserGroupNotFoundFault`.
     pub fn is_user_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateReplicationGroupErrorKind::UserGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, CreateReplicationGroupErrorKind::UserGroupNotFoundFault(_))
     }
 }
 impl std::error::Error for CreateReplicationGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateReplicationGroupErrorKind::CacheClusterNotFoundFault(_inner) => Some(_inner),
-            CreateReplicationGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) => {
+            CreateReplicationGroupErrorKind::CacheClusterNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::CacheSubnetGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::ClusterQuotaForCustomerExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::InvalidCacheClusterStateFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::InvalidUserGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::InvalidVpcNetworkStateFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::NodeQuotaForClusterExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::ReplicationGroupAlreadyExistsFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::UserGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateReplicationGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault(_inner) => {
-                Some(_inner)
-            }
-            CreateReplicationGroupErrorKind::CacheSubnetGroupNotFoundFault(_inner) => Some(_inner),
-            CreateReplicationGroupErrorKind::ClusterQuotaForCustomerExceededFault(_inner) => {
-                Some(_inner)
-            }
-            CreateReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(_inner) => {
-                Some(_inner)
-            }
-            CreateReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault(_inner) => {
-                Some(_inner)
-            }
-            CreateReplicationGroupErrorKind::InvalidCacheClusterStateFault(_inner) => Some(_inner),
-            CreateReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(_inner) => {
-                Some(_inner)
-            }
-            CreateReplicationGroupErrorKind::InvalidParameterCombinationException(_inner) => {
-                Some(_inner)
-            }
-            CreateReplicationGroupErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            CreateReplicationGroupErrorKind::InvalidUserGroupStateFault(_inner) => Some(_inner),
-            CreateReplicationGroupErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
-            CreateReplicationGroupErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(
-                _inner,
-            ) => Some(_inner),
-            CreateReplicationGroupErrorKind::NodeQuotaForClusterExceededFault(_inner) => {
-                Some(_inner)
-            }
-            CreateReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(_inner) => {
-                Some(_inner)
-            }
-            CreateReplicationGroupErrorKind::ReplicationGroupAlreadyExistsFault(_inner) => {
-                Some(_inner)
-            }
-            CreateReplicationGroupErrorKind::TagQuotaPerResourceExceeded(_inner) => Some(_inner),
-            CreateReplicationGroupErrorKind::UserGroupNotFoundFault(_inner) => Some(_inner),
-            CreateReplicationGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12596,22 +12328,20 @@ impl std::error::Error for CreateReplicationGroupError {
 /// <p>The specified replication group already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationGroupAlreadyExistsFault {
+pub struct ReplicationGroupAlreadyExistsFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ReplicationGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ReplicationGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReplicationGroupAlreadyExistsFault")?;
         if let Some(inner_57) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_57)?;
             }
         }
@@ -12621,7 +12351,7 @@ impl std::fmt::Display for ReplicationGroupAlreadyExistsFault {
 impl std::error::Error for ReplicationGroupAlreadyExistsFault {}
 /// See [`ReplicationGroupAlreadyExistsFault`](crate::error::ReplicationGroupAlreadyExistsFault).
 pub mod replication_group_already_exists_fault {
-
+    
     /// A builder for [`ReplicationGroupAlreadyExistsFault`](crate::error::ReplicationGroupAlreadyExistsFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12635,16 +12365,18 @@ pub mod replication_group_already_exists_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ReplicationGroupAlreadyExistsFault`](crate::error::ReplicationGroupAlreadyExistsFault).
         pub fn build(self) -> crate::error::ReplicationGroupAlreadyExistsFault {
             crate::error::ReplicationGroupAlreadyExistsFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ReplicationGroupAlreadyExistsFault {
     /// Creates a new builder-style object to manufacture [`ReplicationGroupAlreadyExistsFault`](crate::error::ReplicationGroupAlreadyExistsFault).
@@ -12658,17 +12390,15 @@ impl ReplicationGroupAlreadyExistsFault {
 #[derive(std::fmt::Debug)]
 pub struct CreateGlobalReplicationGroupError {
     /// Kind of error that occurred.
-    pub kind: CreateGlobalReplicationGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateGlobalReplicationGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateGlobalReplicationGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: CreateGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -12677,9 +12407,7 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateGlobalReplicationGr
 #[derive(std::fmt::Debug)]
 pub enum CreateGlobalReplicationGroupErrorKind {
     /// <p>The Global datastore name already exists.</p>
-    GlobalReplicationGroupAlreadyExistsFault(
-        crate::error::GlobalReplicationGroupAlreadyExistsFault,
-    ),
+    GlobalReplicationGroupAlreadyExistsFault(crate::error::GlobalReplicationGroupAlreadyExistsFault),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The requested replication group is not in the <code>available</code> state.</p>
@@ -12688,35 +12416,37 @@ pub enum CreateGlobalReplicationGroupErrorKind {
     ReplicationGroupNotFoundFault(crate::error::ReplicationGroupNotFoundFault),
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGlobalReplicationGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateGlobalReplicationGroupErrorKind::GlobalReplicationGroupAlreadyExistsFault(
-                _inner,
-            ) => _inner.fmt(f),
-            CreateGlobalReplicationGroupErrorKind::InvalidParameterValueException(_inner) => {
+            CreateGlobalReplicationGroupErrorKind::GlobalReplicationGroupAlreadyExistsFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGlobalReplicationGroupErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGlobalReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGlobalReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGlobalReplicationGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGlobalReplicationGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateGlobalReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateGlobalReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateGlobalReplicationGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateGlobalReplicationGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -12730,105 +12460,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateGlobalReplicationGroupE
 }
 impl CreateGlobalReplicationGroupError {
     /// Creates a new `CreateGlobalReplicationGroupError`.
-    pub fn new(kind: CreateGlobalReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateGlobalReplicationGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateGlobalReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateGlobalReplicationGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateGlobalReplicationGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateGlobalReplicationGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateGlobalReplicationGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateGlobalReplicationGroupErrorKind::GlobalReplicationGroupAlreadyExistsFault`.
     pub fn is_global_replication_group_already_exists_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGlobalReplicationGroupErrorKind::GlobalReplicationGroupAlreadyExistsFault(_)
-        )
+        matches!(&self.kind, CreateGlobalReplicationGroupErrorKind::GlobalReplicationGroupAlreadyExistsFault(_))
     }
     /// Returns `true` if the error kind is `CreateGlobalReplicationGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGlobalReplicationGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CreateGlobalReplicationGroupErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CreateGlobalReplicationGroupErrorKind::InvalidReplicationGroupStateFault`.
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGlobalReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, CreateGlobalReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `CreateGlobalReplicationGroupErrorKind::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGlobalReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, CreateGlobalReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateGlobalReplicationGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGlobalReplicationGroupErrorKind::ServiceLinkedRoleNotFoundFault(_)
-        )
+        matches!(&self.kind, CreateGlobalReplicationGroupErrorKind::ServiceLinkedRoleNotFoundFault(_))
     }
 }
 impl std::error::Error for CreateGlobalReplicationGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateGlobalReplicationGroupErrorKind::GlobalReplicationGroupAlreadyExistsFault(
-                _inner,
-            ) => Some(_inner),
-            CreateGlobalReplicationGroupErrorKind::InvalidParameterValueException(_inner) => {
+            CreateGlobalReplicationGroupErrorKind::GlobalReplicationGroupAlreadyExistsFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateGlobalReplicationGroupErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGlobalReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateGlobalReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateGlobalReplicationGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateGlobalReplicationGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateGlobalReplicationGroupErrorKind::InvalidReplicationGroupStateFault(_inner) => {
-                Some(_inner)
-            }
-            CreateGlobalReplicationGroupErrorKind::ReplicationGroupNotFoundFault(_inner) => {
-                Some(_inner)
-            }
-            CreateGlobalReplicationGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => {
-                Some(_inner)
-            }
-            CreateGlobalReplicationGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12836,22 +12549,20 @@ impl std::error::Error for CreateGlobalReplicationGroupError {
 /// <p>The Global datastore name already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GlobalReplicationGroupAlreadyExistsFault {
+pub struct GlobalReplicationGroupAlreadyExistsFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl GlobalReplicationGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for GlobalReplicationGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlobalReplicationGroupAlreadyExistsFault")?;
         if let Some(inner_58) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_58)?;
             }
         }
@@ -12861,7 +12572,7 @@ impl std::fmt::Display for GlobalReplicationGroupAlreadyExistsFault {
 impl std::error::Error for GlobalReplicationGroupAlreadyExistsFault {}
 /// See [`GlobalReplicationGroupAlreadyExistsFault`](crate::error::GlobalReplicationGroupAlreadyExistsFault).
 pub mod global_replication_group_already_exists_fault {
-
+    
     /// A builder for [`GlobalReplicationGroupAlreadyExistsFault`](crate::error::GlobalReplicationGroupAlreadyExistsFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12875,16 +12586,18 @@ pub mod global_replication_group_already_exists_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`GlobalReplicationGroupAlreadyExistsFault`](crate::error::GlobalReplicationGroupAlreadyExistsFault).
         pub fn build(self) -> crate::error::GlobalReplicationGroupAlreadyExistsFault {
             crate::error::GlobalReplicationGroupAlreadyExistsFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl GlobalReplicationGroupAlreadyExistsFault {
     /// Creates a new builder-style object to manufacture [`GlobalReplicationGroupAlreadyExistsFault`](crate::error::GlobalReplicationGroupAlreadyExistsFault).
@@ -12898,15 +12611,15 @@ impl GlobalReplicationGroupAlreadyExistsFault {
 #[derive(std::fmt::Debug)]
 pub struct CreateCacheSubnetGroupError {
     /// Kind of error that occurred.
-    pub kind: CreateCacheSubnetGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateCacheSubnetGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateCacheSubnetGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateCacheSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -12926,30 +12639,40 @@ pub enum CreateCacheSubnetGroupErrorKind {
     SubnetNotAllowedFault(crate::error::SubnetNotAllowedFault),
     /// <p>The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The maximum number of tags permitted on a resource is 50.</p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCacheSubnetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateCacheSubnetGroupErrorKind::CacheSubnetGroupAlreadyExistsFault(_inner) => {
+            CreateCacheSubnetGroupErrorKind::CacheSubnetGroupAlreadyExistsFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheSubnetGroupErrorKind::CacheSubnetGroupQuotaExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheSubnetGroupErrorKind::CacheSubnetQuotaExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheSubnetGroupErrorKind::InvalidSubnet(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheSubnetGroupErrorKind::SubnetNotAllowedFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheSubnetGroupErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheSubnetGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateCacheSubnetGroupErrorKind::CacheSubnetGroupQuotaExceededFault(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCacheSubnetGroupErrorKind::CacheSubnetQuotaExceededFault(_inner) => _inner.fmt(f),
-            CreateCacheSubnetGroupErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
-            CreateCacheSubnetGroupErrorKind::SubnetNotAllowedFault(_inner) => _inner.fmt(f),
-            CreateCacheSubnetGroupErrorKind::TagQuotaPerResourceExceeded(_inner) => _inner.fmt(f),
-            CreateCacheSubnetGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -12963,107 +12686,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateCacheSubnetGroupError {
 }
 impl CreateCacheSubnetGroupError {
     /// Creates a new `CreateCacheSubnetGroupError`.
-    pub fn new(kind: CreateCacheSubnetGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateCacheSubnetGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateCacheSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateCacheSubnetGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateCacheSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateCacheSubnetGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateCacheSubnetGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateCacheSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateCacheSubnetGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateCacheSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateCacheSubnetGroupErrorKind::CacheSubnetGroupAlreadyExistsFault`.
     pub fn is_cache_subnet_group_already_exists_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheSubnetGroupErrorKind::CacheSubnetGroupAlreadyExistsFault(_)
-        )
+        matches!(&self.kind, CreateCacheSubnetGroupErrorKind::CacheSubnetGroupAlreadyExistsFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheSubnetGroupErrorKind::CacheSubnetGroupQuotaExceededFault`.
     pub fn is_cache_subnet_group_quota_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheSubnetGroupErrorKind::CacheSubnetGroupQuotaExceededFault(_)
-        )
+        matches!(&self.kind, CreateCacheSubnetGroupErrorKind::CacheSubnetGroupQuotaExceededFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheSubnetGroupErrorKind::CacheSubnetQuotaExceededFault`.
     pub fn is_cache_subnet_quota_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheSubnetGroupErrorKind::CacheSubnetQuotaExceededFault(_)
-        )
+        matches!(&self.kind, CreateCacheSubnetGroupErrorKind::CacheSubnetQuotaExceededFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheSubnetGroupErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheSubnetGroupErrorKind::InvalidSubnet(_)
-        )
+        matches!(&self.kind, CreateCacheSubnetGroupErrorKind::InvalidSubnet(_))
     }
     /// Returns `true` if the error kind is `CreateCacheSubnetGroupErrorKind::SubnetNotAllowedFault`.
     pub fn is_subnet_not_allowed_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheSubnetGroupErrorKind::SubnetNotAllowedFault(_)
-        )
+        matches!(&self.kind, CreateCacheSubnetGroupErrorKind::SubnetNotAllowedFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheSubnetGroupErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheSubnetGroupErrorKind::TagQuotaPerResourceExceeded(_)
-        )
+        matches!(&self.kind, CreateCacheSubnetGroupErrorKind::TagQuotaPerResourceExceeded(_))
     }
 }
 impl std::error::Error for CreateCacheSubnetGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateCacheSubnetGroupErrorKind::CacheSubnetGroupAlreadyExistsFault(_inner) => {
+            CreateCacheSubnetGroupErrorKind::CacheSubnetGroupAlreadyExistsFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheSubnetGroupErrorKind::CacheSubnetGroupQuotaExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheSubnetGroupErrorKind::CacheSubnetQuotaExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheSubnetGroupErrorKind::InvalidSubnet(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheSubnetGroupErrorKind::SubnetNotAllowedFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheSubnetGroupErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheSubnetGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateCacheSubnetGroupErrorKind::CacheSubnetGroupQuotaExceededFault(_inner) => {
-                Some(_inner)
-            }
-            CreateCacheSubnetGroupErrorKind::CacheSubnetQuotaExceededFault(_inner) => Some(_inner),
-            CreateCacheSubnetGroupErrorKind::InvalidSubnet(_inner) => Some(_inner),
-            CreateCacheSubnetGroupErrorKind::SubnetNotAllowedFault(_inner) => Some(_inner),
-            CreateCacheSubnetGroupErrorKind::TagQuotaPerResourceExceeded(_inner) => Some(_inner),
-            CreateCacheSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13071,22 +12782,20 @@ impl std::error::Error for CreateCacheSubnetGroupError {
 /// <p>The request cannot be processed because it would exceed the allowed number of cache subnet groups.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CacheSubnetGroupQuotaExceededFault {
+pub struct CacheSubnetGroupQuotaExceededFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CacheSubnetGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CacheSubnetGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CacheSubnetGroupQuotaExceededFault")?;
         if let Some(inner_59) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_59)?;
             }
         }
@@ -13096,7 +12805,7 @@ impl std::fmt::Display for CacheSubnetGroupQuotaExceededFault {
 impl std::error::Error for CacheSubnetGroupQuotaExceededFault {}
 /// See [`CacheSubnetGroupQuotaExceededFault`](crate::error::CacheSubnetGroupQuotaExceededFault).
 pub mod cache_subnet_group_quota_exceeded_fault {
-
+    
     /// A builder for [`CacheSubnetGroupQuotaExceededFault`](crate::error::CacheSubnetGroupQuotaExceededFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13110,16 +12819,18 @@ pub mod cache_subnet_group_quota_exceeded_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CacheSubnetGroupQuotaExceededFault`](crate::error::CacheSubnetGroupQuotaExceededFault).
         pub fn build(self) -> crate::error::CacheSubnetGroupQuotaExceededFault {
             crate::error::CacheSubnetGroupQuotaExceededFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CacheSubnetGroupQuotaExceededFault {
     /// Creates a new builder-style object to manufacture [`CacheSubnetGroupQuotaExceededFault`](crate::error::CacheSubnetGroupQuotaExceededFault).
@@ -13131,22 +12842,20 @@ impl CacheSubnetGroupQuotaExceededFault {
 /// <p>The requested cache subnet group name is already in use by an existing cache subnet group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CacheSubnetGroupAlreadyExistsFault {
+pub struct CacheSubnetGroupAlreadyExistsFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CacheSubnetGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CacheSubnetGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CacheSubnetGroupAlreadyExistsFault")?;
         if let Some(inner_60) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_60)?;
             }
         }
@@ -13156,7 +12865,7 @@ impl std::fmt::Display for CacheSubnetGroupAlreadyExistsFault {
 impl std::error::Error for CacheSubnetGroupAlreadyExistsFault {}
 /// See [`CacheSubnetGroupAlreadyExistsFault`](crate::error::CacheSubnetGroupAlreadyExistsFault).
 pub mod cache_subnet_group_already_exists_fault {
-
+    
     /// A builder for [`CacheSubnetGroupAlreadyExistsFault`](crate::error::CacheSubnetGroupAlreadyExistsFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13170,16 +12879,18 @@ pub mod cache_subnet_group_already_exists_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CacheSubnetGroupAlreadyExistsFault`](crate::error::CacheSubnetGroupAlreadyExistsFault).
         pub fn build(self) -> crate::error::CacheSubnetGroupAlreadyExistsFault {
             crate::error::CacheSubnetGroupAlreadyExistsFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CacheSubnetGroupAlreadyExistsFault {
     /// Creates a new builder-style object to manufacture [`CacheSubnetGroupAlreadyExistsFault`](crate::error::CacheSubnetGroupAlreadyExistsFault).
@@ -13193,17 +12904,15 @@ impl CacheSubnetGroupAlreadyExistsFault {
 #[derive(std::fmt::Debug)]
 pub struct CreateCacheSecurityGroupError {
     /// Kind of error that occurred.
-    pub kind: CreateCacheSecurityGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateCacheSecurityGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateCacheSecurityGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateCacheSecurityGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: CreateCacheSecurityGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -13221,33 +12930,37 @@ pub enum CreateCacheSecurityGroupErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The maximum number of tags permitted on a resource is 50.</p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCacheSecurityGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateCacheSecurityGroupErrorKind::CacheSecurityGroupAlreadyExistsFault(_inner) => {
+            CreateCacheSecurityGroupErrorKind::CacheSecurityGroupAlreadyExistsFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheSecurityGroupErrorKind::CacheSecurityGroupQuotaExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheSecurityGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheSecurityGroupErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheSecurityGroupErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheSecurityGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateCacheSecurityGroupErrorKind::CacheSecurityGroupQuotaExceededFault(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCacheSecurityGroupErrorKind::InvalidParameterCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCacheSecurityGroupErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCacheSecurityGroupErrorKind::TagQuotaPerResourceExceeded(_inner) => _inner.fmt(f),
-            CreateCacheSecurityGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -13261,103 +12974,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateCacheSecurityGroupError
 }
 impl CreateCacheSecurityGroupError {
     /// Creates a new `CreateCacheSecurityGroupError`.
-    pub fn new(kind: CreateCacheSecurityGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateCacheSecurityGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateCacheSecurityGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateCacheSecurityGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateCacheSecurityGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateCacheSecurityGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateCacheSecurityGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateCacheSecurityGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateCacheSecurityGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateCacheSecurityGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateCacheSecurityGroupErrorKind::CacheSecurityGroupAlreadyExistsFault`.
     pub fn is_cache_security_group_already_exists_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheSecurityGroupErrorKind::CacheSecurityGroupAlreadyExistsFault(_)
-        )
+        matches!(&self.kind, CreateCacheSecurityGroupErrorKind::CacheSecurityGroupAlreadyExistsFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheSecurityGroupErrorKind::CacheSecurityGroupQuotaExceededFault`.
     pub fn is_cache_security_group_quota_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheSecurityGroupErrorKind::CacheSecurityGroupQuotaExceededFault(_)
-        )
+        matches!(&self.kind, CreateCacheSecurityGroupErrorKind::CacheSecurityGroupQuotaExceededFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheSecurityGroupErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheSecurityGroupErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, CreateCacheSecurityGroupErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `CreateCacheSecurityGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheSecurityGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CreateCacheSecurityGroupErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CreateCacheSecurityGroupErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheSecurityGroupErrorKind::TagQuotaPerResourceExceeded(_)
-        )
+        matches!(&self.kind, CreateCacheSecurityGroupErrorKind::TagQuotaPerResourceExceeded(_))
     }
 }
 impl std::error::Error for CreateCacheSecurityGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateCacheSecurityGroupErrorKind::CacheSecurityGroupAlreadyExistsFault(_inner) => {
+            CreateCacheSecurityGroupErrorKind::CacheSecurityGroupAlreadyExistsFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheSecurityGroupErrorKind::CacheSecurityGroupQuotaExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheSecurityGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheSecurityGroupErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheSecurityGroupErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheSecurityGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateCacheSecurityGroupErrorKind::CacheSecurityGroupQuotaExceededFault(_inner) => {
-                Some(_inner)
-            }
-            CreateCacheSecurityGroupErrorKind::InvalidParameterCombinationException(_inner) => {
-                Some(_inner)
-            }
-            CreateCacheSecurityGroupErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            CreateCacheSecurityGroupErrorKind::TagQuotaPerResourceExceeded(_inner) => Some(_inner),
-            CreateCacheSecurityGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13365,22 +13063,20 @@ impl std::error::Error for CreateCacheSecurityGroupError {
 /// <p>The request cannot be processed because it would exceed the allowed number of cache security groups.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CacheSecurityGroupQuotaExceededFault {
+pub struct CacheSecurityGroupQuotaExceededFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CacheSecurityGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CacheSecurityGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CacheSecurityGroupQuotaExceededFault")?;
         if let Some(inner_61) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_61)?;
             }
         }
@@ -13390,7 +13086,7 @@ impl std::fmt::Display for CacheSecurityGroupQuotaExceededFault {
 impl std::error::Error for CacheSecurityGroupQuotaExceededFault {}
 /// See [`CacheSecurityGroupQuotaExceededFault`](crate::error::CacheSecurityGroupQuotaExceededFault).
 pub mod cache_security_group_quota_exceeded_fault {
-
+    
     /// A builder for [`CacheSecurityGroupQuotaExceededFault`](crate::error::CacheSecurityGroupQuotaExceededFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13404,16 +13100,18 @@ pub mod cache_security_group_quota_exceeded_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CacheSecurityGroupQuotaExceededFault`](crate::error::CacheSecurityGroupQuotaExceededFault).
         pub fn build(self) -> crate::error::CacheSecurityGroupQuotaExceededFault {
             crate::error::CacheSecurityGroupQuotaExceededFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CacheSecurityGroupQuotaExceededFault {
     /// Creates a new builder-style object to manufacture [`CacheSecurityGroupQuotaExceededFault`](crate::error::CacheSecurityGroupQuotaExceededFault).
@@ -13425,22 +13123,20 @@ impl CacheSecurityGroupQuotaExceededFault {
 /// <p>A cache security group with the specified name already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CacheSecurityGroupAlreadyExistsFault {
+pub struct CacheSecurityGroupAlreadyExistsFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CacheSecurityGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CacheSecurityGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CacheSecurityGroupAlreadyExistsFault")?;
         if let Some(inner_62) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_62)?;
             }
         }
@@ -13450,7 +13146,7 @@ impl std::fmt::Display for CacheSecurityGroupAlreadyExistsFault {
 impl std::error::Error for CacheSecurityGroupAlreadyExistsFault {}
 /// See [`CacheSecurityGroupAlreadyExistsFault`](crate::error::CacheSecurityGroupAlreadyExistsFault).
 pub mod cache_security_group_already_exists_fault {
-
+    
     /// A builder for [`CacheSecurityGroupAlreadyExistsFault`](crate::error::CacheSecurityGroupAlreadyExistsFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13464,16 +13160,18 @@ pub mod cache_security_group_already_exists_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CacheSecurityGroupAlreadyExistsFault`](crate::error::CacheSecurityGroupAlreadyExistsFault).
         pub fn build(self) -> crate::error::CacheSecurityGroupAlreadyExistsFault {
             crate::error::CacheSecurityGroupAlreadyExistsFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CacheSecurityGroupAlreadyExistsFault {
     /// Creates a new builder-style object to manufacture [`CacheSecurityGroupAlreadyExistsFault`](crate::error::CacheSecurityGroupAlreadyExistsFault).
@@ -13487,17 +13185,15 @@ impl CacheSecurityGroupAlreadyExistsFault {
 #[derive(std::fmt::Debug)]
 pub struct CreateCacheParameterGroupError {
     /// Kind of error that occurred.
-    pub kind: CreateCacheParameterGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateCacheParameterGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateCacheParameterGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: CreateCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -13517,38 +13213,40 @@ pub enum CreateCacheParameterGroupErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The maximum number of tags permitted on a resource is 50.</p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCacheParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateCacheParameterGroupErrorKind::CacheParameterGroupAlreadyExistsFault(_inner) => {
+            CreateCacheParameterGroupErrorKind::CacheParameterGroupAlreadyExistsFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheParameterGroupErrorKind::CacheParameterGroupQuotaExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheParameterGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheParameterGroupErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheParameterGroupErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheParameterGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateCacheParameterGroupErrorKind::CacheParameterGroupQuotaExceededFault(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCacheParameterGroupErrorKind::InvalidParameterCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCacheParameterGroupErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCacheParameterGroupErrorKind::TagQuotaPerResourceExceeded(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCacheParameterGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -13562,113 +13260,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateCacheParameterGroupErro
 }
 impl CreateCacheParameterGroupError {
     /// Creates a new `CreateCacheParameterGroupError`.
-    pub fn new(kind: CreateCacheParameterGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateCacheParameterGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateCacheParameterGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateCacheParameterGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateCacheParameterGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateCacheParameterGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateCacheParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateCacheParameterGroupErrorKind::CacheParameterGroupAlreadyExistsFault`.
     pub fn is_cache_parameter_group_already_exists_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheParameterGroupErrorKind::CacheParameterGroupAlreadyExistsFault(_)
-        )
+        matches!(&self.kind, CreateCacheParameterGroupErrorKind::CacheParameterGroupAlreadyExistsFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheParameterGroupErrorKind::CacheParameterGroupQuotaExceededFault`.
     pub fn is_cache_parameter_group_quota_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheParameterGroupErrorKind::CacheParameterGroupQuotaExceededFault(_)
-        )
+        matches!(&self.kind, CreateCacheParameterGroupErrorKind::CacheParameterGroupQuotaExceededFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault`.
     pub fn is_invalid_cache_parameter_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_)
-        )
+        matches!(&self.kind, CreateCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheParameterGroupErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheParameterGroupErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, CreateCacheParameterGroupErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `CreateCacheParameterGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheParameterGroupErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CreateCacheParameterGroupErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CreateCacheParameterGroupErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheParameterGroupErrorKind::TagQuotaPerResourceExceeded(_)
-        )
+        matches!(&self.kind, CreateCacheParameterGroupErrorKind::TagQuotaPerResourceExceeded(_))
     }
 }
 impl std::error::Error for CreateCacheParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateCacheParameterGroupErrorKind::CacheParameterGroupAlreadyExistsFault(_inner) => {
+            CreateCacheParameterGroupErrorKind::CacheParameterGroupAlreadyExistsFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheParameterGroupErrorKind::CacheParameterGroupQuotaExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheParameterGroupErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheParameterGroupErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheParameterGroupErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheParameterGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateCacheParameterGroupErrorKind::CacheParameterGroupQuotaExceededFault(_inner) => {
-                Some(_inner)
-            }
-            CreateCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(_inner) => {
-                Some(_inner)
-            }
-            CreateCacheParameterGroupErrorKind::InvalidParameterCombinationException(_inner) => {
-                Some(_inner)
-            }
-            CreateCacheParameterGroupErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            CreateCacheParameterGroupErrorKind::TagQuotaPerResourceExceeded(_inner) => Some(_inner),
-            CreateCacheParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13676,22 +13356,20 @@ impl std::error::Error for CreateCacheParameterGroupError {
 /// <p>The request cannot be processed because it would exceed the maximum number of cache security groups.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CacheParameterGroupQuotaExceededFault {
+pub struct CacheParameterGroupQuotaExceededFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CacheParameterGroupQuotaExceededFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CacheParameterGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CacheParameterGroupQuotaExceededFault")?;
         if let Some(inner_63) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_63)?;
             }
         }
@@ -13701,7 +13379,7 @@ impl std::fmt::Display for CacheParameterGroupQuotaExceededFault {
 impl std::error::Error for CacheParameterGroupQuotaExceededFault {}
 /// See [`CacheParameterGroupQuotaExceededFault`](crate::error::CacheParameterGroupQuotaExceededFault).
 pub mod cache_parameter_group_quota_exceeded_fault {
-
+    
     /// A builder for [`CacheParameterGroupQuotaExceededFault`](crate::error::CacheParameterGroupQuotaExceededFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13715,16 +13393,18 @@ pub mod cache_parameter_group_quota_exceeded_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CacheParameterGroupQuotaExceededFault`](crate::error::CacheParameterGroupQuotaExceededFault).
         pub fn build(self) -> crate::error::CacheParameterGroupQuotaExceededFault {
             crate::error::CacheParameterGroupQuotaExceededFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CacheParameterGroupQuotaExceededFault {
     /// Creates a new builder-style object to manufacture [`CacheParameterGroupQuotaExceededFault`](crate::error::CacheParameterGroupQuotaExceededFault).
@@ -13736,22 +13416,20 @@ impl CacheParameterGroupQuotaExceededFault {
 /// <p>A cache parameter group with the requested name already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CacheParameterGroupAlreadyExistsFault {
+pub struct CacheParameterGroupAlreadyExistsFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CacheParameterGroupAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CacheParameterGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CacheParameterGroupAlreadyExistsFault")?;
         if let Some(inner_64) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_64)?;
             }
         }
@@ -13761,7 +13439,7 @@ impl std::fmt::Display for CacheParameterGroupAlreadyExistsFault {
 impl std::error::Error for CacheParameterGroupAlreadyExistsFault {}
 /// See [`CacheParameterGroupAlreadyExistsFault`](crate::error::CacheParameterGroupAlreadyExistsFault).
 pub mod cache_parameter_group_already_exists_fault {
-
+    
     /// A builder for [`CacheParameterGroupAlreadyExistsFault`](crate::error::CacheParameterGroupAlreadyExistsFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13775,16 +13453,18 @@ pub mod cache_parameter_group_already_exists_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CacheParameterGroupAlreadyExistsFault`](crate::error::CacheParameterGroupAlreadyExistsFault).
         pub fn build(self) -> crate::error::CacheParameterGroupAlreadyExistsFault {
             crate::error::CacheParameterGroupAlreadyExistsFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CacheParameterGroupAlreadyExistsFault {
     /// Creates a new builder-style object to manufacture [`CacheParameterGroupAlreadyExistsFault`](crate::error::CacheParameterGroupAlreadyExistsFault).
@@ -13798,15 +13478,15 @@ impl CacheParameterGroupAlreadyExistsFault {
 #[derive(std::fmt::Debug)]
 pub struct CreateCacheClusterError {
     /// Kind of error that occurred.
-    pub kind: CreateCacheClusterErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateCacheClusterErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateCacheClusterError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -13842,40 +13522,64 @@ pub enum CreateCacheClusterErrorKind {
     ReplicationGroupNotFoundFault(crate::error::ReplicationGroupNotFoundFault),
     /// <p>The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The maximum number of tags permitted on a resource is 50.</p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCacheClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateCacheClusterErrorKind::CacheClusterAlreadyExistsFault(_inner) => _inner.fmt(f),
-            CreateCacheClusterErrorKind::CacheParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
-            CreateCacheClusterErrorKind::CacheSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
-            CreateCacheClusterErrorKind::CacheSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
-            CreateCacheClusterErrorKind::ClusterQuotaForCustomerExceededFault(_inner) => {
+            CreateCacheClusterErrorKind::CacheClusterAlreadyExistsFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheClusterErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheClusterErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheClusterErrorKind::CacheSubnetGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheClusterErrorKind::ClusterQuotaForCustomerExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheClusterErrorKind::InsufficientCacheClusterCapacityFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheClusterErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheClusterErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheClusterErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheClusterErrorKind::InvalidVpcNetworkStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheClusterErrorKind::NodeQuotaForClusterExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheClusterErrorKind::NodeQuotaForCustomerExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheClusterErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheClusterErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateCacheClusterErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateCacheClusterErrorKind::InsufficientCacheClusterCapacityFault(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCacheClusterErrorKind::InvalidParameterCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateCacheClusterErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            CreateCacheClusterErrorKind::InvalidReplicationGroupStateFault(_inner) => _inner.fmt(f),
-            CreateCacheClusterErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
-            CreateCacheClusterErrorKind::NodeQuotaForClusterExceededFault(_inner) => _inner.fmt(f),
-            CreateCacheClusterErrorKind::NodeQuotaForCustomerExceededFault(_inner) => _inner.fmt(f),
-            CreateCacheClusterErrorKind::ReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
-            CreateCacheClusterErrorKind::TagQuotaPerResourceExceeded(_inner) => _inner.fmt(f),
-            CreateCacheClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -13889,169 +13593,151 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateCacheClusterError {
 }
 impl CreateCacheClusterError {
     /// Creates a new `CreateCacheClusterError`.
-    pub fn new(kind: CreateCacheClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateCacheClusterError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateCacheClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateCacheClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateCacheClusterError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateCacheClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateCacheClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateCacheClusterErrorKind::CacheClusterAlreadyExistsFault`.
     pub fn is_cache_cluster_already_exists_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheClusterErrorKind::CacheClusterAlreadyExistsFault(_)
-        )
+        matches!(&self.kind, CreateCacheClusterErrorKind::CacheClusterAlreadyExistsFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheClusterErrorKind::CacheParameterGroupNotFoundFault`.
     pub fn is_cache_parameter_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheClusterErrorKind::CacheParameterGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, CreateCacheClusterErrorKind::CacheParameterGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheClusterErrorKind::CacheSecurityGroupNotFoundFault`.
     pub fn is_cache_security_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheClusterErrorKind::CacheSecurityGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, CreateCacheClusterErrorKind::CacheSecurityGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheClusterErrorKind::CacheSubnetGroupNotFoundFault`.
     pub fn is_cache_subnet_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheClusterErrorKind::CacheSubnetGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, CreateCacheClusterErrorKind::CacheSubnetGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheClusterErrorKind::ClusterQuotaForCustomerExceededFault`.
     pub fn is_cluster_quota_for_customer_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheClusterErrorKind::ClusterQuotaForCustomerExceededFault(_)
-        )
+        matches!(&self.kind, CreateCacheClusterErrorKind::ClusterQuotaForCustomerExceededFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheClusterErrorKind::InsufficientCacheClusterCapacityFault`.
     pub fn is_insufficient_cache_cluster_capacity_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheClusterErrorKind::InsufficientCacheClusterCapacityFault(_)
-        )
+        matches!(&self.kind, CreateCacheClusterErrorKind::InsufficientCacheClusterCapacityFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheClusterErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheClusterErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, CreateCacheClusterErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `CreateCacheClusterErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheClusterErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CreateCacheClusterErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CreateCacheClusterErrorKind::InvalidReplicationGroupStateFault`.
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheClusterErrorKind::InvalidReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, CreateCacheClusterErrorKind::InvalidReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheClusterErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheClusterErrorKind::InvalidVpcNetworkStateFault(_)
-        )
+        matches!(&self.kind, CreateCacheClusterErrorKind::InvalidVpcNetworkStateFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheClusterErrorKind::NodeQuotaForClusterExceededFault`.
     pub fn is_node_quota_for_cluster_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheClusterErrorKind::NodeQuotaForClusterExceededFault(_)
-        )
+        matches!(&self.kind, CreateCacheClusterErrorKind::NodeQuotaForClusterExceededFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheClusterErrorKind::NodeQuotaForCustomerExceededFault`.
     pub fn is_node_quota_for_customer_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheClusterErrorKind::NodeQuotaForCustomerExceededFault(_)
-        )
+        matches!(&self.kind, CreateCacheClusterErrorKind::NodeQuotaForCustomerExceededFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheClusterErrorKind::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheClusterErrorKind::ReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, CreateCacheClusterErrorKind::ReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateCacheClusterErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCacheClusterErrorKind::TagQuotaPerResourceExceeded(_)
-        )
+        matches!(&self.kind, CreateCacheClusterErrorKind::TagQuotaPerResourceExceeded(_))
     }
 }
 impl std::error::Error for CreateCacheClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateCacheClusterErrorKind::CacheClusterAlreadyExistsFault(_inner) => Some(_inner),
-            CreateCacheClusterErrorKind::CacheParameterGroupNotFoundFault(_inner) => Some(_inner),
-            CreateCacheClusterErrorKind::CacheSecurityGroupNotFoundFault(_inner) => Some(_inner),
-            CreateCacheClusterErrorKind::CacheSubnetGroupNotFoundFault(_inner) => Some(_inner),
-            CreateCacheClusterErrorKind::ClusterQuotaForCustomerExceededFault(_inner) => {
+            CreateCacheClusterErrorKind::CacheClusterAlreadyExistsFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheClusterErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheClusterErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheClusterErrorKind::CacheSubnetGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheClusterErrorKind::ClusterQuotaForCustomerExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheClusterErrorKind::InsufficientCacheClusterCapacityFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheClusterErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheClusterErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheClusterErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheClusterErrorKind::InvalidVpcNetworkStateFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheClusterErrorKind::NodeQuotaForClusterExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheClusterErrorKind::NodeQuotaForCustomerExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheClusterErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheClusterErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            Some(_inner)
+            ,
+            CreateCacheClusterErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateCacheClusterErrorKind::InsufficientCacheClusterCapacityFault(_inner) => {
-                Some(_inner)
-            }
-            CreateCacheClusterErrorKind::InvalidParameterCombinationException(_inner) => {
-                Some(_inner)
-            }
-            CreateCacheClusterErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            CreateCacheClusterErrorKind::InvalidReplicationGroupStateFault(_inner) => Some(_inner),
-            CreateCacheClusterErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
-            CreateCacheClusterErrorKind::NodeQuotaForClusterExceededFault(_inner) => Some(_inner),
-            CreateCacheClusterErrorKind::NodeQuotaForCustomerExceededFault(_inner) => Some(_inner),
-            CreateCacheClusterErrorKind::ReplicationGroupNotFoundFault(_inner) => Some(_inner),
-            CreateCacheClusterErrorKind::TagQuotaPerResourceExceeded(_inner) => Some(_inner),
-            CreateCacheClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14059,22 +13745,20 @@ impl std::error::Error for CreateCacheClusterError {
 /// <p>You already have a cluster with the given identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CacheClusterAlreadyExistsFault {
+pub struct CacheClusterAlreadyExistsFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CacheClusterAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CacheClusterAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CacheClusterAlreadyExistsFault")?;
         if let Some(inner_65) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_65)?;
             }
         }
@@ -14084,7 +13768,7 @@ impl std::fmt::Display for CacheClusterAlreadyExistsFault {
 impl std::error::Error for CacheClusterAlreadyExistsFault {}
 /// See [`CacheClusterAlreadyExistsFault`](crate::error::CacheClusterAlreadyExistsFault).
 pub mod cache_cluster_already_exists_fault {
-
+    
     /// A builder for [`CacheClusterAlreadyExistsFault`](crate::error::CacheClusterAlreadyExistsFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14098,16 +13782,18 @@ pub mod cache_cluster_already_exists_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CacheClusterAlreadyExistsFault`](crate::error::CacheClusterAlreadyExistsFault).
         pub fn build(self) -> crate::error::CacheClusterAlreadyExistsFault {
             crate::error::CacheClusterAlreadyExistsFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CacheClusterAlreadyExistsFault {
     /// Creates a new builder-style object to manufacture [`CacheClusterAlreadyExistsFault`](crate::error::CacheClusterAlreadyExistsFault).
@@ -14121,15 +13807,15 @@ impl CacheClusterAlreadyExistsFault {
 #[derive(std::fmt::Debug)]
 pub struct CopySnapshotError {
     /// Kind of error that occurred.
-    pub kind: CopySnapshotErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CopySnapshotErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CopySnapshotError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CopySnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -14151,27 +13837,43 @@ pub enum CopySnapshotErrorKind {
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
     /// <p>The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The maximum number of tags permitted on a resource is 50.</p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CopySnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CopySnapshotErrorKind::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
-            CopySnapshotErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            CopySnapshotErrorKind::InvalidSnapshotStateFault(_inner) => _inner.fmt(f),
-            CopySnapshotErrorKind::SnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
-            CopySnapshotErrorKind::SnapshotNotFoundFault(_inner) => _inner.fmt(f),
-            CopySnapshotErrorKind::SnapshotQuotaExceededFault(_inner) => _inner.fmt(f),
-            CopySnapshotErrorKind::TagQuotaPerResourceExceeded(_inner) => _inner.fmt(f),
-            CopySnapshotErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CopySnapshotErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopySnapshotErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopySnapshotErrorKind::InvalidSnapshotStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopySnapshotErrorKind::SnapshotAlreadyExistsFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopySnapshotErrorKind::SnapshotNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopySnapshotErrorKind::SnapshotQuotaExceededFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopySnapshotErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopySnapshotErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -14185,73 +13887,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for CopySnapshotError {
 }
 impl CopySnapshotError {
     /// Creates a new `CopySnapshotError`.
-    pub fn new(kind: CopySnapshotErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CopySnapshotError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CopySnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CopySnapshotError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CopySnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CopySnapshotErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CopySnapshotError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CopySnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CopySnapshotError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CopySnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CopySnapshotErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CopySnapshotErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, CopySnapshotErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `CopySnapshotErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CopySnapshotErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CopySnapshotErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CopySnapshotErrorKind::InvalidSnapshotStateFault`.
     pub fn is_invalid_snapshot_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CopySnapshotErrorKind::InvalidSnapshotStateFault(_)
-        )
+        matches!(&self.kind, CopySnapshotErrorKind::InvalidSnapshotStateFault(_))
     }
     /// Returns `true` if the error kind is `CopySnapshotErrorKind::SnapshotAlreadyExistsFault`.
     pub fn is_snapshot_already_exists_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CopySnapshotErrorKind::SnapshotAlreadyExistsFault(_)
-        )
+        matches!(&self.kind, CopySnapshotErrorKind::SnapshotAlreadyExistsFault(_))
     }
     /// Returns `true` if the error kind is `CopySnapshotErrorKind::SnapshotNotFoundFault`.
     pub fn is_snapshot_not_found_fault(&self) -> bool {
@@ -14259,30 +13949,40 @@ impl CopySnapshotError {
     }
     /// Returns `true` if the error kind is `CopySnapshotErrorKind::SnapshotQuotaExceededFault`.
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CopySnapshotErrorKind::SnapshotQuotaExceededFault(_)
-        )
+        matches!(&self.kind, CopySnapshotErrorKind::SnapshotQuotaExceededFault(_))
     }
     /// Returns `true` if the error kind is `CopySnapshotErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            CopySnapshotErrorKind::TagQuotaPerResourceExceeded(_)
-        )
+        matches!(&self.kind, CopySnapshotErrorKind::TagQuotaPerResourceExceeded(_))
     }
 }
 impl std::error::Error for CopySnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CopySnapshotErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
-            CopySnapshotErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            CopySnapshotErrorKind::InvalidSnapshotStateFault(_inner) => Some(_inner),
-            CopySnapshotErrorKind::SnapshotAlreadyExistsFault(_inner) => Some(_inner),
-            CopySnapshotErrorKind::SnapshotNotFoundFault(_inner) => Some(_inner),
-            CopySnapshotErrorKind::SnapshotQuotaExceededFault(_inner) => Some(_inner),
-            CopySnapshotErrorKind::TagQuotaPerResourceExceeded(_inner) => Some(_inner),
-            CopySnapshotErrorKind::Unhandled(_inner) => Some(_inner),
+            CopySnapshotErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            CopySnapshotErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CopySnapshotErrorKind::InvalidSnapshotStateFault(_inner) =>
+            Some(_inner)
+            ,
+            CopySnapshotErrorKind::SnapshotAlreadyExistsFault(_inner) =>
+            Some(_inner)
+            ,
+            CopySnapshotErrorKind::SnapshotNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CopySnapshotErrorKind::SnapshotQuotaExceededFault(_inner) =>
+            Some(_inner)
+            ,
+            CopySnapshotErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            Some(_inner)
+            ,
+            CopySnapshotErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -14292,15 +13992,15 @@ impl std::error::Error for CopySnapshotError {
 #[derive(std::fmt::Debug)]
 pub struct CompleteMigrationError {
     /// Kind of error that occurred.
-    pub kind: CompleteMigrationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CompleteMigrationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CompleteMigrationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CompleteMigrationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -14314,25 +14014,31 @@ pub enum CompleteMigrationErrorKind {
     ReplicationGroupNotFoundFault(crate::error::ReplicationGroupNotFoundFault),
     /// <p>The designated replication group is not available for data migration.</p>
     ReplicationGroupNotUnderMigrationFault(crate::error::ReplicationGroupNotUnderMigrationFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CompleteMigrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CompleteMigrationErrorKind::InvalidReplicationGroupStateFault(_inner) => _inner.fmt(f),
-            CompleteMigrationErrorKind::ReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
-            CompleteMigrationErrorKind::ReplicationGroupNotUnderMigrationFault(_inner) => {
+            CompleteMigrationErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CompleteMigrationErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CompleteMigrationErrorKind::ReplicationGroupNotUnderMigrationFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            CompleteMigrationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CompleteMigrationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -14346,77 +14052,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for CompleteMigrationError {
 }
 impl CompleteMigrationError {
     /// Creates a new `CompleteMigrationError`.
-    pub fn new(kind: CompleteMigrationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CompleteMigrationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CompleteMigrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CompleteMigrationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CompleteMigrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CompleteMigrationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CompleteMigrationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CompleteMigrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CompleteMigrationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CompleteMigrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CompleteMigrationErrorKind::InvalidReplicationGroupStateFault`.
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CompleteMigrationErrorKind::InvalidReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, CompleteMigrationErrorKind::InvalidReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `CompleteMigrationErrorKind::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CompleteMigrationErrorKind::ReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, CompleteMigrationErrorKind::ReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CompleteMigrationErrorKind::ReplicationGroupNotUnderMigrationFault`.
     pub fn is_replication_group_not_under_migration_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            CompleteMigrationErrorKind::ReplicationGroupNotUnderMigrationFault(_)
-        )
+        matches!(&self.kind, CompleteMigrationErrorKind::ReplicationGroupNotUnderMigrationFault(_))
     }
 }
 impl std::error::Error for CompleteMigrationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CompleteMigrationErrorKind::InvalidReplicationGroupStateFault(_inner) => Some(_inner),
-            CompleteMigrationErrorKind::ReplicationGroupNotFoundFault(_inner) => Some(_inner),
-            CompleteMigrationErrorKind::ReplicationGroupNotUnderMigrationFault(_inner) => {
+            CompleteMigrationErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            CompleteMigrationErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            CompleteMigrationErrorKind::ReplicationGroupNotUnderMigrationFault(_inner) =>
+            Some(_inner)
+            ,
+            CompleteMigrationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CompleteMigrationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14424,22 +14127,20 @@ impl std::error::Error for CompleteMigrationError {
 /// <p>The designated replication group is not available for data migration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationGroupNotUnderMigrationFault {
+pub struct ReplicationGroupNotUnderMigrationFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ReplicationGroupNotUnderMigrationFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ReplicationGroupNotUnderMigrationFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReplicationGroupNotUnderMigrationFault")?;
         if let Some(inner_66) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_66)?;
             }
         }
@@ -14449,7 +14150,7 @@ impl std::fmt::Display for ReplicationGroupNotUnderMigrationFault {
 impl std::error::Error for ReplicationGroupNotUnderMigrationFault {}
 /// See [`ReplicationGroupNotUnderMigrationFault`](crate::error::ReplicationGroupNotUnderMigrationFault).
 pub mod replication_group_not_under_migration_fault {
-
+    
     /// A builder for [`ReplicationGroupNotUnderMigrationFault`](crate::error::ReplicationGroupNotUnderMigrationFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14463,16 +14164,18 @@ pub mod replication_group_not_under_migration_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ReplicationGroupNotUnderMigrationFault`](crate::error::ReplicationGroupNotUnderMigrationFault).
         pub fn build(self) -> crate::error::ReplicationGroupNotUnderMigrationFault {
             crate::error::ReplicationGroupNotUnderMigrationFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ReplicationGroupNotUnderMigrationFault {
     /// Creates a new builder-style object to manufacture [`ReplicationGroupNotUnderMigrationFault`](crate::error::ReplicationGroupNotUnderMigrationFault).
@@ -14486,15 +14189,15 @@ impl ReplicationGroupNotUnderMigrationFault {
 #[derive(std::fmt::Debug)]
 pub struct BatchStopUpdateActionError {
     /// Kind of error that occurred.
-    pub kind: BatchStopUpdateActionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: BatchStopUpdateActionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for BatchStopUpdateActionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: BatchStopUpdateActionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -14506,22 +14209,28 @@ pub enum BatchStopUpdateActionErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The service update doesn't exist</p>
     ServiceUpdateNotFoundFault(crate::error::ServiceUpdateNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchStopUpdateActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchStopUpdateActionErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            BatchStopUpdateActionErrorKind::ServiceUpdateNotFoundFault(_inner) => _inner.fmt(f),
-            BatchStopUpdateActionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            BatchStopUpdateActionErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchStopUpdateActionErrorKind::ServiceUpdateNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchStopUpdateActionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -14535,71 +14244,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchStopUpdateActionError {
 }
 impl BatchStopUpdateActionError {
     /// Creates a new `BatchStopUpdateActionError`.
-    pub fn new(kind: BatchStopUpdateActionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `BatchStopUpdateActionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: BatchStopUpdateActionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `BatchStopUpdateActionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: BatchStopUpdateActionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: BatchStopUpdateActionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `BatchStopUpdateActionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: BatchStopUpdateActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `BatchStopUpdateActionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: BatchStopUpdateActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `BatchStopUpdateActionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchStopUpdateActionErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, BatchStopUpdateActionErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `BatchStopUpdateActionErrorKind::ServiceUpdateNotFoundFault`.
     pub fn is_service_update_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchStopUpdateActionErrorKind::ServiceUpdateNotFoundFault(_)
-        )
+        matches!(&self.kind, BatchStopUpdateActionErrorKind::ServiceUpdateNotFoundFault(_))
     }
 }
 impl std::error::Error for BatchStopUpdateActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchStopUpdateActionErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            BatchStopUpdateActionErrorKind::ServiceUpdateNotFoundFault(_inner) => Some(_inner),
-            BatchStopUpdateActionErrorKind::Unhandled(_inner) => Some(_inner),
+            BatchStopUpdateActionErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            BatchStopUpdateActionErrorKind::ServiceUpdateNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            BatchStopUpdateActionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -14609,15 +14314,15 @@ impl std::error::Error for BatchStopUpdateActionError {
 #[derive(std::fmt::Debug)]
 pub struct BatchApplyUpdateActionError {
     /// Kind of error that occurred.
-    pub kind: BatchApplyUpdateActionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: BatchApplyUpdateActionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for BatchApplyUpdateActionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: BatchApplyUpdateActionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -14629,24 +14334,28 @@ pub enum BatchApplyUpdateActionErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The service update doesn't exist</p>
     ServiceUpdateNotFoundFault(crate::error::ServiceUpdateNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchApplyUpdateActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchApplyUpdateActionErrorKind::InvalidParameterValueException(_inner) => {
+            BatchApplyUpdateActionErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchApplyUpdateActionErrorKind::ServiceUpdateNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchApplyUpdateActionErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            BatchApplyUpdateActionErrorKind::ServiceUpdateNotFoundFault(_inner) => _inner.fmt(f),
-            BatchApplyUpdateActionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -14660,71 +14369,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchApplyUpdateActionError {
 }
 impl BatchApplyUpdateActionError {
     /// Creates a new `BatchApplyUpdateActionError`.
-    pub fn new(kind: BatchApplyUpdateActionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `BatchApplyUpdateActionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: BatchApplyUpdateActionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `BatchApplyUpdateActionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: BatchApplyUpdateActionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: BatchApplyUpdateActionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `BatchApplyUpdateActionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: BatchApplyUpdateActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `BatchApplyUpdateActionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: BatchApplyUpdateActionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `BatchApplyUpdateActionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchApplyUpdateActionErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, BatchApplyUpdateActionErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `BatchApplyUpdateActionErrorKind::ServiceUpdateNotFoundFault`.
     pub fn is_service_update_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchApplyUpdateActionErrorKind::ServiceUpdateNotFoundFault(_)
-        )
+        matches!(&self.kind, BatchApplyUpdateActionErrorKind::ServiceUpdateNotFoundFault(_))
     }
 }
 impl std::error::Error for BatchApplyUpdateActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchApplyUpdateActionErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            BatchApplyUpdateActionErrorKind::ServiceUpdateNotFoundFault(_inner) => Some(_inner),
-            BatchApplyUpdateActionErrorKind::Unhandled(_inner) => Some(_inner),
+            BatchApplyUpdateActionErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            BatchApplyUpdateActionErrorKind::ServiceUpdateNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            BatchApplyUpdateActionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -14734,17 +14439,15 @@ impl std::error::Error for BatchApplyUpdateActionError {
 #[derive(std::fmt::Debug)]
 pub struct AuthorizeCacheSecurityGroupIngressError {
     /// Kind of error that occurred.
-    pub kind: AuthorizeCacheSecurityGroupIngressErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AuthorizeCacheSecurityGroupIngressErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AuthorizeCacheSecurityGroupIngressError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AuthorizeCacheSecurityGroupIngressErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: AuthorizeCacheSecurityGroupIngressErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -14762,35 +14465,37 @@ pub enum AuthorizeCacheSecurityGroupIngressErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AuthorizeCacheSecurityGroupIngressError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AuthorizeCacheSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault(
-                _inner,
-            ) => _inner.fmt(f),
-            AuthorizeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault(
-                _inner,
-            ) => _inner.fmt(f),
-            AuthorizeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault(
-                _inner,
-            ) => _inner.fmt(f),
-            AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException(
-                _inner,
-            ) => _inner.fmt(f),
-            AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException(_inner) => {
+            AuthorizeCacheSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            AuthorizeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            AuthorizeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AuthorizeCacheSecurityGroupIngressErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AuthorizeCacheSecurityGroupIngressErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -14804,108 +14509,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for AuthorizeCacheSecurityGroupIn
 }
 impl AuthorizeCacheSecurityGroupIngressError {
     /// Creates a new `AuthorizeCacheSecurityGroupIngressError`.
-    pub fn new(
-        kind: AuthorizeCacheSecurityGroupIngressErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AuthorizeCacheSecurityGroupIngressError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AuthorizeCacheSecurityGroupIngressErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AuthorizeCacheSecurityGroupIngressError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AuthorizeCacheSecurityGroupIngressErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AuthorizeCacheSecurityGroupIngressErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AuthorizeCacheSecurityGroupIngressError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AuthorizeCacheSecurityGroupIngressErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AuthorizeCacheSecurityGroupIngressError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AuthorizeCacheSecurityGroupIngressErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AuthorizeCacheSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault`.
     pub fn is_authorization_already_exists_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            AuthorizeCacheSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault(_)
-        )
+        matches!(&self.kind, AuthorizeCacheSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault(_))
     }
     /// Returns `true` if the error kind is `AuthorizeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault`.
     pub fn is_cache_security_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            AuthorizeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, AuthorizeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `AuthorizeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault`.
     pub fn is_invalid_cache_security_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            AuthorizeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault(_)
-        )
+        matches!(&self.kind, AuthorizeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException(_)
-        )
+        matches!(&self.kind, AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException(_))
     }
 }
 impl std::error::Error for AuthorizeCacheSecurityGroupIngressError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AuthorizeCacheSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault(
-                _inner,
-            ) => Some(_inner),
-            AuthorizeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault(
-                _inner,
-            ) => Some(_inner),
-            AuthorizeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault(
-                _inner,
-            ) => Some(_inner),
-            AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException(
-                _inner,
-            ) => Some(_inner),
-            AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException(_inner) => {
+            AuthorizeCacheSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault(_inner) =>
+            Some(_inner)
+            ,
+            AuthorizeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            AuthorizeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            AuthorizeCacheSecurityGroupIngressErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            AuthorizeCacheSecurityGroupIngressErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14913,22 +14598,20 @@ impl std::error::Error for AuthorizeCacheSecurityGroupIngressError {
 /// <p>The specified Amazon EC2 security group is already authorized for the specified cache security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthorizationAlreadyExistsFault {
+pub struct AuthorizationAlreadyExistsFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AuthorizationAlreadyExistsFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AuthorizationAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationAlreadyExistsFault")?;
         if let Some(inner_67) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_67)?;
             }
         }
@@ -14938,7 +14621,7 @@ impl std::fmt::Display for AuthorizationAlreadyExistsFault {
 impl std::error::Error for AuthorizationAlreadyExistsFault {}
 /// See [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
 pub mod authorization_already_exists_fault {
-
+    
     /// A builder for [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14952,16 +14635,18 @@ pub mod authorization_already_exists_fault {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
         pub fn build(self) -> crate::error::AuthorizationAlreadyExistsFault {
             crate::error::AuthorizationAlreadyExistsFault {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AuthorizationAlreadyExistsFault {
     /// Creates a new builder-style object to manufacture [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
@@ -14975,15 +14660,15 @@ impl AuthorizationAlreadyExistsFault {
 #[derive(std::fmt::Debug)]
 pub struct AddTagsToResourceError {
     /// Kind of error that occurred.
-    pub kind: AddTagsToResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AddTagsToResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AddTagsToResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: AddTagsToResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -15015,32 +14700,58 @@ pub enum AddTagsToResourceErrorKind {
     UserGroupNotFoundFault(crate::error::UserGroupNotFoundFault),
     /// <p>The user does not exist or could not be found.</p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddTagsToResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddTagsToResourceErrorKind::CacheClusterNotFoundFault(_inner) => _inner.fmt(f),
-            AddTagsToResourceErrorKind::CacheParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
-            AddTagsToResourceErrorKind::CacheSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
-            AddTagsToResourceErrorKind::CacheSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
-            AddTagsToResourceErrorKind::InvalidArnFault(_inner) => _inner.fmt(f),
-            AddTagsToResourceErrorKind::InvalidReplicationGroupStateFault(_inner) => _inner.fmt(f),
-            AddTagsToResourceErrorKind::ReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
-            AddTagsToResourceErrorKind::ReservedCacheNodeNotFoundFault(_inner) => _inner.fmt(f),
-            AddTagsToResourceErrorKind::SnapshotNotFoundFault(_inner) => _inner.fmt(f),
-            AddTagsToResourceErrorKind::TagQuotaPerResourceExceeded(_inner) => _inner.fmt(f),
-            AddTagsToResourceErrorKind::UserGroupNotFoundFault(_inner) => _inner.fmt(f),
-            AddTagsToResourceErrorKind::UserNotFoundFault(_inner) => _inner.fmt(f),
-            AddTagsToResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            AddTagsToResourceErrorKind::CacheClusterNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToResourceErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToResourceErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToResourceErrorKind::CacheSubnetGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToResourceErrorKind::InvalidArnFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToResourceErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToResourceErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToResourceErrorKind::ReservedCacheNodeNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToResourceErrorKind::SnapshotNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToResourceErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToResourceErrorKind::UserGroupNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToResourceErrorKind::UserNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -15054,73 +14765,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for AddTagsToResourceError {
 }
 impl AddTagsToResourceError {
     /// Creates a new `AddTagsToResourceError`.
-    pub fn new(kind: AddTagsToResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AddTagsToResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AddTagsToResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AddTagsToResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AddTagsToResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AddTagsToResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AddTagsToResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AddTagsToResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AddTagsToResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AddTagsToResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::CacheClusterNotFoundFault`.
     pub fn is_cache_cluster_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToResourceErrorKind::CacheClusterNotFoundFault(_)
-        )
+        matches!(&self.kind, AddTagsToResourceErrorKind::CacheClusterNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::CacheParameterGroupNotFoundFault`.
     pub fn is_cache_parameter_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToResourceErrorKind::CacheParameterGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, AddTagsToResourceErrorKind::CacheParameterGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::CacheSecurityGroupNotFoundFault`.
     pub fn is_cache_security_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToResourceErrorKind::CacheSecurityGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, AddTagsToResourceErrorKind::CacheSecurityGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::CacheSubnetGroupNotFoundFault`.
     pub fn is_cache_subnet_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToResourceErrorKind::CacheSubnetGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, AddTagsToResourceErrorKind::CacheSubnetGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::InvalidArnFault`.
     pub fn is_invalid_arn_fault(&self) -> bool {
@@ -15128,45 +14827,27 @@ impl AddTagsToResourceError {
     }
     /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::InvalidReplicationGroupStateFault`.
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToResourceErrorKind::InvalidReplicationGroupStateFault(_)
-        )
+        matches!(&self.kind, AddTagsToResourceErrorKind::InvalidReplicationGroupStateFault(_))
     }
     /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToResourceErrorKind::ReplicationGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, AddTagsToResourceErrorKind::ReplicationGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::ReservedCacheNodeNotFoundFault`.
     pub fn is_reserved_cache_node_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToResourceErrorKind::ReservedCacheNodeNotFoundFault(_)
-        )
+        matches!(&self.kind, AddTagsToResourceErrorKind::ReservedCacheNodeNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::SnapshotNotFoundFault`.
     pub fn is_snapshot_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToResourceErrorKind::SnapshotNotFoundFault(_)
-        )
+        matches!(&self.kind, AddTagsToResourceErrorKind::SnapshotNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToResourceErrorKind::TagQuotaPerResourceExceeded(_)
-        )
+        matches!(&self.kind, AddTagsToResourceErrorKind::TagQuotaPerResourceExceeded(_))
     }
     /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::UserGroupNotFoundFault`.
     pub fn is_user_group_not_found_fault(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToResourceErrorKind::UserGroupNotFoundFault(_)
-        )
+        matches!(&self.kind, AddTagsToResourceErrorKind::UserGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
@@ -15176,48 +14857,75 @@ impl AddTagsToResourceError {
 impl std::error::Error for AddTagsToResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddTagsToResourceErrorKind::CacheClusterNotFoundFault(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::CacheParameterGroupNotFoundFault(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::CacheSecurityGroupNotFoundFault(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::CacheSubnetGroupNotFoundFault(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::InvalidArnFault(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::InvalidReplicationGroupStateFault(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::ReplicationGroupNotFoundFault(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::ReservedCacheNodeNotFoundFault(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::SnapshotNotFoundFault(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::TagQuotaPerResourceExceeded(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::UserGroupNotFoundFault(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::UserNotFoundFault(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            AddTagsToResourceErrorKind::CacheClusterNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToResourceErrorKind::CacheParameterGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToResourceErrorKind::CacheSecurityGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToResourceErrorKind::CacheSubnetGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToResourceErrorKind::InvalidArnFault(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToResourceErrorKind::InvalidReplicationGroupStateFault(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToResourceErrorKind::ReplicationGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToResourceErrorKind::ReservedCacheNodeNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToResourceErrorKind::SnapshotNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToResourceErrorKind::TagQuotaPerResourceExceeded(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToResourceErrorKind::UserGroupNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToResourceErrorKind::UserNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

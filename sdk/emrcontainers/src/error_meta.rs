@@ -9,15 +9,15 @@ pub enum Error {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>There are invalid parameters in the client request.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25,19 +25,14 @@ impl std::fmt::Display for Error {
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelJobRunError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelJobRunError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CancelJobRunError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -45,29 +40,16 @@ where
 impl From<crate::error::CancelJobRunError> for Error {
     fn from(err: crate::error::CancelJobRunError) -> Self {
         match err.kind {
-            crate::error::CancelJobRunErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CancelJobRunErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CancelJobRunErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CancelJobRunErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CancelJobRunErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CancelJobRunErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateJobTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateJobTemplateError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateJobTemplateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateJobTemplateError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -75,33 +57,17 @@ where
 impl From<crate::error::CreateJobTemplateError> for Error {
     fn from(err: crate::error::CreateJobTemplateError) -> Self {
         match err.kind {
-            crate::error::CreateJobTemplateErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateJobTemplateErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateJobTemplateErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateJobTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateJobTemplateErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateJobTemplateErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CreateJobTemplateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateJobTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateManagedEndpointError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateManagedEndpointError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateManagedEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateManagedEndpointError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -109,33 +75,17 @@ where
 impl From<crate::error::CreateManagedEndpointError> for Error {
     fn from(err: crate::error::CreateManagedEndpointError) -> Self {
         match err.kind {
-            crate::error::CreateManagedEndpointErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateManagedEndpointErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateManagedEndpointErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateManagedEndpointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateManagedEndpointErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateManagedEndpointErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CreateManagedEndpointErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateManagedEndpointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVirtualClusterError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateVirtualClusterError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVirtualClusterError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateVirtualClusterError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -143,32 +93,17 @@ where
 impl From<crate::error::CreateVirtualClusterError> for Error {
     fn from(err: crate::error::CreateVirtualClusterError) -> Self {
         match err.kind {
-            crate::error::CreateVirtualClusterErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateVirtualClusterErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateVirtualClusterErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateVirtualClusterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateVirtualClusterErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateVirtualClusterErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CreateVirtualClusterErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateVirtualClusterErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteJobTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteJobTemplateError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteJobTemplateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteJobTemplateError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -176,30 +111,16 @@ where
 impl From<crate::error::DeleteJobTemplateError> for Error {
     fn from(err: crate::error::DeleteJobTemplateError) -> Self {
         match err.kind {
-            crate::error::DeleteJobTemplateErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteJobTemplateErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteJobTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteJobTemplateErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteJobTemplateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteJobTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteManagedEndpointError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteManagedEndpointError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteManagedEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteManagedEndpointError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -207,30 +128,16 @@ where
 impl From<crate::error::DeleteManagedEndpointError> for Error {
     fn from(err: crate::error::DeleteManagedEndpointError) -> Self {
         match err.kind {
-            crate::error::DeleteManagedEndpointErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteManagedEndpointErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteManagedEndpointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteManagedEndpointErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteManagedEndpointErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteManagedEndpointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVirtualClusterError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVirtualClusterError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVirtualClusterError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteVirtualClusterError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -238,27 +145,16 @@ where
 impl From<crate::error::DeleteVirtualClusterError> for Error {
     fn from(err: crate::error::DeleteVirtualClusterError) -> Self {
         match err.kind {
-            crate::error::DeleteVirtualClusterErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteVirtualClusterErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteVirtualClusterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteVirtualClusterErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteVirtualClusterErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteVirtualClusterErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeJobRunError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeJobRunError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeJobRunError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -266,32 +162,17 @@ where
 impl From<crate::error::DescribeJobRunError> for Error {
     fn from(err: crate::error::DescribeJobRunError) -> Self {
         match err.kind {
-            crate::error::DescribeJobRunErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeJobRunErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeJobRunErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DescribeJobRunErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeJobRunErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeJobRunErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeJobRunErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribeJobRunErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeJobTemplateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeJobTemplateError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeJobTemplateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeJobTemplateError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -299,33 +180,17 @@ where
 impl From<crate::error::DescribeJobTemplateError> for Error {
     fn from(err: crate::error::DescribeJobTemplateError) -> Self {
         match err.kind {
-            crate::error::DescribeJobTemplateErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeJobTemplateErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeJobTemplateErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DescribeJobTemplateErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeJobTemplateErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeJobTemplateErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeJobTemplateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribeJobTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeManagedEndpointError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeManagedEndpointError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeManagedEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeManagedEndpointError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -333,33 +198,17 @@ where
 impl From<crate::error::DescribeManagedEndpointError> for Error {
     fn from(err: crate::error::DescribeManagedEndpointError) -> Self {
         match err.kind {
-            crate::error::DescribeManagedEndpointErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeManagedEndpointErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeManagedEndpointErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DescribeManagedEndpointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeManagedEndpointErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeManagedEndpointErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeManagedEndpointErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribeManagedEndpointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVirtualClusterError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeVirtualClusterError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVirtualClusterError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeVirtualClusterError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -367,30 +216,17 @@ where
 impl From<crate::error::DescribeVirtualClusterError> for Error {
     fn from(err: crate::error::DescribeVirtualClusterError) -> Self {
         match err.kind {
-            crate::error::DescribeVirtualClusterErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeVirtualClusterErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeVirtualClusterErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DescribeVirtualClusterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeVirtualClusterErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeVirtualClusterErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeVirtualClusterErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribeVirtualClusterErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListJobRunsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListJobRunsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListJobRunsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -398,29 +234,16 @@ where
 impl From<crate::error::ListJobRunsError> for Error {
     fn from(err: crate::error::ListJobRunsError) -> Self {
         match err.kind {
-            crate::error::ListJobRunsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListJobRunsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListJobRunsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListJobRunsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListJobRunsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListJobRunsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListJobTemplatesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListJobTemplatesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListJobTemplatesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListJobTemplatesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -428,30 +251,16 @@ where
 impl From<crate::error::ListJobTemplatesError> for Error {
     fn from(err: crate::error::ListJobTemplatesError) -> Self {
         match err.kind {
-            crate::error::ListJobTemplatesErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListJobTemplatesErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListJobTemplatesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListJobTemplatesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListJobTemplatesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListJobTemplatesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListManagedEndpointsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListManagedEndpointsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListManagedEndpointsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListManagedEndpointsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -459,29 +268,16 @@ where
 impl From<crate::error::ListManagedEndpointsError> for Error {
     fn from(err: crate::error::ListManagedEndpointsError) -> Self {
         match err.kind {
-            crate::error::ListManagedEndpointsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListManagedEndpointsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListManagedEndpointsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListManagedEndpointsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListManagedEndpointsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListManagedEndpointsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -489,32 +285,17 @@ where
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
         match err.kind {
-            crate::error::ListTagsForResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListTagsForResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVirtualClustersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListVirtualClustersError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVirtualClustersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListVirtualClustersError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -522,27 +303,16 @@ where
 impl From<crate::error::ListVirtualClustersError> for Error {
     fn from(err: crate::error::ListVirtualClustersError) -> Self {
         match err.kind {
-            crate::error::ListVirtualClustersErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListVirtualClustersErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListVirtualClustersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListVirtualClustersErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListVirtualClustersErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListVirtualClustersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartJobRunError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartJobRunError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartJobRunError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -550,30 +320,17 @@ where
 impl From<crate::error::StartJobRunError> for Error {
     fn from(err: crate::error::StartJobRunError) -> Self {
         match err.kind {
-            crate::error::StartJobRunErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StartJobRunErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StartJobRunErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::StartJobRunErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartJobRunErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::StartJobRunErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::StartJobRunErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::StartJobRunErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -581,30 +338,17 @@ where
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
         match err.kind {
-            crate::error::TagResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::TagResourceErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::TagResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -612,19 +356,12 @@ where
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
         match err.kind {
-            crate::error::UntagResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UntagResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
 impl std::error::Error for Error {}
+

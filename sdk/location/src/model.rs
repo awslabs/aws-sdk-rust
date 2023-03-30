@@ -3,7 +3,7 @@
 /// <p>The input failed to meet the constraints specified by the AWS service in a specified field. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The field name where the invalid entry was detected.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>The field name where the invalid entry was detected.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A message with the reason for the validation exception error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_exception_field {
         }
         /// <p>The field name where the invalid entry was detected.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A message with the reason for the validation exception error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod validation_exception_field {
         }
         /// <p>A message with the reason for the validation exception error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -69,15 +71,7 @@ impl ValidationExceptionField {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct ValidationExceptionReason(String);
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
@@ -87,18 +81,11 @@ impl ValidationExceptionReason {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CannotParse",
-            "FieldValidationFailed",
-            "Missing",
-            "Other",
-            "UnknownOperation",
+            "CannotParse", "FieldValidationFailed", "Missing", "Other", "UnknownOperation"
         ]
     }
 }
-impl<T> std::convert::From<T> for ValidationExceptionReason
-where
-    T: std::convert::AsRef<str>,
-{
+impl <T> std::convert::From<T> for ValidationExceptionReason where T: std::convert::AsRef<str> {
     fn from(s: T) -> Self {
         ValidationExceptionReason(s.as_ref().to_owned())
     }
@@ -107,7 +94,7 @@ where
 /// <p>Contains the tracker resource details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListDevicePositionsResponseEntry {
+pub struct ListDevicePositionsResponseEntry  {
     /// <p>The ID of the device for this position.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
@@ -122,35 +109,31 @@ pub struct ListDevicePositionsResponseEntry {
     pub accuracy: std::option::Option<crate::model::PositionalAccuracy>,
     /// <p>The properties associated with the position.</p>
     #[doc(hidden)]
-    pub position_properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub position_properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListDevicePositionsResponseEntry {
     /// <p>The ID of the device for this position.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn sample_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
     /// <p>The last known device position. Empty if no positions currently stored.</p>
-    pub fn position(&self) -> std::option::Option<&[f64]> {
+    pub fn position(&self) -> std::option::Option<& [f64]> {
         self.position.as_deref()
     }
     /// <p>The accuracy of the device position.</p>
-    pub fn accuracy(&self) -> std::option::Option<&crate::model::PositionalAccuracy> {
+    pub fn accuracy(&self) -> std::option::Option<& crate::model::PositionalAccuracy> {
         self.accuracy.as_ref()
     }
     /// <p>The properties associated with the position.</p>
-    pub fn position_properties(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn position_properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.position_properties.as_ref()
     }
 }
-impl std::fmt::Debug for ListDevicePositionsResponseEntry {
+impl  std::fmt::Debug for ListDevicePositionsResponseEntry  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicePositionsResponseEntry");
         formatter.field("device_id", &self.device_id);
@@ -163,7 +146,7 @@ impl std::fmt::Debug for ListDevicePositionsResponseEntry {
 }
 /// See [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry).
 pub mod list_device_positions_response_entry {
-
+    
     /// A builder for [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -171,9 +154,7 @@ pub mod list_device_positions_response_entry {
         pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) accuracy: std::option::Option<crate::model::PositionalAccuracy>,
-        pub(crate) position_properties: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) position_properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ID of the device for this position.</p>
@@ -183,8 +164,7 @@ pub mod list_device_positions_response_entry {
         }
         /// <p>The ID of the device for this position.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -192,12 +172,8 @@ pub mod list_device_positions_response_entry {
             self
         }
         /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-        pub fn set_sample_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.sample_time = input;
-            self
+        pub fn set_sample_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.sample_time = input; self
         }
         /// Appends an item to `position`.
         ///
@@ -206,14 +182,13 @@ pub mod list_device_positions_response_entry {
         /// <p>The last known device position. Empty if no positions currently stored.</p>
         pub fn position(mut self, input: f64) -> Self {
             let mut v = self.position.unwrap_or_default();
-            v.push(input);
-            self.position = Some(v);
-            self
+                            v.push(input);
+                            self.position = Some(v);
+                            self
         }
         /// <p>The last known device position. Empty if no positions currently stored.</p>
         pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.position = input;
-            self
+            self.position = input; self
         }
         /// <p>The accuracy of the device position.</p>
         pub fn accuracy(mut self, input: crate::model::PositionalAccuracy) -> Self {
@@ -221,46 +196,37 @@ pub mod list_device_positions_response_entry {
             self
         }
         /// <p>The accuracy of the device position.</p>
-        pub fn set_accuracy(
-            mut self,
-            input: std::option::Option<crate::model::PositionalAccuracy>,
-        ) -> Self {
-            self.accuracy = input;
-            self
+        pub fn set_accuracy(mut self, input: std::option::Option<crate::model::PositionalAccuracy>) -> Self {
+            self.accuracy = input; self
         }
         /// Adds a key-value pair to `position_properties`.
         ///
         /// To override the contents of this collection use [`set_position_properties`](Self::set_position_properties).
         ///
         /// <p>The properties associated with the position.</p>
-        pub fn position_properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn position_properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.position_properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.position_properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.position_properties = Some(hash_map);
+                            self
         }
         /// <p>The properties associated with the position.</p>
-        pub fn set_position_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.position_properties = input;
-            self
+        pub fn set_position_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.position_properties = input; self
         }
         /// Consumes the builder and constructs a [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry).
         pub fn build(self) -> crate::model::ListDevicePositionsResponseEntry {
             crate::model::ListDevicePositionsResponseEntry {
-                device_id: self.device_id,
-                sample_time: self.sample_time,
-                position: self.position,
-                accuracy: self.accuracy,
-                position_properties: self.position_properties,
+                device_id: self.device_id
+                ,
+                sample_time: self.sample_time
+                ,
+                position: self.position
+                ,
+                accuracy: self.accuracy
+                ,
+                position_properties: self.position_properties
+                ,
             }
         }
     }
@@ -275,6 +241,8 @@ pub mod list_device_positions_response_entry {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ListDevicePositionsResponseEntry {
     /// Creates a new builder-style object to manufacture [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry).
@@ -286,7 +254,7 @@ impl ListDevicePositionsResponseEntry {
 /// <p>Defines the level of certainty of the position.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PositionalAccuracy {
+pub struct PositionalAccuracy  {
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
     #[doc(hidden)]
     pub horizontal: std::option::Option<f64>,
@@ -299,7 +267,7 @@ impl PositionalAccuracy {
 }
 /// See [`PositionalAccuracy`](crate::model::PositionalAccuracy).
 pub mod positional_accuracy {
-
+    
     /// A builder for [`PositionalAccuracy`](crate::model::PositionalAccuracy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -313,16 +281,18 @@ pub mod positional_accuracy {
         }
         /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
         pub fn set_horizontal(mut self, input: std::option::Option<f64>) -> Self {
-            self.horizontal = input;
-            self
+            self.horizontal = input; self
         }
         /// Consumes the builder and constructs a [`PositionalAccuracy`](crate::model::PositionalAccuracy).
         pub fn build(self) -> crate::model::PositionalAccuracy {
             crate::model::PositionalAccuracy {
-                horizontal: self.horizontal,
+                horizontal: self.horizontal
+                ,
             }
         }
     }
+    
+    
 }
 impl PositionalAccuracy {
     /// Creates a new builder-style object to manufacture [`PositionalAccuracy`](crate::model::PositionalAccuracy).
@@ -334,7 +304,7 @@ impl PositionalAccuracy {
 /// <p>Contains the device position details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DevicePosition {
+pub struct DevicePosition  {
     /// <p>The device whose position you retrieved.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
@@ -352,39 +322,35 @@ pub struct DevicePosition {
     pub accuracy: std::option::Option<crate::model::PositionalAccuracy>,
     /// <p>The properties associated with the position.</p>
     #[doc(hidden)]
-    pub position_properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub position_properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DevicePosition {
     /// <p>The device whose position you retrieved.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn sample_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn received_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn received_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.received_time.as_ref()
     }
     /// <p>The last known device position.</p>
-    pub fn position(&self) -> std::option::Option<&[f64]> {
+    pub fn position(&self) -> std::option::Option<& [f64]> {
         self.position.as_deref()
     }
     /// <p>The accuracy of the device position.</p>
-    pub fn accuracy(&self) -> std::option::Option<&crate::model::PositionalAccuracy> {
+    pub fn accuracy(&self) -> std::option::Option<& crate::model::PositionalAccuracy> {
         self.accuracy.as_ref()
     }
     /// <p>The properties associated with the position.</p>
-    pub fn position_properties(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn position_properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.position_properties.as_ref()
     }
 }
-impl std::fmt::Debug for DevicePosition {
+impl  std::fmt::Debug for DevicePosition  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DevicePosition");
         formatter.field("device_id", &self.device_id);
@@ -398,7 +364,7 @@ impl std::fmt::Debug for DevicePosition {
 }
 /// See [`DevicePosition`](crate::model::DevicePosition).
 pub mod device_position {
-
+    
     /// A builder for [`DevicePosition`](crate::model::DevicePosition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -407,9 +373,7 @@ pub mod device_position {
         pub(crate) received_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) accuracy: std::option::Option<crate::model::PositionalAccuracy>,
-        pub(crate) position_properties: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) position_properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The device whose position you retrieved.</p>
@@ -419,8 +383,7 @@ pub mod device_position {
         }
         /// <p>The device whose position you retrieved.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -428,12 +391,8 @@ pub mod device_position {
             self
         }
         /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_sample_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.sample_time = input;
-            self
+        pub fn set_sample_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.sample_time = input; self
         }
         /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn received_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -441,12 +400,8 @@ pub mod device_position {
             self
         }
         /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_received_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.received_time = input;
-            self
+        pub fn set_received_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.received_time = input; self
         }
         /// Appends an item to `position`.
         ///
@@ -455,14 +410,13 @@ pub mod device_position {
         /// <p>The last known device position.</p>
         pub fn position(mut self, input: f64) -> Self {
             let mut v = self.position.unwrap_or_default();
-            v.push(input);
-            self.position = Some(v);
-            self
+                            v.push(input);
+                            self.position = Some(v);
+                            self
         }
         /// <p>The last known device position.</p>
         pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.position = input;
-            self
+            self.position = input; self
         }
         /// <p>The accuracy of the device position.</p>
         pub fn accuracy(mut self, input: crate::model::PositionalAccuracy) -> Self {
@@ -470,47 +424,39 @@ pub mod device_position {
             self
         }
         /// <p>The accuracy of the device position.</p>
-        pub fn set_accuracy(
-            mut self,
-            input: std::option::Option<crate::model::PositionalAccuracy>,
-        ) -> Self {
-            self.accuracy = input;
-            self
+        pub fn set_accuracy(mut self, input: std::option::Option<crate::model::PositionalAccuracy>) -> Self {
+            self.accuracy = input; self
         }
         /// Adds a key-value pair to `position_properties`.
         ///
         /// To override the contents of this collection use [`set_position_properties`](Self::set_position_properties).
         ///
         /// <p>The properties associated with the position.</p>
-        pub fn position_properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn position_properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.position_properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.position_properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.position_properties = Some(hash_map);
+                            self
         }
         /// <p>The properties associated with the position.</p>
-        pub fn set_position_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.position_properties = input;
-            self
+        pub fn set_position_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.position_properties = input; self
         }
         /// Consumes the builder and constructs a [`DevicePosition`](crate::model::DevicePosition).
         pub fn build(self) -> crate::model::DevicePosition {
             crate::model::DevicePosition {
-                device_id: self.device_id,
-                sample_time: self.sample_time,
-                received_time: self.received_time,
-                position: self.position,
-                accuracy: self.accuracy,
-                position_properties: self.position_properties,
+                device_id: self.device_id
+                ,
+                sample_time: self.sample_time
+                ,
+                received_time: self.received_time
+                ,
+                position: self.position
+                ,
+                accuracy: self.accuracy
+                ,
+                position_properties: self.position_properties
+                ,
             }
         }
     }
@@ -526,6 +472,8 @@ pub mod device_position {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DevicePosition {
     /// Creates a new builder-style object to manufacture [`DevicePosition`](crate::model::DevicePosition).
@@ -537,7 +485,7 @@ impl DevicePosition {
 /// <p>Contains error details for each device that failed to update its position.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateDevicePositionError {
+pub struct BatchUpdateDevicePositionError  {
     /// <p>The device associated with the failed location update.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
@@ -550,21 +498,21 @@ pub struct BatchUpdateDevicePositionError {
 }
 impl BatchUpdateDevicePositionError {
     /// <p>The device associated with the failed location update.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn sample_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
     /// <p>Contains details related to the error code such as the error code and error message.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
+    pub fn error(&self) -> std::option::Option<& crate::model::BatchItemError> {
         self.error.as_ref()
     }
 }
 /// See [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError).
 pub mod batch_update_device_position_error {
-
+    
     /// A builder for [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -580,8 +528,7 @@ pub mod batch_update_device_position_error {
         }
         /// <p>The device associated with the failed location update.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -589,12 +536,8 @@ pub mod batch_update_device_position_error {
             self
         }
         /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_sample_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.sample_time = input;
-            self
+        pub fn set_sample_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.sample_time = input; self
         }
         /// <p>Contains details related to the error code such as the error code and error message.</p>
         pub fn error(mut self, input: crate::model::BatchItemError) -> Self {
@@ -602,22 +545,23 @@ pub mod batch_update_device_position_error {
             self
         }
         /// <p>Contains details related to the error code such as the error code and error message.</p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::BatchItemError>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::BatchItemError>) -> Self {
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError).
         pub fn build(self) -> crate::model::BatchUpdateDevicePositionError {
             crate::model::BatchUpdateDevicePositionError {
-                device_id: self.device_id,
-                sample_time: self.sample_time,
-                error: self.error,
+                device_id: self.device_id
+                ,
+                sample_time: self.sample_time
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchUpdateDevicePositionError {
     /// Creates a new builder-style object to manufacture [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError).
@@ -629,7 +573,7 @@ impl BatchUpdateDevicePositionError {
 /// <p>Contains the batch request error details associated with the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchItemError {
+pub struct BatchItemError  {
     /// <p>The error code associated with the batch request error.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::BatchItemErrorCode>,
@@ -639,17 +583,17 @@ pub struct BatchItemError {
 }
 impl BatchItemError {
     /// <p>The error code associated with the batch request error.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::BatchItemErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::BatchItemErrorCode> {
         self.code.as_ref()
     }
     /// <p>A message with the reason for the batch request error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`BatchItemError`](crate::model::BatchItemError).
 pub mod batch_item_error {
-
+    
     /// A builder for [`BatchItemError`](crate::model::BatchItemError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -663,12 +607,8 @@ pub mod batch_item_error {
             self
         }
         /// <p>The error code associated with the batch request error.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::BatchItemErrorCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::BatchItemErrorCode>) -> Self {
+            self.code = input; self
         }
         /// <p>A message with the reason for the batch request error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -677,17 +617,20 @@ pub mod batch_item_error {
         }
         /// <p>A message with the reason for the batch request error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BatchItemError`](crate::model::BatchItemError).
         pub fn build(self) -> crate::model::BatchItemError {
             crate::model::BatchItemError {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchItemError {
     /// Creates a new builder-style object to manufacture [`BatchItemError`](crate::model::BatchItemError).
@@ -698,15 +641,7 @@ impl BatchItemError {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct BatchItemErrorCode(String);
 impl BatchItemErrorCode {
     /// Returns the `&str` value of the enum member.
@@ -716,19 +651,11 @@ impl BatchItemErrorCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AccessDeniedError",
-            "ConflictError",
-            "InternalServerError",
-            "ResourceNotFoundError",
-            "ThrottlingError",
-            "ValidationError",
+            "AccessDeniedError", "ConflictError", "InternalServerError", "ResourceNotFoundError", "ThrottlingError", "ValidationError"
         ]
     }
 }
-impl<T> std::convert::From<T> for BatchItemErrorCode
-where
-    T: std::convert::AsRef<str>,
-{
+impl <T> std::convert::From<T> for BatchItemErrorCode where T: std::convert::AsRef<str> {
     fn from(s: T) -> Self {
         BatchItemErrorCode(s.as_ref().to_owned())
     }
@@ -737,7 +664,7 @@ where
 /// <p>Contains the position update details for a device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DevicePositionUpdate {
+pub struct DevicePositionUpdate  {
     /// <p>The device associated to the position update.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
@@ -750,39 +677,35 @@ pub struct DevicePositionUpdate {
     /// <p>The accuracy of the device position.</p>
     #[doc(hidden)]
     pub accuracy: std::option::Option<crate::model::PositionalAccuracy>,
-    /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p>
+    /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p> 
     /// <p>Format: <code>"key" : "value"</code> </p>
     #[doc(hidden)]
-    pub position_properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub position_properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DevicePositionUpdate {
     /// <p>The device associated to the position update.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn sample_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
     /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
-    pub fn position(&self) -> std::option::Option<&[f64]> {
+    pub fn position(&self) -> std::option::Option<& [f64]> {
         self.position.as_deref()
     }
     /// <p>The accuracy of the device position.</p>
-    pub fn accuracy(&self) -> std::option::Option<&crate::model::PositionalAccuracy> {
+    pub fn accuracy(&self) -> std::option::Option<& crate::model::PositionalAccuracy> {
         self.accuracy.as_ref()
     }
-    /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p>
+    /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p> 
     /// <p>Format: <code>"key" : "value"</code> </p>
-    pub fn position_properties(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn position_properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.position_properties.as_ref()
     }
 }
-impl std::fmt::Debug for DevicePositionUpdate {
+impl  std::fmt::Debug for DevicePositionUpdate  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DevicePositionUpdate");
         formatter.field("device_id", &self.device_id);
@@ -795,7 +718,7 @@ impl std::fmt::Debug for DevicePositionUpdate {
 }
 /// See [`DevicePositionUpdate`](crate::model::DevicePositionUpdate).
 pub mod device_position_update {
-
+    
     /// A builder for [`DevicePositionUpdate`](crate::model::DevicePositionUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -803,9 +726,7 @@ pub mod device_position_update {
         pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) accuracy: std::option::Option<crate::model::PositionalAccuracy>,
-        pub(crate) position_properties: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) position_properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The device associated to the position update.</p>
@@ -815,8 +736,7 @@ pub mod device_position_update {
         }
         /// <p>The device associated to the position update.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -824,12 +744,8 @@ pub mod device_position_update {
             self
         }
         /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-        pub fn set_sample_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.sample_time = input;
-            self
+        pub fn set_sample_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.sample_time = input; self
         }
         /// Appends an item to `position`.
         ///
@@ -838,14 +754,13 @@ pub mod device_position_update {
         /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
         pub fn position(mut self, input: f64) -> Self {
             let mut v = self.position.unwrap_or_default();
-            v.push(input);
-            self.position = Some(v);
-            self
+                            v.push(input);
+                            self.position = Some(v);
+                            self
         }
         /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
         pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.position = input;
-            self
+            self.position = input; self
         }
         /// <p>The accuracy of the device position.</p>
         pub fn accuracy(mut self, input: crate::model::PositionalAccuracy) -> Self {
@@ -853,48 +768,39 @@ pub mod device_position_update {
             self
         }
         /// <p>The accuracy of the device position.</p>
-        pub fn set_accuracy(
-            mut self,
-            input: std::option::Option<crate::model::PositionalAccuracy>,
-        ) -> Self {
-            self.accuracy = input;
-            self
+        pub fn set_accuracy(mut self, input: std::option::Option<crate::model::PositionalAccuracy>) -> Self {
+            self.accuracy = input; self
         }
         /// Adds a key-value pair to `position_properties`.
         ///
         /// To override the contents of this collection use [`set_position_properties`](Self::set_position_properties).
         ///
-        /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p>
+        /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p> 
         /// <p>Format: <code>"key" : "value"</code> </p>
-        pub fn position_properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn position_properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.position_properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.position_properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.position_properties = Some(hash_map);
+                            self
         }
-        /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p>
+        /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p> 
         /// <p>Format: <code>"key" : "value"</code> </p>
-        pub fn set_position_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.position_properties = input;
-            self
+        pub fn set_position_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.position_properties = input; self
         }
         /// Consumes the builder and constructs a [`DevicePositionUpdate`](crate::model::DevicePositionUpdate).
         pub fn build(self) -> crate::model::DevicePositionUpdate {
             crate::model::DevicePositionUpdate {
-                device_id: self.device_id,
-                sample_time: self.sample_time,
-                position: self.position,
-                accuracy: self.accuracy,
-                position_properties: self.position_properties,
+                device_id: self.device_id
+                ,
+                sample_time: self.sample_time
+                ,
+                position: self.position
+                ,
+                accuracy: self.accuracy
+                ,
+                position_properties: self.position_properties
+                ,
             }
         }
     }
@@ -909,6 +815,8 @@ pub mod device_position_update {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DevicePositionUpdate {
     /// Creates a new builder-style object to manufacture [`DevicePositionUpdate`](crate::model::DevicePositionUpdate).
@@ -920,7 +828,7 @@ impl DevicePositionUpdate {
 /// <p>Contains error details for each device that didn't return a position.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetDevicePositionError {
+pub struct BatchGetDevicePositionError  {
     /// <p>The ID of the device that didn't return a position.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
@@ -930,17 +838,17 @@ pub struct BatchGetDevicePositionError {
 }
 impl BatchGetDevicePositionError {
     /// <p>The ID of the device that didn't return a position.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>Contains details related to the error code.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
+    pub fn error(&self) -> std::option::Option<& crate::model::BatchItemError> {
         self.error.as_ref()
     }
 }
 /// See [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError).
 pub mod batch_get_device_position_error {
-
+    
     /// A builder for [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -955,8 +863,7 @@ pub mod batch_get_device_position_error {
         }
         /// <p>The ID of the device that didn't return a position.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// <p>Contains details related to the error code.</p>
         pub fn error(mut self, input: crate::model::BatchItemError) -> Self {
@@ -964,21 +871,21 @@ pub mod batch_get_device_position_error {
             self
         }
         /// <p>Contains details related to the error code.</p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::BatchItemError>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::BatchItemError>) -> Self {
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError).
         pub fn build(self) -> crate::model::BatchGetDevicePositionError {
             crate::model::BatchGetDevicePositionError {
-                device_id: self.device_id,
-                error: self.error,
+                device_id: self.device_id
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetDevicePositionError {
     /// Creates a new builder-style object to manufacture [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError).
@@ -990,7 +897,7 @@ impl BatchGetDevicePositionError {
 /// <p>Contains the tracker resource details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteDevicePositionHistoryError {
+pub struct BatchDeleteDevicePositionHistoryError  {
     /// <p>The ID of the device for this position.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
@@ -1000,17 +907,17 @@ pub struct BatchDeleteDevicePositionHistoryError {
 }
 impl BatchDeleteDevicePositionHistoryError {
     /// <p>The ID of the device for this position.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>Contains the batch request error details associated with the request.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
+    pub fn error(&self) -> std::option::Option<& crate::model::BatchItemError> {
         self.error.as_ref()
     }
 }
 /// See [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError).
 pub mod batch_delete_device_position_history_error {
-
+    
     /// A builder for [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1025,8 +932,7 @@ pub mod batch_delete_device_position_history_error {
         }
         /// <p>The ID of the device for this position.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// <p>Contains the batch request error details associated with the request.</p>
         pub fn error(mut self, input: crate::model::BatchItemError) -> Self {
@@ -1034,21 +940,21 @@ pub mod batch_delete_device_position_history_error {
             self
         }
         /// <p>Contains the batch request error details associated with the request.</p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::BatchItemError>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::BatchItemError>) -> Self {
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError).
         pub fn build(self) -> crate::model::BatchDeleteDevicePositionHistoryError {
             crate::model::BatchDeleteDevicePositionHistoryError {
-                device_id: self.device_id,
-                error: self.error,
+                device_id: self.device_id
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDeleteDevicePositionHistoryError {
     /// Creates a new builder-style object to manufacture [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError).
@@ -1060,7 +966,7 @@ impl BatchDeleteDevicePositionHistoryError {
 /// <p>Contains the tracker resource details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTrackersResponseEntry {
+pub struct ListTrackersResponseEntry  {
     /// <p>The name of the tracker resource.</p>
     #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
@@ -1068,10 +974,7 @@ pub struct ListTrackersResponseEntry {
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>No longer used. Always returns an empty string.</p>
@@ -1087,38 +990,35 @@ pub struct ListTrackersResponseEntry {
 }
 impl ListTrackersResponseEntry {
     /// <p>The name of the tracker resource.</p>
-    pub fn tracker_name(&self) -> std::option::Option<&str> {
+    pub fn tracker_name(&self) -> std::option::Option<& str> {
         self.tracker_name.as_deref()
     }
     /// <p>The description for the tracker resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    pub fn pricing_plan(&self) -> std::option::Option<& crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
-    pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
+    pub fn pricing_plan_data_source(&self) -> std::option::Option<& str> {
         self.pricing_plan_data_source.as_deref()
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry).
 pub mod list_trackers_response_entry {
-
+    
     /// A builder for [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1137,8 +1037,7 @@ pub mod list_trackers_response_entry {
         }
         /// <p>The name of the tracker resource.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tracker_name = input;
-            self
+            self.tracker_name = input; self
         }
         /// <p>The description for the tracker resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1147,29 +1046,18 @@ pub mod list_trackers_response_entry {
         }
         /// <p>The description for the tracker resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
-        pub fn set_pricing_plan(
-            mut self,
-            input: std::option::Option<crate::model::PricingPlan>,
-        ) -> Self {
-            self.pricing_plan = input;
-            self
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+        pub fn set_pricing_plan(mut self, input: std::option::Option<crate::model::PricingPlan>) -> Self {
+            self.pricing_plan = input; self
         }
         /// <p>No longer used. Always returns an empty string.</p>
         #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
@@ -1179,12 +1067,8 @@ pub mod list_trackers_response_entry {
         }
         /// <p>No longer used. Always returns an empty string.</p>
         #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
-        pub fn set_pricing_plan_data_source(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pricing_plan_data_source = input;
-            self
+        pub fn set_pricing_plan_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pricing_plan_data_source = input; self
         }
         /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1192,12 +1076,8 @@ pub mod list_trackers_response_entry {
             self
         }
         /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1205,25 +1085,29 @@ pub mod list_trackers_response_entry {
             self
         }
         /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry).
         pub fn build(self) -> crate::model::ListTrackersResponseEntry {
             crate::model::ListTrackersResponseEntry {
-                tracker_name: self.tracker_name,
-                description: self.description,
-                pricing_plan: self.pricing_plan,
-                pricing_plan_data_source: self.pricing_plan_data_source,
-                create_time: self.create_time,
-                update_time: self.update_time,
+                tracker_name: self.tracker_name
+                ,
+                description: self.description
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                pricing_plan_data_source: self.pricing_plan_data_source
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTrackersResponseEntry {
     /// Creates a new builder-style object to manufacture [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry).
@@ -1234,15 +1118,7 @@ impl ListTrackersResponseEntry {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct PricingPlan(String);
 impl PricingPlan {
     /// Returns the `&str` value of the enum member.
@@ -1252,16 +1128,11 @@ impl PricingPlan {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "MobileAssetManagement",
-            "MobileAssetTracking",
-            "RequestBasedUsage",
+            "MobileAssetManagement", "MobileAssetTracking", "RequestBasedUsage"
         ]
     }
 }
-impl<T> std::convert::From<T> for PricingPlan
-where
-    T: std::convert::AsRef<str>,
-{
+impl <T> std::convert::From<T> for PricingPlan where T: std::convert::AsRef<str> {
     fn from(s: T) -> Self {
         PricingPlan(s.as_ref().to_owned())
     }
@@ -1269,15 +1140,7 @@ where
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct PositionFiltering(String);
 impl PositionFiltering {
     /// Returns the `&str` value of the enum member.
@@ -1286,13 +1149,12 @@ impl PositionFiltering {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AccuracyBased", "DistanceBased", "TimeBased"]
+        &[
+            "AccuracyBased", "DistanceBased", "TimeBased"
+        ]
     }
 }
-impl<T> std::convert::From<T> for PositionFiltering
-where
-    T: std::convert::AsRef<str>,
-{
+impl <T> std::convert::From<T> for PositionFiltering where T: std::convert::AsRef<str> {
     fn from(s: T) -> Self {
         PositionFiltering(s.as_ref().to_owned())
     }
@@ -1301,13 +1163,13 @@ where
 /// <p>A summary of the calculated route matrix.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CalculateRouteMatrixSummary {
-    /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
-    /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
-    /// </ul>
+pub struct CalculateRouteMatrixSummary  {
+    /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Esri</code> </p> </li> 
+    /// <li> <p> <code>Grab</code> </p> </li> 
+    /// <li> <p> <code>Here</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
@@ -1322,14 +1184,14 @@ pub struct CalculateRouteMatrixSummary {
     pub distance_unit: std::option::Option<crate::model::DistanceUnit>,
 }
 impl CalculateRouteMatrixSummary {
-    /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
-    /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
-    /// </ul>
+    /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Esri</code> </p> </li> 
+    /// <li> <p> <code>Grab</code> </p> </li> 
+    /// <li> <p> <code>Here</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(&self) -> std::option::Option<&str> {
+    pub fn data_source(&self) -> std::option::Option<& str> {
         self.data_source.as_deref()
     }
     /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
@@ -1341,13 +1203,13 @@ impl CalculateRouteMatrixSummary {
         self.error_count
     }
     /// <p>The unit of measurement for route distances.</p>
-    pub fn distance_unit(&self) -> std::option::Option<&crate::model::DistanceUnit> {
+    pub fn distance_unit(&self) -> std::option::Option<& crate::model::DistanceUnit> {
         self.distance_unit.as_ref()
     }
 }
 /// See [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary).
 pub mod calculate_route_matrix_summary {
-
+    
     /// A builder for [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1357,27 +1219,26 @@ pub mod calculate_route_matrix_summary {
         pub(crate) distance_unit: std::option::Option<crate::model::DistanceUnit>,
     }
     impl Builder {
-        /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
-        /// <ul>
-        /// <li> <p> <code>Esri</code> </p> </li>
-        /// <li> <p> <code>Grab</code> </p> </li>
-        /// <li> <p> <code>Here</code> </p> </li>
-        /// </ul>
+        /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Esri</code> </p> </li> 
+        /// <li> <p> <code>Grab</code> </p> </li> 
+        /// <li> <p> <code>Here</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
-        /// <ul>
-        /// <li> <p> <code>Esri</code> </p> </li>
-        /// <li> <p> <code>Grab</code> </p> </li>
-        /// <li> <p> <code>Here</code> </p> </li>
-        /// </ul>
+        /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Esri</code> </p> </li> 
+        /// <li> <p> <code>Grab</code> </p> </li> 
+        /// <li> <p> <code>Here</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_source = input;
-            self
+            self.data_source = input; self
         }
         /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
         pub fn route_count(mut self, input: i32) -> Self {
@@ -1386,8 +1247,7 @@ pub mod calculate_route_matrix_summary {
         }
         /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
         pub fn set_route_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.route_count = input;
-            self
+            self.route_count = input; self
         }
         /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
         pub fn error_count(mut self, input: i32) -> Self {
@@ -1396,8 +1256,7 @@ pub mod calculate_route_matrix_summary {
         }
         /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
         pub fn set_error_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.error_count = input;
-            self
+            self.error_count = input; self
         }
         /// <p>The unit of measurement for route distances.</p>
         pub fn distance_unit(mut self, input: crate::model::DistanceUnit) -> Self {
@@ -1405,23 +1264,25 @@ pub mod calculate_route_matrix_summary {
             self
         }
         /// <p>The unit of measurement for route distances.</p>
-        pub fn set_distance_unit(
-            mut self,
-            input: std::option::Option<crate::model::DistanceUnit>,
-        ) -> Self {
-            self.distance_unit = input;
-            self
+        pub fn set_distance_unit(mut self, input: std::option::Option<crate::model::DistanceUnit>) -> Self {
+            self.distance_unit = input; self
         }
         /// Consumes the builder and constructs a [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary).
         pub fn build(self) -> crate::model::CalculateRouteMatrixSummary {
             crate::model::CalculateRouteMatrixSummary {
-                data_source: self.data_source,
-                route_count: self.route_count,
-                error_count: self.error_count,
-                distance_unit: self.distance_unit,
+                data_source: self.data_source
+                ,
+                route_count: self.route_count
+                ,
+                error_count: self.error_count
+                ,
+                distance_unit: self.distance_unit
+                ,
             }
         }
     }
+    
+    
 }
 impl CalculateRouteMatrixSummary {
     /// Creates a new builder-style object to manufacture [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary).
@@ -1432,15 +1293,7 @@ impl CalculateRouteMatrixSummary {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct DistanceUnit(String);
 impl DistanceUnit {
     /// Returns the `&str` value of the enum member.
@@ -1449,13 +1302,12 @@ impl DistanceUnit {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Kilometers", "Miles"]
+        &[
+            "Kilometers", "Miles"
+        ]
     }
 }
-impl<T> std::convert::From<T> for DistanceUnit
-where
-    T: std::convert::AsRef<str>,
-{
+impl <T> std::convert::From<T> for DistanceUnit where T: std::convert::AsRef<str> {
     fn from(s: T) -> Self {
         DistanceUnit(s.as_ref().to_owned())
     }
@@ -1464,7 +1316,7 @@ where
 /// <p>The result for the calculated route of one <code>DeparturePosition</code> <code>DestinationPosition</code> pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RouteMatrixEntry {
+pub struct RouteMatrixEntry  {
     /// <p>The total distance of travel for the route.</p>
     #[doc(hidden)]
     pub distance: std::option::Option<f64>,
@@ -1485,13 +1337,13 @@ impl RouteMatrixEntry {
         self.duration_seconds
     }
     /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::RouteMatrixEntryError> {
+    pub fn error(&self) -> std::option::Option<& crate::model::RouteMatrixEntryError> {
         self.error.as_ref()
     }
 }
 /// See [`RouteMatrixEntry`](crate::model::RouteMatrixEntry).
 pub mod route_matrix_entry {
-
+    
     /// A builder for [`RouteMatrixEntry`](crate::model::RouteMatrixEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1507,8 +1359,7 @@ pub mod route_matrix_entry {
         }
         /// <p>The total distance of travel for the route.</p>
         pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
-            self.distance = input;
-            self
+            self.distance = input; self
         }
         /// <p>The expected duration of travel for the route.</p>
         pub fn duration_seconds(mut self, input: f64) -> Self {
@@ -1517,8 +1368,7 @@ pub mod route_matrix_entry {
         }
         /// <p>The expected duration of travel for the route.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<f64>) -> Self {
-            self.duration_seconds = input;
-            self
+            self.duration_seconds = input; self
         }
         /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
         pub fn error(mut self, input: crate::model::RouteMatrixEntryError) -> Self {
@@ -1526,22 +1376,23 @@ pub mod route_matrix_entry {
             self
         }
         /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::RouteMatrixEntryError>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::RouteMatrixEntryError>) -> Self {
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`RouteMatrixEntry`](crate::model::RouteMatrixEntry).
         pub fn build(self) -> crate::model::RouteMatrixEntry {
             crate::model::RouteMatrixEntry {
-                distance: self.distance,
-                duration_seconds: self.duration_seconds,
-                error: self.error,
+                distance: self.distance
+                ,
+                duration_seconds: self.duration_seconds
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl RouteMatrixEntry {
     /// Creates a new builder-style object to manufacture [`RouteMatrixEntry`](crate::model::RouteMatrixEntry).
@@ -1550,29 +1401,29 @@ impl RouteMatrixEntry {
     }
 }
 
-/// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
-/// <p>The error code can be one of the following:</p>
-/// <ul>
-/// <li> <p> <code>RouteNotFound</code> - Unable to find a valid route with the given parameters.</p> </li>
-/// </ul>
-/// <ul>
-/// <li> <p> <code>RouteTooLong</code> - Route calculation went beyond the maximum size of a route and was terminated before completion.</p> </li>
-/// </ul>
-/// <ul>
-/// <li> <p> <code>PositionsNotFound</code> - One or more of the input positions were not found on the route network.</p> </li>
-/// </ul>
-/// <ul>
-/// <li> <p> <code>DestinationPositionNotFound</code> - The destination position was not found on the route network.</p> </li>
-/// </ul>
-/// <ul>
-/// <li> <p> <code>DeparturePositionNotFound</code> - The departure position was not found on the route network.</p> </li>
-/// </ul>
-/// <ul>
-/// <li> <p> <code>OtherValidationError</code> - The given inputs were not valid or a route was not found. More information is given in the error <code>Message</code> </p> </li>
+/// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p> 
+/// <p>The error code can be one of the following:</p> 
+/// <ul> 
+/// <li> <p> <code>RouteNotFound</code> - Unable to find a valid route with the given parameters.</p> </li> 
+/// </ul> 
+/// <ul> 
+/// <li> <p> <code>RouteTooLong</code> - Route calculation went beyond the maximum size of a route and was terminated before completion.</p> </li> 
+/// </ul> 
+/// <ul> 
+/// <li> <p> <code>PositionsNotFound</code> - One or more of the input positions were not found on the route network.</p> </li> 
+/// </ul> 
+/// <ul> 
+/// <li> <p> <code>DestinationPositionNotFound</code> - The destination position was not found on the route network.</p> </li> 
+/// </ul> 
+/// <ul> 
+/// <li> <p> <code>DeparturePositionNotFound</code> - The departure position was not found on the route network.</p> </li> 
+/// </ul> 
+/// <ul> 
+/// <li> <p> <code>OtherValidationError</code> - The given inputs were not valid or a route was not found. More information is given in the error <code>Message</code> </p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RouteMatrixEntryError {
+pub struct RouteMatrixEntryError  {
     /// <p>The type of error which occurred for the route calculation.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::RouteMatrixErrorCode>,
@@ -1582,17 +1433,17 @@ pub struct RouteMatrixEntryError {
 }
 impl RouteMatrixEntryError {
     /// <p>The type of error which occurred for the route calculation.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::RouteMatrixErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::RouteMatrixErrorCode> {
         self.code.as_ref()
     }
     /// <p>A message about the error that occurred for the route calculation.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError).
 pub mod route_matrix_entry_error {
-
+    
     /// A builder for [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1606,12 +1457,8 @@ pub mod route_matrix_entry_error {
             self
         }
         /// <p>The type of error which occurred for the route calculation.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::RouteMatrixErrorCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::RouteMatrixErrorCode>) -> Self {
+            self.code = input; self
         }
         /// <p>A message about the error that occurred for the route calculation.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1620,17 +1467,20 @@ pub mod route_matrix_entry_error {
         }
         /// <p>A message about the error that occurred for the route calculation.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError).
         pub fn build(self) -> crate::model::RouteMatrixEntryError {
             crate::model::RouteMatrixEntryError {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl RouteMatrixEntryError {
     /// Creates a new builder-style object to manufacture [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError).
@@ -1641,15 +1491,7 @@ impl RouteMatrixEntryError {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct RouteMatrixErrorCode(String);
 impl RouteMatrixErrorCode {
     /// Returns the `&str` value of the enum member.
@@ -1659,19 +1501,11 @@ impl RouteMatrixErrorCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DeparturePositionNotFound",
-            "DestinationPositionNotFound",
-            "OtherValidationError",
-            "PositionsNotFound",
-            "RouteNotFound",
-            "RouteTooLong",
+            "DeparturePositionNotFound", "DestinationPositionNotFound", "OtherValidationError", "PositionsNotFound", "RouteNotFound", "RouteTooLong"
         ]
     }
 }
-impl<T> std::convert::From<T> for RouteMatrixErrorCode
-where
-    T: std::convert::AsRef<str>,
-{
+impl <T> std::convert::From<T> for RouteMatrixErrorCode where T: std::convert::AsRef<str> {
     fn from(s: T) -> Self {
         RouteMatrixErrorCode(s.as_ref().to_owned())
     }
@@ -1680,14 +1514,14 @@ where
 /// <p>Contains details about additional route preferences for requests that specify <code>TravelMode</code> as <code>Truck</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CalculateRouteTruckModeOptions {
-    /// <p>Avoids ferries when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
+pub struct CalculateRouteTruckModeOptions  {
+    /// <p>Avoids ferries when calculating routes.</p> 
+    /// <p>Default Value: <code>false</code> </p> 
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     #[doc(hidden)]
     pub avoid_ferries: std::option::Option<bool>,
-    /// <p>Avoids tolls when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Avoids tolls when calculating routes.</p> 
+    /// <p>Default Value: <code>false</code> </p> 
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     #[doc(hidden)]
     pub avoid_tolls: std::option::Option<bool>,
@@ -1699,30 +1533,30 @@ pub struct CalculateRouteTruckModeOptions {
     pub weight: std::option::Option<crate::model::TruckWeight>,
 }
 impl CalculateRouteTruckModeOptions {
-    /// <p>Avoids ferries when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Avoids ferries when calculating routes.</p> 
+    /// <p>Default Value: <code>false</code> </p> 
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     pub fn avoid_ferries(&self) -> std::option::Option<bool> {
         self.avoid_ferries
     }
-    /// <p>Avoids tolls when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Avoids tolls when calculating routes.</p> 
+    /// <p>Default Value: <code>false</code> </p> 
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     pub fn avoid_tolls(&self) -> std::option::Option<bool> {
         self.avoid_tolls
     }
     /// <p>Specifies the truck's dimension specifications including length, height, width, and unit of measurement. Used to avoid roads that can't support the truck's dimensions.</p>
-    pub fn dimensions(&self) -> std::option::Option<&crate::model::TruckDimensions> {
+    pub fn dimensions(&self) -> std::option::Option<& crate::model::TruckDimensions> {
         self.dimensions.as_ref()
     }
     /// <p>Specifies the truck's weight specifications including total weight and unit of measurement. Used to avoid roads that can't support the truck's weight.</p>
-    pub fn weight(&self) -> std::option::Option<&crate::model::TruckWeight> {
+    pub fn weight(&self) -> std::option::Option<& crate::model::TruckWeight> {
         self.weight.as_ref()
     }
 }
 /// See [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions).
 pub mod calculate_route_truck_mode_options {
-
+    
     /// A builder for [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1732,33 +1566,31 @@ pub mod calculate_route_truck_mode_options {
         pub(crate) weight: std::option::Option<crate::model::TruckWeight>,
     }
     impl Builder {
-        /// <p>Avoids ferries when calculating routes.</p>
-        /// <p>Default Value: <code>false</code> </p>
+        /// <p>Avoids ferries when calculating routes.</p> 
+        /// <p>Default Value: <code>false</code> </p> 
         /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
         pub fn avoid_ferries(mut self, input: bool) -> Self {
             self.avoid_ferries = Some(input);
             self
         }
-        /// <p>Avoids ferries when calculating routes.</p>
-        /// <p>Default Value: <code>false</code> </p>
+        /// <p>Avoids ferries when calculating routes.</p> 
+        /// <p>Default Value: <code>false</code> </p> 
         /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
         pub fn set_avoid_ferries(mut self, input: std::option::Option<bool>) -> Self {
-            self.avoid_ferries = input;
-            self
+            self.avoid_ferries = input; self
         }
-        /// <p>Avoids tolls when calculating routes.</p>
-        /// <p>Default Value: <code>false</code> </p>
+        /// <p>Avoids tolls when calculating routes.</p> 
+        /// <p>Default Value: <code>false</code> </p> 
         /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
         pub fn avoid_tolls(mut self, input: bool) -> Self {
             self.avoid_tolls = Some(input);
             self
         }
-        /// <p>Avoids tolls when calculating routes.</p>
-        /// <p>Default Value: <code>false</code> </p>
+        /// <p>Avoids tolls when calculating routes.</p> 
+        /// <p>Default Value: <code>false</code> </p> 
         /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
         pub fn set_avoid_tolls(mut self, input: std::option::Option<bool>) -> Self {
-            self.avoid_tolls = input;
-            self
+            self.avoid_tolls = input; self
         }
         /// <p>Specifies the truck's dimension specifications including length, height, width, and unit of measurement. Used to avoid roads that can't support the truck's dimensions.</p>
         pub fn dimensions(mut self, input: crate::model::TruckDimensions) -> Self {
@@ -1766,12 +1598,8 @@ pub mod calculate_route_truck_mode_options {
             self
         }
         /// <p>Specifies the truck's dimension specifications including length, height, width, and unit of measurement. Used to avoid roads that can't support the truck's dimensions.</p>
-        pub fn set_dimensions(
-            mut self,
-            input: std::option::Option<crate::model::TruckDimensions>,
-        ) -> Self {
-            self.dimensions = input;
-            self
+        pub fn set_dimensions(mut self, input: std::option::Option<crate::model::TruckDimensions>) -> Self {
+            self.dimensions = input; self
         }
         /// <p>Specifies the truck's weight specifications including total weight and unit of measurement. Used to avoid roads that can't support the truck's weight.</p>
         pub fn weight(mut self, input: crate::model::TruckWeight) -> Self {
@@ -1780,19 +1608,24 @@ pub mod calculate_route_truck_mode_options {
         }
         /// <p>Specifies the truck's weight specifications including total weight and unit of measurement. Used to avoid roads that can't support the truck's weight.</p>
         pub fn set_weight(mut self, input: std::option::Option<crate::model::TruckWeight>) -> Self {
-            self.weight = input;
-            self
+            self.weight = input; self
         }
         /// Consumes the builder and constructs a [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions).
         pub fn build(self) -> crate::model::CalculateRouteTruckModeOptions {
             crate::model::CalculateRouteTruckModeOptions {
-                avoid_ferries: self.avoid_ferries,
-                avoid_tolls: self.avoid_tolls,
-                dimensions: self.dimensions,
-                weight: self.weight,
+                avoid_ferries: self.avoid_ferries
+                ,
+                avoid_tolls: self.avoid_tolls
+                ,
+                dimensions: self.dimensions
+                ,
+                weight: self.weight
+                ,
             }
         }
     }
+    
+    
 }
 impl CalculateRouteTruckModeOptions {
     /// Creates a new builder-style object to manufacture [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions).
@@ -1804,35 +1637,35 @@ impl CalculateRouteTruckModeOptions {
 /// <p>Contains details about the truck's weight specifications. Used to avoid roads that can't support or allow the total weight for requests that specify <code>TravelMode</code> as <code>Truck</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TruckWeight {
-    /// <p>The total weight of the truck. </p>
-    /// <ul>
-    /// <li> <p>For example, <code>3500</code>.</p> </li>
+pub struct TruckWeight  {
+    /// <p>The total weight of the truck. </p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>3500</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub total: std::option::Option<f64>,
-    /// <p>The unit of measurement to use for the truck weight.</p>
+    /// <p>The unit of measurement to use for the truck weight.</p> 
     /// <p>Default Value: <code>Kilograms</code> </p>
     #[doc(hidden)]
     pub unit: std::option::Option<crate::model::VehicleWeightUnit>,
 }
 impl TruckWeight {
-    /// <p>The total weight of the truck. </p>
-    /// <ul>
-    /// <li> <p>For example, <code>3500</code>.</p> </li>
+    /// <p>The total weight of the truck. </p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>3500</code>.</p> </li> 
     /// </ul>
     pub fn total(&self) -> std::option::Option<f64> {
         self.total
     }
-    /// <p>The unit of measurement to use for the truck weight.</p>
+    /// <p>The unit of measurement to use for the truck weight.</p> 
     /// <p>Default Value: <code>Kilograms</code> </p>
-    pub fn unit(&self) -> std::option::Option<&crate::model::VehicleWeightUnit> {
+    pub fn unit(&self) -> std::option::Option<& crate::model::VehicleWeightUnit> {
         self.unit.as_ref()
     }
 }
 /// See [`TruckWeight`](crate::model::TruckWeight).
 pub mod truck_weight {
-
+    
     /// A builder for [`TruckWeight`](crate::model::TruckWeight).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1840,45 +1673,44 @@ pub mod truck_weight {
         pub(crate) unit: std::option::Option<crate::model::VehicleWeightUnit>,
     }
     impl Builder {
-        /// <p>The total weight of the truck. </p>
-        /// <ul>
-        /// <li> <p>For example, <code>3500</code>.</p> </li>
+        /// <p>The total weight of the truck. </p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>3500</code>.</p> </li> 
         /// </ul>
         pub fn total(mut self, input: f64) -> Self {
             self.total = Some(input);
             self
         }
-        /// <p>The total weight of the truck. </p>
-        /// <ul>
-        /// <li> <p>For example, <code>3500</code>.</p> </li>
+        /// <p>The total weight of the truck. </p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>3500</code>.</p> </li> 
         /// </ul>
         pub fn set_total(mut self, input: std::option::Option<f64>) -> Self {
-            self.total = input;
-            self
+            self.total = input; self
         }
-        /// <p>The unit of measurement to use for the truck weight.</p>
+        /// <p>The unit of measurement to use for the truck weight.</p> 
         /// <p>Default Value: <code>Kilograms</code> </p>
         pub fn unit(mut self, input: crate::model::VehicleWeightUnit) -> Self {
             self.unit = Some(input);
             self
         }
-        /// <p>The unit of measurement to use for the truck weight.</p>
+        /// <p>The unit of measurement to use for the truck weight.</p> 
         /// <p>Default Value: <code>Kilograms</code> </p>
-        pub fn set_unit(
-            mut self,
-            input: std::option::Option<crate::model::VehicleWeightUnit>,
-        ) -> Self {
-            self.unit = input;
-            self
+        pub fn set_unit(mut self, input: std::option::Option<crate::model::VehicleWeightUnit>) -> Self {
+            self.unit = input; self
         }
         /// Consumes the builder and constructs a [`TruckWeight`](crate::model::TruckWeight).
         pub fn build(self) -> crate::model::TruckWeight {
             crate::model::TruckWeight {
-                total: self.total,
-                unit: self.unit,
+                total: self.total
+                ,
+                unit: self.unit
+                ,
             }
         }
     }
+    
+    
 }
 impl TruckWeight {
     /// Creates a new builder-style object to manufacture [`TruckWeight`](crate::model::TruckWeight).
@@ -1889,15 +1721,7 @@ impl TruckWeight {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct VehicleWeightUnit(String);
 impl VehicleWeightUnit {
     /// Returns the `&str` value of the enum member.
@@ -1906,13 +1730,12 @@ impl VehicleWeightUnit {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Kilograms", "Pounds"]
+        &[
+            "Kilograms", "Pounds"
+        ]
     }
 }
-impl<T> std::convert::From<T> for VehicleWeightUnit
-where
-    T: std::convert::AsRef<str>,
-{
+impl <T> std::convert::From<T> for VehicleWeightUnit where T: std::convert::AsRef<str> {
     fn from(s: T) -> Self {
         VehicleWeightUnit(s.as_ref().to_owned())
     }
@@ -1921,73 +1744,73 @@ where
 /// <p>Contains details about the truck dimensions in the unit of measurement that you specify. Used to filter out roads that can't support or allow the specified dimensions for requests that specify <code>TravelMode</code> as <code>Truck</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TruckDimensions {
-    /// <p>The length of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>15.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p>
+pub struct TruckDimensions  {
+    /// <p>The length of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>15.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p> 
     /// </note>
     #[doc(hidden)]
     pub length: std::option::Option<f64>,
-    /// <p>The height of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>4.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// <p>The height of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>4.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p> 
     /// </note>
     #[doc(hidden)]
     pub height: std::option::Option<f64>,
-    /// <p>The width of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>4.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// <p>The width of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>4.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p> 
     /// </note>
     #[doc(hidden)]
     pub width: std::option::Option<f64>,
-    /// <p> Specifies the unit of measurement for the truck dimensions.</p>
+    /// <p> Specifies the unit of measurement for the truck dimensions.</p> 
     /// <p>Default Value: <code>Meters</code> </p>
     #[doc(hidden)]
     pub unit: std::option::Option<crate::model::DimensionUnit>,
 }
 impl TruckDimensions {
-    /// <p>The length of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>15.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p>
+    /// <p>The length of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>15.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p> 
     /// </note>
     pub fn length(&self) -> std::option::Option<f64> {
         self.length
     }
-    /// <p>The height of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>4.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// <p>The height of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>4.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p> 
     /// </note>
     pub fn height(&self) -> std::option::Option<f64> {
         self.height
     }
-    /// <p>The width of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>4.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// <p>The width of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>4.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p> 
     /// </note>
     pub fn width(&self) -> std::option::Option<f64> {
         self.width
     }
-    /// <p> Specifies the unit of measurement for the truck dimensions.</p>
+    /// <p> Specifies the unit of measurement for the truck dimensions.</p> 
     /// <p>Default Value: <code>Meters</code> </p>
-    pub fn unit(&self) -> std::option::Option<&crate::model::DimensionUnit> {
+    pub fn unit(&self) -> std::option::Option<& crate::model::DimensionUnit> {
         self.unit.as_ref()
     }
 }
 /// See [`TruckDimensions`](crate::model::TruckDimensions).
 pub mod truck_dimensions {
-
+    
     /// A builder for [`TruckDimensions`](crate::model::TruckDimensions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1997,88 +1820,90 @@ pub mod truck_dimensions {
         pub(crate) unit: std::option::Option<crate::model::DimensionUnit>,
     }
     impl Builder {
-        /// <p>The length of the truck.</p>
-        /// <ul>
-        /// <li> <p>For example, <code>15.5</code>.</p> </li>
-        /// </ul> <note>
-        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p>
+        /// <p>The length of the truck.</p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>15.5</code>.</p> </li> 
+        /// </ul> <note> 
+        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p> 
         /// </note>
         pub fn length(mut self, input: f64) -> Self {
             self.length = Some(input);
             self
         }
-        /// <p>The length of the truck.</p>
-        /// <ul>
-        /// <li> <p>For example, <code>15.5</code>.</p> </li>
-        /// </ul> <note>
-        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p>
+        /// <p>The length of the truck.</p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>15.5</code>.</p> </li> 
+        /// </ul> <note> 
+        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p> 
         /// </note>
         pub fn set_length(mut self, input: std::option::Option<f64>) -> Self {
-            self.length = input;
-            self
+            self.length = input; self
         }
-        /// <p>The height of the truck.</p>
-        /// <ul>
-        /// <li> <p>For example, <code>4.5</code>.</p> </li>
-        /// </ul> <note>
-        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+        /// <p>The height of the truck.</p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>4.5</code>.</p> </li> 
+        /// </ul> <note> 
+        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p> 
         /// </note>
         pub fn height(mut self, input: f64) -> Self {
             self.height = Some(input);
             self
         }
-        /// <p>The height of the truck.</p>
-        /// <ul>
-        /// <li> <p>For example, <code>4.5</code>.</p> </li>
-        /// </ul> <note>
-        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+        /// <p>The height of the truck.</p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>4.5</code>.</p> </li> 
+        /// </ul> <note> 
+        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p> 
         /// </note>
         pub fn set_height(mut self, input: std::option::Option<f64>) -> Self {
-            self.height = input;
-            self
+            self.height = input; self
         }
-        /// <p>The width of the truck.</p>
-        /// <ul>
-        /// <li> <p>For example, <code>4.5</code>.</p> </li>
-        /// </ul> <note>
-        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+        /// <p>The width of the truck.</p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>4.5</code>.</p> </li> 
+        /// </ul> <note> 
+        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p> 
         /// </note>
         pub fn width(mut self, input: f64) -> Self {
             self.width = Some(input);
             self
         }
-        /// <p>The width of the truck.</p>
-        /// <ul>
-        /// <li> <p>For example, <code>4.5</code>.</p> </li>
-        /// </ul> <note>
-        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+        /// <p>The width of the truck.</p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>4.5</code>.</p> </li> 
+        /// </ul> <note> 
+        /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p> 
         /// </note>
         pub fn set_width(mut self, input: std::option::Option<f64>) -> Self {
-            self.width = input;
-            self
+            self.width = input; self
         }
-        /// <p> Specifies the unit of measurement for the truck dimensions.</p>
+        /// <p> Specifies the unit of measurement for the truck dimensions.</p> 
         /// <p>Default Value: <code>Meters</code> </p>
         pub fn unit(mut self, input: crate::model::DimensionUnit) -> Self {
             self.unit = Some(input);
             self
         }
-        /// <p> Specifies the unit of measurement for the truck dimensions.</p>
+        /// <p> Specifies the unit of measurement for the truck dimensions.</p> 
         /// <p>Default Value: <code>Meters</code> </p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::DimensionUnit>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// Consumes the builder and constructs a [`TruckDimensions`](crate::model::TruckDimensions).
         pub fn build(self) -> crate::model::TruckDimensions {
             crate::model::TruckDimensions {
-                length: self.length,
-                height: self.height,
-                width: self.width,
-                unit: self.unit,
+                length: self.length
+                ,
+                height: self.height
+                ,
+                width: self.width
+                ,
+                unit: self.unit
+                ,
             }
         }
     }
+    
+    
 }
 impl TruckDimensions {
     /// Creates a new builder-style object to manufacture [`TruckDimensions`](crate::model::TruckDimensions).
@@ -2089,15 +1914,7 @@ impl TruckDimensions {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct DimensionUnit(String);
 impl DimensionUnit {
     /// Returns the `&str` value of the enum member.
@@ -2106,13 +1923,12 @@ impl DimensionUnit {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Feet", "Meters"]
+        &[
+            "Feet", "Meters"
+        ]
     }
 }
-impl<T> std::convert::From<T> for DimensionUnit
-where
-    T: std::convert::AsRef<str>,
-{
+impl <T> std::convert::From<T> for DimensionUnit where T: std::convert::AsRef<str> {
     fn from(s: T) -> Self {
         DimensionUnit(s.as_ref().to_owned())
     }
@@ -2121,27 +1937,27 @@ where
 /// <p>Contains details about additional route preferences for requests that specify <code>TravelMode</code> as <code>Car</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CalculateRouteCarModeOptions {
-    /// <p>Avoids ferries when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
+pub struct CalculateRouteCarModeOptions  {
+    /// <p>Avoids ferries when calculating routes.</p> 
+    /// <p>Default Value: <code>false</code> </p> 
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     #[doc(hidden)]
     pub avoid_ferries: std::option::Option<bool>,
-    /// <p>Avoids tolls when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Avoids tolls when calculating routes.</p> 
+    /// <p>Default Value: <code>false</code> </p> 
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     #[doc(hidden)]
     pub avoid_tolls: std::option::Option<bool>,
 }
 impl CalculateRouteCarModeOptions {
-    /// <p>Avoids ferries when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Avoids ferries when calculating routes.</p> 
+    /// <p>Default Value: <code>false</code> </p> 
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     pub fn avoid_ferries(&self) -> std::option::Option<bool> {
         self.avoid_ferries
     }
-    /// <p>Avoids tolls when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Avoids tolls when calculating routes.</p> 
+    /// <p>Default Value: <code>false</code> </p> 
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     pub fn avoid_tolls(&self) -> std::option::Option<bool> {
         self.avoid_tolls
@@ -2149,7 +1965,7 @@ impl CalculateRouteCarModeOptions {
 }
 /// See [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions).
 pub mod calculate_route_car_mode_options {
-
+    
     /// A builder for [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2157,42 +1973,44 @@ pub mod calculate_route_car_mode_options {
         pub(crate) avoid_tolls: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Avoids ferries when calculating routes.</p>
-        /// <p>Default Value: <code>false</code> </p>
+        /// <p>Avoids ferries when calculating routes.</p> 
+        /// <p>Default Value: <code>false</code> </p> 
         /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
         pub fn avoid_ferries(mut self, input: bool) -> Self {
             self.avoid_ferries = Some(input);
             self
         }
-        /// <p>Avoids ferries when calculating routes.</p>
-        /// <p>Default Value: <code>false</code> </p>
+        /// <p>Avoids ferries when calculating routes.</p> 
+        /// <p>Default Value: <code>false</code> </p> 
         /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
         pub fn set_avoid_ferries(mut self, input: std::option::Option<bool>) -> Self {
-            self.avoid_ferries = input;
-            self
+            self.avoid_ferries = input; self
         }
-        /// <p>Avoids tolls when calculating routes.</p>
-        /// <p>Default Value: <code>false</code> </p>
+        /// <p>Avoids tolls when calculating routes.</p> 
+        /// <p>Default Value: <code>false</code> </p> 
         /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
         pub fn avoid_tolls(mut self, input: bool) -> Self {
             self.avoid_tolls = Some(input);
             self
         }
-        /// <p>Avoids tolls when calculating routes.</p>
-        /// <p>Default Value: <code>false</code> </p>
+        /// <p>Avoids tolls when calculating routes.</p> 
+        /// <p>Default Value: <code>false</code> </p> 
         /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
         pub fn set_avoid_tolls(mut self, input: std::option::Option<bool>) -> Self {
-            self.avoid_tolls = input;
-            self
+            self.avoid_tolls = input; self
         }
         /// Consumes the builder and constructs a [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions).
         pub fn build(self) -> crate::model::CalculateRouteCarModeOptions {
             crate::model::CalculateRouteCarModeOptions {
-                avoid_ferries: self.avoid_ferries,
-                avoid_tolls: self.avoid_tolls,
+                avoid_ferries: self.avoid_ferries
+                ,
+                avoid_tolls: self.avoid_tolls
+                ,
             }
         }
     }
+    
+    
 }
 impl CalculateRouteCarModeOptions {
     /// Creates a new builder-style object to manufacture [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions).
@@ -2203,15 +2021,7 @@ impl CalculateRouteCarModeOptions {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct TravelMode(String);
 impl TravelMode {
     /// Returns the `&str` value of the enum member.
@@ -2220,13 +2030,12 @@ impl TravelMode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Bicycle", "Car", "Motorcycle", "Truck", "Walking"]
+        &[
+            "Bicycle", "Car", "Motorcycle", "Truck", "Walking"
+        ]
     }
 }
-impl<T> std::convert::From<T> for TravelMode
-where
-    T: std::convert::AsRef<str>,
-{
+impl <T> std::convert::From<T> for TravelMode where T: std::convert::AsRef<str> {
     fn from(s: T) -> Self {
         TravelMode(s.as_ref().to_owned())
     }
@@ -2235,31 +2044,31 @@ where
 /// <p>A summary of the calculated route.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CalculateRouteSummary {
-    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
-    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
-    /// <ul>
-    /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
-    /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
-    /// </ul>
-    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
-    /// <ul>
-    /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
-    /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
+pub struct CalculateRouteSummary  {
+    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p> 
+    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p> 
+    /// <ul> 
+    /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li> 
+    /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li> 
+    /// </ul> 
+    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p> 
+    /// <ul> 
+    /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li> 
+    /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub route_b_box: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
-    /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
-    /// </ul>
+    /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Esri</code> </p> </li> 
+    /// <li> <p> <code>Grab</code> </p> </li> 
+    /// <li> <p> <code>Here</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
-    /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
-    /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
+    /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note> 
+    /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p> 
     /// </note>
     #[doc(hidden)]
     pub distance: std::option::Option<f64>,
@@ -2271,32 +2080,32 @@ pub struct CalculateRouteSummary {
     pub distance_unit: std::option::Option<crate::model::DistanceUnit>,
 }
 impl CalculateRouteSummary {
-    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
-    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
-    /// <ul>
-    /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
-    /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
+    /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p> 
+    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p> 
+    /// <ul> 
+    /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li> 
+    /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li> 
+    /// </ul> 
+    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p> 
+    /// <ul> 
+    /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li> 
+    /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li> 
     /// </ul>
-    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
-    /// <ul>
-    /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
-    /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
-    /// </ul>
-    pub fn route_b_box(&self) -> std::option::Option<&[f64]> {
+    pub fn route_b_box(&self) -> std::option::Option<& [f64]> {
         self.route_b_box.as_deref()
     }
-    /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
-    /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
-    /// </ul>
+    /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Esri</code> </p> </li> 
+    /// <li> <p> <code>Grab</code> </p> </li> 
+    /// <li> <p> <code>Here</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(&self) -> std::option::Option<&str> {
+    pub fn data_source(&self) -> std::option::Option<& str> {
         self.data_source.as_deref()
     }
-    /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
-    /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
+    /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note> 
+    /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p> 
     /// </note>
     pub fn distance(&self) -> std::option::Option<f64> {
         self.distance
@@ -2306,11 +2115,11 @@ impl CalculateRouteSummary {
         self.duration_seconds
     }
     /// <p>The unit of measurement for route distances.</p>
-    pub fn distance_unit(&self) -> std::option::Option<&crate::model::DistanceUnit> {
+    pub fn distance_unit(&self) -> std::option::Option<& crate::model::DistanceUnit> {
         self.distance_unit.as_ref()
     }
 }
-impl std::fmt::Debug for CalculateRouteSummary {
+impl  std::fmt::Debug for CalculateRouteSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CalculateRouteSummary");
         formatter.field("route_b_box", &"*** Sensitive Data Redacted ***");
@@ -2323,7 +2132,7 @@ impl std::fmt::Debug for CalculateRouteSummary {
 }
 /// See [`CalculateRouteSummary`](crate::model::CalculateRouteSummary).
 pub mod calculate_route_summary {
-
+    
     /// A builder for [`CalculateRouteSummary`](crate::model::CalculateRouteSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2338,73 +2147,70 @@ pub mod calculate_route_summary {
         ///
         /// To override the contents of this collection use [`set_route_b_box`](Self::set_route_b_box).
         ///
-        /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
-        /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
-        /// <ul>
-        /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
-        /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
-        /// </ul>
-        /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
-        /// <ul>
-        /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
-        /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
+        /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p> 
+        /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p> 
+        /// <ul> 
+        /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li> 
+        /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li> 
+        /// </ul> 
+        /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p> 
+        /// <ul> 
+        /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li> 
+        /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li> 
         /// </ul>
         pub fn route_b_box(mut self, input: f64) -> Self {
             let mut v = self.route_b_box.unwrap_or_default();
-            v.push(input);
-            self.route_b_box = Some(v);
-            self
+                            v.push(input);
+                            self.route_b_box = Some(v);
+                            self
         }
-        /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
-        /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
-        /// <ul>
-        /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
-        /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
-        /// </ul>
-        /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
-        /// <ul>
-        /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
-        /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
+        /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p> 
+        /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p> 
+        /// <ul> 
+        /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li> 
+        /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li> 
+        /// </ul> 
+        /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p> 
+        /// <ul> 
+        /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li> 
+        /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li> 
         /// </ul>
         pub fn set_route_b_box(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.route_b_box = input;
-            self
+            self.route_b_box = input; self
         }
-        /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
-        /// <ul>
-        /// <li> <p> <code>Esri</code> </p> </li>
-        /// <li> <p> <code>Grab</code> </p> </li>
-        /// <li> <p> <code>Here</code> </p> </li>
-        /// </ul>
+        /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Esri</code> </p> </li> 
+        /// <li> <p> <code>Grab</code> </p> </li> 
+        /// <li> <p> <code>Here</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
-        /// <ul>
-        /// <li> <p> <code>Esri</code> </p> </li>
-        /// <li> <p> <code>Grab</code> </p> </li>
-        /// <li> <p> <code>Here</code> </p> </li>
-        /// </ul>
+        /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Esri</code> </p> </li> 
+        /// <li> <p> <code>Grab</code> </p> </li> 
+        /// <li> <p> <code>Here</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_source = input;
-            self
+            self.data_source = input; self
         }
-        /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
-        /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
+        /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note> 
+        /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p> 
         /// </note>
         pub fn distance(mut self, input: f64) -> Self {
             self.distance = Some(input);
             self
         }
-        /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
-        /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
+        /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note> 
+        /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p> 
         /// </note>
         pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
-            self.distance = input;
-            self
+            self.distance = input; self
         }
         /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
         pub fn duration_seconds(mut self, input: f64) -> Self {
@@ -2413,8 +2219,7 @@ pub mod calculate_route_summary {
         }
         /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<f64>) -> Self {
-            self.duration_seconds = input;
-            self
+            self.duration_seconds = input; self
         }
         /// <p>The unit of measurement for route distances.</p>
         pub fn distance_unit(mut self, input: crate::model::DistanceUnit) -> Self {
@@ -2422,21 +2227,22 @@ pub mod calculate_route_summary {
             self
         }
         /// <p>The unit of measurement for route distances.</p>
-        pub fn set_distance_unit(
-            mut self,
-            input: std::option::Option<crate::model::DistanceUnit>,
-        ) -> Self {
-            self.distance_unit = input;
-            self
+        pub fn set_distance_unit(mut self, input: std::option::Option<crate::model::DistanceUnit>) -> Self {
+            self.distance_unit = input; self
         }
         /// Consumes the builder and constructs a [`CalculateRouteSummary`](crate::model::CalculateRouteSummary).
         pub fn build(self) -> crate::model::CalculateRouteSummary {
             crate::model::CalculateRouteSummary {
-                route_b_box: self.route_b_box,
-                data_source: self.data_source,
-                distance: self.distance,
-                duration_seconds: self.duration_seconds,
-                distance_unit: self.distance_unit,
+                route_b_box: self.route_b_box
+                ,
+                data_source: self.data_source
+                ,
+                distance: self.distance
+                ,
+                duration_seconds: self.duration_seconds
+                ,
+                distance_unit: self.distance_unit
+                ,
             }
         }
     }
@@ -2451,6 +2257,8 @@ pub mod calculate_route_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CalculateRouteSummary {
     /// Creates a new builder-style object to manufacture [`CalculateRouteSummary`](crate::model::CalculateRouteSummary).
@@ -2459,33 +2267,33 @@ impl CalculateRouteSummary {
     }
 }
 
-/// <p>Contains the calculated route's details for each path between a pair of positions. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
-/// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
-/// <ul>
-/// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
-/// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
-/// </ul>
-/// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
-/// <ul>
-/// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
-/// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
+/// <p>Contains the calculated route's details for each path between a pair of positions. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p> 
+/// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p> 
+/// <ul> 
+/// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li> 
+/// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li> 
+/// </ul> 
+/// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p> 
+/// <ul> 
+/// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li> 
+/// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Leg {
-    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
-    /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+pub struct Leg  {
+    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note> 
+    /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p> 
     /// </note>
     #[doc(hidden)]
     pub start_position: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
-    /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note> 
+    /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p> 
     /// </note>
     #[doc(hidden)]
     pub end_position: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
-    /// <ul>
-    /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
+    /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p> 
+    /// <ul> 
+    /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub distance: std::option::Option<f64>,
@@ -2500,21 +2308,21 @@ pub struct Leg {
     pub steps: std::option::Option<std::vec::Vec<crate::model::Step>>,
 }
 impl Leg {
-    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
-    /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note> 
+    /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p> 
     /// </note>
-    pub fn start_position(&self) -> std::option::Option<&[f64]> {
+    pub fn start_position(&self) -> std::option::Option<& [f64]> {
         self.start_position.as_deref()
     }
-    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
-    /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note> 
+    /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p> 
     /// </note>
-    pub fn end_position(&self) -> std::option::Option<&[f64]> {
+    pub fn end_position(&self) -> std::option::Option<& [f64]> {
         self.end_position.as_deref()
     }
-    /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
-    /// <ul>
-    /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
+    /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p> 
+    /// <ul> 
+    /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li> 
     /// </ul>
     pub fn distance(&self) -> std::option::Option<f64> {
         self.distance
@@ -2524,15 +2332,15 @@ impl Leg {
         self.duration_seconds
     }
     /// <p>Contains the calculated route's path as a linestring geometry.</p>
-    pub fn geometry(&self) -> std::option::Option<&crate::model::LegGeometry> {
+    pub fn geometry(&self) -> std::option::Option<& crate::model::LegGeometry> {
         self.geometry.as_ref()
     }
     /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
-    pub fn steps(&self) -> std::option::Option<&[crate::model::Step]> {
+    pub fn steps(&self) -> std::option::Option<& [crate::model::Step]> {
         self.steps.as_deref()
     }
 }
-impl std::fmt::Debug for Leg {
+impl  std::fmt::Debug for Leg  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Leg");
         formatter.field("start_position", &"*** Sensitive Data Redacted ***");
@@ -2546,7 +2354,7 @@ impl std::fmt::Debug for Leg {
 }
 /// See [`Leg`](crate::model::Leg).
 pub mod leg {
-
+    
     /// A builder for [`Leg`](crate::model::Leg).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2562,60 +2370,54 @@ pub mod leg {
         ///
         /// To override the contents of this collection use [`set_start_position`](Self::set_start_position).
         ///
-        /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
-        /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+        /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note> 
+        /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p> 
         /// </note>
         pub fn start_position(mut self, input: f64) -> Self {
             let mut v = self.start_position.unwrap_or_default();
-            v.push(input);
-            self.start_position = Some(v);
-            self
+                            v.push(input);
+                            self.start_position = Some(v);
+                            self
         }
-        /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
-        /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+        /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note> 
+        /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p> 
         /// </note>
-        pub fn set_start_position(
-            mut self,
-            input: std::option::Option<std::vec::Vec<f64>>,
-        ) -> Self {
-            self.start_position = input;
-            self
+        pub fn set_start_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+            self.start_position = input; self
         }
         /// Appends an item to `end_position`.
         ///
         /// To override the contents of this collection use [`set_end_position`](Self::set_end_position).
         ///
-        /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
-        /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+        /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note> 
+        /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p> 
         /// </note>
         pub fn end_position(mut self, input: f64) -> Self {
             let mut v = self.end_position.unwrap_or_default();
-            v.push(input);
-            self.end_position = Some(v);
-            self
+                            v.push(input);
+                            self.end_position = Some(v);
+                            self
         }
-        /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
-        /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p>
+        /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note> 
+        /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>. </p> 
         /// </note>
         pub fn set_end_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.end_position = input;
-            self
+            self.end_position = input; self
         }
-        /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
-        /// <ul>
-        /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
+        /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p> 
+        /// <ul> 
+        /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li> 
         /// </ul>
         pub fn distance(mut self, input: f64) -> Self {
             self.distance = Some(input);
             self
         }
-        /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p>
-        /// <ul>
-        /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li>
+        /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route. </p> 
+        /// <ul> 
+        /// <li> <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p> </li> 
         /// </ul>
         pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
-            self.distance = input;
-            self
+            self.distance = input; self
         }
         /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
         pub fn duration_seconds(mut self, input: f64) -> Self {
@@ -2624,8 +2426,7 @@ pub mod leg {
         }
         /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<f64>) -> Self {
-            self.duration_seconds = input;
-            self
+            self.duration_seconds = input; self
         }
         /// <p>Contains the calculated route's path as a linestring geometry.</p>
         pub fn geometry(mut self, input: crate::model::LegGeometry) -> Self {
@@ -2633,12 +2434,8 @@ pub mod leg {
             self
         }
         /// <p>Contains the calculated route's path as a linestring geometry.</p>
-        pub fn set_geometry(
-            mut self,
-            input: std::option::Option<crate::model::LegGeometry>,
-        ) -> Self {
-            self.geometry = input;
-            self
+        pub fn set_geometry(mut self, input: std::option::Option<crate::model::LegGeometry>) -> Self {
+            self.geometry = input; self
         }
         /// Appends an item to `steps`.
         ///
@@ -2647,27 +2444,29 @@ pub mod leg {
         /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
         pub fn steps(mut self, input: crate::model::Step) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input);
-            self.steps = Some(v);
-            self
+                            v.push(input);
+                            self.steps = Some(v);
+                            self
         }
         /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
-        pub fn set_steps(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Step>>,
-        ) -> Self {
-            self.steps = input;
-            self
+        pub fn set_steps(mut self, input: std::option::Option<std::vec::Vec<crate::model::Step>>) -> Self {
+            self.steps = input; self
         }
         /// Consumes the builder and constructs a [`Leg`](crate::model::Leg).
         pub fn build(self) -> crate::model::Leg {
             crate::model::Leg {
-                start_position: self.start_position,
-                end_position: self.end_position,
-                distance: self.distance,
-                duration_seconds: self.duration_seconds,
-                geometry: self.geometry,
-                steps: self.steps,
+                start_position: self.start_position
+                ,
+                end_position: self.end_position
+                ,
+                distance: self.distance
+                ,
+                duration_seconds: self.duration_seconds
+                ,
+                geometry: self.geometry
+                ,
+                steps: self.steps
+                ,
             }
         }
     }
@@ -2683,6 +2482,8 @@ pub mod leg {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Leg {
     /// Creates a new builder-style object to manufacture [`Leg`](crate::model::Leg).
@@ -2694,7 +2495,7 @@ impl Leg {
 /// <p> Represents an element of a leg within a route. A step contains instructions for how to move to the next step in the leg. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Step {
+pub struct Step  {
     /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
     #[doc(hidden)]
     pub start_position: std::option::Option<std::vec::Vec<f64>>,
@@ -2707,18 +2508,18 @@ pub struct Step {
     /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
     #[doc(hidden)]
     pub duration_seconds: std::option::Option<f64>,
-    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
+    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p> 
     /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
     #[doc(hidden)]
     pub geometry_offset: std::option::Option<i32>,
 }
 impl Step {
     /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
-    pub fn start_position(&self) -> std::option::Option<&[f64]> {
+    pub fn start_position(&self) -> std::option::Option<& [f64]> {
         self.start_position.as_deref()
     }
     /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
-    pub fn end_position(&self) -> std::option::Option<&[f64]> {
+    pub fn end_position(&self) -> std::option::Option<& [f64]> {
         self.end_position.as_deref()
     }
     /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
@@ -2729,13 +2530,13 @@ impl Step {
     pub fn duration_seconds(&self) -> std::option::Option<f64> {
         self.duration_seconds
     }
-    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
+    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p> 
     /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
     pub fn geometry_offset(&self) -> std::option::Option<i32> {
         self.geometry_offset
     }
 }
-impl std::fmt::Debug for Step {
+impl  std::fmt::Debug for Step  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Step");
         formatter.field("start_position", &"*** Sensitive Data Redacted ***");
@@ -2748,7 +2549,7 @@ impl std::fmt::Debug for Step {
 }
 /// See [`Step`](crate::model::Step).
 pub mod step {
-
+    
     /// A builder for [`Step`](crate::model::Step).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2766,17 +2567,13 @@ pub mod step {
         /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
         pub fn start_position(mut self, input: f64) -> Self {
             let mut v = self.start_position.unwrap_or_default();
-            v.push(input);
-            self.start_position = Some(v);
-            self
+                            v.push(input);
+                            self.start_position = Some(v);
+                            self
         }
         /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
-        pub fn set_start_position(
-            mut self,
-            input: std::option::Option<std::vec::Vec<f64>>,
-        ) -> Self {
-            self.start_position = input;
-            self
+        pub fn set_start_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+            self.start_position = input; self
         }
         /// Appends an item to `end_position`.
         ///
@@ -2785,14 +2582,13 @@ pub mod step {
         /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
         pub fn end_position(mut self, input: f64) -> Self {
             let mut v = self.end_position.unwrap_or_default();
-            v.push(input);
-            self.end_position = Some(v);
-            self
+                            v.push(input);
+                            self.end_position = Some(v);
+                            self
         }
         /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
         pub fn set_end_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.end_position = input;
-            self
+            self.end_position = input; self
         }
         /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
         pub fn distance(mut self, input: f64) -> Self {
@@ -2801,8 +2597,7 @@ pub mod step {
         }
         /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
         pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
-            self.distance = input;
-            self
+            self.distance = input; self
         }
         /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
         pub fn duration_seconds(mut self, input: f64) -> Self {
@@ -2811,29 +2606,32 @@ pub mod step {
         }
         /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<f64>) -> Self {
-            self.duration_seconds = input;
-            self
+            self.duration_seconds = input; self
         }
-        /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
+        /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p> 
         /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
         pub fn geometry_offset(mut self, input: i32) -> Self {
             self.geometry_offset = Some(input);
             self
         }
-        /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
+        /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p> 
         /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
         pub fn set_geometry_offset(mut self, input: std::option::Option<i32>) -> Self {
-            self.geometry_offset = input;
-            self
+            self.geometry_offset = input; self
         }
         /// Consumes the builder and constructs a [`Step`](crate::model::Step).
         pub fn build(self) -> crate::model::Step {
             crate::model::Step {
-                start_position: self.start_position,
-                end_position: self.end_position,
-                distance: self.distance,
-                duration_seconds: self.duration_seconds,
-                geometry_offset: self.geometry_offset,
+                start_position: self.start_position
+                ,
+                end_position: self.end_position
+                ,
+                distance: self.distance
+                ,
+                duration_seconds: self.duration_seconds
+                ,
+                geometry_offset: self.geometry_offset
+                ,
             }
         }
     }
@@ -2848,6 +2646,8 @@ pub mod step {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Step {
     /// Creates a new builder-style object to manufacture [`Step`](crate::model::Step).
@@ -2859,28 +2659,28 @@ impl Step {
 /// <p>Contains the geometry details for each path between a pair of positions. Used in plotting a route leg on a map.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LegGeometry {
-    /// <p>An ordered list of positions used to plot a route on a map. </p>
-    /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
+pub struct LegGeometry  {
+    /// <p>An ordered list of positions used to plot a route on a map. </p> 
+    /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub line_string: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
 }
 impl LegGeometry {
-    /// <p>An ordered list of positions used to plot a route on a map. </p>
-    /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
+    /// <p>An ordered list of positions used to plot a route on a map. </p> 
+    /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li> 
     /// </ul>
-    pub fn line_string(&self) -> std::option::Option<&[std::vec::Vec<f64>]> {
+    pub fn line_string(&self) -> std::option::Option<& [std::vec::Vec<f64>]> {
         self.line_string.as_deref()
     }
 }
 /// See [`LegGeometry`](crate::model::LegGeometry).
 pub mod leg_geometry {
-
+    
     /// A builder for [`LegGeometry`](crate::model::LegGeometry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2891,36 +2691,35 @@ pub mod leg_geometry {
         ///
         /// To override the contents of this collection use [`set_line_string`](Self::set_line_string).
         ///
-        /// <p>An ordered list of positions used to plot a route on a map. </p>
-        /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
-        /// <ul>
-        /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
+        /// <p>An ordered list of positions used to plot a route on a map. </p> 
+        /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li> 
         /// </ul>
         pub fn line_string(mut self, input: std::vec::Vec<f64>) -> Self {
             let mut v = self.line_string.unwrap_or_default();
-            v.push(input);
-            self.line_string = Some(v);
-            self
+                            v.push(input);
+                            self.line_string = Some(v);
+                            self
         }
-        /// <p>An ordered list of positions used to plot a route on a map. </p>
-        /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
-        /// <ul>
-        /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
+        /// <p>An ordered list of positions used to plot a route on a map. </p> 
+        /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li> 
         /// </ul>
-        pub fn set_line_string(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
-        ) -> Self {
-            self.line_string = input;
-            self
+        pub fn set_line_string(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>) -> Self {
+            self.line_string = input; self
         }
         /// Consumes the builder and constructs a [`LegGeometry`](crate::model::LegGeometry).
         pub fn build(self) -> crate::model::LegGeometry {
             crate::model::LegGeometry {
-                line_string: self.line_string,
+                line_string: self.line_string
+                ,
             }
         }
     }
+    
+    
 }
 impl LegGeometry {
     /// Creates a new builder-style object to manufacture [`LegGeometry`](crate::model::LegGeometry).
@@ -2932,87 +2731,81 @@ impl LegGeometry {
 /// <p>A route calculator resource listed in your AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRouteCalculatorsResponseEntry {
+pub struct ListRouteCalculatorsResponseEntry  {
     /// <p>The name of the route calculator resource.</p>
     #[doc(hidden)]
     pub calculator_name: std::option::Option<std::string::String>,
     /// <p>The optional description of the route calculator resource.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
-    /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
-    /// </ul>
+    /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Esri</code> </p> </li> 
+    /// <li> <p> <code>Grab</code> </p> </li> 
+    /// <li> <p> <code>Here</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
-    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    /// <ul>
-    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    /// <ul>
-    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+    /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListRouteCalculatorsResponseEntry {
     /// <p>The name of the route calculator resource.</p>
-    pub fn calculator_name(&self) -> std::option::Option<&str> {
+    pub fn calculator_name(&self) -> std::option::Option<& str> {
         self.calculator_name.as_deref()
     }
     /// <p>The optional description of the route calculator resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
-    /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
-    /// </ul>
+    /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Esri</code> </p> </li> 
+    /// <li> <p> <code>Grab</code> </p> </li> 
+    /// <li> <p> <code>Here</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(&self) -> std::option::Option<&str> {
+    pub fn data_source(&self) -> std::option::Option<& str> {
         self.data_source.as_deref()
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    pub fn pricing_plan(&self) -> std::option::Option<& crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
-    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    /// <ul>
-    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
     /// </ul>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    /// <ul>
-    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+    /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
     /// </ul>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry).
 pub mod list_route_calculators_response_entry {
-
+    
     /// A builder for [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3030,12 +2823,8 @@ pub mod list_route_calculators_response_entry {
             self
         }
         /// <p>The name of the route calculator resource.</p>
-        pub fn set_calculator_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.calculator_name = input;
-            self
+        pub fn set_calculator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.calculator_name = input; self
         }
         /// <p>The optional description of the route calculator resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3044,102 +2833,90 @@ pub mod list_route_calculators_response_entry {
         }
         /// <p>The optional description of the route calculator resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
-        /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
-        /// <ul>
-        /// <li> <p> <code>Esri</code> </p> </li>
-        /// <li> <p> <code>Grab</code> </p> </li>
-        /// <li> <p> <code>Here</code> </p> </li>
-        /// </ul>
+        /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Esri</code> </p> </li> 
+        /// <li> <p> <code>Grab</code> </p> </li> 
+        /// <li> <p> <code>Here</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
-        /// <ul>
-        /// <li> <p> <code>Esri</code> </p> </li>
-        /// <li> <p> <code>Grab</code> </p> </li>
-        /// <li> <p> <code>Here</code> </p> </li>
-        /// </ul>
+        /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Esri</code> </p> </li> 
+        /// <li> <p> <code>Grab</code> </p> </li> 
+        /// <li> <p> <code>Here</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_source = input;
-            self
+            self.data_source = input; self
         }
         /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
-        pub fn set_pricing_plan(
-            mut self,
-            input: std::option::Option<crate::model::PricingPlan>,
-        ) -> Self {
-            self.pricing_plan = input;
-            self
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+        pub fn set_pricing_plan(mut self, input: std::option::Option<crate::model::PricingPlan>) -> Self {
+            self.pricing_plan = input; self
         }
-        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        /// <ul>
-        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
         /// </ul>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        /// <ul>
-        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
         /// </ul>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
-        /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        /// <ul>
-        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+        /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
         /// </ul>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
-        /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        /// <ul>
-        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
+        /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> 
+        /// <ul> 
+        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> 
         /// </ul>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry).
         pub fn build(self) -> crate::model::ListRouteCalculatorsResponseEntry {
             crate::model::ListRouteCalculatorsResponseEntry {
-                calculator_name: self.calculator_name,
-                description: self.description,
-                data_source: self.data_source,
-                pricing_plan: self.pricing_plan,
-                create_time: self.create_time,
-                update_time: self.update_time,
+                calculator_name: self.calculator_name
+                ,
+                description: self.description
+                ,
+                data_source: self.data_source
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRouteCalculatorsResponseEntry {
     /// Creates a new builder-style object to manufacture [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry).
@@ -3151,51 +2928,51 @@ impl ListRouteCalculatorsResponseEntry {
 /// <p>Contains a search result from a text search query that is run on a place index resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchForTextResult {
+pub struct SearchForTextResult  {
     /// <p>Details about the search result, such as its address and position.</p>
     #[doc(hidden)]
     pub place: std::option::Option<crate::model::Place>,
-    /// <p>The distance in meters of a great-circle arc between the bias position specified and the result. <code>Distance</code> will be returned only if a bias position was specified in the query.</p> <note>
-    /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
+    /// <p>The distance in meters of a great-circle arc between the bias position specified and the result. <code>Distance</code> will be returned only if a bias position was specified in the query.</p> <note> 
+    /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p> 
     /// </note>
     #[doc(hidden)]
     pub distance: std::option::Option<f64>,
-    /// <p>The relative confidence in the match for a result among the results returned. For example, if more fields for an address match (including house number, street, city, country/region, and postal code), the relevance score is closer to 1.</p>
+    /// <p>The relative confidence in the match for a result among the results returned. For example, if more fields for an address match (including house number, street, city, country/region, and postal code), the relevance score is closer to 1.</p> 
     /// <p>Returned only when the partner selected is Esri or Grab.</p>
     #[doc(hidden)]
     pub relevance: std::option::Option<f64>,
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note> 
+    /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p> 
     /// </note>
     #[doc(hidden)]
     pub place_id: std::option::Option<std::string::String>,
 }
 impl SearchForTextResult {
     /// <p>Details about the search result, such as its address and position.</p>
-    pub fn place(&self) -> std::option::Option<&crate::model::Place> {
+    pub fn place(&self) -> std::option::Option<& crate::model::Place> {
         self.place.as_ref()
     }
-    /// <p>The distance in meters of a great-circle arc between the bias position specified and the result. <code>Distance</code> will be returned only if a bias position was specified in the query.</p> <note>
-    /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
+    /// <p>The distance in meters of a great-circle arc between the bias position specified and the result. <code>Distance</code> will be returned only if a bias position was specified in the query.</p> <note> 
+    /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p> 
     /// </note>
     pub fn distance(&self) -> std::option::Option<f64> {
         self.distance
     }
-    /// <p>The relative confidence in the match for a result among the results returned. For example, if more fields for an address match (including house number, street, city, country/region, and postal code), the relevance score is closer to 1.</p>
+    /// <p>The relative confidence in the match for a result among the results returned. For example, if more fields for an address match (including house number, street, city, country/region, and postal code), the relevance score is closer to 1.</p> 
     /// <p>Returned only when the partner selected is Esri or Grab.</p>
     pub fn relevance(&self) -> std::option::Option<f64> {
         self.relevance
     }
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note> 
+    /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p> 
     /// </note>
-    pub fn place_id(&self) -> std::option::Option<&str> {
+    pub fn place_id(&self) -> std::option::Option<& str> {
         self.place_id.as_deref()
     }
 }
 /// See [`SearchForTextResult`](crate::model::SearchForTextResult).
 pub mod search_for_text_result {
-
+    
     /// A builder for [`SearchForTextResult`](crate::model::SearchForTextResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3212,59 +2989,61 @@ pub mod search_for_text_result {
         }
         /// <p>Details about the search result, such as its address and position.</p>
         pub fn set_place(mut self, input: std::option::Option<crate::model::Place>) -> Self {
-            self.place = input;
-            self
+            self.place = input; self
         }
-        /// <p>The distance in meters of a great-circle arc between the bias position specified and the result. <code>Distance</code> will be returned only if a bias position was specified in the query.</p> <note>
-        /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
+        /// <p>The distance in meters of a great-circle arc between the bias position specified and the result. <code>Distance</code> will be returned only if a bias position was specified in the query.</p> <note> 
+        /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p> 
         /// </note>
         pub fn distance(mut self, input: f64) -> Self {
             self.distance = Some(input);
             self
         }
-        /// <p>The distance in meters of a great-circle arc between the bias position specified and the result. <code>Distance</code> will be returned only if a bias position was specified in the query.</p> <note>
-        /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
+        /// <p>The distance in meters of a great-circle arc between the bias position specified and the result. <code>Distance</code> will be returned only if a bias position was specified in the query.</p> <note> 
+        /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p> 
         /// </note>
         pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
-            self.distance = input;
-            self
+            self.distance = input; self
         }
-        /// <p>The relative confidence in the match for a result among the results returned. For example, if more fields for an address match (including house number, street, city, country/region, and postal code), the relevance score is closer to 1.</p>
+        /// <p>The relative confidence in the match for a result among the results returned. For example, if more fields for an address match (including house number, street, city, country/region, and postal code), the relevance score is closer to 1.</p> 
         /// <p>Returned only when the partner selected is Esri or Grab.</p>
         pub fn relevance(mut self, input: f64) -> Self {
             self.relevance = Some(input);
             self
         }
-        /// <p>The relative confidence in the match for a result among the results returned. For example, if more fields for an address match (including house number, street, city, country/region, and postal code), the relevance score is closer to 1.</p>
+        /// <p>The relative confidence in the match for a result among the results returned. For example, if more fields for an address match (including house number, street, city, country/region, and postal code), the relevance score is closer to 1.</p> 
         /// <p>Returned only when the partner selected is Esri or Grab.</p>
         pub fn set_relevance(mut self, input: std::option::Option<f64>) -> Self {
-            self.relevance = input;
-            self
+            self.relevance = input; self
         }
-        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-        /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
+        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note> 
+        /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p> 
         /// </note>
         pub fn place_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.place_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-        /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
+        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note> 
+        /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p> 
         /// </note>
         pub fn set_place_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.place_id = input;
-            self
+            self.place_id = input; self
         }
         /// Consumes the builder and constructs a [`SearchForTextResult`](crate::model::SearchForTextResult).
         pub fn build(self) -> crate::model::SearchForTextResult {
             crate::model::SearchForTextResult {
-                place: self.place,
-                distance: self.distance,
-                relevance: self.relevance,
-                place_id: self.place_id,
+                place: self.place
+                ,
+                distance: self.distance
+                ,
+                relevance: self.relevance
+                ,
+                place_id: self.place_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchForTextResult {
     /// Creates a new builder-style object to manufacture [`SearchForTextResult`](crate::model::SearchForTextResult).
@@ -3273,11 +3052,11 @@ impl SearchForTextResult {
     }
 }
 
-/// <p>Contains details about addresses or points of interest that match the search criteria.</p>
+/// <p>Contains details about addresses or points of interest that match the search criteria.</p> 
 /// <p>Not all details are included with all responses. Some details may only be returned by specific data partners.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Place {
+pub struct Place  {
     /// <p>The full name and address of the point of interest such as a city, region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
     #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
@@ -3308,9 +3087,9 @@ pub struct Place {
     /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location. </p>
     #[doc(hidden)]
     pub postal_code: std::option::Option<std::string::String>,
-    /// <p> <code>True</code> if the result is interpolated from other known places.</p>
-    /// <p> <code>False</code> if the Place is a known place.</p>
-    /// <p>Not returned when the partner does not provide the information.</p>
+    /// <p> <code>True</code> if the result is interpolated from other known places.</p> 
+    /// <p> <code>False</code> if the Place is a known place.</p> 
+    /// <p>Not returned when the partner does not provide the information.</p> 
     /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
     #[doc(hidden)]
     pub interpolated: std::option::Option<bool>,
@@ -3320,78 +3099,78 @@ pub struct Place {
     /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
     #[doc(hidden)]
     pub unit_type: std::option::Option<std::string::String>,
-    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
-    /// <p>Returned only for a place index that uses Esri as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note> 
+    /// <p>Returned only for a place index that uses Esri as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub unit_number: std::option::Option<std::string::String>,
 }
 impl Place {
     /// <p>The full name and address of the point of interest such as a city, region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>Places uses a point geometry to specify a location or a Place.</p>
-    pub fn geometry(&self) -> std::option::Option<&crate::model::PlaceGeometry> {
+    pub fn geometry(&self) -> std::option::Option<& crate::model::PlaceGeometry> {
         self.geometry.as_ref()
     }
     /// <p>The numerical portion of an address, such as a building number. </p>
-    pub fn address_number(&self) -> std::option::Option<&str> {
+    pub fn address_number(&self) -> std::option::Option<& str> {
         self.address_number.as_deref()
     }
     /// <p>The name for a street or a road to identify a location. For example, <code>Main Street</code>.</p>
-    pub fn street(&self) -> std::option::Option<&str> {
+    pub fn street(&self) -> std::option::Option<& str> {
         self.street.as_deref()
     }
     /// <p>The name of a community district. For example, <code>Downtown</code>.</p>
-    pub fn neighborhood(&self) -> std::option::Option<&str> {
+    pub fn neighborhood(&self) -> std::option::Option<& str> {
         self.neighborhood.as_deref()
     }
     /// <p>A name for a local area, such as a city or town name. For example, <code>Toronto</code>.</p>
-    pub fn municipality(&self) -> std::option::Option<&str> {
+    pub fn municipality(&self) -> std::option::Option<& str> {
         self.municipality.as_deref()
     }
     /// <p>A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>
-    pub fn sub_region(&self) -> std::option::Option<&str> {
+    pub fn sub_region(&self) -> std::option::Option<& str> {
         self.sub_region.as_deref()
     }
     /// <p>A name for an area or geographical division, such as a province or state name. For example, <code>British Columbia</code>.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>A country/region specified using <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country/region code. For example, <code>CAN</code>.</p>
-    pub fn country(&self) -> std::option::Option<&str> {
+    pub fn country(&self) -> std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location. </p>
-    pub fn postal_code(&self) -> std::option::Option<&str> {
+    pub fn postal_code(&self) -> std::option::Option<& str> {
         self.postal_code.as_deref()
     }
-    /// <p> <code>True</code> if the result is interpolated from other known places.</p>
-    /// <p> <code>False</code> if the Place is a known place.</p>
-    /// <p>Not returned when the partner does not provide the information.</p>
+    /// <p> <code>True</code> if the result is interpolated from other known places.</p> 
+    /// <p> <code>False</code> if the Place is a known place.</p> 
+    /// <p>Not returned when the partner does not provide the information.</p> 
     /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
     pub fn interpolated(&self) -> std::option::Option<bool> {
         self.interpolated
     }
     /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.</p>
-    pub fn time_zone(&self) -> std::option::Option<&crate::model::TimeZone> {
+    pub fn time_zone(&self) -> std::option::Option<& crate::model::TimeZone> {
         self.time_zone.as_ref()
     }
     /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
-    pub fn unit_type(&self) -> std::option::Option<&str> {
+    pub fn unit_type(&self) -> std::option::Option<& str> {
         self.unit_type.as_deref()
     }
-    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
-    /// <p>Returned only for a place index that uses Esri as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note> 
+    /// <p>Returned only for a place index that uses Esri as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
     /// </note>
-    pub fn unit_number(&self) -> std::option::Option<&str> {
+    pub fn unit_number(&self) -> std::option::Option<& str> {
         self.unit_number.as_deref()
     }
 }
 /// See [`Place`](crate::model::Place).
 pub mod place {
-
+    
     /// A builder for [`Place`](crate::model::Place).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3418,8 +3197,7 @@ pub mod place {
         }
         /// <p>The full name and address of the point of interest such as a city, region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label = input;
-            self
+            self.label = input; self
         }
         /// <p>Places uses a point geometry to specify a location or a Place.</p>
         pub fn geometry(mut self, input: crate::model::PlaceGeometry) -> Self {
@@ -3427,12 +3205,8 @@ pub mod place {
             self
         }
         /// <p>Places uses a point geometry to specify a location or a Place.</p>
-        pub fn set_geometry(
-            mut self,
-            input: std::option::Option<crate::model::PlaceGeometry>,
-        ) -> Self {
-            self.geometry = input;
-            self
+        pub fn set_geometry(mut self, input: std::option::Option<crate::model::PlaceGeometry>) -> Self {
+            self.geometry = input; self
         }
         /// <p>The numerical portion of an address, such as a building number. </p>
         pub fn address_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3440,12 +3214,8 @@ pub mod place {
             self
         }
         /// <p>The numerical portion of an address, such as a building number. </p>
-        pub fn set_address_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.address_number = input;
-            self
+        pub fn set_address_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.address_number = input; self
         }
         /// <p>The name for a street or a road to identify a location. For example, <code>Main Street</code>.</p>
         pub fn street(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3454,8 +3224,7 @@ pub mod place {
         }
         /// <p>The name for a street or a road to identify a location. For example, <code>Main Street</code>.</p>
         pub fn set_street(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.street = input;
-            self
+            self.street = input; self
         }
         /// <p>The name of a community district. For example, <code>Downtown</code>.</p>
         pub fn neighborhood(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3464,8 +3233,7 @@ pub mod place {
         }
         /// <p>The name of a community district. For example, <code>Downtown</code>.</p>
         pub fn set_neighborhood(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.neighborhood = input;
-            self
+            self.neighborhood = input; self
         }
         /// <p>A name for a local area, such as a city or town name. For example, <code>Toronto</code>.</p>
         pub fn municipality(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3474,8 +3242,7 @@ pub mod place {
         }
         /// <p>A name for a local area, such as a city or town name. For example, <code>Toronto</code>.</p>
         pub fn set_municipality(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.municipality = input;
-            self
+            self.municipality = input; self
         }
         /// <p>A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>
         pub fn sub_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3484,8 +3251,7 @@ pub mod place {
         }
         /// <p>A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>
         pub fn set_sub_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sub_region = input;
-            self
+            self.sub_region = input; self
         }
         /// <p>A name for an area or geographical division, such as a province or state name. For example, <code>British Columbia</code>.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3494,8 +3260,7 @@ pub mod place {
         }
         /// <p>A name for an area or geographical division, such as a province or state name. For example, <code>British Columbia</code>.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>A country/region specified using <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country/region code. For example, <code>CAN</code>.</p>
         pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3504,8 +3269,7 @@ pub mod place {
         }
         /// <p>A country/region specified using <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country/region code. For example, <code>CAN</code>.</p>
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country = input;
-            self
+            self.country = input; self
         }
         /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location. </p>
         pub fn postal_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3514,24 +3278,22 @@ pub mod place {
         }
         /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location. </p>
         pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.postal_code = input;
-            self
+            self.postal_code = input; self
         }
-        /// <p> <code>True</code> if the result is interpolated from other known places.</p>
-        /// <p> <code>False</code> if the Place is a known place.</p>
-        /// <p>Not returned when the partner does not provide the information.</p>
+        /// <p> <code>True</code> if the result is interpolated from other known places.</p> 
+        /// <p> <code>False</code> if the Place is a known place.</p> 
+        /// <p>Not returned when the partner does not provide the information.</p> 
         /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
         pub fn interpolated(mut self, input: bool) -> Self {
             self.interpolated = Some(input);
             self
         }
-        /// <p> <code>True</code> if the result is interpolated from other known places.</p>
-        /// <p> <code>False</code> if the Place is a known place.</p>
-        /// <p>Not returned when the partner does not provide the information.</p>
+        /// <p> <code>True</code> if the result is interpolated from other known places.</p> 
+        /// <p> <code>False</code> if the Place is a known place.</p> 
+        /// <p>Not returned when the partner does not provide the information.</p> 
         /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
         pub fn set_interpolated(mut self, input: std::option::Option<bool>) -> Self {
-            self.interpolated = input;
-            self
+            self.interpolated = input; self
         }
         /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.</p>
         pub fn time_zone(mut self, input: crate::model::TimeZone) -> Self {
@@ -3540,8 +3302,7 @@ pub mod place {
         }
         /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.</p>
         pub fn set_time_zone(mut self, input: std::option::Option<crate::model::TimeZone>) -> Self {
-            self.time_zone = input;
-            self
+            self.time_zone = input; self
         }
         /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
         pub fn unit_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3550,43 +3311,57 @@ pub mod place {
         }
         /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
         pub fn set_unit_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unit_type = input;
-            self
+            self.unit_type = input; self
         }
-        /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
-        /// <p>Returned only for a place index that uses Esri as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+        /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note> 
+        /// <p>Returned only for a place index that uses Esri as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
         /// </note>
         pub fn unit_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.unit_number = Some(input.into());
             self
         }
-        /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
-        /// <p>Returned only for a place index that uses Esri as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
+        /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note> 
+        /// <p>Returned only for a place index that uses Esri as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
         /// </note>
         pub fn set_unit_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unit_number = input;
-            self
+            self.unit_number = input; self
         }
         /// Consumes the builder and constructs a [`Place`](crate::model::Place).
         pub fn build(self) -> crate::model::Place {
             crate::model::Place {
-                label: self.label,
-                geometry: self.geometry,
-                address_number: self.address_number,
-                street: self.street,
-                neighborhood: self.neighborhood,
-                municipality: self.municipality,
-                sub_region: self.sub_region,
-                region: self.region,
-                country: self.country,
-                postal_code: self.postal_code,
-                interpolated: self.interpolated,
-                time_zone: self.time_zone,
-                unit_type: self.unit_type,
-                unit_number: self.unit_number,
+                label: self.label
+                ,
+                geometry: self.geometry
+                ,
+                address_number: self.address_number
+                ,
+                street: self.street
+                ,
+                neighborhood: self.neighborhood
+                ,
+                municipality: self.municipality
+                ,
+                sub_region: self.sub_region
+                ,
+                region: self.region
+                ,
+                country: self.country
+                ,
+                postal_code: self.postal_code
+                ,
+                interpolated: self.interpolated
+                ,
+                time_zone: self.time_zone
+                ,
+                unit_type: self.unit_type
+                ,
+                unit_number: self.unit_number
+                ,
             }
         }
     }
+    
+    
 }
 impl Place {
     /// Creates a new builder-style object to manufacture [`Place`](crate::model::Place).
@@ -3598,7 +3373,7 @@ impl Place {
 /// <p>Information about a time zone. Includes the name of the time zone and the offset from UTC in seconds.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeZone {
+pub struct TimeZone  {
     /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3608,7 +3383,7 @@ pub struct TimeZone {
 }
 impl TimeZone {
     /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time zone's offset, in seconds, from UTC.</p>
@@ -3618,7 +3393,7 @@ impl TimeZone {
 }
 /// See [`TimeZone`](crate::model::TimeZone).
 pub mod time_zone {
-
+    
     /// A builder for [`TimeZone`](crate::model::TimeZone).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3633,8 +3408,7 @@ pub mod time_zone {
         }
         /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The time zone's offset, in seconds, from UTC.</p>
         pub fn offset(mut self, input: i32) -> Self {
@@ -3643,17 +3417,20 @@ pub mod time_zone {
         }
         /// <p>The time zone's offset, in seconds, from UTC.</p>
         pub fn set_offset(mut self, input: std::option::Option<i32>) -> Self {
-            self.offset = input;
-            self
+            self.offset = input; self
         }
         /// Consumes the builder and constructs a [`TimeZone`](crate::model::TimeZone).
         pub fn build(self) -> crate::model::TimeZone {
             crate::model::TimeZone {
-                name: self.name,
-                offset: self.offset,
+                name: self.name
+                ,
+                offset: self.offset
+                ,
             }
         }
     }
+    
+    
 }
 impl TimeZone {
     /// Creates a new builder-style object to manufacture [`TimeZone`](crate::model::TimeZone).
@@ -3665,26 +3442,26 @@ impl TimeZone {
 /// <p>Places uses a point geometry to specify a location or a Place.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PlaceGeometry {
-    /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p>
-    /// <ul>
-    /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li>
-    /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li>
+pub struct PlaceGeometry  {
+    /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p> 
+    /// <ul> 
+    /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li> 
+    /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub point: std::option::Option<std::vec::Vec<f64>>,
 }
 impl PlaceGeometry {
-    /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p>
-    /// <ul>
-    /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li>
-    /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li>
+    /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p> 
+    /// <ul> 
+    /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li> 
+    /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li> 
     /// </ul>
-    pub fn point(&self) -> std::option::Option<&[f64]> {
+    pub fn point(&self) -> std::option::Option<& [f64]> {
         self.point.as_deref()
     }
 }
-impl std::fmt::Debug for PlaceGeometry {
+impl  std::fmt::Debug for PlaceGeometry  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PlaceGeometry");
         formatter.field("point", &"*** Sensitive Data Redacted ***");
@@ -3693,7 +3470,7 @@ impl std::fmt::Debug for PlaceGeometry {
 }
 /// See [`PlaceGeometry`](crate::model::PlaceGeometry).
 pub mod place_geometry {
-
+    
     /// A builder for [`PlaceGeometry`](crate::model::PlaceGeometry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3704,29 +3481,31 @@ pub mod place_geometry {
         ///
         /// To override the contents of this collection use [`set_point`](Self::set_point).
         ///
-        /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p>
-        /// <ul>
-        /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li>
-        /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li>
+        /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p> 
+        /// <ul> 
+        /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li> 
+        /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li> 
         /// </ul>
         pub fn point(mut self, input: f64) -> Self {
             let mut v = self.point.unwrap_or_default();
-            v.push(input);
-            self.point = Some(v);
-            self
+                            v.push(input);
+                            self.point = Some(v);
+                            self
         }
-        /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p>
-        /// <ul>
-        /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li>
-        /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li>
+        /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p> 
+        /// <ul> 
+        /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li> 
+        /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li> 
         /// </ul>
         pub fn set_point(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.point = input;
-            self
+            self.point = input; self
         }
         /// Consumes the builder and constructs a [`PlaceGeometry`](crate::model::PlaceGeometry).
         pub fn build(self) -> crate::model::PlaceGeometry {
-            crate::model::PlaceGeometry { point: self.point }
+            crate::model::PlaceGeometry {
+                point: self.point
+                ,
+            }
         }
     }
     impl std::fmt::Debug for Builder {
@@ -3736,6 +3515,8 @@ pub mod place_geometry {
             formatter.finish()
         }
     }
+    
+    
 }
 impl PlaceGeometry {
     /// Creates a new builder-style object to manufacture [`PlaceGeometry`](crate::model::PlaceGeometry).
@@ -3747,12 +3528,12 @@ impl PlaceGeometry {
 /// <p>A summary of the request sent by using <code>SearchPlaceIndexForText</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SearchPlaceIndexForTextSummary {
+pub struct SearchPlaceIndexForTextSummary  {
     /// <p>The search text specified in the request.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
-    /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
-    /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>Contains the coordinates for the optional bias position specified in the request.</p> 
+    /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p> 
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     #[doc(hidden)]
     pub bias_position: std::option::Option<std::vec::Vec<f64>>,
@@ -3765,17 +3546,17 @@ pub struct SearchPlaceIndexForTextSummary {
     /// <p>Contains the optional result count limit specified in the request.</p>
     #[doc(hidden)]
     pub max_results: i32,
-    /// <p>The bounding box that fully contains all search results.</p> <note>
-    /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code> is contained within <code>FilterBBox</code>.</p>
+    /// <p>The bounding box that fully contains all search results.</p> <note> 
+    /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code> is contained within <code>FilterBBox</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub result_b_box: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
-    /// <ul>
-    /// <li> <p>Esri</p> </li>
-    /// <li> <p>Grab</p> </li>
-    /// <li> <p>Here</p> </li>
-    /// </ul>
+    /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Esri</p> </li> 
+    /// <li> <p>Grab</p> </li> 
+    /// <li> <p>Here</p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
@@ -3785,49 +3566,49 @@ pub struct SearchPlaceIndexForTextSummary {
 }
 impl SearchPlaceIndexForTextSummary {
     /// <p>The search text specified in the request.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
-    /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
-    /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>Contains the coordinates for the optional bias position specified in the request.</p> 
+    /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p> 
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
-    pub fn bias_position(&self) -> std::option::Option<&[f64]> {
+    pub fn bias_position(&self) -> std::option::Option<& [f64]> {
         self.bias_position.as_deref()
     }
     /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
-    pub fn filter_b_box(&self) -> std::option::Option<&[f64]> {
+    pub fn filter_b_box(&self) -> std::option::Option<& [f64]> {
         self.filter_b_box.as_deref()
     }
     /// <p>Contains the optional country filter specified in the request.</p>
-    pub fn filter_countries(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn filter_countries(&self) -> std::option::Option<& [std::string::String]> {
         self.filter_countries.as_deref()
     }
     /// <p>Contains the optional result count limit specified in the request.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The bounding box that fully contains all search results.</p> <note>
-    /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code> is contained within <code>FilterBBox</code>.</p>
+    /// <p>The bounding box that fully contains all search results.</p> <note> 
+    /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code> is contained within <code>FilterBBox</code>.</p> 
     /// </note>
-    pub fn result_b_box(&self) -> std::option::Option<&[f64]> {
+    pub fn result_b_box(&self) -> std::option::Option<& [f64]> {
         self.result_b_box.as_deref()
     }
-    /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
-    /// <ul>
-    /// <li> <p>Esri</p> </li>
-    /// <li> <p>Grab</p> </li>
-    /// <li> <p>Here</p> </li>
-    /// </ul>
+    /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Esri</p> </li> 
+    /// <li> <p>Grab</p> </li> 
+    /// <li> <p>Here</p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(&self) -> std::option::Option<&str> {
+    pub fn data_source(&self) -> std::option::Option<& str> {
         self.data_source.as_deref()
     }
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
-    pub fn language(&self) -> std::option::Option<&str> {
+    pub fn language(&self) -> std::option::Option<& str> {
         self.language.as_deref()
     }
 }
-impl std::fmt::Debug for SearchPlaceIndexForTextSummary {
+impl  std::fmt::Debug for SearchPlaceIndexForTextSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchPlaceIndexForTextSummary");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -3843,7 +3624,7 @@ impl std::fmt::Debug for SearchPlaceIndexForTextSummary {
 }
 /// See [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary).
 pub mod search_place_index_for_text_summary {
-
+    
     /// A builder for [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3864,28 +3645,26 @@ pub mod search_place_index_for_text_summary {
         }
         /// <p>The search text specified in the request.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.text = input;
-            self
+            self.text = input; self
         }
         /// Appends an item to `bias_position`.
         ///
         /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
         ///
-        /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
-        /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+        /// <p>Contains the coordinates for the optional bias position specified in the request.</p> 
+        /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p> 
         /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
         pub fn bias_position(mut self, input: f64) -> Self {
             let mut v = self.bias_position.unwrap_or_default();
-            v.push(input);
-            self.bias_position = Some(v);
-            self
+                            v.push(input);
+                            self.bias_position = Some(v);
+                            self
         }
-        /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
-        /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+        /// <p>Contains the coordinates for the optional bias position specified in the request.</p> 
+        /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p> 
         /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
         pub fn set_bias_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.bias_position = input;
-            self
+            self.bias_position = input; self
         }
         /// Appends an item to `filter_b_box`.
         ///
@@ -3894,14 +3673,13 @@ pub mod search_place_index_for_text_summary {
         /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
         pub fn filter_b_box(mut self, input: f64) -> Self {
             let mut v = self.filter_b_box.unwrap_or_default();
-            v.push(input);
-            self.filter_b_box = Some(v);
-            self
+                            v.push(input);
+                            self.filter_b_box = Some(v);
+                            self
         }
         /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
         pub fn set_filter_b_box(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.filter_b_box = input;
-            self
+            self.filter_b_box = input; self
         }
         /// Appends an item to `filter_countries`.
         ///
@@ -3910,17 +3688,13 @@ pub mod search_place_index_for_text_summary {
         /// <p>Contains the optional country filter specified in the request.</p>
         pub fn filter_countries(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.filter_countries.unwrap_or_default();
-            v.push(input.into());
-            self.filter_countries = Some(v);
-            self
+                            v.push(input.into());
+                            self.filter_countries = Some(v);
+                            self
         }
         /// <p>Contains the optional country filter specified in the request.</p>
-        pub fn set_filter_countries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.filter_countries = input;
-            self
+        pub fn set_filter_countries(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.filter_countries = input; self
         }
         /// <p>Contains the optional result count limit specified in the request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3929,50 +3703,47 @@ pub mod search_place_index_for_text_summary {
         }
         /// <p>Contains the optional result count limit specified in the request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Appends an item to `result_b_box`.
         ///
         /// To override the contents of this collection use [`set_result_b_box`](Self::set_result_b_box).
         ///
-        /// <p>The bounding box that fully contains all search results.</p> <note>
-        /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code> is contained within <code>FilterBBox</code>.</p>
+        /// <p>The bounding box that fully contains all search results.</p> <note> 
+        /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code> is contained within <code>FilterBBox</code>.</p> 
         /// </note>
         pub fn result_b_box(mut self, input: f64) -> Self {
             let mut v = self.result_b_box.unwrap_or_default();
-            v.push(input);
-            self.result_b_box = Some(v);
-            self
+                            v.push(input);
+                            self.result_b_box = Some(v);
+                            self
         }
-        /// <p>The bounding box that fully contains all search results.</p> <note>
-        /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code> is contained within <code>FilterBBox</code>.</p>
+        /// <p>The bounding box that fully contains all search results.</p> <note> 
+        /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code> is contained within <code>FilterBBox</code>.</p> 
         /// </note>
         pub fn set_result_b_box(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.result_b_box = input;
-            self
+            self.result_b_box = input; self
         }
-        /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
-        /// <ul>
-        /// <li> <p>Esri</p> </li>
-        /// <li> <p>Grab</p> </li>
-        /// <li> <p>Here</p> </li>
-        /// </ul>
+        /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>Esri</p> </li> 
+        /// <li> <p>Grab</p> </li> 
+        /// <li> <p>Here</p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
-        /// <ul>
-        /// <li> <p>Esri</p> </li>
-        /// <li> <p>Grab</p> </li>
-        /// <li> <p>Here</p> </li>
-        /// </ul>
+        /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>Esri</p> </li> 
+        /// <li> <p>Grab</p> </li> 
+        /// <li> <p>Here</p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_source = input;
-            self
+            self.data_source = input; self
         }
         /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3981,20 +3752,28 @@ pub mod search_place_index_for_text_summary {
         }
         /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.language = input;
-            self
+            self.language = input; self
         }
         /// Consumes the builder and constructs a [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary).
         pub fn build(self) -> crate::model::SearchPlaceIndexForTextSummary {
             crate::model::SearchPlaceIndexForTextSummary {
-                text: self.text,
-                bias_position: self.bias_position,
-                filter_b_box: self.filter_b_box,
-                filter_countries: self.filter_countries,
-                max_results: self.max_results.unwrap_or_default(),
-                result_b_box: self.result_b_box,
-                data_source: self.data_source,
-                language: self.language,
+                text: self.text
+                ,
+                bias_position: self.bias_position
+                ,
+                filter_b_box: self.filter_b_box
+                ,
+                filter_countries: self.filter_countries
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+                result_b_box: self.result_b_box
+                ,
+                data_source: self.data_source
+                ,
+                language: self.language
+                ,
             }
         }
     }
@@ -4012,6 +3791,8 @@ pub mod search_place_index_for_text_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl SearchPlaceIndexForTextSummary {
     /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary).
@@ -4023,31 +3804,31 @@ impl SearchPlaceIndexForTextSummary {
 /// <p>Contains a place suggestion resulting from a place suggestion query that is run on a place index resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchForSuggestionsResult {
+pub struct SearchForSuggestionsResult  {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note> 
+    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p> 
     /// </note>
     #[doc(hidden)]
     pub place_id: std::option::Option<std::string::String>,
 }
 impl SearchForSuggestionsResult {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note> 
+    /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p> 
     /// </note>
-    pub fn place_id(&self) -> std::option::Option<&str> {
+    pub fn place_id(&self) -> std::option::Option<& str> {
         self.place_id.as_deref()
     }
 }
 /// See [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult).
 pub mod search_for_suggestions_result {
-
+    
     /// A builder for [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4062,31 +3843,33 @@ pub mod search_for_suggestions_result {
         }
         /// <p>The text of the place suggestion, typically formatted as an address string.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.text = input;
-            self
+            self.text = input; self
         }
-        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-        /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
+        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note> 
+        /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p> 
         /// </note>
         pub fn place_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.place_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-        /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
+        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note> 
+        /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p> 
         /// </note>
         pub fn set_place_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.place_id = input;
-            self
+            self.place_id = input; self
         }
         /// Consumes the builder and constructs a [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult).
         pub fn build(self) -> crate::model::SearchForSuggestionsResult {
             crate::model::SearchForSuggestionsResult {
-                text: self.text,
-                place_id: self.place_id,
+                text: self.text
+                ,
+                place_id: self.place_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchForSuggestionsResult {
     /// Creates a new builder-style object to manufacture [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult).
@@ -4098,12 +3881,12 @@ impl SearchForSuggestionsResult {
 /// <p>A summary of the request sent by using <code>SearchPlaceIndexForSuggestions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SearchPlaceIndexForSuggestionsSummary {
+pub struct SearchPlaceIndexForSuggestionsSummary  {
     /// <p>The free-form partial text input specified in the request.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
-    /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
-    /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>Contains the coordinates for the optional bias position specified in the request.</p> 
+    /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p> 
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     #[doc(hidden)]
     pub bias_position: std::option::Option<std::vec::Vec<f64>>,
@@ -4116,12 +3899,12 @@ pub struct SearchPlaceIndexForSuggestionsSummary {
     /// <p>Contains the optional result count limit specified in the request.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
-    /// <ul>
-    /// <li> <p>Esri</p> </li>
-    /// <li> <p>Grab</p> </li>
-    /// <li> <p>Here</p> </li>
-    /// </ul>
+    /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Esri</p> </li> 
+    /// <li> <p>Grab</p> </li> 
+    /// <li> <p>Here</p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
@@ -4131,43 +3914,43 @@ pub struct SearchPlaceIndexForSuggestionsSummary {
 }
 impl SearchPlaceIndexForSuggestionsSummary {
     /// <p>The free-form partial text input specified in the request.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
-    /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
-    /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>Contains the coordinates for the optional bias position specified in the request.</p> 
+    /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p> 
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
-    pub fn bias_position(&self) -> std::option::Option<&[f64]> {
+    pub fn bias_position(&self) -> std::option::Option<& [f64]> {
         self.bias_position.as_deref()
     }
     /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
-    pub fn filter_b_box(&self) -> std::option::Option<&[f64]> {
+    pub fn filter_b_box(&self) -> std::option::Option<& [f64]> {
         self.filter_b_box.as_deref()
     }
     /// <p>Contains the optional country filter specified in the request.</p>
-    pub fn filter_countries(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn filter_countries(&self) -> std::option::Option<& [std::string::String]> {
         self.filter_countries.as_deref()
     }
     /// <p>Contains the optional result count limit specified in the request.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
-    /// <ul>
-    /// <li> <p>Esri</p> </li>
-    /// <li> <p>Grab</p> </li>
-    /// <li> <p>Here</p> </li>
-    /// </ul>
+    /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Esri</p> </li> 
+    /// <li> <p>Grab</p> </li> 
+    /// <li> <p>Here</p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(&self) -> std::option::Option<&str> {
+    pub fn data_source(&self) -> std::option::Option<& str> {
         self.data_source.as_deref()
     }
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
-    pub fn language(&self) -> std::option::Option<&str> {
+    pub fn language(&self) -> std::option::Option<& str> {
         self.language.as_deref()
     }
 }
-impl std::fmt::Debug for SearchPlaceIndexForSuggestionsSummary {
+impl  std::fmt::Debug for SearchPlaceIndexForSuggestionsSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchPlaceIndexForSuggestionsSummary");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -4182,7 +3965,7 @@ impl std::fmt::Debug for SearchPlaceIndexForSuggestionsSummary {
 }
 /// See [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary).
 pub mod search_place_index_for_suggestions_summary {
-
+    
     /// A builder for [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4202,28 +3985,26 @@ pub mod search_place_index_for_suggestions_summary {
         }
         /// <p>The free-form partial text input specified in the request.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.text = input;
-            self
+            self.text = input; self
         }
         /// Appends an item to `bias_position`.
         ///
         /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
         ///
-        /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
-        /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+        /// <p>Contains the coordinates for the optional bias position specified in the request.</p> 
+        /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p> 
         /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
         pub fn bias_position(mut self, input: f64) -> Self {
             let mut v = self.bias_position.unwrap_or_default();
-            v.push(input);
-            self.bias_position = Some(v);
-            self
+                            v.push(input);
+                            self.bias_position = Some(v);
+                            self
         }
-        /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
-        /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+        /// <p>Contains the coordinates for the optional bias position specified in the request.</p> 
+        /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p> 
         /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
         pub fn set_bias_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.bias_position = input;
-            self
+            self.bias_position = input; self
         }
         /// Appends an item to `filter_b_box`.
         ///
@@ -4232,14 +4013,13 @@ pub mod search_place_index_for_suggestions_summary {
         /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
         pub fn filter_b_box(mut self, input: f64) -> Self {
             let mut v = self.filter_b_box.unwrap_or_default();
-            v.push(input);
-            self.filter_b_box = Some(v);
-            self
+                            v.push(input);
+                            self.filter_b_box = Some(v);
+                            self
         }
         /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
         pub fn set_filter_b_box(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.filter_b_box = input;
-            self
+            self.filter_b_box = input; self
         }
         /// Appends an item to `filter_countries`.
         ///
@@ -4248,17 +4028,13 @@ pub mod search_place_index_for_suggestions_summary {
         /// <p>Contains the optional country filter specified in the request.</p>
         pub fn filter_countries(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.filter_countries.unwrap_or_default();
-            v.push(input.into());
-            self.filter_countries = Some(v);
-            self
+                            v.push(input.into());
+                            self.filter_countries = Some(v);
+                            self
         }
         /// <p>Contains the optional country filter specified in the request.</p>
-        pub fn set_filter_countries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.filter_countries = input;
-            self
+        pub fn set_filter_countries(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.filter_countries = input; self
         }
         /// <p>Contains the optional result count limit specified in the request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4267,30 +4043,28 @@ pub mod search_place_index_for_suggestions_summary {
         }
         /// <p>Contains the optional result count limit specified in the request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
-        /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
-        /// <ul>
-        /// <li> <p>Esri</p> </li>
-        /// <li> <p>Grab</p> </li>
-        /// <li> <p>Here</p> </li>
-        /// </ul>
+        /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>Esri</p> </li> 
+        /// <li> <p>Grab</p> </li> 
+        /// <li> <p>Here</p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
-        /// <ul>
-        /// <li> <p>Esri</p> </li>
-        /// <li> <p>Grab</p> </li>
-        /// <li> <p>Here</p> </li>
-        /// </ul>
+        /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>Esri</p> </li> 
+        /// <li> <p>Grab</p> </li> 
+        /// <li> <p>Here</p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_source = input;
-            self
+            self.data_source = input; self
         }
         /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4299,19 +4073,25 @@ pub mod search_place_index_for_suggestions_summary {
         }
         /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.language = input;
-            self
+            self.language = input; self
         }
         /// Consumes the builder and constructs a [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary).
         pub fn build(self) -> crate::model::SearchPlaceIndexForSuggestionsSummary {
             crate::model::SearchPlaceIndexForSuggestionsSummary {
-                text: self.text,
-                bias_position: self.bias_position,
-                filter_b_box: self.filter_b_box,
-                filter_countries: self.filter_countries,
-                max_results: self.max_results,
-                data_source: self.data_source,
-                language: self.language,
+                text: self.text
+                ,
+                bias_position: self.bias_position
+                ,
+                filter_b_box: self.filter_b_box
+                ,
+                filter_countries: self.filter_countries
+                ,
+                max_results: self.max_results
+                ,
+                data_source: self.data_source
+                ,
+                language: self.language
+                ,
             }
         }
     }
@@ -4328,6 +4108,8 @@ pub mod search_place_index_for_suggestions_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl SearchPlaceIndexForSuggestionsSummary {
     /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary).
@@ -4339,42 +4121,42 @@ impl SearchPlaceIndexForSuggestionsSummary {
 /// <p>Contains a search result from a position search query that is run on a place index resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchForPositionResult {
+pub struct SearchForPositionResult  {
     /// <p>Details about the search result, such as its address and position.</p>
     #[doc(hidden)]
     pub place: std::option::Option<crate::model::Place>,
-    /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note>
-    /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
+    /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note> 
+    /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p> 
     /// </note>
     #[doc(hidden)]
     pub distance: std::option::Option<f64>,
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note> 
+    /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p> 
     /// </note>
     #[doc(hidden)]
     pub place_id: std::option::Option<std::string::String>,
 }
 impl SearchForPositionResult {
     /// <p>Details about the search result, such as its address and position.</p>
-    pub fn place(&self) -> std::option::Option<&crate::model::Place> {
+    pub fn place(&self) -> std::option::Option<& crate::model::Place> {
         self.place.as_ref()
     }
-    /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note>
-    /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
+    /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note> 
+    /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p> 
     /// </note>
     pub fn distance(&self) -> std::option::Option<f64> {
         self.distance
     }
-    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-    /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note> 
+    /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p> 
     /// </note>
-    pub fn place_id(&self) -> std::option::Option<&str> {
+    pub fn place_id(&self) -> std::option::Option<& str> {
         self.place_id.as_deref()
     }
 }
 /// See [`SearchForPositionResult`](crate::model::SearchForPositionResult).
 pub mod search_for_position_result {
-
+    
     /// A builder for [`SearchForPositionResult`](crate::model::SearchForPositionResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4390,46 +4172,48 @@ pub mod search_for_position_result {
         }
         /// <p>Details about the search result, such as its address and position.</p>
         pub fn set_place(mut self, input: std::option::Option<crate::model::Place>) -> Self {
-            self.place = input;
-            self
+            self.place = input; self
         }
-        /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note>
-        /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
+        /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note> 
+        /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p> 
         /// </note>
         pub fn distance(mut self, input: f64) -> Self {
             self.distance = Some(input);
             self
         }
-        /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note>
-        /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
+        /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note> 
+        /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p> 
         /// </note>
         pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
-            self.distance = input;
-            self
+            self.distance = input; self
         }
-        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-        /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
+        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note> 
+        /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p> 
         /// </note>
         pub fn place_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.place_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
-        /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
+        /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note> 
+        /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p> 
         /// </note>
         pub fn set_place_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.place_id = input;
-            self
+            self.place_id = input; self
         }
         /// Consumes the builder and constructs a [`SearchForPositionResult`](crate::model::SearchForPositionResult).
         pub fn build(self) -> crate::model::SearchForPositionResult {
             crate::model::SearchForPositionResult {
-                place: self.place,
-                distance: self.distance,
-                place_id: self.place_id,
+                place: self.place
+                ,
+                distance: self.distance
+                ,
+                place_id: self.place_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchForPositionResult {
     /// Creates a new builder-style object to manufacture [`SearchForPositionResult`](crate::model::SearchForPositionResult).
@@ -4441,20 +4225,20 @@ impl SearchForPositionResult {
 /// <p>A summary of the request sent by using <code>SearchPlaceIndexForPosition</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SearchPlaceIndexForPositionSummary {
+pub struct SearchPlaceIndexForPositionSummary  {
     /// <p>The position specified in the request.</p>
     #[doc(hidden)]
     pub position: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>Contains the optional result count limit that is specified in the request.</p>
+    /// <p>Contains the optional result count limit that is specified in the request.</p> 
     /// <p>Default value: <code>50</code> </p>
     #[doc(hidden)]
     pub max_results: i32,
-    /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
-    /// <ul>
-    /// <li> <p>Esri</p> </li>
-    /// <li> <p>Grab</p> </li>
-    /// <li> <p>Here</p> </li>
-    /// </ul>
+    /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Esri</p> </li> 
+    /// <li> <p>Grab</p> </li> 
+    /// <li> <p>Here</p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
@@ -4464,30 +4248,30 @@ pub struct SearchPlaceIndexForPositionSummary {
 }
 impl SearchPlaceIndexForPositionSummary {
     /// <p>The position specified in the request.</p>
-    pub fn position(&self) -> std::option::Option<&[f64]> {
+    pub fn position(&self) -> std::option::Option<& [f64]> {
         self.position.as_deref()
     }
-    /// <p>Contains the optional result count limit that is specified in the request.</p>
+    /// <p>Contains the optional result count limit that is specified in the request.</p> 
     /// <p>Default value: <code>50</code> </p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
-    /// <ul>
-    /// <li> <p>Esri</p> </li>
-    /// <li> <p>Grab</p> </li>
-    /// <li> <p>Here</p> </li>
-    /// </ul>
+    /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Esri</p> </li> 
+    /// <li> <p>Grab</p> </li> 
+    /// <li> <p>Here</p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(&self) -> std::option::Option<&str> {
+    pub fn data_source(&self) -> std::option::Option<& str> {
         self.data_source.as_deref()
     }
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
-    pub fn language(&self) -> std::option::Option<&str> {
+    pub fn language(&self) -> std::option::Option<& str> {
         self.language.as_deref()
     }
 }
-impl std::fmt::Debug for SearchPlaceIndexForPositionSummary {
+impl  std::fmt::Debug for SearchPlaceIndexForPositionSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchPlaceIndexForPositionSummary");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
@@ -4499,7 +4283,7 @@ impl std::fmt::Debug for SearchPlaceIndexForPositionSummary {
 }
 /// See [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary).
 pub mod search_place_index_for_position_summary {
-
+    
     /// A builder for [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4516,48 +4300,45 @@ pub mod search_place_index_for_position_summary {
         /// <p>The position specified in the request.</p>
         pub fn position(mut self, input: f64) -> Self {
             let mut v = self.position.unwrap_or_default();
-            v.push(input);
-            self.position = Some(v);
-            self
+                            v.push(input);
+                            self.position = Some(v);
+                            self
         }
         /// <p>The position specified in the request.</p>
         pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.position = input;
-            self
+            self.position = input; self
         }
-        /// <p>Contains the optional result count limit that is specified in the request.</p>
+        /// <p>Contains the optional result count limit that is specified in the request.</p> 
         /// <p>Default value: <code>50</code> </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Contains the optional result count limit that is specified in the request.</p>
+        /// <p>Contains the optional result count limit that is specified in the request.</p> 
         /// <p>Default value: <code>50</code> </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
-        /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
-        /// <ul>
-        /// <li> <p>Esri</p> </li>
-        /// <li> <p>Grab</p> </li>
-        /// <li> <p>Here</p> </li>
-        /// </ul>
+        /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>Esri</p> </li> 
+        /// <li> <p>Grab</p> </li> 
+        /// <li> <p>Here</p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
-        /// <ul>
-        /// <li> <p>Esri</p> </li>
-        /// <li> <p>Grab</p> </li>
-        /// <li> <p>Here</p> </li>
-        /// </ul>
+        /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>Esri</p> </li> 
+        /// <li> <p>Grab</p> </li> 
+        /// <li> <p>Here</p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_source = input;
-            self
+            self.data_source = input; self
         }
         /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4566,16 +4347,20 @@ pub mod search_place_index_for_position_summary {
         }
         /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.language = input;
-            self
+            self.language = input; self
         }
         /// Consumes the builder and constructs a [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary).
         pub fn build(self) -> crate::model::SearchPlaceIndexForPositionSummary {
             crate::model::SearchPlaceIndexForPositionSummary {
-                position: self.position,
-                max_results: self.max_results.unwrap_or_default(),
-                data_source: self.data_source,
-                language: self.language,
+                position: self.position
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+                data_source: self.data_source
+                ,
+                language: self.language
+                ,
             }
         }
     }
@@ -4589,6 +4374,8 @@ pub mod search_place_index_for_position_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl SearchPlaceIndexForPositionSummary {
     /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary).
@@ -4600,27 +4387,24 @@ impl SearchPlaceIndexForPositionSummary {
 /// <p>A place index resource listed in your AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPlaceIndexesResponseEntry {
+pub struct ListPlaceIndexesResponseEntry  {
     /// <p>The name of the place index resource.</p>
     #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The optional description for the place index resource.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The data provider of geospatial data. Values can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
-    /// </ul>
+    /// <p>The data provider of geospatial data. Values can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Esri</code> </p> </li> 
+    /// <li> <p> <code>Grab</code> </p> </li> 
+    /// <li> <p> <code>Here</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
@@ -4632,43 +4416,40 @@ pub struct ListPlaceIndexesResponseEntry {
 }
 impl ListPlaceIndexesResponseEntry {
     /// <p>The name of the place index resource.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>The optional description for the place index resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The data provider of geospatial data. Values can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
-    /// </ul>
+    /// <p>The data provider of geospatial data. Values can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Esri</code> </p> </li> 
+    /// <li> <p> <code>Grab</code> </p> </li> 
+    /// <li> <p> <code>Here</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(&self) -> std::option::Option<&str> {
+    pub fn data_source(&self) -> std::option::Option<& str> {
         self.data_source.as_deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    pub fn pricing_plan(&self) -> std::option::Option<& crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry).
 pub mod list_place_indexes_response_entry {
-
+    
     /// A builder for [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4687,8 +4468,7 @@ pub mod list_place_indexes_response_entry {
         }
         /// <p>The name of the place index resource.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.index_name = input;
-            self
+            self.index_name = input; self
         }
         /// <p>The optional description for the place index resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4697,51 +4477,39 @@ pub mod list_place_indexes_response_entry {
         }
         /// <p>The optional description for the place index resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
-        /// <p>The data provider of geospatial data. Values can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>Esri</code> </p> </li>
-        /// <li> <p> <code>Grab</code> </p> </li>
-        /// <li> <p> <code>Here</code> </p> </li>
-        /// </ul>
+        /// <p>The data provider of geospatial data. Values can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Esri</code> </p> </li> 
+        /// <li> <p> <code>Grab</code> </p> </li> 
+        /// <li> <p> <code>Here</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>The data provider of geospatial data. Values can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>Esri</code> </p> </li>
-        /// <li> <p> <code>Grab</code> </p> </li>
-        /// <li> <p> <code>Here</code> </p> </li>
-        /// </ul>
+        /// <p>The data provider of geospatial data. Values can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Esri</code> </p> </li> 
+        /// <li> <p> <code>Grab</code> </p> </li> 
+        /// <li> <p> <code>Here</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_source = input;
-            self
+            self.data_source = input; self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
-        pub fn set_pricing_plan(
-            mut self,
-            input: std::option::Option<crate::model::PricingPlan>,
-        ) -> Self {
-            self.pricing_plan = input;
-            self
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+        pub fn set_pricing_plan(mut self, input: std::option::Option<crate::model::PricingPlan>) -> Self {
+            self.pricing_plan = input; self
         }
         /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4749,12 +4517,8 @@ pub mod list_place_indexes_response_entry {
             self
         }
         /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4762,25 +4526,29 @@ pub mod list_place_indexes_response_entry {
             self
         }
         /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry).
         pub fn build(self) -> crate::model::ListPlaceIndexesResponseEntry {
             crate::model::ListPlaceIndexesResponseEntry {
-                index_name: self.index_name,
-                description: self.description,
-                data_source: self.data_source,
-                pricing_plan: self.pricing_plan,
-                create_time: self.create_time,
-                update_time: self.update_time,
+                index_name: self.index_name
+                ,
+                description: self.description
+                ,
+                data_source: self.data_source
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPlaceIndexesResponseEntry {
     /// Creates a new builder-style object to manufacture [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry).
@@ -4789,80 +4557,79 @@ impl ListPlaceIndexesResponseEntry {
     }
 }
 
-/// <p>Specifies the data storage option chosen for requesting Places.</p> <important>
-/// <p>When using Amazon Location Places:</p>
-/// <ul>
-/// <li> <p>If using HERE Technologies as a data provider, you can't store results for locations in Japan by setting <code>IntendedUse</code> to <code>Storage</code>. parameter.</p> </li>
-/// <li> <p>Under the <code>MobileAssetTracking</code> or <code>MobilAssetManagement</code> pricing plan, you can't store results from your place index resources by setting <code>IntendedUse</code> to <code>Storage</code>. This returns a validation exception error.</p> </li>
-/// </ul>
-/// <p>For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p>
+/// <p>Specifies the data storage option chosen for requesting Places.</p> <important> 
+/// <p>When using Amazon Location Places:</p> 
+/// <ul> 
+/// <li> <p>If using HERE Technologies as a data provider, you can't store results for locations in Japan by setting <code>IntendedUse</code> to <code>Storage</code>. parameter.</p> </li> 
+/// <li> <p>Under the <code>MobileAssetTracking</code> or <code>MobilAssetManagement</code> pricing plan, you can't store results from your place index resources by setting <code>IntendedUse</code> to <code>Storage</code>. This returns a validation exception error.</p> </li> 
+/// </ul> 
+/// <p>For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p> 
 /// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSourceConfiguration {
-    /// <p>Specifies how the results of an operation will be stored by the caller. </p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>SingleUse</code> specifies that the results won't be stored. </p> </li>
-    /// <li> <p> <code>Storage</code> specifies that the result can be cached or stored in a database.</p> </li>
-    /// </ul>
+pub struct DataSourceConfiguration  {
+    /// <p>Specifies how the results of an operation will be stored by the caller. </p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SingleUse</code> specifies that the results won't be stored. </p> </li> 
+    /// <li> <p> <code>Storage</code> specifies that the result can be cached or stored in a database.</p> </li> 
+    /// </ul> 
     /// <p>Default value: <code>SingleUse</code> </p>
     #[doc(hidden)]
     pub intended_use: std::option::Option<crate::model::IntendedUse>,
 }
 impl DataSourceConfiguration {
-    /// <p>Specifies how the results of an operation will be stored by the caller. </p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>SingleUse</code> specifies that the results won't be stored. </p> </li>
-    /// <li> <p> <code>Storage</code> specifies that the result can be cached or stored in a database.</p> </li>
-    /// </ul>
+    /// <p>Specifies how the results of an operation will be stored by the caller. </p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SingleUse</code> specifies that the results won't be stored. </p> </li> 
+    /// <li> <p> <code>Storage</code> specifies that the result can be cached or stored in a database.</p> </li> 
+    /// </ul> 
     /// <p>Default value: <code>SingleUse</code> </p>
-    pub fn intended_use(&self) -> std::option::Option<&crate::model::IntendedUse> {
+    pub fn intended_use(&self) -> std::option::Option<& crate::model::IntendedUse> {
         self.intended_use.as_ref()
     }
 }
 /// See [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
 pub mod data_source_configuration {
-
+    
     /// A builder for [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) intended_use: std::option::Option<crate::model::IntendedUse>,
     }
     impl Builder {
-        /// <p>Specifies how the results of an operation will be stored by the caller. </p>
-        /// <p>Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>SingleUse</code> specifies that the results won't be stored. </p> </li>
-        /// <li> <p> <code>Storage</code> specifies that the result can be cached or stored in a database.</p> </li>
-        /// </ul>
+        /// <p>Specifies how the results of an operation will be stored by the caller. </p> 
+        /// <p>Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>SingleUse</code> specifies that the results won't be stored. </p> </li> 
+        /// <li> <p> <code>Storage</code> specifies that the result can be cached or stored in a database.</p> </li> 
+        /// </ul> 
         /// <p>Default value: <code>SingleUse</code> </p>
         pub fn intended_use(mut self, input: crate::model::IntendedUse) -> Self {
             self.intended_use = Some(input);
             self
         }
-        /// <p>Specifies how the results of an operation will be stored by the caller. </p>
-        /// <p>Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>SingleUse</code> specifies that the results won't be stored. </p> </li>
-        /// <li> <p> <code>Storage</code> specifies that the result can be cached or stored in a database.</p> </li>
-        /// </ul>
+        /// <p>Specifies how the results of an operation will be stored by the caller. </p> 
+        /// <p>Valid values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>SingleUse</code> specifies that the results won't be stored. </p> </li> 
+        /// <li> <p> <code>Storage</code> specifies that the result can be cached or stored in a database.</p> </li> 
+        /// </ul> 
         /// <p>Default value: <code>SingleUse</code> </p>
-        pub fn set_intended_use(
-            mut self,
-            input: std::option::Option<crate::model::IntendedUse>,
-        ) -> Self {
-            self.intended_use = input;
-            self
+        pub fn set_intended_use(mut self, input: std::option::Option<crate::model::IntendedUse>) -> Self {
+            self.intended_use = input; self
         }
         /// Consumes the builder and constructs a [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
         pub fn build(self) -> crate::model::DataSourceConfiguration {
             crate::model::DataSourceConfiguration {
-                intended_use: self.intended_use,
+                intended_use: self.intended_use
+                ,
             }
         }
     }
+    
+    
 }
 impl DataSourceConfiguration {
     /// Creates a new builder-style object to manufacture [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
@@ -4873,15 +4640,7 @@ impl DataSourceConfiguration {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct IntendedUse(String);
 impl IntendedUse {
     /// Returns the `&str` value of the enum member.
@@ -4890,13 +4649,12 @@ impl IntendedUse {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SingleUse", "Storage"]
+        &[
+            "SingleUse", "Storage"
+        ]
     }
 }
-impl<T> std::convert::From<T> for IntendedUse
-where
-    T: std::convert::AsRef<str>,
-{
+impl <T> std::convert::From<T> for IntendedUse where T: std::convert::AsRef<str> {
     fn from(s: T) -> Self {
         IntendedUse(s.as_ref().to_owned())
     }
@@ -4905,7 +4663,7 @@ where
 /// <p>Contains details of an existing map resource in your AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMapsResponseEntry {
+pub struct ListMapsResponseEntry  {
     /// <p>The name of the associated map resource.</p>
     #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
@@ -4916,10 +4674,7 @@ pub struct ListMapsResponseEntry {
     #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
@@ -4931,37 +4686,34 @@ pub struct ListMapsResponseEntry {
 }
 impl ListMapsResponseEntry {
     /// <p>The name of the associated map resource.</p>
-    pub fn map_name(&self) -> std::option::Option<&str> {
+    pub fn map_name(&self) -> std::option::Option<& str> {
         self.map_name.as_deref()
     }
     /// <p>The description for the map resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies the data provider for the associated map tiles.</p>
-    pub fn data_source(&self) -> std::option::Option<&str> {
+    pub fn data_source(&self) -> std::option::Option<& str> {
         self.data_source.as_deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    pub fn pricing_plan(&self) -> std::option::Option<& crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry).
 pub mod list_maps_response_entry {
-
+    
     /// A builder for [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4980,8 +4732,7 @@ pub mod list_maps_response_entry {
         }
         /// <p>The name of the associated map resource.</p>
         pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.map_name = input;
-            self
+            self.map_name = input; self
         }
         /// <p>The description for the map resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4990,8 +4741,7 @@ pub mod list_maps_response_entry {
         }
         /// <p>The description for the map resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Specifies the data provider for the associated map tiles.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5000,29 +4750,18 @@ pub mod list_maps_response_entry {
         }
         /// <p>Specifies the data provider for the associated map tiles.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_source = input;
-            self
+            self.data_source = input; self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
-        pub fn set_pricing_plan(
-            mut self,
-            input: std::option::Option<crate::model::PricingPlan>,
-        ) -> Self {
-            self.pricing_plan = input;
-            self
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+        pub fn set_pricing_plan(mut self, input: std::option::Option<crate::model::PricingPlan>) -> Self {
+            self.pricing_plan = input; self
         }
         /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5030,12 +4769,8 @@ pub mod list_maps_response_entry {
             self
         }
         /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5043,25 +4778,29 @@ pub mod list_maps_response_entry {
             self
         }
         /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry).
         pub fn build(self) -> crate::model::ListMapsResponseEntry {
             crate::model::ListMapsResponseEntry {
-                map_name: self.map_name,
-                description: self.description,
-                data_source: self.data_source,
-                pricing_plan: self.pricing_plan,
-                create_time: self.create_time,
-                update_time: self.update_time,
+                map_name: self.map_name
+                ,
+                description: self.description
+                ,
+                data_source: self.data_source
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMapsResponseEntry {
     /// Creates a new builder-style object to manufacture [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry).
@@ -5073,177 +4812,181 @@ impl ListMapsResponseEntry {
 /// <p>Specifies the map tile style selected from an available provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MapConfiguration {
-    /// <p>Specifies the map style selected from an available data provider.</p>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
-    /// <ul>
-    /// <li> <p> <code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li>
-    /// <li> <p> <code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap that provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide. </p> </li>
-    /// <li> <p> <code>VectorEsriLightGrayCanvas</code> – The Esri Light Gray Canvas map style, which provides a detailed vector basemap with a light gray, neutral background style with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li>
-    /// <li> <p> <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a detailed vector basemap with a classic Esri map style.</p> </li>
-    /// <li> <p> <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides a detailed vector basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to the World Street Map raster map.</p> </li>
-    /// <li> <p> <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p> </li>
-    /// </ul>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
-    /// <ul>
-    /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note>
-    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
-    /// </note> </li>
-    /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
-    /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
-    /// <li> <p> <code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p> </li>
-    /// <li> <p> <code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p> <note>
-    /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
-    /// </note> </li>
-    /// </ul>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
-    /// <ul>
-    /// <li> <p> <code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p> </li>
-    /// <li> <p> <code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p> </li>
-    /// </ul> <note>
-    /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
-    /// </note>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data (Preview) map styles</a>:</p>
-    /// <ul>
-    /// <li> <p> <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light (preview) map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p> <important>
-    /// <p>Open Data maps is in preview. We may add, change, or remove features before announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open Data is in preview release</a>.</p>
-    /// </important> </li>
+pub struct MapConfiguration  {
+    /// <p>Specifies the map style selected from an available data provider.</p> 
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li> 
+    /// <li> <p> <code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap that provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide. </p> </li> 
+    /// <li> <p> <code>VectorEsriLightGrayCanvas</code> – The Esri Light Gray Canvas map style, which provides a detailed vector basemap with a light gray, neutral background style with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li> 
+    /// <li> <p> <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a detailed vector basemap with a classic Esri map style.</p> </li> 
+    /// <li> <p> <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides a detailed vector basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to the World Street Map raster map.</p> </li> 
+    /// <li> <p> <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p> </li> 
+    /// </ul> 
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note> 
+    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p> 
+    /// </note> </li> 
+    /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li> 
+    /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li> 
+    /// <li> <p> <code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p> </li> 
+    /// <li> <p> <code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p> <note> 
+    /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p> 
+    /// </note> </li> 
+    /// </ul> 
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p> </li> 
+    /// <li> <p> <code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p> </li> 
+    /// </ul> <note> 
+    /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p> 
+    /// </note> 
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data (Preview) map styles</a>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light (preview) map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p> <important> 
+    /// <p>Open Data maps is in preview. We may add, change, or remove features before announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open Data is in preview release</a>.</p> 
+    /// </important> </li> 
     /// </ul>
     #[doc(hidden)]
     pub style: std::option::Option<std::string::String>,
 }
 impl MapConfiguration {
-    /// <p>Specifies the map style selected from an available data provider.</p>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
-    /// <ul>
-    /// <li> <p> <code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li>
-    /// <li> <p> <code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap that provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide. </p> </li>
-    /// <li> <p> <code>VectorEsriLightGrayCanvas</code> – The Esri Light Gray Canvas map style, which provides a detailed vector basemap with a light gray, neutral background style with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li>
-    /// <li> <p> <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a detailed vector basemap with a classic Esri map style.</p> </li>
-    /// <li> <p> <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides a detailed vector basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to the World Street Map raster map.</p> </li>
-    /// <li> <p> <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p> </li>
+    /// <p>Specifies the map style selected from an available data provider.</p> 
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li> 
+    /// <li> <p> <code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap that provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide. </p> </li> 
+    /// <li> <p> <code>VectorEsriLightGrayCanvas</code> – The Esri Light Gray Canvas map style, which provides a detailed vector basemap with a light gray, neutral background style with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li> 
+    /// <li> <p> <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a detailed vector basemap with a classic Esri map style.</p> </li> 
+    /// <li> <p> <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides a detailed vector basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to the World Street Map raster map.</p> </li> 
+    /// <li> <p> <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p> </li> 
+    /// </ul> 
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note> 
+    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p> 
+    /// </note> </li> 
+    /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li> 
+    /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li> 
+    /// <li> <p> <code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p> </li> 
+    /// <li> <p> <code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p> <note> 
+    /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p> 
+    /// </note> </li> 
+    /// </ul> 
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p> </li> 
+    /// <li> <p> <code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p> </li> 
+    /// </ul> <note> 
+    /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p> 
+    /// </note> 
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data (Preview) map styles</a>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light (preview) map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p> <important> 
+    /// <p>Open Data maps is in preview. We may add, change, or remove features before announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open Data is in preview release</a>.</p> 
+    /// </important> </li> 
     /// </ul>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
-    /// <ul>
-    /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note>
-    /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
-    /// </note> </li>
-    /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
-    /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
-    /// <li> <p> <code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p> </li>
-    /// <li> <p> <code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p> <note>
-    /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
-    /// </note> </li>
-    /// </ul>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
-    /// <ul>
-    /// <li> <p> <code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p> </li>
-    /// <li> <p> <code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p> </li>
-    /// </ul> <note>
-    /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
-    /// </note>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data (Preview) map styles</a>:</p>
-    /// <ul>
-    /// <li> <p> <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light (preview) map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p> <important>
-    /// <p>Open Data maps is in preview. We may add, change, or remove features before announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open Data is in preview release</a>.</p>
-    /// </important> </li>
-    /// </ul>
-    pub fn style(&self) -> std::option::Option<&str> {
+    pub fn style(&self) -> std::option::Option<& str> {
         self.style.as_deref()
     }
 }
 /// See [`MapConfiguration`](crate::model::MapConfiguration).
 pub mod map_configuration {
-
+    
     /// A builder for [`MapConfiguration`](crate::model::MapConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) style: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the map style selected from an available data provider.</p>
-        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
-        /// <ul>
-        /// <li> <p> <code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li>
-        /// <li> <p> <code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap that provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide. </p> </li>
-        /// <li> <p> <code>VectorEsriLightGrayCanvas</code> – The Esri Light Gray Canvas map style, which provides a detailed vector basemap with a light gray, neutral background style with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li>
-        /// <li> <p> <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a detailed vector basemap with a classic Esri map style.</p> </li>
-        /// <li> <p> <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides a detailed vector basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to the World Street Map raster map.</p> </li>
-        /// <li> <p> <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p> </li>
-        /// </ul>
-        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
-        /// <ul>
-        /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note>
-        /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
-        /// </note> </li>
-        /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
-        /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
-        /// <li> <p> <code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p> </li>
-        /// <li> <p> <code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p> <note>
-        /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
-        /// </note> </li>
-        /// </ul>
-        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
-        /// <ul>
-        /// <li> <p> <code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p> </li>
-        /// <li> <p> <code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p> </li>
-        /// </ul> <note>
-        /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
-        /// </note>
-        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data (Preview) map styles</a>:</p>
-        /// <ul>
-        /// <li> <p> <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light (preview) map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p> <important>
-        /// <p>Open Data maps is in preview. We may add, change, or remove features before announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open Data is in preview release</a>.</p>
-        /// </important> </li>
+        /// <p>Specifies the map style selected from an available data provider.</p> 
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li> 
+        /// <li> <p> <code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap that provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide. </p> </li> 
+        /// <li> <p> <code>VectorEsriLightGrayCanvas</code> – The Esri Light Gray Canvas map style, which provides a detailed vector basemap with a light gray, neutral background style with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li> 
+        /// <li> <p> <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a detailed vector basemap with a classic Esri map style.</p> </li> 
+        /// <li> <p> <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides a detailed vector basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to the World Street Map raster map.</p> </li> 
+        /// <li> <p> <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p> </li> 
+        /// </ul> 
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note> 
+        /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p> 
+        /// </note> </li> 
+        /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li> 
+        /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li> 
+        /// <li> <p> <code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p> </li> 
+        /// <li> <p> <code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p> <note> 
+        /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p> 
+        /// </note> </li> 
+        /// </ul> 
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p> </li> 
+        /// <li> <p> <code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p> </li> 
+        /// </ul> <note> 
+        /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p> 
+        /// </note> 
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data (Preview) map styles</a>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light (preview) map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p> <important> 
+        /// <p>Open Data maps is in preview. We may add, change, or remove features before announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open Data is in preview release</a>.</p> 
+        /// </important> </li> 
         /// </ul>
         pub fn style(mut self, input: impl Into<std::string::String>) -> Self {
             self.style = Some(input.into());
             self
         }
-        /// <p>Specifies the map style selected from an available data provider.</p>
-        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
-        /// <ul>
-        /// <li> <p> <code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li>
-        /// <li> <p> <code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap that provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide. </p> </li>
-        /// <li> <p> <code>VectorEsriLightGrayCanvas</code> – The Esri Light Gray Canvas map style, which provides a detailed vector basemap with a light gray, neutral background style with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li>
-        /// <li> <p> <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a detailed vector basemap with a classic Esri map style.</p> </li>
-        /// <li> <p> <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides a detailed vector basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to the World Street Map raster map.</p> </li>
-        /// <li> <p> <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p> </li>
-        /// </ul>
-        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
-        /// <ul>
-        /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note>
-        /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p>
-        /// </note> </li>
-        /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li>
-        /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li>
-        /// <li> <p> <code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p> </li>
-        /// <li> <p> <code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p> <note>
-        /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
-        /// </note> </li>
-        /// </ul>
-        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
-        /// <ul>
-        /// <li> <p> <code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p> </li>
-        /// <li> <p> <code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p> </li>
-        /// </ul> <note>
-        /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
-        /// </note>
-        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data (Preview) map styles</a>:</p>
-        /// <ul>
-        /// <li> <p> <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light (preview) map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p> <important>
-        /// <p>Open Data maps is in preview. We may add, change, or remove features before announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open Data is in preview release</a>.</p>
-        /// </important> </li>
+        /// <p>Specifies the map style selected from an available data provider.</p> 
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li> 
+        /// <li> <p> <code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap that provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide. </p> </li> 
+        /// <li> <p> <code>VectorEsriLightGrayCanvas</code> – The Esri Light Gray Canvas map style, which provides a detailed vector basemap with a light gray, neutral background style with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li> 
+        /// <li> <p> <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a detailed vector basemap with a classic Esri map style.</p> </li> 
+        /// <li> <p> <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides a detailed vector basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to the World Street Map raster map.</p> </li> 
+        /// <li> <p> <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p> </li> 
+        /// </ul> 
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note> 
+        /// <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p> 
+        /// </note> </li> 
+        /// <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li> 
+        /// <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li> 
+        /// <li> <p> <code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p> </li> 
+        /// <li> <p> <code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p> <note> 
+        /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p> 
+        /// </note> </li> 
+        /// </ul> 
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p> </li> 
+        /// <li> <p> <code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p> </li> 
+        /// </ul> <note> 
+        /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p> 
+        /// </note> 
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data (Preview) map styles</a>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light (preview) map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p> <important> 
+        /// <p>Open Data maps is in preview. We may add, change, or remove features before announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open Data is in preview release</a>.</p> 
+        /// </important> </li> 
         /// </ul>
         pub fn set_style(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.style = input;
-            self
+            self.style = input; self
         }
         /// Consumes the builder and constructs a [`MapConfiguration`](crate::model::MapConfiguration).
         pub fn build(self) -> crate::model::MapConfiguration {
-            crate::model::MapConfiguration { style: self.style }
+            crate::model::MapConfiguration {
+                style: self.style
+                ,
+            }
         }
     }
+    
+    
 }
 impl MapConfiguration {
     /// Creates a new builder-style object to manufacture [`MapConfiguration`](crate::model::MapConfiguration).
@@ -5252,17 +4995,17 @@ impl MapConfiguration {
     }
 }
 
-/// <p>Contains the geofence geometry details.</p>
-/// <p>A geofence geometry is made up of either a polygon or a circle. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
-/// <p>Amazon Location doesn't currently support polygons with holes, multipolygons, polygons that are wound clockwise, or that cross the antimeridian. </p>
+/// <p>Contains the geofence geometry details.</p> 
+/// <p>A geofence geometry is made up of either a polygon or a circle. Can be either a polygon or a circle. Including both will return a validation error.</p> <note> 
+/// <p>Amazon Location doesn't currently support polygons with holes, multipolygons, polygons that are wound clockwise, or that cross the antimeridian. </p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GeofenceGeometry {
-    /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p>
-    /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p>
-    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p>
-    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p>
+pub struct GeofenceGeometry  {
+    /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p> 
+    /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p> 
+    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p> 
+    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p> 
     /// <p>A linear ring for use in geofences can consist of between 4 and 1,000 vertices.</p>
     #[doc(hidden)]
     pub polygon: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
@@ -5271,20 +5014,20 @@ pub struct GeofenceGeometry {
     pub circle: std::option::Option<crate::model::Circle>,
 }
 impl GeofenceGeometry {
-    /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p>
-    /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p>
-    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p>
-    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p>
+    /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p> 
+    /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p> 
+    /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p> 
+    /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p> 
     /// <p>A linear ring for use in geofences can consist of between 4 and 1,000 vertices.</p>
-    pub fn polygon(&self) -> std::option::Option<&[std::vec::Vec<std::vec::Vec<f64>>]> {
+    pub fn polygon(&self) -> std::option::Option<& [std::vec::Vec<std::vec::Vec<f64>>]> {
         self.polygon.as_deref()
     }
     /// <p>A circle on the earth, as defined by a center point and a radius.</p>
-    pub fn circle(&self) -> std::option::Option<&crate::model::Circle> {
+    pub fn circle(&self) -> std::option::Option<& crate::model::Circle> {
         self.circle.as_ref()
     }
 }
-impl std::fmt::Debug for GeofenceGeometry {
+impl  std::fmt::Debug for GeofenceGeometry  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GeofenceGeometry");
         formatter.field("polygon", &self.polygon);
@@ -5294,7 +5037,7 @@ impl std::fmt::Debug for GeofenceGeometry {
 }
 /// See [`GeofenceGeometry`](crate::model::GeofenceGeometry).
 pub mod geofence_geometry {
-
+    
     /// A builder for [`GeofenceGeometry`](crate::model::GeofenceGeometry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5306,28 +5049,24 @@ pub mod geofence_geometry {
         ///
         /// To override the contents of this collection use [`set_polygon`](Self::set_polygon).
         ///
-        /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p>
-        /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p>
-        /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p>
-        /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p>
+        /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p> 
+        /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p> 
+        /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p> 
+        /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p> 
         /// <p>A linear ring for use in geofences can consist of between 4 and 1,000 vertices.</p>
         pub fn polygon(mut self, input: std::vec::Vec<std::vec::Vec<f64>>) -> Self {
             let mut v = self.polygon.unwrap_or_default();
-            v.push(input);
-            self.polygon = Some(v);
-            self
+                            v.push(input);
+                            self.polygon = Some(v);
+                            self
         }
-        /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p>
-        /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p>
-        /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p>
-        /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p>
+        /// <p>A polygon is a list of linear rings which are each made up of a list of vertices.</p> 
+        /// <p>Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).</p> 
+        /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p> 
+        /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p> 
         /// <p>A linear ring for use in geofences can consist of between 4 and 1,000 vertices.</p>
-        pub fn set_polygon(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
-        ) -> Self {
-            self.polygon = input;
-            self
+        pub fn set_polygon(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>) -> Self {
+            self.polygon = input; self
         }
         /// <p>A circle on the earth, as defined by a center point and a radius.</p>
         pub fn circle(mut self, input: crate::model::Circle) -> Self {
@@ -5336,14 +5075,15 @@ pub mod geofence_geometry {
         }
         /// <p>A circle on the earth, as defined by a center point and a radius.</p>
         pub fn set_circle(mut self, input: std::option::Option<crate::model::Circle>) -> Self {
-            self.circle = input;
-            self
+            self.circle = input; self
         }
         /// Consumes the builder and constructs a [`GeofenceGeometry`](crate::model::GeofenceGeometry).
         pub fn build(self) -> crate::model::GeofenceGeometry {
             crate::model::GeofenceGeometry {
-                polygon: self.polygon,
-                circle: self.circle,
+                polygon: self.polygon
+                ,
+                circle: self.circle
+                ,
             }
         }
     }
@@ -5355,6 +5095,8 @@ pub mod geofence_geometry {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GeofenceGeometry {
     /// Creates a new builder-style object to manufacture [`GeofenceGeometry`](crate::model::GeofenceGeometry).
@@ -5366,7 +5108,7 @@ impl GeofenceGeometry {
 /// <p>A circle on the earth, as defined by a center point and a radius.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Circle {
+pub struct Circle  {
     /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
     #[doc(hidden)]
     pub center: std::option::Option<std::vec::Vec<f64>>,
@@ -5376,7 +5118,7 @@ pub struct Circle {
 }
 impl Circle {
     /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
-    pub fn center(&self) -> std::option::Option<&[f64]> {
+    pub fn center(&self) -> std::option::Option<& [f64]> {
         self.center.as_deref()
     }
     /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
@@ -5384,7 +5126,7 @@ impl Circle {
         self.radius
     }
 }
-impl std::fmt::Debug for Circle {
+impl  std::fmt::Debug for Circle  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Circle");
         formatter.field("center", &"*** Sensitive Data Redacted ***");
@@ -5394,7 +5136,7 @@ impl std::fmt::Debug for Circle {
 }
 /// See [`Circle`](crate::model::Circle).
 pub mod circle {
-
+    
     /// A builder for [`Circle`](crate::model::Circle).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5409,14 +5151,13 @@ pub mod circle {
         /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
         pub fn center(mut self, input: f64) -> Self {
             let mut v = self.center.unwrap_or_default();
-            v.push(input);
-            self.center = Some(v);
-            self
+                            v.push(input);
+                            self.center = Some(v);
+                            self
         }
         /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
         pub fn set_center(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.center = input;
-            self
+            self.center = input; self
         }
         /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
         pub fn radius(mut self, input: f64) -> Self {
@@ -5425,14 +5166,15 @@ pub mod circle {
         }
         /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
         pub fn set_radius(mut self, input: std::option::Option<f64>) -> Self {
-            self.radius = input;
-            self
+            self.radius = input; self
         }
         /// Consumes the builder and constructs a [`Circle`](crate::model::Circle).
         pub fn build(self) -> crate::model::Circle {
             crate::model::Circle {
-                center: self.center,
-                radius: self.radius,
+                center: self.center
+                ,
+                radius: self.radius
+                ,
             }
         }
     }
@@ -5444,6 +5186,8 @@ pub mod circle {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Circle {
     /// Creates a new builder-style object to manufacture [`Circle`](crate::model::Circle).
@@ -5455,20 +5199,20 @@ impl Circle {
 /// <p>Contains a list of geofences stored in a given geofence collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGeofenceResponseEntry {
+pub struct ListGeofenceResponseEntry  {
     /// <p>The geofence identifier.</p>
     #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
     #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::GeofenceGeometry>,
-    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
-    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
-    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
-    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
-    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -5481,36 +5225,36 @@ pub struct ListGeofenceResponseEntry {
 }
 impl ListGeofenceResponseEntry {
     /// <p>The geofence identifier.</p>
-    pub fn geofence_id(&self) -> std::option::Option<&str> {
+    pub fn geofence_id(&self) -> std::option::Option<& str> {
         self.geofence_id.as_deref()
     }
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
-    pub fn geometry(&self) -> std::option::Option<&crate::model::GeofenceGeometry> {
+    pub fn geometry(&self) -> std::option::Option<& crate::model::GeofenceGeometry> {
         self.geometry.as_ref()
     }
-    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
-    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
-    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
-    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
-    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry).
 pub mod list_geofence_response_entry {
-
+    
     /// A builder for [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5528,8 +5272,7 @@ pub mod list_geofence_response_entry {
         }
         /// <p>The geofence identifier.</p>
         pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.geofence_id = input;
-            self
+            self.geofence_id = input; self
         }
         /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
         pub fn geometry(mut self, input: crate::model::GeofenceGeometry) -> Self {
@@ -5537,36 +5280,31 @@ pub mod list_geofence_response_entry {
             self
         }
         /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
-        pub fn set_geometry(
-            mut self,
-            input: std::option::Option<crate::model::GeofenceGeometry>,
-        ) -> Self {
-            self.geometry = input;
-            self
+        pub fn set_geometry(mut self, input: std::option::Option<crate::model::GeofenceGeometry>) -> Self {
+            self.geometry = input; self
         }
-        /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
-        /// <ul>
-        /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
-        /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
-        /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
-        /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
-        /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+        /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+        /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+        /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+        /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+        /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
-        /// <ul>
-        /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
-        /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
-        /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
-        /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
-        /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+        /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+        /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+        /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+        /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+        /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5574,12 +5312,8 @@ pub mod list_geofence_response_entry {
             self
         }
         /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5587,24 +5321,27 @@ pub mod list_geofence_response_entry {
             self
         }
         /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry).
         pub fn build(self) -> crate::model::ListGeofenceResponseEntry {
             crate::model::ListGeofenceResponseEntry {
-                geofence_id: self.geofence_id,
-                geometry: self.geometry,
-                status: self.status,
-                create_time: self.create_time,
-                update_time: self.update_time,
+                geofence_id: self.geofence_id
+                ,
+                geometry: self.geometry
+                ,
+                status: self.status
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGeofenceResponseEntry {
     /// Creates a new builder-style object to manufacture [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry).
@@ -5616,7 +5353,7 @@ impl ListGeofenceResponseEntry {
 /// <p>Contains error details for each geofence that failed to be stored in a given geofence collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutGeofenceError {
+pub struct BatchPutGeofenceError  {
     /// <p>The geofence associated with the error message.</p>
     #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
@@ -5626,17 +5363,17 @@ pub struct BatchPutGeofenceError {
 }
 impl BatchPutGeofenceError {
     /// <p>The geofence associated with the error message.</p>
-    pub fn geofence_id(&self) -> std::option::Option<&str> {
+    pub fn geofence_id(&self) -> std::option::Option<& str> {
         self.geofence_id.as_deref()
     }
     /// <p>Contains details associated to the batch error.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
+    pub fn error(&self) -> std::option::Option<& crate::model::BatchItemError> {
         self.error.as_ref()
     }
 }
 /// See [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError).
 pub mod batch_put_geofence_error {
-
+    
     /// A builder for [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5651,8 +5388,7 @@ pub mod batch_put_geofence_error {
         }
         /// <p>The geofence associated with the error message.</p>
         pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.geofence_id = input;
-            self
+            self.geofence_id = input; self
         }
         /// <p>Contains details associated to the batch error.</p>
         pub fn error(mut self, input: crate::model::BatchItemError) -> Self {
@@ -5660,21 +5396,21 @@ pub mod batch_put_geofence_error {
             self
         }
         /// <p>Contains details associated to the batch error.</p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::BatchItemError>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::BatchItemError>) -> Self {
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError).
         pub fn build(self) -> crate::model::BatchPutGeofenceError {
             crate::model::BatchPutGeofenceError {
-                geofence_id: self.geofence_id,
-                error: self.error,
+                geofence_id: self.geofence_id
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchPutGeofenceError {
     /// Creates a new builder-style object to manufacture [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError).
@@ -5686,7 +5422,7 @@ impl BatchPutGeofenceError {
 /// <p>Contains a summary of each geofence that was successfully stored in a given geofence collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutGeofenceSuccess {
+pub struct BatchPutGeofenceSuccess  {
     /// <p>The geofence successfully stored in a geofence collection.</p>
     #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
@@ -5699,21 +5435,21 @@ pub struct BatchPutGeofenceSuccess {
 }
 impl BatchPutGeofenceSuccess {
     /// <p>The geofence successfully stored in a geofence collection.</p>
-    pub fn geofence_id(&self) -> std::option::Option<&str> {
+    pub fn geofence_id(&self) -> std::option::Option<& str> {
         self.geofence_id.as_deref()
     }
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess).
 pub mod batch_put_geofence_success {
-
+    
     /// A builder for [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5729,8 +5465,7 @@ pub mod batch_put_geofence_success {
         }
         /// <p>The geofence successfully stored in a geofence collection.</p>
         pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.geofence_id = input;
-            self
+            self.geofence_id = input; self
         }
         /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5738,12 +5473,8 @@ pub mod batch_put_geofence_success {
             self
         }
         /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5751,22 +5482,23 @@ pub mod batch_put_geofence_success {
             self
         }
         /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess).
         pub fn build(self) -> crate::model::BatchPutGeofenceSuccess {
             crate::model::BatchPutGeofenceSuccess {
-                geofence_id: self.geofence_id,
-                create_time: self.create_time,
-                update_time: self.update_time,
+                geofence_id: self.geofence_id
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchPutGeofenceSuccess {
     /// Creates a new builder-style object to manufacture [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess).
@@ -5778,31 +5510,31 @@ impl BatchPutGeofenceSuccess {
 /// <p>Contains geofence geometry details. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutGeofenceRequestEntry {
+pub struct BatchPutGeofenceRequestEntry  {
     /// <p>The identifier for the geofence to be stored in a given geofence collection.</p>
     #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
-    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
-    /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note> 
+    /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p> 
     /// </note>
     #[doc(hidden)]
     pub geometry: std::option::Option<crate::model::GeofenceGeometry>,
 }
 impl BatchPutGeofenceRequestEntry {
     /// <p>The identifier for the geofence to be stored in a given geofence collection.</p>
-    pub fn geofence_id(&self) -> std::option::Option<&str> {
+    pub fn geofence_id(&self) -> std::option::Option<& str> {
         self.geofence_id.as_deref()
     }
-    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
-    /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note> 
+    /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p> 
     /// </note>
-    pub fn geometry(&self) -> std::option::Option<&crate::model::GeofenceGeometry> {
+    pub fn geometry(&self) -> std::option::Option<& crate::model::GeofenceGeometry> {
         self.geometry.as_ref()
     }
 }
 /// See [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry).
 pub mod batch_put_geofence_request_entry {
-
+    
     /// A builder for [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5817,34 +5549,33 @@ pub mod batch_put_geofence_request_entry {
         }
         /// <p>The identifier for the geofence to be stored in a given geofence collection.</p>
         pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.geofence_id = input;
-            self
+            self.geofence_id = input; self
         }
-        /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
-        /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+        /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note> 
+        /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p> 
         /// </note>
         pub fn geometry(mut self, input: crate::model::GeofenceGeometry) -> Self {
             self.geometry = Some(input);
             self
         }
-        /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
-        /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+        /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note> 
+        /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p> 
         /// </note>
-        pub fn set_geometry(
-            mut self,
-            input: std::option::Option<crate::model::GeofenceGeometry>,
-        ) -> Self {
-            self.geometry = input;
-            self
+        pub fn set_geometry(mut self, input: std::option::Option<crate::model::GeofenceGeometry>) -> Self {
+            self.geometry = input; self
         }
         /// Consumes the builder and constructs a [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry).
         pub fn build(self) -> crate::model::BatchPutGeofenceRequestEntry {
             crate::model::BatchPutGeofenceRequestEntry {
-                geofence_id: self.geofence_id,
-                geometry: self.geometry,
+                geofence_id: self.geofence_id
+                ,
+                geometry: self.geometry
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchPutGeofenceRequestEntry {
     /// Creates a new builder-style object to manufacture [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry).
@@ -5856,7 +5587,7 @@ impl BatchPutGeofenceRequestEntry {
 /// <p>Contains error details for each device that failed to evaluate its position against the geofences in a given geofence collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchEvaluateGeofencesError {
+pub struct BatchEvaluateGeofencesError  {
     /// <p>The device associated with the position evaluation error.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
@@ -5869,21 +5600,21 @@ pub struct BatchEvaluateGeofencesError {
 }
 impl BatchEvaluateGeofencesError {
     /// <p>The device associated with the position evaluation error.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn sample_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
     /// <p>Contains details associated to the batch error.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
+    pub fn error(&self) -> std::option::Option<& crate::model::BatchItemError> {
         self.error.as_ref()
     }
 }
 /// See [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError).
 pub mod batch_evaluate_geofences_error {
-
+    
     /// A builder for [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5899,8 +5630,7 @@ pub mod batch_evaluate_geofences_error {
         }
         /// <p>The device associated with the position evaluation error.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5908,12 +5638,8 @@ pub mod batch_evaluate_geofences_error {
             self
         }
         /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-        pub fn set_sample_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.sample_time = input;
-            self
+        pub fn set_sample_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.sample_time = input; self
         }
         /// <p>Contains details associated to the batch error.</p>
         pub fn error(mut self, input: crate::model::BatchItemError) -> Self {
@@ -5921,22 +5647,23 @@ pub mod batch_evaluate_geofences_error {
             self
         }
         /// <p>Contains details associated to the batch error.</p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::BatchItemError>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::BatchItemError>) -> Self {
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError).
         pub fn build(self) -> crate::model::BatchEvaluateGeofencesError {
             crate::model::BatchEvaluateGeofencesError {
-                device_id: self.device_id,
-                sample_time: self.sample_time,
-                error: self.error,
+                device_id: self.device_id
+                ,
+                sample_time: self.sample_time
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchEvaluateGeofencesError {
     /// Creates a new builder-style object to manufacture [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError).
@@ -5948,7 +5675,7 @@ impl BatchEvaluateGeofencesError {
 /// <p>Contains error details for each geofence that failed to delete from the geofence collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteGeofenceError {
+pub struct BatchDeleteGeofenceError  {
     /// <p>The geofence associated with the error message.</p>
     #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
@@ -5958,17 +5685,17 @@ pub struct BatchDeleteGeofenceError {
 }
 impl BatchDeleteGeofenceError {
     /// <p>The geofence associated with the error message.</p>
-    pub fn geofence_id(&self) -> std::option::Option<&str> {
+    pub fn geofence_id(&self) -> std::option::Option<& str> {
         self.geofence_id.as_deref()
     }
     /// <p>Contains details associated to the batch error.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::BatchItemError> {
+    pub fn error(&self) -> std::option::Option<& crate::model::BatchItemError> {
         self.error.as_ref()
     }
 }
 /// See [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError).
 pub mod batch_delete_geofence_error {
-
+    
     /// A builder for [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5983,8 +5710,7 @@ pub mod batch_delete_geofence_error {
         }
         /// <p>The geofence associated with the error message.</p>
         pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.geofence_id = input;
-            self
+            self.geofence_id = input; self
         }
         /// <p>Contains details associated to the batch error.</p>
         pub fn error(mut self, input: crate::model::BatchItemError) -> Self {
@@ -5992,21 +5718,21 @@ pub mod batch_delete_geofence_error {
             self
         }
         /// <p>Contains details associated to the batch error.</p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::BatchItemError>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::BatchItemError>) -> Self {
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError).
         pub fn build(self) -> crate::model::BatchDeleteGeofenceError {
             crate::model::BatchDeleteGeofenceError {
-                geofence_id: self.geofence_id,
-                error: self.error,
+                geofence_id: self.geofence_id
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDeleteGeofenceError {
     /// Creates a new builder-style object to manufacture [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError).
@@ -6018,7 +5744,7 @@ impl BatchDeleteGeofenceError {
 /// <p>Contains the geofence collection details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGeofenceCollectionsResponseEntry {
+pub struct ListGeofenceCollectionsResponseEntry  {
     /// <p>The name of the geofence collection.</p>
     #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
@@ -6026,10 +5752,7 @@ pub struct ListGeofenceCollectionsResponseEntry {
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>No longer used. Always returns an empty string.</p>
@@ -6045,38 +5768,35 @@ pub struct ListGeofenceCollectionsResponseEntry {
 }
 impl ListGeofenceCollectionsResponseEntry {
     /// <p>The name of the geofence collection.</p>
-    pub fn collection_name(&self) -> std::option::Option<&str> {
+    pub fn collection_name(&self) -> std::option::Option<& str> {
         self.collection_name.as_deref()
     }
     /// <p>The description for the geofence collection</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    pub fn pricing_plan(&self) -> std::option::Option<& crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
-    pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
+    pub fn pricing_plan_data_source(&self) -> std::option::Option<& str> {
         self.pricing_plan_data_source.as_deref()
     }
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>Specifies a timestamp for when the resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 /// See [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry).
 pub mod list_geofence_collections_response_entry {
-
+    
     /// A builder for [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6094,12 +5814,8 @@ pub mod list_geofence_collections_response_entry {
             self
         }
         /// <p>The name of the geofence collection.</p>
-        pub fn set_collection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collection_name = input;
-            self
+        pub fn set_collection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collection_name = input; self
         }
         /// <p>The description for the geofence collection</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6108,29 +5824,18 @@ pub mod list_geofence_collections_response_entry {
         }
         /// <p>The description for the geofence collection</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-        #[deprecated(
-            note = "Deprecated. Always returns RequestBasedUsage.",
-            since = "2022-02-01"
-        )]
-        pub fn set_pricing_plan(
-            mut self,
-            input: std::option::Option<crate::model::PricingPlan>,
-        ) -> Self {
-            self.pricing_plan = input;
-            self
+        #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+        pub fn set_pricing_plan(mut self, input: std::option::Option<crate::model::PricingPlan>) -> Self {
+            self.pricing_plan = input; self
         }
         /// <p>No longer used. Always returns an empty string.</p>
         #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
@@ -6140,12 +5845,8 @@ pub mod list_geofence_collections_response_entry {
         }
         /// <p>No longer used. Always returns an empty string.</p>
         #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
-        pub fn set_pricing_plan_data_source(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pricing_plan_data_source = input;
-            self
+        pub fn set_pricing_plan_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pricing_plan_data_source = input; self
         }
         /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6153,12 +5854,8 @@ pub mod list_geofence_collections_response_entry {
             self
         }
         /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// <p>Specifies a timestamp for when the resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6166,25 +5863,29 @@ pub mod list_geofence_collections_response_entry {
             self
         }
         /// <p>Specifies a timestamp for when the resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-        pub fn set_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_time = input;
-            self
+        pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_time = input; self
         }
         /// Consumes the builder and constructs a [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry).
         pub fn build(self) -> crate::model::ListGeofenceCollectionsResponseEntry {
             crate::model::ListGeofenceCollectionsResponseEntry {
-                collection_name: self.collection_name,
-                description: self.description,
-                pricing_plan: self.pricing_plan,
-                pricing_plan_data_source: self.pricing_plan_data_source,
-                create_time: self.create_time,
-                update_time: self.update_time,
+                collection_name: self.collection_name
+                ,
+                description: self.description
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                pricing_plan_data_source: self.pricing_plan_data_source
+                ,
+                create_time: self.create_time
+                ,
+                update_time: self.update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGeofenceCollectionsResponseEntry {
     /// Creates a new builder-style object to manufacture [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry).
@@ -6192,3 +5893,4 @@ impl ListGeofenceCollectionsResponseEntry {
         crate::model::list_geofence_collections_response_entry::Builder::default()
     }
 }
+

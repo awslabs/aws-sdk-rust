@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProjectOutput {}
+pub struct UpdateProjectOutput  {
+}
 /// See [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
 pub mod update_project_output {
-
+    
     /// A builder for [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
         pub fn build(self) -> crate::output::UpdateProjectOutput {
-            crate::output::UpdateProjectOutput {}
+            crate::output::UpdateProjectOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateProjectOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
@@ -26,19 +31,24 @@ impl UpdateProjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePlacementOutput {}
+pub struct UpdatePlacementOutput  {
+}
 /// See [`UpdatePlacementOutput`](crate::output::UpdatePlacementOutput).
 pub mod update_placement_output {
-
+    
     /// A builder for [`UpdatePlacementOutput`](crate::output::UpdatePlacementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdatePlacementOutput`](crate::output::UpdatePlacementOutput).
         pub fn build(self) -> crate::output::UpdatePlacementOutput {
-            crate::output::UpdatePlacementOutput {}
+            crate::output::UpdatePlacementOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdatePlacementOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePlacementOutput`](crate::output::UpdatePlacementOutput).
@@ -50,19 +60,24 @@ impl UpdatePlacementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -74,19 +89,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -98,30 +118,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags (metadata key/value pairs) which you have assigned to the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags (metadata key/value pairs) which you have assigned to the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -129,31 +143,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags (metadata key/value pairs) which you have assigned to the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags (metadata key/value pairs) which you have assigned to the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -165,7 +174,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProjectsOutput {
+pub struct ListProjectsOutput  {
     /// <p>An object containing the list of projects.</p>
     #[doc(hidden)]
     pub projects: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
@@ -175,17 +184,17 @@ pub struct ListProjectsOutput {
 }
 impl ListProjectsOutput {
     /// <p>An object containing the list of projects.</p>
-    pub fn projects(&self) -> std::option::Option<&[crate::model::ProjectSummary]> {
+    pub fn projects(&self) -> std::option::Option<& [crate::model::ProjectSummary]> {
         self.projects.as_deref()
     }
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListProjectsOutput`](crate::output::ListProjectsOutput).
 pub mod list_projects_output {
-
+    
     /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -200,17 +209,13 @@ pub mod list_projects_output {
         /// <p>An object containing the list of projects.</p>
         pub fn projects(mut self, input: crate::model::ProjectSummary) -> Self {
             let mut v = self.projects.unwrap_or_default();
-            v.push(input);
-            self.projects = Some(v);
-            self
+                            v.push(input);
+                            self.projects = Some(v);
+                            self
         }
         /// <p>An object containing the list of projects.</p>
-        pub fn set_projects(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
-        ) -> Self {
-            self.projects = input;
-            self
+        pub fn set_projects(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>) -> Self {
+            self.projects = input; self
         }
         /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -219,17 +224,20 @@ pub mod list_projects_output {
         }
         /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProjectsOutput`](crate::output::ListProjectsOutput).
         pub fn build(self) -> crate::output::ListProjectsOutput {
             crate::output::ListProjectsOutput {
-                projects: self.projects,
-                next_token: self.next_token,
+                projects: self.projects
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProjectsOutput {
     /// Creates a new builder-style object to manufacture [`ListProjectsOutput`](crate::output::ListProjectsOutput).
@@ -241,7 +249,7 @@ impl ListProjectsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPlacementsOutput {
+pub struct ListPlacementsOutput  {
     /// <p>An object listing the requested placements.</p>
     #[doc(hidden)]
     pub placements: std::option::Option<std::vec::Vec<crate::model::PlacementSummary>>,
@@ -251,17 +259,17 @@ pub struct ListPlacementsOutput {
 }
 impl ListPlacementsOutput {
     /// <p>An object listing the requested placements.</p>
-    pub fn placements(&self) -> std::option::Option<&[crate::model::PlacementSummary]> {
+    pub fn placements(&self) -> std::option::Option<& [crate::model::PlacementSummary]> {
         self.placements.as_deref()
     }
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPlacementsOutput`](crate::output::ListPlacementsOutput).
 pub mod list_placements_output {
-
+    
     /// A builder for [`ListPlacementsOutput`](crate::output::ListPlacementsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -276,17 +284,13 @@ pub mod list_placements_output {
         /// <p>An object listing the requested placements.</p>
         pub fn placements(mut self, input: crate::model::PlacementSummary) -> Self {
             let mut v = self.placements.unwrap_or_default();
-            v.push(input);
-            self.placements = Some(v);
-            self
+                            v.push(input);
+                            self.placements = Some(v);
+                            self
         }
         /// <p>An object listing the requested placements.</p>
-        pub fn set_placements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PlacementSummary>>,
-        ) -> Self {
-            self.placements = input;
-            self
+        pub fn set_placements(mut self, input: std::option::Option<std::vec::Vec<crate::model::PlacementSummary>>) -> Self {
+            self.placements = input; self
         }
         /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -295,17 +299,20 @@ pub mod list_placements_output {
         }
         /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPlacementsOutput`](crate::output::ListPlacementsOutput).
         pub fn build(self) -> crate::output::ListPlacementsOutput {
             crate::output::ListPlacementsOutput {
-                placements: self.placements,
-                next_token: self.next_token,
+                placements: self.placements
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPlacementsOutput {
     /// Creates a new builder-style object to manufacture [`ListPlacementsOutput`](crate::output::ListPlacementsOutput).
@@ -317,30 +324,24 @@ impl ListPlacementsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDevicesInPlacementOutput {
+pub struct GetDevicesInPlacementOutput  {
     /// <p>An object containing the devices (zero or more) within the placement.</p>
     #[doc(hidden)]
-    pub devices:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub devices: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetDevicesInPlacementOutput {
     /// <p>An object containing the devices (zero or more) within the placement.</p>
-    pub fn devices(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn devices(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.devices.as_ref()
     }
 }
 /// See [`GetDevicesInPlacementOutput`](crate::output::GetDevicesInPlacementOutput).
 pub mod get_devices_in_placement_output {
-
+    
     /// A builder for [`GetDevicesInPlacementOutput`](crate::output::GetDevicesInPlacementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) devices: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) devices: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `devices`.
@@ -348,33 +349,26 @@ pub mod get_devices_in_placement_output {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>An object containing the devices (zero or more) within the placement.</p>
-        pub fn devices(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn devices(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.devices.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.devices = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.devices = Some(hash_map);
+                            self
         }
         /// <p>An object containing the devices (zero or more) within the placement.</p>
-        pub fn set_devices(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.devices = input;
-            self
+        pub fn set_devices(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.devices = input; self
         }
         /// Consumes the builder and constructs a [`GetDevicesInPlacementOutput`](crate::output::GetDevicesInPlacementOutput).
         pub fn build(self) -> crate::output::GetDevicesInPlacementOutput {
             crate::output::GetDevicesInPlacementOutput {
-                devices: self.devices,
+                devices: self.devices
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDevicesInPlacementOutput {
     /// Creates a new builder-style object to manufacture [`GetDevicesInPlacementOutput`](crate::output::GetDevicesInPlacementOutput).
@@ -386,19 +380,24 @@ impl GetDevicesInPlacementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateDeviceFromPlacementOutput {}
+pub struct DisassociateDeviceFromPlacementOutput  {
+}
 /// See [`DisassociateDeviceFromPlacementOutput`](crate::output::DisassociateDeviceFromPlacementOutput).
 pub mod disassociate_device_from_placement_output {
-
+    
     /// A builder for [`DisassociateDeviceFromPlacementOutput`](crate::output::DisassociateDeviceFromPlacementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateDeviceFromPlacementOutput`](crate::output::DisassociateDeviceFromPlacementOutput).
         pub fn build(self) -> crate::output::DisassociateDeviceFromPlacementOutput {
-            crate::output::DisassociateDeviceFromPlacementOutput {}
+            crate::output::DisassociateDeviceFromPlacementOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateDeviceFromPlacementOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateDeviceFromPlacementOutput`](crate::output::DisassociateDeviceFromPlacementOutput).
@@ -410,20 +409,20 @@ impl DisassociateDeviceFromPlacementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProjectOutput {
+pub struct DescribeProjectOutput  {
     /// <p>An object describing the project.</p>
     #[doc(hidden)]
     pub project: std::option::Option<crate::model::ProjectDescription>,
 }
 impl DescribeProjectOutput {
     /// <p>An object describing the project.</p>
-    pub fn project(&self) -> std::option::Option<&crate::model::ProjectDescription> {
+    pub fn project(&self) -> std::option::Option<& crate::model::ProjectDescription> {
         self.project.as_ref()
     }
 }
 /// See [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
 pub mod describe_project_output {
-
+    
     /// A builder for [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -436,20 +435,19 @@ pub mod describe_project_output {
             self
         }
         /// <p>An object describing the project.</p>
-        pub fn set_project(
-            mut self,
-            input: std::option::Option<crate::model::ProjectDescription>,
-        ) -> Self {
-            self.project = input;
-            self
+        pub fn set_project(mut self, input: std::option::Option<crate::model::ProjectDescription>) -> Self {
+            self.project = input; self
         }
         /// Consumes the builder and constructs a [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
         pub fn build(self) -> crate::output::DescribeProjectOutput {
             crate::output::DescribeProjectOutput {
-                project: self.project,
+                project: self.project
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeProjectOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
@@ -461,20 +459,20 @@ impl DescribeProjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePlacementOutput {
+pub struct DescribePlacementOutput  {
     /// <p>An object describing the placement.</p>
     #[doc(hidden)]
     pub placement: std::option::Option<crate::model::PlacementDescription>,
 }
 impl DescribePlacementOutput {
     /// <p>An object describing the placement.</p>
-    pub fn placement(&self) -> std::option::Option<&crate::model::PlacementDescription> {
+    pub fn placement(&self) -> std::option::Option<& crate::model::PlacementDescription> {
         self.placement.as_ref()
     }
 }
 /// See [`DescribePlacementOutput`](crate::output::DescribePlacementOutput).
 pub mod describe_placement_output {
-
+    
     /// A builder for [`DescribePlacementOutput`](crate::output::DescribePlacementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -487,20 +485,19 @@ pub mod describe_placement_output {
             self
         }
         /// <p>An object describing the placement.</p>
-        pub fn set_placement(
-            mut self,
-            input: std::option::Option<crate::model::PlacementDescription>,
-        ) -> Self {
-            self.placement = input;
-            self
+        pub fn set_placement(mut self, input: std::option::Option<crate::model::PlacementDescription>) -> Self {
+            self.placement = input; self
         }
         /// Consumes the builder and constructs a [`DescribePlacementOutput`](crate::output::DescribePlacementOutput).
         pub fn build(self) -> crate::output::DescribePlacementOutput {
             crate::output::DescribePlacementOutput {
-                placement: self.placement,
+                placement: self.placement
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePlacementOutput {
     /// Creates a new builder-style object to manufacture [`DescribePlacementOutput`](crate::output::DescribePlacementOutput).
@@ -512,19 +509,24 @@ impl DescribePlacementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProjectOutput {}
+pub struct DeleteProjectOutput  {
+}
 /// See [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
 pub mod delete_project_output {
-
+    
     /// A builder for [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
         pub fn build(self) -> crate::output::DeleteProjectOutput {
-            crate::output::DeleteProjectOutput {}
+            crate::output::DeleteProjectOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteProjectOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
@@ -536,19 +538,24 @@ impl DeleteProjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePlacementOutput {}
+pub struct DeletePlacementOutput  {
+}
 /// See [`DeletePlacementOutput`](crate::output::DeletePlacementOutput).
 pub mod delete_placement_output {
-
+    
     /// A builder for [`DeletePlacementOutput`](crate::output::DeletePlacementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePlacementOutput`](crate::output::DeletePlacementOutput).
         pub fn build(self) -> crate::output::DeletePlacementOutput {
-            crate::output::DeletePlacementOutput {}
+            crate::output::DeletePlacementOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePlacementOutput {
     /// Creates a new builder-style object to manufacture [`DeletePlacementOutput`](crate::output::DeletePlacementOutput).
@@ -560,19 +567,24 @@ impl DeletePlacementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProjectOutput {}
+pub struct CreateProjectOutput  {
+}
 /// See [`CreateProjectOutput`](crate::output::CreateProjectOutput).
 pub mod create_project_output {
-
+    
     /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateProjectOutput`](crate::output::CreateProjectOutput).
         pub fn build(self) -> crate::output::CreateProjectOutput {
-            crate::output::CreateProjectOutput {}
+            crate::output::CreateProjectOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateProjectOutput {
     /// Creates a new builder-style object to manufacture [`CreateProjectOutput`](crate::output::CreateProjectOutput).
@@ -584,19 +596,24 @@ impl CreateProjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePlacementOutput {}
+pub struct CreatePlacementOutput  {
+}
 /// See [`CreatePlacementOutput`](crate::output::CreatePlacementOutput).
 pub mod create_placement_output {
-
+    
     /// A builder for [`CreatePlacementOutput`](crate::output::CreatePlacementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreatePlacementOutput`](crate::output::CreatePlacementOutput).
         pub fn build(self) -> crate::output::CreatePlacementOutput {
-            crate::output::CreatePlacementOutput {}
+            crate::output::CreatePlacementOutput {
+            }
         }
     }
+    
+    
 }
 impl CreatePlacementOutput {
     /// Creates a new builder-style object to manufacture [`CreatePlacementOutput`](crate::output::CreatePlacementOutput).
@@ -608,19 +625,24 @@ impl CreatePlacementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateDeviceWithPlacementOutput {}
+pub struct AssociateDeviceWithPlacementOutput  {
+}
 /// See [`AssociateDeviceWithPlacementOutput`](crate::output::AssociateDeviceWithPlacementOutput).
 pub mod associate_device_with_placement_output {
-
+    
     /// A builder for [`AssociateDeviceWithPlacementOutput`](crate::output::AssociateDeviceWithPlacementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateDeviceWithPlacementOutput`](crate::output::AssociateDeviceWithPlacementOutput).
         pub fn build(self) -> crate::output::AssociateDeviceWithPlacementOutput {
-            crate::output::AssociateDeviceWithPlacementOutput {}
+            crate::output::AssociateDeviceWithPlacementOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateDeviceWithPlacementOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDeviceWithPlacementOutput`](crate::output::AssociateDeviceWithPlacementOutput).
@@ -628,3 +650,4 @@ impl AssociateDeviceWithPlacementOutput {
         crate::output::associate_device_with_placement_output::Builder::default()
     }
 }
+

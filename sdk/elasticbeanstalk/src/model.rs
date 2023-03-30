@@ -3,14 +3,14 @@
 /// <p>An error or warning for a desired configuration option value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationMessage {
+pub struct ValidationMessage  {
     /// <p>A message describing the error or warning.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-    /// <p>An indication of the severity of this message:</p>
-    /// <ul>
-    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
-    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
+    /// <p>An indication of the severity of this message:</p> 
+    /// <ul> 
+    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li> 
+    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub severity: std::option::Option<crate::model::ValidationSeverity>,
@@ -23,29 +23,29 @@ pub struct ValidationMessage {
 }
 impl ValidationMessage {
     /// <p>A message describing the error or warning.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
-    /// <p>An indication of the severity of this message:</p>
-    /// <ul>
-    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
-    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
+    /// <p>An indication of the severity of this message:</p> 
+    /// <ul> 
+    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li> 
+    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li> 
     /// </ul>
-    pub fn severity(&self) -> std::option::Option<&crate::model::ValidationSeverity> {
+    pub fn severity(&self) -> std::option::Option<& crate::model::ValidationSeverity> {
         self.severity.as_ref()
     }
     /// <p>The namespace to which the option belongs.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the option.</p>
-    pub fn option_name(&self) -> std::option::Option<&str> {
+    pub fn option_name(&self) -> std::option::Option<& str> {
         self.option_name.as_deref()
     }
 }
 /// See [`ValidationMessage`](crate::model::ValidationMessage).
 pub mod validation_message {
-
+    
     /// A builder for [`ValidationMessage`](crate::model::ValidationMessage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -62,29 +62,24 @@ pub mod validation_message {
         }
         /// <p>A message describing the error or warning.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
-        /// <p>An indication of the severity of this message:</p>
-        /// <ul>
-        /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
-        /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
+        /// <p>An indication of the severity of this message:</p> 
+        /// <ul> 
+        /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li> 
+        /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li> 
         /// </ul>
         pub fn severity(mut self, input: crate::model::ValidationSeverity) -> Self {
             self.severity = Some(input);
             self
         }
-        /// <p>An indication of the severity of this message:</p>
-        /// <ul>
-        /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
-        /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
+        /// <p>An indication of the severity of this message:</p> 
+        /// <ul> 
+        /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li> 
+        /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li> 
         /// </ul>
-        pub fn set_severity(
-            mut self,
-            input: std::option::Option<crate::model::ValidationSeverity>,
-        ) -> Self {
-            self.severity = input;
-            self
+        pub fn set_severity(mut self, input: std::option::Option<crate::model::ValidationSeverity>) -> Self {
+            self.severity = input; self
         }
         /// <p>The namespace to which the option belongs.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +88,7 @@ pub mod validation_message {
         }
         /// <p>The namespace to which the option belongs.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The name of the option.</p>
         pub fn option_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,19 +97,24 @@ pub mod validation_message {
         }
         /// <p>The name of the option.</p>
         pub fn set_option_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.option_name = input;
-            self
+            self.option_name = input; self
         }
         /// Consumes the builder and constructs a [`ValidationMessage`](crate::model::ValidationMessage).
         pub fn build(self) -> crate::model::ValidationMessage {
             crate::model::ValidationMessage {
-                message: self.message,
-                severity: self.severity,
-                namespace: self.namespace,
-                option_name: self.option_name,
+                message: self.message
+                ,
+                severity: self.severity
+                ,
+                namespace: self.namespace
+                ,
+                option_name: self.option_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationMessage {
     /// Creates a new builder-style object to manufacture [`ValidationMessage`](crate::model::ValidationMessage).
@@ -130,9 +129,9 @@ impl ValidationMessage {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationseverity = unimplemented!();
 /// match validationseverity {
@@ -154,60 +153,52 @@ impl ValidationMessage {
 /// Specifically, when `validationseverity` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationSeverity::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationSeverity {
     #[allow(missing_docs)] // documentation missing in model
     Error,
     #[allow(missing_docs)] // documentation missing in model
     Warning,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationSeverity {
     fn from(s: &str) -> Self {
         match s {
             "error" => ValidationSeverity::Error,
             "warning" => ValidationSeverity::Warning,
-            other => {
-                ValidationSeverity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ValidationSeverity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationSeverity {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationSeverity::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationSeverity::from(s))
+                }
+            }
 impl ValidationSeverity {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidationSeverity::Error => "error",
             ValidationSeverity::Warning => "warning",
-            ValidationSeverity::Unknown(value) => value.as_str(),
+            ValidationSeverity::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["error", "warning"]
+        &[
+            "error", "warning"
+        ]
     }
 }
 impl AsRef<str> for ValidationSeverity {
@@ -219,7 +210,7 @@ impl AsRef<str> for ValidationSeverity {
 /// <p>A specification identifying an individual configuration option along with its current value. For a list of possible namespaces and option values, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigurationOptionSetting {
+pub struct ConfigurationOptionSetting  {
     /// <p>A unique resource name for the option setting. Use it for a time–based scaling configuration option.</p>
     #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
@@ -235,25 +226,25 @@ pub struct ConfigurationOptionSetting {
 }
 impl ConfigurationOptionSetting {
     /// <p>A unique resource name for the option setting. Use it for a time–based scaling configuration option.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>A unique namespace that identifies the option's associated AWS resource.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the configuration option.</p>
-    pub fn option_name(&self) -> std::option::Option<&str> {
+    pub fn option_name(&self) -> std::option::Option<& str> {
         self.option_name.as_deref()
     }
     /// <p>The current value for the configuration option.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`ConfigurationOptionSetting`](crate::model::ConfigurationOptionSetting).
 pub mod configuration_option_setting {
-
+    
     /// A builder for [`ConfigurationOptionSetting`](crate::model::ConfigurationOptionSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -269,12 +260,8 @@ pub mod configuration_option_setting {
             self
         }
         /// <p>A unique resource name for the option setting. Use it for a time–based scaling configuration option.</p>
-        pub fn set_resource_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_name = input;
-            self
+        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_name = input; self
         }
         /// <p>A unique namespace that identifies the option's associated AWS resource.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -283,8 +270,7 @@ pub mod configuration_option_setting {
         }
         /// <p>A unique namespace that identifies the option's associated AWS resource.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The name of the configuration option.</p>
         pub fn option_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -293,8 +279,7 @@ pub mod configuration_option_setting {
         }
         /// <p>The name of the configuration option.</p>
         pub fn set_option_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.option_name = input;
-            self
+            self.option_name = input; self
         }
         /// <p>The current value for the configuration option.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -303,19 +288,24 @@ pub mod configuration_option_setting {
         }
         /// <p>The current value for the configuration option.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ConfigurationOptionSetting`](crate::model::ConfigurationOptionSetting).
         pub fn build(self) -> crate::model::ConfigurationOptionSetting {
             crate::model::ConfigurationOptionSetting {
-                resource_name: self.resource_name,
-                namespace: self.namespace,
-                option_name: self.option_name,
-                value: self.value,
+                resource_name: self.resource_name
+                ,
+                namespace: self.namespace
+                ,
+                option_name: self.option_name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigurationOptionSetting {
     /// Creates a new builder-style object to manufacture [`ConfigurationOptionSetting`](crate::model::ConfigurationOptionSetting).
@@ -327,7 +317,7 @@ impl ConfigurationOptionSetting {
 /// <p>Describes a tag applied to a resource in an environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -337,17 +327,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key of the tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -362,8 +352,7 @@ pub mod tag {
         }
         /// <p>The key of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of the tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -372,17 +361,20 @@ pub mod tag {
         }
         /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -394,7 +386,7 @@ impl Tag {
 /// <p>A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentLink {
+pub struct EnvironmentLink  {
     /// <p>The name of the link.</p>
     #[doc(hidden)]
     pub link_name: std::option::Option<std::string::String>,
@@ -404,17 +396,17 @@ pub struct EnvironmentLink {
 }
 impl EnvironmentLink {
     /// <p>The name of the link.</p>
-    pub fn link_name(&self) -> std::option::Option<&str> {
+    pub fn link_name(&self) -> std::option::Option<& str> {
         self.link_name.as_deref()
     }
     /// <p>The name of the linked environment (the dependency).</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
 }
 /// See [`EnvironmentLink`](crate::model::EnvironmentLink).
 pub mod environment_link {
-
+    
     /// A builder for [`EnvironmentLink`](crate::model::EnvironmentLink).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -429,8 +421,7 @@ pub mod environment_link {
         }
         /// <p>The name of the link.</p>
         pub fn set_link_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.link_name = input;
-            self
+            self.link_name = input; self
         }
         /// <p>The name of the linked environment (the dependency).</p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -438,21 +429,21 @@ pub mod environment_link {
             self
         }
         /// <p>The name of the linked environment (the dependency).</p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentLink`](crate::model::EnvironmentLink).
         pub fn build(self) -> crate::model::EnvironmentLink {
             crate::model::EnvironmentLink {
-                link_name: self.link_name,
-                environment_name: self.environment_name,
+                link_name: self.link_name
+                ,
+                environment_name: self.environment_name
+                ,
             }
         }
     }
+    
+    
 }
 impl EnvironmentLink {
     /// Creates a new builder-style object to manufacture [`EnvironmentLink`](crate::model::EnvironmentLink).
@@ -464,58 +455,58 @@ impl EnvironmentLink {
 /// <p>Describes the properties of an environment tier</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentTier {
-    /// <p>The name of this environment tier.</p>
-    /// <p>Valid values:</p>
-    /// <ul>
-    /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li>
-    /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li>
+pub struct EnvironmentTier  {
+    /// <p>The name of this environment tier.</p> 
+    /// <p>Valid values:</p> 
+    /// <ul> 
+    /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li> 
+    /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of this environment tier.</p>
-    /// <p>Valid values:</p>
-    /// <ul>
-    /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li>
-    /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li>
+    /// <p>The type of this environment tier.</p> 
+    /// <p>Valid values:</p> 
+    /// <ul> 
+    /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li> 
+    /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
-    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
-    /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
+    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note> 
+    /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p> 
     /// </note>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
 }
 impl EnvironmentTier {
-    /// <p>The name of this environment tier.</p>
-    /// <p>Valid values:</p>
-    /// <ul>
-    /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li>
-    /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li>
+    /// <p>The name of this environment tier.</p> 
+    /// <p>Valid values:</p> 
+    /// <ul> 
+    /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li> 
+    /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li> 
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The type of this environment tier.</p>
-    /// <p>Valid values:</p>
-    /// <ul>
-    /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li>
-    /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li>
+    /// <p>The type of this environment tier.</p> 
+    /// <p>Valid values:</p> 
+    /// <ul> 
+    /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li> 
+    /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
-    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
-    /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
+    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note> 
+    /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p> 
     /// </note>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`EnvironmentTier`](crate::model::EnvironmentTier).
 pub mod environment_tier {
-
+    
     /// A builder for [`EnvironmentTier`](crate::model::EnvironmentTier).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -524,69 +515,71 @@ pub mod environment_tier {
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of this environment tier.</p>
-        /// <p>Valid values:</p>
-        /// <ul>
-        /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li>
-        /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li>
+        /// <p>The name of this environment tier.</p> 
+        /// <p>Valid values:</p> 
+        /// <ul> 
+        /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li> 
+        /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li> 
         /// </ul>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of this environment tier.</p>
-        /// <p>Valid values:</p>
-        /// <ul>
-        /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li>
-        /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li>
+        /// <p>The name of this environment tier.</p> 
+        /// <p>Valid values:</p> 
+        /// <ul> 
+        /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li> 
+        /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li> 
         /// </ul>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The type of this environment tier.</p>
-        /// <p>Valid values:</p>
-        /// <ul>
-        /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li>
-        /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li>
+        /// <p>The type of this environment tier.</p> 
+        /// <p>Valid values:</p> 
+        /// <ul> 
+        /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li> 
+        /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of this environment tier.</p>
-        /// <p>Valid values:</p>
-        /// <ul>
-        /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li>
-        /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li>
+        /// <p>The type of this environment tier.</p> 
+        /// <p>Valid values:</p> 
+        /// <ul> 
+        /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li> 
+        /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li> 
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
-        /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
-        /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
+        /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note> 
+        /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p> 
         /// </note>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
-        /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
+        /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note> 
+        /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p> 
         /// </note>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentTier`](crate::model::EnvironmentTier).
         pub fn build(self) -> crate::model::EnvironmentTier {
             crate::model::EnvironmentTier {
-                name: self.name,
-                r#type: self.r#type,
-                version: self.version,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl EnvironmentTier {
     /// Creates a new builder-style object to manufacture [`EnvironmentTier`](crate::model::EnvironmentTier).
@@ -598,20 +591,20 @@ impl EnvironmentTier {
 /// <p>Describes the AWS resources in use by this environment. This data is not live data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentResourcesDescription {
+pub struct EnvironmentResourcesDescription  {
     /// <p>Describes the LoadBalancer.</p>
     #[doc(hidden)]
     pub load_balancer: std::option::Option<crate::model::LoadBalancerDescription>,
 }
 impl EnvironmentResourcesDescription {
     /// <p>Describes the LoadBalancer.</p>
-    pub fn load_balancer(&self) -> std::option::Option<&crate::model::LoadBalancerDescription> {
+    pub fn load_balancer(&self) -> std::option::Option<& crate::model::LoadBalancerDescription> {
         self.load_balancer.as_ref()
     }
 }
 /// See [`EnvironmentResourcesDescription`](crate::model::EnvironmentResourcesDescription).
 pub mod environment_resources_description {
-
+    
     /// A builder for [`EnvironmentResourcesDescription`](crate::model::EnvironmentResourcesDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -624,20 +617,19 @@ pub mod environment_resources_description {
             self
         }
         /// <p>Describes the LoadBalancer.</p>
-        pub fn set_load_balancer(
-            mut self,
-            input: std::option::Option<crate::model::LoadBalancerDescription>,
-        ) -> Self {
-            self.load_balancer = input;
-            self
+        pub fn set_load_balancer(mut self, input: std::option::Option<crate::model::LoadBalancerDescription>) -> Self {
+            self.load_balancer = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentResourcesDescription`](crate::model::EnvironmentResourcesDescription).
         pub fn build(self) -> crate::model::EnvironmentResourcesDescription {
             crate::model::EnvironmentResourcesDescription {
-                load_balancer: self.load_balancer,
+                load_balancer: self.load_balancer
+                ,
             }
         }
     }
+    
+    
 }
 impl EnvironmentResourcesDescription {
     /// Creates a new builder-style object to manufacture [`EnvironmentResourcesDescription`](crate::model::EnvironmentResourcesDescription).
@@ -649,7 +641,7 @@ impl EnvironmentResourcesDescription {
 /// <p>Describes the details of a LoadBalancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoadBalancerDescription {
+pub struct LoadBalancerDescription  {
     /// <p>The name of the LoadBalancer.</p>
     #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
@@ -662,21 +654,21 @@ pub struct LoadBalancerDescription {
 }
 impl LoadBalancerDescription {
     /// <p>The name of the LoadBalancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The domain name of the LoadBalancer.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>A list of Listeners used by the LoadBalancer.</p>
-    pub fn listeners(&self) -> std::option::Option<&[crate::model::Listener]> {
+    pub fn listeners(&self) -> std::option::Option<& [crate::model::Listener]> {
         self.listeners.as_deref()
     }
 }
 /// See [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
 pub mod load_balancer_description {
-
+    
     /// A builder for [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -691,12 +683,8 @@ pub mod load_balancer_description {
             self
         }
         /// <p>The name of the LoadBalancer.</p>
-        pub fn set_load_balancer_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.load_balancer_name = input;
-            self
+        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.load_balancer_name = input; self
         }
         /// <p>The domain name of the LoadBalancer.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -705,8 +693,7 @@ pub mod load_balancer_description {
         }
         /// <p>The domain name of the LoadBalancer.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// Appends an item to `listeners`.
         ///
@@ -715,27 +702,28 @@ pub mod load_balancer_description {
         /// <p>A list of Listeners used by the LoadBalancer.</p>
         pub fn listeners(mut self, input: crate::model::Listener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input);
-            self.listeners = Some(v);
-            self
+                            v.push(input);
+                            self.listeners = Some(v);
+                            self
         }
         /// <p>A list of Listeners used by the LoadBalancer.</p>
-        pub fn set_listeners(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Listener>>,
-        ) -> Self {
-            self.listeners = input;
-            self
+        pub fn set_listeners(mut self, input: std::option::Option<std::vec::Vec<crate::model::Listener>>) -> Self {
+            self.listeners = input; self
         }
         /// Consumes the builder and constructs a [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
         pub fn build(self) -> crate::model::LoadBalancerDescription {
             crate::model::LoadBalancerDescription {
-                load_balancer_name: self.load_balancer_name,
-                domain: self.domain,
-                listeners: self.listeners,
+                load_balancer_name: self.load_balancer_name
+                ,
+                domain: self.domain
+                ,
+                listeners: self.listeners
+                ,
             }
         }
     }
+    
+    
 }
 impl LoadBalancerDescription {
     /// Creates a new builder-style object to manufacture [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
@@ -747,7 +735,7 @@ impl LoadBalancerDescription {
 /// <p>Describes the properties of a Listener for the LoadBalancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Listener {
+pub struct Listener  {
     /// <p>The protocol that is used by the Listener.</p>
     #[doc(hidden)]
     pub protocol: std::option::Option<std::string::String>,
@@ -757,7 +745,7 @@ pub struct Listener {
 }
 impl Listener {
     /// <p>The protocol that is used by the Listener.</p>
-    pub fn protocol(&self) -> std::option::Option<&str> {
+    pub fn protocol(&self) -> std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>The port that is used by the Listener.</p>
@@ -767,7 +755,7 @@ impl Listener {
 }
 /// See [`Listener`](crate::model::Listener).
 pub mod listener {
-
+    
     /// A builder for [`Listener`](crate::model::Listener).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -782,8 +770,7 @@ pub mod listener {
         }
         /// <p>The protocol that is used by the Listener.</p>
         pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.protocol = input;
-            self
+            self.protocol = input; self
         }
         /// <p>The port that is used by the Listener.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -792,17 +779,21 @@ pub mod listener {
         }
         /// <p>The port that is used by the Listener.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// Consumes the builder and constructs a [`Listener`](crate::model::Listener).
         pub fn build(self) -> crate::model::Listener {
             crate::model::Listener {
-                protocol: self.protocol,
-                port: self.port.unwrap_or_default(),
+                protocol: self.protocol
+                ,
+                port: self.port
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl Listener {
     /// Creates a new builder-style object to manufacture [`Listener`](crate::model::Listener).
@@ -817,9 +808,9 @@ impl Listener {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let environmenthealthstatus = unimplemented!();
 /// match environmenthealthstatus {
@@ -848,22 +839,14 @@ impl Listener {
 /// Specifically, when `environmenthealthstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnvironmentHealthStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `EnvironmentHealthStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EnvironmentHealthStatus {
     #[allow(missing_docs)] // documentation missing in model
     Degraded,
@@ -884,7 +867,7 @@ pub enum EnvironmentHealthStatus {
     #[allow(missing_docs)] // documentation missing in model
     Warning,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnvironmentHealthStatus {
     fn from(s: &str) -> Self {
@@ -898,19 +881,17 @@ impl std::convert::From<&str> for EnvironmentHealthStatus {
             "Suspended" => EnvironmentHealthStatus::Suspended,
             "Unknown" => EnvironmentHealthStatus::UnknownValue,
             "Warning" => EnvironmentHealthStatus::Warning,
-            other => EnvironmentHealthStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EnvironmentHealthStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EnvironmentHealthStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnvironmentHealthStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EnvironmentHealthStatus::from(s))
+                }
+            }
 impl EnvironmentHealthStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -924,21 +905,13 @@ impl EnvironmentHealthStatus {
             EnvironmentHealthStatus::Suspended => "Suspended",
             EnvironmentHealthStatus::UnknownValue => "Unknown",
             EnvironmentHealthStatus::Warning => "Warning",
-            EnvironmentHealthStatus::Unknown(value) => value.as_str(),
+            EnvironmentHealthStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Degraded",
-            "Info",
-            "NoData",
-            "Ok",
-            "Pending",
-            "Severe",
-            "Suspended",
-            "Unknown",
-            "Warning",
+            "Degraded", "Info", "NoData", "Ok", "Pending", "Severe", "Suspended", "Unknown", "Warning"
         ]
     }
 }
@@ -954,9 +927,9 @@ impl AsRef<str> for EnvironmentHealthStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let environmenthealth = unimplemented!();
 /// match environmenthealth {
@@ -980,22 +953,14 @@ impl AsRef<str> for EnvironmentHealthStatus {
 /// Specifically, when `environmenthealth` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnvironmentHealth::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EnvironmentHealth {
     #[allow(missing_docs)] // documentation missing in model
     Green,
@@ -1006,7 +971,7 @@ pub enum EnvironmentHealth {
     #[allow(missing_docs)] // documentation missing in model
     Yellow,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnvironmentHealth {
     fn from(s: &str) -> Self {
@@ -1015,19 +980,17 @@ impl std::convert::From<&str> for EnvironmentHealth {
             "Grey" => EnvironmentHealth::Grey,
             "Red" => EnvironmentHealth::Red,
             "Yellow" => EnvironmentHealth::Yellow,
-            other => {
-                EnvironmentHealth::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => EnvironmentHealth::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EnvironmentHealth {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnvironmentHealth::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EnvironmentHealth::from(s))
+                }
+            }
 impl EnvironmentHealth {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1036,12 +999,14 @@ impl EnvironmentHealth {
             EnvironmentHealth::Grey => "Grey",
             EnvironmentHealth::Red => "Red",
             EnvironmentHealth::Yellow => "Yellow",
-            EnvironmentHealth::Unknown(value) => value.as_str(),
+            EnvironmentHealth::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Green", "Grey", "Red", "Yellow"]
+        &[
+            "Green", "Grey", "Red", "Yellow"
+        ]
     }
 }
 impl AsRef<str> for EnvironmentHealth {
@@ -1056,9 +1021,9 @@ impl AsRef<str> for EnvironmentHealth {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let environmentstatus = unimplemented!();
 /// match environmentstatus {
@@ -1086,22 +1051,14 @@ impl AsRef<str> for EnvironmentHealth {
 /// Specifically, when `environmentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnvironmentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EnvironmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Aborting,
@@ -1120,7 +1077,7 @@ pub enum EnvironmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnvironmentStatus {
     fn from(s: &str) -> Self {
@@ -1133,19 +1090,17 @@ impl std::convert::From<&str> for EnvironmentStatus {
             "Terminated" => EnvironmentStatus::Terminated,
             "Terminating" => EnvironmentStatus::Terminating,
             "Updating" => EnvironmentStatus::Updating,
-            other => {
-                EnvironmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => EnvironmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EnvironmentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnvironmentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EnvironmentStatus::from(s))
+                }
+            }
 impl EnvironmentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1158,20 +1113,13 @@ impl EnvironmentStatus {
             EnvironmentStatus::Terminated => "Terminated",
             EnvironmentStatus::Terminating => "Terminating",
             EnvironmentStatus::Updating => "Updating",
-            EnvironmentStatus::Unknown(value) => value.as_str(),
+            EnvironmentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Aborting",
-            "Launching",
-            "LinkingFrom",
-            "LinkingTo",
-            "Ready",
-            "Terminated",
-            "Terminating",
-            "Updating",
+            "Aborting", "Launching", "LinkingFrom", "LinkingTo", "Ready", "Terminated", "Terminating", "Updating"
         ]
     }
 }
@@ -1184,7 +1132,7 @@ impl AsRef<str> for EnvironmentStatus {
 /// <p>A specification identifying an individual configuration option.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OptionSpecification {
+pub struct OptionSpecification  {
     /// <p>A unique resource name for a time-based scaling configuration option.</p>
     #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
@@ -1197,21 +1145,21 @@ pub struct OptionSpecification {
 }
 impl OptionSpecification {
     /// <p>A unique resource name for a time-based scaling configuration option.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>A unique namespace identifying the option's associated AWS resource.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the configuration option.</p>
-    pub fn option_name(&self) -> std::option::Option<&str> {
+    pub fn option_name(&self) -> std::option::Option<& str> {
         self.option_name.as_deref()
     }
 }
 /// See [`OptionSpecification`](crate::model::OptionSpecification).
 pub mod option_specification {
-
+    
     /// A builder for [`OptionSpecification`](crate::model::OptionSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1226,12 +1174,8 @@ pub mod option_specification {
             self
         }
         /// <p>A unique resource name for a time-based scaling configuration option.</p>
-        pub fn set_resource_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_name = input;
-            self
+        pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_name = input; self
         }
         /// <p>A unique namespace identifying the option's associated AWS resource.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1240,8 +1184,7 @@ pub mod option_specification {
         }
         /// <p>A unique namespace identifying the option's associated AWS resource.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The name of the configuration option.</p>
         pub fn option_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1250,18 +1193,22 @@ pub mod option_specification {
         }
         /// <p>The name of the configuration option.</p>
         pub fn set_option_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.option_name = input;
-            self
+            self.option_name = input; self
         }
         /// Consumes the builder and constructs a [`OptionSpecification`](crate::model::OptionSpecification).
         pub fn build(self) -> crate::model::OptionSpecification {
             crate::model::OptionSpecification {
-                resource_name: self.resource_name,
-                namespace: self.namespace,
-                option_name: self.option_name,
+                resource_name: self.resource_name
+                ,
+                namespace: self.namespace
+                ,
+                option_name: self.option_name
+                ,
             }
         }
     }
+    
+    
 }
 impl OptionSpecification {
     /// Creates a new builder-style object to manufacture [`OptionSpecification`](crate::model::OptionSpecification).
@@ -1276,9 +1223,9 @@ impl OptionSpecification {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let configurationdeploymentstatus = unimplemented!();
 /// match configurationdeploymentstatus {
@@ -1301,22 +1248,14 @@ impl OptionSpecification {
 /// Specifically, when `configurationdeploymentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfigurationDeploymentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConfigurationDeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deployed,
@@ -1325,7 +1264,7 @@ pub enum ConfigurationDeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfigurationDeploymentStatus {
     fn from(s: &str) -> Self {
@@ -1333,19 +1272,17 @@ impl std::convert::From<&str> for ConfigurationDeploymentStatus {
             "deployed" => ConfigurationDeploymentStatus::Deployed,
             "failed" => ConfigurationDeploymentStatus::Failed,
             "pending" => ConfigurationDeploymentStatus::Pending,
-            other => ConfigurationDeploymentStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConfigurationDeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConfigurationDeploymentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConfigurationDeploymentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConfigurationDeploymentStatus::from(s))
+                }
+            }
 impl ConfigurationDeploymentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1353,12 +1290,14 @@ impl ConfigurationDeploymentStatus {
             ConfigurationDeploymentStatus::Deployed => "deployed",
             ConfigurationDeploymentStatus::Failed => "failed",
             ConfigurationDeploymentStatus::Pending => "pending",
-            ConfigurationDeploymentStatus::Unknown(value) => value.as_str(),
+            ConfigurationDeploymentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["deployed", "failed", "pending"]
+        &[
+            "deployed", "failed", "pending"
+        ]
     }
 }
 impl AsRef<str> for ConfigurationDeploymentStatus {
@@ -1370,7 +1309,7 @@ impl AsRef<str> for ConfigurationDeploymentStatus {
 /// <p>Describes the properties of an application version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationVersionDescription {
+pub struct ApplicationVersionDescription  {
     /// <p>The Amazon Resource Name (ARN) of the application version.</p>
     #[doc(hidden)]
     pub application_version_arn: std::option::Option<std::string::String>,
@@ -1398,71 +1337,69 @@ pub struct ApplicationVersionDescription {
     /// <p>The last modified date of the application version.</p>
     #[doc(hidden)]
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
-    /// <ul>
-    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
-    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
-    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
-    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
-    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
+    /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li> 
+    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li> 
+    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li> 
+    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li> 
+    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ApplicationVersionStatus>,
 }
 impl ApplicationVersionDescription {
     /// <p>The Amazon Resource Name (ARN) of the application version.</p>
-    pub fn application_version_arn(&self) -> std::option::Option<&str> {
+    pub fn application_version_arn(&self) -> std::option::Option<& str> {
         self.application_version_arn.as_deref()
     }
     /// <p>The name of the application to which the application version belongs.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The description of the application version.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A unique identifier for the application version.</p>
-    pub fn version_label(&self) -> std::option::Option<&str> {
+    pub fn version_label(&self) -> std::option::Option<& str> {
         self.version_label.as_deref()
     }
     /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the application version.</p>
-    pub fn source_build_information(
-        &self,
-    ) -> std::option::Option<&crate::model::SourceBuildInformation> {
+    pub fn source_build_information(&self) -> std::option::Option<& crate::model::SourceBuildInformation> {
         self.source_build_information.as_ref()
     }
     /// <p>Reference to the artifact from the AWS CodeBuild build.</p>
-    pub fn build_arn(&self) -> std::option::Option<&str> {
+    pub fn build_arn(&self) -> std::option::Option<& str> {
         self.build_arn.as_deref()
     }
     /// <p>The storage location of the application version's source bundle in Amazon S3.</p>
-    pub fn source_bundle(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn source_bundle(&self) -> std::option::Option<& crate::model::S3Location> {
         self.source_bundle.as_ref()
     }
     /// <p>The creation date of the application version.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The last modified date of the application version.</p>
-    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
-    /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
-    /// <ul>
-    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
-    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
-    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
-    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
-    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
+    /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li> 
+    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li> 
+    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li> 
+    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li> 
+    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::ApplicationVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ApplicationVersionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`ApplicationVersionDescription`](crate::model::ApplicationVersionDescription).
 pub mod application_version_description {
-
+    
     /// A builder for [`ApplicationVersionDescription`](crate::model::ApplicationVersionDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1470,8 +1407,7 @@ pub mod application_version_description {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) version_label: std::option::Option<std::string::String>,
-        pub(crate) source_build_information:
-            std::option::Option<crate::model::SourceBuildInformation>,
+        pub(crate) source_build_information: std::option::Option<crate::model::SourceBuildInformation>,
         pub(crate) build_arn: std::option::Option<std::string::String>,
         pub(crate) source_bundle: std::option::Option<crate::model::S3Location>,
         pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
@@ -1485,12 +1421,8 @@ pub mod application_version_description {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application version.</p>
-        pub fn set_application_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_version_arn = input;
-            self
+        pub fn set_application_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_version_arn = input; self
         }
         /// <p>The name of the application to which the application version belongs.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1498,12 +1430,8 @@ pub mod application_version_description {
             self
         }
         /// <p>The name of the application to which the application version belongs.</p>
-        pub fn set_application_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_name = input;
-            self
+        pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_name = input; self
         }
         /// <p>The description of the application version.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1512,8 +1440,7 @@ pub mod application_version_description {
         }
         /// <p>The description of the application version.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>A unique identifier for the application version.</p>
         pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1521,28 +1448,17 @@ pub mod application_version_description {
             self
         }
         /// <p>A unique identifier for the application version.</p>
-        pub fn set_version_label(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.version_label = input;
-            self
+        pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_label = input; self
         }
         /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the application version.</p>
-        pub fn source_build_information(
-            mut self,
-            input: crate::model::SourceBuildInformation,
-        ) -> Self {
+        pub fn source_build_information(mut self, input: crate::model::SourceBuildInformation) -> Self {
             self.source_build_information = Some(input);
             self
         }
         /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the application version.</p>
-        pub fn set_source_build_information(
-            mut self,
-            input: std::option::Option<crate::model::SourceBuildInformation>,
-        ) -> Self {
-            self.source_build_information = input;
-            self
+        pub fn set_source_build_information(mut self, input: std::option::Option<crate::model::SourceBuildInformation>) -> Self {
+            self.source_build_information = input; self
         }
         /// <p>Reference to the artifact from the AWS CodeBuild build.</p>
         pub fn build_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1551,8 +1467,7 @@ pub mod application_version_description {
         }
         /// <p>Reference to the artifact from the AWS CodeBuild build.</p>
         pub fn set_build_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.build_arn = input;
-            self
+            self.build_arn = input; self
         }
         /// <p>The storage location of the application version's source bundle in Amazon S3.</p>
         pub fn source_bundle(mut self, input: crate::model::S3Location) -> Self {
@@ -1560,12 +1475,8 @@ pub mod application_version_description {
             self
         }
         /// <p>The storage location of the application version's source bundle in Amazon S3.</p>
-        pub fn set_source_bundle(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.source_bundle = input;
-            self
+        pub fn set_source_bundle(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.source_bundle = input; self
         }
         /// <p>The creation date of the application version.</p>
         pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1573,12 +1484,8 @@ pub mod application_version_description {
             self
         }
         /// <p>The creation date of the application version.</p>
-        pub fn set_date_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_created = input;
-            self
+        pub fn set_date_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_created = input; self
         }
         /// <p>The last modified date of the application version.</p>
         pub fn date_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1586,56 +1493,60 @@ pub mod application_version_description {
             self
         }
         /// <p>The last modified date of the application version.</p>
-        pub fn set_date_updated(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_updated = input;
-            self
+        pub fn set_date_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_updated = input; self
         }
-        /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
-        /// <ul>
-        /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
-        /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
-        /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
-        /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
-        /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
+        /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p> 
+        /// <ul> 
+        /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li> 
+        /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li> 
+        /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li> 
+        /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li> 
+        /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::ApplicationVersionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
-        /// <ul>
-        /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
-        /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
-        /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
-        /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
-        /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
+        /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p> 
+        /// <ul> 
+        /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li> 
+        /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li> 
+        /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li> 
+        /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li> 
+        /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationVersionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ApplicationVersionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationVersionDescription`](crate::model::ApplicationVersionDescription).
         pub fn build(self) -> crate::model::ApplicationVersionDescription {
             crate::model::ApplicationVersionDescription {
-                application_version_arn: self.application_version_arn,
-                application_name: self.application_name,
-                description: self.description,
-                version_label: self.version_label,
-                source_build_information: self.source_build_information,
-                build_arn: self.build_arn,
-                source_bundle: self.source_bundle,
-                date_created: self.date_created,
-                date_updated: self.date_updated,
-                status: self.status,
+                application_version_arn: self.application_version_arn
+                ,
+                application_name: self.application_name
+                ,
+                description: self.description
+                ,
+                version_label: self.version_label
+                ,
+                source_build_information: self.source_build_information
+                ,
+                build_arn: self.build_arn
+                ,
+                source_bundle: self.source_bundle
+                ,
+                date_created: self.date_created
+                ,
+                date_updated: self.date_updated
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationVersionDescription {
     /// Creates a new builder-style object to manufacture [`ApplicationVersionDescription`](crate::model::ApplicationVersionDescription).
@@ -1650,9 +1561,9 @@ impl ApplicationVersionDescription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let applicationversionstatus = unimplemented!();
 /// match applicationversionstatus {
@@ -1677,22 +1588,14 @@ impl ApplicationVersionDescription {
 /// Specifically, when `applicationversionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApplicationVersionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ApplicationVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Building,
@@ -1705,7 +1608,7 @@ pub enum ApplicationVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Unprocessed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApplicationVersionStatus {
     fn from(s: &str) -> Self {
@@ -1715,19 +1618,17 @@ impl std::convert::From<&str> for ApplicationVersionStatus {
             "Processed" => ApplicationVersionStatus::Processed,
             "Processing" => ApplicationVersionStatus::Processing,
             "Unprocessed" => ApplicationVersionStatus::Unprocessed,
-            other => ApplicationVersionStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ApplicationVersionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ApplicationVersionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApplicationVersionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ApplicationVersionStatus::from(s))
+                }
+            }
 impl ApplicationVersionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1737,17 +1638,13 @@ impl ApplicationVersionStatus {
             ApplicationVersionStatus::Processed => "Processed",
             ApplicationVersionStatus::Processing => "Processing",
             ApplicationVersionStatus::Unprocessed => "Unprocessed",
-            ApplicationVersionStatus::Unknown(value) => value.as_str(),
+            ApplicationVersionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Building",
-            "Failed",
-            "Processed",
-            "Processing",
-            "Unprocessed",
+            "Building", "Failed", "Processed", "Processing", "Unprocessed"
         ]
     }
 }
@@ -1760,7 +1657,7 @@ impl AsRef<str> for ApplicationVersionStatus {
 /// <p>The bucket and key of an item stored in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The Amazon S3 bucket where the data is located.</p>
     #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
@@ -1770,17 +1667,17 @@ pub struct S3Location {
 }
 impl S3Location {
     /// <p>The Amazon S3 bucket where the data is located.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 key where the data is located.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> std::option::Option<& str> {
         self.s3_key.as_deref()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
-
+    
     /// A builder for [`S3Location`](crate::model::S3Location).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1795,8 +1692,7 @@ pub mod s3_location {
         }
         /// <p>The Amazon S3 bucket where the data is located.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// <p>The Amazon S3 key where the data is located.</p>
         pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1805,17 +1701,20 @@ pub mod s3_location {
         }
         /// <p>The Amazon S3 key where the data is located.</p>
         pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_key = input;
-            self
+            self.s3_key = input; self
         }
         /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location).
         pub fn build(self) -> crate::model::S3Location {
             crate::model::S3Location {
-                s3_bucket: self.s3_bucket,
-                s3_key: self.s3_key,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_key: self.s3_key
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Location {
     /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
@@ -1827,58 +1726,58 @@ impl S3Location {
 /// <p>Location of the source code for an application version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceBuildInformation {
-    /// <p>The type of repository.</p>
-    /// <ul>
-    /// <li> <p> <code>Git</code> </p> </li>
-    /// <li> <p> <code>Zip</code> </p> </li>
+pub struct SourceBuildInformation  {
+    /// <p>The type of repository.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Git</code> </p> </li> 
+    /// <li> <p> <code>Zip</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::SourceType>,
-    /// <p>Location where the repository is stored.</p>
-    /// <ul>
-    /// <li> <p> <code>CodeCommit</code> </p> </li>
-    /// <li> <p> <code>S3</code> </p> </li>
+    /// <p>Location where the repository is stored.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CodeCommit</code> </p> </li> 
+    /// <li> <p> <code>S3</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub source_repository: std::option::Option<crate::model::SourceRepository>,
-    /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p>
-    /// <ul>
-    /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li>
-    /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>
+    /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> 
+    /// <ul> 
+    /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> 
+    /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub source_location: std::option::Option<std::string::String>,
 }
 impl SourceBuildInformation {
-    /// <p>The type of repository.</p>
-    /// <ul>
-    /// <li> <p> <code>Git</code> </p> </li>
-    /// <li> <p> <code>Zip</code> </p> </li>
+    /// <p>The type of repository.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Git</code> </p> </li> 
+    /// <li> <p> <code>Zip</code> </p> </li> 
     /// </ul>
-    pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
+    pub fn source_type(&self) -> std::option::Option<& crate::model::SourceType> {
         self.source_type.as_ref()
     }
-    /// <p>Location where the repository is stored.</p>
-    /// <ul>
-    /// <li> <p> <code>CodeCommit</code> </p> </li>
-    /// <li> <p> <code>S3</code> </p> </li>
+    /// <p>Location where the repository is stored.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CodeCommit</code> </p> </li> 
+    /// <li> <p> <code>S3</code> </p> </li> 
     /// </ul>
-    pub fn source_repository(&self) -> std::option::Option<&crate::model::SourceRepository> {
+    pub fn source_repository(&self) -> std::option::Option<& crate::model::SourceRepository> {
         self.source_repository.as_ref()
     }
-    /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p>
-    /// <ul>
-    /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li>
-    /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>
+    /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> 
+    /// <ul> 
+    /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> 
+    /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> 
     /// </ul>
-    pub fn source_location(&self) -> std::option::Option<&str> {
+    pub fn source_location(&self) -> std::option::Option<& str> {
         self.source_location.as_deref()
     }
 }
 /// See [`SourceBuildInformation`](crate::model::SourceBuildInformation).
 pub mod source_build_information {
-
+    
     /// A builder for [`SourceBuildInformation`](crate::model::SourceBuildInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1887,78 +1786,71 @@ pub mod source_build_information {
         pub(crate) source_location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of repository.</p>
-        /// <ul>
-        /// <li> <p> <code>Git</code> </p> </li>
-        /// <li> <p> <code>Zip</code> </p> </li>
+        /// <p>The type of repository.</p> 
+        /// <ul> 
+        /// <li> <p> <code>Git</code> </p> </li> 
+        /// <li> <p> <code>Zip</code> </p> </li> 
         /// </ul>
         pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
             self.source_type = Some(input);
             self
         }
-        /// <p>The type of repository.</p>
-        /// <ul>
-        /// <li> <p> <code>Git</code> </p> </li>
-        /// <li> <p> <code>Zip</code> </p> </li>
+        /// <p>The type of repository.</p> 
+        /// <ul> 
+        /// <li> <p> <code>Git</code> </p> </li> 
+        /// <li> <p> <code>Zip</code> </p> </li> 
         /// </ul>
-        pub fn set_source_type(
-            mut self,
-            input: std::option::Option<crate::model::SourceType>,
-        ) -> Self {
-            self.source_type = input;
-            self
+        pub fn set_source_type(mut self, input: std::option::Option<crate::model::SourceType>) -> Self {
+            self.source_type = input; self
         }
-        /// <p>Location where the repository is stored.</p>
-        /// <ul>
-        /// <li> <p> <code>CodeCommit</code> </p> </li>
-        /// <li> <p> <code>S3</code> </p> </li>
+        /// <p>Location where the repository is stored.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CodeCommit</code> </p> </li> 
+        /// <li> <p> <code>S3</code> </p> </li> 
         /// </ul>
         pub fn source_repository(mut self, input: crate::model::SourceRepository) -> Self {
             self.source_repository = Some(input);
             self
         }
-        /// <p>Location where the repository is stored.</p>
-        /// <ul>
-        /// <li> <p> <code>CodeCommit</code> </p> </li>
-        /// <li> <p> <code>S3</code> </p> </li>
+        /// <p>Location where the repository is stored.</p> 
+        /// <ul> 
+        /// <li> <p> <code>CodeCommit</code> </p> </li> 
+        /// <li> <p> <code>S3</code> </p> </li> 
         /// </ul>
-        pub fn set_source_repository(
-            mut self,
-            input: std::option::Option<crate::model::SourceRepository>,
-        ) -> Self {
-            self.source_repository = input;
-            self
+        pub fn set_source_repository(mut self, input: std::option::Option<crate::model::SourceRepository>) -> Self {
+            self.source_repository = input; self
         }
-        /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p>
-        /// <ul>
-        /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li>
-        /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>
+        /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> 
+        /// <ul> 
+        /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> 
+        /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> 
         /// </ul>
         pub fn source_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location = Some(input.into());
             self
         }
-        /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p>
-        /// <ul>
-        /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li>
-        /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>
+        /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> 
+        /// <ul> 
+        /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> 
+        /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> 
         /// </ul>
-        pub fn set_source_location(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_location = input;
-            self
+        pub fn set_source_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_location = input; self
         }
         /// Consumes the builder and constructs a [`SourceBuildInformation`](crate::model::SourceBuildInformation).
         pub fn build(self) -> crate::model::SourceBuildInformation {
             crate::model::SourceBuildInformation {
-                source_type: self.source_type,
-                source_repository: self.source_repository,
-                source_location: self.source_location,
+                source_type: self.source_type
+                ,
+                source_repository: self.source_repository
+                ,
+                source_location: self.source_location
+                ,
             }
         }
     }
+    
+    
 }
 impl SourceBuildInformation {
     /// Creates a new builder-style object to manufacture [`SourceBuildInformation`](crate::model::SourceBuildInformation).
@@ -1973,9 +1865,9 @@ impl SourceBuildInformation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sourcerepository = unimplemented!();
 /// match sourcerepository {
@@ -1997,58 +1889,52 @@ impl SourceBuildInformation {
 /// Specifically, when `sourcerepository` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SourceRepository::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SourceRepository {
     #[allow(missing_docs)] // documentation missing in model
     CodeCommit,
     #[allow(missing_docs)] // documentation missing in model
     S3,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SourceRepository {
     fn from(s: &str) -> Self {
         match s {
             "CodeCommit" => SourceRepository::CodeCommit,
             "S3" => SourceRepository::S3,
-            other => SourceRepository::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SourceRepository::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SourceRepository {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SourceRepository::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SourceRepository::from(s))
+                }
+            }
 impl SourceRepository {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SourceRepository::CodeCommit => "CodeCommit",
             SourceRepository::S3 => "S3",
-            SourceRepository::Unknown(value) => value.as_str(),
+            SourceRepository::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CodeCommit", "S3"]
+        &[
+            "CodeCommit", "S3"
+        ]
     }
 }
 impl AsRef<str> for SourceRepository {
@@ -2063,9 +1949,9 @@ impl AsRef<str> for SourceRepository {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sourcetype = unimplemented!();
 /// match sourcetype {
@@ -2087,58 +1973,52 @@ impl AsRef<str> for SourceRepository {
 /// Specifically, when `sourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SourceType {
     #[allow(missing_docs)] // documentation missing in model
     Git,
     #[allow(missing_docs)] // documentation missing in model
     Zip,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SourceType {
     fn from(s: &str) -> Self {
         match s {
             "Git" => SourceType::Git,
             "Zip" => SourceType::Zip,
-            other => SourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SourceType::from(s))
+                }
+            }
 impl SourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SourceType::Git => "Git",
             SourceType::Zip => "Zip",
-            SourceType::Unknown(value) => value.as_str(),
+            SourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Git", "Zip"]
+        &[
+            "Git", "Zip"
+        ]
     }
 }
 impl AsRef<str> for SourceType {
@@ -2150,76 +2030,68 @@ impl AsRef<str> for SourceType {
 /// <p>The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationResourceLifecycleConfig {
-    /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p>
+pub struct ApplicationResourceLifecycleConfig  {
+    /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p> 
     /// <p>The <code>ServiceRole</code> property is required the first time that you provide a <code>VersionLifecycleConfig</code> for the application in one of the supporting calls (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in either one of the calls, Elastic Beanstalk persists the Service Role with the application, and you don't need to specify it again in subsequent <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it in subsequent calls to change the Service Role to another value.</p>
     #[doc(hidden)]
     pub service_role: std::option::Option<std::string::String>,
     /// <p>Defines lifecycle settings for application versions.</p>
     #[doc(hidden)]
-    pub version_lifecycle_config:
-        std::option::Option<crate::model::ApplicationVersionLifecycleConfig>,
+    pub version_lifecycle_config: std::option::Option<crate::model::ApplicationVersionLifecycleConfig>,
 }
 impl ApplicationResourceLifecycleConfig {
-    /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p>
+    /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p> 
     /// <p>The <code>ServiceRole</code> property is required the first time that you provide a <code>VersionLifecycleConfig</code> for the application in one of the supporting calls (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in either one of the calls, Elastic Beanstalk persists the Service Role with the application, and you don't need to specify it again in subsequent <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it in subsequent calls to change the Service Role to another value.</p>
-    pub fn service_role(&self) -> std::option::Option<&str> {
+    pub fn service_role(&self) -> std::option::Option<& str> {
         self.service_role.as_deref()
     }
     /// <p>Defines lifecycle settings for application versions.</p>
-    pub fn version_lifecycle_config(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationVersionLifecycleConfig> {
+    pub fn version_lifecycle_config(&self) -> std::option::Option<& crate::model::ApplicationVersionLifecycleConfig> {
         self.version_lifecycle_config.as_ref()
     }
 }
 /// See [`ApplicationResourceLifecycleConfig`](crate::model::ApplicationResourceLifecycleConfig).
 pub mod application_resource_lifecycle_config {
-
+    
     /// A builder for [`ApplicationResourceLifecycleConfig`](crate::model::ApplicationResourceLifecycleConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_role: std::option::Option<std::string::String>,
-        pub(crate) version_lifecycle_config:
-            std::option::Option<crate::model::ApplicationVersionLifecycleConfig>,
+        pub(crate) version_lifecycle_config: std::option::Option<crate::model::ApplicationVersionLifecycleConfig>,
     }
     impl Builder {
-        /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p>
+        /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p> 
         /// <p>The <code>ServiceRole</code> property is required the first time that you provide a <code>VersionLifecycleConfig</code> for the application in one of the supporting calls (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in either one of the calls, Elastic Beanstalk persists the Service Role with the application, and you don't need to specify it again in subsequent <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it in subsequent calls to change the Service Role to another value.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p>
+        /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p> 
         /// <p>The <code>ServiceRole</code> property is required the first time that you provide a <code>VersionLifecycleConfig</code> for the application in one of the supporting calls (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in either one of the calls, Elastic Beanstalk persists the Service Role with the application, and you don't need to specify it again in subsequent <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it in subsequent calls to change the Service Role to another value.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_role = input;
-            self
+            self.service_role = input; self
         }
         /// <p>Defines lifecycle settings for application versions.</p>
-        pub fn version_lifecycle_config(
-            mut self,
-            input: crate::model::ApplicationVersionLifecycleConfig,
-        ) -> Self {
+        pub fn version_lifecycle_config(mut self, input: crate::model::ApplicationVersionLifecycleConfig) -> Self {
             self.version_lifecycle_config = Some(input);
             self
         }
         /// <p>Defines lifecycle settings for application versions.</p>
-        pub fn set_version_lifecycle_config(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationVersionLifecycleConfig>,
-        ) -> Self {
-            self.version_lifecycle_config = input;
-            self
+        pub fn set_version_lifecycle_config(mut self, input: std::option::Option<crate::model::ApplicationVersionLifecycleConfig>) -> Self {
+            self.version_lifecycle_config = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationResourceLifecycleConfig`](crate::model::ApplicationResourceLifecycleConfig).
         pub fn build(self) -> crate::model::ApplicationResourceLifecycleConfig {
             crate::model::ApplicationResourceLifecycleConfig {
-                service_role: self.service_role,
-                version_lifecycle_config: self.version_lifecycle_config,
+                service_role: self.service_role
+                ,
+                version_lifecycle_config: self.version_lifecycle_config
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationResourceLifecycleConfig {
     /// Creates a new builder-style object to manufacture [`ApplicationResourceLifecycleConfig`](crate::model::ApplicationResourceLifecycleConfig).
@@ -2228,11 +2100,11 @@ impl ApplicationResourceLifecycleConfig {
     }
 }
 
-/// <p>The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.</p>
+/// <p>The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.</p> 
 /// <p>When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationVersionLifecycleConfig {
+pub struct ApplicationVersionLifecycleConfig  {
     /// <p>Specify a max count rule to restrict the number of application versions that are retained for an application.</p>
     #[doc(hidden)]
     pub max_count_rule: std::option::Option<crate::model::MaxCountRule>,
@@ -2242,17 +2114,17 @@ pub struct ApplicationVersionLifecycleConfig {
 }
 impl ApplicationVersionLifecycleConfig {
     /// <p>Specify a max count rule to restrict the number of application versions that are retained for an application.</p>
-    pub fn max_count_rule(&self) -> std::option::Option<&crate::model::MaxCountRule> {
+    pub fn max_count_rule(&self) -> std::option::Option<& crate::model::MaxCountRule> {
         self.max_count_rule.as_ref()
     }
     /// <p>Specify a max age rule to restrict the length of time that application versions are retained for an application.</p>
-    pub fn max_age_rule(&self) -> std::option::Option<&crate::model::MaxAgeRule> {
+    pub fn max_age_rule(&self) -> std::option::Option<& crate::model::MaxAgeRule> {
         self.max_age_rule.as_ref()
     }
 }
 /// See [`ApplicationVersionLifecycleConfig`](crate::model::ApplicationVersionLifecycleConfig).
 pub mod application_version_lifecycle_config {
-
+    
     /// A builder for [`ApplicationVersionLifecycleConfig`](crate::model::ApplicationVersionLifecycleConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2266,12 +2138,8 @@ pub mod application_version_lifecycle_config {
             self
         }
         /// <p>Specify a max count rule to restrict the number of application versions that are retained for an application.</p>
-        pub fn set_max_count_rule(
-            mut self,
-            input: std::option::Option<crate::model::MaxCountRule>,
-        ) -> Self {
-            self.max_count_rule = input;
-            self
+        pub fn set_max_count_rule(mut self, input: std::option::Option<crate::model::MaxCountRule>) -> Self {
+            self.max_count_rule = input; self
         }
         /// <p>Specify a max age rule to restrict the length of time that application versions are retained for an application.</p>
         pub fn max_age_rule(mut self, input: crate::model::MaxAgeRule) -> Self {
@@ -2279,21 +2147,21 @@ pub mod application_version_lifecycle_config {
             self
         }
         /// <p>Specify a max age rule to restrict the length of time that application versions are retained for an application.</p>
-        pub fn set_max_age_rule(
-            mut self,
-            input: std::option::Option<crate::model::MaxAgeRule>,
-        ) -> Self {
-            self.max_age_rule = input;
-            self
+        pub fn set_max_age_rule(mut self, input: std::option::Option<crate::model::MaxAgeRule>) -> Self {
+            self.max_age_rule = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationVersionLifecycleConfig`](crate::model::ApplicationVersionLifecycleConfig).
         pub fn build(self) -> crate::model::ApplicationVersionLifecycleConfig {
             crate::model::ApplicationVersionLifecycleConfig {
-                max_count_rule: self.max_count_rule,
-                max_age_rule: self.max_age_rule,
+                max_count_rule: self.max_count_rule
+                ,
+                max_age_rule: self.max_age_rule
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationVersionLifecycleConfig {
     /// Creates a new builder-style object to manufacture [`ApplicationVersionLifecycleConfig`](crate::model::ApplicationVersionLifecycleConfig).
@@ -2305,7 +2173,7 @@ impl ApplicationVersionLifecycleConfig {
 /// <p>A lifecycle rule that deletes application versions after the specified number of days.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MaxAgeRule {
+pub struct MaxAgeRule  {
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -2332,7 +2200,7 @@ impl MaxAgeRule {
 }
 /// See [`MaxAgeRule`](crate::model::MaxAgeRule).
 pub mod max_age_rule {
-
+    
     /// A builder for [`MaxAgeRule`](crate::model::MaxAgeRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2348,8 +2216,7 @@ pub mod max_age_rule {
         }
         /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>Specify the number of days to retain an application versions.</p>
         pub fn max_age_in_days(mut self, input: i32) -> Self {
@@ -2358,8 +2225,7 @@ pub mod max_age_rule {
         }
         /// <p>Specify the number of days to retain an application versions.</p>
         pub fn set_max_age_in_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_age_in_days = input;
-            self
+            self.max_age_in_days = input; self
         }
         /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
         pub fn delete_source_from_s3(mut self, input: bool) -> Self {
@@ -2368,18 +2234,22 @@ pub mod max_age_rule {
         }
         /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
         pub fn set_delete_source_from_s3(mut self, input: std::option::Option<bool>) -> Self {
-            self.delete_source_from_s3 = input;
-            self
+            self.delete_source_from_s3 = input; self
         }
         /// Consumes the builder and constructs a [`MaxAgeRule`](crate::model::MaxAgeRule).
         pub fn build(self) -> crate::model::MaxAgeRule {
             crate::model::MaxAgeRule {
-                enabled: self.enabled,
-                max_age_in_days: self.max_age_in_days,
-                delete_source_from_s3: self.delete_source_from_s3,
+                enabled: self.enabled
+                ,
+                max_age_in_days: self.max_age_in_days
+                ,
+                delete_source_from_s3: self.delete_source_from_s3
+                ,
             }
         }
     }
+    
+    
 }
 impl MaxAgeRule {
     /// Creates a new builder-style object to manufacture [`MaxAgeRule`](crate::model::MaxAgeRule).
@@ -2391,7 +2261,7 @@ impl MaxAgeRule {
 /// <p>A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MaxCountRule {
+pub struct MaxCountRule  {
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -2418,7 +2288,7 @@ impl MaxCountRule {
 }
 /// See [`MaxCountRule`](crate::model::MaxCountRule).
 pub mod max_count_rule {
-
+    
     /// A builder for [`MaxCountRule`](crate::model::MaxCountRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2434,8 +2304,7 @@ pub mod max_count_rule {
         }
         /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>Specify the maximum number of application versions to retain.</p>
         pub fn max_count(mut self, input: i32) -> Self {
@@ -2444,8 +2313,7 @@ pub mod max_count_rule {
         }
         /// <p>Specify the maximum number of application versions to retain.</p>
         pub fn set_max_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_count = input;
-            self
+            self.max_count = input; self
         }
         /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
         pub fn delete_source_from_s3(mut self, input: bool) -> Self {
@@ -2454,18 +2322,22 @@ pub mod max_count_rule {
         }
         /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
         pub fn set_delete_source_from_s3(mut self, input: std::option::Option<bool>) -> Self {
-            self.delete_source_from_s3 = input;
-            self
+            self.delete_source_from_s3 = input; self
         }
         /// Consumes the builder and constructs a [`MaxCountRule`](crate::model::MaxCountRule).
         pub fn build(self) -> crate::model::MaxCountRule {
             crate::model::MaxCountRule {
-                enabled: self.enabled,
-                max_count: self.max_count,
-                delete_source_from_s3: self.delete_source_from_s3,
+                enabled: self.enabled
+                ,
+                max_count: self.max_count
+                ,
+                delete_source_from_s3: self.delete_source_from_s3
+                ,
             }
         }
     }
+    
+    
 }
 impl MaxCountRule {
     /// Creates a new builder-style object to manufacture [`MaxCountRule`](crate::model::MaxCountRule).
@@ -2477,7 +2349,7 @@ impl MaxCountRule {
 /// <p>Describes the properties of an application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationDescription {
+pub struct ApplicationDescription  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -2501,48 +2373,45 @@ pub struct ApplicationDescription {
     pub configuration_templates: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The lifecycle settings for the application.</p>
     #[doc(hidden)]
-    pub resource_lifecycle_config:
-        std::option::Option<crate::model::ApplicationResourceLifecycleConfig>,
+    pub resource_lifecycle_config: std::option::Option<crate::model::ApplicationResourceLifecycleConfig>,
 }
 impl ApplicationDescription {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The name of the application.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>User-defined description of the application.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date when the application was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date when the application was last modified.</p>
-    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
     /// <p>The names of the versions for this application.</p>
-    pub fn versions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn versions(&self) -> std::option::Option<& [std::string::String]> {
         self.versions.as_deref()
     }
     /// <p>The names of the configuration templates associated with this application.</p>
-    pub fn configuration_templates(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn configuration_templates(&self) -> std::option::Option<& [std::string::String]> {
         self.configuration_templates.as_deref()
     }
     /// <p>The lifecycle settings for the application.</p>
-    pub fn resource_lifecycle_config(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationResourceLifecycleConfig> {
+    pub fn resource_lifecycle_config(&self) -> std::option::Option<& crate::model::ApplicationResourceLifecycleConfig> {
         self.resource_lifecycle_config.as_ref()
     }
 }
 /// See [`ApplicationDescription`](crate::model::ApplicationDescription).
 pub mod application_description {
-
+    
     /// A builder for [`ApplicationDescription`](crate::model::ApplicationDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2553,8 +2422,7 @@ pub mod application_description {
         pub(crate) date_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) versions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) configuration_templates: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) resource_lifecycle_config:
-            std::option::Option<crate::model::ApplicationResourceLifecycleConfig>,
+        pub(crate) resource_lifecycle_config: std::option::Option<crate::model::ApplicationResourceLifecycleConfig>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -2563,12 +2431,8 @@ pub mod application_description {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>The name of the application.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2576,12 +2440,8 @@ pub mod application_description {
             self
         }
         /// <p>The name of the application.</p>
-        pub fn set_application_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_name = input;
-            self
+        pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_name = input; self
         }
         /// <p>User-defined description of the application.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2590,8 +2450,7 @@ pub mod application_description {
         }
         /// <p>User-defined description of the application.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date when the application was created.</p>
         pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2599,12 +2458,8 @@ pub mod application_description {
             self
         }
         /// <p>The date when the application was created.</p>
-        pub fn set_date_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_created = input;
-            self
+        pub fn set_date_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_created = input; self
         }
         /// <p>The date when the application was last modified.</p>
         pub fn date_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2612,12 +2467,8 @@ pub mod application_description {
             self
         }
         /// <p>The date when the application was last modified.</p>
-        pub fn set_date_updated(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_updated = input;
-            self
+        pub fn set_date_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_updated = input; self
         }
         /// Appends an item to `versions`.
         ///
@@ -2626,17 +2477,13 @@ pub mod application_description {
         /// <p>The names of the versions for this application.</p>
         pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
-            self.versions = Some(v);
-            self
+                            v.push(input.into());
+                            self.versions = Some(v);
+                            self
         }
         /// <p>The names of the versions for this application.</p>
-        pub fn set_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.versions = input;
-            self
+        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.versions = input; self
         }
         /// Appends an item to `configuration_templates`.
         ///
@@ -2645,48 +2492,47 @@ pub mod application_description {
         /// <p>The names of the configuration templates associated with this application.</p>
         pub fn configuration_templates(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.configuration_templates.unwrap_or_default();
-            v.push(input.into());
-            self.configuration_templates = Some(v);
-            self
+                            v.push(input.into());
+                            self.configuration_templates = Some(v);
+                            self
         }
         /// <p>The names of the configuration templates associated with this application.</p>
-        pub fn set_configuration_templates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.configuration_templates = input;
-            self
+        pub fn set_configuration_templates(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.configuration_templates = input; self
         }
         /// <p>The lifecycle settings for the application.</p>
-        pub fn resource_lifecycle_config(
-            mut self,
-            input: crate::model::ApplicationResourceLifecycleConfig,
-        ) -> Self {
+        pub fn resource_lifecycle_config(mut self, input: crate::model::ApplicationResourceLifecycleConfig) -> Self {
             self.resource_lifecycle_config = Some(input);
             self
         }
         /// <p>The lifecycle settings for the application.</p>
-        pub fn set_resource_lifecycle_config(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationResourceLifecycleConfig>,
-        ) -> Self {
-            self.resource_lifecycle_config = input;
-            self
+        pub fn set_resource_lifecycle_config(mut self, input: std::option::Option<crate::model::ApplicationResourceLifecycleConfig>) -> Self {
+            self.resource_lifecycle_config = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationDescription`](crate::model::ApplicationDescription).
         pub fn build(self) -> crate::model::ApplicationDescription {
             crate::model::ApplicationDescription {
-                application_arn: self.application_arn,
-                application_name: self.application_name,
-                description: self.description,
-                date_created: self.date_created,
-                date_updated: self.date_updated,
-                versions: self.versions,
-                configuration_templates: self.configuration_templates,
-                resource_lifecycle_config: self.resource_lifecycle_config,
+                application_arn: self.application_arn
+                ,
+                application_name: self.application_name
+                ,
+                description: self.description
+                ,
+                date_created: self.date_created
+                ,
+                date_updated: self.date_updated
+                ,
+                versions: self.versions
+                ,
+                configuration_templates: self.configuration_templates
+                ,
+                resource_lifecycle_config: self.resource_lifecycle_config
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationDescription {
     /// Creates a new builder-style object to manufacture [`ApplicationDescription`](crate::model::ApplicationDescription).
@@ -2698,7 +2544,7 @@ impl ApplicationDescription {
 /// <p>The information retrieved from the Amazon EC2 instances.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentInfoDescription {
+pub struct EnvironmentInfoDescription  {
     /// <p>The type of information retrieved.</p>
     #[doc(hidden)]
     pub info_type: std::option::Option<crate::model::EnvironmentInfoType>,
@@ -2708,33 +2554,33 @@ pub struct EnvironmentInfoDescription {
     /// <p>The time stamp when this information was retrieved.</p>
     #[doc(hidden)]
     pub sample_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.</p>
+    /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.</p> 
     /// <p>Anyone in possession of this URL can access the files before they are deleted. Make the URL available only to trusted parties.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EnvironmentInfoDescription {
     /// <p>The type of information retrieved.</p>
-    pub fn info_type(&self) -> std::option::Option<&crate::model::EnvironmentInfoType> {
+    pub fn info_type(&self) -> std::option::Option<& crate::model::EnvironmentInfoType> {
         self.info_type.as_ref()
     }
     /// <p>The Amazon EC2 Instance ID for this information.</p>
-    pub fn ec2_instance_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_instance_id(&self) -> std::option::Option<& str> {
         self.ec2_instance_id.as_deref()
     }
     /// <p>The time stamp when this information was retrieved.</p>
-    pub fn sample_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn sample_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.sample_timestamp.as_ref()
     }
-    /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.</p>
+    /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.</p> 
     /// <p>Anyone in possession of this URL can access the files before they are deleted. Make the URL available only to trusted parties.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`EnvironmentInfoDescription`](crate::model::EnvironmentInfoDescription).
 pub mod environment_info_description {
-
+    
     /// A builder for [`EnvironmentInfoDescription`](crate::model::EnvironmentInfoDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2750,12 +2596,8 @@ pub mod environment_info_description {
             self
         }
         /// <p>The type of information retrieved.</p>
-        pub fn set_info_type(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentInfoType>,
-        ) -> Self {
-            self.info_type = input;
-            self
+        pub fn set_info_type(mut self, input: std::option::Option<crate::model::EnvironmentInfoType>) -> Self {
+            self.info_type = input; self
         }
         /// <p>The Amazon EC2 Instance ID for this information.</p>
         pub fn ec2_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2763,12 +2605,8 @@ pub mod environment_info_description {
             self
         }
         /// <p>The Amazon EC2 Instance ID for this information.</p>
-        pub fn set_ec2_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_instance_id = input;
-            self
+        pub fn set_ec2_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_instance_id = input; self
         }
         /// <p>The time stamp when this information was retrieved.</p>
         pub fn sample_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2776,35 +2614,36 @@ pub mod environment_info_description {
             self
         }
         /// <p>The time stamp when this information was retrieved.</p>
-        pub fn set_sample_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.sample_timestamp = input;
-            self
+        pub fn set_sample_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.sample_timestamp = input; self
         }
-        /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.</p>
+        /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.</p> 
         /// <p>Anyone in possession of this URL can access the files before they are deleted. Make the URL available only to trusted parties.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.</p>
+        /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.</p> 
         /// <p>Anyone in possession of this URL can access the files before they are deleted. Make the URL available only to trusted parties.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentInfoDescription`](crate::model::EnvironmentInfoDescription).
         pub fn build(self) -> crate::model::EnvironmentInfoDescription {
             crate::model::EnvironmentInfoDescription {
-                info_type: self.info_type,
-                ec2_instance_id: self.ec2_instance_id,
-                sample_timestamp: self.sample_timestamp,
-                message: self.message,
+                info_type: self.info_type
+                ,
+                ec2_instance_id: self.ec2_instance_id
+                ,
+                sample_timestamp: self.sample_timestamp
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl EnvironmentInfoDescription {
     /// Creates a new builder-style object to manufacture [`EnvironmentInfoDescription`](crate::model::EnvironmentInfoDescription).
@@ -2819,9 +2658,9 @@ impl EnvironmentInfoDescription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let environmentinfotype = unimplemented!();
 /// match environmentinfotype {
@@ -2843,60 +2682,52 @@ impl EnvironmentInfoDescription {
 /// Specifically, when `environmentinfotype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnvironmentInfoType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EnvironmentInfoType {
     #[allow(missing_docs)] // documentation missing in model
     Bundle,
     #[allow(missing_docs)] // documentation missing in model
     Tail,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnvironmentInfoType {
     fn from(s: &str) -> Self {
         match s {
             "bundle" => EnvironmentInfoType::Bundle,
             "tail" => EnvironmentInfoType::Tail,
-            other => {
-                EnvironmentInfoType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => EnvironmentInfoType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EnvironmentInfoType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnvironmentInfoType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EnvironmentInfoType::from(s))
+                }
+            }
 impl EnvironmentInfoType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnvironmentInfoType::Bundle => "bundle",
             EnvironmentInfoType::Tail => "tail",
-            EnvironmentInfoType::Unknown(value) => value.as_str(),
+            EnvironmentInfoType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["bundle", "tail"]
+        &[
+            "bundle", "tail"
+        ]
     }
 }
 impl AsRef<str> for EnvironmentInfoType {
@@ -2908,7 +2739,7 @@ impl AsRef<str> for EnvironmentInfoType {
 /// <p>Summary information about a platform version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlatformSummary {
+pub struct PlatformSummary  {
     /// <p>The ARN of the platform version.</p>
     #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
@@ -2933,8 +2764,8 @@ pub struct PlatformSummary {
     /// <p>The additions associated with the platform version.</p>
     #[doc(hidden)]
     pub supported_addon_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The state of the platform version in its lifecycle.</p>
-    /// <p>Possible values: <code>recommended</code> | empty</p>
+    /// <p>The state of the platform version in its lifecycle.</p> 
+    /// <p>Possible values: <code>recommended</code> | empty</p> 
     /// <p>If an empty value is returned, the platform version is supported but isn't the recommended one for its branch.</p>
     #[doc(hidden)]
     pub platform_lifecycle_state: std::option::Option<std::string::String>,
@@ -2944,67 +2775,67 @@ pub struct PlatformSummary {
     /// <p>The platform branch to which the platform version belongs.</p>
     #[doc(hidden)]
     pub platform_branch_name: std::option::Option<std::string::String>,
-    /// <p>The state of the platform version's branch in its lifecycle.</p>
+    /// <p>The state of the platform version's branch in its lifecycle.</p> 
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     #[doc(hidden)]
     pub platform_branch_lifecycle_state: std::option::Option<std::string::String>,
 }
 impl PlatformSummary {
     /// <p>The ARN of the platform version.</p>
-    pub fn platform_arn(&self) -> std::option::Option<&str> {
+    pub fn platform_arn(&self) -> std::option::Option<& str> {
         self.platform_arn.as_deref()
     }
     /// <p>The AWS account ID of the person who created the platform version.</p>
-    pub fn platform_owner(&self) -> std::option::Option<&str> {
+    pub fn platform_owner(&self) -> std::option::Option<& str> {
         self.platform_owner.as_deref()
     }
     /// <p>The status of the platform version. You can create an environment from the platform version once it is ready.</p>
-    pub fn platform_status(&self) -> std::option::Option<&crate::model::PlatformStatus> {
+    pub fn platform_status(&self) -> std::option::Option<& crate::model::PlatformStatus> {
         self.platform_status.as_ref()
     }
     /// <p>The category of platform version.</p>
-    pub fn platform_category(&self) -> std::option::Option<&str> {
+    pub fn platform_category(&self) -> std::option::Option<& str> {
         self.platform_category.as_deref()
     }
     /// <p>The operating system used by the platform version.</p>
-    pub fn operating_system_name(&self) -> std::option::Option<&str> {
+    pub fn operating_system_name(&self) -> std::option::Option<& str> {
         self.operating_system_name.as_deref()
     }
     /// <p>The version of the operating system used by the platform version.</p>
-    pub fn operating_system_version(&self) -> std::option::Option<&str> {
+    pub fn operating_system_version(&self) -> std::option::Option<& str> {
         self.operating_system_version.as_deref()
     }
     /// <p>The tiers in which the platform version runs.</p>
-    pub fn supported_tier_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_tier_list(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_tier_list.as_deref()
     }
     /// <p>The additions associated with the platform version.</p>
-    pub fn supported_addon_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_addon_list(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_addon_list.as_deref()
     }
-    /// <p>The state of the platform version in its lifecycle.</p>
-    /// <p>Possible values: <code>recommended</code> | empty</p>
+    /// <p>The state of the platform version in its lifecycle.</p> 
+    /// <p>Possible values: <code>recommended</code> | empty</p> 
     /// <p>If an empty value is returned, the platform version is supported but isn't the recommended one for its branch.</p>
-    pub fn platform_lifecycle_state(&self) -> std::option::Option<&str> {
+    pub fn platform_lifecycle_state(&self) -> std::option::Option<& str> {
         self.platform_lifecycle_state.as_deref()
     }
     /// <p>The version string of the platform version.</p>
-    pub fn platform_version(&self) -> std::option::Option<&str> {
+    pub fn platform_version(&self) -> std::option::Option<& str> {
         self.platform_version.as_deref()
     }
     /// <p>The platform branch to which the platform version belongs.</p>
-    pub fn platform_branch_name(&self) -> std::option::Option<&str> {
+    pub fn platform_branch_name(&self) -> std::option::Option<& str> {
         self.platform_branch_name.as_deref()
     }
-    /// <p>The state of the platform version's branch in its lifecycle.</p>
+    /// <p>The state of the platform version's branch in its lifecycle.</p> 
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
-    pub fn platform_branch_lifecycle_state(&self) -> std::option::Option<&str> {
+    pub fn platform_branch_lifecycle_state(&self) -> std::option::Option<& str> {
         self.platform_branch_lifecycle_state.as_deref()
     }
 }
 /// See [`PlatformSummary`](crate::model::PlatformSummary).
 pub mod platform_summary {
-
+    
     /// A builder for [`PlatformSummary`](crate::model::PlatformSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3029,8 +2860,7 @@ pub mod platform_summary {
         }
         /// <p>The ARN of the platform version.</p>
         pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.platform_arn = input;
-            self
+            self.platform_arn = input; self
         }
         /// <p>The AWS account ID of the person who created the platform version.</p>
         pub fn platform_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3038,12 +2868,8 @@ pub mod platform_summary {
             self
         }
         /// <p>The AWS account ID of the person who created the platform version.</p>
-        pub fn set_platform_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_owner = input;
-            self
+        pub fn set_platform_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_owner = input; self
         }
         /// <p>The status of the platform version. You can create an environment from the platform version once it is ready.</p>
         pub fn platform_status(mut self, input: crate::model::PlatformStatus) -> Self {
@@ -3051,12 +2877,8 @@ pub mod platform_summary {
             self
         }
         /// <p>The status of the platform version. You can create an environment from the platform version once it is ready.</p>
-        pub fn set_platform_status(
-            mut self,
-            input: std::option::Option<crate::model::PlatformStatus>,
-        ) -> Self {
-            self.platform_status = input;
-            self
+        pub fn set_platform_status(mut self, input: std::option::Option<crate::model::PlatformStatus>) -> Self {
+            self.platform_status = input; self
         }
         /// <p>The category of platform version.</p>
         pub fn platform_category(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3064,12 +2886,8 @@ pub mod platform_summary {
             self
         }
         /// <p>The category of platform version.</p>
-        pub fn set_platform_category(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_category = input;
-            self
+        pub fn set_platform_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_category = input; self
         }
         /// <p>The operating system used by the platform version.</p>
         pub fn operating_system_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3077,12 +2895,8 @@ pub mod platform_summary {
             self
         }
         /// <p>The operating system used by the platform version.</p>
-        pub fn set_operating_system_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.operating_system_name = input;
-            self
+        pub fn set_operating_system_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operating_system_name = input; self
         }
         /// <p>The version of the operating system used by the platform version.</p>
         pub fn operating_system_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3090,12 +2904,8 @@ pub mod platform_summary {
             self
         }
         /// <p>The version of the operating system used by the platform version.</p>
-        pub fn set_operating_system_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.operating_system_version = input;
-            self
+        pub fn set_operating_system_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operating_system_version = input; self
         }
         /// Appends an item to `supported_tier_list`.
         ///
@@ -3104,17 +2914,13 @@ pub mod platform_summary {
         /// <p>The tiers in which the platform version runs.</p>
         pub fn supported_tier_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_tier_list.unwrap_or_default();
-            v.push(input.into());
-            self.supported_tier_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_tier_list = Some(v);
+                            self
         }
         /// <p>The tiers in which the platform version runs.</p>
-        pub fn set_supported_tier_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_tier_list = input;
-            self
+        pub fn set_supported_tier_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_tier_list = input; self
         }
         /// Appends an item to `supported_addon_list`.
         ///
@@ -3123,34 +2929,26 @@ pub mod platform_summary {
         /// <p>The additions associated with the platform version.</p>
         pub fn supported_addon_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_addon_list.unwrap_or_default();
-            v.push(input.into());
-            self.supported_addon_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_addon_list = Some(v);
+                            self
         }
         /// <p>The additions associated with the platform version.</p>
-        pub fn set_supported_addon_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_addon_list = input;
-            self
+        pub fn set_supported_addon_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_addon_list = input; self
         }
-        /// <p>The state of the platform version in its lifecycle.</p>
-        /// <p>Possible values: <code>recommended</code> | empty</p>
+        /// <p>The state of the platform version in its lifecycle.</p> 
+        /// <p>Possible values: <code>recommended</code> | empty</p> 
         /// <p>If an empty value is returned, the platform version is supported but isn't the recommended one for its branch.</p>
         pub fn platform_lifecycle_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_lifecycle_state = Some(input.into());
             self
         }
-        /// <p>The state of the platform version in its lifecycle.</p>
-        /// <p>Possible values: <code>recommended</code> | empty</p>
+        /// <p>The state of the platform version in its lifecycle.</p> 
+        /// <p>Possible values: <code>recommended</code> | empty</p> 
         /// <p>If an empty value is returned, the platform version is supported but isn't the recommended one for its branch.</p>
-        pub fn set_platform_lifecycle_state(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_lifecycle_state = input;
-            self
+        pub fn set_platform_lifecycle_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_lifecycle_state = input; self
         }
         /// <p>The version string of the platform version.</p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3158,12 +2956,8 @@ pub mod platform_summary {
             self
         }
         /// <p>The version string of the platform version.</p>
-        pub fn set_platform_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_version = input;
-            self
+        pub fn set_platform_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_version = input; self
         }
         /// <p>The platform branch to which the platform version belongs.</p>
         pub fn platform_branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3171,49 +2965,52 @@ pub mod platform_summary {
             self
         }
         /// <p>The platform branch to which the platform version belongs.</p>
-        pub fn set_platform_branch_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_branch_name = input;
-            self
+        pub fn set_platform_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_branch_name = input; self
         }
-        /// <p>The state of the platform version's branch in its lifecycle.</p>
+        /// <p>The state of the platform version's branch in its lifecycle.</p> 
         /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
-        pub fn platform_branch_lifecycle_state(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn platform_branch_lifecycle_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_branch_lifecycle_state = Some(input.into());
             self
         }
-        /// <p>The state of the platform version's branch in its lifecycle.</p>
+        /// <p>The state of the platform version's branch in its lifecycle.</p> 
         /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
-        pub fn set_platform_branch_lifecycle_state(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_branch_lifecycle_state = input;
-            self
+        pub fn set_platform_branch_lifecycle_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_branch_lifecycle_state = input; self
         }
         /// Consumes the builder and constructs a [`PlatformSummary`](crate::model::PlatformSummary).
         pub fn build(self) -> crate::model::PlatformSummary {
             crate::model::PlatformSummary {
-                platform_arn: self.platform_arn,
-                platform_owner: self.platform_owner,
-                platform_status: self.platform_status,
-                platform_category: self.platform_category,
-                operating_system_name: self.operating_system_name,
-                operating_system_version: self.operating_system_version,
-                supported_tier_list: self.supported_tier_list,
-                supported_addon_list: self.supported_addon_list,
-                platform_lifecycle_state: self.platform_lifecycle_state,
-                platform_version: self.platform_version,
-                platform_branch_name: self.platform_branch_name,
-                platform_branch_lifecycle_state: self.platform_branch_lifecycle_state,
+                platform_arn: self.platform_arn
+                ,
+                platform_owner: self.platform_owner
+                ,
+                platform_status: self.platform_status
+                ,
+                platform_category: self.platform_category
+                ,
+                operating_system_name: self.operating_system_name
+                ,
+                operating_system_version: self.operating_system_version
+                ,
+                supported_tier_list: self.supported_tier_list
+                ,
+                supported_addon_list: self.supported_addon_list
+                ,
+                platform_lifecycle_state: self.platform_lifecycle_state
+                ,
+                platform_version: self.platform_version
+                ,
+                platform_branch_name: self.platform_branch_name
+                ,
+                platform_branch_lifecycle_state: self.platform_branch_lifecycle_state
+                ,
             }
         }
     }
+    
+    
 }
 impl PlatformSummary {
     /// Creates a new builder-style object to manufacture [`PlatformSummary`](crate::model::PlatformSummary).
@@ -3228,9 +3025,9 @@ impl PlatformSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let platformstatus = unimplemented!();
 /// match platformstatus {
@@ -3255,22 +3052,14 @@ impl PlatformSummary {
 /// Specifically, when `platformstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PlatformStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PlatformStatus {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
@@ -3283,7 +3072,7 @@ pub enum PlatformStatus {
     #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PlatformStatus {
     fn from(s: &str) -> Self {
@@ -3293,17 +3082,17 @@ impl std::convert::From<&str> for PlatformStatus {
             "Deleting" => PlatformStatus::Deleting,
             "Failed" => PlatformStatus::Failed,
             "Ready" => PlatformStatus::Ready,
-            other => PlatformStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PlatformStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PlatformStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PlatformStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PlatformStatus::from(s))
+                }
+            }
 impl PlatformStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3313,12 +3102,14 @@ impl PlatformStatus {
             PlatformStatus::Deleting => "Deleting",
             PlatformStatus::Failed => "Failed",
             PlatformStatus::Ready => "Ready",
-            PlatformStatus::Unknown(value) => value.as_str(),
+            PlatformStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Creating", "Deleted", "Deleting", "Failed", "Ready"]
+        &[
+            "Creating", "Deleted", "Deleting", "Failed", "Ready"
+        ]
     }
 }
 impl AsRef<str> for PlatformStatus {
@@ -3327,56 +3118,56 @@ impl AsRef<str> for PlatformStatus {
     }
 }
 
-/// <p>Describes criteria to restrict the results when listing platform versions.</p>
+/// <p>Describes criteria to restrict the results when listing platform versions.</p> 
 /// <p>The filter is evaluated as follows: <code>Type Operator Values[1]</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlatformFilter {
-    /// <p>The platform version attribute to which the filter values are applied.</p>
+pub struct PlatformFilter  {
+    /// <p>The platform version attribute to which the filter values are applied.</p> 
     /// <p>Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> | <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> | <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> | <code>OperatingSystemName</code> </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
-    /// <p>The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p>
+    /// <p>The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p> 
     /// <p>Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>&gt;</code> | <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code> </p>
     #[doc(hidden)]
     pub operator: std::option::Option<std::string::String>,
-    /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p>
-    /// <p>The following list shows valid filter values for some filter attributes.</p>
-    /// <ul>
-    /// <li> <p> <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code> </p> </li>
-    /// <li> <p> <code>PlatformLifecycleState</code>: <code>recommended</code> </p> </li>
-    /// <li> <p> <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
-    /// <li> <p> <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code> </p> </li>
+    /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p> 
+    /// <p>The following list shows valid filter values for some filter attributes.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code> </p> </li> 
+    /// <li> <p> <code>PlatformLifecycleState</code>: <code>recommended</code> </p> </li> 
+    /// <li> <p> <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li> 
+    /// <li> <p> <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PlatformFilter {
-    /// <p>The platform version attribute to which the filter values are applied.</p>
+    /// <p>The platform version attribute to which the filter values are applied.</p> 
     /// <p>Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> | <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> | <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> | <code>OperatingSystemName</code> </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
-    /// <p>The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p>
+    /// <p>The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p> 
     /// <p>Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>&gt;</code> | <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code> </p>
-    pub fn operator(&self) -> std::option::Option<&str> {
+    pub fn operator(&self) -> std::option::Option<& str> {
         self.operator.as_deref()
     }
-    /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p>
-    /// <p>The following list shows valid filter values for some filter attributes.</p>
-    /// <ul>
-    /// <li> <p> <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code> </p> </li>
-    /// <li> <p> <code>PlatformLifecycleState</code>: <code>recommended</code> </p> </li>
-    /// <li> <p> <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
-    /// <li> <p> <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code> </p> </li>
+    /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p> 
+    /// <p>The following list shows valid filter values for some filter attributes.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code> </p> </li> 
+    /// <li> <p> <code>PlatformLifecycleState</code>: <code>recommended</code> </p> </li> 
+    /// <li> <p> <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li> 
+    /// <li> <p> <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code> </p> </li> 
     /// </ul>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`PlatformFilter`](crate::model::PlatformFilter).
 pub mod platform_filter {
-
+    
     /// A builder for [`PlatformFilter`](crate::model::PlatformFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3385,72 +3176,71 @@ pub mod platform_filter {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The platform version attribute to which the filter values are applied.</p>
+        /// <p>The platform version attribute to which the filter values are applied.</p> 
         /// <p>Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> | <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> | <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> | <code>OperatingSystemName</code> </p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The platform version attribute to which the filter values are applied.</p>
+        /// <p>The platform version attribute to which the filter values are applied.</p> 
         /// <p>Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> | <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> | <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> | <code>OperatingSystemName</code> </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
-        /// <p>The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p>
+        /// <p>The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p> 
         /// <p>Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>&gt;</code> | <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code> </p>
         pub fn operator(mut self, input: impl Into<std::string::String>) -> Self {
             self.operator = Some(input.into());
             self
         }
-        /// <p>The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p>
+        /// <p>The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p> 
         /// <p>Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>&gt;</code> | <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code> </p>
         pub fn set_operator(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operator = input;
-            self
+            self.operator = input; self
         }
         /// Appends an item to `values`.
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p>
-        /// <p>The following list shows valid filter values for some filter attributes.</p>
-        /// <ul>
-        /// <li> <p> <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code> </p> </li>
-        /// <li> <p> <code>PlatformLifecycleState</code>: <code>recommended</code> </p> </li>
-        /// <li> <p> <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
-        /// <li> <p> <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code> </p> </li>
+        /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p> 
+        /// <p>The following list shows valid filter values for some filter attributes.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code> </p> </li> 
+        /// <li> <p> <code>PlatformLifecycleState</code>: <code>recommended</code> </p> </li> 
+        /// <li> <p> <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li> 
+        /// <li> <p> <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code> </p> </li> 
         /// </ul>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
-        /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p>
-        /// <p>The following list shows valid filter values for some filter attributes.</p>
-        /// <ul>
-        /// <li> <p> <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code> </p> </li>
-        /// <li> <p> <code>PlatformLifecycleState</code>: <code>recommended</code> </p> </li>
-        /// <li> <p> <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
-        /// <li> <p> <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code> </p> </li>
+        /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p> 
+        /// <p>The following list shows valid filter values for some filter attributes.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code> </p> </li> 
+        /// <li> <p> <code>PlatformLifecycleState</code>: <code>recommended</code> </p> </li> 
+        /// <li> <p> <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li> 
+        /// <li> <p> <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code> </p> </li> 
         /// </ul>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`PlatformFilter`](crate::model::PlatformFilter).
         pub fn build(self) -> crate::model::PlatformFilter {
             crate::model::PlatformFilter {
-                r#type: self.r#type,
-                operator: self.operator,
-                values: self.values,
+                r#type: self.r#type
+                ,
+                operator: self.operator
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl PlatformFilter {
     /// Creates a new builder-style object to manufacture [`PlatformFilter`](crate::model::PlatformFilter).
@@ -3462,54 +3252,54 @@ impl PlatformFilter {
 /// <p>Summary information about a platform branch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlatformBranchSummary {
+pub struct PlatformBranchSummary  {
     /// <p>The name of the platform to which this platform branch belongs.</p>
     #[doc(hidden)]
     pub platform_name: std::option::Option<std::string::String>,
     /// <p>The name of the platform branch.</p>
     #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
-    /// <p>The support life cycle state of the platform branch.</p>
+    /// <p>The support life cycle state of the platform branch.</p> 
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     #[doc(hidden)]
     pub lifecycle_state: std::option::Option<std::string::String>,
-    /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p>
+    /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p> 
     /// <p>A larger <code>BranchOrder</code> value designates a newer platform branch within the platform.</p>
     #[doc(hidden)]
     pub branch_order: i32,
-    /// <p>The environment tiers that platform versions in this branch support.</p>
+    /// <p>The environment tiers that platform versions in this branch support.</p> 
     /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
     #[doc(hidden)]
     pub supported_tier_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PlatformBranchSummary {
     /// <p>The name of the platform to which this platform branch belongs.</p>
-    pub fn platform_name(&self) -> std::option::Option<&str> {
+    pub fn platform_name(&self) -> std::option::Option<& str> {
         self.platform_name.as_deref()
     }
     /// <p>The name of the platform branch.</p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
-    /// <p>The support life cycle state of the platform branch.</p>
+    /// <p>The support life cycle state of the platform branch.</p> 
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
-    pub fn lifecycle_state(&self) -> std::option::Option<&str> {
+    pub fn lifecycle_state(&self) -> std::option::Option<& str> {
         self.lifecycle_state.as_deref()
     }
-    /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p>
+    /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p> 
     /// <p>A larger <code>BranchOrder</code> value designates a newer platform branch within the platform.</p>
     pub fn branch_order(&self) -> i32 {
         self.branch_order
     }
-    /// <p>The environment tiers that platform versions in this branch support.</p>
+    /// <p>The environment tiers that platform versions in this branch support.</p> 
     /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
-    pub fn supported_tier_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_tier_list(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_tier_list.as_deref()
     }
 }
 /// See [`PlatformBranchSummary`](crate::model::PlatformBranchSummary).
 pub mod platform_branch_summary {
-
+    
     /// A builder for [`PlatformBranchSummary`](crate::model::PlatformBranchSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3526,12 +3316,8 @@ pub mod platform_branch_summary {
             self
         }
         /// <p>The name of the platform to which this platform branch belongs.</p>
-        pub fn set_platform_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_name = input;
-            self
+        pub fn set_platform_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_name = input; self
         }
         /// <p>The name of the platform branch.</p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3540,68 +3326,66 @@ pub mod platform_branch_summary {
         }
         /// <p>The name of the platform branch.</p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
-        /// <p>The support life cycle state of the platform branch.</p>
+        /// <p>The support life cycle state of the platform branch.</p> 
         /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
         pub fn lifecycle_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.lifecycle_state = Some(input.into());
             self
         }
-        /// <p>The support life cycle state of the platform branch.</p>
+        /// <p>The support life cycle state of the platform branch.</p> 
         /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
-        pub fn set_lifecycle_state(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.lifecycle_state = input;
-            self
+        pub fn set_lifecycle_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lifecycle_state = input; self
         }
-        /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p>
+        /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p> 
         /// <p>A larger <code>BranchOrder</code> value designates a newer platform branch within the platform.</p>
         pub fn branch_order(mut self, input: i32) -> Self {
             self.branch_order = Some(input);
             self
         }
-        /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p>
+        /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p> 
         /// <p>A larger <code>BranchOrder</code> value designates a newer platform branch within the platform.</p>
         pub fn set_branch_order(mut self, input: std::option::Option<i32>) -> Self {
-            self.branch_order = input;
-            self
+            self.branch_order = input; self
         }
         /// Appends an item to `supported_tier_list`.
         ///
         /// To override the contents of this collection use [`set_supported_tier_list`](Self::set_supported_tier_list).
         ///
-        /// <p>The environment tiers that platform versions in this branch support.</p>
+        /// <p>The environment tiers that platform versions in this branch support.</p> 
         /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
         pub fn supported_tier_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_tier_list.unwrap_or_default();
-            v.push(input.into());
-            self.supported_tier_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_tier_list = Some(v);
+                            self
         }
-        /// <p>The environment tiers that platform versions in this branch support.</p>
+        /// <p>The environment tiers that platform versions in this branch support.</p> 
         /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
-        pub fn set_supported_tier_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_tier_list = input;
-            self
+        pub fn set_supported_tier_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_tier_list = input; self
         }
         /// Consumes the builder and constructs a [`PlatformBranchSummary`](crate::model::PlatformBranchSummary).
         pub fn build(self) -> crate::model::PlatformBranchSummary {
             crate::model::PlatformBranchSummary {
-                platform_name: self.platform_name,
-                branch_name: self.branch_name,
-                lifecycle_state: self.lifecycle_state,
-                branch_order: self.branch_order.unwrap_or_default(),
-                supported_tier_list: self.supported_tier_list,
+                platform_name: self.platform_name
+                ,
+                branch_name: self.branch_name
+                ,
+                lifecycle_state: self.lifecycle_state
+                ,
+                branch_order: self.branch_order
+                    .unwrap_or_default()
+                ,
+                supported_tier_list: self.supported_tier_list
+                ,
             }
         }
     }
+    
+    
 }
 impl PlatformBranchSummary {
     /// Creates a new builder-style object to manufacture [`PlatformBranchSummary`](crate::model::PlatformBranchSummary).
@@ -3610,13 +3394,13 @@ impl PlatformBranchSummary {
     }
 }
 
-/// <p>Describes criteria to restrict a list of results.</p>
-/// <p>For operators that apply a single value to the attribute, the filter is evaluated as follows: <code>Attribute Operator Values[1]</code> </p>
-/// <p>Some operators, e.g. <code>in</code>, can apply multiple values. In this case, the filter is evaluated as a logical union (OR) of applications of the operator to the attribute with each one of the values: <code>(Attribute Operator Values[1]) OR (Attribute Operator Values[2]) OR ...</code> </p>
+/// <p>Describes criteria to restrict a list of results.</p> 
+/// <p>For operators that apply a single value to the attribute, the filter is evaluated as follows: <code>Attribute Operator Values[1]</code> </p> 
+/// <p>Some operators, e.g. <code>in</code>, can apply multiple values. In this case, the filter is evaluated as a logical union (OR) of applications of the operator to the attribute with each one of the values: <code>(Attribute Operator Values[1]) OR (Attribute Operator Values[2]) OR ...</code> </p> 
 /// <p>The valid values for attributes of <code>SearchFilter</code> depend on the API action. For valid values, see the reference page for the API action you're calling that takes a <code>SearchFilter</code> parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchFilter {
+pub struct SearchFilter  {
     /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<std::string::String>,
@@ -3629,21 +3413,21 @@ pub struct SearchFilter {
 }
 impl SearchFilter {
     /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
-    pub fn attribute(&self) -> std::option::Option<&str> {
+    pub fn attribute(&self) -> std::option::Option<& str> {
         self.attribute.as_deref()
     }
     /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
-    pub fn operator(&self) -> std::option::Option<&str> {
+    pub fn operator(&self) -> std::option::Option<& str> {
         self.operator.as_deref()
     }
     /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`SearchFilter`](crate::model::SearchFilter).
 pub mod search_filter {
-
+    
     /// A builder for [`SearchFilter`](crate::model::SearchFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3659,8 +3443,7 @@ pub mod search_filter {
         }
         /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
         pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.attribute = input;
-            self
+            self.attribute = input; self
         }
         /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
         pub fn operator(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3669,8 +3452,7 @@ pub mod search_filter {
         }
         /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
         pub fn set_operator(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operator = input;
-            self
+            self.operator = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -3679,27 +3461,28 @@ pub mod search_filter {
         /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`SearchFilter`](crate::model::SearchFilter).
         pub fn build(self) -> crate::model::SearchFilter {
             crate::model::SearchFilter {
-                attribute: self.attribute,
-                operator: self.operator,
-                values: self.values,
+                attribute: self.attribute
+                ,
+                operator: self.operator
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchFilter {
     /// Creates a new builder-style object to manufacture [`SearchFilter`](crate::model::SearchFilter).
@@ -3711,7 +3494,7 @@ impl SearchFilter {
 /// <p>Describes the solution stack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SolutionStackDescription {
+pub struct SolutionStackDescription  {
     /// <p>The name of the solution stack.</p>
     #[doc(hidden)]
     pub solution_stack_name: std::option::Option<std::string::String>,
@@ -3721,17 +3504,17 @@ pub struct SolutionStackDescription {
 }
 impl SolutionStackDescription {
     /// <p>The name of the solution stack.</p>
-    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+    pub fn solution_stack_name(&self) -> std::option::Option<& str> {
         self.solution_stack_name.as_deref()
     }
     /// <p>The permitted file types allowed for a solution stack.</p>
-    pub fn permitted_file_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn permitted_file_types(&self) -> std::option::Option<& [std::string::String]> {
         self.permitted_file_types.as_deref()
     }
 }
 /// See [`SolutionStackDescription`](crate::model::SolutionStackDescription).
 pub mod solution_stack_description {
-
+    
     /// A builder for [`SolutionStackDescription`](crate::model::SolutionStackDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3745,12 +3528,8 @@ pub mod solution_stack_description {
             self
         }
         /// <p>The name of the solution stack.</p>
-        pub fn set_solution_stack_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.solution_stack_name = input;
-            self
+        pub fn set_solution_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.solution_stack_name = input; self
         }
         /// Appends an item to `permitted_file_types`.
         ///
@@ -3759,26 +3538,26 @@ pub mod solution_stack_description {
         /// <p>The permitted file types allowed for a solution stack.</p>
         pub fn permitted_file_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.permitted_file_types.unwrap_or_default();
-            v.push(input.into());
-            self.permitted_file_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.permitted_file_types = Some(v);
+                            self
         }
         /// <p>The permitted file types allowed for a solution stack.</p>
-        pub fn set_permitted_file_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.permitted_file_types = input;
-            self
+        pub fn set_permitted_file_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.permitted_file_types = input; self
         }
         /// Consumes the builder and constructs a [`SolutionStackDescription`](crate::model::SolutionStackDescription).
         pub fn build(self) -> crate::model::SolutionStackDescription {
             crate::model::SolutionStackDescription {
-                solution_stack_name: self.solution_stack_name,
-                permitted_file_types: self.permitted_file_types,
+                solution_stack_name: self.solution_stack_name
+                ,
+                permitted_file_types: self.permitted_file_types
+                ,
             }
         }
     }
+    
+    
 }
 impl SolutionStackDescription {
     /// Creates a new builder-style object to manufacture [`SolutionStackDescription`](crate::model::SolutionStackDescription).
@@ -3790,7 +3569,7 @@ impl SolutionStackDescription {
 /// <p>Detailed information about a platform version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlatformDescription {
+pub struct PlatformDescription  {
     /// <p>The ARN of the platform version.</p>
     #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
@@ -3832,8 +3611,7 @@ pub struct PlatformDescription {
     pub operating_system_version: std::option::Option<std::string::String>,
     /// <p>The programming languages supported by the platform version.</p>
     #[doc(hidden)]
-    pub programming_languages:
-        std::option::Option<std::vec::Vec<crate::model::PlatformProgrammingLanguage>>,
+    pub programming_languages: std::option::Option<std::vec::Vec<crate::model::PlatformProgrammingLanguage>>,
     /// <p>The frameworks supported by the platform version.</p>
     #[doc(hidden)]
     pub frameworks: std::option::Option<std::vec::Vec<crate::model::PlatformFramework>>,
@@ -3846,113 +3624,111 @@ pub struct PlatformDescription {
     /// <p>The additions supported by the platform version.</p>
     #[doc(hidden)]
     pub supported_addon_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The state of the platform version in its lifecycle.</p>
-    /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p>
+    /// <p>The state of the platform version in its lifecycle.</p> 
+    /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p> 
     /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
     #[doc(hidden)]
     pub platform_lifecycle_state: std::option::Option<std::string::String>,
     /// <p>The platform branch to which the platform version belongs.</p>
     #[doc(hidden)]
     pub platform_branch_name: std::option::Option<std::string::String>,
-    /// <p>The state of the platform version's branch in its lifecycle.</p>
+    /// <p>The state of the platform version's branch in its lifecycle.</p> 
     /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code> </p>
     #[doc(hidden)]
     pub platform_branch_lifecycle_state: std::option::Option<std::string::String>,
 }
 impl PlatformDescription {
     /// <p>The ARN of the platform version.</p>
-    pub fn platform_arn(&self) -> std::option::Option<&str> {
+    pub fn platform_arn(&self) -> std::option::Option<& str> {
         self.platform_arn.as_deref()
     }
     /// <p>The AWS account ID of the person who created the platform version.</p>
-    pub fn platform_owner(&self) -> std::option::Option<&str> {
+    pub fn platform_owner(&self) -> std::option::Option<& str> {
         self.platform_owner.as_deref()
     }
     /// <p>The name of the platform version.</p>
-    pub fn platform_name(&self) -> std::option::Option<&str> {
+    pub fn platform_name(&self) -> std::option::Option<& str> {
         self.platform_name.as_deref()
     }
     /// <p>The version of the platform version.</p>
-    pub fn platform_version(&self) -> std::option::Option<&str> {
+    pub fn platform_version(&self) -> std::option::Option<& str> {
         self.platform_version.as_deref()
     }
     /// <p>The name of the solution stack used by the platform version.</p>
-    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+    pub fn solution_stack_name(&self) -> std::option::Option<& str> {
         self.solution_stack_name.as_deref()
     }
     /// <p>The status of the platform version.</p>
-    pub fn platform_status(&self) -> std::option::Option<&crate::model::PlatformStatus> {
+    pub fn platform_status(&self) -> std::option::Option<& crate::model::PlatformStatus> {
         self.platform_status.as_ref()
     }
     /// <p>The date when the platform version was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date when the platform version was last updated.</p>
-    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
     /// <p>The category of the platform version.</p>
-    pub fn platform_category(&self) -> std::option::Option<&str> {
+    pub fn platform_category(&self) -> std::option::Option<& str> {
         self.platform_category.as_deref()
     }
     /// <p>The description of the platform version.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the maintainer of the platform version.</p>
-    pub fn maintainer(&self) -> std::option::Option<&str> {
+    pub fn maintainer(&self) -> std::option::Option<& str> {
         self.maintainer.as_deref()
     }
     /// <p>The operating system used by the platform version.</p>
-    pub fn operating_system_name(&self) -> std::option::Option<&str> {
+    pub fn operating_system_name(&self) -> std::option::Option<& str> {
         self.operating_system_name.as_deref()
     }
     /// <p>The version of the operating system used by the platform version.</p>
-    pub fn operating_system_version(&self) -> std::option::Option<&str> {
+    pub fn operating_system_version(&self) -> std::option::Option<& str> {
         self.operating_system_version.as_deref()
     }
     /// <p>The programming languages supported by the platform version.</p>
-    pub fn programming_languages(
-        &self,
-    ) -> std::option::Option<&[crate::model::PlatformProgrammingLanguage]> {
+    pub fn programming_languages(&self) -> std::option::Option<& [crate::model::PlatformProgrammingLanguage]> {
         self.programming_languages.as_deref()
     }
     /// <p>The frameworks supported by the platform version.</p>
-    pub fn frameworks(&self) -> std::option::Option<&[crate::model::PlatformFramework]> {
+    pub fn frameworks(&self) -> std::option::Option<& [crate::model::PlatformFramework]> {
         self.frameworks.as_deref()
     }
     /// <p>The custom AMIs supported by the platform version.</p>
-    pub fn custom_ami_list(&self) -> std::option::Option<&[crate::model::CustomAmi]> {
+    pub fn custom_ami_list(&self) -> std::option::Option<& [crate::model::CustomAmi]> {
         self.custom_ami_list.as_deref()
     }
     /// <p>The tiers supported by the platform version.</p>
-    pub fn supported_tier_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_tier_list(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_tier_list.as_deref()
     }
     /// <p>The additions supported by the platform version.</p>
-    pub fn supported_addon_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_addon_list(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_addon_list.as_deref()
     }
-    /// <p>The state of the platform version in its lifecycle.</p>
-    /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p>
+    /// <p>The state of the platform version in its lifecycle.</p> 
+    /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p> 
     /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
-    pub fn platform_lifecycle_state(&self) -> std::option::Option<&str> {
+    pub fn platform_lifecycle_state(&self) -> std::option::Option<& str> {
         self.platform_lifecycle_state.as_deref()
     }
     /// <p>The platform branch to which the platform version belongs.</p>
-    pub fn platform_branch_name(&self) -> std::option::Option<&str> {
+    pub fn platform_branch_name(&self) -> std::option::Option<& str> {
         self.platform_branch_name.as_deref()
     }
-    /// <p>The state of the platform version's branch in its lifecycle.</p>
+    /// <p>The state of the platform version's branch in its lifecycle.</p> 
     /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code> </p>
-    pub fn platform_branch_lifecycle_state(&self) -> std::option::Option<&str> {
+    pub fn platform_branch_lifecycle_state(&self) -> std::option::Option<& str> {
         self.platform_branch_lifecycle_state.as_deref()
     }
 }
 /// See [`PlatformDescription`](crate::model::PlatformDescription).
 pub mod platform_description {
-
+    
     /// A builder for [`PlatformDescription`](crate::model::PlatformDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3969,8 +3745,7 @@ pub mod platform_description {
         pub(crate) maintainer: std::option::Option<std::string::String>,
         pub(crate) operating_system_name: std::option::Option<std::string::String>,
         pub(crate) operating_system_version: std::option::Option<std::string::String>,
-        pub(crate) programming_languages:
-            std::option::Option<std::vec::Vec<crate::model::PlatformProgrammingLanguage>>,
+        pub(crate) programming_languages: std::option::Option<std::vec::Vec<crate::model::PlatformProgrammingLanguage>>,
         pub(crate) frameworks: std::option::Option<std::vec::Vec<crate::model::PlatformFramework>>,
         pub(crate) custom_ami_list: std::option::Option<std::vec::Vec<crate::model::CustomAmi>>,
         pub(crate) supported_tier_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3987,8 +3762,7 @@ pub mod platform_description {
         }
         /// <p>The ARN of the platform version.</p>
         pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.platform_arn = input;
-            self
+            self.platform_arn = input; self
         }
         /// <p>The AWS account ID of the person who created the platform version.</p>
         pub fn platform_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3996,12 +3770,8 @@ pub mod platform_description {
             self
         }
         /// <p>The AWS account ID of the person who created the platform version.</p>
-        pub fn set_platform_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_owner = input;
-            self
+        pub fn set_platform_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_owner = input; self
         }
         /// <p>The name of the platform version.</p>
         pub fn platform_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4009,12 +3779,8 @@ pub mod platform_description {
             self
         }
         /// <p>The name of the platform version.</p>
-        pub fn set_platform_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_name = input;
-            self
+        pub fn set_platform_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_name = input; self
         }
         /// <p>The version of the platform version.</p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4022,12 +3788,8 @@ pub mod platform_description {
             self
         }
         /// <p>The version of the platform version.</p>
-        pub fn set_platform_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_version = input;
-            self
+        pub fn set_platform_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_version = input; self
         }
         /// <p>The name of the solution stack used by the platform version.</p>
         pub fn solution_stack_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4035,12 +3797,8 @@ pub mod platform_description {
             self
         }
         /// <p>The name of the solution stack used by the platform version.</p>
-        pub fn set_solution_stack_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.solution_stack_name = input;
-            self
+        pub fn set_solution_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.solution_stack_name = input; self
         }
         /// <p>The status of the platform version.</p>
         pub fn platform_status(mut self, input: crate::model::PlatformStatus) -> Self {
@@ -4048,12 +3806,8 @@ pub mod platform_description {
             self
         }
         /// <p>The status of the platform version.</p>
-        pub fn set_platform_status(
-            mut self,
-            input: std::option::Option<crate::model::PlatformStatus>,
-        ) -> Self {
-            self.platform_status = input;
-            self
+        pub fn set_platform_status(mut self, input: std::option::Option<crate::model::PlatformStatus>) -> Self {
+            self.platform_status = input; self
         }
         /// <p>The date when the platform version was created.</p>
         pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4061,12 +3815,8 @@ pub mod platform_description {
             self
         }
         /// <p>The date when the platform version was created.</p>
-        pub fn set_date_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_created = input;
-            self
+        pub fn set_date_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_created = input; self
         }
         /// <p>The date when the platform version was last updated.</p>
         pub fn date_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4074,12 +3824,8 @@ pub mod platform_description {
             self
         }
         /// <p>The date when the platform version was last updated.</p>
-        pub fn set_date_updated(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_updated = input;
-            self
+        pub fn set_date_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_updated = input; self
         }
         /// <p>The category of the platform version.</p>
         pub fn platform_category(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4087,12 +3833,8 @@ pub mod platform_description {
             self
         }
         /// <p>The category of the platform version.</p>
-        pub fn set_platform_category(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_category = input;
-            self
+        pub fn set_platform_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_category = input; self
         }
         /// <p>The description of the platform version.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4101,8 +3843,7 @@ pub mod platform_description {
         }
         /// <p>The description of the platform version.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Information about the maintainer of the platform version.</p>
         pub fn maintainer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4111,8 +3852,7 @@ pub mod platform_description {
         }
         /// <p>Information about the maintainer of the platform version.</p>
         pub fn set_maintainer(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.maintainer = input;
-            self
+            self.maintainer = input; self
         }
         /// <p>The operating system used by the platform version.</p>
         pub fn operating_system_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4120,12 +3860,8 @@ pub mod platform_description {
             self
         }
         /// <p>The operating system used by the platform version.</p>
-        pub fn set_operating_system_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.operating_system_name = input;
-            self
+        pub fn set_operating_system_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operating_system_name = input; self
         }
         /// <p>The version of the operating system used by the platform version.</p>
         pub fn operating_system_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4133,34 +3869,23 @@ pub mod platform_description {
             self
         }
         /// <p>The version of the operating system used by the platform version.</p>
-        pub fn set_operating_system_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.operating_system_version = input;
-            self
+        pub fn set_operating_system_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operating_system_version = input; self
         }
         /// Appends an item to `programming_languages`.
         ///
         /// To override the contents of this collection use [`set_programming_languages`](Self::set_programming_languages).
         ///
         /// <p>The programming languages supported by the platform version.</p>
-        pub fn programming_languages(
-            mut self,
-            input: crate::model::PlatformProgrammingLanguage,
-        ) -> Self {
+        pub fn programming_languages(mut self, input: crate::model::PlatformProgrammingLanguage) -> Self {
             let mut v = self.programming_languages.unwrap_or_default();
-            v.push(input);
-            self.programming_languages = Some(v);
-            self
+                            v.push(input);
+                            self.programming_languages = Some(v);
+                            self
         }
         /// <p>The programming languages supported by the platform version.</p>
-        pub fn set_programming_languages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PlatformProgrammingLanguage>>,
-        ) -> Self {
-            self.programming_languages = input;
-            self
+        pub fn set_programming_languages(mut self, input: std::option::Option<std::vec::Vec<crate::model::PlatformProgrammingLanguage>>) -> Self {
+            self.programming_languages = input; self
         }
         /// Appends an item to `frameworks`.
         ///
@@ -4169,17 +3894,13 @@ pub mod platform_description {
         /// <p>The frameworks supported by the platform version.</p>
         pub fn frameworks(mut self, input: crate::model::PlatformFramework) -> Self {
             let mut v = self.frameworks.unwrap_or_default();
-            v.push(input);
-            self.frameworks = Some(v);
-            self
+                            v.push(input);
+                            self.frameworks = Some(v);
+                            self
         }
         /// <p>The frameworks supported by the platform version.</p>
-        pub fn set_frameworks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PlatformFramework>>,
-        ) -> Self {
-            self.frameworks = input;
-            self
+        pub fn set_frameworks(mut self, input: std::option::Option<std::vec::Vec<crate::model::PlatformFramework>>) -> Self {
+            self.frameworks = input; self
         }
         /// Appends an item to `custom_ami_list`.
         ///
@@ -4188,17 +3909,13 @@ pub mod platform_description {
         /// <p>The custom AMIs supported by the platform version.</p>
         pub fn custom_ami_list(mut self, input: crate::model::CustomAmi) -> Self {
             let mut v = self.custom_ami_list.unwrap_or_default();
-            v.push(input);
-            self.custom_ami_list = Some(v);
-            self
+                            v.push(input);
+                            self.custom_ami_list = Some(v);
+                            self
         }
         /// <p>The custom AMIs supported by the platform version.</p>
-        pub fn set_custom_ami_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CustomAmi>>,
-        ) -> Self {
-            self.custom_ami_list = input;
-            self
+        pub fn set_custom_ami_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::CustomAmi>>) -> Self {
+            self.custom_ami_list = input; self
         }
         /// Appends an item to `supported_tier_list`.
         ///
@@ -4207,17 +3924,13 @@ pub mod platform_description {
         /// <p>The tiers supported by the platform version.</p>
         pub fn supported_tier_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_tier_list.unwrap_or_default();
-            v.push(input.into());
-            self.supported_tier_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_tier_list = Some(v);
+                            self
         }
         /// <p>The tiers supported by the platform version.</p>
-        pub fn set_supported_tier_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_tier_list = input;
-            self
+        pub fn set_supported_tier_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_tier_list = input; self
         }
         /// Appends an item to `supported_addon_list`.
         ///
@@ -4226,34 +3939,26 @@ pub mod platform_description {
         /// <p>The additions supported by the platform version.</p>
         pub fn supported_addon_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_addon_list.unwrap_or_default();
-            v.push(input.into());
-            self.supported_addon_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_addon_list = Some(v);
+                            self
         }
         /// <p>The additions supported by the platform version.</p>
-        pub fn set_supported_addon_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_addon_list = input;
-            self
+        pub fn set_supported_addon_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_addon_list = input; self
         }
-        /// <p>The state of the platform version in its lifecycle.</p>
-        /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p>
+        /// <p>The state of the platform version in its lifecycle.</p> 
+        /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p> 
         /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
         pub fn platform_lifecycle_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_lifecycle_state = Some(input.into());
             self
         }
-        /// <p>The state of the platform version in its lifecycle.</p>
-        /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p>
+        /// <p>The state of the platform version in its lifecycle.</p> 
+        /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p> 
         /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
-        pub fn set_platform_lifecycle_state(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_lifecycle_state = input;
-            self
+        pub fn set_platform_lifecycle_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_lifecycle_state = input; self
         }
         /// <p>The platform branch to which the platform version belongs.</p>
         pub fn platform_branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4261,58 +3966,70 @@ pub mod platform_description {
             self
         }
         /// <p>The platform branch to which the platform version belongs.</p>
-        pub fn set_platform_branch_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_branch_name = input;
-            self
+        pub fn set_platform_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_branch_name = input; self
         }
-        /// <p>The state of the platform version's branch in its lifecycle.</p>
+        /// <p>The state of the platform version's branch in its lifecycle.</p> 
         /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code> </p>
-        pub fn platform_branch_lifecycle_state(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn platform_branch_lifecycle_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_branch_lifecycle_state = Some(input.into());
             self
         }
-        /// <p>The state of the platform version's branch in its lifecycle.</p>
+        /// <p>The state of the platform version's branch in its lifecycle.</p> 
         /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code> </p>
-        pub fn set_platform_branch_lifecycle_state(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_branch_lifecycle_state = input;
-            self
+        pub fn set_platform_branch_lifecycle_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_branch_lifecycle_state = input; self
         }
         /// Consumes the builder and constructs a [`PlatformDescription`](crate::model::PlatformDescription).
         pub fn build(self) -> crate::model::PlatformDescription {
             crate::model::PlatformDescription {
-                platform_arn: self.platform_arn,
-                platform_owner: self.platform_owner,
-                platform_name: self.platform_name,
-                platform_version: self.platform_version,
-                solution_stack_name: self.solution_stack_name,
-                platform_status: self.platform_status,
-                date_created: self.date_created,
-                date_updated: self.date_updated,
-                platform_category: self.platform_category,
-                description: self.description,
-                maintainer: self.maintainer,
-                operating_system_name: self.operating_system_name,
-                operating_system_version: self.operating_system_version,
-                programming_languages: self.programming_languages,
-                frameworks: self.frameworks,
-                custom_ami_list: self.custom_ami_list,
-                supported_tier_list: self.supported_tier_list,
-                supported_addon_list: self.supported_addon_list,
-                platform_lifecycle_state: self.platform_lifecycle_state,
-                platform_branch_name: self.platform_branch_name,
-                platform_branch_lifecycle_state: self.platform_branch_lifecycle_state,
+                platform_arn: self.platform_arn
+                ,
+                platform_owner: self.platform_owner
+                ,
+                platform_name: self.platform_name
+                ,
+                platform_version: self.platform_version
+                ,
+                solution_stack_name: self.solution_stack_name
+                ,
+                platform_status: self.platform_status
+                ,
+                date_created: self.date_created
+                ,
+                date_updated: self.date_updated
+                ,
+                platform_category: self.platform_category
+                ,
+                description: self.description
+                ,
+                maintainer: self.maintainer
+                ,
+                operating_system_name: self.operating_system_name
+                ,
+                operating_system_version: self.operating_system_version
+                ,
+                programming_languages: self.programming_languages
+                ,
+                frameworks: self.frameworks
+                ,
+                custom_ami_list: self.custom_ami_list
+                ,
+                supported_tier_list: self.supported_tier_list
+                ,
+                supported_addon_list: self.supported_addon_list
+                ,
+                platform_lifecycle_state: self.platform_lifecycle_state
+                ,
+                platform_branch_name: self.platform_branch_name
+                ,
+                platform_branch_lifecycle_state: self.platform_branch_lifecycle_state
+                ,
             }
         }
     }
+    
+    
 }
 impl PlatformDescription {
     /// Creates a new builder-style object to manufacture [`PlatformDescription`](crate::model::PlatformDescription).
@@ -4324,7 +4041,7 @@ impl PlatformDescription {
 /// <p>A custom AMI available to platforms.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomAmi {
+pub struct CustomAmi  {
     /// <p>The type of virtualization used to create the custom AMI.</p>
     #[doc(hidden)]
     pub virtualization_type: std::option::Option<std::string::String>,
@@ -4334,17 +4051,17 @@ pub struct CustomAmi {
 }
 impl CustomAmi {
     /// <p>The type of virtualization used to create the custom AMI.</p>
-    pub fn virtualization_type(&self) -> std::option::Option<&str> {
+    pub fn virtualization_type(&self) -> std::option::Option<& str> {
         self.virtualization_type.as_deref()
     }
     /// <p>THe ID of the image used to create the custom AMI.</p>
-    pub fn image_id(&self) -> std::option::Option<&str> {
+    pub fn image_id(&self) -> std::option::Option<& str> {
         self.image_id.as_deref()
     }
 }
 /// See [`CustomAmi`](crate::model::CustomAmi).
 pub mod custom_ami {
-
+    
     /// A builder for [`CustomAmi`](crate::model::CustomAmi).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4358,12 +4075,8 @@ pub mod custom_ami {
             self
         }
         /// <p>The type of virtualization used to create the custom AMI.</p>
-        pub fn set_virtualization_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtualization_type = input;
-            self
+        pub fn set_virtualization_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtualization_type = input; self
         }
         /// <p>THe ID of the image used to create the custom AMI.</p>
         pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4372,17 +4085,20 @@ pub mod custom_ami {
         }
         /// <p>THe ID of the image used to create the custom AMI.</p>
         pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_id = input;
-            self
+            self.image_id = input; self
         }
         /// Consumes the builder and constructs a [`CustomAmi`](crate::model::CustomAmi).
         pub fn build(self) -> crate::model::CustomAmi {
             crate::model::CustomAmi {
-                virtualization_type: self.virtualization_type,
-                image_id: self.image_id,
+                virtualization_type: self.virtualization_type
+                ,
+                image_id: self.image_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomAmi {
     /// Creates a new builder-style object to manufacture [`CustomAmi`](crate::model::CustomAmi).
@@ -4394,7 +4110,7 @@ impl CustomAmi {
 /// <p>A framework supported by the platform.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlatformFramework {
+pub struct PlatformFramework  {
     /// <p>The name of the framework.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4404,17 +4120,17 @@ pub struct PlatformFramework {
 }
 impl PlatformFramework {
     /// <p>The name of the framework.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the framework.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`PlatformFramework`](crate::model::PlatformFramework).
 pub mod platform_framework {
-
+    
     /// A builder for [`PlatformFramework`](crate::model::PlatformFramework).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4429,8 +4145,7 @@ pub mod platform_framework {
         }
         /// <p>The name of the framework.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The version of the framework.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4439,17 +4154,20 @@ pub mod platform_framework {
         }
         /// <p>The version of the framework.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`PlatformFramework`](crate::model::PlatformFramework).
         pub fn build(self) -> crate::model::PlatformFramework {
             crate::model::PlatformFramework {
-                name: self.name,
-                version: self.version,
+                name: self.name
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl PlatformFramework {
     /// Creates a new builder-style object to manufacture [`PlatformFramework`](crate::model::PlatformFramework).
@@ -4461,7 +4179,7 @@ impl PlatformFramework {
 /// <p>A programming language supported by the platform.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlatformProgrammingLanguage {
+pub struct PlatformProgrammingLanguage  {
     /// <p>The name of the programming language.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4471,17 +4189,17 @@ pub struct PlatformProgrammingLanguage {
 }
 impl PlatformProgrammingLanguage {
     /// <p>The name of the programming language.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the programming language.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`PlatformProgrammingLanguage`](crate::model::PlatformProgrammingLanguage).
 pub mod platform_programming_language {
-
+    
     /// A builder for [`PlatformProgrammingLanguage`](crate::model::PlatformProgrammingLanguage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4496,8 +4214,7 @@ pub mod platform_programming_language {
         }
         /// <p>The name of the programming language.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The version of the programming language.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4506,17 +4223,20 @@ pub mod platform_programming_language {
         }
         /// <p>The version of the programming language.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`PlatformProgrammingLanguage`](crate::model::PlatformProgrammingLanguage).
         pub fn build(self) -> crate::model::PlatformProgrammingLanguage {
             crate::model::PlatformProgrammingLanguage {
-                name: self.name,
-                version: self.version,
+                name: self.name
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl PlatformProgrammingLanguage {
     /// Creates a new builder-style object to manufacture [`PlatformProgrammingLanguage`](crate::model::PlatformProgrammingLanguage).
@@ -4528,7 +4248,7 @@ impl PlatformProgrammingLanguage {
 /// <p>Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SingleInstanceHealth {
+pub struct SingleInstanceHealth  {
     /// <p>The ID of the Amazon EC2 instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -4562,49 +4282,49 @@ pub struct SingleInstanceHealth {
 }
 impl SingleInstanceHealth {
     /// <p>The ID of the Amazon EC2 instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
-    pub fn health_status(&self) -> std::option::Option<&str> {
+    pub fn health_status(&self) -> std::option::Option<& str> {
         self.health_status.as_deref()
     }
     /// <p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
-    pub fn color(&self) -> std::option::Option<&str> {
+    pub fn color(&self) -> std::option::Option<& str> {
         self.color.as_deref()
     }
     /// <p>Represents the causes, which provide more information about the current health status.</p>
-    pub fn causes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn causes(&self) -> std::option::Option<& [std::string::String]> {
         self.causes.as_deref()
     }
     /// <p>The time at which the EC2 instance was launched.</p>
-    pub fn launched_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn launched_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.launched_at.as_ref()
     }
     /// <p>Request metrics from your application.</p>
-    pub fn application_metrics(&self) -> std::option::Option<&crate::model::ApplicationMetrics> {
+    pub fn application_metrics(&self) -> std::option::Option<& crate::model::ApplicationMetrics> {
         self.application_metrics.as_ref()
     }
     /// <p>Operating system metrics from the instance.</p>
-    pub fn system(&self) -> std::option::Option<&crate::model::SystemStatus> {
+    pub fn system(&self) -> std::option::Option<& crate::model::SystemStatus> {
         self.system.as_ref()
     }
     /// <p>Information about the most recent deployment to an instance.</p>
-    pub fn deployment(&self) -> std::option::Option<&crate::model::Deployment> {
+    pub fn deployment(&self) -> std::option::Option<& crate::model::Deployment> {
         self.deployment.as_ref()
     }
     /// <p>The availability zone in which the instance runs.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The instance's type.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
 }
 /// See [`SingleInstanceHealth`](crate::model::SingleInstanceHealth).
 pub mod single_instance_health {
-
+    
     /// A builder for [`SingleInstanceHealth`](crate::model::SingleInstanceHealth).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4627,8 +4347,7 @@ pub mod single_instance_health {
         }
         /// <p>The ID of the Amazon EC2 instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
         pub fn health_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4636,12 +4355,8 @@ pub mod single_instance_health {
             self
         }
         /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
-        pub fn set_health_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.health_status = input;
-            self
+        pub fn set_health_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.health_status = input; self
         }
         /// <p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
         pub fn color(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4650,8 +4365,7 @@ pub mod single_instance_health {
         }
         /// <p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
         pub fn set_color(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.color = input;
-            self
+            self.color = input; self
         }
         /// Appends an item to `causes`.
         ///
@@ -4660,17 +4374,13 @@ pub mod single_instance_health {
         /// <p>Represents the causes, which provide more information about the current health status.</p>
         pub fn causes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.causes.unwrap_or_default();
-            v.push(input.into());
-            self.causes = Some(v);
-            self
+                            v.push(input.into());
+                            self.causes = Some(v);
+                            self
         }
         /// <p>Represents the causes, which provide more information about the current health status.</p>
-        pub fn set_causes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.causes = input;
-            self
+        pub fn set_causes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.causes = input; self
         }
         /// <p>The time at which the EC2 instance was launched.</p>
         pub fn launched_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4678,12 +4388,8 @@ pub mod single_instance_health {
             self
         }
         /// <p>The time at which the EC2 instance was launched.</p>
-        pub fn set_launched_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.launched_at = input;
-            self
+        pub fn set_launched_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.launched_at = input; self
         }
         /// <p>Request metrics from your application.</p>
         pub fn application_metrics(mut self, input: crate::model::ApplicationMetrics) -> Self {
@@ -4691,12 +4397,8 @@ pub mod single_instance_health {
             self
         }
         /// <p>Request metrics from your application.</p>
-        pub fn set_application_metrics(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationMetrics>,
-        ) -> Self {
-            self.application_metrics = input;
-            self
+        pub fn set_application_metrics(mut self, input: std::option::Option<crate::model::ApplicationMetrics>) -> Self {
+            self.application_metrics = input; self
         }
         /// <p>Operating system metrics from the instance.</p>
         pub fn system(mut self, input: crate::model::SystemStatus) -> Self {
@@ -4704,12 +4406,8 @@ pub mod single_instance_health {
             self
         }
         /// <p>Operating system metrics from the instance.</p>
-        pub fn set_system(
-            mut self,
-            input: std::option::Option<crate::model::SystemStatus>,
-        ) -> Self {
-            self.system = input;
-            self
+        pub fn set_system(mut self, input: std::option::Option<crate::model::SystemStatus>) -> Self {
+            self.system = input; self
         }
         /// <p>Information about the most recent deployment to an instance.</p>
         pub fn deployment(mut self, input: crate::model::Deployment) -> Self {
@@ -4717,12 +4415,8 @@ pub mod single_instance_health {
             self
         }
         /// <p>Information about the most recent deployment to an instance.</p>
-        pub fn set_deployment(
-            mut self,
-            input: std::option::Option<crate::model::Deployment>,
-        ) -> Self {
-            self.deployment = input;
-            self
+        pub fn set_deployment(mut self, input: std::option::Option<crate::model::Deployment>) -> Self {
+            self.deployment = input; self
         }
         /// <p>The availability zone in which the instance runs.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4730,12 +4424,8 @@ pub mod single_instance_health {
             self
         }
         /// <p>The availability zone in which the instance runs.</p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// <p>The instance's type.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4743,29 +4433,37 @@ pub mod single_instance_health {
             self
         }
         /// <p>The instance's type.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// Consumes the builder and constructs a [`SingleInstanceHealth`](crate::model::SingleInstanceHealth).
         pub fn build(self) -> crate::model::SingleInstanceHealth {
             crate::model::SingleInstanceHealth {
-                instance_id: self.instance_id,
-                health_status: self.health_status,
-                color: self.color,
-                causes: self.causes,
-                launched_at: self.launched_at,
-                application_metrics: self.application_metrics,
-                system: self.system,
-                deployment: self.deployment,
-                availability_zone: self.availability_zone,
-                instance_type: self.instance_type,
+                instance_id: self.instance_id
+                ,
+                health_status: self.health_status
+                ,
+                color: self.color
+                ,
+                causes: self.causes
+                ,
+                launched_at: self.launched_at
+                ,
+                application_metrics: self.application_metrics
+                ,
+                system: self.system
+                ,
+                deployment: self.deployment
+                ,
+                availability_zone: self.availability_zone
+                ,
+                instance_type: self.instance_type
+                ,
             }
         }
     }
+    
+    
 }
 impl SingleInstanceHealth {
     /// Creates a new builder-style object to manufacture [`SingleInstanceHealth`](crate::model::SingleInstanceHealth).
@@ -4777,53 +4475,53 @@ impl SingleInstanceHealth {
 /// <p>Information about an application version deployment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Deployment {
+pub struct Deployment  {
     /// <p>The version label of the application version in the deployment.</p>
     #[doc(hidden)]
     pub version_label: std::option::Option<std::string::String>,
     /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
     #[doc(hidden)]
     pub deployment_id: std::option::Option<i64>,
-    /// <p>The status of the deployment:</p>
-    /// <ul>
-    /// <li> <p> <code>In Progress</code> : The deployment is in progress.</p> </li>
-    /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li>
-    /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li>
+    /// <p>The status of the deployment:</p> 
+    /// <ul> 
+    /// <li> <p> <code>In Progress</code> : The deployment is in progress.</p> </li> 
+    /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li> 
+    /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
-    /// <p>For in-progress deployments, the time that the deployment started.</p>
+    /// <p>For in-progress deployments, the time that the deployment started.</p> 
     /// <p>For completed deployments, the time that the deployment ended.</p>
     #[doc(hidden)]
     pub deployment_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Deployment {
     /// <p>The version label of the application version in the deployment.</p>
-    pub fn version_label(&self) -> std::option::Option<&str> {
+    pub fn version_label(&self) -> std::option::Option<& str> {
         self.version_label.as_deref()
     }
     /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
     pub fn deployment_id(&self) -> std::option::Option<i64> {
         self.deployment_id
     }
-    /// <p>The status of the deployment:</p>
-    /// <ul>
-    /// <li> <p> <code>In Progress</code> : The deployment is in progress.</p> </li>
-    /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li>
-    /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li>
+    /// <p>The status of the deployment:</p> 
+    /// <ul> 
+    /// <li> <p> <code>In Progress</code> : The deployment is in progress.</p> </li> 
+    /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li> 
+    /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
-    /// <p>For in-progress deployments, the time that the deployment started.</p>
+    /// <p>For in-progress deployments, the time that the deployment started.</p> 
     /// <p>For completed deployments, the time that the deployment ended.</p>
-    pub fn deployment_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deployment_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.deployment_time.as_ref()
     }
 }
 /// See [`Deployment`](crate::model::Deployment).
 pub mod deployment {
-
+    
     /// A builder for [`Deployment`](crate::model::Deployment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4839,12 +4537,8 @@ pub mod deployment {
             self
         }
         /// <p>The version label of the application version in the deployment.</p>
-        pub fn set_version_label(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.version_label = input;
-            self
+        pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_label = input; self
         }
         /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
         pub fn deployment_id(mut self, input: i64) -> Self {
@@ -4853,54 +4547,54 @@ pub mod deployment {
         }
         /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
         pub fn set_deployment_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.deployment_id = input;
-            self
+            self.deployment_id = input; self
         }
-        /// <p>The status of the deployment:</p>
-        /// <ul>
-        /// <li> <p> <code>In Progress</code> : The deployment is in progress.</p> </li>
-        /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li>
-        /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li>
+        /// <p>The status of the deployment:</p> 
+        /// <ul> 
+        /// <li> <p> <code>In Progress</code> : The deployment is in progress.</p> </li> 
+        /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li> 
+        /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the deployment:</p>
-        /// <ul>
-        /// <li> <p> <code>In Progress</code> : The deployment is in progress.</p> </li>
-        /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li>
-        /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li>
+        /// <p>The status of the deployment:</p> 
+        /// <ul> 
+        /// <li> <p> <code>In Progress</code> : The deployment is in progress.</p> </li> 
+        /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li> 
+        /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
-        /// <p>For in-progress deployments, the time that the deployment started.</p>
+        /// <p>For in-progress deployments, the time that the deployment started.</p> 
         /// <p>For completed deployments, the time that the deployment ended.</p>
         pub fn deployment_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deployment_time = Some(input);
             self
         }
-        /// <p>For in-progress deployments, the time that the deployment started.</p>
+        /// <p>For in-progress deployments, the time that the deployment started.</p> 
         /// <p>For completed deployments, the time that the deployment ended.</p>
-        pub fn set_deployment_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.deployment_time = input;
-            self
+        pub fn set_deployment_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.deployment_time = input; self
         }
         /// Consumes the builder and constructs a [`Deployment`](crate::model::Deployment).
         pub fn build(self) -> crate::model::Deployment {
             crate::model::Deployment {
-                version_label: self.version_label,
-                deployment_id: self.deployment_id,
-                status: self.status,
-                deployment_time: self.deployment_time,
+                version_label: self.version_label
+                ,
+                deployment_id: self.deployment_id
+                ,
+                status: self.status
+                ,
+                deployment_time: self.deployment_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Deployment {
     /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
@@ -4912,7 +4606,7 @@ impl Deployment {
 /// <p>CPU utilization and load average metrics for an Amazon EC2 instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SystemStatus {
+pub struct SystemStatus  {
     /// <p>CPU utilization metrics for the instance.</p>
     #[doc(hidden)]
     pub cpu_utilization: std::option::Option<crate::model::CpuUtilization>,
@@ -4922,17 +4616,17 @@ pub struct SystemStatus {
 }
 impl SystemStatus {
     /// <p>CPU utilization metrics for the instance.</p>
-    pub fn cpu_utilization(&self) -> std::option::Option<&crate::model::CpuUtilization> {
+    pub fn cpu_utilization(&self) -> std::option::Option<& crate::model::CpuUtilization> {
         self.cpu_utilization.as_ref()
     }
     /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
-    pub fn load_average(&self) -> std::option::Option<&[f64]> {
+    pub fn load_average(&self) -> std::option::Option<& [f64]> {
         self.load_average.as_deref()
     }
 }
 /// See [`SystemStatus`](crate::model::SystemStatus).
 pub mod system_status {
-
+    
     /// A builder for [`SystemStatus`](crate::model::SystemStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4946,12 +4640,8 @@ pub mod system_status {
             self
         }
         /// <p>CPU utilization metrics for the instance.</p>
-        pub fn set_cpu_utilization(
-            mut self,
-            input: std::option::Option<crate::model::CpuUtilization>,
-        ) -> Self {
-            self.cpu_utilization = input;
-            self
+        pub fn set_cpu_utilization(mut self, input: std::option::Option<crate::model::CpuUtilization>) -> Self {
+            self.cpu_utilization = input; self
         }
         /// Appends an item to `load_average`.
         ///
@@ -4960,23 +4650,26 @@ pub mod system_status {
         /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
         pub fn load_average(mut self, input: f64) -> Self {
             let mut v = self.load_average.unwrap_or_default();
-            v.push(input);
-            self.load_average = Some(v);
-            self
+                            v.push(input);
+                            self.load_average = Some(v);
+                            self
         }
         /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
         pub fn set_load_average(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.load_average = input;
-            self
+            self.load_average = input; self
         }
         /// Consumes the builder and constructs a [`SystemStatus`](crate::model::SystemStatus).
         pub fn build(self) -> crate::model::SystemStatus {
             crate::model::SystemStatus {
-                cpu_utilization: self.cpu_utilization,
-                load_average: self.load_average,
+                cpu_utilization: self.cpu_utilization
+                ,
+                load_average: self.load_average
+                ,
             }
         }
     }
+    
+    
 }
 impl SystemStatus {
     /// Creates a new builder-style object to manufacture [`SystemStatus`](crate::model::SystemStatus).
@@ -4988,34 +4681,34 @@ impl SystemStatus {
 /// <p>CPU utilization metrics for an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CpuUtilization {
+pub struct CpuUtilization  {
     /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
     pub user: std::option::Option<f64>,
-    /// <p>Available on Linux environments only.</p>
+    /// <p>Available on Linux environments only.</p> 
     /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
     pub nice: std::option::Option<f64>,
-    /// <p>Available on Linux environments only.</p>
+    /// <p>Available on Linux environments only.</p> 
     /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
     pub system: std::option::Option<f64>,
     /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
     pub idle: std::option::Option<f64>,
-    /// <p>Available on Linux environments only.</p>
+    /// <p>Available on Linux environments only.</p> 
     /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
     pub io_wait: std::option::Option<f64>,
-    /// <p>Available on Linux environments only.</p>
+    /// <p>Available on Linux environments only.</p> 
     /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
     pub irq: std::option::Option<f64>,
-    /// <p>Available on Linux environments only.</p>
+    /// <p>Available on Linux environments only.</p> 
     /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
     pub soft_irq: std::option::Option<f64>,
-    /// <p>Available on Windows environments only.</p>
+    /// <p>Available on Windows environments only.</p> 
     /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
     pub privileged: std::option::Option<f64>,
@@ -5025,12 +4718,12 @@ impl CpuUtilization {
     pub fn user(&self) -> std::option::Option<f64> {
         self.user
     }
-    /// <p>Available on Linux environments only.</p>
+    /// <p>Available on Linux environments only.</p> 
     /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
     pub fn nice(&self) -> std::option::Option<f64> {
         self.nice
     }
-    /// <p>Available on Linux environments only.</p>
+    /// <p>Available on Linux environments only.</p> 
     /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
     pub fn system(&self) -> std::option::Option<f64> {
         self.system
@@ -5039,22 +4732,22 @@ impl CpuUtilization {
     pub fn idle(&self) -> std::option::Option<f64> {
         self.idle
     }
-    /// <p>Available on Linux environments only.</p>
+    /// <p>Available on Linux environments only.</p> 
     /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
     pub fn io_wait(&self) -> std::option::Option<f64> {
         self.io_wait
     }
-    /// <p>Available on Linux environments only.</p>
+    /// <p>Available on Linux environments only.</p> 
     /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
     pub fn irq(&self) -> std::option::Option<f64> {
         self.irq
     }
-    /// <p>Available on Linux environments only.</p>
+    /// <p>Available on Linux environments only.</p> 
     /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
     pub fn soft_irq(&self) -> std::option::Option<f64> {
         self.soft_irq
     }
-    /// <p>Available on Windows environments only.</p>
+    /// <p>Available on Windows environments only.</p> 
     /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
     pub fn privileged(&self) -> std::option::Option<f64> {
         self.privileged
@@ -5062,7 +4755,7 @@ impl CpuUtilization {
 }
 /// See [`CpuUtilization`](crate::model::CpuUtilization).
 pub mod cpu_utilization {
-
+    
     /// A builder for [`CpuUtilization`](crate::model::CpuUtilization).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5083,32 +4776,29 @@ pub mod cpu_utilization {
         }
         /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last 10 seconds.</p>
         pub fn set_user(mut self, input: std::option::Option<f64>) -> Self {
-            self.user = input;
-            self
+            self.user = input; self
         }
-        /// <p>Available on Linux environments only.</p>
+        /// <p>Available on Linux environments only.</p> 
         /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
         pub fn nice(mut self, input: f64) -> Self {
             self.nice = Some(input);
             self
         }
-        /// <p>Available on Linux environments only.</p>
+        /// <p>Available on Linux environments only.</p> 
         /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
         pub fn set_nice(mut self, input: std::option::Option<f64>) -> Self {
-            self.nice = input;
-            self
+            self.nice = input; self
         }
-        /// <p>Available on Linux environments only.</p>
+        /// <p>Available on Linux environments only.</p> 
         /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
         pub fn system(mut self, input: f64) -> Self {
             self.system = Some(input);
             self
         }
-        /// <p>Available on Linux environments only.</p>
+        /// <p>Available on Linux environments only.</p> 
         /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
         pub fn set_system(mut self, input: std::option::Option<f64>) -> Self {
-            self.system = input;
-            self
+            self.system = input; self
         }
         /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
         pub fn idle(mut self, input: f64) -> Self {
@@ -5117,71 +4807,76 @@ pub mod cpu_utilization {
         }
         /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
         pub fn set_idle(mut self, input: std::option::Option<f64>) -> Self {
-            self.idle = input;
-            self
+            self.idle = input; self
         }
-        /// <p>Available on Linux environments only.</p>
+        /// <p>Available on Linux environments only.</p> 
         /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
         pub fn io_wait(mut self, input: f64) -> Self {
             self.io_wait = Some(input);
             self
         }
-        /// <p>Available on Linux environments only.</p>
+        /// <p>Available on Linux environments only.</p> 
         /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
         pub fn set_io_wait(mut self, input: std::option::Option<f64>) -> Self {
-            self.io_wait = input;
-            self
+            self.io_wait = input; self
         }
-        /// <p>Available on Linux environments only.</p>
+        /// <p>Available on Linux environments only.</p> 
         /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
         pub fn irq(mut self, input: f64) -> Self {
             self.irq = Some(input);
             self
         }
-        /// <p>Available on Linux environments only.</p>
+        /// <p>Available on Linux environments only.</p> 
         /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
         pub fn set_irq(mut self, input: std::option::Option<f64>) -> Self {
-            self.irq = input;
-            self
+            self.irq = input; self
         }
-        /// <p>Available on Linux environments only.</p>
+        /// <p>Available on Linux environments only.</p> 
         /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
         pub fn soft_irq(mut self, input: f64) -> Self {
             self.soft_irq = Some(input);
             self
         }
-        /// <p>Available on Linux environments only.</p>
+        /// <p>Available on Linux environments only.</p> 
         /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
         pub fn set_soft_irq(mut self, input: std::option::Option<f64>) -> Self {
-            self.soft_irq = input;
-            self
+            self.soft_irq = input; self
         }
-        /// <p>Available on Windows environments only.</p>
+        /// <p>Available on Windows environments only.</p> 
         /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
         pub fn privileged(mut self, input: f64) -> Self {
             self.privileged = Some(input);
             self
         }
-        /// <p>Available on Windows environments only.</p>
+        /// <p>Available on Windows environments only.</p> 
         /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
         pub fn set_privileged(mut self, input: std::option::Option<f64>) -> Self {
-            self.privileged = input;
-            self
+            self.privileged = input; self
         }
         /// Consumes the builder and constructs a [`CpuUtilization`](crate::model::CpuUtilization).
         pub fn build(self) -> crate::model::CpuUtilization {
             crate::model::CpuUtilization {
-                user: self.user,
-                nice: self.nice,
-                system: self.system,
-                idle: self.idle,
-                io_wait: self.io_wait,
-                irq: self.irq,
-                soft_irq: self.soft_irq,
-                privileged: self.privileged,
+                user: self.user
+                ,
+                nice: self.nice
+                ,
+                system: self.system
+                ,
+                idle: self.idle
+                ,
+                io_wait: self.io_wait
+                ,
+                irq: self.irq
+                ,
+                soft_irq: self.soft_irq
+                ,
+                privileged: self.privileged
+                ,
             }
         }
     }
+    
+    
 }
 impl CpuUtilization {
     /// Creates a new builder-style object to manufacture [`CpuUtilization`](crate::model::CpuUtilization).
@@ -5193,7 +4888,7 @@ impl CpuUtilization {
 /// <p>Application request metrics for an AWS Elastic Beanstalk environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationMetrics {
+pub struct ApplicationMetrics  {
     /// <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).</p>
     #[doc(hidden)]
     pub duration: std::option::Option<i32>,
@@ -5217,17 +4912,17 @@ impl ApplicationMetrics {
         self.request_count
     }
     /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
-    pub fn status_codes(&self) -> std::option::Option<&crate::model::StatusCodes> {
+    pub fn status_codes(&self) -> std::option::Option<& crate::model::StatusCodes> {
         self.status_codes.as_ref()
     }
     /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
-    pub fn latency(&self) -> std::option::Option<&crate::model::Latency> {
+    pub fn latency(&self) -> std::option::Option<& crate::model::Latency> {
         self.latency.as_ref()
     }
 }
 /// See [`ApplicationMetrics`](crate::model::ApplicationMetrics).
 pub mod application_metrics {
-
+    
     /// A builder for [`ApplicationMetrics`](crate::model::ApplicationMetrics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5244,8 +4939,7 @@ pub mod application_metrics {
         }
         /// <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).</p>
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration = input;
-            self
+            self.duration = input; self
         }
         /// <p>Average number of requests handled by the web server per second over the last 10 seconds.</p>
         pub fn request_count(mut self, input: i32) -> Self {
@@ -5254,8 +4948,7 @@ pub mod application_metrics {
         }
         /// <p>Average number of requests handled by the web server per second over the last 10 seconds.</p>
         pub fn set_request_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.request_count = input;
-            self
+            self.request_count = input; self
         }
         /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
         pub fn status_codes(mut self, input: crate::model::StatusCodes) -> Self {
@@ -5263,12 +4956,8 @@ pub mod application_metrics {
             self
         }
         /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
-        pub fn set_status_codes(
-            mut self,
-            input: std::option::Option<crate::model::StatusCodes>,
-        ) -> Self {
-            self.status_codes = input;
-            self
+        pub fn set_status_codes(mut self, input: std::option::Option<crate::model::StatusCodes>) -> Self {
+            self.status_codes = input; self
         }
         /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
         pub fn latency(mut self, input: crate::model::Latency) -> Self {
@@ -5277,19 +4966,25 @@ pub mod application_metrics {
         }
         /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
         pub fn set_latency(mut self, input: std::option::Option<crate::model::Latency>) -> Self {
-            self.latency = input;
-            self
+            self.latency = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationMetrics`](crate::model::ApplicationMetrics).
         pub fn build(self) -> crate::model::ApplicationMetrics {
             crate::model::ApplicationMetrics {
-                duration: self.duration,
-                request_count: self.request_count.unwrap_or_default(),
-                status_codes: self.status_codes,
-                latency: self.latency,
+                duration: self.duration
+                ,
+                request_count: self.request_count
+                    .unwrap_or_default()
+                ,
+                status_codes: self.status_codes
+                ,
+                latency: self.latency
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationMetrics {
     /// Creates a new builder-style object to manufacture [`ApplicationMetrics`](crate::model::ApplicationMetrics).
@@ -5301,7 +4996,7 @@ impl ApplicationMetrics {
 /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Latency {
+pub struct Latency  {
     /// <p>The average latency for the slowest 0.1 percent of requests over the last 10 seconds.</p>
     #[doc(hidden)]
     pub p999: std::option::Option<f64>,
@@ -5363,7 +5058,7 @@ impl Latency {
 }
 /// See [`Latency`](crate::model::Latency).
 pub mod latency {
-
+    
     /// A builder for [`Latency`](crate::model::Latency).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5384,8 +5079,7 @@ pub mod latency {
         }
         /// <p>The average latency for the slowest 0.1 percent of requests over the last 10 seconds.</p>
         pub fn set_p999(mut self, input: std::option::Option<f64>) -> Self {
-            self.p999 = input;
-            self
+            self.p999 = input; self
         }
         /// <p>The average latency for the slowest 1 percent of requests over the last 10 seconds.</p>
         pub fn p99(mut self, input: f64) -> Self {
@@ -5394,8 +5088,7 @@ pub mod latency {
         }
         /// <p>The average latency for the slowest 1 percent of requests over the last 10 seconds.</p>
         pub fn set_p99(mut self, input: std::option::Option<f64>) -> Self {
-            self.p99 = input;
-            self
+            self.p99 = input; self
         }
         /// <p>The average latency for the slowest 5 percent of requests over the last 10 seconds.</p>
         pub fn p95(mut self, input: f64) -> Self {
@@ -5404,8 +5097,7 @@ pub mod latency {
         }
         /// <p>The average latency for the slowest 5 percent of requests over the last 10 seconds.</p>
         pub fn set_p95(mut self, input: std::option::Option<f64>) -> Self {
-            self.p95 = input;
-            self
+            self.p95 = input; self
         }
         /// <p>The average latency for the slowest 10 percent of requests over the last 10 seconds.</p>
         pub fn p90(mut self, input: f64) -> Self {
@@ -5414,8 +5106,7 @@ pub mod latency {
         }
         /// <p>The average latency for the slowest 10 percent of requests over the last 10 seconds.</p>
         pub fn set_p90(mut self, input: std::option::Option<f64>) -> Self {
-            self.p90 = input;
-            self
+            self.p90 = input; self
         }
         /// <p>The average latency for the slowest 15 percent of requests over the last 10 seconds.</p>
         pub fn p85(mut self, input: f64) -> Self {
@@ -5424,8 +5115,7 @@ pub mod latency {
         }
         /// <p>The average latency for the slowest 15 percent of requests over the last 10 seconds.</p>
         pub fn set_p85(mut self, input: std::option::Option<f64>) -> Self {
-            self.p85 = input;
-            self
+            self.p85 = input; self
         }
         /// <p>The average latency for the slowest 25 percent of requests over the last 10 seconds.</p>
         pub fn p75(mut self, input: f64) -> Self {
@@ -5434,8 +5124,7 @@ pub mod latency {
         }
         /// <p>The average latency for the slowest 25 percent of requests over the last 10 seconds.</p>
         pub fn set_p75(mut self, input: std::option::Option<f64>) -> Self {
-            self.p75 = input;
-            self
+            self.p75 = input; self
         }
         /// <p>The average latency for the slowest 50 percent of requests over the last 10 seconds.</p>
         pub fn p50(mut self, input: f64) -> Self {
@@ -5444,8 +5133,7 @@ pub mod latency {
         }
         /// <p>The average latency for the slowest 50 percent of requests over the last 10 seconds.</p>
         pub fn set_p50(mut self, input: std::option::Option<f64>) -> Self {
-            self.p50 = input;
-            self
+            self.p50 = input; self
         }
         /// <p>The average latency for the slowest 90 percent of requests over the last 10 seconds.</p>
         pub fn p10(mut self, input: f64) -> Self {
@@ -5454,23 +5142,32 @@ pub mod latency {
         }
         /// <p>The average latency for the slowest 90 percent of requests over the last 10 seconds.</p>
         pub fn set_p10(mut self, input: std::option::Option<f64>) -> Self {
-            self.p10 = input;
-            self
+            self.p10 = input; self
         }
         /// Consumes the builder and constructs a [`Latency`](crate::model::Latency).
         pub fn build(self) -> crate::model::Latency {
             crate::model::Latency {
-                p999: self.p999,
-                p99: self.p99,
-                p95: self.p95,
-                p90: self.p90,
-                p85: self.p85,
-                p75: self.p75,
-                p50: self.p50,
-                p10: self.p10,
+                p999: self.p999
+                ,
+                p99: self.p99
+                ,
+                p95: self.p95
+                ,
+                p90: self.p90
+                ,
+                p85: self.p85
+                ,
+                p75: self.p75
+                ,
+                p50: self.p50
+                ,
+                p10: self.p10
+                ,
             }
         }
     }
+    
+    
 }
 impl Latency {
     /// Creates a new builder-style object to manufacture [`Latency`](crate::model::Latency).
@@ -5482,7 +5179,7 @@ impl Latency {
 /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code Definitions</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StatusCodes {
+pub struct StatusCodes  {
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
     #[doc(hidden)]
     pub status2xx: std::option::Option<i32>,
@@ -5516,7 +5213,7 @@ impl StatusCodes {
 }
 /// See [`StatusCodes`](crate::model::StatusCodes).
 pub mod status_codes {
-
+    
     /// A builder for [`StatusCodes`](crate::model::StatusCodes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5533,8 +5230,7 @@ pub mod status_codes {
         }
         /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
         pub fn set_status2xx(mut self, input: std::option::Option<i32>) -> Self {
-            self.status2xx = input;
-            self
+            self.status2xx = input; self
         }
         /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301, etc.) status code.</p>
         pub fn status3xx(mut self, input: i32) -> Self {
@@ -5543,8 +5239,7 @@ pub mod status_codes {
         }
         /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301, etc.) status code.</p>
         pub fn set_status3xx(mut self, input: std::option::Option<i32>) -> Self {
-            self.status3xx = input;
-            self
+            self.status3xx = input; self
         }
         /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401, etc.) status code.</p>
         pub fn status4xx(mut self, input: i32) -> Self {
@@ -5553,8 +5248,7 @@ pub mod status_codes {
         }
         /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401, etc.) status code.</p>
         pub fn set_status4xx(mut self, input: std::option::Option<i32>) -> Self {
-            self.status4xx = input;
-            self
+            self.status4xx = input; self
         }
         /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
         pub fn status5xx(mut self, input: i32) -> Self {
@@ -5563,19 +5257,24 @@ pub mod status_codes {
         }
         /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
         pub fn set_status5xx(mut self, input: std::option::Option<i32>) -> Self {
-            self.status5xx = input;
-            self
+            self.status5xx = input; self
         }
         /// Consumes the builder and constructs a [`StatusCodes`](crate::model::StatusCodes).
         pub fn build(self) -> crate::model::StatusCodes {
             crate::model::StatusCodes {
-                status2xx: self.status2xx,
-                status3xx: self.status3xx,
-                status4xx: self.status4xx,
-                status5xx: self.status5xx,
+                status2xx: self.status2xx
+                ,
+                status3xx: self.status3xx
+                ,
+                status4xx: self.status4xx
+                ,
+                status5xx: self.status5xx
+                ,
             }
         }
     }
+    
+    
 }
 impl StatusCodes {
     /// Creates a new builder-style object to manufacture [`StatusCodes`](crate::model::StatusCodes).
@@ -5590,9 +5289,9 @@ impl StatusCodes {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instanceshealthattribute = unimplemented!();
 /// match instanceshealthattribute {
@@ -5623,22 +5322,14 @@ impl StatusCodes {
 /// Specifically, when `instanceshealthattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstancesHealthAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstancesHealthAttribute {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -5663,7 +5354,7 @@ pub enum InstancesHealthAttribute {
     #[allow(missing_docs)] // documentation missing in model
     System,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstancesHealthAttribute {
     fn from(s: &str) -> Self {
@@ -5679,19 +5370,17 @@ impl std::convert::From<&str> for InstancesHealthAttribute {
             "LaunchedAt" => InstancesHealthAttribute::LaunchedAt,
             "RefreshedAt" => InstancesHealthAttribute::RefreshedAt,
             "System" => InstancesHealthAttribute::System,
-            other => InstancesHealthAttribute::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InstancesHealthAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InstancesHealthAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstancesHealthAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstancesHealthAttribute::from(s))
+                }
+            }
 impl InstancesHealthAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5707,23 +5396,13 @@ impl InstancesHealthAttribute {
             InstancesHealthAttribute::LaunchedAt => "LaunchedAt",
             InstancesHealthAttribute::RefreshedAt => "RefreshedAt",
             InstancesHealthAttribute::System => "System",
-            InstancesHealthAttribute::Unknown(value) => value.as_str(),
+            InstancesHealthAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "All",
-            "ApplicationMetrics",
-            "AvailabilityZone",
-            "Causes",
-            "Color",
-            "Deployment",
-            "HealthStatus",
-            "InstanceType",
-            "LaunchedAt",
-            "RefreshedAt",
-            "System",
+            "All", "ApplicationMetrics", "AvailabilityZone", "Causes", "Color", "Deployment", "HealthStatus", "InstanceType", "LaunchedAt", "RefreshedAt", "System"
         ]
     }
 }
@@ -5736,7 +5415,7 @@ impl AsRef<str> for InstancesHealthAttribute {
 /// <p>Describes an event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventDescription {
+pub struct EventDescription  {
     /// <p>The date when the event occurred.</p>
     #[doc(hidden)]
     pub event_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -5767,45 +5446,45 @@ pub struct EventDescription {
 }
 impl EventDescription {
     /// <p>The date when the event occurred.</p>
-    pub fn event_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_date.as_ref()
     }
     /// <p>The event message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The application associated with the event.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The release label for the application version associated with this event.</p>
-    pub fn version_label(&self) -> std::option::Option<&str> {
+    pub fn version_label(&self) -> std::option::Option<& str> {
         self.version_label.as_deref()
     }
     /// <p>The name of the configuration associated with this event.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The name of the environment associated with this event.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The ARN of the platform version.</p>
-    pub fn platform_arn(&self) -> std::option::Option<&str> {
+    pub fn platform_arn(&self) -> std::option::Option<& str> {
         self.platform_arn.as_deref()
     }
     /// <p>The web service request ID for the activity of this event.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The severity level of this event.</p>
-    pub fn severity(&self) -> std::option::Option<&crate::model::EventSeverity> {
+    pub fn severity(&self) -> std::option::Option<& crate::model::EventSeverity> {
         self.severity.as_ref()
     }
 }
 /// See [`EventDescription`](crate::model::EventDescription).
 pub mod event_description {
-
+    
     /// A builder for [`EventDescription`](crate::model::EventDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5826,12 +5505,8 @@ pub mod event_description {
             self
         }
         /// <p>The date when the event occurred.</p>
-        pub fn set_event_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.event_date = input;
-            self
+        pub fn set_event_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.event_date = input; self
         }
         /// <p>The event message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5840,8 +5515,7 @@ pub mod event_description {
         }
         /// <p>The event message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The application associated with the event.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5849,12 +5523,8 @@ pub mod event_description {
             self
         }
         /// <p>The application associated with the event.</p>
-        pub fn set_application_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_name = input;
-            self
+        pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_name = input; self
         }
         /// <p>The release label for the application version associated with this event.</p>
         pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5862,12 +5532,8 @@ pub mod event_description {
             self
         }
         /// <p>The release label for the application version associated with this event.</p>
-        pub fn set_version_label(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.version_label = input;
-            self
+        pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_label = input; self
         }
         /// <p>The name of the configuration associated with this event.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5875,12 +5541,8 @@ pub mod event_description {
             self
         }
         /// <p>The name of the configuration associated with this event.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>The name of the environment associated with this event.</p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5888,12 +5550,8 @@ pub mod event_description {
             self
         }
         /// <p>The name of the environment associated with this event.</p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// <p>The ARN of the platform version.</p>
         pub fn platform_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5902,8 +5560,7 @@ pub mod event_description {
         }
         /// <p>The ARN of the platform version.</p>
         pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.platform_arn = input;
-            self
+            self.platform_arn = input; self
         }
         /// <p>The web service request ID for the activity of this event.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5912,8 +5569,7 @@ pub mod event_description {
         }
         /// <p>The web service request ID for the activity of this event.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The severity level of this event.</p>
         pub fn severity(mut self, input: crate::model::EventSeverity) -> Self {
@@ -5921,28 +5577,35 @@ pub mod event_description {
             self
         }
         /// <p>The severity level of this event.</p>
-        pub fn set_severity(
-            mut self,
-            input: std::option::Option<crate::model::EventSeverity>,
-        ) -> Self {
-            self.severity = input;
-            self
+        pub fn set_severity(mut self, input: std::option::Option<crate::model::EventSeverity>) -> Self {
+            self.severity = input; self
         }
         /// Consumes the builder and constructs a [`EventDescription`](crate::model::EventDescription).
         pub fn build(self) -> crate::model::EventDescription {
             crate::model::EventDescription {
-                event_date: self.event_date,
-                message: self.message,
-                application_name: self.application_name,
-                version_label: self.version_label,
-                template_name: self.template_name,
-                environment_name: self.environment_name,
-                platform_arn: self.platform_arn,
-                request_id: self.request_id,
-                severity: self.severity,
+                event_date: self.event_date
+                ,
+                message: self.message
+                ,
+                application_name: self.application_name
+                ,
+                version_label: self.version_label
+                ,
+                template_name: self.template_name
+                ,
+                environment_name: self.environment_name
+                ,
+                platform_arn: self.platform_arn
+                ,
+                request_id: self.request_id
+                ,
+                severity: self.severity
+                ,
             }
         }
     }
+    
+    
 }
 impl EventDescription {
     /// Creates a new builder-style object to manufacture [`EventDescription`](crate::model::EventDescription).
@@ -5957,9 +5620,9 @@ impl EventDescription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eventseverity = unimplemented!();
 /// match eventseverity {
@@ -5985,22 +5648,14 @@ impl EventDescription {
 /// Specifically, when `eventseverity` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EventSeverity::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EventSeverity {
     #[allow(missing_docs)] // documentation missing in model
     Debug,
@@ -6015,7 +5670,7 @@ pub enum EventSeverity {
     #[allow(missing_docs)] // documentation missing in model
     Warn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventSeverity {
     fn from(s: &str) -> Self {
@@ -6026,17 +5681,17 @@ impl std::convert::From<&str> for EventSeverity {
             "INFO" => EventSeverity::Info,
             "TRACE" => EventSeverity::Trace,
             "WARN" => EventSeverity::Warn,
-            other => EventSeverity::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EventSeverity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EventSeverity {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EventSeverity::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EventSeverity::from(s))
+                }
+            }
 impl EventSeverity {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6047,12 +5702,14 @@ impl EventSeverity {
             EventSeverity::Info => "INFO",
             EventSeverity::Trace => "TRACE",
             EventSeverity::Warn => "WARN",
-            EventSeverity::Unknown(value) => value.as_str(),
+            EventSeverity::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEBUG", "ERROR", "FATAL", "INFO", "TRACE", "WARN"]
+        &[
+            "DEBUG", "ERROR", "FATAL", "INFO", "TRACE", "WARN"
+        ]
     }
 }
 impl AsRef<str> for EventSeverity {
@@ -6064,7 +5721,7 @@ impl AsRef<str> for EventSeverity {
 /// <p>Describes the properties of an environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentDescription {
+pub struct EnvironmentDescription  {
     /// <p>The name of this environment.</p>
     #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
@@ -6101,28 +5758,28 @@ pub struct EnvironmentDescription {
     /// <p>The last modified date for this environment.</p>
     #[doc(hidden)]
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The current operational status of the environment:</p>
-    /// <ul>
-    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
-    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
-    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
-    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
-    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
+    /// <p>The current operational status of the environment:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li> 
+    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li> 
+    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li> 
+    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li> 
+    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::EnvironmentStatus>,
-    /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
-    /// <p> <code>true:</code> There is an update in progress. </p>
+    /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p> 
+    /// <p> <code>true:</code> There is an update in progress. </p> 
     /// <p> <code>false:</code> There are no updates currently in progress. </p>
     #[doc(hidden)]
     pub abortable_operation_in_progress: std::option::Option<bool>,
-    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
-    /// <ul>
-    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
-    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
-    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
-    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
-    /// </ul>
+    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li> 
+    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li> 
+    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li> 
+    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li> 
+    /// </ul> 
     /// <p> Default: <code>Grey</code> </p>
     #[doc(hidden)]
     pub health: std::option::Option<crate::model::EnvironmentHealth>,
@@ -6147,109 +5804,109 @@ pub struct EnvironmentDescription {
 }
 impl EnvironmentDescription {
     /// <p>The name of this environment.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The ID of this environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the application associated with this environment.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The application version deployed in this environment.</p>
-    pub fn version_label(&self) -> std::option::Option<&str> {
+    pub fn version_label(&self) -> std::option::Option<& str> {
         self.version_label.as_deref()
     }
     /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
-    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+    pub fn solution_stack_name(&self) -> std::option::Option<& str> {
         self.solution_stack_name.as_deref()
     }
     /// <p>The ARN of the platform version.</p>
-    pub fn platform_arn(&self) -> std::option::Option<&str> {
+    pub fn platform_arn(&self) -> std::option::Option<& str> {
         self.platform_arn.as_deref()
     }
     /// <p>The name of the configuration template used to originally launch this environment.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>Describes this environment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
-    pub fn endpoint_url(&self) -> std::option::Option<&str> {
+    pub fn endpoint_url(&self) -> std::option::Option<& str> {
         self.endpoint_url.as_deref()
     }
     /// <p>The URL to the CNAME for this environment.</p>
-    pub fn cname(&self) -> std::option::Option<&str> {
+    pub fn cname(&self) -> std::option::Option<& str> {
         self.cname.as_deref()
     }
     /// <p>The creation date for this environment.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The last modified date for this environment.</p>
-    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
-    /// <p>The current operational status of the environment:</p>
-    /// <ul>
-    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
-    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
-    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
-    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
-    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
+    /// <p>The current operational status of the environment:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li> 
+    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li> 
+    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li> 
+    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li> 
+    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::EnvironmentStatus> {
         self.status.as_ref()
     }
-    /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
-    /// <p> <code>true:</code> There is an update in progress. </p>
+    /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p> 
+    /// <p> <code>true:</code> There is an update in progress. </p> 
     /// <p> <code>false:</code> There are no updates currently in progress. </p>
     pub fn abortable_operation_in_progress(&self) -> std::option::Option<bool> {
         self.abortable_operation_in_progress
     }
-    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
-    /// <ul>
-    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
-    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
-    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
-    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
-    /// </ul>
+    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li> 
+    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li> 
+    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li> 
+    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li> 
+    /// </ul> 
     /// <p> Default: <code>Grey</code> </p>
-    pub fn health(&self) -> std::option::Option<&crate::model::EnvironmentHealth> {
+    pub fn health(&self) -> std::option::Option<& crate::model::EnvironmentHealth> {
         self.health.as_ref()
     }
     /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
-    pub fn health_status(&self) -> std::option::Option<&crate::model::EnvironmentHealthStatus> {
+    pub fn health_status(&self) -> std::option::Option<& crate::model::EnvironmentHealthStatus> {
         self.health_status.as_ref()
     }
     /// <p>The description of the AWS resources used by this environment.</p>
-    pub fn resources(&self) -> std::option::Option<&crate::model::EnvironmentResourcesDescription> {
+    pub fn resources(&self) -> std::option::Option<& crate::model::EnvironmentResourcesDescription> {
         self.resources.as_ref()
     }
     /// <p>Describes the current tier of this environment.</p>
-    pub fn tier(&self) -> std::option::Option<&crate::model::EnvironmentTier> {
+    pub fn tier(&self) -> std::option::Option<& crate::model::EnvironmentTier> {
         self.tier.as_ref()
     }
     /// <p>A list of links to other environments in the same group.</p>
-    pub fn environment_links(&self) -> std::option::Option<&[crate::model::EnvironmentLink]> {
+    pub fn environment_links(&self) -> std::option::Option<& [crate::model::EnvironmentLink]> {
         self.environment_links.as_deref()
     }
     /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
-    pub fn environment_arn(&self) -> std::option::Option<&str> {
+    pub fn environment_arn(&self) -> std::option::Option<& str> {
         self.environment_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-    pub fn operations_role(&self) -> std::option::Option<&str> {
+    pub fn operations_role(&self) -> std::option::Option<& str> {
         self.operations_role.as_deref()
     }
 }
 /// See [`EnvironmentDescription`](crate::model::EnvironmentDescription).
 pub mod environment_description {
-
+    
     /// A builder for [`EnvironmentDescription`](crate::model::EnvironmentDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6271,8 +5928,7 @@ pub mod environment_description {
         pub(crate) health_status: std::option::Option<crate::model::EnvironmentHealthStatus>,
         pub(crate) resources: std::option::Option<crate::model::EnvironmentResourcesDescription>,
         pub(crate) tier: std::option::Option<crate::model::EnvironmentTier>,
-        pub(crate) environment_links:
-            std::option::Option<std::vec::Vec<crate::model::EnvironmentLink>>,
+        pub(crate) environment_links: std::option::Option<std::vec::Vec<crate::model::EnvironmentLink>>,
         pub(crate) environment_arn: std::option::Option<std::string::String>,
         pub(crate) operations_role: std::option::Option<std::string::String>,
     }
@@ -6283,12 +5939,8 @@ pub mod environment_description {
             self
         }
         /// <p>The name of this environment.</p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// <p>The ID of this environment.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6296,12 +5948,8 @@ pub mod environment_description {
             self
         }
         /// <p>The ID of this environment.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The name of the application associated with this environment.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6309,12 +5957,8 @@ pub mod environment_description {
             self
         }
         /// <p>The name of the application associated with this environment.</p>
-        pub fn set_application_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_name = input;
-            self
+        pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_name = input; self
         }
         /// <p>The application version deployed in this environment.</p>
         pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6322,12 +5966,8 @@ pub mod environment_description {
             self
         }
         /// <p>The application version deployed in this environment.</p>
-        pub fn set_version_label(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.version_label = input;
-            self
+        pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_label = input; self
         }
         /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
         pub fn solution_stack_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6335,12 +5975,8 @@ pub mod environment_description {
             self
         }
         /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
-        pub fn set_solution_stack_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.solution_stack_name = input;
-            self
+        pub fn set_solution_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.solution_stack_name = input; self
         }
         /// <p>The ARN of the platform version.</p>
         pub fn platform_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6349,8 +5985,7 @@ pub mod environment_description {
         }
         /// <p>The ARN of the platform version.</p>
         pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.platform_arn = input;
-            self
+            self.platform_arn = input; self
         }
         /// <p>The name of the configuration template used to originally launch this environment.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6358,12 +5993,8 @@ pub mod environment_description {
             self
         }
         /// <p>The name of the configuration template used to originally launch this environment.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>Describes this environment.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6372,8 +6003,7 @@ pub mod environment_description {
         }
         /// <p>Describes this environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
         pub fn endpoint_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6382,8 +6012,7 @@ pub mod environment_description {
         }
         /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
         pub fn set_endpoint_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_url = input;
-            self
+            self.endpoint_url = input; self
         }
         /// <p>The URL to the CNAME for this environment.</p>
         pub fn cname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6392,8 +6021,7 @@ pub mod environment_description {
         }
         /// <p>The URL to the CNAME for this environment.</p>
         pub fn set_cname(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cname = input;
-            self
+            self.cname = input; self
         }
         /// <p>The creation date for this environment.</p>
         pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6401,12 +6029,8 @@ pub mod environment_description {
             self
         }
         /// <p>The creation date for this environment.</p>
-        pub fn set_date_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_created = input;
-            self
+        pub fn set_date_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_created = input; self
         }
         /// <p>The last modified date for this environment.</p>
         pub fn date_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6414,83 +6038,67 @@ pub mod environment_description {
             self
         }
         /// <p>The last modified date for this environment.</p>
-        pub fn set_date_updated(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_updated = input;
-            self
+        pub fn set_date_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_updated = input; self
         }
-        /// <p>The current operational status of the environment:</p>
-        /// <ul>
-        /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
-        /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
-        /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
-        /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
-        /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
+        /// <p>The current operational status of the environment:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li> 
+        /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li> 
+        /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li> 
+        /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li> 
+        /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::EnvironmentStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The current operational status of the environment:</p>
-        /// <ul>
-        /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
-        /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
-        /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
-        /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
-        /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
+        /// <p>The current operational status of the environment:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li> 
+        /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li> 
+        /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li> 
+        /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li> 
+        /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::EnvironmentStatus>) -> Self {
+            self.status = input; self
         }
-        /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
-        /// <p> <code>true:</code> There is an update in progress. </p>
+        /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p> 
+        /// <p> <code>true:</code> There is an update in progress. </p> 
         /// <p> <code>false:</code> There are no updates currently in progress. </p>
         pub fn abortable_operation_in_progress(mut self, input: bool) -> Self {
             self.abortable_operation_in_progress = Some(input);
             self
         }
-        /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
-        /// <p> <code>true:</code> There is an update in progress. </p>
+        /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p> 
+        /// <p> <code>true:</code> There is an update in progress. </p> 
         /// <p> <code>false:</code> There are no updates currently in progress. </p>
-        pub fn set_abortable_operation_in_progress(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.abortable_operation_in_progress = input;
-            self
+        pub fn set_abortable_operation_in_progress(mut self, input: std::option::Option<bool>) -> Self {
+            self.abortable_operation_in_progress = input; self
         }
-        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
-        /// <ul>
-        /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
-        /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
-        /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
-        /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
-        /// </ul>
+        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li> 
+        /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li> 
+        /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li> 
+        /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li> 
+        /// </ul> 
         /// <p> Default: <code>Grey</code> </p>
         pub fn health(mut self, input: crate::model::EnvironmentHealth) -> Self {
             self.health = Some(input);
             self
         }
-        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
-        /// <ul>
-        /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
-        /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
-        /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
-        /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
-        /// </ul>
+        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li> 
+        /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li> 
+        /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li> 
+        /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li> 
+        /// </ul> 
         /// <p> Default: <code>Grey</code> </p>
-        pub fn set_health(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentHealth>,
-        ) -> Self {
-            self.health = input;
-            self
+        pub fn set_health(mut self, input: std::option::Option<crate::model::EnvironmentHealth>) -> Self {
+            self.health = input; self
         }
         /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
         pub fn health_status(mut self, input: crate::model::EnvironmentHealthStatus) -> Self {
@@ -6498,12 +6106,8 @@ pub mod environment_description {
             self
         }
         /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
-        pub fn set_health_status(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentHealthStatus>,
-        ) -> Self {
-            self.health_status = input;
-            self
+        pub fn set_health_status(mut self, input: std::option::Option<crate::model::EnvironmentHealthStatus>) -> Self {
+            self.health_status = input; self
         }
         /// <p>The description of the AWS resources used by this environment.</p>
         pub fn resources(mut self, input: crate::model::EnvironmentResourcesDescription) -> Self {
@@ -6511,12 +6115,8 @@ pub mod environment_description {
             self
         }
         /// <p>The description of the AWS resources used by this environment.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentResourcesDescription>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<crate::model::EnvironmentResourcesDescription>) -> Self {
+            self.resources = input; self
         }
         /// <p>Describes the current tier of this environment.</p>
         pub fn tier(mut self, input: crate::model::EnvironmentTier) -> Self {
@@ -6524,12 +6124,8 @@ pub mod environment_description {
             self
         }
         /// <p>Describes the current tier of this environment.</p>
-        pub fn set_tier(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentTier>,
-        ) -> Self {
-            self.tier = input;
-            self
+        pub fn set_tier(mut self, input: std::option::Option<crate::model::EnvironmentTier>) -> Self {
+            self.tier = input; self
         }
         /// Appends an item to `environment_links`.
         ///
@@ -6538,17 +6134,13 @@ pub mod environment_description {
         /// <p>A list of links to other environments in the same group.</p>
         pub fn environment_links(mut self, input: crate::model::EnvironmentLink) -> Self {
             let mut v = self.environment_links.unwrap_or_default();
-            v.push(input);
-            self.environment_links = Some(v);
-            self
+                            v.push(input);
+                            self.environment_links = Some(v);
+                            self
         }
         /// <p>A list of links to other environments in the same group.</p>
-        pub fn set_environment_links(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EnvironmentLink>>,
-        ) -> Self {
-            self.environment_links = input;
-            self
+        pub fn set_environment_links(mut self, input: std::option::Option<std::vec::Vec<crate::model::EnvironmentLink>>) -> Self {
+            self.environment_links = input; self
         }
         /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
         pub fn environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6556,12 +6148,8 @@ pub mod environment_description {
             self
         }
         /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
-        pub fn set_environment_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_arn = input;
-            self
+        pub fn set_environment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
         pub fn operations_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6569,40 +6157,59 @@ pub mod environment_description {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-        pub fn set_operations_role(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.operations_role = input;
-            self
+        pub fn set_operations_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operations_role = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentDescription`](crate::model::EnvironmentDescription).
         pub fn build(self) -> crate::model::EnvironmentDescription {
             crate::model::EnvironmentDescription {
-                environment_name: self.environment_name,
-                environment_id: self.environment_id,
-                application_name: self.application_name,
-                version_label: self.version_label,
-                solution_stack_name: self.solution_stack_name,
-                platform_arn: self.platform_arn,
-                template_name: self.template_name,
-                description: self.description,
-                endpoint_url: self.endpoint_url,
-                cname: self.cname,
-                date_created: self.date_created,
-                date_updated: self.date_updated,
-                status: self.status,
-                abortable_operation_in_progress: self.abortable_operation_in_progress,
-                health: self.health,
-                health_status: self.health_status,
-                resources: self.resources,
-                tier: self.tier,
-                environment_links: self.environment_links,
-                environment_arn: self.environment_arn,
-                operations_role: self.operations_role,
+                environment_name: self.environment_name
+                ,
+                environment_id: self.environment_id
+                ,
+                application_name: self.application_name
+                ,
+                version_label: self.version_label
+                ,
+                solution_stack_name: self.solution_stack_name
+                ,
+                platform_arn: self.platform_arn
+                ,
+                template_name: self.template_name
+                ,
+                description: self.description
+                ,
+                endpoint_url: self.endpoint_url
+                ,
+                cname: self.cname
+                ,
+                date_created: self.date_created
+                ,
+                date_updated: self.date_updated
+                ,
+                status: self.status
+                ,
+                abortable_operation_in_progress: self.abortable_operation_in_progress
+                ,
+                health: self.health
+                ,
+                health_status: self.health_status
+                ,
+                resources: self.resources
+                ,
+                tier: self.tier
+                ,
+                environment_links: self.environment_links
+                ,
+                environment_arn: self.environment_arn
+                ,
+                operations_role: self.operations_role
+                ,
             }
         }
     }
+    
+    
 }
 impl EnvironmentDescription {
     /// Creates a new builder-style object to manufacture [`EnvironmentDescription`](crate::model::EnvironmentDescription).
@@ -6614,7 +6221,7 @@ impl EnvironmentDescription {
 /// <p>Describes the AWS resources in use by this environment. This data is live.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentResourceDescription {
+pub struct EnvironmentResourceDescription  {
     /// <p>The name of the environment.</p>
     #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
@@ -6626,8 +6233,7 @@ pub struct EnvironmentResourceDescription {
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>The Auto Scaling launch configurations in use by this environment.</p>
     #[doc(hidden)]
-    pub launch_configurations:
-        std::option::Option<std::vec::Vec<crate::model::LaunchConfiguration>>,
+    pub launch_configurations: std::option::Option<std::vec::Vec<crate::model::LaunchConfiguration>>,
     /// <p>The Amazon EC2 launch templates in use by this environment.</p>
     #[doc(hidden)]
     pub launch_templates: std::option::Option<std::vec::Vec<crate::model::LaunchTemplate>>,
@@ -6643,54 +6249,49 @@ pub struct EnvironmentResourceDescription {
 }
 impl EnvironmentResourceDescription {
     /// <p>The name of the environment.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p> The <code>AutoScalingGroups</code> used by this environment. </p>
-    pub fn auto_scaling_groups(&self) -> std::option::Option<&[crate::model::AutoScalingGroup]> {
+    pub fn auto_scaling_groups(&self) -> std::option::Option<& [crate::model::AutoScalingGroup]> {
         self.auto_scaling_groups.as_deref()
     }
     /// <p>The Amazon EC2 instances used by this environment.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+    pub fn instances(&self) -> std::option::Option<& [crate::model::Instance]> {
         self.instances.as_deref()
     }
     /// <p>The Auto Scaling launch configurations in use by this environment.</p>
-    pub fn launch_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::LaunchConfiguration]> {
+    pub fn launch_configurations(&self) -> std::option::Option<& [crate::model::LaunchConfiguration]> {
         self.launch_configurations.as_deref()
     }
     /// <p>The Amazon EC2 launch templates in use by this environment.</p>
-    pub fn launch_templates(&self) -> std::option::Option<&[crate::model::LaunchTemplate]> {
+    pub fn launch_templates(&self) -> std::option::Option<& [crate::model::LaunchTemplate]> {
         self.launch_templates.as_deref()
     }
     /// <p>The LoadBalancers in use by this environment.</p>
-    pub fn load_balancers(&self) -> std::option::Option<&[crate::model::LoadBalancer]> {
+    pub fn load_balancers(&self) -> std::option::Option<& [crate::model::LoadBalancer]> {
         self.load_balancers.as_deref()
     }
     /// <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
-    pub fn triggers(&self) -> std::option::Option<&[crate::model::Trigger]> {
+    pub fn triggers(&self) -> std::option::Option<& [crate::model::Trigger]> {
         self.triggers.as_deref()
     }
     /// <p>The queues used by this environment.</p>
-    pub fn queues(&self) -> std::option::Option<&[crate::model::Queue]> {
+    pub fn queues(&self) -> std::option::Option<& [crate::model::Queue]> {
         self.queues.as_deref()
     }
 }
 /// See [`EnvironmentResourceDescription`](crate::model::EnvironmentResourceDescription).
 pub mod environment_resource_description {
-
+    
     /// A builder for [`EnvironmentResourceDescription`](crate::model::EnvironmentResourceDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
-        pub(crate) auto_scaling_groups:
-            std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
+        pub(crate) auto_scaling_groups: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
-        pub(crate) launch_configurations:
-            std::option::Option<std::vec::Vec<crate::model::LaunchConfiguration>>,
-        pub(crate) launch_templates:
-            std::option::Option<std::vec::Vec<crate::model::LaunchTemplate>>,
+        pub(crate) launch_configurations: std::option::Option<std::vec::Vec<crate::model::LaunchConfiguration>>,
+        pub(crate) launch_templates: std::option::Option<std::vec::Vec<crate::model::LaunchTemplate>>,
         pub(crate) load_balancers: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
         pub(crate) triggers: std::option::Option<std::vec::Vec<crate::model::Trigger>>,
         pub(crate) queues: std::option::Option<std::vec::Vec<crate::model::Queue>>,
@@ -6702,12 +6303,8 @@ pub mod environment_resource_description {
             self
         }
         /// <p>The name of the environment.</p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// Appends an item to `auto_scaling_groups`.
         ///
@@ -6716,17 +6313,13 @@ pub mod environment_resource_description {
         /// <p> The <code>AutoScalingGroups</code> used by this environment. </p>
         pub fn auto_scaling_groups(mut self, input: crate::model::AutoScalingGroup) -> Self {
             let mut v = self.auto_scaling_groups.unwrap_or_default();
-            v.push(input);
-            self.auto_scaling_groups = Some(v);
-            self
+                            v.push(input);
+                            self.auto_scaling_groups = Some(v);
+                            self
         }
         /// <p> The <code>AutoScalingGroups</code> used by this environment. </p>
-        pub fn set_auto_scaling_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
-        ) -> Self {
-            self.auto_scaling_groups = input;
-            self
+        pub fn set_auto_scaling_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>) -> Self {
+            self.auto_scaling_groups = input; self
         }
         /// Appends an item to `instances`.
         ///
@@ -6735,17 +6328,13 @@ pub mod environment_resource_description {
         /// <p>The Amazon EC2 instances used by this environment.</p>
         pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input);
-            self.instances = Some(v);
-            self
+                            v.push(input);
+                            self.instances = Some(v);
+                            self
         }
         /// <p>The Amazon EC2 instances used by this environment.</p>
-        pub fn set_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Instance>>,
-        ) -> Self {
-            self.instances = input;
-            self
+        pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::Instance>>) -> Self {
+            self.instances = input; self
         }
         /// Appends an item to `launch_configurations`.
         ///
@@ -6754,17 +6343,13 @@ pub mod environment_resource_description {
         /// <p>The Auto Scaling launch configurations in use by this environment.</p>
         pub fn launch_configurations(mut self, input: crate::model::LaunchConfiguration) -> Self {
             let mut v = self.launch_configurations.unwrap_or_default();
-            v.push(input);
-            self.launch_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.launch_configurations = Some(v);
+                            self
         }
         /// <p>The Auto Scaling launch configurations in use by this environment.</p>
-        pub fn set_launch_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LaunchConfiguration>>,
-        ) -> Self {
-            self.launch_configurations = input;
-            self
+        pub fn set_launch_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::LaunchConfiguration>>) -> Self {
+            self.launch_configurations = input; self
         }
         /// Appends an item to `launch_templates`.
         ///
@@ -6773,17 +6358,13 @@ pub mod environment_resource_description {
         /// <p>The Amazon EC2 launch templates in use by this environment.</p>
         pub fn launch_templates(mut self, input: crate::model::LaunchTemplate) -> Self {
             let mut v = self.launch_templates.unwrap_or_default();
-            v.push(input);
-            self.launch_templates = Some(v);
-            self
+                            v.push(input);
+                            self.launch_templates = Some(v);
+                            self
         }
         /// <p>The Amazon EC2 launch templates in use by this environment.</p>
-        pub fn set_launch_templates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LaunchTemplate>>,
-        ) -> Self {
-            self.launch_templates = input;
-            self
+        pub fn set_launch_templates(mut self, input: std::option::Option<std::vec::Vec<crate::model::LaunchTemplate>>) -> Self {
+            self.launch_templates = input; self
         }
         /// Appends an item to `load_balancers`.
         ///
@@ -6792,17 +6373,13 @@ pub mod environment_resource_description {
         /// <p>The LoadBalancers in use by this environment.</p>
         pub fn load_balancers(mut self, input: crate::model::LoadBalancer) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
-            v.push(input);
-            self.load_balancers = Some(v);
-            self
+                            v.push(input);
+                            self.load_balancers = Some(v);
+                            self
         }
         /// <p>The LoadBalancers in use by this environment.</p>
-        pub fn set_load_balancers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
-        ) -> Self {
-            self.load_balancers = input;
-            self
+        pub fn set_load_balancers(mut self, input: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>) -> Self {
+            self.load_balancers = input; self
         }
         /// Appends an item to `triggers`.
         ///
@@ -6811,17 +6388,13 @@ pub mod environment_resource_description {
         /// <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
         pub fn triggers(mut self, input: crate::model::Trigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
-            v.push(input);
-            self.triggers = Some(v);
-            self
+                            v.push(input);
+                            self.triggers = Some(v);
+                            self
         }
         /// <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
-        pub fn set_triggers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Trigger>>,
-        ) -> Self {
-            self.triggers = input;
-            self
+        pub fn set_triggers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Trigger>>) -> Self {
+            self.triggers = input; self
         }
         /// Appends an item to `queues`.
         ///
@@ -6830,32 +6403,38 @@ pub mod environment_resource_description {
         /// <p>The queues used by this environment.</p>
         pub fn queues(mut self, input: crate::model::Queue) -> Self {
             let mut v = self.queues.unwrap_or_default();
-            v.push(input);
-            self.queues = Some(v);
-            self
+                            v.push(input);
+                            self.queues = Some(v);
+                            self
         }
         /// <p>The queues used by this environment.</p>
-        pub fn set_queues(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Queue>>,
-        ) -> Self {
-            self.queues = input;
-            self
+        pub fn set_queues(mut self, input: std::option::Option<std::vec::Vec<crate::model::Queue>>) -> Self {
+            self.queues = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentResourceDescription`](crate::model::EnvironmentResourceDescription).
         pub fn build(self) -> crate::model::EnvironmentResourceDescription {
             crate::model::EnvironmentResourceDescription {
-                environment_name: self.environment_name,
-                auto_scaling_groups: self.auto_scaling_groups,
-                instances: self.instances,
-                launch_configurations: self.launch_configurations,
-                launch_templates: self.launch_templates,
-                load_balancers: self.load_balancers,
-                triggers: self.triggers,
-                queues: self.queues,
+                environment_name: self.environment_name
+                ,
+                auto_scaling_groups: self.auto_scaling_groups
+                ,
+                instances: self.instances
+                ,
+                launch_configurations: self.launch_configurations
+                ,
+                launch_templates: self.launch_templates
+                ,
+                load_balancers: self.load_balancers
+                ,
+                triggers: self.triggers
+                ,
+                queues: self.queues
+                ,
             }
         }
     }
+    
+    
 }
 impl EnvironmentResourceDescription {
     /// Creates a new builder-style object to manufacture [`EnvironmentResourceDescription`](crate::model::EnvironmentResourceDescription).
@@ -6867,7 +6446,7 @@ impl EnvironmentResourceDescription {
 /// <p>Describes a queue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Queue {
+pub struct Queue  {
     /// <p>The name of the queue.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6877,17 +6456,17 @@ pub struct Queue {
 }
 impl Queue {
     /// <p>The name of the queue.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The URL of the queue.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 /// See [`Queue`](crate::model::Queue).
 pub mod queue {
-
+    
     /// A builder for [`Queue`](crate::model::Queue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6902,8 +6481,7 @@ pub mod queue {
         }
         /// <p>The name of the queue.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The URL of the queue.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6912,17 +6490,20 @@ pub mod queue {
         }
         /// <p>The URL of the queue.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Consumes the builder and constructs a [`Queue`](crate::model::Queue).
         pub fn build(self) -> crate::model::Queue {
             crate::model::Queue {
-                name: self.name,
-                url: self.url,
+                name: self.name
+                ,
+                url: self.url
+                ,
             }
         }
     }
+    
+    
 }
 impl Queue {
     /// Creates a new builder-style object to manufacture [`Queue`](crate::model::Queue).
@@ -6934,20 +6515,20 @@ impl Queue {
 /// <p>Describes a trigger.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Trigger {
+pub struct Trigger  {
     /// <p>The name of the trigger.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl Trigger {
     /// <p>The name of the trigger.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`Trigger`](crate::model::Trigger).
 pub mod trigger {
-
+    
     /// A builder for [`Trigger`](crate::model::Trigger).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6961,14 +6542,18 @@ pub mod trigger {
         }
         /// <p>The name of the trigger.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`Trigger`](crate::model::Trigger).
         pub fn build(self) -> crate::model::Trigger {
-            crate::model::Trigger { name: self.name }
+            crate::model::Trigger {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl Trigger {
     /// Creates a new builder-style object to manufacture [`Trigger`](crate::model::Trigger).
@@ -6980,20 +6565,20 @@ impl Trigger {
 /// <p>Describes a LoadBalancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoadBalancer {
+pub struct LoadBalancer  {
     /// <p>The name of the LoadBalancer.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl LoadBalancer {
     /// <p>The name of the LoadBalancer.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`LoadBalancer`](crate::model::LoadBalancer).
 pub mod load_balancer {
-
+    
     /// A builder for [`LoadBalancer`](crate::model::LoadBalancer).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7007,14 +6592,18 @@ pub mod load_balancer {
         }
         /// <p>The name of the LoadBalancer.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`LoadBalancer`](crate::model::LoadBalancer).
         pub fn build(self) -> crate::model::LoadBalancer {
-            crate::model::LoadBalancer { name: self.name }
+            crate::model::LoadBalancer {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl LoadBalancer {
     /// Creates a new builder-style object to manufacture [`LoadBalancer`](crate::model::LoadBalancer).
@@ -7026,20 +6615,20 @@ impl LoadBalancer {
 /// <p>Describes an Amazon EC2 launch template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchTemplate {
+pub struct LaunchTemplate  {
     /// <p>The ID of the launch template.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl LaunchTemplate {
     /// <p>The ID of the launch template.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`LaunchTemplate`](crate::model::LaunchTemplate).
 pub mod launch_template {
-
+    
     /// A builder for [`LaunchTemplate`](crate::model::LaunchTemplate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7053,14 +6642,18 @@ pub mod launch_template {
         }
         /// <p>The ID of the launch template.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`LaunchTemplate`](crate::model::LaunchTemplate).
         pub fn build(self) -> crate::model::LaunchTemplate {
-            crate::model::LaunchTemplate { id: self.id }
+            crate::model::LaunchTemplate {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl LaunchTemplate {
     /// Creates a new builder-style object to manufacture [`LaunchTemplate`](crate::model::LaunchTemplate).
@@ -7072,20 +6665,20 @@ impl LaunchTemplate {
 /// <p>Describes an Auto Scaling launch configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchConfiguration {
+pub struct LaunchConfiguration  {
     /// <p>The name of the launch configuration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl LaunchConfiguration {
     /// <p>The name of the launch configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`LaunchConfiguration`](crate::model::LaunchConfiguration).
 pub mod launch_configuration {
-
+    
     /// A builder for [`LaunchConfiguration`](crate::model::LaunchConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7099,14 +6692,18 @@ pub mod launch_configuration {
         }
         /// <p>The name of the launch configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`LaunchConfiguration`](crate::model::LaunchConfiguration).
         pub fn build(self) -> crate::model::LaunchConfiguration {
-            crate::model::LaunchConfiguration { name: self.name }
+            crate::model::LaunchConfiguration {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl LaunchConfiguration {
     /// Creates a new builder-style object to manufacture [`LaunchConfiguration`](crate::model::LaunchConfiguration).
@@ -7118,20 +6715,20 @@ impl LaunchConfiguration {
 /// <p>The description of an Amazon EC2 instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Instance {
+pub struct Instance  {
     /// <p>The ID of the Amazon EC2 instance.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl Instance {
     /// <p>The ID of the Amazon EC2 instance.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
-
+    
     /// A builder for [`Instance`](crate::model::Instance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7145,14 +6742,18 @@ pub mod instance {
         }
         /// <p>The ID of the Amazon EC2 instance.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`Instance`](crate::model::Instance).
         pub fn build(self) -> crate::model::Instance {
-            crate::model::Instance { id: self.id }
+            crate::model::Instance {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl Instance {
     /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
@@ -7164,20 +6765,20 @@ impl Instance {
 /// <p>Describes an Auto Scaling launch configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoScalingGroup {
+pub struct AutoScalingGroup  {
     /// <p>The name of the <code>AutoScalingGroup</code> . </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AutoScalingGroup {
     /// <p>The name of the <code>AutoScalingGroup</code> . </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`AutoScalingGroup`](crate::model::AutoScalingGroup).
 pub mod auto_scaling_group {
-
+    
     /// A builder for [`AutoScalingGroup`](crate::model::AutoScalingGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7191,14 +6792,18 @@ pub mod auto_scaling_group {
         }
         /// <p>The name of the <code>AutoScalingGroup</code> . </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`AutoScalingGroup`](crate::model::AutoScalingGroup).
         pub fn build(self) -> crate::model::AutoScalingGroup {
-            crate::model::AutoScalingGroup { name: self.name }
+            crate::model::AutoScalingGroup {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl AutoScalingGroup {
     /// Creates a new builder-style object to manufacture [`AutoScalingGroup`](crate::model::AutoScalingGroup).
@@ -7210,7 +6815,7 @@ impl AutoScalingGroup {
 /// <p>The record of an upcoming or in-progress managed action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ManagedAction {
+pub struct ManagedAction  {
     /// <p>A unique identifier for the managed action.</p>
     #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
@@ -7229,29 +6834,29 @@ pub struct ManagedAction {
 }
 impl ManagedAction {
     /// <p>A unique identifier for the managed action.</p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>A description of the managed action.</p>
-    pub fn action_description(&self) -> std::option::Option<&str> {
+    pub fn action_description(&self) -> std::option::Option<& str> {
         self.action_description.as_deref()
     }
     /// <p>The type of managed action.</p>
-    pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
+    pub fn action_type(&self) -> std::option::Option<& crate::model::ActionType> {
         self.action_type.as_ref()
     }
     /// <p>The status of the managed action. If the action is <code>Scheduled</code>, you can apply it immediately with <code>ApplyEnvironmentManagedAction</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ActionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ActionStatus> {
         self.status.as_ref()
     }
     /// <p>The start time of the maintenance window in which the managed action will execute.</p>
-    pub fn window_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn window_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.window_start_time.as_ref()
     }
 }
 /// See [`ManagedAction`](crate::model::ManagedAction).
 pub mod managed_action {
-
+    
     /// A builder for [`ManagedAction`](crate::model::ManagedAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7269,8 +6874,7 @@ pub mod managed_action {
         }
         /// <p>A unique identifier for the managed action.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// <p>A description of the managed action.</p>
         pub fn action_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7278,12 +6882,8 @@ pub mod managed_action {
             self
         }
         /// <p>A description of the managed action.</p>
-        pub fn set_action_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.action_description = input;
-            self
+        pub fn set_action_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.action_description = input; self
         }
         /// <p>The type of managed action.</p>
         pub fn action_type(mut self, input: crate::model::ActionType) -> Self {
@@ -7291,12 +6891,8 @@ pub mod managed_action {
             self
         }
         /// <p>The type of managed action.</p>
-        pub fn set_action_type(
-            mut self,
-            input: std::option::Option<crate::model::ActionType>,
-        ) -> Self {
-            self.action_type = input;
-            self
+        pub fn set_action_type(mut self, input: std::option::Option<crate::model::ActionType>) -> Self {
+            self.action_type = input; self
         }
         /// <p>The status of the managed action. If the action is <code>Scheduled</code>, you can apply it immediately with <code>ApplyEnvironmentManagedAction</code>.</p>
         pub fn status(mut self, input: crate::model::ActionStatus) -> Self {
@@ -7304,12 +6900,8 @@ pub mod managed_action {
             self
         }
         /// <p>The status of the managed action. If the action is <code>Scheduled</code>, you can apply it immediately with <code>ApplyEnvironmentManagedAction</code>.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ActionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ActionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The start time of the maintenance window in which the managed action will execute.</p>
         pub fn window_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7317,24 +6909,27 @@ pub mod managed_action {
             self
         }
         /// <p>The start time of the maintenance window in which the managed action will execute.</p>
-        pub fn set_window_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.window_start_time = input;
-            self
+        pub fn set_window_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.window_start_time = input; self
         }
         /// Consumes the builder and constructs a [`ManagedAction`](crate::model::ManagedAction).
         pub fn build(self) -> crate::model::ManagedAction {
             crate::model::ManagedAction {
-                action_id: self.action_id,
-                action_description: self.action_description,
-                action_type: self.action_type,
-                status: self.status,
-                window_start_time: self.window_start_time,
+                action_id: self.action_id
+                ,
+                action_description: self.action_description
+                ,
+                action_type: self.action_type
+                ,
+                status: self.status
+                ,
+                window_start_time: self.window_start_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ManagedAction {
     /// Creates a new builder-style object to manufacture [`ManagedAction`](crate::model::ManagedAction).
@@ -7349,9 +6944,9 @@ impl ManagedAction {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let actionstatus = unimplemented!();
 /// match actionstatus {
@@ -7375,22 +6970,14 @@ impl ManagedAction {
 /// Specifically, when `actionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `ActionStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ActionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
@@ -7401,7 +6988,7 @@ pub enum ActionStatus {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActionStatus {
     fn from(s: &str) -> Self {
@@ -7410,17 +6997,17 @@ impl std::convert::From<&str> for ActionStatus {
             "Running" => ActionStatus::Running,
             "Scheduled" => ActionStatus::Scheduled,
             "Unknown" => ActionStatus::UnknownValue,
-            other => ActionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ActionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ActionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ActionStatus::from(s))
+                }
+            }
 impl ActionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7429,12 +7016,14 @@ impl ActionStatus {
             ActionStatus::Running => "Running",
             ActionStatus::Scheduled => "Scheduled",
             ActionStatus::UnknownValue => "Unknown",
-            ActionStatus::Unknown(value) => value.as_str(),
+            ActionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Pending", "Running", "Scheduled", "Unknown"]
+        &[
+            "Pending", "Running", "Scheduled", "Unknown"
+        ]
     }
 }
 impl AsRef<str> for ActionStatus {
@@ -7449,9 +7038,9 @@ impl AsRef<str> for ActionStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let actiontype = unimplemented!();
 /// match actiontype {
@@ -7474,22 +7063,14 @@ impl AsRef<str> for ActionStatus {
 /// Specifically, when `actiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `ActionType::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ActionType {
     #[allow(missing_docs)] // documentation missing in model
     InstanceRefresh,
@@ -7498,7 +7079,7 @@ pub enum ActionType {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActionType {
     fn from(s: &str) -> Self {
@@ -7506,17 +7087,17 @@ impl std::convert::From<&str> for ActionType {
             "InstanceRefresh" => ActionType::InstanceRefresh,
             "PlatformUpdate" => ActionType::PlatformUpdate,
             "Unknown" => ActionType::UnknownValue,
-            other => ActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ActionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ActionType::from(s))
+                }
+            }
 impl ActionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7524,12 +7105,14 @@ impl ActionType {
             ActionType::InstanceRefresh => "InstanceRefresh",
             ActionType::PlatformUpdate => "PlatformUpdate",
             ActionType::UnknownValue => "Unknown",
-            ActionType::Unknown(value) => value.as_str(),
+            ActionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["InstanceRefresh", "PlatformUpdate", "Unknown"]
+        &[
+            "InstanceRefresh", "PlatformUpdate", "Unknown"
+        ]
     }
 }
 impl AsRef<str> for ActionType {
@@ -7541,7 +7124,7 @@ impl AsRef<str> for ActionType {
 /// <p>The record of a completed or failed managed action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ManagedActionHistoryItem {
+pub struct ManagedActionHistoryItem  {
     /// <p>A unique identifier for the managed action.</p>
     #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
@@ -7569,41 +7152,41 @@ pub struct ManagedActionHistoryItem {
 }
 impl ManagedActionHistoryItem {
     /// <p>A unique identifier for the managed action.</p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>The type of the managed action.</p>
-    pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
+    pub fn action_type(&self) -> std::option::Option<& crate::model::ActionType> {
         self.action_type.as_ref()
     }
     /// <p>A description of the managed action.</p>
-    pub fn action_description(&self) -> std::option::Option<&str> {
+    pub fn action_description(&self) -> std::option::Option<& str> {
         self.action_description.as_deref()
     }
     /// <p>If the action failed, the type of failure.</p>
-    pub fn failure_type(&self) -> std::option::Option<&crate::model::FailureType> {
+    pub fn failure_type(&self) -> std::option::Option<& crate::model::FailureType> {
         self.failure_type.as_ref()
     }
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ActionHistoryStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ActionHistoryStatus> {
         self.status.as_ref()
     }
     /// <p>If the action failed, a description of the failure.</p>
-    pub fn failure_description(&self) -> std::option::Option<&str> {
+    pub fn failure_description(&self) -> std::option::Option<& str> {
         self.failure_description.as_deref()
     }
     /// <p>The date and time that the action started executing.</p>
-    pub fn executed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn executed_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.executed_time.as_ref()
     }
     /// <p>The date and time that the action finished executing.</p>
-    pub fn finished_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn finished_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.finished_time.as_ref()
     }
 }
 /// See [`ManagedActionHistoryItem`](crate::model::ManagedActionHistoryItem).
 pub mod managed_action_history_item {
-
+    
     /// A builder for [`ManagedActionHistoryItem`](crate::model::ManagedActionHistoryItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7624,8 +7207,7 @@ pub mod managed_action_history_item {
         }
         /// <p>A unique identifier for the managed action.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// <p>The type of the managed action.</p>
         pub fn action_type(mut self, input: crate::model::ActionType) -> Self {
@@ -7633,12 +7215,8 @@ pub mod managed_action_history_item {
             self
         }
         /// <p>The type of the managed action.</p>
-        pub fn set_action_type(
-            mut self,
-            input: std::option::Option<crate::model::ActionType>,
-        ) -> Self {
-            self.action_type = input;
-            self
+        pub fn set_action_type(mut self, input: std::option::Option<crate::model::ActionType>) -> Self {
+            self.action_type = input; self
         }
         /// <p>A description of the managed action.</p>
         pub fn action_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7646,12 +7224,8 @@ pub mod managed_action_history_item {
             self
         }
         /// <p>A description of the managed action.</p>
-        pub fn set_action_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.action_description = input;
-            self
+        pub fn set_action_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.action_description = input; self
         }
         /// <p>If the action failed, the type of failure.</p>
         pub fn failure_type(mut self, input: crate::model::FailureType) -> Self {
@@ -7659,12 +7233,8 @@ pub mod managed_action_history_item {
             self
         }
         /// <p>If the action failed, the type of failure.</p>
-        pub fn set_failure_type(
-            mut self,
-            input: std::option::Option<crate::model::FailureType>,
-        ) -> Self {
-            self.failure_type = input;
-            self
+        pub fn set_failure_type(mut self, input: std::option::Option<crate::model::FailureType>) -> Self {
+            self.failure_type = input; self
         }
         /// <p>The status of the action.</p>
         pub fn status(mut self, input: crate::model::ActionHistoryStatus) -> Self {
@@ -7672,12 +7242,8 @@ pub mod managed_action_history_item {
             self
         }
         /// <p>The status of the action.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ActionHistoryStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ActionHistoryStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>If the action failed, a description of the failure.</p>
         pub fn failure_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7685,12 +7251,8 @@ pub mod managed_action_history_item {
             self
         }
         /// <p>If the action failed, a description of the failure.</p>
-        pub fn set_failure_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_description = input;
-            self
+        pub fn set_failure_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_description = input; self
         }
         /// <p>The date and time that the action started executing.</p>
         pub fn executed_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7698,12 +7260,8 @@ pub mod managed_action_history_item {
             self
         }
         /// <p>The date and time that the action started executing.</p>
-        pub fn set_executed_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.executed_time = input;
-            self
+        pub fn set_executed_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.executed_time = input; self
         }
         /// <p>The date and time that the action finished executing.</p>
         pub fn finished_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7711,27 +7269,33 @@ pub mod managed_action_history_item {
             self
         }
         /// <p>The date and time that the action finished executing.</p>
-        pub fn set_finished_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.finished_time = input;
-            self
+        pub fn set_finished_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.finished_time = input; self
         }
         /// Consumes the builder and constructs a [`ManagedActionHistoryItem`](crate::model::ManagedActionHistoryItem).
         pub fn build(self) -> crate::model::ManagedActionHistoryItem {
             crate::model::ManagedActionHistoryItem {
-                action_id: self.action_id,
-                action_type: self.action_type,
-                action_description: self.action_description,
-                failure_type: self.failure_type,
-                status: self.status,
-                failure_description: self.failure_description,
-                executed_time: self.executed_time,
-                finished_time: self.finished_time,
+                action_id: self.action_id
+                ,
+                action_type: self.action_type
+                ,
+                action_description: self.action_description
+                ,
+                failure_type: self.failure_type
+                ,
+                status: self.status
+                ,
+                failure_description: self.failure_description
+                ,
+                executed_time: self.executed_time
+                ,
+                finished_time: self.finished_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ManagedActionHistoryItem {
     /// Creates a new builder-style object to manufacture [`ManagedActionHistoryItem`](crate::model::ManagedActionHistoryItem).
@@ -7746,9 +7310,9 @@ impl ManagedActionHistoryItem {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let actionhistorystatus = unimplemented!();
 /// match actionhistorystatus {
@@ -7771,22 +7335,14 @@ impl ManagedActionHistoryItem {
 /// Specifically, when `actionhistorystatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActionHistoryStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `ActionHistoryStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ActionHistoryStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -7795,7 +7351,7 @@ pub enum ActionHistoryStatus {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActionHistoryStatus {
     fn from(s: &str) -> Self {
@@ -7803,19 +7359,17 @@ impl std::convert::From<&str> for ActionHistoryStatus {
             "Completed" => ActionHistoryStatus::Completed,
             "Failed" => ActionHistoryStatus::Failed,
             "Unknown" => ActionHistoryStatus::UnknownValue,
-            other => {
-                ActionHistoryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ActionHistoryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ActionHistoryStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActionHistoryStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ActionHistoryStatus::from(s))
+                }
+            }
 impl ActionHistoryStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7823,12 +7377,14 @@ impl ActionHistoryStatus {
             ActionHistoryStatus::Completed => "Completed",
             ActionHistoryStatus::Failed => "Failed",
             ActionHistoryStatus::UnknownValue => "Unknown",
-            ActionHistoryStatus::Unknown(value) => value.as_str(),
+            ActionHistoryStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Completed", "Failed", "Unknown"]
+        &[
+            "Completed", "Failed", "Unknown"
+        ]
     }
 }
 impl AsRef<str> for ActionHistoryStatus {
@@ -7843,9 +7399,9 @@ impl AsRef<str> for ActionHistoryStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let failuretype = unimplemented!();
 /// match failuretype {
@@ -7872,22 +7428,14 @@ impl AsRef<str> for ActionHistoryStatus {
 /// Specifically, when `failuretype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FailureType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FailureType {
     #[allow(missing_docs)] // documentation missing in model
     CancellationFailed,
@@ -7904,7 +7452,7 @@ pub enum FailureType {
     #[allow(missing_docs)] // documentation missing in model
     UpdateCancelled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FailureType {
     fn from(s: &str) -> Self {
@@ -7916,17 +7464,17 @@ impl std::convert::From<&str> for FailureType {
             "RollbackFailed" => FailureType::RollbackFailed,
             "RollbackSuccessful" => FailureType::RollbackSuccessful,
             "UpdateCancelled" => FailureType::UpdateCancelled,
-            other => FailureType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FailureType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FailureType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FailureType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FailureType::from(s))
+                }
+            }
 impl FailureType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7938,19 +7486,13 @@ impl FailureType {
             FailureType::RollbackFailed => "RollbackFailed",
             FailureType::RollbackSuccessful => "RollbackSuccessful",
             FailureType::UpdateCancelled => "UpdateCancelled",
-            FailureType::Unknown(value) => value.as_str(),
+            FailureType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CancellationFailed",
-            "InternalFailure",
-            "InvalidEnvironmentState",
-            "PermissionsError",
-            "RollbackFailed",
-            "RollbackSuccessful",
-            "UpdateCancelled",
+            "CancellationFailed", "InternalFailure", "InvalidEnvironmentState", "PermissionsError", "RollbackFailed", "RollbackSuccessful", "UpdateCancelled"
         ]
     }
 }
@@ -7963,7 +7505,7 @@ impl AsRef<str> for FailureType {
 /// <p>Represents summary information about the health of an instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceHealthSummary {
+pub struct InstanceHealthSummary  {
     /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
     #[doc(hidden)]
     pub no_data: std::option::Option<i32>,
@@ -8025,7 +7567,7 @@ impl InstanceHealthSummary {
 }
 /// See [`InstanceHealthSummary`](crate::model::InstanceHealthSummary).
 pub mod instance_health_summary {
-
+    
     /// A builder for [`InstanceHealthSummary`](crate::model::InstanceHealthSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8046,8 +7588,7 @@ pub mod instance_health_summary {
         }
         /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
         pub fn set_no_data(mut self, input: std::option::Option<i32>) -> Self {
-            self.no_data = input;
-            self
+            self.no_data = input; self
         }
         /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
         pub fn unknown(mut self, input: i32) -> Self {
@@ -8056,8 +7597,7 @@ pub mod instance_health_summary {
         }
         /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
         pub fn set_unknown(mut self, input: std::option::Option<i32>) -> Self {
-            self.unknown = input;
-            self
+            self.unknown = input; self
         }
         /// <p> <b>Grey.</b> An operation is in progress on an instance within the command timeout.</p>
         pub fn pending(mut self, input: i32) -> Self {
@@ -8066,8 +7606,7 @@ pub mod instance_health_summary {
         }
         /// <p> <b>Grey.</b> An operation is in progress on an instance within the command timeout.</p>
         pub fn set_pending(mut self, input: std::option::Option<i32>) -> Self {
-            self.pending = input;
-            self
+            self.pending = input; self
         }
         /// <p> <b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.</p>
         pub fn ok(mut self, input: i32) -> Self {
@@ -8076,8 +7615,7 @@ pub mod instance_health_summary {
         }
         /// <p> <b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.</p>
         pub fn set_ok(mut self, input: std::option::Option<i32>) -> Self {
-            self.ok = input;
-            self
+            self.ok = input; self
         }
         /// <p> <b>Green.</b> An operation is in progress on an instance.</p>
         pub fn info(mut self, input: i32) -> Self {
@@ -8086,8 +7624,7 @@ pub mod instance_health_summary {
         }
         /// <p> <b>Green.</b> An operation is in progress on an instance.</p>
         pub fn set_info(mut self, input: std::option::Option<i32>) -> Self {
-            self.info = input;
-            self
+            self.info = input; self
         }
         /// <p> <b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an instance or environment.</p>
         pub fn warning(mut self, input: i32) -> Self {
@@ -8096,8 +7633,7 @@ pub mod instance_health_summary {
         }
         /// <p> <b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an instance or environment.</p>
         pub fn set_warning(mut self, input: std::option::Option<i32>) -> Self {
-            self.warning = input;
-            self
+            self.warning = input; self
         }
         /// <p> <b>Red.</b> The health agent is reporting a high number of request failures or other issues for an instance or environment.</p>
         pub fn degraded(mut self, input: i32) -> Self {
@@ -8106,8 +7642,7 @@ pub mod instance_health_summary {
         }
         /// <p> <b>Red.</b> The health agent is reporting a high number of request failures or other issues for an instance or environment.</p>
         pub fn set_degraded(mut self, input: std::option::Option<i32>) -> Self {
-            self.degraded = input;
-            self
+            self.degraded = input; self
         }
         /// <p> <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance or environment.</p>
         pub fn severe(mut self, input: i32) -> Self {
@@ -8116,23 +7651,32 @@ pub mod instance_health_summary {
         }
         /// <p> <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance or environment.</p>
         pub fn set_severe(mut self, input: std::option::Option<i32>) -> Self {
-            self.severe = input;
-            self
+            self.severe = input; self
         }
         /// Consumes the builder and constructs a [`InstanceHealthSummary`](crate::model::InstanceHealthSummary).
         pub fn build(self) -> crate::model::InstanceHealthSummary {
             crate::model::InstanceHealthSummary {
-                no_data: self.no_data,
-                unknown: self.unknown,
-                pending: self.pending,
-                ok: self.ok,
-                info: self.info,
-                warning: self.warning,
-                degraded: self.degraded,
-                severe: self.severe,
+                no_data: self.no_data
+                ,
+                unknown: self.unknown
+                ,
+                pending: self.pending
+                ,
+                ok: self.ok
+                ,
+                info: self.info
+                ,
+                warning: self.warning
+                ,
+                degraded: self.degraded
+                ,
+                severe: self.severe
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceHealthSummary {
     /// Creates a new builder-style object to manufacture [`InstanceHealthSummary`](crate::model::InstanceHealthSummary).
@@ -8147,9 +7691,9 @@ impl InstanceHealthSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let environmenthealthattribute = unimplemented!();
 /// match environmenthealthattribute {
@@ -8177,22 +7721,14 @@ impl InstanceHealthSummary {
 /// Specifically, when `environmenthealthattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnvironmentHealthAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EnvironmentHealthAttribute {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -8211,7 +7747,7 @@ pub enum EnvironmentHealthAttribute {
     #[allow(missing_docs)] // documentation missing in model
     Status,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnvironmentHealthAttribute {
     fn from(s: &str) -> Self {
@@ -8224,19 +7760,17 @@ impl std::convert::From<&str> for EnvironmentHealthAttribute {
             "InstancesHealth" => EnvironmentHealthAttribute::InstancesHealth,
             "RefreshedAt" => EnvironmentHealthAttribute::RefreshedAt,
             "Status" => EnvironmentHealthAttribute::Status,
-            other => EnvironmentHealthAttribute::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EnvironmentHealthAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EnvironmentHealthAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnvironmentHealthAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EnvironmentHealthAttribute::from(s))
+                }
+            }
 impl EnvironmentHealthAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8249,20 +7783,13 @@ impl EnvironmentHealthAttribute {
             EnvironmentHealthAttribute::InstancesHealth => "InstancesHealth",
             EnvironmentHealthAttribute::RefreshedAt => "RefreshedAt",
             EnvironmentHealthAttribute::Status => "Status",
-            EnvironmentHealthAttribute::Unknown(value) => value.as_str(),
+            EnvironmentHealthAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "All",
-            "ApplicationMetrics",
-            "Causes",
-            "Color",
-            "HealthStatus",
-            "InstancesHealth",
-            "RefreshedAt",
-            "Status",
+            "All", "ApplicationMetrics", "Causes", "Color", "HealthStatus", "InstancesHealth", "RefreshedAt", "Status"
         ]
     }
 }
@@ -8275,7 +7802,7 @@ impl AsRef<str> for EnvironmentHealthAttribute {
 /// <p>Describes the settings for a configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigurationSettingsDescription {
+pub struct ConfigurationSettingsDescription  {
     /// <p>The name of the solution stack this configuration set uses.</p>
     #[doc(hidden)]
     pub solution_stack_name: std::option::Option<std::string::String>,
@@ -8294,12 +7821,12 @@ pub struct ConfigurationSettingsDescription {
     /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
     #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
-    /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
-    /// <ul>
-    /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
-    /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
-    /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
-    /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
+    /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p> 
+    /// <ul> 
+    /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li> 
+    /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li> 
+    /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li> 
+    /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub deployment_status: std::option::Option<crate::model::ConfigurationDeploymentStatus>,
@@ -8311,64 +7838,59 @@ pub struct ConfigurationSettingsDescription {
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of the configuration options and their values in this configuration set.</p>
     #[doc(hidden)]
-    pub option_settings:
-        std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
+    pub option_settings: std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
 }
 impl ConfigurationSettingsDescription {
     /// <p>The name of the solution stack this configuration set uses.</p>
-    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+    pub fn solution_stack_name(&self) -> std::option::Option<& str> {
         self.solution_stack_name.as_deref()
     }
     /// <p>The ARN of the platform version.</p>
-    pub fn platform_arn(&self) -> std::option::Option<&str> {
+    pub fn platform_arn(&self) -> std::option::Option<& str> {
         self.platform_arn.as_deref()
     }
     /// <p>The name of the application associated with this configuration set.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>Describes this configuration set.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
-    /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
-    /// <ul>
-    /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
-    /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
-    /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
-    /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
+    /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p> 
+    /// <ul> 
+    /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li> 
+    /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li> 
+    /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li> 
+    /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li> 
     /// </ul>
-    pub fn deployment_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ConfigurationDeploymentStatus> {
+    pub fn deployment_status(&self) -> std::option::Option<& crate::model::ConfigurationDeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>The date (in UTC time) when this configuration set was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
-    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
     /// <p>A list of the configuration options and their values in this configuration set.</p>
-    pub fn option_settings(
-        &self,
-    ) -> std::option::Option<&[crate::model::ConfigurationOptionSetting]> {
+    pub fn option_settings(&self) -> std::option::Option<& [crate::model::ConfigurationOptionSetting]> {
         self.option_settings.as_deref()
     }
 }
 /// See [`ConfigurationSettingsDescription`](crate::model::ConfigurationSettingsDescription).
 pub mod configuration_settings_description {
-
+    
     /// A builder for [`ConfigurationSettingsDescription`](crate::model::ConfigurationSettingsDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8378,12 +7900,10 @@ pub mod configuration_settings_description {
         pub(crate) template_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
-        pub(crate) deployment_status:
-            std::option::Option<crate::model::ConfigurationDeploymentStatus>,
+        pub(crate) deployment_status: std::option::Option<crate::model::ConfigurationDeploymentStatus>,
         pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) date_updated: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) option_settings:
-            std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
+        pub(crate) option_settings: std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
     }
     impl Builder {
         /// <p>The name of the solution stack this configuration set uses.</p>
@@ -8392,12 +7912,8 @@ pub mod configuration_settings_description {
             self
         }
         /// <p>The name of the solution stack this configuration set uses.</p>
-        pub fn set_solution_stack_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.solution_stack_name = input;
-            self
+        pub fn set_solution_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.solution_stack_name = input; self
         }
         /// <p>The ARN of the platform version.</p>
         pub fn platform_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8406,8 +7922,7 @@ pub mod configuration_settings_description {
         }
         /// <p>The ARN of the platform version.</p>
         pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.platform_arn = input;
-            self
+            self.platform_arn = input; self
         }
         /// <p>The name of the application associated with this configuration set.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8415,12 +7930,8 @@ pub mod configuration_settings_description {
             self
         }
         /// <p>The name of the application associated with this configuration set.</p>
-        pub fn set_application_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_name = input;
-            self
+        pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_name = input; self
         }
         /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8428,12 +7939,8 @@ pub mod configuration_settings_description {
             self
         }
         /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// <p>Describes this configuration set.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8442,8 +7949,7 @@ pub mod configuration_settings_description {
         }
         /// <p>Describes this configuration set.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8451,40 +7957,29 @@ pub mod configuration_settings_description {
             self
         }
         /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
-        /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
-        /// <ul>
-        /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
-        /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
-        /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
-        /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
+        /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p> 
+        /// <ul> 
+        /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li> 
+        /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li> 
+        /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li> 
+        /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li> 
         /// </ul>
-        pub fn deployment_status(
-            mut self,
-            input: crate::model::ConfigurationDeploymentStatus,
-        ) -> Self {
+        pub fn deployment_status(mut self, input: crate::model::ConfigurationDeploymentStatus) -> Self {
             self.deployment_status = Some(input);
             self
         }
-        /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
-        /// <ul>
-        /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
-        /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
-        /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
-        /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
+        /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p> 
+        /// <ul> 
+        /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li> 
+        /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li> 
+        /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li> 
+        /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li> 
         /// </ul>
-        pub fn set_deployment_status(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationDeploymentStatus>,
-        ) -> Self {
-            self.deployment_status = input;
-            self
+        pub fn set_deployment_status(mut self, input: std::option::Option<crate::model::ConfigurationDeploymentStatus>) -> Self {
+            self.deployment_status = input; self
         }
         /// <p>The date (in UTC time) when this configuration set was created.</p>
         pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8492,12 +7987,8 @@ pub mod configuration_settings_description {
             self
         }
         /// <p>The date (in UTC time) when this configuration set was created.</p>
-        pub fn set_date_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_created = input;
-            self
+        pub fn set_date_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_created = input; self
         }
         /// <p>The date (in UTC time) when this configuration set was last modified.</p>
         pub fn date_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8505,12 +7996,8 @@ pub mod configuration_settings_description {
             self
         }
         /// <p>The date (in UTC time) when this configuration set was last modified.</p>
-        pub fn set_date_updated(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_updated = input;
-            self
+        pub fn set_date_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_updated = input; self
         }
         /// Appends an item to `option_settings`.
         ///
@@ -8519,34 +8006,42 @@ pub mod configuration_settings_description {
         /// <p>A list of the configuration options and their values in this configuration set.</p>
         pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
             let mut v = self.option_settings.unwrap_or_default();
-            v.push(input);
-            self.option_settings = Some(v);
-            self
+                            v.push(input);
+                            self.option_settings = Some(v);
+                            self
         }
         /// <p>A list of the configuration options and their values in this configuration set.</p>
-        pub fn set_option_settings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
-        ) -> Self {
-            self.option_settings = input;
-            self
+        pub fn set_option_settings(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>) -> Self {
+            self.option_settings = input; self
         }
         /// Consumes the builder and constructs a [`ConfigurationSettingsDescription`](crate::model::ConfigurationSettingsDescription).
         pub fn build(self) -> crate::model::ConfigurationSettingsDescription {
             crate::model::ConfigurationSettingsDescription {
-                solution_stack_name: self.solution_stack_name,
-                platform_arn: self.platform_arn,
-                application_name: self.application_name,
-                template_name: self.template_name,
-                description: self.description,
-                environment_name: self.environment_name,
-                deployment_status: self.deployment_status,
-                date_created: self.date_created,
-                date_updated: self.date_updated,
-                option_settings: self.option_settings,
+                solution_stack_name: self.solution_stack_name
+                ,
+                platform_arn: self.platform_arn
+                ,
+                application_name: self.application_name
+                ,
+                template_name: self.template_name
+                ,
+                description: self.description
+                ,
+                environment_name: self.environment_name
+                ,
+                deployment_status: self.deployment_status
+                ,
+                date_created: self.date_created
+                ,
+                date_updated: self.date_updated
+                ,
+                option_settings: self.option_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigurationSettingsDescription {
     /// Creates a new builder-style object to manufacture [`ConfigurationSettingsDescription`](crate::model::ConfigurationSettingsDescription).
@@ -8558,7 +8053,7 @@ impl ConfigurationSettingsDescription {
 /// <p>Describes the possible values for a configuration option.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigurationOptionDescription {
+pub struct ConfigurationOptionDescription  {
     /// <p>A unique namespace identifying the option's associated AWS resource.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -8568,29 +8063,29 @@ pub struct ConfigurationOptionDescription {
     /// <p>The default value for this configuration option.</p>
     #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
-    /// <p>An indication of which action is required if the value for this configuration option changes:</p>
-    /// <ul>
-    /// <li> <p> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</p> </li>
-    /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li>
-    /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li>
+    /// <p>An indication of which action is required if the value for this configuration option changes:</p> 
+    /// <ul> 
+    /// <li> <p> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</p> </li> 
+    /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li> 
+    /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub change_severity: std::option::Option<std::string::String>,
-    /// <p>An indication of whether the user defined this configuration option:</p>
-    /// <ul>
-    /// <li> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings. </p> </li>
-    /// <li> <p> <code>false</code> : This configuration was not defined by the user.</p> </li>
-    /// </ul>
-    /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p>
+    /// <p>An indication of whether the user defined this configuration option:</p> 
+    /// <ul> 
+    /// <li> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings. </p> </li> 
+    /// <li> <p> <code>false</code> : This configuration was not defined by the user.</p> </li> 
+    /// </ul> 
+    /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p> 
     /// <p> Valid Values: <code>true</code> | <code>false</code> </p>
     #[doc(hidden)]
     pub user_defined: std::option::Option<bool>,
-    /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p> </li>
-    /// <li> <p> <code>List</code> : Values for this option are multiple selections from the possible values.</p> </li>
-    /// <li> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p> </li>
-    /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li>
+    /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p> </li> 
+    /// <li> <p> <code>List</code> : Values for this option are multiple selections from the possible values.</p> </li> 
+    /// <li> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p> </li> 
+    /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub value_type: std::option::Option<crate::model::ConfigurationOptionValueType>,
@@ -8612,48 +8107,48 @@ pub struct ConfigurationOptionDescription {
 }
 impl ConfigurationOptionDescription {
     /// <p>A unique namespace identifying the option's associated AWS resource.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the configuration option.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The default value for this configuration option.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
-    /// <p>An indication of which action is required if the value for this configuration option changes:</p>
-    /// <ul>
-    /// <li> <p> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</p> </li>
-    /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li>
-    /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li>
+    /// <p>An indication of which action is required if the value for this configuration option changes:</p> 
+    /// <ul> 
+    /// <li> <p> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</p> </li> 
+    /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li> 
+    /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li> 
     /// </ul>
-    pub fn change_severity(&self) -> std::option::Option<&str> {
+    pub fn change_severity(&self) -> std::option::Option<& str> {
         self.change_severity.as_deref()
     }
-    /// <p>An indication of whether the user defined this configuration option:</p>
-    /// <ul>
-    /// <li> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings. </p> </li>
-    /// <li> <p> <code>false</code> : This configuration was not defined by the user.</p> </li>
-    /// </ul>
-    /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p>
+    /// <p>An indication of whether the user defined this configuration option:</p> 
+    /// <ul> 
+    /// <li> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings. </p> </li> 
+    /// <li> <p> <code>false</code> : This configuration was not defined by the user.</p> </li> 
+    /// </ul> 
+    /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p> 
     /// <p> Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn user_defined(&self) -> std::option::Option<bool> {
         self.user_defined
     }
-    /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
-    /// <ul>
-    /// <li> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p> </li>
-    /// <li> <p> <code>List</code> : Values for this option are multiple selections from the possible values.</p> </li>
-    /// <li> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p> </li>
-    /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li>
+    /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p> </li> 
+    /// <li> <p> <code>List</code> : Values for this option are multiple selections from the possible values.</p> </li> 
+    /// <li> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p> </li> 
+    /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li> 
     /// </ul>
-    pub fn value_type(&self) -> std::option::Option<&crate::model::ConfigurationOptionValueType> {
+    pub fn value_type(&self) -> std::option::Option<& crate::model::ConfigurationOptionValueType> {
         self.value_type.as_ref()
     }
     /// <p>If specified, values for the configuration option are selected from this list.</p>
-    pub fn value_options(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn value_options(&self) -> std::option::Option<& [std::string::String]> {
         self.value_options.as_deref()
     }
     /// <p>If specified, the configuration option must be a numeric value greater than this value.</p>
@@ -8669,13 +8164,13 @@ impl ConfigurationOptionDescription {
         self.max_length
     }
     /// <p>If specified, the configuration option must be a string value that satisfies this regular expression.</p>
-    pub fn regex(&self) -> std::option::Option<&crate::model::OptionRestrictionRegex> {
+    pub fn regex(&self) -> std::option::Option<& crate::model::OptionRestrictionRegex> {
         self.regex.as_ref()
     }
 }
 /// See [`ConfigurationOptionDescription`](crate::model::ConfigurationOptionDescription).
 pub mod configuration_option_description {
-
+    
     /// A builder for [`ConfigurationOptionDescription`](crate::model::ConfigurationOptionDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8699,8 +8194,7 @@ pub mod configuration_option_description {
         }
         /// <p>A unique namespace identifying the option's associated AWS resource.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The name of the configuration option.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8709,8 +8203,7 @@ pub mod configuration_option_description {
         }
         /// <p>The name of the configuration option.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The default value for this configuration option.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8718,82 +8211,69 @@ pub mod configuration_option_description {
             self
         }
         /// <p>The default value for this configuration option.</p>
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
-        /// <p>An indication of which action is required if the value for this configuration option changes:</p>
-        /// <ul>
-        /// <li> <p> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</p> </li>
-        /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li>
-        /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li>
+        /// <p>An indication of which action is required if the value for this configuration option changes:</p> 
+        /// <ul> 
+        /// <li> <p> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</p> </li> 
+        /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li> 
+        /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li> 
         /// </ul>
         pub fn change_severity(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_severity = Some(input.into());
             self
         }
-        /// <p>An indication of which action is required if the value for this configuration option changes:</p>
-        /// <ul>
-        /// <li> <p> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</p> </li>
-        /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li>
-        /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li>
+        /// <p>An indication of which action is required if the value for this configuration option changes:</p> 
+        /// <ul> 
+        /// <li> <p> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</p> </li> 
+        /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li> 
+        /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li> 
         /// </ul>
-        pub fn set_change_severity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_severity = input;
-            self
+        pub fn set_change_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_severity = input; self
         }
-        /// <p>An indication of whether the user defined this configuration option:</p>
-        /// <ul>
-        /// <li> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings. </p> </li>
-        /// <li> <p> <code>false</code> : This configuration was not defined by the user.</p> </li>
-        /// </ul>
-        /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p>
+        /// <p>An indication of whether the user defined this configuration option:</p> 
+        /// <ul> 
+        /// <li> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings. </p> </li> 
+        /// <li> <p> <code>false</code> : This configuration was not defined by the user.</p> </li> 
+        /// </ul> 
+        /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p> 
         /// <p> Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn user_defined(mut self, input: bool) -> Self {
             self.user_defined = Some(input);
             self
         }
-        /// <p>An indication of whether the user defined this configuration option:</p>
-        /// <ul>
-        /// <li> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings. </p> </li>
-        /// <li> <p> <code>false</code> : This configuration was not defined by the user.</p> </li>
-        /// </ul>
-        /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p>
+        /// <p>An indication of whether the user defined this configuration option:</p> 
+        /// <ul> 
+        /// <li> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings. </p> </li> 
+        /// <li> <p> <code>false</code> : This configuration was not defined by the user.</p> </li> 
+        /// </ul> 
+        /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p> 
         /// <p> Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn set_user_defined(mut self, input: std::option::Option<bool>) -> Self {
-            self.user_defined = input;
-            self
+            self.user_defined = input; self
         }
-        /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p> </li>
-        /// <li> <p> <code>List</code> : Values for this option are multiple selections from the possible values.</p> </li>
-        /// <li> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p> </li>
-        /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li>
+        /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p> </li> 
+        /// <li> <p> <code>List</code> : Values for this option are multiple selections from the possible values.</p> </li> 
+        /// <li> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p> </li> 
+        /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li> 
         /// </ul>
         pub fn value_type(mut self, input: crate::model::ConfigurationOptionValueType) -> Self {
             self.value_type = Some(input);
             self
         }
-        /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
-        /// <ul>
-        /// <li> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p> </li>
-        /// <li> <p> <code>List</code> : Values for this option are multiple selections from the possible values.</p> </li>
-        /// <li> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p> </li>
-        /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li>
+        /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p> </li> 
+        /// <li> <p> <code>List</code> : Values for this option are multiple selections from the possible values.</p> </li> 
+        /// <li> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p> </li> 
+        /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li> 
         /// </ul>
-        pub fn set_value_type(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationOptionValueType>,
-        ) -> Self {
-            self.value_type = input;
-            self
+        pub fn set_value_type(mut self, input: std::option::Option<crate::model::ConfigurationOptionValueType>) -> Self {
+            self.value_type = input; self
         }
         /// Appends an item to `value_options`.
         ///
@@ -8802,17 +8282,13 @@ pub mod configuration_option_description {
         /// <p>If specified, values for the configuration option are selected from this list.</p>
         pub fn value_options(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.value_options.unwrap_or_default();
-            v.push(input.into());
-            self.value_options = Some(v);
-            self
+                            v.push(input.into());
+                            self.value_options = Some(v);
+                            self
         }
         /// <p>If specified, values for the configuration option are selected from this list.</p>
-        pub fn set_value_options(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.value_options = input;
-            self
+        pub fn set_value_options(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.value_options = input; self
         }
         /// <p>If specified, the configuration option must be a numeric value greater than this value.</p>
         pub fn min_value(mut self, input: i32) -> Self {
@@ -8821,8 +8297,7 @@ pub mod configuration_option_description {
         }
         /// <p>If specified, the configuration option must be a numeric value greater than this value.</p>
         pub fn set_min_value(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_value = input;
-            self
+            self.min_value = input; self
         }
         /// <p>If specified, the configuration option must be a numeric value less than this value.</p>
         pub fn max_value(mut self, input: i32) -> Self {
@@ -8831,8 +8306,7 @@ pub mod configuration_option_description {
         }
         /// <p>If specified, the configuration option must be a numeric value less than this value.</p>
         pub fn set_max_value(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_value = input;
-            self
+            self.max_value = input; self
         }
         /// <p>If specified, the configuration option must be a string value no longer than this value.</p>
         pub fn max_length(mut self, input: i32) -> Self {
@@ -8841,8 +8315,7 @@ pub mod configuration_option_description {
         }
         /// <p>If specified, the configuration option must be a string value no longer than this value.</p>
         pub fn set_max_length(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_length = input;
-            self
+            self.max_length = input; self
         }
         /// <p>If specified, the configuration option must be a string value that satisfies this regular expression.</p>
         pub fn regex(mut self, input: crate::model::OptionRestrictionRegex) -> Self {
@@ -8850,30 +8323,39 @@ pub mod configuration_option_description {
             self
         }
         /// <p>If specified, the configuration option must be a string value that satisfies this regular expression.</p>
-        pub fn set_regex(
-            mut self,
-            input: std::option::Option<crate::model::OptionRestrictionRegex>,
-        ) -> Self {
-            self.regex = input;
-            self
+        pub fn set_regex(mut self, input: std::option::Option<crate::model::OptionRestrictionRegex>) -> Self {
+            self.regex = input; self
         }
         /// Consumes the builder and constructs a [`ConfigurationOptionDescription`](crate::model::ConfigurationOptionDescription).
         pub fn build(self) -> crate::model::ConfigurationOptionDescription {
             crate::model::ConfigurationOptionDescription {
-                namespace: self.namespace,
-                name: self.name,
-                default_value: self.default_value,
-                change_severity: self.change_severity,
-                user_defined: self.user_defined,
-                value_type: self.value_type,
-                value_options: self.value_options,
-                min_value: self.min_value,
-                max_value: self.max_value,
-                max_length: self.max_length,
-                regex: self.regex,
+                namespace: self.namespace
+                ,
+                name: self.name
+                ,
+                default_value: self.default_value
+                ,
+                change_severity: self.change_severity
+                ,
+                user_defined: self.user_defined
+                ,
+                value_type: self.value_type
+                ,
+                value_options: self.value_options
+                ,
+                min_value: self.min_value
+                ,
+                max_value: self.max_value
+                ,
+                max_length: self.max_length
+                ,
+                regex: self.regex
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigurationOptionDescription {
     /// Creates a new builder-style object to manufacture [`ConfigurationOptionDescription`](crate::model::ConfigurationOptionDescription).
@@ -8885,7 +8367,7 @@ impl ConfigurationOptionDescription {
 /// <p>A regular expression representing a restriction on a string configuration option value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OptionRestrictionRegex {
+pub struct OptionRestrictionRegex  {
     /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
     #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
@@ -8895,17 +8377,17 @@ pub struct OptionRestrictionRegex {
 }
 impl OptionRestrictionRegex {
     /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
-    pub fn pattern(&self) -> std::option::Option<&str> {
+    pub fn pattern(&self) -> std::option::Option<& str> {
         self.pattern.as_deref()
     }
     /// <p>A unique name representing this regular expression.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
 }
 /// See [`OptionRestrictionRegex`](crate::model::OptionRestrictionRegex).
 pub mod option_restriction_regex {
-
+    
     /// A builder for [`OptionRestrictionRegex`](crate::model::OptionRestrictionRegex).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8920,8 +8402,7 @@ pub mod option_restriction_regex {
         }
         /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
         pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pattern = input;
-            self
+            self.pattern = input; self
         }
         /// <p>A unique name representing this regular expression.</p>
         pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8930,17 +8411,20 @@ pub mod option_restriction_regex {
         }
         /// <p>A unique name representing this regular expression.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label = input;
-            self
+            self.label = input; self
         }
         /// Consumes the builder and constructs a [`OptionRestrictionRegex`](crate::model::OptionRestrictionRegex).
         pub fn build(self) -> crate::model::OptionRestrictionRegex {
             crate::model::OptionRestrictionRegex {
-                pattern: self.pattern,
-                label: self.label,
+                pattern: self.pattern
+                ,
+                label: self.label
+                ,
             }
         }
     }
+    
+    
 }
 impl OptionRestrictionRegex {
     /// Creates a new builder-style object to manufacture [`OptionRestrictionRegex`](crate::model::OptionRestrictionRegex).
@@ -8955,9 +8439,9 @@ impl OptionRestrictionRegex {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let configurationoptionvaluetype = unimplemented!();
 /// match configurationoptionvaluetype {
@@ -8979,60 +8463,52 @@ impl OptionRestrictionRegex {
 /// Specifically, when `configurationoptionvaluetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfigurationOptionValueType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConfigurationOptionValueType {
     #[allow(missing_docs)] // documentation missing in model
     List,
     #[allow(missing_docs)] // documentation missing in model
     Scalar,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfigurationOptionValueType {
     fn from(s: &str) -> Self {
         match s {
             "List" => ConfigurationOptionValueType::List,
             "Scalar" => ConfigurationOptionValueType::Scalar,
-            other => ConfigurationOptionValueType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConfigurationOptionValueType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConfigurationOptionValueType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConfigurationOptionValueType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConfigurationOptionValueType::from(s))
+                }
+            }
 impl ConfigurationOptionValueType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfigurationOptionValueType::List => "List",
             ConfigurationOptionValueType::Scalar => "Scalar",
-            ConfigurationOptionValueType::Unknown(value) => value.as_str(),
+            ConfigurationOptionValueType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["List", "Scalar"]
+        &[
+            "List", "Scalar"
+        ]
     }
 }
 impl AsRef<str> for ConfigurationOptionValueType {
@@ -9044,7 +8520,7 @@ impl AsRef<str> for ConfigurationOptionValueType {
 /// <p>A set of per-resource AWS Elastic Beanstalk quotas associated with an AWS account. They reflect Elastic Beanstalk resource limits for this account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceQuotas {
+pub struct ResourceQuotas  {
     /// <p>The quota for applications in the AWS account.</p>
     #[doc(hidden)]
     pub application_quota: std::option::Option<crate::model::ResourceQuota>,
@@ -9063,31 +8539,29 @@ pub struct ResourceQuotas {
 }
 impl ResourceQuotas {
     /// <p>The quota for applications in the AWS account.</p>
-    pub fn application_quota(&self) -> std::option::Option<&crate::model::ResourceQuota> {
+    pub fn application_quota(&self) -> std::option::Option<& crate::model::ResourceQuota> {
         self.application_quota.as_ref()
     }
     /// <p>The quota for application versions in the AWS account.</p>
-    pub fn application_version_quota(&self) -> std::option::Option<&crate::model::ResourceQuota> {
+    pub fn application_version_quota(&self) -> std::option::Option<& crate::model::ResourceQuota> {
         self.application_version_quota.as_ref()
     }
     /// <p>The quota for environments in the AWS account.</p>
-    pub fn environment_quota(&self) -> std::option::Option<&crate::model::ResourceQuota> {
+    pub fn environment_quota(&self) -> std::option::Option<& crate::model::ResourceQuota> {
         self.environment_quota.as_ref()
     }
     /// <p>The quota for configuration templates in the AWS account.</p>
-    pub fn configuration_template_quota(
-        &self,
-    ) -> std::option::Option<&crate::model::ResourceQuota> {
+    pub fn configuration_template_quota(&self) -> std::option::Option<& crate::model::ResourceQuota> {
         self.configuration_template_quota.as_ref()
     }
     /// <p>The quota for custom platforms in the AWS account.</p>
-    pub fn custom_platform_quota(&self) -> std::option::Option<&crate::model::ResourceQuota> {
+    pub fn custom_platform_quota(&self) -> std::option::Option<& crate::model::ResourceQuota> {
         self.custom_platform_quota.as_ref()
     }
 }
 /// See [`ResourceQuotas`](crate::model::ResourceQuotas).
 pub mod resource_quotas {
-
+    
     /// A builder for [`ResourceQuotas`](crate::model::ResourceQuotas).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9104,12 +8578,8 @@ pub mod resource_quotas {
             self
         }
         /// <p>The quota for applications in the AWS account.</p>
-        pub fn set_application_quota(
-            mut self,
-            input: std::option::Option<crate::model::ResourceQuota>,
-        ) -> Self {
-            self.application_quota = input;
-            self
+        pub fn set_application_quota(mut self, input: std::option::Option<crate::model::ResourceQuota>) -> Self {
+            self.application_quota = input; self
         }
         /// <p>The quota for application versions in the AWS account.</p>
         pub fn application_version_quota(mut self, input: crate::model::ResourceQuota) -> Self {
@@ -9117,12 +8587,8 @@ pub mod resource_quotas {
             self
         }
         /// <p>The quota for application versions in the AWS account.</p>
-        pub fn set_application_version_quota(
-            mut self,
-            input: std::option::Option<crate::model::ResourceQuota>,
-        ) -> Self {
-            self.application_version_quota = input;
-            self
+        pub fn set_application_version_quota(mut self, input: std::option::Option<crate::model::ResourceQuota>) -> Self {
+            self.application_version_quota = input; self
         }
         /// <p>The quota for environments in the AWS account.</p>
         pub fn environment_quota(mut self, input: crate::model::ResourceQuota) -> Self {
@@ -9130,12 +8596,8 @@ pub mod resource_quotas {
             self
         }
         /// <p>The quota for environments in the AWS account.</p>
-        pub fn set_environment_quota(
-            mut self,
-            input: std::option::Option<crate::model::ResourceQuota>,
-        ) -> Self {
-            self.environment_quota = input;
-            self
+        pub fn set_environment_quota(mut self, input: std::option::Option<crate::model::ResourceQuota>) -> Self {
+            self.environment_quota = input; self
         }
         /// <p>The quota for configuration templates in the AWS account.</p>
         pub fn configuration_template_quota(mut self, input: crate::model::ResourceQuota) -> Self {
@@ -9143,12 +8605,8 @@ pub mod resource_quotas {
             self
         }
         /// <p>The quota for configuration templates in the AWS account.</p>
-        pub fn set_configuration_template_quota(
-            mut self,
-            input: std::option::Option<crate::model::ResourceQuota>,
-        ) -> Self {
-            self.configuration_template_quota = input;
-            self
+        pub fn set_configuration_template_quota(mut self, input: std::option::Option<crate::model::ResourceQuota>) -> Self {
+            self.configuration_template_quota = input; self
         }
         /// <p>The quota for custom platforms in the AWS account.</p>
         pub fn custom_platform_quota(mut self, input: crate::model::ResourceQuota) -> Self {
@@ -9156,24 +8614,27 @@ pub mod resource_quotas {
             self
         }
         /// <p>The quota for custom platforms in the AWS account.</p>
-        pub fn set_custom_platform_quota(
-            mut self,
-            input: std::option::Option<crate::model::ResourceQuota>,
-        ) -> Self {
-            self.custom_platform_quota = input;
-            self
+        pub fn set_custom_platform_quota(mut self, input: std::option::Option<crate::model::ResourceQuota>) -> Self {
+            self.custom_platform_quota = input; self
         }
         /// Consumes the builder and constructs a [`ResourceQuotas`](crate::model::ResourceQuotas).
         pub fn build(self) -> crate::model::ResourceQuotas {
             crate::model::ResourceQuotas {
-                application_quota: self.application_quota,
-                application_version_quota: self.application_version_quota,
-                environment_quota: self.environment_quota,
-                configuration_template_quota: self.configuration_template_quota,
-                custom_platform_quota: self.custom_platform_quota,
+                application_quota: self.application_quota
+                ,
+                application_version_quota: self.application_version_quota
+                ,
+                environment_quota: self.environment_quota
+                ,
+                configuration_template_quota: self.configuration_template_quota
+                ,
+                custom_platform_quota: self.custom_platform_quota
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceQuotas {
     /// Creates a new builder-style object to manufacture [`ResourceQuotas`](crate::model::ResourceQuotas).
@@ -9185,7 +8646,7 @@ impl ResourceQuotas {
 /// <p>The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceQuota {
+pub struct ResourceQuota  {
     /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.</p>
     #[doc(hidden)]
     pub maximum: std::option::Option<i32>,
@@ -9198,7 +8659,7 @@ impl ResourceQuota {
 }
 /// See [`ResourceQuota`](crate::model::ResourceQuota).
 pub mod resource_quota {
-
+    
     /// A builder for [`ResourceQuota`](crate::model::ResourceQuota).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9212,16 +8673,18 @@ pub mod resource_quota {
         }
         /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.</p>
         pub fn set_maximum(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum = input;
-            self
+            self.maximum = input; self
         }
         /// Consumes the builder and constructs a [`ResourceQuota`](crate::model::ResourceQuota).
         pub fn build(self) -> crate::model::ResourceQuota {
             crate::model::ResourceQuota {
-                maximum: self.maximum,
+                maximum: self.maximum
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceQuota {
     /// Creates a new builder-style object to manufacture [`ResourceQuota`](crate::model::ResourceQuota).
@@ -9233,20 +8696,20 @@ impl ResourceQuota {
 /// <p>The builder used to build the custom platform.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Builder {
+pub struct Builder  {
     /// <p>The ARN of the builder.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl Builder {
     /// <p>The ARN of the builder.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`Builder`](crate::model::Builder).
 pub mod builder {
-
+    
     /// A builder for [`Builder`](crate::model::Builder).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9260,14 +8723,18 @@ pub mod builder {
         }
         /// <p>The ARN of the builder.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`Builder`](crate::model::Builder).
         pub fn build(self) -> crate::model::Builder {
-            crate::model::Builder { arn: self.arn }
+            crate::model::Builder {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl Builder {
     /// Creates a new builder-style object to manufacture [`Builder`](crate::model::Builder).
@@ -9279,7 +8746,7 @@ impl Builder {
 /// <p>A specification for an environment configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceConfiguration {
+pub struct SourceConfiguration  {
     /// <p>The name of the application associated with the configuration.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -9289,17 +8756,17 @@ pub struct SourceConfiguration {
 }
 impl SourceConfiguration {
     /// <p>The name of the application associated with the configuration.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The name of the configuration template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
 }
 /// See [`SourceConfiguration`](crate::model::SourceConfiguration).
 pub mod source_configuration {
-
+    
     /// A builder for [`SourceConfiguration`](crate::model::SourceConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9313,12 +8780,8 @@ pub mod source_configuration {
             self
         }
         /// <p>The name of the application associated with the configuration.</p>
-        pub fn set_application_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_name = input;
-            self
+        pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_name = input; self
         }
         /// <p>The name of the configuration template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9326,21 +8789,21 @@ pub mod source_configuration {
             self
         }
         /// <p>The name of the configuration template.</p>
-        pub fn set_template_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_name = input;
-            self
+        pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_name = input; self
         }
         /// Consumes the builder and constructs a [`SourceConfiguration`](crate::model::SourceConfiguration).
         pub fn build(self) -> crate::model::SourceConfiguration {
             crate::model::SourceConfiguration {
-                application_name: self.application_name,
-                template_name: self.template_name,
+                application_name: self.application_name
+                ,
+                template_name: self.template_name
+                ,
             }
         }
     }
+    
+    
 }
 impl SourceConfiguration {
     /// Creates a new builder-style object to manufacture [`SourceConfiguration`](crate::model::SourceConfiguration).
@@ -9352,18 +8815,18 @@ impl SourceConfiguration {
 /// <p>Settings for an AWS CodeBuild build.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BuildConfiguration {
+pub struct BuildConfiguration  {
     /// <p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>
     #[doc(hidden)]
     pub artifact_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
     #[doc(hidden)]
     pub code_build_service_role: std::option::Option<std::string::String>,
-    /// <p>Information about the compute resources the build project will use.</p>
-    /// <ul>
-    /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li>
-    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li>
-    /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>
+    /// <p>Information about the compute resources the build project will use.</p> 
+    /// <ul> 
+    /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> 
+    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> 
+    /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub compute_type: std::option::Option<crate::model::ComputeType>,
@@ -9376,24 +8839,24 @@ pub struct BuildConfiguration {
 }
 impl BuildConfiguration {
     /// <p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>
-    pub fn artifact_name(&self) -> std::option::Option<&str> {
+    pub fn artifact_name(&self) -> std::option::Option<& str> {
         self.artifact_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
-    pub fn code_build_service_role(&self) -> std::option::Option<&str> {
+    pub fn code_build_service_role(&self) -> std::option::Option<& str> {
         self.code_build_service_role.as_deref()
     }
-    /// <p>Information about the compute resources the build project will use.</p>
-    /// <ul>
-    /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li>
-    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li>
-    /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>
+    /// <p>Information about the compute resources the build project will use.</p> 
+    /// <ul> 
+    /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> 
+    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> 
+    /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> 
     /// </ul>
-    pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
+    pub fn compute_type(&self) -> std::option::Option<& crate::model::ComputeType> {
         self.compute_type.as_ref()
     }
     /// <p>The ID of the Docker image to use for this build project.</p>
-    pub fn image(&self) -> std::option::Option<&str> {
+    pub fn image(&self) -> std::option::Option<& str> {
         self.image.as_deref()
     }
     /// <p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>
@@ -9403,7 +8866,7 @@ impl BuildConfiguration {
 }
 /// See [`BuildConfiguration`](crate::model::BuildConfiguration).
 pub mod build_configuration {
-
+    
     /// A builder for [`BuildConfiguration`](crate::model::BuildConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9420,12 +8883,8 @@ pub mod build_configuration {
             self
         }
         /// <p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>
-        pub fn set_artifact_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.artifact_name = input;
-            self
+        pub fn set_artifact_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.artifact_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
         pub fn code_build_service_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9433,35 +8892,27 @@ pub mod build_configuration {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
-        pub fn set_code_build_service_role(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.code_build_service_role = input;
-            self
+        pub fn set_code_build_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_build_service_role = input; self
         }
-        /// <p>Information about the compute resources the build project will use.</p>
-        /// <ul>
-        /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li>
-        /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li>
-        /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>
+        /// <p>Information about the compute resources the build project will use.</p> 
+        /// <ul> 
+        /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> 
+        /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> 
+        /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> 
         /// </ul>
         pub fn compute_type(mut self, input: crate::model::ComputeType) -> Self {
             self.compute_type = Some(input);
             self
         }
-        /// <p>Information about the compute resources the build project will use.</p>
-        /// <ul>
-        /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li>
-        /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li>
-        /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>
+        /// <p>Information about the compute resources the build project will use.</p> 
+        /// <ul> 
+        /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> 
+        /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> 
+        /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> 
         /// </ul>
-        pub fn set_compute_type(
-            mut self,
-            input: std::option::Option<crate::model::ComputeType>,
-        ) -> Self {
-            self.compute_type = input;
-            self
+        pub fn set_compute_type(mut self, input: std::option::Option<crate::model::ComputeType>) -> Self {
+            self.compute_type = input; self
         }
         /// <p>The ID of the Docker image to use for this build project.</p>
         pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9470,8 +8921,7 @@ pub mod build_configuration {
         }
         /// <p>The ID of the Docker image to use for this build project.</p>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image = input;
-            self
+            self.image = input; self
         }
         /// <p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>
         pub fn timeout_in_minutes(mut self, input: i32) -> Self {
@@ -9480,20 +8930,26 @@ pub mod build_configuration {
         }
         /// <p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>
         pub fn set_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_in_minutes = input;
-            self
+            self.timeout_in_minutes = input; self
         }
         /// Consumes the builder and constructs a [`BuildConfiguration`](crate::model::BuildConfiguration).
         pub fn build(self) -> crate::model::BuildConfiguration {
             crate::model::BuildConfiguration {
-                artifact_name: self.artifact_name,
-                code_build_service_role: self.code_build_service_role,
-                compute_type: self.compute_type,
-                image: self.image,
-                timeout_in_minutes: self.timeout_in_minutes,
+                artifact_name: self.artifact_name
+                ,
+                code_build_service_role: self.code_build_service_role
+                ,
+                compute_type: self.compute_type
+                ,
+                image: self.image
+                ,
+                timeout_in_minutes: self.timeout_in_minutes
+                ,
             }
         }
     }
+    
+    
 }
 impl BuildConfiguration {
     /// Creates a new builder-style object to manufacture [`BuildConfiguration`](crate::model::BuildConfiguration).
@@ -9508,9 +8964,9 @@ impl BuildConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let computetype = unimplemented!();
 /// match computetype {
@@ -9533,22 +8989,14 @@ impl BuildConfiguration {
 /// Specifically, when `computetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComputeType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComputeType {
     #[allow(missing_docs)] // documentation missing in model
     BuildGeneral1Large,
@@ -9557,7 +9005,7 @@ pub enum ComputeType {
     #[allow(missing_docs)] // documentation missing in model
     BuildGeneral1Small,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComputeType {
     fn from(s: &str) -> Self {
@@ -9565,17 +9013,17 @@ impl std::convert::From<&str> for ComputeType {
             "BUILD_GENERAL1_LARGE" => ComputeType::BuildGeneral1Large,
             "BUILD_GENERAL1_MEDIUM" => ComputeType::BuildGeneral1Medium,
             "BUILD_GENERAL1_SMALL" => ComputeType::BuildGeneral1Small,
-            other => ComputeType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ComputeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComputeType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComputeType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComputeType::from(s))
+                }
+            }
 impl ComputeType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9583,15 +9031,13 @@ impl ComputeType {
             ComputeType::BuildGeneral1Large => "BUILD_GENERAL1_LARGE",
             ComputeType::BuildGeneral1Medium => "BUILD_GENERAL1_MEDIUM",
             ComputeType::BuildGeneral1Small => "BUILD_GENERAL1_SMALL",
-            ComputeType::Unknown(value) => value.as_str(),
+            ComputeType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BUILD_GENERAL1_LARGE",
-            "BUILD_GENERAL1_MEDIUM",
-            "BUILD_GENERAL1_SMALL",
+            "BUILD_GENERAL1_LARGE", "BUILD_GENERAL1_MEDIUM", "BUILD_GENERAL1_SMALL"
         ]
     }
 }
@@ -9600,3 +9046,4 @@ impl AsRef<str> for ComputeType {
         self.as_str()
     }
 }
+

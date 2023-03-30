@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct JoinStorageSessionError {
     /// Kind of error that occurred.
-    pub kind: JoinStorageSessionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: JoinStorageSessionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for JoinStorageSessionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: JoinStorageSessionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -28,24 +28,34 @@ pub enum JoinStorageSessionErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The specified resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for JoinStorageSessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            JoinStorageSessionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            JoinStorageSessionErrorKind::ClientLimitExceededException(_inner) => _inner.fmt(f),
-            JoinStorageSessionErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
-            JoinStorageSessionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            JoinStorageSessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            JoinStorageSessionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            JoinStorageSessionErrorKind::ClientLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            JoinStorageSessionErrorKind::InvalidArgumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            JoinStorageSessionErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            JoinStorageSessionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -59,83 +69,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for JoinStorageSessionError {
 }
 impl JoinStorageSessionError {
     /// Creates a new `JoinStorageSessionError`.
-    pub fn new(kind: JoinStorageSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `JoinStorageSessionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: JoinStorageSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `JoinStorageSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: JoinStorageSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: JoinStorageSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `JoinStorageSessionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: JoinStorageSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `JoinStorageSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: JoinStorageSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `JoinStorageSessionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            JoinStorageSessionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, JoinStorageSessionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `JoinStorageSessionErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            JoinStorageSessionErrorKind::ClientLimitExceededException(_)
-        )
+        matches!(&self.kind, JoinStorageSessionErrorKind::ClientLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `JoinStorageSessionErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            JoinStorageSessionErrorKind::InvalidArgumentException(_)
-        )
+        matches!(&self.kind, JoinStorageSessionErrorKind::InvalidArgumentException(_))
     }
     /// Returns `true` if the error kind is `JoinStorageSessionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            JoinStorageSessionErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, JoinStorageSessionErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for JoinStorageSessionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            JoinStorageSessionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            JoinStorageSessionErrorKind::ClientLimitExceededException(_inner) => Some(_inner),
-            JoinStorageSessionErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            JoinStorageSessionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            JoinStorageSessionErrorKind::Unhandled(_inner) => Some(_inner),
+            JoinStorageSessionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            JoinStorageSessionErrorKind::ClientLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            JoinStorageSessionErrorKind::InvalidArgumentException(_inner) =>
+            Some(_inner)
+            ,
+            JoinStorageSessionErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            JoinStorageSessionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -143,22 +151,20 @@ impl std::error::Error for JoinStorageSessionError {
 /// <p>The specified resource is not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -168,7 +174,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -182,16 +188,18 @@ pub mod resource_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -203,22 +211,20 @@ impl ResourceNotFoundException {
 /// <p>The value for this input parameter is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidArgumentException {
+pub struct InvalidArgumentException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidArgumentException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidArgumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidArgumentException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -228,7 +234,7 @@ impl std::fmt::Display for InvalidArgumentException {
 impl std::error::Error for InvalidArgumentException {}
 /// See [`InvalidArgumentException`](crate::error::InvalidArgumentException).
 pub mod invalid_argument_exception {
-
+    
     /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -242,16 +248,18 @@ pub mod invalid_argument_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidArgumentException`](crate::error::InvalidArgumentException).
         pub fn build(self) -> crate::error::InvalidArgumentException {
             crate::error::InvalidArgumentException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidArgumentException {
     /// Creates a new builder-style object to manufacture [`InvalidArgumentException`](crate::error::InvalidArgumentException).
@@ -263,22 +271,20 @@ impl InvalidArgumentException {
 /// <p> Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClientLimitExceededException {
+pub struct ClientLimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ClientLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ClientLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClientLimitExceededException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -288,7 +294,7 @@ impl std::fmt::Display for ClientLimitExceededException {
 impl std::error::Error for ClientLimitExceededException {}
 /// See [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
 pub mod client_limit_exceeded_exception {
-
+    
     /// A builder for [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -302,16 +308,18 @@ pub mod client_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
         pub fn build(self) -> crate::error::ClientLimitExceededException {
             crate::error::ClientLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ClientLimitExceededException {
     /// Creates a new builder-style object to manufacture [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
@@ -323,22 +331,20 @@ impl ClientLimitExceededException {
 /// <p>You do not have required permissions to perform this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -348,7 +354,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
-
+    
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -362,16 +368,18 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
@@ -380,31 +388,32 @@ impl AccessDeniedException {
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

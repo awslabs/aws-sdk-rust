@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct PutSessionError {
     /// Kind of error that occurred.
-    pub kind: PutSessionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutSessionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutSessionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PutSessionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -26,11 +26,11 @@ pub enum PutSessionErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p> Two clients are using the same AWS account, Amazon Lex bot, and user ID. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p>
-    /// <ul>
-    /// <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li>
-    /// <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li>
-    /// <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li>
+    /// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p> 
+    /// <ul> 
+    /// <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li> 
+    /// <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li> 
+    /// <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li> 
     /// </ul>
     DependencyFailedException(crate::error::DependencyFailedException),
     /// <p>Internal service error. Retry the call.</p>
@@ -41,28 +41,46 @@ pub enum PutSessionErrorKind {
     NotAcceptableException(crate::error::NotAcceptableException),
     /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutSessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutSessionErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
-            PutSessionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            PutSessionErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            PutSessionErrorKind::DependencyFailedException(_inner) => _inner.fmt(f),
-            PutSessionErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
-            PutSessionErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            PutSessionErrorKind::NotAcceptableException(_inner) => _inner.fmt(f),
-            PutSessionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            PutSessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            PutSessionErrorKind::BadGatewayException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSessionErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSessionErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSessionErrorKind::DependencyFailedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSessionErrorKind::InternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSessionErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSessionErrorKind::NotAcceptableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSessionErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSessionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -76,46 +94,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutSessionError {
 }
 impl PutSessionError {
     /// Creates a new `PutSessionError`.
-    pub fn new(kind: PutSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutSessionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutSessionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutSessionErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, PutSessionErrorKind::BadGatewayException(_))
@@ -130,10 +148,7 @@ impl PutSessionError {
     }
     /// Returns `true` if the error kind is `PutSessionErrorKind::DependencyFailedException`.
     pub fn is_dependency_failed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSessionErrorKind::DependencyFailedException(_)
-        )
+        matches!(&self.kind, PutSessionErrorKind::DependencyFailedException(_))
     }
     /// Returns `true` if the error kind is `PutSessionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
@@ -155,15 +170,33 @@ impl PutSessionError {
 impl std::error::Error for PutSessionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutSessionErrorKind::BadGatewayException(_inner) => Some(_inner),
-            PutSessionErrorKind::BadRequestException(_inner) => Some(_inner),
-            PutSessionErrorKind::ConflictException(_inner) => Some(_inner),
-            PutSessionErrorKind::DependencyFailedException(_inner) => Some(_inner),
-            PutSessionErrorKind::InternalFailureException(_inner) => Some(_inner),
-            PutSessionErrorKind::LimitExceededException(_inner) => Some(_inner),
-            PutSessionErrorKind::NotAcceptableException(_inner) => Some(_inner),
-            PutSessionErrorKind::NotFoundException(_inner) => Some(_inner),
-            PutSessionErrorKind::Unhandled(_inner) => Some(_inner),
+            PutSessionErrorKind::BadGatewayException(_inner) =>
+            Some(_inner)
+            ,
+            PutSessionErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            PutSessionErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            PutSessionErrorKind::DependencyFailedException(_inner) =>
+            Some(_inner)
+            ,
+            PutSessionErrorKind::InternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            PutSessionErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            PutSessionErrorKind::NotAcceptableException(_inner) =>
+            Some(_inner)
+            ,
+            PutSessionErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutSessionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -171,22 +204,20 @@ impl std::error::Error for PutSessionError {
 /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotFoundException {
+pub struct NotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -196,7 +227,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException).
 pub mod not_found_exception {
-
+    
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -210,16 +241,18 @@ pub mod not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException).
         pub fn build(self) -> crate::error::NotFoundException {
             crate::error::NotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NotFoundException {
     /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
@@ -231,22 +264,20 @@ impl NotFoundException {
 /// <p>The accept header in the request does not have a valid value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotAcceptableException {
+pub struct NotAcceptableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NotAcceptableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NotAcceptableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotAcceptableException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -256,7 +287,7 @@ impl std::fmt::Display for NotAcceptableException {
 impl std::error::Error for NotAcceptableException {}
 /// See [`NotAcceptableException`](crate::error::NotAcceptableException).
 pub mod not_acceptable_exception {
-
+    
     /// A builder for [`NotAcceptableException`](crate::error::NotAcceptableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -270,16 +301,18 @@ pub mod not_acceptable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NotAcceptableException`](crate::error::NotAcceptableException).
         pub fn build(self) -> crate::error::NotAcceptableException {
             crate::error::NotAcceptableException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NotAcceptableException {
     /// Creates a new builder-style object to manufacture [`NotAcceptableException`](crate::error::NotAcceptableException).
@@ -291,7 +324,7 @@ impl NotAcceptableException {
 /// <p>Exceeded a limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LimitExceededException {
+pub struct LimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub retry_after_seconds: std::option::Option<std::string::String>,
@@ -301,21 +334,19 @@ pub struct LimitExceededException {
 }
 impl LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn retry_after_seconds(&self) -> std::option::Option<&str> {
+    pub fn retry_after_seconds(&self) -> std::option::Option<& str> {
         self.retry_after_seconds.as_deref()
     }
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -325,7 +356,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException).
 pub mod limit_exceeded_exception {
-
+    
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -339,12 +370,8 @@ pub mod limit_exceeded_exception {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_retry_after_seconds(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.retry_after_seconds = input;
-            self
+        pub fn set_retry_after_seconds(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.retry_after_seconds = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -353,17 +380,20 @@ pub mod limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
         pub fn build(self) -> crate::error::LimitExceededException {
             crate::error::LimitExceededException {
-                retry_after_seconds: self.retry_after_seconds,
-                message: self.message,
+                retry_after_seconds: self.retry_after_seconds
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LimitExceededException {
     /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
@@ -375,22 +405,20 @@ impl LimitExceededException {
 /// <p>Internal service error. Retry the call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalFailureException {
+pub struct InternalFailureException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalFailureException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalFailureException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -400,7 +428,7 @@ impl std::fmt::Display for InternalFailureException {
 impl std::error::Error for InternalFailureException {}
 /// See [`InternalFailureException`](crate::error::InternalFailureException).
 pub mod internal_failure_exception {
-
+    
     /// A builder for [`InternalFailureException`](crate::error::InternalFailureException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -414,16 +442,18 @@ pub mod internal_failure_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InternalFailureException`](crate::error::InternalFailureException).
         pub fn build(self) -> crate::error::InternalFailureException {
             crate::error::InternalFailureException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalFailureException {
     /// Creates a new builder-style object to manufacture [`InternalFailureException`](crate::error::InternalFailureException).
@@ -432,30 +462,28 @@ impl InternalFailureException {
     }
 }
 
-/// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p>
-/// <ul>
-/// <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li>
-/// <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li>
-/// <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li>
+/// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p> 
+/// <ul> 
+/// <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li> 
+/// <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li> 
+/// <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DependencyFailedException {
+pub struct DependencyFailedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DependencyFailedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DependencyFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DependencyFailedException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -465,7 +493,7 @@ impl std::fmt::Display for DependencyFailedException {
 impl std::error::Error for DependencyFailedException {}
 /// See [`DependencyFailedException`](crate::error::DependencyFailedException).
 pub mod dependency_failed_exception {
-
+    
     /// A builder for [`DependencyFailedException`](crate::error::DependencyFailedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -479,16 +507,18 @@ pub mod dependency_failed_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DependencyFailedException`](crate::error::DependencyFailedException).
         pub fn build(self) -> crate::error::DependencyFailedException {
             crate::error::DependencyFailedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DependencyFailedException {
     /// Creates a new builder-style object to manufacture [`DependencyFailedException`](crate::error::DependencyFailedException).
@@ -500,22 +530,20 @@ impl DependencyFailedException {
 /// <p> Two clients are using the same AWS account, Amazon Lex bot, and user ID. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -525,7 +553,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
-
+    
     /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -539,16 +567,18 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
@@ -560,22 +590,20 @@ impl ConflictException {
 /// <p> Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadRequestException {
+pub struct BadRequestException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BadRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -585,7 +613,7 @@ impl std::fmt::Display for BadRequestException {
 impl std::error::Error for BadRequestException {}
 /// See [`BadRequestException`](crate::error::BadRequestException).
 pub mod bad_request_exception {
-
+    
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -599,16 +627,18 @@ pub mod bad_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException).
         pub fn build(self) -> crate::error::BadRequestException {
             crate::error::BadRequestException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BadRequestException {
     /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException).
@@ -620,22 +650,20 @@ impl BadRequestException {
 /// <p>Either the Amazon Lex bot is still building, or one of the dependent services (Amazon Polly, AWS Lambda) failed with an internal service error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadGatewayException {
+pub struct BadGatewayException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BadGatewayException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for BadGatewayException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadGatewayException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -645,7 +673,7 @@ impl std::fmt::Display for BadGatewayException {
 impl std::error::Error for BadGatewayException {}
 /// See [`BadGatewayException`](crate::error::BadGatewayException).
 pub mod bad_gateway_exception {
-
+    
     /// A builder for [`BadGatewayException`](crate::error::BadGatewayException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -659,16 +687,18 @@ pub mod bad_gateway_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BadGatewayException`](crate::error::BadGatewayException).
         pub fn build(self) -> crate::error::BadGatewayException {
             crate::error::BadGatewayException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BadGatewayException {
     /// Creates a new builder-style object to manufacture [`BadGatewayException`](crate::error::BadGatewayException).
@@ -682,15 +712,15 @@ impl BadGatewayException {
 #[derive(std::fmt::Debug)]
 pub struct PostTextError {
     /// Kind of error that occurred.
-    pub kind: PostTextErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PostTextErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PostTextError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PostTextErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -704,11 +734,11 @@ pub enum PostTextErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p> Two clients are using the same AWS account, Amazon Lex bot, and user ID. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p>
-    /// <ul>
-    /// <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li>
-    /// <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li>
-    /// <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li>
+    /// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p> 
+    /// <ul> 
+    /// <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li> 
+    /// <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li> 
+    /// <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li> 
     /// </ul>
     DependencyFailedException(crate::error::DependencyFailedException),
     /// <p>Internal service error. Retry the call.</p>
@@ -719,28 +749,46 @@ pub enum PostTextErrorKind {
     LoopDetectedException(crate::error::LoopDetectedException),
     /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PostTextError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PostTextErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
-            PostTextErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            PostTextErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            PostTextErrorKind::DependencyFailedException(_inner) => _inner.fmt(f),
-            PostTextErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
-            PostTextErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            PostTextErrorKind::LoopDetectedException(_inner) => _inner.fmt(f),
-            PostTextErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            PostTextErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            PostTextErrorKind::BadGatewayException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostTextErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostTextErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostTextErrorKind::DependencyFailedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostTextErrorKind::InternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostTextErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostTextErrorKind::LoopDetectedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostTextErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostTextErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -754,46 +802,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for PostTextError {
 }
 impl PostTextError {
     /// Creates a new `PostTextError`.
-    pub fn new(kind: PostTextErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PostTextError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PostTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PostTextError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PostTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PostTextErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PostTextError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PostTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PostTextError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PostTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PostTextErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, PostTextErrorKind::BadGatewayException(_))
@@ -830,15 +878,33 @@ impl PostTextError {
 impl std::error::Error for PostTextError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PostTextErrorKind::BadGatewayException(_inner) => Some(_inner),
-            PostTextErrorKind::BadRequestException(_inner) => Some(_inner),
-            PostTextErrorKind::ConflictException(_inner) => Some(_inner),
-            PostTextErrorKind::DependencyFailedException(_inner) => Some(_inner),
-            PostTextErrorKind::InternalFailureException(_inner) => Some(_inner),
-            PostTextErrorKind::LimitExceededException(_inner) => Some(_inner),
-            PostTextErrorKind::LoopDetectedException(_inner) => Some(_inner),
-            PostTextErrorKind::NotFoundException(_inner) => Some(_inner),
-            PostTextErrorKind::Unhandled(_inner) => Some(_inner),
+            PostTextErrorKind::BadGatewayException(_inner) =>
+            Some(_inner)
+            ,
+            PostTextErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            PostTextErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            PostTextErrorKind::DependencyFailedException(_inner) =>
+            Some(_inner)
+            ,
+            PostTextErrorKind::InternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            PostTextErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            PostTextErrorKind::LoopDetectedException(_inner) =>
+            Some(_inner)
+            ,
+            PostTextErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PostTextErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -846,22 +912,20 @@ impl std::error::Error for PostTextError {
 /// <p>This exception is not used.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoopDetectedException {
+pub struct LoopDetectedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LoopDetectedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LoopDetectedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LoopDetectedException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -871,7 +935,7 @@ impl std::fmt::Display for LoopDetectedException {
 impl std::error::Error for LoopDetectedException {}
 /// See [`LoopDetectedException`](crate::error::LoopDetectedException).
 pub mod loop_detected_exception {
-
+    
     /// A builder for [`LoopDetectedException`](crate::error::LoopDetectedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -885,16 +949,18 @@ pub mod loop_detected_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LoopDetectedException`](crate::error::LoopDetectedException).
         pub fn build(self) -> crate::error::LoopDetectedException {
             crate::error::LoopDetectedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LoopDetectedException {
     /// Creates a new builder-style object to manufacture [`LoopDetectedException`](crate::error::LoopDetectedException).
@@ -908,15 +974,15 @@ impl LoopDetectedException {
 #[derive(std::fmt::Debug)]
 pub struct PostContentError {
     /// Kind of error that occurred.
-    pub kind: PostContentErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PostContentErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PostContentError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PostContentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -930,11 +996,11 @@ pub enum PostContentErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p> Two clients are using the same AWS account, Amazon Lex bot, and user ID. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p>
-    /// <ul>
-    /// <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li>
-    /// <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li>
-    /// <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li>
+    /// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p> 
+    /// <ul> 
+    /// <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li> 
+    /// <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li> 
+    /// <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li> 
     /// </ul>
     DependencyFailedException(crate::error::DependencyFailedException),
     /// <p>Internal service error. Retry the call.</p>
@@ -951,31 +1017,55 @@ pub enum PostContentErrorKind {
     RequestTimeoutException(crate::error::RequestTimeoutException),
     /// <p>The Content-Type header (<code>PostContent</code> API) has an invalid value. </p>
     UnsupportedMediaTypeException(crate::error::UnsupportedMediaTypeException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PostContentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PostContentErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
-            PostContentErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            PostContentErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            PostContentErrorKind::DependencyFailedException(_inner) => _inner.fmt(f),
-            PostContentErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
-            PostContentErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            PostContentErrorKind::LoopDetectedException(_inner) => _inner.fmt(f),
-            PostContentErrorKind::NotAcceptableException(_inner) => _inner.fmt(f),
-            PostContentErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            PostContentErrorKind::RequestTimeoutException(_inner) => _inner.fmt(f),
-            PostContentErrorKind::UnsupportedMediaTypeException(_inner) => _inner.fmt(f),
-            PostContentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            PostContentErrorKind::BadGatewayException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostContentErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostContentErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostContentErrorKind::DependencyFailedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostContentErrorKind::InternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostContentErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostContentErrorKind::LoopDetectedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostContentErrorKind::NotAcceptableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostContentErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostContentErrorKind::RequestTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostContentErrorKind::UnsupportedMediaTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PostContentErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -989,46 +1079,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for PostContentError {
 }
 impl PostContentError {
     /// Creates a new `PostContentError`.
-    pub fn new(kind: PostContentErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PostContentError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PostContentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PostContentError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PostContentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PostContentErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PostContentError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PostContentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PostContentError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PostContentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PostContentErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, PostContentErrorKind::BadGatewayException(_))
@@ -1043,17 +1133,11 @@ impl PostContentError {
     }
     /// Returns `true` if the error kind is `PostContentErrorKind::DependencyFailedException`.
     pub fn is_dependency_failed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PostContentErrorKind::DependencyFailedException(_)
-        )
+        matches!(&self.kind, PostContentErrorKind::DependencyFailedException(_))
     }
     /// Returns `true` if the error kind is `PostContentErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PostContentErrorKind::InternalFailureException(_)
-        )
+        matches!(&self.kind, PostContentErrorKind::InternalFailureException(_))
     }
     /// Returns `true` if the error kind is `PostContentErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -1077,27 +1161,48 @@ impl PostContentError {
     }
     /// Returns `true` if the error kind is `PostContentErrorKind::UnsupportedMediaTypeException`.
     pub fn is_unsupported_media_type_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PostContentErrorKind::UnsupportedMediaTypeException(_)
-        )
+        matches!(&self.kind, PostContentErrorKind::UnsupportedMediaTypeException(_))
     }
 }
 impl std::error::Error for PostContentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PostContentErrorKind::BadGatewayException(_inner) => Some(_inner),
-            PostContentErrorKind::BadRequestException(_inner) => Some(_inner),
-            PostContentErrorKind::ConflictException(_inner) => Some(_inner),
-            PostContentErrorKind::DependencyFailedException(_inner) => Some(_inner),
-            PostContentErrorKind::InternalFailureException(_inner) => Some(_inner),
-            PostContentErrorKind::LimitExceededException(_inner) => Some(_inner),
-            PostContentErrorKind::LoopDetectedException(_inner) => Some(_inner),
-            PostContentErrorKind::NotAcceptableException(_inner) => Some(_inner),
-            PostContentErrorKind::NotFoundException(_inner) => Some(_inner),
-            PostContentErrorKind::RequestTimeoutException(_inner) => Some(_inner),
-            PostContentErrorKind::UnsupportedMediaTypeException(_inner) => Some(_inner),
-            PostContentErrorKind::Unhandled(_inner) => Some(_inner),
+            PostContentErrorKind::BadGatewayException(_inner) =>
+            Some(_inner)
+            ,
+            PostContentErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            PostContentErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            PostContentErrorKind::DependencyFailedException(_inner) =>
+            Some(_inner)
+            ,
+            PostContentErrorKind::InternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            PostContentErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            PostContentErrorKind::LoopDetectedException(_inner) =>
+            Some(_inner)
+            ,
+            PostContentErrorKind::NotAcceptableException(_inner) =>
+            Some(_inner)
+            ,
+            PostContentErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PostContentErrorKind::RequestTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            PostContentErrorKind::UnsupportedMediaTypeException(_inner) =>
+            Some(_inner)
+            ,
+            PostContentErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1105,22 +1210,20 @@ impl std::error::Error for PostContentError {
 /// <p>The Content-Type header (<code>PostContent</code> API) has an invalid value. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedMediaTypeException {
+pub struct UnsupportedMediaTypeException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnsupportedMediaTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnsupportedMediaTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedMediaTypeException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -1130,7 +1233,7 @@ impl std::fmt::Display for UnsupportedMediaTypeException {
 impl std::error::Error for UnsupportedMediaTypeException {}
 /// See [`UnsupportedMediaTypeException`](crate::error::UnsupportedMediaTypeException).
 pub mod unsupported_media_type_exception {
-
+    
     /// A builder for [`UnsupportedMediaTypeException`](crate::error::UnsupportedMediaTypeException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1144,16 +1247,18 @@ pub mod unsupported_media_type_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnsupportedMediaTypeException`](crate::error::UnsupportedMediaTypeException).
         pub fn build(self) -> crate::error::UnsupportedMediaTypeException {
             crate::error::UnsupportedMediaTypeException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnsupportedMediaTypeException {
     /// Creates a new builder-style object to manufacture [`UnsupportedMediaTypeException`](crate::error::UnsupportedMediaTypeException).
@@ -1165,22 +1270,20 @@ impl UnsupportedMediaTypeException {
 /// <p>The input speech is too long.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestTimeoutException {
+pub struct RequestTimeoutException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RequestTimeoutException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for RequestTimeoutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RequestTimeoutException")?;
         if let Some(inner_11) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_11)?;
             }
         }
@@ -1190,7 +1293,7 @@ impl std::fmt::Display for RequestTimeoutException {
 impl std::error::Error for RequestTimeoutException {}
 /// See [`RequestTimeoutException`](crate::error::RequestTimeoutException).
 pub mod request_timeout_exception {
-
+    
     /// A builder for [`RequestTimeoutException`](crate::error::RequestTimeoutException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1204,16 +1307,18 @@ pub mod request_timeout_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`RequestTimeoutException`](crate::error::RequestTimeoutException).
         pub fn build(self) -> crate::error::RequestTimeoutException {
             crate::error::RequestTimeoutException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl RequestTimeoutException {
     /// Creates a new builder-style object to manufacture [`RequestTimeoutException`](crate::error::RequestTimeoutException).
@@ -1227,15 +1332,15 @@ impl RequestTimeoutException {
 #[derive(std::fmt::Debug)]
 pub struct GetSessionError {
     /// Kind of error that occurred.
-    pub kind: GetSessionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetSessionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetSessionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetSessionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1251,24 +1356,34 @@ pub enum GetSessionErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSessionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetSessionErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
-            GetSessionErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            GetSessionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetSessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetSessionErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSessionErrorKind::InternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSessionErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSessionErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSessionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1282,46 +1397,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetSessionError {
 }
 impl GetSessionError {
     /// Creates a new `GetSessionError`.
-    pub fn new(kind: GetSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetSessionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetSessionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetSessionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetSessionErrorKind::BadRequestException(_))
@@ -1342,11 +1457,21 @@ impl GetSessionError {
 impl std::error::Error for GetSessionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSessionErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetSessionErrorKind::InternalFailureException(_inner) => Some(_inner),
-            GetSessionErrorKind::LimitExceededException(_inner) => Some(_inner),
-            GetSessionErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetSessionErrorKind::Unhandled(_inner) => Some(_inner),
+            GetSessionErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetSessionErrorKind::InternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetSessionErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetSessionErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetSessionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1356,15 +1481,15 @@ impl std::error::Error for GetSessionError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteSessionError {
     /// Kind of error that occurred.
-    pub kind: DeleteSessionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteSessionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteSessionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteSessionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1382,25 +1507,37 @@ pub enum DeleteSessionErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteSessionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteSessionErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DeleteSessionErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
-            DeleteSessionErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            DeleteSessionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteSessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteSessionErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSessionErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSessionErrorKind::InternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSessionErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSessionErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSessionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1414,46 +1551,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteSessionError {
 }
 impl DeleteSessionError {
     /// Creates a new `DeleteSessionError`.
-    pub fn new(kind: DeleteSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteSessionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteSessionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteSessionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteSessionErrorKind::BadRequestException(_))
@@ -1464,17 +1601,11 @@ impl DeleteSessionError {
     }
     /// Returns `true` if the error kind is `DeleteSessionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSessionErrorKind::InternalFailureException(_)
-        )
+        matches!(&self.kind, DeleteSessionErrorKind::InternalFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteSessionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSessionErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, DeleteSessionErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DeleteSessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -1484,41 +1615,54 @@ impl DeleteSessionError {
 impl std::error::Error for DeleteSessionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteSessionErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteSessionErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteSessionErrorKind::InternalFailureException(_inner) => Some(_inner),
-            DeleteSessionErrorKind::LimitExceededException(_inner) => Some(_inner),
-            DeleteSessionErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteSessionErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteSessionErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSessionErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSessionErrorKind::InternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSessionErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSessionErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSessionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

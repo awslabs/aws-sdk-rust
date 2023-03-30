@@ -11,26 +11,26 @@ pub enum Error {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request refers to a nonexistent resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This request cannot be completed for one of the following reasons.</p>
-    /// <ul>
-    /// <li> <p>The request would cause the number of member accounts in the behavior graph to exceed the maximum allowed. A behavior graph cannot have more than 1200 member accounts.</p> </li>
-    /// <li> <p>The request would cause the data rate for the behavior graph to exceed the maximum allowed.</p> </li>
-    /// <li> <p>Detective is unable to verify the data rate for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p> </li>
+    /// <p>This request cannot be completed for one of the following reasons.</p> 
+    /// <ul> 
+    /// <li> <p>The request would cause the number of member accounts in the behavior graph to exceed the maximum allowed. A behavior graph cannot have more than 1200 member accounts.</p> </li> 
+    /// <li> <p>The request would cause the data rate for the behavior graph to exceed the maximum allowed.</p> </li> 
+    /// <li> <p>Detective is unable to verify the data rate for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p> </li> 
     /// </ul>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request cannot be completed because too many other requests are occurring at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The request parameters are invalid.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -42,21 +42,14 @@ impl std::fmt::Display for Error {
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AcceptInvitationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AcceptInvitationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AcceptInvitationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::AcceptInvitationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -64,43 +57,19 @@ where
 impl From<crate::error::AcceptInvitationError> for Error {
     fn from(err: crate::error::AcceptInvitationError) -> Self {
         match err.kind {
-            crate::error::AcceptInvitationErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::AcceptInvitationErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::AcceptInvitationErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::AcceptInvitationErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AcceptInvitationErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::AcceptInvitationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::AcceptInvitationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::AcceptInvitationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::AcceptInvitationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::AcceptInvitationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::AcceptInvitationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::AcceptInvitationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::BatchGetGraphMemberDatasourcesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::BatchGetGraphMemberDatasourcesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchGetGraphMemberDatasourcesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchGetGraphMemberDatasourcesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -108,36 +77,18 @@ where
 impl From<crate::error::BatchGetGraphMemberDatasourcesError> for Error {
     fn from(err: crate::error::BatchGetGraphMemberDatasourcesError) -> Self {
         match err.kind {
-            crate::error::BatchGetGraphMemberDatasourcesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::BatchGetGraphMemberDatasourcesErrorKind::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::error::BatchGetGraphMemberDatasourcesErrorKind::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::error::BatchGetGraphMemberDatasourcesErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::BatchGetGraphMemberDatasourcesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchGetGraphMemberDatasourcesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::BatchGetGraphMemberDatasourcesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::BatchGetGraphMemberDatasourcesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::BatchGetGraphMemberDatasourcesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::BatchGetGraphMemberDatasourcesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchGetMembershipDatasourcesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchGetMembershipDatasourcesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchGetMembershipDatasourcesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchGetMembershipDatasourcesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -145,33 +96,18 @@ where
 impl From<crate::error::BatchGetMembershipDatasourcesError> for Error {
     fn from(err: crate::error::BatchGetMembershipDatasourcesError) -> Self {
         match err.kind {
-            crate::error::BatchGetMembershipDatasourcesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::BatchGetMembershipDatasourcesErrorKind::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::error::BatchGetMembershipDatasourcesErrorKind::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::error::BatchGetMembershipDatasourcesErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::BatchGetMembershipDatasourcesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchGetMembershipDatasourcesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::BatchGetMembershipDatasourcesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::BatchGetMembershipDatasourcesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::BatchGetMembershipDatasourcesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::BatchGetMembershipDatasourcesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGraphError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGraphError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateGraphError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -179,33 +115,18 @@ where
 impl From<crate::error::CreateGraphError> for Error {
     fn from(err: crate::error::CreateGraphError) -> Self {
         match err.kind {
-            crate::error::CreateGraphErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateGraphErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateGraphErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateGraphErrorKind::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::CreateGraphErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateGraphErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateGraphErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateGraphErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateGraphErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateGraphErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMembersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMembersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateMembersError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -213,36 +134,19 @@ where
 impl From<crate::error::CreateMembersError> for Error {
     fn from(err: crate::error::CreateMembersError) -> Self {
         match err.kind {
-            crate::error::CreateMembersErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateMembersErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateMembersErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateMembersErrorKind::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::CreateMembersErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateMembersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateMembersErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateMembersErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateMembersErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CreateMembersErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateMembersErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateMembersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteGraphError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteGraphError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteGraphError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -250,33 +154,18 @@ where
 impl From<crate::error::DeleteGraphError> for Error {
     fn from(err: crate::error::DeleteGraphError) -> Self {
         match err.kind {
-            crate::error::DeleteGraphErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteGraphErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteGraphErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteGraphErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteGraphErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteGraphErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeleteGraphErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteGraphErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteGraphErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteGraphErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMembersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMembersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteMembersError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -284,43 +173,19 @@ where
 impl From<crate::error::DeleteMembersError> for Error {
     fn from(err: crate::error::DeleteMembersError) -> Self {
         match err.kind {
-            crate::error::DeleteMembersErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteMembersErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteMembersErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteMembersErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteMembersErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteMembersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteMembersErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeleteMembersErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteMembersErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteMembersErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteMembersErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteMembersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeOrganizationConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -328,40 +193,18 @@ where
 impl From<crate::error::DescribeOrganizationConfigurationError> for Error {
     fn from(err: crate::error::DescribeOrganizationConfigurationError) -> Self {
         match err.kind {
-            crate::error::DescribeOrganizationConfigurationErrorKind::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::error::DescribeOrganizationConfigurationErrorKind::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::error::DescribeOrganizationConfigurationErrorKind::TooManyRequestsException(
-                inner,
-            ) => Error::TooManyRequestsException(inner),
-            crate::error::DescribeOrganizationConfigurationErrorKind::ValidationException(
-                inner,
-            ) => Error::ValidationException(inner),
-            crate::error::DescribeOrganizationConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeOrganizationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DescribeOrganizationConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeOrganizationConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DescribeOrganizationConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribeOrganizationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DisableOrganizationAdminAccountError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DisableOrganizationAdminAccountError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisableOrganizationAdminAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisableOrganizationAdminAccountError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -369,36 +212,18 @@ where
 impl From<crate::error::DisableOrganizationAdminAccountError> for Error {
     fn from(err: crate::error::DisableOrganizationAdminAccountError) -> Self {
         match err.kind {
-            crate::error::DisableOrganizationAdminAccountErrorKind::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::error::DisableOrganizationAdminAccountErrorKind::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::error::DisableOrganizationAdminAccountErrorKind::TooManyRequestsException(
-                inner,
-            ) => Error::TooManyRequestsException(inner),
-            crate::error::DisableOrganizationAdminAccountErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DisableOrganizationAdminAccountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DisableOrganizationAdminAccountErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DisableOrganizationAdminAccountErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DisableOrganizationAdminAccountErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DisableOrganizationAdminAccountErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DisableOrganizationAdminAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateMembershipError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DisassociateMembershipError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateMembershipError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisassociateMembershipError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -406,43 +231,19 @@ where
 impl From<crate::error::DisassociateMembershipError> for Error {
     fn from(err: crate::error::DisassociateMembershipError) -> Self {
         match err.kind {
-            crate::error::DisassociateMembershipErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DisassociateMembershipErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DisassociateMembershipErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DisassociateMembershipErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DisassociateMembershipErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DisassociateMembershipErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DisassociateMembershipErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DisassociateMembershipErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DisassociateMembershipErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DisassociateMembershipErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DisassociateMembershipErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DisassociateMembershipErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::EnableOrganizationAdminAccountError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::EnableOrganizationAdminAccountError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnableOrganizationAdminAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::EnableOrganizationAdminAccountError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -450,33 +251,18 @@ where
 impl From<crate::error::EnableOrganizationAdminAccountError> for Error {
     fn from(err: crate::error::EnableOrganizationAdminAccountError) -> Self {
         match err.kind {
-            crate::error::EnableOrganizationAdminAccountErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::EnableOrganizationAdminAccountErrorKind::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::error::EnableOrganizationAdminAccountErrorKind::TooManyRequestsException(
-                inner,
-            ) => Error::TooManyRequestsException(inner),
-            crate::error::EnableOrganizationAdminAccountErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::EnableOrganizationAdminAccountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::EnableOrganizationAdminAccountErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::EnableOrganizationAdminAccountErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::EnableOrganizationAdminAccountErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::EnableOrganizationAdminAccountErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::EnableOrganizationAdminAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMembersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMembersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMembersError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -484,36 +270,18 @@ where
 impl From<crate::error::GetMembersError> for Error {
     fn from(err: crate::error::GetMembersError) -> Self {
         match err.kind {
-            crate::error::GetMembersErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetMembersErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetMembersErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetMembersErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetMembersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetMembersErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetMembersErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::GetMembersErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetMembersErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::GetMembersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDatasourcePackagesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListDatasourcePackagesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDatasourcePackagesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDatasourcePackagesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -521,33 +289,18 @@ where
 impl From<crate::error::ListDatasourcePackagesError> for Error {
     fn from(err: crate::error::ListDatasourcePackagesError) -> Self {
         match err.kind {
-            crate::error::ListDatasourcePackagesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListDatasourcePackagesErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListDatasourcePackagesErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListDatasourcePackagesErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListDatasourcePackagesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListDatasourcePackagesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListDatasourcePackagesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListDatasourcePackagesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListDatasourcePackagesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListDatasourcePackagesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListGraphsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListGraphsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListGraphsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -555,30 +308,17 @@ where
 impl From<crate::error::ListGraphsError> for Error {
     fn from(err: crate::error::ListGraphsError) -> Self {
         match err.kind {
-            crate::error::ListGraphsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListGraphsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListGraphsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListGraphsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListGraphsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListGraphsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListGraphsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListGraphsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListInvitationsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListInvitationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListInvitationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -586,30 +326,17 @@ where
 impl From<crate::error::ListInvitationsError> for Error {
     fn from(err: crate::error::ListInvitationsError) -> Self {
         match err.kind {
-            crate::error::ListInvitationsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListInvitationsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListInvitationsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListInvitationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListInvitationsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListInvitationsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListInvitationsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListInvitationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMembersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMembersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListMembersError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -617,36 +344,18 @@ where
 impl From<crate::error::ListMembersError> for Error {
     fn from(err: crate::error::ListMembersError) -> Self {
         match err.kind {
-            crate::error::ListMembersErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListMembersErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListMembersErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListMembersErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListMembersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListMembersErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListMembersErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListMembersErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListMembersErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListMembersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListOrganizationAdminAccountsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListOrganizationAdminAccountsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListOrganizationAdminAccountsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListOrganizationAdminAccountsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -654,35 +363,18 @@ where
 impl From<crate::error::ListOrganizationAdminAccountsError> for Error {
     fn from(err: crate::error::ListOrganizationAdminAccountsError) -> Self {
         match err.kind {
-            crate::error::ListOrganizationAdminAccountsErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListOrganizationAdminAccountsErrorKind::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::error::ListOrganizationAdminAccountsErrorKind::TooManyRequestsException(
-                inner,
-            ) => Error::TooManyRequestsException(inner),
-            crate::error::ListOrganizationAdminAccountsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListOrganizationAdminAccountsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListOrganizationAdminAccountsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListOrganizationAdminAccountsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListOrganizationAdminAccountsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListOrganizationAdminAccountsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListOrganizationAdminAccountsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -690,35 +382,18 @@ where
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
         match err.kind {
-            crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListTagsForResourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListTagsForResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RejectInvitationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RejectInvitationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RejectInvitationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::RejectInvitationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -726,39 +401,19 @@ where
 impl From<crate::error::RejectInvitationError> for Error {
     fn from(err: crate::error::RejectInvitationError) -> Self {
         match err.kind {
-            crate::error::RejectInvitationErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::RejectInvitationErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::RejectInvitationErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::RejectInvitationErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::RejectInvitationErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::RejectInvitationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RejectInvitationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::RejectInvitationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::RejectInvitationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::RejectInvitationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::RejectInvitationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::RejectInvitationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartMonitoringMemberError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartMonitoringMemberError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartMonitoringMemberError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartMonitoringMemberError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -766,39 +421,20 @@ where
 impl From<crate::error::StartMonitoringMemberError> for Error {
     fn from(err: crate::error::StartMonitoringMemberError) -> Self {
         match err.kind {
-            crate::error::StartMonitoringMemberErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StartMonitoringMemberErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::StartMonitoringMemberErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StartMonitoringMemberErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StartMonitoringMemberErrorKind::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::StartMonitoringMemberErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::StartMonitoringMemberErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartMonitoringMemberErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::StartMonitoringMemberErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::StartMonitoringMemberErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::StartMonitoringMemberErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::StartMonitoringMemberErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::StartMonitoringMemberErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::StartMonitoringMemberErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -806,33 +442,18 @@ where
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
         match err.kind {
-            crate::error::TagResourceErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::TagResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::TagResourceErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::TagResourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::TagResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -840,36 +461,18 @@ where
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
         match err.kind {
-            crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UntagResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UntagResourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UntagResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDatasourcePackagesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateDatasourcePackagesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDatasourcePackagesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateDatasourcePackagesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -877,43 +480,19 @@ where
 impl From<crate::error::UpdateDatasourcePackagesError> for Error {
     fn from(err: crate::error::UpdateDatasourcePackagesError) -> Self {
         match err.kind {
-            crate::error::UpdateDatasourcePackagesErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UpdateDatasourcePackagesErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateDatasourcePackagesErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateDatasourcePackagesErrorKind::ServiceQuotaExceededException(
-                inner,
-            ) => Error::ServiceQuotaExceededException(inner),
-            crate::error::UpdateDatasourcePackagesErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateDatasourcePackagesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateDatasourcePackagesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UpdateDatasourcePackagesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateDatasourcePackagesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateDatasourcePackagesErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::UpdateDatasourcePackagesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateDatasourcePackagesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::UpdateOrganizationConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateOrganizationConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateOrganizationConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateOrganizationConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -921,22 +500,13 @@ where
 impl From<crate::error::UpdateOrganizationConfigurationError> for Error {
     fn from(err: crate::error::UpdateOrganizationConfigurationError) -> Self {
         match err.kind {
-            crate::error::UpdateOrganizationConfigurationErrorKind::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::error::UpdateOrganizationConfigurationErrorKind::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::error::UpdateOrganizationConfigurationErrorKind::TooManyRequestsException(
-                inner,
-            ) => Error::TooManyRequestsException(inner),
-            crate::error::UpdateOrganizationConfigurationErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateOrganizationConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateOrganizationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UpdateOrganizationConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateOrganizationConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::UpdateOrganizationConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateOrganizationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
 impl std::error::Error for Error {}
+

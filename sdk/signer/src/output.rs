@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -26,19 +31,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -50,7 +60,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSigningJobOutput {
+pub struct StartSigningJobOutput  {
     /// <p>The ID of your signing job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -60,17 +70,17 @@ pub struct StartSigningJobOutput {
 }
 impl StartSigningJobOutput {
     /// <p>The ID of your signing job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The AWS account ID of the signing job owner.</p>
-    pub fn job_owner(&self) -> std::option::Option<&str> {
+    pub fn job_owner(&self) -> std::option::Option<& str> {
         self.job_owner.as_deref()
     }
 }
 /// See [`StartSigningJobOutput`](crate::output::StartSigningJobOutput).
 pub mod start_signing_job_output {
-
+    
     /// A builder for [`StartSigningJobOutput`](crate::output::StartSigningJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -85,8 +95,7 @@ pub mod start_signing_job_output {
         }
         /// <p>The ID of your signing job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The AWS account ID of the signing job owner.</p>
         pub fn job_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,17 +104,20 @@ pub mod start_signing_job_output {
         }
         /// <p>The AWS account ID of the signing job owner.</p>
         pub fn set_job_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_owner = input;
-            self
+            self.job_owner = input; self
         }
         /// Consumes the builder and constructs a [`StartSigningJobOutput`](crate::output::StartSigningJobOutput).
         pub fn build(self) -> crate::output::StartSigningJobOutput {
             crate::output::StartSigningJobOutput {
-                job_id: self.job_id,
-                job_owner: self.job_owner,
+                job_id: self.job_id
+                ,
+                job_owner: self.job_owner
+                ,
             }
         }
     }
+    
+    
 }
 impl StartSigningJobOutput {
     /// Creates a new builder-style object to manufacture [`StartSigningJobOutput`](crate::output::StartSigningJobOutput).
@@ -117,19 +129,24 @@ impl StartSigningJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevokeSigningProfileOutput {}
+pub struct RevokeSigningProfileOutput  {
+}
 /// See [`RevokeSigningProfileOutput`](crate::output::RevokeSigningProfileOutput).
 pub mod revoke_signing_profile_output {
-
+    
     /// A builder for [`RevokeSigningProfileOutput`](crate::output::RevokeSigningProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RevokeSigningProfileOutput`](crate::output::RevokeSigningProfileOutput).
         pub fn build(self) -> crate::output::RevokeSigningProfileOutput {
-            crate::output::RevokeSigningProfileOutput {}
+            crate::output::RevokeSigningProfileOutput {
+            }
         }
     }
+    
+    
 }
 impl RevokeSigningProfileOutput {
     /// Creates a new builder-style object to manufacture [`RevokeSigningProfileOutput`](crate::output::RevokeSigningProfileOutput).
@@ -141,19 +158,24 @@ impl RevokeSigningProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevokeSignatureOutput {}
+pub struct RevokeSignatureOutput  {
+}
 /// See [`RevokeSignatureOutput`](crate::output::RevokeSignatureOutput).
 pub mod revoke_signature_output {
-
+    
     /// A builder for [`RevokeSignatureOutput`](crate::output::RevokeSignatureOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RevokeSignatureOutput`](crate::output::RevokeSignatureOutput).
         pub fn build(self) -> crate::output::RevokeSignatureOutput {
-            crate::output::RevokeSignatureOutput {}
+            crate::output::RevokeSignatureOutput {
+            }
         }
     }
+    
+    
 }
 impl RevokeSignatureOutput {
     /// Creates a new builder-style object to manufacture [`RevokeSignatureOutput`](crate::output::RevokeSignatureOutput).
@@ -165,20 +187,20 @@ impl RevokeSignatureOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveProfilePermissionOutput {
+pub struct RemoveProfilePermissionOutput  {
     /// <p>An identifier for the current revision of the profile permissions.</p>
     #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl RemoveProfilePermissionOutput {
     /// <p>An identifier for the current revision of the profile permissions.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`RemoveProfilePermissionOutput`](crate::output::RemoveProfilePermissionOutput).
 pub mod remove_profile_permission_output {
-
+    
     /// A builder for [`RemoveProfilePermissionOutput`](crate::output::RemoveProfilePermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -192,16 +214,18 @@ pub mod remove_profile_permission_output {
         }
         /// <p>An identifier for the current revision of the profile permissions.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`RemoveProfilePermissionOutput`](crate::output::RemoveProfilePermissionOutput).
         pub fn build(self) -> crate::output::RemoveProfilePermissionOutput {
             crate::output::RemoveProfilePermissionOutput {
-                revision_id: self.revision_id,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveProfilePermissionOutput {
     /// Creates a new builder-style object to manufacture [`RemoveProfilePermissionOutput`](crate::output::RemoveProfilePermissionOutput).
@@ -213,7 +237,7 @@ impl RemoveProfilePermissionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutSigningProfileOutput {
+pub struct PutSigningProfileOutput  {
     /// <p>The Amazon Resource Name (ARN) of the signing profile created.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -226,21 +250,21 @@ pub struct PutSigningProfileOutput {
 }
 impl PutSigningProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the signing profile created.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the signing profile being created.</p>
-    pub fn profile_version(&self) -> std::option::Option<&str> {
+    pub fn profile_version(&self) -> std::option::Option<& str> {
         self.profile_version.as_deref()
     }
     /// <p>The signing profile ARN, including the profile version.</p>
-    pub fn profile_version_arn(&self) -> std::option::Option<&str> {
+    pub fn profile_version_arn(&self) -> std::option::Option<& str> {
         self.profile_version_arn.as_deref()
     }
 }
 /// See [`PutSigningProfileOutput`](crate::output::PutSigningProfileOutput).
 pub mod put_signing_profile_output {
-
+    
     /// A builder for [`PutSigningProfileOutput`](crate::output::PutSigningProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -256,8 +280,7 @@ pub mod put_signing_profile_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the signing profile created.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The version of the signing profile being created.</p>
         pub fn profile_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -265,12 +288,8 @@ pub mod put_signing_profile_output {
             self
         }
         /// <p>The version of the signing profile being created.</p>
-        pub fn set_profile_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profile_version = input;
-            self
+        pub fn set_profile_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profile_version = input; self
         }
         /// <p>The signing profile ARN, including the profile version.</p>
         pub fn profile_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -278,22 +297,23 @@ pub mod put_signing_profile_output {
             self
         }
         /// <p>The signing profile ARN, including the profile version.</p>
-        pub fn set_profile_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profile_version_arn = input;
-            self
+        pub fn set_profile_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profile_version_arn = input; self
         }
         /// Consumes the builder and constructs a [`PutSigningProfileOutput`](crate::output::PutSigningProfileOutput).
         pub fn build(self) -> crate::output::PutSigningProfileOutput {
             crate::output::PutSigningProfileOutput {
-                arn: self.arn,
-                profile_version: self.profile_version,
-                profile_version_arn: self.profile_version_arn,
+                arn: self.arn
+                ,
+                profile_version: self.profile_version
+                ,
+                profile_version_arn: self.profile_version_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PutSigningProfileOutput {
     /// Creates a new builder-style object to manufacture [`PutSigningProfileOutput`](crate::output::PutSigningProfileOutput).
@@ -305,30 +325,24 @@ impl PutSigningProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A list of tags associated with the signing profile.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tags associated with the signing profile.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -336,31 +350,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags associated with the signing profile.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A list of tags associated with the signing profile.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -372,7 +381,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSigningProfilesOutput {
+pub struct ListSigningProfilesOutput  {
     /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
     #[doc(hidden)]
     pub profiles: std::option::Option<std::vec::Vec<crate::model::SigningProfile>>,
@@ -382,17 +391,17 @@ pub struct ListSigningProfilesOutput {
 }
 impl ListSigningProfilesOutput {
     /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
-    pub fn profiles(&self) -> std::option::Option<&[crate::model::SigningProfile]> {
+    pub fn profiles(&self) -> std::option::Option<& [crate::model::SigningProfile]> {
         self.profiles.as_deref()
     }
     /// <p>Value for specifying the next set of paginated results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSigningProfilesOutput`](crate::output::ListSigningProfilesOutput).
 pub mod list_signing_profiles_output {
-
+    
     /// A builder for [`ListSigningProfilesOutput`](crate::output::ListSigningProfilesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -407,17 +416,13 @@ pub mod list_signing_profiles_output {
         /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
         pub fn profiles(mut self, input: crate::model::SigningProfile) -> Self {
             let mut v = self.profiles.unwrap_or_default();
-            v.push(input);
-            self.profiles = Some(v);
-            self
+                            v.push(input);
+                            self.profiles = Some(v);
+                            self
         }
         /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
-        pub fn set_profiles(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SigningProfile>>,
-        ) -> Self {
-            self.profiles = input;
-            self
+        pub fn set_profiles(mut self, input: std::option::Option<std::vec::Vec<crate::model::SigningProfile>>) -> Self {
+            self.profiles = input; self
         }
         /// <p>Value for specifying the next set of paginated results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -426,17 +431,20 @@ pub mod list_signing_profiles_output {
         }
         /// <p>Value for specifying the next set of paginated results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSigningProfilesOutput`](crate::output::ListSigningProfilesOutput).
         pub fn build(self) -> crate::output::ListSigningProfilesOutput {
             crate::output::ListSigningProfilesOutput {
-                profiles: self.profiles,
-                next_token: self.next_token,
+                profiles: self.profiles
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSigningProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListSigningProfilesOutput`](crate::output::ListSigningProfilesOutput).
@@ -448,7 +456,7 @@ impl ListSigningProfilesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSigningPlatformsOutput {
+pub struct ListSigningPlatformsOutput  {
     /// <p>A list of all platforms that match the request parameters.</p>
     #[doc(hidden)]
     pub platforms: std::option::Option<std::vec::Vec<crate::model::SigningPlatform>>,
@@ -458,17 +466,17 @@ pub struct ListSigningPlatformsOutput {
 }
 impl ListSigningPlatformsOutput {
     /// <p>A list of all platforms that match the request parameters.</p>
-    pub fn platforms(&self) -> std::option::Option<&[crate::model::SigningPlatform]> {
+    pub fn platforms(&self) -> std::option::Option<& [crate::model::SigningPlatform]> {
         self.platforms.as_deref()
     }
     /// <p>Value for specifying the next set of paginated results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSigningPlatformsOutput`](crate::output::ListSigningPlatformsOutput).
 pub mod list_signing_platforms_output {
-
+    
     /// A builder for [`ListSigningPlatformsOutput`](crate::output::ListSigningPlatformsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -483,17 +491,13 @@ pub mod list_signing_platforms_output {
         /// <p>A list of all platforms that match the request parameters.</p>
         pub fn platforms(mut self, input: crate::model::SigningPlatform) -> Self {
             let mut v = self.platforms.unwrap_or_default();
-            v.push(input);
-            self.platforms = Some(v);
-            self
+                            v.push(input);
+                            self.platforms = Some(v);
+                            self
         }
         /// <p>A list of all platforms that match the request parameters.</p>
-        pub fn set_platforms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SigningPlatform>>,
-        ) -> Self {
-            self.platforms = input;
-            self
+        pub fn set_platforms(mut self, input: std::option::Option<std::vec::Vec<crate::model::SigningPlatform>>) -> Self {
+            self.platforms = input; self
         }
         /// <p>Value for specifying the next set of paginated results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -502,17 +506,20 @@ pub mod list_signing_platforms_output {
         }
         /// <p>Value for specifying the next set of paginated results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSigningPlatformsOutput`](crate::output::ListSigningPlatformsOutput).
         pub fn build(self) -> crate::output::ListSigningPlatformsOutput {
             crate::output::ListSigningPlatformsOutput {
-                platforms: self.platforms,
-                next_token: self.next_token,
+                platforms: self.platforms
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSigningPlatformsOutput {
     /// Creates a new builder-style object to manufacture [`ListSigningPlatformsOutput`](crate::output::ListSigningPlatformsOutput).
@@ -524,7 +531,7 @@ impl ListSigningPlatformsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSigningJobsOutput {
+pub struct ListSigningJobsOutput  {
     /// <p>A list of your signing jobs.</p>
     #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::SigningJob>>,
@@ -534,17 +541,17 @@ pub struct ListSigningJobsOutput {
 }
 impl ListSigningJobsOutput {
     /// <p>A list of your signing jobs.</p>
-    pub fn jobs(&self) -> std::option::Option<&[crate::model::SigningJob]> {
+    pub fn jobs(&self) -> std::option::Option<& [crate::model::SigningJob]> {
         self.jobs.as_deref()
     }
     /// <p>String for specifying the next set of paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSigningJobsOutput`](crate::output::ListSigningJobsOutput).
 pub mod list_signing_jobs_output {
-
+    
     /// A builder for [`ListSigningJobsOutput`](crate::output::ListSigningJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -559,17 +566,13 @@ pub mod list_signing_jobs_output {
         /// <p>A list of your signing jobs.</p>
         pub fn jobs(mut self, input: crate::model::SigningJob) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input);
-            self.jobs = Some(v);
-            self
+                            v.push(input);
+                            self.jobs = Some(v);
+                            self
         }
         /// <p>A list of your signing jobs.</p>
-        pub fn set_jobs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SigningJob>>,
-        ) -> Self {
-            self.jobs = input;
-            self
+        pub fn set_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::model::SigningJob>>) -> Self {
+            self.jobs = input; self
         }
         /// <p>String for specifying the next set of paginated results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -578,17 +581,20 @@ pub mod list_signing_jobs_output {
         }
         /// <p>String for specifying the next set of paginated results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSigningJobsOutput`](crate::output::ListSigningJobsOutput).
         pub fn build(self) -> crate::output::ListSigningJobsOutput {
             crate::output::ListSigningJobsOutput {
-                jobs: self.jobs,
-                next_token: self.next_token,
+                jobs: self.jobs
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSigningJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListSigningJobsOutput`](crate::output::ListSigningJobsOutput).
@@ -600,7 +606,7 @@ impl ListSigningJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProfilePermissionsOutput {
+pub struct ListProfilePermissionsOutput  {
     /// <p>The identifier for the current revision of profile permissions.</p>
     #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
@@ -616,7 +622,7 @@ pub struct ListProfilePermissionsOutput {
 }
 impl ListProfilePermissionsOutput {
     /// <p>The identifier for the current revision of profile permissions.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>Total size of the policy associated with the Signing Profile in bytes.</p>
@@ -624,17 +630,17 @@ impl ListProfilePermissionsOutput {
         self.policy_size_bytes
     }
     /// <p>List of permissions associated with the Signing Profile.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::model::Permission]> {
         self.permissions.as_deref()
     }
     /// <p>String for specifying the next set of paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListProfilePermissionsOutput`](crate::output::ListProfilePermissionsOutput).
 pub mod list_profile_permissions_output {
-
+    
     /// A builder for [`ListProfilePermissionsOutput`](crate::output::ListProfilePermissionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -651,8 +657,7 @@ pub mod list_profile_permissions_output {
         }
         /// <p>The identifier for the current revision of profile permissions.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// <p>Total size of the policy associated with the Signing Profile in bytes.</p>
         pub fn policy_size_bytes(mut self, input: i32) -> Self {
@@ -661,8 +666,7 @@ pub mod list_profile_permissions_output {
         }
         /// <p>Total size of the policy associated with the Signing Profile in bytes.</p>
         pub fn set_policy_size_bytes(mut self, input: std::option::Option<i32>) -> Self {
-            self.policy_size_bytes = input;
-            self
+            self.policy_size_bytes = input; self
         }
         /// Appends an item to `permissions`.
         ///
@@ -671,17 +675,13 @@ pub mod list_profile_permissions_output {
         /// <p>List of permissions associated with the Signing Profile.</p>
         pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input);
-            self.permissions = Some(v);
-            self
+                            v.push(input);
+                            self.permissions = Some(v);
+                            self
         }
         /// <p>List of permissions associated with the Signing Profile.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Permission>>) -> Self {
+            self.permissions = input; self
         }
         /// <p>String for specifying the next set of paginated results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -690,19 +690,25 @@ pub mod list_profile_permissions_output {
         }
         /// <p>String for specifying the next set of paginated results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProfilePermissionsOutput`](crate::output::ListProfilePermissionsOutput).
         pub fn build(self) -> crate::output::ListProfilePermissionsOutput {
             crate::output::ListProfilePermissionsOutput {
-                revision_id: self.revision_id,
-                policy_size_bytes: self.policy_size_bytes.unwrap_or_default(),
-                permissions: self.permissions,
-                next_token: self.next_token,
+                revision_id: self.revision_id
+                ,
+                policy_size_bytes: self.policy_size_bytes
+                    .unwrap_or_default()
+                ,
+                permissions: self.permissions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProfilePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ListProfilePermissionsOutput`](crate::output::ListProfilePermissionsOutput).
@@ -714,7 +720,7 @@ impl ListProfilePermissionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSigningProfileOutput {
+pub struct GetSigningProfileOutput  {
     /// <p>The name of the target signing profile.</p>
     #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
@@ -744,8 +750,7 @@ pub struct GetSigningProfileOutput {
     pub overrides: std::option::Option<crate::model::SigningPlatformOverrides>,
     /// <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
     #[doc(hidden)]
-    pub signing_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub signing_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the target signing profile.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::SigningProfileStatus>,
@@ -757,103 +762,86 @@ pub struct GetSigningProfileOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>A list of tags associated with the signing profile.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetSigningProfileOutput {
     /// <p>The name of the target signing profile.</p>
-    pub fn profile_name(&self) -> std::option::Option<&str> {
+    pub fn profile_name(&self) -> std::option::Option<& str> {
         self.profile_name.as_deref()
     }
     /// <p>The current version of the signing profile.</p>
-    pub fn profile_version(&self) -> std::option::Option<&str> {
+    pub fn profile_version(&self) -> std::option::Option<& str> {
         self.profile_version.as_deref()
     }
     /// <p>The signing profile ARN, including the profile version.</p>
-    pub fn profile_version_arn(&self) -> std::option::Option<&str> {
+    pub fn profile_version_arn(&self) -> std::option::Option<& str> {
         self.profile_version_arn.as_deref()
     }
     /// <p>Revocation information for a signing profile.</p>
-    pub fn revocation_record(
-        &self,
-    ) -> std::option::Option<&crate::model::SigningProfileRevocationRecord> {
+    pub fn revocation_record(&self) -> std::option::Option<& crate::model::SigningProfileRevocationRecord> {
         self.revocation_record.as_ref()
     }
     /// <p>The ARN of the certificate that the target profile uses for signing operations.</p>
-    pub fn signing_material(&self) -> std::option::Option<&crate::model::SigningMaterial> {
+    pub fn signing_material(&self) -> std::option::Option<& crate::model::SigningMaterial> {
         self.signing_material.as_ref()
     }
     /// <p>The ID of the platform that is used by the target signing profile.</p>
-    pub fn platform_id(&self) -> std::option::Option<&str> {
+    pub fn platform_id(&self) -> std::option::Option<& str> {
         self.platform_id.as_deref()
     }
     /// <p>A human-readable name for the signing platform associated with the signing profile.</p>
-    pub fn platform_display_name(&self) -> std::option::Option<&str> {
+    pub fn platform_display_name(&self) -> std::option::Option<& str> {
         self.platform_display_name.as_deref()
     }
     /// <p>The validity period for a signing job.</p>
-    pub fn signature_validity_period(
-        &self,
-    ) -> std::option::Option<&crate::model::SignatureValidityPeriod> {
+    pub fn signature_validity_period(&self) -> std::option::Option<& crate::model::SignatureValidityPeriod> {
         self.signature_validity_period.as_ref()
     }
     /// <p>A list of overrides applied by the target signing profile for signing operations.</p>
-    pub fn overrides(&self) -> std::option::Option<&crate::model::SigningPlatformOverrides> {
+    pub fn overrides(&self) -> std::option::Option<& crate::model::SigningPlatformOverrides> {
         self.overrides.as_ref()
     }
     /// <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
-    pub fn signing_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn signing_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.signing_parameters.as_ref()
     }
     /// <p>The status of the target signing profile.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SigningProfileStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SigningProfileStatus> {
         self.status.as_ref()
     }
     /// <p>Reason for the status of the target signing profile.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A list of tags associated with the signing profile.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetSigningProfileOutput`](crate::output::GetSigningProfileOutput).
 pub mod get_signing_profile_output {
-
+    
     /// A builder for [`GetSigningProfileOutput`](crate::output::GetSigningProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
         pub(crate) profile_version: std::option::Option<std::string::String>,
         pub(crate) profile_version_arn: std::option::Option<std::string::String>,
-        pub(crate) revocation_record:
-            std::option::Option<crate::model::SigningProfileRevocationRecord>,
+        pub(crate) revocation_record: std::option::Option<crate::model::SigningProfileRevocationRecord>,
         pub(crate) signing_material: std::option::Option<crate::model::SigningMaterial>,
         pub(crate) platform_id: std::option::Option<std::string::String>,
         pub(crate) platform_display_name: std::option::Option<std::string::String>,
-        pub(crate) signature_validity_period:
-            std::option::Option<crate::model::SignatureValidityPeriod>,
+        pub(crate) signature_validity_period: std::option::Option<crate::model::SignatureValidityPeriod>,
         pub(crate) overrides: std::option::Option<crate::model::SigningPlatformOverrides>,
-        pub(crate) signing_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) signing_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) status: std::option::Option<crate::model::SigningProfileStatus>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the target signing profile.</p>
@@ -863,8 +851,7 @@ pub mod get_signing_profile_output {
         }
         /// <p>The name of the target signing profile.</p>
         pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.profile_name = input;
-            self
+            self.profile_name = input; self
         }
         /// <p>The current version of the signing profile.</p>
         pub fn profile_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -872,12 +859,8 @@ pub mod get_signing_profile_output {
             self
         }
         /// <p>The current version of the signing profile.</p>
-        pub fn set_profile_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profile_version = input;
-            self
+        pub fn set_profile_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profile_version = input; self
         }
         /// <p>The signing profile ARN, including the profile version.</p>
         pub fn profile_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -885,28 +868,17 @@ pub mod get_signing_profile_output {
             self
         }
         /// <p>The signing profile ARN, including the profile version.</p>
-        pub fn set_profile_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profile_version_arn = input;
-            self
+        pub fn set_profile_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profile_version_arn = input; self
         }
         /// <p>Revocation information for a signing profile.</p>
-        pub fn revocation_record(
-            mut self,
-            input: crate::model::SigningProfileRevocationRecord,
-        ) -> Self {
+        pub fn revocation_record(mut self, input: crate::model::SigningProfileRevocationRecord) -> Self {
             self.revocation_record = Some(input);
             self
         }
         /// <p>Revocation information for a signing profile.</p>
-        pub fn set_revocation_record(
-            mut self,
-            input: std::option::Option<crate::model::SigningProfileRevocationRecord>,
-        ) -> Self {
-            self.revocation_record = input;
-            self
+        pub fn set_revocation_record(mut self, input: std::option::Option<crate::model::SigningProfileRevocationRecord>) -> Self {
+            self.revocation_record = input; self
         }
         /// <p>The ARN of the certificate that the target profile uses for signing operations.</p>
         pub fn signing_material(mut self, input: crate::model::SigningMaterial) -> Self {
@@ -914,12 +886,8 @@ pub mod get_signing_profile_output {
             self
         }
         /// <p>The ARN of the certificate that the target profile uses for signing operations.</p>
-        pub fn set_signing_material(
-            mut self,
-            input: std::option::Option<crate::model::SigningMaterial>,
-        ) -> Self {
-            self.signing_material = input;
-            self
+        pub fn set_signing_material(mut self, input: std::option::Option<crate::model::SigningMaterial>) -> Self {
+            self.signing_material = input; self
         }
         /// <p>The ID of the platform that is used by the target signing profile.</p>
         pub fn platform_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -928,8 +896,7 @@ pub mod get_signing_profile_output {
         }
         /// <p>The ID of the platform that is used by the target signing profile.</p>
         pub fn set_platform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.platform_id = input;
-            self
+            self.platform_id = input; self
         }
         /// <p>A human-readable name for the signing platform associated with the signing profile.</p>
         pub fn platform_display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -937,28 +904,17 @@ pub mod get_signing_profile_output {
             self
         }
         /// <p>A human-readable name for the signing platform associated with the signing profile.</p>
-        pub fn set_platform_display_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_display_name = input;
-            self
+        pub fn set_platform_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_display_name = input; self
         }
         /// <p>The validity period for a signing job.</p>
-        pub fn signature_validity_period(
-            mut self,
-            input: crate::model::SignatureValidityPeriod,
-        ) -> Self {
+        pub fn signature_validity_period(mut self, input: crate::model::SignatureValidityPeriod) -> Self {
             self.signature_validity_period = Some(input);
             self
         }
         /// <p>The validity period for a signing job.</p>
-        pub fn set_signature_validity_period(
-            mut self,
-            input: std::option::Option<crate::model::SignatureValidityPeriod>,
-        ) -> Self {
-            self.signature_validity_period = input;
-            self
+        pub fn set_signature_validity_period(mut self, input: std::option::Option<crate::model::SignatureValidityPeriod>) -> Self {
+            self.signature_validity_period = input; self
         }
         /// <p>A list of overrides applied by the target signing profile for signing operations.</p>
         pub fn overrides(mut self, input: crate::model::SigningPlatformOverrides) -> Self {
@@ -966,37 +922,23 @@ pub mod get_signing_profile_output {
             self
         }
         /// <p>A list of overrides applied by the target signing profile for signing operations.</p>
-        pub fn set_overrides(
-            mut self,
-            input: std::option::Option<crate::model::SigningPlatformOverrides>,
-        ) -> Self {
-            self.overrides = input;
-            self
+        pub fn set_overrides(mut self, input: std::option::Option<crate::model::SigningPlatformOverrides>) -> Self {
+            self.overrides = input; self
         }
         /// Adds a key-value pair to `signing_parameters`.
         ///
         /// To override the contents of this collection use [`set_signing_parameters`](Self::set_signing_parameters).
         ///
         /// <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
-        pub fn signing_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn signing_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.signing_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.signing_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.signing_parameters = Some(hash_map);
+                            self
         }
         /// <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
-        pub fn set_signing_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.signing_parameters = input;
-            self
+        pub fn set_signing_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.signing_parameters = input; self
         }
         /// <p>The status of the target signing profile.</p>
         pub fn status(mut self, input: crate::model::SigningProfileStatus) -> Self {
@@ -1004,12 +946,8 @@ pub mod get_signing_profile_output {
             self
         }
         /// <p>The status of the target signing profile.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SigningProfileStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SigningProfileStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Reason for the status of the target signing profile.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1017,12 +955,8 @@ pub mod get_signing_profile_output {
             self
         }
         /// <p>Reason for the status of the target signing profile.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1031,54 +965,59 @@ pub mod get_signing_profile_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags associated with the signing profile.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A list of tags associated with the signing profile.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetSigningProfileOutput`](crate::output::GetSigningProfileOutput).
         pub fn build(self) -> crate::output::GetSigningProfileOutput {
             crate::output::GetSigningProfileOutput {
-                profile_name: self.profile_name,
-                profile_version: self.profile_version,
-                profile_version_arn: self.profile_version_arn,
-                revocation_record: self.revocation_record,
-                signing_material: self.signing_material,
-                platform_id: self.platform_id,
-                platform_display_name: self.platform_display_name,
-                signature_validity_period: self.signature_validity_period,
-                overrides: self.overrides,
-                signing_parameters: self.signing_parameters,
-                status: self.status,
-                status_reason: self.status_reason,
-                arn: self.arn,
-                tags: self.tags,
+                profile_name: self.profile_name
+                ,
+                profile_version: self.profile_version
+                ,
+                profile_version_arn: self.profile_version_arn
+                ,
+                revocation_record: self.revocation_record
+                ,
+                signing_material: self.signing_material
+                ,
+                platform_id: self.platform_id
+                ,
+                platform_display_name: self.platform_display_name
+                ,
+                signature_validity_period: self.signature_validity_period
+                ,
+                overrides: self.overrides
+                ,
+                signing_parameters: self.signing_parameters
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                arn: self.arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSigningProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetSigningProfileOutput`](crate::output::GetSigningProfileOutput).
@@ -1090,7 +1029,7 @@ impl GetSigningProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSigningPlatformOutput {
+pub struct GetSigningPlatformOutput  {
     /// <p>The ID of the target signing platform.</p>
     #[doc(hidden)]
     pub platform_id: std::option::Option<std::string::String>,
@@ -1121,33 +1060,31 @@ pub struct GetSigningPlatformOutput {
 }
 impl GetSigningPlatformOutput {
     /// <p>The ID of the target signing platform.</p>
-    pub fn platform_id(&self) -> std::option::Option<&str> {
+    pub fn platform_id(&self) -> std::option::Option<& str> {
         self.platform_id.as_deref()
     }
     /// <p>The display name of the target signing platform.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A list of partner entities that use the target signing platform.</p>
-    pub fn partner(&self) -> std::option::Option<&str> {
+    pub fn partner(&self) -> std::option::Option<& str> {
         self.partner.as_deref()
     }
     /// <p>The validation template that is used by the target signing platform.</p>
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The category type of the target signing platform.</p>
-    pub fn category(&self) -> std::option::Option<&crate::model::Category> {
+    pub fn category(&self) -> std::option::Option<& crate::model::Category> {
         self.category.as_ref()
     }
     /// <p>A list of configurations applied to the target platform at signing.</p>
-    pub fn signing_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::SigningConfiguration> {
+    pub fn signing_configuration(&self) -> std::option::Option<& crate::model::SigningConfiguration> {
         self.signing_configuration.as_ref()
     }
     /// <p>The format of the target platform's signing image.</p>
-    pub fn signing_image_format(&self) -> std::option::Option<&crate::model::SigningImageFormat> {
+    pub fn signing_image_format(&self) -> std::option::Option<& crate::model::SigningImageFormat> {
         self.signing_image_format.as_ref()
     }
     /// <p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>
@@ -1161,7 +1098,7 @@ impl GetSigningPlatformOutput {
 }
 /// See [`GetSigningPlatformOutput`](crate::output::GetSigningPlatformOutput).
 pub mod get_signing_platform_output {
-
+    
     /// A builder for [`GetSigningPlatformOutput`](crate::output::GetSigningPlatformOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1183,8 +1120,7 @@ pub mod get_signing_platform_output {
         }
         /// <p>The ID of the target signing platform.</p>
         pub fn set_platform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.platform_id = input;
-            self
+            self.platform_id = input; self
         }
         /// <p>The display name of the target signing platform.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1193,8 +1129,7 @@ pub mod get_signing_platform_output {
         }
         /// <p>The display name of the target signing platform.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>A list of partner entities that use the target signing platform.</p>
         pub fn partner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1203,8 +1138,7 @@ pub mod get_signing_platform_output {
         }
         /// <p>A list of partner entities that use the target signing platform.</p>
         pub fn set_partner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.partner = input;
-            self
+            self.partner = input; self
         }
         /// <p>The validation template that is used by the target signing platform.</p>
         pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1213,8 +1147,7 @@ pub mod get_signing_platform_output {
         }
         /// <p>The validation template that is used by the target signing platform.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target = input;
-            self
+            self.target = input; self
         }
         /// <p>The category type of the target signing platform.</p>
         pub fn category(mut self, input: crate::model::Category) -> Self {
@@ -1223,8 +1156,7 @@ pub mod get_signing_platform_output {
         }
         /// <p>The category type of the target signing platform.</p>
         pub fn set_category(mut self, input: std::option::Option<crate::model::Category>) -> Self {
-            self.category = input;
-            self
+            self.category = input; self
         }
         /// <p>A list of configurations applied to the target platform at signing.</p>
         pub fn signing_configuration(mut self, input: crate::model::SigningConfiguration) -> Self {
@@ -1232,12 +1164,8 @@ pub mod get_signing_platform_output {
             self
         }
         /// <p>A list of configurations applied to the target platform at signing.</p>
-        pub fn set_signing_configuration(
-            mut self,
-            input: std::option::Option<crate::model::SigningConfiguration>,
-        ) -> Self {
-            self.signing_configuration = input;
-            self
+        pub fn set_signing_configuration(mut self, input: std::option::Option<crate::model::SigningConfiguration>) -> Self {
+            self.signing_configuration = input; self
         }
         /// <p>The format of the target platform's signing image.</p>
         pub fn signing_image_format(mut self, input: crate::model::SigningImageFormat) -> Self {
@@ -1245,12 +1173,8 @@ pub mod get_signing_platform_output {
             self
         }
         /// <p>The format of the target platform's signing image.</p>
-        pub fn set_signing_image_format(
-            mut self,
-            input: std::option::Option<crate::model::SigningImageFormat>,
-        ) -> Self {
-            self.signing_image_format = input;
-            self
+        pub fn set_signing_image_format(mut self, input: std::option::Option<crate::model::SigningImageFormat>) -> Self {
+            self.signing_image_format = input; self
         }
         /// <p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>
         pub fn max_size_in_mb(mut self, input: i32) -> Self {
@@ -1259,8 +1183,7 @@ pub mod get_signing_platform_output {
         }
         /// <p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>
         pub fn set_max_size_in_mb(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_size_in_mb = input;
-            self
+            self.max_size_in_mb = input; self
         }
         /// <p>A flag indicating whether signatures generated for the signing platform can be revoked.</p>
         pub fn revocation_supported(mut self, input: bool) -> Self {
@@ -1269,24 +1192,36 @@ pub mod get_signing_platform_output {
         }
         /// <p>A flag indicating whether signatures generated for the signing platform can be revoked.</p>
         pub fn set_revocation_supported(mut self, input: std::option::Option<bool>) -> Self {
-            self.revocation_supported = input;
-            self
+            self.revocation_supported = input; self
         }
         /// Consumes the builder and constructs a [`GetSigningPlatformOutput`](crate::output::GetSigningPlatformOutput).
         pub fn build(self) -> crate::output::GetSigningPlatformOutput {
             crate::output::GetSigningPlatformOutput {
-                platform_id: self.platform_id,
-                display_name: self.display_name,
-                partner: self.partner,
-                target: self.target,
-                category: self.category,
-                signing_configuration: self.signing_configuration,
-                signing_image_format: self.signing_image_format,
-                max_size_in_mb: self.max_size_in_mb.unwrap_or_default(),
-                revocation_supported: self.revocation_supported.unwrap_or_default(),
+                platform_id: self.platform_id
+                ,
+                display_name: self.display_name
+                ,
+                partner: self.partner
+                ,
+                target: self.target
+                ,
+                category: self.category
+                ,
+                signing_configuration: self.signing_configuration
+                ,
+                signing_image_format: self.signing_image_format
+                ,
+                max_size_in_mb: self.max_size_in_mb
+                    .unwrap_or_default()
+                ,
+                revocation_supported: self.revocation_supported
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSigningPlatformOutput {
     /// Creates a new builder-style object to manufacture [`GetSigningPlatformOutput`](crate::output::GetSigningPlatformOutput).
@@ -1298,7 +1233,7 @@ impl GetSigningPlatformOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSigningJobOutput {
+pub struct DescribeSigningJobOutput  {
     /// <p>The ID of the signing job on output.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -1325,8 +1260,7 @@ pub struct DescribeSigningJobOutput {
     pub overrides: std::option::Option<crate::model::SigningPlatformOverrides>,
     /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>
     #[doc(hidden)]
-    pub signing_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub signing_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Date and time that the signing job was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -1360,90 +1294,85 @@ pub struct DescribeSigningJobOutput {
 }
 impl DescribeSigningJobOutput {
     /// <p>The ID of the signing job on output.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The object that contains the name of your S3 bucket or your raw code.</p>
-    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+    pub fn source(&self) -> std::option::Option<& crate::model::Source> {
         self.source.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of your code signing certificate.</p>
-    pub fn signing_material(&self) -> std::option::Option<&crate::model::SigningMaterial> {
+    pub fn signing_material(&self) -> std::option::Option<& crate::model::SigningMaterial> {
         self.signing_material.as_ref()
     }
     /// <p>The microcontroller platform to which your signed code image will be distributed.</p>
-    pub fn platform_id(&self) -> std::option::Option<&str> {
+    pub fn platform_id(&self) -> std::option::Option<& str> {
         self.platform_id.as_deref()
     }
     /// <p>A human-readable name for the signing platform associated with the signing job.</p>
-    pub fn platform_display_name(&self) -> std::option::Option<&str> {
+    pub fn platform_display_name(&self) -> std::option::Option<& str> {
         self.platform_display_name.as_deref()
     }
     /// <p>The name of the profile that initiated the signing operation.</p>
-    pub fn profile_name(&self) -> std::option::Option<&str> {
+    pub fn profile_name(&self) -> std::option::Option<& str> {
         self.profile_name.as_deref()
     }
     /// <p>The version of the signing profile used to initiate the signing job.</p>
-    pub fn profile_version(&self) -> std::option::Option<&str> {
+    pub fn profile_version(&self) -> std::option::Option<& str> {
         self.profile_version.as_deref()
     }
     /// <p>A list of any overrides that were applied to the signing operation.</p>
-    pub fn overrides(&self) -> std::option::Option<&crate::model::SigningPlatformOverrides> {
+    pub fn overrides(&self) -> std::option::Option<& crate::model::SigningPlatformOverrides> {
         self.overrides.as_ref()
     }
     /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>
-    pub fn signing_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn signing_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.signing_parameters.as_ref()
     }
     /// <p>Date and time that the signing job was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Date and time that the signing job was completed.</p>
-    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
     /// <p>Thr expiration timestamp for the signature generated by the signing job.</p>
-    pub fn signature_expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn signature_expires_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.signature_expires_at.as_ref()
     }
     /// <p>The IAM principal that requested the signing job.</p>
-    pub fn requested_by(&self) -> std::option::Option<&str> {
+    pub fn requested_by(&self) -> std::option::Option<& str> {
         self.requested_by.as_deref()
     }
     /// <p>Status of the signing job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SigningStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SigningStatus> {
         self.status.as_ref()
     }
     /// <p>String value that contains the status reason.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>A revocation record if the signature generated by the signing job has been revoked. Contains a timestamp and the ID of the IAM entity that revoked the signature.</p>
-    pub fn revocation_record(
-        &self,
-    ) -> std::option::Option<&crate::model::SigningJobRevocationRecord> {
+    pub fn revocation_record(&self) -> std::option::Option<& crate::model::SigningJobRevocationRecord> {
         self.revocation_record.as_ref()
     }
     /// <p>Name of the S3 bucket where the signed code image is saved by code signing.</p>
-    pub fn signed_object(&self) -> std::option::Option<&crate::model::SignedObject> {
+    pub fn signed_object(&self) -> std::option::Option<& crate::model::SignedObject> {
         self.signed_object.as_ref()
     }
     /// <p>The AWS account ID of the job owner.</p>
-    pub fn job_owner(&self) -> std::option::Option<&str> {
+    pub fn job_owner(&self) -> std::option::Option<& str> {
         self.job_owner.as_deref()
     }
     /// <p>The IAM entity that initiated the signing job.</p>
-    pub fn job_invoker(&self) -> std::option::Option<&str> {
+    pub fn job_invoker(&self) -> std::option::Option<& str> {
         self.job_invoker.as_deref()
     }
 }
 /// See [`DescribeSigningJobOutput`](crate::output::DescribeSigningJobOutput).
 pub mod describe_signing_job_output {
-
+    
     /// A builder for [`DescribeSigningJobOutput`](crate::output::DescribeSigningJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1455,9 +1384,7 @@ pub mod describe_signing_job_output {
         pub(crate) profile_name: std::option::Option<std::string::String>,
         pub(crate) profile_version: std::option::Option<std::string::String>,
         pub(crate) overrides: std::option::Option<crate::model::SigningPlatformOverrides>,
-        pub(crate) signing_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) signing_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) signature_expires_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -1477,8 +1404,7 @@ pub mod describe_signing_job_output {
         }
         /// <p>The ID of the signing job on output.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The object that contains the name of your S3 bucket or your raw code.</p>
         pub fn source(mut self, input: crate::model::Source) -> Self {
@@ -1487,8 +1413,7 @@ pub mod describe_signing_job_output {
         }
         /// <p>The object that contains the name of your S3 bucket or your raw code.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of your code signing certificate.</p>
         pub fn signing_material(mut self, input: crate::model::SigningMaterial) -> Self {
@@ -1496,12 +1421,8 @@ pub mod describe_signing_job_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of your code signing certificate.</p>
-        pub fn set_signing_material(
-            mut self,
-            input: std::option::Option<crate::model::SigningMaterial>,
-        ) -> Self {
-            self.signing_material = input;
-            self
+        pub fn set_signing_material(mut self, input: std::option::Option<crate::model::SigningMaterial>) -> Self {
+            self.signing_material = input; self
         }
         /// <p>The microcontroller platform to which your signed code image will be distributed.</p>
         pub fn platform_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1510,8 +1431,7 @@ pub mod describe_signing_job_output {
         }
         /// <p>The microcontroller platform to which your signed code image will be distributed.</p>
         pub fn set_platform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.platform_id = input;
-            self
+            self.platform_id = input; self
         }
         /// <p>A human-readable name for the signing platform associated with the signing job.</p>
         pub fn platform_display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1519,12 +1439,8 @@ pub mod describe_signing_job_output {
             self
         }
         /// <p>A human-readable name for the signing platform associated with the signing job.</p>
-        pub fn set_platform_display_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_display_name = input;
-            self
+        pub fn set_platform_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_display_name = input; self
         }
         /// <p>The name of the profile that initiated the signing operation.</p>
         pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1533,8 +1449,7 @@ pub mod describe_signing_job_output {
         }
         /// <p>The name of the profile that initiated the signing operation.</p>
         pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.profile_name = input;
-            self
+            self.profile_name = input; self
         }
         /// <p>The version of the signing profile used to initiate the signing job.</p>
         pub fn profile_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1542,12 +1457,8 @@ pub mod describe_signing_job_output {
             self
         }
         /// <p>The version of the signing profile used to initiate the signing job.</p>
-        pub fn set_profile_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profile_version = input;
-            self
+        pub fn set_profile_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profile_version = input; self
         }
         /// <p>A list of any overrides that were applied to the signing operation.</p>
         pub fn overrides(mut self, input: crate::model::SigningPlatformOverrides) -> Self {
@@ -1555,37 +1466,23 @@ pub mod describe_signing_job_output {
             self
         }
         /// <p>A list of any overrides that were applied to the signing operation.</p>
-        pub fn set_overrides(
-            mut self,
-            input: std::option::Option<crate::model::SigningPlatformOverrides>,
-        ) -> Self {
-            self.overrides = input;
-            self
+        pub fn set_overrides(mut self, input: std::option::Option<crate::model::SigningPlatformOverrides>) -> Self {
+            self.overrides = input; self
         }
         /// Adds a key-value pair to `signing_parameters`.
         ///
         /// To override the contents of this collection use [`set_signing_parameters`](Self::set_signing_parameters).
         ///
         /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>
-        pub fn signing_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn signing_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.signing_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.signing_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.signing_parameters = Some(hash_map);
+                            self
         }
         /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>
-        pub fn set_signing_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.signing_parameters = input;
-            self
+        pub fn set_signing_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.signing_parameters = input; self
         }
         /// <p>Date and time that the signing job was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1593,12 +1490,8 @@ pub mod describe_signing_job_output {
             self
         }
         /// <p>Date and time that the signing job was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>Date and time that the signing job was completed.</p>
         pub fn completed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1606,12 +1499,8 @@ pub mod describe_signing_job_output {
             self
         }
         /// <p>Date and time that the signing job was completed.</p>
-        pub fn set_completed_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completed_at = input;
-            self
+        pub fn set_completed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completed_at = input; self
         }
         /// <p>Thr expiration timestamp for the signature generated by the signing job.</p>
         pub fn signature_expires_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1619,12 +1508,8 @@ pub mod describe_signing_job_output {
             self
         }
         /// <p>Thr expiration timestamp for the signature generated by the signing job.</p>
-        pub fn set_signature_expires_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.signature_expires_at = input;
-            self
+        pub fn set_signature_expires_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.signature_expires_at = input; self
         }
         /// <p>The IAM principal that requested the signing job.</p>
         pub fn requested_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1633,8 +1518,7 @@ pub mod describe_signing_job_output {
         }
         /// <p>The IAM principal that requested the signing job.</p>
         pub fn set_requested_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.requested_by = input;
-            self
+            self.requested_by = input; self
         }
         /// <p>Status of the signing job.</p>
         pub fn status(mut self, input: crate::model::SigningStatus) -> Self {
@@ -1642,12 +1526,8 @@ pub mod describe_signing_job_output {
             self
         }
         /// <p>Status of the signing job.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SigningStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SigningStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>String value that contains the status reason.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1655,28 +1535,17 @@ pub mod describe_signing_job_output {
             self
         }
         /// <p>String value that contains the status reason.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// <p>A revocation record if the signature generated by the signing job has been revoked. Contains a timestamp and the ID of the IAM entity that revoked the signature.</p>
-        pub fn revocation_record(
-            mut self,
-            input: crate::model::SigningJobRevocationRecord,
-        ) -> Self {
+        pub fn revocation_record(mut self, input: crate::model::SigningJobRevocationRecord) -> Self {
             self.revocation_record = Some(input);
             self
         }
         /// <p>A revocation record if the signature generated by the signing job has been revoked. Contains a timestamp and the ID of the IAM entity that revoked the signature.</p>
-        pub fn set_revocation_record(
-            mut self,
-            input: std::option::Option<crate::model::SigningJobRevocationRecord>,
-        ) -> Self {
-            self.revocation_record = input;
-            self
+        pub fn set_revocation_record(mut self, input: std::option::Option<crate::model::SigningJobRevocationRecord>) -> Self {
+            self.revocation_record = input; self
         }
         /// <p>Name of the S3 bucket where the signed code image is saved by code signing.</p>
         pub fn signed_object(mut self, input: crate::model::SignedObject) -> Self {
@@ -1684,12 +1553,8 @@ pub mod describe_signing_job_output {
             self
         }
         /// <p>Name of the S3 bucket where the signed code image is saved by code signing.</p>
-        pub fn set_signed_object(
-            mut self,
-            input: std::option::Option<crate::model::SignedObject>,
-        ) -> Self {
-            self.signed_object = input;
-            self
+        pub fn set_signed_object(mut self, input: std::option::Option<crate::model::SignedObject>) -> Self {
+            self.signed_object = input; self
         }
         /// <p>The AWS account ID of the job owner.</p>
         pub fn job_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1698,8 +1563,7 @@ pub mod describe_signing_job_output {
         }
         /// <p>The AWS account ID of the job owner.</p>
         pub fn set_job_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_owner = input;
-            self
+            self.job_owner = input; self
         }
         /// <p>The IAM entity that initiated the signing job.</p>
         pub fn job_invoker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1708,34 +1572,54 @@ pub mod describe_signing_job_output {
         }
         /// <p>The IAM entity that initiated the signing job.</p>
         pub fn set_job_invoker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_invoker = input;
-            self
+            self.job_invoker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSigningJobOutput`](crate::output::DescribeSigningJobOutput).
         pub fn build(self) -> crate::output::DescribeSigningJobOutput {
             crate::output::DescribeSigningJobOutput {
-                job_id: self.job_id,
-                source: self.source,
-                signing_material: self.signing_material,
-                platform_id: self.platform_id,
-                platform_display_name: self.platform_display_name,
-                profile_name: self.profile_name,
-                profile_version: self.profile_version,
-                overrides: self.overrides,
-                signing_parameters: self.signing_parameters,
-                created_at: self.created_at,
-                completed_at: self.completed_at,
-                signature_expires_at: self.signature_expires_at,
-                requested_by: self.requested_by,
-                status: self.status,
-                status_reason: self.status_reason,
-                revocation_record: self.revocation_record,
-                signed_object: self.signed_object,
-                job_owner: self.job_owner,
-                job_invoker: self.job_invoker,
+                job_id: self.job_id
+                ,
+                source: self.source
+                ,
+                signing_material: self.signing_material
+                ,
+                platform_id: self.platform_id
+                ,
+                platform_display_name: self.platform_display_name
+                ,
+                profile_name: self.profile_name
+                ,
+                profile_version: self.profile_version
+                ,
+                overrides: self.overrides
+                ,
+                signing_parameters: self.signing_parameters
+                ,
+                created_at: self.created_at
+                ,
+                completed_at: self.completed_at
+                ,
+                signature_expires_at: self.signature_expires_at
+                ,
+                requested_by: self.requested_by
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                revocation_record: self.revocation_record
+                ,
+                signed_object: self.signed_object
+                ,
+                job_owner: self.job_owner
+                ,
+                job_invoker: self.job_invoker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSigningJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSigningJobOutput`](crate::output::DescribeSigningJobOutput).
@@ -1747,19 +1631,24 @@ impl DescribeSigningJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelSigningProfileOutput {}
+pub struct CancelSigningProfileOutput  {
+}
 /// See [`CancelSigningProfileOutput`](crate::output::CancelSigningProfileOutput).
 pub mod cancel_signing_profile_output {
-
+    
     /// A builder for [`CancelSigningProfileOutput`](crate::output::CancelSigningProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CancelSigningProfileOutput`](crate::output::CancelSigningProfileOutput).
         pub fn build(self) -> crate::output::CancelSigningProfileOutput {
-            crate::output::CancelSigningProfileOutput {}
+            crate::output::CancelSigningProfileOutput {
+            }
         }
     }
+    
+    
 }
 impl CancelSigningProfileOutput {
     /// Creates a new builder-style object to manufacture [`CancelSigningProfileOutput`](crate::output::CancelSigningProfileOutput).
@@ -1771,20 +1660,20 @@ impl CancelSigningProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddProfilePermissionOutput {
+pub struct AddProfilePermissionOutput  {
     /// <p>A unique identifier for the current profile revision.</p>
     #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl AddProfilePermissionOutput {
     /// <p>A unique identifier for the current profile revision.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`AddProfilePermissionOutput`](crate::output::AddProfilePermissionOutput).
 pub mod add_profile_permission_output {
-
+    
     /// A builder for [`AddProfilePermissionOutput`](crate::output::AddProfilePermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1798,16 +1687,18 @@ pub mod add_profile_permission_output {
         }
         /// <p>A unique identifier for the current profile revision.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`AddProfilePermissionOutput`](crate::output::AddProfilePermissionOutput).
         pub fn build(self) -> crate::output::AddProfilePermissionOutput {
             crate::output::AddProfilePermissionOutput {
-                revision_id: self.revision_id,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AddProfilePermissionOutput {
     /// Creates a new builder-style object to manufacture [`AddProfilePermissionOutput`](crate::output::AddProfilePermissionOutput).
@@ -1815,3 +1706,4 @@ impl AddProfilePermissionOutput {
         crate::output::add_profile_permission_output::Builder::default()
     }
 }
+

@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`BulkPublishInput`](crate::input::BulkPublishInput).
 pub mod bulk_publish_input {
-
+    
     /// A builder for [`BulkPublishInput`](crate::input::BulkPublishInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -16,98 +16,54 @@ pub mod bulk_publish_input {
             self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// Consumes the builder and constructs a [`BulkPublishInput`](crate::input::BulkPublishInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BulkPublishInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::BulkPublishInput {
-                identity_pool_id: self.identity_pool_id,
-            })
+        pub fn build(self) -> Result<crate::input::BulkPublishInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::BulkPublishInput {
+                    identity_pool_id: self.identity_pool_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BulkPublishInput {
     /// Consumes the builder and constructs an Operation<[`BulkPublish`](crate::operation::BulkPublish)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BulkPublish,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BulkPublish, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BulkPublishInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::BulkPublishInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.identity_pool_id;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_pool_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_pool_id = aws_smithy_http::label::fmt_string(
-                    input_1,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_1 = input_1.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))?;
+                let identity_pool_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_pool_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_pool_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/identitypools/{IdentityPoolId}/bulkpublish",
-                    IdentityPoolId = identity_pool_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/identitypools/{IdentityPoolId}/bulkpublish", IdentityPoolId = identity_pool_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::BulkPublishInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::BulkPublishInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -117,51 +73,34 @@ impl BulkPublishInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BulkPublish::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BulkPublish",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BulkPublish::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BulkPublish", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -173,7 +112,7 @@ impl BulkPublishInput {
 
 /// See [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
 pub mod delete_dataset_input {
-
+    
     /// A builder for [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -188,12 +127,8 @@ pub mod delete_dataset_input {
             self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -202,8 +137,7 @@ pub mod delete_dataset_input {
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input;
-            self
+            self.identity_id = input; self
         }
         /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -212,129 +146,69 @@ pub mod delete_dataset_input {
         }
         /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input;
-            self
+            self.dataset_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteDatasetInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteDatasetInput {
-                identity_pool_id: self.identity_pool_id,
-                identity_id: self.identity_id,
-                dataset_name: self.dataset_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteDatasetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteDatasetInput {
+                    identity_pool_id: self.identity_pool_id
+                    ,
+                    identity_id: self.identity_id
+                    ,
+                    dataset_name: self.dataset_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteDataset,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteDataset, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteDatasetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteDatasetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.identity_pool_id;
-                let input_2 = input_2.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_pool_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_pool_id = aws_smithy_http::label::fmt_string(
-                    input_2,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_2 = input_2.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))?;
+                let identity_pool_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_pool_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_pool_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))
+                            }
                 let input_3 = &_input.identity_id;
-                let input_3 = input_3.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_id = aws_smithy_http::label::fmt_string(
-                    input_3,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_3 = input_3.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))?;
+                let identity_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))
+                            }
                 let input_4 = &_input.dataset_name;
-                let input_4 = input_4.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "dataset_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let dataset_name = aws_smithy_http::label::fmt_string(
-                    input_4,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_4 = input_4.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("dataset_name", "cannot be empty or unset"))?;
+                let dataset_name = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if dataset_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "dataset_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("dataset_name", "cannot be empty or unset"))
+                            }
                 write!(output, "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}", IdentityPoolId = identity_pool_id, IdentityId = identity_id, DatasetName = dataset_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteDatasetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteDatasetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -344,51 +218,34 @@ impl DeleteDatasetInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteDataset::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteDataset",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteDataset::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteDataset", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -400,7 +257,7 @@ impl DeleteDatasetInput {
 
 /// See [`DescribeDatasetInput`](crate::input::DescribeDatasetInput).
 pub mod describe_dataset_input {
-
+    
     /// A builder for [`DescribeDatasetInput`](crate::input::DescribeDatasetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -415,12 +272,8 @@ pub mod describe_dataset_input {
             self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -429,8 +282,7 @@ pub mod describe_dataset_input {
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input;
-            self
+            self.identity_id = input; self
         }
         /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -439,129 +291,69 @@ pub mod describe_dataset_input {
         }
         /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input;
-            self
+            self.dataset_name = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDatasetInput`](crate::input::DescribeDatasetInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeDatasetInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DescribeDatasetInput {
-                identity_pool_id: self.identity_pool_id,
-                identity_id: self.identity_id,
-                dataset_name: self.dataset_name,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeDatasetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeDatasetInput {
+                    identity_pool_id: self.identity_pool_id
+                    ,
+                    identity_id: self.identity_id
+                    ,
+                    dataset_name: self.dataset_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeDataset,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeDataset, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeDatasetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeDatasetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.identity_pool_id;
-                let input_5 = input_5.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_pool_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_pool_id = aws_smithy_http::label::fmt_string(
-                    input_5,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_5 = input_5.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))?;
+                let identity_pool_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_pool_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_pool_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))
+                            }
                 let input_6 = &_input.identity_id;
-                let input_6 = input_6.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_id = aws_smithy_http::label::fmt_string(
-                    input_6,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_6 = input_6.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))?;
+                let identity_id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))
+                            }
                 let input_7 = &_input.dataset_name;
-                let input_7 = input_7.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "dataset_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let dataset_name = aws_smithy_http::label::fmt_string(
-                    input_7,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_7 = input_7.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("dataset_name", "cannot be empty or unset"))?;
+                let dataset_name = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if dataset_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "dataset_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("dataset_name", "cannot be empty or unset"))
+                            }
                 write!(output, "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}", IdentityPoolId = identity_pool_id, IdentityId = identity_id, DatasetName = dataset_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeDatasetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeDatasetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -571,51 +363,34 @@ impl DescribeDatasetInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeDataset::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeDataset",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeDataset::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeDataset", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -627,7 +402,7 @@ impl DescribeDatasetInput {
 
 /// See [`DescribeIdentityPoolUsageInput`](crate::input::DescribeIdentityPoolUsageInput).
 pub mod describe_identity_pool_usage_input {
-
+    
     /// A builder for [`DescribeIdentityPoolUsageInput`](crate::input::DescribeIdentityPoolUsageInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -640,100 +415,54 @@ pub mod describe_identity_pool_usage_input {
             self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeIdentityPoolUsageInput`](crate::input::DescribeIdentityPoolUsageInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeIdentityPoolUsageInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeIdentityPoolUsageInput {
-                identity_pool_id: self.identity_pool_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeIdentityPoolUsageInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeIdentityPoolUsageInput {
+                    identity_pool_id: self.identity_pool_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeIdentityPoolUsageInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIdentityPoolUsage`](crate::operation::DescribeIdentityPoolUsage)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeIdentityPoolUsage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeIdentityPoolUsage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeIdentityPoolUsageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeIdentityPoolUsageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_8 = &_input.identity_pool_id;
-                let input_8 = input_8.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_pool_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_pool_id = aws_smithy_http::label::fmt_string(
-                    input_8,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_8 = input_8.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))?;
+                let identity_pool_id = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_pool_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_pool_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/identitypools/{IdentityPoolId}",
-                    IdentityPoolId = identity_pool_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/identitypools/{IdentityPoolId}", IdentityPoolId = identity_pool_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeIdentityPoolUsageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeIdentityPoolUsageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -743,51 +472,34 @@ impl DescribeIdentityPoolUsageInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeIdentityPoolUsage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeIdentityPoolUsage",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeIdentityPoolUsage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeIdentityPoolUsage", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -799,7 +511,7 @@ impl DescribeIdentityPoolUsageInput {
 
 /// See [`DescribeIdentityUsageInput`](crate::input::DescribeIdentityUsageInput).
 pub mod describe_identity_usage_input {
-
+    
     /// A builder for [`DescribeIdentityUsageInput`](crate::input::DescribeIdentityUsageInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -813,12 +525,8 @@ pub mod describe_identity_usage_input {
             self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -827,117 +535,61 @@ pub mod describe_identity_usage_input {
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input;
-            self
+            self.identity_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeIdentityUsageInput`](crate::input::DescribeIdentityUsageInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeIdentityUsageInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeIdentityUsageInput {
-                identity_pool_id: self.identity_pool_id,
-                identity_id: self.identity_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeIdentityUsageInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeIdentityUsageInput {
+                    identity_pool_id: self.identity_pool_id
+                    ,
+                    identity_id: self.identity_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeIdentityUsageInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIdentityUsage`](crate::operation::DescribeIdentityUsage)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeIdentityUsage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeIdentityUsage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeIdentityUsageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeIdentityUsageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.identity_pool_id;
-                let input_9 = input_9.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_pool_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_pool_id = aws_smithy_http::label::fmt_string(
-                    input_9,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_9 = input_9.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))?;
+                let identity_pool_id = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_pool_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_pool_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))
+                            }
                 let input_10 = &_input.identity_id;
-                let input_10 = input_10.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_id = aws_smithy_http::label::fmt_string(
-                    input_10,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_10 = input_10.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))?;
+                let identity_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/identitypools/{IdentityPoolId}/identities/{IdentityId}",
-                    IdentityPoolId = identity_pool_id,
-                    IdentityId = identity_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/identitypools/{IdentityPoolId}/identities/{IdentityId}", IdentityPoolId = identity_pool_id, IdentityId = identity_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeIdentityUsageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeIdentityUsageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -947,51 +599,34 @@ impl DescribeIdentityUsageInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeIdentityUsage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeIdentityUsage",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeIdentityUsage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeIdentityUsage", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1003,7 +638,7 @@ impl DescribeIdentityUsageInput {
 
 /// See [`GetBulkPublishDetailsInput`](crate::input::GetBulkPublishDetailsInput).
 pub mod get_bulk_publish_details_input {
-
+    
     /// A builder for [`GetBulkPublishDetailsInput`](crate::input::GetBulkPublishDetailsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1016,100 +651,54 @@ pub mod get_bulk_publish_details_input {
             self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// Consumes the builder and constructs a [`GetBulkPublishDetailsInput`](crate::input::GetBulkPublishDetailsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetBulkPublishDetailsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetBulkPublishDetailsInput {
-                identity_pool_id: self.identity_pool_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetBulkPublishDetailsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetBulkPublishDetailsInput {
+                    identity_pool_id: self.identity_pool_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetBulkPublishDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetBulkPublishDetails`](crate::operation::GetBulkPublishDetails)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetBulkPublishDetails,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetBulkPublishDetails, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetBulkPublishDetailsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetBulkPublishDetailsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.identity_pool_id;
-                let input_11 = input_11.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_pool_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_pool_id = aws_smithy_http::label::fmt_string(
-                    input_11,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_11 = input_11.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))?;
+                let identity_pool_id = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_pool_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_pool_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/identitypools/{IdentityPoolId}/getBulkPublishDetails",
-                    IdentityPoolId = identity_pool_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/identitypools/{IdentityPoolId}/getBulkPublishDetails", IdentityPoolId = identity_pool_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetBulkPublishDetailsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetBulkPublishDetailsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1119,51 +708,34 @@ impl GetBulkPublishDetailsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetBulkPublishDetails::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetBulkPublishDetails",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetBulkPublishDetails::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetBulkPublishDetails", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1175,7 +747,7 @@ impl GetBulkPublishDetailsInput {
 
 /// See [`GetCognitoEventsInput`](crate::input::GetCognitoEventsInput).
 pub mod get_cognito_events_input {
-
+    
     /// A builder for [`GetCognitoEventsInput`](crate::input::GetCognitoEventsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1188,100 +760,54 @@ pub mod get_cognito_events_input {
             self
         }
         /// <p>The Cognito Identity Pool ID for the request</p>
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// Consumes the builder and constructs a [`GetCognitoEventsInput`](crate::input::GetCognitoEventsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetCognitoEventsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetCognitoEventsInput {
-                identity_pool_id: self.identity_pool_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetCognitoEventsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetCognitoEventsInput {
+                    identity_pool_id: self.identity_pool_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetCognitoEventsInput {
     /// Consumes the builder and constructs an Operation<[`GetCognitoEvents`](crate::operation::GetCognitoEvents)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetCognitoEvents,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetCognitoEvents, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetCognitoEventsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetCognitoEventsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_12 = &_input.identity_pool_id;
-                let input_12 = input_12.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_pool_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_pool_id = aws_smithy_http::label::fmt_string(
-                    input_12,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_12 = input_12.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))?;
+                let identity_pool_id = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_pool_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_pool_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/identitypools/{IdentityPoolId}/events",
-                    IdentityPoolId = identity_pool_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/identitypools/{IdentityPoolId}/events", IdentityPoolId = identity_pool_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetCognitoEventsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetCognitoEventsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1291,51 +817,34 @@ impl GetCognitoEventsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetCognitoEvents::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetCognitoEvents",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetCognitoEvents::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetCognitoEvents", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1347,7 +856,7 @@ impl GetCognitoEventsInput {
 
 /// See [`GetIdentityPoolConfigurationInput`](crate::input::GetIdentityPoolConfigurationInput).
 pub mod get_identity_pool_configuration_input {
-
+    
     /// A builder for [`GetIdentityPoolConfigurationInput`](crate::input::GetIdentityPoolConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1360,100 +869,54 @@ pub mod get_identity_pool_configuration_input {
             self
         }
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// Consumes the builder and constructs a [`GetIdentityPoolConfigurationInput`](crate::input::GetIdentityPoolConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetIdentityPoolConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetIdentityPoolConfigurationInput {
-                identity_pool_id: self.identity_pool_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetIdentityPoolConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetIdentityPoolConfigurationInput {
+                    identity_pool_id: self.identity_pool_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetIdentityPoolConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityPoolConfiguration`](crate::operation::GetIdentityPoolConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetIdentityPoolConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetIdentityPoolConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetIdentityPoolConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetIdentityPoolConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.identity_pool_id;
-                let input_13 = input_13.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_pool_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_pool_id = aws_smithy_http::label::fmt_string(
-                    input_13,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_13 = input_13.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))?;
+                let identity_pool_id = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_pool_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_pool_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/identitypools/{IdentityPoolId}/configuration",
-                    IdentityPoolId = identity_pool_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/identitypools/{IdentityPoolId}/configuration", IdentityPoolId = identity_pool_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetIdentityPoolConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetIdentityPoolConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1463,51 +926,34 @@ impl GetIdentityPoolConfigurationInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetIdentityPoolConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetIdentityPoolConfiguration",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetIdentityPoolConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetIdentityPoolConfiguration", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1519,7 +965,7 @@ impl GetIdentityPoolConfigurationInput {
 
 /// See [`ListDatasetsInput`](crate::input::ListDatasetsInput).
 pub mod list_datasets_input {
-
+    
     /// A builder for [`ListDatasetsInput`](crate::input::ListDatasetsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1535,12 +981,8 @@ pub mod list_datasets_input {
             self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1549,8 +991,7 @@ pub mod list_datasets_input {
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input;
-            self
+            self.identity_id = input; self
         }
         /// A pagination token for obtaining the next page of results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1559,8 +1000,7 @@ pub mod list_datasets_input {
         }
         /// A pagination token for obtaining the next page of results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// The maximum number of results to be returned.
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1569,135 +1009,78 @@ pub mod list_datasets_input {
         }
         /// The maximum number of results to be returned.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListDatasetsInput`](crate::input::ListDatasetsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListDatasetsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListDatasetsInput {
-                identity_pool_id: self.identity_pool_id,
-                identity_id: self.identity_id,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListDatasetsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListDatasetsInput {
+                    identity_pool_id: self.identity_pool_id
+                    ,
+                    identity_id: self.identity_id
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListDatasets,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDatasets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListDatasetsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListDatasetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.identity_pool_id;
-                let input_14 = input_14.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_pool_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_pool_id = aws_smithy_http::label::fmt_string(
-                    input_14,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_14 = input_14.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))?;
+                let identity_pool_id = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_pool_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_pool_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))
+                            }
                 let input_15 = &_input.identity_id;
-                let input_15 = input_15.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_id = aws_smithy_http::label::fmt_string(
-                    input_15,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_15 = input_15.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))?;
+                let identity_id = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets",
-                    IdentityPoolId = identity_pool_id,
-                    IdentityId = identity_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets", IdentityPoolId = identity_pool_id, IdentityId = identity_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListDatasetsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListDatasetsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_16) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_16));
                     }
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListDatasetsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListDatasetsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1708,51 +1091,34 @@ impl ListDatasetsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListDatasets::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListDatasets",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDatasets::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDatasets", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1764,7 +1130,7 @@ impl ListDatasetsInput {
 
 /// See [`ListIdentityPoolUsageInput`](crate::input::ListIdentityPoolUsageInput).
 pub mod list_identity_pool_usage_input {
-
+    
     /// A builder for [`ListIdentityPoolUsageInput`](crate::input::ListIdentityPoolUsageInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1779,8 +1145,7 @@ pub mod list_identity_pool_usage_input {
         }
         /// A pagination token for obtaining the next page of results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// The maximum number of results to be returned.
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1789,91 +1154,62 @@ pub mod list_identity_pool_usage_input {
         }
         /// The maximum number of results to be returned.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListIdentityPoolUsageInput`](crate::input::ListIdentityPoolUsageInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListIdentityPoolUsageInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListIdentityPoolUsageInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListIdentityPoolUsageInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListIdentityPoolUsageInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListIdentityPoolUsageInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentityPoolUsage`](crate::operation::ListIdentityPoolUsage)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListIdentityPoolUsage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListIdentityPoolUsage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListIdentityPoolUsageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListIdentityPoolUsageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/identitypools").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListIdentityPoolUsageInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListIdentityPoolUsageInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_17) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_17));
                     }
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListIdentityPoolUsageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListIdentityPoolUsageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1884,51 +1220,34 @@ impl ListIdentityPoolUsageInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListIdentityPoolUsage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListIdentityPoolUsage",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListIdentityPoolUsage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListIdentityPoolUsage", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1940,7 +1259,7 @@ impl ListIdentityPoolUsageInput {
 
 /// See [`ListRecordsInput`](crate::input::ListRecordsInput).
 pub mod list_records_input {
-
+    
     /// A builder for [`ListRecordsInput`](crate::input::ListRecordsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1959,12 +1278,8 @@ pub mod list_records_input {
             self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1973,8 +1288,7 @@ pub mod list_records_input {
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input;
-            self
+            self.identity_id = input; self
         }
         /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1983,8 +1297,7 @@ pub mod list_records_input {
         }
         /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input;
-            self
+            self.dataset_name = input; self
         }
         /// The last server sync count for this record.
         pub fn last_sync_count(mut self, input: i64) -> Self {
@@ -1993,8 +1306,7 @@ pub mod list_records_input {
         }
         /// The last server sync count for this record.
         pub fn set_last_sync_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_sync_count = input;
-            self
+            self.last_sync_count = input; self
         }
         /// A pagination token for obtaining the next page of results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2003,8 +1315,7 @@ pub mod list_records_input {
         }
         /// A pagination token for obtaining the next page of results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// The maximum number of results to be returned.
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2013,8 +1324,7 @@ pub mod list_records_input {
         }
         /// The maximum number of results to be returned.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// A token containing a session ID, identity ID, and expiration.
         pub fn sync_session_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2022,171 +1332,101 @@ pub mod list_records_input {
             self
         }
         /// A token containing a session ID, identity ID, and expiration.
-        pub fn set_sync_session_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sync_session_token = input;
-            self
+        pub fn set_sync_session_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sync_session_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRecordsInput`](crate::input::ListRecordsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListRecordsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListRecordsInput {
-                identity_pool_id: self.identity_pool_id,
-                identity_id: self.identity_id,
-                dataset_name: self.dataset_name,
-                last_sync_count: self.last_sync_count,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-                sync_session_token: self.sync_session_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListRecordsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListRecordsInput {
+                    identity_pool_id: self.identity_pool_id
+                    ,
+                    identity_id: self.identity_id
+                    ,
+                    dataset_name: self.dataset_name
+                    ,
+                    last_sync_count: self.last_sync_count
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                    sync_session_token: self.sync_session_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListRecordsInput {
     /// Consumes the builder and constructs an Operation<[`ListRecords`](crate::operation::ListRecords)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListRecords,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListRecords, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListRecordsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListRecordsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_18 = &_input.identity_pool_id;
-                let input_18 = input_18.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_pool_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_pool_id = aws_smithy_http::label::fmt_string(
-                    input_18,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_18 = input_18.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))?;
+                let identity_pool_id = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_pool_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_pool_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))
+                            }
                 let input_19 = &_input.identity_id;
-                let input_19 = input_19.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_id = aws_smithy_http::label::fmt_string(
-                    input_19,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_19 = input_19.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))?;
+                let identity_id = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))
+                            }
                 let input_20 = &_input.dataset_name;
-                let input_20 = input_20.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "dataset_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let dataset_name = aws_smithy_http::label::fmt_string(
-                    input_20,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_20 = input_20.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("dataset_name", "cannot be empty or unset"))?;
+                let dataset_name = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if dataset_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "dataset_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("dataset_name", "cannot be empty or unset"))
+                            }
                 write!(output, "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/records", IdentityPoolId = identity_pool_id, IdentityId = identity_id, DatasetName = dataset_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListRecordsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListRecordsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_21) = &_input.last_sync_count {
                     if *inner_21 != 0 {
-                        query.push_kv(
-                            "lastSyncCount",
-                            aws_smithy_types::primitive::Encoder::from(*inner_21).encode(),
-                        );
+                        query.push_kv("lastSyncCount", aws_smithy_types::primitive::Encoder::from(*inner_21).encode());
                     }
                 }
                 if let Some(inner_22) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_22));
                     }
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 if let Some(inner_23) = &_input.sync_session_token {
-                    {
-                        query.push_kv(
-                            "syncSessionToken",
-                            &aws_smithy_http::query::fmt_string(&inner_23),
-                        );
+                     {
+                        query.push_kv("syncSessionToken", &aws_smithy_http::query::fmt_string(&inner_23));
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListRecordsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListRecordsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2197,51 +1437,34 @@ impl ListRecordsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListRecords::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListRecords",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListRecords::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListRecords", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2253,7 +1476,7 @@ impl ListRecordsInput {
 
 /// See [`RegisterDeviceInput`](crate::input::RegisterDeviceInput).
 pub mod register_device_input {
-
+    
     /// A builder for [`RegisterDeviceInput`](crate::input::RegisterDeviceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2269,12 +1492,8 @@ pub mod register_device_input {
             self
         }
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// <p>The unique ID for this identity.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2283,8 +1502,7 @@ pub mod register_device_input {
         }
         /// <p>The unique ID for this identity.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input;
-            self
+            self.identity_id = input; self
         }
         /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -2293,8 +1511,7 @@ pub mod register_device_input {
         }
         /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p>The push token.</p>
         pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2303,185 +1520,106 @@ pub mod register_device_input {
         }
         /// <p>The push token.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.token = input;
-            self
+            self.token = input; self
         }
         /// Consumes the builder and constructs a [`RegisterDeviceInput`](crate::input::RegisterDeviceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::RegisterDeviceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::RegisterDeviceInput {
-                identity_pool_id: self.identity_pool_id,
-                identity_id: self.identity_id,
-                platform: self.platform,
-                token: self.token,
-            })
+        pub fn build(self) -> Result<crate::input::RegisterDeviceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RegisterDeviceInput {
+                    identity_pool_id: self.identity_pool_id
+                    ,
+                    identity_id: self.identity_id
+                    ,
+                    platform: self.platform
+                    ,
+                    token: self.token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RegisterDeviceInput {
     /// Consumes the builder and constructs an Operation<[`RegisterDevice`](crate::operation::RegisterDevice)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RegisterDevice,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RegisterDevice, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RegisterDeviceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RegisterDeviceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_24 = &_input.identity_pool_id;
-                let input_24 = input_24.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_pool_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_pool_id = aws_smithy_http::label::fmt_string(
-                    input_24,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_24 = input_24.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))?;
+                let identity_pool_id = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_pool_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_pool_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))
+                            }
                 let input_25 = &_input.identity_id;
-                let input_25 = input_25.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_id = aws_smithy_http::label::fmt_string(
-                    input_25,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_25 = input_25.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))?;
+                let identity_id = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/identitypools/{IdentityPoolId}/identity/{IdentityId}/device",
-                    IdentityPoolId = identity_pool_id,
-                    IdentityId = identity_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/identitypools/{IdentityPoolId}/identity/{IdentityId}/device", IdentityPoolId = identity_pool_id, IdentityId = identity_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RegisterDeviceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RegisterDeviceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_register_device(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_register_device(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RegisterDevice::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RegisterDevice",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RegisterDevice::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RegisterDevice", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2493,14 +1631,12 @@ impl RegisterDeviceInput {
 
 /// See [`SetCognitoEventsInput`](crate::input::SetCognitoEventsInput).
 pub mod set_cognito_events_input {
-
+    
     /// A builder for [`SetCognitoEventsInput`](crate::input::SetCognitoEventsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
-        pub(crate) events: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) events: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
@@ -2509,194 +1645,112 @@ pub mod set_cognito_events_input {
             self
         }
         /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// Adds a key-value pair to `events`.
         ///
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The events to configure</p>
-        pub fn events(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn events(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.events.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.events = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.events = Some(hash_map);
+                            self
         }
         /// <p>The events to configure</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.events = input; self
         }
         /// Consumes the builder and constructs a [`SetCognitoEventsInput`](crate::input::SetCognitoEventsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::SetCognitoEventsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::SetCognitoEventsInput {
-                identity_pool_id: self.identity_pool_id,
-                events: self.events,
-            })
+        pub fn build(self) -> Result<crate::input::SetCognitoEventsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::SetCognitoEventsInput {
+                    identity_pool_id: self.identity_pool_id
+                    ,
+                    events: self.events
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SetCognitoEventsInput {
     /// Consumes the builder and constructs an Operation<[`SetCognitoEvents`](crate::operation::SetCognitoEvents)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SetCognitoEvents,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetCognitoEvents, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SetCognitoEventsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::SetCognitoEventsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_26 = &_input.identity_pool_id;
-                let input_26 = input_26.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_pool_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_pool_id = aws_smithy_http::label::fmt_string(
-                    input_26,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_26 = input_26.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))?;
+                let identity_pool_id = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_pool_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_pool_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/identitypools/{IdentityPoolId}/events",
-                    IdentityPoolId = identity_pool_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/identitypools/{IdentityPoolId}/events", IdentityPoolId = identity_pool_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::SetCognitoEventsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::SetCognitoEventsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_cognito_events(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_set_cognito_events(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SetCognitoEvents::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SetCognitoEvents",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetCognitoEvents::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetCognitoEvents", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2708,7 +1762,7 @@ impl SetCognitoEventsInput {
 
 /// See [`SetIdentityPoolConfigurationInput`](crate::input::SetIdentityPoolConfigurationInput).
 pub mod set_identity_pool_configuration_input {
-
+    
     /// A builder for [`SetIdentityPoolConfigurationInput`](crate::input::SetIdentityPoolConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2723,12 +1777,8 @@ pub mod set_identity_pool_configuration_input {
             self
         }
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// <p>Options to apply to this identity pool for push synchronization.</p>
         pub fn push_sync(mut self, input: crate::model::PushSync) -> Self {
@@ -2737,8 +1787,7 @@ pub mod set_identity_pool_configuration_input {
         }
         /// <p>Options to apply to this identity pool for push synchronization.</p>
         pub fn set_push_sync(mut self, input: std::option::Option<crate::model::PushSync>) -> Self {
-            self.push_sync = input;
-            self
+            self.push_sync = input; self
         }
         /// Options to apply to this identity pool for Amazon Cognito streams.
         pub fn cognito_streams(mut self, input: crate::model::CognitoStreams) -> Self {
@@ -2746,112 +1795,64 @@ pub mod set_identity_pool_configuration_input {
             self
         }
         /// Options to apply to this identity pool for Amazon Cognito streams.
-        pub fn set_cognito_streams(
-            mut self,
-            input: std::option::Option<crate::model::CognitoStreams>,
-        ) -> Self {
-            self.cognito_streams = input;
-            self
+        pub fn set_cognito_streams(mut self, input: std::option::Option<crate::model::CognitoStreams>) -> Self {
+            self.cognito_streams = input; self
         }
         /// Consumes the builder and constructs a [`SetIdentityPoolConfigurationInput`](crate::input::SetIdentityPoolConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::SetIdentityPoolConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::SetIdentityPoolConfigurationInput {
-                identity_pool_id: self.identity_pool_id,
-                push_sync: self.push_sync,
-                cognito_streams: self.cognito_streams,
-            })
+        pub fn build(self) -> Result<crate::input::SetIdentityPoolConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::SetIdentityPoolConfigurationInput {
+                    identity_pool_id: self.identity_pool_id
+                    ,
+                    push_sync: self.push_sync
+                    ,
+                    cognito_streams: self.cognito_streams
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SetIdentityPoolConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`SetIdentityPoolConfiguration`](crate::operation::SetIdentityPoolConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SetIdentityPoolConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetIdentityPoolConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SetIdentityPoolConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::SetIdentityPoolConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_27 = &_input.identity_pool_id;
-                let input_27 = input_27.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_pool_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_pool_id = aws_smithy_http::label::fmt_string(
-                    input_27,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_27 = input_27.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))?;
+                let identity_pool_id = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_pool_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_pool_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/identitypools/{IdentityPoolId}/configuration",
-                    IdentityPoolId = identity_pool_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/identitypools/{IdentityPoolId}/configuration", IdentityPoolId = identity_pool_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::SetIdentityPoolConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::SetIdentityPoolConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2860,56 +1861,33 @@ impl SetIdentityPoolConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_set_identity_pool_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SetIdentityPoolConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SetIdentityPoolConfiguration",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetIdentityPoolConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetIdentityPoolConfiguration", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2921,7 +1899,7 @@ impl SetIdentityPoolConfigurationInput {
 
 /// See [`SubscribeToDatasetInput`](crate::input::SubscribeToDatasetInput).
 pub mod subscribe_to_dataset_input {
-
+    
     /// A builder for [`SubscribeToDatasetInput`](crate::input::SubscribeToDatasetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2937,12 +1915,8 @@ pub mod subscribe_to_dataset_input {
             self
         }
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// <p>Unique ID for this identity.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2951,8 +1925,7 @@ pub mod subscribe_to_dataset_input {
         }
         /// <p>Unique ID for this identity.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input;
-            self
+            self.identity_id = input; self
         }
         /// <p>The name of the dataset to subcribe to.</p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2961,8 +1934,7 @@ pub mod subscribe_to_dataset_input {
         }
         /// <p>The name of the dataset to subcribe to.</p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input;
-            self
+            self.dataset_name = input; self
         }
         /// <p>The unique ID generated for this device by Cognito.</p>
         pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2971,151 +1943,77 @@ pub mod subscribe_to_dataset_input {
         }
         /// <p>The unique ID generated for this device by Cognito.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// Consumes the builder and constructs a [`SubscribeToDatasetInput`](crate::input::SubscribeToDatasetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::SubscribeToDatasetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::SubscribeToDatasetInput {
-                identity_pool_id: self.identity_pool_id,
-                identity_id: self.identity_id,
-                dataset_name: self.dataset_name,
-                device_id: self.device_id,
-            })
+        pub fn build(self) -> Result<crate::input::SubscribeToDatasetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::SubscribeToDatasetInput {
+                    identity_pool_id: self.identity_pool_id
+                    ,
+                    identity_id: self.identity_id
+                    ,
+                    dataset_name: self.dataset_name
+                    ,
+                    device_id: self.device_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SubscribeToDatasetInput {
     /// Consumes the builder and constructs an Operation<[`SubscribeToDataset`](crate::operation::SubscribeToDataset)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SubscribeToDataset,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SubscribeToDataset, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SubscribeToDatasetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::SubscribeToDatasetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_28 = &_input.identity_pool_id;
-                let input_28 = input_28.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_pool_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_pool_id = aws_smithy_http::label::fmt_string(
-                    input_28,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_28 = input_28.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))?;
+                let identity_pool_id = aws_smithy_http::label::fmt_string(input_28, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_pool_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_pool_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))
+                            }
                 let input_29 = &_input.identity_id;
-                let input_29 = input_29.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_id = aws_smithy_http::label::fmt_string(
-                    input_29,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_29 = input_29.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))?;
+                let identity_id = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))
+                            }
                 let input_30 = &_input.dataset_name;
-                let input_30 = input_30.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "dataset_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let dataset_name = aws_smithy_http::label::fmt_string(
-                    input_30,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_30 = input_30.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("dataset_name", "cannot be empty or unset"))?;
+                let dataset_name = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
                 if dataset_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "dataset_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("dataset_name", "cannot be empty or unset"))
+                            }
                 let input_31 = &_input.device_id;
-                let input_31 = input_31.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "device_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let device_id = aws_smithy_http::label::fmt_string(
-                    input_31,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_31 = input_31.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("device_id", "cannot be empty or unset"))?;
+                let device_id = aws_smithy_http::label::fmt_string(input_31, aws_smithy_http::label::EncodingStrategy::Default);
                 if device_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "device_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("device_id", "cannot be empty or unset"))
+                            }
                 write!(output, "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}", IdentityPoolId = identity_pool_id, IdentityId = identity_id, DatasetName = dataset_name, DeviceId = device_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::SubscribeToDatasetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::SubscribeToDatasetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3125,51 +2023,34 @@ impl SubscribeToDatasetInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SubscribeToDataset::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SubscribeToDataset",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SubscribeToDataset::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SubscribeToDataset", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3181,7 +2062,7 @@ impl SubscribeToDatasetInput {
 
 /// See [`UnsubscribeFromDatasetInput`](crate::input::UnsubscribeFromDatasetInput).
 pub mod unsubscribe_from_dataset_input {
-
+    
     /// A builder for [`UnsubscribeFromDatasetInput`](crate::input::UnsubscribeFromDatasetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3197,12 +2078,8 @@ pub mod unsubscribe_from_dataset_input {
             self
         }
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// <p>Unique ID for this identity.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3211,8 +2088,7 @@ pub mod unsubscribe_from_dataset_input {
         }
         /// <p>Unique ID for this identity.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input;
-            self
+            self.identity_id = input; self
         }
         /// <p>The name of the dataset from which to unsubcribe.</p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3221,8 +2097,7 @@ pub mod unsubscribe_from_dataset_input {
         }
         /// <p>The name of the dataset from which to unsubcribe.</p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input;
-            self
+            self.dataset_name = input; self
         }
         /// <p>The unique ID generated for this device by Cognito.</p>
         pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3231,151 +2106,77 @@ pub mod unsubscribe_from_dataset_input {
         }
         /// <p>The unique ID generated for this device by Cognito.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// Consumes the builder and constructs a [`UnsubscribeFromDatasetInput`](crate::input::UnsubscribeFromDatasetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UnsubscribeFromDatasetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UnsubscribeFromDatasetInput {
-                identity_pool_id: self.identity_pool_id,
-                identity_id: self.identity_id,
-                dataset_name: self.dataset_name,
-                device_id: self.device_id,
-            })
+        pub fn build(self) -> Result<crate::input::UnsubscribeFromDatasetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UnsubscribeFromDatasetInput {
+                    identity_pool_id: self.identity_pool_id
+                    ,
+                    identity_id: self.identity_id
+                    ,
+                    dataset_name: self.dataset_name
+                    ,
+                    device_id: self.device_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UnsubscribeFromDatasetInput {
     /// Consumes the builder and constructs an Operation<[`UnsubscribeFromDataset`](crate::operation::UnsubscribeFromDataset)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UnsubscribeFromDataset,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UnsubscribeFromDataset, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UnsubscribeFromDatasetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UnsubscribeFromDatasetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_32 = &_input.identity_pool_id;
-                let input_32 = input_32.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_pool_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_pool_id = aws_smithy_http::label::fmt_string(
-                    input_32,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_32 = input_32.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))?;
+                let identity_pool_id = aws_smithy_http::label::fmt_string(input_32, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_pool_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_pool_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))
+                            }
                 let input_33 = &_input.identity_id;
-                let input_33 = input_33.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_id = aws_smithy_http::label::fmt_string(
-                    input_33,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_33 = input_33.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))?;
+                let identity_id = aws_smithy_http::label::fmt_string(input_33, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))
+                            }
                 let input_34 = &_input.dataset_name;
-                let input_34 = input_34.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "dataset_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let dataset_name = aws_smithy_http::label::fmt_string(
-                    input_34,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_34 = input_34.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("dataset_name", "cannot be empty or unset"))?;
+                let dataset_name = aws_smithy_http::label::fmt_string(input_34, aws_smithy_http::label::EncodingStrategy::Default);
                 if dataset_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "dataset_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("dataset_name", "cannot be empty or unset"))
+                            }
                 let input_35 = &_input.device_id;
-                let input_35 = input_35.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "device_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let device_id = aws_smithy_http::label::fmt_string(
-                    input_35,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_35 = input_35.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("device_id", "cannot be empty or unset"))?;
+                let device_id = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if device_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "device_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("device_id", "cannot be empty or unset"))
+                            }
                 write!(output, "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}", IdentityPoolId = identity_pool_id, IdentityId = identity_id, DatasetName = dataset_name, DeviceId = device_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UnsubscribeFromDatasetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UnsubscribeFromDatasetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -3385,51 +2186,34 @@ impl UnsubscribeFromDatasetInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UnsubscribeFromDataset::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UnsubscribeFromDataset",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UnsubscribeFromDataset::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UnsubscribeFromDataset", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3441,7 +2225,7 @@ impl UnsubscribeFromDatasetInput {
 
 /// See [`UpdateRecordsInput`](crate::input::UpdateRecordsInput).
 pub mod update_records_input {
-
+    
     /// A builder for [`UpdateRecordsInput`](crate::input::UpdateRecordsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3460,12 +2244,8 @@ pub mod update_records_input {
             self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3474,8 +2254,7 @@ pub mod update_records_input {
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input;
-            self
+            self.identity_id = input; self
         }
         /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3484,8 +2263,7 @@ pub mod update_records_input {
         }
         /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input;
-            self
+            self.dataset_name = input; self
         }
         /// <p>The unique ID generated for this device by Cognito.</p>
         pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3494,8 +2272,7 @@ pub mod update_records_input {
         }
         /// <p>The unique ID generated for this device by Cognito.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// Appends an item to `record_patches`.
         ///
@@ -3504,17 +2281,13 @@ pub mod update_records_input {
         /// A list of patch operations.
         pub fn record_patches(mut self, input: crate::model::RecordPatch) -> Self {
             let mut v = self.record_patches.unwrap_or_default();
-            v.push(input);
-            self.record_patches = Some(v);
-            self
+                            v.push(input);
+                            self.record_patches = Some(v);
+                            self
         }
         /// A list of patch operations.
-        pub fn set_record_patches(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RecordPatch>>,
-        ) -> Self {
-            self.record_patches = input;
-            self
+        pub fn set_record_patches(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecordPatch>>) -> Self {
+            self.record_patches = input; self
         }
         /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
         pub fn sync_session_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3522,12 +2295,8 @@ pub mod update_records_input {
             self
         }
         /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
-        pub fn set_sync_session_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sync_session_token = input;
-            self
+        pub fn set_sync_session_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sync_session_token = input; self
         }
         /// Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
         pub fn client_context(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3535,206 +2304,120 @@ pub mod update_records_input {
             self
         }
         /// Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
-        pub fn set_client_context(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.client_context = input;
-            self
+        pub fn set_client_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_context = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRecordsInput`](crate::input::UpdateRecordsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateRecordsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UpdateRecordsInput {
-                identity_pool_id: self.identity_pool_id,
-                identity_id: self.identity_id,
-                dataset_name: self.dataset_name,
-                device_id: self.device_id,
-                record_patches: self.record_patches,
-                sync_session_token: self.sync_session_token,
-                client_context: self.client_context,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateRecordsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateRecordsInput {
+                    identity_pool_id: self.identity_pool_id
+                    ,
+                    identity_id: self.identity_id
+                    ,
+                    dataset_name: self.dataset_name
+                    ,
+                    device_id: self.device_id
+                    ,
+                    record_patches: self.record_patches
+                    ,
+                    sync_session_token: self.sync_session_token
+                    ,
+                    client_context: self.client_context
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateRecordsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRecords`](crate::operation::UpdateRecords)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateRecords,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateRecords, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateRecordsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateRecordsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_36 = &_input.identity_pool_id;
-                let input_36 = input_36.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_pool_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_pool_id = aws_smithy_http::label::fmt_string(
-                    input_36,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_36 = input_36.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))?;
+                let identity_pool_id = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_pool_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_pool_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_pool_id", "cannot be empty or unset"))
+                            }
                 let input_37 = &_input.identity_id;
-                let input_37 = input_37.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "identity_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let identity_id = aws_smithy_http::label::fmt_string(
-                    input_37,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_37 = input_37.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))?;
+                let identity_id = aws_smithy_http::label::fmt_string(input_37, aws_smithy_http::label::EncodingStrategy::Default);
                 if identity_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "identity_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("identity_id", "cannot be empty or unset"))
+                            }
                 let input_38 = &_input.dataset_name;
-                let input_38 = input_38.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "dataset_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let dataset_name = aws_smithy_http::label::fmt_string(
-                    input_38,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_38 = input_38.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("dataset_name", "cannot be empty or unset"))?;
+                let dataset_name = aws_smithy_http::label::fmt_string(input_38, aws_smithy_http::label::EncodingStrategy::Default);
                 if dataset_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "dataset_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("dataset_name", "cannot be empty or unset"))
+                            }
                 write!(output, "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}", IdentityPoolId = identity_pool_id, IdentityId = identity_id, DatasetName = dataset_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateRecordsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateRecordsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_update_records(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_records(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_records(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateRecords::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateRecords",
-            "cognitosync",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateRecords::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateRecords", "cognitosync"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3747,7 +2430,7 @@ impl UpdateRecordsInput {
 /// A request to post updates to records or add and delete records for a dataset and user.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRecordsInput {
+pub struct UpdateRecordsInput  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
@@ -3772,31 +2455,31 @@ pub struct UpdateRecordsInput {
 }
 impl UpdateRecordsInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The unique ID generated for this device by Cognito.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// A list of patch operations.
-    pub fn record_patches(&self) -> std::option::Option<&[crate::model::RecordPatch]> {
+    pub fn record_patches(&self) -> std::option::Option<& [crate::model::RecordPatch]> {
         self.record_patches.as_deref()
     }
     /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
-    pub fn sync_session_token(&self) -> std::option::Option<&str> {
+    pub fn sync_session_token(&self) -> std::option::Option<& str> {
         self.sync_session_token.as_deref()
     }
     /// Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
-    pub fn client_context(&self) -> std::option::Option<&str> {
+    pub fn client_context(&self) -> std::option::Option<& str> {
         self.client_context.as_deref()
     }
 }
@@ -3804,7 +2487,7 @@ impl UpdateRecordsInput {
 /// <p>A request to UnsubscribeFromDataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsubscribeFromDatasetInput {
+pub struct UnsubscribeFromDatasetInput  {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
@@ -3820,19 +2503,19 @@ pub struct UnsubscribeFromDatasetInput {
 }
 impl UnsubscribeFromDatasetInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>Unique ID for this identity.</p>
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// <p>The name of the dataset from which to unsubcribe.</p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The unique ID generated for this device by Cognito.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
 }
@@ -3840,7 +2523,7 @@ impl UnsubscribeFromDatasetInput {
 /// <p>A request to SubscribeToDatasetRequest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubscribeToDatasetInput {
+pub struct SubscribeToDatasetInput  {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
@@ -3856,19 +2539,19 @@ pub struct SubscribeToDatasetInput {
 }
 impl SubscribeToDatasetInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>Unique ID for this identity.</p>
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// <p>The name of the dataset to subcribe to.</p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The unique ID generated for this device by Cognito.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
 }
@@ -3876,7 +2559,7 @@ impl SubscribeToDatasetInput {
 /// <p>The input for the SetIdentityPoolConfiguration operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetIdentityPoolConfigurationInput {
+pub struct SetIdentityPoolConfigurationInput  {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
@@ -3889,15 +2572,15 @@ pub struct SetIdentityPoolConfigurationInput {
 }
 impl SetIdentityPoolConfigurationInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>Options to apply to this identity pool for push synchronization.</p>
-    pub fn push_sync(&self) -> std::option::Option<&crate::model::PushSync> {
+    pub fn push_sync(&self) -> std::option::Option<& crate::model::PushSync> {
         self.push_sync.as_ref()
     }
     /// Options to apply to this identity pool for Amazon Cognito streams.
-    pub fn cognito_streams(&self) -> std::option::Option<&crate::model::CognitoStreams> {
+    pub fn cognito_streams(&self) -> std::option::Option<& crate::model::CognitoStreams> {
         self.cognito_streams.as_ref()
     }
 }
@@ -3905,25 +2588,21 @@ impl SetIdentityPoolConfigurationInput {
 /// <p>A request to configure Cognito Events"</p>"
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetCognitoEventsInput {
+pub struct SetCognitoEventsInput  {
     /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>The events to configure</p>
     #[doc(hidden)]
-    pub events:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub events: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl SetCognitoEventsInput {
     /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>The events to configure</p>
-    pub fn events(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn events(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.events.as_ref()
     }
 }
@@ -3931,7 +2610,7 @@ impl SetCognitoEventsInput {
 /// <p>A request to RegisterDevice.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterDeviceInput {
+pub struct RegisterDeviceInput  {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
@@ -3947,19 +2626,19 @@ pub struct RegisterDeviceInput {
 }
 impl RegisterDeviceInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>The unique ID for this identity.</p>
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p>The push token.</p>
-    pub fn token(&self) -> std::option::Option<&str> {
+    pub fn token(&self) -> std::option::Option<& str> {
         self.token.as_deref()
     }
 }
@@ -3967,7 +2646,7 @@ impl RegisterDeviceInput {
 /// A request for a list of records.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRecordsInput {
+pub struct ListRecordsInput  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
@@ -3992,15 +2671,15 @@ pub struct ListRecordsInput {
 }
 impl ListRecordsInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// The last server sync count for this record.
@@ -4008,7 +2687,7 @@ impl ListRecordsInput {
         self.last_sync_count
     }
     /// A pagination token for obtaining the next page of results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// The maximum number of results to be returned.
@@ -4016,7 +2695,7 @@ impl ListRecordsInput {
         self.max_results
     }
     /// A token containing a session ID, identity ID, and expiration.
-    pub fn sync_session_token(&self) -> std::option::Option<&str> {
+    pub fn sync_session_token(&self) -> std::option::Option<& str> {
         self.sync_session_token.as_deref()
     }
 }
@@ -4024,7 +2703,7 @@ impl ListRecordsInput {
 /// A request for usage information on an identity pool.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIdentityPoolUsageInput {
+pub struct ListIdentityPoolUsageInput  {
     /// A pagination token for obtaining the next page of results.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -4034,7 +2713,7 @@ pub struct ListIdentityPoolUsageInput {
 }
 impl ListIdentityPoolUsageInput {
     /// A pagination token for obtaining the next page of results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// The maximum number of results to be returned.
@@ -4046,7 +2725,7 @@ impl ListIdentityPoolUsageInput {
 /// Request for a list of datasets for an identity.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDatasetsInput {
+pub struct ListDatasetsInput  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
@@ -4062,15 +2741,15 @@ pub struct ListDatasetsInput {
 }
 impl ListDatasetsInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// A pagination token for obtaining the next page of results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// The maximum number of results to be returned.
@@ -4082,14 +2761,14 @@ impl ListDatasetsInput {
 /// <p>The input for the GetIdentityPoolConfiguration operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIdentityPoolConfigurationInput {
+pub struct GetIdentityPoolConfigurationInput  {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl GetIdentityPoolConfigurationInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
 }
@@ -4097,14 +2776,14 @@ impl GetIdentityPoolConfigurationInput {
 /// <p>A request for a list of the configured Cognito Events</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCognitoEventsInput {
+pub struct GetCognitoEventsInput  {
     /// <p>The Cognito Identity Pool ID for the request</p>
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl GetCognitoEventsInput {
     /// <p>The Cognito Identity Pool ID for the request</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
 }
@@ -4112,14 +2791,14 @@ impl GetCognitoEventsInput {
 /// The input for the GetBulkPublishDetails operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBulkPublishDetailsInput {
+pub struct GetBulkPublishDetailsInput  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl GetBulkPublishDetailsInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
 }
@@ -4127,7 +2806,7 @@ impl GetBulkPublishDetailsInput {
 /// A request for information about the usage of an identity pool.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIdentityUsageInput {
+pub struct DescribeIdentityUsageInput  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
@@ -4137,11 +2816,11 @@ pub struct DescribeIdentityUsageInput {
 }
 impl DescribeIdentityUsageInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
 }
@@ -4149,14 +2828,14 @@ impl DescribeIdentityUsageInput {
 /// A request for usage information about the identity pool.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIdentityPoolUsageInput {
+pub struct DescribeIdentityPoolUsageInput  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl DescribeIdentityPoolUsageInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
 }
@@ -4164,7 +2843,7 @@ impl DescribeIdentityPoolUsageInput {
 /// A request for meta data about a dataset (creation date, number of records, size) by owner and dataset name.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDatasetInput {
+pub struct DescribeDatasetInput  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
@@ -4177,15 +2856,15 @@ pub struct DescribeDatasetInput {
 }
 impl DescribeDatasetInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
 }
@@ -4193,7 +2872,7 @@ impl DescribeDatasetInput {
 /// A request to delete the specific dataset.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDatasetInput {
+pub struct DeleteDatasetInput  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
@@ -4206,15 +2885,15 @@ pub struct DeleteDatasetInput {
 }
 impl DeleteDatasetInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
 }
@@ -4222,14 +2901,15 @@ impl DeleteDatasetInput {
 /// The input for the BulkPublish operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BulkPublishInput {
+pub struct BulkPublishInput  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl BulkPublishInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
 }
+

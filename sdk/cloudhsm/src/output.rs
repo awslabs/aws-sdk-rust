@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsFromResourceOutput {
+pub struct RemoveTagsFromResourceOutput  {
     /// <p>The status of the operation.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl RemoveTagsFromResourceOutput {
     /// <p>The status of the operation.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
 pub mod remove_tags_from_resource_output {
-
+    
     /// A builder for [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,16 +29,18 @@ pub mod remove_tags_from_resource_output {
         }
         /// <p>The status of the operation.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
         pub fn build(self) -> crate::output::RemoveTagsFromResourceOutput {
             crate::output::RemoveTagsFromResourceOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveTagsFromResourceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
@@ -50,20 +52,20 @@ impl RemoveTagsFromResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyLunaClientOutput {
+pub struct ModifyLunaClientOutput  {
     /// <p>The ARN of the client.</p>
     #[doc(hidden)]
     pub client_arn: std::option::Option<std::string::String>,
 }
 impl ModifyLunaClientOutput {
     /// <p>The ARN of the client.</p>
-    pub fn client_arn(&self) -> std::option::Option<&str> {
+    pub fn client_arn(&self) -> std::option::Option<& str> {
         self.client_arn.as_deref()
     }
 }
 /// See [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput).
 pub mod modify_luna_client_output {
-
+    
     /// A builder for [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -77,16 +79,18 @@ pub mod modify_luna_client_output {
         }
         /// <p>The ARN of the client.</p>
         pub fn set_client_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_arn = input;
-            self
+            self.client_arn = input; self
         }
         /// Consumes the builder and constructs a [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput).
         pub fn build(self) -> crate::output::ModifyLunaClientOutput {
             crate::output::ModifyLunaClientOutput {
-                client_arn: self.client_arn,
+                client_arn: self.client_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyLunaClientOutput {
     /// Creates a new builder-style object to manufacture [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput).
@@ -98,20 +102,20 @@ impl ModifyLunaClientOutput {
 /// <p>Contains the output of the <code>ModifyHsm</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyHsmOutput {
+pub struct ModifyHsmOutput  {
     /// <p>The ARN of the HSM.</p>
     #[doc(hidden)]
     pub hsm_arn: std::option::Option<std::string::String>,
 }
 impl ModifyHsmOutput {
     /// <p>The ARN of the HSM.</p>
-    pub fn hsm_arn(&self) -> std::option::Option<&str> {
+    pub fn hsm_arn(&self) -> std::option::Option<& str> {
         self.hsm_arn.as_deref()
     }
 }
 /// See [`ModifyHsmOutput`](crate::output::ModifyHsmOutput).
 pub mod modify_hsm_output {
-
+    
     /// A builder for [`ModifyHsmOutput`](crate::output::ModifyHsmOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -125,16 +129,18 @@ pub mod modify_hsm_output {
         }
         /// <p>The ARN of the HSM.</p>
         pub fn set_hsm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hsm_arn = input;
-            self
+            self.hsm_arn = input; self
         }
         /// Consumes the builder and constructs a [`ModifyHsmOutput`](crate::output::ModifyHsmOutput).
         pub fn build(self) -> crate::output::ModifyHsmOutput {
             crate::output::ModifyHsmOutput {
-                hsm_arn: self.hsm_arn,
+                hsm_arn: self.hsm_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyHsmOutput {
     /// Creates a new builder-style object to manufacture [`ModifyHsmOutput`](crate::output::ModifyHsmOutput).
@@ -146,20 +152,20 @@ impl ModifyHsmOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyHapgOutput {
+pub struct ModifyHapgOutput  {
     /// <p>The ARN of the high-availability partition group.</p>
     #[doc(hidden)]
     pub hapg_arn: std::option::Option<std::string::String>,
 }
 impl ModifyHapgOutput {
     /// <p>The ARN of the high-availability partition group.</p>
-    pub fn hapg_arn(&self) -> std::option::Option<&str> {
+    pub fn hapg_arn(&self) -> std::option::Option<& str> {
         self.hapg_arn.as_deref()
     }
 }
 /// See [`ModifyHapgOutput`](crate::output::ModifyHapgOutput).
 pub mod modify_hapg_output {
-
+    
     /// A builder for [`ModifyHapgOutput`](crate::output::ModifyHapgOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -173,16 +179,18 @@ pub mod modify_hapg_output {
         }
         /// <p>The ARN of the high-availability partition group.</p>
         pub fn set_hapg_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hapg_arn = input;
-            self
+            self.hapg_arn = input; self
         }
         /// Consumes the builder and constructs a [`ModifyHapgOutput`](crate::output::ModifyHapgOutput).
         pub fn build(self) -> crate::output::ModifyHapgOutput {
             crate::output::ModifyHapgOutput {
-                hapg_arn: self.hapg_arn,
+                hapg_arn: self.hapg_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyHapgOutput {
     /// Creates a new builder-style object to manufacture [`ModifyHapgOutput`](crate::output::ModifyHapgOutput).
@@ -194,20 +202,20 @@ impl ModifyHapgOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>One or more tags.</p>
     #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>One or more tags.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tag_list.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -221,25 +229,24 @@ pub mod list_tags_for_resource_output {
         /// <p>One or more tags.</p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input);
-            self.tag_list = Some(v);
-            self
+                            v.push(input);
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p>One or more tags.</p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tag_list = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tag_list: self.tag_list,
+                tag_list: self.tag_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -251,7 +258,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLunaClientsOutput {
+pub struct ListLunaClientsOutput  {
     /// <p>The list of clients.</p>
     #[doc(hidden)]
     pub client_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -261,17 +268,17 @@ pub struct ListLunaClientsOutput {
 }
 impl ListLunaClientsOutput {
     /// <p>The list of clients.</p>
-    pub fn client_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn client_list(&self) -> std::option::Option<& [std::string::String]> {
         self.client_list.as_deref()
     }
     /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput).
 pub mod list_luna_clients_output {
-
+    
     /// A builder for [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -286,17 +293,13 @@ pub mod list_luna_clients_output {
         /// <p>The list of clients.</p>
         pub fn client_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.client_list.unwrap_or_default();
-            v.push(input.into());
-            self.client_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.client_list = Some(v);
+                            self
         }
         /// <p>The list of clients.</p>
-        pub fn set_client_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.client_list = input;
-            self
+        pub fn set_client_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.client_list = input; self
         }
         /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -305,17 +308,20 @@ pub mod list_luna_clients_output {
         }
         /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput).
         pub fn build(self) -> crate::output::ListLunaClientsOutput {
             crate::output::ListLunaClientsOutput {
-                client_list: self.client_list,
-                next_token: self.next_token,
+                client_list: self.client_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLunaClientsOutput {
     /// Creates a new builder-style object to manufacture [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput).
@@ -327,7 +333,7 @@ impl ListLunaClientsOutput {
 /// <p>Contains the output of the <code>ListHsms</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHsmsOutput {
+pub struct ListHsmsOutput  {
     /// <p>The list of ARNs that identify the HSMs.</p>
     #[doc(hidden)]
     pub hsm_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -337,17 +343,17 @@ pub struct ListHsmsOutput {
 }
 impl ListHsmsOutput {
     /// <p>The list of ARNs that identify the HSMs.</p>
-    pub fn hsm_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn hsm_list(&self) -> std::option::Option<& [std::string::String]> {
         self.hsm_list.as_deref()
     }
     /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListHsmsOutput`](crate::output::ListHsmsOutput).
 pub mod list_hsms_output {
-
+    
     /// A builder for [`ListHsmsOutput`](crate::output::ListHsmsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -362,17 +368,13 @@ pub mod list_hsms_output {
         /// <p>The list of ARNs that identify the HSMs.</p>
         pub fn hsm_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.hsm_list.unwrap_or_default();
-            v.push(input.into());
-            self.hsm_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.hsm_list = Some(v);
+                            self
         }
         /// <p>The list of ARNs that identify the HSMs.</p>
-        pub fn set_hsm_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.hsm_list = input;
-            self
+        pub fn set_hsm_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.hsm_list = input; self
         }
         /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -381,17 +383,20 @@ pub mod list_hsms_output {
         }
         /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListHsmsOutput`](crate::output::ListHsmsOutput).
         pub fn build(self) -> crate::output::ListHsmsOutput {
             crate::output::ListHsmsOutput {
-                hsm_list: self.hsm_list,
-                next_token: self.next_token,
+                hsm_list: self.hsm_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListHsmsOutput {
     /// Creates a new builder-style object to manufacture [`ListHsmsOutput`](crate::output::ListHsmsOutput).
@@ -403,7 +408,7 @@ impl ListHsmsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHapgsOutput {
+pub struct ListHapgsOutput  {
     /// <p>The list of high-availability partition groups.</p>
     #[doc(hidden)]
     pub hapg_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -413,17 +418,17 @@ pub struct ListHapgsOutput {
 }
 impl ListHapgsOutput {
     /// <p>The list of high-availability partition groups.</p>
-    pub fn hapg_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn hapg_list(&self) -> std::option::Option<& [std::string::String]> {
         self.hapg_list.as_deref()
     }
     /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListHapgsOutput`](crate::output::ListHapgsOutput).
 pub mod list_hapgs_output {
-
+    
     /// A builder for [`ListHapgsOutput`](crate::output::ListHapgsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -438,17 +443,13 @@ pub mod list_hapgs_output {
         /// <p>The list of high-availability partition groups.</p>
         pub fn hapg_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.hapg_list.unwrap_or_default();
-            v.push(input.into());
-            self.hapg_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.hapg_list = Some(v);
+                            self
         }
         /// <p>The list of high-availability partition groups.</p>
-        pub fn set_hapg_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.hapg_list = input;
-            self
+        pub fn set_hapg_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.hapg_list = input; self
         }
         /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -457,17 +458,20 @@ pub mod list_hapgs_output {
         }
         /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListHapgsOutput`](crate::output::ListHapgsOutput).
         pub fn build(self) -> crate::output::ListHapgsOutput {
             crate::output::ListHapgsOutput {
-                hapg_list: self.hapg_list,
-                next_token: self.next_token,
+                hapg_list: self.hapg_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListHapgsOutput {
     /// Creates a new builder-style object to manufacture [`ListHapgsOutput`](crate::output::ListHapgsOutput).
@@ -479,20 +483,20 @@ impl ListHapgsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAvailableZonesOutput {
+pub struct ListAvailableZonesOutput  {
     /// <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
     #[doc(hidden)]
     pub az_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListAvailableZonesOutput {
     /// <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
-    pub fn az_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn az_list(&self) -> std::option::Option<& [std::string::String]> {
         self.az_list.as_deref()
     }
 }
 /// See [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput).
 pub mod list_available_zones_output {
-
+    
     /// A builder for [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -506,25 +510,24 @@ pub mod list_available_zones_output {
         /// <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
         pub fn az_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.az_list.unwrap_or_default();
-            v.push(input.into());
-            self.az_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.az_list = Some(v);
+                            self
         }
         /// <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
-        pub fn set_az_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.az_list = input;
-            self
+        pub fn set_az_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.az_list = input; self
         }
         /// Consumes the builder and constructs a [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput).
         pub fn build(self) -> crate::output::ListAvailableZonesOutput {
             crate::output::ListAvailableZonesOutput {
-                az_list: self.az_list,
+                az_list: self.az_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAvailableZonesOutput {
     /// Creates a new builder-style object to manufacture [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput).
@@ -536,7 +539,7 @@ impl ListAvailableZonesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfigOutput {
+pub struct GetConfigOutput  {
     /// <p>The type of credentials.</p>
     #[doc(hidden)]
     pub config_type: std::option::Option<std::string::String>,
@@ -549,21 +552,21 @@ pub struct GetConfigOutput {
 }
 impl GetConfigOutput {
     /// <p>The type of credentials.</p>
-    pub fn config_type(&self) -> std::option::Option<&str> {
+    pub fn config_type(&self) -> std::option::Option<& str> {
         self.config_type.as_deref()
     }
     /// <p>The chrystoki.conf configuration file.</p>
-    pub fn config_file(&self) -> std::option::Option<&str> {
+    pub fn config_file(&self) -> std::option::Option<& str> {
         self.config_file.as_deref()
     }
     /// <p>The certificate file containing the server.pem files of the HSMs.</p>
-    pub fn config_cred(&self) -> std::option::Option<&str> {
+    pub fn config_cred(&self) -> std::option::Option<& str> {
         self.config_cred.as_deref()
     }
 }
 /// See [`GetConfigOutput`](crate::output::GetConfigOutput).
 pub mod get_config_output {
-
+    
     /// A builder for [`GetConfigOutput`](crate::output::GetConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -579,8 +582,7 @@ pub mod get_config_output {
         }
         /// <p>The type of credentials.</p>
         pub fn set_config_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.config_type = input;
-            self
+            self.config_type = input; self
         }
         /// <p>The chrystoki.conf configuration file.</p>
         pub fn config_file(mut self, input: impl Into<std::string::String>) -> Self {
@@ -589,8 +591,7 @@ pub mod get_config_output {
         }
         /// <p>The chrystoki.conf configuration file.</p>
         pub fn set_config_file(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.config_file = input;
-            self
+            self.config_file = input; self
         }
         /// <p>The certificate file containing the server.pem files of the HSMs.</p>
         pub fn config_cred(mut self, input: impl Into<std::string::String>) -> Self {
@@ -599,18 +600,22 @@ pub mod get_config_output {
         }
         /// <p>The certificate file containing the server.pem files of the HSMs.</p>
         pub fn set_config_cred(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.config_cred = input;
-            self
+            self.config_cred = input; self
         }
         /// Consumes the builder and constructs a [`GetConfigOutput`](crate::output::GetConfigOutput).
         pub fn build(self) -> crate::output::GetConfigOutput {
             crate::output::GetConfigOutput {
-                config_type: self.config_type,
-                config_file: self.config_file,
-                config_cred: self.config_cred,
+                config_type: self.config_type
+                ,
+                config_file: self.config_file
+                ,
+                config_cred: self.config_cred
+                ,
             }
         }
     }
+    
+    
 }
 impl GetConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetConfigOutput`](crate::output::GetConfigOutput).
@@ -622,7 +627,7 @@ impl GetConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLunaClientOutput {
+pub struct DescribeLunaClientOutput  {
     /// <p>The ARN of the client.</p>
     #[doc(hidden)]
     pub client_arn: std::option::Option<std::string::String>,
@@ -641,29 +646,29 @@ pub struct DescribeLunaClientOutput {
 }
 impl DescribeLunaClientOutput {
     /// <p>The ARN of the client.</p>
-    pub fn client_arn(&self) -> std::option::Option<&str> {
+    pub fn client_arn(&self) -> std::option::Option<& str> {
         self.client_arn.as_deref()
     }
     /// <p>The certificate installed on the HSMs used by this client.</p>
-    pub fn certificate(&self) -> std::option::Option<&str> {
+    pub fn certificate(&self) -> std::option::Option<& str> {
         self.certificate.as_deref()
     }
     /// <p>The certificate fingerprint.</p>
-    pub fn certificate_fingerprint(&self) -> std::option::Option<&str> {
+    pub fn certificate_fingerprint(&self) -> std::option::Option<& str> {
         self.certificate_fingerprint.as_deref()
     }
     /// <p>The date and time the client was last modified.</p>
-    pub fn last_modified_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_modified_timestamp(&self) -> std::option::Option<& str> {
         self.last_modified_timestamp.as_deref()
     }
     /// <p>The label of the client.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
 }
 /// See [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput).
 pub mod describe_luna_client_output {
-
+    
     /// A builder for [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -681,8 +686,7 @@ pub mod describe_luna_client_output {
         }
         /// <p>The ARN of the client.</p>
         pub fn set_client_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_arn = input;
-            self
+            self.client_arn = input; self
         }
         /// <p>The certificate installed on the HSMs used by this client.</p>
         pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
@@ -691,8 +695,7 @@ pub mod describe_luna_client_output {
         }
         /// <p>The certificate installed on the HSMs used by this client.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.certificate = input;
-            self
+            self.certificate = input; self
         }
         /// <p>The certificate fingerprint.</p>
         pub fn certificate_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -700,12 +703,8 @@ pub mod describe_luna_client_output {
             self
         }
         /// <p>The certificate fingerprint.</p>
-        pub fn set_certificate_fingerprint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_fingerprint = input;
-            self
+        pub fn set_certificate_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_fingerprint = input; self
         }
         /// <p>The date and time the client was last modified.</p>
         pub fn last_modified_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -713,12 +712,8 @@ pub mod describe_luna_client_output {
             self
         }
         /// <p>The date and time the client was last modified.</p>
-        pub fn set_last_modified_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_timestamp = input;
-            self
+        pub fn set_last_modified_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_timestamp = input; self
         }
         /// <p>The label of the client.</p>
         pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -727,20 +722,26 @@ pub mod describe_luna_client_output {
         }
         /// <p>The label of the client.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label = input;
-            self
+            self.label = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput).
         pub fn build(self) -> crate::output::DescribeLunaClientOutput {
             crate::output::DescribeLunaClientOutput {
-                client_arn: self.client_arn,
-                certificate: self.certificate,
-                certificate_fingerprint: self.certificate_fingerprint,
-                last_modified_timestamp: self.last_modified_timestamp,
-                label: self.label,
+                client_arn: self.client_arn
+                ,
+                certificate: self.certificate
+                ,
+                certificate_fingerprint: self.certificate_fingerprint
+                ,
+                last_modified_timestamp: self.last_modified_timestamp
+                ,
+                label: self.label
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLunaClientOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput).
@@ -752,7 +753,7 @@ impl DescribeLunaClientOutput {
 /// <p>Contains the output of the <code>DescribeHsm</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHsmOutput {
+pub struct DescribeHsmOutput  {
     /// <p>The ARN of the HSM.</p>
     #[doc(hidden)]
     pub hsm_arn: std::option::Option<std::string::String>,
@@ -771,10 +772,10 @@ pub struct DescribeHsmOutput {
     /// <p>The IP address assigned to the HSM's ENI.</p>
     #[doc(hidden)]
     pub eni_ip: std::option::Option<std::string::String>,
-    /// <p>Specifies the type of subscription for the HSM.</p>
-    /// <ul>
-    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
-    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
+    /// <p>Specifies the type of subscription for the HSM.</p> 
+    /// <ul> 
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li> 
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub subscription_type: std::option::Option<crate::model::SubscriptionType>,
@@ -823,97 +824,97 @@ pub struct DescribeHsmOutput {
 }
 impl DescribeHsmOutput {
     /// <p>The ARN of the HSM.</p>
-    pub fn hsm_arn(&self) -> std::option::Option<&str> {
+    pub fn hsm_arn(&self) -> std::option::Option<& str> {
         self.hsm_arn.as_deref()
     }
     /// <p>The status of the HSM.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::HsmStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::HsmStatus> {
         self.status.as_ref()
     }
     /// <p>Contains additional information about the status of the HSM.</p>
-    pub fn status_details(&self) -> std::option::Option<&str> {
+    pub fn status_details(&self) -> std::option::Option<& str> {
         self.status_details.as_deref()
     }
     /// <p>The Availability Zone that the HSM is in.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The identifier of the elastic network interface (ENI) attached to the HSM.</p>
-    pub fn eni_id(&self) -> std::option::Option<&str> {
+    pub fn eni_id(&self) -> std::option::Option<& str> {
         self.eni_id.as_deref()
     }
     /// <p>The IP address assigned to the HSM's ENI.</p>
-    pub fn eni_ip(&self) -> std::option::Option<&str> {
+    pub fn eni_ip(&self) -> std::option::Option<& str> {
         self.eni_ip.as_deref()
     }
-    /// <p>Specifies the type of subscription for the HSM.</p>
-    /// <ul>
-    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
-    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
+    /// <p>Specifies the type of subscription for the HSM.</p> 
+    /// <ul> 
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li> 
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li> 
     /// </ul>
-    pub fn subscription_type(&self) -> std::option::Option<&crate::model::SubscriptionType> {
+    pub fn subscription_type(&self) -> std::option::Option<& crate::model::SubscriptionType> {
         self.subscription_type.as_ref()
     }
     /// <p>The subscription start date.</p>
-    pub fn subscription_start_date(&self) -> std::option::Option<&str> {
+    pub fn subscription_start_date(&self) -> std::option::Option<& str> {
         self.subscription_start_date.as_deref()
     }
     /// <p>The subscription end date.</p>
-    pub fn subscription_end_date(&self) -> std::option::Option<&str> {
+    pub fn subscription_end_date(&self) -> std::option::Option<& str> {
         self.subscription_end_date.as_deref()
     }
     /// <p>The identifier of the VPC that the HSM is in.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The identifier of the subnet that the HSM is in.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The ARN of the IAM role assigned to the HSM.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The serial number of the HSM.</p>
-    pub fn serial_number(&self) -> std::option::Option<&str> {
+    pub fn serial_number(&self) -> std::option::Option<& str> {
         self.serial_number.as_deref()
     }
     /// <p>The name of the HSM vendor.</p>
-    pub fn vendor_name(&self) -> std::option::Option<&str> {
+    pub fn vendor_name(&self) -> std::option::Option<& str> {
         self.vendor_name.as_deref()
     }
     /// <p>The HSM model type.</p>
-    pub fn hsm_type(&self) -> std::option::Option<&str> {
+    pub fn hsm_type(&self) -> std::option::Option<& str> {
         self.hsm_type.as_deref()
     }
     /// <p>The HSM software version.</p>
-    pub fn software_version(&self) -> std::option::Option<&str> {
+    pub fn software_version(&self) -> std::option::Option<& str> {
         self.software_version.as_deref()
     }
     /// <p>The public SSH key.</p>
-    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+    pub fn ssh_public_key(&self) -> std::option::Option<& str> {
         self.ssh_public_key.as_deref()
     }
     /// <p>The date and time that the SSH key was last updated.</p>
-    pub fn ssh_key_last_updated(&self) -> std::option::Option<&str> {
+    pub fn ssh_key_last_updated(&self) -> std::option::Option<& str> {
         self.ssh_key_last_updated.as_deref()
     }
     /// <p>The URI of the certificate server.</p>
-    pub fn server_cert_uri(&self) -> std::option::Option<&str> {
+    pub fn server_cert_uri(&self) -> std::option::Option<& str> {
         self.server_cert_uri.as_deref()
     }
     /// <p>The date and time that the server certificate was last updated.</p>
-    pub fn server_cert_last_updated(&self) -> std::option::Option<&str> {
+    pub fn server_cert_last_updated(&self) -> std::option::Option<& str> {
         self.server_cert_last_updated.as_deref()
     }
     /// <p>The list of partitions on the HSM.</p>
-    pub fn partitions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn partitions(&self) -> std::option::Option<& [std::string::String]> {
         self.partitions.as_deref()
     }
 }
 /// See [`DescribeHsmOutput`](crate::output::DescribeHsmOutput).
 pub mod describe_hsm_output {
-
+    
     /// A builder for [`DescribeHsmOutput`](crate::output::DescribeHsmOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -947,8 +948,7 @@ pub mod describe_hsm_output {
         }
         /// <p>The ARN of the HSM.</p>
         pub fn set_hsm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hsm_arn = input;
-            self
+            self.hsm_arn = input; self
         }
         /// <p>The status of the HSM.</p>
         pub fn status(mut self, input: crate::model::HsmStatus) -> Self {
@@ -957,8 +957,7 @@ pub mod describe_hsm_output {
         }
         /// <p>The status of the HSM.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::HsmStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Contains additional information about the status of the HSM.</p>
         pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -966,12 +965,8 @@ pub mod describe_hsm_output {
             self
         }
         /// <p>Contains additional information about the status of the HSM.</p>
-        pub fn set_status_details(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_details = input;
-            self
+        pub fn set_status_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_details = input; self
         }
         /// <p>The Availability Zone that the HSM is in.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -979,12 +974,8 @@ pub mod describe_hsm_output {
             self
         }
         /// <p>The Availability Zone that the HSM is in.</p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// <p>The identifier of the elastic network interface (ENI) attached to the HSM.</p>
         pub fn eni_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -993,8 +984,7 @@ pub mod describe_hsm_output {
         }
         /// <p>The identifier of the elastic network interface (ENI) attached to the HSM.</p>
         pub fn set_eni_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.eni_id = input;
-            self
+            self.eni_id = input; self
         }
         /// <p>The IP address assigned to the HSM's ENI.</p>
         pub fn eni_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1003,29 +993,24 @@ pub mod describe_hsm_output {
         }
         /// <p>The IP address assigned to the HSM's ENI.</p>
         pub fn set_eni_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.eni_ip = input;
-            self
+            self.eni_ip = input; self
         }
-        /// <p>Specifies the type of subscription for the HSM.</p>
-        /// <ul>
-        /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
-        /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
+        /// <p>Specifies the type of subscription for the HSM.</p> 
+        /// <ul> 
+        /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li> 
+        /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li> 
         /// </ul>
         pub fn subscription_type(mut self, input: crate::model::SubscriptionType) -> Self {
             self.subscription_type = Some(input);
             self
         }
-        /// <p>Specifies the type of subscription for the HSM.</p>
-        /// <ul>
-        /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
-        /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
+        /// <p>Specifies the type of subscription for the HSM.</p> 
+        /// <ul> 
+        /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li> 
+        /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li> 
         /// </ul>
-        pub fn set_subscription_type(
-            mut self,
-            input: std::option::Option<crate::model::SubscriptionType>,
-        ) -> Self {
-            self.subscription_type = input;
-            self
+        pub fn set_subscription_type(mut self, input: std::option::Option<crate::model::SubscriptionType>) -> Self {
+            self.subscription_type = input; self
         }
         /// <p>The subscription start date.</p>
         pub fn subscription_start_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1033,12 +1018,8 @@ pub mod describe_hsm_output {
             self
         }
         /// <p>The subscription start date.</p>
-        pub fn set_subscription_start_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscription_start_date = input;
-            self
+        pub fn set_subscription_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscription_start_date = input; self
         }
         /// <p>The subscription end date.</p>
         pub fn subscription_end_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1046,12 +1027,8 @@ pub mod describe_hsm_output {
             self
         }
         /// <p>The subscription end date.</p>
-        pub fn set_subscription_end_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscription_end_date = input;
-            self
+        pub fn set_subscription_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscription_end_date = input; self
         }
         /// <p>The identifier of the VPC that the HSM is in.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1060,8 +1037,7 @@ pub mod describe_hsm_output {
         }
         /// <p>The identifier of the VPC that the HSM is in.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>The identifier of the subnet that the HSM is in.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1070,8 +1046,7 @@ pub mod describe_hsm_output {
         }
         /// <p>The identifier of the subnet that the HSM is in.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subnet_id = input;
-            self
+            self.subnet_id = input; self
         }
         /// <p>The ARN of the IAM role assigned to the HSM.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1080,8 +1055,7 @@ pub mod describe_hsm_output {
         }
         /// <p>The ARN of the IAM role assigned to the HSM.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = input;
-            self
+            self.iam_role_arn = input; self
         }
         /// <p>The serial number of the HSM.</p>
         pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1089,12 +1063,8 @@ pub mod describe_hsm_output {
             self
         }
         /// <p>The serial number of the HSM.</p>
-        pub fn set_serial_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.serial_number = input;
-            self
+        pub fn set_serial_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.serial_number = input; self
         }
         /// <p>The name of the HSM vendor.</p>
         pub fn vendor_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1103,8 +1073,7 @@ pub mod describe_hsm_output {
         }
         /// <p>The name of the HSM vendor.</p>
         pub fn set_vendor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vendor_name = input;
-            self
+            self.vendor_name = input; self
         }
         /// <p>The HSM model type.</p>
         pub fn hsm_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1113,8 +1082,7 @@ pub mod describe_hsm_output {
         }
         /// <p>The HSM model type.</p>
         pub fn set_hsm_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hsm_type = input;
-            self
+            self.hsm_type = input; self
         }
         /// <p>The HSM software version.</p>
         pub fn software_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1122,12 +1090,8 @@ pub mod describe_hsm_output {
             self
         }
         /// <p>The HSM software version.</p>
-        pub fn set_software_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.software_version = input;
-            self
+        pub fn set_software_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.software_version = input; self
         }
         /// <p>The public SSH key.</p>
         pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1135,12 +1099,8 @@ pub mod describe_hsm_output {
             self
         }
         /// <p>The public SSH key.</p>
-        pub fn set_ssh_public_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ssh_public_key = input;
-            self
+        pub fn set_ssh_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ssh_public_key = input; self
         }
         /// <p>The date and time that the SSH key was last updated.</p>
         pub fn ssh_key_last_updated(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1148,12 +1108,8 @@ pub mod describe_hsm_output {
             self
         }
         /// <p>The date and time that the SSH key was last updated.</p>
-        pub fn set_ssh_key_last_updated(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ssh_key_last_updated = input;
-            self
+        pub fn set_ssh_key_last_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ssh_key_last_updated = input; self
         }
         /// <p>The URI of the certificate server.</p>
         pub fn server_cert_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1161,12 +1117,8 @@ pub mod describe_hsm_output {
             self
         }
         /// <p>The URI of the certificate server.</p>
-        pub fn set_server_cert_uri(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_cert_uri = input;
-            self
+        pub fn set_server_cert_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_cert_uri = input; self
         }
         /// <p>The date and time that the server certificate was last updated.</p>
         pub fn server_cert_last_updated(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1174,12 +1126,8 @@ pub mod describe_hsm_output {
             self
         }
         /// <p>The date and time that the server certificate was last updated.</p>
-        pub fn set_server_cert_last_updated(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_cert_last_updated = input;
-            self
+        pub fn set_server_cert_last_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_cert_last_updated = input; self
         }
         /// Appends an item to `partitions`.
         ///
@@ -1188,45 +1136,64 @@ pub mod describe_hsm_output {
         /// <p>The list of partitions on the HSM.</p>
         pub fn partitions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.partitions.unwrap_or_default();
-            v.push(input.into());
-            self.partitions = Some(v);
-            self
+                            v.push(input.into());
+                            self.partitions = Some(v);
+                            self
         }
         /// <p>The list of partitions on the HSM.</p>
-        pub fn set_partitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.partitions = input;
-            self
+        pub fn set_partitions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.partitions = input; self
         }
         /// Consumes the builder and constructs a [`DescribeHsmOutput`](crate::output::DescribeHsmOutput).
         pub fn build(self) -> crate::output::DescribeHsmOutput {
             crate::output::DescribeHsmOutput {
-                hsm_arn: self.hsm_arn,
-                status: self.status,
-                status_details: self.status_details,
-                availability_zone: self.availability_zone,
-                eni_id: self.eni_id,
-                eni_ip: self.eni_ip,
-                subscription_type: self.subscription_type,
-                subscription_start_date: self.subscription_start_date,
-                subscription_end_date: self.subscription_end_date,
-                vpc_id: self.vpc_id,
-                subnet_id: self.subnet_id,
-                iam_role_arn: self.iam_role_arn,
-                serial_number: self.serial_number,
-                vendor_name: self.vendor_name,
-                hsm_type: self.hsm_type,
-                software_version: self.software_version,
-                ssh_public_key: self.ssh_public_key,
-                ssh_key_last_updated: self.ssh_key_last_updated,
-                server_cert_uri: self.server_cert_uri,
-                server_cert_last_updated: self.server_cert_last_updated,
-                partitions: self.partitions,
+                hsm_arn: self.hsm_arn
+                ,
+                status: self.status
+                ,
+                status_details: self.status_details
+                ,
+                availability_zone: self.availability_zone
+                ,
+                eni_id: self.eni_id
+                ,
+                eni_ip: self.eni_ip
+                ,
+                subscription_type: self.subscription_type
+                ,
+                subscription_start_date: self.subscription_start_date
+                ,
+                subscription_end_date: self.subscription_end_date
+                ,
+                vpc_id: self.vpc_id
+                ,
+                subnet_id: self.subnet_id
+                ,
+                iam_role_arn: self.iam_role_arn
+                ,
+                serial_number: self.serial_number
+                ,
+                vendor_name: self.vendor_name
+                ,
+                hsm_type: self.hsm_type
+                ,
+                software_version: self.software_version
+                ,
+                ssh_public_key: self.ssh_public_key
+                ,
+                ssh_key_last_updated: self.ssh_key_last_updated
+                ,
+                server_cert_uri: self.server_cert_uri
+                ,
+                server_cert_last_updated: self.server_cert_last_updated
+                ,
+                partitions: self.partitions
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeHsmOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHsmOutput`](crate::output::DescribeHsmOutput).
@@ -1238,7 +1205,7 @@ impl DescribeHsmOutput {
 /// <p>Contains the output of the <code>DescribeHapg</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHapgOutput {
+pub struct DescribeHapgOutput  {
     /// <p>The ARN of the high-availability partition group.</p>
     #[doc(hidden)]
     pub hapg_arn: std::option::Option<std::string::String>,
@@ -1269,45 +1236,45 @@ pub struct DescribeHapgOutput {
 }
 impl DescribeHapgOutput {
     /// <p>The ARN of the high-availability partition group.</p>
-    pub fn hapg_arn(&self) -> std::option::Option<&str> {
+    pub fn hapg_arn(&self) -> std::option::Option<& str> {
         self.hapg_arn.as_deref()
     }
     /// <p>The serial number of the high-availability partition group.</p>
-    pub fn hapg_serial(&self) -> std::option::Option<&str> {
+    pub fn hapg_serial(&self) -> std::option::Option<& str> {
         self.hapg_serial.as_deref()
     }
     /// <p></p>
-    pub fn hsms_last_action_failed(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn hsms_last_action_failed(&self) -> std::option::Option<& [std::string::String]> {
         self.hsms_last_action_failed.as_deref()
     }
     /// <p></p>
-    pub fn hsms_pending_deletion(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn hsms_pending_deletion(&self) -> std::option::Option<& [std::string::String]> {
         self.hsms_pending_deletion.as_deref()
     }
     /// <p></p>
-    pub fn hsms_pending_registration(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn hsms_pending_registration(&self) -> std::option::Option<& [std::string::String]> {
         self.hsms_pending_registration.as_deref()
     }
     /// <p>The label for the high-availability partition group.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The date and time the high-availability partition group was last modified.</p>
-    pub fn last_modified_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_modified_timestamp(&self) -> std::option::Option<& str> {
         self.last_modified_timestamp.as_deref()
     }
     /// <p>The list of partition serial numbers that belong to the high-availability partition group.</p>
-    pub fn partition_serial_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn partition_serial_list(&self) -> std::option::Option<& [std::string::String]> {
         self.partition_serial_list.as_deref()
     }
     /// <p>The state of the high-availability partition group.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::CloudHsmObjectState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::CloudHsmObjectState> {
         self.state.as_ref()
     }
 }
 /// See [`DescribeHapgOutput`](crate::output::DescribeHapgOutput).
 pub mod describe_hapg_output {
-
+    
     /// A builder for [`DescribeHapgOutput`](crate::output::DescribeHapgOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1315,8 +1282,7 @@ pub mod describe_hapg_output {
         pub(crate) hapg_serial: std::option::Option<std::string::String>,
         pub(crate) hsms_last_action_failed: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) hsms_pending_deletion: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) hsms_pending_registration:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) hsms_pending_registration: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) label: std::option::Option<std::string::String>,
         pub(crate) last_modified_timestamp: std::option::Option<std::string::String>,
         pub(crate) partition_serial_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1330,8 +1296,7 @@ pub mod describe_hapg_output {
         }
         /// <p>The ARN of the high-availability partition group.</p>
         pub fn set_hapg_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hapg_arn = input;
-            self
+            self.hapg_arn = input; self
         }
         /// <p>The serial number of the high-availability partition group.</p>
         pub fn hapg_serial(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1340,8 +1305,7 @@ pub mod describe_hapg_output {
         }
         /// <p>The serial number of the high-availability partition group.</p>
         pub fn set_hapg_serial(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hapg_serial = input;
-            self
+            self.hapg_serial = input; self
         }
         /// Appends an item to `hsms_last_action_failed`.
         ///
@@ -1350,17 +1314,13 @@ pub mod describe_hapg_output {
         /// <p></p>
         pub fn hsms_last_action_failed(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.hsms_last_action_failed.unwrap_or_default();
-            v.push(input.into());
-            self.hsms_last_action_failed = Some(v);
-            self
+                            v.push(input.into());
+                            self.hsms_last_action_failed = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_hsms_last_action_failed(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.hsms_last_action_failed = input;
-            self
+        pub fn set_hsms_last_action_failed(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.hsms_last_action_failed = input; self
         }
         /// Appends an item to `hsms_pending_deletion`.
         ///
@@ -1369,17 +1329,13 @@ pub mod describe_hapg_output {
         /// <p></p>
         pub fn hsms_pending_deletion(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.hsms_pending_deletion.unwrap_or_default();
-            v.push(input.into());
-            self.hsms_pending_deletion = Some(v);
-            self
+                            v.push(input.into());
+                            self.hsms_pending_deletion = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_hsms_pending_deletion(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.hsms_pending_deletion = input;
-            self
+        pub fn set_hsms_pending_deletion(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.hsms_pending_deletion = input; self
         }
         /// Appends an item to `hsms_pending_registration`.
         ///
@@ -1388,17 +1344,13 @@ pub mod describe_hapg_output {
         /// <p></p>
         pub fn hsms_pending_registration(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.hsms_pending_registration.unwrap_or_default();
-            v.push(input.into());
-            self.hsms_pending_registration = Some(v);
-            self
+                            v.push(input.into());
+                            self.hsms_pending_registration = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_hsms_pending_registration(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.hsms_pending_registration = input;
-            self
+        pub fn set_hsms_pending_registration(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.hsms_pending_registration = input; self
         }
         /// <p>The label for the high-availability partition group.</p>
         pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1407,8 +1359,7 @@ pub mod describe_hapg_output {
         }
         /// <p>The label for the high-availability partition group.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label = input;
-            self
+            self.label = input; self
         }
         /// <p>The date and time the high-availability partition group was last modified.</p>
         pub fn last_modified_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1416,12 +1367,8 @@ pub mod describe_hapg_output {
             self
         }
         /// <p>The date and time the high-availability partition group was last modified.</p>
-        pub fn set_last_modified_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_timestamp = input;
-            self
+        pub fn set_last_modified_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_timestamp = input; self
         }
         /// Appends an item to `partition_serial_list`.
         ///
@@ -1430,17 +1377,13 @@ pub mod describe_hapg_output {
         /// <p>The list of partition serial numbers that belong to the high-availability partition group.</p>
         pub fn partition_serial_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.partition_serial_list.unwrap_or_default();
-            v.push(input.into());
-            self.partition_serial_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.partition_serial_list = Some(v);
+                            self
         }
         /// <p>The list of partition serial numbers that belong to the high-availability partition group.</p>
-        pub fn set_partition_serial_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.partition_serial_list = input;
-            self
+        pub fn set_partition_serial_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.partition_serial_list = input; self
         }
         /// <p>The state of the high-availability partition group.</p>
         pub fn state(mut self, input: crate::model::CloudHsmObjectState) -> Self {
@@ -1448,28 +1391,35 @@ pub mod describe_hapg_output {
             self
         }
         /// <p>The state of the high-availability partition group.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::CloudHsmObjectState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::CloudHsmObjectState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`DescribeHapgOutput`](crate::output::DescribeHapgOutput).
         pub fn build(self) -> crate::output::DescribeHapgOutput {
             crate::output::DescribeHapgOutput {
-                hapg_arn: self.hapg_arn,
-                hapg_serial: self.hapg_serial,
-                hsms_last_action_failed: self.hsms_last_action_failed,
-                hsms_pending_deletion: self.hsms_pending_deletion,
-                hsms_pending_registration: self.hsms_pending_registration,
-                label: self.label,
-                last_modified_timestamp: self.last_modified_timestamp,
-                partition_serial_list: self.partition_serial_list,
-                state: self.state,
+                hapg_arn: self.hapg_arn
+                ,
+                hapg_serial: self.hapg_serial
+                ,
+                hsms_last_action_failed: self.hsms_last_action_failed
+                ,
+                hsms_pending_deletion: self.hsms_pending_deletion
+                ,
+                hsms_pending_registration: self.hsms_pending_registration
+                ,
+                label: self.label
+                ,
+                last_modified_timestamp: self.last_modified_timestamp
+                ,
+                partition_serial_list: self.partition_serial_list
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeHapgOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHapgOutput`](crate::output::DescribeHapgOutput).
@@ -1481,20 +1431,20 @@ impl DescribeHapgOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLunaClientOutput {
+pub struct DeleteLunaClientOutput  {
     /// <p>The status of the action.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl DeleteLunaClientOutput {
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput).
 pub mod delete_luna_client_output {
-
+    
     /// A builder for [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1508,16 +1458,18 @@ pub mod delete_luna_client_output {
         }
         /// <p>The status of the action.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput).
         pub fn build(self) -> crate::output::DeleteLunaClientOutput {
             crate::output::DeleteLunaClientOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteLunaClientOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput).
@@ -1529,20 +1481,20 @@ impl DeleteLunaClientOutput {
 /// <p>Contains the output of the <code>DeleteHsm</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHsmOutput {
+pub struct DeleteHsmOutput  {
     /// <p>The status of the operation.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl DeleteHsmOutput {
     /// <p>The status of the operation.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`DeleteHsmOutput`](crate::output::DeleteHsmOutput).
 pub mod delete_hsm_output {
-
+    
     /// A builder for [`DeleteHsmOutput`](crate::output::DeleteHsmOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1556,16 +1508,18 @@ pub mod delete_hsm_output {
         }
         /// <p>The status of the operation.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteHsmOutput`](crate::output::DeleteHsmOutput).
         pub fn build(self) -> crate::output::DeleteHsmOutput {
             crate::output::DeleteHsmOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteHsmOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHsmOutput`](crate::output::DeleteHsmOutput).
@@ -1577,20 +1531,20 @@ impl DeleteHsmOutput {
 /// <p>Contains the output of the <code>DeleteHapg</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHapgOutput {
+pub struct DeleteHapgOutput  {
     /// <p>The status of the action.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl DeleteHapgOutput {
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`DeleteHapgOutput`](crate::output::DeleteHapgOutput).
 pub mod delete_hapg_output {
-
+    
     /// A builder for [`DeleteHapgOutput`](crate::output::DeleteHapgOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1604,16 +1558,18 @@ pub mod delete_hapg_output {
         }
         /// <p>The status of the action.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteHapgOutput`](crate::output::DeleteHapgOutput).
         pub fn build(self) -> crate::output::DeleteHapgOutput {
             crate::output::DeleteHapgOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteHapgOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHapgOutput`](crate::output::DeleteHapgOutput).
@@ -1625,20 +1581,20 @@ impl DeleteHapgOutput {
 /// <p>Contains the output of the <code>CreateLunaClient</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLunaClientOutput {
+pub struct CreateLunaClientOutput  {
     /// <p>The ARN of the client.</p>
     #[doc(hidden)]
     pub client_arn: std::option::Option<std::string::String>,
 }
 impl CreateLunaClientOutput {
     /// <p>The ARN of the client.</p>
-    pub fn client_arn(&self) -> std::option::Option<&str> {
+    pub fn client_arn(&self) -> std::option::Option<& str> {
         self.client_arn.as_deref()
     }
 }
 /// See [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput).
 pub mod create_luna_client_output {
-
+    
     /// A builder for [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1652,16 +1608,18 @@ pub mod create_luna_client_output {
         }
         /// <p>The ARN of the client.</p>
         pub fn set_client_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_arn = input;
-            self
+            self.client_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput).
         pub fn build(self) -> crate::output::CreateLunaClientOutput {
             crate::output::CreateLunaClientOutput {
-                client_arn: self.client_arn,
+                client_arn: self.client_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLunaClientOutput {
     /// Creates a new builder-style object to manufacture [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput).
@@ -1673,20 +1631,20 @@ impl CreateLunaClientOutput {
 /// <p>Contains the output of the <code>CreateHsm</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateHsmOutput {
+pub struct CreateHsmOutput  {
     /// <p>The ARN of the HSM.</p>
     #[doc(hidden)]
     pub hsm_arn: std::option::Option<std::string::String>,
 }
 impl CreateHsmOutput {
     /// <p>The ARN of the HSM.</p>
-    pub fn hsm_arn(&self) -> std::option::Option<&str> {
+    pub fn hsm_arn(&self) -> std::option::Option<& str> {
         self.hsm_arn.as_deref()
     }
 }
 /// See [`CreateHsmOutput`](crate::output::CreateHsmOutput).
 pub mod create_hsm_output {
-
+    
     /// A builder for [`CreateHsmOutput`](crate::output::CreateHsmOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1700,16 +1658,18 @@ pub mod create_hsm_output {
         }
         /// <p>The ARN of the HSM.</p>
         pub fn set_hsm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hsm_arn = input;
-            self
+            self.hsm_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateHsmOutput`](crate::output::CreateHsmOutput).
         pub fn build(self) -> crate::output::CreateHsmOutput {
             crate::output::CreateHsmOutput {
-                hsm_arn: self.hsm_arn,
+                hsm_arn: self.hsm_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateHsmOutput {
     /// Creates a new builder-style object to manufacture [`CreateHsmOutput`](crate::output::CreateHsmOutput).
@@ -1721,20 +1681,20 @@ impl CreateHsmOutput {
 /// <p>Contains the output of the <code>CreateHAPartitionGroup</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateHapgOutput {
+pub struct CreateHapgOutput  {
     /// <p>The ARN of the high-availability partition group.</p>
     #[doc(hidden)]
     pub hapg_arn: std::option::Option<std::string::String>,
 }
 impl CreateHapgOutput {
     /// <p>The ARN of the high-availability partition group.</p>
-    pub fn hapg_arn(&self) -> std::option::Option<&str> {
+    pub fn hapg_arn(&self) -> std::option::Option<& str> {
         self.hapg_arn.as_deref()
     }
 }
 /// See [`CreateHapgOutput`](crate::output::CreateHapgOutput).
 pub mod create_hapg_output {
-
+    
     /// A builder for [`CreateHapgOutput`](crate::output::CreateHapgOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1748,16 +1708,18 @@ pub mod create_hapg_output {
         }
         /// <p>The ARN of the high-availability partition group.</p>
         pub fn set_hapg_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hapg_arn = input;
-            self
+            self.hapg_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateHapgOutput`](crate::output::CreateHapgOutput).
         pub fn build(self) -> crate::output::CreateHapgOutput {
             crate::output::CreateHapgOutput {
-                hapg_arn: self.hapg_arn,
+                hapg_arn: self.hapg_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateHapgOutput {
     /// Creates a new builder-style object to manufacture [`CreateHapgOutput`](crate::output::CreateHapgOutput).
@@ -1769,20 +1731,20 @@ impl CreateHapgOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsToResourceOutput {
+pub struct AddTagsToResourceOutput  {
     /// <p>The status of the operation.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl AddTagsToResourceOutput {
     /// <p>The status of the operation.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
 pub mod add_tags_to_resource_output {
-
+    
     /// A builder for [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1796,16 +1758,18 @@ pub mod add_tags_to_resource_output {
         }
         /// <p>The status of the operation.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
         pub fn build(self) -> crate::output::AddTagsToResourceOutput {
             crate::output::AddTagsToResourceOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl AddTagsToResourceOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
@@ -1813,3 +1777,4 @@ impl AddTagsToResourceOutput {
         crate::output::add_tags_to_resource_output::Builder::default()
     }
 }
+

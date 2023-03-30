@@ -3,14 +3,13 @@ use std::fmt::Write;
 
 /// See [`AttachCustomerManagedPolicyReferenceToPermissionSetInput`](crate::input::AttachCustomerManagedPolicyReferenceToPermissionSetInput).
 pub mod attach_customer_managed_policy_reference_to_permission_set_input {
-
+    
     /// A builder for [`AttachCustomerManagedPolicyReferenceToPermissionSetInput`](crate::input::AttachCustomerManagedPolicyReferenceToPermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
         pub(crate) permission_set_arn: std::option::Option<std::string::String>,
-        pub(crate) customer_managed_policy_reference:
-            std::option::Option<crate::model::CustomerManagedPolicyReference>,
+        pub(crate) customer_managed_policy_reference: std::option::Option<crate::model::CustomerManagedPolicyReference>,
     }
     impl Builder {
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
@@ -20,8 +19,7 @@ pub mod attach_customer_managed_policy_reference_to_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the <code>PermissionSet</code>.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -29,111 +27,72 @@ pub mod attach_customer_managed_policy_reference_to_permission_set_input {
             self
         }
         /// <p>The ARN of the <code>PermissionSet</code>.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
-        pub fn customer_managed_policy_reference(
-            mut self,
-            input: crate::model::CustomerManagedPolicyReference,
-        ) -> Self {
+        pub fn customer_managed_policy_reference(mut self, input: crate::model::CustomerManagedPolicyReference) -> Self {
             self.customer_managed_policy_reference = Some(input);
             self
         }
         /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
-        pub fn set_customer_managed_policy_reference(
-            mut self,
-            input: std::option::Option<crate::model::CustomerManagedPolicyReference>,
-        ) -> Self {
-            self.customer_managed_policy_reference = input;
-            self
+        pub fn set_customer_managed_policy_reference(mut self, input: std::option::Option<crate::model::CustomerManagedPolicyReference>) -> Self {
+            self.customer_managed_policy_reference = input; self
         }
         /// Consumes the builder and constructs a [`AttachCustomerManagedPolicyReferenceToPermissionSetInput`](crate::input::AttachCustomerManagedPolicyReferenceToPermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::AttachCustomerManagedPolicyReferenceToPermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
+        pub fn build(self) -> Result<crate::input::AttachCustomerManagedPolicyReferenceToPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
             Ok(
                 crate::input::AttachCustomerManagedPolicyReferenceToPermissionSetInput {
-                    instance_arn: self.instance_arn,
-                    permission_set_arn: self.permission_set_arn,
-                    customer_managed_policy_reference: self.customer_managed_policy_reference,
-                },
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                    customer_managed_policy_reference: self.customer_managed_policy_reference
+                    ,
+                }
             )
         }
     }
+    
+    
 }
 impl AttachCustomerManagedPolicyReferenceToPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`AttachCustomerManagedPolicyReferenceToPermissionSet`](crate::operation::AttachCustomerManagedPolicyReferenceToPermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::AttachCustomerManagedPolicyReferenceToPermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AttachCustomerManagedPolicyReferenceToPermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::AttachCustomerManagedPolicyReferenceToPermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::AttachCustomerManagedPolicyReferenceToPermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::AttachCustomerManagedPolicyReferenceToPermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::AttachCustomerManagedPolicyReferenceToPermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.AttachCustomerManagedPolicyReferenceToPermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.AttachCustomerManagedPolicyReferenceToPermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -142,70 +101,45 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetInput {
             crate::operation_ser::serialize_operation_crate_operation_attach_customer_managed_policy_reference_to_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::AttachCustomerManagedPolicyReferenceToPermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "AttachCustomerManagedPolicyReferenceToPermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AttachCustomerManagedPolicyReferenceToPermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("AttachCustomerManagedPolicyReferenceToPermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`AttachCustomerManagedPolicyReferenceToPermissionSetInput`](crate::input::AttachCustomerManagedPolicyReferenceToPermissionSetInput).
-    pub fn builder(
-    ) -> crate::input::attach_customer_managed_policy_reference_to_permission_set_input::Builder
-    {
+    pub fn builder() -> crate::input::attach_customer_managed_policy_reference_to_permission_set_input::Builder {
         crate::input::attach_customer_managed_policy_reference_to_permission_set_input::Builder::default()
     }
 }
 
 /// See [`AttachManagedPolicyToPermissionSetInput`](crate::input::AttachManagedPolicyToPermissionSetInput).
 pub mod attach_managed_policy_to_permission_set_input {
-
+    
     /// A builder for [`AttachManagedPolicyToPermissionSetInput`](crate::input::AttachManagedPolicyToPermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -221,8 +155,7 @@ pub mod attach_managed_policy_to_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the <code>PermissionSet</code> that the managed policy should be attached to.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -230,12 +163,8 @@ pub mod attach_managed_policy_to_permission_set_input {
             self
         }
         /// <p>The ARN of the <code>PermissionSet</code> that the managed policy should be attached to.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>The AWS managed policy ARN to be attached to a permission set.</p>
         pub fn managed_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -243,93 +172,63 @@ pub mod attach_managed_policy_to_permission_set_input {
             self
         }
         /// <p>The AWS managed policy ARN to be attached to a permission set.</p>
-        pub fn set_managed_policy_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.managed_policy_arn = input;
-            self
+        pub fn set_managed_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.managed_policy_arn = input; self
         }
         /// Consumes the builder and constructs a [`AttachManagedPolicyToPermissionSetInput`](crate::input::AttachManagedPolicyToPermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::AttachManagedPolicyToPermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::AttachManagedPolicyToPermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-                managed_policy_arn: self.managed_policy_arn,
-            })
+        pub fn build(self) -> Result<crate::input::AttachManagedPolicyToPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::AttachManagedPolicyToPermissionSetInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                    managed_policy_arn: self.managed_policy_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl AttachManagedPolicyToPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`AttachManagedPolicyToPermissionSet`](crate::operation::AttachManagedPolicyToPermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::AttachManagedPolicyToPermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::AttachManagedPolicyToPermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::AttachManagedPolicyToPermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::AttachManagedPolicyToPermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::AttachManagedPolicyToPermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::AttachManagedPolicyToPermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.AttachManagedPolicyToPermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.AttachManagedPolicyToPermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -338,56 +237,33 @@ impl AttachManagedPolicyToPermissionSetInput {
             crate::operation_ser::serialize_operation_crate_operation_attach_managed_policy_to_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::AttachManagedPolicyToPermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "AttachManagedPolicyToPermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::AttachManagedPolicyToPermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("AttachManagedPolicyToPermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -399,7 +275,7 @@ impl AttachManagedPolicyToPermissionSetInput {
 
 /// See [`CreateAccountAssignmentInput`](crate::input::CreateAccountAssignmentInput).
 pub mod create_account_assignment_input {
-
+    
     /// A builder for [`CreateAccountAssignmentInput`](crate::input::CreateAccountAssignmentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -418,8 +294,7 @@ pub mod create_account_assignment_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -428,8 +303,7 @@ pub mod create_account_assignment_input {
         }
         /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_id = input;
-            self
+            self.target_id = input; self
         }
         /// <p>The entity type for which the assignment will be created.</p>
         pub fn target_type(mut self, input: crate::model::TargetType) -> Self {
@@ -437,12 +311,8 @@ pub mod create_account_assignment_input {
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
-        pub fn set_target_type(
-            mut self,
-            input: std::option::Option<crate::model::TargetType>,
-        ) -> Self {
-            self.target_type = input;
-            self
+        pub fn set_target_type(mut self, input: std::option::Option<crate::model::TargetType>) -> Self {
+            self.target_type = input; self
         }
         /// <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -450,12 +320,8 @@ pub mod create_account_assignment_input {
             self
         }
         /// <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>The entity type for which the assignment will be created.</p>
         pub fn principal_type(mut self, input: crate::model::PrincipalType) -> Self {
@@ -463,12 +329,8 @@ pub mod create_account_assignment_input {
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
-        pub fn set_principal_type(
-            mut self,
-            input: std::option::Option<crate::model::PrincipalType>,
-        ) -> Self {
-            self.principal_type = input;
-            self
+        pub fn set_principal_type(mut self, input: std::option::Option<crate::model::PrincipalType>) -> Self {
+            self.principal_type = input; self
         }
         /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -477,152 +339,103 @@ pub mod create_account_assignment_input {
         }
         /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.principal_id = input;
-            self
+            self.principal_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateAccountAssignmentInput`](crate::input::CreateAccountAssignmentInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateAccountAssignmentInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateAccountAssignmentInput {
-                instance_arn: self.instance_arn,
-                target_id: self.target_id,
-                target_type: self.target_type,
-                permission_set_arn: self.permission_set_arn,
-                principal_type: self.principal_type,
-                principal_id: self.principal_id,
-            })
+        pub fn build(self) -> Result<crate::input::CreateAccountAssignmentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateAccountAssignmentInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    target_id: self.target_id
+                    ,
+                    target_type: self.target_type
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                    principal_type: self.principal_type
+                    ,
+                    principal_id: self.principal_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateAccountAssignmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateAccountAssignment`](crate::operation::CreateAccountAssignment)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateAccountAssignment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateAccountAssignment, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateAccountAssignmentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateAccountAssignmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateAccountAssignmentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateAccountAssignmentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.CreateAccountAssignment",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.CreateAccountAssignment"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_account_assignment(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_create_account_assignment(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateAccountAssignment::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateAccountAssignment",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateAccountAssignment::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateAccountAssignment", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -634,13 +447,12 @@ impl CreateAccountAssignmentInput {
 
 /// See [`CreateInstanceAccessControlAttributeConfigurationInput`](crate::input::CreateInstanceAccessControlAttributeConfigurationInput).
 pub mod create_instance_access_control_attribute_configuration_input {
-
+    
     /// A builder for [`CreateInstanceAccessControlAttributeConfigurationInput`](crate::input::CreateInstanceAccessControlAttributeConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
-        pub(crate) instance_access_control_attribute_configuration:
-            std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
+        pub(crate) instance_access_control_attribute_configuration: std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
     }
     impl Builder {
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
@@ -650,107 +462,69 @@ pub mod create_instance_access_control_attribute_configuration_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.</p>
-        pub fn instance_access_control_attribute_configuration(
-            mut self,
-            input: crate::model::InstanceAccessControlAttributeConfiguration,
-        ) -> Self {
+        pub fn instance_access_control_attribute_configuration(mut self, input: crate::model::InstanceAccessControlAttributeConfiguration) -> Self {
             self.instance_access_control_attribute_configuration = Some(input);
             self
         }
         /// <p>Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.</p>
-        pub fn set_instance_access_control_attribute_configuration(
-            mut self,
-            input: std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
-        ) -> Self {
-            self.instance_access_control_attribute_configuration = input;
-            self
+        pub fn set_instance_access_control_attribute_configuration(mut self, input: std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>) -> Self {
+            self.instance_access_control_attribute_configuration = input; self
         }
         /// Consumes the builder and constructs a [`CreateInstanceAccessControlAttributeConfigurationInput`](crate::input::CreateInstanceAccessControlAttributeConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateInstanceAccessControlAttributeConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
+        pub fn build(self) -> Result<crate::input::CreateInstanceAccessControlAttributeConfigurationInput, aws_smithy_http::operation::error::BuildError> {
             Ok(
                 crate::input::CreateInstanceAccessControlAttributeConfigurationInput {
-                    instance_arn: self.instance_arn,
-                    instance_access_control_attribute_configuration: self
-                        .instance_access_control_attribute_configuration,
-                },
+                    instance_arn: self.instance_arn
+                    ,
+                    instance_access_control_attribute_configuration: self.instance_access_control_attribute_configuration
+                    ,
+                }
             )
         }
     }
+    
+    
 }
 impl CreateInstanceAccessControlAttributeConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateInstanceAccessControlAttributeConfiguration`](crate::operation::CreateInstanceAccessControlAttributeConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateInstanceAccessControlAttributeConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateInstanceAccessControlAttributeConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateInstanceAccessControlAttributeConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateInstanceAccessControlAttributeConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateInstanceAccessControlAttributeConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateInstanceAccessControlAttributeConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.CreateInstanceAccessControlAttributeConfiguration",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.CreateInstanceAccessControlAttributeConfiguration"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -759,70 +533,45 @@ impl CreateInstanceAccessControlAttributeConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_create_instance_access_control_attribute_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateInstanceAccessControlAttributeConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateInstanceAccessControlAttributeConfiguration",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateInstanceAccessControlAttributeConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateInstanceAccessControlAttributeConfiguration", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`CreateInstanceAccessControlAttributeConfigurationInput`](crate::input::CreateInstanceAccessControlAttributeConfigurationInput).
-    pub fn builder(
-    ) -> crate::input::create_instance_access_control_attribute_configuration_input::Builder {
-        crate::input::create_instance_access_control_attribute_configuration_input::Builder::default(
-        )
+    pub fn builder() -> crate::input::create_instance_access_control_attribute_configuration_input::Builder {
+        crate::input::create_instance_access_control_attribute_configuration_input::Builder::default()
     }
 }
 
 /// See [`CreatePermissionSetInput`](crate::input::CreatePermissionSetInput).
 pub mod create_permission_set_input {
-
+    
     /// A builder for [`CreatePermissionSetInput`](crate::input::CreatePermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -841,8 +590,7 @@ pub mod create_permission_set_input {
         }
         /// <p>The name of the <code>PermissionSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the <code>PermissionSet</code>.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -851,8 +599,7 @@ pub mod create_permission_set_input {
         }
         /// <p>The description of the <code>PermissionSet</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -861,8 +608,7 @@ pub mod create_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
         pub fn session_duration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -870,12 +616,8 @@ pub mod create_permission_set_input {
             self
         }
         /// <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
-        pub fn set_session_duration(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.session_duration = input;
-            self
+        pub fn set_session_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_duration = input; self
         }
         /// <p>Used to redirect users within the application during the federation authentication process.</p>
         pub fn relay_state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -884,8 +626,7 @@ pub mod create_permission_set_input {
         }
         /// <p>Used to redirect users within the application during the federation authentication process.</p>
         pub fn set_relay_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.relay_state = input;
-            self
+            self.relay_state = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -894,159 +635,109 @@ pub mod create_permission_set_input {
         /// <p>The tags to attach to the new <code>PermissionSet</code>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags to attach to the new <code>PermissionSet</code>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreatePermissionSetInput`](crate::input::CreatePermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreatePermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreatePermissionSetInput {
-                name: self.name,
-                description: self.description,
-                instance_arn: self.instance_arn,
-                session_duration: self.session_duration,
-                relay_state: self.relay_state,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreatePermissionSetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreatePermissionSetInput {
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    instance_arn: self.instance_arn
+                    ,
+                    session_duration: self.session_duration
+                    ,
+                    relay_state: self.relay_state
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreatePermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`CreatePermissionSet`](crate::operation::CreatePermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreatePermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreatePermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreatePermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreatePermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreatePermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreatePermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.CreatePermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.CreatePermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_permission_set(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreatePermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreatePermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreatePermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreatePermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1058,7 +749,7 @@ impl CreatePermissionSetInput {
 
 /// See [`DeleteAccountAssignmentInput`](crate::input::DeleteAccountAssignmentInput).
 pub mod delete_account_assignment_input {
-
+    
     /// A builder for [`DeleteAccountAssignmentInput`](crate::input::DeleteAccountAssignmentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1077,8 +768,7 @@ pub mod delete_account_assignment_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1087,8 +777,7 @@ pub mod delete_account_assignment_input {
         }
         /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_id = input;
-            self
+            self.target_id = input; self
         }
         /// <p>The entity type for which the assignment will be deleted.</p>
         pub fn target_type(mut self, input: crate::model::TargetType) -> Self {
@@ -1096,12 +785,8 @@ pub mod delete_account_assignment_input {
             self
         }
         /// <p>The entity type for which the assignment will be deleted.</p>
-        pub fn set_target_type(
-            mut self,
-            input: std::option::Option<crate::model::TargetType>,
-        ) -> Self {
-            self.target_type = input;
-            self
+        pub fn set_target_type(mut self, input: std::option::Option<crate::model::TargetType>) -> Self {
+            self.target_type = input; self
         }
         /// <p>The ARN of the permission set that will be used to remove access.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1109,12 +794,8 @@ pub mod delete_account_assignment_input {
             self
         }
         /// <p>The ARN of the permission set that will be used to remove access.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>The entity type for which the assignment will be deleted.</p>
         pub fn principal_type(mut self, input: crate::model::PrincipalType) -> Self {
@@ -1122,12 +803,8 @@ pub mod delete_account_assignment_input {
             self
         }
         /// <p>The entity type for which the assignment will be deleted.</p>
-        pub fn set_principal_type(
-            mut self,
-            input: std::option::Option<crate::model::PrincipalType>,
-        ) -> Self {
-            self.principal_type = input;
-            self
+        pub fn set_principal_type(mut self, input: std::option::Option<crate::model::PrincipalType>) -> Self {
+            self.principal_type = input; self
         }
         /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1136,152 +813,103 @@ pub mod delete_account_assignment_input {
         }
         /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.principal_id = input;
-            self
+            self.principal_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAccountAssignmentInput`](crate::input::DeleteAccountAssignmentInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteAccountAssignmentInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteAccountAssignmentInput {
-                instance_arn: self.instance_arn,
-                target_id: self.target_id,
-                target_type: self.target_type,
-                permission_set_arn: self.permission_set_arn,
-                principal_type: self.principal_type,
-                principal_id: self.principal_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteAccountAssignmentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteAccountAssignmentInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    target_id: self.target_id
+                    ,
+                    target_type: self.target_type
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                    principal_type: self.principal_type
+                    ,
+                    principal_id: self.principal_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteAccountAssignmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccountAssignment`](crate::operation::DeleteAccountAssignment)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteAccountAssignment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteAccountAssignment, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteAccountAssignmentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteAccountAssignmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteAccountAssignmentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteAccountAssignmentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.DeleteAccountAssignment",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.DeleteAccountAssignment"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_account_assignment(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_account_assignment(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteAccountAssignment::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteAccountAssignment",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteAccountAssignment::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteAccountAssignment", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1293,7 +921,7 @@ impl DeleteAccountAssignmentInput {
 
 /// See [`DeleteInlinePolicyFromPermissionSetInput`](crate::input::DeleteInlinePolicyFromPermissionSetInput).
 pub mod delete_inline_policy_from_permission_set_input {
-
+    
     /// A builder for [`DeleteInlinePolicyFromPermissionSetInput`](crate::input::DeleteInlinePolicyFromPermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1308,8 +936,7 @@ pub mod delete_inline_policy_from_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the permission set that will be used to remove access.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1317,92 +944,61 @@ pub mod delete_inline_policy_from_permission_set_input {
             self
         }
         /// <p>The ARN of the permission set that will be used to remove access.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteInlinePolicyFromPermissionSetInput`](crate::input::DeleteInlinePolicyFromPermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteInlinePolicyFromPermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteInlinePolicyFromPermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteInlinePolicyFromPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteInlinePolicyFromPermissionSetInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteInlinePolicyFromPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInlinePolicyFromPermissionSet`](crate::operation::DeleteInlinePolicyFromPermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteInlinePolicyFromPermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteInlinePolicyFromPermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteInlinePolicyFromPermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteInlinePolicyFromPermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteInlinePolicyFromPermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteInlinePolicyFromPermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.DeleteInlinePolicyFromPermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.DeleteInlinePolicyFromPermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1411,56 +1007,33 @@ impl DeleteInlinePolicyFromPermissionSetInput {
             crate::operation_ser::serialize_operation_crate_operation_delete_inline_policy_from_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteInlinePolicyFromPermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteInlinePolicyFromPermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteInlinePolicyFromPermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteInlinePolicyFromPermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1472,7 +1045,7 @@ impl DeleteInlinePolicyFromPermissionSetInput {
 
 /// See [`DeleteInstanceAccessControlAttributeConfigurationInput`](crate::input::DeleteInstanceAccessControlAttributeConfigurationInput).
 pub mod delete_instance_access_control_attribute_configuration_input {
-
+    
     /// A builder for [`DeleteInstanceAccessControlAttributeConfigurationInput`](crate::input::DeleteInstanceAccessControlAttributeConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1486,89 +1059,58 @@ pub mod delete_instance_access_control_attribute_configuration_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteInstanceAccessControlAttributeConfigurationInput`](crate::input::DeleteInstanceAccessControlAttributeConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteInstanceAccessControlAttributeConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
+        pub fn build(self) -> Result<crate::input::DeleteInstanceAccessControlAttributeConfigurationInput, aws_smithy_http::operation::error::BuildError> {
             Ok(
                 crate::input::DeleteInstanceAccessControlAttributeConfigurationInput {
-                    instance_arn: self.instance_arn,
-                },
+                    instance_arn: self.instance_arn
+                    ,
+                }
             )
         }
     }
+    
+    
 }
 impl DeleteInstanceAccessControlAttributeConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInstanceAccessControlAttributeConfiguration`](crate::operation::DeleteInstanceAccessControlAttributeConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteInstanceAccessControlAttributeConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteInstanceAccessControlAttributeConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteInstanceAccessControlAttributeConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteInstanceAccessControlAttributeConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteInstanceAccessControlAttributeConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteInstanceAccessControlAttributeConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.DeleteInstanceAccessControlAttributeConfiguration",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.DeleteInstanceAccessControlAttributeConfiguration"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1577,70 +1119,45 @@ impl DeleteInstanceAccessControlAttributeConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_delete_instance_access_control_attribute_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteInstanceAccessControlAttributeConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteInstanceAccessControlAttributeConfiguration",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteInstanceAccessControlAttributeConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteInstanceAccessControlAttributeConfiguration", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeleteInstanceAccessControlAttributeConfigurationInput`](crate::input::DeleteInstanceAccessControlAttributeConfigurationInput).
-    pub fn builder(
-    ) -> crate::input::delete_instance_access_control_attribute_configuration_input::Builder {
-        crate::input::delete_instance_access_control_attribute_configuration_input::Builder::default(
-        )
+    pub fn builder() -> crate::input::delete_instance_access_control_attribute_configuration_input::Builder {
+        crate::input::delete_instance_access_control_attribute_configuration_input::Builder::default()
     }
 }
 
 /// See [`DeletePermissionsBoundaryFromPermissionSetInput`](crate::input::DeletePermissionsBoundaryFromPermissionSetInput).
 pub mod delete_permissions_boundary_from_permission_set_input {
-
+    
     /// A builder for [`DeletePermissionsBoundaryFromPermissionSetInput`](crate::input::DeletePermissionsBoundaryFromPermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1655,8 +1172,7 @@ pub mod delete_permissions_boundary_from_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the <code>PermissionSet</code>.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1664,94 +1180,61 @@ pub mod delete_permissions_boundary_from_permission_set_input {
             self
         }
         /// <p>The ARN of the <code>PermissionSet</code>.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeletePermissionsBoundaryFromPermissionSetInput`](crate::input::DeletePermissionsBoundaryFromPermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeletePermissionsBoundaryFromPermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
+        pub fn build(self) -> Result<crate::input::DeletePermissionsBoundaryFromPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
             Ok(
                 crate::input::DeletePermissionsBoundaryFromPermissionSetInput {
-                    instance_arn: self.instance_arn,
-                    permission_set_arn: self.permission_set_arn,
-                },
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                }
             )
         }
     }
+    
+    
 }
 impl DeletePermissionsBoundaryFromPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`DeletePermissionsBoundaryFromPermissionSet`](crate::operation::DeletePermissionsBoundaryFromPermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeletePermissionsBoundaryFromPermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeletePermissionsBoundaryFromPermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeletePermissionsBoundaryFromPermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeletePermissionsBoundaryFromPermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeletePermissionsBoundaryFromPermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeletePermissionsBoundaryFromPermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.DeletePermissionsBoundaryFromPermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.DeletePermissionsBoundaryFromPermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1760,69 +1243,45 @@ impl DeletePermissionsBoundaryFromPermissionSetInput {
             crate::operation_ser::serialize_operation_crate_operation_delete_permissions_boundary_from_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeletePermissionsBoundaryFromPermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeletePermissionsBoundaryFromPermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeletePermissionsBoundaryFromPermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeletePermissionsBoundaryFromPermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DeletePermissionsBoundaryFromPermissionSetInput`](crate::input::DeletePermissionsBoundaryFromPermissionSetInput).
-    pub fn builder() -> crate::input::delete_permissions_boundary_from_permission_set_input::Builder
-    {
+    pub fn builder() -> crate::input::delete_permissions_boundary_from_permission_set_input::Builder {
         crate::input::delete_permissions_boundary_from_permission_set_input::Builder::default()
     }
 }
 
 /// See [`DeletePermissionSetInput`](crate::input::DeletePermissionSetInput).
 pub mod delete_permission_set_input {
-
+    
     /// A builder for [`DeletePermissionSetInput`](crate::input::DeletePermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1837,8 +1296,7 @@ pub mod delete_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the permission set that should be deleted.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1846,150 +1304,96 @@ pub mod delete_permission_set_input {
             self
         }
         /// <p>The ARN of the permission set that should be deleted.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeletePermissionSetInput`](crate::input::DeletePermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeletePermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeletePermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DeletePermissionSetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeletePermissionSetInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeletePermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`DeletePermissionSet`](crate::operation::DeletePermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeletePermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeletePermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeletePermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeletePermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeletePermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeletePermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.DeletePermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.DeletePermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_permission_set(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeletePermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeletePermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeletePermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeletePermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2001,7 +1405,7 @@ impl DeletePermissionSetInput {
 
 /// See [`DescribeAccountAssignmentCreationStatusInput`](crate::input::DescribeAccountAssignmentCreationStatusInput).
 pub mod describe_account_assignment_creation_status_input {
-
+    
     /// A builder for [`DescribeAccountAssignmentCreationStatusInput`](crate::input::DescribeAccountAssignmentCreationStatusInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2016,104 +1420,69 @@ pub mod describe_account_assignment_creation_status_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The identifier that is used to track the request operation progress.</p>
-        pub fn account_assignment_creation_request_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn account_assignment_creation_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_assignment_creation_request_id = Some(input.into());
             self
         }
         /// <p>The identifier that is used to track the request operation progress.</p>
-        pub fn set_account_assignment_creation_request_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.account_assignment_creation_request_id = input;
-            self
+        pub fn set_account_assignment_creation_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_assignment_creation_request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountAssignmentCreationStatusInput`](crate::input::DescribeAccountAssignmentCreationStatusInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeAccountAssignmentCreationStatusInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeAccountAssignmentCreationStatusInput {
-                instance_arn: self.instance_arn,
-                account_assignment_creation_request_id: self.account_assignment_creation_request_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeAccountAssignmentCreationStatusInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeAccountAssignmentCreationStatusInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    account_assignment_creation_request_id: self.account_assignment_creation_request_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeAccountAssignmentCreationStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountAssignmentCreationStatus`](crate::operation::DescribeAccountAssignmentCreationStatus)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeAccountAssignmentCreationStatus,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAccountAssignmentCreationStatus, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeAccountAssignmentCreationStatusInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeAccountAssignmentCreationStatusInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeAccountAssignmentCreationStatusInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeAccountAssignmentCreationStatusInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.DescribeAccountAssignmentCreationStatus",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.DescribeAccountAssignmentCreationStatus"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2122,56 +1491,33 @@ impl DescribeAccountAssignmentCreationStatusInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_account_assignment_creation_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeAccountAssignmentCreationStatus::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeAccountAssignmentCreationStatus",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAccountAssignmentCreationStatus::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAccountAssignmentCreationStatus", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2183,7 +1529,7 @@ impl DescribeAccountAssignmentCreationStatusInput {
 
 /// See [`DescribeAccountAssignmentDeletionStatusInput`](crate::input::DescribeAccountAssignmentDeletionStatusInput).
 pub mod describe_account_assignment_deletion_status_input {
-
+    
     /// A builder for [`DescribeAccountAssignmentDeletionStatusInput`](crate::input::DescribeAccountAssignmentDeletionStatusInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2198,104 +1544,69 @@ pub mod describe_account_assignment_deletion_status_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The identifier that is used to track the request operation progress.</p>
-        pub fn account_assignment_deletion_request_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn account_assignment_deletion_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_assignment_deletion_request_id = Some(input.into());
             self
         }
         /// <p>The identifier that is used to track the request operation progress.</p>
-        pub fn set_account_assignment_deletion_request_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.account_assignment_deletion_request_id = input;
-            self
+        pub fn set_account_assignment_deletion_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_assignment_deletion_request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountAssignmentDeletionStatusInput`](crate::input::DescribeAccountAssignmentDeletionStatusInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeAccountAssignmentDeletionStatusInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeAccountAssignmentDeletionStatusInput {
-                instance_arn: self.instance_arn,
-                account_assignment_deletion_request_id: self.account_assignment_deletion_request_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeAccountAssignmentDeletionStatusInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeAccountAssignmentDeletionStatusInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    account_assignment_deletion_request_id: self.account_assignment_deletion_request_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeAccountAssignmentDeletionStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountAssignmentDeletionStatus`](crate::operation::DescribeAccountAssignmentDeletionStatus)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeAccountAssignmentDeletionStatus,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAccountAssignmentDeletionStatus, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeAccountAssignmentDeletionStatusInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeAccountAssignmentDeletionStatusInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeAccountAssignmentDeletionStatusInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeAccountAssignmentDeletionStatusInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.DescribeAccountAssignmentDeletionStatus",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.DescribeAccountAssignmentDeletionStatus"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2304,56 +1615,33 @@ impl DescribeAccountAssignmentDeletionStatusInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_account_assignment_deletion_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeAccountAssignmentDeletionStatus::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeAccountAssignmentDeletionStatus",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAccountAssignmentDeletionStatus::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAccountAssignmentDeletionStatus", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2365,7 +1653,7 @@ impl DescribeAccountAssignmentDeletionStatusInput {
 
 /// See [`DescribeInstanceAccessControlAttributeConfigurationInput`](crate::input::DescribeInstanceAccessControlAttributeConfigurationInput).
 pub mod describe_instance_access_control_attribute_configuration_input {
-
+    
     /// A builder for [`DescribeInstanceAccessControlAttributeConfigurationInput`](crate::input::DescribeInstanceAccessControlAttributeConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2379,89 +1667,58 @@ pub mod describe_instance_access_control_attribute_configuration_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInstanceAccessControlAttributeConfigurationInput`](crate::input::DescribeInstanceAccessControlAttributeConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeInstanceAccessControlAttributeConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
+        pub fn build(self) -> Result<crate::input::DescribeInstanceAccessControlAttributeConfigurationInput, aws_smithy_http::operation::error::BuildError> {
             Ok(
                 crate::input::DescribeInstanceAccessControlAttributeConfigurationInput {
-                    instance_arn: self.instance_arn,
-                },
+                    instance_arn: self.instance_arn
+                    ,
+                }
             )
         }
     }
+    
+    
 }
 impl DescribeInstanceAccessControlAttributeConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInstanceAccessControlAttributeConfiguration`](crate::operation::DescribeInstanceAccessControlAttributeConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeInstanceAccessControlAttributeConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeInstanceAccessControlAttributeConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeInstanceAccessControlAttributeConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeInstanceAccessControlAttributeConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeInstanceAccessControlAttributeConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeInstanceAccessControlAttributeConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.DescribeInstanceAccessControlAttributeConfiguration",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.DescribeInstanceAccessControlAttributeConfiguration"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2470,69 +1727,45 @@ impl DescribeInstanceAccessControlAttributeConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_instance_access_control_attribute_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeInstanceAccessControlAttributeConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeInstanceAccessControlAttributeConfiguration",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeInstanceAccessControlAttributeConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeInstanceAccessControlAttributeConfiguration", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DescribeInstanceAccessControlAttributeConfigurationInput`](crate::input::DescribeInstanceAccessControlAttributeConfigurationInput).
-    pub fn builder(
-    ) -> crate::input::describe_instance_access_control_attribute_configuration_input::Builder {
+    pub fn builder() -> crate::input::describe_instance_access_control_attribute_configuration_input::Builder {
         crate::input::describe_instance_access_control_attribute_configuration_input::Builder::default()
     }
 }
 
 /// See [`DescribePermissionSetInput`](crate::input::DescribePermissionSetInput).
 pub mod describe_permission_set_input {
-
+    
     /// A builder for [`DescribePermissionSetInput`](crate::input::DescribePermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2547,8 +1780,7 @@ pub mod describe_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the permission set. </p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2556,152 +1788,96 @@ pub mod describe_permission_set_input {
             self
         }
         /// <p>The ARN of the permission set. </p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribePermissionSetInput`](crate::input::DescribePermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribePermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribePermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DescribePermissionSetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribePermissionSetInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribePermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`DescribePermissionSet`](crate::operation::DescribePermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribePermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribePermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribePermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribePermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribePermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribePermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.DescribePermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.DescribePermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_permission_set(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribePermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribePermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribePermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribePermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2713,7 +1889,7 @@ impl DescribePermissionSetInput {
 
 /// See [`DescribePermissionSetProvisioningStatusInput`](crate::input::DescribePermissionSetProvisioningStatusInput).
 pub mod describe_permission_set_provisioning_status_input {
-
+    
     /// A builder for [`DescribePermissionSetProvisioningStatusInput`](crate::input::DescribePermissionSetProvisioningStatusInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2728,104 +1904,69 @@ pub mod describe_permission_set_provisioning_status_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
-        pub fn provision_permission_set_request_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn provision_permission_set_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.provision_permission_set_request_id = Some(input.into());
             self
         }
         /// <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
-        pub fn set_provision_permission_set_request_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provision_permission_set_request_id = input;
-            self
+        pub fn set_provision_permission_set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provision_permission_set_request_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribePermissionSetProvisioningStatusInput`](crate::input::DescribePermissionSetProvisioningStatusInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribePermissionSetProvisioningStatusInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribePermissionSetProvisioningStatusInput {
-                instance_arn: self.instance_arn,
-                provision_permission_set_request_id: self.provision_permission_set_request_id,
-            })
+        pub fn build(self) -> Result<crate::input::DescribePermissionSetProvisioningStatusInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribePermissionSetProvisioningStatusInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    provision_permission_set_request_id: self.provision_permission_set_request_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribePermissionSetProvisioningStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribePermissionSetProvisioningStatus`](crate::operation::DescribePermissionSetProvisioningStatus)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribePermissionSetProvisioningStatus,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribePermissionSetProvisioningStatus, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribePermissionSetProvisioningStatusInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribePermissionSetProvisioningStatusInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribePermissionSetProvisioningStatusInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribePermissionSetProvisioningStatusInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.DescribePermissionSetProvisioningStatus",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.DescribePermissionSetProvisioningStatus"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2834,56 +1975,33 @@ impl DescribePermissionSetProvisioningStatusInput {
             crate::operation_ser::serialize_operation_crate_operation_describe_permission_set_provisioning_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribePermissionSetProvisioningStatus::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribePermissionSetProvisioningStatus",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribePermissionSetProvisioningStatus::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribePermissionSetProvisioningStatus", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2895,14 +2013,13 @@ impl DescribePermissionSetProvisioningStatusInput {
 
 /// See [`DetachCustomerManagedPolicyReferenceFromPermissionSetInput`](crate::input::DetachCustomerManagedPolicyReferenceFromPermissionSetInput).
 pub mod detach_customer_managed_policy_reference_from_permission_set_input {
-
+    
     /// A builder for [`DetachCustomerManagedPolicyReferenceFromPermissionSetInput`](crate::input::DetachCustomerManagedPolicyReferenceFromPermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
         pub(crate) permission_set_arn: std::option::Option<std::string::String>,
-        pub(crate) customer_managed_policy_reference:
-            std::option::Option<crate::model::CustomerManagedPolicyReference>,
+        pub(crate) customer_managed_policy_reference: std::option::Option<crate::model::CustomerManagedPolicyReference>,
     }
     impl Builder {
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
@@ -2912,8 +2029,7 @@ pub mod detach_customer_managed_policy_reference_from_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the <code>PermissionSet</code>.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2921,111 +2037,72 @@ pub mod detach_customer_managed_policy_reference_from_permission_set_input {
             self
         }
         /// <p>The ARN of the <code>PermissionSet</code>.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
-        pub fn customer_managed_policy_reference(
-            mut self,
-            input: crate::model::CustomerManagedPolicyReference,
-        ) -> Self {
+        pub fn customer_managed_policy_reference(mut self, input: crate::model::CustomerManagedPolicyReference) -> Self {
             self.customer_managed_policy_reference = Some(input);
             self
         }
         /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
-        pub fn set_customer_managed_policy_reference(
-            mut self,
-            input: std::option::Option<crate::model::CustomerManagedPolicyReference>,
-        ) -> Self {
-            self.customer_managed_policy_reference = input;
-            self
+        pub fn set_customer_managed_policy_reference(mut self, input: std::option::Option<crate::model::CustomerManagedPolicyReference>) -> Self {
+            self.customer_managed_policy_reference = input; self
         }
         /// Consumes the builder and constructs a [`DetachCustomerManagedPolicyReferenceFromPermissionSetInput`](crate::input::DetachCustomerManagedPolicyReferenceFromPermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DetachCustomerManagedPolicyReferenceFromPermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
+        pub fn build(self) -> Result<crate::input::DetachCustomerManagedPolicyReferenceFromPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
             Ok(
                 crate::input::DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
-                    instance_arn: self.instance_arn,
-                    permission_set_arn: self.permission_set_arn,
-                    customer_managed_policy_reference: self.customer_managed_policy_reference,
-                },
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                    customer_managed_policy_reference: self.customer_managed_policy_reference
+                    ,
+                }
             )
         }
     }
+    
+    
 }
 impl DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`DetachCustomerManagedPolicyReferenceFromPermissionSet`](crate::operation::DetachCustomerManagedPolicyReferenceFromPermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DetachCustomerManagedPolicyReferenceFromPermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DetachCustomerManagedPolicyReferenceFromPermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DetachCustomerManagedPolicyReferenceFromPermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DetachCustomerManagedPolicyReferenceFromPermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DetachCustomerManagedPolicyReferenceFromPermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DetachCustomerManagedPolicyReferenceFromPermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.DetachCustomerManagedPolicyReferenceFromPermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.DetachCustomerManagedPolicyReferenceFromPermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3034,70 +2111,45 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
             crate::operation_ser::serialize_operation_crate_operation_detach_customer_managed_policy_reference_from_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DetachCustomerManagedPolicyReferenceFromPermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DetachCustomerManagedPolicyReferenceFromPermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DetachCustomerManagedPolicyReferenceFromPermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DetachCustomerManagedPolicyReferenceFromPermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`DetachCustomerManagedPolicyReferenceFromPermissionSetInput`](crate::input::DetachCustomerManagedPolicyReferenceFromPermissionSetInput).
-    pub fn builder(
-    ) -> crate::input::detach_customer_managed_policy_reference_from_permission_set_input::Builder
-    {
+    pub fn builder() -> crate::input::detach_customer_managed_policy_reference_from_permission_set_input::Builder {
         crate::input::detach_customer_managed_policy_reference_from_permission_set_input::Builder::default()
     }
 }
 
 /// See [`DetachManagedPolicyFromPermissionSetInput`](crate::input::DetachManagedPolicyFromPermissionSetInput).
 pub mod detach_managed_policy_from_permission_set_input {
-
+    
     /// A builder for [`DetachManagedPolicyFromPermissionSetInput`](crate::input::DetachManagedPolicyFromPermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3113,8 +2165,7 @@ pub mod detach_managed_policy_from_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the <code>PermissionSet</code> from which the policy should be detached.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3122,12 +2173,8 @@ pub mod detach_managed_policy_from_permission_set_input {
             self
         }
         /// <p>The ARN of the <code>PermissionSet</code> from which the policy should be detached.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>The AWS managed policy ARN to be detached from a permission set.</p>
         pub fn managed_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3135,93 +2182,63 @@ pub mod detach_managed_policy_from_permission_set_input {
             self
         }
         /// <p>The AWS managed policy ARN to be detached from a permission set.</p>
-        pub fn set_managed_policy_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.managed_policy_arn = input;
-            self
+        pub fn set_managed_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.managed_policy_arn = input; self
         }
         /// Consumes the builder and constructs a [`DetachManagedPolicyFromPermissionSetInput`](crate::input::DetachManagedPolicyFromPermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DetachManagedPolicyFromPermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DetachManagedPolicyFromPermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-                managed_policy_arn: self.managed_policy_arn,
-            })
+        pub fn build(self) -> Result<crate::input::DetachManagedPolicyFromPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DetachManagedPolicyFromPermissionSetInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                    managed_policy_arn: self.managed_policy_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DetachManagedPolicyFromPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`DetachManagedPolicyFromPermissionSet`](crate::operation::DetachManagedPolicyFromPermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DetachManagedPolicyFromPermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DetachManagedPolicyFromPermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DetachManagedPolicyFromPermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DetachManagedPolicyFromPermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DetachManagedPolicyFromPermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DetachManagedPolicyFromPermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.DetachManagedPolicyFromPermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.DetachManagedPolicyFromPermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3230,56 +2247,33 @@ impl DetachManagedPolicyFromPermissionSetInput {
             crate::operation_ser::serialize_operation_crate_operation_detach_managed_policy_from_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DetachManagedPolicyFromPermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DetachManagedPolicyFromPermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DetachManagedPolicyFromPermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DetachManagedPolicyFromPermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3291,7 +2285,7 @@ impl DetachManagedPolicyFromPermissionSetInput {
 
 /// See [`GetInlinePolicyForPermissionSetInput`](crate::input::GetInlinePolicyForPermissionSetInput).
 pub mod get_inline_policy_for_permission_set_input {
-
+    
     /// A builder for [`GetInlinePolicyForPermissionSetInput`](crate::input::GetInlinePolicyForPermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3306,8 +2300,7 @@ pub mod get_inline_policy_for_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the permission set.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3315,92 +2308,61 @@ pub mod get_inline_policy_for_permission_set_input {
             self
         }
         /// <p>The ARN of the permission set.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetInlinePolicyForPermissionSetInput`](crate::input::GetInlinePolicyForPermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetInlinePolicyForPermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetInlinePolicyForPermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetInlinePolicyForPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetInlinePolicyForPermissionSetInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetInlinePolicyForPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`GetInlinePolicyForPermissionSet`](crate::operation::GetInlinePolicyForPermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetInlinePolicyForPermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetInlinePolicyForPermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetInlinePolicyForPermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetInlinePolicyForPermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetInlinePolicyForPermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetInlinePolicyForPermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.GetInlinePolicyForPermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.GetInlinePolicyForPermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3409,56 +2371,33 @@ impl GetInlinePolicyForPermissionSetInput {
             crate::operation_ser::serialize_operation_crate_operation_get_inline_policy_for_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetInlinePolicyForPermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetInlinePolicyForPermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetInlinePolicyForPermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetInlinePolicyForPermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3470,7 +2409,7 @@ impl GetInlinePolicyForPermissionSetInput {
 
 /// See [`GetPermissionsBoundaryForPermissionSetInput`](crate::input::GetPermissionsBoundaryForPermissionSetInput).
 pub mod get_permissions_boundary_for_permission_set_input {
-
+    
     /// A builder for [`GetPermissionsBoundaryForPermissionSetInput`](crate::input::GetPermissionsBoundaryForPermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3485,8 +2424,7 @@ pub mod get_permissions_boundary_for_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the <code>PermissionSet</code>.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3494,92 +2432,61 @@ pub mod get_permissions_boundary_for_permission_set_input {
             self
         }
         /// <p>The ARN of the <code>PermissionSet</code>.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetPermissionsBoundaryForPermissionSetInput`](crate::input::GetPermissionsBoundaryForPermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetPermissionsBoundaryForPermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetPermissionsBoundaryForPermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-            })
+        pub fn build(self) -> Result<crate::input::GetPermissionsBoundaryForPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetPermissionsBoundaryForPermissionSetInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetPermissionsBoundaryForPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`GetPermissionsBoundaryForPermissionSet`](crate::operation::GetPermissionsBoundaryForPermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetPermissionsBoundaryForPermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetPermissionsBoundaryForPermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetPermissionsBoundaryForPermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetPermissionsBoundaryForPermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetPermissionsBoundaryForPermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetPermissionsBoundaryForPermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.GetPermissionsBoundaryForPermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.GetPermissionsBoundaryForPermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3588,56 +2495,33 @@ impl GetPermissionsBoundaryForPermissionSetInput {
             crate::operation_ser::serialize_operation_crate_operation_get_permissions_boundary_for_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetPermissionsBoundaryForPermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetPermissionsBoundaryForPermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetPermissionsBoundaryForPermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetPermissionsBoundaryForPermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3649,7 +2533,7 @@ impl GetPermissionsBoundaryForPermissionSetInput {
 
 /// See [`ListAccountAssignmentCreationStatusInput`](crate::input::ListAccountAssignmentCreationStatusInput).
 pub mod list_account_assignment_creation_status_input {
-
+    
     /// A builder for [`ListAccountAssignmentCreationStatusInput`](crate::input::ListAccountAssignmentCreationStatusInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3666,8 +2550,7 @@ pub mod list_account_assignment_creation_status_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3676,8 +2559,7 @@ pub mod list_account_assignment_creation_status_input {
         }
         /// <p>The maximum number of results to display for the assignment.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3686,8 +2568,7 @@ pub mod list_account_assignment_creation_status_input {
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Filters results based on the passed attribute value.</p>
         pub fn filter(mut self, input: crate::model::OperationStatusFilter) -> Self {
@@ -3695,94 +2576,65 @@ pub mod list_account_assignment_creation_status_input {
             self
         }
         /// <p>Filters results based on the passed attribute value.</p>
-        pub fn set_filter(
-            mut self,
-            input: std::option::Option<crate::model::OperationStatusFilter>,
-        ) -> Self {
-            self.filter = input;
-            self
+        pub fn set_filter(mut self, input: std::option::Option<crate::model::OperationStatusFilter>) -> Self {
+            self.filter = input; self
         }
         /// Consumes the builder and constructs a [`ListAccountAssignmentCreationStatusInput`](crate::input::ListAccountAssignmentCreationStatusInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListAccountAssignmentCreationStatusInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListAccountAssignmentCreationStatusInput {
-                instance_arn: self.instance_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filter: self.filter,
-            })
+        pub fn build(self) -> Result<crate::input::ListAccountAssignmentCreationStatusInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListAccountAssignmentCreationStatusInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                    filter: self.filter
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListAccountAssignmentCreationStatusInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountAssignmentCreationStatus`](crate::operation::ListAccountAssignmentCreationStatus)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListAccountAssignmentCreationStatus,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListAccountAssignmentCreationStatus, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListAccountAssignmentCreationStatusInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListAccountAssignmentCreationStatusInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListAccountAssignmentCreationStatusInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListAccountAssignmentCreationStatusInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.ListAccountAssignmentCreationStatus",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.ListAccountAssignmentCreationStatus"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3791,56 +2643,33 @@ impl ListAccountAssignmentCreationStatusInput {
             crate::operation_ser::serialize_operation_crate_operation_list_account_assignment_creation_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListAccountAssignmentCreationStatus::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListAccountAssignmentCreationStatus",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListAccountAssignmentCreationStatus::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListAccountAssignmentCreationStatus", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3852,7 +2681,7 @@ impl ListAccountAssignmentCreationStatusInput {
 
 /// See [`ListAccountAssignmentDeletionStatusInput`](crate::input::ListAccountAssignmentDeletionStatusInput).
 pub mod list_account_assignment_deletion_status_input {
-
+    
     /// A builder for [`ListAccountAssignmentDeletionStatusInput`](crate::input::ListAccountAssignmentDeletionStatusInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3869,8 +2698,7 @@ pub mod list_account_assignment_deletion_status_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -3879,8 +2707,7 @@ pub mod list_account_assignment_deletion_status_input {
         }
         /// <p>The maximum number of results to display for the assignment.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3889,8 +2716,7 @@ pub mod list_account_assignment_deletion_status_input {
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Filters results based on the passed attribute value.</p>
         pub fn filter(mut self, input: crate::model::OperationStatusFilter) -> Self {
@@ -3898,94 +2724,65 @@ pub mod list_account_assignment_deletion_status_input {
             self
         }
         /// <p>Filters results based on the passed attribute value.</p>
-        pub fn set_filter(
-            mut self,
-            input: std::option::Option<crate::model::OperationStatusFilter>,
-        ) -> Self {
-            self.filter = input;
-            self
+        pub fn set_filter(mut self, input: std::option::Option<crate::model::OperationStatusFilter>) -> Self {
+            self.filter = input; self
         }
         /// Consumes the builder and constructs a [`ListAccountAssignmentDeletionStatusInput`](crate::input::ListAccountAssignmentDeletionStatusInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListAccountAssignmentDeletionStatusInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListAccountAssignmentDeletionStatusInput {
-                instance_arn: self.instance_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filter: self.filter,
-            })
+        pub fn build(self) -> Result<crate::input::ListAccountAssignmentDeletionStatusInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListAccountAssignmentDeletionStatusInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                    filter: self.filter
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListAccountAssignmentDeletionStatusInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountAssignmentDeletionStatus`](crate::operation::ListAccountAssignmentDeletionStatus)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListAccountAssignmentDeletionStatus,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListAccountAssignmentDeletionStatus, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListAccountAssignmentDeletionStatusInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListAccountAssignmentDeletionStatusInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListAccountAssignmentDeletionStatusInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListAccountAssignmentDeletionStatusInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.ListAccountAssignmentDeletionStatus",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.ListAccountAssignmentDeletionStatus"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3994,56 +2791,33 @@ impl ListAccountAssignmentDeletionStatusInput {
             crate::operation_ser::serialize_operation_crate_operation_list_account_assignment_deletion_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListAccountAssignmentDeletionStatus::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListAccountAssignmentDeletionStatus",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListAccountAssignmentDeletionStatus::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListAccountAssignmentDeletionStatus", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4055,7 +2829,7 @@ impl ListAccountAssignmentDeletionStatusInput {
 
 /// See [`ListAccountAssignmentsInput`](crate::input::ListAccountAssignmentsInput).
 pub mod list_account_assignments_input {
-
+    
     /// A builder for [`ListAccountAssignmentsInput`](crate::input::ListAccountAssignmentsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4073,8 +2847,7 @@ pub mod list_account_assignments_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The identifier of the AWS account from which to list the assignments.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4083,8 +2856,7 @@ pub mod list_account_assignments_input {
         }
         /// <p>The identifier of the AWS account from which to list the assignments.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The ARN of the permission set from which to list assignments.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4092,12 +2864,8 @@ pub mod list_account_assignments_input {
             self
         }
         /// <p>The ARN of the permission set from which to list assignments.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4106,8 +2874,7 @@ pub mod list_account_assignments_input {
         }
         /// <p>The maximum number of results to display for the assignment.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4116,151 +2883,101 @@ pub mod list_account_assignments_input {
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAccountAssignmentsInput`](crate::input::ListAccountAssignmentsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListAccountAssignmentsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListAccountAssignmentsInput {
-                instance_arn: self.instance_arn,
-                account_id: self.account_id,
-                permission_set_arn: self.permission_set_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListAccountAssignmentsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListAccountAssignmentsInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    account_id: self.account_id
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListAccountAssignmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountAssignments`](crate::operation::ListAccountAssignments)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListAccountAssignments,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListAccountAssignments, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListAccountAssignmentsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListAccountAssignmentsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListAccountAssignmentsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListAccountAssignmentsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.ListAccountAssignments",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.ListAccountAssignments"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_account_assignments(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_account_assignments(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListAccountAssignments::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListAccountAssignments",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListAccountAssignments::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListAccountAssignments", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4272,7 +2989,7 @@ impl ListAccountAssignmentsInput {
 
 /// See [`ListAccountsForProvisionedPermissionSetInput`](crate::input::ListAccountsForProvisionedPermissionSetInput).
 pub mod list_accounts_for_provisioned_permission_set_input {
-
+    
     /// A builder for [`ListAccountsForProvisionedPermissionSetInput`](crate::input::ListAccountsForProvisionedPermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4290,8 +3007,7 @@ pub mod list_accounts_for_provisioned_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the <code>PermissionSet</code> from which the associated AWS accounts will be listed.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4299,12 +3015,8 @@ pub mod list_accounts_for_provisioned_permission_set_input {
             self
         }
         /// <p>The ARN of the <code>PermissionSet</code> from which the associated AWS accounts will be listed.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>The permission set provisioning status for an AWS account.</p>
         pub fn provisioning_status(mut self, input: crate::model::ProvisioningStatus) -> Self {
@@ -4312,12 +3024,8 @@ pub mod list_accounts_for_provisioned_permission_set_input {
             self
         }
         /// <p>The permission set provisioning status for an AWS account.</p>
-        pub fn set_provisioning_status(
-            mut self,
-            input: std::option::Option<crate::model::ProvisioningStatus>,
-        ) -> Self {
-            self.provisioning_status = input;
-            self
+        pub fn set_provisioning_status(mut self, input: std::option::Option<crate::model::ProvisioningStatus>) -> Self {
+            self.provisioning_status = input; self
         }
         /// <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4326,8 +3034,7 @@ pub mod list_accounts_for_provisioned_permission_set_input {
         }
         /// <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4336,91 +3043,66 @@ pub mod list_accounts_for_provisioned_permission_set_input {
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAccountsForProvisionedPermissionSetInput`](crate::input::ListAccountsForProvisionedPermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListAccountsForProvisionedPermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListAccountsForProvisionedPermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-                provisioning_status: self.provisioning_status,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListAccountsForProvisionedPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListAccountsForProvisionedPermissionSetInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                    provisioning_status: self.provisioning_status
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListAccountsForProvisionedPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountsForProvisionedPermissionSet`](crate::operation::ListAccountsForProvisionedPermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListAccountsForProvisionedPermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListAccountsForProvisionedPermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListAccountsForProvisionedPermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListAccountsForProvisionedPermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListAccountsForProvisionedPermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListAccountsForProvisionedPermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.ListAccountsForProvisionedPermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.ListAccountsForProvisionedPermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4429,56 +3111,33 @@ impl ListAccountsForProvisionedPermissionSetInput {
             crate::operation_ser::serialize_operation_crate_operation_list_accounts_for_provisioned_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListAccountsForProvisionedPermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListAccountsForProvisionedPermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListAccountsForProvisionedPermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListAccountsForProvisionedPermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4490,7 +3149,7 @@ impl ListAccountsForProvisionedPermissionSetInput {
 
 /// See [`ListCustomerManagedPolicyReferencesInPermissionSetInput`](crate::input::ListCustomerManagedPolicyReferencesInPermissionSetInput).
 pub mod list_customer_managed_policy_references_in_permission_set_input {
-
+    
     /// A builder for [`ListCustomerManagedPolicyReferencesInPermissionSetInput`](crate::input::ListCustomerManagedPolicyReferencesInPermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4507,8 +3166,7 @@ pub mod list_customer_managed_policy_references_in_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the <code>PermissionSet</code>. </p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4516,12 +3174,8 @@ pub mod list_customer_managed_policy_references_in_permission_set_input {
             self
         }
         /// <p>The ARN of the <code>PermissionSet</code>. </p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>The maximum number of results to display for the list call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4530,8 +3184,7 @@ pub mod list_customer_managed_policy_references_in_permission_set_input {
         }
         /// <p>The maximum number of results to display for the list call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4540,92 +3193,64 @@ pub mod list_customer_managed_policy_references_in_permission_set_input {
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCustomerManagedPolicyReferencesInPermissionSetInput`](crate::input::ListCustomerManagedPolicyReferencesInPermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListCustomerManagedPolicyReferencesInPermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
+        pub fn build(self) -> Result<crate::input::ListCustomerManagedPolicyReferencesInPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
             Ok(
                 crate::input::ListCustomerManagedPolicyReferencesInPermissionSetInput {
-                    instance_arn: self.instance_arn,
-                    permission_set_arn: self.permission_set_arn,
-                    max_results: self.max_results,
-                    next_token: self.next_token,
-                },
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
             )
         }
     }
+    
+    
 }
 impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomerManagedPolicyReferencesInPermissionSet`](crate::operation::ListCustomerManagedPolicyReferencesInPermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListCustomerManagedPolicyReferencesInPermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListCustomerManagedPolicyReferencesInPermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListCustomerManagedPolicyReferencesInPermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListCustomerManagedPolicyReferencesInPermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListCustomerManagedPolicyReferencesInPermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListCustomerManagedPolicyReferencesInPermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.ListCustomerManagedPolicyReferencesInPermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.ListCustomerManagedPolicyReferencesInPermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4634,70 +3259,45 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
             crate::operation_ser::serialize_operation_crate_operation_list_customer_managed_policy_references_in_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListCustomerManagedPolicyReferencesInPermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListCustomerManagedPolicyReferencesInPermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListCustomerManagedPolicyReferencesInPermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListCustomerManagedPolicyReferencesInPermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`ListCustomerManagedPolicyReferencesInPermissionSetInput`](crate::input::ListCustomerManagedPolicyReferencesInPermissionSetInput).
-    pub fn builder(
-    ) -> crate::input::list_customer_managed_policy_references_in_permission_set_input::Builder
-    {
+    pub fn builder() -> crate::input::list_customer_managed_policy_references_in_permission_set_input::Builder {
         crate::input::list_customer_managed_policy_references_in_permission_set_input::Builder::default()
     }
 }
 
 /// See [`ListInstancesInput`](crate::input::ListInstancesInput).
 pub mod list_instances_input {
-
+    
     /// A builder for [`ListInstancesInput`](crate::input::ListInstancesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4712,8 +3312,7 @@ pub mod list_instances_input {
         }
         /// <p>The maximum number of results to display for the instance.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4722,144 +3321,95 @@ pub mod list_instances_input {
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListInstancesInput`](crate::input::ListInstancesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListInstancesInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListInstancesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListInstancesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListInstancesInput {
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListInstancesInput {
     /// Consumes the builder and constructs an Operation<[`ListInstances`](crate::operation::ListInstances)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListInstances,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListInstances, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListInstancesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListInstancesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListInstancesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListInstancesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.ListInstances",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.ListInstances"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_instances(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_instances(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListInstances::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListInstances",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListInstances::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListInstances", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4871,7 +3421,7 @@ impl ListInstancesInput {
 
 /// See [`ListManagedPoliciesInPermissionSetInput`](crate::input::ListManagedPoliciesInPermissionSetInput).
 pub mod list_managed_policies_in_permission_set_input {
-
+    
     /// A builder for [`ListManagedPoliciesInPermissionSetInput`](crate::input::ListManagedPoliciesInPermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4888,8 +3438,7 @@ pub mod list_managed_policies_in_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the <code>PermissionSet</code> whose managed policies will be listed.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4897,12 +3446,8 @@ pub mod list_managed_policies_in_permission_set_input {
             self
         }
         /// <p>The ARN of the <code>PermissionSet</code> whose managed policies will be listed.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4911,8 +3456,7 @@ pub mod list_managed_policies_in_permission_set_input {
         }
         /// <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4921,90 +3465,64 @@ pub mod list_managed_policies_in_permission_set_input {
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListManagedPoliciesInPermissionSetInput`](crate::input::ListManagedPoliciesInPermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListManagedPoliciesInPermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListManagedPoliciesInPermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListManagedPoliciesInPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListManagedPoliciesInPermissionSetInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListManagedPoliciesInPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`ListManagedPoliciesInPermissionSet`](crate::operation::ListManagedPoliciesInPermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListManagedPoliciesInPermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListManagedPoliciesInPermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListManagedPoliciesInPermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListManagedPoliciesInPermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListManagedPoliciesInPermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListManagedPoliciesInPermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.ListManagedPoliciesInPermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.ListManagedPoliciesInPermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5013,56 +3531,33 @@ impl ListManagedPoliciesInPermissionSetInput {
             crate::operation_ser::serialize_operation_crate_operation_list_managed_policies_in_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListManagedPoliciesInPermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListManagedPoliciesInPermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListManagedPoliciesInPermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListManagedPoliciesInPermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5074,7 +3569,7 @@ impl ListManagedPoliciesInPermissionSetInput {
 
 /// See [`ListPermissionSetProvisioningStatusInput`](crate::input::ListPermissionSetProvisioningStatusInput).
 pub mod list_permission_set_provisioning_status_input {
-
+    
     /// A builder for [`ListPermissionSetProvisioningStatusInput`](crate::input::ListPermissionSetProvisioningStatusInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5091,8 +3586,7 @@ pub mod list_permission_set_provisioning_status_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5101,8 +3595,7 @@ pub mod list_permission_set_provisioning_status_input {
         }
         /// <p>The maximum number of results to display for the assignment.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5111,8 +3604,7 @@ pub mod list_permission_set_provisioning_status_input {
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Filters results based on the passed attribute value.</p>
         pub fn filter(mut self, input: crate::model::OperationStatusFilter) -> Self {
@@ -5120,94 +3612,65 @@ pub mod list_permission_set_provisioning_status_input {
             self
         }
         /// <p>Filters results based on the passed attribute value.</p>
-        pub fn set_filter(
-            mut self,
-            input: std::option::Option<crate::model::OperationStatusFilter>,
-        ) -> Self {
-            self.filter = input;
-            self
+        pub fn set_filter(mut self, input: std::option::Option<crate::model::OperationStatusFilter>) -> Self {
+            self.filter = input; self
         }
         /// Consumes the builder and constructs a [`ListPermissionSetProvisioningStatusInput`](crate::input::ListPermissionSetProvisioningStatusInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListPermissionSetProvisioningStatusInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListPermissionSetProvisioningStatusInput {
-                instance_arn: self.instance_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filter: self.filter,
-            })
+        pub fn build(self) -> Result<crate::input::ListPermissionSetProvisioningStatusInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListPermissionSetProvisioningStatusInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                    filter: self.filter
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListPermissionSetProvisioningStatusInput {
     /// Consumes the builder and constructs an Operation<[`ListPermissionSetProvisioningStatus`](crate::operation::ListPermissionSetProvisioningStatus)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListPermissionSetProvisioningStatus,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListPermissionSetProvisioningStatus, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListPermissionSetProvisioningStatusInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListPermissionSetProvisioningStatusInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListPermissionSetProvisioningStatusInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListPermissionSetProvisioningStatusInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.ListPermissionSetProvisioningStatus",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.ListPermissionSetProvisioningStatus"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5216,56 +3679,33 @@ impl ListPermissionSetProvisioningStatusInput {
             crate::operation_ser::serialize_operation_crate_operation_list_permission_set_provisioning_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListPermissionSetProvisioningStatus::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListPermissionSetProvisioningStatus",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListPermissionSetProvisioningStatus::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListPermissionSetProvisioningStatus", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5277,7 +3717,7 @@ impl ListPermissionSetProvisioningStatusInput {
 
 /// See [`ListPermissionSetsInput`](crate::input::ListPermissionSetsInput).
 pub mod list_permission_sets_input {
-
+    
     /// A builder for [`ListPermissionSetsInput`](crate::input::ListPermissionSetsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5293,8 +3733,7 @@ pub mod list_permission_sets_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5303,8 +3742,7 @@ pub mod list_permission_sets_input {
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5313,147 +3751,97 @@ pub mod list_permission_sets_input {
         }
         /// <p>The maximum number of results to display for the assignment.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListPermissionSetsInput`](crate::input::ListPermissionSetsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListPermissionSetsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListPermissionSetsInput {
-                instance_arn: self.instance_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListPermissionSetsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListPermissionSetsInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListPermissionSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListPermissionSets`](crate::operation::ListPermissionSets)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListPermissionSets,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListPermissionSets, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListPermissionSetsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListPermissionSetsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListPermissionSetsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListPermissionSetsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.ListPermissionSets",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.ListPermissionSets"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_permission_sets(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_permission_sets(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListPermissionSets::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListPermissionSets",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListPermissionSets::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListPermissionSets", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5465,7 +3853,7 @@ impl ListPermissionSetsInput {
 
 /// See [`ListPermissionSetsProvisionedToAccountInput`](crate::input::ListPermissionSetsProvisionedToAccountInput).
 pub mod list_permission_sets_provisioned_to_account_input {
-
+    
     /// A builder for [`ListPermissionSetsProvisionedToAccountInput`](crate::input::ListPermissionSetsProvisionedToAccountInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5483,8 +3871,7 @@ pub mod list_permission_sets_provisioned_to_account_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The identifier of the AWS account from which to list the assignments.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5493,8 +3880,7 @@ pub mod list_permission_sets_provisioned_to_account_input {
         }
         /// <p>The identifier of the AWS account from which to list the assignments.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The status object for the permission set provisioning operation.</p>
         pub fn provisioning_status(mut self, input: crate::model::ProvisioningStatus) -> Self {
@@ -5502,12 +3888,8 @@ pub mod list_permission_sets_provisioned_to_account_input {
             self
         }
         /// <p>The status object for the permission set provisioning operation.</p>
-        pub fn set_provisioning_status(
-            mut self,
-            input: std::option::Option<crate::model::ProvisioningStatus>,
-        ) -> Self {
-            self.provisioning_status = input;
-            self
+        pub fn set_provisioning_status(mut self, input: std::option::Option<crate::model::ProvisioningStatus>) -> Self {
+            self.provisioning_status = input; self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5516,8 +3898,7 @@ pub mod list_permission_sets_provisioned_to_account_input {
         }
         /// <p>The maximum number of results to display for the assignment.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5526,91 +3907,66 @@ pub mod list_permission_sets_provisioned_to_account_input {
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPermissionSetsProvisionedToAccountInput`](crate::input::ListPermissionSetsProvisionedToAccountInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListPermissionSetsProvisionedToAccountInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListPermissionSetsProvisionedToAccountInput {
-                instance_arn: self.instance_arn,
-                account_id: self.account_id,
-                provisioning_status: self.provisioning_status,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListPermissionSetsProvisionedToAccountInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListPermissionSetsProvisionedToAccountInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    account_id: self.account_id
+                    ,
+                    provisioning_status: self.provisioning_status
+                    ,
+                    max_results: self.max_results
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListPermissionSetsProvisionedToAccountInput {
     /// Consumes the builder and constructs an Operation<[`ListPermissionSetsProvisionedToAccount`](crate::operation::ListPermissionSetsProvisionedToAccount)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListPermissionSetsProvisionedToAccount,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListPermissionSetsProvisionedToAccount, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListPermissionSetsProvisionedToAccountInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListPermissionSetsProvisionedToAccountInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListPermissionSetsProvisionedToAccountInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListPermissionSetsProvisionedToAccountInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.ListPermissionSetsProvisionedToAccount",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.ListPermissionSetsProvisionedToAccount"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5619,56 +3975,33 @@ impl ListPermissionSetsProvisionedToAccountInput {
             crate::operation_ser::serialize_operation_crate_operation_list_permission_sets_provisioned_to_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListPermissionSetsProvisionedToAccount::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListPermissionSetsProvisionedToAccount",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListPermissionSetsProvisionedToAccount::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListPermissionSetsProvisionedToAccount", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5680,7 +4013,7 @@ impl ListPermissionSetsProvisionedToAccountInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5696,8 +4029,7 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5706,8 +4038,7 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5716,149 +4047,97 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListTagsForResourceInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListTagsForResourceInput {
-                instance_arn: self.instance_arn,
-                resource_arn: self.resource_arn,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    resource_arn: self.resource_arn
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.ListTagsForResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.ListTagsForResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5870,7 +4149,7 @@ impl ListTagsForResourceInput {
 
 /// See [`ProvisionPermissionSetInput`](crate::input::ProvisionPermissionSetInput).
 pub mod provision_permission_set_input {
-
+    
     /// A builder for [`ProvisionPermissionSetInput`](crate::input::ProvisionPermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5887,8 +4166,7 @@ pub mod provision_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the permission set.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5896,12 +4174,8 @@ pub mod provision_permission_set_input {
             self
         }
         /// <p>The ARN of the permission set.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5910,8 +4184,7 @@ pub mod provision_permission_set_input {
         }
         /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_id = input;
-            self
+            self.target_id = input; self
         }
         /// <p>The entity type for which the assignment will be created.</p>
         pub fn target_type(mut self, input: crate::model::ProvisionTargetType) -> Self {
@@ -5919,154 +4192,100 @@ pub mod provision_permission_set_input {
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
-        pub fn set_target_type(
-            mut self,
-            input: std::option::Option<crate::model::ProvisionTargetType>,
-        ) -> Self {
-            self.target_type = input;
-            self
+        pub fn set_target_type(mut self, input: std::option::Option<crate::model::ProvisionTargetType>) -> Self {
+            self.target_type = input; self
         }
         /// Consumes the builder and constructs a [`ProvisionPermissionSetInput`](crate::input::ProvisionPermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ProvisionPermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ProvisionPermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-                target_id: self.target_id,
-                target_type: self.target_type,
-            })
+        pub fn build(self) -> Result<crate::input::ProvisionPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ProvisionPermissionSetInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                    target_id: self.target_id
+                    ,
+                    target_type: self.target_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ProvisionPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`ProvisionPermissionSet`](crate::operation::ProvisionPermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ProvisionPermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ProvisionPermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ProvisionPermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ProvisionPermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ProvisionPermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ProvisionPermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.ProvisionPermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.ProvisionPermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_provision_permission_set(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_provision_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ProvisionPermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ProvisionPermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ProvisionPermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ProvisionPermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6078,7 +4297,7 @@ impl ProvisionPermissionSetInput {
 
 /// See [`PutInlinePolicyToPermissionSetInput`](crate::input::PutInlinePolicyToPermissionSetInput).
 pub mod put_inline_policy_to_permission_set_input {
-
+    
     /// A builder for [`PutInlinePolicyToPermissionSetInput`](crate::input::PutInlinePolicyToPermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6094,8 +4313,7 @@ pub mod put_inline_policy_to_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the permission set.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6103,12 +4321,8 @@ pub mod put_inline_policy_to_permission_set_input {
             self
         }
         /// <p>The ARN of the permission set.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>The inline policy to attach to a <code>PermissionSet</code>.</p>
         pub fn inline_policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6116,93 +4330,63 @@ pub mod put_inline_policy_to_permission_set_input {
             self
         }
         /// <p>The inline policy to attach to a <code>PermissionSet</code>.</p>
-        pub fn set_inline_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inline_policy = input;
-            self
+        pub fn set_inline_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inline_policy = input; self
         }
         /// Consumes the builder and constructs a [`PutInlinePolicyToPermissionSetInput`](crate::input::PutInlinePolicyToPermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutInlinePolicyToPermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::PutInlinePolicyToPermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-                inline_policy: self.inline_policy,
-            })
+        pub fn build(self) -> Result<crate::input::PutInlinePolicyToPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutInlinePolicyToPermissionSetInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                    inline_policy: self.inline_policy
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutInlinePolicyToPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`PutInlinePolicyToPermissionSet`](crate::operation::PutInlinePolicyToPermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutInlinePolicyToPermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutInlinePolicyToPermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutInlinePolicyToPermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutInlinePolicyToPermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutInlinePolicyToPermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutInlinePolicyToPermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.PutInlinePolicyToPermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.PutInlinePolicyToPermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6211,56 +4395,33 @@ impl PutInlinePolicyToPermissionSetInput {
             crate::operation_ser::serialize_operation_crate_operation_put_inline_policy_to_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutInlinePolicyToPermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutInlinePolicyToPermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutInlinePolicyToPermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutInlinePolicyToPermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6272,7 +4433,7 @@ impl PutInlinePolicyToPermissionSetInput {
 
 /// See [`PutPermissionsBoundaryToPermissionSetInput`](crate::input::PutPermissionsBoundaryToPermissionSetInput).
 pub mod put_permissions_boundary_to_permission_set_input {
-
+    
     /// A builder for [`PutPermissionsBoundaryToPermissionSetInput`](crate::input::PutPermissionsBoundaryToPermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6288,8 +4449,7 @@ pub mod put_permissions_boundary_to_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the <code>PermissionSet</code>.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6297,12 +4457,8 @@ pub mod put_permissions_boundary_to_permission_set_input {
             self
         }
         /// <p>The ARN of the <code>PermissionSet</code>.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>The permissions boundary that you want to attach to a <code>PermissionSet</code>.</p>
         pub fn permissions_boundary(mut self, input: crate::model::PermissionsBoundary) -> Self {
@@ -6310,93 +4466,63 @@ pub mod put_permissions_boundary_to_permission_set_input {
             self
         }
         /// <p>The permissions boundary that you want to attach to a <code>PermissionSet</code>.</p>
-        pub fn set_permissions_boundary(
-            mut self,
-            input: std::option::Option<crate::model::PermissionsBoundary>,
-        ) -> Self {
-            self.permissions_boundary = input;
-            self
+        pub fn set_permissions_boundary(mut self, input: std::option::Option<crate::model::PermissionsBoundary>) -> Self {
+            self.permissions_boundary = input; self
         }
         /// Consumes the builder and constructs a [`PutPermissionsBoundaryToPermissionSetInput`](crate::input::PutPermissionsBoundaryToPermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutPermissionsBoundaryToPermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::PutPermissionsBoundaryToPermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-                permissions_boundary: self.permissions_boundary,
-            })
+        pub fn build(self) -> Result<crate::input::PutPermissionsBoundaryToPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutPermissionsBoundaryToPermissionSetInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                    permissions_boundary: self.permissions_boundary
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutPermissionsBoundaryToPermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`PutPermissionsBoundaryToPermissionSet`](crate::operation::PutPermissionsBoundaryToPermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutPermissionsBoundaryToPermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutPermissionsBoundaryToPermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutPermissionsBoundaryToPermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutPermissionsBoundaryToPermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutPermissionsBoundaryToPermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutPermissionsBoundaryToPermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.PutPermissionsBoundaryToPermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.PutPermissionsBoundaryToPermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6405,56 +4531,33 @@ impl PutPermissionsBoundaryToPermissionSetInput {
             crate::operation_ser::serialize_operation_crate_operation_put_permissions_boundary_to_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutPermissionsBoundaryToPermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutPermissionsBoundaryToPermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutPermissionsBoundaryToPermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutPermissionsBoundaryToPermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6466,7 +4569,7 @@ impl PutPermissionsBoundaryToPermissionSetInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6482,8 +4585,7 @@ pub mod tag_resource_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6492,8 +4594,7 @@ pub mod tag_resource_input {
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -6502,154 +4603,103 @@ pub mod tag_resource_input {
         /// <p>A set of key-value pairs that are used to manage the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A set of key-value pairs that are used to manage the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                instance_arn: self.instance_arn,
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.TagResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.TagResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6661,7 +4711,7 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6677,8 +4727,7 @@ pub mod untag_resource_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6687,8 +4736,7 @@ pub mod untag_resource_input {
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -6697,154 +4745,103 @@ pub mod untag_resource_input {
         /// <p>The keys of tags that are attached to the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p>The keys of tags that are attached to the resource.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                instance_arn: self.instance_arn,
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    resource_arn: self.resource_arn
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.UntagResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.UntagResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6856,13 +4853,12 @@ impl UntagResourceInput {
 
 /// See [`UpdateInstanceAccessControlAttributeConfigurationInput`](crate::input::UpdateInstanceAccessControlAttributeConfigurationInput).
 pub mod update_instance_access_control_attribute_configuration_input {
-
+    
     /// A builder for [`UpdateInstanceAccessControlAttributeConfigurationInput`](crate::input::UpdateInstanceAccessControlAttributeConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
-        pub(crate) instance_access_control_attribute_configuration:
-            std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
+        pub(crate) instance_access_control_attribute_configuration: std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
     }
     impl Builder {
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
@@ -6872,107 +4868,69 @@ pub mod update_instance_access_control_attribute_configuration_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>Updates the attributes for your ABAC configuration.</p>
-        pub fn instance_access_control_attribute_configuration(
-            mut self,
-            input: crate::model::InstanceAccessControlAttributeConfiguration,
-        ) -> Self {
+        pub fn instance_access_control_attribute_configuration(mut self, input: crate::model::InstanceAccessControlAttributeConfiguration) -> Self {
             self.instance_access_control_attribute_configuration = Some(input);
             self
         }
         /// <p>Updates the attributes for your ABAC configuration.</p>
-        pub fn set_instance_access_control_attribute_configuration(
-            mut self,
-            input: std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
-        ) -> Self {
-            self.instance_access_control_attribute_configuration = input;
-            self
+        pub fn set_instance_access_control_attribute_configuration(mut self, input: std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>) -> Self {
+            self.instance_access_control_attribute_configuration = input; self
         }
         /// Consumes the builder and constructs a [`UpdateInstanceAccessControlAttributeConfigurationInput`](crate::input::UpdateInstanceAccessControlAttributeConfigurationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateInstanceAccessControlAttributeConfigurationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
+        pub fn build(self) -> Result<crate::input::UpdateInstanceAccessControlAttributeConfigurationInput, aws_smithy_http::operation::error::BuildError> {
             Ok(
                 crate::input::UpdateInstanceAccessControlAttributeConfigurationInput {
-                    instance_arn: self.instance_arn,
-                    instance_access_control_attribute_configuration: self
-                        .instance_access_control_attribute_configuration,
-                },
+                    instance_arn: self.instance_arn
+                    ,
+                    instance_access_control_attribute_configuration: self.instance_access_control_attribute_configuration
+                    ,
+                }
             )
         }
     }
+    
+    
 }
 impl UpdateInstanceAccessControlAttributeConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInstanceAccessControlAttributeConfiguration`](crate::operation::UpdateInstanceAccessControlAttributeConfiguration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateInstanceAccessControlAttributeConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateInstanceAccessControlAttributeConfiguration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateInstanceAccessControlAttributeConfigurationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateInstanceAccessControlAttributeConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateInstanceAccessControlAttributeConfigurationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateInstanceAccessControlAttributeConfigurationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.UpdateInstanceAccessControlAttributeConfiguration",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.UpdateInstanceAccessControlAttributeConfiguration"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6981,70 +4939,45 @@ impl UpdateInstanceAccessControlAttributeConfigurationInput {
             crate::operation_ser::serialize_operation_crate_operation_update_instance_access_control_attribute_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateInstanceAccessControlAttributeConfiguration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateInstanceAccessControlAttributeConfiguration",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateInstanceAccessControlAttributeConfiguration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateInstanceAccessControlAttributeConfiguration", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
     /// Creates a new builder-style object to manufacture [`UpdateInstanceAccessControlAttributeConfigurationInput`](crate::input::UpdateInstanceAccessControlAttributeConfigurationInput).
-    pub fn builder(
-    ) -> crate::input::update_instance_access_control_attribute_configuration_input::Builder {
-        crate::input::update_instance_access_control_attribute_configuration_input::Builder::default(
-        )
+    pub fn builder() -> crate::input::update_instance_access_control_attribute_configuration_input::Builder {
+        crate::input::update_instance_access_control_attribute_configuration_input::Builder::default()
     }
 }
 
 /// See [`UpdatePermissionSetInput`](crate::input::UpdatePermissionSetInput).
 pub mod update_permission_set_input {
-
+    
     /// A builder for [`UpdatePermissionSetInput`](crate::input::UpdatePermissionSetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7062,8 +4995,7 @@ pub mod update_permission_set_input {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The ARN of the permission set.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7071,12 +5003,8 @@ pub mod update_permission_set_input {
             self
         }
         /// <p>The ARN of the permission set.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>The description of the <code>PermissionSet</code>.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7085,8 +5013,7 @@ pub mod update_permission_set_input {
         }
         /// <p>The description of the <code>PermissionSet</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
         pub fn session_duration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7094,12 +5021,8 @@ pub mod update_permission_set_input {
             self
         }
         /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
-        pub fn set_session_duration(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.session_duration = input;
-            self
+        pub fn set_session_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_duration = input; self
         }
         /// <p>Used to redirect users within the application during the federation authentication process.</p>
         pub fn relay_state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7108,149 +5031,101 @@ pub mod update_permission_set_input {
         }
         /// <p>Used to redirect users within the application during the federation authentication process.</p>
         pub fn set_relay_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.relay_state = input;
-            self
+            self.relay_state = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePermissionSetInput`](crate::input::UpdatePermissionSetInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdatePermissionSetInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdatePermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-                description: self.description,
-                session_duration: self.session_duration,
-                relay_state: self.relay_state,
-            })
+        pub fn build(self) -> Result<crate::input::UpdatePermissionSetInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdatePermissionSetInput {
+                    instance_arn: self.instance_arn
+                    ,
+                    permission_set_arn: self.permission_set_arn
+                    ,
+                    description: self.description
+                    ,
+                    session_duration: self.session_duration
+                    ,
+                    relay_state: self.relay_state
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdatePermissionSetInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePermissionSet`](crate::operation::UpdatePermissionSet)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdatePermissionSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdatePermissionSet, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdatePermissionSetInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdatePermissionSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdatePermissionSetInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdatePermissionSetInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SWBExternalService.UpdatePermissionSet",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SWBExternalService.UpdatePermissionSet"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_permission_set(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdatePermissionSet::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdatePermissionSet",
-            "ssoadmin",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdatePermissionSet::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdatePermissionSet", "ssoadmin"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7263,7 +5138,7 @@ impl UpdatePermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePermissionSetInput {
+pub struct UpdatePermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7282,23 +5157,23 @@ pub struct UpdatePermissionSetInput {
 }
 impl UpdatePermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The description of the <code>PermissionSet</code>.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
-    pub fn session_duration(&self) -> std::option::Option<&str> {
+    pub fn session_duration(&self) -> std::option::Option<& str> {
         self.session_duration.as_deref()
     }
     /// <p>Used to redirect users within the application during the federation authentication process.</p>
-    pub fn relay_state(&self) -> std::option::Option<&str> {
+    pub fn relay_state(&self) -> std::option::Option<& str> {
         self.relay_state.as_deref()
     }
 }
@@ -7306,33 +5181,29 @@ impl UpdatePermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInstanceAccessControlAttributeConfigurationInput {
+pub struct UpdateInstanceAccessControlAttributeConfigurationInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>Updates the attributes for your ABAC configuration.</p>
     #[doc(hidden)]
-    pub instance_access_control_attribute_configuration:
-        std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
+    pub instance_access_control_attribute_configuration: std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
 }
 impl UpdateInstanceAccessControlAttributeConfigurationInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>Updates the attributes for your ABAC configuration.</p>
-    pub fn instance_access_control_attribute_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::InstanceAccessControlAttributeConfiguration> {
-        self.instance_access_control_attribute_configuration
-            .as_ref()
+    pub fn instance_access_control_attribute_configuration(&self) -> std::option::Option<& crate::model::InstanceAccessControlAttributeConfiguration> {
+        self.instance_access_control_attribute_configuration.as_ref()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7345,15 +5216,15 @@ pub struct UntagResourceInput {
 }
 impl UntagResourceInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the resource with the tags to be listed.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The keys of tags that are attached to the resource.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -7361,7 +5232,7 @@ impl UntagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceInput {
+pub struct TagResourceInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7374,15 +5245,15 @@ pub struct TagResourceInput {
 }
 impl TagResourceInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the resource with the tags to be listed.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>A set of key-value pairs that are used to manage the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -7390,7 +5261,7 @@ impl TagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPermissionsBoundaryToPermissionSetInput {
+pub struct PutPermissionsBoundaryToPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7403,15 +5274,15 @@ pub struct PutPermissionsBoundaryToPermissionSetInput {
 }
 impl PutPermissionsBoundaryToPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The permissions boundary that you want to attach to a <code>PermissionSet</code>.</p>
-    pub fn permissions_boundary(&self) -> std::option::Option<&crate::model::PermissionsBoundary> {
+    pub fn permissions_boundary(&self) -> std::option::Option<& crate::model::PermissionsBoundary> {
         self.permissions_boundary.as_ref()
     }
 }
@@ -7419,7 +5290,7 @@ impl PutPermissionsBoundaryToPermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutInlinePolicyToPermissionSetInput {
+pub struct PutInlinePolicyToPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7432,15 +5303,15 @@ pub struct PutInlinePolicyToPermissionSetInput {
 }
 impl PutInlinePolicyToPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The inline policy to attach to a <code>PermissionSet</code>.</p>
-    pub fn inline_policy(&self) -> std::option::Option<&str> {
+    pub fn inline_policy(&self) -> std::option::Option<& str> {
         self.inline_policy.as_deref()
     }
 }
@@ -7448,7 +5319,7 @@ impl PutInlinePolicyToPermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionPermissionSetInput {
+pub struct ProvisionPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7464,19 +5335,19 @@ pub struct ProvisionPermissionSetInput {
 }
 impl ProvisionPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
-    pub fn target_id(&self) -> std::option::Option<&str> {
+    pub fn target_id(&self) -> std::option::Option<& str> {
         self.target_id.as_deref()
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn target_type(&self) -> std::option::Option<&crate::model::ProvisionTargetType> {
+    pub fn target_type(&self) -> std::option::Option<& crate::model::ProvisionTargetType> {
         self.target_type.as_ref()
     }
 }
@@ -7484,7 +5355,7 @@ impl ProvisionPermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
+pub struct ListTagsForResourceInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7497,15 +5368,15 @@ pub struct ListTagsForResourceInput {
 }
 impl ListTagsForResourceInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the resource with the tags to be listed.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -7513,7 +5384,7 @@ impl ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPermissionSetsProvisionedToAccountInput {
+pub struct ListPermissionSetsProvisionedToAccountInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7532,15 +5403,15 @@ pub struct ListPermissionSetsProvisionedToAccountInput {
 }
 impl ListPermissionSetsProvisionedToAccountInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The identifier of the AWS account from which to list the assignments.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The status object for the permission set provisioning operation.</p>
-    pub fn provisioning_status(&self) -> std::option::Option<&crate::model::ProvisioningStatus> {
+    pub fn provisioning_status(&self) -> std::option::Option<& crate::model::ProvisioningStatus> {
         self.provisioning_status.as_ref()
     }
     /// <p>The maximum number of results to display for the assignment.</p>
@@ -7548,7 +5419,7 @@ impl ListPermissionSetsProvisionedToAccountInput {
         self.max_results
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -7556,7 +5427,7 @@ impl ListPermissionSetsProvisionedToAccountInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPermissionSetsInput {
+pub struct ListPermissionSetsInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7569,11 +5440,11 @@ pub struct ListPermissionSetsInput {
 }
 impl ListPermissionSetsInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to display for the assignment.</p>
@@ -7585,7 +5456,7 @@ impl ListPermissionSetsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPermissionSetProvisioningStatusInput {
+pub struct ListPermissionSetProvisioningStatusInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7601,7 +5472,7 @@ pub struct ListPermissionSetProvisioningStatusInput {
 }
 impl ListPermissionSetProvisioningStatusInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The maximum number of results to display for the assignment.</p>
@@ -7609,11 +5480,11 @@ impl ListPermissionSetProvisioningStatusInput {
         self.max_results
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Filters results based on the passed attribute value.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::model::OperationStatusFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::model::OperationStatusFilter> {
         self.filter.as_ref()
     }
 }
@@ -7621,7 +5492,7 @@ impl ListPermissionSetProvisioningStatusInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListManagedPoliciesInPermissionSetInput {
+pub struct ListManagedPoliciesInPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7637,11 +5508,11 @@ pub struct ListManagedPoliciesInPermissionSetInput {
 }
 impl ListManagedPoliciesInPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the <code>PermissionSet</code> whose managed policies will be listed.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
@@ -7649,7 +5520,7 @@ impl ListManagedPoliciesInPermissionSetInput {
         self.max_results
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -7657,7 +5528,7 @@ impl ListManagedPoliciesInPermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInstancesInput {
+pub struct ListInstancesInput  {
     /// <p>The maximum number of results to display for the instance.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -7671,7 +5542,7 @@ impl ListInstancesInput {
         self.max_results
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -7679,7 +5550,7 @@ impl ListInstancesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomerManagedPolicyReferencesInPermissionSetInput {
+pub struct ListCustomerManagedPolicyReferencesInPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7695,11 +5566,11 @@ pub struct ListCustomerManagedPolicyReferencesInPermissionSetInput {
 }
 impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the <code>PermissionSet</code>. </p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The maximum number of results to display for the list call.</p>
@@ -7707,7 +5578,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
         self.max_results
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -7715,7 +5586,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountsForProvisionedPermissionSetInput {
+pub struct ListAccountsForProvisionedPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7734,15 +5605,15 @@ pub struct ListAccountsForProvisionedPermissionSetInput {
 }
 impl ListAccountsForProvisionedPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the <code>PermissionSet</code> from which the associated AWS accounts will be listed.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The permission set provisioning status for an AWS account.</p>
-    pub fn provisioning_status(&self) -> std::option::Option<&crate::model::ProvisioningStatus> {
+    pub fn provisioning_status(&self) -> std::option::Option<& crate::model::ProvisioningStatus> {
         self.provisioning_status.as_ref()
     }
     /// <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
@@ -7750,7 +5621,7 @@ impl ListAccountsForProvisionedPermissionSetInput {
         self.max_results
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -7758,7 +5629,7 @@ impl ListAccountsForProvisionedPermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountAssignmentsInput {
+pub struct ListAccountAssignmentsInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7777,15 +5648,15 @@ pub struct ListAccountAssignmentsInput {
 }
 impl ListAccountAssignmentsInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The identifier of the AWS account from which to list the assignments.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ARN of the permission set from which to list assignments.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The maximum number of results to display for the assignment.</p>
@@ -7793,7 +5664,7 @@ impl ListAccountAssignmentsInput {
         self.max_results
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -7801,7 +5672,7 @@ impl ListAccountAssignmentsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountAssignmentDeletionStatusInput {
+pub struct ListAccountAssignmentDeletionStatusInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7817,7 +5688,7 @@ pub struct ListAccountAssignmentDeletionStatusInput {
 }
 impl ListAccountAssignmentDeletionStatusInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The maximum number of results to display for the assignment.</p>
@@ -7825,11 +5696,11 @@ impl ListAccountAssignmentDeletionStatusInput {
         self.max_results
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Filters results based on the passed attribute value.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::model::OperationStatusFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::model::OperationStatusFilter> {
         self.filter.as_ref()
     }
 }
@@ -7837,7 +5708,7 @@ impl ListAccountAssignmentDeletionStatusInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountAssignmentCreationStatusInput {
+pub struct ListAccountAssignmentCreationStatusInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7853,7 +5724,7 @@ pub struct ListAccountAssignmentCreationStatusInput {
 }
 impl ListAccountAssignmentCreationStatusInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The maximum number of results to display for the assignment.</p>
@@ -7861,11 +5732,11 @@ impl ListAccountAssignmentCreationStatusInput {
         self.max_results
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Filters results based on the passed attribute value.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::model::OperationStatusFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::model::OperationStatusFilter> {
         self.filter.as_ref()
     }
 }
@@ -7873,7 +5744,7 @@ impl ListAccountAssignmentCreationStatusInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPermissionsBoundaryForPermissionSetInput {
+pub struct GetPermissionsBoundaryForPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7883,11 +5754,11 @@ pub struct GetPermissionsBoundaryForPermissionSetInput {
 }
 impl GetPermissionsBoundaryForPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
 }
@@ -7895,7 +5766,7 @@ impl GetPermissionsBoundaryForPermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInlinePolicyForPermissionSetInput {
+pub struct GetInlinePolicyForPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7905,11 +5776,11 @@ pub struct GetInlinePolicyForPermissionSetInput {
 }
 impl GetInlinePolicyForPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
 }
@@ -7917,7 +5788,7 @@ impl GetInlinePolicyForPermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachManagedPolicyFromPermissionSetInput {
+pub struct DetachManagedPolicyFromPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7930,15 +5801,15 @@ pub struct DetachManagedPolicyFromPermissionSetInput {
 }
 impl DetachManagedPolicyFromPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the <code>PermissionSet</code> from which the policy should be detached.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The AWS managed policy ARN to be detached from a permission set.</p>
-    pub fn managed_policy_arn(&self) -> std::option::Option<&str> {
+    pub fn managed_policy_arn(&self) -> std::option::Option<& str> {
         self.managed_policy_arn.as_deref()
     }
 }
@@ -7946,7 +5817,7 @@ impl DetachManagedPolicyFromPermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
+pub struct DetachCustomerManagedPolicyReferenceFromPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7955,22 +5826,19 @@ pub struct DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
     #[doc(hidden)]
-    pub customer_managed_policy_reference:
-        std::option::Option<crate::model::CustomerManagedPolicyReference>,
+    pub customer_managed_policy_reference: std::option::Option<crate::model::CustomerManagedPolicyReference>,
 }
 impl DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
-    pub fn customer_managed_policy_reference(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomerManagedPolicyReference> {
+    pub fn customer_managed_policy_reference(&self) -> std::option::Option<& crate::model::CustomerManagedPolicyReference> {
         self.customer_managed_policy_reference.as_ref()
     }
 }
@@ -7978,7 +5846,7 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePermissionSetProvisioningStatusInput {
+pub struct DescribePermissionSetProvisioningStatusInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -7988,11 +5856,11 @@ pub struct DescribePermissionSetProvisioningStatusInput {
 }
 impl DescribePermissionSetProvisioningStatusInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
-    pub fn provision_permission_set_request_id(&self) -> std::option::Option<&str> {
+    pub fn provision_permission_set_request_id(&self) -> std::option::Option<& str> {
         self.provision_permission_set_request_id.as_deref()
     }
 }
@@ -8000,7 +5868,7 @@ impl DescribePermissionSetProvisioningStatusInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePermissionSetInput {
+pub struct DescribePermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -8010,11 +5878,11 @@ pub struct DescribePermissionSetInput {
 }
 impl DescribePermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the permission set. </p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
 }
@@ -8022,14 +5890,14 @@ impl DescribePermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstanceAccessControlAttributeConfigurationInput {
+pub struct DescribeInstanceAccessControlAttributeConfigurationInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceAccessControlAttributeConfigurationInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
 }
@@ -8037,7 +5905,7 @@ impl DescribeInstanceAccessControlAttributeConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountAssignmentDeletionStatusInput {
+pub struct DescribeAccountAssignmentDeletionStatusInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -8047,11 +5915,11 @@ pub struct DescribeAccountAssignmentDeletionStatusInput {
 }
 impl DescribeAccountAssignmentDeletionStatusInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The identifier that is used to track the request operation progress.</p>
-    pub fn account_assignment_deletion_request_id(&self) -> std::option::Option<&str> {
+    pub fn account_assignment_deletion_request_id(&self) -> std::option::Option<& str> {
         self.account_assignment_deletion_request_id.as_deref()
     }
 }
@@ -8059,7 +5927,7 @@ impl DescribeAccountAssignmentDeletionStatusInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountAssignmentCreationStatusInput {
+pub struct DescribeAccountAssignmentCreationStatusInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -8069,11 +5937,11 @@ pub struct DescribeAccountAssignmentCreationStatusInput {
 }
 impl DescribeAccountAssignmentCreationStatusInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The identifier that is used to track the request operation progress.</p>
-    pub fn account_assignment_creation_request_id(&self) -> std::option::Option<&str> {
+    pub fn account_assignment_creation_request_id(&self) -> std::option::Option<& str> {
         self.account_assignment_creation_request_id.as_deref()
     }
 }
@@ -8081,7 +5949,7 @@ impl DescribeAccountAssignmentCreationStatusInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePermissionSetInput {
+pub struct DeletePermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -8091,11 +5959,11 @@ pub struct DeletePermissionSetInput {
 }
 impl DeletePermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the permission set that should be deleted.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
 }
@@ -8103,7 +5971,7 @@ impl DeletePermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePermissionsBoundaryFromPermissionSetInput {
+pub struct DeletePermissionsBoundaryFromPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -8113,11 +5981,11 @@ pub struct DeletePermissionsBoundaryFromPermissionSetInput {
 }
 impl DeletePermissionsBoundaryFromPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
 }
@@ -8125,14 +5993,14 @@ impl DeletePermissionsBoundaryFromPermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInstanceAccessControlAttributeConfigurationInput {
+pub struct DeleteInstanceAccessControlAttributeConfigurationInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
 }
 impl DeleteInstanceAccessControlAttributeConfigurationInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
 }
@@ -8140,7 +6008,7 @@ impl DeleteInstanceAccessControlAttributeConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInlinePolicyFromPermissionSetInput {
+pub struct DeleteInlinePolicyFromPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -8150,11 +6018,11 @@ pub struct DeleteInlinePolicyFromPermissionSetInput {
 }
 impl DeleteInlinePolicyFromPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the permission set that will be used to remove access.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
 }
@@ -8162,7 +6030,7 @@ impl DeleteInlinePolicyFromPermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccountAssignmentInput {
+pub struct DeleteAccountAssignmentInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -8184,27 +6052,27 @@ pub struct DeleteAccountAssignmentInput {
 }
 impl DeleteAccountAssignmentInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
-    pub fn target_id(&self) -> std::option::Option<&str> {
+    pub fn target_id(&self) -> std::option::Option<& str> {
         self.target_id.as_deref()
     }
     /// <p>The entity type for which the assignment will be deleted.</p>
-    pub fn target_type(&self) -> std::option::Option<&crate::model::TargetType> {
+    pub fn target_type(&self) -> std::option::Option<& crate::model::TargetType> {
         self.target_type.as_ref()
     }
     /// <p>The ARN of the permission set that will be used to remove access.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The entity type for which the assignment will be deleted.</p>
-    pub fn principal_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+    pub fn principal_type(&self) -> std::option::Option<& crate::model::PrincipalType> {
         self.principal_type.as_ref()
     }
     /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
-    pub fn principal_id(&self) -> std::option::Option<&str> {
+    pub fn principal_id(&self) -> std::option::Option<& str> {
         self.principal_id.as_deref()
     }
 }
@@ -8212,7 +6080,7 @@ impl DeleteAccountAssignmentInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePermissionSetInput {
+pub struct CreatePermissionSetInput  {
     /// <p>The name of the <code>PermissionSet</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -8234,27 +6102,27 @@ pub struct CreatePermissionSetInput {
 }
 impl CreatePermissionSetInput {
     /// <p>The name of the <code>PermissionSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the <code>PermissionSet</code>.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
-    pub fn session_duration(&self) -> std::option::Option<&str> {
+    pub fn session_duration(&self) -> std::option::Option<& str> {
         self.session_duration.as_deref()
     }
     /// <p>Used to redirect users within the application during the federation authentication process.</p>
-    pub fn relay_state(&self) -> std::option::Option<&str> {
+    pub fn relay_state(&self) -> std::option::Option<& str> {
         self.relay_state.as_deref()
     }
     /// <p>The tags to attach to the new <code>PermissionSet</code>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -8262,33 +6130,29 @@ impl CreatePermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInstanceAccessControlAttributeConfigurationInput {
+pub struct CreateInstanceAccessControlAttributeConfigurationInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.</p>
     #[doc(hidden)]
-    pub instance_access_control_attribute_configuration:
-        std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
+    pub instance_access_control_attribute_configuration: std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
 }
 impl CreateInstanceAccessControlAttributeConfigurationInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.</p>
-    pub fn instance_access_control_attribute_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::InstanceAccessControlAttributeConfiguration> {
-        self.instance_access_control_attribute_configuration
-            .as_ref()
+    pub fn instance_access_control_attribute_configuration(&self) -> std::option::Option<& crate::model::InstanceAccessControlAttributeConfiguration> {
+        self.instance_access_control_attribute_configuration.as_ref()
     }
 }
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccountAssignmentInput {
+pub struct CreateAccountAssignmentInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -8310,27 +6174,27 @@ pub struct CreateAccountAssignmentInput {
 }
 impl CreateAccountAssignmentInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
-    pub fn target_id(&self) -> std::option::Option<&str> {
+    pub fn target_id(&self) -> std::option::Option<& str> {
         self.target_id.as_deref()
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn target_type(&self) -> std::option::Option<&crate::model::TargetType> {
+    pub fn target_type(&self) -> std::option::Option<& crate::model::TargetType> {
         self.target_type.as_ref()
     }
     /// <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn principal_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+    pub fn principal_type(&self) -> std::option::Option<& crate::model::PrincipalType> {
         self.principal_type.as_ref()
     }
     /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
-    pub fn principal_id(&self) -> std::option::Option<&str> {
+    pub fn principal_id(&self) -> std::option::Option<& str> {
         self.principal_id.as_deref()
     }
 }
@@ -8338,7 +6202,7 @@ impl CreateAccountAssignmentInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachManagedPolicyToPermissionSetInput {
+pub struct AttachManagedPolicyToPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -8351,15 +6215,15 @@ pub struct AttachManagedPolicyToPermissionSetInput {
 }
 impl AttachManagedPolicyToPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the <code>PermissionSet</code> that the managed policy should be attached to.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The AWS managed policy ARN to be attached to a permission set.</p>
-    pub fn managed_policy_arn(&self) -> std::option::Option<&str> {
+    pub fn managed_policy_arn(&self) -> std::option::Option<& str> {
         self.managed_policy_arn.as_deref()
     }
 }
@@ -8367,7 +6231,7 @@ impl AttachManagedPolicyToPermissionSetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachCustomerManagedPolicyReferenceToPermissionSetInput {
+pub struct AttachCustomerManagedPolicyReferenceToPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -8376,22 +6240,20 @@ pub struct AttachCustomerManagedPolicyReferenceToPermissionSetInput {
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
     #[doc(hidden)]
-    pub customer_managed_policy_reference:
-        std::option::Option<crate::model::CustomerManagedPolicyReference>,
+    pub customer_managed_policy_reference: std::option::Option<crate::model::CustomerManagedPolicyReference>,
 }
 impl AttachCustomerManagedPolicyReferenceToPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
-    pub fn customer_managed_policy_reference(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomerManagedPolicyReference> {
+    pub fn customer_managed_policy_reference(&self) -> std::option::Option<& crate::model::CustomerManagedPolicyReference> {
         self.customer_managed_policy_reference.as_ref()
     }
 }
+

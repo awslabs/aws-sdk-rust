@@ -3,20 +3,20 @@
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UploadMultipartPartOutput {
+pub struct UploadMultipartPartOutput  {
     /// <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
     #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
 }
 impl UploadMultipartPartOutput {
     /// <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
 }
 /// See [`UploadMultipartPartOutput`](crate::output::UploadMultipartPartOutput).
 pub mod upload_multipart_part_output {
-
+    
     /// A builder for [`UploadMultipartPartOutput`](crate::output::UploadMultipartPartOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -30,16 +30,18 @@ pub mod upload_multipart_part_output {
         }
         /// <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// Consumes the builder and constructs a [`UploadMultipartPartOutput`](crate::output::UploadMultipartPartOutput).
         pub fn build(self) -> crate::output::UploadMultipartPartOutput {
             crate::output::UploadMultipartPartOutput {
-                checksum: self.checksum,
+                checksum: self.checksum
+                ,
             }
         }
     }
+    
+    
 }
 impl UploadMultipartPartOutput {
     /// Creates a new builder-style object to manufacture [`UploadMultipartPartOutput`](crate::output::UploadMultipartPartOutput).
@@ -48,11 +50,11 @@ impl UploadMultipartPartOutput {
     }
 }
 
-/// <p>Contains the Amazon S3 Glacier response to your request.</p>
+/// <p>Contains the Amazon S3 Glacier response to your request.</p> 
 /// <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UploadArchiveOutput {
+pub struct UploadArchiveOutput  {
     /// <p>The relative URI path of the newly added archive resource.</p>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
@@ -65,21 +67,21 @@ pub struct UploadArchiveOutput {
 }
 impl UploadArchiveOutput {
     /// <p>The relative URI path of the newly added archive resource.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The ID of the archive. This value is also included as part of the location.</p>
-    pub fn archive_id(&self) -> std::option::Option<&str> {
+    pub fn archive_id(&self) -> std::option::Option<& str> {
         self.archive_id.as_deref()
     }
 }
 /// See [`UploadArchiveOutput`](crate::output::UploadArchiveOutput).
 pub mod upload_archive_output {
-
+    
     /// A builder for [`UploadArchiveOutput`](crate::output::UploadArchiveOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -95,8 +97,7 @@ pub mod upload_archive_output {
         }
         /// <p>The relative URI path of the newly added archive resource.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +106,7 @@ pub mod upload_archive_output {
         }
         /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p>The ID of the archive. This value is also included as part of the location.</p>
         pub fn archive_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,18 +115,22 @@ pub mod upload_archive_output {
         }
         /// <p>The ID of the archive. This value is also included as part of the location.</p>
         pub fn set_archive_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.archive_id = input;
-            self
+            self.archive_id = input; self
         }
         /// Consumes the builder and constructs a [`UploadArchiveOutput`](crate::output::UploadArchiveOutput).
         pub fn build(self) -> crate::output::UploadArchiveOutput {
             crate::output::UploadArchiveOutput {
-                location: self.location,
-                checksum: self.checksum,
-                archive_id: self.archive_id,
+                location: self.location
+                ,
+                checksum: self.checksum
+                ,
+                archive_id: self.archive_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UploadArchiveOutput {
     /// Creates a new builder-style object to manufacture [`UploadArchiveOutput`](crate::output::UploadArchiveOutput).
@@ -138,19 +142,24 @@ impl UploadArchiveOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetVaultNotificationsOutput {}
+pub struct SetVaultNotificationsOutput  {
+}
 /// See [`SetVaultNotificationsOutput`](crate::output::SetVaultNotificationsOutput).
 pub mod set_vault_notifications_output {
-
+    
     /// A builder for [`SetVaultNotificationsOutput`](crate::output::SetVaultNotificationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SetVaultNotificationsOutput`](crate::output::SetVaultNotificationsOutput).
         pub fn build(self) -> crate::output::SetVaultNotificationsOutput {
-            crate::output::SetVaultNotificationsOutput {}
+            crate::output::SetVaultNotificationsOutput {
+            }
         }
     }
+    
+    
 }
 impl SetVaultNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`SetVaultNotificationsOutput`](crate::output::SetVaultNotificationsOutput).
@@ -162,19 +171,24 @@ impl SetVaultNotificationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetVaultAccessPolicyOutput {}
+pub struct SetVaultAccessPolicyOutput  {
+}
 /// See [`SetVaultAccessPolicyOutput`](crate::output::SetVaultAccessPolicyOutput).
 pub mod set_vault_access_policy_output {
-
+    
     /// A builder for [`SetVaultAccessPolicyOutput`](crate::output::SetVaultAccessPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SetVaultAccessPolicyOutput`](crate::output::SetVaultAccessPolicyOutput).
         pub fn build(self) -> crate::output::SetVaultAccessPolicyOutput {
-            crate::output::SetVaultAccessPolicyOutput {}
+            crate::output::SetVaultAccessPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl SetVaultAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`SetVaultAccessPolicyOutput`](crate::output::SetVaultAccessPolicyOutput).
@@ -186,19 +200,24 @@ impl SetVaultAccessPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetDataRetrievalPolicyOutput {}
+pub struct SetDataRetrievalPolicyOutput  {
+}
 /// See [`SetDataRetrievalPolicyOutput`](crate::output::SetDataRetrievalPolicyOutput).
 pub mod set_data_retrieval_policy_output {
-
+    
     /// A builder for [`SetDataRetrievalPolicyOutput`](crate::output::SetDataRetrievalPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SetDataRetrievalPolicyOutput`](crate::output::SetDataRetrievalPolicyOutput).
         pub fn build(self) -> crate::output::SetDataRetrievalPolicyOutput {
-            crate::output::SetDataRetrievalPolicyOutput {}
+            crate::output::SetDataRetrievalPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl SetDataRetrievalPolicyOutput {
     /// Creates a new builder-style object to manufacture [`SetDataRetrievalPolicyOutput`](crate::output::SetDataRetrievalPolicyOutput).
@@ -210,19 +229,24 @@ impl SetDataRetrievalPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsFromVaultOutput {}
+pub struct RemoveTagsFromVaultOutput  {
+}
 /// See [`RemoveTagsFromVaultOutput`](crate::output::RemoveTagsFromVaultOutput).
 pub mod remove_tags_from_vault_output {
-
+    
     /// A builder for [`RemoveTagsFromVaultOutput`](crate::output::RemoveTagsFromVaultOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsFromVaultOutput`](crate::output::RemoveTagsFromVaultOutput).
         pub fn build(self) -> crate::output::RemoveTagsFromVaultOutput {
-            crate::output::RemoveTagsFromVaultOutput {}
+            crate::output::RemoveTagsFromVaultOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveTagsFromVaultOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromVaultOutput`](crate::output::RemoveTagsFromVaultOutput).
@@ -234,20 +258,20 @@ impl RemoveTagsFromVaultOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PurchaseProvisionedCapacityOutput {
+pub struct PurchaseProvisionedCapacityOutput  {
     /// <p>The ID that identifies the provisioned capacity unit.</p>
     #[doc(hidden)]
     pub capacity_id: std::option::Option<std::string::String>,
 }
 impl PurchaseProvisionedCapacityOutput {
     /// <p>The ID that identifies the provisioned capacity unit.</p>
-    pub fn capacity_id(&self) -> std::option::Option<&str> {
+    pub fn capacity_id(&self) -> std::option::Option<& str> {
         self.capacity_id.as_deref()
     }
 }
 /// See [`PurchaseProvisionedCapacityOutput`](crate::output::PurchaseProvisionedCapacityOutput).
 pub mod purchase_provisioned_capacity_output {
-
+    
     /// A builder for [`PurchaseProvisionedCapacityOutput`](crate::output::PurchaseProvisionedCapacityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -261,16 +285,18 @@ pub mod purchase_provisioned_capacity_output {
         }
         /// <p>The ID that identifies the provisioned capacity unit.</p>
         pub fn set_capacity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.capacity_id = input;
-            self
+            self.capacity_id = input; self
         }
         /// Consumes the builder and constructs a [`PurchaseProvisionedCapacityOutput`](crate::output::PurchaseProvisionedCapacityOutput).
         pub fn build(self) -> crate::output::PurchaseProvisionedCapacityOutput {
             crate::output::PurchaseProvisionedCapacityOutput {
-                capacity_id: self.capacity_id,
+                capacity_id: self.capacity_id
+                ,
             }
         }
     }
+    
+    
 }
 impl PurchaseProvisionedCapacityOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseProvisionedCapacityOutput`](crate::output::PurchaseProvisionedCapacityOutput).
@@ -282,7 +308,7 @@ impl PurchaseProvisionedCapacityOutput {
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVaultsOutput {
+pub struct ListVaultsOutput  {
     /// <p>List of vaults.</p>
     #[doc(hidden)]
     pub vault_list: std::option::Option<std::vec::Vec<crate::model::DescribeVaultOutput>>,
@@ -292,22 +318,21 @@ pub struct ListVaultsOutput {
 }
 impl ListVaultsOutput {
     /// <p>List of vaults.</p>
-    pub fn vault_list(&self) -> std::option::Option<&[crate::model::DescribeVaultOutput]> {
+    pub fn vault_list(&self) -> std::option::Option<& [crate::model::DescribeVaultOutput]> {
         self.vault_list.as_deref()
     }
     /// <p>The vault ARN at which to continue pagination of the results. You use the marker in another List Vaults request to obtain more vaults in the list.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListVaultsOutput`](crate::output::ListVaultsOutput).
 pub mod list_vaults_output {
-
+    
     /// A builder for [`ListVaultsOutput`](crate::output::ListVaultsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) vault_list:
-            std::option::Option<std::vec::Vec<crate::model::DescribeVaultOutput>>,
+        pub(crate) vault_list: std::option::Option<std::vec::Vec<crate::model::DescribeVaultOutput>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -318,17 +343,13 @@ pub mod list_vaults_output {
         /// <p>List of vaults.</p>
         pub fn vault_list(mut self, input: crate::model::DescribeVaultOutput) -> Self {
             let mut v = self.vault_list.unwrap_or_default();
-            v.push(input);
-            self.vault_list = Some(v);
-            self
+                            v.push(input);
+                            self.vault_list = Some(v);
+                            self
         }
         /// <p>List of vaults.</p>
-        pub fn set_vault_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DescribeVaultOutput>>,
-        ) -> Self {
-            self.vault_list = input;
-            self
+        pub fn set_vault_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DescribeVaultOutput>>) -> Self {
+            self.vault_list = input; self
         }
         /// <p>The vault ARN at which to continue pagination of the results. You use the marker in another List Vaults request to obtain more vaults in the list.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -337,17 +358,20 @@ pub mod list_vaults_output {
         }
         /// <p>The vault ARN at which to continue pagination of the results. You use the marker in another List Vaults request to obtain more vaults in the list.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListVaultsOutput`](crate::output::ListVaultsOutput).
         pub fn build(self) -> crate::output::ListVaultsOutput {
             crate::output::ListVaultsOutput {
-                vault_list: self.vault_list,
-                marker: self.marker,
+                vault_list: self.vault_list
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListVaultsOutput {
     /// Creates a new builder-style object to manufacture [`ListVaultsOutput`](crate::output::ListVaultsOutput).
@@ -359,30 +383,24 @@ impl ListVaultsOutput {
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForVaultOutput {
+pub struct ListTagsForVaultOutput  {
     /// <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForVaultOutput {
     /// <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForVaultOutput`](crate::output::ListTagsForVaultOutput).
 pub mod list_tags_for_vault_output {
-
+    
     /// A builder for [`ListTagsForVaultOutput`](crate::output::ListTagsForVaultOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -390,31 +408,26 @@ pub mod list_tags_for_vault_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags attached to the vault. Each tag is composed of a key and a value.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForVaultOutput`](crate::output::ListTagsForVaultOutput).
         pub fn build(self) -> crate::output::ListTagsForVaultOutput {
-            crate::output::ListTagsForVaultOutput { tags: self.tags }
+            crate::output::ListTagsForVaultOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForVaultOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForVaultOutput`](crate::output::ListTagsForVaultOutput).
@@ -426,28 +439,24 @@ impl ListTagsForVaultOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProvisionedCapacityOutput {
+pub struct ListProvisionedCapacityOutput  {
     /// <p>The response body contains the following JSON fields.</p>
     #[doc(hidden)]
-    pub provisioned_capacity_list:
-        std::option::Option<std::vec::Vec<crate::model::ProvisionedCapacityDescription>>,
+    pub provisioned_capacity_list: std::option::Option<std::vec::Vec<crate::model::ProvisionedCapacityDescription>>,
 }
 impl ListProvisionedCapacityOutput {
     /// <p>The response body contains the following JSON fields.</p>
-    pub fn provisioned_capacity_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProvisionedCapacityDescription]> {
+    pub fn provisioned_capacity_list(&self) -> std::option::Option<& [crate::model::ProvisionedCapacityDescription]> {
         self.provisioned_capacity_list.as_deref()
     }
 }
 /// See [`ListProvisionedCapacityOutput`](crate::output::ListProvisionedCapacityOutput).
 pub mod list_provisioned_capacity_output {
-
+    
     /// A builder for [`ListProvisionedCapacityOutput`](crate::output::ListProvisionedCapacityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) provisioned_capacity_list:
-            std::option::Option<std::vec::Vec<crate::model::ProvisionedCapacityDescription>>,
+        pub(crate) provisioned_capacity_list: std::option::Option<std::vec::Vec<crate::model::ProvisionedCapacityDescription>>,
     }
     impl Builder {
         /// Appends an item to `provisioned_capacity_list`.
@@ -455,30 +464,26 @@ pub mod list_provisioned_capacity_output {
         /// To override the contents of this collection use [`set_provisioned_capacity_list`](Self::set_provisioned_capacity_list).
         ///
         /// <p>The response body contains the following JSON fields.</p>
-        pub fn provisioned_capacity_list(
-            mut self,
-            input: crate::model::ProvisionedCapacityDescription,
-        ) -> Self {
+        pub fn provisioned_capacity_list(mut self, input: crate::model::ProvisionedCapacityDescription) -> Self {
             let mut v = self.provisioned_capacity_list.unwrap_or_default();
-            v.push(input);
-            self.provisioned_capacity_list = Some(v);
-            self
+                            v.push(input);
+                            self.provisioned_capacity_list = Some(v);
+                            self
         }
         /// <p>The response body contains the following JSON fields.</p>
-        pub fn set_provisioned_capacity_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProvisionedCapacityDescription>>,
-        ) -> Self {
-            self.provisioned_capacity_list = input;
-            self
+        pub fn set_provisioned_capacity_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProvisionedCapacityDescription>>) -> Self {
+            self.provisioned_capacity_list = input; self
         }
         /// Consumes the builder and constructs a [`ListProvisionedCapacityOutput`](crate::output::ListProvisionedCapacityOutput).
         pub fn build(self) -> crate::output::ListProvisionedCapacityOutput {
             crate::output::ListProvisionedCapacityOutput {
-                provisioned_capacity_list: self.provisioned_capacity_list,
+                provisioned_capacity_list: self.provisioned_capacity_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProvisionedCapacityOutput {
     /// Creates a new builder-style object to manufacture [`ListProvisionedCapacityOutput`](crate::output::ListProvisionedCapacityOutput).
@@ -490,7 +495,7 @@ impl ListProvisionedCapacityOutput {
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPartsOutput {
+pub struct ListPartsOutput  {
     /// <p>The ID of the upload to which the parts are associated.</p>
     #[doc(hidden)]
     pub multipart_upload_id: std::option::Option<std::string::String>,
@@ -515,15 +520,15 @@ pub struct ListPartsOutput {
 }
 impl ListPartsOutput {
     /// <p>The ID of the upload to which the parts are associated.</p>
-    pub fn multipart_upload_id(&self) -> std::option::Option<&str> {
+    pub fn multipart_upload_id(&self) -> std::option::Option<& str> {
         self.multipart_upload_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
-    pub fn vault_arn(&self) -> std::option::Option<&str> {
+    pub fn vault_arn(&self) -> std::option::Option<& str> {
         self.vault_arn.as_deref()
     }
     /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
-    pub fn archive_description(&self) -> std::option::Option<&str> {
+    pub fn archive_description(&self) -> std::option::Option<& str> {
         self.archive_description.as_deref()
     }
     /// <p>The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.</p>
@@ -531,21 +536,21 @@ impl ListPartsOutput {
         self.part_size_in_bytes
     }
     /// <p>The UTC time at which the multipart upload was initiated.</p>
-    pub fn creation_date(&self) -> std::option::Option<&str> {
+    pub fn creation_date(&self) -> std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
-    pub fn parts(&self) -> std::option::Option<&[crate::model::PartListElement]> {
+    pub fn parts(&self) -> std::option::Option<& [crate::model::PartListElement]> {
         self.parts.as_deref()
     }
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListPartsOutput`](crate::output::ListPartsOutput).
 pub mod list_parts_output {
-
+    
     /// A builder for [`ListPartsOutput`](crate::output::ListPartsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -564,12 +569,8 @@ pub mod list_parts_output {
             self
         }
         /// <p>The ID of the upload to which the parts are associated.</p>
-        pub fn set_multipart_upload_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.multipart_upload_id = input;
-            self
+        pub fn set_multipart_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.multipart_upload_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
         pub fn vault_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -578,8 +579,7 @@ pub mod list_parts_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
         pub fn set_vault_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_arn = input;
-            self
+            self.vault_arn = input; self
         }
         /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
         pub fn archive_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -587,12 +587,8 @@ pub mod list_parts_output {
             self
         }
         /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
-        pub fn set_archive_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.archive_description = input;
-            self
+        pub fn set_archive_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.archive_description = input; self
         }
         /// <p>The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.</p>
         pub fn part_size_in_bytes(mut self, input: i64) -> Self {
@@ -601,8 +597,7 @@ pub mod list_parts_output {
         }
         /// <p>The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.</p>
         pub fn set_part_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.part_size_in_bytes = input;
-            self
+            self.part_size_in_bytes = input; self
         }
         /// <p>The UTC time at which the multipart upload was initiated.</p>
         pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -610,12 +605,8 @@ pub mod list_parts_output {
             self
         }
         /// <p>The UTC time at which the multipart upload was initiated.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date = input; self
         }
         /// Appends an item to `parts`.
         ///
@@ -624,17 +615,13 @@ pub mod list_parts_output {
         /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
         pub fn parts(mut self, input: crate::model::PartListElement) -> Self {
             let mut v = self.parts.unwrap_or_default();
-            v.push(input);
-            self.parts = Some(v);
-            self
+                            v.push(input);
+                            self.parts = Some(v);
+                            self
         }
         /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
-        pub fn set_parts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PartListElement>>,
-        ) -> Self {
-            self.parts = input;
-            self
+        pub fn set_parts(mut self, input: std::option::Option<std::vec::Vec<crate::model::PartListElement>>) -> Self {
+            self.parts = input; self
         }
         /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -643,22 +630,31 @@ pub mod list_parts_output {
         }
         /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListPartsOutput`](crate::output::ListPartsOutput).
         pub fn build(self) -> crate::output::ListPartsOutput {
             crate::output::ListPartsOutput {
-                multipart_upload_id: self.multipart_upload_id,
-                vault_arn: self.vault_arn,
-                archive_description: self.archive_description,
-                part_size_in_bytes: self.part_size_in_bytes.unwrap_or_default(),
-                creation_date: self.creation_date,
-                parts: self.parts,
-                marker: self.marker,
+                multipart_upload_id: self.multipart_upload_id
+                ,
+                vault_arn: self.vault_arn
+                ,
+                archive_description: self.archive_description
+                ,
+                part_size_in_bytes: self.part_size_in_bytes
+                    .unwrap_or_default()
+                ,
+                creation_date: self.creation_date
+                ,
+                parts: self.parts
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPartsOutput {
     /// Creates a new builder-style object to manufacture [`ListPartsOutput`](crate::output::ListPartsOutput).
@@ -670,7 +666,7 @@ impl ListPartsOutput {
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMultipartUploadsOutput {
+pub struct ListMultipartUploadsOutput  {
     /// <p>A list of in-progress multipart uploads.</p>
     #[doc(hidden)]
     pub uploads_list: std::option::Option<std::vec::Vec<crate::model::UploadListElement>>,
@@ -680,22 +676,21 @@ pub struct ListMultipartUploadsOutput {
 }
 impl ListMultipartUploadsOutput {
     /// <p>A list of in-progress multipart uploads.</p>
-    pub fn uploads_list(&self) -> std::option::Option<&[crate::model::UploadListElement]> {
+    pub fn uploads_list(&self) -> std::option::Option<& [crate::model::UploadListElement]> {
         self.uploads_list.as_deref()
     }
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput).
 pub mod list_multipart_uploads_output {
-
+    
     /// A builder for [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) uploads_list:
-            std::option::Option<std::vec::Vec<crate::model::UploadListElement>>,
+        pub(crate) uploads_list: std::option::Option<std::vec::Vec<crate::model::UploadListElement>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -706,17 +701,13 @@ pub mod list_multipart_uploads_output {
         /// <p>A list of in-progress multipart uploads.</p>
         pub fn uploads_list(mut self, input: crate::model::UploadListElement) -> Self {
             let mut v = self.uploads_list.unwrap_or_default();
-            v.push(input);
-            self.uploads_list = Some(v);
-            self
+                            v.push(input);
+                            self.uploads_list = Some(v);
+                            self
         }
         /// <p>A list of in-progress multipart uploads.</p>
-        pub fn set_uploads_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UploadListElement>>,
-        ) -> Self {
-            self.uploads_list = input;
-            self
+        pub fn set_uploads_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::UploadListElement>>) -> Self {
+            self.uploads_list = input; self
         }
         /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -725,17 +716,20 @@ pub mod list_multipart_uploads_output {
         }
         /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput).
         pub fn build(self) -> crate::output::ListMultipartUploadsOutput {
             crate::output::ListMultipartUploadsOutput {
-                uploads_list: self.uploads_list,
-                marker: self.marker,
+                uploads_list: self.uploads_list
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMultipartUploadsOutput {
     /// Creates a new builder-style object to manufacture [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput).
@@ -747,7 +741,7 @@ impl ListMultipartUploadsOutput {
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobsOutput {
+pub struct ListJobsOutput  {
     /// <p>A list of job objects. Each job object contains metadata describing the job.</p>
     #[doc(hidden)]
     pub job_list: std::option::Option<std::vec::Vec<crate::model::GlacierJobDescription>>,
@@ -757,22 +751,21 @@ pub struct ListJobsOutput {
 }
 impl ListJobsOutput {
     /// <p>A list of job objects. Each job object contains metadata describing the job.</p>
-    pub fn job_list(&self) -> std::option::Option<&[crate::model::GlacierJobDescription]> {
+    pub fn job_list(&self) -> std::option::Option<& [crate::model::GlacierJobDescription]> {
         self.job_list.as_deref()
     }
     /// <p> An opaque string used for pagination that specifies the job at which the listing of jobs should begin. You get the <code>marker</code> value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of the results started in a previous List Jobs request. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`ListJobsOutput`](crate::output::ListJobsOutput).
 pub mod list_jobs_output {
-
+    
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) job_list:
-            std::option::Option<std::vec::Vec<crate::model::GlacierJobDescription>>,
+        pub(crate) job_list: std::option::Option<std::vec::Vec<crate::model::GlacierJobDescription>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -783,17 +776,13 @@ pub mod list_jobs_output {
         /// <p>A list of job objects. Each job object contains metadata describing the job.</p>
         pub fn job_list(mut self, input: crate::model::GlacierJobDescription) -> Self {
             let mut v = self.job_list.unwrap_or_default();
-            v.push(input);
-            self.job_list = Some(v);
-            self
+                            v.push(input);
+                            self.job_list = Some(v);
+                            self
         }
         /// <p>A list of job objects. Each job object contains metadata describing the job.</p>
-        pub fn set_job_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GlacierJobDescription>>,
-        ) -> Self {
-            self.job_list = input;
-            self
+        pub fn set_job_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::GlacierJobDescription>>) -> Self {
+            self.job_list = input; self
         }
         /// <p> An opaque string used for pagination that specifies the job at which the listing of jobs should begin. You get the <code>marker</code> value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of the results started in a previous List Jobs request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -802,17 +791,20 @@ pub mod list_jobs_output {
         }
         /// <p> An opaque string used for pagination that specifies the job at which the listing of jobs should begin. You get the <code>marker</code> value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of the results started in a previous List Jobs request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`ListJobsOutput`](crate::output::ListJobsOutput).
         pub fn build(self) -> crate::output::ListJobsOutput {
             crate::output::ListJobsOutput {
-                job_list: self.job_list,
-                marker: self.marker,
+                job_list: self.job_list
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListJobsOutput`](crate::output::ListJobsOutput).
@@ -824,20 +816,20 @@ impl ListJobsOutput {
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InitiateVaultLockOutput {
+pub struct InitiateVaultLockOutput  {
     /// <p>The lock ID, which is used to complete the vault locking process.</p>
     #[doc(hidden)]
     pub lock_id: std::option::Option<std::string::String>,
 }
 impl InitiateVaultLockOutput {
     /// <p>The lock ID, which is used to complete the vault locking process.</p>
-    pub fn lock_id(&self) -> std::option::Option<&str> {
+    pub fn lock_id(&self) -> std::option::Option<& str> {
         self.lock_id.as_deref()
     }
 }
 /// See [`InitiateVaultLockOutput`](crate::output::InitiateVaultLockOutput).
 pub mod initiate_vault_lock_output {
-
+    
     /// A builder for [`InitiateVaultLockOutput`](crate::output::InitiateVaultLockOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -851,16 +843,18 @@ pub mod initiate_vault_lock_output {
         }
         /// <p>The lock ID, which is used to complete the vault locking process.</p>
         pub fn set_lock_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lock_id = input;
-            self
+            self.lock_id = input; self
         }
         /// Consumes the builder and constructs a [`InitiateVaultLockOutput`](crate::output::InitiateVaultLockOutput).
         pub fn build(self) -> crate::output::InitiateVaultLockOutput {
             crate::output::InitiateVaultLockOutput {
-                lock_id: self.lock_id,
+                lock_id: self.lock_id
+                ,
             }
         }
     }
+    
+    
 }
 impl InitiateVaultLockOutput {
     /// Creates a new builder-style object to manufacture [`InitiateVaultLockOutput`](crate::output::InitiateVaultLockOutput).
@@ -872,7 +866,7 @@ impl InitiateVaultLockOutput {
 /// <p>The Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InitiateMultipartUploadOutput {
+pub struct InitiateMultipartUploadOutput  {
     /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
@@ -882,17 +876,17 @@ pub struct InitiateMultipartUploadOutput {
 }
 impl InitiateMultipartUploadOutput {
     /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
-    pub fn upload_id(&self) -> std::option::Option<&str> {
+    pub fn upload_id(&self) -> std::option::Option<& str> {
         self.upload_id.as_deref()
     }
 }
 /// See [`InitiateMultipartUploadOutput`](crate::output::InitiateMultipartUploadOutput).
 pub mod initiate_multipart_upload_output {
-
+    
     /// A builder for [`InitiateMultipartUploadOutput`](crate::output::InitiateMultipartUploadOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -907,8 +901,7 @@ pub mod initiate_multipart_upload_output {
         }
         /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -917,17 +910,20 @@ pub mod initiate_multipart_upload_output {
         }
         /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = input;
-            self
+            self.upload_id = input; self
         }
         /// Consumes the builder and constructs a [`InitiateMultipartUploadOutput`](crate::output::InitiateMultipartUploadOutput).
         pub fn build(self) -> crate::output::InitiateMultipartUploadOutput {
             crate::output::InitiateMultipartUploadOutput {
-                location: self.location,
-                upload_id: self.upload_id,
+                location: self.location
+                ,
+                upload_id: self.upload_id
+                ,
             }
         }
     }
+    
+    
 }
 impl InitiateMultipartUploadOutput {
     /// Creates a new builder-style object to manufacture [`InitiateMultipartUploadOutput`](crate::output::InitiateMultipartUploadOutput).
@@ -939,7 +935,7 @@ impl InitiateMultipartUploadOutput {
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InitiateJobOutput {
+pub struct InitiateJobOutput  {
     /// <p>The relative URI path of the job.</p>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
@@ -952,21 +948,21 @@ pub struct InitiateJobOutput {
 }
 impl InitiateJobOutput {
     /// <p>The relative URI path of the job.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The ID of the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The path to the location of where the select results are stored.</p>
-    pub fn job_output_path(&self) -> std::option::Option<&str> {
+    pub fn job_output_path(&self) -> std::option::Option<& str> {
         self.job_output_path.as_deref()
     }
 }
 /// See [`InitiateJobOutput`](crate::output::InitiateJobOutput).
 pub mod initiate_job_output {
-
+    
     /// A builder for [`InitiateJobOutput`](crate::output::InitiateJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -982,8 +978,7 @@ pub mod initiate_job_output {
         }
         /// <p>The relative URI path of the job.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The ID of the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -992,8 +987,7 @@ pub mod initiate_job_output {
         }
         /// <p>The ID of the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The path to the location of where the select results are stored.</p>
         pub fn job_output_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1001,22 +995,23 @@ pub mod initiate_job_output {
             self
         }
         /// <p>The path to the location of where the select results are stored.</p>
-        pub fn set_job_output_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.job_output_path = input;
-            self
+        pub fn set_job_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_output_path = input; self
         }
         /// Consumes the builder and constructs a [`InitiateJobOutput`](crate::output::InitiateJobOutput).
         pub fn build(self) -> crate::output::InitiateJobOutput {
             crate::output::InitiateJobOutput {
-                location: self.location,
-                job_id: self.job_id,
-                job_output_path: self.job_output_path,
+                location: self.location
+                ,
+                job_id: self.job_id
+                ,
+                job_output_path: self.job_output_path
+                ,
             }
         }
     }
+    
+    
 }
 impl InitiateJobOutput {
     /// Creates a new builder-style object to manufacture [`InitiateJobOutput`](crate::output::InitiateJobOutput).
@@ -1028,52 +1023,45 @@ impl InitiateJobOutput {
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVaultNotificationsOutput {
+pub struct GetVaultNotificationsOutput  {
     /// <p>Returns the notification configuration set on the vault.</p>
     #[doc(hidden)]
     pub vault_notification_config: std::option::Option<crate::model::VaultNotificationConfig>,
 }
 impl GetVaultNotificationsOutput {
     /// <p>Returns the notification configuration set on the vault.</p>
-    pub fn vault_notification_config(
-        &self,
-    ) -> std::option::Option<&crate::model::VaultNotificationConfig> {
+    pub fn vault_notification_config(&self) -> std::option::Option<& crate::model::VaultNotificationConfig> {
         self.vault_notification_config.as_ref()
     }
 }
 /// See [`GetVaultNotificationsOutput`](crate::output::GetVaultNotificationsOutput).
 pub mod get_vault_notifications_output {
-
+    
     /// A builder for [`GetVaultNotificationsOutput`](crate::output::GetVaultNotificationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) vault_notification_config:
-            std::option::Option<crate::model::VaultNotificationConfig>,
+        pub(crate) vault_notification_config: std::option::Option<crate::model::VaultNotificationConfig>,
     }
     impl Builder {
         /// <p>Returns the notification configuration set on the vault.</p>
-        pub fn vault_notification_config(
-            mut self,
-            input: crate::model::VaultNotificationConfig,
-        ) -> Self {
+        pub fn vault_notification_config(mut self, input: crate::model::VaultNotificationConfig) -> Self {
             self.vault_notification_config = Some(input);
             self
         }
         /// <p>Returns the notification configuration set on the vault.</p>
-        pub fn set_vault_notification_config(
-            mut self,
-            input: std::option::Option<crate::model::VaultNotificationConfig>,
-        ) -> Self {
-            self.vault_notification_config = input;
-            self
+        pub fn set_vault_notification_config(mut self, input: std::option::Option<crate::model::VaultNotificationConfig>) -> Self {
+            self.vault_notification_config = input; self
         }
         /// Consumes the builder and constructs a [`GetVaultNotificationsOutput`](crate::output::GetVaultNotificationsOutput).
         pub fn build(self) -> crate::output::GetVaultNotificationsOutput {
             crate::output::GetVaultNotificationsOutput {
-                vault_notification_config: self.vault_notification_config,
+                vault_notification_config: self.vault_notification_config
+                ,
             }
         }
     }
+    
+    
 }
 impl GetVaultNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`GetVaultNotificationsOutput`](crate::output::GetVaultNotificationsOutput).
@@ -1085,7 +1073,7 @@ impl GetVaultNotificationsOutput {
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVaultLockOutput {
+pub struct GetVaultLockOutput  {
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
@@ -1101,25 +1089,25 @@ pub struct GetVaultLockOutput {
 }
 impl GetVaultLockOutput {
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
-    pub fn expiration_date(&self) -> std::option::Option<&str> {
+    pub fn expiration_date(&self) -> std::option::Option<& str> {
         self.expiration_date.as_deref()
     }
     /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
-    pub fn creation_date(&self) -> std::option::Option<&str> {
+    pub fn creation_date(&self) -> std::option::Option<& str> {
         self.creation_date.as_deref()
     }
 }
 /// See [`GetVaultLockOutput`](crate::output::GetVaultLockOutput).
 pub mod get_vault_lock_output {
-
+    
     /// A builder for [`GetVaultLockOutput`](crate::output::GetVaultLockOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1136,8 +1124,7 @@ pub mod get_vault_lock_output {
         }
         /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1146,8 +1133,7 @@ pub mod get_vault_lock_output {
         }
         /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
         pub fn expiration_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1155,12 +1141,8 @@ pub mod get_vault_lock_output {
             self
         }
         /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
-        pub fn set_expiration_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.expiration_date = input;
-            self
+        pub fn set_expiration_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expiration_date = input; self
         }
         /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
         pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1168,23 +1150,25 @@ pub mod get_vault_lock_output {
             self
         }
         /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date = input; self
         }
         /// Consumes the builder and constructs a [`GetVaultLockOutput`](crate::output::GetVaultLockOutput).
         pub fn build(self) -> crate::output::GetVaultLockOutput {
             crate::output::GetVaultLockOutput {
-                policy: self.policy,
-                state: self.state,
-                expiration_date: self.expiration_date,
-                creation_date: self.creation_date,
+                policy: self.policy
+                ,
+                state: self.state
+                ,
+                expiration_date: self.expiration_date
+                ,
+                creation_date: self.creation_date
+                ,
             }
         }
     }
+    
+    
 }
 impl GetVaultLockOutput {
     /// Creates a new builder-style object to manufacture [`GetVaultLockOutput`](crate::output::GetVaultLockOutput).
@@ -1196,20 +1180,20 @@ impl GetVaultLockOutput {
 /// <p>Output for GetVaultAccessPolicy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVaultAccessPolicyOutput {
+pub struct GetVaultAccessPolicyOutput  {
     /// <p>Contains the returned vault access policy as a JSON string.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::VaultAccessPolicy>,
 }
 impl GetVaultAccessPolicyOutput {
     /// <p>Contains the returned vault access policy as a JSON string.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::model::VaultAccessPolicy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::VaultAccessPolicy> {
         self.policy.as_ref()
     }
 }
 /// See [`GetVaultAccessPolicyOutput`](crate::output::GetVaultAccessPolicyOutput).
 pub mod get_vault_access_policy_output {
-
+    
     /// A builder for [`GetVaultAccessPolicyOutput`](crate::output::GetVaultAccessPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1222,20 +1206,19 @@ pub mod get_vault_access_policy_output {
             self
         }
         /// <p>Contains the returned vault access policy as a JSON string.</p>
-        pub fn set_policy(
-            mut self,
-            input: std::option::Option<crate::model::VaultAccessPolicy>,
-        ) -> Self {
-            self.policy = input;
-            self
+        pub fn set_policy(mut self, input: std::option::Option<crate::model::VaultAccessPolicy>) -> Self {
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GetVaultAccessPolicyOutput`](crate::output::GetVaultAccessPolicyOutput).
         pub fn build(self) -> crate::output::GetVaultAccessPolicyOutput {
             crate::output::GetVaultAccessPolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetVaultAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetVaultAccessPolicyOutput`](crate::output::GetVaultAccessPolicyOutput).
@@ -1247,14 +1230,14 @@ impl GetVaultAccessPolicyOutput {
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct GetJobOutputOutput {
+pub struct GetJobOutputOutput  {
     /// <p>The job data, either archive data or inventory data.</p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
-    /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
-    /// <ul>
-    /// <li> <p>You get the entire range of the archive.</p> </li>
-    /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
-    /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
+    /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p> 
+    /// <ul> 
+    /// <li> <p>You get the entire range of the archive.</p> </li> 
+    /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li> 
+    /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
@@ -1276,16 +1259,16 @@ pub struct GetJobOutputOutput {
 }
 impl GetJobOutputOutput {
     /// <p>The job data, either archive data or inventory data.</p>
-    pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> & aws_smithy_http::byte_stream::ByteStream {
         &self.body
     }
-    /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
-    /// <ul>
-    /// <li> <p>You get the entire range of the archive.</p> </li>
-    /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
-    /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
+    /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p> 
+    /// <ul> 
+    /// <li> <p>You get the entire range of the archive.</p> </li> 
+    /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li> 
+    /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li> 
     /// </ul>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The HTTP response code for a job output request. The value depends on whether a range was specified in the request.</p>
@@ -1293,25 +1276,25 @@ impl GetJobOutputOutput {
         self.status
     }
     /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
-    pub fn content_range(&self) -> std::option::Option<&str> {
+    pub fn content_range(&self) -> std::option::Option<& str> {
         self.content_range.as_deref()
     }
     /// <p>Indicates the range units accepted. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
-    pub fn accept_ranges(&self) -> std::option::Option<&str> {
+    pub fn accept_ranges(&self) -> std::option::Option<& str> {
         self.accept_ranges.as_deref()
     }
     /// <p>The Content-Type depends on whether the job output is an archive or a vault inventory. For archive data, the Content-Type is application/octet-stream. For vault inventory, if you requested CSV format when you initiated the job, the Content-Type is text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type is application/json.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The description of an archive.</p>
-    pub fn archive_description(&self) -> std::option::Option<&str> {
+    pub fn archive_description(&self) -> std::option::Option<& str> {
         self.archive_description.as_deref()
     }
 }
 /// See [`GetJobOutputOutput`](crate::output::GetJobOutputOutput).
 pub mod get_job_output_output {
-
+    
     /// A builder for [`GetJobOutputOutput`](crate::output::GetJobOutputOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1330,32 +1313,27 @@ pub mod get_job_output_output {
             self
         }
         /// <p>The job data, either archive data or inventory data.</p>
-        pub fn set_body(
-            mut self,
-            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-        ) -> Self {
-            self.body = input;
-            self
+        pub fn set_body(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
+            self.body = input; self
         }
-        /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
-        /// <ul>
-        /// <li> <p>You get the entire range of the archive.</p> </li>
-        /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
-        /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
+        /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p> 
+        /// <ul> 
+        /// <li> <p>You get the entire range of the archive.</p> </li> 
+        /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li> 
+        /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li> 
         /// </ul>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
             self.checksum = Some(input.into());
             self
         }
-        /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
-        /// <ul>
-        /// <li> <p>You get the entire range of the archive.</p> </li>
-        /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
-        /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
+        /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p> 
+        /// <ul> 
+        /// <li> <p>You get the entire range of the archive.</p> </li> 
+        /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li> 
+        /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li> 
         /// </ul>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p>The HTTP response code for a job output request. The value depends on whether a range was specified in the request.</p>
         pub fn status(mut self, input: i32) -> Self {
@@ -1364,8 +1342,7 @@ pub mod get_job_output_output {
         }
         /// <p>The HTTP response code for a job output request. The value depends on whether a range was specified in the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
         pub fn content_range(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1373,12 +1350,8 @@ pub mod get_job_output_output {
             self
         }
         /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
-        pub fn set_content_range(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.content_range = input;
-            self
+        pub fn set_content_range(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_range = input; self
         }
         /// <p>Indicates the range units accepted. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
         pub fn accept_ranges(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1386,12 +1359,8 @@ pub mod get_job_output_output {
             self
         }
         /// <p>Indicates the range units accepted. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
-        pub fn set_accept_ranges(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.accept_ranges = input;
-            self
+        pub fn set_accept_ranges(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.accept_ranges = input; self
         }
         /// <p>The Content-Type depends on whether the job output is an archive or a vault inventory. For archive data, the Content-Type is application/octet-stream. For vault inventory, if you requested CSV format when you initiated the job, the Content-Type is text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type is application/json.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1400,8 +1369,7 @@ pub mod get_job_output_output {
         }
         /// <p>The Content-Type depends on whether the job output is an archive or a vault inventory. For archive data, the Content-Type is application/octet-stream. For vault inventory, if you requested CSV format when you initiated the job, the Content-Type is text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type is application/json.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// <p>The description of an archive.</p>
         pub fn archive_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1409,26 +1377,33 @@ pub mod get_job_output_output {
             self
         }
         /// <p>The description of an archive.</p>
-        pub fn set_archive_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.archive_description = input;
-            self
+        pub fn set_archive_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.archive_description = input; self
         }
         /// Consumes the builder and constructs a [`GetJobOutputOutput`](crate::output::GetJobOutputOutput).
         pub fn build(self) -> crate::output::GetJobOutputOutput {
             crate::output::GetJobOutputOutput {
-                body: self.body.unwrap_or_default(),
-                checksum: self.checksum,
-                status: self.status.unwrap_or_default(),
-                content_range: self.content_range,
-                accept_ranges: self.accept_ranges,
-                content_type: self.content_type,
-                archive_description: self.archive_description,
+                body: self.body
+                    .unwrap_or_default()
+                ,
+                checksum: self.checksum
+                ,
+                status: self.status
+                    .unwrap_or_default()
+                ,
+                content_range: self.content_range
+                ,
+                accept_ranges: self.accept_ranges
+                ,
+                content_type: self.content_type
+                ,
+                archive_description: self.archive_description
+                ,
             }
         }
     }
+    
+    
 }
 impl GetJobOutputOutput {
     /// Creates a new builder-style object to manufacture [`GetJobOutputOutput`](crate::output::GetJobOutputOutput).
@@ -1440,20 +1415,20 @@ impl GetJobOutputOutput {
 /// <p>Contains the Amazon S3 Glacier response to the <code>GetDataRetrievalPolicy</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataRetrievalPolicyOutput {
+pub struct GetDataRetrievalPolicyOutput  {
     /// <p>Contains the returned data retrieval policy in JSON format.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::DataRetrievalPolicy>,
 }
 impl GetDataRetrievalPolicyOutput {
     /// <p>Contains the returned data retrieval policy in JSON format.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::model::DataRetrievalPolicy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::DataRetrievalPolicy> {
         self.policy.as_ref()
     }
 }
 /// See [`GetDataRetrievalPolicyOutput`](crate::output::GetDataRetrievalPolicyOutput).
 pub mod get_data_retrieval_policy_output {
-
+    
     /// A builder for [`GetDataRetrievalPolicyOutput`](crate::output::GetDataRetrievalPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1466,20 +1441,19 @@ pub mod get_data_retrieval_policy_output {
             self
         }
         /// <p>Contains the returned data retrieval policy in JSON format.</p>
-        pub fn set_policy(
-            mut self,
-            input: std::option::Option<crate::model::DataRetrievalPolicy>,
-        ) -> Self {
-            self.policy = input;
-            self
+        pub fn set_policy(mut self, input: std::option::Option<crate::model::DataRetrievalPolicy>) -> Self {
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GetDataRetrievalPolicyOutput`](crate::output::GetDataRetrievalPolicyOutput).
         pub fn build(self) -> crate::output::GetDataRetrievalPolicyOutput {
             crate::output::GetDataRetrievalPolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDataRetrievalPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetDataRetrievalPolicyOutput`](crate::output::GetDataRetrievalPolicyOutput).
@@ -1491,7 +1465,7 @@ impl GetDataRetrievalPolicyOutput {
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVaultOutput {
+pub struct DescribeVaultOutput  {
     /// <p>The Amazon Resource Name (ARN) of the vault.</p>
     #[doc(hidden)]
     pub vault_arn: std::option::Option<std::string::String>,
@@ -1513,19 +1487,19 @@ pub struct DescribeVaultOutput {
 }
 impl DescribeVaultOutput {
     /// <p>The Amazon Resource Name (ARN) of the vault.</p>
-    pub fn vault_arn(&self) -> std::option::Option<&str> {
+    pub fn vault_arn(&self) -> std::option::Option<& str> {
         self.vault_arn.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<&str> {
+    pub fn vault_name(&self) -> std::option::Option<& str> {
         self.vault_name.as_deref()
     }
     /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
-    pub fn creation_date(&self) -> std::option::Option<&str> {
+    pub fn creation_date(&self) -> std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
-    pub fn last_inventory_date(&self) -> std::option::Option<&str> {
+    pub fn last_inventory_date(&self) -> std::option::Option<& str> {
         self.last_inventory_date.as_deref()
     }
     /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
@@ -1539,7 +1513,7 @@ impl DescribeVaultOutput {
 }
 /// See [`DescribeVaultOutput`](crate::output::DescribeVaultOutput).
 pub mod describe_vault_output {
-
+    
     /// A builder for [`DescribeVaultOutput`](crate::output::DescribeVaultOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1558,8 +1532,7 @@ pub mod describe_vault_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the vault.</p>
         pub fn set_vault_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_arn = input;
-            self
+            self.vault_arn = input; self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1568,8 +1541,7 @@ pub mod describe_vault_output {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input;
-            self
+            self.vault_name = input; self
         }
         /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
         pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1577,12 +1549,8 @@ pub mod describe_vault_output {
             self
         }
         /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
         pub fn last_inventory_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1590,12 +1558,8 @@ pub mod describe_vault_output {
             self
         }
         /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
-        pub fn set_last_inventory_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_inventory_date = input;
-            self
+        pub fn set_last_inventory_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_inventory_date = input; self
         }
         /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
         pub fn number_of_archives(mut self, input: i64) -> Self {
@@ -1604,8 +1568,7 @@ pub mod describe_vault_output {
         }
         /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
         pub fn set_number_of_archives(mut self, input: std::option::Option<i64>) -> Self {
-            self.number_of_archives = input;
-            self
+            self.number_of_archives = input; self
         }
         /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example if you just created the vault.</p>
         pub fn size_in_bytes(mut self, input: i64) -> Self {
@@ -1614,21 +1577,30 @@ pub mod describe_vault_output {
         }
         /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example if you just created the vault.</p>
         pub fn set_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.size_in_bytes = input;
-            self
+            self.size_in_bytes = input; self
         }
         /// Consumes the builder and constructs a [`DescribeVaultOutput`](crate::output::DescribeVaultOutput).
         pub fn build(self) -> crate::output::DescribeVaultOutput {
             crate::output::DescribeVaultOutput {
-                vault_arn: self.vault_arn,
-                vault_name: self.vault_name,
-                creation_date: self.creation_date,
-                last_inventory_date: self.last_inventory_date,
-                number_of_archives: self.number_of_archives.unwrap_or_default(),
-                size_in_bytes: self.size_in_bytes.unwrap_or_default(),
+                vault_arn: self.vault_arn
+                ,
+                vault_name: self.vault_name
+                ,
+                creation_date: self.creation_date
+                ,
+                last_inventory_date: self.last_inventory_date
+                ,
+                number_of_archives: self.number_of_archives
+                    .unwrap_or_default()
+                ,
+                size_in_bytes: self.size_in_bytes
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeVaultOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVaultOutput`](crate::output::DescribeVaultOutput).
@@ -1640,7 +1612,7 @@ impl DescribeVaultOutput {
 /// <p>Contains the description of an Amazon S3 Glacier job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobOutput {
+pub struct DescribeJobOutput  {
     /// <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -1680,19 +1652,19 @@ pub struct DescribeJobOutput {
     /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
     #[doc(hidden)]
     pub completion_date: std::option::Option<std::string::String>,
-    /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p>
-    /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p>
-    /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
-    /// <p>This field is null for the following:</p>
-    /// <ul>
-    /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>Inventory jobs</p> </li>
-    /// <li> <p>Select jobs</p> </li>
+    /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p> 
+    /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p> 
+    /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p> 
+    /// <p>This field is null for the following:</p> 
+    /// <ul> 
+    /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Inventory jobs</p> </li> 
+    /// <li> <p>Select jobs</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub sha256_tree_hash: std::option::Option<std::string::String>,
@@ -1707,8 +1679,7 @@ pub struct DescribeJobOutput {
     pub tier: std::option::Option<std::string::String>,
     /// <p>Parameters used for range inventory retrieval.</p>
     #[doc(hidden)]
-    pub inventory_retrieval_parameters:
-        std::option::Option<crate::model::InventoryRetrievalJobDescription>,
+    pub inventory_retrieval_parameters: std::option::Option<crate::model::InventoryRetrievalJobDescription>,
     /// <p>Contains the job output location.</p>
     #[doc(hidden)]
     pub job_output_path: std::option::Option<std::string::String>,
@@ -1721,27 +1692,27 @@ pub struct DescribeJobOutput {
 }
 impl DescribeJobOutput {
     /// <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The job description provided when initiating the job.</p>
-    pub fn job_description(&self) -> std::option::Option<&str> {
+    pub fn job_description(&self) -> std::option::Option<& str> {
         self.job_description.as_deref()
     }
     /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
-    pub fn action(&self) -> std::option::Option<&crate::model::ActionCode> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ActionCode> {
         self.action.as_ref()
     }
     /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.</p>
-    pub fn archive_id(&self) -> std::option::Option<&str> {
+    pub fn archive_id(&self) -> std::option::Option<& str> {
         self.archive_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.</p>
-    pub fn vault_arn(&self) -> std::option::Option<&str> {
+    pub fn vault_arn(&self) -> std::option::Option<& str> {
         self.vault_arn.as_deref()
     }
     /// <p>The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
-    pub fn creation_date(&self) -> std::option::Option<&str> {
+    pub fn creation_date(&self) -> std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>The job status. When a job is completed, you get the job's output using Get Job Output (GET output).</p>
@@ -1749,11 +1720,11 @@ impl DescribeJobOutput {
         self.completed
     }
     /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the status of the job.</p>
-    pub fn status_code(&self) -> std::option::Option<&crate::model::StatusCode> {
+    pub fn status_code(&self) -> std::option::Option<& crate::model::StatusCode> {
         self.status_code.as_ref()
     }
     /// <p>A friendly message that describes the job status.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an inventory retrieval or select job, this value is null.</p>
@@ -1765,64 +1736,62 @@ impl DescribeJobOutput {
         self.inventory_size_in_bytes
     }
     /// <p>An Amazon SNS topic that receives notification.</p>
-    pub fn sns_topic(&self) -> std::option::Option<&str> {
+    pub fn sns_topic(&self) -> std::option::Option<& str> {
         self.sns_topic.as_deref()
     }
     /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
-    pub fn completion_date(&self) -> std::option::Option<&str> {
+    pub fn completion_date(&self) -> std::option::Option<& str> {
         self.completion_date.as_deref()
     }
-    /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p>
-    /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p>
-    /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
-    /// <p>This field is null for the following:</p>
-    /// <ul>
-    /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
+    /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p> 
+    /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p> 
+    /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p> 
+    /// <p>This field is null for the following:</p> 
+    /// <ul> 
+    /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Inventory jobs</p> </li> 
+    /// <li> <p>Select jobs</p> </li> 
     /// </ul>
-    /// <ul>
-    /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>Inventory jobs</p> </li>
-    /// <li> <p>Select jobs</p> </li>
-    /// </ul>
-    pub fn sha256_tree_hash(&self) -> std::option::Option<&str> {
+    pub fn sha256_tree_hash(&self) -> std::option::Option<& str> {
         self.sha256_tree_hash.as_deref()
     }
     /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
-    pub fn archive_sha256_tree_hash(&self) -> std::option::Option<&str> {
+    pub fn archive_sha256_tree_hash(&self) -> std::option::Option<& str> {
         self.archive_sha256_tree_hash.as_deref()
     }
     /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
-    pub fn retrieval_byte_range(&self) -> std::option::Option<&str> {
+    pub fn retrieval_byte_range(&self) -> std::option::Option<& str> {
         self.retrieval_byte_range.as_deref()
     }
     /// <p>The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
-    pub fn tier(&self) -> std::option::Option<&str> {
+    pub fn tier(&self) -> std::option::Option<& str> {
         self.tier.as_deref()
     }
     /// <p>Parameters used for range inventory retrieval.</p>
-    pub fn inventory_retrieval_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::InventoryRetrievalJobDescription> {
+    pub fn inventory_retrieval_parameters(&self) -> std::option::Option<& crate::model::InventoryRetrievalJobDescription> {
         self.inventory_retrieval_parameters.as_ref()
     }
     /// <p>Contains the job output location.</p>
-    pub fn job_output_path(&self) -> std::option::Option<&str> {
+    pub fn job_output_path(&self) -> std::option::Option<& str> {
         self.job_output_path.as_deref()
     }
     /// <p>Contains the parameters used for a select.</p>
-    pub fn select_parameters(&self) -> std::option::Option<&crate::model::SelectParameters> {
+    pub fn select_parameters(&self) -> std::option::Option<& crate::model::SelectParameters> {
         self.select_parameters.as_ref()
     }
     /// <p>Contains the location where the data from the select job is stored.</p>
-    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
+    pub fn output_location(&self) -> std::option::Option<& crate::model::OutputLocation> {
         self.output_location.as_ref()
     }
 }
 /// See [`DescribeJobOutput`](crate::output::DescribeJobOutput).
 pub mod describe_job_output {
-
+    
     /// A builder for [`DescribeJobOutput`](crate::output::DescribeJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1843,8 +1812,7 @@ pub mod describe_job_output {
         pub(crate) archive_sha256_tree_hash: std::option::Option<std::string::String>,
         pub(crate) retrieval_byte_range: std::option::Option<std::string::String>,
         pub(crate) tier: std::option::Option<std::string::String>,
-        pub(crate) inventory_retrieval_parameters:
-            std::option::Option<crate::model::InventoryRetrievalJobDescription>,
+        pub(crate) inventory_retrieval_parameters: std::option::Option<crate::model::InventoryRetrievalJobDescription>,
         pub(crate) job_output_path: std::option::Option<std::string::String>,
         pub(crate) select_parameters: std::option::Option<crate::model::SelectParameters>,
         pub(crate) output_location: std::option::Option<crate::model::OutputLocation>,
@@ -1857,8 +1825,7 @@ pub mod describe_job_output {
         }
         /// <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The job description provided when initiating the job.</p>
         pub fn job_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1866,12 +1833,8 @@ pub mod describe_job_output {
             self
         }
         /// <p>The job description provided when initiating the job.</p>
-        pub fn set_job_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.job_description = input;
-            self
+        pub fn set_job_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_description = input; self
         }
         /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
         pub fn action(mut self, input: crate::model::ActionCode) -> Self {
@@ -1880,8 +1843,7 @@ pub mod describe_job_output {
         }
         /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::ActionCode>) -> Self {
-            self.action = input;
-            self
+            self.action = input; self
         }
         /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.</p>
         pub fn archive_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1890,8 +1852,7 @@ pub mod describe_job_output {
         }
         /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.</p>
         pub fn set_archive_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.archive_id = input;
-            self
+            self.archive_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.</p>
         pub fn vault_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1900,8 +1861,7 @@ pub mod describe_job_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.</p>
         pub fn set_vault_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_arn = input;
-            self
+            self.vault_arn = input; self
         }
         /// <p>The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
         pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1909,12 +1869,8 @@ pub mod describe_job_output {
             self
         }
         /// <p>The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The job status. When a job is completed, you get the job's output using Get Job Output (GET output).</p>
         pub fn completed(mut self, input: bool) -> Self {
@@ -1923,8 +1879,7 @@ pub mod describe_job_output {
         }
         /// <p>The job status. When a job is completed, you get the job's output using Get Job Output (GET output).</p>
         pub fn set_completed(mut self, input: std::option::Option<bool>) -> Self {
-            self.completed = input;
-            self
+            self.completed = input; self
         }
         /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the status of the job.</p>
         pub fn status_code(mut self, input: crate::model::StatusCode) -> Self {
@@ -1932,12 +1887,8 @@ pub mod describe_job_output {
             self
         }
         /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the status of the job.</p>
-        pub fn set_status_code(
-            mut self,
-            input: std::option::Option<crate::model::StatusCode>,
-        ) -> Self {
-            self.status_code = input;
-            self
+        pub fn set_status_code(mut self, input: std::option::Option<crate::model::StatusCode>) -> Self {
+            self.status_code = input; self
         }
         /// <p>A friendly message that describes the job status.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1945,12 +1896,8 @@ pub mod describe_job_output {
             self
         }
         /// <p>A friendly message that describes the job status.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an inventory retrieval or select job, this value is null.</p>
         pub fn archive_size_in_bytes(mut self, input: i64) -> Self {
@@ -1959,8 +1906,7 @@ pub mod describe_job_output {
         }
         /// <p>For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an inventory retrieval or select job, this value is null.</p>
         pub fn set_archive_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.archive_size_in_bytes = input;
-            self
+            self.archive_size_in_bytes = input; self
         }
         /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an archive retrieval or select job, this value is null.</p>
         pub fn inventory_size_in_bytes(mut self, input: i64) -> Self {
@@ -1969,8 +1915,7 @@ pub mod describe_job_output {
         }
         /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an archive retrieval or select job, this value is null.</p>
         pub fn set_inventory_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.inventory_size_in_bytes = input;
-            self
+            self.inventory_size_in_bytes = input; self
         }
         /// <p>An Amazon SNS topic that receives notification.</p>
         pub fn sns_topic(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1979,8 +1924,7 @@ pub mod describe_job_output {
         }
         /// <p>An Amazon SNS topic that receives notification.</p>
         pub fn set_sns_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sns_topic = input;
-            self
+            self.sns_topic = input; self
         }
         /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
         pub fn completion_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1988,51 +1932,43 @@ pub mod describe_job_output {
             self
         }
         /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
-        pub fn set_completion_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.completion_date = input;
-            self
+        pub fn set_completion_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.completion_date = input; self
         }
-        /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p>
-        /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p>
-        /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
-        /// <p>This field is null for the following:</p>
-        /// <ul>
-        /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
-        /// </ul>
-        /// <ul>
-        /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
-        /// </ul>
-        /// <ul>
-        /// <li> <p>Inventory jobs</p> </li>
-        /// <li> <p>Select jobs</p> </li>
+        /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p> 
+        /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p> 
+        /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p> 
+        /// <p>This field is null for the following:</p> 
+        /// <ul> 
+        /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li> 
+        /// </ul> 
+        /// <ul> 
+        /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li> 
+        /// </ul> 
+        /// <ul> 
+        /// <li> <p>Inventory jobs</p> </li> 
+        /// <li> <p>Select jobs</p> </li> 
         /// </ul>
         pub fn sha256_tree_hash(mut self, input: impl Into<std::string::String>) -> Self {
             self.sha256_tree_hash = Some(input.into());
             self
         }
-        /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p>
-        /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p>
-        /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
-        /// <p>This field is null for the following:</p>
-        /// <ul>
-        /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
+        /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p> 
+        /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p> 
+        /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p> 
+        /// <p>This field is null for the following:</p> 
+        /// <ul> 
+        /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li> 
+        /// </ul> 
+        /// <ul> 
+        /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li> 
+        /// </ul> 
+        /// <ul> 
+        /// <li> <p>Inventory jobs</p> </li> 
+        /// <li> <p>Select jobs</p> </li> 
         /// </ul>
-        /// <ul>
-        /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
-        /// </ul>
-        /// <ul>
-        /// <li> <p>Inventory jobs</p> </li>
-        /// <li> <p>Select jobs</p> </li>
-        /// </ul>
-        pub fn set_sha256_tree_hash(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sha256_tree_hash = input;
-            self
+        pub fn set_sha256_tree_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sha256_tree_hash = input; self
         }
         /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
         pub fn archive_sha256_tree_hash(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2040,12 +1976,8 @@ pub mod describe_job_output {
             self
         }
         /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
-        pub fn set_archive_sha256_tree_hash(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.archive_sha256_tree_hash = input;
-            self
+        pub fn set_archive_sha256_tree_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.archive_sha256_tree_hash = input; self
         }
         /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
         pub fn retrieval_byte_range(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2053,12 +1985,8 @@ pub mod describe_job_output {
             self
         }
         /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
-        pub fn set_retrieval_byte_range(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.retrieval_byte_range = input;
-            self
+        pub fn set_retrieval_byte_range(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.retrieval_byte_range = input; self
         }
         /// <p>The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
         pub fn tier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2067,24 +1995,16 @@ pub mod describe_job_output {
         }
         /// <p>The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
         pub fn set_tier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tier = input;
-            self
+            self.tier = input; self
         }
         /// <p>Parameters used for range inventory retrieval.</p>
-        pub fn inventory_retrieval_parameters(
-            mut self,
-            input: crate::model::InventoryRetrievalJobDescription,
-        ) -> Self {
+        pub fn inventory_retrieval_parameters(mut self, input: crate::model::InventoryRetrievalJobDescription) -> Self {
             self.inventory_retrieval_parameters = Some(input);
             self
         }
         /// <p>Parameters used for range inventory retrieval.</p>
-        pub fn set_inventory_retrieval_parameters(
-            mut self,
-            input: std::option::Option<crate::model::InventoryRetrievalJobDescription>,
-        ) -> Self {
-            self.inventory_retrieval_parameters = input;
-            self
+        pub fn set_inventory_retrieval_parameters(mut self, input: std::option::Option<crate::model::InventoryRetrievalJobDescription>) -> Self {
+            self.inventory_retrieval_parameters = input; self
         }
         /// <p>Contains the job output location.</p>
         pub fn job_output_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2092,12 +2012,8 @@ pub mod describe_job_output {
             self
         }
         /// <p>Contains the job output location.</p>
-        pub fn set_job_output_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.job_output_path = input;
-            self
+        pub fn set_job_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_output_path = input; self
         }
         /// <p>Contains the parameters used for a select.</p>
         pub fn select_parameters(mut self, input: crate::model::SelectParameters) -> Self {
@@ -2105,12 +2021,8 @@ pub mod describe_job_output {
             self
         }
         /// <p>Contains the parameters used for a select.</p>
-        pub fn set_select_parameters(
-            mut self,
-            input: std::option::Option<crate::model::SelectParameters>,
-        ) -> Self {
-            self.select_parameters = input;
-            self
+        pub fn set_select_parameters(mut self, input: std::option::Option<crate::model::SelectParameters>) -> Self {
+            self.select_parameters = input; self
         }
         /// <p>Contains the location where the data from the select job is stored.</p>
         pub fn output_location(mut self, input: crate::model::OutputLocation) -> Self {
@@ -2118,40 +2030,60 @@ pub mod describe_job_output {
             self
         }
         /// <p>Contains the location where the data from the select job is stored.</p>
-        pub fn set_output_location(
-            mut self,
-            input: std::option::Option<crate::model::OutputLocation>,
-        ) -> Self {
-            self.output_location = input;
-            self
+        pub fn set_output_location(mut self, input: std::option::Option<crate::model::OutputLocation>) -> Self {
+            self.output_location = input; self
         }
         /// Consumes the builder and constructs a [`DescribeJobOutput`](crate::output::DescribeJobOutput).
         pub fn build(self) -> crate::output::DescribeJobOutput {
             crate::output::DescribeJobOutput {
-                job_id: self.job_id,
-                job_description: self.job_description,
-                action: self.action,
-                archive_id: self.archive_id,
-                vault_arn: self.vault_arn,
-                creation_date: self.creation_date,
-                completed: self.completed.unwrap_or_default(),
-                status_code: self.status_code,
-                status_message: self.status_message,
-                archive_size_in_bytes: self.archive_size_in_bytes,
-                inventory_size_in_bytes: self.inventory_size_in_bytes,
-                sns_topic: self.sns_topic,
-                completion_date: self.completion_date,
-                sha256_tree_hash: self.sha256_tree_hash,
-                archive_sha256_tree_hash: self.archive_sha256_tree_hash,
-                retrieval_byte_range: self.retrieval_byte_range,
-                tier: self.tier,
-                inventory_retrieval_parameters: self.inventory_retrieval_parameters,
-                job_output_path: self.job_output_path,
-                select_parameters: self.select_parameters,
-                output_location: self.output_location,
+                job_id: self.job_id
+                ,
+                job_description: self.job_description
+                ,
+                action: self.action
+                ,
+                archive_id: self.archive_id
+                ,
+                vault_arn: self.vault_arn
+                ,
+                creation_date: self.creation_date
+                ,
+                completed: self.completed
+                    .unwrap_or_default()
+                ,
+                status_code: self.status_code
+                ,
+                status_message: self.status_message
+                ,
+                archive_size_in_bytes: self.archive_size_in_bytes
+                ,
+                inventory_size_in_bytes: self.inventory_size_in_bytes
+                ,
+                sns_topic: self.sns_topic
+                ,
+                completion_date: self.completion_date
+                ,
+                sha256_tree_hash: self.sha256_tree_hash
+                ,
+                archive_sha256_tree_hash: self.archive_sha256_tree_hash
+                ,
+                retrieval_byte_range: self.retrieval_byte_range
+                ,
+                tier: self.tier
+                ,
+                inventory_retrieval_parameters: self.inventory_retrieval_parameters
+                ,
+                job_output_path: self.job_output_path
+                ,
+                select_parameters: self.select_parameters
+                ,
+                output_location: self.output_location
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobOutput`](crate::output::DescribeJobOutput).
@@ -2163,19 +2095,24 @@ impl DescribeJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVaultNotificationsOutput {}
+pub struct DeleteVaultNotificationsOutput  {
+}
 /// See [`DeleteVaultNotificationsOutput`](crate::output::DeleteVaultNotificationsOutput).
 pub mod delete_vault_notifications_output {
-
+    
     /// A builder for [`DeleteVaultNotificationsOutput`](crate::output::DeleteVaultNotificationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVaultNotificationsOutput`](crate::output::DeleteVaultNotificationsOutput).
         pub fn build(self) -> crate::output::DeleteVaultNotificationsOutput {
-            crate::output::DeleteVaultNotificationsOutput {}
+            crate::output::DeleteVaultNotificationsOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteVaultNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVaultNotificationsOutput`](crate::output::DeleteVaultNotificationsOutput).
@@ -2187,19 +2124,24 @@ impl DeleteVaultNotificationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVaultAccessPolicyOutput {}
+pub struct DeleteVaultAccessPolicyOutput  {
+}
 /// See [`DeleteVaultAccessPolicyOutput`](crate::output::DeleteVaultAccessPolicyOutput).
 pub mod delete_vault_access_policy_output {
-
+    
     /// A builder for [`DeleteVaultAccessPolicyOutput`](crate::output::DeleteVaultAccessPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVaultAccessPolicyOutput`](crate::output::DeleteVaultAccessPolicyOutput).
         pub fn build(self) -> crate::output::DeleteVaultAccessPolicyOutput {
-            crate::output::DeleteVaultAccessPolicyOutput {}
+            crate::output::DeleteVaultAccessPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteVaultAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVaultAccessPolicyOutput`](crate::output::DeleteVaultAccessPolicyOutput).
@@ -2211,19 +2153,24 @@ impl DeleteVaultAccessPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVaultOutput {}
+pub struct DeleteVaultOutput  {
+}
 /// See [`DeleteVaultOutput`](crate::output::DeleteVaultOutput).
 pub mod delete_vault_output {
-
+    
     /// A builder for [`DeleteVaultOutput`](crate::output::DeleteVaultOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVaultOutput`](crate::output::DeleteVaultOutput).
         pub fn build(self) -> crate::output::DeleteVaultOutput {
-            crate::output::DeleteVaultOutput {}
+            crate::output::DeleteVaultOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteVaultOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVaultOutput`](crate::output::DeleteVaultOutput).
@@ -2235,19 +2182,24 @@ impl DeleteVaultOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteArchiveOutput {}
+pub struct DeleteArchiveOutput  {
+}
 /// See [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput).
 pub mod delete_archive_output {
-
+    
     /// A builder for [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput).
         pub fn build(self) -> crate::output::DeleteArchiveOutput {
-            crate::output::DeleteArchiveOutput {}
+            crate::output::DeleteArchiveOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteArchiveOutput {
     /// Creates a new builder-style object to manufacture [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput).
@@ -2259,20 +2211,20 @@ impl DeleteArchiveOutput {
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVaultOutput {
+pub struct CreateVaultOutput  {
     /// <p>The URI of the vault that was created.</p>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl CreateVaultOutput {
     /// <p>The URI of the vault that was created.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
 }
 /// See [`CreateVaultOutput`](crate::output::CreateVaultOutput).
 pub mod create_vault_output {
-
+    
     /// A builder for [`CreateVaultOutput`](crate::output::CreateVaultOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2286,16 +2238,18 @@ pub mod create_vault_output {
         }
         /// <p>The URI of the vault that was created.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// Consumes the builder and constructs a [`CreateVaultOutput`](crate::output::CreateVaultOutput).
         pub fn build(self) -> crate::output::CreateVaultOutput {
             crate::output::CreateVaultOutput {
-                location: self.location,
+                location: self.location
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVaultOutput {
     /// Creates a new builder-style object to manufacture [`CreateVaultOutput`](crate::output::CreateVaultOutput).
@@ -2307,19 +2261,24 @@ impl CreateVaultOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CompleteVaultLockOutput {}
+pub struct CompleteVaultLockOutput  {
+}
 /// See [`CompleteVaultLockOutput`](crate::output::CompleteVaultLockOutput).
 pub mod complete_vault_lock_output {
-
+    
     /// A builder for [`CompleteVaultLockOutput`](crate::output::CompleteVaultLockOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CompleteVaultLockOutput`](crate::output::CompleteVaultLockOutput).
         pub fn build(self) -> crate::output::CompleteVaultLockOutput {
-            crate::output::CompleteVaultLockOutput {}
+            crate::output::CompleteVaultLockOutput {
+            }
         }
     }
+    
+    
 }
 impl CompleteVaultLockOutput {
     /// Creates a new builder-style object to manufacture [`CompleteVaultLockOutput`](crate::output::CompleteVaultLockOutput).
@@ -2328,11 +2287,11 @@ impl CompleteVaultLockOutput {
     }
 }
 
-/// <p>Contains the Amazon S3 Glacier response to your request.</p>
+/// <p>Contains the Amazon S3 Glacier response to your request.</p> 
 /// <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CompleteMultipartUploadOutput {
+pub struct CompleteMultipartUploadOutput  {
     /// <p>The relative URI path of the newly added archive resource.</p>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
@@ -2345,21 +2304,21 @@ pub struct CompleteMultipartUploadOutput {
 }
 impl CompleteMultipartUploadOutput {
     /// <p>The relative URI path of the newly added archive resource.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The ID of the archive. This value is also included as part of the location.</p>
-    pub fn archive_id(&self) -> std::option::Option<&str> {
+    pub fn archive_id(&self) -> std::option::Option<& str> {
         self.archive_id.as_deref()
     }
 }
 /// See [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput).
 pub mod complete_multipart_upload_output {
-
+    
     /// A builder for [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2375,8 +2334,7 @@ pub mod complete_multipart_upload_output {
         }
         /// <p>The relative URI path of the newly added archive resource.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2385,8 +2343,7 @@ pub mod complete_multipart_upload_output {
         }
         /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.checksum = input;
-            self
+            self.checksum = input; self
         }
         /// <p>The ID of the archive. This value is also included as part of the location.</p>
         pub fn archive_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2395,18 +2352,22 @@ pub mod complete_multipart_upload_output {
         }
         /// <p>The ID of the archive. This value is also included as part of the location.</p>
         pub fn set_archive_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.archive_id = input;
-            self
+            self.archive_id = input; self
         }
         /// Consumes the builder and constructs a [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput).
         pub fn build(self) -> crate::output::CompleteMultipartUploadOutput {
             crate::output::CompleteMultipartUploadOutput {
-                location: self.location,
-                checksum: self.checksum,
-                archive_id: self.archive_id,
+                location: self.location
+                ,
+                checksum: self.checksum
+                ,
+                archive_id: self.archive_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CompleteMultipartUploadOutput {
     /// Creates a new builder-style object to manufacture [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput).
@@ -2418,19 +2379,24 @@ impl CompleteMultipartUploadOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsToVaultOutput {}
+pub struct AddTagsToVaultOutput  {
+}
 /// See [`AddTagsToVaultOutput`](crate::output::AddTagsToVaultOutput).
 pub mod add_tags_to_vault_output {
-
+    
     /// A builder for [`AddTagsToVaultOutput`](crate::output::AddTagsToVaultOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsToVaultOutput`](crate::output::AddTagsToVaultOutput).
         pub fn build(self) -> crate::output::AddTagsToVaultOutput {
-            crate::output::AddTagsToVaultOutput {}
+            crate::output::AddTagsToVaultOutput {
+            }
         }
     }
+    
+    
 }
 impl AddTagsToVaultOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsToVaultOutput`](crate::output::AddTagsToVaultOutput).
@@ -2442,19 +2408,24 @@ impl AddTagsToVaultOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AbortVaultLockOutput {}
+pub struct AbortVaultLockOutput  {
+}
 /// See [`AbortVaultLockOutput`](crate::output::AbortVaultLockOutput).
 pub mod abort_vault_lock_output {
-
+    
     /// A builder for [`AbortVaultLockOutput`](crate::output::AbortVaultLockOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AbortVaultLockOutput`](crate::output::AbortVaultLockOutput).
         pub fn build(self) -> crate::output::AbortVaultLockOutput {
-            crate::output::AbortVaultLockOutput {}
+            crate::output::AbortVaultLockOutput {
+            }
         }
     }
+    
+    
 }
 impl AbortVaultLockOutput {
     /// Creates a new builder-style object to manufacture [`AbortVaultLockOutput`](crate::output::AbortVaultLockOutput).
@@ -2466,19 +2437,24 @@ impl AbortVaultLockOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AbortMultipartUploadOutput {}
+pub struct AbortMultipartUploadOutput  {
+}
 /// See [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput).
 pub mod abort_multipart_upload_output {
-
+    
     /// A builder for [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput).
         pub fn build(self) -> crate::output::AbortMultipartUploadOutput {
-            crate::output::AbortMultipartUploadOutput {}
+            crate::output::AbortMultipartUploadOutput {
+            }
         }
     }
+    
+    
 }
 impl AbortMultipartUploadOutput {
     /// Creates a new builder-style object to manufacture [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput).
@@ -2486,3 +2462,4 @@ impl AbortMultipartUploadOutput {
         crate::output::abort_multipart_upload_output::Builder::default()
     }
 }
+

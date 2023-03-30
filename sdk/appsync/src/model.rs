@@ -3,20 +3,20 @@
 /// <p>Provides further details for the reason behind the bad request. For reason type <code>CODE_ERROR</code>, the detail will contain a list of code errors.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadRequestDetail {
+pub struct BadRequestDetail  {
     /// <p>Contains the list of errors in the request.</p>
     #[doc(hidden)]
     pub code_errors: std::option::Option<std::vec::Vec<crate::model::CodeError>>,
 }
 impl BadRequestDetail {
     /// <p>Contains the list of errors in the request.</p>
-    pub fn code_errors(&self) -> std::option::Option<&[crate::model::CodeError]> {
+    pub fn code_errors(&self) -> std::option::Option<& [crate::model::CodeError]> {
         self.code_errors.as_deref()
     }
 }
 /// See [`BadRequestDetail`](crate::model::BadRequestDetail).
 pub mod bad_request_detail {
-
+    
     /// A builder for [`BadRequestDetail`](crate::model::BadRequestDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -30,25 +30,24 @@ pub mod bad_request_detail {
         /// <p>Contains the list of errors in the request.</p>
         pub fn code_errors(mut self, input: crate::model::CodeError) -> Self {
             let mut v = self.code_errors.unwrap_or_default();
-            v.push(input);
-            self.code_errors = Some(v);
-            self
+                            v.push(input);
+                            self.code_errors = Some(v);
+                            self
         }
         /// <p>Contains the list of errors in the request.</p>
-        pub fn set_code_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CodeError>>,
-        ) -> Self {
-            self.code_errors = input;
-            self
+        pub fn set_code_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::CodeError>>) -> Self {
+            self.code_errors = input; self
         }
         /// Consumes the builder and constructs a [`BadRequestDetail`](crate::model::BadRequestDetail).
         pub fn build(self) -> crate::model::BadRequestDetail {
             crate::model::BadRequestDetail {
-                code_errors: self.code_errors,
+                code_errors: self.code_errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BadRequestDetail {
     /// Creates a new builder-style object to manufacture [`BadRequestDetail`](crate::model::BadRequestDetail).
@@ -60,12 +59,12 @@ impl BadRequestDetail {
 /// <p>Describes an AppSync error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeError {
-    /// <p>The type of code error. </p>
+pub struct CodeError  {
+    /// <p>The type of code error. </p> 
     /// <p>Examples include, but aren't limited to: <code>LINT_ERROR</code>, <code>PARSER_ERROR</code>.</p>
     #[doc(hidden)]
     pub error_type: std::option::Option<std::string::String>,
-    /// <p>A user presentable error.</p>
+    /// <p>A user presentable error.</p> 
     /// <p>Examples include, but aren't limited to: <code>Parsing error: Unterminated string literal</code>.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
@@ -74,24 +73,24 @@ pub struct CodeError {
     pub location: std::option::Option<crate::model::CodeErrorLocation>,
 }
 impl CodeError {
-    /// <p>The type of code error. </p>
+    /// <p>The type of code error. </p> 
     /// <p>Examples include, but aren't limited to: <code>LINT_ERROR</code>, <code>PARSER_ERROR</code>.</p>
-    pub fn error_type(&self) -> std::option::Option<&str> {
+    pub fn error_type(&self) -> std::option::Option<& str> {
         self.error_type.as_deref()
     }
-    /// <p>A user presentable error.</p>
+    /// <p>A user presentable error.</p> 
     /// <p>Examples include, but aren't limited to: <code>Parsing error: Unterminated string literal</code>.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The line, column, and span location of the error in the code.</p>
-    pub fn location(&self) -> std::option::Option<&crate::model::CodeErrorLocation> {
+    pub fn location(&self) -> std::option::Option<& crate::model::CodeErrorLocation> {
         self.location.as_ref()
     }
 }
 /// See [`CodeError`](crate::model::CodeError).
 pub mod code_error {
-
+    
     /// A builder for [`CodeError`](crate::model::CodeError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -100,29 +99,27 @@ pub mod code_error {
         pub(crate) location: std::option::Option<crate::model::CodeErrorLocation>,
     }
     impl Builder {
-        /// <p>The type of code error. </p>
+        /// <p>The type of code error. </p> 
         /// <p>Examples include, but aren't limited to: <code>LINT_ERROR</code>, <code>PARSER_ERROR</code>.</p>
         pub fn error_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_type = Some(input.into());
             self
         }
-        /// <p>The type of code error. </p>
+        /// <p>The type of code error. </p> 
         /// <p>Examples include, but aren't limited to: <code>LINT_ERROR</code>, <code>PARSER_ERROR</code>.</p>
         pub fn set_error_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_type = input;
-            self
+            self.error_type = input; self
         }
-        /// <p>A user presentable error.</p>
+        /// <p>A user presentable error.</p> 
         /// <p>Examples include, but aren't limited to: <code>Parsing error: Unterminated string literal</code>.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>A user presentable error.</p>
+        /// <p>A user presentable error.</p> 
         /// <p>Examples include, but aren't limited to: <code>Parsing error: Unterminated string literal</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>The line, column, and span location of the error in the code.</p>
         pub fn location(mut self, input: crate::model::CodeErrorLocation) -> Self {
@@ -130,22 +127,23 @@ pub mod code_error {
             self
         }
         /// <p>The line, column, and span location of the error in the code.</p>
-        pub fn set_location(
-            mut self,
-            input: std::option::Option<crate::model::CodeErrorLocation>,
-        ) -> Self {
-            self.location = input;
-            self
+        pub fn set_location(mut self, input: std::option::Option<crate::model::CodeErrorLocation>) -> Self {
+            self.location = input; self
         }
         /// Consumes the builder and constructs a [`CodeError`](crate::model::CodeError).
         pub fn build(self) -> crate::model::CodeError {
             crate::model::CodeError {
-                error_type: self.error_type,
-                value: self.value,
-                location: self.location,
+                error_type: self.error_type
+                ,
+                value: self.value
+                ,
+                location: self.location
+                ,
             }
         }
     }
+    
+    
 }
 impl CodeError {
     /// Creates a new builder-style object to manufacture [`CodeError`](crate::model::CodeError).
@@ -157,7 +155,7 @@ impl CodeError {
 /// <p>Describes the location of the error in a code sample.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeErrorLocation {
+pub struct CodeErrorLocation  {
     /// <p>The line number in the code. Defaults to <code>0</code> if unknown.</p>
     #[doc(hidden)]
     pub line: i32,
@@ -184,7 +182,7 @@ impl CodeErrorLocation {
 }
 /// See [`CodeErrorLocation`](crate::model::CodeErrorLocation).
 pub mod code_error_location {
-
+    
     /// A builder for [`CodeErrorLocation`](crate::model::CodeErrorLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -200,8 +198,7 @@ pub mod code_error_location {
         }
         /// <p>The line number in the code. Defaults to <code>0</code> if unknown.</p>
         pub fn set_line(mut self, input: std::option::Option<i32>) -> Self {
-            self.line = input;
-            self
+            self.line = input; self
         }
         /// <p>The column number in the code. Defaults to <code>0</code> if unknown.</p>
         pub fn column(mut self, input: i32) -> Self {
@@ -210,8 +207,7 @@ pub mod code_error_location {
         }
         /// <p>The column number in the code. Defaults to <code>0</code> if unknown.</p>
         pub fn set_column(mut self, input: std::option::Option<i32>) -> Self {
-            self.column = input;
-            self
+            self.column = input; self
         }
         /// <p>The span/length of the error. Defaults to <code>-1</code> if unknown.</p>
         pub fn span(mut self, input: i32) -> Self {
@@ -220,18 +216,25 @@ pub mod code_error_location {
         }
         /// <p>The span/length of the error. Defaults to <code>-1</code> if unknown.</p>
         pub fn set_span(mut self, input: std::option::Option<i32>) -> Self {
-            self.span = input;
-            self
+            self.span = input; self
         }
         /// Consumes the builder and constructs a [`CodeErrorLocation`](crate::model::CodeErrorLocation).
         pub fn build(self) -> crate::model::CodeErrorLocation {
             crate::model::CodeErrorLocation {
-                line: self.line.unwrap_or_default(),
-                column: self.column.unwrap_or_default(),
-                span: self.span.unwrap_or_default(),
+                line: self.line
+                    .unwrap_or_default()
+                ,
+                column: self.column
+                    .unwrap_or_default()
+                ,
+                span: self.span
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CodeErrorLocation {
     /// Creates a new builder-style object to manufacture [`CodeErrorLocation`](crate::model::CodeErrorLocation).
@@ -246,9 +249,9 @@ impl CodeErrorLocation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let badrequestreason = unimplemented!();
 /// match badrequestreason {
@@ -269,7 +272,7 @@ impl CodeErrorLocation {
 /// Specifically, when `badrequestreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BadRequestReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -277,47 +280,41 @@ impl CodeErrorLocation {
 /// <p>Provides context for the cause of the bad request. The only supported value is
 /// <code>CODE_ERROR</code>.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BadRequestReason {
     #[allow(missing_docs)] // documentation missing in model
     CodeError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BadRequestReason {
     fn from(s: &str) -> Self {
         match s {
             "CODE_ERROR" => BadRequestReason::CodeError,
-            other => BadRequestReason::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BadRequestReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BadRequestReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BadRequestReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BadRequestReason::from(s))
+                }
+            }
 impl BadRequestReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BadRequestReason::CodeError => "CODE_ERROR",
-            BadRequestReason::Unknown(value) => value.as_str(),
+            BadRequestReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CODE_ERROR"]
+        &[
+            "CODE_ERROR"
+        ]
     }
 }
 impl AsRef<str> for BadRequestReason {
@@ -329,7 +326,7 @@ impl AsRef<str> for BadRequestReason {
 /// <p>Describes a type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Type {
+pub struct Type  {
     /// <p>The type name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -348,29 +345,29 @@ pub struct Type {
 }
 impl Type {
     /// <p>The type name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type Amazon Resource Name (ARN).</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type definition.</p>
-    pub fn definition(&self) -> std::option::Option<&str> {
+    pub fn definition(&self) -> std::option::Option<& str> {
         self.definition.as_deref()
     }
     /// <p>The type format: SDL or JSON.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::TypeDefinitionFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::TypeDefinitionFormat> {
         self.format.as_ref()
     }
 }
 /// See [`Type`](crate::model::Type).
 pub mod r#type {
-
+    
     /// A builder for [`Type`](crate::model::Type).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -388,8 +385,7 @@ pub mod r#type {
         }
         /// <p>The type name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -398,8 +394,7 @@ pub mod r#type {
         }
         /// <p>The type description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The type Amazon Resource Name (ARN).</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -408,8 +403,7 @@ pub mod r#type {
         }
         /// <p>The type Amazon Resource Name (ARN).</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The type definition.</p>
         pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -418,8 +412,7 @@ pub mod r#type {
         }
         /// <p>The type definition.</p>
         pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.definition = input;
-            self
+            self.definition = input; self
         }
         /// <p>The type format: SDL or JSON.</p>
         pub fn format(mut self, input: crate::model::TypeDefinitionFormat) -> Self {
@@ -427,24 +420,27 @@ pub mod r#type {
             self
         }
         /// <p>The type format: SDL or JSON.</p>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::TypeDefinitionFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::TypeDefinitionFormat>) -> Self {
+            self.format = input; self
         }
         /// Consumes the builder and constructs a [`Type`](crate::model::Type).
         pub fn build(self) -> crate::model::Type {
             crate::model::Type {
-                name: self.name,
-                description: self.description,
-                arn: self.arn,
-                definition: self.definition,
-                format: self.format,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                ,
+                definition: self.definition
+                ,
+                format: self.format
+                ,
             }
         }
     }
+    
+    
 }
 impl Type {
     /// Creates a new builder-style object to manufacture [`Type`](crate::model::Type).
@@ -459,9 +455,9 @@ impl Type {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let typedefinitionformat = unimplemented!();
 /// match typedefinitionformat {
@@ -483,60 +479,52 @@ impl Type {
 /// Specifically, when `typedefinitionformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TypeDefinitionFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TypeDefinitionFormat {
     #[allow(missing_docs)] // documentation missing in model
     Json,
     #[allow(missing_docs)] // documentation missing in model
     Sdl,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TypeDefinitionFormat {
     fn from(s: &str) -> Self {
         match s {
             "JSON" => TypeDefinitionFormat::Json,
             "SDL" => TypeDefinitionFormat::Sdl,
-            other => {
-                TypeDefinitionFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => TypeDefinitionFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TypeDefinitionFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TypeDefinitionFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TypeDefinitionFormat::from(s))
+                }
+            }
 impl TypeDefinitionFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TypeDefinitionFormat::Json => "JSON",
             TypeDefinitionFormat::Sdl => "SDL",
-            TypeDefinitionFormat::Unknown(value) => value.as_str(),
+            TypeDefinitionFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["JSON", "SDL"]
+        &[
+            "JSON", "SDL"
+        ]
     }
 }
 impl AsRef<str> for TypeDefinitionFormat {
@@ -548,7 +536,7 @@ impl AsRef<str> for TypeDefinitionFormat {
 /// <p>Describes a resolver.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Resolver {
+pub struct Resolver  {
     /// <p>The resolver type name.</p>
     #[doc(hidden)]
     pub type_name: std::option::Option<std::string::String>,
@@ -567,10 +555,10 @@ pub struct Resolver {
     /// <p>The response mapping template.</p>
     #[doc(hidden)]
     pub response_mapping_template: std::option::Option<std::string::String>,
-    /// <p>The resolver type.</p>
-    /// <ul>
-    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
-    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
+    /// <p>The resolver type.</p> 
+    /// <ul> 
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li> 
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub kind: std::option::Option<crate::model::ResolverKind>,
@@ -595,47 +583,47 @@ pub struct Resolver {
 }
 impl Resolver {
     /// <p>The resolver type name.</p>
-    pub fn type_name(&self) -> std::option::Option<&str> {
+    pub fn type_name(&self) -> std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The resolver field name.</p>
-    pub fn field_name(&self) -> std::option::Option<&str> {
+    pub fn field_name(&self) -> std::option::Option<& str> {
         self.field_name.as_deref()
     }
     /// <p>The resolver data source name.</p>
-    pub fn data_source_name(&self) -> std::option::Option<&str> {
+    pub fn data_source_name(&self) -> std::option::Option<& str> {
         self.data_source_name.as_deref()
     }
     /// <p>The resolver Amazon Resource Name (ARN).</p>
-    pub fn resolver_arn(&self) -> std::option::Option<&str> {
+    pub fn resolver_arn(&self) -> std::option::Option<& str> {
         self.resolver_arn.as_deref()
     }
     /// <p>The request mapping template.</p>
-    pub fn request_mapping_template(&self) -> std::option::Option<&str> {
+    pub fn request_mapping_template(&self) -> std::option::Option<& str> {
         self.request_mapping_template.as_deref()
     }
     /// <p>The response mapping template.</p>
-    pub fn response_mapping_template(&self) -> std::option::Option<&str> {
+    pub fn response_mapping_template(&self) -> std::option::Option<& str> {
         self.response_mapping_template.as_deref()
     }
-    /// <p>The resolver type.</p>
-    /// <ul>
-    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
-    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
+    /// <p>The resolver type.</p> 
+    /// <ul> 
+    /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li> 
+    /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li> 
     /// </ul>
-    pub fn kind(&self) -> std::option::Option<&crate::model::ResolverKind> {
+    pub fn kind(&self) -> std::option::Option<& crate::model::ResolverKind> {
         self.kind.as_ref()
     }
     /// <p>The <code>PipelineConfig</code>.</p>
-    pub fn pipeline_config(&self) -> std::option::Option<&crate::model::PipelineConfig> {
+    pub fn pipeline_config(&self) -> std::option::Option<& crate::model::PipelineConfig> {
         self.pipeline_config.as_ref()
     }
     /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
-    pub fn sync_config(&self) -> std::option::Option<&crate::model::SyncConfig> {
+    pub fn sync_config(&self) -> std::option::Option<& crate::model::SyncConfig> {
         self.sync_config.as_ref()
     }
     /// <p>The caching configuration for the resolver.</p>
-    pub fn caching_config(&self) -> std::option::Option<&crate::model::CachingConfig> {
+    pub fn caching_config(&self) -> std::option::Option<& crate::model::CachingConfig> {
         self.caching_config.as_ref()
     }
     /// <p>The maximum batching size for a resolver.</p>
@@ -643,17 +631,17 @@ impl Resolver {
         self.max_batch_size
     }
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
-    pub fn runtime(&self) -> std::option::Option<&crate::model::AppSyncRuntime> {
+    pub fn runtime(&self) -> std::option::Option<& crate::model::AppSyncRuntime> {
         self.runtime.as_ref()
     }
     /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 /// See [`Resolver`](crate::model::Resolver).
 pub mod resolver {
-
+    
     /// A builder for [`Resolver`](crate::model::Resolver).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -679,8 +667,7 @@ pub mod resolver {
         }
         /// <p>The resolver type name.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.type_name = input;
-            self
+            self.type_name = input; self
         }
         /// <p>The resolver field name.</p>
         pub fn field_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -689,8 +676,7 @@ pub mod resolver {
         }
         /// <p>The resolver field name.</p>
         pub fn set_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field_name = input;
-            self
+            self.field_name = input; self
         }
         /// <p>The resolver data source name.</p>
         pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -698,12 +684,8 @@ pub mod resolver {
             self
         }
         /// <p>The resolver data source name.</p>
-        pub fn set_data_source_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_name = input;
-            self
+        pub fn set_data_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_name = input; self
         }
         /// <p>The resolver Amazon Resource Name (ARN).</p>
         pub fn resolver_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -712,8 +694,7 @@ pub mod resolver {
         }
         /// <p>The resolver Amazon Resource Name (ARN).</p>
         pub fn set_resolver_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resolver_arn = input;
-            self
+            self.resolver_arn = input; self
         }
         /// <p>The request mapping template.</p>
         pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -721,12 +702,8 @@ pub mod resolver {
             self
         }
         /// <p>The request mapping template.</p>
-        pub fn set_request_mapping_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.request_mapping_template = input;
-            self
+        pub fn set_request_mapping_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_mapping_template = input; self
         }
         /// <p>The response mapping template.</p>
         pub fn response_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -734,30 +711,25 @@ pub mod resolver {
             self
         }
         /// <p>The response mapping template.</p>
-        pub fn set_response_mapping_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.response_mapping_template = input;
-            self
+        pub fn set_response_mapping_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.response_mapping_template = input; self
         }
-        /// <p>The resolver type.</p>
-        /// <ul>
-        /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
-        /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
+        /// <p>The resolver type.</p> 
+        /// <ul> 
+        /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li> 
+        /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li> 
         /// </ul>
         pub fn kind(mut self, input: crate::model::ResolverKind) -> Self {
             self.kind = Some(input);
             self
         }
-        /// <p>The resolver type.</p>
-        /// <ul>
-        /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
-        /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
+        /// <p>The resolver type.</p> 
+        /// <ul> 
+        /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li> 
+        /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li> 
         /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::ResolverKind>) -> Self {
-            self.kind = input;
-            self
+            self.kind = input; self
         }
         /// <p>The <code>PipelineConfig</code>.</p>
         pub fn pipeline_config(mut self, input: crate::model::PipelineConfig) -> Self {
@@ -765,12 +737,8 @@ pub mod resolver {
             self
         }
         /// <p>The <code>PipelineConfig</code>.</p>
-        pub fn set_pipeline_config(
-            mut self,
-            input: std::option::Option<crate::model::PipelineConfig>,
-        ) -> Self {
-            self.pipeline_config = input;
-            self
+        pub fn set_pipeline_config(mut self, input: std::option::Option<crate::model::PipelineConfig>) -> Self {
+            self.pipeline_config = input; self
         }
         /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
         pub fn sync_config(mut self, input: crate::model::SyncConfig) -> Self {
@@ -778,12 +746,8 @@ pub mod resolver {
             self
         }
         /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
-        pub fn set_sync_config(
-            mut self,
-            input: std::option::Option<crate::model::SyncConfig>,
-        ) -> Self {
-            self.sync_config = input;
-            self
+        pub fn set_sync_config(mut self, input: std::option::Option<crate::model::SyncConfig>) -> Self {
+            self.sync_config = input; self
         }
         /// <p>The caching configuration for the resolver.</p>
         pub fn caching_config(mut self, input: crate::model::CachingConfig) -> Self {
@@ -791,12 +755,8 @@ pub mod resolver {
             self
         }
         /// <p>The caching configuration for the resolver.</p>
-        pub fn set_caching_config(
-            mut self,
-            input: std::option::Option<crate::model::CachingConfig>,
-        ) -> Self {
-            self.caching_config = input;
-            self
+        pub fn set_caching_config(mut self, input: std::option::Option<crate::model::CachingConfig>) -> Self {
+            self.caching_config = input; self
         }
         /// <p>The maximum batching size for a resolver.</p>
         pub fn max_batch_size(mut self, input: i32) -> Self {
@@ -805,8 +765,7 @@ pub mod resolver {
         }
         /// <p>The maximum batching size for a resolver.</p>
         pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_batch_size = input;
-            self
+            self.max_batch_size = input; self
         }
         /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
         pub fn runtime(mut self, input: crate::model::AppSyncRuntime) -> Self {
@@ -814,12 +773,8 @@ pub mod resolver {
             self
         }
         /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
-        pub fn set_runtime(
-            mut self,
-            input: std::option::Option<crate::model::AppSyncRuntime>,
-        ) -> Self {
-            self.runtime = input;
-            self
+        pub fn set_runtime(mut self, input: std::option::Option<crate::model::AppSyncRuntime>) -> Self {
+            self.runtime = input; self
         }
         /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -828,28 +783,43 @@ pub mod resolver {
         }
         /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`Resolver`](crate::model::Resolver).
         pub fn build(self) -> crate::model::Resolver {
             crate::model::Resolver {
-                type_name: self.type_name,
-                field_name: self.field_name,
-                data_source_name: self.data_source_name,
-                resolver_arn: self.resolver_arn,
-                request_mapping_template: self.request_mapping_template,
-                response_mapping_template: self.response_mapping_template,
-                kind: self.kind,
-                pipeline_config: self.pipeline_config,
-                sync_config: self.sync_config,
-                caching_config: self.caching_config,
-                max_batch_size: self.max_batch_size.unwrap_or_default(),
-                runtime: self.runtime,
-                code: self.code,
+                type_name: self.type_name
+                ,
+                field_name: self.field_name
+                ,
+                data_source_name: self.data_source_name
+                ,
+                resolver_arn: self.resolver_arn
+                ,
+                request_mapping_template: self.request_mapping_template
+                ,
+                response_mapping_template: self.response_mapping_template
+                ,
+                kind: self.kind
+                ,
+                pipeline_config: self.pipeline_config
+                ,
+                sync_config: self.sync_config
+                ,
+                caching_config: self.caching_config
+                ,
+                max_batch_size: self.max_batch_size
+                    .unwrap_or_default()
+                ,
+                runtime: self.runtime
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl Resolver {
     /// Creates a new builder-style object to manufacture [`Resolver`](crate::model::Resolver).
@@ -861,7 +831,7 @@ impl Resolver {
 /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppSyncRuntime {
+pub struct AppSyncRuntime  {
     /// <p>The <code>name</code> of the runtime to use. Currently, the only allowed value is <code>APPSYNC_JS</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::RuntimeName>,
@@ -871,17 +841,17 @@ pub struct AppSyncRuntime {
 }
 impl AppSyncRuntime {
     /// <p>The <code>name</code> of the runtime to use. Currently, the only allowed value is <code>APPSYNC_JS</code>.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::RuntimeName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::RuntimeName> {
         self.name.as_ref()
     }
     /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
-    pub fn runtime_version(&self) -> std::option::Option<&str> {
+    pub fn runtime_version(&self) -> std::option::Option<& str> {
         self.runtime_version.as_deref()
     }
 }
 /// See [`AppSyncRuntime`](crate::model::AppSyncRuntime).
 pub mod app_sync_runtime {
-
+    
     /// A builder for [`AppSyncRuntime`](crate::model::AppSyncRuntime).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -896,8 +866,7 @@ pub mod app_sync_runtime {
         }
         /// <p>The <code>name</code> of the runtime to use. Currently, the only allowed value is <code>APPSYNC_JS</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::RuntimeName>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
         pub fn runtime_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -905,21 +874,21 @@ pub mod app_sync_runtime {
             self
         }
         /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
-        pub fn set_runtime_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.runtime_version = input;
-            self
+        pub fn set_runtime_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.runtime_version = input; self
         }
         /// Consumes the builder and constructs a [`AppSyncRuntime`](crate::model::AppSyncRuntime).
         pub fn build(self) -> crate::model::AppSyncRuntime {
             crate::model::AppSyncRuntime {
-                name: self.name,
-                runtime_version: self.runtime_version,
+                name: self.name
+                ,
+                runtime_version: self.runtime_version
+                ,
             }
         }
     }
+    
+    
 }
 impl AppSyncRuntime {
     /// Creates a new builder-style object to manufacture [`AppSyncRuntime`](crate::model::AppSyncRuntime).
@@ -934,9 +903,9 @@ impl AppSyncRuntime {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let runtimename = unimplemented!();
 /// match runtimename {
@@ -957,54 +926,48 @@ impl AppSyncRuntime {
 /// Specifically, when `runtimename` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RuntimeName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RuntimeName {
     #[allow(missing_docs)] // documentation missing in model
     AppsyncJs,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RuntimeName {
     fn from(s: &str) -> Self {
         match s {
             "APPSYNC_JS" => RuntimeName::AppsyncJs,
-            other => RuntimeName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RuntimeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RuntimeName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RuntimeName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RuntimeName::from(s))
+                }
+            }
 impl RuntimeName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RuntimeName::AppsyncJs => "APPSYNC_JS",
-            RuntimeName::Unknown(value) => value.as_str(),
+            RuntimeName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["APPSYNC_JS"]
+        &[
+            "APPSYNC_JS"
+        ]
     }
 }
 impl AsRef<str> for RuntimeName {
@@ -1016,31 +979,31 @@ impl AsRef<str> for RuntimeName {
 /// <p>The caching configuration for a resolver that has caching activated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CachingConfig {
-    /// <p>The TTL in seconds for a resolver that has caching activated.</p>
+pub struct CachingConfig  {
+    /// <p>The TTL in seconds for a resolver that has caching activated.</p> 
     /// <p>Valid values are 1–3,600 seconds.</p>
     #[doc(hidden)]
     pub ttl: i64,
-    /// <p>The caching keys for a resolver that has caching activated.</p>
+    /// <p>The caching keys for a resolver that has caching activated.</p> 
     /// <p>Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
     #[doc(hidden)]
     pub caching_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CachingConfig {
-    /// <p>The TTL in seconds for a resolver that has caching activated.</p>
+    /// <p>The TTL in seconds for a resolver that has caching activated.</p> 
     /// <p>Valid values are 1–3,600 seconds.</p>
     pub fn ttl(&self) -> i64 {
         self.ttl
     }
-    /// <p>The caching keys for a resolver that has caching activated.</p>
+    /// <p>The caching keys for a resolver that has caching activated.</p> 
     /// <p>Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
-    pub fn caching_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn caching_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.caching_keys.as_deref()
     }
 }
 /// See [`CachingConfig`](crate::model::CachingConfig).
 pub mod caching_config {
-
+    
     /// A builder for [`CachingConfig`](crate::model::CachingConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1048,47 +1011,47 @@ pub mod caching_config {
         pub(crate) caching_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The TTL in seconds for a resolver that has caching activated.</p>
+        /// <p>The TTL in seconds for a resolver that has caching activated.</p> 
         /// <p>Valid values are 1–3,600 seconds.</p>
         pub fn ttl(mut self, input: i64) -> Self {
             self.ttl = Some(input);
             self
         }
-        /// <p>The TTL in seconds for a resolver that has caching activated.</p>
+        /// <p>The TTL in seconds for a resolver that has caching activated.</p> 
         /// <p>Valid values are 1–3,600 seconds.</p>
         pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
-            self.ttl = input;
-            self
+            self.ttl = input; self
         }
         /// Appends an item to `caching_keys`.
         ///
         /// To override the contents of this collection use [`set_caching_keys`](Self::set_caching_keys).
         ///
-        /// <p>The caching keys for a resolver that has caching activated.</p>
+        /// <p>The caching keys for a resolver that has caching activated.</p> 
         /// <p>Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
         pub fn caching_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.caching_keys.unwrap_or_default();
-            v.push(input.into());
-            self.caching_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.caching_keys = Some(v);
+                            self
         }
-        /// <p>The caching keys for a resolver that has caching activated.</p>
+        /// <p>The caching keys for a resolver that has caching activated.</p> 
         /// <p>Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
-        pub fn set_caching_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.caching_keys = input;
-            self
+        pub fn set_caching_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.caching_keys = input; self
         }
         /// Consumes the builder and constructs a [`CachingConfig`](crate::model::CachingConfig).
         pub fn build(self) -> crate::model::CachingConfig {
             crate::model::CachingConfig {
-                ttl: self.ttl.unwrap_or_default(),
-                caching_keys: self.caching_keys,
+                ttl: self.ttl
+                    .unwrap_or_default()
+                ,
+                caching_keys: self.caching_keys
+                ,
             }
         }
     }
+    
+    
 }
 impl CachingConfig {
     /// Creates a new builder-style object to manufacture [`CachingConfig`](crate::model::CachingConfig).
@@ -1097,137 +1060,123 @@ impl CachingConfig {
     }
 }
 
-/// <p>Describes a Sync configuration for a resolver.</p>
+/// <p>Describes a Sync configuration for a resolver.</p> 
 /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SyncConfig {
-    /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p>
-    /// <ul>
-    /// <li> <p> <b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p> </li>
-    /// <li> <p> <b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p> </li>
-    /// <li> <p> <b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p> </li>
+pub struct SyncConfig  {
+    /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p> 
+    /// <ul> 
+    /// <li> <p> <b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p> </li> 
+    /// <li> <p> <b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p> </li> 
+    /// <li> <p> <b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub conflict_handler: std::option::Option<crate::model::ConflictHandlerType>,
-    /// <p>The Conflict Detection strategy to use.</p>
-    /// <ul>
-    /// <li> <p> <b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p> </li>
-    /// <li> <p> <b>NONE</b>: Do not detect conflicts when invoking this resolver.</p> </li>
+    /// <p>The Conflict Detection strategy to use.</p> 
+    /// <ul> 
+    /// <li> <p> <b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p> </li> 
+    /// <li> <p> <b>NONE</b>: Do not detect conflicts when invoking this resolver.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub conflict_detection: std::option::Option<crate::model::ConflictDetectionType>,
     /// <p>The <code>LambdaConflictHandlerConfig</code> when configuring <code>LAMBDA</code> as the Conflict Handler.</p>
     #[doc(hidden)]
-    pub lambda_conflict_handler_config:
-        std::option::Option<crate::model::LambdaConflictHandlerConfig>,
+    pub lambda_conflict_handler_config: std::option::Option<crate::model::LambdaConflictHandlerConfig>,
 }
 impl SyncConfig {
-    /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p>
-    /// <ul>
-    /// <li> <p> <b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p> </li>
-    /// <li> <p> <b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p> </li>
-    /// <li> <p> <b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p> </li>
+    /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p> 
+    /// <ul> 
+    /// <li> <p> <b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p> </li> 
+    /// <li> <p> <b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p> </li> 
+    /// <li> <p> <b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p> </li> 
     /// </ul>
-    pub fn conflict_handler(&self) -> std::option::Option<&crate::model::ConflictHandlerType> {
+    pub fn conflict_handler(&self) -> std::option::Option<& crate::model::ConflictHandlerType> {
         self.conflict_handler.as_ref()
     }
-    /// <p>The Conflict Detection strategy to use.</p>
-    /// <ul>
-    /// <li> <p> <b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p> </li>
-    /// <li> <p> <b>NONE</b>: Do not detect conflicts when invoking this resolver.</p> </li>
+    /// <p>The Conflict Detection strategy to use.</p> 
+    /// <ul> 
+    /// <li> <p> <b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p> </li> 
+    /// <li> <p> <b>NONE</b>: Do not detect conflicts when invoking this resolver.</p> </li> 
     /// </ul>
-    pub fn conflict_detection(&self) -> std::option::Option<&crate::model::ConflictDetectionType> {
+    pub fn conflict_detection(&self) -> std::option::Option<& crate::model::ConflictDetectionType> {
         self.conflict_detection.as_ref()
     }
     /// <p>The <code>LambdaConflictHandlerConfig</code> when configuring <code>LAMBDA</code> as the Conflict Handler.</p>
-    pub fn lambda_conflict_handler_config(
-        &self,
-    ) -> std::option::Option<&crate::model::LambdaConflictHandlerConfig> {
+    pub fn lambda_conflict_handler_config(&self) -> std::option::Option<& crate::model::LambdaConflictHandlerConfig> {
         self.lambda_conflict_handler_config.as_ref()
     }
 }
 /// See [`SyncConfig`](crate::model::SyncConfig).
 pub mod sync_config {
-
+    
     /// A builder for [`SyncConfig`](crate::model::SyncConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conflict_handler: std::option::Option<crate::model::ConflictHandlerType>,
         pub(crate) conflict_detection: std::option::Option<crate::model::ConflictDetectionType>,
-        pub(crate) lambda_conflict_handler_config:
-            std::option::Option<crate::model::LambdaConflictHandlerConfig>,
+        pub(crate) lambda_conflict_handler_config: std::option::Option<crate::model::LambdaConflictHandlerConfig>,
     }
     impl Builder {
-        /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p>
-        /// <ul>
-        /// <li> <p> <b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p> </li>
-        /// <li> <p> <b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p> </li>
-        /// <li> <p> <b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p> </li>
+        /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p> 
+        /// <ul> 
+        /// <li> <p> <b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p> </li> 
+        /// <li> <p> <b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p> </li> 
+        /// <li> <p> <b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p> </li> 
         /// </ul>
         pub fn conflict_handler(mut self, input: crate::model::ConflictHandlerType) -> Self {
             self.conflict_handler = Some(input);
             self
         }
-        /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p>
-        /// <ul>
-        /// <li> <p> <b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p> </li>
-        /// <li> <p> <b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p> </li>
-        /// <li> <p> <b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p> </li>
+        /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p> 
+        /// <ul> 
+        /// <li> <p> <b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p> </li> 
+        /// <li> <p> <b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p> </li> 
+        /// <li> <p> <b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p> </li> 
         /// </ul>
-        pub fn set_conflict_handler(
-            mut self,
-            input: std::option::Option<crate::model::ConflictHandlerType>,
-        ) -> Self {
-            self.conflict_handler = input;
-            self
+        pub fn set_conflict_handler(mut self, input: std::option::Option<crate::model::ConflictHandlerType>) -> Self {
+            self.conflict_handler = input; self
         }
-        /// <p>The Conflict Detection strategy to use.</p>
-        /// <ul>
-        /// <li> <p> <b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p> </li>
-        /// <li> <p> <b>NONE</b>: Do not detect conflicts when invoking this resolver.</p> </li>
+        /// <p>The Conflict Detection strategy to use.</p> 
+        /// <ul> 
+        /// <li> <p> <b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p> </li> 
+        /// <li> <p> <b>NONE</b>: Do not detect conflicts when invoking this resolver.</p> </li> 
         /// </ul>
         pub fn conflict_detection(mut self, input: crate::model::ConflictDetectionType) -> Self {
             self.conflict_detection = Some(input);
             self
         }
-        /// <p>The Conflict Detection strategy to use.</p>
-        /// <ul>
-        /// <li> <p> <b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p> </li>
-        /// <li> <p> <b>NONE</b>: Do not detect conflicts when invoking this resolver.</p> </li>
+        /// <p>The Conflict Detection strategy to use.</p> 
+        /// <ul> 
+        /// <li> <p> <b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p> </li> 
+        /// <li> <p> <b>NONE</b>: Do not detect conflicts when invoking this resolver.</p> </li> 
         /// </ul>
-        pub fn set_conflict_detection(
-            mut self,
-            input: std::option::Option<crate::model::ConflictDetectionType>,
-        ) -> Self {
-            self.conflict_detection = input;
-            self
+        pub fn set_conflict_detection(mut self, input: std::option::Option<crate::model::ConflictDetectionType>) -> Self {
+            self.conflict_detection = input; self
         }
         /// <p>The <code>LambdaConflictHandlerConfig</code> when configuring <code>LAMBDA</code> as the Conflict Handler.</p>
-        pub fn lambda_conflict_handler_config(
-            mut self,
-            input: crate::model::LambdaConflictHandlerConfig,
-        ) -> Self {
+        pub fn lambda_conflict_handler_config(mut self, input: crate::model::LambdaConflictHandlerConfig) -> Self {
             self.lambda_conflict_handler_config = Some(input);
             self
         }
         /// <p>The <code>LambdaConflictHandlerConfig</code> when configuring <code>LAMBDA</code> as the Conflict Handler.</p>
-        pub fn set_lambda_conflict_handler_config(
-            mut self,
-            input: std::option::Option<crate::model::LambdaConflictHandlerConfig>,
-        ) -> Self {
-            self.lambda_conflict_handler_config = input;
-            self
+        pub fn set_lambda_conflict_handler_config(mut self, input: std::option::Option<crate::model::LambdaConflictHandlerConfig>) -> Self {
+            self.lambda_conflict_handler_config = input; self
         }
         /// Consumes the builder and constructs a [`SyncConfig`](crate::model::SyncConfig).
         pub fn build(self) -> crate::model::SyncConfig {
             crate::model::SyncConfig {
-                conflict_handler: self.conflict_handler,
-                conflict_detection: self.conflict_detection,
-                lambda_conflict_handler_config: self.lambda_conflict_handler_config,
+                conflict_handler: self.conflict_handler
+                ,
+                conflict_detection: self.conflict_detection
+                ,
+                lambda_conflict_handler_config: self.lambda_conflict_handler_config
+                ,
             }
         }
     }
+    
+    
 }
 impl SyncConfig {
     /// Creates a new builder-style object to manufacture [`SyncConfig`](crate::model::SyncConfig).
@@ -1239,20 +1188,20 @@ impl SyncConfig {
 /// <p>The <code>LambdaConflictHandlerConfig</code> object when configuring <code>LAMBDA</code> as the Conflict Handler.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaConflictHandlerConfig {
+pub struct LambdaConflictHandlerConfig  {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict Handler.</p>
     #[doc(hidden)]
     pub lambda_conflict_handler_arn: std::option::Option<std::string::String>,
 }
 impl LambdaConflictHandlerConfig {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict Handler.</p>
-    pub fn lambda_conflict_handler_arn(&self) -> std::option::Option<&str> {
+    pub fn lambda_conflict_handler_arn(&self) -> std::option::Option<& str> {
         self.lambda_conflict_handler_arn.as_deref()
     }
 }
 /// See [`LambdaConflictHandlerConfig`](crate::model::LambdaConflictHandlerConfig).
 pub mod lambda_conflict_handler_config {
-
+    
     /// A builder for [`LambdaConflictHandlerConfig`](crate::model::LambdaConflictHandlerConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1260,28 +1209,24 @@ pub mod lambda_conflict_handler_config {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict Handler.</p>
-        pub fn lambda_conflict_handler_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn lambda_conflict_handler_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.lambda_conflict_handler_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict Handler.</p>
-        pub fn set_lambda_conflict_handler_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.lambda_conflict_handler_arn = input;
-            self
+        pub fn set_lambda_conflict_handler_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lambda_conflict_handler_arn = input; self
         }
         /// Consumes the builder and constructs a [`LambdaConflictHandlerConfig`](crate::model::LambdaConflictHandlerConfig).
         pub fn build(self) -> crate::model::LambdaConflictHandlerConfig {
             crate::model::LambdaConflictHandlerConfig {
-                lambda_conflict_handler_arn: self.lambda_conflict_handler_arn,
+                lambda_conflict_handler_arn: self.lambda_conflict_handler_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl LambdaConflictHandlerConfig {
     /// Creates a new builder-style object to manufacture [`LambdaConflictHandlerConfig`](crate::model::LambdaConflictHandlerConfig).
@@ -1296,9 +1241,9 @@ impl LambdaConflictHandlerConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let conflictdetectiontype = unimplemented!();
 /// match conflictdetectiontype {
@@ -1320,60 +1265,52 @@ impl LambdaConflictHandlerConfig {
 /// Specifically, when `conflictdetectiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConflictDetectionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConflictDetectionType {
     #[allow(missing_docs)] // documentation missing in model
     None,
     #[allow(missing_docs)] // documentation missing in model
     Version,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConflictDetectionType {
     fn from(s: &str) -> Self {
         match s {
             "NONE" => ConflictDetectionType::None,
             "VERSION" => ConflictDetectionType::Version,
-            other => {
-                ConflictDetectionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ConflictDetectionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConflictDetectionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConflictDetectionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConflictDetectionType::from(s))
+                }
+            }
 impl ConflictDetectionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConflictDetectionType::None => "NONE",
             ConflictDetectionType::Version => "VERSION",
-            ConflictDetectionType::Unknown(value) => value.as_str(),
+            ConflictDetectionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NONE", "VERSION"]
+        &[
+            "NONE", "VERSION"
+        ]
     }
 }
 impl AsRef<str> for ConflictDetectionType {
@@ -1388,9 +1325,9 @@ impl AsRef<str> for ConflictDetectionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let conflicthandlertype = unimplemented!();
 /// match conflicthandlertype {
@@ -1414,22 +1351,14 @@ impl AsRef<str> for ConflictDetectionType {
 /// Specifically, when `conflicthandlertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConflictHandlerType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConflictHandlerType {
     #[allow(missing_docs)] // documentation missing in model
     Automerge,
@@ -1440,7 +1369,7 @@ pub enum ConflictHandlerType {
     #[allow(missing_docs)] // documentation missing in model
     OptimisticConcurrency,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConflictHandlerType {
     fn from(s: &str) -> Self {
@@ -1449,19 +1378,17 @@ impl std::convert::From<&str> for ConflictHandlerType {
             "LAMBDA" => ConflictHandlerType::Lambda,
             "NONE" => ConflictHandlerType::None,
             "OPTIMISTIC_CONCURRENCY" => ConflictHandlerType::OptimisticConcurrency,
-            other => {
-                ConflictHandlerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ConflictHandlerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConflictHandlerType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConflictHandlerType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConflictHandlerType::from(s))
+                }
+            }
 impl ConflictHandlerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1470,12 +1397,14 @@ impl ConflictHandlerType {
             ConflictHandlerType::Lambda => "LAMBDA",
             ConflictHandlerType::None => "NONE",
             ConflictHandlerType::OptimisticConcurrency => "OPTIMISTIC_CONCURRENCY",
-            ConflictHandlerType::Unknown(value) => value.as_str(),
+            ConflictHandlerType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTOMERGE", "LAMBDA", "NONE", "OPTIMISTIC_CONCURRENCY"]
+        &[
+            "AUTOMERGE", "LAMBDA", "NONE", "OPTIMISTIC_CONCURRENCY"
+        ]
     }
 }
 impl AsRef<str> for ConflictHandlerType {
@@ -1487,20 +1416,20 @@ impl AsRef<str> for ConflictHandlerType {
 /// <p>The pipeline configuration for a resolver of kind <code>PIPELINE</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipelineConfig {
+pub struct PipelineConfig  {
     /// <p>A list of <code>Function</code> objects.</p>
     #[doc(hidden)]
     pub functions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PipelineConfig {
     /// <p>A list of <code>Function</code> objects.</p>
-    pub fn functions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn functions(&self) -> std::option::Option<& [std::string::String]> {
         self.functions.as_deref()
     }
 }
 /// See [`PipelineConfig`](crate::model::PipelineConfig).
 pub mod pipeline_config {
-
+    
     /// A builder for [`PipelineConfig`](crate::model::PipelineConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1514,25 +1443,24 @@ pub mod pipeline_config {
         /// <p>A list of <code>Function</code> objects.</p>
         pub fn functions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.functions.unwrap_or_default();
-            v.push(input.into());
-            self.functions = Some(v);
-            self
+                            v.push(input.into());
+                            self.functions = Some(v);
+                            self
         }
         /// <p>A list of <code>Function</code> objects.</p>
-        pub fn set_functions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.functions = input;
-            self
+        pub fn set_functions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.functions = input; self
         }
         /// Consumes the builder and constructs a [`PipelineConfig`](crate::model::PipelineConfig).
         pub fn build(self) -> crate::model::PipelineConfig {
             crate::model::PipelineConfig {
-                functions: self.functions,
+                functions: self.functions
+                ,
             }
         }
     }
+    
+    
 }
 impl PipelineConfig {
     /// Creates a new builder-style object to manufacture [`PipelineConfig`](crate::model::PipelineConfig).
@@ -1547,9 +1475,9 @@ impl PipelineConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resolverkind = unimplemented!();
 /// match resolverkind {
@@ -1571,58 +1499,52 @@ impl PipelineConfig {
 /// Specifically, when `resolverkind` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResolverKind::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResolverKind {
     #[allow(missing_docs)] // documentation missing in model
     Pipeline,
     #[allow(missing_docs)] // documentation missing in model
     Unit,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResolverKind {
     fn from(s: &str) -> Self {
         match s {
             "PIPELINE" => ResolverKind::Pipeline,
             "UNIT" => ResolverKind::Unit,
-            other => ResolverKind::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResolverKind::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResolverKind {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResolverKind::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResolverKind::from(s))
+                }
+            }
 impl ResolverKind {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResolverKind::Pipeline => "PIPELINE",
             ResolverKind::Unit => "UNIT",
-            ResolverKind::Unknown(value) => value.as_str(),
+            ResolverKind::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PIPELINE", "UNIT"]
+        &[
+            "PIPELINE", "UNIT"
+        ]
     }
 }
 impl AsRef<str> for ResolverKind {
@@ -1634,7 +1556,7 @@ impl AsRef<str> for ResolverKind {
 /// <p>Describes a GraphQL API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GraphqlApi {
+pub struct GraphqlApi  {
     /// <p>The API name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1658,16 +1580,13 @@ pub struct GraphqlApi {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The URIs.</p>
     #[doc(hidden)]
-    pub uris:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub uris: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
     #[doc(hidden)]
-    pub additional_authentication_providers:
-        std::option::Option<std::vec::Vec<crate::model::AdditionalAuthenticationProvider>>,
+    pub additional_authentication_providers: std::option::Option<std::vec::Vec<crate::model::AdditionalAuthenticationProvider>>,
     /// <p>A flag indicating whether to use X-Ray tracing for this <code>GraphqlApi</code>.</p>
     #[doc(hidden)]
     pub xray_enabled: bool,
@@ -1680,53 +1599,43 @@ pub struct GraphqlApi {
 }
 impl GraphqlApi {
     /// <p>The API name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> std::option::Option<&str> {
+    pub fn api_id(&self) -> std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The authentication type.</p>
-    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+    pub fn authentication_type(&self) -> std::option::Option<& crate::model::AuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The Amazon CloudWatch Logs configuration.</p>
-    pub fn log_config(&self) -> std::option::Option<&crate::model::LogConfig> {
+    pub fn log_config(&self) -> std::option::Option<& crate::model::LogConfig> {
         self.log_config.as_ref()
     }
     /// <p>The Amazon Cognito user pool configuration.</p>
-    pub fn user_pool_config(&self) -> std::option::Option<&crate::model::UserPoolConfig> {
+    pub fn user_pool_config(&self) -> std::option::Option<& crate::model::UserPoolConfig> {
         self.user_pool_config.as_ref()
     }
     /// <p>The OpenID Connect configuration.</p>
-    pub fn open_id_connect_config(
-        &self,
-    ) -> std::option::Option<&crate::model::OpenIdConnectConfig> {
+    pub fn open_id_connect_config(&self) -> std::option::Option<& crate::model::OpenIdConnectConfig> {
         self.open_id_connect_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN).</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The URIs.</p>
-    pub fn uris(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn uris(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.uris.as_ref()
     }
     /// <p>The tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
-    pub fn additional_authentication_providers(
-        &self,
-    ) -> std::option::Option<&[crate::model::AdditionalAuthenticationProvider]> {
+    pub fn additional_authentication_providers(&self) -> std::option::Option<& [crate::model::AdditionalAuthenticationProvider]> {
         self.additional_authentication_providers.as_deref()
     }
     /// <p>A flag indicating whether to use X-Ray tracing for this <code>GraphqlApi</code>.</p>
@@ -1734,19 +1643,17 @@ impl GraphqlApi {
         self.xray_enabled
     }
     /// <p>The ARN of the WAF access control list (ACL) associated with this <code>GraphqlApi</code>, if one exists.</p>
-    pub fn waf_web_acl_arn(&self) -> std::option::Option<&str> {
+    pub fn waf_web_acl_arn(&self) -> std::option::Option<& str> {
         self.waf_web_acl_arn.as_deref()
     }
     /// <p>Configuration for Lambda function authorization.</p>
-    pub fn lambda_authorizer_config(
-        &self,
-    ) -> std::option::Option<&crate::model::LambdaAuthorizerConfig> {
+    pub fn lambda_authorizer_config(&self) -> std::option::Option<& crate::model::LambdaAuthorizerConfig> {
         self.lambda_authorizer_config.as_ref()
     }
 }
 /// See [`GraphqlApi`](crate::model::GraphqlApi).
 pub mod graphql_api {
-
+    
     /// A builder for [`GraphqlApi`](crate::model::GraphqlApi).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1757,18 +1664,12 @@ pub mod graphql_api {
         pub(crate) user_pool_config: std::option::Option<crate::model::UserPoolConfig>,
         pub(crate) open_id_connect_config: std::option::Option<crate::model::OpenIdConnectConfig>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) uris: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) additional_authentication_providers:
-            std::option::Option<std::vec::Vec<crate::model::AdditionalAuthenticationProvider>>,
+        pub(crate) uris: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) additional_authentication_providers: std::option::Option<std::vec::Vec<crate::model::AdditionalAuthenticationProvider>>,
         pub(crate) xray_enabled: std::option::Option<bool>,
         pub(crate) waf_web_acl_arn: std::option::Option<std::string::String>,
-        pub(crate) lambda_authorizer_config:
-            std::option::Option<crate::model::LambdaAuthorizerConfig>,
+        pub(crate) lambda_authorizer_config: std::option::Option<crate::model::LambdaAuthorizerConfig>,
     }
     impl Builder {
         /// <p>The API name.</p>
@@ -1778,8 +1679,7 @@ pub mod graphql_api {
         }
         /// <p>The API name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The API ID.</p>
         pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1788,8 +1688,7 @@ pub mod graphql_api {
         }
         /// <p>The API ID.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.api_id = input;
-            self
+            self.api_id = input; self
         }
         /// <p>The authentication type.</p>
         pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
@@ -1797,12 +1696,8 @@ pub mod graphql_api {
             self
         }
         /// <p>The authentication type.</p>
-        pub fn set_authentication_type(
-            mut self,
-            input: std::option::Option<crate::model::AuthenticationType>,
-        ) -> Self {
-            self.authentication_type = input;
-            self
+        pub fn set_authentication_type(mut self, input: std::option::Option<crate::model::AuthenticationType>) -> Self {
+            self.authentication_type = input; self
         }
         /// <p>The Amazon CloudWatch Logs configuration.</p>
         pub fn log_config(mut self, input: crate::model::LogConfig) -> Self {
@@ -1810,12 +1705,8 @@ pub mod graphql_api {
             self
         }
         /// <p>The Amazon CloudWatch Logs configuration.</p>
-        pub fn set_log_config(
-            mut self,
-            input: std::option::Option<crate::model::LogConfig>,
-        ) -> Self {
-            self.log_config = input;
-            self
+        pub fn set_log_config(mut self, input: std::option::Option<crate::model::LogConfig>) -> Self {
+            self.log_config = input; self
         }
         /// <p>The Amazon Cognito user pool configuration.</p>
         pub fn user_pool_config(mut self, input: crate::model::UserPoolConfig) -> Self {
@@ -1823,12 +1714,8 @@ pub mod graphql_api {
             self
         }
         /// <p>The Amazon Cognito user pool configuration.</p>
-        pub fn set_user_pool_config(
-            mut self,
-            input: std::option::Option<crate::model::UserPoolConfig>,
-        ) -> Self {
-            self.user_pool_config = input;
-            self
+        pub fn set_user_pool_config(mut self, input: std::option::Option<crate::model::UserPoolConfig>) -> Self {
+            self.user_pool_config = input; self
         }
         /// <p>The OpenID Connect configuration.</p>
         pub fn open_id_connect_config(mut self, input: crate::model::OpenIdConnectConfig) -> Self {
@@ -1836,12 +1723,8 @@ pub mod graphql_api {
             self
         }
         /// <p>The OpenID Connect configuration.</p>
-        pub fn set_open_id_connect_config(
-            mut self,
-            input: std::option::Option<crate::model::OpenIdConnectConfig>,
-        ) -> Self {
-            self.open_id_connect_config = input;
-            self
+        pub fn set_open_id_connect_config(mut self, input: std::option::Option<crate::model::OpenIdConnectConfig>) -> Self {
+            self.open_id_connect_config = input; self
         }
         /// <p>The Amazon Resource Name (ARN).</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1850,82 +1733,52 @@ pub mod graphql_api {
         }
         /// <p>The Amazon Resource Name (ARN).</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Adds a key-value pair to `uris`.
         ///
         /// To override the contents of this collection use [`set_uris`](Self::set_uris).
         ///
         /// <p>The URIs.</p>
-        pub fn uris(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn uris(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.uris.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.uris = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.uris = Some(hash_map);
+                            self
         }
         /// <p>The URIs.</p>
-        pub fn set_uris(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.uris = input;
-            self
+        pub fn set_uris(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.uris = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Appends an item to `additional_authentication_providers`.
         ///
         /// To override the contents of this collection use [`set_additional_authentication_providers`](Self::set_additional_authentication_providers).
         ///
         /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
-        pub fn additional_authentication_providers(
-            mut self,
-            input: crate::model::AdditionalAuthenticationProvider,
-        ) -> Self {
+        pub fn additional_authentication_providers(mut self, input: crate::model::AdditionalAuthenticationProvider) -> Self {
             let mut v = self.additional_authentication_providers.unwrap_or_default();
-            v.push(input);
-            self.additional_authentication_providers = Some(v);
-            self
+                            v.push(input);
+                            self.additional_authentication_providers = Some(v);
+                            self
         }
         /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
-        pub fn set_additional_authentication_providers(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::AdditionalAuthenticationProvider>,
-            >,
-        ) -> Self {
-            self.additional_authentication_providers = input;
-            self
+        pub fn set_additional_authentication_providers(mut self, input: std::option::Option<std::vec::Vec<crate::model::AdditionalAuthenticationProvider>>) -> Self {
+            self.additional_authentication_providers = input; self
         }
         /// <p>A flag indicating whether to use X-Ray tracing for this <code>GraphqlApi</code>.</p>
         pub fn xray_enabled(mut self, input: bool) -> Self {
@@ -1934,8 +1787,7 @@ pub mod graphql_api {
         }
         /// <p>A flag indicating whether to use X-Ray tracing for this <code>GraphqlApi</code>.</p>
         pub fn set_xray_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.xray_enabled = input;
-            self
+            self.xray_enabled = input; self
         }
         /// <p>The ARN of the WAF access control list (ACL) associated with this <code>GraphqlApi</code>, if one exists.</p>
         pub fn waf_web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1943,48 +1795,53 @@ pub mod graphql_api {
             self
         }
         /// <p>The ARN of the WAF access control list (ACL) associated with this <code>GraphqlApi</code>, if one exists.</p>
-        pub fn set_waf_web_acl_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.waf_web_acl_arn = input;
-            self
+        pub fn set_waf_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.waf_web_acl_arn = input; self
         }
         /// <p>Configuration for Lambda function authorization.</p>
-        pub fn lambda_authorizer_config(
-            mut self,
-            input: crate::model::LambdaAuthorizerConfig,
-        ) -> Self {
+        pub fn lambda_authorizer_config(mut self, input: crate::model::LambdaAuthorizerConfig) -> Self {
             self.lambda_authorizer_config = Some(input);
             self
         }
         /// <p>Configuration for Lambda function authorization.</p>
-        pub fn set_lambda_authorizer_config(
-            mut self,
-            input: std::option::Option<crate::model::LambdaAuthorizerConfig>,
-        ) -> Self {
-            self.lambda_authorizer_config = input;
-            self
+        pub fn set_lambda_authorizer_config(mut self, input: std::option::Option<crate::model::LambdaAuthorizerConfig>) -> Self {
+            self.lambda_authorizer_config = input; self
         }
         /// Consumes the builder and constructs a [`GraphqlApi`](crate::model::GraphqlApi).
         pub fn build(self) -> crate::model::GraphqlApi {
             crate::model::GraphqlApi {
-                name: self.name,
-                api_id: self.api_id,
-                authentication_type: self.authentication_type,
-                log_config: self.log_config,
-                user_pool_config: self.user_pool_config,
-                open_id_connect_config: self.open_id_connect_config,
-                arn: self.arn,
-                uris: self.uris,
-                tags: self.tags,
-                additional_authentication_providers: self.additional_authentication_providers,
-                xray_enabled: self.xray_enabled.unwrap_or_default(),
-                waf_web_acl_arn: self.waf_web_acl_arn,
-                lambda_authorizer_config: self.lambda_authorizer_config,
+                name: self.name
+                ,
+                api_id: self.api_id
+                ,
+                authentication_type: self.authentication_type
+                ,
+                log_config: self.log_config
+                ,
+                user_pool_config: self.user_pool_config
+                ,
+                open_id_connect_config: self.open_id_connect_config
+                ,
+                arn: self.arn
+                ,
+                uris: self.uris
+                ,
+                tags: self.tags
+                ,
+                additional_authentication_providers: self.additional_authentication_providers
+                ,
+                xray_enabled: self.xray_enabled
+                    .unwrap_or_default()
+                ,
+                waf_web_acl_arn: self.waf_web_acl_arn
+                ,
+                lambda_authorizer_config: self.lambda_authorizer_config
+                ,
             }
         }
     }
+    
+    
 }
 impl GraphqlApi {
     /// Creates a new builder-style object to manufacture [`GraphqlApi`](crate::model::GraphqlApi).
@@ -1996,12 +1853,12 @@ impl GraphqlApi {
 /// <p>A <code>LambdaAuthorizerConfig</code> specifies how to authorize AppSync API access when using the <code>AWS_LAMBDA</code> authorizer mode. Be aware that an AppSync API can have only one Lambda authorizer configured at a time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaAuthorizerConfig {
+pub struct LambdaAuthorizerConfig  {
     /// <p>The number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda function can override this by returning a <code>ttlOverride</code> key in its response. A value of 0 disables caching of responses.</p>
     #[doc(hidden)]
     pub authorizer_result_ttl_in_seconds: i32,
-    /// <p>The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias ARN. </p>
-    /// <p> <b>Note</b>: This Lambda function must have the following resource-based policy assigned to it. When configuring Lambda authorizers in the console, this is done for you. To use the Command Line Interface (CLI), run the following:</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias ARN. </p> 
+    /// <p> <b>Note</b>: This Lambda function must have the following resource-based policy assigned to it. When configuring Lambda authorizers in the console, this is done for you. To use the Command Line Interface (CLI), run the following:</p> 
     /// <p> <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code> </p>
     #[doc(hidden)]
     pub authorizer_uri: std::option::Option<std::string::String>,
@@ -2014,20 +1871,20 @@ impl LambdaAuthorizerConfig {
     pub fn authorizer_result_ttl_in_seconds(&self) -> i32 {
         self.authorizer_result_ttl_in_seconds
     }
-    /// <p>The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias ARN. </p>
-    /// <p> <b>Note</b>: This Lambda function must have the following resource-based policy assigned to it. When configuring Lambda authorizers in the console, this is done for you. To use the Command Line Interface (CLI), run the following:</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias ARN. </p> 
+    /// <p> <b>Note</b>: This Lambda function must have the following resource-based policy assigned to it. When configuring Lambda authorizers in the console, this is done for you. To use the Command Line Interface (CLI), run the following:</p> 
     /// <p> <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code> </p>
-    pub fn authorizer_uri(&self) -> std::option::Option<&str> {
+    pub fn authorizer_uri(&self) -> std::option::Option<& str> {
         self.authorizer_uri.as_deref()
     }
     /// <p>A regular expression for validation of tokens before the Lambda function is called.</p>
-    pub fn identity_validation_expression(&self) -> std::option::Option<&str> {
+    pub fn identity_validation_expression(&self) -> std::option::Option<& str> {
         self.identity_validation_expression.as_deref()
     }
 }
 /// See [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig).
 pub mod lambda_authorizer_config {
-
+    
     /// A builder for [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2042,57 +1899,46 @@ pub mod lambda_authorizer_config {
             self
         }
         /// <p>The number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda function can override this by returning a <code>ttlOverride</code> key in its response. A value of 0 disables caching of responses.</p>
-        pub fn set_authorizer_result_ttl_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.authorizer_result_ttl_in_seconds = input;
-            self
+        pub fn set_authorizer_result_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.authorizer_result_ttl_in_seconds = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias ARN. </p>
-        /// <p> <b>Note</b>: This Lambda function must have the following resource-based policy assigned to it. When configuring Lambda authorizers in the console, this is done for you. To use the Command Line Interface (CLI), run the following:</p>
+        /// <p>The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias ARN. </p> 
+        /// <p> <b>Note</b>: This Lambda function must have the following resource-based policy assigned to it. When configuring Lambda authorizers in the console, this is done for you. To use the Command Line Interface (CLI), run the following:</p> 
         /// <p> <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code> </p>
         pub fn authorizer_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorizer_uri = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias ARN. </p>
-        /// <p> <b>Note</b>: This Lambda function must have the following resource-based policy assigned to it. When configuring Lambda authorizers in the console, this is done for you. To use the Command Line Interface (CLI), run the following:</p>
+        /// <p>The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias ARN. </p> 
+        /// <p> <b>Note</b>: This Lambda function must have the following resource-based policy assigned to it. When configuring Lambda authorizers in the console, this is done for you. To use the Command Line Interface (CLI), run the following:</p> 
         /// <p> <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code> </p>
-        pub fn set_authorizer_uri(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.authorizer_uri = input;
-            self
+        pub fn set_authorizer_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.authorizer_uri = input; self
         }
         /// <p>A regular expression for validation of tokens before the Lambda function is called.</p>
-        pub fn identity_validation_expression(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn identity_validation_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_validation_expression = Some(input.into());
             self
         }
         /// <p>A regular expression for validation of tokens before the Lambda function is called.</p>
-        pub fn set_identity_validation_expression(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_validation_expression = input;
-            self
+        pub fn set_identity_validation_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_validation_expression = input; self
         }
         /// Consumes the builder and constructs a [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig).
         pub fn build(self) -> crate::model::LambdaAuthorizerConfig {
             crate::model::LambdaAuthorizerConfig {
-                authorizer_result_ttl_in_seconds: self
-                    .authorizer_result_ttl_in_seconds
-                    .unwrap_or_default(),
-                authorizer_uri: self.authorizer_uri,
-                identity_validation_expression: self.identity_validation_expression,
+                authorizer_result_ttl_in_seconds: self.authorizer_result_ttl_in_seconds
+                    .unwrap_or_default()
+                ,
+                authorizer_uri: self.authorizer_uri
+                ,
+                identity_validation_expression: self.identity_validation_expression
+                ,
             }
         }
     }
+    
+    
 }
 impl LambdaAuthorizerConfig {
     /// Creates a new builder-style object to manufacture [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig).
@@ -2104,7 +1950,7 @@ impl LambdaAuthorizerConfig {
 /// <p>Describes an additional authentication provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdditionalAuthenticationProvider {
+pub struct AdditionalAuthenticationProvider  {
     /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
     #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
@@ -2120,37 +1966,32 @@ pub struct AdditionalAuthenticationProvider {
 }
 impl AdditionalAuthenticationProvider {
     /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
-    pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
+    pub fn authentication_type(&self) -> std::option::Option<& crate::model::AuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The OIDC configuration.</p>
-    pub fn open_id_connect_config(
-        &self,
-    ) -> std::option::Option<&crate::model::OpenIdConnectConfig> {
+    pub fn open_id_connect_config(&self) -> std::option::Option<& crate::model::OpenIdConnectConfig> {
         self.open_id_connect_config.as_ref()
     }
     /// <p>The Amazon Cognito user pool configuration.</p>
-    pub fn user_pool_config(&self) -> std::option::Option<&crate::model::CognitoUserPoolConfig> {
+    pub fn user_pool_config(&self) -> std::option::Option<& crate::model::CognitoUserPoolConfig> {
         self.user_pool_config.as_ref()
     }
     /// <p>Configuration for Lambda function authorization.</p>
-    pub fn lambda_authorizer_config(
-        &self,
-    ) -> std::option::Option<&crate::model::LambdaAuthorizerConfig> {
+    pub fn lambda_authorizer_config(&self) -> std::option::Option<& crate::model::LambdaAuthorizerConfig> {
         self.lambda_authorizer_config.as_ref()
     }
 }
 /// See [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider).
 pub mod additional_authentication_provider {
-
+    
     /// A builder for [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
         pub(crate) open_id_connect_config: std::option::Option<crate::model::OpenIdConnectConfig>,
         pub(crate) user_pool_config: std::option::Option<crate::model::CognitoUserPoolConfig>,
-        pub(crate) lambda_authorizer_config:
-            std::option::Option<crate::model::LambdaAuthorizerConfig>,
+        pub(crate) lambda_authorizer_config: std::option::Option<crate::model::LambdaAuthorizerConfig>,
     }
     impl Builder {
         /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
@@ -2159,12 +2000,8 @@ pub mod additional_authentication_provider {
             self
         }
         /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
-        pub fn set_authentication_type(
-            mut self,
-            input: std::option::Option<crate::model::AuthenticationType>,
-        ) -> Self {
-            self.authentication_type = input;
-            self
+        pub fn set_authentication_type(mut self, input: std::option::Option<crate::model::AuthenticationType>) -> Self {
+            self.authentication_type = input; self
         }
         /// <p>The OIDC configuration.</p>
         pub fn open_id_connect_config(mut self, input: crate::model::OpenIdConnectConfig) -> Self {
@@ -2172,12 +2009,8 @@ pub mod additional_authentication_provider {
             self
         }
         /// <p>The OIDC configuration.</p>
-        pub fn set_open_id_connect_config(
-            mut self,
-            input: std::option::Option<crate::model::OpenIdConnectConfig>,
-        ) -> Self {
-            self.open_id_connect_config = input;
-            self
+        pub fn set_open_id_connect_config(mut self, input: std::option::Option<crate::model::OpenIdConnectConfig>) -> Self {
+            self.open_id_connect_config = input; self
         }
         /// <p>The Amazon Cognito user pool configuration.</p>
         pub fn user_pool_config(mut self, input: crate::model::CognitoUserPoolConfig) -> Self {
@@ -2185,39 +2018,34 @@ pub mod additional_authentication_provider {
             self
         }
         /// <p>The Amazon Cognito user pool configuration.</p>
-        pub fn set_user_pool_config(
-            mut self,
-            input: std::option::Option<crate::model::CognitoUserPoolConfig>,
-        ) -> Self {
-            self.user_pool_config = input;
-            self
+        pub fn set_user_pool_config(mut self, input: std::option::Option<crate::model::CognitoUserPoolConfig>) -> Self {
+            self.user_pool_config = input; self
         }
         /// <p>Configuration for Lambda function authorization.</p>
-        pub fn lambda_authorizer_config(
-            mut self,
-            input: crate::model::LambdaAuthorizerConfig,
-        ) -> Self {
+        pub fn lambda_authorizer_config(mut self, input: crate::model::LambdaAuthorizerConfig) -> Self {
             self.lambda_authorizer_config = Some(input);
             self
         }
         /// <p>Configuration for Lambda function authorization.</p>
-        pub fn set_lambda_authorizer_config(
-            mut self,
-            input: std::option::Option<crate::model::LambdaAuthorizerConfig>,
-        ) -> Self {
-            self.lambda_authorizer_config = input;
-            self
+        pub fn set_lambda_authorizer_config(mut self, input: std::option::Option<crate::model::LambdaAuthorizerConfig>) -> Self {
+            self.lambda_authorizer_config = input; self
         }
         /// Consumes the builder and constructs a [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider).
         pub fn build(self) -> crate::model::AdditionalAuthenticationProvider {
             crate::model::AdditionalAuthenticationProvider {
-                authentication_type: self.authentication_type,
-                open_id_connect_config: self.open_id_connect_config,
-                user_pool_config: self.user_pool_config,
-                lambda_authorizer_config: self.lambda_authorizer_config,
+                authentication_type: self.authentication_type
+                ,
+                open_id_connect_config: self.open_id_connect_config
+                ,
+                user_pool_config: self.user_pool_config
+                ,
+                lambda_authorizer_config: self.lambda_authorizer_config
+                ,
             }
         }
     }
+    
+    
 }
 impl AdditionalAuthenticationProvider {
     /// Creates a new builder-style object to manufacture [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider).
@@ -2229,7 +2057,7 @@ impl AdditionalAuthenticationProvider {
 /// <p>Describes an Amazon Cognito user pool configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CognitoUserPoolConfig {
+pub struct CognitoUserPoolConfig  {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -2242,21 +2070,21 @@ pub struct CognitoUserPoolConfig {
 }
 impl CognitoUserPoolConfig {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
-    pub fn app_id_client_regex(&self) -> std::option::Option<&str> {
+    pub fn app_id_client_regex(&self) -> std::option::Option<& str> {
         self.app_id_client_regex.as_deref()
     }
 }
 /// See [`CognitoUserPoolConfig`](crate::model::CognitoUserPoolConfig).
 pub mod cognito_user_pool_config {
-
+    
     /// A builder for [`CognitoUserPoolConfig`](crate::model::CognitoUserPoolConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2272,8 +2100,7 @@ pub mod cognito_user_pool_config {
         }
         /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_pool_id = input;
-            self
+            self.user_pool_id = input; self
         }
         /// <p>The Amazon Web Services Region in which the user pool was created.</p>
         pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2282,8 +2109,7 @@ pub mod cognito_user_pool_config {
         }
         /// <p>The Amazon Web Services Region in which the user pool was created.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_region = input;
-            self
+            self.aws_region = input; self
         }
         /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
         pub fn app_id_client_regex(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2291,22 +2117,23 @@ pub mod cognito_user_pool_config {
             self
         }
         /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
-        pub fn set_app_id_client_regex(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_id_client_regex = input;
-            self
+        pub fn set_app_id_client_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_id_client_regex = input; self
         }
         /// Consumes the builder and constructs a [`CognitoUserPoolConfig`](crate::model::CognitoUserPoolConfig).
         pub fn build(self) -> crate::model::CognitoUserPoolConfig {
             crate::model::CognitoUserPoolConfig {
-                user_pool_id: self.user_pool_id,
-                aws_region: self.aws_region,
-                app_id_client_regex: self.app_id_client_regex,
+                user_pool_id: self.user_pool_id
+                ,
+                aws_region: self.aws_region
+                ,
+                app_id_client_regex: self.app_id_client_regex
+                ,
             }
         }
     }
+    
+    
 }
 impl CognitoUserPoolConfig {
     /// Creates a new builder-style object to manufacture [`CognitoUserPoolConfig`](crate::model::CognitoUserPoolConfig).
@@ -2318,7 +2145,7 @@ impl CognitoUserPoolConfig {
 /// <p>Describes an OpenID Connect (OIDC) configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpenIdConnectConfig {
+pub struct OpenIdConnectConfig  {
     /// <p>The issuer for the OIDC configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token.</p>
     #[doc(hidden)]
     pub issuer: std::option::Option<std::string::String>,
@@ -2334,11 +2161,11 @@ pub struct OpenIdConnectConfig {
 }
 impl OpenIdConnectConfig {
     /// <p>The issuer for the OIDC configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token.</p>
-    pub fn issuer(&self) -> std::option::Option<&str> {
+    pub fn issuer(&self) -> std::option::Option<& str> {
         self.issuer.as_deref()
     }
     /// <p>The client identifier of the relying party at the OpenID identity provider. This identifier is typically obtained when the relying party is registered with the OpenID identity provider. You can specify a regular expression so that AppSync can validate against multiple client identifiers at a time.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>The number of milliseconds that a token is valid after it's issued to a user.</p>
@@ -2352,7 +2179,7 @@ impl OpenIdConnectConfig {
 }
 /// See [`OpenIdConnectConfig`](crate::model::OpenIdConnectConfig).
 pub mod open_id_connect_config {
-
+    
     /// A builder for [`OpenIdConnectConfig`](crate::model::OpenIdConnectConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2369,8 +2196,7 @@ pub mod open_id_connect_config {
         }
         /// <p>The issuer for the OIDC configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token.</p>
         pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.issuer = input;
-            self
+            self.issuer = input; self
         }
         /// <p>The client identifier of the relying party at the OpenID identity provider. This identifier is typically obtained when the relying party is registered with the OpenID identity provider. You can specify a regular expression so that AppSync can validate against multiple client identifiers at a time.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2379,8 +2205,7 @@ pub mod open_id_connect_config {
         }
         /// <p>The client identifier of the relying party at the OpenID identity provider. This identifier is typically obtained when the relying party is registered with the OpenID identity provider. You can specify a regular expression so that AppSync can validate against multiple client identifiers at a time.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_id = input;
-            self
+            self.client_id = input; self
         }
         /// <p>The number of milliseconds that a token is valid after it's issued to a user.</p>
         pub fn iat_ttl(mut self, input: i64) -> Self {
@@ -2389,8 +2214,7 @@ pub mod open_id_connect_config {
         }
         /// <p>The number of milliseconds that a token is valid after it's issued to a user.</p>
         pub fn set_iat_ttl(mut self, input: std::option::Option<i64>) -> Self {
-            self.iat_ttl = input;
-            self
+            self.iat_ttl = input; self
         }
         /// <p>The number of milliseconds that a token is valid after being authenticated.</p>
         pub fn auth_ttl(mut self, input: i64) -> Self {
@@ -2399,19 +2223,26 @@ pub mod open_id_connect_config {
         }
         /// <p>The number of milliseconds that a token is valid after being authenticated.</p>
         pub fn set_auth_ttl(mut self, input: std::option::Option<i64>) -> Self {
-            self.auth_ttl = input;
-            self
+            self.auth_ttl = input; self
         }
         /// Consumes the builder and constructs a [`OpenIdConnectConfig`](crate::model::OpenIdConnectConfig).
         pub fn build(self) -> crate::model::OpenIdConnectConfig {
             crate::model::OpenIdConnectConfig {
-                issuer: self.issuer,
-                client_id: self.client_id,
-                iat_ttl: self.iat_ttl.unwrap_or_default(),
-                auth_ttl: self.auth_ttl.unwrap_or_default(),
+                issuer: self.issuer
+                ,
+                client_id: self.client_id
+                ,
+                iat_ttl: self.iat_ttl
+                    .unwrap_or_default()
+                ,
+                auth_ttl: self.auth_ttl
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl OpenIdConnectConfig {
     /// Creates a new builder-style object to manufacture [`OpenIdConnectConfig`](crate::model::OpenIdConnectConfig).
@@ -2426,9 +2257,9 @@ impl OpenIdConnectConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let authenticationtype = unimplemented!();
 /// match authenticationtype {
@@ -2453,22 +2284,14 @@ impl OpenIdConnectConfig {
 /// Specifically, when `authenticationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AuthenticationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AuthenticationType {
     #[allow(missing_docs)] // documentation missing in model
     AmazonCognitoUserPools,
@@ -2481,7 +2304,7 @@ pub enum AuthenticationType {
     #[allow(missing_docs)] // documentation missing in model
     OpenidConnect,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AuthenticationType {
     fn from(s: &str) -> Self {
@@ -2491,19 +2314,17 @@ impl std::convert::From<&str> for AuthenticationType {
             "AWS_IAM" => AuthenticationType::AwsIam,
             "AWS_LAMBDA" => AuthenticationType::AwsLambda,
             "OPENID_CONNECT" => AuthenticationType::OpenidConnect,
-            other => {
-                AuthenticationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AuthenticationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AuthenticationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthenticationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AuthenticationType::from(s))
+                }
+            }
 impl AuthenticationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2513,17 +2334,13 @@ impl AuthenticationType {
             AuthenticationType::AwsIam => "AWS_IAM",
             AuthenticationType::AwsLambda => "AWS_LAMBDA",
             AuthenticationType::OpenidConnect => "OPENID_CONNECT",
-            AuthenticationType::Unknown(value) => value.as_str(),
+            AuthenticationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AMAZON_COGNITO_USER_POOLS",
-            "API_KEY",
-            "AWS_IAM",
-            "AWS_LAMBDA",
-            "OPENID_CONNECT",
+            "AMAZON_COGNITO_USER_POOLS", "API_KEY", "AWS_IAM", "AWS_LAMBDA", "OPENID_CONNECT"
         ]
     }
 }
@@ -2536,7 +2353,7 @@ impl AsRef<str> for AuthenticationType {
 /// <p>Describes an Amazon Cognito user pool configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserPoolConfig {
+pub struct UserPoolConfig  {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -2552,25 +2369,25 @@ pub struct UserPoolConfig {
 }
 impl UserPoolConfig {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool authentication doesn't match the Amazon Cognito user pool configuration.</p>
-    pub fn default_action(&self) -> std::option::Option<&crate::model::DefaultAction> {
+    pub fn default_action(&self) -> std::option::Option<& crate::model::DefaultAction> {
         self.default_action.as_ref()
     }
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
-    pub fn app_id_client_regex(&self) -> std::option::Option<&str> {
+    pub fn app_id_client_regex(&self) -> std::option::Option<& str> {
         self.app_id_client_regex.as_deref()
     }
 }
 /// See [`UserPoolConfig`](crate::model::UserPoolConfig).
 pub mod user_pool_config {
-
+    
     /// A builder for [`UserPoolConfig`](crate::model::UserPoolConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2587,8 +2404,7 @@ pub mod user_pool_config {
         }
         /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_pool_id = input;
-            self
+            self.user_pool_id = input; self
         }
         /// <p>The Amazon Web Services Region in which the user pool was created.</p>
         pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2597,8 +2413,7 @@ pub mod user_pool_config {
         }
         /// <p>The Amazon Web Services Region in which the user pool was created.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_region = input;
-            self
+            self.aws_region = input; self
         }
         /// <p>The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool authentication doesn't match the Amazon Cognito user pool configuration.</p>
         pub fn default_action(mut self, input: crate::model::DefaultAction) -> Self {
@@ -2606,12 +2421,8 @@ pub mod user_pool_config {
             self
         }
         /// <p>The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool authentication doesn't match the Amazon Cognito user pool configuration.</p>
-        pub fn set_default_action(
-            mut self,
-            input: std::option::Option<crate::model::DefaultAction>,
-        ) -> Self {
-            self.default_action = input;
-            self
+        pub fn set_default_action(mut self, input: std::option::Option<crate::model::DefaultAction>) -> Self {
+            self.default_action = input; self
         }
         /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
         pub fn app_id_client_regex(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2619,23 +2430,25 @@ pub mod user_pool_config {
             self
         }
         /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
-        pub fn set_app_id_client_regex(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_id_client_regex = input;
-            self
+        pub fn set_app_id_client_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_id_client_regex = input; self
         }
         /// Consumes the builder and constructs a [`UserPoolConfig`](crate::model::UserPoolConfig).
         pub fn build(self) -> crate::model::UserPoolConfig {
             crate::model::UserPoolConfig {
-                user_pool_id: self.user_pool_id,
-                aws_region: self.aws_region,
-                default_action: self.default_action,
-                app_id_client_regex: self.app_id_client_regex,
+                user_pool_id: self.user_pool_id
+                ,
+                aws_region: self.aws_region
+                ,
+                default_action: self.default_action
+                ,
+                app_id_client_regex: self.app_id_client_regex
+                ,
             }
         }
     }
+    
+    
 }
 impl UserPoolConfig {
     /// Creates a new builder-style object to manufacture [`UserPoolConfig`](crate::model::UserPoolConfig).
@@ -2650,9 +2463,9 @@ impl UserPoolConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let defaultaction = unimplemented!();
 /// match defaultaction {
@@ -2674,58 +2487,52 @@ impl UserPoolConfig {
 /// Specifically, when `defaultaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DefaultAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DefaultAction {
     #[allow(missing_docs)] // documentation missing in model
     Allow,
     #[allow(missing_docs)] // documentation missing in model
     Deny,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DefaultAction {
     fn from(s: &str) -> Self {
         match s {
             "ALLOW" => DefaultAction::Allow,
             "DENY" => DefaultAction::Deny,
-            other => DefaultAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DefaultAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DefaultAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DefaultAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DefaultAction::from(s))
+                }
+            }
 impl DefaultAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DefaultAction::Allow => "ALLOW",
             DefaultAction::Deny => "DENY",
-            DefaultAction::Unknown(value) => value.as_str(),
+            DefaultAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALLOW", "DENY"]
+        &[
+            "ALLOW", "DENY"
+        ]
     }
 }
 impl AsRef<str> for DefaultAction {
@@ -2737,21 +2544,21 @@ impl AsRef<str> for DefaultAction {
 /// <p>The Amazon CloudWatch Logs configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogConfig {
-    /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
-    /// <ul>
-    /// <li> <p> <b>NONE</b>: No field-level logs are captured.</p> </li>
-    /// <li> <p> <b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
-    /// <ul>
-    /// <li> <p>The error section in the server response.</p> </li>
-    /// <li> <p>Field-level errors.</p> </li>
-    /// <li> <p>The generated request/response functions that got resolved for error fields.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <b>ALL</b>: The following information is logged for all fields in the query:</p>
-    /// <ul>
-    /// <li> <p>Field-level tracing information.</p> </li>
-    /// <li> <p>The generated request/response functions that got resolved for each field.</p> </li>
-    /// </ul> </li>
+pub struct LogConfig  {
+    /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p> 
+    /// <ul> 
+    /// <li> <p> <b>NONE</b>: No field-level logs are captured.</p> </li> 
+    /// <li> <p> <b>ERROR</b>: Logs the following information only for the fields that are in error:</p> 
+    /// <ul> 
+    /// <li> <p>The error section in the server response.</p> </li> 
+    /// <li> <p>Field-level errors.</p> </li> 
+    /// <li> <p>The generated request/response functions that got resolved for error fields.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <b>ALL</b>: The following information is logged for all fields in the query:</p> 
+    /// <ul> 
+    /// <li> <p>Field-level tracing information.</p> </li> 
+    /// <li> <p>The generated request/response functions that got resolved for each field.</p> </li> 
+    /// </ul> </li> 
     /// </ul>
     #[doc(hidden)]
     pub field_log_level: std::option::Option<crate::model::FieldLogLevel>,
@@ -2763,26 +2570,26 @@ pub struct LogConfig {
     pub exclude_verbose_content: bool,
 }
 impl LogConfig {
-    /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
-    /// <ul>
-    /// <li> <p> <b>NONE</b>: No field-level logs are captured.</p> </li>
-    /// <li> <p> <b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
-    /// <ul>
-    /// <li> <p>The error section in the server response.</p> </li>
-    /// <li> <p>Field-level errors.</p> </li>
-    /// <li> <p>The generated request/response functions that got resolved for error fields.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <b>ALL</b>: The following information is logged for all fields in the query:</p>
-    /// <ul>
-    /// <li> <p>Field-level tracing information.</p> </li>
-    /// <li> <p>The generated request/response functions that got resolved for each field.</p> </li>
-    /// </ul> </li>
+    /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p> 
+    /// <ul> 
+    /// <li> <p> <b>NONE</b>: No field-level logs are captured.</p> </li> 
+    /// <li> <p> <b>ERROR</b>: Logs the following information only for the fields that are in error:</p> 
+    /// <ul> 
+    /// <li> <p>The error section in the server response.</p> </li> 
+    /// <li> <p>Field-level errors.</p> </li> 
+    /// <li> <p>The generated request/response functions that got resolved for error fields.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <b>ALL</b>: The following information is logged for all fields in the query:</p> 
+    /// <ul> 
+    /// <li> <p>Field-level tracing information.</p> </li> 
+    /// <li> <p>The generated request/response functions that got resolved for each field.</p> </li> 
+    /// </ul> </li> 
     /// </ul>
-    pub fn field_log_level(&self) -> std::option::Option<&crate::model::FieldLogLevel> {
+    pub fn field_log_level(&self) -> std::option::Option<& crate::model::FieldLogLevel> {
         self.field_log_level.as_ref()
     }
     /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
-    pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<& str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
@@ -2792,7 +2599,7 @@ impl LogConfig {
 }
 /// See [`LogConfig`](crate::model::LogConfig).
 pub mod log_config {
-
+    
     /// A builder for [`LogConfig`](crate::model::LogConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2801,46 +2608,42 @@ pub mod log_config {
         pub(crate) exclude_verbose_content: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
-        /// <ul>
-        /// <li> <p> <b>NONE</b>: No field-level logs are captured.</p> </li>
-        /// <li> <p> <b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
-        /// <ul>
-        /// <li> <p>The error section in the server response.</p> </li>
-        /// <li> <p>Field-level errors.</p> </li>
-        /// <li> <p>The generated request/response functions that got resolved for error fields.</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <b>ALL</b>: The following information is logged for all fields in the query:</p>
-        /// <ul>
-        /// <li> <p>Field-level tracing information.</p> </li>
-        /// <li> <p>The generated request/response functions that got resolved for each field.</p> </li>
-        /// </ul> </li>
+        /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p> 
+        /// <ul> 
+        /// <li> <p> <b>NONE</b>: No field-level logs are captured.</p> </li> 
+        /// <li> <p> <b>ERROR</b>: Logs the following information only for the fields that are in error:</p> 
+        /// <ul> 
+        /// <li> <p>The error section in the server response.</p> </li> 
+        /// <li> <p>Field-level errors.</p> </li> 
+        /// <li> <p>The generated request/response functions that got resolved for error fields.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <b>ALL</b>: The following information is logged for all fields in the query:</p> 
+        /// <ul> 
+        /// <li> <p>Field-level tracing information.</p> </li> 
+        /// <li> <p>The generated request/response functions that got resolved for each field.</p> </li> 
+        /// </ul> </li> 
         /// </ul>
         pub fn field_log_level(mut self, input: crate::model::FieldLogLevel) -> Self {
             self.field_log_level = Some(input);
             self
         }
-        /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
-        /// <ul>
-        /// <li> <p> <b>NONE</b>: No field-level logs are captured.</p> </li>
-        /// <li> <p> <b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
-        /// <ul>
-        /// <li> <p>The error section in the server response.</p> </li>
-        /// <li> <p>Field-level errors.</p> </li>
-        /// <li> <p>The generated request/response functions that got resolved for error fields.</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <b>ALL</b>: The following information is logged for all fields in the query:</p>
-        /// <ul>
-        /// <li> <p>Field-level tracing information.</p> </li>
-        /// <li> <p>The generated request/response functions that got resolved for each field.</p> </li>
-        /// </ul> </li>
+        /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p> 
+        /// <ul> 
+        /// <li> <p> <b>NONE</b>: No field-level logs are captured.</p> </li> 
+        /// <li> <p> <b>ERROR</b>: Logs the following information only for the fields that are in error:</p> 
+        /// <ul> 
+        /// <li> <p>The error section in the server response.</p> </li> 
+        /// <li> <p>Field-level errors.</p> </li> 
+        /// <li> <p>The generated request/response functions that got resolved for error fields.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <b>ALL</b>: The following information is logged for all fields in the query:</p> 
+        /// <ul> 
+        /// <li> <p>Field-level tracing information.</p> </li> 
+        /// <li> <p>The generated request/response functions that got resolved for each field.</p> </li> 
+        /// </ul> </li> 
         /// </ul>
-        pub fn set_field_log_level(
-            mut self,
-            input: std::option::Option<crate::model::FieldLogLevel>,
-        ) -> Self {
-            self.field_log_level = input;
-            self
+        pub fn set_field_log_level(mut self, input: std::option::Option<crate::model::FieldLogLevel>) -> Self {
+            self.field_log_level = input; self
         }
         /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
         pub fn cloud_watch_logs_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2848,12 +2651,8 @@ pub mod log_config {
             self
         }
         /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
-        pub fn set_cloud_watch_logs_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cloud_watch_logs_role_arn = input;
-            self
+        pub fn set_cloud_watch_logs_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cloud_watch_logs_role_arn = input; self
         }
         /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
         pub fn exclude_verbose_content(mut self, input: bool) -> Self {
@@ -2862,18 +2661,23 @@ pub mod log_config {
         }
         /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
         pub fn set_exclude_verbose_content(mut self, input: std::option::Option<bool>) -> Self {
-            self.exclude_verbose_content = input;
-            self
+            self.exclude_verbose_content = input; self
         }
         /// Consumes the builder and constructs a [`LogConfig`](crate::model::LogConfig).
         pub fn build(self) -> crate::model::LogConfig {
             crate::model::LogConfig {
-                field_log_level: self.field_log_level,
-                cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn,
-                exclude_verbose_content: self.exclude_verbose_content.unwrap_or_default(),
+                field_log_level: self.field_log_level
+                ,
+                cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn
+                ,
+                exclude_verbose_content: self.exclude_verbose_content
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl LogConfig {
     /// Creates a new builder-style object to manufacture [`LogConfig`](crate::model::LogConfig).
@@ -2888,9 +2692,9 @@ impl LogConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fieldloglevel = unimplemented!();
 /// match fieldloglevel {
@@ -2913,22 +2717,14 @@ impl LogConfig {
 /// Specifically, when `fieldloglevel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FieldLogLevel::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FieldLogLevel {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -2937,7 +2733,7 @@ pub enum FieldLogLevel {
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FieldLogLevel {
     fn from(s: &str) -> Self {
@@ -2945,17 +2741,17 @@ impl std::convert::From<&str> for FieldLogLevel {
             "ALL" => FieldLogLevel::All,
             "ERROR" => FieldLogLevel::Error,
             "NONE" => FieldLogLevel::None,
-            other => FieldLogLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FieldLogLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FieldLogLevel {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FieldLogLevel::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FieldLogLevel::from(s))
+                }
+            }
 impl FieldLogLevel {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2963,12 +2759,14 @@ impl FieldLogLevel {
             FieldLogLevel::All => "ALL",
             FieldLogLevel::Error => "ERROR",
             FieldLogLevel::None => "NONE",
-            FieldLogLevel::Unknown(value) => value.as_str(),
+            FieldLogLevel::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "ERROR", "NONE"]
+        &[
+            "ALL", "ERROR", "NONE"
+        ]
     }
 }
 impl AsRef<str> for FieldLogLevel {
@@ -2980,7 +2778,7 @@ impl AsRef<str> for FieldLogLevel {
 /// <p>A function is a reusable entity. You can use multiple functions to compose the resolver logic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionConfiguration {
+pub struct FunctionConfiguration  {
     /// <p>A unique ID representing the <code>Function</code> object.</p>
     #[doc(hidden)]
     pub function_id: std::option::Option<std::string::String>,
@@ -3005,7 +2803,7 @@ pub struct FunctionConfiguration {
     /// <p>The version of the request mapping template. Currently, only the 2018-05-29 version of the template is supported.</p>
     #[doc(hidden)]
     pub function_version: std::option::Option<std::string::String>,
-    /// <p>Describes a Sync configuration for a resolver.</p>
+    /// <p>Describes a Sync configuration for a resolver.</p> 
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
     #[doc(hidden)]
     pub sync_config: std::option::Option<crate::model::SyncConfig>,
@@ -3021,40 +2819,40 @@ pub struct FunctionConfiguration {
 }
 impl FunctionConfiguration {
     /// <p>A unique ID representing the <code>Function</code> object.</p>
-    pub fn function_id(&self) -> std::option::Option<&str> {
+    pub fn function_id(&self) -> std::option::Option<& str> {
         self.function_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The name of the <code>Function</code> object.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The <code>Function</code> description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the <code>DataSource</code>.</p>
-    pub fn data_source_name(&self) -> std::option::Option<&str> {
+    pub fn data_source_name(&self) -> std::option::Option<& str> {
         self.data_source_name.as_deref()
     }
     /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
-    pub fn request_mapping_template(&self) -> std::option::Option<&str> {
+    pub fn request_mapping_template(&self) -> std::option::Option<& str> {
         self.request_mapping_template.as_deref()
     }
     /// <p>The <code>Function</code> response mapping template.</p>
-    pub fn response_mapping_template(&self) -> std::option::Option<&str> {
+    pub fn response_mapping_template(&self) -> std::option::Option<& str> {
         self.response_mapping_template.as_deref()
     }
     /// <p>The version of the request mapping template. Currently, only the 2018-05-29 version of the template is supported.</p>
-    pub fn function_version(&self) -> std::option::Option<&str> {
+    pub fn function_version(&self) -> std::option::Option<& str> {
         self.function_version.as_deref()
     }
-    /// <p>Describes a Sync configuration for a resolver.</p>
+    /// <p>Describes a Sync configuration for a resolver.</p> 
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
-    pub fn sync_config(&self) -> std::option::Option<&crate::model::SyncConfig> {
+    pub fn sync_config(&self) -> std::option::Option<& crate::model::SyncConfig> {
         self.sync_config.as_ref()
     }
     /// <p>The maximum batching size for a resolver.</p>
@@ -3062,17 +2860,17 @@ impl FunctionConfiguration {
         self.max_batch_size
     }
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
-    pub fn runtime(&self) -> std::option::Option<&crate::model::AppSyncRuntime> {
+    pub fn runtime(&self) -> std::option::Option<& crate::model::AppSyncRuntime> {
         self.runtime.as_ref()
     }
     /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 /// See [`FunctionConfiguration`](crate::model::FunctionConfiguration).
 pub mod function_configuration {
-
+    
     /// A builder for [`FunctionConfiguration`](crate::model::FunctionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3097,8 +2895,7 @@ pub mod function_configuration {
         }
         /// <p>A unique ID representing the <code>Function</code> object.</p>
         pub fn set_function_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_id = input;
-            self
+            self.function_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3107,8 +2904,7 @@ pub mod function_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The name of the <code>Function</code> object.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3117,8 +2913,7 @@ pub mod function_configuration {
         }
         /// <p>The name of the <code>Function</code> object.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The <code>Function</code> description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3127,8 +2922,7 @@ pub mod function_configuration {
         }
         /// <p>The <code>Function</code> description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The name of the <code>DataSource</code>.</p>
         pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3136,12 +2930,8 @@ pub mod function_configuration {
             self
         }
         /// <p>The name of the <code>DataSource</code>.</p>
-        pub fn set_data_source_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_name = input;
-            self
+        pub fn set_data_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_name = input; self
         }
         /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
         pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3149,12 +2939,8 @@ pub mod function_configuration {
             self
         }
         /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
-        pub fn set_request_mapping_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.request_mapping_template = input;
-            self
+        pub fn set_request_mapping_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_mapping_template = input; self
         }
         /// <p>The <code>Function</code> response mapping template.</p>
         pub fn response_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3162,12 +2948,8 @@ pub mod function_configuration {
             self
         }
         /// <p>The <code>Function</code> response mapping template.</p>
-        pub fn set_response_mapping_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.response_mapping_template = input;
-            self
+        pub fn set_response_mapping_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.response_mapping_template = input; self
         }
         /// <p>The version of the request mapping template. Currently, only the 2018-05-29 version of the template is supported.</p>
         pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3175,27 +2957,19 @@ pub mod function_configuration {
             self
         }
         /// <p>The version of the request mapping template. Currently, only the 2018-05-29 version of the template is supported.</p>
-        pub fn set_function_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_version = input;
-            self
+        pub fn set_function_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_version = input; self
         }
-        /// <p>Describes a Sync configuration for a resolver.</p>
+        /// <p>Describes a Sync configuration for a resolver.</p> 
         /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
         pub fn sync_config(mut self, input: crate::model::SyncConfig) -> Self {
             self.sync_config = Some(input);
             self
         }
-        /// <p>Describes a Sync configuration for a resolver.</p>
+        /// <p>Describes a Sync configuration for a resolver.</p> 
         /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
-        pub fn set_sync_config(
-            mut self,
-            input: std::option::Option<crate::model::SyncConfig>,
-        ) -> Self {
-            self.sync_config = input;
-            self
+        pub fn set_sync_config(mut self, input: std::option::Option<crate::model::SyncConfig>) -> Self {
+            self.sync_config = input; self
         }
         /// <p>The maximum batching size for a resolver.</p>
         pub fn max_batch_size(mut self, input: i32) -> Self {
@@ -3204,8 +2978,7 @@ pub mod function_configuration {
         }
         /// <p>The maximum batching size for a resolver.</p>
         pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_batch_size = input;
-            self
+            self.max_batch_size = input; self
         }
         /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
         pub fn runtime(mut self, input: crate::model::AppSyncRuntime) -> Self {
@@ -3213,12 +2986,8 @@ pub mod function_configuration {
             self
         }
         /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
-        pub fn set_runtime(
-            mut self,
-            input: std::option::Option<crate::model::AppSyncRuntime>,
-        ) -> Self {
-            self.runtime = input;
-            self
+        pub fn set_runtime(mut self, input: std::option::Option<crate::model::AppSyncRuntime>) -> Self {
+            self.runtime = input; self
         }
         /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3227,27 +2996,41 @@ pub mod function_configuration {
         }
         /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`FunctionConfiguration`](crate::model::FunctionConfiguration).
         pub fn build(self) -> crate::model::FunctionConfiguration {
             crate::model::FunctionConfiguration {
-                function_id: self.function_id,
-                function_arn: self.function_arn,
-                name: self.name,
-                description: self.description,
-                data_source_name: self.data_source_name,
-                request_mapping_template: self.request_mapping_template,
-                response_mapping_template: self.response_mapping_template,
-                function_version: self.function_version,
-                sync_config: self.sync_config,
-                max_batch_size: self.max_batch_size.unwrap_or_default(),
-                runtime: self.runtime,
-                code: self.code,
+                function_id: self.function_id
+                ,
+                function_arn: self.function_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                data_source_name: self.data_source_name
+                ,
+                request_mapping_template: self.request_mapping_template
+                ,
+                response_mapping_template: self.response_mapping_template
+                ,
+                function_version: self.function_version
+                ,
+                sync_config: self.sync_config
+                ,
+                max_batch_size: self.max_batch_size
+                    .unwrap_or_default()
+                ,
+                runtime: self.runtime
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl FunctionConfiguration {
     /// Creates a new builder-style object to manufacture [`FunctionConfiguration`](crate::model::FunctionConfiguration).
@@ -3259,7 +3042,7 @@ impl FunctionConfiguration {
 /// <p>Describes a configuration for a custom domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainNameConfig {
+pub struct DomainNameConfig  {
     /// <p>The domain name.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -3278,29 +3061,29 @@ pub struct DomainNameConfig {
 }
 impl DomainNameConfig {
     /// <p>The domain name.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>A description of the <code>DomainName</code> configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The domain name that AppSync provides.</p>
-    pub fn appsync_domain_name(&self) -> std::option::Option<&str> {
+    pub fn appsync_domain_name(&self) -> std::option::Option<& str> {
         self.appsync_domain_name.as_deref()
     }
     /// <p>The ID of your Amazon Route&nbsp;53 hosted zone.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
 }
 /// See [`DomainNameConfig`](crate::model::DomainNameConfig).
 pub mod domain_name_config {
-
+    
     /// A builder for [`DomainNameConfig`](crate::model::DomainNameConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3318,8 +3101,7 @@ pub mod domain_name_config {
         }
         /// <p>The domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>A description of the <code>DomainName</code> configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3328,8 +3110,7 @@ pub mod domain_name_config {
         }
         /// <p>A description of the <code>DomainName</code> configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3337,12 +3118,8 @@ pub mod domain_name_config {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.</p>
-        pub fn set_certificate_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_arn = input;
-            self
+        pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_arn = input; self
         }
         /// <p>The domain name that AppSync provides.</p>
         pub fn appsync_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3350,12 +3127,8 @@ pub mod domain_name_config {
             self
         }
         /// <p>The domain name that AppSync provides.</p>
-        pub fn set_appsync_domain_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.appsync_domain_name = input;
-            self
+        pub fn set_appsync_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.appsync_domain_name = input; self
         }
         /// <p>The ID of your Amazon Route&nbsp;53 hosted zone.</p>
         pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3363,24 +3136,27 @@ pub mod domain_name_config {
             self
         }
         /// <p>The ID of your Amazon Route&nbsp;53 hosted zone.</p>
-        pub fn set_hosted_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hosted_zone_id = input;
-            self
+        pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hosted_zone_id = input; self
         }
         /// Consumes the builder and constructs a [`DomainNameConfig`](crate::model::DomainNameConfig).
         pub fn build(self) -> crate::model::DomainNameConfig {
             crate::model::DomainNameConfig {
-                domain_name: self.domain_name,
-                description: self.description,
-                certificate_arn: self.certificate_arn,
-                appsync_domain_name: self.appsync_domain_name,
-                hosted_zone_id: self.hosted_zone_id,
+                domain_name: self.domain_name
+                ,
+                description: self.description
+                ,
+                certificate_arn: self.certificate_arn
+                ,
+                appsync_domain_name: self.appsync_domain_name
+                ,
+                hosted_zone_id: self.hosted_zone_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainNameConfig {
     /// Creates a new builder-style object to manufacture [`DomainNameConfig`](crate::model::DomainNameConfig).
@@ -3392,7 +3168,7 @@ impl DomainNameConfig {
 /// <p>Describes a data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSource {
+pub struct DataSource  {
     /// <p>The data source Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub data_source_arn: std::option::Option<std::string::String>,
@@ -3402,15 +3178,15 @@ pub struct DataSource {
     /// <p>The description of the data source.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The type of the data source.</p>
-    /// <ul>
-    /// <li> <p> <b>AWS_LAMBDA</b>: The data source is an Lambda function.</p> </li>
-    /// <li> <p> <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li>
-    /// <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p> </li>
-    /// <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p> </li>
-    /// <li> <p> <b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p> </li>
-    /// <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li>
-    /// <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
+    /// <p>The type of the data source.</p> 
+    /// <ul> 
+    /// <li> <p> <b>AWS_LAMBDA</b>: The data source is an Lambda function.</p> </li> 
+    /// <li> <p> <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li> 
+    /// <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p> </li> 
+    /// <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p> </li> 
+    /// <li> <p> <b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p> </li> 
+    /// <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> 
+    /// <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DataSourceType>,
@@ -3428,80 +3204,72 @@ pub struct DataSource {
     pub elasticsearch_config: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
     /// <p>Amazon OpenSearch Service settings.</p>
     #[doc(hidden)]
-    pub open_search_service_config:
-        std::option::Option<crate::model::OpenSearchServiceDataSourceConfig>,
+    pub open_search_service_config: std::option::Option<crate::model::OpenSearchServiceDataSourceConfig>,
     /// <p>HTTP endpoint settings.</p>
     #[doc(hidden)]
     pub http_config: std::option::Option<crate::model::HttpDataSourceConfig>,
     /// <p>Relational database settings.</p>
     #[doc(hidden)]
-    pub relational_database_config:
-        std::option::Option<crate::model::RelationalDatabaseDataSourceConfig>,
+    pub relational_database_config: std::option::Option<crate::model::RelationalDatabaseDataSourceConfig>,
 }
 impl DataSource {
     /// <p>The data source Amazon Resource Name (ARN).</p>
-    pub fn data_source_arn(&self) -> std::option::Option<&str> {
+    pub fn data_source_arn(&self) -> std::option::Option<& str> {
         self.data_source_arn.as_deref()
     }
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the data source.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The type of the data source.</p>
-    /// <ul>
-    /// <li> <p> <b>AWS_LAMBDA</b>: The data source is an Lambda function.</p> </li>
-    /// <li> <p> <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li>
-    /// <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p> </li>
-    /// <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p> </li>
-    /// <li> <p> <b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p> </li>
-    /// <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li>
-    /// <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
+    /// <p>The type of the data source.</p> 
+    /// <ul> 
+    /// <li> <p> <b>AWS_LAMBDA</b>: The data source is an Lambda function.</p> </li> 
+    /// <li> <p> <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li> 
+    /// <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p> </li> 
+    /// <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p> </li> 
+    /// <li> <p> <b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p> </li> 
+    /// <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> 
+    /// <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::DataSourceType> {
         self.r#type.as_ref()
     }
     /// <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
-    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+    pub fn service_role_arn(&self) -> std::option::Option<& str> {
         self.service_role_arn.as_deref()
     }
     /// <p>DynamoDB settings.</p>
-    pub fn dynamodb_config(&self) -> std::option::Option<&crate::model::DynamodbDataSourceConfig> {
+    pub fn dynamodb_config(&self) -> std::option::Option<& crate::model::DynamodbDataSourceConfig> {
         self.dynamodb_config.as_ref()
     }
     /// <p>Lambda settings.</p>
-    pub fn lambda_config(&self) -> std::option::Option<&crate::model::LambdaDataSourceConfig> {
+    pub fn lambda_config(&self) -> std::option::Option<& crate::model::LambdaDataSourceConfig> {
         self.lambda_config.as_ref()
     }
     /// <p>Amazon OpenSearch Service settings.</p>
-    pub fn elasticsearch_config(
-        &self,
-    ) -> std::option::Option<&crate::model::ElasticsearchDataSourceConfig> {
+    pub fn elasticsearch_config(&self) -> std::option::Option<& crate::model::ElasticsearchDataSourceConfig> {
         self.elasticsearch_config.as_ref()
     }
     /// <p>Amazon OpenSearch Service settings.</p>
-    pub fn open_search_service_config(
-        &self,
-    ) -> std::option::Option<&crate::model::OpenSearchServiceDataSourceConfig> {
+    pub fn open_search_service_config(&self) -> std::option::Option<& crate::model::OpenSearchServiceDataSourceConfig> {
         self.open_search_service_config.as_ref()
     }
     /// <p>HTTP endpoint settings.</p>
-    pub fn http_config(&self) -> std::option::Option<&crate::model::HttpDataSourceConfig> {
+    pub fn http_config(&self) -> std::option::Option<& crate::model::HttpDataSourceConfig> {
         self.http_config.as_ref()
     }
     /// <p>Relational database settings.</p>
-    pub fn relational_database_config(
-        &self,
-    ) -> std::option::Option<&crate::model::RelationalDatabaseDataSourceConfig> {
+    pub fn relational_database_config(&self) -> std::option::Option<& crate::model::RelationalDatabaseDataSourceConfig> {
         self.relational_database_config.as_ref()
     }
 }
 /// See [`DataSource`](crate::model::DataSource).
 pub mod data_source {
-
+    
     /// A builder for [`DataSource`](crate::model::DataSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3512,13 +3280,10 @@ pub mod data_source {
         pub(crate) service_role_arn: std::option::Option<std::string::String>,
         pub(crate) dynamodb_config: std::option::Option<crate::model::DynamodbDataSourceConfig>,
         pub(crate) lambda_config: std::option::Option<crate::model::LambdaDataSourceConfig>,
-        pub(crate) elasticsearch_config:
-            std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
-        pub(crate) open_search_service_config:
-            std::option::Option<crate::model::OpenSearchServiceDataSourceConfig>,
+        pub(crate) elasticsearch_config: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
+        pub(crate) open_search_service_config: std::option::Option<crate::model::OpenSearchServiceDataSourceConfig>,
         pub(crate) http_config: std::option::Option<crate::model::HttpDataSourceConfig>,
-        pub(crate) relational_database_config:
-            std::option::Option<crate::model::RelationalDatabaseDataSourceConfig>,
+        pub(crate) relational_database_config: std::option::Option<crate::model::RelationalDatabaseDataSourceConfig>,
     }
     impl Builder {
         /// <p>The data source Amazon Resource Name (ARN).</p>
@@ -3527,12 +3292,8 @@ pub mod data_source {
             self
         }
         /// <p>The data source Amazon Resource Name (ARN).</p>
-        pub fn set_data_source_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_arn = input;
-            self
+        pub fn set_data_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_source_arn = input; self
         }
         /// <p>The name of the data source.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3541,8 +3302,7 @@ pub mod data_source {
         }
         /// <p>The name of the data source.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the data source.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3551,39 +3311,34 @@ pub mod data_source {
         }
         /// <p>The description of the data source.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
-        /// <p>The type of the data source.</p>
-        /// <ul>
-        /// <li> <p> <b>AWS_LAMBDA</b>: The data source is an Lambda function.</p> </li>
-        /// <li> <p> <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li>
-        /// <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p> </li>
-        /// <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p> </li>
-        /// <li> <p> <b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p> </li>
-        /// <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li>
-        /// <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
+        /// <p>The type of the data source.</p> 
+        /// <ul> 
+        /// <li> <p> <b>AWS_LAMBDA</b>: The data source is an Lambda function.</p> </li> 
+        /// <li> <p> <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li> 
+        /// <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p> </li> 
+        /// <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p> </li> 
+        /// <li> <p> <b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p> </li> 
+        /// <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> 
+        /// <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the data source.</p>
-        /// <ul>
-        /// <li> <p> <b>AWS_LAMBDA</b>: The data source is an Lambda function.</p> </li>
-        /// <li> <p> <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li>
-        /// <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p> </li>
-        /// <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p> </li>
-        /// <li> <p> <b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p> </li>
-        /// <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li>
-        /// <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
+        /// <p>The type of the data source.</p> 
+        /// <ul> 
+        /// <li> <p> <b>AWS_LAMBDA</b>: The data source is an Lambda function.</p> </li> 
+        /// <li> <p> <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p> </li> 
+        /// <li> <p> <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p> </li> 
+        /// <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p> </li> 
+        /// <li> <p> <b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p> </li> 
+        /// <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> 
+        /// <li> <p> <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li> 
         /// </ul>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::DataSourceType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::DataSourceType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3591,12 +3346,8 @@ pub mod data_source {
             self
         }
         /// <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
-        pub fn set_service_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_role_arn = input;
-            self
+        pub fn set_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_role_arn = input; self
         }
         /// <p>DynamoDB settings.</p>
         pub fn dynamodb_config(mut self, input: crate::model::DynamodbDataSourceConfig) -> Self {
@@ -3604,12 +3355,8 @@ pub mod data_source {
             self
         }
         /// <p>DynamoDB settings.</p>
-        pub fn set_dynamodb_config(
-            mut self,
-            input: std::option::Option<crate::model::DynamodbDataSourceConfig>,
-        ) -> Self {
-            self.dynamodb_config = input;
-            self
+        pub fn set_dynamodb_config(mut self, input: std::option::Option<crate::model::DynamodbDataSourceConfig>) -> Self {
+            self.dynamodb_config = input; self
         }
         /// <p>Lambda settings.</p>
         pub fn lambda_config(mut self, input: crate::model::LambdaDataSourceConfig) -> Self {
@@ -3617,44 +3364,26 @@ pub mod data_source {
             self
         }
         /// <p>Lambda settings.</p>
-        pub fn set_lambda_config(
-            mut self,
-            input: std::option::Option<crate::model::LambdaDataSourceConfig>,
-        ) -> Self {
-            self.lambda_config = input;
-            self
+        pub fn set_lambda_config(mut self, input: std::option::Option<crate::model::LambdaDataSourceConfig>) -> Self {
+            self.lambda_config = input; self
         }
         /// <p>Amazon OpenSearch Service settings.</p>
-        pub fn elasticsearch_config(
-            mut self,
-            input: crate::model::ElasticsearchDataSourceConfig,
-        ) -> Self {
+        pub fn elasticsearch_config(mut self, input: crate::model::ElasticsearchDataSourceConfig) -> Self {
             self.elasticsearch_config = Some(input);
             self
         }
         /// <p>Amazon OpenSearch Service settings.</p>
-        pub fn set_elasticsearch_config(
-            mut self,
-            input: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
-        ) -> Self {
-            self.elasticsearch_config = input;
-            self
+        pub fn set_elasticsearch_config(mut self, input: std::option::Option<crate::model::ElasticsearchDataSourceConfig>) -> Self {
+            self.elasticsearch_config = input; self
         }
         /// <p>Amazon OpenSearch Service settings.</p>
-        pub fn open_search_service_config(
-            mut self,
-            input: crate::model::OpenSearchServiceDataSourceConfig,
-        ) -> Self {
+        pub fn open_search_service_config(mut self, input: crate::model::OpenSearchServiceDataSourceConfig) -> Self {
             self.open_search_service_config = Some(input);
             self
         }
         /// <p>Amazon OpenSearch Service settings.</p>
-        pub fn set_open_search_service_config(
-            mut self,
-            input: std::option::Option<crate::model::OpenSearchServiceDataSourceConfig>,
-        ) -> Self {
-            self.open_search_service_config = input;
-            self
+        pub fn set_open_search_service_config(mut self, input: std::option::Option<crate::model::OpenSearchServiceDataSourceConfig>) -> Self {
+            self.open_search_service_config = input; self
         }
         /// <p>HTTP endpoint settings.</p>
         pub fn http_config(mut self, input: crate::model::HttpDataSourceConfig) -> Self {
@@ -3662,46 +3391,48 @@ pub mod data_source {
             self
         }
         /// <p>HTTP endpoint settings.</p>
-        pub fn set_http_config(
-            mut self,
-            input: std::option::Option<crate::model::HttpDataSourceConfig>,
-        ) -> Self {
-            self.http_config = input;
-            self
+        pub fn set_http_config(mut self, input: std::option::Option<crate::model::HttpDataSourceConfig>) -> Self {
+            self.http_config = input; self
         }
         /// <p>Relational database settings.</p>
-        pub fn relational_database_config(
-            mut self,
-            input: crate::model::RelationalDatabaseDataSourceConfig,
-        ) -> Self {
+        pub fn relational_database_config(mut self, input: crate::model::RelationalDatabaseDataSourceConfig) -> Self {
             self.relational_database_config = Some(input);
             self
         }
         /// <p>Relational database settings.</p>
-        pub fn set_relational_database_config(
-            mut self,
-            input: std::option::Option<crate::model::RelationalDatabaseDataSourceConfig>,
-        ) -> Self {
-            self.relational_database_config = input;
-            self
+        pub fn set_relational_database_config(mut self, input: std::option::Option<crate::model::RelationalDatabaseDataSourceConfig>) -> Self {
+            self.relational_database_config = input; self
         }
         /// Consumes the builder and constructs a [`DataSource`](crate::model::DataSource).
         pub fn build(self) -> crate::model::DataSource {
             crate::model::DataSource {
-                data_source_arn: self.data_source_arn,
-                name: self.name,
-                description: self.description,
-                r#type: self.r#type,
-                service_role_arn: self.service_role_arn,
-                dynamodb_config: self.dynamodb_config,
-                lambda_config: self.lambda_config,
-                elasticsearch_config: self.elasticsearch_config,
-                open_search_service_config: self.open_search_service_config,
-                http_config: self.http_config,
-                relational_database_config: self.relational_database_config,
+                data_source_arn: self.data_source_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
+                service_role_arn: self.service_role_arn
+                ,
+                dynamodb_config: self.dynamodb_config
+                ,
+                lambda_config: self.lambda_config
+                ,
+                elasticsearch_config: self.elasticsearch_config
+                ,
+                open_search_service_config: self.open_search_service_config
+                ,
+                http_config: self.http_config
+                ,
+                relational_database_config: self.relational_database_config
+                ,
             }
         }
     }
+    
+    
 }
 impl DataSource {
     /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
@@ -3713,93 +3444,76 @@ impl DataSource {
 /// <p>Describes a relational database data source configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RelationalDatabaseDataSourceConfig {
-    /// <p>Source type for the relational database.</p>
-    /// <ul>
-    /// <li> <p> <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li>
+pub struct RelationalDatabaseDataSourceConfig  {
+    /// <p>Source type for the relational database.</p> 
+    /// <ul> 
+    /// <li> <p> <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub relational_database_source_type:
-        std::option::Option<crate::model::RelationalDatabaseSourceType>,
+    pub relational_database_source_type: std::option::Option<crate::model::RelationalDatabaseSourceType>,
     /// <p>Amazon RDS HTTP endpoint settings.</p>
     #[doc(hidden)]
     pub rds_http_endpoint_config: std::option::Option<crate::model::RdsHttpEndpointConfig>,
 }
 impl RelationalDatabaseDataSourceConfig {
-    /// <p>Source type for the relational database.</p>
-    /// <ul>
-    /// <li> <p> <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li>
+    /// <p>Source type for the relational database.</p> 
+    /// <ul> 
+    /// <li> <p> <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li> 
     /// </ul>
-    pub fn relational_database_source_type(
-        &self,
-    ) -> std::option::Option<&crate::model::RelationalDatabaseSourceType> {
+    pub fn relational_database_source_type(&self) -> std::option::Option<& crate::model::RelationalDatabaseSourceType> {
         self.relational_database_source_type.as_ref()
     }
     /// <p>Amazon RDS HTTP endpoint settings.</p>
-    pub fn rds_http_endpoint_config(
-        &self,
-    ) -> std::option::Option<&crate::model::RdsHttpEndpointConfig> {
+    pub fn rds_http_endpoint_config(&self) -> std::option::Option<& crate::model::RdsHttpEndpointConfig> {
         self.rds_http_endpoint_config.as_ref()
     }
 }
 /// See [`RelationalDatabaseDataSourceConfig`](crate::model::RelationalDatabaseDataSourceConfig).
 pub mod relational_database_data_source_config {
-
+    
     /// A builder for [`RelationalDatabaseDataSourceConfig`](crate::model::RelationalDatabaseDataSourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) relational_database_source_type:
-            std::option::Option<crate::model::RelationalDatabaseSourceType>,
-        pub(crate) rds_http_endpoint_config:
-            std::option::Option<crate::model::RdsHttpEndpointConfig>,
+        pub(crate) relational_database_source_type: std::option::Option<crate::model::RelationalDatabaseSourceType>,
+        pub(crate) rds_http_endpoint_config: std::option::Option<crate::model::RdsHttpEndpointConfig>,
     }
     impl Builder {
-        /// <p>Source type for the relational database.</p>
-        /// <ul>
-        /// <li> <p> <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li>
+        /// <p>Source type for the relational database.</p> 
+        /// <ul> 
+        /// <li> <p> <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li> 
         /// </ul>
-        pub fn relational_database_source_type(
-            mut self,
-            input: crate::model::RelationalDatabaseSourceType,
-        ) -> Self {
+        pub fn relational_database_source_type(mut self, input: crate::model::RelationalDatabaseSourceType) -> Self {
             self.relational_database_source_type = Some(input);
             self
         }
-        /// <p>Source type for the relational database.</p>
-        /// <ul>
-        /// <li> <p> <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li>
+        /// <p>Source type for the relational database.</p> 
+        /// <ul> 
+        /// <li> <p> <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li> 
         /// </ul>
-        pub fn set_relational_database_source_type(
-            mut self,
-            input: std::option::Option<crate::model::RelationalDatabaseSourceType>,
-        ) -> Self {
-            self.relational_database_source_type = input;
-            self
+        pub fn set_relational_database_source_type(mut self, input: std::option::Option<crate::model::RelationalDatabaseSourceType>) -> Self {
+            self.relational_database_source_type = input; self
         }
         /// <p>Amazon RDS HTTP endpoint settings.</p>
-        pub fn rds_http_endpoint_config(
-            mut self,
-            input: crate::model::RdsHttpEndpointConfig,
-        ) -> Self {
+        pub fn rds_http_endpoint_config(mut self, input: crate::model::RdsHttpEndpointConfig) -> Self {
             self.rds_http_endpoint_config = Some(input);
             self
         }
         /// <p>Amazon RDS HTTP endpoint settings.</p>
-        pub fn set_rds_http_endpoint_config(
-            mut self,
-            input: std::option::Option<crate::model::RdsHttpEndpointConfig>,
-        ) -> Self {
-            self.rds_http_endpoint_config = input;
-            self
+        pub fn set_rds_http_endpoint_config(mut self, input: std::option::Option<crate::model::RdsHttpEndpointConfig>) -> Self {
+            self.rds_http_endpoint_config = input; self
         }
         /// Consumes the builder and constructs a [`RelationalDatabaseDataSourceConfig`](crate::model::RelationalDatabaseDataSourceConfig).
         pub fn build(self) -> crate::model::RelationalDatabaseDataSourceConfig {
             crate::model::RelationalDatabaseDataSourceConfig {
-                relational_database_source_type: self.relational_database_source_type,
-                rds_http_endpoint_config: self.rds_http_endpoint_config,
+                relational_database_source_type: self.relational_database_source_type
+                ,
+                rds_http_endpoint_config: self.rds_http_endpoint_config
+                ,
             }
         }
     }
+    
+    
 }
 impl RelationalDatabaseDataSourceConfig {
     /// Creates a new builder-style object to manufacture [`RelationalDatabaseDataSourceConfig`](crate::model::RelationalDatabaseDataSourceConfig).
@@ -3811,7 +3525,7 @@ impl RelationalDatabaseDataSourceConfig {
 /// <p>The Amazon Relational Database Service (Amazon RDS) HTTP endpoint configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RdsHttpEndpointConfig {
+pub struct RdsHttpEndpointConfig  {
     /// <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
     #[doc(hidden)]
     pub aws_region: std::option::Option<std::string::String>,
@@ -3830,29 +3544,29 @@ pub struct RdsHttpEndpointConfig {
 }
 impl RdsHttpEndpointConfig {
     /// <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Logical database name.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>Logical schema name.</p>
-    pub fn schema(&self) -> std::option::Option<&str> {
+    pub fn schema(&self) -> std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database credentials.</p>
-    pub fn aws_secret_store_arn(&self) -> std::option::Option<&str> {
+    pub fn aws_secret_store_arn(&self) -> std::option::Option<& str> {
         self.aws_secret_store_arn.as_deref()
     }
 }
 /// See [`RdsHttpEndpointConfig`](crate::model::RdsHttpEndpointConfig).
 pub mod rds_http_endpoint_config {
-
+    
     /// A builder for [`RdsHttpEndpointConfig`](crate::model::RdsHttpEndpointConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3870,8 +3584,7 @@ pub mod rds_http_endpoint_config {
         }
         /// <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_region = input;
-            self
+            self.aws_region = input; self
         }
         /// <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
         pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3879,12 +3592,8 @@ pub mod rds_http_endpoint_config {
             self
         }
         /// <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
-        pub fn set_db_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_identifier = input;
-            self
+        pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_identifier = input; self
         }
         /// <p>Logical database name.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3892,12 +3601,8 @@ pub mod rds_http_endpoint_config {
             self
         }
         /// <p>Logical database name.</p>
-        pub fn set_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_name = input;
-            self
+        pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_name = input; self
         }
         /// <p>Logical schema name.</p>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3906,8 +3611,7 @@ pub mod rds_http_endpoint_config {
         }
         /// <p>Logical schema name.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema = input;
-            self
+            self.schema = input; self
         }
         /// <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database credentials.</p>
         pub fn aws_secret_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3915,24 +3619,27 @@ pub mod rds_http_endpoint_config {
             self
         }
         /// <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database credentials.</p>
-        pub fn set_aws_secret_store_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_secret_store_arn = input;
-            self
+        pub fn set_aws_secret_store_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_secret_store_arn = input; self
         }
         /// Consumes the builder and constructs a [`RdsHttpEndpointConfig`](crate::model::RdsHttpEndpointConfig).
         pub fn build(self) -> crate::model::RdsHttpEndpointConfig {
             crate::model::RdsHttpEndpointConfig {
-                aws_region: self.aws_region,
-                db_cluster_identifier: self.db_cluster_identifier,
-                database_name: self.database_name,
-                schema: self.schema,
-                aws_secret_store_arn: self.aws_secret_store_arn,
+                aws_region: self.aws_region
+                ,
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                database_name: self.database_name
+                ,
+                schema: self.schema
+                ,
+                aws_secret_store_arn: self.aws_secret_store_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl RdsHttpEndpointConfig {
     /// Creates a new builder-style object to manufacture [`RdsHttpEndpointConfig`](crate::model::RdsHttpEndpointConfig).
@@ -3947,9 +3654,9 @@ impl RdsHttpEndpointConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let relationaldatabasesourcetype = unimplemented!();
 /// match relationaldatabasesourcetype {
@@ -3970,56 +3677,48 @@ impl RdsHttpEndpointConfig {
 /// Specifically, when `relationaldatabasesourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RelationalDatabaseSourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RelationalDatabaseSourceType {
     #[allow(missing_docs)] // documentation missing in model
     RdsHttpEndpoint,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RelationalDatabaseSourceType {
     fn from(s: &str) -> Self {
         match s {
             "RDS_HTTP_ENDPOINT" => RelationalDatabaseSourceType::RdsHttpEndpoint,
-            other => RelationalDatabaseSourceType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RelationalDatabaseSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RelationalDatabaseSourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RelationalDatabaseSourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RelationalDatabaseSourceType::from(s))
+                }
+            }
 impl RelationalDatabaseSourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RelationalDatabaseSourceType::RdsHttpEndpoint => "RDS_HTTP_ENDPOINT",
-            RelationalDatabaseSourceType::Unknown(value) => value.as_str(),
+            RelationalDatabaseSourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RDS_HTTP_ENDPOINT"]
+        &[
+            "RDS_HTTP_ENDPOINT"
+        ]
     }
 }
 impl AsRef<str> for RelationalDatabaseSourceType {
@@ -4031,7 +3730,7 @@ impl AsRef<str> for RelationalDatabaseSourceType {
 /// <p>Describes an HTTP data source configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpDataSourceConfig {
+pub struct HttpDataSourceConfig  {
     /// <p>The HTTP URL endpoint. You can specify either the domain name or IP, and port combination, and the URL scheme must be HTTP or HTTPS. If you don't specify the port, AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS endpoints.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
@@ -4041,17 +3740,17 @@ pub struct HttpDataSourceConfig {
 }
 impl HttpDataSourceConfig {
     /// <p>The HTTP URL endpoint. You can specify either the domain name or IP, and port combination, and the URL scheme must be HTTP or HTTPS. If you don't specify the port, AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS endpoints.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
-    pub fn authorization_config(&self) -> std::option::Option<&crate::model::AuthorizationConfig> {
+    pub fn authorization_config(&self) -> std::option::Option<& crate::model::AuthorizationConfig> {
         self.authorization_config.as_ref()
     }
 }
 /// See [`HttpDataSourceConfig`](crate::model::HttpDataSourceConfig).
 pub mod http_data_source_config {
-
+    
     /// A builder for [`HttpDataSourceConfig`](crate::model::HttpDataSourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4066,8 +3765,7 @@ pub mod http_data_source_config {
         }
         /// <p>The HTTP URL endpoint. You can specify either the domain name or IP, and port combination, and the URL scheme must be HTTP or HTTPS. If you don't specify the port, AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS endpoints.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
         pub fn authorization_config(mut self, input: crate::model::AuthorizationConfig) -> Self {
@@ -4075,21 +3773,21 @@ pub mod http_data_source_config {
             self
         }
         /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
-        pub fn set_authorization_config(
-            mut self,
-            input: std::option::Option<crate::model::AuthorizationConfig>,
-        ) -> Self {
-            self.authorization_config = input;
-            self
+        pub fn set_authorization_config(mut self, input: std::option::Option<crate::model::AuthorizationConfig>) -> Self {
+            self.authorization_config = input; self
         }
         /// Consumes the builder and constructs a [`HttpDataSourceConfig`](crate::model::HttpDataSourceConfig).
         pub fn build(self) -> crate::model::HttpDataSourceConfig {
             crate::model::HttpDataSourceConfig {
-                endpoint: self.endpoint,
-                authorization_config: self.authorization_config,
+                endpoint: self.endpoint
+                ,
+                authorization_config: self.authorization_config
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpDataSourceConfig {
     /// Creates a new builder-style object to manufacture [`HttpDataSourceConfig`](crate::model::HttpDataSourceConfig).
@@ -4101,10 +3799,10 @@ impl HttpDataSourceConfig {
 /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthorizationConfig {
-    /// <p>The authorization type that the HTTP endpoint requires.</p>
-    /// <ul>
-    /// <li> <p> <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
+pub struct AuthorizationConfig  {
+    /// <p>The authorization type that the HTTP endpoint requires.</p> 
+    /// <ul> 
+    /// <li> <p> <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub authorization_type: std::option::Option<crate::model::AuthorizationType>,
@@ -4113,21 +3811,21 @@ pub struct AuthorizationConfig {
     pub aws_iam_config: std::option::Option<crate::model::AwsIamConfig>,
 }
 impl AuthorizationConfig {
-    /// <p>The authorization type that the HTTP endpoint requires.</p>
-    /// <ul>
-    /// <li> <p> <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
+    /// <p>The authorization type that the HTTP endpoint requires.</p> 
+    /// <ul> 
+    /// <li> <p> <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li> 
     /// </ul>
-    pub fn authorization_type(&self) -> std::option::Option<&crate::model::AuthorizationType> {
+    pub fn authorization_type(&self) -> std::option::Option<& crate::model::AuthorizationType> {
         self.authorization_type.as_ref()
     }
     /// <p>The Identity and Access Management (IAM) settings.</p>
-    pub fn aws_iam_config(&self) -> std::option::Option<&crate::model::AwsIamConfig> {
+    pub fn aws_iam_config(&self) -> std::option::Option<& crate::model::AwsIamConfig> {
         self.aws_iam_config.as_ref()
     }
 }
 /// See [`AuthorizationConfig`](crate::model::AuthorizationConfig).
 pub mod authorization_config {
-
+    
     /// A builder for [`AuthorizationConfig`](crate::model::AuthorizationConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4135,24 +3833,20 @@ pub mod authorization_config {
         pub(crate) aws_iam_config: std::option::Option<crate::model::AwsIamConfig>,
     }
     impl Builder {
-        /// <p>The authorization type that the HTTP endpoint requires.</p>
-        /// <ul>
-        /// <li> <p> <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
+        /// <p>The authorization type that the HTTP endpoint requires.</p> 
+        /// <ul> 
+        /// <li> <p> <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li> 
         /// </ul>
         pub fn authorization_type(mut self, input: crate::model::AuthorizationType) -> Self {
             self.authorization_type = Some(input);
             self
         }
-        /// <p>The authorization type that the HTTP endpoint requires.</p>
-        /// <ul>
-        /// <li> <p> <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
+        /// <p>The authorization type that the HTTP endpoint requires.</p> 
+        /// <ul> 
+        /// <li> <p> <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li> 
         /// </ul>
-        pub fn set_authorization_type(
-            mut self,
-            input: std::option::Option<crate::model::AuthorizationType>,
-        ) -> Self {
-            self.authorization_type = input;
-            self
+        pub fn set_authorization_type(mut self, input: std::option::Option<crate::model::AuthorizationType>) -> Self {
+            self.authorization_type = input; self
         }
         /// <p>The Identity and Access Management (IAM) settings.</p>
         pub fn aws_iam_config(mut self, input: crate::model::AwsIamConfig) -> Self {
@@ -4160,21 +3854,21 @@ pub mod authorization_config {
             self
         }
         /// <p>The Identity and Access Management (IAM) settings.</p>
-        pub fn set_aws_iam_config(
-            mut self,
-            input: std::option::Option<crate::model::AwsIamConfig>,
-        ) -> Self {
-            self.aws_iam_config = input;
-            self
+        pub fn set_aws_iam_config(mut self, input: std::option::Option<crate::model::AwsIamConfig>) -> Self {
+            self.aws_iam_config = input; self
         }
         /// Consumes the builder and constructs a [`AuthorizationConfig`](crate::model::AuthorizationConfig).
         pub fn build(self) -> crate::model::AuthorizationConfig {
             crate::model::AuthorizationConfig {
-                authorization_type: self.authorization_type,
-                aws_iam_config: self.aws_iam_config,
+                authorization_type: self.authorization_type
+                ,
+                aws_iam_config: self.aws_iam_config
+                ,
             }
         }
     }
+    
+    
 }
 impl AuthorizationConfig {
     /// Creates a new builder-style object to manufacture [`AuthorizationConfig`](crate::model::AuthorizationConfig).
@@ -4186,7 +3880,7 @@ impl AuthorizationConfig {
 /// <p>The Identity and Access Management (IAM) configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsIamConfig {
+pub struct AwsIamConfig  {
     /// <p>The signing Amazon Web Services Region for IAM authorization.</p>
     #[doc(hidden)]
     pub signing_region: std::option::Option<std::string::String>,
@@ -4196,17 +3890,17 @@ pub struct AwsIamConfig {
 }
 impl AwsIamConfig {
     /// <p>The signing Amazon Web Services Region for IAM authorization.</p>
-    pub fn signing_region(&self) -> std::option::Option<&str> {
+    pub fn signing_region(&self) -> std::option::Option<& str> {
         self.signing_region.as_deref()
     }
     /// <p>The signing service name for IAM authorization.</p>
-    pub fn signing_service_name(&self) -> std::option::Option<&str> {
+    pub fn signing_service_name(&self) -> std::option::Option<& str> {
         self.signing_service_name.as_deref()
     }
 }
 /// See [`AwsIamConfig`](crate::model::AwsIamConfig).
 pub mod aws_iam_config {
-
+    
     /// A builder for [`AwsIamConfig`](crate::model::AwsIamConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4220,12 +3914,8 @@ pub mod aws_iam_config {
             self
         }
         /// <p>The signing Amazon Web Services Region for IAM authorization.</p>
-        pub fn set_signing_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_region = input;
-            self
+        pub fn set_signing_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_region = input; self
         }
         /// <p>The signing service name for IAM authorization.</p>
         pub fn signing_service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4233,21 +3923,21 @@ pub mod aws_iam_config {
             self
         }
         /// <p>The signing service name for IAM authorization.</p>
-        pub fn set_signing_service_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_service_name = input;
-            self
+        pub fn set_signing_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_service_name = input; self
         }
         /// Consumes the builder and constructs a [`AwsIamConfig`](crate::model::AwsIamConfig).
         pub fn build(self) -> crate::model::AwsIamConfig {
             crate::model::AwsIamConfig {
-                signing_region: self.signing_region,
-                signing_service_name: self.signing_service_name,
+                signing_region: self.signing_region
+                ,
+                signing_service_name: self.signing_service_name
+                ,
             }
         }
     }
+    
+    
 }
 impl AwsIamConfig {
     /// Creates a new builder-style object to manufacture [`AwsIamConfig`](crate::model::AwsIamConfig).
@@ -4262,9 +3952,9 @@ impl AwsIamConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let authorizationtype = unimplemented!();
 /// match authorizationtype {
@@ -4285,56 +3975,48 @@ impl AwsIamConfig {
 /// Specifically, when `authorizationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AuthorizationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AuthorizationType {
     #[allow(missing_docs)] // documentation missing in model
     AwsIam,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AuthorizationType {
     fn from(s: &str) -> Self {
         match s {
             "AWS_IAM" => AuthorizationType::AwsIam,
-            other => {
-                AuthorizationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AuthorizationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AuthorizationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthorizationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AuthorizationType::from(s))
+                }
+            }
 impl AuthorizationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthorizationType::AwsIam => "AWS_IAM",
-            AuthorizationType::Unknown(value) => value.as_str(),
+            AuthorizationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_IAM"]
+        &[
+            "AWS_IAM"
+        ]
     }
 }
 impl AsRef<str> for AuthorizationType {
@@ -4346,7 +4028,7 @@ impl AsRef<str> for AuthorizationType {
 /// <p>Describes an OpenSearch data source configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpenSearchServiceDataSourceConfig {
+pub struct OpenSearchServiceDataSourceConfig  {
     /// <p>The endpoint.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
@@ -4356,17 +4038,17 @@ pub struct OpenSearchServiceDataSourceConfig {
 }
 impl OpenSearchServiceDataSourceConfig {
     /// <p>The endpoint.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The Amazon Web Services Region.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> std::option::Option<& str> {
         self.aws_region.as_deref()
     }
 }
 /// See [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig).
 pub mod open_search_service_data_source_config {
-
+    
     /// A builder for [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4381,8 +4063,7 @@ pub mod open_search_service_data_source_config {
         }
         /// <p>The endpoint.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// <p>The Amazon Web Services Region.</p>
         pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4391,17 +4072,20 @@ pub mod open_search_service_data_source_config {
         }
         /// <p>The Amazon Web Services Region.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_region = input;
-            self
+            self.aws_region = input; self
         }
         /// Consumes the builder and constructs a [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig).
         pub fn build(self) -> crate::model::OpenSearchServiceDataSourceConfig {
             crate::model::OpenSearchServiceDataSourceConfig {
-                endpoint: self.endpoint,
-                aws_region: self.aws_region,
+                endpoint: self.endpoint
+                ,
+                aws_region: self.aws_region
+                ,
             }
         }
     }
+    
+    
 }
 impl OpenSearchServiceDataSourceConfig {
     /// Creates a new builder-style object to manufacture [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig).
@@ -4410,11 +4094,11 @@ impl OpenSearchServiceDataSourceConfig {
     }
 }
 
-/// <p>Describes an OpenSearch data source configuration.</p>
+/// <p>Describes an OpenSearch data source configuration.</p> 
 /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>OpenSearchServiceDataSourceConfig</code> to specify an OpenSearch data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ElasticsearchDataSourceConfig {
+pub struct ElasticsearchDataSourceConfig  {
     /// <p>The endpoint.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
@@ -4424,17 +4108,17 @@ pub struct ElasticsearchDataSourceConfig {
 }
 impl ElasticsearchDataSourceConfig {
     /// <p>The endpoint.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The Amazon Web Services Region.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> std::option::Option<& str> {
         self.aws_region.as_deref()
     }
 }
 /// See [`ElasticsearchDataSourceConfig`](crate::model::ElasticsearchDataSourceConfig).
 pub mod elasticsearch_data_source_config {
-
+    
     /// A builder for [`ElasticsearchDataSourceConfig`](crate::model::ElasticsearchDataSourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4449,8 +4133,7 @@ pub mod elasticsearch_data_source_config {
         }
         /// <p>The endpoint.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// <p>The Amazon Web Services Region.</p>
         pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4459,17 +4142,20 @@ pub mod elasticsearch_data_source_config {
         }
         /// <p>The Amazon Web Services Region.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_region = input;
-            self
+            self.aws_region = input; self
         }
         /// Consumes the builder and constructs a [`ElasticsearchDataSourceConfig`](crate::model::ElasticsearchDataSourceConfig).
         pub fn build(self) -> crate::model::ElasticsearchDataSourceConfig {
             crate::model::ElasticsearchDataSourceConfig {
-                endpoint: self.endpoint,
-                aws_region: self.aws_region,
+                endpoint: self.endpoint
+                ,
+                aws_region: self.aws_region
+                ,
             }
         }
     }
+    
+    
 }
 impl ElasticsearchDataSourceConfig {
     /// Creates a new builder-style object to manufacture [`ElasticsearchDataSourceConfig`](crate::model::ElasticsearchDataSourceConfig).
@@ -4481,20 +4167,20 @@ impl ElasticsearchDataSourceConfig {
 /// <p>Describes an Lambda data source configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaDataSourceConfig {
+pub struct LambdaDataSourceConfig  {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function.</p>
     #[doc(hidden)]
     pub lambda_function_arn: std::option::Option<std::string::String>,
 }
 impl LambdaDataSourceConfig {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function.</p>
-    pub fn lambda_function_arn(&self) -> std::option::Option<&str> {
+    pub fn lambda_function_arn(&self) -> std::option::Option<& str> {
         self.lambda_function_arn.as_deref()
     }
 }
 /// See [`LambdaDataSourceConfig`](crate::model::LambdaDataSourceConfig).
 pub mod lambda_data_source_config {
-
+    
     /// A builder for [`LambdaDataSourceConfig`](crate::model::LambdaDataSourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4507,20 +4193,19 @@ pub mod lambda_data_source_config {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Lambda function.</p>
-        pub fn set_lambda_function_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.lambda_function_arn = input;
-            self
+        pub fn set_lambda_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lambda_function_arn = input; self
         }
         /// Consumes the builder and constructs a [`LambdaDataSourceConfig`](crate::model::LambdaDataSourceConfig).
         pub fn build(self) -> crate::model::LambdaDataSourceConfig {
             crate::model::LambdaDataSourceConfig {
-                lambda_function_arn: self.lambda_function_arn,
+                lambda_function_arn: self.lambda_function_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl LambdaDataSourceConfig {
     /// Creates a new builder-style object to manufacture [`LambdaDataSourceConfig`](crate::model::LambdaDataSourceConfig).
@@ -4532,7 +4217,7 @@ impl LambdaDataSourceConfig {
 /// <p>Describes an Amazon DynamoDB data source configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DynamodbDataSourceConfig {
+pub struct DynamodbDataSourceConfig  {
     /// <p>The table name.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -4551,11 +4236,11 @@ pub struct DynamodbDataSourceConfig {
 }
 impl DynamodbDataSourceConfig {
     /// <p>The table name.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The Amazon Web Services Region.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
@@ -4563,7 +4248,7 @@ impl DynamodbDataSourceConfig {
         self.use_caller_credentials
     }
     /// <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
-    pub fn delta_sync_config(&self) -> std::option::Option<&crate::model::DeltaSyncConfig> {
+    pub fn delta_sync_config(&self) -> std::option::Option<& crate::model::DeltaSyncConfig> {
         self.delta_sync_config.as_ref()
     }
     /// <p>Set to TRUE to use Conflict Detection and Resolution with this data source.</p>
@@ -4573,7 +4258,7 @@ impl DynamodbDataSourceConfig {
 }
 /// See [`DynamodbDataSourceConfig`](crate::model::DynamodbDataSourceConfig).
 pub mod dynamodb_data_source_config {
-
+    
     /// A builder for [`DynamodbDataSourceConfig`](crate::model::DynamodbDataSourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4591,8 +4276,7 @@ pub mod dynamodb_data_source_config {
         }
         /// <p>The table name.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// <p>The Amazon Web Services Region.</p>
         pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4601,8 +4285,7 @@ pub mod dynamodb_data_source_config {
         }
         /// <p>The Amazon Web Services Region.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_region = input;
-            self
+            self.aws_region = input; self
         }
         /// <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
         pub fn use_caller_credentials(mut self, input: bool) -> Self {
@@ -4611,8 +4294,7 @@ pub mod dynamodb_data_source_config {
         }
         /// <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
         pub fn set_use_caller_credentials(mut self, input: std::option::Option<bool>) -> Self {
-            self.use_caller_credentials = input;
-            self
+            self.use_caller_credentials = input; self
         }
         /// <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
         pub fn delta_sync_config(mut self, input: crate::model::DeltaSyncConfig) -> Self {
@@ -4620,12 +4302,8 @@ pub mod dynamodb_data_source_config {
             self
         }
         /// <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
-        pub fn set_delta_sync_config(
-            mut self,
-            input: std::option::Option<crate::model::DeltaSyncConfig>,
-        ) -> Self {
-            self.delta_sync_config = input;
-            self
+        pub fn set_delta_sync_config(mut self, input: std::option::Option<crate::model::DeltaSyncConfig>) -> Self {
+            self.delta_sync_config = input; self
         }
         /// <p>Set to TRUE to use Conflict Detection and Resolution with this data source.</p>
         pub fn versioned(mut self, input: bool) -> Self {
@@ -4634,20 +4312,28 @@ pub mod dynamodb_data_source_config {
         }
         /// <p>Set to TRUE to use Conflict Detection and Resolution with this data source.</p>
         pub fn set_versioned(mut self, input: std::option::Option<bool>) -> Self {
-            self.versioned = input;
-            self
+            self.versioned = input; self
         }
         /// Consumes the builder and constructs a [`DynamodbDataSourceConfig`](crate::model::DynamodbDataSourceConfig).
         pub fn build(self) -> crate::model::DynamodbDataSourceConfig {
             crate::model::DynamodbDataSourceConfig {
-                table_name: self.table_name,
-                aws_region: self.aws_region,
-                use_caller_credentials: self.use_caller_credentials.unwrap_or_default(),
-                delta_sync_config: self.delta_sync_config,
-                versioned: self.versioned.unwrap_or_default(),
+                table_name: self.table_name
+                ,
+                aws_region: self.aws_region
+                ,
+                use_caller_credentials: self.use_caller_credentials
+                    .unwrap_or_default()
+                ,
+                delta_sync_config: self.delta_sync_config
+                ,
+                versioned: self.versioned
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DynamodbDataSourceConfig {
     /// Creates a new builder-style object to manufacture [`DynamodbDataSourceConfig`](crate::model::DynamodbDataSourceConfig).
@@ -4659,7 +4345,7 @@ impl DynamodbDataSourceConfig {
 /// <p>Describes a Delta Sync configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeltaSyncConfig {
+pub struct DeltaSyncConfig  {
     /// <p>The number of minutes that an Item is stored in the data source.</p>
     #[doc(hidden)]
     pub base_table_ttl: i64,
@@ -4676,7 +4362,7 @@ impl DeltaSyncConfig {
         self.base_table_ttl
     }
     /// <p>The Delta Sync table name.</p>
-    pub fn delta_sync_table_name(&self) -> std::option::Option<&str> {
+    pub fn delta_sync_table_name(&self) -> std::option::Option<& str> {
         self.delta_sync_table_name.as_deref()
     }
     /// <p>The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.</p>
@@ -4686,7 +4372,7 @@ impl DeltaSyncConfig {
 }
 /// See [`DeltaSyncConfig`](crate::model::DeltaSyncConfig).
 pub mod delta_sync_config {
-
+    
     /// A builder for [`DeltaSyncConfig`](crate::model::DeltaSyncConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4702,8 +4388,7 @@ pub mod delta_sync_config {
         }
         /// <p>The number of minutes that an Item is stored in the data source.</p>
         pub fn set_base_table_ttl(mut self, input: std::option::Option<i64>) -> Self {
-            self.base_table_ttl = input;
-            self
+            self.base_table_ttl = input; self
         }
         /// <p>The Delta Sync table name.</p>
         pub fn delta_sync_table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4711,12 +4396,8 @@ pub mod delta_sync_config {
             self
         }
         /// <p>The Delta Sync table name.</p>
-        pub fn set_delta_sync_table_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delta_sync_table_name = input;
-            self
+        pub fn set_delta_sync_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delta_sync_table_name = input; self
         }
         /// <p>The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.</p>
         pub fn delta_sync_table_ttl(mut self, input: i64) -> Self {
@@ -4725,18 +4406,24 @@ pub mod delta_sync_config {
         }
         /// <p>The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.</p>
         pub fn set_delta_sync_table_ttl(mut self, input: std::option::Option<i64>) -> Self {
-            self.delta_sync_table_ttl = input;
-            self
+            self.delta_sync_table_ttl = input; self
         }
         /// Consumes the builder and constructs a [`DeltaSyncConfig`](crate::model::DeltaSyncConfig).
         pub fn build(self) -> crate::model::DeltaSyncConfig {
             crate::model::DeltaSyncConfig {
-                base_table_ttl: self.base_table_ttl.unwrap_or_default(),
-                delta_sync_table_name: self.delta_sync_table_name,
-                delta_sync_table_ttl: self.delta_sync_table_ttl.unwrap_or_default(),
+                base_table_ttl: self.base_table_ttl
+                    .unwrap_or_default()
+                ,
+                delta_sync_table_name: self.delta_sync_table_name
+                ,
+                delta_sync_table_ttl: self.delta_sync_table_ttl
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DeltaSyncConfig {
     /// Creates a new builder-style object to manufacture [`DeltaSyncConfig`](crate::model::DeltaSyncConfig).
@@ -4751,9 +4438,9 @@ impl DeltaSyncConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datasourcetype = unimplemented!();
 /// match datasourcetype {
@@ -4780,22 +4467,14 @@ impl DeltaSyncConfig {
 /// Specifically, when `datasourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataSourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     AmazonDynamodb,
@@ -4812,7 +4491,7 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     RelationalDatabase,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataSourceType {
     fn from(s: &str) -> Self {
@@ -4824,17 +4503,17 @@ impl std::convert::From<&str> for DataSourceType {
             "HTTP" => DataSourceType::Http,
             "NONE" => DataSourceType::None,
             "RELATIONAL_DATABASE" => DataSourceType::RelationalDatabase,
-            other => DataSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DataSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataSourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataSourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataSourceType::from(s))
+                }
+            }
 impl DataSourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4846,19 +4525,13 @@ impl DataSourceType {
             DataSourceType::Http => "HTTP",
             DataSourceType::None => "NONE",
             DataSourceType::RelationalDatabase => "RELATIONAL_DATABASE",
-            DataSourceType::Unknown(value) => value.as_str(),
+            DataSourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AMAZON_DYNAMODB",
-            "AMAZON_ELASTICSEARCH",
-            "AMAZON_OPENSEARCH_SERVICE",
-            "AWS_LAMBDA",
-            "HTTP",
-            "NONE",
-            "RELATIONAL_DATABASE",
+            "AMAZON_DYNAMODB", "AMAZON_ELASTICSEARCH", "AMAZON_OPENSEARCH_SERVICE", "AWS_LAMBDA", "HTTP", "NONE", "RELATIONAL_DATABASE"
         ]
     }
 }
@@ -4868,28 +4541,28 @@ impl AsRef<str> for DataSourceType {
     }
 }
 
-/// <p>Describes an API key.</p>
-/// <p>Customers invoke AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:</p>
-/// <p> <b>da1</b>: We introduced this version at launch in November 2017. These keys always expire after 7 days. Amazon DynamoDB TTL manages key expiration. These keys ceased to be valid after February 21, 2018, and they should no longer be used.</p>
-/// <ul>
-/// <li> <p> <code>ListApiKeys</code> returns the expiration time in milliseconds.</p> </li>
-/// <li> <p> <code>CreateApiKey</code> returns the expiration time in milliseconds.</p> </li>
-/// <li> <p> <code>UpdateApiKey</code> is not available for this key version.</p> </li>
-/// <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li>
-/// <li> <p>Expiration is stored in DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we deleted these keys from the table on February 21, 2018.</p> </li>
-/// </ul>
-/// <p> <b>da2</b>: We introduced this version in February 2018 when AppSync added support to extend key expiration.</p>
-/// <ul>
-/// <li> <p> <code>ListApiKeys</code> returns the expiration time and deletion time in seconds.</p> </li>
-/// <li> <p> <code>CreateApiKey</code> returns the expiration time and deletion time in seconds and accepts a user-provided expiration time in seconds.</p> </li>
-/// <li> <p> <code>UpdateApiKey</code> returns the expiration time and and deletion time in seconds and accepts a user-provided expiration time in seconds. Expired API keys are kept for 60 days after the expiration time. You can update the key expiration time as long as the key isn't deleted.</p> </li>
-/// <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li>
-/// <li> <p>Expiration is stored in DynamoDB as seconds. After the expiration time, using the key to authenticate will fail. However, you can reinstate the key before deletion.</p> </li>
-/// <li> <p>Deletion is stored in DynamoDB as seconds. The key is deleted after deletion time.</p> </li>
+/// <p>Describes an API key.</p> 
+/// <p>Customers invoke AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:</p> 
+/// <p> <b>da1</b>: We introduced this version at launch in November 2017. These keys always expire after 7 days. Amazon DynamoDB TTL manages key expiration. These keys ceased to be valid after February 21, 2018, and they should no longer be used.</p> 
+/// <ul> 
+/// <li> <p> <code>ListApiKeys</code> returns the expiration time in milliseconds.</p> </li> 
+/// <li> <p> <code>CreateApiKey</code> returns the expiration time in milliseconds.</p> </li> 
+/// <li> <p> <code>UpdateApiKey</code> is not available for this key version.</p> </li> 
+/// <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> 
+/// <li> <p>Expiration is stored in DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we deleted these keys from the table on February 21, 2018.</p> </li> 
+/// </ul> 
+/// <p> <b>da2</b>: We introduced this version in February 2018 when AppSync added support to extend key expiration.</p> 
+/// <ul> 
+/// <li> <p> <code>ListApiKeys</code> returns the expiration time and deletion time in seconds.</p> </li> 
+/// <li> <p> <code>CreateApiKey</code> returns the expiration time and deletion time in seconds and accepts a user-provided expiration time in seconds.</p> </li> 
+/// <li> <p> <code>UpdateApiKey</code> returns the expiration time and and deletion time in seconds and accepts a user-provided expiration time in seconds. Expired API keys are kept for 60 days after the expiration time. You can update the key expiration time as long as the key isn't deleted.</p> </li> 
+/// <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> 
+/// <li> <p>Expiration is stored in DynamoDB as seconds. After the expiration time, using the key to authenticate will fail. However, you can reinstate the key before deletion.</p> </li> 
+/// <li> <p>Deletion is stored in DynamoDB as seconds. The key is deleted after deletion time.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApiKey {
+pub struct ApiKey  {
     /// <p>The API key ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -4905,11 +4578,11 @@ pub struct ApiKey {
 }
 impl ApiKey {
     /// <p>The API key ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A description of the purpose of the API key.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
@@ -4923,7 +4596,7 @@ impl ApiKey {
 }
 /// See [`ApiKey`](crate::model::ApiKey).
 pub mod api_key {
-
+    
     /// A builder for [`ApiKey`](crate::model::ApiKey).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4940,8 +4613,7 @@ pub mod api_key {
         }
         /// <p>The API key ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>A description of the purpose of the API key.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4950,8 +4622,7 @@ pub mod api_key {
         }
         /// <p>A description of the purpose of the API key.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
         pub fn expires(mut self, input: i64) -> Self {
@@ -4960,8 +4631,7 @@ pub mod api_key {
         }
         /// <p>The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
         pub fn set_expires(mut self, input: std::option::Option<i64>) -> Self {
-            self.expires = input;
-            self
+            self.expires = input; self
         }
         /// <p>The time after which the API key is deleted. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
         pub fn deletes(mut self, input: i64) -> Self {
@@ -4970,19 +4640,26 @@ pub mod api_key {
         }
         /// <p>The time after which the API key is deleted. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
         pub fn set_deletes(mut self, input: std::option::Option<i64>) -> Self {
-            self.deletes = input;
-            self
+            self.deletes = input; self
         }
         /// Consumes the builder and constructs a [`ApiKey`](crate::model::ApiKey).
         pub fn build(self) -> crate::model::ApiKey {
             crate::model::ApiKey {
-                id: self.id,
-                description: self.description,
-                expires: self.expires.unwrap_or_default(),
-                deletes: self.deletes.unwrap_or_default(),
+                id: self.id
+                ,
+                description: self.description
+                ,
+                expires: self.expires
+                    .unwrap_or_default()
+                ,
+                deletes: self.deletes
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ApiKey {
     /// Creates a new builder-style object to manufacture [`ApiKey`](crate::model::ApiKey).
@@ -4994,15 +4671,15 @@ impl ApiKey {
 /// <p>The <code>ApiCache</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApiCache {
-    /// <p>TTL in seconds for cache entries.</p>
+pub struct ApiCache  {
+    /// <p>TTL in seconds for cache entries.</p> 
     /// <p>Valid values are 1–3,600 seconds.</p>
     #[doc(hidden)]
     pub ttl: i64,
-    /// <p>Caching behavior.</p>
-    /// <ul>
-    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
-    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
+    /// <p>Caching behavior.</p> 
+    /// <ul> 
+    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> 
+    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub api_caching_behavior: std::option::Option<crate::model::ApiCachingBehavior>,
@@ -5012,53 +4689,53 @@ pub struct ApiCache {
     /// <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
     #[doc(hidden)]
     pub at_rest_encryption_enabled: bool,
-    /// <p>The cache instance type. Valid values are </p>
-    /// <ul>
-    /// <li> <p> <code>SMALL</code> </p> </li>
-    /// <li> <p> <code>MEDIUM</code> </p> </li>
-    /// <li> <p> <code>LARGE</code> </p> </li>
-    /// <li> <p> <code>XLARGE</code> </p> </li>
-    /// <li> <p> <code>LARGE_2X</code> </p> </li>
-    /// <li> <p> <code>LARGE_4X</code> </p> </li>
-    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
-    /// <li> <p> <code>LARGE_12X</code> </p> </li>
-    /// </ul>
-    /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
-    /// <p>The following legacy instance types are available, but their use is discouraged:</p>
-    /// <ul>
-    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
-    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
-    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
-    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
+    /// <p>The cache instance type. Valid values are </p> 
+    /// <ul> 
+    /// <li> <p> <code>SMALL</code> </p> </li> 
+    /// <li> <p> <code>MEDIUM</code> </p> </li> 
+    /// <li> <p> <code>LARGE</code> </p> </li> 
+    /// <li> <p> <code>XLARGE</code> </p> </li> 
+    /// <li> <p> <code>LARGE_2X</code> </p> </li> 
+    /// <li> <p> <code>LARGE_4X</code> </p> </li> 
+    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li> 
+    /// <li> <p> <code>LARGE_12X</code> </p> </li> 
+    /// </ul> 
+    /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p> 
+    /// <p>The following legacy instance types are available, but their use is discouraged:</p> 
+    /// <ul> 
+    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> 
+    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> 
+    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> 
+    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> 
+    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> 
+    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> 
+    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ApiCacheType>,
-    /// <p>The cache instance status.</p>
-    /// <ul>
-    /// <li> <p> <b>AVAILABLE</b>: The instance is available for use.</p> </li>
-    /// <li> <p> <b>CREATING</b>: The instance is currently creating.</p> </li>
-    /// <li> <p> <b>DELETING</b>: The instance is currently deleting.</p> </li>
-    /// <li> <p> <b>MODIFYING</b>: The instance is currently modifying.</p> </li>
-    /// <li> <p> <b>FAILED</b>: The instance has failed creation.</p> </li>
+    /// <p>The cache instance status.</p> 
+    /// <ul> 
+    /// <li> <p> <b>AVAILABLE</b>: The instance is available for use.</p> </li> 
+    /// <li> <p> <b>CREATING</b>: The instance is currently creating.</p> </li> 
+    /// <li> <p> <b>DELETING</b>: The instance is currently deleting.</p> </li> 
+    /// <li> <p> <b>MODIFYING</b>: The instance is currently modifying.</p> </li> 
+    /// <li> <p> <b>FAILED</b>: The instance has failed creation.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ApiCacheStatus>,
 }
 impl ApiCache {
-    /// <p>TTL in seconds for cache entries.</p>
+    /// <p>TTL in seconds for cache entries.</p> 
     /// <p>Valid values are 1–3,600 seconds.</p>
     pub fn ttl(&self) -> i64 {
         self.ttl
     }
-    /// <p>Caching behavior.</p>
-    /// <ul>
-    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
-    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
+    /// <p>Caching behavior.</p> 
+    /// <ul> 
+    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> 
+    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li> 
     /// </ul>
-    pub fn api_caching_behavior(&self) -> std::option::Option<&crate::model::ApiCachingBehavior> {
+    pub fn api_caching_behavior(&self) -> std::option::Option<& crate::model::ApiCachingBehavior> {
         self.api_caching_behavior.as_ref()
     }
     /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
@@ -5069,46 +4746,46 @@ impl ApiCache {
     pub fn at_rest_encryption_enabled(&self) -> bool {
         self.at_rest_encryption_enabled
     }
-    /// <p>The cache instance type. Valid values are </p>
-    /// <ul>
-    /// <li> <p> <code>SMALL</code> </p> </li>
-    /// <li> <p> <code>MEDIUM</code> </p> </li>
-    /// <li> <p> <code>LARGE</code> </p> </li>
-    /// <li> <p> <code>XLARGE</code> </p> </li>
-    /// <li> <p> <code>LARGE_2X</code> </p> </li>
-    /// <li> <p> <code>LARGE_4X</code> </p> </li>
-    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
-    /// <li> <p> <code>LARGE_12X</code> </p> </li>
+    /// <p>The cache instance type. Valid values are </p> 
+    /// <ul> 
+    /// <li> <p> <code>SMALL</code> </p> </li> 
+    /// <li> <p> <code>MEDIUM</code> </p> </li> 
+    /// <li> <p> <code>LARGE</code> </p> </li> 
+    /// <li> <p> <code>XLARGE</code> </p> </li> 
+    /// <li> <p> <code>LARGE_2X</code> </p> </li> 
+    /// <li> <p> <code>LARGE_4X</code> </p> </li> 
+    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li> 
+    /// <li> <p> <code>LARGE_12X</code> </p> </li> 
+    /// </ul> 
+    /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p> 
+    /// <p>The following legacy instance types are available, but their use is discouraged:</p> 
+    /// <ul> 
+    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> 
+    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> 
+    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> 
+    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> 
+    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> 
+    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> 
+    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> 
     /// </ul>
-    /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
-    /// <p>The following legacy instance types are available, but their use is discouraged:</p>
-    /// <ul>
-    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
-    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
-    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
-    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
-    /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ApiCacheType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ApiCacheType> {
         self.r#type.as_ref()
     }
-    /// <p>The cache instance status.</p>
-    /// <ul>
-    /// <li> <p> <b>AVAILABLE</b>: The instance is available for use.</p> </li>
-    /// <li> <p> <b>CREATING</b>: The instance is currently creating.</p> </li>
-    /// <li> <p> <b>DELETING</b>: The instance is currently deleting.</p> </li>
-    /// <li> <p> <b>MODIFYING</b>: The instance is currently modifying.</p> </li>
-    /// <li> <p> <b>FAILED</b>: The instance has failed creation.</p> </li>
+    /// <p>The cache instance status.</p> 
+    /// <ul> 
+    /// <li> <p> <b>AVAILABLE</b>: The instance is available for use.</p> </li> 
+    /// <li> <p> <b>CREATING</b>: The instance is currently creating.</p> </li> 
+    /// <li> <p> <b>DELETING</b>: The instance is currently deleting.</p> </li> 
+    /// <li> <p> <b>MODIFYING</b>: The instance is currently modifying.</p> </li> 
+    /// <li> <p> <b>FAILED</b>: The instance has failed creation.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::ApiCacheStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ApiCacheStatus> {
         self.status.as_ref()
     }
 }
 /// See [`ApiCache`](crate::model::ApiCache).
 pub mod api_cache {
-
+    
     /// A builder for [`ApiCache`](crate::model::ApiCache).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5120,38 +4797,33 @@ pub mod api_cache {
         pub(crate) status: std::option::Option<crate::model::ApiCacheStatus>,
     }
     impl Builder {
-        /// <p>TTL in seconds for cache entries.</p>
+        /// <p>TTL in seconds for cache entries.</p> 
         /// <p>Valid values are 1–3,600 seconds.</p>
         pub fn ttl(mut self, input: i64) -> Self {
             self.ttl = Some(input);
             self
         }
-        /// <p>TTL in seconds for cache entries.</p>
+        /// <p>TTL in seconds for cache entries.</p> 
         /// <p>Valid values are 1–3,600 seconds.</p>
         pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
-            self.ttl = input;
-            self
+            self.ttl = input; self
         }
-        /// <p>Caching behavior.</p>
-        /// <ul>
-        /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
-        /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
+        /// <p>Caching behavior.</p> 
+        /// <ul> 
+        /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> 
+        /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li> 
         /// </ul>
         pub fn api_caching_behavior(mut self, input: crate::model::ApiCachingBehavior) -> Self {
             self.api_caching_behavior = Some(input);
             self
         }
-        /// <p>Caching behavior.</p>
-        /// <ul>
-        /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
-        /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
+        /// <p>Caching behavior.</p> 
+        /// <ul> 
+        /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> 
+        /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li> 
         /// </ul>
-        pub fn set_api_caching_behavior(
-            mut self,
-            input: std::option::Option<crate::model::ApiCachingBehavior>,
-        ) -> Self {
-            self.api_caching_behavior = input;
-            self
+        pub fn set_api_caching_behavior(mut self, input: std::option::Option<crate::model::ApiCachingBehavior>) -> Self {
+            self.api_caching_behavior = input; self
         }
         /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
         pub fn transit_encryption_enabled(mut self, input: bool) -> Self {
@@ -5160,8 +4832,7 @@ pub mod api_cache {
         }
         /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
         pub fn set_transit_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.transit_encryption_enabled = input;
-            self
+            self.transit_encryption_enabled = input; self
         }
         /// <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
         pub fn at_rest_encryption_enabled(mut self, input: bool) -> Self {
@@ -5170,100 +4841,105 @@ pub mod api_cache {
         }
         /// <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
         pub fn set_at_rest_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.at_rest_encryption_enabled = input;
-            self
+            self.at_rest_encryption_enabled = input; self
         }
-        /// <p>The cache instance type. Valid values are </p>
-        /// <ul>
-        /// <li> <p> <code>SMALL</code> </p> </li>
-        /// <li> <p> <code>MEDIUM</code> </p> </li>
-        /// <li> <p> <code>LARGE</code> </p> </li>
-        /// <li> <p> <code>XLARGE</code> </p> </li>
-        /// <li> <p> <code>LARGE_2X</code> </p> </li>
-        /// <li> <p> <code>LARGE_4X</code> </p> </li>
-        /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
-        /// <li> <p> <code>LARGE_12X</code> </p> </li>
-        /// </ul>
-        /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
-        /// <p>The following legacy instance types are available, but their use is discouraged:</p>
-        /// <ul>
-        /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
-        /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
-        /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
-        /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
-        /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
-        /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
-        /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
+        /// <p>The cache instance type. Valid values are </p> 
+        /// <ul> 
+        /// <li> <p> <code>SMALL</code> </p> </li> 
+        /// <li> <p> <code>MEDIUM</code> </p> </li> 
+        /// <li> <p> <code>LARGE</code> </p> </li> 
+        /// <li> <p> <code>XLARGE</code> </p> </li> 
+        /// <li> <p> <code>LARGE_2X</code> </p> </li> 
+        /// <li> <p> <code>LARGE_4X</code> </p> </li> 
+        /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li> 
+        /// <li> <p> <code>LARGE_12X</code> </p> </li> 
+        /// </ul> 
+        /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p> 
+        /// <p>The following legacy instance types are available, but their use is discouraged:</p> 
+        /// <ul> 
+        /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> 
+        /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> 
+        /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> 
+        /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> 
+        /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> 
+        /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> 
+        /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ApiCacheType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The cache instance type. Valid values are </p>
-        /// <ul>
-        /// <li> <p> <code>SMALL</code> </p> </li>
-        /// <li> <p> <code>MEDIUM</code> </p> </li>
-        /// <li> <p> <code>LARGE</code> </p> </li>
-        /// <li> <p> <code>XLARGE</code> </p> </li>
-        /// <li> <p> <code>LARGE_2X</code> </p> </li>
-        /// <li> <p> <code>LARGE_4X</code> </p> </li>
-        /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
-        /// <li> <p> <code>LARGE_12X</code> </p> </li>
-        /// </ul>
-        /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
-        /// <p>The following legacy instance types are available, but their use is discouraged:</p>
-        /// <ul>
-        /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
-        /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
-        /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
-        /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
-        /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
-        /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
-        /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
+        /// <p>The cache instance type. Valid values are </p> 
+        /// <ul> 
+        /// <li> <p> <code>SMALL</code> </p> </li> 
+        /// <li> <p> <code>MEDIUM</code> </p> </li> 
+        /// <li> <p> <code>LARGE</code> </p> </li> 
+        /// <li> <p> <code>XLARGE</code> </p> </li> 
+        /// <li> <p> <code>LARGE_2X</code> </p> </li> 
+        /// <li> <p> <code>LARGE_4X</code> </p> </li> 
+        /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li> 
+        /// <li> <p> <code>LARGE_12X</code> </p> </li> 
+        /// </ul> 
+        /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p> 
+        /// <p>The following legacy instance types are available, but their use is discouraged:</p> 
+        /// <ul> 
+        /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> 
+        /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> 
+        /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> 
+        /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> 
+        /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> 
+        /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> 
+        /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> 
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ApiCacheType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
-        /// <p>The cache instance status.</p>
-        /// <ul>
-        /// <li> <p> <b>AVAILABLE</b>: The instance is available for use.</p> </li>
-        /// <li> <p> <b>CREATING</b>: The instance is currently creating.</p> </li>
-        /// <li> <p> <b>DELETING</b>: The instance is currently deleting.</p> </li>
-        /// <li> <p> <b>MODIFYING</b>: The instance is currently modifying.</p> </li>
-        /// <li> <p> <b>FAILED</b>: The instance has failed creation.</p> </li>
+        /// <p>The cache instance status.</p> 
+        /// <ul> 
+        /// <li> <p> <b>AVAILABLE</b>: The instance is available for use.</p> </li> 
+        /// <li> <p> <b>CREATING</b>: The instance is currently creating.</p> </li> 
+        /// <li> <p> <b>DELETING</b>: The instance is currently deleting.</p> </li> 
+        /// <li> <p> <b>MODIFYING</b>: The instance is currently modifying.</p> </li> 
+        /// <li> <p> <b>FAILED</b>: The instance has failed creation.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::ApiCacheStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The cache instance status.</p>
-        /// <ul>
-        /// <li> <p> <b>AVAILABLE</b>: The instance is available for use.</p> </li>
-        /// <li> <p> <b>CREATING</b>: The instance is currently creating.</p> </li>
-        /// <li> <p> <b>DELETING</b>: The instance is currently deleting.</p> </li>
-        /// <li> <p> <b>MODIFYING</b>: The instance is currently modifying.</p> </li>
-        /// <li> <p> <b>FAILED</b>: The instance has failed creation.</p> </li>
+        /// <p>The cache instance status.</p> 
+        /// <ul> 
+        /// <li> <p> <b>AVAILABLE</b>: The instance is available for use.</p> </li> 
+        /// <li> <p> <b>CREATING</b>: The instance is currently creating.</p> </li> 
+        /// <li> <p> <b>DELETING</b>: The instance is currently deleting.</p> </li> 
+        /// <li> <p> <b>MODIFYING</b>: The instance is currently modifying.</p> </li> 
+        /// <li> <p> <b>FAILED</b>: The instance has failed creation.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ApiCacheStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ApiCacheStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ApiCache`](crate::model::ApiCache).
         pub fn build(self) -> crate::model::ApiCache {
             crate::model::ApiCache {
-                ttl: self.ttl.unwrap_or_default(),
-                api_caching_behavior: self.api_caching_behavior,
-                transit_encryption_enabled: self.transit_encryption_enabled.unwrap_or_default(),
-                at_rest_encryption_enabled: self.at_rest_encryption_enabled.unwrap_or_default(),
-                r#type: self.r#type,
-                status: self.status,
+                ttl: self.ttl
+                    .unwrap_or_default()
+                ,
+                api_caching_behavior: self.api_caching_behavior
+                ,
+                transit_encryption_enabled: self.transit_encryption_enabled
+                    .unwrap_or_default()
+                ,
+                at_rest_encryption_enabled: self.at_rest_encryption_enabled
+                    .unwrap_or_default()
+                ,
+                r#type: self.r#type
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl ApiCache {
     /// Creates a new builder-style object to manufacture [`ApiCache`](crate::model::ApiCache).
@@ -5278,9 +4954,9 @@ impl ApiCache {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let apicachestatus = unimplemented!();
 /// match apicachestatus {
@@ -5305,22 +4981,14 @@ impl ApiCache {
 /// Specifically, when `apicachestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApiCacheStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ApiCacheStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -5333,7 +5001,7 @@ pub enum ApiCacheStatus {
     #[allow(missing_docs)] // documentation missing in model
     Modifying,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApiCacheStatus {
     fn from(s: &str) -> Self {
@@ -5343,17 +5011,17 @@ impl std::convert::From<&str> for ApiCacheStatus {
             "DELETING" => ApiCacheStatus::Deleting,
             "FAILED" => ApiCacheStatus::Failed,
             "MODIFYING" => ApiCacheStatus::Modifying,
-            other => ApiCacheStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ApiCacheStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ApiCacheStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApiCacheStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ApiCacheStatus::from(s))
+                }
+            }
 impl ApiCacheStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5363,12 +5031,14 @@ impl ApiCacheStatus {
             ApiCacheStatus::Deleting => "DELETING",
             ApiCacheStatus::Failed => "FAILED",
             ApiCacheStatus::Modifying => "MODIFYING",
-            ApiCacheStatus::Unknown(value) => value.as_str(),
+            ApiCacheStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "CREATING", "DELETING", "FAILED", "MODIFYING"]
+        &[
+            "AVAILABLE", "CREATING", "DELETING", "FAILED", "MODIFYING"
+        ]
     }
 }
 impl AsRef<str> for ApiCacheStatus {
@@ -5383,9 +5053,9 @@ impl AsRef<str> for ApiCacheStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let apicachetype = unimplemented!();
 /// match apicachetype {
@@ -5420,22 +5090,14 @@ impl AsRef<str> for ApiCacheStatus {
 /// Specifically, when `apicachetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApiCacheType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ApiCacheType {
     #[allow(missing_docs)] // documentation missing in model
     Large,
@@ -5468,7 +5130,7 @@ pub enum ApiCacheType {
     #[allow(missing_docs)] // documentation missing in model
     Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApiCacheType {
     fn from(s: &str) -> Self {
@@ -5488,17 +5150,17 @@ impl std::convert::From<&str> for ApiCacheType {
             "T2_MEDIUM" => ApiCacheType::T2Medium,
             "T2_SMALL" => ApiCacheType::T2Small,
             "XLARGE" => ApiCacheType::Xlarge,
-            other => ApiCacheType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ApiCacheType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ApiCacheType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApiCacheType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ApiCacheType::from(s))
+                }
+            }
 impl ApiCacheType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5518,27 +5180,13 @@ impl ApiCacheType {
             ApiCacheType::T2Medium => "T2_MEDIUM",
             ApiCacheType::T2Small => "T2_SMALL",
             ApiCacheType::Xlarge => "XLARGE",
-            ApiCacheType::Unknown(value) => value.as_str(),
+            ApiCacheType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "LARGE",
-            "LARGE_12X",
-            "LARGE_2X",
-            "LARGE_4X",
-            "LARGE_8X",
-            "MEDIUM",
-            "R4_2XLARGE",
-            "R4_4XLARGE",
-            "R4_8XLARGE",
-            "R4_LARGE",
-            "R4_XLARGE",
-            "SMALL",
-            "T2_MEDIUM",
-            "T2_SMALL",
-            "XLARGE",
+            "LARGE", "LARGE_12X", "LARGE_2X", "LARGE_4X", "LARGE_8X", "MEDIUM", "R4_2XLARGE", "R4_4XLARGE", "R4_8XLARGE", "R4_LARGE", "R4_XLARGE", "SMALL", "T2_MEDIUM", "T2_SMALL", "XLARGE"
         ]
     }
 }
@@ -5554,9 +5202,9 @@ impl AsRef<str> for ApiCacheType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let apicachingbehavior = unimplemented!();
 /// match apicachingbehavior {
@@ -5578,60 +5226,52 @@ impl AsRef<str> for ApiCacheType {
 /// Specifically, when `apicachingbehavior` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApiCachingBehavior::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ApiCachingBehavior {
     #[allow(missing_docs)] // documentation missing in model
     FullRequestCaching,
     #[allow(missing_docs)] // documentation missing in model
     PerResolverCaching,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApiCachingBehavior {
     fn from(s: &str) -> Self {
         match s {
             "FULL_REQUEST_CACHING" => ApiCachingBehavior::FullRequestCaching,
             "PER_RESOLVER_CACHING" => ApiCachingBehavior::PerResolverCaching,
-            other => {
-                ApiCachingBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ApiCachingBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ApiCachingBehavior {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApiCachingBehavior::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ApiCachingBehavior::from(s))
+                }
+            }
 impl ApiCachingBehavior {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApiCachingBehavior::FullRequestCaching => "FULL_REQUEST_CACHING",
             ApiCachingBehavior::PerResolverCaching => "PER_RESOLVER_CACHING",
-            ApiCachingBehavior::Unknown(value) => value.as_str(),
+            ApiCachingBehavior::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FULL_REQUEST_CACHING", "PER_RESOLVER_CACHING"]
+        &[
+            "FULL_REQUEST_CACHING", "PER_RESOLVER_CACHING"
+        ]
     }
 }
 impl AsRef<str> for ApiCachingBehavior {
@@ -5646,9 +5286,9 @@ impl AsRef<str> for ApiCachingBehavior {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let schemastatus = unimplemented!();
 /// match schemastatus {
@@ -5674,22 +5314,14 @@ impl AsRef<str> for ApiCachingBehavior {
 /// Specifically, when `schemastatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SchemaStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SchemaStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -5704,7 +5336,7 @@ pub enum SchemaStatus {
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SchemaStatus {
     fn from(s: &str) -> Self {
@@ -5715,17 +5347,17 @@ impl std::convert::From<&str> for SchemaStatus {
             "NOT_APPLICABLE" => SchemaStatus::NotApplicable,
             "PROCESSING" => SchemaStatus::Processing,
             "SUCCESS" => SchemaStatus::Success,
-            other => SchemaStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SchemaStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SchemaStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SchemaStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SchemaStatus::from(s))
+                }
+            }
 impl SchemaStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5736,18 +5368,13 @@ impl SchemaStatus {
             SchemaStatus::NotApplicable => "NOT_APPLICABLE",
             SchemaStatus::Processing => "PROCESSING",
             SchemaStatus::Success => "SUCCESS",
-            SchemaStatus::Unknown(value) => value.as_str(),
+            SchemaStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "DELETING",
-            "FAILED",
-            "NOT_APPLICABLE",
-            "PROCESSING",
-            "SUCCESS",
+            "ACTIVE", "DELETING", "FAILED", "NOT_APPLICABLE", "PROCESSING", "SUCCESS"
         ]
     }
 }
@@ -5763,9 +5390,9 @@ impl AsRef<str> for SchemaStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let outputtype = unimplemented!();
 /// match outputtype {
@@ -5787,58 +5414,52 @@ impl AsRef<str> for SchemaStatus {
 /// Specifically, when `outputtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OutputType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OutputType {
     #[allow(missing_docs)] // documentation missing in model
     Json,
     #[allow(missing_docs)] // documentation missing in model
     Sdl,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OutputType {
     fn from(s: &str) -> Self {
         match s {
             "JSON" => OutputType::Json,
             "SDL" => OutputType::Sdl,
-            other => OutputType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OutputType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OutputType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OutputType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OutputType::from(s))
+                }
+            }
 impl OutputType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OutputType::Json => "JSON",
             OutputType::Sdl => "SDL",
-            OutputType::Unknown(value) => value.as_str(),
+            OutputType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["JSON", "SDL"]
+        &[
+            "JSON", "SDL"
+        ]
     }
 }
 impl AsRef<str> for OutputType {
@@ -5850,18 +5471,18 @@ impl AsRef<str> for OutputType {
 /// <p>Describes an <code>ApiAssociation</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApiAssociation {
+pub struct ApiAssociation  {
     /// <p>The domain name.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The API ID.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
-    /// <p>Identifies the status of an association.</p>
-    /// <ul>
-    /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li>
-    /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li>
-    /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li>
+    /// <p>Identifies the status of an association.</p> 
+    /// <ul> 
+    /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li> 
+    /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li> 
+    /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub association_status: std::option::Option<crate::model::AssociationStatus>,
@@ -5871,30 +5492,30 @@ pub struct ApiAssociation {
 }
 impl ApiAssociation {
     /// <p>The domain name.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> std::option::Option<&str> {
+    pub fn api_id(&self) -> std::option::Option<& str> {
         self.api_id.as_deref()
     }
-    /// <p>Identifies the status of an association.</p>
-    /// <ul>
-    /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li>
-    /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li>
-    /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li>
+    /// <p>Identifies the status of an association.</p> 
+    /// <ul> 
+    /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li> 
+    /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li> 
+    /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li> 
     /// </ul>
-    pub fn association_status(&self) -> std::option::Option<&crate::model::AssociationStatus> {
+    pub fn association_status(&self) -> std::option::Option<& crate::model::AssociationStatus> {
         self.association_status.as_ref()
     }
     /// <p>Details about the last deployment status.</p>
-    pub fn deployment_detail(&self) -> std::option::Option<&str> {
+    pub fn deployment_detail(&self) -> std::option::Option<& str> {
         self.deployment_detail.as_deref()
     }
 }
 /// See [`ApiAssociation`](crate::model::ApiAssociation).
 pub mod api_association {
-
+    
     /// A builder for [`ApiAssociation`](crate::model::ApiAssociation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5911,8 +5532,7 @@ pub mod api_association {
         }
         /// <p>The domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>The API ID.</p>
         pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5921,31 +5541,26 @@ pub mod api_association {
         }
         /// <p>The API ID.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.api_id = input;
-            self
+            self.api_id = input; self
         }
-        /// <p>Identifies the status of an association.</p>
-        /// <ul>
-        /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li>
-        /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li>
-        /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li>
+        /// <p>Identifies the status of an association.</p> 
+        /// <ul> 
+        /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li> 
+        /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li> 
+        /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li> 
         /// </ul>
         pub fn association_status(mut self, input: crate::model::AssociationStatus) -> Self {
             self.association_status = Some(input);
             self
         }
-        /// <p>Identifies the status of an association.</p>
-        /// <ul>
-        /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li>
-        /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li>
-        /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li>
+        /// <p>Identifies the status of an association.</p> 
+        /// <ul> 
+        /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li> 
+        /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li> 
+        /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li> 
         /// </ul>
-        pub fn set_association_status(
-            mut self,
-            input: std::option::Option<crate::model::AssociationStatus>,
-        ) -> Self {
-            self.association_status = input;
-            self
+        pub fn set_association_status(mut self, input: std::option::Option<crate::model::AssociationStatus>) -> Self {
+            self.association_status = input; self
         }
         /// <p>Details about the last deployment status.</p>
         pub fn deployment_detail(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5953,23 +5568,25 @@ pub mod api_association {
             self
         }
         /// <p>Details about the last deployment status.</p>
-        pub fn set_deployment_detail(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_detail = input;
-            self
+        pub fn set_deployment_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_detail = input; self
         }
         /// Consumes the builder and constructs a [`ApiAssociation`](crate::model::ApiAssociation).
         pub fn build(self) -> crate::model::ApiAssociation {
             crate::model::ApiAssociation {
-                domain_name: self.domain_name,
-                api_id: self.api_id,
-                association_status: self.association_status,
-                deployment_detail: self.deployment_detail,
+                domain_name: self.domain_name
+                ,
+                api_id: self.api_id
+                ,
+                association_status: self.association_status
+                ,
+                deployment_detail: self.deployment_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl ApiAssociation {
     /// Creates a new builder-style object to manufacture [`ApiAssociation`](crate::model::ApiAssociation).
@@ -5984,9 +5601,9 @@ impl ApiAssociation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let associationstatus = unimplemented!();
 /// match associationstatus {
@@ -6009,22 +5626,14 @@ impl ApiAssociation {
 /// Specifically, when `associationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssociationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssociationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -6033,7 +5642,7 @@ pub enum AssociationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssociationStatus {
     fn from(s: &str) -> Self {
@@ -6041,19 +5650,17 @@ impl std::convert::From<&str> for AssociationStatus {
             "FAILED" => AssociationStatus::Failed,
             "PROCESSING" => AssociationStatus::Processing,
             "SUCCESS" => AssociationStatus::Success,
-            other => {
-                AssociationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AssociationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssociationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssociationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssociationStatus::from(s))
+                }
+            }
 impl AssociationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6061,12 +5668,14 @@ impl AssociationStatus {
             AssociationStatus::Failed => "FAILED",
             AssociationStatus::Processing => "PROCESSING",
             AssociationStatus::Success => "SUCCESS",
-            AssociationStatus::Unknown(value) => value.as_str(),
+            AssociationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "PROCESSING", "SUCCESS"]
+        &[
+            "FAILED", "PROCESSING", "SUCCESS"
+        ]
     }
 }
 impl AsRef<str> for AssociationStatus {
@@ -6078,20 +5687,20 @@ impl AsRef<str> for AssociationStatus {
 /// <p>Contains the list of errors generated. When using JavaScript, this will apply to the request or response function evaluation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorDetail {
+pub struct ErrorDetail  {
     /// <p>The error payload.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ErrorDetail {
     /// <p>The error payload.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ErrorDetail`](crate::model::ErrorDetail).
 pub mod error_detail {
-
+    
     /// A builder for [`ErrorDetail`](crate::model::ErrorDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6105,16 +5714,18 @@ pub mod error_detail {
         }
         /// <p>The error payload.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ErrorDetail`](crate::model::ErrorDetail).
         pub fn build(self) -> crate::model::ErrorDetail {
             crate::model::ErrorDetail {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ErrorDetail {
     /// Creates a new builder-style object to manufacture [`ErrorDetail`](crate::model::ErrorDetail).
@@ -6126,7 +5737,7 @@ impl ErrorDetail {
 /// <p>Contains the list of errors from a code evaluation response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EvaluateCodeErrorDetail {
+pub struct EvaluateCodeErrorDetail  {
     /// <p>The error payload.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -6136,17 +5747,17 @@ pub struct EvaluateCodeErrorDetail {
 }
 impl EvaluateCodeErrorDetail {
     /// <p>The error payload.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Contains the list of <code>CodeError</code> objects.</p>
-    pub fn code_errors(&self) -> std::option::Option<&[crate::model::CodeError]> {
+    pub fn code_errors(&self) -> std::option::Option<& [crate::model::CodeError]> {
         self.code_errors.as_deref()
     }
 }
 /// See [`EvaluateCodeErrorDetail`](crate::model::EvaluateCodeErrorDetail).
 pub mod evaluate_code_error_detail {
-
+    
     /// A builder for [`EvaluateCodeErrorDetail`](crate::model::EvaluateCodeErrorDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6161,8 +5772,7 @@ pub mod evaluate_code_error_detail {
         }
         /// <p>The error payload.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Appends an item to `code_errors`.
         ///
@@ -6171,26 +5781,26 @@ pub mod evaluate_code_error_detail {
         /// <p>Contains the list of <code>CodeError</code> objects.</p>
         pub fn code_errors(mut self, input: crate::model::CodeError) -> Self {
             let mut v = self.code_errors.unwrap_or_default();
-            v.push(input);
-            self.code_errors = Some(v);
-            self
+                            v.push(input);
+                            self.code_errors = Some(v);
+                            self
         }
         /// <p>Contains the list of <code>CodeError</code> objects.</p>
-        pub fn set_code_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CodeError>>,
-        ) -> Self {
-            self.code_errors = input;
-            self
+        pub fn set_code_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::CodeError>>) -> Self {
+            self.code_errors = input; self
         }
         /// Consumes the builder and constructs a [`EvaluateCodeErrorDetail`](crate::model::EvaluateCodeErrorDetail).
         pub fn build(self) -> crate::model::EvaluateCodeErrorDetail {
             crate::model::EvaluateCodeErrorDetail {
-                message: self.message,
-                code_errors: self.code_errors,
+                message: self.message
+                ,
+                code_errors: self.code_errors
+                ,
             }
         }
     }
+    
+    
 }
 impl EvaluateCodeErrorDetail {
     /// Creates a new builder-style object to manufacture [`EvaluateCodeErrorDetail`](crate::model::EvaluateCodeErrorDetail).
@@ -6198,3 +5808,4 @@ impl EvaluateCodeErrorDetail {
         crate::model::evaluate_code_error_detail::Builder::default()
     }
 }
+

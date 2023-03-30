@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListScheduleGroupsOutput {
+pub struct ListScheduleGroupsOutput  {
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,23 +12,22 @@ pub struct ListScheduleGroupsOutput {
 }
 impl ListScheduleGroupsOutput {
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The schedule groups that match the specified criteria.</p>
-    pub fn schedule_groups(&self) -> std::option::Option<&[crate::model::ScheduleGroupSummary]> {
+    pub fn schedule_groups(&self) -> std::option::Option<& [crate::model::ScheduleGroupSummary]> {
         self.schedule_groups.as_deref()
     }
 }
 /// See [`ListScheduleGroupsOutput`](crate::output::ListScheduleGroupsOutput).
 pub mod list_schedule_groups_output {
-
+    
     /// A builder for [`ListScheduleGroupsOutput`](crate::output::ListScheduleGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) schedule_groups:
-            std::option::Option<std::vec::Vec<crate::model::ScheduleGroupSummary>>,
+        pub(crate) schedule_groups: std::option::Option<std::vec::Vec<crate::model::ScheduleGroupSummary>>,
     }
     impl Builder {
         /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
@@ -38,8 +37,7 @@ pub mod list_schedule_groups_output {
         }
         /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `schedule_groups`.
         ///
@@ -48,26 +46,26 @@ pub mod list_schedule_groups_output {
         /// <p>The schedule groups that match the specified criteria.</p>
         pub fn schedule_groups(mut self, input: crate::model::ScheduleGroupSummary) -> Self {
             let mut v = self.schedule_groups.unwrap_or_default();
-            v.push(input);
-            self.schedule_groups = Some(v);
-            self
+                            v.push(input);
+                            self.schedule_groups = Some(v);
+                            self
         }
         /// <p>The schedule groups that match the specified criteria.</p>
-        pub fn set_schedule_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ScheduleGroupSummary>>,
-        ) -> Self {
-            self.schedule_groups = input;
-            self
+        pub fn set_schedule_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::ScheduleGroupSummary>>) -> Self {
+            self.schedule_groups = input; self
         }
         /// Consumes the builder and constructs a [`ListScheduleGroupsOutput`](crate::output::ListScheduleGroupsOutput).
         pub fn build(self) -> crate::output::ListScheduleGroupsOutput {
             crate::output::ListScheduleGroupsOutput {
-                next_token: self.next_token,
-                schedule_groups: self.schedule_groups,
+                next_token: self.next_token
+                ,
+                schedule_groups: self.schedule_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl ListScheduleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListScheduleGroupsOutput`](crate::output::ListScheduleGroupsOutput).
@@ -79,20 +77,20 @@ impl ListScheduleGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateScheduleGroupOutput {
+pub struct CreateScheduleGroupOutput  {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
     #[doc(hidden)]
     pub schedule_group_arn: std::option::Option<std::string::String>,
 }
 impl CreateScheduleGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
-    pub fn schedule_group_arn(&self) -> std::option::Option<&str> {
+    pub fn schedule_group_arn(&self) -> std::option::Option<& str> {
         self.schedule_group_arn.as_deref()
     }
 }
 /// See [`CreateScheduleGroupOutput`](crate::output::CreateScheduleGroupOutput).
 pub mod create_schedule_group_output {
-
+    
     /// A builder for [`CreateScheduleGroupOutput`](crate::output::CreateScheduleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -105,20 +103,19 @@ pub mod create_schedule_group_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
-        pub fn set_schedule_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schedule_group_arn = input;
-            self
+        pub fn set_schedule_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schedule_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateScheduleGroupOutput`](crate::output::CreateScheduleGroupOutput).
         pub fn build(self) -> crate::output::CreateScheduleGroupOutput {
             crate::output::CreateScheduleGroupOutput {
-                schedule_group_arn: self.schedule_group_arn,
+                schedule_group_arn: self.schedule_group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateScheduleGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateScheduleGroupOutput`](crate::output::CreateScheduleGroupOutput).
@@ -130,19 +127,24 @@ impl CreateScheduleGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteScheduleGroupOutput {}
+pub struct DeleteScheduleGroupOutput  {
+}
 /// See [`DeleteScheduleGroupOutput`](crate::output::DeleteScheduleGroupOutput).
 pub mod delete_schedule_group_output {
-
+    
     /// A builder for [`DeleteScheduleGroupOutput`](crate::output::DeleteScheduleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteScheduleGroupOutput`](crate::output::DeleteScheduleGroupOutput).
         pub fn build(self) -> crate::output::DeleteScheduleGroupOutput {
-            crate::output::DeleteScheduleGroupOutput {}
+            crate::output::DeleteScheduleGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteScheduleGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScheduleGroupOutput`](crate::output::DeleteScheduleGroupOutput).
@@ -154,7 +156,7 @@ impl DeleteScheduleGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetScheduleGroupOutput {
+pub struct GetScheduleGroupOutput  {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -173,29 +175,29 @@ pub struct GetScheduleGroupOutput {
 }
 impl GetScheduleGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the schedule group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the state of the schedule group.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ScheduleGroupState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ScheduleGroupState> {
         self.state.as_ref()
     }
     /// <p>The time at which the schedule group was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The time at which the schedule group was last modified.</p>
-    pub fn last_modification_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modification_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modification_date.as_ref()
     }
 }
 /// See [`GetScheduleGroupOutput`](crate::output::GetScheduleGroupOutput).
 pub mod get_schedule_group_output {
-
+    
     /// A builder for [`GetScheduleGroupOutput`](crate::output::GetScheduleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -213,8 +215,7 @@ pub mod get_schedule_group_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the schedule group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -223,8 +224,7 @@ pub mod get_schedule_group_output {
         }
         /// <p>The name of the schedule group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Specifies the state of the schedule group.</p>
         pub fn state(mut self, input: crate::model::ScheduleGroupState) -> Self {
@@ -232,12 +232,8 @@ pub mod get_schedule_group_output {
             self
         }
         /// <p>Specifies the state of the schedule group.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ScheduleGroupState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ScheduleGroupState>) -> Self {
+            self.state = input; self
         }
         /// <p>The time at which the schedule group was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -245,12 +241,8 @@ pub mod get_schedule_group_output {
             self
         }
         /// <p>The time at which the schedule group was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The time at which the schedule group was last modified.</p>
         pub fn last_modification_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -258,24 +250,27 @@ pub mod get_schedule_group_output {
             self
         }
         /// <p>The time at which the schedule group was last modified.</p>
-        pub fn set_last_modification_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modification_date = input;
-            self
+        pub fn set_last_modification_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modification_date = input; self
         }
         /// Consumes the builder and constructs a [`GetScheduleGroupOutput`](crate::output::GetScheduleGroupOutput).
         pub fn build(self) -> crate::output::GetScheduleGroupOutput {
             crate::output::GetScheduleGroupOutput {
-                arn: self.arn,
-                name: self.name,
-                state: self.state,
-                creation_date: self.creation_date,
-                last_modification_date: self.last_modification_date,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                state: self.state
+                ,
+                creation_date: self.creation_date
+                ,
+                last_modification_date: self.last_modification_date
+                ,
             }
         }
     }
+    
+    
 }
 impl GetScheduleGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetScheduleGroupOutput`](crate::output::GetScheduleGroupOutput).
@@ -287,7 +282,7 @@ impl GetScheduleGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSchedulesOutput {
+pub struct ListSchedulesOutput  {
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -297,17 +292,17 @@ pub struct ListSchedulesOutput {
 }
 impl ListSchedulesOutput {
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The schedules that match the specified criteria.</p>
-    pub fn schedules(&self) -> std::option::Option<&[crate::model::ScheduleSummary]> {
+    pub fn schedules(&self) -> std::option::Option<& [crate::model::ScheduleSummary]> {
         self.schedules.as_deref()
     }
 }
 /// See [`ListSchedulesOutput`](crate::output::ListSchedulesOutput).
 pub mod list_schedules_output {
-
+    
     /// A builder for [`ListSchedulesOutput`](crate::output::ListSchedulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -322,8 +317,7 @@ pub mod list_schedules_output {
         }
         /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `schedules`.
         ///
@@ -332,26 +326,26 @@ pub mod list_schedules_output {
         /// <p>The schedules that match the specified criteria.</p>
         pub fn schedules(mut self, input: crate::model::ScheduleSummary) -> Self {
             let mut v = self.schedules.unwrap_or_default();
-            v.push(input);
-            self.schedules = Some(v);
-            self
+                            v.push(input);
+                            self.schedules = Some(v);
+                            self
         }
         /// <p>The schedules that match the specified criteria.</p>
-        pub fn set_schedules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ScheduleSummary>>,
-        ) -> Self {
-            self.schedules = input;
-            self
+        pub fn set_schedules(mut self, input: std::option::Option<std::vec::Vec<crate::model::ScheduleSummary>>) -> Self {
+            self.schedules = input; self
         }
         /// Consumes the builder and constructs a [`ListSchedulesOutput`](crate::output::ListSchedulesOutput).
         pub fn build(self) -> crate::output::ListSchedulesOutput {
             crate::output::ListSchedulesOutput {
-                next_token: self.next_token,
-                schedules: self.schedules,
+                next_token: self.next_token
+                ,
+                schedules: self.schedules
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSchedulesOutput {
     /// Creates a new builder-style object to manufacture [`ListSchedulesOutput`](crate::output::ListSchedulesOutput).
@@ -363,20 +357,20 @@ impl ListSchedulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateScheduleOutput {
+pub struct CreateScheduleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
     #[doc(hidden)]
     pub schedule_arn: std::option::Option<std::string::String>,
 }
 impl CreateScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
-    pub fn schedule_arn(&self) -> std::option::Option<&str> {
+    pub fn schedule_arn(&self) -> std::option::Option<& str> {
         self.schedule_arn.as_deref()
     }
 }
 /// See [`CreateScheduleOutput`](crate::output::CreateScheduleOutput).
 pub mod create_schedule_output {
-
+    
     /// A builder for [`CreateScheduleOutput`](crate::output::CreateScheduleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -390,16 +384,18 @@ pub mod create_schedule_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
         pub fn set_schedule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schedule_arn = input;
-            self
+            self.schedule_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateScheduleOutput`](crate::output::CreateScheduleOutput).
         pub fn build(self) -> crate::output::CreateScheduleOutput {
             crate::output::CreateScheduleOutput {
-                schedule_arn: self.schedule_arn,
+                schedule_arn: self.schedule_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateScheduleOutput {
     /// Creates a new builder-style object to manufacture [`CreateScheduleOutput`](crate::output::CreateScheduleOutput).
@@ -411,19 +407,24 @@ impl CreateScheduleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteScheduleOutput {}
+pub struct DeleteScheduleOutput  {
+}
 /// See [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
 pub mod delete_schedule_output {
-
+    
     /// A builder for [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
         pub fn build(self) -> crate::output::DeleteScheduleOutput {
-            crate::output::DeleteScheduleOutput {}
+            crate::output::DeleteScheduleOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
@@ -435,20 +436,20 @@ impl DeleteScheduleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateScheduleOutput {
+pub struct UpdateScheduleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
     #[doc(hidden)]
     pub schedule_arn: std::option::Option<std::string::String>,
 }
 impl UpdateScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
-    pub fn schedule_arn(&self) -> std::option::Option<&str> {
+    pub fn schedule_arn(&self) -> std::option::Option<& str> {
         self.schedule_arn.as_deref()
     }
 }
 /// See [`UpdateScheduleOutput`](crate::output::UpdateScheduleOutput).
 pub mod update_schedule_output {
-
+    
     /// A builder for [`UpdateScheduleOutput`](crate::output::UpdateScheduleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -462,16 +463,18 @@ pub mod update_schedule_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
         pub fn set_schedule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schedule_arn = input;
-            self
+            self.schedule_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateScheduleOutput`](crate::output::UpdateScheduleOutput).
         pub fn build(self) -> crate::output::UpdateScheduleOutput {
             crate::output::UpdateScheduleOutput {
-                schedule_arn: self.schedule_arn,
+                schedule_arn: self.schedule_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateScheduleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateScheduleOutput`](crate::output::UpdateScheduleOutput).
@@ -483,7 +486,7 @@ impl UpdateScheduleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetScheduleOutput {
+pub struct GetScheduleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -493,15 +496,15 @@ pub struct GetScheduleOutput {
     /// <p>The name of the schedule.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p> The expression that defines when the schedule runs. The following formats are supported. </p>
-    /// <ul>
-    /// <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li>
-    /// <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li>
-    /// <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li>
-    /// </ul>
-    /// <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p>
-    /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p>
-    /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p>
+    /// <p> The expression that defines when the schedule runs. The following formats are supported. </p> 
+    /// <ul> 
+    /// <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> 
+    /// <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li> 
+    /// <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li> 
+    /// </ul> 
+    /// <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p> 
+    /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p> 
+    /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p> 
     /// <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
     #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
@@ -538,74 +541,74 @@ pub struct GetScheduleOutput {
 }
 impl GetScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the schedule group associated with this schedule.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The name of the schedule.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p> The expression that defines when the schedule runs. The following formats are supported. </p>
-    /// <ul>
-    /// <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li>
-    /// <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li>
-    /// <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li>
-    /// </ul>
-    /// <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p>
-    /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p>
-    /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p>
+    /// <p> The expression that defines when the schedule runs. The following formats are supported. </p> 
+    /// <ul> 
+    /// <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> 
+    /// <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li> 
+    /// <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li> 
+    /// </ul> 
+    /// <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p> 
+    /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p> 
+    /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p> 
     /// <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
-    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+    pub fn schedule_expression(&self) -> std::option::Option<& str> {
         self.schedule_expression.as_deref()
     }
     /// <p>The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the <code>StartDate</code> you specify. EventBridge Scheduler ignores <code>StartDate</code> for one-time schedules.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The date, in UTC, before which the schedule can invoke its target. Depending on the schedule's recurrence expression, invocations might stop on, or before, the <code>EndDate</code> you specify. EventBridge Scheduler ignores <code>EndDate</code> for one-time schedules.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
     /// <p>The description of the schedule.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The timezone in which the scheduling expression is evaluated.</p>
-    pub fn schedule_expression_timezone(&self) -> std::option::Option<&str> {
+    pub fn schedule_expression_timezone(&self) -> std::option::Option<& str> {
         self.schedule_expression_timezone.as_deref()
     }
     /// <p>Specifies whether the schedule is enabled or disabled.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ScheduleState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ScheduleState> {
         self.state.as_ref()
     }
     /// <p>The time at which the schedule was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The time at which the schedule was last modified.</p>
-    pub fn last_modification_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modification_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modification_date.as_ref()
     }
     /// <p>The ARN for a customer managed KMS Key that is be used to encrypt and decrypt your data.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The schedule target.</p>
-    pub fn target(&self) -> std::option::Option<&crate::model::Target> {
+    pub fn target(&self) -> std::option::Option<& crate::model::Target> {
         self.target.as_ref()
     }
     /// <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
-    pub fn flexible_time_window(&self) -> std::option::Option<&crate::model::FlexibleTimeWindow> {
+    pub fn flexible_time_window(&self) -> std::option::Option<& crate::model::FlexibleTimeWindow> {
         self.flexible_time_window.as_ref()
     }
 }
 /// See [`GetScheduleOutput`](crate::output::GetScheduleOutput).
 pub mod get_schedule_output {
-
+    
     /// A builder for [`GetScheduleOutput`](crate::output::GetScheduleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -632,8 +635,7 @@ pub mod get_schedule_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the schedule group associated with this schedule.</p>
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -642,8 +644,7 @@ pub mod get_schedule_output {
         }
         /// <p>The name of the schedule group associated with this schedule.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_name = input;
-            self
+            self.group_name = input; self
         }
         /// <p>The name of the schedule.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -652,39 +653,34 @@ pub mod get_schedule_output {
         }
         /// <p>The name of the schedule.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p> The expression that defines when the schedule runs. The following formats are supported. </p>
-        /// <ul>
-        /// <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li>
-        /// <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li>
-        /// <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li>
-        /// </ul>
-        /// <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p>
-        /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p>
-        /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p>
+        /// <p> The expression that defines when the schedule runs. The following formats are supported. </p> 
+        /// <ul> 
+        /// <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> 
+        /// <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li> 
+        /// <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li> 
+        /// </ul> 
+        /// <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p> 
+        /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p> 
+        /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p> 
         /// <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
         pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule_expression = Some(input.into());
             self
         }
-        /// <p> The expression that defines when the schedule runs. The following formats are supported. </p>
-        /// <ul>
-        /// <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li>
-        /// <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li>
-        /// <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li>
-        /// </ul>
-        /// <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p>
-        /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p>
-        /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p>
+        /// <p> The expression that defines when the schedule runs. The following formats are supported. </p> 
+        /// <ul> 
+        /// <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> 
+        /// <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li> 
+        /// <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li> 
+        /// </ul> 
+        /// <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p> 
+        /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p> 
+        /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p> 
         /// <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
-        pub fn set_schedule_expression(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schedule_expression = input;
-            self
+        pub fn set_schedule_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schedule_expression = input; self
         }
         /// <p>The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the <code>StartDate</code> you specify. EventBridge Scheduler ignores <code>StartDate</code> for one-time schedules.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -692,12 +688,8 @@ pub mod get_schedule_output {
             self
         }
         /// <p>The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the <code>StartDate</code> you specify. EventBridge Scheduler ignores <code>StartDate</code> for one-time schedules.</p>
-        pub fn set_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date = input;
-            self
+        pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date = input; self
         }
         /// <p>The date, in UTC, before which the schedule can invoke its target. Depending on the schedule's recurrence expression, invocations might stop on, or before, the <code>EndDate</code> you specify. EventBridge Scheduler ignores <code>EndDate</code> for one-time schedules.</p>
         pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -705,12 +697,8 @@ pub mod get_schedule_output {
             self
         }
         /// <p>The date, in UTC, before which the schedule can invoke its target. Depending on the schedule's recurrence expression, invocations might stop on, or before, the <code>EndDate</code> you specify. EventBridge Scheduler ignores <code>EndDate</code> for one-time schedules.</p>
-        pub fn set_end_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date = input;
-            self
+        pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date = input; self
         }
         /// <p>The description of the schedule.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -719,24 +707,16 @@ pub mod get_schedule_output {
         }
         /// <p>The description of the schedule.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The timezone in which the scheduling expression is evaluated.</p>
-        pub fn schedule_expression_timezone(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn schedule_expression_timezone(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule_expression_timezone = Some(input.into());
             self
         }
         /// <p>The timezone in which the scheduling expression is evaluated.</p>
-        pub fn set_schedule_expression_timezone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schedule_expression_timezone = input;
-            self
+        pub fn set_schedule_expression_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schedule_expression_timezone = input; self
         }
         /// <p>Specifies whether the schedule is enabled or disabled.</p>
         pub fn state(mut self, input: crate::model::ScheduleState) -> Self {
@@ -744,12 +724,8 @@ pub mod get_schedule_output {
             self
         }
         /// <p>Specifies whether the schedule is enabled or disabled.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ScheduleState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ScheduleState>) -> Self {
+            self.state = input; self
         }
         /// <p>The time at which the schedule was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -757,12 +733,8 @@ pub mod get_schedule_output {
             self
         }
         /// <p>The time at which the schedule was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The time at which the schedule was last modified.</p>
         pub fn last_modification_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -770,12 +742,8 @@ pub mod get_schedule_output {
             self
         }
         /// <p>The time at which the schedule was last modified.</p>
-        pub fn set_last_modification_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modification_date = input;
-            self
+        pub fn set_last_modification_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modification_date = input; self
         }
         /// <p>The ARN for a customer managed KMS Key that is be used to encrypt and decrypt your data.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -784,8 +752,7 @@ pub mod get_schedule_output {
         }
         /// <p>The ARN for a customer managed KMS Key that is be used to encrypt and decrypt your data.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The schedule target.</p>
         pub fn target(mut self, input: crate::model::Target) -> Self {
@@ -794,8 +761,7 @@ pub mod get_schedule_output {
         }
         /// <p>The schedule target.</p>
         pub fn set_target(mut self, input: std::option::Option<crate::model::Target>) -> Self {
-            self.target = input;
-            self
+            self.target = input; self
         }
         /// <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
         pub fn flexible_time_window(mut self, input: crate::model::FlexibleTimeWindow) -> Self {
@@ -803,33 +769,45 @@ pub mod get_schedule_output {
             self
         }
         /// <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
-        pub fn set_flexible_time_window(
-            mut self,
-            input: std::option::Option<crate::model::FlexibleTimeWindow>,
-        ) -> Self {
-            self.flexible_time_window = input;
-            self
+        pub fn set_flexible_time_window(mut self, input: std::option::Option<crate::model::FlexibleTimeWindow>) -> Self {
+            self.flexible_time_window = input; self
         }
         /// Consumes the builder and constructs a [`GetScheduleOutput`](crate::output::GetScheduleOutput).
         pub fn build(self) -> crate::output::GetScheduleOutput {
             crate::output::GetScheduleOutput {
-                arn: self.arn,
-                group_name: self.group_name,
-                name: self.name,
-                schedule_expression: self.schedule_expression,
-                start_date: self.start_date,
-                end_date: self.end_date,
-                description: self.description,
-                schedule_expression_timezone: self.schedule_expression_timezone,
-                state: self.state,
-                creation_date: self.creation_date,
-                last_modification_date: self.last_modification_date,
-                kms_key_arn: self.kms_key_arn,
-                target: self.target,
-                flexible_time_window: self.flexible_time_window,
+                arn: self.arn
+                ,
+                group_name: self.group_name
+                ,
+                name: self.name
+                ,
+                schedule_expression: self.schedule_expression
+                ,
+                start_date: self.start_date
+                ,
+                end_date: self.end_date
+                ,
+                description: self.description
+                ,
+                schedule_expression_timezone: self.schedule_expression_timezone
+                ,
+                state: self.state
+                ,
+                creation_date: self.creation_date
+                ,
+                last_modification_date: self.last_modification_date
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                target: self.target
+                ,
+                flexible_time_window: self.flexible_time_window
+                ,
             }
         }
     }
+    
+    
 }
 impl GetScheduleOutput {
     /// Creates a new builder-style object to manufacture [`GetScheduleOutput`](crate::output::GetScheduleOutput).
@@ -841,19 +819,24 @@ impl GetScheduleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -865,19 +848,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -889,20 +877,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The list of tags associated with the specified resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of tags associated with the specified resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -916,23 +904,24 @@ pub mod list_tags_for_resource_output {
         /// <p>The list of tags associated with the specified resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags associated with the specified resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -940,3 +929,4 @@ impl ListTagsForResourceOutput {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
+

@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResourceAttributesOutput {}
+pub struct PutResourceAttributesOutput  {
+}
 /// See [`PutResourceAttributesOutput`](crate::output::PutResourceAttributesOutput).
 pub mod put_resource_attributes_output {
-
+    
     /// A builder for [`PutResourceAttributesOutput`](crate::output::PutResourceAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutResourceAttributesOutput`](crate::output::PutResourceAttributesOutput).
         pub fn build(self) -> crate::output::PutResourceAttributesOutput {
-            crate::output::PutResourceAttributesOutput {}
+            crate::output::PutResourceAttributesOutput {
+            }
         }
     }
+    
+    
 }
 impl PutResourceAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutResourceAttributesOutput`](crate::output::PutResourceAttributesOutput).
@@ -26,19 +31,24 @@ impl PutResourceAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotifyMigrationTaskStateOutput {}
+pub struct NotifyMigrationTaskStateOutput  {
+}
 /// See [`NotifyMigrationTaskStateOutput`](crate::output::NotifyMigrationTaskStateOutput).
 pub mod notify_migration_task_state_output {
-
+    
     /// A builder for [`NotifyMigrationTaskStateOutput`](crate::output::NotifyMigrationTaskStateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`NotifyMigrationTaskStateOutput`](crate::output::NotifyMigrationTaskStateOutput).
         pub fn build(self) -> crate::output::NotifyMigrationTaskStateOutput {
-            crate::output::NotifyMigrationTaskStateOutput {}
+            crate::output::NotifyMigrationTaskStateOutput {
+            }
         }
     }
+    
+    
 }
 impl NotifyMigrationTaskStateOutput {
     /// Creates a new builder-style object to manufacture [`NotifyMigrationTaskStateOutput`](crate::output::NotifyMigrationTaskStateOutput).
@@ -50,19 +60,24 @@ impl NotifyMigrationTaskStateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotifyApplicationStateOutput {}
+pub struct NotifyApplicationStateOutput  {
+}
 /// See [`NotifyApplicationStateOutput`](crate::output::NotifyApplicationStateOutput).
 pub mod notify_application_state_output {
-
+    
     /// A builder for [`NotifyApplicationStateOutput`](crate::output::NotifyApplicationStateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`NotifyApplicationStateOutput`](crate::output::NotifyApplicationStateOutput).
         pub fn build(self) -> crate::output::NotifyApplicationStateOutput {
-            crate::output::NotifyApplicationStateOutput {}
+            crate::output::NotifyApplicationStateOutput {
+            }
         }
     }
+    
+    
 }
 impl NotifyApplicationStateOutput {
     /// Creates a new builder-style object to manufacture [`NotifyApplicationStateOutput`](crate::output::NotifyApplicationStateOutput).
@@ -74,35 +89,31 @@ impl NotifyApplicationStateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProgressUpdateStreamsOutput {
+pub struct ListProgressUpdateStreamsOutput  {
     /// <p>List of progress update streams up to the max number of results passed in the input.</p>
     #[doc(hidden)]
-    pub progress_update_stream_summary_list:
-        std::option::Option<std::vec::Vec<crate::model::ProgressUpdateStreamSummary>>,
+    pub progress_update_stream_summary_list: std::option::Option<std::vec::Vec<crate::model::ProgressUpdateStreamSummary>>,
     /// <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProgressUpdateStreamsOutput {
     /// <p>List of progress update streams up to the max number of results passed in the input.</p>
-    pub fn progress_update_stream_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProgressUpdateStreamSummary]> {
+    pub fn progress_update_stream_summary_list(&self) -> std::option::Option<& [crate::model::ProgressUpdateStreamSummary]> {
         self.progress_update_stream_summary_list.as_deref()
     }
     /// <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListProgressUpdateStreamsOutput`](crate::output::ListProgressUpdateStreamsOutput).
 pub mod list_progress_update_streams_output {
-
+    
     /// A builder for [`ListProgressUpdateStreamsOutput`](crate::output::ListProgressUpdateStreamsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) progress_update_stream_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::ProgressUpdateStreamSummary>>,
+        pub(crate) progress_update_stream_summary_list: std::option::Option<std::vec::Vec<crate::model::ProgressUpdateStreamSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -111,22 +122,15 @@ pub mod list_progress_update_streams_output {
         /// To override the contents of this collection use [`set_progress_update_stream_summary_list`](Self::set_progress_update_stream_summary_list).
         ///
         /// <p>List of progress update streams up to the max number of results passed in the input.</p>
-        pub fn progress_update_stream_summary_list(
-            mut self,
-            input: crate::model::ProgressUpdateStreamSummary,
-        ) -> Self {
+        pub fn progress_update_stream_summary_list(mut self, input: crate::model::ProgressUpdateStreamSummary) -> Self {
             let mut v = self.progress_update_stream_summary_list.unwrap_or_default();
-            v.push(input);
-            self.progress_update_stream_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.progress_update_stream_summary_list = Some(v);
+                            self
         }
         /// <p>List of progress update streams up to the max number of results passed in the input.</p>
-        pub fn set_progress_update_stream_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProgressUpdateStreamSummary>>,
-        ) -> Self {
-            self.progress_update_stream_summary_list = input;
-            self
+        pub fn set_progress_update_stream_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProgressUpdateStreamSummary>>) -> Self {
+            self.progress_update_stream_summary_list = input; self
         }
         /// <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,17 +139,20 @@ pub mod list_progress_update_streams_output {
         }
         /// <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProgressUpdateStreamsOutput`](crate::output::ListProgressUpdateStreamsOutput).
         pub fn build(self) -> crate::output::ListProgressUpdateStreamsOutput {
             crate::output::ListProgressUpdateStreamsOutput {
-                progress_update_stream_summary_list: self.progress_update_stream_summary_list,
-                next_token: self.next_token,
+                progress_update_stream_summary_list: self.progress_update_stream_summary_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProgressUpdateStreamsOutput {
     /// Creates a new builder-style object to manufacture [`ListProgressUpdateStreamsOutput`](crate::output::ListProgressUpdateStreamsOutput).
@@ -157,36 +164,32 @@ impl ListProgressUpdateStreamsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMigrationTasksOutput {
+pub struct ListMigrationTasksOutput  {
     /// <p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
     #[doc(hidden)]
-    pub migration_task_summary_list:
-        std::option::Option<std::vec::Vec<crate::model::MigrationTaskSummary>>,
+    pub migration_task_summary_list: std::option::Option<std::vec::Vec<crate::model::MigrationTaskSummary>>,
 }
 impl ListMigrationTasksOutput {
     /// <p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
-    pub fn migration_task_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::MigrationTaskSummary]> {
+    pub fn migration_task_summary_list(&self) -> std::option::Option<& [crate::model::MigrationTaskSummary]> {
         self.migration_task_summary_list.as_deref()
     }
 }
 /// See [`ListMigrationTasksOutput`](crate::output::ListMigrationTasksOutput).
 pub mod list_migration_tasks_output {
-
+    
     /// A builder for [`ListMigrationTasksOutput`](crate::output::ListMigrationTasksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) migration_task_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::MigrationTaskSummary>>,
+        pub(crate) migration_task_summary_list: std::option::Option<std::vec::Vec<crate::model::MigrationTaskSummary>>,
     }
     impl Builder {
         /// <p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
@@ -196,39 +199,35 @@ pub mod list_migration_tasks_output {
         }
         /// <p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `migration_task_summary_list`.
         ///
         /// To override the contents of this collection use [`set_migration_task_summary_list`](Self::set_migration_task_summary_list).
         ///
         /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
-        pub fn migration_task_summary_list(
-            mut self,
-            input: crate::model::MigrationTaskSummary,
-        ) -> Self {
+        pub fn migration_task_summary_list(mut self, input: crate::model::MigrationTaskSummary) -> Self {
             let mut v = self.migration_task_summary_list.unwrap_or_default();
-            v.push(input);
-            self.migration_task_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.migration_task_summary_list = Some(v);
+                            self
         }
         /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
-        pub fn set_migration_task_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MigrationTaskSummary>>,
-        ) -> Self {
-            self.migration_task_summary_list = input;
-            self
+        pub fn set_migration_task_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::MigrationTaskSummary>>) -> Self {
+            self.migration_task_summary_list = input; self
         }
         /// Consumes the builder and constructs a [`ListMigrationTasksOutput`](crate::output::ListMigrationTasksOutput).
         pub fn build(self) -> crate::output::ListMigrationTasksOutput {
             crate::output::ListMigrationTasksOutput {
-                next_token: self.next_token,
-                migration_task_summary_list: self.migration_task_summary_list,
+                next_token: self.next_token
+                ,
+                migration_task_summary_list: self.migration_task_summary_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMigrationTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListMigrationTasksOutput`](crate::output::ListMigrationTasksOutput).
@@ -240,36 +239,32 @@ impl ListMigrationTasksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDiscoveredResourcesOutput {
+pub struct ListDiscoveredResourcesOutput  {
     /// <p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Returned list of discovered resources associated with the given MigrationTask.</p>
     #[doc(hidden)]
-    pub discovered_resource_list:
-        std::option::Option<std::vec::Vec<crate::model::DiscoveredResource>>,
+    pub discovered_resource_list: std::option::Option<std::vec::Vec<crate::model::DiscoveredResource>>,
 }
 impl ListDiscoveredResourcesOutput {
     /// <p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returned list of discovered resources associated with the given MigrationTask.</p>
-    pub fn discovered_resource_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::DiscoveredResource]> {
+    pub fn discovered_resource_list(&self) -> std::option::Option<& [crate::model::DiscoveredResource]> {
         self.discovered_resource_list.as_deref()
     }
 }
 /// See [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
 pub mod list_discovered_resources_output {
-
+    
     /// A builder for [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) discovered_resource_list:
-            std::option::Option<std::vec::Vec<crate::model::DiscoveredResource>>,
+        pub(crate) discovered_resource_list: std::option::Option<std::vec::Vec<crate::model::DiscoveredResource>>,
     }
     impl Builder {
         /// <p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
@@ -279,8 +274,7 @@ pub mod list_discovered_resources_output {
         }
         /// <p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `discovered_resource_list`.
         ///
@@ -289,26 +283,26 @@ pub mod list_discovered_resources_output {
         /// <p>Returned list of discovered resources associated with the given MigrationTask.</p>
         pub fn discovered_resource_list(mut self, input: crate::model::DiscoveredResource) -> Self {
             let mut v = self.discovered_resource_list.unwrap_or_default();
-            v.push(input);
-            self.discovered_resource_list = Some(v);
-            self
+                            v.push(input);
+                            self.discovered_resource_list = Some(v);
+                            self
         }
         /// <p>Returned list of discovered resources associated with the given MigrationTask.</p>
-        pub fn set_discovered_resource_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DiscoveredResource>>,
-        ) -> Self {
-            self.discovered_resource_list = input;
-            self
+        pub fn set_discovered_resource_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DiscoveredResource>>) -> Self {
+            self.discovered_resource_list = input; self
         }
         /// Consumes the builder and constructs a [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
         pub fn build(self) -> crate::output::ListDiscoveredResourcesOutput {
             crate::output::ListDiscoveredResourcesOutput {
-                next_token: self.next_token,
-                discovered_resource_list: self.discovered_resource_list,
+                next_token: self.next_token
+                ,
+                discovered_resource_list: self.discovered_resource_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDiscoveredResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
@@ -320,7 +314,7 @@ impl ListDiscoveredResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCreatedArtifactsOutput {
+pub struct ListCreatedArtifactsOutput  {
     /// <p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -330,23 +324,22 @@ pub struct ListCreatedArtifactsOutput {
 }
 impl ListCreatedArtifactsOutput {
     /// <p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of created artifacts up to the maximum number of results specified in the request.</p>
-    pub fn created_artifact_list(&self) -> std::option::Option<&[crate::model::CreatedArtifact]> {
+    pub fn created_artifact_list(&self) -> std::option::Option<& [crate::model::CreatedArtifact]> {
         self.created_artifact_list.as_deref()
     }
 }
 /// See [`ListCreatedArtifactsOutput`](crate::output::ListCreatedArtifactsOutput).
 pub mod list_created_artifacts_output {
-
+    
     /// A builder for [`ListCreatedArtifactsOutput`](crate::output::ListCreatedArtifactsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) created_artifact_list:
-            std::option::Option<std::vec::Vec<crate::model::CreatedArtifact>>,
+        pub(crate) created_artifact_list: std::option::Option<std::vec::Vec<crate::model::CreatedArtifact>>,
     }
     impl Builder {
         /// <p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
@@ -356,8 +349,7 @@ pub mod list_created_artifacts_output {
         }
         /// <p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `created_artifact_list`.
         ///
@@ -366,26 +358,26 @@ pub mod list_created_artifacts_output {
         /// <p>List of created artifacts up to the maximum number of results specified in the request.</p>
         pub fn created_artifact_list(mut self, input: crate::model::CreatedArtifact) -> Self {
             let mut v = self.created_artifact_list.unwrap_or_default();
-            v.push(input);
-            self.created_artifact_list = Some(v);
-            self
+                            v.push(input);
+                            self.created_artifact_list = Some(v);
+                            self
         }
         /// <p>List of created artifacts up to the maximum number of results specified in the request.</p>
-        pub fn set_created_artifact_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CreatedArtifact>>,
-        ) -> Self {
-            self.created_artifact_list = input;
-            self
+        pub fn set_created_artifact_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::CreatedArtifact>>) -> Self {
+            self.created_artifact_list = input; self
         }
         /// Consumes the builder and constructs a [`ListCreatedArtifactsOutput`](crate::output::ListCreatedArtifactsOutput).
         pub fn build(self) -> crate::output::ListCreatedArtifactsOutput {
             crate::output::ListCreatedArtifactsOutput {
-                next_token: self.next_token,
-                created_artifact_list: self.created_artifact_list,
+                next_token: self.next_token
+                ,
+                created_artifact_list: self.created_artifact_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCreatedArtifactsOutput {
     /// Creates a new builder-style object to manufacture [`ListCreatedArtifactsOutput`](crate::output::ListCreatedArtifactsOutput).
@@ -397,7 +389,7 @@ impl ListCreatedArtifactsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationStatesOutput {
+pub struct ListApplicationStatesOutput  {
     /// <p>A list of Applications that exist in Application Discovery Service.</p>
     #[doc(hidden)]
     pub application_state_list: std::option::Option<std::vec::Vec<crate::model::ApplicationState>>,
@@ -407,22 +399,21 @@ pub struct ListApplicationStatesOutput {
 }
 impl ListApplicationStatesOutput {
     /// <p>A list of Applications that exist in Application Discovery Service.</p>
-    pub fn application_state_list(&self) -> std::option::Option<&[crate::model::ApplicationState]> {
+    pub fn application_state_list(&self) -> std::option::Option<& [crate::model::ApplicationState]> {
         self.application_state_list.as_deref()
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApplicationStatesOutput`](crate::output::ListApplicationStatesOutput).
 pub mod list_application_states_output {
-
+    
     /// A builder for [`ListApplicationStatesOutput`](crate::output::ListApplicationStatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) application_state_list:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationState>>,
+        pub(crate) application_state_list: std::option::Option<std::vec::Vec<crate::model::ApplicationState>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -433,17 +424,13 @@ pub mod list_application_states_output {
         /// <p>A list of Applications that exist in Application Discovery Service.</p>
         pub fn application_state_list(mut self, input: crate::model::ApplicationState) -> Self {
             let mut v = self.application_state_list.unwrap_or_default();
-            v.push(input);
-            self.application_state_list = Some(v);
-            self
+                            v.push(input);
+                            self.application_state_list = Some(v);
+                            self
         }
         /// <p>A list of Applications that exist in Application Discovery Service.</p>
-        pub fn set_application_state_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationState>>,
-        ) -> Self {
-            self.application_state_list = input;
-            self
+        pub fn set_application_state_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationState>>) -> Self {
+            self.application_state_list = input; self
         }
         /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -452,17 +439,20 @@ pub mod list_application_states_output {
         }
         /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationStatesOutput`](crate::output::ListApplicationStatesOutput).
         pub fn build(self) -> crate::output::ListApplicationStatesOutput {
             crate::output::ListApplicationStatesOutput {
-                application_state_list: self.application_state_list,
-                next_token: self.next_token,
+                application_state_list: self.application_state_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationStatesOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationStatesOutput`](crate::output::ListApplicationStatesOutput).
@@ -474,19 +464,24 @@ impl ListApplicationStatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportMigrationTaskOutput {}
+pub struct ImportMigrationTaskOutput  {
+}
 /// See [`ImportMigrationTaskOutput`](crate::output::ImportMigrationTaskOutput).
 pub mod import_migration_task_output {
-
+    
     /// A builder for [`ImportMigrationTaskOutput`](crate::output::ImportMigrationTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ImportMigrationTaskOutput`](crate::output::ImportMigrationTaskOutput).
         pub fn build(self) -> crate::output::ImportMigrationTaskOutput {
-            crate::output::ImportMigrationTaskOutput {}
+            crate::output::ImportMigrationTaskOutput {
+            }
         }
     }
+    
+    
 }
 impl ImportMigrationTaskOutput {
     /// Creates a new builder-style object to manufacture [`ImportMigrationTaskOutput`](crate::output::ImportMigrationTaskOutput).
@@ -498,19 +493,24 @@ impl ImportMigrationTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateDiscoveredResourceOutput {}
+pub struct DisassociateDiscoveredResourceOutput  {
+}
 /// See [`DisassociateDiscoveredResourceOutput`](crate::output::DisassociateDiscoveredResourceOutput).
 pub mod disassociate_discovered_resource_output {
-
+    
     /// A builder for [`DisassociateDiscoveredResourceOutput`](crate::output::DisassociateDiscoveredResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateDiscoveredResourceOutput`](crate::output::DisassociateDiscoveredResourceOutput).
         pub fn build(self) -> crate::output::DisassociateDiscoveredResourceOutput {
-            crate::output::DisassociateDiscoveredResourceOutput {}
+            crate::output::DisassociateDiscoveredResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateDiscoveredResourceOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateDiscoveredResourceOutput`](crate::output::DisassociateDiscoveredResourceOutput).
@@ -522,19 +522,24 @@ impl DisassociateDiscoveredResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateCreatedArtifactOutput {}
+pub struct DisassociateCreatedArtifactOutput  {
+}
 /// See [`DisassociateCreatedArtifactOutput`](crate::output::DisassociateCreatedArtifactOutput).
 pub mod disassociate_created_artifact_output {
-
+    
     /// A builder for [`DisassociateCreatedArtifactOutput`](crate::output::DisassociateCreatedArtifactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateCreatedArtifactOutput`](crate::output::DisassociateCreatedArtifactOutput).
         pub fn build(self) -> crate::output::DisassociateCreatedArtifactOutput {
-            crate::output::DisassociateCreatedArtifactOutput {}
+            crate::output::DisassociateCreatedArtifactOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateCreatedArtifactOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateCreatedArtifactOutput`](crate::output::DisassociateCreatedArtifactOutput).
@@ -546,20 +551,20 @@ impl DisassociateCreatedArtifactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMigrationTaskOutput {
+pub struct DescribeMigrationTaskOutput  {
     /// <p>Object encapsulating information about the migration task.</p>
     #[doc(hidden)]
     pub migration_task: std::option::Option<crate::model::MigrationTask>,
 }
 impl DescribeMigrationTaskOutput {
     /// <p>Object encapsulating information about the migration task.</p>
-    pub fn migration_task(&self) -> std::option::Option<&crate::model::MigrationTask> {
+    pub fn migration_task(&self) -> std::option::Option<& crate::model::MigrationTask> {
         self.migration_task.as_ref()
     }
 }
 /// See [`DescribeMigrationTaskOutput`](crate::output::DescribeMigrationTaskOutput).
 pub mod describe_migration_task_output {
-
+    
     /// A builder for [`DescribeMigrationTaskOutput`](crate::output::DescribeMigrationTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -572,20 +577,19 @@ pub mod describe_migration_task_output {
             self
         }
         /// <p>Object encapsulating information about the migration task.</p>
-        pub fn set_migration_task(
-            mut self,
-            input: std::option::Option<crate::model::MigrationTask>,
-        ) -> Self {
-            self.migration_task = input;
-            self
+        pub fn set_migration_task(mut self, input: std::option::Option<crate::model::MigrationTask>) -> Self {
+            self.migration_task = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMigrationTaskOutput`](crate::output::DescribeMigrationTaskOutput).
         pub fn build(self) -> crate::output::DescribeMigrationTaskOutput {
             crate::output::DescribeMigrationTaskOutput {
-                migration_task: self.migration_task,
+                migration_task: self.migration_task
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMigrationTaskOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMigrationTaskOutput`](crate::output::DescribeMigrationTaskOutput).
@@ -597,7 +601,7 @@ impl DescribeMigrationTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationStateOutput {
+pub struct DescribeApplicationStateOutput  {
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
     #[doc(hidden)]
     pub application_status: std::option::Option<crate::model::ApplicationStatus>,
@@ -607,17 +611,17 @@ pub struct DescribeApplicationStateOutput {
 }
 impl DescribeApplicationStateOutput {
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
-    pub fn application_status(&self) -> std::option::Option<&crate::model::ApplicationStatus> {
+    pub fn application_status(&self) -> std::option::Option<& crate::model::ApplicationStatus> {
         self.application_status.as_ref()
     }
     /// <p>The timestamp when the application status was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
 /// See [`DescribeApplicationStateOutput`](crate::output::DescribeApplicationStateOutput).
 pub mod describe_application_state_output {
-
+    
     /// A builder for [`DescribeApplicationStateOutput`](crate::output::DescribeApplicationStateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -631,12 +635,8 @@ pub mod describe_application_state_output {
             self
         }
         /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
-        pub fn set_application_status(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationStatus>,
-        ) -> Self {
-            self.application_status = input;
-            self
+        pub fn set_application_status(mut self, input: std::option::Option<crate::model::ApplicationStatus>) -> Self {
+            self.application_status = input; self
         }
         /// <p>The timestamp when the application status was last updated.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -644,21 +644,21 @@ pub mod describe_application_state_output {
             self
         }
         /// <p>The timestamp when the application status was last updated.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeApplicationStateOutput`](crate::output::DescribeApplicationStateOutput).
         pub fn build(self) -> crate::output::DescribeApplicationStateOutput {
             crate::output::DescribeApplicationStateOutput {
-                application_status: self.application_status,
-                last_updated_time: self.last_updated_time,
+                application_status: self.application_status
+                ,
+                last_updated_time: self.last_updated_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeApplicationStateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationStateOutput`](crate::output::DescribeApplicationStateOutput).
@@ -670,19 +670,24 @@ impl DescribeApplicationStateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProgressUpdateStreamOutput {}
+pub struct DeleteProgressUpdateStreamOutput  {
+}
 /// See [`DeleteProgressUpdateStreamOutput`](crate::output::DeleteProgressUpdateStreamOutput).
 pub mod delete_progress_update_stream_output {
-
+    
     /// A builder for [`DeleteProgressUpdateStreamOutput`](crate::output::DeleteProgressUpdateStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProgressUpdateStreamOutput`](crate::output::DeleteProgressUpdateStreamOutput).
         pub fn build(self) -> crate::output::DeleteProgressUpdateStreamOutput {
-            crate::output::DeleteProgressUpdateStreamOutput {}
+            crate::output::DeleteProgressUpdateStreamOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteProgressUpdateStreamOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProgressUpdateStreamOutput`](crate::output::DeleteProgressUpdateStreamOutput).
@@ -694,19 +699,24 @@ impl DeleteProgressUpdateStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProgressUpdateStreamOutput {}
+pub struct CreateProgressUpdateStreamOutput  {
+}
 /// See [`CreateProgressUpdateStreamOutput`](crate::output::CreateProgressUpdateStreamOutput).
 pub mod create_progress_update_stream_output {
-
+    
     /// A builder for [`CreateProgressUpdateStreamOutput`](crate::output::CreateProgressUpdateStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateProgressUpdateStreamOutput`](crate::output::CreateProgressUpdateStreamOutput).
         pub fn build(self) -> crate::output::CreateProgressUpdateStreamOutput {
-            crate::output::CreateProgressUpdateStreamOutput {}
+            crate::output::CreateProgressUpdateStreamOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateProgressUpdateStreamOutput {
     /// Creates a new builder-style object to manufacture [`CreateProgressUpdateStreamOutput`](crate::output::CreateProgressUpdateStreamOutput).
@@ -718,19 +728,24 @@ impl CreateProgressUpdateStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateDiscoveredResourceOutput {}
+pub struct AssociateDiscoveredResourceOutput  {
+}
 /// See [`AssociateDiscoveredResourceOutput`](crate::output::AssociateDiscoveredResourceOutput).
 pub mod associate_discovered_resource_output {
-
+    
     /// A builder for [`AssociateDiscoveredResourceOutput`](crate::output::AssociateDiscoveredResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateDiscoveredResourceOutput`](crate::output::AssociateDiscoveredResourceOutput).
         pub fn build(self) -> crate::output::AssociateDiscoveredResourceOutput {
-            crate::output::AssociateDiscoveredResourceOutput {}
+            crate::output::AssociateDiscoveredResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateDiscoveredResourceOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDiscoveredResourceOutput`](crate::output::AssociateDiscoveredResourceOutput).
@@ -742,19 +757,24 @@ impl AssociateDiscoveredResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateCreatedArtifactOutput {}
+pub struct AssociateCreatedArtifactOutput  {
+}
 /// See [`AssociateCreatedArtifactOutput`](crate::output::AssociateCreatedArtifactOutput).
 pub mod associate_created_artifact_output {
-
+    
     /// A builder for [`AssociateCreatedArtifactOutput`](crate::output::AssociateCreatedArtifactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateCreatedArtifactOutput`](crate::output::AssociateCreatedArtifactOutput).
         pub fn build(self) -> crate::output::AssociateCreatedArtifactOutput {
-            crate::output::AssociateCreatedArtifactOutput {}
+            crate::output::AssociateCreatedArtifactOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateCreatedArtifactOutput {
     /// Creates a new builder-style object to manufacture [`AssociateCreatedArtifactOutput`](crate::output::AssociateCreatedArtifactOutput).
@@ -762,3 +782,4 @@ impl AssociateCreatedArtifactOutput {
         crate::output::associate_created_artifact_output::Builder::default()
     }
 }
+

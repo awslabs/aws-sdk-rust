@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestFailoverOutput {
+pub struct TestFailoverOutput  {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl TestFailoverOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+    pub fn replication_group(&self) -> std::option::Option<& crate::model::ReplicationGroup> {
         self.replication_group.as_ref()
     }
 }
 /// See [`TestFailoverOutput`](crate::output::TestFailoverOutput).
 pub mod test_failover_output {
-
+    
     /// A builder for [`TestFailoverOutput`](crate::output::TestFailoverOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod test_failover_output {
             self
         }
         /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-        pub fn set_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationGroup>,
-        ) -> Self {
-            self.replication_group = input;
-            self
+        pub fn set_replication_group(mut self, input: std::option::Option<crate::model::ReplicationGroup>) -> Self {
+            self.replication_group = input; self
         }
         /// Consumes the builder and constructs a [`TestFailoverOutput`](crate::output::TestFailoverOutput).
         pub fn build(self) -> crate::output::TestFailoverOutput {
             crate::output::TestFailoverOutput {
-                replication_group: self.replication_group,
+                replication_group: self.replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl TestFailoverOutput {
     /// Creates a new builder-style object to manufacture [`TestFailoverOutput`](crate::output::TestFailoverOutput).
@@ -53,20 +52,20 @@ impl TestFailoverOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartMigrationOutput {
+pub struct StartMigrationOutput  {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl StartMigrationOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+    pub fn replication_group(&self) -> std::option::Option<& crate::model::ReplicationGroup> {
         self.replication_group.as_ref()
     }
 }
 /// See [`StartMigrationOutput`](crate::output::StartMigrationOutput).
 pub mod start_migration_output {
-
+    
     /// A builder for [`StartMigrationOutput`](crate::output::StartMigrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -79,20 +78,19 @@ pub mod start_migration_output {
             self
         }
         /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-        pub fn set_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationGroup>,
-        ) -> Self {
-            self.replication_group = input;
-            self
+        pub fn set_replication_group(mut self, input: std::option::Option<crate::model::ReplicationGroup>) -> Self {
+            self.replication_group = input; self
         }
         /// Consumes the builder and constructs a [`StartMigrationOutput`](crate::output::StartMigrationOutput).
         pub fn build(self) -> crate::output::StartMigrationOutput {
             crate::output::StartMigrationOutput {
-                replication_group: self.replication_group,
+                replication_group: self.replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl StartMigrationOutput {
     /// Creates a new builder-style object to manufacture [`StartMigrationOutput`](crate::output::StartMigrationOutput).
@@ -104,66 +102,65 @@ impl StartMigrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevokeCacheSecurityGroupIngressOutput {
-    /// <p>Represents the output of one of the following operations:</p>
-    /// <ul>
-    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
-    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
-    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
+pub struct RevokeCacheSecurityGroupIngressOutput  {
+    /// <p>Represents the output of one of the following operations:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> 
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> 
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub cache_security_group: std::option::Option<crate::model::CacheSecurityGroup>,
 }
 impl RevokeCacheSecurityGroupIngressOutput {
-    /// <p>Represents the output of one of the following operations:</p>
-    /// <ul>
-    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
-    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
-    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
+    /// <p>Represents the output of one of the following operations:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> 
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> 
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> 
     /// </ul>
-    pub fn cache_security_group(&self) -> std::option::Option<&crate::model::CacheSecurityGroup> {
+    pub fn cache_security_group(&self) -> std::option::Option<& crate::model::CacheSecurityGroup> {
         self.cache_security_group.as_ref()
     }
 }
 /// See [`RevokeCacheSecurityGroupIngressOutput`](crate::output::RevokeCacheSecurityGroupIngressOutput).
 pub mod revoke_cache_security_group_ingress_output {
-
+    
     /// A builder for [`RevokeCacheSecurityGroupIngressOutput`](crate::output::RevokeCacheSecurityGroupIngressOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_security_group: std::option::Option<crate::model::CacheSecurityGroup>,
     }
     impl Builder {
-        /// <p>Represents the output of one of the following operations:</p>
-        /// <ul>
-        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
-        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
-        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
+        /// <p>Represents the output of one of the following operations:</p> 
+        /// <ul> 
+        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> 
+        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> 
+        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> 
         /// </ul>
         pub fn cache_security_group(mut self, input: crate::model::CacheSecurityGroup) -> Self {
             self.cache_security_group = Some(input);
             self
         }
-        /// <p>Represents the output of one of the following operations:</p>
-        /// <ul>
-        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
-        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
-        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
+        /// <p>Represents the output of one of the following operations:</p> 
+        /// <ul> 
+        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> 
+        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> 
+        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> 
         /// </ul>
-        pub fn set_cache_security_group(
-            mut self,
-            input: std::option::Option<crate::model::CacheSecurityGroup>,
-        ) -> Self {
-            self.cache_security_group = input;
-            self
+        pub fn set_cache_security_group(mut self, input: std::option::Option<crate::model::CacheSecurityGroup>) -> Self {
+            self.cache_security_group = input; self
         }
         /// Consumes the builder and constructs a [`RevokeCacheSecurityGroupIngressOutput`](crate::output::RevokeCacheSecurityGroupIngressOutput).
         pub fn build(self) -> crate::output::RevokeCacheSecurityGroupIngressOutput {
             crate::output::RevokeCacheSecurityGroupIngressOutput {
-                cache_security_group: self.cache_security_group,
+                cache_security_group: self.cache_security_group
+                ,
             }
         }
     }
+    
+    
 }
 impl RevokeCacheSecurityGroupIngressOutput {
     /// Creates a new builder-style object to manufacture [`RevokeCacheSecurityGroupIngressOutput`](crate::output::RevokeCacheSecurityGroupIngressOutput).
@@ -172,27 +169,27 @@ impl RevokeCacheSecurityGroupIngressOutput {
     }
 }
 
-/// <p>Represents the output of one of the following operations:</p>
-/// <ul>
-/// <li> <p> <code>ModifyCacheParameterGroup</code> </p> </li>
-/// <li> <p> <code>ResetCacheParameterGroup</code> </p> </li>
+/// <p>Represents the output of one of the following operations:</p> 
+/// <ul> 
+/// <li> <p> <code>ModifyCacheParameterGroup</code> </p> </li> 
+/// <li> <p> <code>ResetCacheParameterGroup</code> </p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetCacheParameterGroupOutput {
+pub struct ResetCacheParameterGroupOutput  {
     /// <p>The name of the cache parameter group.</p>
     #[doc(hidden)]
     pub cache_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ResetCacheParameterGroupOutput {
     /// <p>The name of the cache parameter group.</p>
-    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn cache_parameter_group_name(&self) -> std::option::Option<& str> {
         self.cache_parameter_group_name.as_deref()
     }
 }
 /// See [`ResetCacheParameterGroupOutput`](crate::output::ResetCacheParameterGroupOutput).
 pub mod reset_cache_parameter_group_output {
-
+    
     /// A builder for [`ResetCacheParameterGroupOutput`](crate::output::ResetCacheParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -205,20 +202,19 @@ pub mod reset_cache_parameter_group_output {
             self
         }
         /// <p>The name of the cache parameter group.</p>
-        pub fn set_cache_parameter_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cache_parameter_group_name = input;
-            self
+        pub fn set_cache_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cache_parameter_group_name = input; self
         }
         /// Consumes the builder and constructs a [`ResetCacheParameterGroupOutput`](crate::output::ResetCacheParameterGroupOutput).
         pub fn build(self) -> crate::output::ResetCacheParameterGroupOutput {
             crate::output::ResetCacheParameterGroupOutput {
-                cache_parameter_group_name: self.cache_parameter_group_name,
+                cache_parameter_group_name: self.cache_parameter_group_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ResetCacheParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ResetCacheParameterGroupOutput`](crate::output::ResetCacheParameterGroupOutput).
@@ -230,20 +226,20 @@ impl ResetCacheParameterGroupOutput {
 /// <p>Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsFromResourceOutput {
+pub struct RemoveTagsFromResourceOutput  {
     /// <p>A list of tags as key-value pairs.</p>
     #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RemoveTagsFromResourceOutput {
     /// <p>A list of tags as key-value pairs.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tag_list.as_deref()
     }
 }
 /// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
 pub mod remove_tags_from_resource_output {
-
+    
     /// A builder for [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -257,25 +253,24 @@ pub mod remove_tags_from_resource_output {
         /// <p>A list of tags as key-value pairs.</p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input);
-            self.tag_list = Some(v);
-            self
+                            v.push(input);
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p>A list of tags as key-value pairs.</p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tag_list = input; self
         }
         /// Consumes the builder and constructs a [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
         pub fn build(self) -> crate::output::RemoveTagsFromResourceOutput {
             crate::output::RemoveTagsFromResourceOutput {
-                tag_list: self.tag_list,
+                tag_list: self.tag_list
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveTagsFromResourceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
@@ -287,20 +282,20 @@ impl RemoveTagsFromResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebootCacheClusterOutput {
+pub struct RebootCacheClusterOutput  {
     /// <p>Contains all of the attributes of a specific cluster.</p>
     #[doc(hidden)]
     pub cache_cluster: std::option::Option<crate::model::CacheCluster>,
 }
 impl RebootCacheClusterOutput {
     /// <p>Contains all of the attributes of a specific cluster.</p>
-    pub fn cache_cluster(&self) -> std::option::Option<&crate::model::CacheCluster> {
+    pub fn cache_cluster(&self) -> std::option::Option<& crate::model::CacheCluster> {
         self.cache_cluster.as_ref()
     }
 }
 /// See [`RebootCacheClusterOutput`](crate::output::RebootCacheClusterOutput).
 pub mod reboot_cache_cluster_output {
-
+    
     /// A builder for [`RebootCacheClusterOutput`](crate::output::RebootCacheClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -313,20 +308,19 @@ pub mod reboot_cache_cluster_output {
             self
         }
         /// <p>Contains all of the attributes of a specific cluster.</p>
-        pub fn set_cache_cluster(
-            mut self,
-            input: std::option::Option<crate::model::CacheCluster>,
-        ) -> Self {
-            self.cache_cluster = input;
-            self
+        pub fn set_cache_cluster(mut self, input: std::option::Option<crate::model::CacheCluster>) -> Self {
+            self.cache_cluster = input; self
         }
         /// Consumes the builder and constructs a [`RebootCacheClusterOutput`](crate::output::RebootCacheClusterOutput).
         pub fn build(self) -> crate::output::RebootCacheClusterOutput {
             crate::output::RebootCacheClusterOutput {
-                cache_cluster: self.cache_cluster,
+                cache_cluster: self.cache_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl RebootCacheClusterOutput {
     /// Creates a new builder-style object to manufacture [`RebootCacheClusterOutput`](crate::output::RebootCacheClusterOutput).
@@ -338,64 +332,57 @@ impl RebootCacheClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebalanceSlotsInGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-    /// <ul>
-    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+pub struct RebalanceSlotsInGlobalReplicationGroupOutput  {
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+    /// <ul> 
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl RebalanceSlotsInGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-    /// <ul>
-    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+    /// <ul> 
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
     /// </ul>
-    pub fn global_replication_group(
-        &self,
-    ) -> std::option::Option<&crate::model::GlobalReplicationGroup> {
+    pub fn global_replication_group(&self) -> std::option::Option<& crate::model::GlobalReplicationGroup> {
         self.global_replication_group.as_ref()
     }
 }
 /// See [`RebalanceSlotsInGlobalReplicationGroupOutput`](crate::output::RebalanceSlotsInGlobalReplicationGroupOutput).
 pub mod rebalance_slots_in_global_replication_group_output {
-
+    
     /// A builder for [`RebalanceSlotsInGlobalReplicationGroupOutput`](crate::output::RebalanceSlotsInGlobalReplicationGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) global_replication_group:
-            std::option::Option<crate::model::GlobalReplicationGroup>,
+        pub(crate) global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-        /// <ul>
-        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+        /// <ul> 
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
         /// </ul>
-        pub fn global_replication_group(
-            mut self,
-            input: crate::model::GlobalReplicationGroup,
-        ) -> Self {
+        pub fn global_replication_group(mut self, input: crate::model::GlobalReplicationGroup) -> Self {
             self.global_replication_group = Some(input);
             self
         }
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-        /// <ul>
-        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+        /// <ul> 
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
         /// </ul>
-        pub fn set_global_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::GlobalReplicationGroup>,
-        ) -> Self {
-            self.global_replication_group = input;
-            self
+        pub fn set_global_replication_group(mut self, input: std::option::Option<crate::model::GlobalReplicationGroup>) -> Self {
+            self.global_replication_group = input; self
         }
         /// Consumes the builder and constructs a [`RebalanceSlotsInGlobalReplicationGroupOutput`](crate::output::RebalanceSlotsInGlobalReplicationGroupOutput).
         pub fn build(self) -> crate::output::RebalanceSlotsInGlobalReplicationGroupOutput {
             crate::output::RebalanceSlotsInGlobalReplicationGroupOutput {
-                global_replication_group: self.global_replication_group,
+                global_replication_group: self.global_replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl RebalanceSlotsInGlobalReplicationGroupOutput {
     /// Creates a new builder-style object to manufacture [`RebalanceSlotsInGlobalReplicationGroupOutput`](crate::output::RebalanceSlotsInGlobalReplicationGroupOutput).
@@ -407,20 +394,20 @@ impl RebalanceSlotsInGlobalReplicationGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PurchaseReservedCacheNodesOfferingOutput {
+pub struct PurchaseReservedCacheNodesOfferingOutput  {
     /// <p>Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
     #[doc(hidden)]
     pub reserved_cache_node: std::option::Option<crate::model::ReservedCacheNode>,
 }
 impl PurchaseReservedCacheNodesOfferingOutput {
     /// <p>Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
-    pub fn reserved_cache_node(&self) -> std::option::Option<&crate::model::ReservedCacheNode> {
+    pub fn reserved_cache_node(&self) -> std::option::Option<& crate::model::ReservedCacheNode> {
         self.reserved_cache_node.as_ref()
     }
 }
 /// See [`PurchaseReservedCacheNodesOfferingOutput`](crate::output::PurchaseReservedCacheNodesOfferingOutput).
 pub mod purchase_reserved_cache_nodes_offering_output {
-
+    
     /// A builder for [`PurchaseReservedCacheNodesOfferingOutput`](crate::output::PurchaseReservedCacheNodesOfferingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -433,20 +420,19 @@ pub mod purchase_reserved_cache_nodes_offering_output {
             self
         }
         /// <p>Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
-        pub fn set_reserved_cache_node(
-            mut self,
-            input: std::option::Option<crate::model::ReservedCacheNode>,
-        ) -> Self {
-            self.reserved_cache_node = input;
-            self
+        pub fn set_reserved_cache_node(mut self, input: std::option::Option<crate::model::ReservedCacheNode>) -> Self {
+            self.reserved_cache_node = input; self
         }
         /// Consumes the builder and constructs a [`PurchaseReservedCacheNodesOfferingOutput`](crate::output::PurchaseReservedCacheNodesOfferingOutput).
         pub fn build(self) -> crate::output::PurchaseReservedCacheNodesOfferingOutput {
             crate::output::PurchaseReservedCacheNodesOfferingOutput {
-                reserved_cache_node: self.reserved_cache_node,
+                reserved_cache_node: self.reserved_cache_node
+                ,
             }
         }
     }
+    
+    
 }
 impl PurchaseReservedCacheNodesOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedCacheNodesOfferingOutput`](crate::output::PurchaseReservedCacheNodesOfferingOutput).
@@ -458,7 +444,7 @@ impl PurchaseReservedCacheNodesOfferingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyUserGroupOutput {
+pub struct ModifyUserGroupOutput  {
     /// <p>The ID of the user group.</p>
     #[doc(hidden)]
     pub user_group_id: std::option::Option<std::string::String>,
@@ -486,41 +472,41 @@ pub struct ModifyUserGroupOutput {
 }
 impl ModifyUserGroupOutput {
     /// <p>The ID of the user group.</p>
-    pub fn user_group_id(&self) -> std::option::Option<&str> {
+    pub fn user_group_id(&self) -> std::option::Option<& str> {
         self.user_group_id.as_deref()
     }
     /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The current supported value is Redis. </p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The list of user IDs that belong to the user group.</p>
-    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn user_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.user_ids.as_deref()
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+    pub fn minimum_engine_version(&self) -> std::option::Option<& str> {
         self.minimum_engine_version.as_deref()
     }
     /// <p>A list of updates being applied to the user group.</p>
-    pub fn pending_changes(&self) -> std::option::Option<&crate::model::UserGroupPendingChanges> {
+    pub fn pending_changes(&self) -> std::option::Option<& crate::model::UserGroupPendingChanges> {
         self.pending_changes.as_ref()
     }
     /// <p>A list of replication groups that the user group can access.</p>
-    pub fn replication_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn replication_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.replication_groups.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`ModifyUserGroupOutput`](crate::output::ModifyUserGroupOutput).
 pub mod modify_user_group_output {
-
+    
     /// A builder for [`ModifyUserGroupOutput`](crate::output::ModifyUserGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -540,12 +526,8 @@ pub mod modify_user_group_output {
             self
         }
         /// <p>The ID of the user group.</p>
-        pub fn set_user_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.user_group_id = input;
-            self
+        pub fn set_user_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_group_id = input; self
         }
         /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -554,8 +536,7 @@ pub mod modify_user_group_output {
         }
         /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The current supported value is Redis. </p>
         pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -564,8 +545,7 @@ pub mod modify_user_group_output {
         }
         /// <p>The current supported value is Redis. </p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.engine = input;
-            self
+            self.engine = input; self
         }
         /// Appends an item to `user_ids`.
         ///
@@ -574,17 +554,13 @@ pub mod modify_user_group_output {
         /// <p>The list of user IDs that belong to the user group.</p>
         pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_ids.unwrap_or_default();
-            v.push(input.into());
-            self.user_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.user_ids = Some(v);
+                            self
         }
         /// <p>The list of user IDs that belong to the user group.</p>
-        pub fn set_user_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.user_ids = input;
-            self
+        pub fn set_user_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.user_ids = input; self
         }
         /// <p>The minimum engine version required, which is Redis 6.0</p>
         pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -592,12 +568,8 @@ pub mod modify_user_group_output {
             self
         }
         /// <p>The minimum engine version required, which is Redis 6.0</p>
-        pub fn set_minimum_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.minimum_engine_version = input;
-            self
+        pub fn set_minimum_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.minimum_engine_version = input; self
         }
         /// <p>A list of updates being applied to the user group.</p>
         pub fn pending_changes(mut self, input: crate::model::UserGroupPendingChanges) -> Self {
@@ -605,12 +577,8 @@ pub mod modify_user_group_output {
             self
         }
         /// <p>A list of updates being applied to the user group.</p>
-        pub fn set_pending_changes(
-            mut self,
-            input: std::option::Option<crate::model::UserGroupPendingChanges>,
-        ) -> Self {
-            self.pending_changes = input;
-            self
+        pub fn set_pending_changes(mut self, input: std::option::Option<crate::model::UserGroupPendingChanges>) -> Self {
+            self.pending_changes = input; self
         }
         /// Appends an item to `replication_groups`.
         ///
@@ -619,17 +587,13 @@ pub mod modify_user_group_output {
         /// <p>A list of replication groups that the user group can access.</p>
         pub fn replication_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.replication_groups.unwrap_or_default();
-            v.push(input.into());
-            self.replication_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.replication_groups = Some(v);
+                            self
         }
         /// <p>A list of replication groups that the user group can access.</p>
-        pub fn set_replication_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.replication_groups = input;
-            self
+        pub fn set_replication_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.replication_groups = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user group.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -638,23 +602,32 @@ pub mod modify_user_group_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the user group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`ModifyUserGroupOutput`](crate::output::ModifyUserGroupOutput).
         pub fn build(self) -> crate::output::ModifyUserGroupOutput {
             crate::output::ModifyUserGroupOutput {
-                user_group_id: self.user_group_id,
-                status: self.status,
-                engine: self.engine,
-                user_ids: self.user_ids,
-                minimum_engine_version: self.minimum_engine_version,
-                pending_changes: self.pending_changes,
-                replication_groups: self.replication_groups,
-                arn: self.arn,
+                user_group_id: self.user_group_id
+                ,
+                status: self.status
+                ,
+                engine: self.engine
+                ,
+                user_ids: self.user_ids
+                ,
+                minimum_engine_version: self.minimum_engine_version
+                ,
+                pending_changes: self.pending_changes
+                ,
+                replication_groups: self.replication_groups
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyUserGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyUserGroupOutput`](crate::output::ModifyUserGroupOutput).
@@ -666,7 +639,7 @@ impl ModifyUserGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyUserOutput {
+pub struct ModifyUserOutput  {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -697,45 +670,45 @@ pub struct ModifyUserOutput {
 }
 impl ModifyUserOutput {
     /// <p>The ID of the user.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The username of the user.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The current supported value is Redis.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+    pub fn minimum_engine_version(&self) -> std::option::Option<& str> {
         self.minimum_engine_version.as_deref()
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(&self) -> std::option::Option<&str> {
+    pub fn access_string(&self) -> std::option::Option<& str> {
         self.access_string.as_deref()
     }
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
-    pub fn user_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn user_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.user_group_ids.as_deref()
     }
     /// <p>Denotes whether the user requires a password to authenticate.</p>
-    pub fn authentication(&self) -> std::option::Option<&crate::model::Authentication> {
+    pub fn authentication(&self) -> std::option::Option<& crate::model::Authentication> {
         self.authentication.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`ModifyUserOutput`](crate::output::ModifyUserOutput).
 pub mod modify_user_output {
-
+    
     /// A builder for [`ModifyUserOutput`](crate::output::ModifyUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -757,8 +730,7 @@ pub mod modify_user_output {
         }
         /// <p>The ID of the user.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
         /// <p>The username of the user.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -767,8 +739,7 @@ pub mod modify_user_output {
         }
         /// <p>The username of the user.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_name = input;
-            self
+            self.user_name = input; self
         }
         /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -777,8 +748,7 @@ pub mod modify_user_output {
         }
         /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The current supported value is Redis.</p>
         pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -787,8 +757,7 @@ pub mod modify_user_output {
         }
         /// <p>The current supported value is Redis.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.engine = input;
-            self
+            self.engine = input; self
         }
         /// <p>The minimum engine version required, which is Redis 6.0</p>
         pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -796,12 +765,8 @@ pub mod modify_user_output {
             self
         }
         /// <p>The minimum engine version required, which is Redis 6.0</p>
-        pub fn set_minimum_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.minimum_engine_version = input;
-            self
+        pub fn set_minimum_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.minimum_engine_version = input; self
         }
         /// <p>Access permissions string used for this user.</p>
         pub fn access_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -809,12 +774,8 @@ pub mod modify_user_output {
             self
         }
         /// <p>Access permissions string used for this user.</p>
-        pub fn set_access_string(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_string = input;
-            self
+        pub fn set_access_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_string = input; self
         }
         /// Appends an item to `user_group_ids`.
         ///
@@ -823,17 +784,13 @@ pub mod modify_user_output {
         /// <p>Returns a list of the user group IDs the user belongs to.</p>
         pub fn user_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.user_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.user_group_ids = Some(v);
+                            self
         }
         /// <p>Returns a list of the user group IDs the user belongs to.</p>
-        pub fn set_user_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.user_group_ids = input;
-            self
+        pub fn set_user_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.user_group_ids = input; self
         }
         /// <p>Denotes whether the user requires a password to authenticate.</p>
         pub fn authentication(mut self, input: crate::model::Authentication) -> Self {
@@ -841,12 +798,8 @@ pub mod modify_user_output {
             self
         }
         /// <p>Denotes whether the user requires a password to authenticate.</p>
-        pub fn set_authentication(
-            mut self,
-            input: std::option::Option<crate::model::Authentication>,
-        ) -> Self {
-            self.authentication = input;
-            self
+        pub fn set_authentication(mut self, input: std::option::Option<crate::model::Authentication>) -> Self {
+            self.authentication = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -855,24 +808,34 @@ pub mod modify_user_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the user.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`ModifyUserOutput`](crate::output::ModifyUserOutput).
         pub fn build(self) -> crate::output::ModifyUserOutput {
             crate::output::ModifyUserOutput {
-                user_id: self.user_id,
-                user_name: self.user_name,
-                status: self.status,
-                engine: self.engine,
-                minimum_engine_version: self.minimum_engine_version,
-                access_string: self.access_string,
-                user_group_ids: self.user_group_ids,
-                authentication: self.authentication,
-                arn: self.arn,
+                user_id: self.user_id
+                ,
+                user_name: self.user_name
+                ,
+                status: self.status
+                ,
+                engine: self.engine
+                ,
+                minimum_engine_version: self.minimum_engine_version
+                ,
+                access_string: self.access_string
+                ,
+                user_group_ids: self.user_group_ids
+                ,
+                authentication: self.authentication
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyUserOutput {
     /// Creates a new builder-style object to manufacture [`ModifyUserOutput`](crate::output::ModifyUserOutput).
@@ -884,20 +847,20 @@ impl ModifyUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyReplicationGroupShardConfigurationOutput {
+pub struct ModifyReplicationGroupShardConfigurationOutput  {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl ModifyReplicationGroupShardConfigurationOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+    pub fn replication_group(&self) -> std::option::Option<& crate::model::ReplicationGroup> {
         self.replication_group.as_ref()
     }
 }
 /// See [`ModifyReplicationGroupShardConfigurationOutput`](crate::output::ModifyReplicationGroupShardConfigurationOutput).
 pub mod modify_replication_group_shard_configuration_output {
-
+    
     /// A builder for [`ModifyReplicationGroupShardConfigurationOutput`](crate::output::ModifyReplicationGroupShardConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -910,25 +873,23 @@ pub mod modify_replication_group_shard_configuration_output {
             self
         }
         /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-        pub fn set_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationGroup>,
-        ) -> Self {
-            self.replication_group = input;
-            self
+        pub fn set_replication_group(mut self, input: std::option::Option<crate::model::ReplicationGroup>) -> Self {
+            self.replication_group = input; self
         }
         /// Consumes the builder and constructs a [`ModifyReplicationGroupShardConfigurationOutput`](crate::output::ModifyReplicationGroupShardConfigurationOutput).
         pub fn build(self) -> crate::output::ModifyReplicationGroupShardConfigurationOutput {
             crate::output::ModifyReplicationGroupShardConfigurationOutput {
-                replication_group: self.replication_group,
+                replication_group: self.replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyReplicationGroupShardConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ModifyReplicationGroupShardConfigurationOutput`](crate::output::ModifyReplicationGroupShardConfigurationOutput).
-    pub fn builder() -> crate::output::modify_replication_group_shard_configuration_output::Builder
-    {
+    pub fn builder() -> crate::output::modify_replication_group_shard_configuration_output::Builder {
         crate::output::modify_replication_group_shard_configuration_output::Builder::default()
     }
 }
@@ -936,20 +897,20 @@ impl ModifyReplicationGroupShardConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyReplicationGroupOutput {
+pub struct ModifyReplicationGroupOutput  {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl ModifyReplicationGroupOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+    pub fn replication_group(&self) -> std::option::Option<& crate::model::ReplicationGroup> {
         self.replication_group.as_ref()
     }
 }
 /// See [`ModifyReplicationGroupOutput`](crate::output::ModifyReplicationGroupOutput).
 pub mod modify_replication_group_output {
-
+    
     /// A builder for [`ModifyReplicationGroupOutput`](crate::output::ModifyReplicationGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -962,20 +923,19 @@ pub mod modify_replication_group_output {
             self
         }
         /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-        pub fn set_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationGroup>,
-        ) -> Self {
-            self.replication_group = input;
-            self
+        pub fn set_replication_group(mut self, input: std::option::Option<crate::model::ReplicationGroup>) -> Self {
+            self.replication_group = input; self
         }
         /// Consumes the builder and constructs a [`ModifyReplicationGroupOutput`](crate::output::ModifyReplicationGroupOutput).
         pub fn build(self) -> crate::output::ModifyReplicationGroupOutput {
             crate::output::ModifyReplicationGroupOutput {
-                replication_group: self.replication_group,
+                replication_group: self.replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyReplicationGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyReplicationGroupOutput`](crate::output::ModifyReplicationGroupOutput).
@@ -987,64 +947,57 @@ impl ModifyReplicationGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-    /// <ul>
-    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+pub struct ModifyGlobalReplicationGroupOutput  {
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+    /// <ul> 
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl ModifyGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-    /// <ul>
-    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+    /// <ul> 
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
     /// </ul>
-    pub fn global_replication_group(
-        &self,
-    ) -> std::option::Option<&crate::model::GlobalReplicationGroup> {
+    pub fn global_replication_group(&self) -> std::option::Option<& crate::model::GlobalReplicationGroup> {
         self.global_replication_group.as_ref()
     }
 }
 /// See [`ModifyGlobalReplicationGroupOutput`](crate::output::ModifyGlobalReplicationGroupOutput).
 pub mod modify_global_replication_group_output {
-
+    
     /// A builder for [`ModifyGlobalReplicationGroupOutput`](crate::output::ModifyGlobalReplicationGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) global_replication_group:
-            std::option::Option<crate::model::GlobalReplicationGroup>,
+        pub(crate) global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-        /// <ul>
-        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+        /// <ul> 
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
         /// </ul>
-        pub fn global_replication_group(
-            mut self,
-            input: crate::model::GlobalReplicationGroup,
-        ) -> Self {
+        pub fn global_replication_group(mut self, input: crate::model::GlobalReplicationGroup) -> Self {
             self.global_replication_group = Some(input);
             self
         }
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-        /// <ul>
-        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+        /// <ul> 
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
         /// </ul>
-        pub fn set_global_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::GlobalReplicationGroup>,
-        ) -> Self {
-            self.global_replication_group = input;
-            self
+        pub fn set_global_replication_group(mut self, input: std::option::Option<crate::model::GlobalReplicationGroup>) -> Self {
+            self.global_replication_group = input; self
         }
         /// Consumes the builder and constructs a [`ModifyGlobalReplicationGroupOutput`](crate::output::ModifyGlobalReplicationGroupOutput).
         pub fn build(self) -> crate::output::ModifyGlobalReplicationGroupOutput {
             crate::output::ModifyGlobalReplicationGroupOutput {
-                global_replication_group: self.global_replication_group,
+                global_replication_group: self.global_replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyGlobalReplicationGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyGlobalReplicationGroupOutput`](crate::output::ModifyGlobalReplicationGroupOutput).
@@ -1056,62 +1009,61 @@ impl ModifyGlobalReplicationGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyCacheSubnetGroupOutput {
-    /// <p>Represents the output of one of the following operations:</p>
-    /// <ul>
-    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
-    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
+pub struct ModifyCacheSubnetGroupOutput  {
+    /// <p>Represents the output of one of the following operations:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li> 
+    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub cache_subnet_group: std::option::Option<crate::model::CacheSubnetGroup>,
 }
 impl ModifyCacheSubnetGroupOutput {
-    /// <p>Represents the output of one of the following operations:</p>
-    /// <ul>
-    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
-    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
+    /// <p>Represents the output of one of the following operations:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li> 
+    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li> 
     /// </ul>
-    pub fn cache_subnet_group(&self) -> std::option::Option<&crate::model::CacheSubnetGroup> {
+    pub fn cache_subnet_group(&self) -> std::option::Option<& crate::model::CacheSubnetGroup> {
         self.cache_subnet_group.as_ref()
     }
 }
 /// See [`ModifyCacheSubnetGroupOutput`](crate::output::ModifyCacheSubnetGroupOutput).
 pub mod modify_cache_subnet_group_output {
-
+    
     /// A builder for [`ModifyCacheSubnetGroupOutput`](crate::output::ModifyCacheSubnetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_subnet_group: std::option::Option<crate::model::CacheSubnetGroup>,
     }
     impl Builder {
-        /// <p>Represents the output of one of the following operations:</p>
-        /// <ul>
-        /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
-        /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
+        /// <p>Represents the output of one of the following operations:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li> 
+        /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li> 
         /// </ul>
         pub fn cache_subnet_group(mut self, input: crate::model::CacheSubnetGroup) -> Self {
             self.cache_subnet_group = Some(input);
             self
         }
-        /// <p>Represents the output of one of the following operations:</p>
-        /// <ul>
-        /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
-        /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
+        /// <p>Represents the output of one of the following operations:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li> 
+        /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li> 
         /// </ul>
-        pub fn set_cache_subnet_group(
-            mut self,
-            input: std::option::Option<crate::model::CacheSubnetGroup>,
-        ) -> Self {
-            self.cache_subnet_group = input;
-            self
+        pub fn set_cache_subnet_group(mut self, input: std::option::Option<crate::model::CacheSubnetGroup>) -> Self {
+            self.cache_subnet_group = input; self
         }
         /// Consumes the builder and constructs a [`ModifyCacheSubnetGroupOutput`](crate::output::ModifyCacheSubnetGroupOutput).
         pub fn build(self) -> crate::output::ModifyCacheSubnetGroupOutput {
             crate::output::ModifyCacheSubnetGroupOutput {
-                cache_subnet_group: self.cache_subnet_group,
+                cache_subnet_group: self.cache_subnet_group
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyCacheSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyCacheSubnetGroupOutput`](crate::output::ModifyCacheSubnetGroupOutput).
@@ -1120,27 +1072,27 @@ impl ModifyCacheSubnetGroupOutput {
     }
 }
 
-/// <p>Represents the output of one of the following operations:</p>
-/// <ul>
-/// <li> <p> <code>ModifyCacheParameterGroup</code> </p> </li>
-/// <li> <p> <code>ResetCacheParameterGroup</code> </p> </li>
+/// <p>Represents the output of one of the following operations:</p> 
+/// <ul> 
+/// <li> <p> <code>ModifyCacheParameterGroup</code> </p> </li> 
+/// <li> <p> <code>ResetCacheParameterGroup</code> </p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyCacheParameterGroupOutput {
+pub struct ModifyCacheParameterGroupOutput  {
     /// <p>The name of the cache parameter group.</p>
     #[doc(hidden)]
     pub cache_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ModifyCacheParameterGroupOutput {
     /// <p>The name of the cache parameter group.</p>
-    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn cache_parameter_group_name(&self) -> std::option::Option<& str> {
         self.cache_parameter_group_name.as_deref()
     }
 }
 /// See [`ModifyCacheParameterGroupOutput`](crate::output::ModifyCacheParameterGroupOutput).
 pub mod modify_cache_parameter_group_output {
-
+    
     /// A builder for [`ModifyCacheParameterGroupOutput`](crate::output::ModifyCacheParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1153,20 +1105,19 @@ pub mod modify_cache_parameter_group_output {
             self
         }
         /// <p>The name of the cache parameter group.</p>
-        pub fn set_cache_parameter_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cache_parameter_group_name = input;
-            self
+        pub fn set_cache_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cache_parameter_group_name = input; self
         }
         /// Consumes the builder and constructs a [`ModifyCacheParameterGroupOutput`](crate::output::ModifyCacheParameterGroupOutput).
         pub fn build(self) -> crate::output::ModifyCacheParameterGroupOutput {
             crate::output::ModifyCacheParameterGroupOutput {
-                cache_parameter_group_name: self.cache_parameter_group_name,
+                cache_parameter_group_name: self.cache_parameter_group_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyCacheParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyCacheParameterGroupOutput`](crate::output::ModifyCacheParameterGroupOutput).
@@ -1178,20 +1129,20 @@ impl ModifyCacheParameterGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyCacheClusterOutput {
+pub struct ModifyCacheClusterOutput  {
     /// <p>Contains all of the attributes of a specific cluster.</p>
     #[doc(hidden)]
     pub cache_cluster: std::option::Option<crate::model::CacheCluster>,
 }
 impl ModifyCacheClusterOutput {
     /// <p>Contains all of the attributes of a specific cluster.</p>
-    pub fn cache_cluster(&self) -> std::option::Option<&crate::model::CacheCluster> {
+    pub fn cache_cluster(&self) -> std::option::Option<& crate::model::CacheCluster> {
         self.cache_cluster.as_ref()
     }
 }
 /// See [`ModifyCacheClusterOutput`](crate::output::ModifyCacheClusterOutput).
 pub mod modify_cache_cluster_output {
-
+    
     /// A builder for [`ModifyCacheClusterOutput`](crate::output::ModifyCacheClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1204,20 +1155,19 @@ pub mod modify_cache_cluster_output {
             self
         }
         /// <p>Contains all of the attributes of a specific cluster.</p>
-        pub fn set_cache_cluster(
-            mut self,
-            input: std::option::Option<crate::model::CacheCluster>,
-        ) -> Self {
-            self.cache_cluster = input;
-            self
+        pub fn set_cache_cluster(mut self, input: std::option::Option<crate::model::CacheCluster>) -> Self {
+            self.cache_cluster = input; self
         }
         /// Consumes the builder and constructs a [`ModifyCacheClusterOutput`](crate::output::ModifyCacheClusterOutput).
         pub fn build(self) -> crate::output::ModifyCacheClusterOutput {
             crate::output::ModifyCacheClusterOutput {
-                cache_cluster: self.cache_cluster,
+                cache_cluster: self.cache_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyCacheClusterOutput {
     /// Creates a new builder-style object to manufacture [`ModifyCacheClusterOutput`](crate::output::ModifyCacheClusterOutput).
@@ -1229,20 +1179,20 @@ impl ModifyCacheClusterOutput {
 /// <p>Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A list of tags as key-value pairs.</p>
     #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tags as key-value pairs.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tag_list.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1256,25 +1206,24 @@ pub mod list_tags_for_resource_output {
         /// <p>A list of tags as key-value pairs.</p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input);
-            self.tag_list = Some(v);
-            self
+                            v.push(input);
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p>A list of tags as key-value pairs.</p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tag_list = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tag_list: self.tag_list,
+                tag_list: self.tag_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1286,8 +1235,8 @@ impl ListTagsForResourceOutput {
 /// <p>Represents the allowed node types you can use to modify your cluster or replication group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAllowedNodeTypeModificationsOutput {
-    /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p>
+pub struct ListAllowedNodeTypeModificationsOutput  {
+    /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p> 
     /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code> parameter.</p>
     #[doc(hidden)]
     pub scale_up_modifications: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1296,47 +1245,42 @@ pub struct ListAllowedNodeTypeModificationsOutput {
     pub scale_down_modifications: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListAllowedNodeTypeModificationsOutput {
-    /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p>
+    /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p> 
     /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code> parameter.</p>
-    pub fn scale_up_modifications(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn scale_up_modifications(&self) -> std::option::Option<& [std::string::String]> {
         self.scale_up_modifications.as_deref()
     }
     /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group. When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
-    pub fn scale_down_modifications(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn scale_down_modifications(&self) -> std::option::Option<& [std::string::String]> {
         self.scale_down_modifications.as_deref()
     }
 }
 /// See [`ListAllowedNodeTypeModificationsOutput`](crate::output::ListAllowedNodeTypeModificationsOutput).
 pub mod list_allowed_node_type_modifications_output {
-
+    
     /// A builder for [`ListAllowedNodeTypeModificationsOutput`](crate::output::ListAllowedNodeTypeModificationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scale_up_modifications: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) scale_down_modifications:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) scale_down_modifications: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `scale_up_modifications`.
         ///
         /// To override the contents of this collection use [`set_scale_up_modifications`](Self::set_scale_up_modifications).
         ///
-        /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p>
+        /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p> 
         /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code> parameter.</p>
         pub fn scale_up_modifications(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.scale_up_modifications.unwrap_or_default();
-            v.push(input.into());
-            self.scale_up_modifications = Some(v);
-            self
+                            v.push(input.into());
+                            self.scale_up_modifications = Some(v);
+                            self
         }
-        /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p>
+        /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p> 
         /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code> parameter.</p>
-        pub fn set_scale_up_modifications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.scale_up_modifications = input;
-            self
+        pub fn set_scale_up_modifications(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.scale_up_modifications = input; self
         }
         /// Appends an item to `scale_down_modifications`.
         ///
@@ -1345,26 +1289,26 @@ pub mod list_allowed_node_type_modifications_output {
         /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group. When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
         pub fn scale_down_modifications(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.scale_down_modifications.unwrap_or_default();
-            v.push(input.into());
-            self.scale_down_modifications = Some(v);
-            self
+                            v.push(input.into());
+                            self.scale_down_modifications = Some(v);
+                            self
         }
         /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group. When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
-        pub fn set_scale_down_modifications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.scale_down_modifications = input;
-            self
+        pub fn set_scale_down_modifications(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.scale_down_modifications = input; self
         }
         /// Consumes the builder and constructs a [`ListAllowedNodeTypeModificationsOutput`](crate::output::ListAllowedNodeTypeModificationsOutput).
         pub fn build(self) -> crate::output::ListAllowedNodeTypeModificationsOutput {
             crate::output::ListAllowedNodeTypeModificationsOutput {
-                scale_up_modifications: self.scale_up_modifications,
-                scale_down_modifications: self.scale_down_modifications,
+                scale_up_modifications: self.scale_up_modifications
+                ,
+                scale_down_modifications: self.scale_down_modifications
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAllowedNodeTypeModificationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAllowedNodeTypeModificationsOutput`](crate::output::ListAllowedNodeTypeModificationsOutput).
@@ -1376,20 +1320,20 @@ impl ListAllowedNodeTypeModificationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IncreaseReplicaCountOutput {
+pub struct IncreaseReplicaCountOutput  {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl IncreaseReplicaCountOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+    pub fn replication_group(&self) -> std::option::Option<& crate::model::ReplicationGroup> {
         self.replication_group.as_ref()
     }
 }
 /// See [`IncreaseReplicaCountOutput`](crate::output::IncreaseReplicaCountOutput).
 pub mod increase_replica_count_output {
-
+    
     /// A builder for [`IncreaseReplicaCountOutput`](crate::output::IncreaseReplicaCountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1402,20 +1346,19 @@ pub mod increase_replica_count_output {
             self
         }
         /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-        pub fn set_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationGroup>,
-        ) -> Self {
-            self.replication_group = input;
-            self
+        pub fn set_replication_group(mut self, input: std::option::Option<crate::model::ReplicationGroup>) -> Self {
+            self.replication_group = input; self
         }
         /// Consumes the builder and constructs a [`IncreaseReplicaCountOutput`](crate::output::IncreaseReplicaCountOutput).
         pub fn build(self) -> crate::output::IncreaseReplicaCountOutput {
             crate::output::IncreaseReplicaCountOutput {
-                replication_group: self.replication_group,
+                replication_group: self.replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl IncreaseReplicaCountOutput {
     /// Creates a new builder-style object to manufacture [`IncreaseReplicaCountOutput`](crate::output::IncreaseReplicaCountOutput).
@@ -1427,69 +1370,61 @@ impl IncreaseReplicaCountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IncreaseNodeGroupsInGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-    /// <ul>
-    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+pub struct IncreaseNodeGroupsInGlobalReplicationGroupOutput  {
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+    /// <ul> 
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl IncreaseNodeGroupsInGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-    /// <ul>
-    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+    /// <ul> 
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
     /// </ul>
-    pub fn global_replication_group(
-        &self,
-    ) -> std::option::Option<&crate::model::GlobalReplicationGroup> {
+    pub fn global_replication_group(&self) -> std::option::Option<& crate::model::GlobalReplicationGroup> {
         self.global_replication_group.as_ref()
     }
 }
 /// See [`IncreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::output::IncreaseNodeGroupsInGlobalReplicationGroupOutput).
 pub mod increase_node_groups_in_global_replication_group_output {
-
+    
     /// A builder for [`IncreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::output::IncreaseNodeGroupsInGlobalReplicationGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) global_replication_group:
-            std::option::Option<crate::model::GlobalReplicationGroup>,
+        pub(crate) global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-        /// <ul>
-        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+        /// <ul> 
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
         /// </ul>
-        pub fn global_replication_group(
-            mut self,
-            input: crate::model::GlobalReplicationGroup,
-        ) -> Self {
+        pub fn global_replication_group(mut self, input: crate::model::GlobalReplicationGroup) -> Self {
             self.global_replication_group = Some(input);
             self
         }
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-        /// <ul>
-        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+        /// <ul> 
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
         /// </ul>
-        pub fn set_global_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::GlobalReplicationGroup>,
-        ) -> Self {
-            self.global_replication_group = input;
-            self
+        pub fn set_global_replication_group(mut self, input: std::option::Option<crate::model::GlobalReplicationGroup>) -> Self {
+            self.global_replication_group = input; self
         }
         /// Consumes the builder and constructs a [`IncreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::output::IncreaseNodeGroupsInGlobalReplicationGroupOutput).
         pub fn build(self) -> crate::output::IncreaseNodeGroupsInGlobalReplicationGroupOutput {
             crate::output::IncreaseNodeGroupsInGlobalReplicationGroupOutput {
-                global_replication_group: self.global_replication_group,
+                global_replication_group: self.global_replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl IncreaseNodeGroupsInGlobalReplicationGroupOutput {
     /// Creates a new builder-style object to manufacture [`IncreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::output::IncreaseNodeGroupsInGlobalReplicationGroupOutput).
-    pub fn builder(
-    ) -> crate::output::increase_node_groups_in_global_replication_group_output::Builder {
+    pub fn builder() -> crate::output::increase_node_groups_in_global_replication_group_output::Builder {
         crate::output::increase_node_groups_in_global_replication_group_output::Builder::default()
     }
 }
@@ -1497,64 +1432,57 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailoverGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-    /// <ul>
-    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+pub struct FailoverGlobalReplicationGroupOutput  {
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+    /// <ul> 
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl FailoverGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-    /// <ul>
-    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+    /// <ul> 
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
     /// </ul>
-    pub fn global_replication_group(
-        &self,
-    ) -> std::option::Option<&crate::model::GlobalReplicationGroup> {
+    pub fn global_replication_group(&self) -> std::option::Option<& crate::model::GlobalReplicationGroup> {
         self.global_replication_group.as_ref()
     }
 }
 /// See [`FailoverGlobalReplicationGroupOutput`](crate::output::FailoverGlobalReplicationGroupOutput).
 pub mod failover_global_replication_group_output {
-
+    
     /// A builder for [`FailoverGlobalReplicationGroupOutput`](crate::output::FailoverGlobalReplicationGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) global_replication_group:
-            std::option::Option<crate::model::GlobalReplicationGroup>,
+        pub(crate) global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-        /// <ul>
-        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+        /// <ul> 
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
         /// </ul>
-        pub fn global_replication_group(
-            mut self,
-            input: crate::model::GlobalReplicationGroup,
-        ) -> Self {
+        pub fn global_replication_group(mut self, input: crate::model::GlobalReplicationGroup) -> Self {
             self.global_replication_group = Some(input);
             self
         }
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-        /// <ul>
-        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+        /// <ul> 
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
         /// </ul>
-        pub fn set_global_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::GlobalReplicationGroup>,
-        ) -> Self {
-            self.global_replication_group = input;
-            self
+        pub fn set_global_replication_group(mut self, input: std::option::Option<crate::model::GlobalReplicationGroup>) -> Self {
+            self.global_replication_group = input; self
         }
         /// Consumes the builder and constructs a [`FailoverGlobalReplicationGroupOutput`](crate::output::FailoverGlobalReplicationGroupOutput).
         pub fn build(self) -> crate::output::FailoverGlobalReplicationGroupOutput {
             crate::output::FailoverGlobalReplicationGroupOutput {
-                global_replication_group: self.global_replication_group,
+                global_replication_group: self.global_replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl FailoverGlobalReplicationGroupOutput {
     /// Creates a new builder-style object to manufacture [`FailoverGlobalReplicationGroupOutput`](crate::output::FailoverGlobalReplicationGroupOutput).
@@ -1566,64 +1494,57 @@ impl FailoverGlobalReplicationGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-    /// <ul>
-    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+pub struct DisassociateGlobalReplicationGroupOutput  {
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+    /// <ul> 
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl DisassociateGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-    /// <ul>
-    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+    /// <ul> 
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
     /// </ul>
-    pub fn global_replication_group(
-        &self,
-    ) -> std::option::Option<&crate::model::GlobalReplicationGroup> {
+    pub fn global_replication_group(&self) -> std::option::Option<& crate::model::GlobalReplicationGroup> {
         self.global_replication_group.as_ref()
     }
 }
 /// See [`DisassociateGlobalReplicationGroupOutput`](crate::output::DisassociateGlobalReplicationGroupOutput).
 pub mod disassociate_global_replication_group_output {
-
+    
     /// A builder for [`DisassociateGlobalReplicationGroupOutput`](crate::output::DisassociateGlobalReplicationGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) global_replication_group:
-            std::option::Option<crate::model::GlobalReplicationGroup>,
+        pub(crate) global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-        /// <ul>
-        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+        /// <ul> 
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
         /// </ul>
-        pub fn global_replication_group(
-            mut self,
-            input: crate::model::GlobalReplicationGroup,
-        ) -> Self {
+        pub fn global_replication_group(mut self, input: crate::model::GlobalReplicationGroup) -> Self {
             self.global_replication_group = Some(input);
             self
         }
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-        /// <ul>
-        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+        /// <ul> 
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
         /// </ul>
-        pub fn set_global_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::GlobalReplicationGroup>,
-        ) -> Self {
-            self.global_replication_group = input;
-            self
+        pub fn set_global_replication_group(mut self, input: std::option::Option<crate::model::GlobalReplicationGroup>) -> Self {
+            self.global_replication_group = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateGlobalReplicationGroupOutput`](crate::output::DisassociateGlobalReplicationGroupOutput).
         pub fn build(self) -> crate::output::DisassociateGlobalReplicationGroupOutput {
             crate::output::DisassociateGlobalReplicationGroupOutput {
-                global_replication_group: self.global_replication_group,
+                global_replication_group: self.global_replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateGlobalReplicationGroupOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateGlobalReplicationGroupOutput`](crate::output::DisassociateGlobalReplicationGroupOutput).
@@ -1635,7 +1556,7 @@ impl DisassociateGlobalReplicationGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUsersOutput {
+pub struct DescribeUsersOutput  {
     /// <p>A list of users.</p>
     #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -1645,17 +1566,17 @@ pub struct DescribeUsersOutput {
 }
 impl DescribeUsersOutput {
     /// <p>A list of users.</p>
-    pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
+    pub fn users(&self) -> std::option::Option<& [crate::model::User]> {
         self.users.as_deref()
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
 pub mod describe_users_output {
-
+    
     /// A builder for [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1670,17 +1591,13 @@ pub mod describe_users_output {
         /// <p>A list of users.</p>
         pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input);
-            self.users = Some(v);
-            self
+                            v.push(input);
+                            self.users = Some(v);
+                            self
         }
         /// <p>A list of users.</p>
-        pub fn set_users(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::User>>,
-        ) -> Self {
-            self.users = input;
-            self
+        pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::model::User>>) -> Self {
+            self.users = input; self
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1689,17 +1606,20 @@ pub mod describe_users_output {
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
         pub fn build(self) -> crate::output::DescribeUsersOutput {
             crate::output::DescribeUsersOutput {
-                users: self.users,
-                marker: self.marker,
+                users: self.users
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeUsersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
@@ -1711,7 +1631,7 @@ impl DescribeUsersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUserGroupsOutput {
+pub struct DescribeUserGroupsOutput  {
     /// <p>Returns a list of user groups.</p>
     #[doc(hidden)]
     pub user_groups: std::option::Option<std::vec::Vec<crate::model::UserGroup>>,
@@ -1721,17 +1641,17 @@ pub struct DescribeUserGroupsOutput {
 }
 impl DescribeUserGroupsOutput {
     /// <p>Returns a list of user groups.</p>
-    pub fn user_groups(&self) -> std::option::Option<&[crate::model::UserGroup]> {
+    pub fn user_groups(&self) -> std::option::Option<& [crate::model::UserGroup]> {
         self.user_groups.as_deref()
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeUserGroupsOutput`](crate::output::DescribeUserGroupsOutput).
 pub mod describe_user_groups_output {
-
+    
     /// A builder for [`DescribeUserGroupsOutput`](crate::output::DescribeUserGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1746,17 +1666,13 @@ pub mod describe_user_groups_output {
         /// <p>Returns a list of user groups.</p>
         pub fn user_groups(mut self, input: crate::model::UserGroup) -> Self {
             let mut v = self.user_groups.unwrap_or_default();
-            v.push(input);
-            self.user_groups = Some(v);
-            self
+                            v.push(input);
+                            self.user_groups = Some(v);
+                            self
         }
         /// <p>Returns a list of user groups.</p>
-        pub fn set_user_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UserGroup>>,
-        ) -> Self {
-            self.user_groups = input;
-            self
+        pub fn set_user_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::UserGroup>>) -> Self {
+            self.user_groups = input; self
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1765,17 +1681,20 @@ pub mod describe_user_groups_output {
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeUserGroupsOutput`](crate::output::DescribeUserGroupsOutput).
         pub fn build(self) -> crate::output::DescribeUserGroupsOutput {
             crate::output::DescribeUserGroupsOutput {
-                user_groups: self.user_groups,
-                marker: self.marker,
+                user_groups: self.user_groups
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeUserGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserGroupsOutput`](crate::output::DescribeUserGroupsOutput).
@@ -1787,7 +1706,7 @@ impl DescribeUserGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUpdateActionsOutput {
+pub struct DescribeUpdateActionsOutput  {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -1797,17 +1716,17 @@ pub struct DescribeUpdateActionsOutput {
 }
 impl DescribeUpdateActionsOutput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Returns a list of update actions</p>
-    pub fn update_actions(&self) -> std::option::Option<&[crate::model::UpdateAction]> {
+    pub fn update_actions(&self) -> std::option::Option<& [crate::model::UpdateAction]> {
         self.update_actions.as_deref()
     }
 }
 /// See [`DescribeUpdateActionsOutput`](crate::output::DescribeUpdateActionsOutput).
 pub mod describe_update_actions_output {
-
+    
     /// A builder for [`DescribeUpdateActionsOutput`](crate::output::DescribeUpdateActionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1822,8 +1741,7 @@ pub mod describe_update_actions_output {
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `update_actions`.
         ///
@@ -1832,26 +1750,26 @@ pub mod describe_update_actions_output {
         /// <p>Returns a list of update actions</p>
         pub fn update_actions(mut self, input: crate::model::UpdateAction) -> Self {
             let mut v = self.update_actions.unwrap_or_default();
-            v.push(input);
-            self.update_actions = Some(v);
-            self
+                            v.push(input);
+                            self.update_actions = Some(v);
+                            self
         }
         /// <p>Returns a list of update actions</p>
-        pub fn set_update_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UpdateAction>>,
-        ) -> Self {
-            self.update_actions = input;
-            self
+        pub fn set_update_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpdateAction>>) -> Self {
+            self.update_actions = input; self
         }
         /// Consumes the builder and constructs a [`DescribeUpdateActionsOutput`](crate::output::DescribeUpdateActionsOutput).
         pub fn build(self) -> crate::output::DescribeUpdateActionsOutput {
             crate::output::DescribeUpdateActionsOutput {
-                marker: self.marker,
-                update_actions: self.update_actions,
+                marker: self.marker
+                ,
+                update_actions: self.update_actions
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeUpdateActionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUpdateActionsOutput`](crate::output::DescribeUpdateActionsOutput).
@@ -1863,7 +1781,7 @@ impl DescribeUpdateActionsOutput {
 /// <p>Represents the output of a <code>DescribeSnapshots</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSnapshotsOutput {
+pub struct DescribeSnapshotsOutput  {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -1873,17 +1791,17 @@ pub struct DescribeSnapshotsOutput {
 }
 impl DescribeSnapshotsOutput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
-    pub fn snapshots(&self) -> std::option::Option<&[crate::model::Snapshot]> {
+    pub fn snapshots(&self) -> std::option::Option<& [crate::model::Snapshot]> {
         self.snapshots.as_deref()
     }
 }
 /// See [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
 pub mod describe_snapshots_output {
-
+    
     /// A builder for [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1898,8 +1816,7 @@ pub mod describe_snapshots_output {
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `snapshots`.
         ///
@@ -1908,26 +1825,26 @@ pub mod describe_snapshots_output {
         /// <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
         pub fn snapshots(mut self, input: crate::model::Snapshot) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
-            v.push(input);
-            self.snapshots = Some(v);
-            self
+                            v.push(input);
+                            self.snapshots = Some(v);
+                            self
         }
         /// <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
-        pub fn set_snapshots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
-        ) -> Self {
-            self.snapshots = input;
-            self
+        pub fn set_snapshots(mut self, input: std::option::Option<std::vec::Vec<crate::model::Snapshot>>) -> Self {
+            self.snapshots = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
         pub fn build(self) -> crate::output::DescribeSnapshotsOutput {
             crate::output::DescribeSnapshotsOutput {
-                marker: self.marker,
-                snapshots: self.snapshots,
+                marker: self.marker
+                ,
+                snapshots: self.snapshots
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
@@ -1939,7 +1856,7 @@ impl DescribeSnapshotsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeServiceUpdatesOutput {
+pub struct DescribeServiceUpdatesOutput  {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -1949,17 +1866,17 @@ pub struct DescribeServiceUpdatesOutput {
 }
 impl DescribeServiceUpdatesOutput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of service updates</p>
-    pub fn service_updates(&self) -> std::option::Option<&[crate::model::ServiceUpdate]> {
+    pub fn service_updates(&self) -> std::option::Option<& [crate::model::ServiceUpdate]> {
         self.service_updates.as_deref()
     }
 }
 /// See [`DescribeServiceUpdatesOutput`](crate::output::DescribeServiceUpdatesOutput).
 pub mod describe_service_updates_output {
-
+    
     /// A builder for [`DescribeServiceUpdatesOutput`](crate::output::DescribeServiceUpdatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1974,8 +1891,7 @@ pub mod describe_service_updates_output {
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `service_updates`.
         ///
@@ -1984,26 +1900,26 @@ pub mod describe_service_updates_output {
         /// <p>A list of service updates</p>
         pub fn service_updates(mut self, input: crate::model::ServiceUpdate) -> Self {
             let mut v = self.service_updates.unwrap_or_default();
-            v.push(input);
-            self.service_updates = Some(v);
-            self
+                            v.push(input);
+                            self.service_updates = Some(v);
+                            self
         }
         /// <p>A list of service updates</p>
-        pub fn set_service_updates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServiceUpdate>>,
-        ) -> Self {
-            self.service_updates = input;
-            self
+        pub fn set_service_updates(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServiceUpdate>>) -> Self {
+            self.service_updates = input; self
         }
         /// Consumes the builder and constructs a [`DescribeServiceUpdatesOutput`](crate::output::DescribeServiceUpdatesOutput).
         pub fn build(self) -> crate::output::DescribeServiceUpdatesOutput {
             crate::output::DescribeServiceUpdatesOutput {
-                marker: self.marker,
-                service_updates: self.service_updates,
+                marker: self.marker
+                ,
+                service_updates: self.service_updates
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeServiceUpdatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceUpdatesOutput`](crate::output::DescribeServiceUpdatesOutput).
@@ -2015,36 +1931,32 @@ impl DescribeServiceUpdatesOutput {
 /// <p>Represents the output of a <code>DescribeReservedCacheNodesOfferings</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReservedCacheNodesOfferingsOutput {
+pub struct DescribeReservedCacheNodesOfferingsOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
     #[doc(hidden)]
-    pub reserved_cache_nodes_offerings:
-        std::option::Option<std::vec::Vec<crate::model::ReservedCacheNodesOffering>>,
+    pub reserved_cache_nodes_offerings: std::option::Option<std::vec::Vec<crate::model::ReservedCacheNodesOffering>>,
 }
 impl DescribeReservedCacheNodesOfferingsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-    pub fn reserved_cache_nodes_offerings(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReservedCacheNodesOffering]> {
+    pub fn reserved_cache_nodes_offerings(&self) -> std::option::Option<& [crate::model::ReservedCacheNodesOffering]> {
         self.reserved_cache_nodes_offerings.as_deref()
     }
 }
 /// See [`DescribeReservedCacheNodesOfferingsOutput`](crate::output::DescribeReservedCacheNodesOfferingsOutput).
 pub mod describe_reserved_cache_nodes_offerings_output {
-
+    
     /// A builder for [`DescribeReservedCacheNodesOfferingsOutput`](crate::output::DescribeReservedCacheNodesOfferingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) reserved_cache_nodes_offerings:
-            std::option::Option<std::vec::Vec<crate::model::ReservedCacheNodesOffering>>,
+        pub(crate) reserved_cache_nodes_offerings: std::option::Option<std::vec::Vec<crate::model::ReservedCacheNodesOffering>>,
     }
     impl Builder {
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -2054,39 +1966,35 @@ pub mod describe_reserved_cache_nodes_offerings_output {
         }
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `reserved_cache_nodes_offerings`.
         ///
         /// To override the contents of this collection use [`set_reserved_cache_nodes_offerings`](Self::set_reserved_cache_nodes_offerings).
         ///
         /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-        pub fn reserved_cache_nodes_offerings(
-            mut self,
-            input: crate::model::ReservedCacheNodesOffering,
-        ) -> Self {
+        pub fn reserved_cache_nodes_offerings(mut self, input: crate::model::ReservedCacheNodesOffering) -> Self {
             let mut v = self.reserved_cache_nodes_offerings.unwrap_or_default();
-            v.push(input);
-            self.reserved_cache_nodes_offerings = Some(v);
-            self
+                            v.push(input);
+                            self.reserved_cache_nodes_offerings = Some(v);
+                            self
         }
         /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-        pub fn set_reserved_cache_nodes_offerings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReservedCacheNodesOffering>>,
-        ) -> Self {
-            self.reserved_cache_nodes_offerings = input;
-            self
+        pub fn set_reserved_cache_nodes_offerings(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReservedCacheNodesOffering>>) -> Self {
+            self.reserved_cache_nodes_offerings = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReservedCacheNodesOfferingsOutput`](crate::output::DescribeReservedCacheNodesOfferingsOutput).
         pub fn build(self) -> crate::output::DescribeReservedCacheNodesOfferingsOutput {
             crate::output::DescribeReservedCacheNodesOfferingsOutput {
-                marker: self.marker,
-                reserved_cache_nodes_offerings: self.reserved_cache_nodes_offerings,
+                marker: self.marker
+                ,
+                reserved_cache_nodes_offerings: self.reserved_cache_nodes_offerings
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReservedCacheNodesOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedCacheNodesOfferingsOutput`](crate::output::DescribeReservedCacheNodesOfferingsOutput).
@@ -2098,7 +2006,7 @@ impl DescribeReservedCacheNodesOfferingsOutput {
 /// <p>Represents the output of a <code>DescribeReservedCacheNodes</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReservedCacheNodesOutput {
+pub struct DescribeReservedCacheNodesOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -2108,23 +2016,22 @@ pub struct DescribeReservedCacheNodesOutput {
 }
 impl DescribeReservedCacheNodesOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
-    pub fn reserved_cache_nodes(&self) -> std::option::Option<&[crate::model::ReservedCacheNode]> {
+    pub fn reserved_cache_nodes(&self) -> std::option::Option<& [crate::model::ReservedCacheNode]> {
         self.reserved_cache_nodes.as_deref()
     }
 }
 /// See [`DescribeReservedCacheNodesOutput`](crate::output::DescribeReservedCacheNodesOutput).
 pub mod describe_reserved_cache_nodes_output {
-
+    
     /// A builder for [`DescribeReservedCacheNodesOutput`](crate::output::DescribeReservedCacheNodesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) reserved_cache_nodes:
-            std::option::Option<std::vec::Vec<crate::model::ReservedCacheNode>>,
+        pub(crate) reserved_cache_nodes: std::option::Option<std::vec::Vec<crate::model::ReservedCacheNode>>,
     }
     impl Builder {
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -2134,8 +2041,7 @@ pub mod describe_reserved_cache_nodes_output {
         }
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `reserved_cache_nodes`.
         ///
@@ -2144,26 +2050,26 @@ pub mod describe_reserved_cache_nodes_output {
         /// <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
         pub fn reserved_cache_nodes(mut self, input: crate::model::ReservedCacheNode) -> Self {
             let mut v = self.reserved_cache_nodes.unwrap_or_default();
-            v.push(input);
-            self.reserved_cache_nodes = Some(v);
-            self
+                            v.push(input);
+                            self.reserved_cache_nodes = Some(v);
+                            self
         }
         /// <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
-        pub fn set_reserved_cache_nodes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReservedCacheNode>>,
-        ) -> Self {
-            self.reserved_cache_nodes = input;
-            self
+        pub fn set_reserved_cache_nodes(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReservedCacheNode>>) -> Self {
+            self.reserved_cache_nodes = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReservedCacheNodesOutput`](crate::output::DescribeReservedCacheNodesOutput).
         pub fn build(self) -> crate::output::DescribeReservedCacheNodesOutput {
             crate::output::DescribeReservedCacheNodesOutput {
-                marker: self.marker,
-                reserved_cache_nodes: self.reserved_cache_nodes,
+                marker: self.marker
+                ,
+                reserved_cache_nodes: self.reserved_cache_nodes
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReservedCacheNodesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedCacheNodesOutput`](crate::output::DescribeReservedCacheNodesOutput).
@@ -2175,7 +2081,7 @@ impl DescribeReservedCacheNodesOutput {
 /// <p>Represents the output of a <code>DescribeReplicationGroups</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReplicationGroupsOutput {
+pub struct DescribeReplicationGroupsOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -2185,23 +2091,22 @@ pub struct DescribeReplicationGroupsOutput {
 }
 impl DescribeReplicationGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
-    pub fn replication_groups(&self) -> std::option::Option<&[crate::model::ReplicationGroup]> {
+    pub fn replication_groups(&self) -> std::option::Option<& [crate::model::ReplicationGroup]> {
         self.replication_groups.as_deref()
     }
 }
 /// See [`DescribeReplicationGroupsOutput`](crate::output::DescribeReplicationGroupsOutput).
 pub mod describe_replication_groups_output {
-
+    
     /// A builder for [`DescribeReplicationGroupsOutput`](crate::output::DescribeReplicationGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) replication_groups:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationGroup>>,
+        pub(crate) replication_groups: std::option::Option<std::vec::Vec<crate::model::ReplicationGroup>>,
     }
     impl Builder {
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -2211,8 +2116,7 @@ pub mod describe_replication_groups_output {
         }
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `replication_groups`.
         ///
@@ -2221,26 +2125,26 @@ pub mod describe_replication_groups_output {
         /// <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
         pub fn replication_groups(mut self, input: crate::model::ReplicationGroup) -> Self {
             let mut v = self.replication_groups.unwrap_or_default();
-            v.push(input);
-            self.replication_groups = Some(v);
-            self
+                            v.push(input);
+                            self.replication_groups = Some(v);
+                            self
         }
         /// <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
-        pub fn set_replication_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReplicationGroup>>,
-        ) -> Self {
-            self.replication_groups = input;
-            self
+        pub fn set_replication_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationGroup>>) -> Self {
+            self.replication_groups = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReplicationGroupsOutput`](crate::output::DescribeReplicationGroupsOutput).
         pub fn build(self) -> crate::output::DescribeReplicationGroupsOutput {
             crate::output::DescribeReplicationGroupsOutput {
-                marker: self.marker,
-                replication_groups: self.replication_groups,
+                marker: self.marker
+                ,
+                replication_groups: self.replication_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReplicationGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationGroupsOutput`](crate::output::DescribeReplicationGroupsOutput).
@@ -2252,36 +2156,32 @@ impl DescribeReplicationGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGlobalReplicationGroupsOutput {
+pub struct DescribeGlobalReplicationGroupsOutput  {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
     #[doc(hidden)]
-    pub global_replication_groups:
-        std::option::Option<std::vec::Vec<crate::model::GlobalReplicationGroup>>,
+    pub global_replication_groups: std::option::Option<std::vec::Vec<crate::model::GlobalReplicationGroup>>,
 }
 impl DescribeGlobalReplicationGroupsOutput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
-    pub fn global_replication_groups(
-        &self,
-    ) -> std::option::Option<&[crate::model::GlobalReplicationGroup]> {
+    pub fn global_replication_groups(&self) -> std::option::Option<& [crate::model::GlobalReplicationGroup]> {
         self.global_replication_groups.as_deref()
     }
 }
 /// See [`DescribeGlobalReplicationGroupsOutput`](crate::output::DescribeGlobalReplicationGroupsOutput).
 pub mod describe_global_replication_groups_output {
-
+    
     /// A builder for [`DescribeGlobalReplicationGroupsOutput`](crate::output::DescribeGlobalReplicationGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) global_replication_groups:
-            std::option::Option<std::vec::Vec<crate::model::GlobalReplicationGroup>>,
+        pub(crate) global_replication_groups: std::option::Option<std::vec::Vec<crate::model::GlobalReplicationGroup>>,
     }
     impl Builder {
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
@@ -2291,39 +2191,35 @@ pub mod describe_global_replication_groups_output {
         }
         /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `global_replication_groups`.
         ///
         /// To override the contents of this collection use [`set_global_replication_groups`](Self::set_global_replication_groups).
         ///
         /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
-        pub fn global_replication_groups(
-            mut self,
-            input: crate::model::GlobalReplicationGroup,
-        ) -> Self {
+        pub fn global_replication_groups(mut self, input: crate::model::GlobalReplicationGroup) -> Self {
             let mut v = self.global_replication_groups.unwrap_or_default();
-            v.push(input);
-            self.global_replication_groups = Some(v);
-            self
+                            v.push(input);
+                            self.global_replication_groups = Some(v);
+                            self
         }
         /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
-        pub fn set_global_replication_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GlobalReplicationGroup>>,
-        ) -> Self {
-            self.global_replication_groups = input;
-            self
+        pub fn set_global_replication_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::GlobalReplicationGroup>>) -> Self {
+            self.global_replication_groups = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGlobalReplicationGroupsOutput`](crate::output::DescribeGlobalReplicationGroupsOutput).
         pub fn build(self) -> crate::output::DescribeGlobalReplicationGroupsOutput {
             crate::output::DescribeGlobalReplicationGroupsOutput {
-                marker: self.marker,
-                global_replication_groups: self.global_replication_groups,
+                marker: self.marker
+                ,
+                global_replication_groups: self.global_replication_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGlobalReplicationGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalReplicationGroupsOutput`](crate::output::DescribeGlobalReplicationGroupsOutput).
@@ -2335,7 +2231,7 @@ impl DescribeGlobalReplicationGroupsOutput {
 /// <p>Represents the output of a <code>DescribeEvents</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventsOutput {
+pub struct DescribeEventsOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -2345,17 +2241,17 @@ pub struct DescribeEventsOutput {
 }
 impl DescribeEventsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of events. Each element in the list contains detailed information about one event.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+    pub fn events(&self) -> std::option::Option<& [crate::model::Event]> {
         self.events.as_deref()
     }
 }
 /// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
 pub mod describe_events_output {
-
+    
     /// A builder for [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2370,8 +2266,7 @@ pub mod describe_events_output {
         }
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `events`.
         ///
@@ -2380,26 +2275,26 @@ pub mod describe_events_output {
         /// <p>A list of events. Each element in the list contains detailed information about one event.</p>
         pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input);
-            self.events = Some(v);
-            self
+                            v.push(input);
+                            self.events = Some(v);
+                            self
         }
         /// <p>A list of events. Each element in the list contains detailed information about one event.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Event>>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::Event>>) -> Self {
+            self.events = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
         pub fn build(self) -> crate::output::DescribeEventsOutput {
             crate::output::DescribeEventsOutput {
-                marker: self.marker,
-                events: self.events,
+                marker: self.marker
+                ,
+                events: self.events
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEventsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
@@ -2411,20 +2306,20 @@ impl DescribeEventsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEngineDefaultParametersOutput {
+pub struct DescribeEngineDefaultParametersOutput  {
     /// <p>Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.</p>
     #[doc(hidden)]
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
 }
 impl DescribeEngineDefaultParametersOutput {
     /// <p>Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.</p>
-    pub fn engine_defaults(&self) -> std::option::Option<&crate::model::EngineDefaults> {
+    pub fn engine_defaults(&self) -> std::option::Option<& crate::model::EngineDefaults> {
         self.engine_defaults.as_ref()
     }
 }
 /// See [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
 pub mod describe_engine_default_parameters_output {
-
+    
     /// A builder for [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2437,20 +2332,19 @@ pub mod describe_engine_default_parameters_output {
             self
         }
         /// <p>Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.</p>
-        pub fn set_engine_defaults(
-            mut self,
-            input: std::option::Option<crate::model::EngineDefaults>,
-        ) -> Self {
-            self.engine_defaults = input;
-            self
+        pub fn set_engine_defaults(mut self, input: std::option::Option<crate::model::EngineDefaults>) -> Self {
+            self.engine_defaults = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
         pub fn build(self) -> crate::output::DescribeEngineDefaultParametersOutput {
             crate::output::DescribeEngineDefaultParametersOutput {
-                engine_defaults: self.engine_defaults,
+                engine_defaults: self.engine_defaults
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEngineDefaultParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
@@ -2462,7 +2356,7 @@ impl DescribeEngineDefaultParametersOutput {
 /// <p>Represents the output of a <code>DescribeCacheSubnetGroups</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCacheSubnetGroupsOutput {
+pub struct DescribeCacheSubnetGroupsOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -2472,23 +2366,22 @@ pub struct DescribeCacheSubnetGroupsOutput {
 }
 impl DescribeCacheSubnetGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
-    pub fn cache_subnet_groups(&self) -> std::option::Option<&[crate::model::CacheSubnetGroup]> {
+    pub fn cache_subnet_groups(&self) -> std::option::Option<& [crate::model::CacheSubnetGroup]> {
         self.cache_subnet_groups.as_deref()
     }
 }
 /// See [`DescribeCacheSubnetGroupsOutput`](crate::output::DescribeCacheSubnetGroupsOutput).
 pub mod describe_cache_subnet_groups_output {
-
+    
     /// A builder for [`DescribeCacheSubnetGroupsOutput`](crate::output::DescribeCacheSubnetGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) cache_subnet_groups:
-            std::option::Option<std::vec::Vec<crate::model::CacheSubnetGroup>>,
+        pub(crate) cache_subnet_groups: std::option::Option<std::vec::Vec<crate::model::CacheSubnetGroup>>,
     }
     impl Builder {
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -2498,8 +2391,7 @@ pub mod describe_cache_subnet_groups_output {
         }
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `cache_subnet_groups`.
         ///
@@ -2508,26 +2400,26 @@ pub mod describe_cache_subnet_groups_output {
         /// <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
         pub fn cache_subnet_groups(mut self, input: crate::model::CacheSubnetGroup) -> Self {
             let mut v = self.cache_subnet_groups.unwrap_or_default();
-            v.push(input);
-            self.cache_subnet_groups = Some(v);
-            self
+                            v.push(input);
+                            self.cache_subnet_groups = Some(v);
+                            self
         }
         /// <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
-        pub fn set_cache_subnet_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CacheSubnetGroup>>,
-        ) -> Self {
-            self.cache_subnet_groups = input;
-            self
+        pub fn set_cache_subnet_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::CacheSubnetGroup>>) -> Self {
+            self.cache_subnet_groups = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCacheSubnetGroupsOutput`](crate::output::DescribeCacheSubnetGroupsOutput).
         pub fn build(self) -> crate::output::DescribeCacheSubnetGroupsOutput {
             crate::output::DescribeCacheSubnetGroupsOutput {
-                marker: self.marker,
-                cache_subnet_groups: self.cache_subnet_groups,
+                marker: self.marker
+                ,
+                cache_subnet_groups: self.cache_subnet_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCacheSubnetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheSubnetGroupsOutput`](crate::output::DescribeCacheSubnetGroupsOutput).
@@ -2539,7 +2431,7 @@ impl DescribeCacheSubnetGroupsOutput {
 /// <p>Represents the output of a <code>DescribeCacheSecurityGroups</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCacheSecurityGroupsOutput {
+pub struct DescribeCacheSecurityGroupsOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -2549,25 +2441,22 @@ pub struct DescribeCacheSecurityGroupsOutput {
 }
 impl DescribeCacheSecurityGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of cache security groups. Each element in the list contains detailed information about one group.</p>
-    pub fn cache_security_groups(
-        &self,
-    ) -> std::option::Option<&[crate::model::CacheSecurityGroup]> {
+    pub fn cache_security_groups(&self) -> std::option::Option<& [crate::model::CacheSecurityGroup]> {
         self.cache_security_groups.as_deref()
     }
 }
 /// See [`DescribeCacheSecurityGroupsOutput`](crate::output::DescribeCacheSecurityGroupsOutput).
 pub mod describe_cache_security_groups_output {
-
+    
     /// A builder for [`DescribeCacheSecurityGroupsOutput`](crate::output::DescribeCacheSecurityGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) cache_security_groups:
-            std::option::Option<std::vec::Vec<crate::model::CacheSecurityGroup>>,
+        pub(crate) cache_security_groups: std::option::Option<std::vec::Vec<crate::model::CacheSecurityGroup>>,
     }
     impl Builder {
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -2577,8 +2466,7 @@ pub mod describe_cache_security_groups_output {
         }
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `cache_security_groups`.
         ///
@@ -2587,26 +2475,26 @@ pub mod describe_cache_security_groups_output {
         /// <p>A list of cache security groups. Each element in the list contains detailed information about one group.</p>
         pub fn cache_security_groups(mut self, input: crate::model::CacheSecurityGroup) -> Self {
             let mut v = self.cache_security_groups.unwrap_or_default();
-            v.push(input);
-            self.cache_security_groups = Some(v);
-            self
+                            v.push(input);
+                            self.cache_security_groups = Some(v);
+                            self
         }
         /// <p>A list of cache security groups. Each element in the list contains detailed information about one group.</p>
-        pub fn set_cache_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CacheSecurityGroup>>,
-        ) -> Self {
-            self.cache_security_groups = input;
-            self
+        pub fn set_cache_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::CacheSecurityGroup>>) -> Self {
+            self.cache_security_groups = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCacheSecurityGroupsOutput`](crate::output::DescribeCacheSecurityGroupsOutput).
         pub fn build(self) -> crate::output::DescribeCacheSecurityGroupsOutput {
             crate::output::DescribeCacheSecurityGroupsOutput {
-                marker: self.marker,
-                cache_security_groups: self.cache_security_groups,
+                marker: self.marker
+                ,
+                cache_security_groups: self.cache_security_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCacheSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheSecurityGroupsOutput`](crate::output::DescribeCacheSecurityGroupsOutput).
@@ -2618,7 +2506,7 @@ impl DescribeCacheSecurityGroupsOutput {
 /// <p>Represents the output of a <code>DescribeCacheParameters</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCacheParametersOutput {
+pub struct DescribeCacheParametersOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -2627,35 +2515,31 @@ pub struct DescribeCacheParametersOutput {
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
     #[doc(hidden)]
-    pub cache_node_type_specific_parameters:
-        std::option::Option<std::vec::Vec<crate::model::CacheNodeTypeSpecificParameter>>,
+    pub cache_node_type_specific_parameters: std::option::Option<std::vec::Vec<crate::model::CacheNodeTypeSpecificParameter>>,
 }
 impl DescribeCacheParametersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>Parameter</code> instances.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::Parameter]> {
         self.parameters.as_deref()
     }
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    pub fn cache_node_type_specific_parameters(
-        &self,
-    ) -> std::option::Option<&[crate::model::CacheNodeTypeSpecificParameter]> {
+    pub fn cache_node_type_specific_parameters(&self) -> std::option::Option<& [crate::model::CacheNodeTypeSpecificParameter]> {
         self.cache_node_type_specific_parameters.as_deref()
     }
 }
 /// See [`DescribeCacheParametersOutput`](crate::output::DescribeCacheParametersOutput).
 pub mod describe_cache_parameters_output {
-
+    
     /// A builder for [`DescribeCacheParametersOutput`](crate::output::DescribeCacheParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-        pub(crate) cache_node_type_specific_parameters:
-            std::option::Option<std::vec::Vec<crate::model::CacheNodeTypeSpecificParameter>>,
+        pub(crate) cache_node_type_specific_parameters: std::option::Option<std::vec::Vec<crate::model::CacheNodeTypeSpecificParameter>>,
     }
     impl Builder {
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -2665,8 +2549,7 @@ pub mod describe_cache_parameters_output {
         }
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `parameters`.
         ///
@@ -2675,49 +2558,43 @@ pub mod describe_cache_parameters_output {
         /// <p>A list of <code>Parameter</code> instances.</p>
         pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>A list of <code>Parameter</code> instances.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Parameter>>) -> Self {
+            self.parameters = input; self
         }
         /// Appends an item to `cache_node_type_specific_parameters`.
         ///
         /// To override the contents of this collection use [`set_cache_node_type_specific_parameters`](Self::set_cache_node_type_specific_parameters).
         ///
         /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-        pub fn cache_node_type_specific_parameters(
-            mut self,
-            input: crate::model::CacheNodeTypeSpecificParameter,
-        ) -> Self {
+        pub fn cache_node_type_specific_parameters(mut self, input: crate::model::CacheNodeTypeSpecificParameter) -> Self {
             let mut v = self.cache_node_type_specific_parameters.unwrap_or_default();
-            v.push(input);
-            self.cache_node_type_specific_parameters = Some(v);
-            self
+                            v.push(input);
+                            self.cache_node_type_specific_parameters = Some(v);
+                            self
         }
         /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-        pub fn set_cache_node_type_specific_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CacheNodeTypeSpecificParameter>>,
-        ) -> Self {
-            self.cache_node_type_specific_parameters = input;
-            self
+        pub fn set_cache_node_type_specific_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::CacheNodeTypeSpecificParameter>>) -> Self {
+            self.cache_node_type_specific_parameters = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCacheParametersOutput`](crate::output::DescribeCacheParametersOutput).
         pub fn build(self) -> crate::output::DescribeCacheParametersOutput {
             crate::output::DescribeCacheParametersOutput {
-                marker: self.marker,
-                parameters: self.parameters,
-                cache_node_type_specific_parameters: self.cache_node_type_specific_parameters,
+                marker: self.marker
+                ,
+                parameters: self.parameters
+                ,
+                cache_node_type_specific_parameters: self.cache_node_type_specific_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCacheParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheParametersOutput`](crate::output::DescribeCacheParametersOutput).
@@ -2729,36 +2606,32 @@ impl DescribeCacheParametersOutput {
 /// <p>Represents the output of a <code>DescribeCacheParameterGroups</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCacheParameterGroupsOutput {
+pub struct DescribeCacheParameterGroupsOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
     #[doc(hidden)]
-    pub cache_parameter_groups:
-        std::option::Option<std::vec::Vec<crate::model::CacheParameterGroup>>,
+    pub cache_parameter_groups: std::option::Option<std::vec::Vec<crate::model::CacheParameterGroup>>,
 }
 impl DescribeCacheParameterGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
-    pub fn cache_parameter_groups(
-        &self,
-    ) -> std::option::Option<&[crate::model::CacheParameterGroup]> {
+    pub fn cache_parameter_groups(&self) -> std::option::Option<& [crate::model::CacheParameterGroup]> {
         self.cache_parameter_groups.as_deref()
     }
 }
 /// See [`DescribeCacheParameterGroupsOutput`](crate::output::DescribeCacheParameterGroupsOutput).
 pub mod describe_cache_parameter_groups_output {
-
+    
     /// A builder for [`DescribeCacheParameterGroupsOutput`](crate::output::DescribeCacheParameterGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) cache_parameter_groups:
-            std::option::Option<std::vec::Vec<crate::model::CacheParameterGroup>>,
+        pub(crate) cache_parameter_groups: std::option::Option<std::vec::Vec<crate::model::CacheParameterGroup>>,
     }
     impl Builder {
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -2768,8 +2641,7 @@ pub mod describe_cache_parameter_groups_output {
         }
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `cache_parameter_groups`.
         ///
@@ -2778,26 +2650,26 @@ pub mod describe_cache_parameter_groups_output {
         /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
         pub fn cache_parameter_groups(mut self, input: crate::model::CacheParameterGroup) -> Self {
             let mut v = self.cache_parameter_groups.unwrap_or_default();
-            v.push(input);
-            self.cache_parameter_groups = Some(v);
-            self
+                            v.push(input);
+                            self.cache_parameter_groups = Some(v);
+                            self
         }
         /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
-        pub fn set_cache_parameter_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CacheParameterGroup>>,
-        ) -> Self {
-            self.cache_parameter_groups = input;
-            self
+        pub fn set_cache_parameter_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::CacheParameterGroup>>) -> Self {
+            self.cache_parameter_groups = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCacheParameterGroupsOutput`](crate::output::DescribeCacheParameterGroupsOutput).
         pub fn build(self) -> crate::output::DescribeCacheParameterGroupsOutput {
             crate::output::DescribeCacheParameterGroupsOutput {
-                marker: self.marker,
-                cache_parameter_groups: self.cache_parameter_groups,
+                marker: self.marker
+                ,
+                cache_parameter_groups: self.cache_parameter_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCacheParameterGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheParameterGroupsOutput`](crate::output::DescribeCacheParameterGroupsOutput).
@@ -2809,7 +2681,7 @@ impl DescribeCacheParameterGroupsOutput {
 /// <p>Represents the output of a <code>DescribeCacheEngineVersions</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCacheEngineVersionsOutput {
+pub struct DescribeCacheEngineVersionsOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -2819,25 +2691,22 @@ pub struct DescribeCacheEngineVersionsOutput {
 }
 impl DescribeCacheEngineVersionsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
-    pub fn cache_engine_versions(
-        &self,
-    ) -> std::option::Option<&[crate::model::CacheEngineVersion]> {
+    pub fn cache_engine_versions(&self) -> std::option::Option<& [crate::model::CacheEngineVersion]> {
         self.cache_engine_versions.as_deref()
     }
 }
 /// See [`DescribeCacheEngineVersionsOutput`](crate::output::DescribeCacheEngineVersionsOutput).
 pub mod describe_cache_engine_versions_output {
-
+    
     /// A builder for [`DescribeCacheEngineVersionsOutput`](crate::output::DescribeCacheEngineVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) cache_engine_versions:
-            std::option::Option<std::vec::Vec<crate::model::CacheEngineVersion>>,
+        pub(crate) cache_engine_versions: std::option::Option<std::vec::Vec<crate::model::CacheEngineVersion>>,
     }
     impl Builder {
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -2847,8 +2716,7 @@ pub mod describe_cache_engine_versions_output {
         }
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `cache_engine_versions`.
         ///
@@ -2857,26 +2725,26 @@ pub mod describe_cache_engine_versions_output {
         /// <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
         pub fn cache_engine_versions(mut self, input: crate::model::CacheEngineVersion) -> Self {
             let mut v = self.cache_engine_versions.unwrap_or_default();
-            v.push(input);
-            self.cache_engine_versions = Some(v);
-            self
+                            v.push(input);
+                            self.cache_engine_versions = Some(v);
+                            self
         }
         /// <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
-        pub fn set_cache_engine_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CacheEngineVersion>>,
-        ) -> Self {
-            self.cache_engine_versions = input;
-            self
+        pub fn set_cache_engine_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::CacheEngineVersion>>) -> Self {
+            self.cache_engine_versions = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCacheEngineVersionsOutput`](crate::output::DescribeCacheEngineVersionsOutput).
         pub fn build(self) -> crate::output::DescribeCacheEngineVersionsOutput {
             crate::output::DescribeCacheEngineVersionsOutput {
-                marker: self.marker,
-                cache_engine_versions: self.cache_engine_versions,
+                marker: self.marker
+                ,
+                cache_engine_versions: self.cache_engine_versions
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCacheEngineVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheEngineVersionsOutput`](crate::output::DescribeCacheEngineVersionsOutput).
@@ -2888,7 +2756,7 @@ impl DescribeCacheEngineVersionsOutput {
 /// <p>Represents the output of a <code>DescribeCacheClusters</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCacheClustersOutput {
+pub struct DescribeCacheClustersOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -2898,17 +2766,17 @@ pub struct DescribeCacheClustersOutput {
 }
 impl DescribeCacheClustersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
-    pub fn cache_clusters(&self) -> std::option::Option<&[crate::model::CacheCluster]> {
+    pub fn cache_clusters(&self) -> std::option::Option<& [crate::model::CacheCluster]> {
         self.cache_clusters.as_deref()
     }
 }
 /// See [`DescribeCacheClustersOutput`](crate::output::DescribeCacheClustersOutput).
 pub mod describe_cache_clusters_output {
-
+    
     /// A builder for [`DescribeCacheClustersOutput`](crate::output::DescribeCacheClustersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2923,8 +2791,7 @@ pub mod describe_cache_clusters_output {
         }
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `cache_clusters`.
         ///
@@ -2933,26 +2800,26 @@ pub mod describe_cache_clusters_output {
         /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
         pub fn cache_clusters(mut self, input: crate::model::CacheCluster) -> Self {
             let mut v = self.cache_clusters.unwrap_or_default();
-            v.push(input);
-            self.cache_clusters = Some(v);
-            self
+                            v.push(input);
+                            self.cache_clusters = Some(v);
+                            self
         }
         /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
-        pub fn set_cache_clusters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CacheCluster>>,
-        ) -> Self {
-            self.cache_clusters = input;
-            self
+        pub fn set_cache_clusters(mut self, input: std::option::Option<std::vec::Vec<crate::model::CacheCluster>>) -> Self {
+            self.cache_clusters = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCacheClustersOutput`](crate::output::DescribeCacheClustersOutput).
         pub fn build(self) -> crate::output::DescribeCacheClustersOutput {
             crate::output::DescribeCacheClustersOutput {
-                marker: self.marker,
-                cache_clusters: self.cache_clusters,
+                marker: self.marker
+                ,
+                cache_clusters: self.cache_clusters
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCacheClustersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheClustersOutput`](crate::output::DescribeCacheClustersOutput).
@@ -2964,7 +2831,7 @@ impl DescribeCacheClustersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserGroupOutput {
+pub struct DeleteUserGroupOutput  {
     /// <p>The ID of the user group.</p>
     #[doc(hidden)]
     pub user_group_id: std::option::Option<std::string::String>,
@@ -2992,41 +2859,41 @@ pub struct DeleteUserGroupOutput {
 }
 impl DeleteUserGroupOutput {
     /// <p>The ID of the user group.</p>
-    pub fn user_group_id(&self) -> std::option::Option<&str> {
+    pub fn user_group_id(&self) -> std::option::Option<& str> {
         self.user_group_id.as_deref()
     }
     /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The current supported value is Redis. </p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The list of user IDs that belong to the user group.</p>
-    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn user_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.user_ids.as_deref()
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+    pub fn minimum_engine_version(&self) -> std::option::Option<& str> {
         self.minimum_engine_version.as_deref()
     }
     /// <p>A list of updates being applied to the user group.</p>
-    pub fn pending_changes(&self) -> std::option::Option<&crate::model::UserGroupPendingChanges> {
+    pub fn pending_changes(&self) -> std::option::Option<& crate::model::UserGroupPendingChanges> {
         self.pending_changes.as_ref()
     }
     /// <p>A list of replication groups that the user group can access.</p>
-    pub fn replication_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn replication_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.replication_groups.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`DeleteUserGroupOutput`](crate::output::DeleteUserGroupOutput).
 pub mod delete_user_group_output {
-
+    
     /// A builder for [`DeleteUserGroupOutput`](crate::output::DeleteUserGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3046,12 +2913,8 @@ pub mod delete_user_group_output {
             self
         }
         /// <p>The ID of the user group.</p>
-        pub fn set_user_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.user_group_id = input;
-            self
+        pub fn set_user_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_group_id = input; self
         }
         /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3060,8 +2923,7 @@ pub mod delete_user_group_output {
         }
         /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The current supported value is Redis. </p>
         pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3070,8 +2932,7 @@ pub mod delete_user_group_output {
         }
         /// <p>The current supported value is Redis. </p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.engine = input;
-            self
+            self.engine = input; self
         }
         /// Appends an item to `user_ids`.
         ///
@@ -3080,17 +2941,13 @@ pub mod delete_user_group_output {
         /// <p>The list of user IDs that belong to the user group.</p>
         pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_ids.unwrap_or_default();
-            v.push(input.into());
-            self.user_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.user_ids = Some(v);
+                            self
         }
         /// <p>The list of user IDs that belong to the user group.</p>
-        pub fn set_user_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.user_ids = input;
-            self
+        pub fn set_user_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.user_ids = input; self
         }
         /// <p>The minimum engine version required, which is Redis 6.0</p>
         pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3098,12 +2955,8 @@ pub mod delete_user_group_output {
             self
         }
         /// <p>The minimum engine version required, which is Redis 6.0</p>
-        pub fn set_minimum_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.minimum_engine_version = input;
-            self
+        pub fn set_minimum_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.minimum_engine_version = input; self
         }
         /// <p>A list of updates being applied to the user group.</p>
         pub fn pending_changes(mut self, input: crate::model::UserGroupPendingChanges) -> Self {
@@ -3111,12 +2964,8 @@ pub mod delete_user_group_output {
             self
         }
         /// <p>A list of updates being applied to the user group.</p>
-        pub fn set_pending_changes(
-            mut self,
-            input: std::option::Option<crate::model::UserGroupPendingChanges>,
-        ) -> Self {
-            self.pending_changes = input;
-            self
+        pub fn set_pending_changes(mut self, input: std::option::Option<crate::model::UserGroupPendingChanges>) -> Self {
+            self.pending_changes = input; self
         }
         /// Appends an item to `replication_groups`.
         ///
@@ -3125,17 +2974,13 @@ pub mod delete_user_group_output {
         /// <p>A list of replication groups that the user group can access.</p>
         pub fn replication_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.replication_groups.unwrap_or_default();
-            v.push(input.into());
-            self.replication_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.replication_groups = Some(v);
+                            self
         }
         /// <p>A list of replication groups that the user group can access.</p>
-        pub fn set_replication_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.replication_groups = input;
-            self
+        pub fn set_replication_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.replication_groups = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user group.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3144,23 +2989,32 @@ pub mod delete_user_group_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the user group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteUserGroupOutput`](crate::output::DeleteUserGroupOutput).
         pub fn build(self) -> crate::output::DeleteUserGroupOutput {
             crate::output::DeleteUserGroupOutput {
-                user_group_id: self.user_group_id,
-                status: self.status,
-                engine: self.engine,
-                user_ids: self.user_ids,
-                minimum_engine_version: self.minimum_engine_version,
-                pending_changes: self.pending_changes,
-                replication_groups: self.replication_groups,
-                arn: self.arn,
+                user_group_id: self.user_group_id
+                ,
+                status: self.status
+                ,
+                engine: self.engine
+                ,
+                user_ids: self.user_ids
+                ,
+                minimum_engine_version: self.minimum_engine_version
+                ,
+                pending_changes: self.pending_changes
+                ,
+                replication_groups: self.replication_groups
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteUserGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserGroupOutput`](crate::output::DeleteUserGroupOutput).
@@ -3172,7 +3026,7 @@ impl DeleteUserGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserOutput {
+pub struct DeleteUserOutput  {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -3203,45 +3057,45 @@ pub struct DeleteUserOutput {
 }
 impl DeleteUserOutput {
     /// <p>The ID of the user.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The username of the user.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The current supported value is Redis.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+    pub fn minimum_engine_version(&self) -> std::option::Option<& str> {
         self.minimum_engine_version.as_deref()
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(&self) -> std::option::Option<&str> {
+    pub fn access_string(&self) -> std::option::Option<& str> {
         self.access_string.as_deref()
     }
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
-    pub fn user_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn user_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.user_group_ids.as_deref()
     }
     /// <p>Denotes whether the user requires a password to authenticate.</p>
-    pub fn authentication(&self) -> std::option::Option<&crate::model::Authentication> {
+    pub fn authentication(&self) -> std::option::Option<& crate::model::Authentication> {
         self.authentication.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`DeleteUserOutput`](crate::output::DeleteUserOutput).
 pub mod delete_user_output {
-
+    
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3263,8 +3117,7 @@ pub mod delete_user_output {
         }
         /// <p>The ID of the user.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
         /// <p>The username of the user.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3273,8 +3126,7 @@ pub mod delete_user_output {
         }
         /// <p>The username of the user.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_name = input;
-            self
+            self.user_name = input; self
         }
         /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3283,8 +3135,7 @@ pub mod delete_user_output {
         }
         /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The current supported value is Redis.</p>
         pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3293,8 +3144,7 @@ pub mod delete_user_output {
         }
         /// <p>The current supported value is Redis.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.engine = input;
-            self
+            self.engine = input; self
         }
         /// <p>The minimum engine version required, which is Redis 6.0</p>
         pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3302,12 +3152,8 @@ pub mod delete_user_output {
             self
         }
         /// <p>The minimum engine version required, which is Redis 6.0</p>
-        pub fn set_minimum_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.minimum_engine_version = input;
-            self
+        pub fn set_minimum_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.minimum_engine_version = input; self
         }
         /// <p>Access permissions string used for this user.</p>
         pub fn access_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3315,12 +3161,8 @@ pub mod delete_user_output {
             self
         }
         /// <p>Access permissions string used for this user.</p>
-        pub fn set_access_string(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_string = input;
-            self
+        pub fn set_access_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_string = input; self
         }
         /// Appends an item to `user_group_ids`.
         ///
@@ -3329,17 +3171,13 @@ pub mod delete_user_output {
         /// <p>Returns a list of the user group IDs the user belongs to.</p>
         pub fn user_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.user_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.user_group_ids = Some(v);
+                            self
         }
         /// <p>Returns a list of the user group IDs the user belongs to.</p>
-        pub fn set_user_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.user_group_ids = input;
-            self
+        pub fn set_user_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.user_group_ids = input; self
         }
         /// <p>Denotes whether the user requires a password to authenticate.</p>
         pub fn authentication(mut self, input: crate::model::Authentication) -> Self {
@@ -3347,12 +3185,8 @@ pub mod delete_user_output {
             self
         }
         /// <p>Denotes whether the user requires a password to authenticate.</p>
-        pub fn set_authentication(
-            mut self,
-            input: std::option::Option<crate::model::Authentication>,
-        ) -> Self {
-            self.authentication = input;
-            self
+        pub fn set_authentication(mut self, input: std::option::Option<crate::model::Authentication>) -> Self {
+            self.authentication = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3361,24 +3195,34 @@ pub mod delete_user_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the user.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteUserOutput`](crate::output::DeleteUserOutput).
         pub fn build(self) -> crate::output::DeleteUserOutput {
             crate::output::DeleteUserOutput {
-                user_id: self.user_id,
-                user_name: self.user_name,
-                status: self.status,
-                engine: self.engine,
-                minimum_engine_version: self.minimum_engine_version,
-                access_string: self.access_string,
-                user_group_ids: self.user_group_ids,
-                authentication: self.authentication,
-                arn: self.arn,
+                user_id: self.user_id
+                ,
+                user_name: self.user_name
+                ,
+                status: self.status
+                ,
+                engine: self.engine
+                ,
+                minimum_engine_version: self.minimum_engine_version
+                ,
+                access_string: self.access_string
+                ,
+                user_group_ids: self.user_group_ids
+                ,
+                authentication: self.authentication
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteUserOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserOutput`](crate::output::DeleteUserOutput).
@@ -3390,20 +3234,20 @@ impl DeleteUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSnapshotOutput {
+pub struct DeleteSnapshotOutput  {
     /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
     #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl DeleteSnapshotOutput {
     /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
-    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+    pub fn snapshot(&self) -> std::option::Option<& crate::model::Snapshot> {
         self.snapshot.as_ref()
     }
 }
 /// See [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
 pub mod delete_snapshot_output {
-
+    
     /// A builder for [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3417,16 +3261,18 @@ pub mod delete_snapshot_output {
         }
         /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
         pub fn set_snapshot(mut self, input: std::option::Option<crate::model::Snapshot>) -> Self {
-            self.snapshot = input;
-            self
+            self.snapshot = input; self
         }
         /// Consumes the builder and constructs a [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
         pub fn build(self) -> crate::output::DeleteSnapshotOutput {
             crate::output::DeleteSnapshotOutput {
-                snapshot: self.snapshot,
+                snapshot: self.snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
@@ -3438,20 +3284,20 @@ impl DeleteSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReplicationGroupOutput {
+pub struct DeleteReplicationGroupOutput  {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl DeleteReplicationGroupOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+    pub fn replication_group(&self) -> std::option::Option<& crate::model::ReplicationGroup> {
         self.replication_group.as_ref()
     }
 }
 /// See [`DeleteReplicationGroupOutput`](crate::output::DeleteReplicationGroupOutput).
 pub mod delete_replication_group_output {
-
+    
     /// A builder for [`DeleteReplicationGroupOutput`](crate::output::DeleteReplicationGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3464,20 +3310,19 @@ pub mod delete_replication_group_output {
             self
         }
         /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-        pub fn set_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationGroup>,
-        ) -> Self {
-            self.replication_group = input;
-            self
+        pub fn set_replication_group(mut self, input: std::option::Option<crate::model::ReplicationGroup>) -> Self {
+            self.replication_group = input; self
         }
         /// Consumes the builder and constructs a [`DeleteReplicationGroupOutput`](crate::output::DeleteReplicationGroupOutput).
         pub fn build(self) -> crate::output::DeleteReplicationGroupOutput {
             crate::output::DeleteReplicationGroupOutput {
-                replication_group: self.replication_group,
+                replication_group: self.replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteReplicationGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationGroupOutput`](crate::output::DeleteReplicationGroupOutput).
@@ -3489,64 +3334,57 @@ impl DeleteReplicationGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-    /// <ul>
-    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+pub struct DeleteGlobalReplicationGroupOutput  {
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+    /// <ul> 
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl DeleteGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-    /// <ul>
-    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+    /// <ul> 
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
     /// </ul>
-    pub fn global_replication_group(
-        &self,
-    ) -> std::option::Option<&crate::model::GlobalReplicationGroup> {
+    pub fn global_replication_group(&self) -> std::option::Option<& crate::model::GlobalReplicationGroup> {
         self.global_replication_group.as_ref()
     }
 }
 /// See [`DeleteGlobalReplicationGroupOutput`](crate::output::DeleteGlobalReplicationGroupOutput).
 pub mod delete_global_replication_group_output {
-
+    
     /// A builder for [`DeleteGlobalReplicationGroupOutput`](crate::output::DeleteGlobalReplicationGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) global_replication_group:
-            std::option::Option<crate::model::GlobalReplicationGroup>,
+        pub(crate) global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-        /// <ul>
-        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+        /// <ul> 
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
         /// </ul>
-        pub fn global_replication_group(
-            mut self,
-            input: crate::model::GlobalReplicationGroup,
-        ) -> Self {
+        pub fn global_replication_group(mut self, input: crate::model::GlobalReplicationGroup) -> Self {
             self.global_replication_group = Some(input);
             self
         }
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-        /// <ul>
-        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+        /// <ul> 
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
         /// </ul>
-        pub fn set_global_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::GlobalReplicationGroup>,
-        ) -> Self {
-            self.global_replication_group = input;
-            self
+        pub fn set_global_replication_group(mut self, input: std::option::Option<crate::model::GlobalReplicationGroup>) -> Self {
+            self.global_replication_group = input; self
         }
         /// Consumes the builder and constructs a [`DeleteGlobalReplicationGroupOutput`](crate::output::DeleteGlobalReplicationGroupOutput).
         pub fn build(self) -> crate::output::DeleteGlobalReplicationGroupOutput {
             crate::output::DeleteGlobalReplicationGroupOutput {
-                global_replication_group: self.global_replication_group,
+                global_replication_group: self.global_replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteGlobalReplicationGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGlobalReplicationGroupOutput`](crate::output::DeleteGlobalReplicationGroupOutput).
@@ -3558,19 +3396,24 @@ impl DeleteGlobalReplicationGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCacheSubnetGroupOutput {}
+pub struct DeleteCacheSubnetGroupOutput  {
+}
 /// See [`DeleteCacheSubnetGroupOutput`](crate::output::DeleteCacheSubnetGroupOutput).
 pub mod delete_cache_subnet_group_output {
-
+    
     /// A builder for [`DeleteCacheSubnetGroupOutput`](crate::output::DeleteCacheSubnetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCacheSubnetGroupOutput`](crate::output::DeleteCacheSubnetGroupOutput).
         pub fn build(self) -> crate::output::DeleteCacheSubnetGroupOutput {
-            crate::output::DeleteCacheSubnetGroupOutput {}
+            crate::output::DeleteCacheSubnetGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCacheSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCacheSubnetGroupOutput`](crate::output::DeleteCacheSubnetGroupOutput).
@@ -3582,19 +3425,24 @@ impl DeleteCacheSubnetGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCacheSecurityGroupOutput {}
+pub struct DeleteCacheSecurityGroupOutput  {
+}
 /// See [`DeleteCacheSecurityGroupOutput`](crate::output::DeleteCacheSecurityGroupOutput).
 pub mod delete_cache_security_group_output {
-
+    
     /// A builder for [`DeleteCacheSecurityGroupOutput`](crate::output::DeleteCacheSecurityGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCacheSecurityGroupOutput`](crate::output::DeleteCacheSecurityGroupOutput).
         pub fn build(self) -> crate::output::DeleteCacheSecurityGroupOutput {
-            crate::output::DeleteCacheSecurityGroupOutput {}
+            crate::output::DeleteCacheSecurityGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCacheSecurityGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCacheSecurityGroupOutput`](crate::output::DeleteCacheSecurityGroupOutput).
@@ -3606,19 +3454,24 @@ impl DeleteCacheSecurityGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCacheParameterGroupOutput {}
+pub struct DeleteCacheParameterGroupOutput  {
+}
 /// See [`DeleteCacheParameterGroupOutput`](crate::output::DeleteCacheParameterGroupOutput).
 pub mod delete_cache_parameter_group_output {
-
+    
     /// A builder for [`DeleteCacheParameterGroupOutput`](crate::output::DeleteCacheParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCacheParameterGroupOutput`](crate::output::DeleteCacheParameterGroupOutput).
         pub fn build(self) -> crate::output::DeleteCacheParameterGroupOutput {
-            crate::output::DeleteCacheParameterGroupOutput {}
+            crate::output::DeleteCacheParameterGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCacheParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCacheParameterGroupOutput`](crate::output::DeleteCacheParameterGroupOutput).
@@ -3630,20 +3483,20 @@ impl DeleteCacheParameterGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCacheClusterOutput {
+pub struct DeleteCacheClusterOutput  {
     /// <p>Contains all of the attributes of a specific cluster.</p>
     #[doc(hidden)]
     pub cache_cluster: std::option::Option<crate::model::CacheCluster>,
 }
 impl DeleteCacheClusterOutput {
     /// <p>Contains all of the attributes of a specific cluster.</p>
-    pub fn cache_cluster(&self) -> std::option::Option<&crate::model::CacheCluster> {
+    pub fn cache_cluster(&self) -> std::option::Option<& crate::model::CacheCluster> {
         self.cache_cluster.as_ref()
     }
 }
 /// See [`DeleteCacheClusterOutput`](crate::output::DeleteCacheClusterOutput).
 pub mod delete_cache_cluster_output {
-
+    
     /// A builder for [`DeleteCacheClusterOutput`](crate::output::DeleteCacheClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3656,20 +3509,19 @@ pub mod delete_cache_cluster_output {
             self
         }
         /// <p>Contains all of the attributes of a specific cluster.</p>
-        pub fn set_cache_cluster(
-            mut self,
-            input: std::option::Option<crate::model::CacheCluster>,
-        ) -> Self {
-            self.cache_cluster = input;
-            self
+        pub fn set_cache_cluster(mut self, input: std::option::Option<crate::model::CacheCluster>) -> Self {
+            self.cache_cluster = input; self
         }
         /// Consumes the builder and constructs a [`DeleteCacheClusterOutput`](crate::output::DeleteCacheClusterOutput).
         pub fn build(self) -> crate::output::DeleteCacheClusterOutput {
             crate::output::DeleteCacheClusterOutput {
-                cache_cluster: self.cache_cluster,
+                cache_cluster: self.cache_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteCacheClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCacheClusterOutput`](crate::output::DeleteCacheClusterOutput).
@@ -3681,20 +3533,20 @@ impl DeleteCacheClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DecreaseReplicaCountOutput {
+pub struct DecreaseReplicaCountOutput  {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl DecreaseReplicaCountOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+    pub fn replication_group(&self) -> std::option::Option<& crate::model::ReplicationGroup> {
         self.replication_group.as_ref()
     }
 }
 /// See [`DecreaseReplicaCountOutput`](crate::output::DecreaseReplicaCountOutput).
 pub mod decrease_replica_count_output {
-
+    
     /// A builder for [`DecreaseReplicaCountOutput`](crate::output::DecreaseReplicaCountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3707,20 +3559,19 @@ pub mod decrease_replica_count_output {
             self
         }
         /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-        pub fn set_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationGroup>,
-        ) -> Self {
-            self.replication_group = input;
-            self
+        pub fn set_replication_group(mut self, input: std::option::Option<crate::model::ReplicationGroup>) -> Self {
+            self.replication_group = input; self
         }
         /// Consumes the builder and constructs a [`DecreaseReplicaCountOutput`](crate::output::DecreaseReplicaCountOutput).
         pub fn build(self) -> crate::output::DecreaseReplicaCountOutput {
             crate::output::DecreaseReplicaCountOutput {
-                replication_group: self.replication_group,
+                replication_group: self.replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl DecreaseReplicaCountOutput {
     /// Creates a new builder-style object to manufacture [`DecreaseReplicaCountOutput`](crate::output::DecreaseReplicaCountOutput).
@@ -3732,69 +3583,61 @@ impl DecreaseReplicaCountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DecreaseNodeGroupsInGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-    /// <ul>
-    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+pub struct DecreaseNodeGroupsInGlobalReplicationGroupOutput  {
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+    /// <ul> 
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl DecreaseNodeGroupsInGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-    /// <ul>
-    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+    /// <ul> 
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
     /// </ul>
-    pub fn global_replication_group(
-        &self,
-    ) -> std::option::Option<&crate::model::GlobalReplicationGroup> {
+    pub fn global_replication_group(&self) -> std::option::Option<& crate::model::GlobalReplicationGroup> {
         self.global_replication_group.as_ref()
     }
 }
 /// See [`DecreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::output::DecreaseNodeGroupsInGlobalReplicationGroupOutput).
 pub mod decrease_node_groups_in_global_replication_group_output {
-
+    
     /// A builder for [`DecreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::output::DecreaseNodeGroupsInGlobalReplicationGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) global_replication_group:
-            std::option::Option<crate::model::GlobalReplicationGroup>,
+        pub(crate) global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-        /// <ul>
-        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+        /// <ul> 
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
         /// </ul>
-        pub fn global_replication_group(
-            mut self,
-            input: crate::model::GlobalReplicationGroup,
-        ) -> Self {
+        pub fn global_replication_group(mut self, input: crate::model::GlobalReplicationGroup) -> Self {
             self.global_replication_group = Some(input);
             self
         }
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-        /// <ul>
-        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+        /// <ul> 
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
         /// </ul>
-        pub fn set_global_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::GlobalReplicationGroup>,
-        ) -> Self {
-            self.global_replication_group = input;
-            self
+        pub fn set_global_replication_group(mut self, input: std::option::Option<crate::model::GlobalReplicationGroup>) -> Self {
+            self.global_replication_group = input; self
         }
         /// Consumes the builder and constructs a [`DecreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::output::DecreaseNodeGroupsInGlobalReplicationGroupOutput).
         pub fn build(self) -> crate::output::DecreaseNodeGroupsInGlobalReplicationGroupOutput {
             crate::output::DecreaseNodeGroupsInGlobalReplicationGroupOutput {
-                global_replication_group: self.global_replication_group,
+                global_replication_group: self.global_replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl DecreaseNodeGroupsInGlobalReplicationGroupOutput {
     /// Creates a new builder-style object to manufacture [`DecreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::output::DecreaseNodeGroupsInGlobalReplicationGroupOutput).
-    pub fn builder(
-    ) -> crate::output::decrease_node_groups_in_global_replication_group_output::Builder {
+    pub fn builder() -> crate::output::decrease_node_groups_in_global_replication_group_output::Builder {
         crate::output::decrease_node_groups_in_global_replication_group_output::Builder::default()
     }
 }
@@ -3802,7 +3645,7 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateUserGroupOutput {
+pub struct CreateUserGroupOutput  {
     /// <p>The ID of the user group.</p>
     #[doc(hidden)]
     pub user_group_id: std::option::Option<std::string::String>,
@@ -3830,41 +3673,41 @@ pub struct CreateUserGroupOutput {
 }
 impl CreateUserGroupOutput {
     /// <p>The ID of the user group.</p>
-    pub fn user_group_id(&self) -> std::option::Option<&str> {
+    pub fn user_group_id(&self) -> std::option::Option<& str> {
         self.user_group_id.as_deref()
     }
     /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The current supported value is Redis. </p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The list of user IDs that belong to the user group.</p>
-    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn user_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.user_ids.as_deref()
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+    pub fn minimum_engine_version(&self) -> std::option::Option<& str> {
         self.minimum_engine_version.as_deref()
     }
     /// <p>A list of updates being applied to the user group.</p>
-    pub fn pending_changes(&self) -> std::option::Option<&crate::model::UserGroupPendingChanges> {
+    pub fn pending_changes(&self) -> std::option::Option<& crate::model::UserGroupPendingChanges> {
         self.pending_changes.as_ref()
     }
     /// <p>A list of replication groups that the user group can access.</p>
-    pub fn replication_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn replication_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.replication_groups.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`CreateUserGroupOutput`](crate::output::CreateUserGroupOutput).
 pub mod create_user_group_output {
-
+    
     /// A builder for [`CreateUserGroupOutput`](crate::output::CreateUserGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3884,12 +3727,8 @@ pub mod create_user_group_output {
             self
         }
         /// <p>The ID of the user group.</p>
-        pub fn set_user_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.user_group_id = input;
-            self
+        pub fn set_user_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_group_id = input; self
         }
         /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3898,8 +3737,7 @@ pub mod create_user_group_output {
         }
         /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The current supported value is Redis. </p>
         pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3908,8 +3746,7 @@ pub mod create_user_group_output {
         }
         /// <p>The current supported value is Redis. </p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.engine = input;
-            self
+            self.engine = input; self
         }
         /// Appends an item to `user_ids`.
         ///
@@ -3918,17 +3755,13 @@ pub mod create_user_group_output {
         /// <p>The list of user IDs that belong to the user group.</p>
         pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_ids.unwrap_or_default();
-            v.push(input.into());
-            self.user_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.user_ids = Some(v);
+                            self
         }
         /// <p>The list of user IDs that belong to the user group.</p>
-        pub fn set_user_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.user_ids = input;
-            self
+        pub fn set_user_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.user_ids = input; self
         }
         /// <p>The minimum engine version required, which is Redis 6.0</p>
         pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3936,12 +3769,8 @@ pub mod create_user_group_output {
             self
         }
         /// <p>The minimum engine version required, which is Redis 6.0</p>
-        pub fn set_minimum_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.minimum_engine_version = input;
-            self
+        pub fn set_minimum_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.minimum_engine_version = input; self
         }
         /// <p>A list of updates being applied to the user group.</p>
         pub fn pending_changes(mut self, input: crate::model::UserGroupPendingChanges) -> Self {
@@ -3949,12 +3778,8 @@ pub mod create_user_group_output {
             self
         }
         /// <p>A list of updates being applied to the user group.</p>
-        pub fn set_pending_changes(
-            mut self,
-            input: std::option::Option<crate::model::UserGroupPendingChanges>,
-        ) -> Self {
-            self.pending_changes = input;
-            self
+        pub fn set_pending_changes(mut self, input: std::option::Option<crate::model::UserGroupPendingChanges>) -> Self {
+            self.pending_changes = input; self
         }
         /// Appends an item to `replication_groups`.
         ///
@@ -3963,17 +3788,13 @@ pub mod create_user_group_output {
         /// <p>A list of replication groups that the user group can access.</p>
         pub fn replication_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.replication_groups.unwrap_or_default();
-            v.push(input.into());
-            self.replication_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.replication_groups = Some(v);
+                            self
         }
         /// <p>A list of replication groups that the user group can access.</p>
-        pub fn set_replication_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.replication_groups = input;
-            self
+        pub fn set_replication_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.replication_groups = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user group.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3982,23 +3803,32 @@ pub mod create_user_group_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the user group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateUserGroupOutput`](crate::output::CreateUserGroupOutput).
         pub fn build(self) -> crate::output::CreateUserGroupOutput {
             crate::output::CreateUserGroupOutput {
-                user_group_id: self.user_group_id,
-                status: self.status,
-                engine: self.engine,
-                user_ids: self.user_ids,
-                minimum_engine_version: self.minimum_engine_version,
-                pending_changes: self.pending_changes,
-                replication_groups: self.replication_groups,
-                arn: self.arn,
+                user_group_id: self.user_group_id
+                ,
+                status: self.status
+                ,
+                engine: self.engine
+                ,
+                user_ids: self.user_ids
+                ,
+                minimum_engine_version: self.minimum_engine_version
+                ,
+                pending_changes: self.pending_changes
+                ,
+                replication_groups: self.replication_groups
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateUserGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserGroupOutput`](crate::output::CreateUserGroupOutput).
@@ -4010,7 +3840,7 @@ impl CreateUserGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateUserOutput {
+pub struct CreateUserOutput  {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -4041,45 +3871,45 @@ pub struct CreateUserOutput {
 }
 impl CreateUserOutput {
     /// <p>The ID of the user.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The username of the user.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The current supported value is Redis.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+    pub fn minimum_engine_version(&self) -> std::option::Option<& str> {
         self.minimum_engine_version.as_deref()
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(&self) -> std::option::Option<&str> {
+    pub fn access_string(&self) -> std::option::Option<& str> {
         self.access_string.as_deref()
     }
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
-    pub fn user_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn user_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.user_group_ids.as_deref()
     }
     /// <p>Denotes whether the user requires a password to authenticate.</p>
-    pub fn authentication(&self) -> std::option::Option<&crate::model::Authentication> {
+    pub fn authentication(&self) -> std::option::Option<& crate::model::Authentication> {
         self.authentication.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`CreateUserOutput`](crate::output::CreateUserOutput).
 pub mod create_user_output {
-
+    
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4101,8 +3931,7 @@ pub mod create_user_output {
         }
         /// <p>The ID of the user.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
         /// <p>The username of the user.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4111,8 +3940,7 @@ pub mod create_user_output {
         }
         /// <p>The username of the user.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_name = input;
-            self
+            self.user_name = input; self
         }
         /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4121,8 +3949,7 @@ pub mod create_user_output {
         }
         /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The current supported value is Redis.</p>
         pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4131,8 +3958,7 @@ pub mod create_user_output {
         }
         /// <p>The current supported value is Redis.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.engine = input;
-            self
+            self.engine = input; self
         }
         /// <p>The minimum engine version required, which is Redis 6.0</p>
         pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4140,12 +3966,8 @@ pub mod create_user_output {
             self
         }
         /// <p>The minimum engine version required, which is Redis 6.0</p>
-        pub fn set_minimum_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.minimum_engine_version = input;
-            self
+        pub fn set_minimum_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.minimum_engine_version = input; self
         }
         /// <p>Access permissions string used for this user.</p>
         pub fn access_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4153,12 +3975,8 @@ pub mod create_user_output {
             self
         }
         /// <p>Access permissions string used for this user.</p>
-        pub fn set_access_string(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_string = input;
-            self
+        pub fn set_access_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_string = input; self
         }
         /// Appends an item to `user_group_ids`.
         ///
@@ -4167,17 +3985,13 @@ pub mod create_user_output {
         /// <p>Returns a list of the user group IDs the user belongs to.</p>
         pub fn user_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.user_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.user_group_ids = Some(v);
+                            self
         }
         /// <p>Returns a list of the user group IDs the user belongs to.</p>
-        pub fn set_user_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.user_group_ids = input;
-            self
+        pub fn set_user_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.user_group_ids = input; self
         }
         /// <p>Denotes whether the user requires a password to authenticate.</p>
         pub fn authentication(mut self, input: crate::model::Authentication) -> Self {
@@ -4185,12 +3999,8 @@ pub mod create_user_output {
             self
         }
         /// <p>Denotes whether the user requires a password to authenticate.</p>
-        pub fn set_authentication(
-            mut self,
-            input: std::option::Option<crate::model::Authentication>,
-        ) -> Self {
-            self.authentication = input;
-            self
+        pub fn set_authentication(mut self, input: std::option::Option<crate::model::Authentication>) -> Self {
+            self.authentication = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4199,24 +4009,34 @@ pub mod create_user_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the user.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateUserOutput`](crate::output::CreateUserOutput).
         pub fn build(self) -> crate::output::CreateUserOutput {
             crate::output::CreateUserOutput {
-                user_id: self.user_id,
-                user_name: self.user_name,
-                status: self.status,
-                engine: self.engine,
-                minimum_engine_version: self.minimum_engine_version,
-                access_string: self.access_string,
-                user_group_ids: self.user_group_ids,
-                authentication: self.authentication,
-                arn: self.arn,
+                user_id: self.user_id
+                ,
+                user_name: self.user_name
+                ,
+                status: self.status
+                ,
+                engine: self.engine
+                ,
+                minimum_engine_version: self.minimum_engine_version
+                ,
+                access_string: self.access_string
+                ,
+                user_group_ids: self.user_group_ids
+                ,
+                authentication: self.authentication
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateUserOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserOutput`](crate::output::CreateUserOutput).
@@ -4228,20 +4048,20 @@ impl CreateUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSnapshotOutput {
+pub struct CreateSnapshotOutput  {
     /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
     #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl CreateSnapshotOutput {
     /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
-    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+    pub fn snapshot(&self) -> std::option::Option<& crate::model::Snapshot> {
         self.snapshot.as_ref()
     }
 }
 /// See [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
 pub mod create_snapshot_output {
-
+    
     /// A builder for [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4255,16 +4075,18 @@ pub mod create_snapshot_output {
         }
         /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
         pub fn set_snapshot(mut self, input: std::option::Option<crate::model::Snapshot>) -> Self {
-            self.snapshot = input;
-            self
+            self.snapshot = input; self
         }
         /// Consumes the builder and constructs a [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
         pub fn build(self) -> crate::output::CreateSnapshotOutput {
             crate::output::CreateSnapshotOutput {
-                snapshot: self.snapshot,
+                snapshot: self.snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
@@ -4276,20 +4098,20 @@ impl CreateSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateReplicationGroupOutput {
+pub struct CreateReplicationGroupOutput  {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl CreateReplicationGroupOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+    pub fn replication_group(&self) -> std::option::Option<& crate::model::ReplicationGroup> {
         self.replication_group.as_ref()
     }
 }
 /// See [`CreateReplicationGroupOutput`](crate::output::CreateReplicationGroupOutput).
 pub mod create_replication_group_output {
-
+    
     /// A builder for [`CreateReplicationGroupOutput`](crate::output::CreateReplicationGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4302,20 +4124,19 @@ pub mod create_replication_group_output {
             self
         }
         /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-        pub fn set_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationGroup>,
-        ) -> Self {
-            self.replication_group = input;
-            self
+        pub fn set_replication_group(mut self, input: std::option::Option<crate::model::ReplicationGroup>) -> Self {
+            self.replication_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateReplicationGroupOutput`](crate::output::CreateReplicationGroupOutput).
         pub fn build(self) -> crate::output::CreateReplicationGroupOutput {
             crate::output::CreateReplicationGroupOutput {
-                replication_group: self.replication_group,
+                replication_group: self.replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateReplicationGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationGroupOutput`](crate::output::CreateReplicationGroupOutput).
@@ -4327,64 +4148,57 @@ impl CreateReplicationGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-    /// <ul>
-    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+pub struct CreateGlobalReplicationGroupOutput  {
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+    /// <ul> 
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl CreateGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-    /// <ul>
-    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+    /// <ul> 
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
     /// </ul>
-    pub fn global_replication_group(
-        &self,
-    ) -> std::option::Option<&crate::model::GlobalReplicationGroup> {
+    pub fn global_replication_group(&self) -> std::option::Option<& crate::model::GlobalReplicationGroup> {
         self.global_replication_group.as_ref()
     }
 }
 /// See [`CreateGlobalReplicationGroupOutput`](crate::output::CreateGlobalReplicationGroupOutput).
 pub mod create_global_replication_group_output {
-
+    
     /// A builder for [`CreateGlobalReplicationGroupOutput`](crate::output::CreateGlobalReplicationGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) global_replication_group:
-            std::option::Option<crate::model::GlobalReplicationGroup>,
+        pub(crate) global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-        /// <ul>
-        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+        /// <ul> 
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
         /// </ul>
-        pub fn global_replication_group(
-            mut self,
-            input: crate::model::GlobalReplicationGroup,
-        ) -> Self {
+        pub fn global_replication_group(mut self, input: crate::model::GlobalReplicationGroup) -> Self {
             self.global_replication_group = Some(input);
             self
         }
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
-        /// <ul>
-        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p> 
+        /// <ul> 
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li> 
         /// </ul>
-        pub fn set_global_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::GlobalReplicationGroup>,
-        ) -> Self {
-            self.global_replication_group = input;
-            self
+        pub fn set_global_replication_group(mut self, input: std::option::Option<crate::model::GlobalReplicationGroup>) -> Self {
+            self.global_replication_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateGlobalReplicationGroupOutput`](crate::output::CreateGlobalReplicationGroupOutput).
         pub fn build(self) -> crate::output::CreateGlobalReplicationGroupOutput {
             crate::output::CreateGlobalReplicationGroupOutput {
-                global_replication_group: self.global_replication_group,
+                global_replication_group: self.global_replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGlobalReplicationGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateGlobalReplicationGroupOutput`](crate::output::CreateGlobalReplicationGroupOutput).
@@ -4396,62 +4210,61 @@ impl CreateGlobalReplicationGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCacheSubnetGroupOutput {
-    /// <p>Represents the output of one of the following operations:</p>
-    /// <ul>
-    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
-    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
+pub struct CreateCacheSubnetGroupOutput  {
+    /// <p>Represents the output of one of the following operations:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li> 
+    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub cache_subnet_group: std::option::Option<crate::model::CacheSubnetGroup>,
 }
 impl CreateCacheSubnetGroupOutput {
-    /// <p>Represents the output of one of the following operations:</p>
-    /// <ul>
-    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
-    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
+    /// <p>Represents the output of one of the following operations:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li> 
+    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li> 
     /// </ul>
-    pub fn cache_subnet_group(&self) -> std::option::Option<&crate::model::CacheSubnetGroup> {
+    pub fn cache_subnet_group(&self) -> std::option::Option<& crate::model::CacheSubnetGroup> {
         self.cache_subnet_group.as_ref()
     }
 }
 /// See [`CreateCacheSubnetGroupOutput`](crate::output::CreateCacheSubnetGroupOutput).
 pub mod create_cache_subnet_group_output {
-
+    
     /// A builder for [`CreateCacheSubnetGroupOutput`](crate::output::CreateCacheSubnetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_subnet_group: std::option::Option<crate::model::CacheSubnetGroup>,
     }
     impl Builder {
-        /// <p>Represents the output of one of the following operations:</p>
-        /// <ul>
-        /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
-        /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
+        /// <p>Represents the output of one of the following operations:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li> 
+        /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li> 
         /// </ul>
         pub fn cache_subnet_group(mut self, input: crate::model::CacheSubnetGroup) -> Self {
             self.cache_subnet_group = Some(input);
             self
         }
-        /// <p>Represents the output of one of the following operations:</p>
-        /// <ul>
-        /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
-        /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
+        /// <p>Represents the output of one of the following operations:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li> 
+        /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li> 
         /// </ul>
-        pub fn set_cache_subnet_group(
-            mut self,
-            input: std::option::Option<crate::model::CacheSubnetGroup>,
-        ) -> Self {
-            self.cache_subnet_group = input;
-            self
+        pub fn set_cache_subnet_group(mut self, input: std::option::Option<crate::model::CacheSubnetGroup>) -> Self {
+            self.cache_subnet_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateCacheSubnetGroupOutput`](crate::output::CreateCacheSubnetGroupOutput).
         pub fn build(self) -> crate::output::CreateCacheSubnetGroupOutput {
             crate::output::CreateCacheSubnetGroupOutput {
-                cache_subnet_group: self.cache_subnet_group,
+                cache_subnet_group: self.cache_subnet_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCacheSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateCacheSubnetGroupOutput`](crate::output::CreateCacheSubnetGroupOutput).
@@ -4463,66 +4276,65 @@ impl CreateCacheSubnetGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCacheSecurityGroupOutput {
-    /// <p>Represents the output of one of the following operations:</p>
-    /// <ul>
-    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
-    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
-    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
+pub struct CreateCacheSecurityGroupOutput  {
+    /// <p>Represents the output of one of the following operations:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> 
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> 
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub cache_security_group: std::option::Option<crate::model::CacheSecurityGroup>,
 }
 impl CreateCacheSecurityGroupOutput {
-    /// <p>Represents the output of one of the following operations:</p>
-    /// <ul>
-    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
-    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
-    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
+    /// <p>Represents the output of one of the following operations:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> 
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> 
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> 
     /// </ul>
-    pub fn cache_security_group(&self) -> std::option::Option<&crate::model::CacheSecurityGroup> {
+    pub fn cache_security_group(&self) -> std::option::Option<& crate::model::CacheSecurityGroup> {
         self.cache_security_group.as_ref()
     }
 }
 /// See [`CreateCacheSecurityGroupOutput`](crate::output::CreateCacheSecurityGroupOutput).
 pub mod create_cache_security_group_output {
-
+    
     /// A builder for [`CreateCacheSecurityGroupOutput`](crate::output::CreateCacheSecurityGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_security_group: std::option::Option<crate::model::CacheSecurityGroup>,
     }
     impl Builder {
-        /// <p>Represents the output of one of the following operations:</p>
-        /// <ul>
-        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
-        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
-        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
+        /// <p>Represents the output of one of the following operations:</p> 
+        /// <ul> 
+        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> 
+        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> 
+        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> 
         /// </ul>
         pub fn cache_security_group(mut self, input: crate::model::CacheSecurityGroup) -> Self {
             self.cache_security_group = Some(input);
             self
         }
-        /// <p>Represents the output of one of the following operations:</p>
-        /// <ul>
-        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
-        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
-        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
+        /// <p>Represents the output of one of the following operations:</p> 
+        /// <ul> 
+        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> 
+        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> 
+        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> 
         /// </ul>
-        pub fn set_cache_security_group(
-            mut self,
-            input: std::option::Option<crate::model::CacheSecurityGroup>,
-        ) -> Self {
-            self.cache_security_group = input;
-            self
+        pub fn set_cache_security_group(mut self, input: std::option::Option<crate::model::CacheSecurityGroup>) -> Self {
+            self.cache_security_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateCacheSecurityGroupOutput`](crate::output::CreateCacheSecurityGroupOutput).
         pub fn build(self) -> crate::output::CreateCacheSecurityGroupOutput {
             crate::output::CreateCacheSecurityGroupOutput {
-                cache_security_group: self.cache_security_group,
+                cache_security_group: self.cache_security_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCacheSecurityGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateCacheSecurityGroupOutput`](crate::output::CreateCacheSecurityGroupOutput).
@@ -4534,20 +4346,20 @@ impl CreateCacheSecurityGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCacheParameterGroupOutput {
+pub struct CreateCacheParameterGroupOutput  {
     /// <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
     #[doc(hidden)]
     pub cache_parameter_group: std::option::Option<crate::model::CacheParameterGroup>,
 }
 impl CreateCacheParameterGroupOutput {
     /// <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
-    pub fn cache_parameter_group(&self) -> std::option::Option<&crate::model::CacheParameterGroup> {
+    pub fn cache_parameter_group(&self) -> std::option::Option<& crate::model::CacheParameterGroup> {
         self.cache_parameter_group.as_ref()
     }
 }
 /// See [`CreateCacheParameterGroupOutput`](crate::output::CreateCacheParameterGroupOutput).
 pub mod create_cache_parameter_group_output {
-
+    
     /// A builder for [`CreateCacheParameterGroupOutput`](crate::output::CreateCacheParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4560,20 +4372,19 @@ pub mod create_cache_parameter_group_output {
             self
         }
         /// <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
-        pub fn set_cache_parameter_group(
-            mut self,
-            input: std::option::Option<crate::model::CacheParameterGroup>,
-        ) -> Self {
-            self.cache_parameter_group = input;
-            self
+        pub fn set_cache_parameter_group(mut self, input: std::option::Option<crate::model::CacheParameterGroup>) -> Self {
+            self.cache_parameter_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateCacheParameterGroupOutput`](crate::output::CreateCacheParameterGroupOutput).
         pub fn build(self) -> crate::output::CreateCacheParameterGroupOutput {
             crate::output::CreateCacheParameterGroupOutput {
-                cache_parameter_group: self.cache_parameter_group,
+                cache_parameter_group: self.cache_parameter_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCacheParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateCacheParameterGroupOutput`](crate::output::CreateCacheParameterGroupOutput).
@@ -4585,20 +4396,20 @@ impl CreateCacheParameterGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCacheClusterOutput {
+pub struct CreateCacheClusterOutput  {
     /// <p>Contains all of the attributes of a specific cluster.</p>
     #[doc(hidden)]
     pub cache_cluster: std::option::Option<crate::model::CacheCluster>,
 }
 impl CreateCacheClusterOutput {
     /// <p>Contains all of the attributes of a specific cluster.</p>
-    pub fn cache_cluster(&self) -> std::option::Option<&crate::model::CacheCluster> {
+    pub fn cache_cluster(&self) -> std::option::Option<& crate::model::CacheCluster> {
         self.cache_cluster.as_ref()
     }
 }
 /// See [`CreateCacheClusterOutput`](crate::output::CreateCacheClusterOutput).
 pub mod create_cache_cluster_output {
-
+    
     /// A builder for [`CreateCacheClusterOutput`](crate::output::CreateCacheClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4611,20 +4422,19 @@ pub mod create_cache_cluster_output {
             self
         }
         /// <p>Contains all of the attributes of a specific cluster.</p>
-        pub fn set_cache_cluster(
-            mut self,
-            input: std::option::Option<crate::model::CacheCluster>,
-        ) -> Self {
-            self.cache_cluster = input;
-            self
+        pub fn set_cache_cluster(mut self, input: std::option::Option<crate::model::CacheCluster>) -> Self {
+            self.cache_cluster = input; self
         }
         /// Consumes the builder and constructs a [`CreateCacheClusterOutput`](crate::output::CreateCacheClusterOutput).
         pub fn build(self) -> crate::output::CreateCacheClusterOutput {
             crate::output::CreateCacheClusterOutput {
-                cache_cluster: self.cache_cluster,
+                cache_cluster: self.cache_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCacheClusterOutput {
     /// Creates a new builder-style object to manufacture [`CreateCacheClusterOutput`](crate::output::CreateCacheClusterOutput).
@@ -4636,20 +4446,20 @@ impl CreateCacheClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopySnapshotOutput {
+pub struct CopySnapshotOutput  {
     /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
     #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::Snapshot>,
 }
 impl CopySnapshotOutput {
     /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
-    pub fn snapshot(&self) -> std::option::Option<&crate::model::Snapshot> {
+    pub fn snapshot(&self) -> std::option::Option<& crate::model::Snapshot> {
         self.snapshot.as_ref()
     }
 }
 /// See [`CopySnapshotOutput`](crate::output::CopySnapshotOutput).
 pub mod copy_snapshot_output {
-
+    
     /// A builder for [`CopySnapshotOutput`](crate::output::CopySnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4663,16 +4473,18 @@ pub mod copy_snapshot_output {
         }
         /// <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
         pub fn set_snapshot(mut self, input: std::option::Option<crate::model::Snapshot>) -> Self {
-            self.snapshot = input;
-            self
+            self.snapshot = input; self
         }
         /// Consumes the builder and constructs a [`CopySnapshotOutput`](crate::output::CopySnapshotOutput).
         pub fn build(self) -> crate::output::CopySnapshotOutput {
             crate::output::CopySnapshotOutput {
-                snapshot: self.snapshot,
+                snapshot: self.snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl CopySnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CopySnapshotOutput`](crate::output::CopySnapshotOutput).
@@ -4684,20 +4496,20 @@ impl CopySnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CompleteMigrationOutput {
+pub struct CompleteMigrationOutput  {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     #[doc(hidden)]
     pub replication_group: std::option::Option<crate::model::ReplicationGroup>,
 }
 impl CompleteMigrationOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn replication_group(&self) -> std::option::Option<&crate::model::ReplicationGroup> {
+    pub fn replication_group(&self) -> std::option::Option<& crate::model::ReplicationGroup> {
         self.replication_group.as_ref()
     }
 }
 /// See [`CompleteMigrationOutput`](crate::output::CompleteMigrationOutput).
 pub mod complete_migration_output {
-
+    
     /// A builder for [`CompleteMigrationOutput`](crate::output::CompleteMigrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4710,20 +4522,19 @@ pub mod complete_migration_output {
             self
         }
         /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-        pub fn set_replication_group(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationGroup>,
-        ) -> Self {
-            self.replication_group = input;
-            self
+        pub fn set_replication_group(mut self, input: std::option::Option<crate::model::ReplicationGroup>) -> Self {
+            self.replication_group = input; self
         }
         /// Consumes the builder and constructs a [`CompleteMigrationOutput`](crate::output::CompleteMigrationOutput).
         pub fn build(self) -> crate::output::CompleteMigrationOutput {
             crate::output::CompleteMigrationOutput {
-                replication_group: self.replication_group,
+                replication_group: self.replication_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CompleteMigrationOutput {
     /// Creates a new builder-style object to manufacture [`CompleteMigrationOutput`](crate::output::CompleteMigrationOutput).
@@ -4735,40 +4546,32 @@ impl CompleteMigrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchStopUpdateActionOutput {
+pub struct BatchStopUpdateActionOutput  {
     /// <p>Update actions that have been processed successfully</p>
     #[doc(hidden)]
-    pub processed_update_actions:
-        std::option::Option<std::vec::Vec<crate::model::ProcessedUpdateAction>>,
+    pub processed_update_actions: std::option::Option<std::vec::Vec<crate::model::ProcessedUpdateAction>>,
     /// <p>Update actions that haven't been processed successfully</p>
     #[doc(hidden)]
-    pub unprocessed_update_actions:
-        std::option::Option<std::vec::Vec<crate::model::UnprocessedUpdateAction>>,
+    pub unprocessed_update_actions: std::option::Option<std::vec::Vec<crate::model::UnprocessedUpdateAction>>,
 }
 impl BatchStopUpdateActionOutput {
     /// <p>Update actions that have been processed successfully</p>
-    pub fn processed_update_actions(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProcessedUpdateAction]> {
+    pub fn processed_update_actions(&self) -> std::option::Option<& [crate::model::ProcessedUpdateAction]> {
         self.processed_update_actions.as_deref()
     }
     /// <p>Update actions that haven't been processed successfully</p>
-    pub fn unprocessed_update_actions(
-        &self,
-    ) -> std::option::Option<&[crate::model::UnprocessedUpdateAction]> {
+    pub fn unprocessed_update_actions(&self) -> std::option::Option<& [crate::model::UnprocessedUpdateAction]> {
         self.unprocessed_update_actions.as_deref()
     }
 }
 /// See [`BatchStopUpdateActionOutput`](crate::output::BatchStopUpdateActionOutput).
 pub mod batch_stop_update_action_output {
-
+    
     /// A builder for [`BatchStopUpdateActionOutput`](crate::output::BatchStopUpdateActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) processed_update_actions:
-            std::option::Option<std::vec::Vec<crate::model::ProcessedUpdateAction>>,
-        pub(crate) unprocessed_update_actions:
-            std::option::Option<std::vec::Vec<crate::model::UnprocessedUpdateAction>>,
+        pub(crate) processed_update_actions: std::option::Option<std::vec::Vec<crate::model::ProcessedUpdateAction>>,
+        pub(crate) unprocessed_update_actions: std::option::Option<std::vec::Vec<crate::model::UnprocessedUpdateAction>>,
     }
     impl Builder {
         /// Appends an item to `processed_update_actions`.
@@ -4776,53 +4579,43 @@ pub mod batch_stop_update_action_output {
         /// To override the contents of this collection use [`set_processed_update_actions`](Self::set_processed_update_actions).
         ///
         /// <p>Update actions that have been processed successfully</p>
-        pub fn processed_update_actions(
-            mut self,
-            input: crate::model::ProcessedUpdateAction,
-        ) -> Self {
+        pub fn processed_update_actions(mut self, input: crate::model::ProcessedUpdateAction) -> Self {
             let mut v = self.processed_update_actions.unwrap_or_default();
-            v.push(input);
-            self.processed_update_actions = Some(v);
-            self
+                            v.push(input);
+                            self.processed_update_actions = Some(v);
+                            self
         }
         /// <p>Update actions that have been processed successfully</p>
-        pub fn set_processed_update_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProcessedUpdateAction>>,
-        ) -> Self {
-            self.processed_update_actions = input;
-            self
+        pub fn set_processed_update_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProcessedUpdateAction>>) -> Self {
+            self.processed_update_actions = input; self
         }
         /// Appends an item to `unprocessed_update_actions`.
         ///
         /// To override the contents of this collection use [`set_unprocessed_update_actions`](Self::set_unprocessed_update_actions).
         ///
         /// <p>Update actions that haven't been processed successfully</p>
-        pub fn unprocessed_update_actions(
-            mut self,
-            input: crate::model::UnprocessedUpdateAction,
-        ) -> Self {
+        pub fn unprocessed_update_actions(mut self, input: crate::model::UnprocessedUpdateAction) -> Self {
             let mut v = self.unprocessed_update_actions.unwrap_or_default();
-            v.push(input);
-            self.unprocessed_update_actions = Some(v);
-            self
+                            v.push(input);
+                            self.unprocessed_update_actions = Some(v);
+                            self
         }
         /// <p>Update actions that haven't been processed successfully</p>
-        pub fn set_unprocessed_update_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UnprocessedUpdateAction>>,
-        ) -> Self {
-            self.unprocessed_update_actions = input;
-            self
+        pub fn set_unprocessed_update_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::UnprocessedUpdateAction>>) -> Self {
+            self.unprocessed_update_actions = input; self
         }
         /// Consumes the builder and constructs a [`BatchStopUpdateActionOutput`](crate::output::BatchStopUpdateActionOutput).
         pub fn build(self) -> crate::output::BatchStopUpdateActionOutput {
             crate::output::BatchStopUpdateActionOutput {
-                processed_update_actions: self.processed_update_actions,
-                unprocessed_update_actions: self.unprocessed_update_actions,
+                processed_update_actions: self.processed_update_actions
+                ,
+                unprocessed_update_actions: self.unprocessed_update_actions
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchStopUpdateActionOutput {
     /// Creates a new builder-style object to manufacture [`BatchStopUpdateActionOutput`](crate::output::BatchStopUpdateActionOutput).
@@ -4834,40 +4627,32 @@ impl BatchStopUpdateActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchApplyUpdateActionOutput {
+pub struct BatchApplyUpdateActionOutput  {
     /// <p>Update actions that have been processed successfully</p>
     #[doc(hidden)]
-    pub processed_update_actions:
-        std::option::Option<std::vec::Vec<crate::model::ProcessedUpdateAction>>,
+    pub processed_update_actions: std::option::Option<std::vec::Vec<crate::model::ProcessedUpdateAction>>,
     /// <p>Update actions that haven't been processed successfully</p>
     #[doc(hidden)]
-    pub unprocessed_update_actions:
-        std::option::Option<std::vec::Vec<crate::model::UnprocessedUpdateAction>>,
+    pub unprocessed_update_actions: std::option::Option<std::vec::Vec<crate::model::UnprocessedUpdateAction>>,
 }
 impl BatchApplyUpdateActionOutput {
     /// <p>Update actions that have been processed successfully</p>
-    pub fn processed_update_actions(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProcessedUpdateAction]> {
+    pub fn processed_update_actions(&self) -> std::option::Option<& [crate::model::ProcessedUpdateAction]> {
         self.processed_update_actions.as_deref()
     }
     /// <p>Update actions that haven't been processed successfully</p>
-    pub fn unprocessed_update_actions(
-        &self,
-    ) -> std::option::Option<&[crate::model::UnprocessedUpdateAction]> {
+    pub fn unprocessed_update_actions(&self) -> std::option::Option<& [crate::model::UnprocessedUpdateAction]> {
         self.unprocessed_update_actions.as_deref()
     }
 }
 /// See [`BatchApplyUpdateActionOutput`](crate::output::BatchApplyUpdateActionOutput).
 pub mod batch_apply_update_action_output {
-
+    
     /// A builder for [`BatchApplyUpdateActionOutput`](crate::output::BatchApplyUpdateActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) processed_update_actions:
-            std::option::Option<std::vec::Vec<crate::model::ProcessedUpdateAction>>,
-        pub(crate) unprocessed_update_actions:
-            std::option::Option<std::vec::Vec<crate::model::UnprocessedUpdateAction>>,
+        pub(crate) processed_update_actions: std::option::Option<std::vec::Vec<crate::model::ProcessedUpdateAction>>,
+        pub(crate) unprocessed_update_actions: std::option::Option<std::vec::Vec<crate::model::UnprocessedUpdateAction>>,
     }
     impl Builder {
         /// Appends an item to `processed_update_actions`.
@@ -4875,53 +4660,43 @@ pub mod batch_apply_update_action_output {
         /// To override the contents of this collection use [`set_processed_update_actions`](Self::set_processed_update_actions).
         ///
         /// <p>Update actions that have been processed successfully</p>
-        pub fn processed_update_actions(
-            mut self,
-            input: crate::model::ProcessedUpdateAction,
-        ) -> Self {
+        pub fn processed_update_actions(mut self, input: crate::model::ProcessedUpdateAction) -> Self {
             let mut v = self.processed_update_actions.unwrap_or_default();
-            v.push(input);
-            self.processed_update_actions = Some(v);
-            self
+                            v.push(input);
+                            self.processed_update_actions = Some(v);
+                            self
         }
         /// <p>Update actions that have been processed successfully</p>
-        pub fn set_processed_update_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProcessedUpdateAction>>,
-        ) -> Self {
-            self.processed_update_actions = input;
-            self
+        pub fn set_processed_update_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProcessedUpdateAction>>) -> Self {
+            self.processed_update_actions = input; self
         }
         /// Appends an item to `unprocessed_update_actions`.
         ///
         /// To override the contents of this collection use [`set_unprocessed_update_actions`](Self::set_unprocessed_update_actions).
         ///
         /// <p>Update actions that haven't been processed successfully</p>
-        pub fn unprocessed_update_actions(
-            mut self,
-            input: crate::model::UnprocessedUpdateAction,
-        ) -> Self {
+        pub fn unprocessed_update_actions(mut self, input: crate::model::UnprocessedUpdateAction) -> Self {
             let mut v = self.unprocessed_update_actions.unwrap_or_default();
-            v.push(input);
-            self.unprocessed_update_actions = Some(v);
-            self
+                            v.push(input);
+                            self.unprocessed_update_actions = Some(v);
+                            self
         }
         /// <p>Update actions that haven't been processed successfully</p>
-        pub fn set_unprocessed_update_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UnprocessedUpdateAction>>,
-        ) -> Self {
-            self.unprocessed_update_actions = input;
-            self
+        pub fn set_unprocessed_update_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::UnprocessedUpdateAction>>) -> Self {
+            self.unprocessed_update_actions = input; self
         }
         /// Consumes the builder and constructs a [`BatchApplyUpdateActionOutput`](crate::output::BatchApplyUpdateActionOutput).
         pub fn build(self) -> crate::output::BatchApplyUpdateActionOutput {
             crate::output::BatchApplyUpdateActionOutput {
-                processed_update_actions: self.processed_update_actions,
-                unprocessed_update_actions: self.unprocessed_update_actions,
+                processed_update_actions: self.processed_update_actions
+                ,
+                unprocessed_update_actions: self.unprocessed_update_actions
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchApplyUpdateActionOutput {
     /// Creates a new builder-style object to manufacture [`BatchApplyUpdateActionOutput`](crate::output::BatchApplyUpdateActionOutput).
@@ -4933,66 +4708,65 @@ impl BatchApplyUpdateActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthorizeCacheSecurityGroupIngressOutput {
-    /// <p>Represents the output of one of the following operations:</p>
-    /// <ul>
-    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
-    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
-    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
+pub struct AuthorizeCacheSecurityGroupIngressOutput  {
+    /// <p>Represents the output of one of the following operations:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> 
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> 
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub cache_security_group: std::option::Option<crate::model::CacheSecurityGroup>,
 }
 impl AuthorizeCacheSecurityGroupIngressOutput {
-    /// <p>Represents the output of one of the following operations:</p>
-    /// <ul>
-    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
-    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
-    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
+    /// <p>Represents the output of one of the following operations:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> 
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> 
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> 
     /// </ul>
-    pub fn cache_security_group(&self) -> std::option::Option<&crate::model::CacheSecurityGroup> {
+    pub fn cache_security_group(&self) -> std::option::Option<& crate::model::CacheSecurityGroup> {
         self.cache_security_group.as_ref()
     }
 }
 /// See [`AuthorizeCacheSecurityGroupIngressOutput`](crate::output::AuthorizeCacheSecurityGroupIngressOutput).
 pub mod authorize_cache_security_group_ingress_output {
-
+    
     /// A builder for [`AuthorizeCacheSecurityGroupIngressOutput`](crate::output::AuthorizeCacheSecurityGroupIngressOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_security_group: std::option::Option<crate::model::CacheSecurityGroup>,
     }
     impl Builder {
-        /// <p>Represents the output of one of the following operations:</p>
-        /// <ul>
-        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
-        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
-        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
+        /// <p>Represents the output of one of the following operations:</p> 
+        /// <ul> 
+        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> 
+        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> 
+        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> 
         /// </ul>
         pub fn cache_security_group(mut self, input: crate::model::CacheSecurityGroup) -> Self {
             self.cache_security_group = Some(input);
             self
         }
-        /// <p>Represents the output of one of the following operations:</p>
-        /// <ul>
-        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
-        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
-        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
+        /// <p>Represents the output of one of the following operations:</p> 
+        /// <ul> 
+        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> 
+        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> 
+        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> 
         /// </ul>
-        pub fn set_cache_security_group(
-            mut self,
-            input: std::option::Option<crate::model::CacheSecurityGroup>,
-        ) -> Self {
-            self.cache_security_group = input;
-            self
+        pub fn set_cache_security_group(mut self, input: std::option::Option<crate::model::CacheSecurityGroup>) -> Self {
+            self.cache_security_group = input; self
         }
         /// Consumes the builder and constructs a [`AuthorizeCacheSecurityGroupIngressOutput`](crate::output::AuthorizeCacheSecurityGroupIngressOutput).
         pub fn build(self) -> crate::output::AuthorizeCacheSecurityGroupIngressOutput {
             crate::output::AuthorizeCacheSecurityGroupIngressOutput {
-                cache_security_group: self.cache_security_group,
+                cache_security_group: self.cache_security_group
+                ,
             }
         }
     }
+    
+    
 }
 impl AuthorizeCacheSecurityGroupIngressOutput {
     /// Creates a new builder-style object to manufacture [`AuthorizeCacheSecurityGroupIngressOutput`](crate::output::AuthorizeCacheSecurityGroupIngressOutput).
@@ -5004,20 +4778,20 @@ impl AuthorizeCacheSecurityGroupIngressOutput {
 /// <p>Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsToResourceOutput {
+pub struct AddTagsToResourceOutput  {
     /// <p>A list of tags as key-value pairs.</p>
     #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsToResourceOutput {
     /// <p>A list of tags as key-value pairs.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tag_list.as_deref()
     }
 }
 /// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
 pub mod add_tags_to_resource_output {
-
+    
     /// A builder for [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5031,25 +4805,24 @@ pub mod add_tags_to_resource_output {
         /// <p>A list of tags as key-value pairs.</p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input);
-            self.tag_list = Some(v);
-            self
+                            v.push(input);
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p>A list of tags as key-value pairs.</p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tag_list = input; self
         }
         /// Consumes the builder and constructs a [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
         pub fn build(self) -> crate::output::AddTagsToResourceOutput {
             crate::output::AddTagsToResourceOutput {
-                tag_list: self.tag_list,
+                tag_list: self.tag_list
+                ,
             }
         }
     }
+    
+    
 }
 impl AddTagsToResourceOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
@@ -5057,3 +4830,4 @@ impl AddTagsToResourceOutput {
         crate::output::add_tags_to_resource_output::Builder::default()
     }
 }
+

@@ -15,15 +15,15 @@ pub enum Error {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34,19 +34,14 @@ impl std::fmt::Display for Error {
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateScheduleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateScheduleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateScheduleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -54,41 +49,20 @@ where
 impl From<crate::error::CreateScheduleError> for Error {
     fn from(err: crate::error::CreateScheduleError) -> Self {
         match err.kind {
-            crate::error::CreateScheduleErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateScheduleErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateScheduleErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateScheduleErrorKind::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::CreateScheduleErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CreateScheduleErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateScheduleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateScheduleErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateScheduleErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateScheduleErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CreateScheduleErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateScheduleErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateScheduleErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateScheduleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateScheduleGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateScheduleGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateScheduleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateScheduleGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -96,36 +70,19 @@ where
 impl From<crate::error::CreateScheduleGroupError> for Error {
     fn from(err: crate::error::CreateScheduleGroupError) -> Self {
         match err.kind {
-            crate::error::CreateScheduleGroupErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateScheduleGroupErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateScheduleGroupErrorKind::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::CreateScheduleGroupErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CreateScheduleGroupErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateScheduleGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateScheduleGroupErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateScheduleGroupErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateScheduleGroupErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateScheduleGroupErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateScheduleGroupErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateScheduleGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteScheduleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteScheduleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteScheduleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -133,38 +90,19 @@ where
 impl From<crate::error::DeleteScheduleError> for Error {
     fn from(err: crate::error::DeleteScheduleError) -> Self {
         match err.kind {
-            crate::error::DeleteScheduleErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteScheduleErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteScheduleErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteScheduleErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DeleteScheduleErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteScheduleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteScheduleErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteScheduleErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteScheduleErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteScheduleErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteScheduleErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteScheduleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteScheduleGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteScheduleGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteScheduleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteScheduleGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -172,36 +110,19 @@ where
 impl From<crate::error::DeleteScheduleGroupError> for Error {
     fn from(err: crate::error::DeleteScheduleGroupError) -> Self {
         match err.kind {
-            crate::error::DeleteScheduleGroupErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteScheduleGroupErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteScheduleGroupErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteScheduleGroupErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DeleteScheduleGroupErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteScheduleGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteScheduleGroupErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteScheduleGroupErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteScheduleGroupErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteScheduleGroupErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteScheduleGroupErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteScheduleGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetScheduleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetScheduleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetScheduleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -209,35 +130,18 @@ where
 impl From<crate::error::GetScheduleError> for Error {
     fn from(err: crate::error::GetScheduleError) -> Self {
         match err.kind {
-            crate::error::GetScheduleErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetScheduleErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetScheduleErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetScheduleErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetScheduleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetScheduleErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::GetScheduleErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetScheduleErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetScheduleErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::GetScheduleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetScheduleGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetScheduleGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetScheduleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetScheduleGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -245,35 +149,18 @@ where
 impl From<crate::error::GetScheduleGroupError> for Error {
     fn from(err: crate::error::GetScheduleGroupError) -> Self {
         match err.kind {
-            crate::error::GetScheduleGroupErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetScheduleGroupErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetScheduleGroupErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetScheduleGroupErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetScheduleGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetScheduleGroupErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::GetScheduleGroupErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetScheduleGroupErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetScheduleGroupErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::GetScheduleGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListScheduleGroupsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListScheduleGroupsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListScheduleGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListScheduleGroupsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -281,30 +168,17 @@ where
 impl From<crate::error::ListScheduleGroupsError> for Error {
     fn from(err: crate::error::ListScheduleGroupsError) -> Self {
         match err.kind {
-            crate::error::ListScheduleGroupsErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListScheduleGroupsErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListScheduleGroupsErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListScheduleGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListScheduleGroupsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListScheduleGroupsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListScheduleGroupsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListScheduleGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSchedulesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSchedulesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSchedulesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -312,35 +186,18 @@ where
 impl From<crate::error::ListSchedulesError> for Error {
     fn from(err: crate::error::ListSchedulesError) -> Self {
         match err.kind {
-            crate::error::ListSchedulesErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListSchedulesErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListSchedulesErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListSchedulesErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListSchedulesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListSchedulesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListSchedulesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListSchedulesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListSchedulesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListSchedulesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -348,33 +205,18 @@ where
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
         match err.kind {
-            crate::error::ListTagsForResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListTagsForResourceErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListTagsForResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -382,36 +224,19 @@ where
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
         match err.kind {
-            crate::error::TagResourceErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::TagResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::TagResourceErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::TagResourceErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::TagResourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::TagResourceErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::TagResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -419,36 +244,19 @@ where
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
         match err.kind {
-            crate::error::UntagResourceErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UntagResourceErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UntagResourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UntagResourceErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UntagResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateScheduleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateScheduleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateScheduleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -456,25 +264,14 @@ where
 impl From<crate::error::UpdateScheduleError> for Error {
     fn from(err: crate::error::UpdateScheduleError) -> Self {
         match err.kind {
-            crate::error::UpdateScheduleErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateScheduleErrorKind::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateScheduleErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateScheduleErrorKind::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::UpdateScheduleErrorKind::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateScheduleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateScheduleErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateScheduleErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateScheduleErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateScheduleErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateScheduleErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateScheduleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
 impl std::error::Error for Error {}
+

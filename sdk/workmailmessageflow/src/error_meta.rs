@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>WorkMail could not access the updated email content. Possible reasons:</p>
-    /// <ul>
-    /// <li> <p>You made the request in a region other than your S3 bucket region.</p> </li>
-    /// <li> <p>The <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-owner-condition.html">S3 bucket owner</a> is not the same as the calling AWS account.</p> </li>
-    /// <li> <p>You have an incomplete or missing S3 bucket policy. For more information about policies, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html"> Updating message content with AWS Lambda </a> in the <i>WorkMail Administrator Guide</i>.</p> </li>
+    /// <p>WorkMail could not access the updated email content. Possible reasons:</p> 
+    /// <ul> 
+    /// <li> <p>You made the request in a region other than your S3 bucket region.</p> </li> 
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-owner-condition.html">S3 bucket owner</a> is not the same as the calling AWS account.</p> </li> 
+    /// <li> <p>You have an incomplete or missing S3 bucket policy. For more information about policies, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html"> Updating message content with AWS Lambda </a> in the <i>WorkMail Administrator Guide</i>.</p> </li> 
     /// </ul>
     InvalidContentLocation(crate::error::InvalidContentLocation),
     /// <p>The requested email is not eligible for update. This is usually the case for a redirected email.</p>
@@ -16,15 +16,15 @@ pub enum Error {
     MessageRejected(crate::error::MessageRejected),
     /// <p>The requested email message is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33,22 +33,14 @@ impl std::fmt::Display for Error {
             Error::MessageFrozen(inner) => inner.fmt(f),
             Error::MessageRejected(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRawMessageContentError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetRawMessageContentError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRawMessageContentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRawMessageContentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -56,27 +48,15 @@ where
 impl From<crate::error::GetRawMessageContentError> for Error {
     fn from(err: crate::error::GetRawMessageContentError) -> Self {
         match err.kind {
-            crate::error::GetRawMessageContentErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetRawMessageContentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetRawMessageContentErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetRawMessageContentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutRawMessageContentError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutRawMessageContentError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutRawMessageContentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutRawMessageContentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -84,22 +64,13 @@ where
 impl From<crate::error::PutRawMessageContentError> for Error {
     fn from(err: crate::error::PutRawMessageContentError) -> Self {
         match err.kind {
-            crate::error::PutRawMessageContentErrorKind::InvalidContentLocation(inner) => {
-                Error::InvalidContentLocation(inner)
-            }
-            crate::error::PutRawMessageContentErrorKind::MessageFrozen(inner) => {
-                Error::MessageFrozen(inner)
-            }
-            crate::error::PutRawMessageContentErrorKind::MessageRejected(inner) => {
-                Error::MessageRejected(inner)
-            }
-            crate::error::PutRawMessageContentErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::PutRawMessageContentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutRawMessageContentErrorKind::InvalidContentLocation(inner) => Error::InvalidContentLocation(inner),
+            crate::error::PutRawMessageContentErrorKind::MessageFrozen(inner) => Error::MessageFrozen(inner),
+            crate::error::PutRawMessageContentErrorKind::MessageRejected(inner) => Error::MessageRejected(inner),
+            crate::error::PutRawMessageContentErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::PutRawMessageContentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
 impl std::error::Error for Error {}
+

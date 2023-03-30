@@ -3,20 +3,20 @@
 /// <p>When you update status for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePipelineStatusOutput {
+pub struct UpdatePipelineStatusOutput  {
     /// <p>A section of the response body that provides information about the pipeline.</p>
     #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::Pipeline>,
 }
 impl UpdatePipelineStatusOutput {
     /// <p>A section of the response body that provides information about the pipeline.</p>
-    pub fn pipeline(&self) -> std::option::Option<&crate::model::Pipeline> {
+    pub fn pipeline(&self) -> std::option::Option<& crate::model::Pipeline> {
         self.pipeline.as_ref()
     }
 }
 /// See [`UpdatePipelineStatusOutput`](crate::output::UpdatePipelineStatusOutput).
 pub mod update_pipeline_status_output {
-
+    
     /// A builder for [`UpdatePipelineStatusOutput`](crate::output::UpdatePipelineStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -30,16 +30,18 @@ pub mod update_pipeline_status_output {
         }
         /// <p>A section of the response body that provides information about the pipeline.</p>
         pub fn set_pipeline(mut self, input: std::option::Option<crate::model::Pipeline>) -> Self {
-            self.pipeline = input;
-            self
+            self.pipeline = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePipelineStatusOutput`](crate::output::UpdatePipelineStatusOutput).
         pub fn build(self) -> crate::output::UpdatePipelineStatusOutput {
             crate::output::UpdatePipelineStatusOutput {
-                pipeline: self.pipeline,
+                pipeline: self.pipeline
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePipelineStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePipelineStatusOutput`](crate::output::UpdatePipelineStatusOutput).
@@ -51,20 +53,20 @@ impl UpdatePipelineStatusOutput {
 /// <p>The <code>UpdatePipelineNotificationsResponse</code> structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePipelineNotificationsOutput {
+pub struct UpdatePipelineNotificationsOutput  {
     /// <p>A section of the response body that provides information about the pipeline associated with this notification.</p>
     #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::Pipeline>,
 }
 impl UpdatePipelineNotificationsOutput {
     /// <p>A section of the response body that provides information about the pipeline associated with this notification.</p>
-    pub fn pipeline(&self) -> std::option::Option<&crate::model::Pipeline> {
+    pub fn pipeline(&self) -> std::option::Option<& crate::model::Pipeline> {
         self.pipeline.as_ref()
     }
 }
 /// See [`UpdatePipelineNotificationsOutput`](crate::output::UpdatePipelineNotificationsOutput).
 pub mod update_pipeline_notifications_output {
-
+    
     /// A builder for [`UpdatePipelineNotificationsOutput`](crate::output::UpdatePipelineNotificationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -78,16 +80,18 @@ pub mod update_pipeline_notifications_output {
         }
         /// <p>A section of the response body that provides information about the pipeline associated with this notification.</p>
         pub fn set_pipeline(mut self, input: std::option::Option<crate::model::Pipeline>) -> Self {
-            self.pipeline = input;
-            self
+            self.pipeline = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePipelineNotificationsOutput`](crate::output::UpdatePipelineNotificationsOutput).
         pub fn build(self) -> crate::output::UpdatePipelineNotificationsOutput {
             crate::output::UpdatePipelineNotificationsOutput {
-                pipeline: self.pipeline,
+                pipeline: self.pipeline
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePipelineNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePipelineNotificationsOutput`](crate::output::UpdatePipelineNotificationsOutput).
@@ -99,29 +103,29 @@ impl UpdatePipelineNotificationsOutput {
 /// <p>When you update a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePipelineOutput {
+pub struct UpdatePipelineOutput  {
     /// <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
     #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::Pipeline>,
-    /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
+    /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> 
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
     #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
 }
 impl UpdatePipelineOutput {
     /// <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
-    pub fn pipeline(&self) -> std::option::Option<&crate::model::Pipeline> {
+    pub fn pipeline(&self) -> std::option::Option<& crate::model::Pipeline> {
         self.pipeline.as_ref()
     }
-    /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
+    /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> 
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-    pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
+    pub fn warnings(&self) -> std::option::Option<& [crate::model::Warning]> {
         self.warnings.as_deref()
     }
 }
 /// See [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput).
 pub mod update_pipeline_output {
-
+    
     /// A builder for [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -136,38 +140,37 @@ pub mod update_pipeline_output {
         }
         /// <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
         pub fn set_pipeline(mut self, input: std::option::Option<crate::model::Pipeline>) -> Self {
-            self.pipeline = input;
-            self
+            self.pipeline = input; self
         }
         /// Appends an item to `warnings`.
         ///
         /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
         ///
-        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
+        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> 
         /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
         pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input);
-            self.warnings = Some(v);
-            self
+                            v.push(input);
+                            self.warnings = Some(v);
+                            self
         }
-        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
+        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> 
         /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-        pub fn set_warnings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Warning>>,
-        ) -> Self {
-            self.warnings = input;
-            self
+        pub fn set_warnings(mut self, input: std::option::Option<std::vec::Vec<crate::model::Warning>>) -> Self {
+            self.warnings = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput).
         pub fn build(self) -> crate::output::UpdatePipelineOutput {
             crate::output::UpdatePipelineOutput {
-                pipeline: self.pipeline,
-                warnings: self.warnings,
+                pipeline: self.pipeline
+                ,
+                warnings: self.warnings
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePipelineOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput).
@@ -180,7 +183,7 @@ impl UpdatePipelineOutput {
 #[deprecated]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestRoleOutput {
+pub struct TestRoleOutput  {
     /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
     #[doc(hidden)]
     pub success: std::option::Option<std::string::String>,
@@ -190,17 +193,17 @@ pub struct TestRoleOutput {
 }
 impl TestRoleOutput {
     /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
-    pub fn success(&self) -> std::option::Option<&str> {
+    pub fn success(&self) -> std::option::Option<& str> {
         self.success.as_deref()
     }
     /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
-    pub fn messages(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn messages(&self) -> std::option::Option<& [std::string::String]> {
         self.messages.as_deref()
     }
 }
 /// See [`TestRoleOutput`](crate::output::TestRoleOutput).
 pub mod test_role_output {
-
+    
     /// A builder for [`TestRoleOutput`](crate::output::TestRoleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -215,8 +218,7 @@ pub mod test_role_output {
         }
         /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
         pub fn set_success(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.success = input;
-            self
+            self.success = input; self
         }
         /// Appends an item to `messages`.
         ///
@@ -225,26 +227,26 @@ pub mod test_role_output {
         /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
         pub fn messages(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
-            self.messages = Some(v);
-            self
+                            v.push(input.into());
+                            self.messages = Some(v);
+                            self
         }
         /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
-        pub fn set_messages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.messages = input;
-            self
+        pub fn set_messages(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.messages = input; self
         }
         /// Consumes the builder and constructs a [`TestRoleOutput`](crate::output::TestRoleOutput).
         pub fn build(self) -> crate::output::TestRoleOutput {
             crate::output::TestRoleOutput {
-                success: self.success,
-                messages: self.messages,
+                success: self.success
+                ,
+                messages: self.messages
+                ,
             }
         }
     }
+    
+    
 }
 impl TestRoleOutput {
     /// Creates a new builder-style object to manufacture [`TestRoleOutput`](crate::output::TestRoleOutput).
@@ -256,20 +258,20 @@ impl TestRoleOutput {
 /// <p>The <code>ReadPresetResponse</code> structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReadPresetOutput {
+pub struct ReadPresetOutput  {
     /// <p>A section of the response body that provides information about the preset.</p>
     #[doc(hidden)]
     pub preset: std::option::Option<crate::model::Preset>,
 }
 impl ReadPresetOutput {
     /// <p>A section of the response body that provides information about the preset.</p>
-    pub fn preset(&self) -> std::option::Option<&crate::model::Preset> {
+    pub fn preset(&self) -> std::option::Option<& crate::model::Preset> {
         self.preset.as_ref()
     }
 }
 /// See [`ReadPresetOutput`](crate::output::ReadPresetOutput).
 pub mod read_preset_output {
-
+    
     /// A builder for [`ReadPresetOutput`](crate::output::ReadPresetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -283,16 +285,18 @@ pub mod read_preset_output {
         }
         /// <p>A section of the response body that provides information about the preset.</p>
         pub fn set_preset(mut self, input: std::option::Option<crate::model::Preset>) -> Self {
-            self.preset = input;
-            self
+            self.preset = input; self
         }
         /// Consumes the builder and constructs a [`ReadPresetOutput`](crate::output::ReadPresetOutput).
         pub fn build(self) -> crate::output::ReadPresetOutput {
             crate::output::ReadPresetOutput {
-                preset: self.preset,
+                preset: self.preset
+                ,
             }
         }
     }
+    
+    
 }
 impl ReadPresetOutput {
     /// Creates a new builder-style object to manufacture [`ReadPresetOutput`](crate::output::ReadPresetOutput).
@@ -304,29 +308,29 @@ impl ReadPresetOutput {
 /// <p>The <code>ReadPipelineResponse</code> structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReadPipelineOutput {
+pub struct ReadPipelineOutput  {
     /// <p>A section of the response body that provides information about the pipeline.</p>
     #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::Pipeline>,
-    /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
+    /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> 
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
     #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
 }
 impl ReadPipelineOutput {
     /// <p>A section of the response body that provides information about the pipeline.</p>
-    pub fn pipeline(&self) -> std::option::Option<&crate::model::Pipeline> {
+    pub fn pipeline(&self) -> std::option::Option<& crate::model::Pipeline> {
         self.pipeline.as_ref()
     }
-    /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
+    /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> 
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-    pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
+    pub fn warnings(&self) -> std::option::Option<& [crate::model::Warning]> {
         self.warnings.as_deref()
     }
 }
 /// See [`ReadPipelineOutput`](crate::output::ReadPipelineOutput).
 pub mod read_pipeline_output {
-
+    
     /// A builder for [`ReadPipelineOutput`](crate::output::ReadPipelineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -341,38 +345,37 @@ pub mod read_pipeline_output {
         }
         /// <p>A section of the response body that provides information about the pipeline.</p>
         pub fn set_pipeline(mut self, input: std::option::Option<crate::model::Pipeline>) -> Self {
-            self.pipeline = input;
-            self
+            self.pipeline = input; self
         }
         /// Appends an item to `warnings`.
         ///
         /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
         ///
-        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
+        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> 
         /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
         pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input);
-            self.warnings = Some(v);
-            self
+                            v.push(input);
+                            self.warnings = Some(v);
+                            self
         }
-        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
+        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> 
         /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-        pub fn set_warnings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Warning>>,
-        ) -> Self {
-            self.warnings = input;
-            self
+        pub fn set_warnings(mut self, input: std::option::Option<std::vec::Vec<crate::model::Warning>>) -> Self {
+            self.warnings = input; self
         }
         /// Consumes the builder and constructs a [`ReadPipelineOutput`](crate::output::ReadPipelineOutput).
         pub fn build(self) -> crate::output::ReadPipelineOutput {
             crate::output::ReadPipelineOutput {
-                pipeline: self.pipeline,
-                warnings: self.warnings,
+                pipeline: self.pipeline
+                ,
+                warnings: self.warnings
+                ,
             }
         }
     }
+    
+    
 }
 impl ReadPipelineOutput {
     /// Creates a new builder-style object to manufacture [`ReadPipelineOutput`](crate::output::ReadPipelineOutput).
@@ -384,20 +387,20 @@ impl ReadPipelineOutput {
 /// <p>The <code>ReadJobResponse</code> structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReadJobOutput {
+pub struct ReadJobOutput  {
     /// <p>A section of the response body that provides information about the job.</p>
     #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl ReadJobOutput {
     /// <p>A section of the response body that provides information about the job.</p>
-    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+    pub fn job(&self) -> std::option::Option<& crate::model::Job> {
         self.job.as_ref()
     }
 }
 /// See [`ReadJobOutput`](crate::output::ReadJobOutput).
 pub mod read_job_output {
-
+    
     /// A builder for [`ReadJobOutput`](crate::output::ReadJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -411,14 +414,18 @@ pub mod read_job_output {
         }
         /// <p>A section of the response body that provides information about the job.</p>
         pub fn set_job(mut self, input: std::option::Option<crate::model::Job>) -> Self {
-            self.job = input;
-            self
+            self.job = input; self
         }
         /// Consumes the builder and constructs a [`ReadJobOutput`](crate::output::ReadJobOutput).
         pub fn build(self) -> crate::output::ReadJobOutput {
-            crate::output::ReadJobOutput { job: self.job }
+            crate::output::ReadJobOutput {
+                job: self.job
+                ,
+            }
         }
     }
+    
+    
 }
 impl ReadJobOutput {
     /// Creates a new builder-style object to manufacture [`ReadJobOutput`](crate::output::ReadJobOutput).
@@ -430,7 +437,7 @@ impl ReadJobOutput {
 /// <p>The <code>ListPresetsResponse</code> structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPresetsOutput {
+pub struct ListPresetsOutput  {
     /// <p>An array of <code>Preset</code> objects.</p>
     #[doc(hidden)]
     pub presets: std::option::Option<std::vec::Vec<crate::model::Preset>>,
@@ -440,17 +447,17 @@ pub struct ListPresetsOutput {
 }
 impl ListPresetsOutput {
     /// <p>An array of <code>Preset</code> objects.</p>
-    pub fn presets(&self) -> std::option::Option<&[crate::model::Preset]> {
+    pub fn presets(&self) -> std::option::Option<& [crate::model::Preset]> {
         self.presets.as_deref()
     }
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListPresetsOutput`](crate::output::ListPresetsOutput).
 pub mod list_presets_output {
-
+    
     /// A builder for [`ListPresetsOutput`](crate::output::ListPresetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -465,17 +472,13 @@ pub mod list_presets_output {
         /// <p>An array of <code>Preset</code> objects.</p>
         pub fn presets(mut self, input: crate::model::Preset) -> Self {
             let mut v = self.presets.unwrap_or_default();
-            v.push(input);
-            self.presets = Some(v);
-            self
+                            v.push(input);
+                            self.presets = Some(v);
+                            self
         }
         /// <p>An array of <code>Preset</code> objects.</p>
-        pub fn set_presets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Preset>>,
-        ) -> Self {
-            self.presets = input;
-            self
+        pub fn set_presets(mut self, input: std::option::Option<std::vec::Vec<crate::model::Preset>>) -> Self {
+            self.presets = input; self
         }
         /// <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -483,21 +486,21 @@ pub mod list_presets_output {
             self
         }
         /// <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPresetsOutput`](crate::output::ListPresetsOutput).
         pub fn build(self) -> crate::output::ListPresetsOutput {
             crate::output::ListPresetsOutput {
-                presets: self.presets,
-                next_page_token: self.next_page_token,
+                presets: self.presets
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPresetsOutput {
     /// Creates a new builder-style object to manufacture [`ListPresetsOutput`](crate::output::ListPresetsOutput).
@@ -509,7 +512,7 @@ impl ListPresetsOutput {
 /// <p>A list of the pipelines associated with the current AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPipelinesOutput {
+pub struct ListPipelinesOutput  {
     /// <p>An array of <code>Pipeline</code> objects.</p>
     #[doc(hidden)]
     pub pipelines: std::option::Option<std::vec::Vec<crate::model::Pipeline>>,
@@ -519,17 +522,17 @@ pub struct ListPipelinesOutput {
 }
 impl ListPipelinesOutput {
     /// <p>An array of <code>Pipeline</code> objects.</p>
-    pub fn pipelines(&self) -> std::option::Option<&[crate::model::Pipeline]> {
+    pub fn pipelines(&self) -> std::option::Option<& [crate::model::Pipeline]> {
         self.pipelines.as_deref()
     }
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
 pub mod list_pipelines_output {
-
+    
     /// A builder for [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -544,17 +547,13 @@ pub mod list_pipelines_output {
         /// <p>An array of <code>Pipeline</code> objects.</p>
         pub fn pipelines(mut self, input: crate::model::Pipeline) -> Self {
             let mut v = self.pipelines.unwrap_or_default();
-            v.push(input);
-            self.pipelines = Some(v);
-            self
+                            v.push(input);
+                            self.pipelines = Some(v);
+                            self
         }
         /// <p>An array of <code>Pipeline</code> objects.</p>
-        pub fn set_pipelines(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Pipeline>>,
-        ) -> Self {
-            self.pipelines = input;
-            self
+        pub fn set_pipelines(mut self, input: std::option::Option<std::vec::Vec<crate::model::Pipeline>>) -> Self {
+            self.pipelines = input; self
         }
         /// <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -562,21 +561,21 @@ pub mod list_pipelines_output {
             self
         }
         /// <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
         pub fn build(self) -> crate::output::ListPipelinesOutput {
             crate::output::ListPipelinesOutput {
-                pipelines: self.pipelines,
-                next_page_token: self.next_page_token,
+                pipelines: self.pipelines
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPipelinesOutput {
     /// Creates a new builder-style object to manufacture [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
@@ -588,7 +587,7 @@ impl ListPipelinesOutput {
 /// <p> The <code>ListJobsByStatusResponse</code> structure. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobsByStatusOutput {
+pub struct ListJobsByStatusOutput  {
     /// <p>An array of <code>Job</code> objects that have the specified status.</p>
     #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
@@ -598,17 +597,17 @@ pub struct ListJobsByStatusOutput {
 }
 impl ListJobsByStatusOutput {
     /// <p>An array of <code>Job</code> objects that have the specified status.</p>
-    pub fn jobs(&self) -> std::option::Option<&[crate::model::Job]> {
+    pub fn jobs(&self) -> std::option::Option<& [crate::model::Job]> {
         self.jobs.as_deref()
     }
     /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListJobsByStatusOutput`](crate::output::ListJobsByStatusOutput).
 pub mod list_jobs_by_status_output {
-
+    
     /// A builder for [`ListJobsByStatusOutput`](crate::output::ListJobsByStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -623,17 +622,13 @@ pub mod list_jobs_by_status_output {
         /// <p>An array of <code>Job</code> objects that have the specified status.</p>
         pub fn jobs(mut self, input: crate::model::Job) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input);
-            self.jobs = Some(v);
-            self
+                            v.push(input);
+                            self.jobs = Some(v);
+                            self
         }
         /// <p>An array of <code>Job</code> objects that have the specified status.</p>
-        pub fn set_jobs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Job>>,
-        ) -> Self {
-            self.jobs = input;
-            self
+        pub fn set_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::model::Job>>) -> Self {
+            self.jobs = input; self
         }
         /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -641,21 +636,21 @@ pub mod list_jobs_by_status_output {
             self
         }
         /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListJobsByStatusOutput`](crate::output::ListJobsByStatusOutput).
         pub fn build(self) -> crate::output::ListJobsByStatusOutput {
             crate::output::ListJobsByStatusOutput {
-                jobs: self.jobs,
-                next_page_token: self.next_page_token,
+                jobs: self.jobs
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListJobsByStatusOutput {
     /// Creates a new builder-style object to manufacture [`ListJobsByStatusOutput`](crate::output::ListJobsByStatusOutput).
@@ -667,7 +662,7 @@ impl ListJobsByStatusOutput {
 /// <p>The <code>ListJobsByPipelineResponse</code> structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobsByPipelineOutput {
+pub struct ListJobsByPipelineOutput  {
     /// <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
     #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
@@ -677,17 +672,17 @@ pub struct ListJobsByPipelineOutput {
 }
 impl ListJobsByPipelineOutput {
     /// <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
-    pub fn jobs(&self) -> std::option::Option<&[crate::model::Job]> {
+    pub fn jobs(&self) -> std::option::Option<& [crate::model::Job]> {
         self.jobs.as_deref()
     }
     /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 /// See [`ListJobsByPipelineOutput`](crate::output::ListJobsByPipelineOutput).
 pub mod list_jobs_by_pipeline_output {
-
+    
     /// A builder for [`ListJobsByPipelineOutput`](crate::output::ListJobsByPipelineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -702,17 +697,13 @@ pub mod list_jobs_by_pipeline_output {
         /// <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
         pub fn jobs(mut self, input: crate::model::Job) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input);
-            self.jobs = Some(v);
-            self
+                            v.push(input);
+                            self.jobs = Some(v);
+                            self
         }
         /// <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
-        pub fn set_jobs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Job>>,
-        ) -> Self {
-            self.jobs = input;
-            self
+        pub fn set_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::model::Job>>) -> Self {
+            self.jobs = input; self
         }
         /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -720,21 +711,21 @@ pub mod list_jobs_by_pipeline_output {
             self
         }
         /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// Consumes the builder and constructs a [`ListJobsByPipelineOutput`](crate::output::ListJobsByPipelineOutput).
         pub fn build(self) -> crate::output::ListJobsByPipelineOutput {
             crate::output::ListJobsByPipelineOutput {
-                jobs: self.jobs,
-                next_page_token: self.next_page_token,
+                jobs: self.jobs
+                ,
+                next_page_token: self.next_page_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListJobsByPipelineOutput {
     /// Creates a new builder-style object to manufacture [`ListJobsByPipelineOutput`](crate::output::ListJobsByPipelineOutput).
@@ -746,19 +737,24 @@ impl ListJobsByPipelineOutput {
 /// <p>The <code>DeletePresetResponse</code> structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePresetOutput {}
+pub struct DeletePresetOutput  {
+}
 /// See [`DeletePresetOutput`](crate::output::DeletePresetOutput).
 pub mod delete_preset_output {
-
+    
     /// A builder for [`DeletePresetOutput`](crate::output::DeletePresetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePresetOutput`](crate::output::DeletePresetOutput).
         pub fn build(self) -> crate::output::DeletePresetOutput {
-            crate::output::DeletePresetOutput {}
+            crate::output::DeletePresetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePresetOutput {
     /// Creates a new builder-style object to manufacture [`DeletePresetOutput`](crate::output::DeletePresetOutput).
@@ -770,19 +766,24 @@ impl DeletePresetOutput {
 /// <p>The <code>DeletePipelineResponse</code> structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePipelineOutput {}
+pub struct DeletePipelineOutput  {
+}
 /// See [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
 pub mod delete_pipeline_output {
-
+    
     /// A builder for [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
         pub fn build(self) -> crate::output::DeletePipelineOutput {
-            crate::output::DeletePipelineOutput {}
+            crate::output::DeletePipelineOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePipelineOutput {
     /// Creates a new builder-style object to manufacture [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
@@ -794,7 +795,7 @@ impl DeletePipelineOutput {
 /// <p>The <code>CreatePresetResponse</code> structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePresetOutput {
+pub struct CreatePresetOutput  {
     /// <p>A section of the response body that provides information about the preset that is created.</p>
     #[doc(hidden)]
     pub preset: std::option::Option<crate::model::Preset>,
@@ -804,17 +805,17 @@ pub struct CreatePresetOutput {
 }
 impl CreatePresetOutput {
     /// <p>A section of the response body that provides information about the preset that is created.</p>
-    pub fn preset(&self) -> std::option::Option<&crate::model::Preset> {
+    pub fn preset(&self) -> std::option::Option<& crate::model::Preset> {
         self.preset.as_ref()
     }
     /// <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
-    pub fn warning(&self) -> std::option::Option<&str> {
+    pub fn warning(&self) -> std::option::Option<& str> {
         self.warning.as_deref()
     }
 }
 /// See [`CreatePresetOutput`](crate::output::CreatePresetOutput).
 pub mod create_preset_output {
-
+    
     /// A builder for [`CreatePresetOutput`](crate::output::CreatePresetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -829,8 +830,7 @@ pub mod create_preset_output {
         }
         /// <p>A section of the response body that provides information about the preset that is created.</p>
         pub fn set_preset(mut self, input: std::option::Option<crate::model::Preset>) -> Self {
-            self.preset = input;
-            self
+            self.preset = input; self
         }
         /// <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
         pub fn warning(mut self, input: impl Into<std::string::String>) -> Self {
@@ -839,17 +839,20 @@ pub mod create_preset_output {
         }
         /// <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
         pub fn set_warning(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.warning = input;
-            self
+            self.warning = input; self
         }
         /// Consumes the builder and constructs a [`CreatePresetOutput`](crate::output::CreatePresetOutput).
         pub fn build(self) -> crate::output::CreatePresetOutput {
             crate::output::CreatePresetOutput {
-                preset: self.preset,
-                warning: self.warning,
+                preset: self.preset
+                ,
+                warning: self.warning
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePresetOutput {
     /// Creates a new builder-style object to manufacture [`CreatePresetOutput`](crate::output::CreatePresetOutput).
@@ -861,29 +864,29 @@ impl CreatePresetOutput {
 /// <p>When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePipelineOutput {
+pub struct CreatePipelineOutput  {
     /// <p>A section of the response body that provides information about the pipeline that is created.</p>
     #[doc(hidden)]
     pub pipeline: std::option::Option<crate::model::Pipeline>,
-    /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
+    /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> 
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
     #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
 }
 impl CreatePipelineOutput {
     /// <p>A section of the response body that provides information about the pipeline that is created.</p>
-    pub fn pipeline(&self) -> std::option::Option<&crate::model::Pipeline> {
+    pub fn pipeline(&self) -> std::option::Option<& crate::model::Pipeline> {
         self.pipeline.as_ref()
     }
-    /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
+    /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> 
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-    pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
+    pub fn warnings(&self) -> std::option::Option<& [crate::model::Warning]> {
         self.warnings.as_deref()
     }
 }
 /// See [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
 pub mod create_pipeline_output {
-
+    
     /// A builder for [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -898,38 +901,37 @@ pub mod create_pipeline_output {
         }
         /// <p>A section of the response body that provides information about the pipeline that is created.</p>
         pub fn set_pipeline(mut self, input: std::option::Option<crate::model::Pipeline>) -> Self {
-            self.pipeline = input;
-            self
+            self.pipeline = input; self
         }
         /// Appends an item to `warnings`.
         ///
         /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
         ///
-        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
+        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> 
         /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
         pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input);
-            self.warnings = Some(v);
-            self
+                            v.push(input);
+                            self.warnings = Some(v);
+                            self
         }
-        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
+        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> 
         /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-        pub fn set_warnings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Warning>>,
-        ) -> Self {
-            self.warnings = input;
-            self
+        pub fn set_warnings(mut self, input: std::option::Option<std::vec::Vec<crate::model::Warning>>) -> Self {
+            self.warnings = input; self
         }
         /// Consumes the builder and constructs a [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
         pub fn build(self) -> crate::output::CreatePipelineOutput {
             crate::output::CreatePipelineOutput {
-                pipeline: self.pipeline,
-                warnings: self.warnings,
+                pipeline: self.pipeline
+                ,
+                warnings: self.warnings
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePipelineOutput {
     /// Creates a new builder-style object to manufacture [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
@@ -941,20 +943,20 @@ impl CreatePipelineOutput {
 /// <p>The CreateJobResponse structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateJobOutput {
+pub struct CreateJobOutput  {
     /// <p>A section of the response body that provides information about the job that is created.</p>
     #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
 }
 impl CreateJobOutput {
     /// <p>A section of the response body that provides information about the job that is created.</p>
-    pub fn job(&self) -> std::option::Option<&crate::model::Job> {
+    pub fn job(&self) -> std::option::Option<& crate::model::Job> {
         self.job.as_ref()
     }
 }
 /// See [`CreateJobOutput`](crate::output::CreateJobOutput).
 pub mod create_job_output {
-
+    
     /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -968,14 +970,18 @@ pub mod create_job_output {
         }
         /// <p>A section of the response body that provides information about the job that is created.</p>
         pub fn set_job(mut self, input: std::option::Option<crate::model::Job>) -> Self {
-            self.job = input;
-            self
+            self.job = input; self
         }
         /// Consumes the builder and constructs a [`CreateJobOutput`](crate::output::CreateJobOutput).
         pub fn build(self) -> crate::output::CreateJobOutput {
-            crate::output::CreateJobOutput { job: self.job }
+            crate::output::CreateJobOutput {
+                job: self.job
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::output::CreateJobOutput).
@@ -987,19 +993,24 @@ impl CreateJobOutput {
 /// <p>The response body contains a JSON object. If the job is successfully canceled, the value of <code>Success</code> is <code>true</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelJobOutput {}
+pub struct CancelJobOutput  {
+}
 /// See [`CancelJobOutput`](crate::output::CancelJobOutput).
 pub mod cancel_job_output {
-
+    
     /// A builder for [`CancelJobOutput`](crate::output::CancelJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CancelJobOutput`](crate::output::CancelJobOutput).
         pub fn build(self) -> crate::output::CancelJobOutput {
-            crate::output::CancelJobOutput {}
+            crate::output::CancelJobOutput {
+            }
         }
     }
+    
+    
 }
 impl CancelJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelJobOutput`](crate::output::CancelJobOutput).
@@ -1007,3 +1018,4 @@ impl CancelJobOutput {
         crate::output::cancel_job_output::Builder::default()
     }
 }
+

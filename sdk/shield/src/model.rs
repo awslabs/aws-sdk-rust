@@ -3,7 +3,7 @@
 /// <p>Provides information about a particular parameter passed inside a request that resulted in an exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The name of the parameter that failed validation.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>The name of the parameter that failed validation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The message describing why the parameter failed validation.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_exception_field {
         }
         /// <p>The name of the parameter that failed validation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The message describing why the parameter failed validation.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod validation_exception_field {
         }
         /// <p>The message describing why the parameter failed validation.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -73,9 +75,9 @@ impl ValidationExceptionField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -97,60 +99,52 @@ impl ValidationExceptionField {
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
     #[allow(missing_docs)] // documentation missing in model
     Other,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
             "OTHER" => ValidationExceptionReason::Other,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
             ValidationExceptionReason::Other => "OTHER",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FIELD_VALIDATION_FAILED", "OTHER"]
+        &[
+            "FIELD_VALIDATION_FAILED", "OTHER"
+        ]
     }
 }
 impl AsRef<str> for ValidationExceptionReason {
@@ -165,9 +159,9 @@ impl AsRef<str> for ValidationExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let autorenew = unimplemented!();
 /// match autorenew {
@@ -189,58 +183,52 @@ impl AsRef<str> for ValidationExceptionReason {
 /// Specifically, when `autorenew` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AutoRenew::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AutoRenew {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AutoRenew {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => AutoRenew::Disabled,
             "ENABLED" => AutoRenew::Enabled,
-            other => AutoRenew::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AutoRenew::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AutoRenew {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AutoRenew::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AutoRenew::from(s))
+                }
+            }
 impl AutoRenew {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AutoRenew::Disabled => "DISABLED",
             AutoRenew::Enabled => "ENABLED",
-            AutoRenew::Unknown(value) => value.as_str(),
+            AutoRenew::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for AutoRenew {
@@ -255,9 +243,9 @@ impl AsRef<str> for AutoRenew {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let protectedresourcetype = unimplemented!();
 /// match protectedresourcetype {
@@ -283,22 +271,14 @@ impl AsRef<str> for AutoRenew {
 /// Specifically, when `protectedresourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProtectedResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProtectedResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ApplicationLoadBalancer,
@@ -313,7 +293,7 @@ pub enum ProtectedResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Route53HostedZone,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProtectedResourceType {
     fn from(s: &str) -> Self {
@@ -324,19 +304,17 @@ impl std::convert::From<&str> for ProtectedResourceType {
             "ELASTIC_IP_ALLOCATION" => ProtectedResourceType::ElasticIpAllocation,
             "GLOBAL_ACCELERATOR" => ProtectedResourceType::GlobalAccelerator,
             "ROUTE_53_HOSTED_ZONE" => ProtectedResourceType::Route53HostedZone,
-            other => {
-                ProtectedResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ProtectedResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProtectedResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProtectedResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProtectedResourceType::from(s))
+                }
+            }
 impl ProtectedResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -347,18 +325,13 @@ impl ProtectedResourceType {
             ProtectedResourceType::ElasticIpAllocation => "ELASTIC_IP_ALLOCATION",
             ProtectedResourceType::GlobalAccelerator => "GLOBAL_ACCELERATOR",
             ProtectedResourceType::Route53HostedZone => "ROUTE_53_HOSTED_ZONE",
-            ProtectedResourceType::Unknown(value) => value.as_str(),
+            ProtectedResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "APPLICATION_LOAD_BALANCER",
-            "CLASSIC_LOAD_BALANCER",
-            "CLOUDFRONT_DISTRIBUTION",
-            "ELASTIC_IP_ALLOCATION",
-            "GLOBAL_ACCELERATOR",
-            "ROUTE_53_HOSTED_ZONE",
+            "APPLICATION_LOAD_BALANCER", "CLASSIC_LOAD_BALANCER", "CLOUDFRONT_DISTRIBUTION", "ELASTIC_IP_ALLOCATION", "GLOBAL_ACCELERATOR", "ROUTE_53_HOSTED_ZONE"
         ]
     }
 }
@@ -374,9 +347,9 @@ impl AsRef<str> for ProtectedResourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let protectiongrouppattern = unimplemented!();
 /// match protectiongrouppattern {
@@ -399,22 +372,14 @@ impl AsRef<str> for ProtectedResourceType {
 /// Specifically, when `protectiongrouppattern` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProtectionGroupPattern::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProtectionGroupPattern {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -423,7 +388,7 @@ pub enum ProtectionGroupPattern {
     #[allow(missing_docs)] // documentation missing in model
     ByResourceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProtectionGroupPattern {
     fn from(s: &str) -> Self {
@@ -431,19 +396,17 @@ impl std::convert::From<&str> for ProtectionGroupPattern {
             "ALL" => ProtectionGroupPattern::All,
             "ARBITRARY" => ProtectionGroupPattern::Arbitrary,
             "BY_RESOURCE_TYPE" => ProtectionGroupPattern::ByResourceType,
-            other => {
-                ProtectionGroupPattern::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ProtectionGroupPattern::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProtectionGroupPattern {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProtectionGroupPattern::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProtectionGroupPattern::from(s))
+                }
+            }
 impl ProtectionGroupPattern {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -451,12 +414,14 @@ impl ProtectionGroupPattern {
             ProtectionGroupPattern::All => "ALL",
             ProtectionGroupPattern::Arbitrary => "ARBITRARY",
             ProtectionGroupPattern::ByResourceType => "BY_RESOURCE_TYPE",
-            ProtectionGroupPattern::Unknown(value) => value.as_str(),
+            ProtectionGroupPattern::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "ARBITRARY", "BY_RESOURCE_TYPE"]
+        &[
+            "ALL", "ARBITRARY", "BY_RESOURCE_TYPE"
+        ]
     }
 }
 impl AsRef<str> for ProtectionGroupPattern {
@@ -471,9 +436,9 @@ impl AsRef<str> for ProtectionGroupPattern {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let protectiongroupaggregation = unimplemented!();
 /// match protectiongroupaggregation {
@@ -496,22 +461,14 @@ impl AsRef<str> for ProtectionGroupPattern {
 /// Specifically, when `protectiongroupaggregation` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProtectionGroupAggregation::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProtectionGroupAggregation {
     #[allow(missing_docs)] // documentation missing in model
     Max,
@@ -520,7 +477,7 @@ pub enum ProtectionGroupAggregation {
     #[allow(missing_docs)] // documentation missing in model
     Sum,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProtectionGroupAggregation {
     fn from(s: &str) -> Self {
@@ -528,19 +485,17 @@ impl std::convert::From<&str> for ProtectionGroupAggregation {
             "MAX" => ProtectionGroupAggregation::Max,
             "MEAN" => ProtectionGroupAggregation::Mean,
             "SUM" => ProtectionGroupAggregation::Sum,
-            other => ProtectionGroupAggregation::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ProtectionGroupAggregation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProtectionGroupAggregation {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProtectionGroupAggregation::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProtectionGroupAggregation::from(s))
+                }
+            }
 impl ProtectionGroupAggregation {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -548,12 +503,14 @@ impl ProtectionGroupAggregation {
             ProtectionGroupAggregation::Max => "MAX",
             ProtectionGroupAggregation::Mean => "MEAN",
             ProtectionGroupAggregation::Sum => "SUM",
-            ProtectionGroupAggregation::Unknown(value) => value.as_str(),
+            ProtectionGroupAggregation::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MAX", "MEAN", "SUM"]
+        &[
+            "MAX", "MEAN", "SUM"
+        ]
     }
 }
 impl AsRef<str> for ProtectionGroupAggregation {
@@ -565,7 +522,7 @@ impl AsRef<str> for ProtectionGroupAggregation {
 /// <p>Contact information that the SRT can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EmergencyContact {
+pub struct EmergencyContact  {
     /// <p>The email address for the contact.</p>
     #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
@@ -578,21 +535,21 @@ pub struct EmergencyContact {
 }
 impl EmergencyContact {
     /// <p>The email address for the contact.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> std::option::Option<& str> {
         self.email_address.as_deref()
     }
     /// <p>The phone number for the contact.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>Additional notes regarding the contact. </p>
-    pub fn contact_notes(&self) -> std::option::Option<&str> {
+    pub fn contact_notes(&self) -> std::option::Option<& str> {
         self.contact_notes.as_deref()
     }
 }
 /// See [`EmergencyContact`](crate::model::EmergencyContact).
 pub mod emergency_contact {
-
+    
     /// A builder for [`EmergencyContact`](crate::model::EmergencyContact).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -607,12 +564,8 @@ pub mod emergency_contact {
             self
         }
         /// <p>The email address for the contact.</p>
-        pub fn set_email_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_address = input;
-            self
+        pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_address = input; self
         }
         /// <p>The phone number for the contact.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -621,8 +574,7 @@ pub mod emergency_contact {
         }
         /// <p>The phone number for the contact.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = input;
-            self
+            self.phone_number = input; self
         }
         /// <p>Additional notes regarding the contact. </p>
         pub fn contact_notes(mut self, input: impl Into<std::string::String>) -> Self {
@@ -630,22 +582,23 @@ pub mod emergency_contact {
             self
         }
         /// <p>Additional notes regarding the contact. </p>
-        pub fn set_contact_notes(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.contact_notes = input;
-            self
+        pub fn set_contact_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_notes = input; self
         }
         /// Consumes the builder and constructs a [`EmergencyContact`](crate::model::EmergencyContact).
         pub fn build(self) -> crate::model::EmergencyContact {
             crate::model::EmergencyContact {
-                email_address: self.email_address,
-                phone_number: self.phone_number,
-                contact_notes: self.contact_notes,
+                email_address: self.email_address
+                ,
+                phone_number: self.phone_number
+                ,
+                contact_notes: self.contact_notes
+                ,
             }
         }
     }
+    
+    
 }
 impl EmergencyContact {
     /// Creates a new builder-style object to manufacture [`EmergencyContact`](crate::model::EmergencyContact).
@@ -657,31 +610,31 @@ impl EmergencyContact {
 /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResponseAction {
-    /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p>
+pub struct ResponseAction  {
+    /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p> 
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
     #[doc(hidden)]
     pub block: std::option::Option<crate::model::BlockAction>,
-    /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p>
+    /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p> 
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
     #[doc(hidden)]
     pub count: std::option::Option<crate::model::CountAction>,
 }
 impl ResponseAction {
-    /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p>
+    /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p> 
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
-    pub fn block(&self) -> std::option::Option<&crate::model::BlockAction> {
+    pub fn block(&self) -> std::option::Option<& crate::model::BlockAction> {
         self.block.as_ref()
     }
-    /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p>
+    /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p> 
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
-    pub fn count(&self) -> std::option::Option<&crate::model::CountAction> {
+    pub fn count(&self) -> std::option::Option<& crate::model::CountAction> {
         self.count.as_ref()
     }
 }
 /// See [`ResponseAction`](crate::model::ResponseAction).
 pub mod response_action {
-
+    
     /// A builder for [`ResponseAction`](crate::model::ResponseAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -689,38 +642,40 @@ pub mod response_action {
         pub(crate) count: std::option::Option<crate::model::CountAction>,
     }
     impl Builder {
-        /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p>
+        /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p> 
         /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
         pub fn block(mut self, input: crate::model::BlockAction) -> Self {
             self.block = Some(input);
             self
         }
-        /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p>
+        /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p> 
         /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
         pub fn set_block(mut self, input: std::option::Option<crate::model::BlockAction>) -> Self {
-            self.block = input;
-            self
+            self.block = input; self
         }
-        /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p>
+        /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p> 
         /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
         pub fn count(mut self, input: crate::model::CountAction) -> Self {
             self.count = Some(input);
             self
         }
-        /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p>
+        /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p> 
         /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
         pub fn set_count(mut self, input: std::option::Option<crate::model::CountAction>) -> Self {
-            self.count = input;
-            self
+            self.count = input; self
         }
         /// Consumes the builder and constructs a [`ResponseAction`](crate::model::ResponseAction).
         pub fn build(self) -> crate::model::ResponseAction {
             crate::model::ResponseAction {
-                block: self.block,
-                count: self.count,
+                block: self.block
+                ,
+                count: self.count
+                ,
             }
         }
     }
+    
+    
 }
 impl ResponseAction {
     /// Creates a new builder-style object to manufacture [`ResponseAction`](crate::model::ResponseAction).
@@ -729,24 +684,29 @@ impl ResponseAction {
     }
 }
 
-/// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p>
-/// <p>This is only used in the context of the <code>ResponseAction</code> setting. </p>
+/// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p> 
+/// <p>This is only used in the context of the <code>ResponseAction</code> setting. </p> 
 /// <p>JSON specification: <code>"Count": {}</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CountAction {}
+pub struct CountAction  {
+}
 /// See [`CountAction`](crate::model::CountAction).
 pub mod count_action {
-
+    
     /// A builder for [`CountAction`](crate::model::CountAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CountAction`](crate::model::CountAction).
         pub fn build(self) -> crate::model::CountAction {
-            crate::model::CountAction {}
+            crate::model::CountAction {
+            }
         }
     }
+    
+    
 }
 impl CountAction {
     /// Creates a new builder-style object to manufacture [`CountAction`](crate::model::CountAction).
@@ -755,24 +715,29 @@ impl CountAction {
     }
 }
 
-/// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p>
-/// <p>This is only used in the context of the <code>ResponseAction</code> setting. </p>
+/// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p> 
+/// <p>This is only used in the context of the <code>ResponseAction</code> setting. </p> 
 /// <p>JSON specification: <code>"Block": {}</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BlockAction {}
+pub struct BlockAction  {
+}
 /// See [`BlockAction`](crate::model::BlockAction).
 pub mod block_action {
-
+    
     /// A builder for [`BlockAction`](crate::model::BlockAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`BlockAction`](crate::model::BlockAction).
         pub fn build(self) -> crate::model::BlockAction {
-            crate::model::BlockAction {}
+            crate::model::BlockAction {
+            }
         }
     }
+    
+    
 }
 impl BlockAction {
     /// Creates a new builder-style object to manufacture [`BlockAction`](crate::model::BlockAction).
@@ -784,7 +749,7 @@ impl BlockAction {
 /// <p>A tag associated with an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -794,17 +759,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -819,8 +784,7 @@ pub mod tag {
         }
         /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -829,17 +793,20 @@ pub mod tag {
         }
         /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -851,7 +818,7 @@ impl Tag {
 /// <p>An object that represents a resource that is under DDoS protection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Protection {
+pub struct Protection  {
     /// <p>The unique identifier (ID) of the protection.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -869,41 +836,37 @@ pub struct Protection {
     pub protection_arn: std::option::Option<std::string::String>,
     /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
     #[doc(hidden)]
-    pub application_layer_automatic_response_configuration:
-        std::option::Option<crate::model::ApplicationLayerAutomaticResponseConfiguration>,
+    pub application_layer_automatic_response_configuration: std::option::Option<crate::model::ApplicationLayerAutomaticResponseConfiguration>,
 }
 impl Protection {
     /// <p>The unique identifier (ID) of the protection.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the protection. For example, <code>My CloudFront distributions</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection. </p>
-    pub fn health_check_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn health_check_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.health_check_ids.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the protection.</p>
-    pub fn protection_arn(&self) -> std::option::Option<&str> {
+    pub fn protection_arn(&self) -> std::option::Option<& str> {
         self.protection_arn.as_deref()
     }
     /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
-    pub fn application_layer_automatic_response_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationLayerAutomaticResponseConfiguration> {
-        self.application_layer_automatic_response_configuration
-            .as_ref()
+    pub fn application_layer_automatic_response_configuration(&self) -> std::option::Option<& crate::model::ApplicationLayerAutomaticResponseConfiguration> {
+        self.application_layer_automatic_response_configuration.as_ref()
     }
 }
 /// See [`Protection`](crate::model::Protection).
 pub mod protection {
-
+    
     /// A builder for [`Protection`](crate::model::Protection).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -912,8 +875,7 @@ pub mod protection {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) health_check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) protection_arn: std::option::Option<std::string::String>,
-        pub(crate) application_layer_automatic_response_configuration:
-            std::option::Option<crate::model::ApplicationLayerAutomaticResponseConfiguration>,
+        pub(crate) application_layer_automatic_response_configuration: std::option::Option<crate::model::ApplicationLayerAutomaticResponseConfiguration>,
     }
     impl Builder {
         /// <p>The unique identifier (ID) of the protection.</p>
@@ -923,8 +885,7 @@ pub mod protection {
         }
         /// <p>The unique identifier (ID) of the protection.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the protection. For example, <code>My CloudFront distributions</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -933,8 +894,7 @@ pub mod protection {
         }
         /// <p>The name of the protection. For example, <code>My CloudFront distributions</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -943,8 +903,7 @@ pub mod protection {
         }
         /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `health_check_ids`.
         ///
@@ -953,17 +912,13 @@ pub mod protection {
         /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection. </p>
         pub fn health_check_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.health_check_ids.unwrap_or_default();
-            v.push(input.into());
-            self.health_check_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.health_check_ids = Some(v);
+                            self
         }
         /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection. </p>
-        pub fn set_health_check_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.health_check_ids = input;
-            self
+        pub fn set_health_check_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.health_check_ids = input; self
         }
         /// <p>The ARN (Amazon Resource Name) of the protection.</p>
         pub fn protection_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -971,44 +926,38 @@ pub mod protection {
             self
         }
         /// <p>The ARN (Amazon Resource Name) of the protection.</p>
-        pub fn set_protection_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.protection_arn = input;
-            self
+        pub fn set_protection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protection_arn = input; self
         }
         /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
-        pub fn application_layer_automatic_response_configuration(
-            mut self,
-            input: crate::model::ApplicationLayerAutomaticResponseConfiguration,
-        ) -> Self {
+        pub fn application_layer_automatic_response_configuration(mut self, input: crate::model::ApplicationLayerAutomaticResponseConfiguration) -> Self {
             self.application_layer_automatic_response_configuration = Some(input);
             self
         }
         /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
-        pub fn set_application_layer_automatic_response_configuration(
-            mut self,
-            input: std::option::Option<
-                crate::model::ApplicationLayerAutomaticResponseConfiguration,
-            >,
-        ) -> Self {
-            self.application_layer_automatic_response_configuration = input;
-            self
+        pub fn set_application_layer_automatic_response_configuration(mut self, input: std::option::Option<crate::model::ApplicationLayerAutomaticResponseConfiguration>) -> Self {
+            self.application_layer_automatic_response_configuration = input; self
         }
         /// Consumes the builder and constructs a [`Protection`](crate::model::Protection).
         pub fn build(self) -> crate::model::Protection {
             crate::model::Protection {
-                id: self.id,
-                name: self.name,
-                resource_arn: self.resource_arn,
-                health_check_ids: self.health_check_ids,
-                protection_arn: self.protection_arn,
-                application_layer_automatic_response_configuration: self
-                    .application_layer_automatic_response_configuration,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                resource_arn: self.resource_arn
+                ,
+                health_check_ids: self.health_check_ids
+                ,
+                protection_arn: self.protection_arn
+                ,
+                application_layer_automatic_response_configuration: self.application_layer_automatic_response_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl Protection {
     /// Creates a new builder-style object to manufacture [`Protection`](crate::model::Protection).
@@ -1020,7 +969,7 @@ impl Protection {
 /// <p>The automatic application layer DDoS mitigation settings for a <code>Protection</code>. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationLayerAutomaticResponseConfiguration {
+pub struct ApplicationLayerAutomaticResponseConfiguration  {
     /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ApplicationLayerAutomaticResponseStatus>,
@@ -1030,42 +979,32 @@ pub struct ApplicationLayerAutomaticResponseConfiguration {
 }
 impl ApplicationLayerAutomaticResponseConfiguration {
     /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
-    pub fn status(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationLayerAutomaticResponseStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ApplicationLayerAutomaticResponseStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
-    pub fn action(&self) -> std::option::Option<&crate::model::ResponseAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ResponseAction> {
         self.action.as_ref()
     }
 }
 /// See [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration).
 pub mod application_layer_automatic_response_configuration {
-
+    
     /// A builder for [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) status:
-            std::option::Option<crate::model::ApplicationLayerAutomaticResponseStatus>,
+        pub(crate) status: std::option::Option<crate::model::ApplicationLayerAutomaticResponseStatus>,
         pub(crate) action: std::option::Option<crate::model::ResponseAction>,
     }
     impl Builder {
         /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
-        pub fn status(
-            mut self,
-            input: crate::model::ApplicationLayerAutomaticResponseStatus,
-        ) -> Self {
+        pub fn status(mut self, input: crate::model::ApplicationLayerAutomaticResponseStatus) -> Self {
             self.status = Some(input);
             self
         }
         /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationLayerAutomaticResponseStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ApplicationLayerAutomaticResponseStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
         pub fn action(mut self, input: crate::model::ResponseAction) -> Self {
@@ -1073,21 +1012,21 @@ pub mod application_layer_automatic_response_configuration {
             self
         }
         /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::ResponseAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::ResponseAction>) -> Self {
+            self.action = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration).
         pub fn build(self) -> crate::model::ApplicationLayerAutomaticResponseConfiguration {
             crate::model::ApplicationLayerAutomaticResponseConfiguration {
-                status: self.status,
-                action: self.action,
+                status: self.status
+                ,
+                action: self.action
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationLayerAutomaticResponseConfiguration {
     /// Creates a new builder-style object to manufacture [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration).
@@ -1102,9 +1041,9 @@ impl ApplicationLayerAutomaticResponseConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let applicationlayerautomaticresponsestatus = unimplemented!();
 /// match applicationlayerautomaticresponsestatus {
@@ -1126,60 +1065,52 @@ impl ApplicationLayerAutomaticResponseConfiguration {
 /// Specifically, when `applicationlayerautomaticresponsestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApplicationLayerAutomaticResponseStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ApplicationLayerAutomaticResponseStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApplicationLayerAutomaticResponseStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => ApplicationLayerAutomaticResponseStatus::Disabled,
             "ENABLED" => ApplicationLayerAutomaticResponseStatus::Enabled,
-            other => ApplicationLayerAutomaticResponseStatus::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ApplicationLayerAutomaticResponseStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ApplicationLayerAutomaticResponseStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApplicationLayerAutomaticResponseStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ApplicationLayerAutomaticResponseStatus::from(s))
+                }
+            }
 impl ApplicationLayerAutomaticResponseStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApplicationLayerAutomaticResponseStatus::Disabled => "DISABLED",
             ApplicationLayerAutomaticResponseStatus::Enabled => "ENABLED",
-            ApplicationLayerAutomaticResponseStatus::Unknown(value) => value.as_str(),
+            ApplicationLayerAutomaticResponseStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for ApplicationLayerAutomaticResponseStatus {
@@ -1191,7 +1122,7 @@ impl AsRef<str> for ApplicationLayerAutomaticResponseStatus {
 /// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InclusionProtectionFilters {
+pub struct InclusionProtectionFilters  {
     /// <p>The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve. </p>
     #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1204,28 +1135,27 @@ pub struct InclusionProtectionFilters {
 }
 impl InclusionProtectionFilters {
     /// <p>The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve. </p>
-    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_arns.as_deref()
     }
     /// <p>The name of the protection that you want to retrieve. </p>
-    pub fn protection_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn protection_names(&self) -> std::option::Option<& [std::string::String]> {
         self.protection_names.as_deref()
     }
     /// <p>The type of protected resource whose protections you want to retrieve. </p>
-    pub fn resource_types(&self) -> std::option::Option<&[crate::model::ProtectedResourceType]> {
+    pub fn resource_types(&self) -> std::option::Option<& [crate::model::ProtectedResourceType]> {
         self.resource_types.as_deref()
     }
 }
 /// See [`InclusionProtectionFilters`](crate::model::InclusionProtectionFilters).
 pub mod inclusion_protection_filters {
-
+    
     /// A builder for [`InclusionProtectionFilters`](crate::model::InclusionProtectionFilters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) protection_names: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) resource_types:
-            std::option::Option<std::vec::Vec<crate::model::ProtectedResourceType>>,
+        pub(crate) resource_types: std::option::Option<std::vec::Vec<crate::model::ProtectedResourceType>>,
     }
     impl Builder {
         /// Appends an item to `resource_arns`.
@@ -1235,17 +1165,13 @@ pub mod inclusion_protection_filters {
         /// <p>The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve. </p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
-            v.push(input.into());
-            self.resource_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_arns = Some(v);
+                            self
         }
         /// <p>The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve. </p>
-        pub fn set_resource_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_arns = input;
-            self
+        pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_arns = input; self
         }
         /// Appends an item to `protection_names`.
         ///
@@ -1254,17 +1180,13 @@ pub mod inclusion_protection_filters {
         /// <p>The name of the protection that you want to retrieve. </p>
         pub fn protection_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.protection_names.unwrap_or_default();
-            v.push(input.into());
-            self.protection_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.protection_names = Some(v);
+                            self
         }
         /// <p>The name of the protection that you want to retrieve. </p>
-        pub fn set_protection_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.protection_names = input;
-            self
+        pub fn set_protection_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.protection_names = input; self
         }
         /// Appends an item to `resource_types`.
         ///
@@ -1273,27 +1195,28 @@ pub mod inclusion_protection_filters {
         /// <p>The type of protected resource whose protections you want to retrieve. </p>
         pub fn resource_types(mut self, input: crate::model::ProtectedResourceType) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input);
-            self.resource_types = Some(v);
-            self
+                            v.push(input);
+                            self.resource_types = Some(v);
+                            self
         }
         /// <p>The type of protected resource whose protections you want to retrieve. </p>
-        pub fn set_resource_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProtectedResourceType>>,
-        ) -> Self {
-            self.resource_types = input;
-            self
+        pub fn set_resource_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProtectedResourceType>>) -> Self {
+            self.resource_types = input; self
         }
         /// Consumes the builder and constructs a [`InclusionProtectionFilters`](crate::model::InclusionProtectionFilters).
         pub fn build(self) -> crate::model::InclusionProtectionFilters {
             crate::model::InclusionProtectionFilters {
-                resource_arns: self.resource_arns,
-                protection_names: self.protection_names,
-                resource_types: self.resource_types,
+                resource_arns: self.resource_arns
+                ,
+                protection_names: self.protection_names
+                ,
+                resource_types: self.resource_types
+                ,
             }
         }
     }
+    
+    
 }
 impl InclusionProtectionFilters {
     /// Creates a new builder-style object to manufacture [`InclusionProtectionFilters`](crate::model::InclusionProtectionFilters).
@@ -1305,15 +1228,15 @@ impl InclusionProtectionFilters {
 /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectionGroup {
+pub struct ProtectionGroup  {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     #[doc(hidden)]
     pub protection_group_id: std::option::Option<std::string::String>,
-    /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
-    /// <ul>
-    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
-    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
-    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
+    /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p> 
+    /// <ul> 
+    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li> 
+    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li> 
+    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub aggregation: std::option::Option<crate::model::ProtectionGroupAggregation>,
@@ -1332,38 +1255,38 @@ pub struct ProtectionGroup {
 }
 impl ProtectionGroup {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn protection_group_id(&self) -> std::option::Option<&str> {
+    pub fn protection_group_id(&self) -> std::option::Option<& str> {
         self.protection_group_id.as_deref()
     }
-    /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
-    /// <ul>
-    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
-    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
-    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
+    /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p> 
+    /// <ul> 
+    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li> 
+    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li> 
+    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li> 
     /// </ul>
-    pub fn aggregation(&self) -> std::option::Option<&crate::model::ProtectionGroupAggregation> {
+    pub fn aggregation(&self) -> std::option::Option<& crate::model::ProtectionGroupAggregation> {
         self.aggregation.as_ref()
     }
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a specified resource type.</p>
-    pub fn pattern(&self) -> std::option::Option<&crate::model::ProtectionGroupPattern> {
+    pub fn pattern(&self) -> std::option::Option<& crate::model::ProtectionGroupPattern> {
         self.pattern.as_ref()
     }
     /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ProtectedResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ProtectedResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-    pub fn members(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn members(&self) -> std::option::Option<& [std::string::String]> {
         self.members.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the protection group.</p>
-    pub fn protection_group_arn(&self) -> std::option::Option<&str> {
+    pub fn protection_group_arn(&self) -> std::option::Option<& str> {
         self.protection_group_arn.as_deref()
     }
 }
 /// See [`ProtectionGroup`](crate::model::ProtectionGroup).
 pub mod protection_group {
-
+    
     /// A builder for [`ProtectionGroup`](crate::model::ProtectionGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1381,35 +1304,27 @@ pub mod protection_group {
             self
         }
         /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-        pub fn set_protection_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.protection_group_id = input;
-            self
+        pub fn set_protection_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protection_group_id = input; self
         }
-        /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
-        /// <ul>
-        /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
-        /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
-        /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
+        /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p> 
+        /// <ul> 
+        /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li> 
+        /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li> 
+        /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li> 
         /// </ul>
         pub fn aggregation(mut self, input: crate::model::ProtectionGroupAggregation) -> Self {
             self.aggregation = Some(input);
             self
         }
-        /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
-        /// <ul>
-        /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
-        /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
-        /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
+        /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p> 
+        /// <ul> 
+        /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li> 
+        /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li> 
+        /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li> 
         /// </ul>
-        pub fn set_aggregation(
-            mut self,
-            input: std::option::Option<crate::model::ProtectionGroupAggregation>,
-        ) -> Self {
-            self.aggregation = input;
-            self
+        pub fn set_aggregation(mut self, input: std::option::Option<crate::model::ProtectionGroupAggregation>) -> Self {
+            self.aggregation = input; self
         }
         /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a specified resource type.</p>
         pub fn pattern(mut self, input: crate::model::ProtectionGroupPattern) -> Self {
@@ -1417,12 +1332,8 @@ pub mod protection_group {
             self
         }
         /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a specified resource type.</p>
-        pub fn set_pattern(
-            mut self,
-            input: std::option::Option<crate::model::ProtectionGroupPattern>,
-        ) -> Self {
-            self.pattern = input;
-            self
+        pub fn set_pattern(mut self, input: std::option::Option<crate::model::ProtectionGroupPattern>) -> Self {
+            self.pattern = input; self
         }
         /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
         pub fn resource_type(mut self, input: crate::model::ProtectedResourceType) -> Self {
@@ -1430,12 +1341,8 @@ pub mod protection_group {
             self
         }
         /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ProtectedResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// Appends an item to `members`.
         ///
@@ -1444,17 +1351,13 @@ pub mod protection_group {
         /// <p>The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
         pub fn members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
-            self.members = Some(v);
-            self
+                            v.push(input.into());
+                            self.members = Some(v);
+                            self
         }
         /// <p>The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-        pub fn set_members(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.members = input;
-            self
+        pub fn set_members(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.members = input; self
         }
         /// <p>The ARN (Amazon Resource Name) of the protection group.</p>
         pub fn protection_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1462,25 +1365,29 @@ pub mod protection_group {
             self
         }
         /// <p>The ARN (Amazon Resource Name) of the protection group.</p>
-        pub fn set_protection_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.protection_group_arn = input;
-            self
+        pub fn set_protection_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protection_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`ProtectionGroup`](crate::model::ProtectionGroup).
         pub fn build(self) -> crate::model::ProtectionGroup {
             crate::model::ProtectionGroup {
-                protection_group_id: self.protection_group_id,
-                aggregation: self.aggregation,
-                pattern: self.pattern,
-                resource_type: self.resource_type,
-                members: self.members,
-                protection_group_arn: self.protection_group_arn,
+                protection_group_id: self.protection_group_id
+                ,
+                aggregation: self.aggregation
+                ,
+                pattern: self.pattern
+                ,
+                resource_type: self.resource_type
+                ,
+                members: self.members
+                ,
+                protection_group_arn: self.protection_group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtectionGroup {
     /// Creates a new builder-style object to manufacture [`ProtectionGroup`](crate::model::ProtectionGroup).
@@ -1492,7 +1399,7 @@ impl ProtectionGroup {
 /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with a specific pattern, aggregation, or resource type. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InclusionProtectionGroupFilters {
+pub struct InclusionProtectionGroupFilters  {
     /// <p>The ID of the protection group that you want to retrieve. </p>
     #[doc(hidden)]
     pub protection_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1508,35 +1415,32 @@ pub struct InclusionProtectionGroupFilters {
 }
 impl InclusionProtectionGroupFilters {
     /// <p>The ID of the protection group that you want to retrieve. </p>
-    pub fn protection_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn protection_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.protection_group_ids.as_deref()
     }
     /// <p>The pattern specification of the protection groups that you want to retrieve. </p>
-    pub fn patterns(&self) -> std::option::Option<&[crate::model::ProtectionGroupPattern]> {
+    pub fn patterns(&self) -> std::option::Option<& [crate::model::ProtectionGroupPattern]> {
         self.patterns.as_deref()
     }
     /// <p>The resource type configuration of the protection groups that you want to retrieve. In the protection group configuration, you specify the resource type when you set the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>. </p>
-    pub fn resource_types(&self) -> std::option::Option<&[crate::model::ProtectedResourceType]> {
+    pub fn resource_types(&self) -> std::option::Option<& [crate::model::ProtectedResourceType]> {
         self.resource_types.as_deref()
     }
     /// <p>The aggregation setting of the protection groups that you want to retrieve. </p>
-    pub fn aggregations(&self) -> std::option::Option<&[crate::model::ProtectionGroupAggregation]> {
+    pub fn aggregations(&self) -> std::option::Option<& [crate::model::ProtectionGroupAggregation]> {
         self.aggregations.as_deref()
     }
 }
 /// See [`InclusionProtectionGroupFilters`](crate::model::InclusionProtectionGroupFilters).
 pub mod inclusion_protection_group_filters {
-
+    
     /// A builder for [`InclusionProtectionGroupFilters`](crate::model::InclusionProtectionGroupFilters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) patterns:
-            std::option::Option<std::vec::Vec<crate::model::ProtectionGroupPattern>>,
-        pub(crate) resource_types:
-            std::option::Option<std::vec::Vec<crate::model::ProtectedResourceType>>,
-        pub(crate) aggregations:
-            std::option::Option<std::vec::Vec<crate::model::ProtectionGroupAggregation>>,
+        pub(crate) patterns: std::option::Option<std::vec::Vec<crate::model::ProtectionGroupPattern>>,
+        pub(crate) resource_types: std::option::Option<std::vec::Vec<crate::model::ProtectedResourceType>>,
+        pub(crate) aggregations: std::option::Option<std::vec::Vec<crate::model::ProtectionGroupAggregation>>,
     }
     impl Builder {
         /// Appends an item to `protection_group_ids`.
@@ -1546,17 +1450,13 @@ pub mod inclusion_protection_group_filters {
         /// <p>The ID of the protection group that you want to retrieve. </p>
         pub fn protection_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.protection_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.protection_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.protection_group_ids = Some(v);
+                            self
         }
         /// <p>The ID of the protection group that you want to retrieve. </p>
-        pub fn set_protection_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.protection_group_ids = input;
-            self
+        pub fn set_protection_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.protection_group_ids = input; self
         }
         /// Appends an item to `patterns`.
         ///
@@ -1565,17 +1465,13 @@ pub mod inclusion_protection_group_filters {
         /// <p>The pattern specification of the protection groups that you want to retrieve. </p>
         pub fn patterns(mut self, input: crate::model::ProtectionGroupPattern) -> Self {
             let mut v = self.patterns.unwrap_or_default();
-            v.push(input);
-            self.patterns = Some(v);
-            self
+                            v.push(input);
+                            self.patterns = Some(v);
+                            self
         }
         /// <p>The pattern specification of the protection groups that you want to retrieve. </p>
-        pub fn set_patterns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProtectionGroupPattern>>,
-        ) -> Self {
-            self.patterns = input;
-            self
+        pub fn set_patterns(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProtectionGroupPattern>>) -> Self {
+            self.patterns = input; self
         }
         /// Appends an item to `resource_types`.
         ///
@@ -1584,17 +1480,13 @@ pub mod inclusion_protection_group_filters {
         /// <p>The resource type configuration of the protection groups that you want to retrieve. In the protection group configuration, you specify the resource type when you set the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>. </p>
         pub fn resource_types(mut self, input: crate::model::ProtectedResourceType) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input);
-            self.resource_types = Some(v);
-            self
+                            v.push(input);
+                            self.resource_types = Some(v);
+                            self
         }
         /// <p>The resource type configuration of the protection groups that you want to retrieve. In the protection group configuration, you specify the resource type when you set the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>. </p>
-        pub fn set_resource_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProtectedResourceType>>,
-        ) -> Self {
-            self.resource_types = input;
-            self
+        pub fn set_resource_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProtectedResourceType>>) -> Self {
+            self.resource_types = input; self
         }
         /// Appends an item to `aggregations`.
         ///
@@ -1603,28 +1495,30 @@ pub mod inclusion_protection_group_filters {
         /// <p>The aggregation setting of the protection groups that you want to retrieve. </p>
         pub fn aggregations(mut self, input: crate::model::ProtectionGroupAggregation) -> Self {
             let mut v = self.aggregations.unwrap_or_default();
-            v.push(input);
-            self.aggregations = Some(v);
-            self
+                            v.push(input);
+                            self.aggregations = Some(v);
+                            self
         }
         /// <p>The aggregation setting of the protection groups that you want to retrieve. </p>
-        pub fn set_aggregations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProtectionGroupAggregation>>,
-        ) -> Self {
-            self.aggregations = input;
-            self
+        pub fn set_aggregations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProtectionGroupAggregation>>) -> Self {
+            self.aggregations = input; self
         }
         /// Consumes the builder and constructs a [`InclusionProtectionGroupFilters`](crate::model::InclusionProtectionGroupFilters).
         pub fn build(self) -> crate::model::InclusionProtectionGroupFilters {
             crate::model::InclusionProtectionGroupFilters {
-                protection_group_ids: self.protection_group_ids,
-                patterns: self.patterns,
-                resource_types: self.resource_types,
-                aggregations: self.aggregations,
+                protection_group_ids: self.protection_group_ids
+                ,
+                patterns: self.patterns
+                ,
+                resource_types: self.resource_types
+                ,
+                aggregations: self.aggregations
+                ,
             }
         }
     }
+    
+    
 }
 impl InclusionProtectionGroupFilters {
     /// Creates a new builder-style object to manufacture [`InclusionProtectionGroupFilters`](crate::model::InclusionProtectionGroupFilters).
@@ -1636,7 +1530,7 @@ impl InclusionProtectionGroupFilters {
 /// <p>Summarizes all DDoS attacks for a specified time period.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttackSummary {
+pub struct AttackSummary  {
     /// <p>The unique identifier (ID) of the attack.</p>
     #[doc(hidden)]
     pub attack_id: std::option::Option<std::string::String>,
@@ -1655,29 +1549,29 @@ pub struct AttackSummary {
 }
 impl AttackSummary {
     /// <p>The unique identifier (ID) of the attack.</p>
-    pub fn attack_id(&self) -> std::option::Option<&str> {
+    pub fn attack_id(&self) -> std::option::Option<& str> {
         self.attack_id.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The start time of the attack, in Unix time in seconds. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the attack, in Unix time in seconds. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The list of attacks for a specified time period.</p>
-    pub fn attack_vectors(&self) -> std::option::Option<&[crate::model::AttackVectorDescription]> {
+    pub fn attack_vectors(&self) -> std::option::Option<& [crate::model::AttackVectorDescription]> {
         self.attack_vectors.as_deref()
     }
 }
 /// See [`AttackSummary`](crate::model::AttackSummary).
 pub mod attack_summary {
-
+    
     /// A builder for [`AttackSummary`](crate::model::AttackSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1685,8 +1579,7 @@ pub mod attack_summary {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) attack_vectors:
-            std::option::Option<std::vec::Vec<crate::model::AttackVectorDescription>>,
+        pub(crate) attack_vectors: std::option::Option<std::vec::Vec<crate::model::AttackVectorDescription>>,
     }
     impl Builder {
         /// <p>The unique identifier (ID) of the attack.</p>
@@ -1696,8 +1589,7 @@ pub mod attack_summary {
         }
         /// <p>The unique identifier (ID) of the attack.</p>
         pub fn set_attack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.attack_id = input;
-            self
+            self.attack_id = input; self
         }
         /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1706,8 +1598,7 @@ pub mod attack_summary {
         }
         /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The start time of the attack, in Unix time in seconds. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1715,12 +1606,8 @@ pub mod attack_summary {
             self
         }
         /// <p>The start time of the attack, in Unix time in seconds. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The end time of the attack, in Unix time in seconds. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1728,12 +1615,8 @@ pub mod attack_summary {
             self
         }
         /// <p>The end time of the attack, in Unix time in seconds. </p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Appends an item to `attack_vectors`.
         ///
@@ -1742,29 +1625,32 @@ pub mod attack_summary {
         /// <p>The list of attacks for a specified time period.</p>
         pub fn attack_vectors(mut self, input: crate::model::AttackVectorDescription) -> Self {
             let mut v = self.attack_vectors.unwrap_or_default();
-            v.push(input);
-            self.attack_vectors = Some(v);
-            self
+                            v.push(input);
+                            self.attack_vectors = Some(v);
+                            self
         }
         /// <p>The list of attacks for a specified time period.</p>
-        pub fn set_attack_vectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttackVectorDescription>>,
-        ) -> Self {
-            self.attack_vectors = input;
-            self
+        pub fn set_attack_vectors(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttackVectorDescription>>) -> Self {
+            self.attack_vectors = input; self
         }
         /// Consumes the builder and constructs a [`AttackSummary`](crate::model::AttackSummary).
         pub fn build(self) -> crate::model::AttackSummary {
             crate::model::AttackSummary {
-                attack_id: self.attack_id,
-                resource_arn: self.resource_arn,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                attack_vectors: self.attack_vectors,
+                attack_id: self.attack_id
+                ,
+                resource_arn: self.resource_arn
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                attack_vectors: self.attack_vectors
+                ,
             }
         }
     }
+    
+    
 }
 impl AttackSummary {
     /// Creates a new builder-style object to manufacture [`AttackSummary`](crate::model::AttackSummary).
@@ -1776,123 +1662,125 @@ impl AttackSummary {
 /// <p>Describes the attack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttackVectorDescription {
-    /// <p>The attack type. Valid values:</p>
-    /// <ul>
-    /// <li> <p>UDP_TRAFFIC</p> </li>
-    /// <li> <p>UDP_FRAGMENT</p> </li>
-    /// <li> <p>GENERIC_UDP_REFLECTION</p> </li>
-    /// <li> <p>DNS_REFLECTION</p> </li>
-    /// <li> <p>NTP_REFLECTION</p> </li>
-    /// <li> <p>CHARGEN_REFLECTION</p> </li>
-    /// <li> <p>SSDP_REFLECTION</p> </li>
-    /// <li> <p>PORT_MAPPER</p> </li>
-    /// <li> <p>RIP_REFLECTION</p> </li>
-    /// <li> <p>SNMP_REFLECTION</p> </li>
-    /// <li> <p>MSSQL_REFLECTION</p> </li>
-    /// <li> <p>NET_BIOS_REFLECTION</p> </li>
-    /// <li> <p>SYN_FLOOD</p> </li>
-    /// <li> <p>ACK_FLOOD</p> </li>
-    /// <li> <p>REQUEST_FLOOD</p> </li>
-    /// <li> <p>HTTP_REFLECTION</p> </li>
-    /// <li> <p>UDS_REFLECTION</p> </li>
-    /// <li> <p>MEMCACHED_REFLECTION</p> </li>
+pub struct AttackVectorDescription  {
+    /// <p>The attack type. Valid values:</p> 
+    /// <ul> 
+    /// <li> <p>UDP_TRAFFIC</p> </li> 
+    /// <li> <p>UDP_FRAGMENT</p> </li> 
+    /// <li> <p>GENERIC_UDP_REFLECTION</p> </li> 
+    /// <li> <p>DNS_REFLECTION</p> </li> 
+    /// <li> <p>NTP_REFLECTION</p> </li> 
+    /// <li> <p>CHARGEN_REFLECTION</p> </li> 
+    /// <li> <p>SSDP_REFLECTION</p> </li> 
+    /// <li> <p>PORT_MAPPER</p> </li> 
+    /// <li> <p>RIP_REFLECTION</p> </li> 
+    /// <li> <p>SNMP_REFLECTION</p> </li> 
+    /// <li> <p>MSSQL_REFLECTION</p> </li> 
+    /// <li> <p>NET_BIOS_REFLECTION</p> </li> 
+    /// <li> <p>SYN_FLOOD</p> </li> 
+    /// <li> <p>ACK_FLOOD</p> </li> 
+    /// <li> <p>REQUEST_FLOOD</p> </li> 
+    /// <li> <p>HTTP_REFLECTION</p> </li> 
+    /// <li> <p>UDS_REFLECTION</p> </li> 
+    /// <li> <p>MEMCACHED_REFLECTION</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub vector_type: std::option::Option<std::string::String>,
 }
 impl AttackVectorDescription {
-    /// <p>The attack type. Valid values:</p>
-    /// <ul>
-    /// <li> <p>UDP_TRAFFIC</p> </li>
-    /// <li> <p>UDP_FRAGMENT</p> </li>
-    /// <li> <p>GENERIC_UDP_REFLECTION</p> </li>
-    /// <li> <p>DNS_REFLECTION</p> </li>
-    /// <li> <p>NTP_REFLECTION</p> </li>
-    /// <li> <p>CHARGEN_REFLECTION</p> </li>
-    /// <li> <p>SSDP_REFLECTION</p> </li>
-    /// <li> <p>PORT_MAPPER</p> </li>
-    /// <li> <p>RIP_REFLECTION</p> </li>
-    /// <li> <p>SNMP_REFLECTION</p> </li>
-    /// <li> <p>MSSQL_REFLECTION</p> </li>
-    /// <li> <p>NET_BIOS_REFLECTION</p> </li>
-    /// <li> <p>SYN_FLOOD</p> </li>
-    /// <li> <p>ACK_FLOOD</p> </li>
-    /// <li> <p>REQUEST_FLOOD</p> </li>
-    /// <li> <p>HTTP_REFLECTION</p> </li>
-    /// <li> <p>UDS_REFLECTION</p> </li>
-    /// <li> <p>MEMCACHED_REFLECTION</p> </li>
+    /// <p>The attack type. Valid values:</p> 
+    /// <ul> 
+    /// <li> <p>UDP_TRAFFIC</p> </li> 
+    /// <li> <p>UDP_FRAGMENT</p> </li> 
+    /// <li> <p>GENERIC_UDP_REFLECTION</p> </li> 
+    /// <li> <p>DNS_REFLECTION</p> </li> 
+    /// <li> <p>NTP_REFLECTION</p> </li> 
+    /// <li> <p>CHARGEN_REFLECTION</p> </li> 
+    /// <li> <p>SSDP_REFLECTION</p> </li> 
+    /// <li> <p>PORT_MAPPER</p> </li> 
+    /// <li> <p>RIP_REFLECTION</p> </li> 
+    /// <li> <p>SNMP_REFLECTION</p> </li> 
+    /// <li> <p>MSSQL_REFLECTION</p> </li> 
+    /// <li> <p>NET_BIOS_REFLECTION</p> </li> 
+    /// <li> <p>SYN_FLOOD</p> </li> 
+    /// <li> <p>ACK_FLOOD</p> </li> 
+    /// <li> <p>REQUEST_FLOOD</p> </li> 
+    /// <li> <p>HTTP_REFLECTION</p> </li> 
+    /// <li> <p>UDS_REFLECTION</p> </li> 
+    /// <li> <p>MEMCACHED_REFLECTION</p> </li> 
     /// </ul>
-    pub fn vector_type(&self) -> std::option::Option<&str> {
+    pub fn vector_type(&self) -> std::option::Option<& str> {
         self.vector_type.as_deref()
     }
 }
 /// See [`AttackVectorDescription`](crate::model::AttackVectorDescription).
 pub mod attack_vector_description {
-
+    
     /// A builder for [`AttackVectorDescription`](crate::model::AttackVectorDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vector_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The attack type. Valid values:</p>
-        /// <ul>
-        /// <li> <p>UDP_TRAFFIC</p> </li>
-        /// <li> <p>UDP_FRAGMENT</p> </li>
-        /// <li> <p>GENERIC_UDP_REFLECTION</p> </li>
-        /// <li> <p>DNS_REFLECTION</p> </li>
-        /// <li> <p>NTP_REFLECTION</p> </li>
-        /// <li> <p>CHARGEN_REFLECTION</p> </li>
-        /// <li> <p>SSDP_REFLECTION</p> </li>
-        /// <li> <p>PORT_MAPPER</p> </li>
-        /// <li> <p>RIP_REFLECTION</p> </li>
-        /// <li> <p>SNMP_REFLECTION</p> </li>
-        /// <li> <p>MSSQL_REFLECTION</p> </li>
-        /// <li> <p>NET_BIOS_REFLECTION</p> </li>
-        /// <li> <p>SYN_FLOOD</p> </li>
-        /// <li> <p>ACK_FLOOD</p> </li>
-        /// <li> <p>REQUEST_FLOOD</p> </li>
-        /// <li> <p>HTTP_REFLECTION</p> </li>
-        /// <li> <p>UDS_REFLECTION</p> </li>
-        /// <li> <p>MEMCACHED_REFLECTION</p> </li>
+        /// <p>The attack type. Valid values:</p> 
+        /// <ul> 
+        /// <li> <p>UDP_TRAFFIC</p> </li> 
+        /// <li> <p>UDP_FRAGMENT</p> </li> 
+        /// <li> <p>GENERIC_UDP_REFLECTION</p> </li> 
+        /// <li> <p>DNS_REFLECTION</p> </li> 
+        /// <li> <p>NTP_REFLECTION</p> </li> 
+        /// <li> <p>CHARGEN_REFLECTION</p> </li> 
+        /// <li> <p>SSDP_REFLECTION</p> </li> 
+        /// <li> <p>PORT_MAPPER</p> </li> 
+        /// <li> <p>RIP_REFLECTION</p> </li> 
+        /// <li> <p>SNMP_REFLECTION</p> </li> 
+        /// <li> <p>MSSQL_REFLECTION</p> </li> 
+        /// <li> <p>NET_BIOS_REFLECTION</p> </li> 
+        /// <li> <p>SYN_FLOOD</p> </li> 
+        /// <li> <p>ACK_FLOOD</p> </li> 
+        /// <li> <p>REQUEST_FLOOD</p> </li> 
+        /// <li> <p>HTTP_REFLECTION</p> </li> 
+        /// <li> <p>UDS_REFLECTION</p> </li> 
+        /// <li> <p>MEMCACHED_REFLECTION</p> </li> 
         /// </ul>
         pub fn vector_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.vector_type = Some(input.into());
             self
         }
-        /// <p>The attack type. Valid values:</p>
-        /// <ul>
-        /// <li> <p>UDP_TRAFFIC</p> </li>
-        /// <li> <p>UDP_FRAGMENT</p> </li>
-        /// <li> <p>GENERIC_UDP_REFLECTION</p> </li>
-        /// <li> <p>DNS_REFLECTION</p> </li>
-        /// <li> <p>NTP_REFLECTION</p> </li>
-        /// <li> <p>CHARGEN_REFLECTION</p> </li>
-        /// <li> <p>SSDP_REFLECTION</p> </li>
-        /// <li> <p>PORT_MAPPER</p> </li>
-        /// <li> <p>RIP_REFLECTION</p> </li>
-        /// <li> <p>SNMP_REFLECTION</p> </li>
-        /// <li> <p>MSSQL_REFLECTION</p> </li>
-        /// <li> <p>NET_BIOS_REFLECTION</p> </li>
-        /// <li> <p>SYN_FLOOD</p> </li>
-        /// <li> <p>ACK_FLOOD</p> </li>
-        /// <li> <p>REQUEST_FLOOD</p> </li>
-        /// <li> <p>HTTP_REFLECTION</p> </li>
-        /// <li> <p>UDS_REFLECTION</p> </li>
-        /// <li> <p>MEMCACHED_REFLECTION</p> </li>
+        /// <p>The attack type. Valid values:</p> 
+        /// <ul> 
+        /// <li> <p>UDP_TRAFFIC</p> </li> 
+        /// <li> <p>UDP_FRAGMENT</p> </li> 
+        /// <li> <p>GENERIC_UDP_REFLECTION</p> </li> 
+        /// <li> <p>DNS_REFLECTION</p> </li> 
+        /// <li> <p>NTP_REFLECTION</p> </li> 
+        /// <li> <p>CHARGEN_REFLECTION</p> </li> 
+        /// <li> <p>SSDP_REFLECTION</p> </li> 
+        /// <li> <p>PORT_MAPPER</p> </li> 
+        /// <li> <p>RIP_REFLECTION</p> </li> 
+        /// <li> <p>SNMP_REFLECTION</p> </li> 
+        /// <li> <p>MSSQL_REFLECTION</p> </li> 
+        /// <li> <p>NET_BIOS_REFLECTION</p> </li> 
+        /// <li> <p>SYN_FLOOD</p> </li> 
+        /// <li> <p>ACK_FLOOD</p> </li> 
+        /// <li> <p>REQUEST_FLOOD</p> </li> 
+        /// <li> <p>HTTP_REFLECTION</p> </li> 
+        /// <li> <p>UDS_REFLECTION</p> </li> 
+        /// <li> <p>MEMCACHED_REFLECTION</p> </li> 
         /// </ul>
         pub fn set_vector_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vector_type = input;
-            self
+            self.vector_type = input; self
         }
         /// Consumes the builder and constructs a [`AttackVectorDescription`](crate::model::AttackVectorDescription).
         pub fn build(self) -> crate::model::AttackVectorDescription {
             crate::model::AttackVectorDescription {
-                vector_type: self.vector_type,
+                vector_type: self.vector_type
+                ,
             }
         }
     }
+    
+    
 }
 impl AttackVectorDescription {
     /// Creates a new builder-style object to manufacture [`AttackVectorDescription`](crate::model::AttackVectorDescription).
@@ -1904,7 +1792,7 @@ impl AttackVectorDescription {
 /// <p>The time range. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeRange {
+pub struct TimeRange  {
     /// <p>The start time, in Unix time in seconds. </p>
     #[doc(hidden)]
     pub from_inclusive: std::option::Option<aws_smithy_types::DateTime>,
@@ -1914,17 +1802,17 @@ pub struct TimeRange {
 }
 impl TimeRange {
     /// <p>The start time, in Unix time in seconds. </p>
-    pub fn from_inclusive(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn from_inclusive(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.from_inclusive.as_ref()
     }
     /// <p>The end time, in Unix time in seconds. </p>
-    pub fn to_exclusive(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn to_exclusive(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.to_exclusive.as_ref()
     }
 }
 /// See [`TimeRange`](crate::model::TimeRange).
 pub mod time_range {
-
+    
     /// A builder for [`TimeRange`](crate::model::TimeRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1938,12 +1826,8 @@ pub mod time_range {
             self
         }
         /// <p>The start time, in Unix time in seconds. </p>
-        pub fn set_from_inclusive(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.from_inclusive = input;
-            self
+        pub fn set_from_inclusive(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.from_inclusive = input; self
         }
         /// <p>The end time, in Unix time in seconds. </p>
         pub fn to_exclusive(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1951,21 +1835,21 @@ pub mod time_range {
             self
         }
         /// <p>The end time, in Unix time in seconds. </p>
-        pub fn set_to_exclusive(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.to_exclusive = input;
-            self
+        pub fn set_to_exclusive(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.to_exclusive = input; self
         }
         /// Consumes the builder and constructs a [`TimeRange`](crate::model::TimeRange).
         pub fn build(self) -> crate::model::TimeRange {
             crate::model::TimeRange {
-                from_inclusive: self.from_inclusive,
-                to_exclusive: self.to_exclusive,
+                from_inclusive: self.from_inclusive
+                ,
+                to_exclusive: self.to_exclusive
+                ,
             }
         }
     }
+    
+    
 }
 impl TimeRange {
     /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
@@ -1980,9 +1864,9 @@ impl TimeRange {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let subscriptionstate = unimplemented!();
 /// match subscriptionstate {
@@ -2004,60 +1888,52 @@ impl TimeRange {
 /// Specifically, when `subscriptionstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SubscriptionState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SubscriptionState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SubscriptionState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => SubscriptionState::Active,
             "INACTIVE" => SubscriptionState::Inactive,
-            other => {
-                SubscriptionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SubscriptionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SubscriptionState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SubscriptionState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SubscriptionState::from(s))
+                }
+            }
 impl SubscriptionState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SubscriptionState::Active => "ACTIVE",
             SubscriptionState::Inactive => "INACTIVE",
-            SubscriptionState::Unknown(value) => value.as_str(),
+            SubscriptionState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "INACTIVE"]
+        &[
+            "ACTIVE", "INACTIVE"
+        ]
     }
 }
 impl AsRef<str> for SubscriptionState {
@@ -2069,7 +1945,7 @@ impl AsRef<str> for SubscriptionState {
 /// <p>Information about the Shield Advanced subscription for an account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Subscription {
+pub struct Subscription  {
     /// <p>The start time of the subscription, in Unix time in seconds. </p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2079,15 +1955,15 @@ pub struct Subscription {
     /// <p>The length, in seconds, of the Shield Advanced subscription for the account.</p>
     #[doc(hidden)]
     pub time_commitment_in_seconds: i64,
-    /// <p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p>
+    /// <p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p> 
     /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
     #[doc(hidden)]
     pub auto_renew: std::option::Option<crate::model::AutoRenew>,
     /// <p>Specifies how many protections of a given type you can create.</p>
     #[doc(hidden)]
     pub limits: std::option::Option<std::vec::Vec<crate::model::Limit>>,
-    /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
-    /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
+    /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p> 
+    /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> 
     /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
     #[doc(hidden)]
     pub proactive_engagement_status: std::option::Option<crate::model::ProactiveEngagementStatus>,
@@ -2100,46 +1976,44 @@ pub struct Subscription {
 }
 impl Subscription {
     /// <p>The start time of the subscription, in Unix time in seconds. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time your subscription will end.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The length, in seconds, of the Shield Advanced subscription for the account.</p>
     pub fn time_commitment_in_seconds(&self) -> i64 {
         self.time_commitment_in_seconds
     }
-    /// <p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p>
+    /// <p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p> 
     /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
-    pub fn auto_renew(&self) -> std::option::Option<&crate::model::AutoRenew> {
+    pub fn auto_renew(&self) -> std::option::Option<& crate::model::AutoRenew> {
         self.auto_renew.as_ref()
     }
     /// <p>Specifies how many protections of a given type you can create.</p>
-    pub fn limits(&self) -> std::option::Option<&[crate::model::Limit]> {
+    pub fn limits(&self) -> std::option::Option<& [crate::model::Limit]> {
         self.limits.as_deref()
     }
-    /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
-    /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
+    /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p> 
+    /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> 
     /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
-    pub fn proactive_engagement_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ProactiveEngagementStatus> {
+    pub fn proactive_engagement_status(&self) -> std::option::Option<& crate::model::ProactiveEngagementStatus> {
         self.proactive_engagement_status.as_ref()
     }
     /// <p>Limits settings for your subscription. </p>
-    pub fn subscription_limits(&self) -> std::option::Option<&crate::model::SubscriptionLimits> {
+    pub fn subscription_limits(&self) -> std::option::Option<& crate::model::SubscriptionLimits> {
         self.subscription_limits.as_ref()
     }
     /// <p>The ARN (Amazon Resource Name) of the subscription.</p>
-    pub fn subscription_arn(&self) -> std::option::Option<&str> {
+    pub fn subscription_arn(&self) -> std::option::Option<& str> {
         self.subscription_arn.as_deref()
     }
 }
 /// See [`Subscription`](crate::model::Subscription).
 pub mod subscription {
-
+    
     /// A builder for [`Subscription`](crate::model::Subscription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2148,8 +2022,7 @@ pub mod subscription {
         pub(crate) time_commitment_in_seconds: std::option::Option<i64>,
         pub(crate) auto_renew: std::option::Option<crate::model::AutoRenew>,
         pub(crate) limits: std::option::Option<std::vec::Vec<crate::model::Limit>>,
-        pub(crate) proactive_engagement_status:
-            std::option::Option<crate::model::ProactiveEngagementStatus>,
+        pub(crate) proactive_engagement_status: std::option::Option<crate::model::ProactiveEngagementStatus>,
         pub(crate) subscription_limits: std::option::Option<crate::model::SubscriptionLimits>,
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
     }
@@ -2160,12 +2033,8 @@ pub mod subscription {
             self
         }
         /// <p>The start time of the subscription, in Unix time in seconds. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The date and time your subscription will end.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2173,12 +2042,8 @@ pub mod subscription {
             self
         }
         /// <p>The date and time your subscription will end.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>The length, in seconds, of the Shield Advanced subscription for the account.</p>
         pub fn time_commitment_in_seconds(mut self, input: i64) -> Self {
@@ -2187,23 +2052,18 @@ pub mod subscription {
         }
         /// <p>The length, in seconds, of the Shield Advanced subscription for the account.</p>
         pub fn set_time_commitment_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.time_commitment_in_seconds = input;
-            self
+            self.time_commitment_in_seconds = input; self
         }
-        /// <p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p>
+        /// <p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p> 
         /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
         pub fn auto_renew(mut self, input: crate::model::AutoRenew) -> Self {
             self.auto_renew = Some(input);
             self
         }
-        /// <p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p>
+        /// <p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p> 
         /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
-        pub fn set_auto_renew(
-            mut self,
-            input: std::option::Option<crate::model::AutoRenew>,
-        ) -> Self {
-            self.auto_renew = input;
-            self
+        pub fn set_auto_renew(mut self, input: std::option::Option<crate::model::AutoRenew>) -> Self {
+            self.auto_renew = input; self
         }
         /// Appends an item to `limits`.
         ///
@@ -2212,37 +2072,26 @@ pub mod subscription {
         /// <p>Specifies how many protections of a given type you can create.</p>
         pub fn limits(mut self, input: crate::model::Limit) -> Self {
             let mut v = self.limits.unwrap_or_default();
-            v.push(input);
-            self.limits = Some(v);
-            self
+                            v.push(input);
+                            self.limits = Some(v);
+                            self
         }
         /// <p>Specifies how many protections of a given type you can create.</p>
-        pub fn set_limits(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Limit>>,
-        ) -> Self {
-            self.limits = input;
-            self
+        pub fn set_limits(mut self, input: std::option::Option<std::vec::Vec<crate::model::Limit>>) -> Self {
+            self.limits = input; self
         }
-        /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
-        /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
+        /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p> 
+        /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> 
         /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
-        pub fn proactive_engagement_status(
-            mut self,
-            input: crate::model::ProactiveEngagementStatus,
-        ) -> Self {
+        pub fn proactive_engagement_status(mut self, input: crate::model::ProactiveEngagementStatus) -> Self {
             self.proactive_engagement_status = Some(input);
             self
         }
-        /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
-        /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
+        /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p> 
+        /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p> 
         /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
-        pub fn set_proactive_engagement_status(
-            mut self,
-            input: std::option::Option<crate::model::ProactiveEngagementStatus>,
-        ) -> Self {
-            self.proactive_engagement_status = input;
-            self
+        pub fn set_proactive_engagement_status(mut self, input: std::option::Option<crate::model::ProactiveEngagementStatus>) -> Self {
+            self.proactive_engagement_status = input; self
         }
         /// <p>Limits settings for your subscription. </p>
         pub fn subscription_limits(mut self, input: crate::model::SubscriptionLimits) -> Self {
@@ -2250,12 +2099,8 @@ pub mod subscription {
             self
         }
         /// <p>Limits settings for your subscription. </p>
-        pub fn set_subscription_limits(
-            mut self,
-            input: std::option::Option<crate::model::SubscriptionLimits>,
-        ) -> Self {
-            self.subscription_limits = input;
-            self
+        pub fn set_subscription_limits(mut self, input: std::option::Option<crate::model::SubscriptionLimits>) -> Self {
+            self.subscription_limits = input; self
         }
         /// <p>The ARN (Amazon Resource Name) of the subscription.</p>
         pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2263,27 +2108,34 @@ pub mod subscription {
             self
         }
         /// <p>The ARN (Amazon Resource Name) of the subscription.</p>
-        pub fn set_subscription_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscription_arn = input;
-            self
+        pub fn set_subscription_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscription_arn = input; self
         }
         /// Consumes the builder and constructs a [`Subscription`](crate::model::Subscription).
         pub fn build(self) -> crate::model::Subscription {
             crate::model::Subscription {
-                start_time: self.start_time,
-                end_time: self.end_time,
-                time_commitment_in_seconds: self.time_commitment_in_seconds.unwrap_or_default(),
-                auto_renew: self.auto_renew,
-                limits: self.limits,
-                proactive_engagement_status: self.proactive_engagement_status,
-                subscription_limits: self.subscription_limits,
-                subscription_arn: self.subscription_arn,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                time_commitment_in_seconds: self.time_commitment_in_seconds
+                    .unwrap_or_default()
+                ,
+                auto_renew: self.auto_renew
+                ,
+                limits: self.limits
+                ,
+                proactive_engagement_status: self.proactive_engagement_status
+                ,
+                subscription_limits: self.subscription_limits
+                ,
+                subscription_arn: self.subscription_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Subscription {
     /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
@@ -2295,7 +2147,7 @@ impl Subscription {
 /// <p>Limits settings for your subscription. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubscriptionLimits {
+pub struct SubscriptionLimits  {
     /// <p>Limits settings on protections for your subscription. </p>
     #[doc(hidden)]
     pub protection_limits: std::option::Option<crate::model::ProtectionLimits>,
@@ -2305,25 +2157,22 @@ pub struct SubscriptionLimits {
 }
 impl SubscriptionLimits {
     /// <p>Limits settings on protections for your subscription. </p>
-    pub fn protection_limits(&self) -> std::option::Option<&crate::model::ProtectionLimits> {
+    pub fn protection_limits(&self) -> std::option::Option<& crate::model::ProtectionLimits> {
         self.protection_limits.as_ref()
     }
     /// <p>Limits settings on protection groups for your subscription. </p>
-    pub fn protection_group_limits(
-        &self,
-    ) -> std::option::Option<&crate::model::ProtectionGroupLimits> {
+    pub fn protection_group_limits(&self) -> std::option::Option<& crate::model::ProtectionGroupLimits> {
         self.protection_group_limits.as_ref()
     }
 }
 /// See [`SubscriptionLimits`](crate::model::SubscriptionLimits).
 pub mod subscription_limits {
-
+    
     /// A builder for [`SubscriptionLimits`](crate::model::SubscriptionLimits).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_limits: std::option::Option<crate::model::ProtectionLimits>,
-        pub(crate) protection_group_limits:
-            std::option::Option<crate::model::ProtectionGroupLimits>,
+        pub(crate) protection_group_limits: std::option::Option<crate::model::ProtectionGroupLimits>,
     }
     impl Builder {
         /// <p>Limits settings on protections for your subscription. </p>
@@ -2332,37 +2181,30 @@ pub mod subscription_limits {
             self
         }
         /// <p>Limits settings on protections for your subscription. </p>
-        pub fn set_protection_limits(
-            mut self,
-            input: std::option::Option<crate::model::ProtectionLimits>,
-        ) -> Self {
-            self.protection_limits = input;
-            self
+        pub fn set_protection_limits(mut self, input: std::option::Option<crate::model::ProtectionLimits>) -> Self {
+            self.protection_limits = input; self
         }
         /// <p>Limits settings on protection groups for your subscription. </p>
-        pub fn protection_group_limits(
-            mut self,
-            input: crate::model::ProtectionGroupLimits,
-        ) -> Self {
+        pub fn protection_group_limits(mut self, input: crate::model::ProtectionGroupLimits) -> Self {
             self.protection_group_limits = Some(input);
             self
         }
         /// <p>Limits settings on protection groups for your subscription. </p>
-        pub fn set_protection_group_limits(
-            mut self,
-            input: std::option::Option<crate::model::ProtectionGroupLimits>,
-        ) -> Self {
-            self.protection_group_limits = input;
-            self
+        pub fn set_protection_group_limits(mut self, input: std::option::Option<crate::model::ProtectionGroupLimits>) -> Self {
+            self.protection_group_limits = input; self
         }
         /// Consumes the builder and constructs a [`SubscriptionLimits`](crate::model::SubscriptionLimits).
         pub fn build(self) -> crate::model::SubscriptionLimits {
             crate::model::SubscriptionLimits {
-                protection_limits: self.protection_limits,
-                protection_group_limits: self.protection_group_limits,
+                protection_limits: self.protection_limits
+                ,
+                protection_group_limits: self.protection_group_limits
+                ,
             }
         }
     }
+    
+    
 }
 impl SubscriptionLimits {
     /// Creates a new builder-style object to manufacture [`SubscriptionLimits`](crate::model::SubscriptionLimits).
@@ -2374,7 +2216,7 @@ impl SubscriptionLimits {
 /// <p>Limits settings on protection groups for your subscription. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectionGroupLimits {
+pub struct ProtectionGroupLimits  {
     /// <p>The maximum number of protection groups that you can have at one time. </p>
     #[doc(hidden)]
     pub max_protection_groups: i64,
@@ -2388,21 +2230,18 @@ impl ProtectionGroupLimits {
         self.max_protection_groups
     }
     /// <p>Limits settings by pattern type in the protection groups for your subscription. </p>
-    pub fn pattern_type_limits(
-        &self,
-    ) -> std::option::Option<&crate::model::ProtectionGroupPatternTypeLimits> {
+    pub fn pattern_type_limits(&self) -> std::option::Option<& crate::model::ProtectionGroupPatternTypeLimits> {
         self.pattern_type_limits.as_ref()
     }
 }
 /// See [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits).
 pub mod protection_group_limits {
-
+    
     /// A builder for [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_protection_groups: std::option::Option<i64>,
-        pub(crate) pattern_type_limits:
-            std::option::Option<crate::model::ProtectionGroupPatternTypeLimits>,
+        pub(crate) pattern_type_limits: std::option::Option<crate::model::ProtectionGroupPatternTypeLimits>,
     }
     impl Builder {
         /// <p>The maximum number of protection groups that you can have at one time. </p>
@@ -2412,33 +2251,30 @@ pub mod protection_group_limits {
         }
         /// <p>The maximum number of protection groups that you can have at one time. </p>
         pub fn set_max_protection_groups(mut self, input: std::option::Option<i64>) -> Self {
-            self.max_protection_groups = input;
-            self
+            self.max_protection_groups = input; self
         }
         /// <p>Limits settings by pattern type in the protection groups for your subscription. </p>
-        pub fn pattern_type_limits(
-            mut self,
-            input: crate::model::ProtectionGroupPatternTypeLimits,
-        ) -> Self {
+        pub fn pattern_type_limits(mut self, input: crate::model::ProtectionGroupPatternTypeLimits) -> Self {
             self.pattern_type_limits = Some(input);
             self
         }
         /// <p>Limits settings by pattern type in the protection groups for your subscription. </p>
-        pub fn set_pattern_type_limits(
-            mut self,
-            input: std::option::Option<crate::model::ProtectionGroupPatternTypeLimits>,
-        ) -> Self {
-            self.pattern_type_limits = input;
-            self
+        pub fn set_pattern_type_limits(mut self, input: std::option::Option<crate::model::ProtectionGroupPatternTypeLimits>) -> Self {
+            self.pattern_type_limits = input; self
         }
         /// Consumes the builder and constructs a [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits).
         pub fn build(self) -> crate::model::ProtectionGroupLimits {
             crate::model::ProtectionGroupLimits {
-                max_protection_groups: self.max_protection_groups.unwrap_or_default(),
-                pattern_type_limits: self.pattern_type_limits,
+                max_protection_groups: self.max_protection_groups
+                    .unwrap_or_default()
+                ,
+                pattern_type_limits: self.pattern_type_limits
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtectionGroupLimits {
     /// Creates a new builder-style object to manufacture [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits).
@@ -2450,53 +2286,45 @@ impl ProtectionGroupLimits {
 /// <p>Limits settings by pattern type in the protection groups for your subscription. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectionGroupPatternTypeLimits {
+pub struct ProtectionGroupPatternTypeLimits  {
     /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
     #[doc(hidden)]
-    pub arbitrary_pattern_limits:
-        std::option::Option<crate::model::ProtectionGroupArbitraryPatternLimits>,
+    pub arbitrary_pattern_limits: std::option::Option<crate::model::ProtectionGroupArbitraryPatternLimits>,
 }
 impl ProtectionGroupPatternTypeLimits {
     /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
-    pub fn arbitrary_pattern_limits(
-        &self,
-    ) -> std::option::Option<&crate::model::ProtectionGroupArbitraryPatternLimits> {
+    pub fn arbitrary_pattern_limits(&self) -> std::option::Option<& crate::model::ProtectionGroupArbitraryPatternLimits> {
         self.arbitrary_pattern_limits.as_ref()
     }
 }
 /// See [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits).
 pub mod protection_group_pattern_type_limits {
-
+    
     /// A builder for [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) arbitrary_pattern_limits:
-            std::option::Option<crate::model::ProtectionGroupArbitraryPatternLimits>,
+        pub(crate) arbitrary_pattern_limits: std::option::Option<crate::model::ProtectionGroupArbitraryPatternLimits>,
     }
     impl Builder {
         /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
-        pub fn arbitrary_pattern_limits(
-            mut self,
-            input: crate::model::ProtectionGroupArbitraryPatternLimits,
-        ) -> Self {
+        pub fn arbitrary_pattern_limits(mut self, input: crate::model::ProtectionGroupArbitraryPatternLimits) -> Self {
             self.arbitrary_pattern_limits = Some(input);
             self
         }
         /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
-        pub fn set_arbitrary_pattern_limits(
-            mut self,
-            input: std::option::Option<crate::model::ProtectionGroupArbitraryPatternLimits>,
-        ) -> Self {
-            self.arbitrary_pattern_limits = input;
-            self
+        pub fn set_arbitrary_pattern_limits(mut self, input: std::option::Option<crate::model::ProtectionGroupArbitraryPatternLimits>) -> Self {
+            self.arbitrary_pattern_limits = input; self
         }
         /// Consumes the builder and constructs a [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits).
         pub fn build(self) -> crate::model::ProtectionGroupPatternTypeLimits {
             crate::model::ProtectionGroupPatternTypeLimits {
-                arbitrary_pattern_limits: self.arbitrary_pattern_limits,
+                arbitrary_pattern_limits: self.arbitrary_pattern_limits
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtectionGroupPatternTypeLimits {
     /// Creates a new builder-style object to manufacture [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits).
@@ -2508,7 +2336,7 @@ impl ProtectionGroupPatternTypeLimits {
 /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectionGroupArbitraryPatternLimits {
+pub struct ProtectionGroupArbitraryPatternLimits  {
     /// <p>The maximum number of resources you can specify for a single arbitrary pattern in a protection group.</p>
     #[doc(hidden)]
     pub max_members: i64,
@@ -2521,7 +2349,7 @@ impl ProtectionGroupArbitraryPatternLimits {
 }
 /// See [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits).
 pub mod protection_group_arbitrary_pattern_limits {
-
+    
     /// A builder for [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2535,16 +2363,19 @@ pub mod protection_group_arbitrary_pattern_limits {
         }
         /// <p>The maximum number of resources you can specify for a single arbitrary pattern in a protection group.</p>
         pub fn set_max_members(mut self, input: std::option::Option<i64>) -> Self {
-            self.max_members = input;
-            self
+            self.max_members = input; self
         }
         /// Consumes the builder and constructs a [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits).
         pub fn build(self) -> crate::model::ProtectionGroupArbitraryPatternLimits {
             crate::model::ProtectionGroupArbitraryPatternLimits {
-                max_members: self.max_members.unwrap_or_default(),
+                max_members: self.max_members
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtectionGroupArbitraryPatternLimits {
     /// Creates a new builder-style object to manufacture [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits).
@@ -2556,25 +2387,24 @@ impl ProtectionGroupArbitraryPatternLimits {
 /// <p>Limits settings on protections for your subscription. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProtectionLimits {
+pub struct ProtectionLimits  {
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
     #[doc(hidden)]
     pub protected_resource_type_limits: std::option::Option<std::vec::Vec<crate::model::Limit>>,
 }
 impl ProtectionLimits {
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
-    pub fn protected_resource_type_limits(&self) -> std::option::Option<&[crate::model::Limit]> {
+    pub fn protected_resource_type_limits(&self) -> std::option::Option<& [crate::model::Limit]> {
         self.protected_resource_type_limits.as_deref()
     }
 }
 /// See [`ProtectionLimits`](crate::model::ProtectionLimits).
 pub mod protection_limits {
-
+    
     /// A builder for [`ProtectionLimits`](crate::model::ProtectionLimits).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) protected_resource_type_limits:
-            std::option::Option<std::vec::Vec<crate::model::Limit>>,
+        pub(crate) protected_resource_type_limits: std::option::Option<std::vec::Vec<crate::model::Limit>>,
     }
     impl Builder {
         /// Appends an item to `protected_resource_type_limits`.
@@ -2584,25 +2414,24 @@ pub mod protection_limits {
         /// <p>The maximum number of resource types that you can specify in a protection.</p>
         pub fn protected_resource_type_limits(mut self, input: crate::model::Limit) -> Self {
             let mut v = self.protected_resource_type_limits.unwrap_or_default();
-            v.push(input);
-            self.protected_resource_type_limits = Some(v);
-            self
+                            v.push(input);
+                            self.protected_resource_type_limits = Some(v);
+                            self
         }
         /// <p>The maximum number of resource types that you can specify in a protection.</p>
-        pub fn set_protected_resource_type_limits(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Limit>>,
-        ) -> Self {
-            self.protected_resource_type_limits = input;
-            self
+        pub fn set_protected_resource_type_limits(mut self, input: std::option::Option<std::vec::Vec<crate::model::Limit>>) -> Self {
+            self.protected_resource_type_limits = input; self
         }
         /// Consumes the builder and constructs a [`ProtectionLimits`](crate::model::ProtectionLimits).
         pub fn build(self) -> crate::model::ProtectionLimits {
             crate::model::ProtectionLimits {
-                protected_resource_type_limits: self.protected_resource_type_limits,
+                protected_resource_type_limits: self.protected_resource_type_limits
+                ,
             }
         }
     }
+    
+    
 }
 impl ProtectionLimits {
     /// Creates a new builder-style object to manufacture [`ProtectionLimits`](crate::model::ProtectionLimits).
@@ -2614,7 +2443,7 @@ impl ProtectionLimits {
 /// <p>Specifies how many protections of a given type you can create.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Limit {
+pub struct Limit  {
     /// <p>The type of protection.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -2624,7 +2453,7 @@ pub struct Limit {
 }
 impl Limit {
     /// <p>The type of protection.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The maximum number of protections that can be created for the specified <code>Type</code>.</p>
@@ -2634,7 +2463,7 @@ impl Limit {
 }
 /// See [`Limit`](crate::model::Limit).
 pub mod limit {
-
+    
     /// A builder for [`Limit`](crate::model::Limit).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2649,8 +2478,7 @@ pub mod limit {
         }
         /// <p>The type of protection.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The maximum number of protections that can be created for the specified <code>Type</code>.</p>
         pub fn max(mut self, input: i64) -> Self {
@@ -2659,17 +2487,21 @@ pub mod limit {
         }
         /// <p>The maximum number of protections that can be created for the specified <code>Type</code>.</p>
         pub fn set_max(mut self, input: std::option::Option<i64>) -> Self {
-            self.max = input;
-            self
+            self.max = input; self
         }
         /// Consumes the builder and constructs a [`Limit`](crate::model::Limit).
         pub fn build(self) -> crate::model::Limit {
             crate::model::Limit {
-                r#type: self.r#type,
-                max: self.max.unwrap_or_default(),
+                r#type: self.r#type
+                ,
+                max: self.max
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl Limit {
     /// Creates a new builder-style object to manufacture [`Limit`](crate::model::Limit).
@@ -2684,9 +2516,9 @@ impl Limit {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let proactiveengagementstatus = unimplemented!();
 /// match proactiveengagementstatus {
@@ -2709,22 +2541,14 @@ impl Limit {
 /// Specifically, when `proactiveengagementstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProactiveEngagementStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProactiveEngagementStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
@@ -2733,7 +2557,7 @@ pub enum ProactiveEngagementStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProactiveEngagementStatus {
     fn from(s: &str) -> Self {
@@ -2741,19 +2565,17 @@ impl std::convert::From<&str> for ProactiveEngagementStatus {
             "DISABLED" => ProactiveEngagementStatus::Disabled,
             "ENABLED" => ProactiveEngagementStatus::Enabled,
             "PENDING" => ProactiveEngagementStatus::Pending,
-            other => ProactiveEngagementStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ProactiveEngagementStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProactiveEngagementStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProactiveEngagementStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProactiveEngagementStatus::from(s))
+                }
+            }
 impl ProactiveEngagementStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2761,12 +2583,14 @@ impl ProactiveEngagementStatus {
             ProactiveEngagementStatus::Disabled => "DISABLED",
             ProactiveEngagementStatus::Enabled => "ENABLED",
             ProactiveEngagementStatus::Pending => "PENDING",
-            ProactiveEngagementStatus::Unknown(value) => value.as_str(),
+            ProactiveEngagementStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED", "PENDING"]
+        &[
+            "DISABLED", "ENABLED", "PENDING"
+        ]
     }
 }
 impl AsRef<str> for ProactiveEngagementStatus {
@@ -2778,7 +2602,7 @@ impl AsRef<str> for ProactiveEngagementStatus {
 /// <p>A single attack statistics data record. This is returned by <code>DescribeAttackStatistics</code> along with a time range indicating the time period that the attack statistics apply to. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttackStatisticsDataItem {
+pub struct AttackStatisticsDataItem  {
     /// <p>Information about the volume of attacks during the time period. If the accompanying <code>AttackCount</code> is zero, this setting might be empty.</p>
     #[doc(hidden)]
     pub attack_volume: std::option::Option<crate::model::AttackVolume>,
@@ -2788,7 +2612,7 @@ pub struct AttackStatisticsDataItem {
 }
 impl AttackStatisticsDataItem {
     /// <p>Information about the volume of attacks during the time period. If the accompanying <code>AttackCount</code> is zero, this setting might be empty.</p>
-    pub fn attack_volume(&self) -> std::option::Option<&crate::model::AttackVolume> {
+    pub fn attack_volume(&self) -> std::option::Option<& crate::model::AttackVolume> {
         self.attack_volume.as_ref()
     }
     /// <p>The number of attacks detected during the time period. This is always present, but might be zero. </p>
@@ -2798,7 +2622,7 @@ impl AttackStatisticsDataItem {
 }
 /// See [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem).
 pub mod attack_statistics_data_item {
-
+    
     /// A builder for [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2812,12 +2636,8 @@ pub mod attack_statistics_data_item {
             self
         }
         /// <p>Information about the volume of attacks during the time period. If the accompanying <code>AttackCount</code> is zero, this setting might be empty.</p>
-        pub fn set_attack_volume(
-            mut self,
-            input: std::option::Option<crate::model::AttackVolume>,
-        ) -> Self {
-            self.attack_volume = input;
-            self
+        pub fn set_attack_volume(mut self, input: std::option::Option<crate::model::AttackVolume>) -> Self {
+            self.attack_volume = input; self
         }
         /// <p>The number of attacks detected during the time period. This is always present, but might be zero. </p>
         pub fn attack_count(mut self, input: i64) -> Self {
@@ -2826,17 +2646,21 @@ pub mod attack_statistics_data_item {
         }
         /// <p>The number of attacks detected during the time period. This is always present, but might be zero. </p>
         pub fn set_attack_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.attack_count = input;
-            self
+            self.attack_count = input; self
         }
         /// Consumes the builder and constructs a [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem).
         pub fn build(self) -> crate::model::AttackStatisticsDataItem {
             crate::model::AttackStatisticsDataItem {
-                attack_volume: self.attack_volume,
-                attack_count: self.attack_count.unwrap_or_default(),
+                attack_volume: self.attack_volume
+                ,
+                attack_count: self.attack_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AttackStatisticsDataItem {
     /// Creates a new builder-style object to manufacture [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem).
@@ -2848,7 +2672,7 @@ impl AttackStatisticsDataItem {
 /// <p>Information about the volume of attacks during the time period, included in an <code>AttackStatisticsDataItem</code>. If the accompanying <code>AttackCount</code> in the statistics object is zero, this setting might be empty.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttackVolume {
+pub struct AttackVolume  {
     /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks. </p>
     #[doc(hidden)]
     pub bits_per_second: std::option::Option<crate::model::AttackVolumeStatistics>,
@@ -2861,23 +2685,21 @@ pub struct AttackVolume {
 }
 impl AttackVolume {
     /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks. </p>
-    pub fn bits_per_second(&self) -> std::option::Option<&crate::model::AttackVolumeStatistics> {
+    pub fn bits_per_second(&self) -> std::option::Option<& crate::model::AttackVolumeStatistics> {
         self.bits_per_second.as_ref()
     }
     /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks. </p>
-    pub fn packets_per_second(&self) -> std::option::Option<&crate::model::AttackVolumeStatistics> {
+    pub fn packets_per_second(&self) -> std::option::Option<& crate::model::AttackVolumeStatistics> {
         self.packets_per_second.as_ref()
     }
     /// <p>A statistics object that uses requests per second as the unit. This is included for application level attacks, and is only available for accounts that are subscribed to Shield Advanced.</p>
-    pub fn requests_per_second(
-        &self,
-    ) -> std::option::Option<&crate::model::AttackVolumeStatistics> {
+    pub fn requests_per_second(&self) -> std::option::Option<& crate::model::AttackVolumeStatistics> {
         self.requests_per_second.as_ref()
     }
 }
 /// See [`AttackVolume`](crate::model::AttackVolume).
 pub mod attack_volume {
-
+    
     /// A builder for [`AttackVolume`](crate::model::AttackVolume).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2892,12 +2714,8 @@ pub mod attack_volume {
             self
         }
         /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks. </p>
-        pub fn set_bits_per_second(
-            mut self,
-            input: std::option::Option<crate::model::AttackVolumeStatistics>,
-        ) -> Self {
-            self.bits_per_second = input;
-            self
+        pub fn set_bits_per_second(mut self, input: std::option::Option<crate::model::AttackVolumeStatistics>) -> Self {
+            self.bits_per_second = input; self
         }
         /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks. </p>
         pub fn packets_per_second(mut self, input: crate::model::AttackVolumeStatistics) -> Self {
@@ -2905,12 +2723,8 @@ pub mod attack_volume {
             self
         }
         /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks. </p>
-        pub fn set_packets_per_second(
-            mut self,
-            input: std::option::Option<crate::model::AttackVolumeStatistics>,
-        ) -> Self {
-            self.packets_per_second = input;
-            self
+        pub fn set_packets_per_second(mut self, input: std::option::Option<crate::model::AttackVolumeStatistics>) -> Self {
+            self.packets_per_second = input; self
         }
         /// <p>A statistics object that uses requests per second as the unit. This is included for application level attacks, and is only available for accounts that are subscribed to Shield Advanced.</p>
         pub fn requests_per_second(mut self, input: crate::model::AttackVolumeStatistics) -> Self {
@@ -2918,22 +2732,23 @@ pub mod attack_volume {
             self
         }
         /// <p>A statistics object that uses requests per second as the unit. This is included for application level attacks, and is only available for accounts that are subscribed to Shield Advanced.</p>
-        pub fn set_requests_per_second(
-            mut self,
-            input: std::option::Option<crate::model::AttackVolumeStatistics>,
-        ) -> Self {
-            self.requests_per_second = input;
-            self
+        pub fn set_requests_per_second(mut self, input: std::option::Option<crate::model::AttackVolumeStatistics>) -> Self {
+            self.requests_per_second = input; self
         }
         /// Consumes the builder and constructs a [`AttackVolume`](crate::model::AttackVolume).
         pub fn build(self) -> crate::model::AttackVolume {
             crate::model::AttackVolume {
-                bits_per_second: self.bits_per_second,
-                packets_per_second: self.packets_per_second,
-                requests_per_second: self.requests_per_second,
+                bits_per_second: self.bits_per_second
+                ,
+                packets_per_second: self.packets_per_second
+                ,
+                requests_per_second: self.requests_per_second
+                ,
             }
         }
     }
+    
+    
 }
 impl AttackVolume {
     /// Creates a new builder-style object to manufacture [`AttackVolume`](crate::model::AttackVolume).
@@ -2945,7 +2760,7 @@ impl AttackVolume {
 /// <p>Statistics objects for the various data types in <code>AttackVolume</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttackVolumeStatistics {
+pub struct AttackVolumeStatistics  {
     /// <p>The maximum attack volume observed for the given unit.</p>
     #[doc(hidden)]
     pub max: f64,
@@ -2958,7 +2773,7 @@ impl AttackVolumeStatistics {
 }
 /// See [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics).
 pub mod attack_volume_statistics {
-
+    
     /// A builder for [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2972,16 +2787,19 @@ pub mod attack_volume_statistics {
         }
         /// <p>The maximum attack volume observed for the given unit.</p>
         pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
-            self.max = input;
-            self
+            self.max = input; self
         }
         /// Consumes the builder and constructs a [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics).
         pub fn build(self) -> crate::model::AttackVolumeStatistics {
             crate::model::AttackVolumeStatistics {
-                max: self.max.unwrap_or_default(),
+                max: self.max
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AttackVolumeStatistics {
     /// Creates a new builder-style object to manufacture [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics).
@@ -2993,7 +2811,7 @@ impl AttackVolumeStatistics {
 /// <p>The details of a DDoS attack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttackDetail {
+pub struct AttackDetail  {
     /// <p>The unique identifier (ID) of the attack.</p>
     #[doc(hidden)]
     pub attack_id: std::option::Option<std::string::String>,
@@ -3012,7 +2830,7 @@ pub struct AttackDetail {
     /// <p>List of counters that describe the attack for the specified time period.</p>
     #[doc(hidden)]
     pub attack_counters: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
-    /// <p>The array of objects that provide details of the Shield event. </p>
+    /// <p>The array of objects that provide details of the Shield event. </p> 
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
     #[doc(hidden)]
     pub attack_properties: std::option::Option<std::vec::Vec<crate::model::AttackProperty>>,
@@ -3022,55 +2840,52 @@ pub struct AttackDetail {
 }
 impl AttackDetail {
     /// <p>The unique identifier (ID) of the attack.</p>
-    pub fn attack_id(&self) -> std::option::Option<&str> {
+    pub fn attack_id(&self) -> std::option::Option<& str> {
         self.attack_id.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
-    pub fn sub_resources(&self) -> std::option::Option<&[crate::model::SubResourceSummary]> {
+    pub fn sub_resources(&self) -> std::option::Option<& [crate::model::SubResourceSummary]> {
         self.sub_resources.as_deref()
     }
     /// <p>The time the attack started, in Unix time in seconds. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time the attack ended, in Unix time in seconds. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>List of counters that describe the attack for the specified time period.</p>
-    pub fn attack_counters(&self) -> std::option::Option<&[crate::model::SummarizedCounter]> {
+    pub fn attack_counters(&self) -> std::option::Option<& [crate::model::SummarizedCounter]> {
         self.attack_counters.as_deref()
     }
-    /// <p>The array of objects that provide details of the Shield event. </p>
+    /// <p>The array of objects that provide details of the Shield event. </p> 
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn attack_properties(&self) -> std::option::Option<&[crate::model::AttackProperty]> {
+    pub fn attack_properties(&self) -> std::option::Option<& [crate::model::AttackProperty]> {
         self.attack_properties.as_deref()
     }
     /// <p>List of mitigation actions taken for the attack.</p>
-    pub fn mitigations(&self) -> std::option::Option<&[crate::model::Mitigation]> {
+    pub fn mitigations(&self) -> std::option::Option<& [crate::model::Mitigation]> {
         self.mitigations.as_deref()
     }
 }
 /// See [`AttackDetail`](crate::model::AttackDetail).
 pub mod attack_detail {
-
+    
     /// A builder for [`AttackDetail`](crate::model::AttackDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attack_id: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) sub_resources:
-            std::option::Option<std::vec::Vec<crate::model::SubResourceSummary>>,
+        pub(crate) sub_resources: std::option::Option<std::vec::Vec<crate::model::SubResourceSummary>>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) attack_counters:
-            std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
-        pub(crate) attack_properties:
-            std::option::Option<std::vec::Vec<crate::model::AttackProperty>>,
+        pub(crate) attack_counters: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
+        pub(crate) attack_properties: std::option::Option<std::vec::Vec<crate::model::AttackProperty>>,
         pub(crate) mitigations: std::option::Option<std::vec::Vec<crate::model::Mitigation>>,
     }
     impl Builder {
@@ -3081,8 +2896,7 @@ pub mod attack_detail {
         }
         /// <p>The unique identifier (ID) of the attack.</p>
         pub fn set_attack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.attack_id = input;
-            self
+            self.attack_id = input; self
         }
         /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3091,8 +2905,7 @@ pub mod attack_detail {
         }
         /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `sub_resources`.
         ///
@@ -3101,17 +2914,13 @@ pub mod attack_detail {
         /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
         pub fn sub_resources(mut self, input: crate::model::SubResourceSummary) -> Self {
             let mut v = self.sub_resources.unwrap_or_default();
-            v.push(input);
-            self.sub_resources = Some(v);
-            self
+                            v.push(input);
+                            self.sub_resources = Some(v);
+                            self
         }
         /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
-        pub fn set_sub_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SubResourceSummary>>,
-        ) -> Self {
-            self.sub_resources = input;
-            self
+        pub fn set_sub_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::SubResourceSummary>>) -> Self {
+            self.sub_resources = input; self
         }
         /// <p>The time the attack started, in Unix time in seconds. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3119,12 +2928,8 @@ pub mod attack_detail {
             self
         }
         /// <p>The time the attack started, in Unix time in seconds. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The time the attack ended, in Unix time in seconds. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3132,12 +2937,8 @@ pub mod attack_detail {
             self
         }
         /// <p>The time the attack ended, in Unix time in seconds. </p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Appends an item to `attack_counters`.
         ///
@@ -3146,38 +2947,30 @@ pub mod attack_detail {
         /// <p>List of counters that describe the attack for the specified time period.</p>
         pub fn attack_counters(mut self, input: crate::model::SummarizedCounter) -> Self {
             let mut v = self.attack_counters.unwrap_or_default();
-            v.push(input);
-            self.attack_counters = Some(v);
-            self
+                            v.push(input);
+                            self.attack_counters = Some(v);
+                            self
         }
         /// <p>List of counters that describe the attack for the specified time period.</p>
-        pub fn set_attack_counters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
-        ) -> Self {
-            self.attack_counters = input;
-            self
+        pub fn set_attack_counters(mut self, input: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>) -> Self {
+            self.attack_counters = input; self
         }
         /// Appends an item to `attack_properties`.
         ///
         /// To override the contents of this collection use [`set_attack_properties`](Self::set_attack_properties).
         ///
-        /// <p>The array of objects that provide details of the Shield event. </p>
+        /// <p>The array of objects that provide details of the Shield event. </p> 
         /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
         pub fn attack_properties(mut self, input: crate::model::AttackProperty) -> Self {
             let mut v = self.attack_properties.unwrap_or_default();
-            v.push(input);
-            self.attack_properties = Some(v);
-            self
+                            v.push(input);
+                            self.attack_properties = Some(v);
+                            self
         }
-        /// <p>The array of objects that provide details of the Shield event. </p>
+        /// <p>The array of objects that provide details of the Shield event. </p> 
         /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
-        pub fn set_attack_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttackProperty>>,
-        ) -> Self {
-            self.attack_properties = input;
-            self
+        pub fn set_attack_properties(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttackProperty>>) -> Self {
+            self.attack_properties = input; self
         }
         /// Appends an item to `mitigations`.
         ///
@@ -3186,32 +2979,38 @@ pub mod attack_detail {
         /// <p>List of mitigation actions taken for the attack.</p>
         pub fn mitigations(mut self, input: crate::model::Mitigation) -> Self {
             let mut v = self.mitigations.unwrap_or_default();
-            v.push(input);
-            self.mitigations = Some(v);
-            self
+                            v.push(input);
+                            self.mitigations = Some(v);
+                            self
         }
         /// <p>List of mitigation actions taken for the attack.</p>
-        pub fn set_mitigations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Mitigation>>,
-        ) -> Self {
-            self.mitigations = input;
-            self
+        pub fn set_mitigations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Mitigation>>) -> Self {
+            self.mitigations = input; self
         }
         /// Consumes the builder and constructs a [`AttackDetail`](crate::model::AttackDetail).
         pub fn build(self) -> crate::model::AttackDetail {
             crate::model::AttackDetail {
-                attack_id: self.attack_id,
-                resource_arn: self.resource_arn,
-                sub_resources: self.sub_resources,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                attack_counters: self.attack_counters,
-                attack_properties: self.attack_properties,
-                mitigations: self.mitigations,
+                attack_id: self.attack_id
+                ,
+                resource_arn: self.resource_arn
+                ,
+                sub_resources: self.sub_resources
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                attack_counters: self.attack_counters
+                ,
+                attack_properties: self.attack_properties
+                ,
+                mitigations: self.mitigations
+                ,
             }
         }
     }
+    
+    
 }
 impl AttackDetail {
     /// Creates a new builder-style object to manufacture [`AttackDetail`](crate::model::AttackDetail).
@@ -3223,20 +3022,20 @@ impl AttackDetail {
 /// <p>The mitigation applied to a DDoS attack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Mitigation {
+pub struct Mitigation  {
     /// <p>The name of the mitigation taken for this attack.</p>
     #[doc(hidden)]
     pub mitigation_name: std::option::Option<std::string::String>,
 }
 impl Mitigation {
     /// <p>The name of the mitigation taken for this attack.</p>
-    pub fn mitigation_name(&self) -> std::option::Option<&str> {
+    pub fn mitigation_name(&self) -> std::option::Option<& str> {
         self.mitigation_name.as_deref()
     }
 }
 /// See [`Mitigation`](crate::model::Mitigation).
 pub mod mitigation {
-
+    
     /// A builder for [`Mitigation`](crate::model::Mitigation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3249,20 +3048,19 @@ pub mod mitigation {
             self
         }
         /// <p>The name of the mitigation taken for this attack.</p>
-        pub fn set_mitigation_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.mitigation_name = input;
-            self
+        pub fn set_mitigation_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mitigation_name = input; self
         }
         /// Consumes the builder and constructs a [`Mitigation`](crate::model::Mitigation).
         pub fn build(self) -> crate::model::Mitigation {
             crate::model::Mitigation {
-                mitigation_name: self.mitigation_name,
+                mitigation_name: self.mitigation_name
+                ,
             }
         }
     }
+    
+    
 }
 impl Mitigation {
     /// Creates a new builder-style object to manufacture [`Mitigation`](crate::model::Mitigation).
@@ -3274,8 +3072,8 @@ impl Mitigation {
 /// <p>Details of a Shield event. This is provided as part of an <code>AttackDetail</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttackProperty {
-    /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
+pub struct AttackProperty  {
+    /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p> 
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
     #[doc(hidden)]
     pub attack_layer: std::option::Option<crate::model::AttackLayer>,
@@ -3293,23 +3091,21 @@ pub struct AttackProperty {
     pub total: i64,
 }
 impl AttackProperty {
-    /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
+    /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p> 
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn attack_layer(&self) -> std::option::Option<&crate::model::AttackLayer> {
+    pub fn attack_layer(&self) -> std::option::Option<& crate::model::AttackLayer> {
         self.attack_layer.as_ref()
     }
     /// <p>Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.</p>
-    pub fn attack_property_identifier(
-        &self,
-    ) -> std::option::Option<&crate::model::AttackPropertyIdentifier> {
+    pub fn attack_property_identifier(&self) -> std::option::Option<& crate::model::AttackPropertyIdentifier> {
         self.attack_property_identifier.as_ref()
     }
     /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
-    pub fn top_contributors(&self) -> std::option::Option<&[crate::model::Contributor]> {
+    pub fn top_contributors(&self) -> std::option::Option<& [crate::model::Contributor]> {
         self.top_contributors.as_deref()
     }
     /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
-    pub fn unit(&self) -> std::option::Option<&crate::model::Unit> {
+    pub fn unit(&self) -> std::option::Option<& crate::model::Unit> {
         self.unit.as_ref()
     }
     /// <p>The total contributions made to this Shield event by all contributors.</p>
@@ -3319,48 +3115,36 @@ impl AttackProperty {
 }
 /// See [`AttackProperty`](crate::model::AttackProperty).
 pub mod attack_property {
-
+    
     /// A builder for [`AttackProperty`](crate::model::AttackProperty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attack_layer: std::option::Option<crate::model::AttackLayer>,
-        pub(crate) attack_property_identifier:
-            std::option::Option<crate::model::AttackPropertyIdentifier>,
+        pub(crate) attack_property_identifier: std::option::Option<crate::model::AttackPropertyIdentifier>,
         pub(crate) top_contributors: std::option::Option<std::vec::Vec<crate::model::Contributor>>,
         pub(crate) unit: std::option::Option<crate::model::Unit>,
         pub(crate) total: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
+        /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p> 
         /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
         pub fn attack_layer(mut self, input: crate::model::AttackLayer) -> Self {
             self.attack_layer = Some(input);
             self
         }
-        /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
+        /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p> 
         /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
-        pub fn set_attack_layer(
-            mut self,
-            input: std::option::Option<crate::model::AttackLayer>,
-        ) -> Self {
-            self.attack_layer = input;
-            self
+        pub fn set_attack_layer(mut self, input: std::option::Option<crate::model::AttackLayer>) -> Self {
+            self.attack_layer = input; self
         }
         /// <p>Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.</p>
-        pub fn attack_property_identifier(
-            mut self,
-            input: crate::model::AttackPropertyIdentifier,
-        ) -> Self {
+        pub fn attack_property_identifier(mut self, input: crate::model::AttackPropertyIdentifier) -> Self {
             self.attack_property_identifier = Some(input);
             self
         }
         /// <p>Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.</p>
-        pub fn set_attack_property_identifier(
-            mut self,
-            input: std::option::Option<crate::model::AttackPropertyIdentifier>,
-        ) -> Self {
-            self.attack_property_identifier = input;
-            self
+        pub fn set_attack_property_identifier(mut self, input: std::option::Option<crate::model::AttackPropertyIdentifier>) -> Self {
+            self.attack_property_identifier = input; self
         }
         /// Appends an item to `top_contributors`.
         ///
@@ -3369,17 +3153,13 @@ pub mod attack_property {
         /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
         pub fn top_contributors(mut self, input: crate::model::Contributor) -> Self {
             let mut v = self.top_contributors.unwrap_or_default();
-            v.push(input);
-            self.top_contributors = Some(v);
-            self
+                            v.push(input);
+                            self.top_contributors = Some(v);
+                            self
         }
         /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
-        pub fn set_top_contributors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Contributor>>,
-        ) -> Self {
-            self.top_contributors = input;
-            self
+        pub fn set_top_contributors(mut self, input: std::option::Option<std::vec::Vec<crate::model::Contributor>>) -> Self {
+            self.top_contributors = input; self
         }
         /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
         pub fn unit(mut self, input: crate::model::Unit) -> Self {
@@ -3388,8 +3168,7 @@ pub mod attack_property {
         }
         /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::Unit>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// <p>The total contributions made to this Shield event by all contributors.</p>
         pub fn total(mut self, input: i64) -> Self {
@@ -3398,20 +3177,27 @@ pub mod attack_property {
         }
         /// <p>The total contributions made to this Shield event by all contributors.</p>
         pub fn set_total(mut self, input: std::option::Option<i64>) -> Self {
-            self.total = input;
-            self
+            self.total = input; self
         }
         /// Consumes the builder and constructs a [`AttackProperty`](crate::model::AttackProperty).
         pub fn build(self) -> crate::model::AttackProperty {
             crate::model::AttackProperty {
-                attack_layer: self.attack_layer,
-                attack_property_identifier: self.attack_property_identifier,
-                top_contributors: self.top_contributors,
-                unit: self.unit,
-                total: self.total.unwrap_or_default(),
+                attack_layer: self.attack_layer
+                ,
+                attack_property_identifier: self.attack_property_identifier
+                ,
+                top_contributors: self.top_contributors
+                ,
+                unit: self.unit
+                ,
+                total: self.total
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AttackProperty {
     /// Creates a new builder-style object to manufacture [`AttackProperty`](crate::model::AttackProperty).
@@ -3426,9 +3212,9 @@ impl AttackProperty {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let unit = unimplemented!();
 /// match unit {
@@ -3452,22 +3238,14 @@ impl AttackProperty {
 /// Specifically, when `unit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Unit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Unit {
     #[allow(missing_docs)] // documentation missing in model
     Bits,
@@ -3478,7 +3256,7 @@ pub enum Unit {
     #[allow(missing_docs)] // documentation missing in model
     Requests,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Unit {
     fn from(s: &str) -> Self {
@@ -3487,17 +3265,17 @@ impl std::convert::From<&str> for Unit {
             "BYTES" => Unit::Bytes,
             "PACKETS" => Unit::Packets,
             "REQUESTS" => Unit::Requests,
-            other => Unit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Unit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Unit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Unit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Unit::from(s))
+                }
+            }
 impl Unit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3506,12 +3284,14 @@ impl Unit {
             Unit::Bytes => "BYTES",
             Unit::Packets => "PACKETS",
             Unit::Requests => "REQUESTS",
-            Unit::Unknown(value) => value.as_str(),
+            Unit::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BITS", "BYTES", "PACKETS", "REQUESTS"]
+        &[
+            "BITS", "BYTES", "PACKETS", "REQUESTS"
+        ]
     }
 }
 impl AsRef<str> for Unit {
@@ -3523,7 +3303,7 @@ impl AsRef<str> for Unit {
 /// <p>A contributor to the attack and their contribution. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Contributor {
+pub struct Contributor  {
     /// <p>The name of the contributor. The type of name that you'll find here depends on the <code>AttackPropertyIdentifier</code> setting in the <code>AttackProperty</code> where this contributor is defined. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3533,7 +3313,7 @@ pub struct Contributor {
 }
 impl Contributor {
     /// <p>The name of the contributor. The type of name that you'll find here depends on the <code>AttackPropertyIdentifier</code> setting in the <code>AttackProperty</code> where this contributor is defined. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The contribution of this contributor expressed in <code>Protection</code> units. For example <code>10,000</code>.</p>
@@ -3543,7 +3323,7 @@ impl Contributor {
 }
 /// See [`Contributor`](crate::model::Contributor).
 pub mod contributor {
-
+    
     /// A builder for [`Contributor`](crate::model::Contributor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3558,8 +3338,7 @@ pub mod contributor {
         }
         /// <p>The name of the contributor. The type of name that you'll find here depends on the <code>AttackPropertyIdentifier</code> setting in the <code>AttackProperty</code> where this contributor is defined. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The contribution of this contributor expressed in <code>Protection</code> units. For example <code>10,000</code>.</p>
         pub fn value(mut self, input: i64) -> Self {
@@ -3568,17 +3347,21 @@ pub mod contributor {
         }
         /// <p>The contribution of this contributor expressed in <code>Protection</code> units. For example <code>10,000</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Contributor`](crate::model::Contributor).
         pub fn build(self) -> crate::model::Contributor {
             crate::model::Contributor {
-                name: self.name,
-                value: self.value.unwrap_or_default(),
+                name: self.name
+                ,
+                value: self.value
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl Contributor {
     /// Creates a new builder-style object to manufacture [`Contributor`](crate::model::Contributor).
@@ -3593,9 +3376,9 @@ impl Contributor {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let attackpropertyidentifier = unimplemented!();
 /// match attackpropertyidentifier {
@@ -3623,22 +3406,14 @@ impl Contributor {
 /// Specifically, when `attackpropertyidentifier` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AttackPropertyIdentifier::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AttackPropertyIdentifier {
     #[allow(missing_docs)] // documentation missing in model
     DestinationUrl,
@@ -3657,7 +3432,7 @@ pub enum AttackPropertyIdentifier {
     #[allow(missing_docs)] // documentation missing in model
     WordpressPingbackSource,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AttackPropertyIdentifier {
     fn from(s: &str) -> Self {
@@ -3670,19 +3445,17 @@ impl std::convert::From<&str> for AttackPropertyIdentifier {
             "SOURCE_USER_AGENT" => AttackPropertyIdentifier::SourceUserAgent,
             "WORDPRESS_PINGBACK_REFLECTOR" => AttackPropertyIdentifier::WordpressPingbackReflector,
             "WORDPRESS_PINGBACK_SOURCE" => AttackPropertyIdentifier::WordpressPingbackSource,
-            other => AttackPropertyIdentifier::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AttackPropertyIdentifier::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AttackPropertyIdentifier {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AttackPropertyIdentifier::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AttackPropertyIdentifier::from(s))
+                }
+            }
 impl AttackPropertyIdentifier {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3695,20 +3468,13 @@ impl AttackPropertyIdentifier {
             AttackPropertyIdentifier::SourceUserAgent => "SOURCE_USER_AGENT",
             AttackPropertyIdentifier::WordpressPingbackReflector => "WORDPRESS_PINGBACK_REFLECTOR",
             AttackPropertyIdentifier::WordpressPingbackSource => "WORDPRESS_PINGBACK_SOURCE",
-            AttackPropertyIdentifier::Unknown(value) => value.as_str(),
+            AttackPropertyIdentifier::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DESTINATION_URL",
-            "REFERRER",
-            "SOURCE_ASN",
-            "SOURCE_COUNTRY",
-            "SOURCE_IP_ADDRESS",
-            "SOURCE_USER_AGENT",
-            "WORDPRESS_PINGBACK_REFLECTOR",
-            "WORDPRESS_PINGBACK_SOURCE",
+            "DESTINATION_URL", "REFERRER", "SOURCE_ASN", "SOURCE_COUNTRY", "SOURCE_IP_ADDRESS", "SOURCE_USER_AGENT", "WORDPRESS_PINGBACK_REFLECTOR", "WORDPRESS_PINGBACK_SOURCE"
         ]
     }
 }
@@ -3724,9 +3490,9 @@ impl AsRef<str> for AttackPropertyIdentifier {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let attacklayer = unimplemented!();
 /// match attacklayer {
@@ -3748,58 +3514,52 @@ impl AsRef<str> for AttackPropertyIdentifier {
 /// Specifically, when `attacklayer` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AttackLayer::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AttackLayer {
     #[allow(missing_docs)] // documentation missing in model
     Application,
     #[allow(missing_docs)] // documentation missing in model
     Network,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AttackLayer {
     fn from(s: &str) -> Self {
         match s {
             "APPLICATION" => AttackLayer::Application,
             "NETWORK" => AttackLayer::Network,
-            other => AttackLayer::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AttackLayer::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AttackLayer {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AttackLayer::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AttackLayer::from(s))
+                }
+            }
 impl AttackLayer {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AttackLayer::Application => "APPLICATION",
             AttackLayer::Network => "NETWORK",
-            AttackLayer::Unknown(value) => value.as_str(),
+            AttackLayer::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["APPLICATION", "NETWORK"]
+        &[
+            "APPLICATION", "NETWORK"
+        ]
     }
 }
 impl AsRef<str> for AttackLayer {
@@ -3811,7 +3571,7 @@ impl AsRef<str> for AttackLayer {
 /// <p>The counter that describes a DDoS attack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SummarizedCounter {
+pub struct SummarizedCounter  {
     /// <p>The counter name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3833,7 +3593,7 @@ pub struct SummarizedCounter {
 }
 impl SummarizedCounter {
     /// <p>The counter name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The maximum value of the counter for a specified time period.</p>
@@ -3853,13 +3613,13 @@ impl SummarizedCounter {
         self.n
     }
     /// <p>The unit of the counters.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
 }
 /// See [`SummarizedCounter`](crate::model::SummarizedCounter).
 pub mod summarized_counter {
-
+    
     /// A builder for [`SummarizedCounter`](crate::model::SummarizedCounter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3878,8 +3638,7 @@ pub mod summarized_counter {
         }
         /// <p>The counter name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The maximum value of the counter for a specified time period.</p>
         pub fn max(mut self, input: f64) -> Self {
@@ -3888,8 +3647,7 @@ pub mod summarized_counter {
         }
         /// <p>The maximum value of the counter for a specified time period.</p>
         pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
-            self.max = input;
-            self
+            self.max = input; self
         }
         /// <p>The average value of the counter for a specified time period.</p>
         pub fn average(mut self, input: f64) -> Self {
@@ -3898,8 +3656,7 @@ pub mod summarized_counter {
         }
         /// <p>The average value of the counter for a specified time period.</p>
         pub fn set_average(mut self, input: std::option::Option<f64>) -> Self {
-            self.average = input;
-            self
+            self.average = input; self
         }
         /// <p>The total of counter values for a specified time period.</p>
         pub fn sum(mut self, input: f64) -> Self {
@@ -3908,8 +3665,7 @@ pub mod summarized_counter {
         }
         /// <p>The total of counter values for a specified time period.</p>
         pub fn set_sum(mut self, input: std::option::Option<f64>) -> Self {
-            self.sum = input;
-            self
+            self.sum = input; self
         }
         /// <p>The number of counters for a specified time period.</p>
         pub fn n(mut self, input: i32) -> Self {
@@ -3918,8 +3674,7 @@ pub mod summarized_counter {
         }
         /// <p>The number of counters for a specified time period.</p>
         pub fn set_n(mut self, input: std::option::Option<i32>) -> Self {
-            self.n = input;
-            self
+            self.n = input; self
         }
         /// <p>The unit of the counters.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3928,21 +3683,32 @@ pub mod summarized_counter {
         }
         /// <p>The unit of the counters.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// Consumes the builder and constructs a [`SummarizedCounter`](crate::model::SummarizedCounter).
         pub fn build(self) -> crate::model::SummarizedCounter {
             crate::model::SummarizedCounter {
-                name: self.name,
-                max: self.max.unwrap_or_default(),
-                average: self.average.unwrap_or_default(),
-                sum: self.sum.unwrap_or_default(),
-                n: self.n.unwrap_or_default(),
-                unit: self.unit,
+                name: self.name
+                ,
+                max: self.max
+                    .unwrap_or_default()
+                ,
+                average: self.average
+                    .unwrap_or_default()
+                ,
+                sum: self.sum
+                    .unwrap_or_default()
+                ,
+                n: self.n
+                    .unwrap_or_default()
+                ,
+                unit: self.unit
+                ,
             }
         }
     }
+    
+    
 }
 impl SummarizedCounter {
     /// Creates a new builder-style object to manufacture [`SummarizedCounter`](crate::model::SummarizedCounter).
@@ -3954,7 +3720,7 @@ impl SummarizedCounter {
 /// <p>The attack information for the specified SubResource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubResourceSummary {
+pub struct SubResourceSummary  {
     /// <p>The <code>SubResource</code> type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SubResourceType>,
@@ -3970,32 +3736,31 @@ pub struct SubResourceSummary {
 }
 impl SubResourceSummary {
     /// <p>The <code>SubResource</code> type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::SubResourceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::SubResourceType> {
         self.r#type.as_ref()
     }
     /// <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The list of attack types and associated counters.</p>
-    pub fn attack_vectors(&self) -> std::option::Option<&[crate::model::SummarizedAttackVector]> {
+    pub fn attack_vectors(&self) -> std::option::Option<& [crate::model::SummarizedAttackVector]> {
         self.attack_vectors.as_deref()
     }
     /// <p>The counters that describe the details of the attack.</p>
-    pub fn counters(&self) -> std::option::Option<&[crate::model::SummarizedCounter]> {
+    pub fn counters(&self) -> std::option::Option<& [crate::model::SummarizedCounter]> {
         self.counters.as_deref()
     }
 }
 /// See [`SubResourceSummary`](crate::model::SubResourceSummary).
 pub mod sub_resource_summary {
-
+    
     /// A builder for [`SubResourceSummary`](crate::model::SubResourceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SubResourceType>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) attack_vectors:
-            std::option::Option<std::vec::Vec<crate::model::SummarizedAttackVector>>,
+        pub(crate) attack_vectors: std::option::Option<std::vec::Vec<crate::model::SummarizedAttackVector>>,
         pub(crate) counters: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
     }
     impl Builder {
@@ -4005,12 +3770,8 @@ pub mod sub_resource_summary {
             self
         }
         /// <p>The <code>SubResource</code> type.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::SubResourceType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::SubResourceType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4019,8 +3780,7 @@ pub mod sub_resource_summary {
         }
         /// <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Appends an item to `attack_vectors`.
         ///
@@ -4029,17 +3789,13 @@ pub mod sub_resource_summary {
         /// <p>The list of attack types and associated counters.</p>
         pub fn attack_vectors(mut self, input: crate::model::SummarizedAttackVector) -> Self {
             let mut v = self.attack_vectors.unwrap_or_default();
-            v.push(input);
-            self.attack_vectors = Some(v);
-            self
+                            v.push(input);
+                            self.attack_vectors = Some(v);
+                            self
         }
         /// <p>The list of attack types and associated counters.</p>
-        pub fn set_attack_vectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SummarizedAttackVector>>,
-        ) -> Self {
-            self.attack_vectors = input;
-            self
+        pub fn set_attack_vectors(mut self, input: std::option::Option<std::vec::Vec<crate::model::SummarizedAttackVector>>) -> Self {
+            self.attack_vectors = input; self
         }
         /// Appends an item to `counters`.
         ///
@@ -4048,28 +3804,30 @@ pub mod sub_resource_summary {
         /// <p>The counters that describe the details of the attack.</p>
         pub fn counters(mut self, input: crate::model::SummarizedCounter) -> Self {
             let mut v = self.counters.unwrap_or_default();
-            v.push(input);
-            self.counters = Some(v);
-            self
+                            v.push(input);
+                            self.counters = Some(v);
+                            self
         }
         /// <p>The counters that describe the details of the attack.</p>
-        pub fn set_counters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
-        ) -> Self {
-            self.counters = input;
-            self
+        pub fn set_counters(mut self, input: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>) -> Self {
+            self.counters = input; self
         }
         /// Consumes the builder and constructs a [`SubResourceSummary`](crate::model::SubResourceSummary).
         pub fn build(self) -> crate::model::SubResourceSummary {
             crate::model::SubResourceSummary {
-                r#type: self.r#type,
-                id: self.id,
-                attack_vectors: self.attack_vectors,
-                counters: self.counters,
+                r#type: self.r#type
+                ,
+                id: self.id
+                ,
+                attack_vectors: self.attack_vectors
+                ,
+                counters: self.counters
+                ,
             }
         }
     }
+    
+    
 }
 impl SubResourceSummary {
     /// Creates a new builder-style object to manufacture [`SubResourceSummary`](crate::model::SubResourceSummary).
@@ -4081,7 +3839,7 @@ impl SubResourceSummary {
 /// <p>A summary of information about the attack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SummarizedAttackVector {
+pub struct SummarizedAttackVector  {
     /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
     #[doc(hidden)]
     pub vector_type: std::option::Option<std::string::String>,
@@ -4091,23 +3849,22 @@ pub struct SummarizedAttackVector {
 }
 impl SummarizedAttackVector {
     /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
-    pub fn vector_type(&self) -> std::option::Option<&str> {
+    pub fn vector_type(&self) -> std::option::Option<& str> {
         self.vector_type.as_deref()
     }
     /// <p>The list of counters that describe the details of the attack.</p>
-    pub fn vector_counters(&self) -> std::option::Option<&[crate::model::SummarizedCounter]> {
+    pub fn vector_counters(&self) -> std::option::Option<& [crate::model::SummarizedCounter]> {
         self.vector_counters.as_deref()
     }
 }
 /// See [`SummarizedAttackVector`](crate::model::SummarizedAttackVector).
 pub mod summarized_attack_vector {
-
+    
     /// A builder for [`SummarizedAttackVector`](crate::model::SummarizedAttackVector).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vector_type: std::option::Option<std::string::String>,
-        pub(crate) vector_counters:
-            std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
+        pub(crate) vector_counters: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
     }
     impl Builder {
         /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
@@ -4117,8 +3874,7 @@ pub mod summarized_attack_vector {
         }
         /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
         pub fn set_vector_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vector_type = input;
-            self
+            self.vector_type = input; self
         }
         /// Appends an item to `vector_counters`.
         ///
@@ -4127,26 +3883,26 @@ pub mod summarized_attack_vector {
         /// <p>The list of counters that describe the details of the attack.</p>
         pub fn vector_counters(mut self, input: crate::model::SummarizedCounter) -> Self {
             let mut v = self.vector_counters.unwrap_or_default();
-            v.push(input);
-            self.vector_counters = Some(v);
-            self
+                            v.push(input);
+                            self.vector_counters = Some(v);
+                            self
         }
         /// <p>The list of counters that describe the details of the attack.</p>
-        pub fn set_vector_counters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
-        ) -> Self {
-            self.vector_counters = input;
-            self
+        pub fn set_vector_counters(mut self, input: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>) -> Self {
+            self.vector_counters = input; self
         }
         /// Consumes the builder and constructs a [`SummarizedAttackVector`](crate::model::SummarizedAttackVector).
         pub fn build(self) -> crate::model::SummarizedAttackVector {
             crate::model::SummarizedAttackVector {
-                vector_type: self.vector_type,
-                vector_counters: self.vector_counters,
+                vector_type: self.vector_type
+                ,
+                vector_counters: self.vector_counters
+                ,
             }
         }
     }
+    
+    
 }
 impl SummarizedAttackVector {
     /// Creates a new builder-style object to manufacture [`SummarizedAttackVector`](crate::model::SummarizedAttackVector).
@@ -4161,9 +3917,9 @@ impl SummarizedAttackVector {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let subresourcetype = unimplemented!();
 /// match subresourcetype {
@@ -4185,58 +3941,52 @@ impl SummarizedAttackVector {
 /// Specifically, when `subresourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SubResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SubResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Ip,
     #[allow(missing_docs)] // documentation missing in model
     Url,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SubResourceType {
     fn from(s: &str) -> Self {
         match s {
             "IP" => SubResourceType::Ip,
             "URL" => SubResourceType::Url,
-            other => SubResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SubResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SubResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SubResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SubResourceType::from(s))
+                }
+            }
 impl SubResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SubResourceType::Ip => "IP",
             SubResourceType::Url => "URL",
-            SubResourceType::Unknown(value) => value.as_str(),
+            SubResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IP", "URL"]
+        &[
+            "IP", "URL"
+        ]
     }
 }
 impl AsRef<str> for SubResourceType {
@@ -4244,3 +3994,4 @@ impl AsRef<str> for SubResourceType {
         self.as_str()
     }
 }
+

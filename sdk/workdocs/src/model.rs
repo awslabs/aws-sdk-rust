@@ -3,7 +3,7 @@
 /// <p>Describes a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct User {
+pub struct User  {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -52,67 +52,67 @@ pub struct User {
 }
 impl User {
     /// <p>The ID of the user.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The login name of the user.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The email address of the user.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> std::option::Option<& str> {
         self.email_address.as_deref()
     }
     /// <p>The given name of the user.</p>
-    pub fn given_name(&self) -> std::option::Option<&str> {
+    pub fn given_name(&self) -> std::option::Option<& str> {
         self.given_name.as_deref()
     }
     /// <p>The surname of the user.</p>
-    pub fn surname(&self) -> std::option::Option<&str> {
+    pub fn surname(&self) -> std::option::Option<& str> {
         self.surname.as_deref()
     }
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(&self) -> std::option::Option<&str> {
+    pub fn organization_id(&self) -> std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The ID of the root folder.</p>
-    pub fn root_folder_id(&self) -> std::option::Option<&str> {
+    pub fn root_folder_id(&self) -> std::option::Option<& str> {
         self.root_folder_id.as_deref()
     }
     /// <p>The ID of the recycle bin folder.</p>
-    pub fn recycle_bin_folder_id(&self) -> std::option::Option<&str> {
+    pub fn recycle_bin_folder_id(&self) -> std::option::Option<& str> {
         self.recycle_bin_folder_id.as_deref()
     }
     /// <p>The status of the user.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::UserStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::model::UserStatusType> {
         self.status.as_ref()
     }
     /// <p>The type of user.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::UserType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::UserType> {
         self.r#type.as_ref()
     }
     /// <p>The time when the user was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time when the user was modified.</p>
-    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_timestamp.as_ref()
     }
     /// <p>The time zone ID of the user.</p>
-    pub fn time_zone_id(&self) -> std::option::Option<&str> {
+    pub fn time_zone_id(&self) -> std::option::Option<& str> {
         self.time_zone_id.as_deref()
     }
     /// <p>The locale of the user.</p>
-    pub fn locale(&self) -> std::option::Option<&crate::model::LocaleType> {
+    pub fn locale(&self) -> std::option::Option<& crate::model::LocaleType> {
         self.locale.as_ref()
     }
     /// <p>The storage for the user.</p>
-    pub fn storage(&self) -> std::option::Option<&crate::model::UserStorageMetadata> {
+    pub fn storage(&self) -> std::option::Option<& crate::model::UserStorageMetadata> {
         self.storage.as_ref()
     }
 }
-impl std::fmt::Debug for User {
+impl  std::fmt::Debug for User  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("User");
         formatter.field("id", &self.id);
@@ -135,7 +135,7 @@ impl std::fmt::Debug for User {
 }
 /// See [`User`](crate::model::User).
 pub mod user {
-
+    
     /// A builder for [`User`](crate::model::User).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -163,8 +163,7 @@ pub mod user {
         }
         /// <p>The ID of the user.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The login name of the user.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -173,8 +172,7 @@ pub mod user {
         }
         /// <p>The login name of the user.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.username = input;
-            self
+            self.username = input; self
         }
         /// <p>The email address of the user.</p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -182,12 +180,8 @@ pub mod user {
             self
         }
         /// <p>The email address of the user.</p>
-        pub fn set_email_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_address = input;
-            self
+        pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_address = input; self
         }
         /// <p>The given name of the user.</p>
         pub fn given_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -196,8 +190,7 @@ pub mod user {
         }
         /// <p>The given name of the user.</p>
         pub fn set_given_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.given_name = input;
-            self
+            self.given_name = input; self
         }
         /// <p>The surname of the user.</p>
         pub fn surname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -206,8 +199,7 @@ pub mod user {
         }
         /// <p>The surname of the user.</p>
         pub fn set_surname(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.surname = input;
-            self
+            self.surname = input; self
         }
         /// <p>The ID of the organization.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -215,12 +207,8 @@ pub mod user {
             self
         }
         /// <p>The ID of the organization.</p>
-        pub fn set_organization_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.organization_id = input;
-            self
+        pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.organization_id = input; self
         }
         /// <p>The ID of the root folder.</p>
         pub fn root_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -228,12 +216,8 @@ pub mod user {
             self
         }
         /// <p>The ID of the root folder.</p>
-        pub fn set_root_folder_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.root_folder_id = input;
-            self
+        pub fn set_root_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.root_folder_id = input; self
         }
         /// <p>The ID of the recycle bin folder.</p>
         pub fn recycle_bin_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -241,12 +225,8 @@ pub mod user {
             self
         }
         /// <p>The ID of the recycle bin folder.</p>
-        pub fn set_recycle_bin_folder_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recycle_bin_folder_id = input;
-            self
+        pub fn set_recycle_bin_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recycle_bin_folder_id = input; self
         }
         /// <p>The status of the user.</p>
         pub fn status(mut self, input: crate::model::UserStatusType) -> Self {
@@ -254,12 +234,8 @@ pub mod user {
             self
         }
         /// <p>The status of the user.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::UserStatusType>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::UserStatusType>) -> Self {
+            self.status = input; self
         }
         /// <p>The type of user.</p>
         pub fn r#type(mut self, input: crate::model::UserType) -> Self {
@@ -268,8 +244,7 @@ pub mod user {
         }
         /// <p>The type of user.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UserType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The time when the user was created.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -277,12 +252,8 @@ pub mod user {
             self
         }
         /// <p>The time when the user was created.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// <p>The time when the user was modified.</p>
         pub fn modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -290,12 +261,8 @@ pub mod user {
             self
         }
         /// <p>The time when the user was modified.</p>
-        pub fn set_modified_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified_timestamp = input;
-            self
+        pub fn set_modified_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified_timestamp = input; self
         }
         /// <p>The time zone ID of the user.</p>
         pub fn time_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -304,8 +271,7 @@ pub mod user {
         }
         /// <p>The time zone ID of the user.</p>
         pub fn set_time_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.time_zone_id = input;
-            self
+            self.time_zone_id = input; self
         }
         /// <p>The locale of the user.</p>
         pub fn locale(mut self, input: crate::model::LocaleType) -> Self {
@@ -314,8 +280,7 @@ pub mod user {
         }
         /// <p>The locale of the user.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::LocaleType>) -> Self {
-            self.locale = input;
-            self
+            self.locale = input; self
         }
         /// <p>The storage for the user.</p>
         pub fn storage(mut self, input: crate::model::UserStorageMetadata) -> Self {
@@ -323,31 +288,42 @@ pub mod user {
             self
         }
         /// <p>The storage for the user.</p>
-        pub fn set_storage(
-            mut self,
-            input: std::option::Option<crate::model::UserStorageMetadata>,
-        ) -> Self {
-            self.storage = input;
-            self
+        pub fn set_storage(mut self, input: std::option::Option<crate::model::UserStorageMetadata>) -> Self {
+            self.storage = input; self
         }
         /// Consumes the builder and constructs a [`User`](crate::model::User).
         pub fn build(self) -> crate::model::User {
             crate::model::User {
-                id: self.id,
-                username: self.username,
-                email_address: self.email_address,
-                given_name: self.given_name,
-                surname: self.surname,
-                organization_id: self.organization_id,
-                root_folder_id: self.root_folder_id,
-                recycle_bin_folder_id: self.recycle_bin_folder_id,
-                status: self.status,
-                r#type: self.r#type,
-                created_timestamp: self.created_timestamp,
-                modified_timestamp: self.modified_timestamp,
-                time_zone_id: self.time_zone_id,
-                locale: self.locale,
-                storage: self.storage,
+                id: self.id
+                ,
+                username: self.username
+                ,
+                email_address: self.email_address
+                ,
+                given_name: self.given_name
+                ,
+                surname: self.surname
+                ,
+                organization_id: self.organization_id
+                ,
+                root_folder_id: self.root_folder_id
+                ,
+                recycle_bin_folder_id: self.recycle_bin_folder_id
+                ,
+                status: self.status
+                ,
+                r#type: self.r#type
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                modified_timestamp: self.modified_timestamp
+                ,
+                time_zone_id: self.time_zone_id
+                ,
+                locale: self.locale
+                ,
+                storage: self.storage
+                ,
             }
         }
     }
@@ -372,6 +348,8 @@ pub mod user {
             formatter.finish()
         }
     }
+    
+    
 }
 impl User {
     /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
@@ -383,7 +361,7 @@ impl User {
 /// <p>Describes the storage for a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserStorageMetadata {
+pub struct UserStorageMetadata  {
     /// <p>The amount of storage used, in bytes.</p>
     #[doc(hidden)]
     pub storage_utilized_in_bytes: std::option::Option<i64>,
@@ -397,13 +375,13 @@ impl UserStorageMetadata {
         self.storage_utilized_in_bytes
     }
     /// <p>The storage for a user.</p>
-    pub fn storage_rule(&self) -> std::option::Option<&crate::model::StorageRuleType> {
+    pub fn storage_rule(&self) -> std::option::Option<& crate::model::StorageRuleType> {
         self.storage_rule.as_ref()
     }
 }
 /// See [`UserStorageMetadata`](crate::model::UserStorageMetadata).
 pub mod user_storage_metadata {
-
+    
     /// A builder for [`UserStorageMetadata`](crate::model::UserStorageMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -418,8 +396,7 @@ pub mod user_storage_metadata {
         }
         /// <p>The amount of storage used, in bytes.</p>
         pub fn set_storage_utilized_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.storage_utilized_in_bytes = input;
-            self
+            self.storage_utilized_in_bytes = input; self
         }
         /// <p>The storage for a user.</p>
         pub fn storage_rule(mut self, input: crate::model::StorageRuleType) -> Self {
@@ -427,21 +404,21 @@ pub mod user_storage_metadata {
             self
         }
         /// <p>The storage for a user.</p>
-        pub fn set_storage_rule(
-            mut self,
-            input: std::option::Option<crate::model::StorageRuleType>,
-        ) -> Self {
-            self.storage_rule = input;
-            self
+        pub fn set_storage_rule(mut self, input: std::option::Option<crate::model::StorageRuleType>) -> Self {
+            self.storage_rule = input; self
         }
         /// Consumes the builder and constructs a [`UserStorageMetadata`](crate::model::UserStorageMetadata).
         pub fn build(self) -> crate::model::UserStorageMetadata {
             crate::model::UserStorageMetadata {
-                storage_utilized_in_bytes: self.storage_utilized_in_bytes,
-                storage_rule: self.storage_rule,
+                storage_utilized_in_bytes: self.storage_utilized_in_bytes
+                ,
+                storage_rule: self.storage_rule
+                ,
             }
         }
     }
+    
+    
 }
 impl UserStorageMetadata {
     /// Creates a new builder-style object to manufacture [`UserStorageMetadata`](crate::model::UserStorageMetadata).
@@ -453,7 +430,7 @@ impl UserStorageMetadata {
 /// <p>Describes the storage for a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageRuleType {
+pub struct StorageRuleType  {
     /// <p>The amount of storage allocated, in bytes.</p>
     #[doc(hidden)]
     pub storage_allocated_in_bytes: std::option::Option<i64>,
@@ -467,13 +444,13 @@ impl StorageRuleType {
         self.storage_allocated_in_bytes
     }
     /// <p>The type of storage.</p>
-    pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
+    pub fn storage_type(&self) -> std::option::Option<& crate::model::StorageType> {
         self.storage_type.as_ref()
     }
 }
 /// See [`StorageRuleType`](crate::model::StorageRuleType).
 pub mod storage_rule_type {
-
+    
     /// A builder for [`StorageRuleType`](crate::model::StorageRuleType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -488,8 +465,7 @@ pub mod storage_rule_type {
         }
         /// <p>The amount of storage allocated, in bytes.</p>
         pub fn set_storage_allocated_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.storage_allocated_in_bytes = input;
-            self
+            self.storage_allocated_in_bytes = input; self
         }
         /// <p>The type of storage.</p>
         pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
@@ -497,21 +473,21 @@ pub mod storage_rule_type {
             self
         }
         /// <p>The type of storage.</p>
-        pub fn set_storage_type(
-            mut self,
-            input: std::option::Option<crate::model::StorageType>,
-        ) -> Self {
-            self.storage_type = input;
-            self
+        pub fn set_storage_type(mut self, input: std::option::Option<crate::model::StorageType>) -> Self {
+            self.storage_type = input; self
         }
         /// Consumes the builder and constructs a [`StorageRuleType`](crate::model::StorageRuleType).
         pub fn build(self) -> crate::model::StorageRuleType {
             crate::model::StorageRuleType {
-                storage_allocated_in_bytes: self.storage_allocated_in_bytes,
-                storage_type: self.storage_type,
+                storage_allocated_in_bytes: self.storage_allocated_in_bytes
+                ,
+                storage_type: self.storage_type
+                ,
             }
         }
     }
+    
+    
 }
 impl StorageRuleType {
     /// Creates a new builder-style object to manufacture [`StorageRuleType`](crate::model::StorageRuleType).
@@ -526,9 +502,9 @@ impl StorageRuleType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let storagetype = unimplemented!();
 /// match storagetype {
@@ -550,58 +526,52 @@ impl StorageRuleType {
 /// Specifically, when `storagetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StorageType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StorageType {
     #[allow(missing_docs)] // documentation missing in model
     Quota,
     #[allow(missing_docs)] // documentation missing in model
     Unlimited,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StorageType {
     fn from(s: &str) -> Self {
         match s {
             "QUOTA" => StorageType::Quota,
             "UNLIMITED" => StorageType::Unlimited,
-            other => StorageType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StorageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StorageType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StorageType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StorageType::from(s))
+                }
+            }
 impl StorageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StorageType::Quota => "QUOTA",
             StorageType::Unlimited => "UNLIMITED",
-            StorageType::Unknown(value) => value.as_str(),
+            StorageType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["QUOTA", "UNLIMITED"]
+        &[
+            "QUOTA", "UNLIMITED"
+        ]
     }
 }
 impl AsRef<str> for StorageType {
@@ -616,9 +586,9 @@ impl AsRef<str> for StorageType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let localetype = unimplemented!();
 /// match localetype {
@@ -649,22 +619,14 @@ impl AsRef<str> for StorageType {
 /// Specifically, when `localetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LocaleType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LocaleType {
     #[allow(missing_docs)] // documentation missing in model
     De,
@@ -689,7 +651,7 @@ pub enum LocaleType {
     #[allow(missing_docs)] // documentation missing in model
     ZhTw,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LocaleType {
     fn from(s: &str) -> Self {
@@ -705,17 +667,17 @@ impl std::convert::From<&str> for LocaleType {
             "ru" => LocaleType::Ru,
             "zh_CN" => LocaleType::ZhCn,
             "zh_TW" => LocaleType::ZhTw,
-            other => LocaleType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LocaleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LocaleType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LocaleType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LocaleType::from(s))
+                }
+            }
 impl LocaleType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -731,13 +693,13 @@ impl LocaleType {
             LocaleType::Ru => "ru",
             LocaleType::ZhCn => "zh_CN",
             LocaleType::ZhTw => "zh_TW",
-            LocaleType::Unknown(value) => value.as_str(),
+            LocaleType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "de", "default", "en", "es", "fr", "ja", "ko", "pt_BR", "ru", "zh_CN", "zh_TW",
+            "de", "default", "en", "es", "fr", "ja", "ko", "pt_BR", "ru", "zh_CN", "zh_TW"
         ]
     }
 }
@@ -753,9 +715,9 @@ impl AsRef<str> for LocaleType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let usertype = unimplemented!();
 /// match usertype {
@@ -780,22 +742,14 @@ impl AsRef<str> for LocaleType {
 /// Specifically, when `usertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UserType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UserType {
     #[allow(missing_docs)] // documentation missing in model
     Admin,
@@ -808,7 +762,7 @@ pub enum UserType {
     #[allow(missing_docs)] // documentation missing in model
     Workspacesuser,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UserType {
     fn from(s: &str) -> Self {
@@ -818,17 +772,17 @@ impl std::convert::From<&str> for UserType {
             "POWERUSER" => UserType::Poweruser,
             "USER" => UserType::User,
             "WORKSPACESUSER" => UserType::Workspacesuser,
-            other => UserType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UserType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UserType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UserType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UserType::from(s))
+                }
+            }
 impl UserType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -838,17 +792,13 @@ impl UserType {
             UserType::Poweruser => "POWERUSER",
             UserType::User => "USER",
             UserType::Workspacesuser => "WORKSPACESUSER",
-            UserType::Unknown(value) => value.as_str(),
+            UserType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ADMIN",
-            "MINIMALUSER",
-            "POWERUSER",
-            "USER",
-            "WORKSPACESUSER",
+            "ADMIN", "MINIMALUSER", "POWERUSER", "USER", "WORKSPACESUSER"
         ]
     }
 }
@@ -864,9 +814,9 @@ impl AsRef<str> for UserType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let userstatustype = unimplemented!();
 /// match userstatustype {
@@ -889,22 +839,14 @@ impl AsRef<str> for UserType {
 /// Specifically, when `userstatustype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UserStatusType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UserStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -913,7 +855,7 @@ pub enum UserStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UserStatusType {
     fn from(s: &str) -> Self {
@@ -921,17 +863,17 @@ impl std::convert::From<&str> for UserStatusType {
             "ACTIVE" => UserStatusType::Active,
             "INACTIVE" => UserStatusType::Inactive,
             "PENDING" => UserStatusType::Pending,
-            other => UserStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UserStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UserStatusType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UserStatusType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UserStatusType::from(s))
+                }
+            }
 impl UserStatusType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -939,12 +881,14 @@ impl UserStatusType {
             UserStatusType::Active => "ACTIVE",
             UserStatusType::Inactive => "INACTIVE",
             UserStatusType::Pending => "PENDING",
-            UserStatusType::Unknown(value) => value.as_str(),
+            UserStatusType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "INACTIVE", "PENDING"]
+        &[
+            "ACTIVE", "INACTIVE", "PENDING"
+        ]
     }
 }
 impl AsRef<str> for UserStatusType {
@@ -959,9 +903,9 @@ impl AsRef<str> for UserStatusType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let booleanenumtype = unimplemented!();
 /// match booleanenumtype {
@@ -983,58 +927,52 @@ impl AsRef<str> for UserStatusType {
 /// Specifically, when `booleanenumtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BooleanEnumType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BooleanEnumType {
     #[allow(missing_docs)] // documentation missing in model
     False,
     #[allow(missing_docs)] // documentation missing in model
     True,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BooleanEnumType {
     fn from(s: &str) -> Self {
         match s {
             "FALSE" => BooleanEnumType::False,
             "TRUE" => BooleanEnumType::True,
-            other => BooleanEnumType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BooleanEnumType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BooleanEnumType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BooleanEnumType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BooleanEnumType::from(s))
+                }
+            }
 impl BooleanEnumType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BooleanEnumType::False => "FALSE",
             BooleanEnumType::True => "TRUE",
-            BooleanEnumType::Unknown(value) => value.as_str(),
+            BooleanEnumType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FALSE", "TRUE"]
+        &[
+            "FALSE", "TRUE"
+        ]
     }
 }
 impl AsRef<str> for BooleanEnumType {
@@ -1049,9 +987,9 @@ impl AsRef<str> for BooleanEnumType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcestatetype = unimplemented!();
 /// match resourcestatetype {
@@ -1075,22 +1013,14 @@ impl AsRef<str> for BooleanEnumType {
 /// Specifically, when `resourcestatetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceStateType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceStateType {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -1101,7 +1031,7 @@ pub enum ResourceStateType {
     #[allow(missing_docs)] // documentation missing in model
     Restoring,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceStateType {
     fn from(s: &str) -> Self {
@@ -1110,19 +1040,17 @@ impl std::convert::From<&str> for ResourceStateType {
             "RECYCLED" => ResourceStateType::Recycled,
             "RECYCLING" => ResourceStateType::Recycling,
             "RESTORING" => ResourceStateType::Restoring,
-            other => {
-                ResourceStateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceStateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceStateType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceStateType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceStateType::from(s))
+                }
+            }
 impl ResourceStateType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1131,12 +1059,14 @@ impl ResourceStateType {
             ResourceStateType::Recycled => "RECYCLED",
             ResourceStateType::Recycling => "RECYCLING",
             ResourceStateType::Restoring => "RESTORING",
-            ResourceStateType::Unknown(value) => value.as_str(),
+            ResourceStateType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "RECYCLED", "RECYCLING", "RESTORING"]
+        &[
+            "ACTIVE", "RECYCLED", "RECYCLING", "RESTORING"
+        ]
     }
 }
 impl AsRef<str> for ResourceStateType {
@@ -1151,9 +1081,9 @@ impl AsRef<str> for ResourceStateType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let documentversionstatus = unimplemented!();
 /// match documentversionstatus {
@@ -1174,56 +1104,48 @@ impl AsRef<str> for ResourceStateType {
 /// Specifically, when `documentversionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DocumentVersionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DocumentVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DocumentVersionStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => DocumentVersionStatus::Active,
-            other => {
-                DocumentVersionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DocumentVersionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DocumentVersionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DocumentVersionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DocumentVersionStatus::from(s))
+                }
+            }
 impl DocumentVersionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DocumentVersionStatus::Active => "ACTIVE",
-            DocumentVersionStatus::Unknown(value) => value.as_str(),
+            DocumentVersionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE"]
+        &[
+            "ACTIVE"
+        ]
     }
 }
 impl AsRef<str> for DocumentVersionStatus {
@@ -1238,9 +1160,9 @@ impl AsRef<str> for DocumentVersionStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let principaltype = unimplemented!();
 /// match principaltype {
@@ -1265,22 +1187,14 @@ impl AsRef<str> for DocumentVersionStatus {
 /// Specifically, when `principaltype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PrincipalType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PrincipalType {
     #[allow(missing_docs)] // documentation missing in model
     Anonymous,
@@ -1293,7 +1207,7 @@ pub enum PrincipalType {
     #[allow(missing_docs)] // documentation missing in model
     User,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PrincipalType {
     fn from(s: &str) -> Self {
@@ -1303,17 +1217,17 @@ impl std::convert::From<&str> for PrincipalType {
             "INVITE" => PrincipalType::Invite,
             "ORGANIZATION" => PrincipalType::Organization,
             "USER" => PrincipalType::User,
-            other => PrincipalType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PrincipalType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PrincipalType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PrincipalType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PrincipalType::from(s))
+                }
+            }
 impl PrincipalType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1323,12 +1237,14 @@ impl PrincipalType {
             PrincipalType::Invite => "INVITE",
             PrincipalType::Organization => "ORGANIZATION",
             PrincipalType::User => "USER",
-            PrincipalType::Unknown(value) => value.as_str(),
+            PrincipalType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ANONYMOUS", "GROUP", "INVITE", "ORGANIZATION", "USER"]
+        &[
+            "ANONYMOUS", "GROUP", "INVITE", "ORGANIZATION", "USER"
+        ]
     }
 }
 impl AsRef<str> for PrincipalType {
@@ -1340,29 +1256,25 @@ impl AsRef<str> for PrincipalType {
 /// <p>Describes the upload.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UploadMetadata {
+pub struct UploadMetadata  {
     /// <p>The URL of the upload.</p>
     #[doc(hidden)]
     pub upload_url: std::option::Option<std::string::String>,
     /// <p>The signed headers.</p>
     #[doc(hidden)]
-    pub signed_headers:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub signed_headers: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UploadMetadata {
     /// <p>The URL of the upload.</p>
-    pub fn upload_url(&self) -> std::option::Option<&str> {
+    pub fn upload_url(&self) -> std::option::Option<& str> {
         self.upload_url.as_deref()
     }
     /// <p>The signed headers.</p>
-    pub fn signed_headers(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn signed_headers(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.signed_headers.as_ref()
     }
 }
-impl std::fmt::Debug for UploadMetadata {
+impl  std::fmt::Debug for UploadMetadata  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadMetadata");
         formatter.field("upload_url", &"*** Sensitive Data Redacted ***");
@@ -1372,14 +1284,12 @@ impl std::fmt::Debug for UploadMetadata {
 }
 /// See [`UploadMetadata`](crate::model::UploadMetadata).
 pub mod upload_metadata {
-
+    
     /// A builder for [`UploadMetadata`](crate::model::UploadMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) upload_url: std::option::Option<std::string::String>,
-        pub(crate) signed_headers: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) signed_headers: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The URL of the upload.</p>
@@ -1389,39 +1299,30 @@ pub mod upload_metadata {
         }
         /// <p>The URL of the upload.</p>
         pub fn set_upload_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.upload_url = input;
-            self
+            self.upload_url = input; self
         }
         /// Adds a key-value pair to `signed_headers`.
         ///
         /// To override the contents of this collection use [`set_signed_headers`](Self::set_signed_headers).
         ///
         /// <p>The signed headers.</p>
-        pub fn signed_headers(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn signed_headers(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.signed_headers.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.signed_headers = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.signed_headers = Some(hash_map);
+                            self
         }
         /// <p>The signed headers.</p>
-        pub fn set_signed_headers(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.signed_headers = input;
-            self
+        pub fn set_signed_headers(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.signed_headers = input; self
         }
         /// Consumes the builder and constructs a [`UploadMetadata`](crate::model::UploadMetadata).
         pub fn build(self) -> crate::model::UploadMetadata {
             crate::model::UploadMetadata {
-                upload_url: self.upload_url,
-                signed_headers: self.signed_headers,
+                upload_url: self.upload_url
+                ,
+                signed_headers: self.signed_headers
+                ,
             }
         }
     }
@@ -1433,6 +1334,8 @@ pub mod upload_metadata {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UploadMetadata {
     /// Creates a new builder-style object to manufacture [`UploadMetadata`](crate::model::UploadMetadata).
@@ -1444,7 +1347,7 @@ impl UploadMetadata {
 /// <p>Describes the document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentMetadata {
+pub struct DocumentMetadata  {
     /// <p>The ID of the document.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1472,43 +1375,41 @@ pub struct DocumentMetadata {
 }
 impl DocumentMetadata {
     /// <p>The ID of the document.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the creator.</p>
-    pub fn creator_id(&self) -> std::option::Option<&str> {
+    pub fn creator_id(&self) -> std::option::Option<& str> {
         self.creator_id.as_deref()
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn parent_folder_id(&self) -> std::option::Option<&str> {
+    pub fn parent_folder_id(&self) -> std::option::Option<& str> {
         self.parent_folder_id.as_deref()
     }
     /// <p>The time when the document was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time when the document was updated.</p>
-    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_timestamp.as_ref()
     }
     /// <p>The latest version of the document.</p>
-    pub fn latest_version_metadata(
-        &self,
-    ) -> std::option::Option<&crate::model::DocumentVersionMetadata> {
+    pub fn latest_version_metadata(&self) -> std::option::Option<& crate::model::DocumentVersionMetadata> {
         self.latest_version_metadata.as_ref()
     }
     /// <p>The resource state.</p>
-    pub fn resource_state(&self) -> std::option::Option<&crate::model::ResourceStateType> {
+    pub fn resource_state(&self) -> std::option::Option<& crate::model::ResourceStateType> {
         self.resource_state.as_ref()
     }
     /// <p>List of labels on the document.</p>
-    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn labels(&self) -> std::option::Option<& [std::string::String]> {
         self.labels.as_deref()
     }
 }
 /// See [`DocumentMetadata`](crate::model::DocumentMetadata).
 pub mod document_metadata {
-
+    
     /// A builder for [`DocumentMetadata`](crate::model::DocumentMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1517,8 +1418,7 @@ pub mod document_metadata {
         pub(crate) parent_folder_id: std::option::Option<std::string::String>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) latest_version_metadata:
-            std::option::Option<crate::model::DocumentVersionMetadata>,
+        pub(crate) latest_version_metadata: std::option::Option<crate::model::DocumentVersionMetadata>,
         pub(crate) resource_state: std::option::Option<crate::model::ResourceStateType>,
         pub(crate) labels: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1530,8 +1430,7 @@ pub mod document_metadata {
         }
         /// <p>The ID of the document.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ID of the creator.</p>
         pub fn creator_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1540,8 +1439,7 @@ pub mod document_metadata {
         }
         /// <p>The ID of the creator.</p>
         pub fn set_creator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.creator_id = input;
-            self
+            self.creator_id = input; self
         }
         /// <p>The ID of the parent folder.</p>
         pub fn parent_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1549,12 +1447,8 @@ pub mod document_metadata {
             self
         }
         /// <p>The ID of the parent folder.</p>
-        pub fn set_parent_folder_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_folder_id = input;
-            self
+        pub fn set_parent_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_folder_id = input; self
         }
         /// <p>The time when the document was created.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1562,12 +1456,8 @@ pub mod document_metadata {
             self
         }
         /// <p>The time when the document was created.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// <p>The time when the document was updated.</p>
         pub fn modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1575,28 +1465,17 @@ pub mod document_metadata {
             self
         }
         /// <p>The time when the document was updated.</p>
-        pub fn set_modified_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified_timestamp = input;
-            self
+        pub fn set_modified_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified_timestamp = input; self
         }
         /// <p>The latest version of the document.</p>
-        pub fn latest_version_metadata(
-            mut self,
-            input: crate::model::DocumentVersionMetadata,
-        ) -> Self {
+        pub fn latest_version_metadata(mut self, input: crate::model::DocumentVersionMetadata) -> Self {
             self.latest_version_metadata = Some(input);
             self
         }
         /// <p>The latest version of the document.</p>
-        pub fn set_latest_version_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DocumentVersionMetadata>,
-        ) -> Self {
-            self.latest_version_metadata = input;
-            self
+        pub fn set_latest_version_metadata(mut self, input: std::option::Option<crate::model::DocumentVersionMetadata>) -> Self {
+            self.latest_version_metadata = input; self
         }
         /// <p>The resource state.</p>
         pub fn resource_state(mut self, input: crate::model::ResourceStateType) -> Self {
@@ -1604,12 +1483,8 @@ pub mod document_metadata {
             self
         }
         /// <p>The resource state.</p>
-        pub fn set_resource_state(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStateType>,
-        ) -> Self {
-            self.resource_state = input;
-            self
+        pub fn set_resource_state(mut self, input: std::option::Option<crate::model::ResourceStateType>) -> Self {
+            self.resource_state = input; self
         }
         /// Appends an item to `labels`.
         ///
@@ -1618,32 +1493,38 @@ pub mod document_metadata {
         /// <p>List of labels on the document.</p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
-            self.labels = Some(v);
-            self
+                            v.push(input.into());
+                            self.labels = Some(v);
+                            self
         }
         /// <p>List of labels on the document.</p>
-        pub fn set_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.labels = input;
-            self
+        pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.labels = input; self
         }
         /// Consumes the builder and constructs a [`DocumentMetadata`](crate::model::DocumentMetadata).
         pub fn build(self) -> crate::model::DocumentMetadata {
             crate::model::DocumentMetadata {
-                id: self.id,
-                creator_id: self.creator_id,
-                parent_folder_id: self.parent_folder_id,
-                created_timestamp: self.created_timestamp,
-                modified_timestamp: self.modified_timestamp,
-                latest_version_metadata: self.latest_version_metadata,
-                resource_state: self.resource_state,
-                labels: self.labels,
+                id: self.id
+                ,
+                creator_id: self.creator_id
+                ,
+                parent_folder_id: self.parent_folder_id
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                modified_timestamp: self.modified_timestamp
+                ,
+                latest_version_metadata: self.latest_version_metadata
+                ,
+                resource_state: self.resource_state
+                ,
+                labels: self.labels
+                ,
             }
         }
     }
+    
+    
 }
 impl DocumentMetadata {
     /// Creates a new builder-style object to manufacture [`DocumentMetadata`](crate::model::DocumentMetadata).
@@ -1655,7 +1536,7 @@ impl DocumentMetadata {
 /// <p>Describes a version of a document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentVersionMetadata {
+pub struct DocumentVersionMetadata  {
     /// <p>The ID of the version.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1691,26 +1572,22 @@ pub struct DocumentVersionMetadata {
     pub creator_id: std::option::Option<std::string::String>,
     /// <p>The thumbnail of the document.</p>
     #[doc(hidden)]
-    pub thumbnail: std::option::Option<
-        std::collections::HashMap<crate::model::DocumentThumbnailType, std::string::String>,
-    >,
+    pub thumbnail: std::option::Option<std::collections::HashMap<crate::model::DocumentThumbnailType, std::string::String>>,
     /// <p>The source of the document.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<
-        std::collections::HashMap<crate::model::DocumentSourceType, std::string::String>,
-    >,
+    pub source: std::option::Option<std::collections::HashMap<crate::model::DocumentSourceType, std::string::String>>,
 }
 impl DocumentVersionMetadata {
     /// <p>The ID of the version.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the version.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The content type of the document.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The size of the document, in bytes.</p>
@@ -1718,53 +1595,45 @@ impl DocumentVersionMetadata {
         self.size
     }
     /// <p>The signature of the document.</p>
-    pub fn signature(&self) -> std::option::Option<&str> {
+    pub fn signature(&self) -> std::option::Option<& str> {
         self.signature.as_deref()
     }
     /// <p>The status of the document.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DocumentStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DocumentStatusType> {
         self.status.as_ref()
     }
     /// <p>The timestamp when the document was first uploaded.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The timestamp when the document was last uploaded.</p>
-    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_timestamp.as_ref()
     }
     /// <p>The timestamp when the content of the document was originally created.</p>
-    pub fn content_created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn content_created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.content_created_timestamp.as_ref()
     }
     /// <p>The timestamp when the content of the document was modified.</p>
-    pub fn content_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn content_modified_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.content_modified_timestamp.as_ref()
     }
     /// <p>The ID of the creator.</p>
-    pub fn creator_id(&self) -> std::option::Option<&str> {
+    pub fn creator_id(&self) -> std::option::Option<& str> {
         self.creator_id.as_deref()
     }
     /// <p>The thumbnail of the document.</p>
-    pub fn thumbnail(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::DocumentThumbnailType, std::string::String>,
-    > {
+    pub fn thumbnail(&self) -> std::option::Option<& std::collections::HashMap<crate::model::DocumentThumbnailType, std::string::String>> {
         self.thumbnail.as_ref()
     }
     /// <p>The source of the document.</p>
-    pub fn source(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::DocumentSourceType, std::string::String>,
-    > {
+    pub fn source(&self) -> std::option::Option<& std::collections::HashMap<crate::model::DocumentSourceType, std::string::String>> {
         self.source.as_ref()
     }
 }
 /// See [`DocumentVersionMetadata`](crate::model::DocumentVersionMetadata).
 pub mod document_version_metadata {
-
+    
     /// A builder for [`DocumentVersionMetadata`](crate::model::DocumentVersionMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1779,12 +1648,8 @@ pub mod document_version_metadata {
         pub(crate) content_created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) content_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) creator_id: std::option::Option<std::string::String>,
-        pub(crate) thumbnail: std::option::Option<
-            std::collections::HashMap<crate::model::DocumentThumbnailType, std::string::String>,
-        >,
-        pub(crate) source: std::option::Option<
-            std::collections::HashMap<crate::model::DocumentSourceType, std::string::String>,
-        >,
+        pub(crate) thumbnail: std::option::Option<std::collections::HashMap<crate::model::DocumentThumbnailType, std::string::String>>,
+        pub(crate) source: std::option::Option<std::collections::HashMap<crate::model::DocumentSourceType, std::string::String>>,
     }
     impl Builder {
         /// <p>The ID of the version.</p>
@@ -1794,8 +1659,7 @@ pub mod document_version_metadata {
         }
         /// <p>The ID of the version.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the version.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1804,8 +1668,7 @@ pub mod document_version_metadata {
         }
         /// <p>The name of the version.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The content type of the document.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1814,8 +1677,7 @@ pub mod document_version_metadata {
         }
         /// <p>The content type of the document.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// <p>The size of the document, in bytes.</p>
         pub fn size(mut self, input: i64) -> Self {
@@ -1824,8 +1686,7 @@ pub mod document_version_metadata {
         }
         /// <p>The size of the document, in bytes.</p>
         pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// <p>The signature of the document.</p>
         pub fn signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1834,8 +1695,7 @@ pub mod document_version_metadata {
         }
         /// <p>The signature of the document.</p>
         pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.signature = input;
-            self
+            self.signature = input; self
         }
         /// <p>The status of the document.</p>
         pub fn status(mut self, input: crate::model::DocumentStatusType) -> Self {
@@ -1843,12 +1703,8 @@ pub mod document_version_metadata {
             self
         }
         /// <p>The status of the document.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DocumentStatusType>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DocumentStatusType>) -> Self {
+            self.status = input; self
         }
         /// <p>The timestamp when the document was first uploaded.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1856,12 +1712,8 @@ pub mod document_version_metadata {
             self
         }
         /// <p>The timestamp when the document was first uploaded.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// <p>The timestamp when the document was last uploaded.</p>
         pub fn modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1869,12 +1721,8 @@ pub mod document_version_metadata {
             self
         }
         /// <p>The timestamp when the document was last uploaded.</p>
-        pub fn set_modified_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified_timestamp = input;
-            self
+        pub fn set_modified_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified_timestamp = input; self
         }
         /// <p>The timestamp when the content of the document was originally created.</p>
         pub fn content_created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1882,12 +1730,8 @@ pub mod document_version_metadata {
             self
         }
         /// <p>The timestamp when the content of the document was originally created.</p>
-        pub fn set_content_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.content_created_timestamp = input;
-            self
+        pub fn set_content_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.content_created_timestamp = input; self
         }
         /// <p>The timestamp when the content of the document was modified.</p>
         pub fn content_modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1895,12 +1739,8 @@ pub mod document_version_metadata {
             self
         }
         /// <p>The timestamp when the content of the document was modified.</p>
-        pub fn set_content_modified_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.content_modified_timestamp = input;
-            self
+        pub fn set_content_modified_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.content_modified_timestamp = input; self
         }
         /// <p>The ID of the creator.</p>
         pub fn creator_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1909,78 +1749,72 @@ pub mod document_version_metadata {
         }
         /// <p>The ID of the creator.</p>
         pub fn set_creator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.creator_id = input;
-            self
+            self.creator_id = input; self
         }
         /// Adds a key-value pair to `thumbnail`.
         ///
         /// To override the contents of this collection use [`set_thumbnail`](Self::set_thumbnail).
         ///
         /// <p>The thumbnail of the document.</p>
-        pub fn thumbnail(
-            mut self,
-            k: crate::model::DocumentThumbnailType,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn thumbnail(mut self, k: crate::model::DocumentThumbnailType, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.thumbnail.unwrap_or_default();
-            hash_map.insert(k, v.into());
-            self.thumbnail = Some(hash_map);
-            self
+                            hash_map.insert(k, v.into());
+                            self.thumbnail = Some(hash_map);
+                            self
         }
         /// <p>The thumbnail of the document.</p>
-        pub fn set_thumbnail(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<crate::model::DocumentThumbnailType, std::string::String>,
-            >,
-        ) -> Self {
-            self.thumbnail = input;
-            self
+        pub fn set_thumbnail(mut self, input: std::option::Option<std::collections::HashMap<crate::model::DocumentThumbnailType, std::string::String>>) -> Self {
+            self.thumbnail = input; self
         }
         /// Adds a key-value pair to `source`.
         ///
         /// To override the contents of this collection use [`set_source`](Self::set_source).
         ///
         /// <p>The source of the document.</p>
-        pub fn source(
-            mut self,
-            k: crate::model::DocumentSourceType,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn source(mut self, k: crate::model::DocumentSourceType, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.source.unwrap_or_default();
-            hash_map.insert(k, v.into());
-            self.source = Some(hash_map);
-            self
+                            hash_map.insert(k, v.into());
+                            self.source = Some(hash_map);
+                            self
         }
         /// <p>The source of the document.</p>
-        pub fn set_source(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<crate::model::DocumentSourceType, std::string::String>,
-            >,
-        ) -> Self {
-            self.source = input;
-            self
+        pub fn set_source(mut self, input: std::option::Option<std::collections::HashMap<crate::model::DocumentSourceType, std::string::String>>) -> Self {
+            self.source = input; self
         }
         /// Consumes the builder and constructs a [`DocumentVersionMetadata`](crate::model::DocumentVersionMetadata).
         pub fn build(self) -> crate::model::DocumentVersionMetadata {
             crate::model::DocumentVersionMetadata {
-                id: self.id,
-                name: self.name,
-                content_type: self.content_type,
-                size: self.size,
-                signature: self.signature,
-                status: self.status,
-                created_timestamp: self.created_timestamp,
-                modified_timestamp: self.modified_timestamp,
-                content_created_timestamp: self.content_created_timestamp,
-                content_modified_timestamp: self.content_modified_timestamp,
-                creator_id: self.creator_id,
-                thumbnail: self.thumbnail,
-                source: self.source,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                content_type: self.content_type
+                ,
+                size: self.size
+                ,
+                signature: self.signature
+                ,
+                status: self.status
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                modified_timestamp: self.modified_timestamp
+                ,
+                content_created_timestamp: self.content_created_timestamp
+                ,
+                content_modified_timestamp: self.content_modified_timestamp
+                ,
+                creator_id: self.creator_id
+                ,
+                thumbnail: self.thumbnail
+                ,
+                source: self.source
+                ,
             }
         }
     }
+    
+    
 }
 impl DocumentVersionMetadata {
     /// Creates a new builder-style object to manufacture [`DocumentVersionMetadata`](crate::model::DocumentVersionMetadata).
@@ -1995,9 +1829,9 @@ impl DocumentVersionMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let documentsourcetype = unimplemented!();
 /// match documentsourcetype {
@@ -2019,60 +1853,52 @@ impl DocumentVersionMetadata {
 /// Specifically, when `documentsourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DocumentSourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DocumentSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Original,
     #[allow(missing_docs)] // documentation missing in model
     WithComments,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DocumentSourceType {
     fn from(s: &str) -> Self {
         match s {
             "ORIGINAL" => DocumentSourceType::Original,
             "WITH_COMMENTS" => DocumentSourceType::WithComments,
-            other => {
-                DocumentSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DocumentSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DocumentSourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DocumentSourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DocumentSourceType::from(s))
+                }
+            }
 impl DocumentSourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DocumentSourceType::Original => "ORIGINAL",
             DocumentSourceType::WithComments => "WITH_COMMENTS",
-            DocumentSourceType::Unknown(value) => value.as_str(),
+            DocumentSourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ORIGINAL", "WITH_COMMENTS"]
+        &[
+            "ORIGINAL", "WITH_COMMENTS"
+        ]
     }
 }
 impl AsRef<str> for DocumentSourceType {
@@ -2087,9 +1913,9 @@ impl AsRef<str> for DocumentSourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let documentthumbnailtype = unimplemented!();
 /// match documentthumbnailtype {
@@ -2112,22 +1938,14 @@ impl AsRef<str> for DocumentSourceType {
 /// Specifically, when `documentthumbnailtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DocumentThumbnailType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DocumentThumbnailType {
     #[allow(missing_docs)] // documentation missing in model
     Large,
@@ -2136,7 +1954,7 @@ pub enum DocumentThumbnailType {
     #[allow(missing_docs)] // documentation missing in model
     SmallHq,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DocumentThumbnailType {
     fn from(s: &str) -> Self {
@@ -2144,19 +1962,17 @@ impl std::convert::From<&str> for DocumentThumbnailType {
             "LARGE" => DocumentThumbnailType::Large,
             "SMALL" => DocumentThumbnailType::Small,
             "SMALL_HQ" => DocumentThumbnailType::SmallHq,
-            other => {
-                DocumentThumbnailType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DocumentThumbnailType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DocumentThumbnailType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DocumentThumbnailType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DocumentThumbnailType::from(s))
+                }
+            }
 impl DocumentThumbnailType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2164,12 +1980,14 @@ impl DocumentThumbnailType {
             DocumentThumbnailType::Large => "LARGE",
             DocumentThumbnailType::Small => "SMALL",
             DocumentThumbnailType::SmallHq => "SMALL_HQ",
-            DocumentThumbnailType::Unknown(value) => value.as_str(),
+            DocumentThumbnailType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LARGE", "SMALL", "SMALL_HQ"]
+        &[
+            "LARGE", "SMALL", "SMALL_HQ"
+        ]
     }
 }
 impl AsRef<str> for DocumentThumbnailType {
@@ -2184,9 +2002,9 @@ impl AsRef<str> for DocumentThumbnailType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let documentstatustype = unimplemented!();
 /// match documentstatustype {
@@ -2208,60 +2026,52 @@ impl AsRef<str> for DocumentThumbnailType {
 /// Specifically, when `documentstatustype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DocumentStatusType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DocumentStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Initialized,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DocumentStatusType {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => DocumentStatusType::Active,
             "INITIALIZED" => DocumentStatusType::Initialized,
-            other => {
-                DocumentStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DocumentStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DocumentStatusType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DocumentStatusType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DocumentStatusType::from(s))
+                }
+            }
 impl DocumentStatusType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DocumentStatusType::Active => "ACTIVE",
             DocumentStatusType::Initialized => "INITIALIZED",
-            DocumentStatusType::Unknown(value) => value.as_str(),
+            DocumentStatusType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "INITIALIZED"]
+        &[
+            "ACTIVE", "INITIALIZED"
+        ]
     }
 }
 impl AsRef<str> for DocumentStatusType {
@@ -2273,7 +2083,7 @@ impl AsRef<str> for DocumentStatusType {
 /// <p>Describes a folder.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FolderMetadata {
+pub struct FolderMetadata  {
     /// <p>The ID of the folder.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2310,39 +2120,39 @@ pub struct FolderMetadata {
 }
 impl FolderMetadata {
     /// <p>The ID of the folder.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the folder.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the creator.</p>
-    pub fn creator_id(&self) -> std::option::Option<&str> {
+    pub fn creator_id(&self) -> std::option::Option<& str> {
         self.creator_id.as_deref()
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn parent_folder_id(&self) -> std::option::Option<&str> {
+    pub fn parent_folder_id(&self) -> std::option::Option<& str> {
         self.parent_folder_id.as_deref()
     }
     /// <p>The time when the folder was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time when the folder was updated.</p>
-    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_timestamp.as_ref()
     }
     /// <p>The resource state of the folder.</p>
-    pub fn resource_state(&self) -> std::option::Option<&crate::model::ResourceStateType> {
+    pub fn resource_state(&self) -> std::option::Option<& crate::model::ResourceStateType> {
         self.resource_state.as_ref()
     }
     /// <p>The unique identifier created from the subfolders and documents of the folder.</p>
-    pub fn signature(&self) -> std::option::Option<&str> {
+    pub fn signature(&self) -> std::option::Option<& str> {
         self.signature.as_deref()
     }
     /// <p>List of labels on the folder.</p>
-    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn labels(&self) -> std::option::Option<& [std::string::String]> {
         self.labels.as_deref()
     }
     /// <p>The size of the folder metadata.</p>
@@ -2356,7 +2166,7 @@ impl FolderMetadata {
 }
 /// See [`FolderMetadata`](crate::model::FolderMetadata).
 pub mod folder_metadata {
-
+    
     /// A builder for [`FolderMetadata`](crate::model::FolderMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2380,8 +2190,7 @@ pub mod folder_metadata {
         }
         /// <p>The ID of the folder.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the folder.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2390,8 +2199,7 @@ pub mod folder_metadata {
         }
         /// <p>The name of the folder.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the creator.</p>
         pub fn creator_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2400,8 +2208,7 @@ pub mod folder_metadata {
         }
         /// <p>The ID of the creator.</p>
         pub fn set_creator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.creator_id = input;
-            self
+            self.creator_id = input; self
         }
         /// <p>The ID of the parent folder.</p>
         pub fn parent_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2409,12 +2216,8 @@ pub mod folder_metadata {
             self
         }
         /// <p>The ID of the parent folder.</p>
-        pub fn set_parent_folder_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_folder_id = input;
-            self
+        pub fn set_parent_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_folder_id = input; self
         }
         /// <p>The time when the folder was created.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2422,12 +2225,8 @@ pub mod folder_metadata {
             self
         }
         /// <p>The time when the folder was created.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// <p>The time when the folder was updated.</p>
         pub fn modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2435,12 +2234,8 @@ pub mod folder_metadata {
             self
         }
         /// <p>The time when the folder was updated.</p>
-        pub fn set_modified_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified_timestamp = input;
-            self
+        pub fn set_modified_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified_timestamp = input; self
         }
         /// <p>The resource state of the folder.</p>
         pub fn resource_state(mut self, input: crate::model::ResourceStateType) -> Self {
@@ -2448,12 +2243,8 @@ pub mod folder_metadata {
             self
         }
         /// <p>The resource state of the folder.</p>
-        pub fn set_resource_state(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStateType>,
-        ) -> Self {
-            self.resource_state = input;
-            self
+        pub fn set_resource_state(mut self, input: std::option::Option<crate::model::ResourceStateType>) -> Self {
+            self.resource_state = input; self
         }
         /// <p>The unique identifier created from the subfolders and documents of the folder.</p>
         pub fn signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2462,8 +2253,7 @@ pub mod folder_metadata {
         }
         /// <p>The unique identifier created from the subfolders and documents of the folder.</p>
         pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.signature = input;
-            self
+            self.signature = input; self
         }
         /// Appends an item to `labels`.
         ///
@@ -2472,17 +2262,13 @@ pub mod folder_metadata {
         /// <p>List of labels on the folder.</p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
-            self.labels = Some(v);
-            self
+                            v.push(input.into());
+                            self.labels = Some(v);
+                            self
         }
         /// <p>List of labels on the folder.</p>
-        pub fn set_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.labels = input;
-            self
+        pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.labels = input; self
         }
         /// <p>The size of the folder metadata.</p>
         pub fn size(mut self, input: i64) -> Self {
@@ -2491,8 +2277,7 @@ pub mod folder_metadata {
         }
         /// <p>The size of the folder metadata.</p>
         pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// <p>The size of the latest version of the folder metadata.</p>
         pub fn latest_version_size(mut self, input: i64) -> Self {
@@ -2501,26 +2286,38 @@ pub mod folder_metadata {
         }
         /// <p>The size of the latest version of the folder metadata.</p>
         pub fn set_latest_version_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.latest_version_size = input;
-            self
+            self.latest_version_size = input; self
         }
         /// Consumes the builder and constructs a [`FolderMetadata`](crate::model::FolderMetadata).
         pub fn build(self) -> crate::model::FolderMetadata {
             crate::model::FolderMetadata {
-                id: self.id,
-                name: self.name,
-                creator_id: self.creator_id,
-                parent_folder_id: self.parent_folder_id,
-                created_timestamp: self.created_timestamp,
-                modified_timestamp: self.modified_timestamp,
-                resource_state: self.resource_state,
-                signature: self.signature,
-                labels: self.labels,
-                size: self.size,
-                latest_version_size: self.latest_version_size,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                creator_id: self.creator_id
+                ,
+                parent_folder_id: self.parent_folder_id
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                modified_timestamp: self.modified_timestamp
+                ,
+                resource_state: self.resource_state
+                ,
+                signature: self.signature
+                ,
+                labels: self.labels
+                ,
+                size: self.size
+                ,
+                latest_version_size: self.latest_version_size
+                ,
             }
         }
     }
+    
+    
 }
 impl FolderMetadata {
     /// Creates a new builder-style object to manufacture [`FolderMetadata`](crate::model::FolderMetadata).
@@ -2535,9 +2332,9 @@ impl FolderMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcecollectiontype = unimplemented!();
 /// match resourcecollectiontype {
@@ -2558,56 +2355,48 @@ impl FolderMetadata {
 /// Specifically, when `resourcecollectiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceCollectionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceCollectionType {
     #[allow(missing_docs)] // documentation missing in model
     SharedWithMe,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceCollectionType {
     fn from(s: &str) -> Self {
         match s {
             "SHARED_WITH_ME" => ResourceCollectionType::SharedWithMe,
-            other => {
-                ResourceCollectionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceCollectionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceCollectionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceCollectionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceCollectionType::from(s))
+                }
+            }
 impl ResourceCollectionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceCollectionType::SharedWithMe => "SHARED_WITH_ME",
-            ResourceCollectionType::Unknown(value) => value.as_str(),
+            ResourceCollectionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SHARED_WITH_ME"]
+        &[
+            "SHARED_WITH_ME"
+        ]
     }
 }
 impl AsRef<str> for ResourceCollectionType {
@@ -2619,25 +2408,24 @@ impl AsRef<str> for ResourceCollectionType {
 /// <p>Describes the path information of a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourcePath {
+pub struct ResourcePath  {
     /// <p>The components of the resource path.</p>
     #[doc(hidden)]
     pub components: std::option::Option<std::vec::Vec<crate::model::ResourcePathComponent>>,
 }
 impl ResourcePath {
     /// <p>The components of the resource path.</p>
-    pub fn components(&self) -> std::option::Option<&[crate::model::ResourcePathComponent]> {
+    pub fn components(&self) -> std::option::Option<& [crate::model::ResourcePathComponent]> {
         self.components.as_deref()
     }
 }
 /// See [`ResourcePath`](crate::model::ResourcePath).
 pub mod resource_path {
-
+    
     /// A builder for [`ResourcePath`](crate::model::ResourcePath).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) components:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePathComponent>>,
+        pub(crate) components: std::option::Option<std::vec::Vec<crate::model::ResourcePathComponent>>,
     }
     impl Builder {
         /// Appends an item to `components`.
@@ -2647,25 +2435,24 @@ pub mod resource_path {
         /// <p>The components of the resource path.</p>
         pub fn components(mut self, input: crate::model::ResourcePathComponent) -> Self {
             let mut v = self.components.unwrap_or_default();
-            v.push(input);
-            self.components = Some(v);
-            self
+                            v.push(input);
+                            self.components = Some(v);
+                            self
         }
         /// <p>The components of the resource path.</p>
-        pub fn set_components(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourcePathComponent>>,
-        ) -> Self {
-            self.components = input;
-            self
+        pub fn set_components(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePathComponent>>) -> Self {
+            self.components = input; self
         }
         /// Consumes the builder and constructs a [`ResourcePath`](crate::model::ResourcePath).
         pub fn build(self) -> crate::model::ResourcePath {
             crate::model::ResourcePath {
-                components: self.components,
+                components: self.components
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourcePath {
     /// Creates a new builder-style object to manufacture [`ResourcePath`](crate::model::ResourcePath).
@@ -2677,7 +2464,7 @@ impl ResourcePath {
 /// <p>Describes the resource path.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourcePathComponent {
+pub struct ResourcePathComponent  {
     /// <p>The ID of the resource path.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2687,17 +2474,17 @@ pub struct ResourcePathComponent {
 }
 impl ResourcePathComponent {
     /// <p>The ID of the resource path.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the resource path.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`ResourcePathComponent`](crate::model::ResourcePathComponent).
 pub mod resource_path_component {
-
+    
     /// A builder for [`ResourcePathComponent`](crate::model::ResourcePathComponent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2712,8 +2499,7 @@ pub mod resource_path_component {
         }
         /// <p>The ID of the resource path.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the resource path.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2722,17 +2508,20 @@ pub mod resource_path_component {
         }
         /// <p>The name of the resource path.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`ResourcePathComponent`](crate::model::ResourcePathComponent).
         pub fn build(self) -> crate::model::ResourcePathComponent {
             crate::model::ResourcePathComponent {
-                id: self.id,
-                name: self.name,
+                id: self.id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourcePathComponent {
     /// Creates a new builder-style object to manufacture [`ResourcePathComponent`](crate::model::ResourcePathComponent).
@@ -2747,9 +2536,9 @@ impl ResourcePathComponent {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let usersorttype = unimplemented!();
 /// match usersorttype {
@@ -2774,22 +2563,14 @@ impl ResourcePathComponent {
 /// Specifically, when `usersorttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UserSortType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UserSortType {
     #[allow(missing_docs)] // documentation missing in model
     FullName,
@@ -2802,7 +2583,7 @@ pub enum UserSortType {
     #[allow(missing_docs)] // documentation missing in model
     UserStatus,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UserSortType {
     fn from(s: &str) -> Self {
@@ -2812,17 +2593,17 @@ impl std::convert::From<&str> for UserSortType {
             "STORAGE_USED" => UserSortType::StorageUsed,
             "USER_NAME" => UserSortType::UserName,
             "USER_STATUS" => UserSortType::UserStatus,
-            other => UserSortType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UserSortType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UserSortType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UserSortType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UserSortType::from(s))
+                }
+            }
 impl UserSortType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2832,17 +2613,13 @@ impl UserSortType {
             UserSortType::StorageUsed => "STORAGE_USED",
             UserSortType::UserName => "USER_NAME",
             UserSortType::UserStatus => "USER_STATUS",
-            UserSortType::Unknown(value) => value.as_str(),
+            UserSortType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "FULL_NAME",
-            "STORAGE_LIMIT",
-            "STORAGE_USED",
-            "USER_NAME",
-            "USER_STATUS",
+            "FULL_NAME", "STORAGE_LIMIT", "STORAGE_USED", "USER_NAME", "USER_STATUS"
         ]
     }
 }
@@ -2858,9 +2635,9 @@ impl AsRef<str> for UserSortType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ordertype = unimplemented!();
 /// match ordertype {
@@ -2882,58 +2659,52 @@ impl AsRef<str> for UserSortType {
 /// Specifically, when `ordertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OrderType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OrderType {
     #[allow(missing_docs)] // documentation missing in model
     Ascending,
     #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrderType {
     fn from(s: &str) -> Self {
         match s {
             "ASCENDING" => OrderType::Ascending,
             "DESCENDING" => OrderType::Descending,
-            other => OrderType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OrderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OrderType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OrderType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OrderType::from(s))
+                }
+            }
 impl OrderType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrderType::Ascending => "ASCENDING",
             OrderType::Descending => "DESCENDING",
-            OrderType::Unknown(value) => value.as_str(),
+            OrderType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASCENDING", "DESCENDING"]
+        &[
+            "ASCENDING", "DESCENDING"
+        ]
     }
 }
 impl AsRef<str> for OrderType {
@@ -2948,9 +2719,9 @@ impl AsRef<str> for OrderType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let userfiltertype = unimplemented!();
 /// match userfiltertype {
@@ -2972,58 +2743,52 @@ impl AsRef<str> for OrderType {
 /// Specifically, when `userfiltertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UserFilterType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UserFilterType {
     #[allow(missing_docs)] // documentation missing in model
     ActivePending,
     #[allow(missing_docs)] // documentation missing in model
     All,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UserFilterType {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE_PENDING" => UserFilterType::ActivePending,
             "ALL" => UserFilterType::All,
-            other => UserFilterType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UserFilterType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UserFilterType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UserFilterType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UserFilterType::from(s))
+                }
+            }
 impl UserFilterType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UserFilterType::ActivePending => "ACTIVE_PENDING",
             UserFilterType::All => "ALL",
-            UserFilterType::Unknown(value) => value.as_str(),
+            UserFilterType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE_PENDING", "ALL"]
+        &[
+            "ACTIVE_PENDING", "ALL"
+        ]
     }
 }
 impl AsRef<str> for UserFilterType {
@@ -3035,7 +2800,7 @@ impl AsRef<str> for UserFilterType {
 /// <p>Describes a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Principal {
+pub struct Principal  {
     /// <p>The ID of the resource.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3048,21 +2813,21 @@ pub struct Principal {
 }
 impl Principal {
     /// <p>The ID of the resource.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of resource.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PrincipalType> {
         self.r#type.as_ref()
     }
     /// <p>The permission information for the resource.</p>
-    pub fn roles(&self) -> std::option::Option<&[crate::model::PermissionInfo]> {
+    pub fn roles(&self) -> std::option::Option<& [crate::model::PermissionInfo]> {
         self.roles.as_deref()
     }
 }
 /// See [`Principal`](crate::model::Principal).
 pub mod principal {
-
+    
     /// A builder for [`Principal`](crate::model::Principal).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3078,8 +2843,7 @@ pub mod principal {
         }
         /// <p>The ID of the resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The type of resource.</p>
         pub fn r#type(mut self, input: crate::model::PrincipalType) -> Self {
@@ -3088,8 +2852,7 @@ pub mod principal {
         }
         /// <p>The type of resource.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::PrincipalType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Appends an item to `roles`.
         ///
@@ -3098,27 +2861,28 @@ pub mod principal {
         /// <p>The permission information for the resource.</p>
         pub fn roles(mut self, input: crate::model::PermissionInfo) -> Self {
             let mut v = self.roles.unwrap_or_default();
-            v.push(input);
-            self.roles = Some(v);
-            self
+                            v.push(input);
+                            self.roles = Some(v);
+                            self
         }
         /// <p>The permission information for the resource.</p>
-        pub fn set_roles(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PermissionInfo>>,
-        ) -> Self {
-            self.roles = input;
-            self
+        pub fn set_roles(mut self, input: std::option::Option<std::vec::Vec<crate::model::PermissionInfo>>) -> Self {
+            self.roles = input; self
         }
         /// Consumes the builder and constructs a [`Principal`](crate::model::Principal).
         pub fn build(self) -> crate::model::Principal {
             crate::model::Principal {
-                id: self.id,
-                r#type: self.r#type,
-                roles: self.roles,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
+                roles: self.roles
+                ,
             }
         }
     }
+    
+    
 }
 impl Principal {
     /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal).
@@ -3130,7 +2894,7 @@ impl Principal {
 /// <p>Describes the permissions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PermissionInfo {
+pub struct PermissionInfo  {
     /// <p>The role of the user.</p>
     #[doc(hidden)]
     pub role: std::option::Option<crate::model::RoleType>,
@@ -3140,17 +2904,17 @@ pub struct PermissionInfo {
 }
 impl PermissionInfo {
     /// <p>The role of the user.</p>
-    pub fn role(&self) -> std::option::Option<&crate::model::RoleType> {
+    pub fn role(&self) -> std::option::Option<& crate::model::RoleType> {
         self.role.as_ref()
     }
     /// <p>The type of permissions.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::RolePermissionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::RolePermissionType> {
         self.r#type.as_ref()
     }
 }
 /// See [`PermissionInfo`](crate::model::PermissionInfo).
 pub mod permission_info {
-
+    
     /// A builder for [`PermissionInfo`](crate::model::PermissionInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3165,8 +2929,7 @@ pub mod permission_info {
         }
         /// <p>The role of the user.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::RoleType>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// <p>The type of permissions.</p>
         pub fn r#type(mut self, input: crate::model::RolePermissionType) -> Self {
@@ -3174,21 +2937,21 @@ pub mod permission_info {
             self
         }
         /// <p>The type of permissions.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::RolePermissionType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RolePermissionType>) -> Self {
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`PermissionInfo`](crate::model::PermissionInfo).
         pub fn build(self) -> crate::model::PermissionInfo {
             crate::model::PermissionInfo {
-                role: self.role,
-                r#type: self.r#type,
+                role: self.role
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl PermissionInfo {
     /// Creates a new builder-style object to manufacture [`PermissionInfo`](crate::model::PermissionInfo).
@@ -3203,9 +2966,9 @@ impl PermissionInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let rolepermissiontype = unimplemented!();
 /// match rolepermissiontype {
@@ -3227,60 +2990,52 @@ impl PermissionInfo {
 /// Specifically, when `rolepermissiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RolePermissionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RolePermissionType {
     #[allow(missing_docs)] // documentation missing in model
     Direct,
     #[allow(missing_docs)] // documentation missing in model
     Inherited,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RolePermissionType {
     fn from(s: &str) -> Self {
         match s {
             "DIRECT" => RolePermissionType::Direct,
             "INHERITED" => RolePermissionType::Inherited,
-            other => {
-                RolePermissionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RolePermissionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RolePermissionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RolePermissionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RolePermissionType::from(s))
+                }
+            }
 impl RolePermissionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RolePermissionType::Direct => "DIRECT",
             RolePermissionType::Inherited => "INHERITED",
-            RolePermissionType::Unknown(value) => value.as_str(),
+            RolePermissionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DIRECT", "INHERITED"]
+        &[
+            "DIRECT", "INHERITED"
+        ]
     }
 }
 impl AsRef<str> for RolePermissionType {
@@ -3295,9 +3050,9 @@ impl AsRef<str> for RolePermissionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let roletype = unimplemented!();
 /// match roletype {
@@ -3321,22 +3076,14 @@ impl AsRef<str> for RolePermissionType {
 /// Specifically, when `roletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RoleType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RoleType {
     #[allow(missing_docs)] // documentation missing in model
     Contributor,
@@ -3347,7 +3094,7 @@ pub enum RoleType {
     #[allow(missing_docs)] // documentation missing in model
     Viewer,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RoleType {
     fn from(s: &str) -> Self {
@@ -3356,17 +3103,17 @@ impl std::convert::From<&str> for RoleType {
             "COOWNER" => RoleType::Coowner,
             "OWNER" => RoleType::Owner,
             "VIEWER" => RoleType::Viewer,
-            other => RoleType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RoleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RoleType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RoleType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RoleType::from(s))
+                }
+            }
 impl RoleType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3375,12 +3122,14 @@ impl RoleType {
             RoleType::Coowner => "COOWNER",
             RoleType::Owner => "OWNER",
             RoleType::Viewer => "VIEWER",
-            RoleType::Unknown(value) => value.as_str(),
+            RoleType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONTRIBUTOR", "COOWNER", "OWNER", "VIEWER"]
+        &[
+            "CONTRIBUTOR", "COOWNER", "OWNER", "VIEWER"
+        ]
     }
 }
 impl AsRef<str> for RoleType {
@@ -3392,7 +3141,7 @@ impl AsRef<str> for RoleType {
 /// <p>Describes a subscription.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Subscription {
+pub struct Subscription  {
     /// <p>The ID of the subscription.</p>
     #[doc(hidden)]
     pub subscription_id: std::option::Option<std::string::String>,
@@ -3405,21 +3154,21 @@ pub struct Subscription {
 }
 impl Subscription {
     /// <p>The ID of the subscription.</p>
-    pub fn subscription_id(&self) -> std::option::Option<&str> {
+    pub fn subscription_id(&self) -> std::option::Option<& str> {
         self.subscription_id.as_deref()
     }
     /// <p>The endpoint of the subscription.</p>
-    pub fn end_point(&self) -> std::option::Option<&str> {
+    pub fn end_point(&self) -> std::option::Option<& str> {
         self.end_point.as_deref()
     }
     /// <p>The protocol of the subscription.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::model::SubscriptionProtocolType> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::SubscriptionProtocolType> {
         self.protocol.as_ref()
     }
 }
 /// See [`Subscription`](crate::model::Subscription).
 pub mod subscription {
-
+    
     /// A builder for [`Subscription`](crate::model::Subscription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3434,12 +3183,8 @@ pub mod subscription {
             self
         }
         /// <p>The ID of the subscription.</p>
-        pub fn set_subscription_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscription_id = input;
-            self
+        pub fn set_subscription_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscription_id = input; self
         }
         /// <p>The endpoint of the subscription.</p>
         pub fn end_point(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3448,8 +3193,7 @@ pub mod subscription {
         }
         /// <p>The endpoint of the subscription.</p>
         pub fn set_end_point(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end_point = input;
-            self
+            self.end_point = input; self
         }
         /// <p>The protocol of the subscription.</p>
         pub fn protocol(mut self, input: crate::model::SubscriptionProtocolType) -> Self {
@@ -3457,22 +3201,23 @@ pub mod subscription {
             self
         }
         /// <p>The protocol of the subscription.</p>
-        pub fn set_protocol(
-            mut self,
-            input: std::option::Option<crate::model::SubscriptionProtocolType>,
-        ) -> Self {
-            self.protocol = input;
-            self
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::SubscriptionProtocolType>) -> Self {
+            self.protocol = input; self
         }
         /// Consumes the builder and constructs a [`Subscription`](crate::model::Subscription).
         pub fn build(self) -> crate::model::Subscription {
             crate::model::Subscription {
-                subscription_id: self.subscription_id,
-                end_point: self.end_point,
-                protocol: self.protocol,
+                subscription_id: self.subscription_id
+                ,
+                end_point: self.end_point
+                ,
+                protocol: self.protocol
+                ,
             }
         }
     }
+    
+    
 }
 impl Subscription {
     /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
@@ -3487,9 +3232,9 @@ impl Subscription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let subscriptionprotocoltype = unimplemented!();
 /// match subscriptionprotocoltype {
@@ -3511,60 +3256,52 @@ impl Subscription {
 /// Specifically, when `subscriptionprotocoltype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SubscriptionProtocolType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SubscriptionProtocolType {
     #[allow(missing_docs)] // documentation missing in model
     Https,
     #[allow(missing_docs)] // documentation missing in model
     Sqs,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SubscriptionProtocolType {
     fn from(s: &str) -> Self {
         match s {
             "HTTPS" => SubscriptionProtocolType::Https,
             "SQS" => SubscriptionProtocolType::Sqs,
-            other => SubscriptionProtocolType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SubscriptionProtocolType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SubscriptionProtocolType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SubscriptionProtocolType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SubscriptionProtocolType::from(s))
+                }
+            }
 impl SubscriptionProtocolType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SubscriptionProtocolType::Https => "HTTPS",
             SubscriptionProtocolType::Sqs => "SQS",
-            SubscriptionProtocolType::Unknown(value) => value.as_str(),
+            SubscriptionProtocolType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HTTPS", "SQS"]
+        &[
+            "HTTPS", "SQS"
+        ]
     }
 }
 impl AsRef<str> for SubscriptionProtocolType {
@@ -3576,7 +3313,7 @@ impl AsRef<str> for SubscriptionProtocolType {
 /// <p>Describes the metadata of a user group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupMetadata {
+pub struct GroupMetadata  {
     /// <p>The ID of the user group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3586,17 +3323,17 @@ pub struct GroupMetadata {
 }
 impl GroupMetadata {
     /// <p>The ID of the user group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`GroupMetadata`](crate::model::GroupMetadata).
 pub mod group_metadata {
-
+    
     /// A builder for [`GroupMetadata`](crate::model::GroupMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3611,8 +3348,7 @@ pub mod group_metadata {
         }
         /// <p>The ID of the user group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3621,17 +3357,20 @@ pub mod group_metadata {
         }
         /// <p>The name of the group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`GroupMetadata`](crate::model::GroupMetadata).
         pub fn build(self) -> crate::model::GroupMetadata {
             crate::model::GroupMetadata {
-                id: self.id,
-                name: self.name,
+                id: self.id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl GroupMetadata {
     /// Creates a new builder-style object to manufacture [`GroupMetadata`](crate::model::GroupMetadata).
@@ -3646,9 +3385,9 @@ impl GroupMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let foldercontenttype = unimplemented!();
 /// match foldercontenttype {
@@ -3671,22 +3410,14 @@ impl GroupMetadata {
 /// Specifically, when `foldercontenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FolderContentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FolderContentType {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -3695,7 +3426,7 @@ pub enum FolderContentType {
     #[allow(missing_docs)] // documentation missing in model
     Folder,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FolderContentType {
     fn from(s: &str) -> Self {
@@ -3703,19 +3434,17 @@ impl std::convert::From<&str> for FolderContentType {
             "ALL" => FolderContentType::All,
             "DOCUMENT" => FolderContentType::Document,
             "FOLDER" => FolderContentType::Folder,
-            other => {
-                FolderContentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FolderContentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FolderContentType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FolderContentType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FolderContentType::from(s))
+                }
+            }
 impl FolderContentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3723,12 +3452,14 @@ impl FolderContentType {
             FolderContentType::All => "ALL",
             FolderContentType::Document => "DOCUMENT",
             FolderContentType::Folder => "FOLDER",
-            FolderContentType::Unknown(value) => value.as_str(),
+            FolderContentType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "DOCUMENT", "FOLDER"]
+        &[
+            "ALL", "DOCUMENT", "FOLDER"
+        ]
     }
 }
 impl AsRef<str> for FolderContentType {
@@ -3743,9 +3474,9 @@ impl AsRef<str> for FolderContentType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcesorttype = unimplemented!();
 /// match resourcesorttype {
@@ -3767,58 +3498,52 @@ impl AsRef<str> for FolderContentType {
 /// Specifically, when `resourcesorttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceSortType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceSortType {
     #[allow(missing_docs)] // documentation missing in model
     Date,
     #[allow(missing_docs)] // documentation missing in model
     Name,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceSortType {
     fn from(s: &str) -> Self {
         match s {
             "DATE" => ResourceSortType::Date,
             "NAME" => ResourceSortType::Name,
-            other => ResourceSortType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceSortType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceSortType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceSortType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceSortType::from(s))
+                }
+            }
 impl ResourceSortType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceSortType::Date => "DATE",
             ResourceSortType::Name => "NAME",
-            ResourceSortType::Unknown(value) => value.as_str(),
+            ResourceSortType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DATE", "NAME"]
+        &[
+            "DATE", "NAME"
+        ]
     }
 }
 impl AsRef<str> for ResourceSortType {
@@ -3830,7 +3555,7 @@ impl AsRef<str> for ResourceSortType {
 /// <p>Describes a comment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Comment {
+pub struct Comment  {
     /// <p>The ID of the comment.</p>
     #[doc(hidden)]
     pub comment_id: std::option::Option<std::string::String>,
@@ -3861,43 +3586,43 @@ pub struct Comment {
 }
 impl Comment {
     /// <p>The ID of the comment.</p>
-    pub fn comment_id(&self) -> std::option::Option<&str> {
+    pub fn comment_id(&self) -> std::option::Option<& str> {
         self.comment_id.as_deref()
     }
     /// <p>The ID of the parent comment.</p>
-    pub fn parent_id(&self) -> std::option::Option<&str> {
+    pub fn parent_id(&self) -> std::option::Option<& str> {
         self.parent_id.as_deref()
     }
     /// <p>The ID of the root comment in the thread.</p>
-    pub fn thread_id(&self) -> std::option::Option<&str> {
+    pub fn thread_id(&self) -> std::option::Option<& str> {
         self.thread_id.as_deref()
     }
     /// <p>The text of the comment.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The details of the user who made the comment.</p>
-    pub fn contributor(&self) -> std::option::Option<&crate::model::User> {
+    pub fn contributor(&self) -> std::option::Option<& crate::model::User> {
         self.contributor.as_ref()
     }
     /// <p>The time that the comment was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The status of the comment.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CommentStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CommentStatusType> {
         self.status.as_ref()
     }
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
-    pub fn visibility(&self) -> std::option::Option<&crate::model::CommentVisibilityType> {
+    pub fn visibility(&self) -> std::option::Option<& crate::model::CommentVisibilityType> {
         self.visibility.as_ref()
     }
     /// <p>If the comment is a reply to another user's comment, this field contains the user ID of the user being replied to.</p>
-    pub fn recipient_id(&self) -> std::option::Option<&str> {
+    pub fn recipient_id(&self) -> std::option::Option<& str> {
         self.recipient_id.as_deref()
     }
 }
-impl std::fmt::Debug for Comment {
+impl  std::fmt::Debug for Comment  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Comment");
         formatter.field("comment_id", &self.comment_id);
@@ -3914,7 +3639,7 @@ impl std::fmt::Debug for Comment {
 }
 /// See [`Comment`](crate::model::Comment).
 pub mod comment {
-
+    
     /// A builder for [`Comment`](crate::model::Comment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3936,8 +3661,7 @@ pub mod comment {
         }
         /// <p>The ID of the comment.</p>
         pub fn set_comment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.comment_id = input;
-            self
+            self.comment_id = input; self
         }
         /// <p>The ID of the parent comment.</p>
         pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3946,8 +3670,7 @@ pub mod comment {
         }
         /// <p>The ID of the parent comment.</p>
         pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.parent_id = input;
-            self
+            self.parent_id = input; self
         }
         /// <p>The ID of the root comment in the thread.</p>
         pub fn thread_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3956,8 +3679,7 @@ pub mod comment {
         }
         /// <p>The ID of the root comment in the thread.</p>
         pub fn set_thread_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thread_id = input;
-            self
+            self.thread_id = input; self
         }
         /// <p>The text of the comment.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3966,8 +3688,7 @@ pub mod comment {
         }
         /// <p>The text of the comment.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.text = input;
-            self
+            self.text = input; self
         }
         /// <p>The details of the user who made the comment.</p>
         pub fn contributor(mut self, input: crate::model::User) -> Self {
@@ -3976,8 +3697,7 @@ pub mod comment {
         }
         /// <p>The details of the user who made the comment.</p>
         pub fn set_contributor(mut self, input: std::option::Option<crate::model::User>) -> Self {
-            self.contributor = input;
-            self
+            self.contributor = input; self
         }
         /// <p>The time that the comment was created.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3985,12 +3705,8 @@ pub mod comment {
             self
         }
         /// <p>The time that the comment was created.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// <p>The status of the comment.</p>
         pub fn status(mut self, input: crate::model::CommentStatusType) -> Self {
@@ -3998,12 +3714,8 @@ pub mod comment {
             self
         }
         /// <p>The status of the comment.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CommentStatusType>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CommentStatusType>) -> Self {
+            self.status = input; self
         }
         /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
         pub fn visibility(mut self, input: crate::model::CommentVisibilityType) -> Self {
@@ -4011,12 +3723,8 @@ pub mod comment {
             self
         }
         /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
-        pub fn set_visibility(
-            mut self,
-            input: std::option::Option<crate::model::CommentVisibilityType>,
-        ) -> Self {
-            self.visibility = input;
-            self
+        pub fn set_visibility(mut self, input: std::option::Option<crate::model::CommentVisibilityType>) -> Self {
+            self.visibility = input; self
         }
         /// <p>If the comment is a reply to another user's comment, this field contains the user ID of the user being replied to.</p>
         pub fn recipient_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4025,21 +3733,29 @@ pub mod comment {
         }
         /// <p>If the comment is a reply to another user's comment, this field contains the user ID of the user being replied to.</p>
         pub fn set_recipient_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.recipient_id = input;
-            self
+            self.recipient_id = input; self
         }
         /// Consumes the builder and constructs a [`Comment`](crate::model::Comment).
         pub fn build(self) -> crate::model::Comment {
             crate::model::Comment {
-                comment_id: self.comment_id,
-                parent_id: self.parent_id,
-                thread_id: self.thread_id,
-                text: self.text,
-                contributor: self.contributor,
-                created_timestamp: self.created_timestamp,
-                status: self.status,
-                visibility: self.visibility,
-                recipient_id: self.recipient_id,
+                comment_id: self.comment_id
+                ,
+                parent_id: self.parent_id
+                ,
+                thread_id: self.thread_id
+                ,
+                text: self.text
+                ,
+                contributor: self.contributor
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                status: self.status
+                ,
+                visibility: self.visibility
+                ,
+                recipient_id: self.recipient_id
+                ,
             }
         }
     }
@@ -4058,6 +3774,8 @@ pub mod comment {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Comment {
     /// Creates a new builder-style object to manufacture [`Comment`](crate::model::Comment).
@@ -4072,9 +3790,9 @@ impl Comment {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let commentvisibilitytype = unimplemented!();
 /// match commentvisibilitytype {
@@ -4096,60 +3814,52 @@ impl Comment {
 /// Specifically, when `commentvisibilitytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CommentVisibilityType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CommentVisibilityType {
     #[allow(missing_docs)] // documentation missing in model
     Private,
     #[allow(missing_docs)] // documentation missing in model
     Public,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CommentVisibilityType {
     fn from(s: &str) -> Self {
         match s {
             "PRIVATE" => CommentVisibilityType::Private,
             "PUBLIC" => CommentVisibilityType::Public,
-            other => {
-                CommentVisibilityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CommentVisibilityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CommentVisibilityType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CommentVisibilityType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CommentVisibilityType::from(s))
+                }
+            }
 impl CommentVisibilityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CommentVisibilityType::Private => "PRIVATE",
             CommentVisibilityType::Public => "PUBLIC",
-            CommentVisibilityType::Unknown(value) => value.as_str(),
+            CommentVisibilityType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRIVATE", "PUBLIC"]
+        &[
+            "PRIVATE", "PUBLIC"
+        ]
     }
 }
 impl AsRef<str> for CommentVisibilityType {
@@ -4164,9 +3874,9 @@ impl AsRef<str> for CommentVisibilityType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let commentstatustype = unimplemented!();
 /// match commentstatustype {
@@ -4189,22 +3899,14 @@ impl AsRef<str> for CommentVisibilityType {
 /// Specifically, when `commentstatustype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CommentStatusType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CommentStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
@@ -4213,7 +3915,7 @@ pub enum CommentStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Published,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CommentStatusType {
     fn from(s: &str) -> Self {
@@ -4221,19 +3923,17 @@ impl std::convert::From<&str> for CommentStatusType {
             "DELETED" => CommentStatusType::Deleted,
             "DRAFT" => CommentStatusType::Draft,
             "PUBLISHED" => CommentStatusType::Published,
-            other => {
-                CommentStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CommentStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CommentStatusType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CommentStatusType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CommentStatusType::from(s))
+                }
+            }
 impl CommentStatusType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4241,12 +3941,14 @@ impl CommentStatusType {
             CommentStatusType::Deleted => "DELETED",
             CommentStatusType::Draft => "DRAFT",
             CommentStatusType::Published => "PUBLISHED",
-            CommentStatusType::Unknown(value) => value.as_str(),
+            CommentStatusType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELETED", "DRAFT", "PUBLISHED"]
+        &[
+            "DELETED", "DRAFT", "PUBLISHED"
+        ]
     }
 }
 impl AsRef<str> for CommentStatusType {
@@ -4258,7 +3960,7 @@ impl AsRef<str> for CommentStatusType {
 /// <p>Describes the activity information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Activity {
+pub struct Activity  {
     /// <p>The activity type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ActivityType>,
@@ -4289,11 +3991,11 @@ pub struct Activity {
 }
 impl Activity {
     /// <p>The activity type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ActivityType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ActivityType> {
         self.r#type.as_ref()
     }
     /// <p>The timestamp when the action was performed.</p>
-    pub fn time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn time_stamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.time_stamp.as_ref()
     }
     /// <p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
@@ -4301,33 +4003,33 @@ impl Activity {
         self.is_indirect_activity
     }
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(&self) -> std::option::Option<&str> {
+    pub fn organization_id(&self) -> std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The user who performed the action.</p>
-    pub fn initiator(&self) -> std::option::Option<&crate::model::UserMetadata> {
+    pub fn initiator(&self) -> std::option::Option<& crate::model::UserMetadata> {
         self.initiator.as_ref()
     }
     /// <p>The list of users or groups impacted by this action. This is an optional field and is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED, DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
-    pub fn participants(&self) -> std::option::Option<&crate::model::Participants> {
+    pub fn participants(&self) -> std::option::Option<& crate::model::Participants> {
         self.participants.as_ref()
     }
     /// <p>The metadata of the resource involved in the user action.</p>
-    pub fn resource_metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+    pub fn resource_metadata(&self) -> std::option::Option<& crate::model::ResourceMetadata> {
         self.resource_metadata.as_ref()
     }
     /// <p>The original parent of the resource. This is an optional field and is filled for move activities.</p>
-    pub fn original_parent(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+    pub fn original_parent(&self) -> std::option::Option<& crate::model::ResourceMetadata> {
         self.original_parent.as_ref()
     }
     /// <p>Metadata of the commenting activity. This is an optional field and is filled for commenting activities.</p>
-    pub fn comment_metadata(&self) -> std::option::Option<&crate::model::CommentMetadata> {
+    pub fn comment_metadata(&self) -> std::option::Option<& crate::model::CommentMetadata> {
         self.comment_metadata.as_ref()
     }
 }
 /// See [`Activity`](crate::model::Activity).
 pub mod activity {
-
+    
     /// A builder for [`Activity`](crate::model::Activity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4349,8 +4051,7 @@ pub mod activity {
         }
         /// <p>The activity type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ActivityType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The timestamp when the action was performed.</p>
         pub fn time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4358,12 +4059,8 @@ pub mod activity {
             self
         }
         /// <p>The timestamp when the action was performed.</p>
-        pub fn set_time_stamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.time_stamp = input;
-            self
+        pub fn set_time_stamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.time_stamp = input; self
         }
         /// <p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
         pub fn is_indirect_activity(mut self, input: bool) -> Self {
@@ -4372,8 +4069,7 @@ pub mod activity {
         }
         /// <p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
         pub fn set_is_indirect_activity(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_indirect_activity = input;
-            self
+            self.is_indirect_activity = input; self
         }
         /// <p>The ID of the organization.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4381,12 +4077,8 @@ pub mod activity {
             self
         }
         /// <p>The ID of the organization.</p>
-        pub fn set_organization_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.organization_id = input;
-            self
+        pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.organization_id = input; self
         }
         /// <p>The user who performed the action.</p>
         pub fn initiator(mut self, input: crate::model::UserMetadata) -> Self {
@@ -4394,12 +4086,8 @@ pub mod activity {
             self
         }
         /// <p>The user who performed the action.</p>
-        pub fn set_initiator(
-            mut self,
-            input: std::option::Option<crate::model::UserMetadata>,
-        ) -> Self {
-            self.initiator = input;
-            self
+        pub fn set_initiator(mut self, input: std::option::Option<crate::model::UserMetadata>) -> Self {
+            self.initiator = input; self
         }
         /// <p>The list of users or groups impacted by this action. This is an optional field and is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED, DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
         pub fn participants(mut self, input: crate::model::Participants) -> Self {
@@ -4407,12 +4095,8 @@ pub mod activity {
             self
         }
         /// <p>The list of users or groups impacted by this action. This is an optional field and is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED, DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
-        pub fn set_participants(
-            mut self,
-            input: std::option::Option<crate::model::Participants>,
-        ) -> Self {
-            self.participants = input;
-            self
+        pub fn set_participants(mut self, input: std::option::Option<crate::model::Participants>) -> Self {
+            self.participants = input; self
         }
         /// <p>The metadata of the resource involved in the user action.</p>
         pub fn resource_metadata(mut self, input: crate::model::ResourceMetadata) -> Self {
@@ -4420,12 +4104,8 @@ pub mod activity {
             self
         }
         /// <p>The metadata of the resource involved in the user action.</p>
-        pub fn set_resource_metadata(
-            mut self,
-            input: std::option::Option<crate::model::ResourceMetadata>,
-        ) -> Self {
-            self.resource_metadata = input;
-            self
+        pub fn set_resource_metadata(mut self, input: std::option::Option<crate::model::ResourceMetadata>) -> Self {
+            self.resource_metadata = input; self
         }
         /// <p>The original parent of the resource. This is an optional field and is filled for move activities.</p>
         pub fn original_parent(mut self, input: crate::model::ResourceMetadata) -> Self {
@@ -4433,12 +4113,8 @@ pub mod activity {
             self
         }
         /// <p>The original parent of the resource. This is an optional field and is filled for move activities.</p>
-        pub fn set_original_parent(
-            mut self,
-            input: std::option::Option<crate::model::ResourceMetadata>,
-        ) -> Self {
-            self.original_parent = input;
-            self
+        pub fn set_original_parent(mut self, input: std::option::Option<crate::model::ResourceMetadata>) -> Self {
+            self.original_parent = input; self
         }
         /// <p>Metadata of the commenting activity. This is an optional field and is filled for commenting activities.</p>
         pub fn comment_metadata(mut self, input: crate::model::CommentMetadata) -> Self {
@@ -4446,28 +4122,36 @@ pub mod activity {
             self
         }
         /// <p>Metadata of the commenting activity. This is an optional field and is filled for commenting activities.</p>
-        pub fn set_comment_metadata(
-            mut self,
-            input: std::option::Option<crate::model::CommentMetadata>,
-        ) -> Self {
-            self.comment_metadata = input;
-            self
+        pub fn set_comment_metadata(mut self, input: std::option::Option<crate::model::CommentMetadata>) -> Self {
+            self.comment_metadata = input; self
         }
         /// Consumes the builder and constructs a [`Activity`](crate::model::Activity).
         pub fn build(self) -> crate::model::Activity {
             crate::model::Activity {
-                r#type: self.r#type,
-                time_stamp: self.time_stamp,
-                is_indirect_activity: self.is_indirect_activity.unwrap_or_default(),
-                organization_id: self.organization_id,
-                initiator: self.initiator,
-                participants: self.participants,
-                resource_metadata: self.resource_metadata,
-                original_parent: self.original_parent,
-                comment_metadata: self.comment_metadata,
+                r#type: self.r#type
+                ,
+                time_stamp: self.time_stamp
+                ,
+                is_indirect_activity: self.is_indirect_activity
+                    .unwrap_or_default()
+                ,
+                organization_id: self.organization_id
+                ,
+                initiator: self.initiator
+                ,
+                participants: self.participants
+                ,
+                resource_metadata: self.resource_metadata
+                ,
+                original_parent: self.original_parent
+                ,
+                comment_metadata: self.comment_metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl Activity {
     /// Creates a new builder-style object to manufacture [`Activity`](crate::model::Activity).
@@ -4479,7 +4163,7 @@ impl Activity {
 /// <p>Describes the metadata of a comment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CommentMetadata {
+pub struct CommentMetadata  {
     /// <p>The ID of the comment.</p>
     #[doc(hidden)]
     pub comment_id: std::option::Option<std::string::String>,
@@ -4498,29 +4182,29 @@ pub struct CommentMetadata {
 }
 impl CommentMetadata {
     /// <p>The ID of the comment.</p>
-    pub fn comment_id(&self) -> std::option::Option<&str> {
+    pub fn comment_id(&self) -> std::option::Option<& str> {
         self.comment_id.as_deref()
     }
     /// <p>The user who made the comment.</p>
-    pub fn contributor(&self) -> std::option::Option<&crate::model::User> {
+    pub fn contributor(&self) -> std::option::Option<& crate::model::User> {
         self.contributor.as_ref()
     }
     /// <p>The timestamp that the comment was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The status of the comment.</p>
-    pub fn comment_status(&self) -> std::option::Option<&crate::model::CommentStatusType> {
+    pub fn comment_status(&self) -> std::option::Option<& crate::model::CommentStatusType> {
         self.comment_status.as_ref()
     }
     /// <p>The ID of the user being replied to.</p>
-    pub fn recipient_id(&self) -> std::option::Option<&str> {
+    pub fn recipient_id(&self) -> std::option::Option<& str> {
         self.recipient_id.as_deref()
     }
 }
 /// See [`CommentMetadata`](crate::model::CommentMetadata).
 pub mod comment_metadata {
-
+    
     /// A builder for [`CommentMetadata`](crate::model::CommentMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4538,8 +4222,7 @@ pub mod comment_metadata {
         }
         /// <p>The ID of the comment.</p>
         pub fn set_comment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.comment_id = input;
-            self
+            self.comment_id = input; self
         }
         /// <p>The user who made the comment.</p>
         pub fn contributor(mut self, input: crate::model::User) -> Self {
@@ -4548,8 +4231,7 @@ pub mod comment_metadata {
         }
         /// <p>The user who made the comment.</p>
         pub fn set_contributor(mut self, input: std::option::Option<crate::model::User>) -> Self {
-            self.contributor = input;
-            self
+            self.contributor = input; self
         }
         /// <p>The timestamp that the comment was created.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4557,12 +4239,8 @@ pub mod comment_metadata {
             self
         }
         /// <p>The timestamp that the comment was created.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// <p>The status of the comment.</p>
         pub fn comment_status(mut self, input: crate::model::CommentStatusType) -> Self {
@@ -4570,12 +4248,8 @@ pub mod comment_metadata {
             self
         }
         /// <p>The status of the comment.</p>
-        pub fn set_comment_status(
-            mut self,
-            input: std::option::Option<crate::model::CommentStatusType>,
-        ) -> Self {
-            self.comment_status = input;
-            self
+        pub fn set_comment_status(mut self, input: std::option::Option<crate::model::CommentStatusType>) -> Self {
+            self.comment_status = input; self
         }
         /// <p>The ID of the user being replied to.</p>
         pub fn recipient_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4584,20 +4258,26 @@ pub mod comment_metadata {
         }
         /// <p>The ID of the user being replied to.</p>
         pub fn set_recipient_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.recipient_id = input;
-            self
+            self.recipient_id = input; self
         }
         /// Consumes the builder and constructs a [`CommentMetadata`](crate::model::CommentMetadata).
         pub fn build(self) -> crate::model::CommentMetadata {
             crate::model::CommentMetadata {
-                comment_id: self.comment_id,
-                contributor: self.contributor,
-                created_timestamp: self.created_timestamp,
-                comment_status: self.comment_status,
-                recipient_id: self.recipient_id,
+                comment_id: self.comment_id
+                ,
+                contributor: self.contributor
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                comment_status: self.comment_status
+                ,
+                recipient_id: self.recipient_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CommentMetadata {
     /// Creates a new builder-style object to manufacture [`CommentMetadata`](crate::model::CommentMetadata).
@@ -4609,7 +4289,7 @@ impl CommentMetadata {
 /// <p>Describes the metadata of a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceMetadata {
+pub struct ResourceMetadata  {
     /// <p>The type of resource.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ResourceType>,
@@ -4634,37 +4314,37 @@ pub struct ResourceMetadata {
 }
 impl ResourceMetadata {
     /// <p>The type of resource.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The original name of the resource before a rename operation.</p>
-    pub fn original_name(&self) -> std::option::Option<&str> {
+    pub fn original_name(&self) -> std::option::Option<& str> {
         self.original_name.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The version ID of the resource. This is an optional field and is filled for action on document version.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>The owner of the resource.</p>
-    pub fn owner(&self) -> std::option::Option<&crate::model::UserMetadata> {
+    pub fn owner(&self) -> std::option::Option<& crate::model::UserMetadata> {
         self.owner.as_ref()
     }
     /// <p>The parent ID of the resource before a rename operation.</p>
-    pub fn parent_id(&self) -> std::option::Option<&str> {
+    pub fn parent_id(&self) -> std::option::Option<& str> {
         self.parent_id.as_deref()
     }
 }
 /// See [`ResourceMetadata`](crate::model::ResourceMetadata).
 pub mod resource_metadata {
-
+    
     /// A builder for [`ResourceMetadata`](crate::model::ResourceMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4684,8 +4364,7 @@ pub mod resource_metadata {
         }
         /// <p>The type of resource.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The name of the resource.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4694,8 +4373,7 @@ pub mod resource_metadata {
         }
         /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The original name of the resource before a rename operation.</p>
         pub fn original_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4703,12 +4381,8 @@ pub mod resource_metadata {
             self
         }
         /// <p>The original name of the resource before a rename operation.</p>
-        pub fn set_original_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.original_name = input;
-            self
+        pub fn set_original_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.original_name = input; self
         }
         /// <p>The ID of the resource.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4717,8 +4391,7 @@ pub mod resource_metadata {
         }
         /// <p>The ID of the resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The version ID of the resource. This is an optional field and is filled for action on document version.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4727,8 +4400,7 @@ pub mod resource_metadata {
         }
         /// <p>The version ID of the resource. This is an optional field and is filled for action on document version.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_id = input;
-            self
+            self.version_id = input; self
         }
         /// <p>The owner of the resource.</p>
         pub fn owner(mut self, input: crate::model::UserMetadata) -> Self {
@@ -4737,8 +4409,7 @@ pub mod resource_metadata {
         }
         /// <p>The owner of the resource.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::UserMetadata>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>The parent ID of the resource before a rename operation.</p>
         pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4747,22 +4418,30 @@ pub mod resource_metadata {
         }
         /// <p>The parent ID of the resource before a rename operation.</p>
         pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.parent_id = input;
-            self
+            self.parent_id = input; self
         }
         /// Consumes the builder and constructs a [`ResourceMetadata`](crate::model::ResourceMetadata).
         pub fn build(self) -> crate::model::ResourceMetadata {
             crate::model::ResourceMetadata {
-                r#type: self.r#type,
-                name: self.name,
-                original_name: self.original_name,
-                id: self.id,
-                version_id: self.version_id,
-                owner: self.owner,
-                parent_id: self.parent_id,
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                original_name: self.original_name
+                ,
+                id: self.id
+                ,
+                version_id: self.version_id
+                ,
+                owner: self.owner
+                ,
+                parent_id: self.parent_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceMetadata {
     /// Creates a new builder-style object to manufacture [`ResourceMetadata`](crate::model::ResourceMetadata).
@@ -4774,7 +4453,7 @@ impl ResourceMetadata {
 /// <p>Describes the metadata of the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UserMetadata {
+pub struct UserMetadata  {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -4793,27 +4472,27 @@ pub struct UserMetadata {
 }
 impl UserMetadata {
     /// <p>The ID of the user.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the user.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The given name of the user before a rename operation.</p>
-    pub fn given_name(&self) -> std::option::Option<&str> {
+    pub fn given_name(&self) -> std::option::Option<& str> {
         self.given_name.as_deref()
     }
     /// <p>The surname of the user.</p>
-    pub fn surname(&self) -> std::option::Option<&str> {
+    pub fn surname(&self) -> std::option::Option<& str> {
         self.surname.as_deref()
     }
     /// <p>The email address of the user.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> std::option::Option<& str> {
         self.email_address.as_deref()
     }
 }
-impl std::fmt::Debug for UserMetadata {
+impl  std::fmt::Debug for UserMetadata  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserMetadata");
         formatter.field("id", &self.id);
@@ -4826,7 +4505,7 @@ impl std::fmt::Debug for UserMetadata {
 }
 /// See [`UserMetadata`](crate::model::UserMetadata).
 pub mod user_metadata {
-
+    
     /// A builder for [`UserMetadata`](crate::model::UserMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4844,8 +4523,7 @@ pub mod user_metadata {
         }
         /// <p>The ID of the user.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the user.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4854,8 +4532,7 @@ pub mod user_metadata {
         }
         /// <p>The name of the user.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.username = input;
-            self
+            self.username = input; self
         }
         /// <p>The given name of the user before a rename operation.</p>
         pub fn given_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4864,8 +4541,7 @@ pub mod user_metadata {
         }
         /// <p>The given name of the user before a rename operation.</p>
         pub fn set_given_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.given_name = input;
-            self
+            self.given_name = input; self
         }
         /// <p>The surname of the user.</p>
         pub fn surname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4874,8 +4550,7 @@ pub mod user_metadata {
         }
         /// <p>The surname of the user.</p>
         pub fn set_surname(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.surname = input;
-            self
+            self.surname = input; self
         }
         /// <p>The email address of the user.</p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4883,21 +4558,22 @@ pub mod user_metadata {
             self
         }
         /// <p>The email address of the user.</p>
-        pub fn set_email_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_address = input;
-            self
+        pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_address = input; self
         }
         /// Consumes the builder and constructs a [`UserMetadata`](crate::model::UserMetadata).
         pub fn build(self) -> crate::model::UserMetadata {
             crate::model::UserMetadata {
-                id: self.id,
-                username: self.username,
-                given_name: self.given_name,
-                surname: self.surname,
-                email_address: self.email_address,
+                id: self.id
+                ,
+                username: self.username
+                ,
+                given_name: self.given_name
+                ,
+                surname: self.surname
+                ,
+                email_address: self.email_address
+                ,
             }
         }
     }
@@ -4912,6 +4588,8 @@ pub mod user_metadata {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UserMetadata {
     /// Creates a new builder-style object to manufacture [`UserMetadata`](crate::model::UserMetadata).
@@ -4926,9 +4604,9 @@ impl UserMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -4950,58 +4628,52 @@ impl UserMetadata {
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Document,
     #[allow(missing_docs)] // documentation missing in model
     Folder,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "DOCUMENT" => ResourceType::Document,
             "FOLDER" => ResourceType::Folder,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Document => "DOCUMENT",
             ResourceType::Folder => "FOLDER",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DOCUMENT", "FOLDER"]
+        &[
+            "DOCUMENT", "FOLDER"
+        ]
     }
 }
 impl AsRef<str> for ResourceType {
@@ -5013,7 +4685,7 @@ impl AsRef<str> for ResourceType {
 /// <p>Describes the users or user groups.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Participants {
+pub struct Participants  {
     /// <p>The list of users.</p>
     #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::UserMetadata>>,
@@ -5023,17 +4695,17 @@ pub struct Participants {
 }
 impl Participants {
     /// <p>The list of users.</p>
-    pub fn users(&self) -> std::option::Option<&[crate::model::UserMetadata]> {
+    pub fn users(&self) -> std::option::Option<& [crate::model::UserMetadata]> {
         self.users.as_deref()
     }
     /// <p>The list of user groups.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupMetadata]> {
+    pub fn groups(&self) -> std::option::Option<& [crate::model::GroupMetadata]> {
         self.groups.as_deref()
     }
 }
 /// See [`Participants`](crate::model::Participants).
 pub mod participants {
-
+    
     /// A builder for [`Participants`](crate::model::Participants).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5048,17 +4720,13 @@ pub mod participants {
         /// <p>The list of users.</p>
         pub fn users(mut self, input: crate::model::UserMetadata) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input);
-            self.users = Some(v);
-            self
+                            v.push(input);
+                            self.users = Some(v);
+                            self
         }
         /// <p>The list of users.</p>
-        pub fn set_users(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UserMetadata>>,
-        ) -> Self {
-            self.users = input;
-            self
+        pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::model::UserMetadata>>) -> Self {
+            self.users = input; self
         }
         /// Appends an item to `groups`.
         ///
@@ -5067,26 +4735,26 @@ pub mod participants {
         /// <p>The list of user groups.</p>
         pub fn groups(mut self, input: crate::model::GroupMetadata) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input);
-            self.groups = Some(v);
-            self
+                            v.push(input);
+                            self.groups = Some(v);
+                            self
         }
         /// <p>The list of user groups.</p>
-        pub fn set_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GroupMetadata>>,
-        ) -> Self {
-            self.groups = input;
-            self
+        pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroupMetadata>>) -> Self {
+            self.groups = input; self
         }
         /// Consumes the builder and constructs a [`Participants`](crate::model::Participants).
         pub fn build(self) -> crate::model::Participants {
             crate::model::Participants {
-                users: self.users,
-                groups: self.groups,
+                users: self.users
+                ,
+                groups: self.groups
+                ,
             }
         }
     }
+    
+    
 }
 impl Participants {
     /// Creates a new builder-style object to manufacture [`Participants`](crate::model::Participants).
@@ -5101,9 +4769,9 @@ impl Participants {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let activitytype = unimplemented!();
 /// match activitytype {
@@ -5156,22 +4824,14 @@ impl Participants {
 /// Specifically, when `activitytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActivityType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ActivityType {
     #[allow(missing_docs)] // documentation missing in model
     DocumentAnnotationAdded,
@@ -5240,7 +4900,7 @@ pub enum ActivityType {
     #[allow(missing_docs)] // documentation missing in model
     FolderUnshared,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActivityType {
     fn from(s: &str) -> Self {
@@ -5257,9 +4917,7 @@ impl std::convert::From<&str> for ActivityType {
             "DOCUMENT_RESTORED" => ActivityType::DocumentRestored,
             "DOCUMENT_REVERTED" => ActivityType::DocumentReverted,
             "DOCUMENT_SHAREABLE_LINK_CREATED" => ActivityType::DocumentShareableLinkCreated,
-            "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED" => {
-                ActivityType::DocumentShareableLinkPermissionChanged
-            }
+            "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED" => ActivityType::DocumentShareableLinkPermissionChanged,
             "DOCUMENT_SHAREABLE_LINK_REMOVED" => ActivityType::DocumentShareableLinkRemoved,
             "DOCUMENT_SHARED" => ActivityType::DocumentShared,
             "DOCUMENT_SHARE_PERMISSION_CHANGED" => ActivityType::DocumentSharePermissionChanged,
@@ -5275,24 +4933,22 @@ impl std::convert::From<&str> for ActivityType {
             "FOLDER_RENAMED" => ActivityType::FolderRenamed,
             "FOLDER_RESTORED" => ActivityType::FolderRestored,
             "FOLDER_SHAREABLE_LINK_CREATED" => ActivityType::FolderShareableLinkCreated,
-            "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED" => {
-                ActivityType::FolderShareableLinkPermissionChanged
-            }
+            "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED" => ActivityType::FolderShareableLinkPermissionChanged,
             "FOLDER_SHAREABLE_LINK_REMOVED" => ActivityType::FolderShareableLinkRemoved,
             "FOLDER_SHARED" => ActivityType::FolderShared,
             "FOLDER_SHARE_PERMISSION_CHANGED" => ActivityType::FolderSharePermissionChanged,
             "FOLDER_UNSHARED" => ActivityType::FolderUnshared,
-            other => ActivityType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ActivityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ActivityType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActivityType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ActivityType::from(s))
+                }
+            }
 impl ActivityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5309,9 +4965,7 @@ impl ActivityType {
             ActivityType::DocumentRestored => "DOCUMENT_RESTORED",
             ActivityType::DocumentReverted => "DOCUMENT_REVERTED",
             ActivityType::DocumentShareableLinkCreated => "DOCUMENT_SHAREABLE_LINK_CREATED",
-            ActivityType::DocumentShareableLinkPermissionChanged => {
-                "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED"
-            }
+            ActivityType::DocumentShareableLinkPermissionChanged => "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED",
             ActivityType::DocumentShareableLinkRemoved => "DOCUMENT_SHAREABLE_LINK_REMOVED",
             ActivityType::DocumentShared => "DOCUMENT_SHARED",
             ActivityType::DocumentSharePermissionChanged => "DOCUMENT_SHARE_PERMISSION_CHANGED",
@@ -5327,52 +4981,18 @@ impl ActivityType {
             ActivityType::FolderRenamed => "FOLDER_RENAMED",
             ActivityType::FolderRestored => "FOLDER_RESTORED",
             ActivityType::FolderShareableLinkCreated => "FOLDER_SHAREABLE_LINK_CREATED",
-            ActivityType::FolderShareableLinkPermissionChanged => {
-                "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED"
-            }
+            ActivityType::FolderShareableLinkPermissionChanged => "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED",
             ActivityType::FolderShareableLinkRemoved => "FOLDER_SHAREABLE_LINK_REMOVED",
             ActivityType::FolderShared => "FOLDER_SHARED",
             ActivityType::FolderSharePermissionChanged => "FOLDER_SHARE_PERMISSION_CHANGED",
             ActivityType::FolderUnshared => "FOLDER_UNSHARED",
-            ActivityType::Unknown(value) => value.as_str(),
+            ActivityType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DOCUMENT_ANNOTATION_ADDED",
-            "DOCUMENT_ANNOTATION_DELETED",
-            "DOCUMENT_CHECKED_IN",
-            "DOCUMENT_CHECKED_OUT",
-            "DOCUMENT_COMMENT_ADDED",
-            "DOCUMENT_COMMENT_DELETED",
-            "DOCUMENT_MOVED",
-            "DOCUMENT_RECYCLED",
-            "DOCUMENT_RENAMED",
-            "DOCUMENT_RESTORED",
-            "DOCUMENT_REVERTED",
-            "DOCUMENT_SHAREABLE_LINK_CREATED",
-            "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED",
-            "DOCUMENT_SHAREABLE_LINK_REMOVED",
-            "DOCUMENT_SHARED",
-            "DOCUMENT_SHARE_PERMISSION_CHANGED",
-            "DOCUMENT_UNSHARED",
-            "DOCUMENT_VERSION_DELETED",
-            "DOCUMENT_VERSION_DOWNLOADED",
-            "DOCUMENT_VERSION_UPLOADED",
-            "DOCUMENT_VERSION_VIEWED",
-            "FOLDER_CREATED",
-            "FOLDER_DELETED",
-            "FOLDER_MOVED",
-            "FOLDER_RECYCLED",
-            "FOLDER_RENAMED",
-            "FOLDER_RESTORED",
-            "FOLDER_SHAREABLE_LINK_CREATED",
-            "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED",
-            "FOLDER_SHAREABLE_LINK_REMOVED",
-            "FOLDER_SHARED",
-            "FOLDER_SHARE_PERMISSION_CHANGED",
-            "FOLDER_UNSHARED",
+            "DOCUMENT_ANNOTATION_ADDED", "DOCUMENT_ANNOTATION_DELETED", "DOCUMENT_CHECKED_IN", "DOCUMENT_CHECKED_OUT", "DOCUMENT_COMMENT_ADDED", "DOCUMENT_COMMENT_DELETED", "DOCUMENT_MOVED", "DOCUMENT_RECYCLED", "DOCUMENT_RENAMED", "DOCUMENT_RESTORED", "DOCUMENT_REVERTED", "DOCUMENT_SHAREABLE_LINK_CREATED", "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED", "DOCUMENT_SHAREABLE_LINK_REMOVED", "DOCUMENT_SHARED", "DOCUMENT_SHARE_PERMISSION_CHANGED", "DOCUMENT_UNSHARED", "DOCUMENT_VERSION_DELETED", "DOCUMENT_VERSION_DOWNLOADED", "DOCUMENT_VERSION_UPLOADED", "DOCUMENT_VERSION_VIEWED", "FOLDER_CREATED", "FOLDER_DELETED", "FOLDER_MOVED", "FOLDER_RECYCLED", "FOLDER_RENAMED", "FOLDER_RESTORED", "FOLDER_SHAREABLE_LINK_CREATED", "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED", "FOLDER_SHAREABLE_LINK_REMOVED", "FOLDER_SHARED", "FOLDER_SHARE_PERMISSION_CHANGED", "FOLDER_UNSHARED"
         ]
     }
 }
@@ -5388,9 +5008,9 @@ impl AsRef<str> for ActivityType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let subscriptiontype = unimplemented!();
 /// match subscriptiontype {
@@ -5411,54 +5031,48 @@ impl AsRef<str> for ActivityType {
 /// Specifically, when `subscriptiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SubscriptionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SubscriptionType {
     #[allow(missing_docs)] // documentation missing in model
     All,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SubscriptionType {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => SubscriptionType::All,
-            other => SubscriptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SubscriptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SubscriptionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SubscriptionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SubscriptionType::from(s))
+                }
+            }
 impl SubscriptionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SubscriptionType::All => "ALL",
-            SubscriptionType::Unknown(value) => value.as_str(),
+            SubscriptionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL"]
+        &[
+            "ALL"
+        ]
     }
 }
 impl AsRef<str> for SubscriptionType {
@@ -5470,7 +5084,7 @@ impl AsRef<str> for SubscriptionType {
 /// <p>Describes the share results of a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ShareResult {
+pub struct ShareResult  {
     /// <p>The ID of the principal.</p>
     #[doc(hidden)]
     pub principal_id: std::option::Option<std::string::String>,
@@ -5492,31 +5106,31 @@ pub struct ShareResult {
 }
 impl ShareResult {
     /// <p>The ID of the principal.</p>
-    pub fn principal_id(&self) -> std::option::Option<&str> {
+    pub fn principal_id(&self) -> std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The ID of the invited user.</p>
-    pub fn invitee_principal_id(&self) -> std::option::Option<&str> {
+    pub fn invitee_principal_id(&self) -> std::option::Option<& str> {
         self.invitee_principal_id.as_deref()
     }
     /// <p>The role.</p>
-    pub fn role(&self) -> std::option::Option<&crate::model::RoleType> {
+    pub fn role(&self) -> std::option::Option<& crate::model::RoleType> {
         self.role.as_ref()
     }
     /// <p>The status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ShareStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ShareStatusType> {
         self.status.as_ref()
     }
     /// <p>The ID of the resource that was shared.</p>
-    pub fn share_id(&self) -> std::option::Option<&str> {
+    pub fn share_id(&self) -> std::option::Option<& str> {
         self.share_id.as_deref()
     }
     /// <p>The status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
-impl std::fmt::Debug for ShareResult {
+impl  std::fmt::Debug for ShareResult  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ShareResult");
         formatter.field("principal_id", &self.principal_id);
@@ -5530,7 +5144,7 @@ impl std::fmt::Debug for ShareResult {
 }
 /// See [`ShareResult`](crate::model::ShareResult).
 pub mod share_result {
-
+    
     /// A builder for [`ShareResult`](crate::model::ShareResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5549,8 +5163,7 @@ pub mod share_result {
         }
         /// <p>The ID of the principal.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.principal_id = input;
-            self
+            self.principal_id = input; self
         }
         /// <p>The ID of the invited user.</p>
         pub fn invitee_principal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5558,12 +5171,8 @@ pub mod share_result {
             self
         }
         /// <p>The ID of the invited user.</p>
-        pub fn set_invitee_principal_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.invitee_principal_id = input;
-            self
+        pub fn set_invitee_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.invitee_principal_id = input; self
         }
         /// <p>The role.</p>
         pub fn role(mut self, input: crate::model::RoleType) -> Self {
@@ -5572,8 +5181,7 @@ pub mod share_result {
         }
         /// <p>The role.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::RoleType>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// <p>The status.</p>
         pub fn status(mut self, input: crate::model::ShareStatusType) -> Self {
@@ -5581,12 +5189,8 @@ pub mod share_result {
             self
         }
         /// <p>The status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ShareStatusType>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ShareStatusType>) -> Self {
+            self.status = input; self
         }
         /// <p>The ID of the resource that was shared.</p>
         pub fn share_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5595,8 +5199,7 @@ pub mod share_result {
         }
         /// <p>The ID of the resource that was shared.</p>
         pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.share_id = input;
-            self
+            self.share_id = input; self
         }
         /// <p>The status message.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5604,22 +5207,24 @@ pub mod share_result {
             self
         }
         /// <p>The status message.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// Consumes the builder and constructs a [`ShareResult`](crate::model::ShareResult).
         pub fn build(self) -> crate::model::ShareResult {
             crate::model::ShareResult {
-                principal_id: self.principal_id,
-                invitee_principal_id: self.invitee_principal_id,
-                role: self.role,
-                status: self.status,
-                share_id: self.share_id,
-                status_message: self.status_message,
+                principal_id: self.principal_id
+                ,
+                invitee_principal_id: self.invitee_principal_id
+                ,
+                role: self.role
+                ,
+                status: self.status
+                ,
+                share_id: self.share_id
+                ,
+                status_message: self.status_message
+                ,
             }
         }
     }
@@ -5635,6 +5240,8 @@ pub mod share_result {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ShareResult {
     /// Creates a new builder-style object to manufacture [`ShareResult`](crate::model::ShareResult).
@@ -5649,9 +5256,9 @@ impl ShareResult {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sharestatustype = unimplemented!();
 /// match sharestatustype {
@@ -5673,58 +5280,52 @@ impl ShareResult {
 /// Specifically, when `sharestatustype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ShareStatusType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ShareStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Failure,
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ShareStatusType {
     fn from(s: &str) -> Self {
         match s {
             "FAILURE" => ShareStatusType::Failure,
             "SUCCESS" => ShareStatusType::Success,
-            other => ShareStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ShareStatusType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ShareStatusType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ShareStatusType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ShareStatusType::from(s))
+                }
+            }
 impl ShareStatusType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ShareStatusType::Failure => "FAILURE",
             ShareStatusType::Success => "SUCCESS",
-            ShareStatusType::Unknown(value) => value.as_str(),
+            ShareStatusType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILURE", "SUCCESS"]
+        &[
+            "FAILURE", "SUCCESS"
+        ]
     }
 }
 impl AsRef<str> for ShareStatusType {
@@ -5736,7 +5337,7 @@ impl AsRef<str> for ShareStatusType {
 /// <p>Set of options which defines notification preferences of given action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NotificationOptions {
+pub struct NotificationOptions  {
     /// <p>Boolean value to indicate an email notification should be sent to the receipients.</p>
     #[doc(hidden)]
     pub send_email: bool,
@@ -5750,11 +5351,11 @@ impl NotificationOptions {
         self.send_email
     }
     /// <p>Text value to be included in the email body.</p>
-    pub fn email_message(&self) -> std::option::Option<&str> {
+    pub fn email_message(&self) -> std::option::Option<& str> {
         self.email_message.as_deref()
     }
 }
-impl std::fmt::Debug for NotificationOptions {
+impl  std::fmt::Debug for NotificationOptions  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotificationOptions");
         formatter.field("send_email", &self.send_email);
@@ -5764,7 +5365,7 @@ impl std::fmt::Debug for NotificationOptions {
 }
 /// See [`NotificationOptions`](crate::model::NotificationOptions).
 pub mod notification_options {
-
+    
     /// A builder for [`NotificationOptions`](crate::model::NotificationOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5779,8 +5380,7 @@ pub mod notification_options {
         }
         /// <p>Boolean value to indicate an email notification should be sent to the receipients.</p>
         pub fn set_send_email(mut self, input: std::option::Option<bool>) -> Self {
-            self.send_email = input;
-            self
+            self.send_email = input; self
         }
         /// <p>Text value to be included in the email body.</p>
         pub fn email_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5788,18 +5388,17 @@ pub mod notification_options {
             self
         }
         /// <p>Text value to be included in the email body.</p>
-        pub fn set_email_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_message = input;
-            self
+        pub fn set_email_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_message = input; self
         }
         /// Consumes the builder and constructs a [`NotificationOptions`](crate::model::NotificationOptions).
         pub fn build(self) -> crate::model::NotificationOptions {
             crate::model::NotificationOptions {
-                send_email: self.send_email.unwrap_or_default(),
-                email_message: self.email_message,
+                send_email: self.send_email
+                    .unwrap_or_default()
+                ,
+                email_message: self.email_message
+                ,
             }
         }
     }
@@ -5811,6 +5410,8 @@ pub mod notification_options {
             formatter.finish()
         }
     }
+    
+    
 }
 impl NotificationOptions {
     /// Creates a new builder-style object to manufacture [`NotificationOptions`](crate::model::NotificationOptions).
@@ -5822,7 +5423,7 @@ impl NotificationOptions {
 /// <p>Describes the recipient type and ID, if available.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SharePrincipal {
+pub struct SharePrincipal  {
     /// <p>The ID of the recipient.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -5835,21 +5436,21 @@ pub struct SharePrincipal {
 }
 impl SharePrincipal {
     /// <p>The ID of the recipient.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of the recipient.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PrincipalType> {
         self.r#type.as_ref()
     }
     /// <p>The role of the recipient.</p>
-    pub fn role(&self) -> std::option::Option<&crate::model::RoleType> {
+    pub fn role(&self) -> std::option::Option<& crate::model::RoleType> {
         self.role.as_ref()
     }
 }
 /// See [`SharePrincipal`](crate::model::SharePrincipal).
 pub mod share_principal {
-
+    
     /// A builder for [`SharePrincipal`](crate::model::SharePrincipal).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5865,8 +5466,7 @@ pub mod share_principal {
         }
         /// <p>The ID of the recipient.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The type of the recipient.</p>
         pub fn r#type(mut self, input: crate::model::PrincipalType) -> Self {
@@ -5875,8 +5475,7 @@ pub mod share_principal {
         }
         /// <p>The type of the recipient.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::PrincipalType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The role of the recipient.</p>
         pub fn role(mut self, input: crate::model::RoleType) -> Self {
@@ -5885,18 +5484,22 @@ pub mod share_principal {
         }
         /// <p>The role of the recipient.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::RoleType>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// Consumes the builder and constructs a [`SharePrincipal`](crate::model::SharePrincipal).
         pub fn build(self) -> crate::model::SharePrincipal {
             crate::model::SharePrincipal {
-                id: self.id,
-                r#type: self.r#type,
-                role: self.role,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
+                role: self.role
+                ,
             }
         }
     }
+    
+    
 }
 impl SharePrincipal {
     /// Creates a new builder-style object to manufacture [`SharePrincipal`](crate::model::SharePrincipal).
@@ -5904,3 +5507,4 @@ impl SharePrincipal {
         crate::model::share_principal::Builder::default()
     }
 }
+

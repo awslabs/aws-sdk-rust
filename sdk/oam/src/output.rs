@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLinkOutput {
+pub struct UpdateLinkOutput  {
     /// <p>The ARN of the link that you have updated.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -23,45 +23,41 @@ pub struct UpdateLinkOutput {
     pub sink_arn: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the link.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateLinkOutput {
     /// <p>The ARN of the link that you have updated.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The label assigned to this link, with the variables resolved to their actual values.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The exact label template that was specified when the link was created, with the template variables not resolved.</p>
-    pub fn label_template(&self) -> std::option::Option<&str> {
+    pub fn label_template(&self) -> std::option::Option<& str> {
         self.label_template.as_deref()
     }
     /// <p>The resource types now supported by this link.</p>
-    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_types(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_types.as_deref()
     }
     /// <p>The ARN of the sink that is used for this link.</p>
-    pub fn sink_arn(&self) -> std::option::Option<&str> {
+    pub fn sink_arn(&self) -> std::option::Option<& str> {
         self.sink_arn.as_deref()
     }
     /// <p>The tags assigned to the link.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`UpdateLinkOutput`](crate::output::UpdateLinkOutput).
 pub mod update_link_output {
-
+    
     /// A builder for [`UpdateLinkOutput`](crate::output::UpdateLinkOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -71,9 +67,7 @@ pub mod update_link_output {
         pub(crate) label_template: std::option::Option<std::string::String>,
         pub(crate) resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) sink_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ARN of the link that you have updated.</p>
@@ -83,8 +77,7 @@ pub mod update_link_output {
         }
         /// <p>The ARN of the link that you have updated.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +86,7 @@ pub mod update_link_output {
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The label assigned to this link, with the variables resolved to their actual values.</p>
         pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +95,7 @@ pub mod update_link_output {
         }
         /// <p>The label assigned to this link, with the variables resolved to their actual values.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label = input;
-            self
+            self.label = input; self
         }
         /// <p>The exact label template that was specified when the link was created, with the template variables not resolved.</p>
         pub fn label_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,12 +103,8 @@ pub mod update_link_output {
             self
         }
         /// <p>The exact label template that was specified when the link was created, with the template variables not resolved.</p>
-        pub fn set_label_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.label_template = input;
-            self
+        pub fn set_label_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_template = input; self
         }
         /// Appends an item to `resource_types`.
         ///
@@ -126,17 +113,13 @@ pub mod update_link_output {
         /// <p>The resource types now supported by this link.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input.into());
-            self.resource_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_types = Some(v);
+                            self
         }
         /// <p>The resource types now supported by this link.</p>
-        pub fn set_resource_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_types = input;
-            self
+        pub fn set_resource_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_types = input; self
         }
         /// <p>The ARN of the sink that is used for this link.</p>
         pub fn sink_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,47 +128,45 @@ pub mod update_link_output {
         }
         /// <p>The ARN of the sink that is used for this link.</p>
         pub fn set_sink_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sink_arn = input;
-            self
+            self.sink_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the link.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the link.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateLinkOutput`](crate::output::UpdateLinkOutput).
         pub fn build(self) -> crate::output::UpdateLinkOutput {
             crate::output::UpdateLinkOutput {
-                arn: self.arn,
-                id: self.id,
-                label: self.label,
-                label_template: self.label_template,
-                resource_types: self.resource_types,
-                sink_arn: self.sink_arn,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                label: self.label
+                ,
+                label_template: self.label_template
+                ,
+                resource_types: self.resource_types
+                ,
+                sink_arn: self.sink_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateLinkOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLinkOutput`](crate::output::UpdateLinkOutput).
@@ -197,19 +178,24 @@ impl UpdateLinkOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -221,19 +207,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -245,7 +236,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutSinkPolicyOutput {
+pub struct PutSinkPolicyOutput  {
     /// <p>The ARN of the sink.</p>
     #[doc(hidden)]
     pub sink_arn: std::option::Option<std::string::String>,
@@ -258,21 +249,21 @@ pub struct PutSinkPolicyOutput {
 }
 impl PutSinkPolicyOutput {
     /// <p>The ARN of the sink.</p>
-    pub fn sink_arn(&self) -> std::option::Option<&str> {
+    pub fn sink_arn(&self) -> std::option::Option<& str> {
         self.sink_arn.as_deref()
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
-    pub fn sink_id(&self) -> std::option::Option<&str> {
+    pub fn sink_id(&self) -> std::option::Option<& str> {
         self.sink_id.as_deref()
     }
     /// <p>The policy that you specified.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`PutSinkPolicyOutput`](crate::output::PutSinkPolicyOutput).
 pub mod put_sink_policy_output {
-
+    
     /// A builder for [`PutSinkPolicyOutput`](crate::output::PutSinkPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -288,8 +279,7 @@ pub mod put_sink_policy_output {
         }
         /// <p>The ARN of the sink.</p>
         pub fn set_sink_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sink_arn = input;
-            self
+            self.sink_arn = input; self
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
         pub fn sink_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -298,8 +288,7 @@ pub mod put_sink_policy_output {
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
         pub fn set_sink_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sink_id = input;
-            self
+            self.sink_id = input; self
         }
         /// <p>The policy that you specified.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -308,18 +297,22 @@ pub mod put_sink_policy_output {
         }
         /// <p>The policy that you specified.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`PutSinkPolicyOutput`](crate::output::PutSinkPolicyOutput).
         pub fn build(self) -> crate::output::PutSinkPolicyOutput {
             crate::output::PutSinkPolicyOutput {
-                sink_arn: self.sink_arn,
-                sink_id: self.sink_id,
-                policy: self.policy,
+                sink_arn: self.sink_arn
+                ,
+                sink_id: self.sink_id
+                ,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl PutSinkPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutSinkPolicyOutput`](crate::output::PutSinkPolicyOutput).
@@ -331,30 +324,24 @@ impl PutSinkPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The list of tags associated with the requested resource.&gt;</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of tags associated with the requested resource.&gt;</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -362,31 +349,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags associated with the requested resource.&gt;</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of tags associated with the requested resource.&gt;</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -398,7 +380,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSinksOutput {
+pub struct ListSinksOutput  {
     /// <p>An array of structures that contain the information about the returned sinks.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListSinksItem>>,
@@ -408,17 +390,17 @@ pub struct ListSinksOutput {
 }
 impl ListSinksOutput {
     /// <p>An array of structures that contain the information about the returned sinks.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ListSinksItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ListSinksItem]> {
         self.items.as_deref()
     }
     /// <p>The token to use when requesting the next set of sinks.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSinksOutput`](crate::output::ListSinksOutput).
 pub mod list_sinks_output {
-
+    
     /// A builder for [`ListSinksOutput`](crate::output::ListSinksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -433,17 +415,13 @@ pub mod list_sinks_output {
         /// <p>An array of structures that contain the information about the returned sinks.</p>
         pub fn items(mut self, input: crate::model::ListSinksItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>An array of structures that contain the information about the returned sinks.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListSinksItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListSinksItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>The token to use when requesting the next set of sinks.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -452,17 +430,20 @@ pub mod list_sinks_output {
         }
         /// <p>The token to use when requesting the next set of sinks.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSinksOutput`](crate::output::ListSinksOutput).
         pub fn build(self) -> crate::output::ListSinksOutput {
             crate::output::ListSinksOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSinksOutput {
     /// Creates a new builder-style object to manufacture [`ListSinksOutput`](crate::output::ListSinksOutput).
@@ -474,7 +455,7 @@ impl ListSinksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLinksOutput {
+pub struct ListLinksOutput  {
     /// <p>An array of structures that contain the information about the returned links.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListLinksItem>>,
@@ -484,17 +465,17 @@ pub struct ListLinksOutput {
 }
 impl ListLinksOutput {
     /// <p>An array of structures that contain the information about the returned links.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ListLinksItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ListLinksItem]> {
         self.items.as_deref()
     }
     /// <p>The token to use when requesting the next set of links.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLinksOutput`](crate::output::ListLinksOutput).
 pub mod list_links_output {
-
+    
     /// A builder for [`ListLinksOutput`](crate::output::ListLinksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -509,17 +490,13 @@ pub mod list_links_output {
         /// <p>An array of structures that contain the information about the returned links.</p>
         pub fn items(mut self, input: crate::model::ListLinksItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>An array of structures that contain the information about the returned links.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListLinksItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListLinksItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>The token to use when requesting the next set of links.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -528,17 +505,20 @@ pub mod list_links_output {
         }
         /// <p>The token to use when requesting the next set of links.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLinksOutput`](crate::output::ListLinksOutput).
         pub fn build(self) -> crate::output::ListLinksOutput {
             crate::output::ListLinksOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLinksOutput {
     /// Creates a new builder-style object to manufacture [`ListLinksOutput`](crate::output::ListLinksOutput).
@@ -550,7 +530,7 @@ impl ListLinksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttachedLinksOutput {
+pub struct ListAttachedLinksOutput  {
     /// <p>An array of structures that contain the information about the attached links.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListAttachedLinksItem>>,
@@ -560,17 +540,17 @@ pub struct ListAttachedLinksOutput {
 }
 impl ListAttachedLinksOutput {
     /// <p>An array of structures that contain the information about the attached links.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ListAttachedLinksItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ListAttachedLinksItem]> {
         self.items.as_deref()
     }
     /// <p>The token to use when requesting the next set of links.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAttachedLinksOutput`](crate::output::ListAttachedLinksOutput).
 pub mod list_attached_links_output {
-
+    
     /// A builder for [`ListAttachedLinksOutput`](crate::output::ListAttachedLinksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -585,17 +565,13 @@ pub mod list_attached_links_output {
         /// <p>An array of structures that contain the information about the attached links.</p>
         pub fn items(mut self, input: crate::model::ListAttachedLinksItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>An array of structures that contain the information about the attached links.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListAttachedLinksItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListAttachedLinksItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>The token to use when requesting the next set of links.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -604,17 +580,20 @@ pub mod list_attached_links_output {
         }
         /// <p>The token to use when requesting the next set of links.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAttachedLinksOutput`](crate::output::ListAttachedLinksOutput).
         pub fn build(self) -> crate::output::ListAttachedLinksOutput {
             crate::output::ListAttachedLinksOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAttachedLinksOutput {
     /// Creates a new builder-style object to manufacture [`ListAttachedLinksOutput`](crate::output::ListAttachedLinksOutput).
@@ -626,7 +605,7 @@ impl ListAttachedLinksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSinkPolicyOutput {
+pub struct GetSinkPolicyOutput  {
     /// <p>The ARN of the sink.</p>
     #[doc(hidden)]
     pub sink_arn: std::option::Option<std::string::String>,
@@ -639,21 +618,21 @@ pub struct GetSinkPolicyOutput {
 }
 impl GetSinkPolicyOutput {
     /// <p>The ARN of the sink.</p>
-    pub fn sink_arn(&self) -> std::option::Option<&str> {
+    pub fn sink_arn(&self) -> std::option::Option<& str> {
         self.sink_arn.as_deref()
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
-    pub fn sink_id(&self) -> std::option::Option<&str> {
+    pub fn sink_id(&self) -> std::option::Option<& str> {
         self.sink_id.as_deref()
     }
     /// <p>The policy that you specified, in JSON format.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`GetSinkPolicyOutput`](crate::output::GetSinkPolicyOutput).
 pub mod get_sink_policy_output {
-
+    
     /// A builder for [`GetSinkPolicyOutput`](crate::output::GetSinkPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -669,8 +648,7 @@ pub mod get_sink_policy_output {
         }
         /// <p>The ARN of the sink.</p>
         pub fn set_sink_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sink_arn = input;
-            self
+            self.sink_arn = input; self
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
         pub fn sink_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -679,8 +657,7 @@ pub mod get_sink_policy_output {
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
         pub fn set_sink_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sink_id = input;
-            self
+            self.sink_id = input; self
         }
         /// <p>The policy that you specified, in JSON format.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -689,18 +666,22 @@ pub mod get_sink_policy_output {
         }
         /// <p>The policy that you specified, in JSON format.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GetSinkPolicyOutput`](crate::output::GetSinkPolicyOutput).
         pub fn build(self) -> crate::output::GetSinkPolicyOutput {
             crate::output::GetSinkPolicyOutput {
-                sink_arn: self.sink_arn,
-                sink_id: self.sink_id,
-                policy: self.policy,
+                sink_arn: self.sink_arn
+                ,
+                sink_id: self.sink_id
+                ,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSinkPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetSinkPolicyOutput`](crate::output::GetSinkPolicyOutput).
@@ -712,7 +693,7 @@ impl GetSinkPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSinkOutput {
+pub struct GetSinkOutput  {
     /// <p>The ARN of the sink.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -724,42 +705,36 @@ pub struct GetSinkOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the sink.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetSinkOutput {
     /// <p>The ARN of the sink.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the sink.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The tags assigned to the sink.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetSinkOutput`](crate::output::GetSinkOutput).
 pub mod get_sink_output {
-
+    
     /// A builder for [`GetSinkOutput`](crate::output::GetSinkOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ARN of the sink.</p>
@@ -769,8 +744,7 @@ pub mod get_sink_output {
         }
         /// <p>The ARN of the sink.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -779,8 +753,7 @@ pub mod get_sink_output {
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the sink.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -789,44 +762,39 @@ pub mod get_sink_output {
         }
         /// <p>The name of the sink.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the sink.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the sink.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetSinkOutput`](crate::output::GetSinkOutput).
         pub fn build(self) -> crate::output::GetSinkOutput {
             crate::output::GetSinkOutput {
-                arn: self.arn,
-                id: self.id,
-                name: self.name,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSinkOutput {
     /// Creates a new builder-style object to manufacture [`GetSinkOutput`](crate::output::GetSinkOutput).
@@ -838,7 +806,7 @@ impl GetSinkOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLinkOutput {
+pub struct GetLinkOutput  {
     /// <p>The ARN of the link.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -859,45 +827,41 @@ pub struct GetLinkOutput {
     pub sink_arn: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the link.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetLinkOutput {
     /// <p>The ARN of the link.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The label that you assigned to this link, with the variables resolved to their actual values.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The exact label template that was specified when the link was created, with the template variables not resolved.</p>
-    pub fn label_template(&self) -> std::option::Option<&str> {
+    pub fn label_template(&self) -> std::option::Option<& str> {
         self.label_template.as_deref()
     }
     /// <p>The resource types supported by this link.</p>
-    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_types(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_types.as_deref()
     }
     /// <p>The ARN of the sink that is used for this link.</p>
-    pub fn sink_arn(&self) -> std::option::Option<&str> {
+    pub fn sink_arn(&self) -> std::option::Option<& str> {
         self.sink_arn.as_deref()
     }
     /// <p>The tags assigned to the link.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetLinkOutput`](crate::output::GetLinkOutput).
 pub mod get_link_output {
-
+    
     /// A builder for [`GetLinkOutput`](crate::output::GetLinkOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -907,9 +871,7 @@ pub mod get_link_output {
         pub(crate) label_template: std::option::Option<std::string::String>,
         pub(crate) resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) sink_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ARN of the link.</p>
@@ -919,8 +881,7 @@ pub mod get_link_output {
         }
         /// <p>The ARN of the link.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -929,8 +890,7 @@ pub mod get_link_output {
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The label that you assigned to this link, with the variables resolved to their actual values.</p>
         pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -939,8 +899,7 @@ pub mod get_link_output {
         }
         /// <p>The label that you assigned to this link, with the variables resolved to their actual values.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label = input;
-            self
+            self.label = input; self
         }
         /// <p>The exact label template that was specified when the link was created, with the template variables not resolved.</p>
         pub fn label_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -948,12 +907,8 @@ pub mod get_link_output {
             self
         }
         /// <p>The exact label template that was specified when the link was created, with the template variables not resolved.</p>
-        pub fn set_label_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.label_template = input;
-            self
+        pub fn set_label_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_template = input; self
         }
         /// Appends an item to `resource_types`.
         ///
@@ -962,17 +917,13 @@ pub mod get_link_output {
         /// <p>The resource types supported by this link.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input.into());
-            self.resource_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_types = Some(v);
+                            self
         }
         /// <p>The resource types supported by this link.</p>
-        pub fn set_resource_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_types = input;
-            self
+        pub fn set_resource_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_types = input; self
         }
         /// <p>The ARN of the sink that is used for this link.</p>
         pub fn sink_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -981,47 +932,45 @@ pub mod get_link_output {
         }
         /// <p>The ARN of the sink that is used for this link.</p>
         pub fn set_sink_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sink_arn = input;
-            self
+            self.sink_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the link.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the link.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetLinkOutput`](crate::output::GetLinkOutput).
         pub fn build(self) -> crate::output::GetLinkOutput {
             crate::output::GetLinkOutput {
-                arn: self.arn,
-                id: self.id,
-                label: self.label,
-                label_template: self.label_template,
-                resource_types: self.resource_types,
-                sink_arn: self.sink_arn,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                label: self.label
+                ,
+                label_template: self.label_template
+                ,
+                resource_types: self.resource_types
+                ,
+                sink_arn: self.sink_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLinkOutput {
     /// Creates a new builder-style object to manufacture [`GetLinkOutput`](crate::output::GetLinkOutput).
@@ -1033,19 +982,24 @@ impl GetLinkOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSinkOutput {}
+pub struct DeleteSinkOutput  {
+}
 /// See [`DeleteSinkOutput`](crate::output::DeleteSinkOutput).
 pub mod delete_sink_output {
-
+    
     /// A builder for [`DeleteSinkOutput`](crate::output::DeleteSinkOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSinkOutput`](crate::output::DeleteSinkOutput).
         pub fn build(self) -> crate::output::DeleteSinkOutput {
-            crate::output::DeleteSinkOutput {}
+            crate::output::DeleteSinkOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSinkOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSinkOutput`](crate::output::DeleteSinkOutput).
@@ -1057,19 +1011,24 @@ impl DeleteSinkOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLinkOutput {}
+pub struct DeleteLinkOutput  {
+}
 /// See [`DeleteLinkOutput`](crate::output::DeleteLinkOutput).
 pub mod delete_link_output {
-
+    
     /// A builder for [`DeleteLinkOutput`](crate::output::DeleteLinkOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLinkOutput`](crate::output::DeleteLinkOutput).
         pub fn build(self) -> crate::output::DeleteLinkOutput {
-            crate::output::DeleteLinkOutput {}
+            crate::output::DeleteLinkOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLinkOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLinkOutput`](crate::output::DeleteLinkOutput).
@@ -1081,7 +1040,7 @@ impl DeleteLinkOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSinkOutput {
+pub struct CreateSinkOutput  {
     /// <p>The ARN of the sink that is newly created.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1093,42 +1052,36 @@ pub struct CreateSinkOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the sink.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateSinkOutput {
     /// <p>The ARN of the sink that is newly created.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the sink.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The tags assigned to the sink.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateSinkOutput`](crate::output::CreateSinkOutput).
 pub mod create_sink_output {
-
+    
     /// A builder for [`CreateSinkOutput`](crate::output::CreateSinkOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ARN of the sink that is newly created.</p>
@@ -1138,8 +1091,7 @@ pub mod create_sink_output {
         }
         /// <p>The ARN of the sink that is newly created.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1148,8 +1100,7 @@ pub mod create_sink_output {
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the sink.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1158,44 +1109,39 @@ pub mod create_sink_output {
         }
         /// <p>The name of the sink.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the sink.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the sink.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateSinkOutput`](crate::output::CreateSinkOutput).
         pub fn build(self) -> crate::output::CreateSinkOutput {
             crate::output::CreateSinkOutput {
-                arn: self.arn,
-                id: self.id,
-                name: self.name,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSinkOutput {
     /// Creates a new builder-style object to manufacture [`CreateSinkOutput`](crate::output::CreateSinkOutput).
@@ -1207,7 +1153,7 @@ impl CreateSinkOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLinkOutput {
+pub struct CreateLinkOutput  {
     /// <p>The ARN of the link that is newly created.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1228,45 +1174,41 @@ pub struct CreateLinkOutput {
     pub sink_arn: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the link.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateLinkOutput {
     /// <p>The ARN of the link that is newly created.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The label that you assigned to this link. If the <code>labelTemplate</code> includes variables, this field displays the variables resolved to their actual values.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The exact label template that you specified, with the variables not resolved.</p>
-    pub fn label_template(&self) -> std::option::Option<&str> {
+    pub fn label_template(&self) -> std::option::Option<& str> {
         self.label_template.as_deref()
     }
     /// <p>The resource types supported by this link.</p>
-    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_types(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_types.as_deref()
     }
     /// <p>The ARN of the sink that is used for this link.</p>
-    pub fn sink_arn(&self) -> std::option::Option<&str> {
+    pub fn sink_arn(&self) -> std::option::Option<& str> {
         self.sink_arn.as_deref()
     }
     /// <p>The tags assigned to the link.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateLinkOutput`](crate::output::CreateLinkOutput).
 pub mod create_link_output {
-
+    
     /// A builder for [`CreateLinkOutput`](crate::output::CreateLinkOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1276,9 +1218,7 @@ pub mod create_link_output {
         pub(crate) label_template: std::option::Option<std::string::String>,
         pub(crate) resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) sink_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ARN of the link that is newly created.</p>
@@ -1288,8 +1228,7 @@ pub mod create_link_output {
         }
         /// <p>The ARN of the link that is newly created.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1298,8 +1237,7 @@ pub mod create_link_output {
         }
         /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The label that you assigned to this link. If the <code>labelTemplate</code> includes variables, this field displays the variables resolved to their actual values.</p>
         pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1308,8 +1246,7 @@ pub mod create_link_output {
         }
         /// <p>The label that you assigned to this link. If the <code>labelTemplate</code> includes variables, this field displays the variables resolved to their actual values.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label = input;
-            self
+            self.label = input; self
         }
         /// <p>The exact label template that you specified, with the variables not resolved.</p>
         pub fn label_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1317,12 +1254,8 @@ pub mod create_link_output {
             self
         }
         /// <p>The exact label template that you specified, with the variables not resolved.</p>
-        pub fn set_label_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.label_template = input;
-            self
+        pub fn set_label_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_template = input; self
         }
         /// Appends an item to `resource_types`.
         ///
@@ -1331,17 +1264,13 @@ pub mod create_link_output {
         /// <p>The resource types supported by this link.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input.into());
-            self.resource_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_types = Some(v);
+                            self
         }
         /// <p>The resource types supported by this link.</p>
-        pub fn set_resource_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_types = input;
-            self
+        pub fn set_resource_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_types = input; self
         }
         /// <p>The ARN of the sink that is used for this link.</p>
         pub fn sink_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1350,47 +1279,45 @@ pub mod create_link_output {
         }
         /// <p>The ARN of the sink that is used for this link.</p>
         pub fn set_sink_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sink_arn = input;
-            self
+            self.sink_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the link.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags assigned to the link.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateLinkOutput`](crate::output::CreateLinkOutput).
         pub fn build(self) -> crate::output::CreateLinkOutput {
             crate::output::CreateLinkOutput {
-                arn: self.arn,
-                id: self.id,
-                label: self.label,
-                label_template: self.label_template,
-                resource_types: self.resource_types,
-                sink_arn: self.sink_arn,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                label: self.label
+                ,
+                label_template: self.label_template
+                ,
+                resource_types: self.resource_types
+                ,
+                sink_arn: self.sink_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLinkOutput {
     /// Creates a new builder-style object to manufacture [`CreateLinkOutput`](crate::output::CreateLinkOutput).
@@ -1398,3 +1325,4 @@ impl CreateLinkOutput {
         crate::output::create_link_output::Builder::default()
     }
 }
+

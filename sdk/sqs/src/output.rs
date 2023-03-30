@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagQueueOutput {}
+pub struct UntagQueueOutput  {
+}
 /// See [`UntagQueueOutput`](crate::output::UntagQueueOutput).
 pub mod untag_queue_output {
-
+    
     /// A builder for [`UntagQueueOutput`](crate::output::UntagQueueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagQueueOutput`](crate::output::UntagQueueOutput).
         pub fn build(self) -> crate::output::UntagQueueOutput {
-            crate::output::UntagQueueOutput {}
+            crate::output::UntagQueueOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagQueueOutput {
     /// Creates a new builder-style object to manufacture [`UntagQueueOutput`](crate::output::UntagQueueOutput).
@@ -26,19 +31,24 @@ impl UntagQueueOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagQueueOutput {}
+pub struct TagQueueOutput  {
+}
 /// See [`TagQueueOutput`](crate::output::TagQueueOutput).
 pub mod tag_queue_output {
-
+    
     /// A builder for [`TagQueueOutput`](crate::output::TagQueueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagQueueOutput`](crate::output::TagQueueOutput).
         pub fn build(self) -> crate::output::TagQueueOutput {
-            crate::output::TagQueueOutput {}
+            crate::output::TagQueueOutput {
+            }
         }
     }
+    
+    
 }
 impl TagQueueOutput {
     /// Creates a new builder-style object to manufacture [`TagQueueOutput`](crate::output::TagQueueOutput).
@@ -50,19 +60,24 @@ impl TagQueueOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetQueueAttributesOutput {}
+pub struct SetQueueAttributesOutput  {
+}
 /// See [`SetQueueAttributesOutput`](crate::output::SetQueueAttributesOutput).
 pub mod set_queue_attributes_output {
-
+    
     /// A builder for [`SetQueueAttributesOutput`](crate::output::SetQueueAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SetQueueAttributesOutput`](crate::output::SetQueueAttributesOutput).
         pub fn build(self) -> crate::output::SetQueueAttributesOutput {
-            crate::output::SetQueueAttributesOutput {}
+            crate::output::SetQueueAttributesOutput {
+            }
         }
     }
+    
+    
 }
 impl SetQueueAttributesOutput {
     /// Creates a new builder-style object to manufacture [`SetQueueAttributesOutput`](crate::output::SetQueueAttributesOutput).
@@ -74,7 +89,7 @@ impl SetQueueAttributesOutput {
 /// <p>For each message in the batch, the response contains a <code> <code>SendMessageBatchResultEntry</code> </code> tag if the message succeeds or a <code> <code>BatchResultErrorEntry</code> </code> tag if the message fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendMessageBatchOutput {
+pub struct SendMessageBatchOutput  {
     /// <p>A list of <code> <code>SendMessageBatchResultEntry</code> </code> items.</p>
     #[doc(hidden)]
     pub successful: std::option::Option<std::vec::Vec<crate::model::SendMessageBatchResultEntry>>,
@@ -84,22 +99,21 @@ pub struct SendMessageBatchOutput {
 }
 impl SendMessageBatchOutput {
     /// <p>A list of <code> <code>SendMessageBatchResultEntry</code> </code> items.</p>
-    pub fn successful(&self) -> std::option::Option<&[crate::model::SendMessageBatchResultEntry]> {
+    pub fn successful(&self) -> std::option::Option<& [crate::model::SendMessageBatchResultEntry]> {
         self.successful.as_deref()
     }
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items with error details about each message that can't be enqueued.</p>
-    pub fn failed(&self) -> std::option::Option<&[crate::model::BatchResultErrorEntry]> {
+    pub fn failed(&self) -> std::option::Option<& [crate::model::BatchResultErrorEntry]> {
         self.failed.as_deref()
     }
 }
 /// See [`SendMessageBatchOutput`](crate::output::SendMessageBatchOutput).
 pub mod send_message_batch_output {
-
+    
     /// A builder for [`SendMessageBatchOutput`](crate::output::SendMessageBatchOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) successful:
-            std::option::Option<std::vec::Vec<crate::model::SendMessageBatchResultEntry>>,
+        pub(crate) successful: std::option::Option<std::vec::Vec<crate::model::SendMessageBatchResultEntry>>,
         pub(crate) failed: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
     }
     impl Builder {
@@ -110,17 +124,13 @@ pub mod send_message_batch_output {
         /// <p>A list of <code> <code>SendMessageBatchResultEntry</code> </code> items.</p>
         pub fn successful(mut self, input: crate::model::SendMessageBatchResultEntry) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input);
-            self.successful = Some(v);
-            self
+                            v.push(input);
+                            self.successful = Some(v);
+                            self
         }
         /// <p>A list of <code> <code>SendMessageBatchResultEntry</code> </code> items.</p>
-        pub fn set_successful(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SendMessageBatchResultEntry>>,
-        ) -> Self {
-            self.successful = input;
-            self
+        pub fn set_successful(mut self, input: std::option::Option<std::vec::Vec<crate::model::SendMessageBatchResultEntry>>) -> Self {
+            self.successful = input; self
         }
         /// Appends an item to `failed`.
         ///
@@ -129,26 +139,26 @@ pub mod send_message_batch_output {
         /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items with error details about each message that can't be enqueued.</p>
         pub fn failed(mut self, input: crate::model::BatchResultErrorEntry) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input);
-            self.failed = Some(v);
-            self
+                            v.push(input);
+                            self.failed = Some(v);
+                            self
         }
         /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items with error details about each message that can't be enqueued.</p>
-        pub fn set_failed(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
-        ) -> Self {
-            self.failed = input;
-            self
+        pub fn set_failed(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>) -> Self {
+            self.failed = input; self
         }
         /// Consumes the builder and constructs a [`SendMessageBatchOutput`](crate::output::SendMessageBatchOutput).
         pub fn build(self) -> crate::output::SendMessageBatchOutput {
             crate::output::SendMessageBatchOutput {
-                successful: self.successful,
-                failed: self.failed,
+                successful: self.successful
+                ,
+                failed: self.failed
+                ,
             }
         }
     }
+    
+    
 }
 impl SendMessageBatchOutput {
     /// Creates a new builder-style object to manufacture [`SendMessageBatchOutput`](crate::output::SendMessageBatchOutput).
@@ -160,7 +170,7 @@ impl SendMessageBatchOutput {
 /// <p>The <code>MD5OfMessageBody</code> and <code>MessageId</code> elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendMessageOutput {
+pub struct SendMessageOutput  {
     /// <p>An MD5 digest of the non-URL-encoded message body string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
     #[doc(hidden)]
     pub md5_of_message_body: std::option::Option<std::string::String>,
@@ -173,39 +183,39 @@ pub struct SendMessageOutput {
     /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
-    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-    /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>
+    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> 
+    /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p> 
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
     #[doc(hidden)]
     pub sequence_number: std::option::Option<std::string::String>,
 }
 impl SendMessageOutput {
     /// <p>An MD5 digest of the non-URL-encoded message body string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
-    pub fn md5_of_message_body(&self) -> std::option::Option<&str> {
+    pub fn md5_of_message_body(&self) -> std::option::Option<& str> {
         self.md5_of_message_body.as_deref()
     }
     /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
-    pub fn md5_of_message_attributes(&self) -> std::option::Option<&str> {
+    pub fn md5_of_message_attributes(&self) -> std::option::Option<& str> {
         self.md5_of_message_attributes.as_deref()
     }
     /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
-    pub fn md5_of_message_system_attributes(&self) -> std::option::Option<&str> {
+    pub fn md5_of_message_system_attributes(&self) -> std::option::Option<& str> {
         self.md5_of_message_system_attributes.as_deref()
     }
     /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
-    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-    /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>
+    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> 
+    /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p> 
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
-    pub fn sequence_number(&self) -> std::option::Option<&str> {
+    pub fn sequence_number(&self) -> std::option::Option<& str> {
         self.sequence_number.as_deref()
     }
 }
 /// See [`SendMessageOutput`](crate::output::SendMessageOutput).
 pub mod send_message_output {
-
+    
     /// A builder for [`SendMessageOutput`](crate::output::SendMessageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -222,12 +232,8 @@ pub mod send_message_output {
             self
         }
         /// <p>An MD5 digest of the non-URL-encoded message body string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
-        pub fn set_md5_of_message_body(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.md5_of_message_body = input;
-            self
+        pub fn set_md5_of_message_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.md5_of_message_body = input; self
         }
         /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
         pub fn md5_of_message_attributes(mut self, input: impl Into<std::string::String>) -> Self {
@@ -235,28 +241,17 @@ pub mod send_message_output {
             self
         }
         /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
-        pub fn set_md5_of_message_attributes(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.md5_of_message_attributes = input;
-            self
+        pub fn set_md5_of_message_attributes(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.md5_of_message_attributes = input; self
         }
         /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
-        pub fn md5_of_message_system_attributes(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn md5_of_message_system_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             self.md5_of_message_system_attributes = Some(input.into());
             self
         }
         /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
-        pub fn set_md5_of_message_system_attributes(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.md5_of_message_system_attributes = input;
-            self
+        pub fn set_md5_of_message_system_attributes(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.md5_of_message_system_attributes = input; self
         }
         /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -265,37 +260,39 @@ pub mod send_message_output {
         }
         /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_id = input;
-            self
+            self.message_id = input; self
         }
-        /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-        /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>
+        /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> 
+        /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p> 
         /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
         pub fn sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.sequence_number = Some(input.into());
             self
         }
-        /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-        /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>
+        /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> 
+        /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p> 
         /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
-        pub fn set_sequence_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sequence_number = input;
-            self
+        pub fn set_sequence_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sequence_number = input; self
         }
         /// Consumes the builder and constructs a [`SendMessageOutput`](crate::output::SendMessageOutput).
         pub fn build(self) -> crate::output::SendMessageOutput {
             crate::output::SendMessageOutput {
-                md5_of_message_body: self.md5_of_message_body,
-                md5_of_message_attributes: self.md5_of_message_attributes,
-                md5_of_message_system_attributes: self.md5_of_message_system_attributes,
-                message_id: self.message_id,
-                sequence_number: self.sequence_number,
+                md5_of_message_body: self.md5_of_message_body
+                ,
+                md5_of_message_attributes: self.md5_of_message_attributes
+                ,
+                md5_of_message_system_attributes: self.md5_of_message_system_attributes
+                ,
+                message_id: self.message_id
+                ,
+                sequence_number: self.sequence_number
+                ,
             }
         }
     }
+    
+    
 }
 impl SendMessageOutput {
     /// Creates a new builder-style object to manufacture [`SendMessageOutput`](crate::output::SendMessageOutput).
@@ -307,19 +304,24 @@ impl SendMessageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemovePermissionOutput {}
+pub struct RemovePermissionOutput  {
+}
 /// See [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
 pub mod remove_permission_output {
-
+    
     /// A builder for [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
         pub fn build(self) -> crate::output::RemovePermissionOutput {
-            crate::output::RemovePermissionOutput {}
+            crate::output::RemovePermissionOutput {
+            }
         }
     }
+    
+    
 }
 impl RemovePermissionOutput {
     /// Creates a new builder-style object to manufacture [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
@@ -331,20 +333,20 @@ impl RemovePermissionOutput {
 /// <p>A list of received messages.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReceiveMessageOutput {
+pub struct ReceiveMessageOutput  {
     /// <p>A list of messages.</p>
     #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
 }
 impl ReceiveMessageOutput {
     /// <p>A list of messages.</p>
-    pub fn messages(&self) -> std::option::Option<&[crate::model::Message]> {
+    pub fn messages(&self) -> std::option::Option<& [crate::model::Message]> {
         self.messages.as_deref()
     }
 }
 /// See [`ReceiveMessageOutput`](crate::output::ReceiveMessageOutput).
 pub mod receive_message_output {
-
+    
     /// A builder for [`ReceiveMessageOutput`](crate::output::ReceiveMessageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -358,25 +360,24 @@ pub mod receive_message_output {
         /// <p>A list of messages.</p>
         pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input);
-            self.messages = Some(v);
-            self
+                            v.push(input);
+                            self.messages = Some(v);
+                            self
         }
         /// <p>A list of messages.</p>
-        pub fn set_messages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Message>>,
-        ) -> Self {
-            self.messages = input;
-            self
+        pub fn set_messages(mut self, input: std::option::Option<std::vec::Vec<crate::model::Message>>) -> Self {
+            self.messages = input; self
         }
         /// Consumes the builder and constructs a [`ReceiveMessageOutput`](crate::output::ReceiveMessageOutput).
         pub fn build(self) -> crate::output::ReceiveMessageOutput {
             crate::output::ReceiveMessageOutput {
-                messages: self.messages,
+                messages: self.messages
+                ,
             }
         }
     }
+    
+    
 }
 impl ReceiveMessageOutput {
     /// Creates a new builder-style object to manufacture [`ReceiveMessageOutput`](crate::output::ReceiveMessageOutput).
@@ -388,19 +389,24 @@ impl ReceiveMessageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PurgeQueueOutput {}
+pub struct PurgeQueueOutput  {
+}
 /// See [`PurgeQueueOutput`](crate::output::PurgeQueueOutput).
 pub mod purge_queue_output {
-
+    
     /// A builder for [`PurgeQueueOutput`](crate::output::PurgeQueueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PurgeQueueOutput`](crate::output::PurgeQueueOutput).
         pub fn build(self) -> crate::output::PurgeQueueOutput {
-            crate::output::PurgeQueueOutput {}
+            crate::output::PurgeQueueOutput {
+            }
         }
     }
+    
+    
 }
 impl PurgeQueueOutput {
     /// Creates a new builder-style object to manufacture [`PurgeQueueOutput`](crate::output::PurgeQueueOutput).
@@ -412,30 +418,24 @@ impl PurgeQueueOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListQueueTagsOutput {
+pub struct ListQueueTagsOutput  {
     /// <p>The list of all tags added to the specified queue.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListQueueTagsOutput {
     /// <p>The list of all tags added to the specified queue.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListQueueTagsOutput`](crate::output::ListQueueTagsOutput).
 pub mod list_queue_tags_output {
-
+    
     /// A builder for [`ListQueueTagsOutput`](crate::output::ListQueueTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -443,31 +443,26 @@ pub mod list_queue_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of all tags added to the specified queue.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of all tags added to the specified queue.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListQueueTagsOutput`](crate::output::ListQueueTagsOutput).
         pub fn build(self) -> crate::output::ListQueueTagsOutput {
-            crate::output::ListQueueTagsOutput { tags: self.tags }
+            crate::output::ListQueueTagsOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListQueueTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListQueueTagsOutput`](crate::output::ListQueueTagsOutput).
@@ -479,7 +474,7 @@ impl ListQueueTagsOutput {
 /// <p>A list of your queues.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListQueuesOutput {
+pub struct ListQueuesOutput  {
     /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -489,17 +484,17 @@ pub struct ListQueuesOutput {
 }
 impl ListQueuesOutput {
     /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.</p>
-    pub fn queue_urls(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn queue_urls(&self) -> std::option::Option<& [std::string::String]> {
         self.queue_urls.as_deref()
     }
 }
 /// See [`ListQueuesOutput`](crate::output::ListQueuesOutput).
 pub mod list_queues_output {
-
+    
     /// A builder for [`ListQueuesOutput`](crate::output::ListQueuesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -514,8 +509,7 @@ pub mod list_queues_output {
         }
         /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `queue_urls`.
         ///
@@ -524,26 +518,26 @@ pub mod list_queues_output {
         /// <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.</p>
         pub fn queue_urls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queue_urls.unwrap_or_default();
-            v.push(input.into());
-            self.queue_urls = Some(v);
-            self
+                            v.push(input.into());
+                            self.queue_urls = Some(v);
+                            self
         }
         /// <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.</p>
-        pub fn set_queue_urls(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.queue_urls = input;
-            self
+        pub fn set_queue_urls(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.queue_urls = input; self
         }
         /// Consumes the builder and constructs a [`ListQueuesOutput`](crate::output::ListQueuesOutput).
         pub fn build(self) -> crate::output::ListQueuesOutput {
             crate::output::ListQueuesOutput {
-                next_token: self.next_token,
-                queue_urls: self.queue_urls,
+                next_token: self.next_token
+                ,
+                queue_urls: self.queue_urls
+                ,
             }
         }
     }
+    
+    
 }
 impl ListQueuesOutput {
     /// Creates a new builder-style object to manufacture [`ListQueuesOutput`](crate::output::ListQueuesOutput).
@@ -555,7 +549,7 @@ impl ListQueuesOutput {
 /// <p>A list of your dead letter source queues.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeadLetterSourceQueuesOutput {
+pub struct ListDeadLetterSourceQueuesOutput  {
     /// <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue attribute configured with a dead-letter queue.</p>
     #[doc(hidden)]
     pub queue_urls: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -565,17 +559,17 @@ pub struct ListDeadLetterSourceQueuesOutput {
 }
 impl ListDeadLetterSourceQueuesOutput {
     /// <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue attribute configured with a dead-letter queue.</p>
-    pub fn queue_urls(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn queue_urls(&self) -> std::option::Option<& [std::string::String]> {
         self.queue_urls.as_deref()
     }
     /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDeadLetterSourceQueuesOutput`](crate::output::ListDeadLetterSourceQueuesOutput).
 pub mod list_dead_letter_source_queues_output {
-
+    
     /// A builder for [`ListDeadLetterSourceQueuesOutput`](crate::output::ListDeadLetterSourceQueuesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -590,17 +584,13 @@ pub mod list_dead_letter_source_queues_output {
         /// <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue attribute configured with a dead-letter queue.</p>
         pub fn queue_urls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queue_urls.unwrap_or_default();
-            v.push(input.into());
-            self.queue_urls = Some(v);
-            self
+                            v.push(input.into());
+                            self.queue_urls = Some(v);
+                            self
         }
         /// <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue attribute configured with a dead-letter queue.</p>
-        pub fn set_queue_urls(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.queue_urls = input;
-            self
+        pub fn set_queue_urls(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.queue_urls = input; self
         }
         /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -609,17 +599,20 @@ pub mod list_dead_letter_source_queues_output {
         }
         /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDeadLetterSourceQueuesOutput`](crate::output::ListDeadLetterSourceQueuesOutput).
         pub fn build(self) -> crate::output::ListDeadLetterSourceQueuesOutput {
             crate::output::ListDeadLetterSourceQueuesOutput {
-                queue_urls: self.queue_urls,
-                next_token: self.next_token,
+                queue_urls: self.queue_urls
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDeadLetterSourceQueuesOutput {
     /// Creates a new builder-style object to manufacture [`ListDeadLetterSourceQueuesOutput`](crate::output::ListDeadLetterSourceQueuesOutput).
@@ -631,20 +624,20 @@ impl ListDeadLetterSourceQueuesOutput {
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-responses.html">Interpreting Responses</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetQueueUrlOutput {
+pub struct GetQueueUrlOutput  {
     /// <p>The URL of the queue.</p>
     #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
 }
 impl GetQueueUrlOutput {
     /// <p>The URL of the queue.</p>
-    pub fn queue_url(&self) -> std::option::Option<&str> {
+    pub fn queue_url(&self) -> std::option::Option<& str> {
         self.queue_url.as_deref()
     }
 }
 /// See [`GetQueueUrlOutput`](crate::output::GetQueueUrlOutput).
 pub mod get_queue_url_output {
-
+    
     /// A builder for [`GetQueueUrlOutput`](crate::output::GetQueueUrlOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -658,16 +651,18 @@ pub mod get_queue_url_output {
         }
         /// <p>The URL of the queue.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = input;
-            self
+            self.queue_url = input; self
         }
         /// Consumes the builder and constructs a [`GetQueueUrlOutput`](crate::output::GetQueueUrlOutput).
         pub fn build(self) -> crate::output::GetQueueUrlOutput {
             crate::output::GetQueueUrlOutput {
-                queue_url: self.queue_url,
+                queue_url: self.queue_url
+                ,
             }
         }
     }
+    
+    
 }
 impl GetQueueUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetQueueUrlOutput`](crate::output::GetQueueUrlOutput).
@@ -679,32 +674,24 @@ impl GetQueueUrlOutput {
 /// <p>A list of returned queue attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetQueueAttributesOutput {
+pub struct GetQueueAttributesOutput  {
     /// <p>A map of attributes to their respective values.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<
-        std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>,
-    >,
+    pub attributes: std::option::Option<std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>>,
 }
 impl GetQueueAttributesOutput {
     /// <p>A map of attributes to their respective values.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>,
-    > {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>> {
         self.attributes.as_ref()
     }
 }
 /// See [`GetQueueAttributesOutput`](crate::output::GetQueueAttributesOutput).
 pub mod get_queue_attributes_output {
-
+    
     /// A builder for [`GetQueueAttributesOutput`](crate::output::GetQueueAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `attributes`.
@@ -712,33 +699,26 @@ pub mod get_queue_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>A map of attributes to their respective values.</p>
-        pub fn attributes(
-            mut self,
-            k: crate::model::QueueAttributeName,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn attributes(mut self, k: crate::model::QueueAttributeName, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k, v.into());
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k, v.into());
+                            self.attributes = Some(hash_map);
+                            self
         }
         /// <p>A map of attributes to their respective values.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`GetQueueAttributesOutput`](crate::output::GetQueueAttributesOutput).
         pub fn build(self) -> crate::output::GetQueueAttributesOutput {
             crate::output::GetQueueAttributesOutput {
-                attributes: self.attributes,
+                attributes: self.attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl GetQueueAttributesOutput {
     /// Creates a new builder-style object to manufacture [`GetQueueAttributesOutput`](crate::output::GetQueueAttributesOutput).
@@ -750,19 +730,24 @@ impl GetQueueAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteQueueOutput {}
+pub struct DeleteQueueOutput  {
+}
 /// See [`DeleteQueueOutput`](crate::output::DeleteQueueOutput).
 pub mod delete_queue_output {
-
+    
     /// A builder for [`DeleteQueueOutput`](crate::output::DeleteQueueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteQueueOutput`](crate::output::DeleteQueueOutput).
         pub fn build(self) -> crate::output::DeleteQueueOutput {
-            crate::output::DeleteQueueOutput {}
+            crate::output::DeleteQueueOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteQueueOutput {
     /// Creates a new builder-style object to manufacture [`DeleteQueueOutput`](crate::output::DeleteQueueOutput).
@@ -774,7 +759,7 @@ impl DeleteQueueOutput {
 /// <p>For each message in the batch, the response contains a <code> <code>DeleteMessageBatchResultEntry</code> </code> tag if the message is deleted or a <code> <code>BatchResultErrorEntry</code> </code> tag if the message can't be deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMessageBatchOutput {
+pub struct DeleteMessageBatchOutput  {
     /// <p>A list of <code> <code>DeleteMessageBatchResultEntry</code> </code> items.</p>
     #[doc(hidden)]
     pub successful: std::option::Option<std::vec::Vec<crate::model::DeleteMessageBatchResultEntry>>,
@@ -784,24 +769,21 @@ pub struct DeleteMessageBatchOutput {
 }
 impl DeleteMessageBatchOutput {
     /// <p>A list of <code> <code>DeleteMessageBatchResultEntry</code> </code> items.</p>
-    pub fn successful(
-        &self,
-    ) -> std::option::Option<&[crate::model::DeleteMessageBatchResultEntry]> {
+    pub fn successful(&self) -> std::option::Option<& [crate::model::DeleteMessageBatchResultEntry]> {
         self.successful.as_deref()
     }
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
-    pub fn failed(&self) -> std::option::Option<&[crate::model::BatchResultErrorEntry]> {
+    pub fn failed(&self) -> std::option::Option<& [crate::model::BatchResultErrorEntry]> {
         self.failed.as_deref()
     }
 }
 /// See [`DeleteMessageBatchOutput`](crate::output::DeleteMessageBatchOutput).
 pub mod delete_message_batch_output {
-
+    
     /// A builder for [`DeleteMessageBatchOutput`](crate::output::DeleteMessageBatchOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) successful:
-            std::option::Option<std::vec::Vec<crate::model::DeleteMessageBatchResultEntry>>,
+        pub(crate) successful: std::option::Option<std::vec::Vec<crate::model::DeleteMessageBatchResultEntry>>,
         pub(crate) failed: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
     }
     impl Builder {
@@ -812,17 +794,13 @@ pub mod delete_message_batch_output {
         /// <p>A list of <code> <code>DeleteMessageBatchResultEntry</code> </code> items.</p>
         pub fn successful(mut self, input: crate::model::DeleteMessageBatchResultEntry) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input);
-            self.successful = Some(v);
-            self
+                            v.push(input);
+                            self.successful = Some(v);
+                            self
         }
         /// <p>A list of <code> <code>DeleteMessageBatchResultEntry</code> </code> items.</p>
-        pub fn set_successful(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeleteMessageBatchResultEntry>>,
-        ) -> Self {
-            self.successful = input;
-            self
+        pub fn set_successful(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeleteMessageBatchResultEntry>>) -> Self {
+            self.successful = input; self
         }
         /// Appends an item to `failed`.
         ///
@@ -831,26 +809,26 @@ pub mod delete_message_batch_output {
         /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
         pub fn failed(mut self, input: crate::model::BatchResultErrorEntry) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input);
-            self.failed = Some(v);
-            self
+                            v.push(input);
+                            self.failed = Some(v);
+                            self
         }
         /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
-        pub fn set_failed(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
-        ) -> Self {
-            self.failed = input;
-            self
+        pub fn set_failed(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>) -> Self {
+            self.failed = input; self
         }
         /// Consumes the builder and constructs a [`DeleteMessageBatchOutput`](crate::output::DeleteMessageBatchOutput).
         pub fn build(self) -> crate::output::DeleteMessageBatchOutput {
             crate::output::DeleteMessageBatchOutput {
-                successful: self.successful,
-                failed: self.failed,
+                successful: self.successful
+                ,
+                failed: self.failed
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteMessageBatchOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMessageBatchOutput`](crate::output::DeleteMessageBatchOutput).
@@ -862,19 +840,24 @@ impl DeleteMessageBatchOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMessageOutput {}
+pub struct DeleteMessageOutput  {
+}
 /// See [`DeleteMessageOutput`](crate::output::DeleteMessageOutput).
 pub mod delete_message_output {
-
+    
     /// A builder for [`DeleteMessageOutput`](crate::output::DeleteMessageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMessageOutput`](crate::output::DeleteMessageOutput).
         pub fn build(self) -> crate::output::DeleteMessageOutput {
-            crate::output::DeleteMessageOutput {}
+            crate::output::DeleteMessageOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteMessageOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMessageOutput`](crate::output::DeleteMessageOutput).
@@ -886,20 +869,20 @@ impl DeleteMessageOutput {
 /// <p>Returns the <code>QueueUrl</code> attribute of the created queue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateQueueOutput {
+pub struct CreateQueueOutput  {
     /// <p>The URL of the created Amazon SQS queue.</p>
     #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
 }
 impl CreateQueueOutput {
     /// <p>The URL of the created Amazon SQS queue.</p>
-    pub fn queue_url(&self) -> std::option::Option<&str> {
+    pub fn queue_url(&self) -> std::option::Option<& str> {
         self.queue_url.as_deref()
     }
 }
 /// See [`CreateQueueOutput`](crate::output::CreateQueueOutput).
 pub mod create_queue_output {
-
+    
     /// A builder for [`CreateQueueOutput`](crate::output::CreateQueueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -913,16 +896,18 @@ pub mod create_queue_output {
         }
         /// <p>The URL of the created Amazon SQS queue.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.queue_url = input;
-            self
+            self.queue_url = input; self
         }
         /// Consumes the builder and constructs a [`CreateQueueOutput`](crate::output::CreateQueueOutput).
         pub fn build(self) -> crate::output::CreateQueueOutput {
             crate::output::CreateQueueOutput {
-                queue_url: self.queue_url,
+                queue_url: self.queue_url
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateQueueOutput {
     /// Creates a new builder-style object to manufacture [`CreateQueueOutput`](crate::output::CreateQueueOutput).
@@ -934,36 +919,31 @@ impl CreateQueueOutput {
 /// <p>For each message in the batch, the response contains a <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> tag if the message succeeds or a <code> <code>BatchResultErrorEntry</code> </code> tag if the message fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChangeMessageVisibilityBatchOutput {
+pub struct ChangeMessageVisibilityBatchOutput  {
     /// <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
     #[doc(hidden)]
-    pub successful:
-        std::option::Option<std::vec::Vec<crate::model::ChangeMessageVisibilityBatchResultEntry>>,
+    pub successful: std::option::Option<std::vec::Vec<crate::model::ChangeMessageVisibilityBatchResultEntry>>,
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
     #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
 }
 impl ChangeMessageVisibilityBatchOutput {
     /// <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
-    pub fn successful(
-        &self,
-    ) -> std::option::Option<&[crate::model::ChangeMessageVisibilityBatchResultEntry]> {
+    pub fn successful(&self) -> std::option::Option<& [crate::model::ChangeMessageVisibilityBatchResultEntry]> {
         self.successful.as_deref()
     }
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
-    pub fn failed(&self) -> std::option::Option<&[crate::model::BatchResultErrorEntry]> {
+    pub fn failed(&self) -> std::option::Option<& [crate::model::BatchResultErrorEntry]> {
         self.failed.as_deref()
     }
 }
 /// See [`ChangeMessageVisibilityBatchOutput`](crate::output::ChangeMessageVisibilityBatchOutput).
 pub mod change_message_visibility_batch_output {
-
+    
     /// A builder for [`ChangeMessageVisibilityBatchOutput`](crate::output::ChangeMessageVisibilityBatchOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) successful: std::option::Option<
-            std::vec::Vec<crate::model::ChangeMessageVisibilityBatchResultEntry>,
-        >,
+        pub(crate) successful: std::option::Option<std::vec::Vec<crate::model::ChangeMessageVisibilityBatchResultEntry>>,
         pub(crate) failed: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
     }
     impl Builder {
@@ -972,24 +952,15 @@ pub mod change_message_visibility_batch_output {
         /// To override the contents of this collection use [`set_successful`](Self::set_successful).
         ///
         /// <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
-        pub fn successful(
-            mut self,
-            input: crate::model::ChangeMessageVisibilityBatchResultEntry,
-        ) -> Self {
+        pub fn successful(mut self, input: crate::model::ChangeMessageVisibilityBatchResultEntry) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input);
-            self.successful = Some(v);
-            self
+                            v.push(input);
+                            self.successful = Some(v);
+                            self
         }
         /// <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
-        pub fn set_successful(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ChangeMessageVisibilityBatchResultEntry>,
-            >,
-        ) -> Self {
-            self.successful = input;
-            self
+        pub fn set_successful(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChangeMessageVisibilityBatchResultEntry>>) -> Self {
+            self.successful = input; self
         }
         /// Appends an item to `failed`.
         ///
@@ -998,26 +969,26 @@ pub mod change_message_visibility_batch_output {
         /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
         pub fn failed(mut self, input: crate::model::BatchResultErrorEntry) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input);
-            self.failed = Some(v);
-            self
+                            v.push(input);
+                            self.failed = Some(v);
+                            self
         }
         /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
-        pub fn set_failed(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
-        ) -> Self {
-            self.failed = input;
-            self
+        pub fn set_failed(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>) -> Self {
+            self.failed = input; self
         }
         /// Consumes the builder and constructs a [`ChangeMessageVisibilityBatchOutput`](crate::output::ChangeMessageVisibilityBatchOutput).
         pub fn build(self) -> crate::output::ChangeMessageVisibilityBatchOutput {
             crate::output::ChangeMessageVisibilityBatchOutput {
-                successful: self.successful,
-                failed: self.failed,
+                successful: self.successful
+                ,
+                failed: self.failed
+                ,
             }
         }
     }
+    
+    
 }
 impl ChangeMessageVisibilityBatchOutput {
     /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityBatchOutput`](crate::output::ChangeMessageVisibilityBatchOutput).
@@ -1029,19 +1000,24 @@ impl ChangeMessageVisibilityBatchOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChangeMessageVisibilityOutput {}
+pub struct ChangeMessageVisibilityOutput  {
+}
 /// See [`ChangeMessageVisibilityOutput`](crate::output::ChangeMessageVisibilityOutput).
 pub mod change_message_visibility_output {
-
+    
     /// A builder for [`ChangeMessageVisibilityOutput`](crate::output::ChangeMessageVisibilityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ChangeMessageVisibilityOutput`](crate::output::ChangeMessageVisibilityOutput).
         pub fn build(self) -> crate::output::ChangeMessageVisibilityOutput {
-            crate::output::ChangeMessageVisibilityOutput {}
+            crate::output::ChangeMessageVisibilityOutput {
+            }
         }
     }
+    
+    
 }
 impl ChangeMessageVisibilityOutput {
     /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityOutput`](crate::output::ChangeMessageVisibilityOutput).
@@ -1053,19 +1029,24 @@ impl ChangeMessageVisibilityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddPermissionOutput {}
+pub struct AddPermissionOutput  {
+}
 /// See [`AddPermissionOutput`](crate::output::AddPermissionOutput).
 pub mod add_permission_output {
-
+    
     /// A builder for [`AddPermissionOutput`](crate::output::AddPermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddPermissionOutput`](crate::output::AddPermissionOutput).
         pub fn build(self) -> crate::output::AddPermissionOutput {
-            crate::output::AddPermissionOutput {}
+            crate::output::AddPermissionOutput {
+            }
         }
     }
+    
+    
 }
 impl AddPermissionOutput {
     /// Creates a new builder-style object to manufacture [`AddPermissionOutput`](crate::output::AddPermissionOutput).
@@ -1073,3 +1054,4 @@ impl AddPermissionOutput {
         crate::output::add_permission_output::Builder::default()
     }
 }
+

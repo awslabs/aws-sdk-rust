@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -32,22 +32,14 @@
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Group,
@@ -58,7 +50,7 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     User,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
@@ -67,17 +59,17 @@ impl std::convert::From<&str> for ResourceType {
             "GROUP_MEMBERSHIP" => ResourceType::GroupMembership,
             "IDENTITY_STORE" => ResourceType::IdentityStore,
             "USER" => ResourceType::User,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -86,12 +78,14 @@ impl ResourceType {
             ResourceType::GroupMembership => "GROUP_MEMBERSHIP",
             ResourceType::IdentityStore => "IDENTITY_STORE",
             ResourceType::User => "USER",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GROUP", "GROUP_MEMBERSHIP", "IDENTITY_STORE", "USER"]
+        &[
+            "GROUP", "GROUP_MEMBERSHIP", "IDENTITY_STORE", "USER"
+        ]
     }
 }
 impl AsRef<str> for ResourceType {
@@ -103,7 +97,7 @@ impl AsRef<str> for ResourceType {
 /// <p>A user object that contains a specified user’s metadata and attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct User {
+pub struct User  {
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
@@ -155,71 +149,71 @@ pub struct User {
 }
 impl User {
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The identifier for a user in the identity store.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    pub fn external_ids(&self) -> std::option::Option<&[crate::model::ExternalId]> {
+    pub fn external_ids(&self) -> std::option::Option<& [crate::model::ExternalId]> {
         self.external_ids.as_deref()
     }
     /// <p>An object containing the user's name.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::Name> {
+    pub fn name(&self) -> std::option::Option<& crate::model::Name> {
         self.name.as_ref()
     }
     /// <p>A string containing the user's name that's formatted for display when the user is referenced. For example, "John Doe."</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A string containing an alternate name for the user.</p>
-    pub fn nick_name(&self) -> std::option::Option<&str> {
+    pub fn nick_name(&self) -> std::option::Option<& str> {
         self.nick_name.as_deref()
     }
     /// <p>A string containing a URL that may be associated with the user.</p>
-    pub fn profile_url(&self) -> std::option::Option<&str> {
+    pub fn profile_url(&self) -> std::option::Option<& str> {
         self.profile_url.as_deref()
     }
     /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
-    pub fn emails(&self) -> std::option::Option<&[crate::model::Email]> {
+    pub fn emails(&self) -> std::option::Option<& [crate::model::Email]> {
         self.emails.as_deref()
     }
     /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
-    pub fn addresses(&self) -> std::option::Option<&[crate::model::Address]> {
+    pub fn addresses(&self) -> std::option::Option<& [crate::model::Address]> {
         self.addresses.as_deref()
     }
     /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
-    pub fn phone_numbers(&self) -> std::option::Option<&[crate::model::PhoneNumber]> {
+    pub fn phone_numbers(&self) -> std::option::Option<& [crate::model::PhoneNumber]> {
         self.phone_numbers.as_deref()
     }
     /// <p>A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left unspecified.</p>
-    pub fn user_type(&self) -> std::option::Option<&str> {
+    pub fn user_type(&self) -> std::option::Option<& str> {
         self.user_type.as_deref()
     }
     /// <p>A string containing the user's title. Possible values depend on each customer's specific needs, so they are left unspecified.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
-    pub fn preferred_language(&self) -> std::option::Option<&str> {
+    pub fn preferred_language(&self) -> std::option::Option<& str> {
         self.preferred_language.as_deref()
     }
     /// <p>A string containing the user's geographical region or location.</p>
-    pub fn locale(&self) -> std::option::Option<&str> {
+    pub fn locale(&self) -> std::option::Option<& str> {
         self.locale.as_deref()
     }
     /// <p>A string containing the user's time zone.</p>
-    pub fn timezone(&self) -> std::option::Option<&str> {
+    pub fn timezone(&self) -> std::option::Option<& str> {
         self.timezone.as_deref()
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> std::option::Option<& str> {
         self.identity_store_id.as_deref()
     }
 }
-impl std::fmt::Debug for User {
+impl  std::fmt::Debug for User  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("User");
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");
@@ -243,7 +237,7 @@ impl std::fmt::Debug for User {
 }
 /// See [`User`](crate::model::User).
 pub mod user {
-
+    
     /// A builder for [`User`](crate::model::User).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -272,8 +266,7 @@ pub mod user {
         }
         /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_name = input;
-            self
+            self.user_name = input; self
         }
         /// <p>The identifier for a user in the identity store.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -282,8 +275,7 @@ pub mod user {
         }
         /// <p>The identifier for a user in the identity store.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
         /// Appends an item to `external_ids`.
         ///
@@ -292,17 +284,13 @@ pub mod user {
         /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
         pub fn external_ids(mut self, input: crate::model::ExternalId) -> Self {
             let mut v = self.external_ids.unwrap_or_default();
-            v.push(input);
-            self.external_ids = Some(v);
-            self
+                            v.push(input);
+                            self.external_ids = Some(v);
+                            self
         }
         /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-        pub fn set_external_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExternalId>>,
-        ) -> Self {
-            self.external_ids = input;
-            self
+        pub fn set_external_ids(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExternalId>>) -> Self {
+            self.external_ids = input; self
         }
         /// <p>An object containing the user's name.</p>
         pub fn name(mut self, input: crate::model::Name) -> Self {
@@ -311,8 +299,7 @@ pub mod user {
         }
         /// <p>An object containing the user's name.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::Name>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A string containing the user's name that's formatted for display when the user is referenced. For example, "John Doe."</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -321,8 +308,7 @@ pub mod user {
         }
         /// <p>A string containing the user's name that's formatted for display when the user is referenced. For example, "John Doe."</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>A string containing an alternate name for the user.</p>
         pub fn nick_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -331,8 +317,7 @@ pub mod user {
         }
         /// <p>A string containing an alternate name for the user.</p>
         pub fn set_nick_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.nick_name = input;
-            self
+            self.nick_name = input; self
         }
         /// <p>A string containing a URL that may be associated with the user.</p>
         pub fn profile_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -341,8 +326,7 @@ pub mod user {
         }
         /// <p>A string containing a URL that may be associated with the user.</p>
         pub fn set_profile_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.profile_url = input;
-            self
+            self.profile_url = input; self
         }
         /// Appends an item to `emails`.
         ///
@@ -351,17 +335,13 @@ pub mod user {
         /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
         pub fn emails(mut self, input: crate::model::Email) -> Self {
             let mut v = self.emails.unwrap_or_default();
-            v.push(input);
-            self.emails = Some(v);
-            self
+                            v.push(input);
+                            self.emails = Some(v);
+                            self
         }
         /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
-        pub fn set_emails(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Email>>,
-        ) -> Self {
-            self.emails = input;
-            self
+        pub fn set_emails(mut self, input: std::option::Option<std::vec::Vec<crate::model::Email>>) -> Self {
+            self.emails = input; self
         }
         /// Appends an item to `addresses`.
         ///
@@ -370,17 +350,13 @@ pub mod user {
         /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
         pub fn addresses(mut self, input: crate::model::Address) -> Self {
             let mut v = self.addresses.unwrap_or_default();
-            v.push(input);
-            self.addresses = Some(v);
-            self
+                            v.push(input);
+                            self.addresses = Some(v);
+                            self
         }
         /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
-        pub fn set_addresses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Address>>,
-        ) -> Self {
-            self.addresses = input;
-            self
+        pub fn set_addresses(mut self, input: std::option::Option<std::vec::Vec<crate::model::Address>>) -> Self {
+            self.addresses = input; self
         }
         /// Appends an item to `phone_numbers`.
         ///
@@ -389,17 +365,13 @@ pub mod user {
         /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
         pub fn phone_numbers(mut self, input: crate::model::PhoneNumber) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(input);
-            self.phone_numbers = Some(v);
-            self
+                            v.push(input);
+                            self.phone_numbers = Some(v);
+                            self
         }
         /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
-        pub fn set_phone_numbers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
-        ) -> Self {
-            self.phone_numbers = input;
-            self
+        pub fn set_phone_numbers(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>) -> Self {
+            self.phone_numbers = input; self
         }
         /// <p>A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left unspecified.</p>
         pub fn user_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -408,8 +380,7 @@ pub mod user {
         }
         /// <p>A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left unspecified.</p>
         pub fn set_user_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_type = input;
-            self
+            self.user_type = input; self
         }
         /// <p>A string containing the user's title. Possible values depend on each customer's specific needs, so they are left unspecified.</p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -418,8 +389,7 @@ pub mod user {
         }
         /// <p>A string containing the user's title. Possible values depend on each customer's specific needs, so they are left unspecified.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.title = input;
-            self
+            self.title = input; self
         }
         /// <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
         pub fn preferred_language(mut self, input: impl Into<std::string::String>) -> Self {
@@ -427,12 +397,8 @@ pub mod user {
             self
         }
         /// <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
-        pub fn set_preferred_language(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.preferred_language = input;
-            self
+        pub fn set_preferred_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.preferred_language = input; self
         }
         /// <p>A string containing the user's geographical region or location.</p>
         pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
@@ -441,8 +407,7 @@ pub mod user {
         }
         /// <p>A string containing the user's geographical region or location.</p>
         pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale = input;
-            self
+            self.locale = input; self
         }
         /// <p>A string containing the user's time zone.</p>
         pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -451,8 +416,7 @@ pub mod user {
         }
         /// <p>A string containing the user's time zone.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.timezone = input;
-            self
+            self.timezone = input; self
         }
         /// <p>The globally unique identifier for the identity store.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -460,32 +424,44 @@ pub mod user {
             self
         }
         /// <p>The globally unique identifier for the identity store.</p>
-        pub fn set_identity_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_store_id = input;
-            self
+        pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_store_id = input; self
         }
         /// Consumes the builder and constructs a [`User`](crate::model::User).
         pub fn build(self) -> crate::model::User {
             crate::model::User {
-                user_name: self.user_name,
-                user_id: self.user_id,
-                external_ids: self.external_ids,
-                name: self.name,
-                display_name: self.display_name,
-                nick_name: self.nick_name,
-                profile_url: self.profile_url,
-                emails: self.emails,
-                addresses: self.addresses,
-                phone_numbers: self.phone_numbers,
-                user_type: self.user_type,
-                title: self.title,
-                preferred_language: self.preferred_language,
-                locale: self.locale,
-                timezone: self.timezone,
-                identity_store_id: self.identity_store_id,
+                user_name: self.user_name
+                ,
+                user_id: self.user_id
+                ,
+                external_ids: self.external_ids
+                ,
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
+                nick_name: self.nick_name
+                ,
+                profile_url: self.profile_url
+                ,
+                emails: self.emails
+                ,
+                addresses: self.addresses
+                ,
+                phone_numbers: self.phone_numbers
+                ,
+                user_type: self.user_type
+                ,
+                title: self.title
+                ,
+                preferred_language: self.preferred_language
+                ,
+                locale: self.locale
+                ,
+                timezone: self.timezone
+                ,
+                identity_store_id: self.identity_store_id
+                ,
             }
         }
     }
@@ -511,6 +487,8 @@ pub mod user {
             formatter.finish()
         }
     }
+    
+    
 }
 impl User {
     /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
@@ -522,7 +500,7 @@ impl User {
 /// <p>The phone number associated with the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PhoneNumber {
+pub struct PhoneNumber  {
     /// <p>A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
@@ -535,11 +513,11 @@ pub struct PhoneNumber {
 }
 impl PhoneNumber {
     /// <p>A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>A string representing the type of a phone number. For example, "Mobile."</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>A Boolean value representing whether this is the primary phone number for the associated resource.</p>
@@ -547,7 +525,7 @@ impl PhoneNumber {
         self.primary
     }
 }
-impl std::fmt::Debug for PhoneNumber {
+impl  std::fmt::Debug for PhoneNumber  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PhoneNumber");
         formatter.field("value", &"*** Sensitive Data Redacted ***");
@@ -558,7 +536,7 @@ impl std::fmt::Debug for PhoneNumber {
 }
 /// See [`PhoneNumber`](crate::model::PhoneNumber).
 pub mod phone_number {
-
+    
     /// A builder for [`PhoneNumber`](crate::model::PhoneNumber).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -574,8 +552,7 @@ pub mod phone_number {
         }
         /// <p>A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>A string representing the type of a phone number. For example, "Mobile."</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -584,8 +561,7 @@ pub mod phone_number {
         }
         /// <p>A string representing the type of a phone number. For example, "Mobile."</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>A Boolean value representing whether this is the primary phone number for the associated resource.</p>
         pub fn primary(mut self, input: bool) -> Self {
@@ -594,15 +570,18 @@ pub mod phone_number {
         }
         /// <p>A Boolean value representing whether this is the primary phone number for the associated resource.</p>
         pub fn set_primary(mut self, input: std::option::Option<bool>) -> Self {
-            self.primary = input;
-            self
+            self.primary = input; self
         }
         /// Consumes the builder and constructs a [`PhoneNumber`](crate::model::PhoneNumber).
         pub fn build(self) -> crate::model::PhoneNumber {
             crate::model::PhoneNumber {
-                value: self.value,
-                r#type: self.r#type,
-                primary: self.primary.unwrap_or_default(),
+                value: self.value
+                ,
+                r#type: self.r#type
+                ,
+                primary: self.primary
+                    .unwrap_or_default()
+                ,
             }
         }
     }
@@ -615,6 +594,8 @@ pub mod phone_number {
             formatter.finish()
         }
     }
+    
+    
 }
 impl PhoneNumber {
     /// Creates a new builder-style object to manufacture [`PhoneNumber`](crate::model::PhoneNumber).
@@ -626,7 +607,7 @@ impl PhoneNumber {
 /// <p>The address associated with the specified user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Address {
+pub struct Address  {
     /// <p>The street of the address.</p>
     #[doc(hidden)]
     pub street_address: std::option::Option<std::string::String>,
@@ -654,31 +635,31 @@ pub struct Address {
 }
 impl Address {
     /// <p>The street of the address.</p>
-    pub fn street_address(&self) -> std::option::Option<&str> {
+    pub fn street_address(&self) -> std::option::Option<& str> {
         self.street_address.as_deref()
     }
     /// <p>A string of the address locality.</p>
-    pub fn locality(&self) -> std::option::Option<&str> {
+    pub fn locality(&self) -> std::option::Option<& str> {
         self.locality.as_deref()
     }
     /// <p>The region of the address.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The postal code of the address.</p>
-    pub fn postal_code(&self) -> std::option::Option<&str> {
+    pub fn postal_code(&self) -> std::option::Option<& str> {
         self.postal_code.as_deref()
     }
     /// <p>The country of the address.</p>
-    pub fn country(&self) -> std::option::Option<&str> {
+    pub fn country(&self) -> std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>A string containing a formatted version of the address for display.</p>
-    pub fn formatted(&self) -> std::option::Option<&str> {
+    pub fn formatted(&self) -> std::option::Option<& str> {
         self.formatted.as_deref()
     }
     /// <p>A string representing the type of address. For example, "Home."</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>A Boolean value representing whether this is the primary address for the associated resource.</p>
@@ -686,7 +667,7 @@ impl Address {
         self.primary
     }
 }
-impl std::fmt::Debug for Address {
+impl  std::fmt::Debug for Address  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Address");
         formatter.field("street_address", &"*** Sensitive Data Redacted ***");
@@ -702,7 +683,7 @@ impl std::fmt::Debug for Address {
 }
 /// See [`Address`](crate::model::Address).
 pub mod address {
-
+    
     /// A builder for [`Address`](crate::model::Address).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -722,12 +703,8 @@ pub mod address {
             self
         }
         /// <p>The street of the address.</p>
-        pub fn set_street_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.street_address = input;
-            self
+        pub fn set_street_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.street_address = input; self
         }
         /// <p>A string of the address locality.</p>
         pub fn locality(mut self, input: impl Into<std::string::String>) -> Self {
@@ -736,8 +713,7 @@ pub mod address {
         }
         /// <p>A string of the address locality.</p>
         pub fn set_locality(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locality = input;
-            self
+            self.locality = input; self
         }
         /// <p>The region of the address.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -746,8 +722,7 @@ pub mod address {
         }
         /// <p>The region of the address.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The postal code of the address.</p>
         pub fn postal_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -756,8 +731,7 @@ pub mod address {
         }
         /// <p>The postal code of the address.</p>
         pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.postal_code = input;
-            self
+            self.postal_code = input; self
         }
         /// <p>The country of the address.</p>
         pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
@@ -766,8 +740,7 @@ pub mod address {
         }
         /// <p>The country of the address.</p>
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country = input;
-            self
+            self.country = input; self
         }
         /// <p>A string containing a formatted version of the address for display.</p>
         pub fn formatted(mut self, input: impl Into<std::string::String>) -> Self {
@@ -776,8 +749,7 @@ pub mod address {
         }
         /// <p>A string containing a formatted version of the address for display.</p>
         pub fn set_formatted(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.formatted = input;
-            self
+            self.formatted = input; self
         }
         /// <p>A string representing the type of address. For example, "Home."</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -786,8 +758,7 @@ pub mod address {
         }
         /// <p>A string representing the type of address. For example, "Home."</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>A Boolean value representing whether this is the primary address for the associated resource.</p>
         pub fn primary(mut self, input: bool) -> Self {
@@ -796,20 +767,28 @@ pub mod address {
         }
         /// <p>A Boolean value representing whether this is the primary address for the associated resource.</p>
         pub fn set_primary(mut self, input: std::option::Option<bool>) -> Self {
-            self.primary = input;
-            self
+            self.primary = input; self
         }
         /// Consumes the builder and constructs a [`Address`](crate::model::Address).
         pub fn build(self) -> crate::model::Address {
             crate::model::Address {
-                street_address: self.street_address,
-                locality: self.locality,
-                region: self.region,
-                postal_code: self.postal_code,
-                country: self.country,
-                formatted: self.formatted,
-                r#type: self.r#type,
-                primary: self.primary.unwrap_or_default(),
+                street_address: self.street_address
+                ,
+                locality: self.locality
+                ,
+                region: self.region
+                ,
+                postal_code: self.postal_code
+                ,
+                country: self.country
+                ,
+                formatted: self.formatted
+                ,
+                r#type: self.r#type
+                ,
+                primary: self.primary
+                    .unwrap_or_default()
+                ,
             }
         }
     }
@@ -827,6 +806,8 @@ pub mod address {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Address {
     /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
@@ -838,7 +819,7 @@ impl Address {
 /// <p>The email address associated with the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Email {
+pub struct Email  {
     /// <p>A string containing an email address. For example, "johndoe@amazon.com."</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
@@ -851,11 +832,11 @@ pub struct Email {
 }
 impl Email {
     /// <p>A string containing an email address. For example, "johndoe@amazon.com."</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>A string representing the type of address. For example, "Work."</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>A Boolean value representing whether this is the primary email address for the associated resource.</p>
@@ -863,7 +844,7 @@ impl Email {
         self.primary
     }
 }
-impl std::fmt::Debug for Email {
+impl  std::fmt::Debug for Email  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Email");
         formatter.field("value", &"*** Sensitive Data Redacted ***");
@@ -874,7 +855,7 @@ impl std::fmt::Debug for Email {
 }
 /// See [`Email`](crate::model::Email).
 pub mod email {
-
+    
     /// A builder for [`Email`](crate::model::Email).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -890,8 +871,7 @@ pub mod email {
         }
         /// <p>A string containing an email address. For example, "johndoe@amazon.com."</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>A string representing the type of address. For example, "Work."</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -900,8 +880,7 @@ pub mod email {
         }
         /// <p>A string representing the type of address. For example, "Work."</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>A Boolean value representing whether this is the primary email address for the associated resource.</p>
         pub fn primary(mut self, input: bool) -> Self {
@@ -910,15 +889,18 @@ pub mod email {
         }
         /// <p>A Boolean value representing whether this is the primary email address for the associated resource.</p>
         pub fn set_primary(mut self, input: std::option::Option<bool>) -> Self {
-            self.primary = input;
-            self
+            self.primary = input; self
         }
         /// Consumes the builder and constructs a [`Email`](crate::model::Email).
         pub fn build(self) -> crate::model::Email {
             crate::model::Email {
-                value: self.value,
-                r#type: self.r#type,
-                primary: self.primary.unwrap_or_default(),
+                value: self.value
+                ,
+                r#type: self.r#type
+                ,
+                primary: self.primary
+                    .unwrap_or_default()
+                ,
             }
         }
     }
@@ -931,6 +913,8 @@ pub mod email {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Email {
     /// Creates a new builder-style object to manufacture [`Email`](crate::model::Email).
@@ -942,7 +926,7 @@ impl Email {
 /// <p>The full name of the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Name {
+pub struct Name  {
     /// <p>A string containing a formatted version of the name for display.</p>
     #[doc(hidden)]
     pub formatted: std::option::Option<std::string::String>,
@@ -964,31 +948,31 @@ pub struct Name {
 }
 impl Name {
     /// <p>A string containing a formatted version of the name for display.</p>
-    pub fn formatted(&self) -> std::option::Option<&str> {
+    pub fn formatted(&self) -> std::option::Option<& str> {
         self.formatted.as_deref()
     }
     /// <p>The family name of the user.</p>
-    pub fn family_name(&self) -> std::option::Option<&str> {
+    pub fn family_name(&self) -> std::option::Option<& str> {
         self.family_name.as_deref()
     }
     /// <p>The given name of the user.</p>
-    pub fn given_name(&self) -> std::option::Option<&str> {
+    pub fn given_name(&self) -> std::option::Option<& str> {
         self.given_name.as_deref()
     }
     /// <p>The middle name of the user.</p>
-    pub fn middle_name(&self) -> std::option::Option<&str> {
+    pub fn middle_name(&self) -> std::option::Option<& str> {
         self.middle_name.as_deref()
     }
     /// <p>The honorific prefix of the user. For example, "Dr."</p>
-    pub fn honorific_prefix(&self) -> std::option::Option<&str> {
+    pub fn honorific_prefix(&self) -> std::option::Option<& str> {
         self.honorific_prefix.as_deref()
     }
     /// <p>The honorific suffix of the user. For example, "M.D."</p>
-    pub fn honorific_suffix(&self) -> std::option::Option<&str> {
+    pub fn honorific_suffix(&self) -> std::option::Option<& str> {
         self.honorific_suffix.as_deref()
     }
 }
-impl std::fmt::Debug for Name {
+impl  std::fmt::Debug for Name  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Name");
         formatter.field("formatted", &"*** Sensitive Data Redacted ***");
@@ -1002,7 +986,7 @@ impl std::fmt::Debug for Name {
 }
 /// See [`Name`](crate::model::Name).
 pub mod name {
-
+    
     /// A builder for [`Name`](crate::model::Name).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1021,8 +1005,7 @@ pub mod name {
         }
         /// <p>A string containing a formatted version of the name for display.</p>
         pub fn set_formatted(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.formatted = input;
-            self
+            self.formatted = input; self
         }
         /// <p>The family name of the user.</p>
         pub fn family_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1031,8 +1014,7 @@ pub mod name {
         }
         /// <p>The family name of the user.</p>
         pub fn set_family_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.family_name = input;
-            self
+            self.family_name = input; self
         }
         /// <p>The given name of the user.</p>
         pub fn given_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1041,8 +1023,7 @@ pub mod name {
         }
         /// <p>The given name of the user.</p>
         pub fn set_given_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.given_name = input;
-            self
+            self.given_name = input; self
         }
         /// <p>The middle name of the user.</p>
         pub fn middle_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1051,8 +1032,7 @@ pub mod name {
         }
         /// <p>The middle name of the user.</p>
         pub fn set_middle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.middle_name = input;
-            self
+            self.middle_name = input; self
         }
         /// <p>The honorific prefix of the user. For example, "Dr."</p>
         pub fn honorific_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1060,12 +1040,8 @@ pub mod name {
             self
         }
         /// <p>The honorific prefix of the user. For example, "Dr."</p>
-        pub fn set_honorific_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.honorific_prefix = input;
-            self
+        pub fn set_honorific_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.honorific_prefix = input; self
         }
         /// <p>The honorific suffix of the user. For example, "M.D."</p>
         pub fn honorific_suffix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1073,22 +1049,24 @@ pub mod name {
             self
         }
         /// <p>The honorific suffix of the user. For example, "M.D."</p>
-        pub fn set_honorific_suffix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.honorific_suffix = input;
-            self
+        pub fn set_honorific_suffix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.honorific_suffix = input; self
         }
         /// Consumes the builder and constructs a [`Name`](crate::model::Name).
         pub fn build(self) -> crate::model::Name {
             crate::model::Name {
-                formatted: self.formatted,
-                family_name: self.family_name,
-                given_name: self.given_name,
-                middle_name: self.middle_name,
-                honorific_prefix: self.honorific_prefix,
-                honorific_suffix: self.honorific_suffix,
+                formatted: self.formatted
+                ,
+                family_name: self.family_name
+                ,
+                given_name: self.given_name
+                ,
+                middle_name: self.middle_name
+                ,
+                honorific_prefix: self.honorific_prefix
+                ,
+                honorific_suffix: self.honorific_suffix
+                ,
             }
         }
     }
@@ -1104,6 +1082,8 @@ pub mod name {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Name {
     /// Creates a new builder-style object to manufacture [`Name`](crate::model::Name).
@@ -1115,7 +1095,7 @@ impl Name {
 /// <p>The identifier issued to this resource by an external identity provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ExternalId {
+pub struct ExternalId  {
     /// <p>The issuer for an external identifier.</p>
     #[doc(hidden)]
     pub issuer: std::option::Option<std::string::String>,
@@ -1125,15 +1105,15 @@ pub struct ExternalId {
 }
 impl ExternalId {
     /// <p>The issuer for an external identifier.</p>
-    pub fn issuer(&self) -> std::option::Option<&str> {
+    pub fn issuer(&self) -> std::option::Option<& str> {
         self.issuer.as_deref()
     }
     /// <p>The identifier issued to this resource by an external identity provider.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for ExternalId {
+impl  std::fmt::Debug for ExternalId  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExternalId");
         formatter.field("issuer", &"*** Sensitive Data Redacted ***");
@@ -1143,7 +1123,7 @@ impl std::fmt::Debug for ExternalId {
 }
 /// See [`ExternalId`](crate::model::ExternalId).
 pub mod external_id {
-
+    
     /// A builder for [`ExternalId`](crate::model::ExternalId).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1158,8 +1138,7 @@ pub mod external_id {
         }
         /// <p>The issuer for an external identifier.</p>
         pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.issuer = input;
-            self
+            self.issuer = input; self
         }
         /// <p>The identifier issued to this resource by an external identity provider.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1168,14 +1147,15 @@ pub mod external_id {
         }
         /// <p>The identifier issued to this resource by an external identity provider.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`ExternalId`](crate::model::ExternalId).
         pub fn build(self) -> crate::model::ExternalId {
             crate::model::ExternalId {
-                issuer: self.issuer,
-                id: self.id,
+                issuer: self.issuer
+                ,
+                id: self.id
+                ,
             }
         }
     }
@@ -1187,6 +1167,8 @@ pub mod external_id {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ExternalId {
     /// Creates a new builder-style object to manufacture [`ExternalId`](crate::model::ExternalId).
@@ -1198,7 +1180,7 @@ impl ExternalId {
 /// <p>A query filter used by <code>ListUsers</code> and <code>ListGroups</code>. This filter object provides the attribute name and attribute value to search users or groups.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
     #[doc(hidden)]
     pub attribute_path: std::option::Option<std::string::String>,
@@ -1208,15 +1190,15 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
-    pub fn attribute_path(&self) -> std::option::Option<&str> {
+    pub fn attribute_path(&self) -> std::option::Option<& str> {
         self.attribute_path.as_deref()
     }
     /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
-    pub fn attribute_value(&self) -> std::option::Option<&str> {
+    pub fn attribute_value(&self) -> std::option::Option<& str> {
         self.attribute_value.as_deref()
     }
 }
-impl std::fmt::Debug for Filter {
+impl  std::fmt::Debug for Filter  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
         formatter.field("attribute_path", &self.attribute_path);
@@ -1226,7 +1208,7 @@ impl std::fmt::Debug for Filter {
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1240,12 +1222,8 @@ pub mod filter {
             self
         }
         /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
-        pub fn set_attribute_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_path = input;
-            self
+        pub fn set_attribute_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_path = input; self
         }
         /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
         pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1253,18 +1231,16 @@ pub mod filter {
             self
         }
         /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
-        pub fn set_attribute_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_value = input;
-            self
+        pub fn set_attribute_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_value = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                attribute_path: self.attribute_path,
-                attribute_value: self.attribute_value,
+                attribute_path: self.attribute_path
+                ,
+                attribute_value: self.attribute_value
+                ,
             }
         }
     }
@@ -1276,6 +1252,8 @@ pub mod filter {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -1290,9 +1268,9 @@ impl Filter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let conflictexceptionreason = unimplemented!();
 /// match conflictexceptionreason {
@@ -1314,64 +1292,52 @@ impl Filter {
 /// Specifically, when `conflictexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConflictExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     ConcurrentModification,
     #[allow(missing_docs)] // documentation missing in model
     UniquenessConstraintViolation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConflictExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "CONCURRENT_MODIFICATION" => ConflictExceptionReason::ConcurrentModification,
-            "UNIQUENESS_CONSTRAINT_VIOLATION" => {
-                ConflictExceptionReason::UniquenessConstraintViolation
-            }
-            other => ConflictExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "UNIQUENESS_CONSTRAINT_VIOLATION" => ConflictExceptionReason::UniquenessConstraintViolation,
+            other => ConflictExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConflictExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConflictExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConflictExceptionReason::from(s))
+                }
+            }
 impl ConflictExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConflictExceptionReason::ConcurrentModification => "CONCURRENT_MODIFICATION",
-            ConflictExceptionReason::UniquenessConstraintViolation => {
-                "UNIQUENESS_CONSTRAINT_VIOLATION"
-            }
-            ConflictExceptionReason::Unknown(value) => value.as_str(),
+            ConflictExceptionReason::UniquenessConstraintViolation => "UNIQUENESS_CONSTRAINT_VIOLATION",
+            ConflictExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONCURRENT_MODIFICATION", "UNIQUENESS_CONSTRAINT_VIOLATION"]
+        &[
+            "CONCURRENT_MODIFICATION", "UNIQUENESS_CONSTRAINT_VIOLATION"
+        ]
     }
 }
 impl AsRef<str> for ConflictExceptionReason {
@@ -1383,7 +1349,7 @@ impl AsRef<str> for ConflictExceptionReason {
 /// <p>An operation that applies to the requested group. This operation might add, replace, or remove an attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeOperation {
+pub struct AttributeOperation  {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
     #[doc(hidden)]
     pub attribute_path: std::option::Option<std::string::String>,
@@ -1393,17 +1359,17 @@ pub struct AttributeOperation {
 }
 impl AttributeOperation {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
-    pub fn attribute_path(&self) -> std::option::Option<&str> {
+    pub fn attribute_path(&self) -> std::option::Option<& str> {
         self.attribute_path.as_deref()
     }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
-    pub fn attribute_value(&self) -> std::option::Option<&aws_smithy_types::Document> {
+    pub fn attribute_value(&self) -> std::option::Option<& aws_smithy_types::Document> {
         self.attribute_value.as_ref()
     }
 }
 /// See [`AttributeOperation`](crate::model::AttributeOperation).
 pub mod attribute_operation {
-
+    
     /// A builder for [`AttributeOperation`](crate::model::AttributeOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1417,12 +1383,8 @@ pub mod attribute_operation {
             self
         }
         /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
-        pub fn set_attribute_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_path = input;
-            self
+        pub fn set_attribute_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_path = input; self
         }
         /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
         pub fn attribute_value(mut self, input: aws_smithy_types::Document) -> Self {
@@ -1430,21 +1392,21 @@ pub mod attribute_operation {
             self
         }
         /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
-        pub fn set_attribute_value(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Document>,
-        ) -> Self {
-            self.attribute_value = input;
-            self
+        pub fn set_attribute_value(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
+            self.attribute_value = input; self
         }
         /// Consumes the builder and constructs a [`AttributeOperation`](crate::model::AttributeOperation).
         pub fn build(self) -> crate::model::AttributeOperation {
             crate::model::AttributeOperation {
-                attribute_path: self.attribute_path,
-                attribute_value: self.attribute_value,
+                attribute_path: self.attribute_path
+                ,
+                attribute_value: self.attribute_value
+                ,
             }
         }
     }
+    
+    
 }
 impl AttributeOperation {
     /// Creates a new builder-style object to manufacture [`AttributeOperation`](crate::model::AttributeOperation).
@@ -1456,7 +1418,7 @@ impl AttributeOperation {
 /// <p>A group object that contains a specified group’s metadata and attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Group {
+pub struct Group  {
     /// <p>The identifier for a group in the identity store.</p>
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
@@ -1475,27 +1437,27 @@ pub struct Group {
 }
 impl Group {
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>The group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time the group is created and stored as an attribute of the group object in the identity store.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    pub fn external_ids(&self) -> std::option::Option<&[crate::model::ExternalId]> {
+    pub fn external_ids(&self) -> std::option::Option<& [crate::model::ExternalId]> {
         self.external_ids.as_deref()
     }
     /// <p>A string containing a description of the specified group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> std::option::Option<& str> {
         self.identity_store_id.as_deref()
     }
 }
-impl std::fmt::Debug for Group {
+impl  std::fmt::Debug for Group  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Group");
         formatter.field("group_id", &self.group_id);
@@ -1508,7 +1470,7 @@ impl std::fmt::Debug for Group {
 }
 /// See [`Group`](crate::model::Group).
 pub mod group {
-
+    
     /// A builder for [`Group`](crate::model::Group).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1526,8 +1488,7 @@ pub mod group {
         }
         /// <p>The identifier for a group in the identity store.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_id = input;
-            self
+            self.group_id = input; self
         }
         /// <p>The group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time the group is created and stored as an attribute of the group object in the identity store.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1536,8 +1497,7 @@ pub mod group {
         }
         /// <p>The group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time the group is created and stored as an attribute of the group object in the identity store.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// Appends an item to `external_ids`.
         ///
@@ -1546,17 +1506,13 @@ pub mod group {
         /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
         pub fn external_ids(mut self, input: crate::model::ExternalId) -> Self {
             let mut v = self.external_ids.unwrap_or_default();
-            v.push(input);
-            self.external_ids = Some(v);
-            self
+                            v.push(input);
+                            self.external_ids = Some(v);
+                            self
         }
         /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-        pub fn set_external_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExternalId>>,
-        ) -> Self {
-            self.external_ids = input;
-            self
+        pub fn set_external_ids(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExternalId>>) -> Self {
+            self.external_ids = input; self
         }
         /// <p>A string containing a description of the specified group.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1565,8 +1521,7 @@ pub mod group {
         }
         /// <p>A string containing a description of the specified group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The globally unique identifier for the identity store.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1574,21 +1529,22 @@ pub mod group {
             self
         }
         /// <p>The globally unique identifier for the identity store.</p>
-        pub fn set_identity_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_store_id = input;
-            self
+        pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_store_id = input; self
         }
         /// Consumes the builder and constructs a [`Group`](crate::model::Group).
         pub fn build(self) -> crate::model::Group {
             crate::model::Group {
-                group_id: self.group_id,
-                display_name: self.display_name,
-                external_ids: self.external_ids,
-                description: self.description,
-                identity_store_id: self.identity_store_id,
+                group_id: self.group_id
+                ,
+                display_name: self.display_name
+                ,
+                external_ids: self.external_ids
+                ,
+                description: self.description
+                ,
+                identity_store_id: self.identity_store_id
+                ,
             }
         }
     }
@@ -1603,6 +1559,8 @@ pub mod group {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Group {
     /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
@@ -1614,7 +1572,7 @@ impl Group {
 /// <p>Contains the identifiers for a group, a group member, and a <code>GroupMembership</code> object in the identity store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupMembership {
+pub struct GroupMembership  {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
@@ -1630,25 +1588,25 @@ pub struct GroupMembership {
 }
 impl GroupMembership {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> std::option::Option<& str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
-    pub fn membership_id(&self) -> std::option::Option<&str> {
+    pub fn membership_id(&self) -> std::option::Option<& str> {
         self.membership_id.as_deref()
     }
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
-    pub fn member_id(&self) -> std::option::Option<&crate::model::MemberId> {
+    pub fn member_id(&self) -> std::option::Option<& crate::model::MemberId> {
         self.member_id.as_ref()
     }
 }
 /// See [`GroupMembership`](crate::model::GroupMembership).
 pub mod group_membership {
-
+    
     /// A builder for [`GroupMembership`](crate::model::GroupMembership).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1664,12 +1622,8 @@ pub mod group_membership {
             self
         }
         /// <p>The globally unique identifier for the identity store.</p>
-        pub fn set_identity_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_store_id = input;
-            self
+        pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_store_id = input; self
         }
         /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
         pub fn membership_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1677,12 +1631,8 @@ pub mod group_membership {
             self
         }
         /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
-        pub fn set_membership_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_id = input;
-            self
+        pub fn set_membership_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_id = input; self
         }
         /// <p>The identifier for a group in the identity store.</p>
         pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1691,8 +1641,7 @@ pub mod group_membership {
         }
         /// <p>The identifier for a group in the identity store.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_id = input;
-            self
+            self.group_id = input; self
         }
         /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
         pub fn member_id(mut self, input: crate::model::MemberId) -> Self {
@@ -1701,19 +1650,24 @@ pub mod group_membership {
         }
         /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
         pub fn set_member_id(mut self, input: std::option::Option<crate::model::MemberId>) -> Self {
-            self.member_id = input;
-            self
+            self.member_id = input; self
         }
         /// Consumes the builder and constructs a [`GroupMembership`](crate::model::GroupMembership).
         pub fn build(self) -> crate::model::GroupMembership {
             crate::model::GroupMembership {
-                identity_store_id: self.identity_store_id,
-                membership_id: self.membership_id,
-                group_id: self.group_id,
-                member_id: self.member_id,
+                identity_store_id: self.identity_store_id
+                ,
+                membership_id: self.membership_id
+                ,
+                group_id: self.group_id
+                ,
+                member_id: self.member_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GroupMembership {
     /// Creates a new builder-style object to manufacture [`GroupMembership`](crate::model::GroupMembership).
@@ -1743,11 +1697,7 @@ impl MemberId {
     /// Tries to convert the enum instance into [`UserId`](crate::model::MemberId::UserId), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_user_id(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let MemberId::UserId(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let MemberId::UserId(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`UserId`](crate::model::MemberId::UserId).
     pub fn is_user_id(&self) -> bool {
@@ -1762,7 +1712,7 @@ impl MemberId {
 /// <p>Indicates whether a resource is a member of a group in the identity store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GroupMembershipExistenceResult {
+pub struct GroupMembershipExistenceResult  {
     /// <p>The identifier for a group in the identity store.</p>
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
@@ -1775,11 +1725,11 @@ pub struct GroupMembershipExistenceResult {
 }
 impl GroupMembershipExistenceResult {
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
-    pub fn member_id(&self) -> std::option::Option<&crate::model::MemberId> {
+    pub fn member_id(&self) -> std::option::Option<& crate::model::MemberId> {
         self.member_id.as_ref()
     }
     /// <p>Indicates whether a membership relation exists or not.</p>
@@ -1787,7 +1737,7 @@ impl GroupMembershipExistenceResult {
         self.membership_exists
     }
 }
-impl std::fmt::Debug for GroupMembershipExistenceResult {
+impl  std::fmt::Debug for GroupMembershipExistenceResult  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GroupMembershipExistenceResult");
         formatter.field("group_id", &self.group_id);
@@ -1798,7 +1748,7 @@ impl std::fmt::Debug for GroupMembershipExistenceResult {
 }
 /// See [`GroupMembershipExistenceResult`](crate::model::GroupMembershipExistenceResult).
 pub mod group_membership_existence_result {
-
+    
     /// A builder for [`GroupMembershipExistenceResult`](crate::model::GroupMembershipExistenceResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1814,8 +1764,7 @@ pub mod group_membership_existence_result {
         }
         /// <p>The identifier for a group in the identity store.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_id = input;
-            self
+            self.group_id = input; self
         }
         /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
         pub fn member_id(mut self, input: crate::model::MemberId) -> Self {
@@ -1824,8 +1773,7 @@ pub mod group_membership_existence_result {
         }
         /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
         pub fn set_member_id(mut self, input: std::option::Option<crate::model::MemberId>) -> Self {
-            self.member_id = input;
-            self
+            self.member_id = input; self
         }
         /// <p>Indicates whether a membership relation exists or not.</p>
         pub fn membership_exists(mut self, input: bool) -> Self {
@@ -1834,15 +1782,18 @@ pub mod group_membership_existence_result {
         }
         /// <p>Indicates whether a membership relation exists or not.</p>
         pub fn set_membership_exists(mut self, input: std::option::Option<bool>) -> Self {
-            self.membership_exists = input;
-            self
+            self.membership_exists = input; self
         }
         /// Consumes the builder and constructs a [`GroupMembershipExistenceResult`](crate::model::GroupMembershipExistenceResult).
         pub fn build(self) -> crate::model::GroupMembershipExistenceResult {
             crate::model::GroupMembershipExistenceResult {
-                group_id: self.group_id,
-                member_id: self.member_id,
-                membership_exists: self.membership_exists.unwrap_or_default(),
+                group_id: self.group_id
+                ,
+                member_id: self.member_id
+                ,
+                membership_exists: self.membership_exists
+                    .unwrap_or_default()
+                ,
             }
         }
     }
@@ -1855,6 +1806,8 @@ pub mod group_membership_existence_result {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GroupMembershipExistenceResult {
     /// Creates a new builder-style object to manufacture [`GroupMembershipExistenceResult`](crate::model::GroupMembershipExistenceResult).
@@ -1885,11 +1838,7 @@ impl AlternateIdentifier {
     /// Tries to convert the enum instance into [`ExternalId`](crate::model::AlternateIdentifier::ExternalId), extracting the inner [`ExternalId`](crate::model::ExternalId).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_external_id(&self) -> std::result::Result<&crate::model::ExternalId, &Self> {
-        if let AlternateIdentifier::ExternalId(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let AlternateIdentifier::ExternalId(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`ExternalId`](crate::model::AlternateIdentifier::ExternalId).
     pub fn is_external_id(&self) -> bool {
@@ -1897,14 +1846,8 @@ impl AlternateIdentifier {
     }
     /// Tries to convert the enum instance into [`UniqueAttribute`](crate::model::AlternateIdentifier::UniqueAttribute), extracting the inner [`UniqueAttribute`](crate::model::UniqueAttribute).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_unique_attribute(
-        &self,
-    ) -> std::result::Result<&crate::model::UniqueAttribute, &Self> {
-        if let AlternateIdentifier::UniqueAttribute(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_unique_attribute(&self) -> std::result::Result<&crate::model::UniqueAttribute, &Self> {
+        if let AlternateIdentifier::UniqueAttribute(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`UniqueAttribute`](crate::model::AlternateIdentifier::UniqueAttribute).
     pub fn is_unique_attribute(&self) -> bool {
@@ -1919,7 +1862,7 @@ impl AlternateIdentifier {
 /// <p>An entity attribute that's unique to a specific entity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UniqueAttribute {
+pub struct UniqueAttribute  {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
     #[doc(hidden)]
     pub attribute_path: std::option::Option<std::string::String>,
@@ -1929,17 +1872,17 @@ pub struct UniqueAttribute {
 }
 impl UniqueAttribute {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
-    pub fn attribute_path(&self) -> std::option::Option<&str> {
+    pub fn attribute_path(&self) -> std::option::Option<& str> {
         self.attribute_path.as_deref()
     }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
-    pub fn attribute_value(&self) -> std::option::Option<&aws_smithy_types::Document> {
+    pub fn attribute_value(&self) -> std::option::Option<& aws_smithy_types::Document> {
         self.attribute_value.as_ref()
     }
 }
 /// See [`UniqueAttribute`](crate::model::UniqueAttribute).
 pub mod unique_attribute {
-
+    
     /// A builder for [`UniqueAttribute`](crate::model::UniqueAttribute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1953,12 +1896,8 @@ pub mod unique_attribute {
             self
         }
         /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
-        pub fn set_attribute_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_path = input;
-            self
+        pub fn set_attribute_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_path = input; self
         }
         /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
         pub fn attribute_value(mut self, input: aws_smithy_types::Document) -> Self {
@@ -1966,21 +1905,21 @@ pub mod unique_attribute {
             self
         }
         /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
-        pub fn set_attribute_value(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Document>,
-        ) -> Self {
-            self.attribute_value = input;
-            self
+        pub fn set_attribute_value(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
+            self.attribute_value = input; self
         }
         /// Consumes the builder and constructs a [`UniqueAttribute`](crate::model::UniqueAttribute).
         pub fn build(self) -> crate::model::UniqueAttribute {
             crate::model::UniqueAttribute {
-                attribute_path: self.attribute_path,
-                attribute_value: self.attribute_value,
+                attribute_path: self.attribute_path
+                ,
+                attribute_value: self.attribute_value
+                ,
             }
         }
     }
+    
+    
 }
 impl UniqueAttribute {
     /// Creates a new builder-style object to manufacture [`UniqueAttribute`](crate::model::UniqueAttribute).
@@ -1988,3 +1927,4 @@ impl UniqueAttribute {
         crate::model::unique_attribute::Builder::default()
     }
 }
+

@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateJobExecutionError {
     /// Kind of error that occurred.
-    pub kind: UpdateJobExecutionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateJobExecutionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateJobExecutionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -32,26 +32,40 @@ pub enum UpdateJobExecutionErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateJobExecutionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateJobExecutionErrorKind::CertificateValidationException(_inner) => _inner.fmt(f),
-            UpdateJobExecutionErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
-            UpdateJobExecutionErrorKind::InvalidStateTransitionException(_inner) => _inner.fmt(f),
-            UpdateJobExecutionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            UpdateJobExecutionErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UpdateJobExecutionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            UpdateJobExecutionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateJobExecutionErrorKind::CertificateValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateJobExecutionErrorKind::InvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateJobExecutionErrorKind::InvalidStateTransitionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateJobExecutionErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateJobExecutionErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateJobExecutionErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateJobExecutionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -65,99 +79,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateJobExecutionError {
 }
 impl UpdateJobExecutionError {
     /// Creates a new `UpdateJobExecutionError`.
-    pub fn new(kind: UpdateJobExecutionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateJobExecutionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateJobExecutionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateJobExecutionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateJobExecutionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateJobExecutionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateJobExecutionErrorKind::CertificateValidationException`.
     pub fn is_certificate_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateJobExecutionErrorKind::CertificateValidationException(_)
-        )
+        matches!(&self.kind, UpdateJobExecutionErrorKind::CertificateValidationException(_))
     }
     /// Returns `true` if the error kind is `UpdateJobExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateJobExecutionErrorKind::InvalidRequestException(_)
-        )
+        matches!(&self.kind, UpdateJobExecutionErrorKind::InvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateJobExecutionErrorKind::InvalidStateTransitionException`.
     pub fn is_invalid_state_transition_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateJobExecutionErrorKind::InvalidStateTransitionException(_)
-        )
+        matches!(&self.kind, UpdateJobExecutionErrorKind::InvalidStateTransitionException(_))
     }
     /// Returns `true` if the error kind is `UpdateJobExecutionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateJobExecutionErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateJobExecutionErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateJobExecutionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateJobExecutionErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateJobExecutionErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateJobExecutionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateJobExecutionErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, UpdateJobExecutionErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for UpdateJobExecutionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateJobExecutionErrorKind::CertificateValidationException(_inner) => Some(_inner),
-            UpdateJobExecutionErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            UpdateJobExecutionErrorKind::InvalidStateTransitionException(_inner) => Some(_inner),
-            UpdateJobExecutionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateJobExecutionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateJobExecutionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateJobExecutionErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateJobExecutionErrorKind::CertificateValidationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateJobExecutionErrorKind::InvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateJobExecutionErrorKind::InvalidStateTransitionException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateJobExecutionErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateJobExecutionErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateJobExecutionErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateJobExecutionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -165,7 +175,7 @@ impl std::error::Error for UpdateJobExecutionError {
 /// <p>The rate exceeds the limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     /// <p>The message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -175,21 +185,19 @@ pub struct ThrottlingException {
 }
 impl ThrottlingException {
     /// <p>The payload associated with the exception.</p>
-    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn payload(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -199,7 +207,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException).
 pub mod throttling_exception {
-
+    
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -214,8 +222,7 @@ pub mod throttling_exception {
         }
         /// <p>The message associated with the exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The payload associated with the exception.</p>
         pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -224,17 +231,20 @@ pub mod throttling_exception {
         }
         /// <p>The payload associated with the exception.</p>
         pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.payload = input;
-            self
+            self.payload = input; self
         }
         /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
         pub fn build(self) -> crate::error::ThrottlingException {
             crate::error::ThrottlingException {
-                message: self.message,
-                payload: self.payload,
+                message: self.message
+                ,
+                payload: self.payload
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
@@ -246,22 +256,20 @@ impl ThrottlingException {
 /// <p>The service is temporarily unavailable.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceUnavailableException {
+pub struct ServiceUnavailableException  {
     /// <p>The message for the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUnavailableException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -271,7 +279,7 @@ impl std::fmt::Display for ServiceUnavailableException {
 impl std::error::Error for ServiceUnavailableException {}
 /// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
 pub mod service_unavailable_exception {
-
+    
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -285,16 +293,18 @@ pub mod service_unavailable_exception {
         }
         /// <p>The message for the exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
         pub fn build(self) -> crate::error::ServiceUnavailableException {
             crate::error::ServiceUnavailableException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceUnavailableException {
     /// Creates a new builder-style object to manufacture [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
@@ -306,22 +316,20 @@ impl ServiceUnavailableException {
 /// <p>The specified resource does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     /// <p>The message for the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -331,7 +339,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -345,16 +353,18 @@ pub mod resource_not_found_exception {
         }
         /// <p>The message for the exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -366,22 +376,20 @@ impl ResourceNotFoundException {
 /// <p>An update attempted to change the job execution to a state that is invalid because of the job execution's current state (for example, an attempt to change a request in state SUCCESS to state IN_PROGRESS). In this case, the body of the error message also contains the executionState field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidStateTransitionException {
+pub struct InvalidStateTransitionException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidStateTransitionException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidStateTransitionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidStateTransitionException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -391,7 +399,7 @@ impl std::fmt::Display for InvalidStateTransitionException {
 impl std::error::Error for InvalidStateTransitionException {}
 /// See [`InvalidStateTransitionException`](crate::error::InvalidStateTransitionException).
 pub mod invalid_state_transition_exception {
-
+    
     /// A builder for [`InvalidStateTransitionException`](crate::error::InvalidStateTransitionException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -405,16 +413,18 @@ pub mod invalid_state_transition_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidStateTransitionException`](crate::error::InvalidStateTransitionException).
         pub fn build(self) -> crate::error::InvalidStateTransitionException {
             crate::error::InvalidStateTransitionException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidStateTransitionException {
     /// Creates a new builder-style object to manufacture [`InvalidStateTransitionException`](crate::error::InvalidStateTransitionException).
@@ -426,22 +436,20 @@ impl InvalidStateTransitionException {
 /// <p>The contents of the request were invalid. For example, this code is returned when an UpdateJobExecution request contains invalid status details. The message contains details about the error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidRequestException {
+pub struct InvalidRequestException  {
     /// <p>The message for the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRequestException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -451,7 +459,7 @@ impl std::fmt::Display for InvalidRequestException {
 impl std::error::Error for InvalidRequestException {}
 /// See [`InvalidRequestException`](crate::error::InvalidRequestException).
 pub mod invalid_request_exception {
-
+    
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -465,16 +473,18 @@ pub mod invalid_request_exception {
         }
         /// <p>The message for the exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidRequestException`](crate::error::InvalidRequestException).
         pub fn build(self) -> crate::error::InvalidRequestException {
             crate::error::InvalidRequestException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidRequestException {
     /// Creates a new builder-style object to manufacture [`InvalidRequestException`](crate::error::InvalidRequestException).
@@ -486,22 +496,20 @@ impl InvalidRequestException {
 /// <p>The certificate is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CertificateValidationException {
+pub struct CertificateValidationException  {
     /// <p>Additional information about the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CertificateValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CertificateValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CertificateValidationException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -511,7 +519,7 @@ impl std::fmt::Display for CertificateValidationException {
 impl std::error::Error for CertificateValidationException {}
 /// See [`CertificateValidationException`](crate::error::CertificateValidationException).
 pub mod certificate_validation_exception {
-
+    
     /// A builder for [`CertificateValidationException`](crate::error::CertificateValidationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -525,16 +533,18 @@ pub mod certificate_validation_exception {
         }
         /// <p>Additional information about the exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CertificateValidationException`](crate::error::CertificateValidationException).
         pub fn build(self) -> crate::error::CertificateValidationException {
             crate::error::CertificateValidationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CertificateValidationException {
     /// Creates a new builder-style object to manufacture [`CertificateValidationException`](crate::error::CertificateValidationException).
@@ -548,17 +558,15 @@ impl CertificateValidationException {
 #[derive(std::fmt::Debug)]
 pub struct StartNextPendingJobExecutionError {
     /// Kind of error that occurred.
-    pub kind: StartNextPendingJobExecutionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StartNextPendingJobExecutionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartNextPendingJobExecutionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: StartNextPendingJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: StartNextPendingJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -576,31 +584,37 @@ pub enum StartNextPendingJobExecutionErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartNextPendingJobExecutionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartNextPendingJobExecutionErrorKind::CertificateValidationException(_inner) => {
+            StartNextPendingJobExecutionErrorKind::CertificateValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartNextPendingJobExecutionErrorKind::InvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartNextPendingJobExecutionErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartNextPendingJobExecutionErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartNextPendingJobExecutionErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartNextPendingJobExecutionErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            StartNextPendingJobExecutionErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
-            StartNextPendingJobExecutionErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            StartNextPendingJobExecutionErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            StartNextPendingJobExecutionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            StartNextPendingJobExecutionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -614,101 +628,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartNextPendingJobExecutionE
 }
 impl StartNextPendingJobExecutionError {
     /// Creates a new `StartNextPendingJobExecutionError`.
-    pub fn new(kind: StartNextPendingJobExecutionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StartNextPendingJobExecutionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StartNextPendingJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StartNextPendingJobExecutionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StartNextPendingJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StartNextPendingJobExecutionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StartNextPendingJobExecutionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StartNextPendingJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StartNextPendingJobExecutionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StartNextPendingJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StartNextPendingJobExecutionErrorKind::CertificateValidationException`.
     pub fn is_certificate_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartNextPendingJobExecutionErrorKind::CertificateValidationException(_)
-        )
+        matches!(&self.kind, StartNextPendingJobExecutionErrorKind::CertificateValidationException(_))
     }
     /// Returns `true` if the error kind is `StartNextPendingJobExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartNextPendingJobExecutionErrorKind::InvalidRequestException(_)
-        )
+        matches!(&self.kind, StartNextPendingJobExecutionErrorKind::InvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `StartNextPendingJobExecutionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartNextPendingJobExecutionErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, StartNextPendingJobExecutionErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `StartNextPendingJobExecutionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartNextPendingJobExecutionErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, StartNextPendingJobExecutionErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `StartNextPendingJobExecutionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartNextPendingJobExecutionErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, StartNextPendingJobExecutionErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for StartNextPendingJobExecutionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartNextPendingJobExecutionErrorKind::CertificateValidationException(_inner) => {
+            StartNextPendingJobExecutionErrorKind::CertificateValidationException(_inner) =>
+            Some(_inner)
+            ,
+            StartNextPendingJobExecutionErrorKind::InvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            StartNextPendingJobExecutionErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            StartNextPendingJobExecutionErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            StartNextPendingJobExecutionErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            StartNextPendingJobExecutionErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            StartNextPendingJobExecutionErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            StartNextPendingJobExecutionErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            StartNextPendingJobExecutionErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            StartNextPendingJobExecutionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartNextPendingJobExecutionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -718,15 +719,15 @@ impl std::error::Error for StartNextPendingJobExecutionError {
 #[derive(std::fmt::Debug)]
 pub struct GetPendingJobExecutionsError {
     /// Kind of error that occurred.
-    pub kind: GetPendingJobExecutionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetPendingJobExecutionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetPendingJobExecutionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetPendingJobExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -744,27 +745,37 @@ pub enum GetPendingJobExecutionsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPendingJobExecutionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetPendingJobExecutionsErrorKind::CertificateValidationException(_inner) => {
+            GetPendingJobExecutionsErrorKind::CertificateValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPendingJobExecutionsErrorKind::InvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPendingJobExecutionsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPendingJobExecutionsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPendingJobExecutionsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPendingJobExecutionsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetPendingJobExecutionsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
-            GetPendingJobExecutionsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetPendingJobExecutionsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            GetPendingJobExecutionsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetPendingJobExecutionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -778,97 +789,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetPendingJobExecutionsError 
 }
 impl GetPendingJobExecutionsError {
     /// Creates a new `GetPendingJobExecutionsError`.
-    pub fn new(kind: GetPendingJobExecutionsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetPendingJobExecutionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetPendingJobExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetPendingJobExecutionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetPendingJobExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetPendingJobExecutionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetPendingJobExecutionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetPendingJobExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetPendingJobExecutionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetPendingJobExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetPendingJobExecutionsErrorKind::CertificateValidationException`.
     pub fn is_certificate_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPendingJobExecutionsErrorKind::CertificateValidationException(_)
-        )
+        matches!(&self.kind, GetPendingJobExecutionsErrorKind::CertificateValidationException(_))
     }
     /// Returns `true` if the error kind is `GetPendingJobExecutionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPendingJobExecutionsErrorKind::InvalidRequestException(_)
-        )
+        matches!(&self.kind, GetPendingJobExecutionsErrorKind::InvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `GetPendingJobExecutionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPendingJobExecutionsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetPendingJobExecutionsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetPendingJobExecutionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPendingJobExecutionsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetPendingJobExecutionsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetPendingJobExecutionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPendingJobExecutionsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetPendingJobExecutionsErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetPendingJobExecutionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetPendingJobExecutionsErrorKind::CertificateValidationException(_inner) => {
+            GetPendingJobExecutionsErrorKind::CertificateValidationException(_inner) =>
+            Some(_inner)
+            ,
+            GetPendingJobExecutionsErrorKind::InvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetPendingJobExecutionsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetPendingJobExecutionsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetPendingJobExecutionsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetPendingJobExecutionsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetPendingJobExecutionsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            GetPendingJobExecutionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetPendingJobExecutionsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetPendingJobExecutionsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetPendingJobExecutionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -878,15 +880,15 @@ impl std::error::Error for GetPendingJobExecutionsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeJobExecutionError {
     /// Kind of error that occurred.
-    pub kind: DescribeJobExecutionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeJobExecutionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeJobExecutionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -906,26 +908,40 @@ pub enum DescribeJobExecutionErrorKind {
     TerminalStateException(crate::error::TerminalStateException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeJobExecutionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeJobExecutionErrorKind::CertificateValidationException(_inner) => _inner.fmt(f),
-            DescribeJobExecutionErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
-            DescribeJobExecutionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DescribeJobExecutionErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DescribeJobExecutionErrorKind::TerminalStateException(_inner) => _inner.fmt(f),
-            DescribeJobExecutionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DescribeJobExecutionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeJobExecutionErrorKind::CertificateValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeJobExecutionErrorKind::InvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeJobExecutionErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeJobExecutionErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeJobExecutionErrorKind::TerminalStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeJobExecutionErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeJobExecutionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -939,103 +955,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeJobExecutionError {
 }
 impl DescribeJobExecutionError {
     /// Creates a new `DescribeJobExecutionError`.
-    pub fn new(kind: DescribeJobExecutionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeJobExecutionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeJobExecutionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeJobExecutionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeJobExecutionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeJobExecutionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeJobExecutionErrorKind::CertificateValidationException`.
     pub fn is_certificate_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeJobExecutionErrorKind::CertificateValidationException(_)
-        )
+        matches!(&self.kind, DescribeJobExecutionErrorKind::CertificateValidationException(_))
     }
     /// Returns `true` if the error kind is `DescribeJobExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeJobExecutionErrorKind::InvalidRequestException(_)
-        )
+        matches!(&self.kind, DescribeJobExecutionErrorKind::InvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `DescribeJobExecutionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeJobExecutionErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeJobExecutionErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeJobExecutionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeJobExecutionErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DescribeJobExecutionErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeJobExecutionErrorKind::TerminalStateException`.
     pub fn is_terminal_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeJobExecutionErrorKind::TerminalStateException(_)
-        )
+        matches!(&self.kind, DescribeJobExecutionErrorKind::TerminalStateException(_))
     }
     /// Returns `true` if the error kind is `DescribeJobExecutionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeJobExecutionErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DescribeJobExecutionErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for DescribeJobExecutionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeJobExecutionErrorKind::CertificateValidationException(_inner) => Some(_inner),
-            DescribeJobExecutionErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeJobExecutionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeJobExecutionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeJobExecutionErrorKind::TerminalStateException(_inner) => Some(_inner),
-            DescribeJobExecutionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeJobExecutionErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeJobExecutionErrorKind::CertificateValidationException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeJobExecutionErrorKind::InvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeJobExecutionErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeJobExecutionErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeJobExecutionErrorKind::TerminalStateException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeJobExecutionErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeJobExecutionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1043,22 +1051,20 @@ impl std::error::Error for DescribeJobExecutionError {
 /// <p>The job is in a terminal state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminalStateException {
+pub struct TerminalStateException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TerminalStateException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TerminalStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TerminalStateException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -1068,7 +1074,7 @@ impl std::fmt::Display for TerminalStateException {
 impl std::error::Error for TerminalStateException {}
 /// See [`TerminalStateException`](crate::error::TerminalStateException).
 pub mod terminal_state_exception {
-
+    
     /// A builder for [`TerminalStateException`](crate::error::TerminalStateException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1082,16 +1088,18 @@ pub mod terminal_state_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TerminalStateException`](crate::error::TerminalStateException).
         pub fn build(self) -> crate::error::TerminalStateException {
             crate::error::TerminalStateException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TerminalStateException {
     /// Creates a new builder-style object to manufacture [`TerminalStateException`](crate::error::TerminalStateException).
@@ -1100,31 +1108,32 @@ impl TerminalStateException {
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

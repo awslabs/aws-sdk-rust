@@ -32,11 +32,7 @@ impl Field {
     /// Tries to convert the enum instance into [`ArrayValue`](crate::model::Field::ArrayValue), extracting the inner [`ArrayValue`](crate::model::ArrayValue).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_array_value(&self) -> std::result::Result<&crate::model::ArrayValue, &Self> {
-        if let Field::ArrayValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Field::ArrayValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`ArrayValue`](crate::model::Field::ArrayValue).
     pub fn is_array_value(&self) -> bool {
@@ -45,11 +41,7 @@ impl Field {
     /// Tries to convert the enum instance into [`BlobValue`](crate::model::Field::BlobValue), extracting the inner [`Blob`](aws_smithy_types::Blob).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_blob_value(&self) -> std::result::Result<&aws_smithy_types::Blob, &Self> {
-        if let Field::BlobValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Field::BlobValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`BlobValue`](crate::model::Field::BlobValue).
     pub fn is_blob_value(&self) -> bool {
@@ -58,11 +50,7 @@ impl Field {
     /// Tries to convert the enum instance into [`BooleanValue`](crate::model::Field::BooleanValue), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
-        if let Field::BooleanValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Field::BooleanValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`BooleanValue`](crate::model::Field::BooleanValue).
     pub fn is_boolean_value(&self) -> bool {
@@ -71,11 +59,7 @@ impl Field {
     /// Tries to convert the enum instance into [`DoubleValue`](crate::model::Field::DoubleValue), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
-        if let Field::DoubleValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Field::DoubleValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`DoubleValue`](crate::model::Field::DoubleValue).
     pub fn is_double_value(&self) -> bool {
@@ -84,11 +68,7 @@ impl Field {
     /// Tries to convert the enum instance into [`IsNull`](crate::model::Field::IsNull), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_is_null(&self) -> std::result::Result<&bool, &Self> {
-        if let Field::IsNull(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Field::IsNull(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`IsNull`](crate::model::Field::IsNull).
     pub fn is_is_null(&self) -> bool {
@@ -97,11 +77,7 @@ impl Field {
     /// Tries to convert the enum instance into [`LongValue`](crate::model::Field::LongValue), extracting the inner [`i64`](i64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_long_value(&self) -> std::result::Result<&i64, &Self> {
-        if let Field::LongValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Field::LongValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`LongValue`](crate::model::Field::LongValue).
     pub fn is_long_value(&self) -> bool {
@@ -110,11 +86,7 @@ impl Field {
     /// Tries to convert the enum instance into [`StringValue`](crate::model::Field::StringValue), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let Field::StringValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Field::StringValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`StringValue`](crate::model::Field::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -153,14 +125,8 @@ pub enum ArrayValue {
 impl ArrayValue {
     /// Tries to convert the enum instance into [`ArrayValues`](crate::model::ArrayValue::ArrayValues), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_array_values(
-        &self,
-    ) -> std::result::Result<&std::vec::Vec<crate::model::ArrayValue>, &Self> {
-        if let ArrayValue::ArrayValues(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_array_values(&self) -> std::result::Result<&std::vec::Vec<crate::model::ArrayValue>, &Self> {
+        if let ArrayValue::ArrayValues(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`ArrayValues`](crate::model::ArrayValue::ArrayValues).
     pub fn is_array_values(&self) -> bool {
@@ -169,11 +135,7 @@ impl ArrayValue {
     /// Tries to convert the enum instance into [`BooleanValues`](crate::model::ArrayValue::BooleanValues), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_values(&self) -> std::result::Result<&std::vec::Vec<bool>, &Self> {
-        if let ArrayValue::BooleanValues(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ArrayValue::BooleanValues(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`BooleanValues`](crate::model::ArrayValue::BooleanValues).
     pub fn is_boolean_values(&self) -> bool {
@@ -182,11 +144,7 @@ impl ArrayValue {
     /// Tries to convert the enum instance into [`DoubleValues`](crate::model::ArrayValue::DoubleValues), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_values(&self) -> std::result::Result<&std::vec::Vec<f64>, &Self> {
-        if let ArrayValue::DoubleValues(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ArrayValue::DoubleValues(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`DoubleValues`](crate::model::ArrayValue::DoubleValues).
     pub fn is_double_values(&self) -> bool {
@@ -195,11 +153,7 @@ impl ArrayValue {
     /// Tries to convert the enum instance into [`LongValues`](crate::model::ArrayValue::LongValues), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_long_values(&self) -> std::result::Result<&std::vec::Vec<i64>, &Self> {
-        if let ArrayValue::LongValues(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ArrayValue::LongValues(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`LongValues`](crate::model::ArrayValue::LongValues).
     pub fn is_long_values(&self) -> bool {
@@ -207,14 +161,8 @@ impl ArrayValue {
     }
     /// Tries to convert the enum instance into [`StringValues`](crate::model::ArrayValue::StringValues), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_values(
-        &self,
-    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
-        if let ArrayValue::StringValues(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_string_values(&self) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
+        if let ArrayValue::StringValues(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`StringValues`](crate::model::ArrayValue::StringValues).
     pub fn is_string_values(&self) -> bool {
@@ -229,7 +177,7 @@ impl ArrayValue {
 /// <p>Contains the metadata for a column.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColumnMetadata {
+pub struct ColumnMetadata  {
     /// <p>The name of the column.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -275,7 +223,7 @@ pub struct ColumnMetadata {
 }
 impl ColumnMetadata {
     /// <p>The name of the column.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the column.</p>
@@ -283,19 +231,19 @@ impl ColumnMetadata {
         self.r#type
     }
     /// <p>The database-specific data type of the column.</p>
-    pub fn type_name(&self) -> std::option::Option<&str> {
+    pub fn type_name(&self) -> std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The label for the column.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The name of the schema that owns the table that includes the column.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The name of the table that includes the column.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A value that indicates whether the column increments automatically.</p>
@@ -333,7 +281,7 @@ impl ColumnMetadata {
 }
 /// See [`ColumnMetadata`](crate::model::ColumnMetadata).
 pub mod column_metadata {
-
+    
     /// A builder for [`ColumnMetadata`](crate::model::ColumnMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -360,8 +308,7 @@ pub mod column_metadata {
         }
         /// <p>The name of the column.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of the column.</p>
         pub fn r#type(mut self, input: i32) -> Self {
@@ -370,8 +317,7 @@ pub mod column_metadata {
         }
         /// <p>The type of the column.</p>
         pub fn set_type(mut self, input: std::option::Option<i32>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The database-specific data type of the column.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -380,8 +326,7 @@ pub mod column_metadata {
         }
         /// <p>The database-specific data type of the column.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.type_name = input;
-            self
+            self.type_name = input; self
         }
         /// <p>The label for the column.</p>
         pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -390,8 +335,7 @@ pub mod column_metadata {
         }
         /// <p>The label for the column.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label = input;
-            self
+            self.label = input; self
         }
         /// <p>The name of the schema that owns the table that includes the column.</p>
         pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -400,8 +344,7 @@ pub mod column_metadata {
         }
         /// <p>The name of the schema that owns the table that includes the column.</p>
         pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_name = input;
-            self
+            self.schema_name = input; self
         }
         /// <p>The name of the table that includes the column.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -410,8 +353,7 @@ pub mod column_metadata {
         }
         /// <p>The name of the table that includes the column.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// <p>A value that indicates whether the column increments automatically.</p>
         pub fn is_auto_increment(mut self, input: bool) -> Self {
@@ -420,8 +362,7 @@ pub mod column_metadata {
         }
         /// <p>A value that indicates whether the column increments automatically.</p>
         pub fn set_is_auto_increment(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_auto_increment = input;
-            self
+            self.is_auto_increment = input; self
         }
         /// <p>A value that indicates whether an integer column is signed.</p>
         pub fn is_signed(mut self, input: bool) -> Self {
@@ -430,8 +371,7 @@ pub mod column_metadata {
         }
         /// <p>A value that indicates whether an integer column is signed.</p>
         pub fn set_is_signed(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_signed = input;
-            self
+            self.is_signed = input; self
         }
         /// <p>A value that indicates whether the column contains currency values.</p>
         pub fn is_currency(mut self, input: bool) -> Self {
@@ -440,8 +380,7 @@ pub mod column_metadata {
         }
         /// <p>A value that indicates whether the column contains currency values.</p>
         pub fn set_is_currency(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_currency = input;
-            self
+            self.is_currency = input; self
         }
         /// <p>A value that indicates whether the column is case-sensitive.</p>
         pub fn is_case_sensitive(mut self, input: bool) -> Self {
@@ -450,8 +389,7 @@ pub mod column_metadata {
         }
         /// <p>A value that indicates whether the column is case-sensitive.</p>
         pub fn set_is_case_sensitive(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_case_sensitive = input;
-            self
+            self.is_case_sensitive = input; self
         }
         /// <p>A value that indicates whether the column is nullable.</p>
         pub fn nullable(mut self, input: i32) -> Self {
@@ -460,8 +398,7 @@ pub mod column_metadata {
         }
         /// <p>A value that indicates whether the column is nullable.</p>
         pub fn set_nullable(mut self, input: std::option::Option<i32>) -> Self {
-            self.nullable = input;
-            self
+            self.nullable = input; self
         }
         /// <p>The precision value of a decimal number column.</p>
         pub fn precision(mut self, input: i32) -> Self {
@@ -470,8 +407,7 @@ pub mod column_metadata {
         }
         /// <p>The precision value of a decimal number column.</p>
         pub fn set_precision(mut self, input: std::option::Option<i32>) -> Self {
-            self.precision = input;
-            self
+            self.precision = input; self
         }
         /// <p>The scale value of a decimal number column.</p>
         pub fn scale(mut self, input: i32) -> Self {
@@ -480,8 +416,7 @@ pub mod column_metadata {
         }
         /// <p>The scale value of a decimal number column.</p>
         pub fn set_scale(mut self, input: std::option::Option<i32>) -> Self {
-            self.scale = input;
-            self
+            self.scale = input; self
         }
         /// <p>The type of the column.</p>
         pub fn array_base_column_type(mut self, input: i32) -> Self {
@@ -490,29 +425,53 @@ pub mod column_metadata {
         }
         /// <p>The type of the column.</p>
         pub fn set_array_base_column_type(mut self, input: std::option::Option<i32>) -> Self {
-            self.array_base_column_type = input;
-            self
+            self.array_base_column_type = input; self
         }
         /// Consumes the builder and constructs a [`ColumnMetadata`](crate::model::ColumnMetadata).
         pub fn build(self) -> crate::model::ColumnMetadata {
             crate::model::ColumnMetadata {
-                name: self.name,
-                r#type: self.r#type.unwrap_or_default(),
-                type_name: self.type_name,
-                label: self.label,
-                schema_name: self.schema_name,
-                table_name: self.table_name,
-                is_auto_increment: self.is_auto_increment.unwrap_or_default(),
-                is_signed: self.is_signed.unwrap_or_default(),
-                is_currency: self.is_currency.unwrap_or_default(),
-                is_case_sensitive: self.is_case_sensitive.unwrap_or_default(),
-                nullable: self.nullable.unwrap_or_default(),
-                precision: self.precision.unwrap_or_default(),
-                scale: self.scale.unwrap_or_default(),
-                array_base_column_type: self.array_base_column_type.unwrap_or_default(),
+                name: self.name
+                ,
+                r#type: self.r#type
+                    .unwrap_or_default()
+                ,
+                type_name: self.type_name
+                ,
+                label: self.label
+                ,
+                schema_name: self.schema_name
+                ,
+                table_name: self.table_name
+                ,
+                is_auto_increment: self.is_auto_increment
+                    .unwrap_or_default()
+                ,
+                is_signed: self.is_signed
+                    .unwrap_or_default()
+                ,
+                is_currency: self.is_currency
+                    .unwrap_or_default()
+                ,
+                is_case_sensitive: self.is_case_sensitive
+                    .unwrap_or_default()
+                ,
+                nullable: self.nullable
+                    .unwrap_or_default()
+                ,
+                precision: self.precision
+                    .unwrap_or_default()
+                ,
+                scale: self.scale
+                    .unwrap_or_default()
+                ,
+                array_base_column_type: self.array_base_column_type
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ColumnMetadata {
     /// Creates a new builder-style object to manufacture [`ColumnMetadata`](crate::model::ColumnMetadata).
@@ -527,9 +486,9 @@ impl ColumnMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let recordsformattype = unimplemented!();
 /// match recordsformattype {
@@ -551,60 +510,52 @@ impl ColumnMetadata {
 /// Specifically, when `recordsformattype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RecordsFormatType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RecordsFormatType {
     #[allow(missing_docs)] // documentation missing in model
     Json,
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RecordsFormatType {
     fn from(s: &str) -> Self {
         match s {
             "JSON" => RecordsFormatType::Json,
             "NONE" => RecordsFormatType::None,
-            other => {
-                RecordsFormatType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RecordsFormatType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RecordsFormatType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RecordsFormatType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RecordsFormatType::from(s))
+                }
+            }
 impl RecordsFormatType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecordsFormatType::Json => "JSON",
             RecordsFormatType::None => "NONE",
-            RecordsFormatType::Unknown(value) => value.as_str(),
+            RecordsFormatType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["JSON", "NONE"]
+        &[
+            "JSON", "NONE"
+        ]
     }
 }
 impl AsRef<str> for RecordsFormatType {
@@ -616,9 +567,9 @@ impl AsRef<str> for RecordsFormatType {
 /// <p>Options that control how the result set is returned.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResultSetOptions {
-    /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <note>
-    /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p>
+pub struct ResultSetOptions  {
+    /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <note> 
+    /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p> 
     /// </note>
     #[doc(hidden)]
     pub decimal_return_type: std::option::Option<crate::model::DecimalReturnType>,
@@ -627,20 +578,20 @@ pub struct ResultSetOptions {
     pub long_return_type: std::option::Option<crate::model::LongReturnType>,
 }
 impl ResultSetOptions {
-    /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <note>
-    /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p>
+    /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <note> 
+    /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p> 
     /// </note>
-    pub fn decimal_return_type(&self) -> std::option::Option<&crate::model::DecimalReturnType> {
+    pub fn decimal_return_type(&self) -> std::option::Option<& crate::model::DecimalReturnType> {
         self.decimal_return_type.as_ref()
     }
     /// <p>A value that indicates how a field of <code>LONG</code> type is represented. Allowed values are <code>LONG</code> and <code>STRING</code>. The default is <code>LONG</code>. Specify <code>STRING</code> if the length or precision of numeric values might cause truncation or rounding errors. </p>
-    pub fn long_return_type(&self) -> std::option::Option<&crate::model::LongReturnType> {
+    pub fn long_return_type(&self) -> std::option::Option<& crate::model::LongReturnType> {
         self.long_return_type.as_ref()
     }
 }
 /// See [`ResultSetOptions`](crate::model::ResultSetOptions).
 pub mod result_set_options {
-
+    
     /// A builder for [`ResultSetOptions`](crate::model::ResultSetOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -648,22 +599,18 @@ pub mod result_set_options {
         pub(crate) long_return_type: std::option::Option<crate::model::LongReturnType>,
     }
     impl Builder {
-        /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <note>
-        /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p>
+        /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <note> 
+        /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p> 
         /// </note>
         pub fn decimal_return_type(mut self, input: crate::model::DecimalReturnType) -> Self {
             self.decimal_return_type = Some(input);
             self
         }
-        /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <note>
-        /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p>
+        /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <note> 
+        /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p> 
         /// </note>
-        pub fn set_decimal_return_type(
-            mut self,
-            input: std::option::Option<crate::model::DecimalReturnType>,
-        ) -> Self {
-            self.decimal_return_type = input;
-            self
+        pub fn set_decimal_return_type(mut self, input: std::option::Option<crate::model::DecimalReturnType>) -> Self {
+            self.decimal_return_type = input; self
         }
         /// <p>A value that indicates how a field of <code>LONG</code> type is represented. Allowed values are <code>LONG</code> and <code>STRING</code>. The default is <code>LONG</code>. Specify <code>STRING</code> if the length or precision of numeric values might cause truncation or rounding errors. </p>
         pub fn long_return_type(mut self, input: crate::model::LongReturnType) -> Self {
@@ -671,21 +618,21 @@ pub mod result_set_options {
             self
         }
         /// <p>A value that indicates how a field of <code>LONG</code> type is represented. Allowed values are <code>LONG</code> and <code>STRING</code>. The default is <code>LONG</code>. Specify <code>STRING</code> if the length or precision of numeric values might cause truncation or rounding errors. </p>
-        pub fn set_long_return_type(
-            mut self,
-            input: std::option::Option<crate::model::LongReturnType>,
-        ) -> Self {
-            self.long_return_type = input;
-            self
+        pub fn set_long_return_type(mut self, input: std::option::Option<crate::model::LongReturnType>) -> Self {
+            self.long_return_type = input; self
         }
         /// Consumes the builder and constructs a [`ResultSetOptions`](crate::model::ResultSetOptions).
         pub fn build(self) -> crate::model::ResultSetOptions {
             crate::model::ResultSetOptions {
-                decimal_return_type: self.decimal_return_type,
-                long_return_type: self.long_return_type,
+                decimal_return_type: self.decimal_return_type
+                ,
+                long_return_type: self.long_return_type
+                ,
             }
         }
     }
+    
+    
 }
 impl ResultSetOptions {
     /// Creates a new builder-style object to manufacture [`ResultSetOptions`](crate::model::ResultSetOptions).
@@ -700,9 +647,9 @@ impl ResultSetOptions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let longreturntype = unimplemented!();
 /// match longreturntype {
@@ -724,58 +671,52 @@ impl ResultSetOptions {
 /// Specifically, when `longreturntype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LongReturnType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LongReturnType {
     #[allow(missing_docs)] // documentation missing in model
     Long,
     #[allow(missing_docs)] // documentation missing in model
     String,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LongReturnType {
     fn from(s: &str) -> Self {
         match s {
             "LONG" => LongReturnType::Long,
             "STRING" => LongReturnType::String,
-            other => LongReturnType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LongReturnType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LongReturnType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LongReturnType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LongReturnType::from(s))
+                }
+            }
 impl LongReturnType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LongReturnType::Long => "LONG",
             LongReturnType::String => "STRING",
-            LongReturnType::Unknown(value) => value.as_str(),
+            LongReturnType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LONG", "STRING"]
+        &[
+            "LONG", "STRING"
+        ]
     }
 }
 impl AsRef<str> for LongReturnType {
@@ -790,9 +731,9 @@ impl AsRef<str> for LongReturnType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let decimalreturntype = unimplemented!();
 /// match decimalreturntype {
@@ -814,60 +755,52 @@ impl AsRef<str> for LongReturnType {
 /// Specifically, when `decimalreturntype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DecimalReturnType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DecimalReturnType {
     #[allow(missing_docs)] // documentation missing in model
     DoubleOrLong,
     #[allow(missing_docs)] // documentation missing in model
     String,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DecimalReturnType {
     fn from(s: &str) -> Self {
         match s {
             "DOUBLE_OR_LONG" => DecimalReturnType::DoubleOrLong,
             "STRING" => DecimalReturnType::String,
-            other => {
-                DecimalReturnType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DecimalReturnType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DecimalReturnType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DecimalReturnType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DecimalReturnType::from(s))
+                }
+            }
 impl DecimalReturnType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DecimalReturnType::DoubleOrLong => "DOUBLE_OR_LONG",
             DecimalReturnType::String => "STRING",
-            DecimalReturnType::Unknown(value) => value.as_str(),
+            DecimalReturnType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DOUBLE_OR_LONG", "STRING"]
+        &[
+            "DOUBLE_OR_LONG", "STRING"
+        ]
     }
 }
 impl AsRef<str> for DecimalReturnType {
@@ -879,50 +812,50 @@ impl AsRef<str> for DecimalReturnType {
 /// <p>A parameter used in a SQL statement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SqlParameter {
+pub struct SqlParameter  {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the parameter.</p>
     #[doc(hidden)]
     pub value: std::option::Option<crate::model::Field>,
-    /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
-    /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li>
-    /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li>
-    /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li>
-    /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li>
-    /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
+    /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li> 
+    /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li> 
+    /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li> 
+    /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li> 
+    /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> 
+    /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub type_hint: std::option::Option<crate::model::TypeHint>,
 }
 impl SqlParameter {
     /// <p>The name of the parameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the parameter.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::Field> {
+    pub fn value(&self) -> std::option::Option<& crate::model::Field> {
         self.value.as_ref()
     }
-    /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
-    /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li>
-    /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li>
-    /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li>
-    /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li>
-    /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
+    /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li> 
+    /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li> 
+    /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li> 
+    /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li> 
+    /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> 
+    /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li> 
     /// </ul>
-    pub fn type_hint(&self) -> std::option::Option<&crate::model::TypeHint> {
+    pub fn type_hint(&self) -> std::option::Option<& crate::model::TypeHint> {
         self.type_hint.as_ref()
     }
 }
 /// See [`SqlParameter`](crate::model::SqlParameter).
 pub mod sql_parameter {
-
+    
     /// A builder for [`SqlParameter`](crate::model::SqlParameter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -938,8 +871,7 @@ pub mod sql_parameter {
         }
         /// <p>The name of the parameter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The value of the parameter.</p>
         pub fn value(mut self, input: crate::model::Field) -> Self {
@@ -948,44 +880,47 @@ pub mod sql_parameter {
         }
         /// <p>The value of the parameter.</p>
         pub fn set_value(mut self, input: std::option::Option<crate::model::Field>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
-        /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
-        /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li>
-        /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li>
-        /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li>
-        /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li>
-        /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
+        /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li> 
+        /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li> 
+        /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li> 
+        /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li> 
+        /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> 
+        /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li> 
         /// </ul>
         pub fn type_hint(mut self, input: crate::model::TypeHint) -> Self {
             self.type_hint = Some(input);
             self
         }
-        /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
-        /// <ul>
-        /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
-        /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li>
-        /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li>
-        /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li>
-        /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li>
-        /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
+        /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li> 
+        /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li> 
+        /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li> 
+        /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li> 
+        /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> 
+        /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li> 
         /// </ul>
         pub fn set_type_hint(mut self, input: std::option::Option<crate::model::TypeHint>) -> Self {
-            self.type_hint = input;
-            self
+            self.type_hint = input; self
         }
         /// Consumes the builder and constructs a [`SqlParameter`](crate::model::SqlParameter).
         pub fn build(self) -> crate::model::SqlParameter {
             crate::model::SqlParameter {
-                name: self.name,
-                value: self.value,
-                type_hint: self.type_hint,
+                name: self.name
+                ,
+                value: self.value
+                ,
+                type_hint: self.type_hint
+                ,
             }
         }
     }
+    
+    
 }
 impl SqlParameter {
     /// Creates a new builder-style object to manufacture [`SqlParameter`](crate::model::SqlParameter).
@@ -1000,9 +935,9 @@ impl SqlParameter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let typehint = unimplemented!();
 /// match typehint {
@@ -1028,22 +963,14 @@ impl SqlParameter {
 /// Specifically, when `typehint` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TypeHint::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TypeHint {
     #[allow(missing_docs)] // documentation missing in model
     Date,
@@ -1058,7 +985,7 @@ pub enum TypeHint {
     #[allow(missing_docs)] // documentation missing in model
     Uuid,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TypeHint {
     fn from(s: &str) -> Self {
@@ -1069,17 +996,17 @@ impl std::convert::From<&str> for TypeHint {
             "TIME" => TypeHint::Time,
             "TIMESTAMP" => TypeHint::Timestamp,
             "UUID" => TypeHint::Uuid,
-            other => TypeHint::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TypeHint::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TypeHint {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TypeHint::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TypeHint::from(s))
+                }
+            }
 impl TypeHint {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1090,12 +1017,14 @@ impl TypeHint {
             TypeHint::Time => "TIME",
             TypeHint::Timestamp => "TIMESTAMP",
             TypeHint::Uuid => "UUID",
-            TypeHint::Unknown(value) => value.as_str(),
+            TypeHint::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DATE", "DECIMAL", "JSON", "TIME", "TIMESTAMP", "UUID"]
+        &[
+            "DATE", "DECIMAL", "JSON", "TIME", "TIMESTAMP", "UUID"
+        ]
     }
 }
 impl AsRef<str> for TypeHint {
@@ -1104,12 +1033,12 @@ impl AsRef<str> for TypeHint {
     }
 }
 
-/// <p>The result of a SQL statement.</p> <note>
-/// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
+/// <p>The result of a SQL statement.</p> <note> 
+/// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SqlStatementResult {
+pub struct SqlStatementResult  {
     /// <p>The result set of the SQL statement.</p>
     #[doc(hidden)]
     pub result_frame: std::option::Option<crate::model::ResultFrame>,
@@ -1119,7 +1048,7 @@ pub struct SqlStatementResult {
 }
 impl SqlStatementResult {
     /// <p>The result set of the SQL statement.</p>
-    pub fn result_frame(&self) -> std::option::Option<&crate::model::ResultFrame> {
+    pub fn result_frame(&self) -> std::option::Option<& crate::model::ResultFrame> {
         self.result_frame.as_ref()
     }
     /// <p>The number of records updated by a SQL statement.</p>
@@ -1129,7 +1058,7 @@ impl SqlStatementResult {
 }
 /// See [`SqlStatementResult`](crate::model::SqlStatementResult).
 pub mod sql_statement_result {
-
+    
     /// A builder for [`SqlStatementResult`](crate::model::SqlStatementResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1143,12 +1072,8 @@ pub mod sql_statement_result {
             self
         }
         /// <p>The result set of the SQL statement.</p>
-        pub fn set_result_frame(
-            mut self,
-            input: std::option::Option<crate::model::ResultFrame>,
-        ) -> Self {
-            self.result_frame = input;
-            self
+        pub fn set_result_frame(mut self, input: std::option::Option<crate::model::ResultFrame>) -> Self {
+            self.result_frame = input; self
         }
         /// <p>The number of records updated by a SQL statement.</p>
         pub fn number_of_records_updated(mut self, input: i64) -> Self {
@@ -1157,17 +1082,21 @@ pub mod sql_statement_result {
         }
         /// <p>The number of records updated by a SQL statement.</p>
         pub fn set_number_of_records_updated(mut self, input: std::option::Option<i64>) -> Self {
-            self.number_of_records_updated = input;
-            self
+            self.number_of_records_updated = input; self
         }
         /// Consumes the builder and constructs a [`SqlStatementResult`](crate::model::SqlStatementResult).
         pub fn build(self) -> crate::model::SqlStatementResult {
             crate::model::SqlStatementResult {
-                result_frame: self.result_frame,
-                number_of_records_updated: self.number_of_records_updated.unwrap_or_default(),
+                result_frame: self.result_frame
+                ,
+                number_of_records_updated: self.number_of_records_updated
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SqlStatementResult {
     /// Creates a new builder-style object to manufacture [`SqlStatementResult`](crate::model::SqlStatementResult).
@@ -1176,12 +1105,12 @@ impl SqlStatementResult {
     }
 }
 
-/// <p>The result set returned by a SQL statement.</p> <note>
-/// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
+/// <p>The result set returned by a SQL statement.</p> <note> 
+/// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResultFrame {
+pub struct ResultFrame  {
     /// <p>The result-set metadata in the result set.</p>
     #[doc(hidden)]
     pub result_set_metadata: std::option::Option<crate::model::ResultSetMetadata>,
@@ -1191,17 +1120,17 @@ pub struct ResultFrame {
 }
 impl ResultFrame {
     /// <p>The result-set metadata in the result set.</p>
-    pub fn result_set_metadata(&self) -> std::option::Option<&crate::model::ResultSetMetadata> {
+    pub fn result_set_metadata(&self) -> std::option::Option<& crate::model::ResultSetMetadata> {
         self.result_set_metadata.as_ref()
     }
     /// <p>The records in the result set.</p>
-    pub fn records(&self) -> std::option::Option<&[crate::model::Record]> {
+    pub fn records(&self) -> std::option::Option<& [crate::model::Record]> {
         self.records.as_deref()
     }
 }
 /// See [`ResultFrame`](crate::model::ResultFrame).
 pub mod result_frame {
-
+    
     /// A builder for [`ResultFrame`](crate::model::ResultFrame).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1215,12 +1144,8 @@ pub mod result_frame {
             self
         }
         /// <p>The result-set metadata in the result set.</p>
-        pub fn set_result_set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::ResultSetMetadata>,
-        ) -> Self {
-            self.result_set_metadata = input;
-            self
+        pub fn set_result_set_metadata(mut self, input: std::option::Option<crate::model::ResultSetMetadata>) -> Self {
+            self.result_set_metadata = input; self
         }
         /// Appends an item to `records`.
         ///
@@ -1229,26 +1154,26 @@ pub mod result_frame {
         /// <p>The records in the result set.</p>
         pub fn records(mut self, input: crate::model::Record) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input);
-            self.records = Some(v);
-            self
+                            v.push(input);
+                            self.records = Some(v);
+                            self
         }
         /// <p>The records in the result set.</p>
-        pub fn set_records(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Record>>,
-        ) -> Self {
-            self.records = input;
-            self
+        pub fn set_records(mut self, input: std::option::Option<std::vec::Vec<crate::model::Record>>) -> Self {
+            self.records = input; self
         }
         /// Consumes the builder and constructs a [`ResultFrame`](crate::model::ResultFrame).
         pub fn build(self) -> crate::model::ResultFrame {
             crate::model::ResultFrame {
-                result_set_metadata: self.result_set_metadata,
-                records: self.records,
+                result_set_metadata: self.result_set_metadata
+                ,
+                records: self.records
+                ,
             }
         }
     }
+    
+    
 }
 impl ResultFrame {
     /// Creates a new builder-style object to manufacture [`ResultFrame`](crate::model::ResultFrame).
@@ -1257,25 +1182,25 @@ impl ResultFrame {
     }
 }
 
-/// <p>A record returned by a call.</p> <note>
-/// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
+/// <p>A record returned by a call.</p> <note> 
+/// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Record {
+pub struct Record  {
     /// <p>The values returned in the record.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<crate::model::Value>>,
 }
 impl Record {
     /// <p>The values returned in the record.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::model::Value]> {
+    pub fn values(&self) -> std::option::Option<& [crate::model::Value]> {
         self.values.as_deref()
     }
 }
 /// See [`Record`](crate::model::Record).
 pub mod record {
-
+    
     /// A builder for [`Record`](crate::model::Record).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1289,25 +1214,24 @@ pub mod record {
         /// <p>The values returned in the record.</p>
         pub fn values(mut self, input: crate::model::Value) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input);
-            self.values = Some(v);
-            self
+                            v.push(input);
+                            self.values = Some(v);
+                            self
         }
         /// <p>The values returned in the record.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Value>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::Value>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`Record`](crate::model::Record).
         pub fn build(self) -> crate::model::Record {
             crate::model::Record {
-                values: self.values,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl Record {
     /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
@@ -1316,8 +1240,8 @@ impl Record {
     }
 }
 
-/// <p>Contains the value of a column.</p> <note>
-/// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
+/// <p>Contains the value of a column.</p> <note> 
+/// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -1355,14 +1279,8 @@ pub enum Value {
 impl Value {
     /// Tries to convert the enum instance into [`ArrayValues`](crate::model::Value::ArrayValues), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_array_values(
-        &self,
-    ) -> std::result::Result<&std::vec::Vec<crate::model::Value>, &Self> {
-        if let Value::ArrayValues(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_array_values(&self) -> std::result::Result<&std::vec::Vec<crate::model::Value>, &Self> {
+        if let Value::ArrayValues(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`ArrayValues`](crate::model::Value::ArrayValues).
     pub fn is_array_values(&self) -> bool {
@@ -1371,11 +1289,7 @@ impl Value {
     /// Tries to convert the enum instance into [`BigIntValue`](crate::model::Value::BigIntValue), extracting the inner [`i64`](i64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_big_int_value(&self) -> std::result::Result<&i64, &Self> {
-        if let Value::BigIntValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Value::BigIntValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`BigIntValue`](crate::model::Value::BigIntValue).
     pub fn is_big_int_value(&self) -> bool {
@@ -1384,11 +1298,7 @@ impl Value {
     /// Tries to convert the enum instance into [`BitValue`](crate::model::Value::BitValue), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bit_value(&self) -> std::result::Result<&bool, &Self> {
-        if let Value::BitValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Value::BitValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`BitValue`](crate::model::Value::BitValue).
     pub fn is_bit_value(&self) -> bool {
@@ -1397,11 +1307,7 @@ impl Value {
     /// Tries to convert the enum instance into [`BlobValue`](crate::model::Value::BlobValue), extracting the inner [`Blob`](aws_smithy_types::Blob).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_blob_value(&self) -> std::result::Result<&aws_smithy_types::Blob, &Self> {
-        if let Value::BlobValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Value::BlobValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`BlobValue`](crate::model::Value::BlobValue).
     pub fn is_blob_value(&self) -> bool {
@@ -1410,11 +1316,7 @@ impl Value {
     /// Tries to convert the enum instance into [`DoubleValue`](crate::model::Value::DoubleValue), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
-        if let Value::DoubleValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Value::DoubleValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`DoubleValue`](crate::model::Value::DoubleValue).
     pub fn is_double_value(&self) -> bool {
@@ -1423,11 +1325,7 @@ impl Value {
     /// Tries to convert the enum instance into [`IntValue`](crate::model::Value::IntValue), extracting the inner [`i32`](i32).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_int_value(&self) -> std::result::Result<&i32, &Self> {
-        if let Value::IntValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Value::IntValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`IntValue`](crate::model::Value::IntValue).
     pub fn is_int_value(&self) -> bool {
@@ -1436,11 +1334,7 @@ impl Value {
     /// Tries to convert the enum instance into [`IsNull`](crate::model::Value::IsNull), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_is_null(&self) -> std::result::Result<&bool, &Self> {
-        if let Value::IsNull(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Value::IsNull(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`IsNull`](crate::model::Value::IsNull).
     pub fn is_is_null(&self) -> bool {
@@ -1449,11 +1343,7 @@ impl Value {
     /// Tries to convert the enum instance into [`RealValue`](crate::model::Value::RealValue), extracting the inner [`f32`](f32).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_real_value(&self) -> std::result::Result<&f32, &Self> {
-        if let Value::RealValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Value::RealValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`RealValue`](crate::model::Value::RealValue).
     pub fn is_real_value(&self) -> bool {
@@ -1462,11 +1352,7 @@ impl Value {
     /// Tries to convert the enum instance into [`StringValue`](crate::model::Value::StringValue), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let Value::StringValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Value::StringValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`StringValue`](crate::model::Value::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -1475,11 +1361,7 @@ impl Value {
     /// Tries to convert the enum instance into [`StructValue`](crate::model::Value::StructValue), extracting the inner [`StructValue`](crate::model::StructValue).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_struct_value(&self) -> std::result::Result<&crate::model::StructValue, &Self> {
-        if let Value::StructValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Value::StructValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`StructValue`](crate::model::Value::StructValue).
     pub fn is_struct_value(&self) -> bool {
@@ -1491,25 +1373,25 @@ impl Value {
     }
 }
 
-/// <p>A structure value returned by a call.</p> <note>
-/// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
+/// <p>A structure value returned by a call.</p> <note> 
+/// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StructValue {
+pub struct StructValue  {
     /// <p>The attributes returned in the record.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Value>>,
 }
 impl StructValue {
     /// <p>The attributes returned in the record.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::Value]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::Value]> {
         self.attributes.as_deref()
     }
 }
 /// See [`StructValue`](crate::model::StructValue).
 pub mod struct_value {
-
+    
     /// A builder for [`StructValue`](crate::model::StructValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1523,25 +1405,24 @@ pub mod struct_value {
         /// <p>The attributes returned in the record.</p>
         pub fn attributes(mut self, input: crate::model::Value) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>The attributes returned in the record.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Value>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Value>>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`StructValue`](crate::model::StructValue).
         pub fn build(self) -> crate::model::StructValue {
             crate::model::StructValue {
-                attributes: self.attributes,
+                attributes: self.attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl StructValue {
     /// Creates a new builder-style object to manufacture [`StructValue`](crate::model::StructValue).
@@ -1553,7 +1434,7 @@ impl StructValue {
 /// <p>The metadata of the result set returned by a SQL statement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResultSetMetadata {
+pub struct ResultSetMetadata  {
     /// <p>The number of columns in the result set.</p>
     #[doc(hidden)]
     pub column_count: i64,
@@ -1567,19 +1448,18 @@ impl ResultSetMetadata {
         self.column_count
     }
     /// <p>The metadata of the columns in the result set.</p>
-    pub fn column_metadata(&self) -> std::option::Option<&[crate::model::ColumnMetadata]> {
+    pub fn column_metadata(&self) -> std::option::Option<& [crate::model::ColumnMetadata]> {
         self.column_metadata.as_deref()
     }
 }
 /// See [`ResultSetMetadata`](crate::model::ResultSetMetadata).
 pub mod result_set_metadata {
-
+    
     /// A builder for [`ResultSetMetadata`](crate::model::ResultSetMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_count: std::option::Option<i64>,
-        pub(crate) column_metadata:
-            std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
+        pub(crate) column_metadata: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
     }
     impl Builder {
         /// <p>The number of columns in the result set.</p>
@@ -1589,8 +1469,7 @@ pub mod result_set_metadata {
         }
         /// <p>The number of columns in the result set.</p>
         pub fn set_column_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.column_count = input;
-            self
+            self.column_count = input; self
         }
         /// Appends an item to `column_metadata`.
         ///
@@ -1599,26 +1478,27 @@ pub mod result_set_metadata {
         /// <p>The metadata of the columns in the result set.</p>
         pub fn column_metadata(mut self, input: crate::model::ColumnMetadata) -> Self {
             let mut v = self.column_metadata.unwrap_or_default();
-            v.push(input);
-            self.column_metadata = Some(v);
-            self
+                            v.push(input);
+                            self.column_metadata = Some(v);
+                            self
         }
         /// <p>The metadata of the columns in the result set.</p>
-        pub fn set_column_metadata(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
-        ) -> Self {
-            self.column_metadata = input;
-            self
+        pub fn set_column_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>) -> Self {
+            self.column_metadata = input; self
         }
         /// Consumes the builder and constructs a [`ResultSetMetadata`](crate::model::ResultSetMetadata).
         pub fn build(self) -> crate::model::ResultSetMetadata {
             crate::model::ResultSetMetadata {
-                column_count: self.column_count.unwrap_or_default(),
-                column_metadata: self.column_metadata,
+                column_count: self.column_count
+                    .unwrap_or_default()
+                ,
+                column_metadata: self.column_metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl ResultSetMetadata {
     /// Creates a new builder-style object to manufacture [`ResultSetMetadata`](crate::model::ResultSetMetadata).
@@ -1630,20 +1510,20 @@ impl ResultSetMetadata {
 /// <p>The response elements represent the results of an update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResult {
+pub struct UpdateResult  {
     /// <p>Values for fields generated during the request.</p>
     #[doc(hidden)]
     pub generated_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
 }
 impl UpdateResult {
     /// <p>Values for fields generated during the request.</p>
-    pub fn generated_fields(&self) -> std::option::Option<&[crate::model::Field]> {
+    pub fn generated_fields(&self) -> std::option::Option<& [crate::model::Field]> {
         self.generated_fields.as_deref()
     }
 }
 /// See [`UpdateResult`](crate::model::UpdateResult).
 pub mod update_result {
-
+    
     /// A builder for [`UpdateResult`](crate::model::UpdateResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1657,25 +1537,24 @@ pub mod update_result {
         /// <p>Values for fields generated during the request.</p>
         pub fn generated_fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.generated_fields.unwrap_or_default();
-            v.push(input);
-            self.generated_fields = Some(v);
-            self
+                            v.push(input);
+                            self.generated_fields = Some(v);
+                            self
         }
         /// <p>Values for fields generated during the request.</p>
-        pub fn set_generated_fields(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Field>>,
-        ) -> Self {
-            self.generated_fields = input;
-            self
+        pub fn set_generated_fields(mut self, input: std::option::Option<std::vec::Vec<crate::model::Field>>) -> Self {
+            self.generated_fields = input; self
         }
         /// Consumes the builder and constructs a [`UpdateResult`](crate::model::UpdateResult).
         pub fn build(self) -> crate::model::UpdateResult {
             crate::model::UpdateResult {
-                generated_fields: self.generated_fields,
+                generated_fields: self.generated_fields
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateResult {
     /// Creates a new builder-style object to manufacture [`UpdateResult`](crate::model::UpdateResult).
@@ -1683,3 +1562,4 @@ impl UpdateResult {
         crate::model::update_result::Builder::default()
     }
 }
+

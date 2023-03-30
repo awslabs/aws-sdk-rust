@@ -3,7 +3,7 @@
 /// <p>A tag is a key-value pair. Allowed characters are letters, white space, and numbers that can be represented in UTF-8, and the following characters:<code> + - = . _ : /</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The tag key (String). The key can't start with <code>aws:</code>.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The tag key (String). The key can't start with <code>aws:</code>.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the tag key.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod tag {
         }
         /// <p>The tag key (String). The key can't start with <code>aws:</code>.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of the tag key.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod tag {
         }
         /// <p>The value of the tag key.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -73,9 +75,9 @@ impl Tag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let throughputmode = unimplemented!();
 /// match throughputmode {
@@ -98,22 +100,14 @@ impl Tag {
 /// Specifically, when `throughputmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ThroughputMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ThroughputMode {
     #[allow(missing_docs)] // documentation missing in model
     Bursting,
@@ -122,7 +116,7 @@ pub enum ThroughputMode {
     #[allow(missing_docs)] // documentation missing in model
     Provisioned,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ThroughputMode {
     fn from(s: &str) -> Self {
@@ -130,17 +124,17 @@ impl std::convert::From<&str> for ThroughputMode {
             "bursting" => ThroughputMode::Bursting,
             "elastic" => ThroughputMode::Elastic,
             "provisioned" => ThroughputMode::Provisioned,
-            other => ThroughputMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ThroughputMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ThroughputMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ThroughputMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ThroughputMode::from(s))
+                }
+            }
 impl ThroughputMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -148,12 +142,14 @@ impl ThroughputMode {
             ThroughputMode::Bursting => "bursting",
             ThroughputMode::Elastic => "elastic",
             ThroughputMode::Provisioned => "provisioned",
-            ThroughputMode::Unknown(value) => value.as_str(),
+            ThroughputMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["bursting", "elastic", "provisioned"]
+        &[
+            "bursting", "elastic", "provisioned"
+        ]
     }
 }
 impl AsRef<str> for ThroughputMode {
@@ -168,9 +164,9 @@ impl AsRef<str> for ThroughputMode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let performancemode = unimplemented!();
 /// match performancemode {
@@ -192,58 +188,52 @@ impl AsRef<str> for ThroughputMode {
 /// Specifically, when `performancemode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PerformanceMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PerformanceMode {
     #[allow(missing_docs)] // documentation missing in model
     GeneralPurpose,
     #[allow(missing_docs)] // documentation missing in model
     MaxIo,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PerformanceMode {
     fn from(s: &str) -> Self {
         match s {
             "generalPurpose" => PerformanceMode::GeneralPurpose,
             "maxIO" => PerformanceMode::MaxIo,
-            other => PerformanceMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PerformanceMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PerformanceMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PerformanceMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PerformanceMode::from(s))
+                }
+            }
 impl PerformanceMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PerformanceMode::GeneralPurpose => "generalPurpose",
             PerformanceMode::MaxIo => "maxIO",
-            PerformanceMode::Unknown(value) => value.as_str(),
+            PerformanceMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["generalPurpose", "maxIO"]
+        &[
+            "generalPurpose", "maxIO"
+        ]
     }
 }
 impl AsRef<str> for PerformanceMode {
@@ -255,7 +245,7 @@ impl AsRef<str> for PerformanceMode {
 /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value represents the actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not necessarily the exact size the file system was at any instant in time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileSystemSize {
+pub struct FileSystemSize  {
     /// <p>The latest known metered size (in bytes) of data stored in the file system.</p>
     #[doc(hidden)]
     pub value: i64,
@@ -275,7 +265,7 @@ impl FileSystemSize {
         self.value
     }
     /// <p>The time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.</p>
@@ -289,7 +279,7 @@ impl FileSystemSize {
 }
 /// See [`FileSystemSize`](crate::model::FileSystemSize).
 pub mod file_system_size {
-
+    
     /// A builder for [`FileSystemSize`](crate::model::FileSystemSize).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -306,8 +296,7 @@ pub mod file_system_size {
         }
         /// <p>The latest known metered size (in bytes) of data stored in the file system.</p>
         pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>The time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -315,12 +304,8 @@ pub mod file_system_size {
             self
         }
         /// <p>The time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         /// <p>The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.</p>
         pub fn value_in_ia(mut self, input: i64) -> Self {
@@ -329,8 +314,7 @@ pub mod file_system_size {
         }
         /// <p>The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.</p>
         pub fn set_value_in_ia(mut self, input: std::option::Option<i64>) -> Self {
-            self.value_in_ia = input;
-            self
+            self.value_in_ia = input; self
         }
         /// <p>The latest known metered size (in bytes) of data stored in the Standard storage class.</p>
         pub fn value_in_standard(mut self, input: i64) -> Self {
@@ -339,19 +323,25 @@ pub mod file_system_size {
         }
         /// <p>The latest known metered size (in bytes) of data stored in the Standard storage class.</p>
         pub fn set_value_in_standard(mut self, input: std::option::Option<i64>) -> Self {
-            self.value_in_standard = input;
-            self
+            self.value_in_standard = input; self
         }
         /// Consumes the builder and constructs a [`FileSystemSize`](crate::model::FileSystemSize).
         pub fn build(self) -> crate::model::FileSystemSize {
             crate::model::FileSystemSize {
-                value: self.value.unwrap_or_default(),
-                timestamp: self.timestamp,
-                value_in_ia: self.value_in_ia,
-                value_in_standard: self.value_in_standard,
+                value: self.value
+                    .unwrap_or_default()
+                ,
+                timestamp: self.timestamp
+                ,
+                value_in_ia: self.value_in_ia
+                ,
+                value_in_standard: self.value_in_standard
+                ,
             }
         }
     }
+    
+    
 }
 impl FileSystemSize {
     /// Creates a new builder-style object to manufacture [`FileSystemSize`](crate::model::FileSystemSize).
@@ -366,9 +356,9 @@ impl FileSystemSize {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let lifecyclestate = unimplemented!();
 /// match lifecyclestate {
@@ -394,22 +384,14 @@ impl FileSystemSize {
 /// Specifically, when `lifecyclestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LifeCycleState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LifeCycleState {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -424,7 +406,7 @@ pub enum LifeCycleState {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LifeCycleState {
     fn from(s: &str) -> Self {
@@ -435,17 +417,17 @@ impl std::convert::From<&str> for LifeCycleState {
             "deleting" => LifeCycleState::Deleting,
             "error" => LifeCycleState::Error,
             "updating" => LifeCycleState::Updating,
-            other => LifeCycleState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LifeCycleState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LifeCycleState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LifeCycleState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LifeCycleState::from(s))
+                }
+            }
 impl LifeCycleState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -456,18 +438,13 @@ impl LifeCycleState {
             LifeCycleState::Deleting => "deleting",
             LifeCycleState::Error => "error",
             LifeCycleState::Updating => "updating",
-            LifeCycleState::Unknown(value) => value.as_str(),
+            LifeCycleState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "available",
-            "creating",
-            "deleted",
-            "deleting",
-            "error",
-            "updating",
+            "available", "creating", "deleted", "deleting", "error", "updating"
         ]
     }
 }
@@ -477,41 +454,37 @@ impl AsRef<str> for LifeCycleState {
     }
 }
 
-/// <p>Describes a policy used by EFS lifecycle management and EFS Intelligent-Tiering that specifies when to transition files into and out of the file system's Infrequent Access (IA) storage class. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS Intelligent‐Tiering and EFS Lifecycle Management</a>.</p> <note>
-/// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. For more information, see the request examples in <code>PutLifecycleConfiguration</code>.</p>
+/// <p>Describes a policy used by EFS lifecycle management and EFS Intelligent-Tiering that specifies when to transition files into and out of the file system's Infrequent Access (IA) storage class. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS Intelligent‐Tiering and EFS Lifecycle Management</a>.</p> <note> 
+/// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. For more information, see the request examples in <code>PutLifecycleConfiguration</code>.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifecyclePolicy {
+pub struct LifecyclePolicy  {
     /// <p> Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     #[doc(hidden)]
     pub transition_to_ia: std::option::Option<crate::model::TransitionToIaRules>,
     /// <p>Describes when to transition a file from IA storage to primary storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     #[doc(hidden)]
-    pub transition_to_primary_storage_class:
-        std::option::Option<crate::model::TransitionToPrimaryStorageClassRules>,
+    pub transition_to_primary_storage_class: std::option::Option<crate::model::TransitionToPrimaryStorageClassRules>,
 }
 impl LifecyclePolicy {
     /// <p> Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
-    pub fn transition_to_ia(&self) -> std::option::Option<&crate::model::TransitionToIaRules> {
+    pub fn transition_to_ia(&self) -> std::option::Option<& crate::model::TransitionToIaRules> {
         self.transition_to_ia.as_ref()
     }
     /// <p>Describes when to transition a file from IA storage to primary storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
-    pub fn transition_to_primary_storage_class(
-        &self,
-    ) -> std::option::Option<&crate::model::TransitionToPrimaryStorageClassRules> {
+    pub fn transition_to_primary_storage_class(&self) -> std::option::Option<& crate::model::TransitionToPrimaryStorageClassRules> {
         self.transition_to_primary_storage_class.as_ref()
     }
 }
 /// See [`LifecyclePolicy`](crate::model::LifecyclePolicy).
 pub mod lifecycle_policy {
-
+    
     /// A builder for [`LifecyclePolicy`](crate::model::LifecyclePolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transition_to_ia: std::option::Option<crate::model::TransitionToIaRules>,
-        pub(crate) transition_to_primary_storage_class:
-            std::option::Option<crate::model::TransitionToPrimaryStorageClassRules>,
+        pub(crate) transition_to_primary_storage_class: std::option::Option<crate::model::TransitionToPrimaryStorageClassRules>,
     }
     impl Builder {
         /// <p> Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
@@ -520,37 +493,30 @@ pub mod lifecycle_policy {
             self
         }
         /// <p> Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
-        pub fn set_transition_to_ia(
-            mut self,
-            input: std::option::Option<crate::model::TransitionToIaRules>,
-        ) -> Self {
-            self.transition_to_ia = input;
-            self
+        pub fn set_transition_to_ia(mut self, input: std::option::Option<crate::model::TransitionToIaRules>) -> Self {
+            self.transition_to_ia = input; self
         }
         /// <p>Describes when to transition a file from IA storage to primary storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
-        pub fn transition_to_primary_storage_class(
-            mut self,
-            input: crate::model::TransitionToPrimaryStorageClassRules,
-        ) -> Self {
+        pub fn transition_to_primary_storage_class(mut self, input: crate::model::TransitionToPrimaryStorageClassRules) -> Self {
             self.transition_to_primary_storage_class = Some(input);
             self
         }
         /// <p>Describes when to transition a file from IA storage to primary storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
-        pub fn set_transition_to_primary_storage_class(
-            mut self,
-            input: std::option::Option<crate::model::TransitionToPrimaryStorageClassRules>,
-        ) -> Self {
-            self.transition_to_primary_storage_class = input;
-            self
+        pub fn set_transition_to_primary_storage_class(mut self, input: std::option::Option<crate::model::TransitionToPrimaryStorageClassRules>) -> Self {
+            self.transition_to_primary_storage_class = input; self
         }
         /// Consumes the builder and constructs a [`LifecyclePolicy`](crate::model::LifecyclePolicy).
         pub fn build(self) -> crate::model::LifecyclePolicy {
             crate::model::LifecyclePolicy {
-                transition_to_ia: self.transition_to_ia,
-                transition_to_primary_storage_class: self.transition_to_primary_storage_class,
+                transition_to_ia: self.transition_to_ia
+                ,
+                transition_to_primary_storage_class: self.transition_to_primary_storage_class
+                ,
             }
         }
     }
+    
+    
 }
 impl LifecyclePolicy {
     /// Creates a new builder-style object to manufacture [`LifecyclePolicy`](crate::model::LifecyclePolicy).
@@ -565,9 +531,9 @@ impl LifecyclePolicy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let transitiontoprimarystorageclassrules = unimplemented!();
 /// match transitiontoprimarystorageclassrules {
@@ -588,56 +554,48 @@ impl LifecyclePolicy {
 /// Specifically, when `transitiontoprimarystorageclassrules` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TransitionToPrimaryStorageClassRules::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TransitionToPrimaryStorageClassRules {
     #[allow(missing_docs)] // documentation missing in model
     After1Access,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TransitionToPrimaryStorageClassRules {
     fn from(s: &str) -> Self {
         match s {
             "AFTER_1_ACCESS" => TransitionToPrimaryStorageClassRules::After1Access,
-            other => TransitionToPrimaryStorageClassRules::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => TransitionToPrimaryStorageClassRules::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TransitionToPrimaryStorageClassRules {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TransitionToPrimaryStorageClassRules::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TransitionToPrimaryStorageClassRules::from(s))
+                }
+            }
 impl TransitionToPrimaryStorageClassRules {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TransitionToPrimaryStorageClassRules::After1Access => "AFTER_1_ACCESS",
-            TransitionToPrimaryStorageClassRules::Unknown(value) => value.as_str(),
+            TransitionToPrimaryStorageClassRules::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AFTER_1_ACCESS"]
+        &[
+            "AFTER_1_ACCESS"
+        ]
     }
 }
 impl AsRef<str> for TransitionToPrimaryStorageClassRules {
@@ -652,9 +610,9 @@ impl AsRef<str> for TransitionToPrimaryStorageClassRules {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let transitiontoiarules = unimplemented!();
 /// match transitiontoiarules {
@@ -680,22 +638,14 @@ impl AsRef<str> for TransitionToPrimaryStorageClassRules {
 /// Specifically, when `transitiontoiarules` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TransitionToIaRules::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TransitionToIaRules {
     #[allow(missing_docs)] // documentation missing in model
     After14Days,
@@ -710,7 +660,7 @@ pub enum TransitionToIaRules {
     #[allow(missing_docs)] // documentation missing in model
     After90Days,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TransitionToIaRules {
     fn from(s: &str) -> Self {
@@ -721,19 +671,17 @@ impl std::convert::From<&str> for TransitionToIaRules {
             "AFTER_60_DAYS" => TransitionToIaRules::After60Days,
             "AFTER_7_DAYS" => TransitionToIaRules::After7Days,
             "AFTER_90_DAYS" => TransitionToIaRules::After90Days,
-            other => {
-                TransitionToIaRules::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => TransitionToIaRules::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TransitionToIaRules {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TransitionToIaRules::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TransitionToIaRules::from(s))
+                }
+            }
 impl TransitionToIaRules {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -744,18 +692,13 @@ impl TransitionToIaRules {
             TransitionToIaRules::After60Days => "AFTER_60_DAYS",
             TransitionToIaRules::After7Days => "AFTER_7_DAYS",
             TransitionToIaRules::After90Days => "AFTER_90_DAYS",
-            TransitionToIaRules::Unknown(value) => value.as_str(),
+            TransitionToIaRules::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AFTER_14_DAYS",
-            "AFTER_1_DAY",
-            "AFTER_30_DAYS",
-            "AFTER_60_DAYS",
-            "AFTER_7_DAYS",
-            "AFTER_90_DAYS",
+            "AFTER_14_DAYS", "AFTER_1_DAY", "AFTER_30_DAYS", "AFTER_60_DAYS", "AFTER_7_DAYS", "AFTER_90_DAYS"
         ]
     }
 }
@@ -768,67 +711,69 @@ impl AsRef<str> for TransitionToIaRules {
 /// <p>The backup policy for the file system used to create automatic daily backups. If status has a value of <code>ENABLED</code>, the file system is being automatically backed up. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackupPolicy {
-    /// <p>Describes the status of the file system's backup policy.</p>
-    /// <ul>
-    /// <li> <p> <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.</p> </li>
-    /// <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.</p> </li>
-    /// <li> <p> <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.</p> </li>
-    /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li>
+pub struct BackupPolicy  {
+    /// <p>Describes the status of the file system's backup policy.</p> 
+    /// <ul> 
+    /// <li> <p> <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.</p> </li> 
+    /// <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.</p> </li> 
+    /// <li> <p> <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.</p> </li> 
+    /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl BackupPolicy {
-    /// <p>Describes the status of the file system's backup policy.</p>
-    /// <ul>
-    /// <li> <p> <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.</p> </li>
-    /// <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.</p> </li>
-    /// <li> <p> <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.</p> </li>
-    /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li>
+    /// <p>Describes the status of the file system's backup policy.</p> 
+    /// <ul> 
+    /// <li> <p> <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.</p> </li> 
+    /// <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.</p> </li> 
+    /// <li> <p> <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.</p> </li> 
+    /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
 }
 /// See [`BackupPolicy`](crate::model::BackupPolicy).
 pub mod backup_policy {
-
+    
     /// A builder for [`BackupPolicy`](crate::model::BackupPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,
     }
     impl Builder {
-        /// <p>Describes the status of the file system's backup policy.</p>
-        /// <ul>
-        /// <li> <p> <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.</p> </li>
-        /// <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.</p> </li>
-        /// <li> <p> <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.</p> </li>
-        /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li>
+        /// <p>Describes the status of the file system's backup policy.</p> 
+        /// <ul> 
+        /// <li> <p> <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.</p> </li> 
+        /// <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.</p> </li> 
+        /// <li> <p> <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.</p> </li> 
+        /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::Status) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Describes the status of the file system's backup policy.</p>
-        /// <ul>
-        /// <li> <p> <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.</p> </li>
-        /// <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.</p> </li>
-        /// <li> <p> <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.</p> </li>
-        /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li>
+        /// <p>Describes the status of the file system's backup policy.</p> 
+        /// <ul> 
+        /// <li> <p> <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.</p> </li> 
+        /// <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.</p> </li> 
+        /// <li> <p> <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.</p> </li> 
+        /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`BackupPolicy`](crate::model::BackupPolicy).
         pub fn build(self) -> crate::model::BackupPolicy {
             crate::model::BackupPolicy {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl BackupPolicy {
     /// Creates a new builder-style object to manufacture [`BackupPolicy`](crate::model::BackupPolicy).
@@ -843,9 +788,9 @@ impl BackupPolicy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let status = unimplemented!();
 /// match status {
@@ -869,22 +814,14 @@ impl BackupPolicy {
 /// Specifically, when `status` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Status::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
@@ -895,7 +832,7 @@ pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Enabling,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
     fn from(s: &str) -> Self {
@@ -904,17 +841,17 @@ impl std::convert::From<&str> for Status {
             "DISABLING" => Status::Disabling,
             "ENABLED" => Status::Enabled,
             "ENABLING" => Status::Enabling,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Status {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Status::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Status::from(s))
+                }
+            }
 impl Status {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -923,12 +860,14 @@ impl Status {
             Status::Disabling => "DISABLING",
             Status::Enabled => "ENABLED",
             Status::Enabling => "ENABLING",
-            Status::Unknown(value) => value.as_str(),
+            Status::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "DISABLING", "ENABLED", "ENABLING"]
+        &[
+            "DISABLED", "DISABLING", "ENABLED", "ENABLING"
+        ]
     }
 }
 impl AsRef<str> for Status {
@@ -940,7 +879,7 @@ impl AsRef<str> for Status {
 /// <p>Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceIdPreference {
+pub struct ResourceIdPreference  {
     /// <p>Identifies the EFS resource ID preference, either <code>LONG_ID</code> (17 characters) or <code>SHORT_ID</code> (8 characters).</p>
     #[doc(hidden)]
     pub resource_id_type: std::option::Option<crate::model::ResourceIdType>,
@@ -950,17 +889,17 @@ pub struct ResourceIdPreference {
 }
 impl ResourceIdPreference {
     /// <p>Identifies the EFS resource ID preference, either <code>LONG_ID</code> (17 characters) or <code>SHORT_ID</code> (8 characters).</p>
-    pub fn resource_id_type(&self) -> std::option::Option<&crate::model::ResourceIdType> {
+    pub fn resource_id_type(&self) -> std::option::Option<& crate::model::ResourceIdType> {
         self.resource_id_type.as_ref()
     }
     /// <p>Identifies the Amazon EFS resources to which the ID preference setting applies, <code>FILE_SYSTEM</code> and <code>MOUNT_TARGET</code>.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+    pub fn resources(&self) -> std::option::Option<& [crate::model::Resource]> {
         self.resources.as_deref()
     }
 }
 /// See [`ResourceIdPreference`](crate::model::ResourceIdPreference).
 pub mod resource_id_preference {
-
+    
     /// A builder for [`ResourceIdPreference`](crate::model::ResourceIdPreference).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -974,12 +913,8 @@ pub mod resource_id_preference {
             self
         }
         /// <p>Identifies the EFS resource ID preference, either <code>LONG_ID</code> (17 characters) or <code>SHORT_ID</code> (8 characters).</p>
-        pub fn set_resource_id_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceIdType>,
-        ) -> Self {
-            self.resource_id_type = input;
-            self
+        pub fn set_resource_id_type(mut self, input: std::option::Option<crate::model::ResourceIdType>) -> Self {
+            self.resource_id_type = input; self
         }
         /// Appends an item to `resources`.
         ///
@@ -988,26 +923,26 @@ pub mod resource_id_preference {
         /// <p>Identifies the Amazon EFS resources to which the ID preference setting applies, <code>FILE_SYSTEM</code> and <code>MOUNT_TARGET</code>.</p>
         pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input);
-            self.resources = Some(v);
-            self
+                            v.push(input);
+                            self.resources = Some(v);
+                            self
         }
         /// <p>Identifies the Amazon EFS resources to which the ID preference setting applies, <code>FILE_SYSTEM</code> and <code>MOUNT_TARGET</code>.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::Resource>>) -> Self {
+            self.resources = input; self
         }
         /// Consumes the builder and constructs a [`ResourceIdPreference`](crate::model::ResourceIdPreference).
         pub fn build(self) -> crate::model::ResourceIdPreference {
             crate::model::ResourceIdPreference {
-                resource_id_type: self.resource_id_type,
-                resources: self.resources,
+                resource_id_type: self.resource_id_type
+                ,
+                resources: self.resources
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceIdPreference {
     /// Creates a new builder-style object to manufacture [`ResourceIdPreference`](crate::model::ResourceIdPreference).
@@ -1022,9 +957,9 @@ impl ResourceIdPreference {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resource = unimplemented!();
 /// match resource {
@@ -1046,58 +981,52 @@ impl ResourceIdPreference {
 /// Specifically, when `resource` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Resource::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// An EFS resource, for example a file system or a mount target.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Resource {
     #[allow(missing_docs)] // documentation missing in model
     FileSystem,
     #[allow(missing_docs)] // documentation missing in model
     MountTarget,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Resource {
     fn from(s: &str) -> Self {
         match s {
             "FILE_SYSTEM" => Resource::FileSystem,
             "MOUNT_TARGET" => Resource::MountTarget,
-            other => Resource::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Resource::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Resource {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Resource::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Resource::from(s))
+                }
+            }
 impl Resource {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Resource::FileSystem => "FILE_SYSTEM",
             Resource::MountTarget => "MOUNT_TARGET",
-            Resource::Unknown(value) => value.as_str(),
+            Resource::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FILE_SYSTEM", "MOUNT_TARGET"]
+        &[
+            "FILE_SYSTEM", "MOUNT_TARGET"
+        ]
     }
 }
 impl AsRef<str> for Resource {
@@ -1112,9 +1041,9 @@ impl AsRef<str> for Resource {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourceidtype = unimplemented!();
 /// match resourceidtype {
@@ -1136,58 +1065,52 @@ impl AsRef<str> for Resource {
 /// Specifically, when `resourceidtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceIdType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// A preference indicating a choice to use 63bit/32bit IDs for all applicable resources.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceIdType {
     #[allow(missing_docs)] // documentation missing in model
     LongId,
     #[allow(missing_docs)] // documentation missing in model
     ShortId,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceIdType {
     fn from(s: &str) -> Self {
         match s {
             "LONG_ID" => ResourceIdType::LongId,
             "SHORT_ID" => ResourceIdType::ShortId,
-            other => ResourceIdType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceIdType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceIdType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceIdType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceIdType::from(s))
+                }
+            }
 impl ResourceIdType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceIdType::LongId => "LONG_ID",
             ResourceIdType::ShortId => "SHORT_ID",
-            ResourceIdType::Unknown(value) => value.as_str(),
+            ResourceIdType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LONG_ID", "SHORT_ID"]
+        &[
+            "LONG_ID", "SHORT_ID"
+        ]
     }
 }
 impl AsRef<str> for ResourceIdType {
@@ -1199,7 +1122,7 @@ impl AsRef<str> for ResourceIdType {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationConfigurationDescription {
+pub struct ReplicationConfigurationDescription  {
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
     #[doc(hidden)]
     pub source_file_system_id: std::option::Option<std::string::String>,
@@ -1221,33 +1144,33 @@ pub struct ReplicationConfigurationDescription {
 }
 impl ReplicationConfigurationDescription {
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
-    pub fn source_file_system_id(&self) -> std::option::Option<&str> {
+    pub fn source_file_system_id(&self) -> std::option::Option<& str> {
         self.source_file_system_id.as_deref()
     }
     /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
-    pub fn source_file_system_region(&self) -> std::option::Option<&str> {
+    pub fn source_file_system_region(&self) -> std::option::Option<& str> {
         self.source_file_system_region.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
-    pub fn source_file_system_arn(&self) -> std::option::Option<&str> {
+    pub fn source_file_system_arn(&self) -> std::option::Option<& str> {
         self.source_file_system_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
-    pub fn original_source_file_system_arn(&self) -> std::option::Option<&str> {
+    pub fn original_source_file_system_arn(&self) -> std::option::Option<& str> {
         self.original_source_file_system_arn.as_deref()
     }
     /// <p>Describes when the replication configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>An array of destination objects. Only one destination object is supported.</p>
-    pub fn destinations(&self) -> std::option::Option<&[crate::model::Destination]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::model::Destination]> {
         self.destinations.as_deref()
     }
 }
 /// See [`ReplicationConfigurationDescription`](crate::model::ReplicationConfigurationDescription).
 pub mod replication_configuration_description {
-
+    
     /// A builder for [`ReplicationConfigurationDescription`](crate::model::ReplicationConfigurationDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1265,12 +1188,8 @@ pub mod replication_configuration_description {
             self
         }
         /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
-        pub fn set_source_file_system_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_file_system_id = input;
-            self
+        pub fn set_source_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_file_system_id = input; self
         }
         /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
         pub fn source_file_system_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1278,12 +1197,8 @@ pub mod replication_configuration_description {
             self
         }
         /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
-        pub fn set_source_file_system_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_file_system_region = input;
-            self
+        pub fn set_source_file_system_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_file_system_region = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
         pub fn source_file_system_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1291,28 +1206,17 @@ pub mod replication_configuration_description {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
-        pub fn set_source_file_system_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_file_system_arn = input;
-            self
+        pub fn set_source_file_system_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_file_system_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
-        pub fn original_source_file_system_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn original_source_file_system_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.original_source_file_system_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
-        pub fn set_original_source_file_system_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.original_source_file_system_arn = input;
-            self
+        pub fn set_original_source_file_system_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.original_source_file_system_arn = input; self
         }
         /// <p>Describes when the replication configuration was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1320,12 +1224,8 @@ pub mod replication_configuration_description {
             self
         }
         /// <p>Describes when the replication configuration was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Appends an item to `destinations`.
         ///
@@ -1334,30 +1234,34 @@ pub mod replication_configuration_description {
         /// <p>An array of destination objects. Only one destination object is supported.</p>
         pub fn destinations(mut self, input: crate::model::Destination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input);
-            self.destinations = Some(v);
-            self
+                            v.push(input);
+                            self.destinations = Some(v);
+                            self
         }
         /// <p>An array of destination objects. Only one destination object is supported.</p>
-        pub fn set_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Destination>>,
-        ) -> Self {
-            self.destinations = input;
-            self
+        pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Destination>>) -> Self {
+            self.destinations = input; self
         }
         /// Consumes the builder and constructs a [`ReplicationConfigurationDescription`](crate::model::ReplicationConfigurationDescription).
         pub fn build(self) -> crate::model::ReplicationConfigurationDescription {
             crate::model::ReplicationConfigurationDescription {
-                source_file_system_id: self.source_file_system_id,
-                source_file_system_region: self.source_file_system_region,
-                source_file_system_arn: self.source_file_system_arn,
-                original_source_file_system_arn: self.original_source_file_system_arn,
-                creation_time: self.creation_time,
-                destinations: self.destinations,
+                source_file_system_id: self.source_file_system_id
+                ,
+                source_file_system_region: self.source_file_system_region
+                ,
+                source_file_system_arn: self.source_file_system_arn
+                ,
+                original_source_file_system_arn: self.original_source_file_system_arn
+                ,
+                creation_time: self.creation_time
+                ,
+                destinations: self.destinations
+                ,
             }
         }
     }
+    
+    
 }
 impl ReplicationConfigurationDescription {
     /// Creates a new builder-style object to manufacture [`ReplicationConfigurationDescription`](crate::model::ReplicationConfigurationDescription).
@@ -1369,7 +1273,7 @@ impl ReplicationConfigurationDescription {
 /// <p>Describes the destination file system in the replication configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Destination {
+pub struct Destination  {
     /// <p>Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the destination file system in the replication configuration is in a failed state and is unrecoverable. To access the file system data, restore a backup of the failed file system to a new file system.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReplicationStatus>,
@@ -1385,25 +1289,25 @@ pub struct Destination {
 }
 impl Destination {
     /// <p>Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the destination file system in the replication configuration is in a failed state and is unrecoverable. To access the file system data, restore a backup of the failed file system to a new file system.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ReplicationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ReplicationStatus> {
         self.status.as_ref()
     }
     /// <p>The ID of the destination Amazon EFS file system.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The Amazon Web Services Region in which the destination file system is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
-    pub fn last_replicated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_replicated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_replicated_timestamp.as_ref()
     }
 }
 /// See [`Destination`](crate::model::Destination).
 pub mod destination {
-
+    
     /// A builder for [`Destination`](crate::model::Destination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1419,12 +1323,8 @@ pub mod destination {
             self
         }
         /// <p>Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the destination file system in the replication configuration is in a failed state and is unrecoverable. To access the file system data, restore a backup of the failed file system to a new file system.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ReplicationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The ID of the destination Amazon EFS file system.</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1432,12 +1332,8 @@ pub mod destination {
             self
         }
         /// <p>The ID of the destination Amazon EFS file system.</p>
-        pub fn set_file_system_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_id = input;
-            self
+        pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_id = input; self
         }
         /// <p>The Amazon Web Services Region in which the destination file system is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1446,8 +1342,7 @@ pub mod destination {
         }
         /// <p>The Amazon Web Services Region in which the destination file system is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
         pub fn last_replicated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1455,23 +1350,25 @@ pub mod destination {
             self
         }
         /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
-        pub fn set_last_replicated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_replicated_timestamp = input;
-            self
+        pub fn set_last_replicated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_replicated_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`Destination`](crate::model::Destination).
         pub fn build(self) -> crate::model::Destination {
             crate::model::Destination {
-                status: self.status,
-                file_system_id: self.file_system_id,
-                region: self.region,
-                last_replicated_timestamp: self.last_replicated_timestamp,
+                status: self.status
+                ,
+                file_system_id: self.file_system_id
+                ,
+                region: self.region
+                ,
+                last_replicated_timestamp: self.last_replicated_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl Destination {
     /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
@@ -1486,9 +1383,9 @@ impl Destination {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let replicationstatus = unimplemented!();
 /// match replicationstatus {
@@ -1512,22 +1409,14 @@ impl Destination {
 /// Specifically, when `replicationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReplicationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReplicationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
@@ -1538,7 +1427,7 @@ pub enum ReplicationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Error,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReplicationStatus {
     fn from(s: &str) -> Self {
@@ -1547,19 +1436,17 @@ impl std::convert::From<&str> for ReplicationStatus {
             "ENABLED" => ReplicationStatus::Enabled,
             "ENABLING" => ReplicationStatus::Enabling,
             "ERROR" => ReplicationStatus::Error,
-            other => {
-                ReplicationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ReplicationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReplicationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReplicationStatus::from(s))
+                }
+            }
 impl ReplicationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1568,12 +1455,14 @@ impl ReplicationStatus {
             ReplicationStatus::Enabled => "ENABLED",
             ReplicationStatus::Enabling => "ENABLING",
             ReplicationStatus::Error => "ERROR",
-            ReplicationStatus::Unknown(value) => value.as_str(),
+            ReplicationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELETING", "ENABLED", "ENABLING", "ERROR"]
+        &[
+            "DELETING", "ENABLED", "ENABLING", "ERROR"
+        ]
     }
 }
 impl AsRef<str> for ReplicationStatus {
@@ -1585,7 +1474,7 @@ impl AsRef<str> for ReplicationStatus {
 /// <p>Provides a description of a mount target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MountTargetDescription {
+pub struct MountTargetDescription  {
     /// <p>Amazon Web Services account ID that owns the resource.</p>
     #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
@@ -1619,49 +1508,49 @@ pub struct MountTargetDescription {
 }
 impl MountTargetDescription {
     /// <p>Amazon Web Services account ID that owns the resource.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>System-assigned mount target ID.</p>
-    pub fn mount_target_id(&self) -> std::option::Option<&str> {
+    pub fn mount_target_id(&self) -> std::option::Option<& str> {
         self.mount_target_id.as_deref()
     }
     /// <p>The ID of the file system for which the mount target is intended.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The ID of the mount target's subnet.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>Lifecycle state of the mount target.</p>
-    pub fn life_cycle_state(&self) -> std::option::Option<&crate::model::LifeCycleState> {
+    pub fn life_cycle_state(&self) -> std::option::Option<& crate::model::LifeCycleState> {
         self.life_cycle_state.as_ref()
     }
     /// <p>Address at which the file system can be mounted by using the mount target.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
-    pub fn availability_zone_id(&self) -> std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are independently mapped to names for each Amazon Web Services account. For example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
-    pub fn availability_zone_name(&self) -> std::option::Option<&str> {
+    pub fn availability_zone_name(&self) -> std::option::Option<& str> {
         self.availability_zone_name.as_deref()
     }
     /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
 /// See [`MountTargetDescription`](crate::model::MountTargetDescription).
 pub mod mount_target_description {
-
+    
     /// A builder for [`MountTargetDescription`](crate::model::MountTargetDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1684,8 +1573,7 @@ pub mod mount_target_description {
         }
         /// <p>Amazon Web Services account ID that owns the resource.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner_id = input;
-            self
+            self.owner_id = input; self
         }
         /// <p>System-assigned mount target ID.</p>
         pub fn mount_target_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1693,12 +1581,8 @@ pub mod mount_target_description {
             self
         }
         /// <p>System-assigned mount target ID.</p>
-        pub fn set_mount_target_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.mount_target_id = input;
-            self
+        pub fn set_mount_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mount_target_id = input; self
         }
         /// <p>The ID of the file system for which the mount target is intended.</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1706,12 +1590,8 @@ pub mod mount_target_description {
             self
         }
         /// <p>The ID of the file system for which the mount target is intended.</p>
-        pub fn set_file_system_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_id = input;
-            self
+        pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_id = input; self
         }
         /// <p>The ID of the mount target's subnet.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1720,8 +1600,7 @@ pub mod mount_target_description {
         }
         /// <p>The ID of the mount target's subnet.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subnet_id = input;
-            self
+            self.subnet_id = input; self
         }
         /// <p>Lifecycle state of the mount target.</p>
         pub fn life_cycle_state(mut self, input: crate::model::LifeCycleState) -> Self {
@@ -1729,12 +1608,8 @@ pub mod mount_target_description {
             self
         }
         /// <p>Lifecycle state of the mount target.</p>
-        pub fn set_life_cycle_state(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycleState>,
-        ) -> Self {
-            self.life_cycle_state = input;
-            self
+        pub fn set_life_cycle_state(mut self, input: std::option::Option<crate::model::LifeCycleState>) -> Self {
+            self.life_cycle_state = input; self
         }
         /// <p>Address at which the file system can be mounted by using the mount target.</p>
         pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1743,8 +1618,7 @@ pub mod mount_target_description {
         }
         /// <p>Address at which the file system can be mounted by using the mount target.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = input;
-            self
+            self.ip_address = input; self
         }
         /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
         pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1752,12 +1626,8 @@ pub mod mount_target_description {
             self
         }
         /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
-        pub fn set_network_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_interface_id = input;
-            self
+        pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_interface_id = input; self
         }
         /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
         pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1765,12 +1635,8 @@ pub mod mount_target_description {
             self
         }
         /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
-        pub fn set_availability_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone_id = input;
-            self
+        pub fn set_availability_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone_id = input; self
         }
         /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are independently mapped to names for each Amazon Web Services account. For example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
         pub fn availability_zone_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1778,12 +1644,8 @@ pub mod mount_target_description {
             self
         }
         /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are independently mapped to names for each Amazon Web Services account. For example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
-        pub fn set_availability_zone_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone_name = input;
-            self
+        pub fn set_availability_zone_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone_name = input; self
         }
         /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1792,25 +1654,36 @@ pub mod mount_target_description {
         }
         /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Consumes the builder and constructs a [`MountTargetDescription`](crate::model::MountTargetDescription).
         pub fn build(self) -> crate::model::MountTargetDescription {
             crate::model::MountTargetDescription {
-                owner_id: self.owner_id,
-                mount_target_id: self.mount_target_id,
-                file_system_id: self.file_system_id,
-                subnet_id: self.subnet_id,
-                life_cycle_state: self.life_cycle_state,
-                ip_address: self.ip_address,
-                network_interface_id: self.network_interface_id,
-                availability_zone_id: self.availability_zone_id,
-                availability_zone_name: self.availability_zone_name,
-                vpc_id: self.vpc_id,
+                owner_id: self.owner_id
+                ,
+                mount_target_id: self.mount_target_id
+                ,
+                file_system_id: self.file_system_id
+                ,
+                subnet_id: self.subnet_id
+                ,
+                life_cycle_state: self.life_cycle_state
+                ,
+                ip_address: self.ip_address
+                ,
+                network_interface_id: self.network_interface_id
+                ,
+                availability_zone_id: self.availability_zone_id
+                ,
+                availability_zone_name: self.availability_zone_name
+                ,
+                vpc_id: self.vpc_id
+                ,
             }
         }
     }
+    
+    
 }
 impl MountTargetDescription {
     /// Creates a new builder-style object to manufacture [`MountTargetDescription`](crate::model::MountTargetDescription).
@@ -1822,7 +1695,7 @@ impl MountTargetDescription {
 /// <p>A description of the file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileSystemDescription {
+pub struct FileSystemDescription  {
     /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
     #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
@@ -1877,31 +1750,31 @@ pub struct FileSystemDescription {
 }
 impl FileSystemDescription {
     /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The opaque string specified in the request.</p>
-    pub fn creation_token(&self) -> std::option::Option<&str> {
+    pub fn creation_token(&self) -> std::option::Option<& str> {
         self.creation_token.as_deref()
     }
     /// <p>The ID of the file system, assigned by Amazon EFS.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
-    pub fn file_system_arn(&self) -> std::option::Option<&str> {
+    pub fn file_system_arn(&self) -> std::option::Option<& str> {
         self.file_system_arn.as_deref()
     }
     /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The lifecycle phase of the file system.</p>
-    pub fn life_cycle_state(&self) -> std::option::Option<&crate::model::LifeCycleState> {
+    pub fn life_cycle_state(&self) -> std::option::Option<& crate::model::LifeCycleState> {
         self.life_cycle_state.as_ref()
     }
     /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <code>CreateFileSystem</code>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current number of mount targets that the file system has. For more information, see <code>CreateMountTarget</code>.</p>
@@ -1909,11 +1782,11 @@ impl FileSystemDescription {
         self.number_of_mount_targets
     }
     /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
-    pub fn size_in_bytes(&self) -> std::option::Option<&crate::model::FileSystemSize> {
+    pub fn size_in_bytes(&self) -> std::option::Option<& crate::model::FileSystemSize> {
         self.size_in_bytes.as_ref()
     }
     /// <p>The performance mode of the file system.</p>
-    pub fn performance_mode(&self) -> std::option::Option<&crate::model::PerformanceMode> {
+    pub fn performance_mode(&self) -> std::option::Option<& crate::model::PerformanceMode> {
         self.performance_mode.as_ref()
     }
     /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
@@ -1921,11 +1794,11 @@ impl FileSystemDescription {
         self.encrypted
     }
     /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
-    pub fn throughput_mode(&self) -> std::option::Option<&crate::model::ThroughputMode> {
+    pub fn throughput_mode(&self) -> std::option::Option<& crate::model::ThroughputMode> {
         self.throughput_mode.as_ref()
     }
     /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
@@ -1933,21 +1806,21 @@ impl FileSystemDescription {
         self.provisioned_throughput_in_mibps
     }
     /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
-    pub fn availability_zone_name(&self) -> std::option::Option<&str> {
+    pub fn availability_zone_name(&self) -> std::option::Option<& str> {
         self.availability_zone_name.as_deref()
     }
     /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
-    pub fn availability_zone_id(&self) -> std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`FileSystemDescription`](crate::model::FileSystemDescription).
 pub mod file_system_description {
-
+    
     /// A builder for [`FileSystemDescription`](crate::model::FileSystemDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1977,8 +1850,7 @@ pub mod file_system_description {
         }
         /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner_id = input;
-            self
+            self.owner_id = input; self
         }
         /// <p>The opaque string specified in the request.</p>
         pub fn creation_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1986,12 +1858,8 @@ pub mod file_system_description {
             self
         }
         /// <p>The opaque string specified in the request.</p>
-        pub fn set_creation_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_token = input;
-            self
+        pub fn set_creation_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_token = input; self
         }
         /// <p>The ID of the file system, assigned by Amazon EFS.</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1999,12 +1867,8 @@ pub mod file_system_description {
             self
         }
         /// <p>The ID of the file system, assigned by Amazon EFS.</p>
-        pub fn set_file_system_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_id = input;
-            self
+        pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
         pub fn file_system_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2012,12 +1876,8 @@ pub mod file_system_description {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
-        pub fn set_file_system_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_arn = input;
-            self
+        pub fn set_file_system_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_arn = input; self
         }
         /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2025,12 +1885,8 @@ pub mod file_system_description {
             self
         }
         /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The lifecycle phase of the file system.</p>
         pub fn life_cycle_state(mut self, input: crate::model::LifeCycleState) -> Self {
@@ -2038,12 +1894,8 @@ pub mod file_system_description {
             self
         }
         /// <p>The lifecycle phase of the file system.</p>
-        pub fn set_life_cycle_state(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycleState>,
-        ) -> Self {
-            self.life_cycle_state = input;
-            self
+        pub fn set_life_cycle_state(mut self, input: std::option::Option<crate::model::LifeCycleState>) -> Self {
+            self.life_cycle_state = input; self
         }
         /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <code>CreateFileSystem</code>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2052,8 +1904,7 @@ pub mod file_system_description {
         }
         /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <code>CreateFileSystem</code>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current number of mount targets that the file system has. For more information, see <code>CreateMountTarget</code>.</p>
         pub fn number_of_mount_targets(mut self, input: i32) -> Self {
@@ -2062,8 +1913,7 @@ pub mod file_system_description {
         }
         /// <p>The current number of mount targets that the file system has. For more information, see <code>CreateMountTarget</code>.</p>
         pub fn set_number_of_mount_targets(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_mount_targets = input;
-            self
+            self.number_of_mount_targets = input; self
         }
         /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
         pub fn size_in_bytes(mut self, input: crate::model::FileSystemSize) -> Self {
@@ -2071,12 +1921,8 @@ pub mod file_system_description {
             self
         }
         /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
-        pub fn set_size_in_bytes(
-            mut self,
-            input: std::option::Option<crate::model::FileSystemSize>,
-        ) -> Self {
-            self.size_in_bytes = input;
-            self
+        pub fn set_size_in_bytes(mut self, input: std::option::Option<crate::model::FileSystemSize>) -> Self {
+            self.size_in_bytes = input; self
         }
         /// <p>The performance mode of the file system.</p>
         pub fn performance_mode(mut self, input: crate::model::PerformanceMode) -> Self {
@@ -2084,12 +1930,8 @@ pub mod file_system_description {
             self
         }
         /// <p>The performance mode of the file system.</p>
-        pub fn set_performance_mode(
-            mut self,
-            input: std::option::Option<crate::model::PerformanceMode>,
-        ) -> Self {
-            self.performance_mode = input;
-            self
+        pub fn set_performance_mode(mut self, input: std::option::Option<crate::model::PerformanceMode>) -> Self {
+            self.performance_mode = input; self
         }
         /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
@@ -2098,8 +1940,7 @@ pub mod file_system_description {
         }
         /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-            self.encrypted = input;
-            self
+            self.encrypted = input; self
         }
         /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2108,8 +1949,7 @@ pub mod file_system_description {
         }
         /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
         pub fn throughput_mode(mut self, input: crate::model::ThroughputMode) -> Self {
@@ -2117,12 +1957,8 @@ pub mod file_system_description {
             self
         }
         /// <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
-        pub fn set_throughput_mode(
-            mut self,
-            input: std::option::Option<crate::model::ThroughputMode>,
-        ) -> Self {
-            self.throughput_mode = input;
-            self
+        pub fn set_throughput_mode(mut self, input: std::option::Option<crate::model::ThroughputMode>) -> Self {
+            self.throughput_mode = input; self
         }
         /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
         pub fn provisioned_throughput_in_mibps(mut self, input: f64) -> Self {
@@ -2130,12 +1966,8 @@ pub mod file_system_description {
             self
         }
         /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
-        pub fn set_provisioned_throughput_in_mibps(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.provisioned_throughput_in_mibps = input;
-            self
+        pub fn set_provisioned_throughput_in_mibps(mut self, input: std::option::Option<f64>) -> Self {
+            self.provisioned_throughput_in_mibps = input; self
         }
         /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
         pub fn availability_zone_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2143,12 +1975,8 @@ pub mod file_system_description {
             self
         }
         /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
-        pub fn set_availability_zone_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone_name = input;
-            self
+        pub fn set_availability_zone_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone_name = input; self
         }
         /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
         pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2156,12 +1984,8 @@ pub mod file_system_description {
             self
         }
         /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
-        pub fn set_availability_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone_id = input;
-            self
+        pub fn set_availability_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone_id = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2170,41 +1994,57 @@ pub mod file_system_description {
         /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`FileSystemDescription`](crate::model::FileSystemDescription).
         pub fn build(self) -> crate::model::FileSystemDescription {
             crate::model::FileSystemDescription {
-                owner_id: self.owner_id,
-                creation_token: self.creation_token,
-                file_system_id: self.file_system_id,
-                file_system_arn: self.file_system_arn,
-                creation_time: self.creation_time,
-                life_cycle_state: self.life_cycle_state,
-                name: self.name,
-                number_of_mount_targets: self.number_of_mount_targets.unwrap_or_default(),
-                size_in_bytes: self.size_in_bytes,
-                performance_mode: self.performance_mode,
-                encrypted: self.encrypted,
-                kms_key_id: self.kms_key_id,
-                throughput_mode: self.throughput_mode,
-                provisioned_throughput_in_mibps: self.provisioned_throughput_in_mibps,
-                availability_zone_name: self.availability_zone_name,
-                availability_zone_id: self.availability_zone_id,
-                tags: self.tags,
+                owner_id: self.owner_id
+                ,
+                creation_token: self.creation_token
+                ,
+                file_system_id: self.file_system_id
+                ,
+                file_system_arn: self.file_system_arn
+                ,
+                creation_time: self.creation_time
+                ,
+                life_cycle_state: self.life_cycle_state
+                ,
+                name: self.name
+                ,
+                number_of_mount_targets: self.number_of_mount_targets
+                    .unwrap_or_default()
+                ,
+                size_in_bytes: self.size_in_bytes
+                ,
+                performance_mode: self.performance_mode
+                ,
+                encrypted: self.encrypted
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                throughput_mode: self.throughput_mode
+                ,
+                provisioned_throughput_in_mibps: self.provisioned_throughput_in_mibps
+                ,
+                availability_zone_name: self.availability_zone_name
+                ,
+                availability_zone_id: self.availability_zone_id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl FileSystemDescription {
     /// Creates a new builder-style object to manufacture [`FileSystemDescription`](crate::model::FileSystemDescription).
@@ -2216,7 +2056,7 @@ impl FileSystemDescription {
 /// <p>Provides a description of an EFS file system access point.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessPointDescription {
+pub struct AccessPointDescription  {
     /// <p>The opaque string specified in the request to ensure idempotent creation.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -2250,49 +2090,49 @@ pub struct AccessPointDescription {
 }
 impl AccessPointDescription {
     /// <p>The opaque string specified in the request to ensure idempotent creation.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The name of the access point. This is the value of the <code>Name</code> tag.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The ID of the access point, assigned by Amazon EFS.</p>
-    pub fn access_point_id(&self) -> std::option::Option<&str> {
+    pub fn access_point_id(&self) -> std::option::Option<& str> {
         self.access_point_id.as_deref()
     }
     /// <p>The unique Amazon Resource Name (ARN) associated with the access point.</p>
-    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+    pub fn access_point_arn(&self) -> std::option::Option<& str> {
         self.access_point_arn.as_deref()
     }
     /// <p>The ID of the EFS file system that the access point applies to.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by NFS clients using the access point.</p>
-    pub fn posix_user(&self) -> std::option::Option<&crate::model::PosixUser> {
+    pub fn posix_user(&self) -> std::option::Option<& crate::model::PosixUser> {
         self.posix_user.as_ref()
     }
     /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
-    pub fn root_directory(&self) -> std::option::Option<&crate::model::RootDirectory> {
+    pub fn root_directory(&self) -> std::option::Option<& crate::model::RootDirectory> {
         self.root_directory.as_ref()
     }
     /// <p>Identified the Amazon Web Services account that owns the access point resource.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>Identifies the lifecycle phase of the access point.</p>
-    pub fn life_cycle_state(&self) -> std::option::Option<&crate::model::LifeCycleState> {
+    pub fn life_cycle_state(&self) -> std::option::Option<& crate::model::LifeCycleState> {
         self.life_cycle_state.as_ref()
     }
 }
 /// See [`AccessPointDescription`](crate::model::AccessPointDescription).
 pub mod access_point_description {
-
+    
     /// A builder for [`AccessPointDescription`](crate::model::AccessPointDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2315,8 +2155,7 @@ pub mod access_point_description {
         }
         /// <p>The opaque string specified in the request to ensure idempotent creation.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// <p>The name of the access point. This is the value of the <code>Name</code> tag.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2325,8 +2164,7 @@ pub mod access_point_description {
         }
         /// <p>The name of the access point. This is the value of the <code>Name</code> tag.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2335,17 +2173,13 @@ pub mod access_point_description {
         /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The ID of the access point, assigned by Amazon EFS.</p>
         pub fn access_point_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2353,12 +2187,8 @@ pub mod access_point_description {
             self
         }
         /// <p>The ID of the access point, assigned by Amazon EFS.</p>
-        pub fn set_access_point_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_point_id = input;
-            self
+        pub fn set_access_point_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_point_id = input; self
         }
         /// <p>The unique Amazon Resource Name (ARN) associated with the access point.</p>
         pub fn access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2366,12 +2196,8 @@ pub mod access_point_description {
             self
         }
         /// <p>The unique Amazon Resource Name (ARN) associated with the access point.</p>
-        pub fn set_access_point_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_point_arn = input;
-            self
+        pub fn set_access_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_point_arn = input; self
         }
         /// <p>The ID of the EFS file system that the access point applies to.</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2379,12 +2205,8 @@ pub mod access_point_description {
             self
         }
         /// <p>The ID of the EFS file system that the access point applies to.</p>
-        pub fn set_file_system_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_id = input;
-            self
+        pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_id = input; self
         }
         /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by NFS clients using the access point.</p>
         pub fn posix_user(mut self, input: crate::model::PosixUser) -> Self {
@@ -2392,12 +2214,8 @@ pub mod access_point_description {
             self
         }
         /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by NFS clients using the access point.</p>
-        pub fn set_posix_user(
-            mut self,
-            input: std::option::Option<crate::model::PosixUser>,
-        ) -> Self {
-            self.posix_user = input;
-            self
+        pub fn set_posix_user(mut self, input: std::option::Option<crate::model::PosixUser>) -> Self {
+            self.posix_user = input; self
         }
         /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
         pub fn root_directory(mut self, input: crate::model::RootDirectory) -> Self {
@@ -2405,12 +2223,8 @@ pub mod access_point_description {
             self
         }
         /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
-        pub fn set_root_directory(
-            mut self,
-            input: std::option::Option<crate::model::RootDirectory>,
-        ) -> Self {
-            self.root_directory = input;
-            self
+        pub fn set_root_directory(mut self, input: std::option::Option<crate::model::RootDirectory>) -> Self {
+            self.root_directory = input; self
         }
         /// <p>Identified the Amazon Web Services account that owns the access point resource.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2419,8 +2233,7 @@ pub mod access_point_description {
         }
         /// <p>Identified the Amazon Web Services account that owns the access point resource.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner_id = input;
-            self
+            self.owner_id = input; self
         }
         /// <p>Identifies the lifecycle phase of the access point.</p>
         pub fn life_cycle_state(mut self, input: crate::model::LifeCycleState) -> Self {
@@ -2428,29 +2241,37 @@ pub mod access_point_description {
             self
         }
         /// <p>Identifies the lifecycle phase of the access point.</p>
-        pub fn set_life_cycle_state(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycleState>,
-        ) -> Self {
-            self.life_cycle_state = input;
-            self
+        pub fn set_life_cycle_state(mut self, input: std::option::Option<crate::model::LifeCycleState>) -> Self {
+            self.life_cycle_state = input; self
         }
         /// Consumes the builder and constructs a [`AccessPointDescription`](crate::model::AccessPointDescription).
         pub fn build(self) -> crate::model::AccessPointDescription {
             crate::model::AccessPointDescription {
-                client_token: self.client_token,
-                name: self.name,
-                tags: self.tags,
-                access_point_id: self.access_point_id,
-                access_point_arn: self.access_point_arn,
-                file_system_id: self.file_system_id,
-                posix_user: self.posix_user,
-                root_directory: self.root_directory,
-                owner_id: self.owner_id,
-                life_cycle_state: self.life_cycle_state,
+                client_token: self.client_token
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
+                access_point_id: self.access_point_id
+                ,
+                access_point_arn: self.access_point_arn
+                ,
+                file_system_id: self.file_system_id
+                ,
+                posix_user: self.posix_user
+                ,
+                root_directory: self.root_directory
+                ,
+                owner_id: self.owner_id
+                ,
+                life_cycle_state: self.life_cycle_state
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessPointDescription {
     /// Creates a new builder-style object to manufacture [`AccessPointDescription`](crate::model::AccessPointDescription).
@@ -2462,31 +2283,31 @@ impl AccessPointDescription {
 /// <p>Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's <code>RootDirectory</code> and it's subdirectories.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RootDirectory {
+pub struct RootDirectory  {
     /// <p>Specifies the path on the EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system. A path can have up to four subdirectories. If the specified path does not exist, you are required to provide the <code>CreationInfo</code>.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code>. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates the root directory using the <code>CreationInfo</code> settings when a client connects to an access point. When specifying the <code>CreationInfo</code>, you must provide values for all properties. </p> <important>
-    /// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt; <code>Path</code> does not exist, attempts to mount the file system using the access point will fail.</p>
+    /// <p>(Optional) Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code>. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates the root directory using the <code>CreationInfo</code> settings when a client connects to an access point. When specifying the <code>CreationInfo</code>, you must provide values for all properties. </p> <important> 
+    /// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt; <code>Path</code> does not exist, attempts to mount the file system using the access point will fail.</p> 
     /// </important>
     #[doc(hidden)]
     pub creation_info: std::option::Option<crate::model::CreationInfo>,
 }
 impl RootDirectory {
     /// <p>Specifies the path on the EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system. A path can have up to four subdirectories. If the specified path does not exist, you are required to provide the <code>CreationInfo</code>.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
-    /// <p>(Optional) Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code>. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates the root directory using the <code>CreationInfo</code> settings when a client connects to an access point. When specifying the <code>CreationInfo</code>, you must provide values for all properties. </p> <important>
-    /// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt; <code>Path</code> does not exist, attempts to mount the file system using the access point will fail.</p>
+    /// <p>(Optional) Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code>. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates the root directory using the <code>CreationInfo</code> settings when a client connects to an access point. When specifying the <code>CreationInfo</code>, you must provide values for all properties. </p> <important> 
+    /// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt; <code>Path</code> does not exist, attempts to mount the file system using the access point will fail.</p> 
     /// </important>
-    pub fn creation_info(&self) -> std::option::Option<&crate::model::CreationInfo> {
+    pub fn creation_info(&self) -> std::option::Option<& crate::model::CreationInfo> {
         self.creation_info.as_ref()
     }
 }
 /// See [`RootDirectory`](crate::model::RootDirectory).
 pub mod root_directory {
-
+    
     /// A builder for [`RootDirectory`](crate::model::RootDirectory).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2501,34 +2322,33 @@ pub mod root_directory {
         }
         /// <p>Specifies the path on the EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system. A path can have up to four subdirectories. If the specified path does not exist, you are required to provide the <code>CreationInfo</code>.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
-        /// <p>(Optional) Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code>. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates the root directory using the <code>CreationInfo</code> settings when a client connects to an access point. When specifying the <code>CreationInfo</code>, you must provide values for all properties. </p> <important>
-        /// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt; <code>Path</code> does not exist, attempts to mount the file system using the access point will fail.</p>
+        /// <p>(Optional) Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code>. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates the root directory using the <code>CreationInfo</code> settings when a client connects to an access point. When specifying the <code>CreationInfo</code>, you must provide values for all properties. </p> <important> 
+        /// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt; <code>Path</code> does not exist, attempts to mount the file system using the access point will fail.</p> 
         /// </important>
         pub fn creation_info(mut self, input: crate::model::CreationInfo) -> Self {
             self.creation_info = Some(input);
             self
         }
-        /// <p>(Optional) Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code>. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates the root directory using the <code>CreationInfo</code> settings when a client connects to an access point. When specifying the <code>CreationInfo</code>, you must provide values for all properties. </p> <important>
-        /// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt; <code>Path</code> does not exist, attempts to mount the file system using the access point will fail.</p>
+        /// <p>(Optional) Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code>. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates the root directory using the <code>CreationInfo</code> settings when a client connects to an access point. When specifying the <code>CreationInfo</code>, you must provide values for all properties. </p> <important> 
+        /// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt; <code>Path</code> does not exist, attempts to mount the file system using the access point will fail.</p> 
         /// </important>
-        pub fn set_creation_info(
-            mut self,
-            input: std::option::Option<crate::model::CreationInfo>,
-        ) -> Self {
-            self.creation_info = input;
-            self
+        pub fn set_creation_info(mut self, input: std::option::Option<crate::model::CreationInfo>) -> Self {
+            self.creation_info = input; self
         }
         /// Consumes the builder and constructs a [`RootDirectory`](crate::model::RootDirectory).
         pub fn build(self) -> crate::model::RootDirectory {
             crate::model::RootDirectory {
-                path: self.path,
-                creation_info: self.creation_info,
+                path: self.path
+                ,
+                creation_info: self.creation_info
+                ,
             }
         }
     }
+    
+    
 }
 impl RootDirectory {
     /// Creates a new builder-style object to manufacture [`RootDirectory`](crate::model::RootDirectory).
@@ -2537,13 +2357,13 @@ impl RootDirectory {
     }
 }
 
-/// <p>Required if the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist. Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code> &gt; <code>Path</code>. If the access point root directory does not exist, EFS creates it with these settings when a client connects to the access point. When specifying <code>CreationInfo</code>, you must include values for all properties. </p>
-/// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p> <important>
-/// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> does not exist, attempts to mount the file system using the access point will fail.</p>
+/// <p>Required if the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist. Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code> &gt; <code>Path</code>. If the access point root directory does not exist, EFS creates it with these settings when a client connects to the access point. When specifying <code>CreationInfo</code>, you must include values for all properties. </p> 
+/// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p> <important> 
+/// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> does not exist, attempts to mount the file system using the access point will fail.</p> 
 /// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreationInfo {
+pub struct CreationInfo  {
     /// <p>Specifies the POSIX user ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
     #[doc(hidden)]
     pub owner_uid: std::option::Option<i64>,
@@ -2564,13 +2384,13 @@ impl CreationInfo {
         self.owner_gid
     }
     /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
-    pub fn permissions(&self) -> std::option::Option<&str> {
+    pub fn permissions(&self) -> std::option::Option<& str> {
         self.permissions.as_deref()
     }
 }
 /// See [`CreationInfo`](crate::model::CreationInfo).
 pub mod creation_info {
-
+    
     /// A builder for [`CreationInfo`](crate::model::CreationInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2586,8 +2406,7 @@ pub mod creation_info {
         }
         /// <p>Specifies the POSIX user ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
         pub fn set_owner_uid(mut self, input: std::option::Option<i64>) -> Self {
-            self.owner_uid = input;
-            self
+            self.owner_uid = input; self
         }
         /// <p>Specifies the POSIX group ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
         pub fn owner_gid(mut self, input: i64) -> Self {
@@ -2596,8 +2415,7 @@ pub mod creation_info {
         }
         /// <p>Specifies the POSIX group ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
         pub fn set_owner_gid(mut self, input: std::option::Option<i64>) -> Self {
-            self.owner_gid = input;
-            self
+            self.owner_gid = input; self
         }
         /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
         pub fn permissions(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2606,18 +2424,22 @@ pub mod creation_info {
         }
         /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
         pub fn set_permissions(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.permissions = input;
-            self
+            self.permissions = input; self
         }
         /// Consumes the builder and constructs a [`CreationInfo`](crate::model::CreationInfo).
         pub fn build(self) -> crate::model::CreationInfo {
             crate::model::CreationInfo {
-                owner_uid: self.owner_uid,
-                owner_gid: self.owner_gid,
-                permissions: self.permissions,
+                owner_uid: self.owner_uid
+                ,
+                owner_gid: self.owner_gid
+                ,
+                permissions: self.permissions
+                ,
             }
         }
     }
+    
+    
 }
 impl CreationInfo {
     /// Creates a new builder-style object to manufacture [`CreationInfo`](crate::model::CreationInfo).
@@ -2629,7 +2451,7 @@ impl CreationInfo {
 /// <p>The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PosixUser {
+pub struct PosixUser  {
     /// <p>The POSIX user ID used for all file system operations using this access point.</p>
     #[doc(hidden)]
     pub uid: std::option::Option<i64>,
@@ -2650,13 +2472,13 @@ impl PosixUser {
         self.gid
     }
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
-    pub fn secondary_gids(&self) -> std::option::Option<&[i64]> {
+    pub fn secondary_gids(&self) -> std::option::Option<& [i64]> {
         self.secondary_gids.as_deref()
     }
 }
 /// See [`PosixUser`](crate::model::PosixUser).
 pub mod posix_user {
-
+    
     /// A builder for [`PosixUser`](crate::model::PosixUser).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2672,8 +2494,7 @@ pub mod posix_user {
         }
         /// <p>The POSIX user ID used for all file system operations using this access point.</p>
         pub fn set_uid(mut self, input: std::option::Option<i64>) -> Self {
-            self.uid = input;
-            self
+            self.uid = input; self
         }
         /// <p>The POSIX group ID used for all file system operations using this access point.</p>
         pub fn gid(mut self, input: i64) -> Self {
@@ -2682,8 +2503,7 @@ pub mod posix_user {
         }
         /// <p>The POSIX group ID used for all file system operations using this access point.</p>
         pub fn set_gid(mut self, input: std::option::Option<i64>) -> Self {
-            self.gid = input;
-            self
+            self.gid = input; self
         }
         /// Appends an item to `secondary_gids`.
         ///
@@ -2692,27 +2512,28 @@ pub mod posix_user {
         /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
         pub fn secondary_gids(mut self, input: i64) -> Self {
             let mut v = self.secondary_gids.unwrap_or_default();
-            v.push(input);
-            self.secondary_gids = Some(v);
-            self
+                            v.push(input);
+                            self.secondary_gids = Some(v);
+                            self
         }
         /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
-        pub fn set_secondary_gids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<i64>>,
-        ) -> Self {
-            self.secondary_gids = input;
-            self
+        pub fn set_secondary_gids(mut self, input: std::option::Option<std::vec::Vec<i64>>) -> Self {
+            self.secondary_gids = input; self
         }
         /// Consumes the builder and constructs a [`PosixUser`](crate::model::PosixUser).
         pub fn build(self) -> crate::model::PosixUser {
             crate::model::PosixUser {
-                uid: self.uid,
-                gid: self.gid,
-                secondary_gids: self.secondary_gids,
+                uid: self.uid
+                ,
+                gid: self.gid
+                ,
+                secondary_gids: self.secondary_gids
+                ,
             }
         }
     }
+    
+    
 }
 impl PosixUser {
     /// Creates a new builder-style object to manufacture [`PosixUser`](crate::model::PosixUser).
@@ -2724,46 +2545,46 @@ impl PosixUser {
 /// <p>Describes the destination file system to create in the replication configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DestinationToCreate {
+pub struct DestinationToCreate  {
     /// <p>To create a file system that uses Regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
     /// <p>To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
     #[doc(hidden)]
     pub availability_zone_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
-    /// <ul>
-    /// <li> <p>Key ID - The unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-    /// <li> <p>ARN - The Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-    /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
-    /// <li> <p>Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
+    /// <p>Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p> 
+    /// <ul> 
+    /// <li> <p>Key ID - The unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+    /// <li> <p>ARN - The Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+    /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li> 
+    /// <li> <p>Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl DestinationToCreate {
     /// <p>To create a file system that uses Regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
-    pub fn availability_zone_name(&self) -> std::option::Option<&str> {
+    pub fn availability_zone_name(&self) -> std::option::Option<& str> {
         self.availability_zone_name.as_deref()
     }
-    /// <p>Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
-    /// <ul>
-    /// <li> <p>Key ID - The unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-    /// <li> <p>ARN - The Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-    /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
-    /// <li> <p>Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
+    /// <p>Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p> 
+    /// <ul> 
+    /// <li> <p>Key ID - The unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+    /// <li> <p>ARN - The Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+    /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li> 
+    /// <li> <p>Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li> 
     /// </ul>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 /// See [`DestinationToCreate`](crate::model::DestinationToCreate).
 pub mod destination_to_create {
-
+    
     /// A builder for [`DestinationToCreate`](crate::model::DestinationToCreate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2779,8 +2600,7 @@ pub mod destination_to_create {
         }
         /// <p>To create a file system that uses Regional storage, specify the Amazon Web Services Region in which to create the destination file system.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
         pub fn availability_zone_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2788,44 +2608,44 @@ pub mod destination_to_create {
             self
         }
         /// <p>To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in which to create the destination file system.</p>
-        pub fn set_availability_zone_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone_name = input;
-            self
+        pub fn set_availability_zone_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone_name = input; self
         }
-        /// <p>Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
-        /// <ul>
-        /// <li> <p>Key ID - The unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-        /// <li> <p>ARN - The Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-        /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
-        /// <li> <p>Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
+        /// <p>Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p> 
+        /// <ul> 
+        /// <li> <p>Key ID - The unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+        /// <li> <p>ARN - The Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+        /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li> 
+        /// <li> <p>Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li> 
         /// </ul>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
-        /// <ul>
-        /// <li> <p>Key ID - The unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-        /// <li> <p>ARN - The Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
-        /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
-        /// <li> <p>Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
+        /// <p>Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p> 
+        /// <ul> 
+        /// <li> <p>Key ID - The unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+        /// <li> <p>ARN - The Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> 
+        /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li> 
+        /// <li> <p>Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li> 
         /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`DestinationToCreate`](crate::model::DestinationToCreate).
         pub fn build(self) -> crate::model::DestinationToCreate {
             crate::model::DestinationToCreate {
-                region: self.region,
-                availability_zone_name: self.availability_zone_name,
-                kms_key_id: self.kms_key_id,
+                region: self.region
+                ,
+                availability_zone_name: self.availability_zone_name
+                ,
+                kms_key_id: self.kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DestinationToCreate {
     /// Creates a new builder-style object to manufacture [`DestinationToCreate`](crate::model::DestinationToCreate).
@@ -2833,3 +2653,4 @@ impl DestinationToCreate {
         crate::model::destination_to_create::Builder::default()
     }
 }
+

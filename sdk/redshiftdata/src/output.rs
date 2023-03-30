@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTablesOutput {
+pub struct ListTablesOutput  {
     /// <p>The tables that match the request pattern. </p>
     #[doc(hidden)]
     pub tables: std::option::Option<std::vec::Vec<crate::model::TableMember>>,
@@ -12,17 +12,17 @@ pub struct ListTablesOutput {
 }
 impl ListTablesOutput {
     /// <p>The tables that match the request pattern. </p>
-    pub fn tables(&self) -> std::option::Option<&[crate::model::TableMember]> {
+    pub fn tables(&self) -> std::option::Option<& [crate::model::TableMember]> {
         self.tables.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTablesOutput`](crate::output::ListTablesOutput).
 pub mod list_tables_output {
-
+    
     /// A builder for [`ListTablesOutput`](crate::output::ListTablesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,17 +37,13 @@ pub mod list_tables_output {
         /// <p>The tables that match the request pattern. </p>
         pub fn tables(mut self, input: crate::model::TableMember) -> Self {
             let mut v = self.tables.unwrap_or_default();
-            v.push(input);
-            self.tables = Some(v);
-            self
+                            v.push(input);
+                            self.tables = Some(v);
+                            self
         }
         /// <p>The tables that match the request pattern. </p>
-        pub fn set_tables(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TableMember>>,
-        ) -> Self {
-            self.tables = input;
-            self
+        pub fn set_tables(mut self, input: std::option::Option<std::vec::Vec<crate::model::TableMember>>) -> Self {
+            self.tables = input; self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,17 +52,20 @@ pub mod list_tables_output {
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTablesOutput`](crate::output::ListTablesOutput).
         pub fn build(self) -> crate::output::ListTablesOutput {
             crate::output::ListTablesOutput {
-                tables: self.tables,
-                next_token: self.next_token,
+                tables: self.tables
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTablesOutput {
     /// Creates a new builder-style object to manufacture [`ListTablesOutput`](crate::output::ListTablesOutput).
@@ -78,7 +77,7 @@ impl ListTablesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStatementsOutput {
+pub struct ListStatementsOutput  {
     /// <p>The SQL statements. </p>
     #[doc(hidden)]
     pub statements: std::option::Option<std::vec::Vec<crate::model::StatementData>>,
@@ -88,17 +87,17 @@ pub struct ListStatementsOutput {
 }
 impl ListStatementsOutput {
     /// <p>The SQL statements. </p>
-    pub fn statements(&self) -> std::option::Option<&[crate::model::StatementData]> {
+    pub fn statements(&self) -> std::option::Option<& [crate::model::StatementData]> {
         self.statements.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListStatementsOutput`](crate::output::ListStatementsOutput).
 pub mod list_statements_output {
-
+    
     /// A builder for [`ListStatementsOutput`](crate::output::ListStatementsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -113,17 +112,13 @@ pub mod list_statements_output {
         /// <p>The SQL statements. </p>
         pub fn statements(mut self, input: crate::model::StatementData) -> Self {
             let mut v = self.statements.unwrap_or_default();
-            v.push(input);
-            self.statements = Some(v);
-            self
+                            v.push(input);
+                            self.statements = Some(v);
+                            self
         }
         /// <p>The SQL statements. </p>
-        pub fn set_statements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StatementData>>,
-        ) -> Self {
-            self.statements = input;
-            self
+        pub fn set_statements(mut self, input: std::option::Option<std::vec::Vec<crate::model::StatementData>>) -> Self {
+            self.statements = input; self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,17 +127,20 @@ pub mod list_statements_output {
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListStatementsOutput`](crate::output::ListStatementsOutput).
         pub fn build(self) -> crate::output::ListStatementsOutput {
             crate::output::ListStatementsOutput {
-                statements: self.statements,
-                next_token: self.next_token,
+                statements: self.statements
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListStatementsOutput {
     /// Creates a new builder-style object to manufacture [`ListStatementsOutput`](crate::output::ListStatementsOutput).
@@ -154,7 +152,7 @@ impl ListStatementsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSchemasOutput {
+pub struct ListSchemasOutput  {
     /// <p>The schemas that match the request pattern. </p>
     #[doc(hidden)]
     pub schemas: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -164,17 +162,17 @@ pub struct ListSchemasOutput {
 }
 impl ListSchemasOutput {
     /// <p>The schemas that match the request pattern. </p>
-    pub fn schemas(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn schemas(&self) -> std::option::Option<& [std::string::String]> {
         self.schemas.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSchemasOutput`](crate::output::ListSchemasOutput).
 pub mod list_schemas_output {
-
+    
     /// A builder for [`ListSchemasOutput`](crate::output::ListSchemasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -189,17 +187,13 @@ pub mod list_schemas_output {
         /// <p>The schemas that match the request pattern. </p>
         pub fn schemas(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.schemas.unwrap_or_default();
-            v.push(input.into());
-            self.schemas = Some(v);
-            self
+                            v.push(input.into());
+                            self.schemas = Some(v);
+                            self
         }
         /// <p>The schemas that match the request pattern. </p>
-        pub fn set_schemas(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.schemas = input;
-            self
+        pub fn set_schemas(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.schemas = input; self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -208,17 +202,20 @@ pub mod list_schemas_output {
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSchemasOutput`](crate::output::ListSchemasOutput).
         pub fn build(self) -> crate::output::ListSchemasOutput {
             crate::output::ListSchemasOutput {
-                schemas: self.schemas,
-                next_token: self.next_token,
+                schemas: self.schemas
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSchemasOutput {
     /// Creates a new builder-style object to manufacture [`ListSchemasOutput`](crate::output::ListSchemasOutput).
@@ -230,7 +227,7 @@ impl ListSchemasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDatabasesOutput {
+pub struct ListDatabasesOutput  {
     /// <p>The names of databases. </p>
     #[doc(hidden)]
     pub databases: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -240,17 +237,17 @@ pub struct ListDatabasesOutput {
 }
 impl ListDatabasesOutput {
     /// <p>The names of databases. </p>
-    pub fn databases(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn databases(&self) -> std::option::Option<& [std::string::String]> {
         self.databases.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
 pub mod list_databases_output {
-
+    
     /// A builder for [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -265,17 +262,13 @@ pub mod list_databases_output {
         /// <p>The names of databases. </p>
         pub fn databases(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.databases.unwrap_or_default();
-            v.push(input.into());
-            self.databases = Some(v);
-            self
+                            v.push(input.into());
+                            self.databases = Some(v);
+                            self
         }
         /// <p>The names of databases. </p>
-        pub fn set_databases(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.databases = input;
-            self
+        pub fn set_databases(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.databases = input; self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -284,17 +277,20 @@ pub mod list_databases_output {
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
         pub fn build(self) -> crate::output::ListDatabasesOutput {
             crate::output::ListDatabasesOutput {
-                databases: self.databases,
-                next_token: self.next_token,
+                databases: self.databases
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDatabasesOutput {
     /// Creates a new builder-style object to manufacture [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
@@ -306,7 +302,7 @@ impl ListDatabasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStatementResultOutput {
+pub struct GetStatementResultOutput  {
     /// <p>The results of the SQL statement.</p>
     #[doc(hidden)]
     pub records: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Field>>>,
@@ -322,11 +318,11 @@ pub struct GetStatementResultOutput {
 }
 impl GetStatementResultOutput {
     /// <p>The results of the SQL statement.</p>
-    pub fn records(&self) -> std::option::Option<&[std::vec::Vec<crate::model::Field>]> {
+    pub fn records(&self) -> std::option::Option<& [std::vec::Vec<crate::model::Field>]> {
         self.records.as_deref()
     }
     /// <p>The properties (metadata) of a column. </p>
-    pub fn column_metadata(&self) -> std::option::Option<&[crate::model::ColumnMetadata]> {
+    pub fn column_metadata(&self) -> std::option::Option<& [crate::model::ColumnMetadata]> {
         self.column_metadata.as_deref()
     }
     /// <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
@@ -334,19 +330,18 @@ impl GetStatementResultOutput {
         self.total_num_rows
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetStatementResultOutput`](crate::output::GetStatementResultOutput).
 pub mod get_statement_result_output {
-
+    
     /// A builder for [`GetStatementResultOutput`](crate::output::GetStatementResultOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Field>>>,
-        pub(crate) column_metadata:
-            std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
+        pub(crate) column_metadata: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
         pub(crate) total_num_rows: std::option::Option<i64>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -358,17 +353,13 @@ pub mod get_statement_result_output {
         /// <p>The results of the SQL statement.</p>
         pub fn records(mut self, input: std::vec::Vec<crate::model::Field>) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input);
-            self.records = Some(v);
-            self
+                            v.push(input);
+                            self.records = Some(v);
+                            self
         }
         /// <p>The results of the SQL statement.</p>
-        pub fn set_records(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Field>>>,
-        ) -> Self {
-            self.records = input;
-            self
+        pub fn set_records(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Field>>>) -> Self {
+            self.records = input; self
         }
         /// Appends an item to `column_metadata`.
         ///
@@ -377,17 +368,13 @@ pub mod get_statement_result_output {
         /// <p>The properties (metadata) of a column. </p>
         pub fn column_metadata(mut self, input: crate::model::ColumnMetadata) -> Self {
             let mut v = self.column_metadata.unwrap_or_default();
-            v.push(input);
-            self.column_metadata = Some(v);
-            self
+                            v.push(input);
+                            self.column_metadata = Some(v);
+                            self
         }
         /// <p>The properties (metadata) of a column. </p>
-        pub fn set_column_metadata(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
-        ) -> Self {
-            self.column_metadata = input;
-            self
+        pub fn set_column_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>) -> Self {
+            self.column_metadata = input; self
         }
         /// <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
         pub fn total_num_rows(mut self, input: i64) -> Self {
@@ -396,8 +383,7 @@ pub mod get_statement_result_output {
         }
         /// <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
         pub fn set_total_num_rows(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_num_rows = input;
-            self
+            self.total_num_rows = input; self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -406,19 +392,25 @@ pub mod get_statement_result_output {
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetStatementResultOutput`](crate::output::GetStatementResultOutput).
         pub fn build(self) -> crate::output::GetStatementResultOutput {
             crate::output::GetStatementResultOutput {
-                records: self.records,
-                column_metadata: self.column_metadata,
-                total_num_rows: self.total_num_rows.unwrap_or_default(),
-                next_token: self.next_token,
+                records: self.records
+                ,
+                column_metadata: self.column_metadata
+                ,
+                total_num_rows: self.total_num_rows
+                    .unwrap_or_default()
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetStatementResultOutput {
     /// Creates a new builder-style object to manufacture [`GetStatementResultOutput`](crate::output::GetStatementResultOutput).
@@ -430,7 +422,7 @@ impl GetStatementResultOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecuteStatementOutput {
+pub struct ExecuteStatementOutput  {
     /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -455,37 +447,37 @@ pub struct ExecuteStatementOutput {
 }
 impl ExecuteStatementOutput {
     /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The date and time (UTC) the statement was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The cluster identifier. This element is not returned when connecting to a serverless workgroup. </p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The database user name.</p>
-    pub fn db_user(&self) -> std::option::Option<&str> {
+    pub fn db_user(&self) -> std::option::Option<& str> {
         self.db_user.as_deref()
     }
     /// <p>The name of the database.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>The name or ARN of the secret that enables access to the database. </p>
-    pub fn secret_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_arn(&self) -> std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
 }
 /// See [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
 pub mod execute_statement_output {
-
+    
     /// A builder for [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -505,8 +497,7 @@ pub mod execute_statement_output {
         }
         /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The date and time (UTC) the statement was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -514,12 +505,8 @@ pub mod execute_statement_output {
             self
         }
         /// <p>The date and time (UTC) the statement was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The cluster identifier. This element is not returned when connecting to a serverless workgroup. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -527,12 +514,8 @@ pub mod execute_statement_output {
             self
         }
         /// <p>The cluster identifier. This element is not returned when connecting to a serverless workgroup. </p>
-        pub fn set_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_identifier = input;
-            self
+        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_identifier = input; self
         }
         /// <p>The database user name.</p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -541,8 +524,7 @@ pub mod execute_statement_output {
         }
         /// <p>The database user name.</p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.db_user = input;
-            self
+            self.db_user = input; self
         }
         /// <p>The name of the database.</p>
         pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -551,8 +533,7 @@ pub mod execute_statement_output {
         }
         /// <p>The name of the database.</p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.database = input;
-            self
+            self.database = input; self
         }
         /// <p>The name or ARN of the secret that enables access to the database. </p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -561,8 +542,7 @@ pub mod execute_statement_output {
         }
         /// <p>The name or ARN of the secret that enables access to the database. </p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = input;
-            self
+            self.secret_arn = input; self
         }
         /// <p>The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.</p>
         pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -570,26 +550,31 @@ pub mod execute_statement_output {
             self
         }
         /// <p>The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.</p>
-        pub fn set_workgroup_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.workgroup_name = input;
-            self
+        pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workgroup_name = input; self
         }
         /// Consumes the builder and constructs a [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
         pub fn build(self) -> crate::output::ExecuteStatementOutput {
             crate::output::ExecuteStatementOutput {
-                id: self.id,
-                created_at: self.created_at,
-                cluster_identifier: self.cluster_identifier,
-                db_user: self.db_user,
-                database: self.database,
-                secret_arn: self.secret_arn,
-                workgroup_name: self.workgroup_name,
+                id: self.id
+                ,
+                created_at: self.created_at
+                ,
+                cluster_identifier: self.cluster_identifier
+                ,
+                db_user: self.db_user
+                ,
+                database: self.database
+                ,
+                secret_arn: self.secret_arn
+                ,
+                workgroup_name: self.workgroup_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ExecuteStatementOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
@@ -601,7 +586,7 @@ impl ExecuteStatementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTableOutput {
+pub struct DescribeTableOutput  {
     /// <p>The table name. </p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -614,21 +599,21 @@ pub struct DescribeTableOutput {
 }
 impl DescribeTableOutput {
     /// <p>The table name. </p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A list of columns in the table. </p>
-    pub fn column_list(&self) -> std::option::Option<&[crate::model::ColumnMetadata]> {
+    pub fn column_list(&self) -> std::option::Option<& [crate::model::ColumnMetadata]> {
         self.column_list.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeTableOutput`](crate::output::DescribeTableOutput).
 pub mod describe_table_output {
-
+    
     /// A builder for [`DescribeTableOutput`](crate::output::DescribeTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -644,8 +629,7 @@ pub mod describe_table_output {
         }
         /// <p>The table name. </p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// Appends an item to `column_list`.
         ///
@@ -654,17 +638,13 @@ pub mod describe_table_output {
         /// <p>A list of columns in the table. </p>
         pub fn column_list(mut self, input: crate::model::ColumnMetadata) -> Self {
             let mut v = self.column_list.unwrap_or_default();
-            v.push(input);
-            self.column_list = Some(v);
-            self
+                            v.push(input);
+                            self.column_list = Some(v);
+                            self
         }
         /// <p>A list of columns in the table. </p>
-        pub fn set_column_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
-        ) -> Self {
-            self.column_list = input;
-            self
+        pub fn set_column_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>) -> Self {
+            self.column_list = input; self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -673,18 +653,22 @@ pub mod describe_table_output {
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTableOutput`](crate::output::DescribeTableOutput).
         pub fn build(self) -> crate::output::DescribeTableOutput {
             crate::output::DescribeTableOutput {
-                table_name: self.table_name,
-                column_list: self.column_list,
-                next_token: self.next_token,
+                table_name: self.table_name
+                ,
+                column_list: self.column_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTableOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTableOutput`](crate::output::DescribeTableOutput).
@@ -696,7 +680,7 @@ impl DescribeTableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStatementOutput {
+pub struct DescribeStatementOutput  {
     /// <p>The identifier of the SQL statement described. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -718,15 +702,15 @@ pub struct DescribeStatementOutput {
     /// <p>The error message from the cluster if the SQL statement encountered an error while running. </p>
     #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
-    /// <p>The status of the SQL statement being described. Status values are defined as follows: </p>
-    /// <ul>
-    /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li>
-    /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li>
-    /// <li> <p>FAILED - The query run failed. </p> </li>
-    /// <li> <p>FINISHED - The query has finished running. </p> </li>
-    /// <li> <p>PICKED - The query has been chosen to be run. </p> </li>
-    /// <li> <p>STARTED - The query run has started. </p> </li>
-    /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li>
+    /// <p>The status of the SQL statement being described. Status values are defined as follows: </p> 
+    /// <ul> 
+    /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li> 
+    /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li> 
+    /// <li> <p>FAILED - The query run failed. </p> </li> 
+    /// <li> <p>FINISHED - The query has finished running. </p> </li> 
+    /// <li> <p>PICKED - The query has been chosen to be run. </p> </li> 
+    /// <li> <p>STARTED - The query run has started. </p> </li> 
+    /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatusString>,
@@ -766,23 +750,23 @@ pub struct DescribeStatementOutput {
 }
 impl DescribeStatementOutput {
     /// <p>The identifier of the SQL statement described. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the secret that enables access to the database. </p>
-    pub fn secret_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_arn(&self) -> std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>The database user name. </p>
-    pub fn db_user(&self) -> std::option::Option<&str> {
+    pub fn db_user(&self) -> std::option::Option<& str> {
         self.db_user.as_deref()
     }
     /// <p>The name of the database. </p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>The cluster identifier. </p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The amount of time in nanoseconds that the statement ran. </p>
@@ -790,28 +774,28 @@ impl DescribeStatementOutput {
         self.duration
     }
     /// <p>The error message from the cluster if the SQL statement encountered an error while running. </p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
-    /// <p>The status of the SQL statement being described. Status values are defined as follows: </p>
-    /// <ul>
-    /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li>
-    /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li>
-    /// <li> <p>FAILED - The query run failed. </p> </li>
-    /// <li> <p>FINISHED - The query has finished running. </p> </li>
-    /// <li> <p>PICKED - The query has been chosen to be run. </p> </li>
-    /// <li> <p>STARTED - The query run has started. </p> </li>
-    /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li>
+    /// <p>The status of the SQL statement being described. Status values are defined as follows: </p> 
+    /// <ul> 
+    /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li> 
+    /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li> 
+    /// <li> <p>FAILED - The query run failed. </p> </li> 
+    /// <li> <p>FINISHED - The query has finished running. </p> </li> 
+    /// <li> <p>PICKED - The query has been chosen to be run. </p> </li> 
+    /// <li> <p>STARTED - The query run has started. </p> </li> 
+    /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::StatusString> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StatusString> {
         self.status.as_ref()
     }
     /// <p>The date and time (UTC) when the SQL statement was submitted to run. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time (UTC) that the metadata for the SQL statement was last updated. An example is the time the status last changed. </p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The process identifier from Amazon Redshift. </p>
@@ -823,7 +807,7 @@ impl DescribeStatementOutput {
         self.has_result_set
     }
     /// <p>The SQL statement text. </p>
-    pub fn query_string(&self) -> std::option::Option<&str> {
+    pub fn query_string(&self) -> std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>Either the number of rows returned from the SQL statement or the number of rows affected. If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others. A <code>-1</code> indicates the value is null.</p>
@@ -839,21 +823,21 @@ impl DescribeStatementOutput {
         self.redshift_query_id
     }
     /// <p>The parameters for the SQL statement.</p>
-    pub fn query_parameters(&self) -> std::option::Option<&[crate::model::SqlParameter]> {
+    pub fn query_parameters(&self) -> std::option::Option<& [crate::model::SqlParameter]> {
         self.query_parameters.as_deref()
     }
     /// <p>The SQL statements from a multiple statement run.</p>
-    pub fn sub_statements(&self) -> std::option::Option<&[crate::model::SubStatementData]> {
+    pub fn sub_statements(&self) -> std::option::Option<& [crate::model::SubStatementData]> {
         self.sub_statements.as_deref()
     }
     /// <p>The serverless workgroup name.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
 }
 /// See [`DescribeStatementOutput`](crate::output::DescribeStatementOutput).
 pub mod describe_statement_output {
-
+    
     /// A builder for [`DescribeStatementOutput`](crate::output::DescribeStatementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -874,8 +858,7 @@ pub mod describe_statement_output {
         pub(crate) result_size: std::option::Option<i64>,
         pub(crate) redshift_query_id: std::option::Option<i64>,
         pub(crate) query_parameters: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
-        pub(crate) sub_statements:
-            std::option::Option<std::vec::Vec<crate::model::SubStatementData>>,
+        pub(crate) sub_statements: std::option::Option<std::vec::Vec<crate::model::SubStatementData>>,
         pub(crate) workgroup_name: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -886,8 +869,7 @@ pub mod describe_statement_output {
         }
         /// <p>The identifier of the SQL statement described. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the secret that enables access to the database. </p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -896,8 +878,7 @@ pub mod describe_statement_output {
         }
         /// <p>The name or Amazon Resource Name (ARN) of the secret that enables access to the database. </p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = input;
-            self
+            self.secret_arn = input; self
         }
         /// <p>The database user name. </p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -906,8 +887,7 @@ pub mod describe_statement_output {
         }
         /// <p>The database user name. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.db_user = input;
-            self
+            self.db_user = input; self
         }
         /// <p>The name of the database. </p>
         pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -916,8 +896,7 @@ pub mod describe_statement_output {
         }
         /// <p>The name of the database. </p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.database = input;
-            self
+            self.database = input; self
         }
         /// <p>The cluster identifier. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -925,12 +904,8 @@ pub mod describe_statement_output {
             self
         }
         /// <p>The cluster identifier. </p>
-        pub fn set_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_identifier = input;
-            self
+        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_identifier = input; self
         }
         /// <p>The amount of time in nanoseconds that the statement ran. </p>
         pub fn duration(mut self, input: i64) -> Self {
@@ -939,8 +914,7 @@ pub mod describe_statement_output {
         }
         /// <p>The amount of time in nanoseconds that the statement ran. </p>
         pub fn set_duration(mut self, input: std::option::Option<i64>) -> Self {
-            self.duration = input;
-            self
+            self.duration = input; self
         }
         /// <p>The error message from the cluster if the SQL statement encountered an error while running. </p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -949,39 +923,34 @@ pub mod describe_statement_output {
         }
         /// <p>The error message from the cluster if the SQL statement encountered an error while running. </p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
-        /// <p>The status of the SQL statement being described. Status values are defined as follows: </p>
-        /// <ul>
-        /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li>
-        /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li>
-        /// <li> <p>FAILED - The query run failed. </p> </li>
-        /// <li> <p>FINISHED - The query has finished running. </p> </li>
-        /// <li> <p>PICKED - The query has been chosen to be run. </p> </li>
-        /// <li> <p>STARTED - The query run has started. </p> </li>
-        /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li>
+        /// <p>The status of the SQL statement being described. Status values are defined as follows: </p> 
+        /// <ul> 
+        /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li> 
+        /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li> 
+        /// <li> <p>FAILED - The query run failed. </p> </li> 
+        /// <li> <p>FINISHED - The query has finished running. </p> </li> 
+        /// <li> <p>PICKED - The query has been chosen to be run. </p> </li> 
+        /// <li> <p>STARTED - The query run has started. </p> </li> 
+        /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::StatusString) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the SQL statement being described. Status values are defined as follows: </p>
-        /// <ul>
-        /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li>
-        /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li>
-        /// <li> <p>FAILED - The query run failed. </p> </li>
-        /// <li> <p>FINISHED - The query has finished running. </p> </li>
-        /// <li> <p>PICKED - The query has been chosen to be run. </p> </li>
-        /// <li> <p>STARTED - The query run has started. </p> </li>
-        /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li>
+        /// <p>The status of the SQL statement being described. Status values are defined as follows: </p> 
+        /// <ul> 
+        /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li> 
+        /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li> 
+        /// <li> <p>FAILED - The query run failed. </p> </li> 
+        /// <li> <p>FINISHED - The query has finished running. </p> </li> 
+        /// <li> <p>PICKED - The query has been chosen to be run. </p> </li> 
+        /// <li> <p>STARTED - The query run has started. </p> </li> 
+        /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::StatusString>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusString>) -> Self {
+            self.status = input; self
         }
         /// <p>The date and time (UTC) when the SQL statement was submitted to run. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -989,12 +958,8 @@ pub mod describe_statement_output {
             self
         }
         /// <p>The date and time (UTC) when the SQL statement was submitted to run. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The date and time (UTC) that the metadata for the SQL statement was last updated. An example is the time the status last changed. </p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1002,12 +967,8 @@ pub mod describe_statement_output {
             self
         }
         /// <p>The date and time (UTC) that the metadata for the SQL statement was last updated. An example is the time the status last changed. </p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p>The process identifier from Amazon Redshift. </p>
         pub fn redshift_pid(mut self, input: i64) -> Self {
@@ -1016,8 +977,7 @@ pub mod describe_statement_output {
         }
         /// <p>The process identifier from Amazon Redshift. </p>
         pub fn set_redshift_pid(mut self, input: std::option::Option<i64>) -> Self {
-            self.redshift_pid = input;
-            self
+            self.redshift_pid = input; self
         }
         /// <p>A value that indicates whether the statement has a result set. The result set can be empty. The value is true for an empty result set. The value is true if any substatement returns a result set.</p>
         pub fn has_result_set(mut self, input: bool) -> Self {
@@ -1026,8 +986,7 @@ pub mod describe_statement_output {
         }
         /// <p>A value that indicates whether the statement has a result set. The result set can be empty. The value is true for an empty result set. The value is true if any substatement returns a result set.</p>
         pub fn set_has_result_set(mut self, input: std::option::Option<bool>) -> Self {
-            self.has_result_set = input;
-            self
+            self.has_result_set = input; self
         }
         /// <p>The SQL statement text. </p>
         pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1036,8 +995,7 @@ pub mod describe_statement_output {
         }
         /// <p>The SQL statement text. </p>
         pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.query_string = input;
-            self
+            self.query_string = input; self
         }
         /// <p>Either the number of rows returned from the SQL statement or the number of rows affected. If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others. A <code>-1</code> indicates the value is null.</p>
         pub fn result_rows(mut self, input: i64) -> Self {
@@ -1046,8 +1004,7 @@ pub mod describe_statement_output {
         }
         /// <p>Either the number of rows returned from the SQL statement or the number of rows affected. If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others. A <code>-1</code> indicates the value is null.</p>
         pub fn set_result_rows(mut self, input: std::option::Option<i64>) -> Self {
-            self.result_rows = input;
-            self
+            self.result_rows = input; self
         }
         /// <p>The size in bytes of the returned results. A <code>-1</code> indicates the value is null.</p>
         pub fn result_size(mut self, input: i64) -> Self {
@@ -1056,8 +1013,7 @@ pub mod describe_statement_output {
         }
         /// <p>The size in bytes of the returned results. A <code>-1</code> indicates the value is null.</p>
         pub fn set_result_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.result_size = input;
-            self
+            self.result_size = input; self
         }
         /// <p>The identifier of the query generated by Amazon Redshift. These identifiers are also available in the <code>query</code> column of the <code>STL_QUERY</code> system view. </p>
         pub fn redshift_query_id(mut self, input: i64) -> Self {
@@ -1066,8 +1022,7 @@ pub mod describe_statement_output {
         }
         /// <p>The identifier of the query generated by Amazon Redshift. These identifiers are also available in the <code>query</code> column of the <code>STL_QUERY</code> system view. </p>
         pub fn set_redshift_query_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.redshift_query_id = input;
-            self
+            self.redshift_query_id = input; self
         }
         /// Appends an item to `query_parameters`.
         ///
@@ -1076,17 +1031,13 @@ pub mod describe_statement_output {
         /// <p>The parameters for the SQL statement.</p>
         pub fn query_parameters(mut self, input: crate::model::SqlParameter) -> Self {
             let mut v = self.query_parameters.unwrap_or_default();
-            v.push(input);
-            self.query_parameters = Some(v);
-            self
+                            v.push(input);
+                            self.query_parameters = Some(v);
+                            self
         }
         /// <p>The parameters for the SQL statement.</p>
-        pub fn set_query_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
-        ) -> Self {
-            self.query_parameters = input;
-            self
+        pub fn set_query_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>) -> Self {
+            self.query_parameters = input; self
         }
         /// Appends an item to `sub_statements`.
         ///
@@ -1095,17 +1046,13 @@ pub mod describe_statement_output {
         /// <p>The SQL statements from a multiple statement run.</p>
         pub fn sub_statements(mut self, input: crate::model::SubStatementData) -> Self {
             let mut v = self.sub_statements.unwrap_or_default();
-            v.push(input);
-            self.sub_statements = Some(v);
-            self
+                            v.push(input);
+                            self.sub_statements = Some(v);
+                            self
         }
         /// <p>The SQL statements from a multiple statement run.</p>
-        pub fn set_sub_statements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SubStatementData>>,
-        ) -> Self {
-            self.sub_statements = input;
-            self
+        pub fn set_sub_statements(mut self, input: std::option::Option<std::vec::Vec<crate::model::SubStatementData>>) -> Self {
+            self.sub_statements = input; self
         }
         /// <p>The serverless workgroup name.</p>
         pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1113,38 +1060,60 @@ pub mod describe_statement_output {
             self
         }
         /// <p>The serverless workgroup name.</p>
-        pub fn set_workgroup_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.workgroup_name = input;
-            self
+        pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workgroup_name = input; self
         }
         /// Consumes the builder and constructs a [`DescribeStatementOutput`](crate::output::DescribeStatementOutput).
         pub fn build(self) -> crate::output::DescribeStatementOutput {
             crate::output::DescribeStatementOutput {
-                id: self.id,
-                secret_arn: self.secret_arn,
-                db_user: self.db_user,
-                database: self.database,
-                cluster_identifier: self.cluster_identifier,
-                duration: self.duration.unwrap_or_default(),
-                error: self.error,
-                status: self.status,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                redshift_pid: self.redshift_pid.unwrap_or_default(),
-                has_result_set: self.has_result_set,
-                query_string: self.query_string,
-                result_rows: self.result_rows.unwrap_or_default(),
-                result_size: self.result_size.unwrap_or_default(),
-                redshift_query_id: self.redshift_query_id.unwrap_or_default(),
-                query_parameters: self.query_parameters,
-                sub_statements: self.sub_statements,
-                workgroup_name: self.workgroup_name,
+                id: self.id
+                ,
+                secret_arn: self.secret_arn
+                ,
+                db_user: self.db_user
+                ,
+                database: self.database
+                ,
+                cluster_identifier: self.cluster_identifier
+                ,
+                duration: self.duration
+                    .unwrap_or_default()
+                ,
+                error: self.error
+                ,
+                status: self.status
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                redshift_pid: self.redshift_pid
+                    .unwrap_or_default()
+                ,
+                has_result_set: self.has_result_set
+                ,
+                query_string: self.query_string
+                ,
+                result_rows: self.result_rows
+                    .unwrap_or_default()
+                ,
+                result_size: self.result_size
+                    .unwrap_or_default()
+                ,
+                redshift_query_id: self.redshift_query_id
+                    .unwrap_or_default()
+                ,
+                query_parameters: self.query_parameters
+                ,
+                sub_statements: self.sub_statements
+                ,
+                workgroup_name: self.workgroup_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeStatementOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStatementOutput`](crate::output::DescribeStatementOutput).
@@ -1156,7 +1125,7 @@ impl DescribeStatementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelStatementOutput {
+pub struct CancelStatementOutput  {
     /// <p>A value that indicates whether the cancel statement succeeded (true). </p>
     #[doc(hidden)]
     pub status: std::option::Option<bool>,
@@ -1169,7 +1138,7 @@ impl CancelStatementOutput {
 }
 /// See [`CancelStatementOutput`](crate::output::CancelStatementOutput).
 pub mod cancel_statement_output {
-
+    
     /// A builder for [`CancelStatementOutput`](crate::output::CancelStatementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1183,16 +1152,18 @@ pub mod cancel_statement_output {
         }
         /// <p>A value that indicates whether the cancel statement succeeded (true). </p>
         pub fn set_status(mut self, input: std::option::Option<bool>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CancelStatementOutput`](crate::output::CancelStatementOutput).
         pub fn build(self) -> crate::output::CancelStatementOutput {
             crate::output::CancelStatementOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CancelStatementOutput {
     /// Creates a new builder-style object to manufacture [`CancelStatementOutput`](crate::output::CancelStatementOutput).
@@ -1204,7 +1175,7 @@ impl CancelStatementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchExecuteStatementOutput {
+pub struct BatchExecuteStatementOutput  {
     /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. This identifier is returned by <code>BatchExecuteStatment</code>. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1229,37 +1200,37 @@ pub struct BatchExecuteStatementOutput {
 }
 impl BatchExecuteStatementOutput {
     /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. This identifier is returned by <code>BatchExecuteStatment</code>. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The date and time (UTC) the statement was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The cluster identifier. This element is not returned when connecting to a serverless workgroup. </p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The database user name.</p>
-    pub fn db_user(&self) -> std::option::Option<&str> {
+    pub fn db_user(&self) -> std::option::Option<& str> {
         self.db_user.as_deref()
     }
     /// <p>The name of the database.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>The name or ARN of the secret that enables access to the database. </p>
-    pub fn secret_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_arn(&self) -> std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
 }
 /// See [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
 pub mod batch_execute_statement_output {
-
+    
     /// A builder for [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1279,8 +1250,7 @@ pub mod batch_execute_statement_output {
         }
         /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. This identifier is returned by <code>BatchExecuteStatment</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The date and time (UTC) the statement was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1288,12 +1258,8 @@ pub mod batch_execute_statement_output {
             self
         }
         /// <p>The date and time (UTC) the statement was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The cluster identifier. This element is not returned when connecting to a serverless workgroup. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1301,12 +1267,8 @@ pub mod batch_execute_statement_output {
             self
         }
         /// <p>The cluster identifier. This element is not returned when connecting to a serverless workgroup. </p>
-        pub fn set_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_identifier = input;
-            self
+        pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_identifier = input; self
         }
         /// <p>The database user name.</p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1315,8 +1277,7 @@ pub mod batch_execute_statement_output {
         }
         /// <p>The database user name.</p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.db_user = input;
-            self
+            self.db_user = input; self
         }
         /// <p>The name of the database.</p>
         pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1325,8 +1286,7 @@ pub mod batch_execute_statement_output {
         }
         /// <p>The name of the database.</p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.database = input;
-            self
+            self.database = input; self
         }
         /// <p>The name or ARN of the secret that enables access to the database. </p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1335,8 +1295,7 @@ pub mod batch_execute_statement_output {
         }
         /// <p>The name or ARN of the secret that enables access to the database. </p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = input;
-            self
+            self.secret_arn = input; self
         }
         /// <p>The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.</p>
         pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1344,26 +1303,31 @@ pub mod batch_execute_statement_output {
             self
         }
         /// <p>The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.</p>
-        pub fn set_workgroup_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.workgroup_name = input;
-            self
+        pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workgroup_name = input; self
         }
         /// Consumes the builder and constructs a [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
         pub fn build(self) -> crate::output::BatchExecuteStatementOutput {
             crate::output::BatchExecuteStatementOutput {
-                id: self.id,
-                created_at: self.created_at,
-                cluster_identifier: self.cluster_identifier,
-                db_user: self.db_user,
-                database: self.database,
-                secret_arn: self.secret_arn,
-                workgroup_name: self.workgroup_name,
+                id: self.id
+                ,
+                created_at: self.created_at
+                ,
+                cluster_identifier: self.cluster_identifier
+                ,
+                db_user: self.db_user
+                ,
+                database: self.database
+                ,
+                secret_arn: self.secret_arn
+                ,
+                workgroup_name: self.workgroup_name
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchExecuteStatementOutput {
     /// Creates a new builder-style object to manufacture [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
@@ -1371,3 +1335,4 @@ impl BatchExecuteStatementOutput {
         crate::output::batch_execute_statement_output::Builder::default()
     }
 }
+

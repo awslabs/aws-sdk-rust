@@ -3,7 +3,7 @@
 /// <p>Configuration information for Organizations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OrganizationConfiguration {
+pub struct OrganizationConfiguration  {
     /// <p>Enables Organizations integration.</p>
     #[doc(hidden)]
     pub enable_integration: bool,
@@ -16,7 +16,7 @@ impl OrganizationConfiguration {
 }
 /// See [`OrganizationConfiguration`](crate::model::OrganizationConfiguration).
 pub mod organization_configuration {
-
+    
     /// A builder for [`OrganizationConfiguration`](crate::model::OrganizationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -30,16 +30,19 @@ pub mod organization_configuration {
         }
         /// <p>Enables Organizations integration.</p>
         pub fn set_enable_integration(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_integration = input;
-            self
+            self.enable_integration = input; self
         }
         /// Consumes the builder and constructs a [`OrganizationConfiguration`](crate::model::OrganizationConfiguration).
         pub fn build(self) -> crate::model::OrganizationConfiguration {
             crate::model::OrganizationConfiguration {
-                enable_integration: self.enable_integration.unwrap_or_default(),
+                enable_integration: self.enable_integration
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl OrganizationConfiguration {
     /// Creates a new builder-style object to manufacture [`OrganizationConfiguration`](crate::model::OrganizationConfiguration).
@@ -51,7 +54,7 @@ impl OrganizationConfiguration {
 /// <p>Details for associating a license configuration with a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LicenseSpecification {
+pub struct LicenseSpecification  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
@@ -61,17 +64,17 @@ pub struct LicenseSpecification {
 }
 impl LicenseSpecification {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
-    pub fn ami_association_scope(&self) -> std::option::Option<&str> {
+    pub fn ami_association_scope(&self) -> std::option::Option<& str> {
         self.ami_association_scope.as_deref()
     }
 }
 /// See [`LicenseSpecification`](crate::model::LicenseSpecification).
 pub mod license_specification {
-
+    
     /// A builder for [`LicenseSpecification`](crate::model::LicenseSpecification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -85,12 +88,8 @@ pub mod license_specification {
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-        pub fn set_license_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_configuration_arn = input;
-            self
+        pub fn set_license_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_configuration_arn = input; self
         }
         /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
         pub fn ami_association_scope(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,21 +97,21 @@ pub mod license_specification {
             self
         }
         /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
-        pub fn set_ami_association_scope(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ami_association_scope = input;
-            self
+        pub fn set_ami_association_scope(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ami_association_scope = input; self
         }
         /// Consumes the builder and constructs a [`LicenseSpecification`](crate::model::LicenseSpecification).
         pub fn build(self) -> crate::model::LicenseSpecification {
             crate::model::LicenseSpecification {
-                license_configuration_arn: self.license_configuration_arn,
-                ami_association_scope: self.ami_association_scope,
+                license_configuration_arn: self.license_configuration_arn
+                ,
+                ami_association_scope: self.ami_association_scope
+                ,
             }
         }
     }
+    
+    
 }
 impl LicenseSpecification {
     /// Creates a new builder-style object to manufacture [`LicenseSpecification`](crate::model::LicenseSpecification).
@@ -124,7 +123,7 @@ impl LicenseSpecification {
 /// <p>Details about how frequently reports are generated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReportFrequency {
+pub struct ReportFrequency  {
     /// <p>Number of times within the frequency period that a report is generated. The only supported value is <code>1</code>.</p>
     #[doc(hidden)]
     pub value: std::option::Option<i32>,
@@ -138,13 +137,13 @@ impl ReportFrequency {
         self.value
     }
     /// <p>Time period between each report. The period can be daily, weekly, or monthly.</p>
-    pub fn period(&self) -> std::option::Option<&crate::model::ReportFrequencyType> {
+    pub fn period(&self) -> std::option::Option<& crate::model::ReportFrequencyType> {
         self.period.as_ref()
     }
 }
 /// See [`ReportFrequency`](crate::model::ReportFrequency).
 pub mod report_frequency {
-
+    
     /// A builder for [`ReportFrequency`](crate::model::ReportFrequency).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -159,8 +158,7 @@ pub mod report_frequency {
         }
         /// <p>Number of times within the frequency period that a report is generated. The only supported value is <code>1</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<i32>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>Time period between each report. The period can be daily, weekly, or monthly.</p>
         pub fn period(mut self, input: crate::model::ReportFrequencyType) -> Self {
@@ -168,21 +166,21 @@ pub mod report_frequency {
             self
         }
         /// <p>Time period between each report. The period can be daily, weekly, or monthly.</p>
-        pub fn set_period(
-            mut self,
-            input: std::option::Option<crate::model::ReportFrequencyType>,
-        ) -> Self {
-            self.period = input;
-            self
+        pub fn set_period(mut self, input: std::option::Option<crate::model::ReportFrequencyType>) -> Self {
+            self.period = input; self
         }
         /// Consumes the builder and constructs a [`ReportFrequency`](crate::model::ReportFrequency).
         pub fn build(self) -> crate::model::ReportFrequency {
             crate::model::ReportFrequency {
-                value: self.value,
-                period: self.period,
+                value: self.value
+                ,
+                period: self.period
+                ,
             }
         }
     }
+    
+    
 }
 impl ReportFrequency {
     /// Creates a new builder-style object to manufacture [`ReportFrequency`](crate::model::ReportFrequency).
@@ -197,9 +195,9 @@ impl ReportFrequency {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reportfrequencytype = unimplemented!();
 /// match reportfrequencytype {
@@ -222,22 +220,14 @@ impl ReportFrequency {
 /// Specifically, when `reportfrequencytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReportFrequencyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReportFrequencyType {
     #[allow(missing_docs)] // documentation missing in model
     Day,
@@ -246,7 +236,7 @@ pub enum ReportFrequencyType {
     #[allow(missing_docs)] // documentation missing in model
     Week,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReportFrequencyType {
     fn from(s: &str) -> Self {
@@ -254,19 +244,17 @@ impl std::convert::From<&str> for ReportFrequencyType {
             "DAY" => ReportFrequencyType::Day,
             "MONTH" => ReportFrequencyType::Month,
             "WEEK" => ReportFrequencyType::Week,
-            other => {
-                ReportFrequencyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ReportFrequencyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReportFrequencyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReportFrequencyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReportFrequencyType::from(s))
+                }
+            }
 impl ReportFrequencyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -274,12 +262,14 @@ impl ReportFrequencyType {
             ReportFrequencyType::Day => "DAY",
             ReportFrequencyType::Month => "MONTH",
             ReportFrequencyType::Week => "WEEK",
-            ReportFrequencyType::Unknown(value) => value.as_str(),
+            ReportFrequencyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DAY", "MONTH", "WEEK"]
+        &[
+            "DAY", "MONTH", "WEEK"
+        ]
     }
 }
 impl AsRef<str> for ReportFrequencyType {
@@ -291,25 +281,24 @@ impl AsRef<str> for ReportFrequencyType {
 /// <p>Details of the license configuration that this generator reports on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReportContext {
+pub struct ReportContext  {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
     #[doc(hidden)]
     pub license_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ReportContext {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
-    pub fn license_configuration_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn license_configuration_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.license_configuration_arns.as_deref()
     }
 }
 /// See [`ReportContext`](crate::model::ReportContext).
 pub mod report_context {
-
+    
     /// A builder for [`ReportContext`](crate::model::ReportContext).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) license_configuration_arns:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) license_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `license_configuration_arns`.
@@ -319,25 +308,24 @@ pub mod report_context {
         /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
         pub fn license_configuration_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_configuration_arns.unwrap_or_default();
-            v.push(input.into());
-            self.license_configuration_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.license_configuration_arns = Some(v);
+                            self
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
-        pub fn set_license_configuration_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.license_configuration_arns = input;
-            self
+        pub fn set_license_configuration_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.license_configuration_arns = input; self
         }
         /// Consumes the builder and constructs a [`ReportContext`](crate::model::ReportContext).
         pub fn build(self) -> crate::model::ReportContext {
             crate::model::ReportContext {
-                license_configuration_arns: self.license_configuration_arns,
+                license_configuration_arns: self.license_configuration_arns
+                ,
             }
         }
     }
+    
+    
 }
 impl ReportContext {
     /// Creates a new builder-style object to manufacture [`ReportContext`](crate::model::ReportContext).
@@ -352,9 +340,9 @@ impl ReportContext {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reporttype = unimplemented!();
 /// match reporttype {
@@ -376,60 +364,51 @@ impl ReportContext {
 /// Specifically, when `reporttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReportType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReportType {
     #[allow(missing_docs)] // documentation missing in model
     LicenseConfigurationSummaryReport,
     #[allow(missing_docs)] // documentation missing in model
     LicenseConfigurationUsageReport,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReportType {
     fn from(s: &str) -> Self {
         match s {
             "LicenseConfigurationSummaryReport" => ReportType::LicenseConfigurationSummaryReport,
             "LicenseConfigurationUsageReport" => ReportType::LicenseConfigurationUsageReport,
-            other => ReportType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ReportType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReportType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReportType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReportType::from(s))
+                }
+            }
 impl ReportType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportType::LicenseConfigurationSummaryReport => "LicenseConfigurationSummaryReport",
             ReportType::LicenseConfigurationUsageReport => "LicenseConfigurationUsageReport",
-            ReportType::Unknown(value) => value.as_str(),
+            ReportType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "LicenseConfigurationSummaryReport",
-            "LicenseConfigurationUsageReport",
+            "LicenseConfigurationSummaryReport", "LicenseConfigurationUsageReport"
         ]
     }
 }
@@ -442,70 +421,66 @@ impl AsRef<str> for ReportType {
 /// <p>Describes product information for a license configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProductInformation {
+pub struct ProductInformation  {
     /// <p>Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p>
-    /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p>
-    /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p> </li>
-    /// <li> <p> <code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p> </li>
-    /// <li> <p> <code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p> </li>
-    /// <li> <p> <code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p> </li>
-    /// <li> <p> <code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p> </li>
-    /// <li> <p> <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key. </p> </li>
-    /// <li> <p> <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p> </li>
-    /// <li> <p> <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
-    /// </ul>
-    /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p> </li>
-    /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li>
+    /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p> 
+    /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p> 
+    /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key. </p> </li> 
+    /// <li> <p> <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li> 
+    /// </ul> 
+    /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p> </li> 
+    /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub product_information_filter_list:
-        std::option::Option<std::vec::Vec<crate::model::ProductInformationFilter>>,
+    pub product_information_filter_list: std::option::Option<std::vec::Vec<crate::model::ProductInformationFilter>>,
 }
 impl ProductInformation {
     /// <p>Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
-    /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p>
-    /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p>
-    /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p> </li>
-    /// <li> <p> <code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p> </li>
-    /// <li> <p> <code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p> </li>
-    /// <li> <p> <code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p> </li>
-    /// <li> <p> <code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p> </li>
-    /// <li> <p> <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key. </p> </li>
-    /// <li> <p> <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p> </li>
-    /// <li> <p> <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
+    /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p> 
+    /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p> 
+    /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key. </p> </li> 
+    /// <li> <p> <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p> </li> 
+    /// <li> <p> <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li> 
+    /// </ul> 
+    /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p> </li> 
+    /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li> 
     /// </ul>
-    /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p> </li>
-    /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li>
-    /// </ul>
-    pub fn product_information_filter_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProductInformationFilter]> {
+    pub fn product_information_filter_list(&self) -> std::option::Option<& [crate::model::ProductInformationFilter]> {
         self.product_information_filter_list.as_deref()
     }
 }
 /// See [`ProductInformation`](crate::model::ProductInformation).
 pub mod product_information {
-
+    
     /// A builder for [`ProductInformation`](crate::model::ProductInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
-        pub(crate) product_information_filter_list:
-            std::option::Option<std::vec::Vec<crate::model::ProductInformationFilter>>,
+        pub(crate) product_information_filter_list: std::option::Option<std::vec::Vec<crate::model::ProductInformationFilter>>,
     }
     impl Builder {
         /// <p>Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.</p>
@@ -514,77 +489,70 @@ pub mod product_information {
             self
         }
         /// <p>Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// Appends an item to `product_information_filter_list`.
         ///
         /// To override the contents of this collection use [`set_product_information_filter_list`](Self::set_product_information_filter_list).
         ///
-        /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p>
-        /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p>
-        /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p> </li>
-        /// <li> <p> <code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p> </li>
-        /// <li> <p> <code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p> </li>
-        /// <li> <p> <code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p> </li>
-        /// <li> <p> <code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p> </li>
-        /// <li> <p> <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key. </p> </li>
-        /// <li> <p> <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p> </li>
-        /// <li> <p> <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
+        /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p> 
+        /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p> 
+        /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key. </p> </li> 
+        /// <li> <p> <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li> 
+        /// </ul> 
+        /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p> </li> 
+        /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li> 
         /// </ul>
-        /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p> </li>
-        /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li>
-        /// </ul>
-        pub fn product_information_filter_list(
-            mut self,
-            input: crate::model::ProductInformationFilter,
-        ) -> Self {
+        pub fn product_information_filter_list(mut self, input: crate::model::ProductInformationFilter) -> Self {
             let mut v = self.product_information_filter_list.unwrap_or_default();
-            v.push(input);
-            self.product_information_filter_list = Some(v);
-            self
+                            v.push(input);
+                            self.product_information_filter_list = Some(v);
+                            self
         }
-        /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p>
-        /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p>
-        /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p> </li>
-        /// <li> <p> <code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p> </li>
-        /// <li> <p> <code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p> </li>
-        /// <li> <p> <code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p> </li>
-        /// <li> <p> <code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p> </li>
-        /// <li> <p> <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key. </p> </li>
-        /// <li> <p> <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p> </li>
-        /// <li> <p> <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
+        /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p> 
+        /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p> 
+        /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key. </p> </li> 
+        /// <li> <p> <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p> </li> 
+        /// <li> <p> <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li> 
+        /// </ul> 
+        /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p> </li> 
+        /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li> 
         /// </ul>
-        /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p> </li>
-        /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li>
-        /// </ul>
-        pub fn set_product_information_filter_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProductInformationFilter>>,
-        ) -> Self {
-            self.product_information_filter_list = input;
-            self
+        pub fn set_product_information_filter_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProductInformationFilter>>) -> Self {
+            self.product_information_filter_list = input; self
         }
         /// Consumes the builder and constructs a [`ProductInformation`](crate::model::ProductInformation).
         pub fn build(self) -> crate::model::ProductInformation {
             crate::model::ProductInformation {
-                resource_type: self.resource_type,
-                product_information_filter_list: self.product_information_filter_list,
+                resource_type: self.resource_type
+                ,
+                product_information_filter_list: self.product_information_filter_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ProductInformation {
     /// Creates a new builder-style object to manufacture [`ProductInformation`](crate::model::ProductInformation).
@@ -596,7 +564,7 @@ impl ProductInformation {
 /// <p>Describes product information filters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProductInformationFilter {
+pub struct ProductInformationFilter  {
     /// <p>Filter name.</p>
     #[doc(hidden)]
     pub product_information_filter_name: std::option::Option<std::string::String>,
@@ -609,93 +577,76 @@ pub struct ProductInformationFilter {
 }
 impl ProductInformationFilter {
     /// <p>Filter name.</p>
-    pub fn product_information_filter_name(&self) -> std::option::Option<&str> {
+    pub fn product_information_filter_name(&self) -> std::option::Option<& str> {
         self.product_information_filter_name.as_deref()
     }
     /// <p>Filter value.</p>
-    pub fn product_information_filter_value(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn product_information_filter_value(&self) -> std::option::Option<& [std::string::String]> {
         self.product_information_filter_value.as_deref()
     }
     /// <p>Logical operator.</p>
-    pub fn product_information_filter_comparator(&self) -> std::option::Option<&str> {
+    pub fn product_information_filter_comparator(&self) -> std::option::Option<& str> {
         self.product_information_filter_comparator.as_deref()
     }
 }
 /// See [`ProductInformationFilter`](crate::model::ProductInformationFilter).
 pub mod product_information_filter {
-
+    
     /// A builder for [`ProductInformationFilter`](crate::model::ProductInformationFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_information_filter_name: std::option::Option<std::string::String>,
-        pub(crate) product_information_filter_value:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) product_information_filter_value: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) product_information_filter_comparator: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Filter name.</p>
-        pub fn product_information_filter_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn product_information_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.product_information_filter_name = Some(input.into());
             self
         }
         /// <p>Filter name.</p>
-        pub fn set_product_information_filter_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.product_information_filter_name = input;
-            self
+        pub fn set_product_information_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.product_information_filter_name = input; self
         }
         /// Appends an item to `product_information_filter_value`.
         ///
         /// To override the contents of this collection use [`set_product_information_filter_value`](Self::set_product_information_filter_value).
         ///
         /// <p>Filter value.</p>
-        pub fn product_information_filter_value(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn product_information_filter_value(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.product_information_filter_value.unwrap_or_default();
-            v.push(input.into());
-            self.product_information_filter_value = Some(v);
-            self
+                            v.push(input.into());
+                            self.product_information_filter_value = Some(v);
+                            self
         }
         /// <p>Filter value.</p>
-        pub fn set_product_information_filter_value(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.product_information_filter_value = input;
-            self
+        pub fn set_product_information_filter_value(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.product_information_filter_value = input; self
         }
         /// <p>Logical operator.</p>
-        pub fn product_information_filter_comparator(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn product_information_filter_comparator(mut self, input: impl Into<std::string::String>) -> Self {
             self.product_information_filter_comparator = Some(input.into());
             self
         }
         /// <p>Logical operator.</p>
-        pub fn set_product_information_filter_comparator(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.product_information_filter_comparator = input;
-            self
+        pub fn set_product_information_filter_comparator(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.product_information_filter_comparator = input; self
         }
         /// Consumes the builder and constructs a [`ProductInformationFilter`](crate::model::ProductInformationFilter).
         pub fn build(self) -> crate::model::ProductInformationFilter {
             crate::model::ProductInformationFilter {
-                product_information_filter_name: self.product_information_filter_name,
-                product_information_filter_value: self.product_information_filter_value,
-                product_information_filter_comparator: self.product_information_filter_comparator,
+                product_information_filter_name: self.product_information_filter_name
+                ,
+                product_information_filter_value: self.product_information_filter_value
+                ,
+                product_information_filter_comparator: self.product_information_filter_comparator
+                ,
             }
         }
     }
+    
+    
 }
 impl ProductInformationFilter {
     /// Creates a new builder-style object to manufacture [`ProductInformationFilter`](crate::model::ProductInformationFilter).
@@ -710,9 +661,9 @@ impl ProductInformationFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let licenseconfigurationstatus = unimplemented!();
 /// match licenseconfigurationstatus {
@@ -734,60 +685,52 @@ impl ProductInformationFilter {
 /// Specifically, when `licenseconfigurationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LicenseConfigurationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LicenseConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LicenseConfigurationStatus {
     fn from(s: &str) -> Self {
         match s {
             "AVAILABLE" => LicenseConfigurationStatus::Available,
             "DISABLED" => LicenseConfigurationStatus::Disabled,
-            other => LicenseConfigurationStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LicenseConfigurationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LicenseConfigurationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LicenseConfigurationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LicenseConfigurationStatus::from(s))
+                }
+            }
 impl LicenseConfigurationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LicenseConfigurationStatus::Available => "AVAILABLE",
             LicenseConfigurationStatus::Disabled => "DISABLED",
-            LicenseConfigurationStatus::Unknown(value) => value.as_str(),
+            LicenseConfigurationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "DISABLED"]
+        &[
+            "AVAILABLE", "DISABLED"
+        ]
     }
 }
 impl AsRef<str> for LicenseConfigurationStatus {
@@ -799,7 +742,7 @@ impl AsRef<str> for LicenseConfigurationStatus {
 /// <p>Details about a tag for a license configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>Tag key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -809,17 +752,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>Tag key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>Tag value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -834,8 +777,7 @@ pub mod tag {
         }
         /// <p>Tag key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>Tag value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -844,17 +786,20 @@ pub mod tag {
         }
         /// <p>Tag value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -869,9 +814,9 @@ impl Tag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let grantstatus = unimplemented!();
 /// match grantstatus {
@@ -900,22 +845,14 @@ impl Tag {
 /// Specifically, when `grantstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GrantStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GrantStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -936,7 +873,7 @@ pub enum GrantStatus {
     #[allow(missing_docs)] // documentation missing in model
     WorkflowCompleted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GrantStatus {
     fn from(s: &str) -> Self {
@@ -950,17 +887,17 @@ impl std::convert::From<&str> for GrantStatus {
             "PENDING_WORKFLOW" => GrantStatus::PendingWorkflow,
             "REJECTED" => GrantStatus::Rejected,
             "WORKFLOW_COMPLETED" => GrantStatus::WorkflowCompleted,
-            other => GrantStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => GrantStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GrantStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GrantStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GrantStatus::from(s))
+                }
+            }
 impl GrantStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -974,21 +911,13 @@ impl GrantStatus {
             GrantStatus::PendingWorkflow => "PENDING_WORKFLOW",
             GrantStatus::Rejected => "REJECTED",
             GrantStatus::WorkflowCompleted => "WORKFLOW_COMPLETED",
-            GrantStatus::Unknown(value) => value.as_str(),
+            GrantStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "DELETED",
-            "DISABLED",
-            "FAILED_WORKFLOW",
-            "PENDING_ACCEPT",
-            "PENDING_DELETE",
-            "PENDING_WORKFLOW",
-            "REJECTED",
-            "WORKFLOW_COMPLETED",
+            "ACTIVE", "DELETED", "DISABLED", "FAILED_WORKFLOW", "PENDING_ACCEPT", "PENDING_DELETE", "PENDING_WORKFLOW", "REJECTED", "WORKFLOW_COMPLETED"
         ]
     }
 }
@@ -1001,7 +930,7 @@ impl AsRef<str> for GrantStatus {
 /// <p>Details about the usage of a resource associated with a license configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LicenseConfigurationUsage {
+pub struct LicenseConfigurationUsage  {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -1023,23 +952,23 @@ pub struct LicenseConfigurationUsage {
 }
 impl LicenseConfigurationUsage {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Type of resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Status of the resource.</p>
-    pub fn resource_status(&self) -> std::option::Option<&str> {
+    pub fn resource_status(&self) -> std::option::Option<& str> {
         self.resource_status.as_deref()
     }
     /// <p>ID of the account that owns the resource.</p>
-    pub fn resource_owner_id(&self) -> std::option::Option<&str> {
+    pub fn resource_owner_id(&self) -> std::option::Option<& str> {
         self.resource_owner_id.as_deref()
     }
     /// <p>Time when the license configuration was initially associated with the resource.</p>
-    pub fn association_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn association_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.association_time.as_ref()
     }
     /// <p>Number of licenses consumed by the resource.</p>
@@ -1049,7 +978,7 @@ impl LicenseConfigurationUsage {
 }
 /// See [`LicenseConfigurationUsage`](crate::model::LicenseConfigurationUsage).
 pub mod license_configuration_usage {
-
+    
     /// A builder for [`LicenseConfigurationUsage`](crate::model::LicenseConfigurationUsage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1068,8 +997,7 @@ pub mod license_configuration_usage {
         }
         /// <p>Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>Type of resource.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -1077,12 +1005,8 @@ pub mod license_configuration_usage {
             self
         }
         /// <p>Type of resource.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>Status of the resource.</p>
         pub fn resource_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1090,12 +1014,8 @@ pub mod license_configuration_usage {
             self
         }
         /// <p>Status of the resource.</p>
-        pub fn set_resource_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_status = input;
-            self
+        pub fn set_resource_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_status = input; self
         }
         /// <p>ID of the account that owns the resource.</p>
         pub fn resource_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1103,12 +1023,8 @@ pub mod license_configuration_usage {
             self
         }
         /// <p>ID of the account that owns the resource.</p>
-        pub fn set_resource_owner_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner_id = input;
-            self
+        pub fn set_resource_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner_id = input; self
         }
         /// <p>Time when the license configuration was initially associated with the resource.</p>
         pub fn association_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1116,12 +1032,8 @@ pub mod license_configuration_usage {
             self
         }
         /// <p>Time when the license configuration was initially associated with the resource.</p>
-        pub fn set_association_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.association_time = input;
-            self
+        pub fn set_association_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.association_time = input; self
         }
         /// <p>Number of licenses consumed by the resource.</p>
         pub fn consumed_licenses(mut self, input: i64) -> Self {
@@ -1130,21 +1042,28 @@ pub mod license_configuration_usage {
         }
         /// <p>Number of licenses consumed by the resource.</p>
         pub fn set_consumed_licenses(mut self, input: std::option::Option<i64>) -> Self {
-            self.consumed_licenses = input;
-            self
+            self.consumed_licenses = input; self
         }
         /// Consumes the builder and constructs a [`LicenseConfigurationUsage`](crate::model::LicenseConfigurationUsage).
         pub fn build(self) -> crate::model::LicenseConfigurationUsage {
             crate::model::LicenseConfigurationUsage {
-                resource_arn: self.resource_arn,
-                resource_type: self.resource_type,
-                resource_status: self.resource_status,
-                resource_owner_id: self.resource_owner_id,
-                association_time: self.association_time,
-                consumed_licenses: self.consumed_licenses,
+                resource_arn: self.resource_arn
+                ,
+                resource_type: self.resource_type
+                ,
+                resource_status: self.resource_status
+                ,
+                resource_owner_id: self.resource_owner_id
+                ,
+                association_time: self.association_time
+                ,
+                consumed_licenses: self.consumed_licenses
+                ,
             }
         }
     }
+    
+    
 }
 impl LicenseConfigurationUsage {
     /// Creates a new builder-style object to manufacture [`LicenseConfigurationUsage`](crate::model::LicenseConfigurationUsage).
@@ -1159,9 +1078,9 @@ impl LicenseConfigurationUsage {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -1186,22 +1105,14 @@ impl LicenseConfigurationUsage {
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Ec2Ami,
@@ -1214,7 +1125,7 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     SystemsManagerManagedInstance,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
@@ -1224,17 +1135,17 @@ impl std::convert::From<&str> for ResourceType {
             "EC2_INSTANCE" => ResourceType::Ec2Instance,
             "RDS" => ResourceType::Rds,
             "SYSTEMS_MANAGER_MANAGED_INSTANCE" => ResourceType::SystemsManagerManagedInstance,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1244,17 +1155,13 @@ impl ResourceType {
             ResourceType::Ec2Instance => "EC2_INSTANCE",
             ResourceType::Rds => "RDS",
             ResourceType::SystemsManagerManagedInstance => "SYSTEMS_MANAGER_MANAGED_INSTANCE",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "EC2_AMI",
-            "EC2_HOST",
-            "EC2_INSTANCE",
-            "RDS",
-            "SYSTEMS_MANAGER_MANAGED_INSTANCE",
+            "EC2_AMI", "EC2_HOST", "EC2_INSTANCE", "RDS", "SYSTEMS_MANAGER_MANAGED_INSTANCE"
         ]
     }
 }
@@ -1267,7 +1174,7 @@ impl AsRef<str> for ResourceType {
 /// <p>A filter name and value pair that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>Name of the filter. Filter names are case-sensitive.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1277,17 +1184,17 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>Name of the filter. Filter names are case-sensitive.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Filter values. Filter values are case-sensitive.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1302,8 +1209,7 @@ pub mod filter {
         }
         /// <p>Name of the filter. Filter names are case-sensitive.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -1312,26 +1218,26 @@ pub mod filter {
         /// <p>Filter values. Filter values are case-sensitive.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>Filter values. Filter values are case-sensitive.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -1343,7 +1249,7 @@ impl Filter {
 /// <p>Describes a token.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TokenData {
+pub struct TokenData  {
     /// <p>Token ID.</p>
     #[doc(hidden)]
     pub token_id: std::option::Option<std::string::String>,
@@ -1368,37 +1274,37 @@ pub struct TokenData {
 }
 impl TokenData {
     /// <p>Token ID.</p>
-    pub fn token_id(&self) -> std::option::Option<&str> {
+    pub fn token_id(&self) -> std::option::Option<& str> {
         self.token_id.as_deref()
     }
     /// <p>Type of token generated. The supported value is <code>REFRESH_TOKEN</code>.</p>
-    pub fn token_type(&self) -> std::option::Option<&str> {
+    pub fn token_type(&self) -> std::option::Option<& str> {
         self.token_type.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>Token expiration time, in ISO8601-UTC format.</p>
-    pub fn expiration_time(&self) -> std::option::Option<&str> {
+    pub fn expiration_time(&self) -> std::option::Option<& str> {
         self.expiration_time.as_deref()
     }
     /// <p>Data specified by the caller.</p>
-    pub fn token_properties(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn token_properties(&self) -> std::option::Option<& [std::string::String]> {
         self.token_properties.as_deref()
     }
     /// <p>Amazon Resource Names (ARN) of the roles included in the token.</p>
-    pub fn role_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn role_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.role_arns.as_deref()
     }
     /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`TokenData`](crate::model::TokenData).
 pub mod token_data {
-
+    
     /// A builder for [`TokenData`](crate::model::TokenData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1418,8 +1324,7 @@ pub mod token_data {
         }
         /// <p>Token ID.</p>
         pub fn set_token_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.token_id = input;
-            self
+            self.token_id = input; self
         }
         /// <p>Type of token generated. The supported value is <code>REFRESH_TOKEN</code>.</p>
         pub fn token_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1428,8 +1333,7 @@ pub mod token_data {
         }
         /// <p>Type of token generated. The supported value is <code>REFRESH_TOKEN</code>.</p>
         pub fn set_token_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.token_type = input;
-            self
+            self.token_type = input; self
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn license_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1438,8 +1342,7 @@ pub mod token_data {
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// <p>Token expiration time, in ISO8601-UTC format.</p>
         pub fn expiration_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1447,12 +1350,8 @@ pub mod token_data {
             self
         }
         /// <p>Token expiration time, in ISO8601-UTC format.</p>
-        pub fn set_expiration_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.expiration_time = input;
-            self
+        pub fn set_expiration_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expiration_time = input; self
         }
         /// Appends an item to `token_properties`.
         ///
@@ -1461,17 +1360,13 @@ pub mod token_data {
         /// <p>Data specified by the caller.</p>
         pub fn token_properties(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.token_properties.unwrap_or_default();
-            v.push(input.into());
-            self.token_properties = Some(v);
-            self
+                            v.push(input.into());
+                            self.token_properties = Some(v);
+                            self
         }
         /// <p>Data specified by the caller.</p>
-        pub fn set_token_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.token_properties = input;
-            self
+        pub fn set_token_properties(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.token_properties = input; self
         }
         /// Appends an item to `role_arns`.
         ///
@@ -1480,17 +1375,13 @@ pub mod token_data {
         /// <p>Amazon Resource Names (ARN) of the roles included in the token.</p>
         pub fn role_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.role_arns.unwrap_or_default();
-            v.push(input.into());
-            self.role_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.role_arns = Some(v);
+                            self
         }
         /// <p>Amazon Resource Names (ARN) of the roles included in the token.</p>
-        pub fn set_role_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.role_arns = input;
-            self
+        pub fn set_role_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.role_arns = input; self
         }
         /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1499,22 +1390,30 @@ pub mod token_data {
         }
         /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`TokenData`](crate::model::TokenData).
         pub fn build(self) -> crate::model::TokenData {
             crate::model::TokenData {
-                token_id: self.token_id,
-                token_type: self.token_type,
-                license_arn: self.license_arn,
-                expiration_time: self.expiration_time,
-                token_properties: self.token_properties,
-                role_arns: self.role_arns,
-                status: self.status,
+                token_id: self.token_id
+                ,
+                token_type: self.token_type
+                ,
+                license_arn: self.license_arn
+                ,
+                expiration_time: self.expiration_time
+                ,
+                token_properties: self.token_properties
+                ,
+                role_arns: self.role_arns
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl TokenData {
     /// Creates a new builder-style object to manufacture [`TokenData`](crate::model::TokenData).
@@ -1526,7 +1425,7 @@ impl TokenData {
 /// <p>Details about a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceInventory {
+pub struct ResourceInventory  {
     /// <p>ID of the resource.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
@@ -1548,33 +1447,33 @@ pub struct ResourceInventory {
 }
 impl ResourceInventory {
     /// <p>ID of the resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Type of resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Platform of the resource.</p>
-    pub fn platform(&self) -> std::option::Option<&str> {
+    pub fn platform(&self) -> std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>Platform version of the resource in the inventory.</p>
-    pub fn platform_version(&self) -> std::option::Option<&str> {
+    pub fn platform_version(&self) -> std::option::Option<& str> {
         self.platform_version.as_deref()
     }
     /// <p>ID of the account that owns the resource.</p>
-    pub fn resource_owning_account_id(&self) -> std::option::Option<&str> {
+    pub fn resource_owning_account_id(&self) -> std::option::Option<& str> {
         self.resource_owning_account_id.as_deref()
     }
 }
 /// See [`ResourceInventory`](crate::model::ResourceInventory).
 pub mod resource_inventory {
-
+    
     /// A builder for [`ResourceInventory`](crate::model::ResourceInventory).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1593,8 +1492,7 @@ pub mod resource_inventory {
         }
         /// <p>ID of the resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// <p>Type of resource.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -1602,12 +1500,8 @@ pub mod resource_inventory {
             self
         }
         /// <p>Type of resource.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>Amazon Resource Name (ARN) of the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1616,8 +1510,7 @@ pub mod resource_inventory {
         }
         /// <p>Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>Platform of the resource.</p>
         pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1626,8 +1519,7 @@ pub mod resource_inventory {
         }
         /// <p>Platform of the resource.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p>Platform version of the resource in the inventory.</p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1635,12 +1527,8 @@ pub mod resource_inventory {
             self
         }
         /// <p>Platform version of the resource in the inventory.</p>
-        pub fn set_platform_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_version = input;
-            self
+        pub fn set_platform_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_version = input; self
         }
         /// <p>ID of the account that owns the resource.</p>
         pub fn resource_owning_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1648,25 +1536,29 @@ pub mod resource_inventory {
             self
         }
         /// <p>ID of the account that owns the resource.</p>
-        pub fn set_resource_owning_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owning_account_id = input;
-            self
+        pub fn set_resource_owning_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owning_account_id = input; self
         }
         /// Consumes the builder and constructs a [`ResourceInventory`](crate::model::ResourceInventory).
         pub fn build(self) -> crate::model::ResourceInventory {
             crate::model::ResourceInventory {
-                resource_id: self.resource_id,
-                resource_type: self.resource_type,
-                resource_arn: self.resource_arn,
-                platform: self.platform,
-                platform_version: self.platform_version,
-                resource_owning_account_id: self.resource_owning_account_id,
+                resource_id: self.resource_id
+                ,
+                resource_type: self.resource_type
+                ,
+                resource_arn: self.resource_arn
+                ,
+                platform: self.platform
+                ,
+                platform_version: self.platform_version
+                ,
+                resource_owning_account_id: self.resource_owning_account_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceInventory {
     /// Creates a new builder-style object to manufacture [`ResourceInventory`](crate::model::ResourceInventory).
@@ -1678,7 +1570,7 @@ impl ResourceInventory {
 /// <p>An inventory filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InventoryFilter {
+pub struct InventoryFilter  {
     /// <p>Name of the filter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1691,21 +1583,21 @@ pub struct InventoryFilter {
 }
 impl InventoryFilter {
     /// <p>Name of the filter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Condition of the filter.</p>
-    pub fn condition(&self) -> std::option::Option<&crate::model::InventoryFilterCondition> {
+    pub fn condition(&self) -> std::option::Option<& crate::model::InventoryFilterCondition> {
         self.condition.as_ref()
     }
     /// <p>Value of the filter.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`InventoryFilter`](crate::model::InventoryFilter).
 pub mod inventory_filter {
-
+    
     /// A builder for [`InventoryFilter`](crate::model::InventoryFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1721,8 +1613,7 @@ pub mod inventory_filter {
         }
         /// <p>Name of the filter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Condition of the filter.</p>
         pub fn condition(mut self, input: crate::model::InventoryFilterCondition) -> Self {
@@ -1730,12 +1621,8 @@ pub mod inventory_filter {
             self
         }
         /// <p>Condition of the filter.</p>
-        pub fn set_condition(
-            mut self,
-            input: std::option::Option<crate::model::InventoryFilterCondition>,
-        ) -> Self {
-            self.condition = input;
-            self
+        pub fn set_condition(mut self, input: std::option::Option<crate::model::InventoryFilterCondition>) -> Self {
+            self.condition = input; self
         }
         /// <p>Value of the filter.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1744,18 +1631,22 @@ pub mod inventory_filter {
         }
         /// <p>Value of the filter.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`InventoryFilter`](crate::model::InventoryFilter).
         pub fn build(self) -> crate::model::InventoryFilter {
             crate::model::InventoryFilter {
-                name: self.name,
-                condition: self.condition,
-                value: self.value,
+                name: self.name
+                ,
+                condition: self.condition
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl InventoryFilter {
     /// Creates a new builder-style object to manufacture [`InventoryFilter`](crate::model::InventoryFilter).
@@ -1770,9 +1661,9 @@ impl InventoryFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let inventoryfiltercondition = unimplemented!();
 /// match inventoryfiltercondition {
@@ -1796,22 +1687,14 @@ impl InventoryFilter {
 /// Specifically, when `inventoryfiltercondition` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InventoryFilterCondition::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InventoryFilterCondition {
     #[allow(missing_docs)] // documentation missing in model
     BeginsWith,
@@ -1822,7 +1705,7 @@ pub enum InventoryFilterCondition {
     #[allow(missing_docs)] // documentation missing in model
     NotEquals,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InventoryFilterCondition {
     fn from(s: &str) -> Self {
@@ -1831,19 +1714,17 @@ impl std::convert::From<&str> for InventoryFilterCondition {
             "CONTAINS" => InventoryFilterCondition::Contains,
             "EQUALS" => InventoryFilterCondition::Equals,
             "NOT_EQUALS" => InventoryFilterCondition::NotEquals,
-            other => InventoryFilterCondition::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InventoryFilterCondition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InventoryFilterCondition {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InventoryFilterCondition::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InventoryFilterCondition::from(s))
+                }
+            }
 impl InventoryFilterCondition {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1852,12 +1733,14 @@ impl InventoryFilterCondition {
             InventoryFilterCondition::Contains => "CONTAINS",
             InventoryFilterCondition::Equals => "EQUALS",
             InventoryFilterCondition::NotEquals => "NOT_EQUALS",
-            InventoryFilterCondition::Unknown(value) => value.as_str(),
+            InventoryFilterCondition::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BEGINS_WITH", "CONTAINS", "EQUALS", "NOT_EQUALS"]
+        &[
+            "BEGINS_WITH", "CONTAINS", "EQUALS", "NOT_EQUALS"
+        ]
     }
 }
 impl AsRef<str> for InventoryFilterCondition {
@@ -1869,7 +1752,7 @@ impl AsRef<str> for InventoryFilterCondition {
 /// <p>Describes a license that is granted to a grantee.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrantedLicense {
+pub struct GrantedLicense  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
@@ -1918,71 +1801,69 @@ pub struct GrantedLicense {
 }
 impl GrantedLicense {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>License name.</p>
-    pub fn license_name(&self) -> std::option::Option<&str> {
+    pub fn license_name(&self) -> std::option::Option<& str> {
         self.license_name.as_deref()
     }
     /// <p>Product name.</p>
-    pub fn product_name(&self) -> std::option::Option<&str> {
+    pub fn product_name(&self) -> std::option::Option<& str> {
         self.product_name.as_deref()
     }
     /// <p>Product SKU.</p>
-    pub fn product_sku(&self) -> std::option::Option<&str> {
+    pub fn product_sku(&self) -> std::option::Option<& str> {
         self.product_sku.as_deref()
     }
     /// <p>Granted license issuer.</p>
-    pub fn issuer(&self) -> std::option::Option<&crate::model::IssuerDetails> {
+    pub fn issuer(&self) -> std::option::Option<& crate::model::IssuerDetails> {
         self.issuer.as_ref()
     }
     /// <p>Home Region of the granted license.</p>
-    pub fn home_region(&self) -> std::option::Option<&str> {
+    pub fn home_region(&self) -> std::option::Option<& str> {
         self.home_region.as_deref()
     }
     /// <p>Granted license status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::LicenseStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::LicenseStatus> {
         self.status.as_ref()
     }
     /// <p>Date and time range during which the granted license is valid, in ISO8601-UTC format.</p>
-    pub fn validity(&self) -> std::option::Option<&crate::model::DatetimeRange> {
+    pub fn validity(&self) -> std::option::Option<& crate::model::DatetimeRange> {
         self.validity.as_ref()
     }
     /// <p>Granted license beneficiary.</p>
-    pub fn beneficiary(&self) -> std::option::Option<&str> {
+    pub fn beneficiary(&self) -> std::option::Option<& str> {
         self.beneficiary.as_deref()
     }
     /// <p>License entitlements.</p>
-    pub fn entitlements(&self) -> std::option::Option<&[crate::model::Entitlement]> {
+    pub fn entitlements(&self) -> std::option::Option<& [crate::model::Entitlement]> {
         self.entitlements.as_deref()
     }
     /// <p>Configuration for consumption of the license.</p>
-    pub fn consumption_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ConsumptionConfiguration> {
+    pub fn consumption_configuration(&self) -> std::option::Option<& crate::model::ConsumptionConfiguration> {
         self.consumption_configuration.as_ref()
     }
     /// <p>Granted license metadata.</p>
-    pub fn license_metadata(&self) -> std::option::Option<&[crate::model::Metadata]> {
+    pub fn license_metadata(&self) -> std::option::Option<& [crate::model::Metadata]> {
         self.license_metadata.as_deref()
     }
     /// <p>Creation time of the granted license.</p>
-    pub fn create_time(&self) -> std::option::Option<&str> {
+    pub fn create_time(&self) -> std::option::Option<& str> {
         self.create_time.as_deref()
     }
     /// <p>Version of the granted license.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Granted license received metadata.</p>
-    pub fn received_metadata(&self) -> std::option::Option<&crate::model::ReceivedMetadata> {
+    pub fn received_metadata(&self) -> std::option::Option<& crate::model::ReceivedMetadata> {
         self.received_metadata.as_ref()
     }
 }
 /// See [`GrantedLicense`](crate::model::GrantedLicense).
 pub mod granted_license {
-
+    
     /// A builder for [`GrantedLicense`](crate::model::GrantedLicense).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1996,8 +1877,7 @@ pub mod granted_license {
         pub(crate) validity: std::option::Option<crate::model::DatetimeRange>,
         pub(crate) beneficiary: std::option::Option<std::string::String>,
         pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
-        pub(crate) consumption_configuration:
-            std::option::Option<crate::model::ConsumptionConfiguration>,
+        pub(crate) consumption_configuration: std::option::Option<crate::model::ConsumptionConfiguration>,
         pub(crate) license_metadata: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
         pub(crate) create_time: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -2011,8 +1891,7 @@ pub mod granted_license {
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// <p>License name.</p>
         pub fn license_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2021,8 +1900,7 @@ pub mod granted_license {
         }
         /// <p>License name.</p>
         pub fn set_license_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_name = input;
-            self
+            self.license_name = input; self
         }
         /// <p>Product name.</p>
         pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2031,8 +1909,7 @@ pub mod granted_license {
         }
         /// <p>Product name.</p>
         pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.product_name = input;
-            self
+            self.product_name = input; self
         }
         /// <p>Product SKU.</p>
         pub fn product_sku(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2041,8 +1918,7 @@ pub mod granted_license {
         }
         /// <p>Product SKU.</p>
         pub fn set_product_sku(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.product_sku = input;
-            self
+            self.product_sku = input; self
         }
         /// <p>Granted license issuer.</p>
         pub fn issuer(mut self, input: crate::model::IssuerDetails) -> Self {
@@ -2050,12 +1926,8 @@ pub mod granted_license {
             self
         }
         /// <p>Granted license issuer.</p>
-        pub fn set_issuer(
-            mut self,
-            input: std::option::Option<crate::model::IssuerDetails>,
-        ) -> Self {
-            self.issuer = input;
-            self
+        pub fn set_issuer(mut self, input: std::option::Option<crate::model::IssuerDetails>) -> Self {
+            self.issuer = input; self
         }
         /// <p>Home Region of the granted license.</p>
         pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2064,8 +1936,7 @@ pub mod granted_license {
         }
         /// <p>Home Region of the granted license.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.home_region = input;
-            self
+            self.home_region = input; self
         }
         /// <p>Granted license status.</p>
         pub fn status(mut self, input: crate::model::LicenseStatus) -> Self {
@@ -2073,12 +1944,8 @@ pub mod granted_license {
             self
         }
         /// <p>Granted license status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::LicenseStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::LicenseStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Date and time range during which the granted license is valid, in ISO8601-UTC format.</p>
         pub fn validity(mut self, input: crate::model::DatetimeRange) -> Self {
@@ -2086,12 +1953,8 @@ pub mod granted_license {
             self
         }
         /// <p>Date and time range during which the granted license is valid, in ISO8601-UTC format.</p>
-        pub fn set_validity(
-            mut self,
-            input: std::option::Option<crate::model::DatetimeRange>,
-        ) -> Self {
-            self.validity = input;
-            self
+        pub fn set_validity(mut self, input: std::option::Option<crate::model::DatetimeRange>) -> Self {
+            self.validity = input; self
         }
         /// <p>Granted license beneficiary.</p>
         pub fn beneficiary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2100,8 +1963,7 @@ pub mod granted_license {
         }
         /// <p>Granted license beneficiary.</p>
         pub fn set_beneficiary(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.beneficiary = input;
-            self
+            self.beneficiary = input; self
         }
         /// Appends an item to `entitlements`.
         ///
@@ -2110,33 +1972,22 @@ pub mod granted_license {
         /// <p>License entitlements.</p>
         pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input);
-            self.entitlements = Some(v);
-            self
+                            v.push(input);
+                            self.entitlements = Some(v);
+                            self
         }
         /// <p>License entitlements.</p>
-        pub fn set_entitlements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
-        ) -> Self {
-            self.entitlements = input;
-            self
+        pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>) -> Self {
+            self.entitlements = input; self
         }
         /// <p>Configuration for consumption of the license.</p>
-        pub fn consumption_configuration(
-            mut self,
-            input: crate::model::ConsumptionConfiguration,
-        ) -> Self {
+        pub fn consumption_configuration(mut self, input: crate::model::ConsumptionConfiguration) -> Self {
             self.consumption_configuration = Some(input);
             self
         }
         /// <p>Configuration for consumption of the license.</p>
-        pub fn set_consumption_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ConsumptionConfiguration>,
-        ) -> Self {
-            self.consumption_configuration = input;
-            self
+        pub fn set_consumption_configuration(mut self, input: std::option::Option<crate::model::ConsumptionConfiguration>) -> Self {
+            self.consumption_configuration = input; self
         }
         /// Appends an item to `license_metadata`.
         ///
@@ -2145,17 +1996,13 @@ pub mod granted_license {
         /// <p>Granted license metadata.</p>
         pub fn license_metadata(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.license_metadata.unwrap_or_default();
-            v.push(input);
-            self.license_metadata = Some(v);
-            self
+                            v.push(input);
+                            self.license_metadata = Some(v);
+                            self
         }
         /// <p>Granted license metadata.</p>
-        pub fn set_license_metadata(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
-        ) -> Self {
-            self.license_metadata = input;
-            self
+        pub fn set_license_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::model::Metadata>>) -> Self {
+            self.license_metadata = input; self
         }
         /// <p>Creation time of the granted license.</p>
         pub fn create_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2164,8 +2011,7 @@ pub mod granted_license {
         }
         /// <p>Creation time of the granted license.</p>
         pub fn set_create_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.create_time = input;
-            self
+            self.create_time = input; self
         }
         /// <p>Version of the granted license.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2174,8 +2020,7 @@ pub mod granted_license {
         }
         /// <p>Version of the granted license.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>Granted license received metadata.</p>
         pub fn received_metadata(mut self, input: crate::model::ReceivedMetadata) -> Self {
@@ -2183,34 +2028,47 @@ pub mod granted_license {
             self
         }
         /// <p>Granted license received metadata.</p>
-        pub fn set_received_metadata(
-            mut self,
-            input: std::option::Option<crate::model::ReceivedMetadata>,
-        ) -> Self {
-            self.received_metadata = input;
-            self
+        pub fn set_received_metadata(mut self, input: std::option::Option<crate::model::ReceivedMetadata>) -> Self {
+            self.received_metadata = input; self
         }
         /// Consumes the builder and constructs a [`GrantedLicense`](crate::model::GrantedLicense).
         pub fn build(self) -> crate::model::GrantedLicense {
             crate::model::GrantedLicense {
-                license_arn: self.license_arn,
-                license_name: self.license_name,
-                product_name: self.product_name,
-                product_sku: self.product_sku,
-                issuer: self.issuer,
-                home_region: self.home_region,
-                status: self.status,
-                validity: self.validity,
-                beneficiary: self.beneficiary,
-                entitlements: self.entitlements,
-                consumption_configuration: self.consumption_configuration,
-                license_metadata: self.license_metadata,
-                create_time: self.create_time,
-                version: self.version,
-                received_metadata: self.received_metadata,
+                license_arn: self.license_arn
+                ,
+                license_name: self.license_name
+                ,
+                product_name: self.product_name
+                ,
+                product_sku: self.product_sku
+                ,
+                issuer: self.issuer
+                ,
+                home_region: self.home_region
+                ,
+                status: self.status
+                ,
+                validity: self.validity
+                ,
+                beneficiary: self.beneficiary
+                ,
+                entitlements: self.entitlements
+                ,
+                consumption_configuration: self.consumption_configuration
+                ,
+                license_metadata: self.license_metadata
+                ,
+                create_time: self.create_time
+                ,
+                version: self.version
+                ,
+                received_metadata: self.received_metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl GrantedLicense {
     /// Creates a new builder-style object to manufacture [`GrantedLicense`](crate::model::GrantedLicense).
@@ -2222,7 +2080,7 @@ impl GrantedLicense {
 /// <p>Metadata associated with received licenses and grants.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReceivedMetadata {
+pub struct ReceivedMetadata  {
     /// <p>Received status.</p>
     #[doc(hidden)]
     pub received_status: std::option::Option<crate::model::ReceivedStatus>,
@@ -2235,28 +2093,27 @@ pub struct ReceivedMetadata {
 }
 impl ReceivedMetadata {
     /// <p>Received status.</p>
-    pub fn received_status(&self) -> std::option::Option<&crate::model::ReceivedStatus> {
+    pub fn received_status(&self) -> std::option::Option<& crate::model::ReceivedStatus> {
         self.received_status.as_ref()
     }
     /// <p>Received status reason.</p>
-    pub fn received_status_reason(&self) -> std::option::Option<&str> {
+    pub fn received_status_reason(&self) -> std::option::Option<& str> {
         self.received_status_reason.as_deref()
     }
     /// <p>Allowed operations.</p>
-    pub fn allowed_operations(&self) -> std::option::Option<&[crate::model::AllowedOperation]> {
+    pub fn allowed_operations(&self) -> std::option::Option<& [crate::model::AllowedOperation]> {
         self.allowed_operations.as_deref()
     }
 }
 /// See [`ReceivedMetadata`](crate::model::ReceivedMetadata).
 pub mod received_metadata {
-
+    
     /// A builder for [`ReceivedMetadata`](crate::model::ReceivedMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) received_status: std::option::Option<crate::model::ReceivedStatus>,
         pub(crate) received_status_reason: std::option::Option<std::string::String>,
-        pub(crate) allowed_operations:
-            std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
+        pub(crate) allowed_operations: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
     }
     impl Builder {
         /// <p>Received status.</p>
@@ -2265,12 +2122,8 @@ pub mod received_metadata {
             self
         }
         /// <p>Received status.</p>
-        pub fn set_received_status(
-            mut self,
-            input: std::option::Option<crate::model::ReceivedStatus>,
-        ) -> Self {
-            self.received_status = input;
-            self
+        pub fn set_received_status(mut self, input: std::option::Option<crate::model::ReceivedStatus>) -> Self {
+            self.received_status = input; self
         }
         /// <p>Received status reason.</p>
         pub fn received_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2278,12 +2131,8 @@ pub mod received_metadata {
             self
         }
         /// <p>Received status reason.</p>
-        pub fn set_received_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.received_status_reason = input;
-            self
+        pub fn set_received_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.received_status_reason = input; self
         }
         /// Appends an item to `allowed_operations`.
         ///
@@ -2292,27 +2141,28 @@ pub mod received_metadata {
         /// <p>Allowed operations.</p>
         pub fn allowed_operations(mut self, input: crate::model::AllowedOperation) -> Self {
             let mut v = self.allowed_operations.unwrap_or_default();
-            v.push(input);
-            self.allowed_operations = Some(v);
-            self
+                            v.push(input);
+                            self.allowed_operations = Some(v);
+                            self
         }
         /// <p>Allowed operations.</p>
-        pub fn set_allowed_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
-        ) -> Self {
-            self.allowed_operations = input;
-            self
+        pub fn set_allowed_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>) -> Self {
+            self.allowed_operations = input; self
         }
         /// Consumes the builder and constructs a [`ReceivedMetadata`](crate::model::ReceivedMetadata).
         pub fn build(self) -> crate::model::ReceivedMetadata {
             crate::model::ReceivedMetadata {
-                received_status: self.received_status,
-                received_status_reason: self.received_status_reason,
-                allowed_operations: self.allowed_operations,
+                received_status: self.received_status
+                ,
+                received_status_reason: self.received_status_reason
+                ,
+                allowed_operations: self.allowed_operations
+                ,
             }
         }
     }
+    
+    
 }
 impl ReceivedMetadata {
     /// Creates a new builder-style object to manufacture [`ReceivedMetadata`](crate::model::ReceivedMetadata).
@@ -2327,9 +2177,9 @@ impl ReceivedMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let allowedoperation = unimplemented!();
 /// match allowedoperation {
@@ -2356,22 +2206,14 @@ impl ReceivedMetadata {
 /// Specifically, when `allowedoperation` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AllowedOperation::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AllowedOperation {
     #[allow(missing_docs)] // documentation missing in model
     CheckInLicense,
@@ -2388,7 +2230,7 @@ pub enum AllowedOperation {
     #[allow(missing_docs)] // documentation missing in model
     ListPurchasedLicenses,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AllowedOperation {
     fn from(s: &str) -> Self {
@@ -2400,17 +2242,17 @@ impl std::convert::From<&str> for AllowedOperation {
             "CreateToken" => AllowedOperation::CreateToken,
             "ExtendConsumptionLicense" => AllowedOperation::ExtendConsumptionLicense,
             "ListPurchasedLicenses" => AllowedOperation::ListPurchasedLicenses,
-            other => AllowedOperation::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AllowedOperation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AllowedOperation {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AllowedOperation::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AllowedOperation::from(s))
+                }
+            }
 impl AllowedOperation {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2422,19 +2264,13 @@ impl AllowedOperation {
             AllowedOperation::CreateToken => "CreateToken",
             AllowedOperation::ExtendConsumptionLicense => "ExtendConsumptionLicense",
             AllowedOperation::ListPurchasedLicenses => "ListPurchasedLicenses",
-            AllowedOperation::Unknown(value) => value.as_str(),
+            AllowedOperation::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CheckInLicense",
-            "CheckoutBorrowLicense",
-            "CheckoutLicense",
-            "CreateGrant",
-            "CreateToken",
-            "ExtendConsumptionLicense",
-            "ListPurchasedLicenses",
+            "CheckInLicense", "CheckoutBorrowLicense", "CheckoutLicense", "CreateGrant", "CreateToken", "ExtendConsumptionLicense", "ListPurchasedLicenses"
         ]
     }
 }
@@ -2450,9 +2286,9 @@ impl AsRef<str> for AllowedOperation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let receivedstatus = unimplemented!();
 /// match receivedstatus {
@@ -2480,22 +2316,14 @@ impl AsRef<str> for AllowedOperation {
 /// Specifically, when `receivedstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReceivedStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReceivedStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -2514,7 +2342,7 @@ pub enum ReceivedStatus {
     #[allow(missing_docs)] // documentation missing in model
     WorkflowCompleted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReceivedStatus {
     fn from(s: &str) -> Self {
@@ -2527,17 +2355,17 @@ impl std::convert::From<&str> for ReceivedStatus {
             "PENDING_WORKFLOW" => ReceivedStatus::PendingWorkflow,
             "REJECTED" => ReceivedStatus::Rejected,
             "WORKFLOW_COMPLETED" => ReceivedStatus::WorkflowCompleted,
-            other => ReceivedStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ReceivedStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReceivedStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReceivedStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReceivedStatus::from(s))
+                }
+            }
 impl ReceivedStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2550,20 +2378,13 @@ impl ReceivedStatus {
             ReceivedStatus::PendingWorkflow => "PENDING_WORKFLOW",
             ReceivedStatus::Rejected => "REJECTED",
             ReceivedStatus::WorkflowCompleted => "WORKFLOW_COMPLETED",
-            ReceivedStatus::Unknown(value) => value.as_str(),
+            ReceivedStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "DELETED",
-            "DISABLED",
-            "FAILED_WORKFLOW",
-            "PENDING_ACCEPT",
-            "PENDING_WORKFLOW",
-            "REJECTED",
-            "WORKFLOW_COMPLETED",
+            "ACTIVE", "DELETED", "DISABLED", "FAILED_WORKFLOW", "PENDING_ACCEPT", "PENDING_WORKFLOW", "REJECTED", "WORKFLOW_COMPLETED"
         ]
     }
 }
@@ -2576,7 +2397,7 @@ impl AsRef<str> for ReceivedStatus {
 /// <p>Describes key/value pairs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Metadata {
+pub struct Metadata  {
     /// <p>The key name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2586,17 +2407,17 @@ pub struct Metadata {
 }
 impl Metadata {
     /// <p>The key name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Metadata`](crate::model::Metadata).
 pub mod metadata {
-
+    
     /// A builder for [`Metadata`](crate::model::Metadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2611,8 +2432,7 @@ pub mod metadata {
         }
         /// <p>The key name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2621,17 +2441,20 @@ pub mod metadata {
         }
         /// <p>The value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Metadata`](crate::model::Metadata).
         pub fn build(self) -> crate::model::Metadata {
             crate::model::Metadata {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Metadata {
     /// Creates a new builder-style object to manufacture [`Metadata`](crate::model::Metadata).
@@ -2643,7 +2466,7 @@ impl Metadata {
 /// <p>Details about a consumption configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConsumptionConfiguration {
+pub struct ConsumptionConfiguration  {
     /// <p>Renewal frequency.</p>
     #[doc(hidden)]
     pub renew_type: std::option::Option<crate::model::RenewType>,
@@ -2656,29 +2479,26 @@ pub struct ConsumptionConfiguration {
 }
 impl ConsumptionConfiguration {
     /// <p>Renewal frequency.</p>
-    pub fn renew_type(&self) -> std::option::Option<&crate::model::RenewType> {
+    pub fn renew_type(&self) -> std::option::Option<& crate::model::RenewType> {
         self.renew_type.as_ref()
     }
     /// <p>Details about a provisional configuration.</p>
-    pub fn provisional_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ProvisionalConfiguration> {
+    pub fn provisional_configuration(&self) -> std::option::Option<& crate::model::ProvisionalConfiguration> {
         self.provisional_configuration.as_ref()
     }
     /// <p>Details about a borrow configuration.</p>
-    pub fn borrow_configuration(&self) -> std::option::Option<&crate::model::BorrowConfiguration> {
+    pub fn borrow_configuration(&self) -> std::option::Option<& crate::model::BorrowConfiguration> {
         self.borrow_configuration.as_ref()
     }
 }
 /// See [`ConsumptionConfiguration`](crate::model::ConsumptionConfiguration).
 pub mod consumption_configuration {
-
+    
     /// A builder for [`ConsumptionConfiguration`](crate::model::ConsumptionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) renew_type: std::option::Option<crate::model::RenewType>,
-        pub(crate) provisional_configuration:
-            std::option::Option<crate::model::ProvisionalConfiguration>,
+        pub(crate) provisional_configuration: std::option::Option<crate::model::ProvisionalConfiguration>,
         pub(crate) borrow_configuration: std::option::Option<crate::model::BorrowConfiguration>,
     }
     impl Builder {
@@ -2688,28 +2508,17 @@ pub mod consumption_configuration {
             self
         }
         /// <p>Renewal frequency.</p>
-        pub fn set_renew_type(
-            mut self,
-            input: std::option::Option<crate::model::RenewType>,
-        ) -> Self {
-            self.renew_type = input;
-            self
+        pub fn set_renew_type(mut self, input: std::option::Option<crate::model::RenewType>) -> Self {
+            self.renew_type = input; self
         }
         /// <p>Details about a provisional configuration.</p>
-        pub fn provisional_configuration(
-            mut self,
-            input: crate::model::ProvisionalConfiguration,
-        ) -> Self {
+        pub fn provisional_configuration(mut self, input: crate::model::ProvisionalConfiguration) -> Self {
             self.provisional_configuration = Some(input);
             self
         }
         /// <p>Details about a provisional configuration.</p>
-        pub fn set_provisional_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ProvisionalConfiguration>,
-        ) -> Self {
-            self.provisional_configuration = input;
-            self
+        pub fn set_provisional_configuration(mut self, input: std::option::Option<crate::model::ProvisionalConfiguration>) -> Self {
+            self.provisional_configuration = input; self
         }
         /// <p>Details about a borrow configuration.</p>
         pub fn borrow_configuration(mut self, input: crate::model::BorrowConfiguration) -> Self {
@@ -2717,22 +2526,23 @@ pub mod consumption_configuration {
             self
         }
         /// <p>Details about a borrow configuration.</p>
-        pub fn set_borrow_configuration(
-            mut self,
-            input: std::option::Option<crate::model::BorrowConfiguration>,
-        ) -> Self {
-            self.borrow_configuration = input;
-            self
+        pub fn set_borrow_configuration(mut self, input: std::option::Option<crate::model::BorrowConfiguration>) -> Self {
+            self.borrow_configuration = input; self
         }
         /// Consumes the builder and constructs a [`ConsumptionConfiguration`](crate::model::ConsumptionConfiguration).
         pub fn build(self) -> crate::model::ConsumptionConfiguration {
             crate::model::ConsumptionConfiguration {
-                renew_type: self.renew_type,
-                provisional_configuration: self.provisional_configuration,
-                borrow_configuration: self.borrow_configuration,
+                renew_type: self.renew_type
+                ,
+                provisional_configuration: self.provisional_configuration
+                ,
+                borrow_configuration: self.borrow_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl ConsumptionConfiguration {
     /// Creates a new builder-style object to manufacture [`ConsumptionConfiguration`](crate::model::ConsumptionConfiguration).
@@ -2744,7 +2554,7 @@ impl ConsumptionConfiguration {
 /// <p>Details about a borrow configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BorrowConfiguration {
+pub struct BorrowConfiguration  {
     /// <p>Indicates whether early check-ins are allowed.</p>
     #[doc(hidden)]
     pub allow_early_check_in: std::option::Option<bool>,
@@ -2764,7 +2574,7 @@ impl BorrowConfiguration {
 }
 /// See [`BorrowConfiguration`](crate::model::BorrowConfiguration).
 pub mod borrow_configuration {
-
+    
     /// A builder for [`BorrowConfiguration`](crate::model::BorrowConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2779,8 +2589,7 @@ pub mod borrow_configuration {
         }
         /// <p>Indicates whether early check-ins are allowed.</p>
         pub fn set_allow_early_check_in(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_early_check_in = input;
-            self
+            self.allow_early_check_in = input; self
         }
         /// <p>Maximum time for the borrow configuration, in minutes.</p>
         pub fn max_time_to_live_in_minutes(mut self, input: i32) -> Self {
@@ -2789,17 +2598,20 @@ pub mod borrow_configuration {
         }
         /// <p>Maximum time for the borrow configuration, in minutes.</p>
         pub fn set_max_time_to_live_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_time_to_live_in_minutes = input;
-            self
+            self.max_time_to_live_in_minutes = input; self
         }
         /// Consumes the builder and constructs a [`BorrowConfiguration`](crate::model::BorrowConfiguration).
         pub fn build(self) -> crate::model::BorrowConfiguration {
             crate::model::BorrowConfiguration {
-                allow_early_check_in: self.allow_early_check_in,
-                max_time_to_live_in_minutes: self.max_time_to_live_in_minutes,
+                allow_early_check_in: self.allow_early_check_in
+                ,
+                max_time_to_live_in_minutes: self.max_time_to_live_in_minutes
+                ,
             }
         }
     }
+    
+    
 }
 impl BorrowConfiguration {
     /// Creates a new builder-style object to manufacture [`BorrowConfiguration`](crate::model::BorrowConfiguration).
@@ -2811,7 +2623,7 @@ impl BorrowConfiguration {
 /// <p>Details about a provisional configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionalConfiguration {
+pub struct ProvisionalConfiguration  {
     /// <p>Maximum time for the provisional configuration, in minutes.</p>
     #[doc(hidden)]
     pub max_time_to_live_in_minutes: std::option::Option<i32>,
@@ -2824,7 +2636,7 @@ impl ProvisionalConfiguration {
 }
 /// See [`ProvisionalConfiguration`](crate::model::ProvisionalConfiguration).
 pub mod provisional_configuration {
-
+    
     /// A builder for [`ProvisionalConfiguration`](crate::model::ProvisionalConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2838,16 +2650,18 @@ pub mod provisional_configuration {
         }
         /// <p>Maximum time for the provisional configuration, in minutes.</p>
         pub fn set_max_time_to_live_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_time_to_live_in_minutes = input;
-            self
+            self.max_time_to_live_in_minutes = input; self
         }
         /// Consumes the builder and constructs a [`ProvisionalConfiguration`](crate::model::ProvisionalConfiguration).
         pub fn build(self) -> crate::model::ProvisionalConfiguration {
             crate::model::ProvisionalConfiguration {
-                max_time_to_live_in_minutes: self.max_time_to_live_in_minutes,
+                max_time_to_live_in_minutes: self.max_time_to_live_in_minutes
+                ,
             }
         }
     }
+    
+    
 }
 impl ProvisionalConfiguration {
     /// Creates a new builder-style object to manufacture [`ProvisionalConfiguration`](crate::model::ProvisionalConfiguration).
@@ -2862,9 +2676,9 @@ impl ProvisionalConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let renewtype = unimplemented!();
 /// match renewtype {
@@ -2887,22 +2701,14 @@ impl ProvisionalConfiguration {
 /// Specifically, when `renewtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RenewType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RenewType {
     #[allow(missing_docs)] // documentation missing in model
     Monthly,
@@ -2911,7 +2717,7 @@ pub enum RenewType {
     #[allow(missing_docs)] // documentation missing in model
     Weekly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RenewType {
     fn from(s: &str) -> Self {
@@ -2919,17 +2725,17 @@ impl std::convert::From<&str> for RenewType {
             "Monthly" => RenewType::Monthly,
             "None" => RenewType::None,
             "Weekly" => RenewType::Weekly,
-            other => RenewType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RenewType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RenewType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RenewType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RenewType::from(s))
+                }
+            }
 impl RenewType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2937,12 +2743,14 @@ impl RenewType {
             RenewType::Monthly => "Monthly",
             RenewType::None => "None",
             RenewType::Weekly => "Weekly",
-            RenewType::Unknown(value) => value.as_str(),
+            RenewType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Monthly", "None", "Weekly"]
+        &[
+            "Monthly", "None", "Weekly"
+        ]
     }
 }
 impl AsRef<str> for RenewType {
@@ -2954,7 +2762,7 @@ impl AsRef<str> for RenewType {
 /// <p>Describes a resource entitled for use with a license.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Entitlement {
+pub struct Entitlement  {
     /// <p>Entitlement name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2976,11 +2784,11 @@ pub struct Entitlement {
 }
 impl Entitlement {
     /// <p>Entitlement name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Entitlement resource. Use only if the unit is None.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Maximum entitlement count. Use if the unit is not None.</p>
@@ -2992,7 +2800,7 @@ impl Entitlement {
         self.overage
     }
     /// <p>Entitlement unit.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::model::EntitlementUnit> {
+    pub fn unit(&self) -> std::option::Option<& crate::model::EntitlementUnit> {
         self.unit.as_ref()
     }
     /// <p>Indicates whether check-ins are allowed.</p>
@@ -3002,7 +2810,7 @@ impl Entitlement {
 }
 /// See [`Entitlement`](crate::model::Entitlement).
 pub mod entitlement {
-
+    
     /// A builder for [`Entitlement`](crate::model::Entitlement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3021,8 +2829,7 @@ pub mod entitlement {
         }
         /// <p>Entitlement name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Entitlement resource. Use only if the unit is None.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3031,8 +2838,7 @@ pub mod entitlement {
         }
         /// <p>Entitlement resource. Use only if the unit is None.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>Maximum entitlement count. Use if the unit is not None.</p>
         pub fn max_count(mut self, input: i64) -> Self {
@@ -3041,8 +2847,7 @@ pub mod entitlement {
         }
         /// <p>Maximum entitlement count. Use if the unit is not None.</p>
         pub fn set_max_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.max_count = input;
-            self
+            self.max_count = input; self
         }
         /// <p>Indicates whether overages are allowed.</p>
         pub fn overage(mut self, input: bool) -> Self {
@@ -3051,8 +2856,7 @@ pub mod entitlement {
         }
         /// <p>Indicates whether overages are allowed.</p>
         pub fn set_overage(mut self, input: std::option::Option<bool>) -> Self {
-            self.overage = input;
-            self
+            self.overage = input; self
         }
         /// <p>Entitlement unit.</p>
         pub fn unit(mut self, input: crate::model::EntitlementUnit) -> Self {
@@ -3060,12 +2864,8 @@ pub mod entitlement {
             self
         }
         /// <p>Entitlement unit.</p>
-        pub fn set_unit(
-            mut self,
-            input: std::option::Option<crate::model::EntitlementUnit>,
-        ) -> Self {
-            self.unit = input;
-            self
+        pub fn set_unit(mut self, input: std::option::Option<crate::model::EntitlementUnit>) -> Self {
+            self.unit = input; self
         }
         /// <p>Indicates whether check-ins are allowed.</p>
         pub fn allow_check_in(mut self, input: bool) -> Self {
@@ -3074,21 +2874,28 @@ pub mod entitlement {
         }
         /// <p>Indicates whether check-ins are allowed.</p>
         pub fn set_allow_check_in(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_check_in = input;
-            self
+            self.allow_check_in = input; self
         }
         /// Consumes the builder and constructs a [`Entitlement`](crate::model::Entitlement).
         pub fn build(self) -> crate::model::Entitlement {
             crate::model::Entitlement {
-                name: self.name,
-                value: self.value,
-                max_count: self.max_count,
-                overage: self.overage,
-                unit: self.unit,
-                allow_check_in: self.allow_check_in,
+                name: self.name
+                ,
+                value: self.value
+                ,
+                max_count: self.max_count
+                ,
+                overage: self.overage
+                ,
+                unit: self.unit
+                ,
+                allow_check_in: self.allow_check_in
+                ,
             }
         }
     }
+    
+    
 }
 impl Entitlement {
     /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement).
@@ -3103,9 +2910,9 @@ impl Entitlement {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let entitlementunit = unimplemented!();
 /// match entitlementunit {
@@ -3152,22 +2959,14 @@ impl Entitlement {
 /// Specifically, when `entitlementunit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EntitlementUnit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EntitlementUnit {
     #[allow(missing_docs)] // documentation missing in model
     Bits,
@@ -3224,7 +3023,7 @@ pub enum EntitlementUnit {
     #[allow(missing_docs)] // documentation missing in model
     TerabytesPerSecond,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EntitlementUnit {
     fn from(s: &str) -> Self {
@@ -3256,17 +3055,17 @@ impl std::convert::From<&str> for EntitlementUnit {
             "Terabits/Second" => EntitlementUnit::TerabitsPerSecond,
             "Terabytes" => EntitlementUnit::Terabytes,
             "Terabytes/Second" => EntitlementUnit::TerabytesPerSecond,
-            other => EntitlementUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EntitlementUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EntitlementUnit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EntitlementUnit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EntitlementUnit::from(s))
+                }
+            }
 impl EntitlementUnit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3298,39 +3097,13 @@ impl EntitlementUnit {
             EntitlementUnit::TerabitsPerSecond => "Terabits/Second",
             EntitlementUnit::Terabytes => "Terabytes",
             EntitlementUnit::TerabytesPerSecond => "Terabytes/Second",
-            EntitlementUnit::Unknown(value) => value.as_str(),
+            EntitlementUnit::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Bits",
-            "Bits/Second",
-            "Bytes",
-            "Bytes/Second",
-            "Count",
-            "Count/Second",
-            "Gigabits",
-            "Gigabits/Second",
-            "Gigabytes",
-            "Gigabytes/Second",
-            "Kilobits",
-            "Kilobits/Second",
-            "Kilobytes",
-            "Kilobytes/Second",
-            "Megabits",
-            "Megabits/Second",
-            "Megabytes",
-            "Megabytes/Second",
-            "Microseconds",
-            "Milliseconds",
-            "None",
-            "Percent",
-            "Seconds",
-            "Terabits",
-            "Terabits/Second",
-            "Terabytes",
-            "Terabytes/Second",
+            "Bits", "Bits/Second", "Bytes", "Bytes/Second", "Count", "Count/Second", "Gigabits", "Gigabits/Second", "Gigabytes", "Gigabytes/Second", "Kilobits", "Kilobits/Second", "Kilobytes", "Kilobytes/Second", "Megabits", "Megabits/Second", "Megabytes", "Megabytes/Second", "Microseconds", "Milliseconds", "None", "Percent", "Seconds", "Terabits", "Terabits/Second", "Terabytes", "Terabytes/Second"
         ]
     }
 }
@@ -3343,7 +3116,7 @@ impl AsRef<str> for EntitlementUnit {
 /// <p>Describes a time range, in ISO8601-UTC format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatetimeRange {
+pub struct DatetimeRange  {
     /// <p>Start of the time range.</p>
     #[doc(hidden)]
     pub begin: std::option::Option<std::string::String>,
@@ -3353,17 +3126,17 @@ pub struct DatetimeRange {
 }
 impl DatetimeRange {
     /// <p>Start of the time range.</p>
-    pub fn begin(&self) -> std::option::Option<&str> {
+    pub fn begin(&self) -> std::option::Option<& str> {
         self.begin.as_deref()
     }
     /// <p>End of the time range.</p>
-    pub fn end(&self) -> std::option::Option<&str> {
+    pub fn end(&self) -> std::option::Option<& str> {
         self.end.as_deref()
     }
 }
 /// See [`DatetimeRange`](crate::model::DatetimeRange).
 pub mod datetime_range {
-
+    
     /// A builder for [`DatetimeRange`](crate::model::DatetimeRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3378,8 +3151,7 @@ pub mod datetime_range {
         }
         /// <p>Start of the time range.</p>
         pub fn set_begin(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.begin = input;
-            self
+            self.begin = input; self
         }
         /// <p>End of the time range.</p>
         pub fn end(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3388,17 +3160,20 @@ pub mod datetime_range {
         }
         /// <p>End of the time range.</p>
         pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end = input;
-            self
+            self.end = input; self
         }
         /// Consumes the builder and constructs a [`DatetimeRange`](crate::model::DatetimeRange).
         pub fn build(self) -> crate::model::DatetimeRange {
             crate::model::DatetimeRange {
-                begin: self.begin,
-                end: self.end,
+                begin: self.begin
+                ,
+                end: self.end
+                ,
             }
         }
     }
+    
+    
 }
 impl DatetimeRange {
     /// Creates a new builder-style object to manufacture [`DatetimeRange`](crate::model::DatetimeRange).
@@ -3413,9 +3188,9 @@ impl DatetimeRange {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let licensestatus = unimplemented!();
 /// match licensestatus {
@@ -3442,22 +3217,14 @@ impl DatetimeRange {
 /// Specifically, when `licensestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LicenseStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LicenseStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -3474,7 +3241,7 @@ pub enum LicenseStatus {
     #[allow(missing_docs)] // documentation missing in model
     Suspended,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LicenseStatus {
     fn from(s: &str) -> Self {
@@ -3486,17 +3253,17 @@ impl std::convert::From<&str> for LicenseStatus {
             "PENDING_AVAILABLE" => LicenseStatus::PendingAvailable,
             "PENDING_DELETE" => LicenseStatus::PendingDelete,
             "SUSPENDED" => LicenseStatus::Suspended,
-            other => LicenseStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LicenseStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LicenseStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LicenseStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LicenseStatus::from(s))
+                }
+            }
 impl LicenseStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3508,19 +3275,13 @@ impl LicenseStatus {
             LicenseStatus::PendingAvailable => "PENDING_AVAILABLE",
             LicenseStatus::PendingDelete => "PENDING_DELETE",
             LicenseStatus::Suspended => "SUSPENDED",
-            LicenseStatus::Unknown(value) => value.as_str(),
+            LicenseStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AVAILABLE",
-            "DEACTIVATED",
-            "DELETED",
-            "EXPIRED",
-            "PENDING_AVAILABLE",
-            "PENDING_DELETE",
-            "SUSPENDED",
+            "AVAILABLE", "DEACTIVATED", "DELETED", "EXPIRED", "PENDING_AVAILABLE", "PENDING_DELETE", "SUSPENDED"
         ]
     }
 }
@@ -3533,7 +3294,7 @@ impl AsRef<str> for LicenseStatus {
 /// <p>Details associated with the issuer of a license.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IssuerDetails {
+pub struct IssuerDetails  {
     /// <p>Issuer name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3546,21 +3307,21 @@ pub struct IssuerDetails {
 }
 impl IssuerDetails {
     /// <p>Issuer name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
-    pub fn sign_key(&self) -> std::option::Option<&str> {
+    pub fn sign_key(&self) -> std::option::Option<& str> {
         self.sign_key.as_deref()
     }
     /// <p>Issuer key fingerprint.</p>
-    pub fn key_fingerprint(&self) -> std::option::Option<&str> {
+    pub fn key_fingerprint(&self) -> std::option::Option<& str> {
         self.key_fingerprint.as_deref()
     }
 }
 /// See [`IssuerDetails`](crate::model::IssuerDetails).
 pub mod issuer_details {
-
+    
     /// A builder for [`IssuerDetails`](crate::model::IssuerDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3576,8 +3337,7 @@ pub mod issuer_details {
         }
         /// <p>Issuer name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
         pub fn sign_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3586,8 +3346,7 @@ pub mod issuer_details {
         }
         /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
         pub fn set_sign_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sign_key = input;
-            self
+            self.sign_key = input; self
         }
         /// <p>Issuer key fingerprint.</p>
         pub fn key_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3595,22 +3354,23 @@ pub mod issuer_details {
             self
         }
         /// <p>Issuer key fingerprint.</p>
-        pub fn set_key_fingerprint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.key_fingerprint = input;
-            self
+        pub fn set_key_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_fingerprint = input; self
         }
         /// Consumes the builder and constructs a [`IssuerDetails`](crate::model::IssuerDetails).
         pub fn build(self) -> crate::model::IssuerDetails {
             crate::model::IssuerDetails {
-                name: self.name,
-                sign_key: self.sign_key,
-                key_fingerprint: self.key_fingerprint,
+                name: self.name
+                ,
+                sign_key: self.sign_key
+                ,
+                key_fingerprint: self.key_fingerprint
+                ,
             }
         }
     }
+    
+    
 }
 impl IssuerDetails {
     /// Creates a new builder-style object to manufacture [`IssuerDetails`](crate::model::IssuerDetails).
@@ -3622,7 +3382,7 @@ impl IssuerDetails {
 /// <p>Describes a grant.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Grant {
+pub struct Grant  {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
@@ -3656,49 +3416,49 @@ pub struct Grant {
 }
 impl Grant {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    pub fn grant_arn(&self) -> std::option::Option<&str> {
+    pub fn grant_arn(&self) -> std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
     /// <p>Grant name.</p>
-    pub fn grant_name(&self) -> std::option::Option<&str> {
+    pub fn grant_name(&self) -> std::option::Option<& str> {
         self.grant_name.as_deref()
     }
     /// <p>Parent ARN.</p>
-    pub fn parent_arn(&self) -> std::option::Option<&str> {
+    pub fn parent_arn(&self) -> std::option::Option<& str> {
         self.parent_arn.as_deref()
     }
     /// <p>License ARN.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>The grantee principal ARN.</p>
-    pub fn grantee_principal_arn(&self) -> std::option::Option<&str> {
+    pub fn grantee_principal_arn(&self) -> std::option::Option<& str> {
         self.grantee_principal_arn.as_deref()
     }
     /// <p>Home Region of the grant.</p>
-    pub fn home_region(&self) -> std::option::Option<&str> {
+    pub fn home_region(&self) -> std::option::Option<& str> {
         self.home_region.as_deref()
     }
     /// <p>Grant status.</p>
-    pub fn grant_status(&self) -> std::option::Option<&crate::model::GrantStatus> {
+    pub fn grant_status(&self) -> std::option::Option<& crate::model::GrantStatus> {
         self.grant_status.as_ref()
     }
     /// <p>Grant status reason.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>Grant version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Granted operations.</p>
-    pub fn granted_operations(&self) -> std::option::Option<&[crate::model::AllowedOperation]> {
+    pub fn granted_operations(&self) -> std::option::Option<& [crate::model::AllowedOperation]> {
         self.granted_operations.as_deref()
     }
 }
 /// See [`Grant`](crate::model::Grant).
 pub mod grant {
-
+    
     /// A builder for [`Grant`](crate::model::Grant).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3711,8 +3471,7 @@ pub mod grant {
         pub(crate) grant_status: std::option::Option<crate::model::GrantStatus>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
-        pub(crate) granted_operations:
-            std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
+        pub(crate) granted_operations: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
     }
     impl Builder {
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
@@ -3722,8 +3481,7 @@ pub mod grant {
         }
         /// <p>Amazon Resource Name (ARN) of the grant.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grant_arn = input;
-            self
+            self.grant_arn = input; self
         }
         /// <p>Grant name.</p>
         pub fn grant_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3732,8 +3490,7 @@ pub mod grant {
         }
         /// <p>Grant name.</p>
         pub fn set_grant_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grant_name = input;
-            self
+            self.grant_name = input; self
         }
         /// <p>Parent ARN.</p>
         pub fn parent_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3742,8 +3499,7 @@ pub mod grant {
         }
         /// <p>Parent ARN.</p>
         pub fn set_parent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.parent_arn = input;
-            self
+            self.parent_arn = input; self
         }
         /// <p>License ARN.</p>
         pub fn license_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3752,8 +3508,7 @@ pub mod grant {
         }
         /// <p>License ARN.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// <p>The grantee principal ARN.</p>
         pub fn grantee_principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3761,12 +3516,8 @@ pub mod grant {
             self
         }
         /// <p>The grantee principal ARN.</p>
-        pub fn set_grantee_principal_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.grantee_principal_arn = input;
-            self
+        pub fn set_grantee_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grantee_principal_arn = input; self
         }
         /// <p>Home Region of the grant.</p>
         pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3775,8 +3526,7 @@ pub mod grant {
         }
         /// <p>Home Region of the grant.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.home_region = input;
-            self
+            self.home_region = input; self
         }
         /// <p>Grant status.</p>
         pub fn grant_status(mut self, input: crate::model::GrantStatus) -> Self {
@@ -3784,12 +3534,8 @@ pub mod grant {
             self
         }
         /// <p>Grant status.</p>
-        pub fn set_grant_status(
-            mut self,
-            input: std::option::Option<crate::model::GrantStatus>,
-        ) -> Self {
-            self.grant_status = input;
-            self
+        pub fn set_grant_status(mut self, input: std::option::Option<crate::model::GrantStatus>) -> Self {
+            self.grant_status = input; self
         }
         /// <p>Grant status reason.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3797,12 +3543,8 @@ pub mod grant {
             self
         }
         /// <p>Grant status reason.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// <p>Grant version.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3811,8 +3553,7 @@ pub mod grant {
         }
         /// <p>Grant version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Appends an item to `granted_operations`.
         ///
@@ -3821,34 +3562,42 @@ pub mod grant {
         /// <p>Granted operations.</p>
         pub fn granted_operations(mut self, input: crate::model::AllowedOperation) -> Self {
             let mut v = self.granted_operations.unwrap_or_default();
-            v.push(input);
-            self.granted_operations = Some(v);
-            self
+                            v.push(input);
+                            self.granted_operations = Some(v);
+                            self
         }
         /// <p>Granted operations.</p>
-        pub fn set_granted_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
-        ) -> Self {
-            self.granted_operations = input;
-            self
+        pub fn set_granted_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>) -> Self {
+            self.granted_operations = input; self
         }
         /// Consumes the builder and constructs a [`Grant`](crate::model::Grant).
         pub fn build(self) -> crate::model::Grant {
             crate::model::Grant {
-                grant_arn: self.grant_arn,
-                grant_name: self.grant_name,
-                parent_arn: self.parent_arn,
-                license_arn: self.license_arn,
-                grantee_principal_arn: self.grantee_principal_arn,
-                home_region: self.home_region,
-                grant_status: self.grant_status,
-                status_reason: self.status_reason,
-                version: self.version,
-                granted_operations: self.granted_operations,
+                grant_arn: self.grant_arn
+                ,
+                grant_name: self.grant_name
+                ,
+                parent_arn: self.parent_arn
+                ,
+                license_arn: self.license_arn
+                ,
+                grantee_principal_arn: self.grantee_principal_arn
+                ,
+                home_region: self.home_region
+                ,
+                grant_status: self.grant_status
+                ,
+                status_reason: self.status_reason
+                ,
+                version: self.version
+                ,
+                granted_operations: self.granted_operations
+                ,
             }
         }
     }
+    
+    
 }
 impl Grant {
     /// Creates a new builder-style object to manufacture [`Grant`](crate::model::Grant).
@@ -3860,7 +3609,7 @@ impl Grant {
 /// <p>Software license that is managed in License Manager.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct License {
+pub struct License  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
@@ -3906,67 +3655,65 @@ pub struct License {
 }
 impl License {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>License name.</p>
-    pub fn license_name(&self) -> std::option::Option<&str> {
+    pub fn license_name(&self) -> std::option::Option<& str> {
         self.license_name.as_deref()
     }
     /// <p>Product name.</p>
-    pub fn product_name(&self) -> std::option::Option<&str> {
+    pub fn product_name(&self) -> std::option::Option<& str> {
         self.product_name.as_deref()
     }
     /// <p>Product SKU.</p>
-    pub fn product_sku(&self) -> std::option::Option<&str> {
+    pub fn product_sku(&self) -> std::option::Option<& str> {
         self.product_sku.as_deref()
     }
     /// <p>License issuer.</p>
-    pub fn issuer(&self) -> std::option::Option<&crate::model::IssuerDetails> {
+    pub fn issuer(&self) -> std::option::Option<& crate::model::IssuerDetails> {
         self.issuer.as_ref()
     }
     /// <p>Home Region of the license.</p>
-    pub fn home_region(&self) -> std::option::Option<&str> {
+    pub fn home_region(&self) -> std::option::Option<& str> {
         self.home_region.as_deref()
     }
     /// <p>License status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::LicenseStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::LicenseStatus> {
         self.status.as_ref()
     }
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
-    pub fn validity(&self) -> std::option::Option<&crate::model::DatetimeRange> {
+    pub fn validity(&self) -> std::option::Option<& crate::model::DatetimeRange> {
         self.validity.as_ref()
     }
     /// <p>License beneficiary.</p>
-    pub fn beneficiary(&self) -> std::option::Option<&str> {
+    pub fn beneficiary(&self) -> std::option::Option<& str> {
         self.beneficiary.as_deref()
     }
     /// <p>License entitlements.</p>
-    pub fn entitlements(&self) -> std::option::Option<&[crate::model::Entitlement]> {
+    pub fn entitlements(&self) -> std::option::Option<& [crate::model::Entitlement]> {
         self.entitlements.as_deref()
     }
     /// <p>Configuration for consumption of the license.</p>
-    pub fn consumption_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ConsumptionConfiguration> {
+    pub fn consumption_configuration(&self) -> std::option::Option<& crate::model::ConsumptionConfiguration> {
         self.consumption_configuration.as_ref()
     }
     /// <p>License metadata.</p>
-    pub fn license_metadata(&self) -> std::option::Option<&[crate::model::Metadata]> {
+    pub fn license_metadata(&self) -> std::option::Option<& [crate::model::Metadata]> {
         self.license_metadata.as_deref()
     }
     /// <p>License creation time.</p>
-    pub fn create_time(&self) -> std::option::Option<&str> {
+    pub fn create_time(&self) -> std::option::Option<& str> {
         self.create_time.as_deref()
     }
     /// <p>License version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`License`](crate::model::License).
 pub mod license {
-
+    
     /// A builder for [`License`](crate::model::License).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3980,8 +3727,7 @@ pub mod license {
         pub(crate) validity: std::option::Option<crate::model::DatetimeRange>,
         pub(crate) beneficiary: std::option::Option<std::string::String>,
         pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
-        pub(crate) consumption_configuration:
-            std::option::Option<crate::model::ConsumptionConfiguration>,
+        pub(crate) consumption_configuration: std::option::Option<crate::model::ConsumptionConfiguration>,
         pub(crate) license_metadata: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
         pub(crate) create_time: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -3994,8 +3740,7 @@ pub mod license {
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// <p>License name.</p>
         pub fn license_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4004,8 +3749,7 @@ pub mod license {
         }
         /// <p>License name.</p>
         pub fn set_license_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_name = input;
-            self
+            self.license_name = input; self
         }
         /// <p>Product name.</p>
         pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4014,8 +3758,7 @@ pub mod license {
         }
         /// <p>Product name.</p>
         pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.product_name = input;
-            self
+            self.product_name = input; self
         }
         /// <p>Product SKU.</p>
         pub fn product_sku(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4024,8 +3767,7 @@ pub mod license {
         }
         /// <p>Product SKU.</p>
         pub fn set_product_sku(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.product_sku = input;
-            self
+            self.product_sku = input; self
         }
         /// <p>License issuer.</p>
         pub fn issuer(mut self, input: crate::model::IssuerDetails) -> Self {
@@ -4033,12 +3775,8 @@ pub mod license {
             self
         }
         /// <p>License issuer.</p>
-        pub fn set_issuer(
-            mut self,
-            input: std::option::Option<crate::model::IssuerDetails>,
-        ) -> Self {
-            self.issuer = input;
-            self
+        pub fn set_issuer(mut self, input: std::option::Option<crate::model::IssuerDetails>) -> Self {
+            self.issuer = input; self
         }
         /// <p>Home Region of the license.</p>
         pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4047,8 +3785,7 @@ pub mod license {
         }
         /// <p>Home Region of the license.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.home_region = input;
-            self
+            self.home_region = input; self
         }
         /// <p>License status.</p>
         pub fn status(mut self, input: crate::model::LicenseStatus) -> Self {
@@ -4056,12 +3793,8 @@ pub mod license {
             self
         }
         /// <p>License status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::LicenseStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::LicenseStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
         pub fn validity(mut self, input: crate::model::DatetimeRange) -> Self {
@@ -4069,12 +3802,8 @@ pub mod license {
             self
         }
         /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
-        pub fn set_validity(
-            mut self,
-            input: std::option::Option<crate::model::DatetimeRange>,
-        ) -> Self {
-            self.validity = input;
-            self
+        pub fn set_validity(mut self, input: std::option::Option<crate::model::DatetimeRange>) -> Self {
+            self.validity = input; self
         }
         /// <p>License beneficiary.</p>
         pub fn beneficiary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4083,8 +3812,7 @@ pub mod license {
         }
         /// <p>License beneficiary.</p>
         pub fn set_beneficiary(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.beneficiary = input;
-            self
+            self.beneficiary = input; self
         }
         /// Appends an item to `entitlements`.
         ///
@@ -4093,33 +3821,22 @@ pub mod license {
         /// <p>License entitlements.</p>
         pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input);
-            self.entitlements = Some(v);
-            self
+                            v.push(input);
+                            self.entitlements = Some(v);
+                            self
         }
         /// <p>License entitlements.</p>
-        pub fn set_entitlements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
-        ) -> Self {
-            self.entitlements = input;
-            self
+        pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>) -> Self {
+            self.entitlements = input; self
         }
         /// <p>Configuration for consumption of the license.</p>
-        pub fn consumption_configuration(
-            mut self,
-            input: crate::model::ConsumptionConfiguration,
-        ) -> Self {
+        pub fn consumption_configuration(mut self, input: crate::model::ConsumptionConfiguration) -> Self {
             self.consumption_configuration = Some(input);
             self
         }
         /// <p>Configuration for consumption of the license.</p>
-        pub fn set_consumption_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ConsumptionConfiguration>,
-        ) -> Self {
-            self.consumption_configuration = input;
-            self
+        pub fn set_consumption_configuration(mut self, input: std::option::Option<crate::model::ConsumptionConfiguration>) -> Self {
+            self.consumption_configuration = input; self
         }
         /// Appends an item to `license_metadata`.
         ///
@@ -4128,17 +3845,13 @@ pub mod license {
         /// <p>License metadata.</p>
         pub fn license_metadata(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.license_metadata.unwrap_or_default();
-            v.push(input);
-            self.license_metadata = Some(v);
-            self
+                            v.push(input);
+                            self.license_metadata = Some(v);
+                            self
         }
         /// <p>License metadata.</p>
-        pub fn set_license_metadata(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
-        ) -> Self {
-            self.license_metadata = input;
-            self
+        pub fn set_license_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::model::Metadata>>) -> Self {
+            self.license_metadata = input; self
         }
         /// <p>License creation time.</p>
         pub fn create_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4147,8 +3860,7 @@ pub mod license {
         }
         /// <p>License creation time.</p>
         pub fn set_create_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.create_time = input;
-            self
+            self.create_time = input; self
         }
         /// <p>License version.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4157,29 +3869,44 @@ pub mod license {
         }
         /// <p>License version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`License`](crate::model::License).
         pub fn build(self) -> crate::model::License {
             crate::model::License {
-                license_arn: self.license_arn,
-                license_name: self.license_name,
-                product_name: self.product_name,
-                product_sku: self.product_sku,
-                issuer: self.issuer,
-                home_region: self.home_region,
-                status: self.status,
-                validity: self.validity,
-                beneficiary: self.beneficiary,
-                entitlements: self.entitlements,
-                consumption_configuration: self.consumption_configuration,
-                license_metadata: self.license_metadata,
-                create_time: self.create_time,
-                version: self.version,
+                license_arn: self.license_arn
+                ,
+                license_name: self.license_name
+                ,
+                product_name: self.product_name
+                ,
+                product_sku: self.product_sku
+                ,
+                issuer: self.issuer
+                ,
+                home_region: self.home_region
+                ,
+                status: self.status
+                ,
+                validity: self.validity
+                ,
+                beneficiary: self.beneficiary
+                ,
+                entitlements: self.entitlements
+                ,
+                consumption_configuration: self.consumption_configuration
+                ,
+                license_metadata: self.license_metadata
+                ,
+                create_time: self.create_time
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl License {
     /// Creates a new builder-style object to manufacture [`License`](crate::model::License).
@@ -4191,7 +3918,7 @@ impl License {
 /// <p>Describe the details of a report generator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReportGenerator {
+pub struct ReportGenerator  {
     /// <p>Name of the report generator.</p>
     #[doc(hidden)]
     pub report_generator_name: std::option::Option<std::string::String>,
@@ -4234,61 +3961,61 @@ pub struct ReportGenerator {
 }
 impl ReportGenerator {
     /// <p>Name of the report generator.</p>
-    pub fn report_generator_name(&self) -> std::option::Option<&str> {
+    pub fn report_generator_name(&self) -> std::option::Option<& str> {
         self.report_generator_name.as_deref()
     }
     /// <p>Type of reports that are generated.</p>
-    pub fn report_type(&self) -> std::option::Option<&[crate::model::ReportType]> {
+    pub fn report_type(&self) -> std::option::Option<& [crate::model::ReportType]> {
         self.report_type.as_deref()
     }
     /// <p>License configuration type for this generator.</p>
-    pub fn report_context(&self) -> std::option::Option<&crate::model::ReportContext> {
+    pub fn report_context(&self) -> std::option::Option<& crate::model::ReportContext> {
         self.report_context.as_ref()
     }
     /// <p>Details about how frequently reports are generated.</p>
-    pub fn report_frequency(&self) -> std::option::Option<&crate::model::ReportFrequency> {
+    pub fn report_frequency(&self) -> std::option::Option<& crate::model::ReportFrequency> {
         self.report_frequency.as_ref()
     }
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
-    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<&str> {
+    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<& str> {
         self.license_manager_report_generator_arn.as_deref()
     }
     /// <p>Status of the last report generation attempt.</p>
-    pub fn last_run_status(&self) -> std::option::Option<&str> {
+    pub fn last_run_status(&self) -> std::option::Option<& str> {
         self.last_run_status.as_deref()
     }
     /// <p>Failure message for the last report generation attempt.</p>
-    pub fn last_run_failure_reason(&self) -> std::option::Option<&str> {
+    pub fn last_run_failure_reason(&self) -> std::option::Option<& str> {
         self.last_run_failure_reason.as_deref()
     }
     /// <p>Time the last report was generated at.</p>
-    pub fn last_report_generation_time(&self) -> std::option::Option<&str> {
+    pub fn last_report_generation_time(&self) -> std::option::Option<& str> {
         self.last_report_generation_time.as_deref()
     }
     /// <p>The Amazon Web Services account ID used to create the report generator.</p>
-    pub fn report_creator_account(&self) -> std::option::Option<&str> {
+    pub fn report_creator_account(&self) -> std::option::Option<& str> {
         self.report_creator_account.as_deref()
     }
     /// <p>Description of the report generator.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Details of the S3 bucket that report generator reports are published to.</p>
-    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn s3_location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.s3_location.as_ref()
     }
     /// <p>Time the report was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&str> {
+    pub fn create_time(&self) -> std::option::Option<& str> {
         self.create_time.as_deref()
     }
     /// <p>Tags associated with the report generator.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ReportGenerator`](crate::model::ReportGenerator).
 pub mod report_generator {
-
+    
     /// A builder for [`ReportGenerator`](crate::model::ReportGenerator).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4313,12 +4040,8 @@ pub mod report_generator {
             self
         }
         /// <p>Name of the report generator.</p>
-        pub fn set_report_generator_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.report_generator_name = input;
-            self
+        pub fn set_report_generator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.report_generator_name = input; self
         }
         /// Appends an item to `report_type`.
         ///
@@ -4327,17 +4050,13 @@ pub mod report_generator {
         /// <p>Type of reports that are generated.</p>
         pub fn report_type(mut self, input: crate::model::ReportType) -> Self {
             let mut v = self.report_type.unwrap_or_default();
-            v.push(input);
-            self.report_type = Some(v);
-            self
+                            v.push(input);
+                            self.report_type = Some(v);
+                            self
         }
         /// <p>Type of reports that are generated.</p>
-        pub fn set_report_type(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReportType>>,
-        ) -> Self {
-            self.report_type = input;
-            self
+        pub fn set_report_type(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReportType>>) -> Self {
+            self.report_type = input; self
         }
         /// <p>License configuration type for this generator.</p>
         pub fn report_context(mut self, input: crate::model::ReportContext) -> Self {
@@ -4345,12 +4064,8 @@ pub mod report_generator {
             self
         }
         /// <p>License configuration type for this generator.</p>
-        pub fn set_report_context(
-            mut self,
-            input: std::option::Option<crate::model::ReportContext>,
-        ) -> Self {
-            self.report_context = input;
-            self
+        pub fn set_report_context(mut self, input: std::option::Option<crate::model::ReportContext>) -> Self {
+            self.report_context = input; self
         }
         /// <p>Details about how frequently reports are generated.</p>
         pub fn report_frequency(mut self, input: crate::model::ReportFrequency) -> Self {
@@ -4358,28 +4073,17 @@ pub mod report_generator {
             self
         }
         /// <p>Details about how frequently reports are generated.</p>
-        pub fn set_report_frequency(
-            mut self,
-            input: std::option::Option<crate::model::ReportFrequency>,
-        ) -> Self {
-            self.report_frequency = input;
-            self
+        pub fn set_report_frequency(mut self, input: std::option::Option<crate::model::ReportFrequency>) -> Self {
+            self.report_frequency = input; self
         }
         /// <p>Amazon Resource Name (ARN) of the report generator.</p>
-        pub fn license_manager_report_generator_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn license_manager_report_generator_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.license_manager_report_generator_arn = Some(input.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the report generator.</p>
-        pub fn set_license_manager_report_generator_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_manager_report_generator_arn = input;
-            self
+        pub fn set_license_manager_report_generator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_manager_report_generator_arn = input; self
         }
         /// <p>Status of the last report generation attempt.</p>
         pub fn last_run_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4387,12 +4091,8 @@ pub mod report_generator {
             self
         }
         /// <p>Status of the last report generation attempt.</p>
-        pub fn set_last_run_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_run_status = input;
-            self
+        pub fn set_last_run_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_run_status = input; self
         }
         /// <p>Failure message for the last report generation attempt.</p>
         pub fn last_run_failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4400,28 +4100,17 @@ pub mod report_generator {
             self
         }
         /// <p>Failure message for the last report generation attempt.</p>
-        pub fn set_last_run_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_run_failure_reason = input;
-            self
+        pub fn set_last_run_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_run_failure_reason = input; self
         }
         /// <p>Time the last report was generated at.</p>
-        pub fn last_report_generation_time(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn last_report_generation_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_report_generation_time = Some(input.into());
             self
         }
         /// <p>Time the last report was generated at.</p>
-        pub fn set_last_report_generation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_report_generation_time = input;
-            self
+        pub fn set_last_report_generation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_report_generation_time = input; self
         }
         /// <p>The Amazon Web Services account ID used to create the report generator.</p>
         pub fn report_creator_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4429,12 +4118,8 @@ pub mod report_generator {
             self
         }
         /// <p>The Amazon Web Services account ID used to create the report generator.</p>
-        pub fn set_report_creator_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.report_creator_account = input;
-            self
+        pub fn set_report_creator_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.report_creator_account = input; self
         }
         /// <p>Description of the report generator.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4443,8 +4128,7 @@ pub mod report_generator {
         }
         /// <p>Description of the report generator.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Details of the S3 bucket that report generator reports are published to.</p>
         pub fn s3_location(mut self, input: crate::model::S3Location) -> Self {
@@ -4452,12 +4136,8 @@ pub mod report_generator {
             self
         }
         /// <p>Details of the S3 bucket that report generator reports are published to.</p>
-        pub fn set_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.s3_location = input;
-            self
+        pub fn set_s3_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.s3_location = input; self
         }
         /// <p>Time the report was created.</p>
         pub fn create_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4466,8 +4146,7 @@ pub mod report_generator {
         }
         /// <p>Time the report was created.</p>
         pub fn set_create_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.create_time = input;
-            self
+            self.create_time = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -4476,37 +4155,48 @@ pub mod report_generator {
         /// <p>Tags associated with the report generator.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Tags associated with the report generator.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ReportGenerator`](crate::model::ReportGenerator).
         pub fn build(self) -> crate::model::ReportGenerator {
             crate::model::ReportGenerator {
-                report_generator_name: self.report_generator_name,
-                report_type: self.report_type,
-                report_context: self.report_context,
-                report_frequency: self.report_frequency,
-                license_manager_report_generator_arn: self.license_manager_report_generator_arn,
-                last_run_status: self.last_run_status,
-                last_run_failure_reason: self.last_run_failure_reason,
-                last_report_generation_time: self.last_report_generation_time,
-                report_creator_account: self.report_creator_account,
-                description: self.description,
-                s3_location: self.s3_location,
-                create_time: self.create_time,
-                tags: self.tags,
+                report_generator_name: self.report_generator_name
+                ,
+                report_type: self.report_type
+                ,
+                report_context: self.report_context
+                ,
+                report_frequency: self.report_frequency
+                ,
+                license_manager_report_generator_arn: self.license_manager_report_generator_arn
+                ,
+                last_run_status: self.last_run_status
+                ,
+                last_run_failure_reason: self.last_run_failure_reason
+                ,
+                last_report_generation_time: self.last_report_generation_time
+                ,
+                report_creator_account: self.report_creator_account
+                ,
+                description: self.description
+                ,
+                s3_location: self.s3_location
+                ,
+                create_time: self.create_time
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ReportGenerator {
     /// Creates a new builder-style object to manufacture [`ReportGenerator`](crate::model::ReportGenerator).
@@ -4518,7 +4208,7 @@ impl ReportGenerator {
 /// <p>Details of the S3 bucket that report generator reports are published to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>Name of the S3 bucket reports are published to.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -4528,17 +4218,17 @@ pub struct S3Location {
 }
 impl S3Location {
     /// <p>Name of the S3 bucket reports are published to.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>Prefix of the S3 bucket reports are published to.</p>
-    pub fn key_prefix(&self) -> std::option::Option<&str> {
+    pub fn key_prefix(&self) -> std::option::Option<& str> {
         self.key_prefix.as_deref()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
-
+    
     /// A builder for [`S3Location`](crate::model::S3Location).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4553,8 +4243,7 @@ pub mod s3_location {
         }
         /// <p>Name of the S3 bucket reports are published to.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>Prefix of the S3 bucket reports are published to.</p>
         pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4563,17 +4252,20 @@ pub mod s3_location {
         }
         /// <p>Prefix of the S3 bucket reports are published to.</p>
         pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_prefix = input;
-            self
+            self.key_prefix = input; self
         }
         /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location).
         pub fn build(self) -> crate::model::S3Location {
             crate::model::S3Location {
-                bucket: self.bucket,
-                key_prefix: self.key_prefix,
+                bucket: self.bucket
+                ,
+                key_prefix: self.key_prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Location {
     /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
@@ -4585,7 +4277,7 @@ impl S3Location {
 /// <p>Information about a license type conversion task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LicenseConversionTask {
+pub struct LicenseConversionTask  {
     /// <p>The ID of the license type conversion task.</p>
     #[doc(hidden)]
     pub license_conversion_task_id: std::option::Option<std::string::String>,
@@ -4616,58 +4308,52 @@ pub struct LicenseConversionTask {
 }
 impl LicenseConversionTask {
     /// <p>The ID of the license type conversion task.</p>
-    pub fn license_conversion_task_id(&self) -> std::option::Option<&str> {
+    pub fn license_conversion_task_id(&self) -> std::option::Option<& str> {
         self.license_conversion_task_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the license type conversion task.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Information about the license type this conversion task converted from.</p>
-    pub fn source_license_context(
-        &self,
-    ) -> std::option::Option<&crate::model::LicenseConversionContext> {
+    pub fn source_license_context(&self) -> std::option::Option<& crate::model::LicenseConversionContext> {
         self.source_license_context.as_ref()
     }
     /// <p>Information about the license type this conversion task converted to.</p>
-    pub fn destination_license_context(
-        &self,
-    ) -> std::option::Option<&crate::model::LicenseConversionContext> {
+    pub fn destination_license_context(&self) -> std::option::Option<& crate::model::LicenseConversionContext> {
         self.destination_license_context.as_ref()
     }
     /// <p>The status of the conversion task.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::LicenseConversionTaskStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::LicenseConversionTaskStatus> {
         self.status.as_ref()
     }
     /// <p>The status message for the conversion task.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The time the conversion task was started at.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time the usage operation value of the resource was changed.</p>
-    pub fn license_conversion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn license_conversion_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.license_conversion_time.as_ref()
     }
     /// <p>The time the conversion task was completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
 /// See [`LicenseConversionTask`](crate::model::LicenseConversionTask).
 pub mod license_conversion_task {
-
+    
     /// A builder for [`LicenseConversionTask`](crate::model::LicenseConversionTask).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_conversion_task_id: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) source_license_context:
-            std::option::Option<crate::model::LicenseConversionContext>,
-        pub(crate) destination_license_context:
-            std::option::Option<crate::model::LicenseConversionContext>,
+        pub(crate) source_license_context: std::option::Option<crate::model::LicenseConversionContext>,
+        pub(crate) destination_license_context: std::option::Option<crate::model::LicenseConversionContext>,
         pub(crate) status: std::option::Option<crate::model::LicenseConversionTaskStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4681,12 +4367,8 @@ pub mod license_conversion_task {
             self
         }
         /// <p>The ID of the license type conversion task.</p>
-        pub fn set_license_conversion_task_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_conversion_task_id = input;
-            self
+        pub fn set_license_conversion_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_conversion_task_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource associated with the license type conversion task.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4695,40 +4377,25 @@ pub mod license_conversion_task {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource associated with the license type conversion task.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>Information about the license type this conversion task converted from.</p>
-        pub fn source_license_context(
-            mut self,
-            input: crate::model::LicenseConversionContext,
-        ) -> Self {
+        pub fn source_license_context(mut self, input: crate::model::LicenseConversionContext) -> Self {
             self.source_license_context = Some(input);
             self
         }
         /// <p>Information about the license type this conversion task converted from.</p>
-        pub fn set_source_license_context(
-            mut self,
-            input: std::option::Option<crate::model::LicenseConversionContext>,
-        ) -> Self {
-            self.source_license_context = input;
-            self
+        pub fn set_source_license_context(mut self, input: std::option::Option<crate::model::LicenseConversionContext>) -> Self {
+            self.source_license_context = input; self
         }
         /// <p>Information about the license type this conversion task converted to.</p>
-        pub fn destination_license_context(
-            mut self,
-            input: crate::model::LicenseConversionContext,
-        ) -> Self {
+        pub fn destination_license_context(mut self, input: crate::model::LicenseConversionContext) -> Self {
             self.destination_license_context = Some(input);
             self
         }
         /// <p>Information about the license type this conversion task converted to.</p>
-        pub fn set_destination_license_context(
-            mut self,
-            input: std::option::Option<crate::model::LicenseConversionContext>,
-        ) -> Self {
-            self.destination_license_context = input;
-            self
+        pub fn set_destination_license_context(mut self, input: std::option::Option<crate::model::LicenseConversionContext>) -> Self {
+            self.destination_license_context = input; self
         }
         /// <p>The status of the conversion task.</p>
         pub fn status(mut self, input: crate::model::LicenseConversionTaskStatus) -> Self {
@@ -4736,12 +4403,8 @@ pub mod license_conversion_task {
             self
         }
         /// <p>The status of the conversion task.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::LicenseConversionTaskStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::LicenseConversionTaskStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The status message for the conversion task.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4749,12 +4412,8 @@ pub mod license_conversion_task {
             self
         }
         /// <p>The status message for the conversion task.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The time the conversion task was started at.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4762,12 +4421,8 @@ pub mod license_conversion_task {
             self
         }
         /// <p>The time the conversion task was started at.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The time the usage operation value of the resource was changed.</p>
         pub fn license_conversion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4775,12 +4430,8 @@ pub mod license_conversion_task {
             self
         }
         /// <p>The time the usage operation value of the resource was changed.</p>
-        pub fn set_license_conversion_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.license_conversion_time = input;
-            self
+        pub fn set_license_conversion_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.license_conversion_time = input; self
         }
         /// <p>The time the conversion task was completed.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4788,28 +4439,35 @@ pub mod license_conversion_task {
             self
         }
         /// <p>The time the conversion task was completed.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Consumes the builder and constructs a [`LicenseConversionTask`](crate::model::LicenseConversionTask).
         pub fn build(self) -> crate::model::LicenseConversionTask {
             crate::model::LicenseConversionTask {
-                license_conversion_task_id: self.license_conversion_task_id,
-                resource_arn: self.resource_arn,
-                source_license_context: self.source_license_context,
-                destination_license_context: self.destination_license_context,
-                status: self.status,
-                status_message: self.status_message,
-                start_time: self.start_time,
-                license_conversion_time: self.license_conversion_time,
-                end_time: self.end_time,
+                license_conversion_task_id: self.license_conversion_task_id
+                ,
+                resource_arn: self.resource_arn
+                ,
+                source_license_context: self.source_license_context
+                ,
+                destination_license_context: self.destination_license_context
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                start_time: self.start_time
+                ,
+                license_conversion_time: self.license_conversion_time
+                ,
+                end_time: self.end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl LicenseConversionTask {
     /// Creates a new builder-style object to manufacture [`LicenseConversionTask`](crate::model::LicenseConversionTask).
@@ -4824,9 +4482,9 @@ impl LicenseConversionTask {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let licenseconversiontaskstatus = unimplemented!();
 /// match licenseconversiontaskstatus {
@@ -4849,22 +4507,14 @@ impl LicenseConversionTask {
 /// Specifically, when `licenseconversiontaskstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LicenseConversionTaskStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LicenseConversionTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -4873,7 +4523,7 @@ pub enum LicenseConversionTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LicenseConversionTaskStatus {
     fn from(s: &str) -> Self {
@@ -4881,19 +4531,17 @@ impl std::convert::From<&str> for LicenseConversionTaskStatus {
             "FAILED" => LicenseConversionTaskStatus::Failed,
             "IN_PROGRESS" => LicenseConversionTaskStatus::InProgress,
             "SUCCEEDED" => LicenseConversionTaskStatus::Succeeded,
-            other => LicenseConversionTaskStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LicenseConversionTaskStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LicenseConversionTaskStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LicenseConversionTaskStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LicenseConversionTaskStatus::from(s))
+                }
+            }
 impl LicenseConversionTaskStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4901,12 +4549,14 @@ impl LicenseConversionTaskStatus {
             LicenseConversionTaskStatus::Failed => "FAILED",
             LicenseConversionTaskStatus::InProgress => "IN_PROGRESS",
             LicenseConversionTaskStatus::Succeeded => "SUCCEEDED",
-            LicenseConversionTaskStatus::Unknown(value) => value.as_str(),
+            LicenseConversionTaskStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
+        &[
+            "FAILED", "IN_PROGRESS", "SUCCEEDED"
+        ]
     }
 }
 impl AsRef<str> for LicenseConversionTaskStatus {
@@ -4918,20 +4568,20 @@ impl AsRef<str> for LicenseConversionTaskStatus {
 /// <p>Information about a license type conversion task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LicenseConversionContext {
+pub struct LicenseConversionContext  {
     /// <p>The Usage operation value that corresponds to the license type you are converting your resource from. For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform </a> </p>
     #[doc(hidden)]
     pub usage_operation: std::option::Option<std::string::String>,
 }
 impl LicenseConversionContext {
     /// <p>The Usage operation value that corresponds to the license type you are converting your resource from. For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform </a> </p>
-    pub fn usage_operation(&self) -> std::option::Option<&str> {
+    pub fn usage_operation(&self) -> std::option::Option<& str> {
         self.usage_operation.as_deref()
     }
 }
 /// See [`LicenseConversionContext`](crate::model::LicenseConversionContext).
 pub mod license_conversion_context {
-
+    
     /// A builder for [`LicenseConversionContext`](crate::model::LicenseConversionContext).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4944,20 +4594,19 @@ pub mod license_conversion_context {
             self
         }
         /// <p>The Usage operation value that corresponds to the license type you are converting your resource from. For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform </a> </p>
-        pub fn set_usage_operation(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.usage_operation = input;
-            self
+        pub fn set_usage_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.usage_operation = input; self
         }
         /// Consumes the builder and constructs a [`LicenseConversionContext`](crate::model::LicenseConversionContext).
         pub fn build(self) -> crate::model::LicenseConversionContext {
             crate::model::LicenseConversionContext {
-                usage_operation: self.usage_operation,
+                usage_operation: self.usage_operation
+                ,
             }
         }
     }
+    
+    
 }
 impl LicenseConversionContext {
     /// Creates a new builder-style object to manufacture [`LicenseConversionContext`](crate::model::LicenseConversionContext).
@@ -4969,7 +4618,7 @@ impl LicenseConversionContext {
 /// <p>A license configuration is an abstraction of a customer license agreement that can be consumed and enforced by License Manager. Components include specifications for the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these), host affinity (how long a VM must be associated with a host), and the number of licenses purchased and used.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LicenseConfiguration {
+pub struct LicenseConfiguration  {
     /// <p>Unique ID of the license configuration.</p>
     #[doc(hidden)]
     pub license_configuration_id: std::option::Option<std::string::String>,
@@ -5008,44 +4657,40 @@ pub struct LicenseConfiguration {
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>Summaries for licenses consumed by various resources.</p>
     #[doc(hidden)]
-    pub consumed_license_summary_list:
-        std::option::Option<std::vec::Vec<crate::model::ConsumedLicenseSummary>>,
+    pub consumed_license_summary_list: std::option::Option<std::vec::Vec<crate::model::ConsumedLicenseSummary>>,
     /// <p>Summaries for managed resources.</p>
     #[doc(hidden)]
-    pub managed_resource_summary_list:
-        std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>,
+    pub managed_resource_summary_list: std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>,
     /// <p>Product information.</p>
     #[doc(hidden)]
-    pub product_information_list:
-        std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
+    pub product_information_list: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
     /// <p>Automated discovery information.</p>
     #[doc(hidden)]
-    pub automated_discovery_information:
-        std::option::Option<crate::model::AutomatedDiscoveryInformation>,
+    pub automated_discovery_information: std::option::Option<crate::model::AutomatedDiscoveryInformation>,
 }
 impl LicenseConfiguration {
     /// <p>Unique ID of the license configuration.</p>
-    pub fn license_configuration_id(&self) -> std::option::Option<&str> {
+    pub fn license_configuration_id(&self) -> std::option::Option<& str> {
         self.license_configuration_id.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
     /// <p>Name of the license configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Description of the license configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Dimension to use to track the license inventory.</p>
-    pub fn license_counting_type(&self) -> std::option::Option<&crate::model::LicenseCountingType> {
+    pub fn license_counting_type(&self) -> std::option::Option<& crate::model::LicenseCountingType> {
         self.license_counting_type.as_ref()
     }
     /// <p>License rules.</p>
-    pub fn license_rules(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn license_rules(&self) -> std::option::Option<& [std::string::String]> {
         self.license_rules.as_deref()
     }
     /// <p>Number of licenses managed by the license configuration.</p>
@@ -5065,41 +4710,33 @@ impl LicenseConfiguration {
         self.consumed_licenses
     }
     /// <p>Status of the license configuration.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Account ID of the license configuration's owner.</p>
-    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>Summaries for licenses consumed by various resources.</p>
-    pub fn consumed_license_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ConsumedLicenseSummary]> {
+    pub fn consumed_license_summary_list(&self) -> std::option::Option<& [crate::model::ConsumedLicenseSummary]> {
         self.consumed_license_summary_list.as_deref()
     }
     /// <p>Summaries for managed resources.</p>
-    pub fn managed_resource_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ManagedResourceSummary]> {
+    pub fn managed_resource_summary_list(&self) -> std::option::Option<& [crate::model::ManagedResourceSummary]> {
         self.managed_resource_summary_list.as_deref()
     }
     /// <p>Product information.</p>
-    pub fn product_information_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProductInformation]> {
+    pub fn product_information_list(&self) -> std::option::Option<& [crate::model::ProductInformation]> {
         self.product_information_list.as_deref()
     }
     /// <p>Automated discovery information.</p>
-    pub fn automated_discovery_information(
-        &self,
-    ) -> std::option::Option<&crate::model::AutomatedDiscoveryInformation> {
+    pub fn automated_discovery_information(&self) -> std::option::Option<& crate::model::AutomatedDiscoveryInformation> {
         self.automated_discovery_information.as_ref()
     }
 }
 /// See [`LicenseConfiguration`](crate::model::LicenseConfiguration).
 pub mod license_configuration {
-
+    
     /// A builder for [`LicenseConfiguration`](crate::model::LicenseConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5115,14 +4752,10 @@ pub mod license_configuration {
         pub(crate) consumed_licenses: std::option::Option<i64>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) owner_account_id: std::option::Option<std::string::String>,
-        pub(crate) consumed_license_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::ConsumedLicenseSummary>>,
-        pub(crate) managed_resource_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>,
-        pub(crate) product_information_list:
-            std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
-        pub(crate) automated_discovery_information:
-            std::option::Option<crate::model::AutomatedDiscoveryInformation>,
+        pub(crate) consumed_license_summary_list: std::option::Option<std::vec::Vec<crate::model::ConsumedLicenseSummary>>,
+        pub(crate) managed_resource_summary_list: std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>,
+        pub(crate) product_information_list: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
+        pub(crate) automated_discovery_information: std::option::Option<crate::model::AutomatedDiscoveryInformation>,
     }
     impl Builder {
         /// <p>Unique ID of the license configuration.</p>
@@ -5131,12 +4764,8 @@ pub mod license_configuration {
             self
         }
         /// <p>Unique ID of the license configuration.</p>
-        pub fn set_license_configuration_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_configuration_id = input;
-            self
+        pub fn set_license_configuration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_configuration_id = input; self
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
         pub fn license_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5144,12 +4773,8 @@ pub mod license_configuration {
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-        pub fn set_license_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_configuration_arn = input;
-            self
+        pub fn set_license_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_configuration_arn = input; self
         }
         /// <p>Name of the license configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5158,8 +4783,7 @@ pub mod license_configuration {
         }
         /// <p>Name of the license configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Description of the license configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5168,8 +4792,7 @@ pub mod license_configuration {
         }
         /// <p>Description of the license configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Dimension to use to track the license inventory.</p>
         pub fn license_counting_type(mut self, input: crate::model::LicenseCountingType) -> Self {
@@ -5177,12 +4800,8 @@ pub mod license_configuration {
             self
         }
         /// <p>Dimension to use to track the license inventory.</p>
-        pub fn set_license_counting_type(
-            mut self,
-            input: std::option::Option<crate::model::LicenseCountingType>,
-        ) -> Self {
-            self.license_counting_type = input;
-            self
+        pub fn set_license_counting_type(mut self, input: std::option::Option<crate::model::LicenseCountingType>) -> Self {
+            self.license_counting_type = input; self
         }
         /// Appends an item to `license_rules`.
         ///
@@ -5191,17 +4810,13 @@ pub mod license_configuration {
         /// <p>License rules.</p>
         pub fn license_rules(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_rules.unwrap_or_default();
-            v.push(input.into());
-            self.license_rules = Some(v);
-            self
+                            v.push(input.into());
+                            self.license_rules = Some(v);
+                            self
         }
         /// <p>License rules.</p>
-        pub fn set_license_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.license_rules = input;
-            self
+        pub fn set_license_rules(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.license_rules = input; self
         }
         /// <p>Number of licenses managed by the license configuration.</p>
         pub fn license_count(mut self, input: i64) -> Self {
@@ -5210,8 +4825,7 @@ pub mod license_configuration {
         }
         /// <p>Number of licenses managed by the license configuration.</p>
         pub fn set_license_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.license_count = input;
-            self
+            self.license_count = input; self
         }
         /// <p>Number of available licenses as a hard limit.</p>
         pub fn license_count_hard_limit(mut self, input: bool) -> Self {
@@ -5220,8 +4834,7 @@ pub mod license_configuration {
         }
         /// <p>Number of available licenses as a hard limit.</p>
         pub fn set_license_count_hard_limit(mut self, input: std::option::Option<bool>) -> Self {
-            self.license_count_hard_limit = input;
-            self
+            self.license_count_hard_limit = input; self
         }
         /// <p>When true, disassociates a resource when software is uninstalled.</p>
         pub fn disassociate_when_not_found(mut self, input: bool) -> Self {
@@ -5230,8 +4843,7 @@ pub mod license_configuration {
         }
         /// <p>When true, disassociates a resource when software is uninstalled.</p>
         pub fn set_disassociate_when_not_found(mut self, input: std::option::Option<bool>) -> Self {
-            self.disassociate_when_not_found = input;
-            self
+            self.disassociate_when_not_found = input; self
         }
         /// <p>Number of licenses consumed. </p>
         pub fn consumed_licenses(mut self, input: i64) -> Self {
@@ -5240,8 +4852,7 @@ pub mod license_configuration {
         }
         /// <p>Number of licenses consumed. </p>
         pub fn set_consumed_licenses(mut self, input: std::option::Option<i64>) -> Self {
-            self.consumed_licenses = input;
-            self
+            self.consumed_licenses = input; self
         }
         /// <p>Status of the license configuration.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5250,8 +4861,7 @@ pub mod license_configuration {
         }
         /// <p>Status of the license configuration.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Account ID of the license configuration's owner.</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5259,56 +4869,38 @@ pub mod license_configuration {
             self
         }
         /// <p>Account ID of the license configuration's owner.</p>
-        pub fn set_owner_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account_id = input;
-            self
+        pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account_id = input; self
         }
         /// Appends an item to `consumed_license_summary_list`.
         ///
         /// To override the contents of this collection use [`set_consumed_license_summary_list`](Self::set_consumed_license_summary_list).
         ///
         /// <p>Summaries for licenses consumed by various resources.</p>
-        pub fn consumed_license_summary_list(
-            mut self,
-            input: crate::model::ConsumedLicenseSummary,
-        ) -> Self {
+        pub fn consumed_license_summary_list(mut self, input: crate::model::ConsumedLicenseSummary) -> Self {
             let mut v = self.consumed_license_summary_list.unwrap_or_default();
-            v.push(input);
-            self.consumed_license_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.consumed_license_summary_list = Some(v);
+                            self
         }
         /// <p>Summaries for licenses consumed by various resources.</p>
-        pub fn set_consumed_license_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConsumedLicenseSummary>>,
-        ) -> Self {
-            self.consumed_license_summary_list = input;
-            self
+        pub fn set_consumed_license_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConsumedLicenseSummary>>) -> Self {
+            self.consumed_license_summary_list = input; self
         }
         /// Appends an item to `managed_resource_summary_list`.
         ///
         /// To override the contents of this collection use [`set_managed_resource_summary_list`](Self::set_managed_resource_summary_list).
         ///
         /// <p>Summaries for managed resources.</p>
-        pub fn managed_resource_summary_list(
-            mut self,
-            input: crate::model::ManagedResourceSummary,
-        ) -> Self {
+        pub fn managed_resource_summary_list(mut self, input: crate::model::ManagedResourceSummary) -> Self {
             let mut v = self.managed_resource_summary_list.unwrap_or_default();
-            v.push(input);
-            self.managed_resource_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.managed_resource_summary_list = Some(v);
+                            self
         }
         /// <p>Summaries for managed resources.</p>
-        pub fn set_managed_resource_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>,
-        ) -> Self {
-            self.managed_resource_summary_list = input;
-            self
+        pub fn set_managed_resource_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>) -> Self {
+            self.managed_resource_summary_list = input; self
         }
         /// Appends an item to `product_information_list`.
         ///
@@ -5317,56 +4909,63 @@ pub mod license_configuration {
         /// <p>Product information.</p>
         pub fn product_information_list(mut self, input: crate::model::ProductInformation) -> Self {
             let mut v = self.product_information_list.unwrap_or_default();
-            v.push(input);
-            self.product_information_list = Some(v);
-            self
+                            v.push(input);
+                            self.product_information_list = Some(v);
+                            self
         }
         /// <p>Product information.</p>
-        pub fn set_product_information_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
-        ) -> Self {
-            self.product_information_list = input;
-            self
+        pub fn set_product_information_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>) -> Self {
+            self.product_information_list = input; self
         }
         /// <p>Automated discovery information.</p>
-        pub fn automated_discovery_information(
-            mut self,
-            input: crate::model::AutomatedDiscoveryInformation,
-        ) -> Self {
+        pub fn automated_discovery_information(mut self, input: crate::model::AutomatedDiscoveryInformation) -> Self {
             self.automated_discovery_information = Some(input);
             self
         }
         /// <p>Automated discovery information.</p>
-        pub fn set_automated_discovery_information(
-            mut self,
-            input: std::option::Option<crate::model::AutomatedDiscoveryInformation>,
-        ) -> Self {
-            self.automated_discovery_information = input;
-            self
+        pub fn set_automated_discovery_information(mut self, input: std::option::Option<crate::model::AutomatedDiscoveryInformation>) -> Self {
+            self.automated_discovery_information = input; self
         }
         /// Consumes the builder and constructs a [`LicenseConfiguration`](crate::model::LicenseConfiguration).
         pub fn build(self) -> crate::model::LicenseConfiguration {
             crate::model::LicenseConfiguration {
-                license_configuration_id: self.license_configuration_id,
-                license_configuration_arn: self.license_configuration_arn,
-                name: self.name,
-                description: self.description,
-                license_counting_type: self.license_counting_type,
-                license_rules: self.license_rules,
-                license_count: self.license_count,
-                license_count_hard_limit: self.license_count_hard_limit,
-                disassociate_when_not_found: self.disassociate_when_not_found,
-                consumed_licenses: self.consumed_licenses,
-                status: self.status,
-                owner_account_id: self.owner_account_id,
-                consumed_license_summary_list: self.consumed_license_summary_list,
-                managed_resource_summary_list: self.managed_resource_summary_list,
-                product_information_list: self.product_information_list,
-                automated_discovery_information: self.automated_discovery_information,
+                license_configuration_id: self.license_configuration_id
+                ,
+                license_configuration_arn: self.license_configuration_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                license_counting_type: self.license_counting_type
+                ,
+                license_rules: self.license_rules
+                ,
+                license_count: self.license_count
+                ,
+                license_count_hard_limit: self.license_count_hard_limit
+                ,
+                disassociate_when_not_found: self.disassociate_when_not_found
+                ,
+                consumed_licenses: self.consumed_licenses
+                ,
+                status: self.status
+                ,
+                owner_account_id: self.owner_account_id
+                ,
+                consumed_license_summary_list: self.consumed_license_summary_list
+                ,
+                managed_resource_summary_list: self.managed_resource_summary_list
+                ,
+                product_information_list: self.product_information_list
+                ,
+                automated_discovery_information: self.automated_discovery_information
+                ,
             }
         }
     }
+    
+    
 }
 impl LicenseConfiguration {
     /// Creates a new builder-style object to manufacture [`LicenseConfiguration`](crate::model::LicenseConfiguration).
@@ -5378,20 +4977,20 @@ impl LicenseConfiguration {
 /// <p>Describes automated discovery.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutomatedDiscoveryInformation {
+pub struct AutomatedDiscoveryInformation  {
     /// <p>Time that automated discovery last ran.</p>
     #[doc(hidden)]
     pub last_run_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AutomatedDiscoveryInformation {
     /// <p>Time that automated discovery last ran.</p>
-    pub fn last_run_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_run_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_run_time.as_ref()
     }
 }
 /// See [`AutomatedDiscoveryInformation`](crate::model::AutomatedDiscoveryInformation).
 pub mod automated_discovery_information {
-
+    
     /// A builder for [`AutomatedDiscoveryInformation`](crate::model::AutomatedDiscoveryInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5404,20 +5003,19 @@ pub mod automated_discovery_information {
             self
         }
         /// <p>Time that automated discovery last ran.</p>
-        pub fn set_last_run_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_run_time = input;
-            self
+        pub fn set_last_run_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_run_time = input; self
         }
         /// Consumes the builder and constructs a [`AutomatedDiscoveryInformation`](crate::model::AutomatedDiscoveryInformation).
         pub fn build(self) -> crate::model::AutomatedDiscoveryInformation {
             crate::model::AutomatedDiscoveryInformation {
-                last_run_time: self.last_run_time,
+                last_run_time: self.last_run_time
+                ,
             }
         }
     }
+    
+    
 }
 impl AutomatedDiscoveryInformation {
     /// Creates a new builder-style object to manufacture [`AutomatedDiscoveryInformation`](crate::model::AutomatedDiscoveryInformation).
@@ -5429,7 +5027,7 @@ impl AutomatedDiscoveryInformation {
 /// <p>Summary information about a managed resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ManagedResourceSummary {
+pub struct ManagedResourceSummary  {
     /// <p>Type of resource associated with a license.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
@@ -5439,7 +5037,7 @@ pub struct ManagedResourceSummary {
 }
 impl ManagedResourceSummary {
     /// <p>Type of resource associated with a license.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Number of resources associated with licenses.</p>
@@ -5449,7 +5047,7 @@ impl ManagedResourceSummary {
 }
 /// See [`ManagedResourceSummary`](crate::model::ManagedResourceSummary).
 pub mod managed_resource_summary {
-
+    
     /// A builder for [`ManagedResourceSummary`](crate::model::ManagedResourceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5463,12 +5061,8 @@ pub mod managed_resource_summary {
             self
         }
         /// <p>Type of resource associated with a license.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>Number of resources associated with licenses.</p>
         pub fn association_count(mut self, input: i64) -> Self {
@@ -5477,17 +5071,20 @@ pub mod managed_resource_summary {
         }
         /// <p>Number of resources associated with licenses.</p>
         pub fn set_association_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.association_count = input;
-            self
+            self.association_count = input; self
         }
         /// Consumes the builder and constructs a [`ManagedResourceSummary`](crate::model::ManagedResourceSummary).
         pub fn build(self) -> crate::model::ManagedResourceSummary {
             crate::model::ManagedResourceSummary {
-                resource_type: self.resource_type,
-                association_count: self.association_count,
+                resource_type: self.resource_type
+                ,
+                association_count: self.association_count
+                ,
             }
         }
     }
+    
+    
 }
 impl ManagedResourceSummary {
     /// Creates a new builder-style object to manufacture [`ManagedResourceSummary`](crate::model::ManagedResourceSummary).
@@ -5499,7 +5096,7 @@ impl ManagedResourceSummary {
 /// <p>Details about license consumption.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConsumedLicenseSummary {
+pub struct ConsumedLicenseSummary  {
     /// <p>Resource type of the resource consuming a license.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::ResourceType>,
@@ -5509,7 +5106,7 @@ pub struct ConsumedLicenseSummary {
 }
 impl ConsumedLicenseSummary {
     /// <p>Resource type of the resource consuming a license.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Number of licenses consumed by the resource.</p>
@@ -5519,7 +5116,7 @@ impl ConsumedLicenseSummary {
 }
 /// See [`ConsumedLicenseSummary`](crate::model::ConsumedLicenseSummary).
 pub mod consumed_license_summary {
-
+    
     /// A builder for [`ConsumedLicenseSummary`](crate::model::ConsumedLicenseSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5533,12 +5130,8 @@ pub mod consumed_license_summary {
             self
         }
         /// <p>Resource type of the resource consuming a license.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>Number of licenses consumed by the resource.</p>
         pub fn consumed_licenses(mut self, input: i64) -> Self {
@@ -5547,17 +5140,20 @@ pub mod consumed_license_summary {
         }
         /// <p>Number of licenses consumed by the resource.</p>
         pub fn set_consumed_licenses(mut self, input: std::option::Option<i64>) -> Self {
-            self.consumed_licenses = input;
-            self
+            self.consumed_licenses = input; self
         }
         /// Consumes the builder and constructs a [`ConsumedLicenseSummary`](crate::model::ConsumedLicenseSummary).
         pub fn build(self) -> crate::model::ConsumedLicenseSummary {
             crate::model::ConsumedLicenseSummary {
-                resource_type: self.resource_type,
-                consumed_licenses: self.consumed_licenses,
+                resource_type: self.resource_type
+                ,
+                consumed_licenses: self.consumed_licenses
+                ,
             }
         }
     }
+    
+    
 }
 impl ConsumedLicenseSummary {
     /// Creates a new builder-style object to manufacture [`ConsumedLicenseSummary`](crate::model::ConsumedLicenseSummary).
@@ -5572,9 +5168,9 @@ impl ConsumedLicenseSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let licensecountingtype = unimplemented!();
 /// match licensecountingtype {
@@ -5598,22 +5194,14 @@ impl ConsumedLicenseSummary {
 /// Specifically, when `licensecountingtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LicenseCountingType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LicenseCountingType {
     #[allow(missing_docs)] // documentation missing in model
     Core,
@@ -5624,7 +5212,7 @@ pub enum LicenseCountingType {
     #[allow(missing_docs)] // documentation missing in model
     Vcpu,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LicenseCountingType {
     fn from(s: &str) -> Self {
@@ -5633,19 +5221,17 @@ impl std::convert::From<&str> for LicenseCountingType {
             "Instance" => LicenseCountingType::Instance,
             "Socket" => LicenseCountingType::Socket,
             "vCPU" => LicenseCountingType::Vcpu,
-            other => {
-                LicenseCountingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => LicenseCountingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LicenseCountingType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LicenseCountingType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LicenseCountingType::from(s))
+                }
+            }
 impl LicenseCountingType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5654,12 +5240,14 @@ impl LicenseCountingType {
             LicenseCountingType::Instance => "Instance",
             LicenseCountingType::Socket => "Socket",
             LicenseCountingType::Vcpu => "vCPU",
-            LicenseCountingType::Unknown(value) => value.as_str(),
+            LicenseCountingType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Core", "Instance", "Socket", "vCPU"]
+        &[
+            "Core", "Instance", "Socket", "vCPU"
+        ]
     }
 }
 impl AsRef<str> for LicenseCountingType {
@@ -5671,7 +5259,7 @@ impl AsRef<str> for LicenseCountingType {
 /// <p>Describes the failure of a license operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LicenseOperationFailure {
+pub struct LicenseOperationFailure  {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -5699,41 +5287,41 @@ pub struct LicenseOperationFailure {
 }
 impl LicenseOperationFailure {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Error message.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>Failure time.</p>
-    pub fn failure_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn failure_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.failure_time.as_ref()
     }
     /// <p>Name of the operation.</p>
-    pub fn operation_name(&self) -> std::option::Option<&str> {
+    pub fn operation_name(&self) -> std::option::Option<& str> {
         self.operation_name.as_deref()
     }
     /// <p>ID of the Amazon Web Services account that owns the resource.</p>
-    pub fn resource_owner_id(&self) -> std::option::Option<&str> {
+    pub fn resource_owner_id(&self) -> std::option::Option<& str> {
         self.resource_owner_id.as_deref()
     }
     /// <p>The requester is "License Manager Automated Discovery".</p>
-    pub fn operation_requested_by(&self) -> std::option::Option<&str> {
+    pub fn operation_requested_by(&self) -> std::option::Option<& str> {
         self.operation_requested_by.as_deref()
     }
     /// <p>Reserved.</p>
-    pub fn metadata_list(&self) -> std::option::Option<&[crate::model::Metadata]> {
+    pub fn metadata_list(&self) -> std::option::Option<& [crate::model::Metadata]> {
         self.metadata_list.as_deref()
     }
 }
 /// See [`LicenseOperationFailure`](crate::model::LicenseOperationFailure).
 pub mod license_operation_failure {
-
+    
     /// A builder for [`LicenseOperationFailure`](crate::model::LicenseOperationFailure).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5754,8 +5342,7 @@ pub mod license_operation_failure {
         }
         /// <p>Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>Resource type.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -5763,12 +5350,8 @@ pub mod license_operation_failure {
             self
         }
         /// <p>Resource type.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>Error message.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5776,12 +5359,8 @@ pub mod license_operation_failure {
             self
         }
         /// <p>Error message.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// <p>Failure time.</p>
         pub fn failure_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5789,12 +5368,8 @@ pub mod license_operation_failure {
             self
         }
         /// <p>Failure time.</p>
-        pub fn set_failure_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.failure_time = input;
-            self
+        pub fn set_failure_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.failure_time = input; self
         }
         /// <p>Name of the operation.</p>
         pub fn operation_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5802,12 +5377,8 @@ pub mod license_operation_failure {
             self
         }
         /// <p>Name of the operation.</p>
-        pub fn set_operation_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.operation_name = input;
-            self
+        pub fn set_operation_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_name = input; self
         }
         /// <p>ID of the Amazon Web Services account that owns the resource.</p>
         pub fn resource_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5815,12 +5386,8 @@ pub mod license_operation_failure {
             self
         }
         /// <p>ID of the Amazon Web Services account that owns the resource.</p>
-        pub fn set_resource_owner_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner_id = input;
-            self
+        pub fn set_resource_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner_id = input; self
         }
         /// <p>The requester is "License Manager Automated Discovery".</p>
         pub fn operation_requested_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5828,12 +5395,8 @@ pub mod license_operation_failure {
             self
         }
         /// <p>The requester is "License Manager Automated Discovery".</p>
-        pub fn set_operation_requested_by(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.operation_requested_by = input;
-            self
+        pub fn set_operation_requested_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_requested_by = input; self
         }
         /// Appends an item to `metadata_list`.
         ///
@@ -5842,32 +5405,38 @@ pub mod license_operation_failure {
         /// <p>Reserved.</p>
         pub fn metadata_list(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.metadata_list.unwrap_or_default();
-            v.push(input);
-            self.metadata_list = Some(v);
-            self
+                            v.push(input);
+                            self.metadata_list = Some(v);
+                            self
         }
         /// <p>Reserved.</p>
-        pub fn set_metadata_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
-        ) -> Self {
-            self.metadata_list = input;
-            self
+        pub fn set_metadata_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Metadata>>) -> Self {
+            self.metadata_list = input; self
         }
         /// Consumes the builder and constructs a [`LicenseOperationFailure`](crate::model::LicenseOperationFailure).
         pub fn build(self) -> crate::model::LicenseOperationFailure {
             crate::model::LicenseOperationFailure {
-                resource_arn: self.resource_arn,
-                resource_type: self.resource_type,
-                error_message: self.error_message,
-                failure_time: self.failure_time,
-                operation_name: self.operation_name,
-                resource_owner_id: self.resource_owner_id,
-                operation_requested_by: self.operation_requested_by,
-                metadata_list: self.metadata_list,
+                resource_arn: self.resource_arn
+                ,
+                resource_type: self.resource_type
+                ,
+                error_message: self.error_message
+                ,
+                failure_time: self.failure_time
+                ,
+                operation_name: self.operation_name
+                ,
+                resource_owner_id: self.resource_owner_id
+                ,
+                operation_requested_by: self.operation_requested_by
+                ,
+                metadata_list: self.metadata_list
+                ,
             }
         }
     }
+    
+    
 }
 impl LicenseOperationFailure {
     /// Creates a new builder-style object to manufacture [`LicenseOperationFailure`](crate::model::LicenseOperationFailure).
@@ -5879,7 +5448,7 @@ impl LicenseOperationFailure {
 /// <p>Describes an association with a license configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LicenseConfigurationAssociation {
+pub struct LicenseConfigurationAssociation  {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -5898,29 +5467,29 @@ pub struct LicenseConfigurationAssociation {
 }
 impl LicenseConfigurationAssociation {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Type of server resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>ID of the Amazon Web Services account that owns the resource consuming licenses.</p>
-    pub fn resource_owner_id(&self) -> std::option::Option<&str> {
+    pub fn resource_owner_id(&self) -> std::option::Option<& str> {
         self.resource_owner_id.as_deref()
     }
     /// <p>Time when the license configuration was associated with the resource.</p>
-    pub fn association_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn association_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.association_time.as_ref()
     }
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
-    pub fn ami_association_scope(&self) -> std::option::Option<&str> {
+    pub fn ami_association_scope(&self) -> std::option::Option<& str> {
         self.ami_association_scope.as_deref()
     }
 }
 /// See [`LicenseConfigurationAssociation`](crate::model::LicenseConfigurationAssociation).
 pub mod license_configuration_association {
-
+    
     /// A builder for [`LicenseConfigurationAssociation`](crate::model::LicenseConfigurationAssociation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5938,8 +5507,7 @@ pub mod license_configuration_association {
         }
         /// <p>Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>Type of server resource.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -5947,12 +5515,8 @@ pub mod license_configuration_association {
             self
         }
         /// <p>Type of server resource.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>ID of the Amazon Web Services account that owns the resource consuming licenses.</p>
         pub fn resource_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5960,12 +5524,8 @@ pub mod license_configuration_association {
             self
         }
         /// <p>ID of the Amazon Web Services account that owns the resource consuming licenses.</p>
-        pub fn set_resource_owner_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner_id = input;
-            self
+        pub fn set_resource_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner_id = input; self
         }
         /// <p>Time when the license configuration was associated with the resource.</p>
         pub fn association_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5973,12 +5533,8 @@ pub mod license_configuration_association {
             self
         }
         /// <p>Time when the license configuration was associated with the resource.</p>
-        pub fn set_association_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.association_time = input;
-            self
+        pub fn set_association_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.association_time = input; self
         }
         /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
         pub fn ami_association_scope(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5986,24 +5542,27 @@ pub mod license_configuration_association {
             self
         }
         /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
-        pub fn set_ami_association_scope(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ami_association_scope = input;
-            self
+        pub fn set_ami_association_scope(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ami_association_scope = input; self
         }
         /// Consumes the builder and constructs a [`LicenseConfigurationAssociation`](crate::model::LicenseConfigurationAssociation).
         pub fn build(self) -> crate::model::LicenseConfigurationAssociation {
             crate::model::LicenseConfigurationAssociation {
-                resource_arn: self.resource_arn,
-                resource_type: self.resource_type,
-                resource_owner_id: self.resource_owner_id,
-                association_time: self.association_time,
-                ami_association_scope: self.ami_association_scope,
+                resource_arn: self.resource_arn
+                ,
+                resource_type: self.resource_type
+                ,
+                resource_owner_id: self.resource_owner_id
+                ,
+                association_time: self.association_time
+                ,
+                ami_association_scope: self.ami_association_scope
+                ,
             }
         }
     }
+    
+    
 }
 impl LicenseConfigurationAssociation {
     /// Creates a new builder-style object to manufacture [`LicenseConfigurationAssociation`](crate::model::LicenseConfigurationAssociation).
@@ -6015,25 +5574,24 @@ impl LicenseConfigurationAssociation {
 /// <p>Describes the entitlement usage associated with a license.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LicenseUsage {
+pub struct LicenseUsage  {
     /// <p>License entitlement usages.</p>
     #[doc(hidden)]
     pub entitlement_usages: std::option::Option<std::vec::Vec<crate::model::EntitlementUsage>>,
 }
 impl LicenseUsage {
     /// <p>License entitlement usages.</p>
-    pub fn entitlement_usages(&self) -> std::option::Option<&[crate::model::EntitlementUsage]> {
+    pub fn entitlement_usages(&self) -> std::option::Option<& [crate::model::EntitlementUsage]> {
         self.entitlement_usages.as_deref()
     }
 }
 /// See [`LicenseUsage`](crate::model::LicenseUsage).
 pub mod license_usage {
-
+    
     /// A builder for [`LicenseUsage`](crate::model::LicenseUsage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entitlement_usages:
-            std::option::Option<std::vec::Vec<crate::model::EntitlementUsage>>,
+        pub(crate) entitlement_usages: std::option::Option<std::vec::Vec<crate::model::EntitlementUsage>>,
     }
     impl Builder {
         /// Appends an item to `entitlement_usages`.
@@ -6043,25 +5601,24 @@ pub mod license_usage {
         /// <p>License entitlement usages.</p>
         pub fn entitlement_usages(mut self, input: crate::model::EntitlementUsage) -> Self {
             let mut v = self.entitlement_usages.unwrap_or_default();
-            v.push(input);
-            self.entitlement_usages = Some(v);
-            self
+                            v.push(input);
+                            self.entitlement_usages = Some(v);
+                            self
         }
         /// <p>License entitlement usages.</p>
-        pub fn set_entitlement_usages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EntitlementUsage>>,
-        ) -> Self {
-            self.entitlement_usages = input;
-            self
+        pub fn set_entitlement_usages(mut self, input: std::option::Option<std::vec::Vec<crate::model::EntitlementUsage>>) -> Self {
+            self.entitlement_usages = input; self
         }
         /// Consumes the builder and constructs a [`LicenseUsage`](crate::model::LicenseUsage).
         pub fn build(self) -> crate::model::LicenseUsage {
             crate::model::LicenseUsage {
-                entitlement_usages: self.entitlement_usages,
+                entitlement_usages: self.entitlement_usages
+                ,
             }
         }
     }
+    
+    
 }
 impl LicenseUsage {
     /// Creates a new builder-style object to manufacture [`LicenseUsage`](crate::model::LicenseUsage).
@@ -6073,7 +5630,7 @@ impl LicenseUsage {
 /// <p>Usage associated with an entitlement resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntitlementUsage {
+pub struct EntitlementUsage  {
     /// <p>Entitlement usage name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6089,25 +5646,25 @@ pub struct EntitlementUsage {
 }
 impl EntitlementUsage {
     /// <p>Entitlement usage name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Resource usage consumed.</p>
-    pub fn consumed_value(&self) -> std::option::Option<&str> {
+    pub fn consumed_value(&self) -> std::option::Option<& str> {
         self.consumed_value.as_deref()
     }
     /// <p>Maximum entitlement usage count.</p>
-    pub fn max_count(&self) -> std::option::Option<&str> {
+    pub fn max_count(&self) -> std::option::Option<& str> {
         self.max_count.as_deref()
     }
     /// <p>Entitlement usage unit.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::model::EntitlementDataUnit> {
+    pub fn unit(&self) -> std::option::Option<& crate::model::EntitlementDataUnit> {
         self.unit.as_ref()
     }
 }
 /// See [`EntitlementUsage`](crate::model::EntitlementUsage).
 pub mod entitlement_usage {
-
+    
     /// A builder for [`EntitlementUsage`](crate::model::EntitlementUsage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6124,8 +5681,7 @@ pub mod entitlement_usage {
         }
         /// <p>Entitlement usage name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Resource usage consumed.</p>
         pub fn consumed_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6133,12 +5689,8 @@ pub mod entitlement_usage {
             self
         }
         /// <p>Resource usage consumed.</p>
-        pub fn set_consumed_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.consumed_value = input;
-            self
+        pub fn set_consumed_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.consumed_value = input; self
         }
         /// <p>Maximum entitlement usage count.</p>
         pub fn max_count(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6147,8 +5699,7 @@ pub mod entitlement_usage {
         }
         /// <p>Maximum entitlement usage count.</p>
         pub fn set_max_count(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.max_count = input;
-            self
+            self.max_count = input; self
         }
         /// <p>Entitlement usage unit.</p>
         pub fn unit(mut self, input: crate::model::EntitlementDataUnit) -> Self {
@@ -6156,23 +5707,25 @@ pub mod entitlement_usage {
             self
         }
         /// <p>Entitlement usage unit.</p>
-        pub fn set_unit(
-            mut self,
-            input: std::option::Option<crate::model::EntitlementDataUnit>,
-        ) -> Self {
-            self.unit = input;
-            self
+        pub fn set_unit(mut self, input: std::option::Option<crate::model::EntitlementDataUnit>) -> Self {
+            self.unit = input; self
         }
         /// Consumes the builder and constructs a [`EntitlementUsage`](crate::model::EntitlementUsage).
         pub fn build(self) -> crate::model::EntitlementUsage {
             crate::model::EntitlementUsage {
-                name: self.name,
-                consumed_value: self.consumed_value,
-                max_count: self.max_count,
-                unit: self.unit,
+                name: self.name
+                ,
+                consumed_value: self.consumed_value
+                ,
+                max_count: self.max_count
+                ,
+                unit: self.unit
+                ,
             }
         }
     }
+    
+    
 }
 impl EntitlementUsage {
     /// Creates a new builder-style object to manufacture [`EntitlementUsage`](crate::model::EntitlementUsage).
@@ -6187,9 +5740,9 @@ impl EntitlementUsage {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let entitlementdataunit = unimplemented!();
 /// match entitlementdataunit {
@@ -6236,22 +5789,14 @@ impl EntitlementUsage {
 /// Specifically, when `entitlementdataunit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EntitlementDataUnit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EntitlementDataUnit {
     #[allow(missing_docs)] // documentation missing in model
     Bits,
@@ -6308,7 +5853,7 @@ pub enum EntitlementDataUnit {
     #[allow(missing_docs)] // documentation missing in model
     TerabytesPerSecond,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EntitlementDataUnit {
     fn from(s: &str) -> Self {
@@ -6340,19 +5885,17 @@ impl std::convert::From<&str> for EntitlementDataUnit {
             "Terabits/Second" => EntitlementDataUnit::TerabitsPerSecond,
             "Terabytes" => EntitlementDataUnit::Terabytes,
             "Terabytes/Second" => EntitlementDataUnit::TerabytesPerSecond,
-            other => {
-                EntitlementDataUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => EntitlementDataUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EntitlementDataUnit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EntitlementDataUnit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EntitlementDataUnit::from(s))
+                }
+            }
 impl EntitlementDataUnit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6384,39 +5927,13 @@ impl EntitlementDataUnit {
             EntitlementDataUnit::TerabitsPerSecond => "Terabits/Second",
             EntitlementDataUnit::Terabytes => "Terabytes",
             EntitlementDataUnit::TerabytesPerSecond => "Terabytes/Second",
-            EntitlementDataUnit::Unknown(value) => value.as_str(),
+            EntitlementDataUnit::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Bits",
-            "Bits/Second",
-            "Bytes",
-            "Bytes/Second",
-            "Count",
-            "Count/Second",
-            "Gigabits",
-            "Gigabits/Second",
-            "Gigabytes",
-            "Gigabytes/Second",
-            "Kilobits",
-            "Kilobits/Second",
-            "Kilobytes",
-            "Kilobytes/Second",
-            "Megabits",
-            "Megabits/Second",
-            "Megabytes",
-            "Megabytes/Second",
-            "Microseconds",
-            "Milliseconds",
-            "None",
-            "Percent",
-            "Seconds",
-            "Terabits",
-            "Terabits/Second",
-            "Terabytes",
-            "Terabytes/Second",
+            "Bits", "Bits/Second", "Bytes", "Bytes/Second", "Count", "Count/Second", "Gigabits", "Gigabits/Second", "Gigabytes", "Gigabytes/Second", "Kilobits", "Kilobits/Second", "Kilobytes", "Kilobytes/Second", "Megabits", "Megabits/Second", "Megabytes", "Megabytes/Second", "Microseconds", "Milliseconds", "None", "Percent", "Seconds", "Terabits", "Terabits/Second", "Terabytes", "Terabytes/Second"
         ]
     }
 }
@@ -6432,9 +5949,9 @@ impl AsRef<str> for EntitlementDataUnit {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let licensedeletionstatus = unimplemented!();
 /// match licensedeletionstatus {
@@ -6456,60 +5973,52 @@ impl AsRef<str> for EntitlementDataUnit {
 /// Specifically, when `licensedeletionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LicenseDeletionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LicenseDeletionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     PendingDelete,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LicenseDeletionStatus {
     fn from(s: &str) -> Self {
         match s {
             "DELETED" => LicenseDeletionStatus::Deleted,
             "PENDING_DELETE" => LicenseDeletionStatus::PendingDelete,
-            other => {
-                LicenseDeletionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => LicenseDeletionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LicenseDeletionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LicenseDeletionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LicenseDeletionStatus::from(s))
+                }
+            }
 impl LicenseDeletionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LicenseDeletionStatus::Deleted => "DELETED",
             LicenseDeletionStatus::PendingDelete => "PENDING_DELETE",
-            LicenseDeletionStatus::Unknown(value) => value.as_str(),
+            LicenseDeletionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELETED", "PENDING_DELETE"]
+        &[
+            "DELETED", "PENDING_DELETE"
+        ]
     }
 }
 impl AsRef<str> for LicenseDeletionStatus {
@@ -6524,9 +6033,9 @@ impl AsRef<str> for LicenseDeletionStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tokentype = unimplemented!();
 /// match tokentype {
@@ -6547,54 +6056,48 @@ impl AsRef<str> for LicenseDeletionStatus {
 /// Specifically, when `tokentype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TokenType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TokenType {
     #[allow(missing_docs)] // documentation missing in model
     RefreshToken,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TokenType {
     fn from(s: &str) -> Self {
         match s {
             "REFRESH_TOKEN" => TokenType::RefreshToken,
-            other => TokenType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TokenType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TokenType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TokenType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TokenType::from(s))
+                }
+            }
 impl TokenType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TokenType::RefreshToken => "REFRESH_TOKEN",
-            TokenType::Unknown(value) => value.as_str(),
+            TokenType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["REFRESH_TOKEN"]
+        &[
+            "REFRESH_TOKEN"
+        ]
     }
 }
 impl AsRef<str> for TokenType {
@@ -6606,7 +6109,7 @@ impl AsRef<str> for TokenType {
 /// <p>Details about the issuer of a license.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Issuer {
+pub struct Issuer  {
     /// <p>Issuer name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6616,17 +6119,17 @@ pub struct Issuer {
 }
 impl Issuer {
     /// <p>Issuer name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
-    pub fn sign_key(&self) -> std::option::Option<&str> {
+    pub fn sign_key(&self) -> std::option::Option<& str> {
         self.sign_key.as_deref()
     }
 }
 /// See [`Issuer`](crate::model::Issuer).
 pub mod issuer {
-
+    
     /// A builder for [`Issuer`](crate::model::Issuer).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6641,8 +6144,7 @@ pub mod issuer {
         }
         /// <p>Issuer name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
         pub fn sign_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6651,17 +6153,20 @@ pub mod issuer {
         }
         /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
         pub fn set_sign_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sign_key = input;
-            self
+            self.sign_key = input; self
         }
         /// Consumes the builder and constructs a [`Issuer`](crate::model::Issuer).
         pub fn build(self) -> crate::model::Issuer {
             crate::model::Issuer {
-                name: self.name,
-                sign_key: self.sign_key,
+                name: self.name
+                ,
+                sign_key: self.sign_key
+                ,
             }
         }
     }
+    
+    
 }
 impl Issuer {
     /// Creates a new builder-style object to manufacture [`Issuer`](crate::model::Issuer).
@@ -6673,7 +6178,7 @@ impl Issuer {
 /// <p>Data associated with an entitlement resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntitlementData {
+pub struct EntitlementData  {
     /// <p>Entitlement data name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6686,21 +6191,21 @@ pub struct EntitlementData {
 }
 impl EntitlementData {
     /// <p>Entitlement data name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Entitlement data value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Entitlement data unit.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::model::EntitlementDataUnit> {
+    pub fn unit(&self) -> std::option::Option<& crate::model::EntitlementDataUnit> {
         self.unit.as_ref()
     }
 }
 /// See [`EntitlementData`](crate::model::EntitlementData).
 pub mod entitlement_data {
-
+    
     /// A builder for [`EntitlementData`](crate::model::EntitlementData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6716,8 +6221,7 @@ pub mod entitlement_data {
         }
         /// <p>Entitlement data name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Entitlement data value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6726,8 +6230,7 @@ pub mod entitlement_data {
         }
         /// <p>Entitlement data value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>Entitlement data unit.</p>
         pub fn unit(mut self, input: crate::model::EntitlementDataUnit) -> Self {
@@ -6735,22 +6238,23 @@ pub mod entitlement_data {
             self
         }
         /// <p>Entitlement data unit.</p>
-        pub fn set_unit(
-            mut self,
-            input: std::option::Option<crate::model::EntitlementDataUnit>,
-        ) -> Self {
-            self.unit = input;
-            self
+        pub fn set_unit(mut self, input: std::option::Option<crate::model::EntitlementDataUnit>) -> Self {
+            self.unit = input; self
         }
         /// Consumes the builder and constructs a [`EntitlementData`](crate::model::EntitlementData).
         pub fn build(self) -> crate::model::EntitlementData {
             crate::model::EntitlementData {
-                name: self.name,
-                value: self.value,
-                unit: self.unit,
+                name: self.name
+                ,
+                value: self.value
+                ,
+                unit: self.unit
+                ,
             }
         }
     }
+    
+    
 }
 impl EntitlementData {
     /// Creates a new builder-style object to manufacture [`EntitlementData`](crate::model::EntitlementData).
@@ -6765,9 +6269,9 @@ impl EntitlementData {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let checkouttype = unimplemented!();
 /// match checkouttype {
@@ -6789,58 +6293,52 @@ impl EntitlementData {
 /// Specifically, when `checkouttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CheckoutType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CheckoutType {
     #[allow(missing_docs)] // documentation missing in model
     Perpetual,
     #[allow(missing_docs)] // documentation missing in model
     Provisional,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CheckoutType {
     fn from(s: &str) -> Self {
         match s {
             "PERPETUAL" => CheckoutType::Perpetual,
             "PROVISIONAL" => CheckoutType::Provisional,
-            other => CheckoutType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CheckoutType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CheckoutType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CheckoutType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CheckoutType::from(s))
+                }
+            }
 impl CheckoutType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CheckoutType::Perpetual => "PERPETUAL",
             CheckoutType::Provisional => "PROVISIONAL",
-            CheckoutType::Unknown(value) => value.as_str(),
+            CheckoutType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PERPETUAL", "PROVISIONAL"]
+        &[
+            "PERPETUAL", "PROVISIONAL"
+        ]
     }
 }
 impl AsRef<str> for CheckoutType {
@@ -6855,9 +6353,9 @@ impl AsRef<str> for CheckoutType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let digitalsignaturemethod = unimplemented!();
 /// match digitalsignaturemethod {
@@ -6878,56 +6376,48 @@ impl AsRef<str> for CheckoutType {
 /// Specifically, when `digitalsignaturemethod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DigitalSignatureMethod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DigitalSignatureMethod {
     #[allow(missing_docs)] // documentation missing in model
     JwtPs384,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DigitalSignatureMethod {
     fn from(s: &str) -> Self {
         match s {
             "JWT_PS384" => DigitalSignatureMethod::JwtPs384,
-            other => {
-                DigitalSignatureMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DigitalSignatureMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DigitalSignatureMethod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DigitalSignatureMethod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DigitalSignatureMethod::from(s))
+                }
+            }
 impl DigitalSignatureMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DigitalSignatureMethod::JwtPs384 => "JWT_PS384",
-            DigitalSignatureMethod::Unknown(value) => value.as_str(),
+            DigitalSignatureMethod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["JWT_PS384"]
+        &[
+            "JWT_PS384"
+        ]
     }
 }
 impl AsRef<str> for DigitalSignatureMethod {
@@ -6935,3 +6425,4 @@ impl AsRef<str> for DigitalSignatureMethod {
         self.as_str()
     }
 }
+

@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct ViewBillingError {
     /// Kind of error that occurred.
-    pub kind: ViewBillingErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ViewBillingErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ViewBillingError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ViewBillingErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -22,21 +22,25 @@ impl aws_smithy_http::result::CreateUnhandledError for ViewBillingError {
 pub enum ViewBillingErrorKind {
     /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ViewBillingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ViewBillingErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            ViewBillingErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ViewBillingErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            ViewBillingErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -50,46 +54,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for ViewBillingError {
 }
 impl ViewBillingError {
     /// Creates a new `ViewBillingError`.
-    pub fn new(kind: ViewBillingErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ViewBillingError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ViewBillingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ViewBillingError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ViewBillingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ViewBillingErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ViewBillingError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ViewBillingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ViewBillingError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ViewBillingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ViewBillingErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ViewBillingErrorKind::InvalidInput(_))
@@ -98,8 +102,12 @@ impl ViewBillingError {
 impl std::error::Error for ViewBillingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ViewBillingErrorKind::InvalidInput(_inner) => Some(_inner),
-            ViewBillingErrorKind::Unhandled(_inner) => Some(_inner),
+            ViewBillingErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            ViewBillingErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -107,22 +115,20 @@ impl std::error::Error for ViewBillingError {
 /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidInput {
+pub struct InvalidInput  {
     /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidInput {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidInput")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -132,7 +138,7 @@ impl std::fmt::Display for InvalidInput {
 impl std::error::Error for InvalidInput {}
 /// See [`InvalidInput`](crate::error::InvalidInput).
 pub mod invalid_input {
-
+    
     /// A builder for [`InvalidInput`](crate::error::InvalidInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -146,16 +152,18 @@ pub mod invalid_input {
         }
         /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidInput`](crate::error::InvalidInput).
         pub fn build(self) -> crate::error::InvalidInput {
             crate::error::InvalidInput {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidInput {
     /// Creates a new builder-style object to manufacture [`InvalidInput`](crate::error::InvalidInput).
@@ -169,15 +177,15 @@ impl InvalidInput {
 #[derive(std::fmt::Debug)]
 pub struct UpdateTagsForDomainError {
     /// Kind of error that occurred.
-    pub kind: UpdateTagsForDomainErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateTagsForDomainErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateTagsForDomainError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -191,23 +199,31 @@ pub enum UpdateTagsForDomainErrorKind {
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTagsForDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateTagsForDomainErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            UpdateTagsForDomainErrorKind::OperationLimitExceeded(_inner) => _inner.fmt(f),
-            UpdateTagsForDomainErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            UpdateTagsForDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateTagsForDomainErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTagsForDomainErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTagsForDomainErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTagsForDomainErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -221,56 +237,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateTagsForDomainError {
 }
 impl UpdateTagsForDomainError {
     /// Creates a new `UpdateTagsForDomainError`.
-    pub fn new(kind: UpdateTagsForDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateTagsForDomainError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateTagsForDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateTagsForDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateTagsForDomainError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateTagsForDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateTagsForDomainErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, UpdateTagsForDomainErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `UpdateTagsForDomainErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTagsForDomainErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, UpdateTagsForDomainErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `UpdateTagsForDomainErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
@@ -280,10 +293,18 @@ impl UpdateTagsForDomainError {
 impl std::error::Error for UpdateTagsForDomainError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateTagsForDomainErrorKind::InvalidInput(_inner) => Some(_inner),
-            UpdateTagsForDomainErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
-            UpdateTagsForDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            UpdateTagsForDomainErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateTagsForDomainErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTagsForDomainErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTagsForDomainErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTagsForDomainErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -291,22 +312,20 @@ impl std::error::Error for UpdateTagsForDomainError {
 /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedTld {
+pub struct UnsupportedTld  {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnsupportedTld {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnsupportedTld {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedTld [UnsupportedTLD]")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -316,7 +335,7 @@ impl std::fmt::Display for UnsupportedTld {
 impl std::error::Error for UnsupportedTld {}
 /// See [`UnsupportedTld`](crate::error::UnsupportedTld).
 pub mod unsupported_tld {
-
+    
     /// A builder for [`UnsupportedTld`](crate::error::UnsupportedTld).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -330,16 +349,18 @@ pub mod unsupported_tld {
         }
         /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnsupportedTld`](crate::error::UnsupportedTld).
         pub fn build(self) -> crate::error::UnsupportedTld {
             crate::error::UnsupportedTld {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnsupportedTld {
     /// Creates a new builder-style object to manufacture [`UnsupportedTld`](crate::error::UnsupportedTld).
@@ -351,22 +372,20 @@ impl UnsupportedTld {
 /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OperationLimitExceeded {
+pub struct OperationLimitExceeded  {
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl OperationLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for OperationLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OperationLimitExceeded")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -376,7 +395,7 @@ impl std::fmt::Display for OperationLimitExceeded {
 impl std::error::Error for OperationLimitExceeded {}
 /// See [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
 pub mod operation_limit_exceeded {
-
+    
     /// A builder for [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -390,16 +409,18 @@ pub mod operation_limit_exceeded {
         }
         /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
         pub fn build(self) -> crate::error::OperationLimitExceeded {
             crate::error::OperationLimitExceeded {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl OperationLimitExceeded {
     /// Creates a new builder-style object to manufacture [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
@@ -413,15 +434,15 @@ impl OperationLimitExceeded {
 #[derive(std::fmt::Debug)]
 pub struct UpdateDomainNameserversError {
     /// Kind of error that occurred.
-    pub kind: UpdateDomainNameserversErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateDomainNameserversErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateDomainNameserversError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateDomainNameserversErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -439,25 +460,37 @@ pub enum UpdateDomainNameserversErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDomainNameserversError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateDomainNameserversErrorKind::DuplicateRequest(_inner) => _inner.fmt(f),
-            UpdateDomainNameserversErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            UpdateDomainNameserversErrorKind::OperationLimitExceeded(_inner) => _inner.fmt(f),
-            UpdateDomainNameserversErrorKind::TldRulesViolation(_inner) => _inner.fmt(f),
-            UpdateDomainNameserversErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            UpdateDomainNameserversErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateDomainNameserversErrorKind::DuplicateRequest(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDomainNameserversErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDomainNameserversErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDomainNameserversErrorKind::TldRulesViolation(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDomainNameserversErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDomainNameserversErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -471,95 +504,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateDomainNameserversError 
 }
 impl UpdateDomainNameserversError {
     /// Creates a new `UpdateDomainNameserversError`.
-    pub fn new(kind: UpdateDomainNameserversErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateDomainNameserversError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateDomainNameserversErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateDomainNameserversError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateDomainNameserversErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateDomainNameserversErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateDomainNameserversError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateDomainNameserversErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateDomainNameserversError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateDomainNameserversErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateDomainNameserversErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDomainNameserversErrorKind::DuplicateRequest(_)
-        )
+        matches!(&self.kind, UpdateDomainNameserversErrorKind::DuplicateRequest(_))
     }
     /// Returns `true` if the error kind is `UpdateDomainNameserversErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDomainNameserversErrorKind::InvalidInput(_)
-        )
+        matches!(&self.kind, UpdateDomainNameserversErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `UpdateDomainNameserversErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDomainNameserversErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, UpdateDomainNameserversErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `UpdateDomainNameserversErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDomainNameserversErrorKind::TldRulesViolation(_)
-        )
+        matches!(&self.kind, UpdateDomainNameserversErrorKind::TldRulesViolation(_))
     }
     /// Returns `true` if the error kind is `UpdateDomainNameserversErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDomainNameserversErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, UpdateDomainNameserversErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for UpdateDomainNameserversError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateDomainNameserversErrorKind::DuplicateRequest(_inner) => Some(_inner),
-            UpdateDomainNameserversErrorKind::InvalidInput(_inner) => Some(_inner),
-            UpdateDomainNameserversErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
-            UpdateDomainNameserversErrorKind::TldRulesViolation(_inner) => Some(_inner),
-            UpdateDomainNameserversErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            UpdateDomainNameserversErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateDomainNameserversErrorKind::DuplicateRequest(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDomainNameserversErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDomainNameserversErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDomainNameserversErrorKind::TldRulesViolation(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDomainNameserversErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDomainNameserversErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -567,22 +593,20 @@ impl std::error::Error for UpdateDomainNameserversError {
 /// <p>The top-level domain does not support this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TldRulesViolation {
+pub struct TldRulesViolation  {
     /// <p>The top-level domain does not support this operation.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TldRulesViolation {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TldRulesViolation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TldRulesViolation [TLDRulesViolation]")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -592,7 +616,7 @@ impl std::fmt::Display for TldRulesViolation {
 impl std::error::Error for TldRulesViolation {}
 /// See [`TldRulesViolation`](crate::error::TldRulesViolation).
 pub mod tld_rules_violation {
-
+    
     /// A builder for [`TldRulesViolation`](crate::error::TldRulesViolation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -606,16 +630,18 @@ pub mod tld_rules_violation {
         }
         /// <p>The top-level domain does not support this operation.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TldRulesViolation`](crate::error::TldRulesViolation).
         pub fn build(self) -> crate::error::TldRulesViolation {
             crate::error::TldRulesViolation {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TldRulesViolation {
     /// Creates a new builder-style object to manufacture [`TldRulesViolation`](crate::error::TldRulesViolation).
@@ -627,22 +653,20 @@ impl TldRulesViolation {
 /// <p>The request is already in progress for the domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DuplicateRequest {
+pub struct DuplicateRequest  {
     /// <p>The request is already in progress for the domain.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DuplicateRequest {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DuplicateRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateRequest")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -652,7 +676,7 @@ impl std::fmt::Display for DuplicateRequest {
 impl std::error::Error for DuplicateRequest {}
 /// See [`DuplicateRequest`](crate::error::DuplicateRequest).
 pub mod duplicate_request {
-
+    
     /// A builder for [`DuplicateRequest`](crate::error::DuplicateRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -666,16 +690,18 @@ pub mod duplicate_request {
         }
         /// <p>The request is already in progress for the domain.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DuplicateRequest`](crate::error::DuplicateRequest).
         pub fn build(self) -> crate::error::DuplicateRequest {
             crate::error::DuplicateRequest {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DuplicateRequest {
     /// Creates a new builder-style object to manufacture [`DuplicateRequest`](crate::error::DuplicateRequest).
@@ -689,17 +715,15 @@ impl DuplicateRequest {
 #[derive(std::fmt::Debug)]
 pub struct UpdateDomainContactPrivacyError {
     /// Kind of error that occurred.
-    pub kind: UpdateDomainContactPrivacyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateDomainContactPrivacyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateDomainContactPrivacyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateDomainContactPrivacyErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateDomainContactPrivacyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -717,25 +741,37 @@ pub enum UpdateDomainContactPrivacyErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDomainContactPrivacyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateDomainContactPrivacyErrorKind::DuplicateRequest(_inner) => _inner.fmt(f),
-            UpdateDomainContactPrivacyErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            UpdateDomainContactPrivacyErrorKind::OperationLimitExceeded(_inner) => _inner.fmt(f),
-            UpdateDomainContactPrivacyErrorKind::TldRulesViolation(_inner) => _inner.fmt(f),
-            UpdateDomainContactPrivacyErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            UpdateDomainContactPrivacyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateDomainContactPrivacyErrorKind::DuplicateRequest(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDomainContactPrivacyErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDomainContactPrivacyErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDomainContactPrivacyErrorKind::TldRulesViolation(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDomainContactPrivacyErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDomainContactPrivacyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -749,95 +785,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateDomainContactPrivacyErr
 }
 impl UpdateDomainContactPrivacyError {
     /// Creates a new `UpdateDomainContactPrivacyError`.
-    pub fn new(kind: UpdateDomainContactPrivacyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateDomainContactPrivacyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateDomainContactPrivacyErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateDomainContactPrivacyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateDomainContactPrivacyErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateDomainContactPrivacyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateDomainContactPrivacyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateDomainContactPrivacyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateDomainContactPrivacyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateDomainContactPrivacyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateDomainContactPrivacyErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDomainContactPrivacyErrorKind::DuplicateRequest(_)
-        )
+        matches!(&self.kind, UpdateDomainContactPrivacyErrorKind::DuplicateRequest(_))
     }
     /// Returns `true` if the error kind is `UpdateDomainContactPrivacyErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDomainContactPrivacyErrorKind::InvalidInput(_)
-        )
+        matches!(&self.kind, UpdateDomainContactPrivacyErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `UpdateDomainContactPrivacyErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDomainContactPrivacyErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, UpdateDomainContactPrivacyErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `UpdateDomainContactPrivacyErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDomainContactPrivacyErrorKind::TldRulesViolation(_)
-        )
+        matches!(&self.kind, UpdateDomainContactPrivacyErrorKind::TldRulesViolation(_))
     }
     /// Returns `true` if the error kind is `UpdateDomainContactPrivacyErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDomainContactPrivacyErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, UpdateDomainContactPrivacyErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for UpdateDomainContactPrivacyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateDomainContactPrivacyErrorKind::DuplicateRequest(_inner) => Some(_inner),
-            UpdateDomainContactPrivacyErrorKind::InvalidInput(_inner) => Some(_inner),
-            UpdateDomainContactPrivacyErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
-            UpdateDomainContactPrivacyErrorKind::TldRulesViolation(_inner) => Some(_inner),
-            UpdateDomainContactPrivacyErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            UpdateDomainContactPrivacyErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateDomainContactPrivacyErrorKind::DuplicateRequest(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDomainContactPrivacyErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDomainContactPrivacyErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDomainContactPrivacyErrorKind::TldRulesViolation(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDomainContactPrivacyErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDomainContactPrivacyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -847,15 +876,15 @@ impl std::error::Error for UpdateDomainContactPrivacyError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateDomainContactError {
     /// Kind of error that occurred.
-    pub kind: UpdateDomainContactErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateDomainContactErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateDomainContactError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateDomainContactErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -873,25 +902,37 @@ pub enum UpdateDomainContactErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDomainContactError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateDomainContactErrorKind::DuplicateRequest(_inner) => _inner.fmt(f),
-            UpdateDomainContactErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            UpdateDomainContactErrorKind::OperationLimitExceeded(_inner) => _inner.fmt(f),
-            UpdateDomainContactErrorKind::TldRulesViolation(_inner) => _inner.fmt(f),
-            UpdateDomainContactErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            UpdateDomainContactErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateDomainContactErrorKind::DuplicateRequest(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDomainContactErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDomainContactErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDomainContactErrorKind::TldRulesViolation(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDomainContactErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDomainContactErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -905,52 +946,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateDomainContactError {
 }
 impl UpdateDomainContactError {
     /// Creates a new `UpdateDomainContactError`.
-    pub fn new(kind: UpdateDomainContactErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateDomainContactError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateDomainContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateDomainContactError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateDomainContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateDomainContactErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateDomainContactError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateDomainContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateDomainContactError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateDomainContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateDomainContactErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDomainContactErrorKind::DuplicateRequest(_)
-        )
+        matches!(&self.kind, UpdateDomainContactErrorKind::DuplicateRequest(_))
     }
     /// Returns `true` if the error kind is `UpdateDomainContactErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
@@ -958,17 +996,11 @@ impl UpdateDomainContactError {
     }
     /// Returns `true` if the error kind is `UpdateDomainContactErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDomainContactErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, UpdateDomainContactErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `UpdateDomainContactErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDomainContactErrorKind::TldRulesViolation(_)
-        )
+        matches!(&self.kind, UpdateDomainContactErrorKind::TldRulesViolation(_))
     }
     /// Returns `true` if the error kind is `UpdateDomainContactErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
@@ -978,12 +1010,24 @@ impl UpdateDomainContactError {
 impl std::error::Error for UpdateDomainContactError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateDomainContactErrorKind::DuplicateRequest(_inner) => Some(_inner),
-            UpdateDomainContactErrorKind::InvalidInput(_inner) => Some(_inner),
-            UpdateDomainContactErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
-            UpdateDomainContactErrorKind::TldRulesViolation(_inner) => Some(_inner),
-            UpdateDomainContactErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            UpdateDomainContactErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateDomainContactErrorKind::DuplicateRequest(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDomainContactErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDomainContactErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDomainContactErrorKind::TldRulesViolation(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDomainContactErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDomainContactErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -993,17 +1037,15 @@ impl std::error::Error for UpdateDomainContactError {
 #[derive(std::fmt::Debug)]
 pub struct TransferDomainToAnotherAwsAccountError {
     /// Kind of error that occurred.
-    pub kind: TransferDomainToAnotherAwsAccountErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TransferDomainToAnotherAwsAccountErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TransferDomainToAnotherAwsAccountError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: TransferDomainToAnotherAwsAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: TransferDomainToAnotherAwsAccountErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1019,26 +1061,34 @@ pub enum TransferDomainToAnotherAwsAccountErrorKind {
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TransferDomainToAnotherAwsAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TransferDomainToAnotherAwsAccountErrorKind::DuplicateRequest(_inner) => _inner.fmt(f),
-            TransferDomainToAnotherAwsAccountErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) => {
+            TransferDomainToAnotherAwsAccountErrorKind::DuplicateRequest(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransferDomainToAnotherAwsAccountErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransferDomainToAnotherAwsAccountErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransferDomainToAnotherAwsAccountErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            TransferDomainToAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            TransferDomainToAnotherAwsAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1052,92 +1102,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for TransferDomainToAnotherAwsAcc
 }
 impl TransferDomainToAnotherAwsAccountError {
     /// Creates a new `TransferDomainToAnotherAwsAccountError`.
-    pub fn new(
-        kind: TransferDomainToAnotherAwsAccountErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TransferDomainToAnotherAwsAccountError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TransferDomainToAnotherAwsAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TransferDomainToAnotherAwsAccountError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TransferDomainToAnotherAwsAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TransferDomainToAnotherAwsAccountErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TransferDomainToAnotherAwsAccountError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TransferDomainToAnotherAwsAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TransferDomainToAnotherAwsAccountError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TransferDomainToAnotherAwsAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TransferDomainToAnotherAwsAccountErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransferDomainToAnotherAwsAccountErrorKind::DuplicateRequest(_)
-        )
+        matches!(&self.kind, TransferDomainToAnotherAwsAccountErrorKind::DuplicateRequest(_))
     }
     /// Returns `true` if the error kind is `TransferDomainToAnotherAwsAccountErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransferDomainToAnotherAwsAccountErrorKind::InvalidInput(_)
-        )
+        matches!(&self.kind, TransferDomainToAnotherAwsAccountErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `TransferDomainToAnotherAwsAccountErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransferDomainToAnotherAwsAccountErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, TransferDomainToAnotherAwsAccountErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for TransferDomainToAnotherAwsAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TransferDomainToAnotherAwsAccountErrorKind::DuplicateRequest(_inner) => Some(_inner),
-            TransferDomainToAnotherAwsAccountErrorKind::InvalidInput(_inner) => Some(_inner),
-            TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) => {
+            TransferDomainToAnotherAwsAccountErrorKind::DuplicateRequest(_inner) =>
+            Some(_inner)
+            ,
+            TransferDomainToAnotherAwsAccountErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            TransferDomainToAnotherAwsAccountErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            TransferDomainToAnotherAwsAccountErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            TransferDomainToAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            TransferDomainToAnotherAwsAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1147,15 +1186,15 @@ impl std::error::Error for TransferDomainToAnotherAwsAccountError {
 #[derive(std::fmt::Debug)]
 pub struct TransferDomainError {
     /// Kind of error that occurred.
-    pub kind: TransferDomainErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TransferDomainErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TransferDomainError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TransferDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1175,26 +1214,40 @@ pub enum TransferDomainErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TransferDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TransferDomainErrorKind::DomainLimitExceeded(_inner) => _inner.fmt(f),
-            TransferDomainErrorKind::DuplicateRequest(_inner) => _inner.fmt(f),
-            TransferDomainErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            TransferDomainErrorKind::OperationLimitExceeded(_inner) => _inner.fmt(f),
-            TransferDomainErrorKind::TldRulesViolation(_inner) => _inner.fmt(f),
-            TransferDomainErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            TransferDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TransferDomainErrorKind::DomainLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransferDomainErrorKind::DuplicateRequest(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransferDomainErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransferDomainErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransferDomainErrorKind::TldRulesViolation(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransferDomainErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransferDomainErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1208,46 +1261,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for TransferDomainError {
 }
 impl TransferDomainError {
     /// Creates a new `TransferDomainError`.
-    pub fn new(kind: TransferDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TransferDomainError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TransferDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TransferDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TransferDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TransferDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TransferDomainError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TransferDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TransferDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TransferDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TransferDomainErrorKind::DomainLimitExceeded`.
     pub fn is_domain_limit_exceeded(&self) -> bool {
         matches!(&self.kind, TransferDomainErrorKind::DomainLimitExceeded(_))
@@ -1262,10 +1315,7 @@ impl TransferDomainError {
     }
     /// Returns `true` if the error kind is `TransferDomainErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransferDomainErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, TransferDomainErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `TransferDomainErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
@@ -1279,13 +1329,27 @@ impl TransferDomainError {
 impl std::error::Error for TransferDomainError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TransferDomainErrorKind::DomainLimitExceeded(_inner) => Some(_inner),
-            TransferDomainErrorKind::DuplicateRequest(_inner) => Some(_inner),
-            TransferDomainErrorKind::InvalidInput(_inner) => Some(_inner),
-            TransferDomainErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
-            TransferDomainErrorKind::TldRulesViolation(_inner) => Some(_inner),
-            TransferDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            TransferDomainErrorKind::Unhandled(_inner) => Some(_inner),
+            TransferDomainErrorKind::DomainLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            TransferDomainErrorKind::DuplicateRequest(_inner) =>
+            Some(_inner)
+            ,
+            TransferDomainErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            TransferDomainErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            TransferDomainErrorKind::TldRulesViolation(_inner) =>
+            Some(_inner)
+            ,
+            TransferDomainErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            TransferDomainErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1293,22 +1357,20 @@ impl std::error::Error for TransferDomainError {
 /// <p>The number of domains has exceeded the allowed threshold for the account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainLimitExceeded {
+pub struct DomainLimitExceeded  {
     /// <p>The number of domains has exceeded the allowed threshold for the account.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DomainLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DomainLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DomainLimitExceeded")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -1318,7 +1380,7 @@ impl std::fmt::Display for DomainLimitExceeded {
 impl std::error::Error for DomainLimitExceeded {}
 /// See [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
 pub mod domain_limit_exceeded {
-
+    
     /// A builder for [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1332,16 +1394,18 @@ pub mod domain_limit_exceeded {
         }
         /// <p>The number of domains has exceeded the allowed threshold for the account.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
         pub fn build(self) -> crate::error::DomainLimitExceeded {
             crate::error::DomainLimitExceeded {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainLimitExceeded {
     /// Creates a new builder-style object to manufacture [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
@@ -1355,15 +1419,15 @@ impl DomainLimitExceeded {
 #[derive(std::fmt::Debug)]
 pub struct RetrieveDomainAuthCodeError {
     /// Kind of error that occurred.
-    pub kind: RetrieveDomainAuthCodeErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RetrieveDomainAuthCodeErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RetrieveDomainAuthCodeError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RetrieveDomainAuthCodeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1375,22 +1439,28 @@ pub enum RetrieveDomainAuthCodeErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RetrieveDomainAuthCodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RetrieveDomainAuthCodeErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            RetrieveDomainAuthCodeErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            RetrieveDomainAuthCodeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RetrieveDomainAuthCodeErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            RetrieveDomainAuthCodeErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            RetrieveDomainAuthCodeErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1404,68 +1474,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for RetrieveDomainAuthCodeError {
 }
 impl RetrieveDomainAuthCodeError {
     /// Creates a new `RetrieveDomainAuthCodeError`.
-    pub fn new(kind: RetrieveDomainAuthCodeErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RetrieveDomainAuthCodeError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RetrieveDomainAuthCodeErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RetrieveDomainAuthCodeError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RetrieveDomainAuthCodeErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RetrieveDomainAuthCodeErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RetrieveDomainAuthCodeError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RetrieveDomainAuthCodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RetrieveDomainAuthCodeError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RetrieveDomainAuthCodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RetrieveDomainAuthCodeErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, RetrieveDomainAuthCodeErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `RetrieveDomainAuthCodeErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            RetrieveDomainAuthCodeErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, RetrieveDomainAuthCodeErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for RetrieveDomainAuthCodeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RetrieveDomainAuthCodeErrorKind::InvalidInput(_inner) => Some(_inner),
-            RetrieveDomainAuthCodeErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            RetrieveDomainAuthCodeErrorKind::Unhandled(_inner) => Some(_inner),
+            RetrieveDomainAuthCodeErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            RetrieveDomainAuthCodeErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            RetrieveDomainAuthCodeErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1475,17 +1544,15 @@ impl std::error::Error for RetrieveDomainAuthCodeError {
 #[derive(std::fmt::Debug)]
 pub struct ResendOperationAuthorizationError {
     /// Kind of error that occurred.
-    pub kind: ResendOperationAuthorizationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ResendOperationAuthorizationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ResendOperationAuthorizationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ResendOperationAuthorizationErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ResendOperationAuthorizationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1495,21 +1562,25 @@ impl aws_smithy_http::result::CreateUnhandledError for ResendOperationAuthorizat
 pub enum ResendOperationAuthorizationErrorKind {
     /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ResendOperationAuthorizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ResendOperationAuthorizationErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            ResendOperationAuthorizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ResendOperationAuthorizationErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResendOperationAuthorizationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1523,63 +1594,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for ResendOperationAuthorizationE
 }
 impl ResendOperationAuthorizationError {
     /// Creates a new `ResendOperationAuthorizationError`.
-    pub fn new(kind: ResendOperationAuthorizationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ResendOperationAuthorizationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ResendOperationAuthorizationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ResendOperationAuthorizationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ResendOperationAuthorizationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ResendOperationAuthorizationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ResendOperationAuthorizationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ResendOperationAuthorizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ResendOperationAuthorizationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ResendOperationAuthorizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ResendOperationAuthorizationErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResendOperationAuthorizationErrorKind::InvalidInput(_)
-        )
+        matches!(&self.kind, ResendOperationAuthorizationErrorKind::InvalidInput(_))
     }
 }
 impl std::error::Error for ResendOperationAuthorizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ResendOperationAuthorizationErrorKind::InvalidInput(_inner) => Some(_inner),
-            ResendOperationAuthorizationErrorKind::Unhandled(_inner) => Some(_inner),
+            ResendOperationAuthorizationErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            ResendOperationAuthorizationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1589,17 +1657,15 @@ impl std::error::Error for ResendOperationAuthorizationError {
 #[derive(std::fmt::Debug)]
 pub struct ResendContactReachabilityEmailError {
     /// Kind of error that occurred.
-    pub kind: ResendContactReachabilityEmailErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ResendContactReachabilityEmailErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ResendContactReachabilityEmailError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ResendContactReachabilityEmailErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ResendContactReachabilityEmailErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1613,25 +1679,31 @@ pub enum ResendContactReachabilityEmailErrorKind {
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ResendContactReachabilityEmailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ResendContactReachabilityEmailErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            ResendContactReachabilityEmailErrorKind::OperationLimitExceeded(_inner) => {
+            ResendContactReachabilityEmailErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResendContactReachabilityEmailErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResendContactReachabilityEmailErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            ResendContactReachabilityEmailErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ResendContactReachabilityEmailErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            ResendContactReachabilityEmailErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1645,82 +1717,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ResendContactReachabilityEmai
 }
 impl ResendContactReachabilityEmailError {
     /// Creates a new `ResendContactReachabilityEmailError`.
-    pub fn new(
-        kind: ResendContactReachabilityEmailErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ResendContactReachabilityEmailError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ResendContactReachabilityEmailErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ResendContactReachabilityEmailError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ResendContactReachabilityEmailErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ResendContactReachabilityEmailErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ResendContactReachabilityEmailError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ResendContactReachabilityEmailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ResendContactReachabilityEmailError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ResendContactReachabilityEmailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ResendContactReachabilityEmailErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResendContactReachabilityEmailErrorKind::InvalidInput(_)
-        )
+        matches!(&self.kind, ResendContactReachabilityEmailErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `ResendContactReachabilityEmailErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResendContactReachabilityEmailErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, ResendContactReachabilityEmailErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `ResendContactReachabilityEmailErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            ResendContactReachabilityEmailErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, ResendContactReachabilityEmailErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for ResendContactReachabilityEmailError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ResendContactReachabilityEmailErrorKind::InvalidInput(_inner) => Some(_inner),
-            ResendContactReachabilityEmailErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
-            ResendContactReachabilityEmailErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            ResendContactReachabilityEmailErrorKind::Unhandled(_inner) => Some(_inner),
+            ResendContactReachabilityEmailErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            ResendContactReachabilityEmailErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            ResendContactReachabilityEmailErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            ResendContactReachabilityEmailErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1730,15 +1794,15 @@ impl std::error::Error for ResendContactReachabilityEmailError {
 #[derive(std::fmt::Debug)]
 pub struct RenewDomainError {
     /// Kind of error that occurred.
-    pub kind: RenewDomainErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RenewDomainErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RenewDomainError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RenewDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1756,25 +1820,37 @@ pub enum RenewDomainErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RenewDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RenewDomainErrorKind::DuplicateRequest(_inner) => _inner.fmt(f),
-            RenewDomainErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            RenewDomainErrorKind::OperationLimitExceeded(_inner) => _inner.fmt(f),
-            RenewDomainErrorKind::TldRulesViolation(_inner) => _inner.fmt(f),
-            RenewDomainErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            RenewDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RenewDomainErrorKind::DuplicateRequest(_inner) =>
+            _inner.fmt(f)
+            ,
+            RenewDomainErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            RenewDomainErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            RenewDomainErrorKind::TldRulesViolation(_inner) =>
+            _inner.fmt(f)
+            ,
+            RenewDomainErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            RenewDomainErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1788,46 +1864,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for RenewDomainError {
 }
 impl RenewDomainError {
     /// Creates a new `RenewDomainError`.
-    pub fn new(kind: RenewDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RenewDomainError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RenewDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RenewDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RenewDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RenewDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RenewDomainError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RenewDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RenewDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RenewDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RenewDomainErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(&self.kind, RenewDomainErrorKind::DuplicateRequest(_))
@@ -1852,12 +1928,24 @@ impl RenewDomainError {
 impl std::error::Error for RenewDomainError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RenewDomainErrorKind::DuplicateRequest(_inner) => Some(_inner),
-            RenewDomainErrorKind::InvalidInput(_inner) => Some(_inner),
-            RenewDomainErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
-            RenewDomainErrorKind::TldRulesViolation(_inner) => Some(_inner),
-            RenewDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            RenewDomainErrorKind::Unhandled(_inner) => Some(_inner),
+            RenewDomainErrorKind::DuplicateRequest(_inner) =>
+            Some(_inner)
+            ,
+            RenewDomainErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            RenewDomainErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            RenewDomainErrorKind::TldRulesViolation(_inner) =>
+            Some(_inner)
+            ,
+            RenewDomainErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            RenewDomainErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1867,19 +1955,15 @@ impl std::error::Error for RenewDomainError {
 #[derive(std::fmt::Debug)]
 pub struct RejectDomainTransferFromAnotherAwsAccountError {
     /// Kind of error that occurred.
-    pub kind: RejectDomainTransferFromAnotherAwsAccountErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RejectDomainTransferFromAnotherAwsAccountErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for RejectDomainTransferFromAnotherAwsAccountError
-{
+impl aws_smithy_http::result::CreateUnhandledError for RejectDomainTransferFromAnotherAwsAccountError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1893,29 +1977,31 @@ pub enum RejectDomainTransferFromAnotherAwsAccountErrorKind {
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RejectDomainTransferFromAnotherAwsAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RejectDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(_inner) => {
+            RejectDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            RejectDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            RejectDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) => {
-                _inner.fmt(f)
-            }
-            RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => {
-                _inner.fmt(f)
-            }
-            RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1929,88 +2015,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for RejectDomainTransferFromAnoth
 }
 impl RejectDomainTransferFromAnotherAwsAccountError {
     /// Creates a new `RejectDomainTransferFromAnotherAwsAccountError`.
-    pub fn new(
-        kind: RejectDomainTransferFromAnotherAwsAccountErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RejectDomainTransferFromAnotherAwsAccountError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RejectDomainTransferFromAnotherAwsAccountError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RejectDomainTransferFromAnotherAwsAccountErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RejectDomainTransferFromAnotherAwsAccountError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RejectDomainTransferFromAnotherAwsAccountError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RejectDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
-        matches!(
-            &self.kind,
-            RejectDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(_)
-        )
+        matches!(&self.kind, RejectDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `RejectDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            RejectDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, RejectDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for RejectDomainTransferFromAnotherAwsAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RejectDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(_inner) => {
+            RejectDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            RejectDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            RejectDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) => {
-                Some(_inner)
-            }
-            RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => {
-                Some(_inner)
-            }
-            RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2020,15 +2092,15 @@ impl std::error::Error for RejectDomainTransferFromAnotherAwsAccountError {
 #[derive(std::fmt::Debug)]
 pub struct RegisterDomainError {
     /// Kind of error that occurred.
-    pub kind: RegisterDomainErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RegisterDomainErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RegisterDomainError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RegisterDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2048,26 +2120,40 @@ pub enum RegisterDomainErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RegisterDomainErrorKind::DomainLimitExceeded(_inner) => _inner.fmt(f),
-            RegisterDomainErrorKind::DuplicateRequest(_inner) => _inner.fmt(f),
-            RegisterDomainErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            RegisterDomainErrorKind::OperationLimitExceeded(_inner) => _inner.fmt(f),
-            RegisterDomainErrorKind::TldRulesViolation(_inner) => _inner.fmt(f),
-            RegisterDomainErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            RegisterDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RegisterDomainErrorKind::DomainLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterDomainErrorKind::DuplicateRequest(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterDomainErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterDomainErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterDomainErrorKind::TldRulesViolation(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterDomainErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterDomainErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2081,46 +2167,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for RegisterDomainError {
 }
 impl RegisterDomainError {
     /// Creates a new `RegisterDomainError`.
-    pub fn new(kind: RegisterDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RegisterDomainError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RegisterDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RegisterDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RegisterDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RegisterDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RegisterDomainError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RegisterDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RegisterDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RegisterDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RegisterDomainErrorKind::DomainLimitExceeded`.
     pub fn is_domain_limit_exceeded(&self) -> bool {
         matches!(&self.kind, RegisterDomainErrorKind::DomainLimitExceeded(_))
@@ -2135,10 +2221,7 @@ impl RegisterDomainError {
     }
     /// Returns `true` if the error kind is `RegisterDomainErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterDomainErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, RegisterDomainErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `RegisterDomainErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
@@ -2152,13 +2235,27 @@ impl RegisterDomainError {
 impl std::error::Error for RegisterDomainError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RegisterDomainErrorKind::DomainLimitExceeded(_inner) => Some(_inner),
-            RegisterDomainErrorKind::DuplicateRequest(_inner) => Some(_inner),
-            RegisterDomainErrorKind::InvalidInput(_inner) => Some(_inner),
-            RegisterDomainErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
-            RegisterDomainErrorKind::TldRulesViolation(_inner) => Some(_inner),
-            RegisterDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            RegisterDomainErrorKind::Unhandled(_inner) => Some(_inner),
+            RegisterDomainErrorKind::DomainLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            RegisterDomainErrorKind::DuplicateRequest(_inner) =>
+            Some(_inner)
+            ,
+            RegisterDomainErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            RegisterDomainErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            RegisterDomainErrorKind::TldRulesViolation(_inner) =>
+            Some(_inner)
+            ,
+            RegisterDomainErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            RegisterDomainErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2168,15 +2265,15 @@ impl std::error::Error for RegisterDomainError {
 #[derive(std::fmt::Debug)]
 pub struct PushDomainError {
     /// Kind of error that occurred.
-    pub kind: PushDomainErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PushDomainErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PushDomainError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PushDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2190,23 +2287,31 @@ pub enum PushDomainErrorKind {
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PushDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PushDomainErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            PushDomainErrorKind::OperationLimitExceeded(_inner) => _inner.fmt(f),
-            PushDomainErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            PushDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            PushDomainErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            PushDomainErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            PushDomainErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            PushDomainErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2220,46 +2325,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for PushDomainError {
 }
 impl PushDomainError {
     /// Creates a new `PushDomainError`.
-    pub fn new(kind: PushDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PushDomainError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PushDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PushDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PushDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PushDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PushDomainError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PushDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PushDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PushDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PushDomainErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, PushDomainErrorKind::InvalidInput(_))
@@ -2276,10 +2381,18 @@ impl PushDomainError {
 impl std::error::Error for PushDomainError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PushDomainErrorKind::InvalidInput(_inner) => Some(_inner),
-            PushDomainErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
-            PushDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            PushDomainErrorKind::Unhandled(_inner) => Some(_inner),
+            PushDomainErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            PushDomainErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            PushDomainErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            PushDomainErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2289,15 +2402,15 @@ impl std::error::Error for PushDomainError {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsForDomainError {
     /// Kind of error that occurred.
-    pub kind: ListTagsForDomainErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsForDomainErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsForDomainError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2311,23 +2424,31 @@ pub enum ListTagsForDomainErrorKind {
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForDomainErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            ListTagsForDomainErrorKind::OperationLimitExceeded(_inner) => _inner.fmt(f),
-            ListTagsForDomainErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            ListTagsForDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTagsForDomainErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForDomainErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForDomainErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForDomainErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2341,56 +2462,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForDomainError {
 }
 impl ListTagsForDomainError {
     /// Creates a new `ListTagsForDomainError`.
-    pub fn new(kind: ListTagsForDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsForDomainError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsForDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsForDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsForDomainError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsForDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsForDomainErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListTagsForDomainErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `ListTagsForDomainErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForDomainErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, ListTagsForDomainErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `ListTagsForDomainErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
@@ -2400,10 +2518,18 @@ impl ListTagsForDomainError {
 impl std::error::Error for ListTagsForDomainError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForDomainErrorKind::InvalidInput(_inner) => Some(_inner),
-            ListTagsForDomainErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
-            ListTagsForDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            ListTagsForDomainErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTagsForDomainErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForDomainErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForDomainErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForDomainErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2413,15 +2539,15 @@ impl std::error::Error for ListTagsForDomainError {
 #[derive(std::fmt::Debug)]
 pub struct ListPricesError {
     /// Kind of error that occurred.
-    pub kind: ListPricesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListPricesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListPricesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListPricesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2433,22 +2559,28 @@ pub enum ListPricesErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPricesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListPricesErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            ListPricesErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            ListPricesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListPricesErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListPricesErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListPricesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2462,46 +2594,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListPricesError {
 }
 impl ListPricesError {
     /// Creates a new `ListPricesError`.
-    pub fn new(kind: ListPricesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListPricesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListPricesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListPricesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListPricesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListPricesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListPricesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListPricesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListPricesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListPricesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListPricesErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListPricesErrorKind::InvalidInput(_))
@@ -2514,9 +2646,15 @@ impl ListPricesError {
 impl std::error::Error for ListPricesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListPricesErrorKind::InvalidInput(_inner) => Some(_inner),
-            ListPricesErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            ListPricesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListPricesErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            ListPricesErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            ListPricesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2526,15 +2664,15 @@ impl std::error::Error for ListPricesError {
 #[derive(std::fmt::Debug)]
 pub struct ListOperationsError {
     /// Kind of error that occurred.
-    pub kind: ListOperationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListOperationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListOperationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListOperationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2544,21 +2682,25 @@ impl aws_smithy_http::result::CreateUnhandledError for ListOperationsError {
 pub enum ListOperationsErrorKind {
     /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListOperationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListOperationsErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            ListOperationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListOperationsErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListOperationsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2572,46 +2714,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListOperationsError {
 }
 impl ListOperationsError {
     /// Creates a new `ListOperationsError`.
-    pub fn new(kind: ListOperationsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListOperationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListOperationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListOperationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListOperationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListOperationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListOperationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListOperationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListOperationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListOperationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListOperationsErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListOperationsErrorKind::InvalidInput(_))
@@ -2620,8 +2762,12 @@ impl ListOperationsError {
 impl std::error::Error for ListOperationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListOperationsErrorKind::InvalidInput(_inner) => Some(_inner),
-            ListOperationsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListOperationsErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            ListOperationsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2631,15 +2777,15 @@ impl std::error::Error for ListOperationsError {
 #[derive(std::fmt::Debug)]
 pub struct ListDomainsError {
     /// Kind of error that occurred.
-    pub kind: ListDomainsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListDomainsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListDomainsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListDomainsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2649,21 +2795,25 @@ impl aws_smithy_http::result::CreateUnhandledError for ListDomainsError {
 pub enum ListDomainsErrorKind {
     /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDomainsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListDomainsErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            ListDomainsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListDomainsErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDomainsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2677,46 +2827,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListDomainsError {
 }
 impl ListDomainsError {
     /// Creates a new `ListDomainsError`.
-    pub fn new(kind: ListDomainsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListDomainsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListDomainsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListDomainsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListDomainsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListDomainsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListDomainsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListDomainsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListDomainsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListDomainsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListDomainsErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListDomainsErrorKind::InvalidInput(_))
@@ -2725,8 +2875,12 @@ impl ListDomainsError {
 impl std::error::Error for ListDomainsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListDomainsErrorKind::InvalidInput(_inner) => Some(_inner),
-            ListDomainsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListDomainsErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            ListDomainsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2736,15 +2890,15 @@ impl std::error::Error for ListDomainsError {
 #[derive(std::fmt::Debug)]
 pub struct GetOperationDetailError {
     /// Kind of error that occurred.
-    pub kind: GetOperationDetailErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetOperationDetailErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetOperationDetailError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetOperationDetailErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2754,21 +2908,25 @@ impl aws_smithy_http::result::CreateUnhandledError for GetOperationDetailError {
 pub enum GetOperationDetailErrorKind {
     /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetOperationDetailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetOperationDetailErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            GetOperationDetailErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetOperationDetailErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetOperationDetailErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2782,46 +2940,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetOperationDetailError {
 }
 impl GetOperationDetailError {
     /// Creates a new `GetOperationDetailError`.
-    pub fn new(kind: GetOperationDetailErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetOperationDetailError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetOperationDetailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetOperationDetailError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetOperationDetailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetOperationDetailErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetOperationDetailError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetOperationDetailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetOperationDetailError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetOperationDetailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetOperationDetailErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetOperationDetailErrorKind::InvalidInput(_))
@@ -2830,8 +2988,12 @@ impl GetOperationDetailError {
 impl std::error::Error for GetOperationDetailError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetOperationDetailErrorKind::InvalidInput(_inner) => Some(_inner),
-            GetOperationDetailErrorKind::Unhandled(_inner) => Some(_inner),
+            GetOperationDetailErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            GetOperationDetailErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2841,15 +3003,15 @@ impl std::error::Error for GetOperationDetailError {
 #[derive(std::fmt::Debug)]
 pub struct GetDomainSuggestionsError {
     /// Kind of error that occurred.
-    pub kind: GetDomainSuggestionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetDomainSuggestionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetDomainSuggestionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetDomainSuggestionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2861,22 +3023,28 @@ pub enum GetDomainSuggestionsErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDomainSuggestionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDomainSuggestionsErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            GetDomainSuggestionsErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            GetDomainSuggestionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetDomainSuggestionsErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDomainSuggestionsErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDomainSuggestionsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2890,50 +3058,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetDomainSuggestionsError {
 }
 impl GetDomainSuggestionsError {
     /// Creates a new `GetDomainSuggestionsError`.
-    pub fn new(kind: GetDomainSuggestionsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetDomainSuggestionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetDomainSuggestionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetDomainSuggestionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetDomainSuggestionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetDomainSuggestionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetDomainSuggestionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetDomainSuggestionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetDomainSuggestionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetDomainSuggestionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetDomainSuggestionsErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetDomainSuggestionsErrorKind::InvalidInput(_))
@@ -2946,9 +3110,15 @@ impl GetDomainSuggestionsError {
 impl std::error::Error for GetDomainSuggestionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDomainSuggestionsErrorKind::InvalidInput(_inner) => Some(_inner),
-            GetDomainSuggestionsErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            GetDomainSuggestionsErrorKind::Unhandled(_inner) => Some(_inner),
+            GetDomainSuggestionsErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            GetDomainSuggestionsErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            GetDomainSuggestionsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2958,15 +3128,15 @@ impl std::error::Error for GetDomainSuggestionsError {
 #[derive(std::fmt::Debug)]
 pub struct GetDomainDetailError {
     /// Kind of error that occurred.
-    pub kind: GetDomainDetailErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetDomainDetailErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetDomainDetailError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetDomainDetailErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2978,22 +3148,28 @@ pub enum GetDomainDetailErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDomainDetailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDomainDetailErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            GetDomainDetailErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            GetDomainDetailErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetDomainDetailErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDomainDetailErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDomainDetailErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3007,46 +3183,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetDomainDetailError {
 }
 impl GetDomainDetailError {
     /// Creates a new `GetDomainDetailError`.
-    pub fn new(kind: GetDomainDetailErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetDomainDetailError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetDomainDetailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetDomainDetailError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetDomainDetailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetDomainDetailErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetDomainDetailError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetDomainDetailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetDomainDetailError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetDomainDetailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetDomainDetailErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetDomainDetailErrorKind::InvalidInput(_))
@@ -3059,9 +3235,15 @@ impl GetDomainDetailError {
 impl std::error::Error for GetDomainDetailError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDomainDetailErrorKind::InvalidInput(_inner) => Some(_inner),
-            GetDomainDetailErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            GetDomainDetailErrorKind::Unhandled(_inner) => Some(_inner),
+            GetDomainDetailErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            GetDomainDetailErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            GetDomainDetailErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3071,17 +3253,15 @@ impl std::error::Error for GetDomainDetailError {
 #[derive(std::fmt::Debug)]
 pub struct GetContactReachabilityStatusError {
     /// Kind of error that occurred.
-    pub kind: GetContactReachabilityStatusErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetContactReachabilityStatusErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetContactReachabilityStatusError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetContactReachabilityStatusErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: GetContactReachabilityStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3095,23 +3275,31 @@ pub enum GetContactReachabilityStatusErrorKind {
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContactReachabilityStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetContactReachabilityStatusErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            GetContactReachabilityStatusErrorKind::OperationLimitExceeded(_inner) => _inner.fmt(f),
-            GetContactReachabilityStatusErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            GetContactReachabilityStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetContactReachabilityStatusErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetContactReachabilityStatusErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetContactReachabilityStatusErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetContactReachabilityStatusErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3125,79 +3313,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetContactReachabilityStatusE
 }
 impl GetContactReachabilityStatusError {
     /// Creates a new `GetContactReachabilityStatusError`.
-    pub fn new(kind: GetContactReachabilityStatusErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetContactReachabilityStatusError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetContactReachabilityStatusErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetContactReachabilityStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetContactReachabilityStatusErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetContactReachabilityStatusErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetContactReachabilityStatusError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetContactReachabilityStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetContactReachabilityStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetContactReachabilityStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetContactReachabilityStatusErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetContactReachabilityStatusErrorKind::InvalidInput(_)
-        )
+        matches!(&self.kind, GetContactReachabilityStatusErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `GetContactReachabilityStatusErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetContactReachabilityStatusErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, GetContactReachabilityStatusErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `GetContactReachabilityStatusErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetContactReachabilityStatusErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, GetContactReachabilityStatusErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for GetContactReachabilityStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetContactReachabilityStatusErrorKind::InvalidInput(_inner) => Some(_inner),
-            GetContactReachabilityStatusErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
-            GetContactReachabilityStatusErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            GetContactReachabilityStatusErrorKind::Unhandled(_inner) => Some(_inner),
+            GetContactReachabilityStatusErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            GetContactReachabilityStatusErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            GetContactReachabilityStatusErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            GetContactReachabilityStatusErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3207,17 +3390,15 @@ impl std::error::Error for GetContactReachabilityStatusError {
 #[derive(std::fmt::Debug)]
 pub struct EnableDomainTransferLockError {
     /// Kind of error that occurred.
-    pub kind: EnableDomainTransferLockErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: EnableDomainTransferLockErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for EnableDomainTransferLockError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: EnableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: EnableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3235,25 +3416,37 @@ pub enum EnableDomainTransferLockErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableDomainTransferLockError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            EnableDomainTransferLockErrorKind::DuplicateRequest(_inner) => _inner.fmt(f),
-            EnableDomainTransferLockErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            EnableDomainTransferLockErrorKind::OperationLimitExceeded(_inner) => _inner.fmt(f),
-            EnableDomainTransferLockErrorKind::TldRulesViolation(_inner) => _inner.fmt(f),
-            EnableDomainTransferLockErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            EnableDomainTransferLockErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            EnableDomainTransferLockErrorKind::DuplicateRequest(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableDomainTransferLockErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableDomainTransferLockErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableDomainTransferLockErrorKind::TldRulesViolation(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableDomainTransferLockErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableDomainTransferLockErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3267,95 +3460,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for EnableDomainTransferLockError
 }
 impl EnableDomainTransferLockError {
     /// Creates a new `EnableDomainTransferLockError`.
-    pub fn new(kind: EnableDomainTransferLockErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `EnableDomainTransferLockError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: EnableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `EnableDomainTransferLockError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: EnableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: EnableDomainTransferLockErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `EnableDomainTransferLockError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: EnableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `EnableDomainTransferLockError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: EnableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `EnableDomainTransferLockErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableDomainTransferLockErrorKind::DuplicateRequest(_)
-        )
+        matches!(&self.kind, EnableDomainTransferLockErrorKind::DuplicateRequest(_))
     }
     /// Returns `true` if the error kind is `EnableDomainTransferLockErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableDomainTransferLockErrorKind::InvalidInput(_)
-        )
+        matches!(&self.kind, EnableDomainTransferLockErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `EnableDomainTransferLockErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableDomainTransferLockErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, EnableDomainTransferLockErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `EnableDomainTransferLockErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableDomainTransferLockErrorKind::TldRulesViolation(_)
-        )
+        matches!(&self.kind, EnableDomainTransferLockErrorKind::TldRulesViolation(_))
     }
     /// Returns `true` if the error kind is `EnableDomainTransferLockErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableDomainTransferLockErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, EnableDomainTransferLockErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for EnableDomainTransferLockError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            EnableDomainTransferLockErrorKind::DuplicateRequest(_inner) => Some(_inner),
-            EnableDomainTransferLockErrorKind::InvalidInput(_inner) => Some(_inner),
-            EnableDomainTransferLockErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
-            EnableDomainTransferLockErrorKind::TldRulesViolation(_inner) => Some(_inner),
-            EnableDomainTransferLockErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            EnableDomainTransferLockErrorKind::Unhandled(_inner) => Some(_inner),
+            EnableDomainTransferLockErrorKind::DuplicateRequest(_inner) =>
+            Some(_inner)
+            ,
+            EnableDomainTransferLockErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            EnableDomainTransferLockErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            EnableDomainTransferLockErrorKind::TldRulesViolation(_inner) =>
+            Some(_inner)
+            ,
+            EnableDomainTransferLockErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            EnableDomainTransferLockErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3365,15 +3551,15 @@ impl std::error::Error for EnableDomainTransferLockError {
 #[derive(std::fmt::Debug)]
 pub struct EnableDomainAutoRenewError {
     /// Kind of error that occurred.
-    pub kind: EnableDomainAutoRenewErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: EnableDomainAutoRenewErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for EnableDomainAutoRenewError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: EnableDomainAutoRenewErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3387,23 +3573,31 @@ pub enum EnableDomainAutoRenewErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableDomainAutoRenewError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            EnableDomainAutoRenewErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            EnableDomainAutoRenewErrorKind::TldRulesViolation(_inner) => _inner.fmt(f),
-            EnableDomainAutoRenewErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            EnableDomainAutoRenewErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            EnableDomainAutoRenewErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableDomainAutoRenewErrorKind::TldRulesViolation(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableDomainAutoRenewErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableDomainAutoRenewErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3417,76 +3611,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for EnableDomainAutoRenewError {
 }
 impl EnableDomainAutoRenewError {
     /// Creates a new `EnableDomainAutoRenewError`.
-    pub fn new(kind: EnableDomainAutoRenewErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `EnableDomainAutoRenewError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: EnableDomainAutoRenewErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `EnableDomainAutoRenewError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: EnableDomainAutoRenewErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: EnableDomainAutoRenewErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `EnableDomainAutoRenewError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: EnableDomainAutoRenewErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `EnableDomainAutoRenewError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: EnableDomainAutoRenewErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `EnableDomainAutoRenewErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, EnableDomainAutoRenewErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `EnableDomainAutoRenewErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableDomainAutoRenewErrorKind::TldRulesViolation(_)
-        )
+        matches!(&self.kind, EnableDomainAutoRenewErrorKind::TldRulesViolation(_))
     }
     /// Returns `true` if the error kind is `EnableDomainAutoRenewErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableDomainAutoRenewErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, EnableDomainAutoRenewErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for EnableDomainAutoRenewError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            EnableDomainAutoRenewErrorKind::InvalidInput(_inner) => Some(_inner),
-            EnableDomainAutoRenewErrorKind::TldRulesViolation(_inner) => Some(_inner),
-            EnableDomainAutoRenewErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            EnableDomainAutoRenewErrorKind::Unhandled(_inner) => Some(_inner),
+            EnableDomainAutoRenewErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            EnableDomainAutoRenewErrorKind::TldRulesViolation(_inner) =>
+            Some(_inner)
+            ,
+            EnableDomainAutoRenewErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            EnableDomainAutoRenewErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3496,17 +3688,15 @@ impl std::error::Error for EnableDomainAutoRenewError {
 #[derive(std::fmt::Debug)]
 pub struct DisassociateDelegationSignerFromDomainError {
     /// Kind of error that occurred.
-    pub kind: DisassociateDelegationSignerFromDomainErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DisassociateDelegationSignerFromDomainErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DisassociateDelegationSignerFromDomainError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DisassociateDelegationSignerFromDomainErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DisassociateDelegationSignerFromDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3524,33 +3714,37 @@ pub enum DisassociateDelegationSignerFromDomainErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateDelegationSignerFromDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DisassociateDelegationSignerFromDomainErrorKind::DuplicateRequest(_inner) => {
+            DisassociateDelegationSignerFromDomainErrorKind::DuplicateRequest(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociateDelegationSignerFromDomainErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociateDelegationSignerFromDomainErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociateDelegationSignerFromDomainErrorKind::TldRulesViolation(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociateDelegationSignerFromDomainErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociateDelegationSignerFromDomainErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DisassociateDelegationSignerFromDomainErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            DisassociateDelegationSignerFromDomainErrorKind::OperationLimitExceeded(_inner) => {
-                _inner.fmt(f)
-            }
-            DisassociateDelegationSignerFromDomainErrorKind::TldRulesViolation(_inner) => {
-                _inner.fmt(f)
-            }
-            DisassociateDelegationSignerFromDomainErrorKind::UnsupportedTld(_inner) => {
-                _inner.fmt(f)
-            }
-            DisassociateDelegationSignerFromDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3564,104 +3758,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DisassociateDelegationSignerF
 }
 impl DisassociateDelegationSignerFromDomainError {
     /// Creates a new `DisassociateDelegationSignerFromDomainError`.
-    pub fn new(
-        kind: DisassociateDelegationSignerFromDomainErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DisassociateDelegationSignerFromDomainError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DisassociateDelegationSignerFromDomainErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DisassociateDelegationSignerFromDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DisassociateDelegationSignerFromDomainErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DisassociateDelegationSignerFromDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DisassociateDelegationSignerFromDomainError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DisassociateDelegationSignerFromDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DisassociateDelegationSignerFromDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DisassociateDelegationSignerFromDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DisassociateDelegationSignerFromDomainErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateDelegationSignerFromDomainErrorKind::DuplicateRequest(_)
-        )
+        matches!(&self.kind, DisassociateDelegationSignerFromDomainErrorKind::DuplicateRequest(_))
     }
     /// Returns `true` if the error kind is `DisassociateDelegationSignerFromDomainErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateDelegationSignerFromDomainErrorKind::InvalidInput(_)
-        )
+        matches!(&self.kind, DisassociateDelegationSignerFromDomainErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `DisassociateDelegationSignerFromDomainErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateDelegationSignerFromDomainErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, DisassociateDelegationSignerFromDomainErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `DisassociateDelegationSignerFromDomainErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateDelegationSignerFromDomainErrorKind::TldRulesViolation(_)
-        )
+        matches!(&self.kind, DisassociateDelegationSignerFromDomainErrorKind::TldRulesViolation(_))
     }
     /// Returns `true` if the error kind is `DisassociateDelegationSignerFromDomainErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateDelegationSignerFromDomainErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, DisassociateDelegationSignerFromDomainErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for DisassociateDelegationSignerFromDomainError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DisassociateDelegationSignerFromDomainErrorKind::DuplicateRequest(_inner) => {
+            DisassociateDelegationSignerFromDomainErrorKind::DuplicateRequest(_inner) =>
+            Some(_inner)
+            ,
+            DisassociateDelegationSignerFromDomainErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            DisassociateDelegationSignerFromDomainErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            DisassociateDelegationSignerFromDomainErrorKind::TldRulesViolation(_inner) =>
+            Some(_inner)
+            ,
+            DisassociateDelegationSignerFromDomainErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            DisassociateDelegationSignerFromDomainErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DisassociateDelegationSignerFromDomainErrorKind::InvalidInput(_inner) => Some(_inner),
-            DisassociateDelegationSignerFromDomainErrorKind::OperationLimitExceeded(_inner) => {
-                Some(_inner)
-            }
-            DisassociateDelegationSignerFromDomainErrorKind::TldRulesViolation(_inner) => {
-                Some(_inner)
-            }
-            DisassociateDelegationSignerFromDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            DisassociateDelegationSignerFromDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3671,17 +3849,15 @@ impl std::error::Error for DisassociateDelegationSignerFromDomainError {
 #[derive(std::fmt::Debug)]
 pub struct DisableDomainTransferLockError {
     /// Kind of error that occurred.
-    pub kind: DisableDomainTransferLockErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DisableDomainTransferLockErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DisableDomainTransferLockError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DisableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DisableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3699,25 +3875,37 @@ pub enum DisableDomainTransferLockErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableDomainTransferLockError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DisableDomainTransferLockErrorKind::DuplicateRequest(_inner) => _inner.fmt(f),
-            DisableDomainTransferLockErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            DisableDomainTransferLockErrorKind::OperationLimitExceeded(_inner) => _inner.fmt(f),
-            DisableDomainTransferLockErrorKind::TldRulesViolation(_inner) => _inner.fmt(f),
-            DisableDomainTransferLockErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            DisableDomainTransferLockErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DisableDomainTransferLockErrorKind::DuplicateRequest(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableDomainTransferLockErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableDomainTransferLockErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableDomainTransferLockErrorKind::TldRulesViolation(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableDomainTransferLockErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableDomainTransferLockErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3731,95 +3919,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DisableDomainTransferLockErro
 }
 impl DisableDomainTransferLockError {
     /// Creates a new `DisableDomainTransferLockError`.
-    pub fn new(kind: DisableDomainTransferLockErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DisableDomainTransferLockError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DisableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DisableDomainTransferLockError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DisableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DisableDomainTransferLockErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DisableDomainTransferLockError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DisableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DisableDomainTransferLockError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DisableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DisableDomainTransferLockErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableDomainTransferLockErrorKind::DuplicateRequest(_)
-        )
+        matches!(&self.kind, DisableDomainTransferLockErrorKind::DuplicateRequest(_))
     }
     /// Returns `true` if the error kind is `DisableDomainTransferLockErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableDomainTransferLockErrorKind::InvalidInput(_)
-        )
+        matches!(&self.kind, DisableDomainTransferLockErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `DisableDomainTransferLockErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableDomainTransferLockErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, DisableDomainTransferLockErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `DisableDomainTransferLockErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableDomainTransferLockErrorKind::TldRulesViolation(_)
-        )
+        matches!(&self.kind, DisableDomainTransferLockErrorKind::TldRulesViolation(_))
     }
     /// Returns `true` if the error kind is `DisableDomainTransferLockErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableDomainTransferLockErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, DisableDomainTransferLockErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for DisableDomainTransferLockError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DisableDomainTransferLockErrorKind::DuplicateRequest(_inner) => Some(_inner),
-            DisableDomainTransferLockErrorKind::InvalidInput(_inner) => Some(_inner),
-            DisableDomainTransferLockErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
-            DisableDomainTransferLockErrorKind::TldRulesViolation(_inner) => Some(_inner),
-            DisableDomainTransferLockErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            DisableDomainTransferLockErrorKind::Unhandled(_inner) => Some(_inner),
+            DisableDomainTransferLockErrorKind::DuplicateRequest(_inner) =>
+            Some(_inner)
+            ,
+            DisableDomainTransferLockErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            DisableDomainTransferLockErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            DisableDomainTransferLockErrorKind::TldRulesViolation(_inner) =>
+            Some(_inner)
+            ,
+            DisableDomainTransferLockErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            DisableDomainTransferLockErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3829,15 +4010,15 @@ impl std::error::Error for DisableDomainTransferLockError {
 #[derive(std::fmt::Debug)]
 pub struct DisableDomainAutoRenewError {
     /// Kind of error that occurred.
-    pub kind: DisableDomainAutoRenewErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DisableDomainAutoRenewErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DisableDomainAutoRenewError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DisableDomainAutoRenewErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3849,22 +4030,28 @@ pub enum DisableDomainAutoRenewErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableDomainAutoRenewError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DisableDomainAutoRenewErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            DisableDomainAutoRenewErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            DisableDomainAutoRenewErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DisableDomainAutoRenewErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableDomainAutoRenewErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableDomainAutoRenewErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3878,68 +4065,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DisableDomainAutoRenewError {
 }
 impl DisableDomainAutoRenewError {
     /// Creates a new `DisableDomainAutoRenewError`.
-    pub fn new(kind: DisableDomainAutoRenewErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DisableDomainAutoRenewError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DisableDomainAutoRenewErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DisableDomainAutoRenewError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DisableDomainAutoRenewErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DisableDomainAutoRenewErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DisableDomainAutoRenewError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DisableDomainAutoRenewErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DisableDomainAutoRenewError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DisableDomainAutoRenewErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DisableDomainAutoRenewErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, DisableDomainAutoRenewErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `DisableDomainAutoRenewErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableDomainAutoRenewErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, DisableDomainAutoRenewErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for DisableDomainAutoRenewError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DisableDomainAutoRenewErrorKind::InvalidInput(_inner) => Some(_inner),
-            DisableDomainAutoRenewErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            DisableDomainAutoRenewErrorKind::Unhandled(_inner) => Some(_inner),
+            DisableDomainAutoRenewErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            DisableDomainAutoRenewErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            DisableDomainAutoRenewErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3949,15 +4135,15 @@ impl std::error::Error for DisableDomainAutoRenewError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteTagsForDomainError {
     /// Kind of error that occurred.
-    pub kind: DeleteTagsForDomainErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteTagsForDomainErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteTagsForDomainError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3971,23 +4157,31 @@ pub enum DeleteTagsForDomainErrorKind {
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTagsForDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteTagsForDomainErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            DeleteTagsForDomainErrorKind::OperationLimitExceeded(_inner) => _inner.fmt(f),
-            DeleteTagsForDomainErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            DeleteTagsForDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteTagsForDomainErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTagsForDomainErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTagsForDomainErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTagsForDomainErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4001,56 +4195,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteTagsForDomainError {
 }
 impl DeleteTagsForDomainError {
     /// Creates a new `DeleteTagsForDomainError`.
-    pub fn new(kind: DeleteTagsForDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteTagsForDomainError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteTagsForDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteTagsForDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteTagsForDomainError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteTagsForDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteTagsForDomainErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, DeleteTagsForDomainErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `DeleteTagsForDomainErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteTagsForDomainErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, DeleteTagsForDomainErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `DeleteTagsForDomainErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
@@ -4060,10 +4251,18 @@ impl DeleteTagsForDomainError {
 impl std::error::Error for DeleteTagsForDomainError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteTagsForDomainErrorKind::InvalidInput(_inner) => Some(_inner),
-            DeleteTagsForDomainErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
-            DeleteTagsForDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            DeleteTagsForDomainErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteTagsForDomainErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTagsForDomainErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTagsForDomainErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTagsForDomainErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4073,15 +4272,15 @@ impl std::error::Error for DeleteTagsForDomainError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteDomainError {
     /// Kind of error that occurred.
-    pub kind: DeleteDomainErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteDomainErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteDomainError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4097,24 +4296,34 @@ pub enum DeleteDomainErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDomainErrorKind::DuplicateRequest(_inner) => _inner.fmt(f),
-            DeleteDomainErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            DeleteDomainErrorKind::TldRulesViolation(_inner) => _inner.fmt(f),
-            DeleteDomainErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            DeleteDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteDomainErrorKind::DuplicateRequest(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDomainErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDomainErrorKind::TldRulesViolation(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDomainErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDomainErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4128,46 +4337,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteDomainError {
 }
 impl DeleteDomainError {
     /// Creates a new `DeleteDomainError`.
-    pub fn new(kind: DeleteDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteDomainError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteDomainError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteDomainErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(&self.kind, DeleteDomainErrorKind::DuplicateRequest(_))
@@ -4188,11 +4397,21 @@ impl DeleteDomainError {
 impl std::error::Error for DeleteDomainError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDomainErrorKind::DuplicateRequest(_inner) => Some(_inner),
-            DeleteDomainErrorKind::InvalidInput(_inner) => Some(_inner),
-            DeleteDomainErrorKind::TldRulesViolation(_inner) => Some(_inner),
-            DeleteDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            DeleteDomainErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteDomainErrorKind::DuplicateRequest(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDomainErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDomainErrorKind::TldRulesViolation(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDomainErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDomainErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4202,17 +4421,15 @@ impl std::error::Error for DeleteDomainError {
 #[derive(std::fmt::Debug)]
 pub struct CheckDomainTransferabilityError {
     /// Kind of error that occurred.
-    pub kind: CheckDomainTransferabilityErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CheckDomainTransferabilityErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CheckDomainTransferabilityError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CheckDomainTransferabilityErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: CheckDomainTransferabilityErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4224,22 +4441,28 @@ pub enum CheckDomainTransferabilityErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CheckDomainTransferabilityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CheckDomainTransferabilityErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            CheckDomainTransferabilityErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            CheckDomainTransferabilityErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CheckDomainTransferabilityErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckDomainTransferabilityErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckDomainTransferabilityErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4253,71 +4476,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for CheckDomainTransferabilityErr
 }
 impl CheckDomainTransferabilityError {
     /// Creates a new `CheckDomainTransferabilityError`.
-    pub fn new(kind: CheckDomainTransferabilityErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CheckDomainTransferabilityError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CheckDomainTransferabilityErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CheckDomainTransferabilityError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CheckDomainTransferabilityErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CheckDomainTransferabilityErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CheckDomainTransferabilityError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CheckDomainTransferabilityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CheckDomainTransferabilityError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CheckDomainTransferabilityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CheckDomainTransferabilityErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckDomainTransferabilityErrorKind::InvalidInput(_)
-        )
+        matches!(&self.kind, CheckDomainTransferabilityErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `CheckDomainTransferabilityErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckDomainTransferabilityErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, CheckDomainTransferabilityErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for CheckDomainTransferabilityError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CheckDomainTransferabilityErrorKind::InvalidInput(_inner) => Some(_inner),
-            CheckDomainTransferabilityErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            CheckDomainTransferabilityErrorKind::Unhandled(_inner) => Some(_inner),
+            CheckDomainTransferabilityErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            CheckDomainTransferabilityErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            CheckDomainTransferabilityErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4327,15 +4546,15 @@ impl std::error::Error for CheckDomainTransferabilityError {
 #[derive(std::fmt::Debug)]
 pub struct CheckDomainAvailabilityError {
     /// Kind of error that occurred.
-    pub kind: CheckDomainAvailabilityErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CheckDomainAvailabilityErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CheckDomainAvailabilityError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CheckDomainAvailabilityErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4347,22 +4566,28 @@ pub enum CheckDomainAvailabilityErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CheckDomainAvailabilityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CheckDomainAvailabilityErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            CheckDomainAvailabilityErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            CheckDomainAvailabilityErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CheckDomainAvailabilityErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckDomainAvailabilityErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckDomainAvailabilityErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4376,71 +4601,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for CheckDomainAvailabilityError 
 }
 impl CheckDomainAvailabilityError {
     /// Creates a new `CheckDomainAvailabilityError`.
-    pub fn new(kind: CheckDomainAvailabilityErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CheckDomainAvailabilityError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CheckDomainAvailabilityErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CheckDomainAvailabilityError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CheckDomainAvailabilityErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CheckDomainAvailabilityErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CheckDomainAvailabilityError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CheckDomainAvailabilityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CheckDomainAvailabilityError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CheckDomainAvailabilityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CheckDomainAvailabilityErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckDomainAvailabilityErrorKind::InvalidInput(_)
-        )
+        matches!(&self.kind, CheckDomainAvailabilityErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `CheckDomainAvailabilityErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckDomainAvailabilityErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, CheckDomainAvailabilityErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for CheckDomainAvailabilityError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CheckDomainAvailabilityErrorKind::InvalidInput(_inner) => Some(_inner),
-            CheckDomainAvailabilityErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            CheckDomainAvailabilityErrorKind::Unhandled(_inner) => Some(_inner),
+            CheckDomainAvailabilityErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            CheckDomainAvailabilityErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            CheckDomainAvailabilityErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4450,19 +4671,15 @@ impl std::error::Error for CheckDomainAvailabilityError {
 #[derive(std::fmt::Debug)]
 pub struct CancelDomainTransferToAnotherAwsAccountError {
     /// Kind of error that occurred.
-    pub kind: CancelDomainTransferToAnotherAwsAccountErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CancelDomainTransferToAnotherAwsAccountErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for CancelDomainTransferToAnotherAwsAccountError
-{
+impl aws_smithy_http::result::CreateUnhandledError for CancelDomainTransferToAnotherAwsAccountError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4476,27 +4693,31 @@ pub enum CancelDomainTransferToAnotherAwsAccountErrorKind {
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelDomainTransferToAnotherAwsAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CancelDomainTransferToAnotherAwsAccountErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            CancelDomainTransferToAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) => {
+            CancelDomainTransferToAnotherAwsAccountErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            CancelDomainTransferToAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => {
-                _inner.fmt(f)
-            }
-            CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4510,86 +4731,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for CancelDomainTransferToAnother
 }
 impl CancelDomainTransferToAnotherAwsAccountError {
     /// Creates a new `CancelDomainTransferToAnotherAwsAccountError`.
-    pub fn new(
-        kind: CancelDomainTransferToAnotherAwsAccountErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CancelDomainTransferToAnotherAwsAccountError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CancelDomainTransferToAnotherAwsAccountError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CancelDomainTransferToAnotherAwsAccountErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CancelDomainTransferToAnotherAwsAccountError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CancelDomainTransferToAnotherAwsAccountError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CancelDomainTransferToAnotherAwsAccountErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
-        matches!(
-            &self.kind,
-            CancelDomainTransferToAnotherAwsAccountErrorKind::InvalidInput(_)
-        )
+        matches!(&self.kind, CancelDomainTransferToAnotherAwsAccountErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `CancelDomainTransferToAnotherAwsAccountErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            CancelDomainTransferToAnotherAwsAccountErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, CancelDomainTransferToAnotherAwsAccountErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for CancelDomainTransferToAnotherAwsAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CancelDomainTransferToAnotherAwsAccountErrorKind::InvalidInput(_inner) => Some(_inner),
-            CancelDomainTransferToAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) => {
+            CancelDomainTransferToAnotherAwsAccountErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            CancelDomainTransferToAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => {
-                Some(_inner)
-            }
-            CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4599,17 +4808,15 @@ impl std::error::Error for CancelDomainTransferToAnotherAwsAccountError {
 #[derive(std::fmt::Debug)]
 pub struct AssociateDelegationSignerToDomainError {
     /// Kind of error that occurred.
-    pub kind: AssociateDelegationSignerToDomainErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AssociateDelegationSignerToDomainErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AssociateDelegationSignerToDomainError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AssociateDelegationSignerToDomainErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: AssociateDelegationSignerToDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4629,30 +4836,40 @@ pub enum AssociateDelegationSignerToDomainErrorKind {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateDelegationSignerToDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AssociateDelegationSignerToDomainErrorKind::DnssecLimitExceeded(_inner) => {
+            AssociateDelegationSignerToDomainErrorKind::DnssecLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateDelegationSignerToDomainErrorKind::DuplicateRequest(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateDelegationSignerToDomainErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateDelegationSignerToDomainErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateDelegationSignerToDomainErrorKind::TldRulesViolation(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateDelegationSignerToDomainErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateDelegationSignerToDomainErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AssociateDelegationSignerToDomainErrorKind::DuplicateRequest(_inner) => _inner.fmt(f),
-            AssociateDelegationSignerToDomainErrorKind::InvalidInput(_inner) => _inner.fmt(f),
-            AssociateDelegationSignerToDomainErrorKind::OperationLimitExceeded(_inner) => {
-                _inner.fmt(f)
-            }
-            AssociateDelegationSignerToDomainErrorKind::TldRulesViolation(_inner) => _inner.fmt(f),
-            AssociateDelegationSignerToDomainErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
-            AssociateDelegationSignerToDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4666,108 +4883,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for AssociateDelegationSignerToDo
 }
 impl AssociateDelegationSignerToDomainError {
     /// Creates a new `AssociateDelegationSignerToDomainError`.
-    pub fn new(
-        kind: AssociateDelegationSignerToDomainErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AssociateDelegationSignerToDomainError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AssociateDelegationSignerToDomainErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AssociateDelegationSignerToDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AssociateDelegationSignerToDomainErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AssociateDelegationSignerToDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AssociateDelegationSignerToDomainError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AssociateDelegationSignerToDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AssociateDelegationSignerToDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AssociateDelegationSignerToDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AssociateDelegationSignerToDomainErrorKind::DnssecLimitExceeded`.
     pub fn is_dnssec_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateDelegationSignerToDomainErrorKind::DnssecLimitExceeded(_)
-        )
+        matches!(&self.kind, AssociateDelegationSignerToDomainErrorKind::DnssecLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `AssociateDelegationSignerToDomainErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateDelegationSignerToDomainErrorKind::DuplicateRequest(_)
-        )
+        matches!(&self.kind, AssociateDelegationSignerToDomainErrorKind::DuplicateRequest(_))
     }
     /// Returns `true` if the error kind is `AssociateDelegationSignerToDomainErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateDelegationSignerToDomainErrorKind::InvalidInput(_)
-        )
+        matches!(&self.kind, AssociateDelegationSignerToDomainErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `AssociateDelegationSignerToDomainErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateDelegationSignerToDomainErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, AssociateDelegationSignerToDomainErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `AssociateDelegationSignerToDomainErrorKind::TldRulesViolation`.
     pub fn is_tld_rules_violation(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateDelegationSignerToDomainErrorKind::TldRulesViolation(_)
-        )
+        matches!(&self.kind, AssociateDelegationSignerToDomainErrorKind::TldRulesViolation(_))
     }
     /// Returns `true` if the error kind is `AssociateDelegationSignerToDomainErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateDelegationSignerToDomainErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, AssociateDelegationSignerToDomainErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for AssociateDelegationSignerToDomainError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AssociateDelegationSignerToDomainErrorKind::DnssecLimitExceeded(_inner) => Some(_inner),
-            AssociateDelegationSignerToDomainErrorKind::DuplicateRequest(_inner) => Some(_inner),
-            AssociateDelegationSignerToDomainErrorKind::InvalidInput(_inner) => Some(_inner),
-            AssociateDelegationSignerToDomainErrorKind::OperationLimitExceeded(_inner) => {
+            AssociateDelegationSignerToDomainErrorKind::DnssecLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            AssociateDelegationSignerToDomainErrorKind::DuplicateRequest(_inner) =>
+            Some(_inner)
+            ,
+            AssociateDelegationSignerToDomainErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            AssociateDelegationSignerToDomainErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            AssociateDelegationSignerToDomainErrorKind::TldRulesViolation(_inner) =>
+            Some(_inner)
+            ,
+            AssociateDelegationSignerToDomainErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            AssociateDelegationSignerToDomainErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            AssociateDelegationSignerToDomainErrorKind::TldRulesViolation(_inner) => Some(_inner),
-            AssociateDelegationSignerToDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            AssociateDelegationSignerToDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4775,22 +4979,20 @@ impl std::error::Error for AssociateDelegationSignerToDomainError {
 /// <p> This error is returned if you call <code>AssociateDelegationSignerToDomain</code> when the specified domain has reached the maximum number of DS records. You can't add any additional DS records unless you delete an existing one first. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DnssecLimitExceeded {
+pub struct DnssecLimitExceeded  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DnssecLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DnssecLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DnssecLimitExceeded")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -4800,7 +5002,7 @@ impl std::fmt::Display for DnssecLimitExceeded {
 impl std::error::Error for DnssecLimitExceeded {}
 /// See [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
 pub mod dnssec_limit_exceeded {
-
+    
     /// A builder for [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4814,16 +5016,18 @@ pub mod dnssec_limit_exceeded {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
         pub fn build(self) -> crate::error::DnssecLimitExceeded {
             crate::error::DnssecLimitExceeded {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DnssecLimitExceeded {
     /// Creates a new builder-style object to manufacture [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
@@ -4837,19 +5041,15 @@ impl DnssecLimitExceeded {
 #[derive(std::fmt::Debug)]
 pub struct AcceptDomainTransferFromAnotherAwsAccountError {
     /// Kind of error that occurred.
-    pub kind: AcceptDomainTransferFromAnotherAwsAccountErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AcceptDomainTransferFromAnotherAwsAccountErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for AcceptDomainTransferFromAnotherAwsAccountError
-{
+impl aws_smithy_http::result::CreateUnhandledError for AcceptDomainTransferFromAnotherAwsAccountError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4865,32 +5065,34 @@ pub enum AcceptDomainTransferFromAnotherAwsAccountErrorKind {
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AcceptDomainTransferFromAnotherAwsAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AcceptDomainTransferFromAnotherAwsAccountErrorKind::DomainLimitExceeded(_inner) => {
+            AcceptDomainTransferFromAnotherAwsAccountErrorKind::DomainLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            AcceptDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(_inner) =>
+            _inner.fmt(f)
+            ,
+            AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_inner) =>
+            _inner.fmt(f)
+            ,
+            AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AcceptDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(_inner) => {
-                _inner.fmt(f)
-            }
-            AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) => {
-                _inner.fmt(f)
-            }
-            AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => {
-                _inner.fmt(f)
-            }
-            AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4904,127 +5106,111 @@ impl aws_smithy_types::retry::ProvideErrorKind for AcceptDomainTransferFromAnoth
 }
 impl AcceptDomainTransferFromAnotherAwsAccountError {
     /// Creates a new `AcceptDomainTransferFromAnotherAwsAccountError`.
-    pub fn new(
-        kind: AcceptDomainTransferFromAnotherAwsAccountErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AcceptDomainTransferFromAnotherAwsAccountError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AcceptDomainTransferFromAnotherAwsAccountError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AcceptDomainTransferFromAnotherAwsAccountErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AcceptDomainTransferFromAnotherAwsAccountError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AcceptDomainTransferFromAnotherAwsAccountError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AcceptDomainTransferFromAnotherAwsAccountErrorKind::DomainLimitExceeded`.
     pub fn is_domain_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            AcceptDomainTransferFromAnotherAwsAccountErrorKind::DomainLimitExceeded(_)
-        )
+        matches!(&self.kind, AcceptDomainTransferFromAnotherAwsAccountErrorKind::DomainLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `AcceptDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
-        matches!(
-            &self.kind,
-            AcceptDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(_)
-        )
+        matches!(&self.kind, AcceptDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(_))
     }
     /// Returns `true` if the error kind is `AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded`.
     pub fn is_operation_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_)
-        )
+        matches!(&self.kind, AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld`.
     pub fn is_unsupported_tld(&self) -> bool {
-        matches!(
-            &self.kind,
-            AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_)
-        )
+        matches!(&self.kind, AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_))
     }
 }
 impl std::error::Error for AcceptDomainTransferFromAnotherAwsAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AcceptDomainTransferFromAnotherAwsAccountErrorKind::DomainLimitExceeded(_inner) => {
+            AcceptDomainTransferFromAnotherAwsAccountErrorKind::DomainLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            AcceptDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(_inner) =>
+            Some(_inner)
+            ,
+            AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_inner) =>
+            Some(_inner)
+            ,
+            AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            AcceptDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(_inner) => {
-                Some(_inner)
-            }
-            AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) => {
-                Some(_inner)
-            }
-            AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => {
-                Some(_inner)
-            }
-            AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

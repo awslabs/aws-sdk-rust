@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateIdentityProviderConfigurationOutput {}
+pub struct UpdateIdentityProviderConfigurationOutput  {
+}
 /// See [`UpdateIdentityProviderConfigurationOutput`](crate::output::UpdateIdentityProviderConfigurationOutput).
 pub mod update_identity_provider_configuration_output {
-
+    
     /// A builder for [`UpdateIdentityProviderConfigurationOutput`](crate::output::UpdateIdentityProviderConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateIdentityProviderConfigurationOutput`](crate::output::UpdateIdentityProviderConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateIdentityProviderConfigurationOutput {
-            crate::output::UpdateIdentityProviderConfigurationOutput {}
+            crate::output::UpdateIdentityProviderConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateIdentityProviderConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIdentityProviderConfigurationOutput`](crate::output::UpdateIdentityProviderConfigurationOutput).
@@ -26,19 +31,24 @@ impl UpdateIdentityProviderConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFleetMetadataOutput {}
+pub struct UpdateFleetMetadataOutput  {
+}
 /// See [`UpdateFleetMetadataOutput`](crate::output::UpdateFleetMetadataOutput).
 pub mod update_fleet_metadata_output {
-
+    
     /// A builder for [`UpdateFleetMetadataOutput`](crate::output::UpdateFleetMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateFleetMetadataOutput`](crate::output::UpdateFleetMetadataOutput).
         pub fn build(self) -> crate::output::UpdateFleetMetadataOutput {
-            crate::output::UpdateFleetMetadataOutput {}
+            crate::output::UpdateFleetMetadataOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateFleetMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetMetadataOutput`](crate::output::UpdateFleetMetadataOutput).
@@ -50,19 +60,24 @@ impl UpdateFleetMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDomainMetadataOutput {}
+pub struct UpdateDomainMetadataOutput  {
+}
 /// See [`UpdateDomainMetadataOutput`](crate::output::UpdateDomainMetadataOutput).
 pub mod update_domain_metadata_output {
-
+    
     /// A builder for [`UpdateDomainMetadataOutput`](crate::output::UpdateDomainMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDomainMetadataOutput`](crate::output::UpdateDomainMetadataOutput).
         pub fn build(self) -> crate::output::UpdateDomainMetadataOutput {
-            crate::output::UpdateDomainMetadataOutput {}
+            crate::output::UpdateDomainMetadataOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateDomainMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainMetadataOutput`](crate::output::UpdateDomainMetadataOutput).
@@ -74,19 +89,24 @@ impl UpdateDomainMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDevicePolicyConfigurationOutput {}
+pub struct UpdateDevicePolicyConfigurationOutput  {
+}
 /// See [`UpdateDevicePolicyConfigurationOutput`](crate::output::UpdateDevicePolicyConfigurationOutput).
 pub mod update_device_policy_configuration_output {
-
+    
     /// A builder for [`UpdateDevicePolicyConfigurationOutput`](crate::output::UpdateDevicePolicyConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDevicePolicyConfigurationOutput`](crate::output::UpdateDevicePolicyConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateDevicePolicyConfigurationOutput {
-            crate::output::UpdateDevicePolicyConfigurationOutput {}
+            crate::output::UpdateDevicePolicyConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateDevicePolicyConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDevicePolicyConfigurationOutput`](crate::output::UpdateDevicePolicyConfigurationOutput).
@@ -98,19 +118,24 @@ impl UpdateDevicePolicyConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCompanyNetworkConfigurationOutput {}
+pub struct UpdateCompanyNetworkConfigurationOutput  {
+}
 /// See [`UpdateCompanyNetworkConfigurationOutput`](crate::output::UpdateCompanyNetworkConfigurationOutput).
 pub mod update_company_network_configuration_output {
-
+    
     /// A builder for [`UpdateCompanyNetworkConfigurationOutput`](crate::output::UpdateCompanyNetworkConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateCompanyNetworkConfigurationOutput`](crate::output::UpdateCompanyNetworkConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateCompanyNetworkConfigurationOutput {
-            crate::output::UpdateCompanyNetworkConfigurationOutput {}
+            crate::output::UpdateCompanyNetworkConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateCompanyNetworkConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCompanyNetworkConfigurationOutput`](crate::output::UpdateCompanyNetworkConfigurationOutput).
@@ -122,19 +147,24 @@ impl UpdateCompanyNetworkConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAuditStreamConfigurationOutput {}
+pub struct UpdateAuditStreamConfigurationOutput  {
+}
 /// See [`UpdateAuditStreamConfigurationOutput`](crate::output::UpdateAuditStreamConfigurationOutput).
 pub mod update_audit_stream_configuration_output {
-
+    
     /// A builder for [`UpdateAuditStreamConfigurationOutput`](crate::output::UpdateAuditStreamConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAuditStreamConfigurationOutput`](crate::output::UpdateAuditStreamConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateAuditStreamConfigurationOutput {
-            crate::output::UpdateAuditStreamConfigurationOutput {}
+            crate::output::UpdateAuditStreamConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateAuditStreamConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAuditStreamConfigurationOutput`](crate::output::UpdateAuditStreamConfigurationOutput).
@@ -146,19 +176,24 @@ impl UpdateAuditStreamConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -170,19 +205,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -194,19 +234,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SignOutUserOutput {}
+pub struct SignOutUserOutput  {
+}
 /// See [`SignOutUserOutput`](crate::output::SignOutUserOutput).
 pub mod sign_out_user_output {
-
+    
     /// A builder for [`SignOutUserOutput`](crate::output::SignOutUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SignOutUserOutput`](crate::output::SignOutUserOutput).
         pub fn build(self) -> crate::output::SignOutUserOutput {
-            crate::output::SignOutUserOutput {}
+            crate::output::SignOutUserOutput {
+            }
         }
     }
+    
+    
 }
 impl SignOutUserOutput {
     /// Creates a new builder-style object to manufacture [`SignOutUserOutput`](crate::output::SignOutUserOutput).
@@ -218,19 +263,24 @@ impl SignOutUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevokeDomainAccessOutput {}
+pub struct RevokeDomainAccessOutput  {
+}
 /// See [`RevokeDomainAccessOutput`](crate::output::RevokeDomainAccessOutput).
 pub mod revoke_domain_access_output {
-
+    
     /// A builder for [`RevokeDomainAccessOutput`](crate::output::RevokeDomainAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RevokeDomainAccessOutput`](crate::output::RevokeDomainAccessOutput).
         pub fn build(self) -> crate::output::RevokeDomainAccessOutput {
-            crate::output::RevokeDomainAccessOutput {}
+            crate::output::RevokeDomainAccessOutput {
+            }
         }
     }
+    
+    
 }
 impl RevokeDomainAccessOutput {
     /// Creates a new builder-style object to manufacture [`RevokeDomainAccessOutput`](crate::output::RevokeDomainAccessOutput).
@@ -242,19 +292,24 @@ impl RevokeDomainAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreDomainAccessOutput {}
+pub struct RestoreDomainAccessOutput  {
+}
 /// See [`RestoreDomainAccessOutput`](crate::output::RestoreDomainAccessOutput).
 pub mod restore_domain_access_output {
-
+    
     /// A builder for [`RestoreDomainAccessOutput`](crate::output::RestoreDomainAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RestoreDomainAccessOutput`](crate::output::RestoreDomainAccessOutput).
         pub fn build(self) -> crate::output::RestoreDomainAccessOutput {
-            crate::output::RestoreDomainAccessOutput {}
+            crate::output::RestoreDomainAccessOutput {
+            }
         }
     }
+    
+    
 }
 impl RestoreDomainAccessOutput {
     /// Creates a new builder-style object to manufacture [`RestoreDomainAccessOutput`](crate::output::RestoreDomainAccessOutput).
@@ -266,35 +321,31 @@ impl RestoreDomainAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWebsiteCertificateAuthoritiesOutput {
+pub struct ListWebsiteCertificateAuthoritiesOutput  {
     /// <p>Information about the certificates.</p>
     #[doc(hidden)]
-    pub website_certificate_authorities:
-        std::option::Option<std::vec::Vec<crate::model::WebsiteCaSummary>>,
+    pub website_certificate_authorities: std::option::Option<std::vec::Vec<crate::model::WebsiteCaSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWebsiteCertificateAuthoritiesOutput {
     /// <p>Information about the certificates.</p>
-    pub fn website_certificate_authorities(
-        &self,
-    ) -> std::option::Option<&[crate::model::WebsiteCaSummary]> {
+    pub fn website_certificate_authorities(&self) -> std::option::Option<& [crate::model::WebsiteCaSummary]> {
         self.website_certificate_authorities.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListWebsiteCertificateAuthoritiesOutput`](crate::output::ListWebsiteCertificateAuthoritiesOutput).
 pub mod list_website_certificate_authorities_output {
-
+    
     /// A builder for [`ListWebsiteCertificateAuthoritiesOutput`](crate::output::ListWebsiteCertificateAuthoritiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) website_certificate_authorities:
-            std::option::Option<std::vec::Vec<crate::model::WebsiteCaSummary>>,
+        pub(crate) website_certificate_authorities: std::option::Option<std::vec::Vec<crate::model::WebsiteCaSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -303,22 +354,15 @@ pub mod list_website_certificate_authorities_output {
         /// To override the contents of this collection use [`set_website_certificate_authorities`](Self::set_website_certificate_authorities).
         ///
         /// <p>Information about the certificates.</p>
-        pub fn website_certificate_authorities(
-            mut self,
-            input: crate::model::WebsiteCaSummary,
-        ) -> Self {
+        pub fn website_certificate_authorities(mut self, input: crate::model::WebsiteCaSummary) -> Self {
             let mut v = self.website_certificate_authorities.unwrap_or_default();
-            v.push(input);
-            self.website_certificate_authorities = Some(v);
-            self
+                            v.push(input);
+                            self.website_certificate_authorities = Some(v);
+                            self
         }
         /// <p>Information about the certificates.</p>
-        pub fn set_website_certificate_authorities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WebsiteCaSummary>>,
-        ) -> Self {
-            self.website_certificate_authorities = input;
-            self
+        pub fn set_website_certificate_authorities(mut self, input: std::option::Option<std::vec::Vec<crate::model::WebsiteCaSummary>>) -> Self {
+            self.website_certificate_authorities = input; self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -327,17 +371,20 @@ pub mod list_website_certificate_authorities_output {
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListWebsiteCertificateAuthoritiesOutput`](crate::output::ListWebsiteCertificateAuthoritiesOutput).
         pub fn build(self) -> crate::output::ListWebsiteCertificateAuthoritiesOutput {
             crate::output::ListWebsiteCertificateAuthoritiesOutput {
-                website_certificate_authorities: self.website_certificate_authorities,
-                next_token: self.next_token,
+                website_certificate_authorities: self.website_certificate_authorities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWebsiteCertificateAuthoritiesOutput {
     /// Creates a new builder-style object to manufacture [`ListWebsiteCertificateAuthoritiesOutput`](crate::output::ListWebsiteCertificateAuthoritiesOutput).
@@ -349,35 +396,31 @@ impl ListWebsiteCertificateAuthoritiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWebsiteAuthorizationProvidersOutput {
+pub struct ListWebsiteAuthorizationProvidersOutput  {
     /// <p>The website authorization providers.</p>
     #[doc(hidden)]
-    pub website_authorization_providers:
-        std::option::Option<std::vec::Vec<crate::model::WebsiteAuthorizationProviderSummary>>,
+    pub website_authorization_providers: std::option::Option<std::vec::Vec<crate::model::WebsiteAuthorizationProviderSummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWebsiteAuthorizationProvidersOutput {
     /// <p>The website authorization providers.</p>
-    pub fn website_authorization_providers(
-        &self,
-    ) -> std::option::Option<&[crate::model::WebsiteAuthorizationProviderSummary]> {
+    pub fn website_authorization_providers(&self) -> std::option::Option<& [crate::model::WebsiteAuthorizationProviderSummary]> {
         self.website_authorization_providers.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListWebsiteAuthorizationProvidersOutput`](crate::output::ListWebsiteAuthorizationProvidersOutput).
 pub mod list_website_authorization_providers_output {
-
+    
     /// A builder for [`ListWebsiteAuthorizationProvidersOutput`](crate::output::ListWebsiteAuthorizationProvidersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) website_authorization_providers:
-            std::option::Option<std::vec::Vec<crate::model::WebsiteAuthorizationProviderSummary>>,
+        pub(crate) website_authorization_providers: std::option::Option<std::vec::Vec<crate::model::WebsiteAuthorizationProviderSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -386,24 +429,15 @@ pub mod list_website_authorization_providers_output {
         /// To override the contents of this collection use [`set_website_authorization_providers`](Self::set_website_authorization_providers).
         ///
         /// <p>The website authorization providers.</p>
-        pub fn website_authorization_providers(
-            mut self,
-            input: crate::model::WebsiteAuthorizationProviderSummary,
-        ) -> Self {
+        pub fn website_authorization_providers(mut self, input: crate::model::WebsiteAuthorizationProviderSummary) -> Self {
             let mut v = self.website_authorization_providers.unwrap_or_default();
-            v.push(input);
-            self.website_authorization_providers = Some(v);
-            self
+                            v.push(input);
+                            self.website_authorization_providers = Some(v);
+                            self
         }
         /// <p>The website authorization providers.</p>
-        pub fn set_website_authorization_providers(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::WebsiteAuthorizationProviderSummary>,
-            >,
-        ) -> Self {
-            self.website_authorization_providers = input;
-            self
+        pub fn set_website_authorization_providers(mut self, input: std::option::Option<std::vec::Vec<crate::model::WebsiteAuthorizationProviderSummary>>) -> Self {
+            self.website_authorization_providers = input; self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -412,17 +446,20 @@ pub mod list_website_authorization_providers_output {
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListWebsiteAuthorizationProvidersOutput`](crate::output::ListWebsiteAuthorizationProvidersOutput).
         pub fn build(self) -> crate::output::ListWebsiteAuthorizationProvidersOutput {
             crate::output::ListWebsiteAuthorizationProvidersOutput {
-                website_authorization_providers: self.website_authorization_providers,
-                next_token: self.next_token,
+                website_authorization_providers: self.website_authorization_providers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWebsiteAuthorizationProvidersOutput {
     /// Creates a new builder-style object to manufacture [`ListWebsiteAuthorizationProvidersOutput`](crate::output::ListWebsiteAuthorizationProvidersOutput).
@@ -434,30 +471,24 @@ impl ListWebsiteAuthorizationProvidersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -465,31 +496,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -501,7 +527,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFleetsOutput {
+pub struct ListFleetsOutput  {
     /// <p>The summary list of the fleets.</p>
     #[doc(hidden)]
     pub fleet_summary_list: std::option::Option<std::vec::Vec<crate::model::FleetSummary>>,
@@ -511,22 +537,21 @@ pub struct ListFleetsOutput {
 }
 impl ListFleetsOutput {
     /// <p>The summary list of the fleets.</p>
-    pub fn fleet_summary_list(&self) -> std::option::Option<&[crate::model::FleetSummary]> {
+    pub fn fleet_summary_list(&self) -> std::option::Option<& [crate::model::FleetSummary]> {
         self.fleet_summary_list.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFleetsOutput`](crate::output::ListFleetsOutput).
 pub mod list_fleets_output {
-
+    
     /// A builder for [`ListFleetsOutput`](crate::output::ListFleetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) fleet_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::FleetSummary>>,
+        pub(crate) fleet_summary_list: std::option::Option<std::vec::Vec<crate::model::FleetSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -537,17 +562,13 @@ pub mod list_fleets_output {
         /// <p>The summary list of the fleets.</p>
         pub fn fleet_summary_list(mut self, input: crate::model::FleetSummary) -> Self {
             let mut v = self.fleet_summary_list.unwrap_or_default();
-            v.push(input);
-            self.fleet_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.fleet_summary_list = Some(v);
+                            self
         }
         /// <p>The summary list of the fleets.</p>
-        pub fn set_fleet_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FleetSummary>>,
-        ) -> Self {
-            self.fleet_summary_list = input;
-            self
+        pub fn set_fleet_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::FleetSummary>>) -> Self {
+            self.fleet_summary_list = input; self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -556,17 +577,20 @@ pub mod list_fleets_output {
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFleetsOutput`](crate::output::ListFleetsOutput).
         pub fn build(self) -> crate::output::ListFleetsOutput {
             crate::output::ListFleetsOutput {
-                fleet_summary_list: self.fleet_summary_list,
-                next_token: self.next_token,
+                fleet_summary_list: self.fleet_summary_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFleetsOutput {
     /// Creates a new builder-style object to manufacture [`ListFleetsOutput`](crate::output::ListFleetsOutput).
@@ -578,7 +602,7 @@ impl ListFleetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDomainsOutput {
+pub struct ListDomainsOutput  {
     /// <p>Information about the domains.</p>
     #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
@@ -588,17 +612,17 @@ pub struct ListDomainsOutput {
 }
 impl ListDomainsOutput {
     /// <p>Information about the domains.</p>
-    pub fn domains(&self) -> std::option::Option<&[crate::model::DomainSummary]> {
+    pub fn domains(&self) -> std::option::Option<& [crate::model::DomainSummary]> {
         self.domains.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDomainsOutput`](crate::output::ListDomainsOutput).
 pub mod list_domains_output {
-
+    
     /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -613,17 +637,13 @@ pub mod list_domains_output {
         /// <p>Information about the domains.</p>
         pub fn domains(mut self, input: crate::model::DomainSummary) -> Self {
             let mut v = self.domains.unwrap_or_default();
-            v.push(input);
-            self.domains = Some(v);
-            self
+                            v.push(input);
+                            self.domains = Some(v);
+                            self
         }
         /// <p>Information about the domains.</p>
-        pub fn set_domains(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
-        ) -> Self {
-            self.domains = input;
-            self
+        pub fn set_domains(mut self, input: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>) -> Self {
+            self.domains = input; self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -632,17 +652,20 @@ pub mod list_domains_output {
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::output::ListDomainsOutput).
         pub fn build(self) -> crate::output::ListDomainsOutput {
             crate::output::ListDomainsOutput {
-                domains: self.domains,
-                next_token: self.next_token,
+                domains: self.domains
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput).
@@ -654,7 +677,7 @@ impl ListDomainsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDevicesOutput {
+pub struct ListDevicesOutput  {
     /// <p>Information about the devices.</p>
     #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::DeviceSummary>>,
@@ -664,17 +687,17 @@ pub struct ListDevicesOutput {
 }
 impl ListDevicesOutput {
     /// <p>Information about the devices.</p>
-    pub fn devices(&self) -> std::option::Option<&[crate::model::DeviceSummary]> {
+    pub fn devices(&self) -> std::option::Option<& [crate::model::DeviceSummary]> {
         self.devices.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDevicesOutput`](crate::output::ListDevicesOutput).
 pub mod list_devices_output {
-
+    
     /// A builder for [`ListDevicesOutput`](crate::output::ListDevicesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -689,17 +712,13 @@ pub mod list_devices_output {
         /// <p>Information about the devices.</p>
         pub fn devices(mut self, input: crate::model::DeviceSummary) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input);
-            self.devices = Some(v);
-            self
+                            v.push(input);
+                            self.devices = Some(v);
+                            self
         }
         /// <p>Information about the devices.</p>
-        pub fn set_devices(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeviceSummary>>,
-        ) -> Self {
-            self.devices = input;
-            self
+        pub fn set_devices(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeviceSummary>>) -> Self {
+            self.devices = input; self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -708,17 +727,20 @@ pub mod list_devices_output {
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDevicesOutput`](crate::output::ListDevicesOutput).
         pub fn build(self) -> crate::output::ListDevicesOutput {
             crate::output::ListDevicesOutput {
-                devices: self.devices,
-                next_token: self.next_token,
+                devices: self.devices
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDevicesOutput {
     /// Creates a new builder-style object to manufacture [`ListDevicesOutput`](crate::output::ListDevicesOutput).
@@ -730,19 +752,24 @@ impl ListDevicesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateWebsiteCertificateAuthorityOutput {}
+pub struct DisassociateWebsiteCertificateAuthorityOutput  {
+}
 /// See [`DisassociateWebsiteCertificateAuthorityOutput`](crate::output::DisassociateWebsiteCertificateAuthorityOutput).
 pub mod disassociate_website_certificate_authority_output {
-
+    
     /// A builder for [`DisassociateWebsiteCertificateAuthorityOutput`](crate::output::DisassociateWebsiteCertificateAuthorityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateWebsiteCertificateAuthorityOutput`](crate::output::DisassociateWebsiteCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::DisassociateWebsiteCertificateAuthorityOutput {
-            crate::output::DisassociateWebsiteCertificateAuthorityOutput {}
+            crate::output::DisassociateWebsiteCertificateAuthorityOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateWebsiteCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateWebsiteCertificateAuthorityOutput`](crate::output::DisassociateWebsiteCertificateAuthorityOutput).
@@ -754,19 +781,24 @@ impl DisassociateWebsiteCertificateAuthorityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateWebsiteAuthorizationProviderOutput {}
+pub struct DisassociateWebsiteAuthorizationProviderOutput  {
+}
 /// See [`DisassociateWebsiteAuthorizationProviderOutput`](crate::output::DisassociateWebsiteAuthorizationProviderOutput).
 pub mod disassociate_website_authorization_provider_output {
-
+    
     /// A builder for [`DisassociateWebsiteAuthorizationProviderOutput`](crate::output::DisassociateWebsiteAuthorizationProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateWebsiteAuthorizationProviderOutput`](crate::output::DisassociateWebsiteAuthorizationProviderOutput).
         pub fn build(self) -> crate::output::DisassociateWebsiteAuthorizationProviderOutput {
-            crate::output::DisassociateWebsiteAuthorizationProviderOutput {}
+            crate::output::DisassociateWebsiteAuthorizationProviderOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateWebsiteAuthorizationProviderOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateWebsiteAuthorizationProviderOutput`](crate::output::DisassociateWebsiteAuthorizationProviderOutput).
@@ -778,19 +810,24 @@ impl DisassociateWebsiteAuthorizationProviderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateDomainOutput {}
+pub struct DisassociateDomainOutput  {
+}
 /// See [`DisassociateDomainOutput`](crate::output::DisassociateDomainOutput).
 pub mod disassociate_domain_output {
-
+    
     /// A builder for [`DisassociateDomainOutput`](crate::output::DisassociateDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateDomainOutput`](crate::output::DisassociateDomainOutput).
         pub fn build(self) -> crate::output::DisassociateDomainOutput {
-            crate::output::DisassociateDomainOutput {}
+            crate::output::DisassociateDomainOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateDomainOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateDomainOutput`](crate::output::DisassociateDomainOutput).
@@ -802,7 +839,7 @@ impl DisassociateDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWebsiteCertificateAuthorityOutput {
+pub struct DescribeWebsiteCertificateAuthorityOutput  {
     /// <p>The root certificate of the certificate authority.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
@@ -815,21 +852,21 @@ pub struct DescribeWebsiteCertificateAuthorityOutput {
 }
 impl DescribeWebsiteCertificateAuthorityOutput {
     /// <p>The root certificate of the certificate authority.</p>
-    pub fn certificate(&self) -> std::option::Option<&str> {
+    pub fn certificate(&self) -> std::option::Option<& str> {
         self.certificate.as_deref()
     }
     /// <p>The time that the certificate authority was added.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The certificate name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
 /// See [`DescribeWebsiteCertificateAuthorityOutput`](crate::output::DescribeWebsiteCertificateAuthorityOutput).
 pub mod describe_website_certificate_authority_output {
-
+    
     /// A builder for [`DescribeWebsiteCertificateAuthorityOutput`](crate::output::DescribeWebsiteCertificateAuthorityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -845,8 +882,7 @@ pub mod describe_website_certificate_authority_output {
         }
         /// <p>The root certificate of the certificate authority.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.certificate = input;
-            self
+            self.certificate = input; self
         }
         /// <p>The time that the certificate authority was added.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -854,12 +890,8 @@ pub mod describe_website_certificate_authority_output {
             self
         }
         /// <p>The time that the certificate authority was added.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// <p>The certificate name to display.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -868,18 +900,22 @@ pub mod describe_website_certificate_authority_output {
         }
         /// <p>The certificate name to display.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// Consumes the builder and constructs a [`DescribeWebsiteCertificateAuthorityOutput`](crate::output::DescribeWebsiteCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::DescribeWebsiteCertificateAuthorityOutput {
             crate::output::DescribeWebsiteCertificateAuthorityOutput {
-                certificate: self.certificate,
-                created_time: self.created_time,
-                display_name: self.display_name,
+                certificate: self.certificate
+                ,
+                created_time: self.created_time
+                ,
+                display_name: self.display_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeWebsiteCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWebsiteCertificateAuthorityOutput`](crate::output::DescribeWebsiteCertificateAuthorityOutput).
@@ -891,7 +927,7 @@ impl DescribeWebsiteCertificateAuthorityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIdentityProviderConfigurationOutput {
+pub struct DescribeIdentityProviderConfigurationOutput  {
     /// <p>The type of identity provider.</p>
     #[doc(hidden)]
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
@@ -904,23 +940,21 @@ pub struct DescribeIdentityProviderConfigurationOutput {
 }
 impl DescribeIdentityProviderConfigurationOutput {
     /// <p>The type of identity provider.</p>
-    pub fn identity_provider_type(
-        &self,
-    ) -> std::option::Option<&crate::model::IdentityProviderType> {
+    pub fn identity_provider_type(&self) -> std::option::Option<& crate::model::IdentityProviderType> {
         self.identity_provider_type.as_ref()
     }
     /// <p>The SAML metadata document uploaded to the user’s identity provider.</p>
-    pub fn service_provider_saml_metadata(&self) -> std::option::Option<&str> {
+    pub fn service_provider_saml_metadata(&self) -> std::option::Option<& str> {
         self.service_provider_saml_metadata.as_deref()
     }
     /// <p>The SAML metadata document provided by the user’s identity provider.</p>
-    pub fn identity_provider_saml_metadata(&self) -> std::option::Option<&str> {
+    pub fn identity_provider_saml_metadata(&self) -> std::option::Option<& str> {
         self.identity_provider_saml_metadata.as_deref()
     }
 }
 /// See [`DescribeIdentityProviderConfigurationOutput`](crate::output::DescribeIdentityProviderConfigurationOutput).
 pub mod describe_identity_provider_configuration_output {
-
+    
     /// A builder for [`DescribeIdentityProviderConfigurationOutput`](crate::output::DescribeIdentityProviderConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -935,54 +969,41 @@ pub mod describe_identity_provider_configuration_output {
             self
         }
         /// <p>The type of identity provider.</p>
-        pub fn set_identity_provider_type(
-            mut self,
-            input: std::option::Option<crate::model::IdentityProviderType>,
-        ) -> Self {
-            self.identity_provider_type = input;
-            self
+        pub fn set_identity_provider_type(mut self, input: std::option::Option<crate::model::IdentityProviderType>) -> Self {
+            self.identity_provider_type = input; self
         }
         /// <p>The SAML metadata document uploaded to the user’s identity provider.</p>
-        pub fn service_provider_saml_metadata(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn service_provider_saml_metadata(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_provider_saml_metadata = Some(input.into());
             self
         }
         /// <p>The SAML metadata document uploaded to the user’s identity provider.</p>
-        pub fn set_service_provider_saml_metadata(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_provider_saml_metadata = input;
-            self
+        pub fn set_service_provider_saml_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_provider_saml_metadata = input; self
         }
         /// <p>The SAML metadata document provided by the user’s identity provider.</p>
-        pub fn identity_provider_saml_metadata(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn identity_provider_saml_metadata(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_provider_saml_metadata = Some(input.into());
             self
         }
         /// <p>The SAML metadata document provided by the user’s identity provider.</p>
-        pub fn set_identity_provider_saml_metadata(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_provider_saml_metadata = input;
-            self
+        pub fn set_identity_provider_saml_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_provider_saml_metadata = input; self
         }
         /// Consumes the builder and constructs a [`DescribeIdentityProviderConfigurationOutput`](crate::output::DescribeIdentityProviderConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeIdentityProviderConfigurationOutput {
             crate::output::DescribeIdentityProviderConfigurationOutput {
-                identity_provider_type: self.identity_provider_type,
-                service_provider_saml_metadata: self.service_provider_saml_metadata,
-                identity_provider_saml_metadata: self.identity_provider_saml_metadata,
+                identity_provider_type: self.identity_provider_type
+                ,
+                service_provider_saml_metadata: self.service_provider_saml_metadata
+                ,
+                identity_provider_saml_metadata: self.identity_provider_saml_metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeIdentityProviderConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIdentityProviderConfigurationOutput`](crate::output::DescribeIdentityProviderConfigurationOutput).
@@ -994,7 +1015,7 @@ impl DescribeIdentityProviderConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetMetadataOutput {
+pub struct DescribeFleetMetadataOutput  {
     /// <p>The time that the fleet was created.</p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1018,24 +1039,23 @@ pub struct DescribeFleetMetadataOutput {
     pub fleet_status: std::option::Option<crate::model::FleetStatus>,
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DescribeFleetMetadataOutput {
     /// <p>The time that the fleet was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The time that the fleet was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The name of the fleet.</p>
-    pub fn fleet_name(&self) -> std::option::Option<&str> {
+    pub fn fleet_name(&self) -> std::option::Option<& str> {
         self.fleet_name.as_deref()
     }
     /// <p>The name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
@@ -1043,24 +1063,21 @@ impl DescribeFleetMetadataOutput {
         self.optimize_for_end_user_location
     }
     /// <p>The identifier used by users to sign in to the Amazon WorkLink app.</p>
-    pub fn company_code(&self) -> std::option::Option<&str> {
+    pub fn company_code(&self) -> std::option::Option<& str> {
         self.company_code.as_deref()
     }
     /// <p>The current state of the fleet.</p>
-    pub fn fleet_status(&self) -> std::option::Option<&crate::model::FleetStatus> {
+    pub fn fleet_status(&self) -> std::option::Option<& crate::model::FleetStatus> {
         self.fleet_status.as_ref()
     }
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DescribeFleetMetadataOutput`](crate::output::DescribeFleetMetadataOutput).
 pub mod describe_fleet_metadata_output {
-
+    
     /// A builder for [`DescribeFleetMetadataOutput`](crate::output::DescribeFleetMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1071,9 +1088,7 @@ pub mod describe_fleet_metadata_output {
         pub(crate) optimize_for_end_user_location: std::option::Option<bool>,
         pub(crate) company_code: std::option::Option<std::string::String>,
         pub(crate) fleet_status: std::option::Option<crate::model::FleetStatus>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The time that the fleet was created.</p>
@@ -1082,12 +1097,8 @@ pub mod describe_fleet_metadata_output {
             self
         }
         /// <p>The time that the fleet was created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// <p>The time that the fleet was last updated.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1095,12 +1106,8 @@ pub mod describe_fleet_metadata_output {
             self
         }
         /// <p>The time that the fleet was last updated.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>The name of the fleet.</p>
         pub fn fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1109,8 +1116,7 @@ pub mod describe_fleet_metadata_output {
         }
         /// <p>The name of the fleet.</p>
         pub fn set_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_name = input;
-            self
+            self.fleet_name = input; self
         }
         /// <p>The name to display.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1119,8 +1125,7 @@ pub mod describe_fleet_metadata_output {
         }
         /// <p>The name to display.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
@@ -1128,12 +1133,8 @@ pub mod describe_fleet_metadata_output {
             self
         }
         /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
-        pub fn set_optimize_for_end_user_location(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.optimize_for_end_user_location = input;
-            self
+        pub fn set_optimize_for_end_user_location(mut self, input: std::option::Option<bool>) -> Self {
+            self.optimize_for_end_user_location = input; self
         }
         /// <p>The identifier used by users to sign in to the Amazon WorkLink app.</p>
         pub fn company_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1142,8 +1143,7 @@ pub mod describe_fleet_metadata_output {
         }
         /// <p>The identifier used by users to sign in to the Amazon WorkLink app.</p>
         pub fn set_company_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.company_code = input;
-            self
+            self.company_code = input; self
         }
         /// <p>The current state of the fleet.</p>
         pub fn fleet_status(mut self, input: crate::model::FleetStatus) -> Self {
@@ -1151,52 +1151,48 @@ pub mod describe_fleet_metadata_output {
             self
         }
         /// <p>The current state of the fleet.</p>
-        pub fn set_fleet_status(
-            mut self,
-            input: std::option::Option<crate::model::FleetStatus>,
-        ) -> Self {
-            self.fleet_status = input;
-            self
+        pub fn set_fleet_status(mut self, input: std::option::Option<crate::model::FleetStatus>) -> Self {
+            self.fleet_status = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFleetMetadataOutput`](crate::output::DescribeFleetMetadataOutput).
         pub fn build(self) -> crate::output::DescribeFleetMetadataOutput {
             crate::output::DescribeFleetMetadataOutput {
-                created_time: self.created_time,
-                last_updated_time: self.last_updated_time,
-                fleet_name: self.fleet_name,
-                display_name: self.display_name,
-                optimize_for_end_user_location: self.optimize_for_end_user_location,
-                company_code: self.company_code,
-                fleet_status: self.fleet_status,
-                tags: self.tags,
+                created_time: self.created_time
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                fleet_name: self.fleet_name
+                ,
+                display_name: self.display_name
+                ,
+                optimize_for_end_user_location: self.optimize_for_end_user_location
+                ,
+                company_code: self.company_code
+                ,
+                fleet_status: self.fleet_status
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFleetMetadataOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetMetadataOutput`](crate::output::DescribeFleetMetadataOutput).
@@ -1208,7 +1204,7 @@ impl DescribeFleetMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainOutput {
+pub struct DescribeDomainOutput  {
     /// <p>The name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -1227,29 +1223,29 @@ pub struct DescribeDomainOutput {
 }
 impl DescribeDomainOutput {
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The time that the domain was added.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The current state for the domain.</p>
-    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+    pub fn domain_status(&self) -> std::option::Option<& crate::model::DomainStatus> {
         self.domain_status.as_ref()
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
-    pub fn acm_certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn acm_certificate_arn(&self) -> std::option::Option<& str> {
         self.acm_certificate_arn.as_deref()
     }
 }
 /// See [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
 pub mod describe_domain_output {
-
+    
     /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1267,8 +1263,7 @@ pub mod describe_domain_output {
         }
         /// <p>The name of the domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>The name to display.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1277,8 +1272,7 @@ pub mod describe_domain_output {
         }
         /// <p>The name to display.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The time that the domain was added.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1286,12 +1280,8 @@ pub mod describe_domain_output {
             self
         }
         /// <p>The time that the domain was added.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// <p>The current state for the domain.</p>
         pub fn domain_status(mut self, input: crate::model::DomainStatus) -> Self {
@@ -1299,12 +1289,8 @@ pub mod describe_domain_output {
             self
         }
         /// <p>The current state for the domain.</p>
-        pub fn set_domain_status(
-            mut self,
-            input: std::option::Option<crate::model::DomainStatus>,
-        ) -> Self {
-            self.domain_status = input;
-            self
+        pub fn set_domain_status(mut self, input: std::option::Option<crate::model::DomainStatus>) -> Self {
+            self.domain_status = input; self
         }
         /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
         pub fn acm_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1312,24 +1298,27 @@ pub mod describe_domain_output {
             self
         }
         /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
-        pub fn set_acm_certificate_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.acm_certificate_arn = input;
-            self
+        pub fn set_acm_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.acm_certificate_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
         pub fn build(self) -> crate::output::DescribeDomainOutput {
             crate::output::DescribeDomainOutput {
-                domain_name: self.domain_name,
-                display_name: self.display_name,
-                created_time: self.created_time,
-                domain_status: self.domain_status,
-                acm_certificate_arn: self.acm_certificate_arn,
+                domain_name: self.domain_name
+                ,
+                display_name: self.display_name
+                ,
+                created_time: self.created_time
+                ,
+                domain_status: self.domain_status
+                ,
+                acm_certificate_arn: self.acm_certificate_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDomainOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
@@ -1341,20 +1330,20 @@ impl DescribeDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDevicePolicyConfigurationOutput {
+pub struct DescribeDevicePolicyConfigurationOutput  {
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
     #[doc(hidden)]
     pub device_ca_certificate: std::option::Option<std::string::String>,
 }
 impl DescribeDevicePolicyConfigurationOutput {
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
-    pub fn device_ca_certificate(&self) -> std::option::Option<&str> {
+    pub fn device_ca_certificate(&self) -> std::option::Option<& str> {
         self.device_ca_certificate.as_deref()
     }
 }
 /// See [`DescribeDevicePolicyConfigurationOutput`](crate::output::DescribeDevicePolicyConfigurationOutput).
 pub mod describe_device_policy_configuration_output {
-
+    
     /// A builder for [`DescribeDevicePolicyConfigurationOutput`](crate::output::DescribeDevicePolicyConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1367,20 +1356,19 @@ pub mod describe_device_policy_configuration_output {
             self
         }
         /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
-        pub fn set_device_ca_certificate(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.device_ca_certificate = input;
-            self
+        pub fn set_device_ca_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_ca_certificate = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDevicePolicyConfigurationOutput`](crate::output::DescribeDevicePolicyConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeDevicePolicyConfigurationOutput {
             crate::output::DescribeDevicePolicyConfigurationOutput {
-                device_ca_certificate: self.device_ca_certificate,
+                device_ca_certificate: self.device_ca_certificate
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDevicePolicyConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDevicePolicyConfigurationOutput`](crate::output::DescribeDevicePolicyConfigurationOutput).
@@ -1392,7 +1380,7 @@ impl DescribeDevicePolicyConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDeviceOutput {
+pub struct DescribeDeviceOutput  {
     /// <p>The current state of the device.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::DeviceStatus>,
@@ -1423,45 +1411,45 @@ pub struct DescribeDeviceOutput {
 }
 impl DescribeDeviceOutput {
     /// <p>The current state of the device.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DeviceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DeviceStatus> {
         self.status.as_ref()
     }
     /// <p>The model of the device.</p>
-    pub fn model(&self) -> std::option::Option<&str> {
+    pub fn model(&self) -> std::option::Option<& str> {
         self.model.as_deref()
     }
     /// <p>The manufacturer of the device.</p>
-    pub fn manufacturer(&self) -> std::option::Option<&str> {
+    pub fn manufacturer(&self) -> std::option::Option<& str> {
         self.manufacturer.as_deref()
     }
     /// <p>The operating system of the device.</p>
-    pub fn operating_system(&self) -> std::option::Option<&str> {
+    pub fn operating_system(&self) -> std::option::Option<& str> {
         self.operating_system.as_deref()
     }
     /// <p>The operating system version of the device.</p>
-    pub fn operating_system_version(&self) -> std::option::Option<&str> {
+    pub fn operating_system_version(&self) -> std::option::Option<& str> {
         self.operating_system_version.as_deref()
     }
     /// <p>The operating system patch level of the device.</p>
-    pub fn patch_level(&self) -> std::option::Option<&str> {
+    pub fn patch_level(&self) -> std::option::Option<& str> {
         self.patch_level.as_deref()
     }
     /// <p>The date that the device first signed in to Amazon WorkLink.</p>
-    pub fn first_accessed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn first_accessed_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.first_accessed_time.as_ref()
     }
     /// <p>The date that the device last accessed Amazon WorkLink.</p>
-    pub fn last_accessed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_accessed_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_accessed_time.as_ref()
     }
     /// <p>The user name associated with the device.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
 }
 /// See [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
 pub mod describe_device_output {
-
+    
     /// A builder for [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1482,12 +1470,8 @@ pub mod describe_device_output {
             self
         }
         /// <p>The current state of the device.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DeviceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DeviceStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The model of the device.</p>
         pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1496,8 +1480,7 @@ pub mod describe_device_output {
         }
         /// <p>The model of the device.</p>
         pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model = input;
-            self
+            self.model = input; self
         }
         /// <p>The manufacturer of the device.</p>
         pub fn manufacturer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1506,8 +1489,7 @@ pub mod describe_device_output {
         }
         /// <p>The manufacturer of the device.</p>
         pub fn set_manufacturer(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.manufacturer = input;
-            self
+            self.manufacturer = input; self
         }
         /// <p>The operating system of the device.</p>
         pub fn operating_system(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1515,12 +1497,8 @@ pub mod describe_device_output {
             self
         }
         /// <p>The operating system of the device.</p>
-        pub fn set_operating_system(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.operating_system = input;
-            self
+        pub fn set_operating_system(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operating_system = input; self
         }
         /// <p>The operating system version of the device.</p>
         pub fn operating_system_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1528,12 +1506,8 @@ pub mod describe_device_output {
             self
         }
         /// <p>The operating system version of the device.</p>
-        pub fn set_operating_system_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.operating_system_version = input;
-            self
+        pub fn set_operating_system_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operating_system_version = input; self
         }
         /// <p>The operating system patch level of the device.</p>
         pub fn patch_level(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1542,8 +1516,7 @@ pub mod describe_device_output {
         }
         /// <p>The operating system patch level of the device.</p>
         pub fn set_patch_level(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.patch_level = input;
-            self
+            self.patch_level = input; self
         }
         /// <p>The date that the device first signed in to Amazon WorkLink.</p>
         pub fn first_accessed_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1551,12 +1524,8 @@ pub mod describe_device_output {
             self
         }
         /// <p>The date that the device first signed in to Amazon WorkLink.</p>
-        pub fn set_first_accessed_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.first_accessed_time = input;
-            self
+        pub fn set_first_accessed_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.first_accessed_time = input; self
         }
         /// <p>The date that the device last accessed Amazon WorkLink.</p>
         pub fn last_accessed_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1564,12 +1533,8 @@ pub mod describe_device_output {
             self
         }
         /// <p>The date that the device last accessed Amazon WorkLink.</p>
-        pub fn set_last_accessed_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_accessed_time = input;
-            self
+        pub fn set_last_accessed_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_accessed_time = input; self
         }
         /// <p>The user name associated with the device.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1578,24 +1543,34 @@ pub mod describe_device_output {
         }
         /// <p>The user name associated with the device.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.username = input;
-            self
+            self.username = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
         pub fn build(self) -> crate::output::DescribeDeviceOutput {
             crate::output::DescribeDeviceOutput {
-                status: self.status,
-                model: self.model,
-                manufacturer: self.manufacturer,
-                operating_system: self.operating_system,
-                operating_system_version: self.operating_system_version,
-                patch_level: self.patch_level,
-                first_accessed_time: self.first_accessed_time,
-                last_accessed_time: self.last_accessed_time,
-                username: self.username,
+                status: self.status
+                ,
+                model: self.model
+                ,
+                manufacturer: self.manufacturer
+                ,
+                operating_system: self.operating_system
+                ,
+                operating_system_version: self.operating_system_version
+                ,
+                patch_level: self.patch_level
+                ,
+                first_accessed_time: self.first_accessed_time
+                ,
+                last_accessed_time: self.last_accessed_time
+                ,
+                username: self.username
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDeviceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
@@ -1607,7 +1582,7 @@ impl DescribeDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCompanyNetworkConfigurationOutput {
+pub struct DescribeCompanyNetworkConfigurationOutput  {
     /// <p>The VPC with connectivity to associated websites.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
@@ -1620,21 +1595,21 @@ pub struct DescribeCompanyNetworkConfigurationOutput {
 }
 impl DescribeCompanyNetworkConfigurationOutput {
     /// <p>The VPC with connectivity to associated websites.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The security groups associated with access to the provided subnets.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
 }
 /// See [`DescribeCompanyNetworkConfigurationOutput`](crate::output::DescribeCompanyNetworkConfigurationOutput).
 pub mod describe_company_network_configuration_output {
-
+    
     /// A builder for [`DescribeCompanyNetworkConfigurationOutput`](crate::output::DescribeCompanyNetworkConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1650,8 +1625,7 @@ pub mod describe_company_network_configuration_output {
         }
         /// <p>The VPC with connectivity to associated websites.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Appends an item to `subnet_ids`.
         ///
@@ -1660,17 +1634,13 @@ pub mod describe_company_network_configuration_output {
         /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// Appends an item to `security_group_ids`.
         ///
@@ -1679,27 +1649,28 @@ pub mod describe_company_network_configuration_output {
         /// <p>The security groups associated with access to the provided subnets.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_ids = Some(v);
+                            self
         }
         /// <p>The security groups associated with access to the provided subnets.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
+        pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_ids = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCompanyNetworkConfigurationOutput`](crate::output::DescribeCompanyNetworkConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeCompanyNetworkConfigurationOutput {
             crate::output::DescribeCompanyNetworkConfigurationOutput {
-                vpc_id: self.vpc_id,
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
+                vpc_id: self.vpc_id
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                security_group_ids: self.security_group_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCompanyNetworkConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCompanyNetworkConfigurationOutput`](crate::output::DescribeCompanyNetworkConfigurationOutput).
@@ -1711,20 +1682,20 @@ impl DescribeCompanyNetworkConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAuditStreamConfigurationOutput {
+pub struct DescribeAuditStreamConfigurationOutput  {
     /// <p>The ARN of the Amazon Kinesis data stream that will receive the audit events.</p>
     #[doc(hidden)]
     pub audit_stream_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAuditStreamConfigurationOutput {
     /// <p>The ARN of the Amazon Kinesis data stream that will receive the audit events.</p>
-    pub fn audit_stream_arn(&self) -> std::option::Option<&str> {
+    pub fn audit_stream_arn(&self) -> std::option::Option<& str> {
         self.audit_stream_arn.as_deref()
     }
 }
 /// See [`DescribeAuditStreamConfigurationOutput`](crate::output::DescribeAuditStreamConfigurationOutput).
 pub mod describe_audit_stream_configuration_output {
-
+    
     /// A builder for [`DescribeAuditStreamConfigurationOutput`](crate::output::DescribeAuditStreamConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1737,20 +1708,19 @@ pub mod describe_audit_stream_configuration_output {
             self
         }
         /// <p>The ARN of the Amazon Kinesis data stream that will receive the audit events.</p>
-        pub fn set_audit_stream_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.audit_stream_arn = input;
-            self
+        pub fn set_audit_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.audit_stream_arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAuditStreamConfigurationOutput`](crate::output::DescribeAuditStreamConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeAuditStreamConfigurationOutput {
             crate::output::DescribeAuditStreamConfigurationOutput {
-                audit_stream_arn: self.audit_stream_arn,
+                audit_stream_arn: self.audit_stream_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAuditStreamConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAuditStreamConfigurationOutput`](crate::output::DescribeAuditStreamConfigurationOutput).
@@ -1762,19 +1732,24 @@ impl DescribeAuditStreamConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFleetOutput {}
+pub struct DeleteFleetOutput  {
+}
 /// See [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
 pub mod delete_fleet_output {
-
+    
     /// A builder for [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
         pub fn build(self) -> crate::output::DeleteFleetOutput {
-            crate::output::DeleteFleetOutput {}
+            crate::output::DeleteFleetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFleetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
@@ -1786,20 +1761,20 @@ impl DeleteFleetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFleetOutput {
+pub struct CreateFleetOutput  {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
 }
 impl CreateFleetOutput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
 }
 /// See [`CreateFleetOutput`](crate::output::CreateFleetOutput).
 pub mod create_fleet_output {
-
+    
     /// A builder for [`CreateFleetOutput`](crate::output::CreateFleetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1813,16 +1788,18 @@ pub mod create_fleet_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
+            self.fleet_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateFleetOutput`](crate::output::CreateFleetOutput).
         pub fn build(self) -> crate::output::CreateFleetOutput {
             crate::output::CreateFleetOutput {
-                fleet_arn: self.fleet_arn,
+                fleet_arn: self.fleet_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFleetOutput {
     /// Creates a new builder-style object to manufacture [`CreateFleetOutput`](crate::output::CreateFleetOutput).
@@ -1834,20 +1811,20 @@ impl CreateFleetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateWebsiteCertificateAuthorityOutput {
+pub struct AssociateWebsiteCertificateAuthorityOutput  {
     /// <p>A unique identifier for the CA.</p>
     #[doc(hidden)]
     pub website_ca_id: std::option::Option<std::string::String>,
 }
 impl AssociateWebsiteCertificateAuthorityOutput {
     /// <p>A unique identifier for the CA.</p>
-    pub fn website_ca_id(&self) -> std::option::Option<&str> {
+    pub fn website_ca_id(&self) -> std::option::Option<& str> {
         self.website_ca_id.as_deref()
     }
 }
 /// See [`AssociateWebsiteCertificateAuthorityOutput`](crate::output::AssociateWebsiteCertificateAuthorityOutput).
 pub mod associate_website_certificate_authority_output {
-
+    
     /// A builder for [`AssociateWebsiteCertificateAuthorityOutput`](crate::output::AssociateWebsiteCertificateAuthorityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1860,20 +1837,19 @@ pub mod associate_website_certificate_authority_output {
             self
         }
         /// <p>A unique identifier for the CA.</p>
-        pub fn set_website_ca_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.website_ca_id = input;
-            self
+        pub fn set_website_ca_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.website_ca_id = input; self
         }
         /// Consumes the builder and constructs a [`AssociateWebsiteCertificateAuthorityOutput`](crate::output::AssociateWebsiteCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::AssociateWebsiteCertificateAuthorityOutput {
             crate::output::AssociateWebsiteCertificateAuthorityOutput {
-                website_ca_id: self.website_ca_id,
+                website_ca_id: self.website_ca_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateWebsiteCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWebsiteCertificateAuthorityOutput`](crate::output::AssociateWebsiteCertificateAuthorityOutput).
@@ -1885,20 +1861,20 @@ impl AssociateWebsiteCertificateAuthorityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateWebsiteAuthorizationProviderOutput {
+pub struct AssociateWebsiteAuthorizationProviderOutput  {
     /// <p>A unique identifier for the authorization provider.</p>
     #[doc(hidden)]
     pub authorization_provider_id: std::option::Option<std::string::String>,
 }
 impl AssociateWebsiteAuthorizationProviderOutput {
     /// <p>A unique identifier for the authorization provider.</p>
-    pub fn authorization_provider_id(&self) -> std::option::Option<&str> {
+    pub fn authorization_provider_id(&self) -> std::option::Option<& str> {
         self.authorization_provider_id.as_deref()
     }
 }
 /// See [`AssociateWebsiteAuthorizationProviderOutput`](crate::output::AssociateWebsiteAuthorizationProviderOutput).
 pub mod associate_website_authorization_provider_output {
-
+    
     /// A builder for [`AssociateWebsiteAuthorizationProviderOutput`](crate::output::AssociateWebsiteAuthorizationProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1911,20 +1887,19 @@ pub mod associate_website_authorization_provider_output {
             self
         }
         /// <p>A unique identifier for the authorization provider.</p>
-        pub fn set_authorization_provider_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.authorization_provider_id = input;
-            self
+        pub fn set_authorization_provider_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.authorization_provider_id = input; self
         }
         /// Consumes the builder and constructs a [`AssociateWebsiteAuthorizationProviderOutput`](crate::output::AssociateWebsiteAuthorizationProviderOutput).
         pub fn build(self) -> crate::output::AssociateWebsiteAuthorizationProviderOutput {
             crate::output::AssociateWebsiteAuthorizationProviderOutput {
-                authorization_provider_id: self.authorization_provider_id,
+                authorization_provider_id: self.authorization_provider_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateWebsiteAuthorizationProviderOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWebsiteAuthorizationProviderOutput`](crate::output::AssociateWebsiteAuthorizationProviderOutput).
@@ -1936,19 +1911,24 @@ impl AssociateWebsiteAuthorizationProviderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateDomainOutput {}
+pub struct AssociateDomainOutput  {
+}
 /// See [`AssociateDomainOutput`](crate::output::AssociateDomainOutput).
 pub mod associate_domain_output {
-
+    
     /// A builder for [`AssociateDomainOutput`](crate::output::AssociateDomainOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateDomainOutput`](crate::output::AssociateDomainOutput).
         pub fn build(self) -> crate::output::AssociateDomainOutput {
-            crate::output::AssociateDomainOutput {}
+            crate::output::AssociateDomainOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateDomainOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDomainOutput`](crate::output::AssociateDomainOutput).
@@ -1956,3 +1936,4 @@ impl AssociateDomainOutput {
         crate::output::associate_domain_output::Builder::default()
     }
 }
+

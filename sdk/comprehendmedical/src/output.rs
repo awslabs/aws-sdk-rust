@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopSnomedctInferenceJobOutput {
+pub struct StopSnomedctInferenceJobOutput  {
     /// <p> The identifier generated for the job. To get the status of job, use this identifier with the DescribeSNOMEDCTInferenceJob operation. </p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopSnomedctInferenceJobOutput {
     /// <p> The identifier generated for the job. To get the status of job, use this identifier with the DescribeSNOMEDCTInferenceJob operation. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput).
 pub mod stop_snomedct_inference_job_output {
-
+    
     /// A builder for [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,16 +29,18 @@ pub mod stop_snomedct_inference_job_output {
         }
         /// <p> The identifier generated for the job. To get the status of job, use this identifier with the DescribeSNOMEDCTInferenceJob operation. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput).
         pub fn build(self) -> crate::output::StopSnomedctInferenceJobOutput {
             crate::output::StopSnomedctInferenceJobOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StopSnomedctInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput).
@@ -50,20 +52,20 @@ impl StopSnomedctInferenceJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopRxNormInferenceJobOutput {
+pub struct StopRxNormInferenceJobOutput  {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeRxNormInferenceJob</code> operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopRxNormInferenceJobOutput {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeRxNormInferenceJob</code> operation.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput).
 pub mod stop_rx_norm_inference_job_output {
-
+    
     /// A builder for [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -77,16 +79,18 @@ pub mod stop_rx_norm_inference_job_output {
         }
         /// <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeRxNormInferenceJob</code> operation.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput).
         pub fn build(self) -> crate::output::StopRxNormInferenceJobOutput {
             crate::output::StopRxNormInferenceJobOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StopRxNormInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput).
@@ -98,20 +102,20 @@ impl StopRxNormInferenceJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopPhiDetectionJobOutput {
+pub struct StopPhiDetectionJobOutput  {
     /// <p>The identifier of the PHI detection job that was stopped.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopPhiDetectionJobOutput {
     /// <p>The identifier of the PHI detection job that was stopped.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput).
 pub mod stop_phi_detection_job_output {
-
+    
     /// A builder for [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -125,16 +129,18 @@ pub mod stop_phi_detection_job_output {
         }
         /// <p>The identifier of the PHI detection job that was stopped.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput).
         pub fn build(self) -> crate::output::StopPhiDetectionJobOutput {
             crate::output::StopPhiDetectionJobOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StopPhiDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput).
@@ -146,20 +152,20 @@ impl StopPhiDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopIcd10CmInferenceJobOutput {
+pub struct StopIcd10CmInferenceJobOutput  {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeICD10CMInferenceJob</code> operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopIcd10CmInferenceJobOutput {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeICD10CMInferenceJob</code> operation.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput).
 pub mod stop_icd10_cm_inference_job_output {
-
+    
     /// A builder for [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -173,16 +179,18 @@ pub mod stop_icd10_cm_inference_job_output {
         }
         /// <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeICD10CMInferenceJob</code> operation.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput).
         pub fn build(self) -> crate::output::StopIcd10CmInferenceJobOutput {
             crate::output::StopIcd10CmInferenceJobOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StopIcd10CmInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput).
@@ -194,20 +202,20 @@ impl StopIcd10CmInferenceJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopEntitiesDetectionV2JobOutput {
+pub struct StopEntitiesDetectionV2JobOutput  {
     /// <p>The identifier of the medical entities detection job that was stopped.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopEntitiesDetectionV2JobOutput {
     /// <p>The identifier of the medical entities detection job that was stopped.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput).
 pub mod stop_entities_detection_v2_job_output {
-
+    
     /// A builder for [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -221,16 +229,18 @@ pub mod stop_entities_detection_v2_job_output {
         }
         /// <p>The identifier of the medical entities detection job that was stopped.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput).
         pub fn build(self) -> crate::output::StopEntitiesDetectionV2JobOutput {
             crate::output::StopEntitiesDetectionV2JobOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StopEntitiesDetectionV2JobOutput {
     /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput).
@@ -242,20 +252,20 @@ impl StopEntitiesDetectionV2JobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSnomedctInferenceJobOutput {
+pub struct StartSnomedctInferenceJobOutput  {
     /// <p> The identifier generated for the job. To get the status of a job, use this identifier with the StartSNOMEDCTInferenceJob operation. </p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartSnomedctInferenceJobOutput {
     /// <p> The identifier generated for the job. To get the status of a job, use this identifier with the StartSNOMEDCTInferenceJob operation. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput).
 pub mod start_snomedct_inference_job_output {
-
+    
     /// A builder for [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -269,16 +279,18 @@ pub mod start_snomedct_inference_job_output {
         }
         /// <p> The identifier generated for the job. To get the status of a job, use this identifier with the StartSNOMEDCTInferenceJob operation. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput).
         pub fn build(self) -> crate::output::StartSnomedctInferenceJobOutput {
             crate::output::StartSnomedctInferenceJobOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartSnomedctInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput).
@@ -290,20 +302,20 @@ impl StartSnomedctInferenceJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartRxNormInferenceJobOutput {
+pub struct StartRxNormInferenceJobOutput  {
     /// <p>The identifier of the job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartRxNormInferenceJobOutput {
     /// <p>The identifier of the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput).
 pub mod start_rx_norm_inference_job_output {
-
+    
     /// A builder for [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -317,16 +329,18 @@ pub mod start_rx_norm_inference_job_output {
         }
         /// <p>The identifier of the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput).
         pub fn build(self) -> crate::output::StartRxNormInferenceJobOutput {
             crate::output::StartRxNormInferenceJobOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartRxNormInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput).
@@ -338,20 +352,20 @@ impl StartRxNormInferenceJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartPhiDetectionJobOutput {
+pub struct StartPhiDetectionJobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribePHIDetectionJob</code> operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartPhiDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribePHIDetectionJob</code> operation.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput).
 pub mod start_phi_detection_job_output {
-
+    
     /// A builder for [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -365,16 +379,18 @@ pub mod start_phi_detection_job_output {
         }
         /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribePHIDetectionJob</code> operation.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput).
         pub fn build(self) -> crate::output::StartPhiDetectionJobOutput {
             crate::output::StartPhiDetectionJobOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartPhiDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput).
@@ -386,20 +402,20 @@ impl StartPhiDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartIcd10CmInferenceJobOutput {
+pub struct StartIcd10CmInferenceJobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>StartICD10CMInferenceJob</code> operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartIcd10CmInferenceJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>StartICD10CMInferenceJob</code> operation.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput).
 pub mod start_icd10_cm_inference_job_output {
-
+    
     /// A builder for [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -413,16 +429,18 @@ pub mod start_icd10_cm_inference_job_output {
         }
         /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>StartICD10CMInferenceJob</code> operation.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput).
         pub fn build(self) -> crate::output::StartIcd10CmInferenceJobOutput {
             crate::output::StartIcd10CmInferenceJobOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartIcd10CmInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput).
@@ -434,20 +452,20 @@ impl StartIcd10CmInferenceJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartEntitiesDetectionV2JobOutput {
+pub struct StartEntitiesDetectionV2JobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribeEntitiesDetectionV2Job</code> operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartEntitiesDetectionV2JobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribeEntitiesDetectionV2Job</code> operation.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput).
 pub mod start_entities_detection_v2_job_output {
-
+    
     /// A builder for [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -461,16 +479,18 @@ pub mod start_entities_detection_v2_job_output {
         }
         /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribeEntitiesDetectionV2Job</code> operation.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput).
         pub fn build(self) -> crate::output::StartEntitiesDetectionV2JobOutput {
             crate::output::StartEntitiesDetectionV2JobOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartEntitiesDetectionV2JobOutput {
     /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput).
@@ -482,35 +502,31 @@ impl StartEntitiesDetectionV2JobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSnomedctInferenceJobsOutput {
+pub struct ListSnomedctInferenceJobsOutput  {
     /// <p> A list containing the properties of each job that is returned. </p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
+    pub comprehend_medical_async_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
     /// <p> Identifies the next page of results to return. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSnomedctInferenceJobsOutput {
     /// <p> A list containing the properties of each job that is returned. </p>
-    pub fn comprehend_medical_async_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ComprehendMedicalAsyncJobProperties]> {
+    pub fn comprehend_medical_async_job_properties_list(&self) -> std::option::Option<& [crate::model::ComprehendMedicalAsyncJobProperties]> {
         self.comprehend_medical_async_job_properties_list.as_deref()
     }
     /// <p> Identifies the next page of results to return. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput).
 pub mod list_snomedct_inference_jobs_output {
-
+    
     /// A builder for [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) comprehend_medical_async_job_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
+        pub(crate) comprehend_medical_async_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -519,26 +535,15 @@ pub mod list_snomedct_inference_jobs_output {
         /// To override the contents of this collection use [`set_comprehend_medical_async_job_properties_list`](Self::set_comprehend_medical_async_job_properties_list).
         ///
         /// <p> A list containing the properties of each job that is returned. </p>
-        pub fn comprehend_medical_async_job_properties_list(
-            mut self,
-            input: crate::model::ComprehendMedicalAsyncJobProperties,
-        ) -> Self {
-            let mut v = self
-                .comprehend_medical_async_job_properties_list
-                .unwrap_or_default();
-            v.push(input);
-            self.comprehend_medical_async_job_properties_list = Some(v);
-            self
+        pub fn comprehend_medical_async_job_properties_list(mut self, input: crate::model::ComprehendMedicalAsyncJobProperties) -> Self {
+            let mut v = self.comprehend_medical_async_job_properties_list.unwrap_or_default();
+                            v.push(input);
+                            self.comprehend_medical_async_job_properties_list = Some(v);
+                            self
         }
         /// <p> A list containing the properties of each job that is returned. </p>
-        pub fn set_comprehend_medical_async_job_properties_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>,
-            >,
-        ) -> Self {
-            self.comprehend_medical_async_job_properties_list = input;
-            self
+        pub fn set_comprehend_medical_async_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>) -> Self {
+            self.comprehend_medical_async_job_properties_list = input; self
         }
         /// <p> Identifies the next page of results to return. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -547,18 +552,20 @@ pub mod list_snomedct_inference_jobs_output {
         }
         /// <p> Identifies the next page of results to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput).
         pub fn build(self) -> crate::output::ListSnomedctInferenceJobsOutput {
             crate::output::ListSnomedctInferenceJobsOutput {
-                comprehend_medical_async_job_properties_list: self
-                    .comprehend_medical_async_job_properties_list,
-                next_token: self.next_token,
+                comprehend_medical_async_job_properties_list: self.comprehend_medical_async_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSnomedctInferenceJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput).
@@ -570,35 +577,31 @@ impl ListSnomedctInferenceJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRxNormInferenceJobsOutput {
+pub struct ListRxNormInferenceJobsOutput  {
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
+    pub comprehend_medical_async_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRxNormInferenceJobsOutput {
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
-    pub fn comprehend_medical_async_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ComprehendMedicalAsyncJobProperties]> {
+    pub fn comprehend_medical_async_job_properties_list(&self) -> std::option::Option<& [crate::model::ComprehendMedicalAsyncJobProperties]> {
         self.comprehend_medical_async_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput).
 pub mod list_rx_norm_inference_jobs_output {
-
+    
     /// A builder for [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) comprehend_medical_async_job_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
+        pub(crate) comprehend_medical_async_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -607,26 +610,15 @@ pub mod list_rx_norm_inference_jobs_output {
         /// To override the contents of this collection use [`set_comprehend_medical_async_job_properties_list`](Self::set_comprehend_medical_async_job_properties_list).
         ///
         /// <p>The maximum number of results to return in each page. The default is 100.</p>
-        pub fn comprehend_medical_async_job_properties_list(
-            mut self,
-            input: crate::model::ComprehendMedicalAsyncJobProperties,
-        ) -> Self {
-            let mut v = self
-                .comprehend_medical_async_job_properties_list
-                .unwrap_or_default();
-            v.push(input);
-            self.comprehend_medical_async_job_properties_list = Some(v);
-            self
+        pub fn comprehend_medical_async_job_properties_list(mut self, input: crate::model::ComprehendMedicalAsyncJobProperties) -> Self {
+            let mut v = self.comprehend_medical_async_job_properties_list.unwrap_or_default();
+                            v.push(input);
+                            self.comprehend_medical_async_job_properties_list = Some(v);
+                            self
         }
         /// <p>The maximum number of results to return in each page. The default is 100.</p>
-        pub fn set_comprehend_medical_async_job_properties_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>,
-            >,
-        ) -> Self {
-            self.comprehend_medical_async_job_properties_list = input;
-            self
+        pub fn set_comprehend_medical_async_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>) -> Self {
+            self.comprehend_medical_async_job_properties_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -635,18 +627,20 @@ pub mod list_rx_norm_inference_jobs_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput).
         pub fn build(self) -> crate::output::ListRxNormInferenceJobsOutput {
             crate::output::ListRxNormInferenceJobsOutput {
-                comprehend_medical_async_job_properties_list: self
-                    .comprehend_medical_async_job_properties_list,
-                next_token: self.next_token,
+                comprehend_medical_async_job_properties_list: self.comprehend_medical_async_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRxNormInferenceJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput).
@@ -658,35 +652,31 @@ impl ListRxNormInferenceJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPhiDetectionJobsOutput {
+pub struct ListPhiDetectionJobsOutput  {
     /// <p>A list containing the properties of each job returned.</p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
+    pub comprehend_medical_async_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPhiDetectionJobsOutput {
     /// <p>A list containing the properties of each job returned.</p>
-    pub fn comprehend_medical_async_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ComprehendMedicalAsyncJobProperties]> {
+    pub fn comprehend_medical_async_job_properties_list(&self) -> std::option::Option<& [crate::model::ComprehendMedicalAsyncJobProperties]> {
         self.comprehend_medical_async_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput).
 pub mod list_phi_detection_jobs_output {
-
+    
     /// A builder for [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) comprehend_medical_async_job_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
+        pub(crate) comprehend_medical_async_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -695,26 +685,15 @@ pub mod list_phi_detection_jobs_output {
         /// To override the contents of this collection use [`set_comprehend_medical_async_job_properties_list`](Self::set_comprehend_medical_async_job_properties_list).
         ///
         /// <p>A list containing the properties of each job returned.</p>
-        pub fn comprehend_medical_async_job_properties_list(
-            mut self,
-            input: crate::model::ComprehendMedicalAsyncJobProperties,
-        ) -> Self {
-            let mut v = self
-                .comprehend_medical_async_job_properties_list
-                .unwrap_or_default();
-            v.push(input);
-            self.comprehend_medical_async_job_properties_list = Some(v);
-            self
+        pub fn comprehend_medical_async_job_properties_list(mut self, input: crate::model::ComprehendMedicalAsyncJobProperties) -> Self {
+            let mut v = self.comprehend_medical_async_job_properties_list.unwrap_or_default();
+                            v.push(input);
+                            self.comprehend_medical_async_job_properties_list = Some(v);
+                            self
         }
         /// <p>A list containing the properties of each job returned.</p>
-        pub fn set_comprehend_medical_async_job_properties_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>,
-            >,
-        ) -> Self {
-            self.comprehend_medical_async_job_properties_list = input;
-            self
+        pub fn set_comprehend_medical_async_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>) -> Self {
+            self.comprehend_medical_async_job_properties_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -723,18 +702,20 @@ pub mod list_phi_detection_jobs_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListPhiDetectionJobsOutput {
             crate::output::ListPhiDetectionJobsOutput {
-                comprehend_medical_async_job_properties_list: self
-                    .comprehend_medical_async_job_properties_list,
-                next_token: self.next_token,
+                comprehend_medical_async_job_properties_list: self.comprehend_medical_async_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPhiDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput).
@@ -746,35 +727,31 @@ impl ListPhiDetectionJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIcd10CmInferenceJobsOutput {
+pub struct ListIcd10CmInferenceJobsOutput  {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
+    pub comprehend_medical_async_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIcd10CmInferenceJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn comprehend_medical_async_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ComprehendMedicalAsyncJobProperties]> {
+    pub fn comprehend_medical_async_job_properties_list(&self) -> std::option::Option<& [crate::model::ComprehendMedicalAsyncJobProperties]> {
         self.comprehend_medical_async_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput).
 pub mod list_icd10_cm_inference_jobs_output {
-
+    
     /// A builder for [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) comprehend_medical_async_job_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
+        pub(crate) comprehend_medical_async_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -783,26 +760,15 @@ pub mod list_icd10_cm_inference_jobs_output {
         /// To override the contents of this collection use [`set_comprehend_medical_async_job_properties_list`](Self::set_comprehend_medical_async_job_properties_list).
         ///
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn comprehend_medical_async_job_properties_list(
-            mut self,
-            input: crate::model::ComprehendMedicalAsyncJobProperties,
-        ) -> Self {
-            let mut v = self
-                .comprehend_medical_async_job_properties_list
-                .unwrap_or_default();
-            v.push(input);
-            self.comprehend_medical_async_job_properties_list = Some(v);
-            self
+        pub fn comprehend_medical_async_job_properties_list(mut self, input: crate::model::ComprehendMedicalAsyncJobProperties) -> Self {
+            let mut v = self.comprehend_medical_async_job_properties_list.unwrap_or_default();
+                            v.push(input);
+                            self.comprehend_medical_async_job_properties_list = Some(v);
+                            self
         }
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn set_comprehend_medical_async_job_properties_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>,
-            >,
-        ) -> Self {
-            self.comprehend_medical_async_job_properties_list = input;
-            self
+        pub fn set_comprehend_medical_async_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>) -> Self {
+            self.comprehend_medical_async_job_properties_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -811,18 +777,20 @@ pub mod list_icd10_cm_inference_jobs_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput).
         pub fn build(self) -> crate::output::ListIcd10CmInferenceJobsOutput {
             crate::output::ListIcd10CmInferenceJobsOutput {
-                comprehend_medical_async_job_properties_list: self
-                    .comprehend_medical_async_job_properties_list,
-                next_token: self.next_token,
+                comprehend_medical_async_job_properties_list: self.comprehend_medical_async_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListIcd10CmInferenceJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput).
@@ -834,35 +802,31 @@ impl ListIcd10CmInferenceJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEntitiesDetectionV2JobsOutput {
+pub struct ListEntitiesDetectionV2JobsOutput  {
     /// <p>A list containing the properties of each job returned.</p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
+    pub comprehend_medical_async_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEntitiesDetectionV2JobsOutput {
     /// <p>A list containing the properties of each job returned.</p>
-    pub fn comprehend_medical_async_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ComprehendMedicalAsyncJobProperties]> {
+    pub fn comprehend_medical_async_job_properties_list(&self) -> std::option::Option<& [crate::model::ComprehendMedicalAsyncJobProperties]> {
         self.comprehend_medical_async_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput).
 pub mod list_entities_detection_v2_jobs_output {
-
+    
     /// A builder for [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) comprehend_medical_async_job_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
+        pub(crate) comprehend_medical_async_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -871,26 +835,15 @@ pub mod list_entities_detection_v2_jobs_output {
         /// To override the contents of this collection use [`set_comprehend_medical_async_job_properties_list`](Self::set_comprehend_medical_async_job_properties_list).
         ///
         /// <p>A list containing the properties of each job returned.</p>
-        pub fn comprehend_medical_async_job_properties_list(
-            mut self,
-            input: crate::model::ComprehendMedicalAsyncJobProperties,
-        ) -> Self {
-            let mut v = self
-                .comprehend_medical_async_job_properties_list
-                .unwrap_or_default();
-            v.push(input);
-            self.comprehend_medical_async_job_properties_list = Some(v);
-            self
+        pub fn comprehend_medical_async_job_properties_list(mut self, input: crate::model::ComprehendMedicalAsyncJobProperties) -> Self {
+            let mut v = self.comprehend_medical_async_job_properties_list.unwrap_or_default();
+                            v.push(input);
+                            self.comprehend_medical_async_job_properties_list = Some(v);
+                            self
         }
         /// <p>A list containing the properties of each job returned.</p>
-        pub fn set_comprehend_medical_async_job_properties_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>,
-            >,
-        ) -> Self {
-            self.comprehend_medical_async_job_properties_list = input;
-            self
+        pub fn set_comprehend_medical_async_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>) -> Self {
+            self.comprehend_medical_async_job_properties_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -899,18 +852,20 @@ pub mod list_entities_detection_v2_jobs_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput).
         pub fn build(self) -> crate::output::ListEntitiesDetectionV2JobsOutput {
             crate::output::ListEntitiesDetectionV2JobsOutput {
-                comprehend_medical_async_job_properties_list: self
-                    .comprehend_medical_async_job_properties_list,
-                next_token: self.next_token,
+                comprehend_medical_async_job_properties_list: self.comprehend_medical_async_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEntitiesDetectionV2JobsOutput {
     /// Creates a new builder-style object to manufacture [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput).
@@ -922,7 +877,7 @@ impl ListEntitiesDetectionV2JobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InferSnomedctOutput {
+pub struct InferSnomedctOutput  {
     /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::SnomedctEntity>>,
@@ -941,29 +896,29 @@ pub struct InferSnomedctOutput {
 }
 impl InferSnomedctOutput {
     /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::SnomedctEntity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::SnomedctEntity]> {
         self.entities.as_deref()
     }
     /// <p> If the result of the request is truncated, the pagination token can be used to fetch the next page of entities. </p>
-    pub fn pagination_token(&self) -> std::option::Option<&str> {
+    pub fn pagination_token(&self) -> std::option::Option<& str> {
         self.pagination_token.as_deref()
     }
     /// <p> The version of the model used to analyze the documents, in the format n.n.n You can use this information to track the model used for a particular batch of documents. </p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> std::option::Option<& str> {
         self.model_version.as_deref()
     }
     /// <p> The details of the SNOMED-CT revision, including the edition, language, and version date. </p>
-    pub fn snomedct_details(&self) -> std::option::Option<&crate::model::SnomedctDetails> {
+    pub fn snomedct_details(&self) -> std::option::Option<& crate::model::SnomedctDetails> {
         self.snomedct_details.as_ref()
     }
     /// <p> The number of characters in the input request documentation. </p>
-    pub fn characters(&self) -> std::option::Option<&crate::model::Characters> {
+    pub fn characters(&self) -> std::option::Option<& crate::model::Characters> {
         self.characters.as_ref()
     }
 }
 /// See [`InferSnomedctOutput`](crate::output::InferSnomedctOutput).
 pub mod infer_snomedct_output {
-
+    
     /// A builder for [`InferSnomedctOutput`](crate::output::InferSnomedctOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -981,17 +936,13 @@ pub mod infer_snomedct_output {
         /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
         pub fn entities(mut self, input: crate::model::SnomedctEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SnomedctEntity>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::SnomedctEntity>>) -> Self {
+            self.entities = input; self
         }
         /// <p> If the result of the request is truncated, the pagination token can be used to fetch the next page of entities. </p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -999,12 +950,8 @@ pub mod infer_snomedct_output {
             self
         }
         /// <p> If the result of the request is truncated, the pagination token can be used to fetch the next page of entities. </p>
-        pub fn set_pagination_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pagination_token = input;
-            self
+        pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pagination_token = input; self
         }
         /// <p> The version of the model used to analyze the documents, in the format n.n.n You can use this information to track the model used for a particular batch of documents. </p>
         pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1012,12 +959,8 @@ pub mod infer_snomedct_output {
             self
         }
         /// <p> The version of the model used to analyze the documents, in the format n.n.n You can use this information to track the model used for a particular batch of documents. </p>
-        pub fn set_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_version = input;
-            self
+        pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_version = input; self
         }
         /// <p> The details of the SNOMED-CT revision, including the edition, language, and version date. </p>
         pub fn snomedct_details(mut self, input: crate::model::SnomedctDetails) -> Self {
@@ -1025,12 +968,8 @@ pub mod infer_snomedct_output {
             self
         }
         /// <p> The details of the SNOMED-CT revision, including the edition, language, and version date. </p>
-        pub fn set_snomedct_details(
-            mut self,
-            input: std::option::Option<crate::model::SnomedctDetails>,
-        ) -> Self {
-            self.snomedct_details = input;
-            self
+        pub fn set_snomedct_details(mut self, input: std::option::Option<crate::model::SnomedctDetails>) -> Self {
+            self.snomedct_details = input; self
         }
         /// <p> The number of characters in the input request documentation. </p>
         pub fn characters(mut self, input: crate::model::Characters) -> Self {
@@ -1038,24 +977,27 @@ pub mod infer_snomedct_output {
             self
         }
         /// <p> The number of characters in the input request documentation. </p>
-        pub fn set_characters(
-            mut self,
-            input: std::option::Option<crate::model::Characters>,
-        ) -> Self {
-            self.characters = input;
-            self
+        pub fn set_characters(mut self, input: std::option::Option<crate::model::Characters>) -> Self {
+            self.characters = input; self
         }
         /// Consumes the builder and constructs a [`InferSnomedctOutput`](crate::output::InferSnomedctOutput).
         pub fn build(self) -> crate::output::InferSnomedctOutput {
             crate::output::InferSnomedctOutput {
-                entities: self.entities,
-                pagination_token: self.pagination_token,
-                model_version: self.model_version,
-                snomedct_details: self.snomedct_details,
-                characters: self.characters,
+                entities: self.entities
+                ,
+                pagination_token: self.pagination_token
+                ,
+                model_version: self.model_version
+                ,
+                snomedct_details: self.snomedct_details
+                ,
+                characters: self.characters
+                ,
             }
         }
     }
+    
+    
 }
 impl InferSnomedctOutput {
     /// Creates a new builder-style object to manufacture [`InferSnomedctOutput`](crate::output::InferSnomedctOutput).
@@ -1067,7 +1009,7 @@ impl InferSnomedctOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InferRxNormOutput {
+pub struct InferRxNormOutput  {
     /// <p>The medication entities detected in the text linked to RxNorm concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::RxNormEntity>>,
@@ -1080,21 +1022,21 @@ pub struct InferRxNormOutput {
 }
 impl InferRxNormOutput {
     /// <p>The medication entities detected in the text linked to RxNorm concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::RxNormEntity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::RxNormEntity]> {
         self.entities.as_deref()
     }
     /// <p>If the result of the previous request to <code>InferRxNorm</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medication entities.</p>
-    pub fn pagination_token(&self) -> std::option::Option<&str> {
+    pub fn pagination_token(&self) -> std::option::Option<& str> {
         self.pagination_token.as_deref()
     }
     /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> std::option::Option<& str> {
         self.model_version.as_deref()
     }
 }
 /// See [`InferRxNormOutput`](crate::output::InferRxNormOutput).
 pub mod infer_rx_norm_output {
-
+    
     /// A builder for [`InferRxNormOutput`](crate::output::InferRxNormOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1110,17 +1052,13 @@ pub mod infer_rx_norm_output {
         /// <p>The medication entities detected in the text linked to RxNorm concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
         pub fn entities(mut self, input: crate::model::RxNormEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p>The medication entities detected in the text linked to RxNorm concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RxNormEntity>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::RxNormEntity>>) -> Self {
+            self.entities = input; self
         }
         /// <p>If the result of the previous request to <code>InferRxNorm</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medication entities.</p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1128,12 +1066,8 @@ pub mod infer_rx_norm_output {
             self
         }
         /// <p>If the result of the previous request to <code>InferRxNorm</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medication entities.</p>
-        pub fn set_pagination_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pagination_token = input;
-            self
+        pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pagination_token = input; self
         }
         /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
         pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1141,22 +1075,23 @@ pub mod infer_rx_norm_output {
             self
         }
         /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
-        pub fn set_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_version = input;
-            self
+        pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_version = input; self
         }
         /// Consumes the builder and constructs a [`InferRxNormOutput`](crate::output::InferRxNormOutput).
         pub fn build(self) -> crate::output::InferRxNormOutput {
             crate::output::InferRxNormOutput {
-                entities: self.entities,
-                pagination_token: self.pagination_token,
-                model_version: self.model_version,
+                entities: self.entities
+                ,
+                pagination_token: self.pagination_token
+                ,
+                model_version: self.model_version
+                ,
             }
         }
     }
+    
+    
 }
 impl InferRxNormOutput {
     /// Creates a new builder-style object to manufacture [`InferRxNormOutput`](crate::output::InferRxNormOutput).
@@ -1168,7 +1103,7 @@ impl InferRxNormOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InferIcd10CmOutput {
+pub struct InferIcd10CmOutput  {
     /// <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Icd10CmEntity>>,
@@ -1181,21 +1116,21 @@ pub struct InferIcd10CmOutput {
 }
 impl InferIcd10CmOutput {
     /// <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::Icd10CmEntity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::Icd10CmEntity]> {
         self.entities.as_deref()
     }
     /// <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
-    pub fn pagination_token(&self) -> std::option::Option<&str> {
+    pub fn pagination_token(&self) -> std::option::Option<& str> {
         self.pagination_token.as_deref()
     }
     /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> std::option::Option<& str> {
         self.model_version.as_deref()
     }
 }
 /// See [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput).
 pub mod infer_icd10_cm_output {
-
+    
     /// A builder for [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1211,17 +1146,13 @@ pub mod infer_icd10_cm_output {
         /// <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
         pub fn entities(mut self, input: crate::model::Icd10CmEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Icd10CmEntity>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Icd10CmEntity>>) -> Self {
+            self.entities = input; self
         }
         /// <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1229,12 +1160,8 @@ pub mod infer_icd10_cm_output {
             self
         }
         /// <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
-        pub fn set_pagination_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pagination_token = input;
-            self
+        pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pagination_token = input; self
         }
         /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
         pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1242,22 +1169,23 @@ pub mod infer_icd10_cm_output {
             self
         }
         /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
-        pub fn set_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_version = input;
-            self
+        pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_version = input; self
         }
         /// Consumes the builder and constructs a [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput).
         pub fn build(self) -> crate::output::InferIcd10CmOutput {
             crate::output::InferIcd10CmOutput {
-                entities: self.entities,
-                pagination_token: self.pagination_token,
-                model_version: self.model_version,
+                entities: self.entities
+                ,
+                pagination_token: self.pagination_token
+                ,
+                model_version: self.model_version
+                ,
             }
         }
     }
+    
+    
 }
 impl InferIcd10CmOutput {
     /// Creates a new builder-style object to manufacture [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput).
@@ -1269,7 +1197,7 @@ impl InferIcd10CmOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectPhiOutput {
+pub struct DetectPhiOutput  {
     /// <p> The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in its detection. </p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
@@ -1282,21 +1210,21 @@ pub struct DetectPhiOutput {
 }
 impl DetectPhiOutput {
     /// <p> The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in its detection. </p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::Entity]> {
         self.entities.as_deref()
     }
     /// <p> If the result of the previous request to <code>DetectPHI</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of PHI entities. </p>
-    pub fn pagination_token(&self) -> std::option::Option<&str> {
+    pub fn pagination_token(&self) -> std::option::Option<& str> {
         self.pagination_token.as_deref()
     }
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> std::option::Option<& str> {
         self.model_version.as_deref()
     }
 }
 /// See [`DetectPhiOutput`](crate::output::DetectPhiOutput).
 pub mod detect_phi_output {
-
+    
     /// A builder for [`DetectPhiOutput`](crate::output::DetectPhiOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1312,17 +1240,13 @@ pub mod detect_phi_output {
         /// <p> The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in its detection. </p>
         pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p> The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in its detection. </p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Entity>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Entity>>) -> Self {
+            self.entities = input; self
         }
         /// <p> If the result of the previous request to <code>DetectPHI</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of PHI entities. </p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1330,12 +1254,8 @@ pub mod detect_phi_output {
             self
         }
         /// <p> If the result of the previous request to <code>DetectPHI</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of PHI entities. </p>
-        pub fn set_pagination_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pagination_token = input;
-            self
+        pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pagination_token = input; self
         }
         /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
         pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1343,22 +1263,23 @@ pub mod detect_phi_output {
             self
         }
         /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
-        pub fn set_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_version = input;
-            self
+        pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_version = input; self
         }
         /// Consumes the builder and constructs a [`DetectPhiOutput`](crate::output::DetectPhiOutput).
         pub fn build(self) -> crate::output::DetectPhiOutput {
             crate::output::DetectPhiOutput {
-                entities: self.entities,
-                pagination_token: self.pagination_token,
-                model_version: self.model_version,
+                entities: self.entities
+                ,
+                pagination_token: self.pagination_token
+                ,
+                model_version: self.model_version
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectPhiOutput {
     /// Creates a new builder-style object to manufacture [`DetectPhiOutput`](crate::output::DetectPhiOutput).
@@ -1370,7 +1291,7 @@ impl DetectPhiOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectEntitiesV2Output {
+pub struct DetectEntitiesV2Output  {
     /// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence in the detection and analysis. Attributes and traits of the entity are also returned.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
@@ -1386,31 +1307,30 @@ pub struct DetectEntitiesV2Output {
 }
 impl DetectEntitiesV2Output {
     /// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence in the detection and analysis. Attributes and traits of the entity are also returned.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::Entity]> {
         self.entities.as_deref()
     }
     /// <p>Attributes extracted from the input text that couldn't be related to an entity.</p>
-    pub fn unmapped_attributes(&self) -> std::option::Option<&[crate::model::UnmappedAttribute]> {
+    pub fn unmapped_attributes(&self) -> std::option::Option<& [crate::model::UnmappedAttribute]> {
         self.unmapped_attributes.as_deref()
     }
     /// <p>If the result to the <code>DetectEntitiesV2</code> operation was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
-    pub fn pagination_token(&self) -> std::option::Option<&str> {
+    pub fn pagination_token(&self) -> std::option::Option<& str> {
         self.pagination_token.as_deref()
     }
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> std::option::Option<& str> {
         self.model_version.as_deref()
     }
 }
 /// See [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output).
 pub mod detect_entities_v2_output {
-
+    
     /// A builder for [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
-        pub(crate) unmapped_attributes:
-            std::option::Option<std::vec::Vec<crate::model::UnmappedAttribute>>,
+        pub(crate) unmapped_attributes: std::option::Option<std::vec::Vec<crate::model::UnmappedAttribute>>,
         pub(crate) pagination_token: std::option::Option<std::string::String>,
         pub(crate) model_version: std::option::Option<std::string::String>,
     }
@@ -1422,17 +1342,13 @@ pub mod detect_entities_v2_output {
         /// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence in the detection and analysis. Attributes and traits of the entity are also returned.</p>
         pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence in the detection and analysis. Attributes and traits of the entity are also returned.</p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Entity>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Entity>>) -> Self {
+            self.entities = input; self
         }
         /// Appends an item to `unmapped_attributes`.
         ///
@@ -1441,17 +1357,13 @@ pub mod detect_entities_v2_output {
         /// <p>Attributes extracted from the input text that couldn't be related to an entity.</p>
         pub fn unmapped_attributes(mut self, input: crate::model::UnmappedAttribute) -> Self {
             let mut v = self.unmapped_attributes.unwrap_or_default();
-            v.push(input);
-            self.unmapped_attributes = Some(v);
-            self
+                            v.push(input);
+                            self.unmapped_attributes = Some(v);
+                            self
         }
         /// <p>Attributes extracted from the input text that couldn't be related to an entity.</p>
-        pub fn set_unmapped_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UnmappedAttribute>>,
-        ) -> Self {
-            self.unmapped_attributes = input;
-            self
+        pub fn set_unmapped_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::UnmappedAttribute>>) -> Self {
+            self.unmapped_attributes = input; self
         }
         /// <p>If the result to the <code>DetectEntitiesV2</code> operation was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1459,12 +1371,8 @@ pub mod detect_entities_v2_output {
             self
         }
         /// <p>If the result to the <code>DetectEntitiesV2</code> operation was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
-        pub fn set_pagination_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pagination_token = input;
-            self
+        pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pagination_token = input; self
         }
         /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
         pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1472,23 +1380,25 @@ pub mod detect_entities_v2_output {
             self
         }
         /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
-        pub fn set_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_version = input;
-            self
+        pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_version = input; self
         }
         /// Consumes the builder and constructs a [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output).
         pub fn build(self) -> crate::output::DetectEntitiesV2Output {
             crate::output::DetectEntitiesV2Output {
-                entities: self.entities,
-                unmapped_attributes: self.unmapped_attributes,
-                pagination_token: self.pagination_token,
-                model_version: self.model_version,
+                entities: self.entities
+                ,
+                unmapped_attributes: self.unmapped_attributes
+                ,
+                pagination_token: self.pagination_token
+                ,
+                model_version: self.model_version
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectEntitiesV2Output {
     /// Creates a new builder-style object to manufacture [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output).
@@ -1500,7 +1410,7 @@ impl DetectEntitiesV2Output {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectEntitiesOutput {
+pub struct DetectEntitiesOutput  {
     /// <p> The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in the detection and analysis. Attributes and traits of the entity are also returned.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
@@ -1516,31 +1426,30 @@ pub struct DetectEntitiesOutput {
 }
 impl DetectEntitiesOutput {
     /// <p> The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in the detection and analysis. Attributes and traits of the entity are also returned.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::Entity]> {
         self.entities.as_deref()
     }
     /// <p> Attributes extracted from the input text that we were unable to relate to an entity.</p>
-    pub fn unmapped_attributes(&self) -> std::option::Option<&[crate::model::UnmappedAttribute]> {
+    pub fn unmapped_attributes(&self) -> std::option::Option<& [crate::model::UnmappedAttribute]> {
         self.unmapped_attributes.as_deref()
     }
     /// <p> If the result of the previous request to <code>DetectEntities</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
-    pub fn pagination_token(&self) -> std::option::Option<&str> {
+    pub fn pagination_token(&self) -> std::option::Option<& str> {
         self.pagination_token.as_deref()
     }
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> std::option::Option<& str> {
         self.model_version.as_deref()
     }
 }
 /// See [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
 pub mod detect_entities_output {
-
+    
     /// A builder for [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
-        pub(crate) unmapped_attributes:
-            std::option::Option<std::vec::Vec<crate::model::UnmappedAttribute>>,
+        pub(crate) unmapped_attributes: std::option::Option<std::vec::Vec<crate::model::UnmappedAttribute>>,
         pub(crate) pagination_token: std::option::Option<std::string::String>,
         pub(crate) model_version: std::option::Option<std::string::String>,
     }
@@ -1552,17 +1461,13 @@ pub mod detect_entities_output {
         /// <p> The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in the detection and analysis. Attributes and traits of the entity are also returned.</p>
         pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p> The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in the detection and analysis. Attributes and traits of the entity are also returned.</p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Entity>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Entity>>) -> Self {
+            self.entities = input; self
         }
         /// Appends an item to `unmapped_attributes`.
         ///
@@ -1571,17 +1476,13 @@ pub mod detect_entities_output {
         /// <p> Attributes extracted from the input text that we were unable to relate to an entity.</p>
         pub fn unmapped_attributes(mut self, input: crate::model::UnmappedAttribute) -> Self {
             let mut v = self.unmapped_attributes.unwrap_or_default();
-            v.push(input);
-            self.unmapped_attributes = Some(v);
-            self
+                            v.push(input);
+                            self.unmapped_attributes = Some(v);
+                            self
         }
         /// <p> Attributes extracted from the input text that we were unable to relate to an entity.</p>
-        pub fn set_unmapped_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UnmappedAttribute>>,
-        ) -> Self {
-            self.unmapped_attributes = input;
-            self
+        pub fn set_unmapped_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::UnmappedAttribute>>) -> Self {
+            self.unmapped_attributes = input; self
         }
         /// <p> If the result of the previous request to <code>DetectEntities</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1589,12 +1490,8 @@ pub mod detect_entities_output {
             self
         }
         /// <p> If the result of the previous request to <code>DetectEntities</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
-        pub fn set_pagination_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pagination_token = input;
-            self
+        pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pagination_token = input; self
         }
         /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
         pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1602,23 +1499,25 @@ pub mod detect_entities_output {
             self
         }
         /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
-        pub fn set_model_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_version = input;
-            self
+        pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_version = input; self
         }
         /// Consumes the builder and constructs a [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
         pub fn build(self) -> crate::output::DetectEntitiesOutput {
             crate::output::DetectEntitiesOutput {
-                entities: self.entities,
-                unmapped_attributes: self.unmapped_attributes,
-                pagination_token: self.pagination_token,
-                model_version: self.model_version,
+                entities: self.entities
+                ,
+                unmapped_attributes: self.unmapped_attributes
+                ,
+                pagination_token: self.pagination_token
+                ,
+                model_version: self.model_version
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
@@ -1630,54 +1529,45 @@ impl DetectEntitiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSnomedctInferenceJobOutput {
+pub struct DescribeSnomedctInferenceJobOutput  {
     /// <p>Provides information about a detection job.</p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties:
-        std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+    pub comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
 }
 impl DescribeSnomedctInferenceJobOutput {
     /// <p>Provides information about a detection job.</p>
-    pub fn comprehend_medical_async_job_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobProperties> {
+    pub fn comprehend_medical_async_job_properties(&self) -> std::option::Option<& crate::model::ComprehendMedicalAsyncJobProperties> {
         self.comprehend_medical_async_job_properties.as_ref()
     }
 }
 /// See [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput).
 pub mod describe_snomedct_inference_job_output {
-
+    
     /// A builder for [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) comprehend_medical_async_job_properties:
-            std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+        pub(crate) comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
     }
     impl Builder {
         /// <p>Provides information about a detection job.</p>
-        pub fn comprehend_medical_async_job_properties(
-            mut self,
-            input: crate::model::ComprehendMedicalAsyncJobProperties,
-        ) -> Self {
+        pub fn comprehend_medical_async_job_properties(mut self, input: crate::model::ComprehendMedicalAsyncJobProperties) -> Self {
             self.comprehend_medical_async_job_properties = Some(input);
             self
         }
         /// <p>Provides information about a detection job.</p>
-        pub fn set_comprehend_medical_async_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
-        ) -> Self {
-            self.comprehend_medical_async_job_properties = input;
-            self
+        pub fn set_comprehend_medical_async_job_properties(mut self, input: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>) -> Self {
+            self.comprehend_medical_async_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput).
         pub fn build(self) -> crate::output::DescribeSnomedctInferenceJobOutput {
             crate::output::DescribeSnomedctInferenceJobOutput {
-                comprehend_medical_async_job_properties: self
-                    .comprehend_medical_async_job_properties,
+                comprehend_medical_async_job_properties: self.comprehend_medical_async_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSnomedctInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput).
@@ -1689,54 +1579,45 @@ impl DescribeSnomedctInferenceJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRxNormInferenceJobOutput {
+pub struct DescribeRxNormInferenceJobOutput  {
     /// <p>An object that contains the properties associated with a detection job.</p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties:
-        std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+    pub comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
 }
 impl DescribeRxNormInferenceJobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
-    pub fn comprehend_medical_async_job_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobProperties> {
+    pub fn comprehend_medical_async_job_properties(&self) -> std::option::Option<& crate::model::ComprehendMedicalAsyncJobProperties> {
         self.comprehend_medical_async_job_properties.as_ref()
     }
 }
 /// See [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput).
 pub mod describe_rx_norm_inference_job_output {
-
+    
     /// A builder for [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) comprehend_medical_async_job_properties:
-            std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+        pub(crate) comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a detection job.</p>
-        pub fn comprehend_medical_async_job_properties(
-            mut self,
-            input: crate::model::ComprehendMedicalAsyncJobProperties,
-        ) -> Self {
+        pub fn comprehend_medical_async_job_properties(mut self, input: crate::model::ComprehendMedicalAsyncJobProperties) -> Self {
             self.comprehend_medical_async_job_properties = Some(input);
             self
         }
         /// <p>An object that contains the properties associated with a detection job.</p>
-        pub fn set_comprehend_medical_async_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
-        ) -> Self {
-            self.comprehend_medical_async_job_properties = input;
-            self
+        pub fn set_comprehend_medical_async_job_properties(mut self, input: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>) -> Self {
+            self.comprehend_medical_async_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput).
         pub fn build(self) -> crate::output::DescribeRxNormInferenceJobOutput {
             crate::output::DescribeRxNormInferenceJobOutput {
-                comprehend_medical_async_job_properties: self
-                    .comprehend_medical_async_job_properties,
+                comprehend_medical_async_job_properties: self.comprehend_medical_async_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeRxNormInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput).
@@ -1748,54 +1629,45 @@ impl DescribeRxNormInferenceJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePhiDetectionJobOutput {
+pub struct DescribePhiDetectionJobOutput  {
     /// <p>An object that contains the properties associated with a detection job.</p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties:
-        std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+    pub comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
 }
 impl DescribePhiDetectionJobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
-    pub fn comprehend_medical_async_job_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobProperties> {
+    pub fn comprehend_medical_async_job_properties(&self) -> std::option::Option<& crate::model::ComprehendMedicalAsyncJobProperties> {
         self.comprehend_medical_async_job_properties.as_ref()
     }
 }
 /// See [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput).
 pub mod describe_phi_detection_job_output {
-
+    
     /// A builder for [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) comprehend_medical_async_job_properties:
-            std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+        pub(crate) comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a detection job.</p>
-        pub fn comprehend_medical_async_job_properties(
-            mut self,
-            input: crate::model::ComprehendMedicalAsyncJobProperties,
-        ) -> Self {
+        pub fn comprehend_medical_async_job_properties(mut self, input: crate::model::ComprehendMedicalAsyncJobProperties) -> Self {
             self.comprehend_medical_async_job_properties = Some(input);
             self
         }
         /// <p>An object that contains the properties associated with a detection job.</p>
-        pub fn set_comprehend_medical_async_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
-        ) -> Self {
-            self.comprehend_medical_async_job_properties = input;
-            self
+        pub fn set_comprehend_medical_async_job_properties(mut self, input: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>) -> Self {
+            self.comprehend_medical_async_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribePhiDetectionJobOutput {
             crate::output::DescribePhiDetectionJobOutput {
-                comprehend_medical_async_job_properties: self
-                    .comprehend_medical_async_job_properties,
+                comprehend_medical_async_job_properties: self.comprehend_medical_async_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePhiDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput).
@@ -1807,54 +1679,45 @@ impl DescribePhiDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIcd10CmInferenceJobOutput {
+pub struct DescribeIcd10CmInferenceJobOutput  {
     /// <p>An object that contains the properties associated with a detection job.</p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties:
-        std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+    pub comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
 }
 impl DescribeIcd10CmInferenceJobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
-    pub fn comprehend_medical_async_job_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobProperties> {
+    pub fn comprehend_medical_async_job_properties(&self) -> std::option::Option<& crate::model::ComprehendMedicalAsyncJobProperties> {
         self.comprehend_medical_async_job_properties.as_ref()
     }
 }
 /// See [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput).
 pub mod describe_icd10_cm_inference_job_output {
-
+    
     /// A builder for [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) comprehend_medical_async_job_properties:
-            std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+        pub(crate) comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a detection job.</p>
-        pub fn comprehend_medical_async_job_properties(
-            mut self,
-            input: crate::model::ComprehendMedicalAsyncJobProperties,
-        ) -> Self {
+        pub fn comprehend_medical_async_job_properties(mut self, input: crate::model::ComprehendMedicalAsyncJobProperties) -> Self {
             self.comprehend_medical_async_job_properties = Some(input);
             self
         }
         /// <p>An object that contains the properties associated with a detection job.</p>
-        pub fn set_comprehend_medical_async_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
-        ) -> Self {
-            self.comprehend_medical_async_job_properties = input;
-            self
+        pub fn set_comprehend_medical_async_job_properties(mut self, input: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>) -> Self {
+            self.comprehend_medical_async_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput).
         pub fn build(self) -> crate::output::DescribeIcd10CmInferenceJobOutput {
             crate::output::DescribeIcd10CmInferenceJobOutput {
-                comprehend_medical_async_job_properties: self
-                    .comprehend_medical_async_job_properties,
+                comprehend_medical_async_job_properties: self.comprehend_medical_async_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeIcd10CmInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput).
@@ -1866,54 +1729,45 @@ impl DescribeIcd10CmInferenceJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEntitiesDetectionV2JobOutput {
+pub struct DescribeEntitiesDetectionV2JobOutput  {
     /// <p>An object that contains the properties associated with a detection job.</p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties:
-        std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+    pub comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
 }
 impl DescribeEntitiesDetectionV2JobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
-    pub fn comprehend_medical_async_job_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobProperties> {
+    pub fn comprehend_medical_async_job_properties(&self) -> std::option::Option<& crate::model::ComprehendMedicalAsyncJobProperties> {
         self.comprehend_medical_async_job_properties.as_ref()
     }
 }
 /// See [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput).
 pub mod describe_entities_detection_v2_job_output {
-
+    
     /// A builder for [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) comprehend_medical_async_job_properties:
-            std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+        pub(crate) comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a detection job.</p>
-        pub fn comprehend_medical_async_job_properties(
-            mut self,
-            input: crate::model::ComprehendMedicalAsyncJobProperties,
-        ) -> Self {
+        pub fn comprehend_medical_async_job_properties(mut self, input: crate::model::ComprehendMedicalAsyncJobProperties) -> Self {
             self.comprehend_medical_async_job_properties = Some(input);
             self
         }
         /// <p>An object that contains the properties associated with a detection job.</p>
-        pub fn set_comprehend_medical_async_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
-        ) -> Self {
-            self.comprehend_medical_async_job_properties = input;
-            self
+        pub fn set_comprehend_medical_async_job_properties(mut self, input: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>) -> Self {
+            self.comprehend_medical_async_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput).
         pub fn build(self) -> crate::output::DescribeEntitiesDetectionV2JobOutput {
             crate::output::DescribeEntitiesDetectionV2JobOutput {
-                comprehend_medical_async_job_properties: self
-                    .comprehend_medical_async_job_properties,
+                comprehend_medical_async_job_properties: self.comprehend_medical_async_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEntitiesDetectionV2JobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput).
@@ -1921,3 +1775,4 @@ impl DescribeEntitiesDetectionV2JobOutput {
         crate::output::describe_entities_detection_v2_job_output::Builder::default()
     }
 }
+

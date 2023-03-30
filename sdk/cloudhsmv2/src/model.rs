@@ -3,7 +3,7 @@
 /// <p>Contains a tag. A tag is a key-value pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key of the tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod tag {
         }
         /// <p>The key of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of the tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod tag {
         }
         /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -70,7 +72,7 @@ impl Tag {
 /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>, <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Backup {
+pub struct Backup  {
     /// <p>The identifier (ID) of the backup.</p>
     #[doc(hidden)]
     pub backup_id: std::option::Option<std::string::String>,
@@ -107,23 +109,23 @@ pub struct Backup {
 }
 impl Backup {
     /// <p>The identifier (ID) of the backup.</p>
-    pub fn backup_id(&self) -> std::option::Option<&str> {
+    pub fn backup_id(&self) -> std::option::Option<& str> {
         self.backup_id.as_deref()
     }
     /// <p>The state of the backup.</p>
-    pub fn backup_state(&self) -> std::option::Option<&crate::model::BackupState> {
+    pub fn backup_state(&self) -> std::option::Option<& crate::model::BackupState> {
         self.backup_state.as_ref()
     }
     /// <p>The identifier (ID) of the cluster that was backed up.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The date and time when the backup was created.</p>
-    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
     /// <p>The date and time when the backup was copied from a source backup.</p>
-    pub fn copy_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn copy_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.copy_timestamp.as_ref()
     }
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
@@ -131,29 +133,29 @@ impl Backup {
         self.never_expires
     }
     /// <p>The AWS Region that contains the source backup from which the new backup was copied.</p>
-    pub fn source_region(&self) -> std::option::Option<&str> {
+    pub fn source_region(&self) -> std::option::Option<& str> {
         self.source_region.as_deref()
     }
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
-    pub fn source_backup(&self) -> std::option::Option<&str> {
+    pub fn source_backup(&self) -> std::option::Option<& str> {
         self.source_backup.as_deref()
     }
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
-    pub fn source_cluster(&self) -> std::option::Option<&str> {
+    pub fn source_cluster(&self) -> std::option::Option<& str> {
         self.source_cluster.as_deref()
     }
     /// <p>The date and time when the backup will be permanently deleted.</p>
-    pub fn delete_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn delete_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.delete_timestamp.as_ref()
     }
     /// <p>The list of tags for the backup.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tag_list.as_deref()
     }
 }
 /// See [`Backup`](crate::model::Backup).
 pub mod backup {
-
+    
     /// A builder for [`Backup`](crate::model::Backup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -177,8 +179,7 @@ pub mod backup {
         }
         /// <p>The identifier (ID) of the backup.</p>
         pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.backup_id = input;
-            self
+            self.backup_id = input; self
         }
         /// <p>The state of the backup.</p>
         pub fn backup_state(mut self, input: crate::model::BackupState) -> Self {
@@ -186,12 +187,8 @@ pub mod backup {
             self
         }
         /// <p>The state of the backup.</p>
-        pub fn set_backup_state(
-            mut self,
-            input: std::option::Option<crate::model::BackupState>,
-        ) -> Self {
-            self.backup_state = input;
-            self
+        pub fn set_backup_state(mut self, input: std::option::Option<crate::model::BackupState>) -> Self {
+            self.backup_state = input; self
         }
         /// <p>The identifier (ID) of the cluster that was backed up.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,8 +197,7 @@ pub mod backup {
         }
         /// <p>The identifier (ID) of the cluster that was backed up.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_id = input;
-            self
+            self.cluster_id = input; self
         }
         /// <p>The date and time when the backup was created.</p>
         pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -209,12 +205,8 @@ pub mod backup {
             self
         }
         /// <p>The date and time when the backup was created.</p>
-        pub fn set_create_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_timestamp = input;
-            self
+        pub fn set_create_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_timestamp = input; self
         }
         /// <p>The date and time when the backup was copied from a source backup.</p>
         pub fn copy_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -222,12 +214,8 @@ pub mod backup {
             self
         }
         /// <p>The date and time when the backup was copied from a source backup.</p>
-        pub fn set_copy_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.copy_timestamp = input;
-            self
+        pub fn set_copy_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.copy_timestamp = input; self
         }
         /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
         pub fn never_expires(mut self, input: bool) -> Self {
@@ -236,8 +224,7 @@ pub mod backup {
         }
         /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
         pub fn set_never_expires(mut self, input: std::option::Option<bool>) -> Self {
-            self.never_expires = input;
-            self
+            self.never_expires = input; self
         }
         /// <p>The AWS Region that contains the source backup from which the new backup was copied.</p>
         pub fn source_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -245,12 +232,8 @@ pub mod backup {
             self
         }
         /// <p>The AWS Region that contains the source backup from which the new backup was copied.</p>
-        pub fn set_source_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_region = input;
-            self
+        pub fn set_source_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_region = input; self
         }
         /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
         pub fn source_backup(mut self, input: impl Into<std::string::String>) -> Self {
@@ -258,12 +241,8 @@ pub mod backup {
             self
         }
         /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
-        pub fn set_source_backup(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_backup = input;
-            self
+        pub fn set_source_backup(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_backup = input; self
         }
         /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
         pub fn source_cluster(mut self, input: impl Into<std::string::String>) -> Self {
@@ -271,12 +250,8 @@ pub mod backup {
             self
         }
         /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
-        pub fn set_source_cluster(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_cluster = input;
-            self
+        pub fn set_source_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_cluster = input; self
         }
         /// <p>The date and time when the backup will be permanently deleted.</p>
         pub fn delete_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -284,12 +259,8 @@ pub mod backup {
             self
         }
         /// <p>The date and time when the backup will be permanently deleted.</p>
-        pub fn set_delete_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.delete_timestamp = input;
-            self
+        pub fn set_delete_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.delete_timestamp = input; self
         }
         /// Appends an item to `tag_list`.
         ///
@@ -298,35 +269,44 @@ pub mod backup {
         /// <p>The list of tags for the backup.</p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input);
-            self.tag_list = Some(v);
-            self
+                            v.push(input);
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p>The list of tags for the backup.</p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tag_list = input; self
         }
         /// Consumes the builder and constructs a [`Backup`](crate::model::Backup).
         pub fn build(self) -> crate::model::Backup {
             crate::model::Backup {
-                backup_id: self.backup_id,
-                backup_state: self.backup_state,
-                cluster_id: self.cluster_id,
-                create_timestamp: self.create_timestamp,
-                copy_timestamp: self.copy_timestamp,
-                never_expires: self.never_expires,
-                source_region: self.source_region,
-                source_backup: self.source_backup,
-                source_cluster: self.source_cluster,
-                delete_timestamp: self.delete_timestamp,
-                tag_list: self.tag_list,
+                backup_id: self.backup_id
+                ,
+                backup_state: self.backup_state
+                ,
+                cluster_id: self.cluster_id
+                ,
+                create_timestamp: self.create_timestamp
+                ,
+                copy_timestamp: self.copy_timestamp
+                ,
+                never_expires: self.never_expires
+                ,
+                source_region: self.source_region
+                ,
+                source_backup: self.source_backup
+                ,
+                source_cluster: self.source_cluster
+                ,
+                delete_timestamp: self.delete_timestamp
+                ,
+                tag_list: self.tag_list
+                ,
             }
         }
     }
+    
+    
 }
 impl Backup {
     /// Creates a new builder-style object to manufacture [`Backup`](crate::model::Backup).
@@ -341,9 +321,9 @@ impl Backup {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let backupstate = unimplemented!();
 /// match backupstate {
@@ -367,22 +347,14 @@ impl Backup {
 /// Specifically, when `backupstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BackupState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BackupState {
     #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
@@ -393,7 +365,7 @@ pub enum BackupState {
     #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BackupState {
     fn from(s: &str) -> Self {
@@ -402,17 +374,17 @@ impl std::convert::From<&str> for BackupState {
             "DELETED" => BackupState::Deleted,
             "PENDING_DELETION" => BackupState::PendingDeletion,
             "READY" => BackupState::Ready,
-            other => BackupState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BackupState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BackupState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BackupState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BackupState::from(s))
+                }
+            }
 impl BackupState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -421,12 +393,14 @@ impl BackupState {
             BackupState::Deleted => "DELETED",
             BackupState::PendingDeletion => "PENDING_DELETION",
             BackupState::Ready => "READY",
-            BackupState::Unknown(value) => value.as_str(),
+            BackupState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATE_IN_PROGRESS", "DELETED", "PENDING_DELETION", "READY"]
+        &[
+            "CREATE_IN_PROGRESS", "DELETED", "PENDING_DELETION", "READY"
+        ]
     }
 }
 impl AsRef<str> for BackupState {
@@ -438,7 +412,7 @@ impl AsRef<str> for BackupState {
 /// <p>Contains information about an AWS CloudHSM cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Cluster {
+pub struct Cluster  {
     /// <p>The cluster's backup policy.</p>
     #[doc(hidden)]
     pub backup_policy: std::option::Option<crate::model::BackupPolicy>,
@@ -474,8 +448,7 @@ pub struct Cluster {
     pub state_message: std::option::Option<std::string::String>,
     /// <p>A map from availability zone to the cluster’s subnet in that availability zone.</p>
     #[doc(hidden)]
-    pub subnet_mapping:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub subnet_mapping: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
@@ -488,80 +461,74 @@ pub struct Cluster {
 }
 impl Cluster {
     /// <p>The cluster's backup policy.</p>
-    pub fn backup_policy(&self) -> std::option::Option<&crate::model::BackupPolicy> {
+    pub fn backup_policy(&self) -> std::option::Option<& crate::model::BackupPolicy> {
         self.backup_policy.as_ref()
     }
     /// <p>A policy that defines how the service retains backups.</p>
-    pub fn backup_retention_policy(
-        &self,
-    ) -> std::option::Option<&crate::model::BackupRetentionPolicy> {
+    pub fn backup_retention_policy(&self) -> std::option::Option<& crate::model::BackupRetentionPolicy> {
         self.backup_retention_policy.as_ref()
     }
     /// <p>The cluster's identifier (ID).</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The date and time when the cluster was created.</p>
-    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
     /// <p>Contains information about the HSMs in the cluster.</p>
-    pub fn hsms(&self) -> std::option::Option<&[crate::model::Hsm]> {
+    pub fn hsms(&self) -> std::option::Option<& [crate::model::Hsm]> {
         self.hsms.as_deref()
     }
     /// <p>The type of HSM that the cluster contains.</p>
-    pub fn hsm_type(&self) -> std::option::Option<&str> {
+    pub fn hsm_type(&self) -> std::option::Option<& str> {
         self.hsm_type.as_deref()
     }
     /// <p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>
-    pub fn pre_co_password(&self) -> std::option::Option<&str> {
+    pub fn pre_co_password(&self) -> std::option::Option<& str> {
         self.pre_co_password.as_deref()
     }
     /// <p>The identifier (ID) of the cluster's security group.</p>
-    pub fn security_group(&self) -> std::option::Option<&str> {
+    pub fn security_group(&self) -> std::option::Option<& str> {
         self.security_group.as_deref()
     }
     /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>
-    pub fn source_backup_id(&self) -> std::option::Option<&str> {
+    pub fn source_backup_id(&self) -> std::option::Option<& str> {
         self.source_backup_id.as_deref()
     }
     /// <p>The cluster's state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ClusterState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ClusterState> {
         self.state.as_ref()
     }
     /// <p>A description of the cluster's state.</p>
-    pub fn state_message(&self) -> std::option::Option<&str> {
+    pub fn state_message(&self) -> std::option::Option<& str> {
         self.state_message.as_deref()
     }
     /// <p>A map from availability zone to the cluster’s subnet in that availability zone.</p>
-    pub fn subnet_mapping(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn subnet_mapping(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.subnet_mapping.as_ref()
     }
     /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
-    pub fn certificates(&self) -> std::option::Option<&crate::model::Certificates> {
+    pub fn certificates(&self) -> std::option::Option<& crate::model::Certificates> {
         self.certificates.as_ref()
     }
     /// <p>The list of tags for the cluster.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tag_list.as_deref()
     }
 }
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
-
+    
     /// A builder for [`Cluster`](crate::model::Cluster).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_policy: std::option::Option<crate::model::BackupPolicy>,
-        pub(crate) backup_retention_policy:
-            std::option::Option<crate::model::BackupRetentionPolicy>,
+        pub(crate) backup_retention_policy: std::option::Option<crate::model::BackupRetentionPolicy>,
         pub(crate) cluster_id: std::option::Option<std::string::String>,
         pub(crate) create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) hsms: std::option::Option<std::vec::Vec<crate::model::Hsm>>,
@@ -571,9 +538,7 @@ pub mod cluster {
         pub(crate) source_backup_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ClusterState>,
         pub(crate) state_message: std::option::Option<std::string::String>,
-        pub(crate) subnet_mapping: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) subnet_mapping: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) certificates: std::option::Option<crate::model::Certificates>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -585,28 +550,17 @@ pub mod cluster {
             self
         }
         /// <p>The cluster's backup policy.</p>
-        pub fn set_backup_policy(
-            mut self,
-            input: std::option::Option<crate::model::BackupPolicy>,
-        ) -> Self {
-            self.backup_policy = input;
-            self
+        pub fn set_backup_policy(mut self, input: std::option::Option<crate::model::BackupPolicy>) -> Self {
+            self.backup_policy = input; self
         }
         /// <p>A policy that defines how the service retains backups.</p>
-        pub fn backup_retention_policy(
-            mut self,
-            input: crate::model::BackupRetentionPolicy,
-        ) -> Self {
+        pub fn backup_retention_policy(mut self, input: crate::model::BackupRetentionPolicy) -> Self {
             self.backup_retention_policy = Some(input);
             self
         }
         /// <p>A policy that defines how the service retains backups.</p>
-        pub fn set_backup_retention_policy(
-            mut self,
-            input: std::option::Option<crate::model::BackupRetentionPolicy>,
-        ) -> Self {
-            self.backup_retention_policy = input;
-            self
+        pub fn set_backup_retention_policy(mut self, input: std::option::Option<crate::model::BackupRetentionPolicy>) -> Self {
+            self.backup_retention_policy = input; self
         }
         /// <p>The cluster's identifier (ID).</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -615,8 +569,7 @@ pub mod cluster {
         }
         /// <p>The cluster's identifier (ID).</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_id = input;
-            self
+            self.cluster_id = input; self
         }
         /// <p>The date and time when the cluster was created.</p>
         pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -624,12 +577,8 @@ pub mod cluster {
             self
         }
         /// <p>The date and time when the cluster was created.</p>
-        pub fn set_create_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_timestamp = input;
-            self
+        pub fn set_create_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_timestamp = input; self
         }
         /// Appends an item to `hsms`.
         ///
@@ -638,17 +587,13 @@ pub mod cluster {
         /// <p>Contains information about the HSMs in the cluster.</p>
         pub fn hsms(mut self, input: crate::model::Hsm) -> Self {
             let mut v = self.hsms.unwrap_or_default();
-            v.push(input);
-            self.hsms = Some(v);
-            self
+                            v.push(input);
+                            self.hsms = Some(v);
+                            self
         }
         /// <p>Contains information about the HSMs in the cluster.</p>
-        pub fn set_hsms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Hsm>>,
-        ) -> Self {
-            self.hsms = input;
-            self
+        pub fn set_hsms(mut self, input: std::option::Option<std::vec::Vec<crate::model::Hsm>>) -> Self {
+            self.hsms = input; self
         }
         /// <p>The type of HSM that the cluster contains.</p>
         pub fn hsm_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -657,8 +602,7 @@ pub mod cluster {
         }
         /// <p>The type of HSM that the cluster contains.</p>
         pub fn set_hsm_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hsm_type = input;
-            self
+            self.hsm_type = input; self
         }
         /// <p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>
         pub fn pre_co_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -666,12 +610,8 @@ pub mod cluster {
             self
         }
         /// <p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>
-        pub fn set_pre_co_password(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pre_co_password = input;
-            self
+        pub fn set_pre_co_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pre_co_password = input; self
         }
         /// <p>The identifier (ID) of the cluster's security group.</p>
         pub fn security_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -679,12 +619,8 @@ pub mod cluster {
             self
         }
         /// <p>The identifier (ID) of the cluster's security group.</p>
-        pub fn set_security_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.security_group = input;
-            self
+        pub fn set_security_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.security_group = input; self
         }
         /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>
         pub fn source_backup_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -692,12 +628,8 @@ pub mod cluster {
             self
         }
         /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>
-        pub fn set_source_backup_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_backup_id = input;
-            self
+        pub fn set_source_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_backup_id = input; self
         }
         /// <p>The cluster's state.</p>
         pub fn state(mut self, input: crate::model::ClusterState) -> Self {
@@ -706,8 +638,7 @@ pub mod cluster {
         }
         /// <p>The cluster's state.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ClusterState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>A description of the cluster's state.</p>
         pub fn state_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -715,37 +646,23 @@ pub mod cluster {
             self
         }
         /// <p>A description of the cluster's state.</p>
-        pub fn set_state_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_message = input;
-            self
+        pub fn set_state_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_message = input; self
         }
         /// Adds a key-value pair to `subnet_mapping`.
         ///
         /// To override the contents of this collection use [`set_subnet_mapping`](Self::set_subnet_mapping).
         ///
         /// <p>A map from availability zone to the cluster’s subnet in that availability zone.</p>
-        pub fn subnet_mapping(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn subnet_mapping(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.subnet_mapping.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.subnet_mapping = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.subnet_mapping = Some(hash_map);
+                            self
         }
         /// <p>A map from availability zone to the cluster’s subnet in that availability zone.</p>
-        pub fn set_subnet_mapping(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.subnet_mapping = input;
-            self
+        pub fn set_subnet_mapping(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.subnet_mapping = input; self
         }
         /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -754,8 +671,7 @@ pub mod cluster {
         }
         /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
         pub fn certificates(mut self, input: crate::model::Certificates) -> Self {
@@ -763,12 +679,8 @@ pub mod cluster {
             self
         }
         /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
-        pub fn set_certificates(
-            mut self,
-            input: std::option::Option<crate::model::Certificates>,
-        ) -> Self {
-            self.certificates = input;
-            self
+        pub fn set_certificates(mut self, input: std::option::Option<crate::model::Certificates>) -> Self {
+            self.certificates = input; self
         }
         /// Appends an item to `tag_list`.
         ///
@@ -777,39 +689,52 @@ pub mod cluster {
         /// <p>The list of tags for the cluster.</p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input);
-            self.tag_list = Some(v);
-            self
+                            v.push(input);
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p>The list of tags for the cluster.</p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tag_list = input; self
         }
         /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster).
         pub fn build(self) -> crate::model::Cluster {
             crate::model::Cluster {
-                backup_policy: self.backup_policy,
-                backup_retention_policy: self.backup_retention_policy,
-                cluster_id: self.cluster_id,
-                create_timestamp: self.create_timestamp,
-                hsms: self.hsms,
-                hsm_type: self.hsm_type,
-                pre_co_password: self.pre_co_password,
-                security_group: self.security_group,
-                source_backup_id: self.source_backup_id,
-                state: self.state,
-                state_message: self.state_message,
-                subnet_mapping: self.subnet_mapping,
-                vpc_id: self.vpc_id,
-                certificates: self.certificates,
-                tag_list: self.tag_list,
+                backup_policy: self.backup_policy
+                ,
+                backup_retention_policy: self.backup_retention_policy
+                ,
+                cluster_id: self.cluster_id
+                ,
+                create_timestamp: self.create_timestamp
+                ,
+                hsms: self.hsms
+                ,
+                hsm_type: self.hsm_type
+                ,
+                pre_co_password: self.pre_co_password
+                ,
+                security_group: self.security_group
+                ,
+                source_backup_id: self.source_backup_id
+                ,
+                state: self.state
+                ,
+                state_message: self.state_message
+                ,
+                subnet_mapping: self.subnet_mapping
+                ,
+                vpc_id: self.vpc_id
+                ,
+                certificates: self.certificates
+                ,
+                tag_list: self.tag_list
+                ,
             }
         }
     }
+    
+    
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
@@ -821,7 +746,7 @@ impl Cluster {
 /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Certificates {
+pub struct Certificates  {
     /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>
     #[doc(hidden)]
     pub cluster_csr: std::option::Option<std::string::String>,
@@ -840,29 +765,29 @@ pub struct Certificates {
 }
 impl Certificates {
     /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>
-    pub fn cluster_csr(&self) -> std::option::Option<&str> {
+    pub fn cluster_csr(&self) -> std::option::Option<& str> {
         self.cluster_csr.as_deref()
     }
     /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
-    pub fn hsm_certificate(&self) -> std::option::Option<&str> {
+    pub fn hsm_certificate(&self) -> std::option::Option<& str> {
         self.hsm_certificate.as_deref()
     }
     /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
-    pub fn aws_hardware_certificate(&self) -> std::option::Option<&str> {
+    pub fn aws_hardware_certificate(&self) -> std::option::Option<& str> {
         self.aws_hardware_certificate.as_deref()
     }
     /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
-    pub fn manufacturer_hardware_certificate(&self) -> std::option::Option<&str> {
+    pub fn manufacturer_hardware_certificate(&self) -> std::option::Option<& str> {
         self.manufacturer_hardware_certificate.as_deref()
     }
     /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
-    pub fn cluster_certificate(&self) -> std::option::Option<&str> {
+    pub fn cluster_certificate(&self) -> std::option::Option<& str> {
         self.cluster_certificate.as_deref()
     }
 }
 /// See [`Certificates`](crate::model::Certificates).
 pub mod certificates {
-
+    
     /// A builder for [`Certificates`](crate::model::Certificates).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -880,8 +805,7 @@ pub mod certificates {
         }
         /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>
         pub fn set_cluster_csr(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_csr = input;
-            self
+            self.cluster_csr = input; self
         }
         /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
         pub fn hsm_certificate(mut self, input: impl Into<std::string::String>) -> Self {
@@ -889,12 +813,8 @@ pub mod certificates {
             self
         }
         /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
-        pub fn set_hsm_certificate(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hsm_certificate = input;
-            self
+        pub fn set_hsm_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hsm_certificate = input; self
         }
         /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
         pub fn aws_hardware_certificate(mut self, input: impl Into<std::string::String>) -> Self {
@@ -902,28 +822,17 @@ pub mod certificates {
             self
         }
         /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
-        pub fn set_aws_hardware_certificate(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_hardware_certificate = input;
-            self
+        pub fn set_aws_hardware_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_hardware_certificate = input; self
         }
         /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
-        pub fn manufacturer_hardware_certificate(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn manufacturer_hardware_certificate(mut self, input: impl Into<std::string::String>) -> Self {
             self.manufacturer_hardware_certificate = Some(input.into());
             self
         }
         /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
-        pub fn set_manufacturer_hardware_certificate(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.manufacturer_hardware_certificate = input;
-            self
+        pub fn set_manufacturer_hardware_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.manufacturer_hardware_certificate = input; self
         }
         /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
         pub fn cluster_certificate(mut self, input: impl Into<std::string::String>) -> Self {
@@ -931,24 +840,27 @@ pub mod certificates {
             self
         }
         /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
-        pub fn set_cluster_certificate(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_certificate = input;
-            self
+        pub fn set_cluster_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_certificate = input; self
         }
         /// Consumes the builder and constructs a [`Certificates`](crate::model::Certificates).
         pub fn build(self) -> crate::model::Certificates {
             crate::model::Certificates {
-                cluster_csr: self.cluster_csr,
-                hsm_certificate: self.hsm_certificate,
-                aws_hardware_certificate: self.aws_hardware_certificate,
-                manufacturer_hardware_certificate: self.manufacturer_hardware_certificate,
-                cluster_certificate: self.cluster_certificate,
+                cluster_csr: self.cluster_csr
+                ,
+                hsm_certificate: self.hsm_certificate
+                ,
+                aws_hardware_certificate: self.aws_hardware_certificate
+                ,
+                manufacturer_hardware_certificate: self.manufacturer_hardware_certificate
+                ,
+                cluster_certificate: self.cluster_certificate
+                ,
             }
         }
     }
+    
+    
 }
 impl Certificates {
     /// Creates a new builder-style object to manufacture [`Certificates`](crate::model::Certificates).
@@ -963,9 +875,9 @@ impl Certificates {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let clusterstate = unimplemented!();
 /// match clusterstate {
@@ -994,22 +906,14 @@ impl Certificates {
 /// Specifically, when `clusterstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ClusterState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ClusterState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -1030,7 +934,7 @@ pub enum ClusterState {
     #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ClusterState {
     fn from(s: &str) -> Self {
@@ -1044,17 +948,17 @@ impl std::convert::From<&str> for ClusterState {
             "INITIALIZE_IN_PROGRESS" => ClusterState::InitializeInProgress,
             "UNINITIALIZED" => ClusterState::Uninitialized,
             "UPDATE_IN_PROGRESS" => ClusterState::UpdateInProgress,
-            other => ClusterState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ClusterState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ClusterState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClusterState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ClusterState::from(s))
+                }
+            }
 impl ClusterState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1068,21 +972,13 @@ impl ClusterState {
             ClusterState::InitializeInProgress => "INITIALIZE_IN_PROGRESS",
             ClusterState::Uninitialized => "UNINITIALIZED",
             ClusterState::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            ClusterState::Unknown(value) => value.as_str(),
+            ClusterState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATE_IN_PROGRESS",
-            "DEGRADED",
-            "DELETED",
-            "DELETE_IN_PROGRESS",
-            "INITIALIZED",
-            "INITIALIZE_IN_PROGRESS",
-            "UNINITIALIZED",
-            "UPDATE_IN_PROGRESS",
+            "ACTIVE", "CREATE_IN_PROGRESS", "DEGRADED", "DELETED", "DELETE_IN_PROGRESS", "INITIALIZED", "INITIALIZE_IN_PROGRESS", "UNINITIALIZED", "UPDATE_IN_PROGRESS"
         ]
     }
 }
@@ -1095,7 +991,7 @@ impl AsRef<str> for ClusterState {
 /// <p>Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Hsm {
+pub struct Hsm  {
     /// <p>The Availability Zone that contains the HSM.</p>
     #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
@@ -1123,41 +1019,41 @@ pub struct Hsm {
 }
 impl Hsm {
     /// <p>The Availability Zone that contains the HSM.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The identifier (ID) of the cluster that contains the HSM.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The subnet that contains the HSM's elastic network interface (ENI).</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>
-    pub fn eni_id(&self) -> std::option::Option<&str> {
+    pub fn eni_id(&self) -> std::option::Option<& str> {
         self.eni_id.as_deref()
     }
     /// <p>The IP address of the HSM's elastic network interface (ENI).</p>
-    pub fn eni_ip(&self) -> std::option::Option<&str> {
+    pub fn eni_ip(&self) -> std::option::Option<& str> {
         self.eni_ip.as_deref()
     }
     /// <p>The HSM's identifier (ID).</p>
-    pub fn hsm_id(&self) -> std::option::Option<&str> {
+    pub fn hsm_id(&self) -> std::option::Option<& str> {
         self.hsm_id.as_deref()
     }
     /// <p>The HSM's state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::HsmState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::HsmState> {
         self.state.as_ref()
     }
     /// <p>A description of the HSM's state.</p>
-    pub fn state_message(&self) -> std::option::Option<&str> {
+    pub fn state_message(&self) -> std::option::Option<& str> {
         self.state_message.as_deref()
     }
 }
 /// See [`Hsm`](crate::model::Hsm).
 pub mod hsm {
-
+    
     /// A builder for [`Hsm`](crate::model::Hsm).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1177,12 +1073,8 @@ pub mod hsm {
             self
         }
         /// <p>The Availability Zone that contains the HSM.</p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// <p>The identifier (ID) of the cluster that contains the HSM.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1191,8 +1083,7 @@ pub mod hsm {
         }
         /// <p>The identifier (ID) of the cluster that contains the HSM.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_id = input;
-            self
+            self.cluster_id = input; self
         }
         /// <p>The subnet that contains the HSM's elastic network interface (ENI).</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1201,8 +1092,7 @@ pub mod hsm {
         }
         /// <p>The subnet that contains the HSM's elastic network interface (ENI).</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subnet_id = input;
-            self
+            self.subnet_id = input; self
         }
         /// <p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>
         pub fn eni_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1211,8 +1101,7 @@ pub mod hsm {
         }
         /// <p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>
         pub fn set_eni_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.eni_id = input;
-            self
+            self.eni_id = input; self
         }
         /// <p>The IP address of the HSM's elastic network interface (ENI).</p>
         pub fn eni_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1221,8 +1110,7 @@ pub mod hsm {
         }
         /// <p>The IP address of the HSM's elastic network interface (ENI).</p>
         pub fn set_eni_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.eni_ip = input;
-            self
+            self.eni_ip = input; self
         }
         /// <p>The HSM's identifier (ID).</p>
         pub fn hsm_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1231,8 +1119,7 @@ pub mod hsm {
         }
         /// <p>The HSM's identifier (ID).</p>
         pub fn set_hsm_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hsm_id = input;
-            self
+            self.hsm_id = input; self
         }
         /// <p>The HSM's state.</p>
         pub fn state(mut self, input: crate::model::HsmState) -> Self {
@@ -1241,8 +1128,7 @@ pub mod hsm {
         }
         /// <p>The HSM's state.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::HsmState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>A description of the HSM's state.</p>
         pub fn state_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1250,27 +1136,33 @@ pub mod hsm {
             self
         }
         /// <p>A description of the HSM's state.</p>
-        pub fn set_state_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_message = input;
-            self
+        pub fn set_state_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_message = input; self
         }
         /// Consumes the builder and constructs a [`Hsm`](crate::model::Hsm).
         pub fn build(self) -> crate::model::Hsm {
             crate::model::Hsm {
-                availability_zone: self.availability_zone,
-                cluster_id: self.cluster_id,
-                subnet_id: self.subnet_id,
-                eni_id: self.eni_id,
-                eni_ip: self.eni_ip,
-                hsm_id: self.hsm_id,
-                state: self.state,
-                state_message: self.state_message,
+                availability_zone: self.availability_zone
+                ,
+                cluster_id: self.cluster_id
+                ,
+                subnet_id: self.subnet_id
+                ,
+                eni_id: self.eni_id
+                ,
+                eni_ip: self.eni_ip
+                ,
+                hsm_id: self.hsm_id
+                ,
+                state: self.state
+                ,
+                state_message: self.state_message
+                ,
             }
         }
     }
+    
+    
 }
 impl Hsm {
     /// Creates a new builder-style object to manufacture [`Hsm`](crate::model::Hsm).
@@ -1285,9 +1177,9 @@ impl Hsm {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let hsmstate = unimplemented!();
 /// match hsmstate {
@@ -1312,22 +1204,14 @@ impl Hsm {
 /// Specifically, when `hsmstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HsmState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HsmState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -1340,7 +1224,7 @@ pub enum HsmState {
     #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HsmState {
     fn from(s: &str) -> Self {
@@ -1350,17 +1234,17 @@ impl std::convert::From<&str> for HsmState {
             "DEGRADED" => HsmState::Degraded,
             "DELETED" => HsmState::Deleted,
             "DELETE_IN_PROGRESS" => HsmState::DeleteInProgress,
-            other => HsmState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => HsmState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HsmState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HsmState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HsmState::from(s))
+                }
+            }
 impl HsmState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1370,17 +1254,13 @@ impl HsmState {
             HsmState::Degraded => "DEGRADED",
             HsmState::Deleted => "DELETED",
             HsmState::DeleteInProgress => "DELETE_IN_PROGRESS",
-            HsmState::Unknown(value) => value.as_str(),
+            HsmState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATE_IN_PROGRESS",
-            "DEGRADED",
-            "DELETED",
-            "DELETE_IN_PROGRESS",
+            "ACTIVE", "CREATE_IN_PROGRESS", "DEGRADED", "DELETED", "DELETE_IN_PROGRESS"
         ]
     }
 }
@@ -1393,7 +1273,7 @@ impl AsRef<str> for HsmState {
 /// <p>A policy that defines the number of days to retain backups.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackupRetentionPolicy {
+pub struct BackupRetentionPolicy  {
     /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::BackupRetentionType>,
@@ -1403,17 +1283,17 @@ pub struct BackupRetentionPolicy {
 }
 impl BackupRetentionPolicy {
     /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::BackupRetentionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::BackupRetentionType> {
         self.r#type.as_ref()
     }
     /// <p>Use a value between 7 - 379.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy).
 pub mod backup_retention_policy {
-
+    
     /// A builder for [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1427,12 +1307,8 @@ pub mod backup_retention_policy {
             self
         }
         /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::BackupRetentionType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::BackupRetentionType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>Use a value between 7 - 379.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1441,17 +1317,20 @@ pub mod backup_retention_policy {
         }
         /// <p>Use a value between 7 - 379.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy).
         pub fn build(self) -> crate::model::BackupRetentionPolicy {
             crate::model::BackupRetentionPolicy {
-                r#type: self.r#type,
-                value: self.value,
+                r#type: self.r#type
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl BackupRetentionPolicy {
     /// Creates a new builder-style object to manufacture [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy).
@@ -1466,9 +1345,9 @@ impl BackupRetentionPolicy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let backupretentiontype = unimplemented!();
 /// match backupretentiontype {
@@ -1489,56 +1368,48 @@ impl BackupRetentionPolicy {
 /// Specifically, when `backupretentiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BackupRetentionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BackupRetentionType {
     #[allow(missing_docs)] // documentation missing in model
     Days,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BackupRetentionType {
     fn from(s: &str) -> Self {
         match s {
             "DAYS" => BackupRetentionType::Days,
-            other => {
-                BackupRetentionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => BackupRetentionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BackupRetentionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BackupRetentionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BackupRetentionType::from(s))
+                }
+            }
 impl BackupRetentionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BackupRetentionType::Days => "DAYS",
-            BackupRetentionType::Unknown(value) => value.as_str(),
+            BackupRetentionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DAYS"]
+        &[
+            "DAYS"
+        ]
     }
 }
 impl AsRef<str> for BackupRetentionType {
@@ -1553,9 +1424,9 @@ impl AsRef<str> for BackupRetentionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let backuppolicy = unimplemented!();
 /// match backuppolicy {
@@ -1576,54 +1447,48 @@ impl AsRef<str> for BackupRetentionType {
 /// Specifically, when `backuppolicy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BackupPolicy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BackupPolicy {
     #[allow(missing_docs)] // documentation missing in model
     Default,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BackupPolicy {
     fn from(s: &str) -> Self {
         match s {
             "DEFAULT" => BackupPolicy::Default,
-            other => BackupPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BackupPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BackupPolicy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BackupPolicy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BackupPolicy::from(s))
+                }
+            }
 impl BackupPolicy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BackupPolicy::Default => "DEFAULT",
-            BackupPolicy::Unknown(value) => value.as_str(),
+            BackupPolicy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEFAULT"]
+        &[
+            "DEFAULT"
+        ]
     }
 }
 impl AsRef<str> for BackupPolicy {
@@ -1635,7 +1500,7 @@ impl AsRef<str> for BackupPolicy {
 /// <p>Contains information about the backup that will be copied and created by the <code>CopyBackupToRegion</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DestinationBackup {
+pub struct DestinationBackup  {
     /// <p>The date and time when both the source backup was created.</p>
     #[doc(hidden)]
     pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1651,25 +1516,25 @@ pub struct DestinationBackup {
 }
 impl DestinationBackup {
     /// <p>The date and time when both the source backup was created.</p>
-    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
     /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
-    pub fn source_region(&self) -> std::option::Option<&str> {
+    pub fn source_region(&self) -> std::option::Option<& str> {
         self.source_region.as_deref()
     }
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
-    pub fn source_backup(&self) -> std::option::Option<&str> {
+    pub fn source_backup(&self) -> std::option::Option<& str> {
         self.source_backup.as_deref()
     }
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
-    pub fn source_cluster(&self) -> std::option::Option<&str> {
+    pub fn source_cluster(&self) -> std::option::Option<& str> {
         self.source_cluster.as_deref()
     }
 }
 /// See [`DestinationBackup`](crate::model::DestinationBackup).
 pub mod destination_backup {
-
+    
     /// A builder for [`DestinationBackup`](crate::model::DestinationBackup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1685,12 +1550,8 @@ pub mod destination_backup {
             self
         }
         /// <p>The date and time when both the source backup was created.</p>
-        pub fn set_create_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_timestamp = input;
-            self
+        pub fn set_create_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_timestamp = input; self
         }
         /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
         pub fn source_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1698,12 +1559,8 @@ pub mod destination_backup {
             self
         }
         /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
-        pub fn set_source_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_region = input;
-            self
+        pub fn set_source_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_region = input; self
         }
         /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
         pub fn source_backup(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1711,12 +1568,8 @@ pub mod destination_backup {
             self
         }
         /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
-        pub fn set_source_backup(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_backup = input;
-            self
+        pub fn set_source_backup(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_backup = input; self
         }
         /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
         pub fn source_cluster(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1724,23 +1577,25 @@ pub mod destination_backup {
             self
         }
         /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
-        pub fn set_source_cluster(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_cluster = input;
-            self
+        pub fn set_source_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_cluster = input; self
         }
         /// Consumes the builder and constructs a [`DestinationBackup`](crate::model::DestinationBackup).
         pub fn build(self) -> crate::model::DestinationBackup {
             crate::model::DestinationBackup {
-                create_timestamp: self.create_timestamp,
-                source_region: self.source_region,
-                source_backup: self.source_backup,
-                source_cluster: self.source_cluster,
+                create_timestamp: self.create_timestamp
+                ,
+                source_region: self.source_region
+                ,
+                source_backup: self.source_backup
+                ,
+                source_cluster: self.source_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl DestinationBackup {
     /// Creates a new builder-style object to manufacture [`DestinationBackup`](crate::model::DestinationBackup).
@@ -1748,3 +1603,4 @@ impl DestinationBackup {
         crate::model::destination_backup::Builder::default()
     }
 }
+

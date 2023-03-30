@@ -3,19 +3,24 @@
 /// <p>Contains the output of SetLoadBalancePoliciesOfListener.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetLoadBalancerPoliciesOfListenerOutput {}
+pub struct SetLoadBalancerPoliciesOfListenerOutput  {
+}
 /// See [`SetLoadBalancerPoliciesOfListenerOutput`](crate::output::SetLoadBalancerPoliciesOfListenerOutput).
 pub mod set_load_balancer_policies_of_listener_output {
-
+    
     /// A builder for [`SetLoadBalancerPoliciesOfListenerOutput`](crate::output::SetLoadBalancerPoliciesOfListenerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SetLoadBalancerPoliciesOfListenerOutput`](crate::output::SetLoadBalancerPoliciesOfListenerOutput).
         pub fn build(self) -> crate::output::SetLoadBalancerPoliciesOfListenerOutput {
-            crate::output::SetLoadBalancerPoliciesOfListenerOutput {}
+            crate::output::SetLoadBalancerPoliciesOfListenerOutput {
+            }
         }
     }
+    
+    
 }
 impl SetLoadBalancerPoliciesOfListenerOutput {
     /// Creates a new builder-style object to manufacture [`SetLoadBalancerPoliciesOfListenerOutput`](crate::output::SetLoadBalancerPoliciesOfListenerOutput).
@@ -27,24 +32,28 @@ impl SetLoadBalancerPoliciesOfListenerOutput {
 /// <p>Contains the output of SetLoadBalancerPoliciesForBackendServer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetLoadBalancerPoliciesForBackendServerOutput {}
+pub struct SetLoadBalancerPoliciesForBackendServerOutput  {
+}
 /// See [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::output::SetLoadBalancerPoliciesForBackendServerOutput).
 pub mod set_load_balancer_policies_for_backend_server_output {
-
+    
     /// A builder for [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::output::SetLoadBalancerPoliciesForBackendServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::output::SetLoadBalancerPoliciesForBackendServerOutput).
         pub fn build(self) -> crate::output::SetLoadBalancerPoliciesForBackendServerOutput {
-            crate::output::SetLoadBalancerPoliciesForBackendServerOutput {}
+            crate::output::SetLoadBalancerPoliciesForBackendServerOutput {
+            }
         }
     }
+    
+    
 }
 impl SetLoadBalancerPoliciesForBackendServerOutput {
     /// Creates a new builder-style object to manufacture [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::output::SetLoadBalancerPoliciesForBackendServerOutput).
-    pub fn builder() -> crate::output::set_load_balancer_policies_for_backend_server_output::Builder
-    {
+    pub fn builder() -> crate::output::set_load_balancer_policies_for_backend_server_output::Builder {
         crate::output::set_load_balancer_policies_for_backend_server_output::Builder::default()
     }
 }
@@ -52,19 +61,24 @@ impl SetLoadBalancerPoliciesForBackendServerOutput {
 /// <p>Contains the output of SetLoadBalancerListenerSSLCertificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetLoadBalancerListenerSslCertificateOutput {}
+pub struct SetLoadBalancerListenerSslCertificateOutput  {
+}
 /// See [`SetLoadBalancerListenerSslCertificateOutput`](crate::output::SetLoadBalancerListenerSslCertificateOutput).
 pub mod set_load_balancer_listener_ssl_certificate_output {
-
+    
     /// A builder for [`SetLoadBalancerListenerSslCertificateOutput`](crate::output::SetLoadBalancerListenerSslCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SetLoadBalancerListenerSslCertificateOutput`](crate::output::SetLoadBalancerListenerSslCertificateOutput).
         pub fn build(self) -> crate::output::SetLoadBalancerListenerSslCertificateOutput {
-            crate::output::SetLoadBalancerListenerSslCertificateOutput {}
+            crate::output::SetLoadBalancerListenerSslCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl SetLoadBalancerListenerSslCertificateOutput {
     /// Creates a new builder-style object to manufacture [`SetLoadBalancerListenerSslCertificateOutput`](crate::output::SetLoadBalancerListenerSslCertificateOutput).
@@ -76,19 +90,24 @@ impl SetLoadBalancerListenerSslCertificateOutput {
 /// <p>Contains the output of RemoveTags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsOutput {}
+pub struct RemoveTagsOutput  {
+}
 /// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
-
+    
     /// A builder for [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
         pub fn build(self) -> crate::output::RemoveTagsOutput {
-            crate::output::RemoveTagsOutput {}
+            crate::output::RemoveTagsOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveTagsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
@@ -100,20 +119,20 @@ impl RemoveTagsOutput {
 /// <p>Contains the output of RegisterInstancesWithLoadBalancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterInstancesWithLoadBalancerOutput {
+pub struct RegisterInstancesWithLoadBalancerOutput  {
     /// <p>The updated list of instances for the load balancer.</p>
     #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
 }
 impl RegisterInstancesWithLoadBalancerOutput {
     /// <p>The updated list of instances for the load balancer.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+    pub fn instances(&self) -> std::option::Option<& [crate::model::Instance]> {
         self.instances.as_deref()
     }
 }
 /// See [`RegisterInstancesWithLoadBalancerOutput`](crate::output::RegisterInstancesWithLoadBalancerOutput).
 pub mod register_instances_with_load_balancer_output {
-
+    
     /// A builder for [`RegisterInstancesWithLoadBalancerOutput`](crate::output::RegisterInstancesWithLoadBalancerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -127,25 +146,24 @@ pub mod register_instances_with_load_balancer_output {
         /// <p>The updated list of instances for the load balancer.</p>
         pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input);
-            self.instances = Some(v);
-            self
+                            v.push(input);
+                            self.instances = Some(v);
+                            self
         }
         /// <p>The updated list of instances for the load balancer.</p>
-        pub fn set_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Instance>>,
-        ) -> Self {
-            self.instances = input;
-            self
+        pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::Instance>>) -> Self {
+            self.instances = input; self
         }
         /// Consumes the builder and constructs a [`RegisterInstancesWithLoadBalancerOutput`](crate::output::RegisterInstancesWithLoadBalancerOutput).
         pub fn build(self) -> crate::output::RegisterInstancesWithLoadBalancerOutput {
             crate::output::RegisterInstancesWithLoadBalancerOutput {
-                instances: self.instances,
+                instances: self.instances
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterInstancesWithLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`RegisterInstancesWithLoadBalancerOutput`](crate::output::RegisterInstancesWithLoadBalancerOutput).
@@ -157,7 +175,7 @@ impl RegisterInstancesWithLoadBalancerOutput {
 /// <p>Contains the output of ModifyLoadBalancerAttributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyLoadBalancerAttributesOutput {
+pub struct ModifyLoadBalancerAttributesOutput  {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
@@ -167,25 +185,22 @@ pub struct ModifyLoadBalancerAttributesOutput {
 }
 impl ModifyLoadBalancerAttributesOutput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>Information about the load balancer attributes.</p>
-    pub fn load_balancer_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::LoadBalancerAttributes> {
+    pub fn load_balancer_attributes(&self) -> std::option::Option<& crate::model::LoadBalancerAttributes> {
         self.load_balancer_attributes.as_ref()
     }
 }
 /// See [`ModifyLoadBalancerAttributesOutput`](crate::output::ModifyLoadBalancerAttributesOutput).
 pub mod modify_load_balancer_attributes_output {
-
+    
     /// A builder for [`ModifyLoadBalancerAttributesOutput`](crate::output::ModifyLoadBalancerAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
-        pub(crate) load_balancer_attributes:
-            std::option::Option<crate::model::LoadBalancerAttributes>,
+        pub(crate) load_balancer_attributes: std::option::Option<crate::model::LoadBalancerAttributes>,
     }
     impl Builder {
         /// <p>The name of the load balancer.</p>
@@ -194,37 +209,30 @@ pub mod modify_load_balancer_attributes_output {
             self
         }
         /// <p>The name of the load balancer.</p>
-        pub fn set_load_balancer_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.load_balancer_name = input;
-            self
+        pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.load_balancer_name = input; self
         }
         /// <p>Information about the load balancer attributes.</p>
-        pub fn load_balancer_attributes(
-            mut self,
-            input: crate::model::LoadBalancerAttributes,
-        ) -> Self {
+        pub fn load_balancer_attributes(mut self, input: crate::model::LoadBalancerAttributes) -> Self {
             self.load_balancer_attributes = Some(input);
             self
         }
         /// <p>Information about the load balancer attributes.</p>
-        pub fn set_load_balancer_attributes(
-            mut self,
-            input: std::option::Option<crate::model::LoadBalancerAttributes>,
-        ) -> Self {
-            self.load_balancer_attributes = input;
-            self
+        pub fn set_load_balancer_attributes(mut self, input: std::option::Option<crate::model::LoadBalancerAttributes>) -> Self {
+            self.load_balancer_attributes = input; self
         }
         /// Consumes the builder and constructs a [`ModifyLoadBalancerAttributesOutput`](crate::output::ModifyLoadBalancerAttributesOutput).
         pub fn build(self) -> crate::output::ModifyLoadBalancerAttributesOutput {
             crate::output::ModifyLoadBalancerAttributesOutput {
-                load_balancer_name: self.load_balancer_name,
-                load_balancer_attributes: self.load_balancer_attributes,
+                load_balancer_name: self.load_balancer_name
+                ,
+                load_balancer_attributes: self.load_balancer_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyLoadBalancerAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ModifyLoadBalancerAttributesOutput`](crate::output::ModifyLoadBalancerAttributesOutput).
@@ -236,20 +244,20 @@ impl ModifyLoadBalancerAttributesOutput {
 /// <p>Contains the output of EnableAvailabilityZonesForLoadBalancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableAvailabilityZonesForLoadBalancerOutput {
+pub struct EnableAvailabilityZonesForLoadBalancerOutput  {
     /// <p>The updated list of Availability Zones for the load balancer.</p>
     #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnableAvailabilityZonesForLoadBalancerOutput {
     /// <p>The updated list of Availability Zones for the load balancer.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
         self.availability_zones.as_deref()
     }
 }
 /// See [`EnableAvailabilityZonesForLoadBalancerOutput`](crate::output::EnableAvailabilityZonesForLoadBalancerOutput).
 pub mod enable_availability_zones_for_load_balancer_output {
-
+    
     /// A builder for [`EnableAvailabilityZonesForLoadBalancerOutput`](crate::output::EnableAvailabilityZonesForLoadBalancerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -263,25 +271,24 @@ pub mod enable_availability_zones_for_load_balancer_output {
         /// <p>The updated list of Availability Zones for the load balancer.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
-            self.availability_zones = Some(v);
-            self
+                            v.push(input.into());
+                            self.availability_zones = Some(v);
+                            self
         }
         /// <p>The updated list of Availability Zones for the load balancer.</p>
-        pub fn set_availability_zones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.availability_zones = input;
-            self
+        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.availability_zones = input; self
         }
         /// Consumes the builder and constructs a [`EnableAvailabilityZonesForLoadBalancerOutput`](crate::output::EnableAvailabilityZonesForLoadBalancerOutput).
         pub fn build(self) -> crate::output::EnableAvailabilityZonesForLoadBalancerOutput {
             crate::output::EnableAvailabilityZonesForLoadBalancerOutput {
-                availability_zones: self.availability_zones,
+                availability_zones: self.availability_zones
+                ,
             }
         }
     }
+    
+    
 }
 impl EnableAvailabilityZonesForLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`EnableAvailabilityZonesForLoadBalancerOutput`](crate::output::EnableAvailabilityZonesForLoadBalancerOutput).
@@ -293,20 +300,20 @@ impl EnableAvailabilityZonesForLoadBalancerOutput {
 /// <p>Contains the output for DisableAvailabilityZonesForLoadBalancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableAvailabilityZonesForLoadBalancerOutput {
+pub struct DisableAvailabilityZonesForLoadBalancerOutput  {
     /// <p>The remaining Availability Zones for the load balancer.</p>
     #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisableAvailabilityZonesForLoadBalancerOutput {
     /// <p>The remaining Availability Zones for the load balancer.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
         self.availability_zones.as_deref()
     }
 }
 /// See [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::output::DisableAvailabilityZonesForLoadBalancerOutput).
 pub mod disable_availability_zones_for_load_balancer_output {
-
+    
     /// A builder for [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::output::DisableAvailabilityZonesForLoadBalancerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -320,30 +327,28 @@ pub mod disable_availability_zones_for_load_balancer_output {
         /// <p>The remaining Availability Zones for the load balancer.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
-            self.availability_zones = Some(v);
-            self
+                            v.push(input.into());
+                            self.availability_zones = Some(v);
+                            self
         }
         /// <p>The remaining Availability Zones for the load balancer.</p>
-        pub fn set_availability_zones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.availability_zones = input;
-            self
+        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.availability_zones = input; self
         }
         /// Consumes the builder and constructs a [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::output::DisableAvailabilityZonesForLoadBalancerOutput).
         pub fn build(self) -> crate::output::DisableAvailabilityZonesForLoadBalancerOutput {
             crate::output::DisableAvailabilityZonesForLoadBalancerOutput {
-                availability_zones: self.availability_zones,
+                availability_zones: self.availability_zones
+                ,
             }
         }
     }
+    
+    
 }
 impl DisableAvailabilityZonesForLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::output::DisableAvailabilityZonesForLoadBalancerOutput).
-    pub fn builder() -> crate::output::disable_availability_zones_for_load_balancer_output::Builder
-    {
+    pub fn builder() -> crate::output::disable_availability_zones_for_load_balancer_output::Builder {
         crate::output::disable_availability_zones_for_load_balancer_output::Builder::default()
     }
 }
@@ -351,20 +356,20 @@ impl DisableAvailabilityZonesForLoadBalancerOutput {
 /// <p>Contains the output of DetachLoadBalancerFromSubnets.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachLoadBalancerFromSubnetsOutput {
+pub struct DetachLoadBalancerFromSubnetsOutput  {
     /// <p>The IDs of the remaining subnets for the load balancer.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DetachLoadBalancerFromSubnetsOutput {
     /// <p>The IDs of the remaining subnets for the load balancer.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.subnets.as_deref()
     }
 }
 /// See [`DetachLoadBalancerFromSubnetsOutput`](crate::output::DetachLoadBalancerFromSubnetsOutput).
 pub mod detach_load_balancer_from_subnets_output {
-
+    
     /// A builder for [`DetachLoadBalancerFromSubnetsOutput`](crate::output::DetachLoadBalancerFromSubnetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -378,25 +383,24 @@ pub mod detach_load_balancer_from_subnets_output {
         /// <p>The IDs of the remaining subnets for the load balancer.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
-            self.subnets = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnets = Some(v);
+                            self
         }
         /// <p>The IDs of the remaining subnets for the load balancer.</p>
-        pub fn set_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnets = input;
-            self
+        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnets = input; self
         }
         /// Consumes the builder and constructs a [`DetachLoadBalancerFromSubnetsOutput`](crate::output::DetachLoadBalancerFromSubnetsOutput).
         pub fn build(self) -> crate::output::DetachLoadBalancerFromSubnetsOutput {
             crate::output::DetachLoadBalancerFromSubnetsOutput {
-                subnets: self.subnets,
+                subnets: self.subnets
+                ,
             }
         }
     }
+    
+    
 }
 impl DetachLoadBalancerFromSubnetsOutput {
     /// Creates a new builder-style object to manufacture [`DetachLoadBalancerFromSubnetsOutput`](crate::output::DetachLoadBalancerFromSubnetsOutput).
@@ -408,25 +412,24 @@ impl DetachLoadBalancerFromSubnetsOutput {
 /// <p>Contains the output for DescribeTags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTagsOutput {
+pub struct DescribeTagsOutput  {
     /// <p>Information about the tags.</p>
     #[doc(hidden)]
     pub tag_descriptions: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
 }
 impl DescribeTagsOutput {
     /// <p>Information about the tags.</p>
-    pub fn tag_descriptions(&self) -> std::option::Option<&[crate::model::TagDescription]> {
+    pub fn tag_descriptions(&self) -> std::option::Option<& [crate::model::TagDescription]> {
         self.tag_descriptions.as_deref()
     }
 }
 /// See [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
 pub mod describe_tags_output {
-
+    
     /// A builder for [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tag_descriptions:
-            std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
+        pub(crate) tag_descriptions: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
     }
     impl Builder {
         /// Appends an item to `tag_descriptions`.
@@ -436,25 +439,24 @@ pub mod describe_tags_output {
         /// <p>Information about the tags.</p>
         pub fn tag_descriptions(mut self, input: crate::model::TagDescription) -> Self {
             let mut v = self.tag_descriptions.unwrap_or_default();
-            v.push(input);
-            self.tag_descriptions = Some(v);
-            self
+                            v.push(input);
+                            self.tag_descriptions = Some(v);
+                            self
         }
         /// <p>Information about the tags.</p>
-        pub fn set_tag_descriptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
-        ) -> Self {
-            self.tag_descriptions = input;
-            self
+        pub fn set_tag_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagDescription>>) -> Self {
+            self.tag_descriptions = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
         pub fn build(self) -> crate::output::DescribeTagsOutput {
             crate::output::DescribeTagsOutput {
-                tag_descriptions: self.tag_descriptions,
+                tag_descriptions: self.tag_descriptions
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTagsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
@@ -466,35 +468,31 @@ impl DescribeTagsOutput {
 /// <p>Contains the parameters for DescribeLoadBalancers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLoadBalancersOutput {
+pub struct DescribeLoadBalancersOutput  {
     /// <p>Information about the load balancers.</p>
     #[doc(hidden)]
-    pub load_balancer_descriptions:
-        std::option::Option<std::vec::Vec<crate::model::LoadBalancerDescription>>,
+    pub load_balancer_descriptions: std::option::Option<std::vec::Vec<crate::model::LoadBalancerDescription>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeLoadBalancersOutput {
     /// <p>Information about the load balancers.</p>
-    pub fn load_balancer_descriptions(
-        &self,
-    ) -> std::option::Option<&[crate::model::LoadBalancerDescription]> {
+    pub fn load_balancer_descriptions(&self) -> std::option::Option<& [crate::model::LoadBalancerDescription]> {
         self.load_balancer_descriptions.as_deref()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 /// See [`DescribeLoadBalancersOutput`](crate::output::DescribeLoadBalancersOutput).
 pub mod describe_load_balancers_output {
-
+    
     /// A builder for [`DescribeLoadBalancersOutput`](crate::output::DescribeLoadBalancersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) load_balancer_descriptions:
-            std::option::Option<std::vec::Vec<crate::model::LoadBalancerDescription>>,
+        pub(crate) load_balancer_descriptions: std::option::Option<std::vec::Vec<crate::model::LoadBalancerDescription>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -503,22 +501,15 @@ pub mod describe_load_balancers_output {
         /// To override the contents of this collection use [`set_load_balancer_descriptions`](Self::set_load_balancer_descriptions).
         ///
         /// <p>Information about the load balancers.</p>
-        pub fn load_balancer_descriptions(
-            mut self,
-            input: crate::model::LoadBalancerDescription,
-        ) -> Self {
+        pub fn load_balancer_descriptions(mut self, input: crate::model::LoadBalancerDescription) -> Self {
             let mut v = self.load_balancer_descriptions.unwrap_or_default();
-            v.push(input);
-            self.load_balancer_descriptions = Some(v);
-            self
+                            v.push(input);
+                            self.load_balancer_descriptions = Some(v);
+                            self
         }
         /// <p>Information about the load balancers.</p>
-        pub fn set_load_balancer_descriptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LoadBalancerDescription>>,
-        ) -> Self {
-            self.load_balancer_descriptions = input;
-            self
+        pub fn set_load_balancer_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::LoadBalancerDescription>>) -> Self {
+            self.load_balancer_descriptions = input; self
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -527,17 +518,20 @@ pub mod describe_load_balancers_output {
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLoadBalancersOutput`](crate::output::DescribeLoadBalancersOutput).
         pub fn build(self) -> crate::output::DescribeLoadBalancersOutput {
             crate::output::DescribeLoadBalancersOutput {
-                load_balancer_descriptions: self.load_balancer_descriptions,
-                next_marker: self.next_marker,
+                load_balancer_descriptions: self.load_balancer_descriptions
+                ,
+                next_marker: self.next_marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLoadBalancersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancersOutput`](crate::output::DescribeLoadBalancersOutput).
@@ -549,28 +543,24 @@ impl DescribeLoadBalancersOutput {
 /// <p>Contains the output of DescribeLoadBalancerPolicyTypes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLoadBalancerPolicyTypesOutput {
+pub struct DescribeLoadBalancerPolicyTypesOutput  {
     /// <p>Information about the policy types.</p>
     #[doc(hidden)]
-    pub policy_type_descriptions:
-        std::option::Option<std::vec::Vec<crate::model::PolicyTypeDescription>>,
+    pub policy_type_descriptions: std::option::Option<std::vec::Vec<crate::model::PolicyTypeDescription>>,
 }
 impl DescribeLoadBalancerPolicyTypesOutput {
     /// <p>Information about the policy types.</p>
-    pub fn policy_type_descriptions(
-        &self,
-    ) -> std::option::Option<&[crate::model::PolicyTypeDescription]> {
+    pub fn policy_type_descriptions(&self) -> std::option::Option<& [crate::model::PolicyTypeDescription]> {
         self.policy_type_descriptions.as_deref()
     }
 }
 /// See [`DescribeLoadBalancerPolicyTypesOutput`](crate::output::DescribeLoadBalancerPolicyTypesOutput).
 pub mod describe_load_balancer_policy_types_output {
-
+    
     /// A builder for [`DescribeLoadBalancerPolicyTypesOutput`](crate::output::DescribeLoadBalancerPolicyTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) policy_type_descriptions:
-            std::option::Option<std::vec::Vec<crate::model::PolicyTypeDescription>>,
+        pub(crate) policy_type_descriptions: std::option::Option<std::vec::Vec<crate::model::PolicyTypeDescription>>,
     }
     impl Builder {
         /// Appends an item to `policy_type_descriptions`.
@@ -578,30 +568,26 @@ pub mod describe_load_balancer_policy_types_output {
         /// To override the contents of this collection use [`set_policy_type_descriptions`](Self::set_policy_type_descriptions).
         ///
         /// <p>Information about the policy types.</p>
-        pub fn policy_type_descriptions(
-            mut self,
-            input: crate::model::PolicyTypeDescription,
-        ) -> Self {
+        pub fn policy_type_descriptions(mut self, input: crate::model::PolicyTypeDescription) -> Self {
             let mut v = self.policy_type_descriptions.unwrap_or_default();
-            v.push(input);
-            self.policy_type_descriptions = Some(v);
-            self
+                            v.push(input);
+                            self.policy_type_descriptions = Some(v);
+                            self
         }
         /// <p>Information about the policy types.</p>
-        pub fn set_policy_type_descriptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicyTypeDescription>>,
-        ) -> Self {
-            self.policy_type_descriptions = input;
-            self
+        pub fn set_policy_type_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyTypeDescription>>) -> Self {
+            self.policy_type_descriptions = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLoadBalancerPolicyTypesOutput`](crate::output::DescribeLoadBalancerPolicyTypesOutput).
         pub fn build(self) -> crate::output::DescribeLoadBalancerPolicyTypesOutput {
             crate::output::DescribeLoadBalancerPolicyTypesOutput {
-                policy_type_descriptions: self.policy_type_descriptions,
+                policy_type_descriptions: self.policy_type_descriptions
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLoadBalancerPolicyTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerPolicyTypesOutput`](crate::output::DescribeLoadBalancerPolicyTypesOutput).
@@ -613,25 +599,24 @@ impl DescribeLoadBalancerPolicyTypesOutput {
 /// <p>Contains the output of DescribeLoadBalancerPolicies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLoadBalancerPoliciesOutput {
+pub struct DescribeLoadBalancerPoliciesOutput  {
     /// <p>Information about the policies.</p>
     #[doc(hidden)]
     pub policy_descriptions: std::option::Option<std::vec::Vec<crate::model::PolicyDescription>>,
 }
 impl DescribeLoadBalancerPoliciesOutput {
     /// <p>Information about the policies.</p>
-    pub fn policy_descriptions(&self) -> std::option::Option<&[crate::model::PolicyDescription]> {
+    pub fn policy_descriptions(&self) -> std::option::Option<& [crate::model::PolicyDescription]> {
         self.policy_descriptions.as_deref()
     }
 }
 /// See [`DescribeLoadBalancerPoliciesOutput`](crate::output::DescribeLoadBalancerPoliciesOutput).
 pub mod describe_load_balancer_policies_output {
-
+    
     /// A builder for [`DescribeLoadBalancerPoliciesOutput`](crate::output::DescribeLoadBalancerPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) policy_descriptions:
-            std::option::Option<std::vec::Vec<crate::model::PolicyDescription>>,
+        pub(crate) policy_descriptions: std::option::Option<std::vec::Vec<crate::model::PolicyDescription>>,
     }
     impl Builder {
         /// Appends an item to `policy_descriptions`.
@@ -641,25 +626,24 @@ pub mod describe_load_balancer_policies_output {
         /// <p>Information about the policies.</p>
         pub fn policy_descriptions(mut self, input: crate::model::PolicyDescription) -> Self {
             let mut v = self.policy_descriptions.unwrap_or_default();
-            v.push(input);
-            self.policy_descriptions = Some(v);
-            self
+                            v.push(input);
+                            self.policy_descriptions = Some(v);
+                            self
         }
         /// <p>Information about the policies.</p>
-        pub fn set_policy_descriptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicyDescription>>,
-        ) -> Self {
-            self.policy_descriptions = input;
-            self
+        pub fn set_policy_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyDescription>>) -> Self {
+            self.policy_descriptions = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLoadBalancerPoliciesOutput`](crate::output::DescribeLoadBalancerPoliciesOutput).
         pub fn build(self) -> crate::output::DescribeLoadBalancerPoliciesOutput {
             crate::output::DescribeLoadBalancerPoliciesOutput {
-                policy_descriptions: self.policy_descriptions,
+                policy_descriptions: self.policy_descriptions
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLoadBalancerPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerPoliciesOutput`](crate::output::DescribeLoadBalancerPoliciesOutput).
@@ -671,52 +655,45 @@ impl DescribeLoadBalancerPoliciesOutput {
 /// <p>Contains the output of DescribeLoadBalancerAttributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLoadBalancerAttributesOutput {
+pub struct DescribeLoadBalancerAttributesOutput  {
     /// <p>Information about the load balancer attributes.</p>
     #[doc(hidden)]
     pub load_balancer_attributes: std::option::Option<crate::model::LoadBalancerAttributes>,
 }
 impl DescribeLoadBalancerAttributesOutput {
     /// <p>Information about the load balancer attributes.</p>
-    pub fn load_balancer_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::LoadBalancerAttributes> {
+    pub fn load_balancer_attributes(&self) -> std::option::Option<& crate::model::LoadBalancerAttributes> {
         self.load_balancer_attributes.as_ref()
     }
 }
 /// See [`DescribeLoadBalancerAttributesOutput`](crate::output::DescribeLoadBalancerAttributesOutput).
 pub mod describe_load_balancer_attributes_output {
-
+    
     /// A builder for [`DescribeLoadBalancerAttributesOutput`](crate::output::DescribeLoadBalancerAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) load_balancer_attributes:
-            std::option::Option<crate::model::LoadBalancerAttributes>,
+        pub(crate) load_balancer_attributes: std::option::Option<crate::model::LoadBalancerAttributes>,
     }
     impl Builder {
         /// <p>Information about the load balancer attributes.</p>
-        pub fn load_balancer_attributes(
-            mut self,
-            input: crate::model::LoadBalancerAttributes,
-        ) -> Self {
+        pub fn load_balancer_attributes(mut self, input: crate::model::LoadBalancerAttributes) -> Self {
             self.load_balancer_attributes = Some(input);
             self
         }
         /// <p>Information about the load balancer attributes.</p>
-        pub fn set_load_balancer_attributes(
-            mut self,
-            input: std::option::Option<crate::model::LoadBalancerAttributes>,
-        ) -> Self {
-            self.load_balancer_attributes = input;
-            self
+        pub fn set_load_balancer_attributes(mut self, input: std::option::Option<crate::model::LoadBalancerAttributes>) -> Self {
+            self.load_balancer_attributes = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLoadBalancerAttributesOutput`](crate::output::DescribeLoadBalancerAttributesOutput).
         pub fn build(self) -> crate::output::DescribeLoadBalancerAttributesOutput {
             crate::output::DescribeLoadBalancerAttributesOutput {
-                load_balancer_attributes: self.load_balancer_attributes,
+                load_balancer_attributes: self.load_balancer_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLoadBalancerAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerAttributesOutput`](crate::output::DescribeLoadBalancerAttributesOutput).
@@ -728,20 +705,20 @@ impl DescribeLoadBalancerAttributesOutput {
 /// <p>Contains the output for DescribeInstanceHealth.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstanceHealthOutput {
+pub struct DescribeInstanceHealthOutput  {
     /// <p>Information about the health of the instances.</p>
     #[doc(hidden)]
     pub instance_states: std::option::Option<std::vec::Vec<crate::model::InstanceState>>,
 }
 impl DescribeInstanceHealthOutput {
     /// <p>Information about the health of the instances.</p>
-    pub fn instance_states(&self) -> std::option::Option<&[crate::model::InstanceState]> {
+    pub fn instance_states(&self) -> std::option::Option<& [crate::model::InstanceState]> {
         self.instance_states.as_deref()
     }
 }
 /// See [`DescribeInstanceHealthOutput`](crate::output::DescribeInstanceHealthOutput).
 pub mod describe_instance_health_output {
-
+    
     /// A builder for [`DescribeInstanceHealthOutput`](crate::output::DescribeInstanceHealthOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -755,25 +732,24 @@ pub mod describe_instance_health_output {
         /// <p>Information about the health of the instances.</p>
         pub fn instance_states(mut self, input: crate::model::InstanceState) -> Self {
             let mut v = self.instance_states.unwrap_or_default();
-            v.push(input);
-            self.instance_states = Some(v);
-            self
+                            v.push(input);
+                            self.instance_states = Some(v);
+                            self
         }
         /// <p>Information about the health of the instances.</p>
-        pub fn set_instance_states(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceState>>,
-        ) -> Self {
-            self.instance_states = input;
-            self
+        pub fn set_instance_states(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceState>>) -> Self {
+            self.instance_states = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInstanceHealthOutput`](crate::output::DescribeInstanceHealthOutput).
         pub fn build(self) -> crate::output::DescribeInstanceHealthOutput {
             crate::output::DescribeInstanceHealthOutput {
-                instance_states: self.instance_states,
+                instance_states: self.instance_states
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInstanceHealthOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceHealthOutput`](crate::output::DescribeInstanceHealthOutput).
@@ -785,7 +761,7 @@ impl DescribeInstanceHealthOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountLimitsOutput {
+pub struct DescribeAccountLimitsOutput  {
     /// <p>Information about the limits.</p>
     #[doc(hidden)]
     pub limits: std::option::Option<std::vec::Vec<crate::model::Limit>>,
@@ -795,17 +771,17 @@ pub struct DescribeAccountLimitsOutput {
 }
 impl DescribeAccountLimitsOutput {
     /// <p>Information about the limits.</p>
-    pub fn limits(&self) -> std::option::Option<&[crate::model::Limit]> {
+    pub fn limits(&self) -> std::option::Option<& [crate::model::Limit]> {
         self.limits.as_deref()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 /// See [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
 pub mod describe_account_limits_output {
-
+    
     /// A builder for [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -820,17 +796,13 @@ pub mod describe_account_limits_output {
         /// <p>Information about the limits.</p>
         pub fn limits(mut self, input: crate::model::Limit) -> Self {
             let mut v = self.limits.unwrap_or_default();
-            v.push(input);
-            self.limits = Some(v);
-            self
+                            v.push(input);
+                            self.limits = Some(v);
+                            self
         }
         /// <p>Information about the limits.</p>
-        pub fn set_limits(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Limit>>,
-        ) -> Self {
-            self.limits = input;
-            self
+        pub fn set_limits(mut self, input: std::option::Option<std::vec::Vec<crate::model::Limit>>) -> Self {
+            self.limits = input; self
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -839,17 +811,20 @@ pub mod describe_account_limits_output {
         }
         /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
         pub fn build(self) -> crate::output::DescribeAccountLimitsOutput {
             crate::output::DescribeAccountLimitsOutput {
-                limits: self.limits,
-                next_marker: self.next_marker,
+                limits: self.limits
+                ,
+                next_marker: self.next_marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAccountLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
@@ -861,20 +836,20 @@ impl DescribeAccountLimitsOutput {
 /// <p>Contains the output of DeregisterInstancesFromLoadBalancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterInstancesFromLoadBalancerOutput {
+pub struct DeregisterInstancesFromLoadBalancerOutput  {
     /// <p>The remaining instances registered with the load balancer.</p>
     #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
 }
 impl DeregisterInstancesFromLoadBalancerOutput {
     /// <p>The remaining instances registered with the load balancer.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+    pub fn instances(&self) -> std::option::Option<& [crate::model::Instance]> {
         self.instances.as_deref()
     }
 }
 /// See [`DeregisterInstancesFromLoadBalancerOutput`](crate::output::DeregisterInstancesFromLoadBalancerOutput).
 pub mod deregister_instances_from_load_balancer_output {
-
+    
     /// A builder for [`DeregisterInstancesFromLoadBalancerOutput`](crate::output::DeregisterInstancesFromLoadBalancerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -888,25 +863,24 @@ pub mod deregister_instances_from_load_balancer_output {
         /// <p>The remaining instances registered with the load balancer.</p>
         pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input);
-            self.instances = Some(v);
-            self
+                            v.push(input);
+                            self.instances = Some(v);
+                            self
         }
         /// <p>The remaining instances registered with the load balancer.</p>
-        pub fn set_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Instance>>,
-        ) -> Self {
-            self.instances = input;
-            self
+        pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::Instance>>) -> Self {
+            self.instances = input; self
         }
         /// Consumes the builder and constructs a [`DeregisterInstancesFromLoadBalancerOutput`](crate::output::DeregisterInstancesFromLoadBalancerOutput).
         pub fn build(self) -> crate::output::DeregisterInstancesFromLoadBalancerOutput {
             crate::output::DeregisterInstancesFromLoadBalancerOutput {
-                instances: self.instances,
+                instances: self.instances
+                ,
             }
         }
     }
+    
+    
 }
 impl DeregisterInstancesFromLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterInstancesFromLoadBalancerOutput`](crate::output::DeregisterInstancesFromLoadBalancerOutput).
@@ -918,19 +892,24 @@ impl DeregisterInstancesFromLoadBalancerOutput {
 /// <p>Contains the output of DeleteLoadBalancerPolicy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoadBalancerPolicyOutput {}
+pub struct DeleteLoadBalancerPolicyOutput  {
+}
 /// See [`DeleteLoadBalancerPolicyOutput`](crate::output::DeleteLoadBalancerPolicyOutput).
 pub mod delete_load_balancer_policy_output {
-
+    
     /// A builder for [`DeleteLoadBalancerPolicyOutput`](crate::output::DeleteLoadBalancerPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLoadBalancerPolicyOutput`](crate::output::DeleteLoadBalancerPolicyOutput).
         pub fn build(self) -> crate::output::DeleteLoadBalancerPolicyOutput {
-            crate::output::DeleteLoadBalancerPolicyOutput {}
+            crate::output::DeleteLoadBalancerPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLoadBalancerPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerPolicyOutput`](crate::output::DeleteLoadBalancerPolicyOutput).
@@ -942,19 +921,24 @@ impl DeleteLoadBalancerPolicyOutput {
 /// <p>Contains the output of DeleteLoadBalancerListeners.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoadBalancerListenersOutput {}
+pub struct DeleteLoadBalancerListenersOutput  {
+}
 /// See [`DeleteLoadBalancerListenersOutput`](crate::output::DeleteLoadBalancerListenersOutput).
 pub mod delete_load_balancer_listeners_output {
-
+    
     /// A builder for [`DeleteLoadBalancerListenersOutput`](crate::output::DeleteLoadBalancerListenersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLoadBalancerListenersOutput`](crate::output::DeleteLoadBalancerListenersOutput).
         pub fn build(self) -> crate::output::DeleteLoadBalancerListenersOutput {
-            crate::output::DeleteLoadBalancerListenersOutput {}
+            crate::output::DeleteLoadBalancerListenersOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLoadBalancerListenersOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerListenersOutput`](crate::output::DeleteLoadBalancerListenersOutput).
@@ -966,19 +950,24 @@ impl DeleteLoadBalancerListenersOutput {
 /// <p>Contains the output of DeleteLoadBalancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoadBalancerOutput {}
+pub struct DeleteLoadBalancerOutput  {
+}
 /// See [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
 pub mod delete_load_balancer_output {
-
+    
     /// A builder for [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
         pub fn build(self) -> crate::output::DeleteLoadBalancerOutput {
-            crate::output::DeleteLoadBalancerOutput {}
+            crate::output::DeleteLoadBalancerOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
@@ -990,19 +979,24 @@ impl DeleteLoadBalancerOutput {
 /// <p>Contains the output of CreateLoadBalancerPolicy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLoadBalancerPolicyOutput {}
+pub struct CreateLoadBalancerPolicyOutput  {
+}
 /// See [`CreateLoadBalancerPolicyOutput`](crate::output::CreateLoadBalancerPolicyOutput).
 pub mod create_load_balancer_policy_output {
-
+    
     /// A builder for [`CreateLoadBalancerPolicyOutput`](crate::output::CreateLoadBalancerPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateLoadBalancerPolicyOutput`](crate::output::CreateLoadBalancerPolicyOutput).
         pub fn build(self) -> crate::output::CreateLoadBalancerPolicyOutput {
-            crate::output::CreateLoadBalancerPolicyOutput {}
+            crate::output::CreateLoadBalancerPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateLoadBalancerPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerPolicyOutput`](crate::output::CreateLoadBalancerPolicyOutput).
@@ -1014,19 +1008,24 @@ impl CreateLoadBalancerPolicyOutput {
 /// <p>Contains the parameters for CreateLoadBalancerListener.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLoadBalancerListenersOutput {}
+pub struct CreateLoadBalancerListenersOutput  {
+}
 /// See [`CreateLoadBalancerListenersOutput`](crate::output::CreateLoadBalancerListenersOutput).
 pub mod create_load_balancer_listeners_output {
-
+    
     /// A builder for [`CreateLoadBalancerListenersOutput`](crate::output::CreateLoadBalancerListenersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateLoadBalancerListenersOutput`](crate::output::CreateLoadBalancerListenersOutput).
         pub fn build(self) -> crate::output::CreateLoadBalancerListenersOutput {
-            crate::output::CreateLoadBalancerListenersOutput {}
+            crate::output::CreateLoadBalancerListenersOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateLoadBalancerListenersOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerListenersOutput`](crate::output::CreateLoadBalancerListenersOutput).
@@ -1038,20 +1037,20 @@ impl CreateLoadBalancerListenersOutput {
 /// <p>Contains the output for CreateLoadBalancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLoadBalancerOutput {
+pub struct CreateLoadBalancerOutput  {
     /// <p>The DNS name of the load balancer.</p>
     #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
 }
 impl CreateLoadBalancerOutput {
     /// <p>The DNS name of the load balancer.</p>
-    pub fn dns_name(&self) -> std::option::Option<&str> {
+    pub fn dns_name(&self) -> std::option::Option<& str> {
         self.dns_name.as_deref()
     }
 }
 /// See [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
 pub mod create_load_balancer_output {
-
+    
     /// A builder for [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1065,16 +1064,18 @@ pub mod create_load_balancer_output {
         }
         /// <p>The DNS name of the load balancer.</p>
         pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dns_name = input;
-            self
+            self.dns_name = input; self
         }
         /// Consumes the builder and constructs a [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
         pub fn build(self) -> crate::output::CreateLoadBalancerOutput {
             crate::output::CreateLoadBalancerOutput {
-                dns_name: self.dns_name,
+                dns_name: self.dns_name
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
@@ -1086,19 +1087,24 @@ impl CreateLoadBalancerOutput {
 /// <p>Contains the output for CreateLBCookieStickinessPolicy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLbCookieStickinessPolicyOutput {}
+pub struct CreateLbCookieStickinessPolicyOutput  {
+}
 /// See [`CreateLbCookieStickinessPolicyOutput`](crate::output::CreateLbCookieStickinessPolicyOutput).
 pub mod create_lb_cookie_stickiness_policy_output {
-
+    
     /// A builder for [`CreateLbCookieStickinessPolicyOutput`](crate::output::CreateLbCookieStickinessPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateLbCookieStickinessPolicyOutput`](crate::output::CreateLbCookieStickinessPolicyOutput).
         pub fn build(self) -> crate::output::CreateLbCookieStickinessPolicyOutput {
-            crate::output::CreateLbCookieStickinessPolicyOutput {}
+            crate::output::CreateLbCookieStickinessPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateLbCookieStickinessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateLbCookieStickinessPolicyOutput`](crate::output::CreateLbCookieStickinessPolicyOutput).
@@ -1110,19 +1116,24 @@ impl CreateLbCookieStickinessPolicyOutput {
 /// <p>Contains the output for CreateAppCookieStickinessPolicy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAppCookieStickinessPolicyOutput {}
+pub struct CreateAppCookieStickinessPolicyOutput  {
+}
 /// See [`CreateAppCookieStickinessPolicyOutput`](crate::output::CreateAppCookieStickinessPolicyOutput).
 pub mod create_app_cookie_stickiness_policy_output {
-
+    
     /// A builder for [`CreateAppCookieStickinessPolicyOutput`](crate::output::CreateAppCookieStickinessPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateAppCookieStickinessPolicyOutput`](crate::output::CreateAppCookieStickinessPolicyOutput).
         pub fn build(self) -> crate::output::CreateAppCookieStickinessPolicyOutput {
-            crate::output::CreateAppCookieStickinessPolicyOutput {}
+            crate::output::CreateAppCookieStickinessPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateAppCookieStickinessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppCookieStickinessPolicyOutput`](crate::output::CreateAppCookieStickinessPolicyOutput).
@@ -1134,20 +1145,20 @@ impl CreateAppCookieStickinessPolicyOutput {
 /// <p>Contains the output of ConfigureHealthCheck.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigureHealthCheckOutput {
+pub struct ConfigureHealthCheckOutput  {
     /// <p>The updated health check.</p>
     #[doc(hidden)]
     pub health_check: std::option::Option<crate::model::HealthCheck>,
 }
 impl ConfigureHealthCheckOutput {
     /// <p>The updated health check.</p>
-    pub fn health_check(&self) -> std::option::Option<&crate::model::HealthCheck> {
+    pub fn health_check(&self) -> std::option::Option<& crate::model::HealthCheck> {
         self.health_check.as_ref()
     }
 }
 /// See [`ConfigureHealthCheckOutput`](crate::output::ConfigureHealthCheckOutput).
 pub mod configure_health_check_output {
-
+    
     /// A builder for [`ConfigureHealthCheckOutput`](crate::output::ConfigureHealthCheckOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1160,20 +1171,19 @@ pub mod configure_health_check_output {
             self
         }
         /// <p>The updated health check.</p>
-        pub fn set_health_check(
-            mut self,
-            input: std::option::Option<crate::model::HealthCheck>,
-        ) -> Self {
-            self.health_check = input;
-            self
+        pub fn set_health_check(mut self, input: std::option::Option<crate::model::HealthCheck>) -> Self {
+            self.health_check = input; self
         }
         /// Consumes the builder and constructs a [`ConfigureHealthCheckOutput`](crate::output::ConfigureHealthCheckOutput).
         pub fn build(self) -> crate::output::ConfigureHealthCheckOutput {
             crate::output::ConfigureHealthCheckOutput {
-                health_check: self.health_check,
+                health_check: self.health_check
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigureHealthCheckOutput {
     /// Creates a new builder-style object to manufacture [`ConfigureHealthCheckOutput`](crate::output::ConfigureHealthCheckOutput).
@@ -1185,20 +1195,20 @@ impl ConfigureHealthCheckOutput {
 /// <p>Contains the output of AttachLoadBalancerToSubnets.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachLoadBalancerToSubnetsOutput {
+pub struct AttachLoadBalancerToSubnetsOutput  {
     /// <p>The IDs of the subnets attached to the load balancer.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AttachLoadBalancerToSubnetsOutput {
     /// <p>The IDs of the subnets attached to the load balancer.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.subnets.as_deref()
     }
 }
 /// See [`AttachLoadBalancerToSubnetsOutput`](crate::output::AttachLoadBalancerToSubnetsOutput).
 pub mod attach_load_balancer_to_subnets_output {
-
+    
     /// A builder for [`AttachLoadBalancerToSubnetsOutput`](crate::output::AttachLoadBalancerToSubnetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1212,25 +1222,24 @@ pub mod attach_load_balancer_to_subnets_output {
         /// <p>The IDs of the subnets attached to the load balancer.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
-            self.subnets = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnets = Some(v);
+                            self
         }
         /// <p>The IDs of the subnets attached to the load balancer.</p>
-        pub fn set_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnets = input;
-            self
+        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnets = input; self
         }
         /// Consumes the builder and constructs a [`AttachLoadBalancerToSubnetsOutput`](crate::output::AttachLoadBalancerToSubnetsOutput).
         pub fn build(self) -> crate::output::AttachLoadBalancerToSubnetsOutput {
             crate::output::AttachLoadBalancerToSubnetsOutput {
-                subnets: self.subnets,
+                subnets: self.subnets
+                ,
             }
         }
     }
+    
+    
 }
 impl AttachLoadBalancerToSubnetsOutput {
     /// Creates a new builder-style object to manufacture [`AttachLoadBalancerToSubnetsOutput`](crate::output::AttachLoadBalancerToSubnetsOutput).
@@ -1242,20 +1251,20 @@ impl AttachLoadBalancerToSubnetsOutput {
 /// <p>Contains the output of ApplySecurityGroupsToLoadBalancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplySecurityGroupsToLoadBalancerOutput {
+pub struct ApplySecurityGroupsToLoadBalancerOutput  {
     /// <p>The IDs of the security groups associated with the load balancer.</p>
     #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ApplySecurityGroupsToLoadBalancerOutput {
     /// <p>The IDs of the security groups associated with the load balancer.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
 }
 /// See [`ApplySecurityGroupsToLoadBalancerOutput`](crate::output::ApplySecurityGroupsToLoadBalancerOutput).
 pub mod apply_security_groups_to_load_balancer_output {
-
+    
     /// A builder for [`ApplySecurityGroupsToLoadBalancerOutput`](crate::output::ApplySecurityGroupsToLoadBalancerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1269,25 +1278,24 @@ pub mod apply_security_groups_to_load_balancer_output {
         /// <p>The IDs of the security groups associated with the load balancer.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.security_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_groups = Some(v);
+                            self
         }
         /// <p>The IDs of the security groups associated with the load balancer.</p>
-        pub fn set_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_groups = input;
-            self
+        pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_groups = input; self
         }
         /// Consumes the builder and constructs a [`ApplySecurityGroupsToLoadBalancerOutput`](crate::output::ApplySecurityGroupsToLoadBalancerOutput).
         pub fn build(self) -> crate::output::ApplySecurityGroupsToLoadBalancerOutput {
             crate::output::ApplySecurityGroupsToLoadBalancerOutput {
-                security_groups: self.security_groups,
+                security_groups: self.security_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplySecurityGroupsToLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`ApplySecurityGroupsToLoadBalancerOutput`](crate::output::ApplySecurityGroupsToLoadBalancerOutput).
@@ -1299,19 +1307,24 @@ impl ApplySecurityGroupsToLoadBalancerOutput {
 /// <p>Contains the output of AddTags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsOutput {}
+pub struct AddTagsOutput  {
+}
 /// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
-
+    
     /// A builder for [`AddTagsOutput`](crate::output::AddTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsOutput`](crate::output::AddTagsOutput).
         pub fn build(self) -> crate::output::AddTagsOutput {
-            crate::output::AddTagsOutput {}
+            crate::output::AddTagsOutput {
+            }
         }
     }
+    
+    
 }
 impl AddTagsOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput).
@@ -1319,3 +1332,4 @@ impl AddTagsOutput {
         crate::output::add_tags_output::Builder::default()
     }
 }
+

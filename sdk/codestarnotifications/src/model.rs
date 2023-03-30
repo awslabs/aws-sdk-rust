@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let detailtype = unimplemented!();
 /// match detailtype {
@@ -30,58 +30,52 @@
 /// Specifically, when `detailtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DetailType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DetailType {
     #[allow(missing_docs)] // documentation missing in model
     Basic,
     #[allow(missing_docs)] // documentation missing in model
     Full,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DetailType {
     fn from(s: &str) -> Self {
         match s {
             "BASIC" => DetailType::Basic,
             "FULL" => DetailType::Full,
-            other => DetailType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DetailType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DetailType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DetailType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DetailType::from(s))
+                }
+            }
 impl DetailType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DetailType::Basic => "BASIC",
             DetailType::Full => "FULL",
-            DetailType::Unknown(value) => value.as_str(),
+            DetailType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BASIC", "FULL"]
+        &[
+            "BASIC", "FULL"
+        ]
     }
 }
 impl AsRef<str> for DetailType {
@@ -93,11 +87,11 @@ impl AsRef<str> for DetailType {
 /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Target {
-    /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
-    /// <ul>
-    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
-    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+pub struct Target  {
+    /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p> 
+    /// <ul> 
+    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> 
+    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub target_type: std::option::Option<std::string::String>,
@@ -106,20 +100,20 @@ pub struct Target {
     pub target_address: std::option::Option<std::string::String>,
 }
 impl Target {
-    /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
-    /// <ul>
-    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
-    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+    /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p> 
+    /// <ul> 
+    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> 
+    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li> 
     /// </ul>
-    pub fn target_type(&self) -> std::option::Option<&str> {
+    pub fn target_type(&self) -> std::option::Option<& str> {
         self.target_type.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
-    pub fn target_address(&self) -> std::option::Option<&str> {
+    pub fn target_address(&self) -> std::option::Option<& str> {
         self.target_address.as_deref()
     }
 }
-impl std::fmt::Debug for Target {
+impl  std::fmt::Debug for Target  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Target");
         formatter.field("target_type", &self.target_type);
@@ -129,7 +123,7 @@ impl std::fmt::Debug for Target {
 }
 /// See [`Target`](crate::model::Target).
 pub mod target {
-
+    
     /// A builder for [`Target`](crate::model::Target).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -137,23 +131,22 @@ pub mod target {
         pub(crate) target_address: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
-        /// <ul>
-        /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
-        /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+        /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p> 
+        /// <ul> 
+        /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> 
+        /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li> 
         /// </ul>
         pub fn target_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_type = Some(input.into());
             self
         }
-        /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p>
-        /// <ul>
-        /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
-        /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+        /// <p>The target type. Can be an Chatbot topic or Chatbot client.</p> 
+        /// <ul> 
+        /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> 
+        /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li> 
         /// </ul>
         pub fn set_target_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_type = input;
-            self
+            self.target_type = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
         pub fn target_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -161,18 +154,16 @@ pub mod target {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
-        pub fn set_target_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_address = input;
-            self
+        pub fn set_target_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_address = input; self
         }
         /// Consumes the builder and constructs a [`Target`](crate::model::Target).
         pub fn build(self) -> crate::model::Target {
             crate::model::Target {
-                target_type: self.target_type,
-                target_address: self.target_address,
+                target_type: self.target_type
+                ,
+                target_address: self.target_address
+                ,
             }
         }
     }
@@ -184,6 +175,8 @@ pub mod target {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Target {
     /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
@@ -198,9 +191,9 @@ impl Target {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let notificationrulestatus = unimplemented!();
 /// match notificationrulestatus {
@@ -222,60 +215,52 @@ impl Target {
 /// Specifically, when `notificationrulestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NotificationRuleStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NotificationRuleStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NotificationRuleStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => NotificationRuleStatus::Disabled,
             "ENABLED" => NotificationRuleStatus::Enabled,
-            other => {
-                NotificationRuleStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => NotificationRuleStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NotificationRuleStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NotificationRuleStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NotificationRuleStatus::from(s))
+                }
+            }
 impl NotificationRuleStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NotificationRuleStatus::Disabled => "DISABLED",
             NotificationRuleStatus::Enabled => "ENABLED",
-            NotificationRuleStatus::Unknown(value) => value.as_str(),
+            NotificationRuleStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for NotificationRuleStatus {
@@ -287,14 +272,14 @@ impl AsRef<str> for NotificationRuleStatus {
 /// <p>Information about the targets specified for a notification rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TargetSummary {
+pub struct TargetSummary  {
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
     #[doc(hidden)]
     pub target_address: std::option::Option<std::string::String>,
-    /// <p>The type of the target (for example, <code>SNS</code>).</p>
-    /// <ul>
-    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
-    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+    /// <p>The type of the target (for example, <code>SNS</code>).</p> 
+    /// <ul> 
+    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> 
+    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub target_type: std::option::Option<std::string::String>,
@@ -304,23 +289,23 @@ pub struct TargetSummary {
 }
 impl TargetSummary {
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
-    pub fn target_address(&self) -> std::option::Option<&str> {
+    pub fn target_address(&self) -> std::option::Option<& str> {
         self.target_address.as_deref()
     }
-    /// <p>The type of the target (for example, <code>SNS</code>).</p>
-    /// <ul>
-    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
-    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+    /// <p>The type of the target (for example, <code>SNS</code>).</p> 
+    /// <ul> 
+    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> 
+    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li> 
     /// </ul>
-    pub fn target_type(&self) -> std::option::Option<&str> {
+    pub fn target_type(&self) -> std::option::Option<& str> {
         self.target_type.as_deref()
     }
     /// <p>The status of the target.</p>
-    pub fn target_status(&self) -> std::option::Option<&crate::model::TargetStatus> {
+    pub fn target_status(&self) -> std::option::Option<& crate::model::TargetStatus> {
         self.target_status.as_ref()
     }
 }
-impl std::fmt::Debug for TargetSummary {
+impl  std::fmt::Debug for TargetSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TargetSummary");
         formatter.field("target_address", &"*** Sensitive Data Redacted ***");
@@ -331,7 +316,7 @@ impl std::fmt::Debug for TargetSummary {
 }
 /// See [`TargetSummary`](crate::model::TargetSummary).
 pub mod target_summary {
-
+    
     /// A builder for [`TargetSummary`](crate::model::TargetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -346,30 +331,25 @@ pub mod target_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
-        pub fn set_target_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_address = input;
-            self
+        pub fn set_target_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_address = input; self
         }
-        /// <p>The type of the target (for example, <code>SNS</code>).</p>
-        /// <ul>
-        /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
-        /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+        /// <p>The type of the target (for example, <code>SNS</code>).</p> 
+        /// <ul> 
+        /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> 
+        /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li> 
         /// </ul>
         pub fn target_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_type = Some(input.into());
             self
         }
-        /// <p>The type of the target (for example, <code>SNS</code>).</p>
-        /// <ul>
-        /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
-        /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+        /// <p>The type of the target (for example, <code>SNS</code>).</p> 
+        /// <ul> 
+        /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> 
+        /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li> 
         /// </ul>
         pub fn set_target_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_type = input;
-            self
+            self.target_type = input; self
         }
         /// <p>The status of the target.</p>
         pub fn target_status(mut self, input: crate::model::TargetStatus) -> Self {
@@ -377,19 +357,18 @@ pub mod target_summary {
             self
         }
         /// <p>The status of the target.</p>
-        pub fn set_target_status(
-            mut self,
-            input: std::option::Option<crate::model::TargetStatus>,
-        ) -> Self {
-            self.target_status = input;
-            self
+        pub fn set_target_status(mut self, input: std::option::Option<crate::model::TargetStatus>) -> Self {
+            self.target_status = input; self
         }
         /// Consumes the builder and constructs a [`TargetSummary`](crate::model::TargetSummary).
         pub fn build(self) -> crate::model::TargetSummary {
             crate::model::TargetSummary {
-                target_address: self.target_address,
-                target_type: self.target_type,
-                target_status: self.target_status,
+                target_address: self.target_address
+                ,
+                target_type: self.target_type
+                ,
+                target_status: self.target_status
+                ,
             }
         }
     }
@@ -402,6 +381,8 @@ pub mod target_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl TargetSummary {
     /// Creates a new builder-style object to manufacture [`TargetSummary`](crate::model::TargetSummary).
@@ -416,9 +397,9 @@ impl TargetSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let targetstatus = unimplemented!();
 /// match targetstatus {
@@ -443,22 +424,14 @@ impl TargetSummary {
 /// Specifically, when `targetstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TargetStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TargetStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -471,7 +444,7 @@ pub enum TargetStatus {
     #[allow(missing_docs)] // documentation missing in model
     Unreachable,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TargetStatus {
     fn from(s: &str) -> Self {
@@ -481,17 +454,17 @@ impl std::convert::From<&str> for TargetStatus {
             "INACTIVE" => TargetStatus::Inactive,
             "PENDING" => TargetStatus::Pending,
             "UNREACHABLE" => TargetStatus::Unreachable,
-            other => TargetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TargetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TargetStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TargetStatus::from(s))
+                }
+            }
 impl TargetStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -501,17 +474,13 @@ impl TargetStatus {
             TargetStatus::Inactive => "INACTIVE",
             TargetStatus::Pending => "PENDING",
             TargetStatus::Unreachable => "UNREACHABLE",
-            TargetStatus::Unknown(value) => value.as_str(),
+            TargetStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "DEACTIVATED",
-            "INACTIVE",
-            "PENDING",
-            "UNREACHABLE",
+            "ACTIVE", "DEACTIVATED", "INACTIVE", "PENDING", "UNREACHABLE"
         ]
     }
 }
@@ -524,7 +493,7 @@ impl AsRef<str> for TargetStatus {
 /// <p>Information about a filter to apply to the list of returned targets. You can filter by target type, address, or status. For example, to filter results to notification rules that have active Chatbot topics as targets, you could specify a ListTargetsFilter Name as <code>TargetType</code> and a Value of <code>SNS</code>, and a Name of <code>TARGET_STATUS</code> and a Value of <code>ACTIVE</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTargetsFilter {
+pub struct ListTargetsFilter  {
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::ListTargetsFilterName>,
@@ -534,17 +503,17 @@ pub struct ListTargetsFilter {
 }
 impl ListTargetsFilter {
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::ListTargetsFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::ListTargetsFilterName> {
         self.name.as_ref()
     }
     /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`ListTargetsFilter`](crate::model::ListTargetsFilter).
 pub mod list_targets_filter {
-
+    
     /// A builder for [`ListTargetsFilter`](crate::model::ListTargetsFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -558,12 +527,8 @@ pub mod list_targets_filter {
             self
         }
         /// <p>The name of the attribute you want to use to filter the returned targets.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::ListTargetsFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::ListTargetsFilterName>) -> Self {
+            self.name = input; self
         }
         /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -572,17 +537,20 @@ pub mod list_targets_filter {
         }
         /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <code>SNS</code> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ListTargetsFilter`](crate::model::ListTargetsFilter).
         pub fn build(self) -> crate::model::ListTargetsFilter {
             crate::model::ListTargetsFilter {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTargetsFilter {
     /// Creates a new builder-style object to manufacture [`ListTargetsFilter`](crate::model::ListTargetsFilter).
@@ -597,9 +565,9 @@ impl ListTargetsFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let listtargetsfiltername = unimplemented!();
 /// match listtargetsfiltername {
@@ -622,22 +590,14 @@ impl ListTargetsFilter {
 /// Specifically, when `listtargetsfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ListTargetsFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ListTargetsFilterName {
     #[allow(missing_docs)] // documentation missing in model
     TargetAddress,
@@ -646,7 +606,7 @@ pub enum ListTargetsFilterName {
     #[allow(missing_docs)] // documentation missing in model
     TargetType,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListTargetsFilterName {
     fn from(s: &str) -> Self {
@@ -654,19 +614,17 @@ impl std::convert::From<&str> for ListTargetsFilterName {
             "TARGET_ADDRESS" => ListTargetsFilterName::TargetAddress,
             "TARGET_STATUS" => ListTargetsFilterName::TargetStatus,
             "TARGET_TYPE" => ListTargetsFilterName::TargetType,
-            other => {
-                ListTargetsFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ListTargetsFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ListTargetsFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ListTargetsFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ListTargetsFilterName::from(s))
+                }
+            }
 impl ListTargetsFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -674,12 +632,14 @@ impl ListTargetsFilterName {
             ListTargetsFilterName::TargetAddress => "TARGET_ADDRESS",
             ListTargetsFilterName::TargetStatus => "TARGET_STATUS",
             ListTargetsFilterName::TargetType => "TARGET_TYPE",
-            ListTargetsFilterName::Unknown(value) => value.as_str(),
+            ListTargetsFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TARGET_ADDRESS", "TARGET_STATUS", "TARGET_TYPE"]
+        &[
+            "TARGET_ADDRESS", "TARGET_STATUS", "TARGET_TYPE"
+        ]
     }
 }
 impl AsRef<str> for ListTargetsFilterName {
@@ -691,7 +651,7 @@ impl AsRef<str> for ListTargetsFilterName {
 /// <p>Information about a specified notification rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotificationRuleSummary {
+pub struct NotificationRuleSummary  {
     /// <p>The unique ID of the notification rule.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -701,17 +661,17 @@ pub struct NotificationRuleSummary {
 }
 impl NotificationRuleSummary {
     /// <p>The unique ID of the notification rule.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`NotificationRuleSummary`](crate::model::NotificationRuleSummary).
 pub mod notification_rule_summary {
-
+    
     /// A builder for [`NotificationRuleSummary`](crate::model::NotificationRuleSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -726,8 +686,7 @@ pub mod notification_rule_summary {
         }
         /// <p>The unique ID of the notification rule.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -736,17 +695,20 @@ pub mod notification_rule_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`NotificationRuleSummary`](crate::model::NotificationRuleSummary).
         pub fn build(self) -> crate::model::NotificationRuleSummary {
             crate::model::NotificationRuleSummary {
-                id: self.id,
-                arn: self.arn,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl NotificationRuleSummary {
     /// Creates a new builder-style object to manufacture [`NotificationRuleSummary`](crate::model::NotificationRuleSummary).
@@ -758,7 +720,7 @@ impl NotificationRuleSummary {
 /// <p>Information about a filter to apply to the list of returned notification rules. You can filter by event type, owner, resource, or target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNotificationRulesFilter {
+pub struct ListNotificationRulesFilter  {
     /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::ListNotificationRulesFilterName>,
@@ -768,17 +730,17 @@ pub struct ListNotificationRulesFilter {
 }
 impl ListNotificationRulesFilter {
     /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::ListNotificationRulesFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::ListNotificationRulesFilterName> {
         self.name.as_ref()
     }
     /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter).
 pub mod list_notification_rules_filter {
-
+    
     /// A builder for [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -792,12 +754,8 @@ pub mod list_notification_rules_filter {
             self
         }
         /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::ListNotificationRulesFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::ListNotificationRulesFilterName>) -> Self {
+            self.name = input; self
         }
         /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -806,17 +764,20 @@ pub mod list_notification_rules_filter {
         }
         /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter).
         pub fn build(self) -> crate::model::ListNotificationRulesFilter {
             crate::model::ListNotificationRulesFilter {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl ListNotificationRulesFilter {
     /// Creates a new builder-style object to manufacture [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter).
@@ -831,9 +792,9 @@ impl ListNotificationRulesFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let listnotificationrulesfiltername = unimplemented!();
 /// match listnotificationrulesfiltername {
@@ -857,22 +818,14 @@ impl ListNotificationRulesFilter {
 /// Specifically, when `listnotificationrulesfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ListNotificationRulesFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ListNotificationRulesFilterName {
     #[allow(missing_docs)] // documentation missing in model
     CreatedBy,
@@ -883,7 +836,7 @@ pub enum ListNotificationRulesFilterName {
     #[allow(missing_docs)] // documentation missing in model
     TargetAddress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListNotificationRulesFilterName {
     fn from(s: &str) -> Self {
@@ -892,19 +845,17 @@ impl std::convert::From<&str> for ListNotificationRulesFilterName {
             "EVENT_TYPE_ID" => ListNotificationRulesFilterName::EventTypeId,
             "RESOURCE" => ListNotificationRulesFilterName::Resource,
             "TARGET_ADDRESS" => ListNotificationRulesFilterName::TargetAddress,
-            other => ListNotificationRulesFilterName::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ListNotificationRulesFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ListNotificationRulesFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ListNotificationRulesFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ListNotificationRulesFilterName::from(s))
+                }
+            }
 impl ListNotificationRulesFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -913,12 +864,14 @@ impl ListNotificationRulesFilterName {
             ListNotificationRulesFilterName::EventTypeId => "EVENT_TYPE_ID",
             ListNotificationRulesFilterName::Resource => "RESOURCE",
             ListNotificationRulesFilterName::TargetAddress => "TARGET_ADDRESS",
-            ListNotificationRulesFilterName::Unknown(value) => value.as_str(),
+            ListNotificationRulesFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATED_BY", "EVENT_TYPE_ID", "RESOURCE", "TARGET_ADDRESS"]
+        &[
+            "CREATED_BY", "EVENT_TYPE_ID", "RESOURCE", "TARGET_ADDRESS"
+        ]
     }
 }
 impl AsRef<str> for ListNotificationRulesFilterName {
@@ -930,7 +883,7 @@ impl AsRef<str> for ListNotificationRulesFilterName {
 /// <p>Returns information about an event that has triggered a notification rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventTypeSummary {
+pub struct EventTypeSummary  {
     /// <p>The system-generated ID of the event. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
     #[doc(hidden)]
     pub event_type_id: std::option::Option<std::string::String>,
@@ -946,25 +899,25 @@ pub struct EventTypeSummary {
 }
 impl EventTypeSummary {
     /// <p>The system-generated ID of the event. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
-    pub fn event_type_id(&self) -> std::option::Option<&str> {
+    pub fn event_type_id(&self) -> std::option::Option<& str> {
         self.event_type_id.as_deref()
     }
     /// <p>The name of the service for which the event applies.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the event.</p>
-    pub fn event_type_name(&self) -> std::option::Option<&str> {
+    pub fn event_type_name(&self) -> std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
     /// <p>The resource type of the event.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
 /// See [`EventTypeSummary`](crate::model::EventTypeSummary).
 pub mod event_type_summary {
-
+    
     /// A builder for [`EventTypeSummary`](crate::model::EventTypeSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -980,12 +933,8 @@ pub mod event_type_summary {
             self
         }
         /// <p>The system-generated ID of the event. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
-        pub fn set_event_type_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_type_id = input;
-            self
+        pub fn set_event_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_type_id = input; self
         }
         /// <p>The name of the service for which the event applies.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -994,8 +943,7 @@ pub mod event_type_summary {
         }
         /// <p>The name of the service for which the event applies.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_name = input;
-            self
+            self.service_name = input; self
         }
         /// <p>The name of the event.</p>
         pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1003,12 +951,8 @@ pub mod event_type_summary {
             self
         }
         /// <p>The name of the event.</p>
-        pub fn set_event_type_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_type_name = input;
-            self
+        pub fn set_event_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_type_name = input; self
         }
         /// <p>The resource type of the event.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1016,23 +960,25 @@ pub mod event_type_summary {
             self
         }
         /// <p>The resource type of the event.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// Consumes the builder and constructs a [`EventTypeSummary`](crate::model::EventTypeSummary).
         pub fn build(self) -> crate::model::EventTypeSummary {
             crate::model::EventTypeSummary {
-                event_type_id: self.event_type_id,
-                service_name: self.service_name,
-                event_type_name: self.event_type_name,
-                resource_type: self.resource_type,
+                event_type_id: self.event_type_id
+                ,
+                service_name: self.service_name
+                ,
+                event_type_name: self.event_type_name
+                ,
+                resource_type: self.resource_type
+                ,
             }
         }
     }
+    
+    
 }
 impl EventTypeSummary {
     /// Creates a new builder-style object to manufacture [`EventTypeSummary`](crate::model::EventTypeSummary).
@@ -1044,7 +990,7 @@ impl EventTypeSummary {
 /// <p>Information about a filter to apply to the list of returned event types. You can filter by resource type or service name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventTypesFilter {
+pub struct ListEventTypesFilter  {
     /// <p>The system-generated name of the filter type you want to filter by.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::ListEventTypesFilterName>,
@@ -1054,17 +1000,17 @@ pub struct ListEventTypesFilter {
 }
 impl ListEventTypesFilter {
     /// <p>The system-generated name of the filter type you want to filter by.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::ListEventTypesFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::ListEventTypesFilterName> {
         self.name.as_ref()
     }
     /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`ListEventTypesFilter`](crate::model::ListEventTypesFilter).
 pub mod list_event_types_filter {
-
+    
     /// A builder for [`ListEventTypesFilter`](crate::model::ListEventTypesFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1078,12 +1024,8 @@ pub mod list_event_types_filter {
             self
         }
         /// <p>The system-generated name of the filter type you want to filter by.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::ListEventTypesFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::ListEventTypesFilterName>) -> Self {
+            self.name = input; self
         }
         /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1092,17 +1034,20 @@ pub mod list_event_types_filter {
         }
         /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ListEventTypesFilter`](crate::model::ListEventTypesFilter).
         pub fn build(self) -> crate::model::ListEventTypesFilter {
             crate::model::ListEventTypesFilter {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEventTypesFilter {
     /// Creates a new builder-style object to manufacture [`ListEventTypesFilter`](crate::model::ListEventTypesFilter).
@@ -1117,9 +1062,9 @@ impl ListEventTypesFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let listeventtypesfiltername = unimplemented!();
 /// match listeventtypesfiltername {
@@ -1141,60 +1086,52 @@ impl ListEventTypesFilter {
 /// Specifically, when `listeventtypesfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ListEventTypesFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ListEventTypesFilterName {
     #[allow(missing_docs)] // documentation missing in model
     ResourceType,
     #[allow(missing_docs)] // documentation missing in model
     ServiceName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListEventTypesFilterName {
     fn from(s: &str) -> Self {
         match s {
             "RESOURCE_TYPE" => ListEventTypesFilterName::ResourceType,
             "SERVICE_NAME" => ListEventTypesFilterName::ServiceName,
-            other => ListEventTypesFilterName::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ListEventTypesFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ListEventTypesFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ListEventTypesFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ListEventTypesFilterName::from(s))
+                }
+            }
 impl ListEventTypesFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ListEventTypesFilterName::ResourceType => "RESOURCE_TYPE",
             ListEventTypesFilterName::ServiceName => "SERVICE_NAME",
-            ListEventTypesFilterName::Unknown(value) => value.as_str(),
+            ListEventTypesFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RESOURCE_TYPE", "SERVICE_NAME"]
+        &[
+            "RESOURCE_TYPE", "SERVICE_NAME"
+        ]
     }
 }
 impl AsRef<str> for ListEventTypesFilterName {
@@ -1202,3 +1139,4 @@ impl AsRef<str> for ListEventTypesFilterName {
         self.as_str()
     }
 }
+

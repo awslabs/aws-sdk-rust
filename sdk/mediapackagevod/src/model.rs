@@ -3,20 +3,20 @@
 /// Configure egress access logging.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EgressAccessLogs {
+pub struct EgressAccessLogs  {
     /// Customize the log group name.
     #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
 }
 impl EgressAccessLogs {
     /// Customize the log group name.
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
 }
 /// See [`EgressAccessLogs`](crate::model::EgressAccessLogs).
 pub mod egress_access_logs {
-
+    
     /// A builder for [`EgressAccessLogs`](crate::model::EgressAccessLogs).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,20 +29,19 @@ pub mod egress_access_logs {
             self
         }
         /// Customize the log group name.
-        pub fn set_log_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_name = input;
-            self
+        pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_name = input; self
         }
         /// Consumes the builder and constructs a [`EgressAccessLogs`](crate::model::EgressAccessLogs).
         pub fn build(self) -> crate::model::EgressAccessLogs {
             crate::model::EgressAccessLogs {
-                log_group_name: self.log_group_name,
+                log_group_name: self.log_group_name
+                ,
             }
         }
     }
+    
+    
 }
 impl EgressAccessLogs {
     /// Creates a new builder-style object to manufacture [`EgressAccessLogs`](crate::model::EgressAccessLogs).
@@ -54,7 +53,7 @@ impl EgressAccessLogs {
 /// CDN Authorization credentials
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Authorization {
+pub struct Authorization  {
     /// The Amazon Resource Name (ARN) for the secret in AWS Secrets Manager that is used for CDN authorization.
     #[doc(hidden)]
     pub cdn_identifier_secret: std::option::Option<std::string::String>,
@@ -64,17 +63,17 @@ pub struct Authorization {
 }
 impl Authorization {
     /// The Amazon Resource Name (ARN) for the secret in AWS Secrets Manager that is used for CDN authorization.
-    pub fn cdn_identifier_secret(&self) -> std::option::Option<&str> {
+    pub fn cdn_identifier_secret(&self) -> std::option::Option<& str> {
         self.cdn_identifier_secret.as_deref()
     }
     /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
-    pub fn secrets_role_arn(&self) -> std::option::Option<&str> {
+    pub fn secrets_role_arn(&self) -> std::option::Option<& str> {
         self.secrets_role_arn.as_deref()
     }
 }
 /// See [`Authorization`](crate::model::Authorization).
 pub mod authorization {
-
+    
     /// A builder for [`Authorization`](crate::model::Authorization).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -88,12 +87,8 @@ pub mod authorization {
             self
         }
         /// The Amazon Resource Name (ARN) for the secret in AWS Secrets Manager that is used for CDN authorization.
-        pub fn set_cdn_identifier_secret(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cdn_identifier_secret = input;
-            self
+        pub fn set_cdn_identifier_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cdn_identifier_secret = input; self
         }
         /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
         pub fn secrets_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,21 +96,21 @@ pub mod authorization {
             self
         }
         /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
-        pub fn set_secrets_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.secrets_role_arn = input;
-            self
+        pub fn set_secrets_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secrets_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`Authorization`](crate::model::Authorization).
         pub fn build(self) -> crate::model::Authorization {
             crate::model::Authorization {
-                cdn_identifier_secret: self.cdn_identifier_secret,
-                secrets_role_arn: self.secrets_role_arn,
+                cdn_identifier_secret: self.cdn_identifier_secret
+                ,
+                secrets_role_arn: self.secrets_role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Authorization {
     /// Creates a new builder-style object to manufacture [`Authorization`](crate::model::Authorization).
@@ -127,7 +122,7 @@ impl Authorization {
 /// A MediaPackage VOD PackagingGroup resource.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackagingGroup {
+pub struct PackagingGroup  {
     /// The approximate asset count of the PackagingGroup.
     #[doc(hidden)]
     pub approximate_asset_count: i32,
@@ -148,8 +143,7 @@ pub struct PackagingGroup {
     pub id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PackagingGroup {
     /// The approximate asset count of the PackagingGroup.
@@ -157,36 +151,33 @@ impl PackagingGroup {
         self.approximate_asset_count
     }
     /// The ARN of the PackagingGroup.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// CDN Authorization credentials
-    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+    pub fn authorization(&self) -> std::option::Option<& crate::model::Authorization> {
         self.authorization.as_ref()
     }
     /// The fully qualified domain name for Assets in the PackagingGroup.
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> std::option::Option<& crate::model::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// The ID of the PackagingGroup.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`PackagingGroup`](crate::model::PackagingGroup).
 pub mod packaging_group {
-
+    
     /// A builder for [`PackagingGroup`](crate::model::PackagingGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -196,9 +187,7 @@ pub mod packaging_group {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The approximate asset count of the PackagingGroup.
@@ -208,8 +197,7 @@ pub mod packaging_group {
         }
         /// The approximate asset count of the PackagingGroup.
         pub fn set_approximate_asset_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.approximate_asset_count = input;
-            self
+            self.approximate_asset_count = input; self
         }
         /// The ARN of the PackagingGroup.
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -218,8 +206,7 @@ pub mod packaging_group {
         }
         /// The ARN of the PackagingGroup.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// CDN Authorization credentials
         pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
@@ -227,12 +214,8 @@ pub mod packaging_group {
             self
         }
         /// CDN Authorization credentials
-        pub fn set_authorization(
-            mut self,
-            input: std::option::Option<crate::model::Authorization>,
-        ) -> Self {
-            self.authorization = input;
-            self
+        pub fn set_authorization(mut self, input: std::option::Option<crate::model::Authorization>) -> Self {
+            self.authorization = input; self
         }
         /// The fully qualified domain name for Assets in the PackagingGroup.
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -241,8 +224,7 @@ pub mod packaging_group {
         }
         /// The fully qualified domain name for Assets in the PackagingGroup.
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// Configure egress access logging.
         pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
@@ -250,12 +232,8 @@ pub mod packaging_group {
             self
         }
         /// Configure egress access logging.
-        pub fn set_egress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::EgressAccessLogs>,
-        ) -> Self {
-            self.egress_access_logs = input;
-            self
+        pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::model::EgressAccessLogs>) -> Self {
+            self.egress_access_logs = input; self
         }
         /// The ID of the PackagingGroup.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -264,47 +242,46 @@ pub mod packaging_group {
         }
         /// The ID of the PackagingGroup.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`PackagingGroup`](crate::model::PackagingGroup).
         pub fn build(self) -> crate::model::PackagingGroup {
             crate::model::PackagingGroup {
-                approximate_asset_count: self.approximate_asset_count.unwrap_or_default(),
-                arn: self.arn,
-                authorization: self.authorization,
-                domain_name: self.domain_name,
-                egress_access_logs: self.egress_access_logs,
-                id: self.id,
-                tags: self.tags,
+                approximate_asset_count: self.approximate_asset_count
+                    .unwrap_or_default()
+                ,
+                arn: self.arn
+                ,
+                authorization: self.authorization
+                ,
+                domain_name: self.domain_name
+                ,
+                egress_access_logs: self.egress_access_logs
+                ,
+                id: self.id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl PackagingGroup {
     /// Creates a new builder-style object to manufacture [`PackagingGroup`](crate::model::PackagingGroup).
@@ -316,7 +293,7 @@ impl PackagingGroup {
 /// A MediaPackage VOD PackagingConfiguration resource.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackagingConfiguration {
+pub struct PackagingConfiguration  {
     /// The ARN of the PackagingConfiguration.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -340,49 +317,45 @@ pub struct PackagingConfiguration {
     pub packaging_group_id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PackagingConfiguration {
     /// The ARN of the PackagingConfiguration.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// A CMAF packaging configuration.
-    pub fn cmaf_package(&self) -> std::option::Option<&crate::model::CmafPackage> {
+    pub fn cmaf_package(&self) -> std::option::Option<& crate::model::CmafPackage> {
         self.cmaf_package.as_ref()
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    pub fn dash_package(&self) -> std::option::Option<&crate::model::DashPackage> {
+    pub fn dash_package(&self) -> std::option::Option<& crate::model::DashPackage> {
         self.dash_package.as_ref()
     }
     /// An HTTP Live Streaming (HLS) packaging configuration.
-    pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
+    pub fn hls_package(&self) -> std::option::Option<& crate::model::HlsPackage> {
         self.hls_package.as_ref()
     }
     /// The ID of the PackagingConfiguration.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
-    pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
+    pub fn mss_package(&self) -> std::option::Option<& crate::model::MssPackage> {
         self.mss_package.as_ref()
     }
     /// The ID of a PackagingGroup.
-    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+    pub fn packaging_group_id(&self) -> std::option::Option<& str> {
         self.packaging_group_id.as_deref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`PackagingConfiguration`](crate::model::PackagingConfiguration).
 pub mod packaging_configuration {
-
+    
     /// A builder for [`PackagingConfiguration`](crate::model::PackagingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -393,9 +366,7 @@ pub mod packaging_configuration {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) mss_package: std::option::Option<crate::model::MssPackage>,
         pub(crate) packaging_group_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the PackagingConfiguration.
@@ -405,8 +376,7 @@ pub mod packaging_configuration {
         }
         /// The ARN of the PackagingConfiguration.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// A CMAF packaging configuration.
         pub fn cmaf_package(mut self, input: crate::model::CmafPackage) -> Self {
@@ -414,12 +384,8 @@ pub mod packaging_configuration {
             self
         }
         /// A CMAF packaging configuration.
-        pub fn set_cmaf_package(
-            mut self,
-            input: std::option::Option<crate::model::CmafPackage>,
-        ) -> Self {
-            self.cmaf_package = input;
-            self
+        pub fn set_cmaf_package(mut self, input: std::option::Option<crate::model::CmafPackage>) -> Self {
+            self.cmaf_package = input; self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
         pub fn dash_package(mut self, input: crate::model::DashPackage) -> Self {
@@ -427,12 +393,8 @@ pub mod packaging_configuration {
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-        pub fn set_dash_package(
-            mut self,
-            input: std::option::Option<crate::model::DashPackage>,
-        ) -> Self {
-            self.dash_package = input;
-            self
+        pub fn set_dash_package(mut self, input: std::option::Option<crate::model::DashPackage>) -> Self {
+            self.dash_package = input; self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
         pub fn hls_package(mut self, input: crate::model::HlsPackage) -> Self {
@@ -440,12 +402,8 @@ pub mod packaging_configuration {
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
-        pub fn set_hls_package(
-            mut self,
-            input: std::option::Option<crate::model::HlsPackage>,
-        ) -> Self {
-            self.hls_package = input;
-            self
+        pub fn set_hls_package(mut self, input: std::option::Option<crate::model::HlsPackage>) -> Self {
+            self.hls_package = input; self
         }
         /// The ID of the PackagingConfiguration.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -454,8 +412,7 @@ pub mod packaging_configuration {
         }
         /// The ID of the PackagingConfiguration.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
         pub fn mss_package(mut self, input: crate::model::MssPackage) -> Self {
@@ -463,12 +420,8 @@ pub mod packaging_configuration {
             self
         }
         /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
-        pub fn set_mss_package(
-            mut self,
-            input: std::option::Option<crate::model::MssPackage>,
-        ) -> Self {
-            self.mss_package = input;
-            self
+        pub fn set_mss_package(mut self, input: std::option::Option<crate::model::MssPackage>) -> Self {
+            self.mss_package = input; self
         }
         /// The ID of a PackagingGroup.
         pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -476,52 +429,48 @@ pub mod packaging_configuration {
             self
         }
         /// The ID of a PackagingGroup.
-        pub fn set_packaging_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.packaging_group_id = input;
-            self
+        pub fn set_packaging_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.packaging_group_id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`PackagingConfiguration`](crate::model::PackagingConfiguration).
         pub fn build(self) -> crate::model::PackagingConfiguration {
             crate::model::PackagingConfiguration {
-                arn: self.arn,
-                cmaf_package: self.cmaf_package,
-                dash_package: self.dash_package,
-                hls_package: self.hls_package,
-                id: self.id,
-                mss_package: self.mss_package,
-                packaging_group_id: self.packaging_group_id,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                cmaf_package: self.cmaf_package
+                ,
+                dash_package: self.dash_package
+                ,
+                hls_package: self.hls_package
+                ,
+                id: self.id
+                ,
+                mss_package: self.mss_package
+                ,
+                packaging_group_id: self.packaging_group_id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl PackagingConfiguration {
     /// Creates a new builder-style object to manufacture [`PackagingConfiguration`](crate::model::PackagingConfiguration).
@@ -533,7 +482,7 @@ impl PackagingConfiguration {
 /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MssPackage {
+pub struct MssPackage  {
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
     #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::MssEncryption>,
@@ -546,11 +495,11 @@ pub struct MssPackage {
 }
 impl MssPackage {
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
-    pub fn encryption(&self) -> std::option::Option<&crate::model::MssEncryption> {
+    pub fn encryption(&self) -> std::option::Option<& crate::model::MssEncryption> {
         self.encryption.as_ref()
     }
     /// A list of MSS manifest configurations.
-    pub fn mss_manifests(&self) -> std::option::Option<&[crate::model::MssManifest]> {
+    pub fn mss_manifests(&self) -> std::option::Option<& [crate::model::MssManifest]> {
         self.mss_manifests.as_deref()
     }
     /// The duration (in seconds) of each segment.
@@ -560,7 +509,7 @@ impl MssPackage {
 }
 /// See [`MssPackage`](crate::model::MssPackage).
 pub mod mss_package {
-
+    
     /// A builder for [`MssPackage`](crate::model::MssPackage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -575,12 +524,8 @@ pub mod mss_package {
             self
         }
         /// A Microsoft Smooth Streaming (MSS) encryption configuration.
-        pub fn set_encryption(
-            mut self,
-            input: std::option::Option<crate::model::MssEncryption>,
-        ) -> Self {
-            self.encryption = input;
-            self
+        pub fn set_encryption(mut self, input: std::option::Option<crate::model::MssEncryption>) -> Self {
+            self.encryption = input; self
         }
         /// Appends an item to `mss_manifests`.
         ///
@@ -589,17 +534,13 @@ pub mod mss_package {
         /// A list of MSS manifest configurations.
         pub fn mss_manifests(mut self, input: crate::model::MssManifest) -> Self {
             let mut v = self.mss_manifests.unwrap_or_default();
-            v.push(input);
-            self.mss_manifests = Some(v);
-            self
+                            v.push(input);
+                            self.mss_manifests = Some(v);
+                            self
         }
         /// A list of MSS manifest configurations.
-        pub fn set_mss_manifests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MssManifest>>,
-        ) -> Self {
-            self.mss_manifests = input;
-            self
+        pub fn set_mss_manifests(mut self, input: std::option::Option<std::vec::Vec<crate::model::MssManifest>>) -> Self {
+            self.mss_manifests = input; self
         }
         /// The duration (in seconds) of each segment.
         pub fn segment_duration_seconds(mut self, input: i32) -> Self {
@@ -608,18 +549,23 @@ pub mod mss_package {
         }
         /// The duration (in seconds) of each segment.
         pub fn set_segment_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.segment_duration_seconds = input;
-            self
+            self.segment_duration_seconds = input; self
         }
         /// Consumes the builder and constructs a [`MssPackage`](crate::model::MssPackage).
         pub fn build(self) -> crate::model::MssPackage {
             crate::model::MssPackage {
-                encryption: self.encryption,
-                mss_manifests: self.mss_manifests,
-                segment_duration_seconds: self.segment_duration_seconds.unwrap_or_default(),
+                encryption: self.encryption
+                ,
+                mss_manifests: self.mss_manifests
+                ,
+                segment_duration_seconds: self.segment_duration_seconds
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl MssPackage {
     /// Creates a new builder-style object to manufacture [`MssPackage`](crate::model::MssPackage).
@@ -631,7 +577,7 @@ impl MssPackage {
 /// A Microsoft Smooth Streaming (MSS) manifest configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MssManifest {
+pub struct MssManifest  {
     /// An optional string to include in the name of the manifest.
     #[doc(hidden)]
     pub manifest_name: std::option::Option<std::string::String>,
@@ -641,17 +587,17 @@ pub struct MssManifest {
 }
 impl MssManifest {
     /// An optional string to include in the name of the manifest.
-    pub fn manifest_name(&self) -> std::option::Option<&str> {
+    pub fn manifest_name(&self) -> std::option::Option<& str> {
         self.manifest_name.as_deref()
     }
     /// A StreamSelection configuration.
-    pub fn stream_selection(&self) -> std::option::Option<&crate::model::StreamSelection> {
+    pub fn stream_selection(&self) -> std::option::Option<& crate::model::StreamSelection> {
         self.stream_selection.as_ref()
     }
 }
 /// See [`MssManifest`](crate::model::MssManifest).
 pub mod mss_manifest {
-
+    
     /// A builder for [`MssManifest`](crate::model::MssManifest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -665,12 +611,8 @@ pub mod mss_manifest {
             self
         }
         /// An optional string to include in the name of the manifest.
-        pub fn set_manifest_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.manifest_name = input;
-            self
+        pub fn set_manifest_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.manifest_name = input; self
         }
         /// A StreamSelection configuration.
         pub fn stream_selection(mut self, input: crate::model::StreamSelection) -> Self {
@@ -678,21 +620,21 @@ pub mod mss_manifest {
             self
         }
         /// A StreamSelection configuration.
-        pub fn set_stream_selection(
-            mut self,
-            input: std::option::Option<crate::model::StreamSelection>,
-        ) -> Self {
-            self.stream_selection = input;
-            self
+        pub fn set_stream_selection(mut self, input: std::option::Option<crate::model::StreamSelection>) -> Self {
+            self.stream_selection = input; self
         }
         /// Consumes the builder and constructs a [`MssManifest`](crate::model::MssManifest).
         pub fn build(self) -> crate::model::MssManifest {
             crate::model::MssManifest {
-                manifest_name: self.manifest_name,
-                stream_selection: self.stream_selection,
+                manifest_name: self.manifest_name
+                ,
+                stream_selection: self.stream_selection
+                ,
             }
         }
     }
+    
+    
 }
 impl MssManifest {
     /// Creates a new builder-style object to manufacture [`MssManifest`](crate::model::MssManifest).
@@ -704,7 +646,7 @@ impl MssManifest {
 /// A StreamSelection configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamSelection {
+pub struct StreamSelection  {
     /// The maximum video bitrate (bps) to include in output.
     #[doc(hidden)]
     pub max_video_bits_per_second: i32,
@@ -725,13 +667,13 @@ impl StreamSelection {
         self.min_video_bits_per_second
     }
     /// A directive that determines the order of streams in the output.
-    pub fn stream_order(&self) -> std::option::Option<&crate::model::StreamOrder> {
+    pub fn stream_order(&self) -> std::option::Option<& crate::model::StreamOrder> {
         self.stream_order.as_ref()
     }
 }
 /// See [`StreamSelection`](crate::model::StreamSelection).
 pub mod stream_selection {
-
+    
     /// A builder for [`StreamSelection`](crate::model::StreamSelection).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -747,8 +689,7 @@ pub mod stream_selection {
         }
         /// The maximum video bitrate (bps) to include in output.
         pub fn set_max_video_bits_per_second(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_video_bits_per_second = input;
-            self
+            self.max_video_bits_per_second = input; self
         }
         /// The minimum video bitrate (bps) to include in output.
         pub fn min_video_bits_per_second(mut self, input: i32) -> Self {
@@ -757,8 +698,7 @@ pub mod stream_selection {
         }
         /// The minimum video bitrate (bps) to include in output.
         pub fn set_min_video_bits_per_second(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_video_bits_per_second = input;
-            self
+            self.min_video_bits_per_second = input; self
         }
         /// A directive that determines the order of streams in the output.
         pub fn stream_order(mut self, input: crate::model::StreamOrder) -> Self {
@@ -766,22 +706,25 @@ pub mod stream_selection {
             self
         }
         /// A directive that determines the order of streams in the output.
-        pub fn set_stream_order(
-            mut self,
-            input: std::option::Option<crate::model::StreamOrder>,
-        ) -> Self {
-            self.stream_order = input;
-            self
+        pub fn set_stream_order(mut self, input: std::option::Option<crate::model::StreamOrder>) -> Self {
+            self.stream_order = input; self
         }
         /// Consumes the builder and constructs a [`StreamSelection`](crate::model::StreamSelection).
         pub fn build(self) -> crate::model::StreamSelection {
             crate::model::StreamSelection {
-                max_video_bits_per_second: self.max_video_bits_per_second.unwrap_or_default(),
-                min_video_bits_per_second: self.min_video_bits_per_second.unwrap_or_default(),
-                stream_order: self.stream_order,
+                max_video_bits_per_second: self.max_video_bits_per_second
+                    .unwrap_or_default()
+                ,
+                min_video_bits_per_second: self.min_video_bits_per_second
+                    .unwrap_or_default()
+                ,
+                stream_order: self.stream_order
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamSelection {
     /// Creates a new builder-style object to manufacture [`StreamSelection`](crate::model::StreamSelection).
@@ -796,9 +739,9 @@ impl StreamSelection {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let streamorder = unimplemented!();
 /// match streamorder {
@@ -821,22 +764,14 @@ impl StreamSelection {
 /// Specifically, when `streamorder` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StreamOrder::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StreamOrder {
     #[allow(missing_docs)] // documentation missing in model
     Original,
@@ -845,7 +780,7 @@ pub enum StreamOrder {
     #[allow(missing_docs)] // documentation missing in model
     VideoBitrateDescending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamOrder {
     fn from(s: &str) -> Self {
@@ -853,17 +788,17 @@ impl std::convert::From<&str> for StreamOrder {
             "ORIGINAL" => StreamOrder::Original,
             "VIDEO_BITRATE_ASCENDING" => StreamOrder::VideoBitrateAscending,
             "VIDEO_BITRATE_DESCENDING" => StreamOrder::VideoBitrateDescending,
-            other => StreamOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StreamOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StreamOrder {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StreamOrder::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StreamOrder::from(s))
+                }
+            }
 impl StreamOrder {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -871,15 +806,13 @@ impl StreamOrder {
             StreamOrder::Original => "ORIGINAL",
             StreamOrder::VideoBitrateAscending => "VIDEO_BITRATE_ASCENDING",
             StreamOrder::VideoBitrateDescending => "VIDEO_BITRATE_DESCENDING",
-            StreamOrder::Unknown(value) => value.as_str(),
+            StreamOrder::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ORIGINAL",
-            "VIDEO_BITRATE_ASCENDING",
-            "VIDEO_BITRATE_DESCENDING",
+            "ORIGINAL", "VIDEO_BITRATE_ASCENDING", "VIDEO_BITRATE_DESCENDING"
         ]
     }
 }
@@ -892,20 +825,20 @@ impl AsRef<str> for StreamOrder {
 /// A Microsoft Smooth Streaming (MSS) encryption configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MssEncryption {
+pub struct MssEncryption  {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     #[doc(hidden)]
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
 impl MssEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
+    pub fn speke_key_provider(&self) -> std::option::Option<& crate::model::SpekeKeyProvider> {
         self.speke_key_provider.as_ref()
     }
 }
 /// See [`MssEncryption`](crate::model::MssEncryption).
 pub mod mss_encryption {
-
+    
     /// A builder for [`MssEncryption`](crate::model::MssEncryption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -918,20 +851,19 @@ pub mod mss_encryption {
             self
         }
         /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-        pub fn set_speke_key_provider(
-            mut self,
-            input: std::option::Option<crate::model::SpekeKeyProvider>,
-        ) -> Self {
-            self.speke_key_provider = input;
-            self
+        pub fn set_speke_key_provider(mut self, input: std::option::Option<crate::model::SpekeKeyProvider>) -> Self {
+            self.speke_key_provider = input; self
         }
         /// Consumes the builder and constructs a [`MssEncryption`](crate::model::MssEncryption).
         pub fn build(self) -> crate::model::MssEncryption {
             crate::model::MssEncryption {
-                speke_key_provider: self.speke_key_provider,
+                speke_key_provider: self.speke_key_provider
+                ,
             }
         }
     }
+    
+    
 }
 impl MssEncryption {
     /// Creates a new builder-style object to manufacture [`MssEncryption`](crate::model::MssEncryption).
@@ -943,11 +875,10 @@ impl MssEncryption {
 /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SpekeKeyProvider {
+pub struct SpekeKeyProvider  {
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
     #[doc(hidden)]
-    pub encryption_contract_configuration:
-        std::option::Option<crate::model::EncryptionContractConfiguration>,
+    pub encryption_contract_configuration: std::option::Option<crate::model::EncryptionContractConfiguration>,
     /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -960,52 +891,42 @@ pub struct SpekeKeyProvider {
 }
 impl SpekeKeyProvider {
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
-    pub fn encryption_contract_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::EncryptionContractConfiguration> {
+    pub fn encryption_contract_configuration(&self) -> std::option::Option<& crate::model::EncryptionContractConfiguration> {
         self.encryption_contract_configuration.as_ref()
     }
     /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// The system IDs to include in key requests.
-    pub fn system_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn system_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.system_ids.as_deref()
     }
     /// The URL of the external key provider service.
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 /// See [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
 pub mod speke_key_provider {
-
+    
     /// A builder for [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) encryption_contract_configuration:
-            std::option::Option<crate::model::EncryptionContractConfiguration>,
+        pub(crate) encryption_contract_configuration: std::option::Option<crate::model::EncryptionContractConfiguration>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) system_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) url: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
-        pub fn encryption_contract_configuration(
-            mut self,
-            input: crate::model::EncryptionContractConfiguration,
-        ) -> Self {
+        pub fn encryption_contract_configuration(mut self, input: crate::model::EncryptionContractConfiguration) -> Self {
             self.encryption_contract_configuration = Some(input);
             self
         }
         /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
-        pub fn set_encryption_contract_configuration(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionContractConfiguration>,
-        ) -> Self {
-            self.encryption_contract_configuration = input;
-            self
+        pub fn set_encryption_contract_configuration(mut self, input: std::option::Option<crate::model::EncryptionContractConfiguration>) -> Self {
+            self.encryption_contract_configuration = input; self
         }
         /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1014,8 +935,7 @@ pub mod speke_key_provider {
         }
         /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Appends an item to `system_ids`.
         ///
@@ -1024,17 +944,13 @@ pub mod speke_key_provider {
         /// The system IDs to include in key requests.
         pub fn system_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.system_ids.unwrap_or_default();
-            v.push(input.into());
-            self.system_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.system_ids = Some(v);
+                            self
         }
         /// The system IDs to include in key requests.
-        pub fn set_system_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.system_ids = input;
-            self
+        pub fn set_system_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.system_ids = input; self
         }
         /// The URL of the external key provider service.
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1043,19 +959,24 @@ pub mod speke_key_provider {
         }
         /// The URL of the external key provider service.
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Consumes the builder and constructs a [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
         pub fn build(self) -> crate::model::SpekeKeyProvider {
             crate::model::SpekeKeyProvider {
-                encryption_contract_configuration: self.encryption_contract_configuration,
-                role_arn: self.role_arn,
-                system_ids: self.system_ids,
-                url: self.url,
+                encryption_contract_configuration: self.encryption_contract_configuration
+                ,
+                role_arn: self.role_arn
+                ,
+                system_ids: self.system_ids
+                ,
+                url: self.url
+                ,
             }
         }
     }
+    
+    
 }
 impl SpekeKeyProvider {
     /// Creates a new builder-style object to manufacture [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
@@ -1067,7 +988,7 @@ impl SpekeKeyProvider {
 /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EncryptionContractConfiguration {
+pub struct EncryptionContractConfiguration  {
     /// A collection of audio encryption presets.
     #[doc(hidden)]
     pub preset_speke20_audio: std::option::Option<crate::model::PresetSpeke20Audio>,
@@ -1077,17 +998,17 @@ pub struct EncryptionContractConfiguration {
 }
 impl EncryptionContractConfiguration {
     /// A collection of audio encryption presets.
-    pub fn preset_speke20_audio(&self) -> std::option::Option<&crate::model::PresetSpeke20Audio> {
+    pub fn preset_speke20_audio(&self) -> std::option::Option<& crate::model::PresetSpeke20Audio> {
         self.preset_speke20_audio.as_ref()
     }
     /// A collection of video encryption presets.
-    pub fn preset_speke20_video(&self) -> std::option::Option<&crate::model::PresetSpeke20Video> {
+    pub fn preset_speke20_video(&self) -> std::option::Option<& crate::model::PresetSpeke20Video> {
         self.preset_speke20_video.as_ref()
     }
 }
 /// See [`EncryptionContractConfiguration`](crate::model::EncryptionContractConfiguration).
 pub mod encryption_contract_configuration {
-
+    
     /// A builder for [`EncryptionContractConfiguration`](crate::model::EncryptionContractConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1101,12 +1022,8 @@ pub mod encryption_contract_configuration {
             self
         }
         /// A collection of audio encryption presets.
-        pub fn set_preset_speke20_audio(
-            mut self,
-            input: std::option::Option<crate::model::PresetSpeke20Audio>,
-        ) -> Self {
-            self.preset_speke20_audio = input;
-            self
+        pub fn set_preset_speke20_audio(mut self, input: std::option::Option<crate::model::PresetSpeke20Audio>) -> Self {
+            self.preset_speke20_audio = input; self
         }
         /// A collection of video encryption presets.
         pub fn preset_speke20_video(mut self, input: crate::model::PresetSpeke20Video) -> Self {
@@ -1114,21 +1031,21 @@ pub mod encryption_contract_configuration {
             self
         }
         /// A collection of video encryption presets.
-        pub fn set_preset_speke20_video(
-            mut self,
-            input: std::option::Option<crate::model::PresetSpeke20Video>,
-        ) -> Self {
-            self.preset_speke20_video = input;
-            self
+        pub fn set_preset_speke20_video(mut self, input: std::option::Option<crate::model::PresetSpeke20Video>) -> Self {
+            self.preset_speke20_video = input; self
         }
         /// Consumes the builder and constructs a [`EncryptionContractConfiguration`](crate::model::EncryptionContractConfiguration).
         pub fn build(self) -> crate::model::EncryptionContractConfiguration {
             crate::model::EncryptionContractConfiguration {
-                preset_speke20_audio: self.preset_speke20_audio,
-                preset_speke20_video: self.preset_speke20_video,
+                preset_speke20_audio: self.preset_speke20_audio
+                ,
+                preset_speke20_video: self.preset_speke20_video
+                ,
             }
         }
     }
+    
+    
 }
 impl EncryptionContractConfiguration {
     /// Creates a new builder-style object to manufacture [`EncryptionContractConfiguration`](crate::model::EncryptionContractConfiguration).
@@ -1143,9 +1060,9 @@ impl EncryptionContractConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let presetspeke20video = unimplemented!();
 /// match presetspeke20video {
@@ -1175,22 +1092,14 @@ impl EncryptionContractConfiguration {
 /// Specifically, when `presetspeke20video` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PresetSpeke20Video::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PresetSpeke20Video {
     #[allow(missing_docs)] // documentation missing in model
     PresetVideo1,
@@ -1213,7 +1122,7 @@ pub enum PresetSpeke20Video {
     #[allow(missing_docs)] // documentation missing in model
     Unencrypted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PresetSpeke20Video {
     fn from(s: &str) -> Self {
@@ -1228,19 +1137,17 @@ impl std::convert::From<&str> for PresetSpeke20Video {
             "PRESET-VIDEO-8" => PresetSpeke20Video::PresetVideo8,
             "SHARED" => PresetSpeke20Video::Shared,
             "UNENCRYPTED" => PresetSpeke20Video::Unencrypted,
-            other => {
-                PresetSpeke20Video::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PresetSpeke20Video::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PresetSpeke20Video {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PresetSpeke20Video::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PresetSpeke20Video::from(s))
+                }
+            }
 impl PresetSpeke20Video {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1255,22 +1162,13 @@ impl PresetSpeke20Video {
             PresetSpeke20Video::PresetVideo8 => "PRESET-VIDEO-8",
             PresetSpeke20Video::Shared => "SHARED",
             PresetSpeke20Video::Unencrypted => "UNENCRYPTED",
-            PresetSpeke20Video::Unknown(value) => value.as_str(),
+            PresetSpeke20Video::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "PRESET-VIDEO-1",
-            "PRESET-VIDEO-2",
-            "PRESET-VIDEO-3",
-            "PRESET-VIDEO-4",
-            "PRESET-VIDEO-5",
-            "PRESET-VIDEO-6",
-            "PRESET-VIDEO-7",
-            "PRESET-VIDEO-8",
-            "SHARED",
-            "UNENCRYPTED",
+            "PRESET-VIDEO-1", "PRESET-VIDEO-2", "PRESET-VIDEO-3", "PRESET-VIDEO-4", "PRESET-VIDEO-5", "PRESET-VIDEO-6", "PRESET-VIDEO-7", "PRESET-VIDEO-8", "SHARED", "UNENCRYPTED"
         ]
     }
 }
@@ -1286,9 +1184,9 @@ impl AsRef<str> for PresetSpeke20Video {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let presetspeke20audio = unimplemented!();
 /// match presetspeke20audio {
@@ -1313,22 +1211,14 @@ impl AsRef<str> for PresetSpeke20Video {
 /// Specifically, when `presetspeke20audio` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PresetSpeke20Audio::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PresetSpeke20Audio {
     #[allow(missing_docs)] // documentation missing in model
     PresetAudio1,
@@ -1341,7 +1231,7 @@ pub enum PresetSpeke20Audio {
     #[allow(missing_docs)] // documentation missing in model
     Unencrypted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PresetSpeke20Audio {
     fn from(s: &str) -> Self {
@@ -1351,19 +1241,17 @@ impl std::convert::From<&str> for PresetSpeke20Audio {
             "PRESET-AUDIO-3" => PresetSpeke20Audio::PresetAudio3,
             "SHARED" => PresetSpeke20Audio::Shared,
             "UNENCRYPTED" => PresetSpeke20Audio::Unencrypted,
-            other => {
-                PresetSpeke20Audio::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PresetSpeke20Audio::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PresetSpeke20Audio {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PresetSpeke20Audio::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PresetSpeke20Audio::from(s))
+                }
+            }
 impl PresetSpeke20Audio {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1373,17 +1261,13 @@ impl PresetSpeke20Audio {
             PresetSpeke20Audio::PresetAudio3 => "PRESET-AUDIO-3",
             PresetSpeke20Audio::Shared => "SHARED",
             PresetSpeke20Audio::Unencrypted => "UNENCRYPTED",
-            PresetSpeke20Audio::Unknown(value) => value.as_str(),
+            PresetSpeke20Audio::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "PRESET-AUDIO-1",
-            "PRESET-AUDIO-2",
-            "PRESET-AUDIO-3",
-            "SHARED",
-            "UNENCRYPTED",
+            "PRESET-AUDIO-1", "PRESET-AUDIO-2", "PRESET-AUDIO-3", "SHARED", "UNENCRYPTED"
         ]
     }
 }
@@ -1396,7 +1280,7 @@ impl AsRef<str> for PresetSpeke20Audio {
 /// An HTTP Live Streaming (HLS) packaging configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HlsPackage {
+pub struct HlsPackage  {
     /// An HTTP Live Streaming (HLS) encryption configuration.
     #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::HlsEncryption>,
@@ -1415,11 +1299,11 @@ pub struct HlsPackage {
 }
 impl HlsPackage {
     /// An HTTP Live Streaming (HLS) encryption configuration.
-    pub fn encryption(&self) -> std::option::Option<&crate::model::HlsEncryption> {
+    pub fn encryption(&self) -> std::option::Option<& crate::model::HlsEncryption> {
         self.encryption.as_ref()
     }
     /// A list of HLS manifest configurations.
-    pub fn hls_manifests(&self) -> std::option::Option<&[crate::model::HlsManifest]> {
+    pub fn hls_manifests(&self) -> std::option::Option<& [crate::model::HlsManifest]> {
         self.hls_manifests.as_deref()
     }
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
@@ -1437,7 +1321,7 @@ impl HlsPackage {
 }
 /// See [`HlsPackage`](crate::model::HlsPackage).
 pub mod hls_package {
-
+    
     /// A builder for [`HlsPackage`](crate::model::HlsPackage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1454,12 +1338,8 @@ pub mod hls_package {
             self
         }
         /// An HTTP Live Streaming (HLS) encryption configuration.
-        pub fn set_encryption(
-            mut self,
-            input: std::option::Option<crate::model::HlsEncryption>,
-        ) -> Self {
-            self.encryption = input;
-            self
+        pub fn set_encryption(mut self, input: std::option::Option<crate::model::HlsEncryption>) -> Self {
+            self.encryption = input; self
         }
         /// Appends an item to `hls_manifests`.
         ///
@@ -1468,17 +1348,13 @@ pub mod hls_package {
         /// A list of HLS manifest configurations.
         pub fn hls_manifests(mut self, input: crate::model::HlsManifest) -> Self {
             let mut v = self.hls_manifests.unwrap_or_default();
-            v.push(input);
-            self.hls_manifests = Some(v);
-            self
+                            v.push(input);
+                            self.hls_manifests = Some(v);
+                            self
         }
         /// A list of HLS manifest configurations.
-        pub fn set_hls_manifests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HlsManifest>>,
-        ) -> Self {
-            self.hls_manifests = input;
-            self
+        pub fn set_hls_manifests(mut self, input: std::option::Option<std::vec::Vec<crate::model::HlsManifest>>) -> Self {
+            self.hls_manifests = input; self
         }
         /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
         pub fn include_dvb_subtitles(mut self, input: bool) -> Self {
@@ -1487,8 +1363,7 @@ pub mod hls_package {
         }
         /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
         pub fn set_include_dvb_subtitles(mut self, input: std::option::Option<bool>) -> Self {
-            self.include_dvb_subtitles = input;
-            self
+            self.include_dvb_subtitles = input; self
         }
         /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
         pub fn segment_duration_seconds(mut self, input: i32) -> Self {
@@ -1497,8 +1372,7 @@ pub mod hls_package {
         }
         /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
         pub fn set_segment_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.segment_duration_seconds = input;
-            self
+            self.segment_duration_seconds = input; self
         }
         /// When enabled, audio streams will be placed in rendition groups in the output.
         pub fn use_audio_rendition_group(mut self, input: bool) -> Self {
@@ -1507,20 +1381,29 @@ pub mod hls_package {
         }
         /// When enabled, audio streams will be placed in rendition groups in the output.
         pub fn set_use_audio_rendition_group(mut self, input: std::option::Option<bool>) -> Self {
-            self.use_audio_rendition_group = input;
-            self
+            self.use_audio_rendition_group = input; self
         }
         /// Consumes the builder and constructs a [`HlsPackage`](crate::model::HlsPackage).
         pub fn build(self) -> crate::model::HlsPackage {
             crate::model::HlsPackage {
-                encryption: self.encryption,
-                hls_manifests: self.hls_manifests,
-                include_dvb_subtitles: self.include_dvb_subtitles.unwrap_or_default(),
-                segment_duration_seconds: self.segment_duration_seconds.unwrap_or_default(),
-                use_audio_rendition_group: self.use_audio_rendition_group.unwrap_or_default(),
+                encryption: self.encryption
+                ,
+                hls_manifests: self.hls_manifests
+                ,
+                include_dvb_subtitles: self.include_dvb_subtitles
+                    .unwrap_or_default()
+                ,
+                segment_duration_seconds: self.segment_duration_seconds
+                    .unwrap_or_default()
+                ,
+                use_audio_rendition_group: self.use_audio_rendition_group
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl HlsPackage {
     /// Creates a new builder-style object to manufacture [`HlsPackage`](crate::model::HlsPackage).
@@ -1532,7 +1415,7 @@ impl HlsPackage {
 /// An HTTP Live Streaming (HLS) manifest configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HlsManifest {
+pub struct HlsManifest  {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source.
     #[doc(hidden)]
     pub ad_markers: std::option::Option<crate::model::AdMarkers>,
@@ -1554,7 +1437,7 @@ pub struct HlsManifest {
 }
 impl HlsManifest {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source.
-    pub fn ad_markers(&self) -> std::option::Option<&crate::model::AdMarkers> {
+    pub fn ad_markers(&self) -> std::option::Option<& crate::model::AdMarkers> {
         self.ad_markers.as_ref()
     }
     /// When enabled, an I-Frame only stream will be included in the output.
@@ -1562,7 +1445,7 @@ impl HlsManifest {
         self.include_iframe_only_stream
     }
     /// An optional string to include in the name of the manifest.
-    pub fn manifest_name(&self) -> std::option::Option<&str> {
+    pub fn manifest_name(&self) -> std::option::Option<& str> {
         self.manifest_name.as_deref()
     }
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
@@ -1574,13 +1457,13 @@ impl HlsManifest {
         self.repeat_ext_x_key
     }
     /// A StreamSelection configuration.
-    pub fn stream_selection(&self) -> std::option::Option<&crate::model::StreamSelection> {
+    pub fn stream_selection(&self) -> std::option::Option<& crate::model::StreamSelection> {
         self.stream_selection.as_ref()
     }
 }
 /// See [`HlsManifest`](crate::model::HlsManifest).
 pub mod hls_manifest {
-
+    
     /// A builder for [`HlsManifest`](crate::model::HlsManifest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1598,12 +1481,8 @@ pub mod hls_manifest {
             self
         }
         /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source.
-        pub fn set_ad_markers(
-            mut self,
-            input: std::option::Option<crate::model::AdMarkers>,
-        ) -> Self {
-            self.ad_markers = input;
-            self
+        pub fn set_ad_markers(mut self, input: std::option::Option<crate::model::AdMarkers>) -> Self {
+            self.ad_markers = input; self
         }
         /// When enabled, an I-Frame only stream will be included in the output.
         pub fn include_iframe_only_stream(mut self, input: bool) -> Self {
@@ -1612,8 +1491,7 @@ pub mod hls_manifest {
         }
         /// When enabled, an I-Frame only stream will be included in the output.
         pub fn set_include_iframe_only_stream(mut self, input: std::option::Option<bool>) -> Self {
-            self.include_iframe_only_stream = input;
-            self
+            self.include_iframe_only_stream = input; self
         }
         /// An optional string to include in the name of the manifest.
         pub fn manifest_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1621,12 +1499,8 @@ pub mod hls_manifest {
             self
         }
         /// An optional string to include in the name of the manifest.
-        pub fn set_manifest_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.manifest_name = input;
-            self
+        pub fn set_manifest_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.manifest_name = input; self
         }
         /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
         pub fn program_date_time_interval_seconds(mut self, input: i32) -> Self {
@@ -1634,12 +1508,8 @@ pub mod hls_manifest {
             self
         }
         /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
-        pub fn set_program_date_time_interval_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.program_date_time_interval_seconds = input;
-            self
+        pub fn set_program_date_time_interval_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.program_date_time_interval_seconds = input; self
         }
         /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
         pub fn repeat_ext_x_key(mut self, input: bool) -> Self {
@@ -1648,8 +1518,7 @@ pub mod hls_manifest {
         }
         /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
         pub fn set_repeat_ext_x_key(mut self, input: std::option::Option<bool>) -> Self {
-            self.repeat_ext_x_key = input;
-            self
+            self.repeat_ext_x_key = input; self
         }
         /// A StreamSelection configuration.
         pub fn stream_selection(mut self, input: crate::model::StreamSelection) -> Self {
@@ -1657,27 +1526,32 @@ pub mod hls_manifest {
             self
         }
         /// A StreamSelection configuration.
-        pub fn set_stream_selection(
-            mut self,
-            input: std::option::Option<crate::model::StreamSelection>,
-        ) -> Self {
-            self.stream_selection = input;
-            self
+        pub fn set_stream_selection(mut self, input: std::option::Option<crate::model::StreamSelection>) -> Self {
+            self.stream_selection = input; self
         }
         /// Consumes the builder and constructs a [`HlsManifest`](crate::model::HlsManifest).
         pub fn build(self) -> crate::model::HlsManifest {
             crate::model::HlsManifest {
-                ad_markers: self.ad_markers,
-                include_iframe_only_stream: self.include_iframe_only_stream.unwrap_or_default(),
-                manifest_name: self.manifest_name,
-                program_date_time_interval_seconds: self
-                    .program_date_time_interval_seconds
-                    .unwrap_or_default(),
-                repeat_ext_x_key: self.repeat_ext_x_key.unwrap_or_default(),
-                stream_selection: self.stream_selection,
+                ad_markers: self.ad_markers
+                ,
+                include_iframe_only_stream: self.include_iframe_only_stream
+                    .unwrap_or_default()
+                ,
+                manifest_name: self.manifest_name
+                ,
+                program_date_time_interval_seconds: self.program_date_time_interval_seconds
+                    .unwrap_or_default()
+                ,
+                repeat_ext_x_key: self.repeat_ext_x_key
+                    .unwrap_or_default()
+                ,
+                stream_selection: self.stream_selection
+                ,
             }
         }
     }
+    
+    
 }
 impl HlsManifest {
     /// Creates a new builder-style object to manufacture [`HlsManifest`](crate::model::HlsManifest).
@@ -1692,9 +1566,9 @@ impl HlsManifest {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let admarkers = unimplemented!();
 /// match admarkers {
@@ -1717,22 +1591,14 @@ impl HlsManifest {
 /// Specifically, when `admarkers` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AdMarkers::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AdMarkers {
     #[allow(missing_docs)] // documentation missing in model
     None,
@@ -1741,7 +1607,7 @@ pub enum AdMarkers {
     #[allow(missing_docs)] // documentation missing in model
     Scte35Enhanced,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AdMarkers {
     fn from(s: &str) -> Self {
@@ -1749,17 +1615,17 @@ impl std::convert::From<&str> for AdMarkers {
             "NONE" => AdMarkers::None,
             "PASSTHROUGH" => AdMarkers::Passthrough,
             "SCTE35_ENHANCED" => AdMarkers::Scte35Enhanced,
-            other => AdMarkers::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AdMarkers::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AdMarkers {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AdMarkers::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AdMarkers::from(s))
+                }
+            }
 impl AdMarkers {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1767,12 +1633,14 @@ impl AdMarkers {
             AdMarkers::None => "NONE",
             AdMarkers::Passthrough => "PASSTHROUGH",
             AdMarkers::Scte35Enhanced => "SCTE35_ENHANCED",
-            AdMarkers::Unknown(value) => value.as_str(),
+            AdMarkers::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NONE", "PASSTHROUGH", "SCTE35_ENHANCED"]
+        &[
+            "NONE", "PASSTHROUGH", "SCTE35_ENHANCED"
+        ]
     }
 }
 impl AsRef<str> for AdMarkers {
@@ -1784,7 +1652,7 @@ impl AsRef<str> for AdMarkers {
 /// An HTTP Live Streaming (HLS) encryption configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HlsEncryption {
+pub struct HlsEncryption  {
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
     #[doc(hidden)]
     pub constant_initialization_vector: std::option::Option<std::string::String>,
@@ -1797,21 +1665,21 @@ pub struct HlsEncryption {
 }
 impl HlsEncryption {
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
-    pub fn constant_initialization_vector(&self) -> std::option::Option<&str> {
+    pub fn constant_initialization_vector(&self) -> std::option::Option<& str> {
         self.constant_initialization_vector.as_deref()
     }
     /// The encryption method to use.
-    pub fn encryption_method(&self) -> std::option::Option<&crate::model::EncryptionMethod> {
+    pub fn encryption_method(&self) -> std::option::Option<& crate::model::EncryptionMethod> {
         self.encryption_method.as_ref()
     }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
+    pub fn speke_key_provider(&self) -> std::option::Option<& crate::model::SpekeKeyProvider> {
         self.speke_key_provider.as_ref()
     }
 }
 /// See [`HlsEncryption`](crate::model::HlsEncryption).
 pub mod hls_encryption {
-
+    
     /// A builder for [`HlsEncryption`](crate::model::HlsEncryption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1821,20 +1689,13 @@ pub mod hls_encryption {
     }
     impl Builder {
         /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
-        pub fn constant_initialization_vector(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn constant_initialization_vector(mut self, input: impl Into<std::string::String>) -> Self {
             self.constant_initialization_vector = Some(input.into());
             self
         }
         /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
-        pub fn set_constant_initialization_vector(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.constant_initialization_vector = input;
-            self
+        pub fn set_constant_initialization_vector(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.constant_initialization_vector = input; self
         }
         /// The encryption method to use.
         pub fn encryption_method(mut self, input: crate::model::EncryptionMethod) -> Self {
@@ -1842,12 +1703,8 @@ pub mod hls_encryption {
             self
         }
         /// The encryption method to use.
-        pub fn set_encryption_method(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionMethod>,
-        ) -> Self {
-            self.encryption_method = input;
-            self
+        pub fn set_encryption_method(mut self, input: std::option::Option<crate::model::EncryptionMethod>) -> Self {
+            self.encryption_method = input; self
         }
         /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
         pub fn speke_key_provider(mut self, input: crate::model::SpekeKeyProvider) -> Self {
@@ -1855,22 +1712,23 @@ pub mod hls_encryption {
             self
         }
         /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-        pub fn set_speke_key_provider(
-            mut self,
-            input: std::option::Option<crate::model::SpekeKeyProvider>,
-        ) -> Self {
-            self.speke_key_provider = input;
-            self
+        pub fn set_speke_key_provider(mut self, input: std::option::Option<crate::model::SpekeKeyProvider>) -> Self {
+            self.speke_key_provider = input; self
         }
         /// Consumes the builder and constructs a [`HlsEncryption`](crate::model::HlsEncryption).
         pub fn build(self) -> crate::model::HlsEncryption {
             crate::model::HlsEncryption {
-                constant_initialization_vector: self.constant_initialization_vector,
-                encryption_method: self.encryption_method,
-                speke_key_provider: self.speke_key_provider,
+                constant_initialization_vector: self.constant_initialization_vector
+                ,
+                encryption_method: self.encryption_method
+                ,
+                speke_key_provider: self.speke_key_provider
+                ,
             }
         }
     }
+    
+    
 }
 impl HlsEncryption {
     /// Creates a new builder-style object to manufacture [`HlsEncryption`](crate::model::HlsEncryption).
@@ -1885,9 +1743,9 @@ impl HlsEncryption {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encryptionmethod = unimplemented!();
 /// match encryptionmethod {
@@ -1909,58 +1767,52 @@ impl HlsEncryption {
 /// Specifically, when `encryptionmethod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncryptionMethod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EncryptionMethod {
     #[allow(missing_docs)] // documentation missing in model
     Aes128,
     #[allow(missing_docs)] // documentation missing in model
     SampleAes,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionMethod {
     fn from(s: &str) -> Self {
         match s {
             "AES_128" => EncryptionMethod::Aes128,
             "SAMPLE_AES" => EncryptionMethod::SampleAes,
-            other => EncryptionMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EncryptionMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EncryptionMethod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncryptionMethod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EncryptionMethod::from(s))
+                }
+            }
 impl EncryptionMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncryptionMethod::Aes128 => "AES_128",
             EncryptionMethod::SampleAes => "SAMPLE_AES",
-            EncryptionMethod::Unknown(value) => value.as_str(),
+            EncryptionMethod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AES_128", "SAMPLE_AES"]
+        &[
+            "AES_128", "SAMPLE_AES"
+        ]
     }
 }
 impl AsRef<str> for EncryptionMethod {
@@ -1972,7 +1824,7 @@ impl AsRef<str> for EncryptionMethod {
 /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DashPackage {
+pub struct DashPackage  {
     /// A list of DASH manifest configurations.
     #[doc(hidden)]
     pub dash_manifests: std::option::Option<std::vec::Vec<crate::model::DashManifest>>,
@@ -1997,11 +1849,11 @@ pub struct DashPackage {
 }
 impl DashPackage {
     /// A list of DASH manifest configurations.
-    pub fn dash_manifests(&self) -> std::option::Option<&[crate::model::DashManifest]> {
+    pub fn dash_manifests(&self) -> std::option::Option<& [crate::model::DashManifest]> {
         self.dash_manifests.as_deref()
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
-    pub fn encryption(&self) -> std::option::Option<&crate::model::DashEncryption> {
+    pub fn encryption(&self) -> std::option::Option<& crate::model::DashEncryption> {
         self.encryption.as_ref()
     }
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
@@ -2013,7 +1865,7 @@ impl DashPackage {
         self.include_iframe_only_stream
     }
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Asset contains SCTE-35 ad markers.
-    pub fn period_triggers(&self) -> std::option::Option<&[crate::model::PeriodTriggersElement]> {
+    pub fn period_triggers(&self) -> std::option::Option<& [crate::model::PeriodTriggersElement]> {
         self.period_triggers.as_deref()
     }
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
@@ -2021,15 +1873,13 @@ impl DashPackage {
         self.segment_duration_seconds
     }
     /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
-    pub fn segment_template_format(
-        &self,
-    ) -> std::option::Option<&crate::model::SegmentTemplateFormat> {
+    pub fn segment_template_format(&self) -> std::option::Option<& crate::model::SegmentTemplateFormat> {
         self.segment_template_format.as_ref()
     }
 }
 /// See [`DashPackage`](crate::model::DashPackage).
 pub mod dash_package {
-
+    
     /// A builder for [`DashPackage`](crate::model::DashPackage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2037,11 +1887,9 @@ pub mod dash_package {
         pub(crate) encryption: std::option::Option<crate::model::DashEncryption>,
         pub(crate) include_encoder_configuration_in_segments: std::option::Option<bool>,
         pub(crate) include_iframe_only_stream: std::option::Option<bool>,
-        pub(crate) period_triggers:
-            std::option::Option<std::vec::Vec<crate::model::PeriodTriggersElement>>,
+        pub(crate) period_triggers: std::option::Option<std::vec::Vec<crate::model::PeriodTriggersElement>>,
         pub(crate) segment_duration_seconds: std::option::Option<i32>,
-        pub(crate) segment_template_format:
-            std::option::Option<crate::model::SegmentTemplateFormat>,
+        pub(crate) segment_template_format: std::option::Option<crate::model::SegmentTemplateFormat>,
     }
     impl Builder {
         /// Appends an item to `dash_manifests`.
@@ -2051,17 +1899,13 @@ pub mod dash_package {
         /// A list of DASH manifest configurations.
         pub fn dash_manifests(mut self, input: crate::model::DashManifest) -> Self {
             let mut v = self.dash_manifests.unwrap_or_default();
-            v.push(input);
-            self.dash_manifests = Some(v);
-            self
+                            v.push(input);
+                            self.dash_manifests = Some(v);
+                            self
         }
         /// A list of DASH manifest configurations.
-        pub fn set_dash_manifests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DashManifest>>,
-        ) -> Self {
-            self.dash_manifests = input;
-            self
+        pub fn set_dash_manifests(mut self, input: std::option::Option<std::vec::Vec<crate::model::DashManifest>>) -> Self {
+            self.dash_manifests = input; self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
         pub fn encryption(mut self, input: crate::model::DashEncryption) -> Self {
@@ -2069,12 +1913,8 @@ pub mod dash_package {
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
-        pub fn set_encryption(
-            mut self,
-            input: std::option::Option<crate::model::DashEncryption>,
-        ) -> Self {
-            self.encryption = input;
-            self
+        pub fn set_encryption(mut self, input: std::option::Option<crate::model::DashEncryption>) -> Self {
+            self.encryption = input; self
         }
         /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
         pub fn include_encoder_configuration_in_segments(mut self, input: bool) -> Self {
@@ -2082,12 +1922,8 @@ pub mod dash_package {
             self
         }
         /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
-        pub fn set_include_encoder_configuration_in_segments(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.include_encoder_configuration_in_segments = input;
-            self
+        pub fn set_include_encoder_configuration_in_segments(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_encoder_configuration_in_segments = input; self
         }
         /// When enabled, an I-Frame only stream will be included in the output.
         pub fn include_iframe_only_stream(mut self, input: bool) -> Self {
@@ -2096,8 +1932,7 @@ pub mod dash_package {
         }
         /// When enabled, an I-Frame only stream will be included in the output.
         pub fn set_include_iframe_only_stream(mut self, input: std::option::Option<bool>) -> Self {
-            self.include_iframe_only_stream = input;
-            self
+            self.include_iframe_only_stream = input; self
         }
         /// Appends an item to `period_triggers`.
         ///
@@ -2106,17 +1941,13 @@ pub mod dash_package {
         /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Asset contains SCTE-35 ad markers.
         pub fn period_triggers(mut self, input: crate::model::PeriodTriggersElement) -> Self {
             let mut v = self.period_triggers.unwrap_or_default();
-            v.push(input);
-            self.period_triggers = Some(v);
-            self
+                            v.push(input);
+                            self.period_triggers = Some(v);
+                            self
         }
         /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Asset contains SCTE-35 ad markers.
-        pub fn set_period_triggers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PeriodTriggersElement>>,
-        ) -> Self {
-            self.period_triggers = input;
-            self
+        pub fn set_period_triggers(mut self, input: std::option::Option<std::vec::Vec<crate::model::PeriodTriggersElement>>) -> Self {
+            self.period_triggers = input; self
         }
         /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
         pub fn segment_duration_seconds(mut self, input: i32) -> Self {
@@ -2125,40 +1956,42 @@ pub mod dash_package {
         }
         /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
         pub fn set_segment_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.segment_duration_seconds = input;
-            self
+            self.segment_duration_seconds = input; self
         }
         /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
-        pub fn segment_template_format(
-            mut self,
-            input: crate::model::SegmentTemplateFormat,
-        ) -> Self {
+        pub fn segment_template_format(mut self, input: crate::model::SegmentTemplateFormat) -> Self {
             self.segment_template_format = Some(input);
             self
         }
         /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
-        pub fn set_segment_template_format(
-            mut self,
-            input: std::option::Option<crate::model::SegmentTemplateFormat>,
-        ) -> Self {
-            self.segment_template_format = input;
-            self
+        pub fn set_segment_template_format(mut self, input: std::option::Option<crate::model::SegmentTemplateFormat>) -> Self {
+            self.segment_template_format = input; self
         }
         /// Consumes the builder and constructs a [`DashPackage`](crate::model::DashPackage).
         pub fn build(self) -> crate::model::DashPackage {
             crate::model::DashPackage {
-                dash_manifests: self.dash_manifests,
-                encryption: self.encryption,
-                include_encoder_configuration_in_segments: self
-                    .include_encoder_configuration_in_segments
-                    .unwrap_or_default(),
-                include_iframe_only_stream: self.include_iframe_only_stream.unwrap_or_default(),
-                period_triggers: self.period_triggers,
-                segment_duration_seconds: self.segment_duration_seconds.unwrap_or_default(),
-                segment_template_format: self.segment_template_format,
+                dash_manifests: self.dash_manifests
+                ,
+                encryption: self.encryption
+                ,
+                include_encoder_configuration_in_segments: self.include_encoder_configuration_in_segments
+                    .unwrap_or_default()
+                ,
+                include_iframe_only_stream: self.include_iframe_only_stream
+                    .unwrap_or_default()
+                ,
+                period_triggers: self.period_triggers
+                ,
+                segment_duration_seconds: self.segment_duration_seconds
+                    .unwrap_or_default()
+                ,
+                segment_template_format: self.segment_template_format
+                ,
             }
         }
     }
+    
+    
 }
 impl DashPackage {
     /// Creates a new builder-style object to manufacture [`DashPackage`](crate::model::DashPackage).
@@ -2173,9 +2006,9 @@ impl DashPackage {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let segmenttemplateformat = unimplemented!();
 /// match segmenttemplateformat {
@@ -2198,22 +2031,14 @@ impl DashPackage {
 /// Specifically, when `segmenttemplateformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SegmentTemplateFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SegmentTemplateFormat {
     #[allow(missing_docs)] // documentation missing in model
     NumberWithDuration,
@@ -2222,7 +2047,7 @@ pub enum SegmentTemplateFormat {
     #[allow(missing_docs)] // documentation missing in model
     TimeWithTimeline,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SegmentTemplateFormat {
     fn from(s: &str) -> Self {
@@ -2230,19 +2055,17 @@ impl std::convert::From<&str> for SegmentTemplateFormat {
             "NUMBER_WITH_DURATION" => SegmentTemplateFormat::NumberWithDuration,
             "NUMBER_WITH_TIMELINE" => SegmentTemplateFormat::NumberWithTimeline,
             "TIME_WITH_TIMELINE" => SegmentTemplateFormat::TimeWithTimeline,
-            other => {
-                SegmentTemplateFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SegmentTemplateFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SegmentTemplateFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SegmentTemplateFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SegmentTemplateFormat::from(s))
+                }
+            }
 impl SegmentTemplateFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2250,15 +2073,13 @@ impl SegmentTemplateFormat {
             SegmentTemplateFormat::NumberWithDuration => "NUMBER_WITH_DURATION",
             SegmentTemplateFormat::NumberWithTimeline => "NUMBER_WITH_TIMELINE",
             SegmentTemplateFormat::TimeWithTimeline => "TIME_WITH_TIMELINE",
-            SegmentTemplateFormat::Unknown(value) => value.as_str(),
+            SegmentTemplateFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "NUMBER_WITH_DURATION",
-            "NUMBER_WITH_TIMELINE",
-            "TIME_WITH_TIMELINE",
+            "NUMBER_WITH_DURATION", "NUMBER_WITH_TIMELINE", "TIME_WITH_TIMELINE"
         ]
     }
 }
@@ -2274,9 +2095,9 @@ impl AsRef<str> for SegmentTemplateFormat {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let periodtriggerselement = unimplemented!();
 /// match periodtriggerselement {
@@ -2297,56 +2118,48 @@ impl AsRef<str> for SegmentTemplateFormat {
 /// Specifically, when `periodtriggerselement` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PeriodTriggersElement::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PeriodTriggersElement {
     #[allow(missing_docs)] // documentation missing in model
     Ads,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PeriodTriggersElement {
     fn from(s: &str) -> Self {
         match s {
             "ADS" => PeriodTriggersElement::Ads,
-            other => {
-                PeriodTriggersElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PeriodTriggersElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PeriodTriggersElement {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PeriodTriggersElement::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PeriodTriggersElement::from(s))
+                }
+            }
 impl PeriodTriggersElement {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PeriodTriggersElement::Ads => "ADS",
-            PeriodTriggersElement::Unknown(value) => value.as_str(),
+            PeriodTriggersElement::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ADS"]
+        &[
+            "ADS"
+        ]
     }
 }
 impl AsRef<str> for PeriodTriggersElement {
@@ -2358,20 +2171,20 @@ impl AsRef<str> for PeriodTriggersElement {
 /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DashEncryption {
+pub struct DashEncryption  {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     #[doc(hidden)]
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
 impl DashEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
+    pub fn speke_key_provider(&self) -> std::option::Option<& crate::model::SpekeKeyProvider> {
         self.speke_key_provider.as_ref()
     }
 }
 /// See [`DashEncryption`](crate::model::DashEncryption).
 pub mod dash_encryption {
-
+    
     /// A builder for [`DashEncryption`](crate::model::DashEncryption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2384,20 +2197,19 @@ pub mod dash_encryption {
             self
         }
         /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-        pub fn set_speke_key_provider(
-            mut self,
-            input: std::option::Option<crate::model::SpekeKeyProvider>,
-        ) -> Self {
-            self.speke_key_provider = input;
-            self
+        pub fn set_speke_key_provider(mut self, input: std::option::Option<crate::model::SpekeKeyProvider>) -> Self {
+            self.speke_key_provider = input; self
         }
         /// Consumes the builder and constructs a [`DashEncryption`](crate::model::DashEncryption).
         pub fn build(self) -> crate::model::DashEncryption {
             crate::model::DashEncryption {
-                speke_key_provider: self.speke_key_provider,
+                speke_key_provider: self.speke_key_provider
+                ,
             }
         }
     }
+    
+    
 }
 impl DashEncryption {
     /// Creates a new builder-style object to manufacture [`DashEncryption`](crate::model::DashEncryption).
@@ -2409,7 +2221,7 @@ impl DashEncryption {
 /// A DASH manifest configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DashManifest {
+pub struct DashManifest  {
     /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
     #[doc(hidden)]
     pub manifest_layout: std::option::Option<crate::model::ManifestLayout>,
@@ -2431,11 +2243,11 @@ pub struct DashManifest {
 }
 impl DashManifest {
     /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
-    pub fn manifest_layout(&self) -> std::option::Option<&crate::model::ManifestLayout> {
+    pub fn manifest_layout(&self) -> std::option::Option<& crate::model::ManifestLayout> {
         self.manifest_layout.as_ref()
     }
     /// An optional string to include in the name of the manifest.
-    pub fn manifest_name(&self) -> std::option::Option<&str> {
+    pub fn manifest_name(&self) -> std::option::Option<& str> {
         self.manifest_name.as_deref()
     }
     /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
@@ -2443,21 +2255,21 @@ impl DashManifest {
         self.min_buffer_time_seconds
     }
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
-    pub fn profile(&self) -> std::option::Option<&crate::model::Profile> {
+    pub fn profile(&self) -> std::option::Option<& crate::model::Profile> {
         self.profile.as_ref()
     }
     /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content. The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with this option.
-    pub fn scte_markers_source(&self) -> std::option::Option<&crate::model::ScteMarkersSource> {
+    pub fn scte_markers_source(&self) -> std::option::Option<& crate::model::ScteMarkersSource> {
         self.scte_markers_source.as_ref()
     }
     /// A StreamSelection configuration.
-    pub fn stream_selection(&self) -> std::option::Option<&crate::model::StreamSelection> {
+    pub fn stream_selection(&self) -> std::option::Option<& crate::model::StreamSelection> {
         self.stream_selection.as_ref()
     }
 }
 /// See [`DashManifest`](crate::model::DashManifest).
 pub mod dash_manifest {
-
+    
     /// A builder for [`DashManifest`](crate::model::DashManifest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2475,12 +2287,8 @@ pub mod dash_manifest {
             self
         }
         /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
-        pub fn set_manifest_layout(
-            mut self,
-            input: std::option::Option<crate::model::ManifestLayout>,
-        ) -> Self {
-            self.manifest_layout = input;
-            self
+        pub fn set_manifest_layout(mut self, input: std::option::Option<crate::model::ManifestLayout>) -> Self {
+            self.manifest_layout = input; self
         }
         /// An optional string to include in the name of the manifest.
         pub fn manifest_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2488,12 +2296,8 @@ pub mod dash_manifest {
             self
         }
         /// An optional string to include in the name of the manifest.
-        pub fn set_manifest_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.manifest_name = input;
-            self
+        pub fn set_manifest_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.manifest_name = input; self
         }
         /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
         pub fn min_buffer_time_seconds(mut self, input: i32) -> Self {
@@ -2502,8 +2306,7 @@ pub mod dash_manifest {
         }
         /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
         pub fn set_min_buffer_time_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_buffer_time_seconds = input;
-            self
+            self.min_buffer_time_seconds = input; self
         }
         /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
         pub fn profile(mut self, input: crate::model::Profile) -> Self {
@@ -2512,8 +2315,7 @@ pub mod dash_manifest {
         }
         /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
         pub fn set_profile(mut self, input: std::option::Option<crate::model::Profile>) -> Self {
-            self.profile = input;
-            self
+            self.profile = input; self
         }
         /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content. The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with this option.
         pub fn scte_markers_source(mut self, input: crate::model::ScteMarkersSource) -> Self {
@@ -2521,12 +2323,8 @@ pub mod dash_manifest {
             self
         }
         /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content. The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with this option.
-        pub fn set_scte_markers_source(
-            mut self,
-            input: std::option::Option<crate::model::ScteMarkersSource>,
-        ) -> Self {
-            self.scte_markers_source = input;
-            self
+        pub fn set_scte_markers_source(mut self, input: std::option::Option<crate::model::ScteMarkersSource>) -> Self {
+            self.scte_markers_source = input; self
         }
         /// A StreamSelection configuration.
         pub fn stream_selection(mut self, input: crate::model::StreamSelection) -> Self {
@@ -2534,25 +2332,30 @@ pub mod dash_manifest {
             self
         }
         /// A StreamSelection configuration.
-        pub fn set_stream_selection(
-            mut self,
-            input: std::option::Option<crate::model::StreamSelection>,
-        ) -> Self {
-            self.stream_selection = input;
-            self
+        pub fn set_stream_selection(mut self, input: std::option::Option<crate::model::StreamSelection>) -> Self {
+            self.stream_selection = input; self
         }
         /// Consumes the builder and constructs a [`DashManifest`](crate::model::DashManifest).
         pub fn build(self) -> crate::model::DashManifest {
             crate::model::DashManifest {
-                manifest_layout: self.manifest_layout,
-                manifest_name: self.manifest_name,
-                min_buffer_time_seconds: self.min_buffer_time_seconds.unwrap_or_default(),
-                profile: self.profile,
-                scte_markers_source: self.scte_markers_source,
-                stream_selection: self.stream_selection,
+                manifest_layout: self.manifest_layout
+                ,
+                manifest_name: self.manifest_name
+                ,
+                min_buffer_time_seconds: self.min_buffer_time_seconds
+                    .unwrap_or_default()
+                ,
+                profile: self.profile
+                ,
+                scte_markers_source: self.scte_markers_source
+                ,
+                stream_selection: self.stream_selection
+                ,
             }
         }
     }
+    
+    
 }
 impl DashManifest {
     /// Creates a new builder-style object to manufacture [`DashManifest`](crate::model::DashManifest).
@@ -2567,9 +2370,9 @@ impl DashManifest {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sctemarkerssource = unimplemented!();
 /// match sctemarkerssource {
@@ -2591,60 +2394,52 @@ impl DashManifest {
 /// Specifically, when `sctemarkerssource` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScteMarkersSource::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ScteMarkersSource {
     #[allow(missing_docs)] // documentation missing in model
     Manifest,
     #[allow(missing_docs)] // documentation missing in model
     Segments,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScteMarkersSource {
     fn from(s: &str) -> Self {
         match s {
             "MANIFEST" => ScteMarkersSource::Manifest,
             "SEGMENTS" => ScteMarkersSource::Segments,
-            other => {
-                ScteMarkersSource::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ScteMarkersSource::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ScteMarkersSource {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScteMarkersSource::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ScteMarkersSource::from(s))
+                }
+            }
 impl ScteMarkersSource {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScteMarkersSource::Manifest => "MANIFEST",
             ScteMarkersSource::Segments => "SEGMENTS",
-            ScteMarkersSource::Unknown(value) => value.as_str(),
+            ScteMarkersSource::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MANIFEST", "SEGMENTS"]
+        &[
+            "MANIFEST", "SEGMENTS"
+        ]
     }
 }
 impl AsRef<str> for ScteMarkersSource {
@@ -2659,9 +2454,9 @@ impl AsRef<str> for ScteMarkersSource {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let profile = unimplemented!();
 /// match profile {
@@ -2683,58 +2478,52 @@ impl AsRef<str> for ScteMarkersSource {
 /// Specifically, when `profile` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Profile::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Profile {
     #[allow(missing_docs)] // documentation missing in model
     Hbbtv15,
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Profile {
     fn from(s: &str) -> Self {
         match s {
             "HBBTV_1_5" => Profile::Hbbtv15,
             "NONE" => Profile::None,
-            other => Profile::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Profile::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Profile {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Profile::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Profile::from(s))
+                }
+            }
 impl Profile {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Profile::Hbbtv15 => "HBBTV_1_5",
             Profile::None => "NONE",
-            Profile::Unknown(value) => value.as_str(),
+            Profile::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HBBTV_1_5", "NONE"]
+        &[
+            "HBBTV_1_5", "NONE"
+        ]
     }
 }
 impl AsRef<str> for Profile {
@@ -2749,9 +2538,9 @@ impl AsRef<str> for Profile {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let manifestlayout = unimplemented!();
 /// match manifestlayout {
@@ -2773,58 +2562,52 @@ impl AsRef<str> for Profile {
 /// Specifically, when `manifestlayout` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ManifestLayout::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ManifestLayout {
     #[allow(missing_docs)] // documentation missing in model
     Compact,
     #[allow(missing_docs)] // documentation missing in model
     Full,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ManifestLayout {
     fn from(s: &str) -> Self {
         match s {
             "COMPACT" => ManifestLayout::Compact,
             "FULL" => ManifestLayout::Full,
-            other => ManifestLayout::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ManifestLayout::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ManifestLayout {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ManifestLayout::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ManifestLayout::from(s))
+                }
+            }
 impl ManifestLayout {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ManifestLayout::Compact => "COMPACT",
             ManifestLayout::Full => "FULL",
-            ManifestLayout::Unknown(value) => value.as_str(),
+            ManifestLayout::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPACT", "FULL"]
+        &[
+            "COMPACT", "FULL"
+        ]
     }
 }
 impl AsRef<str> for ManifestLayout {
@@ -2836,7 +2619,7 @@ impl AsRef<str> for ManifestLayout {
 /// A CMAF packaging configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CmafPackage {
+pub struct CmafPackage  {
     /// A CMAF encryption configuration.
     #[doc(hidden)]
     pub encryption: std::option::Option<crate::model::CmafEncryption>,
@@ -2852,11 +2635,11 @@ pub struct CmafPackage {
 }
 impl CmafPackage {
     /// A CMAF encryption configuration.
-    pub fn encryption(&self) -> std::option::Option<&crate::model::CmafEncryption> {
+    pub fn encryption(&self) -> std::option::Option<& crate::model::CmafEncryption> {
         self.encryption.as_ref()
     }
     /// A list of HLS manifest configurations.
-    pub fn hls_manifests(&self) -> std::option::Option<&[crate::model::HlsManifest]> {
+    pub fn hls_manifests(&self) -> std::option::Option<& [crate::model::HlsManifest]> {
         self.hls_manifests.as_deref()
     }
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
@@ -2870,7 +2653,7 @@ impl CmafPackage {
 }
 /// See [`CmafPackage`](crate::model::CmafPackage).
 pub mod cmaf_package {
-
+    
     /// A builder for [`CmafPackage`](crate::model::CmafPackage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2886,12 +2669,8 @@ pub mod cmaf_package {
             self
         }
         /// A CMAF encryption configuration.
-        pub fn set_encryption(
-            mut self,
-            input: std::option::Option<crate::model::CmafEncryption>,
-        ) -> Self {
-            self.encryption = input;
-            self
+        pub fn set_encryption(mut self, input: std::option::Option<crate::model::CmafEncryption>) -> Self {
+            self.encryption = input; self
         }
         /// Appends an item to `hls_manifests`.
         ///
@@ -2900,17 +2679,13 @@ pub mod cmaf_package {
         /// A list of HLS manifest configurations.
         pub fn hls_manifests(mut self, input: crate::model::HlsManifest) -> Self {
             let mut v = self.hls_manifests.unwrap_or_default();
-            v.push(input);
-            self.hls_manifests = Some(v);
-            self
+                            v.push(input);
+                            self.hls_manifests = Some(v);
+                            self
         }
         /// A list of HLS manifest configurations.
-        pub fn set_hls_manifests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HlsManifest>>,
-        ) -> Self {
-            self.hls_manifests = input;
-            self
+        pub fn set_hls_manifests(mut self, input: std::option::Option<std::vec::Vec<crate::model::HlsManifest>>) -> Self {
+            self.hls_manifests = input; self
         }
         /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
         pub fn include_encoder_configuration_in_segments(mut self, input: bool) -> Self {
@@ -2918,12 +2693,8 @@ pub mod cmaf_package {
             self
         }
         /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
-        pub fn set_include_encoder_configuration_in_segments(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.include_encoder_configuration_in_segments = input;
-            self
+        pub fn set_include_encoder_configuration_in_segments(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_encoder_configuration_in_segments = input; self
         }
         /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
         pub fn segment_duration_seconds(mut self, input: i32) -> Self {
@@ -2932,21 +2703,26 @@ pub mod cmaf_package {
         }
         /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
         pub fn set_segment_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.segment_duration_seconds = input;
-            self
+            self.segment_duration_seconds = input; self
         }
         /// Consumes the builder and constructs a [`CmafPackage`](crate::model::CmafPackage).
         pub fn build(self) -> crate::model::CmafPackage {
             crate::model::CmafPackage {
-                encryption: self.encryption,
-                hls_manifests: self.hls_manifests,
-                include_encoder_configuration_in_segments: self
-                    .include_encoder_configuration_in_segments
-                    .unwrap_or_default(),
-                segment_duration_seconds: self.segment_duration_seconds.unwrap_or_default(),
+                encryption: self.encryption
+                ,
+                hls_manifests: self.hls_manifests
+                ,
+                include_encoder_configuration_in_segments: self.include_encoder_configuration_in_segments
+                    .unwrap_or_default()
+                ,
+                segment_duration_seconds: self.segment_duration_seconds
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CmafPackage {
     /// Creates a new builder-style object to manufacture [`CmafPackage`](crate::model::CmafPackage).
@@ -2958,7 +2734,7 @@ impl CmafPackage {
 /// A CMAF encryption configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CmafEncryption {
+pub struct CmafEncryption  {
     /// An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
     #[doc(hidden)]
     pub constant_initialization_vector: std::option::Option<std::string::String>,
@@ -2968,17 +2744,17 @@ pub struct CmafEncryption {
 }
 impl CmafEncryption {
     /// An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
-    pub fn constant_initialization_vector(&self) -> std::option::Option<&str> {
+    pub fn constant_initialization_vector(&self) -> std::option::Option<& str> {
         self.constant_initialization_vector.as_deref()
     }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
+    pub fn speke_key_provider(&self) -> std::option::Option<& crate::model::SpekeKeyProvider> {
         self.speke_key_provider.as_ref()
     }
 }
 /// See [`CmafEncryption`](crate::model::CmafEncryption).
 pub mod cmaf_encryption {
-
+    
     /// A builder for [`CmafEncryption`](crate::model::CmafEncryption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2987,20 +2763,13 @@ pub mod cmaf_encryption {
     }
     impl Builder {
         /// An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
-        pub fn constant_initialization_vector(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn constant_initialization_vector(mut self, input: impl Into<std::string::String>) -> Self {
             self.constant_initialization_vector = Some(input.into());
             self
         }
         /// An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
-        pub fn set_constant_initialization_vector(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.constant_initialization_vector = input;
-            self
+        pub fn set_constant_initialization_vector(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.constant_initialization_vector = input; self
         }
         /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
         pub fn speke_key_provider(mut self, input: crate::model::SpekeKeyProvider) -> Self {
@@ -3008,21 +2777,21 @@ pub mod cmaf_encryption {
             self
         }
         /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-        pub fn set_speke_key_provider(
-            mut self,
-            input: std::option::Option<crate::model::SpekeKeyProvider>,
-        ) -> Self {
-            self.speke_key_provider = input;
-            self
+        pub fn set_speke_key_provider(mut self, input: std::option::Option<crate::model::SpekeKeyProvider>) -> Self {
+            self.speke_key_provider = input; self
         }
         /// Consumes the builder and constructs a [`CmafEncryption`](crate::model::CmafEncryption).
         pub fn build(self) -> crate::model::CmafEncryption {
             crate::model::CmafEncryption {
-                constant_initialization_vector: self.constant_initialization_vector,
-                speke_key_provider: self.speke_key_provider,
+                constant_initialization_vector: self.constant_initialization_vector
+                ,
+                speke_key_provider: self.speke_key_provider
+                ,
             }
         }
     }
+    
+    
 }
 impl CmafEncryption {
     /// Creates a new builder-style object to manufacture [`CmafEncryption`](crate::model::CmafEncryption).
@@ -3034,7 +2803,7 @@ impl CmafEncryption {
 /// A MediaPackage VOD Asset resource.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetShallow {
+pub struct AssetShallow  {
     /// The ARN of the Asset.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3058,49 +2827,45 @@ pub struct AssetShallow {
     pub source_role_arn: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AssetShallow {
     /// The ARN of the Asset.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time the Asset was initially submitted for Ingest.
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// The unique identifier for the Asset.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the PackagingGroup for the Asset.
-    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+    pub fn packaging_group_id(&self) -> std::option::Option<& str> {
         self.packaging_group_id.as_deref()
     }
     /// The resource ID to include in SPEKE key requests.
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// ARN of the source object in S3.
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// The IAM role ARN used to access the source S3 bucket.
-    pub fn source_role_arn(&self) -> std::option::Option<&str> {
+    pub fn source_role_arn(&self) -> std::option::Option<& str> {
         self.source_role_arn.as_deref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`AssetShallow`](crate::model::AssetShallow).
 pub mod asset_shallow {
-
+    
     /// A builder for [`AssetShallow`](crate::model::AssetShallow).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3111,9 +2876,7 @@ pub mod asset_shallow {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) source_role_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the Asset.
@@ -3123,8 +2886,7 @@ pub mod asset_shallow {
         }
         /// The ARN of the Asset.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time the Asset was initially submitted for Ingest.
         pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3133,8 +2895,7 @@ pub mod asset_shallow {
         }
         /// The time the Asset was initially submitted for Ingest.
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
         /// The unique identifier for the Asset.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3143,8 +2904,7 @@ pub mod asset_shallow {
         }
         /// The unique identifier for the Asset.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The ID of the PackagingGroup for the Asset.
         pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3152,12 +2912,8 @@ pub mod asset_shallow {
             self
         }
         /// The ID of the PackagingGroup for the Asset.
-        pub fn set_packaging_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.packaging_group_id = input;
-            self
+        pub fn set_packaging_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.packaging_group_id = input; self
         }
         /// The resource ID to include in SPEKE key requests.
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3166,8 +2922,7 @@ pub mod asset_shallow {
         }
         /// The resource ID to include in SPEKE key requests.
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// ARN of the source object in S3.
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3176,8 +2931,7 @@ pub mod asset_shallow {
         }
         /// ARN of the source object in S3.
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = input;
-            self
+            self.source_arn = input; self
         }
         /// The IAM role ARN used to access the source S3 bucket.
         pub fn source_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3185,52 +2939,48 @@ pub mod asset_shallow {
             self
         }
         /// The IAM role ARN used to access the source S3 bucket.
-        pub fn set_source_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_role_arn = input;
-            self
+        pub fn set_source_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_role_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`AssetShallow`](crate::model::AssetShallow).
         pub fn build(self) -> crate::model::AssetShallow {
             crate::model::AssetShallow {
-                arn: self.arn,
-                created_at: self.created_at,
-                id: self.id,
-                packaging_group_id: self.packaging_group_id,
-                resource_id: self.resource_id,
-                source_arn: self.source_arn,
-                source_role_arn: self.source_role_arn,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                id: self.id
+                ,
+                packaging_group_id: self.packaging_group_id
+                ,
+                resource_id: self.resource_id
+                ,
+                source_arn: self.source_arn
+                ,
+                source_role_arn: self.source_role_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetShallow {
     /// Creates a new builder-style object to manufacture [`AssetShallow`](crate::model::AssetShallow).
@@ -3242,7 +2992,7 @@ impl AssetShallow {
 /// The endpoint URL used to access an Asset using one PackagingConfiguration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EgressEndpoint {
+pub struct EgressEndpoint  {
     /// The ID of the PackagingConfiguration being applied to the Asset.
     #[doc(hidden)]
     pub packaging_configuration_id: std::option::Option<std::string::String>,
@@ -3255,21 +3005,21 @@ pub struct EgressEndpoint {
 }
 impl EgressEndpoint {
     /// The ID of the PackagingConfiguration being applied to the Asset.
-    pub fn packaging_configuration_id(&self) -> std::option::Option<&str> {
+    pub fn packaging_configuration_id(&self) -> std::option::Option<& str> {
         self.packaging_configuration_id.as_deref()
     }
     /// The current processing status of the asset used for the packaging configuration. The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status information won't be available for most assets ingested before 2021-09-30.
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// The URL of the parent manifest for the repackaged Asset.
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 /// See [`EgressEndpoint`](crate::model::EgressEndpoint).
 pub mod egress_endpoint {
-
+    
     /// A builder for [`EgressEndpoint`](crate::model::EgressEndpoint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3284,12 +3034,8 @@ pub mod egress_endpoint {
             self
         }
         /// The ID of the PackagingConfiguration being applied to the Asset.
-        pub fn set_packaging_configuration_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.packaging_configuration_id = input;
-            self
+        pub fn set_packaging_configuration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.packaging_configuration_id = input; self
         }
         /// The current processing status of the asset used for the packaging configuration. The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status information won't be available for most assets ingested before 2021-09-30.
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3298,8 +3044,7 @@ pub mod egress_endpoint {
         }
         /// The current processing status of the asset used for the packaging configuration. The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status information won't be available for most assets ingested before 2021-09-30.
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// The URL of the parent manifest for the repackaged Asset.
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3308,18 +3053,22 @@ pub mod egress_endpoint {
         }
         /// The URL of the parent manifest for the repackaged Asset.
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Consumes the builder and constructs a [`EgressEndpoint`](crate::model::EgressEndpoint).
         pub fn build(self) -> crate::model::EgressEndpoint {
             crate::model::EgressEndpoint {
-                packaging_configuration_id: self.packaging_configuration_id,
-                status: self.status,
-                url: self.url,
+                packaging_configuration_id: self.packaging_configuration_id
+                ,
+                status: self.status
+                ,
+                url: self.url
+                ,
             }
         }
     }
+    
+    
 }
 impl EgressEndpoint {
     /// Creates a new builder-style object to manufacture [`EgressEndpoint`](crate::model::EgressEndpoint).
@@ -3327,3 +3076,4 @@ impl EgressEndpoint {
         crate::model::egress_endpoint::Builder::default()
     }
 }
+

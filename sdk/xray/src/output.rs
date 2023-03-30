@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSamplingRuleOutput {
+pub struct UpdateSamplingRuleOutput  {
     /// <p>The updated rule definition and metadata.</p>
     #[doc(hidden)]
     pub sampling_rule_record: std::option::Option<crate::model::SamplingRuleRecord>,
 }
 impl UpdateSamplingRuleOutput {
     /// <p>The updated rule definition and metadata.</p>
-    pub fn sampling_rule_record(&self) -> std::option::Option<&crate::model::SamplingRuleRecord> {
+    pub fn sampling_rule_record(&self) -> std::option::Option<& crate::model::SamplingRuleRecord> {
         self.sampling_rule_record.as_ref()
     }
 }
 /// See [`UpdateSamplingRuleOutput`](crate::output::UpdateSamplingRuleOutput).
 pub mod update_sampling_rule_output {
-
+    
     /// A builder for [`UpdateSamplingRuleOutput`](crate::output::UpdateSamplingRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod update_sampling_rule_output {
             self
         }
         /// <p>The updated rule definition and metadata.</p>
-        pub fn set_sampling_rule_record(
-            mut self,
-            input: std::option::Option<crate::model::SamplingRuleRecord>,
-        ) -> Self {
-            self.sampling_rule_record = input;
-            self
+        pub fn set_sampling_rule_record(mut self, input: std::option::Option<crate::model::SamplingRuleRecord>) -> Self {
+            self.sampling_rule_record = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSamplingRuleOutput`](crate::output::UpdateSamplingRuleOutput).
         pub fn build(self) -> crate::output::UpdateSamplingRuleOutput {
             crate::output::UpdateSamplingRuleOutput {
-                sampling_rule_record: self.sampling_rule_record,
+                sampling_rule_record: self.sampling_rule_record
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSamplingRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSamplingRuleOutput`](crate::output::UpdateSamplingRuleOutput).
@@ -53,20 +52,20 @@ impl UpdateSamplingRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGroupOutput {
+pub struct UpdateGroupOutput  {
     /// <p>The group that was updated. Contains the name of the group that was updated, the ARN of the group that was updated, the updated filter expression, and the updated insight configuration assigned to the group.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
 }
 impl UpdateGroupOutput {
     /// <p>The group that was updated. Contains the name of the group that was updated, the ARN of the group that was updated, the updated filter expression, and the updated insight configuration assigned to the group.</p>
-    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+    pub fn group(&self) -> std::option::Option<& crate::model::Group> {
         self.group.as_ref()
     }
 }
 /// See [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
 pub mod update_group_output {
-
+    
     /// A builder for [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -80,14 +79,18 @@ pub mod update_group_output {
         }
         /// <p>The group that was updated. Contains the name of the group that was updated, the ARN of the group that was updated, the updated filter expression, and the updated insight configuration assigned to the group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
-            self.group = input;
-            self
+            self.group = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
         pub fn build(self) -> crate::output::UpdateGroupOutput {
-            crate::output::UpdateGroupOutput { group: self.group }
+            crate::output::UpdateGroupOutput {
+                group: self.group
+                ,
+            }
         }
     }
+    
+    
 }
 impl UpdateGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
@@ -99,19 +102,24 @@ impl UpdateGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -123,19 +131,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -147,28 +160,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutTraceSegmentsOutput {
+pub struct PutTraceSegmentsOutput  {
     /// <p>Segments that failed processing.</p>
     #[doc(hidden)]
-    pub unprocessed_trace_segments:
-        std::option::Option<std::vec::Vec<crate::model::UnprocessedTraceSegment>>,
+    pub unprocessed_trace_segments: std::option::Option<std::vec::Vec<crate::model::UnprocessedTraceSegment>>,
 }
 impl PutTraceSegmentsOutput {
     /// <p>Segments that failed processing.</p>
-    pub fn unprocessed_trace_segments(
-        &self,
-    ) -> std::option::Option<&[crate::model::UnprocessedTraceSegment]> {
+    pub fn unprocessed_trace_segments(&self) -> std::option::Option<& [crate::model::UnprocessedTraceSegment]> {
         self.unprocessed_trace_segments.as_deref()
     }
 }
 /// See [`PutTraceSegmentsOutput`](crate::output::PutTraceSegmentsOutput).
 pub mod put_trace_segments_output {
-
+    
     /// A builder for [`PutTraceSegmentsOutput`](crate::output::PutTraceSegmentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) unprocessed_trace_segments:
-            std::option::Option<std::vec::Vec<crate::model::UnprocessedTraceSegment>>,
+        pub(crate) unprocessed_trace_segments: std::option::Option<std::vec::Vec<crate::model::UnprocessedTraceSegment>>,
     }
     impl Builder {
         /// Appends an item to `unprocessed_trace_segments`.
@@ -176,30 +185,26 @@ pub mod put_trace_segments_output {
         /// To override the contents of this collection use [`set_unprocessed_trace_segments`](Self::set_unprocessed_trace_segments).
         ///
         /// <p>Segments that failed processing.</p>
-        pub fn unprocessed_trace_segments(
-            mut self,
-            input: crate::model::UnprocessedTraceSegment,
-        ) -> Self {
+        pub fn unprocessed_trace_segments(mut self, input: crate::model::UnprocessedTraceSegment) -> Self {
             let mut v = self.unprocessed_trace_segments.unwrap_or_default();
-            v.push(input);
-            self.unprocessed_trace_segments = Some(v);
-            self
+                            v.push(input);
+                            self.unprocessed_trace_segments = Some(v);
+                            self
         }
         /// <p>Segments that failed processing.</p>
-        pub fn set_unprocessed_trace_segments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UnprocessedTraceSegment>>,
-        ) -> Self {
-            self.unprocessed_trace_segments = input;
-            self
+        pub fn set_unprocessed_trace_segments(mut self, input: std::option::Option<std::vec::Vec<crate::model::UnprocessedTraceSegment>>) -> Self {
+            self.unprocessed_trace_segments = input; self
         }
         /// Consumes the builder and constructs a [`PutTraceSegmentsOutput`](crate::output::PutTraceSegmentsOutput).
         pub fn build(self) -> crate::output::PutTraceSegmentsOutput {
             crate::output::PutTraceSegmentsOutput {
-                unprocessed_trace_segments: self.unprocessed_trace_segments,
+                unprocessed_trace_segments: self.unprocessed_trace_segments
+                ,
             }
         }
     }
+    
+    
 }
 impl PutTraceSegmentsOutput {
     /// Creates a new builder-style object to manufacture [`PutTraceSegmentsOutput`](crate::output::PutTraceSegmentsOutput).
@@ -211,19 +216,24 @@ impl PutTraceSegmentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutTelemetryRecordsOutput {}
+pub struct PutTelemetryRecordsOutput  {
+}
 /// See [`PutTelemetryRecordsOutput`](crate::output::PutTelemetryRecordsOutput).
 pub mod put_telemetry_records_output {
-
+    
     /// A builder for [`PutTelemetryRecordsOutput`](crate::output::PutTelemetryRecordsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutTelemetryRecordsOutput`](crate::output::PutTelemetryRecordsOutput).
         pub fn build(self) -> crate::output::PutTelemetryRecordsOutput {
-            crate::output::PutTelemetryRecordsOutput {}
+            crate::output::PutTelemetryRecordsOutput {
+            }
         }
     }
+    
+    
 }
 impl PutTelemetryRecordsOutput {
     /// Creates a new builder-style object to manufacture [`PutTelemetryRecordsOutput`](crate::output::PutTelemetryRecordsOutput).
@@ -235,20 +245,20 @@ impl PutTelemetryRecordsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResourcePolicyOutput {
+pub struct PutResourcePolicyOutput  {
     /// <p>The resource policy document, as provided in the <code>PutResourcePolicyRequest</code>.</p>
     #[doc(hidden)]
     pub resource_policy: std::option::Option<crate::model::ResourcePolicy>,
 }
 impl PutResourcePolicyOutput {
     /// <p>The resource policy document, as provided in the <code>PutResourcePolicyRequest</code>.</p>
-    pub fn resource_policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
+    pub fn resource_policy(&self) -> std::option::Option<& crate::model::ResourcePolicy> {
         self.resource_policy.as_ref()
     }
 }
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
 pub mod put_resource_policy_output {
-
+    
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -261,20 +271,19 @@ pub mod put_resource_policy_output {
             self
         }
         /// <p>The resource policy document, as provided in the <code>PutResourcePolicyRequest</code>.</p>
-        pub fn set_resource_policy(
-            mut self,
-            input: std::option::Option<crate::model::ResourcePolicy>,
-        ) -> Self {
-            self.resource_policy = input;
-            self
+        pub fn set_resource_policy(mut self, input: std::option::Option<crate::model::ResourcePolicy>) -> Self {
+            self.resource_policy = input; self
         }
         /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
         pub fn build(self) -> crate::output::PutResourcePolicyOutput {
             crate::output::PutResourcePolicyOutput {
-                resource_policy: self.resource_policy,
+                resource_policy: self.resource_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl PutResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
@@ -286,20 +295,20 @@ impl PutResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEncryptionConfigOutput {
+pub struct PutEncryptionConfigOutput  {
     /// <p>The new encryption configuration.</p>
     #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
 }
 impl PutEncryptionConfigOutput {
     /// <p>The new encryption configuration.</p>
-    pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
+    pub fn encryption_config(&self) -> std::option::Option<& crate::model::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
 }
 /// See [`PutEncryptionConfigOutput`](crate::output::PutEncryptionConfigOutput).
 pub mod put_encryption_config_output {
-
+    
     /// A builder for [`PutEncryptionConfigOutput`](crate::output::PutEncryptionConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -312,20 +321,19 @@ pub mod put_encryption_config_output {
             self
         }
         /// <p>The new encryption configuration.</p>
-        pub fn set_encryption_config(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionConfig>,
-        ) -> Self {
-            self.encryption_config = input;
-            self
+        pub fn set_encryption_config(mut self, input: std::option::Option<crate::model::EncryptionConfig>) -> Self {
+            self.encryption_config = input; self
         }
         /// Consumes the builder and constructs a [`PutEncryptionConfigOutput`](crate::output::PutEncryptionConfigOutput).
         pub fn build(self) -> crate::output::PutEncryptionConfigOutput {
             crate::output::PutEncryptionConfigOutput {
-                encryption_config: self.encryption_config,
+                encryption_config: self.encryption_config
+                ,
             }
         }
     }
+    
+    
 }
 impl PutEncryptionConfigOutput {
     /// Creates a new builder-style object to manufacture [`PutEncryptionConfigOutput`](crate::output::PutEncryptionConfigOutput).
@@ -337,7 +345,7 @@ impl PutEncryptionConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling rule.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -347,17 +355,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling rule.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -372,17 +380,13 @@ pub mod list_tags_for_resource_output {
         /// <p>A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling rule.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling rule.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -391,17 +395,20 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tags: self.tags,
-                next_token: self.next_token,
+                tags: self.tags
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -413,7 +420,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourcePoliciesOutput {
+pub struct ListResourcePoliciesOutput  {
     /// <p>The list of resource policies in the target Amazon Web Services account.</p>
     #[doc(hidden)]
     pub resource_policies: std::option::Option<std::vec::Vec<crate::model::ResourcePolicy>>,
@@ -423,22 +430,21 @@ pub struct ListResourcePoliciesOutput {
 }
 impl ListResourcePoliciesOutput {
     /// <p>The list of resource policies in the target Amazon Web Services account.</p>
-    pub fn resource_policies(&self) -> std::option::Option<&[crate::model::ResourcePolicy]> {
+    pub fn resource_policies(&self) -> std::option::Option<& [crate::model::ResourcePolicy]> {
         self.resource_policies.as_deref()
     }
     /// <p>Pagination token. Not currently supported.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListResourcePoliciesOutput`](crate::output::ListResourcePoliciesOutput).
 pub mod list_resource_policies_output {
-
+    
     /// A builder for [`ListResourcePoliciesOutput`](crate::output::ListResourcePoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resource_policies:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePolicy>>,
+        pub(crate) resource_policies: std::option::Option<std::vec::Vec<crate::model::ResourcePolicy>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -449,17 +455,13 @@ pub mod list_resource_policies_output {
         /// <p>The list of resource policies in the target Amazon Web Services account.</p>
         pub fn resource_policies(mut self, input: crate::model::ResourcePolicy) -> Self {
             let mut v = self.resource_policies.unwrap_or_default();
-            v.push(input);
-            self.resource_policies = Some(v);
-            self
+                            v.push(input);
+                            self.resource_policies = Some(v);
+                            self
         }
         /// <p>The list of resource policies in the target Amazon Web Services account.</p>
-        pub fn set_resource_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourcePolicy>>,
-        ) -> Self {
-            self.resource_policies = input;
-            self
+        pub fn set_resource_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePolicy>>) -> Self {
+            self.resource_policies = input; self
         }
         /// <p>Pagination token. Not currently supported.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -468,17 +470,20 @@ pub mod list_resource_policies_output {
         }
         /// <p>Pagination token. Not currently supported.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListResourcePoliciesOutput`](crate::output::ListResourcePoliciesOutput).
         pub fn build(self) -> crate::output::ListResourcePoliciesOutput {
             crate::output::ListResourcePoliciesOutput {
-                resource_policies: self.resource_policies,
-                next_token: self.next_token,
+                resource_policies: self.resource_policies
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResourcePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListResourcePoliciesOutput`](crate::output::ListResourcePoliciesOutput).
@@ -490,7 +495,7 @@ impl ListResourcePoliciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTraceSummariesOutput {
+pub struct GetTraceSummariesOutput  {
     /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
     #[doc(hidden)]
     pub trace_summaries: std::option::Option<std::vec::Vec<crate::model::TraceSummary>>,
@@ -506,11 +511,11 @@ pub struct GetTraceSummariesOutput {
 }
 impl GetTraceSummariesOutput {
     /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
-    pub fn trace_summaries(&self) -> std::option::Option<&[crate::model::TraceSummary]> {
+    pub fn trace_summaries(&self) -> std::option::Option<& [crate::model::TraceSummary]> {
         self.trace_summaries.as_deref()
     }
     /// <p>The start time of this page of results.</p>
-    pub fn approximate_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn approximate_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.approximate_time.as_ref()
     }
     /// <p>The total number of traces processed, including traces that did not match the specified filter expression.</p>
@@ -518,13 +523,13 @@ impl GetTraceSummariesOutput {
         self.traces_processed_count
     }
     /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most recent results, closest to the end of the time frame.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetTraceSummariesOutput`](crate::output::GetTraceSummariesOutput).
 pub mod get_trace_summaries_output {
-
+    
     /// A builder for [`GetTraceSummariesOutput`](crate::output::GetTraceSummariesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -541,17 +546,13 @@ pub mod get_trace_summaries_output {
         /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
         pub fn trace_summaries(mut self, input: crate::model::TraceSummary) -> Self {
             let mut v = self.trace_summaries.unwrap_or_default();
-            v.push(input);
-            self.trace_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.trace_summaries = Some(v);
+                            self
         }
         /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
-        pub fn set_trace_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TraceSummary>>,
-        ) -> Self {
-            self.trace_summaries = input;
-            self
+        pub fn set_trace_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::TraceSummary>>) -> Self {
+            self.trace_summaries = input; self
         }
         /// <p>The start time of this page of results.</p>
         pub fn approximate_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -559,12 +560,8 @@ pub mod get_trace_summaries_output {
             self
         }
         /// <p>The start time of this page of results.</p>
-        pub fn set_approximate_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.approximate_time = input;
-            self
+        pub fn set_approximate_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.approximate_time = input; self
         }
         /// <p>The total number of traces processed, including traces that did not match the specified filter expression.</p>
         pub fn traces_processed_count(mut self, input: i64) -> Self {
@@ -573,8 +570,7 @@ pub mod get_trace_summaries_output {
         }
         /// <p>The total number of traces processed, including traces that did not match the specified filter expression.</p>
         pub fn set_traces_processed_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.traces_processed_count = input;
-            self
+            self.traces_processed_count = input; self
         }
         /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most recent results, closest to the end of the time frame.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -583,19 +579,24 @@ pub mod get_trace_summaries_output {
         }
         /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most recent results, closest to the end of the time frame.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetTraceSummariesOutput`](crate::output::GetTraceSummariesOutput).
         pub fn build(self) -> crate::output::GetTraceSummariesOutput {
             crate::output::GetTraceSummariesOutput {
-                trace_summaries: self.trace_summaries,
-                approximate_time: self.approximate_time,
-                traces_processed_count: self.traces_processed_count,
-                next_token: self.next_token,
+                trace_summaries: self.trace_summaries
+                ,
+                approximate_time: self.approximate_time
+                ,
+                traces_processed_count: self.traces_processed_count
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetTraceSummariesOutput {
     /// Creates a new builder-style object to manufacture [`GetTraceSummariesOutput`](crate::output::GetTraceSummariesOutput).
@@ -607,7 +608,7 @@ impl GetTraceSummariesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTraceGraphOutput {
+pub struct GetTraceGraphOutput  {
     /// <p>The services that have processed one of the specified requests.</p>
     #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::Service>>,
@@ -617,17 +618,17 @@ pub struct GetTraceGraphOutput {
 }
 impl GetTraceGraphOutput {
     /// <p>The services that have processed one of the specified requests.</p>
-    pub fn services(&self) -> std::option::Option<&[crate::model::Service]> {
+    pub fn services(&self) -> std::option::Option<& [crate::model::Service]> {
         self.services.as_deref()
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetTraceGraphOutput`](crate::output::GetTraceGraphOutput).
 pub mod get_trace_graph_output {
-
+    
     /// A builder for [`GetTraceGraphOutput`](crate::output::GetTraceGraphOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -642,17 +643,13 @@ pub mod get_trace_graph_output {
         /// <p>The services that have processed one of the specified requests.</p>
         pub fn services(mut self, input: crate::model::Service) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input);
-            self.services = Some(v);
-            self
+                            v.push(input);
+                            self.services = Some(v);
+                            self
         }
         /// <p>The services that have processed one of the specified requests.</p>
-        pub fn set_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Service>>,
-        ) -> Self {
-            self.services = input;
-            self
+        pub fn set_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::Service>>) -> Self {
+            self.services = input; self
         }
         /// <p>Pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -661,17 +658,20 @@ pub mod get_trace_graph_output {
         }
         /// <p>Pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetTraceGraphOutput`](crate::output::GetTraceGraphOutput).
         pub fn build(self) -> crate::output::GetTraceGraphOutput {
             crate::output::GetTraceGraphOutput {
-                services: self.services,
-                next_token: self.next_token,
+                services: self.services
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetTraceGraphOutput {
     /// Creates a new builder-style object to manufacture [`GetTraceGraphOutput`](crate::output::GetTraceGraphOutput).
@@ -683,11 +683,10 @@ impl GetTraceGraphOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTimeSeriesServiceStatisticsOutput {
+pub struct GetTimeSeriesServiceStatisticsOutput  {
     /// <p>The collection of statistics.</p>
     #[doc(hidden)]
-    pub time_series_service_statistics:
-        std::option::Option<std::vec::Vec<crate::model::TimeSeriesServiceStatistics>>,
+    pub time_series_service_statistics: std::option::Option<std::vec::Vec<crate::model::TimeSeriesServiceStatistics>>,
     /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned aggregation might show statistics from an older version of the group's filter expression.</p>
     #[doc(hidden)]
     pub contains_old_group_versions: bool,
@@ -697,9 +696,7 @@ pub struct GetTimeSeriesServiceStatisticsOutput {
 }
 impl GetTimeSeriesServiceStatisticsOutput {
     /// <p>The collection of statistics.</p>
-    pub fn time_series_service_statistics(
-        &self,
-    ) -> std::option::Option<&[crate::model::TimeSeriesServiceStatistics]> {
+    pub fn time_series_service_statistics(&self) -> std::option::Option<& [crate::model::TimeSeriesServiceStatistics]> {
         self.time_series_service_statistics.as_deref()
     }
     /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned aggregation might show statistics from an older version of the group's filter expression.</p>
@@ -707,18 +704,17 @@ impl GetTimeSeriesServiceStatisticsOutput {
         self.contains_old_group_versions
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetTimeSeriesServiceStatisticsOutput`](crate::output::GetTimeSeriesServiceStatisticsOutput).
 pub mod get_time_series_service_statistics_output {
-
+    
     /// A builder for [`GetTimeSeriesServiceStatisticsOutput`](crate::output::GetTimeSeriesServiceStatisticsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) time_series_service_statistics:
-            std::option::Option<std::vec::Vec<crate::model::TimeSeriesServiceStatistics>>,
+        pub(crate) time_series_service_statistics: std::option::Option<std::vec::Vec<crate::model::TimeSeriesServiceStatistics>>,
         pub(crate) contains_old_group_versions: std::option::Option<bool>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -728,22 +724,15 @@ pub mod get_time_series_service_statistics_output {
         /// To override the contents of this collection use [`set_time_series_service_statistics`](Self::set_time_series_service_statistics).
         ///
         /// <p>The collection of statistics.</p>
-        pub fn time_series_service_statistics(
-            mut self,
-            input: crate::model::TimeSeriesServiceStatistics,
-        ) -> Self {
+        pub fn time_series_service_statistics(mut self, input: crate::model::TimeSeriesServiceStatistics) -> Self {
             let mut v = self.time_series_service_statistics.unwrap_or_default();
-            v.push(input);
-            self.time_series_service_statistics = Some(v);
-            self
+                            v.push(input);
+                            self.time_series_service_statistics = Some(v);
+                            self
         }
         /// <p>The collection of statistics.</p>
-        pub fn set_time_series_service_statistics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TimeSeriesServiceStatistics>>,
-        ) -> Self {
-            self.time_series_service_statistics = input;
-            self
+        pub fn set_time_series_service_statistics(mut self, input: std::option::Option<std::vec::Vec<crate::model::TimeSeriesServiceStatistics>>) -> Self {
+            self.time_series_service_statistics = input; self
         }
         /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned aggregation might show statistics from an older version of the group's filter expression.</p>
         pub fn contains_old_group_versions(mut self, input: bool) -> Self {
@@ -752,8 +741,7 @@ pub mod get_time_series_service_statistics_output {
         }
         /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned aggregation might show statistics from an older version of the group's filter expression.</p>
         pub fn set_contains_old_group_versions(mut self, input: std::option::Option<bool>) -> Self {
-            self.contains_old_group_versions = input;
-            self
+            self.contains_old_group_versions = input; self
         }
         /// <p>Pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -762,18 +750,23 @@ pub mod get_time_series_service_statistics_output {
         }
         /// <p>Pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetTimeSeriesServiceStatisticsOutput`](crate::output::GetTimeSeriesServiceStatisticsOutput).
         pub fn build(self) -> crate::output::GetTimeSeriesServiceStatisticsOutput {
             crate::output::GetTimeSeriesServiceStatisticsOutput {
-                time_series_service_statistics: self.time_series_service_statistics,
-                contains_old_group_versions: self.contains_old_group_versions.unwrap_or_default(),
-                next_token: self.next_token,
+                time_series_service_statistics: self.time_series_service_statistics
+                ,
+                contains_old_group_versions: self.contains_old_group_versions
+                    .unwrap_or_default()
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetTimeSeriesServiceStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetTimeSeriesServiceStatisticsOutput`](crate::output::GetTimeSeriesServiceStatisticsOutput).
@@ -785,7 +778,7 @@ impl GetTimeSeriesServiceStatisticsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceGraphOutput {
+pub struct GetServiceGraphOutput  {
     /// <p>The start of the time frame for which the graph was generated.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -804,15 +797,15 @@ pub struct GetServiceGraphOutput {
 }
 impl GetServiceGraphOutput {
     /// <p>The start of the time frame for which the graph was generated.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time frame for which the graph was generated.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The services that have processed a traced request during the specified time frame.</p>
-    pub fn services(&self) -> std::option::Option<&[crate::model::Service]> {
+    pub fn services(&self) -> std::option::Option<& [crate::model::Service]> {
         self.services.as_deref()
     }
     /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
@@ -820,13 +813,13 @@ impl GetServiceGraphOutput {
         self.contains_old_group_versions
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetServiceGraphOutput`](crate::output::GetServiceGraphOutput).
 pub mod get_service_graph_output {
-
+    
     /// A builder for [`GetServiceGraphOutput`](crate::output::GetServiceGraphOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -843,12 +836,8 @@ pub mod get_service_graph_output {
             self
         }
         /// <p>The start of the time frame for which the graph was generated.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The end of the time frame for which the graph was generated.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -856,12 +845,8 @@ pub mod get_service_graph_output {
             self
         }
         /// <p>The end of the time frame for which the graph was generated.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Appends an item to `services`.
         ///
@@ -870,17 +855,13 @@ pub mod get_service_graph_output {
         /// <p>The services that have processed a traced request during the specified time frame.</p>
         pub fn services(mut self, input: crate::model::Service) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input);
-            self.services = Some(v);
-            self
+                            v.push(input);
+                            self.services = Some(v);
+                            self
         }
         /// <p>The services that have processed a traced request during the specified time frame.</p>
-        pub fn set_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Service>>,
-        ) -> Self {
-            self.services = input;
-            self
+        pub fn set_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::Service>>) -> Self {
+            self.services = input; self
         }
         /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
         pub fn contains_old_group_versions(mut self, input: bool) -> Self {
@@ -889,8 +870,7 @@ pub mod get_service_graph_output {
         }
         /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
         pub fn set_contains_old_group_versions(mut self, input: std::option::Option<bool>) -> Self {
-            self.contains_old_group_versions = input;
-            self
+            self.contains_old_group_versions = input; self
         }
         /// <p>Pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -899,20 +879,27 @@ pub mod get_service_graph_output {
         }
         /// <p>Pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetServiceGraphOutput`](crate::output::GetServiceGraphOutput).
         pub fn build(self) -> crate::output::GetServiceGraphOutput {
             crate::output::GetServiceGraphOutput {
-                start_time: self.start_time,
-                end_time: self.end_time,
-                services: self.services,
-                contains_old_group_versions: self.contains_old_group_versions.unwrap_or_default(),
-                next_token: self.next_token,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                services: self.services
+                ,
+                contains_old_group_versions: self.contains_old_group_versions
+                    .unwrap_or_default()
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetServiceGraphOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceGraphOutput`](crate::output::GetServiceGraphOutput).
@@ -924,48 +911,40 @@ impl GetServiceGraphOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSamplingTargetsOutput {
+pub struct GetSamplingTargetsOutput  {
     /// <p>Updated rules that the service should use to sample requests.</p>
     #[doc(hidden)]
-    pub sampling_target_documents:
-        std::option::Option<std::vec::Vec<crate::model::SamplingTargetDocument>>,
+    pub sampling_target_documents: std::option::Option<std::vec::Vec<crate::model::SamplingTargetDocument>>,
     /// <p>The last time a user changed the sampling rule configuration. If the sampling rule configuration changed since the service last retrieved it, the service should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
     #[doc(hidden)]
     pub last_rule_modification: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not process.</p>
     #[doc(hidden)]
-    pub unprocessed_statistics:
-        std::option::Option<std::vec::Vec<crate::model::UnprocessedStatistics>>,
+    pub unprocessed_statistics: std::option::Option<std::vec::Vec<crate::model::UnprocessedStatistics>>,
 }
 impl GetSamplingTargetsOutput {
     /// <p>Updated rules that the service should use to sample requests.</p>
-    pub fn sampling_target_documents(
-        &self,
-    ) -> std::option::Option<&[crate::model::SamplingTargetDocument]> {
+    pub fn sampling_target_documents(&self) -> std::option::Option<& [crate::model::SamplingTargetDocument]> {
         self.sampling_target_documents.as_deref()
     }
     /// <p>The last time a user changed the sampling rule configuration. If the sampling rule configuration changed since the service last retrieved it, the service should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
-    pub fn last_rule_modification(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_rule_modification(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_rule_modification.as_ref()
     }
     /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not process.</p>
-    pub fn unprocessed_statistics(
-        &self,
-    ) -> std::option::Option<&[crate::model::UnprocessedStatistics]> {
+    pub fn unprocessed_statistics(&self) -> std::option::Option<& [crate::model::UnprocessedStatistics]> {
         self.unprocessed_statistics.as_deref()
     }
 }
 /// See [`GetSamplingTargetsOutput`](crate::output::GetSamplingTargetsOutput).
 pub mod get_sampling_targets_output {
-
+    
     /// A builder for [`GetSamplingTargetsOutput`](crate::output::GetSamplingTargetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sampling_target_documents:
-            std::option::Option<std::vec::Vec<crate::model::SamplingTargetDocument>>,
+        pub(crate) sampling_target_documents: std::option::Option<std::vec::Vec<crate::model::SamplingTargetDocument>>,
         pub(crate) last_rule_modification: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) unprocessed_statistics:
-            std::option::Option<std::vec::Vec<crate::model::UnprocessedStatistics>>,
+        pub(crate) unprocessed_statistics: std::option::Option<std::vec::Vec<crate::model::UnprocessedStatistics>>,
     }
     impl Builder {
         /// Appends an item to `sampling_target_documents`.
@@ -973,22 +952,15 @@ pub mod get_sampling_targets_output {
         /// To override the contents of this collection use [`set_sampling_target_documents`](Self::set_sampling_target_documents).
         ///
         /// <p>Updated rules that the service should use to sample requests.</p>
-        pub fn sampling_target_documents(
-            mut self,
-            input: crate::model::SamplingTargetDocument,
-        ) -> Self {
+        pub fn sampling_target_documents(mut self, input: crate::model::SamplingTargetDocument) -> Self {
             let mut v = self.sampling_target_documents.unwrap_or_default();
-            v.push(input);
-            self.sampling_target_documents = Some(v);
-            self
+                            v.push(input);
+                            self.sampling_target_documents = Some(v);
+                            self
         }
         /// <p>Updated rules that the service should use to sample requests.</p>
-        pub fn set_sampling_target_documents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SamplingTargetDocument>>,
-        ) -> Self {
-            self.sampling_target_documents = input;
-            self
+        pub fn set_sampling_target_documents(mut self, input: std::option::Option<std::vec::Vec<crate::model::SamplingTargetDocument>>) -> Self {
+            self.sampling_target_documents = input; self
         }
         /// <p>The last time a user changed the sampling rule configuration. If the sampling rule configuration changed since the service last retrieved it, the service should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
         pub fn last_rule_modification(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -996,44 +968,38 @@ pub mod get_sampling_targets_output {
             self
         }
         /// <p>The last time a user changed the sampling rule configuration. If the sampling rule configuration changed since the service last retrieved it, the service should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
-        pub fn set_last_rule_modification(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_rule_modification = input;
-            self
+        pub fn set_last_rule_modification(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_rule_modification = input; self
         }
         /// Appends an item to `unprocessed_statistics`.
         ///
         /// To override the contents of this collection use [`set_unprocessed_statistics`](Self::set_unprocessed_statistics).
         ///
         /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not process.</p>
-        pub fn unprocessed_statistics(
-            mut self,
-            input: crate::model::UnprocessedStatistics,
-        ) -> Self {
+        pub fn unprocessed_statistics(mut self, input: crate::model::UnprocessedStatistics) -> Self {
             let mut v = self.unprocessed_statistics.unwrap_or_default();
-            v.push(input);
-            self.unprocessed_statistics = Some(v);
-            self
+                            v.push(input);
+                            self.unprocessed_statistics = Some(v);
+                            self
         }
         /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not process.</p>
-        pub fn set_unprocessed_statistics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UnprocessedStatistics>>,
-        ) -> Self {
-            self.unprocessed_statistics = input;
-            self
+        pub fn set_unprocessed_statistics(mut self, input: std::option::Option<std::vec::Vec<crate::model::UnprocessedStatistics>>) -> Self {
+            self.unprocessed_statistics = input; self
         }
         /// Consumes the builder and constructs a [`GetSamplingTargetsOutput`](crate::output::GetSamplingTargetsOutput).
         pub fn build(self) -> crate::output::GetSamplingTargetsOutput {
             crate::output::GetSamplingTargetsOutput {
-                sampling_target_documents: self.sampling_target_documents,
-                last_rule_modification: self.last_rule_modification,
-                unprocessed_statistics: self.unprocessed_statistics,
+                sampling_target_documents: self.sampling_target_documents
+                ,
+                last_rule_modification: self.last_rule_modification
+                ,
+                unprocessed_statistics: self.unprocessed_statistics
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSamplingTargetsOutput {
     /// Creates a new builder-style object to manufacture [`GetSamplingTargetsOutput`](crate::output::GetSamplingTargetsOutput).
@@ -1045,35 +1011,31 @@ impl GetSamplingTargetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSamplingStatisticSummariesOutput {
+pub struct GetSamplingStatisticSummariesOutput  {
     /// <p>Information about the number of requests instrumented for each sampling rule.</p>
     #[doc(hidden)]
-    pub sampling_statistic_summaries:
-        std::option::Option<std::vec::Vec<crate::model::SamplingStatisticSummary>>,
+    pub sampling_statistic_summaries: std::option::Option<std::vec::Vec<crate::model::SamplingStatisticSummary>>,
     /// <p>Pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSamplingStatisticSummariesOutput {
     /// <p>Information about the number of requests instrumented for each sampling rule.</p>
-    pub fn sampling_statistic_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::SamplingStatisticSummary]> {
+    pub fn sampling_statistic_summaries(&self) -> std::option::Option<& [crate::model::SamplingStatisticSummary]> {
         self.sampling_statistic_summaries.as_deref()
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetSamplingStatisticSummariesOutput`](crate::output::GetSamplingStatisticSummariesOutput).
 pub mod get_sampling_statistic_summaries_output {
-
+    
     /// A builder for [`GetSamplingStatisticSummariesOutput`](crate::output::GetSamplingStatisticSummariesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sampling_statistic_summaries:
-            std::option::Option<std::vec::Vec<crate::model::SamplingStatisticSummary>>,
+        pub(crate) sampling_statistic_summaries: std::option::Option<std::vec::Vec<crate::model::SamplingStatisticSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1082,22 +1044,15 @@ pub mod get_sampling_statistic_summaries_output {
         /// To override the contents of this collection use [`set_sampling_statistic_summaries`](Self::set_sampling_statistic_summaries).
         ///
         /// <p>Information about the number of requests instrumented for each sampling rule.</p>
-        pub fn sampling_statistic_summaries(
-            mut self,
-            input: crate::model::SamplingStatisticSummary,
-        ) -> Self {
+        pub fn sampling_statistic_summaries(mut self, input: crate::model::SamplingStatisticSummary) -> Self {
             let mut v = self.sampling_statistic_summaries.unwrap_or_default();
-            v.push(input);
-            self.sampling_statistic_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.sampling_statistic_summaries = Some(v);
+                            self
         }
         /// <p>Information about the number of requests instrumented for each sampling rule.</p>
-        pub fn set_sampling_statistic_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SamplingStatisticSummary>>,
-        ) -> Self {
-            self.sampling_statistic_summaries = input;
-            self
+        pub fn set_sampling_statistic_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::SamplingStatisticSummary>>) -> Self {
+            self.sampling_statistic_summaries = input; self
         }
         /// <p>Pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1106,17 +1061,20 @@ pub mod get_sampling_statistic_summaries_output {
         }
         /// <p>Pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetSamplingStatisticSummariesOutput`](crate::output::GetSamplingStatisticSummariesOutput).
         pub fn build(self) -> crate::output::GetSamplingStatisticSummariesOutput {
             crate::output::GetSamplingStatisticSummariesOutput {
-                sampling_statistic_summaries: self.sampling_statistic_summaries,
-                next_token: self.next_token,
+                sampling_statistic_summaries: self.sampling_statistic_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSamplingStatisticSummariesOutput {
     /// Creates a new builder-style object to manufacture [`GetSamplingStatisticSummariesOutput`](crate::output::GetSamplingStatisticSummariesOutput).
@@ -1128,7 +1086,7 @@ impl GetSamplingStatisticSummariesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSamplingRulesOutput {
+pub struct GetSamplingRulesOutput  {
     /// <p>Rule definitions and metadata.</p>
     #[doc(hidden)]
     pub sampling_rule_records: std::option::Option<std::vec::Vec<crate::model::SamplingRuleRecord>>,
@@ -1138,24 +1096,21 @@ pub struct GetSamplingRulesOutput {
 }
 impl GetSamplingRulesOutput {
     /// <p>Rule definitions and metadata.</p>
-    pub fn sampling_rule_records(
-        &self,
-    ) -> std::option::Option<&[crate::model::SamplingRuleRecord]> {
+    pub fn sampling_rule_records(&self) -> std::option::Option<& [crate::model::SamplingRuleRecord]> {
         self.sampling_rule_records.as_deref()
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetSamplingRulesOutput`](crate::output::GetSamplingRulesOutput).
 pub mod get_sampling_rules_output {
-
+    
     /// A builder for [`GetSamplingRulesOutput`](crate::output::GetSamplingRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sampling_rule_records:
-            std::option::Option<std::vec::Vec<crate::model::SamplingRuleRecord>>,
+        pub(crate) sampling_rule_records: std::option::Option<std::vec::Vec<crate::model::SamplingRuleRecord>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1166,17 +1121,13 @@ pub mod get_sampling_rules_output {
         /// <p>Rule definitions and metadata.</p>
         pub fn sampling_rule_records(mut self, input: crate::model::SamplingRuleRecord) -> Self {
             let mut v = self.sampling_rule_records.unwrap_or_default();
-            v.push(input);
-            self.sampling_rule_records = Some(v);
-            self
+                            v.push(input);
+                            self.sampling_rule_records = Some(v);
+                            self
         }
         /// <p>Rule definitions and metadata.</p>
-        pub fn set_sampling_rule_records(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SamplingRuleRecord>>,
-        ) -> Self {
-            self.sampling_rule_records = input;
-            self
+        pub fn set_sampling_rule_records(mut self, input: std::option::Option<std::vec::Vec<crate::model::SamplingRuleRecord>>) -> Self {
+            self.sampling_rule_records = input; self
         }
         /// <p>Pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1185,17 +1136,20 @@ pub mod get_sampling_rules_output {
         }
         /// <p>Pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetSamplingRulesOutput`](crate::output::GetSamplingRulesOutput).
         pub fn build(self) -> crate::output::GetSamplingRulesOutput {
             crate::output::GetSamplingRulesOutput {
-                sampling_rule_records: self.sampling_rule_records,
-                next_token: self.next_token,
+                sampling_rule_records: self.sampling_rule_records
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSamplingRulesOutput {
     /// Creates a new builder-style object to manufacture [`GetSamplingRulesOutput`](crate::output::GetSamplingRulesOutput).
@@ -1207,7 +1161,7 @@ impl GetSamplingRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInsightSummariesOutput {
+pub struct GetInsightSummariesOutput  {
     /// <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
     #[doc(hidden)]
     pub insight_summaries: std::option::Option<std::vec::Vec<crate::model::InsightSummary>>,
@@ -1217,22 +1171,21 @@ pub struct GetInsightSummariesOutput {
 }
 impl GetInsightSummariesOutput {
     /// <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
-    pub fn insight_summaries(&self) -> std::option::Option<&[crate::model::InsightSummary]> {
+    pub fn insight_summaries(&self) -> std::option::Option<& [crate::model::InsightSummary]> {
         self.insight_summaries.as_deref()
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetInsightSummariesOutput`](crate::output::GetInsightSummariesOutput).
 pub mod get_insight_summaries_output {
-
+    
     /// A builder for [`GetInsightSummariesOutput`](crate::output::GetInsightSummariesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) insight_summaries:
-            std::option::Option<std::vec::Vec<crate::model::InsightSummary>>,
+        pub(crate) insight_summaries: std::option::Option<std::vec::Vec<crate::model::InsightSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1243,17 +1196,13 @@ pub mod get_insight_summaries_output {
         /// <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
         pub fn insight_summaries(mut self, input: crate::model::InsightSummary) -> Self {
             let mut v = self.insight_summaries.unwrap_or_default();
-            v.push(input);
-            self.insight_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.insight_summaries = Some(v);
+                            self
         }
         /// <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
-        pub fn set_insight_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InsightSummary>>,
-        ) -> Self {
-            self.insight_summaries = input;
-            self
+        pub fn set_insight_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::InsightSummary>>) -> Self {
+            self.insight_summaries = input; self
         }
         /// <p>Pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1262,17 +1211,20 @@ pub mod get_insight_summaries_output {
         }
         /// <p>Pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetInsightSummariesOutput`](crate::output::GetInsightSummariesOutput).
         pub fn build(self) -> crate::output::GetInsightSummariesOutput {
             crate::output::GetInsightSummariesOutput {
-                insight_summaries: self.insight_summaries,
-                next_token: self.next_token,
+                insight_summaries: self.insight_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInsightSummariesOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightSummariesOutput`](crate::output::GetInsightSummariesOutput).
@@ -1284,7 +1236,7 @@ impl GetInsightSummariesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInsightImpactGraphOutput {
+pub struct GetInsightImpactGraphOutput  {
     /// <p>The insight's unique identifier.</p>
     #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
@@ -1309,37 +1261,37 @@ pub struct GetInsightImpactGraphOutput {
 }
 impl GetInsightImpactGraphOutput {
     /// <p>The insight's unique identifier.</p>
-    pub fn insight_id(&self) -> std::option::Option<&str> {
+    pub fn insight_id(&self) -> std::option::Option<& str> {
         self.insight_id.as_deref()
     }
     /// <p>The provided start time.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The provided end time. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the service graph started.</p>
-    pub fn service_graph_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn service_graph_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.service_graph_start_time.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the service graph ended.</p>
-    pub fn service_graph_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn service_graph_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.service_graph_end_time.as_ref()
     }
     /// <p>The Amazon Web Services instrumented services related to the insight.</p>
-    pub fn services(&self) -> std::option::Option<&[crate::model::InsightImpactGraphService]> {
+    pub fn services(&self) -> std::option::Option<& [crate::model::InsightImpactGraphService]> {
         self.services.as_deref()
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetInsightImpactGraphOutput`](crate::output::GetInsightImpactGraphOutput).
 pub mod get_insight_impact_graph_output {
-
+    
     /// A builder for [`GetInsightImpactGraphOutput`](crate::output::GetInsightImpactGraphOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1348,8 +1300,7 @@ pub mod get_insight_impact_graph_output {
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) service_graph_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) service_graph_end_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) services:
-            std::option::Option<std::vec::Vec<crate::model::InsightImpactGraphService>>,
+        pub(crate) services: std::option::Option<std::vec::Vec<crate::model::InsightImpactGraphService>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1360,8 +1311,7 @@ pub mod get_insight_impact_graph_output {
         }
         /// <p>The insight's unique identifier.</p>
         pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.insight_id = input;
-            self
+            self.insight_id = input; self
         }
         /// <p>The provided start time.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1369,12 +1319,8 @@ pub mod get_insight_impact_graph_output {
             self
         }
         /// <p>The provided start time.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The provided end time. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1382,12 +1328,8 @@ pub mod get_insight_impact_graph_output {
             self
         }
         /// <p>The provided end time. </p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>The time, in Unix seconds, at which the service graph started.</p>
         pub fn service_graph_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1395,12 +1337,8 @@ pub mod get_insight_impact_graph_output {
             self
         }
         /// <p>The time, in Unix seconds, at which the service graph started.</p>
-        pub fn set_service_graph_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.service_graph_start_time = input;
-            self
+        pub fn set_service_graph_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.service_graph_start_time = input; self
         }
         /// <p>The time, in Unix seconds, at which the service graph ended.</p>
         pub fn service_graph_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1408,12 +1346,8 @@ pub mod get_insight_impact_graph_output {
             self
         }
         /// <p>The time, in Unix seconds, at which the service graph ended.</p>
-        pub fn set_service_graph_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.service_graph_end_time = input;
-            self
+        pub fn set_service_graph_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.service_graph_end_time = input; self
         }
         /// Appends an item to `services`.
         ///
@@ -1422,17 +1356,13 @@ pub mod get_insight_impact_graph_output {
         /// <p>The Amazon Web Services instrumented services related to the insight.</p>
         pub fn services(mut self, input: crate::model::InsightImpactGraphService) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input);
-            self.services = Some(v);
-            self
+                            v.push(input);
+                            self.services = Some(v);
+                            self
         }
         /// <p>The Amazon Web Services instrumented services related to the insight.</p>
-        pub fn set_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InsightImpactGraphService>>,
-        ) -> Self {
-            self.services = input;
-            self
+        pub fn set_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::InsightImpactGraphService>>) -> Self {
+            self.services = input; self
         }
         /// <p>Pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1441,22 +1371,30 @@ pub mod get_insight_impact_graph_output {
         }
         /// <p>Pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetInsightImpactGraphOutput`](crate::output::GetInsightImpactGraphOutput).
         pub fn build(self) -> crate::output::GetInsightImpactGraphOutput {
             crate::output::GetInsightImpactGraphOutput {
-                insight_id: self.insight_id,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                service_graph_start_time: self.service_graph_start_time,
-                service_graph_end_time: self.service_graph_end_time,
-                services: self.services,
-                next_token: self.next_token,
+                insight_id: self.insight_id
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                service_graph_start_time: self.service_graph_start_time
+                ,
+                service_graph_end_time: self.service_graph_end_time
+                ,
+                services: self.services
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInsightImpactGraphOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightImpactGraphOutput`](crate::output::GetInsightImpactGraphOutput).
@@ -1468,7 +1406,7 @@ impl GetInsightImpactGraphOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInsightEventsOutput {
+pub struct GetInsightEventsOutput  {
     /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
     #[doc(hidden)]
     pub insight_events: std::option::Option<std::vec::Vec<crate::model::InsightEvent>>,
@@ -1478,17 +1416,17 @@ pub struct GetInsightEventsOutput {
 }
 impl GetInsightEventsOutput {
     /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
-    pub fn insight_events(&self) -> std::option::Option<&[crate::model::InsightEvent]> {
+    pub fn insight_events(&self) -> std::option::Option<& [crate::model::InsightEvent]> {
         self.insight_events.as_deref()
     }
     /// <p>Use this token to retrieve the next page of insight events.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetInsightEventsOutput`](crate::output::GetInsightEventsOutput).
 pub mod get_insight_events_output {
-
+    
     /// A builder for [`GetInsightEventsOutput`](crate::output::GetInsightEventsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1503,17 +1441,13 @@ pub mod get_insight_events_output {
         /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
         pub fn insight_events(mut self, input: crate::model::InsightEvent) -> Self {
             let mut v = self.insight_events.unwrap_or_default();
-            v.push(input);
-            self.insight_events = Some(v);
-            self
+                            v.push(input);
+                            self.insight_events = Some(v);
+                            self
         }
         /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
-        pub fn set_insight_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InsightEvent>>,
-        ) -> Self {
-            self.insight_events = input;
-            self
+        pub fn set_insight_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::InsightEvent>>) -> Self {
+            self.insight_events = input; self
         }
         /// <p>Use this token to retrieve the next page of insight events.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1522,17 +1456,20 @@ pub mod get_insight_events_output {
         }
         /// <p>Use this token to retrieve the next page of insight events.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetInsightEventsOutput`](crate::output::GetInsightEventsOutput).
         pub fn build(self) -> crate::output::GetInsightEventsOutput {
             crate::output::GetInsightEventsOutput {
-                insight_events: self.insight_events,
-                next_token: self.next_token,
+                insight_events: self.insight_events
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInsightEventsOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightEventsOutput`](crate::output::GetInsightEventsOutput).
@@ -1544,20 +1481,20 @@ impl GetInsightEventsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInsightOutput {
+pub struct GetInsightOutput  {
     /// <p>The summary information of an insight.</p>
     #[doc(hidden)]
     pub insight: std::option::Option<crate::model::Insight>,
 }
 impl GetInsightOutput {
     /// <p>The summary information of an insight.</p>
-    pub fn insight(&self) -> std::option::Option<&crate::model::Insight> {
+    pub fn insight(&self) -> std::option::Option<& crate::model::Insight> {
         self.insight.as_ref()
     }
 }
 /// See [`GetInsightOutput`](crate::output::GetInsightOutput).
 pub mod get_insight_output {
-
+    
     /// A builder for [`GetInsightOutput`](crate::output::GetInsightOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1571,16 +1508,18 @@ pub mod get_insight_output {
         }
         /// <p>The summary information of an insight.</p>
         pub fn set_insight(mut self, input: std::option::Option<crate::model::Insight>) -> Self {
-            self.insight = input;
-            self
+            self.insight = input; self
         }
         /// Consumes the builder and constructs a [`GetInsightOutput`](crate::output::GetInsightOutput).
         pub fn build(self) -> crate::output::GetInsightOutput {
             crate::output::GetInsightOutput {
-                insight: self.insight,
+                insight: self.insight
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInsightOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightOutput`](crate::output::GetInsightOutput).
@@ -1592,7 +1531,7 @@ impl GetInsightOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupsOutput {
+pub struct GetGroupsOutput  {
     /// <p>The collection of all active groups.</p>
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
@@ -1602,17 +1541,17 @@ pub struct GetGroupsOutput {
 }
 impl GetGroupsOutput {
     /// <p>The collection of all active groups.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupSummary]> {
+    pub fn groups(&self) -> std::option::Option<& [crate::model::GroupSummary]> {
         self.groups.as_deref()
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetGroupsOutput`](crate::output::GetGroupsOutput).
 pub mod get_groups_output {
-
+    
     /// A builder for [`GetGroupsOutput`](crate::output::GetGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1627,17 +1566,13 @@ pub mod get_groups_output {
         /// <p>The collection of all active groups.</p>
         pub fn groups(mut self, input: crate::model::GroupSummary) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input);
-            self.groups = Some(v);
-            self
+                            v.push(input);
+                            self.groups = Some(v);
+                            self
         }
         /// <p>The collection of all active groups.</p>
-        pub fn set_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
-        ) -> Self {
-            self.groups = input;
-            self
+        pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>) -> Self {
+            self.groups = input; self
         }
         /// <p>Pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1646,17 +1581,20 @@ pub mod get_groups_output {
         }
         /// <p>Pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetGroupsOutput`](crate::output::GetGroupsOutput).
         pub fn build(self) -> crate::output::GetGroupsOutput {
             crate::output::GetGroupsOutput {
-                groups: self.groups,
-                next_token: self.next_token,
+                groups: self.groups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupsOutput`](crate::output::GetGroupsOutput).
@@ -1668,20 +1606,20 @@ impl GetGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupOutput {
+pub struct GetGroupOutput  {
     /// <p>The group that was requested. Contains the name of the group, the ARN of the group, the filter expression, and the insight configuration assigned to the group.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
 }
 impl GetGroupOutput {
     /// <p>The group that was requested. Contains the name of the group, the ARN of the group, the filter expression, and the insight configuration assigned to the group.</p>
-    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+    pub fn group(&self) -> std::option::Option<& crate::model::Group> {
         self.group.as_ref()
     }
 }
 /// See [`GetGroupOutput`](crate::output::GetGroupOutput).
 pub mod get_group_output {
-
+    
     /// A builder for [`GetGroupOutput`](crate::output::GetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1695,14 +1633,18 @@ pub mod get_group_output {
         }
         /// <p>The group that was requested. Contains the name of the group, the ARN of the group, the filter expression, and the insight configuration assigned to the group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
-            self.group = input;
-            self
+            self.group = input; self
         }
         /// Consumes the builder and constructs a [`GetGroupOutput`](crate::output::GetGroupOutput).
         pub fn build(self) -> crate::output::GetGroupOutput {
-            crate::output::GetGroupOutput { group: self.group }
+            crate::output::GetGroupOutput {
+                group: self.group
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupOutput`](crate::output::GetGroupOutput).
@@ -1714,20 +1656,20 @@ impl GetGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEncryptionConfigOutput {
+pub struct GetEncryptionConfigOutput  {
     /// <p>The encryption configuration document.</p>
     #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
 }
 impl GetEncryptionConfigOutput {
     /// <p>The encryption configuration document.</p>
-    pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
+    pub fn encryption_config(&self) -> std::option::Option<& crate::model::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
 }
 /// See [`GetEncryptionConfigOutput`](crate::output::GetEncryptionConfigOutput).
 pub mod get_encryption_config_output {
-
+    
     /// A builder for [`GetEncryptionConfigOutput`](crate::output::GetEncryptionConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1740,20 +1682,19 @@ pub mod get_encryption_config_output {
             self
         }
         /// <p>The encryption configuration document.</p>
-        pub fn set_encryption_config(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionConfig>,
-        ) -> Self {
-            self.encryption_config = input;
-            self
+        pub fn set_encryption_config(mut self, input: std::option::Option<crate::model::EncryptionConfig>) -> Self {
+            self.encryption_config = input; self
         }
         /// Consumes the builder and constructs a [`GetEncryptionConfigOutput`](crate::output::GetEncryptionConfigOutput).
         pub fn build(self) -> crate::output::GetEncryptionConfigOutput {
             crate::output::GetEncryptionConfigOutput {
-                encryption_config: self.encryption_config,
+                encryption_config: self.encryption_config
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEncryptionConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetEncryptionConfigOutput`](crate::output::GetEncryptionConfigOutput).
@@ -1765,20 +1706,20 @@ impl GetEncryptionConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSamplingRuleOutput {
+pub struct DeleteSamplingRuleOutput  {
     /// <p>The deleted rule definition and metadata.</p>
     #[doc(hidden)]
     pub sampling_rule_record: std::option::Option<crate::model::SamplingRuleRecord>,
 }
 impl DeleteSamplingRuleOutput {
     /// <p>The deleted rule definition and metadata.</p>
-    pub fn sampling_rule_record(&self) -> std::option::Option<&crate::model::SamplingRuleRecord> {
+    pub fn sampling_rule_record(&self) -> std::option::Option<& crate::model::SamplingRuleRecord> {
         self.sampling_rule_record.as_ref()
     }
 }
 /// See [`DeleteSamplingRuleOutput`](crate::output::DeleteSamplingRuleOutput).
 pub mod delete_sampling_rule_output {
-
+    
     /// A builder for [`DeleteSamplingRuleOutput`](crate::output::DeleteSamplingRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1791,20 +1732,19 @@ pub mod delete_sampling_rule_output {
             self
         }
         /// <p>The deleted rule definition and metadata.</p>
-        pub fn set_sampling_rule_record(
-            mut self,
-            input: std::option::Option<crate::model::SamplingRuleRecord>,
-        ) -> Self {
-            self.sampling_rule_record = input;
-            self
+        pub fn set_sampling_rule_record(mut self, input: std::option::Option<crate::model::SamplingRuleRecord>) -> Self {
+            self.sampling_rule_record = input; self
         }
         /// Consumes the builder and constructs a [`DeleteSamplingRuleOutput`](crate::output::DeleteSamplingRuleOutput).
         pub fn build(self) -> crate::output::DeleteSamplingRuleOutput {
             crate::output::DeleteSamplingRuleOutput {
-                sampling_rule_record: self.sampling_rule_record,
+                sampling_rule_record: self.sampling_rule_record
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteSamplingRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSamplingRuleOutput`](crate::output::DeleteSamplingRuleOutput).
@@ -1816,19 +1756,24 @@ impl DeleteSamplingRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcePolicyOutput {}
+pub struct DeleteResourcePolicyOutput  {
+}
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
 pub mod delete_resource_policy_output {
-
+    
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
         pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
-            crate::output::DeleteResourcePolicyOutput {}
+            crate::output::DeleteResourcePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
@@ -1840,19 +1785,24 @@ impl DeleteResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGroupOutput {}
+pub struct DeleteGroupOutput  {
+}
 /// See [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
 pub mod delete_group_output {
-
+    
     /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
         pub fn build(self) -> crate::output::DeleteGroupOutput {
-            crate::output::DeleteGroupOutput {}
+            crate::output::DeleteGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
@@ -1864,20 +1814,20 @@ impl DeleteGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSamplingRuleOutput {
+pub struct CreateSamplingRuleOutput  {
     /// <p>The saved rule definition and metadata.</p>
     #[doc(hidden)]
     pub sampling_rule_record: std::option::Option<crate::model::SamplingRuleRecord>,
 }
 impl CreateSamplingRuleOutput {
     /// <p>The saved rule definition and metadata.</p>
-    pub fn sampling_rule_record(&self) -> std::option::Option<&crate::model::SamplingRuleRecord> {
+    pub fn sampling_rule_record(&self) -> std::option::Option<& crate::model::SamplingRuleRecord> {
         self.sampling_rule_record.as_ref()
     }
 }
 /// See [`CreateSamplingRuleOutput`](crate::output::CreateSamplingRuleOutput).
 pub mod create_sampling_rule_output {
-
+    
     /// A builder for [`CreateSamplingRuleOutput`](crate::output::CreateSamplingRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1890,20 +1840,19 @@ pub mod create_sampling_rule_output {
             self
         }
         /// <p>The saved rule definition and metadata.</p>
-        pub fn set_sampling_rule_record(
-            mut self,
-            input: std::option::Option<crate::model::SamplingRuleRecord>,
-        ) -> Self {
-            self.sampling_rule_record = input;
-            self
+        pub fn set_sampling_rule_record(mut self, input: std::option::Option<crate::model::SamplingRuleRecord>) -> Self {
+            self.sampling_rule_record = input; self
         }
         /// Consumes the builder and constructs a [`CreateSamplingRuleOutput`](crate::output::CreateSamplingRuleOutput).
         pub fn build(self) -> crate::output::CreateSamplingRuleOutput {
             crate::output::CreateSamplingRuleOutput {
-                sampling_rule_record: self.sampling_rule_record,
+                sampling_rule_record: self.sampling_rule_record
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSamplingRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateSamplingRuleOutput`](crate::output::CreateSamplingRuleOutput).
@@ -1915,20 +1864,20 @@ impl CreateSamplingRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGroupOutput {
+pub struct CreateGroupOutput  {
     /// <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name (ARN) of the group that was generated based on the group name, the filter expression, and the insight configuration that was assigned to the group.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
 }
 impl CreateGroupOutput {
     /// <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name (ARN) of the group that was generated based on the group name, the filter expression, and the insight configuration that was assigned to the group.</p>
-    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+    pub fn group(&self) -> std::option::Option<& crate::model::Group> {
         self.group.as_ref()
     }
 }
 /// See [`CreateGroupOutput`](crate::output::CreateGroupOutput).
 pub mod create_group_output {
-
+    
     /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1942,14 +1891,18 @@ pub mod create_group_output {
         }
         /// <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name (ARN) of the group that was generated based on the group name, the filter expression, and the insight configuration that was assigned to the group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
-            self.group = input;
-            self
+            self.group = input; self
         }
         /// Consumes the builder and constructs a [`CreateGroupOutput`](crate::output::CreateGroupOutput).
         pub fn build(self) -> crate::output::CreateGroupOutput {
-            crate::output::CreateGroupOutput { group: self.group }
+            crate::output::CreateGroupOutput {
+                group: self.group
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateGroupOutput`](crate::output::CreateGroupOutput).
@@ -1961,7 +1914,7 @@ impl CreateGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetTracesOutput {
+pub struct BatchGetTracesOutput  {
     /// <p>Full traces for the specified requests.</p>
     #[doc(hidden)]
     pub traces: std::option::Option<std::vec::Vec<crate::model::Trace>>,
@@ -1974,21 +1927,21 @@ pub struct BatchGetTracesOutput {
 }
 impl BatchGetTracesOutput {
     /// <p>Full traces for the specified requests.</p>
-    pub fn traces(&self) -> std::option::Option<&[crate::model::Trace]> {
+    pub fn traces(&self) -> std::option::Option<& [crate::model::Trace]> {
         self.traces.as_deref()
     }
     /// <p>Trace IDs of requests that haven't been processed.</p>
-    pub fn unprocessed_trace_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn unprocessed_trace_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.unprocessed_trace_ids.as_deref()
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchGetTracesOutput`](crate::output::BatchGetTracesOutput).
 pub mod batch_get_traces_output {
-
+    
     /// A builder for [`BatchGetTracesOutput`](crate::output::BatchGetTracesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2004,17 +1957,13 @@ pub mod batch_get_traces_output {
         /// <p>Full traces for the specified requests.</p>
         pub fn traces(mut self, input: crate::model::Trace) -> Self {
             let mut v = self.traces.unwrap_or_default();
-            v.push(input);
-            self.traces = Some(v);
-            self
+                            v.push(input);
+                            self.traces = Some(v);
+                            self
         }
         /// <p>Full traces for the specified requests.</p>
-        pub fn set_traces(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Trace>>,
-        ) -> Self {
-            self.traces = input;
-            self
+        pub fn set_traces(mut self, input: std::option::Option<std::vec::Vec<crate::model::Trace>>) -> Self {
+            self.traces = input; self
         }
         /// Appends an item to `unprocessed_trace_ids`.
         ///
@@ -2023,17 +1972,13 @@ pub mod batch_get_traces_output {
         /// <p>Trace IDs of requests that haven't been processed.</p>
         pub fn unprocessed_trace_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.unprocessed_trace_ids.unwrap_or_default();
-            v.push(input.into());
-            self.unprocessed_trace_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.unprocessed_trace_ids = Some(v);
+                            self
         }
         /// <p>Trace IDs of requests that haven't been processed.</p>
-        pub fn set_unprocessed_trace_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.unprocessed_trace_ids = input;
-            self
+        pub fn set_unprocessed_trace_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.unprocessed_trace_ids = input; self
         }
         /// <p>Pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2042,18 +1987,22 @@ pub mod batch_get_traces_output {
         }
         /// <p>Pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetTracesOutput`](crate::output::BatchGetTracesOutput).
         pub fn build(self) -> crate::output::BatchGetTracesOutput {
             crate::output::BatchGetTracesOutput {
-                traces: self.traces,
-                unprocessed_trace_ids: self.unprocessed_trace_ids,
-                next_token: self.next_token,
+                traces: self.traces
+                ,
+                unprocessed_trace_ids: self.unprocessed_trace_ids
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetTracesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetTracesOutput`](crate::output::BatchGetTracesOutput).
@@ -2061,3 +2010,4 @@ impl BatchGetTracesOutput {
         crate::output::batch_get_traces_output::Builder::default()
     }
 }
+

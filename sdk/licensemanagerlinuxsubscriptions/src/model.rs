@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let status = unimplemented!();
 /// match status {
@@ -32,22 +32,14 @@
 /// Specifically, when `status` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Status::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Status {
     /// Completed status
     Completed,
@@ -58,7 +50,7 @@ pub enum Status {
     /// Successful status
     Successful,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
     fn from(s: &str) -> Self {
@@ -67,17 +59,17 @@ impl std::convert::From<&str> for Status {
             "Failed" => Status::Failed,
             "InProgress" => Status::InProgress,
             "Successful" => Status::Successful,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Status {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Status::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Status::from(s))
+                }
+            }
 impl Status {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -86,12 +78,14 @@ impl Status {
             Status::Failed => "Failed",
             Status::InProgress => "InProgress",
             Status::Successful => "Successful",
-            Status::Unknown(value) => value.as_str(),
+            Status::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Completed", "Failed", "InProgress", "Successful"]
+        &[
+            "Completed", "Failed", "InProgress", "Successful"
+        ]
     }
 }
 impl AsRef<str> for Status {
@@ -103,7 +97,7 @@ impl AsRef<str> for Status {
 /// <p>Lists the settings defined for discovering Linux subscriptions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LinuxSubscriptionsDiscoverySettings {
+pub struct LinuxSubscriptionsDiscoverySettings  {
     /// <p>The Regions in which to discover data for Linux subscriptions.</p>
     #[doc(hidden)]
     pub source_regions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -113,25 +107,22 @@ pub struct LinuxSubscriptionsDiscoverySettings {
 }
 impl LinuxSubscriptionsDiscoverySettings {
     /// <p>The Regions in which to discover data for Linux subscriptions.</p>
-    pub fn source_regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn source_regions(&self) -> std::option::Option<& [std::string::String]> {
         self.source_regions.as_deref()
     }
     /// <p>Details if you have enabled resource discovery across your accounts in Organizations.</p>
-    pub fn organization_integration(
-        &self,
-    ) -> std::option::Option<&crate::model::OrganizationIntegration> {
+    pub fn organization_integration(&self) -> std::option::Option<& crate::model::OrganizationIntegration> {
         self.organization_integration.as_ref()
     }
 }
 /// See [`LinuxSubscriptionsDiscoverySettings`](crate::model::LinuxSubscriptionsDiscoverySettings).
 pub mod linux_subscriptions_discovery_settings {
-
+    
     /// A builder for [`LinuxSubscriptionsDiscoverySettings`](crate::model::LinuxSubscriptionsDiscoverySettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_regions: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) organization_integration:
-            std::option::Option<crate::model::OrganizationIntegration>,
+        pub(crate) organization_integration: std::option::Option<crate::model::OrganizationIntegration>,
     }
     impl Builder {
         /// Appends an item to `source_regions`.
@@ -141,42 +132,35 @@ pub mod linux_subscriptions_discovery_settings {
         /// <p>The Regions in which to discover data for Linux subscriptions.</p>
         pub fn source_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source_regions.unwrap_or_default();
-            v.push(input.into());
-            self.source_regions = Some(v);
-            self
+                            v.push(input.into());
+                            self.source_regions = Some(v);
+                            self
         }
         /// <p>The Regions in which to discover data for Linux subscriptions.</p>
-        pub fn set_source_regions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.source_regions = input;
-            self
+        pub fn set_source_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.source_regions = input; self
         }
         /// <p>Details if you have enabled resource discovery across your accounts in Organizations.</p>
-        pub fn organization_integration(
-            mut self,
-            input: crate::model::OrganizationIntegration,
-        ) -> Self {
+        pub fn organization_integration(mut self, input: crate::model::OrganizationIntegration) -> Self {
             self.organization_integration = Some(input);
             self
         }
         /// <p>Details if you have enabled resource discovery across your accounts in Organizations.</p>
-        pub fn set_organization_integration(
-            mut self,
-            input: std::option::Option<crate::model::OrganizationIntegration>,
-        ) -> Self {
-            self.organization_integration = input;
-            self
+        pub fn set_organization_integration(mut self, input: std::option::Option<crate::model::OrganizationIntegration>) -> Self {
+            self.organization_integration = input; self
         }
         /// Consumes the builder and constructs a [`LinuxSubscriptionsDiscoverySettings`](crate::model::LinuxSubscriptionsDiscoverySettings).
         pub fn build(self) -> crate::model::LinuxSubscriptionsDiscoverySettings {
             crate::model::LinuxSubscriptionsDiscoverySettings {
-                source_regions: self.source_regions,
-                organization_integration: self.organization_integration,
+                source_regions: self.source_regions
+                ,
+                organization_integration: self.organization_integration
+                ,
             }
         }
     }
+    
+    
 }
 impl LinuxSubscriptionsDiscoverySettings {
     /// Creates a new builder-style object to manufacture [`LinuxSubscriptionsDiscoverySettings`](crate::model::LinuxSubscriptionsDiscoverySettings).
@@ -191,9 +175,9 @@ impl LinuxSubscriptionsDiscoverySettings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let organizationintegration = unimplemented!();
 /// match organizationintegration {
@@ -215,60 +199,52 @@ impl LinuxSubscriptionsDiscoverySettings {
 /// Specifically, when `organizationintegration` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OrganizationIntegration::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OrganizationIntegration {
     /// Disabled OrganizationIntegration
     Disabled,
     /// Enabled OrganizationIntegration
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrganizationIntegration {
     fn from(s: &str) -> Self {
         match s {
             "Disabled" => OrganizationIntegration::Disabled,
             "Enabled" => OrganizationIntegration::Enabled,
-            other => OrganizationIntegration::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => OrganizationIntegration::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OrganizationIntegration {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OrganizationIntegration::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OrganizationIntegration::from(s))
+                }
+            }
 impl OrganizationIntegration {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrganizationIntegration::Disabled => "Disabled",
             OrganizationIntegration::Enabled => "Enabled",
-            OrganizationIntegration::Unknown(value) => value.as_str(),
+            OrganizationIntegration::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Disabled", "Enabled"]
+        &[
+            "Disabled", "Enabled"
+        ]
     }
 }
 impl AsRef<str> for OrganizationIntegration {
@@ -283,9 +259,9 @@ impl AsRef<str> for OrganizationIntegration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let linuxsubscriptionsdiscovery = unimplemented!();
 /// match linuxsubscriptionsdiscovery {
@@ -307,60 +283,52 @@ impl AsRef<str> for OrganizationIntegration {
 /// Specifically, when `linuxsubscriptionsdiscovery` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LinuxSubscriptionsDiscovery::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LinuxSubscriptionsDiscovery {
     /// Disabled LinuxSubscriptionsDiscovery
     Disabled,
     /// Enabled LinuxSubscriptionsDiscovery
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LinuxSubscriptionsDiscovery {
     fn from(s: &str) -> Self {
         match s {
             "Disabled" => LinuxSubscriptionsDiscovery::Disabled,
             "Enabled" => LinuxSubscriptionsDiscovery::Enabled,
-            other => LinuxSubscriptionsDiscovery::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LinuxSubscriptionsDiscovery::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LinuxSubscriptionsDiscovery {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LinuxSubscriptionsDiscovery::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LinuxSubscriptionsDiscovery::from(s))
+                }
+            }
 impl LinuxSubscriptionsDiscovery {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LinuxSubscriptionsDiscovery::Disabled => "Disabled",
             LinuxSubscriptionsDiscovery::Enabled => "Enabled",
-            LinuxSubscriptionsDiscovery::Unknown(value) => value.as_str(),
+            LinuxSubscriptionsDiscovery::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Disabled", "Enabled"]
+        &[
+            "Disabled", "Enabled"
+        ]
     }
 }
 impl AsRef<str> for LinuxSubscriptionsDiscovery {
@@ -372,7 +340,7 @@ impl AsRef<str> for LinuxSubscriptionsDiscovery {
 /// <p>An object which details a discovered Linux subscription.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Subscription {
+pub struct Subscription  {
     /// <p>The name of the subscription.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -385,11 +353,11 @@ pub struct Subscription {
 }
 impl Subscription {
     /// <p>The name of the subscription.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of subscription. The type can be subscription-included with Amazon EC2, Bring Your Own Subscription model (BYOS), or from the Amazon Web Services Marketplace. Certain subscriptions may use licensing from the Amazon Web Services Marketplace as well as OS licensing from Amazon EC2 or BYOS.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The total amount of running instances using this subscription.</p>
@@ -399,7 +367,7 @@ impl Subscription {
 }
 /// See [`Subscription`](crate::model::Subscription).
 pub mod subscription {
-
+    
     /// A builder for [`Subscription`](crate::model::Subscription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -415,8 +383,7 @@ pub mod subscription {
         }
         /// <p>The name of the subscription.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of subscription. The type can be subscription-included with Amazon EC2, Bring Your Own Subscription model (BYOS), or from the Amazon Web Services Marketplace. Certain subscriptions may use licensing from the Amazon Web Services Marketplace as well as OS licensing from Amazon EC2 or BYOS.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -425,8 +392,7 @@ pub mod subscription {
         }
         /// <p>The type of subscription. The type can be subscription-included with Amazon EC2, Bring Your Own Subscription model (BYOS), or from the Amazon Web Services Marketplace. Certain subscriptions may use licensing from the Amazon Web Services Marketplace as well as OS licensing from Amazon EC2 or BYOS.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The total amount of running instances using this subscription.</p>
         pub fn instance_count(mut self, input: i64) -> Self {
@@ -435,18 +401,22 @@ pub mod subscription {
         }
         /// <p>The total amount of running instances using this subscription.</p>
         pub fn set_instance_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.instance_count = input;
-            self
+            self.instance_count = input; self
         }
         /// Consumes the builder and constructs a [`Subscription`](crate::model::Subscription).
         pub fn build(self) -> crate::model::Subscription {
             crate::model::Subscription {
-                name: self.name,
-                r#type: self.r#type,
-                instance_count: self.instance_count,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                instance_count: self.instance_count
+                ,
             }
         }
     }
+    
+    
 }
 impl Subscription {
     /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
@@ -458,7 +428,7 @@ impl Subscription {
 /// <p>A filter object that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The type of name to filter by.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -471,21 +441,21 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The type of name to filter by.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>One or more values for the name to filter by.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
     /// <p>An operator for filtering results.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::model::Operator> {
+    pub fn operator(&self) -> std::option::Option<& crate::model::Operator> {
         self.operator.as_ref()
     }
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -501,8 +471,7 @@ pub mod filter {
         }
         /// <p>The type of name to filter by.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -511,17 +480,13 @@ pub mod filter {
         /// <p>One or more values for the name to filter by.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>One or more values for the name to filter by.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// <p>An operator for filtering results.</p>
         pub fn operator(mut self, input: crate::model::Operator) -> Self {
@@ -530,18 +495,22 @@ pub mod filter {
         }
         /// <p>An operator for filtering results.</p>
         pub fn set_operator(mut self, input: std::option::Option<crate::model::Operator>) -> Self {
-            self.operator = input;
-            self
+            self.operator = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                name: self.name,
-                values: self.values,
-                operator: self.operator,
+                name: self.name
+                ,
+                values: self.values
+                ,
+                operator: self.operator
+                ,
             }
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -556,9 +525,9 @@ impl Filter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let operator = unimplemented!();
 /// match operator {
@@ -581,22 +550,14 @@ impl Filter {
 /// Specifically, when `operator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Operator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Operator {
     /// Contains operator
     Contains,
@@ -605,7 +566,7 @@ pub enum Operator {
     /// Not equal operator
     NotEqual,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Operator {
     fn from(s: &str) -> Self {
@@ -613,17 +574,17 @@ impl std::convert::From<&str> for Operator {
             "Contains" => Operator::Contains,
             "Equal" => Operator::Equal,
             "NotEqual" => Operator::NotEqual,
-            other => Operator::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Operator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Operator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Operator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Operator::from(s))
+                }
+            }
 impl Operator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -631,12 +592,14 @@ impl Operator {
             Operator::Contains => "Contains",
             Operator::Equal => "Equal",
             Operator::NotEqual => "NotEqual",
-            Operator::Unknown(value) => value.as_str(),
+            Operator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Contains", "Equal", "NotEqual"]
+        &[
+            "Contains", "Equal", "NotEqual"
+        ]
     }
 }
 impl AsRef<str> for Operator {
@@ -648,7 +611,7 @@ impl AsRef<str> for Operator {
 /// <p>Details discovered information about a running instance using Linux subscriptions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Instance {
+pub struct Instance  {
     /// <p>The AMI ID used to launch the instance.</p>
     #[doc(hidden)]
     pub ami_id: std::option::Option<std::string::String>,
@@ -682,49 +645,49 @@ pub struct Instance {
 }
 impl Instance {
     /// <p>The AMI ID used to launch the instance.</p>
-    pub fn ami_id(&self) -> std::option::Option<&str> {
+    pub fn ami_id(&self) -> std::option::Option<& str> {
         self.ami_id.as_deref()
     }
     /// <p>The instance ID of the resource.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The instance type of the resource.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The account ID which owns the instance.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The status of the instance.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The Region the instance is running in.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The usage operation of the instance. For more information, see For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i>.</p>
-    pub fn usage_operation(&self) -> std::option::Option<&str> {
+    pub fn usage_operation(&self) -> std::option::Option<& str> {
         self.usage_operation.as_deref()
     }
     /// <p>The product code for the instance. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i> .</p>
-    pub fn product_code(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn product_code(&self) -> std::option::Option<& [std::string::String]> {
         self.product_code.as_deref()
     }
     /// <p>The time in which the last discovery updated the instance details.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+    pub fn last_updated_time(&self) -> std::option::Option<& str> {
         self.last_updated_time.as_deref()
     }
     /// <p>The name of the subscription being used by the instance.</p>
-    pub fn subscription_name(&self) -> std::option::Option<&str> {
+    pub fn subscription_name(&self) -> std::option::Option<& str> {
         self.subscription_name.as_deref()
     }
 }
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
-
+    
     /// A builder for [`Instance`](crate::model::Instance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -747,8 +710,7 @@ pub mod instance {
         }
         /// <p>The AMI ID used to launch the instance.</p>
         pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ami_id = input;
-            self
+            self.ami_id = input; self
         }
         /// <p>The instance ID of the resource.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -757,8 +719,7 @@ pub mod instance {
         }
         /// <p>The instance ID of the resource.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// <p>The instance type of the resource.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -766,12 +727,8 @@ pub mod instance {
             self
         }
         /// <p>The instance type of the resource.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>The account ID which owns the instance.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -780,8 +737,7 @@ pub mod instance {
         }
         /// <p>The account ID which owns the instance.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The status of the instance.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -790,8 +746,7 @@ pub mod instance {
         }
         /// <p>The status of the instance.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The Region the instance is running in.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -800,8 +755,7 @@ pub mod instance {
         }
         /// <p>The Region the instance is running in.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The usage operation of the instance. For more information, see For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i>.</p>
         pub fn usage_operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -809,12 +763,8 @@ pub mod instance {
             self
         }
         /// <p>The usage operation of the instance. For more information, see For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i>.</p>
-        pub fn set_usage_operation(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.usage_operation = input;
-            self
+        pub fn set_usage_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.usage_operation = input; self
         }
         /// Appends an item to `product_code`.
         ///
@@ -823,17 +773,13 @@ pub mod instance {
         /// <p>The product code for the instance. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i> .</p>
         pub fn product_code(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.product_code.unwrap_or_default();
-            v.push(input.into());
-            self.product_code = Some(v);
-            self
+                            v.push(input.into());
+                            self.product_code = Some(v);
+                            self
         }
         /// <p>The product code for the instance. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i> .</p>
-        pub fn set_product_code(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.product_code = input;
-            self
+        pub fn set_product_code(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.product_code = input; self
         }
         /// <p>The time in which the last discovery updated the instance details.</p>
         pub fn last_updated_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -841,12 +787,8 @@ pub mod instance {
             self
         }
         /// <p>The time in which the last discovery updated the instance details.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>The name of the subscription being used by the instance.</p>
         pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -854,29 +796,37 @@ pub mod instance {
             self
         }
         /// <p>The name of the subscription being used by the instance.</p>
-        pub fn set_subscription_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscription_name = input;
-            self
+        pub fn set_subscription_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscription_name = input; self
         }
         /// Consumes the builder and constructs a [`Instance`](crate::model::Instance).
         pub fn build(self) -> crate::model::Instance {
             crate::model::Instance {
-                ami_id: self.ami_id,
-                instance_id: self.instance_id,
-                instance_type: self.instance_type,
-                account_id: self.account_id,
-                status: self.status,
-                region: self.region,
-                usage_operation: self.usage_operation,
-                product_code: self.product_code,
-                last_updated_time: self.last_updated_time,
-                subscription_name: self.subscription_name,
+                ami_id: self.ami_id
+                ,
+                instance_id: self.instance_id
+                ,
+                instance_type: self.instance_type
+                ,
+                account_id: self.account_id
+                ,
+                status: self.status
+                ,
+                region: self.region
+                ,
+                usage_operation: self.usage_operation
+                ,
+                product_code: self.product_code
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                subscription_name: self.subscription_name
+                ,
             }
         }
     }
+    
+    
 }
 impl Instance {
     /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
@@ -884,3 +834,4 @@ impl Instance {
         crate::model::instance::Builder::default()
     }
 }
+

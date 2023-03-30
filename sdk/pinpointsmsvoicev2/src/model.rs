@@ -3,7 +3,7 @@
 /// <p>The field associated with the validation exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The name of the field.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>The name of the field.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The message associated with the validation exception with information to help determine its cause.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_exception_field {
         }
         /// <p>The name of the field.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The message associated with the validation exception with information to help determine its cause.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod validation_exception_field {
         }
         /// <p>The message associated with the validation exception with information to help determine its cause.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -73,9 +75,9 @@ impl ValidationExceptionField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -119,22 +121,14 @@ impl ValidationExceptionField {
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotAddOptedOutNumber,
@@ -185,7 +179,7 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -197,50 +191,34 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
             "INVALID_ARN" => ValidationExceptionReason::InvalidArn,
             "INVALID_FILTER_VALUES" => ValidationExceptionReason::InvalidFilterValues,
-            "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY" => {
-                ValidationExceptionReason::InvalidIdentityForDestinationCountry
-            }
+            "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY" => ValidationExceptionReason::InvalidIdentityForDestinationCountry,
             "INVALID_NEXT_TOKEN" => ValidationExceptionReason::InvalidNextToken,
             "INVALID_PARAMETER" => ValidationExceptionReason::InvalidParameter,
             "MISSING_PARAMETER" => ValidationExceptionReason::MissingParameter,
             "OTHER" => ValidationExceptionReason::Other,
-            "PARAMETERS_CANNOT_BE_USED_TOGETHER" => {
-                ValidationExceptionReason::ParametersCannotBeUsedTogether
-            }
-            "PHONE_NUMBER_CANNOT_BE_OPTED_IN" => {
-                ValidationExceptionReason::PhoneNumberCannotBeOptedIn
-            }
-            "PHONE_NUMBER_CANNOT_BE_RELEASED" => {
-                ValidationExceptionReason::PhoneNumberCannotBeReleased
-            }
+            "PARAMETERS_CANNOT_BE_USED_TOGETHER" => ValidationExceptionReason::ParametersCannotBeUsedTogether,
+            "PHONE_NUMBER_CANNOT_BE_OPTED_IN" => ValidationExceptionReason::PhoneNumberCannotBeOptedIn,
+            "PHONE_NUMBER_CANNOT_BE_RELEASED" => ValidationExceptionReason::PhoneNumberCannotBeReleased,
             "PRICE_OVER_THRESHOLD" => ValidationExceptionReason::PriceOverThreshold,
-            "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT" => {
-                ValidationExceptionReason::RequestedSpendLimitHigherThanServiceLimit
-            }
+            "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT" => ValidationExceptionReason::RequestedSpendLimitHigherThanServiceLimit,
             "SENDER_ID_NOT_REGISTERED" => ValidationExceptionReason::SenderIdNotRegistered,
             "SENDER_ID_NOT_SUPPORTED" => ValidationExceptionReason::SenderIdNotSupported,
             "TWO_WAY_NOT_ENABLED" => ValidationExceptionReason::TwoWayNotEnabled,
-            "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY" => {
-                ValidationExceptionReason::TwoWayNotSupportedInCountry
-            }
-            "TWO_WAY_NOT_SUPPORTED_IN_REGION" => {
-                ValidationExceptionReason::TwoWayNotSupportedInRegion
-            }
+            "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY" => ValidationExceptionReason::TwoWayNotSupportedInCountry,
+            "TWO_WAY_NOT_SUPPORTED_IN_REGION" => ValidationExceptionReason::TwoWayNotSupportedInRegion,
             "TWO_WAY_TOPIC_NOT_PRESENT" => ValidationExceptionReason::TwoWayTopicNotPresent,
             "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -252,67 +230,30 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
             ValidationExceptionReason::InvalidArn => "INVALID_ARN",
             ValidationExceptionReason::InvalidFilterValues => "INVALID_FILTER_VALUES",
-            ValidationExceptionReason::InvalidIdentityForDestinationCountry => {
-                "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY"
-            }
+            ValidationExceptionReason::InvalidIdentityForDestinationCountry => "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY",
             ValidationExceptionReason::InvalidNextToken => "INVALID_NEXT_TOKEN",
             ValidationExceptionReason::InvalidParameter => "INVALID_PARAMETER",
             ValidationExceptionReason::MissingParameter => "MISSING_PARAMETER",
             ValidationExceptionReason::Other => "OTHER",
-            ValidationExceptionReason::ParametersCannotBeUsedTogether => {
-                "PARAMETERS_CANNOT_BE_USED_TOGETHER"
-            }
-            ValidationExceptionReason::PhoneNumberCannotBeOptedIn => {
-                "PHONE_NUMBER_CANNOT_BE_OPTED_IN"
-            }
-            ValidationExceptionReason::PhoneNumberCannotBeReleased => {
-                "PHONE_NUMBER_CANNOT_BE_RELEASED"
-            }
+            ValidationExceptionReason::ParametersCannotBeUsedTogether => "PARAMETERS_CANNOT_BE_USED_TOGETHER",
+            ValidationExceptionReason::PhoneNumberCannotBeOptedIn => "PHONE_NUMBER_CANNOT_BE_OPTED_IN",
+            ValidationExceptionReason::PhoneNumberCannotBeReleased => "PHONE_NUMBER_CANNOT_BE_RELEASED",
             ValidationExceptionReason::PriceOverThreshold => "PRICE_OVER_THRESHOLD",
-            ValidationExceptionReason::RequestedSpendLimitHigherThanServiceLimit => {
-                "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT"
-            }
+            ValidationExceptionReason::RequestedSpendLimitHigherThanServiceLimit => "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT",
             ValidationExceptionReason::SenderIdNotRegistered => "SENDER_ID_NOT_REGISTERED",
             ValidationExceptionReason::SenderIdNotSupported => "SENDER_ID_NOT_SUPPORTED",
             ValidationExceptionReason::TwoWayNotEnabled => "TWO_WAY_NOT_ENABLED",
-            ValidationExceptionReason::TwoWayNotSupportedInCountry => {
-                "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY"
-            }
-            ValidationExceptionReason::TwoWayNotSupportedInRegion => {
-                "TWO_WAY_NOT_SUPPORTED_IN_REGION"
-            }
+            ValidationExceptionReason::TwoWayNotSupportedInCountry => "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY",
+            ValidationExceptionReason::TwoWayNotSupportedInRegion => "TWO_WAY_NOT_SUPPORTED_IN_REGION",
             ValidationExceptionReason::TwoWayTopicNotPresent => "TWO_WAY_TOPIC_NOT_PRESENT",
             ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANNOT_ADD_OPTED_OUT_NUMBER",
-            "CANNOT_PARSE",
-            "COUNTRY_CODE_MISMATCH",
-            "DESTINATION_COUNTRY_BLOCKED",
-            "FIELD_VALIDATION_FAILED",
-            "INVALID_ARN",
-            "INVALID_FILTER_VALUES",
-            "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY",
-            "INVALID_NEXT_TOKEN",
-            "INVALID_PARAMETER",
-            "MISSING_PARAMETER",
-            "OTHER",
-            "PARAMETERS_CANNOT_BE_USED_TOGETHER",
-            "PHONE_NUMBER_CANNOT_BE_OPTED_IN",
-            "PHONE_NUMBER_CANNOT_BE_RELEASED",
-            "PRICE_OVER_THRESHOLD",
-            "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT",
-            "SENDER_ID_NOT_REGISTERED",
-            "SENDER_ID_NOT_SUPPORTED",
-            "TWO_WAY_NOT_ENABLED",
-            "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY",
-            "TWO_WAY_NOT_SUPPORTED_IN_REGION",
-            "TWO_WAY_TOPIC_NOT_PRESENT",
-            "UNKNOWN_OPERATION",
+            "CANNOT_ADD_OPTED_OUT_NUMBER", "CANNOT_PARSE", "COUNTRY_CODE_MISMATCH", "DESTINATION_COUNTRY_BLOCKED", "FIELD_VALIDATION_FAILED", "INVALID_ARN", "INVALID_FILTER_VALUES", "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY", "INVALID_NEXT_TOKEN", "INVALID_PARAMETER", "MISSING_PARAMETER", "OTHER", "PARAMETERS_CANNOT_BE_USED_TOGETHER", "PHONE_NUMBER_CANNOT_BE_OPTED_IN", "PHONE_NUMBER_CANNOT_BE_RELEASED", "PRICE_OVER_THRESHOLD", "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT", "SENDER_ID_NOT_REGISTERED", "SENDER_ID_NOT_SUPPORTED", "TWO_WAY_NOT_ENABLED", "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY", "TWO_WAY_NOT_SUPPORTED_IN_REGION", "TWO_WAY_TOPIC_NOT_PRESENT", "UNKNOWN_OPERATION"
         ]
     }
 }
@@ -328,9 +269,9 @@ impl AsRef<str> for ValidationExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -360,22 +301,14 @@ impl AsRef<str> for ValidationExceptionReason {
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Account,
@@ -398,7 +331,7 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     SenderId,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
@@ -413,17 +346,17 @@ impl std::convert::From<&str> for ResourceType {
             "pool" => ResourceType::Pool,
             "registration" => ResourceType::Registration,
             "sender-id" => ResourceType::SenderId,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -438,22 +371,13 @@ impl ResourceType {
             ResourceType::Pool => "pool",
             ResourceType::Registration => "registration",
             ResourceType::SenderId => "sender-id",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "account",
-            "configuration-set",
-            "event-destination",
-            "keyword",
-            "opt-out-list",
-            "opted-out-number",
-            "phone-number",
-            "pool",
-            "registration",
-            "sender-id",
+            "account", "configuration-set", "event-destination", "keyword", "opt-out-list", "opted-out-number", "phone-number", "pool", "registration", "sender-id"
         ]
     }
 }
@@ -469,9 +393,9 @@ impl AsRef<str> for ResourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let conflictexceptionreason = unimplemented!();
 /// match conflictexceptionreason {
@@ -510,22 +434,14 @@ impl AsRef<str> for ResourceType {
 /// Specifically, when `conflictexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConflictExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     DeletionProtectionEnabled,
@@ -566,119 +482,71 @@ pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     TwoWayConfigMismatch,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConflictExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "DELETION_PROTECTION_ENABLED" => ConflictExceptionReason::DeletionProtectionEnabled,
-            "DESTINATION_PHONE_NUMBER_NOT_VERIFIED" => {
-                ConflictExceptionReason::DestinationPhoneNumberNotVerified
-            }
-            "DESTINATION_PHONE_NUMBER_OPTED_OUT" => {
-                ConflictExceptionReason::DestinationPhoneNumberOptedOut
-            }
+            "DESTINATION_PHONE_NUMBER_NOT_VERIFIED" => ConflictExceptionReason::DestinationPhoneNumberNotVerified,
+            "DESTINATION_PHONE_NUMBER_OPTED_OUT" => ConflictExceptionReason::DestinationPhoneNumberOptedOut,
             "EVENT_DESTINATION_MISMATCH" => ConflictExceptionReason::EventDestinationMismatch,
             "KEYWORD_MISMATCH" => ConflictExceptionReason::KeywordMismatch,
             "LAST_PHONE_NUMBER" => ConflictExceptionReason::LastPhoneNumber,
             "MESSAGE_TYPE_MISMATCH" => ConflictExceptionReason::MessageTypeMismatch,
-            "NO_ORIGINATION_IDENTITIES_FOUND" => {
-                ConflictExceptionReason::NoOriginationIdentitiesFound
-            }
+            "NO_ORIGINATION_IDENTITIES_FOUND" => ConflictExceptionReason::NoOriginationIdentitiesFound,
             "OPT_OUT_LIST_MISMATCH" => ConflictExceptionReason::OptOutListMismatch,
-            "PHONE_NUMBER_ASSOCIATED_TO_POOL" => {
-                ConflictExceptionReason::PhoneNumberAssociatedToPool
-            }
-            "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL" => {
-                ConflictExceptionReason::PhoneNumberNotAssociatedToPool
-            }
-            "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION" => {
-                ConflictExceptionReason::PhoneNumberNotInRegistrationRegion
-            }
+            "PHONE_NUMBER_ASSOCIATED_TO_POOL" => ConflictExceptionReason::PhoneNumberAssociatedToPool,
+            "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL" => ConflictExceptionReason::PhoneNumberNotAssociatedToPool,
+            "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION" => ConflictExceptionReason::PhoneNumberNotInRegistrationRegion,
             "RESOURCE_ALREADY_EXISTS" => ConflictExceptionReason::ResourceAlreadyExists,
             "RESOURCE_DELETION_NOT_ALLOWED" => ConflictExceptionReason::ResourceDeletionNotAllowed,
-            "RESOURCE_MODIFICATION_NOT_ALLOWED" => {
-                ConflictExceptionReason::ResourceModificationNotAllowed
-            }
+            "RESOURCE_MODIFICATION_NOT_ALLOWED" => ConflictExceptionReason::ResourceModificationNotAllowed,
             "RESOURCE_NOT_ACTIVE" => ConflictExceptionReason::ResourceNotActive,
             "RESOURCE_NOT_EMPTY" => ConflictExceptionReason::ResourceNotEmpty,
             "SELF_MANAGED_OPT_OUTS_MISMATCH" => ConflictExceptionReason::SelfManagedOptOutsMismatch,
             "TWO_WAY_CONFIG_MISMATCH" => ConflictExceptionReason::TwoWayConfigMismatch,
-            other => ConflictExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConflictExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConflictExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConflictExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConflictExceptionReason::from(s))
+                }
+            }
 impl ConflictExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConflictExceptionReason::DeletionProtectionEnabled => "DELETION_PROTECTION_ENABLED",
-            ConflictExceptionReason::DestinationPhoneNumberNotVerified => {
-                "DESTINATION_PHONE_NUMBER_NOT_VERIFIED"
-            }
-            ConflictExceptionReason::DestinationPhoneNumberOptedOut => {
-                "DESTINATION_PHONE_NUMBER_OPTED_OUT"
-            }
+            ConflictExceptionReason::DestinationPhoneNumberNotVerified => "DESTINATION_PHONE_NUMBER_NOT_VERIFIED",
+            ConflictExceptionReason::DestinationPhoneNumberOptedOut => "DESTINATION_PHONE_NUMBER_OPTED_OUT",
             ConflictExceptionReason::EventDestinationMismatch => "EVENT_DESTINATION_MISMATCH",
             ConflictExceptionReason::KeywordMismatch => "KEYWORD_MISMATCH",
             ConflictExceptionReason::LastPhoneNumber => "LAST_PHONE_NUMBER",
             ConflictExceptionReason::MessageTypeMismatch => "MESSAGE_TYPE_MISMATCH",
-            ConflictExceptionReason::NoOriginationIdentitiesFound => {
-                "NO_ORIGINATION_IDENTITIES_FOUND"
-            }
+            ConflictExceptionReason::NoOriginationIdentitiesFound => "NO_ORIGINATION_IDENTITIES_FOUND",
             ConflictExceptionReason::OptOutListMismatch => "OPT_OUT_LIST_MISMATCH",
-            ConflictExceptionReason::PhoneNumberAssociatedToPool => {
-                "PHONE_NUMBER_ASSOCIATED_TO_POOL"
-            }
-            ConflictExceptionReason::PhoneNumberNotAssociatedToPool => {
-                "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL"
-            }
-            ConflictExceptionReason::PhoneNumberNotInRegistrationRegion => {
-                "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION"
-            }
+            ConflictExceptionReason::PhoneNumberAssociatedToPool => "PHONE_NUMBER_ASSOCIATED_TO_POOL",
+            ConflictExceptionReason::PhoneNumberNotAssociatedToPool => "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL",
+            ConflictExceptionReason::PhoneNumberNotInRegistrationRegion => "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION",
             ConflictExceptionReason::ResourceAlreadyExists => "RESOURCE_ALREADY_EXISTS",
             ConflictExceptionReason::ResourceDeletionNotAllowed => "RESOURCE_DELETION_NOT_ALLOWED",
-            ConflictExceptionReason::ResourceModificationNotAllowed => {
-                "RESOURCE_MODIFICATION_NOT_ALLOWED"
-            }
+            ConflictExceptionReason::ResourceModificationNotAllowed => "RESOURCE_MODIFICATION_NOT_ALLOWED",
             ConflictExceptionReason::ResourceNotActive => "RESOURCE_NOT_ACTIVE",
             ConflictExceptionReason::ResourceNotEmpty => "RESOURCE_NOT_EMPTY",
             ConflictExceptionReason::SelfManagedOptOutsMismatch => "SELF_MANAGED_OPT_OUTS_MISMATCH",
             ConflictExceptionReason::TwoWayConfigMismatch => "TWO_WAY_CONFIG_MISMATCH",
-            ConflictExceptionReason::Unknown(value) => value.as_str(),
+            ConflictExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DELETION_PROTECTION_ENABLED",
-            "DESTINATION_PHONE_NUMBER_NOT_VERIFIED",
-            "DESTINATION_PHONE_NUMBER_OPTED_OUT",
-            "EVENT_DESTINATION_MISMATCH",
-            "KEYWORD_MISMATCH",
-            "LAST_PHONE_NUMBER",
-            "MESSAGE_TYPE_MISMATCH",
-            "NO_ORIGINATION_IDENTITIES_FOUND",
-            "OPT_OUT_LIST_MISMATCH",
-            "PHONE_NUMBER_ASSOCIATED_TO_POOL",
-            "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL",
-            "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION",
-            "RESOURCE_ALREADY_EXISTS",
-            "RESOURCE_DELETION_NOT_ALLOWED",
-            "RESOURCE_MODIFICATION_NOT_ALLOWED",
-            "RESOURCE_NOT_ACTIVE",
-            "RESOURCE_NOT_EMPTY",
-            "SELF_MANAGED_OPT_OUTS_MISMATCH",
-            "TWO_WAY_CONFIG_MISMATCH",
+            "DELETION_PROTECTION_ENABLED", "DESTINATION_PHONE_NUMBER_NOT_VERIFIED", "DESTINATION_PHONE_NUMBER_OPTED_OUT", "EVENT_DESTINATION_MISMATCH", "KEYWORD_MISMATCH", "LAST_PHONE_NUMBER", "MESSAGE_TYPE_MISMATCH", "NO_ORIGINATION_IDENTITIES_FOUND", "OPT_OUT_LIST_MISMATCH", "PHONE_NUMBER_ASSOCIATED_TO_POOL", "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL", "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION", "RESOURCE_ALREADY_EXISTS", "RESOURCE_DELETION_NOT_ALLOWED", "RESOURCE_MODIFICATION_NOT_ALLOWED", "RESOURCE_NOT_ACTIVE", "RESOURCE_NOT_EMPTY", "SELF_MANAGED_OPT_OUTS_MISMATCH", "TWO_WAY_CONFIG_MISMATCH"
         ]
     }
 }
@@ -694,9 +562,9 @@ impl AsRef<str> for ConflictExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accessdeniedexceptionreason = unimplemented!();
 /// match accessdeniedexceptionreason {
@@ -718,64 +586,52 @@ impl AsRef<str> for ConflictExceptionReason {
 /// Specifically, when `accessdeniedexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessDeniedExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccessDeniedExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     AccountDisabled,
     #[allow(missing_docs)] // documentation missing in model
     InsufficientAccountReputation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessDeniedExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_DISABLED" => AccessDeniedExceptionReason::AccountDisabled,
-            "INSUFFICIENT_ACCOUNT_REPUTATION" => {
-                AccessDeniedExceptionReason::InsufficientAccountReputation
-            }
-            other => AccessDeniedExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "INSUFFICIENT_ACCOUNT_REPUTATION" => AccessDeniedExceptionReason::InsufficientAccountReputation,
+            other => AccessDeniedExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccessDeniedExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccessDeniedExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccessDeniedExceptionReason::from(s))
+                }
+            }
 impl AccessDeniedExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessDeniedExceptionReason::AccountDisabled => "ACCOUNT_DISABLED",
-            AccessDeniedExceptionReason::InsufficientAccountReputation => {
-                "INSUFFICIENT_ACCOUNT_REPUTATION"
-            }
-            AccessDeniedExceptionReason::Unknown(value) => value.as_str(),
+            AccessDeniedExceptionReason::InsufficientAccountReputation => "INSUFFICIENT_ACCOUNT_REPUTATION",
+            AccessDeniedExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCOUNT_DISABLED", "INSUFFICIENT_ACCOUNT_REPUTATION"]
+        &[
+            "ACCOUNT_DISABLED", "INSUFFICIENT_ACCOUNT_REPUTATION"
+        ]
     }
 }
 impl AsRef<str> for AccessDeniedExceptionReason {
@@ -790,9 +646,9 @@ impl AsRef<str> for AccessDeniedExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let messagetype = unimplemented!();
 /// match messagetype {
@@ -814,58 +670,52 @@ impl AsRef<str> for AccessDeniedExceptionReason {
 /// Specifically, when `messagetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MessageType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MessageType {
     #[allow(missing_docs)] // documentation missing in model
     Promotional,
     #[allow(missing_docs)] // documentation missing in model
     Transactional,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MessageType {
     fn from(s: &str) -> Self {
         match s {
             "PROMOTIONAL" => MessageType::Promotional,
             "TRANSACTIONAL" => MessageType::Transactional,
-            other => MessageType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MessageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MessageType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MessageType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MessageType::from(s))
+                }
+            }
 impl MessageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MessageType::Promotional => "PROMOTIONAL",
             MessageType::Transactional => "TRANSACTIONAL",
-            MessageType::Unknown(value) => value.as_str(),
+            MessageType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PROMOTIONAL", "TRANSACTIONAL"]
+        &[
+            "PROMOTIONAL", "TRANSACTIONAL"
+        ]
     }
 }
 impl AsRef<str> for MessageType {
@@ -880,9 +730,9 @@ impl AsRef<str> for MessageType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let poolstatus = unimplemented!();
 /// match poolstatus {
@@ -905,22 +755,14 @@ impl AsRef<str> for MessageType {
 /// Specifically, when `poolstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PoolStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PoolStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -929,7 +771,7 @@ pub enum PoolStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PoolStatus {
     fn from(s: &str) -> Self {
@@ -937,17 +779,17 @@ impl std::convert::From<&str> for PoolStatus {
             "ACTIVE" => PoolStatus::Active,
             "CREATING" => PoolStatus::Creating,
             "DELETING" => PoolStatus::Deleting,
-            other => PoolStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PoolStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PoolStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PoolStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PoolStatus::from(s))
+                }
+            }
 impl PoolStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -955,12 +797,14 @@ impl PoolStatus {
             PoolStatus::Active => "ACTIVE",
             PoolStatus::Creating => "CREATING",
             PoolStatus::Deleting => "DELETING",
-            PoolStatus::Unknown(value) => value.as_str(),
+            PoolStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING"]
+        &[
+            "ACTIVE", "CREATING", "DELETING"
+        ]
     }
 }
 impl AsRef<str> for PoolStatus {
@@ -975,9 +819,9 @@ impl AsRef<str> for PoolStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let numbertype = unimplemented!();
 /// match numbertype {
@@ -1001,22 +845,14 @@ impl AsRef<str> for PoolStatus {
 /// Specifically, when `numbertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NumberType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NumberType {
     #[allow(missing_docs)] // documentation missing in model
     LongCode,
@@ -1027,7 +863,7 @@ pub enum NumberType {
     #[allow(missing_docs)] // documentation missing in model
     TollFree,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NumberType {
     fn from(s: &str) -> Self {
@@ -1036,17 +872,17 @@ impl std::convert::From<&str> for NumberType {
             "SHORT_CODE" => NumberType::ShortCode,
             "TEN_DLC" => NumberType::TenDlc,
             "TOLL_FREE" => NumberType::TollFree,
-            other => NumberType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => NumberType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NumberType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NumberType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NumberType::from(s))
+                }
+            }
 impl NumberType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1055,12 +891,14 @@ impl NumberType {
             NumberType::ShortCode => "SHORT_CODE",
             NumberType::TenDlc => "TEN_DLC",
             NumberType::TollFree => "TOLL_FREE",
-            NumberType::Unknown(value) => value.as_str(),
+            NumberType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LONG_CODE", "SHORT_CODE", "TEN_DLC", "TOLL_FREE"]
+        &[
+            "LONG_CODE", "SHORT_CODE", "TEN_DLC", "TOLL_FREE"
+        ]
     }
 }
 impl AsRef<str> for NumberType {
@@ -1075,9 +913,9 @@ impl AsRef<str> for NumberType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let numbercapability = unimplemented!();
 /// match numbercapability {
@@ -1099,58 +937,52 @@ impl AsRef<str> for NumberType {
 /// Specifically, when `numbercapability` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NumberCapability::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NumberCapability {
     #[allow(missing_docs)] // documentation missing in model
     Sms,
     #[allow(missing_docs)] // documentation missing in model
     Voice,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NumberCapability {
     fn from(s: &str) -> Self {
         match s {
             "SMS" => NumberCapability::Sms,
             "VOICE" => NumberCapability::Voice,
-            other => NumberCapability::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => NumberCapability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NumberCapability {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NumberCapability::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NumberCapability::from(s))
+                }
+            }
 impl NumberCapability {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NumberCapability::Sms => "SMS",
             NumberCapability::Voice => "VOICE",
-            NumberCapability::Unknown(value) => value.as_str(),
+            NumberCapability::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SMS", "VOICE"]
+        &[
+            "SMS", "VOICE"
+        ]
     }
 }
 impl AsRef<str> for NumberCapability {
@@ -1165,9 +997,9 @@ impl AsRef<str> for NumberCapability {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let numberstatus = unimplemented!();
 /// match numberstatus {
@@ -1192,22 +1024,14 @@ impl AsRef<str> for NumberCapability {
 /// Specifically, when `numberstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NumberStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NumberStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -1220,7 +1044,7 @@ pub enum NumberStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NumberStatus {
     fn from(s: &str) -> Self {
@@ -1230,17 +1054,17 @@ impl std::convert::From<&str> for NumberStatus {
             "DELETED" => NumberStatus::Deleted,
             "DISASSOCIATING" => NumberStatus::Disassociating,
             "PENDING" => NumberStatus::Pending,
-            other => NumberStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => NumberStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NumberStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NumberStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NumberStatus::from(s))
+                }
+            }
 impl NumberStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1250,17 +1074,13 @@ impl NumberStatus {
             NumberStatus::Deleted => "DELETED",
             NumberStatus::Disassociating => "DISASSOCIATING",
             NumberStatus::Pending => "PENDING",
-            NumberStatus::Unknown(value) => value.as_str(),
+            NumberStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "ASSOCIATING",
-            "DELETED",
-            "DISASSOCIATING",
-            "PENDING",
+            "ACTIVE", "ASSOCIATING", "DELETED", "DISASSOCIATING", "PENDING"
         ]
     }
 }
@@ -1270,11 +1090,11 @@ impl AsRef<str> for NumberStatus {
     }
 }
 
-/// <p>Contains information about an event destination.</p>
+/// <p>Contains information about an event destination.</p> 
 /// <p>Event destinations are associated with configuration sets, which enable you to publish message sending events to Amazon CloudWatch, Amazon Kinesis Data Firehose, or Amazon SNS.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventDestination {
+pub struct EventDestination  {
     /// <p>The name of the EventDestination.</p>
     #[doc(hidden)]
     pub event_destination_name: std::option::Option<std::string::String>,
@@ -1296,7 +1116,7 @@ pub struct EventDestination {
 }
 impl EventDestination {
     /// <p>The name of the EventDestination.</p>
-    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> std::option::Option<& str> {
         self.event_destination_name.as_deref()
     }
     /// <p>When set to true events will be logged.</p>
@@ -1304,40 +1124,33 @@ impl EventDestination {
         self.enabled
     }
     /// <p>An array of event types that determine which events to log.</p>
-    pub fn matching_event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
+    pub fn matching_event_types(&self) -> std::option::Option<& [crate::model::EventType]> {
         self.matching_event_types.as_deref()
     }
     /// <p>An object that contains information about an event destination that sends logging events to Amazon CloudWatch logs.</p>
-    pub fn cloud_watch_logs_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchLogsDestination> {
+    pub fn cloud_watch_logs_destination(&self) -> std::option::Option<& crate::model::CloudWatchLogsDestination> {
         self.cloud_watch_logs_destination.as_ref()
     }
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
-    pub fn kinesis_firehose_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::KinesisFirehoseDestination> {
+    pub fn kinesis_firehose_destination(&self) -> std::option::Option<& crate::model::KinesisFirehoseDestination> {
         self.kinesis_firehose_destination.as_ref()
     }
     /// <p>An object that contains information about an event destination that sends logging events to Amazon SNS.</p>
-    pub fn sns_destination(&self) -> std::option::Option<&crate::model::SnsDestination> {
+    pub fn sns_destination(&self) -> std::option::Option<& crate::model::SnsDestination> {
         self.sns_destination.as_ref()
     }
 }
 /// See [`EventDestination`](crate::model::EventDestination).
 pub mod event_destination {
-
+    
     /// A builder for [`EventDestination`](crate::model::EventDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_destination_name: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) matching_event_types:
-            std::option::Option<std::vec::Vec<crate::model::EventType>>,
-        pub(crate) cloud_watch_logs_destination:
-            std::option::Option<crate::model::CloudWatchLogsDestination>,
-        pub(crate) kinesis_firehose_destination:
-            std::option::Option<crate::model::KinesisFirehoseDestination>,
+        pub(crate) matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
+        pub(crate) cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,
+        pub(crate) kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
         pub(crate) sns_destination: std::option::Option<crate::model::SnsDestination>,
     }
     impl Builder {
@@ -1347,12 +1160,8 @@ pub mod event_destination {
             self
         }
         /// <p>The name of the EventDestination.</p>
-        pub fn set_event_destination_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_destination_name = input;
-            self
+        pub fn set_event_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_destination_name = input; self
         }
         /// <p>When set to true events will be logged.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -1361,8 +1170,7 @@ pub mod event_destination {
         }
         /// <p>When set to true events will be logged.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Appends an item to `matching_event_types`.
         ///
@@ -1371,49 +1179,31 @@ pub mod event_destination {
         /// <p>An array of event types that determine which events to log.</p>
         pub fn matching_event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
-            v.push(input);
-            self.matching_event_types = Some(v);
-            self
+                            v.push(input);
+                            self.matching_event_types = Some(v);
+                            self
         }
         /// <p>An array of event types that determine which events to log.</p>
-        pub fn set_matching_event_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventType>>,
-        ) -> Self {
-            self.matching_event_types = input;
-            self
+        pub fn set_matching_event_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventType>>) -> Self {
+            self.matching_event_types = input; self
         }
         /// <p>An object that contains information about an event destination that sends logging events to Amazon CloudWatch logs.</p>
-        pub fn cloud_watch_logs_destination(
-            mut self,
-            input: crate::model::CloudWatchLogsDestination,
-        ) -> Self {
+        pub fn cloud_watch_logs_destination(mut self, input: crate::model::CloudWatchLogsDestination) -> Self {
             self.cloud_watch_logs_destination = Some(input);
             self
         }
         /// <p>An object that contains information about an event destination that sends logging events to Amazon CloudWatch logs.</p>
-        pub fn set_cloud_watch_logs_destination(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchLogsDestination>,
-        ) -> Self {
-            self.cloud_watch_logs_destination = input;
-            self
+        pub fn set_cloud_watch_logs_destination(mut self, input: std::option::Option<crate::model::CloudWatchLogsDestination>) -> Self {
+            self.cloud_watch_logs_destination = input; self
         }
         /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
-        pub fn kinesis_firehose_destination(
-            mut self,
-            input: crate::model::KinesisFirehoseDestination,
-        ) -> Self {
+        pub fn kinesis_firehose_destination(mut self, input: crate::model::KinesisFirehoseDestination) -> Self {
             self.kinesis_firehose_destination = Some(input);
             self
         }
         /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
-        pub fn set_kinesis_firehose_destination(
-            mut self,
-            input: std::option::Option<crate::model::KinesisFirehoseDestination>,
-        ) -> Self {
-            self.kinesis_firehose_destination = input;
-            self
+        pub fn set_kinesis_firehose_destination(mut self, input: std::option::Option<crate::model::KinesisFirehoseDestination>) -> Self {
+            self.kinesis_firehose_destination = input; self
         }
         /// <p>An object that contains information about an event destination that sends logging events to Amazon SNS.</p>
         pub fn sns_destination(mut self, input: crate::model::SnsDestination) -> Self {
@@ -1421,25 +1211,29 @@ pub mod event_destination {
             self
         }
         /// <p>An object that contains information about an event destination that sends logging events to Amazon SNS.</p>
-        pub fn set_sns_destination(
-            mut self,
-            input: std::option::Option<crate::model::SnsDestination>,
-        ) -> Self {
-            self.sns_destination = input;
-            self
+        pub fn set_sns_destination(mut self, input: std::option::Option<crate::model::SnsDestination>) -> Self {
+            self.sns_destination = input; self
         }
         /// Consumes the builder and constructs a [`EventDestination`](crate::model::EventDestination).
         pub fn build(self) -> crate::model::EventDestination {
             crate::model::EventDestination {
-                event_destination_name: self.event_destination_name,
-                enabled: self.enabled,
-                matching_event_types: self.matching_event_types,
-                cloud_watch_logs_destination: self.cloud_watch_logs_destination,
-                kinesis_firehose_destination: self.kinesis_firehose_destination,
-                sns_destination: self.sns_destination,
+                event_destination_name: self.event_destination_name
+                ,
+                enabled: self.enabled
+                ,
+                matching_event_types: self.matching_event_types
+                ,
+                cloud_watch_logs_destination: self.cloud_watch_logs_destination
+                ,
+                kinesis_firehose_destination: self.kinesis_firehose_destination
+                ,
+                sns_destination: self.sns_destination
+                ,
             }
         }
     }
+    
+    
 }
 impl EventDestination {
     /// Creates a new builder-style object to manufacture [`EventDestination`](crate::model::EventDestination).
@@ -1451,20 +1245,20 @@ impl EventDestination {
 /// <p>An object that defines an Amazon SNS destination for events. You can use Amazon SNS to send notification when certain events occur.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnsDestination {
+pub struct SnsDestination  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.</p>
     #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl SnsDestination {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.</p>
-    pub fn topic_arn(&self) -> std::option::Option<&str> {
+    pub fn topic_arn(&self) -> std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
 }
 /// See [`SnsDestination`](crate::model::SnsDestination).
 pub mod sns_destination {
-
+    
     /// A builder for [`SnsDestination`](crate::model::SnsDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1478,16 +1272,18 @@ pub mod sns_destination {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = input;
-            self
+            self.topic_arn = input; self
         }
         /// Consumes the builder and constructs a [`SnsDestination`](crate::model::SnsDestination).
         pub fn build(self) -> crate::model::SnsDestination {
             crate::model::SnsDestination {
-                topic_arn: self.topic_arn,
+                topic_arn: self.topic_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl SnsDestination {
     /// Creates a new builder-style object to manufacture [`SnsDestination`](crate::model::SnsDestination).
@@ -1496,11 +1292,11 @@ impl SnsDestination {
     }
 }
 
-/// <p>Contains the delivery stream Amazon Resource Name (ARN), and the ARN of the Identity and Access Management (IAM) role associated with an Kinesis Data Firehose event destination.</p>
+/// <p>Contains the delivery stream Amazon Resource Name (ARN), and the ARN of the Identity and Access Management (IAM) role associated with an Kinesis Data Firehose event destination.</p> 
 /// <p>Event destinations, such as Kinesis Data Firehose, are associated with configuration sets, which enable you to publish message sending events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisFirehoseDestination {
+pub struct KinesisFirehoseDestination  {
     /// <p>The ARN of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon Firehose destination.</p>
     #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
@@ -1510,17 +1306,17 @@ pub struct KinesisFirehoseDestination {
 }
 impl KinesisFirehoseDestination {
     /// <p>The ARN of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon Firehose destination.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-    pub fn delivery_stream_arn(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_arn(&self) -> std::option::Option<& str> {
         self.delivery_stream_arn.as_deref()
     }
 }
 /// See [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
 pub mod kinesis_firehose_destination {
-
+    
     /// A builder for [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1535,8 +1331,7 @@ pub mod kinesis_firehose_destination {
         }
         /// <p>The ARN of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon Firehose destination.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = input;
-            self
+            self.iam_role_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
         pub fn delivery_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1544,21 +1339,21 @@ pub mod kinesis_firehose_destination {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-        pub fn set_delivery_stream_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream_arn = input;
-            self
+        pub fn set_delivery_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream_arn = input; self
         }
         /// Consumes the builder and constructs a [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
         pub fn build(self) -> crate::model::KinesisFirehoseDestination {
             crate::model::KinesisFirehoseDestination {
-                iam_role_arn: self.iam_role_arn,
-                delivery_stream_arn: self.delivery_stream_arn,
+                iam_role_arn: self.iam_role_arn
+                ,
+                delivery_stream_arn: self.delivery_stream_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl KinesisFirehoseDestination {
     /// Creates a new builder-style object to manufacture [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
@@ -1570,7 +1365,7 @@ impl KinesisFirehoseDestination {
 /// <p>Contains the destination configuration to use when publishing message sending events. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchLogsDestination {
+pub struct CloudWatchLogsDestination  {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.</p>
     #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
@@ -1580,17 +1375,17 @@ pub struct CloudWatchLogsDestination {
 }
 impl CloudWatchLogsDestination {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The name of the Amazon CloudWatch log group that you want to record events in. </p>
-    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn log_group_arn(&self) -> std::option::Option<& str> {
         self.log_group_arn.as_deref()
     }
 }
 /// See [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
 pub mod cloud_watch_logs_destination {
-
+    
     /// A builder for [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1605,8 +1400,7 @@ pub mod cloud_watch_logs_destination {
         }
         /// <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = input;
-            self
+            self.iam_role_arn = input; self
         }
         /// <p>The name of the Amazon CloudWatch log group that you want to record events in. </p>
         pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1614,21 +1408,21 @@ pub mod cloud_watch_logs_destination {
             self
         }
         /// <p>The name of the Amazon CloudWatch log group that you want to record events in. </p>
-        pub fn set_log_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_arn = input;
-            self
+        pub fn set_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
         pub fn build(self) -> crate::model::CloudWatchLogsDestination {
             crate::model::CloudWatchLogsDestination {
-                iam_role_arn: self.iam_role_arn,
-                log_group_arn: self.log_group_arn,
+                iam_role_arn: self.iam_role_arn
+                ,
+                log_group_arn: self.log_group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudWatchLogsDestination {
     /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
@@ -1643,9 +1437,9 @@ impl CloudWatchLogsDestination {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eventtype = unimplemented!();
 /// match eventtype {
@@ -1690,22 +1484,14 @@ impl CloudWatchLogsDestination {
 /// Specifically, when `eventtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EventType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -1758,7 +1544,7 @@ pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     VoiceTtlExpired,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventType {
     fn from(s: &str) -> Self {
@@ -1788,17 +1574,17 @@ impl std::convert::From<&str> for EventType {
             "VOICE_NO_ANSWER" => EventType::VoiceNoAnswer,
             "VOICE_RINGING" => EventType::VoiceRinging,
             "VOICE_TTL_EXPIRED" => EventType::VoiceTtlExpired,
-            other => EventType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EventType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EventType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EventType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EventType::from(s))
+                }
+            }
 impl EventType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1828,37 +1614,13 @@ impl EventType {
             EventType::VoiceNoAnswer => "VOICE_NO_ANSWER",
             EventType::VoiceRinging => "VOICE_RINGING",
             EventType::VoiceTtlExpired => "VOICE_TTL_EXPIRED",
-            EventType::Unknown(value) => value.as_str(),
+            EventType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ALL",
-            "TEXT_ALL",
-            "TEXT_BLOCKED",
-            "TEXT_CARRIER_BLOCKED",
-            "TEXT_CARRIER_UNREACHABLE",
-            "TEXT_DELIVERED",
-            "TEXT_INVALID",
-            "TEXT_INVALID_MESSAGE",
-            "TEXT_PENDING",
-            "TEXT_QUEUED",
-            "TEXT_SENT",
-            "TEXT_SPAM",
-            "TEXT_SUCCESSFUL",
-            "TEXT_TTL_EXPIRED",
-            "TEXT_UNKNOWN",
-            "TEXT_UNREACHABLE",
-            "VOICE_ALL",
-            "VOICE_ANSWERED",
-            "VOICE_BUSY",
-            "VOICE_COMPLETED",
-            "VOICE_FAILED",
-            "VOICE_INITIATED",
-            "VOICE_NO_ANSWER",
-            "VOICE_RINGING",
-            "VOICE_TTL_EXPIRED",
+            "ALL", "TEXT_ALL", "TEXT_BLOCKED", "TEXT_CARRIER_BLOCKED", "TEXT_CARRIER_UNREACHABLE", "TEXT_DELIVERED", "TEXT_INVALID", "TEXT_INVALID_MESSAGE", "TEXT_PENDING", "TEXT_QUEUED", "TEXT_SENT", "TEXT_SPAM", "TEXT_SUCCESSFUL", "TEXT_TTL_EXPIRED", "TEXT_UNKNOWN", "TEXT_UNREACHABLE", "VOICE_ALL", "VOICE_ANSWERED", "VOICE_BUSY", "VOICE_COMPLETED", "VOICE_FAILED", "VOICE_INITIATED", "VOICE_NO_ANSWER", "VOICE_RINGING", "VOICE_TTL_EXPIRED"
         ]
     }
 }
@@ -1874,9 +1636,9 @@ impl AsRef<str> for EventType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let servicequotaexceededexceptionreason = unimplemented!();
 /// match servicequotaexceededexceptionreason {
@@ -1909,22 +1671,14 @@ impl AsRef<str> for EventType {
 /// Specifically, when `servicequotaexceededexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServiceQuotaExceededExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ServiceQuotaExceededExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     ConfigurationSetsPerAccount,
@@ -1953,113 +1707,59 @@ pub enum ServiceQuotaExceededExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     TagsPerResource,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceQuotaExceededExceptionReason {
     fn from(s: &str) -> Self {
         match s {
-            "CONFIGURATION_SETS_PER_ACCOUNT" => {
-                ServiceQuotaExceededExceptionReason::ConfigurationSetsPerAccount
-            }
-            "DAILY_DESTINATION_CALL_LIMIT" => {
-                ServiceQuotaExceededExceptionReason::DailyDestinationCallLimit
-            }
-            "EVENT_DESTINATIONS_PER_CONFIGURATION_SET" => {
-                ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet
-            }
-            "KEYWORDS_PER_PHONE_NUMBER" => {
-                ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber
-            }
+            "CONFIGURATION_SETS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::ConfigurationSetsPerAccount,
+            "DAILY_DESTINATION_CALL_LIMIT" => ServiceQuotaExceededExceptionReason::DailyDestinationCallLimit,
+            "EVENT_DESTINATIONS_PER_CONFIGURATION_SET" => ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet,
+            "KEYWORDS_PER_PHONE_NUMBER" => ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber,
             "KEYWORDS_PER_POOL" => ServiceQuotaExceededExceptionReason::KeywordsPerPool,
-            "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT" => {
-                ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText
-            }
-            "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE" => {
-                ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice
-            }
-            "OPT_OUT_LISTS_PER_ACCOUNT" => {
-                ServiceQuotaExceededExceptionReason::OptOutListsPerAccount
-            }
-            "ORIGINATION_IDENTITIES_PER_POOL" => {
-                ServiceQuotaExceededExceptionReason::OriginationIdentitiesPerPool
-            }
-            "PHONE_NUMBERS_PER_ACCOUNT" => {
-                ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount
-            }
-            "PHONE_NUMBERS_PER_REGISTRATION" => {
-                ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration
-            }
+            "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT" => ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText,
+            "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE" => ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice,
+            "OPT_OUT_LISTS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::OptOutListsPerAccount,
+            "ORIGINATION_IDENTITIES_PER_POOL" => ServiceQuotaExceededExceptionReason::OriginationIdentitiesPerPool,
+            "PHONE_NUMBERS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount,
+            "PHONE_NUMBERS_PER_REGISTRATION" => ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration,
             "POOLS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::PoolsPerAccount,
             "TAGS_PER_RESOURCE" => ServiceQuotaExceededExceptionReason::TagsPerResource,
-            other => ServiceQuotaExceededExceptionReason::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ServiceQuotaExceededExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ServiceQuotaExceededExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServiceQuotaExceededExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ServiceQuotaExceededExceptionReason::from(s))
+                }
+            }
 impl ServiceQuotaExceededExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ServiceQuotaExceededExceptionReason::ConfigurationSetsPerAccount => {
-                "CONFIGURATION_SETS_PER_ACCOUNT"
-            }
-            ServiceQuotaExceededExceptionReason::DailyDestinationCallLimit => {
-                "DAILY_DESTINATION_CALL_LIMIT"
-            }
-            ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet => {
-                "EVENT_DESTINATIONS_PER_CONFIGURATION_SET"
-            }
-            ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber => {
-                "KEYWORDS_PER_PHONE_NUMBER"
-            }
+            ServiceQuotaExceededExceptionReason::ConfigurationSetsPerAccount => "CONFIGURATION_SETS_PER_ACCOUNT",
+            ServiceQuotaExceededExceptionReason::DailyDestinationCallLimit => "DAILY_DESTINATION_CALL_LIMIT",
+            ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet => "EVENT_DESTINATIONS_PER_CONFIGURATION_SET",
+            ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber => "KEYWORDS_PER_PHONE_NUMBER",
             ServiceQuotaExceededExceptionReason::KeywordsPerPool => "KEYWORDS_PER_POOL",
-            ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText => {
-                "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT"
-            }
-            ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice => {
-                "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE"
-            }
-            ServiceQuotaExceededExceptionReason::OptOutListsPerAccount => {
-                "OPT_OUT_LISTS_PER_ACCOUNT"
-            }
-            ServiceQuotaExceededExceptionReason::OriginationIdentitiesPerPool => {
-                "ORIGINATION_IDENTITIES_PER_POOL"
-            }
-            ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount => {
-                "PHONE_NUMBERS_PER_ACCOUNT"
-            }
-            ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration => {
-                "PHONE_NUMBERS_PER_REGISTRATION"
-            }
+            ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText => "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT",
+            ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice => "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE",
+            ServiceQuotaExceededExceptionReason::OptOutListsPerAccount => "OPT_OUT_LISTS_PER_ACCOUNT",
+            ServiceQuotaExceededExceptionReason::OriginationIdentitiesPerPool => "ORIGINATION_IDENTITIES_PER_POOL",
+            ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount => "PHONE_NUMBERS_PER_ACCOUNT",
+            ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration => "PHONE_NUMBERS_PER_REGISTRATION",
             ServiceQuotaExceededExceptionReason::PoolsPerAccount => "POOLS_PER_ACCOUNT",
             ServiceQuotaExceededExceptionReason::TagsPerResource => "TAGS_PER_RESOURCE",
-            ServiceQuotaExceededExceptionReason::Unknown(value) => value.as_str(),
+            ServiceQuotaExceededExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CONFIGURATION_SETS_PER_ACCOUNT",
-            "DAILY_DESTINATION_CALL_LIMIT",
-            "EVENT_DESTINATIONS_PER_CONFIGURATION_SET",
-            "KEYWORDS_PER_PHONE_NUMBER",
-            "KEYWORDS_PER_POOL",
-            "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT",
-            "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE",
-            "OPT_OUT_LISTS_PER_ACCOUNT",
-            "ORIGINATION_IDENTITIES_PER_POOL",
-            "PHONE_NUMBERS_PER_ACCOUNT",
-            "PHONE_NUMBERS_PER_REGISTRATION",
-            "POOLS_PER_ACCOUNT",
-            "TAGS_PER_RESOURCE",
+            "CONFIGURATION_SETS_PER_ACCOUNT", "DAILY_DESTINATION_CALL_LIMIT", "EVENT_DESTINATIONS_PER_CONFIGURATION_SET", "KEYWORDS_PER_PHONE_NUMBER", "KEYWORDS_PER_POOL", "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT", "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE", "OPT_OUT_LISTS_PER_ACCOUNT", "ORIGINATION_IDENTITIES_PER_POOL", "PHONE_NUMBERS_PER_ACCOUNT", "PHONE_NUMBERS_PER_REGISTRATION", "POOLS_PER_ACCOUNT", "TAGS_PER_RESOURCE"
         ]
     }
 }
@@ -2072,7 +1772,7 @@ impl AsRef<str> for ServiceQuotaExceededExceptionReason {
 /// <p>The list of tags to be added to the specified topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key identifier, or name, of the tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -2082,17 +1782,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key identifier, or name, of the tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The string value associated with the key of the tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2107,8 +1807,7 @@ pub mod tag {
         }
         /// <p>The key identifier, or name, of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The string value associated with the key of the tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2117,17 +1816,20 @@ pub mod tag {
         }
         /// <p>The string value associated with the key of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -2142,9 +1844,9 @@ impl Tag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let voiceid = unimplemented!();
 /// match voiceid {
@@ -2223,22 +1925,14 @@ impl Tag {
 /// Specifically, when `voiceid` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VoiceId::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Amy,
@@ -2359,7 +2053,7 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Zhiyu,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VoiceId {
     fn from(s: &str) -> Self {
@@ -2423,17 +2117,17 @@ impl std::convert::From<&str> for VoiceId {
             "VITORIA" => VoiceId::Vitoria,
             "ZEINA" => VoiceId::Zeina,
             "ZHIYU" => VoiceId::Zhiyu,
-            other => VoiceId::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => VoiceId::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VoiceId {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VoiceId::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VoiceId::from(s))
+                }
+            }
 impl VoiceId {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2497,71 +2191,13 @@ impl VoiceId {
             VoiceId::Vitoria => "VITORIA",
             VoiceId::Zeina => "ZEINA",
             VoiceId::Zhiyu => "ZHIYU",
-            VoiceId::Unknown(value) => value.as_str(),
+            VoiceId::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AMY",
-            "ASTRID",
-            "BIANCA",
-            "BRIAN",
-            "CAMILA",
-            "CARLA",
-            "CARMEN",
-            "CELINE",
-            "CHANTAL",
-            "CONCHITA",
-            "CRISTIANO",
-            "DORA",
-            "EMMA",
-            "ENRIQUE",
-            "EWA",
-            "FILIZ",
-            "GERAINT",
-            "GIORGIO",
-            "GWYNETH",
-            "HANS",
-            "INES",
-            "IVY",
-            "JACEK",
-            "JAN",
-            "JOANNA",
-            "JOEY",
-            "JUSTIN",
-            "KARL",
-            "KENDRA",
-            "KIMBERLY",
-            "LEA",
-            "LIV",
-            "LOTTE",
-            "LUCIA",
-            "LUPE",
-            "MADS",
-            "MAJA",
-            "MARLENE",
-            "MATHIEU",
-            "MATTHEW",
-            "MAXIM",
-            "MIA",
-            "MIGUEL",
-            "MIZUKI",
-            "NAJA",
-            "NICOLE",
-            "PENELOPE",
-            "RAVEENA",
-            "RICARDO",
-            "RUBEN",
-            "RUSSELL",
-            "SALLI",
-            "SEOYEON",
-            "TAKUMI",
-            "TATYANA",
-            "VICKI",
-            "VITORIA",
-            "ZEINA",
-            "ZHIYU",
+            "AMY", "ASTRID", "BIANCA", "BRIAN", "CAMILA", "CARLA", "CARMEN", "CELINE", "CHANTAL", "CONCHITA", "CRISTIANO", "DORA", "EMMA", "ENRIQUE", "EWA", "FILIZ", "GERAINT", "GIORGIO", "GWYNETH", "HANS", "INES", "IVY", "JACEK", "JAN", "JOANNA", "JOEY", "JUSTIN", "KARL", "KENDRA", "KIMBERLY", "LEA", "LIV", "LOTTE", "LUCIA", "LUPE", "MADS", "MAJA", "MARLENE", "MATHIEU", "MATTHEW", "MAXIM", "MIA", "MIGUEL", "MIZUKI", "NAJA", "NICOLE", "PENELOPE", "RAVEENA", "RICARDO", "RUBEN", "RUSSELL", "SALLI", "SEOYEON", "TAKUMI", "TATYANA", "VICKI", "VITORIA", "ZEINA", "ZHIYU"
         ]
     }
 }
@@ -2577,9 +2213,9 @@ impl AsRef<str> for VoiceId {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let voicemessagebodytexttype = unimplemented!();
 /// match voicemessagebodytexttype {
@@ -2601,60 +2237,52 @@ impl AsRef<str> for VoiceId {
 /// Specifically, when `voicemessagebodytexttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VoiceMessageBodyTextType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VoiceMessageBodyTextType {
     #[allow(missing_docs)] // documentation missing in model
     Ssml,
     #[allow(missing_docs)] // documentation missing in model
     Text,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VoiceMessageBodyTextType {
     fn from(s: &str) -> Self {
         match s {
             "SSML" => VoiceMessageBodyTextType::Ssml,
             "TEXT" => VoiceMessageBodyTextType::Text,
-            other => VoiceMessageBodyTextType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => VoiceMessageBodyTextType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VoiceMessageBodyTextType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VoiceMessageBodyTextType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VoiceMessageBodyTextType::from(s))
+                }
+            }
 impl VoiceMessageBodyTextType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VoiceMessageBodyTextType::Ssml => "SSML",
             VoiceMessageBodyTextType::Text => "TEXT",
-            VoiceMessageBodyTextType::Unknown(value) => value.as_str(),
+            VoiceMessageBodyTextType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SSML", "TEXT"]
+        &[
+            "SSML", "TEXT"
+        ]
     }
 }
 impl AsRef<str> for VoiceMessageBodyTextType {
@@ -2669,9 +2297,9 @@ impl AsRef<str> for VoiceMessageBodyTextType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let destinationcountryparameterkey = unimplemented!();
 /// match destinationcountryparameterkey {
@@ -2693,60 +2321,52 @@ impl AsRef<str> for VoiceMessageBodyTextType {
 /// Specifically, when `destinationcountryparameterkey` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DestinationCountryParameterKey::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DestinationCountryParameterKey {
     #[allow(missing_docs)] // documentation missing in model
     InEntityId,
     #[allow(missing_docs)] // documentation missing in model
     InTemplateId,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DestinationCountryParameterKey {
     fn from(s: &str) -> Self {
         match s {
             "IN_ENTITY_ID" => DestinationCountryParameterKey::InEntityId,
             "IN_TEMPLATE_ID" => DestinationCountryParameterKey::InTemplateId,
-            other => DestinationCountryParameterKey::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DestinationCountryParameterKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DestinationCountryParameterKey {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DestinationCountryParameterKey::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DestinationCountryParameterKey::from(s))
+                }
+            }
 impl DestinationCountryParameterKey {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DestinationCountryParameterKey::InEntityId => "IN_ENTITY_ID",
             DestinationCountryParameterKey::InTemplateId => "IN_TEMPLATE_ID",
-            DestinationCountryParameterKey::Unknown(value) => value.as_str(),
+            DestinationCountryParameterKey::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IN_ENTITY_ID", "IN_TEMPLATE_ID"]
+        &[
+            "IN_ENTITY_ID", "IN_TEMPLATE_ID"
+        ]
     }
 }
 impl AsRef<str> for DestinationCountryParameterKey {
@@ -2761,9 +2381,9 @@ impl AsRef<str> for DestinationCountryParameterKey {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let requestablenumbertype = unimplemented!();
 /// match requestablenumbertype {
@@ -2786,22 +2406,14 @@ impl AsRef<str> for DestinationCountryParameterKey {
 /// Specifically, when `requestablenumbertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RequestableNumberType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RequestableNumberType {
     #[allow(missing_docs)] // documentation missing in model
     LongCode,
@@ -2810,7 +2422,7 @@ pub enum RequestableNumberType {
     #[allow(missing_docs)] // documentation missing in model
     TollFree,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RequestableNumberType {
     fn from(s: &str) -> Self {
@@ -2818,19 +2430,17 @@ impl std::convert::From<&str> for RequestableNumberType {
             "LONG_CODE" => RequestableNumberType::LongCode,
             "TEN_DLC" => RequestableNumberType::TenDlc,
             "TOLL_FREE" => RequestableNumberType::TollFree,
-            other => {
-                RequestableNumberType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RequestableNumberType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RequestableNumberType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RequestableNumberType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RequestableNumberType::from(s))
+                }
+            }
 impl RequestableNumberType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2838,12 +2448,14 @@ impl RequestableNumberType {
             RequestableNumberType::LongCode => "LONG_CODE",
             RequestableNumberType::TenDlc => "TEN_DLC",
             RequestableNumberType::TollFree => "TOLL_FREE",
-            RequestableNumberType::Unknown(value) => value.as_str(),
+            RequestableNumberType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LONG_CODE", "TEN_DLC", "TOLL_FREE"]
+        &[
+            "LONG_CODE", "TEN_DLC", "TOLL_FREE"
+        ]
     }
 }
 impl AsRef<str> for RequestableNumberType {
@@ -2858,9 +2470,9 @@ impl AsRef<str> for RequestableNumberType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let keywordaction = unimplemented!();
 /// match keywordaction {
@@ -2883,22 +2495,14 @@ impl AsRef<str> for RequestableNumberType {
 /// Specifically, when `keywordaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KeywordAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum KeywordAction {
     #[allow(missing_docs)] // documentation missing in model
     AutomaticResponse,
@@ -2907,7 +2511,7 @@ pub enum KeywordAction {
     #[allow(missing_docs)] // documentation missing in model
     OptOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KeywordAction {
     fn from(s: &str) -> Self {
@@ -2915,17 +2519,17 @@ impl std::convert::From<&str> for KeywordAction {
             "AUTOMATIC_RESPONSE" => KeywordAction::AutomaticResponse,
             "OPT_IN" => KeywordAction::OptIn,
             "OPT_OUT" => KeywordAction::OptOut,
-            other => KeywordAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => KeywordAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for KeywordAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeywordAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(KeywordAction::from(s))
+                }
+            }
 impl KeywordAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2933,12 +2537,14 @@ impl KeywordAction {
             KeywordAction::AutomaticResponse => "AUTOMATIC_RESPONSE",
             KeywordAction::OptIn => "OPT_IN",
             KeywordAction::OptOut => "OPT_OUT",
-            KeywordAction::Unknown(value) => value.as_str(),
+            KeywordAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTOMATIC_RESPONSE", "OPT_IN", "OPT_OUT"]
+        &[
+            "AUTOMATIC_RESPONSE", "OPT_IN", "OPT_OUT"
+        ]
     }
 }
 impl AsRef<str> for KeywordAction {
@@ -2950,7 +2556,7 @@ impl AsRef<str> for KeywordAction {
 /// <p>The metadata for an origination identity associated with a pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OriginationIdentityMetadata {
+pub struct OriginationIdentityMetadata  {
     /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
     #[doc(hidden)]
     pub origination_identity_arn: std::option::Option<std::string::String>,
@@ -2966,33 +2572,32 @@ pub struct OriginationIdentityMetadata {
 }
 impl OriginationIdentityMetadata {
     /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
-    pub fn origination_identity_arn(&self) -> std::option::Option<&str> {
+    pub fn origination_identity_arn(&self) -> std::option::Option<& str> {
         self.origination_identity_arn.as_deref()
     }
     /// <p>The unique identifier of the origination identity.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
-    pub fn number_capabilities(&self) -> std::option::Option<&[crate::model::NumberCapability]> {
+    pub fn number_capabilities(&self) -> std::option::Option<& [crate::model::NumberCapability]> {
         self.number_capabilities.as_deref()
     }
 }
 /// See [`OriginationIdentityMetadata`](crate::model::OriginationIdentityMetadata).
 pub mod origination_identity_metadata {
-
+    
     /// A builder for [`OriginationIdentityMetadata`](crate::model::OriginationIdentityMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origination_identity_arn: std::option::Option<std::string::String>,
         pub(crate) origination_identity: std::option::Option<std::string::String>,
         pub(crate) iso_country_code: std::option::Option<std::string::String>,
-        pub(crate) number_capabilities:
-            std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
+        pub(crate) number_capabilities: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
@@ -3001,12 +2606,8 @@ pub mod origination_identity_metadata {
             self
         }
         /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
-        pub fn set_origination_identity_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity_arn = input;
-            self
+        pub fn set_origination_identity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity_arn = input; self
         }
         /// <p>The unique identifier of the origination identity.</p>
         pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3014,12 +2615,8 @@ pub mod origination_identity_metadata {
             self
         }
         /// <p>The unique identifier of the origination identity.</p>
-        pub fn set_origination_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity = input;
-            self
+        pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity = input; self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
         pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3027,12 +2624,8 @@ pub mod origination_identity_metadata {
             self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-        pub fn set_iso_country_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iso_country_code = input;
-            self
+        pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iso_country_code = input; self
         }
         /// Appends an item to `number_capabilities`.
         ///
@@ -3041,28 +2634,30 @@ pub mod origination_identity_metadata {
         /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
         pub fn number_capabilities(mut self, input: crate::model::NumberCapability) -> Self {
             let mut v = self.number_capabilities.unwrap_or_default();
-            v.push(input);
-            self.number_capabilities = Some(v);
-            self
+                            v.push(input);
+                            self.number_capabilities = Some(v);
+                            self
         }
         /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
-        pub fn set_number_capabilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
-        ) -> Self {
-            self.number_capabilities = input;
-            self
+        pub fn set_number_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>) -> Self {
+            self.number_capabilities = input; self
         }
         /// Consumes the builder and constructs a [`OriginationIdentityMetadata`](crate::model::OriginationIdentityMetadata).
         pub fn build(self) -> crate::model::OriginationIdentityMetadata {
             crate::model::OriginationIdentityMetadata {
-                origination_identity_arn: self.origination_identity_arn,
-                origination_identity: self.origination_identity,
-                iso_country_code: self.iso_country_code,
-                number_capabilities: self.number_capabilities,
+                origination_identity_arn: self.origination_identity_arn
+                ,
+                origination_identity: self.origination_identity
+                ,
+                iso_country_code: self.iso_country_code
+                ,
+                number_capabilities: self.number_capabilities
+                ,
             }
         }
     }
+    
+    
 }
 impl OriginationIdentityMetadata {
     /// Creates a new builder-style object to manufacture [`OriginationIdentityMetadata`](crate::model::OriginationIdentityMetadata).
@@ -3074,7 +2669,7 @@ impl OriginationIdentityMetadata {
 /// <p>Information about origination identities associated with a pool that meets a specified criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PoolOriginationIdentitiesFilter {
+pub struct PoolOriginationIdentitiesFilter  {
     /// <p>The name of the attribute to filter on.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::PoolOriginationIdentitiesFilterName>,
@@ -3084,17 +2679,17 @@ pub struct PoolOriginationIdentitiesFilter {
 }
 impl PoolOriginationIdentitiesFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::PoolOriginationIdentitiesFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::PoolOriginationIdentitiesFilterName> {
         self.name.as_ref()
     }
     /// <p>An array values to filter for.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`PoolOriginationIdentitiesFilter`](crate::model::PoolOriginationIdentitiesFilter).
 pub mod pool_origination_identities_filter {
-
+    
     /// A builder for [`PoolOriginationIdentitiesFilter`](crate::model::PoolOriginationIdentitiesFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3108,12 +2703,8 @@ pub mod pool_origination_identities_filter {
             self
         }
         /// <p>The name of the attribute to filter on.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::PoolOriginationIdentitiesFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::PoolOriginationIdentitiesFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -3122,26 +2713,26 @@ pub mod pool_origination_identities_filter {
         /// <p>An array values to filter for.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>An array values to filter for.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`PoolOriginationIdentitiesFilter`](crate::model::PoolOriginationIdentitiesFilter).
         pub fn build(self) -> crate::model::PoolOriginationIdentitiesFilter {
             crate::model::PoolOriginationIdentitiesFilter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl PoolOriginationIdentitiesFilter {
     /// Creates a new builder-style object to manufacture [`PoolOriginationIdentitiesFilter`](crate::model::PoolOriginationIdentitiesFilter).
@@ -3156,9 +2747,9 @@ impl PoolOriginationIdentitiesFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let pooloriginationidentitiesfiltername = unimplemented!();
 /// match pooloriginationidentitiesfiltername {
@@ -3180,60 +2771,52 @@ impl PoolOriginationIdentitiesFilter {
 /// Specifically, when `pooloriginationidentitiesfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PoolOriginationIdentitiesFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PoolOriginationIdentitiesFilterName {
     #[allow(missing_docs)] // documentation missing in model
     IsoCountryCode,
     #[allow(missing_docs)] // documentation missing in model
     NumberCapability,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PoolOriginationIdentitiesFilterName {
     fn from(s: &str) -> Self {
         match s {
             "iso-country-code" => PoolOriginationIdentitiesFilterName::IsoCountryCode,
             "number-capability" => PoolOriginationIdentitiesFilterName::NumberCapability,
-            other => PoolOriginationIdentitiesFilterName::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => PoolOriginationIdentitiesFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PoolOriginationIdentitiesFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PoolOriginationIdentitiesFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PoolOriginationIdentitiesFilterName::from(s))
+                }
+            }
 impl PoolOriginationIdentitiesFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PoolOriginationIdentitiesFilterName::IsoCountryCode => "iso-country-code",
             PoolOriginationIdentitiesFilterName::NumberCapability => "number-capability",
-            PoolOriginationIdentitiesFilterName::Unknown(value) => value.as_str(),
+            PoolOriginationIdentitiesFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["iso-country-code", "number-capability"]
+        &[
+            "iso-country-code", "number-capability"
+        ]
     }
 }
 impl AsRef<str> for PoolOriginationIdentitiesFilterName {
@@ -3245,7 +2828,7 @@ impl AsRef<str> for PoolOriginationIdentitiesFilterName {
 /// <p>Describes the current Amazon Pinpoint monthly spend limits for sending voice and text messages. For more information on increasing your monthly spend limit, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-awssupport-spend-threshold.html"> Requesting increases to your monthly SMS spending quota for Amazon Pinpoint </a> in the <i>Amazon Pinpoint User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SpendLimit {
+pub struct SpendLimit  {
     /// <p>The name for the SpendLimit.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::SpendLimitName>,
@@ -3261,7 +2844,7 @@ pub struct SpendLimit {
 }
 impl SpendLimit {
     /// <p>The name for the SpendLimit.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::SpendLimitName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::SpendLimitName> {
         self.name.as_ref()
     }
     /// <p>The maximum amount of money, in US dollars, that you want to be able to spend sending messages each month. This value has to be less than or equal to the amount in <code>MaxLimit</code>. To use this custom limit, <code>Overridden</code> must be set to true.</p>
@@ -3279,7 +2862,7 @@ impl SpendLimit {
 }
 /// See [`SpendLimit`](crate::model::SpendLimit).
 pub mod spend_limit {
-
+    
     /// A builder for [`SpendLimit`](crate::model::SpendLimit).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3295,12 +2878,8 @@ pub mod spend_limit {
             self
         }
         /// <p>The name for the SpendLimit.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::SpendLimitName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::SpendLimitName>) -> Self {
+            self.name = input; self
         }
         /// <p>The maximum amount of money, in US dollars, that you want to be able to spend sending messages each month. This value has to be less than or equal to the amount in <code>MaxLimit</code>. To use this custom limit, <code>Overridden</code> must be set to true.</p>
         pub fn enforced_limit(mut self, input: i64) -> Self {
@@ -3309,8 +2888,7 @@ pub mod spend_limit {
         }
         /// <p>The maximum amount of money, in US dollars, that you want to be able to spend sending messages each month. This value has to be less than or equal to the amount in <code>MaxLimit</code>. To use this custom limit, <code>Overridden</code> must be set to true.</p>
         pub fn set_enforced_limit(mut self, input: std::option::Option<i64>) -> Self {
-            self.enforced_limit = input;
-            self
+            self.enforced_limit = input; self
         }
         /// <p> The maximum amount of money that you are able to spend to send messages each month, in US dollars.</p>
         pub fn max_limit(mut self, input: i64) -> Self {
@@ -3319,8 +2897,7 @@ pub mod spend_limit {
         }
         /// <p> The maximum amount of money that you are able to spend to send messages each month, in US dollars.</p>
         pub fn set_max_limit(mut self, input: std::option::Option<i64>) -> Self {
-            self.max_limit = input;
-            self
+            self.max_limit = input; self
         }
         /// <p>When set to <code>True</code>, the value that has been specified in the <code>EnforcedLimit</code> is used to determine the maximum amount in US dollars that can be spent to send messages each month, in US dollars.</p>
         pub fn overridden(mut self, input: bool) -> Self {
@@ -3329,19 +2906,27 @@ pub mod spend_limit {
         }
         /// <p>When set to <code>True</code>, the value that has been specified in the <code>EnforcedLimit</code> is used to determine the maximum amount in US dollars that can be spent to send messages each month, in US dollars.</p>
         pub fn set_overridden(mut self, input: std::option::Option<bool>) -> Self {
-            self.overridden = input;
-            self
+            self.overridden = input; self
         }
         /// Consumes the builder and constructs a [`SpendLimit`](crate::model::SpendLimit).
         pub fn build(self) -> crate::model::SpendLimit {
             crate::model::SpendLimit {
-                name: self.name,
-                enforced_limit: self.enforced_limit.unwrap_or_default(),
-                max_limit: self.max_limit.unwrap_or_default(),
-                overridden: self.overridden.unwrap_or_default(),
+                name: self.name
+                ,
+                enforced_limit: self.enforced_limit
+                    .unwrap_or_default()
+                ,
+                max_limit: self.max_limit
+                    .unwrap_or_default()
+                ,
+                overridden: self.overridden
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SpendLimit {
     /// Creates a new builder-style object to manufacture [`SpendLimit`](crate::model::SpendLimit).
@@ -3356,9 +2941,9 @@ impl SpendLimit {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let spendlimitname = unimplemented!();
 /// match spendlimitname {
@@ -3380,60 +2965,51 @@ impl SpendLimit {
 /// Specifically, when `spendlimitname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SpendLimitName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SpendLimitName {
     #[allow(missing_docs)] // documentation missing in model
     TextMessageMonthlySpendLimit,
     #[allow(missing_docs)] // documentation missing in model
     VoiceMessageMonthlySpendLimit,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SpendLimitName {
     fn from(s: &str) -> Self {
         match s {
             "TEXT_MESSAGE_MONTHLY_SPEND_LIMIT" => SpendLimitName::TextMessageMonthlySpendLimit,
             "VOICE_MESSAGE_MONTHLY_SPEND_LIMIT" => SpendLimitName::VoiceMessageMonthlySpendLimit,
-            other => SpendLimitName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SpendLimitName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SpendLimitName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SpendLimitName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SpendLimitName::from(s))
+                }
+            }
 impl SpendLimitName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SpendLimitName::TextMessageMonthlySpendLimit => "TEXT_MESSAGE_MONTHLY_SPEND_LIMIT",
             SpendLimitName::VoiceMessageMonthlySpendLimit => "VOICE_MESSAGE_MONTHLY_SPEND_LIMIT",
-            SpendLimitName::Unknown(value) => value.as_str(),
+            SpendLimitName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "TEXT_MESSAGE_MONTHLY_SPEND_LIMIT",
-            "VOICE_MESSAGE_MONTHLY_SPEND_LIMIT",
+            "TEXT_MESSAGE_MONTHLY_SPEND_LIMIT", "VOICE_MESSAGE_MONTHLY_SPEND_LIMIT"
         ]
     }
 }
@@ -3446,7 +3022,7 @@ impl AsRef<str> for SpendLimitName {
 /// <p>The information for all SenderIds in an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SenderIdInformation {
+pub struct SenderIdInformation  {
     /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
     #[doc(hidden)]
     pub sender_id_arn: std::option::Option<std::string::String>,
@@ -3465,29 +3041,29 @@ pub struct SenderIdInformation {
 }
 impl SenderIdInformation {
     /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
-    pub fn sender_id_arn(&self) -> std::option::Option<&str> {
+    pub fn sender_id_arn(&self) -> std::option::Option<& str> {
         self.sender_id_arn.as_deref()
     }
     /// <p>The alphanumeric sender ID in a specific country that you'd like to describe.</p>
-    pub fn sender_id(&self) -> std::option::Option<&str> {
+    pub fn sender_id(&self) -> std::option::Option<& str> {
         self.sender_id.as_deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_types(&self) -> std::option::Option<&[crate::model::MessageType]> {
+    pub fn message_types(&self) -> std::option::Option<& [crate::model::MessageType]> {
         self.message_types.as_deref()
     }
     /// <p>The monthly leasing price, in US dollars.</p>
-    pub fn monthly_leasing_price(&self) -> std::option::Option<&str> {
+    pub fn monthly_leasing_price(&self) -> std::option::Option<& str> {
         self.monthly_leasing_price.as_deref()
     }
 }
 /// See [`SenderIdInformation`](crate::model::SenderIdInformation).
 pub mod sender_id_information {
-
+    
     /// A builder for [`SenderIdInformation`](crate::model::SenderIdInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3504,12 +3080,8 @@ pub mod sender_id_information {
             self
         }
         /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
-        pub fn set_sender_id_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sender_id_arn = input;
-            self
+        pub fn set_sender_id_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sender_id_arn = input; self
         }
         /// <p>The alphanumeric sender ID in a specific country that you'd like to describe.</p>
         pub fn sender_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3518,8 +3090,7 @@ pub mod sender_id_information {
         }
         /// <p>The alphanumeric sender ID in a specific country that you'd like to describe.</p>
         pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sender_id = input;
-            self
+            self.sender_id = input; self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
         pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3527,12 +3098,8 @@ pub mod sender_id_information {
             self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-        pub fn set_iso_country_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iso_country_code = input;
-            self
+        pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iso_country_code = input; self
         }
         /// Appends an item to `message_types`.
         ///
@@ -3541,17 +3108,13 @@ pub mod sender_id_information {
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
         pub fn message_types(mut self, input: crate::model::MessageType) -> Self {
             let mut v = self.message_types.unwrap_or_default();
-            v.push(input);
-            self.message_types = Some(v);
-            self
+                            v.push(input);
+                            self.message_types = Some(v);
+                            self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-        pub fn set_message_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MessageType>>,
-        ) -> Self {
-            self.message_types = input;
-            self
+        pub fn set_message_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::MessageType>>) -> Self {
+            self.message_types = input; self
         }
         /// <p>The monthly leasing price, in US dollars.</p>
         pub fn monthly_leasing_price(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3559,24 +3122,27 @@ pub mod sender_id_information {
             self
         }
         /// <p>The monthly leasing price, in US dollars.</p>
-        pub fn set_monthly_leasing_price(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.monthly_leasing_price = input;
-            self
+        pub fn set_monthly_leasing_price(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.monthly_leasing_price = input; self
         }
         /// Consumes the builder and constructs a [`SenderIdInformation`](crate::model::SenderIdInformation).
         pub fn build(self) -> crate::model::SenderIdInformation {
             crate::model::SenderIdInformation {
-                sender_id_arn: self.sender_id_arn,
-                sender_id: self.sender_id,
-                iso_country_code: self.iso_country_code,
-                message_types: self.message_types,
-                monthly_leasing_price: self.monthly_leasing_price,
+                sender_id_arn: self.sender_id_arn
+                ,
+                sender_id: self.sender_id
+                ,
+                iso_country_code: self.iso_country_code
+                ,
+                message_types: self.message_types
+                ,
+                monthly_leasing_price: self.monthly_leasing_price
+                ,
             }
         }
     }
+    
+    
 }
 impl SenderIdInformation {
     /// Creates a new builder-style object to manufacture [`SenderIdInformation`](crate::model::SenderIdInformation).
@@ -3588,7 +3154,7 @@ impl SenderIdInformation {
 /// <p>The information for a sender ID that meets a specified criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SenderIdFilter {
+pub struct SenderIdFilter  {
     /// <p>The name of the attribute to filter on.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::SenderIdFilterName>,
@@ -3598,17 +3164,17 @@ pub struct SenderIdFilter {
 }
 impl SenderIdFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::SenderIdFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::SenderIdFilterName> {
         self.name.as_ref()
     }
     /// <p>An array of values to filter for.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`SenderIdFilter`](crate::model::SenderIdFilter).
 pub mod sender_id_filter {
-
+    
     /// A builder for [`SenderIdFilter`](crate::model::SenderIdFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3622,12 +3188,8 @@ pub mod sender_id_filter {
             self
         }
         /// <p>The name of the attribute to filter on.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::SenderIdFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::SenderIdFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -3636,26 +3198,26 @@ pub mod sender_id_filter {
         /// <p>An array of values to filter for.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>An array of values to filter for.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`SenderIdFilter`](crate::model::SenderIdFilter).
         pub fn build(self) -> crate::model::SenderIdFilter {
             crate::model::SenderIdFilter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl SenderIdFilter {
     /// Creates a new builder-style object to manufacture [`SenderIdFilter`](crate::model::SenderIdFilter).
@@ -3670,9 +3232,9 @@ impl SenderIdFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let senderidfiltername = unimplemented!();
 /// match senderidfiltername {
@@ -3695,22 +3257,14 @@ impl SenderIdFilter {
 /// Specifically, when `senderidfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SenderIdFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SenderIdFilterName {
     #[allow(missing_docs)] // documentation missing in model
     IsoCountryCode,
@@ -3719,7 +3273,7 @@ pub enum SenderIdFilterName {
     #[allow(missing_docs)] // documentation missing in model
     SenderId,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SenderIdFilterName {
     fn from(s: &str) -> Self {
@@ -3727,19 +3281,17 @@ impl std::convert::From<&str> for SenderIdFilterName {
             "iso-country-code" => SenderIdFilterName::IsoCountryCode,
             "message-type" => SenderIdFilterName::MessageType,
             "sender-id" => SenderIdFilterName::SenderId,
-            other => {
-                SenderIdFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SenderIdFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SenderIdFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SenderIdFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SenderIdFilterName::from(s))
+                }
+            }
 impl SenderIdFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3747,12 +3299,14 @@ impl SenderIdFilterName {
             SenderIdFilterName::IsoCountryCode => "iso-country-code",
             SenderIdFilterName::MessageType => "message-type",
             SenderIdFilterName::SenderId => "sender-id",
-            SenderIdFilterName::Unknown(value) => value.as_str(),
+            SenderIdFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["iso-country-code", "message-type", "sender-id"]
+        &[
+            "iso-country-code", "message-type", "sender-id"
+        ]
     }
 }
 impl AsRef<str> for SenderIdFilterName {
@@ -3764,7 +3318,7 @@ impl AsRef<str> for SenderIdFilterName {
 /// <p> The alphanumeric sender ID in a specific country that you want to describe. For more information on sender IDs see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-awssupport-sender-id.html">Requesting sender IDs for SMS messaging with Amazon Pinpoint </a> in the <i>Amazon Pinpoint User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SenderIdAndCountry {
+pub struct SenderIdAndCountry  {
     /// <p>The unique identifier of the sender.</p>
     #[doc(hidden)]
     pub sender_id: std::option::Option<std::string::String>,
@@ -3774,17 +3328,17 @@ pub struct SenderIdAndCountry {
 }
 impl SenderIdAndCountry {
     /// <p>The unique identifier of the sender.</p>
-    pub fn sender_id(&self) -> std::option::Option<&str> {
+    pub fn sender_id(&self) -> std::option::Option<& str> {
         self.sender_id.as_deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
 }
 /// See [`SenderIdAndCountry`](crate::model::SenderIdAndCountry).
 pub mod sender_id_and_country {
-
+    
     /// A builder for [`SenderIdAndCountry`](crate::model::SenderIdAndCountry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3799,8 +3353,7 @@ pub mod sender_id_and_country {
         }
         /// <p>The unique identifier of the sender.</p>
         pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sender_id = input;
-            self
+            self.sender_id = input; self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
         pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3808,21 +3361,21 @@ pub mod sender_id_and_country {
             self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-        pub fn set_iso_country_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iso_country_code = input;
-            self
+        pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iso_country_code = input; self
         }
         /// Consumes the builder and constructs a [`SenderIdAndCountry`](crate::model::SenderIdAndCountry).
         pub fn build(self) -> crate::model::SenderIdAndCountry {
             crate::model::SenderIdAndCountry {
-                sender_id: self.sender_id,
-                iso_country_code: self.iso_country_code,
+                sender_id: self.sender_id
+                ,
+                iso_country_code: self.iso_country_code
+                ,
             }
         }
     }
+    
+    
 }
 impl SenderIdAndCountry {
     /// Creates a new builder-style object to manufacture [`SenderIdAndCountry`](crate::model::SenderIdAndCountry).
@@ -3834,7 +3387,7 @@ impl SenderIdAndCountry {
 /// <p>The information for a pool in an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PoolInformation {
+pub struct PoolInformation  {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
     #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
@@ -3859,7 +3412,7 @@ pub struct PoolInformation {
     /// <p>The name of the OptOutList associated with the pool.</p>
     #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
-    /// <p>Allows you to enable shared routes on your pool.</p>
+    /// <p>Allows you to enable shared routes on your pool.</p> 
     /// <p>By default, this is set to <code>False</code>. If you set this value to <code>True</code>, your messages are sent using phone numbers or sender IDs (depending on the country) that are shared with other Amazon Pinpoint users. In some countries, such as the United States, senders aren't allowed to use shared routes and must use a dedicated phone number or short code.</p>
     #[doc(hidden)]
     pub shared_routes_enabled: bool,
@@ -3872,19 +3425,19 @@ pub struct PoolInformation {
 }
 impl PoolInformation {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
-    pub fn pool_arn(&self) -> std::option::Option<&str> {
+    pub fn pool_arn(&self) -> std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
     /// <p>The unique identifier for the pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The current status of the pool.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::PoolStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PoolStatus> {
         self.status.as_ref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>When set to true you can receive incoming text messages from your end recipients using the TwoWayChannelArn.</p>
@@ -3892,7 +3445,7 @@ impl PoolInformation {
         self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(&self) -> std::option::Option<&str> {
+    pub fn two_way_channel_arn(&self) -> std::option::Option<& str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>When set to false, an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a> </p>
@@ -3900,10 +3453,10 @@ impl PoolInformation {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList associated with the pool.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
-    /// <p>Allows you to enable shared routes on your pool.</p>
+    /// <p>Allows you to enable shared routes on your pool.</p> 
     /// <p>By default, this is set to <code>False</code>. If you set this value to <code>True</code>, your messages are sent using phone numbers or sender IDs (depending on the country) that are shared with other Amazon Pinpoint users. In some countries, such as the United States, senders aren't allowed to use shared routes and must use a dedicated phone number or short code.</p>
     pub fn shared_routes_enabled(&self) -> bool {
         self.shared_routes_enabled
@@ -3913,13 +3466,13 @@ impl PoolInformation {
         self.deletion_protection_enabled
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 /// See [`PoolInformation`](crate::model::PoolInformation).
 pub mod pool_information {
-
+    
     /// A builder for [`PoolInformation`](crate::model::PoolInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3943,8 +3496,7 @@ pub mod pool_information {
         }
         /// <p>The Amazon Resource Name (ARN) for the pool.</p>
         pub fn set_pool_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_arn = input;
-            self
+            self.pool_arn = input; self
         }
         /// <p>The unique identifier for the pool.</p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3953,8 +3505,7 @@ pub mod pool_information {
         }
         /// <p>The unique identifier for the pool.</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// <p>The current status of the pool.</p>
         pub fn status(mut self, input: crate::model::PoolStatus) -> Self {
@@ -3963,8 +3514,7 @@ pub mod pool_information {
         }
         /// <p>The current status of the pool.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::PoolStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -3972,12 +3522,8 @@ pub mod pool_information {
             self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-        pub fn set_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.message_type = input;
-            self
+        pub fn set_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.message_type = input; self
         }
         /// <p>When set to true you can receive incoming text messages from your end recipients using the TwoWayChannelArn.</p>
         pub fn two_way_enabled(mut self, input: bool) -> Self {
@@ -3986,8 +3532,7 @@ pub mod pool_information {
         }
         /// <p>When set to true you can receive incoming text messages from your end recipients using the TwoWayChannelArn.</p>
         pub fn set_two_way_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.two_way_enabled = input;
-            self
+            self.two_way_enabled = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
         pub fn two_way_channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3995,12 +3540,8 @@ pub mod pool_information {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-        pub fn set_two_way_channel_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.two_way_channel_arn = input;
-            self
+        pub fn set_two_way_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.two_way_channel_arn = input; self
         }
         /// <p>When set to false, an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a> </p>
         pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
@@ -4008,12 +3549,8 @@ pub mod pool_information {
             self
         }
         /// <p>When set to false, an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a> </p>
-        pub fn set_self_managed_opt_outs_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.self_managed_opt_outs_enabled = input;
-            self
+        pub fn set_self_managed_opt_outs_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.self_managed_opt_outs_enabled = input; self
         }
         /// <p>The name of the OptOutList associated with the pool.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4021,24 +3558,19 @@ pub mod pool_information {
             self
         }
         /// <p>The name of the OptOutList associated with the pool.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
-        /// <p>Allows you to enable shared routes on your pool.</p>
+        /// <p>Allows you to enable shared routes on your pool.</p> 
         /// <p>By default, this is set to <code>False</code>. If you set this value to <code>True</code>, your messages are sent using phone numbers or sender IDs (depending on the country) that are shared with other Amazon Pinpoint users. In some countries, such as the United States, senders aren't allowed to use shared routes and must use a dedicated phone number or short code.</p>
         pub fn shared_routes_enabled(mut self, input: bool) -> Self {
             self.shared_routes_enabled = Some(input);
             self
         }
-        /// <p>Allows you to enable shared routes on your pool.</p>
+        /// <p>Allows you to enable shared routes on your pool.</p> 
         /// <p>By default, this is set to <code>False</code>. If you set this value to <code>True</code>, your messages are sent using phone numbers or sender IDs (depending on the country) that are shared with other Amazon Pinpoint users. In some countries, such as the United States, senders aren't allowed to use shared routes and must use a dedicated phone number or short code.</p>
         pub fn set_shared_routes_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.shared_routes_enabled = input;
-            self
+            self.shared_routes_enabled = input; self
         }
         /// <p>When set to true the pool can't be deleted.</p>
         pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
@@ -4047,8 +3579,7 @@ pub mod pool_information {
         }
         /// <p>When set to true the pool can't be deleted.</p>
         pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.deletion_protection_enabled = input;
-            self
+            self.deletion_protection_enabled = input; self
         }
         /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4056,32 +3587,43 @@ pub mod pool_information {
             self
         }
         /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`PoolInformation`](crate::model::PoolInformation).
         pub fn build(self) -> crate::model::PoolInformation {
             crate::model::PoolInformation {
-                pool_arn: self.pool_arn,
-                pool_id: self.pool_id,
-                status: self.status,
-                message_type: self.message_type,
-                two_way_enabled: self.two_way_enabled.unwrap_or_default(),
-                two_way_channel_arn: self.two_way_channel_arn,
-                self_managed_opt_outs_enabled: self
-                    .self_managed_opt_outs_enabled
-                    .unwrap_or_default(),
-                opt_out_list_name: self.opt_out_list_name,
-                shared_routes_enabled: self.shared_routes_enabled.unwrap_or_default(),
-                deletion_protection_enabled: self.deletion_protection_enabled.unwrap_or_default(),
-                created_timestamp: self.created_timestamp,
+                pool_arn: self.pool_arn
+                ,
+                pool_id: self.pool_id
+                ,
+                status: self.status
+                ,
+                message_type: self.message_type
+                ,
+                two_way_enabled: self.two_way_enabled
+                    .unwrap_or_default()
+                ,
+                two_way_channel_arn: self.two_way_channel_arn
+                ,
+                self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled
+                    .unwrap_or_default()
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                shared_routes_enabled: self.shared_routes_enabled
+                    .unwrap_or_default()
+                ,
+                deletion_protection_enabled: self.deletion_protection_enabled
+                    .unwrap_or_default()
+                ,
+                created_timestamp: self.created_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl PoolInformation {
     /// Creates a new builder-style object to manufacture [`PoolInformation`](crate::model::PoolInformation).
@@ -4093,7 +3635,7 @@ impl PoolInformation {
 /// <p>The information for a pool that meets a specified criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PoolFilter {
+pub struct PoolFilter  {
     /// <p>The name of the attribute to filter on.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::PoolFilterName>,
@@ -4103,17 +3645,17 @@ pub struct PoolFilter {
 }
 impl PoolFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::PoolFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::PoolFilterName> {
         self.name.as_ref()
     }
     /// <p>An array values to filter for.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`PoolFilter`](crate::model::PoolFilter).
 pub mod pool_filter {
-
+    
     /// A builder for [`PoolFilter`](crate::model::PoolFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4127,12 +3669,8 @@ pub mod pool_filter {
             self
         }
         /// <p>The name of the attribute to filter on.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::PoolFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::PoolFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -4141,26 +3679,26 @@ pub mod pool_filter {
         /// <p>An array values to filter for.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>An array values to filter for.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`PoolFilter`](crate::model::PoolFilter).
         pub fn build(self) -> crate::model::PoolFilter {
             crate::model::PoolFilter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl PoolFilter {
     /// Creates a new builder-style object to manufacture [`PoolFilter`](crate::model::PoolFilter).
@@ -4175,9 +3713,9 @@ impl PoolFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let poolfiltername = unimplemented!();
 /// match poolfiltername {
@@ -4204,22 +3742,14 @@ impl PoolFilter {
 /// Specifically, when `poolfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PoolFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PoolFilterName {
     #[allow(missing_docs)] // documentation missing in model
     DeletionProtectionEnabled,
@@ -4236,7 +3766,7 @@ pub enum PoolFilterName {
     #[allow(missing_docs)] // documentation missing in model
     TwoWayEnabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PoolFilterName {
     fn from(s: &str) -> Self {
@@ -4248,17 +3778,17 @@ impl std::convert::From<&str> for PoolFilterName {
             "shared-routes-enabled" => PoolFilterName::SharedRoutesEnabled,
             "status" => PoolFilterName::Status,
             "two-way-enabled" => PoolFilterName::TwoWayEnabled,
-            other => PoolFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PoolFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PoolFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PoolFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PoolFilterName::from(s))
+                }
+            }
 impl PoolFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4270,19 +3800,13 @@ impl PoolFilterName {
             PoolFilterName::SharedRoutesEnabled => "shared-routes-enabled",
             PoolFilterName::Status => "status",
             PoolFilterName::TwoWayEnabled => "two-way-enabled",
-            PoolFilterName::Unknown(value) => value.as_str(),
+            PoolFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "deletion-protection-enabled",
-            "message-type",
-            "opt-out-list-name",
-            "self-managed-opt-outs-enabled",
-            "shared-routes-enabled",
-            "status",
-            "two-way-enabled",
+            "deletion-protection-enabled", "message-type", "opt-out-list-name", "self-managed-opt-outs-enabled", "shared-routes-enabled", "status", "two-way-enabled"
         ]
     }
 }
@@ -4295,7 +3819,7 @@ impl AsRef<str> for PoolFilterName {
 /// <p>The information for a phone number in an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhoneNumberInformation {
+pub struct PhoneNumberInformation  {
     /// <p>The Amazon Resource Name (ARN) associated with the phone number.</p>
     #[doc(hidden)]
     pub phone_number_arn: std::option::Option<std::string::String>,
@@ -4347,39 +3871,39 @@ pub struct PhoneNumberInformation {
 }
 impl PhoneNumberInformation {
     /// <p>The Amazon Resource Name (ARN) associated with the phone number.</p>
-    pub fn phone_number_arn(&self) -> std::option::Option<&str> {
+    pub fn phone_number_arn(&self) -> std::option::Option<& str> {
         self.phone_number_arn.as_deref()
     }
     /// <p>The unique identifier for the phone number.</p>
-    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
     /// <p>The phone number in E.164 format.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>The current status of the phone number.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::NumberStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::NumberStatus> {
         self.status.as_ref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
-    pub fn number_capabilities(&self) -> std::option::Option<&[crate::model::NumberCapability]> {
+    pub fn number_capabilities(&self) -> std::option::Option<& [crate::model::NumberCapability]> {
         self.number_capabilities.as_deref()
     }
     /// <p>The type of phone number.</p>
-    pub fn number_type(&self) -> std::option::Option<&crate::model::NumberType> {
+    pub fn number_type(&self) -> std::option::Option<& crate::model::NumberType> {
         self.number_type.as_ref()
     }
     /// <p>The price, in US dollars, to lease the phone number.</p>
-    pub fn monthly_leasing_price(&self) -> std::option::Option<&str> {
+    pub fn monthly_leasing_price(&self) -> std::option::Option<& str> {
         self.monthly_leasing_price.as_deref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients using the TwoWayChannelArn.</p>
@@ -4387,7 +3911,7 @@ impl PhoneNumberInformation {
         self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(&self) -> std::option::Option<&str> {
+    pub fn two_way_channel_arn(&self) -> std::option::Option<& str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>When set to false an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out request. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a> </p>
@@ -4395,7 +3919,7 @@ impl PhoneNumberInformation {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList associated with the phone number.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>When set to true the phone number can't be deleted.</p>
@@ -4403,17 +3927,17 @@ impl PhoneNumberInformation {
         self.deletion_protection_enabled
     }
     /// <p>The unique identifier of the pool associated with the phone number.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 /// See [`PhoneNumberInformation`](crate::model::PhoneNumberInformation).
 pub mod phone_number_information {
-
+    
     /// A builder for [`PhoneNumberInformation`](crate::model::PhoneNumberInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4423,8 +3947,7 @@ pub mod phone_number_information {
         pub(crate) status: std::option::Option<crate::model::NumberStatus>,
         pub(crate) iso_country_code: std::option::Option<std::string::String>,
         pub(crate) message_type: std::option::Option<crate::model::MessageType>,
-        pub(crate) number_capabilities:
-            std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
+        pub(crate) number_capabilities: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
         pub(crate) number_type: std::option::Option<crate::model::NumberType>,
         pub(crate) monthly_leasing_price: std::option::Option<std::string::String>,
         pub(crate) two_way_enabled: std::option::Option<bool>,
@@ -4442,12 +3965,8 @@ pub mod phone_number_information {
             self
         }
         /// <p>The Amazon Resource Name (ARN) associated with the phone number.</p>
-        pub fn set_phone_number_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.phone_number_arn = input;
-            self
+        pub fn set_phone_number_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number_arn = input; self
         }
         /// <p>The unique identifier for the phone number.</p>
         pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4455,12 +3974,8 @@ pub mod phone_number_information {
             self
         }
         /// <p>The unique identifier for the phone number.</p>
-        pub fn set_phone_number_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.phone_number_id = input;
-            self
+        pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number_id = input; self
         }
         /// <p>The phone number in E.164 format.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4469,8 +3984,7 @@ pub mod phone_number_information {
         }
         /// <p>The phone number in E.164 format.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = input;
-            self
+            self.phone_number = input; self
         }
         /// <p>The current status of the phone number.</p>
         pub fn status(mut self, input: crate::model::NumberStatus) -> Self {
@@ -4478,12 +3992,8 @@ pub mod phone_number_information {
             self
         }
         /// <p>The current status of the phone number.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::NumberStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::NumberStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
         pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4491,12 +4001,8 @@ pub mod phone_number_information {
             self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-        pub fn set_iso_country_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iso_country_code = input;
-            self
+        pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iso_country_code = input; self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -4504,12 +4010,8 @@ pub mod phone_number_information {
             self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-        pub fn set_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.message_type = input;
-            self
+        pub fn set_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.message_type = input; self
         }
         /// Appends an item to `number_capabilities`.
         ///
@@ -4518,17 +4020,13 @@ pub mod phone_number_information {
         /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
         pub fn number_capabilities(mut self, input: crate::model::NumberCapability) -> Self {
             let mut v = self.number_capabilities.unwrap_or_default();
-            v.push(input);
-            self.number_capabilities = Some(v);
-            self
+                            v.push(input);
+                            self.number_capabilities = Some(v);
+                            self
         }
         /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
-        pub fn set_number_capabilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
-        ) -> Self {
-            self.number_capabilities = input;
-            self
+        pub fn set_number_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>) -> Self {
+            self.number_capabilities = input; self
         }
         /// <p>The type of phone number.</p>
         pub fn number_type(mut self, input: crate::model::NumberType) -> Self {
@@ -4536,12 +4034,8 @@ pub mod phone_number_information {
             self
         }
         /// <p>The type of phone number.</p>
-        pub fn set_number_type(
-            mut self,
-            input: std::option::Option<crate::model::NumberType>,
-        ) -> Self {
-            self.number_type = input;
-            self
+        pub fn set_number_type(mut self, input: std::option::Option<crate::model::NumberType>) -> Self {
+            self.number_type = input; self
         }
         /// <p>The price, in US dollars, to lease the phone number.</p>
         pub fn monthly_leasing_price(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4549,12 +4043,8 @@ pub mod phone_number_information {
             self
         }
         /// <p>The price, in US dollars, to lease the phone number.</p>
-        pub fn set_monthly_leasing_price(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.monthly_leasing_price = input;
-            self
+        pub fn set_monthly_leasing_price(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.monthly_leasing_price = input; self
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients using the TwoWayChannelArn.</p>
         pub fn two_way_enabled(mut self, input: bool) -> Self {
@@ -4563,8 +4053,7 @@ pub mod phone_number_information {
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients using the TwoWayChannelArn.</p>
         pub fn set_two_way_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.two_way_enabled = input;
-            self
+            self.two_way_enabled = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
         pub fn two_way_channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4572,12 +4061,8 @@ pub mod phone_number_information {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-        pub fn set_two_way_channel_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.two_way_channel_arn = input;
-            self
+        pub fn set_two_way_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.two_way_channel_arn = input; self
         }
         /// <p>When set to false an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out request. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a> </p>
         pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
@@ -4585,12 +4070,8 @@ pub mod phone_number_information {
             self
         }
         /// <p>When set to false an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out request. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a> </p>
-        pub fn set_self_managed_opt_outs_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.self_managed_opt_outs_enabled = input;
-            self
+        pub fn set_self_managed_opt_outs_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.self_managed_opt_outs_enabled = input; self
         }
         /// <p>The name of the OptOutList associated with the phone number.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4598,12 +4079,8 @@ pub mod phone_number_information {
             self
         }
         /// <p>The name of the OptOutList associated with the phone number.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// <p>When set to true the phone number can't be deleted.</p>
         pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
@@ -4612,8 +4089,7 @@ pub mod phone_number_information {
         }
         /// <p>When set to true the phone number can't be deleted.</p>
         pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.deletion_protection_enabled = input;
-            self
+            self.deletion_protection_enabled = input; self
         }
         /// <p>The unique identifier of the pool associated with the phone number.</p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4622,8 +4098,7 @@ pub mod phone_number_information {
         }
         /// <p>The unique identifier of the pool associated with the phone number.</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4631,37 +4106,52 @@ pub mod phone_number_information {
             self
         }
         /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`PhoneNumberInformation`](crate::model::PhoneNumberInformation).
         pub fn build(self) -> crate::model::PhoneNumberInformation {
             crate::model::PhoneNumberInformation {
-                phone_number_arn: self.phone_number_arn,
-                phone_number_id: self.phone_number_id,
-                phone_number: self.phone_number,
-                status: self.status,
-                iso_country_code: self.iso_country_code,
-                message_type: self.message_type,
-                number_capabilities: self.number_capabilities,
-                number_type: self.number_type,
-                monthly_leasing_price: self.monthly_leasing_price,
-                two_way_enabled: self.two_way_enabled.unwrap_or_default(),
-                two_way_channel_arn: self.two_way_channel_arn,
-                self_managed_opt_outs_enabled: self
-                    .self_managed_opt_outs_enabled
-                    .unwrap_or_default(),
-                opt_out_list_name: self.opt_out_list_name,
-                deletion_protection_enabled: self.deletion_protection_enabled.unwrap_or_default(),
-                pool_id: self.pool_id,
-                created_timestamp: self.created_timestamp,
+                phone_number_arn: self.phone_number_arn
+                ,
+                phone_number_id: self.phone_number_id
+                ,
+                phone_number: self.phone_number
+                ,
+                status: self.status
+                ,
+                iso_country_code: self.iso_country_code
+                ,
+                message_type: self.message_type
+                ,
+                number_capabilities: self.number_capabilities
+                ,
+                number_type: self.number_type
+                ,
+                monthly_leasing_price: self.monthly_leasing_price
+                ,
+                two_way_enabled: self.two_way_enabled
+                    .unwrap_or_default()
+                ,
+                two_way_channel_arn: self.two_way_channel_arn
+                ,
+                self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled
+                    .unwrap_or_default()
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                deletion_protection_enabled: self.deletion_protection_enabled
+                    .unwrap_or_default()
+                ,
+                pool_id: self.pool_id
+                ,
+                created_timestamp: self.created_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl PhoneNumberInformation {
     /// Creates a new builder-style object to manufacture [`PhoneNumberInformation`](crate::model::PhoneNumberInformation).
@@ -4673,7 +4163,7 @@ impl PhoneNumberInformation {
 /// <p>The information for a phone number that meets a specified criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhoneNumberFilter {
+pub struct PhoneNumberFilter  {
     /// <p>The name of the attribute to filter on.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::PhoneNumberFilterName>,
@@ -4683,17 +4173,17 @@ pub struct PhoneNumberFilter {
 }
 impl PhoneNumberFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::PhoneNumberFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::PhoneNumberFilterName> {
         self.name.as_ref()
     }
     /// <p>An array values to filter for.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`PhoneNumberFilter`](crate::model::PhoneNumberFilter).
 pub mod phone_number_filter {
-
+    
     /// A builder for [`PhoneNumberFilter`](crate::model::PhoneNumberFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4707,12 +4197,8 @@ pub mod phone_number_filter {
             self
         }
         /// <p>The name of the attribute to filter on.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::PhoneNumberFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::PhoneNumberFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -4721,26 +4207,26 @@ pub mod phone_number_filter {
         /// <p>An array values to filter for.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>An array values to filter for.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`PhoneNumberFilter`](crate::model::PhoneNumberFilter).
         pub fn build(self) -> crate::model::PhoneNumberFilter {
             crate::model::PhoneNumberFilter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl PhoneNumberFilter {
     /// Creates a new builder-style object to manufacture [`PhoneNumberFilter`](crate::model::PhoneNumberFilter).
@@ -4755,9 +4241,9 @@ impl PhoneNumberFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let phonenumberfiltername = unimplemented!();
 /// match phonenumberfiltername {
@@ -4786,22 +4272,14 @@ impl PhoneNumberFilter {
 /// Specifically, when `phonenumberfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PhoneNumberFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PhoneNumberFilterName {
     #[allow(missing_docs)] // documentation missing in model
     DeletionProtectionEnabled,
@@ -4822,7 +4300,7 @@ pub enum PhoneNumberFilterName {
     #[allow(missing_docs)] // documentation missing in model
     TwoWayEnabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PhoneNumberFilterName {
     fn from(s: &str) -> Self {
@@ -4836,19 +4314,17 @@ impl std::convert::From<&str> for PhoneNumberFilterName {
             "self-managed-opt-outs-enabled" => PhoneNumberFilterName::SelfManagedOptOutsEnabled,
             "status" => PhoneNumberFilterName::Status,
             "two-way-enabled" => PhoneNumberFilterName::TwoWayEnabled,
-            other => {
-                PhoneNumberFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PhoneNumberFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PhoneNumberFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PhoneNumberFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PhoneNumberFilterName::from(s))
+                }
+            }
 impl PhoneNumberFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4862,21 +4338,13 @@ impl PhoneNumberFilterName {
             PhoneNumberFilterName::SelfManagedOptOutsEnabled => "self-managed-opt-outs-enabled",
             PhoneNumberFilterName::Status => "status",
             PhoneNumberFilterName::TwoWayEnabled => "two-way-enabled",
-            PhoneNumberFilterName::Unknown(value) => value.as_str(),
+            PhoneNumberFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "deletion-protection-enabled",
-            "iso-country-code",
-            "message-type",
-            "number-capability",
-            "number-type",
-            "opt-out-list-name",
-            "self-managed-opt-outs-enabled",
-            "status",
-            "two-way-enabled",
+            "deletion-protection-enabled", "iso-country-code", "message-type", "number-capability", "number-type", "opt-out-list-name", "self-managed-opt-outs-enabled", "status", "two-way-enabled"
         ]
     }
 }
@@ -4889,7 +4357,7 @@ impl AsRef<str> for PhoneNumberFilterName {
 /// <p>The information for all OptOutList in an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OptOutListInformation {
+pub struct OptOutListInformation  {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
     #[doc(hidden)]
     pub opt_out_list_arn: std::option::Option<std::string::String>,
@@ -4902,21 +4370,21 @@ pub struct OptOutListInformation {
 }
 impl OptOutListInformation {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
-    pub fn opt_out_list_arn(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_arn(&self) -> std::option::Option<& str> {
         self.opt_out_list_arn.as_deref()
     }
     /// <p>The name of the OptOutList.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>The time when the OutOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 /// See [`OptOutListInformation`](crate::model::OptOutListInformation).
 pub mod opt_out_list_information {
-
+    
     /// A builder for [`OptOutListInformation`](crate::model::OptOutListInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4931,12 +4399,8 @@ pub mod opt_out_list_information {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
-        pub fn set_opt_out_list_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_arn = input;
-            self
+        pub fn set_opt_out_list_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_arn = input; self
         }
         /// <p>The name of the OptOutList.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4944,12 +4408,8 @@ pub mod opt_out_list_information {
             self
         }
         /// <p>The name of the OptOutList.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// <p>The time when the OutOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4957,22 +4417,23 @@ pub mod opt_out_list_information {
             self
         }
         /// <p>The time when the OutOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`OptOutListInformation`](crate::model::OptOutListInformation).
         pub fn build(self) -> crate::model::OptOutListInformation {
             crate::model::OptOutListInformation {
-                opt_out_list_arn: self.opt_out_list_arn,
-                opt_out_list_name: self.opt_out_list_name,
-                created_timestamp: self.created_timestamp,
+                opt_out_list_arn: self.opt_out_list_arn
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                created_timestamp: self.created_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl OptOutListInformation {
     /// Creates a new builder-style object to manufacture [`OptOutListInformation`](crate::model::OptOutListInformation).
@@ -4984,7 +4445,7 @@ impl OptOutListInformation {
 /// <p>The information for an opted out number in an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OptedOutNumberInformation {
+pub struct OptedOutNumberInformation  {
     /// <p>The phone number that is opted out.</p>
     #[doc(hidden)]
     pub opted_out_number: std::option::Option<std::string::String>,
@@ -4997,11 +4458,11 @@ pub struct OptedOutNumberInformation {
 }
 impl OptedOutNumberInformation {
     /// <p>The phone number that is opted out.</p>
-    pub fn opted_out_number(&self) -> std::option::Option<&str> {
+    pub fn opted_out_number(&self) -> std::option::Option<& str> {
         self.opted_out_number.as_deref()
     }
     /// <p>The time that the op tout occurred, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn opted_out_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn opted_out_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.opted_out_timestamp.as_ref()
     }
     /// <p>This is set to true if it was the end recipient that opted out.</p>
@@ -5011,7 +4472,7 @@ impl OptedOutNumberInformation {
 }
 /// See [`OptedOutNumberInformation`](crate::model::OptedOutNumberInformation).
 pub mod opted_out_number_information {
-
+    
     /// A builder for [`OptedOutNumberInformation`](crate::model::OptedOutNumberInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5026,12 +4487,8 @@ pub mod opted_out_number_information {
             self
         }
         /// <p>The phone number that is opted out.</p>
-        pub fn set_opted_out_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opted_out_number = input;
-            self
+        pub fn set_opted_out_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opted_out_number = input; self
         }
         /// <p>The time that the op tout occurred, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn opted_out_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5039,12 +4496,8 @@ pub mod opted_out_number_information {
             self
         }
         /// <p>The time that the op tout occurred, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_opted_out_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.opted_out_timestamp = input;
-            self
+        pub fn set_opted_out_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.opted_out_timestamp = input; self
         }
         /// <p>This is set to true if it was the end recipient that opted out.</p>
         pub fn end_user_opted_out(mut self, input: bool) -> Self {
@@ -5053,18 +4506,23 @@ pub mod opted_out_number_information {
         }
         /// <p>This is set to true if it was the end recipient that opted out.</p>
         pub fn set_end_user_opted_out(mut self, input: std::option::Option<bool>) -> Self {
-            self.end_user_opted_out = input;
-            self
+            self.end_user_opted_out = input; self
         }
         /// Consumes the builder and constructs a [`OptedOutNumberInformation`](crate::model::OptedOutNumberInformation).
         pub fn build(self) -> crate::model::OptedOutNumberInformation {
             crate::model::OptedOutNumberInformation {
-                opted_out_number: self.opted_out_number,
-                opted_out_timestamp: self.opted_out_timestamp,
-                end_user_opted_out: self.end_user_opted_out.unwrap_or_default(),
+                opted_out_number: self.opted_out_number
+                ,
+                opted_out_timestamp: self.opted_out_timestamp
+                ,
+                end_user_opted_out: self.end_user_opted_out
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl OptedOutNumberInformation {
     /// Creates a new builder-style object to manufacture [`OptedOutNumberInformation`](crate::model::OptedOutNumberInformation).
@@ -5076,7 +4534,7 @@ impl OptedOutNumberInformation {
 /// <p>The information for opted out numbers that meet a specified criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OptedOutFilter {
+pub struct OptedOutFilter  {
     /// <p>The name of the attribute to filter on.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::OptedOutFilterName>,
@@ -5086,17 +4544,17 @@ pub struct OptedOutFilter {
 }
 impl OptedOutFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::OptedOutFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::OptedOutFilterName> {
         self.name.as_ref()
     }
     /// <p>An array of values to filter for.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`OptedOutFilter`](crate::model::OptedOutFilter).
 pub mod opted_out_filter {
-
+    
     /// A builder for [`OptedOutFilter`](crate::model::OptedOutFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5110,12 +4568,8 @@ pub mod opted_out_filter {
             self
         }
         /// <p>The name of the attribute to filter on.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::OptedOutFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::OptedOutFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -5124,26 +4578,26 @@ pub mod opted_out_filter {
         /// <p>An array of values to filter for.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>An array of values to filter for.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`OptedOutFilter`](crate::model::OptedOutFilter).
         pub fn build(self) -> crate::model::OptedOutFilter {
             crate::model::OptedOutFilter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl OptedOutFilter {
     /// Creates a new builder-style object to manufacture [`OptedOutFilter`](crate::model::OptedOutFilter).
@@ -5158,9 +4612,9 @@ impl OptedOutFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let optedoutfiltername = unimplemented!();
 /// match optedoutfiltername {
@@ -5181,56 +4635,48 @@ impl OptedOutFilter {
 /// Specifically, when `optedoutfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OptedOutFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OptedOutFilterName {
     #[allow(missing_docs)] // documentation missing in model
     EndUserOptedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OptedOutFilterName {
     fn from(s: &str) -> Self {
         match s {
             "end-user-opted-out" => OptedOutFilterName::EndUserOptedOut,
-            other => {
-                OptedOutFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => OptedOutFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OptedOutFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OptedOutFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OptedOutFilterName::from(s))
+                }
+            }
 impl OptedOutFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OptedOutFilterName::EndUserOptedOut => "end-user-opted-out",
-            OptedOutFilterName::Unknown(value) => value.as_str(),
+            OptedOutFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["end-user-opted-out"]
+        &[
+            "end-user-opted-out"
+        ]
     }
 }
 impl AsRef<str> for OptedOutFilterName {
@@ -5242,7 +4688,7 @@ impl AsRef<str> for OptedOutFilterName {
 /// <p>The information for all keywords in a pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KeywordInformation {
+pub struct KeywordInformation  {
     /// <p>The keyword as a string.</p>
     #[doc(hidden)]
     pub keyword: std::option::Option<std::string::String>,
@@ -5255,21 +4701,21 @@ pub struct KeywordInformation {
 }
 impl KeywordInformation {
     /// <p>The keyword as a string.</p>
-    pub fn keyword(&self) -> std::option::Option<&str> {
+    pub fn keyword(&self) -> std::option::Option<& str> {
         self.keyword.as_deref()
     }
     /// <p>A custom message that can be used with the keyword.</p>
-    pub fn keyword_message(&self) -> std::option::Option<&str> {
+    pub fn keyword_message(&self) -> std::option::Option<& str> {
         self.keyword_message.as_deref()
     }
     /// <p>The action to perform for the keyword.</p>
-    pub fn keyword_action(&self) -> std::option::Option<&crate::model::KeywordAction> {
+    pub fn keyword_action(&self) -> std::option::Option<& crate::model::KeywordAction> {
         self.keyword_action.as_ref()
     }
 }
 /// See [`KeywordInformation`](crate::model::KeywordInformation).
 pub mod keyword_information {
-
+    
     /// A builder for [`KeywordInformation`](crate::model::KeywordInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5285,8 +4731,7 @@ pub mod keyword_information {
         }
         /// <p>The keyword as a string.</p>
         pub fn set_keyword(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.keyword = input;
-            self
+            self.keyword = input; self
         }
         /// <p>A custom message that can be used with the keyword.</p>
         pub fn keyword_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5294,12 +4739,8 @@ pub mod keyword_information {
             self
         }
         /// <p>A custom message that can be used with the keyword.</p>
-        pub fn set_keyword_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.keyword_message = input;
-            self
+        pub fn set_keyword_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.keyword_message = input; self
         }
         /// <p>The action to perform for the keyword.</p>
         pub fn keyword_action(mut self, input: crate::model::KeywordAction) -> Self {
@@ -5307,22 +4748,23 @@ pub mod keyword_information {
             self
         }
         /// <p>The action to perform for the keyword.</p>
-        pub fn set_keyword_action(
-            mut self,
-            input: std::option::Option<crate::model::KeywordAction>,
-        ) -> Self {
-            self.keyword_action = input;
-            self
+        pub fn set_keyword_action(mut self, input: std::option::Option<crate::model::KeywordAction>) -> Self {
+            self.keyword_action = input; self
         }
         /// Consumes the builder and constructs a [`KeywordInformation`](crate::model::KeywordInformation).
         pub fn build(self) -> crate::model::KeywordInformation {
             crate::model::KeywordInformation {
-                keyword: self.keyword,
-                keyword_message: self.keyword_message,
-                keyword_action: self.keyword_action,
+                keyword: self.keyword
+                ,
+                keyword_message: self.keyword_message
+                ,
+                keyword_action: self.keyword_action
+                ,
             }
         }
     }
+    
+    
 }
 impl KeywordInformation {
     /// Creates a new builder-style object to manufacture [`KeywordInformation`](crate::model::KeywordInformation).
@@ -5334,7 +4776,7 @@ impl KeywordInformation {
 /// <p>The information for keywords that meet a specified criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KeywordFilter {
+pub struct KeywordFilter  {
     /// <p>The name of the attribute to filter on.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::KeywordFilterName>,
@@ -5344,17 +4786,17 @@ pub struct KeywordFilter {
 }
 impl KeywordFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::KeywordFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::KeywordFilterName> {
         self.name.as_ref()
     }
     /// <p>An array values to filter for.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`KeywordFilter`](crate::model::KeywordFilter).
 pub mod keyword_filter {
-
+    
     /// A builder for [`KeywordFilter`](crate::model::KeywordFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5368,12 +4810,8 @@ pub mod keyword_filter {
             self
         }
         /// <p>The name of the attribute to filter on.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::KeywordFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::KeywordFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -5382,26 +4820,26 @@ pub mod keyword_filter {
         /// <p>An array values to filter for.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>An array values to filter for.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`KeywordFilter`](crate::model::KeywordFilter).
         pub fn build(self) -> crate::model::KeywordFilter {
             crate::model::KeywordFilter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl KeywordFilter {
     /// Creates a new builder-style object to manufacture [`KeywordFilter`](crate::model::KeywordFilter).
@@ -5416,9 +4854,9 @@ impl KeywordFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let keywordfiltername = unimplemented!();
 /// match keywordfiltername {
@@ -5439,56 +4877,48 @@ impl KeywordFilter {
 /// Specifically, when `keywordfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KeywordFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum KeywordFilterName {
     #[allow(missing_docs)] // documentation missing in model
     KeywordAction,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KeywordFilterName {
     fn from(s: &str) -> Self {
         match s {
             "keyword-action" => KeywordFilterName::KeywordAction,
-            other => {
-                KeywordFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => KeywordFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for KeywordFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeywordFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(KeywordFilterName::from(s))
+                }
+            }
 impl KeywordFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             KeywordFilterName::KeywordAction => "keyword-action",
-            KeywordFilterName::Unknown(value) => value.as_str(),
+            KeywordFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["keyword-action"]
+        &[
+            "keyword-action"
+        ]
     }
 }
 impl AsRef<str> for KeywordFilterName {
@@ -5500,7 +4930,7 @@ impl AsRef<str> for KeywordFilterName {
 /// <p>Information related to a given configuration set in your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigurationSetInformation {
+pub struct ConfigurationSetInformation  {
     /// <p>The Resource Name (ARN) of the ConfigurationSet.</p>
     #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
@@ -5522,40 +4952,39 @@ pub struct ConfigurationSetInformation {
 }
 impl ConfigurationSetInformation {
     /// <p>The Resource Name (ARN) of the ConfigurationSet.</p>
-    pub fn configuration_set_arn(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_arn(&self) -> std::option::Option<& str> {
         self.configuration_set_arn.as_deref()
     }
     /// <p>The name of the ConfigurationSet.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>An array of EventDestination objects that describe any events to log and where to log them.</p>
-    pub fn event_destinations(&self) -> std::option::Option<&[crate::model::EventDestination]> {
+    pub fn event_destinations(&self) -> std::option::Option<& [crate::model::EventDestination]> {
         self.event_destinations.as_deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn default_message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn default_message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.default_message_type.as_ref()
     }
     /// <p>The default sender ID used by the ConfigurationSet.</p>
-    pub fn default_sender_id(&self) -> std::option::Option<&str> {
+    pub fn default_sender_id(&self) -> std::option::Option<& str> {
         self.default_sender_id.as_deref()
     }
     /// <p>The time when the ConfigurationSet was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 /// See [`ConfigurationSetInformation`](crate::model::ConfigurationSetInformation).
 pub mod configuration_set_information {
-
+    
     /// A builder for [`ConfigurationSetInformation`](crate::model::ConfigurationSetInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_arn: std::option::Option<std::string::String>,
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
-        pub(crate) event_destinations:
-            std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
+        pub(crate) event_destinations: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
         pub(crate) default_message_type: std::option::Option<crate::model::MessageType>,
         pub(crate) default_sender_id: std::option::Option<std::string::String>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -5567,12 +4996,8 @@ pub mod configuration_set_information {
             self
         }
         /// <p>The Resource Name (ARN) of the ConfigurationSet.</p>
-        pub fn set_configuration_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_arn = input;
-            self
+        pub fn set_configuration_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_arn = input; self
         }
         /// <p>The name of the ConfigurationSet.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5580,12 +5005,8 @@ pub mod configuration_set_information {
             self
         }
         /// <p>The name of the ConfigurationSet.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// Appends an item to `event_destinations`.
         ///
@@ -5594,17 +5015,13 @@ pub mod configuration_set_information {
         /// <p>An array of EventDestination objects that describe any events to log and where to log them.</p>
         pub fn event_destinations(mut self, input: crate::model::EventDestination) -> Self {
             let mut v = self.event_destinations.unwrap_or_default();
-            v.push(input);
-            self.event_destinations = Some(v);
-            self
+                            v.push(input);
+                            self.event_destinations = Some(v);
+                            self
         }
         /// <p>An array of EventDestination objects that describe any events to log and where to log them.</p>
-        pub fn set_event_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
-        ) -> Self {
-            self.event_destinations = input;
-            self
+        pub fn set_event_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventDestination>>) -> Self {
+            self.event_destinations = input; self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
         pub fn default_message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -5612,12 +5029,8 @@ pub mod configuration_set_information {
             self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-        pub fn set_default_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.default_message_type = input;
-            self
+        pub fn set_default_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.default_message_type = input; self
         }
         /// <p>The default sender ID used by the ConfigurationSet.</p>
         pub fn default_sender_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5625,12 +5038,8 @@ pub mod configuration_set_information {
             self
         }
         /// <p>The default sender ID used by the ConfigurationSet.</p>
-        pub fn set_default_sender_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_sender_id = input;
-            self
+        pub fn set_default_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_sender_id = input; self
         }
         /// <p>The time when the ConfigurationSet was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5638,25 +5047,29 @@ pub mod configuration_set_information {
             self
         }
         /// <p>The time when the ConfigurationSet was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`ConfigurationSetInformation`](crate::model::ConfigurationSetInformation).
         pub fn build(self) -> crate::model::ConfigurationSetInformation {
             crate::model::ConfigurationSetInformation {
-                configuration_set_arn: self.configuration_set_arn,
-                configuration_set_name: self.configuration_set_name,
-                event_destinations: self.event_destinations,
-                default_message_type: self.default_message_type,
-                default_sender_id: self.default_sender_id,
-                created_timestamp: self.created_timestamp,
+                configuration_set_arn: self.configuration_set_arn
+                ,
+                configuration_set_name: self.configuration_set_name
+                ,
+                event_destinations: self.event_destinations
+                ,
+                default_message_type: self.default_message_type
+                ,
+                default_sender_id: self.default_sender_id
+                ,
+                created_timestamp: self.created_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigurationSetInformation {
     /// Creates a new builder-style object to manufacture [`ConfigurationSetInformation`](crate::model::ConfigurationSetInformation).
@@ -5668,7 +5081,7 @@ impl ConfigurationSetInformation {
 /// <p>The information for configuration sets that meet a specified criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigurationSetFilter {
+pub struct ConfigurationSetFilter  {
     /// <p>The name of the attribute to filter on.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::ConfigurationSetFilterName>,
@@ -5678,17 +5091,17 @@ pub struct ConfigurationSetFilter {
 }
 impl ConfigurationSetFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::ConfigurationSetFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::ConfigurationSetFilterName> {
         self.name.as_ref()
     }
     /// <p>An array values to filter for.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`ConfigurationSetFilter`](crate::model::ConfigurationSetFilter).
 pub mod configuration_set_filter {
-
+    
     /// A builder for [`ConfigurationSetFilter`](crate::model::ConfigurationSetFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5702,12 +5115,8 @@ pub mod configuration_set_filter {
             self
         }
         /// <p>The name of the attribute to filter on.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationSetFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::ConfigurationSetFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -5716,26 +5125,26 @@ pub mod configuration_set_filter {
         /// <p>An array values to filter for.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>An array values to filter for.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`ConfigurationSetFilter`](crate::model::ConfigurationSetFilter).
         pub fn build(self) -> crate::model::ConfigurationSetFilter {
             crate::model::ConfigurationSetFilter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigurationSetFilter {
     /// Creates a new builder-style object to manufacture [`ConfigurationSetFilter`](crate::model::ConfigurationSetFilter).
@@ -5750,9 +5159,9 @@ impl ConfigurationSetFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let configurationsetfiltername = unimplemented!();
 /// match configurationsetfiltername {
@@ -5776,22 +5185,14 @@ impl ConfigurationSetFilter {
 /// Specifically, when `configurationsetfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfigurationSetFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConfigurationSetFilterName {
     #[allow(missing_docs)] // documentation missing in model
     DefaultMessageType,
@@ -5802,7 +5203,7 @@ pub enum ConfigurationSetFilterName {
     #[allow(missing_docs)] // documentation missing in model
     MatchingEventTypes,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfigurationSetFilterName {
     fn from(s: &str) -> Self {
@@ -5811,19 +5212,17 @@ impl std::convert::From<&str> for ConfigurationSetFilterName {
             "default-sender-id" => ConfigurationSetFilterName::DefaultSenderId,
             "event-destination-name" => ConfigurationSetFilterName::EventDestinationName,
             "matching-event-types" => ConfigurationSetFilterName::MatchingEventTypes,
-            other => ConfigurationSetFilterName::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConfigurationSetFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConfigurationSetFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConfigurationSetFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConfigurationSetFilterName::from(s))
+                }
+            }
 impl ConfigurationSetFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5832,16 +5231,13 @@ impl ConfigurationSetFilterName {
             ConfigurationSetFilterName::DefaultSenderId => "default-sender-id",
             ConfigurationSetFilterName::EventDestinationName => "event-destination-name",
             ConfigurationSetFilterName::MatchingEventTypes => "matching-event-types",
-            ConfigurationSetFilterName::Unknown(value) => value.as_str(),
+            ConfigurationSetFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "default-message-type",
-            "default-sender-id",
-            "event-destination-name",
-            "matching-event-types",
+            "default-message-type", "default-sender-id", "event-destination-name", "matching-event-types"
         ]
     }
 }
@@ -5854,7 +5250,7 @@ impl AsRef<str> for ConfigurationSetFilterName {
 /// <p>The current resource quotas associated with an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountLimit {
+pub struct AccountLimit  {
     /// <p>The name of the attribute to apply the account limit to.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::AccountLimitName>,
@@ -5867,7 +5263,7 @@ pub struct AccountLimit {
 }
 impl AccountLimit {
     /// <p>The name of the attribute to apply the account limit to.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::AccountLimitName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::AccountLimitName> {
         self.name.as_ref()
     }
     /// <p>The current amount that has been spent, in US dollars.</p>
@@ -5881,7 +5277,7 @@ impl AccountLimit {
 }
 /// See [`AccountLimit`](crate::model::AccountLimit).
 pub mod account_limit {
-
+    
     /// A builder for [`AccountLimit`](crate::model::AccountLimit).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5896,12 +5292,8 @@ pub mod account_limit {
             self
         }
         /// <p>The name of the attribute to apply the account limit to.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::AccountLimitName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::AccountLimitName>) -> Self {
+            self.name = input; self
         }
         /// <p>The current amount that has been spent, in US dollars.</p>
         pub fn used(mut self, input: i64) -> Self {
@@ -5910,8 +5302,7 @@ pub mod account_limit {
         }
         /// <p>The current amount that has been spent, in US dollars.</p>
         pub fn set_used(mut self, input: std::option::Option<i64>) -> Self {
-            self.used = input;
-            self
+            self.used = input; self
         }
         /// <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
         pub fn max(mut self, input: i64) -> Self {
@@ -5920,18 +5311,24 @@ pub mod account_limit {
         }
         /// <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
         pub fn set_max(mut self, input: std::option::Option<i64>) -> Self {
-            self.max = input;
-            self
+            self.max = input; self
         }
         /// Consumes the builder and constructs a [`AccountLimit`](crate::model::AccountLimit).
         pub fn build(self) -> crate::model::AccountLimit {
             crate::model::AccountLimit {
-                name: self.name,
-                used: self.used.unwrap_or_default(),
-                max: self.max.unwrap_or_default(),
+                name: self.name
+                ,
+                used: self.used
+                    .unwrap_or_default()
+                ,
+                max: self.max
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AccountLimit {
     /// Creates a new builder-style object to manufacture [`AccountLimit`](crate::model::AccountLimit).
@@ -5946,9 +5343,9 @@ impl AccountLimit {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accountlimitname = unimplemented!();
 /// match accountlimitname {
@@ -5972,22 +5369,14 @@ impl AccountLimit {
 /// Specifically, when `accountlimitname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccountLimitName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccountLimitName {
     #[allow(missing_docs)] // documentation missing in model
     ConfigurationSets,
@@ -5998,7 +5387,7 @@ pub enum AccountLimitName {
     #[allow(missing_docs)] // documentation missing in model
     Pools,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccountLimitName {
     fn from(s: &str) -> Self {
@@ -6007,17 +5396,17 @@ impl std::convert::From<&str> for AccountLimitName {
             "OPT_OUT_LISTS" => AccountLimitName::OptOutLists,
             "PHONE_NUMBERS" => AccountLimitName::PhoneNumbers,
             "POOLS" => AccountLimitName::Pools,
-            other => AccountLimitName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AccountLimitName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccountLimitName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccountLimitName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccountLimitName::from(s))
+                }
+            }
 impl AccountLimitName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6026,16 +5415,13 @@ impl AccountLimitName {
             AccountLimitName::OptOutLists => "OPT_OUT_LISTS",
             AccountLimitName::PhoneNumbers => "PHONE_NUMBERS",
             AccountLimitName::Pools => "POOLS",
-            AccountLimitName::Unknown(value) => value.as_str(),
+            AccountLimitName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CONFIGURATION_SETS",
-            "OPT_OUT_LISTS",
-            "PHONE_NUMBERS",
-            "POOLS",
+            "CONFIGURATION_SETS", "OPT_OUT_LISTS", "PHONE_NUMBERS", "POOLS"
         ]
     }
 }
@@ -6048,7 +5434,7 @@ impl AsRef<str> for AccountLimitName {
 /// <p>Displays the attributes associated with a single Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountAttribute {
+pub struct AccountAttribute  {
     /// <p>The name of the account attribute.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::AccountAttributeName>,
@@ -6058,17 +5444,17 @@ pub struct AccountAttribute {
 }
 impl AccountAttribute {
     /// <p>The name of the account attribute.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::AccountAttributeName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::AccountAttributeName> {
         self.name.as_ref()
     }
     /// <p>The value associated with the account attribute name.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`AccountAttribute`](crate::model::AccountAttribute).
 pub mod account_attribute {
-
+    
     /// A builder for [`AccountAttribute`](crate::model::AccountAttribute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6082,12 +5468,8 @@ pub mod account_attribute {
             self
         }
         /// <p>The name of the account attribute.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::AccountAttributeName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::AccountAttributeName>) -> Self {
+            self.name = input; self
         }
         /// <p>The value associated with the account attribute name.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6096,17 +5478,20 @@ pub mod account_attribute {
         }
         /// <p>The value associated with the account attribute name.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`AccountAttribute`](crate::model::AccountAttribute).
         pub fn build(self) -> crate::model::AccountAttribute {
             crate::model::AccountAttribute {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl AccountAttribute {
     /// Creates a new builder-style object to manufacture [`AccountAttribute`](crate::model::AccountAttribute).
@@ -6121,9 +5506,9 @@ impl AccountAttribute {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accountattributename = unimplemented!();
 /// match accountattributename {
@@ -6144,56 +5529,48 @@ impl AccountAttribute {
 /// Specifically, when `accountattributename` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccountAttributeName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccountAttributeName {
     #[allow(missing_docs)] // documentation missing in model
     AccountTier,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccountAttributeName {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_TIER" => AccountAttributeName::AccountTier,
-            other => {
-                AccountAttributeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AccountAttributeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccountAttributeName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccountAttributeName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccountAttributeName::from(s))
+                }
+            }
 impl AccountAttributeName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccountAttributeName::AccountTier => "ACCOUNT_TIER",
-            AccountAttributeName::Unknown(value) => value.as_str(),
+            AccountAttributeName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCOUNT_TIER"]
+        &[
+            "ACCOUNT_TIER"
+        ]
     }
 }
 impl AsRef<str> for AccountAttributeName {
@@ -6201,3 +5578,4 @@ impl AsRef<str> for AccountAttributeName {
         self.as_str()
     }
 }
+

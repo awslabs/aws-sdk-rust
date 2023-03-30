@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`BatchGetSchemaInput`](crate::input::BatchGetSchemaInput).
 pub mod batch_get_schema_input {
-
+    
     /// A builder for [`BatchGetSchemaInput`](crate::input::BatchGetSchemaInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17,12 +17,8 @@ pub mod batch_get_schema_input {
             self
         }
         /// <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
-        pub fn set_collaboration_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_identifier = input;
-            self
+        pub fn set_collaboration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_identifier = input; self
         }
         /// Appends an item to `names`.
         ///
@@ -31,172 +27,102 @@ pub mod batch_get_schema_input {
         /// <p>The names for the schema objects to retrieve.&gt;</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
-            v.push(input.into());
-            self.names = Some(v);
-            self
+                            v.push(input.into());
+                            self.names = Some(v);
+                            self
         }
         /// <p>The names for the schema objects to retrieve.&gt;</p>
-        pub fn set_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.names = input;
-            self
+        pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.names = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetSchemaInput`](crate::input::BatchGetSchemaInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::BatchGetSchemaInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::BatchGetSchemaInput {
-                collaboration_identifier: self.collaboration_identifier,
-                names: self.names,
-            })
+        pub fn build(self) -> Result<crate::input::BatchGetSchemaInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::BatchGetSchemaInput {
+                    collaboration_identifier: self.collaboration_identifier
+                    ,
+                    names: self.names
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl BatchGetSchemaInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetSchema`](crate::operation::BatchGetSchema)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::BatchGetSchema,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::BatchGetSchema, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::BatchGetSchemaInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::BatchGetSchemaInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.collaboration_identifier;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "collaboration_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let collaboration_identifier = aws_smithy_http::label::fmt_string(
-                    input_1,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_1 = input_1.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))?;
+                let collaboration_identifier = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if collaboration_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "collaboration_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/collaborations/{collaborationIdentifier}/batch-schema",
-                    collaborationIdentifier = collaboration_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/collaborations/{collaborationIdentifier}/batch-schema", collaborationIdentifier = collaboration_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::BatchGetSchemaInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::BatchGetSchemaInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_schema(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_schema(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::BatchGetSchema::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "BatchGetSchema",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::BatchGetSchema::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("BatchGetSchema", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -208,18 +134,16 @@ impl BatchGetSchemaInput {
 
 /// See [`CreateCollaborationInput`](crate::input::CreateCollaborationInput).
 pub mod create_collaboration_input {
-
+    
     /// A builder for [`CreateCollaborationInput`](crate::input::CreateCollaborationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) members: std::option::Option<std::vec::Vec<crate::model::MemberSpecification>>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creator_member_abilities:
-            std::option::Option<std::vec::Vec<crate::model::MemberAbility>>,
+        pub(crate) creator_member_abilities: std::option::Option<std::vec::Vec<crate::model::MemberAbility>>,
         pub(crate) creator_display_name: std::option::Option<std::string::String>,
-        pub(crate) data_encryption_metadata:
-            std::option::Option<crate::model::DataEncryptionMetadata>,
+        pub(crate) data_encryption_metadata: std::option::Option<crate::model::DataEncryptionMetadata>,
         pub(crate) query_log_status: std::option::Option<crate::model::CollaborationQueryLogStatus>,
     }
     impl Builder {
@@ -230,17 +154,13 @@ pub mod create_collaboration_input {
         /// <p>A list of initial members, not including the creator. This list is immutable.</p>
         pub fn members(mut self, input: crate::model::MemberSpecification) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input);
-            self.members = Some(v);
-            self
+                            v.push(input);
+                            self.members = Some(v);
+                            self
         }
         /// <p>A list of initial members, not including the creator. This list is immutable.</p>
-        pub fn set_members(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MemberSpecification>>,
-        ) -> Self {
-            self.members = input;
-            self
+        pub fn set_members(mut self, input: std::option::Option<std::vec::Vec<crate::model::MemberSpecification>>) -> Self {
+            self.members = input; self
         }
         /// <p>The display name for a collaboration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -249,8 +169,7 @@ pub mod create_collaboration_input {
         }
         /// <p>The display name for a collaboration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the collaboration provided by the collaboration owner.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -259,8 +178,7 @@ pub mod create_collaboration_input {
         }
         /// <p>A description of the collaboration provided by the collaboration owner.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `creator_member_abilities`.
         ///
@@ -269,17 +187,13 @@ pub mod create_collaboration_input {
         /// <p>The abilities granted to the collaboration creator.</p>
         pub fn creator_member_abilities(mut self, input: crate::model::MemberAbility) -> Self {
             let mut v = self.creator_member_abilities.unwrap_or_default();
-            v.push(input);
-            self.creator_member_abilities = Some(v);
-            self
+                            v.push(input);
+                            self.creator_member_abilities = Some(v);
+                            self
         }
         /// <p>The abilities granted to the collaboration creator.</p>
-        pub fn set_creator_member_abilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MemberAbility>>,
-        ) -> Self {
-            self.creator_member_abilities = input;
-            self
+        pub fn set_creator_member_abilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::MemberAbility>>) -> Self {
+            self.creator_member_abilities = input; self
         }
         /// <p>The display name of the collaboration creator.</p>
         pub fn creator_display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -287,182 +201,119 @@ pub mod create_collaboration_input {
             self
         }
         /// <p>The display name of the collaboration creator.</p>
-        pub fn set_creator_display_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creator_display_name = input;
-            self
+        pub fn set_creator_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creator_display_name = input; self
         }
         /// <p>The settings for client-side encryption with Cryptographic Computing for Clean Rooms.</p>
-        pub fn data_encryption_metadata(
-            mut self,
-            input: crate::model::DataEncryptionMetadata,
-        ) -> Self {
+        pub fn data_encryption_metadata(mut self, input: crate::model::DataEncryptionMetadata) -> Self {
             self.data_encryption_metadata = Some(input);
             self
         }
         /// <p>The settings for client-side encryption with Cryptographic Computing for Clean Rooms.</p>
-        pub fn set_data_encryption_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DataEncryptionMetadata>,
-        ) -> Self {
-            self.data_encryption_metadata = input;
-            self
+        pub fn set_data_encryption_metadata(mut self, input: std::option::Option<crate::model::DataEncryptionMetadata>) -> Self {
+            self.data_encryption_metadata = input; self
         }
         /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-        pub fn query_log_status(
-            mut self,
-            input: crate::model::CollaborationQueryLogStatus,
-        ) -> Self {
+        pub fn query_log_status(mut self, input: crate::model::CollaborationQueryLogStatus) -> Self {
             self.query_log_status = Some(input);
             self
         }
         /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-        pub fn set_query_log_status(
-            mut self,
-            input: std::option::Option<crate::model::CollaborationQueryLogStatus>,
-        ) -> Self {
-            self.query_log_status = input;
-            self
+        pub fn set_query_log_status(mut self, input: std::option::Option<crate::model::CollaborationQueryLogStatus>) -> Self {
+            self.query_log_status = input; self
         }
         /// Consumes the builder and constructs a [`CreateCollaborationInput`](crate::input::CreateCollaborationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateCollaborationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateCollaborationInput {
-                members: self.members,
-                name: self.name,
-                description: self.description,
-                creator_member_abilities: self.creator_member_abilities,
-                creator_display_name: self.creator_display_name,
-                data_encryption_metadata: self.data_encryption_metadata,
-                query_log_status: self.query_log_status,
-            })
+        pub fn build(self) -> Result<crate::input::CreateCollaborationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateCollaborationInput {
+                    members: self.members
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    creator_member_abilities: self.creator_member_abilities
+                    ,
+                    creator_display_name: self.creator_display_name
+                    ,
+                    data_encryption_metadata: self.data_encryption_metadata
+                    ,
+                    query_log_status: self.query_log_status
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateCollaborationInput {
     /// Consumes the builder and constructs an Operation<[`CreateCollaboration`](crate::operation::CreateCollaboration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateCollaboration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateCollaboration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateCollaborationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateCollaborationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/collaborations").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateCollaborationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateCollaborationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_collaboration(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_collaboration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateCollaboration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateCollaboration",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateCollaboration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateCollaboration", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -474,7 +325,7 @@ impl CreateCollaborationInput {
 
 /// See [`CreateConfiguredTableInput`](crate::input::CreateConfiguredTableInput).
 pub mod create_configured_table_input {
-
+    
     /// A builder for [`CreateConfiguredTableInput`](crate::input::CreateConfiguredTableInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -492,8 +343,7 @@ pub mod create_configured_table_input {
         }
         /// <p>The name of the configured table.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description for the configured table.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -502,8 +352,7 @@ pub mod create_configured_table_input {
         }
         /// <p>A description for the configured table.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>A reference to the AWS Glue table being configured.</p>
         pub fn table_reference(mut self, input: crate::model::TableReference) -> Self {
@@ -511,12 +360,8 @@ pub mod create_configured_table_input {
             self
         }
         /// <p>A reference to the AWS Glue table being configured.</p>
-        pub fn set_table_reference(
-            mut self,
-            input: std::option::Option<crate::model::TableReference>,
-        ) -> Self {
-            self.table_reference = input;
-            self
+        pub fn set_table_reference(mut self, input: std::option::Option<crate::model::TableReference>) -> Self {
+            self.table_reference = input; self
         }
         /// Appends an item to `allowed_columns`.
         ///
@@ -525,17 +370,13 @@ pub mod create_configured_table_input {
         /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
         pub fn allowed_columns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_columns.unwrap_or_default();
-            v.push(input.into());
-            self.allowed_columns = Some(v);
-            self
+                            v.push(input.into());
+                            self.allowed_columns = Some(v);
+                            self
         }
         /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
-        pub fn set_allowed_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.allowed_columns = input;
-            self
+        pub fn set_allowed_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.allowed_columns = input; self
         }
         /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
         pub fn analysis_method(mut self, input: crate::model::AnalysisMethod) -> Self {
@@ -543,150 +384,97 @@ pub mod create_configured_table_input {
             self
         }
         /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
-        pub fn set_analysis_method(
-            mut self,
-            input: std::option::Option<crate::model::AnalysisMethod>,
-        ) -> Self {
-            self.analysis_method = input;
-            self
+        pub fn set_analysis_method(mut self, input: std::option::Option<crate::model::AnalysisMethod>) -> Self {
+            self.analysis_method = input; self
         }
         /// Consumes the builder and constructs a [`CreateConfiguredTableInput`](crate::input::CreateConfiguredTableInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateConfiguredTableInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateConfiguredTableInput {
-                name: self.name,
-                description: self.description,
-                table_reference: self.table_reference,
-                allowed_columns: self.allowed_columns,
-                analysis_method: self.analysis_method,
-            })
+        pub fn build(self) -> Result<crate::input::CreateConfiguredTableInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateConfiguredTableInput {
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    table_reference: self.table_reference
+                    ,
+                    allowed_columns: self.allowed_columns
+                    ,
+                    analysis_method: self.analysis_method
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateConfiguredTableInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfiguredTable`](crate::operation::CreateConfiguredTable)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateConfiguredTable,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateConfiguredTable, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateConfiguredTableInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateConfiguredTableInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/configuredTables").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateConfiguredTableInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateConfiguredTableInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_configured_table(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_create_configured_table(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateConfiguredTable::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateConfiguredTable",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateConfiguredTable::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateConfiguredTable", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -698,164 +486,97 @@ impl CreateConfiguredTableInput {
 
 /// See [`CreateConfiguredTableAnalysisRuleInput`](crate::input::CreateConfiguredTableAnalysisRuleInput).
 pub mod create_configured_table_analysis_rule_input {
-
+    
     /// A builder for [`CreateConfiguredTableAnalysisRuleInput`](crate::input::CreateConfiguredTableAnalysisRuleInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_identifier: std::option::Option<std::string::String>,
-        pub(crate) analysis_rule_type:
-            std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>,
-        pub(crate) analysis_rule_policy:
-            std::option::Option<crate::model::ConfiguredTableAnalysisRulePolicy>,
+        pub(crate) analysis_rule_type: std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>,
+        pub(crate) analysis_rule_policy: std::option::Option<crate::model::ConfiguredTableAnalysisRulePolicy>,
     }
     impl Builder {
         /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
-        pub fn configured_table_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn configured_table_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.configured_table_identifier = Some(input.into());
             self
         }
         /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
-        pub fn set_configured_table_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configured_table_identifier = input;
-            self
+        pub fn set_configured_table_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configured_table_identifier = input; self
         }
         /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
-        pub fn analysis_rule_type(
-            mut self,
-            input: crate::model::ConfiguredTableAnalysisRuleType,
-        ) -> Self {
+        pub fn analysis_rule_type(mut self, input: crate::model::ConfiguredTableAnalysisRuleType) -> Self {
             self.analysis_rule_type = Some(input);
             self
         }
         /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
-        pub fn set_analysis_rule_type(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>,
-        ) -> Self {
-            self.analysis_rule_type = input;
-            self
+        pub fn set_analysis_rule_type(mut self, input: std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>) -> Self {
+            self.analysis_rule_type = input; self
         }
         /// <p>The entire created configured table analysis rule object.</p>
-        pub fn analysis_rule_policy(
-            mut self,
-            input: crate::model::ConfiguredTableAnalysisRulePolicy,
-        ) -> Self {
+        pub fn analysis_rule_policy(mut self, input: crate::model::ConfiguredTableAnalysisRulePolicy) -> Self {
             self.analysis_rule_policy = Some(input);
             self
         }
         /// <p>The entire created configured table analysis rule object.</p>
-        pub fn set_analysis_rule_policy(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTableAnalysisRulePolicy>,
-        ) -> Self {
-            self.analysis_rule_policy = input;
-            self
+        pub fn set_analysis_rule_policy(mut self, input: std::option::Option<crate::model::ConfiguredTableAnalysisRulePolicy>) -> Self {
+            self.analysis_rule_policy = input; self
         }
         /// Consumes the builder and constructs a [`CreateConfiguredTableAnalysisRuleInput`](crate::input::CreateConfiguredTableAnalysisRuleInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateConfiguredTableAnalysisRuleInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateConfiguredTableAnalysisRuleInput {
-                configured_table_identifier: self.configured_table_identifier,
-                analysis_rule_type: self.analysis_rule_type,
-                analysis_rule_policy: self.analysis_rule_policy,
-            })
+        pub fn build(self) -> Result<crate::input::CreateConfiguredTableAnalysisRuleInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateConfiguredTableAnalysisRuleInput {
+                    configured_table_identifier: self.configured_table_identifier
+                    ,
+                    analysis_rule_type: self.analysis_rule_type
+                    ,
+                    analysis_rule_policy: self.analysis_rule_policy
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateConfiguredTableAnalysisRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfiguredTableAnalysisRule`](crate::operation::CreateConfiguredTableAnalysisRule)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateConfiguredTableAnalysisRule,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateConfiguredTableAnalysisRule, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateConfiguredTableAnalysisRuleInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateConfiguredTableAnalysisRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.configured_table_identifier;
-                let input_2 = input_2.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "configured_table_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let configured_table_identifier = aws_smithy_http::label::fmt_string(
-                    input_2,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_2 = input_2.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("configured_table_identifier", "cannot be empty or unset"))?;
+                let configured_table_identifier = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if configured_table_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "configured_table_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/configuredTables/{configuredTableIdentifier}/analysisRule",
-                    configuredTableIdentifier = configured_table_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("configured_table_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/configuredTables/{configuredTableIdentifier}/analysisRule", configuredTableIdentifier = configured_table_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateConfiguredTableAnalysisRuleInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateConfiguredTableAnalysisRuleInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -864,56 +585,33 @@ impl CreateConfiguredTableAnalysisRuleInput {
             crate::operation_ser::serialize_operation_crate_operation_create_configured_table_analysis_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateConfiguredTableAnalysisRule::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateConfiguredTableAnalysisRule",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateConfiguredTableAnalysisRule::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateConfiguredTableAnalysisRule", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -925,7 +623,7 @@ impl CreateConfiguredTableAnalysisRuleInput {
 
 /// See [`CreateConfiguredTableAssociationInput`](crate::input::CreateConfiguredTableAssociationInput).
 pub mod create_configured_table_association_input {
-
+    
     /// A builder for [`CreateConfiguredTableAssociationInput`](crate::input::CreateConfiguredTableAssociationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -943,8 +641,7 @@ pub mod create_configured_table_association_input {
         }
         /// <p>The name of the configured table association. This name is used to query the underlying configured table.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description for the configured table association.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -953,8 +650,7 @@ pub mod create_configured_table_association_input {
         }
         /// <p>A description for the configured table association.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.</p>
         pub fn membership_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -962,28 +658,17 @@ pub mod create_configured_table_association_input {
             self
         }
         /// <p>A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.</p>
-        pub fn set_membership_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_identifier = input;
-            self
+        pub fn set_membership_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_identifier = input; self
         }
         /// <p>A unique identifier for the configured table to be associated to. Currently accepts a configured table ID.</p>
-        pub fn configured_table_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn configured_table_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.configured_table_identifier = Some(input.into());
             self
         }
         /// <p>A unique identifier for the configured table to be associated to. Currently accepts a configured table ID.</p>
-        pub fn set_configured_table_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configured_table_identifier = input;
-            self
+        pub fn set_configured_table_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configured_table_identifier = input; self
         }
         /// <p>The service will assume this role to access catalog metadata and query the table.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -992,110 +677,67 @@ pub mod create_configured_table_association_input {
         }
         /// <p>The service will assume this role to access catalog metadata and query the table.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateConfiguredTableAssociationInput`](crate::input::CreateConfiguredTableAssociationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateConfiguredTableAssociationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateConfiguredTableAssociationInput {
-                name: self.name,
-                description: self.description,
-                membership_identifier: self.membership_identifier,
-                configured_table_identifier: self.configured_table_identifier,
-                role_arn: self.role_arn,
-            })
+        pub fn build(self) -> Result<crate::input::CreateConfiguredTableAssociationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateConfiguredTableAssociationInput {
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    membership_identifier: self.membership_identifier
+                    ,
+                    configured_table_identifier: self.configured_table_identifier
+                    ,
+                    role_arn: self.role_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateConfiguredTableAssociationInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfiguredTableAssociation`](crate::operation::CreateConfiguredTableAssociation)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateConfiguredTableAssociation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateConfiguredTableAssociation, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateConfiguredTableAssociationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateConfiguredTableAssociationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.membership_identifier;
-                let input_3 = input_3.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "membership_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let membership_identifier = aws_smithy_http::label::fmt_string(
-                    input_3,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_3 = input_3.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))?;
+                let membership_identifier = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if membership_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "membership_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/memberships/{membershipIdentifier}/configuredTableAssociations",
-                    membershipIdentifier = membership_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/memberships/{membershipIdentifier}/configuredTableAssociations", membershipIdentifier = membership_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateConfiguredTableAssociationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateConfiguredTableAssociationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1104,56 +746,33 @@ impl CreateConfiguredTableAssociationInput {
             crate::operation_ser::serialize_operation_crate_operation_create_configured_table_association(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateConfiguredTableAssociation::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateConfiguredTableAssociation",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateConfiguredTableAssociation::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateConfiguredTableAssociation", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1165,7 +784,7 @@ impl CreateConfiguredTableAssociationInput {
 
 /// See [`CreateMembershipInput`](crate::input::CreateMembershipInput).
 pub mod create_membership_input {
-
+    
     /// A builder for [`CreateMembershipInput`](crate::input::CreateMembershipInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1179,12 +798,8 @@ pub mod create_membership_input {
             self
         }
         /// <p>The unique ID for the associated collaboration.</p>
-        pub fn set_collaboration_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_identifier = input;
-            self
+        pub fn set_collaboration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_identifier = input; self
         }
         /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
         pub fn query_log_status(mut self, input: crate::model::MembershipQueryLogStatus) -> Self {
@@ -1192,145 +807,91 @@ pub mod create_membership_input {
             self
         }
         /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-        pub fn set_query_log_status(
-            mut self,
-            input: std::option::Option<crate::model::MembershipQueryLogStatus>,
-        ) -> Self {
-            self.query_log_status = input;
-            self
+        pub fn set_query_log_status(mut self, input: std::option::Option<crate::model::MembershipQueryLogStatus>) -> Self {
+            self.query_log_status = input; self
         }
         /// Consumes the builder and constructs a [`CreateMembershipInput`](crate::input::CreateMembershipInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateMembershipInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateMembershipInput {
-                collaboration_identifier: self.collaboration_identifier,
-                query_log_status: self.query_log_status,
-            })
+        pub fn build(self) -> Result<crate::input::CreateMembershipInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateMembershipInput {
+                    collaboration_identifier: self.collaboration_identifier
+                    ,
+                    query_log_status: self.query_log_status
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateMembershipInput {
     /// Consumes the builder and constructs an Operation<[`CreateMembership`](crate::operation::CreateMembership)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateMembership,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateMembership, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateMembershipInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateMembershipInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/memberships").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateMembershipInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateMembershipInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_membership(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_membership(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateMembership::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateMembership",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateMembership::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateMembership", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1342,7 +903,7 @@ impl CreateMembershipInput {
 
 /// See [`DeleteCollaborationInput`](crate::input::DeleteCollaborationInput).
 pub mod delete_collaboration_input {
-
+    
     /// A builder for [`DeleteCollaborationInput`](crate::input::DeleteCollaborationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1355,100 +916,54 @@ pub mod delete_collaboration_input {
             self
         }
         /// <p>The identifier for the collaboration.</p>
-        pub fn set_collaboration_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_identifier = input;
-            self
+        pub fn set_collaboration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_identifier = input; self
         }
         /// Consumes the builder and constructs a [`DeleteCollaborationInput`](crate::input::DeleteCollaborationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteCollaborationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteCollaborationInput {
-                collaboration_identifier: self.collaboration_identifier,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteCollaborationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteCollaborationInput {
+                    collaboration_identifier: self.collaboration_identifier
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteCollaborationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCollaboration`](crate::operation::DeleteCollaboration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteCollaboration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteCollaboration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteCollaborationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteCollaborationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.collaboration_identifier;
-                let input_4 = input_4.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "collaboration_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let collaboration_identifier = aws_smithy_http::label::fmt_string(
-                    input_4,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_4 = input_4.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))?;
+                let collaboration_identifier = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if collaboration_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "collaboration_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/collaborations/{collaborationIdentifier}",
-                    collaborationIdentifier = collaboration_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/collaborations/{collaborationIdentifier}", collaborationIdentifier = collaboration_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteCollaborationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteCollaborationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1458,51 +973,34 @@ impl DeleteCollaborationInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteCollaboration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteCollaboration",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteCollaboration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteCollaboration", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1514,7 +1012,7 @@ impl DeleteCollaborationInput {
 
 /// See [`DeleteConfiguredTableInput`](crate::input::DeleteConfiguredTableInput).
 pub mod delete_configured_table_input {
-
+    
     /// A builder for [`DeleteConfiguredTableInput`](crate::input::DeleteConfiguredTableInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1522,108 +1020,59 @@ pub mod delete_configured_table_input {
     }
     impl Builder {
         /// <p>The unique ID for the configured table to delete.</p>
-        pub fn configured_table_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn configured_table_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.configured_table_identifier = Some(input.into());
             self
         }
         /// <p>The unique ID for the configured table to delete.</p>
-        pub fn set_configured_table_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configured_table_identifier = input;
-            self
+        pub fn set_configured_table_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configured_table_identifier = input; self
         }
         /// Consumes the builder and constructs a [`DeleteConfiguredTableInput`](crate::input::DeleteConfiguredTableInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteConfiguredTableInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteConfiguredTableInput {
-                configured_table_identifier: self.configured_table_identifier,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteConfiguredTableInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteConfiguredTableInput {
+                    configured_table_identifier: self.configured_table_identifier
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteConfiguredTableInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfiguredTable`](crate::operation::DeleteConfiguredTable)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteConfiguredTable,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteConfiguredTable, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteConfiguredTableInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteConfiguredTableInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.configured_table_identifier;
-                let input_5 = input_5.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "configured_table_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let configured_table_identifier = aws_smithy_http::label::fmt_string(
-                    input_5,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_5 = input_5.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("configured_table_identifier", "cannot be empty or unset"))?;
+                let configured_table_identifier = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if configured_table_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "configured_table_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/configuredTables/{configuredTableIdentifier}",
-                    configuredTableIdentifier = configured_table_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("configured_table_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/configuredTables/{configuredTableIdentifier}", configuredTableIdentifier = configured_table_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteConfiguredTableInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteConfiguredTableInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1633,51 +1082,34 @@ impl DeleteConfiguredTableInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteConfiguredTable::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteConfiguredTable",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteConfiguredTable::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteConfiguredTable", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1689,155 +1121,85 @@ impl DeleteConfiguredTableInput {
 
 /// See [`DeleteConfiguredTableAnalysisRuleInput`](crate::input::DeleteConfiguredTableAnalysisRuleInput).
 pub mod delete_configured_table_analysis_rule_input {
-
+    
     /// A builder for [`DeleteConfiguredTableAnalysisRuleInput`](crate::input::DeleteConfiguredTableAnalysisRuleInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_identifier: std::option::Option<std::string::String>,
-        pub(crate) analysis_rule_type:
-            std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>,
+        pub(crate) analysis_rule_type: std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>,
     }
     impl Builder {
         /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
-        pub fn configured_table_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn configured_table_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.configured_table_identifier = Some(input.into());
             self
         }
         /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
-        pub fn set_configured_table_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configured_table_identifier = input;
-            self
+        pub fn set_configured_table_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configured_table_identifier = input; self
         }
         /// <p>The analysis rule type to be deleted. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-        pub fn analysis_rule_type(
-            mut self,
-            input: crate::model::ConfiguredTableAnalysisRuleType,
-        ) -> Self {
+        pub fn analysis_rule_type(mut self, input: crate::model::ConfiguredTableAnalysisRuleType) -> Self {
             self.analysis_rule_type = Some(input);
             self
         }
         /// <p>The analysis rule type to be deleted. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-        pub fn set_analysis_rule_type(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>,
-        ) -> Self {
-            self.analysis_rule_type = input;
-            self
+        pub fn set_analysis_rule_type(mut self, input: std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>) -> Self {
+            self.analysis_rule_type = input; self
         }
         /// Consumes the builder and constructs a [`DeleteConfiguredTableAnalysisRuleInput`](crate::input::DeleteConfiguredTableAnalysisRuleInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteConfiguredTableAnalysisRuleInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteConfiguredTableAnalysisRuleInput {
-                configured_table_identifier: self.configured_table_identifier,
-                analysis_rule_type: self.analysis_rule_type,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteConfiguredTableAnalysisRuleInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteConfiguredTableAnalysisRuleInput {
+                    configured_table_identifier: self.configured_table_identifier
+                    ,
+                    analysis_rule_type: self.analysis_rule_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteConfiguredTableAnalysisRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfiguredTableAnalysisRule`](crate::operation::DeleteConfiguredTableAnalysisRule)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteConfiguredTableAnalysisRule,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteConfiguredTableAnalysisRule, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteConfiguredTableAnalysisRuleInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteConfiguredTableAnalysisRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.configured_table_identifier;
-                let input_6 = input_6.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "configured_table_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let configured_table_identifier = aws_smithy_http::label::fmt_string(
-                    input_6,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_6 = input_6.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("configured_table_identifier", "cannot be empty or unset"))?;
+                let configured_table_identifier = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if configured_table_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "configured_table_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("configured_table_identifier", "cannot be empty or unset"))
+                            }
                 let input_7 = &_input.analysis_rule_type;
-                let input_7 = input_7.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "analysis_rule_type",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let analysis_rule_type = aws_smithy_http::label::fmt_string(
-                    input_7,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_7 = input_7.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("analysis_rule_type", "cannot be empty or unset"))?;
+                let analysis_rule_type = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if analysis_rule_type.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "analysis_rule_type",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/configuredTables/{configuredTableIdentifier}/analysisRule/{analysisRuleType}",
-                    configuredTableIdentifier = configured_table_identifier,
-                    analysisRuleType = analysis_rule_type
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("analysis_rule_type", "cannot be empty or unset"))
+                            }
+                write!(output, "/configuredTables/{configuredTableIdentifier}/analysisRule/{analysisRuleType}", configuredTableIdentifier = configured_table_identifier, analysisRuleType = analysis_rule_type).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteConfiguredTableAnalysisRuleInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteConfiguredTableAnalysisRuleInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1847,51 +1209,34 @@ impl DeleteConfiguredTableAnalysisRuleInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteConfiguredTableAnalysisRule::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteConfiguredTableAnalysisRule",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteConfiguredTableAnalysisRule::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteConfiguredTableAnalysisRule", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1903,30 +1248,22 @@ impl DeleteConfiguredTableAnalysisRuleInput {
 
 /// See [`DeleteConfiguredTableAssociationInput`](crate::input::DeleteConfiguredTableAssociationInput).
 pub mod delete_configured_table_association_input {
-
+    
     /// A builder for [`DeleteConfiguredTableAssociationInput`](crate::input::DeleteConfiguredTableAssociationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) configured_table_association_identifier:
-            std::option::Option<std::string::String>,
+        pub(crate) configured_table_association_identifier: std::option::Option<std::string::String>,
         pub(crate) membership_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique ID for the configured table association to be deleted. Currently accepts the configured table ID.</p>
-        pub fn configured_table_association_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn configured_table_association_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.configured_table_association_identifier = Some(input.into());
             self
         }
         /// <p>The unique ID for the configured table association to be deleted. Currently accepts the configured table ID.</p>
-        pub fn set_configured_table_association_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configured_table_association_identifier = input;
-            self
+        pub fn set_configured_table_association_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configured_table_association_identifier = input; self
         }
         /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
         pub fn membership_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1934,116 +1271,62 @@ pub mod delete_configured_table_association_input {
             self
         }
         /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
-        pub fn set_membership_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_identifier = input;
-            self
+        pub fn set_membership_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_identifier = input; self
         }
         /// Consumes the builder and constructs a [`DeleteConfiguredTableAssociationInput`](crate::input::DeleteConfiguredTableAssociationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteConfiguredTableAssociationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteConfiguredTableAssociationInput {
-                configured_table_association_identifier: self
-                    .configured_table_association_identifier,
-                membership_identifier: self.membership_identifier,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteConfiguredTableAssociationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteConfiguredTableAssociationInput {
+                    configured_table_association_identifier: self.configured_table_association_identifier
+                    ,
+                    membership_identifier: self.membership_identifier
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteConfiguredTableAssociationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfiguredTableAssociation`](crate::operation::DeleteConfiguredTableAssociation)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteConfiguredTableAssociation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteConfiguredTableAssociation, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteConfiguredTableAssociationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteConfiguredTableAssociationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_8 = &_input.membership_identifier;
-                let input_8 = input_8.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "membership_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let membership_identifier = aws_smithy_http::label::fmt_string(
-                    input_8,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_8 = input_8.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))?;
+                let membership_identifier = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if membership_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "membership_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))
+                            }
                 let input_9 = &_input.configured_table_association_identifier;
-                let input_9 = input_9.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "configured_table_association_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let configured_table_association_identifier = aws_smithy_http::label::fmt_string(
-                    input_9,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_9 = input_9.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("configured_table_association_identifier", "cannot be empty or unset"))?;
+                let configured_table_association_identifier = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if configured_table_association_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "configured_table_association_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("configured_table_association_identifier", "cannot be empty or unset"))
+                            }
                 write!(output, "/memberships/{membershipIdentifier}/configuredTableAssociations/{configuredTableAssociationIdentifier}", membershipIdentifier = membership_identifier, configuredTableAssociationIdentifier = configured_table_association_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteConfiguredTableAssociationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteConfiguredTableAssociationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2053,51 +1336,34 @@ impl DeleteConfiguredTableAssociationInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteConfiguredTableAssociation::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteConfiguredTableAssociation",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteConfiguredTableAssociation::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteConfiguredTableAssociation", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2109,7 +1375,7 @@ impl DeleteConfiguredTableAssociationInput {
 
 /// See [`DeleteMemberInput`](crate::input::DeleteMemberInput).
 pub mod delete_member_input {
-
+    
     /// A builder for [`DeleteMemberInput`](crate::input::DeleteMemberInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2123,12 +1389,8 @@ pub mod delete_member_input {
             self
         }
         /// <p>The unique identifier for the associated collaboration.</p>
-        pub fn set_collaboration_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_identifier = input;
-            self
+        pub fn set_collaboration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_identifier = input; self
         }
         /// <p>The account ID of the member to remove.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2137,115 +1399,61 @@ pub mod delete_member_input {
         }
         /// <p>The account ID of the member to remove.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteMemberInput`](crate::input::DeleteMemberInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteMemberInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteMemberInput {
-                collaboration_identifier: self.collaboration_identifier,
-                account_id: self.account_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteMemberInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteMemberInput {
+                    collaboration_identifier: self.collaboration_identifier
+                    ,
+                    account_id: self.account_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteMemberInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMember`](crate::operation::DeleteMember)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteMember,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteMember, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteMemberInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteMemberInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.collaboration_identifier;
-                let input_10 = input_10.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "collaboration_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let collaboration_identifier = aws_smithy_http::label::fmt_string(
-                    input_10,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_10 = input_10.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))?;
+                let collaboration_identifier = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if collaboration_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "collaboration_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))
+                            }
                 let input_11 = &_input.account_id;
-                let input_11 = input_11.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "account_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let account_id = aws_smithy_http::label::fmt_string(
-                    input_11,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_11 = input_11.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("account_id", "cannot be empty or unset"))?;
+                let account_id = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "account_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/collaborations/{collaborationIdentifier}/member/{accountId}",
-                    collaborationIdentifier = collaboration_identifier,
-                    accountId = account_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("account_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/collaborations/{collaborationIdentifier}/member/{accountId}", collaborationIdentifier = collaboration_identifier, accountId = account_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteMemberInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteMemberInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2255,51 +1463,34 @@ impl DeleteMemberInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteMember::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteMember",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteMember::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteMember", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2311,7 +1502,7 @@ impl DeleteMemberInput {
 
 /// See [`DeleteMembershipInput`](crate::input::DeleteMembershipInput).
 pub mod delete_membership_input {
-
+    
     /// A builder for [`DeleteMembershipInput`](crate::input::DeleteMembershipInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2324,100 +1515,54 @@ pub mod delete_membership_input {
             self
         }
         /// <p>The identifier for a membership resource.</p>
-        pub fn set_membership_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_identifier = input;
-            self
+        pub fn set_membership_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_identifier = input; self
         }
         /// Consumes the builder and constructs a [`DeleteMembershipInput`](crate::input::DeleteMembershipInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteMembershipInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteMembershipInput {
-                membership_identifier: self.membership_identifier,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteMembershipInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteMembershipInput {
+                    membership_identifier: self.membership_identifier
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteMembershipInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMembership`](crate::operation::DeleteMembership)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteMembership,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteMembership, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteMembershipInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteMembershipInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_12 = &_input.membership_identifier;
-                let input_12 = input_12.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "membership_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let membership_identifier = aws_smithy_http::label::fmt_string(
-                    input_12,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_12 = input_12.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))?;
+                let membership_identifier = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if membership_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "membership_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/memberships/{membershipIdentifier}",
-                    membershipIdentifier = membership_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/memberships/{membershipIdentifier}", membershipIdentifier = membership_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteMembershipInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteMembershipInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2427,51 +1572,34 @@ impl DeleteMembershipInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteMembership::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteMembership",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteMembership::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteMembership", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2483,7 +1611,7 @@ impl DeleteMembershipInput {
 
 /// See [`GetCollaborationInput`](crate::input::GetCollaborationInput).
 pub mod get_collaboration_input {
-
+    
     /// A builder for [`GetCollaborationInput`](crate::input::GetCollaborationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2496,100 +1624,54 @@ pub mod get_collaboration_input {
             self
         }
         /// <p>The identifier for the collaboration.</p>
-        pub fn set_collaboration_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_identifier = input;
-            self
+        pub fn set_collaboration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_identifier = input; self
         }
         /// Consumes the builder and constructs a [`GetCollaborationInput`](crate::input::GetCollaborationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetCollaborationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetCollaborationInput {
-                collaboration_identifier: self.collaboration_identifier,
-            })
+        pub fn build(self) -> Result<crate::input::GetCollaborationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetCollaborationInput {
+                    collaboration_identifier: self.collaboration_identifier
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetCollaborationInput {
     /// Consumes the builder and constructs an Operation<[`GetCollaboration`](crate::operation::GetCollaboration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetCollaboration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetCollaboration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetCollaborationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetCollaborationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.collaboration_identifier;
-                let input_13 = input_13.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "collaboration_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let collaboration_identifier = aws_smithy_http::label::fmt_string(
-                    input_13,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_13 = input_13.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))?;
+                let collaboration_identifier = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if collaboration_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "collaboration_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/collaborations/{collaborationIdentifier}",
-                    collaborationIdentifier = collaboration_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/collaborations/{collaborationIdentifier}", collaborationIdentifier = collaboration_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetCollaborationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetCollaborationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2599,51 +1681,34 @@ impl GetCollaborationInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetCollaboration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetCollaboration",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetCollaboration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetCollaboration", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2655,7 +1720,7 @@ impl GetCollaborationInput {
 
 /// See [`GetConfiguredTableInput`](crate::input::GetConfiguredTableInput).
 pub mod get_configured_table_input {
-
+    
     /// A builder for [`GetConfiguredTableInput`](crate::input::GetConfiguredTableInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2663,108 +1728,59 @@ pub mod get_configured_table_input {
     }
     impl Builder {
         /// <p>The unique ID for the configured table to retrieve.</p>
-        pub fn configured_table_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn configured_table_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.configured_table_identifier = Some(input.into());
             self
         }
         /// <p>The unique ID for the configured table to retrieve.</p>
-        pub fn set_configured_table_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configured_table_identifier = input;
-            self
+        pub fn set_configured_table_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configured_table_identifier = input; self
         }
         /// Consumes the builder and constructs a [`GetConfiguredTableInput`](crate::input::GetConfiguredTableInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetConfiguredTableInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetConfiguredTableInput {
-                configured_table_identifier: self.configured_table_identifier,
-            })
+        pub fn build(self) -> Result<crate::input::GetConfiguredTableInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetConfiguredTableInput {
+                    configured_table_identifier: self.configured_table_identifier
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetConfiguredTableInput {
     /// Consumes the builder and constructs an Operation<[`GetConfiguredTable`](crate::operation::GetConfiguredTable)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetConfiguredTable,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetConfiguredTable, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetConfiguredTableInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetConfiguredTableInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.configured_table_identifier;
-                let input_14 = input_14.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "configured_table_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let configured_table_identifier = aws_smithy_http::label::fmt_string(
-                    input_14,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_14 = input_14.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("configured_table_identifier", "cannot be empty or unset"))?;
+                let configured_table_identifier = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if configured_table_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "configured_table_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/configuredTables/{configuredTableIdentifier}",
-                    configuredTableIdentifier = configured_table_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("configured_table_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/configuredTables/{configuredTableIdentifier}", configuredTableIdentifier = configured_table_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetConfiguredTableInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetConfiguredTableInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2774,51 +1790,34 @@ impl GetConfiguredTableInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetConfiguredTable::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetConfiguredTable",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetConfiguredTable::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetConfiguredTable", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2830,155 +1829,85 @@ impl GetConfiguredTableInput {
 
 /// See [`GetConfiguredTableAnalysisRuleInput`](crate::input::GetConfiguredTableAnalysisRuleInput).
 pub mod get_configured_table_analysis_rule_input {
-
+    
     /// A builder for [`GetConfiguredTableAnalysisRuleInput`](crate::input::GetConfiguredTableAnalysisRuleInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_identifier: std::option::Option<std::string::String>,
-        pub(crate) analysis_rule_type:
-            std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>,
+        pub(crate) analysis_rule_type: std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>,
     }
     impl Builder {
         /// <p>The unique identifier for the configured table to retrieve. Currently accepts the configured table ID.</p>
-        pub fn configured_table_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn configured_table_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.configured_table_identifier = Some(input.into());
             self
         }
         /// <p>The unique identifier for the configured table to retrieve. Currently accepts the configured table ID.</p>
-        pub fn set_configured_table_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configured_table_identifier = input;
-            self
+        pub fn set_configured_table_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configured_table_identifier = input; self
         }
         /// <p>The analysis rule to be retrieved. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-        pub fn analysis_rule_type(
-            mut self,
-            input: crate::model::ConfiguredTableAnalysisRuleType,
-        ) -> Self {
+        pub fn analysis_rule_type(mut self, input: crate::model::ConfiguredTableAnalysisRuleType) -> Self {
             self.analysis_rule_type = Some(input);
             self
         }
         /// <p>The analysis rule to be retrieved. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-        pub fn set_analysis_rule_type(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>,
-        ) -> Self {
-            self.analysis_rule_type = input;
-            self
+        pub fn set_analysis_rule_type(mut self, input: std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>) -> Self {
+            self.analysis_rule_type = input; self
         }
         /// Consumes the builder and constructs a [`GetConfiguredTableAnalysisRuleInput`](crate::input::GetConfiguredTableAnalysisRuleInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetConfiguredTableAnalysisRuleInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetConfiguredTableAnalysisRuleInput {
-                configured_table_identifier: self.configured_table_identifier,
-                analysis_rule_type: self.analysis_rule_type,
-            })
+        pub fn build(self) -> Result<crate::input::GetConfiguredTableAnalysisRuleInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetConfiguredTableAnalysisRuleInput {
+                    configured_table_identifier: self.configured_table_identifier
+                    ,
+                    analysis_rule_type: self.analysis_rule_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetConfiguredTableAnalysisRuleInput {
     /// Consumes the builder and constructs an Operation<[`GetConfiguredTableAnalysisRule`](crate::operation::GetConfiguredTableAnalysisRule)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetConfiguredTableAnalysisRule,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetConfiguredTableAnalysisRule, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetConfiguredTableAnalysisRuleInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetConfiguredTableAnalysisRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_15 = &_input.configured_table_identifier;
-                let input_15 = input_15.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "configured_table_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let configured_table_identifier = aws_smithy_http::label::fmt_string(
-                    input_15,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_15 = input_15.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("configured_table_identifier", "cannot be empty or unset"))?;
+                let configured_table_identifier = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if configured_table_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "configured_table_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("configured_table_identifier", "cannot be empty or unset"))
+                            }
                 let input_16 = &_input.analysis_rule_type;
-                let input_16 = input_16.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "analysis_rule_type",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let analysis_rule_type = aws_smithy_http::label::fmt_string(
-                    input_16,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_16 = input_16.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("analysis_rule_type", "cannot be empty or unset"))?;
+                let analysis_rule_type = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if analysis_rule_type.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "analysis_rule_type",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/configuredTables/{configuredTableIdentifier}/analysisRule/{analysisRuleType}",
-                    configuredTableIdentifier = configured_table_identifier,
-                    analysisRuleType = analysis_rule_type
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("analysis_rule_type", "cannot be empty or unset"))
+                            }
+                write!(output, "/configuredTables/{configuredTableIdentifier}/analysisRule/{analysisRuleType}", configuredTableIdentifier = configured_table_identifier, analysisRuleType = analysis_rule_type).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetConfiguredTableAnalysisRuleInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetConfiguredTableAnalysisRuleInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2988,51 +1917,34 @@ impl GetConfiguredTableAnalysisRuleInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetConfiguredTableAnalysisRule::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetConfiguredTableAnalysisRule",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetConfiguredTableAnalysisRule::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetConfiguredTableAnalysisRule", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3044,30 +1956,22 @@ impl GetConfiguredTableAnalysisRuleInput {
 
 /// See [`GetConfiguredTableAssociationInput`](crate::input::GetConfiguredTableAssociationInput).
 pub mod get_configured_table_association_input {
-
+    
     /// A builder for [`GetConfiguredTableAssociationInput`](crate::input::GetConfiguredTableAssociationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) configured_table_association_identifier:
-            std::option::Option<std::string::String>,
+        pub(crate) configured_table_association_identifier: std::option::Option<std::string::String>,
         pub(crate) membership_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.</p>
-        pub fn configured_table_association_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn configured_table_association_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.configured_table_association_identifier = Some(input.into());
             self
         }
         /// <p>The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.</p>
-        pub fn set_configured_table_association_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configured_table_association_identifier = input;
-            self
+        pub fn set_configured_table_association_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configured_table_association_identifier = input; self
         }
         /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
         pub fn membership_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3075,116 +1979,62 @@ pub mod get_configured_table_association_input {
             self
         }
         /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
-        pub fn set_membership_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_identifier = input;
-            self
+        pub fn set_membership_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_identifier = input; self
         }
         /// Consumes the builder and constructs a [`GetConfiguredTableAssociationInput`](crate::input::GetConfiguredTableAssociationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetConfiguredTableAssociationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetConfiguredTableAssociationInput {
-                configured_table_association_identifier: self
-                    .configured_table_association_identifier,
-                membership_identifier: self.membership_identifier,
-            })
+        pub fn build(self) -> Result<crate::input::GetConfiguredTableAssociationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetConfiguredTableAssociationInput {
+                    configured_table_association_identifier: self.configured_table_association_identifier
+                    ,
+                    membership_identifier: self.membership_identifier
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetConfiguredTableAssociationInput {
     /// Consumes the builder and constructs an Operation<[`GetConfiguredTableAssociation`](crate::operation::GetConfiguredTableAssociation)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetConfiguredTableAssociation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetConfiguredTableAssociation, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetConfiguredTableAssociationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetConfiguredTableAssociationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_17 = &_input.membership_identifier;
-                let input_17 = input_17.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "membership_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let membership_identifier = aws_smithy_http::label::fmt_string(
-                    input_17,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_17 = input_17.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))?;
+                let membership_identifier = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if membership_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "membership_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))
+                            }
                 let input_18 = &_input.configured_table_association_identifier;
-                let input_18 = input_18.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "configured_table_association_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let configured_table_association_identifier = aws_smithy_http::label::fmt_string(
-                    input_18,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_18 = input_18.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("configured_table_association_identifier", "cannot be empty or unset"))?;
+                let configured_table_association_identifier = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if configured_table_association_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "configured_table_association_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("configured_table_association_identifier", "cannot be empty or unset"))
+                            }
                 write!(output, "/memberships/{membershipIdentifier}/configuredTableAssociations/{configuredTableAssociationIdentifier}", membershipIdentifier = membership_identifier, configuredTableAssociationIdentifier = configured_table_association_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetConfiguredTableAssociationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetConfiguredTableAssociationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3194,51 +2044,34 @@ impl GetConfiguredTableAssociationInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetConfiguredTableAssociation::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetConfiguredTableAssociation",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetConfiguredTableAssociation::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetConfiguredTableAssociation", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3250,7 +2083,7 @@ impl GetConfiguredTableAssociationInput {
 
 /// See [`GetMembershipInput`](crate::input::GetMembershipInput).
 pub mod get_membership_input {
-
+    
     /// A builder for [`GetMembershipInput`](crate::input::GetMembershipInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3263,98 +2096,54 @@ pub mod get_membership_input {
             self
         }
         /// <p>The identifier for a membership resource.</p>
-        pub fn set_membership_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_identifier = input;
-            self
+        pub fn set_membership_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_identifier = input; self
         }
         /// Consumes the builder and constructs a [`GetMembershipInput`](crate::input::GetMembershipInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetMembershipInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetMembershipInput {
-                membership_identifier: self.membership_identifier,
-            })
+        pub fn build(self) -> Result<crate::input::GetMembershipInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetMembershipInput {
+                    membership_identifier: self.membership_identifier
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetMembershipInput {
     /// Consumes the builder and constructs an Operation<[`GetMembership`](crate::operation::GetMembership)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetMembership,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetMembership, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetMembershipInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetMembershipInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_19 = &_input.membership_identifier;
-                let input_19 = input_19.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "membership_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let membership_identifier = aws_smithy_http::label::fmt_string(
-                    input_19,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_19 = input_19.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))?;
+                let membership_identifier = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if membership_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "membership_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/memberships/{membershipIdentifier}",
-                    membershipIdentifier = membership_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/memberships/{membershipIdentifier}", membershipIdentifier = membership_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetMembershipInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetMembershipInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3364,51 +2153,34 @@ impl GetMembershipInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetMembership::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetMembership",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetMembership::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetMembership", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3420,7 +2192,7 @@ impl GetMembershipInput {
 
 /// See [`GetProtectedQueryInput`](crate::input::GetProtectedQueryInput).
 pub mod get_protected_query_input {
-
+    
     /// A builder for [`GetProtectedQueryInput`](crate::input::GetProtectedQueryInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3434,12 +2206,8 @@ pub mod get_protected_query_input {
             self
         }
         /// <p>The identifier for a membership in a protected query instance.</p>
-        pub fn set_membership_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_identifier = input;
-            self
+        pub fn set_membership_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_identifier = input; self
         }
         /// <p>The identifier for a protected query instance.</p>
         pub fn protected_query_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3447,115 +2215,62 @@ pub mod get_protected_query_input {
             self
         }
         /// <p>The identifier for a protected query instance.</p>
-        pub fn set_protected_query_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.protected_query_identifier = input;
-            self
+        pub fn set_protected_query_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protected_query_identifier = input; self
         }
         /// Consumes the builder and constructs a [`GetProtectedQueryInput`](crate::input::GetProtectedQueryInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetProtectedQueryInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetProtectedQueryInput {
-                membership_identifier: self.membership_identifier,
-                protected_query_identifier: self.protected_query_identifier,
-            })
+        pub fn build(self) -> Result<crate::input::GetProtectedQueryInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetProtectedQueryInput {
+                    membership_identifier: self.membership_identifier
+                    ,
+                    protected_query_identifier: self.protected_query_identifier
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetProtectedQueryInput {
     /// Consumes the builder and constructs an Operation<[`GetProtectedQuery`](crate::operation::GetProtectedQuery)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetProtectedQuery,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetProtectedQuery, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetProtectedQueryInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetProtectedQueryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_20 = &_input.membership_identifier;
-                let input_20 = input_20.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "membership_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let membership_identifier = aws_smithy_http::label::fmt_string(
-                    input_20,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_20 = input_20.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))?;
+                let membership_identifier = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if membership_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "membership_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))
+                            }
                 let input_21 = &_input.protected_query_identifier;
-                let input_21 = input_21.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "protected_query_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let protected_query_identifier = aws_smithy_http::label::fmt_string(
-                    input_21,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_21 = input_21.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("protected_query_identifier", "cannot be empty or unset"))?;
+                let protected_query_identifier = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if protected_query_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "protected_query_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("protected_query_identifier", "cannot be empty or unset"))
+                            }
                 write!(output, "/memberships/{membershipIdentifier}/protectedQueries/{protectedQueryIdentifier}", membershipIdentifier = membership_identifier, protectedQueryIdentifier = protected_query_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetProtectedQueryInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetProtectedQueryInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3565,51 +2280,34 @@ impl GetProtectedQueryInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetProtectedQuery::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetProtectedQuery",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetProtectedQuery::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetProtectedQuery", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3621,7 +2319,7 @@ impl GetProtectedQueryInput {
 
 /// See [`GetSchemaInput`](crate::input::GetSchemaInput).
 pub mod get_schema_input {
-
+    
     /// A builder for [`GetSchemaInput`](crate::input::GetSchemaInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3635,12 +2333,8 @@ pub mod get_schema_input {
             self
         }
         /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-        pub fn set_collaboration_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_identifier = input;
-            self
+        pub fn set_collaboration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_identifier = input; self
         }
         /// <p>The name of the relation to retrieve the schema for.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3649,115 +2343,61 @@ pub mod get_schema_input {
         }
         /// <p>The name of the relation to retrieve the schema for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`GetSchemaInput`](crate::input::GetSchemaInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetSchemaInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetSchemaInput {
-                collaboration_identifier: self.collaboration_identifier,
-                name: self.name,
-            })
+        pub fn build(self) -> Result<crate::input::GetSchemaInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetSchemaInput {
+                    collaboration_identifier: self.collaboration_identifier
+                    ,
+                    name: self.name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetSchemaInput {
     /// Consumes the builder and constructs an Operation<[`GetSchema`](crate::operation::GetSchema)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetSchema,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetSchema, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetSchemaInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetSchemaInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_22 = &_input.collaboration_identifier;
-                let input_22 = input_22.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "collaboration_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let collaboration_identifier = aws_smithy_http::label::fmt_string(
-                    input_22,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_22 = input_22.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))?;
+                let collaboration_identifier = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
                 if collaboration_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "collaboration_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))
+                            }
                 let input_23 = &_input.name;
-                let input_23 = input_23.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let name = aws_smithy_http::label::fmt_string(
-                    input_23,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_23 = input_23.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("name", "cannot be empty or unset"))?;
+                let name = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/collaborations/{collaborationIdentifier}/schemas/{name}",
-                    collaborationIdentifier = collaboration_identifier,
-                    name = name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("name", "cannot be empty or unset"))
+                            }
+                write!(output, "/collaborations/{collaborationIdentifier}/schemas/{name}", collaborationIdentifier = collaboration_identifier, name = name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetSchemaInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetSchemaInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3767,49 +2407,34 @@ impl GetSchemaInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::GetSchema::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "GetSchema",
-                    "cleanrooms",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetSchema::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetSchema", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3821,7 +2446,7 @@ impl GetSchemaInput {
 
 /// See [`GetSchemaAnalysisRuleInput`](crate::input::GetSchemaAnalysisRuleInput).
 pub mod get_schema_analysis_rule_input {
-
+    
     /// A builder for [`GetSchemaAnalysisRuleInput`](crate::input::GetSchemaAnalysisRuleInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3836,12 +2461,8 @@ pub mod get_schema_analysis_rule_input {
             self
         }
         /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-        pub fn set_collaboration_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_identifier = input;
-            self
+        pub fn set_collaboration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_identifier = input; self
         }
         /// <p>The name of the schema to retrieve the analysis rule for.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3850,8 +2471,7 @@ pub mod get_schema_analysis_rule_input {
         }
         /// <p>The name of the schema to retrieve the analysis rule for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of the schema analysis rule to retrieve. Schema analysis rules are uniquely identified by a combination of the collaboration, the schema name, and their type.</p>
         pub fn r#type(mut self, input: crate::model::AnalysisRuleType) -> Self {
@@ -3859,135 +2479,70 @@ pub mod get_schema_analysis_rule_input {
             self
         }
         /// <p>The type of the schema analysis rule to retrieve. Schema analysis rules are uniquely identified by a combination of the collaboration, the schema name, and their type.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::AnalysisRuleType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::AnalysisRuleType>) -> Self {
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`GetSchemaAnalysisRuleInput`](crate::input::GetSchemaAnalysisRuleInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetSchemaAnalysisRuleInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetSchemaAnalysisRuleInput {
-                collaboration_identifier: self.collaboration_identifier,
-                name: self.name,
-                r#type: self.r#type,
-            })
+        pub fn build(self) -> Result<crate::input::GetSchemaAnalysisRuleInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetSchemaAnalysisRuleInput {
+                    collaboration_identifier: self.collaboration_identifier
+                    ,
+                    name: self.name
+                    ,
+                    r#type: self.r#type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetSchemaAnalysisRuleInput {
     /// Consumes the builder and constructs an Operation<[`GetSchemaAnalysisRule`](crate::operation::GetSchemaAnalysisRule)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetSchemaAnalysisRule,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetSchemaAnalysisRule, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetSchemaAnalysisRuleInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetSchemaAnalysisRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_24 = &_input.collaboration_identifier;
-                let input_24 = input_24.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "collaboration_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let collaboration_identifier = aws_smithy_http::label::fmt_string(
-                    input_24,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_24 = input_24.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))?;
+                let collaboration_identifier = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
                 if collaboration_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "collaboration_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))
+                            }
                 let input_25 = &_input.name;
-                let input_25 = input_25.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let name = aws_smithy_http::label::fmt_string(
-                    input_25,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_25 = input_25.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("name", "cannot be empty or unset"))?;
+                let name = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("name", "cannot be empty or unset"))
+                            }
                 let input_26 = &_input.r#type;
-                let input_26 = input_26.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "r#type",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let r#type = aws_smithy_http::label::fmt_string(
-                    input_26,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_26 = input_26.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("r#type", "cannot be empty or unset"))?;
+                let r#type = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if r#type.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "r#type",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("r#type", "cannot be empty or unset"))
+                            }
                 write!(output, "/collaborations/{collaborationIdentifier}/schemas/{name}/analysisRule/{type}", collaborationIdentifier = collaboration_identifier, name = name, type = r#type).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetSchemaAnalysisRuleInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetSchemaAnalysisRuleInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3997,51 +2552,34 @@ impl GetSchemaAnalysisRuleInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetSchemaAnalysisRule::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetSchemaAnalysisRule",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetSchemaAnalysisRule::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetSchemaAnalysisRule", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4053,7 +2591,7 @@ impl GetSchemaAnalysisRuleInput {
 
 /// See [`ListCollaborationsInput`](crate::input::ListCollaborationsInput).
 pub mod list_collaborations_input {
-
+    
     /// A builder for [`ListCollaborationsInput`](crate::input::ListCollaborationsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4069,8 +2607,7 @@ pub mod list_collaborations_input {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4079,8 +2616,7 @@ pub mod list_collaborations_input {
         }
         /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The caller's status in a collaboration.</p>
         pub fn member_status(mut self, input: crate::model::FilterableMemberStatus) -> Self {
@@ -4088,106 +2624,71 @@ pub mod list_collaborations_input {
             self
         }
         /// <p>The caller's status in a collaboration.</p>
-        pub fn set_member_status(
-            mut self,
-            input: std::option::Option<crate::model::FilterableMemberStatus>,
-        ) -> Self {
-            self.member_status = input;
-            self
+        pub fn set_member_status(mut self, input: std::option::Option<crate::model::FilterableMemberStatus>) -> Self {
+            self.member_status = input; self
         }
         /// Consumes the builder and constructs a [`ListCollaborationsInput`](crate::input::ListCollaborationsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListCollaborationsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListCollaborationsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                member_status: self.member_status,
-            })
+        pub fn build(self) -> Result<crate::input::ListCollaborationsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListCollaborationsInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                    member_status: self.member_status
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListCollaborationsInput {
     /// Consumes the builder and constructs an Operation<[`ListCollaborations`](crate::operation::ListCollaborations)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListCollaborations,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListCollaborations, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListCollaborationsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListCollaborationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/collaborations").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListCollaborationsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListCollaborationsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_27) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_27));
                     }
                 }
                 if let Some(inner_28) = &_input.max_results {
                     if *inner_28 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_28).encode(),
-                        );
+                        query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_28).encode());
                     }
                 }
                 if let Some(inner_29) = &_input.member_status {
-                    {
-                        query.push_kv(
-                            "memberStatus",
-                            &aws_smithy_http::query::fmt_string(&inner_29),
-                        );
+                     {
+                        query.push_kv("memberStatus", &aws_smithy_http::query::fmt_string(&inner_29));
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListCollaborationsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListCollaborationsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4198,51 +2699,34 @@ impl ListCollaborationsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListCollaborations::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListCollaborations",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListCollaborations::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListCollaborations", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4254,7 +2738,7 @@ impl ListCollaborationsInput {
 
 /// See [`ListConfiguredTableAssociationsInput`](crate::input::ListConfiguredTableAssociationsInput).
 pub mod list_configured_table_associations_input {
-
+    
     /// A builder for [`ListConfiguredTableAssociationsInput`](crate::input::ListConfiguredTableAssociationsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4269,12 +2753,8 @@ pub mod list_configured_table_associations_input {
             self
         }
         /// <p>A unique identifier for the membership to list configured table associations for. Currently accepts the membership ID.</p>
-        pub fn set_membership_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_identifier = input;
-            self
+        pub fn set_membership_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_identifier = input; self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4283,8 +2763,7 @@ pub mod list_configured_table_associations_input {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum size of the results that is returned per call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4293,118 +2772,71 @@ pub mod list_configured_table_associations_input {
         }
         /// <p>The maximum size of the results that is returned per call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListConfiguredTableAssociationsInput`](crate::input::ListConfiguredTableAssociationsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListConfiguredTableAssociationsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListConfiguredTableAssociationsInput {
-                membership_identifier: self.membership_identifier,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListConfiguredTableAssociationsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListConfiguredTableAssociationsInput {
+                    membership_identifier: self.membership_identifier
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListConfiguredTableAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListConfiguredTableAssociations`](crate::operation::ListConfiguredTableAssociations)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListConfiguredTableAssociations,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListConfiguredTableAssociations, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListConfiguredTableAssociationsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListConfiguredTableAssociationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_30 = &_input.membership_identifier;
-                let input_30 = input_30.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "membership_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let membership_identifier = aws_smithy_http::label::fmt_string(
-                    input_30,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_30 = input_30.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))?;
+                let membership_identifier = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
                 if membership_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "membership_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/memberships/{membershipIdentifier}/configuredTableAssociations",
-                    membershipIdentifier = membership_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/memberships/{membershipIdentifier}/configuredTableAssociations", membershipIdentifier = membership_identifier).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListConfiguredTableAssociationsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListConfiguredTableAssociationsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_31) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
                     }
                 }
                 if let Some(inner_32) = &_input.max_results {
                     if *inner_32 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_32).encode(),
-                        );
+                        query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_32).encode());
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListConfiguredTableAssociationsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListConfiguredTableAssociationsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4415,51 +2847,34 @@ impl ListConfiguredTableAssociationsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListConfiguredTableAssociations::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListConfiguredTableAssociations",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListConfiguredTableAssociations::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListConfiguredTableAssociations", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4471,7 +2886,7 @@ impl ListConfiguredTableAssociationsInput {
 
 /// See [`ListConfiguredTablesInput`](crate::input::ListConfiguredTablesInput).
 pub mod list_configured_tables_input {
-
+    
     /// A builder for [`ListConfiguredTablesInput`](crate::input::ListConfiguredTablesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4486,8 +2901,7 @@ pub mod list_configured_tables_input {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum size of the results that is returned per call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4496,93 +2910,63 @@ pub mod list_configured_tables_input {
         }
         /// <p>The maximum size of the results that is returned per call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListConfiguredTablesInput`](crate::input::ListConfiguredTablesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListConfiguredTablesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListConfiguredTablesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListConfiguredTablesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListConfiguredTablesInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListConfiguredTablesInput {
     /// Consumes the builder and constructs an Operation<[`ListConfiguredTables`](crate::operation::ListConfiguredTables)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListConfiguredTables,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListConfiguredTables, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListConfiguredTablesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListConfiguredTablesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/configuredTables").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListConfiguredTablesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListConfiguredTablesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_33) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
                     }
                 }
                 if let Some(inner_34) = &_input.max_results {
                     if *inner_34 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_34).encode(),
-                        );
+                        query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_34).encode());
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListConfiguredTablesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListConfiguredTablesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4593,51 +2977,34 @@ impl ListConfiguredTablesInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListConfiguredTables::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListConfiguredTables",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListConfiguredTables::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListConfiguredTables", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4649,7 +3016,7 @@ impl ListConfiguredTablesInput {
 
 /// See [`ListMembersInput`](crate::input::ListMembersInput).
 pub mod list_members_input {
-
+    
     /// A builder for [`ListMembersInput`](crate::input::ListMembersInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4664,12 +3031,8 @@ pub mod list_members_input {
             self
         }
         /// <p>The identifier of the collaboration in which the members are listed.</p>
-        pub fn set_collaboration_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_identifier = input;
-            self
+        pub fn set_collaboration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_identifier = input; self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4678,8 +3041,7 @@ pub mod list_members_input {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum size of the results that is returned per call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4688,116 +3050,71 @@ pub mod list_members_input {
         }
         /// <p>The maximum size of the results that is returned per call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListMembersInput`](crate::input::ListMembersInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListMembersInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListMembersInput {
-                collaboration_identifier: self.collaboration_identifier,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListMembersInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListMembersInput {
+                    collaboration_identifier: self.collaboration_identifier
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListMembersInput {
     /// Consumes the builder and constructs an Operation<[`ListMembers`](crate::operation::ListMembers)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListMembers,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListMembers, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListMembersInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListMembersInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_35 = &_input.collaboration_identifier;
-                let input_35 = input_35.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "collaboration_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let collaboration_identifier = aws_smithy_http::label::fmt_string(
-                    input_35,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_35 = input_35.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))?;
+                let collaboration_identifier = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if collaboration_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "collaboration_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/collaborations/{collaborationIdentifier}/members",
-                    collaborationIdentifier = collaboration_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/collaborations/{collaborationIdentifier}/members", collaborationIdentifier = collaboration_identifier).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListMembersInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListMembersInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_36) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
                     }
                 }
                 if let Some(inner_37) = &_input.max_results {
                     if *inner_37 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_37).encode(),
-                        );
+                        query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_37).encode());
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListMembersInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListMembersInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4808,51 +3125,34 @@ impl ListMembersInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListMembers::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListMembers",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListMembers::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListMembers", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4864,7 +3164,7 @@ impl ListMembersInput {
 
 /// See [`ListMembershipsInput`](crate::input::ListMembershipsInput).
 pub mod list_memberships_input {
-
+    
     /// A builder for [`ListMembershipsInput`](crate::input::ListMembershipsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4880,8 +3180,7 @@ pub mod list_memberships_input {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum size of the results that is returned per call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4890,8 +3189,7 @@ pub mod list_memberships_input {
         }
         /// <p>The maximum size of the results that is returned per call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>A filter which will return only memberships in the specified status.</p>
         pub fn status(mut self, input: crate::model::MembershipStatus) -> Self {
@@ -4899,88 +3197,61 @@ pub mod list_memberships_input {
             self
         }
         /// <p>A filter which will return only memberships in the specified status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::MembershipStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::MembershipStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ListMembershipsInput`](crate::input::ListMembershipsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListMembershipsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListMembershipsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                status: self.status,
-            })
+        pub fn build(self) -> Result<crate::input::ListMembershipsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListMembershipsInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                    status: self.status
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListMembershipsInput {
     /// Consumes the builder and constructs an Operation<[`ListMemberships`](crate::operation::ListMemberships)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListMemberships,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListMemberships, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListMembershipsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListMembershipsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/memberships").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListMembershipsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListMembershipsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_38) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
                     }
                 }
                 if let Some(inner_39) = &_input.max_results {
                     if *inner_39 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_39).encode(),
-                        );
+                        query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_39).encode());
                     }
                 }
                 if let Some(inner_40) = &_input.status {
-                    {
+                     {
                         query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_40));
                     }
                 }
@@ -4988,12 +3259,9 @@ impl ListMembershipsInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListMembershipsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListMembershipsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5004,51 +3272,34 @@ impl ListMembershipsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListMemberships::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListMemberships",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListMemberships::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListMemberships", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5060,7 +3311,7 @@ impl ListMembershipsInput {
 
 /// See [`ListProtectedQueriesInput`](crate::input::ListProtectedQueriesInput).
 pub mod list_protected_queries_input {
-
+    
     /// A builder for [`ListProtectedQueriesInput`](crate::input::ListProtectedQueriesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5076,12 +3327,8 @@ pub mod list_protected_queries_input {
             self
         }
         /// <p>The identifier for the membership in the collaboration.</p>
-        pub fn set_membership_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_identifier = input;
-            self
+        pub fn set_membership_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_identifier = input; self
         }
         /// <p>A filter on the status of the protected query.</p>
         pub fn status(mut self, input: crate::model::ProtectedQueryStatus) -> Self {
@@ -5089,12 +3336,8 @@ pub mod list_protected_queries_input {
             self
         }
         /// <p>A filter on the status of the protected query.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedQueryStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ProtectedQueryStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5103,8 +3346,7 @@ pub mod list_protected_queries_input {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5113,124 +3355,78 @@ pub mod list_protected_queries_input {
         }
         /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListProtectedQueriesInput`](crate::input::ListProtectedQueriesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListProtectedQueriesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListProtectedQueriesInput {
-                membership_identifier: self.membership_identifier,
-                status: self.status,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListProtectedQueriesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListProtectedQueriesInput {
+                    membership_identifier: self.membership_identifier
+                    ,
+                    status: self.status
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListProtectedQueriesInput {
     /// Consumes the builder and constructs an Operation<[`ListProtectedQueries`](crate::operation::ListProtectedQueries)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListProtectedQueries,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListProtectedQueries, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListProtectedQueriesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListProtectedQueriesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_41 = &_input.membership_identifier;
-                let input_41 = input_41.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "membership_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let membership_identifier = aws_smithy_http::label::fmt_string(
-                    input_41,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_41 = input_41.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))?;
+                let membership_identifier = aws_smithy_http::label::fmt_string(input_41, aws_smithy_http::label::EncodingStrategy::Default);
                 if membership_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "membership_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/memberships/{membershipIdentifier}/protectedQueries",
-                    membershipIdentifier = membership_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/memberships/{membershipIdentifier}/protectedQueries", membershipIdentifier = membership_identifier).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListProtectedQueriesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListProtectedQueriesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_42) = &_input.status {
-                    {
+                     {
                         query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_42));
                     }
                 }
                 if let Some(inner_43) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_43));
                     }
                 }
                 if let Some(inner_44) = &_input.max_results {
                     if *inner_44 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_44).encode(),
-                        );
+                        query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_44).encode());
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListProtectedQueriesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListProtectedQueriesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5241,51 +3437,34 @@ impl ListProtectedQueriesInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListProtectedQueries::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListProtectedQueries",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListProtectedQueries::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListProtectedQueries", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5297,7 +3476,7 @@ impl ListProtectedQueriesInput {
 
 /// See [`ListSchemasInput`](crate::input::ListSchemasInput).
 pub mod list_schemas_input {
-
+    
     /// A builder for [`ListSchemasInput`](crate::input::ListSchemasInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5313,12 +3492,8 @@ pub mod list_schemas_input {
             self
         }
         /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-        pub fn set_collaboration_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_identifier = input;
-            self
+        pub fn set_collaboration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_identifier = input; self
         }
         /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
         pub fn schema_type(mut self, input: crate::model::SchemaType) -> Self {
@@ -5326,12 +3501,8 @@ pub mod list_schemas_input {
             self
         }
         /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
-        pub fn set_schema_type(
-            mut self,
-            input: std::option::Option<crate::model::SchemaType>,
-        ) -> Self {
-            self.schema_type = input;
-            self
+        pub fn set_schema_type(mut self, input: std::option::Option<crate::model::SchemaType>) -> Self {
+            self.schema_type = input; self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5340,8 +3511,7 @@ pub mod list_schemas_input {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum size of the results that is returned per call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5350,122 +3520,78 @@ pub mod list_schemas_input {
         }
         /// <p>The maximum size of the results that is returned per call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListSchemasInput`](crate::input::ListSchemasInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListSchemasInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListSchemasInput {
-                collaboration_identifier: self.collaboration_identifier,
-                schema_type: self.schema_type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListSchemasInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListSchemasInput {
+                    collaboration_identifier: self.collaboration_identifier
+                    ,
+                    schema_type: self.schema_type
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListSchemasInput {
     /// Consumes the builder and constructs an Operation<[`ListSchemas`](crate::operation::ListSchemas)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListSchemas,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListSchemas, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListSchemasInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListSchemasInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_45 = &_input.collaboration_identifier;
-                let input_45 = input_45.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "collaboration_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let collaboration_identifier = aws_smithy_http::label::fmt_string(
-                    input_45,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_45 = input_45.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))?;
+                let collaboration_identifier = aws_smithy_http::label::fmt_string(input_45, aws_smithy_http::label::EncodingStrategy::Default);
                 if collaboration_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "collaboration_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/collaborations/{collaborationIdentifier}/schemas",
-                    collaborationIdentifier = collaboration_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/collaborations/{collaborationIdentifier}/schemas", collaborationIdentifier = collaboration_identifier).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListSchemasInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListSchemasInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_46) = &_input.schema_type {
-                    {
+                     {
                         query.push_kv("schemaType", &aws_smithy_http::query::fmt_string(&inner_46));
                     }
                 }
                 if let Some(inner_47) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_47));
                     }
                 }
                 if let Some(inner_48) = &_input.max_results {
                     if *inner_48 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
-                        );
+                        query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(*inner_48).encode());
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListSchemasInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListSchemasInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5476,51 +3602,34 @@ impl ListSchemasInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListSchemas::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListSchemas",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListSchemas::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListSchemas", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5532,15 +3641,14 @@ impl ListSchemasInput {
 
 /// See [`StartProtectedQueryInput`](crate::input::StartProtectedQueryInput).
 pub mod start_protected_query_input {
-
+    
     /// A builder for [`StartProtectedQueryInput`](crate::input::StartProtectedQueryInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ProtectedQueryType>,
         pub(crate) membership_identifier: std::option::Option<std::string::String>,
         pub(crate) sql_parameters: std::option::Option<crate::model::ProtectedQuerySqlParameters>,
-        pub(crate) result_configuration:
-            std::option::Option<crate::model::ProtectedQueryResultConfiguration>,
+        pub(crate) result_configuration: std::option::Option<crate::model::ProtectedQueryResultConfiguration>,
     }
     impl Builder {
         /// <p>The type of the protected query to be started.</p>
@@ -5549,12 +3657,8 @@ pub mod start_protected_query_input {
             self
         }
         /// <p>The type of the protected query to be started.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedQueryType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ProtectedQueryType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
         pub fn membership_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5562,12 +3666,8 @@ pub mod start_protected_query_input {
             self
         }
         /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
-        pub fn set_membership_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_identifier = input;
-            self
+        pub fn set_membership_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_identifier = input; self
         }
         /// <p>The protected SQL query parameters.</p>
         pub fn sql_parameters(mut self, input: crate::model::ProtectedQuerySqlParameters) -> Self {
@@ -5575,42 +3675,32 @@ pub mod start_protected_query_input {
             self
         }
         /// <p>The protected SQL query parameters.</p>
-        pub fn set_sql_parameters(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedQuerySqlParameters>,
-        ) -> Self {
-            self.sql_parameters = input;
-            self
+        pub fn set_sql_parameters(mut self, input: std::option::Option<crate::model::ProtectedQuerySqlParameters>) -> Self {
+            self.sql_parameters = input; self
         }
         /// <p>The details needed to write the query results.</p>
-        pub fn result_configuration(
-            mut self,
-            input: crate::model::ProtectedQueryResultConfiguration,
-        ) -> Self {
+        pub fn result_configuration(mut self, input: crate::model::ProtectedQueryResultConfiguration) -> Self {
             self.result_configuration = Some(input);
             self
         }
         /// <p>The details needed to write the query results.</p>
-        pub fn set_result_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ProtectedQueryResultConfiguration>,
-        ) -> Self {
-            self.result_configuration = input;
-            self
+        pub fn set_result_configuration(mut self, input: std::option::Option<crate::model::ProtectedQueryResultConfiguration>) -> Self {
+            self.result_configuration = input; self
         }
         /// Consumes the builder and constructs a [`StartProtectedQueryInput`](crate::input::StartProtectedQueryInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::StartProtectedQueryInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::StartProtectedQueryInput {
-                r#type: self.r#type,
-                membership_identifier: self.membership_identifier,
-                sql_parameters: self.sql_parameters,
-                result_configuration: self.result_configuration,
-            })
+        pub fn build(self) -> Result<crate::input::StartProtectedQueryInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::StartProtectedQueryInput {
+                    r#type: self.r#type
+                    ,
+                    membership_identifier: self.membership_identifier
+                    ,
+                    sql_parameters: self.sql_parameters
+                    ,
+                    result_configuration: self.result_configuration
+                    ,
+                }
+            )
         }
     }
     impl std::fmt::Debug for Builder {
@@ -5623,149 +3713,82 @@ pub mod start_protected_query_input {
             formatter.finish()
         }
     }
+    
+    
 }
 impl StartProtectedQueryInput {
     /// Consumes the builder and constructs an Operation<[`StartProtectedQuery`](crate::operation::StartProtectedQuery)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartProtectedQuery,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartProtectedQuery, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartProtectedQueryInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::StartProtectedQueryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_49 = &_input.membership_identifier;
-                let input_49 = input_49.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "membership_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let membership_identifier = aws_smithy_http::label::fmt_string(
-                    input_49,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_49 = input_49.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))?;
+                let membership_identifier = aws_smithy_http::label::fmt_string(input_49, aws_smithy_http::label::EncodingStrategy::Default);
                 if membership_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "membership_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/memberships/{membershipIdentifier}/protectedQueries",
-                    membershipIdentifier = membership_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/memberships/{membershipIdentifier}/protectedQueries", membershipIdentifier = membership_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::StartProtectedQueryInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::StartProtectedQueryInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_protected_query(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_start_protected_query(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartProtectedQuery::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartProtectedQuery",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartProtectedQuery::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartProtectedQuery", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5777,7 +3800,7 @@ impl StartProtectedQueryInput {
 
 /// See [`UpdateCollaborationInput`](crate::input::UpdateCollaborationInput).
 pub mod update_collaboration_input {
-
+    
     /// A builder for [`UpdateCollaborationInput`](crate::input::UpdateCollaborationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5792,12 +3815,8 @@ pub mod update_collaboration_input {
             self
         }
         /// <p>The identifier for the collaboration.</p>
-        pub fn set_collaboration_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collaboration_identifier = input;
-            self
+        pub fn set_collaboration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collaboration_identifier = input; self
         }
         /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5806,8 +3825,7 @@ pub mod update_collaboration_input {
         }
         /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the collaboration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5816,166 +3834,98 @@ pub mod update_collaboration_input {
         }
         /// <p>A description of the collaboration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateCollaborationInput`](crate::input::UpdateCollaborationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateCollaborationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateCollaborationInput {
-                collaboration_identifier: self.collaboration_identifier,
-                name: self.name,
-                description: self.description,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateCollaborationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateCollaborationInput {
+                    collaboration_identifier: self.collaboration_identifier
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateCollaborationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCollaboration`](crate::operation::UpdateCollaboration)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateCollaboration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateCollaboration, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateCollaborationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateCollaborationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_50 = &_input.collaboration_identifier;
-                let input_50 = input_50.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "collaboration_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let collaboration_identifier = aws_smithy_http::label::fmt_string(
-                    input_50,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_50 = input_50.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))?;
+                let collaboration_identifier = aws_smithy_http::label::fmt_string(input_50, aws_smithy_http::label::EncodingStrategy::Default);
                 if collaboration_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "collaboration_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/collaborations/{collaborationIdentifier}",
-                    collaborationIdentifier = collaboration_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/collaborations/{collaborationIdentifier}", collaborationIdentifier = collaboration_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateCollaborationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateCollaborationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_collaboration(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_collaboration(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateCollaboration::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateCollaboration",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateCollaboration::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateCollaboration", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5987,7 +3937,7 @@ impl UpdateCollaborationInput {
 
 /// See [`UpdateConfiguredTableInput`](crate::input::UpdateConfiguredTableInput).
 pub mod update_configured_table_input {
-
+    
     /// A builder for [`UpdateConfiguredTableInput`](crate::input::UpdateConfiguredTableInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5997,20 +3947,13 @@ pub mod update_configured_table_input {
     }
     impl Builder {
         /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
-        pub fn configured_table_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn configured_table_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.configured_table_identifier = Some(input.into());
             self
         }
         /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
-        pub fn set_configured_table_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configured_table_identifier = input;
-            self
+        pub fn set_configured_table_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configured_table_identifier = input; self
         }
         /// <p>A new name for the configured table.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6019,8 +3962,7 @@ pub mod update_configured_table_input {
         }
         /// <p>A new name for the configured table.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A new description for the configured table.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6029,168 +3971,98 @@ pub mod update_configured_table_input {
         }
         /// <p>A new description for the configured table.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConfiguredTableInput`](crate::input::UpdateConfiguredTableInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateConfiguredTableInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateConfiguredTableInput {
-                configured_table_identifier: self.configured_table_identifier,
-                name: self.name,
-                description: self.description,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateConfiguredTableInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateConfiguredTableInput {
+                    configured_table_identifier: self.configured_table_identifier
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateConfiguredTableInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfiguredTable`](crate::operation::UpdateConfiguredTable)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateConfiguredTable,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateConfiguredTable, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateConfiguredTableInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateConfiguredTableInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_51 = &_input.configured_table_identifier;
-                let input_51 = input_51.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "configured_table_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let configured_table_identifier = aws_smithy_http::label::fmt_string(
-                    input_51,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_51 = input_51.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("configured_table_identifier", "cannot be empty or unset"))?;
+                let configured_table_identifier = aws_smithy_http::label::fmt_string(input_51, aws_smithy_http::label::EncodingStrategy::Default);
                 if configured_table_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "configured_table_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/configuredTables/{configuredTableIdentifier}",
-                    configuredTableIdentifier = configured_table_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("configured_table_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/configuredTables/{configuredTableIdentifier}", configuredTableIdentifier = configured_table_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateConfiguredTableInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateConfiguredTableInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_configured_table(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_update_configured_table(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateConfiguredTable::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateConfiguredTable",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateConfiguredTable::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateConfiguredTable", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6202,184 +4074,103 @@ impl UpdateConfiguredTableInput {
 
 /// See [`UpdateConfiguredTableAnalysisRuleInput`](crate::input::UpdateConfiguredTableAnalysisRuleInput).
 pub mod update_configured_table_analysis_rule_input {
-
+    
     /// A builder for [`UpdateConfiguredTableAnalysisRuleInput`](crate::input::UpdateConfiguredTableAnalysisRuleInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_identifier: std::option::Option<std::string::String>,
-        pub(crate) analysis_rule_type:
-            std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>,
-        pub(crate) analysis_rule_policy:
-            std::option::Option<crate::model::ConfiguredTableAnalysisRulePolicy>,
+        pub(crate) analysis_rule_type: std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>,
+        pub(crate) analysis_rule_policy: std::option::Option<crate::model::ConfiguredTableAnalysisRulePolicy>,
     }
     impl Builder {
         /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
-        pub fn configured_table_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn configured_table_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.configured_table_identifier = Some(input.into());
             self
         }
         /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
-        pub fn set_configured_table_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configured_table_identifier = input;
-            self
+        pub fn set_configured_table_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configured_table_identifier = input; self
         }
         /// <p>The analysis rule type to be updated. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-        pub fn analysis_rule_type(
-            mut self,
-            input: crate::model::ConfiguredTableAnalysisRuleType,
-        ) -> Self {
+        pub fn analysis_rule_type(mut self, input: crate::model::ConfiguredTableAnalysisRuleType) -> Self {
             self.analysis_rule_type = Some(input);
             self
         }
         /// <p>The analysis rule type to be updated. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-        pub fn set_analysis_rule_type(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>,
-        ) -> Self {
-            self.analysis_rule_type = input;
-            self
+        pub fn set_analysis_rule_type(mut self, input: std::option::Option<crate::model::ConfiguredTableAnalysisRuleType>) -> Self {
+            self.analysis_rule_type = input; self
         }
         /// <p>The new analysis rule policy for the configured table analysis rule.</p>
-        pub fn analysis_rule_policy(
-            mut self,
-            input: crate::model::ConfiguredTableAnalysisRulePolicy,
-        ) -> Self {
+        pub fn analysis_rule_policy(mut self, input: crate::model::ConfiguredTableAnalysisRulePolicy) -> Self {
             self.analysis_rule_policy = Some(input);
             self
         }
         /// <p>The new analysis rule policy for the configured table analysis rule.</p>
-        pub fn set_analysis_rule_policy(
-            mut self,
-            input: std::option::Option<crate::model::ConfiguredTableAnalysisRulePolicy>,
-        ) -> Self {
-            self.analysis_rule_policy = input;
-            self
+        pub fn set_analysis_rule_policy(mut self, input: std::option::Option<crate::model::ConfiguredTableAnalysisRulePolicy>) -> Self {
+            self.analysis_rule_policy = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConfiguredTableAnalysisRuleInput`](crate::input::UpdateConfiguredTableAnalysisRuleInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateConfiguredTableAnalysisRuleInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateConfiguredTableAnalysisRuleInput {
-                configured_table_identifier: self.configured_table_identifier,
-                analysis_rule_type: self.analysis_rule_type,
-                analysis_rule_policy: self.analysis_rule_policy,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateConfiguredTableAnalysisRuleInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateConfiguredTableAnalysisRuleInput {
+                    configured_table_identifier: self.configured_table_identifier
+                    ,
+                    analysis_rule_type: self.analysis_rule_type
+                    ,
+                    analysis_rule_policy: self.analysis_rule_policy
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateConfiguredTableAnalysisRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfiguredTableAnalysisRule`](crate::operation::UpdateConfiguredTableAnalysisRule)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateConfiguredTableAnalysisRule,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateConfiguredTableAnalysisRule, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateConfiguredTableAnalysisRuleInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateConfiguredTableAnalysisRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_52 = &_input.configured_table_identifier;
-                let input_52 = input_52.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "configured_table_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let configured_table_identifier = aws_smithy_http::label::fmt_string(
-                    input_52,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_52 = input_52.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("configured_table_identifier", "cannot be empty or unset"))?;
+                let configured_table_identifier = aws_smithy_http::label::fmt_string(input_52, aws_smithy_http::label::EncodingStrategy::Default);
                 if configured_table_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "configured_table_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("configured_table_identifier", "cannot be empty or unset"))
+                            }
                 let input_53 = &_input.analysis_rule_type;
-                let input_53 = input_53.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "analysis_rule_type",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let analysis_rule_type = aws_smithy_http::label::fmt_string(
-                    input_53,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_53 = input_53.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("analysis_rule_type", "cannot be empty or unset"))?;
+                let analysis_rule_type = aws_smithy_http::label::fmt_string(input_53, aws_smithy_http::label::EncodingStrategy::Default);
                 if analysis_rule_type.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "analysis_rule_type",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/configuredTables/{configuredTableIdentifier}/analysisRule/{analysisRuleType}",
-                    configuredTableIdentifier = configured_table_identifier,
-                    analysisRuleType = analysis_rule_type
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("analysis_rule_type", "cannot be empty or unset"))
+                            }
+                write!(output, "/configuredTables/{configuredTableIdentifier}/analysisRule/{analysisRuleType}", configuredTableIdentifier = configured_table_identifier, analysisRuleType = analysis_rule_type).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateConfiguredTableAnalysisRuleInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateConfiguredTableAnalysisRuleInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6388,56 +4179,33 @@ impl UpdateConfiguredTableAnalysisRuleInput {
             crate::operation_ser::serialize_operation_crate_operation_update_configured_table_analysis_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateConfiguredTableAnalysisRule::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateConfiguredTableAnalysisRule",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateConfiguredTableAnalysisRule::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateConfiguredTableAnalysisRule", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6449,32 +4217,24 @@ impl UpdateConfiguredTableAnalysisRuleInput {
 
 /// See [`UpdateConfiguredTableAssociationInput`](crate::input::UpdateConfiguredTableAssociationInput).
 pub mod update_configured_table_association_input {
-
+    
     /// A builder for [`UpdateConfiguredTableAssociationInput`](crate::input::UpdateConfiguredTableAssociationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) configured_table_association_identifier:
-            std::option::Option<std::string::String>,
+        pub(crate) configured_table_association_identifier: std::option::Option<std::string::String>,
         pub(crate) membership_identifier: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
-        pub fn configured_table_association_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn configured_table_association_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.configured_table_association_identifier = Some(input.into());
             self
         }
         /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
-        pub fn set_configured_table_association_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configured_table_association_identifier = input;
-            self
+        pub fn set_configured_table_association_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configured_table_association_identifier = input; self
         }
         /// <p>The unique ID for the membership that the configured table association belongs to.</p>
         pub fn membership_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6482,12 +4242,8 @@ pub mod update_configured_table_association_input {
             self
         }
         /// <p>The unique ID for the membership that the configured table association belongs to.</p>
-        pub fn set_membership_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_identifier = input;
-            self
+        pub fn set_membership_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_identifier = input; self
         }
         /// <p>A new description for the configured table association.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6496,8 +4252,7 @@ pub mod update_configured_table_association_input {
         }
         /// <p>A new description for the configured table association.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The service will assume this role to access catalog metadata and query the table.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6506,124 +4261,71 @@ pub mod update_configured_table_association_input {
         }
         /// <p>The service will assume this role to access catalog metadata and query the table.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConfiguredTableAssociationInput`](crate::input::UpdateConfiguredTableAssociationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateConfiguredTableAssociationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateConfiguredTableAssociationInput {
-                configured_table_association_identifier: self
-                    .configured_table_association_identifier,
-                membership_identifier: self.membership_identifier,
-                description: self.description,
-                role_arn: self.role_arn,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateConfiguredTableAssociationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateConfiguredTableAssociationInput {
+                    configured_table_association_identifier: self.configured_table_association_identifier
+                    ,
+                    membership_identifier: self.membership_identifier
+                    ,
+                    description: self.description
+                    ,
+                    role_arn: self.role_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateConfiguredTableAssociationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfiguredTableAssociation`](crate::operation::UpdateConfiguredTableAssociation)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateConfiguredTableAssociation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateConfiguredTableAssociation, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateConfiguredTableAssociationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateConfiguredTableAssociationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_54 = &_input.membership_identifier;
-                let input_54 = input_54.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "membership_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let membership_identifier = aws_smithy_http::label::fmt_string(
-                    input_54,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_54 = input_54.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))?;
+                let membership_identifier = aws_smithy_http::label::fmt_string(input_54, aws_smithy_http::label::EncodingStrategy::Default);
                 if membership_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "membership_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))
+                            }
                 let input_55 = &_input.configured_table_association_identifier;
-                let input_55 = input_55.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "configured_table_association_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let configured_table_association_identifier = aws_smithy_http::label::fmt_string(
-                    input_55,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_55 = input_55.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("configured_table_association_identifier", "cannot be empty or unset"))?;
+                let configured_table_association_identifier = aws_smithy_http::label::fmt_string(input_55, aws_smithy_http::label::EncodingStrategy::Default);
                 if configured_table_association_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "configured_table_association_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("configured_table_association_identifier", "cannot be empty or unset"))
+                            }
                 write!(output, "/memberships/{membershipIdentifier}/configuredTableAssociations/{configuredTableAssociationIdentifier}", membershipIdentifier = membership_identifier, configuredTableAssociationIdentifier = configured_table_association_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateConfiguredTableAssociationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateConfiguredTableAssociationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6632,56 +4334,33 @@ impl UpdateConfiguredTableAssociationInput {
             crate::operation_ser::serialize_operation_crate_operation_update_configured_table_association(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateConfiguredTableAssociation::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateConfiguredTableAssociation",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateConfiguredTableAssociation::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateConfiguredTableAssociation", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6693,7 +4372,7 @@ impl UpdateConfiguredTableAssociationInput {
 
 /// See [`UpdateMembershipInput`](crate::input::UpdateMembershipInput).
 pub mod update_membership_input {
-
+    
     /// A builder for [`UpdateMembershipInput`](crate::input::UpdateMembershipInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6707,12 +4386,8 @@ pub mod update_membership_input {
             self
         }
         /// <p>The unique identifier of the membership.</p>
-        pub fn set_membership_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_identifier = input;
-            self
+        pub fn set_membership_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_identifier = input; self
         }
         /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
         pub fn query_log_status(mut self, input: crate::model::MembershipQueryLogStatus) -> Self {
@@ -6720,169 +4395,97 @@ pub mod update_membership_input {
             self
         }
         /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-        pub fn set_query_log_status(
-            mut self,
-            input: std::option::Option<crate::model::MembershipQueryLogStatus>,
-        ) -> Self {
-            self.query_log_status = input;
-            self
+        pub fn set_query_log_status(mut self, input: std::option::Option<crate::model::MembershipQueryLogStatus>) -> Self {
+            self.query_log_status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateMembershipInput`](crate::input::UpdateMembershipInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateMembershipInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateMembershipInput {
-                membership_identifier: self.membership_identifier,
-                query_log_status: self.query_log_status,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateMembershipInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateMembershipInput {
+                    membership_identifier: self.membership_identifier
+                    ,
+                    query_log_status: self.query_log_status
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateMembershipInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMembership`](crate::operation::UpdateMembership)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateMembership,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateMembership, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateMembershipInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateMembershipInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_56 = &_input.membership_identifier;
-                let input_56 = input_56.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "membership_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let membership_identifier = aws_smithy_http::label::fmt_string(
-                    input_56,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_56 = input_56.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))?;
+                let membership_identifier = aws_smithy_http::label::fmt_string(input_56, aws_smithy_http::label::EncodingStrategy::Default);
                 if membership_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "membership_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/memberships/{membershipIdentifier}",
-                    membershipIdentifier = membership_identifier
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))
+                            }
+                write!(output, "/memberships/{membershipIdentifier}", membershipIdentifier = membership_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateMembershipInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateMembershipInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_membership(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_membership(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateMembership::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateMembership",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateMembership::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateMembership", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6894,7 +4497,7 @@ impl UpdateMembershipInput {
 
 /// See [`UpdateProtectedQueryInput`](crate::input::UpdateProtectedQueryInput).
 pub mod update_protected_query_input {
-
+    
     /// A builder for [`UpdateProtectedQueryInput`](crate::input::UpdateProtectedQueryInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6909,12 +4512,8 @@ pub mod update_protected_query_input {
             self
         }
         /// <p>The identifier for a member of a protected query instance.</p>
-        pub fn set_membership_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.membership_identifier = input;
-            self
+        pub fn set_membership_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.membership_identifier = input; self
         }
         /// <p>The identifier for a protected query instance.</p>
         pub fn protected_query_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6922,12 +4521,8 @@ pub mod update_protected_query_input {
             self
         }
         /// <p>The identifier for a protected query instance.</p>
-        pub fn set_protected_query_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.protected_query_identifier = input;
-            self
+        pub fn set_protected_query_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protected_query_identifier = input; self
         }
         /// <p>The target status of a query. Used to update the execution status of a currently running query.</p>
         pub fn target_status(mut self, input: crate::model::TargetProtectedQueryStatus) -> Self {
@@ -6935,186 +4530,105 @@ pub mod update_protected_query_input {
             self
         }
         /// <p>The target status of a query. Used to update the execution status of a currently running query.</p>
-        pub fn set_target_status(
-            mut self,
-            input: std::option::Option<crate::model::TargetProtectedQueryStatus>,
-        ) -> Self {
-            self.target_status = input;
-            self
+        pub fn set_target_status(mut self, input: std::option::Option<crate::model::TargetProtectedQueryStatus>) -> Self {
+            self.target_status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateProtectedQueryInput`](crate::input::UpdateProtectedQueryInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateProtectedQueryInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateProtectedQueryInput {
-                membership_identifier: self.membership_identifier,
-                protected_query_identifier: self.protected_query_identifier,
-                target_status: self.target_status,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateProtectedQueryInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateProtectedQueryInput {
+                    membership_identifier: self.membership_identifier
+                    ,
+                    protected_query_identifier: self.protected_query_identifier
+                    ,
+                    target_status: self.target_status
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateProtectedQueryInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProtectedQuery`](crate::operation::UpdateProtectedQuery)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateProtectedQuery,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateProtectedQuery, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateProtectedQueryInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateProtectedQueryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_57 = &_input.membership_identifier;
-                let input_57 = input_57.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "membership_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let membership_identifier = aws_smithy_http::label::fmt_string(
-                    input_57,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_57 = input_57.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))?;
+                let membership_identifier = aws_smithy_http::label::fmt_string(input_57, aws_smithy_http::label::EncodingStrategy::Default);
                 if membership_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "membership_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "cannot be empty or unset"))
+                            }
                 let input_58 = &_input.protected_query_identifier;
-                let input_58 = input_58.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "protected_query_identifier",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let protected_query_identifier = aws_smithy_http::label::fmt_string(
-                    input_58,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_58 = input_58.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("protected_query_identifier", "cannot be empty or unset"))?;
+                let protected_query_identifier = aws_smithy_http::label::fmt_string(input_58, aws_smithy_http::label::EncodingStrategy::Default);
                 if protected_query_identifier.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "protected_query_identifier",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("protected_query_identifier", "cannot be empty or unset"))
+                            }
                 write!(output, "/memberships/{membershipIdentifier}/protectedQueries/{protectedQueryIdentifier}", membershipIdentifier = membership_identifier, protectedQueryIdentifier = protected_query_identifier).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateProtectedQueryInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateProtectedQueryInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_protected_query(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_update_protected_query(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateProtectedQuery::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateProtectedQuery",
-            "cleanrooms",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateProtectedQuery::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateProtectedQuery", "cleanrooms"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7127,7 +4641,7 @@ impl UpdateProtectedQueryInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProtectedQueryInput {
+pub struct UpdateProtectedQueryInput  {
     /// <p>The identifier for a member of a protected query instance.</p>
     #[doc(hidden)]
     pub membership_identifier: std::option::Option<std::string::String>,
@@ -7140,15 +4654,15 @@ pub struct UpdateProtectedQueryInput {
 }
 impl UpdateProtectedQueryInput {
     /// <p>The identifier for a member of a protected query instance.</p>
-    pub fn membership_identifier(&self) -> std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>The identifier for a protected query instance.</p>
-    pub fn protected_query_identifier(&self) -> std::option::Option<&str> {
+    pub fn protected_query_identifier(&self) -> std::option::Option<& str> {
         self.protected_query_identifier.as_deref()
     }
     /// <p>The target status of a query. Used to update the execution status of a currently running query.</p>
-    pub fn target_status(&self) -> std::option::Option<&crate::model::TargetProtectedQueryStatus> {
+    pub fn target_status(&self) -> std::option::Option<& crate::model::TargetProtectedQueryStatus> {
         self.target_status.as_ref()
     }
 }
@@ -7156,7 +4670,7 @@ impl UpdateProtectedQueryInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartProtectedQueryInput {
+pub struct StartProtectedQueryInput  {
     /// <p>The type of the protected query to be started.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ProtectedQueryType>,
@@ -7172,27 +4686,23 @@ pub struct StartProtectedQueryInput {
 }
 impl StartProtectedQueryInput {
     /// <p>The type of the protected query to be started.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ProtectedQueryType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ProtectedQueryType> {
         self.r#type.as_ref()
     }
     /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
-    pub fn membership_identifier(&self) -> std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>The protected SQL query parameters.</p>
-    pub fn sql_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::ProtectedQuerySqlParameters> {
+    pub fn sql_parameters(&self) -> std::option::Option<& crate::model::ProtectedQuerySqlParameters> {
         self.sql_parameters.as_ref()
     }
     /// <p>The details needed to write the query results.</p>
-    pub fn result_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ProtectedQueryResultConfiguration> {
+    pub fn result_configuration(&self) -> std::option::Option<& crate::model::ProtectedQueryResultConfiguration> {
         self.result_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for StartProtectedQueryInput {
+impl  std::fmt::Debug for StartProtectedQueryInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartProtectedQueryInput");
         formatter.field("r#type", &self.r#type);
@@ -7206,7 +4716,7 @@ impl std::fmt::Debug for StartProtectedQueryInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProtectedQueriesInput {
+pub struct ListProtectedQueriesInput  {
     /// <p>The identifier for the membership in the collaboration.</p>
     #[doc(hidden)]
     pub membership_identifier: std::option::Option<std::string::String>,
@@ -7222,15 +4732,15 @@ pub struct ListProtectedQueriesInput {
 }
 impl ListProtectedQueriesInput {
     /// <p>The identifier for the membership in the collaboration.</p>
-    pub fn membership_identifier(&self) -> std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>A filter on the status of the protected query.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ProtectedQueryStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ProtectedQueryStatus> {
         self.status.as_ref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met. </p>
@@ -7242,7 +4752,7 @@ impl ListProtectedQueriesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProtectedQueryInput {
+pub struct GetProtectedQueryInput  {
     /// <p>The identifier for a membership in a protected query instance.</p>
     #[doc(hidden)]
     pub membership_identifier: std::option::Option<std::string::String>,
@@ -7252,11 +4762,11 @@ pub struct GetProtectedQueryInput {
 }
 impl GetProtectedQueryInput {
     /// <p>The identifier for a membership in a protected query instance.</p>
-    pub fn membership_identifier(&self) -> std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>The identifier for a protected query instance.</p>
-    pub fn protected_query_identifier(&self) -> std::option::Option<&str> {
+    pub fn protected_query_identifier(&self) -> std::option::Option<& str> {
         self.protected_query_identifier.as_deref()
     }
 }
@@ -7264,7 +4774,7 @@ impl GetProtectedQueryInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMembershipsInput {
+pub struct ListMembershipsInput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -7277,7 +4787,7 @@ pub struct ListMembershipsInput {
 }
 impl ListMembershipsInput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of the results that is returned per call.</p>
@@ -7285,7 +4795,7 @@ impl ListMembershipsInput {
         self.max_results
     }
     /// <p>A filter which will return only memberships in the specified status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::MembershipStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MembershipStatus> {
         self.status.as_ref()
     }
 }
@@ -7293,7 +4803,7 @@ impl ListMembershipsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMembershipInput {
+pub struct CreateMembershipInput  {
     /// <p>The unique ID for the associated collaboration.</p>
     #[doc(hidden)]
     pub collaboration_identifier: std::option::Option<std::string::String>,
@@ -7303,11 +4813,11 @@ pub struct CreateMembershipInput {
 }
 impl CreateMembershipInput {
     /// <p>The unique ID for the associated collaboration.</p>
-    pub fn collaboration_identifier(&self) -> std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn query_log_status(&self) -> std::option::Option<&crate::model::MembershipQueryLogStatus> {
+    pub fn query_log_status(&self) -> std::option::Option<& crate::model::MembershipQueryLogStatus> {
         self.query_log_status.as_ref()
     }
 }
@@ -7315,14 +4825,14 @@ impl CreateMembershipInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMembershipInput {
+pub struct DeleteMembershipInput  {
     /// <p>The identifier for a membership resource.</p>
     #[doc(hidden)]
     pub membership_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteMembershipInput {
     /// <p>The identifier for a membership resource.</p>
-    pub fn membership_identifier(&self) -> std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
 }
@@ -7330,7 +4840,7 @@ impl DeleteMembershipInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMembershipInput {
+pub struct UpdateMembershipInput  {
     /// <p>The unique identifier of the membership.</p>
     #[doc(hidden)]
     pub membership_identifier: std::option::Option<std::string::String>,
@@ -7340,11 +4850,11 @@ pub struct UpdateMembershipInput {
 }
 impl UpdateMembershipInput {
     /// <p>The unique identifier of the membership.</p>
-    pub fn membership_identifier(&self) -> std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn query_log_status(&self) -> std::option::Option<&crate::model::MembershipQueryLogStatus> {
+    pub fn query_log_status(&self) -> std::option::Option<& crate::model::MembershipQueryLogStatus> {
         self.query_log_status.as_ref()
     }
 }
@@ -7352,14 +4862,14 @@ impl UpdateMembershipInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMembershipInput {
+pub struct GetMembershipInput  {
     /// <p>The identifier for a membership resource.</p>
     #[doc(hidden)]
     pub membership_identifier: std::option::Option<std::string::String>,
 }
 impl GetMembershipInput {
     /// <p>The identifier for a membership resource.</p>
-    pub fn membership_identifier(&self) -> std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
 }
@@ -7367,7 +4877,7 @@ impl GetMembershipInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfiguredTableAnalysisRuleInput {
+pub struct UpdateConfiguredTableAnalysisRuleInput  {
     /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
     #[doc(hidden)]
     pub configured_table_identifier: std::option::Option<std::string::String>,
@@ -7380,19 +4890,15 @@ pub struct UpdateConfiguredTableAnalysisRuleInput {
 }
 impl UpdateConfiguredTableAnalysisRuleInput {
     /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
-    pub fn configured_table_identifier(&self) -> std::option::Option<&str> {
+    pub fn configured_table_identifier(&self) -> std::option::Option<& str> {
         self.configured_table_identifier.as_deref()
     }
     /// <p>The analysis rule type to be updated. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-    pub fn analysis_rule_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ConfiguredTableAnalysisRuleType> {
+    pub fn analysis_rule_type(&self) -> std::option::Option<& crate::model::ConfiguredTableAnalysisRuleType> {
         self.analysis_rule_type.as_ref()
     }
     /// <p>The new analysis rule policy for the configured table analysis rule.</p>
-    pub fn analysis_rule_policy(
-        &self,
-    ) -> std::option::Option<&crate::model::ConfiguredTableAnalysisRulePolicy> {
+    pub fn analysis_rule_policy(&self) -> std::option::Option<& crate::model::ConfiguredTableAnalysisRulePolicy> {
         self.analysis_rule_policy.as_ref()
     }
 }
@@ -7400,7 +4906,7 @@ impl UpdateConfiguredTableAnalysisRuleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfiguredTableAnalysisRuleInput {
+pub struct GetConfiguredTableAnalysisRuleInput  {
     /// <p>The unique identifier for the configured table to retrieve. Currently accepts the configured table ID.</p>
     #[doc(hidden)]
     pub configured_table_identifier: std::option::Option<std::string::String>,
@@ -7410,13 +4916,11 @@ pub struct GetConfiguredTableAnalysisRuleInput {
 }
 impl GetConfiguredTableAnalysisRuleInput {
     /// <p>The unique identifier for the configured table to retrieve. Currently accepts the configured table ID.</p>
-    pub fn configured_table_identifier(&self) -> std::option::Option<&str> {
+    pub fn configured_table_identifier(&self) -> std::option::Option<& str> {
         self.configured_table_identifier.as_deref()
     }
     /// <p>The analysis rule to be retrieved. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-    pub fn analysis_rule_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ConfiguredTableAnalysisRuleType> {
+    pub fn analysis_rule_type(&self) -> std::option::Option<& crate::model::ConfiguredTableAnalysisRuleType> {
         self.analysis_rule_type.as_ref()
     }
 }
@@ -7424,7 +4928,7 @@ impl GetConfiguredTableAnalysisRuleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfiguredTableAnalysisRuleInput {
+pub struct DeleteConfiguredTableAnalysisRuleInput  {
     /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
     #[doc(hidden)]
     pub configured_table_identifier: std::option::Option<std::string::String>,
@@ -7434,13 +4938,11 @@ pub struct DeleteConfiguredTableAnalysisRuleInput {
 }
 impl DeleteConfiguredTableAnalysisRuleInput {
     /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
-    pub fn configured_table_identifier(&self) -> std::option::Option<&str> {
+    pub fn configured_table_identifier(&self) -> std::option::Option<& str> {
         self.configured_table_identifier.as_deref()
     }
     /// <p>The analysis rule type to be deleted. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-    pub fn analysis_rule_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ConfiguredTableAnalysisRuleType> {
+    pub fn analysis_rule_type(&self) -> std::option::Option<& crate::model::ConfiguredTableAnalysisRuleType> {
         self.analysis_rule_type.as_ref()
     }
 }
@@ -7448,7 +4950,7 @@ impl DeleteConfiguredTableAnalysisRuleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfiguredTableAnalysisRuleInput {
+pub struct CreateConfiguredTableAnalysisRuleInput  {
     /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
     #[doc(hidden)]
     pub configured_table_identifier: std::option::Option<std::string::String>,
@@ -7461,19 +4963,15 @@ pub struct CreateConfiguredTableAnalysisRuleInput {
 }
 impl CreateConfiguredTableAnalysisRuleInput {
     /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
-    pub fn configured_table_identifier(&self) -> std::option::Option<&str> {
+    pub fn configured_table_identifier(&self) -> std::option::Option<& str> {
         self.configured_table_identifier.as_deref()
     }
     /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
-    pub fn analysis_rule_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ConfiguredTableAnalysisRuleType> {
+    pub fn analysis_rule_type(&self) -> std::option::Option<& crate::model::ConfiguredTableAnalysisRuleType> {
         self.analysis_rule_type.as_ref()
     }
     /// <p>The entire created configured table analysis rule object.</p>
-    pub fn analysis_rule_policy(
-        &self,
-    ) -> std::option::Option<&crate::model::ConfiguredTableAnalysisRulePolicy> {
+    pub fn analysis_rule_policy(&self) -> std::option::Option<& crate::model::ConfiguredTableAnalysisRulePolicy> {
         self.analysis_rule_policy.as_ref()
     }
 }
@@ -7481,7 +4979,7 @@ impl CreateConfiguredTableAnalysisRuleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfiguredTablesInput {
+pub struct ListConfiguredTablesInput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -7491,7 +4989,7 @@ pub struct ListConfiguredTablesInput {
 }
 impl ListConfiguredTablesInput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of the results that is returned per call.</p>
@@ -7503,7 +5001,7 @@ impl ListConfiguredTablesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfiguredTableInput {
+pub struct CreateConfiguredTableInput  {
     /// <p>The name of the configured table.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -7522,23 +5020,23 @@ pub struct CreateConfiguredTableInput {
 }
 impl CreateConfiguredTableInput {
     /// <p>The name of the configured table.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description for the configured table.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A reference to the AWS Glue table being configured.</p>
-    pub fn table_reference(&self) -> std::option::Option<&crate::model::TableReference> {
+    pub fn table_reference(&self) -> std::option::Option<& crate::model::TableReference> {
         self.table_reference.as_ref()
     }
     /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
-    pub fn allowed_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_columns(&self) -> std::option::Option<& [std::string::String]> {
         self.allowed_columns.as_deref()
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub fn analysis_method(&self) -> std::option::Option<&crate::model::AnalysisMethod> {
+    pub fn analysis_method(&self) -> std::option::Option<& crate::model::AnalysisMethod> {
         self.analysis_method.as_ref()
     }
 }
@@ -7546,14 +5044,14 @@ impl CreateConfiguredTableInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfiguredTableInput {
+pub struct DeleteConfiguredTableInput  {
     /// <p>The unique ID for the configured table to delete.</p>
     #[doc(hidden)]
     pub configured_table_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteConfiguredTableInput {
     /// <p>The unique ID for the configured table to delete.</p>
-    pub fn configured_table_identifier(&self) -> std::option::Option<&str> {
+    pub fn configured_table_identifier(&self) -> std::option::Option<& str> {
         self.configured_table_identifier.as_deref()
     }
 }
@@ -7561,7 +5059,7 @@ impl DeleteConfiguredTableInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfiguredTableInput {
+pub struct UpdateConfiguredTableInput  {
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
     #[doc(hidden)]
     pub configured_table_identifier: std::option::Option<std::string::String>,
@@ -7574,15 +5072,15 @@ pub struct UpdateConfiguredTableInput {
 }
 impl UpdateConfiguredTableInput {
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
-    pub fn configured_table_identifier(&self) -> std::option::Option<&str> {
+    pub fn configured_table_identifier(&self) -> std::option::Option<& str> {
         self.configured_table_identifier.as_deref()
     }
     /// <p>A new name for the configured table.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A new description for the configured table.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -7590,14 +5088,14 @@ impl UpdateConfiguredTableInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfiguredTableInput {
+pub struct GetConfiguredTableInput  {
     /// <p>The unique ID for the configured table to retrieve.</p>
     #[doc(hidden)]
     pub configured_table_identifier: std::option::Option<std::string::String>,
 }
 impl GetConfiguredTableInput {
     /// <p>The unique ID for the configured table to retrieve.</p>
-    pub fn configured_table_identifier(&self) -> std::option::Option<&str> {
+    pub fn configured_table_identifier(&self) -> std::option::Option<& str> {
         self.configured_table_identifier.as_deref()
     }
 }
@@ -7605,7 +5103,7 @@ impl GetConfiguredTableInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfiguredTableAssociationsInput {
+pub struct ListConfiguredTableAssociationsInput  {
     /// <p>A unique identifier for the membership to list configured table associations for. Currently accepts the membership ID.</p>
     #[doc(hidden)]
     pub membership_identifier: std::option::Option<std::string::String>,
@@ -7618,11 +5116,11 @@ pub struct ListConfiguredTableAssociationsInput {
 }
 impl ListConfiguredTableAssociationsInput {
     /// <p>A unique identifier for the membership to list configured table associations for. Currently accepts the membership ID.</p>
-    pub fn membership_identifier(&self) -> std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of the results that is returned per call.</p>
@@ -7634,7 +5132,7 @@ impl ListConfiguredTableAssociationsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfiguredTableAssociationInput {
+pub struct CreateConfiguredTableAssociationInput  {
     /// <p>The name of the configured table association. This name is used to query the underlying configured table.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -7653,23 +5151,23 @@ pub struct CreateConfiguredTableAssociationInput {
 }
 impl CreateConfiguredTableAssociationInput {
     /// <p>The name of the configured table association. This name is used to query the underlying configured table.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description for the configured table association.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.</p>
-    pub fn membership_identifier(&self) -> std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>A unique identifier for the configured table to be associated to. Currently accepts a configured table ID.</p>
-    pub fn configured_table_identifier(&self) -> std::option::Option<&str> {
+    pub fn configured_table_identifier(&self) -> std::option::Option<& str> {
         self.configured_table_identifier.as_deref()
     }
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -7677,7 +5175,7 @@ impl CreateConfiguredTableAssociationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfiguredTableAssociationInput {
+pub struct DeleteConfiguredTableAssociationInput  {
     /// <p>The unique ID for the configured table association to be deleted. Currently accepts the configured table ID.</p>
     #[doc(hidden)]
     pub configured_table_association_identifier: std::option::Option<std::string::String>,
@@ -7687,11 +5185,11 @@ pub struct DeleteConfiguredTableAssociationInput {
 }
 impl DeleteConfiguredTableAssociationInput {
     /// <p>The unique ID for the configured table association to be deleted. Currently accepts the configured table ID.</p>
-    pub fn configured_table_association_identifier(&self) -> std::option::Option<&str> {
+    pub fn configured_table_association_identifier(&self) -> std::option::Option<& str> {
         self.configured_table_association_identifier.as_deref()
     }
     /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
-    pub fn membership_identifier(&self) -> std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
 }
@@ -7699,7 +5197,7 @@ impl DeleteConfiguredTableAssociationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfiguredTableAssociationInput {
+pub struct UpdateConfiguredTableAssociationInput  {
     /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
     #[doc(hidden)]
     pub configured_table_association_identifier: std::option::Option<std::string::String>,
@@ -7715,19 +5213,19 @@ pub struct UpdateConfiguredTableAssociationInput {
 }
 impl UpdateConfiguredTableAssociationInput {
     /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
-    pub fn configured_table_association_identifier(&self) -> std::option::Option<&str> {
+    pub fn configured_table_association_identifier(&self) -> std::option::Option<& str> {
         self.configured_table_association_identifier.as_deref()
     }
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
-    pub fn membership_identifier(&self) -> std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>A new description for the configured table association.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -7735,7 +5233,7 @@ impl UpdateConfiguredTableAssociationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfiguredTableAssociationInput {
+pub struct GetConfiguredTableAssociationInput  {
     /// <p>The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.</p>
     #[doc(hidden)]
     pub configured_table_association_identifier: std::option::Option<std::string::String>,
@@ -7745,11 +5243,11 @@ pub struct GetConfiguredTableAssociationInput {
 }
 impl GetConfiguredTableAssociationInput {
     /// <p>The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.</p>
-    pub fn configured_table_association_identifier(&self) -> std::option::Option<&str> {
+    pub fn configured_table_association_identifier(&self) -> std::option::Option<& str> {
         self.configured_table_association_identifier.as_deref()
     }
     /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
-    pub fn membership_identifier(&self) -> std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
 }
@@ -7757,7 +5255,7 @@ impl GetConfiguredTableAssociationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSchemasInput {
+pub struct ListSchemasInput  {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
     #[doc(hidden)]
     pub collaboration_identifier: std::option::Option<std::string::String>,
@@ -7773,15 +5271,15 @@ pub struct ListSchemasInput {
 }
 impl ListSchemasInput {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub fn collaboration_identifier(&self) -> std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
-    pub fn schema_type(&self) -> std::option::Option<&crate::model::SchemaType> {
+    pub fn schema_type(&self) -> std::option::Option<& crate::model::SchemaType> {
         self.schema_type.as_ref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of the results that is returned per call.</p>
@@ -7793,7 +5291,7 @@ impl ListSchemasInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMembersInput {
+pub struct ListMembersInput  {
     /// <p>The identifier of the collaboration in which the members are listed.</p>
     #[doc(hidden)]
     pub collaboration_identifier: std::option::Option<std::string::String>,
@@ -7806,11 +5304,11 @@ pub struct ListMembersInput {
 }
 impl ListMembersInput {
     /// <p>The identifier of the collaboration in which the members are listed.</p>
-    pub fn collaboration_identifier(&self) -> std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of the results that is returned per call.</p>
@@ -7822,7 +5320,7 @@ impl ListMembersInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSchemaAnalysisRuleInput {
+pub struct GetSchemaAnalysisRuleInput  {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
     #[doc(hidden)]
     pub collaboration_identifier: std::option::Option<std::string::String>,
@@ -7835,15 +5333,15 @@ pub struct GetSchemaAnalysisRuleInput {
 }
 impl GetSchemaAnalysisRuleInput {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub fn collaboration_identifier(&self) -> std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>The name of the schema to retrieve the analysis rule for.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the schema analysis rule to retrieve. Schema analysis rules are uniquely identified by a combination of the collaboration, the schema name, and their type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::AnalysisRuleType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::AnalysisRuleType> {
         self.r#type.as_ref()
     }
 }
@@ -7851,7 +5349,7 @@ impl GetSchemaAnalysisRuleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSchemaInput {
+pub struct GetSchemaInput  {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
     #[doc(hidden)]
     pub collaboration_identifier: std::option::Option<std::string::String>,
@@ -7861,11 +5359,11 @@ pub struct GetSchemaInput {
 }
 impl GetSchemaInput {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub fn collaboration_identifier(&self) -> std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>The name of the relation to retrieve the schema for.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -7873,7 +5371,7 @@ impl GetSchemaInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMemberInput {
+pub struct DeleteMemberInput  {
     /// <p>The unique identifier for the associated collaboration.</p>
     #[doc(hidden)]
     pub collaboration_identifier: std::option::Option<std::string::String>,
@@ -7883,11 +5381,11 @@ pub struct DeleteMemberInput {
 }
 impl DeleteMemberInput {
     /// <p>The unique identifier for the associated collaboration.</p>
-    pub fn collaboration_identifier(&self) -> std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>The account ID of the member to remove.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -7895,7 +5393,7 @@ impl DeleteMemberInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetSchemaInput {
+pub struct BatchGetSchemaInput  {
     /// <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
     #[doc(hidden)]
     pub collaboration_identifier: std::option::Option<std::string::String>,
@@ -7905,11 +5403,11 @@ pub struct BatchGetSchemaInput {
 }
 impl BatchGetSchemaInput {
     /// <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
-    pub fn collaboration_identifier(&self) -> std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>The names for the schema objects to retrieve.&gt;</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
 }
@@ -7917,7 +5415,7 @@ impl BatchGetSchemaInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCollaborationsInput {
+pub struct ListCollaborationsInput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -7930,7 +5428,7 @@ pub struct ListCollaborationsInput {
 }
 impl ListCollaborationsInput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.</p>
@@ -7938,7 +5436,7 @@ impl ListCollaborationsInput {
         self.max_results
     }
     /// <p>The caller's status in a collaboration.</p>
-    pub fn member_status(&self) -> std::option::Option<&crate::model::FilterableMemberStatus> {
+    pub fn member_status(&self) -> std::option::Option<& crate::model::FilterableMemberStatus> {
         self.member_status.as_ref()
     }
 }
@@ -7946,7 +5444,7 @@ impl ListCollaborationsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCollaborationInput {
+pub struct CreateCollaborationInput  {
     /// <p>A list of initial members, not including the creator. This list is immutable.</p>
     #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::MemberSpecification>>,
@@ -7971,35 +5469,31 @@ pub struct CreateCollaborationInput {
 }
 impl CreateCollaborationInput {
     /// <p>A list of initial members, not including the creator. This list is immutable.</p>
-    pub fn members(&self) -> std::option::Option<&[crate::model::MemberSpecification]> {
+    pub fn members(&self) -> std::option::Option<& [crate::model::MemberSpecification]> {
         self.members.as_deref()
     }
     /// <p>The display name for a collaboration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the collaboration provided by the collaboration owner.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The abilities granted to the collaboration creator.</p>
-    pub fn creator_member_abilities(&self) -> std::option::Option<&[crate::model::MemberAbility]> {
+    pub fn creator_member_abilities(&self) -> std::option::Option<& [crate::model::MemberAbility]> {
         self.creator_member_abilities.as_deref()
     }
     /// <p>The display name of the collaboration creator.</p>
-    pub fn creator_display_name(&self) -> std::option::Option<&str> {
+    pub fn creator_display_name(&self) -> std::option::Option<& str> {
         self.creator_display_name.as_deref()
     }
     /// <p>The settings for client-side encryption with Cryptographic Computing for Clean Rooms.</p>
-    pub fn data_encryption_metadata(
-        &self,
-    ) -> std::option::Option<&crate::model::DataEncryptionMetadata> {
+    pub fn data_encryption_metadata(&self) -> std::option::Option<& crate::model::DataEncryptionMetadata> {
         self.data_encryption_metadata.as_ref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn query_log_status(
-        &self,
-    ) -> std::option::Option<&crate::model::CollaborationQueryLogStatus> {
+    pub fn query_log_status(&self) -> std::option::Option<& crate::model::CollaborationQueryLogStatus> {
         self.query_log_status.as_ref()
     }
 }
@@ -8007,14 +5501,14 @@ impl CreateCollaborationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCollaborationInput {
+pub struct DeleteCollaborationInput  {
     /// <p>The identifier for the collaboration.</p>
     #[doc(hidden)]
     pub collaboration_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteCollaborationInput {
     /// <p>The identifier for the collaboration.</p>
-    pub fn collaboration_identifier(&self) -> std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
 }
@@ -8022,7 +5516,7 @@ impl DeleteCollaborationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCollaborationInput {
+pub struct UpdateCollaborationInput  {
     /// <p>The identifier for the collaboration.</p>
     #[doc(hidden)]
     pub collaboration_identifier: std::option::Option<std::string::String>,
@@ -8035,15 +5529,15 @@ pub struct UpdateCollaborationInput {
 }
 impl UpdateCollaborationInput {
     /// <p>The identifier for the collaboration.</p>
-    pub fn collaboration_identifier(&self) -> std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the collaboration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -8051,14 +5545,15 @@ impl UpdateCollaborationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCollaborationInput {
+pub struct GetCollaborationInput  {
     /// <p>The identifier for the collaboration.</p>
     #[doc(hidden)]
     pub collaboration_identifier: std::option::Option<std::string::String>,
 }
 impl GetCollaborationInput {
     /// <p>The identifier for the collaboration.</p>
-    pub fn collaboration_identifier(&self) -> std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
 }
+

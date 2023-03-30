@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUserOutput {
+pub struct UpdateUserOutput  {
     /// <p>The unique identifier of the updated user account.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl UpdateUserOutput {
     /// <p>The unique identifier of the updated user account.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
 /// See [`UpdateUserOutput`](crate::output::UpdateUserOutput).
 pub mod update_user_output {
-
+    
     /// A builder for [`UpdateUserOutput`](crate::output::UpdateUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,16 +29,18 @@ pub mod update_user_output {
         }
         /// <p>The unique identifier of the updated user account.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateUserOutput`](crate::output::UpdateUserOutput).
         pub fn build(self) -> crate::output::UpdateUserOutput {
             crate::output::UpdateUserOutput {
-                user_id: self.user_id,
+                user_id: self.user_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateUserOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserOutput`](crate::output::UpdateUserOutput).
@@ -50,20 +52,20 @@ impl UpdateUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePermissionGroupOutput {
+pub struct UpdatePermissionGroupOutput  {
     /// <p>The unique identifier for the updated permission group.</p>
     #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
 }
 impl UpdatePermissionGroupOutput {
     /// <p>The unique identifier for the updated permission group.</p>
-    pub fn permission_group_id(&self) -> std::option::Option<&str> {
+    pub fn permission_group_id(&self) -> std::option::Option<& str> {
         self.permission_group_id.as_deref()
     }
 }
 /// See [`UpdatePermissionGroupOutput`](crate::output::UpdatePermissionGroupOutput).
 pub mod update_permission_group_output {
-
+    
     /// A builder for [`UpdatePermissionGroupOutput`](crate::output::UpdatePermissionGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -76,20 +78,19 @@ pub mod update_permission_group_output {
             self
         }
         /// <p>The unique identifier for the updated permission group.</p>
-        pub fn set_permission_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_group_id = input;
-            self
+        pub fn set_permission_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_group_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePermissionGroupOutput`](crate::output::UpdatePermissionGroupOutput).
         pub fn build(self) -> crate::output::UpdatePermissionGroupOutput {
             crate::output::UpdatePermissionGroupOutput {
-                permission_group_id: self.permission_group_id,
+                permission_group_id: self.permission_group_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePermissionGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePermissionGroupOutput`](crate::output::UpdatePermissionGroupOutput).
@@ -101,20 +102,20 @@ impl UpdatePermissionGroupOutput {
 /// The response from an UpdateDataset operation
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDatasetOutput {
+pub struct UpdateDatasetOutput  {
     /// <p>The unique identifier for updated Dataset.</p>
     #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
 }
 impl UpdateDatasetOutput {
     /// <p>The unique identifier for updated Dataset.</p>
-    pub fn dataset_id(&self) -> std::option::Option<&str> {
+    pub fn dataset_id(&self) -> std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
 }
 /// See [`UpdateDatasetOutput`](crate::output::UpdateDatasetOutput).
 pub mod update_dataset_output {
-
+    
     /// A builder for [`UpdateDatasetOutput`](crate::output::UpdateDatasetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -128,16 +129,18 @@ pub mod update_dataset_output {
         }
         /// <p>The unique identifier for updated Dataset.</p>
         pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_id = input;
-            self
+            self.dataset_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDatasetOutput`](crate::output::UpdateDatasetOutput).
         pub fn build(self) -> crate::output::UpdateDatasetOutput {
             crate::output::UpdateDatasetOutput {
-                dataset_id: self.dataset_id,
+                dataset_id: self.dataset_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDatasetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDatasetOutput`](crate::output::UpdateDatasetOutput).
@@ -149,7 +152,7 @@ impl UpdateDatasetOutput {
 /// The response from a update changeset operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateChangesetOutput {
+pub struct UpdateChangesetOutput  {
     /// <p>The unique identifier for the Changeset to update.</p>
     #[doc(hidden)]
     pub changeset_id: std::option::Option<std::string::String>,
@@ -159,17 +162,17 @@ pub struct UpdateChangesetOutput {
 }
 impl UpdateChangesetOutput {
     /// <p>The unique identifier for the Changeset to update.</p>
-    pub fn changeset_id(&self) -> std::option::Option<&str> {
+    pub fn changeset_id(&self) -> std::option::Option<& str> {
         self.changeset_id.as_deref()
     }
     /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
-    pub fn dataset_id(&self) -> std::option::Option<&str> {
+    pub fn dataset_id(&self) -> std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
 }
 /// See [`UpdateChangesetOutput`](crate::output::UpdateChangesetOutput).
 pub mod update_changeset_output {
-
+    
     /// A builder for [`UpdateChangesetOutput`](crate::output::UpdateChangesetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -184,8 +187,7 @@ pub mod update_changeset_output {
         }
         /// <p>The unique identifier for the Changeset to update.</p>
         pub fn set_changeset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.changeset_id = input;
-            self
+            self.changeset_id = input; self
         }
         /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
         pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -194,17 +196,20 @@ pub mod update_changeset_output {
         }
         /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
         pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_id = input;
-            self
+            self.dataset_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateChangesetOutput`](crate::output::UpdateChangesetOutput).
         pub fn build(self) -> crate::output::UpdateChangesetOutput {
             crate::output::UpdateChangesetOutput {
-                changeset_id: self.changeset_id,
-                dataset_id: self.dataset_id,
+                changeset_id: self.changeset_id
+                ,
+                dataset_id: self.dataset_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateChangesetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateChangesetOutput`](crate::output::UpdateChangesetOutput).
@@ -216,7 +221,7 @@ impl UpdateChangesetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResetUserPasswordOutput {
+pub struct ResetUserPasswordOutput  {
     /// <p>The unique identifier of the user that a new password is generated for.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -226,15 +231,15 @@ pub struct ResetUserPasswordOutput {
 }
 impl ResetUserPasswordOutput {
     /// <p>The unique identifier of the user that a new password is generated for.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>A randomly generated temporary password for the requested user account. This password expires in 7 days.</p>
-    pub fn temporary_password(&self) -> std::option::Option<&str> {
+    pub fn temporary_password(&self) -> std::option::Option<& str> {
         self.temporary_password.as_deref()
     }
 }
-impl std::fmt::Debug for ResetUserPasswordOutput {
+impl  std::fmt::Debug for ResetUserPasswordOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResetUserPasswordOutput");
         formatter.field("user_id", &self.user_id);
@@ -244,7 +249,7 @@ impl std::fmt::Debug for ResetUserPasswordOutput {
 }
 /// See [`ResetUserPasswordOutput`](crate::output::ResetUserPasswordOutput).
 pub mod reset_user_password_output {
-
+    
     /// A builder for [`ResetUserPasswordOutput`](crate::output::ResetUserPasswordOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -259,8 +264,7 @@ pub mod reset_user_password_output {
         }
         /// <p>The unique identifier of the user that a new password is generated for.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
         /// <p>A randomly generated temporary password for the requested user account. This password expires in 7 days.</p>
         pub fn temporary_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -268,18 +272,16 @@ pub mod reset_user_password_output {
             self
         }
         /// <p>A randomly generated temporary password for the requested user account. This password expires in 7 days.</p>
-        pub fn set_temporary_password(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.temporary_password = input;
-            self
+        pub fn set_temporary_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.temporary_password = input; self
         }
         /// Consumes the builder and constructs a [`ResetUserPasswordOutput`](crate::output::ResetUserPasswordOutput).
         pub fn build(self) -> crate::output::ResetUserPasswordOutput {
             crate::output::ResetUserPasswordOutput {
-                user_id: self.user_id,
-                temporary_password: self.temporary_password,
+                user_id: self.user_id
+                ,
+                temporary_password: self.temporary_password
+                ,
             }
         }
     }
@@ -291,6 +293,8 @@ pub mod reset_user_password_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ResetUserPasswordOutput {
     /// Creates a new builder-style object to manufacture [`ResetUserPasswordOutput`](crate::output::ResetUserPasswordOutput).
@@ -302,7 +306,7 @@ impl ResetUserPasswordOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUsersByPermissionGroupOutput {
+pub struct ListUsersByPermissionGroupOutput  {
     /// <p>Lists details of all users in a specific permission group.</p>
     #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::UserByPermissionGroup>>,
@@ -312,17 +316,17 @@ pub struct ListUsersByPermissionGroupOutput {
 }
 impl ListUsersByPermissionGroupOutput {
     /// <p>Lists details of all users in a specific permission group.</p>
-    pub fn users(&self) -> std::option::Option<&[crate::model::UserByPermissionGroup]> {
+    pub fn users(&self) -> std::option::Option<& [crate::model::UserByPermissionGroup]> {
         self.users.as_deref()
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListUsersByPermissionGroupOutput`](crate::output::ListUsersByPermissionGroupOutput).
 pub mod list_users_by_permission_group_output {
-
+    
     /// A builder for [`ListUsersByPermissionGroupOutput`](crate::output::ListUsersByPermissionGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -337,17 +341,13 @@ pub mod list_users_by_permission_group_output {
         /// <p>Lists details of all users in a specific permission group.</p>
         pub fn users(mut self, input: crate::model::UserByPermissionGroup) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input);
-            self.users = Some(v);
-            self
+                            v.push(input);
+                            self.users = Some(v);
+                            self
         }
         /// <p>Lists details of all users in a specific permission group.</p>
-        pub fn set_users(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UserByPermissionGroup>>,
-        ) -> Self {
-            self.users = input;
-            self
+        pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::model::UserByPermissionGroup>>) -> Self {
+            self.users = input; self
         }
         /// <p>A token that indicates where a results page should begin.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -356,17 +356,20 @@ pub mod list_users_by_permission_group_output {
         }
         /// <p>A token that indicates where a results page should begin.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListUsersByPermissionGroupOutput`](crate::output::ListUsersByPermissionGroupOutput).
         pub fn build(self) -> crate::output::ListUsersByPermissionGroupOutput {
             crate::output::ListUsersByPermissionGroupOutput {
-                users: self.users,
-                next_token: self.next_token,
+                users: self.users
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListUsersByPermissionGroupOutput {
     /// Creates a new builder-style object to manufacture [`ListUsersByPermissionGroupOutput`](crate::output::ListUsersByPermissionGroupOutput).
@@ -378,7 +381,7 @@ impl ListUsersByPermissionGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUsersOutput {
+pub struct ListUsersOutput  {
     /// <p>A list of all the user accounts.</p>
     #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -388,17 +391,17 @@ pub struct ListUsersOutput {
 }
 impl ListUsersOutput {
     /// <p>A list of all the user accounts.</p>
-    pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
+    pub fn users(&self) -> std::option::Option<& [crate::model::User]> {
         self.users.as_deref()
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListUsersOutput`](crate::output::ListUsersOutput).
 pub mod list_users_output {
-
+    
     /// A builder for [`ListUsersOutput`](crate::output::ListUsersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -413,17 +416,13 @@ pub mod list_users_output {
         /// <p>A list of all the user accounts.</p>
         pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input);
-            self.users = Some(v);
-            self
+                            v.push(input);
+                            self.users = Some(v);
+                            self
         }
         /// <p>A list of all the user accounts.</p>
-        pub fn set_users(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::User>>,
-        ) -> Self {
-            self.users = input;
-            self
+        pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::model::User>>) -> Self {
+            self.users = input; self
         }
         /// <p>A token that indicates where a results page should begin.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -432,17 +431,20 @@ pub mod list_users_output {
         }
         /// <p>A token that indicates where a results page should begin.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListUsersOutput`](crate::output::ListUsersOutput).
         pub fn build(self) -> crate::output::ListUsersOutput {
             crate::output::ListUsersOutput {
-                users: self.users,
-                next_token: self.next_token,
+                users: self.users
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListUsersOutput {
     /// Creates a new builder-style object to manufacture [`ListUsersOutput`](crate::output::ListUsersOutput).
@@ -454,7 +456,7 @@ impl ListUsersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPermissionGroupsByUserOutput {
+pub struct ListPermissionGroupsByUserOutput  {
     /// <p>A list of returned permission groups.</p>
     #[doc(hidden)]
     pub permission_groups: std::option::Option<std::vec::Vec<crate::model::PermissionGroupByUser>>,
@@ -464,22 +466,21 @@ pub struct ListPermissionGroupsByUserOutput {
 }
 impl ListPermissionGroupsByUserOutput {
     /// <p>A list of returned permission groups.</p>
-    pub fn permission_groups(&self) -> std::option::Option<&[crate::model::PermissionGroupByUser]> {
+    pub fn permission_groups(&self) -> std::option::Option<& [crate::model::PermissionGroupByUser]> {
         self.permission_groups.as_deref()
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPermissionGroupsByUserOutput`](crate::output::ListPermissionGroupsByUserOutput).
 pub mod list_permission_groups_by_user_output {
-
+    
     /// A builder for [`ListPermissionGroupsByUserOutput`](crate::output::ListPermissionGroupsByUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) permission_groups:
-            std::option::Option<std::vec::Vec<crate::model::PermissionGroupByUser>>,
+        pub(crate) permission_groups: std::option::Option<std::vec::Vec<crate::model::PermissionGroupByUser>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -490,17 +491,13 @@ pub mod list_permission_groups_by_user_output {
         /// <p>A list of returned permission groups.</p>
         pub fn permission_groups(mut self, input: crate::model::PermissionGroupByUser) -> Self {
             let mut v = self.permission_groups.unwrap_or_default();
-            v.push(input);
-            self.permission_groups = Some(v);
-            self
+                            v.push(input);
+                            self.permission_groups = Some(v);
+                            self
         }
         /// <p>A list of returned permission groups.</p>
-        pub fn set_permission_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PermissionGroupByUser>>,
-        ) -> Self {
-            self.permission_groups = input;
-            self
+        pub fn set_permission_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::PermissionGroupByUser>>) -> Self {
+            self.permission_groups = input; self
         }
         /// <p>A token that indicates where a results page should begin.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -509,17 +506,20 @@ pub mod list_permission_groups_by_user_output {
         }
         /// <p>A token that indicates where a results page should begin.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPermissionGroupsByUserOutput`](crate::output::ListPermissionGroupsByUserOutput).
         pub fn build(self) -> crate::output::ListPermissionGroupsByUserOutput {
             crate::output::ListPermissionGroupsByUserOutput {
-                permission_groups: self.permission_groups,
-                next_token: self.next_token,
+                permission_groups: self.permission_groups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPermissionGroupsByUserOutput {
     /// Creates a new builder-style object to manufacture [`ListPermissionGroupsByUserOutput`](crate::output::ListPermissionGroupsByUserOutput).
@@ -531,7 +531,7 @@ impl ListPermissionGroupsByUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPermissionGroupsOutput {
+pub struct ListPermissionGroupsOutput  {
     /// <p>A list of all the permission groups.</p>
     #[doc(hidden)]
     pub permission_groups: std::option::Option<std::vec::Vec<crate::model::PermissionGroup>>,
@@ -541,22 +541,21 @@ pub struct ListPermissionGroupsOutput {
 }
 impl ListPermissionGroupsOutput {
     /// <p>A list of all the permission groups.</p>
-    pub fn permission_groups(&self) -> std::option::Option<&[crate::model::PermissionGroup]> {
+    pub fn permission_groups(&self) -> std::option::Option<& [crate::model::PermissionGroup]> {
         self.permission_groups.as_deref()
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPermissionGroupsOutput`](crate::output::ListPermissionGroupsOutput).
 pub mod list_permission_groups_output {
-
+    
     /// A builder for [`ListPermissionGroupsOutput`](crate::output::ListPermissionGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) permission_groups:
-            std::option::Option<std::vec::Vec<crate::model::PermissionGroup>>,
+        pub(crate) permission_groups: std::option::Option<std::vec::Vec<crate::model::PermissionGroup>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -567,17 +566,13 @@ pub mod list_permission_groups_output {
         /// <p>A list of all the permission groups.</p>
         pub fn permission_groups(mut self, input: crate::model::PermissionGroup) -> Self {
             let mut v = self.permission_groups.unwrap_or_default();
-            v.push(input);
-            self.permission_groups = Some(v);
-            self
+                            v.push(input);
+                            self.permission_groups = Some(v);
+                            self
         }
         /// <p>A list of all the permission groups.</p>
-        pub fn set_permission_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PermissionGroup>>,
-        ) -> Self {
-            self.permission_groups = input;
-            self
+        pub fn set_permission_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::PermissionGroup>>) -> Self {
+            self.permission_groups = input; self
         }
         /// <p>A token that indicates where a results page should begin.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -586,17 +581,20 @@ pub mod list_permission_groups_output {
         }
         /// <p>A token that indicates where a results page should begin.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPermissionGroupsOutput`](crate::output::ListPermissionGroupsOutput).
         pub fn build(self) -> crate::output::ListPermissionGroupsOutput {
             crate::output::ListPermissionGroupsOutput {
-                permission_groups: self.permission_groups,
-                next_token: self.next_token,
+                permission_groups: self.permission_groups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPermissionGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListPermissionGroupsOutput`](crate::output::ListPermissionGroupsOutput).
@@ -608,7 +606,7 @@ impl ListPermissionGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataViewsOutput {
+pub struct ListDataViewsOutput  {
     /// <p>A token that indicates where a results page should begin.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -618,17 +616,17 @@ pub struct ListDataViewsOutput {
 }
 impl ListDataViewsOutput {
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of Dataviews.</p>
-    pub fn data_views(&self) -> std::option::Option<&[crate::model::DataViewSummary]> {
+    pub fn data_views(&self) -> std::option::Option<& [crate::model::DataViewSummary]> {
         self.data_views.as_deref()
     }
 }
 /// See [`ListDataViewsOutput`](crate::output::ListDataViewsOutput).
 pub mod list_data_views_output {
-
+    
     /// A builder for [`ListDataViewsOutput`](crate::output::ListDataViewsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -643,8 +641,7 @@ pub mod list_data_views_output {
         }
         /// <p>A token that indicates where a results page should begin.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `data_views`.
         ///
@@ -653,26 +650,26 @@ pub mod list_data_views_output {
         /// <p>A list of Dataviews.</p>
         pub fn data_views(mut self, input: crate::model::DataViewSummary) -> Self {
             let mut v = self.data_views.unwrap_or_default();
-            v.push(input);
-            self.data_views = Some(v);
-            self
+                            v.push(input);
+                            self.data_views = Some(v);
+                            self
         }
         /// <p>A list of Dataviews.</p>
-        pub fn set_data_views(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataViewSummary>>,
-        ) -> Self {
-            self.data_views = input;
-            self
+        pub fn set_data_views(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataViewSummary>>) -> Self {
+            self.data_views = input; self
         }
         /// Consumes the builder and constructs a [`ListDataViewsOutput`](crate::output::ListDataViewsOutput).
         pub fn build(self) -> crate::output::ListDataViewsOutput {
             crate::output::ListDataViewsOutput {
-                next_token: self.next_token,
-                data_views: self.data_views,
+                next_token: self.next_token
+                ,
+                data_views: self.data_views
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDataViewsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataViewsOutput`](crate::output::ListDataViewsOutput).
@@ -684,7 +681,7 @@ impl ListDataViewsOutput {
 /// Response for the ListDatasets operation
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDatasetsOutput {
+pub struct ListDatasetsOutput  {
     /// <p>List of Datasets.</p>
     #[doc(hidden)]
     pub datasets: std::option::Option<std::vec::Vec<crate::model::Dataset>>,
@@ -694,17 +691,17 @@ pub struct ListDatasetsOutput {
 }
 impl ListDatasetsOutput {
     /// <p>List of Datasets.</p>
-    pub fn datasets(&self) -> std::option::Option<&[crate::model::Dataset]> {
+    pub fn datasets(&self) -> std::option::Option<& [crate::model::Dataset]> {
         self.datasets.as_deref()
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
 pub mod list_datasets_output {
-
+    
     /// A builder for [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -719,17 +716,13 @@ pub mod list_datasets_output {
         /// <p>List of Datasets.</p>
         pub fn datasets(mut self, input: crate::model::Dataset) -> Self {
             let mut v = self.datasets.unwrap_or_default();
-            v.push(input);
-            self.datasets = Some(v);
-            self
+                            v.push(input);
+                            self.datasets = Some(v);
+                            self
         }
         /// <p>List of Datasets.</p>
-        pub fn set_datasets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Dataset>>,
-        ) -> Self {
-            self.datasets = input;
-            self
+        pub fn set_datasets(mut self, input: std::option::Option<std::vec::Vec<crate::model::Dataset>>) -> Self {
+            self.datasets = input; self
         }
         /// <p>A token that indicates where a results page should begin.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -738,17 +731,20 @@ pub mod list_datasets_output {
         }
         /// <p>A token that indicates where a results page should begin.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
         pub fn build(self) -> crate::output::ListDatasetsOutput {
             crate::output::ListDatasetsOutput {
-                datasets: self.datasets,
-                next_token: self.next_token,
+                datasets: self.datasets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDatasetsOutput {
     /// Creates a new builder-style object to manufacture [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
@@ -760,7 +756,7 @@ impl ListDatasetsOutput {
 /// Response to ListChangesetsResponse. This returns a list of dataset changesets that match the query criteria.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListChangesetsOutput {
+pub struct ListChangesetsOutput  {
     /// <p>List of Changesets found.</p>
     #[doc(hidden)]
     pub changesets: std::option::Option<std::vec::Vec<crate::model::ChangesetSummary>>,
@@ -770,17 +766,17 @@ pub struct ListChangesetsOutput {
 }
 impl ListChangesetsOutput {
     /// <p>List of Changesets found.</p>
-    pub fn changesets(&self) -> std::option::Option<&[crate::model::ChangesetSummary]> {
+    pub fn changesets(&self) -> std::option::Option<& [crate::model::ChangesetSummary]> {
         self.changesets.as_deref()
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListChangesetsOutput`](crate::output::ListChangesetsOutput).
 pub mod list_changesets_output {
-
+    
     /// A builder for [`ListChangesetsOutput`](crate::output::ListChangesetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -795,17 +791,13 @@ pub mod list_changesets_output {
         /// <p>List of Changesets found.</p>
         pub fn changesets(mut self, input: crate::model::ChangesetSummary) -> Self {
             let mut v = self.changesets.unwrap_or_default();
-            v.push(input);
-            self.changesets = Some(v);
-            self
+                            v.push(input);
+                            self.changesets = Some(v);
+                            self
         }
         /// <p>List of Changesets found.</p>
-        pub fn set_changesets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ChangesetSummary>>,
-        ) -> Self {
-            self.changesets = input;
-            self
+        pub fn set_changesets(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChangesetSummary>>) -> Self {
+            self.changesets = input; self
         }
         /// <p>A token that indicates where a results page should begin.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -814,17 +806,20 @@ pub mod list_changesets_output {
         }
         /// <p>A token that indicates where a results page should begin.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListChangesetsOutput`](crate::output::ListChangesetsOutput).
         pub fn build(self) -> crate::output::ListChangesetsOutput {
             crate::output::ListChangesetsOutput {
-                changesets: self.changesets,
-                next_token: self.next_token,
+                changesets: self.changesets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListChangesetsOutput {
     /// Creates a new builder-style object to manufacture [`ListChangesetsOutput`](crate::output::ListChangesetsOutput).
@@ -836,7 +831,7 @@ impl ListChangesetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkingLocationOutput {
+pub struct GetWorkingLocationOutput  {
     /// <p>Returns the Amazon S3 URI for the working location.</p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
@@ -849,21 +844,21 @@ pub struct GetWorkingLocationOutput {
 }
 impl GetWorkingLocationOutput {
     /// <p>Returns the Amazon S3 URI for the working location.</p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p>Returns the Amazon S3 Path for the working location.</p>
-    pub fn s3_path(&self) -> std::option::Option<&str> {
+    pub fn s3_path(&self) -> std::option::Option<& str> {
         self.s3_path.as_deref()
     }
     /// <p>Returns the Amazon S3 bucket name for the working location.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
 }
 /// See [`GetWorkingLocationOutput`](crate::output::GetWorkingLocationOutput).
 pub mod get_working_location_output {
-
+    
     /// A builder for [`GetWorkingLocationOutput`](crate::output::GetWorkingLocationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -879,8 +874,7 @@ pub mod get_working_location_output {
         }
         /// <p>Returns the Amazon S3 URI for the working location.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_uri = input;
-            self
+            self.s3_uri = input; self
         }
         /// <p>Returns the Amazon S3 Path for the working location.</p>
         pub fn s3_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -889,8 +883,7 @@ pub mod get_working_location_output {
         }
         /// <p>Returns the Amazon S3 Path for the working location.</p>
         pub fn set_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_path = input;
-            self
+            self.s3_path = input; self
         }
         /// <p>Returns the Amazon S3 bucket name for the working location.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -899,18 +892,22 @@ pub mod get_working_location_output {
         }
         /// <p>Returns the Amazon S3 bucket name for the working location.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// Consumes the builder and constructs a [`GetWorkingLocationOutput`](crate::output::GetWorkingLocationOutput).
         pub fn build(self) -> crate::output::GetWorkingLocationOutput {
             crate::output::GetWorkingLocationOutput {
-                s3_uri: self.s3_uri,
-                s3_path: self.s3_path,
-                s3_bucket: self.s3_bucket,
+                s3_uri: self.s3_uri
+                ,
+                s3_path: self.s3_path
+                ,
+                s3_bucket: self.s3_bucket
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWorkingLocationOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkingLocationOutput`](crate::output::GetWorkingLocationOutput).
@@ -922,15 +919,15 @@ impl GetWorkingLocationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetUserOutput {
+pub struct GetUserOutput  {
     /// <p>The unique identifier for the user account that is retrieved.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
-    /// <p>The current status of the user account. </p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
-    /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
+    /// <p>The current status of the user account. </p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li> 
+    /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::UserStatus>,
@@ -943,19 +940,19 @@ pub struct GetUserOutput {
     /// <p>The email address that is associated with the user.</p>
     #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
-    /// <p>Indicates the type of user. </p>
-    /// <ul>
-    /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
+    /// <p>Indicates the type of user. </p> 
+    /// <ul> 
+    /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::UserType>,
-    /// <p>Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations. </p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
+    /// <p>Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations. </p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub api_access: std::option::Option<crate::model::ApiAccess>,
@@ -980,50 +977,50 @@ pub struct GetUserOutput {
 }
 impl GetUserOutput {
     /// <p>The unique identifier for the user account that is retrieved.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
-    /// <p>The current status of the user account. </p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
-    /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
+    /// <p>The current status of the user account. </p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li> 
+    /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::UserStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::UserStatus> {
         self.status.as_ref()
     }
     /// <p>The first name of the user.</p>
-    pub fn first_name(&self) -> std::option::Option<&str> {
+    pub fn first_name(&self) -> std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>The last name of the user.</p>
-    pub fn last_name(&self) -> std::option::Option<&str> {
+    pub fn last_name(&self) -> std::option::Option<& str> {
         self.last_name.as_deref()
     }
     /// <p>The email address that is associated with the user.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> std::option::Option<& str> {
         self.email_address.as_deref()
     }
-    /// <p>Indicates the type of user. </p>
-    /// <ul>
-    /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
+    /// <p>Indicates the type of user. </p> 
+    /// <ul> 
+    /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li> 
     /// </ul>
-    /// <ul>
-    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
-    /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::UserType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::UserType> {
         self.r#type.as_ref()
     }
-    /// <p>Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations. </p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
+    /// <p>Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations. </p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li> 
     /// </ul>
-    pub fn api_access(&self) -> std::option::Option<&crate::model::ApiAccess> {
+    pub fn api_access(&self) -> std::option::Option<& crate::model::ApiAccess> {
         self.api_access.as_ref()
     }
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
-    pub fn api_access_principal_arn(&self) -> std::option::Option<&str> {
+    pub fn api_access_principal_arn(&self) -> std::option::Option<& str> {
         self.api_access_principal_arn.as_deref()
     }
     /// <p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
@@ -1047,7 +1044,7 @@ impl GetUserOutput {
         self.last_login_time
     }
 }
-impl std::fmt::Debug for GetUserOutput {
+impl  std::fmt::Debug for GetUserOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUserOutput");
         formatter.field("user_id", &self.user_id);
@@ -1068,7 +1065,7 @@ impl std::fmt::Debug for GetUserOutput {
 }
 /// See [`GetUserOutput`](crate::output::GetUserOutput).
 pub mod get_user_output {
-
+    
     /// A builder for [`GetUserOutput`](crate::output::GetUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1094,28 +1091,26 @@ pub mod get_user_output {
         }
         /// <p>The unique identifier for the user account that is retrieved.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
-        /// <p>The current status of the user account. </p>
-        /// <ul>
-        /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
-        /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
-        /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
+        /// <p>The current status of the user account. </p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li> 
+        /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li> 
+        /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::UserStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The current status of the user account. </p>
-        /// <ul>
-        /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
-        /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
-        /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
+        /// <p>The current status of the user account. </p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li> 
+        /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li> 
+        /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::UserStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The first name of the user.</p>
         pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1124,8 +1119,7 @@ pub mod get_user_output {
         }
         /// <p>The first name of the user.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.first_name = input;
-            self
+            self.first_name = input; self
         }
         /// <p>The last name of the user.</p>
         pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1134,8 +1128,7 @@ pub mod get_user_output {
         }
         /// <p>The last name of the user.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.last_name = input;
-            self
+            self.last_name = input; self
         }
         /// <p>The email address that is associated with the user.</p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1143,55 +1136,46 @@ pub mod get_user_output {
             self
         }
         /// <p>The email address that is associated with the user.</p>
-        pub fn set_email_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_address = input;
-            self
+        pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_address = input; self
         }
-        /// <p>Indicates the type of user. </p>
-        /// <ul>
-        /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
-        /// </ul>
-        /// <ul>
-        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
+        /// <p>Indicates the type of user. </p> 
+        /// <ul> 
+        /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li> 
+        /// </ul> 
+        /// <ul> 
+        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::UserType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Indicates the type of user. </p>
-        /// <ul>
-        /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
-        /// </ul>
-        /// <ul>
-        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
+        /// <p>Indicates the type of user. </p> 
+        /// <ul> 
+        /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li> 
+        /// </ul> 
+        /// <ul> 
+        /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li> 
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UserType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
-        /// <p>Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations. </p>
-        /// <ul>
-        /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
-        /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
+        /// <p>Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations. </p> 
+        /// <ul> 
+        /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li> 
+        /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li> 
         /// </ul>
         pub fn api_access(mut self, input: crate::model::ApiAccess) -> Self {
             self.api_access = Some(input);
             self
         }
-        /// <p>Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations. </p>
-        /// <ul>
-        /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
-        /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
+        /// <p>Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations. </p> 
+        /// <ul> 
+        /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li> 
+        /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li> 
         /// </ul>
-        pub fn set_api_access(
-            mut self,
-            input: std::option::Option<crate::model::ApiAccess>,
-        ) -> Self {
-            self.api_access = input;
-            self
+        pub fn set_api_access(mut self, input: std::option::Option<crate::model::ApiAccess>) -> Self {
+            self.api_access = input; self
         }
         /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
         pub fn api_access_principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1199,12 +1183,8 @@ pub mod get_user_output {
             self
         }
         /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
-        pub fn set_api_access_principal_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.api_access_principal_arn = input;
-            self
+        pub fn set_api_access_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_access_principal_arn = input; self
         }
         /// <p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
         pub fn create_time(mut self, input: i64) -> Self {
@@ -1213,8 +1193,7 @@ pub mod get_user_output {
         }
         /// <p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
         pub fn set_create_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.create_time = input;
-            self
+            self.create_time = input; self
         }
         /// <p>Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds.</p>
         pub fn last_enabled_time(mut self, input: i64) -> Self {
@@ -1223,8 +1202,7 @@ pub mod get_user_output {
         }
         /// <p>Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds.</p>
         pub fn set_last_enabled_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_enabled_time = input;
-            self
+            self.last_enabled_time = input; self
         }
         /// <p>Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.</p>
         pub fn last_disabled_time(mut self, input: i64) -> Self {
@@ -1233,8 +1211,7 @@ pub mod get_user_output {
         }
         /// <p>Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.</p>
         pub fn set_last_disabled_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_disabled_time = input;
-            self
+            self.last_disabled_time = input; self
         }
         /// <p>Describes the last time the user account was updated. The value is determined as epoch time in milliseconds.</p>
         pub fn last_modified_time(mut self, input: i64) -> Self {
@@ -1243,8 +1220,7 @@ pub mod get_user_output {
         }
         /// <p>Describes the last time the user account was updated. The value is determined as epoch time in milliseconds.</p>
         pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_time = input;
-            self
+            self.last_modified_time = input; self
         }
         /// <p>Describes the last time that the user logged into their account. The value is determined as epoch time in milliseconds.</p>
         pub fn last_login_time(mut self, input: i64) -> Self {
@@ -1253,25 +1229,42 @@ pub mod get_user_output {
         }
         /// <p>Describes the last time that the user logged into their account. The value is determined as epoch time in milliseconds.</p>
         pub fn set_last_login_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_login_time = input;
-            self
+            self.last_login_time = input; self
         }
         /// Consumes the builder and constructs a [`GetUserOutput`](crate::output::GetUserOutput).
         pub fn build(self) -> crate::output::GetUserOutput {
             crate::output::GetUserOutput {
-                user_id: self.user_id,
-                status: self.status,
-                first_name: self.first_name,
-                last_name: self.last_name,
-                email_address: self.email_address,
-                r#type: self.r#type,
-                api_access: self.api_access,
-                api_access_principal_arn: self.api_access_principal_arn,
-                create_time: self.create_time.unwrap_or_default(),
-                last_enabled_time: self.last_enabled_time.unwrap_or_default(),
-                last_disabled_time: self.last_disabled_time.unwrap_or_default(),
-                last_modified_time: self.last_modified_time.unwrap_or_default(),
-                last_login_time: self.last_login_time.unwrap_or_default(),
+                user_id: self.user_id
+                ,
+                status: self.status
+                ,
+                first_name: self.first_name
+                ,
+                last_name: self.last_name
+                ,
+                email_address: self.email_address
+                ,
+                r#type: self.r#type
+                ,
+                api_access: self.api_access
+                ,
+                api_access_principal_arn: self.api_access_principal_arn
+                ,
+                create_time: self.create_time
+                    .unwrap_or_default()
+                ,
+                last_enabled_time: self.last_enabled_time
+                    .unwrap_or_default()
+                ,
+                last_disabled_time: self.last_disabled_time
+                    .unwrap_or_default()
+                ,
+                last_modified_time: self.last_modified_time
+                    .unwrap_or_default()
+                ,
+                last_login_time: self.last_login_time
+                    .unwrap_or_default()
+                ,
             }
         }
     }
@@ -1294,6 +1287,8 @@ pub mod get_user_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetUserOutput {
     /// Creates a new builder-style object to manufacture [`GetUserOutput`](crate::output::GetUserOutput).
@@ -1305,7 +1300,7 @@ impl GetUserOutput {
 /// Response for GetProgrammaticAccessCredentials operation
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProgrammaticAccessCredentialsOutput {
+pub struct GetProgrammaticAccessCredentialsOutput  {
     /// <p>Returns the programmatic credentials.</p>
     #[doc(hidden)]
     pub credentials: std::option::Option<crate::model::Credentials>,
@@ -1315,7 +1310,7 @@ pub struct GetProgrammaticAccessCredentialsOutput {
 }
 impl GetProgrammaticAccessCredentialsOutput {
     /// <p>Returns the programmatic credentials.</p>
-    pub fn credentials(&self) -> std::option::Option<&crate::model::Credentials> {
+    pub fn credentials(&self) -> std::option::Option<& crate::model::Credentials> {
         self.credentials.as_ref()
     }
     /// <p>Returns the duration in which the credentials will remain valid.</p>
@@ -1325,7 +1320,7 @@ impl GetProgrammaticAccessCredentialsOutput {
 }
 /// See [`GetProgrammaticAccessCredentialsOutput`](crate::output::GetProgrammaticAccessCredentialsOutput).
 pub mod get_programmatic_access_credentials_output {
-
+    
     /// A builder for [`GetProgrammaticAccessCredentialsOutput`](crate::output::GetProgrammaticAccessCredentialsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1339,12 +1334,8 @@ pub mod get_programmatic_access_credentials_output {
             self
         }
         /// <p>Returns the programmatic credentials.</p>
-        pub fn set_credentials(
-            mut self,
-            input: std::option::Option<crate::model::Credentials>,
-        ) -> Self {
-            self.credentials = input;
-            self
+        pub fn set_credentials(mut self, input: std::option::Option<crate::model::Credentials>) -> Self {
+            self.credentials = input; self
         }
         /// <p>Returns the duration in which the credentials will remain valid.</p>
         pub fn duration_in_minutes(mut self, input: i64) -> Self {
@@ -1353,17 +1344,21 @@ pub mod get_programmatic_access_credentials_output {
         }
         /// <p>Returns the duration in which the credentials will remain valid.</p>
         pub fn set_duration_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
-            self.duration_in_minutes = input;
-            self
+            self.duration_in_minutes = input; self
         }
         /// Consumes the builder and constructs a [`GetProgrammaticAccessCredentialsOutput`](crate::output::GetProgrammaticAccessCredentialsOutput).
         pub fn build(self) -> crate::output::GetProgrammaticAccessCredentialsOutput {
             crate::output::GetProgrammaticAccessCredentialsOutput {
-                credentials: self.credentials,
-                duration_in_minutes: self.duration_in_minutes.unwrap_or_default(),
+                credentials: self.credentials
+                ,
+                duration_in_minutes: self.duration_in_minutes
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl GetProgrammaticAccessCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`GetProgrammaticAccessCredentialsOutput`](crate::output::GetProgrammaticAccessCredentialsOutput).
@@ -1375,20 +1370,20 @@ impl GetProgrammaticAccessCredentialsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPermissionGroupOutput {
+pub struct GetPermissionGroupOutput  {
     /// <p>The structure for a permission group.</p>
     #[doc(hidden)]
     pub permission_group: std::option::Option<crate::model::PermissionGroup>,
 }
 impl GetPermissionGroupOutput {
     /// <p>The structure for a permission group.</p>
-    pub fn permission_group(&self) -> std::option::Option<&crate::model::PermissionGroup> {
+    pub fn permission_group(&self) -> std::option::Option<& crate::model::PermissionGroup> {
         self.permission_group.as_ref()
     }
 }
 /// See [`GetPermissionGroupOutput`](crate::output::GetPermissionGroupOutput).
 pub mod get_permission_group_output {
-
+    
     /// A builder for [`GetPermissionGroupOutput`](crate::output::GetPermissionGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1401,20 +1396,19 @@ pub mod get_permission_group_output {
             self
         }
         /// <p>The structure for a permission group.</p>
-        pub fn set_permission_group(
-            mut self,
-            input: std::option::Option<crate::model::PermissionGroup>,
-        ) -> Self {
-            self.permission_group = input;
-            self
+        pub fn set_permission_group(mut self, input: std::option::Option<crate::model::PermissionGroup>) -> Self {
+            self.permission_group = input; self
         }
         /// Consumes the builder and constructs a [`GetPermissionGroupOutput`](crate::output::GetPermissionGroupOutput).
         pub fn build(self) -> crate::output::GetPermissionGroupOutput {
             crate::output::GetPermissionGroupOutput {
-                permission_group: self.permission_group,
+                permission_group: self.permission_group
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPermissionGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetPermissionGroupOutput`](crate::output::GetPermissionGroupOutput).
@@ -1426,7 +1420,7 @@ impl GetPermissionGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExternalDataViewAccessDetailsOutput {
+pub struct GetExternalDataViewAccessDetailsOutput  {
     /// <p>The credentials required to access the external Dataview from the S3 location.</p>
     #[doc(hidden)]
     pub credentials: std::option::Option<crate::model::AwsCredentials>,
@@ -1436,17 +1430,17 @@ pub struct GetExternalDataViewAccessDetailsOutput {
 }
 impl GetExternalDataViewAccessDetailsOutput {
     /// <p>The credentials required to access the external Dataview from the S3 location.</p>
-    pub fn credentials(&self) -> std::option::Option<&crate::model::AwsCredentials> {
+    pub fn credentials(&self) -> std::option::Option<& crate::model::AwsCredentials> {
         self.credentials.as_ref()
     }
     /// <p>The location where the external Dataview is stored.</p>
-    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn s3_location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.s3_location.as_ref()
     }
 }
 /// See [`GetExternalDataViewAccessDetailsOutput`](crate::output::GetExternalDataViewAccessDetailsOutput).
 pub mod get_external_data_view_access_details_output {
-
+    
     /// A builder for [`GetExternalDataViewAccessDetailsOutput`](crate::output::GetExternalDataViewAccessDetailsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1460,12 +1454,8 @@ pub mod get_external_data_view_access_details_output {
             self
         }
         /// <p>The credentials required to access the external Dataview from the S3 location.</p>
-        pub fn set_credentials(
-            mut self,
-            input: std::option::Option<crate::model::AwsCredentials>,
-        ) -> Self {
-            self.credentials = input;
-            self
+        pub fn set_credentials(mut self, input: std::option::Option<crate::model::AwsCredentials>) -> Self {
+            self.credentials = input; self
         }
         /// <p>The location where the external Dataview is stored.</p>
         pub fn s3_location(mut self, input: crate::model::S3Location) -> Self {
@@ -1473,21 +1463,21 @@ pub mod get_external_data_view_access_details_output {
             self
         }
         /// <p>The location where the external Dataview is stored.</p>
-        pub fn set_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.s3_location = input;
-            self
+        pub fn set_s3_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.s3_location = input; self
         }
         /// Consumes the builder and constructs a [`GetExternalDataViewAccessDetailsOutput`](crate::output::GetExternalDataViewAccessDetailsOutput).
         pub fn build(self) -> crate::output::GetExternalDataViewAccessDetailsOutput {
             crate::output::GetExternalDataViewAccessDetailsOutput {
-                credentials: self.credentials,
-                s3_location: self.s3_location,
+                credentials: self.credentials
+                ,
+                s3_location: self.s3_location
+                ,
             }
         }
     }
+    
+    
 }
 impl GetExternalDataViewAccessDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetExternalDataViewAccessDetailsOutput`](crate::output::GetExternalDataViewAccessDetailsOutput).
@@ -1499,7 +1489,7 @@ impl GetExternalDataViewAccessDetailsOutput {
 /// Response from retrieving a dataview, which includes details on the target database and table name
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataViewOutput {
+pub struct GetDataViewOutput  {
     /// <p>Flag to indicate Dataview should be updated automatically.</p>
     #[doc(hidden)]
     pub auto_update: bool,
@@ -1533,16 +1523,16 @@ pub struct GetDataViewOutput {
     /// <p>Options that define the destination type for the Dataview.</p>
     #[doc(hidden)]
     pub destination_type_params: std::option::Option<crate::model::DataViewDestinationTypeParams>,
-    /// <p>The status of a Dataview creation.</p>
-    /// <ul>
-    /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li>
-    /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li>
-    /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li>
-    /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li>
-    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li>
+    /// <p>The status of a Dataview creation.</p> 
+    /// <ul> 
+    /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li> 
+    /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li> 
+    /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li> 
+    /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li> 
+    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::DataViewStatus>,
@@ -1553,11 +1543,11 @@ impl GetDataViewOutput {
         self.auto_update
     }
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn partition_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn partition_columns(&self) -> std::option::Option<& [std::string::String]> {
         self.partition_columns.as_deref()
     }
     /// <p>The unique identifier for the Dataset used in the Dataview.</p>
-    pub fn dataset_id(&self) -> std::option::Option<&str> {
+    pub fn dataset_id(&self) -> std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
     /// <p>Time range to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -1565,7 +1555,7 @@ impl GetDataViewOutput {
         self.as_of_timestamp
     }
     /// <p>Information about an error that occurred for the Dataview.</p>
-    pub fn error_info(&self) -> std::option::Option<&crate::model::DataViewErrorInfo> {
+    pub fn error_info(&self) -> std::option::Option<& crate::model::DataViewErrorInfo> {
         self.error_info.as_ref()
     }
     /// <p>The last time that a Dataview was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -1577,41 +1567,39 @@ impl GetDataViewOutput {
         self.create_time
     }
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn sort_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sort_columns(&self) -> std::option::Option<& [std::string::String]> {
         self.sort_columns.as_deref()
     }
     /// <p>The unique identifier for the Dataview.</p>
-    pub fn data_view_id(&self) -> std::option::Option<&str> {
+    pub fn data_view_id(&self) -> std::option::Option<& str> {
         self.data_view_id.as_deref()
     }
     /// <p>The ARN identifier of the Dataview.</p>
-    pub fn data_view_arn(&self) -> std::option::Option<&str> {
+    pub fn data_view_arn(&self) -> std::option::Option<& str> {
         self.data_view_arn.as_deref()
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn destination_type_params(
-        &self,
-    ) -> std::option::Option<&crate::model::DataViewDestinationTypeParams> {
+    pub fn destination_type_params(&self) -> std::option::Option<& crate::model::DataViewDestinationTypeParams> {
         self.destination_type_params.as_ref()
     }
-    /// <p>The status of a Dataview creation.</p>
-    /// <ul>
-    /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li>
-    /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li>
-    /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li>
-    /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li>
-    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li>
+    /// <p>The status of a Dataview creation.</p> 
+    /// <ul> 
+    /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li> 
+    /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li> 
+    /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li> 
+    /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li> 
+    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::DataViewStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DataViewStatus> {
         self.status.as_ref()
     }
 }
 /// See [`GetDataViewOutput`](crate::output::GetDataViewOutput).
 pub mod get_data_view_output {
-
+    
     /// A builder for [`GetDataViewOutput`](crate::output::GetDataViewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1625,8 +1613,7 @@ pub mod get_data_view_output {
         pub(crate) sort_columns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) data_view_id: std::option::Option<std::string::String>,
         pub(crate) data_view_arn: std::option::Option<std::string::String>,
-        pub(crate) destination_type_params:
-            std::option::Option<crate::model::DataViewDestinationTypeParams>,
+        pub(crate) destination_type_params: std::option::Option<crate::model::DataViewDestinationTypeParams>,
         pub(crate) status: std::option::Option<crate::model::DataViewStatus>,
     }
     impl Builder {
@@ -1637,8 +1624,7 @@ pub mod get_data_view_output {
         }
         /// <p>Flag to indicate Dataview should be updated automatically.</p>
         pub fn set_auto_update(mut self, input: std::option::Option<bool>) -> Self {
-            self.auto_update = input;
-            self
+            self.auto_update = input; self
         }
         /// Appends an item to `partition_columns`.
         ///
@@ -1647,17 +1633,13 @@ pub mod get_data_view_output {
         /// <p>Ordered set of column names used to partition data.</p>
         pub fn partition_columns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.partition_columns.unwrap_or_default();
-            v.push(input.into());
-            self.partition_columns = Some(v);
-            self
+                            v.push(input.into());
+                            self.partition_columns = Some(v);
+                            self
         }
         /// <p>Ordered set of column names used to partition data.</p>
-        pub fn set_partition_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.partition_columns = input;
-            self
+        pub fn set_partition_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.partition_columns = input; self
         }
         /// <p>The unique identifier for the Dataset used in the Dataview.</p>
         pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1666,8 +1648,7 @@ pub mod get_data_view_output {
         }
         /// <p>The unique identifier for the Dataset used in the Dataview.</p>
         pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_id = input;
-            self
+            self.dataset_id = input; self
         }
         /// <p>Time range to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn as_of_timestamp(mut self, input: i64) -> Self {
@@ -1676,8 +1657,7 @@ pub mod get_data_view_output {
         }
         /// <p>Time range to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn set_as_of_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-            self.as_of_timestamp = input;
-            self
+            self.as_of_timestamp = input; self
         }
         /// <p>Information about an error that occurred for the Dataview.</p>
         pub fn error_info(mut self, input: crate::model::DataViewErrorInfo) -> Self {
@@ -1685,12 +1665,8 @@ pub mod get_data_view_output {
             self
         }
         /// <p>Information about an error that occurred for the Dataview.</p>
-        pub fn set_error_info(
-            mut self,
-            input: std::option::Option<crate::model::DataViewErrorInfo>,
-        ) -> Self {
-            self.error_info = input;
-            self
+        pub fn set_error_info(mut self, input: std::option::Option<crate::model::DataViewErrorInfo>) -> Self {
+            self.error_info = input; self
         }
         /// <p>The last time that a Dataview was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn last_modified_time(mut self, input: i64) -> Self {
@@ -1699,8 +1675,7 @@ pub mod get_data_view_output {
         }
         /// <p>The last time that a Dataview was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_time = input;
-            self
+            self.last_modified_time = input; self
         }
         /// <p>The timestamp at which the Dataview was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn create_time(mut self, input: i64) -> Self {
@@ -1709,8 +1684,7 @@ pub mod get_data_view_output {
         }
         /// <p>The timestamp at which the Dataview was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn set_create_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.create_time = input;
-            self
+            self.create_time = input; self
         }
         /// Appends an item to `sort_columns`.
         ///
@@ -1719,17 +1693,13 @@ pub mod get_data_view_output {
         /// <p>Columns to be used for sorting the data.</p>
         pub fn sort_columns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sort_columns.unwrap_or_default();
-            v.push(input.into());
-            self.sort_columns = Some(v);
-            self
+                            v.push(input.into());
+                            self.sort_columns = Some(v);
+                            self
         }
         /// <p>Columns to be used for sorting the data.</p>
-        pub fn set_sort_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.sort_columns = input;
-            self
+        pub fn set_sort_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.sort_columns = input; self
         }
         /// <p>The unique identifier for the Dataview.</p>
         pub fn data_view_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1738,8 +1708,7 @@ pub mod get_data_view_output {
         }
         /// <p>The unique identifier for the Dataview.</p>
         pub fn set_data_view_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_view_id = input;
-            self
+            self.data_view_id = input; self
         }
         /// <p>The ARN identifier of the Dataview.</p>
         pub fn data_view_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1747,80 +1716,82 @@ pub mod get_data_view_output {
             self
         }
         /// <p>The ARN identifier of the Dataview.</p>
-        pub fn set_data_view_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_view_arn = input;
-            self
+        pub fn set_data_view_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_view_arn = input; self
         }
         /// <p>Options that define the destination type for the Dataview.</p>
-        pub fn destination_type_params(
-            mut self,
-            input: crate::model::DataViewDestinationTypeParams,
-        ) -> Self {
+        pub fn destination_type_params(mut self, input: crate::model::DataViewDestinationTypeParams) -> Self {
             self.destination_type_params = Some(input);
             self
         }
         /// <p>Options that define the destination type for the Dataview.</p>
-        pub fn set_destination_type_params(
-            mut self,
-            input: std::option::Option<crate::model::DataViewDestinationTypeParams>,
-        ) -> Self {
-            self.destination_type_params = input;
-            self
+        pub fn set_destination_type_params(mut self, input: std::option::Option<crate::model::DataViewDestinationTypeParams>) -> Self {
+            self.destination_type_params = input; self
         }
-        /// <p>The status of a Dataview creation.</p>
-        /// <ul>
-        /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li>
-        /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li>
-        /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li>
-        /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li>
-        /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li>
-        /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li>
-        /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li>
-        /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li>
+        /// <p>The status of a Dataview creation.</p> 
+        /// <ul> 
+        /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li> 
+        /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li> 
+        /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li> 
+        /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li> 
+        /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li> 
+        /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li> 
+        /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::DataViewStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of a Dataview creation.</p>
-        /// <ul>
-        /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li>
-        /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li>
-        /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li>
-        /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li>
-        /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li>
-        /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li>
-        /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li>
-        /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li>
+        /// <p>The status of a Dataview creation.</p> 
+        /// <ul> 
+        /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li> 
+        /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li> 
+        /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li> 
+        /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li> 
+        /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li> 
+        /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li> 
+        /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DataViewStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DataViewStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`GetDataViewOutput`](crate::output::GetDataViewOutput).
         pub fn build(self) -> crate::output::GetDataViewOutput {
             crate::output::GetDataViewOutput {
-                auto_update: self.auto_update.unwrap_or_default(),
-                partition_columns: self.partition_columns,
-                dataset_id: self.dataset_id,
-                as_of_timestamp: self.as_of_timestamp,
-                error_info: self.error_info,
-                last_modified_time: self.last_modified_time.unwrap_or_default(),
-                create_time: self.create_time.unwrap_or_default(),
-                sort_columns: self.sort_columns,
-                data_view_id: self.data_view_id,
-                data_view_arn: self.data_view_arn,
-                destination_type_params: self.destination_type_params,
-                status: self.status,
+                auto_update: self.auto_update
+                    .unwrap_or_default()
+                ,
+                partition_columns: self.partition_columns
+                ,
+                dataset_id: self.dataset_id
+                ,
+                as_of_timestamp: self.as_of_timestamp
+                ,
+                error_info: self.error_info
+                ,
+                last_modified_time: self.last_modified_time
+                    .unwrap_or_default()
+                ,
+                create_time: self.create_time
+                    .unwrap_or_default()
+                ,
+                sort_columns: self.sort_columns
+                ,
+                data_view_id: self.data_view_id
+                ,
+                data_view_arn: self.data_view_arn
+                ,
+                destination_type_params: self.destination_type_params
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDataViewOutput {
     /// Creates a new builder-style object to manufacture [`GetDataViewOutput`](crate::output::GetDataViewOutput).
@@ -1832,7 +1803,7 @@ impl GetDataViewOutput {
 /// Response for the GetDataset operation
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDatasetOutput {
+pub struct GetDatasetOutput  {
     /// <p>The unique identifier for a Dataset.</p>
     #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
@@ -1842,10 +1813,10 @@ pub struct GetDatasetOutput {
     /// <p>Display title for a Dataset.</p>
     #[doc(hidden)]
     pub dataset_title: std::option::Option<std::string::String>,
-    /// <p>The format in which Dataset data is structured.</p>
-    /// <ul>
-    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
-    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+    /// <p>The format in which Dataset data is structured.</p> 
+    /// <ul> 
+    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> 
+    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub kind: std::option::Option<crate::model::DatasetKind>,
@@ -1864,39 +1835,39 @@ pub struct GetDatasetOutput {
     /// <p>The unique resource identifier for a Dataset.</p>
     #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
-    /// <p>Status of the Dataset creation.</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – Dataset is pending creation.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Dataset creation has failed.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li>
-    /// <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li>
+    /// <p>Status of the Dataset creation.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – Dataset is pending creation.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – Dataset creation has failed.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li> 
+    /// <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::DatasetStatus>,
 }
 impl GetDatasetOutput {
     /// <p>The unique identifier for a Dataset.</p>
-    pub fn dataset_id(&self) -> std::option::Option<&str> {
+    pub fn dataset_id(&self) -> std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
     /// <p>The ARN identifier of the Dataset.</p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>Display title for a Dataset.</p>
-    pub fn dataset_title(&self) -> std::option::Option<&str> {
+    pub fn dataset_title(&self) -> std::option::Option<& str> {
         self.dataset_title.as_deref()
     }
-    /// <p>The format in which Dataset data is structured.</p>
-    /// <ul>
-    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
-    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+    /// <p>The format in which Dataset data is structured.</p> 
+    /// <ul> 
+    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> 
+    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li> 
     /// </ul>
-    pub fn kind(&self) -> std::option::Option<&crate::model::DatasetKind> {
+    pub fn kind(&self) -> std::option::Option<& crate::model::DatasetKind> {
         self.kind.as_ref()
     }
     /// <p>A description of the Dataset.</p>
-    pub fn dataset_description(&self) -> std::option::Option<&str> {
+    pub fn dataset_description(&self) -> std::option::Option<& str> {
         self.dataset_description.as_deref()
     }
     /// <p>The timestamp at which the Dataset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -1908,27 +1879,27 @@ impl GetDatasetOutput {
         self.last_modified_time
     }
     /// <p>Definition for a schema on a tabular Dataset.</p>
-    pub fn schema_definition(&self) -> std::option::Option<&crate::model::SchemaUnion> {
+    pub fn schema_definition(&self) -> std::option::Option<& crate::model::SchemaUnion> {
         self.schema_definition.as_ref()
     }
     /// <p>The unique resource identifier for a Dataset.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
-    /// <p>Status of the Dataset creation.</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – Dataset is pending creation.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Dataset creation has failed.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li>
-    /// <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li>
+    /// <p>Status of the Dataset creation.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – Dataset is pending creation.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – Dataset creation has failed.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li> 
+    /// <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DatasetStatus> {
         self.status.as_ref()
     }
 }
 /// See [`GetDatasetOutput`](crate::output::GetDatasetOutput).
 pub mod get_dataset_output {
-
+    
     /// A builder for [`GetDatasetOutput`](crate::output::GetDatasetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1951,8 +1922,7 @@ pub mod get_dataset_output {
         }
         /// <p>The unique identifier for a Dataset.</p>
         pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_id = input;
-            self
+            self.dataset_id = input; self
         }
         /// <p>The ARN identifier of the Dataset.</p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1961,8 +1931,7 @@ pub mod get_dataset_output {
         }
         /// <p>The ARN identifier of the Dataset.</p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_arn = input;
-            self
+            self.dataset_arn = input; self
         }
         /// <p>Display title for a Dataset.</p>
         pub fn dataset_title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1970,30 +1939,25 @@ pub mod get_dataset_output {
             self
         }
         /// <p>Display title for a Dataset.</p>
-        pub fn set_dataset_title(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_title = input;
-            self
+        pub fn set_dataset_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_title = input; self
         }
-        /// <p>The format in which Dataset data is structured.</p>
-        /// <ul>
-        /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
-        /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+        /// <p>The format in which Dataset data is structured.</p> 
+        /// <ul> 
+        /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> 
+        /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li> 
         /// </ul>
         pub fn kind(mut self, input: crate::model::DatasetKind) -> Self {
             self.kind = Some(input);
             self
         }
-        /// <p>The format in which Dataset data is structured.</p>
-        /// <ul>
-        /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
-        /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+        /// <p>The format in which Dataset data is structured.</p> 
+        /// <ul> 
+        /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> 
+        /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li> 
         /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::DatasetKind>) -> Self {
-            self.kind = input;
-            self
+            self.kind = input; self
         }
         /// <p>A description of the Dataset.</p>
         pub fn dataset_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2001,12 +1965,8 @@ pub mod get_dataset_output {
             self
         }
         /// <p>A description of the Dataset.</p>
-        pub fn set_dataset_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataset_description = input;
-            self
+        pub fn set_dataset_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_description = input; self
         }
         /// <p>The timestamp at which the Dataset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn create_time(mut self, input: i64) -> Self {
@@ -2015,8 +1975,7 @@ pub mod get_dataset_output {
         }
         /// <p>The timestamp at which the Dataset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn set_create_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.create_time = input;
-            self
+            self.create_time = input; self
         }
         /// <p>The last time that the Dataset was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn last_modified_time(mut self, input: i64) -> Self {
@@ -2025,8 +1984,7 @@ pub mod get_dataset_output {
         }
         /// <p>The last time that the Dataset was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_time = input;
-            self
+            self.last_modified_time = input; self
         }
         /// <p>Definition for a schema on a tabular Dataset.</p>
         pub fn schema_definition(mut self, input: crate::model::SchemaUnion) -> Self {
@@ -2034,12 +1992,8 @@ pub mod get_dataset_output {
             self
         }
         /// <p>Definition for a schema on a tabular Dataset.</p>
-        pub fn set_schema_definition(
-            mut self,
-            input: std::option::Option<crate::model::SchemaUnion>,
-        ) -> Self {
-            self.schema_definition = input;
-            self
+        pub fn set_schema_definition(mut self, input: std::option::Option<crate::model::SchemaUnion>) -> Self {
+            self.schema_definition = input; self
         }
         /// <p>The unique resource identifier for a Dataset.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2048,50 +2002,59 @@ pub mod get_dataset_output {
         }
         /// <p>The unique resource identifier for a Dataset.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
-        /// <p>Status of the Dataset creation.</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> – Dataset is pending creation.</p> </li>
-        /// <li> <p> <code>FAILED</code> – Dataset creation has failed.</p> </li>
-        /// <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li>
-        /// <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li>
+        /// <p>Status of the Dataset creation.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> – Dataset is pending creation.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – Dataset creation has failed.</p> </li> 
+        /// <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li> 
+        /// <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::DatasetStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Status of the Dataset creation.</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> – Dataset is pending creation.</p> </li>
-        /// <li> <p> <code>FAILED</code> – Dataset creation has failed.</p> </li>
-        /// <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li>
-        /// <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li>
+        /// <p>Status of the Dataset creation.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> – Dataset is pending creation.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – Dataset creation has failed.</p> </li> 
+        /// <li> <p> <code>SUCCESS</code> – Dataset creation has succeeded.</p> </li> 
+        /// <li> <p> <code>RUNNING</code> – Dataset creation is running.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DatasetStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DatasetStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`GetDatasetOutput`](crate::output::GetDatasetOutput).
         pub fn build(self) -> crate::output::GetDatasetOutput {
             crate::output::GetDatasetOutput {
-                dataset_id: self.dataset_id,
-                dataset_arn: self.dataset_arn,
-                dataset_title: self.dataset_title,
-                kind: self.kind,
-                dataset_description: self.dataset_description,
-                create_time: self.create_time.unwrap_or_default(),
-                last_modified_time: self.last_modified_time.unwrap_or_default(),
-                schema_definition: self.schema_definition,
-                alias: self.alias,
-                status: self.status,
+                dataset_id: self.dataset_id
+                ,
+                dataset_arn: self.dataset_arn
+                ,
+                dataset_title: self.dataset_title
+                ,
+                kind: self.kind
+                ,
+                dataset_description: self.dataset_description
+                ,
+                create_time: self.create_time
+                    .unwrap_or_default()
+                ,
+                last_modified_time: self.last_modified_time
+                    .unwrap_or_default()
+                ,
+                schema_definition: self.schema_definition
+                ,
+                alias: self.alias
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDatasetOutput {
     /// Creates a new builder-style object to manufacture [`GetDatasetOutput`](crate::output::GetDatasetOutput).
@@ -2103,7 +2066,7 @@ impl GetDatasetOutput {
 /// The response from a describe changeset operation
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetChangesetOutput {
+pub struct GetChangesetOutput  {
     /// <p>The unique identifier for a Changeset.</p>
     #[doc(hidden)]
     pub changeset_id: std::option::Option<std::string::String>,
@@ -2113,22 +2076,20 @@ pub struct GetChangesetOutput {
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
     #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
-    /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
-    /// <ul>
-    /// <li> <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
-    /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
-    /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
+    /// <p>Type that indicates how a Changeset is applied to a Dataset.</p> 
+    /// <ul> 
+    /// <li> <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p> </li> 
+    /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li> 
+    /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub change_type: std::option::Option<crate::model::ChangeType>,
     /// <p>Options that define the location of the data being ingested.</p>
     #[doc(hidden)]
-    pub source_params:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub source_params: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Structure of the source file(s).</p>
     #[doc(hidden)]
-    pub format_params:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub format_params: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp at which the Changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     #[doc(hidden)]
     pub create_time: i64,
@@ -2153,38 +2114,32 @@ pub struct GetChangesetOutput {
 }
 impl GetChangesetOutput {
     /// <p>The unique identifier for a Changeset.</p>
-    pub fn changeset_id(&self) -> std::option::Option<&str> {
+    pub fn changeset_id(&self) -> std::option::Option<& str> {
         self.changeset_id.as_deref()
     }
     /// <p>The ARN identifier of the Changeset.</p>
-    pub fn changeset_arn(&self) -> std::option::Option<&str> {
+    pub fn changeset_arn(&self) -> std::option::Option<& str> {
         self.changeset_arn.as_deref()
     }
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
-    pub fn dataset_id(&self) -> std::option::Option<&str> {
+    pub fn dataset_id(&self) -> std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
-    /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
-    /// <ul>
-    /// <li> <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
-    /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
-    /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
+    /// <p>Type that indicates how a Changeset is applied to a Dataset.</p> 
+    /// <ul> 
+    /// <li> <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p> </li> 
+    /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li> 
+    /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li> 
     /// </ul>
-    pub fn change_type(&self) -> std::option::Option<&crate::model::ChangeType> {
+    pub fn change_type(&self) -> std::option::Option<& crate::model::ChangeType> {
         self.change_type.as_ref()
     }
     /// <p>Options that define the location of the data being ingested.</p>
-    pub fn source_params(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn source_params(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.source_params.as_ref()
     }
     /// <p>Structure of the source file(s).</p>
-    pub fn format_params(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn format_params(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.format_params.as_ref()
     }
     /// <p>The timestamp at which the Changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -2192,11 +2147,11 @@ impl GetChangesetOutput {
         self.create_time
     }
     /// <p>The status of Changeset creation operation.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::IngestionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::IngestionStatus> {
         self.status.as_ref()
     }
     /// <p>The structure with error messages.</p>
-    pub fn error_info(&self) -> std::option::Option<&crate::model::ChangesetErrorInfo> {
+    pub fn error_info(&self) -> std::option::Option<& crate::model::ChangesetErrorInfo> {
         self.error_info.as_ref()
     }
     /// <p>Time until which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -2208,17 +2163,17 @@ impl GetChangesetOutput {
         self.active_from_timestamp
     }
     /// <p>The unique identifier of the Changeset that is being updated.</p>
-    pub fn updates_changeset_id(&self) -> std::option::Option<&str> {
+    pub fn updates_changeset_id(&self) -> std::option::Option<& str> {
         self.updates_changeset_id.as_deref()
     }
     /// <p>The unique identifier of the updated Changeset.</p>
-    pub fn updated_by_changeset_id(&self) -> std::option::Option<&str> {
+    pub fn updated_by_changeset_id(&self) -> std::option::Option<& str> {
         self.updated_by_changeset_id.as_deref()
     }
 }
 /// See [`GetChangesetOutput`](crate::output::GetChangesetOutput).
 pub mod get_changeset_output {
-
+    
     /// A builder for [`GetChangesetOutput`](crate::output::GetChangesetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2226,12 +2181,8 @@ pub mod get_changeset_output {
         pub(crate) changeset_arn: std::option::Option<std::string::String>,
         pub(crate) dataset_id: std::option::Option<std::string::String>,
         pub(crate) change_type: std::option::Option<crate::model::ChangeType>,
-        pub(crate) source_params: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) format_params: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) source_params: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) format_params: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) create_time: std::option::Option<i64>,
         pub(crate) status: std::option::Option<crate::model::IngestionStatus>,
         pub(crate) error_info: std::option::Option<crate::model::ChangesetErrorInfo>,
@@ -2248,8 +2199,7 @@ pub mod get_changeset_output {
         }
         /// <p>The unique identifier for a Changeset.</p>
         pub fn set_changeset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.changeset_id = input;
-            self
+            self.changeset_id = input; self
         }
         /// <p>The ARN identifier of the Changeset.</p>
         pub fn changeset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2257,12 +2207,8 @@ pub mod get_changeset_output {
             self
         }
         /// <p>The ARN identifier of the Changeset.</p>
-        pub fn set_changeset_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.changeset_arn = input;
-            self
+        pub fn set_changeset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.changeset_arn = input; self
         }
         /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
         pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2271,81 +2217,56 @@ pub mod get_changeset_output {
         }
         /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
         pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_id = input;
-            self
+            self.dataset_id = input; self
         }
-        /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
-        /// <ul>
-        /// <li> <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
-        /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
-        /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
+        /// <p>Type that indicates how a Changeset is applied to a Dataset.</p> 
+        /// <ul> 
+        /// <li> <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p> </li> 
+        /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li> 
+        /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li> 
         /// </ul>
         pub fn change_type(mut self, input: crate::model::ChangeType) -> Self {
             self.change_type = Some(input);
             self
         }
-        /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
-        /// <ul>
-        /// <li> <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
-        /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
-        /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
+        /// <p>Type that indicates how a Changeset is applied to a Dataset.</p> 
+        /// <ul> 
+        /// <li> <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p> </li> 
+        /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li> 
+        /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li> 
         /// </ul>
-        pub fn set_change_type(
-            mut self,
-            input: std::option::Option<crate::model::ChangeType>,
-        ) -> Self {
-            self.change_type = input;
-            self
+        pub fn set_change_type(mut self, input: std::option::Option<crate::model::ChangeType>) -> Self {
+            self.change_type = input; self
         }
         /// Adds a key-value pair to `source_params`.
         ///
         /// To override the contents of this collection use [`set_source_params`](Self::set_source_params).
         ///
         /// <p>Options that define the location of the data being ingested.</p>
-        pub fn source_params(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn source_params(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.source_params.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.source_params = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.source_params = Some(hash_map);
+                            self
         }
         /// <p>Options that define the location of the data being ingested.</p>
-        pub fn set_source_params(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.source_params = input;
-            self
+        pub fn set_source_params(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.source_params = input; self
         }
         /// Adds a key-value pair to `format_params`.
         ///
         /// To override the contents of this collection use [`set_format_params`](Self::set_format_params).
         ///
         /// <p>Structure of the source file(s).</p>
-        pub fn format_params(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn format_params(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.format_params.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.format_params = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.format_params = Some(hash_map);
+                            self
         }
         /// <p>Structure of the source file(s).</p>
-        pub fn set_format_params(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.format_params = input;
-            self
+        pub fn set_format_params(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.format_params = input; self
         }
         /// <p>The timestamp at which the Changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn create_time(mut self, input: i64) -> Self {
@@ -2354,8 +2275,7 @@ pub mod get_changeset_output {
         }
         /// <p>The timestamp at which the Changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn set_create_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.create_time = input;
-            self
+            self.create_time = input; self
         }
         /// <p>The status of Changeset creation operation.</p>
         pub fn status(mut self, input: crate::model::IngestionStatus) -> Self {
@@ -2363,12 +2283,8 @@ pub mod get_changeset_output {
             self
         }
         /// <p>The status of Changeset creation operation.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::IngestionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::IngestionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The structure with error messages.</p>
         pub fn error_info(mut self, input: crate::model::ChangesetErrorInfo) -> Self {
@@ -2376,12 +2292,8 @@ pub mod get_changeset_output {
             self
         }
         /// <p>The structure with error messages.</p>
-        pub fn set_error_info(
-            mut self,
-            input: std::option::Option<crate::model::ChangesetErrorInfo>,
-        ) -> Self {
-            self.error_info = input;
-            self
+        pub fn set_error_info(mut self, input: std::option::Option<crate::model::ChangesetErrorInfo>) -> Self {
+            self.error_info = input; self
         }
         /// <p>Time until which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn active_until_timestamp(mut self, input: i64) -> Self {
@@ -2390,8 +2302,7 @@ pub mod get_changeset_output {
         }
         /// <p>Time until which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn set_active_until_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-            self.active_until_timestamp = input;
-            self
+            self.active_until_timestamp = input; self
         }
         /// <p>Beginning time from which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn active_from_timestamp(mut self, input: i64) -> Self {
@@ -2400,8 +2311,7 @@ pub mod get_changeset_output {
         }
         /// <p>Beginning time from which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn set_active_from_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-            self.active_from_timestamp = input;
-            self
+            self.active_from_timestamp = input; self
         }
         /// <p>The unique identifier of the Changeset that is being updated.</p>
         pub fn updates_changeset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2409,12 +2319,8 @@ pub mod get_changeset_output {
             self
         }
         /// <p>The unique identifier of the Changeset that is being updated.</p>
-        pub fn set_updates_changeset_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.updates_changeset_id = input;
-            self
+        pub fn set_updates_changeset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.updates_changeset_id = input; self
         }
         /// <p>The unique identifier of the updated Changeset.</p>
         pub fn updated_by_changeset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2422,32 +2328,44 @@ pub mod get_changeset_output {
             self
         }
         /// <p>The unique identifier of the updated Changeset.</p>
-        pub fn set_updated_by_changeset_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.updated_by_changeset_id = input;
-            self
+        pub fn set_updated_by_changeset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.updated_by_changeset_id = input; self
         }
         /// Consumes the builder and constructs a [`GetChangesetOutput`](crate::output::GetChangesetOutput).
         pub fn build(self) -> crate::output::GetChangesetOutput {
             crate::output::GetChangesetOutput {
-                changeset_id: self.changeset_id,
-                changeset_arn: self.changeset_arn,
-                dataset_id: self.dataset_id,
-                change_type: self.change_type,
-                source_params: self.source_params,
-                format_params: self.format_params,
-                create_time: self.create_time.unwrap_or_default(),
-                status: self.status,
-                error_info: self.error_info,
-                active_until_timestamp: self.active_until_timestamp,
-                active_from_timestamp: self.active_from_timestamp,
-                updates_changeset_id: self.updates_changeset_id,
-                updated_by_changeset_id: self.updated_by_changeset_id,
+                changeset_id: self.changeset_id
+                ,
+                changeset_arn: self.changeset_arn
+                ,
+                dataset_id: self.dataset_id
+                ,
+                change_type: self.change_type
+                ,
+                source_params: self.source_params
+                ,
+                format_params: self.format_params
+                ,
+                create_time: self.create_time
+                    .unwrap_or_default()
+                ,
+                status: self.status
+                ,
+                error_info: self.error_info
+                ,
+                active_until_timestamp: self.active_until_timestamp
+                ,
+                active_from_timestamp: self.active_from_timestamp
+                ,
+                updates_changeset_id: self.updates_changeset_id
+                ,
+                updated_by_changeset_id: self.updated_by_changeset_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GetChangesetOutput {
     /// Creates a new builder-style object to manufacture [`GetChangesetOutput`](crate::output::GetChangesetOutput).
@@ -2459,20 +2377,20 @@ impl GetChangesetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableUserOutput {
+pub struct EnableUserOutput  {
     /// <p>The unique identifier for the enabled user account.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl EnableUserOutput {
     /// <p>The unique identifier for the enabled user account.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
 /// See [`EnableUserOutput`](crate::output::EnableUserOutput).
 pub mod enable_user_output {
-
+    
     /// A builder for [`EnableUserOutput`](crate::output::EnableUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2486,16 +2404,18 @@ pub mod enable_user_output {
         }
         /// <p>The unique identifier for the enabled user account.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
         /// Consumes the builder and constructs a [`EnableUserOutput`](crate::output::EnableUserOutput).
         pub fn build(self) -> crate::output::EnableUserOutput {
             crate::output::EnableUserOutput {
-                user_id: self.user_id,
+                user_id: self.user_id
+                ,
             }
         }
     }
+    
+    
 }
 impl EnableUserOutput {
     /// Creates a new builder-style object to manufacture [`EnableUserOutput`](crate::output::EnableUserOutput).
@@ -2507,7 +2427,7 @@ impl EnableUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateUserFromPermissionGroupOutput {
+pub struct DisassociateUserFromPermissionGroupOutput  {
     /// <p>The returned status code of the response.</p>
     #[doc(hidden)]
     pub status_code: i32,
@@ -2520,7 +2440,7 @@ impl DisassociateUserFromPermissionGroupOutput {
 }
 /// See [`DisassociateUserFromPermissionGroupOutput`](crate::output::DisassociateUserFromPermissionGroupOutput).
 pub mod disassociate_user_from_permission_group_output {
-
+    
     /// A builder for [`DisassociateUserFromPermissionGroupOutput`](crate::output::DisassociateUserFromPermissionGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2534,16 +2454,19 @@ pub mod disassociate_user_from_permission_group_output {
         }
         /// <p>The returned status code of the response.</p>
         pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.status_code = input;
-            self
+            self.status_code = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateUserFromPermissionGroupOutput`](crate::output::DisassociateUserFromPermissionGroupOutput).
         pub fn build(self) -> crate::output::DisassociateUserFromPermissionGroupOutput {
             crate::output::DisassociateUserFromPermissionGroupOutput {
-                status_code: self.status_code.unwrap_or_default(),
+                status_code: self.status_code
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateUserFromPermissionGroupOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateUserFromPermissionGroupOutput`](crate::output::DisassociateUserFromPermissionGroupOutput).
@@ -2555,20 +2478,20 @@ impl DisassociateUserFromPermissionGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableUserOutput {
+pub struct DisableUserOutput  {
     /// <p>The unique identifier for the disabled user account.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl DisableUserOutput {
     /// <p>The unique identifier for the disabled user account.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
 /// See [`DisableUserOutput`](crate::output::DisableUserOutput).
 pub mod disable_user_output {
-
+    
     /// A builder for [`DisableUserOutput`](crate::output::DisableUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2582,16 +2505,18 @@ pub mod disable_user_output {
         }
         /// <p>The unique identifier for the disabled user account.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
         /// Consumes the builder and constructs a [`DisableUserOutput`](crate::output::DisableUserOutput).
         pub fn build(self) -> crate::output::DisableUserOutput {
             crate::output::DisableUserOutput {
-                user_id: self.user_id,
+                user_id: self.user_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DisableUserOutput {
     /// Creates a new builder-style object to manufacture [`DisableUserOutput`](crate::output::DisableUserOutput).
@@ -2603,20 +2528,20 @@ impl DisableUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePermissionGroupOutput {
+pub struct DeletePermissionGroupOutput  {
     /// <p>The unique identifier for the deleted permission group.</p>
     #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
 }
 impl DeletePermissionGroupOutput {
     /// <p>The unique identifier for the deleted permission group.</p>
-    pub fn permission_group_id(&self) -> std::option::Option<&str> {
+    pub fn permission_group_id(&self) -> std::option::Option<& str> {
         self.permission_group_id.as_deref()
     }
 }
 /// See [`DeletePermissionGroupOutput`](crate::output::DeletePermissionGroupOutput).
 pub mod delete_permission_group_output {
-
+    
     /// A builder for [`DeletePermissionGroupOutput`](crate::output::DeletePermissionGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2629,20 +2554,19 @@ pub mod delete_permission_group_output {
             self
         }
         /// <p>The unique identifier for the deleted permission group.</p>
-        pub fn set_permission_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_group_id = input;
-            self
+        pub fn set_permission_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_group_id = input; self
         }
         /// Consumes the builder and constructs a [`DeletePermissionGroupOutput`](crate::output::DeletePermissionGroupOutput).
         pub fn build(self) -> crate::output::DeletePermissionGroupOutput {
             crate::output::DeletePermissionGroupOutput {
-                permission_group_id: self.permission_group_id,
+                permission_group_id: self.permission_group_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeletePermissionGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeletePermissionGroupOutput`](crate::output::DeletePermissionGroupOutput).
@@ -2654,20 +2578,20 @@ impl DeletePermissionGroupOutput {
 /// The response from an DeleteDataset operation
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDatasetOutput {
+pub struct DeleteDatasetOutput  {
     /// <p>The unique identifier for the deleted Dataset.</p>
     #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetOutput {
     /// <p>The unique identifier for the deleted Dataset.</p>
-    pub fn dataset_id(&self) -> std::option::Option<&str> {
+    pub fn dataset_id(&self) -> std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
 }
 /// See [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
 pub mod delete_dataset_output {
-
+    
     /// A builder for [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2681,16 +2605,18 @@ pub mod delete_dataset_output {
         }
         /// <p>The unique identifier for the deleted Dataset.</p>
         pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_id = input;
-            self
+            self.dataset_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
         pub fn build(self) -> crate::output::DeleteDatasetOutput {
             crate::output::DeleteDatasetOutput {
-                dataset_id: self.dataset_id,
+                dataset_id: self.dataset_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDatasetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
@@ -2702,20 +2628,20 @@ impl DeleteDatasetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateUserOutput {
+pub struct CreateUserOutput  {
     /// <p>The unique identifier for the user.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl CreateUserOutput {
     /// <p>The unique identifier for the user.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
 /// See [`CreateUserOutput`](crate::output::CreateUserOutput).
 pub mod create_user_output {
-
+    
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2729,16 +2655,18 @@ pub mod create_user_output {
         }
         /// <p>The unique identifier for the user.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateUserOutput`](crate::output::CreateUserOutput).
         pub fn build(self) -> crate::output::CreateUserOutput {
             crate::output::CreateUserOutput {
-                user_id: self.user_id,
+                user_id: self.user_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateUserOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserOutput`](crate::output::CreateUserOutput).
@@ -2750,20 +2678,20 @@ impl CreateUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePermissionGroupOutput {
+pub struct CreatePermissionGroupOutput  {
     /// <p>The unique identifier for the permission group.</p>
     #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
 }
 impl CreatePermissionGroupOutput {
     /// <p>The unique identifier for the permission group.</p>
-    pub fn permission_group_id(&self) -> std::option::Option<&str> {
+    pub fn permission_group_id(&self) -> std::option::Option<& str> {
         self.permission_group_id.as_deref()
     }
 }
 /// See [`CreatePermissionGroupOutput`](crate::output::CreatePermissionGroupOutput).
 pub mod create_permission_group_output {
-
+    
     /// A builder for [`CreatePermissionGroupOutput`](crate::output::CreatePermissionGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2776,20 +2704,19 @@ pub mod create_permission_group_output {
             self
         }
         /// <p>The unique identifier for the permission group.</p>
-        pub fn set_permission_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_group_id = input;
-            self
+        pub fn set_permission_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_group_id = input; self
         }
         /// Consumes the builder and constructs a [`CreatePermissionGroupOutput`](crate::output::CreatePermissionGroupOutput).
         pub fn build(self) -> crate::output::CreatePermissionGroupOutput {
             crate::output::CreatePermissionGroupOutput {
-                permission_group_id: self.permission_group_id,
+                permission_group_id: self.permission_group_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePermissionGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionGroupOutput`](crate::output::CreatePermissionGroupOutput).
@@ -2801,7 +2728,7 @@ impl CreatePermissionGroupOutput {
 /// Response for creating a data view.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDataViewOutput {
+pub struct CreateDataViewOutput  {
     /// <p>The unique identifier of the Dataset used for the Dataview.</p>
     #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
@@ -2811,17 +2738,17 @@ pub struct CreateDataViewOutput {
 }
 impl CreateDataViewOutput {
     /// <p>The unique identifier of the Dataset used for the Dataview.</p>
-    pub fn dataset_id(&self) -> std::option::Option<&str> {
+    pub fn dataset_id(&self) -> std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
     /// <p>The unique identifier for the created Dataview.</p>
-    pub fn data_view_id(&self) -> std::option::Option<&str> {
+    pub fn data_view_id(&self) -> std::option::Option<& str> {
         self.data_view_id.as_deref()
     }
 }
 /// See [`CreateDataViewOutput`](crate::output::CreateDataViewOutput).
 pub mod create_data_view_output {
-
+    
     /// A builder for [`CreateDataViewOutput`](crate::output::CreateDataViewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2836,8 +2763,7 @@ pub mod create_data_view_output {
         }
         /// <p>The unique identifier of the Dataset used for the Dataview.</p>
         pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_id = input;
-            self
+            self.dataset_id = input; self
         }
         /// <p>The unique identifier for the created Dataview.</p>
         pub fn data_view_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2846,17 +2772,20 @@ pub mod create_data_view_output {
         }
         /// <p>The unique identifier for the created Dataview.</p>
         pub fn set_data_view_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_view_id = input;
-            self
+            self.data_view_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateDataViewOutput`](crate::output::CreateDataViewOutput).
         pub fn build(self) -> crate::output::CreateDataViewOutput {
             crate::output::CreateDataViewOutput {
-                dataset_id: self.dataset_id,
-                data_view_id: self.data_view_id,
+                dataset_id: self.dataset_id
+                ,
+                data_view_id: self.data_view_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDataViewOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataViewOutput`](crate::output::CreateDataViewOutput).
@@ -2868,20 +2797,20 @@ impl CreateDataViewOutput {
 /// The response from a CreateDataset operation
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDatasetOutput {
+pub struct CreateDatasetOutput  {
     /// <p>The unique identifier for the created Dataset.</p>
     #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
 }
 impl CreateDatasetOutput {
     /// <p>The unique identifier for the created Dataset.</p>
-    pub fn dataset_id(&self) -> std::option::Option<&str> {
+    pub fn dataset_id(&self) -> std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
 }
 /// See [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
 pub mod create_dataset_output {
-
+    
     /// A builder for [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2895,16 +2824,18 @@ pub mod create_dataset_output {
         }
         /// <p>The unique identifier for the created Dataset.</p>
         pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_id = input;
-            self
+            self.dataset_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
         pub fn build(self) -> crate::output::CreateDatasetOutput {
             crate::output::CreateDatasetOutput {
-                dataset_id: self.dataset_id,
+                dataset_id: self.dataset_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDatasetOutput {
     /// Creates a new builder-style object to manufacture [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
@@ -2916,7 +2847,7 @@ impl CreateDatasetOutput {
 /// The response from a CreateChangeset operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateChangesetOutput {
+pub struct CreateChangesetOutput  {
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
     #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
@@ -2926,17 +2857,17 @@ pub struct CreateChangesetOutput {
 }
 impl CreateChangesetOutput {
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
-    pub fn dataset_id(&self) -> std::option::Option<&str> {
+    pub fn dataset_id(&self) -> std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
     /// <p>The unique identifier of the Changeset that is created.</p>
-    pub fn changeset_id(&self) -> std::option::Option<&str> {
+    pub fn changeset_id(&self) -> std::option::Option<& str> {
         self.changeset_id.as_deref()
     }
 }
 /// See [`CreateChangesetOutput`](crate::output::CreateChangesetOutput).
 pub mod create_changeset_output {
-
+    
     /// A builder for [`CreateChangesetOutput`](crate::output::CreateChangesetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2951,8 +2882,7 @@ pub mod create_changeset_output {
         }
         /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
         pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_id = input;
-            self
+            self.dataset_id = input; self
         }
         /// <p>The unique identifier of the Changeset that is created.</p>
         pub fn changeset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2961,17 +2891,20 @@ pub mod create_changeset_output {
         }
         /// <p>The unique identifier of the Changeset that is created.</p>
         pub fn set_changeset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.changeset_id = input;
-            self
+            self.changeset_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateChangesetOutput`](crate::output::CreateChangesetOutput).
         pub fn build(self) -> crate::output::CreateChangesetOutput {
             crate::output::CreateChangesetOutput {
-                dataset_id: self.dataset_id,
-                changeset_id: self.changeset_id,
+                dataset_id: self.dataset_id
+                ,
+                changeset_id: self.changeset_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateChangesetOutput {
     /// Creates a new builder-style object to manufacture [`CreateChangesetOutput`](crate::output::CreateChangesetOutput).
@@ -2983,7 +2916,7 @@ impl CreateChangesetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateUserToPermissionGroupOutput {
+pub struct AssociateUserToPermissionGroupOutput  {
     /// <p>The returned status code of the response.</p>
     #[doc(hidden)]
     pub status_code: i32,
@@ -2996,7 +2929,7 @@ impl AssociateUserToPermissionGroupOutput {
 }
 /// See [`AssociateUserToPermissionGroupOutput`](crate::output::AssociateUserToPermissionGroupOutput).
 pub mod associate_user_to_permission_group_output {
-
+    
     /// A builder for [`AssociateUserToPermissionGroupOutput`](crate::output::AssociateUserToPermissionGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3010,16 +2943,19 @@ pub mod associate_user_to_permission_group_output {
         }
         /// <p>The returned status code of the response.</p>
         pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.status_code = input;
-            self
+            self.status_code = input; self
         }
         /// Consumes the builder and constructs a [`AssociateUserToPermissionGroupOutput`](crate::output::AssociateUserToPermissionGroupOutput).
         pub fn build(self) -> crate::output::AssociateUserToPermissionGroupOutput {
             crate::output::AssociateUserToPermissionGroupOutput {
-                status_code: self.status_code.unwrap_or_default(),
+                status_code: self.status_code
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateUserToPermissionGroupOutput {
     /// Creates a new builder-style object to manufacture [`AssociateUserToPermissionGroupOutput`](crate::output::AssociateUserToPermissionGroupOutput).
@@ -3027,3 +2963,4 @@ impl AssociateUserToPermissionGroupOutput {
         crate::output::associate_user_to_permission_group_output::Builder::default()
     }
 }
+

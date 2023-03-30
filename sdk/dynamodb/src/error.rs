@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateTimeToLiveError {
     /// Kind of error that occurred.
-    pub kind: UpdateTimeToLiveErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateTimeToLiveErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateTimeToLiveError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateTimeToLiveErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -24,35 +24,47 @@ pub enum UpdateTimeToLiveErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTimeToLiveError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateTimeToLiveErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UpdateTimeToLiveErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            UpdateTimeToLiveErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateTimeToLiveErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            UpdateTimeToLiveErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            UpdateTimeToLiveErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateTimeToLiveErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTimeToLiveErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTimeToLiveErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTimeToLiveErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTimeToLiveErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTimeToLiveErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -66,91 +78,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateTimeToLiveError {
 }
 impl UpdateTimeToLiveError {
     /// Creates a new `UpdateTimeToLiveError`.
-    pub fn new(kind: UpdateTimeToLiveErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateTimeToLiveError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateTimeToLiveErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateTimeToLiveError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateTimeToLiveErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateTimeToLiveErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateTimeToLiveError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateTimeToLiveErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateTimeToLiveError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateTimeToLiveErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateTimeToLiveErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTimeToLiveErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, UpdateTimeToLiveErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `UpdateTimeToLiveErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTimeToLiveErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, UpdateTimeToLiveErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `UpdateTimeToLiveErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTimeToLiveErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateTimeToLiveErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateTimeToLiveErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTimeToLiveErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, UpdateTimeToLiveErrorKind::ResourceInUseException(_))
     }
     /// Returns `true` if the error kind is `UpdateTimeToLiveErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTimeToLiveErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateTimeToLiveErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for UpdateTimeToLiveError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateTimeToLiveErrorKind::InternalServerError(_inner) => Some(_inner),
-            UpdateTimeToLiveErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            UpdateTimeToLiveErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateTimeToLiveErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            UpdateTimeToLiveErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateTimeToLiveErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateTimeToLiveErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTimeToLiveErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTimeToLiveErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTimeToLiveErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTimeToLiveErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTimeToLiveErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -158,22 +167,20 @@ impl std::error::Error for UpdateTimeToLiveError {
 /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     /// <p>The resource which is being requested does not exist.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -183,7 +190,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -197,16 +204,18 @@ pub mod resource_not_found_exception {
         }
         /// <p>The resource which is being requested does not exist.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -218,22 +227,20 @@ impl ResourceNotFoundException {
 /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceInUseException {
+pub struct ResourceInUseException  {
     /// <p>The resource which is being attempted to be changed is in use.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceInUseException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -243,7 +250,7 @@ impl std::fmt::Display for ResourceInUseException {
 impl std::error::Error for ResourceInUseException {}
 /// See [`ResourceInUseException`](crate::error::ResourceInUseException).
 pub mod resource_in_use_exception {
-
+    
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -257,16 +264,18 @@ pub mod resource_in_use_exception {
         }
         /// <p>The resource which is being attempted to be changed is in use.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceInUseException`](crate::error::ResourceInUseException).
         pub fn build(self) -> crate::error::ResourceInUseException {
             crate::error::ResourceInUseException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceInUseException {
     /// Creates a new builder-style object to manufacture [`ResourceInUseException`](crate::error::ResourceInUseException).
@@ -275,29 +284,27 @@ impl ResourceInUseException {
     }
 }
 
-/// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-/// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-/// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-/// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+/// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+/// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+/// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+/// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
 /// <p>There is a soft account quota of 2,500 tables.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LimitExceededException {
+pub struct LimitExceededException  {
     /// <p>Too many operations for a given subscriber.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -307,7 +314,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException).
 pub mod limit_exceeded_exception {
-
+    
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -321,16 +328,18 @@ pub mod limit_exceeded_exception {
         }
         /// <p>Too many operations for a given subscriber.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
         pub fn build(self) -> crate::error::LimitExceededException {
             crate::error::LimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LimitExceededException {
     /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
@@ -342,22 +351,20 @@ impl LimitExceededException {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidEndpointException {
+pub struct InvalidEndpointException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidEndpointException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidEndpointException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEndpointException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -367,7 +374,7 @@ impl std::fmt::Display for InvalidEndpointException {
 impl std::error::Error for InvalidEndpointException {}
 /// See [`InvalidEndpointException`](crate::error::InvalidEndpointException).
 pub mod invalid_endpoint_exception {
-
+    
     /// A builder for [`InvalidEndpointException`](crate::error::InvalidEndpointException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -381,16 +388,18 @@ pub mod invalid_endpoint_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidEndpointException`](crate::error::InvalidEndpointException).
         pub fn build(self) -> crate::error::InvalidEndpointException {
             crate::error::InvalidEndpointException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidEndpointException {
     /// Creates a new builder-style object to manufacture [`InvalidEndpointException`](crate::error::InvalidEndpointException).
@@ -402,22 +411,20 @@ impl InvalidEndpointException {
 /// <p>An error occurred on the server side.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerError {
+pub struct InternalServerError  {
     /// <p>The server encountered an internal error trying to fulfill the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServerError {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerError")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -427,7 +434,7 @@ impl std::fmt::Display for InternalServerError {
 impl std::error::Error for InternalServerError {}
 /// See [`InternalServerError`](crate::error::InternalServerError).
 pub mod internal_server_error {
-
+    
     /// A builder for [`InternalServerError`](crate::error::InternalServerError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -441,16 +448,18 @@ pub mod internal_server_error {
         }
         /// <p>The server encountered an internal error trying to fulfill the request.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError).
         pub fn build(self) -> crate::error::InternalServerError {
             crate::error::InternalServerError {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServerError {
     /// Creates a new builder-style object to manufacture [`InternalServerError`](crate::error::InternalServerError).
@@ -464,17 +473,15 @@ impl InternalServerError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateTableReplicaAutoScalingError {
     /// Kind of error that occurred.
-    pub kind: UpdateTableReplicaAutoScalingErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateTableReplicaAutoScalingErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateTableReplicaAutoScalingError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateTableReplicaAutoScalingErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateTableReplicaAutoScalingErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -484,36 +491,44 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateTableReplicaAutoSca
 pub enum UpdateTableReplicaAutoScalingErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTableReplicaAutoScalingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateTableReplicaAutoScalingErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UpdateTableReplicaAutoScalingErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateTableReplicaAutoScalingErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_inner) => {
+            UpdateTableReplicaAutoScalingErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTableReplicaAutoScalingErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTableReplicaAutoScalingErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTableReplicaAutoScalingErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateTableReplicaAutoScalingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -527,92 +542,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateTableReplicaAutoScaling
 }
 impl UpdateTableReplicaAutoScalingError {
     /// Creates a new `UpdateTableReplicaAutoScalingError`.
-    pub fn new(
-        kind: UpdateTableReplicaAutoScalingErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateTableReplicaAutoScalingError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateTableReplicaAutoScalingErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateTableReplicaAutoScalingError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateTableReplicaAutoScalingErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateTableReplicaAutoScalingErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateTableReplicaAutoScalingError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateTableReplicaAutoScalingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateTableReplicaAutoScalingError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateTableReplicaAutoScalingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateTableReplicaAutoScalingErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTableReplicaAutoScalingErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, UpdateTableReplicaAutoScalingErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `UpdateTableReplicaAutoScalingErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTableReplicaAutoScalingErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateTableReplicaAutoScalingErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateTableReplicaAutoScalingErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTableReplicaAutoScalingErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, UpdateTableReplicaAutoScalingErrorKind::ResourceInUseException(_))
     }
     /// Returns `true` if the error kind is `UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for UpdateTableReplicaAutoScalingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateTableReplicaAutoScalingErrorKind::InternalServerError(_inner) => Some(_inner),
-            UpdateTableReplicaAutoScalingErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateTableReplicaAutoScalingErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_inner) => {
+            UpdateTableReplicaAutoScalingErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTableReplicaAutoScalingErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTableReplicaAutoScalingErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTableReplicaAutoScalingErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateTableReplicaAutoScalingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -622,15 +626,15 @@ impl std::error::Error for UpdateTableReplicaAutoScalingError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateTableError {
     /// Kind of error that occurred.
-    pub kind: UpdateTableErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateTableErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateTableError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateTableErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -642,35 +646,47 @@ pub enum UpdateTableErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateTableErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UpdateTableErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            UpdateTableErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateTableErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            UpdateTableErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            UpdateTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateTableErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTableErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTableErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTableErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTableErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateTableErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -684,56 +700,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateTableError {
 }
 impl UpdateTableError {
     /// Creates a new `UpdateTableError`.
-    pub fn new(kind: UpdateTableErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateTableError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateTableError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateTableErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateTableError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateTableError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateTableErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, UpdateTableErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `UpdateTableErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTableErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, UpdateTableErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `UpdateTableErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -745,21 +758,30 @@ impl UpdateTableError {
     }
     /// Returns `true` if the error kind is `UpdateTableErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateTableErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateTableErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for UpdateTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateTableErrorKind::InternalServerError(_inner) => Some(_inner),
-            UpdateTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            UpdateTableErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateTableErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            UpdateTableErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateTableErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateTableErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTableErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTableErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTableErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTableErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateTableErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -769,15 +791,15 @@ impl std::error::Error for UpdateTableError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateItemError {
     /// Kind of error that occurred.
-    pub kind: UpdateItemErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateItemErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateItemError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateItemErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -792,9 +814,7 @@ pub enum UpdateItemErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>
-    ItemCollectionSizeLimitExceededException(
-        crate::error::ItemCollectionSizeLimitExceededException,
-    ),
+    ItemCollectionSizeLimitExceededException(crate::error::ItemCollectionSizeLimitExceededException),
     /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
@@ -803,28 +823,46 @@ pub enum UpdateItemErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateItemErrorKind::ConditionalCheckFailedException(_inner) => _inner.fmt(f),
-            UpdateItemErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UpdateItemErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            UpdateItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) => _inner.fmt(f),
-            UpdateItemErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
-            UpdateItemErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            UpdateItemErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            UpdateItemErrorKind::TransactionConflictException(_inner) => _inner.fmt(f),
-            UpdateItemErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateItemErrorKind::ConditionalCheckFailedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateItemErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateItemErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateItemErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateItemErrorKind::RequestLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateItemErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateItemErrorKind::TransactionConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateItemErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -838,52 +876,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateItemError {
 }
 impl UpdateItemError {
     /// Creates a new `UpdateItemError`.
-    pub fn new(kind: UpdateItemErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateItemError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateItemError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateItemErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateItemError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateItemError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateItemErrorKind::ConditionalCheckFailedException`.
     pub fn is_conditional_check_failed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateItemErrorKind::ConditionalCheckFailedException(_)
-        )
+        matches!(&self.kind, UpdateItemErrorKind::ConditionalCheckFailedException(_))
     }
     /// Returns `true` if the error kind is `UpdateItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
@@ -895,17 +930,11 @@ impl UpdateItemError {
     }
     /// Returns `true` if the error kind is `UpdateItemErrorKind::ItemCollectionSizeLimitExceededException`.
     pub fn is_item_collection_size_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateItemErrorKind::ItemCollectionSizeLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateItemErrorKind::ItemCollectionSizeLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateItemErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateItemErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, UpdateItemErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateItemErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
@@ -913,31 +942,43 @@ impl UpdateItemError {
     }
     /// Returns `true` if the error kind is `UpdateItemErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateItemErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateItemErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateItemErrorKind::TransactionConflictException`.
     pub fn is_transaction_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateItemErrorKind::TransactionConflictException(_)
-        )
+        matches!(&self.kind, UpdateItemErrorKind::TransactionConflictException(_))
     }
 }
 impl std::error::Error for UpdateItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateItemErrorKind::ConditionalCheckFailedException(_inner) => Some(_inner),
-            UpdateItemErrorKind::InternalServerError(_inner) => Some(_inner),
-            UpdateItemErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            UpdateItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) => Some(_inner),
-            UpdateItemErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
-            UpdateItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            UpdateItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateItemErrorKind::TransactionConflictException(_inner) => Some(_inner),
-            UpdateItemErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateItemErrorKind::ConditionalCheckFailedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateItemErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            UpdateItemErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateItemErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateItemErrorKind::RequestLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            UpdateItemErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateItemErrorKind::TransactionConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateItemErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -945,22 +986,20 @@ impl std::error::Error for UpdateItemError {
 /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransactionConflictException {
+pub struct TransactionConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TransactionConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TransactionConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TransactionConflictException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -970,7 +1009,7 @@ impl std::fmt::Display for TransactionConflictException {
 impl std::error::Error for TransactionConflictException {}
 /// See [`TransactionConflictException`](crate::error::TransactionConflictException).
 pub mod transaction_conflict_exception {
-
+    
     /// A builder for [`TransactionConflictException`](crate::error::TransactionConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -984,16 +1023,18 @@ pub mod transaction_conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TransactionConflictException`](crate::error::TransactionConflictException).
         pub fn build(self) -> crate::error::TransactionConflictException {
             crate::error::TransactionConflictException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TransactionConflictException {
     /// Creates a new builder-style object to manufacture [`TransactionConflictException`](crate::error::TransactionConflictException).
@@ -1005,22 +1046,20 @@ impl TransactionConflictException {
 /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestLimitExceeded {
+pub struct RequestLimitExceeded  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RequestLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for RequestLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RequestLimitExceeded")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -1030,7 +1069,7 @@ impl std::fmt::Display for RequestLimitExceeded {
 impl std::error::Error for RequestLimitExceeded {}
 /// See [`RequestLimitExceeded`](crate::error::RequestLimitExceeded).
 pub mod request_limit_exceeded {
-
+    
     /// A builder for [`RequestLimitExceeded`](crate::error::RequestLimitExceeded).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1044,16 +1083,18 @@ pub mod request_limit_exceeded {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`RequestLimitExceeded`](crate::error::RequestLimitExceeded).
         pub fn build(self) -> crate::error::RequestLimitExceeded {
             crate::error::RequestLimitExceeded {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl RequestLimitExceeded {
     /// Creates a new builder-style object to manufacture [`RequestLimitExceeded`](crate::error::RequestLimitExceeded).
@@ -1065,22 +1106,20 @@ impl RequestLimitExceeded {
 /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionedThroughputExceededException {
+pub struct ProvisionedThroughputExceededException  {
     /// <p>You exceeded your maximum allowed provisioned throughput.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ProvisionedThroughputExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ProvisionedThroughputExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ProvisionedThroughputExceededException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -1090,7 +1129,7 @@ impl std::fmt::Display for ProvisionedThroughputExceededException {
 impl std::error::Error for ProvisionedThroughputExceededException {}
 /// See [`ProvisionedThroughputExceededException`](crate::error::ProvisionedThroughputExceededException).
 pub mod provisioned_throughput_exceeded_exception {
-
+    
     /// A builder for [`ProvisionedThroughputExceededException`](crate::error::ProvisionedThroughputExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1104,16 +1143,18 @@ pub mod provisioned_throughput_exceeded_exception {
         }
         /// <p>You exceeded your maximum allowed provisioned throughput.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ProvisionedThroughputExceededException`](crate::error::ProvisionedThroughputExceededException).
         pub fn build(self) -> crate::error::ProvisionedThroughputExceededException {
             crate::error::ProvisionedThroughputExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ProvisionedThroughputExceededException {
     /// Creates a new builder-style object to manufacture [`ProvisionedThroughputExceededException`](crate::error::ProvisionedThroughputExceededException).
@@ -1125,22 +1166,20 @@ impl ProvisionedThroughputExceededException {
 /// <p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ItemCollectionSizeLimitExceededException {
+pub struct ItemCollectionSizeLimitExceededException  {
     /// <p>The total size of an item collection has exceeded the maximum limit of 10 gigabytes.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ItemCollectionSizeLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ItemCollectionSizeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ItemCollectionSizeLimitExceededException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -1150,7 +1189,7 @@ impl std::fmt::Display for ItemCollectionSizeLimitExceededException {
 impl std::error::Error for ItemCollectionSizeLimitExceededException {}
 /// See [`ItemCollectionSizeLimitExceededException`](crate::error::ItemCollectionSizeLimitExceededException).
 pub mod item_collection_size_limit_exceeded_exception {
-
+    
     /// A builder for [`ItemCollectionSizeLimitExceededException`](crate::error::ItemCollectionSizeLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1164,16 +1203,18 @@ pub mod item_collection_size_limit_exceeded_exception {
         }
         /// <p>The total size of an item collection has exceeded the maximum limit of 10 gigabytes.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ItemCollectionSizeLimitExceededException`](crate::error::ItemCollectionSizeLimitExceededException).
         pub fn build(self) -> crate::error::ItemCollectionSizeLimitExceededException {
             crate::error::ItemCollectionSizeLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ItemCollectionSizeLimitExceededException {
     /// Creates a new builder-style object to manufacture [`ItemCollectionSizeLimitExceededException`](crate::error::ItemCollectionSizeLimitExceededException).
@@ -1185,22 +1226,20 @@ impl ItemCollectionSizeLimitExceededException {
 /// <p>A condition specified in the operation could not be evaluated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConditionalCheckFailedException {
+pub struct ConditionalCheckFailedException  {
     /// <p>The conditional request failed.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConditionalCheckFailedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConditionalCheckFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConditionalCheckFailedException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -1210,7 +1249,7 @@ impl std::fmt::Display for ConditionalCheckFailedException {
 impl std::error::Error for ConditionalCheckFailedException {}
 /// See [`ConditionalCheckFailedException`](crate::error::ConditionalCheckFailedException).
 pub mod conditional_check_failed_exception {
-
+    
     /// A builder for [`ConditionalCheckFailedException`](crate::error::ConditionalCheckFailedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1224,16 +1263,18 @@ pub mod conditional_check_failed_exception {
         }
         /// <p>The conditional request failed.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConditionalCheckFailedException`](crate::error::ConditionalCheckFailedException).
         pub fn build(self) -> crate::error::ConditionalCheckFailedException {
             crate::error::ConditionalCheckFailedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConditionalCheckFailedException {
     /// Creates a new builder-style object to manufacture [`ConditionalCheckFailedException`](crate::error::ConditionalCheckFailedException).
@@ -1247,17 +1288,15 @@ impl ConditionalCheckFailedException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateGlobalTableSettingsError {
     /// Kind of error that occurred.
-    pub kind: UpdateGlobalTableSettingsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateGlobalTableSettingsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateGlobalTableSettingsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateGlobalTableSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateGlobalTableSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1273,39 +1312,53 @@ pub enum UpdateGlobalTableSettingsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified replica is no longer part of the global table.</p>
     ReplicaNotFoundException(crate::error::ReplicaNotFoundException),
     /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGlobalTableSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_inner) => {
+            UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalTableSettingsErrorKind::IndexNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalTableSettingsErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalTableSettingsErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalTableSettingsErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalTableSettingsErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalTableSettingsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateGlobalTableSettingsErrorKind::IndexNotFoundException(_inner) => _inner.fmt(f),
-            UpdateGlobalTableSettingsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UpdateGlobalTableSettingsErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            UpdateGlobalTableSettingsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundException(_inner) => _inner.fmt(f),
-            UpdateGlobalTableSettingsErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            UpdateGlobalTableSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1319,113 +1372,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateGlobalTableSettingsErro
 }
 impl UpdateGlobalTableSettingsError {
     /// Creates a new `UpdateGlobalTableSettingsError`.
-    pub fn new(kind: UpdateGlobalTableSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateGlobalTableSettingsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateGlobalTableSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateGlobalTableSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateGlobalTableSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateGlobalTableSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateGlobalTableSettingsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateGlobalTableSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateGlobalTableSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateGlobalTableSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundException`.
     pub fn is_global_table_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateGlobalTableSettingsErrorKind::IndexNotFoundException`.
     pub fn is_index_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalTableSettingsErrorKind::IndexNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateGlobalTableSettingsErrorKind::IndexNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateGlobalTableSettingsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalTableSettingsErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, UpdateGlobalTableSettingsErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `UpdateGlobalTableSettingsErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalTableSettingsErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, UpdateGlobalTableSettingsErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `UpdateGlobalTableSettingsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalTableSettingsErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateGlobalTableSettingsErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundException`.
     pub fn is_replica_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateGlobalTableSettingsErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalTableSettingsErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, UpdateGlobalTableSettingsErrorKind::ResourceInUseException(_))
     }
 }
 impl std::error::Error for UpdateGlobalTableSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_inner) => {
+            UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalTableSettingsErrorKind::IndexNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalTableSettingsErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalTableSettingsErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalTableSettingsErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalTableSettingsErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalTableSettingsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateGlobalTableSettingsErrorKind::IndexNotFoundException(_inner) => Some(_inner),
-            UpdateGlobalTableSettingsErrorKind::InternalServerError(_inner) => Some(_inner),
-            UpdateGlobalTableSettingsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            UpdateGlobalTableSettingsErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundException(_inner) => Some(_inner),
-            UpdateGlobalTableSettingsErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            UpdateGlobalTableSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1433,22 +1475,20 @@ impl std::error::Error for UpdateGlobalTableSettingsError {
 /// <p>The specified replica is no longer part of the global table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicaNotFoundException {
+pub struct ReplicaNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ReplicaNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ReplicaNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReplicaNotFoundException")?;
         if let Some(inner_11) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_11)?;
             }
         }
@@ -1458,7 +1498,7 @@ impl std::fmt::Display for ReplicaNotFoundException {
 impl std::error::Error for ReplicaNotFoundException {}
 /// See [`ReplicaNotFoundException`](crate::error::ReplicaNotFoundException).
 pub mod replica_not_found_exception {
-
+    
     /// A builder for [`ReplicaNotFoundException`](crate::error::ReplicaNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1472,16 +1512,18 @@ pub mod replica_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ReplicaNotFoundException`](crate::error::ReplicaNotFoundException).
         pub fn build(self) -> crate::error::ReplicaNotFoundException {
             crate::error::ReplicaNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ReplicaNotFoundException {
     /// Creates a new builder-style object to manufacture [`ReplicaNotFoundException`](crate::error::ReplicaNotFoundException).
@@ -1493,22 +1535,20 @@ impl ReplicaNotFoundException {
 /// <p>The operation tried to access a nonexistent index.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IndexNotFoundException {
+pub struct IndexNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl IndexNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for IndexNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IndexNotFoundException")?;
         if let Some(inner_12) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_12)?;
             }
         }
@@ -1518,7 +1558,7 @@ impl std::fmt::Display for IndexNotFoundException {
 impl std::error::Error for IndexNotFoundException {}
 /// See [`IndexNotFoundException`](crate::error::IndexNotFoundException).
 pub mod index_not_found_exception {
-
+    
     /// A builder for [`IndexNotFoundException`](crate::error::IndexNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1532,16 +1572,18 @@ pub mod index_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`IndexNotFoundException`](crate::error::IndexNotFoundException).
         pub fn build(self) -> crate::error::IndexNotFoundException {
             crate::error::IndexNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl IndexNotFoundException {
     /// Creates a new builder-style object to manufacture [`IndexNotFoundException`](crate::error::IndexNotFoundException).
@@ -1553,22 +1595,20 @@ impl IndexNotFoundException {
 /// <p>The specified global table does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GlobalTableNotFoundException {
+pub struct GlobalTableNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl GlobalTableNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for GlobalTableNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlobalTableNotFoundException")?;
         if let Some(inner_13) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_13)?;
             }
         }
@@ -1578,7 +1618,7 @@ impl std::fmt::Display for GlobalTableNotFoundException {
 impl std::error::Error for GlobalTableNotFoundException {}
 /// See [`GlobalTableNotFoundException`](crate::error::GlobalTableNotFoundException).
 pub mod global_table_not_found_exception {
-
+    
     /// A builder for [`GlobalTableNotFoundException`](crate::error::GlobalTableNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1592,16 +1632,18 @@ pub mod global_table_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`GlobalTableNotFoundException`](crate::error::GlobalTableNotFoundException).
         pub fn build(self) -> crate::error::GlobalTableNotFoundException {
             crate::error::GlobalTableNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl GlobalTableNotFoundException {
     /// Creates a new builder-style object to manufacture [`GlobalTableNotFoundException`](crate::error::GlobalTableNotFoundException).
@@ -1615,15 +1657,15 @@ impl GlobalTableNotFoundException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateGlobalTableError {
     /// Kind of error that occurred.
-    pub kind: UpdateGlobalTableErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateGlobalTableErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateGlobalTableError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1643,26 +1685,40 @@ pub enum UpdateGlobalTableErrorKind {
     ReplicaNotFoundException(crate::error::ReplicaNotFoundException),
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGlobalTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateGlobalTableErrorKind::GlobalTableNotFoundException(_inner) => _inner.fmt(f),
-            UpdateGlobalTableErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UpdateGlobalTableErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            UpdateGlobalTableErrorKind::ReplicaAlreadyExistsException(_inner) => _inner.fmt(f),
-            UpdateGlobalTableErrorKind::ReplicaNotFoundException(_inner) => _inner.fmt(f),
-            UpdateGlobalTableErrorKind::TableNotFoundException(_inner) => _inner.fmt(f),
-            UpdateGlobalTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateGlobalTableErrorKind::GlobalTableNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalTableErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalTableErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalTableErrorKind::ReplicaAlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalTableErrorKind::ReplicaNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalTableErrorKind::TableNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalTableErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1676,99 +1732,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateGlobalTableError {
 }
 impl UpdateGlobalTableError {
     /// Creates a new `UpdateGlobalTableError`.
-    pub fn new(kind: UpdateGlobalTableErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateGlobalTableError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateGlobalTableError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateGlobalTableErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateGlobalTableError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateGlobalTableError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateGlobalTableErrorKind::GlobalTableNotFoundException`.
     pub fn is_global_table_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalTableErrorKind::GlobalTableNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateGlobalTableErrorKind::GlobalTableNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateGlobalTableErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalTableErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, UpdateGlobalTableErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `UpdateGlobalTableErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalTableErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, UpdateGlobalTableErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `UpdateGlobalTableErrorKind::ReplicaAlreadyExistsException`.
     pub fn is_replica_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalTableErrorKind::ReplicaAlreadyExistsException(_)
-        )
+        matches!(&self.kind, UpdateGlobalTableErrorKind::ReplicaAlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `UpdateGlobalTableErrorKind::ReplicaNotFoundException`.
     pub fn is_replica_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalTableErrorKind::ReplicaNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateGlobalTableErrorKind::ReplicaNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateGlobalTableErrorKind::TableNotFoundException`.
     pub fn is_table_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalTableErrorKind::TableNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateGlobalTableErrorKind::TableNotFoundException(_))
     }
 }
 impl std::error::Error for UpdateGlobalTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateGlobalTableErrorKind::GlobalTableNotFoundException(_inner) => Some(_inner),
-            UpdateGlobalTableErrorKind::InternalServerError(_inner) => Some(_inner),
-            UpdateGlobalTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            UpdateGlobalTableErrorKind::ReplicaAlreadyExistsException(_inner) => Some(_inner),
-            UpdateGlobalTableErrorKind::ReplicaNotFoundException(_inner) => Some(_inner),
-            UpdateGlobalTableErrorKind::TableNotFoundException(_inner) => Some(_inner),
-            UpdateGlobalTableErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateGlobalTableErrorKind::GlobalTableNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalTableErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalTableErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalTableErrorKind::ReplicaAlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalTableErrorKind::ReplicaNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalTableErrorKind::TableNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalTableErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1776,22 +1828,20 @@ impl std::error::Error for UpdateGlobalTableError {
 /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableNotFoundException {
+pub struct TableNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TableNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TableNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TableNotFoundException")?;
         if let Some(inner_14) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_14)?;
             }
         }
@@ -1801,7 +1851,7 @@ impl std::fmt::Display for TableNotFoundException {
 impl std::error::Error for TableNotFoundException {}
 /// See [`TableNotFoundException`](crate::error::TableNotFoundException).
 pub mod table_not_found_exception {
-
+    
     /// A builder for [`TableNotFoundException`](crate::error::TableNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1815,16 +1865,18 @@ pub mod table_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TableNotFoundException`](crate::error::TableNotFoundException).
         pub fn build(self) -> crate::error::TableNotFoundException {
             crate::error::TableNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TableNotFoundException {
     /// Creates a new builder-style object to manufacture [`TableNotFoundException`](crate::error::TableNotFoundException).
@@ -1836,22 +1888,20 @@ impl TableNotFoundException {
 /// <p>The specified replica is already part of the global table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicaAlreadyExistsException {
+pub struct ReplicaAlreadyExistsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ReplicaAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ReplicaAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReplicaAlreadyExistsException")?;
         if let Some(inner_15) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_15)?;
             }
         }
@@ -1861,7 +1911,7 @@ impl std::fmt::Display for ReplicaAlreadyExistsException {
 impl std::error::Error for ReplicaAlreadyExistsException {}
 /// See [`ReplicaAlreadyExistsException`](crate::error::ReplicaAlreadyExistsException).
 pub mod replica_already_exists_exception {
-
+    
     /// A builder for [`ReplicaAlreadyExistsException`](crate::error::ReplicaAlreadyExistsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1875,16 +1925,18 @@ pub mod replica_already_exists_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ReplicaAlreadyExistsException`](crate::error::ReplicaAlreadyExistsException).
         pub fn build(self) -> crate::error::ReplicaAlreadyExistsException {
             crate::error::ReplicaAlreadyExistsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ReplicaAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`ReplicaAlreadyExistsException`](crate::error::ReplicaAlreadyExistsException).
@@ -1898,17 +1950,15 @@ impl ReplicaAlreadyExistsException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateContributorInsightsError {
     /// Kind of error that occurred.
-    pub kind: UpdateContributorInsightsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateContributorInsightsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateContributorInsightsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1920,22 +1970,28 @@ pub enum UpdateContributorInsightsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateContributorInsightsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateContributorInsightsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UpdateContributorInsightsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            UpdateContributorInsightsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateContributorInsightsErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContributorInsightsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContributorInsightsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1949,71 +2005,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateContributorInsightsErro
 }
 impl UpdateContributorInsightsError {
     /// Creates a new `UpdateContributorInsightsError`.
-    pub fn new(kind: UpdateContributorInsightsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateContributorInsightsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateContributorInsightsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateContributorInsightsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateContributorInsightsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateContributorInsightsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateContributorInsightsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContributorInsightsErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, UpdateContributorInsightsErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `UpdateContributorInsightsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContributorInsightsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateContributorInsightsErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for UpdateContributorInsightsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateContributorInsightsErrorKind::InternalServerError(_inner) => Some(_inner),
-            UpdateContributorInsightsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateContributorInsightsErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateContributorInsightsErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContributorInsightsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContributorInsightsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2023,15 +2075,15 @@ impl std::error::Error for UpdateContributorInsightsError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateContinuousBackupsError {
     /// Kind of error that occurred.
-    pub kind: UpdateContinuousBackupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateContinuousBackupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateContinuousBackupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateContinuousBackupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2047,26 +2099,34 @@ pub enum UpdateContinuousBackupsErrorKind {
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateContinuousBackupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableException(_inner) => {
+            UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContinuousBackupsErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContinuousBackupsErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContinuousBackupsErrorKind::TableNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateContinuousBackupsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateContinuousBackupsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UpdateContinuousBackupsErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            UpdateContinuousBackupsErrorKind::TableNotFoundException(_inner) => _inner.fmt(f),
-            UpdateContinuousBackupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2080,89 +2140,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateContinuousBackupsError 
 }
 impl UpdateContinuousBackupsError {
     /// Creates a new `UpdateContinuousBackupsError`.
-    pub fn new(kind: UpdateContinuousBackupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateContinuousBackupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateContinuousBackupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateContinuousBackupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateContinuousBackupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateContinuousBackupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateContinuousBackupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateContinuousBackupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateContinuousBackupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateContinuousBackupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableException`.
     pub fn is_continuous_backups_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateContinuousBackupsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContinuousBackupsErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, UpdateContinuousBackupsErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `UpdateContinuousBackupsErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContinuousBackupsErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, UpdateContinuousBackupsErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `UpdateContinuousBackupsErrorKind::TableNotFoundException`.
     pub fn is_table_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateContinuousBackupsErrorKind::TableNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateContinuousBackupsErrorKind::TableNotFoundException(_))
     }
 }
 impl std::error::Error for UpdateContinuousBackupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableException(_inner) => {
+            UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContinuousBackupsErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContinuousBackupsErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContinuousBackupsErrorKind::TableNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateContinuousBackupsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateContinuousBackupsErrorKind::InternalServerError(_inner) => Some(_inner),
-            UpdateContinuousBackupsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            UpdateContinuousBackupsErrorKind::TableNotFoundException(_inner) => Some(_inner),
-            UpdateContinuousBackupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2170,22 +2222,20 @@ impl std::error::Error for UpdateContinuousBackupsError {
 /// <p>Backups have not yet been enabled for this table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContinuousBackupsUnavailableException {
+pub struct ContinuousBackupsUnavailableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ContinuousBackupsUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ContinuousBackupsUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ContinuousBackupsUnavailableException")?;
         if let Some(inner_16) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_16)?;
             }
         }
@@ -2195,7 +2245,7 @@ impl std::fmt::Display for ContinuousBackupsUnavailableException {
 impl std::error::Error for ContinuousBackupsUnavailableException {}
 /// See [`ContinuousBackupsUnavailableException`](crate::error::ContinuousBackupsUnavailableException).
 pub mod continuous_backups_unavailable_exception {
-
+    
     /// A builder for [`ContinuousBackupsUnavailableException`](crate::error::ContinuousBackupsUnavailableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2209,16 +2259,18 @@ pub mod continuous_backups_unavailable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ContinuousBackupsUnavailableException`](crate::error::ContinuousBackupsUnavailableException).
         pub fn build(self) -> crate::error::ContinuousBackupsUnavailableException {
             crate::error::ContinuousBackupsUnavailableException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ContinuousBackupsUnavailableException {
     /// Creates a new builder-style object to manufacture [`ContinuousBackupsUnavailableException`](crate::error::ContinuousBackupsUnavailableException).
@@ -2232,15 +2284,15 @@ impl ContinuousBackupsUnavailableException {
 #[derive(std::fmt::Debug)]
 pub struct UntagResourceError {
     /// Kind of error that occurred.
-    pub kind: UntagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2252,35 +2304,47 @@ pub enum UntagResourceErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2294,88 +2358,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
 }
 impl UntagResourceError {
     /// Creates a new `UntagResourceError`.
-    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ResourceInUseException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::InternalServerError(_inner) => Some(_inner),
-            UntagResourceErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            UntagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagResourceErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2385,15 +2449,15 @@ impl std::error::Error for UntagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct TransactWriteItemsError {
     /// Kind of error that occurred.
-    pub kind: TransactWriteItemsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TransactWriteItemsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TransactWriteItemsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TransactWriteItemsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2413,120 +2477,134 @@ pub enum TransactWriteItemsErrorKind {
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The entire transaction request was canceled.</p>
-    /// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p>
-    /// <ul>
-    /// <li> <p>A condition in one of the condition expressions is not met.</p> </li>
-    /// <li> <p>A table in the <code>TransactWriteItems</code> request is in a different account or region.</p> </li>
-    /// <li> <p>More than one action in the <code>TransactWriteItems</code> operation targets the same item.</p> </li>
-    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
-    /// <li> <p>An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large, or a similar validation error occurs because of changes made by the transaction.</p> </li>
-    /// <li> <p>There is a user error, such as an invalid data format.</p> </li>
-    /// </ul>
-    /// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:</p>
-    /// <ul>
-    /// <li> <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code> operation fails with a <code>TransactionCanceledException</code>.</p> </li>
-    /// <li> <p>A table in the <code>TransactGetItems</code> request is in a different account or region.</p> </li>
-    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
-    /// <li> <p>There is a user error, such as an invalid data format.</p> </li>
-    /// </ul> <note>
-    /// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>None</code> code and <code>Null</code> message.</p>
-    /// </note>
-    /// <p>Cancellation reason codes and possible error messages:</p>
-    /// <ul>
-    /// <li> <p>No Errors:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>None</code> </p> </li>
-    /// <li> <p>Message: <code>null</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p>Conditional Check Failed:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li>
-    /// <li> <p>Message: The conditional request failed. </p> </li>
-    /// </ul> </li>
-    /// <li> <p>Item Collection Size Limit Exceeded:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code> </p> </li>
-    /// <li> <p>Message: Collection size exceeded.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>Transaction Conflict:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>TransactionConflict</code> </p> </li>
-    /// <li> <p>Message: Transaction is ongoing for the item.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>Provisioned Throughput Exceeded:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>ProvisionedThroughputExceeded</code> </p> </li>
-    /// <li> <p>Messages:</p>
-    /// <ul>
-    /// <li> <p>The level of configured provisioned throughput for the table was exceeded. Consider increasing your provisioning level with the UpdateTable API.</p> <note>
-    /// <p>This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.</p>
-    /// </note> </li>
-    /// <li> <p>The level of configured provisioned throughput for one or more global secondary indexes of the table was exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes with the UpdateTable API.</p> <note>
-    /// <p>This message is returned when provisioned throughput is exceeded is on a provisioned GSI.</p>
-    /// </note> </li>
-    /// </ul> </li>
-    /// </ul> </li>
-    /// <li> <p>Throttling Error:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>ThrottlingError</code> </p> </li>
-    /// <li> <p>Messages: </p>
-    /// <ul>
-    /// <li> <p>Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your table or index so please try again shortly. If exceptions persist, check if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p> <note>
-    /// <p>This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically scaling the table.</p>
-    /// </note> </li>
-    /// <li> <p>Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is automatically scaling your index so please try again shortly.</p> <note>
-    /// <p>This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p>
-    /// </note> </li>
-    /// </ul> </li>
-    /// </ul> </li>
-    /// <li> <p>Validation Error:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>ValidationError</code> </p> </li>
-    /// <li> <p>Messages: </p>
-    /// <ul>
-    /// <li> <p>One or more parameter values were invalid.</p> </li>
-    /// <li> <p>The update expression attempted to update the secondary index key beyond allowed size limits.</p> </li>
-    /// <li> <p>The update expression attempted to update the secondary index key to unsupported type.</p> </li>
-    /// <li> <p>An operand in the update expression has an incorrect data type.</p> </li>
-    /// <li> <p>Item size to update has exceeded the maximum allowed size.</p> </li>
-    /// <li> <p>Number overflow. Attempting to store a number with magnitude larger than supported range.</p> </li>
-    /// <li> <p>Type mismatch for attribute to update.</p> </li>
-    /// <li> <p>Nesting Levels have exceeded supported limits.</p> </li>
-    /// <li> <p>The document path provided in the update expression is invalid for update.</p> </li>
-    /// <li> <p>The provided expression refers to an attribute that does not exist in the item.</p> </li>
-    /// </ul> </li>
-    /// </ul> </li>
+    /// <p>The entire transaction request was canceled.</p> 
+    /// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p> 
+    /// <ul> 
+    /// <li> <p>A condition in one of the condition expressions is not met.</p> </li> 
+    /// <li> <p>A table in the <code>TransactWriteItems</code> request is in a different account or region.</p> </li> 
+    /// <li> <p>More than one action in the <code>TransactWriteItems</code> operation targets the same item.</p> </li> 
+    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li> 
+    /// <li> <p>An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large, or a similar validation error occurs because of changes made by the transaction.</p> </li> 
+    /// <li> <p>There is a user error, such as an invalid data format.</p> </li> 
+    /// </ul> 
+    /// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:</p> 
+    /// <ul> 
+    /// <li> <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code> operation fails with a <code>TransactionCanceledException</code>.</p> </li> 
+    /// <li> <p>A table in the <code>TransactGetItems</code> request is in a different account or region.</p> </li> 
+    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li> 
+    /// <li> <p>There is a user error, such as an invalid data format.</p> </li> 
+    /// </ul> <note> 
+    /// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>None</code> code and <code>Null</code> message.</p> 
+    /// </note> 
+    /// <p>Cancellation reason codes and possible error messages:</p> 
+    /// <ul> 
+    /// <li> <p>No Errors:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>None</code> </p> </li> 
+    /// <li> <p>Message: <code>null</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Conditional Check Failed:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li> 
+    /// <li> <p>Message: The conditional request failed. </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Item Collection Size Limit Exceeded:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code> </p> </li> 
+    /// <li> <p>Message: Collection size exceeded.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Transaction Conflict:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>TransactionConflict</code> </p> </li> 
+    /// <li> <p>Message: Transaction is ongoing for the item.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Provisioned Throughput Exceeded:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>ProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p>Messages:</p> 
+    /// <ul> 
+    /// <li> <p>The level of configured provisioned throughput for the table was exceeded. Consider increasing your provisioning level with the UpdateTable API.</p> <note> 
+    /// <p>This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.</p> 
+    /// </note> </li> 
+    /// <li> <p>The level of configured provisioned throughput for one or more global secondary indexes of the table was exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes with the UpdateTable API.</p> <note> 
+    /// <p>This message is returned when provisioned throughput is exceeded is on a provisioned GSI.</p> 
+    /// </note> </li> 
+    /// </ul> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Throttling Error:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>ThrottlingError</code> </p> </li> 
+    /// <li> <p>Messages: </p> 
+    /// <ul> 
+    /// <li> <p>Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your table or index so please try again shortly. If exceptions persist, check if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p> <note> 
+    /// <p>This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically scaling the table.</p> 
+    /// </note> </li> 
+    /// <li> <p>Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is automatically scaling your index so please try again shortly.</p> <note> 
+    /// <p>This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p> 
+    /// </note> </li> 
+    /// </ul> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Validation Error:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>ValidationError</code> </p> </li> 
+    /// <li> <p>Messages: </p> 
+    /// <ul> 
+    /// <li> <p>One or more parameter values were invalid.</p> </li> 
+    /// <li> <p>The update expression attempted to update the secondary index key beyond allowed size limits.</p> </li> 
+    /// <li> <p>The update expression attempted to update the secondary index key to unsupported type.</p> </li> 
+    /// <li> <p>An operand in the update expression has an incorrect data type.</p> </li> 
+    /// <li> <p>Item size to update has exceeded the maximum allowed size.</p> </li> 
+    /// <li> <p>Number overflow. Attempting to store a number with magnitude larger than supported range.</p> </li> 
+    /// <li> <p>Type mismatch for attribute to update.</p> </li> 
+    /// <li> <p>Nesting Levels have exceeded supported limits.</p> </li> 
+    /// <li> <p>The document path provided in the update expression is invalid for update.</p> </li> 
+    /// <li> <p>The provided expression refers to an attribute that does not exist in the item.</p> </li> 
+    /// </ul> </li> 
+    /// </ul> </li> 
     /// </ul>
     TransactionCanceledException(crate::error::TransactionCanceledException),
     /// <p>The transaction with the given request token is already in progress.</p>
     TransactionInProgressException(crate::error::TransactionInProgressException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TransactWriteItemsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TransactWriteItemsErrorKind::IdempotentParameterMismatchException(_inner) => {
+            TransactWriteItemsErrorKind::IdempotentParameterMismatchException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransactWriteItemsErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransactWriteItemsErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransactWriteItemsErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransactWriteItemsErrorKind::RequestLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransactWriteItemsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransactWriteItemsErrorKind::TransactionCanceledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransactWriteItemsErrorKind::TransactionInProgressException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransactWriteItemsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            TransactWriteItemsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            TransactWriteItemsErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            TransactWriteItemsErrorKind::ProvisionedThroughputExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            TransactWriteItemsErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            TransactWriteItemsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            TransactWriteItemsErrorKind::TransactionCanceledException(_inner) => _inner.fmt(f),
-            TransactWriteItemsErrorKind::TransactionInProgressException(_inner) => _inner.fmt(f),
-            TransactWriteItemsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2540,119 +2618,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for TransactWriteItemsError {
 }
 impl TransactWriteItemsError {
     /// Creates a new `TransactWriteItemsError`.
-    pub fn new(kind: TransactWriteItemsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TransactWriteItemsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TransactWriteItemsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TransactWriteItemsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TransactWriteItemsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TransactWriteItemsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TransactWriteItemsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TransactWriteItemsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TransactWriteItemsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TransactWriteItemsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TransactWriteItemsErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransactWriteItemsErrorKind::IdempotentParameterMismatchException(_)
-        )
+        matches!(&self.kind, TransactWriteItemsErrorKind::IdempotentParameterMismatchException(_))
     }
     /// Returns `true` if the error kind is `TransactWriteItemsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransactWriteItemsErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, TransactWriteItemsErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `TransactWriteItemsErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransactWriteItemsErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, TransactWriteItemsErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `TransactWriteItemsErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransactWriteItemsErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, TransactWriteItemsErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `TransactWriteItemsErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransactWriteItemsErrorKind::RequestLimitExceeded(_)
-        )
+        matches!(&self.kind, TransactWriteItemsErrorKind::RequestLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `TransactWriteItemsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransactWriteItemsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, TransactWriteItemsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `TransactWriteItemsErrorKind::TransactionCanceledException`.
     pub fn is_transaction_canceled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransactWriteItemsErrorKind::TransactionCanceledException(_)
-        )
+        matches!(&self.kind, TransactWriteItemsErrorKind::TransactionCanceledException(_))
     }
     /// Returns `true` if the error kind is `TransactWriteItemsErrorKind::TransactionInProgressException`.
     pub fn is_transaction_in_progress_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransactWriteItemsErrorKind::TransactionInProgressException(_)
-        )
+        matches!(&self.kind, TransactWriteItemsErrorKind::TransactionInProgressException(_))
     }
 }
 impl std::error::Error for TransactWriteItemsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TransactWriteItemsErrorKind::IdempotentParameterMismatchException(_inner) => {
+            TransactWriteItemsErrorKind::IdempotentParameterMismatchException(_inner) =>
+            Some(_inner)
+            ,
+            TransactWriteItemsErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            TransactWriteItemsErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            TransactWriteItemsErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            TransactWriteItemsErrorKind::RequestLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            TransactWriteItemsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            TransactWriteItemsErrorKind::TransactionCanceledException(_inner) =>
+            Some(_inner)
+            ,
+            TransactWriteItemsErrorKind::TransactionInProgressException(_inner) =>
+            Some(_inner)
+            ,
+            TransactWriteItemsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            TransactWriteItemsErrorKind::InternalServerError(_inner) => Some(_inner),
-            TransactWriteItemsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            TransactWriteItemsErrorKind::ProvisionedThroughputExceededException(_inner) => {
-                Some(_inner)
-            }
-            TransactWriteItemsErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            TransactWriteItemsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            TransactWriteItemsErrorKind::TransactionCanceledException(_inner) => Some(_inner),
-            TransactWriteItemsErrorKind::TransactionInProgressException(_inner) => Some(_inner),
-            TransactWriteItemsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2660,22 +2728,20 @@ impl std::error::Error for TransactWriteItemsError {
 /// <p>The transaction with the given request token is already in progress.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransactionInProgressException {
+pub struct TransactionInProgressException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TransactionInProgressException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TransactionInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TransactionInProgressException")?;
         if let Some(inner_17) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_17)?;
             }
         }
@@ -2685,7 +2751,7 @@ impl std::fmt::Display for TransactionInProgressException {
 impl std::error::Error for TransactionInProgressException {}
 /// See [`TransactionInProgressException`](crate::error::TransactionInProgressException).
 pub mod transaction_in_progress_exception {
-
+    
     /// A builder for [`TransactionInProgressException`](crate::error::TransactionInProgressException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2699,16 +2765,18 @@ pub mod transaction_in_progress_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TransactionInProgressException`](crate::error::TransactionInProgressException).
         pub fn build(self) -> crate::error::TransactionInProgressException {
             crate::error::TransactionInProgressException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TransactionInProgressException {
     /// Creates a new builder-style object to manufacture [`TransactionInProgressException`](crate::error::TransactionInProgressException).
@@ -2717,94 +2785,94 @@ impl TransactionInProgressException {
     }
 }
 
-/// <p>The entire transaction request was canceled.</p>
-/// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p>
-/// <ul>
-/// <li> <p>A condition in one of the condition expressions is not met.</p> </li>
-/// <li> <p>A table in the <code>TransactWriteItems</code> request is in a different account or region.</p> </li>
-/// <li> <p>More than one action in the <code>TransactWriteItems</code> operation targets the same item.</p> </li>
-/// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
-/// <li> <p>An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large, or a similar validation error occurs because of changes made by the transaction.</p> </li>
-/// <li> <p>There is a user error, such as an invalid data format.</p> </li>
-/// </ul>
-/// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:</p>
-/// <ul>
-/// <li> <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code> operation fails with a <code>TransactionCanceledException</code>.</p> </li>
-/// <li> <p>A table in the <code>TransactGetItems</code> request is in a different account or region.</p> </li>
-/// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
-/// <li> <p>There is a user error, such as an invalid data format.</p> </li>
-/// </ul> <note>
-/// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>None</code> code and <code>Null</code> message.</p>
-/// </note>
-/// <p>Cancellation reason codes and possible error messages:</p>
-/// <ul>
-/// <li> <p>No Errors:</p>
-/// <ul>
-/// <li> <p>Code: <code>None</code> </p> </li>
-/// <li> <p>Message: <code>null</code> </p> </li>
-/// </ul> </li>
-/// <li> <p>Conditional Check Failed:</p>
-/// <ul>
-/// <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li>
-/// <li> <p>Message: The conditional request failed. </p> </li>
-/// </ul> </li>
-/// <li> <p>Item Collection Size Limit Exceeded:</p>
-/// <ul>
-/// <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code> </p> </li>
-/// <li> <p>Message: Collection size exceeded.</p> </li>
-/// </ul> </li>
-/// <li> <p>Transaction Conflict:</p>
-/// <ul>
-/// <li> <p>Code: <code>TransactionConflict</code> </p> </li>
-/// <li> <p>Message: Transaction is ongoing for the item.</p> </li>
-/// </ul> </li>
-/// <li> <p>Provisioned Throughput Exceeded:</p>
-/// <ul>
-/// <li> <p>Code: <code>ProvisionedThroughputExceeded</code> </p> </li>
-/// <li> <p>Messages:</p>
-/// <ul>
-/// <li> <p>The level of configured provisioned throughput for the table was exceeded. Consider increasing your provisioning level with the UpdateTable API.</p> <note>
-/// <p>This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.</p>
-/// </note> </li>
-/// <li> <p>The level of configured provisioned throughput for one or more global secondary indexes of the table was exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes with the UpdateTable API.</p> <note>
-/// <p>This message is returned when provisioned throughput is exceeded is on a provisioned GSI.</p>
-/// </note> </li>
-/// </ul> </li>
-/// </ul> </li>
-/// <li> <p>Throttling Error:</p>
-/// <ul>
-/// <li> <p>Code: <code>ThrottlingError</code> </p> </li>
-/// <li> <p>Messages: </p>
-/// <ul>
-/// <li> <p>Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your table or index so please try again shortly. If exceptions persist, check if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p> <note>
-/// <p>This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically scaling the table.</p>
-/// </note> </li>
-/// <li> <p>Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is automatically scaling your index so please try again shortly.</p> <note>
-/// <p>This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p>
-/// </note> </li>
-/// </ul> </li>
-/// </ul> </li>
-/// <li> <p>Validation Error:</p>
-/// <ul>
-/// <li> <p>Code: <code>ValidationError</code> </p> </li>
-/// <li> <p>Messages: </p>
-/// <ul>
-/// <li> <p>One or more parameter values were invalid.</p> </li>
-/// <li> <p>The update expression attempted to update the secondary index key beyond allowed size limits.</p> </li>
-/// <li> <p>The update expression attempted to update the secondary index key to unsupported type.</p> </li>
-/// <li> <p>An operand in the update expression has an incorrect data type.</p> </li>
-/// <li> <p>Item size to update has exceeded the maximum allowed size.</p> </li>
-/// <li> <p>Number overflow. Attempting to store a number with magnitude larger than supported range.</p> </li>
-/// <li> <p>Type mismatch for attribute to update.</p> </li>
-/// <li> <p>Nesting Levels have exceeded supported limits.</p> </li>
-/// <li> <p>The document path provided in the update expression is invalid for update.</p> </li>
-/// <li> <p>The provided expression refers to an attribute that does not exist in the item.</p> </li>
-/// </ul> </li>
-/// </ul> </li>
+/// <p>The entire transaction request was canceled.</p> 
+/// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p> 
+/// <ul> 
+/// <li> <p>A condition in one of the condition expressions is not met.</p> </li> 
+/// <li> <p>A table in the <code>TransactWriteItems</code> request is in a different account or region.</p> </li> 
+/// <li> <p>More than one action in the <code>TransactWriteItems</code> operation targets the same item.</p> </li> 
+/// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li> 
+/// <li> <p>An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large, or a similar validation error occurs because of changes made by the transaction.</p> </li> 
+/// <li> <p>There is a user error, such as an invalid data format.</p> </li> 
+/// </ul> 
+/// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:</p> 
+/// <ul> 
+/// <li> <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code> operation fails with a <code>TransactionCanceledException</code>.</p> </li> 
+/// <li> <p>A table in the <code>TransactGetItems</code> request is in a different account or region.</p> </li> 
+/// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li> 
+/// <li> <p>There is a user error, such as an invalid data format.</p> </li> 
+/// </ul> <note> 
+/// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>None</code> code and <code>Null</code> message.</p> 
+/// </note> 
+/// <p>Cancellation reason codes and possible error messages:</p> 
+/// <ul> 
+/// <li> <p>No Errors:</p> 
+/// <ul> 
+/// <li> <p>Code: <code>None</code> </p> </li> 
+/// <li> <p>Message: <code>null</code> </p> </li> 
+/// </ul> </li> 
+/// <li> <p>Conditional Check Failed:</p> 
+/// <ul> 
+/// <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li> 
+/// <li> <p>Message: The conditional request failed. </p> </li> 
+/// </ul> </li> 
+/// <li> <p>Item Collection Size Limit Exceeded:</p> 
+/// <ul> 
+/// <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code> </p> </li> 
+/// <li> <p>Message: Collection size exceeded.</p> </li> 
+/// </ul> </li> 
+/// <li> <p>Transaction Conflict:</p> 
+/// <ul> 
+/// <li> <p>Code: <code>TransactionConflict</code> </p> </li> 
+/// <li> <p>Message: Transaction is ongoing for the item.</p> </li> 
+/// </ul> </li> 
+/// <li> <p>Provisioned Throughput Exceeded:</p> 
+/// <ul> 
+/// <li> <p>Code: <code>ProvisionedThroughputExceeded</code> </p> </li> 
+/// <li> <p>Messages:</p> 
+/// <ul> 
+/// <li> <p>The level of configured provisioned throughput for the table was exceeded. Consider increasing your provisioning level with the UpdateTable API.</p> <note> 
+/// <p>This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.</p> 
+/// </note> </li> 
+/// <li> <p>The level of configured provisioned throughput for one or more global secondary indexes of the table was exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes with the UpdateTable API.</p> <note> 
+/// <p>This message is returned when provisioned throughput is exceeded is on a provisioned GSI.</p> 
+/// </note> </li> 
+/// </ul> </li> 
+/// </ul> </li> 
+/// <li> <p>Throttling Error:</p> 
+/// <ul> 
+/// <li> <p>Code: <code>ThrottlingError</code> </p> </li> 
+/// <li> <p>Messages: </p> 
+/// <ul> 
+/// <li> <p>Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your table or index so please try again shortly. If exceptions persist, check if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p> <note> 
+/// <p>This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically scaling the table.</p> 
+/// </note> </li> 
+/// <li> <p>Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is automatically scaling your index so please try again shortly.</p> <note> 
+/// <p>This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p> 
+/// </note> </li> 
+/// </ul> </li> 
+/// </ul> </li> 
+/// <li> <p>Validation Error:</p> 
+/// <ul> 
+/// <li> <p>Code: <code>ValidationError</code> </p> </li> 
+/// <li> <p>Messages: </p> 
+/// <ul> 
+/// <li> <p>One or more parameter values were invalid.</p> </li> 
+/// <li> <p>The update expression attempted to update the secondary index key beyond allowed size limits.</p> </li> 
+/// <li> <p>The update expression attempted to update the secondary index key to unsupported type.</p> </li> 
+/// <li> <p>An operand in the update expression has an incorrect data type.</p> </li> 
+/// <li> <p>Item size to update has exceeded the maximum allowed size.</p> </li> 
+/// <li> <p>Number overflow. Attempting to store a number with magnitude larger than supported range.</p> </li> 
+/// <li> <p>Type mismatch for attribute to update.</p> </li> 
+/// <li> <p>Nesting Levels have exceeded supported limits.</p> </li> 
+/// <li> <p>The document path provided in the update expression is invalid for update.</p> </li> 
+/// <li> <p>The provided expression refers to an attribute that does not exist in the item.</p> </li> 
+/// </ul> </li> 
+/// </ul> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransactionCanceledException {
+pub struct TransactionCanceledException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -2814,21 +2882,19 @@ pub struct TransactionCanceledException {
 }
 impl TransactionCanceledException {
     /// <p>A list of cancellation reasons.</p>
-    pub fn cancellation_reasons(&self) -> std::option::Option<&[crate::model::CancellationReason]> {
+    pub fn cancellation_reasons(&self) -> std::option::Option<& [crate::model::CancellationReason]> {
         self.cancellation_reasons.as_deref()
     }
 }
 impl TransactionCanceledException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TransactionCanceledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TransactionCanceledException")?;
         if let Some(inner_18) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_18)?;
             }
         }
@@ -2838,13 +2904,12 @@ impl std::fmt::Display for TransactionCanceledException {
 impl std::error::Error for TransactionCanceledException {}
 /// See [`TransactionCanceledException`](crate::error::TransactionCanceledException).
 pub mod transaction_canceled_exception {
-
+    
     /// A builder for [`TransactionCanceledException`](crate::error::TransactionCanceledException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) cancellation_reasons:
-            std::option::Option<std::vec::Vec<crate::model::CancellationReason>>,
+        pub(crate) cancellation_reasons: std::option::Option<std::vec::Vec<crate::model::CancellationReason>>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -2854,8 +2919,7 @@ pub mod transaction_canceled_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Appends an item to `cancellation_reasons`.
         ///
@@ -2864,26 +2928,26 @@ pub mod transaction_canceled_exception {
         /// <p>A list of cancellation reasons.</p>
         pub fn cancellation_reasons(mut self, input: crate::model::CancellationReason) -> Self {
             let mut v = self.cancellation_reasons.unwrap_or_default();
-            v.push(input);
-            self.cancellation_reasons = Some(v);
-            self
+                            v.push(input);
+                            self.cancellation_reasons = Some(v);
+                            self
         }
         /// <p>A list of cancellation reasons.</p>
-        pub fn set_cancellation_reasons(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CancellationReason>>,
-        ) -> Self {
-            self.cancellation_reasons = input;
-            self
+        pub fn set_cancellation_reasons(mut self, input: std::option::Option<std::vec::Vec<crate::model::CancellationReason>>) -> Self {
+            self.cancellation_reasons = input; self
         }
         /// Consumes the builder and constructs a [`TransactionCanceledException`](crate::error::TransactionCanceledException).
         pub fn build(self) -> crate::error::TransactionCanceledException {
             crate::error::TransactionCanceledException {
-                message: self.message,
-                cancellation_reasons: self.cancellation_reasons,
+                message: self.message
+                ,
+                cancellation_reasons: self.cancellation_reasons
+                ,
             }
         }
     }
+    
+    
 }
 impl TransactionCanceledException {
     /// Creates a new builder-style object to manufacture [`TransactionCanceledException`](crate::error::TransactionCanceledException).
@@ -2895,22 +2959,20 @@ impl TransactionCanceledException {
 /// <p>DynamoDB rejected the request because you retried a request with a different payload but with an idempotent token that was already used.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdempotentParameterMismatchException {
+pub struct IdempotentParameterMismatchException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl IdempotentParameterMismatchException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for IdempotentParameterMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IdempotentParameterMismatchException")?;
         if let Some(inner_19) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_19)?;
             }
         }
@@ -2920,7 +2982,7 @@ impl std::fmt::Display for IdempotentParameterMismatchException {
 impl std::error::Error for IdempotentParameterMismatchException {}
 /// See [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
 pub mod idempotent_parameter_mismatch_exception {
-
+    
     /// A builder for [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2934,16 +2996,18 @@ pub mod idempotent_parameter_mismatch_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
         pub fn build(self) -> crate::error::IdempotentParameterMismatchException {
             crate::error::IdempotentParameterMismatchException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl IdempotentParameterMismatchException {
     /// Creates a new builder-style object to manufacture [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
@@ -2957,15 +3021,15 @@ impl IdempotentParameterMismatchException {
 #[derive(std::fmt::Debug)]
 pub struct TransactGetItemsError {
     /// Kind of error that occurred.
-    pub kind: TransactGetItemsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TransactGetItemsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TransactGetItemsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TransactGetItemsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2983,114 +3047,126 @@ pub enum TransactGetItemsErrorKind {
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The entire transaction request was canceled.</p>
-    /// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p>
-    /// <ul>
-    /// <li> <p>A condition in one of the condition expressions is not met.</p> </li>
-    /// <li> <p>A table in the <code>TransactWriteItems</code> request is in a different account or region.</p> </li>
-    /// <li> <p>More than one action in the <code>TransactWriteItems</code> operation targets the same item.</p> </li>
-    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
-    /// <li> <p>An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large, or a similar validation error occurs because of changes made by the transaction.</p> </li>
-    /// <li> <p>There is a user error, such as an invalid data format.</p> </li>
-    /// </ul>
-    /// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:</p>
-    /// <ul>
-    /// <li> <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code> operation fails with a <code>TransactionCanceledException</code>.</p> </li>
-    /// <li> <p>A table in the <code>TransactGetItems</code> request is in a different account or region.</p> </li>
-    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
-    /// <li> <p>There is a user error, such as an invalid data format.</p> </li>
-    /// </ul> <note>
-    /// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>None</code> code and <code>Null</code> message.</p>
-    /// </note>
-    /// <p>Cancellation reason codes and possible error messages:</p>
-    /// <ul>
-    /// <li> <p>No Errors:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>None</code> </p> </li>
-    /// <li> <p>Message: <code>null</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p>Conditional Check Failed:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li>
-    /// <li> <p>Message: The conditional request failed. </p> </li>
-    /// </ul> </li>
-    /// <li> <p>Item Collection Size Limit Exceeded:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code> </p> </li>
-    /// <li> <p>Message: Collection size exceeded.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>Transaction Conflict:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>TransactionConflict</code> </p> </li>
-    /// <li> <p>Message: Transaction is ongoing for the item.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>Provisioned Throughput Exceeded:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>ProvisionedThroughputExceeded</code> </p> </li>
-    /// <li> <p>Messages:</p>
-    /// <ul>
-    /// <li> <p>The level of configured provisioned throughput for the table was exceeded. Consider increasing your provisioning level with the UpdateTable API.</p> <note>
-    /// <p>This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.</p>
-    /// </note> </li>
-    /// <li> <p>The level of configured provisioned throughput for one or more global secondary indexes of the table was exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes with the UpdateTable API.</p> <note>
-    /// <p>This message is returned when provisioned throughput is exceeded is on a provisioned GSI.</p>
-    /// </note> </li>
-    /// </ul> </li>
-    /// </ul> </li>
-    /// <li> <p>Throttling Error:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>ThrottlingError</code> </p> </li>
-    /// <li> <p>Messages: </p>
-    /// <ul>
-    /// <li> <p>Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your table or index so please try again shortly. If exceptions persist, check if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p> <note>
-    /// <p>This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically scaling the table.</p>
-    /// </note> </li>
-    /// <li> <p>Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is automatically scaling your index so please try again shortly.</p> <note>
-    /// <p>This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p>
-    /// </note> </li>
-    /// </ul> </li>
-    /// </ul> </li>
-    /// <li> <p>Validation Error:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>ValidationError</code> </p> </li>
-    /// <li> <p>Messages: </p>
-    /// <ul>
-    /// <li> <p>One or more parameter values were invalid.</p> </li>
-    /// <li> <p>The update expression attempted to update the secondary index key beyond allowed size limits.</p> </li>
-    /// <li> <p>The update expression attempted to update the secondary index key to unsupported type.</p> </li>
-    /// <li> <p>An operand in the update expression has an incorrect data type.</p> </li>
-    /// <li> <p>Item size to update has exceeded the maximum allowed size.</p> </li>
-    /// <li> <p>Number overflow. Attempting to store a number with magnitude larger than supported range.</p> </li>
-    /// <li> <p>Type mismatch for attribute to update.</p> </li>
-    /// <li> <p>Nesting Levels have exceeded supported limits.</p> </li>
-    /// <li> <p>The document path provided in the update expression is invalid for update.</p> </li>
-    /// <li> <p>The provided expression refers to an attribute that does not exist in the item.</p> </li>
-    /// </ul> </li>
-    /// </ul> </li>
+    /// <p>The entire transaction request was canceled.</p> 
+    /// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p> 
+    /// <ul> 
+    /// <li> <p>A condition in one of the condition expressions is not met.</p> </li> 
+    /// <li> <p>A table in the <code>TransactWriteItems</code> request is in a different account or region.</p> </li> 
+    /// <li> <p>More than one action in the <code>TransactWriteItems</code> operation targets the same item.</p> </li> 
+    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li> 
+    /// <li> <p>An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large, or a similar validation error occurs because of changes made by the transaction.</p> </li> 
+    /// <li> <p>There is a user error, such as an invalid data format.</p> </li> 
+    /// </ul> 
+    /// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:</p> 
+    /// <ul> 
+    /// <li> <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code> operation fails with a <code>TransactionCanceledException</code>.</p> </li> 
+    /// <li> <p>A table in the <code>TransactGetItems</code> request is in a different account or region.</p> </li> 
+    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li> 
+    /// <li> <p>There is a user error, such as an invalid data format.</p> </li> 
+    /// </ul> <note> 
+    /// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>None</code> code and <code>Null</code> message.</p> 
+    /// </note> 
+    /// <p>Cancellation reason codes and possible error messages:</p> 
+    /// <ul> 
+    /// <li> <p>No Errors:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>None</code> </p> </li> 
+    /// <li> <p>Message: <code>null</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Conditional Check Failed:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li> 
+    /// <li> <p>Message: The conditional request failed. </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Item Collection Size Limit Exceeded:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code> </p> </li> 
+    /// <li> <p>Message: Collection size exceeded.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Transaction Conflict:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>TransactionConflict</code> </p> </li> 
+    /// <li> <p>Message: Transaction is ongoing for the item.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Provisioned Throughput Exceeded:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>ProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p>Messages:</p> 
+    /// <ul> 
+    /// <li> <p>The level of configured provisioned throughput for the table was exceeded. Consider increasing your provisioning level with the UpdateTable API.</p> <note> 
+    /// <p>This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.</p> 
+    /// </note> </li> 
+    /// <li> <p>The level of configured provisioned throughput for one or more global secondary indexes of the table was exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes with the UpdateTable API.</p> <note> 
+    /// <p>This message is returned when provisioned throughput is exceeded is on a provisioned GSI.</p> 
+    /// </note> </li> 
+    /// </ul> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Throttling Error:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>ThrottlingError</code> </p> </li> 
+    /// <li> <p>Messages: </p> 
+    /// <ul> 
+    /// <li> <p>Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your table or index so please try again shortly. If exceptions persist, check if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p> <note> 
+    /// <p>This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically scaling the table.</p> 
+    /// </note> </li> 
+    /// <li> <p>Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is automatically scaling your index so please try again shortly.</p> <note> 
+    /// <p>This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p> 
+    /// </note> </li> 
+    /// </ul> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Validation Error:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>ValidationError</code> </p> </li> 
+    /// <li> <p>Messages: </p> 
+    /// <ul> 
+    /// <li> <p>One or more parameter values were invalid.</p> </li> 
+    /// <li> <p>The update expression attempted to update the secondary index key beyond allowed size limits.</p> </li> 
+    /// <li> <p>The update expression attempted to update the secondary index key to unsupported type.</p> </li> 
+    /// <li> <p>An operand in the update expression has an incorrect data type.</p> </li> 
+    /// <li> <p>Item size to update has exceeded the maximum allowed size.</p> </li> 
+    /// <li> <p>Number overflow. Attempting to store a number with magnitude larger than supported range.</p> </li> 
+    /// <li> <p>Type mismatch for attribute to update.</p> </li> 
+    /// <li> <p>Nesting Levels have exceeded supported limits.</p> </li> 
+    /// <li> <p>The document path provided in the update expression is invalid for update.</p> </li> 
+    /// <li> <p>The provided expression refers to an attribute that does not exist in the item.</p> </li> 
+    /// </ul> </li> 
+    /// </ul> </li> 
     /// </ul>
     TransactionCanceledException(crate::error::TransactionCanceledException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TransactGetItemsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TransactGetItemsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            TransactGetItemsErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            TransactGetItemsErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            TransactGetItemsErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransactGetItemsErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransactGetItemsErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransactGetItemsErrorKind::RequestLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransactGetItemsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransactGetItemsErrorKind::TransactionCanceledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TransactGetItemsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            TransactGetItemsErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            TransactGetItemsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            TransactGetItemsErrorKind::TransactionCanceledException(_inner) => _inner.fmt(f),
-            TransactGetItemsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3104,101 +3180,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for TransactGetItemsError {
 }
 impl TransactGetItemsError {
     /// Creates a new `TransactGetItemsError`.
-    pub fn new(kind: TransactGetItemsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TransactGetItemsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TransactGetItemsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TransactGetItemsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TransactGetItemsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TransactGetItemsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TransactGetItemsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TransactGetItemsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TransactGetItemsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TransactGetItemsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TransactGetItemsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransactGetItemsErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, TransactGetItemsErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `TransactGetItemsErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransactGetItemsErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, TransactGetItemsErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `TransactGetItemsErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransactGetItemsErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, TransactGetItemsErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `TransactGetItemsErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransactGetItemsErrorKind::RequestLimitExceeded(_)
-        )
+        matches!(&self.kind, TransactGetItemsErrorKind::RequestLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `TransactGetItemsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransactGetItemsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, TransactGetItemsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `TransactGetItemsErrorKind::TransactionCanceledException`.
     pub fn is_transaction_canceled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TransactGetItemsErrorKind::TransactionCanceledException(_)
-        )
+        matches!(&self.kind, TransactGetItemsErrorKind::TransactionCanceledException(_))
     }
 }
 impl std::error::Error for TransactGetItemsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TransactGetItemsErrorKind::InternalServerError(_inner) => Some(_inner),
-            TransactGetItemsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            TransactGetItemsErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            TransactGetItemsErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            TransactGetItemsErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            TransactGetItemsErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            TransactGetItemsErrorKind::RequestLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            TransactGetItemsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            TransactGetItemsErrorKind::TransactionCanceledException(_inner) =>
+            Some(_inner)
+            ,
+            TransactGetItemsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            TransactGetItemsErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            TransactGetItemsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            TransactGetItemsErrorKind::TransactionCanceledException(_inner) => Some(_inner),
-            TransactGetItemsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3208,15 +3278,15 @@ impl std::error::Error for TransactGetItemsError {
 #[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     /// Kind of error that occurred.
-    pub kind: TagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3228,35 +3298,47 @@ pub enum TagResourceErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3270,56 +3352,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
 }
 impl TagResourceError {
     /// Creates a new `TagResourceError`.
-    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -3331,21 +3410,30 @@ impl TagResourceError {
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::InternalServerError(_inner) => Some(_inner),
-            TagResourceErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            TagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
-            TagResourceErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            TagResourceErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3355,15 +3443,15 @@ impl std::error::Error for TagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ScanError {
     /// Kind of error that occurred.
-    pub kind: ScanErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ScanErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ScanError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ScanErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3381,25 +3469,37 @@ pub enum ScanErrorKind {
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ScanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ScanErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ScanErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            ScanErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
-            ScanErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            ScanErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ScanErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ScanErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            ScanErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ScanErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ScanErrorKind::RequestLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            ScanErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ScanErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3413,46 +3513,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for ScanError {
 }
 impl ScanError {
     /// Creates a new `ScanError`.
-    pub fn new(kind: ScanErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ScanError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ScanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ScanError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ScanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ScanErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ScanError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ScanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ScanError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ScanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ScanErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ScanErrorKind::InternalServerError(_))
@@ -3463,10 +3563,7 @@ impl ScanError {
     }
     /// Returns `true` if the error kind is `ScanErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ScanErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, ScanErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `ScanErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
@@ -3480,12 +3577,24 @@ impl ScanError {
 impl std::error::Error for ScanError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ScanErrorKind::InternalServerError(_inner) => Some(_inner),
-            ScanErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            ScanErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
-            ScanErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            ScanErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ScanErrorKind::Unhandled(_inner) => Some(_inner),
+            ScanErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            ScanErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            ScanErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ScanErrorKind::RequestLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            ScanErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ScanErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3495,17 +3604,15 @@ impl std::error::Error for ScanError {
 #[derive(std::fmt::Debug)]
 pub struct RestoreTableToPointInTimeError {
     /// Kind of error that occurred.
-    pub kind: RestoreTableToPointInTimeErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RestoreTableToPointInTimeErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RestoreTableToPointInTimeError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: RestoreTableToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: RestoreTableToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3519,10 +3626,10 @@ pub enum RestoreTableToPointInTimeErrorKind {
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>An invalid restore time was specified. RestoreDateTime must be between EarliestRestorableDateTime and LatestRestorableDateTime.</p>
     InvalidRestoreTimeException(crate::error::InvalidRestoreTimeException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Point in time recovery has not yet been enabled for this source table.</p>
@@ -3533,34 +3640,46 @@ pub enum RestoreTableToPointInTimeErrorKind {
     TableInUseException(crate::error::TableInUseException),
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestoreTableToPointInTimeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RestoreTableToPointInTimeErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            RestoreTableToPointInTimeErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeException(_inner) => {
+            RestoreTableToPointInTimeErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreTableToPointInTimeErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreTableToPointInTimeErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreTableToPointInTimeErrorKind::TableAlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreTableToPointInTimeErrorKind::TableInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreTableToPointInTimeErrorKind::TableNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreTableToPointInTimeErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreTableToPointInTimeErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            RestoreTableToPointInTimeErrorKind::TableAlreadyExistsException(_inner) => {
-                _inner.fmt(f)
-            }
-            RestoreTableToPointInTimeErrorKind::TableInUseException(_inner) => _inner.fmt(f),
-            RestoreTableToPointInTimeErrorKind::TableNotFoundException(_inner) => _inner.fmt(f),
-            RestoreTableToPointInTimeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3574,121 +3693,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for RestoreTableToPointInTimeErro
 }
 impl RestoreTableToPointInTimeError {
     /// Creates a new `RestoreTableToPointInTimeError`.
-    pub fn new(kind: RestoreTableToPointInTimeErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RestoreTableToPointInTimeError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RestoreTableToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RestoreTableToPointInTimeError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RestoreTableToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RestoreTableToPointInTimeErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RestoreTableToPointInTimeError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RestoreTableToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RestoreTableToPointInTimeError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RestoreTableToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RestoreTableToPointInTimeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreTableToPointInTimeErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, RestoreTableToPointInTimeErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `RestoreTableToPointInTimeErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreTableToPointInTimeErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, RestoreTableToPointInTimeErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeException`.
     pub fn is_invalid_restore_time_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeException(_)
-        )
+        matches!(&self.kind, RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeException(_))
     }
     /// Returns `true` if the error kind is `RestoreTableToPointInTimeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreTableToPointInTimeErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, RestoreTableToPointInTimeErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException`.
     pub fn is_point_in_time_recovery_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_)
-        )
+        matches!(&self.kind, RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_))
     }
     /// Returns `true` if the error kind is `RestoreTableToPointInTimeErrorKind::TableAlreadyExistsException`.
     pub fn is_table_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreTableToPointInTimeErrorKind::TableAlreadyExistsException(_)
-        )
+        matches!(&self.kind, RestoreTableToPointInTimeErrorKind::TableAlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `RestoreTableToPointInTimeErrorKind::TableInUseException`.
     pub fn is_table_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreTableToPointInTimeErrorKind::TableInUseException(_)
-        )
+        matches!(&self.kind, RestoreTableToPointInTimeErrorKind::TableInUseException(_))
     }
     /// Returns `true` if the error kind is `RestoreTableToPointInTimeErrorKind::TableNotFoundException`.
     pub fn is_table_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreTableToPointInTimeErrorKind::TableNotFoundException(_)
-        )
+        matches!(&self.kind, RestoreTableToPointInTimeErrorKind::TableNotFoundException(_))
     }
 }
 impl std::error::Error for RestoreTableToPointInTimeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RestoreTableToPointInTimeErrorKind::InternalServerError(_inner) => Some(_inner),
-            RestoreTableToPointInTimeErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeException(_inner) => Some(_inner),
-            RestoreTableToPointInTimeErrorKind::LimitExceededException(_inner) => Some(_inner),
-            RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_inner) => {
+            RestoreTableToPointInTimeErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            RestoreTableToPointInTimeErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreTableToPointInTimeErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreTableToPointInTimeErrorKind::TableAlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreTableToPointInTimeErrorKind::TableInUseException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreTableToPointInTimeErrorKind::TableNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreTableToPointInTimeErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            RestoreTableToPointInTimeErrorKind::TableAlreadyExistsException(_inner) => Some(_inner),
-            RestoreTableToPointInTimeErrorKind::TableInUseException(_inner) => Some(_inner),
-            RestoreTableToPointInTimeErrorKind::TableNotFoundException(_inner) => Some(_inner),
-            RestoreTableToPointInTimeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3696,22 +3803,20 @@ impl std::error::Error for RestoreTableToPointInTimeError {
 /// <p>A target table with the specified name is either being created or deleted. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableInUseException {
+pub struct TableInUseException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TableInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TableInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TableInUseException")?;
         if let Some(inner_20) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_20)?;
             }
         }
@@ -3721,7 +3826,7 @@ impl std::fmt::Display for TableInUseException {
 impl std::error::Error for TableInUseException {}
 /// See [`TableInUseException`](crate::error::TableInUseException).
 pub mod table_in_use_exception {
-
+    
     /// A builder for [`TableInUseException`](crate::error::TableInUseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3735,16 +3840,18 @@ pub mod table_in_use_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TableInUseException`](crate::error::TableInUseException).
         pub fn build(self) -> crate::error::TableInUseException {
             crate::error::TableInUseException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TableInUseException {
     /// Creates a new builder-style object to manufacture [`TableInUseException`](crate::error::TableInUseException).
@@ -3756,22 +3863,20 @@ impl TableInUseException {
 /// <p>A target table with the specified name already exists. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableAlreadyExistsException {
+pub struct TableAlreadyExistsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TableAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TableAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TableAlreadyExistsException")?;
         if let Some(inner_21) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_21)?;
             }
         }
@@ -3781,7 +3886,7 @@ impl std::fmt::Display for TableAlreadyExistsException {
 impl std::error::Error for TableAlreadyExistsException {}
 /// See [`TableAlreadyExistsException`](crate::error::TableAlreadyExistsException).
 pub mod table_already_exists_exception {
-
+    
     /// A builder for [`TableAlreadyExistsException`](crate::error::TableAlreadyExistsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3795,16 +3900,18 @@ pub mod table_already_exists_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TableAlreadyExistsException`](crate::error::TableAlreadyExistsException).
         pub fn build(self) -> crate::error::TableAlreadyExistsException {
             crate::error::TableAlreadyExistsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TableAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`TableAlreadyExistsException`](crate::error::TableAlreadyExistsException).
@@ -3816,22 +3923,20 @@ impl TableAlreadyExistsException {
 /// <p>Point in time recovery has not yet been enabled for this source table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PointInTimeRecoveryUnavailableException {
+pub struct PointInTimeRecoveryUnavailableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PointInTimeRecoveryUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for PointInTimeRecoveryUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PointInTimeRecoveryUnavailableException")?;
         if let Some(inner_22) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_22)?;
             }
         }
@@ -3841,7 +3946,7 @@ impl std::fmt::Display for PointInTimeRecoveryUnavailableException {
 impl std::error::Error for PointInTimeRecoveryUnavailableException {}
 /// See [`PointInTimeRecoveryUnavailableException`](crate::error::PointInTimeRecoveryUnavailableException).
 pub mod point_in_time_recovery_unavailable_exception {
-
+    
     /// A builder for [`PointInTimeRecoveryUnavailableException`](crate::error::PointInTimeRecoveryUnavailableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3855,16 +3960,18 @@ pub mod point_in_time_recovery_unavailable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`PointInTimeRecoveryUnavailableException`](crate::error::PointInTimeRecoveryUnavailableException).
         pub fn build(self) -> crate::error::PointInTimeRecoveryUnavailableException {
             crate::error::PointInTimeRecoveryUnavailableException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl PointInTimeRecoveryUnavailableException {
     /// Creates a new builder-style object to manufacture [`PointInTimeRecoveryUnavailableException`](crate::error::PointInTimeRecoveryUnavailableException).
@@ -3876,22 +3983,20 @@ impl PointInTimeRecoveryUnavailableException {
 /// <p>An invalid restore time was specified. RestoreDateTime must be between EarliestRestorableDateTime and LatestRestorableDateTime.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidRestoreTimeException {
+pub struct InvalidRestoreTimeException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidRestoreTimeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidRestoreTimeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRestoreTimeException")?;
         if let Some(inner_23) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_23)?;
             }
         }
@@ -3901,7 +4006,7 @@ impl std::fmt::Display for InvalidRestoreTimeException {
 impl std::error::Error for InvalidRestoreTimeException {}
 /// See [`InvalidRestoreTimeException`](crate::error::InvalidRestoreTimeException).
 pub mod invalid_restore_time_exception {
-
+    
     /// A builder for [`InvalidRestoreTimeException`](crate::error::InvalidRestoreTimeException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3915,16 +4020,18 @@ pub mod invalid_restore_time_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidRestoreTimeException`](crate::error::InvalidRestoreTimeException).
         pub fn build(self) -> crate::error::InvalidRestoreTimeException {
             crate::error::InvalidRestoreTimeException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidRestoreTimeException {
     /// Creates a new builder-style object to manufacture [`InvalidRestoreTimeException`](crate::error::InvalidRestoreTimeException).
@@ -3938,15 +4045,15 @@ impl InvalidRestoreTimeException {
 #[derive(std::fmt::Debug)]
 pub struct RestoreTableFromBackupError {
     /// Kind of error that occurred.
-    pub kind: RestoreTableFromBackupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RestoreTableFromBackupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RestoreTableFromBackupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RestoreTableFromBackupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3962,37 +4069,53 @@ pub enum RestoreTableFromBackupErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>A target table with the specified name already exists. </p>
     TableAlreadyExistsException(crate::error::TableAlreadyExistsException),
     /// <p>A target table with the specified name is either being created or deleted. </p>
     TableInUseException(crate::error::TableInUseException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestoreTableFromBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RestoreTableFromBackupErrorKind::BackupInUseException(_inner) => _inner.fmt(f),
-            RestoreTableFromBackupErrorKind::BackupNotFoundException(_inner) => _inner.fmt(f),
-            RestoreTableFromBackupErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            RestoreTableFromBackupErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            RestoreTableFromBackupErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            RestoreTableFromBackupErrorKind::TableAlreadyExistsException(_inner) => _inner.fmt(f),
-            RestoreTableFromBackupErrorKind::TableInUseException(_inner) => _inner.fmt(f),
-            RestoreTableFromBackupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RestoreTableFromBackupErrorKind::BackupInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreTableFromBackupErrorKind::BackupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreTableFromBackupErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreTableFromBackupErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreTableFromBackupErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreTableFromBackupErrorKind::TableAlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreTableFromBackupErrorKind::TableInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreTableFromBackupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4006,111 +4129,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for RestoreTableFromBackupError {
 }
 impl RestoreTableFromBackupError {
     /// Creates a new `RestoreTableFromBackupError`.
-    pub fn new(kind: RestoreTableFromBackupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RestoreTableFromBackupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RestoreTableFromBackupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RestoreTableFromBackupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RestoreTableFromBackupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RestoreTableFromBackupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RestoreTableFromBackupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RestoreTableFromBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RestoreTableFromBackupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RestoreTableFromBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RestoreTableFromBackupErrorKind::BackupInUseException`.
     pub fn is_backup_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreTableFromBackupErrorKind::BackupInUseException(_)
-        )
+        matches!(&self.kind, RestoreTableFromBackupErrorKind::BackupInUseException(_))
     }
     /// Returns `true` if the error kind is `RestoreTableFromBackupErrorKind::BackupNotFoundException`.
     pub fn is_backup_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreTableFromBackupErrorKind::BackupNotFoundException(_)
-        )
+        matches!(&self.kind, RestoreTableFromBackupErrorKind::BackupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `RestoreTableFromBackupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreTableFromBackupErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, RestoreTableFromBackupErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `RestoreTableFromBackupErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreTableFromBackupErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, RestoreTableFromBackupErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `RestoreTableFromBackupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreTableFromBackupErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, RestoreTableFromBackupErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `RestoreTableFromBackupErrorKind::TableAlreadyExistsException`.
     pub fn is_table_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreTableFromBackupErrorKind::TableAlreadyExistsException(_)
-        )
+        matches!(&self.kind, RestoreTableFromBackupErrorKind::TableAlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `RestoreTableFromBackupErrorKind::TableInUseException`.
     pub fn is_table_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreTableFromBackupErrorKind::TableInUseException(_)
-        )
+        matches!(&self.kind, RestoreTableFromBackupErrorKind::TableInUseException(_))
     }
 }
 impl std::error::Error for RestoreTableFromBackupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RestoreTableFromBackupErrorKind::BackupInUseException(_inner) => Some(_inner),
-            RestoreTableFromBackupErrorKind::BackupNotFoundException(_inner) => Some(_inner),
-            RestoreTableFromBackupErrorKind::InternalServerError(_inner) => Some(_inner),
-            RestoreTableFromBackupErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            RestoreTableFromBackupErrorKind::LimitExceededException(_inner) => Some(_inner),
-            RestoreTableFromBackupErrorKind::TableAlreadyExistsException(_inner) => Some(_inner),
-            RestoreTableFromBackupErrorKind::TableInUseException(_inner) => Some(_inner),
-            RestoreTableFromBackupErrorKind::Unhandled(_inner) => Some(_inner),
+            RestoreTableFromBackupErrorKind::BackupInUseException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreTableFromBackupErrorKind::BackupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreTableFromBackupErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            RestoreTableFromBackupErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreTableFromBackupErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreTableFromBackupErrorKind::TableAlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreTableFromBackupErrorKind::TableInUseException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreTableFromBackupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4118,22 +4232,20 @@ impl std::error::Error for RestoreTableFromBackupError {
 /// <p>Backup not found for the given BackupARN. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackupNotFoundException {
+pub struct BackupNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BackupNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for BackupNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BackupNotFoundException")?;
         if let Some(inner_24) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_24)?;
             }
         }
@@ -4143,7 +4255,7 @@ impl std::fmt::Display for BackupNotFoundException {
 impl std::error::Error for BackupNotFoundException {}
 /// See [`BackupNotFoundException`](crate::error::BackupNotFoundException).
 pub mod backup_not_found_exception {
-
+    
     /// A builder for [`BackupNotFoundException`](crate::error::BackupNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4157,16 +4269,18 @@ pub mod backup_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BackupNotFoundException`](crate::error::BackupNotFoundException).
         pub fn build(self) -> crate::error::BackupNotFoundException {
             crate::error::BackupNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BackupNotFoundException {
     /// Creates a new builder-style object to manufacture [`BackupNotFoundException`](crate::error::BackupNotFoundException).
@@ -4178,22 +4292,20 @@ impl BackupNotFoundException {
 /// <p>There is another ongoing conflicting backup control plane operation on the table. The backup is either being created, deleted or restored to a table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackupInUseException {
+pub struct BackupInUseException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BackupInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for BackupInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BackupInUseException")?;
         if let Some(inner_25) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_25)?;
             }
         }
@@ -4203,7 +4315,7 @@ impl std::fmt::Display for BackupInUseException {
 impl std::error::Error for BackupInUseException {}
 /// See [`BackupInUseException`](crate::error::BackupInUseException).
 pub mod backup_in_use_exception {
-
+    
     /// A builder for [`BackupInUseException`](crate::error::BackupInUseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4217,16 +4329,18 @@ pub mod backup_in_use_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BackupInUseException`](crate::error::BackupInUseException).
         pub fn build(self) -> crate::error::BackupInUseException {
             crate::error::BackupInUseException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BackupInUseException {
     /// Creates a new builder-style object to manufacture [`BackupInUseException`](crate::error::BackupInUseException).
@@ -4240,15 +4354,15 @@ impl BackupInUseException {
 #[derive(std::fmt::Debug)]
 pub struct QueryError {
     /// Kind of error that occurred.
-    pub kind: QueryErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: QueryErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for QueryError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: QueryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4266,25 +4380,37 @@ pub enum QueryErrorKind {
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for QueryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            QueryErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            QueryErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            QueryErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
-            QueryErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            QueryErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            QueryErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            QueryErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            QueryErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            QueryErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            QueryErrorKind::RequestLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            QueryErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            QueryErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4298,46 +4424,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for QueryError {
 }
 impl QueryError {
     /// Creates a new `QueryError`.
-    pub fn new(kind: QueryErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `QueryError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: QueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `QueryError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: QueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: QueryErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `QueryError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: QueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `QueryError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: QueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `QueryErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, QueryErrorKind::InternalServerError(_))
@@ -4348,10 +4474,7 @@ impl QueryError {
     }
     /// Returns `true` if the error kind is `QueryErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            QueryErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, QueryErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `QueryErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
@@ -4365,12 +4488,24 @@ impl QueryError {
 impl std::error::Error for QueryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            QueryErrorKind::InternalServerError(_inner) => Some(_inner),
-            QueryErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            QueryErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
-            QueryErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            QueryErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            QueryErrorKind::Unhandled(_inner) => Some(_inner),
+            QueryErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            QueryErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            QueryErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            QueryErrorKind::RequestLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            QueryErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            QueryErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4380,15 +4515,15 @@ impl std::error::Error for QueryError {
 #[derive(std::fmt::Debug)]
 pub struct PutItemError {
     /// Kind of error that occurred.
-    pub kind: PutItemErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutItemErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutItemError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PutItemErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4403,9 +4538,7 @@ pub enum PutItemErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>
-    ItemCollectionSizeLimitExceededException(
-        crate::error::ItemCollectionSizeLimitExceededException,
-    ),
+    ItemCollectionSizeLimitExceededException(crate::error::ItemCollectionSizeLimitExceededException),
     /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
@@ -4414,28 +4547,46 @@ pub enum PutItemErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutItemErrorKind::ConditionalCheckFailedException(_inner) => _inner.fmt(f),
-            PutItemErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            PutItemErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            PutItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) => _inner.fmt(f),
-            PutItemErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
-            PutItemErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            PutItemErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            PutItemErrorKind::TransactionConflictException(_inner) => _inner.fmt(f),
-            PutItemErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            PutItemErrorKind::ConditionalCheckFailedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutItemErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutItemErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutItemErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutItemErrorKind::RequestLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutItemErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutItemErrorKind::TransactionConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutItemErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4449,52 +4600,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutItemError {
 }
 impl PutItemError {
     /// Creates a new `PutItemError`.
-    pub fn new(kind: PutItemErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutItemError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutItemError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutItemErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutItemError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutItemError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutItemErrorKind::ConditionalCheckFailedException`.
     pub fn is_conditional_check_failed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutItemErrorKind::ConditionalCheckFailedException(_)
-        )
+        matches!(&self.kind, PutItemErrorKind::ConditionalCheckFailedException(_))
     }
     /// Returns `true` if the error kind is `PutItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
@@ -4506,17 +4654,11 @@ impl PutItemError {
     }
     /// Returns `true` if the error kind is `PutItemErrorKind::ItemCollectionSizeLimitExceededException`.
     pub fn is_item_collection_size_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutItemErrorKind::ItemCollectionSizeLimitExceededException(_)
-        )
+        matches!(&self.kind, PutItemErrorKind::ItemCollectionSizeLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `PutItemErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutItemErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, PutItemErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `PutItemErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
@@ -4528,24 +4670,39 @@ impl PutItemError {
     }
     /// Returns `true` if the error kind is `PutItemErrorKind::TransactionConflictException`.
     pub fn is_transaction_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutItemErrorKind::TransactionConflictException(_)
-        )
+        matches!(&self.kind, PutItemErrorKind::TransactionConflictException(_))
     }
 }
 impl std::error::Error for PutItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutItemErrorKind::ConditionalCheckFailedException(_inner) => Some(_inner),
-            PutItemErrorKind::InternalServerError(_inner) => Some(_inner),
-            PutItemErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            PutItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) => Some(_inner),
-            PutItemErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
-            PutItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            PutItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            PutItemErrorKind::TransactionConflictException(_inner) => Some(_inner),
-            PutItemErrorKind::Unhandled(_inner) => Some(_inner),
+            PutItemErrorKind::ConditionalCheckFailedException(_inner) =>
+            Some(_inner)
+            ,
+            PutItemErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            PutItemErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            PutItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            PutItemErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            PutItemErrorKind::RequestLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            PutItemErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutItemErrorKind::TransactionConflictException(_inner) =>
+            Some(_inner)
+            ,
+            PutItemErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4555,15 +4712,15 @@ impl std::error::Error for PutItemError {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsOfResourceError {
     /// Kind of error that occurred.
-    pub kind: ListTagsOfResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsOfResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsOfResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsOfResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4577,23 +4734,31 @@ pub enum ListTagsOfResourceErrorKind {
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsOfResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsOfResourceErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ListTagsOfResourceErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            ListTagsOfResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListTagsOfResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTagsOfResourceErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsOfResourceErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsOfResourceErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsOfResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4607,75 +4772,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsOfResourceError {
 }
 impl ListTagsOfResourceError {
     /// Creates a new `ListTagsOfResourceError`.
-    pub fn new(kind: ListTagsOfResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsOfResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsOfResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsOfResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsOfResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsOfResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsOfResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsOfResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsOfResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsOfResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsOfResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsOfResourceErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, ListTagsOfResourceErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `ListTagsOfResourceErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsOfResourceErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, ListTagsOfResourceErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `ListTagsOfResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsOfResourceErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListTagsOfResourceErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for ListTagsOfResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsOfResourceErrorKind::InternalServerError(_inner) => Some(_inner),
-            ListTagsOfResourceErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            ListTagsOfResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsOfResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTagsOfResourceErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsOfResourceErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsOfResourceErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsOfResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4685,15 +4849,15 @@ impl std::error::Error for ListTagsOfResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ListTablesError {
     /// Kind of error that occurred.
-    pub kind: ListTablesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTablesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTablesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTablesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4705,22 +4869,28 @@ pub enum ListTablesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTablesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTablesErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ListTablesErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            ListTablesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTablesErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTablesErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTablesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4734,46 +4904,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTablesError {
 }
 impl ListTablesError {
     /// Creates a new `ListTablesError`.
-    pub fn new(kind: ListTablesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTablesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTablesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTablesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTablesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTablesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTablesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTablesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTablesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTablesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTablesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListTablesErrorKind::InternalServerError(_))
@@ -4786,9 +4956,15 @@ impl ListTablesError {
 impl std::error::Error for ListTablesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTablesErrorKind::InternalServerError(_inner) => Some(_inner),
-            ListTablesErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            ListTablesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTablesErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            ListTablesErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            ListTablesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4798,15 +4974,15 @@ impl std::error::Error for ListTablesError {
 #[derive(std::fmt::Debug)]
 pub struct ListImportsError {
     /// Kind of error that occurred.
-    pub kind: ListImportsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListImportsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListImportsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListImportsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4814,27 +4990,31 @@ impl aws_smithy_http::result::CreateUnhandledError for ListImportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListImportsErrorKind {
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListImportsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListImportsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            ListImportsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListImportsErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListImportsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4848,46 +5028,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListImportsError {
 }
 impl ListImportsError {
     /// Creates a new `ListImportsError`.
-    pub fn new(kind: ListImportsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListImportsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListImportsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListImportsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListImportsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListImportsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListImportsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListImportsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListImportsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListImportsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListImportsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ListImportsErrorKind::LimitExceededException(_))
@@ -4896,8 +5076,12 @@ impl ListImportsError {
 impl std::error::Error for ListImportsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListImportsErrorKind::LimitExceededException(_inner) => Some(_inner),
-            ListImportsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListImportsErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListImportsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4907,15 +5091,15 @@ impl std::error::Error for ListImportsError {
 #[derive(std::fmt::Debug)]
 pub struct ListGlobalTablesError {
     /// Kind of error that occurred.
-    pub kind: ListGlobalTablesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListGlobalTablesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListGlobalTablesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListGlobalTablesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4927,22 +5111,28 @@ pub enum ListGlobalTablesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGlobalTablesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListGlobalTablesErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ListGlobalTablesErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            ListGlobalTablesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListGlobalTablesErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGlobalTablesErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGlobalTablesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4956,67 +5146,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListGlobalTablesError {
 }
 impl ListGlobalTablesError {
     /// Creates a new `ListGlobalTablesError`.
-    pub fn new(kind: ListGlobalTablesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListGlobalTablesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListGlobalTablesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListGlobalTablesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListGlobalTablesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListGlobalTablesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListGlobalTablesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListGlobalTablesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListGlobalTablesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListGlobalTablesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListGlobalTablesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGlobalTablesErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, ListGlobalTablesErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `ListGlobalTablesErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGlobalTablesErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, ListGlobalTablesErrorKind::InvalidEndpointException(_))
     }
 }
 impl std::error::Error for ListGlobalTablesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListGlobalTablesErrorKind::InternalServerError(_inner) => Some(_inner),
-            ListGlobalTablesErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            ListGlobalTablesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListGlobalTablesErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            ListGlobalTablesErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            ListGlobalTablesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5026,15 +5216,15 @@ impl std::error::Error for ListGlobalTablesError {
 #[derive(std::fmt::Debug)]
 pub struct ListExportsError {
     /// Kind of error that occurred.
-    pub kind: ListExportsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListExportsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListExportsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListExportsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5044,28 +5234,34 @@ impl aws_smithy_http::result::CreateUnhandledError for ListExportsError {
 pub enum ListExportsErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListExportsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListExportsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ListExportsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            ListExportsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListExportsErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListExportsErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListExportsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5079,46 +5275,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListExportsError {
 }
 impl ListExportsError {
     /// Creates a new `ListExportsError`.
-    pub fn new(kind: ListExportsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListExportsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListExportsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListExportsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListExportsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListExportsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListExportsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListExportsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListExportsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListExportsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListExportsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListExportsErrorKind::InternalServerError(_))
@@ -5131,9 +5327,15 @@ impl ListExportsError {
 impl std::error::Error for ListExportsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListExportsErrorKind::InternalServerError(_inner) => Some(_inner),
-            ListExportsErrorKind::LimitExceededException(_inner) => Some(_inner),
-            ListExportsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListExportsErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            ListExportsErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListExportsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5143,15 +5345,15 @@ impl std::error::Error for ListExportsError {
 #[derive(std::fmt::Debug)]
 pub struct ListContributorInsightsError {
     /// Kind of error that occurred.
-    pub kind: ListContributorInsightsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListContributorInsightsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListContributorInsightsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5163,22 +5365,28 @@ pub enum ListContributorInsightsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListContributorInsightsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListContributorInsightsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ListContributorInsightsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListContributorInsightsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListContributorInsightsErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListContributorInsightsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListContributorInsightsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5192,71 +5400,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListContributorInsightsError 
 }
 impl ListContributorInsightsError {
     /// Creates a new `ListContributorInsightsError`.
-    pub fn new(kind: ListContributorInsightsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListContributorInsightsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListContributorInsightsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListContributorInsightsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListContributorInsightsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListContributorInsightsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListContributorInsightsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListContributorInsightsErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, ListContributorInsightsErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `ListContributorInsightsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListContributorInsightsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListContributorInsightsErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for ListContributorInsightsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListContributorInsightsErrorKind::InternalServerError(_inner) => Some(_inner),
-            ListContributorInsightsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListContributorInsightsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListContributorInsightsErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            ListContributorInsightsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListContributorInsightsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5266,15 +5470,15 @@ impl std::error::Error for ListContributorInsightsError {
 #[derive(std::fmt::Debug)]
 pub struct ListBackupsError {
     /// Kind of error that occurred.
-    pub kind: ListBackupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListBackupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListBackupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListBackupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5286,22 +5490,28 @@ pub enum ListBackupsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListBackupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListBackupsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ListBackupsErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            ListBackupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListBackupsErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListBackupsErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListBackupsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5315,64 +5525,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListBackupsError {
 }
 impl ListBackupsError {
     /// Creates a new `ListBackupsError`.
-    pub fn new(kind: ListBackupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListBackupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListBackupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListBackupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListBackupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListBackupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListBackupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListBackupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListBackupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListBackupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListBackupsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListBackupsErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `ListBackupsErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListBackupsErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, ListBackupsErrorKind::InvalidEndpointException(_))
     }
 }
 impl std::error::Error for ListBackupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListBackupsErrorKind::InternalServerError(_inner) => Some(_inner),
-            ListBackupsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            ListBackupsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListBackupsErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            ListBackupsErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            ListBackupsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5382,15 +5595,15 @@ impl std::error::Error for ListBackupsError {
 #[derive(std::fmt::Debug)]
 pub struct ImportTableError {
     /// Kind of error that occurred.
-    pub kind: ImportTableErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ImportTableErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ImportTableError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ImportTableErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5400,31 +5613,39 @@ impl aws_smithy_http::result::CreateUnhandledError for ImportTableError {
 pub enum ImportTableErrorKind {
     /// <p> There was a conflict when importing from the specified S3 source. This can occur when the current import conflicts with a previous import request that had the same client token. </p>
     ImportConflictException(crate::error::ImportConflictException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ImportTableErrorKind::ImportConflictException(_inner) => _inner.fmt(f),
-            ImportTableErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            ImportTableErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            ImportTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ImportTableErrorKind::ImportConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportTableErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportTableErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportTableErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5438,46 +5659,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for ImportTableError {
 }
 impl ImportTableError {
     /// Creates a new `ImportTableError`.
-    pub fn new(kind: ImportTableErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ImportTableError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ImportTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ImportTableError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ImportTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ImportTableErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ImportTableError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ImportTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ImportTableError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ImportTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ImportTableErrorKind::ImportConflictException`.
     pub fn is_import_conflict_exception(&self) -> bool {
         matches!(&self.kind, ImportTableErrorKind::ImportConflictException(_))
@@ -5494,10 +5715,18 @@ impl ImportTableError {
 impl std::error::Error for ImportTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ImportTableErrorKind::ImportConflictException(_inner) => Some(_inner),
-            ImportTableErrorKind::LimitExceededException(_inner) => Some(_inner),
-            ImportTableErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            ImportTableErrorKind::Unhandled(_inner) => Some(_inner),
+            ImportTableErrorKind::ImportConflictException(_inner) =>
+            Some(_inner)
+            ,
+            ImportTableErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ImportTableErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            ImportTableErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5505,22 +5734,20 @@ impl std::error::Error for ImportTableError {
 /// <p> There was a conflict when importing from the specified S3 source. This can occur when the current import conflicts with a previous import request that had the same client token. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportConflictException {
+pub struct ImportConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ImportConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ImportConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ImportConflictException")?;
         if let Some(inner_26) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_26)?;
             }
         }
@@ -5530,7 +5757,7 @@ impl std::fmt::Display for ImportConflictException {
 impl std::error::Error for ImportConflictException {}
 /// See [`ImportConflictException`](crate::error::ImportConflictException).
 pub mod import_conflict_exception {
-
+    
     /// A builder for [`ImportConflictException`](crate::error::ImportConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5544,16 +5771,18 @@ pub mod import_conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ImportConflictException`](crate::error::ImportConflictException).
         pub fn build(self) -> crate::error::ImportConflictException {
             crate::error::ImportConflictException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportConflictException {
     /// Creates a new builder-style object to manufacture [`ImportConflictException`](crate::error::ImportConflictException).
@@ -5567,15 +5796,15 @@ impl ImportConflictException {
 #[derive(std::fmt::Debug)]
 pub struct GetItemError {
     /// Kind of error that occurred.
-    pub kind: GetItemErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetItemErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetItemError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetItemErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5593,25 +5822,37 @@ pub enum GetItemErrorKind {
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetItemErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            GetItemErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            GetItemErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
-            GetItemErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            GetItemErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetItemErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetItemErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetItemErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetItemErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetItemErrorKind::RequestLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetItemErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetItemErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5625,46 +5866,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetItemError {
 }
 impl GetItemError {
     /// Creates a new `GetItemError`.
-    pub fn new(kind: GetItemErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetItemError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetItemError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetItemErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetItemError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetItemError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetItemErrorKind::InternalServerError(_))
@@ -5675,10 +5916,7 @@ impl GetItemError {
     }
     /// Returns `true` if the error kind is `GetItemErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetItemErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, GetItemErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `GetItemErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
@@ -5692,12 +5930,24 @@ impl GetItemError {
 impl std::error::Error for GetItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetItemErrorKind::InternalServerError(_inner) => Some(_inner),
-            GetItemErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            GetItemErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
-            GetItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            GetItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetItemErrorKind::Unhandled(_inner) => Some(_inner),
+            GetItemErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            GetItemErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            GetItemErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetItemErrorKind::RequestLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            GetItemErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetItemErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5707,17 +5957,15 @@ impl std::error::Error for GetItemError {
 #[derive(std::fmt::Debug)]
 pub struct ExportTableToPointInTimeError {
     /// Kind of error that occurred.
-    pub kind: ExportTableToPointInTimeErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ExportTableToPointInTimeErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ExportTableToPointInTimeError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ExportTableToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ExportTableToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5731,38 +5979,50 @@ pub enum ExportTableToPointInTimeErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified <code>ExportTime</code> is outside of the point in time recovery window.</p>
     InvalidExportTimeException(crate::error::InvalidExportTimeException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Point in time recovery has not yet been enabled for this source table.</p>
     PointInTimeRecoveryUnavailableException(crate::error::PointInTimeRecoveryUnavailableException),
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportTableToPointInTimeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExportTableToPointInTimeErrorKind::ExportConflictException(_inner) => _inner.fmt(f),
-            ExportTableToPointInTimeErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ExportTableToPointInTimeErrorKind::InvalidExportTimeException(_inner) => _inner.fmt(f),
-            ExportTableToPointInTimeErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_inner) => {
+            ExportTableToPointInTimeErrorKind::ExportConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportTableToPointInTimeErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportTableToPointInTimeErrorKind::InvalidExportTimeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportTableToPointInTimeErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportTableToPointInTimeErrorKind::TableNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportTableToPointInTimeErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ExportTableToPointInTimeErrorKind::TableNotFoundException(_inner) => _inner.fmt(f),
-            ExportTableToPointInTimeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5776,105 +6036,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ExportTableToPointInTimeError
 }
 impl ExportTableToPointInTimeError {
     /// Creates a new `ExportTableToPointInTimeError`.
-    pub fn new(kind: ExportTableToPointInTimeErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ExportTableToPointInTimeError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ExportTableToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ExportTableToPointInTimeError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ExportTableToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ExportTableToPointInTimeErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ExportTableToPointInTimeError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ExportTableToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ExportTableToPointInTimeError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ExportTableToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ExportTableToPointInTimeErrorKind::ExportConflictException`.
     pub fn is_export_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportTableToPointInTimeErrorKind::ExportConflictException(_)
-        )
+        matches!(&self.kind, ExportTableToPointInTimeErrorKind::ExportConflictException(_))
     }
     /// Returns `true` if the error kind is `ExportTableToPointInTimeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportTableToPointInTimeErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, ExportTableToPointInTimeErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `ExportTableToPointInTimeErrorKind::InvalidExportTimeException`.
     pub fn is_invalid_export_time_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportTableToPointInTimeErrorKind::InvalidExportTimeException(_)
-        )
+        matches!(&self.kind, ExportTableToPointInTimeErrorKind::InvalidExportTimeException(_))
     }
     /// Returns `true` if the error kind is `ExportTableToPointInTimeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportTableToPointInTimeErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, ExportTableToPointInTimeErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException`.
     pub fn is_point_in_time_recovery_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_)
-        )
+        matches!(&self.kind, ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ExportTableToPointInTimeErrorKind::TableNotFoundException`.
     pub fn is_table_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportTableToPointInTimeErrorKind::TableNotFoundException(_)
-        )
+        matches!(&self.kind, ExportTableToPointInTimeErrorKind::TableNotFoundException(_))
     }
 }
 impl std::error::Error for ExportTableToPointInTimeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExportTableToPointInTimeErrorKind::ExportConflictException(_inner) => Some(_inner),
-            ExportTableToPointInTimeErrorKind::InternalServerError(_inner) => Some(_inner),
-            ExportTableToPointInTimeErrorKind::InvalidExportTimeException(_inner) => Some(_inner),
-            ExportTableToPointInTimeErrorKind::LimitExceededException(_inner) => Some(_inner),
-            ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_inner) => {
+            ExportTableToPointInTimeErrorKind::ExportConflictException(_inner) =>
+            Some(_inner)
+            ,
+            ExportTableToPointInTimeErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            ExportTableToPointInTimeErrorKind::InvalidExportTimeException(_inner) =>
+            Some(_inner)
+            ,
+            ExportTableToPointInTimeErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ExportTableToPointInTimeErrorKind::TableNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ExportTableToPointInTimeErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ExportTableToPointInTimeErrorKind::TableNotFoundException(_inner) => Some(_inner),
-            ExportTableToPointInTimeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5882,22 +6132,20 @@ impl std::error::Error for ExportTableToPointInTimeError {
 /// <p>The specified <code>ExportTime</code> is outside of the point in time recovery window.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidExportTimeException {
+pub struct InvalidExportTimeException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidExportTimeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidExportTimeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidExportTimeException")?;
         if let Some(inner_27) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_27)?;
             }
         }
@@ -5907,7 +6155,7 @@ impl std::fmt::Display for InvalidExportTimeException {
 impl std::error::Error for InvalidExportTimeException {}
 /// See [`InvalidExportTimeException`](crate::error::InvalidExportTimeException).
 pub mod invalid_export_time_exception {
-
+    
     /// A builder for [`InvalidExportTimeException`](crate::error::InvalidExportTimeException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5921,16 +6169,18 @@ pub mod invalid_export_time_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidExportTimeException`](crate::error::InvalidExportTimeException).
         pub fn build(self) -> crate::error::InvalidExportTimeException {
             crate::error::InvalidExportTimeException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidExportTimeException {
     /// Creates a new builder-style object to manufacture [`InvalidExportTimeException`](crate::error::InvalidExportTimeException).
@@ -5942,22 +6192,20 @@ impl InvalidExportTimeException {
 /// <p>There was a conflict when writing to the specified S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportConflictException {
+pub struct ExportConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ExportConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ExportConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExportConflictException")?;
         if let Some(inner_28) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_28)?;
             }
         }
@@ -5967,7 +6215,7 @@ impl std::fmt::Display for ExportConflictException {
 impl std::error::Error for ExportConflictException {}
 /// See [`ExportConflictException`](crate::error::ExportConflictException).
 pub mod export_conflict_exception {
-
+    
     /// A builder for [`ExportConflictException`](crate::error::ExportConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5981,16 +6229,18 @@ pub mod export_conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ExportConflictException`](crate::error::ExportConflictException).
         pub fn build(self) -> crate::error::ExportConflictException {
             crate::error::ExportConflictException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportConflictException {
     /// Creates a new builder-style object to manufacture [`ExportConflictException`](crate::error::ExportConflictException).
@@ -6004,15 +6254,15 @@ impl ExportConflictException {
 #[derive(std::fmt::Debug)]
 pub struct ExecuteTransactionError {
     /// Kind of error that occurred.
-    pub kind: ExecuteTransactionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ExecuteTransactionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ExecuteTransactionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ExecuteTransactionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6030,119 +6280,131 @@ pub enum ExecuteTransactionErrorKind {
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The entire transaction request was canceled.</p>
-    /// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p>
-    /// <ul>
-    /// <li> <p>A condition in one of the condition expressions is not met.</p> </li>
-    /// <li> <p>A table in the <code>TransactWriteItems</code> request is in a different account or region.</p> </li>
-    /// <li> <p>More than one action in the <code>TransactWriteItems</code> operation targets the same item.</p> </li>
-    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
-    /// <li> <p>An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large, or a similar validation error occurs because of changes made by the transaction.</p> </li>
-    /// <li> <p>There is a user error, such as an invalid data format.</p> </li>
-    /// </ul>
-    /// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:</p>
-    /// <ul>
-    /// <li> <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code> operation fails with a <code>TransactionCanceledException</code>.</p> </li>
-    /// <li> <p>A table in the <code>TransactGetItems</code> request is in a different account or region.</p> </li>
-    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
-    /// <li> <p>There is a user error, such as an invalid data format.</p> </li>
-    /// </ul> <note>
-    /// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>None</code> code and <code>Null</code> message.</p>
-    /// </note>
-    /// <p>Cancellation reason codes and possible error messages:</p>
-    /// <ul>
-    /// <li> <p>No Errors:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>None</code> </p> </li>
-    /// <li> <p>Message: <code>null</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p>Conditional Check Failed:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li>
-    /// <li> <p>Message: The conditional request failed. </p> </li>
-    /// </ul> </li>
-    /// <li> <p>Item Collection Size Limit Exceeded:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code> </p> </li>
-    /// <li> <p>Message: Collection size exceeded.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>Transaction Conflict:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>TransactionConflict</code> </p> </li>
-    /// <li> <p>Message: Transaction is ongoing for the item.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>Provisioned Throughput Exceeded:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>ProvisionedThroughputExceeded</code> </p> </li>
-    /// <li> <p>Messages:</p>
-    /// <ul>
-    /// <li> <p>The level of configured provisioned throughput for the table was exceeded. Consider increasing your provisioning level with the UpdateTable API.</p> <note>
-    /// <p>This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.</p>
-    /// </note> </li>
-    /// <li> <p>The level of configured provisioned throughput for one or more global secondary indexes of the table was exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes with the UpdateTable API.</p> <note>
-    /// <p>This message is returned when provisioned throughput is exceeded is on a provisioned GSI.</p>
-    /// </note> </li>
-    /// </ul> </li>
-    /// </ul> </li>
-    /// <li> <p>Throttling Error:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>ThrottlingError</code> </p> </li>
-    /// <li> <p>Messages: </p>
-    /// <ul>
-    /// <li> <p>Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your table or index so please try again shortly. If exceptions persist, check if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p> <note>
-    /// <p>This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically scaling the table.</p>
-    /// </note> </li>
-    /// <li> <p>Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is automatically scaling your index so please try again shortly.</p> <note>
-    /// <p>This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p>
-    /// </note> </li>
-    /// </ul> </li>
-    /// </ul> </li>
-    /// <li> <p>Validation Error:</p>
-    /// <ul>
-    /// <li> <p>Code: <code>ValidationError</code> </p> </li>
-    /// <li> <p>Messages: </p>
-    /// <ul>
-    /// <li> <p>One or more parameter values were invalid.</p> </li>
-    /// <li> <p>The update expression attempted to update the secondary index key beyond allowed size limits.</p> </li>
-    /// <li> <p>The update expression attempted to update the secondary index key to unsupported type.</p> </li>
-    /// <li> <p>An operand in the update expression has an incorrect data type.</p> </li>
-    /// <li> <p>Item size to update has exceeded the maximum allowed size.</p> </li>
-    /// <li> <p>Number overflow. Attempting to store a number with magnitude larger than supported range.</p> </li>
-    /// <li> <p>Type mismatch for attribute to update.</p> </li>
-    /// <li> <p>Nesting Levels have exceeded supported limits.</p> </li>
-    /// <li> <p>The document path provided in the update expression is invalid for update.</p> </li>
-    /// <li> <p>The provided expression refers to an attribute that does not exist in the item.</p> </li>
-    /// </ul> </li>
-    /// </ul> </li>
+    /// <p>The entire transaction request was canceled.</p> 
+    /// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p> 
+    /// <ul> 
+    /// <li> <p>A condition in one of the condition expressions is not met.</p> </li> 
+    /// <li> <p>A table in the <code>TransactWriteItems</code> request is in a different account or region.</p> </li> 
+    /// <li> <p>More than one action in the <code>TransactWriteItems</code> operation targets the same item.</p> </li> 
+    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li> 
+    /// <li> <p>An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large, or a similar validation error occurs because of changes made by the transaction.</p> </li> 
+    /// <li> <p>There is a user error, such as an invalid data format.</p> </li> 
+    /// </ul> 
+    /// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:</p> 
+    /// <ul> 
+    /// <li> <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code> operation fails with a <code>TransactionCanceledException</code>.</p> </li> 
+    /// <li> <p>A table in the <code>TransactGetItems</code> request is in a different account or region.</p> </li> 
+    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li> 
+    /// <li> <p>There is a user error, such as an invalid data format.</p> </li> 
+    /// </ul> <note> 
+    /// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>None</code> code and <code>Null</code> message.</p> 
+    /// </note> 
+    /// <p>Cancellation reason codes and possible error messages:</p> 
+    /// <ul> 
+    /// <li> <p>No Errors:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>None</code> </p> </li> 
+    /// <li> <p>Message: <code>null</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Conditional Check Failed:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li> 
+    /// <li> <p>Message: The conditional request failed. </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Item Collection Size Limit Exceeded:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code> </p> </li> 
+    /// <li> <p>Message: Collection size exceeded.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Transaction Conflict:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>TransactionConflict</code> </p> </li> 
+    /// <li> <p>Message: Transaction is ongoing for the item.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Provisioned Throughput Exceeded:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>ProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p>Messages:</p> 
+    /// <ul> 
+    /// <li> <p>The level of configured provisioned throughput for the table was exceeded. Consider increasing your provisioning level with the UpdateTable API.</p> <note> 
+    /// <p>This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.</p> 
+    /// </note> </li> 
+    /// <li> <p>The level of configured provisioned throughput for one or more global secondary indexes of the table was exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes with the UpdateTable API.</p> <note> 
+    /// <p>This message is returned when provisioned throughput is exceeded is on a provisioned GSI.</p> 
+    /// </note> </li> 
+    /// </ul> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Throttling Error:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>ThrottlingError</code> </p> </li> 
+    /// <li> <p>Messages: </p> 
+    /// <ul> 
+    /// <li> <p>Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your table or index so please try again shortly. If exceptions persist, check if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p> <note> 
+    /// <p>This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically scaling the table.</p> 
+    /// </note> </li> 
+    /// <li> <p>Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is automatically scaling your index so please try again shortly.</p> <note> 
+    /// <p>This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p> 
+    /// </note> </li> 
+    /// </ul> </li> 
+    /// </ul> </li> 
+    /// <li> <p>Validation Error:</p> 
+    /// <ul> 
+    /// <li> <p>Code: <code>ValidationError</code> </p> </li> 
+    /// <li> <p>Messages: </p> 
+    /// <ul> 
+    /// <li> <p>One or more parameter values were invalid.</p> </li> 
+    /// <li> <p>The update expression attempted to update the secondary index key beyond allowed size limits.</p> </li> 
+    /// <li> <p>The update expression attempted to update the secondary index key to unsupported type.</p> </li> 
+    /// <li> <p>An operand in the update expression has an incorrect data type.</p> </li> 
+    /// <li> <p>Item size to update has exceeded the maximum allowed size.</p> </li> 
+    /// <li> <p>Number overflow. Attempting to store a number with magnitude larger than supported range.</p> </li> 
+    /// <li> <p>Type mismatch for attribute to update.</p> </li> 
+    /// <li> <p>Nesting Levels have exceeded supported limits.</p> </li> 
+    /// <li> <p>The document path provided in the update expression is invalid for update.</p> </li> 
+    /// <li> <p>The provided expression refers to an attribute that does not exist in the item.</p> </li> 
+    /// </ul> </li> 
+    /// </ul> </li> 
     /// </ul>
     TransactionCanceledException(crate::error::TransactionCanceledException),
     /// <p>The transaction with the given request token is already in progress.</p>
     TransactionInProgressException(crate::error::TransactionInProgressException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExecuteTransactionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExecuteTransactionErrorKind::IdempotentParameterMismatchException(_inner) => {
+            ExecuteTransactionErrorKind::IdempotentParameterMismatchException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteTransactionErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteTransactionErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteTransactionErrorKind::RequestLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteTransactionErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteTransactionErrorKind::TransactionCanceledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteTransactionErrorKind::TransactionInProgressException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteTransactionErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ExecuteTransactionErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ExecuteTransactionErrorKind::ProvisionedThroughputExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExecuteTransactionErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            ExecuteTransactionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ExecuteTransactionErrorKind::TransactionCanceledException(_inner) => _inner.fmt(f),
-            ExecuteTransactionErrorKind::TransactionInProgressException(_inner) => _inner.fmt(f),
-            ExecuteTransactionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6156,111 +6418,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ExecuteTransactionError {
 }
 impl ExecuteTransactionError {
     /// Creates a new `ExecuteTransactionError`.
-    pub fn new(kind: ExecuteTransactionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ExecuteTransactionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ExecuteTransactionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ExecuteTransactionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ExecuteTransactionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ExecuteTransactionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ExecuteTransactionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ExecuteTransactionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ExecuteTransactionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ExecuteTransactionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ExecuteTransactionErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteTransactionErrorKind::IdempotentParameterMismatchException(_)
-        )
+        matches!(&self.kind, ExecuteTransactionErrorKind::IdempotentParameterMismatchException(_))
     }
     /// Returns `true` if the error kind is `ExecuteTransactionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteTransactionErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, ExecuteTransactionErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `ExecuteTransactionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteTransactionErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, ExecuteTransactionErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `ExecuteTransactionErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteTransactionErrorKind::RequestLimitExceeded(_)
-        )
+        matches!(&self.kind, ExecuteTransactionErrorKind::RequestLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `ExecuteTransactionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteTransactionErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ExecuteTransactionErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ExecuteTransactionErrorKind::TransactionCanceledException`.
     pub fn is_transaction_canceled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteTransactionErrorKind::TransactionCanceledException(_)
-        )
+        matches!(&self.kind, ExecuteTransactionErrorKind::TransactionCanceledException(_))
     }
     /// Returns `true` if the error kind is `ExecuteTransactionErrorKind::TransactionInProgressException`.
     pub fn is_transaction_in_progress_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteTransactionErrorKind::TransactionInProgressException(_)
-        )
+        matches!(&self.kind, ExecuteTransactionErrorKind::TransactionInProgressException(_))
     }
 }
 impl std::error::Error for ExecuteTransactionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExecuteTransactionErrorKind::IdempotentParameterMismatchException(_inner) => {
+            ExecuteTransactionErrorKind::IdempotentParameterMismatchException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteTransactionErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteTransactionErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteTransactionErrorKind::RequestLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteTransactionErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteTransactionErrorKind::TransactionCanceledException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteTransactionErrorKind::TransactionInProgressException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteTransactionErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ExecuteTransactionErrorKind::InternalServerError(_inner) => Some(_inner),
-            ExecuteTransactionErrorKind::ProvisionedThroughputExceededException(_inner) => {
-                Some(_inner)
-            }
-            ExecuteTransactionErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            ExecuteTransactionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ExecuteTransactionErrorKind::TransactionCanceledException(_inner) => Some(_inner),
-            ExecuteTransactionErrorKind::TransactionInProgressException(_inner) => Some(_inner),
-            ExecuteTransactionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6270,15 +6523,15 @@ impl std::error::Error for ExecuteTransactionError {
 #[derive(std::fmt::Debug)]
 pub struct ExecuteStatementError {
     /// Kind of error that occurred.
-    pub kind: ExecuteStatementErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ExecuteStatementErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ExecuteStatementError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6293,9 +6546,7 @@ pub enum ExecuteStatementErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>
-    ItemCollectionSizeLimitExceededException(
-        crate::error::ItemCollectionSizeLimitExceededException,
-    ),
+    ItemCollectionSizeLimitExceededException(crate::error::ItemCollectionSizeLimitExceededException),
     /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
@@ -6304,32 +6555,46 @@ pub enum ExecuteStatementErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExecuteStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExecuteStatementErrorKind::ConditionalCheckFailedException(_inner) => _inner.fmt(f),
-            ExecuteStatementErrorKind::DuplicateItemException(_inner) => _inner.fmt(f),
-            ExecuteStatementErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededException(_inner) => {
+            ExecuteStatementErrorKind::ConditionalCheckFailedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteStatementErrorKind::DuplicateItemException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteStatementErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteStatementErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteStatementErrorKind::RequestLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteStatementErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteStatementErrorKind::TransactionConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExecuteStatementErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ExecuteStatementErrorKind::ProvisionedThroughputExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExecuteStatementErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            ExecuteStatementErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ExecuteStatementErrorKind::TransactionConflictException(_inner) => _inner.fmt(f),
-            ExecuteStatementErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6343,119 +6608,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for ExecuteStatementError {
 }
 impl ExecuteStatementError {
     /// Creates a new `ExecuteStatementError`.
-    pub fn new(kind: ExecuteStatementErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ExecuteStatementError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ExecuteStatementError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ExecuteStatementErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ExecuteStatementError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ExecuteStatementError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ExecuteStatementErrorKind::ConditionalCheckFailedException`.
     pub fn is_conditional_check_failed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteStatementErrorKind::ConditionalCheckFailedException(_)
-        )
+        matches!(&self.kind, ExecuteStatementErrorKind::ConditionalCheckFailedException(_))
     }
     /// Returns `true` if the error kind is `ExecuteStatementErrorKind::DuplicateItemException`.
     pub fn is_duplicate_item_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteStatementErrorKind::DuplicateItemException(_)
-        )
+        matches!(&self.kind, ExecuteStatementErrorKind::DuplicateItemException(_))
     }
     /// Returns `true` if the error kind is `ExecuteStatementErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteStatementErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, ExecuteStatementErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededException`.
     pub fn is_item_collection_size_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededException(_)
-        )
+        matches!(&self.kind, ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ExecuteStatementErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteStatementErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, ExecuteStatementErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `ExecuteStatementErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteStatementErrorKind::RequestLimitExceeded(_)
-        )
+        matches!(&self.kind, ExecuteStatementErrorKind::RequestLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `ExecuteStatementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteStatementErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ExecuteStatementErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ExecuteStatementErrorKind::TransactionConflictException`.
     pub fn is_transaction_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExecuteStatementErrorKind::TransactionConflictException(_)
-        )
+        matches!(&self.kind, ExecuteStatementErrorKind::TransactionConflictException(_))
     }
 }
 impl std::error::Error for ExecuteStatementError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExecuteStatementErrorKind::ConditionalCheckFailedException(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::DuplicateItemException(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::InternalServerError(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededException(_inner) => {
+            ExecuteStatementErrorKind::ConditionalCheckFailedException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteStatementErrorKind::DuplicateItemException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteStatementErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteStatementErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteStatementErrorKind::RequestLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteStatementErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteStatementErrorKind::TransactionConflictException(_inner) =>
+            Some(_inner)
+            ,
+            ExecuteStatementErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ExecuteStatementErrorKind::ProvisionedThroughputExceededException(_inner) => {
-                Some(_inner)
-            }
-            ExecuteStatementErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::TransactionConflictException(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6463,22 +6718,20 @@ impl std::error::Error for ExecuteStatementError {
 /// <p> There was an attempt to insert an item with the same primary key as an item that already exists in the DynamoDB table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DuplicateItemException {
+pub struct DuplicateItemException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DuplicateItemException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DuplicateItemException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateItemException")?;
         if let Some(inner_29) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_29)?;
             }
         }
@@ -6488,7 +6741,7 @@ impl std::fmt::Display for DuplicateItemException {
 impl std::error::Error for DuplicateItemException {}
 /// See [`DuplicateItemException`](crate::error::DuplicateItemException).
 pub mod duplicate_item_exception {
-
+    
     /// A builder for [`DuplicateItemException`](crate::error::DuplicateItemException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6502,16 +6755,18 @@ pub mod duplicate_item_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DuplicateItemException`](crate::error::DuplicateItemException).
         pub fn build(self) -> crate::error::DuplicateItemException {
             crate::error::DuplicateItemException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DuplicateItemException {
     /// Creates a new builder-style object to manufacture [`DuplicateItemException`](crate::error::DuplicateItemException).
@@ -6525,17 +6780,15 @@ impl DuplicateItemException {
 #[derive(std::fmt::Debug)]
 pub struct EnableKinesisStreamingDestinationError {
     /// Kind of error that occurred.
-    pub kind: EnableKinesisStreamingDestinationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: EnableKinesisStreamingDestinationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for EnableKinesisStreamingDestinationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: EnableKinesisStreamingDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: EnableKinesisStreamingDestinationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6547,45 +6800,47 @@ pub enum EnableKinesisStreamingDestinationErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableKinesisStreamingDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            EnableKinesisStreamingDestinationErrorKind::InternalServerError(_inner) => {
+            EnableKinesisStreamingDestinationErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKinesisStreamingDestinationErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKinesisStreamingDestinationErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKinesisStreamingDestinationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            EnableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) => {
-                _inner.fmt(f)
-            }
-            EnableKinesisStreamingDestinationErrorKind::LimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            EnableKinesisStreamingDestinationErrorKind::ResourceInUseException(_inner) => {
-                _inner.fmt(f)
-            }
-            EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            EnableKinesisStreamingDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6599,106 +6854,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for EnableKinesisStreamingDestina
 }
 impl EnableKinesisStreamingDestinationError {
     /// Creates a new `EnableKinesisStreamingDestinationError`.
-    pub fn new(
-        kind: EnableKinesisStreamingDestinationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `EnableKinesisStreamingDestinationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: EnableKinesisStreamingDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `EnableKinesisStreamingDestinationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: EnableKinesisStreamingDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: EnableKinesisStreamingDestinationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `EnableKinesisStreamingDestinationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: EnableKinesisStreamingDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `EnableKinesisStreamingDestinationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: EnableKinesisStreamingDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `EnableKinesisStreamingDestinationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableKinesisStreamingDestinationErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, EnableKinesisStreamingDestinationErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `EnableKinesisStreamingDestinationErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, EnableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `EnableKinesisStreamingDestinationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableKinesisStreamingDestinationErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, EnableKinesisStreamingDestinationErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `EnableKinesisStreamingDestinationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableKinesisStreamingDestinationErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, EnableKinesisStreamingDestinationErrorKind::ResourceInUseException(_))
     }
     /// Returns `true` if the error kind is `EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for EnableKinesisStreamingDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            EnableKinesisStreamingDestinationErrorKind::InternalServerError(_inner) => Some(_inner),
-            EnableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) => {
+            EnableKinesisStreamingDestinationErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            EnableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKinesisStreamingDestinationErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKinesisStreamingDestinationErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKinesisStreamingDestinationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            EnableKinesisStreamingDestinationErrorKind::LimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            EnableKinesisStreamingDestinationErrorKind::ResourceInUseException(_inner) => {
-                Some(_inner)
-            }
-            EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            EnableKinesisStreamingDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6708,17 +6945,15 @@ impl std::error::Error for EnableKinesisStreamingDestinationError {
 #[derive(std::fmt::Debug)]
 pub struct DisableKinesisStreamingDestinationError {
     /// Kind of error that occurred.
-    pub kind: DisableKinesisStreamingDestinationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DisableKinesisStreamingDestinationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DisableKinesisStreamingDestinationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DisableKinesisStreamingDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DisableKinesisStreamingDestinationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6730,45 +6965,47 @@ pub enum DisableKinesisStreamingDestinationErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableKinesisStreamingDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DisableKinesisStreamingDestinationErrorKind::InternalServerError(_inner) => {
+            DisableKinesisStreamingDestinationErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKinesisStreamingDestinationErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKinesisStreamingDestinationErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKinesisStreamingDestinationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DisableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) => {
-                _inner.fmt(f)
-            }
-            DisableKinesisStreamingDestinationErrorKind::LimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            DisableKinesisStreamingDestinationErrorKind::ResourceInUseException(_inner) => {
-                _inner.fmt(f)
-            }
-            DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DisableKinesisStreamingDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6782,108 +7019,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DisableKinesisStreamingDestin
 }
 impl DisableKinesisStreamingDestinationError {
     /// Creates a new `DisableKinesisStreamingDestinationError`.
-    pub fn new(
-        kind: DisableKinesisStreamingDestinationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DisableKinesisStreamingDestinationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DisableKinesisStreamingDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DisableKinesisStreamingDestinationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DisableKinesisStreamingDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DisableKinesisStreamingDestinationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DisableKinesisStreamingDestinationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DisableKinesisStreamingDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DisableKinesisStreamingDestinationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DisableKinesisStreamingDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DisableKinesisStreamingDestinationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableKinesisStreamingDestinationErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, DisableKinesisStreamingDestinationErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `DisableKinesisStreamingDestinationErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, DisableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `DisableKinesisStreamingDestinationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableKinesisStreamingDestinationErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, DisableKinesisStreamingDestinationErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DisableKinesisStreamingDestinationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableKinesisStreamingDestinationErrorKind::ResourceInUseException(_)
-        )
+        matches!(&self.kind, DisableKinesisStreamingDestinationErrorKind::ResourceInUseException(_))
     }
     /// Returns `true` if the error kind is `DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for DisableKinesisStreamingDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DisableKinesisStreamingDestinationErrorKind::InternalServerError(_inner) => {
+            DisableKinesisStreamingDestinationErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DisableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            DisableKinesisStreamingDestinationErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DisableKinesisStreamingDestinationErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DisableKinesisStreamingDestinationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DisableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) => {
-                Some(_inner)
-            }
-            DisableKinesisStreamingDestinationErrorKind::LimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            DisableKinesisStreamingDestinationErrorKind::ResourceInUseException(_inner) => {
-                Some(_inner)
-            }
-            DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            DisableKinesisStreamingDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6893,15 +7110,15 @@ impl std::error::Error for DisableKinesisStreamingDestinationError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeTimeToLiveError {
     /// Kind of error that occurred.
-    pub kind: DescribeTimeToLiveErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeTimeToLiveErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeTimeToLiveError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeTimeToLiveErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6915,23 +7132,31 @@ pub enum DescribeTimeToLiveErrorKind {
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTimeToLiveError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeTimeToLiveErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeTimeToLiveErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            DescribeTimeToLiveErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DescribeTimeToLiveErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeTimeToLiveErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTimeToLiveErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTimeToLiveErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTimeToLiveErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6945,75 +7170,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeTimeToLiveError {
 }
 impl DescribeTimeToLiveError {
     /// Creates a new `DescribeTimeToLiveError`.
-    pub fn new(kind: DescribeTimeToLiveErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeTimeToLiveError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeTimeToLiveErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeTimeToLiveError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeTimeToLiveErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeTimeToLiveErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeTimeToLiveError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeTimeToLiveErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeTimeToLiveError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeTimeToLiveErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeTimeToLiveErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTimeToLiveErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, DescribeTimeToLiveErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `DescribeTimeToLiveErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTimeToLiveErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, DescribeTimeToLiveErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `DescribeTimeToLiveErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTimeToLiveErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeTimeToLiveErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeTimeToLiveError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeTimeToLiveErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeTimeToLiveErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            DescribeTimeToLiveErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeTimeToLiveErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeTimeToLiveErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTimeToLiveErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTimeToLiveErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTimeToLiveErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7023,17 +7247,15 @@ impl std::error::Error for DescribeTimeToLiveError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeTableReplicaAutoScalingError {
     /// Kind of error that occurred.
-    pub kind: DescribeTableReplicaAutoScalingErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeTableReplicaAutoScalingErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeTableReplicaAutoScalingError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeTableReplicaAutoScalingErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeTableReplicaAutoScalingErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7045,24 +7267,28 @@ pub enum DescribeTableReplicaAutoScalingErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTableReplicaAutoScalingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeTableReplicaAutoScalingErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_inner) => {
+            DescribeTableReplicaAutoScalingErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTableReplicaAutoScalingErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeTableReplicaAutoScalingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7076,76 +7302,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeTableReplicaAutoScali
 }
 impl DescribeTableReplicaAutoScalingError {
     /// Creates a new `DescribeTableReplicaAutoScalingError`.
-    pub fn new(
-        kind: DescribeTableReplicaAutoScalingErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeTableReplicaAutoScalingError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeTableReplicaAutoScalingErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeTableReplicaAutoScalingError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeTableReplicaAutoScalingErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeTableReplicaAutoScalingErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeTableReplicaAutoScalingError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeTableReplicaAutoScalingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeTableReplicaAutoScalingError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeTableReplicaAutoScalingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeTableReplicaAutoScalingErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTableReplicaAutoScalingErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, DescribeTableReplicaAutoScalingErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeTableReplicaAutoScalingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeTableReplicaAutoScalingErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_inner) => {
+            DescribeTableReplicaAutoScalingErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTableReplicaAutoScalingErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeTableReplicaAutoScalingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7155,15 +7372,15 @@ impl std::error::Error for DescribeTableReplicaAutoScalingError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeTableError {
     /// Kind of error that occurred.
-    pub kind: DescribeTableErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeTableErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeTableError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeTableErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7177,23 +7394,31 @@ pub enum DescribeTableErrorKind {
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeTableErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeTableErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            DescribeTableErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DescribeTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeTableErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTableErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTableErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTableErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7207,72 +7432,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeTableError {
 }
 impl DescribeTableError {
     /// Creates a new `DescribeTableError`.
-    pub fn new(kind: DescribeTableErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeTableError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeTableError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeTableErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeTableError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeTableError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeTableErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeTableErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `DescribeTableErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTableErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, DescribeTableErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `DescribeTableErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTableErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeTableErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeTableErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            DescribeTableErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeTableErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeTableErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTableErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTableErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTableErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7282,15 +7509,15 @@ impl std::error::Error for DescribeTableError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeLimitsError {
     /// Kind of error that occurred.
-    pub kind: DescribeLimitsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeLimitsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeLimitsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeLimitsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7302,22 +7529,28 @@ pub enum DescribeLimitsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLimitsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeLimitsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeLimitsErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            DescribeLimitsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeLimitsErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeLimitsErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeLimitsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7331,64 +7564,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeLimitsError {
 }
 impl DescribeLimitsError {
     /// Creates a new `DescribeLimitsError`.
-    pub fn new(kind: DescribeLimitsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeLimitsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeLimitsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeLimitsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeLimitsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeLimitsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeLimitsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeLimitsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeLimitsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeLimitsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeLimitsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeLimitsErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `DescribeLimitsErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeLimitsErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, DescribeLimitsErrorKind::InvalidEndpointException(_))
     }
 }
 impl std::error::Error for DescribeLimitsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeLimitsErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeLimitsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            DescribeLimitsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeLimitsErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DescribeLimitsErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeLimitsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7398,17 +7634,15 @@ impl std::error::Error for DescribeLimitsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeKinesisStreamingDestinationError {
     /// Kind of error that occurred.
-    pub kind: DescribeKinesisStreamingDestinationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeKinesisStreamingDestinationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeKinesisStreamingDestinationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeKinesisStreamingDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeKinesisStreamingDestinationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7422,29 +7656,31 @@ pub enum DescribeKinesisStreamingDestinationErrorKind {
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeKinesisStreamingDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeKinesisStreamingDestinationErrorKind::InternalServerError(_inner) => {
+            DescribeKinesisStreamingDestinationErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeKinesisStreamingDestinationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeKinesisStreamingDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7458,88 +7694,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeKinesisStreamingDesti
 }
 impl DescribeKinesisStreamingDestinationError {
     /// Creates a new `DescribeKinesisStreamingDestinationError`.
-    pub fn new(
-        kind: DescribeKinesisStreamingDestinationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeKinesisStreamingDestinationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeKinesisStreamingDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeKinesisStreamingDestinationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeKinesisStreamingDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeKinesisStreamingDestinationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeKinesisStreamingDestinationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeKinesisStreamingDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeKinesisStreamingDestinationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeKinesisStreamingDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeKinesisStreamingDestinationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeKinesisStreamingDestinationErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, DescribeKinesisStreamingDestinationErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeKinesisStreamingDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeKinesisStreamingDestinationErrorKind::InternalServerError(_inner) => {
+            DescribeKinesisStreamingDestinationErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeKinesisStreamingDestinationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) => {
-                Some(_inner)
-            }
-            DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            DescribeKinesisStreamingDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7549,15 +7771,15 @@ impl std::error::Error for DescribeKinesisStreamingDestinationError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeImportError {
     /// Kind of error that occurred.
-    pub kind: DescribeImportErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeImportErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeImportError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeImportErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7567,21 +7789,25 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeImportError {
 pub enum DescribeImportErrorKind {
     /// <p> The specified import was not found. </p>
     ImportNotFoundException(crate::error::ImportNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeImportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeImportErrorKind::ImportNotFoundException(_inner) => _inner.fmt(f),
-            DescribeImportErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeImportErrorKind::ImportNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeImportErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7595,59 +7821,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeImportError {
 }
 impl DescribeImportError {
     /// Creates a new `DescribeImportError`.
-    pub fn new(kind: DescribeImportErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeImportError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeImportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeImportError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeImportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeImportErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeImportError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeImportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeImportError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeImportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeImportErrorKind::ImportNotFoundException`.
     pub fn is_import_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeImportErrorKind::ImportNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeImportErrorKind::ImportNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeImportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeImportErrorKind::ImportNotFoundException(_inner) => Some(_inner),
-            DescribeImportErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeImportErrorKind::ImportNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeImportErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7655,22 +7882,20 @@ impl std::error::Error for DescribeImportError {
 /// <p> The specified import was not found. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportNotFoundException {
+pub struct ImportNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ImportNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ImportNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ImportNotFoundException")?;
         if let Some(inner_30) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_30)?;
             }
         }
@@ -7680,7 +7905,7 @@ impl std::fmt::Display for ImportNotFoundException {
 impl std::error::Error for ImportNotFoundException {}
 /// See [`ImportNotFoundException`](crate::error::ImportNotFoundException).
 pub mod import_not_found_exception {
-
+    
     /// A builder for [`ImportNotFoundException`](crate::error::ImportNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7694,16 +7919,18 @@ pub mod import_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ImportNotFoundException`](crate::error::ImportNotFoundException).
         pub fn build(self) -> crate::error::ImportNotFoundException {
             crate::error::ImportNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportNotFoundException {
     /// Creates a new builder-style object to manufacture [`ImportNotFoundException`](crate::error::ImportNotFoundException).
@@ -7717,17 +7944,15 @@ impl ImportNotFoundException {
 #[derive(std::fmt::Debug)]
 pub struct DescribeGlobalTableSettingsError {
     /// Kind of error that occurred.
-    pub kind: DescribeGlobalTableSettingsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeGlobalTableSettingsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeGlobalTableSettingsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeGlobalTableSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeGlobalTableSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7741,25 +7966,31 @@ pub enum DescribeGlobalTableSettingsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGlobalTableSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_inner) => {
+            DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeGlobalTableSettingsErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeGlobalTableSettingsErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeGlobalTableSettingsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeGlobalTableSettingsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeGlobalTableSettingsErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            DescribeGlobalTableSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7773,81 +8004,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeGlobalTableSettingsEr
 }
 impl DescribeGlobalTableSettingsError {
     /// Creates a new `DescribeGlobalTableSettingsError`.
-    pub fn new(kind: DescribeGlobalTableSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeGlobalTableSettingsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeGlobalTableSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeGlobalTableSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeGlobalTableSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeGlobalTableSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeGlobalTableSettingsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeGlobalTableSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeGlobalTableSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeGlobalTableSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundException`.
     pub fn is_global_table_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeGlobalTableSettingsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeGlobalTableSettingsErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, DescribeGlobalTableSettingsErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `DescribeGlobalTableSettingsErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeGlobalTableSettingsErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, DescribeGlobalTableSettingsErrorKind::InvalidEndpointException(_))
     }
 }
 impl std::error::Error for DescribeGlobalTableSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_inner) => {
+            DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeGlobalTableSettingsErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DescribeGlobalTableSettingsErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeGlobalTableSettingsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeGlobalTableSettingsErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeGlobalTableSettingsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            DescribeGlobalTableSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7857,15 +8081,15 @@ impl std::error::Error for DescribeGlobalTableSettingsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeGlobalTableError {
     /// Kind of error that occurred.
-    pub kind: DescribeGlobalTableErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeGlobalTableErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeGlobalTableError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7879,23 +8103,31 @@ pub enum DescribeGlobalTableErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGlobalTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeGlobalTableErrorKind::GlobalTableNotFoundException(_inner) => _inner.fmt(f),
-            DescribeGlobalTableErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeGlobalTableErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            DescribeGlobalTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeGlobalTableErrorKind::GlobalTableNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeGlobalTableErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeGlobalTableErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeGlobalTableErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7909,75 +8141,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeGlobalTableError {
 }
 impl DescribeGlobalTableError {
     /// Creates a new `DescribeGlobalTableError`.
-    pub fn new(kind: DescribeGlobalTableErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeGlobalTableError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeGlobalTableError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeGlobalTableErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeGlobalTableError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeGlobalTableError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeGlobalTableErrorKind::GlobalTableNotFoundException`.
     pub fn is_global_table_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeGlobalTableErrorKind::GlobalTableNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeGlobalTableErrorKind::GlobalTableNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeGlobalTableErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeGlobalTableErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, DescribeGlobalTableErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `DescribeGlobalTableErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeGlobalTableErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, DescribeGlobalTableErrorKind::InvalidEndpointException(_))
     }
 }
 impl std::error::Error for DescribeGlobalTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeGlobalTableErrorKind::GlobalTableNotFoundException(_inner) => Some(_inner),
-            DescribeGlobalTableErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeGlobalTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            DescribeGlobalTableErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeGlobalTableErrorKind::GlobalTableNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeGlobalTableErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DescribeGlobalTableErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeGlobalTableErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7987,15 +8218,15 @@ impl std::error::Error for DescribeGlobalTableError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeExportError {
     /// Kind of error that occurred.
-    pub kind: DescribeExportErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeExportErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeExportError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeExportErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8007,29 +8238,37 @@ pub enum DescribeExportErrorKind {
     ExportNotFoundException(crate::error::ExportNotFoundException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeExportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeExportErrorKind::ExportNotFoundException(_inner) => _inner.fmt(f),
-            DescribeExportErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeExportErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            DescribeExportErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeExportErrorKind::ExportNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeExportErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeExportErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeExportErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8043,52 +8282,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeExportError {
 }
 impl DescribeExportError {
     /// Creates a new `DescribeExportError`.
-    pub fn new(kind: DescribeExportErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeExportError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeExportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeExportError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeExportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeExportErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeExportError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeExportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeExportError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeExportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeExportErrorKind::ExportNotFoundException`.
     pub fn is_export_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeExportErrorKind::ExportNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeExportErrorKind::ExportNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeExportErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
@@ -8096,19 +8332,24 @@ impl DescribeExportError {
     }
     /// Returns `true` if the error kind is `DescribeExportErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeExportErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, DescribeExportErrorKind::LimitExceededException(_))
     }
 }
 impl std::error::Error for DescribeExportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeExportErrorKind::ExportNotFoundException(_inner) => Some(_inner),
-            DescribeExportErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeExportErrorKind::LimitExceededException(_inner) => Some(_inner),
-            DescribeExportErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeExportErrorKind::ExportNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeExportErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DescribeExportErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeExportErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8116,22 +8357,20 @@ impl std::error::Error for DescribeExportError {
 /// <p>The specified export was not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportNotFoundException {
+pub struct ExportNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ExportNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ExportNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExportNotFoundException")?;
         if let Some(inner_31) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_31)?;
             }
         }
@@ -8141,7 +8380,7 @@ impl std::fmt::Display for ExportNotFoundException {
 impl std::error::Error for ExportNotFoundException {}
 /// See [`ExportNotFoundException`](crate::error::ExportNotFoundException).
 pub mod export_not_found_exception {
-
+    
     /// A builder for [`ExportNotFoundException`](crate::error::ExportNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8155,16 +8394,18 @@ pub mod export_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ExportNotFoundException`](crate::error::ExportNotFoundException).
         pub fn build(self) -> crate::error::ExportNotFoundException {
             crate::error::ExportNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportNotFoundException {
     /// Creates a new builder-style object to manufacture [`ExportNotFoundException`](crate::error::ExportNotFoundException).
@@ -8178,15 +8419,15 @@ impl ExportNotFoundException {
 #[derive(std::fmt::Debug)]
 pub struct DescribeEndpointsError {
     /// Kind of error that occurred.
-    pub kind: DescribeEndpointsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeEndpointsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeEndpointsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8194,20 +8435,22 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeEndpointsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEndpointsErrorKind {
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeEndpointsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeEndpointsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8221,51 +8464,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeEndpointsError {
 }
 impl DescribeEndpointsError {
     /// Creates a new `DescribeEndpointsError`.
-    pub fn new(kind: DescribeEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeEndpointsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeEndpointsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeEndpointsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeEndpointsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
 }
 impl std::error::Error for DescribeEndpointsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeEndpointsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8275,17 +8520,15 @@ impl std::error::Error for DescribeEndpointsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeContributorInsightsError {
     /// Kind of error that occurred.
-    pub kind: DescribeContributorInsightsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeContributorInsightsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeContributorInsightsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8297,24 +8540,28 @@ pub enum DescribeContributorInsightsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeContributorInsightsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeContributorInsightsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeContributorInsightsErrorKind::ResourceNotFoundException(_inner) => {
+            DescribeContributorInsightsErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeContributorInsightsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeContributorInsightsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeContributorInsightsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8328,71 +8575,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeContributorInsightsEr
 }
 impl DescribeContributorInsightsError {
     /// Creates a new `DescribeContributorInsightsError`.
-    pub fn new(kind: DescribeContributorInsightsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeContributorInsightsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeContributorInsightsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeContributorInsightsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeContributorInsightsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeContributorInsightsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeContributorInsightsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeContributorInsightsErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, DescribeContributorInsightsErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `DescribeContributorInsightsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeContributorInsightsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeContributorInsightsErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeContributorInsightsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeContributorInsightsErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeContributorInsightsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeContributorInsightsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeContributorInsightsErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DescribeContributorInsightsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeContributorInsightsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8402,17 +8645,15 @@ impl std::error::Error for DescribeContributorInsightsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeContinuousBackupsError {
     /// Kind of error that occurred.
-    pub kind: DescribeContinuousBackupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeContinuousBackupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeContinuousBackupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeContinuousBackupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeContinuousBackupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8426,23 +8667,31 @@ pub enum DescribeContinuousBackupsErrorKind {
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeContinuousBackupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeContinuousBackupsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeContinuousBackupsErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            DescribeContinuousBackupsErrorKind::TableNotFoundException(_inner) => _inner.fmt(f),
-            DescribeContinuousBackupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeContinuousBackupsErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeContinuousBackupsErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeContinuousBackupsErrorKind::TableNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeContinuousBackupsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8456,79 +8705,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeContinuousBackupsErro
 }
 impl DescribeContinuousBackupsError {
     /// Creates a new `DescribeContinuousBackupsError`.
-    pub fn new(kind: DescribeContinuousBackupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeContinuousBackupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeContinuousBackupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeContinuousBackupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeContinuousBackupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeContinuousBackupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeContinuousBackupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeContinuousBackupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeContinuousBackupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeContinuousBackupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeContinuousBackupsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeContinuousBackupsErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, DescribeContinuousBackupsErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `DescribeContinuousBackupsErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeContinuousBackupsErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, DescribeContinuousBackupsErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `DescribeContinuousBackupsErrorKind::TableNotFoundException`.
     pub fn is_table_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeContinuousBackupsErrorKind::TableNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeContinuousBackupsErrorKind::TableNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeContinuousBackupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeContinuousBackupsErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeContinuousBackupsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            DescribeContinuousBackupsErrorKind::TableNotFoundException(_inner) => Some(_inner),
-            DescribeContinuousBackupsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeContinuousBackupsErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DescribeContinuousBackupsErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeContinuousBackupsErrorKind::TableNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeContinuousBackupsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8538,15 +8782,15 @@ impl std::error::Error for DescribeContinuousBackupsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeBackupError {
     /// Kind of error that occurred.
-    pub kind: DescribeBackupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeBackupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeBackupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeBackupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8560,23 +8804,31 @@ pub enum DescribeBackupErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeBackupErrorKind::BackupNotFoundException(_inner) => _inner.fmt(f),
-            DescribeBackupErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeBackupErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            DescribeBackupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeBackupErrorKind::BackupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBackupErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBackupErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBackupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8590,52 +8842,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeBackupError {
 }
 impl DescribeBackupError {
     /// Creates a new `DescribeBackupError`.
-    pub fn new(kind: DescribeBackupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeBackupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeBackupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeBackupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeBackupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeBackupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeBackupErrorKind::BackupNotFoundException`.
     pub fn is_backup_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBackupErrorKind::BackupNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeBackupErrorKind::BackupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeBackupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
@@ -8643,19 +8892,24 @@ impl DescribeBackupError {
     }
     /// Returns `true` if the error kind is `DescribeBackupErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBackupErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, DescribeBackupErrorKind::InvalidEndpointException(_))
     }
 }
 impl std::error::Error for DescribeBackupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeBackupErrorKind::BackupNotFoundException(_inner) => Some(_inner),
-            DescribeBackupErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeBackupErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            DescribeBackupErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeBackupErrorKind::BackupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBackupErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBackupErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBackupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8665,15 +8919,15 @@ impl std::error::Error for DescribeBackupError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteTableError {
     /// Kind of error that occurred.
-    pub kind: DeleteTableErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteTableErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteTableError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteTableErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8685,35 +8939,47 @@ pub enum DeleteTableErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteTableErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DeleteTableErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            DeleteTableErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            DeleteTableErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            DeleteTableErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DeleteTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteTableErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTableErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTableErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTableErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTableErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTableErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8727,56 +8993,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteTableError {
 }
 impl DeleteTableError {
     /// Creates a new `DeleteTableError`.
-    pub fn new(kind: DeleteTableErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteTableError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteTableError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteTableErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteTableError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteTableError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteTableErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteTableErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `DeleteTableErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteTableErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, DeleteTableErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `DeleteTableErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -8788,21 +9051,30 @@ impl DeleteTableError {
     }
     /// Returns `true` if the error kind is `DeleteTableErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteTableErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteTableErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for DeleteTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteTableErrorKind::InternalServerError(_inner) => Some(_inner),
-            DeleteTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            DeleteTableErrorKind::LimitExceededException(_inner) => Some(_inner),
-            DeleteTableErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            DeleteTableErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteTableErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteTableErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTableErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTableErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTableErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTableErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTableErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8812,15 +9084,15 @@ impl std::error::Error for DeleteTableError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteItemError {
     /// Kind of error that occurred.
-    pub kind: DeleteItemErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteItemErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteItemError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteItemErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8835,9 +9107,7 @@ pub enum DeleteItemErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>
-    ItemCollectionSizeLimitExceededException(
-        crate::error::ItemCollectionSizeLimitExceededException,
-    ),
+    ItemCollectionSizeLimitExceededException(crate::error::ItemCollectionSizeLimitExceededException),
     /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
@@ -8846,28 +9116,46 @@ pub enum DeleteItemErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteItemErrorKind::ConditionalCheckFailedException(_inner) => _inner.fmt(f),
-            DeleteItemErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DeleteItemErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            DeleteItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) => _inner.fmt(f),
-            DeleteItemErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
-            DeleteItemErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            DeleteItemErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DeleteItemErrorKind::TransactionConflictException(_inner) => _inner.fmt(f),
-            DeleteItemErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteItemErrorKind::ConditionalCheckFailedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteItemErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteItemErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteItemErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteItemErrorKind::RequestLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteItemErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteItemErrorKind::TransactionConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteItemErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8881,52 +9169,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteItemError {
 }
 impl DeleteItemError {
     /// Creates a new `DeleteItemError`.
-    pub fn new(kind: DeleteItemErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteItemError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteItemError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteItemErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteItemError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteItemError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteItemErrorKind::ConditionalCheckFailedException`.
     pub fn is_conditional_check_failed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteItemErrorKind::ConditionalCheckFailedException(_)
-        )
+        matches!(&self.kind, DeleteItemErrorKind::ConditionalCheckFailedException(_))
     }
     /// Returns `true` if the error kind is `DeleteItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
@@ -8938,17 +9223,11 @@ impl DeleteItemError {
     }
     /// Returns `true` if the error kind is `DeleteItemErrorKind::ItemCollectionSizeLimitExceededException`.
     pub fn is_item_collection_size_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteItemErrorKind::ItemCollectionSizeLimitExceededException(_)
-        )
+        matches!(&self.kind, DeleteItemErrorKind::ItemCollectionSizeLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DeleteItemErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteItemErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, DeleteItemErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `DeleteItemErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
@@ -8956,31 +9235,43 @@ impl DeleteItemError {
     }
     /// Returns `true` if the error kind is `DeleteItemErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteItemErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteItemErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteItemErrorKind::TransactionConflictException`.
     pub fn is_transaction_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteItemErrorKind::TransactionConflictException(_)
-        )
+        matches!(&self.kind, DeleteItemErrorKind::TransactionConflictException(_))
     }
 }
 impl std::error::Error for DeleteItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteItemErrorKind::ConditionalCheckFailedException(_inner) => Some(_inner),
-            DeleteItemErrorKind::InternalServerError(_inner) => Some(_inner),
-            DeleteItemErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            DeleteItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) => Some(_inner),
-            DeleteItemErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
-            DeleteItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            DeleteItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteItemErrorKind::TransactionConflictException(_inner) => Some(_inner),
-            DeleteItemErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteItemErrorKind::ConditionalCheckFailedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteItemErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DeleteItemErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteItemErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteItemErrorKind::RequestLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            DeleteItemErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteItemErrorKind::TransactionConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteItemErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8990,15 +9281,15 @@ impl std::error::Error for DeleteItemError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteBackupError {
     /// Kind of error that occurred.
-    pub kind: DeleteBackupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteBackupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteBackupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteBackupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9014,31 +9305,43 @@ pub enum DeleteBackupErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteBackupErrorKind::BackupInUseException(_inner) => _inner.fmt(f),
-            DeleteBackupErrorKind::BackupNotFoundException(_inner) => _inner.fmt(f),
-            DeleteBackupErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DeleteBackupErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            DeleteBackupErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            DeleteBackupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteBackupErrorKind::BackupInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBackupErrorKind::BackupNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBackupErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBackupErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBackupErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBackupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9052,56 +9355,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteBackupError {
 }
 impl DeleteBackupError {
     /// Creates a new `DeleteBackupError`.
-    pub fn new(kind: DeleteBackupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteBackupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteBackupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteBackupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteBackupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteBackupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteBackupErrorKind::BackupInUseException`.
     pub fn is_backup_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteBackupErrorKind::BackupInUseException(_))
     }
     /// Returns `true` if the error kind is `DeleteBackupErrorKind::BackupNotFoundException`.
     pub fn is_backup_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBackupErrorKind::BackupNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteBackupErrorKind::BackupNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteBackupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
@@ -9109,10 +9409,7 @@ impl DeleteBackupError {
     }
     /// Returns `true` if the error kind is `DeleteBackupErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBackupErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, DeleteBackupErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `DeleteBackupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -9122,12 +9419,24 @@ impl DeleteBackupError {
 impl std::error::Error for DeleteBackupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteBackupErrorKind::BackupInUseException(_inner) => Some(_inner),
-            DeleteBackupErrorKind::BackupNotFoundException(_inner) => Some(_inner),
-            DeleteBackupErrorKind::InternalServerError(_inner) => Some(_inner),
-            DeleteBackupErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            DeleteBackupErrorKind::LimitExceededException(_inner) => Some(_inner),
-            DeleteBackupErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteBackupErrorKind::BackupInUseException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBackupErrorKind::BackupNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBackupErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBackupErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBackupErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBackupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9137,15 +9446,15 @@ impl std::error::Error for DeleteBackupError {
 #[derive(std::fmt::Debug)]
 pub struct CreateTableError {
     /// Kind of error that occurred.
-    pub kind: CreateTableErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateTableErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateTableError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateTableErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9157,32 +9466,42 @@ pub enum CreateTableErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateTableErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            CreateTableErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            CreateTableErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateTableErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
-            CreateTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateTableErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTableErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTableErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTableErrorKind::ResourceInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTableErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9196,56 +9515,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateTableError {
 }
 impl CreateTableError {
     /// Creates a new `CreateTableError`.
-    pub fn new(kind: CreateTableErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateTableError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateTableError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateTableErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateTableError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateTableError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateTableErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateTableErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `CreateTableErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTableErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, CreateTableErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `CreateTableErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -9259,11 +9575,21 @@ impl CreateTableError {
 impl std::error::Error for CreateTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateTableErrorKind::InternalServerError(_inner) => Some(_inner),
-            CreateTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            CreateTableErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateTableErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            CreateTableErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateTableErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            CreateTableErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTableErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTableErrorKind::ResourceInUseException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTableErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9273,15 +9599,15 @@ impl std::error::Error for CreateTableError {
 #[derive(std::fmt::Debug)]
 pub struct CreateGlobalTableError {
     /// Kind of error that occurred.
-    pub kind: CreateGlobalTableErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateGlobalTableErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateGlobalTableError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9295,33 +9621,45 @@ pub enum CreateGlobalTableErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGlobalTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateGlobalTableErrorKind::GlobalTableAlreadyExistsException(_inner) => _inner.fmt(f),
-            CreateGlobalTableErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            CreateGlobalTableErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            CreateGlobalTableErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateGlobalTableErrorKind::TableNotFoundException(_inner) => _inner.fmt(f),
-            CreateGlobalTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateGlobalTableErrorKind::GlobalTableAlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGlobalTableErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGlobalTableErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGlobalTableErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGlobalTableErrorKind::TableNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGlobalTableErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9335,91 +9673,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateGlobalTableError {
 }
 impl CreateGlobalTableError {
     /// Creates a new `CreateGlobalTableError`.
-    pub fn new(kind: CreateGlobalTableErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateGlobalTableError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateGlobalTableError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateGlobalTableErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateGlobalTableError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateGlobalTableError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateGlobalTableErrorKind::GlobalTableAlreadyExistsException`.
     pub fn is_global_table_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGlobalTableErrorKind::GlobalTableAlreadyExistsException(_)
-        )
+        matches!(&self.kind, CreateGlobalTableErrorKind::GlobalTableAlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `CreateGlobalTableErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGlobalTableErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, CreateGlobalTableErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `CreateGlobalTableErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGlobalTableErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, CreateGlobalTableErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `CreateGlobalTableErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGlobalTableErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateGlobalTableErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateGlobalTableErrorKind::TableNotFoundException`.
     pub fn is_table_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGlobalTableErrorKind::TableNotFoundException(_)
-        )
+        matches!(&self.kind, CreateGlobalTableErrorKind::TableNotFoundException(_))
     }
 }
 impl std::error::Error for CreateGlobalTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateGlobalTableErrorKind::GlobalTableAlreadyExistsException(_inner) => Some(_inner),
-            CreateGlobalTableErrorKind::InternalServerError(_inner) => Some(_inner),
-            CreateGlobalTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            CreateGlobalTableErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateGlobalTableErrorKind::TableNotFoundException(_inner) => Some(_inner),
-            CreateGlobalTableErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateGlobalTableErrorKind::GlobalTableAlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGlobalTableErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            CreateGlobalTableErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGlobalTableErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGlobalTableErrorKind::TableNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGlobalTableErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9427,22 +9762,20 @@ impl std::error::Error for CreateGlobalTableError {
 /// <p>The specified global table already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GlobalTableAlreadyExistsException {
+pub struct GlobalTableAlreadyExistsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl GlobalTableAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for GlobalTableAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlobalTableAlreadyExistsException")?;
         if let Some(inner_32) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_32)?;
             }
         }
@@ -9452,7 +9785,7 @@ impl std::fmt::Display for GlobalTableAlreadyExistsException {
 impl std::error::Error for GlobalTableAlreadyExistsException {}
 /// See [`GlobalTableAlreadyExistsException`](crate::error::GlobalTableAlreadyExistsException).
 pub mod global_table_already_exists_exception {
-
+    
     /// A builder for [`GlobalTableAlreadyExistsException`](crate::error::GlobalTableAlreadyExistsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9466,16 +9799,18 @@ pub mod global_table_already_exists_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`GlobalTableAlreadyExistsException`](crate::error::GlobalTableAlreadyExistsException).
         pub fn build(self) -> crate::error::GlobalTableAlreadyExistsException {
             crate::error::GlobalTableAlreadyExistsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl GlobalTableAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`GlobalTableAlreadyExistsException`](crate::error::GlobalTableAlreadyExistsException).
@@ -9489,15 +9824,15 @@ impl GlobalTableAlreadyExistsException {
 #[derive(std::fmt::Debug)]
 pub struct CreateBackupError {
     /// Kind of error that occurred.
-    pub kind: CreateBackupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateBackupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateBackupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateBackupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9513,37 +9848,53 @@ pub enum CreateBackupErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>A target table with the specified name is either being created or deleted. </p>
     TableInUseException(crate::error::TableInUseException),
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateBackupErrorKind::BackupInUseException(_inner) => _inner.fmt(f),
-            CreateBackupErrorKind::ContinuousBackupsUnavailableException(_inner) => _inner.fmt(f),
-            CreateBackupErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            CreateBackupErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            CreateBackupErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateBackupErrorKind::TableInUseException(_inner) => _inner.fmt(f),
-            CreateBackupErrorKind::TableNotFoundException(_inner) => _inner.fmt(f),
-            CreateBackupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateBackupErrorKind::BackupInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBackupErrorKind::ContinuousBackupsUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBackupErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBackupErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBackupErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBackupErrorKind::TableInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBackupErrorKind::TableNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBackupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9557,56 +9908,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateBackupError {
 }
 impl CreateBackupError {
     /// Creates a new `CreateBackupError`.
-    pub fn new(kind: CreateBackupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateBackupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateBackupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateBackupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateBackupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateBackupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateBackupErrorKind::BackupInUseException`.
     pub fn is_backup_in_use_exception(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::BackupInUseException(_))
     }
     /// Returns `true` if the error kind is `CreateBackupErrorKind::ContinuousBackupsUnavailableException`.
     pub fn is_continuous_backups_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateBackupErrorKind::ContinuousBackupsUnavailableException(_)
-        )
+        matches!(&self.kind, CreateBackupErrorKind::ContinuousBackupsUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateBackupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
@@ -9614,10 +9962,7 @@ impl CreateBackupError {
     }
     /// Returns `true` if the error kind is `CreateBackupErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateBackupErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, CreateBackupErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `CreateBackupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -9635,14 +9980,30 @@ impl CreateBackupError {
 impl std::error::Error for CreateBackupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateBackupErrorKind::BackupInUseException(_inner) => Some(_inner),
-            CreateBackupErrorKind::ContinuousBackupsUnavailableException(_inner) => Some(_inner),
-            CreateBackupErrorKind::InternalServerError(_inner) => Some(_inner),
-            CreateBackupErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            CreateBackupErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateBackupErrorKind::TableInUseException(_inner) => Some(_inner),
-            CreateBackupErrorKind::TableNotFoundException(_inner) => Some(_inner),
-            CreateBackupErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateBackupErrorKind::BackupInUseException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBackupErrorKind::ContinuousBackupsUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBackupErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            CreateBackupErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBackupErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBackupErrorKind::TableInUseException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBackupErrorKind::TableNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBackupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9652,15 +10013,15 @@ impl std::error::Error for CreateBackupError {
 #[derive(std::fmt::Debug)]
 pub struct BatchWriteItemError {
     /// Kind of error that occurred.
-    pub kind: BatchWriteItemErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: BatchWriteItemErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for BatchWriteItemError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: BatchWriteItemErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9673,39 +10034,47 @@ pub enum BatchWriteItemErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>
-    ItemCollectionSizeLimitExceededException(
-        crate::error::ItemCollectionSizeLimitExceededException,
-    ),
+    ItemCollectionSizeLimitExceededException(crate::error::ItemCollectionSizeLimitExceededException),
     /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchWriteItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchWriteItemErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            BatchWriteItemErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) => {
+            BatchWriteItemErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchWriteItemErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchWriteItemErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchWriteItemErrorKind::RequestLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchWriteItemErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchWriteItemErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            BatchWriteItemErrorKind::ProvisionedThroughputExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchWriteItemErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            BatchWriteItemErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            BatchWriteItemErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -9719,70 +10088,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchWriteItemError {
 }
 impl BatchWriteItemError {
     /// Creates a new `BatchWriteItemError`.
-    pub fn new(kind: BatchWriteItemErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `BatchWriteItemError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: BatchWriteItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `BatchWriteItemError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: BatchWriteItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: BatchWriteItemErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `BatchWriteItemError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: BatchWriteItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `BatchWriteItemError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: BatchWriteItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `BatchWriteItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, BatchWriteItemErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `BatchWriteItemErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchWriteItemErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, BatchWriteItemErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededException`.
     pub fn is_item_collection_size_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededException(_)
-        )
+        matches!(&self.kind, BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `BatchWriteItemErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchWriteItemErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, BatchWriteItemErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `BatchWriteItemErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
@@ -9790,24 +10150,33 @@ impl BatchWriteItemError {
     }
     /// Returns `true` if the error kind is `BatchWriteItemErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchWriteItemErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, BatchWriteItemErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for BatchWriteItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchWriteItemErrorKind::InternalServerError(_inner) => Some(_inner),
-            BatchWriteItemErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) => {
+            BatchWriteItemErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            BatchWriteItemErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            BatchWriteItemErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            BatchWriteItemErrorKind::RequestLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            BatchWriteItemErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            BatchWriteItemErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            BatchWriteItemErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
-            BatchWriteItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            BatchWriteItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            BatchWriteItemErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9817,15 +10186,15 @@ impl std::error::Error for BatchWriteItemError {
 #[derive(std::fmt::Debug)]
 pub struct BatchGetItemError {
     /// Kind of error that occurred.
-    pub kind: BatchGetItemErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: BatchGetItemErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for BatchGetItemError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: BatchGetItemErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9843,25 +10212,37 @@ pub enum BatchGetItemErrorKind {
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchGetItemErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            BatchGetItemErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
-            BatchGetItemErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
-            BatchGetItemErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            BatchGetItemErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            BatchGetItemErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            BatchGetItemErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetItemErrorKind::InvalidEndpointException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetItemErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetItemErrorKind::RequestLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetItemErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetItemErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9875,63 +10256,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchGetItemError {
 }
 impl BatchGetItemError {
     /// Creates a new `BatchGetItemError`.
-    pub fn new(kind: BatchGetItemErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `BatchGetItemError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: BatchGetItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `BatchGetItemError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: BatchGetItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: BatchGetItemErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `BatchGetItemError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: BatchGetItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `BatchGetItemError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: BatchGetItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `BatchGetItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, BatchGetItemErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `BatchGetItemErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetItemErrorKind::InvalidEndpointException(_)
-        )
+        matches!(&self.kind, BatchGetItemErrorKind::InvalidEndpointException(_))
     }
     /// Returns `true` if the error kind is `BatchGetItemErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetItemErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, BatchGetItemErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `BatchGetItemErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
@@ -9939,21 +10314,30 @@ impl BatchGetItemError {
     }
     /// Returns `true` if the error kind is `BatchGetItemErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetItemErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, BatchGetItemErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for BatchGetItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchGetItemErrorKind::InternalServerError(_inner) => Some(_inner),
-            BatchGetItemErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            BatchGetItemErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
-            BatchGetItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            BatchGetItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            BatchGetItemErrorKind::Unhandled(_inner) => Some(_inner),
+            BatchGetItemErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetItemErrorKind::InvalidEndpointException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetItemErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetItemErrorKind::RequestLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetItemErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetItemErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9963,15 +10347,15 @@ impl std::error::Error for BatchGetItemError {
 #[derive(std::fmt::Debug)]
 pub struct BatchExecuteStatementError {
     /// Kind of error that occurred.
-    pub kind: BatchExecuteStatementErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: BatchExecuteStatementErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for BatchExecuteStatementError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: BatchExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9983,22 +10367,28 @@ pub enum BatchExecuteStatementErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchExecuteStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchExecuteStatementErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            BatchExecuteStatementErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            BatchExecuteStatementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            BatchExecuteStatementErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchExecuteStatementErrorKind::RequestLimitExceeded(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchExecuteStatementErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -10012,100 +10402,97 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchExecuteStatementError {
 }
 impl BatchExecuteStatementError {
     /// Creates a new `BatchExecuteStatementError`.
-    pub fn new(kind: BatchExecuteStatementErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `BatchExecuteStatementError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: BatchExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `BatchExecuteStatementError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: BatchExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: BatchExecuteStatementErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `BatchExecuteStatementError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: BatchExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `BatchExecuteStatementError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: BatchExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `BatchExecuteStatementErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchExecuteStatementErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, BatchExecuteStatementErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `BatchExecuteStatementErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchExecuteStatementErrorKind::RequestLimitExceeded(_)
-        )
+        matches!(&self.kind, BatchExecuteStatementErrorKind::RequestLimitExceeded(_))
     }
 }
 impl std::error::Error for BatchExecuteStatementError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchExecuteStatementErrorKind::InternalServerError(_inner) => Some(_inner),
-            BatchExecuteStatementErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            BatchExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner),
+            BatchExecuteStatementErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            BatchExecuteStatementErrorKind::RequestLimitExceeded(_inner) =>
+            Some(_inner)
+            ,
+            BatchExecuteStatementErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

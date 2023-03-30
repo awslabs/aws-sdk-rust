@@ -3,7 +3,7 @@
 /// <p>Describes an experiment template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentTemplate {
+pub struct ExperimentTemplate  {
     /// <p>The ID of the experiment template.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,18 +12,13 @@ pub struct ExperimentTemplate {
     pub description: std::option::Option<std::string::String>,
     /// <p>The targets for the experiment.</p>
     #[doc(hidden)]
-    pub targets: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateTarget>,
-    >,
+    pub targets: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateTarget>>,
     /// <p>The actions for the experiment.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateAction>,
-    >,
+    pub actions: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateAction>>,
     /// <p>The stop conditions for the experiment.</p>
     #[doc(hidden)]
-    pub stop_conditions:
-        std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateStopCondition>>,
+    pub stop_conditions: std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateStopCondition>>,
     /// <p>The time the experiment template was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -35,93 +30,69 @@ pub struct ExperimentTemplate {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The tags for the experiment template.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The configuration for experiment logging.</p>
     #[doc(hidden)]
     pub log_configuration: std::option::Option<crate::model::ExperimentTemplateLogConfiguration>,
 }
 impl ExperimentTemplate {
     /// <p>The ID of the experiment template.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The description for the experiment template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The targets for the experiment.</p>
-    pub fn targets(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateTarget>,
-    > {
+    pub fn targets(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateTarget>> {
         self.targets.as_ref()
     }
     /// <p>The actions for the experiment.</p>
-    pub fn actions(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateAction>,
-    > {
+    pub fn actions(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateAction>> {
         self.actions.as_ref()
     }
     /// <p>The stop conditions for the experiment.</p>
-    pub fn stop_conditions(
-        &self,
-    ) -> std::option::Option<&[crate::model::ExperimentTemplateStopCondition]> {
+    pub fn stop_conditions(&self) -> std::option::Option<& [crate::model::ExperimentTemplateStopCondition]> {
         self.stop_conditions.as_deref()
     }
     /// <p>The time the experiment template was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the experiment template was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The tags for the experiment template.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The configuration for experiment logging.</p>
-    pub fn log_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ExperimentTemplateLogConfiguration> {
+    pub fn log_configuration(&self) -> std::option::Option<& crate::model::ExperimentTemplateLogConfiguration> {
         self.log_configuration.as_ref()
     }
 }
 /// See [`ExperimentTemplate`](crate::model::ExperimentTemplate).
 pub mod experiment_template {
-
+    
     /// A builder for [`ExperimentTemplate`](crate::model::ExperimentTemplate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) targets: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateTarget>,
-        >,
-        pub(crate) actions: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateAction>,
-        >,
-        pub(crate) stop_conditions:
-            std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateStopCondition>>,
+        pub(crate) targets: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateTarget>>,
+        pub(crate) actions: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateAction>>,
+        pub(crate) stop_conditions: std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateStopCondition>>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) log_configuration:
-            std::option::Option<crate::model::ExperimentTemplateLogConfiguration>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) log_configuration: std::option::Option<crate::model::ExperimentTemplateLogConfiguration>,
     }
     impl Builder {
         /// <p>The ID of the experiment template.</p>
@@ -131,8 +102,7 @@ pub mod experiment_template {
         }
         /// <p>The ID of the experiment template.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The description for the experiment template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,88 +111,52 @@ pub mod experiment_template {
         }
         /// <p>The description for the experiment template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `targets`.
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets for the experiment.</p>
-        pub fn targets(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ExperimentTemplateTarget,
-        ) -> Self {
+        pub fn targets(mut self, k: impl Into<std::string::String>, v: crate::model::ExperimentTemplateTarget) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.targets = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.targets = Some(hash_map);
+                            self
         }
         /// <p>The targets for the experiment.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::ExperimentTemplateTarget,
-                >,
-            >,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateTarget>>) -> Self {
+            self.targets = input; self
         }
         /// Adds a key-value pair to `actions`.
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions for the experiment.</p>
-        pub fn actions(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ExperimentTemplateAction,
-        ) -> Self {
+        pub fn actions(mut self, k: impl Into<std::string::String>, v: crate::model::ExperimentTemplateAction) -> Self {
             let mut hash_map = self.actions.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.actions = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.actions = Some(hash_map);
+                            self
         }
         /// <p>The actions for the experiment.</p>
-        pub fn set_actions(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::ExperimentTemplateAction,
-                >,
-            >,
-        ) -> Self {
-            self.actions = input;
-            self
+        pub fn set_actions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateAction>>) -> Self {
+            self.actions = input; self
         }
         /// Appends an item to `stop_conditions`.
         ///
         /// To override the contents of this collection use [`set_stop_conditions`](Self::set_stop_conditions).
         ///
         /// <p>The stop conditions for the experiment.</p>
-        pub fn stop_conditions(
-            mut self,
-            input: crate::model::ExperimentTemplateStopCondition,
-        ) -> Self {
+        pub fn stop_conditions(mut self, input: crate::model::ExperimentTemplateStopCondition) -> Self {
             let mut v = self.stop_conditions.unwrap_or_default();
-            v.push(input);
-            self.stop_conditions = Some(v);
-            self
+                            v.push(input);
+                            self.stop_conditions = Some(v);
+                            self
         }
         /// <p>The stop conditions for the experiment.</p>
-        pub fn set_stop_conditions(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ExperimentTemplateStopCondition>,
-            >,
-        ) -> Self {
-            self.stop_conditions = input;
-            self
+        pub fn set_stop_conditions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateStopCondition>>) -> Self {
+            self.stop_conditions = input; self
         }
         /// <p>The time the experiment template was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -230,12 +164,8 @@ pub mod experiment_template {
             self
         }
         /// <p>The time the experiment template was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time the experiment template was last updated.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -243,12 +173,8 @@ pub mod experiment_template {
             self
         }
         /// <p>The time the experiment template was last updated.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -257,66 +183,60 @@ pub mod experiment_template {
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the experiment template.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags for the experiment template.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The configuration for experiment logging.</p>
-        pub fn log_configuration(
-            mut self,
-            input: crate::model::ExperimentTemplateLogConfiguration,
-        ) -> Self {
+        pub fn log_configuration(mut self, input: crate::model::ExperimentTemplateLogConfiguration) -> Self {
             self.log_configuration = Some(input);
             self
         }
         /// <p>The configuration for experiment logging.</p>
-        pub fn set_log_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ExperimentTemplateLogConfiguration>,
-        ) -> Self {
-            self.log_configuration = input;
-            self
+        pub fn set_log_configuration(mut self, input: std::option::Option<crate::model::ExperimentTemplateLogConfiguration>) -> Self {
+            self.log_configuration = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentTemplate`](crate::model::ExperimentTemplate).
         pub fn build(self) -> crate::model::ExperimentTemplate {
             crate::model::ExperimentTemplate {
-                id: self.id,
-                description: self.description,
-                targets: self.targets,
-                actions: self.actions,
-                stop_conditions: self.stop_conditions,
-                creation_time: self.creation_time,
-                last_update_time: self.last_update_time,
-                role_arn: self.role_arn,
-                tags: self.tags,
-                log_configuration: self.log_configuration,
+                id: self.id
+                ,
+                description: self.description
+                ,
+                targets: self.targets
+                ,
+                actions: self.actions
+                ,
+                stop_conditions: self.stop_conditions
+                ,
+                creation_time: self.creation_time
+                ,
+                last_update_time: self.last_update_time
+                ,
+                role_arn: self.role_arn
+                ,
+                tags: self.tags
+                ,
+                log_configuration: self.log_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentTemplate {
     /// Creates a new builder-style object to manufacture [`ExperimentTemplate`](crate::model::ExperimentTemplate).
@@ -328,11 +248,10 @@ impl ExperimentTemplate {
 /// <p>Describes the configuration for experiment logging.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentTemplateLogConfiguration {
+pub struct ExperimentTemplateLogConfiguration  {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_configuration:
-        std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration>,
+    pub cloud_watch_logs_configuration: std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration>,
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     #[doc(hidden)]
     pub s3_configuration: std::option::Option<crate::model::ExperimentTemplateS3LogConfiguration>,
@@ -342,15 +261,11 @@ pub struct ExperimentTemplateLogConfiguration {
 }
 impl ExperimentTemplateLogConfiguration {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_logs_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration> {
+    pub fn cloud_watch_logs_configuration(&self) -> std::option::Option<& crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration> {
         self.cloud_watch_logs_configuration.as_ref()
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
-    pub fn s3_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ExperimentTemplateS3LogConfiguration> {
+    pub fn s3_configuration(&self) -> std::option::Option<& crate::model::ExperimentTemplateS3LogConfiguration> {
         self.s3_configuration.as_ref()
     }
     /// <p>The schema version.</p>
@@ -360,50 +275,32 @@ impl ExperimentTemplateLogConfiguration {
 }
 /// See [`ExperimentTemplateLogConfiguration`](crate::model::ExperimentTemplateLogConfiguration).
 pub mod experiment_template_log_configuration {
-
+    
     /// A builder for [`ExperimentTemplateLogConfiguration`](crate::model::ExperimentTemplateLogConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cloud_watch_logs_configuration:
-            std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration>,
-        pub(crate) s3_configuration:
-            std::option::Option<crate::model::ExperimentTemplateS3LogConfiguration>,
+        pub(crate) cloud_watch_logs_configuration: std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration>,
+        pub(crate) s3_configuration: std::option::Option<crate::model::ExperimentTemplateS3LogConfiguration>,
         pub(crate) log_schema_version: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-        pub fn cloud_watch_logs_configuration(
-            mut self,
-            input: crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration,
-        ) -> Self {
+        pub fn cloud_watch_logs_configuration(mut self, input: crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration) -> Self {
             self.cloud_watch_logs_configuration = Some(input);
             self
         }
         /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-        pub fn set_cloud_watch_logs_configuration(
-            mut self,
-            input: std::option::Option<
-                crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration,
-            >,
-        ) -> Self {
-            self.cloud_watch_logs_configuration = input;
-            self
+        pub fn set_cloud_watch_logs_configuration(mut self, input: std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration>) -> Self {
+            self.cloud_watch_logs_configuration = input; self
         }
         /// <p>The configuration for experiment logging to Amazon S3.</p>
-        pub fn s3_configuration(
-            mut self,
-            input: crate::model::ExperimentTemplateS3LogConfiguration,
-        ) -> Self {
+        pub fn s3_configuration(mut self, input: crate::model::ExperimentTemplateS3LogConfiguration) -> Self {
             self.s3_configuration = Some(input);
             self
         }
         /// <p>The configuration for experiment logging to Amazon S3.</p>
-        pub fn set_s3_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ExperimentTemplateS3LogConfiguration>,
-        ) -> Self {
-            self.s3_configuration = input;
-            self
+        pub fn set_s3_configuration(mut self, input: std::option::Option<crate::model::ExperimentTemplateS3LogConfiguration>) -> Self {
+            self.s3_configuration = input; self
         }
         /// <p>The schema version.</p>
         pub fn log_schema_version(mut self, input: i32) -> Self {
@@ -412,18 +309,22 @@ pub mod experiment_template_log_configuration {
         }
         /// <p>The schema version.</p>
         pub fn set_log_schema_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.log_schema_version = input;
-            self
+            self.log_schema_version = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentTemplateLogConfiguration`](crate::model::ExperimentTemplateLogConfiguration).
         pub fn build(self) -> crate::model::ExperimentTemplateLogConfiguration {
             crate::model::ExperimentTemplateLogConfiguration {
-                cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
-                s3_configuration: self.s3_configuration,
-                log_schema_version: self.log_schema_version,
+                cloud_watch_logs_configuration: self.cloud_watch_logs_configuration
+                ,
+                s3_configuration: self.s3_configuration
+                ,
+                log_schema_version: self.log_schema_version
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentTemplateLogConfiguration {
     /// Creates a new builder-style object to manufacture [`ExperimentTemplateLogConfiguration`](crate::model::ExperimentTemplateLogConfiguration).
@@ -435,7 +336,7 @@ impl ExperimentTemplateLogConfiguration {
 /// <p>Describes the configuration for experiment logging to Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentTemplateS3LogConfiguration {
+pub struct ExperimentTemplateS3LogConfiguration  {
     /// <p>The name of the destination bucket.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
@@ -445,17 +346,17 @@ pub struct ExperimentTemplateS3LogConfiguration {
 }
 impl ExperimentTemplateS3LogConfiguration {
     /// <p>The name of the destination bucket.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The bucket prefix.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
 /// See [`ExperimentTemplateS3LogConfiguration`](crate::model::ExperimentTemplateS3LogConfiguration).
 pub mod experiment_template_s3_log_configuration {
-
+    
     /// A builder for [`ExperimentTemplateS3LogConfiguration`](crate::model::ExperimentTemplateS3LogConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -470,8 +371,7 @@ pub mod experiment_template_s3_log_configuration {
         }
         /// <p>The name of the destination bucket.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = input;
-            self
+            self.bucket_name = input; self
         }
         /// <p>The bucket prefix.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -480,17 +380,20 @@ pub mod experiment_template_s3_log_configuration {
         }
         /// <p>The bucket prefix.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentTemplateS3LogConfiguration`](crate::model::ExperimentTemplateS3LogConfiguration).
         pub fn build(self) -> crate::model::ExperimentTemplateS3LogConfiguration {
             crate::model::ExperimentTemplateS3LogConfiguration {
-                bucket_name: self.bucket_name,
-                prefix: self.prefix,
+                bucket_name: self.bucket_name
+                ,
+                prefix: self.prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentTemplateS3LogConfiguration {
     /// Creates a new builder-style object to manufacture [`ExperimentTemplateS3LogConfiguration`](crate::model::ExperimentTemplateS3LogConfiguration).
@@ -502,20 +405,20 @@ impl ExperimentTemplateS3LogConfiguration {
 /// <p>Describes the configuration for experiment logging to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentTemplateCloudWatchLogsLogConfiguration {
+pub struct ExperimentTemplateCloudWatchLogsLogConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
     #[doc(hidden)]
     pub log_group_arn: std::option::Option<std::string::String>,
 }
 impl ExperimentTemplateCloudWatchLogsLogConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
-    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn log_group_arn(&self) -> std::option::Option<& str> {
         self.log_group_arn.as_deref()
     }
 }
 /// See [`ExperimentTemplateCloudWatchLogsLogConfiguration`](crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration).
 pub mod experiment_template_cloud_watch_logs_log_configuration {
-
+    
     /// A builder for [`ExperimentTemplateCloudWatchLogsLogConfiguration`](crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -528,25 +431,23 @@ pub mod experiment_template_cloud_watch_logs_log_configuration {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
-        pub fn set_log_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_arn = input;
-            self
+        pub fn set_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentTemplateCloudWatchLogsLogConfiguration`](crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration).
         pub fn build(self) -> crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration {
             crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration {
-                log_group_arn: self.log_group_arn,
+                log_group_arn: self.log_group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentTemplateCloudWatchLogsLogConfiguration {
     /// Creates a new builder-style object to manufacture [`ExperimentTemplateCloudWatchLogsLogConfiguration`](crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration).
-    pub fn builder() -> crate::model::experiment_template_cloud_watch_logs_log_configuration::Builder
-    {
+    pub fn builder() -> crate::model::experiment_template_cloud_watch_logs_log_configuration::Builder {
         crate::model::experiment_template_cloud_watch_logs_log_configuration::Builder::default()
     }
 }
@@ -554,7 +455,7 @@ impl ExperimentTemplateCloudWatchLogsLogConfiguration {
 /// <p>Describes a stop condition for an experiment template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentTemplateStopCondition {
+pub struct ExperimentTemplateStopCondition  {
     /// <p>The source for the stop condition.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
@@ -564,17 +465,17 @@ pub struct ExperimentTemplateStopCondition {
 }
 impl ExperimentTemplateStopCondition {
     /// <p>The source for the stop condition.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`ExperimentTemplateStopCondition`](crate::model::ExperimentTemplateStopCondition).
 pub mod experiment_template_stop_condition {
-
+    
     /// A builder for [`ExperimentTemplateStopCondition`](crate::model::ExperimentTemplateStopCondition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -589,8 +490,7 @@ pub mod experiment_template_stop_condition {
         }
         /// <p>The source for the stop condition.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -599,17 +499,20 @@ pub mod experiment_template_stop_condition {
         }
         /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentTemplateStopCondition`](crate::model::ExperimentTemplateStopCondition).
         pub fn build(self) -> crate::model::ExperimentTemplateStopCondition {
             crate::model::ExperimentTemplateStopCondition {
-                source: self.source,
-                value: self.value,
+                source: self.source
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentTemplateStopCondition {
     /// Creates a new builder-style object to manufacture [`ExperimentTemplateStopCondition`](crate::model::ExperimentTemplateStopCondition).
@@ -621,7 +524,7 @@ impl ExperimentTemplateStopCondition {
 /// <p>Describes an action for an experiment template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentTemplateAction {
+pub struct ExperimentTemplateAction  {
     /// <p>The ID of the action.</p>
     #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
@@ -630,58 +533,46 @@ pub struct ExperimentTemplateAction {
     pub description: std::option::Option<std::string::String>,
     /// <p>The parameters for the action.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The targets for the action.</p>
     #[doc(hidden)]
-    pub targets:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub targets: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the action that must be completed before the current action starts.</p>
     #[doc(hidden)]
     pub start_after: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ExperimentTemplateAction {
     /// <p>The ID of the action.</p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>A description for the action.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The parameters for the action.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The targets for the action.</p>
-    pub fn targets(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn targets(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.targets.as_ref()
     }
     /// <p>The name of the action that must be completed before the current action starts.</p>
-    pub fn start_after(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn start_after(&self) -> std::option::Option<& [std::string::String]> {
         self.start_after.as_deref()
     }
 }
 /// See [`ExperimentTemplateAction`](crate::model::ExperimentTemplateAction).
 pub mod experiment_template_action {
-
+    
     /// A builder for [`ExperimentTemplateAction`](crate::model::ExperimentTemplateAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) targets: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) targets: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) start_after: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
@@ -692,8 +583,7 @@ pub mod experiment_template_action {
         }
         /// <p>The ID of the action.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// <p>A description for the action.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -702,58 +592,37 @@ pub mod experiment_template_action {
         }
         /// <p>A description for the action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameters for the action.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The parameters for the action.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// Adds a key-value pair to `targets`.
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets for the action.</p>
-        pub fn targets(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn targets(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.targets = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.targets = Some(hash_map);
+                            self
         }
         /// <p>The targets for the action.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.targets = input; self
         }
         /// Appends an item to `start_after`.
         ///
@@ -762,29 +631,32 @@ pub mod experiment_template_action {
         /// <p>The name of the action that must be completed before the current action starts.</p>
         pub fn start_after(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.start_after.unwrap_or_default();
-            v.push(input.into());
-            self.start_after = Some(v);
-            self
+                            v.push(input.into());
+                            self.start_after = Some(v);
+                            self
         }
         /// <p>The name of the action that must be completed before the current action starts.</p>
-        pub fn set_start_after(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.start_after = input;
-            self
+        pub fn set_start_after(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.start_after = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentTemplateAction`](crate::model::ExperimentTemplateAction).
         pub fn build(self) -> crate::model::ExperimentTemplateAction {
             crate::model::ExperimentTemplateAction {
-                action_id: self.action_id,
-                description: self.description,
-                parameters: self.parameters,
-                targets: self.targets,
-                start_after: self.start_after,
+                action_id: self.action_id
+                ,
+                description: self.description
+                ,
+                parameters: self.parameters
+                ,
+                targets: self.targets
+                ,
+                start_after: self.start_after
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentTemplateAction {
     /// Creates a new builder-style object to manufacture [`ExperimentTemplateAction`](crate::model::ExperimentTemplateAction).
@@ -796,7 +668,7 @@ impl ExperimentTemplateAction {
 /// <p>Describes a target for an experiment template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentTemplateTarget {
+pub struct ExperimentTemplateTarget  {
     /// <p>The resource type.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
@@ -805,8 +677,7 @@ pub struct ExperimentTemplateTarget {
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags for the target resources.</p>
     #[doc(hidden)]
-    pub resource_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetFilter>>,
@@ -815,58 +686,46 @@ pub struct ExperimentTemplateTarget {
     pub selection_mode: std::option::Option<std::string::String>,
     /// <p>The resource type parameters.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ExperimentTemplateTarget {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
-    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_arns.as_deref()
     }
     /// <p>The tags for the target resources.</p>
-    pub fn resource_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn resource_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.resource_tags.as_ref()
     }
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::ExperimentTemplateTargetFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::ExperimentTemplateTargetFilter]> {
         self.filters.as_deref()
     }
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
-    pub fn selection_mode(&self) -> std::option::Option<&str> {
+    pub fn selection_mode(&self) -> std::option::Option<& str> {
         self.selection_mode.as_deref()
     }
     /// <p>The resource type parameters.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
 }
 /// See [`ExperimentTemplateTarget`](crate::model::ExperimentTemplateTarget).
 pub mod experiment_template_target {
-
+    
     /// A builder for [`ExperimentTemplateTarget`](crate::model::ExperimentTemplateTarget).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) resource_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) filters:
-            std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetFilter>>,
+        pub(crate) resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetFilter>>,
         pub(crate) selection_mode: std::option::Option<std::string::String>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The resource type.</p>
@@ -875,12 +734,8 @@ pub mod experiment_template_target {
             self
         }
         /// <p>The resource type.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// Appends an item to `resource_arns`.
         ///
@@ -889,42 +744,28 @@ pub mod experiment_template_target {
         /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
-            v.push(input.into());
-            self.resource_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
-        pub fn set_resource_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_arns = input;
-            self
+        pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_arns = input; self
         }
         /// Adds a key-value pair to `resource_tags`.
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>The tags for the target resources.</p>
-        pub fn resource_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn resource_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.resource_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.resource_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.resource_tags = Some(hash_map);
+                            self
         }
         /// <p>The tags for the target resources.</p>
-        pub fn set_resource_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.resource_tags = input;
-            self
+        pub fn set_resource_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.resource_tags = input; self
         }
         /// Appends an item to `filters`.
         ///
@@ -933,17 +774,13 @@ pub mod experiment_template_target {
         /// <p>The filters to apply to identify target resources using specific attributes.</p>
         pub fn filters(mut self, input: crate::model::ExperimentTemplateTargetFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>The filters to apply to identify target resources using specific attributes.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetFilter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetFilter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>Scopes the identified resources to a specific count or percentage.</p>
         pub fn selection_mode(mut self, input: impl Into<std::string::String>) -> Self {
@@ -951,50 +788,44 @@ pub mod experiment_template_target {
             self
         }
         /// <p>Scopes the identified resources to a specific count or percentage.</p>
-        pub fn set_selection_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.selection_mode = input;
-            self
+        pub fn set_selection_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.selection_mode = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The resource type parameters.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The resource type parameters.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentTemplateTarget`](crate::model::ExperimentTemplateTarget).
         pub fn build(self) -> crate::model::ExperimentTemplateTarget {
             crate::model::ExperimentTemplateTarget {
-                resource_type: self.resource_type,
-                resource_arns: self.resource_arns,
-                resource_tags: self.resource_tags,
-                filters: self.filters,
-                selection_mode: self.selection_mode,
-                parameters: self.parameters,
+                resource_type: self.resource_type
+                ,
+                resource_arns: self.resource_arns
+                ,
+                resource_tags: self.resource_tags
+                ,
+                filters: self.filters
+                ,
+                selection_mode: self.selection_mode
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentTemplateTarget {
     /// Creates a new builder-style object to manufacture [`ExperimentTemplateTarget`](crate::model::ExperimentTemplateTarget).
@@ -1006,7 +837,7 @@ impl ExperimentTemplateTarget {
 /// <p>Describes a filter used for the target resources in an experiment template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentTemplateTargetFilter {
+pub struct ExperimentTemplateTargetFilter  {
     /// <p>The attribute path for the filter.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
@@ -1016,17 +847,17 @@ pub struct ExperimentTemplateTargetFilter {
 }
 impl ExperimentTemplateTargetFilter {
     /// <p>The attribute path for the filter.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The attribute values for the filter.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`ExperimentTemplateTargetFilter`](crate::model::ExperimentTemplateTargetFilter).
 pub mod experiment_template_target_filter {
-
+    
     /// A builder for [`ExperimentTemplateTargetFilter`](crate::model::ExperimentTemplateTargetFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1041,8 +872,7 @@ pub mod experiment_template_target_filter {
         }
         /// <p>The attribute path for the filter.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -1051,26 +881,26 @@ pub mod experiment_template_target_filter {
         /// <p>The attribute values for the filter.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The attribute values for the filter.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentTemplateTargetFilter`](crate::model::ExperimentTemplateTargetFilter).
         pub fn build(self) -> crate::model::ExperimentTemplateTargetFilter {
             crate::model::ExperimentTemplateTargetFilter {
-                path: self.path,
-                values: self.values,
+                path: self.path
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentTemplateTargetFilter {
     /// Creates a new builder-style object to manufacture [`ExperimentTemplateTargetFilter`](crate::model::ExperimentTemplateTargetFilter).
@@ -1082,31 +912,24 @@ impl ExperimentTemplateTargetFilter {
 /// <p>Specifies the configuration for experiment logging.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateExperimentTemplateLogConfigurationInput {
+pub struct UpdateExperimentTemplateLogConfigurationInput  {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_configuration:
-        std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
+    pub cloud_watch_logs_configuration: std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_configuration:
-        std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
+    pub s3_configuration: std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
     /// <p>The schema version.</p>
     #[doc(hidden)]
     pub log_schema_version: std::option::Option<i32>,
 }
 impl UpdateExperimentTemplateLogConfigurationInput {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_logs_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>
-    {
+    pub fn cloud_watch_logs_configuration(&self) -> std::option::Option<& crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput> {
         self.cloud_watch_logs_configuration.as_ref()
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
-    pub fn s3_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ExperimentTemplateS3LogConfigurationInput> {
+    pub fn s3_configuration(&self) -> std::option::Option<& crate::model::ExperimentTemplateS3LogConfigurationInput> {
         self.s3_configuration.as_ref()
     }
     /// <p>The schema version.</p>
@@ -1116,51 +939,32 @@ impl UpdateExperimentTemplateLogConfigurationInput {
 }
 /// See [`UpdateExperimentTemplateLogConfigurationInput`](crate::model::UpdateExperimentTemplateLogConfigurationInput).
 pub mod update_experiment_template_log_configuration_input {
-
+    
     /// A builder for [`UpdateExperimentTemplateLogConfigurationInput`](crate::model::UpdateExperimentTemplateLogConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cloud_watch_logs_configuration: std::option::Option<
-            crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
-        >,
-        pub(crate) s3_configuration:
-            std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
+        pub(crate) cloud_watch_logs_configuration: std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
+        pub(crate) s3_configuration: std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
         pub(crate) log_schema_version: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-        pub fn cloud_watch_logs_configuration(
-            mut self,
-            input: crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
-        ) -> Self {
+        pub fn cloud_watch_logs_configuration(mut self, input: crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput) -> Self {
             self.cloud_watch_logs_configuration = Some(input);
             self
         }
         /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-        pub fn set_cloud_watch_logs_configuration(
-            mut self,
-            input: std::option::Option<
-                crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
-            >,
-        ) -> Self {
-            self.cloud_watch_logs_configuration = input;
-            self
+        pub fn set_cloud_watch_logs_configuration(mut self, input: std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>) -> Self {
+            self.cloud_watch_logs_configuration = input; self
         }
         /// <p>The configuration for experiment logging to Amazon S3.</p>
-        pub fn s3_configuration(
-            mut self,
-            input: crate::model::ExperimentTemplateS3LogConfigurationInput,
-        ) -> Self {
+        pub fn s3_configuration(mut self, input: crate::model::ExperimentTemplateS3LogConfigurationInput) -> Self {
             self.s3_configuration = Some(input);
             self
         }
         /// <p>The configuration for experiment logging to Amazon S3.</p>
-        pub fn set_s3_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
-        ) -> Self {
-            self.s3_configuration = input;
-            self
+        pub fn set_s3_configuration(mut self, input: std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>) -> Self {
+            self.s3_configuration = input; self
         }
         /// <p>The schema version.</p>
         pub fn log_schema_version(mut self, input: i32) -> Self {
@@ -1169,18 +973,22 @@ pub mod update_experiment_template_log_configuration_input {
         }
         /// <p>The schema version.</p>
         pub fn set_log_schema_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.log_schema_version = input;
-            self
+            self.log_schema_version = input; self
         }
         /// Consumes the builder and constructs a [`UpdateExperimentTemplateLogConfigurationInput`](crate::model::UpdateExperimentTemplateLogConfigurationInput).
         pub fn build(self) -> crate::model::UpdateExperimentTemplateLogConfigurationInput {
             crate::model::UpdateExperimentTemplateLogConfigurationInput {
-                cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
-                s3_configuration: self.s3_configuration,
-                log_schema_version: self.log_schema_version,
+                cloud_watch_logs_configuration: self.cloud_watch_logs_configuration
+                ,
+                s3_configuration: self.s3_configuration
+                ,
+                log_schema_version: self.log_schema_version
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateExperimentTemplateLogConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateLogConfigurationInput`](crate::model::UpdateExperimentTemplateLogConfigurationInput).
@@ -1192,7 +1000,7 @@ impl UpdateExperimentTemplateLogConfigurationInput {
 /// <p>Specifies the configuration for experiment logging to Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentTemplateS3LogConfigurationInput {
+pub struct ExperimentTemplateS3LogConfigurationInput  {
     /// <p>The name of the destination bucket.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
@@ -1202,17 +1010,17 @@ pub struct ExperimentTemplateS3LogConfigurationInput {
 }
 impl ExperimentTemplateS3LogConfigurationInput {
     /// <p>The name of the destination bucket.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The bucket prefix.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
 /// See [`ExperimentTemplateS3LogConfigurationInput`](crate::model::ExperimentTemplateS3LogConfigurationInput).
 pub mod experiment_template_s3_log_configuration_input {
-
+    
     /// A builder for [`ExperimentTemplateS3LogConfigurationInput`](crate::model::ExperimentTemplateS3LogConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1227,8 +1035,7 @@ pub mod experiment_template_s3_log_configuration_input {
         }
         /// <p>The name of the destination bucket.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = input;
-            self
+            self.bucket_name = input; self
         }
         /// <p>The bucket prefix.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1237,17 +1044,20 @@ pub mod experiment_template_s3_log_configuration_input {
         }
         /// <p>The bucket prefix.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentTemplateS3LogConfigurationInput`](crate::model::ExperimentTemplateS3LogConfigurationInput).
         pub fn build(self) -> crate::model::ExperimentTemplateS3LogConfigurationInput {
             crate::model::ExperimentTemplateS3LogConfigurationInput {
-                bucket_name: self.bucket_name,
-                prefix: self.prefix,
+                bucket_name: self.bucket_name
+                ,
+                prefix: self.prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentTemplateS3LogConfigurationInput {
     /// Creates a new builder-style object to manufacture [`ExperimentTemplateS3LogConfigurationInput`](crate::model::ExperimentTemplateS3LogConfigurationInput).
@@ -1259,20 +1069,20 @@ impl ExperimentTemplateS3LogConfigurationInput {
 /// <p>Specifies the configuration for experiment logging to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentTemplateCloudWatchLogsLogConfigurationInput {
+pub struct ExperimentTemplateCloudWatchLogsLogConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
     #[doc(hidden)]
     pub log_group_arn: std::option::Option<std::string::String>,
 }
 impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
-    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn log_group_arn(&self) -> std::option::Option<& str> {
         self.log_group_arn.as_deref()
     }
 }
 /// See [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput).
 pub mod experiment_template_cloud_watch_logs_log_configuration_input {
-
+    
     /// A builder for [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1285,34 +1095,31 @@ pub mod experiment_template_cloud_watch_logs_log_configuration_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
-        pub fn set_log_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_arn = input;
-            self
+        pub fn set_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput).
         pub fn build(self) -> crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput {
             crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput {
-                log_group_arn: self.log_group_arn,
+                log_group_arn: self.log_group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
     /// Creates a new builder-style object to manufacture [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput).
-    pub fn builder(
-    ) -> crate::model::experiment_template_cloud_watch_logs_log_configuration_input::Builder {
-        crate::model::experiment_template_cloud_watch_logs_log_configuration_input::Builder::default(
-        )
+    pub fn builder() -> crate::model::experiment_template_cloud_watch_logs_log_configuration_input::Builder {
+        crate::model::experiment_template_cloud_watch_logs_log_configuration_input::Builder::default()
     }
 }
 
 /// <p>Specifies an action for an experiment template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateExperimentTemplateActionInputItem {
+pub struct UpdateExperimentTemplateActionInputItem  {
     /// <p>The ID of the action.</p>
     #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
@@ -1321,58 +1128,46 @@ pub struct UpdateExperimentTemplateActionInputItem {
     pub description: std::option::Option<std::string::String>,
     /// <p>The parameters for the action, if applicable.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The targets for the action.</p>
     #[doc(hidden)]
-    pub targets:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub targets: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
     #[doc(hidden)]
     pub start_after: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateExperimentTemplateActionInputItem {
     /// <p>The ID of the action.</p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>A description for the action.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The parameters for the action, if applicable.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The targets for the action.</p>
-    pub fn targets(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn targets(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.targets.as_ref()
     }
     /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
-    pub fn start_after(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn start_after(&self) -> std::option::Option<& [std::string::String]> {
         self.start_after.as_deref()
     }
 }
 /// See [`UpdateExperimentTemplateActionInputItem`](crate::model::UpdateExperimentTemplateActionInputItem).
 pub mod update_experiment_template_action_input_item {
-
+    
     /// A builder for [`UpdateExperimentTemplateActionInputItem`](crate::model::UpdateExperimentTemplateActionInputItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) targets: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) targets: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) start_after: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
@@ -1383,8 +1178,7 @@ pub mod update_experiment_template_action_input_item {
         }
         /// <p>The ID of the action.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// <p>A description for the action.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1393,58 +1187,37 @@ pub mod update_experiment_template_action_input_item {
         }
         /// <p>A description for the action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameters for the action, if applicable.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The parameters for the action, if applicable.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// Adds a key-value pair to `targets`.
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets for the action.</p>
-        pub fn targets(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn targets(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.targets = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.targets = Some(hash_map);
+                            self
         }
         /// <p>The targets for the action.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.targets = input; self
         }
         /// Appends an item to `start_after`.
         ///
@@ -1453,29 +1226,32 @@ pub mod update_experiment_template_action_input_item {
         /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
         pub fn start_after(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.start_after.unwrap_or_default();
-            v.push(input.into());
-            self.start_after = Some(v);
-            self
+                            v.push(input.into());
+                            self.start_after = Some(v);
+                            self
         }
         /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
-        pub fn set_start_after(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.start_after = input;
-            self
+        pub fn set_start_after(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.start_after = input; self
         }
         /// Consumes the builder and constructs a [`UpdateExperimentTemplateActionInputItem`](crate::model::UpdateExperimentTemplateActionInputItem).
         pub fn build(self) -> crate::model::UpdateExperimentTemplateActionInputItem {
             crate::model::UpdateExperimentTemplateActionInputItem {
-                action_id: self.action_id,
-                description: self.description,
-                parameters: self.parameters,
-                targets: self.targets,
-                start_after: self.start_after,
+                action_id: self.action_id
+                ,
+                description: self.description
+                ,
+                parameters: self.parameters
+                ,
+                targets: self.targets
+                ,
+                start_after: self.start_after
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateExperimentTemplateActionInputItem {
     /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateActionInputItem`](crate::model::UpdateExperimentTemplateActionInputItem).
@@ -1487,7 +1263,7 @@ impl UpdateExperimentTemplateActionInputItem {
 /// <p>Specifies a target for an experiment. You must specify at least one Amazon Resource Name (ARN) or at least one resource tag. You cannot specify both.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateExperimentTemplateTargetInput {
+pub struct UpdateExperimentTemplateTargetInput  {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
@@ -1496,71 +1272,55 @@ pub struct UpdateExperimentTemplateTargetInput {
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags for the target resources.</p>
     #[doc(hidden)]
-    pub resource_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
     #[doc(hidden)]
-    pub filters:
-        std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>>,
+    pub filters: std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>>,
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
     #[doc(hidden)]
     pub selection_mode: std::option::Option<std::string::String>,
     /// <p>The resource type parameters.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateExperimentTemplateTargetInput {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
-    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_arns.as_deref()
     }
     /// <p>The tags for the target resources.</p>
-    pub fn resource_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn resource_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.resource_tags.as_ref()
     }
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
-    pub fn filters(
-        &self,
-    ) -> std::option::Option<&[crate::model::ExperimentTemplateTargetInputFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::ExperimentTemplateTargetInputFilter]> {
         self.filters.as_deref()
     }
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
-    pub fn selection_mode(&self) -> std::option::Option<&str> {
+    pub fn selection_mode(&self) -> std::option::Option<& str> {
         self.selection_mode.as_deref()
     }
     /// <p>The resource type parameters.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
 }
 /// See [`UpdateExperimentTemplateTargetInput`](crate::model::UpdateExperimentTemplateTargetInput).
 pub mod update_experiment_template_target_input {
-
+    
     /// A builder for [`UpdateExperimentTemplateTargetInput`](crate::model::UpdateExperimentTemplateTargetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) resource_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) filters:
-            std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>>,
+        pub(crate) resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>>,
         pub(crate) selection_mode: std::option::Option<std::string::String>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The resource type. The resource type must be supported for the specified action.</p>
@@ -1569,12 +1329,8 @@ pub mod update_experiment_template_target_input {
             self
         }
         /// <p>The resource type. The resource type must be supported for the specified action.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// Appends an item to `resource_arns`.
         ///
@@ -1583,42 +1339,28 @@ pub mod update_experiment_template_target_input {
         /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
-            v.push(input.into());
-            self.resource_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
-        pub fn set_resource_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_arns = input;
-            self
+        pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_arns = input; self
         }
         /// Adds a key-value pair to `resource_tags`.
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>The tags for the target resources.</p>
-        pub fn resource_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn resource_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.resource_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.resource_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.resource_tags = Some(hash_map);
+                            self
         }
         /// <p>The tags for the target resources.</p>
-        pub fn set_resource_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.resource_tags = input;
-            self
+        pub fn set_resource_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.resource_tags = input; self
         }
         /// Appends an item to `filters`.
         ///
@@ -1627,19 +1369,13 @@ pub mod update_experiment_template_target_input {
         /// <p>The filters to apply to identify target resources using specific attributes.</p>
         pub fn filters(mut self, input: crate::model::ExperimentTemplateTargetInputFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>The filters to apply to identify target resources using specific attributes.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>,
-            >,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>Scopes the identified resources to a specific count or percentage.</p>
         pub fn selection_mode(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1647,50 +1383,44 @@ pub mod update_experiment_template_target_input {
             self
         }
         /// <p>Scopes the identified resources to a specific count or percentage.</p>
-        pub fn set_selection_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.selection_mode = input;
-            self
+        pub fn set_selection_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.selection_mode = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The resource type parameters.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The resource type parameters.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`UpdateExperimentTemplateTargetInput`](crate::model::UpdateExperimentTemplateTargetInput).
         pub fn build(self) -> crate::model::UpdateExperimentTemplateTargetInput {
             crate::model::UpdateExperimentTemplateTargetInput {
-                resource_type: self.resource_type,
-                resource_arns: self.resource_arns,
-                resource_tags: self.resource_tags,
-                filters: self.filters,
-                selection_mode: self.selection_mode,
-                parameters: self.parameters,
+                resource_type: self.resource_type
+                ,
+                resource_arns: self.resource_arns
+                ,
+                resource_tags: self.resource_tags
+                ,
+                filters: self.filters
+                ,
+                selection_mode: self.selection_mode
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateExperimentTemplateTargetInput {
     /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateTargetInput`](crate::model::UpdateExperimentTemplateTargetInput).
@@ -1699,11 +1429,11 @@ impl UpdateExperimentTemplateTargetInput {
     }
 }
 
-/// <p>Specifies a filter used for the target resource input in an experiment template.</p>
+/// <p>Specifies a filter used for the target resource input in an experiment template.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/targets.html#target-filters">Resource filters</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentTemplateTargetInputFilter {
+pub struct ExperimentTemplateTargetInputFilter  {
     /// <p>The attribute path for the filter.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
@@ -1713,17 +1443,17 @@ pub struct ExperimentTemplateTargetInputFilter {
 }
 impl ExperimentTemplateTargetInputFilter {
     /// <p>The attribute path for the filter.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The attribute values for the filter.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`ExperimentTemplateTargetInputFilter`](crate::model::ExperimentTemplateTargetInputFilter).
 pub mod experiment_template_target_input_filter {
-
+    
     /// A builder for [`ExperimentTemplateTargetInputFilter`](crate::model::ExperimentTemplateTargetInputFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1738,8 +1468,7 @@ pub mod experiment_template_target_input_filter {
         }
         /// <p>The attribute path for the filter.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -1748,26 +1477,26 @@ pub mod experiment_template_target_input_filter {
         /// <p>The attribute values for the filter.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The attribute values for the filter.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentTemplateTargetInputFilter`](crate::model::ExperimentTemplateTargetInputFilter).
         pub fn build(self) -> crate::model::ExperimentTemplateTargetInputFilter {
             crate::model::ExperimentTemplateTargetInputFilter {
-                path: self.path,
-                values: self.values,
+                path: self.path
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentTemplateTargetInputFilter {
     /// Creates a new builder-style object to manufacture [`ExperimentTemplateTargetInputFilter`](crate::model::ExperimentTemplateTargetInputFilter).
@@ -1779,7 +1508,7 @@ impl ExperimentTemplateTargetInputFilter {
 /// <p>Specifies a stop condition for an experiment. You can define a stop condition as a CloudWatch alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateExperimentTemplateStopConditionInput {
+pub struct UpdateExperimentTemplateStopConditionInput  {
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
@@ -1789,17 +1518,17 @@ pub struct UpdateExperimentTemplateStopConditionInput {
 }
 impl UpdateExperimentTemplateStopConditionInput {
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`UpdateExperimentTemplateStopConditionInput`](crate::model::UpdateExperimentTemplateStopConditionInput).
 pub mod update_experiment_template_stop_condition_input {
-
+    
     /// A builder for [`UpdateExperimentTemplateStopConditionInput`](crate::model::UpdateExperimentTemplateStopConditionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1814,8 +1543,7 @@ pub mod update_experiment_template_stop_condition_input {
         }
         /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1824,17 +1552,20 @@ pub mod update_experiment_template_stop_condition_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`UpdateExperimentTemplateStopConditionInput`](crate::model::UpdateExperimentTemplateStopConditionInput).
         pub fn build(self) -> crate::model::UpdateExperimentTemplateStopConditionInput {
             crate::model::UpdateExperimentTemplateStopConditionInput {
-                source: self.source,
-                value: self.value,
+                source: self.source
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateExperimentTemplateStopConditionInput {
     /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateStopConditionInput`](crate::model::UpdateExperimentTemplateStopConditionInput).
@@ -1846,7 +1577,7 @@ impl UpdateExperimentTemplateStopConditionInput {
 /// <p>Describes an experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Experiment {
+pub struct Experiment  {
     /// <p>The ID of the experiment.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1861,14 +1592,10 @@ pub struct Experiment {
     pub state: std::option::Option<crate::model::ExperimentState>,
     /// <p>The targets for the experiment.</p>
     #[doc(hidden)]
-    pub targets: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ExperimentTarget>,
-    >,
+    pub targets: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ExperimentTarget>>,
     /// <p>The actions for the experiment.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ExperimentAction>,
-    >,
+    pub actions: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ExperimentAction>>,
     /// <p>The stop conditions for the experiment.</p>
     #[doc(hidden)]
     pub stop_conditions: std::option::Option<std::vec::Vec<crate::model::ExperimentStopCondition>>,
@@ -1883,78 +1610,64 @@ pub struct Experiment {
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags for the experiment.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The configuration for experiment logging.</p>
     #[doc(hidden)]
     pub log_configuration: std::option::Option<crate::model::ExperimentLogConfiguration>,
 }
 impl Experiment {
     /// <p>The ID of the experiment.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the experiment template.</p>
-    pub fn experiment_template_id(&self) -> std::option::Option<&str> {
+    pub fn experiment_template_id(&self) -> std::option::Option<& str> {
         self.experiment_template_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The state of the experiment.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ExperimentState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ExperimentState> {
         self.state.as_ref()
     }
     /// <p>The targets for the experiment.</p>
-    pub fn targets(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ExperimentTarget>,
-    > {
+    pub fn targets(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ExperimentTarget>> {
         self.targets.as_ref()
     }
     /// <p>The actions for the experiment.</p>
-    pub fn actions(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ExperimentAction>,
-    > {
+    pub fn actions(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ExperimentAction>> {
         self.actions.as_ref()
     }
     /// <p>The stop conditions for the experiment.</p>
-    pub fn stop_conditions(&self) -> std::option::Option<&[crate::model::ExperimentStopCondition]> {
+    pub fn stop_conditions(&self) -> std::option::Option<& [crate::model::ExperimentStopCondition]> {
         self.stop_conditions.as_deref()
     }
     /// <p>The time that the experiment was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time that the experiment started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time that the experiment ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The tags for the experiment.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The configuration for experiment logging.</p>
-    pub fn log_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ExperimentLogConfiguration> {
+    pub fn log_configuration(&self) -> std::option::Option<& crate::model::ExperimentLogConfiguration> {
         self.log_configuration.as_ref()
     }
 }
 /// See [`Experiment`](crate::model::Experiment).
 pub mod experiment {
-
+    
     /// A builder for [`Experiment`](crate::model::Experiment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1962,20 +1675,13 @@ pub mod experiment {
         pub(crate) experiment_template_id: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ExperimentState>,
-        pub(crate) targets: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ExperimentTarget>,
-        >,
-        pub(crate) actions: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ExperimentAction>,
-        >,
-        pub(crate) stop_conditions:
-            std::option::Option<std::vec::Vec<crate::model::ExperimentStopCondition>>,
+        pub(crate) targets: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ExperimentTarget>>,
+        pub(crate) actions: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ExperimentAction>>,
+        pub(crate) stop_conditions: std::option::Option<std::vec::Vec<crate::model::ExperimentStopCondition>>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) log_configuration: std::option::Option<crate::model::ExperimentLogConfiguration>,
     }
     impl Builder {
@@ -1986,8 +1692,7 @@ pub mod experiment {
         }
         /// <p>The ID of the experiment.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ID of the experiment template.</p>
         pub fn experiment_template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1995,12 +1700,8 @@ pub mod experiment {
             self
         }
         /// <p>The ID of the experiment template.</p>
-        pub fn set_experiment_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.experiment_template_id = input;
-            self
+        pub fn set_experiment_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.experiment_template_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2009,8 +1710,7 @@ pub mod experiment {
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The state of the experiment.</p>
         pub fn state(mut self, input: crate::model::ExperimentState) -> Self {
@@ -2018,62 +1718,38 @@ pub mod experiment {
             self
         }
         /// <p>The state of the experiment.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ExperimentState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ExperimentState>) -> Self {
+            self.state = input; self
         }
         /// Adds a key-value pair to `targets`.
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets for the experiment.</p>
-        pub fn targets(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ExperimentTarget,
-        ) -> Self {
+        pub fn targets(mut self, k: impl Into<std::string::String>, v: crate::model::ExperimentTarget) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.targets = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.targets = Some(hash_map);
+                            self
         }
         /// <p>The targets for the experiment.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ExperimentTarget>,
-            >,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ExperimentTarget>>) -> Self {
+            self.targets = input; self
         }
         /// Adds a key-value pair to `actions`.
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions for the experiment.</p>
-        pub fn actions(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ExperimentAction,
-        ) -> Self {
+        pub fn actions(mut self, k: impl Into<std::string::String>, v: crate::model::ExperimentAction) -> Self {
             let mut hash_map = self.actions.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.actions = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.actions = Some(hash_map);
+                            self
         }
         /// <p>The actions for the experiment.</p>
-        pub fn set_actions(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ExperimentAction>,
-            >,
-        ) -> Self {
-            self.actions = input;
-            self
+        pub fn set_actions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ExperimentAction>>) -> Self {
+            self.actions = input; self
         }
         /// Appends an item to `stop_conditions`.
         ///
@@ -2082,17 +1758,13 @@ pub mod experiment {
         /// <p>The stop conditions for the experiment.</p>
         pub fn stop_conditions(mut self, input: crate::model::ExperimentStopCondition) -> Self {
             let mut v = self.stop_conditions.unwrap_or_default();
-            v.push(input);
-            self.stop_conditions = Some(v);
-            self
+                            v.push(input);
+                            self.stop_conditions = Some(v);
+                            self
         }
         /// <p>The stop conditions for the experiment.</p>
-        pub fn set_stop_conditions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExperimentStopCondition>>,
-        ) -> Self {
-            self.stop_conditions = input;
-            self
+        pub fn set_stop_conditions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExperimentStopCondition>>) -> Self {
+            self.stop_conditions = input; self
         }
         /// <p>The time that the experiment was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2100,12 +1772,8 @@ pub mod experiment {
             self
         }
         /// <p>The time that the experiment was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time that the experiment started.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2113,12 +1781,8 @@ pub mod experiment {
             self
         }
         /// <p>The time that the experiment started.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The time that the experiment ended.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2126,72 +1790,65 @@ pub mod experiment {
             self
         }
         /// <p>The time that the experiment ended.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the experiment.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags for the experiment.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The configuration for experiment logging.</p>
-        pub fn log_configuration(
-            mut self,
-            input: crate::model::ExperimentLogConfiguration,
-        ) -> Self {
+        pub fn log_configuration(mut self, input: crate::model::ExperimentLogConfiguration) -> Self {
             self.log_configuration = Some(input);
             self
         }
         /// <p>The configuration for experiment logging.</p>
-        pub fn set_log_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ExperimentLogConfiguration>,
-        ) -> Self {
-            self.log_configuration = input;
-            self
+        pub fn set_log_configuration(mut self, input: std::option::Option<crate::model::ExperimentLogConfiguration>) -> Self {
+            self.log_configuration = input; self
         }
         /// Consumes the builder and constructs a [`Experiment`](crate::model::Experiment).
         pub fn build(self) -> crate::model::Experiment {
             crate::model::Experiment {
-                id: self.id,
-                experiment_template_id: self.experiment_template_id,
-                role_arn: self.role_arn,
-                state: self.state,
-                targets: self.targets,
-                actions: self.actions,
-                stop_conditions: self.stop_conditions,
-                creation_time: self.creation_time,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                tags: self.tags,
-                log_configuration: self.log_configuration,
+                id: self.id
+                ,
+                experiment_template_id: self.experiment_template_id
+                ,
+                role_arn: self.role_arn
+                ,
+                state: self.state
+                ,
+                targets: self.targets
+                ,
+                actions: self.actions
+                ,
+                stop_conditions: self.stop_conditions
+                ,
+                creation_time: self.creation_time
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                tags: self.tags
+                ,
+                log_configuration: self.log_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl Experiment {
     /// Creates a new builder-style object to manufacture [`Experiment`](crate::model::Experiment).
@@ -2203,11 +1860,10 @@ impl Experiment {
 /// <p>Describes the configuration for experiment logging.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentLogConfiguration {
+pub struct ExperimentLogConfiguration  {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_configuration:
-        std::option::Option<crate::model::ExperimentCloudWatchLogsLogConfiguration>,
+    pub cloud_watch_logs_configuration: std::option::Option<crate::model::ExperimentCloudWatchLogsLogConfiguration>,
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     #[doc(hidden)]
     pub s3_configuration: std::option::Option<crate::model::ExperimentS3LogConfiguration>,
@@ -2217,15 +1873,11 @@ pub struct ExperimentLogConfiguration {
 }
 impl ExperimentLogConfiguration {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_logs_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ExperimentCloudWatchLogsLogConfiguration> {
+    pub fn cloud_watch_logs_configuration(&self) -> std::option::Option<& crate::model::ExperimentCloudWatchLogsLogConfiguration> {
         self.cloud_watch_logs_configuration.as_ref()
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
-    pub fn s3_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ExperimentS3LogConfiguration> {
+    pub fn s3_configuration(&self) -> std::option::Option<& crate::model::ExperimentS3LogConfiguration> {
         self.s3_configuration.as_ref()
     }
     /// <p>The schema version.</p>
@@ -2235,48 +1887,32 @@ impl ExperimentLogConfiguration {
 }
 /// See [`ExperimentLogConfiguration`](crate::model::ExperimentLogConfiguration).
 pub mod experiment_log_configuration {
-
+    
     /// A builder for [`ExperimentLogConfiguration`](crate::model::ExperimentLogConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cloud_watch_logs_configuration:
-            std::option::Option<crate::model::ExperimentCloudWatchLogsLogConfiguration>,
-        pub(crate) s3_configuration:
-            std::option::Option<crate::model::ExperimentS3LogConfiguration>,
+        pub(crate) cloud_watch_logs_configuration: std::option::Option<crate::model::ExperimentCloudWatchLogsLogConfiguration>,
+        pub(crate) s3_configuration: std::option::Option<crate::model::ExperimentS3LogConfiguration>,
         pub(crate) log_schema_version: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-        pub fn cloud_watch_logs_configuration(
-            mut self,
-            input: crate::model::ExperimentCloudWatchLogsLogConfiguration,
-        ) -> Self {
+        pub fn cloud_watch_logs_configuration(mut self, input: crate::model::ExperimentCloudWatchLogsLogConfiguration) -> Self {
             self.cloud_watch_logs_configuration = Some(input);
             self
         }
         /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-        pub fn set_cloud_watch_logs_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ExperimentCloudWatchLogsLogConfiguration>,
-        ) -> Self {
-            self.cloud_watch_logs_configuration = input;
-            self
+        pub fn set_cloud_watch_logs_configuration(mut self, input: std::option::Option<crate::model::ExperimentCloudWatchLogsLogConfiguration>) -> Self {
+            self.cloud_watch_logs_configuration = input; self
         }
         /// <p>The configuration for experiment logging to Amazon S3.</p>
-        pub fn s3_configuration(
-            mut self,
-            input: crate::model::ExperimentS3LogConfiguration,
-        ) -> Self {
+        pub fn s3_configuration(mut self, input: crate::model::ExperimentS3LogConfiguration) -> Self {
             self.s3_configuration = Some(input);
             self
         }
         /// <p>The configuration for experiment logging to Amazon S3.</p>
-        pub fn set_s3_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ExperimentS3LogConfiguration>,
-        ) -> Self {
-            self.s3_configuration = input;
-            self
+        pub fn set_s3_configuration(mut self, input: std::option::Option<crate::model::ExperimentS3LogConfiguration>) -> Self {
+            self.s3_configuration = input; self
         }
         /// <p>The schema version.</p>
         pub fn log_schema_version(mut self, input: i32) -> Self {
@@ -2285,18 +1921,22 @@ pub mod experiment_log_configuration {
         }
         /// <p>The schema version.</p>
         pub fn set_log_schema_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.log_schema_version = input;
-            self
+            self.log_schema_version = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentLogConfiguration`](crate::model::ExperimentLogConfiguration).
         pub fn build(self) -> crate::model::ExperimentLogConfiguration {
             crate::model::ExperimentLogConfiguration {
-                cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
-                s3_configuration: self.s3_configuration,
-                log_schema_version: self.log_schema_version,
+                cloud_watch_logs_configuration: self.cloud_watch_logs_configuration
+                ,
+                s3_configuration: self.s3_configuration
+                ,
+                log_schema_version: self.log_schema_version
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentLogConfiguration {
     /// Creates a new builder-style object to manufacture [`ExperimentLogConfiguration`](crate::model::ExperimentLogConfiguration).
@@ -2308,7 +1948,7 @@ impl ExperimentLogConfiguration {
 /// <p>Describes the configuration for experiment logging to Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentS3LogConfiguration {
+pub struct ExperimentS3LogConfiguration  {
     /// <p>The name of the destination bucket.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
@@ -2318,17 +1958,17 @@ pub struct ExperimentS3LogConfiguration {
 }
 impl ExperimentS3LogConfiguration {
     /// <p>The name of the destination bucket.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The bucket prefix.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
 /// See [`ExperimentS3LogConfiguration`](crate::model::ExperimentS3LogConfiguration).
 pub mod experiment_s3_log_configuration {
-
+    
     /// A builder for [`ExperimentS3LogConfiguration`](crate::model::ExperimentS3LogConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2343,8 +1983,7 @@ pub mod experiment_s3_log_configuration {
         }
         /// <p>The name of the destination bucket.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = input;
-            self
+            self.bucket_name = input; self
         }
         /// <p>The bucket prefix.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2353,17 +1992,20 @@ pub mod experiment_s3_log_configuration {
         }
         /// <p>The bucket prefix.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentS3LogConfiguration`](crate::model::ExperimentS3LogConfiguration).
         pub fn build(self) -> crate::model::ExperimentS3LogConfiguration {
             crate::model::ExperimentS3LogConfiguration {
-                bucket_name: self.bucket_name,
-                prefix: self.prefix,
+                bucket_name: self.bucket_name
+                ,
+                prefix: self.prefix
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentS3LogConfiguration {
     /// Creates a new builder-style object to manufacture [`ExperimentS3LogConfiguration`](crate::model::ExperimentS3LogConfiguration).
@@ -2375,20 +2017,20 @@ impl ExperimentS3LogConfiguration {
 /// <p>Describes the configuration for experiment logging to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentCloudWatchLogsLogConfiguration {
+pub struct ExperimentCloudWatchLogsLogConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
     #[doc(hidden)]
     pub log_group_arn: std::option::Option<std::string::String>,
 }
 impl ExperimentCloudWatchLogsLogConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
-    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn log_group_arn(&self) -> std::option::Option<& str> {
         self.log_group_arn.as_deref()
     }
 }
 /// See [`ExperimentCloudWatchLogsLogConfiguration`](crate::model::ExperimentCloudWatchLogsLogConfiguration).
 pub mod experiment_cloud_watch_logs_log_configuration {
-
+    
     /// A builder for [`ExperimentCloudWatchLogsLogConfiguration`](crate::model::ExperimentCloudWatchLogsLogConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2401,20 +2043,19 @@ pub mod experiment_cloud_watch_logs_log_configuration {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
-        pub fn set_log_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_arn = input;
-            self
+        pub fn set_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentCloudWatchLogsLogConfiguration`](crate::model::ExperimentCloudWatchLogsLogConfiguration).
         pub fn build(self) -> crate::model::ExperimentCloudWatchLogsLogConfiguration {
             crate::model::ExperimentCloudWatchLogsLogConfiguration {
-                log_group_arn: self.log_group_arn,
+                log_group_arn: self.log_group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentCloudWatchLogsLogConfiguration {
     /// Creates a new builder-style object to manufacture [`ExperimentCloudWatchLogsLogConfiguration`](crate::model::ExperimentCloudWatchLogsLogConfiguration).
@@ -2426,7 +2067,7 @@ impl ExperimentCloudWatchLogsLogConfiguration {
 /// <p>Describes the stop condition for an experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentStopCondition {
+pub struct ExperimentStopCondition  {
     /// <p>The source for the stop condition.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
@@ -2436,17 +2077,17 @@ pub struct ExperimentStopCondition {
 }
 impl ExperimentStopCondition {
     /// <p>The source for the stop condition.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`ExperimentStopCondition`](crate::model::ExperimentStopCondition).
 pub mod experiment_stop_condition {
-
+    
     /// A builder for [`ExperimentStopCondition`](crate::model::ExperimentStopCondition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2461,8 +2102,7 @@ pub mod experiment_stop_condition {
         }
         /// <p>The source for the stop condition.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2471,17 +2111,20 @@ pub mod experiment_stop_condition {
         }
         /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentStopCondition`](crate::model::ExperimentStopCondition).
         pub fn build(self) -> crate::model::ExperimentStopCondition {
             crate::model::ExperimentStopCondition {
-                source: self.source,
-                value: self.value,
+                source: self.source
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentStopCondition {
     /// Creates a new builder-style object to manufacture [`ExperimentStopCondition`](crate::model::ExperimentStopCondition).
@@ -2493,7 +2136,7 @@ impl ExperimentStopCondition {
 /// <p>Describes the action for an experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentAction {
+pub struct ExperimentAction  {
     /// <p>The ID of the action.</p>
     #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
@@ -2502,12 +2145,10 @@ pub struct ExperimentAction {
     pub description: std::option::Option<std::string::String>,
     /// <p>The parameters for the action.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The targets for the action.</p>
     #[doc(hidden)]
-    pub targets:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub targets: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the action that must be completed before this action starts.</p>
     #[doc(hidden)]
     pub start_after: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2523,58 +2164,48 @@ pub struct ExperimentAction {
 }
 impl ExperimentAction {
     /// <p>The ID of the action.</p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>The description for the action.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The parameters for the action.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The targets for the action.</p>
-    pub fn targets(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn targets(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.targets.as_ref()
     }
     /// <p>The name of the action that must be completed before this action starts.</p>
-    pub fn start_after(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn start_after(&self) -> std::option::Option<& [std::string::String]> {
         self.start_after.as_deref()
     }
     /// <p>The state of the action.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ExperimentActionState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ExperimentActionState> {
         self.state.as_ref()
     }
     /// <p>The time that the action started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time that the action ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
 /// See [`ExperimentAction`](crate::model::ExperimentAction).
 pub mod experiment_action {
-
+    
     /// A builder for [`ExperimentAction`](crate::model::ExperimentAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) targets: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) targets: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) start_after: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) state: std::option::Option<crate::model::ExperimentActionState>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2588,8 +2219,7 @@ pub mod experiment_action {
         }
         /// <p>The ID of the action.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// <p>The description for the action.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2598,58 +2228,37 @@ pub mod experiment_action {
         }
         /// <p>The description for the action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameters for the action.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The parameters for the action.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// Adds a key-value pair to `targets`.
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets for the action.</p>
-        pub fn targets(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn targets(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.targets = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.targets = Some(hash_map);
+                            self
         }
         /// <p>The targets for the action.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.targets = input; self
         }
         /// Appends an item to `start_after`.
         ///
@@ -2658,17 +2267,13 @@ pub mod experiment_action {
         /// <p>The name of the action that must be completed before this action starts.</p>
         pub fn start_after(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.start_after.unwrap_or_default();
-            v.push(input.into());
-            self.start_after = Some(v);
-            self
+                            v.push(input.into());
+                            self.start_after = Some(v);
+                            self
         }
         /// <p>The name of the action that must be completed before this action starts.</p>
-        pub fn set_start_after(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.start_after = input;
-            self
+        pub fn set_start_after(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.start_after = input; self
         }
         /// <p>The state of the action.</p>
         pub fn state(mut self, input: crate::model::ExperimentActionState) -> Self {
@@ -2676,12 +2281,8 @@ pub mod experiment_action {
             self
         }
         /// <p>The state of the action.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ExperimentActionState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ExperimentActionState>) -> Self {
+            self.state = input; self
         }
         /// <p>The time that the action started.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2689,12 +2290,8 @@ pub mod experiment_action {
             self
         }
         /// <p>The time that the action started.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The time that the action ended.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2702,27 +2299,33 @@ pub mod experiment_action {
             self
         }
         /// <p>The time that the action ended.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentAction`](crate::model::ExperimentAction).
         pub fn build(self) -> crate::model::ExperimentAction {
             crate::model::ExperimentAction {
-                action_id: self.action_id,
-                description: self.description,
-                parameters: self.parameters,
-                targets: self.targets,
-                start_after: self.start_after,
-                state: self.state,
-                start_time: self.start_time,
-                end_time: self.end_time,
+                action_id: self.action_id
+                ,
+                description: self.description
+                ,
+                parameters: self.parameters
+                ,
+                targets: self.targets
+                ,
+                start_after: self.start_after
+                ,
+                state: self.state
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentAction {
     /// Creates a new builder-style object to manufacture [`ExperimentAction`](crate::model::ExperimentAction).
@@ -2734,7 +2337,7 @@ impl ExperimentAction {
 /// <p>Describes the state of an action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentActionState {
+pub struct ExperimentActionState  {
     /// <p>The state of the action.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExperimentActionStatus>,
@@ -2744,17 +2347,17 @@ pub struct ExperimentActionState {
 }
 impl ExperimentActionState {
     /// <p>The state of the action.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ExperimentActionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ExperimentActionStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the state.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
 /// See [`ExperimentActionState`](crate::model::ExperimentActionState).
 pub mod experiment_action_state {
-
+    
     /// A builder for [`ExperimentActionState`](crate::model::ExperimentActionState).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2768,12 +2371,8 @@ pub mod experiment_action_state {
             self
         }
         /// <p>The state of the action.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ExperimentActionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ExperimentActionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The reason for the state.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2782,17 +2381,20 @@ pub mod experiment_action_state {
         }
         /// <p>The reason for the state.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentActionState`](crate::model::ExperimentActionState).
         pub fn build(self) -> crate::model::ExperimentActionState {
             crate::model::ExperimentActionState {
-                status: self.status,
-                reason: self.reason,
+                status: self.status
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentActionState {
     /// Creates a new builder-style object to manufacture [`ExperimentActionState`](crate::model::ExperimentActionState).
@@ -2807,9 +2409,9 @@ impl ExperimentActionState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let experimentactionstatus = unimplemented!();
 /// match experimentactionstatus {
@@ -2837,22 +2439,14 @@ impl ExperimentActionState {
 /// Specifically, when `experimentactionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExperimentActionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExperimentActionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -2871,7 +2465,7 @@ pub enum ExperimentActionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExperimentActionStatus {
     fn from(s: &str) -> Self {
@@ -2884,19 +2478,17 @@ impl std::convert::From<&str> for ExperimentActionStatus {
             "running" => ExperimentActionStatus::Running,
             "stopped" => ExperimentActionStatus::Stopped,
             "stopping" => ExperimentActionStatus::Stopping,
-            other => {
-                ExperimentActionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ExperimentActionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExperimentActionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExperimentActionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExperimentActionStatus::from(s))
+                }
+            }
 impl ExperimentActionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2909,20 +2501,13 @@ impl ExperimentActionStatus {
             ExperimentActionStatus::Running => "running",
             ExperimentActionStatus::Stopped => "stopped",
             ExperimentActionStatus::Stopping => "stopping",
-            ExperimentActionStatus::Unknown(value) => value.as_str(),
+            ExperimentActionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "cancelled",
-            "completed",
-            "failed",
-            "initiating",
-            "pending",
-            "running",
-            "stopped",
-            "stopping",
+            "cancelled", "completed", "failed", "initiating", "pending", "running", "stopped", "stopping"
         ]
     }
 }
@@ -2935,7 +2520,7 @@ impl AsRef<str> for ExperimentActionStatus {
 /// <p>Describes a target for an experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentTarget {
+pub struct ExperimentTarget  {
     /// <p>The resource type.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
@@ -2944,8 +2529,7 @@ pub struct ExperimentTarget {
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags for the target resources.</p>
     #[doc(hidden)]
-    pub resource_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::ExperimentTargetFilter>>,
@@ -2954,58 +2538,46 @@ pub struct ExperimentTarget {
     pub selection_mode: std::option::Option<std::string::String>,
     /// <p>The resource type parameters.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ExperimentTarget {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_arns.as_deref()
     }
     /// <p>The tags for the target resources.</p>
-    pub fn resource_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn resource_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.resource_tags.as_ref()
     }
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::ExperimentTargetFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::ExperimentTargetFilter]> {
         self.filters.as_deref()
     }
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
-    pub fn selection_mode(&self) -> std::option::Option<&str> {
+    pub fn selection_mode(&self) -> std::option::Option<& str> {
         self.selection_mode.as_deref()
     }
     /// <p>The resource type parameters.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
 }
 /// See [`ExperimentTarget`](crate::model::ExperimentTarget).
 pub mod experiment_target {
-
+    
     /// A builder for [`ExperimentTarget`](crate::model::ExperimentTarget).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) resource_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) filters:
-            std::option::Option<std::vec::Vec<crate::model::ExperimentTargetFilter>>,
+        pub(crate) resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::ExperimentTargetFilter>>,
         pub(crate) selection_mode: std::option::Option<std::string::String>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The resource type.</p>
@@ -3014,12 +2586,8 @@ pub mod experiment_target {
             self
         }
         /// <p>The resource type.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// Appends an item to `resource_arns`.
         ///
@@ -3028,42 +2596,28 @@ pub mod experiment_target {
         /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
-            v.push(input.into());
-            self.resource_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-        pub fn set_resource_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_arns = input;
-            self
+        pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_arns = input; self
         }
         /// Adds a key-value pair to `resource_tags`.
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>The tags for the target resources.</p>
-        pub fn resource_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn resource_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.resource_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.resource_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.resource_tags = Some(hash_map);
+                            self
         }
         /// <p>The tags for the target resources.</p>
-        pub fn set_resource_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.resource_tags = input;
-            self
+        pub fn set_resource_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.resource_tags = input; self
         }
         /// Appends an item to `filters`.
         ///
@@ -3072,17 +2626,13 @@ pub mod experiment_target {
         /// <p>The filters to apply to identify target resources using specific attributes.</p>
         pub fn filters(mut self, input: crate::model::ExperimentTargetFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>The filters to apply to identify target resources using specific attributes.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExperimentTargetFilter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExperimentTargetFilter>>) -> Self {
+            self.filters = input; self
         }
         /// <p>Scopes the identified resources to a specific count or percentage.</p>
         pub fn selection_mode(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3090,50 +2640,44 @@ pub mod experiment_target {
             self
         }
         /// <p>Scopes the identified resources to a specific count or percentage.</p>
-        pub fn set_selection_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.selection_mode = input;
-            self
+        pub fn set_selection_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.selection_mode = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The resource type parameters.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The resource type parameters.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentTarget`](crate::model::ExperimentTarget).
         pub fn build(self) -> crate::model::ExperimentTarget {
             crate::model::ExperimentTarget {
-                resource_type: self.resource_type,
-                resource_arns: self.resource_arns,
-                resource_tags: self.resource_tags,
-                filters: self.filters,
-                selection_mode: self.selection_mode,
-                parameters: self.parameters,
+                resource_type: self.resource_type
+                ,
+                resource_arns: self.resource_arns
+                ,
+                resource_tags: self.resource_tags
+                ,
+                filters: self.filters
+                ,
+                selection_mode: self.selection_mode
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentTarget {
     /// Creates a new builder-style object to manufacture [`ExperimentTarget`](crate::model::ExperimentTarget).
@@ -3145,7 +2689,7 @@ impl ExperimentTarget {
 /// <p>Describes a filter used for the target resources in an experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentTargetFilter {
+pub struct ExperimentTargetFilter  {
     /// <p>The attribute path for the filter.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
@@ -3155,17 +2699,17 @@ pub struct ExperimentTargetFilter {
 }
 impl ExperimentTargetFilter {
     /// <p>The attribute path for the filter.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The attribute values for the filter.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`ExperimentTargetFilter`](crate::model::ExperimentTargetFilter).
 pub mod experiment_target_filter {
-
+    
     /// A builder for [`ExperimentTargetFilter`](crate::model::ExperimentTargetFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3180,8 +2724,7 @@ pub mod experiment_target_filter {
         }
         /// <p>The attribute path for the filter.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -3190,26 +2733,26 @@ pub mod experiment_target_filter {
         /// <p>The attribute values for the filter.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The attribute values for the filter.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentTargetFilter`](crate::model::ExperimentTargetFilter).
         pub fn build(self) -> crate::model::ExperimentTargetFilter {
             crate::model::ExperimentTargetFilter {
-                path: self.path,
-                values: self.values,
+                path: self.path
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentTargetFilter {
     /// Creates a new builder-style object to manufacture [`ExperimentTargetFilter`](crate::model::ExperimentTargetFilter).
@@ -3221,7 +2764,7 @@ impl ExperimentTargetFilter {
 /// <p>Describes the state of an experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentState {
+pub struct ExperimentState  {
     /// <p>The state of the experiment.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ExperimentStatus>,
@@ -3231,17 +2774,17 @@ pub struct ExperimentState {
 }
 impl ExperimentState {
     /// <p>The state of the experiment.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ExperimentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ExperimentStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the state.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
 /// See [`ExperimentState`](crate::model::ExperimentState).
 pub mod experiment_state {
-
+    
     /// A builder for [`ExperimentState`](crate::model::ExperimentState).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3255,12 +2798,8 @@ pub mod experiment_state {
             self
         }
         /// <p>The state of the experiment.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ExperimentStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ExperimentStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The reason for the state.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3269,17 +2808,20 @@ pub mod experiment_state {
         }
         /// <p>The reason for the state.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentState`](crate::model::ExperimentState).
         pub fn build(self) -> crate::model::ExperimentState {
             crate::model::ExperimentState {
-                status: self.status,
-                reason: self.reason,
+                status: self.status
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentState {
     /// Creates a new builder-style object to manufacture [`ExperimentState`](crate::model::ExperimentState).
@@ -3294,9 +2836,9 @@ impl ExperimentState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let experimentstatus = unimplemented!();
 /// match experimentstatus {
@@ -3323,22 +2865,14 @@ impl ExperimentState {
 /// Specifically, when `experimentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExperimentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExperimentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -3355,7 +2889,7 @@ pub enum ExperimentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExperimentStatus {
     fn from(s: &str) -> Self {
@@ -3367,17 +2901,17 @@ impl std::convert::From<&str> for ExperimentStatus {
             "running" => ExperimentStatus::Running,
             "stopped" => ExperimentStatus::Stopped,
             "stopping" => ExperimentStatus::Stopping,
-            other => ExperimentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ExperimentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExperimentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExperimentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExperimentStatus::from(s))
+                }
+            }
 impl ExperimentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3389,19 +2923,13 @@ impl ExperimentStatus {
             ExperimentStatus::Running => "running",
             ExperimentStatus::Stopped => "stopped",
             ExperimentStatus::Stopping => "stopping",
-            ExperimentStatus::Unknown(value) => value.as_str(),
+            ExperimentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "completed",
-            "failed",
-            "initiating",
-            "pending",
-            "running",
-            "stopped",
-            "stopping",
+            "completed", "failed", "initiating", "pending", "running", "stopped", "stopping"
         ]
     }
 }
@@ -3414,7 +2942,7 @@ impl AsRef<str> for ExperimentStatus {
 /// <p>Describes a resource type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetResourceTypeSummary {
+pub struct TargetResourceTypeSummary  {
     /// <p>The resource type.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
@@ -3424,17 +2952,17 @@ pub struct TargetResourceTypeSummary {
 }
 impl TargetResourceTypeSummary {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>A description of the resource type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`TargetResourceTypeSummary`](crate::model::TargetResourceTypeSummary).
 pub mod target_resource_type_summary {
-
+    
     /// A builder for [`TargetResourceTypeSummary`](crate::model::TargetResourceTypeSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3448,12 +2976,8 @@ pub mod target_resource_type_summary {
             self
         }
         /// <p>The resource type.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>A description of the resource type.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3462,17 +2986,20 @@ pub mod target_resource_type_summary {
         }
         /// <p>A description of the resource type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`TargetResourceTypeSummary`](crate::model::TargetResourceTypeSummary).
         pub fn build(self) -> crate::model::TargetResourceTypeSummary {
             crate::model::TargetResourceTypeSummary {
-                resource_type: self.resource_type,
-                description: self.description,
+                resource_type: self.resource_type
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl TargetResourceTypeSummary {
     /// Creates a new builder-style object to manufacture [`TargetResourceTypeSummary`](crate::model::TargetResourceTypeSummary).
@@ -3484,7 +3011,7 @@ impl TargetResourceTypeSummary {
 /// <p>Provides a summary of an experiment template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentTemplateSummary {
+pub struct ExperimentTemplateSummary  {
     /// <p>The ID of the experiment template.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3499,37 +3026,33 @@ pub struct ExperimentTemplateSummary {
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags for the experiment template.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ExperimentTemplateSummary {
     /// <p>The ID of the experiment template.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The description of the experiment template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time that the experiment template was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time that the experiment template was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The tags for the experiment template.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ExperimentTemplateSummary`](crate::model::ExperimentTemplateSummary).
 pub mod experiment_template_summary {
-
+    
     /// A builder for [`ExperimentTemplateSummary`](crate::model::ExperimentTemplateSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3537,9 +3060,7 @@ pub mod experiment_template_summary {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ID of the experiment template.</p>
@@ -3549,8 +3070,7 @@ pub mod experiment_template_summary {
         }
         /// <p>The ID of the experiment template.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The description of the experiment template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3559,8 +3079,7 @@ pub mod experiment_template_summary {
         }
         /// <p>The description of the experiment template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The time that the experiment template was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3568,12 +3087,8 @@ pub mod experiment_template_summary {
             self
         }
         /// <p>The time that the experiment template was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time that the experiment template was last updated.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3581,49 +3096,42 @@ pub mod experiment_template_summary {
             self
         }
         /// <p>The time that the experiment template was last updated.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the experiment template.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags for the experiment template.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentTemplateSummary`](crate::model::ExperimentTemplateSummary).
         pub fn build(self) -> crate::model::ExperimentTemplateSummary {
             crate::model::ExperimentTemplateSummary {
-                id: self.id,
-                description: self.description,
-                creation_time: self.creation_time,
-                last_update_time: self.last_update_time,
-                tags: self.tags,
+                id: self.id
+                ,
+                description: self.description
+                ,
+                creation_time: self.creation_time
+                ,
+                last_update_time: self.last_update_time
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentTemplateSummary {
     /// Creates a new builder-style object to manufacture [`ExperimentTemplateSummary`](crate::model::ExperimentTemplateSummary).
@@ -3635,7 +3143,7 @@ impl ExperimentTemplateSummary {
 /// <p>Provides a summary of an experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentSummary {
+pub struct ExperimentSummary  {
     /// <p>The ID of the experiment.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3650,37 +3158,33 @@ pub struct ExperimentSummary {
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags for the experiment.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ExperimentSummary {
     /// <p>The ID of the experiment.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the experiment template.</p>
-    pub fn experiment_template_id(&self) -> std::option::Option<&str> {
+    pub fn experiment_template_id(&self) -> std::option::Option<& str> {
         self.experiment_template_id.as_deref()
     }
     /// <p>The state of the experiment.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ExperimentState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ExperimentState> {
         self.state.as_ref()
     }
     /// <p>The time that the experiment was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The tags for the experiment.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ExperimentSummary`](crate::model::ExperimentSummary).
 pub mod experiment_summary {
-
+    
     /// A builder for [`ExperimentSummary`](crate::model::ExperimentSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3688,9 +3192,7 @@ pub mod experiment_summary {
         pub(crate) experiment_template_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ExperimentState>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ID of the experiment.</p>
@@ -3700,8 +3202,7 @@ pub mod experiment_summary {
         }
         /// <p>The ID of the experiment.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ID of the experiment template.</p>
         pub fn experiment_template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3709,12 +3210,8 @@ pub mod experiment_summary {
             self
         }
         /// <p>The ID of the experiment template.</p>
-        pub fn set_experiment_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.experiment_template_id = input;
-            self
+        pub fn set_experiment_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.experiment_template_id = input; self
         }
         /// <p>The state of the experiment.</p>
         pub fn state(mut self, input: crate::model::ExperimentState) -> Self {
@@ -3722,12 +3219,8 @@ pub mod experiment_summary {
             self
         }
         /// <p>The state of the experiment.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ExperimentState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ExperimentState>) -> Self {
+            self.state = input; self
         }
         /// <p>The time that the experiment was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3735,49 +3228,42 @@ pub mod experiment_summary {
             self
         }
         /// <p>The time that the experiment was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the experiment.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags for the experiment.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ExperimentSummary`](crate::model::ExperimentSummary).
         pub fn build(self) -> crate::model::ExperimentSummary {
             crate::model::ExperimentSummary {
-                id: self.id,
-                experiment_template_id: self.experiment_template_id,
-                state: self.state,
-                creation_time: self.creation_time,
-                tags: self.tags,
+                id: self.id
+                ,
+                experiment_template_id: self.experiment_template_id
+                ,
+                state: self.state
+                ,
+                creation_time: self.creation_time
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ExperimentSummary {
     /// Creates a new builder-style object to manufacture [`ExperimentSummary`](crate::model::ExperimentSummary).
@@ -3789,7 +3275,7 @@ impl ExperimentSummary {
 /// <p>Provides a summary of an action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionSummary {
+pub struct ActionSummary  {
     /// <p>The ID of the action.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3798,53 +3284,39 @@ pub struct ActionSummary {
     pub description: std::option::Option<std::string::String>,
     /// <p>The targets for the action.</p>
     #[doc(hidden)]
-    pub targets: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ActionTarget>,
-    >,
+    pub targets: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ActionTarget>>,
     /// <p>The tags for the action.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ActionSummary {
     /// <p>The ID of the action.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The description for the action.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The targets for the action.</p>
-    pub fn targets(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ActionTarget>,
-    > {
+    pub fn targets(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ActionTarget>> {
         self.targets.as_ref()
     }
     /// <p>The tags for the action.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ActionSummary`](crate::model::ActionSummary).
 pub mod action_summary {
-
+    
     /// A builder for [`ActionSummary`](crate::model::ActionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) targets: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ActionTarget>,
-        >,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) targets: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ActionTarget>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ID of the action.</p>
@@ -3854,8 +3326,7 @@ pub mod action_summary {
         }
         /// <p>The ID of the action.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The description for the action.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3864,69 +3335,54 @@ pub mod action_summary {
         }
         /// <p>The description for the action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `targets`.
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets for the action.</p>
-        pub fn targets(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ActionTarget,
-        ) -> Self {
+        pub fn targets(mut self, k: impl Into<std::string::String>, v: crate::model::ActionTarget) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.targets = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.targets = Some(hash_map);
+                            self
         }
         /// <p>The targets for the action.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ActionTarget>,
-            >,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ActionTarget>>) -> Self {
+            self.targets = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the action.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags for the action.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ActionSummary`](crate::model::ActionSummary).
         pub fn build(self) -> crate::model::ActionSummary {
             crate::model::ActionSummary {
-                id: self.id,
-                description: self.description,
-                targets: self.targets,
-                tags: self.tags,
+                id: self.id
+                ,
+                description: self.description
+                ,
+                targets: self.targets
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionSummary {
     /// Creates a new builder-style object to manufacture [`ActionSummary`](crate::model::ActionSummary).
@@ -3938,20 +3394,20 @@ impl ActionSummary {
 /// <p>Describes a target for an action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionTarget {
+pub struct ActionTarget  {
     /// <p>The resource type of the target.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ActionTarget {
     /// <p>The resource type of the target.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
 /// See [`ActionTarget`](crate::model::ActionTarget).
 pub mod action_target {
-
+    
     /// A builder for [`ActionTarget`](crate::model::ActionTarget).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3964,20 +3420,19 @@ pub mod action_target {
             self
         }
         /// <p>The resource type of the target.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// Consumes the builder and constructs a [`ActionTarget`](crate::model::ActionTarget).
         pub fn build(self) -> crate::model::ActionTarget {
             crate::model::ActionTarget {
-                resource_type: self.resource_type,
+                resource_type: self.resource_type
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionTarget {
     /// Creates a new builder-style object to manufacture [`ActionTarget`](crate::model::ActionTarget).
@@ -3989,7 +3444,7 @@ impl ActionTarget {
 /// <p>Describes a resource type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetResourceType {
+pub struct TargetResourceType  {
     /// <p>The resource type.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
@@ -3998,42 +3453,31 @@ pub struct TargetResourceType {
     pub description: std::option::Option<std::string::String>,
     /// <p>The parameters for the resource type.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::TargetResourceTypeParameter>,
-    >,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::TargetResourceTypeParameter>>,
 }
 impl TargetResourceType {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>A description of the resource type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The parameters for the resource type.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::TargetResourceTypeParameter>,
-    > {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::TargetResourceTypeParameter>> {
         self.parameters.as_ref()
     }
 }
 /// See [`TargetResourceType`](crate::model::TargetResourceType).
 pub mod target_resource_type {
-
+    
     /// A builder for [`TargetResourceType`](crate::model::TargetResourceType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                crate::model::TargetResourceTypeParameter,
-            >,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::TargetResourceTypeParameter>>,
     }
     impl Builder {
         /// <p>The resource type.</p>
@@ -4042,12 +3486,8 @@ pub mod target_resource_type {
             self
         }
         /// <p>The resource type.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>A description of the resource type.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4056,46 +3496,37 @@ pub mod target_resource_type {
         }
         /// <p>A description of the resource type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameters for the resource type.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::TargetResourceTypeParameter,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: crate::model::TargetResourceTypeParameter) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The parameters for the resource type.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::TargetResourceTypeParameter,
-                >,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::TargetResourceTypeParameter>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`TargetResourceType`](crate::model::TargetResourceType).
         pub fn build(self) -> crate::model::TargetResourceType {
             crate::model::TargetResourceType {
-                resource_type: self.resource_type,
-                description: self.description,
-                parameters: self.parameters,
+                resource_type: self.resource_type
+                ,
+                description: self.description
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl TargetResourceType {
     /// Creates a new builder-style object to manufacture [`TargetResourceType`](crate::model::TargetResourceType).
@@ -4107,7 +3538,7 @@ impl TargetResourceType {
 /// <p>Describes the parameters for a resource type. Use parameters to determine which tasks are identified during target resolution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetResourceTypeParameter {
+pub struct TargetResourceTypeParameter  {
     /// <p>A description of the parameter.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -4117,7 +3548,7 @@ pub struct TargetResourceTypeParameter {
 }
 impl TargetResourceTypeParameter {
     /// <p>A description of the parameter.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the parameter is required.</p>
@@ -4127,7 +3558,7 @@ impl TargetResourceTypeParameter {
 }
 /// See [`TargetResourceTypeParameter`](crate::model::TargetResourceTypeParameter).
 pub mod target_resource_type_parameter {
-
+    
     /// A builder for [`TargetResourceTypeParameter`](crate::model::TargetResourceTypeParameter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4142,8 +3573,7 @@ pub mod target_resource_type_parameter {
         }
         /// <p>A description of the parameter.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Indicates whether the parameter is required.</p>
         pub fn required(mut self, input: bool) -> Self {
@@ -4152,17 +3582,20 @@ pub mod target_resource_type_parameter {
         }
         /// <p>Indicates whether the parameter is required.</p>
         pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
-            self.required = input;
-            self
+            self.required = input; self
         }
         /// Consumes the builder and constructs a [`TargetResourceTypeParameter`](crate::model::TargetResourceTypeParameter).
         pub fn build(self) -> crate::model::TargetResourceTypeParameter {
             crate::model::TargetResourceTypeParameter {
-                description: self.description,
-                required: self.required,
+                description: self.description
+                ,
+                required: self.required
+                ,
             }
         }
     }
+    
+    
 }
 impl TargetResourceTypeParameter {
     /// Creates a new builder-style object to manufacture [`TargetResourceTypeParameter`](crate::model::TargetResourceTypeParameter).
@@ -4174,7 +3607,7 @@ impl TargetResourceTypeParameter {
 /// <p>Describes an action. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html">FIS actions</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Action {
+pub struct Action  {
     /// <p>The ID of the action.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -4183,69 +3616,47 @@ pub struct Action {
     pub description: std::option::Option<std::string::String>,
     /// <p>The action parameters, if applicable.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ActionParameter>,
-    >,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ActionParameter>>,
     /// <p>The supported targets for the action.</p>
     #[doc(hidden)]
-    pub targets: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ActionTarget>,
-    >,
+    pub targets: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ActionTarget>>,
     /// <p>The tags for the action.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Action {
     /// <p>The ID of the action.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The description for the action.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The action parameters, if applicable.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ActionParameter>,
-    > {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ActionParameter>> {
         self.parameters.as_ref()
     }
     /// <p>The supported targets for the action.</p>
-    pub fn targets(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ActionTarget>,
-    > {
+    pub fn targets(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ActionTarget>> {
         self.targets.as_ref()
     }
     /// <p>The tags for the action.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`Action`](crate::model::Action).
 pub mod action {
-
+    
     /// A builder for [`Action`](crate::model::Action).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ActionParameter>,
-        >,
-        pub(crate) targets: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ActionTarget>,
-        >,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ActionParameter>>,
+        pub(crate) targets: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ActionTarget>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ID of the action.</p>
@@ -4255,8 +3666,7 @@ pub mod action {
         }
         /// <p>The ID of the action.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The description for the action.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4265,95 +3675,71 @@ pub mod action {
         }
         /// <p>The description for the action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The action parameters, if applicable.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ActionParameter,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: crate::model::ActionParameter) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The action parameters, if applicable.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ActionParameter>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ActionParameter>>) -> Self {
+            self.parameters = input; self
         }
         /// Adds a key-value pair to `targets`.
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The supported targets for the action.</p>
-        pub fn targets(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ActionTarget,
-        ) -> Self {
+        pub fn targets(mut self, k: impl Into<std::string::String>, v: crate::model::ActionTarget) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.targets = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.targets = Some(hash_map);
+                            self
         }
         /// <p>The supported targets for the action.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ActionTarget>,
-            >,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ActionTarget>>) -> Self {
+            self.targets = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the action.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags for the action.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`Action`](crate::model::Action).
         pub fn build(self) -> crate::model::Action {
             crate::model::Action {
-                id: self.id,
-                description: self.description,
-                parameters: self.parameters,
-                targets: self.targets,
-                tags: self.tags,
+                id: self.id
+                ,
+                description: self.description
+                ,
+                parameters: self.parameters
+                ,
+                targets: self.targets
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl Action {
     /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
@@ -4365,7 +3751,7 @@ impl Action {
 /// <p>Describes a parameter for an action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionParameter {
+pub struct ActionParameter  {
     /// <p>The parameter description.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -4375,7 +3761,7 @@ pub struct ActionParameter {
 }
 impl ActionParameter {
     /// <p>The parameter description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the parameter is required.</p>
@@ -4385,7 +3771,7 @@ impl ActionParameter {
 }
 /// See [`ActionParameter`](crate::model::ActionParameter).
 pub mod action_parameter {
-
+    
     /// A builder for [`ActionParameter`](crate::model::ActionParameter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4400,8 +3786,7 @@ pub mod action_parameter {
         }
         /// <p>The parameter description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Indicates whether the parameter is required.</p>
         pub fn required(mut self, input: bool) -> Self {
@@ -4410,17 +3795,20 @@ pub mod action_parameter {
         }
         /// <p>Indicates whether the parameter is required.</p>
         pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
-            self.required = input;
-            self
+            self.required = input; self
         }
         /// Consumes the builder and constructs a [`ActionParameter`](crate::model::ActionParameter).
         pub fn build(self) -> crate::model::ActionParameter {
             crate::model::ActionParameter {
-                description: self.description,
-                required: self.required,
+                description: self.description
+                ,
+                required: self.required
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionParameter {
     /// Creates a new builder-style object to manufacture [`ActionParameter`](crate::model::ActionParameter).
@@ -4432,31 +3820,24 @@ impl ActionParameter {
 /// <p>Specifies the configuration for experiment logging.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateExperimentTemplateLogConfigurationInput {
+pub struct CreateExperimentTemplateLogConfigurationInput  {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_configuration:
-        std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
+    pub cloud_watch_logs_configuration: std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_configuration:
-        std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
+    pub s3_configuration: std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
     /// <p>The schema version.</p>
     #[doc(hidden)]
     pub log_schema_version: std::option::Option<i32>,
 }
 impl CreateExperimentTemplateLogConfigurationInput {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_logs_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>
-    {
+    pub fn cloud_watch_logs_configuration(&self) -> std::option::Option<& crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput> {
         self.cloud_watch_logs_configuration.as_ref()
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
-    pub fn s3_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ExperimentTemplateS3LogConfigurationInput> {
+    pub fn s3_configuration(&self) -> std::option::Option<& crate::model::ExperimentTemplateS3LogConfigurationInput> {
         self.s3_configuration.as_ref()
     }
     /// <p>The schema version.</p>
@@ -4466,51 +3847,32 @@ impl CreateExperimentTemplateLogConfigurationInput {
 }
 /// See [`CreateExperimentTemplateLogConfigurationInput`](crate::model::CreateExperimentTemplateLogConfigurationInput).
 pub mod create_experiment_template_log_configuration_input {
-
+    
     /// A builder for [`CreateExperimentTemplateLogConfigurationInput`](crate::model::CreateExperimentTemplateLogConfigurationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cloud_watch_logs_configuration: std::option::Option<
-            crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
-        >,
-        pub(crate) s3_configuration:
-            std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
+        pub(crate) cloud_watch_logs_configuration: std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
+        pub(crate) s3_configuration: std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
         pub(crate) log_schema_version: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-        pub fn cloud_watch_logs_configuration(
-            mut self,
-            input: crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
-        ) -> Self {
+        pub fn cloud_watch_logs_configuration(mut self, input: crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput) -> Self {
             self.cloud_watch_logs_configuration = Some(input);
             self
         }
         /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-        pub fn set_cloud_watch_logs_configuration(
-            mut self,
-            input: std::option::Option<
-                crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
-            >,
-        ) -> Self {
-            self.cloud_watch_logs_configuration = input;
-            self
+        pub fn set_cloud_watch_logs_configuration(mut self, input: std::option::Option<crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput>) -> Self {
+            self.cloud_watch_logs_configuration = input; self
         }
         /// <p>The configuration for experiment logging to Amazon S3.</p>
-        pub fn s3_configuration(
-            mut self,
-            input: crate::model::ExperimentTemplateS3LogConfigurationInput,
-        ) -> Self {
+        pub fn s3_configuration(mut self, input: crate::model::ExperimentTemplateS3LogConfigurationInput) -> Self {
             self.s3_configuration = Some(input);
             self
         }
         /// <p>The configuration for experiment logging to Amazon S3.</p>
-        pub fn set_s3_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>,
-        ) -> Self {
-            self.s3_configuration = input;
-            self
+        pub fn set_s3_configuration(mut self, input: std::option::Option<crate::model::ExperimentTemplateS3LogConfigurationInput>) -> Self {
+            self.s3_configuration = input; self
         }
         /// <p>The schema version.</p>
         pub fn log_schema_version(mut self, input: i32) -> Self {
@@ -4519,18 +3881,22 @@ pub mod create_experiment_template_log_configuration_input {
         }
         /// <p>The schema version.</p>
         pub fn set_log_schema_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.log_schema_version = input;
-            self
+            self.log_schema_version = input; self
         }
         /// Consumes the builder and constructs a [`CreateExperimentTemplateLogConfigurationInput`](crate::model::CreateExperimentTemplateLogConfigurationInput).
         pub fn build(self) -> crate::model::CreateExperimentTemplateLogConfigurationInput {
             crate::model::CreateExperimentTemplateLogConfigurationInput {
-                cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
-                s3_configuration: self.s3_configuration,
-                log_schema_version: self.log_schema_version,
+                cloud_watch_logs_configuration: self.cloud_watch_logs_configuration
+                ,
+                s3_configuration: self.s3_configuration
+                ,
+                log_schema_version: self.log_schema_version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateExperimentTemplateLogConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateLogConfigurationInput`](crate::model::CreateExperimentTemplateLogConfigurationInput).
@@ -4539,11 +3905,11 @@ impl CreateExperimentTemplateLogConfigurationInput {
     }
 }
 
-/// <p>Specifies an action for an experiment template.</p>
+/// <p>Specifies an action for an experiment template.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/actions.html">Actions</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateExperimentTemplateActionInput {
+pub struct CreateExperimentTemplateActionInput  {
     /// <p>The ID of the action. The format of the action ID is: aws:<i>service-name</i>:<i>action-type</i>.</p>
     #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
@@ -4552,58 +3918,46 @@ pub struct CreateExperimentTemplateActionInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The parameters for the action, if applicable.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The targets for the action.</p>
     #[doc(hidden)]
-    pub targets:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub targets: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
     #[doc(hidden)]
     pub start_after: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateExperimentTemplateActionInput {
     /// <p>The ID of the action. The format of the action ID is: aws:<i>service-name</i>:<i>action-type</i>.</p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>A description for the action.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The parameters for the action, if applicable.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The targets for the action.</p>
-    pub fn targets(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn targets(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.targets.as_ref()
     }
     /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
-    pub fn start_after(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn start_after(&self) -> std::option::Option<& [std::string::String]> {
         self.start_after.as_deref()
     }
 }
 /// See [`CreateExperimentTemplateActionInput`](crate::model::CreateExperimentTemplateActionInput).
 pub mod create_experiment_template_action_input {
-
+    
     /// A builder for [`CreateExperimentTemplateActionInput`](crate::model::CreateExperimentTemplateActionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) targets: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) targets: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) start_after: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
@@ -4614,8 +3968,7 @@ pub mod create_experiment_template_action_input {
         }
         /// <p>The ID of the action. The format of the action ID is: aws:<i>service-name</i>:<i>action-type</i>.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// <p>A description for the action.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4624,58 +3977,37 @@ pub mod create_experiment_template_action_input {
         }
         /// <p>A description for the action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameters for the action, if applicable.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The parameters for the action, if applicable.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// Adds a key-value pair to `targets`.
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets for the action.</p>
-        pub fn targets(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn targets(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.targets = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.targets = Some(hash_map);
+                            self
         }
         /// <p>The targets for the action.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.targets = input; self
         }
         /// Appends an item to `start_after`.
         ///
@@ -4684,29 +4016,32 @@ pub mod create_experiment_template_action_input {
         /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
         pub fn start_after(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.start_after.unwrap_or_default();
-            v.push(input.into());
-            self.start_after = Some(v);
-            self
+                            v.push(input.into());
+                            self.start_after = Some(v);
+                            self
         }
         /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
-        pub fn set_start_after(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.start_after = input;
-            self
+        pub fn set_start_after(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.start_after = input; self
         }
         /// Consumes the builder and constructs a [`CreateExperimentTemplateActionInput`](crate::model::CreateExperimentTemplateActionInput).
         pub fn build(self) -> crate::model::CreateExperimentTemplateActionInput {
             crate::model::CreateExperimentTemplateActionInput {
-                action_id: self.action_id,
-                description: self.description,
-                parameters: self.parameters,
-                targets: self.targets,
-                start_after: self.start_after,
+                action_id: self.action_id
+                ,
+                description: self.description
+                ,
+                parameters: self.parameters
+                ,
+                targets: self.targets
+                ,
+                start_after: self.start_after
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateExperimentTemplateActionInput {
     /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateActionInput`](crate::model::CreateExperimentTemplateActionInput).
@@ -4715,11 +4050,11 @@ impl CreateExperimentTemplateActionInput {
     }
 }
 
-/// <p>Specifies a target for an experiment. You must specify at least one Amazon Resource Name (ARN) or at least one resource tag. You cannot specify both ARNs and tags.</p>
+/// <p>Specifies a target for an experiment. You must specify at least one Amazon Resource Name (ARN) or at least one resource tag. You cannot specify both ARNs and tags.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/targets.html">Targets</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateExperimentTemplateTargetInput {
+pub struct CreateExperimentTemplateTargetInput  {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
@@ -4728,81 +4063,65 @@ pub struct CreateExperimentTemplateTargetInput {
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags for the target resources.</p>
     #[doc(hidden)]
-    pub resource_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
     #[doc(hidden)]
-    pub filters:
-        std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>>,
-    /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
-    /// <ul>
-    /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li>
-    /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
-    /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
+    pub filters: std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>>,
+    /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p> 
+    /// <ul> 
+    /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li> 
+    /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li> 
+    /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub selection_mode: std::option::Option<std::string::String>,
     /// <p>The resource type parameters.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateExperimentTemplateTargetInput {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_arns.as_deref()
     }
     /// <p>The tags for the target resources.</p>
-    pub fn resource_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn resource_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.resource_tags.as_ref()
     }
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
-    pub fn filters(
-        &self,
-    ) -> std::option::Option<&[crate::model::ExperimentTemplateTargetInputFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::ExperimentTemplateTargetInputFilter]> {
         self.filters.as_deref()
     }
-    /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
-    /// <ul>
-    /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li>
-    /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
-    /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
+    /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p> 
+    /// <ul> 
+    /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li> 
+    /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li> 
+    /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li> 
     /// </ul>
-    pub fn selection_mode(&self) -> std::option::Option<&str> {
+    pub fn selection_mode(&self) -> std::option::Option<& str> {
         self.selection_mode.as_deref()
     }
     /// <p>The resource type parameters.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
 }
 /// See [`CreateExperimentTemplateTargetInput`](crate::model::CreateExperimentTemplateTargetInput).
 pub mod create_experiment_template_target_input {
-
+    
     /// A builder for [`CreateExperimentTemplateTargetInput`](crate::model::CreateExperimentTemplateTargetInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) resource_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) filters:
-            std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>>,
+        pub(crate) resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>>,
         pub(crate) selection_mode: std::option::Option<std::string::String>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The resource type. The resource type must be supported for the specified action.</p>
@@ -4811,12 +4130,8 @@ pub mod create_experiment_template_target_input {
             self
         }
         /// <p>The resource type. The resource type must be supported for the specified action.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// Appends an item to `resource_arns`.
         ///
@@ -4825,42 +4140,28 @@ pub mod create_experiment_template_target_input {
         /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
-            v.push(input.into());
-            self.resource_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-        pub fn set_resource_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_arns = input;
-            self
+        pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_arns = input; self
         }
         /// Adds a key-value pair to `resource_tags`.
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>The tags for the target resources.</p>
-        pub fn resource_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn resource_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.resource_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.resource_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.resource_tags = Some(hash_map);
+                            self
         }
         /// <p>The tags for the target resources.</p>
-        pub fn set_resource_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.resource_tags = input;
-            self
+        pub fn set_resource_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.resource_tags = input; self
         }
         /// Appends an item to `filters`.
         ///
@@ -4869,80 +4170,68 @@ pub mod create_experiment_template_target_input {
         /// <p>The filters to apply to identify target resources using specific attributes.</p>
         pub fn filters(mut self, input: crate::model::ExperimentTemplateTargetInputFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>The filters to apply to identify target resources using specific attributes.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>,
-            >,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>>) -> Self {
+            self.filters = input; self
         }
-        /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
-        /// <ul>
-        /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li>
-        /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
-        /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
+        /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p> 
+        /// <ul> 
+        /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li> 
+        /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li> 
+        /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li> 
         /// </ul>
         pub fn selection_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.selection_mode = Some(input.into());
             self
         }
-        /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
-        /// <ul>
-        /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li>
-        /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
-        /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
+        /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p> 
+        /// <ul> 
+        /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li> 
+        /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li> 
+        /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li> 
         /// </ul>
-        pub fn set_selection_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.selection_mode = input;
-            self
+        pub fn set_selection_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.selection_mode = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The resource type parameters.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The resource type parameters.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`CreateExperimentTemplateTargetInput`](crate::model::CreateExperimentTemplateTargetInput).
         pub fn build(self) -> crate::model::CreateExperimentTemplateTargetInput {
             crate::model::CreateExperimentTemplateTargetInput {
-                resource_type: self.resource_type,
-                resource_arns: self.resource_arns,
-                resource_tags: self.resource_tags,
-                filters: self.filters,
-                selection_mode: self.selection_mode,
-                parameters: self.parameters,
+                resource_type: self.resource_type
+                ,
+                resource_arns: self.resource_arns
+                ,
+                resource_tags: self.resource_tags
+                ,
+                filters: self.filters
+                ,
+                selection_mode: self.selection_mode
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateExperimentTemplateTargetInput {
     /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateTargetInput`](crate::model::CreateExperimentTemplateTargetInput).
@@ -4954,7 +4243,7 @@ impl CreateExperimentTemplateTargetInput {
 /// <p>Specifies a stop condition for an experiment template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateExperimentTemplateStopConditionInput {
+pub struct CreateExperimentTemplateStopConditionInput  {
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
@@ -4964,17 +4253,17 @@ pub struct CreateExperimentTemplateStopConditionInput {
 }
 impl CreateExperimentTemplateStopConditionInput {
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is a CloudWatch alarm.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`CreateExperimentTemplateStopConditionInput`](crate::model::CreateExperimentTemplateStopConditionInput).
 pub mod create_experiment_template_stop_condition_input {
-
+    
     /// A builder for [`CreateExperimentTemplateStopConditionInput`](crate::model::CreateExperimentTemplateStopConditionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4989,8 +4278,7 @@ pub mod create_experiment_template_stop_condition_input {
         }
         /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is a CloudWatch alarm.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4999,17 +4287,20 @@ pub mod create_experiment_template_stop_condition_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is a CloudWatch alarm.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`CreateExperimentTemplateStopConditionInput`](crate::model::CreateExperimentTemplateStopConditionInput).
         pub fn build(self) -> crate::model::CreateExperimentTemplateStopConditionInput {
             crate::model::CreateExperimentTemplateStopConditionInput {
-                source: self.source,
-                value: self.value,
+                source: self.source
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateExperimentTemplateStopConditionInput {
     /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateStopConditionInput`](crate::model::CreateExperimentTemplateStopConditionInput).
@@ -5017,3 +4308,4 @@ impl CreateExperimentTemplateStopConditionInput {
         crate::model::create_experiment_template_stop_condition_input::Builder::default()
     }
 }
+

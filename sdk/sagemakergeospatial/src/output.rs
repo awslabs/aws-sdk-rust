@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopVectorEnrichmentJobOutput {}
+pub struct StopVectorEnrichmentJobOutput  {
+}
 /// See [`StopVectorEnrichmentJobOutput`](crate::output::StopVectorEnrichmentJobOutput).
 pub mod stop_vector_enrichment_job_output {
-
+    
     /// A builder for [`StopVectorEnrichmentJobOutput`](crate::output::StopVectorEnrichmentJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopVectorEnrichmentJobOutput`](crate::output::StopVectorEnrichmentJobOutput).
         pub fn build(self) -> crate::output::StopVectorEnrichmentJobOutput {
-            crate::output::StopVectorEnrichmentJobOutput {}
+            crate::output::StopVectorEnrichmentJobOutput {
+            }
         }
     }
+    
+    
 }
 impl StopVectorEnrichmentJobOutput {
     /// Creates a new builder-style object to manufacture [`StopVectorEnrichmentJobOutput`](crate::output::StopVectorEnrichmentJobOutput).
@@ -26,7 +31,7 @@ impl StopVectorEnrichmentJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportVectorEnrichmentJobOutput {
+pub struct ExportVectorEnrichmentJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job being exported.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -45,43 +50,37 @@ pub struct ExportVectorEnrichmentJobOutput {
 }
 impl ExportVectorEnrichmentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job being exported.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role with permission to upload to the location in OutputConfig.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>The status of the results the Vector Enrichment job being exported.</p>
-    pub fn export_status(
-        &self,
-    ) -> std::option::Option<&crate::model::VectorEnrichmentJobExportStatus> {
+    pub fn export_status(&self) -> std::option::Option<& crate::model::VectorEnrichmentJobExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
-    pub fn output_config(
-        &self,
-    ) -> std::option::Option<&crate::model::ExportVectorEnrichmentJobOutputConfig> {
+    pub fn output_config(&self) -> std::option::Option<& crate::model::ExportVectorEnrichmentJobOutputConfig> {
         self.output_config.as_ref()
     }
 }
 /// See [`ExportVectorEnrichmentJobOutput`](crate::output::ExportVectorEnrichmentJobOutput).
 pub mod export_vector_enrichment_job_output {
-
+    
     /// A builder for [`ExportVectorEnrichmentJobOutput`](crate::output::ExportVectorEnrichmentJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
-        pub(crate) export_status:
-            std::option::Option<crate::model::VectorEnrichmentJobExportStatus>,
-        pub(crate) output_config:
-            std::option::Option<crate::model::ExportVectorEnrichmentJobOutputConfig>,
+        pub(crate) export_status: std::option::Option<crate::model::VectorEnrichmentJobExportStatus>,
+        pub(crate) output_config: std::option::Option<crate::model::ExportVectorEnrichmentJobOutputConfig>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job being exported.</p>
@@ -91,8 +90,7 @@ pub mod export_vector_enrichment_job_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job being exported.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The creation time.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -100,12 +98,8 @@ pub mod export_vector_enrichment_job_output {
             self
         }
         /// <p>The creation time.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role with permission to upload to the location in OutputConfig.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,56 +107,45 @@ pub mod export_vector_enrichment_job_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role with permission to upload to the location in OutputConfig.</p>
-        pub fn set_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_role_arn = input;
-            self
+        pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_role_arn = input; self
         }
         /// <p>The status of the results the Vector Enrichment job being exported.</p>
-        pub fn export_status(
-            mut self,
-            input: crate::model::VectorEnrichmentJobExportStatus,
-        ) -> Self {
+        pub fn export_status(mut self, input: crate::model::VectorEnrichmentJobExportStatus) -> Self {
             self.export_status = Some(input);
             self
         }
         /// <p>The status of the results the Vector Enrichment job being exported.</p>
-        pub fn set_export_status(
-            mut self,
-            input: std::option::Option<crate::model::VectorEnrichmentJobExportStatus>,
-        ) -> Self {
-            self.export_status = input;
-            self
+        pub fn set_export_status(mut self, input: std::option::Option<crate::model::VectorEnrichmentJobExportStatus>) -> Self {
+            self.export_status = input; self
         }
         /// <p>Output location information for exporting Vector Enrichment Job results. </p>
-        pub fn output_config(
-            mut self,
-            input: crate::model::ExportVectorEnrichmentJobOutputConfig,
-        ) -> Self {
+        pub fn output_config(mut self, input: crate::model::ExportVectorEnrichmentJobOutputConfig) -> Self {
             self.output_config = Some(input);
             self
         }
         /// <p>Output location information for exporting Vector Enrichment Job results. </p>
-        pub fn set_output_config(
-            mut self,
-            input: std::option::Option<crate::model::ExportVectorEnrichmentJobOutputConfig>,
-        ) -> Self {
-            self.output_config = input;
-            self
+        pub fn set_output_config(mut self, input: std::option::Option<crate::model::ExportVectorEnrichmentJobOutputConfig>) -> Self {
+            self.output_config = input; self
         }
         /// Consumes the builder and constructs a [`ExportVectorEnrichmentJobOutput`](crate::output::ExportVectorEnrichmentJobOutput).
         pub fn build(self) -> crate::output::ExportVectorEnrichmentJobOutput {
             crate::output::ExportVectorEnrichmentJobOutput {
-                arn: self.arn,
-                creation_time: self.creation_time,
-                execution_role_arn: self.execution_role_arn,
-                export_status: self.export_status,
-                output_config: self.output_config,
+                arn: self.arn
+                ,
+                creation_time: self.creation_time
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                export_status: self.export_status
+                ,
+                output_config: self.output_config
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportVectorEnrichmentJobOutput {
     /// Creates a new builder-style object to manufacture [`ExportVectorEnrichmentJobOutput`](crate::output::ExportVectorEnrichmentJobOutput).
@@ -174,46 +157,39 @@ impl ExportVectorEnrichmentJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListVectorEnrichmentJobsOutput {
+pub struct ListVectorEnrichmentJobsOutput  {
     /// <p>Contains summary information about the Vector Enrichment jobs.</p>
     #[doc(hidden)]
-    pub vector_enrichment_job_summaries:
-        std::option::Option<std::vec::Vec<crate::model::ListVectorEnrichmentJobOutputConfig>>,
+    pub vector_enrichment_job_summaries: std::option::Option<std::vec::Vec<crate::model::ListVectorEnrichmentJobOutputConfig>>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVectorEnrichmentJobsOutput {
     /// <p>Contains summary information about the Vector Enrichment jobs.</p>
-    pub fn vector_enrichment_job_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ListVectorEnrichmentJobOutputConfig]> {
+    pub fn vector_enrichment_job_summaries(&self) -> std::option::Option<& [crate::model::ListVectorEnrichmentJobOutputConfig]> {
         self.vector_enrichment_job_summaries.as_deref()
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListVectorEnrichmentJobsOutput {
+impl  std::fmt::Debug for ListVectorEnrichmentJobsOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVectorEnrichmentJobsOutput");
-        formatter.field(
-            "vector_enrichment_job_summaries",
-            &self.vector_enrichment_job_summaries,
-        );
+        formatter.field("vector_enrichment_job_summaries", &self.vector_enrichment_job_summaries);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 /// See [`ListVectorEnrichmentJobsOutput`](crate::output::ListVectorEnrichmentJobsOutput).
 pub mod list_vector_enrichment_jobs_output {
-
+    
     /// A builder for [`ListVectorEnrichmentJobsOutput`](crate::output::ListVectorEnrichmentJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
-        pub(crate) vector_enrichment_job_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ListVectorEnrichmentJobOutputConfig>>,
+        pub(crate) vector_enrichment_job_summaries: std::option::Option<std::vec::Vec<crate::model::ListVectorEnrichmentJobOutputConfig>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -222,24 +198,15 @@ pub mod list_vector_enrichment_jobs_output {
         /// To override the contents of this collection use [`set_vector_enrichment_job_summaries`](Self::set_vector_enrichment_job_summaries).
         ///
         /// <p>Contains summary information about the Vector Enrichment jobs.</p>
-        pub fn vector_enrichment_job_summaries(
-            mut self,
-            input: crate::model::ListVectorEnrichmentJobOutputConfig,
-        ) -> Self {
+        pub fn vector_enrichment_job_summaries(mut self, input: crate::model::ListVectorEnrichmentJobOutputConfig) -> Self {
             let mut v = self.vector_enrichment_job_summaries.unwrap_or_default();
-            v.push(input);
-            self.vector_enrichment_job_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.vector_enrichment_job_summaries = Some(v);
+                            self
         }
         /// <p>Contains summary information about the Vector Enrichment jobs.</p>
-        pub fn set_vector_enrichment_job_summaries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ListVectorEnrichmentJobOutputConfig>,
-            >,
-        ) -> Self {
-            self.vector_enrichment_job_summaries = input;
-            self
+        pub fn set_vector_enrichment_job_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListVectorEnrichmentJobOutputConfig>>) -> Self {
+            self.vector_enrichment_job_summaries = input; self
         }
         /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -248,28 +215,28 @@ pub mod list_vector_enrichment_jobs_output {
         }
         /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListVectorEnrichmentJobsOutput`](crate::output::ListVectorEnrichmentJobsOutput).
         pub fn build(self) -> crate::output::ListVectorEnrichmentJobsOutput {
             crate::output::ListVectorEnrichmentJobsOutput {
-                vector_enrichment_job_summaries: self.vector_enrichment_job_summaries,
-                next_token: self.next_token,
+                vector_enrichment_job_summaries: self.vector_enrichment_job_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field(
-                "vector_enrichment_job_summaries",
-                &self.vector_enrichment_job_summaries,
-            );
+            formatter.field("vector_enrichment_job_summaries", &self.vector_enrichment_job_summaries);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
+    
+    
 }
 impl ListVectorEnrichmentJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListVectorEnrichmentJobsOutput`](crate::output::ListVectorEnrichmentJobsOutput).
@@ -281,7 +248,7 @@ impl ListVectorEnrichmentJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartVectorEnrichmentJobOutput {
+pub struct StartVectorEnrichmentJobOutput  {
     /// <p>The name of the Vector Enrichment job.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -314,24 +281,23 @@ pub struct StartVectorEnrichmentJobOutput {
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartVectorEnrichmentJobOutput {
     /// <p>The name of the Vector Enrichment job.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type of the Vector Enrichment job.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::VectorEnrichmentJobType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::VectorEnrichmentJobType> {
         self.r#type.as_ref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The duration of the Vector Enrichment job, in seconds.</p>
@@ -339,38 +305,33 @@ impl StartVectorEnrichmentJobOutput {
         self.duration_in_seconds
     }
     /// <p>The status of the Vector Enrichment job being started.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VectorEnrichmentJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VectorEnrichmentJobStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Input configuration information for starting the Vector Enrichment job.</p>
-    pub fn input_config(
-        &self,
-    ) -> std::option::Option<&crate::model::VectorEnrichmentJobInputConfig> {
+    pub fn input_config(&self) -> std::option::Option<& crate::model::VectorEnrichmentJobInputConfig> {
         self.input_config.as_ref()
     }
     /// <p>An object containing information about the job configuration.</p>
-    pub fn job_config(&self) -> std::option::Option<&crate::model::VectorEnrichmentJobConfig> {
+    pub fn job_config(&self) -> std::option::Option<& crate::model::VectorEnrichmentJobConfig> {
         self.job_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`StartVectorEnrichmentJobOutput`](crate::output::StartVectorEnrichmentJobOutput).
 pub mod start_vector_enrichment_job_output {
-
+    
     /// A builder for [`StartVectorEnrichmentJobOutput`](crate::output::StartVectorEnrichmentJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -384,9 +345,7 @@ pub mod start_vector_enrichment_job_output {
         pub(crate) input_config: std::option::Option<crate::model::VectorEnrichmentJobInputConfig>,
         pub(crate) job_config: std::option::Option<crate::model::VectorEnrichmentJobConfig>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the Vector Enrichment job.</p>
@@ -396,8 +355,7 @@ pub mod start_vector_enrichment_job_output {
         }
         /// <p>The name of the Vector Enrichment job.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -406,8 +364,7 @@ pub mod start_vector_enrichment_job_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The type of the Vector Enrichment job.</p>
         pub fn r#type(mut self, input: crate::model::VectorEnrichmentJobType) -> Self {
@@ -415,12 +372,8 @@ pub mod start_vector_enrichment_job_output {
             self
         }
         /// <p>The type of the Vector Enrichment job.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::VectorEnrichmentJobType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::VectorEnrichmentJobType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The creation time.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -428,12 +381,8 @@ pub mod start_vector_enrichment_job_output {
             self
         }
         /// <p>The creation time.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The duration of the Vector Enrichment job, in seconds.</p>
         pub fn duration_in_seconds(mut self, input: i32) -> Self {
@@ -442,8 +391,7 @@ pub mod start_vector_enrichment_job_output {
         }
         /// <p>The duration of the Vector Enrichment job, in seconds.</p>
         pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration_in_seconds = input;
-            self
+            self.duration_in_seconds = input; self
         }
         /// <p>The status of the Vector Enrichment job being started.</p>
         pub fn status(mut self, input: crate::model::VectorEnrichmentJobStatus) -> Self {
@@ -451,12 +399,8 @@ pub mod start_vector_enrichment_job_output {
             self
         }
         /// <p>The status of the Vector Enrichment job being started.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VectorEnrichmentJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VectorEnrichmentJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -465,8 +409,7 @@ pub mod start_vector_enrichment_job_output {
         }
         /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>Input configuration information for starting the Vector Enrichment job.</p>
         pub fn input_config(mut self, input: crate::model::VectorEnrichmentJobInputConfig) -> Self {
@@ -474,12 +417,8 @@ pub mod start_vector_enrichment_job_output {
             self
         }
         /// <p>Input configuration information for starting the Vector Enrichment job.</p>
-        pub fn set_input_config(
-            mut self,
-            input: std::option::Option<crate::model::VectorEnrichmentJobInputConfig>,
-        ) -> Self {
-            self.input_config = input;
-            self
+        pub fn set_input_config(mut self, input: std::option::Option<crate::model::VectorEnrichmentJobInputConfig>) -> Self {
+            self.input_config = input; self
         }
         /// <p>An object containing information about the job configuration.</p>
         pub fn job_config(mut self, input: crate::model::VectorEnrichmentJobConfig) -> Self {
@@ -487,12 +426,8 @@ pub mod start_vector_enrichment_job_output {
             self
         }
         /// <p>An object containing information about the job configuration.</p>
-        pub fn set_job_config(
-            mut self,
-            input: std::option::Option<crate::model::VectorEnrichmentJobConfig>,
-        ) -> Self {
-            self.job_config = input;
-            self
+        pub fn set_job_config(mut self, input: std::option::Option<crate::model::VectorEnrichmentJobConfig>) -> Self {
+            self.job_config = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -500,55 +435,54 @@ pub mod start_vector_enrichment_job_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-        pub fn set_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_role_arn = input;
-            self
+        pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_role_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Each tag consists of a key and a value.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Each tag consists of a key and a value.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`StartVectorEnrichmentJobOutput`](crate::output::StartVectorEnrichmentJobOutput).
         pub fn build(self) -> crate::output::StartVectorEnrichmentJobOutput {
             crate::output::StartVectorEnrichmentJobOutput {
-                name: self.name,
-                arn: self.arn,
-                r#type: self.r#type,
-                creation_time: self.creation_time,
-                duration_in_seconds: self.duration_in_seconds,
-                status: self.status,
-                kms_key_id: self.kms_key_id,
-                input_config: self.input_config,
-                job_config: self.job_config,
-                execution_role_arn: self.execution_role_arn,
-                tags: self.tags,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                r#type: self.r#type
+                ,
+                creation_time: self.creation_time
+                ,
+                duration_in_seconds: self.duration_in_seconds
+                ,
+                status: self.status
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                input_config: self.input_config
+                ,
+                job_config: self.job_config
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl StartVectorEnrichmentJobOutput {
     /// Creates a new builder-style object to manufacture [`StartVectorEnrichmentJobOutput`](crate::output::StartVectorEnrichmentJobOutput).
@@ -560,19 +494,24 @@ impl StartVectorEnrichmentJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVectorEnrichmentJobOutput {}
+pub struct DeleteVectorEnrichmentJobOutput  {
+}
 /// See [`DeleteVectorEnrichmentJobOutput`](crate::output::DeleteVectorEnrichmentJobOutput).
 pub mod delete_vector_enrichment_job_output {
-
+    
     /// A builder for [`DeleteVectorEnrichmentJobOutput`](crate::output::DeleteVectorEnrichmentJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVectorEnrichmentJobOutput`](crate::output::DeleteVectorEnrichmentJobOutput).
         pub fn build(self) -> crate::output::DeleteVectorEnrichmentJobOutput {
-            crate::output::DeleteVectorEnrichmentJobOutput {}
+            crate::output::DeleteVectorEnrichmentJobOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteVectorEnrichmentJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVectorEnrichmentJobOutput`](crate::output::DeleteVectorEnrichmentJobOutput).
@@ -584,7 +523,7 @@ impl DeleteVectorEnrichmentJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVectorEnrichmentJobOutput {
+pub struct GetVectorEnrichmentJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -623,28 +562,26 @@ pub struct GetVectorEnrichmentJobOutput {
     pub export_status: std::option::Option<crate::model::VectorEnrichmentJobExportStatus>,
     /// <p>Details about the errors generated during the ExportVectorEnrichmentJob.</p>
     #[doc(hidden)]
-    pub export_error_details:
-        std::option::Option<crate::model::VectorEnrichmentJobExportErrorDetails>,
+    pub export_error_details: std::option::Option<crate::model::VectorEnrichmentJobExportErrorDetails>,
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetVectorEnrichmentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type of the Vector Enrichment job being initiated.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::VectorEnrichmentJobType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::VectorEnrichmentJobType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the Vector Enrichment job.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The duration of the Vector Enrichment job, in seconds.</p>
@@ -652,56 +589,45 @@ impl GetVectorEnrichmentJobOutput {
         self.duration_in_seconds
     }
     /// <p>The status of the initiated Vector Enrichment job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VectorEnrichmentJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VectorEnrichmentJobStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Input configuration information for the Vector Enrichment job.</p>
-    pub fn input_config(
-        &self,
-    ) -> std::option::Option<&crate::model::VectorEnrichmentJobInputConfig> {
+    pub fn input_config(&self) -> std::option::Option<& crate::model::VectorEnrichmentJobInputConfig> {
         self.input_config.as_ref()
     }
     /// <p>An object containing information about the job configuration.</p>
-    pub fn job_config(&self) -> std::option::Option<&crate::model::VectorEnrichmentJobConfig> {
+    pub fn job_config(&self) -> std::option::Option<& crate::model::VectorEnrichmentJobConfig> {
         self.job_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>Details about the errors generated during the Vector Enrichment job.</p>
-    pub fn error_details(
-        &self,
-    ) -> std::option::Option<&crate::model::VectorEnrichmentJobErrorDetails> {
+    pub fn error_details(&self) -> std::option::Option<& crate::model::VectorEnrichmentJobErrorDetails> {
         self.error_details.as_ref()
     }
     /// <p>The export status of the Vector Enrichment job being initiated.</p>
-    pub fn export_status(
-        &self,
-    ) -> std::option::Option<&crate::model::VectorEnrichmentJobExportStatus> {
+    pub fn export_status(&self) -> std::option::Option<& crate::model::VectorEnrichmentJobExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>Details about the errors generated during the ExportVectorEnrichmentJob.</p>
-    pub fn export_error_details(
-        &self,
-    ) -> std::option::Option<&crate::model::VectorEnrichmentJobExportErrorDetails> {
+    pub fn export_error_details(&self) -> std::option::Option<& crate::model::VectorEnrichmentJobExportErrorDetails> {
         self.export_error_details.as_ref()
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetVectorEnrichmentJobOutput`](crate::output::GetVectorEnrichmentJobOutput).
 pub mod get_vector_enrichment_job_output {
-
+    
     /// A builder for [`GetVectorEnrichmentJobOutput`](crate::output::GetVectorEnrichmentJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -715,15 +641,10 @@ pub mod get_vector_enrichment_job_output {
         pub(crate) input_config: std::option::Option<crate::model::VectorEnrichmentJobInputConfig>,
         pub(crate) job_config: std::option::Option<crate::model::VectorEnrichmentJobConfig>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
-        pub(crate) error_details:
-            std::option::Option<crate::model::VectorEnrichmentJobErrorDetails>,
-        pub(crate) export_status:
-            std::option::Option<crate::model::VectorEnrichmentJobExportStatus>,
-        pub(crate) export_error_details:
-            std::option::Option<crate::model::VectorEnrichmentJobExportErrorDetails>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) error_details: std::option::Option<crate::model::VectorEnrichmentJobErrorDetails>,
+        pub(crate) export_status: std::option::Option<crate::model::VectorEnrichmentJobExportStatus>,
+        pub(crate) export_error_details: std::option::Option<crate::model::VectorEnrichmentJobExportErrorDetails>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
@@ -733,8 +654,7 @@ pub mod get_vector_enrichment_job_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The type of the Vector Enrichment job being initiated.</p>
         pub fn r#type(mut self, input: crate::model::VectorEnrichmentJobType) -> Self {
@@ -742,12 +662,8 @@ pub mod get_vector_enrichment_job_output {
             self
         }
         /// <p>The type of the Vector Enrichment job being initiated.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::VectorEnrichmentJobType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::VectorEnrichmentJobType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The name of the Vector Enrichment job.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -756,8 +672,7 @@ pub mod get_vector_enrichment_job_output {
         }
         /// <p>The name of the Vector Enrichment job.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The creation time.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -765,12 +680,8 @@ pub mod get_vector_enrichment_job_output {
             self
         }
         /// <p>The creation time.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The duration of the Vector Enrichment job, in seconds.</p>
         pub fn duration_in_seconds(mut self, input: i32) -> Self {
@@ -779,8 +690,7 @@ pub mod get_vector_enrichment_job_output {
         }
         /// <p>The duration of the Vector Enrichment job, in seconds.</p>
         pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration_in_seconds = input;
-            self
+            self.duration_in_seconds = input; self
         }
         /// <p>The status of the initiated Vector Enrichment job.</p>
         pub fn status(mut self, input: crate::model::VectorEnrichmentJobStatus) -> Self {
@@ -788,12 +698,8 @@ pub mod get_vector_enrichment_job_output {
             self
         }
         /// <p>The status of the initiated Vector Enrichment job.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VectorEnrichmentJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VectorEnrichmentJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -802,8 +708,7 @@ pub mod get_vector_enrichment_job_output {
         }
         /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>Input configuration information for the Vector Enrichment job.</p>
         pub fn input_config(mut self, input: crate::model::VectorEnrichmentJobInputConfig) -> Self {
@@ -811,12 +716,8 @@ pub mod get_vector_enrichment_job_output {
             self
         }
         /// <p>Input configuration information for the Vector Enrichment job.</p>
-        pub fn set_input_config(
-            mut self,
-            input: std::option::Option<crate::model::VectorEnrichmentJobInputConfig>,
-        ) -> Self {
-            self.input_config = input;
-            self
+        pub fn set_input_config(mut self, input: std::option::Option<crate::model::VectorEnrichmentJobInputConfig>) -> Self {
+            self.input_config = input; self
         }
         /// <p>An object containing information about the job configuration.</p>
         pub fn job_config(mut self, input: crate::model::VectorEnrichmentJobConfig) -> Self {
@@ -824,12 +725,8 @@ pub mod get_vector_enrichment_job_output {
             self
         }
         /// <p>An object containing information about the job configuration.</p>
-        pub fn set_job_config(
-            mut self,
-            input: std::option::Option<crate::model::VectorEnrichmentJobConfig>,
-        ) -> Self {
-            self.job_config = input;
-            self
+        pub fn set_job_config(mut self, input: std::option::Option<crate::model::VectorEnrichmentJobConfig>) -> Self {
+            self.job_config = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -837,106 +734,87 @@ pub mod get_vector_enrichment_job_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-        pub fn set_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_role_arn = input;
-            self
+        pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_role_arn = input; self
         }
         /// <p>Details about the errors generated during the Vector Enrichment job.</p>
-        pub fn error_details(
-            mut self,
-            input: crate::model::VectorEnrichmentJobErrorDetails,
-        ) -> Self {
+        pub fn error_details(mut self, input: crate::model::VectorEnrichmentJobErrorDetails) -> Self {
             self.error_details = Some(input);
             self
         }
         /// <p>Details about the errors generated during the Vector Enrichment job.</p>
-        pub fn set_error_details(
-            mut self,
-            input: std::option::Option<crate::model::VectorEnrichmentJobErrorDetails>,
-        ) -> Self {
-            self.error_details = input;
-            self
+        pub fn set_error_details(mut self, input: std::option::Option<crate::model::VectorEnrichmentJobErrorDetails>) -> Self {
+            self.error_details = input; self
         }
         /// <p>The export status of the Vector Enrichment job being initiated.</p>
-        pub fn export_status(
-            mut self,
-            input: crate::model::VectorEnrichmentJobExportStatus,
-        ) -> Self {
+        pub fn export_status(mut self, input: crate::model::VectorEnrichmentJobExportStatus) -> Self {
             self.export_status = Some(input);
             self
         }
         /// <p>The export status of the Vector Enrichment job being initiated.</p>
-        pub fn set_export_status(
-            mut self,
-            input: std::option::Option<crate::model::VectorEnrichmentJobExportStatus>,
-        ) -> Self {
-            self.export_status = input;
-            self
+        pub fn set_export_status(mut self, input: std::option::Option<crate::model::VectorEnrichmentJobExportStatus>) -> Self {
+            self.export_status = input; self
         }
         /// <p>Details about the errors generated during the ExportVectorEnrichmentJob.</p>
-        pub fn export_error_details(
-            mut self,
-            input: crate::model::VectorEnrichmentJobExportErrorDetails,
-        ) -> Self {
+        pub fn export_error_details(mut self, input: crate::model::VectorEnrichmentJobExportErrorDetails) -> Self {
             self.export_error_details = Some(input);
             self
         }
         /// <p>Details about the errors generated during the ExportVectorEnrichmentJob.</p>
-        pub fn set_export_error_details(
-            mut self,
-            input: std::option::Option<crate::model::VectorEnrichmentJobExportErrorDetails>,
-        ) -> Self {
-            self.export_error_details = input;
-            self
+        pub fn set_export_error_details(mut self, input: std::option::Option<crate::model::VectorEnrichmentJobExportErrorDetails>) -> Self {
+            self.export_error_details = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Each tag consists of a key and a value.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Each tag consists of a key and a value.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetVectorEnrichmentJobOutput`](crate::output::GetVectorEnrichmentJobOutput).
         pub fn build(self) -> crate::output::GetVectorEnrichmentJobOutput {
             crate::output::GetVectorEnrichmentJobOutput {
-                arn: self.arn,
-                r#type: self.r#type,
-                name: self.name,
-                creation_time: self.creation_time,
-                duration_in_seconds: self.duration_in_seconds,
-                status: self.status,
-                kms_key_id: self.kms_key_id,
-                input_config: self.input_config,
-                job_config: self.job_config,
-                execution_role_arn: self.execution_role_arn,
-                error_details: self.error_details,
-                export_status: self.export_status,
-                export_error_details: self.export_error_details,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                creation_time: self.creation_time
+                ,
+                duration_in_seconds: self.duration_in_seconds
+                ,
+                status: self.status
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                input_config: self.input_config
+                ,
+                job_config: self.job_config
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                error_details: self.error_details
+                ,
+                export_status: self.export_status
+                ,
+                export_error_details: self.export_error_details
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetVectorEnrichmentJobOutput {
     /// Creates a new builder-style object to manufacture [`GetVectorEnrichmentJobOutput`](crate::output::GetVectorEnrichmentJobOutput).
@@ -948,7 +826,7 @@ impl GetVectorEnrichmentJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SearchRasterDataCollectionOutput {
+pub struct SearchRasterDataCollectionOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub approximate_result_count: std::option::Option<i32>,
@@ -965,15 +843,15 @@ impl SearchRasterDataCollectionOutput {
         self.approximate_result_count
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p></p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ItemSource]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ItemSource]> {
         self.items.as_deref()
     }
 }
-impl std::fmt::Debug for SearchRasterDataCollectionOutput {
+impl  std::fmt::Debug for SearchRasterDataCollectionOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchRasterDataCollectionOutput");
         formatter.field("approximate_result_count", &self.approximate_result_count);
@@ -984,7 +862,7 @@ impl std::fmt::Debug for SearchRasterDataCollectionOutput {
 }
 /// See [`SearchRasterDataCollectionOutput`](crate::output::SearchRasterDataCollectionOutput).
 pub mod search_raster_data_collection_output {
-
+    
     /// A builder for [`SearchRasterDataCollectionOutput`](crate::output::SearchRasterDataCollectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1000,8 +878,7 @@ pub mod search_raster_data_collection_output {
         }
         /// <p></p>
         pub fn set_approximate_result_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.approximate_result_count = input;
-            self
+            self.approximate_result_count = input; self
         }
         /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1010,8 +887,7 @@ pub mod search_raster_data_collection_output {
         }
         /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `items`.
         ///
@@ -1020,24 +896,23 @@ pub mod search_raster_data_collection_output {
         /// <p></p>
         pub fn items(mut self, input: crate::model::ItemSource) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ItemSource>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ItemSource>>) -> Self {
+            self.items = input; self
         }
         /// Consumes the builder and constructs a [`SearchRasterDataCollectionOutput`](crate::output::SearchRasterDataCollectionOutput).
         pub fn build(self) -> crate::output::SearchRasterDataCollectionOutput {
             crate::output::SearchRasterDataCollectionOutput {
-                approximate_result_count: self.approximate_result_count,
-                next_token: self.next_token,
-                items: self.items,
+                approximate_result_count: self.approximate_result_count
+                ,
+                next_token: self.next_token
+                ,
+                items: self.items
+                ,
             }
         }
     }
@@ -1050,6 +925,8 @@ pub mod search_raster_data_collection_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl SearchRasterDataCollectionOutput {
     /// Creates a new builder-style object to manufacture [`SearchRasterDataCollectionOutput`](crate::output::SearchRasterDataCollectionOutput).
@@ -1061,46 +938,39 @@ impl SearchRasterDataCollectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListRasterDataCollectionsOutput {
+pub struct ListRasterDataCollectionsOutput  {
     /// <p>Contains summary information about the raster data collection.</p>
     #[doc(hidden)]
-    pub raster_data_collection_summaries:
-        std::option::Option<std::vec::Vec<crate::model::RasterDataCollectionMetadata>>,
+    pub raster_data_collection_summaries: std::option::Option<std::vec::Vec<crate::model::RasterDataCollectionMetadata>>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRasterDataCollectionsOutput {
     /// <p>Contains summary information about the raster data collection.</p>
-    pub fn raster_data_collection_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::RasterDataCollectionMetadata]> {
+    pub fn raster_data_collection_summaries(&self) -> std::option::Option<& [crate::model::RasterDataCollectionMetadata]> {
         self.raster_data_collection_summaries.as_deref()
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRasterDataCollectionsOutput {
+impl  std::fmt::Debug for ListRasterDataCollectionsOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRasterDataCollectionsOutput");
-        formatter.field(
-            "raster_data_collection_summaries",
-            &self.raster_data_collection_summaries,
-        );
+        formatter.field("raster_data_collection_summaries", &self.raster_data_collection_summaries);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 /// See [`ListRasterDataCollectionsOutput`](crate::output::ListRasterDataCollectionsOutput).
 pub mod list_raster_data_collections_output {
-
+    
     /// A builder for [`ListRasterDataCollectionsOutput`](crate::output::ListRasterDataCollectionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
-        pub(crate) raster_data_collection_summaries:
-            std::option::Option<std::vec::Vec<crate::model::RasterDataCollectionMetadata>>,
+        pub(crate) raster_data_collection_summaries: std::option::Option<std::vec::Vec<crate::model::RasterDataCollectionMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1109,22 +979,15 @@ pub mod list_raster_data_collections_output {
         /// To override the contents of this collection use [`set_raster_data_collection_summaries`](Self::set_raster_data_collection_summaries).
         ///
         /// <p>Contains summary information about the raster data collection.</p>
-        pub fn raster_data_collection_summaries(
-            mut self,
-            input: crate::model::RasterDataCollectionMetadata,
-        ) -> Self {
+        pub fn raster_data_collection_summaries(mut self, input: crate::model::RasterDataCollectionMetadata) -> Self {
             let mut v = self.raster_data_collection_summaries.unwrap_or_default();
-            v.push(input);
-            self.raster_data_collection_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.raster_data_collection_summaries = Some(v);
+                            self
         }
         /// <p>Contains summary information about the raster data collection.</p>
-        pub fn set_raster_data_collection_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RasterDataCollectionMetadata>>,
-        ) -> Self {
-            self.raster_data_collection_summaries = input;
-            self
+        pub fn set_raster_data_collection_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::RasterDataCollectionMetadata>>) -> Self {
+            self.raster_data_collection_summaries = input; self
         }
         /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1133,28 +996,28 @@ pub mod list_raster_data_collections_output {
         }
         /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRasterDataCollectionsOutput`](crate::output::ListRasterDataCollectionsOutput).
         pub fn build(self) -> crate::output::ListRasterDataCollectionsOutput {
             crate::output::ListRasterDataCollectionsOutput {
-                raster_data_collection_summaries: self.raster_data_collection_summaries,
-                next_token: self.next_token,
+                raster_data_collection_summaries: self.raster_data_collection_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field(
-                "raster_data_collection_summaries",
-                &self.raster_data_collection_summaries,
-            );
+            formatter.field("raster_data_collection_summaries", &self.raster_data_collection_summaries);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
+    
+    
 }
 impl ListRasterDataCollectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListRasterDataCollectionsOutput`](crate::output::ListRasterDataCollectionsOutput).
@@ -1166,7 +1029,7 @@ impl ListRasterDataCollectionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRasterDataCollectionOutput {
+pub struct GetRasterDataCollectionOutput  {
     /// <p>The name of the raster data collection.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1190,49 +1053,45 @@ pub struct GetRasterDataCollectionOutput {
     pub image_source_bands: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetRasterDataCollectionOutput {
     /// <p>The name of the raster data collection.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The raster data collection type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::DataCollectionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::DataCollectionType> {
         self.r#type.as_ref()
     }
     /// <p>A description of the raster data collection.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The URL of the description page.</p>
-    pub fn description_page_url(&self) -> std::option::Option<&str> {
+    pub fn description_page_url(&self) -> std::option::Option<& str> {
         self.description_page_url.as_deref()
     }
     /// <p>The filters supported by the raster data collection.</p>
-    pub fn supported_filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn supported_filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.supported_filters.as_deref()
     }
     /// <p></p>
-    pub fn image_source_bands(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn image_source_bands(&self) -> std::option::Option<& [std::string::String]> {
         self.image_source_bands.as_deref()
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetRasterDataCollectionOutput`](crate::output::GetRasterDataCollectionOutput).
 pub mod get_raster_data_collection_output {
-
+    
     /// A builder for [`GetRasterDataCollectionOutput`](crate::output::GetRasterDataCollectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1243,9 +1102,7 @@ pub mod get_raster_data_collection_output {
         pub(crate) description_page_url: std::option::Option<std::string::String>,
         pub(crate) supported_filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) image_source_bands: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the raster data collection.</p>
@@ -1255,8 +1112,7 @@ pub mod get_raster_data_collection_output {
         }
         /// <p>The name of the raster data collection.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1265,8 +1121,7 @@ pub mod get_raster_data_collection_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The raster data collection type.</p>
         pub fn r#type(mut self, input: crate::model::DataCollectionType) -> Self {
@@ -1274,12 +1129,8 @@ pub mod get_raster_data_collection_output {
             self
         }
         /// <p>The raster data collection type.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::DataCollectionType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::DataCollectionType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>A description of the raster data collection.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1288,8 +1139,7 @@ pub mod get_raster_data_collection_output {
         }
         /// <p>A description of the raster data collection.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The URL of the description page.</p>
         pub fn description_page_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1297,12 +1147,8 @@ pub mod get_raster_data_collection_output {
             self
         }
         /// <p>The URL of the description page.</p>
-        pub fn set_description_page_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.description_page_url = input;
-            self
+        pub fn set_description_page_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description_page_url = input; self
         }
         /// Appends an item to `supported_filters`.
         ///
@@ -1311,17 +1157,13 @@ pub mod get_raster_data_collection_output {
         /// <p>The filters supported by the raster data collection.</p>
         pub fn supported_filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.supported_filters.unwrap_or_default();
-            v.push(input);
-            self.supported_filters = Some(v);
-            self
+                            v.push(input);
+                            self.supported_filters = Some(v);
+                            self
         }
         /// <p>The filters supported by the raster data collection.</p>
-        pub fn set_supported_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.supported_filters = input;
-            self
+        pub fn set_supported_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.supported_filters = input; self
         }
         /// Appends an item to `image_source_bands`.
         ///
@@ -1330,57 +1172,53 @@ pub mod get_raster_data_collection_output {
         /// <p></p>
         pub fn image_source_bands(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.image_source_bands.unwrap_or_default();
-            v.push(input.into());
-            self.image_source_bands = Some(v);
-            self
+                            v.push(input.into());
+                            self.image_source_bands = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_image_source_bands(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.image_source_bands = input;
-            self
+        pub fn set_image_source_bands(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.image_source_bands = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Each tag consists of a key and a value.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Each tag consists of a key and a value.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetRasterDataCollectionOutput`](crate::output::GetRasterDataCollectionOutput).
         pub fn build(self) -> crate::output::GetRasterDataCollectionOutput {
             crate::output::GetRasterDataCollectionOutput {
-                name: self.name,
-                arn: self.arn,
-                r#type: self.r#type,
-                description: self.description,
-                description_page_url: self.description_page_url,
-                supported_filters: self.supported_filters,
-                image_source_bands: self.image_source_bands,
-                tags: self.tags,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                r#type: self.r#type
+                ,
+                description: self.description
+                ,
+                description_page_url: self.description_page_url
+                ,
+                supported_filters: self.supported_filters
+                ,
+                image_source_bands: self.image_source_bands
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRasterDataCollectionOutput {
     /// Creates a new builder-style object to manufacture [`GetRasterDataCollectionOutput`](crate::output::GetRasterDataCollectionOutput).
@@ -1392,19 +1230,24 @@ impl GetRasterDataCollectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopEarthObservationJobOutput {}
+pub struct StopEarthObservationJobOutput  {
+}
 /// See [`StopEarthObservationJobOutput`](crate::output::StopEarthObservationJobOutput).
 pub mod stop_earth_observation_job_output {
-
+    
     /// A builder for [`StopEarthObservationJobOutput`](crate::output::StopEarthObservationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopEarthObservationJobOutput`](crate::output::StopEarthObservationJobOutput).
         pub fn build(self) -> crate::output::StopEarthObservationJobOutput {
-            crate::output::StopEarthObservationJobOutput {}
+            crate::output::StopEarthObservationJobOutput {
+            }
         }
     }
+    
+    
 }
 impl StopEarthObservationJobOutput {
     /// Creates a new builder-style object to manufacture [`StopEarthObservationJobOutput`](crate::output::StopEarthObservationJobOutput).
@@ -1416,19 +1259,19 @@ impl StopEarthObservationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct GetTileOutput {
+pub struct GetTileOutput  {
     /// <p>The output binary file.</p>
     pub binary_file: aws_smithy_http::byte_stream::ByteStream,
 }
 impl GetTileOutput {
     /// <p>The output binary file.</p>
-    pub fn binary_file(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+    pub fn binary_file(&self) -> & aws_smithy_http::byte_stream::ByteStream {
         &self.binary_file
     }
 }
 /// See [`GetTileOutput`](crate::output::GetTileOutput).
 pub mod get_tile_output {
-
+    
     /// A builder for [`GetTileOutput`](crate::output::GetTileOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1441,20 +1284,20 @@ pub mod get_tile_output {
             self
         }
         /// <p>The output binary file.</p>
-        pub fn set_binary_file(
-            mut self,
-            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-        ) -> Self {
-            self.binary_file = input;
-            self
+        pub fn set_binary_file(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
+            self.binary_file = input; self
         }
         /// Consumes the builder and constructs a [`GetTileOutput`](crate::output::GetTileOutput).
         pub fn build(self) -> crate::output::GetTileOutput {
             crate::output::GetTileOutput {
-                binary_file: self.binary_file.unwrap_or_default(),
+                binary_file: self.binary_file
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl GetTileOutput {
     /// Creates a new builder-style object to manufacture [`GetTileOutput`](crate::output::GetTileOutput).
@@ -1466,7 +1309,7 @@ impl GetTileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportEarthObservationJobOutput {
+pub struct ExportEarthObservationJobOutput  {
     /// <p>The output Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1488,25 +1331,23 @@ pub struct ExportEarthObservationJobOutput {
 }
 impl ExportEarthObservationJobOutput {
     /// <p>The output Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The status of the results of the Earth Observation job being exported.</p>
-    pub fn export_status(
-        &self,
-    ) -> std::option::Option<&crate::model::EarthObservationJobExportStatus> {
+    pub fn export_status(&self) -> std::option::Option<& crate::model::EarthObservationJobExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>An object containing information about the output file.</p>
-    pub fn output_config(&self) -> std::option::Option<&crate::model::OutputConfigInput> {
+    pub fn output_config(&self) -> std::option::Option<& crate::model::OutputConfigInput> {
         self.output_config.as_ref()
     }
     /// <p>The source images provided to the Earth Observation job being exported.</p>
@@ -1516,14 +1357,13 @@ impl ExportEarthObservationJobOutput {
 }
 /// See [`ExportEarthObservationJobOutput`](crate::output::ExportEarthObservationJobOutput).
 pub mod export_earth_observation_job_output {
-
+    
     /// A builder for [`ExportEarthObservationJobOutput`](crate::output::ExportEarthObservationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) export_status:
-            std::option::Option<crate::model::EarthObservationJobExportStatus>,
+        pub(crate) export_status: std::option::Option<crate::model::EarthObservationJobExportStatus>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
         pub(crate) output_config: std::option::Option<crate::model::OutputConfigInput>,
         pub(crate) export_source_images: std::option::Option<bool>,
@@ -1536,8 +1376,7 @@ pub mod export_earth_observation_job_output {
         }
         /// <p>The output Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The creation time.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1545,28 +1384,17 @@ pub mod export_earth_observation_job_output {
             self
         }
         /// <p>The creation time.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The status of the results of the Earth Observation job being exported.</p>
-        pub fn export_status(
-            mut self,
-            input: crate::model::EarthObservationJobExportStatus,
-        ) -> Self {
+        pub fn export_status(mut self, input: crate::model::EarthObservationJobExportStatus) -> Self {
             self.export_status = Some(input);
             self
         }
         /// <p>The status of the results of the Earth Observation job being exported.</p>
-        pub fn set_export_status(
-            mut self,
-            input: std::option::Option<crate::model::EarthObservationJobExportStatus>,
-        ) -> Self {
-            self.export_status = input;
-            self
+        pub fn set_export_status(mut self, input: std::option::Option<crate::model::EarthObservationJobExportStatus>) -> Self {
+            self.export_status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1574,12 +1402,8 @@ pub mod export_earth_observation_job_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-        pub fn set_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_role_arn = input;
-            self
+        pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_role_arn = input; self
         }
         /// <p>An object containing information about the output file.</p>
         pub fn output_config(mut self, input: crate::model::OutputConfigInput) -> Self {
@@ -1587,12 +1411,8 @@ pub mod export_earth_observation_job_output {
             self
         }
         /// <p>An object containing information about the output file.</p>
-        pub fn set_output_config(
-            mut self,
-            input: std::option::Option<crate::model::OutputConfigInput>,
-        ) -> Self {
-            self.output_config = input;
-            self
+        pub fn set_output_config(mut self, input: std::option::Option<crate::model::OutputConfigInput>) -> Self {
+            self.output_config = input; self
         }
         /// <p>The source images provided to the Earth Observation job being exported.</p>
         pub fn export_source_images(mut self, input: bool) -> Self {
@@ -1601,21 +1421,28 @@ pub mod export_earth_observation_job_output {
         }
         /// <p>The source images provided to the Earth Observation job being exported.</p>
         pub fn set_export_source_images(mut self, input: std::option::Option<bool>) -> Self {
-            self.export_source_images = input;
-            self
+            self.export_source_images = input; self
         }
         /// Consumes the builder and constructs a [`ExportEarthObservationJobOutput`](crate::output::ExportEarthObservationJobOutput).
         pub fn build(self) -> crate::output::ExportEarthObservationJobOutput {
             crate::output::ExportEarthObservationJobOutput {
-                arn: self.arn,
-                creation_time: self.creation_time,
-                export_status: self.export_status,
-                execution_role_arn: self.execution_role_arn,
-                output_config: self.output_config,
-                export_source_images: self.export_source_images,
+                arn: self.arn
+                ,
+                creation_time: self.creation_time
+                ,
+                export_status: self.export_status
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                output_config: self.output_config
+                ,
+                export_source_images: self.export_source_images
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportEarthObservationJobOutput {
     /// Creates a new builder-style object to manufacture [`ExportEarthObservationJobOutput`](crate::output::ExportEarthObservationJobOutput).
@@ -1627,46 +1454,39 @@ impl ExportEarthObservationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListEarthObservationJobsOutput {
+pub struct ListEarthObservationJobsOutput  {
     /// <p>Contains summary information about the Earth Observation jobs.</p>
     #[doc(hidden)]
-    pub earth_observation_job_summaries:
-        std::option::Option<std::vec::Vec<crate::model::ListEarthObservationJobOutputConfig>>,
+    pub earth_observation_job_summaries: std::option::Option<std::vec::Vec<crate::model::ListEarthObservationJobOutputConfig>>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEarthObservationJobsOutput {
     /// <p>Contains summary information about the Earth Observation jobs.</p>
-    pub fn earth_observation_job_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ListEarthObservationJobOutputConfig]> {
+    pub fn earth_observation_job_summaries(&self) -> std::option::Option<& [crate::model::ListEarthObservationJobOutputConfig]> {
         self.earth_observation_job_summaries.as_deref()
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListEarthObservationJobsOutput {
+impl  std::fmt::Debug for ListEarthObservationJobsOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEarthObservationJobsOutput");
-        formatter.field(
-            "earth_observation_job_summaries",
-            &self.earth_observation_job_summaries,
-        );
+        formatter.field("earth_observation_job_summaries", &self.earth_observation_job_summaries);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 /// See [`ListEarthObservationJobsOutput`](crate::output::ListEarthObservationJobsOutput).
 pub mod list_earth_observation_jobs_output {
-
+    
     /// A builder for [`ListEarthObservationJobsOutput`](crate::output::ListEarthObservationJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
-        pub(crate) earth_observation_job_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ListEarthObservationJobOutputConfig>>,
+        pub(crate) earth_observation_job_summaries: std::option::Option<std::vec::Vec<crate::model::ListEarthObservationJobOutputConfig>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1675,24 +1495,15 @@ pub mod list_earth_observation_jobs_output {
         /// To override the contents of this collection use [`set_earth_observation_job_summaries`](Self::set_earth_observation_job_summaries).
         ///
         /// <p>Contains summary information about the Earth Observation jobs.</p>
-        pub fn earth_observation_job_summaries(
-            mut self,
-            input: crate::model::ListEarthObservationJobOutputConfig,
-        ) -> Self {
+        pub fn earth_observation_job_summaries(mut self, input: crate::model::ListEarthObservationJobOutputConfig) -> Self {
             let mut v = self.earth_observation_job_summaries.unwrap_or_default();
-            v.push(input);
-            self.earth_observation_job_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.earth_observation_job_summaries = Some(v);
+                            self
         }
         /// <p>Contains summary information about the Earth Observation jobs.</p>
-        pub fn set_earth_observation_job_summaries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ListEarthObservationJobOutputConfig>,
-            >,
-        ) -> Self {
-            self.earth_observation_job_summaries = input;
-            self
+        pub fn set_earth_observation_job_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListEarthObservationJobOutputConfig>>) -> Self {
+            self.earth_observation_job_summaries = input; self
         }
         /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1701,28 +1512,28 @@ pub mod list_earth_observation_jobs_output {
         }
         /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEarthObservationJobsOutput`](crate::output::ListEarthObservationJobsOutput).
         pub fn build(self) -> crate::output::ListEarthObservationJobsOutput {
             crate::output::ListEarthObservationJobsOutput {
-                earth_observation_job_summaries: self.earth_observation_job_summaries,
-                next_token: self.next_token,
+                earth_observation_job_summaries: self.earth_observation_job_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field(
-                "earth_observation_job_summaries",
-                &self.earth_observation_job_summaries,
-            );
+            formatter.field("earth_observation_job_summaries", &self.earth_observation_job_summaries);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
+    
+    
 }
 impl ListEarthObservationJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListEarthObservationJobsOutput`](crate::output::ListEarthObservationJobsOutput).
@@ -1734,7 +1545,7 @@ impl ListEarthObservationJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartEarthObservationJobOutput {
+pub struct StartEarthObservationJobOutput  {
     /// <p>The name of the Earth Observation job.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1764,20 +1575,19 @@ pub struct StartEarthObservationJobOutput {
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartEarthObservationJobOutput {
     /// <p>The name of the Earth Observation job.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The duration of the session, in seconds.</p>
@@ -1785,36 +1595,33 @@ impl StartEarthObservationJobOutput {
         self.duration_in_seconds
     }
     /// <p>The status of the Earth Observation job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::EarthObservationJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::EarthObservationJobStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Input configuration information for the Earth Observation job.</p>
-    pub fn input_config(&self) -> std::option::Option<&crate::model::InputConfigOutput> {
+    pub fn input_config(&self) -> std::option::Option<& crate::model::InputConfigOutput> {
         self.input_config.as_ref()
     }
     /// <p>An object containing information about the job configuration.</p>
-    pub fn job_config(&self) -> std::option::Option<&crate::model::JobConfigInput> {
+    pub fn job_config(&self) -> std::option::Option<& crate::model::JobConfigInput> {
         self.job_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`StartEarthObservationJobOutput`](crate::output::StartEarthObservationJobOutput).
 pub mod start_earth_observation_job_output {
-
+    
     /// A builder for [`StartEarthObservationJobOutput`](crate::output::StartEarthObservationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1827,9 +1634,7 @@ pub mod start_earth_observation_job_output {
         pub(crate) input_config: std::option::Option<crate::model::InputConfigOutput>,
         pub(crate) job_config: std::option::Option<crate::model::JobConfigInput>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the Earth Observation job.</p>
@@ -1839,8 +1644,7 @@ pub mod start_earth_observation_job_output {
         }
         /// <p>The name of the Earth Observation job.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1849,8 +1653,7 @@ pub mod start_earth_observation_job_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The creation time.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1858,12 +1661,8 @@ pub mod start_earth_observation_job_output {
             self
         }
         /// <p>The creation time.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The duration of the session, in seconds.</p>
         pub fn duration_in_seconds(mut self, input: i32) -> Self {
@@ -1872,8 +1671,7 @@ pub mod start_earth_observation_job_output {
         }
         /// <p>The duration of the session, in seconds.</p>
         pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration_in_seconds = input;
-            self
+            self.duration_in_seconds = input; self
         }
         /// <p>The status of the Earth Observation job.</p>
         pub fn status(mut self, input: crate::model::EarthObservationJobStatus) -> Self {
@@ -1881,12 +1679,8 @@ pub mod start_earth_observation_job_output {
             self
         }
         /// <p>The status of the Earth Observation job.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::EarthObservationJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::EarthObservationJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1895,8 +1689,7 @@ pub mod start_earth_observation_job_output {
         }
         /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>Input configuration information for the Earth Observation job.</p>
         pub fn input_config(mut self, input: crate::model::InputConfigOutput) -> Self {
@@ -1904,12 +1697,8 @@ pub mod start_earth_observation_job_output {
             self
         }
         /// <p>Input configuration information for the Earth Observation job.</p>
-        pub fn set_input_config(
-            mut self,
-            input: std::option::Option<crate::model::InputConfigOutput>,
-        ) -> Self {
-            self.input_config = input;
-            self
+        pub fn set_input_config(mut self, input: std::option::Option<crate::model::InputConfigOutput>) -> Self {
+            self.input_config = input; self
         }
         /// <p>An object containing information about the job configuration.</p>
         pub fn job_config(mut self, input: crate::model::JobConfigInput) -> Self {
@@ -1917,12 +1706,8 @@ pub mod start_earth_observation_job_output {
             self
         }
         /// <p>An object containing information about the job configuration.</p>
-        pub fn set_job_config(
-            mut self,
-            input: std::option::Option<crate::model::JobConfigInput>,
-        ) -> Self {
-            self.job_config = input;
-            self
+        pub fn set_job_config(mut self, input: std::option::Option<crate::model::JobConfigInput>) -> Self {
+            self.job_config = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1930,54 +1715,52 @@ pub mod start_earth_observation_job_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-        pub fn set_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_role_arn = input;
-            self
+        pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_role_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Each tag consists of a key and a value.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Each tag consists of a key and a value.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`StartEarthObservationJobOutput`](crate::output::StartEarthObservationJobOutput).
         pub fn build(self) -> crate::output::StartEarthObservationJobOutput {
             crate::output::StartEarthObservationJobOutput {
-                name: self.name,
-                arn: self.arn,
-                creation_time: self.creation_time,
-                duration_in_seconds: self.duration_in_seconds,
-                status: self.status,
-                kms_key_id: self.kms_key_id,
-                input_config: self.input_config,
-                job_config: self.job_config,
-                execution_role_arn: self.execution_role_arn,
-                tags: self.tags,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                creation_time: self.creation_time
+                ,
+                duration_in_seconds: self.duration_in_seconds
+                ,
+                status: self.status
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                input_config: self.input_config
+                ,
+                job_config: self.job_config
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl StartEarthObservationJobOutput {
     /// Creates a new builder-style object to manufacture [`StartEarthObservationJobOutput`](crate::output::StartEarthObservationJobOutput).
@@ -1989,19 +1772,24 @@ impl StartEarthObservationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEarthObservationJobOutput {}
+pub struct DeleteEarthObservationJobOutput  {
+}
 /// See [`DeleteEarthObservationJobOutput`](crate::output::DeleteEarthObservationJobOutput).
 pub mod delete_earth_observation_job_output {
-
+    
     /// A builder for [`DeleteEarthObservationJobOutput`](crate::output::DeleteEarthObservationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEarthObservationJobOutput`](crate::output::DeleteEarthObservationJobOutput).
         pub fn build(self) -> crate::output::DeleteEarthObservationJobOutput {
-            crate::output::DeleteEarthObservationJobOutput {}
+            crate::output::DeleteEarthObservationJobOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteEarthObservationJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEarthObservationJobOutput`](crate::output::DeleteEarthObservationJobOutput).
@@ -2013,7 +1801,7 @@ impl DeleteEarthObservationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEarthObservationJobOutput {
+pub struct GetEarthObservationJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2055,20 +1843,19 @@ pub struct GetEarthObservationJobOutput {
     pub export_error_details: std::option::Option<crate::model::ExportErrorDetails>,
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetEarthObservationJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the Earth Observation job.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The creation time of the initiated Earth Observation job.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The duration of Earth Observation job, in seconds.</p>
@@ -2076,56 +1863,49 @@ impl GetEarthObservationJobOutput {
         self.duration_in_seconds
     }
     /// <p>The status of a previously initiated Earth Observation job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::EarthObservationJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::EarthObservationJobStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Input data for the Earth Observation job.</p>
-    pub fn input_config(&self) -> std::option::Option<&crate::model::InputConfigOutput> {
+    pub fn input_config(&self) -> std::option::Option<& crate::model::InputConfigOutput> {
         self.input_config.as_ref()
     }
     /// <p>An object containing information about the job configuration.</p>
-    pub fn job_config(&self) -> std::option::Option<&crate::model::JobConfigInput> {
+    pub fn job_config(&self) -> std::option::Option<& crate::model::JobConfigInput> {
         self.job_config.as_ref()
     }
     /// <p></p>
-    pub fn output_bands(&self) -> std::option::Option<&[crate::model::OutputBand]> {
+    pub fn output_bands(&self) -> std::option::Option<& [crate::model::OutputBand]> {
         self.output_bands.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>Details about the errors generated during the Earth Observation job.</p>
-    pub fn error_details(
-        &self,
-    ) -> std::option::Option<&crate::model::EarthObservationJobErrorDetails> {
+    pub fn error_details(&self) -> std::option::Option<& crate::model::EarthObservationJobErrorDetails> {
         self.error_details.as_ref()
     }
     /// <p>The status of the Earth Observation job.</p>
-    pub fn export_status(
-        &self,
-    ) -> std::option::Option<&crate::model::EarthObservationJobExportStatus> {
+    pub fn export_status(&self) -> std::option::Option<& crate::model::EarthObservationJobExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>Details about the errors generated during ExportEarthObservationJob.</p>
-    pub fn export_error_details(&self) -> std::option::Option<&crate::model::ExportErrorDetails> {
+    pub fn export_error_details(&self) -> std::option::Option<& crate::model::ExportErrorDetails> {
         self.export_error_details.as_ref()
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetEarthObservationJobOutput`](crate::output::GetEarthObservationJobOutput).
 pub mod get_earth_observation_job_output {
-
+    
     /// A builder for [`GetEarthObservationJobOutput`](crate::output::GetEarthObservationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2139,14 +1919,10 @@ pub mod get_earth_observation_job_output {
         pub(crate) job_config: std::option::Option<crate::model::JobConfigInput>,
         pub(crate) output_bands: std::option::Option<std::vec::Vec<crate::model::OutputBand>>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
-        pub(crate) error_details:
-            std::option::Option<crate::model::EarthObservationJobErrorDetails>,
-        pub(crate) export_status:
-            std::option::Option<crate::model::EarthObservationJobExportStatus>,
+        pub(crate) error_details: std::option::Option<crate::model::EarthObservationJobErrorDetails>,
+        pub(crate) export_status: std::option::Option<crate::model::EarthObservationJobExportStatus>,
         pub(crate) export_error_details: std::option::Option<crate::model::ExportErrorDetails>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
@@ -2156,8 +1932,7 @@ pub mod get_earth_observation_job_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the Earth Observation job.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2166,8 +1941,7 @@ pub mod get_earth_observation_job_output {
         }
         /// <p>The name of the Earth Observation job.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The creation time of the initiated Earth Observation job.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2175,12 +1949,8 @@ pub mod get_earth_observation_job_output {
             self
         }
         /// <p>The creation time of the initiated Earth Observation job.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The duration of Earth Observation job, in seconds.</p>
         pub fn duration_in_seconds(mut self, input: i32) -> Self {
@@ -2189,8 +1959,7 @@ pub mod get_earth_observation_job_output {
         }
         /// <p>The duration of Earth Observation job, in seconds.</p>
         pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration_in_seconds = input;
-            self
+            self.duration_in_seconds = input; self
         }
         /// <p>The status of a previously initiated Earth Observation job.</p>
         pub fn status(mut self, input: crate::model::EarthObservationJobStatus) -> Self {
@@ -2198,12 +1967,8 @@ pub mod get_earth_observation_job_output {
             self
         }
         /// <p>The status of a previously initiated Earth Observation job.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::EarthObservationJobStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::EarthObservationJobStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2212,8 +1977,7 @@ pub mod get_earth_observation_job_output {
         }
         /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>Input data for the Earth Observation job.</p>
         pub fn input_config(mut self, input: crate::model::InputConfigOutput) -> Self {
@@ -2221,12 +1985,8 @@ pub mod get_earth_observation_job_output {
             self
         }
         /// <p>Input data for the Earth Observation job.</p>
-        pub fn set_input_config(
-            mut self,
-            input: std::option::Option<crate::model::InputConfigOutput>,
-        ) -> Self {
-            self.input_config = input;
-            self
+        pub fn set_input_config(mut self, input: std::option::Option<crate::model::InputConfigOutput>) -> Self {
+            self.input_config = input; self
         }
         /// <p>An object containing information about the job configuration.</p>
         pub fn job_config(mut self, input: crate::model::JobConfigInput) -> Self {
@@ -2234,12 +1994,8 @@ pub mod get_earth_observation_job_output {
             self
         }
         /// <p>An object containing information about the job configuration.</p>
-        pub fn set_job_config(
-            mut self,
-            input: std::option::Option<crate::model::JobConfigInput>,
-        ) -> Self {
-            self.job_config = input;
-            self
+        pub fn set_job_config(mut self, input: std::option::Option<crate::model::JobConfigInput>) -> Self {
+            self.job_config = input; self
         }
         /// Appends an item to `output_bands`.
         ///
@@ -2248,17 +2004,13 @@ pub mod get_earth_observation_job_output {
         /// <p></p>
         pub fn output_bands(mut self, input: crate::model::OutputBand) -> Self {
             let mut v = self.output_bands.unwrap_or_default();
-            v.push(input);
-            self.output_bands = Some(v);
-            self
+                            v.push(input);
+                            self.output_bands = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_output_bands(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OutputBand>>,
-        ) -> Self {
-            self.output_bands = input;
-            self
+        pub fn set_output_bands(mut self, input: std::option::Option<std::vec::Vec<crate::model::OutputBand>>) -> Self {
+            self.output_bands = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2266,44 +2018,26 @@ pub mod get_earth_observation_job_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-        pub fn set_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_role_arn = input;
-            self
+        pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_role_arn = input; self
         }
         /// <p>Details about the errors generated during the Earth Observation job.</p>
-        pub fn error_details(
-            mut self,
-            input: crate::model::EarthObservationJobErrorDetails,
-        ) -> Self {
+        pub fn error_details(mut self, input: crate::model::EarthObservationJobErrorDetails) -> Self {
             self.error_details = Some(input);
             self
         }
         /// <p>Details about the errors generated during the Earth Observation job.</p>
-        pub fn set_error_details(
-            mut self,
-            input: std::option::Option<crate::model::EarthObservationJobErrorDetails>,
-        ) -> Self {
-            self.error_details = input;
-            self
+        pub fn set_error_details(mut self, input: std::option::Option<crate::model::EarthObservationJobErrorDetails>) -> Self {
+            self.error_details = input; self
         }
         /// <p>The status of the Earth Observation job.</p>
-        pub fn export_status(
-            mut self,
-            input: crate::model::EarthObservationJobExportStatus,
-        ) -> Self {
+        pub fn export_status(mut self, input: crate::model::EarthObservationJobExportStatus) -> Self {
             self.export_status = Some(input);
             self
         }
         /// <p>The status of the Earth Observation job.</p>
-        pub fn set_export_status(
-            mut self,
-            input: std::option::Option<crate::model::EarthObservationJobExportStatus>,
-        ) -> Self {
-            self.export_status = input;
-            self
+        pub fn set_export_status(mut self, input: std::option::Option<crate::model::EarthObservationJobExportStatus>) -> Self {
+            self.export_status = input; self
         }
         /// <p>Details about the errors generated during ExportEarthObservationJob.</p>
         pub fn export_error_details(mut self, input: crate::model::ExportErrorDetails) -> Self {
@@ -2311,58 +2045,60 @@ pub mod get_earth_observation_job_output {
             self
         }
         /// <p>Details about the errors generated during ExportEarthObservationJob.</p>
-        pub fn set_export_error_details(
-            mut self,
-            input: std::option::Option<crate::model::ExportErrorDetails>,
-        ) -> Self {
-            self.export_error_details = input;
-            self
+        pub fn set_export_error_details(mut self, input: std::option::Option<crate::model::ExportErrorDetails>) -> Self {
+            self.export_error_details = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Each tag consists of a key and a value.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Each tag consists of a key and a value.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetEarthObservationJobOutput`](crate::output::GetEarthObservationJobOutput).
         pub fn build(self) -> crate::output::GetEarthObservationJobOutput {
             crate::output::GetEarthObservationJobOutput {
-                arn: self.arn,
-                name: self.name,
-                creation_time: self.creation_time,
-                duration_in_seconds: self.duration_in_seconds,
-                status: self.status,
-                kms_key_id: self.kms_key_id,
-                input_config: self.input_config,
-                job_config: self.job_config,
-                output_bands: self.output_bands,
-                execution_role_arn: self.execution_role_arn,
-                error_details: self.error_details,
-                export_status: self.export_status,
-                export_error_details: self.export_error_details,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                creation_time: self.creation_time
+                ,
+                duration_in_seconds: self.duration_in_seconds
+                ,
+                status: self.status
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                input_config: self.input_config
+                ,
+                job_config: self.job_config
+                ,
+                output_bands: self.output_bands
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                error_details: self.error_details
+                ,
+                export_status: self.export_status
+                ,
+                export_error_details: self.export_error_details
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEarthObservationJobOutput {
     /// Creates a new builder-style object to manufacture [`GetEarthObservationJobOutput`](crate::output::GetEarthObservationJobOutput).
@@ -2374,19 +2110,24 @@ impl GetEarthObservationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -2398,19 +2139,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -2422,30 +2168,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -2453,31 +2193,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Each tag consists of a key and a value.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Each tag consists of a key and a value.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -2485,3 +2220,4 @@ impl ListTagsForResourceOutput {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
+

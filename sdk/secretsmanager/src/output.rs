@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidateResourcePolicyOutput {
+pub struct ValidateResourcePolicyOutput  {
     /// <p>True if your policy passes validation, otherwise false.</p>
     #[doc(hidden)]
     pub policy_validation_passed: bool,
@@ -16,19 +16,18 @@ impl ValidateResourcePolicyOutput {
         self.policy_validation_passed
     }
     /// <p>Validation errors if your policy didn't pass validation.</p>
-    pub fn validation_errors(&self) -> std::option::Option<&[crate::model::ValidationErrorsEntry]> {
+    pub fn validation_errors(&self) -> std::option::Option<& [crate::model::ValidationErrorsEntry]> {
         self.validation_errors.as_deref()
     }
 }
 /// See [`ValidateResourcePolicyOutput`](crate::output::ValidateResourcePolicyOutput).
 pub mod validate_resource_policy_output {
-
+    
     /// A builder for [`ValidateResourcePolicyOutput`](crate::output::ValidateResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_validation_passed: std::option::Option<bool>,
-        pub(crate) validation_errors:
-            std::option::Option<std::vec::Vec<crate::model::ValidationErrorsEntry>>,
+        pub(crate) validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationErrorsEntry>>,
     }
     impl Builder {
         /// <p>True if your policy passes validation, otherwise false.</p>
@@ -38,8 +37,7 @@ pub mod validate_resource_policy_output {
         }
         /// <p>True if your policy passes validation, otherwise false.</p>
         pub fn set_policy_validation_passed(mut self, input: std::option::Option<bool>) -> Self {
-            self.policy_validation_passed = input;
-            self
+            self.policy_validation_passed = input; self
         }
         /// Appends an item to `validation_errors`.
         ///
@@ -48,26 +46,27 @@ pub mod validate_resource_policy_output {
         /// <p>Validation errors if your policy didn't pass validation.</p>
         pub fn validation_errors(mut self, input: crate::model::ValidationErrorsEntry) -> Self {
             let mut v = self.validation_errors.unwrap_or_default();
-            v.push(input);
-            self.validation_errors = Some(v);
-            self
+                            v.push(input);
+                            self.validation_errors = Some(v);
+                            self
         }
         /// <p>Validation errors if your policy didn't pass validation.</p>
-        pub fn set_validation_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ValidationErrorsEntry>>,
-        ) -> Self {
-            self.validation_errors = input;
-            self
+        pub fn set_validation_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ValidationErrorsEntry>>) -> Self {
+            self.validation_errors = input; self
         }
         /// Consumes the builder and constructs a [`ValidateResourcePolicyOutput`](crate::output::ValidateResourcePolicyOutput).
         pub fn build(self) -> crate::output::ValidateResourcePolicyOutput {
             crate::output::ValidateResourcePolicyOutput {
-                policy_validation_passed: self.policy_validation_passed.unwrap_or_default(),
-                validation_errors: self.validation_errors,
+                policy_validation_passed: self.policy_validation_passed
+                    .unwrap_or_default()
+                ,
+                validation_errors: self.validation_errors
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidateResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`ValidateResourcePolicyOutput`](crate::output::ValidateResourcePolicyOutput).
@@ -79,7 +78,7 @@ impl ValidateResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSecretVersionStageOutput {
+pub struct UpdateSecretVersionStageOutput  {
     /// <p>The ARN of the secret that was updated.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -89,17 +88,17 @@ pub struct UpdateSecretVersionStageOutput {
 }
 impl UpdateSecretVersionStageOutput {
     /// <p>The ARN of the secret that was updated.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the secret that was updated.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`UpdateSecretVersionStageOutput`](crate::output::UpdateSecretVersionStageOutput).
 pub mod update_secret_version_stage_output {
-
+    
     /// A builder for [`UpdateSecretVersionStageOutput`](crate::output::UpdateSecretVersionStageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -114,8 +113,7 @@ pub mod update_secret_version_stage_output {
         }
         /// <p>The ARN of the secret that was updated.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the secret that was updated.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,17 +122,20 @@ pub mod update_secret_version_stage_output {
         }
         /// <p>The name of the secret that was updated.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSecretVersionStageOutput`](crate::output::UpdateSecretVersionStageOutput).
         pub fn build(self) -> crate::output::UpdateSecretVersionStageOutput {
             crate::output::UpdateSecretVersionStageOutput {
-                arn: self.arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSecretVersionStageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSecretVersionStageOutput`](crate::output::UpdateSecretVersionStageOutput).
@@ -146,7 +147,7 @@ impl UpdateSecretVersionStageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSecretOutput {
+pub struct UpdateSecretOutput  {
     /// <p>The ARN of the secret that was updated.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -159,21 +160,21 @@ pub struct UpdateSecretOutput {
 }
 impl UpdateSecretOutput {
     /// <p>The ARN of the secret that was updated.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the secret that was updated.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>If Secrets Manager created a new version of the secret during this operation, then <code>VersionId</code> contains the unique identifier of the new version.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
 /// See [`UpdateSecretOutput`](crate::output::UpdateSecretOutput).
 pub mod update_secret_output {
-
+    
     /// A builder for [`UpdateSecretOutput`](crate::output::UpdateSecretOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -189,8 +190,7 @@ pub mod update_secret_output {
         }
         /// <p>The ARN of the secret that was updated.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the secret that was updated.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -199,8 +199,7 @@ pub mod update_secret_output {
         }
         /// <p>The name of the secret that was updated.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>If Secrets Manager created a new version of the secret during this operation, then <code>VersionId</code> contains the unique identifier of the new version.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -209,18 +208,22 @@ pub mod update_secret_output {
         }
         /// <p>If Secrets Manager created a new version of the secret during this operation, then <code>VersionId</code> contains the unique identifier of the new version.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_id = input;
-            self
+            self.version_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSecretOutput`](crate::output::UpdateSecretOutput).
         pub fn build(self) -> crate::output::UpdateSecretOutput {
             crate::output::UpdateSecretOutput {
-                arn: self.arn,
-                name: self.name,
-                version_id: self.version_id,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                version_id: self.version_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSecretOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSecretOutput`](crate::output::UpdateSecretOutput).
@@ -232,19 +235,24 @@ impl UpdateSecretOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -256,19 +264,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -280,20 +293,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopReplicationToReplicaOutput {
+pub struct StopReplicationToReplicaOutput  {
     /// <p>The ARN of the promoted secret. The ARN is the same as the original primary secret except the Region is changed.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl StopReplicationToReplicaOutput {
     /// <p>The ARN of the promoted secret. The ARN is the same as the original primary secret except the Region is changed.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`StopReplicationToReplicaOutput`](crate::output::StopReplicationToReplicaOutput).
 pub mod stop_replication_to_replica_output {
-
+    
     /// A builder for [`StopReplicationToReplicaOutput`](crate::output::StopReplicationToReplicaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -307,14 +320,18 @@ pub mod stop_replication_to_replica_output {
         }
         /// <p>The ARN of the promoted secret. The ARN is the same as the original primary secret except the Region is changed.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`StopReplicationToReplicaOutput`](crate::output::StopReplicationToReplicaOutput).
         pub fn build(self) -> crate::output::StopReplicationToReplicaOutput {
-            crate::output::StopReplicationToReplicaOutput { arn: self.arn }
+            crate::output::StopReplicationToReplicaOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl StopReplicationToReplicaOutput {
     /// Creates a new builder-style object to manufacture [`StopReplicationToReplicaOutput`](crate::output::StopReplicationToReplicaOutput).
@@ -326,7 +343,7 @@ impl StopReplicationToReplicaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RotateSecretOutput {
+pub struct RotateSecretOutput  {
     /// <p>The ARN of the secret.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -339,21 +356,21 @@ pub struct RotateSecretOutput {
 }
 impl RotateSecretOutput {
     /// <p>The ARN of the secret.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the secret.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the new version of the secret.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
 /// See [`RotateSecretOutput`](crate::output::RotateSecretOutput).
 pub mod rotate_secret_output {
-
+    
     /// A builder for [`RotateSecretOutput`](crate::output::RotateSecretOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -369,8 +386,7 @@ pub mod rotate_secret_output {
         }
         /// <p>The ARN of the secret.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the secret.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -379,8 +395,7 @@ pub mod rotate_secret_output {
         }
         /// <p>The name of the secret.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the new version of the secret.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -389,18 +404,22 @@ pub mod rotate_secret_output {
         }
         /// <p>The ID of the new version of the secret.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_id = input;
-            self
+            self.version_id = input; self
         }
         /// Consumes the builder and constructs a [`RotateSecretOutput`](crate::output::RotateSecretOutput).
         pub fn build(self) -> crate::output::RotateSecretOutput {
             crate::output::RotateSecretOutput {
-                arn: self.arn,
-                name: self.name,
-                version_id: self.version_id,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                version_id: self.version_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RotateSecretOutput {
     /// Creates a new builder-style object to manufacture [`RotateSecretOutput`](crate::output::RotateSecretOutput).
@@ -412,7 +431,7 @@ impl RotateSecretOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreSecretOutput {
+pub struct RestoreSecretOutput  {
     /// <p>The ARN of the secret that was restored.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -422,17 +441,17 @@ pub struct RestoreSecretOutput {
 }
 impl RestoreSecretOutput {
     /// <p>The ARN of the secret that was restored.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the secret that was restored.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`RestoreSecretOutput`](crate::output::RestoreSecretOutput).
 pub mod restore_secret_output {
-
+    
     /// A builder for [`RestoreSecretOutput`](crate::output::RestoreSecretOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -447,8 +466,7 @@ pub mod restore_secret_output {
         }
         /// <p>The ARN of the secret that was restored.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the secret that was restored.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -457,17 +475,20 @@ pub mod restore_secret_output {
         }
         /// <p>The name of the secret that was restored.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`RestoreSecretOutput`](crate::output::RestoreSecretOutput).
         pub fn build(self) -> crate::output::RestoreSecretOutput {
             crate::output::RestoreSecretOutput {
-                arn: self.arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl RestoreSecretOutput {
     /// Creates a new builder-style object to manufacture [`RestoreSecretOutput`](crate::output::RestoreSecretOutput).
@@ -479,7 +500,7 @@ impl RestoreSecretOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicateSecretToRegionsOutput {
+pub struct ReplicateSecretToRegionsOutput  {
     /// <p>The ARN of the primary secret.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -489,25 +510,22 @@ pub struct ReplicateSecretToRegionsOutput {
 }
 impl ReplicateSecretToRegionsOutput {
     /// <p>The ARN of the primary secret.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status of replication.</p>
-    pub fn replication_status(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReplicationStatusType]> {
+    pub fn replication_status(&self) -> std::option::Option<& [crate::model::ReplicationStatusType]> {
         self.replication_status.as_deref()
     }
 }
 /// See [`ReplicateSecretToRegionsOutput`](crate::output::ReplicateSecretToRegionsOutput).
 pub mod replicate_secret_to_regions_output {
-
+    
     /// A builder for [`ReplicateSecretToRegionsOutput`](crate::output::ReplicateSecretToRegionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) replication_status:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+        pub(crate) replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
     }
     impl Builder {
         /// <p>The ARN of the primary secret.</p>
@@ -517,8 +535,7 @@ pub mod replicate_secret_to_regions_output {
         }
         /// <p>The ARN of the primary secret.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `replication_status`.
         ///
@@ -527,26 +544,26 @@ pub mod replicate_secret_to_regions_output {
         /// <p>The status of replication.</p>
         pub fn replication_status(mut self, input: crate::model::ReplicationStatusType) -> Self {
             let mut v = self.replication_status.unwrap_or_default();
-            v.push(input);
-            self.replication_status = Some(v);
-            self
+                            v.push(input);
+                            self.replication_status = Some(v);
+                            self
         }
         /// <p>The status of replication.</p>
-        pub fn set_replication_status(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
-        ) -> Self {
-            self.replication_status = input;
-            self
+        pub fn set_replication_status(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>) -> Self {
+            self.replication_status = input; self
         }
         /// Consumes the builder and constructs a [`ReplicateSecretToRegionsOutput`](crate::output::ReplicateSecretToRegionsOutput).
         pub fn build(self) -> crate::output::ReplicateSecretToRegionsOutput {
             crate::output::ReplicateSecretToRegionsOutput {
-                arn: self.arn,
-                replication_status: self.replication_status,
+                arn: self.arn
+                ,
+                replication_status: self.replication_status
+                ,
             }
         }
     }
+    
+    
 }
 impl ReplicateSecretToRegionsOutput {
     /// Creates a new builder-style object to manufacture [`ReplicateSecretToRegionsOutput`](crate::output::ReplicateSecretToRegionsOutput).
@@ -558,7 +575,7 @@ impl ReplicateSecretToRegionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveRegionsFromReplicationOutput {
+pub struct RemoveRegionsFromReplicationOutput  {
     /// <p>The ARN of the primary secret.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -568,25 +585,22 @@ pub struct RemoveRegionsFromReplicationOutput {
 }
 impl RemoveRegionsFromReplicationOutput {
     /// <p>The ARN of the primary secret.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status of replicas for this secret after you remove Regions.</p>
-    pub fn replication_status(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReplicationStatusType]> {
+    pub fn replication_status(&self) -> std::option::Option<& [crate::model::ReplicationStatusType]> {
         self.replication_status.as_deref()
     }
 }
 /// See [`RemoveRegionsFromReplicationOutput`](crate::output::RemoveRegionsFromReplicationOutput).
 pub mod remove_regions_from_replication_output {
-
+    
     /// A builder for [`RemoveRegionsFromReplicationOutput`](crate::output::RemoveRegionsFromReplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) replication_status:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+        pub(crate) replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
     }
     impl Builder {
         /// <p>The ARN of the primary secret.</p>
@@ -596,8 +610,7 @@ pub mod remove_regions_from_replication_output {
         }
         /// <p>The ARN of the primary secret.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `replication_status`.
         ///
@@ -606,26 +619,26 @@ pub mod remove_regions_from_replication_output {
         /// <p>The status of replicas for this secret after you remove Regions.</p>
         pub fn replication_status(mut self, input: crate::model::ReplicationStatusType) -> Self {
             let mut v = self.replication_status.unwrap_or_default();
-            v.push(input);
-            self.replication_status = Some(v);
-            self
+                            v.push(input);
+                            self.replication_status = Some(v);
+                            self
         }
         /// <p>The status of replicas for this secret after you remove Regions.</p>
-        pub fn set_replication_status(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
-        ) -> Self {
-            self.replication_status = input;
-            self
+        pub fn set_replication_status(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>) -> Self {
+            self.replication_status = input; self
         }
         /// Consumes the builder and constructs a [`RemoveRegionsFromReplicationOutput`](crate::output::RemoveRegionsFromReplicationOutput).
         pub fn build(self) -> crate::output::RemoveRegionsFromReplicationOutput {
             crate::output::RemoveRegionsFromReplicationOutput {
-                arn: self.arn,
-                replication_status: self.replication_status,
+                arn: self.arn
+                ,
+                replication_status: self.replication_status
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveRegionsFromReplicationOutput {
     /// Creates a new builder-style object to manufacture [`RemoveRegionsFromReplicationOutput`](crate::output::RemoveRegionsFromReplicationOutput).
@@ -637,7 +650,7 @@ impl RemoveRegionsFromReplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutSecretValueOutput {
+pub struct PutSecretValueOutput  {
     /// <p>The ARN of the secret.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -653,25 +666,25 @@ pub struct PutSecretValueOutput {
 }
 impl PutSecretValueOutput {
     /// <p>The ARN of the secret.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the secret.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier of the version of the secret.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>The list of staging labels that are currently attached to this version of the secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process.</p>
-    pub fn version_stages(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn version_stages(&self) -> std::option::Option<& [std::string::String]> {
         self.version_stages.as_deref()
     }
 }
 /// See [`PutSecretValueOutput`](crate::output::PutSecretValueOutput).
 pub mod put_secret_value_output {
-
+    
     /// A builder for [`PutSecretValueOutput`](crate::output::PutSecretValueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -688,8 +701,7 @@ pub mod put_secret_value_output {
         }
         /// <p>The ARN of the secret.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the secret.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -698,8 +710,7 @@ pub mod put_secret_value_output {
         }
         /// <p>The name of the secret.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The unique identifier of the version of the secret.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -708,8 +719,7 @@ pub mod put_secret_value_output {
         }
         /// <p>The unique identifier of the version of the secret.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_id = input;
-            self
+            self.version_id = input; self
         }
         /// Appends an item to `version_stages`.
         ///
@@ -718,28 +728,30 @@ pub mod put_secret_value_output {
         /// <p>The list of staging labels that are currently attached to this version of the secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process.</p>
         pub fn version_stages(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.version_stages.unwrap_or_default();
-            v.push(input.into());
-            self.version_stages = Some(v);
-            self
+                            v.push(input.into());
+                            self.version_stages = Some(v);
+                            self
         }
         /// <p>The list of staging labels that are currently attached to this version of the secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process.</p>
-        pub fn set_version_stages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.version_stages = input;
-            self
+        pub fn set_version_stages(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.version_stages = input; self
         }
         /// Consumes the builder and constructs a [`PutSecretValueOutput`](crate::output::PutSecretValueOutput).
         pub fn build(self) -> crate::output::PutSecretValueOutput {
             crate::output::PutSecretValueOutput {
-                arn: self.arn,
-                name: self.name,
-                version_id: self.version_id,
-                version_stages: self.version_stages,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                version_id: self.version_id
+                ,
+                version_stages: self.version_stages
+                ,
             }
         }
     }
+    
+    
 }
 impl PutSecretValueOutput {
     /// Creates a new builder-style object to manufacture [`PutSecretValueOutput`](crate::output::PutSecretValueOutput).
@@ -751,7 +763,7 @@ impl PutSecretValueOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResourcePolicyOutput {
+pub struct PutResourcePolicyOutput  {
     /// <p>The ARN of the secret.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -761,17 +773,17 @@ pub struct PutResourcePolicyOutput {
 }
 impl PutResourcePolicyOutput {
     /// <p>The ARN of the secret.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the secret.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
 pub mod put_resource_policy_output {
-
+    
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -786,8 +798,7 @@ pub mod put_resource_policy_output {
         }
         /// <p>The ARN of the secret.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the secret.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -796,17 +807,20 @@ pub mod put_resource_policy_output {
         }
         /// <p>The name of the secret.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
         pub fn build(self) -> crate::output::PutResourcePolicyOutput {
             crate::output::PutResourcePolicyOutput {
-                arn: self.arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl PutResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
@@ -818,7 +832,7 @@ impl PutResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSecretVersionIdsOutput {
+pub struct ListSecretVersionIdsOutput  {
     /// <p>A list of the versions of the secret.</p>
     #[doc(hidden)]
     pub versions: std::option::Option<std::vec::Vec<crate::model::SecretVersionsListEntry>>,
@@ -834,30 +848,29 @@ pub struct ListSecretVersionIdsOutput {
 }
 impl ListSecretVersionIdsOutput {
     /// <p>A list of the versions of the secret.</p>
-    pub fn versions(&self) -> std::option::Option<&[crate::model::SecretVersionsListEntry]> {
+    pub fn versions(&self) -> std::option::Option<& [crate::model::SecretVersionsListEntry]> {
         self.versions.as_deref()
     }
     /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>ListSecretVersionIds</code> again with this value. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ARN of the secret.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the secret.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`ListSecretVersionIdsOutput`](crate::output::ListSecretVersionIdsOutput).
 pub mod list_secret_version_ids_output {
-
+    
     /// A builder for [`ListSecretVersionIdsOutput`](crate::output::ListSecretVersionIdsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) versions:
-            std::option::Option<std::vec::Vec<crate::model::SecretVersionsListEntry>>,
+        pub(crate) versions: std::option::Option<std::vec::Vec<crate::model::SecretVersionsListEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -870,17 +883,13 @@ pub mod list_secret_version_ids_output {
         /// <p>A list of the versions of the secret.</p>
         pub fn versions(mut self, input: crate::model::SecretVersionsListEntry) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input);
-            self.versions = Some(v);
-            self
+                            v.push(input);
+                            self.versions = Some(v);
+                            self
         }
         /// <p>A list of the versions of the secret.</p>
-        pub fn set_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SecretVersionsListEntry>>,
-        ) -> Self {
-            self.versions = input;
-            self
+        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::SecretVersionsListEntry>>) -> Self {
+            self.versions = input; self
         }
         /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>ListSecretVersionIds</code> again with this value. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -889,8 +898,7 @@ pub mod list_secret_version_ids_output {
         }
         /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>ListSecretVersionIds</code> again with this value. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The ARN of the secret.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -899,8 +907,7 @@ pub mod list_secret_version_ids_output {
         }
         /// <p>The ARN of the secret.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the secret.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -909,19 +916,24 @@ pub mod list_secret_version_ids_output {
         }
         /// <p>The name of the secret.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`ListSecretVersionIdsOutput`](crate::output::ListSecretVersionIdsOutput).
         pub fn build(self) -> crate::output::ListSecretVersionIdsOutput {
             crate::output::ListSecretVersionIdsOutput {
-                versions: self.versions,
-                next_token: self.next_token,
-                arn: self.arn,
-                name: self.name,
+                versions: self.versions
+                ,
+                next_token: self.next_token
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSecretVersionIdsOutput {
     /// Creates a new builder-style object to manufacture [`ListSecretVersionIdsOutput`](crate::output::ListSecretVersionIdsOutput).
@@ -933,7 +945,7 @@ impl ListSecretVersionIdsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSecretsOutput {
+pub struct ListSecretsOutput  {
     /// <p>A list of the secrets in the account.</p>
     #[doc(hidden)]
     pub secret_list: std::option::Option<std::vec::Vec<crate::model::SecretListEntry>>,
@@ -943,17 +955,17 @@ pub struct ListSecretsOutput {
 }
 impl ListSecretsOutput {
     /// <p>A list of the secrets in the account.</p>
-    pub fn secret_list(&self) -> std::option::Option<&[crate::model::SecretListEntry]> {
+    pub fn secret_list(&self) -> std::option::Option<& [crate::model::SecretListEntry]> {
         self.secret_list.as_deref()
     }
     /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>ListSecrets</code> again with this value.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSecretsOutput`](crate::output::ListSecretsOutput).
 pub mod list_secrets_output {
-
+    
     /// A builder for [`ListSecretsOutput`](crate::output::ListSecretsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -968,17 +980,13 @@ pub mod list_secrets_output {
         /// <p>A list of the secrets in the account.</p>
         pub fn secret_list(mut self, input: crate::model::SecretListEntry) -> Self {
             let mut v = self.secret_list.unwrap_or_default();
-            v.push(input);
-            self.secret_list = Some(v);
-            self
+                            v.push(input);
+                            self.secret_list = Some(v);
+                            self
         }
         /// <p>A list of the secrets in the account.</p>
-        pub fn set_secret_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SecretListEntry>>,
-        ) -> Self {
-            self.secret_list = input;
-            self
+        pub fn set_secret_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::SecretListEntry>>) -> Self {
+            self.secret_list = input; self
         }
         /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>ListSecrets</code> again with this value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -987,17 +995,20 @@ pub mod list_secrets_output {
         }
         /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>ListSecrets</code> again with this value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSecretsOutput`](crate::output::ListSecretsOutput).
         pub fn build(self) -> crate::output::ListSecretsOutput {
             crate::output::ListSecretsOutput {
-                secret_list: self.secret_list,
-                next_token: self.next_token,
+                secret_list: self.secret_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSecretsOutput {
     /// Creates a new builder-style object to manufacture [`ListSecretsOutput`](crate::output::ListSecretsOutput).
@@ -1009,7 +1020,7 @@ impl ListSecretsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetSecretValueOutput {
+pub struct GetSecretValueOutput  {
     /// <p>The ARN of the secret.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1019,11 +1030,11 @@ pub struct GetSecretValueOutput {
     /// <p>The unique identifier of this version of the secret.</p>
     #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. The response parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
+    /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. The response parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p> 
     /// <p>If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code> instead.</p>
     #[doc(hidden)]
     pub secret_binary: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
+    /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p> 
     /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs. </p>
     #[doc(hidden)]
     pub secret_string: std::option::Option<std::string::String>,
@@ -1036,37 +1047,37 @@ pub struct GetSecretValueOutput {
 }
 impl GetSecretValueOutput {
     /// <p>The ARN of the secret.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The friendly name of the secret.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier of this version of the secret.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> std::option::Option<& str> {
         self.version_id.as_deref()
     }
-    /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. The response parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
+    /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. The response parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p> 
     /// <p>If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code> instead.</p>
-    pub fn secret_binary(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn secret_binary(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.secret_binary.as_ref()
     }
-    /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
+    /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p> 
     /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs. </p>
-    pub fn secret_string(&self) -> std::option::Option<&str> {
+    pub fn secret_string(&self) -> std::option::Option<& str> {
         self.secret_string.as_deref()
     }
     /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
-    pub fn version_stages(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn version_stages(&self) -> std::option::Option<& [std::string::String]> {
         self.version_stages.as_deref()
     }
     /// <p>The date and time that this version of the secret was created. If you don't specify which version in <code>VersionId</code> or <code>VersionStage</code>, then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
 }
-impl std::fmt::Debug for GetSecretValueOutput {
+impl  std::fmt::Debug for GetSecretValueOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSecretValueOutput");
         formatter.field("arn", &self.arn);
@@ -1081,7 +1092,7 @@ impl std::fmt::Debug for GetSecretValueOutput {
 }
 /// See [`GetSecretValueOutput`](crate::output::GetSecretValueOutput).
 pub mod get_secret_value_output {
-
+    
     /// A builder for [`GetSecretValueOutput`](crate::output::GetSecretValueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1101,8 +1112,7 @@ pub mod get_secret_value_output {
         }
         /// <p>The ARN of the secret.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The friendly name of the secret.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1111,8 +1121,7 @@ pub mod get_secret_value_output {
         }
         /// <p>The friendly name of the secret.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The unique identifier of this version of the secret.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1121,38 +1130,29 @@ pub mod get_secret_value_output {
         }
         /// <p>The unique identifier of this version of the secret.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_id = input;
-            self
+            self.version_id = input; self
         }
-        /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. The response parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
+        /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. The response parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p> 
         /// <p>If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code> instead.</p>
         pub fn secret_binary(mut self, input: aws_smithy_types::Blob) -> Self {
             self.secret_binary = Some(input);
             self
         }
-        /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. The response parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
+        /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. The response parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p> 
         /// <p>If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code> instead.</p>
-        pub fn set_secret_binary(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.secret_binary = input;
-            self
+        pub fn set_secret_binary(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.secret_binary = input; self
         }
-        /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
+        /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p> 
         /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs. </p>
         pub fn secret_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_string = Some(input.into());
             self
         }
-        /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
+        /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p> 
         /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs. </p>
-        pub fn set_secret_string(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.secret_string = input;
-            self
+        pub fn set_secret_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_string = input; self
         }
         /// Appends an item to `version_stages`.
         ///
@@ -1161,17 +1161,13 @@ pub mod get_secret_value_output {
         /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
         pub fn version_stages(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.version_stages.unwrap_or_default();
-            v.push(input.into());
-            self.version_stages = Some(v);
-            self
+                            v.push(input.into());
+                            self.version_stages = Some(v);
+                            self
         }
         /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
-        pub fn set_version_stages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.version_stages = input;
-            self
+        pub fn set_version_stages(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.version_stages = input; self
         }
         /// <p>The date and time that this version of the secret was created. If you don't specify which version in <code>VersionId</code> or <code>VersionStage</code>, then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1179,23 +1175,26 @@ pub mod get_secret_value_output {
             self
         }
         /// <p>The date and time that this version of the secret was created. If you don't specify which version in <code>VersionId</code> or <code>VersionStage</code>, then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// Consumes the builder and constructs a [`GetSecretValueOutput`](crate::output::GetSecretValueOutput).
         pub fn build(self) -> crate::output::GetSecretValueOutput {
             crate::output::GetSecretValueOutput {
-                arn: self.arn,
-                name: self.name,
-                version_id: self.version_id,
-                secret_binary: self.secret_binary,
-                secret_string: self.secret_string,
-                version_stages: self.version_stages,
-                created_date: self.created_date,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                version_id: self.version_id
+                ,
+                secret_binary: self.secret_binary
+                ,
+                secret_string: self.secret_string
+                ,
+                version_stages: self.version_stages
+                ,
+                created_date: self.created_date
+                ,
             }
         }
     }
@@ -1212,6 +1211,8 @@ pub mod get_secret_value_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetSecretValueOutput {
     /// Creates a new builder-style object to manufacture [`GetSecretValueOutput`](crate::output::GetSecretValueOutput).
@@ -1223,7 +1224,7 @@ impl GetSecretValueOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourcePolicyOutput {
+pub struct GetResourcePolicyOutput  {
     /// <p>The ARN of the secret that the resource-based policy was retrieved for.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1236,21 +1237,21 @@ pub struct GetResourcePolicyOutput {
 }
 impl GetResourcePolicyOutput {
     /// <p>The ARN of the secret that the resource-based policy was retrieved for.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the secret that the resource-based policy was retrieved for.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A JSON-formatted string that contains the permissions policy attached to the secret. For more information about permissions policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control for Secrets Manager</a>.</p>
-    pub fn resource_policy(&self) -> std::option::Option<&str> {
+    pub fn resource_policy(&self) -> std::option::Option<& str> {
         self.resource_policy.as_deref()
     }
 }
 /// See [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
 pub mod get_resource_policy_output {
-
+    
     /// A builder for [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1266,8 +1267,7 @@ pub mod get_resource_policy_output {
         }
         /// <p>The ARN of the secret that the resource-based policy was retrieved for.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the secret that the resource-based policy was retrieved for.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1276,8 +1276,7 @@ pub mod get_resource_policy_output {
         }
         /// <p>The name of the secret that the resource-based policy was retrieved for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A JSON-formatted string that contains the permissions policy attached to the secret. For more information about permissions policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control for Secrets Manager</a>.</p>
         pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1285,22 +1284,23 @@ pub mod get_resource_policy_output {
             self
         }
         /// <p>A JSON-formatted string that contains the permissions policy attached to the secret. For more information about permissions policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control for Secrets Manager</a>.</p>
-        pub fn set_resource_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_policy = input;
-            self
+        pub fn set_resource_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_policy = input; self
         }
         /// Consumes the builder and constructs a [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
         pub fn build(self) -> crate::output::GetResourcePolicyOutput {
             crate::output::GetResourcePolicyOutput {
-                arn: self.arn,
-                name: self.name,
-                resource_policy: self.resource_policy,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                resource_policy: self.resource_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
@@ -1312,18 +1312,18 @@ impl GetResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetRandomPasswordOutput {
+pub struct GetRandomPasswordOutput  {
     /// <p>A string with the password.</p>
     #[doc(hidden)]
     pub random_password: std::option::Option<std::string::String>,
 }
 impl GetRandomPasswordOutput {
     /// <p>A string with the password.</p>
-    pub fn random_password(&self) -> std::option::Option<&str> {
+    pub fn random_password(&self) -> std::option::Option<& str> {
         self.random_password.as_deref()
     }
 }
-impl std::fmt::Debug for GetRandomPasswordOutput {
+impl  std::fmt::Debug for GetRandomPasswordOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRandomPasswordOutput");
         formatter.field("random_password", &"*** Sensitive Data Redacted ***");
@@ -1332,7 +1332,7 @@ impl std::fmt::Debug for GetRandomPasswordOutput {
 }
 /// See [`GetRandomPasswordOutput`](crate::output::GetRandomPasswordOutput).
 pub mod get_random_password_output {
-
+    
     /// A builder for [`GetRandomPasswordOutput`](crate::output::GetRandomPasswordOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1345,17 +1345,14 @@ pub mod get_random_password_output {
             self
         }
         /// <p>A string with the password.</p>
-        pub fn set_random_password(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.random_password = input;
-            self
+        pub fn set_random_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.random_password = input; self
         }
         /// Consumes the builder and constructs a [`GetRandomPasswordOutput`](crate::output::GetRandomPasswordOutput).
         pub fn build(self) -> crate::output::GetRandomPasswordOutput {
             crate::output::GetRandomPasswordOutput {
-                random_password: self.random_password,
+                random_password: self.random_password
+                ,
             }
         }
     }
@@ -1366,6 +1363,8 @@ pub mod get_random_password_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetRandomPasswordOutput {
     /// Creates a new builder-style object to manufacture [`GetRandomPasswordOutput`](crate::output::GetRandomPasswordOutput).
@@ -1377,7 +1376,7 @@ impl GetRandomPasswordOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSecretOutput {
+pub struct DescribeSecretOutput  {
     /// <p>The ARN of the secret.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1390,7 +1389,7 @@ pub struct DescribeSecretOutput {
     /// <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets created using the console use an KMS key ID.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether automatic rotation is turned on for this secret.</p>
+    /// <p>Specifies whether automatic rotation is turned on for this secret.</p> 
     /// <p>To turn on rotation, use <code>RotateSecret</code>. To turn off rotation, use <code>CancelRotateSecret</code>.</p>
     #[doc(hidden)]
     pub rotation_enabled: std::option::Option<bool>,
@@ -1409,7 +1408,7 @@ pub struct DescribeSecretOutput {
     /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
     #[doc(hidden)]
     pub last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date the secret is scheduled for deletion. If it is not scheduled for deletion, this field is omitted. When you delete a secret, Secrets Manager requires a recovery window of at least 7 days before deleting the secret. Some time after the deleted date, Secrets Manager deletes the secret, including all of its versions.</p>
+    /// <p>The date the secret is scheduled for deletion. If it is not scheduled for deletion, this field is omitted. When you delete a secret, Secrets Manager requires a recovery window of at least 7 days before deleting the secret. Some time after the deleted date, Secrets Manager deletes the secret, including all of its versions.</p> 
     /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret value, is not accessible. To cancel a scheduled deletion and restore access to the secret, use <code>RestoreSecret</code>.</p>
     #[doc(hidden)]
     pub deleted_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -1419,18 +1418,16 @@ pub struct DescribeSecretOutput {
     /// <p>The list of tags attached to the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p>
-    /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p>
-    /// <ul>
-    /// <li> <p> <code>AWSCURRENT</code>, which indicates the current version of the secret.</p> </li>
-    /// <li> <p> <code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p> </li>
-    /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li>
-    /// </ul>
+    /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p> 
+    /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>AWSCURRENT</code>, which indicates the current version of the secret.</p> </li> 
+    /// <li> <p> <code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p> </li> 
+    /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li> 
+    /// </ul> 
     /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
     #[doc(hidden)]
-    pub version_ids_to_stages: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    >,
+    pub version_ids_to_stages: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
     /// <p>The ID of the service that created this secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p>
     #[doc(hidden)]
     pub owning_service: std::option::Option<std::string::String>,
@@ -1440,112 +1437,106 @@ pub struct DescribeSecretOutput {
     /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
     #[doc(hidden)]
     pub primary_region: std::option::Option<std::string::String>,
-    /// <p>A list of the replicas of this secret and their status: </p>
-    /// <ul>
-    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+    /// <p>A list of the replicas of this secret and their status: </p> 
+    /// <ul> 
+    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li> 
+    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li> 
+    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
 }
 impl DescribeSecretOutput {
     /// <p>The ARN of the secret.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the secret.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the secret.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets created using the console use an KMS key ID.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Specifies whether automatic rotation is turned on for this secret.</p>
+    /// <p>Specifies whether automatic rotation is turned on for this secret.</p> 
     /// <p>To turn on rotation, use <code>RotateSecret</code>. To turn off rotation, use <code>CancelRotateSecret</code>.</p>
     pub fn rotation_enabled(&self) -> std::option::Option<bool> {
         self.rotation_enabled
     }
     /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret. </p>
-    pub fn rotation_lambda_arn(&self) -> std::option::Option<&str> {
+    pub fn rotation_lambda_arn(&self) -> std::option::Option<& str> {
         self.rotation_lambda_arn.as_deref()
     }
     /// <p>The rotation schedule and Lambda function for this secret. If the secret previously had rotation turned on, but it is now turned off, this field shows the previous rotation schedule and rotation function. If the secret never had rotation turned on, this field is omitted.</p>
-    pub fn rotation_rules(&self) -> std::option::Option<&crate::model::RotationRulesType> {
+    pub fn rotation_rules(&self) -> std::option::Option<& crate::model::RotationRulesType> {
         self.rotation_rules.as_ref()
     }
     /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
-    pub fn last_rotated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_rotated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_rotated_date.as_ref()
     }
     /// <p>The last date and time that this secret was modified in any way.</p>
-    pub fn last_changed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_changed_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_changed_date.as_ref()
     }
     /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
-    pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_accessed_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_accessed_date.as_ref()
     }
-    /// <p>The date the secret is scheduled for deletion. If it is not scheduled for deletion, this field is omitted. When you delete a secret, Secrets Manager requires a recovery window of at least 7 days before deleting the secret. Some time after the deleted date, Secrets Manager deletes the secret, including all of its versions.</p>
+    /// <p>The date the secret is scheduled for deletion. If it is not scheduled for deletion, this field is omitted. When you delete a secret, Secrets Manager requires a recovery window of at least 7 days before deleting the secret. Some time after the deleted date, Secrets Manager deletes the secret, including all of its versions.</p> 
     /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret value, is not accessible. To cancel a scheduled deletion and restore access to the secret, use <code>RestoreSecret</code>.</p>
-    pub fn deleted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deleted_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.deleted_date.as_ref()
     }
     /// <p>The next date and time that Secrets Manager will rotate the secret, rounded to the nearest hour. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
-    pub fn next_rotation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn next_rotation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.next_rotation_date.as_ref()
     }
     /// <p>The list of tags attached to the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p>
-    /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p>
-    /// <ul>
-    /// <li> <p> <code>AWSCURRENT</code>, which indicates the current version of the secret.</p> </li>
-    /// <li> <p> <code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p> </li>
-    /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li>
-    /// </ul>
+    /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p> 
+    /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>AWSCURRENT</code>, which indicates the current version of the secret.</p> </li> 
+    /// <li> <p> <code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p> </li> 
+    /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li> 
+    /// </ul> 
     /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
-    pub fn version_ids_to_stages(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    > {
+    pub fn version_ids_to_stages(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>> {
         self.version_ids_to_stages.as_ref()
     }
     /// <p>The ID of the service that created this secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p>
-    pub fn owning_service(&self) -> std::option::Option<&str> {
+    pub fn owning_service(&self) -> std::option::Option<& str> {
         self.owning_service.as_deref()
     }
     /// <p>The date the secret was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
-    pub fn primary_region(&self) -> std::option::Option<&str> {
+    pub fn primary_region(&self) -> std::option::Option<& str> {
         self.primary_region.as_deref()
     }
-    /// <p>A list of the replicas of this secret and their status: </p>
-    /// <ul>
-    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+    /// <p>A list of the replicas of this secret and their status: </p> 
+    /// <ul> 
+    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li> 
+    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li> 
+    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li> 
     /// </ul>
-    pub fn replication_status(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReplicationStatusType]> {
+    pub fn replication_status(&self) -> std::option::Option<& [crate::model::ReplicationStatusType]> {
         self.replication_status.as_deref()
     }
 }
 /// See [`DescribeSecretOutput`](crate::output::DescribeSecretOutput).
 pub mod describe_secret_output {
-
+    
     /// A builder for [`DescribeSecretOutput`](crate::output::DescribeSecretOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1562,14 +1553,11 @@ pub mod describe_secret_output {
         pub(crate) deleted_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) next_rotation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        pub(crate) version_ids_to_stages: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-        >,
+        pub(crate) version_ids_to_stages: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
         pub(crate) owning_service: std::option::Option<std::string::String>,
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) primary_region: std::option::Option<std::string::String>,
-        pub(crate) replication_status:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+        pub(crate) replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
     }
     impl Builder {
         /// <p>The ARN of the secret.</p>
@@ -1579,8 +1567,7 @@ pub mod describe_secret_output {
         }
         /// <p>The ARN of the secret.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the secret.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1589,8 +1576,7 @@ pub mod describe_secret_output {
         }
         /// <p>The name of the secret.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the secret.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1599,8 +1585,7 @@ pub mod describe_secret_output {
         }
         /// <p>The description of the secret.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets created using the console use an KMS key ID.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1609,20 +1594,18 @@ pub mod describe_secret_output {
         }
         /// <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets created using the console use an KMS key ID.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
-        /// <p>Specifies whether automatic rotation is turned on for this secret.</p>
+        /// <p>Specifies whether automatic rotation is turned on for this secret.</p> 
         /// <p>To turn on rotation, use <code>RotateSecret</code>. To turn off rotation, use <code>CancelRotateSecret</code>.</p>
         pub fn rotation_enabled(mut self, input: bool) -> Self {
             self.rotation_enabled = Some(input);
             self
         }
-        /// <p>Specifies whether automatic rotation is turned on for this secret.</p>
+        /// <p>Specifies whether automatic rotation is turned on for this secret.</p> 
         /// <p>To turn on rotation, use <code>RotateSecret</code>. To turn off rotation, use <code>CancelRotateSecret</code>.</p>
         pub fn set_rotation_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.rotation_enabled = input;
-            self
+            self.rotation_enabled = input; self
         }
         /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret. </p>
         pub fn rotation_lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1630,12 +1613,8 @@ pub mod describe_secret_output {
             self
         }
         /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret. </p>
-        pub fn set_rotation_lambda_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rotation_lambda_arn = input;
-            self
+        pub fn set_rotation_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rotation_lambda_arn = input; self
         }
         /// <p>The rotation schedule and Lambda function for this secret. If the secret previously had rotation turned on, but it is now turned off, this field shows the previous rotation schedule and rotation function. If the secret never had rotation turned on, this field is omitted.</p>
         pub fn rotation_rules(mut self, input: crate::model::RotationRulesType) -> Self {
@@ -1643,12 +1622,8 @@ pub mod describe_secret_output {
             self
         }
         /// <p>The rotation schedule and Lambda function for this secret. If the secret previously had rotation turned on, but it is now turned off, this field shows the previous rotation schedule and rotation function. If the secret never had rotation turned on, this field is omitted.</p>
-        pub fn set_rotation_rules(
-            mut self,
-            input: std::option::Option<crate::model::RotationRulesType>,
-        ) -> Self {
-            self.rotation_rules = input;
-            self
+        pub fn set_rotation_rules(mut self, input: std::option::Option<crate::model::RotationRulesType>) -> Self {
+            self.rotation_rules = input; self
         }
         /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
         pub fn last_rotated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1656,12 +1631,8 @@ pub mod describe_secret_output {
             self
         }
         /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
-        pub fn set_last_rotated_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_rotated_date = input;
-            self
+        pub fn set_last_rotated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_rotated_date = input; self
         }
         /// <p>The last date and time that this secret was modified in any way.</p>
         pub fn last_changed_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1669,12 +1640,8 @@ pub mod describe_secret_output {
             self
         }
         /// <p>The last date and time that this secret was modified in any way.</p>
-        pub fn set_last_changed_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_changed_date = input;
-            self
+        pub fn set_last_changed_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_changed_date = input; self
         }
         /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
         pub fn last_accessed_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1682,27 +1649,19 @@ pub mod describe_secret_output {
             self
         }
         /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
-        pub fn set_last_accessed_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_accessed_date = input;
-            self
+        pub fn set_last_accessed_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_accessed_date = input; self
         }
-        /// <p>The date the secret is scheduled for deletion. If it is not scheduled for deletion, this field is omitted. When you delete a secret, Secrets Manager requires a recovery window of at least 7 days before deleting the secret. Some time after the deleted date, Secrets Manager deletes the secret, including all of its versions.</p>
+        /// <p>The date the secret is scheduled for deletion. If it is not scheduled for deletion, this field is omitted. When you delete a secret, Secrets Manager requires a recovery window of at least 7 days before deleting the secret. Some time after the deleted date, Secrets Manager deletes the secret, including all of its versions.</p> 
         /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret value, is not accessible. To cancel a scheduled deletion and restore access to the secret, use <code>RestoreSecret</code>.</p>
         pub fn deleted_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deleted_date = Some(input);
             self
         }
-        /// <p>The date the secret is scheduled for deletion. If it is not scheduled for deletion, this field is omitted. When you delete a secret, Secrets Manager requires a recovery window of at least 7 days before deleting the secret. Some time after the deleted date, Secrets Manager deletes the secret, including all of its versions.</p>
+        /// <p>The date the secret is scheduled for deletion. If it is not scheduled for deletion, this field is omitted. When you delete a secret, Secrets Manager requires a recovery window of at least 7 days before deleting the secret. Some time after the deleted date, Secrets Manager deletes the secret, including all of its versions.</p> 
         /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret value, is not accessible. To cancel a scheduled deletion and restore access to the secret, use <code>RestoreSecret</code>.</p>
-        pub fn set_deleted_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.deleted_date = input;
-            self
+        pub fn set_deleted_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.deleted_date = input; self
         }
         /// <p>The next date and time that Secrets Manager will rotate the secret, rounded to the nearest hour. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
         pub fn next_rotation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1710,12 +1669,8 @@ pub mod describe_secret_output {
             self
         }
         /// <p>The next date and time that Secrets Manager will rotate the secret, rounded to the nearest hour. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
-        pub fn set_next_rotation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.next_rotation_date = input;
-            self
+        pub fn set_next_rotation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.next_rotation_date = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1724,56 +1679,42 @@ pub mod describe_secret_output {
         /// <p>The list of tags attached to the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of tags attached to the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Adds a key-value pair to `version_ids_to_stages`.
         ///
         /// To override the contents of this collection use [`set_version_ids_to_stages`](Self::set_version_ids_to_stages).
         ///
-        /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p>
-        /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p>
-        /// <ul>
-        /// <li> <p> <code>AWSCURRENT</code>, which indicates the current version of the secret.</p> </li>
-        /// <li> <p> <code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p> </li>
-        /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li>
-        /// </ul>
+        /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p> 
+        /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p> 
+        /// <ul> 
+        /// <li> <p> <code>AWSCURRENT</code>, which indicates the current version of the secret.</p> </li> 
+        /// <li> <p> <code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p> </li> 
+        /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li> 
+        /// </ul> 
         /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
-        pub fn version_ids_to_stages(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<std::string::String>,
-        ) -> Self {
+        pub fn version_ids_to_stages(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
             let mut hash_map = self.version_ids_to_stages.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.version_ids_to_stages = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.version_ids_to_stages = Some(hash_map);
+                            self
         }
-        /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p>
-        /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p>
-        /// <ul>
-        /// <li> <p> <code>AWSCURRENT</code>, which indicates the current version of the secret.</p> </li>
-        /// <li> <p> <code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p> </li>
-        /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li>
-        /// </ul>
+        /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p> 
+        /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p> 
+        /// <ul> 
+        /// <li> <p> <code>AWSCURRENT</code>, which indicates the current version of the secret.</p> </li> 
+        /// <li> <p> <code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p> </li> 
+        /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li> 
+        /// </ul> 
         /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
-        pub fn set_version_ids_to_stages(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-            >,
-        ) -> Self {
-            self.version_ids_to_stages = input;
-            self
+        pub fn set_version_ids_to_stages(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
+            self.version_ids_to_stages = input; self
         }
         /// <p>The ID of the service that created this secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p>
         pub fn owning_service(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1781,12 +1722,8 @@ pub mod describe_secret_output {
             self
         }
         /// <p>The ID of the service that created this secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p>
-        pub fn set_owning_service(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owning_service = input;
-            self
+        pub fn set_owning_service(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owning_service = input; self
         }
         /// <p>The date the secret was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1794,12 +1731,8 @@ pub mod describe_secret_output {
             self
         }
         /// <p>The date the secret was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
         pub fn primary_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1807,66 +1740,78 @@ pub mod describe_secret_output {
             self
         }
         /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
-        pub fn set_primary_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.primary_region = input;
-            self
+        pub fn set_primary_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.primary_region = input; self
         }
         /// Appends an item to `replication_status`.
         ///
         /// To override the contents of this collection use [`set_replication_status`](Self::set_replication_status).
         ///
-        /// <p>A list of the replicas of this secret and their status: </p>
-        /// <ul>
-        /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-        /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-        /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+        /// <p>A list of the replicas of this secret and their status: </p> 
+        /// <ul> 
+        /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li> 
+        /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li> 
+        /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li> 
         /// </ul>
         pub fn replication_status(mut self, input: crate::model::ReplicationStatusType) -> Self {
             let mut v = self.replication_status.unwrap_or_default();
-            v.push(input);
-            self.replication_status = Some(v);
-            self
+                            v.push(input);
+                            self.replication_status = Some(v);
+                            self
         }
-        /// <p>A list of the replicas of this secret and their status: </p>
-        /// <ul>
-        /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-        /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-        /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+        /// <p>A list of the replicas of this secret and their status: </p> 
+        /// <ul> 
+        /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li> 
+        /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li> 
+        /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li> 
         /// </ul>
-        pub fn set_replication_status(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
-        ) -> Self {
-            self.replication_status = input;
-            self
+        pub fn set_replication_status(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>) -> Self {
+            self.replication_status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSecretOutput`](crate::output::DescribeSecretOutput).
         pub fn build(self) -> crate::output::DescribeSecretOutput {
             crate::output::DescribeSecretOutput {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                kms_key_id: self.kms_key_id,
-                rotation_enabled: self.rotation_enabled,
-                rotation_lambda_arn: self.rotation_lambda_arn,
-                rotation_rules: self.rotation_rules,
-                last_rotated_date: self.last_rotated_date,
-                last_changed_date: self.last_changed_date,
-                last_accessed_date: self.last_accessed_date,
-                deleted_date: self.deleted_date,
-                next_rotation_date: self.next_rotation_date,
-                tags: self.tags,
-                version_ids_to_stages: self.version_ids_to_stages,
-                owning_service: self.owning_service,
-                created_date: self.created_date,
-                primary_region: self.primary_region,
-                replication_status: self.replication_status,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                rotation_enabled: self.rotation_enabled
+                ,
+                rotation_lambda_arn: self.rotation_lambda_arn
+                ,
+                rotation_rules: self.rotation_rules
+                ,
+                last_rotated_date: self.last_rotated_date
+                ,
+                last_changed_date: self.last_changed_date
+                ,
+                last_accessed_date: self.last_accessed_date
+                ,
+                deleted_date: self.deleted_date
+                ,
+                next_rotation_date: self.next_rotation_date
+                ,
+                tags: self.tags
+                ,
+                version_ids_to_stages: self.version_ids_to_stages
+                ,
+                owning_service: self.owning_service
+                ,
+                created_date: self.created_date
+                ,
+                primary_region: self.primary_region
+                ,
+                replication_status: self.replication_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSecretOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSecretOutput`](crate::output::DescribeSecretOutput).
@@ -1878,7 +1823,7 @@ impl DescribeSecretOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSecretOutput {
+pub struct DeleteSecretOutput  {
     /// <p>The ARN of the secret.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1891,21 +1836,21 @@ pub struct DeleteSecretOutput {
 }
 impl DeleteSecretOutput {
     /// <p>The ARN of the secret.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the secret.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date and time after which this secret Secrets Manager can permanently delete this secret, and it can no longer be restored. This value is the date and time of the delete request plus the number of days in <code>RecoveryWindowInDays</code>.</p>
-    pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deletion_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.deletion_date.as_ref()
     }
 }
 /// See [`DeleteSecretOutput`](crate::output::DeleteSecretOutput).
 pub mod delete_secret_output {
-
+    
     /// A builder for [`DeleteSecretOutput`](crate::output::DeleteSecretOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1921,8 +1866,7 @@ pub mod delete_secret_output {
         }
         /// <p>The ARN of the secret.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the secret.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1931,8 +1875,7 @@ pub mod delete_secret_output {
         }
         /// <p>The name of the secret.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The date and time after which this secret Secrets Manager can permanently delete this secret, and it can no longer be restored. This value is the date and time of the delete request plus the number of days in <code>RecoveryWindowInDays</code>.</p>
         pub fn deletion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1940,22 +1883,23 @@ pub mod delete_secret_output {
             self
         }
         /// <p>The date and time after which this secret Secrets Manager can permanently delete this secret, and it can no longer be restored. This value is the date and time of the delete request plus the number of days in <code>RecoveryWindowInDays</code>.</p>
-        pub fn set_deletion_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.deletion_date = input;
-            self
+        pub fn set_deletion_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.deletion_date = input; self
         }
         /// Consumes the builder and constructs a [`DeleteSecretOutput`](crate::output::DeleteSecretOutput).
         pub fn build(self) -> crate::output::DeleteSecretOutput {
             crate::output::DeleteSecretOutput {
-                arn: self.arn,
-                name: self.name,
-                deletion_date: self.deletion_date,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                deletion_date: self.deletion_date
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteSecretOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSecretOutput`](crate::output::DeleteSecretOutput).
@@ -1967,7 +1911,7 @@ impl DeleteSecretOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcePolicyOutput {
+pub struct DeleteResourcePolicyOutput  {
     /// <p>The ARN of the secret that the resource-based policy was deleted for.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1977,17 +1921,17 @@ pub struct DeleteResourcePolicyOutput {
 }
 impl DeleteResourcePolicyOutput {
     /// <p>The ARN of the secret that the resource-based policy was deleted for.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the secret that the resource-based policy was deleted for.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
 pub mod delete_resource_policy_output {
-
+    
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2002,8 +1946,7 @@ pub mod delete_resource_policy_output {
         }
         /// <p>The ARN of the secret that the resource-based policy was deleted for.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the secret that the resource-based policy was deleted for.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2012,17 +1955,20 @@ pub mod delete_resource_policy_output {
         }
         /// <p>The name of the secret that the resource-based policy was deleted for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
         pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
             crate::output::DeleteResourcePolicyOutput {
-                arn: self.arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
@@ -2034,7 +1980,7 @@ impl DeleteResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSecretOutput {
+pub struct CreateSecretOutput  {
     /// <p>The ARN of the new secret. The ARN includes the name of the secret followed by six random characters. This ensures that if you create a new secret with the same name as a deleted secret, then users with access to the old secret don't get access to the new secret because the ARNs are different.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2044,51 +1990,48 @@ pub struct CreateSecretOutput {
     /// <p>The unique identifier associated with the version of the new secret.</p>
     #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>A list of the replicas of this secret and their status:</p>
-    /// <ul>
-    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+    /// <p>A list of the replicas of this secret and their status:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li> 
+    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li> 
+    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
 }
 impl CreateSecretOutput {
     /// <p>The ARN of the new secret. The ARN includes the name of the secret followed by six random characters. This ensures that if you create a new secret with the same name as a deleted secret, then users with access to the old secret don't get access to the new secret because the ARNs are different.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the new secret.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier associated with the version of the new secret.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> std::option::Option<& str> {
         self.version_id.as_deref()
     }
-    /// <p>A list of the replicas of this secret and their status:</p>
-    /// <ul>
-    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+    /// <p>A list of the replicas of this secret and their status:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li> 
+    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li> 
+    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li> 
     /// </ul>
-    pub fn replication_status(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReplicationStatusType]> {
+    pub fn replication_status(&self) -> std::option::Option<& [crate::model::ReplicationStatusType]> {
         self.replication_status.as_deref()
     }
 }
 /// See [`CreateSecretOutput`](crate::output::CreateSecretOutput).
 pub mod create_secret_output {
-
+    
     /// A builder for [`CreateSecretOutput`](crate::output::CreateSecretOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
-        pub(crate) replication_status:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+        pub(crate) replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
     }
     impl Builder {
         /// <p>The ARN of the new secret. The ARN includes the name of the secret followed by six random characters. This ensures that if you create a new secret with the same name as a deleted secret, then users with access to the old secret don't get access to the new secret because the ARNs are different.</p>
@@ -2098,8 +2041,7 @@ pub mod create_secret_output {
         }
         /// <p>The ARN of the new secret. The ARN includes the name of the secret followed by six random characters. This ensures that if you create a new secret with the same name as a deleted secret, then users with access to the old secret don't get access to the new secret because the ARNs are different.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the new secret.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2108,8 +2050,7 @@ pub mod create_secret_output {
         }
         /// <p>The name of the new secret.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The unique identifier associated with the version of the new secret.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2118,48 +2059,49 @@ pub mod create_secret_output {
         }
         /// <p>The unique identifier associated with the version of the new secret.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_id = input;
-            self
+            self.version_id = input; self
         }
         /// Appends an item to `replication_status`.
         ///
         /// To override the contents of this collection use [`set_replication_status`](Self::set_replication_status).
         ///
-        /// <p>A list of the replicas of this secret and their status:</p>
-        /// <ul>
-        /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-        /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-        /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+        /// <p>A list of the replicas of this secret and their status:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li> 
+        /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li> 
+        /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li> 
         /// </ul>
         pub fn replication_status(mut self, input: crate::model::ReplicationStatusType) -> Self {
             let mut v = self.replication_status.unwrap_or_default();
-            v.push(input);
-            self.replication_status = Some(v);
-            self
+                            v.push(input);
+                            self.replication_status = Some(v);
+                            self
         }
-        /// <p>A list of the replicas of this secret and their status:</p>
-        /// <ul>
-        /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-        /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-        /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+        /// <p>A list of the replicas of this secret and their status:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li> 
+        /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li> 
+        /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li> 
         /// </ul>
-        pub fn set_replication_status(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
-        ) -> Self {
-            self.replication_status = input;
-            self
+        pub fn set_replication_status(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>) -> Self {
+            self.replication_status = input; self
         }
         /// Consumes the builder and constructs a [`CreateSecretOutput`](crate::output::CreateSecretOutput).
         pub fn build(self) -> crate::output::CreateSecretOutput {
             crate::output::CreateSecretOutput {
-                arn: self.arn,
-                name: self.name,
-                version_id: self.version_id,
-                replication_status: self.replication_status,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                version_id: self.version_id
+                ,
+                replication_status: self.replication_status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSecretOutput {
     /// Creates a new builder-style object to manufacture [`CreateSecretOutput`](crate::output::CreateSecretOutput).
@@ -2171,7 +2113,7 @@ impl CreateSecretOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelRotateSecretOutput {
+pub struct CancelRotateSecretOutput  {
     /// <p>The ARN of the secret.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2184,21 +2126,21 @@ pub struct CancelRotateSecretOutput {
 }
 impl CancelRotateSecretOutput {
     /// <p>The ARN of the secret.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the secret.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier of the version of the secret created during the rotation. This version might not be complete, and should be evaluated for possible deletion. We recommend that you remove the <code>VersionStage</code> value <code>AWSPENDING</code> from this version so that Secrets Manager can delete it. Failing to clean up a cancelled rotation can block you from starting future rotations.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
 /// See [`CancelRotateSecretOutput`](crate::output::CancelRotateSecretOutput).
 pub mod cancel_rotate_secret_output {
-
+    
     /// A builder for [`CancelRotateSecretOutput`](crate::output::CancelRotateSecretOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2214,8 +2156,7 @@ pub mod cancel_rotate_secret_output {
         }
         /// <p>The ARN of the secret.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the secret.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2224,8 +2165,7 @@ pub mod cancel_rotate_secret_output {
         }
         /// <p>The name of the secret.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The unique identifier of the version of the secret created during the rotation. This version might not be complete, and should be evaluated for possible deletion. We recommend that you remove the <code>VersionStage</code> value <code>AWSPENDING</code> from this version so that Secrets Manager can delete it. Failing to clean up a cancelled rotation can block you from starting future rotations.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2234,18 +2174,22 @@ pub mod cancel_rotate_secret_output {
         }
         /// <p>The unique identifier of the version of the secret created during the rotation. This version might not be complete, and should be evaluated for possible deletion. We recommend that you remove the <code>VersionStage</code> value <code>AWSPENDING</code> from this version so that Secrets Manager can delete it. Failing to clean up a cancelled rotation can block you from starting future rotations.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_id = input;
-            self
+            self.version_id = input; self
         }
         /// Consumes the builder and constructs a [`CancelRotateSecretOutput`](crate::output::CancelRotateSecretOutput).
         pub fn build(self) -> crate::output::CancelRotateSecretOutput {
             crate::output::CancelRotateSecretOutput {
-                arn: self.arn,
-                name: self.name,
-                version_id: self.version_id,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                version_id: self.version_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CancelRotateSecretOutput {
     /// Creates a new builder-style object to manufacture [`CancelRotateSecretOutput`](crate::output::CancelRotateSecretOutput).
@@ -2253,3 +2197,4 @@ impl CancelRotateSecretOutput {
         crate::output::cancel_rotate_secret_output::Builder::default()
     }
 }
+

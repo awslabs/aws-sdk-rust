@@ -3,7 +3,7 @@
 /// <p>At least one delegate must be associated to the resource to disable automatic replies from the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BookingOptions {
+pub struct BookingOptions  {
     /// <p>The resource's ability to automatically reply to requests. If disabled, delegates must be associated to the resource.</p>
     #[doc(hidden)]
     pub auto_accept_requests: bool,
@@ -30,7 +30,7 @@ impl BookingOptions {
 }
 /// See [`BookingOptions`](crate::model::BookingOptions).
 pub mod booking_options {
-
+    
     /// A builder for [`BookingOptions`](crate::model::BookingOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -46,8 +46,7 @@ pub mod booking_options {
         }
         /// <p>The resource's ability to automatically reply to requests. If disabled, delegates must be associated to the resource.</p>
         pub fn set_auto_accept_requests(mut self, input: std::option::Option<bool>) -> Self {
-            self.auto_accept_requests = input;
-            self
+            self.auto_accept_requests = input; self
         }
         /// <p>The resource's ability to automatically decline any recurring requests.</p>
         pub fn auto_decline_recurring_requests(mut self, input: bool) -> Self {
@@ -55,12 +54,8 @@ pub mod booking_options {
             self
         }
         /// <p>The resource's ability to automatically decline any recurring requests.</p>
-        pub fn set_auto_decline_recurring_requests(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.auto_decline_recurring_requests = input;
-            self
+        pub fn set_auto_decline_recurring_requests(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_decline_recurring_requests = input; self
         }
         /// <p>The resource's ability to automatically decline any conflicting requests.</p>
         pub fn auto_decline_conflicting_requests(mut self, input: bool) -> Self {
@@ -68,26 +63,26 @@ pub mod booking_options {
             self
         }
         /// <p>The resource's ability to automatically decline any conflicting requests.</p>
-        pub fn set_auto_decline_conflicting_requests(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.auto_decline_conflicting_requests = input;
-            self
+        pub fn set_auto_decline_conflicting_requests(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_decline_conflicting_requests = input; self
         }
         /// Consumes the builder and constructs a [`BookingOptions`](crate::model::BookingOptions).
         pub fn build(self) -> crate::model::BookingOptions {
             crate::model::BookingOptions {
-                auto_accept_requests: self.auto_accept_requests.unwrap_or_default(),
-                auto_decline_recurring_requests: self
-                    .auto_decline_recurring_requests
-                    .unwrap_or_default(),
-                auto_decline_conflicting_requests: self
-                    .auto_decline_conflicting_requests
-                    .unwrap_or_default(),
+                auto_accept_requests: self.auto_accept_requests
+                    .unwrap_or_default()
+                ,
+                auto_decline_recurring_requests: self.auto_decline_recurring_requests
+                    .unwrap_or_default()
+                ,
+                auto_decline_conflicting_requests: self.auto_decline_conflicting_requests
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl BookingOptions {
     /// Creates a new builder-style object to manufacture [`BookingOptions`](crate::model::BookingOptions).
@@ -102,9 +97,9 @@ impl BookingOptions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mobiledeviceaccessruleeffect = unimplemented!();
 /// match mobiledeviceaccessruleeffect {
@@ -126,60 +121,52 @@ impl BookingOptions {
 /// Specifically, when `mobiledeviceaccessruleeffect` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MobileDeviceAccessRuleEffect::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MobileDeviceAccessRuleEffect {
     #[allow(missing_docs)] // documentation missing in model
     Allow,
     #[allow(missing_docs)] // documentation missing in model
     Deny,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MobileDeviceAccessRuleEffect {
     fn from(s: &str) -> Self {
         match s {
             "ALLOW" => MobileDeviceAccessRuleEffect::Allow,
             "DENY" => MobileDeviceAccessRuleEffect::Deny,
-            other => MobileDeviceAccessRuleEffect::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MobileDeviceAccessRuleEffect::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MobileDeviceAccessRuleEffect {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MobileDeviceAccessRuleEffect::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MobileDeviceAccessRuleEffect::from(s))
+                }
+            }
 impl MobileDeviceAccessRuleEffect {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MobileDeviceAccessRuleEffect::Allow => "ALLOW",
             MobileDeviceAccessRuleEffect::Deny => "DENY",
-            MobileDeviceAccessRuleEffect::Unknown(value) => value.as_str(),
+            MobileDeviceAccessRuleEffect::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALLOW", "DENY"]
+        &[
+            "ALLOW", "DENY"
+        ]
     }
 }
 impl AsRef<str> for MobileDeviceAccessRuleEffect {
@@ -191,7 +178,7 @@ impl AsRef<str> for MobileDeviceAccessRuleEffect {
 /// <p>The rules for the given impersonation role.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImpersonationRule {
+pub struct ImpersonationRule  {
     /// <p>The identifier of the rule.</p>
     #[doc(hidden)]
     pub impersonation_rule_id: std::option::Option<std::string::String>,
@@ -213,33 +200,33 @@ pub struct ImpersonationRule {
 }
 impl ImpersonationRule {
     /// <p>The identifier of the rule.</p>
-    pub fn impersonation_rule_id(&self) -> std::option::Option<&str> {
+    pub fn impersonation_rule_id(&self) -> std::option::Option<& str> {
         self.impersonation_rule_id.as_deref()
     }
     /// <p>The rule name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The rule description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The effect of the rule when it matches the input. Allowed effect values are <code>ALLOW</code> or <code>DENY</code>.</p>
-    pub fn effect(&self) -> std::option::Option<&crate::model::AccessEffect> {
+    pub fn effect(&self) -> std::option::Option<& crate::model::AccessEffect> {
         self.effect.as_ref()
     }
     /// <p>A list of user IDs that match the rule.</p>
-    pub fn target_users(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_users(&self) -> std::option::Option<& [std::string::String]> {
         self.target_users.as_deref()
     }
     /// <p>A list of user IDs that don't match the rule.</p>
-    pub fn not_target_users(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_target_users(&self) -> std::option::Option<& [std::string::String]> {
         self.not_target_users.as_deref()
     }
 }
 /// See [`ImpersonationRule`](crate::model::ImpersonationRule).
 pub mod impersonation_rule {
-
+    
     /// A builder for [`ImpersonationRule`](crate::model::ImpersonationRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -257,12 +244,8 @@ pub mod impersonation_rule {
             self
         }
         /// <p>The identifier of the rule.</p>
-        pub fn set_impersonation_rule_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.impersonation_rule_id = input;
-            self
+        pub fn set_impersonation_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.impersonation_rule_id = input; self
         }
         /// <p>The rule name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -271,8 +254,7 @@ pub mod impersonation_rule {
         }
         /// <p>The rule name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The rule description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -281,8 +263,7 @@ pub mod impersonation_rule {
         }
         /// <p>The rule description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The effect of the rule when it matches the input. Allowed effect values are <code>ALLOW</code> or <code>DENY</code>.</p>
         pub fn effect(mut self, input: crate::model::AccessEffect) -> Self {
@@ -290,12 +271,8 @@ pub mod impersonation_rule {
             self
         }
         /// <p>The effect of the rule when it matches the input. Allowed effect values are <code>ALLOW</code> or <code>DENY</code>.</p>
-        pub fn set_effect(
-            mut self,
-            input: std::option::Option<crate::model::AccessEffect>,
-        ) -> Self {
-            self.effect = input;
-            self
+        pub fn set_effect(mut self, input: std::option::Option<crate::model::AccessEffect>) -> Self {
+            self.effect = input; self
         }
         /// Appends an item to `target_users`.
         ///
@@ -304,17 +281,13 @@ pub mod impersonation_rule {
         /// <p>A list of user IDs that match the rule.</p>
         pub fn target_users(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_users.unwrap_or_default();
-            v.push(input.into());
-            self.target_users = Some(v);
-            self
+                            v.push(input.into());
+                            self.target_users = Some(v);
+                            self
         }
         /// <p>A list of user IDs that match the rule.</p>
-        pub fn set_target_users(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.target_users = input;
-            self
+        pub fn set_target_users(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.target_users = input; self
         }
         /// Appends an item to `not_target_users`.
         ///
@@ -323,30 +296,34 @@ pub mod impersonation_rule {
         /// <p>A list of user IDs that don't match the rule.</p>
         pub fn not_target_users(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_target_users.unwrap_or_default();
-            v.push(input.into());
-            self.not_target_users = Some(v);
-            self
+                            v.push(input.into());
+                            self.not_target_users = Some(v);
+                            self
         }
         /// <p>A list of user IDs that don't match the rule.</p>
-        pub fn set_not_target_users(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.not_target_users = input;
-            self
+        pub fn set_not_target_users(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.not_target_users = input; self
         }
         /// Consumes the builder and constructs a [`ImpersonationRule`](crate::model::ImpersonationRule).
         pub fn build(self) -> crate::model::ImpersonationRule {
             crate::model::ImpersonationRule {
-                impersonation_rule_id: self.impersonation_rule_id,
-                name: self.name,
-                description: self.description,
-                effect: self.effect,
-                target_users: self.target_users,
-                not_target_users: self.not_target_users,
+                impersonation_rule_id: self.impersonation_rule_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                effect: self.effect
+                ,
+                target_users: self.target_users
+                ,
+                not_target_users: self.not_target_users
+                ,
             }
         }
     }
+    
+    
 }
 impl ImpersonationRule {
     /// Creates a new builder-style object to manufacture [`ImpersonationRule`](crate::model::ImpersonationRule).
@@ -361,9 +338,9 @@ impl ImpersonationRule {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accesseffect = unimplemented!();
 /// match accesseffect {
@@ -385,58 +362,52 @@ impl ImpersonationRule {
 /// Specifically, when `accesseffect` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessEffect::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccessEffect {
     #[allow(missing_docs)] // documentation missing in model
     Allow,
     #[allow(missing_docs)] // documentation missing in model
     Deny,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessEffect {
     fn from(s: &str) -> Self {
         match s {
             "ALLOW" => AccessEffect::Allow,
             "DENY" => AccessEffect::Deny,
-            other => AccessEffect::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AccessEffect::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccessEffect {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccessEffect::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccessEffect::from(s))
+                }
+            }
 impl AccessEffect {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessEffect::Allow => "ALLOW",
             AccessEffect::Deny => "DENY",
-            AccessEffect::Unknown(value) => value.as_str(),
+            AccessEffect::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALLOW", "DENY"]
+        &[
+            "ALLOW", "DENY"
+        ]
     }
 }
 impl AsRef<str> for AccessEffect {
@@ -451,9 +422,9 @@ impl AsRef<str> for AccessEffect {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let impersonationroletype = unimplemented!();
 /// match impersonationroletype {
@@ -475,60 +446,52 @@ impl AsRef<str> for AccessEffect {
 /// Specifically, when `impersonationroletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImpersonationRoleType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImpersonationRoleType {
     #[allow(missing_docs)] // documentation missing in model
     FullAccess,
     #[allow(missing_docs)] // documentation missing in model
     ReadOnly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImpersonationRoleType {
     fn from(s: &str) -> Self {
         match s {
             "FULL_ACCESS" => ImpersonationRoleType::FullAccess,
             "READ_ONLY" => ImpersonationRoleType::ReadOnly,
-            other => {
-                ImpersonationRoleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ImpersonationRoleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImpersonationRoleType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImpersonationRoleType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImpersonationRoleType::from(s))
+                }
+            }
 impl ImpersonationRoleType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImpersonationRoleType::FullAccess => "FULL_ACCESS",
             ImpersonationRoleType::ReadOnly => "READ_ONLY",
-            ImpersonationRoleType::Unknown(value) => value.as_str(),
+            ImpersonationRoleType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FULL_ACCESS", "READ_ONLY"]
+        &[
+            "FULL_ACCESS", "READ_ONLY"
+        ]
     }
 }
 impl AsRef<str> for ImpersonationRoleType {
@@ -540,20 +503,20 @@ impl AsRef<str> for ImpersonationRoleType {
 /// <p>Describes a Lambda based availability provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaAvailabilityProvider {
+pub struct LambdaAvailabilityProvider  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
     #[doc(hidden)]
     pub lambda_arn: std::option::Option<std::string::String>,
 }
 impl LambdaAvailabilityProvider {
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
-    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+    pub fn lambda_arn(&self) -> std::option::Option<& str> {
         self.lambda_arn.as_deref()
     }
 }
 /// See [`LambdaAvailabilityProvider`](crate::model::LambdaAvailabilityProvider).
 pub mod lambda_availability_provider {
-
+    
     /// A builder for [`LambdaAvailabilityProvider`](crate::model::LambdaAvailabilityProvider).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -567,16 +530,18 @@ pub mod lambda_availability_provider {
         }
         /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
         pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lambda_arn = input;
-            self
+            self.lambda_arn = input; self
         }
         /// Consumes the builder and constructs a [`LambdaAvailabilityProvider`](crate::model::LambdaAvailabilityProvider).
         pub fn build(self) -> crate::model::LambdaAvailabilityProvider {
             crate::model::LambdaAvailabilityProvider {
-                lambda_arn: self.lambda_arn,
+                lambda_arn: self.lambda_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl LambdaAvailabilityProvider {
     /// Creates a new builder-style object to manufacture [`LambdaAvailabilityProvider`](crate::model::LambdaAvailabilityProvider).
@@ -588,7 +553,7 @@ impl LambdaAvailabilityProvider {
 /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EwsAvailabilityProvider {
+pub struct EwsAvailabilityProvider  {
     /// <p>The endpoint of the remote EWS server.</p>
     #[doc(hidden)]
     pub ews_endpoint: std::option::Option<std::string::String>,
@@ -601,19 +566,19 @@ pub struct EwsAvailabilityProvider {
 }
 impl EwsAvailabilityProvider {
     /// <p>The endpoint of the remote EWS server.</p>
-    pub fn ews_endpoint(&self) -> std::option::Option<&str> {
+    pub fn ews_endpoint(&self) -> std::option::Option<& str> {
         self.ews_endpoint.as_deref()
     }
     /// <p>The username used to authenticate the remote EWS server.</p>
-    pub fn ews_username(&self) -> std::option::Option<&str> {
+    pub fn ews_username(&self) -> std::option::Option<& str> {
         self.ews_username.as_deref()
     }
     /// <p>The password used to authenticate the remote EWS server.</p>
-    pub fn ews_password(&self) -> std::option::Option<&str> {
+    pub fn ews_password(&self) -> std::option::Option<& str> {
         self.ews_password.as_deref()
     }
 }
-impl std::fmt::Debug for EwsAvailabilityProvider {
+impl  std::fmt::Debug for EwsAvailabilityProvider  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EwsAvailabilityProvider");
         formatter.field("ews_endpoint", &self.ews_endpoint);
@@ -624,7 +589,7 @@ impl std::fmt::Debug for EwsAvailabilityProvider {
 }
 /// See [`EwsAvailabilityProvider`](crate::model::EwsAvailabilityProvider).
 pub mod ews_availability_provider {
-
+    
     /// A builder for [`EwsAvailabilityProvider`](crate::model::EwsAvailabilityProvider).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -640,8 +605,7 @@ pub mod ews_availability_provider {
         }
         /// <p>The endpoint of the remote EWS server.</p>
         pub fn set_ews_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ews_endpoint = input;
-            self
+            self.ews_endpoint = input; self
         }
         /// <p>The username used to authenticate the remote EWS server.</p>
         pub fn ews_username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -650,8 +614,7 @@ pub mod ews_availability_provider {
         }
         /// <p>The username used to authenticate the remote EWS server.</p>
         pub fn set_ews_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ews_username = input;
-            self
+            self.ews_username = input; self
         }
         /// <p>The password used to authenticate the remote EWS server.</p>
         pub fn ews_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -660,15 +623,17 @@ pub mod ews_availability_provider {
         }
         /// <p>The password used to authenticate the remote EWS server.</p>
         pub fn set_ews_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ews_password = input;
-            self
+            self.ews_password = input; self
         }
         /// Consumes the builder and constructs a [`EwsAvailabilityProvider`](crate::model::EwsAvailabilityProvider).
         pub fn build(self) -> crate::model::EwsAvailabilityProvider {
             crate::model::EwsAvailabilityProvider {
-                ews_endpoint: self.ews_endpoint,
-                ews_username: self.ews_username,
-                ews_password: self.ews_password,
+                ews_endpoint: self.ews_endpoint
+                ,
+                ews_username: self.ews_username
+                ,
+                ews_password: self.ews_password
+                ,
             }
         }
     }
@@ -681,6 +646,8 @@ pub mod ews_availability_provider {
             formatter.finish()
         }
     }
+    
+    
 }
 impl EwsAvailabilityProvider {
     /// Creates a new builder-style object to manufacture [`EwsAvailabilityProvider`](crate::model::EwsAvailabilityProvider).
@@ -692,7 +659,7 @@ impl EwsAvailabilityProvider {
 /// <p>Describes a tag applied to a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -702,17 +669,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key of the tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -727,8 +694,7 @@ pub mod tag {
         }
         /// <p>The key of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of the tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -737,17 +703,20 @@ pub mod tag {
         }
         /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -759,7 +728,7 @@ impl Tag {
 /// <p>The configuration applied to an organization's folders by its retention policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FolderConfiguration {
+pub struct FolderConfiguration  {
     /// <p>The folder name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::FolderName>,
@@ -772,11 +741,11 @@ pub struct FolderConfiguration {
 }
 impl FolderConfiguration {
     /// <p>The folder name.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::FolderName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::FolderName> {
         self.name.as_ref()
     }
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::RetentionAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::RetentionAction> {
         self.action.as_ref()
     }
     /// <p>The number of days for which the folder-configuration action applies.</p>
@@ -786,7 +755,7 @@ impl FolderConfiguration {
 }
 /// See [`FolderConfiguration`](crate::model::FolderConfiguration).
 pub mod folder_configuration {
-
+    
     /// A builder for [`FolderConfiguration`](crate::model::FolderConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -802,8 +771,7 @@ pub mod folder_configuration {
         }
         /// <p>The folder name.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::FolderName>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
         pub fn action(mut self, input: crate::model::RetentionAction) -> Self {
@@ -811,12 +779,8 @@ pub mod folder_configuration {
             self
         }
         /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::RetentionAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::RetentionAction>) -> Self {
+            self.action = input; self
         }
         /// <p>The number of days for which the folder-configuration action applies.</p>
         pub fn period(mut self, input: i32) -> Self {
@@ -825,18 +789,22 @@ pub mod folder_configuration {
         }
         /// <p>The number of days for which the folder-configuration action applies.</p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
-            self.period = input;
-            self
+            self.period = input; self
         }
         /// Consumes the builder and constructs a [`FolderConfiguration`](crate::model::FolderConfiguration).
         pub fn build(self) -> crate::model::FolderConfiguration {
             crate::model::FolderConfiguration {
-                name: self.name,
-                action: self.action,
-                period: self.period,
+                name: self.name
+                ,
+                action: self.action
+                ,
+                period: self.period
+                ,
             }
         }
     }
+    
+    
 }
 impl FolderConfiguration {
     /// Creates a new builder-style object to manufacture [`FolderConfiguration`](crate::model::FolderConfiguration).
@@ -851,9 +819,9 @@ impl FolderConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let retentionaction = unimplemented!();
 /// match retentionaction {
@@ -876,22 +844,14 @@ impl FolderConfiguration {
 /// Specifically, when `retentionaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RetentionAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RetentionAction {
     #[allow(missing_docs)] // documentation missing in model
     Delete,
@@ -900,7 +860,7 @@ pub enum RetentionAction {
     #[allow(missing_docs)] // documentation missing in model
     PermanentlyDelete,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RetentionAction {
     fn from(s: &str) -> Self {
@@ -908,17 +868,17 @@ impl std::convert::From<&str> for RetentionAction {
             "DELETE" => RetentionAction::Delete,
             "NONE" => RetentionAction::None,
             "PERMANENTLY_DELETE" => RetentionAction::PermanentlyDelete,
-            other => RetentionAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RetentionAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RetentionAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RetentionAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RetentionAction::from(s))
+                }
+            }
 impl RetentionAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -926,12 +886,14 @@ impl RetentionAction {
             RetentionAction::Delete => "DELETE",
             RetentionAction::None => "NONE",
             RetentionAction::PermanentlyDelete => "PERMANENTLY_DELETE",
-            RetentionAction::Unknown(value) => value.as_str(),
+            RetentionAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELETE", "NONE", "PERMANENTLY_DELETE"]
+        &[
+            "DELETE", "NONE", "PERMANENTLY_DELETE"
+        ]
     }
 }
 impl AsRef<str> for RetentionAction {
@@ -946,9 +908,9 @@ impl AsRef<str> for RetentionAction {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let foldername = unimplemented!();
 /// match foldername {
@@ -973,22 +935,14 @@ impl AsRef<str> for RetentionAction {
 /// Specifically, when `foldername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FolderName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FolderName {
     #[allow(missing_docs)] // documentation missing in model
     DeletedItems,
@@ -1001,7 +955,7 @@ pub enum FolderName {
     #[allow(missing_docs)] // documentation missing in model
     SentItems,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FolderName {
     fn from(s: &str) -> Self {
@@ -1011,17 +965,17 @@ impl std::convert::From<&str> for FolderName {
             "INBOX" => FolderName::Inbox,
             "JUNK_EMAIL" => FolderName::JunkEmail,
             "SENT_ITEMS" => FolderName::SentItems,
-            other => FolderName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FolderName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FolderName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FolderName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FolderName::from(s))
+                }
+            }
 impl FolderName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1031,17 +985,13 @@ impl FolderName {
             FolderName::Inbox => "INBOX",
             FolderName::JunkEmail => "JUNK_EMAIL",
             FolderName::SentItems => "SENT_ITEMS",
-            FolderName::Unknown(value) => value.as_str(),
+            FolderName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DELETED_ITEMS",
-            "DRAFTS",
-            "INBOX",
-            "JUNK_EMAIL",
-            "SENT_ITEMS",
+            "DELETED_ITEMS", "DRAFTS", "INBOX", "JUNK_EMAIL", "SENT_ITEMS"
         ]
     }
 }
@@ -1057,9 +1007,9 @@ impl AsRef<str> for FolderName {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let permissiontype = unimplemented!();
 /// match permissiontype {
@@ -1082,22 +1032,14 @@ impl AsRef<str> for FolderName {
 /// Specifically, when `permissiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PermissionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PermissionType {
     #[allow(missing_docs)] // documentation missing in model
     FullAccess,
@@ -1106,7 +1048,7 @@ pub enum PermissionType {
     #[allow(missing_docs)] // documentation missing in model
     SendOnBehalf,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PermissionType {
     fn from(s: &str) -> Self {
@@ -1114,17 +1056,17 @@ impl std::convert::From<&str> for PermissionType {
             "FULL_ACCESS" => PermissionType::FullAccess,
             "SEND_AS" => PermissionType::SendAs,
             "SEND_ON_BEHALF" => PermissionType::SendOnBehalf,
-            other => PermissionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PermissionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PermissionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PermissionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PermissionType::from(s))
+                }
+            }
 impl PermissionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1132,12 +1074,14 @@ impl PermissionType {
             PermissionType::FullAccess => "FULL_ACCESS",
             PermissionType::SendAs => "SEND_AS",
             PermissionType::SendOnBehalf => "SEND_ON_BEHALF",
-            PermissionType::Unknown(value) => value.as_str(),
+            PermissionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FULL_ACCESS", "SEND_AS", "SEND_ON_BEHALF"]
+        &[
+            "FULL_ACCESS", "SEND_AS", "SEND_ON_BEHALF"
+        ]
     }
 }
 impl AsRef<str> for PermissionType {
@@ -1152,9 +1096,9 @@ impl AsRef<str> for PermissionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accesscontrolruleeffect = unimplemented!();
 /// match accesscontrolruleeffect {
@@ -1176,60 +1120,52 @@ impl AsRef<str> for PermissionType {
 /// Specifically, when `accesscontrolruleeffect` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessControlRuleEffect::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccessControlRuleEffect {
     #[allow(missing_docs)] // documentation missing in model
     Allow,
     #[allow(missing_docs)] // documentation missing in model
     Deny,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessControlRuleEffect {
     fn from(s: &str) -> Self {
         match s {
             "ALLOW" => AccessControlRuleEffect::Allow,
             "DENY" => AccessControlRuleEffect::Deny,
-            other => AccessControlRuleEffect::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AccessControlRuleEffect::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccessControlRuleEffect {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccessControlRuleEffect::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccessControlRuleEffect::from(s))
+                }
+            }
 impl AccessControlRuleEffect {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessControlRuleEffect::Allow => "ALLOW",
             AccessControlRuleEffect::Deny => "DENY",
-            AccessControlRuleEffect::Unknown(value) => value.as_str(),
+            AccessControlRuleEffect::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALLOW", "DENY"]
+        &[
+            "ALLOW", "DENY"
+        ]
     }
 }
 impl AsRef<str> for AccessControlRuleEffect {
@@ -1241,7 +1177,7 @@ impl AsRef<str> for AccessControlRuleEffect {
 /// <p>The representation of an WorkMail user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct User {
+pub struct User  {
     /// <p>The identifier of the user.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1269,41 +1205,41 @@ pub struct User {
 }
 impl User {
     /// <p>The identifier of the user.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The email of the user.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The name of the user.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The display name of the user.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::EntityState> {
         self.state.as_ref()
     }
     /// <p>The role of the user.</p>
-    pub fn user_role(&self) -> std::option::Option<&crate::model::UserRole> {
+    pub fn user_role(&self) -> std::option::Option<& crate::model::UserRole> {
         self.user_role.as_ref()
     }
     /// <p>The date indicating when the user was enabled for WorkMail use.</p>
-    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn enabled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date indicating when the user was disabled from WorkMail use.</p>
-    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn disabled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
 }
 /// See [`User`](crate::model::User).
 pub mod user {
-
+    
     /// A builder for [`User`](crate::model::User).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1324,8 +1260,7 @@ pub mod user {
         }
         /// <p>The identifier of the user.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The email of the user.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1334,8 +1269,7 @@ pub mod user {
         }
         /// <p>The email of the user.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.email = input;
-            self
+            self.email = input; self
         }
         /// <p>The name of the user.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1344,8 +1278,7 @@ pub mod user {
         }
         /// <p>The name of the user.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The display name of the user.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1354,8 +1287,7 @@ pub mod user {
         }
         /// <p>The display name of the user.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
         pub fn state(mut self, input: crate::model::EntityState) -> Self {
@@ -1364,8 +1296,7 @@ pub mod user {
         }
         /// <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::EntityState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The role of the user.</p>
         pub fn user_role(mut self, input: crate::model::UserRole) -> Self {
@@ -1374,8 +1305,7 @@ pub mod user {
         }
         /// <p>The role of the user.</p>
         pub fn set_user_role(mut self, input: std::option::Option<crate::model::UserRole>) -> Self {
-            self.user_role = input;
-            self
+            self.user_role = input; self
         }
         /// <p>The date indicating when the user was enabled for WorkMail use.</p>
         pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1383,12 +1313,8 @@ pub mod user {
             self
         }
         /// <p>The date indicating when the user was enabled for WorkMail use.</p>
-        pub fn set_enabled_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.enabled_date = input;
-            self
+        pub fn set_enabled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.enabled_date = input; self
         }
         /// <p>The date indicating when the user was disabled from WorkMail use.</p>
         pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1396,27 +1322,33 @@ pub mod user {
             self
         }
         /// <p>The date indicating when the user was disabled from WorkMail use.</p>
-        pub fn set_disabled_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.disabled_date = input;
-            self
+        pub fn set_disabled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.disabled_date = input; self
         }
         /// Consumes the builder and constructs a [`User`](crate::model::User).
         pub fn build(self) -> crate::model::User {
             crate::model::User {
-                id: self.id,
-                email: self.email,
-                name: self.name,
-                display_name: self.display_name,
-                state: self.state,
-                user_role: self.user_role,
-                enabled_date: self.enabled_date,
-                disabled_date: self.disabled_date,
+                id: self.id
+                ,
+                email: self.email
+                ,
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
+                state: self.state
+                ,
+                user_role: self.user_role
+                ,
+                enabled_date: self.enabled_date
+                ,
+                disabled_date: self.disabled_date
+                ,
             }
         }
     }
+    
+    
 }
 impl User {
     /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
@@ -1431,9 +1363,9 @@ impl User {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let userrole = unimplemented!();
 /// match userrole {
@@ -1456,22 +1388,14 @@ impl User {
 /// Specifically, when `userrole` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UserRole::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UserRole {
     #[allow(missing_docs)] // documentation missing in model
     Resource,
@@ -1480,7 +1404,7 @@ pub enum UserRole {
     #[allow(missing_docs)] // documentation missing in model
     User,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UserRole {
     fn from(s: &str) -> Self {
@@ -1488,17 +1412,17 @@ impl std::convert::From<&str> for UserRole {
             "RESOURCE" => UserRole::Resource,
             "SYSTEM_USER" => UserRole::SystemUser,
             "USER" => UserRole::User,
-            other => UserRole::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UserRole::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UserRole {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UserRole::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UserRole::from(s))
+                }
+            }
 impl UserRole {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1506,12 +1430,14 @@ impl UserRole {
             UserRole::Resource => "RESOURCE",
             UserRole::SystemUser => "SYSTEM_USER",
             UserRole::User => "USER",
-            UserRole::Unknown(value) => value.as_str(),
+            UserRole::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RESOURCE", "SYSTEM_USER", "USER"]
+        &[
+            "RESOURCE", "SYSTEM_USER", "USER"
+        ]
     }
 }
 impl AsRef<str> for UserRole {
@@ -1526,9 +1452,9 @@ impl AsRef<str> for UserRole {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let entitystate = unimplemented!();
 /// match entitystate {
@@ -1551,22 +1477,14 @@ impl AsRef<str> for UserRole {
 /// Specifically, when `entitystate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EntityState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EntityState {
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
@@ -1575,7 +1493,7 @@ pub enum EntityState {
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EntityState {
     fn from(s: &str) -> Self {
@@ -1583,17 +1501,17 @@ impl std::convert::From<&str> for EntityState {
             "DELETED" => EntityState::Deleted,
             "DISABLED" => EntityState::Disabled,
             "ENABLED" => EntityState::Enabled,
-            other => EntityState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EntityState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EntityState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EntityState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EntityState::from(s))
+                }
+            }
 impl EntityState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1601,12 +1519,14 @@ impl EntityState {
             EntityState::Deleted => "DELETED",
             EntityState::Disabled => "DISABLED",
             EntityState::Enabled => "ENABLED",
-            EntityState::Unknown(value) => value.as_str(),
+            EntityState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELETED", "DISABLED", "ENABLED"]
+        &[
+            "DELETED", "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for EntityState {
@@ -1618,7 +1538,7 @@ impl AsRef<str> for EntityState {
 /// <p>The representation of a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>The identifier of the resource.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1643,37 +1563,37 @@ pub struct Resource {
 }
 impl Resource {
     /// <p>The identifier of the resource.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The email of the resource.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the resource: equipment or room.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.r#type.as_ref()
     }
     /// <p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::EntityState> {
         self.state.as_ref()
     }
     /// <p>The date indicating when the resource was enabled for WorkMail use.</p>
-    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn enabled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date indicating when the resource was disabled from WorkMail use.</p>
-    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn disabled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
 }
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
-
+    
     /// A builder for [`Resource`](crate::model::Resource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1693,8 +1613,7 @@ pub mod resource {
         }
         /// <p>The identifier of the resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The email of the resource.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1703,8 +1622,7 @@ pub mod resource {
         }
         /// <p>The email of the resource.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.email = input;
-            self
+            self.email = input; self
         }
         /// <p>The name of the resource.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1713,8 +1631,7 @@ pub mod resource {
         }
         /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of the resource: equipment or room.</p>
         pub fn r#type(mut self, input: crate::model::ResourceType) -> Self {
@@ -1723,8 +1640,7 @@ pub mod resource {
         }
         /// <p>The type of the resource: equipment or room.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>
         pub fn state(mut self, input: crate::model::EntityState) -> Self {
@@ -1733,8 +1649,7 @@ pub mod resource {
         }
         /// <p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::EntityState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The date indicating when the resource was enabled for WorkMail use.</p>
         pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1742,12 +1657,8 @@ pub mod resource {
             self
         }
         /// <p>The date indicating when the resource was enabled for WorkMail use.</p>
-        pub fn set_enabled_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.enabled_date = input;
-            self
+        pub fn set_enabled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.enabled_date = input; self
         }
         /// <p>The date indicating when the resource was disabled from WorkMail use.</p>
         pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1755,26 +1666,31 @@ pub mod resource {
             self
         }
         /// <p>The date indicating when the resource was disabled from WorkMail use.</p>
-        pub fn set_disabled_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.disabled_date = input;
-            self
+        pub fn set_disabled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.disabled_date = input; self
         }
         /// Consumes the builder and constructs a [`Resource`](crate::model::Resource).
         pub fn build(self) -> crate::model::Resource {
             crate::model::Resource {
-                id: self.id,
-                email: self.email,
-                name: self.name,
-                r#type: self.r#type,
-                state: self.state,
-                enabled_date: self.enabled_date,
-                disabled_date: self.disabled_date,
+                id: self.id
+                ,
+                email: self.email
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                state: self.state
+                ,
+                enabled_date: self.enabled_date
+                ,
+                disabled_date: self.disabled_date
+                ,
             }
         }
     }
+    
+    
 }
 impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
@@ -1789,9 +1705,9 @@ impl Resource {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -1813,58 +1729,52 @@ impl Resource {
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Equipment,
     #[allow(missing_docs)] // documentation missing in model
     Room,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "EQUIPMENT" => ResourceType::Equipment,
             "ROOM" => ResourceType::Room,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Equipment => "EQUIPMENT",
             ResourceType::Room => "ROOM",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EQUIPMENT", "ROOM"]
+        &[
+            "EQUIPMENT", "ROOM"
+        ]
     }
 }
 impl AsRef<str> for ResourceType {
@@ -1876,7 +1786,7 @@ impl AsRef<str> for ResourceType {
 /// <p>The name of the attribute, which is one of the values defined in the UserAttribute enumeration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Delegate {
+pub struct Delegate  {
     /// <p>The identifier for the user or group associated as the resource's delegate.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1886,17 +1796,17 @@ pub struct Delegate {
 }
 impl Delegate {
     /// <p>The identifier for the user or group associated as the resource's delegate.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of the delegate: user or group.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::MemberType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::MemberType> {
         self.r#type.as_ref()
     }
 }
 /// See [`Delegate`](crate::model::Delegate).
 pub mod delegate {
-
+    
     /// A builder for [`Delegate`](crate::model::Delegate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1911,8 +1821,7 @@ pub mod delegate {
         }
         /// <p>The identifier for the user or group associated as the resource's delegate.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The type of the delegate: user or group.</p>
         pub fn r#type(mut self, input: crate::model::MemberType) -> Self {
@@ -1921,17 +1830,20 @@ pub mod delegate {
         }
         /// <p>The type of the delegate: user or group.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::MemberType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`Delegate`](crate::model::Delegate).
         pub fn build(self) -> crate::model::Delegate {
             crate::model::Delegate {
-                id: self.id,
-                r#type: self.r#type,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl Delegate {
     /// Creates a new builder-style object to manufacture [`Delegate`](crate::model::Delegate).
@@ -1946,9 +1858,9 @@ impl Delegate {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let membertype = unimplemented!();
 /// match membertype {
@@ -1970,58 +1882,52 @@ impl Delegate {
 /// Specifically, when `membertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MemberType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MemberType {
     #[allow(missing_docs)] // documentation missing in model
     Group,
     #[allow(missing_docs)] // documentation missing in model
     User,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MemberType {
     fn from(s: &str) -> Self {
         match s {
             "GROUP" => MemberType::Group,
             "USER" => MemberType::User,
-            other => MemberType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MemberType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MemberType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MemberType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MemberType::from(s))
+                }
+            }
 impl MemberType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MemberType::Group => "GROUP",
             MemberType::User => "USER",
-            MemberType::Unknown(value) => value.as_str(),
+            MemberType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GROUP", "USER"]
+        &[
+            "GROUP", "USER"
+        ]
     }
 }
 impl AsRef<str> for MemberType {
@@ -2033,7 +1939,7 @@ impl AsRef<str> for MemberType {
 /// <p>The representation of an organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OrganizationSummary {
+pub struct OrganizationSummary  {
     /// <p>The identifier associated with the organization.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -2052,29 +1958,29 @@ pub struct OrganizationSummary {
 }
 impl OrganizationSummary {
     /// <p>The identifier associated with the organization.</p>
-    pub fn organization_id(&self) -> std::option::Option<&str> {
+    pub fn organization_id(&self) -> std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The alias associated with the organization.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The default email domain associated with the organization.</p>
-    pub fn default_mail_domain(&self) -> std::option::Option<&str> {
+    pub fn default_mail_domain(&self) -> std::option::Option<& str> {
         self.default_mail_domain.as_deref()
     }
     /// <p>The error message associated with the organization. It is only present if unexpected behavior has occurred with regards to the organization. It provides insight or solutions regarding unexpected behavior.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The state associated with the organization.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
 }
 /// See [`OrganizationSummary`](crate::model::OrganizationSummary).
 pub mod organization_summary {
-
+    
     /// A builder for [`OrganizationSummary`](crate::model::OrganizationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2091,12 +1997,8 @@ pub mod organization_summary {
             self
         }
         /// <p>The identifier associated with the organization.</p>
-        pub fn set_organization_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.organization_id = input;
-            self
+        pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.organization_id = input; self
         }
         /// <p>The alias associated with the organization.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2105,8 +2007,7 @@ pub mod organization_summary {
         }
         /// <p>The alias associated with the organization.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// <p>The default email domain associated with the organization.</p>
         pub fn default_mail_domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2114,12 +2015,8 @@ pub mod organization_summary {
             self
         }
         /// <p>The default email domain associated with the organization.</p>
-        pub fn set_default_mail_domain(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_mail_domain = input;
-            self
+        pub fn set_default_mail_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_mail_domain = input; self
         }
         /// <p>The error message associated with the organization. It is only present if unexpected behavior has occurred with regards to the organization. It provides insight or solutions regarding unexpected behavior.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2127,12 +2024,8 @@ pub mod organization_summary {
             self
         }
         /// <p>The error message associated with the organization. It is only present if unexpected behavior has occurred with regards to the organization. It provides insight or solutions regarding unexpected behavior.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// <p>The state associated with the organization.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2141,20 +2034,26 @@ pub mod organization_summary {
         }
         /// <p>The state associated with the organization.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`OrganizationSummary`](crate::model::OrganizationSummary).
         pub fn build(self) -> crate::model::OrganizationSummary {
             crate::model::OrganizationSummary {
-                organization_id: self.organization_id,
-                alias: self.alias,
-                default_mail_domain: self.default_mail_domain,
-                error_message: self.error_message,
-                state: self.state,
+                organization_id: self.organization_id
+                ,
+                alias: self.alias
+                ,
+                default_mail_domain: self.default_mail_domain
+                ,
+                error_message: self.error_message
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl OrganizationSummary {
     /// Creates a new builder-style object to manufacture [`OrganizationSummary`](crate::model::OrganizationSummary).
@@ -2166,7 +2065,7 @@ impl OrganizationSummary {
 /// <p>A rule that controls access to mobile devices for an WorkMail group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MobileDeviceAccessRule {
+pub struct MobileDeviceAccessRule  {
     /// <p>The ID assigned to a mobile access rule.</p>
     #[doc(hidden)]
     pub mobile_device_access_rule_id: std::option::Option<std::string::String>,
@@ -2212,65 +2111,65 @@ pub struct MobileDeviceAccessRule {
 }
 impl MobileDeviceAccessRule {
     /// <p>The ID assigned to a mobile access rule.</p>
-    pub fn mobile_device_access_rule_id(&self) -> std::option::Option<&str> {
+    pub fn mobile_device_access_rule_id(&self) -> std::option::Option<& str> {
         self.mobile_device_access_rule_id.as_deref()
     }
     /// <p>The name of a mobile access rule.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of a mobile access rule.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
-    pub fn effect(&self) -> std::option::Option<&crate::model::MobileDeviceAccessRuleEffect> {
+    pub fn effect(&self) -> std::option::Option<& crate::model::MobileDeviceAccessRuleEffect> {
         self.effect.as_ref()
     }
     /// <p>Device types that a rule will match.</p>
-    pub fn device_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn device_types(&self) -> std::option::Option<& [std::string::String]> {
         self.device_types.as_deref()
     }
     /// <p>Device types that a rule <b>will not</b> match. All other device types will match.</p>
-    pub fn not_device_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_device_types(&self) -> std::option::Option<& [std::string::String]> {
         self.not_device_types.as_deref()
     }
     /// <p>Device models that a rule will match.</p>
-    pub fn device_models(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn device_models(&self) -> std::option::Option<& [std::string::String]> {
         self.device_models.as_deref()
     }
     /// <p>Device models that a rule <b>will not</b> match. All other device models will match.</p>
-    pub fn not_device_models(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_device_models(&self) -> std::option::Option<& [std::string::String]> {
         self.not_device_models.as_deref()
     }
     /// <p>Device operating systems that a rule will match.</p>
-    pub fn device_operating_systems(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn device_operating_systems(&self) -> std::option::Option<& [std::string::String]> {
         self.device_operating_systems.as_deref()
     }
     /// <p>Device operating systems that a rule <b>will not</b> match. All other device types will match.</p>
-    pub fn not_device_operating_systems(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_device_operating_systems(&self) -> std::option::Option<& [std::string::String]> {
         self.not_device_operating_systems.as_deref()
     }
     /// <p>Device user agents that a rule will match.</p>
-    pub fn device_user_agents(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn device_user_agents(&self) -> std::option::Option<& [std::string::String]> {
         self.device_user_agents.as_deref()
     }
     /// <p>Device user agents that a rule <b>will not</b> match. All other device user agents will match.</p>
-    pub fn not_device_user_agents(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_device_user_agents(&self) -> std::option::Option<& [std::string::String]> {
         self.not_device_user_agents.as_deref()
     }
     /// <p>The date and time at which an access rule was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date and time at which an access rule was modified.</p>
-    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
     }
 }
 /// See [`MobileDeviceAccessRule`](crate::model::MobileDeviceAccessRule).
 pub mod mobile_device_access_rule {
-
+    
     /// A builder for [`MobileDeviceAccessRule`](crate::model::MobileDeviceAccessRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2282,10 +2181,8 @@ pub mod mobile_device_access_rule {
         pub(crate) not_device_types: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) device_models: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) not_device_models: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) device_operating_systems:
-            std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) not_device_operating_systems:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) device_operating_systems: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) not_device_operating_systems: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) not_device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
@@ -2293,20 +2190,13 @@ pub mod mobile_device_access_rule {
     }
     impl Builder {
         /// <p>The ID assigned to a mobile access rule.</p>
-        pub fn mobile_device_access_rule_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn mobile_device_access_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.mobile_device_access_rule_id = Some(input.into());
             self
         }
         /// <p>The ID assigned to a mobile access rule.</p>
-        pub fn set_mobile_device_access_rule_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.mobile_device_access_rule_id = input;
-            self
+        pub fn set_mobile_device_access_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mobile_device_access_rule_id = input; self
         }
         /// <p>The name of a mobile access rule.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2315,8 +2205,7 @@ pub mod mobile_device_access_rule {
         }
         /// <p>The name of a mobile access rule.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of a mobile access rule.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2325,8 +2214,7 @@ pub mod mobile_device_access_rule {
         }
         /// <p>The description of a mobile access rule.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
         pub fn effect(mut self, input: crate::model::MobileDeviceAccessRuleEffect) -> Self {
@@ -2334,12 +2222,8 @@ pub mod mobile_device_access_rule {
             self
         }
         /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
-        pub fn set_effect(
-            mut self,
-            input: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
-        ) -> Self {
-            self.effect = input;
-            self
+        pub fn set_effect(mut self, input: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>) -> Self {
+            self.effect = input; self
         }
         /// Appends an item to `device_types`.
         ///
@@ -2348,17 +2232,13 @@ pub mod mobile_device_access_rule {
         /// <p>Device types that a rule will match.</p>
         pub fn device_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_types.unwrap_or_default();
-            v.push(input.into());
-            self.device_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.device_types = Some(v);
+                            self
         }
         /// <p>Device types that a rule will match.</p>
-        pub fn set_device_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.device_types = input;
-            self
+        pub fn set_device_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.device_types = input; self
         }
         /// Appends an item to `not_device_types`.
         ///
@@ -2367,17 +2247,13 @@ pub mod mobile_device_access_rule {
         /// <p>Device types that a rule <b>will not</b> match. All other device types will match.</p>
         pub fn not_device_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_device_types.unwrap_or_default();
-            v.push(input.into());
-            self.not_device_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.not_device_types = Some(v);
+                            self
         }
         /// <p>Device types that a rule <b>will not</b> match. All other device types will match.</p>
-        pub fn set_not_device_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.not_device_types = input;
-            self
+        pub fn set_not_device_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.not_device_types = input; self
         }
         /// Appends an item to `device_models`.
         ///
@@ -2386,17 +2262,13 @@ pub mod mobile_device_access_rule {
         /// <p>Device models that a rule will match.</p>
         pub fn device_models(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_models.unwrap_or_default();
-            v.push(input.into());
-            self.device_models = Some(v);
-            self
+                            v.push(input.into());
+                            self.device_models = Some(v);
+                            self
         }
         /// <p>Device models that a rule will match.</p>
-        pub fn set_device_models(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.device_models = input;
-            self
+        pub fn set_device_models(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.device_models = input; self
         }
         /// Appends an item to `not_device_models`.
         ///
@@ -2405,17 +2277,13 @@ pub mod mobile_device_access_rule {
         /// <p>Device models that a rule <b>will not</b> match. All other device models will match.</p>
         pub fn not_device_models(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_device_models.unwrap_or_default();
-            v.push(input.into());
-            self.not_device_models = Some(v);
-            self
+                            v.push(input.into());
+                            self.not_device_models = Some(v);
+                            self
         }
         /// <p>Device models that a rule <b>will not</b> match. All other device models will match.</p>
-        pub fn set_not_device_models(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.not_device_models = input;
-            self
+        pub fn set_not_device_models(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.not_device_models = input; self
         }
         /// Appends an item to `device_operating_systems`.
         ///
@@ -2424,39 +2292,28 @@ pub mod mobile_device_access_rule {
         /// <p>Device operating systems that a rule will match.</p>
         pub fn device_operating_systems(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_operating_systems.unwrap_or_default();
-            v.push(input.into());
-            self.device_operating_systems = Some(v);
-            self
+                            v.push(input.into());
+                            self.device_operating_systems = Some(v);
+                            self
         }
         /// <p>Device operating systems that a rule will match.</p>
-        pub fn set_device_operating_systems(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.device_operating_systems = input;
-            self
+        pub fn set_device_operating_systems(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.device_operating_systems = input; self
         }
         /// Appends an item to `not_device_operating_systems`.
         ///
         /// To override the contents of this collection use [`set_not_device_operating_systems`](Self::set_not_device_operating_systems).
         ///
         /// <p>Device operating systems that a rule <b>will not</b> match. All other device types will match.</p>
-        pub fn not_device_operating_systems(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn not_device_operating_systems(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_device_operating_systems.unwrap_or_default();
-            v.push(input.into());
-            self.not_device_operating_systems = Some(v);
-            self
+                            v.push(input.into());
+                            self.not_device_operating_systems = Some(v);
+                            self
         }
         /// <p>Device operating systems that a rule <b>will not</b> match. All other device types will match.</p>
-        pub fn set_not_device_operating_systems(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.not_device_operating_systems = input;
-            self
+        pub fn set_not_device_operating_systems(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.not_device_operating_systems = input; self
         }
         /// Appends an item to `device_user_agents`.
         ///
@@ -2465,17 +2322,13 @@ pub mod mobile_device_access_rule {
         /// <p>Device user agents that a rule will match.</p>
         pub fn device_user_agents(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_user_agents.unwrap_or_default();
-            v.push(input.into());
-            self.device_user_agents = Some(v);
-            self
+                            v.push(input.into());
+                            self.device_user_agents = Some(v);
+                            self
         }
         /// <p>Device user agents that a rule will match.</p>
-        pub fn set_device_user_agents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.device_user_agents = input;
-            self
+        pub fn set_device_user_agents(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.device_user_agents = input; self
         }
         /// Appends an item to `not_device_user_agents`.
         ///
@@ -2484,17 +2337,13 @@ pub mod mobile_device_access_rule {
         /// <p>Device user agents that a rule <b>will not</b> match. All other device user agents will match.</p>
         pub fn not_device_user_agents(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_device_user_agents.unwrap_or_default();
-            v.push(input.into());
-            self.not_device_user_agents = Some(v);
-            self
+                            v.push(input.into());
+                            self.not_device_user_agents = Some(v);
+                            self
         }
         /// <p>Device user agents that a rule <b>will not</b> match. All other device user agents will match.</p>
-        pub fn set_not_device_user_agents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.not_device_user_agents = input;
-            self
+        pub fn set_not_device_user_agents(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.not_device_user_agents = input; self
         }
         /// <p>The date and time at which an access rule was created.</p>
         pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2502,12 +2351,8 @@ pub mod mobile_device_access_rule {
             self
         }
         /// <p>The date and time at which an access rule was created.</p>
-        pub fn set_date_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_created = input;
-            self
+        pub fn set_date_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_created = input; self
         }
         /// <p>The date and time at which an access rule was modified.</p>
         pub fn date_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2515,33 +2360,45 @@ pub mod mobile_device_access_rule {
             self
         }
         /// <p>The date and time at which an access rule was modified.</p>
-        pub fn set_date_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_modified = input;
-            self
+        pub fn set_date_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_modified = input; self
         }
         /// Consumes the builder and constructs a [`MobileDeviceAccessRule`](crate::model::MobileDeviceAccessRule).
         pub fn build(self) -> crate::model::MobileDeviceAccessRule {
             crate::model::MobileDeviceAccessRule {
-                mobile_device_access_rule_id: self.mobile_device_access_rule_id,
-                name: self.name,
-                description: self.description,
-                effect: self.effect,
-                device_types: self.device_types,
-                not_device_types: self.not_device_types,
-                device_models: self.device_models,
-                not_device_models: self.not_device_models,
-                device_operating_systems: self.device_operating_systems,
-                not_device_operating_systems: self.not_device_operating_systems,
-                device_user_agents: self.device_user_agents,
-                not_device_user_agents: self.not_device_user_agents,
-                date_created: self.date_created,
-                date_modified: self.date_modified,
+                mobile_device_access_rule_id: self.mobile_device_access_rule_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                effect: self.effect
+                ,
+                device_types: self.device_types
+                ,
+                not_device_types: self.not_device_types
+                ,
+                device_models: self.device_models
+                ,
+                not_device_models: self.not_device_models
+                ,
+                device_operating_systems: self.device_operating_systems
+                ,
+                not_device_operating_systems: self.not_device_operating_systems
+                ,
+                device_user_agents: self.device_user_agents
+                ,
+                not_device_user_agents: self.not_device_user_agents
+                ,
+                date_created: self.date_created
+                ,
+                date_modified: self.date_modified
+                ,
             }
         }
     }
+    
+    
 }
 impl MobileDeviceAccessRule {
     /// Creates a new builder-style object to manufacture [`MobileDeviceAccessRule`](crate::model::MobileDeviceAccessRule).
@@ -2553,7 +2410,7 @@ impl MobileDeviceAccessRule {
 /// <p>The override object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MobileDeviceAccessOverride {
+pub struct MobileDeviceAccessOverride  {
     /// <p>The WorkMail user to which the access override applies.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -2575,33 +2432,33 @@ pub struct MobileDeviceAccessOverride {
 }
 impl MobileDeviceAccessOverride {
     /// <p>The WorkMail user to which the access override applies.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The device to which the override applies.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
-    pub fn effect(&self) -> std::option::Option<&crate::model::MobileDeviceAccessRuleEffect> {
+    pub fn effect(&self) -> std::option::Option<& crate::model::MobileDeviceAccessRuleEffect> {
         self.effect.as_ref()
     }
     /// <p>A description of the override.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date the override was first created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date the override was last modified.</p>
-    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
     }
 }
 /// See [`MobileDeviceAccessOverride`](crate::model::MobileDeviceAccessOverride).
 pub mod mobile_device_access_override {
-
+    
     /// A builder for [`MobileDeviceAccessOverride`](crate::model::MobileDeviceAccessOverride).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2620,8 +2477,7 @@ pub mod mobile_device_access_override {
         }
         /// <p>The WorkMail user to which the access override applies.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
         /// <p>The device to which the override applies.</p>
         pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2630,8 +2486,7 @@ pub mod mobile_device_access_override {
         }
         /// <p>The device to which the override applies.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
         pub fn effect(mut self, input: crate::model::MobileDeviceAccessRuleEffect) -> Self {
@@ -2639,12 +2494,8 @@ pub mod mobile_device_access_override {
             self
         }
         /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
-        pub fn set_effect(
-            mut self,
-            input: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
-        ) -> Self {
-            self.effect = input;
-            self
+        pub fn set_effect(mut self, input: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>) -> Self {
+            self.effect = input; self
         }
         /// <p>A description of the override.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2653,8 +2504,7 @@ pub mod mobile_device_access_override {
         }
         /// <p>A description of the override.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date the override was first created.</p>
         pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2662,12 +2512,8 @@ pub mod mobile_device_access_override {
             self
         }
         /// <p>The date the override was first created.</p>
-        pub fn set_date_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_created = input;
-            self
+        pub fn set_date_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_created = input; self
         }
         /// <p>The date the override was last modified.</p>
         pub fn date_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2675,25 +2521,29 @@ pub mod mobile_device_access_override {
             self
         }
         /// <p>The date the override was last modified.</p>
-        pub fn set_date_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_modified = input;
-            self
+        pub fn set_date_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_modified = input; self
         }
         /// Consumes the builder and constructs a [`MobileDeviceAccessOverride`](crate::model::MobileDeviceAccessOverride).
         pub fn build(self) -> crate::model::MobileDeviceAccessOverride {
             crate::model::MobileDeviceAccessOverride {
-                user_id: self.user_id,
-                device_id: self.device_id,
-                effect: self.effect,
-                description: self.description,
-                date_created: self.date_created,
-                date_modified: self.date_modified,
+                user_id: self.user_id
+                ,
+                device_id: self.device_id
+                ,
+                effect: self.effect
+                ,
+                description: self.description
+                ,
+                date_created: self.date_created
+                ,
+                date_modified: self.date_modified
+                ,
             }
         }
     }
+    
+    
 }
 impl MobileDeviceAccessOverride {
     /// Creates a new builder-style object to manufacture [`MobileDeviceAccessOverride`](crate::model::MobileDeviceAccessOverride).
@@ -2705,7 +2555,7 @@ impl MobileDeviceAccessOverride {
 /// <p>The data for a given domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MailDomainSummary {
+pub struct MailDomainSummary  {
     /// <p>The domain name.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -2715,7 +2565,7 @@ pub struct MailDomainSummary {
 }
 impl MailDomainSummary {
     /// <p>The domain name.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Whether the domain is default or not.</p>
@@ -2725,7 +2575,7 @@ impl MailDomainSummary {
 }
 /// See [`MailDomainSummary`](crate::model::MailDomainSummary).
 pub mod mail_domain_summary {
-
+    
     /// A builder for [`MailDomainSummary`](crate::model::MailDomainSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2740,8 +2590,7 @@ pub mod mail_domain_summary {
         }
         /// <p>The domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>Whether the domain is default or not.</p>
         pub fn default_domain(mut self, input: bool) -> Self {
@@ -2750,17 +2599,21 @@ pub mod mail_domain_summary {
         }
         /// <p>Whether the domain is default or not.</p>
         pub fn set_default_domain(mut self, input: std::option::Option<bool>) -> Self {
-            self.default_domain = input;
-            self
+            self.default_domain = input; self
         }
         /// Consumes the builder and constructs a [`MailDomainSummary`](crate::model::MailDomainSummary).
         pub fn build(self) -> crate::model::MailDomainSummary {
             crate::model::MailDomainSummary {
-                domain_name: self.domain_name,
-                default_domain: self.default_domain.unwrap_or_default(),
+                domain_name: self.domain_name
+                ,
+                default_domain: self.default_domain
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl MailDomainSummary {
     /// Creates a new builder-style object to manufacture [`MailDomainSummary`](crate::model::MailDomainSummary).
@@ -2772,7 +2625,7 @@ impl MailDomainSummary {
 /// <p>Permission granted to a user, group, or resource to access a certain aspect of another user, group, or resource mailbox.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Permission {
+pub struct Permission  {
     /// <p>The identifier of the user, group, or resource to which the permissions are granted.</p>
     #[doc(hidden)]
     pub grantee_id: std::option::Option<std::string::String>,
@@ -2785,28 +2638,27 @@ pub struct Permission {
 }
 impl Permission {
     /// <p>The identifier of the user, group, or resource to which the permissions are granted.</p>
-    pub fn grantee_id(&self) -> std::option::Option<&str> {
+    pub fn grantee_id(&self) -> std::option::Option<& str> {
         self.grantee_id.as_deref()
     }
     /// <p>The type of user, group, or resource referred to in GranteeId.</p>
-    pub fn grantee_type(&self) -> std::option::Option<&crate::model::MemberType> {
+    pub fn grantee_type(&self) -> std::option::Option<& crate::model::MemberType> {
         self.grantee_type.as_ref()
     }
     /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
-    pub fn permission_values(&self) -> std::option::Option<&[crate::model::PermissionType]> {
+    pub fn permission_values(&self) -> std::option::Option<& [crate::model::PermissionType]> {
         self.permission_values.as_deref()
     }
 }
 /// See [`Permission`](crate::model::Permission).
 pub mod permission {
-
+    
     /// A builder for [`Permission`](crate::model::Permission).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grantee_id: std::option::Option<std::string::String>,
         pub(crate) grantee_type: std::option::Option<crate::model::MemberType>,
-        pub(crate) permission_values:
-            std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
+        pub(crate) permission_values: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
     }
     impl Builder {
         /// <p>The identifier of the user, group, or resource to which the permissions are granted.</p>
@@ -2816,8 +2668,7 @@ pub mod permission {
         }
         /// <p>The identifier of the user, group, or resource to which the permissions are granted.</p>
         pub fn set_grantee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grantee_id = input;
-            self
+            self.grantee_id = input; self
         }
         /// <p>The type of user, group, or resource referred to in GranteeId.</p>
         pub fn grantee_type(mut self, input: crate::model::MemberType) -> Self {
@@ -2825,12 +2676,8 @@ pub mod permission {
             self
         }
         /// <p>The type of user, group, or resource referred to in GranteeId.</p>
-        pub fn set_grantee_type(
-            mut self,
-            input: std::option::Option<crate::model::MemberType>,
-        ) -> Self {
-            self.grantee_type = input;
-            self
+        pub fn set_grantee_type(mut self, input: std::option::Option<crate::model::MemberType>) -> Self {
+            self.grantee_type = input; self
         }
         /// Appends an item to `permission_values`.
         ///
@@ -2839,27 +2686,28 @@ pub mod permission {
         /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
         pub fn permission_values(mut self, input: crate::model::PermissionType) -> Self {
             let mut v = self.permission_values.unwrap_or_default();
-            v.push(input);
-            self.permission_values = Some(v);
-            self
+                            v.push(input);
+                            self.permission_values = Some(v);
+                            self
         }
         /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
-        pub fn set_permission_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
-        ) -> Self {
-            self.permission_values = input;
-            self
+        pub fn set_permission_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::PermissionType>>) -> Self {
+            self.permission_values = input; self
         }
         /// Consumes the builder and constructs a [`Permission`](crate::model::Permission).
         pub fn build(self) -> crate::model::Permission {
             crate::model::Permission {
-                grantee_id: self.grantee_id,
-                grantee_type: self.grantee_type,
-                permission_values: self.permission_values,
+                grantee_id: self.grantee_id
+                ,
+                grantee_type: self.grantee_type
+                ,
+                permission_values: self.permission_values
+                ,
             }
         }
     }
+    
+    
 }
 impl Permission {
     /// Creates a new builder-style object to manufacture [`Permission`](crate::model::Permission).
@@ -2871,7 +2719,7 @@ impl Permission {
 /// <p>The details of a mailbox export job, including the user or resource ID associated with the mailbox and the S3 bucket that the mailbox contents are exported to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MailboxExportJob {
+pub struct MailboxExportJob  {
     /// <p>The identifier of the mailbox export job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -2902,23 +2750,23 @@ pub struct MailboxExportJob {
 }
 impl MailboxExportJob {
     /// <p>The identifier of the mailbox export job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
-    pub fn entity_id(&self) -> std::option::Option<&str> {
+    pub fn entity_id(&self) -> std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The mailbox export job description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The path to the S3 bucket and file that the mailbox export job exports to.</p>
-    pub fn s3_path(&self) -> std::option::Option<&str> {
+    pub fn s3_path(&self) -> std::option::Option<& str> {
         self.s3_path.as_deref()
     }
     /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
@@ -2926,21 +2774,21 @@ impl MailboxExportJob {
         self.estimated_progress
     }
     /// <p>The state of the mailbox export job.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::MailboxExportJobState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::MailboxExportJobState> {
         self.state.as_ref()
     }
     /// <p>The mailbox export job start timestamp.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The mailbox export job end timestamp.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
 /// See [`MailboxExportJob`](crate::model::MailboxExportJob).
 pub mod mailbox_export_job {
-
+    
     /// A builder for [`MailboxExportJob`](crate::model::MailboxExportJob).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2962,8 +2810,7 @@ pub mod mailbox_export_job {
         }
         /// <p>The identifier of the mailbox export job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The identifier of the user or resource associated with the mailbox.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2972,8 +2819,7 @@ pub mod mailbox_export_job {
         }
         /// <p>The identifier of the user or resource associated with the mailbox.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entity_id = input;
-            self
+            self.entity_id = input; self
         }
         /// <p>The mailbox export job description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2982,8 +2828,7 @@ pub mod mailbox_export_job {
         }
         /// <p>The mailbox export job description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The name of the S3 bucket.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2991,12 +2836,8 @@ pub mod mailbox_export_job {
             self
         }
         /// <p>The name of the S3 bucket.</p>
-        pub fn set_s3_bucket_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_name = input;
-            self
+        pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_name = input; self
         }
         /// <p>The path to the S3 bucket and file that the mailbox export job exports to.</p>
         pub fn s3_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3005,8 +2846,7 @@ pub mod mailbox_export_job {
         }
         /// <p>The path to the S3 bucket and file that the mailbox export job exports to.</p>
         pub fn set_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_path = input;
-            self
+            self.s3_path = input; self
         }
         /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
         pub fn estimated_progress(mut self, input: i32) -> Self {
@@ -3015,8 +2855,7 @@ pub mod mailbox_export_job {
         }
         /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
         pub fn set_estimated_progress(mut self, input: std::option::Option<i32>) -> Self {
-            self.estimated_progress = input;
-            self
+            self.estimated_progress = input; self
         }
         /// <p>The state of the mailbox export job.</p>
         pub fn state(mut self, input: crate::model::MailboxExportJobState) -> Self {
@@ -3024,12 +2863,8 @@ pub mod mailbox_export_job {
             self
         }
         /// <p>The state of the mailbox export job.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::MailboxExportJobState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::MailboxExportJobState>) -> Self {
+            self.state = input; self
         }
         /// <p>The mailbox export job start timestamp.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3037,12 +2872,8 @@ pub mod mailbox_export_job {
             self
         }
         /// <p>The mailbox export job start timestamp.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The mailbox export job end timestamp.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3050,28 +2881,36 @@ pub mod mailbox_export_job {
             self
         }
         /// <p>The mailbox export job end timestamp.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Consumes the builder and constructs a [`MailboxExportJob`](crate::model::MailboxExportJob).
         pub fn build(self) -> crate::model::MailboxExportJob {
             crate::model::MailboxExportJob {
-                job_id: self.job_id,
-                entity_id: self.entity_id,
-                description: self.description,
-                s3_bucket_name: self.s3_bucket_name,
-                s3_path: self.s3_path,
-                estimated_progress: self.estimated_progress.unwrap_or_default(),
-                state: self.state,
-                start_time: self.start_time,
-                end_time: self.end_time,
+                job_id: self.job_id
+                ,
+                entity_id: self.entity_id
+                ,
+                description: self.description
+                ,
+                s3_bucket_name: self.s3_bucket_name
+                ,
+                s3_path: self.s3_path
+                ,
+                estimated_progress: self.estimated_progress
+                    .unwrap_or_default()
+                ,
+                state: self.state
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl MailboxExportJob {
     /// Creates a new builder-style object to manufacture [`MailboxExportJob`](crate::model::MailboxExportJob).
@@ -3086,9 +2925,9 @@ impl MailboxExportJob {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mailboxexportjobstate = unimplemented!();
 /// match mailboxexportjobstate {
@@ -3112,22 +2951,14 @@ impl MailboxExportJob {
 /// Specifically, when `mailboxexportjobstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MailboxExportJobState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MailboxExportJobState {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -3138,7 +2969,7 @@ pub enum MailboxExportJobState {
     #[allow(missing_docs)] // documentation missing in model
     Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MailboxExportJobState {
     fn from(s: &str) -> Self {
@@ -3147,19 +2978,17 @@ impl std::convert::From<&str> for MailboxExportJobState {
             "COMPLETED" => MailboxExportJobState::Completed,
             "FAILED" => MailboxExportJobState::Failed,
             "RUNNING" => MailboxExportJobState::Running,
-            other => {
-                MailboxExportJobState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => MailboxExportJobState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MailboxExportJobState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MailboxExportJobState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MailboxExportJobState::from(s))
+                }
+            }
 impl MailboxExportJobState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3168,12 +2997,14 @@ impl MailboxExportJobState {
             MailboxExportJobState::Completed => "COMPLETED",
             MailboxExportJobState::Failed => "FAILED",
             MailboxExportJobState::Running => "RUNNING",
-            MailboxExportJobState::Unknown(value) => value.as_str(),
+            MailboxExportJobState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CANCELLED", "COMPLETED", "FAILED", "RUNNING"]
+        &[
+            "CANCELLED", "COMPLETED", "FAILED", "RUNNING"
+        ]
     }
 }
 impl AsRef<str> for MailboxExportJobState {
@@ -3185,7 +3016,7 @@ impl AsRef<str> for MailboxExportJobState {
 /// <p>An impersonation role for the given WorkMail organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImpersonationRole {
+pub struct ImpersonationRole  {
     /// <p>The identifier of the impersonation role.</p>
     #[doc(hidden)]
     pub impersonation_role_id: std::option::Option<std::string::String>,
@@ -3204,29 +3035,29 @@ pub struct ImpersonationRole {
 }
 impl ImpersonationRole {
     /// <p>The identifier of the impersonation role.</p>
-    pub fn impersonation_role_id(&self) -> std::option::Option<&str> {
+    pub fn impersonation_role_id(&self) -> std::option::Option<& str> {
         self.impersonation_role_id.as_deref()
     }
     /// <p>The impersonation role name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The impersonation role type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ImpersonationRoleType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ImpersonationRoleType> {
         self.r#type.as_ref()
     }
     /// <p>The date when the impersonation role was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date when the impersonation role was last modified.</p>
-    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
     }
 }
 /// See [`ImpersonationRole`](crate::model::ImpersonationRole).
 pub mod impersonation_role {
-
+    
     /// A builder for [`ImpersonationRole`](crate::model::ImpersonationRole).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3243,12 +3074,8 @@ pub mod impersonation_role {
             self
         }
         /// <p>The identifier of the impersonation role.</p>
-        pub fn set_impersonation_role_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.impersonation_role_id = input;
-            self
+        pub fn set_impersonation_role_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.impersonation_role_id = input; self
         }
         /// <p>The impersonation role name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3257,8 +3084,7 @@ pub mod impersonation_role {
         }
         /// <p>The impersonation role name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The impersonation role type.</p>
         pub fn r#type(mut self, input: crate::model::ImpersonationRoleType) -> Self {
@@ -3266,12 +3092,8 @@ pub mod impersonation_role {
             self
         }
         /// <p>The impersonation role type.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::ImpersonationRoleType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ImpersonationRoleType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The date when the impersonation role was created.</p>
         pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3279,12 +3101,8 @@ pub mod impersonation_role {
             self
         }
         /// <p>The date when the impersonation role was created.</p>
-        pub fn set_date_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_created = input;
-            self
+        pub fn set_date_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_created = input; self
         }
         /// <p>The date when the impersonation role was last modified.</p>
         pub fn date_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3292,24 +3110,27 @@ pub mod impersonation_role {
             self
         }
         /// <p>The date when the impersonation role was last modified.</p>
-        pub fn set_date_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_modified = input;
-            self
+        pub fn set_date_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_modified = input; self
         }
         /// Consumes the builder and constructs a [`ImpersonationRole`](crate::model::ImpersonationRole).
         pub fn build(self) -> crate::model::ImpersonationRole {
             crate::model::ImpersonationRole {
-                impersonation_role_id: self.impersonation_role_id,
-                name: self.name,
-                r#type: self.r#type,
-                date_created: self.date_created,
-                date_modified: self.date_modified,
+                impersonation_role_id: self.impersonation_role_id
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                date_created: self.date_created
+                ,
+                date_modified: self.date_modified
+                ,
             }
         }
     }
+    
+    
 }
 impl ImpersonationRole {
     /// Creates a new builder-style object to manufacture [`ImpersonationRole`](crate::model::ImpersonationRole).
@@ -3321,7 +3142,7 @@ impl ImpersonationRole {
 /// <p>The representation of an WorkMail group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Group {
+pub struct Group  {
     /// <p>The identifier of the group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3343,33 +3164,33 @@ pub struct Group {
 }
 impl Group {
     /// <p>The identifier of the group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The email of the group.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The name of the group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state of the group, which can be ENABLED, DISABLED, or DELETED.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::EntityState> {
         self.state.as_ref()
     }
     /// <p>The date indicating when the group was enabled for WorkMail use.</p>
-    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn enabled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date indicating when the group was disabled from WorkMail use.</p>
-    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn disabled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
 }
 /// See [`Group`](crate::model::Group).
 pub mod group {
-
+    
     /// A builder for [`Group`](crate::model::Group).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3388,8 +3209,7 @@ pub mod group {
         }
         /// <p>The identifier of the group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The email of the group.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3398,8 +3218,7 @@ pub mod group {
         }
         /// <p>The email of the group.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.email = input;
-            self
+            self.email = input; self
         }
         /// <p>The name of the group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3408,8 +3227,7 @@ pub mod group {
         }
         /// <p>The name of the group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The state of the group, which can be ENABLED, DISABLED, or DELETED.</p>
         pub fn state(mut self, input: crate::model::EntityState) -> Self {
@@ -3418,8 +3236,7 @@ pub mod group {
         }
         /// <p>The state of the group, which can be ENABLED, DISABLED, or DELETED.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::EntityState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The date indicating when the group was enabled for WorkMail use.</p>
         pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3427,12 +3244,8 @@ pub mod group {
             self
         }
         /// <p>The date indicating when the group was enabled for WorkMail use.</p>
-        pub fn set_enabled_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.enabled_date = input;
-            self
+        pub fn set_enabled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.enabled_date = input; self
         }
         /// <p>The date indicating when the group was disabled from WorkMail use.</p>
         pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3440,25 +3253,29 @@ pub mod group {
             self
         }
         /// <p>The date indicating when the group was disabled from WorkMail use.</p>
-        pub fn set_disabled_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.disabled_date = input;
-            self
+        pub fn set_disabled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.disabled_date = input; self
         }
         /// Consumes the builder and constructs a [`Group`](crate::model::Group).
         pub fn build(self) -> crate::model::Group {
             crate::model::Group {
-                id: self.id,
-                email: self.email,
-                name: self.name,
-                state: self.state,
-                enabled_date: self.enabled_date,
-                disabled_date: self.disabled_date,
+                id: self.id
+                ,
+                email: self.email
+                ,
+                name: self.name
+                ,
+                state: self.state
+                ,
+                enabled_date: self.enabled_date
+                ,
+                disabled_date: self.disabled_date
+                ,
             }
         }
     }
+    
+    
 }
 impl Group {
     /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
@@ -3470,7 +3287,7 @@ impl Group {
 /// <p>The representation of a user or group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Member {
+pub struct Member  {
     /// <p>The identifier of the member.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3492,33 +3309,33 @@ pub struct Member {
 }
 impl Member {
     /// <p>The identifier of the member.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the member.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A member can be a user or group.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::MemberType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::MemberType> {
         self.r#type.as_ref()
     }
     /// <p>The state of the member, which can be ENABLED, DISABLED, or DELETED.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::EntityState> {
         self.state.as_ref()
     }
     /// <p>The date indicating when the member was enabled for WorkMail use.</p>
-    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn enabled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date indicating when the member was disabled from WorkMail use.</p>
-    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn disabled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
 }
 /// See [`Member`](crate::model::Member).
 pub mod member {
-
+    
     /// A builder for [`Member`](crate::model::Member).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3537,8 +3354,7 @@ pub mod member {
         }
         /// <p>The identifier of the member.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the member.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3547,8 +3363,7 @@ pub mod member {
         }
         /// <p>The name of the member.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A member can be a user or group.</p>
         pub fn r#type(mut self, input: crate::model::MemberType) -> Self {
@@ -3557,8 +3372,7 @@ pub mod member {
         }
         /// <p>A member can be a user or group.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::MemberType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The state of the member, which can be ENABLED, DISABLED, or DELETED.</p>
         pub fn state(mut self, input: crate::model::EntityState) -> Self {
@@ -3567,8 +3381,7 @@ pub mod member {
         }
         /// <p>The state of the member, which can be ENABLED, DISABLED, or DELETED.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::EntityState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The date indicating when the member was enabled for WorkMail use.</p>
         pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3576,12 +3389,8 @@ pub mod member {
             self
         }
         /// <p>The date indicating when the member was enabled for WorkMail use.</p>
-        pub fn set_enabled_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.enabled_date = input;
-            self
+        pub fn set_enabled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.enabled_date = input; self
         }
         /// <p>The date indicating when the member was disabled from WorkMail use.</p>
         pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3589,25 +3398,29 @@ pub mod member {
             self
         }
         /// <p>The date indicating when the member was disabled from WorkMail use.</p>
-        pub fn set_disabled_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.disabled_date = input;
-            self
+        pub fn set_disabled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.disabled_date = input; self
         }
         /// Consumes the builder and constructs a [`Member`](crate::model::Member).
         pub fn build(self) -> crate::model::Member {
             crate::model::Member {
-                id: self.id,
-                name: self.name,
-                r#type: self.r#type,
-                state: self.state,
-                enabled_date: self.enabled_date,
-                disabled_date: self.disabled_date,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                state: self.state
+                ,
+                enabled_date: self.enabled_date
+                ,
+                disabled_date: self.disabled_date
+                ,
             }
         }
     }
+    
+    
 }
 impl Member {
     /// Creates a new builder-style object to manufacture [`Member`](crate::model::Member).
@@ -3619,7 +3432,7 @@ impl Member {
 /// <p>List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AvailabilityConfiguration {
+pub struct AvailabilityConfiguration  {
     /// <p>Displays the domain to which the provider applies.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -3641,37 +3454,33 @@ pub struct AvailabilityConfiguration {
 }
 impl AvailabilityConfiguration {
     /// <p>Displays the domain to which the provider applies.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Displays the provider type that applies to this domain.</p>
-    pub fn provider_type(&self) -> std::option::Option<&crate::model::AvailabilityProviderType> {
+    pub fn provider_type(&self) -> std::option::Option<& crate::model::AvailabilityProviderType> {
         self.provider_type.as_ref()
     }
     /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
-    pub fn ews_provider(
-        &self,
-    ) -> std::option::Option<&crate::model::RedactedEwsAvailabilityProvider> {
+    pub fn ews_provider(&self) -> std::option::Option<& crate::model::RedactedEwsAvailabilityProvider> {
         self.ews_provider.as_ref()
     }
     /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
-    pub fn lambda_provider(
-        &self,
-    ) -> std::option::Option<&crate::model::LambdaAvailabilityProvider> {
+    pub fn lambda_provider(&self) -> std::option::Option<& crate::model::LambdaAvailabilityProvider> {
         self.lambda_provider.as_ref()
     }
     /// <p>The date and time at which the availability configuration was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date and time at which the availability configuration was last modified.</p>
-    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
     }
 }
 /// See [`AvailabilityConfiguration`](crate::model::AvailabilityConfiguration).
 pub mod availability_configuration {
-
+    
     /// A builder for [`AvailabilityConfiguration`](crate::model::AvailabilityConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3690,8 +3499,7 @@ pub mod availability_configuration {
         }
         /// <p>Displays the domain to which the provider applies.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>Displays the provider type that applies to this domain.</p>
         pub fn provider_type(mut self, input: crate::model::AvailabilityProviderType) -> Self {
@@ -3699,28 +3507,17 @@ pub mod availability_configuration {
             self
         }
         /// <p>Displays the provider type that applies to this domain.</p>
-        pub fn set_provider_type(
-            mut self,
-            input: std::option::Option<crate::model::AvailabilityProviderType>,
-        ) -> Self {
-            self.provider_type = input;
-            self
+        pub fn set_provider_type(mut self, input: std::option::Option<crate::model::AvailabilityProviderType>) -> Self {
+            self.provider_type = input; self
         }
         /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
-        pub fn ews_provider(
-            mut self,
-            input: crate::model::RedactedEwsAvailabilityProvider,
-        ) -> Self {
+        pub fn ews_provider(mut self, input: crate::model::RedactedEwsAvailabilityProvider) -> Self {
             self.ews_provider = Some(input);
             self
         }
         /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
-        pub fn set_ews_provider(
-            mut self,
-            input: std::option::Option<crate::model::RedactedEwsAvailabilityProvider>,
-        ) -> Self {
-            self.ews_provider = input;
-            self
+        pub fn set_ews_provider(mut self, input: std::option::Option<crate::model::RedactedEwsAvailabilityProvider>) -> Self {
+            self.ews_provider = input; self
         }
         /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
         pub fn lambda_provider(mut self, input: crate::model::LambdaAvailabilityProvider) -> Self {
@@ -3728,12 +3525,8 @@ pub mod availability_configuration {
             self
         }
         /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
-        pub fn set_lambda_provider(
-            mut self,
-            input: std::option::Option<crate::model::LambdaAvailabilityProvider>,
-        ) -> Self {
-            self.lambda_provider = input;
-            self
+        pub fn set_lambda_provider(mut self, input: std::option::Option<crate::model::LambdaAvailabilityProvider>) -> Self {
+            self.lambda_provider = input; self
         }
         /// <p>The date and time at which the availability configuration was created.</p>
         pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3741,12 +3534,8 @@ pub mod availability_configuration {
             self
         }
         /// <p>The date and time at which the availability configuration was created.</p>
-        pub fn set_date_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_created = input;
-            self
+        pub fn set_date_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_created = input; self
         }
         /// <p>The date and time at which the availability configuration was last modified.</p>
         pub fn date_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3754,25 +3543,29 @@ pub mod availability_configuration {
             self
         }
         /// <p>The date and time at which the availability configuration was last modified.</p>
-        pub fn set_date_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_modified = input;
-            self
+        pub fn set_date_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_modified = input; self
         }
         /// Consumes the builder and constructs a [`AvailabilityConfiguration`](crate::model::AvailabilityConfiguration).
         pub fn build(self) -> crate::model::AvailabilityConfiguration {
             crate::model::AvailabilityConfiguration {
-                domain_name: self.domain_name,
-                provider_type: self.provider_type,
-                ews_provider: self.ews_provider,
-                lambda_provider: self.lambda_provider,
-                date_created: self.date_created,
-                date_modified: self.date_modified,
+                domain_name: self.domain_name
+                ,
+                provider_type: self.provider_type
+                ,
+                ews_provider: self.ews_provider
+                ,
+                lambda_provider: self.lambda_provider
+                ,
+                date_created: self.date_created
+                ,
+                date_modified: self.date_modified
+                ,
             }
         }
     }
+    
+    
 }
 impl AvailabilityConfiguration {
     /// Creates a new builder-style object to manufacture [`AvailabilityConfiguration`](crate::model::AvailabilityConfiguration).
@@ -3784,7 +3577,7 @@ impl AvailabilityConfiguration {
 /// <p>Describes an EWS based availability provider when returned from the service. It does not contain the password of the endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RedactedEwsAvailabilityProvider {
+pub struct RedactedEwsAvailabilityProvider  {
     /// <p>The endpoint of the remote EWS server.</p>
     #[doc(hidden)]
     pub ews_endpoint: std::option::Option<std::string::String>,
@@ -3794,17 +3587,17 @@ pub struct RedactedEwsAvailabilityProvider {
 }
 impl RedactedEwsAvailabilityProvider {
     /// <p>The endpoint of the remote EWS server.</p>
-    pub fn ews_endpoint(&self) -> std::option::Option<&str> {
+    pub fn ews_endpoint(&self) -> std::option::Option<& str> {
         self.ews_endpoint.as_deref()
     }
     /// <p>The username used to authenticate the remote EWS server.</p>
-    pub fn ews_username(&self) -> std::option::Option<&str> {
+    pub fn ews_username(&self) -> std::option::Option<& str> {
         self.ews_username.as_deref()
     }
 }
 /// See [`RedactedEwsAvailabilityProvider`](crate::model::RedactedEwsAvailabilityProvider).
 pub mod redacted_ews_availability_provider {
-
+    
     /// A builder for [`RedactedEwsAvailabilityProvider`](crate::model::RedactedEwsAvailabilityProvider).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3819,8 +3612,7 @@ pub mod redacted_ews_availability_provider {
         }
         /// <p>The endpoint of the remote EWS server.</p>
         pub fn set_ews_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ews_endpoint = input;
-            self
+            self.ews_endpoint = input; self
         }
         /// <p>The username used to authenticate the remote EWS server.</p>
         pub fn ews_username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3829,17 +3621,20 @@ pub mod redacted_ews_availability_provider {
         }
         /// <p>The username used to authenticate the remote EWS server.</p>
         pub fn set_ews_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ews_username = input;
-            self
+            self.ews_username = input; self
         }
         /// Consumes the builder and constructs a [`RedactedEwsAvailabilityProvider`](crate::model::RedactedEwsAvailabilityProvider).
         pub fn build(self) -> crate::model::RedactedEwsAvailabilityProvider {
             crate::model::RedactedEwsAvailabilityProvider {
-                ews_endpoint: self.ews_endpoint,
-                ews_username: self.ews_username,
+                ews_endpoint: self.ews_endpoint
+                ,
+                ews_username: self.ews_username
+                ,
             }
         }
     }
+    
+    
 }
 impl RedactedEwsAvailabilityProvider {
     /// Creates a new builder-style object to manufacture [`RedactedEwsAvailabilityProvider`](crate::model::RedactedEwsAvailabilityProvider).
@@ -3854,9 +3649,9 @@ impl RedactedEwsAvailabilityProvider {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let availabilityprovidertype = unimplemented!();
 /// match availabilityprovidertype {
@@ -3878,60 +3673,52 @@ impl RedactedEwsAvailabilityProvider {
 /// Specifically, when `availabilityprovidertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AvailabilityProviderType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AvailabilityProviderType {
     #[allow(missing_docs)] // documentation missing in model
     Ews,
     #[allow(missing_docs)] // documentation missing in model
     Lambda,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AvailabilityProviderType {
     fn from(s: &str) -> Self {
         match s {
             "EWS" => AvailabilityProviderType::Ews,
             "LAMBDA" => AvailabilityProviderType::Lambda,
-            other => AvailabilityProviderType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AvailabilityProviderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AvailabilityProviderType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AvailabilityProviderType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AvailabilityProviderType::from(s))
+                }
+            }
 impl AvailabilityProviderType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AvailabilityProviderType::Ews => "EWS",
             AvailabilityProviderType::Lambda => "LAMBDA",
-            AvailabilityProviderType::Unknown(value) => value.as_str(),
+            AvailabilityProviderType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EWS", "LAMBDA"]
+        &[
+            "EWS", "LAMBDA"
+        ]
     }
 }
 impl AsRef<str> for AvailabilityProviderType {
@@ -3943,7 +3730,7 @@ impl AsRef<str> for AvailabilityProviderType {
 /// <p>A rule that controls access to an WorkMail organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessControlRule {
+pub struct AccessControlRule  {
     /// <p>The rule name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3986,61 +3773,61 @@ pub struct AccessControlRule {
 }
 impl AccessControlRule {
     /// <p>The rule name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The rule effect.</p>
-    pub fn effect(&self) -> std::option::Option<&crate::model::AccessControlRuleEffect> {
+    pub fn effect(&self) -> std::option::Option<& crate::model::AccessControlRuleEffect> {
         self.effect.as_ref()
     }
     /// <p>The rule description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>IPv4 CIDR ranges to include in the rule.</p>
-    pub fn ip_ranges(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ip_ranges(&self) -> std::option::Option<& [std::string::String]> {
         self.ip_ranges.as_deref()
     }
     /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
-    pub fn not_ip_ranges(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_ip_ranges(&self) -> std::option::Option<& [std::string::String]> {
         self.not_ip_ranges.as_deref()
     }
     /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-    pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn actions(&self) -> std::option::Option<& [std::string::String]> {
         self.actions.as_deref()
     }
     /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-    pub fn not_actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_actions(&self) -> std::option::Option<& [std::string::String]> {
         self.not_actions.as_deref()
     }
     /// <p>User IDs to include in the rule.</p>
-    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn user_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.user_ids.as_deref()
     }
     /// <p>User IDs to exclude from the rule.</p>
-    pub fn not_user_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_user_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.not_user_ids.as_deref()
     }
     /// <p>The date that the rule was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date that the rule was modified.</p>
-    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
     }
     /// <p>Impersonation role IDs to include in the rule.</p>
-    pub fn impersonation_role_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn impersonation_role_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.impersonation_role_ids.as_deref()
     }
     /// <p>Impersonation role IDs to exclude from the rule.</p>
-    pub fn not_impersonation_role_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_impersonation_role_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.not_impersonation_role_ids.as_deref()
     }
 }
 /// See [`AccessControlRule`](crate::model::AccessControlRule).
 pub mod access_control_rule {
-
+    
     /// A builder for [`AccessControlRule`](crate::model::AccessControlRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4056,8 +3843,7 @@ pub mod access_control_rule {
         pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) date_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) impersonation_role_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) not_impersonation_role_ids:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) not_impersonation_role_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The rule name.</p>
@@ -4067,8 +3853,7 @@ pub mod access_control_rule {
         }
         /// <p>The rule name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The rule effect.</p>
         pub fn effect(mut self, input: crate::model::AccessControlRuleEffect) -> Self {
@@ -4076,12 +3861,8 @@ pub mod access_control_rule {
             self
         }
         /// <p>The rule effect.</p>
-        pub fn set_effect(
-            mut self,
-            input: std::option::Option<crate::model::AccessControlRuleEffect>,
-        ) -> Self {
-            self.effect = input;
-            self
+        pub fn set_effect(mut self, input: std::option::Option<crate::model::AccessControlRuleEffect>) -> Self {
+            self.effect = input; self
         }
         /// <p>The rule description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4090,8 +3871,7 @@ pub mod access_control_rule {
         }
         /// <p>The rule description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `ip_ranges`.
         ///
@@ -4100,17 +3880,13 @@ pub mod access_control_rule {
         /// <p>IPv4 CIDR ranges to include in the rule.</p>
         pub fn ip_ranges(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ip_ranges.unwrap_or_default();
-            v.push(input.into());
-            self.ip_ranges = Some(v);
-            self
+                            v.push(input.into());
+                            self.ip_ranges = Some(v);
+                            self
         }
         /// <p>IPv4 CIDR ranges to include in the rule.</p>
-        pub fn set_ip_ranges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ip_ranges = input;
-            self
+        pub fn set_ip_ranges(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ip_ranges = input; self
         }
         /// Appends an item to `not_ip_ranges`.
         ///
@@ -4119,17 +3895,13 @@ pub mod access_control_rule {
         /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
         pub fn not_ip_ranges(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_ip_ranges.unwrap_or_default();
-            v.push(input.into());
-            self.not_ip_ranges = Some(v);
-            self
+                            v.push(input.into());
+                            self.not_ip_ranges = Some(v);
+                            self
         }
         /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
-        pub fn set_not_ip_ranges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.not_ip_ranges = input;
-            self
+        pub fn set_not_ip_ranges(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.not_ip_ranges = input; self
         }
         /// Appends an item to `actions`.
         ///
@@ -4138,17 +3910,13 @@ pub mod access_control_rule {
         /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
-            self.actions = Some(v);
-            self
+                            v.push(input.into());
+                            self.actions = Some(v);
+                            self
         }
         /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-        pub fn set_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.actions = input;
-            self
+        pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.actions = input; self
         }
         /// Appends an item to `not_actions`.
         ///
@@ -4157,17 +3925,13 @@ pub mod access_control_rule {
         /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn not_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_actions.unwrap_or_default();
-            v.push(input.into());
-            self.not_actions = Some(v);
-            self
+                            v.push(input.into());
+                            self.not_actions = Some(v);
+                            self
         }
         /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-        pub fn set_not_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.not_actions = input;
-            self
+        pub fn set_not_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.not_actions = input; self
         }
         /// Appends an item to `user_ids`.
         ///
@@ -4176,17 +3940,13 @@ pub mod access_control_rule {
         /// <p>User IDs to include in the rule.</p>
         pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_ids.unwrap_or_default();
-            v.push(input.into());
-            self.user_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.user_ids = Some(v);
+                            self
         }
         /// <p>User IDs to include in the rule.</p>
-        pub fn set_user_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.user_ids = input;
-            self
+        pub fn set_user_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.user_ids = input; self
         }
         /// Appends an item to `not_user_ids`.
         ///
@@ -4195,17 +3955,13 @@ pub mod access_control_rule {
         /// <p>User IDs to exclude from the rule.</p>
         pub fn not_user_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_user_ids.unwrap_or_default();
-            v.push(input.into());
-            self.not_user_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.not_user_ids = Some(v);
+                            self
         }
         /// <p>User IDs to exclude from the rule.</p>
-        pub fn set_not_user_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.not_user_ids = input;
-            self
+        pub fn set_not_user_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.not_user_ids = input; self
         }
         /// <p>The date that the rule was created.</p>
         pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4213,12 +3969,8 @@ pub mod access_control_rule {
             self
         }
         /// <p>The date that the rule was created.</p>
-        pub fn set_date_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_created = input;
-            self
+        pub fn set_date_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_created = input; self
         }
         /// <p>The date that the rule was modified.</p>
         pub fn date_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4226,12 +3978,8 @@ pub mod access_control_rule {
             self
         }
         /// <p>The date that the rule was modified.</p>
-        pub fn set_date_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_modified = input;
-            self
+        pub fn set_date_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_modified = input; self
         }
         /// Appends an item to `impersonation_role_ids`.
         ///
@@ -4240,17 +3988,13 @@ pub mod access_control_rule {
         /// <p>Impersonation role IDs to include in the rule.</p>
         pub fn impersonation_role_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.impersonation_role_ids.unwrap_or_default();
-            v.push(input.into());
-            self.impersonation_role_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.impersonation_role_ids = Some(v);
+                            self
         }
         /// <p>Impersonation role IDs to include in the rule.</p>
-        pub fn set_impersonation_role_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.impersonation_role_ids = input;
-            self
+        pub fn set_impersonation_role_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.impersonation_role_ids = input; self
         }
         /// Appends an item to `not_impersonation_role_ids`.
         ///
@@ -4259,37 +4003,48 @@ pub mod access_control_rule {
         /// <p>Impersonation role IDs to exclude from the rule.</p>
         pub fn not_impersonation_role_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_impersonation_role_ids.unwrap_or_default();
-            v.push(input.into());
-            self.not_impersonation_role_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.not_impersonation_role_ids = Some(v);
+                            self
         }
         /// <p>Impersonation role IDs to exclude from the rule.</p>
-        pub fn set_not_impersonation_role_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.not_impersonation_role_ids = input;
-            self
+        pub fn set_not_impersonation_role_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.not_impersonation_role_ids = input; self
         }
         /// Consumes the builder and constructs a [`AccessControlRule`](crate::model::AccessControlRule).
         pub fn build(self) -> crate::model::AccessControlRule {
             crate::model::AccessControlRule {
-                name: self.name,
-                effect: self.effect,
-                description: self.description,
-                ip_ranges: self.ip_ranges,
-                not_ip_ranges: self.not_ip_ranges,
-                actions: self.actions,
-                not_actions: self.not_actions,
-                user_ids: self.user_ids,
-                not_user_ids: self.not_user_ids,
-                date_created: self.date_created,
-                date_modified: self.date_modified,
-                impersonation_role_ids: self.impersonation_role_ids,
-                not_impersonation_role_ids: self.not_impersonation_role_ids,
+                name: self.name
+                ,
+                effect: self.effect
+                ,
+                description: self.description
+                ,
+                ip_ranges: self.ip_ranges
+                ,
+                not_ip_ranges: self.not_ip_ranges
+                ,
+                actions: self.actions
+                ,
+                not_actions: self.not_actions
+                ,
+                user_ids: self.user_ids
+                ,
+                not_user_ids: self.not_user_ids
+                ,
+                date_created: self.date_created
+                ,
+                date_modified: self.date_modified
+                ,
+                impersonation_role_ids: self.impersonation_role_ids
+                ,
+                not_impersonation_role_ids: self.not_impersonation_role_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessControlRule {
     /// Creates a new builder-style object to manufacture [`AccessControlRule`](crate::model::AccessControlRule).
@@ -4301,7 +4056,7 @@ impl AccessControlRule {
 /// <p>The rule that a simulated user matches.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MobileDeviceAccessMatchedRule {
+pub struct MobileDeviceAccessMatchedRule  {
     /// <p>Identifier of the rule that a simulated user matches.</p>
     #[doc(hidden)]
     pub mobile_device_access_rule_id: std::option::Option<std::string::String>,
@@ -4311,17 +4066,17 @@ pub struct MobileDeviceAccessMatchedRule {
 }
 impl MobileDeviceAccessMatchedRule {
     /// <p>Identifier of the rule that a simulated user matches.</p>
-    pub fn mobile_device_access_rule_id(&self) -> std::option::Option<&str> {
+    pub fn mobile_device_access_rule_id(&self) -> std::option::Option<& str> {
         self.mobile_device_access_rule_id.as_deref()
     }
     /// <p>Name of a rule that a simulated user matches.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`MobileDeviceAccessMatchedRule`](crate::model::MobileDeviceAccessMatchedRule).
 pub mod mobile_device_access_matched_rule {
-
+    
     /// A builder for [`MobileDeviceAccessMatchedRule`](crate::model::MobileDeviceAccessMatchedRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4330,20 +4085,13 @@ pub mod mobile_device_access_matched_rule {
     }
     impl Builder {
         /// <p>Identifier of the rule that a simulated user matches.</p>
-        pub fn mobile_device_access_rule_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn mobile_device_access_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.mobile_device_access_rule_id = Some(input.into());
             self
         }
         /// <p>Identifier of the rule that a simulated user matches.</p>
-        pub fn set_mobile_device_access_rule_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.mobile_device_access_rule_id = input;
-            self
+        pub fn set_mobile_device_access_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mobile_device_access_rule_id = input; self
         }
         /// <p>Name of a rule that a simulated user matches.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4352,17 +4100,20 @@ pub mod mobile_device_access_matched_rule {
         }
         /// <p>Name of a rule that a simulated user matches.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`MobileDeviceAccessMatchedRule`](crate::model::MobileDeviceAccessMatchedRule).
         pub fn build(self) -> crate::model::MobileDeviceAccessMatchedRule {
             crate::model::MobileDeviceAccessMatchedRule {
-                mobile_device_access_rule_id: self.mobile_device_access_rule_id,
-                name: self.name,
+                mobile_device_access_rule_id: self.mobile_device_access_rule_id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl MobileDeviceAccessMatchedRule {
     /// Creates a new builder-style object to manufacture [`MobileDeviceAccessMatchedRule`](crate::model::MobileDeviceAccessMatchedRule).
@@ -4377,9 +4128,9 @@ impl MobileDeviceAccessMatchedRule {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dnsrecordverificationstatus = unimplemented!();
 /// match dnsrecordverificationstatus {
@@ -4402,22 +4153,14 @@ impl MobileDeviceAccessMatchedRule {
 /// Specifically, when `dnsrecordverificationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DnsRecordVerificationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DnsRecordVerificationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -4426,7 +4169,7 @@ pub enum DnsRecordVerificationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Verified,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DnsRecordVerificationStatus {
     fn from(s: &str) -> Self {
@@ -4434,19 +4177,17 @@ impl std::convert::From<&str> for DnsRecordVerificationStatus {
             "FAILED" => DnsRecordVerificationStatus::Failed,
             "PENDING" => DnsRecordVerificationStatus::Pending,
             "VERIFIED" => DnsRecordVerificationStatus::Verified,
-            other => DnsRecordVerificationStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DnsRecordVerificationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DnsRecordVerificationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DnsRecordVerificationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DnsRecordVerificationStatus::from(s))
+                }
+            }
 impl DnsRecordVerificationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4454,12 +4195,14 @@ impl DnsRecordVerificationStatus {
             DnsRecordVerificationStatus::Failed => "FAILED",
             DnsRecordVerificationStatus::Pending => "PENDING",
             DnsRecordVerificationStatus::Verified => "VERIFIED",
-            DnsRecordVerificationStatus::Unknown(value) => value.as_str(),
+            DnsRecordVerificationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "PENDING", "VERIFIED"]
+        &[
+            "FAILED", "PENDING", "VERIFIED"
+        ]
     }
 }
 impl AsRef<str> for DnsRecordVerificationStatus {
@@ -4471,7 +4214,7 @@ impl AsRef<str> for DnsRecordVerificationStatus {
 /// <p>A DNS record uploaded to your DNS provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DnsRecord {
+pub struct DnsRecord  {
     /// <p>The RFC 1035 record type. Possible values: <code>CNAME</code>, <code>A</code>, <code>MX</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -4484,21 +4227,21 @@ pub struct DnsRecord {
 }
 impl DnsRecord {
     /// <p>The RFC 1035 record type. Possible values: <code>CNAME</code>, <code>A</code>, <code>MX</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The DNS hostname.- For example, <code>domain.example.com</code>.</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>The value returned by the DNS for a query to that hostname and record type.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`DnsRecord`](crate::model::DnsRecord).
 pub mod dns_record {
-
+    
     /// A builder for [`DnsRecord`](crate::model::DnsRecord).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4514,8 +4257,7 @@ pub mod dns_record {
         }
         /// <p>The RFC 1035 record type. Possible values: <code>CNAME</code>, <code>A</code>, <code>MX</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The DNS hostname.- For example, <code>domain.example.com</code>.</p>
         pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4524,8 +4266,7 @@ pub mod dns_record {
         }
         /// <p>The DNS hostname.- For example, <code>domain.example.com</code>.</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hostname = input;
-            self
+            self.hostname = input; self
         }
         /// <p>The value returned by the DNS for a query to that hostname and record type.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4534,18 +4275,22 @@ pub mod dns_record {
         }
         /// <p>The value returned by the DNS for a query to that hostname and record type.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`DnsRecord`](crate::model::DnsRecord).
         pub fn build(self) -> crate::model::DnsRecord {
             crate::model::DnsRecord {
-                r#type: self.r#type,
-                hostname: self.hostname,
-                value: self.value,
+                r#type: self.r#type
+                ,
+                hostname: self.hostname
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl DnsRecord {
     /// Creates a new builder-style object to manufacture [`DnsRecord`](crate::model::DnsRecord).
@@ -4557,7 +4302,7 @@ impl DnsRecord {
 /// <p>The impersonation rule that matched the input.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImpersonationMatchedRule {
+pub struct ImpersonationMatchedRule  {
     /// <p>The ID of the rule that matched the input</p>
     #[doc(hidden)]
     pub impersonation_rule_id: std::option::Option<std::string::String>,
@@ -4567,17 +4312,17 @@ pub struct ImpersonationMatchedRule {
 }
 impl ImpersonationMatchedRule {
     /// <p>The ID of the rule that matched the input</p>
-    pub fn impersonation_rule_id(&self) -> std::option::Option<&str> {
+    pub fn impersonation_rule_id(&self) -> std::option::Option<& str> {
         self.impersonation_rule_id.as_deref()
     }
     /// <p>The name of the rule that matched the input.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`ImpersonationMatchedRule`](crate::model::ImpersonationMatchedRule).
 pub mod impersonation_matched_rule {
-
+    
     /// A builder for [`ImpersonationMatchedRule`](crate::model::ImpersonationMatchedRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4591,12 +4336,8 @@ pub mod impersonation_matched_rule {
             self
         }
         /// <p>The ID of the rule that matched the input</p>
-        pub fn set_impersonation_rule_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.impersonation_rule_id = input;
-            self
+        pub fn set_impersonation_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.impersonation_rule_id = input; self
         }
         /// <p>The name of the rule that matched the input.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4605,17 +4346,20 @@ pub mod impersonation_matched_rule {
         }
         /// <p>The name of the rule that matched the input.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`ImpersonationMatchedRule`](crate::model::ImpersonationMatchedRule).
         pub fn build(self) -> crate::model::ImpersonationMatchedRule {
             crate::model::ImpersonationMatchedRule {
-                impersonation_rule_id: self.impersonation_rule_id,
-                name: self.name,
+                impersonation_rule_id: self.impersonation_rule_id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl ImpersonationMatchedRule {
     /// Creates a new builder-style object to manufacture [`ImpersonationMatchedRule`](crate::model::ImpersonationMatchedRule).
@@ -4624,11 +4368,11 @@ impl ImpersonationMatchedRule {
     }
 }
 
-/// <p>The domain to associate with an WorkMail organization.</p>
+/// <p>The domain to associate with an WorkMail organization.</p> 
 /// <p>When you configure a domain hosted in Amazon Route 53 (Route 53), all recommended DNS records are added to the organization when you create it. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a domain</a> in the <i>WorkMail Administrator Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Domain {
+pub struct Domain  {
     /// <p>The fully qualified domain name.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -4638,17 +4382,17 @@ pub struct Domain {
 }
 impl Domain {
     /// <p>The fully qualified domain name.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
 }
 /// See [`Domain`](crate::model::Domain).
 pub mod domain {
-
+    
     /// A builder for [`Domain`](crate::model::Domain).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4663,8 +4407,7 @@ pub mod domain {
         }
         /// <p>The fully qualified domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>
         pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4672,21 +4415,21 @@ pub mod domain {
             self
         }
         /// <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>
-        pub fn set_hosted_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hosted_zone_id = input;
-            self
+        pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hosted_zone_id = input; self
         }
         /// Consumes the builder and constructs a [`Domain`](crate::model::Domain).
         pub fn build(self) -> crate::model::Domain {
             crate::model::Domain {
-                domain_name: self.domain_name,
-                hosted_zone_id: self.hosted_zone_id,
+                domain_name: self.domain_name
+                ,
+                hosted_zone_id: self.hosted_zone_id
+                ,
             }
         }
     }
+    
+    
 }
 impl Domain {
     /// Creates a new builder-style object to manufacture [`Domain`](crate::model::Domain).
@@ -4694,3 +4437,4 @@ impl Domain {
         crate::model::domain::Builder::default()
     }
 }
+

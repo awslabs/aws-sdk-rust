@@ -7,7 +7,7 @@ pub enum Error {
     ExpiredTokenException(crate::error::ExpiredTokenException),
     /// <p>The request could not be fulfilled because the identity provider (IDP) that was asked to verify the incoming identity token could not be reached. This is often a transient error caused by network conditions. Retry the request a limited number of times so that you don't exceed the request rate. If the error persists, the identity provider might be down or not responding.</p>
     IdpCommunicationErrorException(crate::error::IdpCommunicationErrorException),
-    /// <p>The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.</p>
+    /// <p>The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.</p> 
     /// <p>If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it can also mean that the claim has expired or has been explicitly revoked. </p>
     IdpRejectedClaimException(crate::error::IdpRejectedClaimException),
     /// <p>The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks. </p>
@@ -16,20 +16,20 @@ pub enum Error {
     InvalidIdentityTokenException(crate::error::InvalidIdentityTokenException),
     /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p> 
     /// <p>You could receive this error even though you meet other defined session policy and session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
     /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -42,19 +42,14 @@ impl std::fmt::Display for Error {
             Error::MalformedPolicyDocumentException(inner) => inner.fmt(f),
             Error::PackedPolicyTooLargeException(inner) => inner.fmt(f),
             Error::RegionDisabledException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssumeRoleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssumeRoleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AssumeRoleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -62,35 +57,18 @@ where
 impl From<crate::error::AssumeRoleError> for Error {
     fn from(err: crate::error::AssumeRoleError) -> Self {
         match err.kind {
-            crate::error::AssumeRoleErrorKind::ExpiredTokenException(inner) => {
-                Error::ExpiredTokenException(inner)
-            }
-            crate::error::AssumeRoleErrorKind::MalformedPolicyDocumentException(inner) => {
-                Error::MalformedPolicyDocumentException(inner)
-            }
-            crate::error::AssumeRoleErrorKind::PackedPolicyTooLargeException(inner) => {
-                Error::PackedPolicyTooLargeException(inner)
-            }
-            crate::error::AssumeRoleErrorKind::RegionDisabledException(inner) => {
-                Error::RegionDisabledException(inner)
-            }
-            crate::error::AssumeRoleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::AssumeRoleErrorKind::ExpiredTokenException(inner) => Error::ExpiredTokenException(inner),
+            crate::error::AssumeRoleErrorKind::MalformedPolicyDocumentException(inner) => Error::MalformedPolicyDocumentException(inner),
+            crate::error::AssumeRoleErrorKind::PackedPolicyTooLargeException(inner) => Error::PackedPolicyTooLargeException(inner),
+            crate::error::AssumeRoleErrorKind::RegionDisabledException(inner) => Error::RegionDisabledException(inner),
+            crate::error::AssumeRoleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssumeRoleWithSAMLError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AssumeRoleWithSAMLError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssumeRoleWithSAMLError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::AssumeRoleWithSAMLError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -98,42 +76,20 @@ where
 impl From<crate::error::AssumeRoleWithSAMLError> for Error {
     fn from(err: crate::error::AssumeRoleWithSAMLError) -> Self {
         match err.kind {
-            crate::error::AssumeRoleWithSAMLErrorKind::ExpiredTokenException(inner) => {
-                Error::ExpiredTokenException(inner)
-            }
-            crate::error::AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException(inner) => {
-                Error::IdpRejectedClaimException(inner)
-            }
-            crate::error::AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException(inner) => {
-                Error::InvalidIdentityTokenException(inner)
-            }
-            crate::error::AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException(inner) => {
-                Error::MalformedPolicyDocumentException(inner)
-            }
-            crate::error::AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException(inner) => {
-                Error::PackedPolicyTooLargeException(inner)
-            }
-            crate::error::AssumeRoleWithSAMLErrorKind::RegionDisabledException(inner) => {
-                Error::RegionDisabledException(inner)
-            }
-            crate::error::AssumeRoleWithSAMLErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::AssumeRoleWithSAMLErrorKind::ExpiredTokenException(inner) => Error::ExpiredTokenException(inner),
+            crate::error::AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException(inner) => Error::IdpRejectedClaimException(inner),
+            crate::error::AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException(inner) => Error::InvalidIdentityTokenException(inner),
+            crate::error::AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException(inner) => Error::MalformedPolicyDocumentException(inner),
+            crate::error::AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException(inner) => Error::PackedPolicyTooLargeException(inner),
+            crate::error::AssumeRoleWithSAMLErrorKind::RegionDisabledException(inner) => Error::RegionDisabledException(inner),
+            crate::error::AssumeRoleWithSAMLErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssumeRoleWithWebIdentityError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AssumeRoleWithWebIdentityError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssumeRoleWithWebIdentityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::AssumeRoleWithWebIdentityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -141,45 +97,21 @@ where
 impl From<crate::error::AssumeRoleWithWebIdentityError> for Error {
     fn from(err: crate::error::AssumeRoleWithWebIdentityError) -> Self {
         match err.kind {
-            crate::error::AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException(inner) => {
-                Error::ExpiredTokenException(inner)
-            }
-            crate::error::AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(
-                inner,
-            ) => Error::IdpCommunicationErrorException(inner),
-            crate::error::AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException(inner) => {
-                Error::IdpRejectedClaimException(inner)
-            }
-            crate::error::AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException(
-                inner,
-            ) => Error::InvalidIdentityTokenException(inner),
-            crate::error::AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException(
-                inner,
-            ) => Error::MalformedPolicyDocumentException(inner),
-            crate::error::AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException(
-                inner,
-            ) => Error::PackedPolicyTooLargeException(inner),
-            crate::error::AssumeRoleWithWebIdentityErrorKind::RegionDisabledException(inner) => {
-                Error::RegionDisabledException(inner)
-            }
-            crate::error::AssumeRoleWithWebIdentityErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException(inner) => Error::ExpiredTokenException(inner),
+            crate::error::AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(inner) => Error::IdpCommunicationErrorException(inner),
+            crate::error::AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException(inner) => Error::IdpRejectedClaimException(inner),
+            crate::error::AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException(inner) => Error::InvalidIdentityTokenException(inner),
+            crate::error::AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException(inner) => Error::MalformedPolicyDocumentException(inner),
+            crate::error::AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException(inner) => Error::PackedPolicyTooLargeException(inner),
+            crate::error::AssumeRoleWithWebIdentityErrorKind::RegionDisabledException(inner) => Error::RegionDisabledException(inner),
+            crate::error::AssumeRoleWithWebIdentityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DecodeAuthorizationMessageError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DecodeAuthorizationMessageError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DecodeAuthorizationMessageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DecodeAuthorizationMessageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -192,17 +124,10 @@ impl From<crate::error::DecodeAuthorizationMessageError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAccessKeyInfoError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetAccessKeyInfoError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAccessKeyInfoError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAccessKeyInfoError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -210,23 +135,14 @@ where
 impl From<crate::error::GetAccessKeyInfoError> for Error {
     fn from(err: crate::error::GetAccessKeyInfoError) -> Self {
         match err.kind {
-            crate::error::GetAccessKeyInfoErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetAccessKeyInfoErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCallerIdentityError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetCallerIdentityError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCallerIdentityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCallerIdentityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -234,23 +150,14 @@ where
 impl From<crate::error::GetCallerIdentityError> for Error {
     fn from(err: crate::error::GetCallerIdentityError) -> Self {
         match err.kind {
-            crate::error::GetCallerIdentityErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetCallerIdentityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFederationTokenError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetFederationTokenError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFederationTokenError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFederationTokenError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -258,30 +165,17 @@ where
 impl From<crate::error::GetFederationTokenError> for Error {
     fn from(err: crate::error::GetFederationTokenError) -> Self {
         match err.kind {
-            crate::error::GetFederationTokenErrorKind::MalformedPolicyDocumentException(inner) => {
-                Error::MalformedPolicyDocumentException(inner)
-            }
-            crate::error::GetFederationTokenErrorKind::PackedPolicyTooLargeException(inner) => {
-                Error::PackedPolicyTooLargeException(inner)
-            }
-            crate::error::GetFederationTokenErrorKind::RegionDisabledException(inner) => {
-                Error::RegionDisabledException(inner)
-            }
-            crate::error::GetFederationTokenErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetFederationTokenErrorKind::MalformedPolicyDocumentException(inner) => Error::MalformedPolicyDocumentException(inner),
+            crate::error::GetFederationTokenErrorKind::PackedPolicyTooLargeException(inner) => Error::PackedPolicyTooLargeException(inner),
+            crate::error::GetFederationTokenErrorKind::RegionDisabledException(inner) => Error::RegionDisabledException(inner),
+            crate::error::GetFederationTokenErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSessionTokenError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSessionTokenError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSessionTokenError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -289,13 +183,10 @@ where
 impl From<crate::error::GetSessionTokenError> for Error {
     fn from(err: crate::error::GetSessionTokenError) -> Self {
         match err.kind {
-            crate::error::GetSessionTokenErrorKind::RegionDisabledException(inner) => {
-                Error::RegionDisabledException(inner)
-            }
-            crate::error::GetSessionTokenErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetSessionTokenErrorKind::RegionDisabledException(inner) => Error::RegionDisabledException(inner),
+            crate::error::GetSessionTokenErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
 impl std::error::Error for Error {}
+

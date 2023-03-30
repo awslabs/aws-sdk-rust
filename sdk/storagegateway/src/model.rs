@@ -3,38 +3,32 @@
 /// <p>Provides additional information about an error that was returned by the service. See the <code>errorCode</code> and <code>errorDetails</code> members for more information about the error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageGatewayError {
+pub struct StorageGatewayError  {
     /// <p>Additional information about the error.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>Human-readable text that provides detail about the error that occurred.</p>
     #[doc(hidden)]
-    pub error_details:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub error_details: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StorageGatewayError {
     /// <p>Additional information about the error.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>Human-readable text that provides detail about the error that occurred.</p>
-    pub fn error_details(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn error_details(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.error_details.as_ref()
     }
 }
 /// See [`StorageGatewayError`](crate::model::StorageGatewayError).
 pub mod storage_gateway_error {
-
+    
     /// A builder for [`StorageGatewayError`](crate::model::StorageGatewayError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
-        pub(crate) error_details: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) error_details: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Additional information about the error.</p>
@@ -43,46 +37,36 @@ pub mod storage_gateway_error {
             self
         }
         /// <p>Additional information about the error.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::ErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// Adds a key-value pair to `error_details`.
         ///
         /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
         ///
         /// <p>Human-readable text that provides detail about the error that occurred.</p>
-        pub fn error_details(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn error_details(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.error_details.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.error_details = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.error_details = Some(hash_map);
+                            self
         }
         /// <p>Human-readable text that provides detail about the error that occurred.</p>
-        pub fn set_error_details(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.error_details = input;
-            self
+        pub fn set_error_details(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.error_details = input; self
         }
         /// Consumes the builder and constructs a [`StorageGatewayError`](crate::model::StorageGatewayError).
         pub fn build(self) -> crate::model::StorageGatewayError {
             crate::model::StorageGatewayError {
-                error_code: self.error_code,
-                error_details: self.error_details,
+                error_code: self.error_code
+                ,
+                error_details: self.error_details
+                ,
             }
         }
     }
+    
+    
 }
 impl StorageGatewayError {
     /// Creates a new builder-style object to manufacture [`StorageGatewayError`](crate::model::StorageGatewayError).
@@ -97,9 +81,9 @@ impl StorageGatewayError {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let errorcode = unimplemented!();
 /// match errorcode {
@@ -181,22 +165,14 @@ impl StorageGatewayError {
 /// Specifically, when `errorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     ActivationKeyExpired,
@@ -323,7 +299,7 @@ pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     VolumeNotReady,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
@@ -390,17 +366,17 @@ impl std::convert::From<&str> for ErrorCode {
             "VolumeInUse" => ErrorCode::VolumeInUse,
             "VolumeNotFound" => ErrorCode::VolumeNotFound,
             "VolumeNotReady" => ErrorCode::VolumeNotReady,
-            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ErrorCode::from(s))
+                }
+            }
 impl ErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -467,74 +443,13 @@ impl ErrorCode {
             ErrorCode::VolumeInUse => "VolumeInUse",
             ErrorCode::VolumeNotFound => "VolumeNotFound",
             ErrorCode::VolumeNotReady => "VolumeNotReady",
-            ErrorCode::Unknown(value) => value.as_str(),
+            ErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ActivationKeyExpired",
-            "ActivationKeyInvalid",
-            "ActivationKeyNotFound",
-            "AuthenticationFailure",
-            "BandwidthThrottleScheduleNotFound",
-            "Blocked",
-            "CannotExportSnapshot",
-            "ChapCredentialNotFound",
-            "DiskAlreadyAllocated",
-            "DiskDoesNotExist",
-            "DiskSizeGreaterThanVolumeMaxSize",
-            "DiskSizeLessThanVolumeSize",
-            "DiskSizeNotGigAligned",
-            "DuplicateCertificateInfo",
-            "DuplicateSchedule",
-            "EndpointNotFound",
-            "GatewayInternalError",
-            "GatewayNotConnected",
-            "GatewayNotFound",
-            "GatewayProxyNetworkConnectionBusy",
-            "IAMNotSupported",
-            "InitiatorInvalid",
-            "InitiatorNotFound",
-            "InternalError",
-            "InvalidEndpoint",
-            "InvalidGateway",
-            "InvalidParameters",
-            "InvalidSchedule",
-            "JoinDomainInProgress",
-            "LocalStorageLimitExceeded",
-            "LunAlreadyAllocated ",
-            "LunInvalid",
-            "MaximumContentLengthExceeded",
-            "MaximumTapeCartridgeCountExceeded",
-            "MaximumVolumeCountExceeded",
-            "NetworkConfigurationChanged",
-            "NoDisksAvailable",
-            "NotImplemented",
-            "NotSupported",
-            "OperationAborted",
-            "OutdatedGateway",
-            "ParametersNotImplemented",
-            "RegionInvalid",
-            "RequestTimeout",
-            "ServiceUnavailable",
-            "SnapshotDeleted",
-            "SnapshotIdInvalid",
-            "SnapshotInProgress",
-            "SnapshotNotFound",
-            "SnapshotScheduleNotFound",
-            "StagingAreaFull",
-            "StorageFailure",
-            "TapeCartridgeNotFound",
-            "TargetAlreadyExists",
-            "TargetInvalid",
-            "TargetNotFound",
-            "UnauthorizedOperation",
-            "VolumeAlreadyExists",
-            "VolumeIdInvalid",
-            "VolumeInUse",
-            "VolumeNotFound",
-            "VolumeNotReady",
+            "ActivationKeyExpired", "ActivationKeyInvalid", "ActivationKeyNotFound", "AuthenticationFailure", "BandwidthThrottleScheduleNotFound", "Blocked", "CannotExportSnapshot", "ChapCredentialNotFound", "DiskAlreadyAllocated", "DiskDoesNotExist", "DiskSizeGreaterThanVolumeMaxSize", "DiskSizeLessThanVolumeSize", "DiskSizeNotGigAligned", "DuplicateCertificateInfo", "DuplicateSchedule", "EndpointNotFound", "GatewayInternalError", "GatewayNotConnected", "GatewayNotFound", "GatewayProxyNetworkConnectionBusy", "IAMNotSupported", "InitiatorInvalid", "InitiatorNotFound", "InternalError", "InvalidEndpoint", "InvalidGateway", "InvalidParameters", "InvalidSchedule", "JoinDomainInProgress", "LocalStorageLimitExceeded", "LunAlreadyAllocated ", "LunInvalid", "MaximumContentLengthExceeded", "MaximumTapeCartridgeCountExceeded", "MaximumVolumeCountExceeded", "NetworkConfigurationChanged", "NoDisksAvailable", "NotImplemented", "NotSupported", "OperationAborted", "OutdatedGateway", "ParametersNotImplemented", "RegionInvalid", "RequestTimeout", "ServiceUnavailable", "SnapshotDeleted", "SnapshotIdInvalid", "SnapshotInProgress", "SnapshotNotFound", "SnapshotScheduleNotFound", "StagingAreaFull", "StorageFailure", "TapeCartridgeNotFound", "TargetAlreadyExists", "TargetInvalid", "TargetNotFound", "UnauthorizedOperation", "VolumeAlreadyExists", "VolumeIdInvalid", "VolumeInUse", "VolumeNotFound", "VolumeNotReady"
         ]
     }
 }
@@ -547,7 +462,7 @@ impl AsRef<str> for ErrorCode {
 /// <p>A key-value pair that helps you manage, filter, and search for your resource. Allowed characters: letters, white space, and numbers, representable in UTF-8, and the following characters: + - = . _ : /.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>Tag key. The key can't start with aws:.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -557,17 +472,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>Tag key. The key can't start with aws:.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>Value of the tag key.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -582,8 +497,7 @@ pub mod tag {
         }
         /// <p>Tag key. The key can't start with aws:.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>Value of the tag key.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -592,17 +506,20 @@ pub mod tag {
         }
         /// <p>Value of the tag key.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -617,9 +534,9 @@ impl Tag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let smbsecuritystrategy = unimplemented!();
 /// match smbsecuritystrategy {
@@ -642,22 +559,14 @@ impl Tag {
 /// Specifically, when `smbsecuritystrategy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SmbSecurityStrategy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SmbSecurityStrategy {
     #[allow(missing_docs)] // documentation missing in model
     ClientSpecified,
@@ -666,7 +575,7 @@ pub enum SmbSecurityStrategy {
     #[allow(missing_docs)] // documentation missing in model
     MandatorySigning,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SmbSecurityStrategy {
     fn from(s: &str) -> Self {
@@ -674,19 +583,17 @@ impl std::convert::From<&str> for SmbSecurityStrategy {
             "ClientSpecified" => SmbSecurityStrategy::ClientSpecified,
             "MandatoryEncryption" => SmbSecurityStrategy::MandatoryEncryption,
             "MandatorySigning" => SmbSecurityStrategy::MandatorySigning,
-            other => {
-                SmbSecurityStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SmbSecurityStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SmbSecurityStrategy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SmbSecurityStrategy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SmbSecurityStrategy::from(s))
+                }
+            }
 impl SmbSecurityStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -694,12 +601,14 @@ impl SmbSecurityStrategy {
             SmbSecurityStrategy::ClientSpecified => "ClientSpecified",
             SmbSecurityStrategy::MandatoryEncryption => "MandatoryEncryption",
             SmbSecurityStrategy::MandatorySigning => "MandatorySigning",
-            SmbSecurityStrategy::Unknown(value) => value.as_str(),
+            SmbSecurityStrategy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ClientSpecified", "MandatoryEncryption", "MandatorySigning"]
+        &[
+            "ClientSpecified", "MandatoryEncryption", "MandatorySigning"
+        ]
     }
 }
 impl AsRef<str> for SmbSecurityStrategy {
@@ -711,22 +620,22 @@ impl AsRef<str> for SmbSecurityStrategy {
 /// <p>A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SmbLocalGroups {
-    /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p>
+pub struct SmbLocalGroups  {
+    /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p> 
     /// <p>Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to force-close files that are open and locked.</p>
     #[doc(hidden)]
     pub gateway_admins: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SmbLocalGroups {
-    /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p>
+    /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p> 
     /// <p>Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to force-close files that are open and locked.</p>
-    pub fn gateway_admins(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn gateway_admins(&self) -> std::option::Option<& [std::string::String]> {
         self.gateway_admins.as_deref()
     }
 }
 /// See [`SmbLocalGroups`](crate::model::SmbLocalGroups).
 pub mod smb_local_groups {
-
+    
     /// A builder for [`SmbLocalGroups`](crate::model::SmbLocalGroups).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -737,30 +646,29 @@ pub mod smb_local_groups {
         ///
         /// To override the contents of this collection use [`set_gateway_admins`](Self::set_gateway_admins).
         ///
-        /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p>
+        /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p> 
         /// <p>Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to force-close files that are open and locked.</p>
         pub fn gateway_admins(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.gateway_admins.unwrap_or_default();
-            v.push(input.into());
-            self.gateway_admins = Some(v);
-            self
+                            v.push(input.into());
+                            self.gateway_admins = Some(v);
+                            self
         }
-        /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p>
+        /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p> 
         /// <p>Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to force-close files that are open and locked.</p>
-        pub fn set_gateway_admins(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.gateway_admins = input;
-            self
+        pub fn set_gateway_admins(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.gateway_admins = input; self
         }
         /// Consumes the builder and constructs a [`SmbLocalGroups`](crate::model::SmbLocalGroups).
         pub fn build(self) -> crate::model::SmbLocalGroups {
             crate::model::SmbLocalGroups {
-                gateway_admins: self.gateway_admins,
+                gateway_admins: self.gateway_admins
+                ,
             }
         }
     }
+    
+    
 }
 impl SmbLocalGroups {
     /// Creates a new builder-style object to manufacture [`SmbLocalGroups`](crate::model::SmbLocalGroups).
@@ -772,14 +680,14 @@ impl SmbLocalGroups {
 /// <p>The refresh cache information for the file share or FSx file systems.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CacheAttributes {
-    /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p>
+pub struct CacheAttributes  {
+    /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p> 
     /// <p>Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
     #[doc(hidden)]
     pub cache_stale_timeout_in_seconds: std::option::Option<i32>,
 }
 impl CacheAttributes {
-    /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p>
+    /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p> 
     /// <p>Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
     pub fn cache_stale_timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.cache_stale_timeout_in_seconds
@@ -787,35 +695,34 @@ impl CacheAttributes {
 }
 /// See [`CacheAttributes`](crate::model::CacheAttributes).
 pub mod cache_attributes {
-
+    
     /// A builder for [`CacheAttributes`](crate::model::CacheAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_stale_timeout_in_seconds: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p>
+        /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p> 
         /// <p>Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
         pub fn cache_stale_timeout_in_seconds(mut self, input: i32) -> Self {
             self.cache_stale_timeout_in_seconds = Some(input);
             self
         }
-        /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p>
+        /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p> 
         /// <p>Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
-        pub fn set_cache_stale_timeout_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.cache_stale_timeout_in_seconds = input;
-            self
+        pub fn set_cache_stale_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.cache_stale_timeout_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`CacheAttributes`](crate::model::CacheAttributes).
         pub fn build(self) -> crate::model::CacheAttributes {
             crate::model::CacheAttributes {
-                cache_stale_timeout_in_seconds: self.cache_stale_timeout_in_seconds,
+                cache_stale_timeout_in_seconds: self.cache_stale_timeout_in_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl CacheAttributes {
     /// Creates a new builder-style object to manufacture [`CacheAttributes`](crate::model::CacheAttributes).
@@ -830,9 +737,9 @@ impl CacheAttributes {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let casesensitivity = unimplemented!();
 /// match casesensitivity {
@@ -854,58 +761,52 @@ impl CacheAttributes {
 /// Specifically, when `casesensitivity` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CaseSensitivity::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CaseSensitivity {
     #[allow(missing_docs)] // documentation missing in model
     CaseSensitive,
     #[allow(missing_docs)] // documentation missing in model
     ClientSpecified,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CaseSensitivity {
     fn from(s: &str) -> Self {
         match s {
             "CaseSensitive" => CaseSensitivity::CaseSensitive,
             "ClientSpecified" => CaseSensitivity::ClientSpecified,
-            other => CaseSensitivity::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CaseSensitivity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CaseSensitivity {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CaseSensitivity::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CaseSensitivity::from(s))
+                }
+            }
 impl CaseSensitivity {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CaseSensitivity::CaseSensitive => "CaseSensitive",
             CaseSensitivity::ClientSpecified => "ClientSpecified",
-            CaseSensitivity::Unknown(value) => value.as_str(),
+            CaseSensitivity::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CaseSensitive", "ClientSpecified"]
+        &[
+            "CaseSensitive", "ClientSpecified"
+        ]
     }
 }
 impl AsRef<str> for CaseSensitivity {
@@ -920,9 +821,9 @@ impl AsRef<str> for CaseSensitivity {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let objectacl = unimplemented!();
 /// match objectacl {
@@ -949,7 +850,7 @@ impl AsRef<str> for CaseSensitivity {
 /// Specifically, when `objectacl` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ObjectAcl::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -958,15 +859,7 @@ impl AsRef<str> for CaseSensitivity {
 /// that an S3 File Gateway puts objects into. The default value is
 /// <code>private</code>.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ObjectAcl {
     #[allow(missing_docs)] // documentation missing in model
     AuthenticatedRead,
@@ -983,7 +876,7 @@ pub enum ObjectAcl {
     #[allow(missing_docs)] // documentation missing in model
     PublicReadWrite,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ObjectAcl {
     fn from(s: &str) -> Self {
@@ -995,17 +888,17 @@ impl std::convert::From<&str> for ObjectAcl {
             "private" => ObjectAcl::Private,
             "public-read" => ObjectAcl::PublicRead,
             "public-read-write" => ObjectAcl::PublicReadWrite,
-            other => ObjectAcl::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ObjectAcl::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ObjectAcl {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ObjectAcl::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ObjectAcl::from(s))
+                }
+            }
 impl ObjectAcl {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1017,19 +910,13 @@ impl ObjectAcl {
             ObjectAcl::Private => "private",
             ObjectAcl::PublicRead => "public-read",
             ObjectAcl::PublicReadWrite => "public-read-write",
-            ObjectAcl::Unknown(value) => value.as_str(),
+            ObjectAcl::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "authenticated-read",
-            "aws-exec-read",
-            "bucket-owner-full-control",
-            "bucket-owner-read",
-            "private",
-            "public-read",
-            "public-read-write",
+            "authenticated-read", "aws-exec-read", "bucket-owner-full-control", "bucket-owner-read", "private", "public-read", "public-read-write"
         ]
     }
 }
@@ -1042,7 +929,7 @@ impl AsRef<str> for ObjectAcl {
 /// <p>Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for S3 File Gateways.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NfsFileShareDefaults {
+pub struct NfsFileShareDefaults  {
     /// <p>The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode inside the file share. The default value is <code>0666</code>.</p>
     #[doc(hidden)]
     pub file_mode: std::option::Option<std::string::String>,
@@ -1058,11 +945,11 @@ pub struct NfsFileShareDefaults {
 }
 impl NfsFileShareDefaults {
     /// <p>The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode inside the file share. The default value is <code>0666</code>.</p>
-    pub fn file_mode(&self) -> std::option::Option<&str> {
+    pub fn file_mode(&self) -> std::option::Option<& str> {
         self.file_mode.as_deref()
     }
     /// <p>The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access mode for all directories inside the file share. The default value is <code>0777</code>.</p>
-    pub fn directory_mode(&self) -> std::option::Option<&str> {
+    pub fn directory_mode(&self) -> std::option::Option<& str> {
         self.directory_mode.as_deref()
     }
     /// <p>The default group ID for the file share (unless the files have another group ID specified). The default value is <code>nfsnobody</code>.</p>
@@ -1076,7 +963,7 @@ impl NfsFileShareDefaults {
 }
 /// See [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults).
 pub mod nfs_file_share_defaults {
-
+    
     /// A builder for [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1093,8 +980,7 @@ pub mod nfs_file_share_defaults {
         }
         /// <p>The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode inside the file share. The default value is <code>0666</code>.</p>
         pub fn set_file_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.file_mode = input;
-            self
+            self.file_mode = input; self
         }
         /// <p>The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access mode for all directories inside the file share. The default value is <code>0777</code>.</p>
         pub fn directory_mode(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1102,12 +988,8 @@ pub mod nfs_file_share_defaults {
             self
         }
         /// <p>The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access mode for all directories inside the file share. The default value is <code>0777</code>.</p>
-        pub fn set_directory_mode(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.directory_mode = input;
-            self
+        pub fn set_directory_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_mode = input; self
         }
         /// <p>The default group ID for the file share (unless the files have another group ID specified). The default value is <code>nfsnobody</code>.</p>
         pub fn group_id(mut self, input: i64) -> Self {
@@ -1116,8 +998,7 @@ pub mod nfs_file_share_defaults {
         }
         /// <p>The default group ID for the file share (unless the files have another group ID specified). The default value is <code>nfsnobody</code>.</p>
         pub fn set_group_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.group_id = input;
-            self
+            self.group_id = input; self
         }
         /// <p>The default owner ID for files in the file share (unless the files have another owner ID specified). The default value is <code>nfsnobody</code>.</p>
         pub fn owner_id(mut self, input: i64) -> Self {
@@ -1126,19 +1007,24 @@ pub mod nfs_file_share_defaults {
         }
         /// <p>The default owner ID for files in the file share (unless the files have another owner ID specified). The default value is <code>nfsnobody</code>.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.owner_id = input;
-            self
+            self.owner_id = input; self
         }
         /// Consumes the builder and constructs a [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults).
         pub fn build(self) -> crate::model::NfsFileShareDefaults {
             crate::model::NfsFileShareDefaults {
-                file_mode: self.file_mode,
-                directory_mode: self.directory_mode,
-                group_id: self.group_id,
-                owner_id: self.owner_id,
+                file_mode: self.file_mode
+                ,
+                directory_mode: self.directory_mode
+                ,
+                group_id: self.group_id
+                ,
+                owner_id: self.owner_id
+                ,
             }
         }
     }
+    
+    
 }
 impl NfsFileShareDefaults {
     /// Creates a new builder-style object to manufacture [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults).
@@ -1153,9 +1039,9 @@ impl NfsFileShareDefaults {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let gatewaycapacity = unimplemented!();
 /// match gatewaycapacity {
@@ -1178,22 +1064,14 @@ impl NfsFileShareDefaults {
 /// Specifically, when `gatewaycapacity` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GatewayCapacity::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GatewayCapacity {
     #[allow(missing_docs)] // documentation missing in model
     Large,
@@ -1202,7 +1080,7 @@ pub enum GatewayCapacity {
     #[allow(missing_docs)] // documentation missing in model
     Small,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GatewayCapacity {
     fn from(s: &str) -> Self {
@@ -1210,17 +1088,17 @@ impl std::convert::From<&str> for GatewayCapacity {
             "Large" => GatewayCapacity::Large,
             "Medium" => GatewayCapacity::Medium,
             "Small" => GatewayCapacity::Small,
-            other => GatewayCapacity::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => GatewayCapacity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GatewayCapacity {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GatewayCapacity::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GatewayCapacity::from(s))
+                }
+            }
 impl GatewayCapacity {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1228,12 +1106,14 @@ impl GatewayCapacity {
             GatewayCapacity::Large => "Large",
             GatewayCapacity::Medium => "Medium",
             GatewayCapacity::Small => "Small",
-            GatewayCapacity::Unknown(value) => value.as_str(),
+            GatewayCapacity::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Large", "Medium", "Small"]
+        &[
+            "Large", "Medium", "Small"
+        ]
     }
 }
 impl AsRef<str> for GatewayCapacity {
@@ -1245,7 +1125,7 @@ impl AsRef<str> for GatewayCapacity {
 /// <p> Describes a bandwidth rate limit interval for a gateway. A bandwidth rate limit schedule consists of one or more bandwidth rate limit intervals. A bandwidth rate limit interval defines a period of time on one or more days of the week, during which bandwidth rate limits are specified for uploading, downloading, or both. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BandwidthRateLimitInterval {
+pub struct BandwidthRateLimitInterval  {
     /// <p> The hour of the day to start the bandwidth rate limit interval. </p>
     #[doc(hidden)]
     pub start_hour_of_day: std::option::Option<i32>,
@@ -1255,8 +1135,8 @@ pub struct BandwidthRateLimitInterval {
     /// <p> The hour of the day to end the bandwidth rate limit interval. </p>
     #[doc(hidden)]
     pub end_hour_of_day: std::option::Option<i32>,
-    /// <p> The minute of the hour to end the bandwidth rate limit interval. </p> <important>
-    /// <p> The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>. </p>
+    /// <p> The minute of the hour to end the bandwidth rate limit interval. </p> <important> 
+    /// <p> The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>. </p> 
     /// </important>
     #[doc(hidden)]
     pub end_minute_of_hour: std::option::Option<i32>,
@@ -1283,14 +1163,14 @@ impl BandwidthRateLimitInterval {
     pub fn end_hour_of_day(&self) -> std::option::Option<i32> {
         self.end_hour_of_day
     }
-    /// <p> The minute of the hour to end the bandwidth rate limit interval. </p> <important>
-    /// <p> The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>. </p>
+    /// <p> The minute of the hour to end the bandwidth rate limit interval. </p> <important> 
+    /// <p> The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>. </p> 
     /// </important>
     pub fn end_minute_of_hour(&self) -> std::option::Option<i32> {
         self.end_minute_of_hour
     }
     /// <p> The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday. </p>
-    pub fn days_of_week(&self) -> std::option::Option<&[i32]> {
+    pub fn days_of_week(&self) -> std::option::Option<& [i32]> {
         self.days_of_week.as_deref()
     }
     /// <p> The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set. </p>
@@ -1304,7 +1184,7 @@ impl BandwidthRateLimitInterval {
 }
 /// See [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
 pub mod bandwidth_rate_limit_interval {
-
+    
     /// A builder for [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1324,8 +1204,7 @@ pub mod bandwidth_rate_limit_interval {
         }
         /// <p> The hour of the day to start the bandwidth rate limit interval. </p>
         pub fn set_start_hour_of_day(mut self, input: std::option::Option<i32>) -> Self {
-            self.start_hour_of_day = input;
-            self
+            self.start_hour_of_day = input; self
         }
         /// <p> The minute of the hour to start the bandwidth rate limit interval. The interval begins at the start of that minute. To begin an interval exactly at the start of the hour, use the value <code>0</code>. </p>
         pub fn start_minute_of_hour(mut self, input: i32) -> Self {
@@ -1334,8 +1213,7 @@ pub mod bandwidth_rate_limit_interval {
         }
         /// <p> The minute of the hour to start the bandwidth rate limit interval. The interval begins at the start of that minute. To begin an interval exactly at the start of the hour, use the value <code>0</code>. </p>
         pub fn set_start_minute_of_hour(mut self, input: std::option::Option<i32>) -> Self {
-            self.start_minute_of_hour = input;
-            self
+            self.start_minute_of_hour = input; self
         }
         /// <p> The hour of the day to end the bandwidth rate limit interval. </p>
         pub fn end_hour_of_day(mut self, input: i32) -> Self {
@@ -1344,22 +1222,20 @@ pub mod bandwidth_rate_limit_interval {
         }
         /// <p> The hour of the day to end the bandwidth rate limit interval. </p>
         pub fn set_end_hour_of_day(mut self, input: std::option::Option<i32>) -> Self {
-            self.end_hour_of_day = input;
-            self
+            self.end_hour_of_day = input; self
         }
-        /// <p> The minute of the hour to end the bandwidth rate limit interval. </p> <important>
-        /// <p> The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>. </p>
+        /// <p> The minute of the hour to end the bandwidth rate limit interval. </p> <important> 
+        /// <p> The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>. </p> 
         /// </important>
         pub fn end_minute_of_hour(mut self, input: i32) -> Self {
             self.end_minute_of_hour = Some(input);
             self
         }
-        /// <p> The minute of the hour to end the bandwidth rate limit interval. </p> <important>
-        /// <p> The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>. </p>
+        /// <p> The minute of the hour to end the bandwidth rate limit interval. </p> <important> 
+        /// <p> The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>. </p> 
         /// </important>
         pub fn set_end_minute_of_hour(mut self, input: std::option::Option<i32>) -> Self {
-            self.end_minute_of_hour = input;
-            self
+            self.end_minute_of_hour = input; self
         }
         /// Appends an item to `days_of_week`.
         ///
@@ -1368,14 +1244,13 @@ pub mod bandwidth_rate_limit_interval {
         /// <p> The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday. </p>
         pub fn days_of_week(mut self, input: i32) -> Self {
             let mut v = self.days_of_week.unwrap_or_default();
-            v.push(input);
-            self.days_of_week = Some(v);
-            self
+                            v.push(input);
+                            self.days_of_week = Some(v);
+                            self
         }
         /// <p> The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday. </p>
         pub fn set_days_of_week(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
-            self.days_of_week = input;
-            self
+            self.days_of_week = input; self
         }
         /// <p> The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set. </p>
         pub fn average_upload_rate_limit_in_bits_per_sec(mut self, input: i64) -> Self {
@@ -1383,12 +1258,8 @@ pub mod bandwidth_rate_limit_interval {
             self
         }
         /// <p> The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set. </p>
-        pub fn set_average_upload_rate_limit_in_bits_per_sec(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.average_upload_rate_limit_in_bits_per_sec = input;
-            self
+        pub fn set_average_upload_rate_limit_in_bits_per_sec(mut self, input: std::option::Option<i64>) -> Self {
+            self.average_upload_rate_limit_in_bits_per_sec = input; self
         }
         /// <p> The average download rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the download rate limit is not set. </p>
         pub fn average_download_rate_limit_in_bits_per_sec(mut self, input: i64) -> Self {
@@ -1396,28 +1267,31 @@ pub mod bandwidth_rate_limit_interval {
             self
         }
         /// <p> The average download rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the download rate limit is not set. </p>
-        pub fn set_average_download_rate_limit_in_bits_per_sec(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.average_download_rate_limit_in_bits_per_sec = input;
-            self
+        pub fn set_average_download_rate_limit_in_bits_per_sec(mut self, input: std::option::Option<i64>) -> Self {
+            self.average_download_rate_limit_in_bits_per_sec = input; self
         }
         /// Consumes the builder and constructs a [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
         pub fn build(self) -> crate::model::BandwidthRateLimitInterval {
             crate::model::BandwidthRateLimitInterval {
-                start_hour_of_day: self.start_hour_of_day,
-                start_minute_of_hour: self.start_minute_of_hour,
-                end_hour_of_day: self.end_hour_of_day,
-                end_minute_of_hour: self.end_minute_of_hour,
-                days_of_week: self.days_of_week,
-                average_upload_rate_limit_in_bits_per_sec: self
-                    .average_upload_rate_limit_in_bits_per_sec,
-                average_download_rate_limit_in_bits_per_sec: self
-                    .average_download_rate_limit_in_bits_per_sec,
+                start_hour_of_day: self.start_hour_of_day
+                ,
+                start_minute_of_hour: self.start_minute_of_hour
+                ,
+                end_hour_of_day: self.end_hour_of_day
+                ,
+                end_minute_of_hour: self.end_minute_of_hour
+                ,
+                days_of_week: self.days_of_week
+                ,
+                average_upload_rate_limit_in_bits_per_sec: self.average_upload_rate_limit_in_bits_per_sec
+                ,
+                average_download_rate_limit_in_bits_per_sec: self.average_download_rate_limit_in_bits_per_sec
+                ,
             }
         }
     }
+    
+    
 }
 impl BandwidthRateLimitInterval {
     /// Creates a new builder-style object to manufacture [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
@@ -1429,9 +1303,9 @@ impl BandwidthRateLimitInterval {
 /// <p>An automatic tape creation policy consists of automatic tape creation rules where each rule defines when and how to create new tapes. For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating Tapes Automatically</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutomaticTapeCreationRule {
-    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
-    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
+pub struct AutomaticTapeCreationRule  {
+    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note> 
+    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p> 
     /// </note>
     #[doc(hidden)]
     pub tape_barcode_prefix: std::option::Option<std::string::String>,
@@ -1449,14 +1323,14 @@ pub struct AutomaticTapeCreationRule {
     pub worm: bool,
 }
 impl AutomaticTapeCreationRule {
-    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
-    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
+    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note> 
+    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p> 
     /// </note>
-    pub fn tape_barcode_prefix(&self) -> std::option::Option<&str> {
+    pub fn tape_barcode_prefix(&self) -> std::option::Option<& str> {
         self.tape_barcode_prefix.as_deref()
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the Amazon S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The size, in bytes, of the virtual tape capacity.</p>
@@ -1474,7 +1348,7 @@ impl AutomaticTapeCreationRule {
 }
 /// See [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule).
 pub mod automatic_tape_creation_rule {
-
+    
     /// A builder for [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1485,22 +1359,18 @@ pub mod automatic_tape_creation_rule {
         pub(crate) worm: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
-        /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
+        /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note> 
+        /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p> 
         /// </note>
         pub fn tape_barcode_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.tape_barcode_prefix = Some(input.into());
             self
         }
-        /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
-        /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
+        /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note> 
+        /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p> 
         /// </note>
-        pub fn set_tape_barcode_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.tape_barcode_prefix = input;
-            self
+        pub fn set_tape_barcode_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tape_barcode_prefix = input; self
         }
         /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the Amazon S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1509,8 +1379,7 @@ pub mod automatic_tape_creation_rule {
         }
         /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the Amazon S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// <p>The size, in bytes, of the virtual tape capacity.</p>
         pub fn tape_size_in_bytes(mut self, input: i64) -> Self {
@@ -1519,8 +1388,7 @@ pub mod automatic_tape_creation_rule {
         }
         /// <p>The size, in bytes, of the virtual tape capacity.</p>
         pub fn set_tape_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.tape_size_in_bytes = input;
-            self
+            self.tape_size_in_bytes = input; self
         }
         /// <p>The minimum number of available virtual tapes that the gateway maintains at all times. If the number of tapes on the gateway goes below this value, the gateway creates as many new tapes as are needed to have <code>MinimumNumTapes</code> on the gateway. For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating Tapes Automatically</a>.</p>
         pub fn minimum_num_tapes(mut self, input: i32) -> Self {
@@ -1529,8 +1397,7 @@ pub mod automatic_tape_creation_rule {
         }
         /// <p>The minimum number of available virtual tapes that the gateway maintains at all times. If the number of tapes on the gateway goes below this value, the gateway creates as many new tapes as are needed to have <code>MinimumNumTapes</code> on the gateway. For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating Tapes Automatically</a>.</p>
         pub fn set_minimum_num_tapes(mut self, input: std::option::Option<i32>) -> Self {
-            self.minimum_num_tapes = input;
-            self
+            self.minimum_num_tapes = input; self
         }
         /// <p>Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled for tapes.</p>
         pub fn worm(mut self, input: bool) -> Self {
@@ -1539,20 +1406,27 @@ pub mod automatic_tape_creation_rule {
         }
         /// <p>Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled for tapes.</p>
         pub fn set_worm(mut self, input: std::option::Option<bool>) -> Self {
-            self.worm = input;
-            self
+            self.worm = input; self
         }
         /// Consumes the builder and constructs a [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule).
         pub fn build(self) -> crate::model::AutomaticTapeCreationRule {
             crate::model::AutomaticTapeCreationRule {
-                tape_barcode_prefix: self.tape_barcode_prefix,
-                pool_id: self.pool_id,
-                tape_size_in_bytes: self.tape_size_in_bytes,
-                minimum_num_tapes: self.minimum_num_tapes,
-                worm: self.worm.unwrap_or_default(),
+                tape_barcode_prefix: self.tape_barcode_prefix
+                ,
+                pool_id: self.pool_id
+                ,
+                tape_size_in_bytes: self.tape_size_in_bytes
+                ,
+                minimum_num_tapes: self.minimum_num_tapes
+                ,
+                worm: self.worm
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AutomaticTapeCreationRule {
     /// Creates a new builder-style object to manufacture [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule).
@@ -1564,27 +1438,27 @@ impl AutomaticTapeCreationRule {
 /// <p>Describes a storage volume object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VolumeInfo {
-    /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
-    /// <p> <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code> </p>
+pub struct VolumeInfo  {
+    /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p> 
+    /// <p> <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code> </p> 
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
-    /// <p>The unique identifier assigned to the volume. This ID becomes part of the volume Amazon Resource Name (ARN), which you use as input for other operations.</p>
+    /// <p>The unique identifier assigned to the volume. This ID becomes part of the volume Amazon Resource Name (ARN), which you use as input for other operations.</p> 
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     #[doc(hidden)]
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
-    /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
+    /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p> 
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>One of the VolumeType enumeration values describing the type of the volume.</p>
     #[doc(hidden)]
     pub volume_type: std::option::Option<std::string::String>,
-    /// <p>The size of the volume in bytes.</p>
+    /// <p>The size of the volume in bytes.</p> 
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     #[doc(hidden)]
     pub volume_size_in_bytes: i64,
@@ -1593,43 +1467,43 @@ pub struct VolumeInfo {
     pub volume_attachment_status: std::option::Option<std::string::String>,
 }
 impl VolumeInfo {
-    /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
-    /// <p> <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code> </p>
+    /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p> 
+    /// <p> <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code> </p> 
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
-    pub fn volume_arn(&self) -> std::option::Option<&str> {
+    pub fn volume_arn(&self) -> std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
-    /// <p>The unique identifier assigned to the volume. This ID becomes part of the volume Amazon Resource Name (ARN), which you use as input for other operations.</p>
+    /// <p>The unique identifier assigned to the volume. This ID becomes part of the volume Amazon Resource Name (ARN), which you use as input for other operations.</p> 
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
-    /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
+    /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p> 
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>One of the VolumeType enumeration values describing the type of the volume.</p>
-    pub fn volume_type(&self) -> std::option::Option<&str> {
+    pub fn volume_type(&self) -> std::option::Option<& str> {
         self.volume_type.as_deref()
     }
-    /// <p>The size of the volume in bytes.</p>
+    /// <p>The size of the volume in bytes.</p> 
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     pub fn volume_size_in_bytes(&self) -> i64 {
         self.volume_size_in_bytes
     }
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
-    pub fn volume_attachment_status(&self) -> std::option::Option<&str> {
+    pub fn volume_attachment_status(&self) -> std::option::Option<& str> {
         self.volume_attachment_status.as_deref()
     }
 }
 /// See [`VolumeInfo`](crate::model::VolumeInfo).
 pub mod volume_info {
-
+    
     /// A builder for [`VolumeInfo`](crate::model::VolumeInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1642,31 +1516,29 @@ pub mod volume_info {
         pub(crate) volume_attachment_status: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
-        /// <p> <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code> </p>
+        /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p> 
+        /// <p> <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code> </p> 
         /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
         pub fn volume_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
-        /// <p> <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code> </p>
+        /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p> 
+        /// <p> <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code> </p> 
         /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
         pub fn set_volume_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_arn = input;
-            self
+            self.volume_arn = input; self
         }
-        /// <p>The unique identifier assigned to the volume. This ID becomes part of the volume Amazon Resource Name (ARN), which you use as input for other operations.</p>
+        /// <p>The unique identifier assigned to the volume. This ID becomes part of the volume Amazon Resource Name (ARN), which you use as input for other operations.</p> 
         /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
         pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier assigned to the volume. This ID becomes part of the volume Amazon Resource Name (ARN), which you use as input for other operations.</p>
+        /// <p>The unique identifier assigned to the volume. This ID becomes part of the volume Amazon Resource Name (ARN), which you use as input for other operations.</p> 
         /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_id = input;
-            self
+            self.volume_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1675,20 +1547,18 @@ pub mod volume_info {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
-        /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
+        /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p> 
         /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
         pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
+        /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p> 
         /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
         pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_id = input;
-            self
+            self.gateway_id = input; self
         }
         /// <p>One of the VolumeType enumeration values describing the type of the volume.</p>
         pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1697,20 +1567,18 @@ pub mod volume_info {
         }
         /// <p>One of the VolumeType enumeration values describing the type of the volume.</p>
         pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_type = input;
-            self
+            self.volume_type = input; self
         }
-        /// <p>The size of the volume in bytes.</p>
+        /// <p>The size of the volume in bytes.</p> 
         /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
         pub fn volume_size_in_bytes(mut self, input: i64) -> Self {
             self.volume_size_in_bytes = Some(input);
             self
         }
-        /// <p>The size of the volume in bytes.</p>
+        /// <p>The size of the volume in bytes.</p> 
         /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
         pub fn set_volume_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.volume_size_in_bytes = input;
-            self
+            self.volume_size_in_bytes = input; self
         }
         /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
         pub fn volume_attachment_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1718,26 +1586,32 @@ pub mod volume_info {
             self
         }
         /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
-        pub fn set_volume_attachment_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.volume_attachment_status = input;
-            self
+        pub fn set_volume_attachment_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_attachment_status = input; self
         }
         /// Consumes the builder and constructs a [`VolumeInfo`](crate::model::VolumeInfo).
         pub fn build(self) -> crate::model::VolumeInfo {
             crate::model::VolumeInfo {
-                volume_arn: self.volume_arn,
-                volume_id: self.volume_id,
-                gateway_arn: self.gateway_arn,
-                gateway_id: self.gateway_id,
-                volume_type: self.volume_type,
-                volume_size_in_bytes: self.volume_size_in_bytes.unwrap_or_default(),
-                volume_attachment_status: self.volume_attachment_status,
+                volume_arn: self.volume_arn
+                ,
+                volume_id: self.volume_id
+                ,
+                gateway_arn: self.gateway_arn
+                ,
+                gateway_id: self.gateway_id
+                ,
+                volume_type: self.volume_type
+                ,
+                volume_size_in_bytes: self.volume_size_in_bytes
+                    .unwrap_or_default()
+                ,
+                volume_attachment_status: self.volume_attachment_status
+                ,
             }
         }
     }
+    
+    
 }
 impl VolumeInfo {
     /// Creates a new builder-style object to manufacture [`VolumeInfo`](crate::model::VolumeInfo).
@@ -1749,15 +1623,15 @@ impl VolumeInfo {
 /// <p>Describes a storage volume recovery point object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VolumeRecoveryPointInfo {
+pub struct VolumeRecoveryPointInfo  {
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
     #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
     /// <p>The size of the volume in bytes.</p>
     #[doc(hidden)]
     pub volume_size_in_bytes: i64,
-    /// <p>The size of the data stored on the volume in bytes.</p> <note>
-    /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
+    /// <p>The size of the data stored on the volume in bytes.</p> <note> 
+    /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p> 
     /// </note>
     #[doc(hidden)]
     pub volume_usage_in_bytes: i64,
@@ -1767,27 +1641,27 @@ pub struct VolumeRecoveryPointInfo {
 }
 impl VolumeRecoveryPointInfo {
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
-    pub fn volume_arn(&self) -> std::option::Option<&str> {
+    pub fn volume_arn(&self) -> std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
     /// <p>The size of the volume in bytes.</p>
     pub fn volume_size_in_bytes(&self) -> i64 {
         self.volume_size_in_bytes
     }
-    /// <p>The size of the data stored on the volume in bytes.</p> <note>
-    /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
+    /// <p>The size of the data stored on the volume in bytes.</p> <note> 
+    /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p> 
     /// </note>
     pub fn volume_usage_in_bytes(&self) -> i64 {
         self.volume_usage_in_bytes
     }
     /// <p>The time the recovery point was taken.</p>
-    pub fn volume_recovery_point_time(&self) -> std::option::Option<&str> {
+    pub fn volume_recovery_point_time(&self) -> std::option::Option<& str> {
         self.volume_recovery_point_time.as_deref()
     }
 }
 /// See [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo).
 pub mod volume_recovery_point_info {
-
+    
     /// A builder for [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1804,8 +1678,7 @@ pub mod volume_recovery_point_info {
         }
         /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
         pub fn set_volume_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_arn = input;
-            self
+            self.volume_arn = input; self
         }
         /// <p>The size of the volume in bytes.</p>
         pub fn volume_size_in_bytes(mut self, input: i64) -> Self {
@@ -1814,22 +1687,20 @@ pub mod volume_recovery_point_info {
         }
         /// <p>The size of the volume in bytes.</p>
         pub fn set_volume_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.volume_size_in_bytes = input;
-            self
+            self.volume_size_in_bytes = input; self
         }
-        /// <p>The size of the data stored on the volume in bytes.</p> <note>
-        /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
+        /// <p>The size of the data stored on the volume in bytes.</p> <note> 
+        /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p> 
         /// </note>
         pub fn volume_usage_in_bytes(mut self, input: i64) -> Self {
             self.volume_usage_in_bytes = Some(input);
             self
         }
-        /// <p>The size of the data stored on the volume in bytes.</p> <note>
-        /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
+        /// <p>The size of the data stored on the volume in bytes.</p> <note> 
+        /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p> 
         /// </note>
         pub fn set_volume_usage_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.volume_usage_in_bytes = input;
-            self
+            self.volume_usage_in_bytes = input; self
         }
         /// <p>The time the recovery point was taken.</p>
         pub fn volume_recovery_point_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1837,23 +1708,27 @@ pub mod volume_recovery_point_info {
             self
         }
         /// <p>The time the recovery point was taken.</p>
-        pub fn set_volume_recovery_point_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.volume_recovery_point_time = input;
-            self
+        pub fn set_volume_recovery_point_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_recovery_point_time = input; self
         }
         /// Consumes the builder and constructs a [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo).
         pub fn build(self) -> crate::model::VolumeRecoveryPointInfo {
             crate::model::VolumeRecoveryPointInfo {
-                volume_arn: self.volume_arn,
-                volume_size_in_bytes: self.volume_size_in_bytes.unwrap_or_default(),
-                volume_usage_in_bytes: self.volume_usage_in_bytes.unwrap_or_default(),
-                volume_recovery_point_time: self.volume_recovery_point_time,
+                volume_arn: self.volume_arn
+                ,
+                volume_size_in_bytes: self.volume_size_in_bytes
+                    .unwrap_or_default()
+                ,
+                volume_usage_in_bytes: self.volume_usage_in_bytes
+                    .unwrap_or_default()
+                ,
+                volume_recovery_point_time: self.volume_recovery_point_time
+                ,
             }
         }
     }
+    
+    
 }
 impl VolumeRecoveryPointInfo {
     /// Creates a new builder-style object to manufacture [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo).
@@ -1865,7 +1740,7 @@ impl VolumeRecoveryPointInfo {
 /// <p>Describes a virtual tape.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TapeInfo {
+pub struct TapeInfo  {
     /// <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
     #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
@@ -1893,11 +1768,11 @@ pub struct TapeInfo {
 }
 impl TapeInfo {
     /// <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
-    pub fn tape_arn(&self) -> std::option::Option<&str> {
+    pub fn tape_arn(&self) -> std::option::Option<& str> {
         self.tape_arn.as_deref()
     }
     /// <p>The barcode that identifies a specific virtual tape.</p>
-    pub fn tape_barcode(&self) -> std::option::Option<&str> {
+    pub fn tape_barcode(&self) -> std::option::Option<& str> {
         self.tape_barcode.as_deref()
     }
     /// <p>The size, in bytes, of a virtual tape.</p>
@@ -1905,29 +1780,29 @@ impl TapeInfo {
         self.tape_size_in_bytes
     }
     /// <p>The status of the tape.</p>
-    pub fn tape_status(&self) -> std::option::Option<&str> {
+    pub fn tape_status(&self) -> std::option::Option<& str> {
         self.tape_status.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The date that the tape became subject to tape retention lock.</p>
-    pub fn retention_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn retention_start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.retention_start_date.as_ref()
     }
     /// <p>The date that the tape entered the custom tape pool with tape retention lock enabled.</p>
-    pub fn pool_entry_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn pool_entry_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.pool_entry_date.as_ref()
     }
 }
 /// See [`TapeInfo`](crate::model::TapeInfo).
 pub mod tape_info {
-
+    
     /// A builder for [`TapeInfo`](crate::model::TapeInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1948,8 +1823,7 @@ pub mod tape_info {
         }
         /// <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
         pub fn set_tape_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tape_arn = input;
-            self
+            self.tape_arn = input; self
         }
         /// <p>The barcode that identifies a specific virtual tape.</p>
         pub fn tape_barcode(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1958,8 +1832,7 @@ pub mod tape_info {
         }
         /// <p>The barcode that identifies a specific virtual tape.</p>
         pub fn set_tape_barcode(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tape_barcode = input;
-            self
+            self.tape_barcode = input; self
         }
         /// <p>The size, in bytes, of a virtual tape.</p>
         pub fn tape_size_in_bytes(mut self, input: i64) -> Self {
@@ -1968,8 +1841,7 @@ pub mod tape_info {
         }
         /// <p>The size, in bytes, of a virtual tape.</p>
         pub fn set_tape_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.tape_size_in_bytes = input;
-            self
+            self.tape_size_in_bytes = input; self
         }
         /// <p>The status of the tape.</p>
         pub fn tape_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1978,8 +1850,7 @@ pub mod tape_info {
         }
         /// <p>The status of the tape.</p>
         pub fn set_tape_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tape_status = input;
-            self
+            self.tape_status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1988,8 +1859,7 @@ pub mod tape_info {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1998,8 +1868,7 @@ pub mod tape_info {
         }
         /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// <p>The date that the tape became subject to tape retention lock.</p>
         pub fn retention_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2007,12 +1876,8 @@ pub mod tape_info {
             self
         }
         /// <p>The date that the tape became subject to tape retention lock.</p>
-        pub fn set_retention_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.retention_start_date = input;
-            self
+        pub fn set_retention_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.retention_start_date = input; self
         }
         /// <p>The date that the tape entered the custom tape pool with tape retention lock enabled.</p>
         pub fn pool_entry_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2020,27 +1885,33 @@ pub mod tape_info {
             self
         }
         /// <p>The date that the tape entered the custom tape pool with tape retention lock enabled.</p>
-        pub fn set_pool_entry_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.pool_entry_date = input;
-            self
+        pub fn set_pool_entry_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.pool_entry_date = input; self
         }
         /// Consumes the builder and constructs a [`TapeInfo`](crate::model::TapeInfo).
         pub fn build(self) -> crate::model::TapeInfo {
             crate::model::TapeInfo {
-                tape_arn: self.tape_arn,
-                tape_barcode: self.tape_barcode,
-                tape_size_in_bytes: self.tape_size_in_bytes,
-                tape_status: self.tape_status,
-                gateway_arn: self.gateway_arn,
-                pool_id: self.pool_id,
-                retention_start_date: self.retention_start_date,
-                pool_entry_date: self.pool_entry_date,
+                tape_arn: self.tape_arn
+                ,
+                tape_barcode: self.tape_barcode
+                ,
+                tape_size_in_bytes: self.tape_size_in_bytes
+                ,
+                tape_status: self.tape_status
+                ,
+                gateway_arn: self.gateway_arn
+                ,
+                pool_id: self.pool_id
+                ,
+                retention_start_date: self.retention_start_date
+                ,
+                pool_entry_date: self.pool_entry_date
+                ,
             }
         }
     }
+    
+    
 }
 impl TapeInfo {
     /// Creates a new builder-style object to manufacture [`TapeInfo`](crate::model::TapeInfo).
@@ -2052,7 +1923,7 @@ impl TapeInfo {
 /// <p>Describes a custom tape pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PoolInfo {
+pub struct PoolInfo  {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the <code>ListTapePools</code> operation to return a list of custom tape pools for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
@@ -2074,19 +1945,19 @@ pub struct PoolInfo {
 }
 impl PoolInfo {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the <code>ListTapePools</code> operation to return a list of custom tape pools for your account and Amazon Web Services Region.</p>
-    pub fn pool_arn(&self) -> std::option::Option<&str> {
+    pub fn pool_arn(&self) -> std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
     /// <p>The name of the custom tape pool. <code>PoolName</code> can use all ASCII characters, except '/' and '\'.</p>
-    pub fn pool_name(&self) -> std::option::Option<&str> {
+    pub fn pool_name(&self) -> std::option::Option<& str> {
         self.pool_name.as_deref()
     }
     /// <p>The storage class that is associated with the custom pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    pub fn storage_class(&self) -> std::option::Option<&crate::model::TapeStorageClass> {
+    pub fn storage_class(&self) -> std::option::Option<& crate::model::TapeStorageClass> {
         self.storage_class.as_ref()
     }
     /// <p>Tape retention lock type, which can be configured in two modes. When configured in governance mode, Amazon Web Services accounts with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
-    pub fn retention_lock_type(&self) -> std::option::Option<&crate::model::RetentionLockType> {
+    pub fn retention_lock_type(&self) -> std::option::Option<& crate::model::RetentionLockType> {
         self.retention_lock_type.as_ref()
     }
     /// <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to 100 years (36,500 days).</p>
@@ -2094,13 +1965,13 @@ impl PoolInfo {
         self.retention_lock_time_in_days
     }
     /// <p>Status of the custom tape pool. Pool can be <code>ACTIVE</code> or <code>DELETED</code>.</p>
-    pub fn pool_status(&self) -> std::option::Option<&crate::model::PoolStatus> {
+    pub fn pool_status(&self) -> std::option::Option<& crate::model::PoolStatus> {
         self.pool_status.as_ref()
     }
 }
 /// See [`PoolInfo`](crate::model::PoolInfo).
 pub mod pool_info {
-
+    
     /// A builder for [`PoolInfo`](crate::model::PoolInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2119,8 +1990,7 @@ pub mod pool_info {
         }
         /// <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the <code>ListTapePools</code> operation to return a list of custom tape pools for your account and Amazon Web Services Region.</p>
         pub fn set_pool_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_arn = input;
-            self
+            self.pool_arn = input; self
         }
         /// <p>The name of the custom tape pool. <code>PoolName</code> can use all ASCII characters, except '/' and '\'.</p>
         pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2129,8 +1999,7 @@ pub mod pool_info {
         }
         /// <p>The name of the custom tape pool. <code>PoolName</code> can use all ASCII characters, except '/' and '\'.</p>
         pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_name = input;
-            self
+            self.pool_name = input; self
         }
         /// <p>The storage class that is associated with the custom pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
         pub fn storage_class(mut self, input: crate::model::TapeStorageClass) -> Self {
@@ -2138,12 +2007,8 @@ pub mod pool_info {
             self
         }
         /// <p>The storage class that is associated with the custom pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-        pub fn set_storage_class(
-            mut self,
-            input: std::option::Option<crate::model::TapeStorageClass>,
-        ) -> Self {
-            self.storage_class = input;
-            self
+        pub fn set_storage_class(mut self, input: std::option::Option<crate::model::TapeStorageClass>) -> Self {
+            self.storage_class = input; self
         }
         /// <p>Tape retention lock type, which can be configured in two modes. When configured in governance mode, Amazon Web Services accounts with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
         pub fn retention_lock_type(mut self, input: crate::model::RetentionLockType) -> Self {
@@ -2151,12 +2016,8 @@ pub mod pool_info {
             self
         }
         /// <p>Tape retention lock type, which can be configured in two modes. When configured in governance mode, Amazon Web Services accounts with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
-        pub fn set_retention_lock_type(
-            mut self,
-            input: std::option::Option<crate::model::RetentionLockType>,
-        ) -> Self {
-            self.retention_lock_type = input;
-            self
+        pub fn set_retention_lock_type(mut self, input: std::option::Option<crate::model::RetentionLockType>) -> Self {
+            self.retention_lock_type = input; self
         }
         /// <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to 100 years (36,500 days).</p>
         pub fn retention_lock_time_in_days(mut self, input: i32) -> Self {
@@ -2165,8 +2026,7 @@ pub mod pool_info {
         }
         /// <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to 100 years (36,500 days).</p>
         pub fn set_retention_lock_time_in_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.retention_lock_time_in_days = input;
-            self
+            self.retention_lock_time_in_days = input; self
         }
         /// <p>Status of the custom tape pool. Pool can be <code>ACTIVE</code> or <code>DELETED</code>.</p>
         pub fn pool_status(mut self, input: crate::model::PoolStatus) -> Self {
@@ -2174,25 +2034,29 @@ pub mod pool_info {
             self
         }
         /// <p>Status of the custom tape pool. Pool can be <code>ACTIVE</code> or <code>DELETED</code>.</p>
-        pub fn set_pool_status(
-            mut self,
-            input: std::option::Option<crate::model::PoolStatus>,
-        ) -> Self {
-            self.pool_status = input;
-            self
+        pub fn set_pool_status(mut self, input: std::option::Option<crate::model::PoolStatus>) -> Self {
+            self.pool_status = input; self
         }
         /// Consumes the builder and constructs a [`PoolInfo`](crate::model::PoolInfo).
         pub fn build(self) -> crate::model::PoolInfo {
             crate::model::PoolInfo {
-                pool_arn: self.pool_arn,
-                pool_name: self.pool_name,
-                storage_class: self.storage_class,
-                retention_lock_type: self.retention_lock_type,
-                retention_lock_time_in_days: self.retention_lock_time_in_days,
-                pool_status: self.pool_status,
+                pool_arn: self.pool_arn
+                ,
+                pool_name: self.pool_name
+                ,
+                storage_class: self.storage_class
+                ,
+                retention_lock_type: self.retention_lock_type
+                ,
+                retention_lock_time_in_days: self.retention_lock_time_in_days
+                ,
+                pool_status: self.pool_status
+                ,
             }
         }
     }
+    
+    
 }
 impl PoolInfo {
     /// Creates a new builder-style object to manufacture [`PoolInfo`](crate::model::PoolInfo).
@@ -2207,9 +2071,9 @@ impl PoolInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let poolstatus = unimplemented!();
 /// match poolstatus {
@@ -2231,58 +2095,52 @@ impl PoolInfo {
 /// Specifically, when `poolstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PoolStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PoolStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PoolStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => PoolStatus::Active,
             "DELETED" => PoolStatus::Deleted,
-            other => PoolStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PoolStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PoolStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PoolStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PoolStatus::from(s))
+                }
+            }
 impl PoolStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PoolStatus::Active => "ACTIVE",
             PoolStatus::Deleted => "DELETED",
-            PoolStatus::Unknown(value) => value.as_str(),
+            PoolStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETED"]
+        &[
+            "ACTIVE", "DELETED"
+        ]
     }
 }
 impl AsRef<str> for PoolStatus {
@@ -2297,9 +2155,9 @@ impl AsRef<str> for PoolStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let retentionlocktype = unimplemented!();
 /// match retentionlocktype {
@@ -2322,22 +2180,14 @@ impl AsRef<str> for PoolStatus {
 /// Specifically, when `retentionlocktype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RetentionLockType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RetentionLockType {
     #[allow(missing_docs)] // documentation missing in model
     Compliance,
@@ -2346,7 +2196,7 @@ pub enum RetentionLockType {
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RetentionLockType {
     fn from(s: &str) -> Self {
@@ -2354,19 +2204,17 @@ impl std::convert::From<&str> for RetentionLockType {
             "COMPLIANCE" => RetentionLockType::Compliance,
             "GOVERNANCE" => RetentionLockType::Governance,
             "NONE" => RetentionLockType::None,
-            other => {
-                RetentionLockType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RetentionLockType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RetentionLockType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RetentionLockType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RetentionLockType::from(s))
+                }
+            }
 impl RetentionLockType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2374,12 +2222,14 @@ impl RetentionLockType {
             RetentionLockType::Compliance => "COMPLIANCE",
             RetentionLockType::Governance => "GOVERNANCE",
             RetentionLockType::None => "NONE",
-            RetentionLockType::Unknown(value) => value.as_str(),
+            RetentionLockType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLIANCE", "GOVERNANCE", "NONE"]
+        &[
+            "COMPLIANCE", "GOVERNANCE", "NONE"
+        ]
     }
 }
 impl AsRef<str> for RetentionLockType {
@@ -2394,9 +2244,9 @@ impl AsRef<str> for RetentionLockType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tapestorageclass = unimplemented!();
 /// match tapestorageclass {
@@ -2418,58 +2268,52 @@ impl AsRef<str> for RetentionLockType {
 /// Specifically, when `tapestorageclass` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TapeStorageClass::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TapeStorageClass {
     #[allow(missing_docs)] // documentation missing in model
     DeepArchive,
     #[allow(missing_docs)] // documentation missing in model
     Glacier,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TapeStorageClass {
     fn from(s: &str) -> Self {
         match s {
             "DEEP_ARCHIVE" => TapeStorageClass::DeepArchive,
             "GLACIER" => TapeStorageClass::Glacier,
-            other => TapeStorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TapeStorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TapeStorageClass {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TapeStorageClass::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TapeStorageClass::from(s))
+                }
+            }
 impl TapeStorageClass {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TapeStorageClass::DeepArchive => "DEEP_ARCHIVE",
             TapeStorageClass::Glacier => "GLACIER",
-            TapeStorageClass::Unknown(value) => value.as_str(),
+            TapeStorageClass::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEEP_ARCHIVE", "GLACIER"]
+        &[
+            "DEEP_ARCHIVE", "GLACIER"
+        ]
     }
 }
 impl AsRef<str> for TapeStorageClass {
@@ -2481,7 +2325,7 @@ impl AsRef<str> for TapeStorageClass {
 /// <p>Represents a gateway's local disk.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Disk {
+pub struct Disk  {
     /// <p>The unique device ID or other distinguishing data that identifies a local disk.</p>
     #[doc(hidden)]
     pub disk_id: std::option::Option<std::string::String>,
@@ -2497,7 +2341,7 @@ pub struct Disk {
     /// <p>The local disk size in bytes.</p>
     #[doc(hidden)]
     pub disk_size_in_bytes: i64,
-    /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p>
+    /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p> 
     /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
     #[doc(hidden)]
     pub disk_allocation_type: std::option::Option<std::string::String>,
@@ -2510,42 +2354,42 @@ pub struct Disk {
 }
 impl Disk {
     /// <p>The unique device ID or other distinguishing data that identifies a local disk.</p>
-    pub fn disk_id(&self) -> std::option::Option<&str> {
+    pub fn disk_id(&self) -> std::option::Option<& str> {
         self.disk_id.as_deref()
     }
     /// <p>The path of a local disk in the gateway virtual machine (VM).</p>
-    pub fn disk_path(&self) -> std::option::Option<&str> {
+    pub fn disk_path(&self) -> std::option::Option<& str> {
         self.disk_path.as_deref()
     }
     /// <p>The device node of a local disk as assigned by the virtualization environment.</p>
-    pub fn disk_node(&self) -> std::option::Option<&str> {
+    pub fn disk_node(&self) -> std::option::Option<& str> {
         self.disk_node.as_deref()
     }
     /// <p>A value that represents the status of a local disk.</p>
-    pub fn disk_status(&self) -> std::option::Option<&str> {
+    pub fn disk_status(&self) -> std::option::Option<& str> {
         self.disk_status.as_deref()
     }
     /// <p>The local disk size in bytes.</p>
     pub fn disk_size_in_bytes(&self) -> i64 {
         self.disk_size_in_bytes
     }
-    /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p>
+    /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p> 
     /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
-    pub fn disk_allocation_type(&self) -> std::option::Option<&str> {
+    pub fn disk_allocation_type(&self) -> std::option::Option<& str> {
         self.disk_allocation_type.as_deref()
     }
     /// <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not included in the response if the local disk is not defined as an iSCSI target. The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
-    pub fn disk_allocation_resource(&self) -> std::option::Option<&str> {
+    pub fn disk_allocation_resource(&self) -> std::option::Option<& str> {
         self.disk_allocation_resource.as_deref()
     }
     /// <p>A list of values that represents attributes of a local disk.</p>
-    pub fn disk_attribute_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn disk_attribute_list(&self) -> std::option::Option<& [std::string::String]> {
         self.disk_attribute_list.as_deref()
     }
 }
 /// See [`Disk`](crate::model::Disk).
 pub mod disk {
-
+    
     /// A builder for [`Disk`](crate::model::Disk).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2566,8 +2410,7 @@ pub mod disk {
         }
         /// <p>The unique device ID or other distinguishing data that identifies a local disk.</p>
         pub fn set_disk_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.disk_id = input;
-            self
+            self.disk_id = input; self
         }
         /// <p>The path of a local disk in the gateway virtual machine (VM).</p>
         pub fn disk_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2576,8 +2419,7 @@ pub mod disk {
         }
         /// <p>The path of a local disk in the gateway virtual machine (VM).</p>
         pub fn set_disk_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.disk_path = input;
-            self
+            self.disk_path = input; self
         }
         /// <p>The device node of a local disk as assigned by the virtualization environment.</p>
         pub fn disk_node(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2586,8 +2428,7 @@ pub mod disk {
         }
         /// <p>The device node of a local disk as assigned by the virtualization environment.</p>
         pub fn set_disk_node(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.disk_node = input;
-            self
+            self.disk_node = input; self
         }
         /// <p>A value that represents the status of a local disk.</p>
         pub fn disk_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2596,8 +2437,7 @@ pub mod disk {
         }
         /// <p>A value that represents the status of a local disk.</p>
         pub fn set_disk_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.disk_status = input;
-            self
+            self.disk_status = input; self
         }
         /// <p>The local disk size in bytes.</p>
         pub fn disk_size_in_bytes(mut self, input: i64) -> Self {
@@ -2606,23 +2446,18 @@ pub mod disk {
         }
         /// <p>The local disk size in bytes.</p>
         pub fn set_disk_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.disk_size_in_bytes = input;
-            self
+            self.disk_size_in_bytes = input; self
         }
-        /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p>
+        /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p> 
         /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
         pub fn disk_allocation_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.disk_allocation_type = Some(input.into());
             self
         }
-        /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p>
+        /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p> 
         /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
-        pub fn set_disk_allocation_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.disk_allocation_type = input;
-            self
+        pub fn set_disk_allocation_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.disk_allocation_type = input; self
         }
         /// <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not included in the response if the local disk is not defined as an iSCSI target. The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
         pub fn disk_allocation_resource(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2630,12 +2465,8 @@ pub mod disk {
             self
         }
         /// <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not included in the response if the local disk is not defined as an iSCSI target. The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
-        pub fn set_disk_allocation_resource(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.disk_allocation_resource = input;
-            self
+        pub fn set_disk_allocation_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.disk_allocation_resource = input; self
         }
         /// Appends an item to `disk_attribute_list`.
         ///
@@ -2644,32 +2475,39 @@ pub mod disk {
         /// <p>A list of values that represents attributes of a local disk.</p>
         pub fn disk_attribute_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.disk_attribute_list.unwrap_or_default();
-            v.push(input.into());
-            self.disk_attribute_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.disk_attribute_list = Some(v);
+                            self
         }
         /// <p>A list of values that represents attributes of a local disk.</p>
-        pub fn set_disk_attribute_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.disk_attribute_list = input;
-            self
+        pub fn set_disk_attribute_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.disk_attribute_list = input; self
         }
         /// Consumes the builder and constructs a [`Disk`](crate::model::Disk).
         pub fn build(self) -> crate::model::Disk {
             crate::model::Disk {
-                disk_id: self.disk_id,
-                disk_path: self.disk_path,
-                disk_node: self.disk_node,
-                disk_status: self.disk_status,
-                disk_size_in_bytes: self.disk_size_in_bytes.unwrap_or_default(),
-                disk_allocation_type: self.disk_allocation_type,
-                disk_allocation_resource: self.disk_allocation_resource,
-                disk_attribute_list: self.disk_attribute_list,
+                disk_id: self.disk_id
+                ,
+                disk_path: self.disk_path
+                ,
+                disk_node: self.disk_node
+                ,
+                disk_status: self.disk_status
+                ,
+                disk_size_in_bytes: self.disk_size_in_bytes
+                    .unwrap_or_default()
+                ,
+                disk_allocation_type: self.disk_allocation_type
+                ,
+                disk_allocation_resource: self.disk_allocation_resource
+                ,
+                disk_attribute_list: self.disk_attribute_list
+                ,
             }
         }
     }
+    
+    
 }
 impl Disk {
     /// Creates a new builder-style object to manufacture [`Disk`](crate::model::Disk).
@@ -2681,7 +2519,7 @@ impl Disk {
 /// <p>Describes a gateway object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayInfo {
+pub struct GatewayInfo  {
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
     #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
@@ -2691,7 +2529,7 @@ pub struct GatewayInfo {
     /// <p>The type of the gateway.</p>
     #[doc(hidden)]
     pub gateway_type: std::option::Option<std::string::String>,
-    /// <p>The state of the gateway.</p>
+    /// <p>The state of the gateway.</p> 
     /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code> </p>
     #[doc(hidden)]
     pub gateway_operational_state: std::option::Option<std::string::String>,
@@ -2713,46 +2551,46 @@ pub struct GatewayInfo {
 }
 impl GatewayInfo {
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The type of the gateway.</p>
-    pub fn gateway_type(&self) -> std::option::Option<&str> {
+    pub fn gateway_type(&self) -> std::option::Option<& str> {
         self.gateway_type.as_deref()
     }
-    /// <p>The state of the gateway.</p>
+    /// <p>The state of the gateway.</p> 
     /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code> </p>
-    pub fn gateway_operational_state(&self) -> std::option::Option<&str> {
+    pub fn gateway_operational_state(&self) -> std::option::Option<& str> {
         self.gateway_operational_state.as_deref()
     }
     /// <p>The name of the gateway.</p>
-    pub fn gateway_name(&self) -> std::option::Option<&str> {
+    pub fn gateway_name(&self) -> std::option::Option<& str> {
         self.gateway_name.as_deref()
     }
     /// <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
-    pub fn ec2_instance_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_instance_id(&self) -> std::option::Option<& str> {
         self.ec2_instance_id.as_deref()
     }
     /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
-    pub fn ec2_instance_region(&self) -> std::option::Option<&str> {
+    pub fn ec2_instance_region(&self) -> std::option::Option<& str> {
         self.ec2_instance_region.as_deref()
     }
     /// <p>The type of hardware or software platform on which the gateway is running.</p>
-    pub fn host_environment(&self) -> std::option::Option<&crate::model::HostEnvironment> {
+    pub fn host_environment(&self) -> std::option::Option<& crate::model::HostEnvironment> {
         self.host_environment.as_ref()
     }
     /// <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
-    pub fn host_environment_id(&self) -> std::option::Option<&str> {
+    pub fn host_environment_id(&self) -> std::option::Option<& str> {
         self.host_environment_id.as_deref()
     }
 }
 /// See [`GatewayInfo`](crate::model::GatewayInfo).
 pub mod gateway_info {
-
+    
     /// A builder for [`GatewayInfo`](crate::model::GatewayInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2774,8 +2612,7 @@ pub mod gateway_info {
         }
         /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
         pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_id = input;
-            self
+            self.gateway_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2784,8 +2621,7 @@ pub mod gateway_info {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// <p>The type of the gateway.</p>
         pub fn gateway_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2794,23 +2630,18 @@ pub mod gateway_info {
         }
         /// <p>The type of the gateway.</p>
         pub fn set_gateway_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_type = input;
-            self
+            self.gateway_type = input; self
         }
-        /// <p>The state of the gateway.</p>
+        /// <p>The state of the gateway.</p> 
         /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code> </p>
         pub fn gateway_operational_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_operational_state = Some(input.into());
             self
         }
-        /// <p>The state of the gateway.</p>
+        /// <p>The state of the gateway.</p> 
         /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code> </p>
-        pub fn set_gateway_operational_state(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.gateway_operational_state = input;
-            self
+        pub fn set_gateway_operational_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.gateway_operational_state = input; self
         }
         /// <p>The name of the gateway.</p>
         pub fn gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2819,8 +2650,7 @@ pub mod gateway_info {
         }
         /// <p>The name of the gateway.</p>
         pub fn set_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_name = input;
-            self
+            self.gateway_name = input; self
         }
         /// <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
         pub fn ec2_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2828,12 +2658,8 @@ pub mod gateway_info {
             self
         }
         /// <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
-        pub fn set_ec2_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_instance_id = input;
-            self
+        pub fn set_ec2_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_instance_id = input; self
         }
         /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
         pub fn ec2_instance_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2841,12 +2667,8 @@ pub mod gateway_info {
             self
         }
         /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
-        pub fn set_ec2_instance_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_instance_region = input;
-            self
+        pub fn set_ec2_instance_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_instance_region = input; self
         }
         /// <p>The type of hardware or software platform on which the gateway is running.</p>
         pub fn host_environment(mut self, input: crate::model::HostEnvironment) -> Self {
@@ -2854,12 +2676,8 @@ pub mod gateway_info {
             self
         }
         /// <p>The type of hardware or software platform on which the gateway is running.</p>
-        pub fn set_host_environment(
-            mut self,
-            input: std::option::Option<crate::model::HostEnvironment>,
-        ) -> Self {
-            self.host_environment = input;
-            self
+        pub fn set_host_environment(mut self, input: std::option::Option<crate::model::HostEnvironment>) -> Self {
+            self.host_environment = input; self
         }
         /// <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
         pub fn host_environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2867,28 +2685,35 @@ pub mod gateway_info {
             self
         }
         /// <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
-        pub fn set_host_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.host_environment_id = input;
-            self
+        pub fn set_host_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host_environment_id = input; self
         }
         /// Consumes the builder and constructs a [`GatewayInfo`](crate::model::GatewayInfo).
         pub fn build(self) -> crate::model::GatewayInfo {
             crate::model::GatewayInfo {
-                gateway_id: self.gateway_id,
-                gateway_arn: self.gateway_arn,
-                gateway_type: self.gateway_type,
-                gateway_operational_state: self.gateway_operational_state,
-                gateway_name: self.gateway_name,
-                ec2_instance_id: self.ec2_instance_id,
-                ec2_instance_region: self.ec2_instance_region,
-                host_environment: self.host_environment,
-                host_environment_id: self.host_environment_id,
+                gateway_id: self.gateway_id
+                ,
+                gateway_arn: self.gateway_arn
+                ,
+                gateway_type: self.gateway_type
+                ,
+                gateway_operational_state: self.gateway_operational_state
+                ,
+                gateway_name: self.gateway_name
+                ,
+                ec2_instance_id: self.ec2_instance_id
+                ,
+                ec2_instance_region: self.ec2_instance_region
+                ,
+                host_environment: self.host_environment
+                ,
+                host_environment_id: self.host_environment_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewayInfo {
     /// Creates a new builder-style object to manufacture [`GatewayInfo`](crate::model::GatewayInfo).
@@ -2903,9 +2728,9 @@ impl GatewayInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let hostenvironment = unimplemented!();
 /// match hostenvironment {
@@ -2931,22 +2756,14 @@ impl GatewayInfo {
 /// Specifically, when `hostenvironment` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HostEnvironment::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HostEnvironment {
     #[allow(missing_docs)] // documentation missing in model
     Ec2,
@@ -2961,7 +2778,7 @@ pub enum HostEnvironment {
     #[allow(missing_docs)] // documentation missing in model
     Vmware,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HostEnvironment {
     fn from(s: &str) -> Self {
@@ -2972,17 +2789,17 @@ impl std::convert::From<&str> for HostEnvironment {
             "OTHER" => HostEnvironment::Other,
             "SNOWBALL" => HostEnvironment::Snowball,
             "VMWARE" => HostEnvironment::Vmware,
-            other => HostEnvironment::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => HostEnvironment::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HostEnvironment {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HostEnvironment::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HostEnvironment::from(s))
+                }
+            }
 impl HostEnvironment {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2993,12 +2810,14 @@ impl HostEnvironment {
             HostEnvironment::Other => "OTHER",
             HostEnvironment::Snowball => "SNOWBALL",
             HostEnvironment::Vmware => "VMWARE",
-            HostEnvironment::Unknown(value) => value.as_str(),
+            HostEnvironment::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EC2", "HYPER-V", "KVM", "OTHER", "SNOWBALL", "VMWARE"]
+        &[
+            "EC2", "HYPER-V", "KVM", "OTHER", "SNOWBALL", "VMWARE"
+        ]
     }
 }
 impl AsRef<str> for HostEnvironment {
@@ -3010,7 +2829,7 @@ impl AsRef<str> for HostEnvironment {
 /// <p>Gets the summary returned by <code>ListFileSystemAssociation</code>, which is a summary of a created file system association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileSystemAssociationSummary {
+pub struct FileSystemAssociationSummary  {
     /// <p>The ID of the file system association.</p>
     #[doc(hidden)]
     pub file_system_association_id: std::option::Option<std::string::String>,
@@ -3026,25 +2845,25 @@ pub struct FileSystemAssociationSummary {
 }
 impl FileSystemAssociationSummary {
     /// <p>The ID of the file system association.</p>
-    pub fn file_system_association_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_association_id(&self) -> std::option::Option<& str> {
         self.file_system_association_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
-    pub fn file_system_association_arn(&self) -> std::option::Option<&str> {
+    pub fn file_system_association_arn(&self) -> std::option::Option<& str> {
         self.file_system_association_arn.as_deref()
     }
     /// <p>The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
-    pub fn file_system_association_status(&self) -> std::option::Option<&str> {
+    pub fn file_system_association_status(&self) -> std::option::Option<& str> {
         self.file_system_association_status.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 /// See [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary).
 pub mod file_system_association_summary {
-
+    
     /// A builder for [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3060,44 +2879,26 @@ pub mod file_system_association_summary {
             self
         }
         /// <p>The ID of the file system association.</p>
-        pub fn set_file_system_association_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_association_id = input;
-            self
+        pub fn set_file_system_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_association_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
-        pub fn file_system_association_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn file_system_association_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_association_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
-        pub fn set_file_system_association_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_association_arn = input;
-            self
+        pub fn set_file_system_association_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_association_arn = input; self
         }
         /// <p>The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
-        pub fn file_system_association_status(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn file_system_association_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_association_status = Some(input.into());
             self
         }
         /// <p>The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
-        pub fn set_file_system_association_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_association_status = input;
-            self
+        pub fn set_file_system_association_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_association_status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3106,19 +2907,24 @@ pub mod file_system_association_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// Consumes the builder and constructs a [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary).
         pub fn build(self) -> crate::model::FileSystemAssociationSummary {
             crate::model::FileSystemAssociationSummary {
-                file_system_association_id: self.file_system_association_id,
-                file_system_association_arn: self.file_system_association_arn,
-                file_system_association_status: self.file_system_association_status,
-                gateway_arn: self.gateway_arn,
+                file_system_association_id: self.file_system_association_id
+                ,
+                file_system_association_arn: self.file_system_association_arn
+                ,
+                file_system_association_status: self.file_system_association_status
+                ,
+                gateway_arn: self.gateway_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl FileSystemAssociationSummary {
     /// Creates a new builder-style object to manufacture [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary).
@@ -3130,7 +2936,7 @@ impl FileSystemAssociationSummary {
 /// <p>Describes a file share. Only supported S3 File Gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileShareInfo {
+pub struct FileShareInfo  {
     /// <p>The type of the file share.</p>
     #[doc(hidden)]
     pub file_share_type: std::option::Option<crate::model::FileShareType>,
@@ -3140,7 +2946,7 @@ pub struct FileShareInfo {
     /// <p>The ID of the file share.</p>
     #[doc(hidden)]
     pub file_share_id: std::option::Option<std::string::String>,
-    /// <p>The status of the file share.</p>
+    /// <p>The status of the file share.</p> 
     /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
     #[doc(hidden)]
     pub file_share_status: std::option::Option<std::string::String>,
@@ -3150,30 +2956,30 @@ pub struct FileShareInfo {
 }
 impl FileShareInfo {
     /// <p>The type of the file share.</p>
-    pub fn file_share_type(&self) -> std::option::Option<&crate::model::FileShareType> {
+    pub fn file_share_type(&self) -> std::option::Option<& crate::model::FileShareType> {
         self.file_share_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+    pub fn file_share_arn(&self) -> std::option::Option<& str> {
         self.file_share_arn.as_deref()
     }
     /// <p>The ID of the file share.</p>
-    pub fn file_share_id(&self) -> std::option::Option<&str> {
+    pub fn file_share_id(&self) -> std::option::Option<& str> {
         self.file_share_id.as_deref()
     }
-    /// <p>The status of the file share.</p>
+    /// <p>The status of the file share.</p> 
     /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-    pub fn file_share_status(&self) -> std::option::Option<&str> {
+    pub fn file_share_status(&self) -> std::option::Option<& str> {
         self.file_share_status.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 /// See [`FileShareInfo`](crate::model::FileShareInfo).
 pub mod file_share_info {
-
+    
     /// A builder for [`FileShareInfo`](crate::model::FileShareInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3190,12 +2996,8 @@ pub mod file_share_info {
             self
         }
         /// <p>The type of the file share.</p>
-        pub fn set_file_share_type(
-            mut self,
-            input: std::option::Option<crate::model::FileShareType>,
-        ) -> Self {
-            self.file_share_type = input;
-            self
+        pub fn set_file_share_type(mut self, input: std::option::Option<crate::model::FileShareType>) -> Self {
+            self.file_share_type = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the file share.</p>
         pub fn file_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3203,12 +3005,8 @@ pub mod file_share_info {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-        pub fn set_file_share_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_share_arn = input;
-            self
+        pub fn set_file_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_share_arn = input; self
         }
         /// <p>The ID of the file share.</p>
         pub fn file_share_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3216,27 +3014,19 @@ pub mod file_share_info {
             self
         }
         /// <p>The ID of the file share.</p>
-        pub fn set_file_share_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_share_id = input;
-            self
+        pub fn set_file_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_share_id = input; self
         }
-        /// <p>The status of the file share.</p>
+        /// <p>The status of the file share.</p> 
         /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
         pub fn file_share_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_share_status = Some(input.into());
             self
         }
-        /// <p>The status of the file share.</p>
+        /// <p>The status of the file share.</p> 
         /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-        pub fn set_file_share_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_share_status = input;
-            self
+        pub fn set_file_share_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_share_status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3245,20 +3035,26 @@ pub mod file_share_info {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// Consumes the builder and constructs a [`FileShareInfo`](crate::model::FileShareInfo).
         pub fn build(self) -> crate::model::FileShareInfo {
             crate::model::FileShareInfo {
-                file_share_type: self.file_share_type,
-                file_share_arn: self.file_share_arn,
-                file_share_id: self.file_share_id,
-                file_share_status: self.file_share_status,
-                gateway_arn: self.gateway_arn,
+                file_share_type: self.file_share_type
+                ,
+                file_share_arn: self.file_share_arn
+                ,
+                file_share_id: self.file_share_id
+                ,
+                file_share_status: self.file_share_status
+                ,
+                gateway_arn: self.gateway_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl FileShareInfo {
     /// Creates a new builder-style object to manufacture [`FileShareInfo`](crate::model::FileShareInfo).
@@ -3273,9 +3069,9 @@ impl FileShareInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let filesharetype = unimplemented!();
 /// match filesharetype {
@@ -3297,58 +3093,52 @@ impl FileShareInfo {
 /// Specifically, when `filesharetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FileShareType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The type of the file share.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FileShareType {
     #[allow(missing_docs)] // documentation missing in model
     Nfs,
     #[allow(missing_docs)] // documentation missing in model
     Smb,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FileShareType {
     fn from(s: &str) -> Self {
         match s {
             "NFS" => FileShareType::Nfs,
             "SMB" => FileShareType::Smb,
-            other => FileShareType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FileShareType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FileShareType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FileShareType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FileShareType::from(s))
+                }
+            }
 impl FileShareType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FileShareType::Nfs => "NFS",
             FileShareType::Smb => "SMB",
-            FileShareType::Unknown(value) => value.as_str(),
+            FileShareType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NFS", "SMB"]
+        &[
+            "NFS", "SMB"
+        ]
     }
 }
 impl AsRef<str> for FileShareType {
@@ -3360,35 +3150,31 @@ impl AsRef<str> for FileShareType {
 /// <p>Information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutomaticTapeCreationPolicyInfo {
+pub struct AutomaticTapeCreationPolicyInfo  {
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
     #[doc(hidden)]
-    pub automatic_tape_creation_rules:
-        std::option::Option<std::vec::Vec<crate::model::AutomaticTapeCreationRule>>,
+    pub automatic_tape_creation_rules: std::option::Option<std::vec::Vec<crate::model::AutomaticTapeCreationRule>>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl AutomaticTapeCreationPolicyInfo {
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
-    pub fn automatic_tape_creation_rules(
-        &self,
-    ) -> std::option::Option<&[crate::model::AutomaticTapeCreationRule]> {
+    pub fn automatic_tape_creation_rules(&self) -> std::option::Option<& [crate::model::AutomaticTapeCreationRule]> {
         self.automatic_tape_creation_rules.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 /// See [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo).
 pub mod automatic_tape_creation_policy_info {
-
+    
     /// A builder for [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) automatic_tape_creation_rules:
-            std::option::Option<std::vec::Vec<crate::model::AutomaticTapeCreationRule>>,
+        pub(crate) automatic_tape_creation_rules: std::option::Option<std::vec::Vec<crate::model::AutomaticTapeCreationRule>>,
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3397,22 +3183,15 @@ pub mod automatic_tape_creation_policy_info {
         /// To override the contents of this collection use [`set_automatic_tape_creation_rules`](Self::set_automatic_tape_creation_rules).
         ///
         /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
-        pub fn automatic_tape_creation_rules(
-            mut self,
-            input: crate::model::AutomaticTapeCreationRule,
-        ) -> Self {
+        pub fn automatic_tape_creation_rules(mut self, input: crate::model::AutomaticTapeCreationRule) -> Self {
             let mut v = self.automatic_tape_creation_rules.unwrap_or_default();
-            v.push(input);
-            self.automatic_tape_creation_rules = Some(v);
-            self
+                            v.push(input);
+                            self.automatic_tape_creation_rules = Some(v);
+                            self
         }
         /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
-        pub fn set_automatic_tape_creation_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AutomaticTapeCreationRule>>,
-        ) -> Self {
-            self.automatic_tape_creation_rules = input;
-            self
+        pub fn set_automatic_tape_creation_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::AutomaticTapeCreationRule>>) -> Self {
+            self.automatic_tape_creation_rules = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3421,17 +3200,20 @@ pub mod automatic_tape_creation_policy_info {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// Consumes the builder and constructs a [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo).
         pub fn build(self) -> crate::model::AutomaticTapeCreationPolicyInfo {
             crate::model::AutomaticTapeCreationPolicyInfo {
-                automatic_tape_creation_rules: self.automatic_tape_creation_rules,
-                gateway_arn: self.gateway_arn,
+                automatic_tape_creation_rules: self.automatic_tape_creation_rules
+                ,
+                gateway_arn: self.gateway_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl AutomaticTapeCreationPolicyInfo {
     /// Creates a new builder-style object to manufacture [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo).
@@ -3446,9 +3228,9 @@ impl AutomaticTapeCreationPolicyInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let activedirectorystatus = unimplemented!();
 /// match activedirectorystatus {
@@ -3475,22 +3257,14 @@ impl AutomaticTapeCreationPolicyInfo {
 /// Specifically, when `activedirectorystatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActiveDirectoryStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ActiveDirectoryStatus {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -3507,7 +3281,7 @@ pub enum ActiveDirectoryStatus {
     #[allow(missing_docs)] // documentation missing in model
     UnknownError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActiveDirectoryStatus {
     fn from(s: &str) -> Self {
@@ -3519,19 +3293,17 @@ impl std::convert::From<&str> for ActiveDirectoryStatus {
             "NETWORK_ERROR" => ActiveDirectoryStatus::NetworkError,
             "TIMEOUT" => ActiveDirectoryStatus::Timeout,
             "UNKNOWN_ERROR" => ActiveDirectoryStatus::UnknownError,
-            other => {
-                ActiveDirectoryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ActiveDirectoryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ActiveDirectoryStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActiveDirectoryStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ActiveDirectoryStatus::from(s))
+                }
+            }
 impl ActiveDirectoryStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3543,19 +3315,13 @@ impl ActiveDirectoryStatus {
             ActiveDirectoryStatus::NetworkError => "NETWORK_ERROR",
             ActiveDirectoryStatus::Timeout => "TIMEOUT",
             ActiveDirectoryStatus::UnknownError => "UNKNOWN_ERROR",
-            ActiveDirectoryStatus::Unknown(value) => value.as_str(),
+            ActiveDirectoryStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCESS_DENIED",
-            "DETACHED",
-            "JOINED",
-            "JOINING",
-            "NETWORK_ERROR",
-            "TIMEOUT",
-            "UNKNOWN_ERROR",
+            "ACCESS_DENIED", "DETACHED", "JOINED", "JOINING", "NETWORK_ERROR", "TIMEOUT", "UNKNOWN_ERROR"
         ]
     }
 }
@@ -3568,7 +3334,7 @@ impl AsRef<str> for ActiveDirectoryStatus {
 /// <p>Represents a device object associated with a tape gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VtlDevice {
+pub struct VtlDevice  {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).</p>
     #[doc(hidden)]
     pub vtl_device_arn: std::option::Option<std::string::String>,
@@ -3587,31 +3353,29 @@ pub struct VtlDevice {
 }
 impl VtlDevice {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).</p>
-    pub fn vtl_device_arn(&self) -> std::option::Option<&str> {
+    pub fn vtl_device_arn(&self) -> std::option::Option<& str> {
         self.vtl_device_arn.as_deref()
     }
     /// <p>Specifies the type of device that the VTL device emulates.</p>
-    pub fn vtl_device_type(&self) -> std::option::Option<&str> {
+    pub fn vtl_device_type(&self) -> std::option::Option<& str> {
         self.vtl_device_type.as_deref()
     }
     /// <p>Specifies the vendor of the device that the VTL device object emulates.</p>
-    pub fn vtl_device_vendor(&self) -> std::option::Option<&str> {
+    pub fn vtl_device_vendor(&self) -> std::option::Option<& str> {
         self.vtl_device_vendor.as_deref()
     }
     /// <p>Specifies the model number of device that the VTL device emulates.</p>
-    pub fn vtl_device_product_identifier(&self) -> std::option::Option<&str> {
+    pub fn vtl_device_product_identifier(&self) -> std::option::Option<& str> {
         self.vtl_device_product_identifier.as_deref()
     }
     /// <p>A list of iSCSI information about a VTL device.</p>
-    pub fn devicei_scsi_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::DeviceiScsiAttributes> {
+    pub fn devicei_scsi_attributes(&self) -> std::option::Option<& crate::model::DeviceiScsiAttributes> {
         self.devicei_scsi_attributes.as_ref()
     }
 }
 /// See [`VtlDevice`](crate::model::VtlDevice).
 pub mod vtl_device {
-
+    
     /// A builder for [`VtlDevice`](crate::model::VtlDevice).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3619,8 +3383,7 @@ pub mod vtl_device {
         pub(crate) vtl_device_type: std::option::Option<std::string::String>,
         pub(crate) vtl_device_vendor: std::option::Option<std::string::String>,
         pub(crate) vtl_device_product_identifier: std::option::Option<std::string::String>,
-        pub(crate) devicei_scsi_attributes:
-            std::option::Option<crate::model::DeviceiScsiAttributes>,
+        pub(crate) devicei_scsi_attributes: std::option::Option<crate::model::DeviceiScsiAttributes>,
     }
     impl Builder {
         /// <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).</p>
@@ -3629,12 +3392,8 @@ pub mod vtl_device {
             self
         }
         /// <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).</p>
-        pub fn set_vtl_device_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vtl_device_arn = input;
-            self
+        pub fn set_vtl_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vtl_device_arn = input; self
         }
         /// <p>Specifies the type of device that the VTL device emulates.</p>
         pub fn vtl_device_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3642,12 +3401,8 @@ pub mod vtl_device {
             self
         }
         /// <p>Specifies the type of device that the VTL device emulates.</p>
-        pub fn set_vtl_device_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vtl_device_type = input;
-            self
+        pub fn set_vtl_device_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vtl_device_type = input; self
         }
         /// <p>Specifies the vendor of the device that the VTL device object emulates.</p>
         pub fn vtl_device_vendor(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3655,56 +3410,45 @@ pub mod vtl_device {
             self
         }
         /// <p>Specifies the vendor of the device that the VTL device object emulates.</p>
-        pub fn set_vtl_device_vendor(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vtl_device_vendor = input;
-            self
+        pub fn set_vtl_device_vendor(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vtl_device_vendor = input; self
         }
         /// <p>Specifies the model number of device that the VTL device emulates.</p>
-        pub fn vtl_device_product_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn vtl_device_product_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.vtl_device_product_identifier = Some(input.into());
             self
         }
         /// <p>Specifies the model number of device that the VTL device emulates.</p>
-        pub fn set_vtl_device_product_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vtl_device_product_identifier = input;
-            self
+        pub fn set_vtl_device_product_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vtl_device_product_identifier = input; self
         }
         /// <p>A list of iSCSI information about a VTL device.</p>
-        pub fn devicei_scsi_attributes(
-            mut self,
-            input: crate::model::DeviceiScsiAttributes,
-        ) -> Self {
+        pub fn devicei_scsi_attributes(mut self, input: crate::model::DeviceiScsiAttributes) -> Self {
             self.devicei_scsi_attributes = Some(input);
             self
         }
         /// <p>A list of iSCSI information about a VTL device.</p>
-        pub fn set_devicei_scsi_attributes(
-            mut self,
-            input: std::option::Option<crate::model::DeviceiScsiAttributes>,
-        ) -> Self {
-            self.devicei_scsi_attributes = input;
-            self
+        pub fn set_devicei_scsi_attributes(mut self, input: std::option::Option<crate::model::DeviceiScsiAttributes>) -> Self {
+            self.devicei_scsi_attributes = input; self
         }
         /// Consumes the builder and constructs a [`VtlDevice`](crate::model::VtlDevice).
         pub fn build(self) -> crate::model::VtlDevice {
             crate::model::VtlDevice {
-                vtl_device_arn: self.vtl_device_arn,
-                vtl_device_type: self.vtl_device_type,
-                vtl_device_vendor: self.vtl_device_vendor,
-                vtl_device_product_identifier: self.vtl_device_product_identifier,
-                devicei_scsi_attributes: self.devicei_scsi_attributes,
+                vtl_device_arn: self.vtl_device_arn
+                ,
+                vtl_device_type: self.vtl_device_type
+                ,
+                vtl_device_vendor: self.vtl_device_vendor
+                ,
+                vtl_device_product_identifier: self.vtl_device_product_identifier
+                ,
+                devicei_scsi_attributes: self.devicei_scsi_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl VtlDevice {
     /// Creates a new builder-style object to manufacture [`VtlDevice`](crate::model::VtlDevice).
@@ -3716,7 +3460,7 @@ impl VtlDevice {
 /// <p>Lists iSCSI information about a VTL device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceiScsiAttributes {
+pub struct DeviceiScsiAttributes  {
     /// <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI qualified name(iqn) of a tape drive or media changer target.</p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
@@ -3732,11 +3476,11 @@ pub struct DeviceiScsiAttributes {
 }
 impl DeviceiScsiAttributes {
     /// <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI qualified name(iqn) of a tape drive or media changer target.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>The network interface identifier of the VTL device.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The port used to communicate with iSCSI VTL device targets.</p>
@@ -3750,7 +3494,7 @@ impl DeviceiScsiAttributes {
 }
 /// See [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes).
 pub mod devicei_scsi_attributes {
-
+    
     /// A builder for [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3767,8 +3511,7 @@ pub mod devicei_scsi_attributes {
         }
         /// <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI qualified name(iqn) of a tape drive or media changer target.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_arn = input;
-            self
+            self.target_arn = input; self
         }
         /// <p>The network interface identifier of the VTL device.</p>
         pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3776,12 +3519,8 @@ pub mod devicei_scsi_attributes {
             self
         }
         /// <p>The network interface identifier of the VTL device.</p>
-        pub fn set_network_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_interface_id = input;
-            self
+        pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_interface_id = input; self
         }
         /// <p>The port used to communicate with iSCSI VTL device targets.</p>
         pub fn network_interface_port(mut self, input: i32) -> Self {
@@ -3790,8 +3529,7 @@ pub mod devicei_scsi_attributes {
         }
         /// <p>The port used to communicate with iSCSI VTL device targets.</p>
         pub fn set_network_interface_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.network_interface_port = input;
-            self
+            self.network_interface_port = input; self
         }
         /// <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
         pub fn chap_enabled(mut self, input: bool) -> Self {
@@ -3800,19 +3538,26 @@ pub mod devicei_scsi_attributes {
         }
         /// <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
         pub fn set_chap_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.chap_enabled = input;
-            self
+            self.chap_enabled = input; self
         }
         /// Consumes the builder and constructs a [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes).
         pub fn build(self) -> crate::model::DeviceiScsiAttributes {
             crate::model::DeviceiScsiAttributes {
-                target_arn: self.target_arn,
-                network_interface_id: self.network_interface_id,
-                network_interface_port: self.network_interface_port.unwrap_or_default(),
-                chap_enabled: self.chap_enabled.unwrap_or_default(),
+                target_arn: self.target_arn
+                ,
+                network_interface_id: self.network_interface_id
+                ,
+                network_interface_port: self.network_interface_port
+                    .unwrap_or_default()
+                ,
+                chap_enabled: self.chap_enabled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceiScsiAttributes {
     /// Creates a new builder-style object to manufacture [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes).
@@ -3824,7 +3569,7 @@ impl DeviceiScsiAttributes {
 /// <p>Describes a virtual tape object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tape {
+pub struct Tape  {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
     #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
@@ -3843,12 +3588,12 @@ pub struct Tape {
     /// <p>The virtual tape library (VTL) device that the virtual tape is associated with.</p>
     #[doc(hidden)]
     pub vtl_device: std::option::Option<std::string::String>,
-    /// <p>For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is complete.</p>
+    /// <p>For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is complete.</p> 
     /// <p>Range: 0 (not started) to 100 (complete).</p>
     #[doc(hidden)]
     pub progress: std::option::Option<f64>,
-    /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
-    /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
+    /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note> 
+    /// <p>This value is not available for tapes created prior to May 13, 2015.</p> 
     /// </note>
     #[doc(hidden)]
     pub tape_used_in_bytes: std::option::Option<i64>,
@@ -3870,15 +3615,15 @@ pub struct Tape {
 }
 impl Tape {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
-    pub fn tape_arn(&self) -> std::option::Option<&str> {
+    pub fn tape_arn(&self) -> std::option::Option<& str> {
         self.tape_arn.as_deref()
     }
     /// <p>The barcode that identifies a specific virtual tape.</p>
-    pub fn tape_barcode(&self) -> std::option::Option<&str> {
+    pub fn tape_barcode(&self) -> std::option::Option<& str> {
         self.tape_barcode.as_deref()
     }
     /// <p>The date the virtual tape was created.</p>
-    pub fn tape_created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn tape_created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.tape_created_date.as_ref()
     }
     /// <p>The size, in bytes, of the virtual tape capacity.</p>
@@ -3886,30 +3631,30 @@ impl Tape {
         self.tape_size_in_bytes
     }
     /// <p>The current state of the virtual tape.</p>
-    pub fn tape_status(&self) -> std::option::Option<&str> {
+    pub fn tape_status(&self) -> std::option::Option<& str> {
         self.tape_status.as_deref()
     }
     /// <p>The virtual tape library (VTL) device that the virtual tape is associated with.</p>
-    pub fn vtl_device(&self) -> std::option::Option<&str> {
+    pub fn vtl_device(&self) -> std::option::Option<& str> {
         self.vtl_device.as_deref()
     }
-    /// <p>For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is complete.</p>
+    /// <p>For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is complete.</p> 
     /// <p>Range: 0 (not started) to 100 (complete).</p>
     pub fn progress(&self) -> std::option::Option<f64> {
         self.progress
     }
-    /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
-    /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
+    /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note> 
+    /// <p>This value is not available for tapes created prior to May 13, 2015.</p> 
     /// </note>
     pub fn tape_used_in_bytes(&self) -> std::option::Option<i64> {
         self.tape_used_in_bytes
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
-    pub fn kms_key(&self) -> std::option::Option<&str> {
+    pub fn kms_key(&self) -> std::option::Option<& str> {
         self.kms_key.as_deref()
     }
     /// <p>The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.</p>
@@ -3917,17 +3662,17 @@ impl Tape {
         self.worm
     }
     /// <p>The date that the tape is first archived with tape retention lock enabled.</p>
-    pub fn retention_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn retention_start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.retention_start_date.as_ref()
     }
     /// <p>The date that the tape enters a custom tape pool.</p>
-    pub fn pool_entry_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn pool_entry_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.pool_entry_date.as_ref()
     }
 }
 /// See [`Tape`](crate::model::Tape).
 pub mod tape {
-
+    
     /// A builder for [`Tape`](crate::model::Tape).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3953,8 +3698,7 @@ pub mod tape {
         }
         /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
         pub fn set_tape_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tape_arn = input;
-            self
+            self.tape_arn = input; self
         }
         /// <p>The barcode that identifies a specific virtual tape.</p>
         pub fn tape_barcode(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3963,8 +3707,7 @@ pub mod tape {
         }
         /// <p>The barcode that identifies a specific virtual tape.</p>
         pub fn set_tape_barcode(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tape_barcode = input;
-            self
+            self.tape_barcode = input; self
         }
         /// <p>The date the virtual tape was created.</p>
         pub fn tape_created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3972,12 +3715,8 @@ pub mod tape {
             self
         }
         /// <p>The date the virtual tape was created.</p>
-        pub fn set_tape_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.tape_created_date = input;
-            self
+        pub fn set_tape_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.tape_created_date = input; self
         }
         /// <p>The size, in bytes, of the virtual tape capacity.</p>
         pub fn tape_size_in_bytes(mut self, input: i64) -> Self {
@@ -3986,8 +3725,7 @@ pub mod tape {
         }
         /// <p>The size, in bytes, of the virtual tape capacity.</p>
         pub fn set_tape_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.tape_size_in_bytes = input;
-            self
+            self.tape_size_in_bytes = input; self
         }
         /// <p>The current state of the virtual tape.</p>
         pub fn tape_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3996,8 +3734,7 @@ pub mod tape {
         }
         /// <p>The current state of the virtual tape.</p>
         pub fn set_tape_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tape_status = input;
-            self
+            self.tape_status = input; self
         }
         /// <p>The virtual tape library (VTL) device that the virtual tape is associated with.</p>
         pub fn vtl_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4006,34 +3743,31 @@ pub mod tape {
         }
         /// <p>The virtual tape library (VTL) device that the virtual tape is associated with.</p>
         pub fn set_vtl_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vtl_device = input;
-            self
+            self.vtl_device = input; self
         }
-        /// <p>For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is complete.</p>
+        /// <p>For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is complete.</p> 
         /// <p>Range: 0 (not started) to 100 (complete).</p>
         pub fn progress(mut self, input: f64) -> Self {
             self.progress = Some(input);
             self
         }
-        /// <p>For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is complete.</p>
+        /// <p>For archiving virtual tapes, indicates how much data remains to be uploaded before archiving is complete.</p> 
         /// <p>Range: 0 (not started) to 100 (complete).</p>
         pub fn set_progress(mut self, input: std::option::Option<f64>) -> Self {
-            self.progress = input;
-            self
+            self.progress = input; self
         }
-        /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
-        /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
+        /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note> 
+        /// <p>This value is not available for tapes created prior to May 13, 2015.</p> 
         /// </note>
         pub fn tape_used_in_bytes(mut self, input: i64) -> Self {
             self.tape_used_in_bytes = Some(input);
             self
         }
-        /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
-        /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
+        /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note> 
+        /// <p>This value is not available for tapes created prior to May 13, 2015.</p> 
         /// </note>
         pub fn set_tape_used_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.tape_used_in_bytes = input;
-            self
+            self.tape_used_in_bytes = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4042,8 +3776,7 @@ pub mod tape {
         }
         /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key = input;
-            self
+            self.kms_key = input; self
         }
         /// <p>The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4052,8 +3785,7 @@ pub mod tape {
         }
         /// <p>The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// <p>If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.</p>
         pub fn worm(mut self, input: bool) -> Self {
@@ -4062,8 +3794,7 @@ pub mod tape {
         }
         /// <p>If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.</p>
         pub fn set_worm(mut self, input: std::option::Option<bool>) -> Self {
-            self.worm = input;
-            self
+            self.worm = input; self
         }
         /// <p>The date that the tape is first archived with tape retention lock enabled.</p>
         pub fn retention_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4071,12 +3802,8 @@ pub mod tape {
             self
         }
         /// <p>The date that the tape is first archived with tape retention lock enabled.</p>
-        pub fn set_retention_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.retention_start_date = input;
-            self
+        pub fn set_retention_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.retention_start_date = input; self
         }
         /// <p>The date that the tape enters a custom tape pool.</p>
         pub fn pool_entry_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4084,32 +3811,44 @@ pub mod tape {
             self
         }
         /// <p>The date that the tape enters a custom tape pool.</p>
-        pub fn set_pool_entry_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.pool_entry_date = input;
-            self
+        pub fn set_pool_entry_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.pool_entry_date = input; self
         }
         /// Consumes the builder and constructs a [`Tape`](crate::model::Tape).
         pub fn build(self) -> crate::model::Tape {
             crate::model::Tape {
-                tape_arn: self.tape_arn,
-                tape_barcode: self.tape_barcode,
-                tape_created_date: self.tape_created_date,
-                tape_size_in_bytes: self.tape_size_in_bytes,
-                tape_status: self.tape_status,
-                vtl_device: self.vtl_device,
-                progress: self.progress,
-                tape_used_in_bytes: self.tape_used_in_bytes,
-                kms_key: self.kms_key,
-                pool_id: self.pool_id,
-                worm: self.worm.unwrap_or_default(),
-                retention_start_date: self.retention_start_date,
-                pool_entry_date: self.pool_entry_date,
+                tape_arn: self.tape_arn
+                ,
+                tape_barcode: self.tape_barcode
+                ,
+                tape_created_date: self.tape_created_date
+                ,
+                tape_size_in_bytes: self.tape_size_in_bytes
+                ,
+                tape_status: self.tape_status
+                ,
+                vtl_device: self.vtl_device
+                ,
+                progress: self.progress
+                ,
+                tape_used_in_bytes: self.tape_used_in_bytes
+                ,
+                kms_key: self.kms_key
+                ,
+                pool_id: self.pool_id
+                ,
+                worm: self.worm
+                    .unwrap_or_default()
+                ,
+                retention_start_date: self.retention_start_date
+                ,
+                pool_entry_date: self.pool_entry_date
+                ,
             }
         }
     }
+    
+    
 }
 impl Tape {
     /// Creates a new builder-style object to manufacture [`Tape`](crate::model::Tape).
@@ -4121,11 +3860,11 @@ impl Tape {
 /// <p>Describes a recovery point.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TapeRecoveryPointInfo {
+pub struct TapeRecoveryPointInfo  {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
     #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
-    /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
+    /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p> 
     /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
     #[doc(hidden)]
     pub tape_recovery_point_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4138,12 +3877,12 @@ pub struct TapeRecoveryPointInfo {
 }
 impl TapeRecoveryPointInfo {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
-    pub fn tape_arn(&self) -> std::option::Option<&str> {
+    pub fn tape_arn(&self) -> std::option::Option<& str> {
         self.tape_arn.as_deref()
     }
-    /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
+    /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p> 
     /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-    pub fn tape_recovery_point_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn tape_recovery_point_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.tape_recovery_point_time.as_ref()
     }
     /// <p>The size, in bytes, of the virtual tapes to recover.</p>
@@ -4151,13 +3890,13 @@ impl TapeRecoveryPointInfo {
         self.tape_size_in_bytes
     }
     /// <p>The status of the virtual tapes.</p>
-    pub fn tape_status(&self) -> std::option::Option<&str> {
+    pub fn tape_status(&self) -> std::option::Option<& str> {
         self.tape_status.as_deref()
     }
 }
 /// See [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo).
 pub mod tape_recovery_point_info {
-
+    
     /// A builder for [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4174,23 +3913,18 @@ pub mod tape_recovery_point_info {
         }
         /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
         pub fn set_tape_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tape_arn = input;
-            self
+            self.tape_arn = input; self
         }
-        /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
+        /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p> 
         /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
         pub fn tape_recovery_point_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.tape_recovery_point_time = Some(input);
             self
         }
-        /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
+        /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p> 
         /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-        pub fn set_tape_recovery_point_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.tape_recovery_point_time = input;
-            self
+        pub fn set_tape_recovery_point_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.tape_recovery_point_time = input; self
         }
         /// <p>The size, in bytes, of the virtual tapes to recover.</p>
         pub fn tape_size_in_bytes(mut self, input: i64) -> Self {
@@ -4199,8 +3933,7 @@ pub mod tape_recovery_point_info {
         }
         /// <p>The size, in bytes, of the virtual tapes to recover.</p>
         pub fn set_tape_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.tape_size_in_bytes = input;
-            self
+            self.tape_size_in_bytes = input; self
         }
         /// <p>The status of the virtual tapes.</p>
         pub fn tape_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4209,19 +3942,24 @@ pub mod tape_recovery_point_info {
         }
         /// <p>The status of the virtual tapes.</p>
         pub fn set_tape_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tape_status = input;
-            self
+            self.tape_status = input; self
         }
         /// Consumes the builder and constructs a [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo).
         pub fn build(self) -> crate::model::TapeRecoveryPointInfo {
             crate::model::TapeRecoveryPointInfo {
-                tape_arn: self.tape_arn,
-                tape_recovery_point_time: self.tape_recovery_point_time,
-                tape_size_in_bytes: self.tape_size_in_bytes,
-                tape_status: self.tape_status,
+                tape_arn: self.tape_arn
+                ,
+                tape_recovery_point_time: self.tape_recovery_point_time
+                ,
+                tape_size_in_bytes: self.tape_size_in_bytes
+                ,
+                tape_status: self.tape_status
+                ,
             }
         }
     }
+    
+    
 }
 impl TapeRecoveryPointInfo {
     /// Creates a new builder-style object to manufacture [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo).
@@ -4233,7 +3971,7 @@ impl TapeRecoveryPointInfo {
 /// <p>Represents a virtual tape that is archived in the virtual tape shelf (VTS).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TapeArchive {
+pub struct TapeArchive  {
     /// <p>The Amazon Resource Name (ARN) of an archived virtual tape.</p>
     #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
@@ -4246,19 +3984,19 @@ pub struct TapeArchive {
     /// <p>The size, in bytes, of the archived virtual tape.</p>
     #[doc(hidden)]
     pub tape_size_in_bytes: std::option::Option<i64>,
-    /// <p>The time that the archiving of the virtual tape was completed.</p>
+    /// <p>The time that the archiving of the virtual tape was completed.</p> 
     /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
     #[doc(hidden)]
     pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p> 
     /// <p>The virtual tape is retrieved from the virtual tape shelf (VTS).</p>
     #[doc(hidden)]
     pub retrieved_to: std::option::Option<std::string::String>,
     /// <p>The current state of the archived virtual tape.</p>
     #[doc(hidden)]
     pub tape_status: std::option::Option<std::string::String>,
-    /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
-    /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
+    /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note> 
+    /// <p>This value is not available for tapes created prior to May 13, 2015.</p> 
     /// </note>
     #[doc(hidden)]
     pub tape_used_in_bytes: std::option::Option<i64>,
@@ -4274,54 +4012,54 @@ pub struct TapeArchive {
     /// <p>If the archived tape is subject to tape retention lock, the date that the archived tape started being retained.</p>
     #[doc(hidden)]
     pub retention_start_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time that the tape entered the custom tape pool.</p>
+    /// <p>The time that the tape entered the custom tape pool.</p> 
     /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
     #[doc(hidden)]
     pub pool_entry_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TapeArchive {
     /// <p>The Amazon Resource Name (ARN) of an archived virtual tape.</p>
-    pub fn tape_arn(&self) -> std::option::Option<&str> {
+    pub fn tape_arn(&self) -> std::option::Option<& str> {
         self.tape_arn.as_deref()
     }
     /// <p>The barcode that identifies the archived virtual tape.</p>
-    pub fn tape_barcode(&self) -> std::option::Option<&str> {
+    pub fn tape_barcode(&self) -> std::option::Option<& str> {
         self.tape_barcode.as_deref()
     }
     /// <p>The date the virtual tape was created.</p>
-    pub fn tape_created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn tape_created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.tape_created_date.as_ref()
     }
     /// <p>The size, in bytes, of the archived virtual tape.</p>
     pub fn tape_size_in_bytes(&self) -> std::option::Option<i64> {
         self.tape_size_in_bytes
     }
-    /// <p>The time that the archiving of the virtual tape was completed.</p>
+    /// <p>The time that the archiving of the virtual tape was completed.</p> 
     /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p> 
     /// <p>The virtual tape is retrieved from the virtual tape shelf (VTS).</p>
-    pub fn retrieved_to(&self) -> std::option::Option<&str> {
+    pub fn retrieved_to(&self) -> std::option::Option<& str> {
         self.retrieved_to.as_deref()
     }
     /// <p>The current state of the archived virtual tape.</p>
-    pub fn tape_status(&self) -> std::option::Option<&str> {
+    pub fn tape_status(&self) -> std::option::Option<& str> {
         self.tape_status.as_deref()
     }
-    /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
-    /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
+    /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note> 
+    /// <p>This value is not available for tapes created prior to May 13, 2015.</p> 
     /// </note>
     pub fn tape_used_in_bytes(&self) -> std::option::Option<i64> {
         self.tape_used_in_bytes
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
-    pub fn kms_key(&self) -> std::option::Option<&str> {
+    pub fn kms_key(&self) -> std::option::Option<& str> {
         self.kms_key.as_deref()
     }
     /// <p>The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3 storage class that is associated with the pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>Set to <code>true</code> if the archived tape is stored as write-once-read-many (WORM).</p>
@@ -4329,18 +4067,18 @@ impl TapeArchive {
         self.worm
     }
     /// <p>If the archived tape is subject to tape retention lock, the date that the archived tape started being retained.</p>
-    pub fn retention_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn retention_start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.retention_start_date.as_ref()
     }
-    /// <p>The time that the tape entered the custom tape pool.</p>
+    /// <p>The time that the tape entered the custom tape pool.</p> 
     /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-    pub fn pool_entry_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn pool_entry_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.pool_entry_date.as_ref()
     }
 }
 /// See [`TapeArchive`](crate::model::TapeArchive).
 pub mod tape_archive {
-
+    
     /// A builder for [`TapeArchive`](crate::model::TapeArchive).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4366,8 +4104,7 @@ pub mod tape_archive {
         }
         /// <p>The Amazon Resource Name (ARN) of an archived virtual tape.</p>
         pub fn set_tape_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tape_arn = input;
-            self
+            self.tape_arn = input; self
         }
         /// <p>The barcode that identifies the archived virtual tape.</p>
         pub fn tape_barcode(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4376,8 +4113,7 @@ pub mod tape_archive {
         }
         /// <p>The barcode that identifies the archived virtual tape.</p>
         pub fn set_tape_barcode(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tape_barcode = input;
-            self
+            self.tape_barcode = input; self
         }
         /// <p>The date the virtual tape was created.</p>
         pub fn tape_created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4385,12 +4121,8 @@ pub mod tape_archive {
             self
         }
         /// <p>The date the virtual tape was created.</p>
-        pub fn set_tape_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.tape_created_date = input;
-            self
+        pub fn set_tape_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.tape_created_date = input; self
         }
         /// <p>The size, in bytes, of the archived virtual tape.</p>
         pub fn tape_size_in_bytes(mut self, input: i64) -> Self {
@@ -4399,35 +4131,29 @@ pub mod tape_archive {
         }
         /// <p>The size, in bytes, of the archived virtual tape.</p>
         pub fn set_tape_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.tape_size_in_bytes = input;
-            self
+            self.tape_size_in_bytes = input; self
         }
-        /// <p>The time that the archiving of the virtual tape was completed.</p>
+        /// <p>The time that the archiving of the virtual tape was completed.</p> 
         /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
         pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completion_time = Some(input);
             self
         }
-        /// <p>The time that the archiving of the virtual tape was completed.</p>
+        /// <p>The time that the archiving of the virtual tape was completed.</p> 
         /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-        pub fn set_completion_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completion_time = input;
-            self
+        pub fn set_completion_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completion_time = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p> 
         /// <p>The virtual tape is retrieved from the virtual tape shelf (VTS).</p>
         pub fn retrieved_to(mut self, input: impl Into<std::string::String>) -> Self {
             self.retrieved_to = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p> 
         /// <p>The virtual tape is retrieved from the virtual tape shelf (VTS).</p>
         pub fn set_retrieved_to(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.retrieved_to = input;
-            self
+            self.retrieved_to = input; self
         }
         /// <p>The current state of the archived virtual tape.</p>
         pub fn tape_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4436,22 +4162,20 @@ pub mod tape_archive {
         }
         /// <p>The current state of the archived virtual tape.</p>
         pub fn set_tape_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tape_status = input;
-            self
+            self.tape_status = input; self
         }
-        /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
-        /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
+        /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note> 
+        /// <p>This value is not available for tapes created prior to May 13, 2015.</p> 
         /// </note>
         pub fn tape_used_in_bytes(mut self, input: i64) -> Self {
             self.tape_used_in_bytes = Some(input);
             self
         }
-        /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
-        /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
+        /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note> 
+        /// <p>This value is not available for tapes created prior to May 13, 2015.</p> 
         /// </note>
         pub fn set_tape_used_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.tape_used_in_bytes = input;
-            self
+            self.tape_used_in_bytes = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4460,8 +4184,7 @@ pub mod tape_archive {
         }
         /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key = input;
-            self
+            self.kms_key = input; self
         }
         /// <p>The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3 storage class that is associated with the pool.</p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4470,8 +4193,7 @@ pub mod tape_archive {
         }
         /// <p>The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3 storage class that is associated with the pool.</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// <p>Set to <code>true</code> if the archived tape is stored as write-once-read-many (WORM).</p>
         pub fn worm(mut self, input: bool) -> Self {
@@ -4480,8 +4202,7 @@ pub mod tape_archive {
         }
         /// <p>Set to <code>true</code> if the archived tape is stored as write-once-read-many (WORM).</p>
         pub fn set_worm(mut self, input: std::option::Option<bool>) -> Self {
-            self.worm = input;
-            self
+            self.worm = input; self
         }
         /// <p>If the archived tape is subject to tape retention lock, the date that the archived tape started being retained.</p>
         pub fn retention_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4489,47 +4210,55 @@ pub mod tape_archive {
             self
         }
         /// <p>If the archived tape is subject to tape retention lock, the date that the archived tape started being retained.</p>
-        pub fn set_retention_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.retention_start_date = input;
-            self
+        pub fn set_retention_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.retention_start_date = input; self
         }
-        /// <p>The time that the tape entered the custom tape pool.</p>
+        /// <p>The time that the tape entered the custom tape pool.</p> 
         /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
         pub fn pool_entry_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.pool_entry_date = Some(input);
             self
         }
-        /// <p>The time that the tape entered the custom tape pool.</p>
+        /// <p>The time that the tape entered the custom tape pool.</p> 
         /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-        pub fn set_pool_entry_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.pool_entry_date = input;
-            self
+        pub fn set_pool_entry_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.pool_entry_date = input; self
         }
         /// Consumes the builder and constructs a [`TapeArchive`](crate::model::TapeArchive).
         pub fn build(self) -> crate::model::TapeArchive {
             crate::model::TapeArchive {
-                tape_arn: self.tape_arn,
-                tape_barcode: self.tape_barcode,
-                tape_created_date: self.tape_created_date,
-                tape_size_in_bytes: self.tape_size_in_bytes,
-                completion_time: self.completion_time,
-                retrieved_to: self.retrieved_to,
-                tape_status: self.tape_status,
-                tape_used_in_bytes: self.tape_used_in_bytes,
-                kms_key: self.kms_key,
-                pool_id: self.pool_id,
-                worm: self.worm.unwrap_or_default(),
-                retention_start_date: self.retention_start_date,
-                pool_entry_date: self.pool_entry_date,
+                tape_arn: self.tape_arn
+                ,
+                tape_barcode: self.tape_barcode
+                ,
+                tape_created_date: self.tape_created_date
+                ,
+                tape_size_in_bytes: self.tape_size_in_bytes
+                ,
+                completion_time: self.completion_time
+                ,
+                retrieved_to: self.retrieved_to
+                ,
+                tape_status: self.tape_status
+                ,
+                tape_used_in_bytes: self.tape_used_in_bytes
+                ,
+                kms_key: self.kms_key
+                ,
+                pool_id: self.pool_id
+                ,
+                worm: self.worm
+                    .unwrap_or_default()
+                ,
+                retention_start_date: self.retention_start_date
+                ,
+                pool_entry_date: self.pool_entry_date
+                ,
             }
         }
     }
+    
+    
 }
 impl TapeArchive {
     /// Creates a new builder-style object to manufacture [`TapeArchive`](crate::model::TapeArchive).
@@ -4541,7 +4270,7 @@ impl TapeArchive {
 /// <p>Describes an iSCSI stored volume.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorediScsiVolume {
+pub struct StorediScsiVolume  {
     /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
     #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
@@ -4569,7 +4298,7 @@ pub struct StorediScsiVolume {
     /// <p>If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
     #[doc(hidden)]
     pub source_snapshot_id: std::option::Option<std::string::String>,
-    /// <p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p>
+    /// <p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     #[doc(hidden)]
     pub preserved_existing_data: bool,
@@ -4579,38 +4308,38 @@ pub struct StorediScsiVolume {
     /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
     #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
-    /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
+    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note> 
+    /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p> 
     /// </note>
     #[doc(hidden)]
     pub volume_used_in_bytes: std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
-    /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
+    /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p> 
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
     #[doc(hidden)]
     pub target_name: std::option::Option<std::string::String>,
 }
 impl StorediScsiVolume {
     /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
-    pub fn volume_arn(&self) -> std::option::Option<&str> {
+    pub fn volume_arn(&self) -> std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
     /// <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>One of the VolumeType enumeration values describing the type of the volume.</p>
-    pub fn volume_type(&self) -> std::option::Option<&str> {
+    pub fn volume_type(&self) -> std::option::Option<& str> {
         self.volume_type.as_deref()
     }
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
-    pub fn volume_status(&self) -> std::option::Option<&str> {
+    pub fn volume_status(&self) -> std::option::Option<& str> {
         self.volume_status.as_deref()
     }
     /// <p>A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching from a gateway. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving your volumes to a different gateway</a>.</p>
-    pub fn volume_attachment_status(&self) -> std::option::Option<&str> {
+    pub fn volume_attachment_status(&self) -> std::option::Option<& str> {
         self.volume_attachment_status.as_deref()
     }
     /// <p>The size of the volume in bytes.</p>
@@ -4622,47 +4351,45 @@ impl StorediScsiVolume {
         self.volume_progress
     }
     /// <p>The ID of the local disk that was specified in the <code>CreateStorediSCSIVolume</code> operation.</p>
-    pub fn volume_disk_id(&self) -> std::option::Option<&str> {
+    pub fn volume_disk_id(&self) -> std::option::Option<& str> {
         self.volume_disk_id.as_deref()
     }
     /// <p>If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
-    pub fn source_snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn source_snapshot_id(&self) -> std::option::Option<& str> {
         self.source_snapshot_id.as_deref()
     }
-    /// <p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p>
+    /// <p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn preserved_existing_data(&self) -> bool {
         self.preserved_existing_data
     }
     /// <p>An <code>VolumeiSCSIAttributes</code> object that represents a collection of iSCSI attributes for one stored volume.</p>
-    pub fn volumei_scsi_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::VolumeiScsiAttributes> {
+    pub fn volumei_scsi_attributes(&self) -> std::option::Option<& crate::model::VolumeiScsiAttributes> {
         self.volumei_scsi_attributes.as_ref()
     }
     /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
-    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
-    /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
+    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note> 
+    /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p> 
     /// </note>
     pub fn volume_used_in_bytes(&self) -> std::option::Option<i64> {
         self.volume_used_in_bytes
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
-    pub fn kms_key(&self) -> std::option::Option<&str> {
+    pub fn kms_key(&self) -> std::option::Option<& str> {
         self.kms_key.as_deref()
     }
-    /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
+    /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p> 
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
-    pub fn target_name(&self) -> std::option::Option<&str> {
+    pub fn target_name(&self) -> std::option::Option<& str> {
         self.target_name.as_deref()
     }
 }
 /// See [`StorediScsiVolume`](crate::model::StorediScsiVolume).
 pub mod storedi_scsi_volume {
-
+    
     /// A builder for [`StorediScsiVolume`](crate::model::StorediScsiVolume).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4676,8 +4403,7 @@ pub mod storedi_scsi_volume {
         pub(crate) volume_disk_id: std::option::Option<std::string::String>,
         pub(crate) source_snapshot_id: std::option::Option<std::string::String>,
         pub(crate) preserved_existing_data: std::option::Option<bool>,
-        pub(crate) volumei_scsi_attributes:
-            std::option::Option<crate::model::VolumeiScsiAttributes>,
+        pub(crate) volumei_scsi_attributes: std::option::Option<crate::model::VolumeiScsiAttributes>,
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) volume_used_in_bytes: std::option::Option<i64>,
         pub(crate) kms_key: std::option::Option<std::string::String>,
@@ -4691,8 +4417,7 @@ pub mod storedi_scsi_volume {
         }
         /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
         pub fn set_volume_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_arn = input;
-            self
+            self.volume_arn = input; self
         }
         /// <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
         pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4701,8 +4426,7 @@ pub mod storedi_scsi_volume {
         }
         /// <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_id = input;
-            self
+            self.volume_id = input; self
         }
         /// <p>One of the VolumeType enumeration values describing the type of the volume.</p>
         pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4711,8 +4435,7 @@ pub mod storedi_scsi_volume {
         }
         /// <p>One of the VolumeType enumeration values describing the type of the volume.</p>
         pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_type = input;
-            self
+            self.volume_type = input; self
         }
         /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
         pub fn volume_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4720,12 +4443,8 @@ pub mod storedi_scsi_volume {
             self
         }
         /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
-        pub fn set_volume_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.volume_status = input;
-            self
+        pub fn set_volume_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_status = input; self
         }
         /// <p>A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching from a gateway. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving your volumes to a different gateway</a>.</p>
         pub fn volume_attachment_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4733,12 +4452,8 @@ pub mod storedi_scsi_volume {
             self
         }
         /// <p>A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching from a gateway. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving your volumes to a different gateway</a>.</p>
-        pub fn set_volume_attachment_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.volume_attachment_status = input;
-            self
+        pub fn set_volume_attachment_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_attachment_status = input; self
         }
         /// <p>The size of the volume in bytes.</p>
         pub fn volume_size_in_bytes(mut self, input: i64) -> Self {
@@ -4747,8 +4462,7 @@ pub mod storedi_scsi_volume {
         }
         /// <p>The size of the volume in bytes.</p>
         pub fn set_volume_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.volume_size_in_bytes = input;
-            self
+            self.volume_size_in_bytes = input; self
         }
         /// <p>Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of data transferred. This field does not appear in the response if the stored volume is not restoring or bootstrapping.</p>
         pub fn volume_progress(mut self, input: f64) -> Self {
@@ -4757,8 +4471,7 @@ pub mod storedi_scsi_volume {
         }
         /// <p>Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of data transferred. This field does not appear in the response if the stored volume is not restoring or bootstrapping.</p>
         pub fn set_volume_progress(mut self, input: std::option::Option<f64>) -> Self {
-            self.volume_progress = input;
-            self
+            self.volume_progress = input; self
         }
         /// <p>The ID of the local disk that was specified in the <code>CreateStorediSCSIVolume</code> operation.</p>
         pub fn volume_disk_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4766,12 +4479,8 @@ pub mod storedi_scsi_volume {
             self
         }
         /// <p>The ID of the local disk that was specified in the <code>CreateStorediSCSIVolume</code> operation.</p>
-        pub fn set_volume_disk_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.volume_disk_id = input;
-            self
+        pub fn set_volume_disk_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_disk_id = input; self
         }
         /// <p>If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
         pub fn source_snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4779,40 +4488,28 @@ pub mod storedi_scsi_volume {
             self
         }
         /// <p>If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
-        pub fn set_source_snapshot_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_snapshot_id = input;
-            self
+        pub fn set_source_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_snapshot_id = input; self
         }
-        /// <p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p>
+        /// <p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn preserved_existing_data(mut self, input: bool) -> Self {
             self.preserved_existing_data = Some(input);
             self
         }
-        /// <p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p>
+        /// <p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn set_preserved_existing_data(mut self, input: std::option::Option<bool>) -> Self {
-            self.preserved_existing_data = input;
-            self
+            self.preserved_existing_data = input; self
         }
         /// <p>An <code>VolumeiSCSIAttributes</code> object that represents a collection of iSCSI attributes for one stored volume.</p>
-        pub fn volumei_scsi_attributes(
-            mut self,
-            input: crate::model::VolumeiScsiAttributes,
-        ) -> Self {
+        pub fn volumei_scsi_attributes(mut self, input: crate::model::VolumeiScsiAttributes) -> Self {
             self.volumei_scsi_attributes = Some(input);
             self
         }
         /// <p>An <code>VolumeiSCSIAttributes</code> object that represents a collection of iSCSI attributes for one stored volume.</p>
-        pub fn set_volumei_scsi_attributes(
-            mut self,
-            input: std::option::Option<crate::model::VolumeiScsiAttributes>,
-        ) -> Self {
-            self.volumei_scsi_attributes = input;
-            self
+        pub fn set_volumei_scsi_attributes(mut self, input: std::option::Option<crate::model::VolumeiScsiAttributes>) -> Self {
+            self.volumei_scsi_attributes = input; self
         }
         /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4820,26 +4517,21 @@ pub mod storedi_scsi_volume {
             self
         }
         /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
-        /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
-        /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
+        /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note> 
+        /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p> 
         /// </note>
         pub fn volume_used_in_bytes(mut self, input: i64) -> Self {
             self.volume_used_in_bytes = Some(input);
             self
         }
-        /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
-        /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
+        /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note> 
+        /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p> 
         /// </note>
         pub fn set_volume_used_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.volume_used_in_bytes = input;
-            self
+            self.volume_used_in_bytes = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4848,42 +4540,59 @@ pub mod storedi_scsi_volume {
         }
         /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key = input;
-            self
+            self.kms_key = input; self
         }
-        /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
+        /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p> 
         /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
         pub fn target_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_name = Some(input.into());
             self
         }
-        /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
+        /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p> 
         /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
         pub fn set_target_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_name = input;
-            self
+            self.target_name = input; self
         }
         /// Consumes the builder and constructs a [`StorediScsiVolume`](crate::model::StorediScsiVolume).
         pub fn build(self) -> crate::model::StorediScsiVolume {
             crate::model::StorediScsiVolume {
-                volume_arn: self.volume_arn,
-                volume_id: self.volume_id,
-                volume_type: self.volume_type,
-                volume_status: self.volume_status,
-                volume_attachment_status: self.volume_attachment_status,
-                volume_size_in_bytes: self.volume_size_in_bytes.unwrap_or_default(),
-                volume_progress: self.volume_progress,
-                volume_disk_id: self.volume_disk_id,
-                source_snapshot_id: self.source_snapshot_id,
-                preserved_existing_data: self.preserved_existing_data.unwrap_or_default(),
-                volumei_scsi_attributes: self.volumei_scsi_attributes,
-                created_date: self.created_date,
-                volume_used_in_bytes: self.volume_used_in_bytes,
-                kms_key: self.kms_key,
-                target_name: self.target_name,
+                volume_arn: self.volume_arn
+                ,
+                volume_id: self.volume_id
+                ,
+                volume_type: self.volume_type
+                ,
+                volume_status: self.volume_status
+                ,
+                volume_attachment_status: self.volume_attachment_status
+                ,
+                volume_size_in_bytes: self.volume_size_in_bytes
+                    .unwrap_or_default()
+                ,
+                volume_progress: self.volume_progress
+                ,
+                volume_disk_id: self.volume_disk_id
+                ,
+                source_snapshot_id: self.source_snapshot_id
+                ,
+                preserved_existing_data: self.preserved_existing_data
+                    .unwrap_or_default()
+                ,
+                volumei_scsi_attributes: self.volumei_scsi_attributes
+                ,
+                created_date: self.created_date
+                ,
+                volume_used_in_bytes: self.volume_used_in_bytes
+                ,
+                kms_key: self.kms_key
+                ,
+                target_name: self.target_name
+                ,
             }
         }
     }
+    
+    
 }
 impl StorediScsiVolume {
     /// Creates a new builder-style object to manufacture [`StorediScsiVolume`](crate::model::StorediScsiVolume).
@@ -4895,7 +4604,7 @@ impl StorediScsiVolume {
 /// <p>Lists iSCSI information about a volume.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VolumeiScsiAttributes {
+pub struct VolumeiScsiAttributes  {
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
@@ -4914,11 +4623,11 @@ pub struct VolumeiScsiAttributes {
 }
 impl VolumeiScsiAttributes {
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>The network interface identifier.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The port used to communicate with iSCSI targets.</p>
@@ -4936,7 +4645,7 @@ impl VolumeiScsiAttributes {
 }
 /// See [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes).
 pub mod volumei_scsi_attributes {
-
+    
     /// A builder for [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4954,8 +4663,7 @@ pub mod volumei_scsi_attributes {
         }
         /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_arn = input;
-            self
+            self.target_arn = input; self
         }
         /// <p>The network interface identifier.</p>
         pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4963,12 +4671,8 @@ pub mod volumei_scsi_attributes {
             self
         }
         /// <p>The network interface identifier.</p>
-        pub fn set_network_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_interface_id = input;
-            self
+        pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_interface_id = input; self
         }
         /// <p>The port used to communicate with iSCSI targets.</p>
         pub fn network_interface_port(mut self, input: i32) -> Self {
@@ -4977,8 +4681,7 @@ pub mod volumei_scsi_attributes {
         }
         /// <p>The port used to communicate with iSCSI targets.</p>
         pub fn set_network_interface_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.network_interface_port = input;
-            self
+            self.network_interface_port = input; self
         }
         /// <p>The logical disk number.</p>
         pub fn lun_number(mut self, input: i32) -> Self {
@@ -4987,8 +4690,7 @@ pub mod volumei_scsi_attributes {
         }
         /// <p>The logical disk number.</p>
         pub fn set_lun_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.lun_number = input;
-            self
+            self.lun_number = input; self
         }
         /// <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
         pub fn chap_enabled(mut self, input: bool) -> Self {
@@ -4997,20 +4699,28 @@ pub mod volumei_scsi_attributes {
         }
         /// <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
         pub fn set_chap_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.chap_enabled = input;
-            self
+            self.chap_enabled = input; self
         }
         /// Consumes the builder and constructs a [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes).
         pub fn build(self) -> crate::model::VolumeiScsiAttributes {
             crate::model::VolumeiScsiAttributes {
-                target_arn: self.target_arn,
-                network_interface_id: self.network_interface_id,
-                network_interface_port: self.network_interface_port.unwrap_or_default(),
-                lun_number: self.lun_number,
-                chap_enabled: self.chap_enabled.unwrap_or_default(),
+                target_arn: self.target_arn
+                ,
+                network_interface_id: self.network_interface_id
+                ,
+                network_interface_port: self.network_interface_port
+                    .unwrap_or_default()
+                ,
+                lun_number: self.lun_number
+                ,
+                chap_enabled: self.chap_enabled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl VolumeiScsiAttributes {
     /// Creates a new builder-style object to manufacture [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes).
@@ -5022,21 +4732,21 @@ impl VolumeiScsiAttributes {
 /// <p>The Windows file permissions and ownership information assigned, by default, to native S3 objects when S3 File Gateway discovers them in S3 buckets. This operation is only supported for S3 File Gateways.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SmbFileShareInfo {
+pub struct SmbFileShareInfo  {
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
     #[doc(hidden)]
     pub file_share_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the file share.</p>
     #[doc(hidden)]
     pub file_share_id: std::option::Option<std::string::String>,
-    /// <p>The status of the file share.</p>
+    /// <p>The status of the file share.</p> 
     /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
     #[doc(hidden)]
     pub file_share_status: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     #[doc(hidden)]
     pub kms_encrypted: bool,
@@ -5049,40 +4759,40 @@ pub struct SmbFileShareInfo {
     /// <p>The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
     #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
-    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
-    /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
-    /// <p>Bucket ARN:</p>
-    /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p>
-    /// <p>Access point ARN:</p>
-    /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p>
-    /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>Access point alias:</p>
-    /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
+    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note> 
+    /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p> 
+    /// <p>Bucket ARN:</p> 
+    /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p> 
+    /// <p>Access point ARN:</p> 
+    /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p> 
+    /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>Access point alias:</p> 
+    /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
     /// </note>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p> 
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     #[doc(hidden)]
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that an S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
     #[doc(hidden)]
     pub object_acl: std::option::Option<crate::model::ObjectAcl>,
-    /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
+    /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     #[doc(hidden)]
     pub read_only: std::option::Option<bool>,
-    /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
+    /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     #[doc(hidden)]
     pub guess_mime_type_enabled: std::option::Option<bool>,
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
-    /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
-    /// </note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note> 
+    /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p> 
+    /// </note> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     #[doc(hidden)]
     pub requester_pays: std::option::Option<bool>,
-    /// <p>If this value is set to <code>true</code>, it indicates that access control list (ACL) is enabled on the SMB file share. If it is set to <code>false</code>, it indicates that file and directory permissions are mapped to the POSIX permission.</p>
+    /// <p>If this value is set to <code>true</code>, it indicates that access control list (ACL) is enabled on the SMB file share. If it is set to <code>false</code>, it indicates that file and directory permissions are mapped to the POSIX permission.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.</p>
     #[doc(hidden)]
     pub smbacl_enabled: std::option::Option<bool>,
@@ -5101,7 +4811,7 @@ pub struct SmbFileShareInfo {
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
     #[doc(hidden)]
     pub audit_destination_arn: std::option::Option<std::string::String>,
-    /// <p>The authentication method of the file share. The default is <code>ActiveDirectory</code>.</p>
+    /// <p>The authentication method of the file share. The default is <code>ActiveDirectory</code>.</p> 
     /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
     #[doc(hidden)]
     pub authentication: std::option::Option<std::string::String>,
@@ -5111,115 +4821,115 @@ pub struct SmbFileShareInfo {
     /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The name of the file share. Optional.</p> <note>
-    /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>The name of the file share. Optional.</p> <note> 
+    /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p> 
     /// </note>
     #[doc(hidden)]
     pub file_share_name: std::option::Option<std::string::String>,
     /// <p>Refresh cache information for the file share.</p>
     #[doc(hidden)]
     pub cache_attributes: std::option::Option<crate::model::CacheAttributes>,
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
-    /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
-    /// </note>
-    /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
-    /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
-    /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note> 
+    /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p> 
+    /// </note> 
+    /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p> 
+    /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p> 
+    /// <p>The following example sets <code>NotificationPolicy</code> off.</p> 
     /// <p> <code>{}</code> </p>
     #[doc(hidden)]
     pub notification_policy: std::option::Option<std::string::String>,
-    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note>
-    /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note> 
+    /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p> 
     /// </note>
     #[doc(hidden)]
     pub vpc_endpoint_dns_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note>
-    /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note> 
+    /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p> 
     /// </note>
     #[doc(hidden)]
     pub bucket_region: std::option::Option<std::string::String>,
-    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
-    /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
-    /// </note>
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note> 
+    /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p> 
+    /// </note> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     #[doc(hidden)]
     pub oplocks_enabled: std::option::Option<bool>,
 }
 impl SmbFileShareInfo {
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+    pub fn file_share_arn(&self) -> std::option::Option<& str> {
         self.file_share_arn.as_deref()
     }
     /// <p>The ID of the file share.</p>
-    pub fn file_share_id(&self) -> std::option::Option<&str> {
+    pub fn file_share_id(&self) -> std::option::Option<& str> {
         self.file_share_id.as_deref()
     }
-    /// <p>The status of the file share.</p>
+    /// <p>The status of the file share.</p> 
     /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-    pub fn file_share_status(&self) -> std::option::Option<&str> {
+    pub fn file_share_status(&self) -> std::option::Option<& str> {
         self.file_share_status.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
-    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn kms_encrypted(&self) -> bool {
         self.kms_encrypted
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
-    pub fn kms_key(&self) -> std::option::Option<&str> {
+    pub fn kms_key(&self) -> std::option::Option<& str> {
         self.kms_key.as_deref()
     }
     /// <p>The file share path used by the SMB client to identify the mount point.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
-    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
-    /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
-    /// <p>Bucket ARN:</p>
-    /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p>
-    /// <p>Access point ARN:</p>
-    /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p>
-    /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>Access point alias:</p>
-    /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
+    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note> 
+    /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p> 
+    /// <p>Bucket ARN:</p> 
+    /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p> 
+    /// <p>Access point ARN:</p> 
+    /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p> 
+    /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>Access point alias:</p> 
+    /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
     /// </note>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p> 
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-    pub fn default_storage_class(&self) -> std::option::Option<&str> {
+    pub fn default_storage_class(&self) -> std::option::Option<& str> {
         self.default_storage_class.as_deref()
     }
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that an S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
-    pub fn object_acl(&self) -> std::option::Option<&crate::model::ObjectAcl> {
+    pub fn object_acl(&self) -> std::option::Option<& crate::model::ObjectAcl> {
         self.object_acl.as_ref()
     }
-    /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
+    /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn read_only(&self) -> std::option::Option<bool> {
         self.read_only
     }
-    /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
+    /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn guess_mime_type_enabled(&self) -> std::option::Option<bool> {
         self.guess_mime_type_enabled
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
-    /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
-    /// </note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note> 
+    /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p> 
+    /// </note> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn requester_pays(&self) -> std::option::Option<bool> {
         self.requester_pays
     }
-    /// <p>If this value is set to <code>true</code>, it indicates that access control list (ACL) is enabled on the SMB file share. If it is set to <code>false</code>, it indicates that file and directory permissions are mapped to the POSIX permission.</p>
+    /// <p>If this value is set to <code>true</code>, it indicates that access control list (ACL) is enabled on the SMB file share. If it is set to <code>false</code>, it indicates that file and directory permissions are mapped to the POSIX permission.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.</p>
     pub fn smbacl_enabled(&self) -> std::option::Option<bool> {
         self.smbacl_enabled
@@ -5229,69 +4939,69 @@ impl SmbFileShareInfo {
         self.access_based_enumeration
     }
     /// <p>A list of users or groups in the Active Directory that have administrator rights to the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn admin_user_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn admin_user_list(&self) -> std::option::Option<& [std::string::String]> {
         self.admin_user_list.as_deref()
     }
     /// <p>A list of users or groups in the Active Directory that are allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn valid_user_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn valid_user_list(&self) -> std::option::Option<& [std::string::String]> {
         self.valid_user_list.as_deref()
     }
     /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn invalid_user_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn invalid_user_list(&self) -> std::option::Option<& [std::string::String]> {
         self.invalid_user_list.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-    pub fn audit_destination_arn(&self) -> std::option::Option<&str> {
+    pub fn audit_destination_arn(&self) -> std::option::Option<& str> {
         self.audit_destination_arn.as_deref()
     }
-    /// <p>The authentication method of the file share. The default is <code>ActiveDirectory</code>.</p>
+    /// <p>The authentication method of the file share. The default is <code>ActiveDirectory</code>.</p> 
     /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
-    pub fn authentication(&self) -> std::option::Option<&str> {
+    pub fn authentication(&self) -> std::option::Option<& str> {
         self.authentication.as_deref()
     }
     /// <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
-    pub fn case_sensitivity(&self) -> std::option::Option<&crate::model::CaseSensitivity> {
+    pub fn case_sensitivity(&self) -> std::option::Option<& crate::model::CaseSensitivity> {
         self.case_sensitivity.as_ref()
     }
     /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The name of the file share. Optional.</p> <note>
-    /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>The name of the file share. Optional.</p> <note> 
+    /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p> 
     /// </note>
-    pub fn file_share_name(&self) -> std::option::Option<&str> {
+    pub fn file_share_name(&self) -> std::option::Option<& str> {
         self.file_share_name.as_deref()
     }
     /// <p>Refresh cache information for the file share.</p>
-    pub fn cache_attributes(&self) -> std::option::Option<&crate::model::CacheAttributes> {
+    pub fn cache_attributes(&self) -> std::option::Option<& crate::model::CacheAttributes> {
         self.cache_attributes.as_ref()
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
-    /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
-    /// </note>
-    /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
-    /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
-    /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note> 
+    /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p> 
+    /// </note> 
+    /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p> 
+    /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p> 
+    /// <p>The following example sets <code>NotificationPolicy</code> off.</p> 
     /// <p> <code>{}</code> </p>
-    pub fn notification_policy(&self) -> std::option::Option<&str> {
+    pub fn notification_policy(&self) -> std::option::Option<& str> {
         self.notification_policy.as_deref()
     }
-    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note>
-    /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note> 
+    /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p> 
     /// </note>
-    pub fn vpc_endpoint_dns_name(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_dns_name(&self) -> std::option::Option<& str> {
         self.vpc_endpoint_dns_name.as_deref()
     }
-    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note>
-    /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note> 
+    /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p> 
     /// </note>
-    pub fn bucket_region(&self) -> std::option::Option<&str> {
+    pub fn bucket_region(&self) -> std::option::Option<& str> {
         self.bucket_region.as_deref()
     }
-    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
-    /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
-    /// </note>
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note> 
+    /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p> 
+    /// </note> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn oplocks_enabled(&self) -> std::option::Option<bool> {
         self.oplocks_enabled
@@ -5299,7 +5009,7 @@ impl SmbFileShareInfo {
 }
 /// See [`SmbFileShareInfo`](crate::model::SmbFileShareInfo).
 pub mod smb_file_share_info {
-
+    
     /// A builder for [`SmbFileShareInfo`](crate::model::SmbFileShareInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5340,12 +5050,8 @@ pub mod smb_file_share_info {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-        pub fn set_file_share_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_share_arn = input;
-            self
+        pub fn set_file_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_share_arn = input; self
         }
         /// <p>The ID of the file share.</p>
         pub fn file_share_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5353,27 +5059,19 @@ pub mod smb_file_share_info {
             self
         }
         /// <p>The ID of the file share.</p>
-        pub fn set_file_share_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_share_id = input;
-            self
+        pub fn set_file_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_share_id = input; self
         }
-        /// <p>The status of the file share.</p>
+        /// <p>The status of the file share.</p> 
         /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
         pub fn file_share_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_share_status = Some(input.into());
             self
         }
-        /// <p>The status of the file share.</p>
+        /// <p>The status of the file share.</p> 
         /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-        pub fn set_file_share_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_share_status = input;
-            self
+        pub fn set_file_share_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_share_status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5382,20 +5080,18 @@ pub mod smb_file_share_info {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn kms_encrypted(mut self, input: bool) -> Self {
             self.kms_encrypted = Some(input);
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn set_kms_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-            self.kms_encrypted = input;
-            self
+            self.kms_encrypted = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5404,8 +5100,7 @@ pub mod smb_file_share_info {
         }
         /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key = input;
-            self
+            self.kms_key = input; self
         }
         /// <p>The file share path used by the SMB client to identify the mount point.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5414,8 +5109,7 @@ pub mod smb_file_share_info {
         }
         /// <p>The file share path used by the SMB client to identify the mount point.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// <p>The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5424,51 +5118,45 @@ pub mod smb_file_share_info {
         }
         /// <p>The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
-        /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
-        /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
-        /// <p>Bucket ARN:</p>
-        /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p>
-        /// <p>Access point ARN:</p>
-        /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p>
-        /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>Access point alias:</p>
-        /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
+        /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note> 
+        /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p> 
+        /// <p>Bucket ARN:</p> 
+        /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p> 
+        /// <p>Access point ARN:</p> 
+        /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p> 
+        /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+        /// <p>Access point alias:</p> 
+        /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
         /// </note>
         pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.location_arn = Some(input.into());
             self
         }
-        /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
-        /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
-        /// <p>Bucket ARN:</p>
-        /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p>
-        /// <p>Access point ARN:</p>
-        /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p>
-        /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>Access point alias:</p>
-        /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
+        /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note> 
+        /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p> 
+        /// <p>Bucket ARN:</p> 
+        /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p> 
+        /// <p>Access point ARN:</p> 
+        /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p> 
+        /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+        /// <p>Access point alias:</p> 
+        /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
         /// </note>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p> 
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
         pub fn default_storage_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_storage_class = Some(input.into());
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p> 
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-        pub fn set_default_storage_class(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_storage_class = input;
-            self
+        pub fn set_default_storage_class(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_storage_class = input; self
         }
         /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that an S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
         pub fn object_acl(mut self, input: crate::model::ObjectAcl) -> Self {
@@ -5476,64 +5164,56 @@ pub mod smb_file_share_info {
             self
         }
         /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that an S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
-        pub fn set_object_acl(
-            mut self,
-            input: std::option::Option<crate::model::ObjectAcl>,
-        ) -> Self {
-            self.object_acl = input;
-            self
+        pub fn set_object_acl(mut self, input: std::option::Option<crate::model::ObjectAcl>) -> Self {
+            self.object_acl = input; self
         }
-        /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
+        /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn read_only(mut self, input: bool) -> Self {
             self.read_only = Some(input);
             self
         }
-        /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
+        /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
-            self.read_only = input;
-            self
+            self.read_only = input; self
         }
-        /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
+        /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn guess_mime_type_enabled(mut self, input: bool) -> Self {
             self.guess_mime_type_enabled = Some(input);
             self
         }
-        /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
+        /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn set_guess_mime_type_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.guess_mime_type_enabled = input;
-            self
+            self.guess_mime_type_enabled = input; self
         }
-        /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
-        /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
-        /// </note>
+        /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note> 
+        /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p> 
+        /// </note> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn requester_pays(mut self, input: bool) -> Self {
             self.requester_pays = Some(input);
             self
         }
-        /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
-        /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
-        /// </note>
+        /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note> 
+        /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p> 
+        /// </note> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn set_requester_pays(mut self, input: std::option::Option<bool>) -> Self {
-            self.requester_pays = input;
-            self
+            self.requester_pays = input; self
         }
-        /// <p>If this value is set to <code>true</code>, it indicates that access control list (ACL) is enabled on the SMB file share. If it is set to <code>false</code>, it indicates that file and directory permissions are mapped to the POSIX permission.</p>
+        /// <p>If this value is set to <code>true</code>, it indicates that access control list (ACL) is enabled on the SMB file share. If it is set to <code>false</code>, it indicates that file and directory permissions are mapped to the POSIX permission.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.</p>
         pub fn smbacl_enabled(mut self, input: bool) -> Self {
             self.smbacl_enabled = Some(input);
             self
         }
-        /// <p>If this value is set to <code>true</code>, it indicates that access control list (ACL) is enabled on the SMB file share. If it is set to <code>false</code>, it indicates that file and directory permissions are mapped to the POSIX permission.</p>
+        /// <p>If this value is set to <code>true</code>, it indicates that access control list (ACL) is enabled on the SMB file share. If it is set to <code>false</code>, it indicates that file and directory permissions are mapped to the POSIX permission.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.</p>
         pub fn set_smbacl_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.smbacl_enabled = input;
-            self
+            self.smbacl_enabled = input; self
         }
         /// <p>Indicates whether <code>AccessBasedEnumeration</code> is enabled.</p>
         pub fn access_based_enumeration(mut self, input: bool) -> Self {
@@ -5542,8 +5222,7 @@ pub mod smb_file_share_info {
         }
         /// <p>Indicates whether <code>AccessBasedEnumeration</code> is enabled.</p>
         pub fn set_access_based_enumeration(mut self, input: std::option::Option<bool>) -> Self {
-            self.access_based_enumeration = input;
-            self
+            self.access_based_enumeration = input; self
         }
         /// Appends an item to `admin_user_list`.
         ///
@@ -5552,17 +5231,13 @@ pub mod smb_file_share_info {
         /// <p>A list of users or groups in the Active Directory that have administrator rights to the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
         pub fn admin_user_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.admin_user_list.unwrap_or_default();
-            v.push(input.into());
-            self.admin_user_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.admin_user_list = Some(v);
+                            self
         }
         /// <p>A list of users or groups in the Active Directory that have administrator rights to the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-        pub fn set_admin_user_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.admin_user_list = input;
-            self
+        pub fn set_admin_user_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.admin_user_list = input; self
         }
         /// Appends an item to `valid_user_list`.
         ///
@@ -5571,17 +5246,13 @@ pub mod smb_file_share_info {
         /// <p>A list of users or groups in the Active Directory that are allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
         pub fn valid_user_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.valid_user_list.unwrap_or_default();
-            v.push(input.into());
-            self.valid_user_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.valid_user_list = Some(v);
+                            self
         }
         /// <p>A list of users or groups in the Active Directory that are allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-        pub fn set_valid_user_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.valid_user_list = input;
-            self
+        pub fn set_valid_user_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.valid_user_list = input; self
         }
         /// Appends an item to `invalid_user_list`.
         ///
@@ -5590,17 +5261,13 @@ pub mod smb_file_share_info {
         /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
         pub fn invalid_user_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.invalid_user_list.unwrap_or_default();
-            v.push(input.into());
-            self.invalid_user_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.invalid_user_list = Some(v);
+                            self
         }
         /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-        pub fn set_invalid_user_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.invalid_user_list = input;
-            self
+        pub fn set_invalid_user_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.invalid_user_list = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
         pub fn audit_destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5608,27 +5275,19 @@ pub mod smb_file_share_info {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-        pub fn set_audit_destination_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.audit_destination_arn = input;
-            self
+        pub fn set_audit_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.audit_destination_arn = input; self
         }
-        /// <p>The authentication method of the file share. The default is <code>ActiveDirectory</code>.</p>
+        /// <p>The authentication method of the file share. The default is <code>ActiveDirectory</code>.</p> 
         /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
         pub fn authentication(mut self, input: impl Into<std::string::String>) -> Self {
             self.authentication = Some(input.into());
             self
         }
-        /// <p>The authentication method of the file share. The default is <code>ActiveDirectory</code>.</p>
+        /// <p>The authentication method of the file share. The default is <code>ActiveDirectory</code>.</p> 
         /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
-        pub fn set_authentication(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.authentication = input;
-            self
+        pub fn set_authentication(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.authentication = input; self
         }
         /// <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
         pub fn case_sensitivity(mut self, input: crate::model::CaseSensitivity) -> Self {
@@ -5636,12 +5295,8 @@ pub mod smb_file_share_info {
             self
         }
         /// <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
-        pub fn set_case_sensitivity(
-            mut self,
-            input: std::option::Option<crate::model::CaseSensitivity>,
-        ) -> Self {
-            self.case_sensitivity = input;
-            self
+        pub fn set_case_sensitivity(mut self, input: std::option::Option<crate::model::CaseSensitivity>) -> Self {
+            self.case_sensitivity = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -5650,34 +5305,26 @@ pub mod smb_file_share_info {
         /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
-        /// <p>The name of the file share. Optional.</p> <note>
-        /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+        /// <p>The name of the file share. Optional.</p> <note> 
+        /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p> 
         /// </note>
         pub fn file_share_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_share_name = Some(input.into());
             self
         }
-        /// <p>The name of the file share. Optional.</p> <note>
-        /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+        /// <p>The name of the file share. Optional.</p> <note> 
+        /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p> 
         /// </note>
-        pub fn set_file_share_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_share_name = input;
-            self
+        pub fn set_file_share_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_share_name = input; self
         }
         /// <p>Refresh cache information for the file share.</p>
         pub fn cache_attributes(mut self, input: crate::model::CacheAttributes) -> Self {
@@ -5685,123 +5332,138 @@ pub mod smb_file_share_info {
             self
         }
         /// <p>Refresh cache information for the file share.</p>
-        pub fn set_cache_attributes(
-            mut self,
-            input: std::option::Option<crate::model::CacheAttributes>,
-        ) -> Self {
-            self.cache_attributes = input;
-            self
+        pub fn set_cache_attributes(mut self, input: std::option::Option<crate::model::CacheAttributes>) -> Self {
+            self.cache_attributes = input; self
         }
-        /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
-        /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
-        /// </note>
-        /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
-        /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
-        /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
+        /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note> 
+        /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p> 
+        /// </note> 
+        /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p> 
+        /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p> 
+        /// <p>The following example sets <code>NotificationPolicy</code> off.</p> 
         /// <p> <code>{}</code> </p>
         pub fn notification_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_policy = Some(input.into());
             self
         }
-        /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
-        /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
-        /// </note>
-        /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
-        /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
-        /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
+        /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note> 
+        /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p> 
+        /// </note> 
+        /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p> 
+        /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p> 
+        /// <p>The following example sets <code>NotificationPolicy</code> off.</p> 
         /// <p> <code>{}</code> </p>
-        pub fn set_notification_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.notification_policy = input;
-            self
+        pub fn set_notification_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notification_policy = input; self
         }
-        /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note>
-        /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note> 
+        /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p> 
         /// </note>
         pub fn vpc_endpoint_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_endpoint_dns_name = Some(input.into());
             self
         }
-        /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note>
-        /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note> 
+        /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p> 
         /// </note>
-        pub fn set_vpc_endpoint_dns_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpc_endpoint_dns_name = input;
-            self
+        pub fn set_vpc_endpoint_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_endpoint_dns_name = input; self
         }
-        /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note>
-        /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note> 
+        /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p> 
         /// </note>
         pub fn bucket_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_region = Some(input.into());
             self
         }
-        /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note>
-        /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note> 
+        /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p> 
         /// </note>
-        pub fn set_bucket_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bucket_region = input;
-            self
+        pub fn set_bucket_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket_region = input; self
         }
-        /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
-        /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
-        /// </note>
+        /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note> 
+        /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p> 
+        /// </note> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn oplocks_enabled(mut self, input: bool) -> Self {
             self.oplocks_enabled = Some(input);
             self
         }
-        /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
-        /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
-        /// </note>
+        /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note> 
+        /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p> 
+        /// </note> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn set_oplocks_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.oplocks_enabled = input;
-            self
+            self.oplocks_enabled = input; self
         }
         /// Consumes the builder and constructs a [`SmbFileShareInfo`](crate::model::SmbFileShareInfo).
         pub fn build(self) -> crate::model::SmbFileShareInfo {
             crate::model::SmbFileShareInfo {
-                file_share_arn: self.file_share_arn,
-                file_share_id: self.file_share_id,
-                file_share_status: self.file_share_status,
-                gateway_arn: self.gateway_arn,
-                kms_encrypted: self.kms_encrypted.unwrap_or_default(),
-                kms_key: self.kms_key,
-                path: self.path,
-                role: self.role,
-                location_arn: self.location_arn,
-                default_storage_class: self.default_storage_class,
-                object_acl: self.object_acl,
-                read_only: self.read_only,
-                guess_mime_type_enabled: self.guess_mime_type_enabled,
-                requester_pays: self.requester_pays,
-                smbacl_enabled: self.smbacl_enabled,
-                access_based_enumeration: self.access_based_enumeration,
-                admin_user_list: self.admin_user_list,
-                valid_user_list: self.valid_user_list,
-                invalid_user_list: self.invalid_user_list,
-                audit_destination_arn: self.audit_destination_arn,
-                authentication: self.authentication,
-                case_sensitivity: self.case_sensitivity,
-                tags: self.tags,
-                file_share_name: self.file_share_name,
-                cache_attributes: self.cache_attributes,
-                notification_policy: self.notification_policy,
-                vpc_endpoint_dns_name: self.vpc_endpoint_dns_name,
-                bucket_region: self.bucket_region,
-                oplocks_enabled: self.oplocks_enabled,
+                file_share_arn: self.file_share_arn
+                ,
+                file_share_id: self.file_share_id
+                ,
+                file_share_status: self.file_share_status
+                ,
+                gateway_arn: self.gateway_arn
+                ,
+                kms_encrypted: self.kms_encrypted
+                    .unwrap_or_default()
+                ,
+                kms_key: self.kms_key
+                ,
+                path: self.path
+                ,
+                role: self.role
+                ,
+                location_arn: self.location_arn
+                ,
+                default_storage_class: self.default_storage_class
+                ,
+                object_acl: self.object_acl
+                ,
+                read_only: self.read_only
+                ,
+                guess_mime_type_enabled: self.guess_mime_type_enabled
+                ,
+                requester_pays: self.requester_pays
+                ,
+                smbacl_enabled: self.smbacl_enabled
+                ,
+                access_based_enumeration: self.access_based_enumeration
+                ,
+                admin_user_list: self.admin_user_list
+                ,
+                valid_user_list: self.valid_user_list
+                ,
+                invalid_user_list: self.invalid_user_list
+                ,
+                audit_destination_arn: self.audit_destination_arn
+                ,
+                authentication: self.authentication
+                ,
+                case_sensitivity: self.case_sensitivity
+                ,
+                tags: self.tags
+                ,
+                file_share_name: self.file_share_name
+                ,
+                cache_attributes: self.cache_attributes
+                ,
+                notification_policy: self.notification_policy
+                ,
+                vpc_endpoint_dns_name: self.vpc_endpoint_dns_name
+                ,
+                bucket_region: self.bucket_region
+                ,
+                oplocks_enabled: self.oplocks_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl SmbFileShareInfo {
     /// Creates a new builder-style object to manufacture [`SmbFileShareInfo`](crate::model::SmbFileShareInfo).
@@ -5813,7 +5475,7 @@ impl SmbFileShareInfo {
 /// <p>The Unix file permissions and ownership information assigned, by default, to native S3 objects when an S3 File Gateway discovers them in S3 buckets. This operation is only supported in S3 File Gateways.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NfsFileShareInfo {
+pub struct NfsFileShareInfo  {
     /// <p>Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for S3 File Gateways.</p>
     #[doc(hidden)]
     pub nfs_file_share_defaults: std::option::Option<crate::model::NfsFileShareDefaults>,
@@ -5823,14 +5485,14 @@ pub struct NfsFileShareInfo {
     /// <p>The ID of the file share.</p>
     #[doc(hidden)]
     pub file_share_id: std::option::Option<std::string::String>,
-    /// <p>The status of the file share.</p>
+    /// <p>The status of the file share.</p> 
     /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
     #[doc(hidden)]
     pub file_share_status: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     #[doc(hidden)]
     pub kms_encrypted: bool,
@@ -5843,19 +5505,19 @@ pub struct NfsFileShareInfo {
     /// <p>The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
     #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
-    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
-    /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
-    /// <p>Bucket ARN:</p>
-    /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p>
-    /// <p>Access point ARN:</p>
-    /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p>
-    /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>Access point alias:</p>
-    /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
+    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note> 
+    /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p> 
+    /// <p>Bucket ARN:</p> 
+    /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p> 
+    /// <p>Access point ARN:</p> 
+    /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p> 
+    /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>Access point alias:</p> 
+    /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
     /// </note>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p> 
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     #[doc(hidden)]
     pub default_storage_class: std::option::Option<std::string::String>,
@@ -5865,55 +5527,55 @@ pub struct NfsFileShareInfo {
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
     #[doc(hidden)]
     pub client_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The user mapped to anonymous user. Valid options are the following:</p>
-    /// <ul>
-    /// <li> <p> <code>RootSquash</code>: Only root is mapped to anonymous user.</p> </li>
-    /// <li> <p> <code>NoSquash</code>: No one is mapped to anonymous user.</p> </li>
-    /// <li> <p> <code>AllSquash</code>: Everyone is mapped to anonymous user.</p> </li>
+    /// <p>The user mapped to anonymous user. Valid options are the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>RootSquash</code>: Only root is mapped to anonymous user.</p> </li> 
+    /// <li> <p> <code>NoSquash</code>: No one is mapped to anonymous user.</p> </li> 
+    /// <li> <p> <code>AllSquash</code>: Everyone is mapped to anonymous user.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub squash: std::option::Option<std::string::String>,
-    /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
+    /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     #[doc(hidden)]
     pub read_only: std::option::Option<bool>,
-    /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
+    /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     #[doc(hidden)]
     pub guess_mime_type_enabled: std::option::Option<bool>,
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
-    /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
-    /// </note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note> 
+    /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p> 
+    /// </note> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     #[doc(hidden)]
     pub requester_pays: std::option::Option<bool>,
     /// <p>A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The name of the file share. Optional.</p> <note>
-    /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>The name of the file share. Optional.</p> <note> 
+    /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p> 
     /// </note>
     #[doc(hidden)]
     pub file_share_name: std::option::Option<std::string::String>,
     /// <p>Refresh cache information for the file share.</p>
     #[doc(hidden)]
     pub cache_attributes: std::option::Option<crate::model::CacheAttributes>,
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
-    /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
-    /// </note>
-    /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
-    /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
-    /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note> 
+    /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p> 
+    /// </note> 
+    /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p> 
+    /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p> 
+    /// <p>The following example sets <code>NotificationPolicy</code> off.</p> 
     /// <p> <code>{}</code> </p>
     #[doc(hidden)]
     pub notification_policy: std::option::Option<std::string::String>,
-    /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p> <note>
-    /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+    /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p> <note> 
+    /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p> 
     /// </note>
     #[doc(hidden)]
     pub vpc_endpoint_dns_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note>
-    /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+    /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note> 
+    /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p> 
     /// </note>
     #[doc(hidden)]
     pub bucket_region: std::option::Option<std::string::String>,
@@ -5923,141 +5585,139 @@ pub struct NfsFileShareInfo {
 }
 impl NfsFileShareInfo {
     /// <p>Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for S3 File Gateways.</p>
-    pub fn nfs_file_share_defaults(
-        &self,
-    ) -> std::option::Option<&crate::model::NfsFileShareDefaults> {
+    pub fn nfs_file_share_defaults(&self) -> std::option::Option<& crate::model::NfsFileShareDefaults> {
         self.nfs_file_share_defaults.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+    pub fn file_share_arn(&self) -> std::option::Option<& str> {
         self.file_share_arn.as_deref()
     }
     /// <p>The ID of the file share.</p>
-    pub fn file_share_id(&self) -> std::option::Option<&str> {
+    pub fn file_share_id(&self) -> std::option::Option<& str> {
         self.file_share_id.as_deref()
     }
-    /// <p>The status of the file share.</p>
+    /// <p>The status of the file share.</p> 
     /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-    pub fn file_share_status(&self) -> std::option::Option<&str> {
+    pub fn file_share_status(&self) -> std::option::Option<& str> {
         self.file_share_status.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
-    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn kms_encrypted(&self) -> bool {
         self.kms_encrypted
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
-    pub fn kms_key(&self) -> std::option::Option<&str> {
+    pub fn kms_key(&self) -> std::option::Option<& str> {
         self.kms_key.as_deref()
     }
     /// <p>The file share path used by the NFS client to identify the mount point.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
-    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
-    /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
-    /// <p>Bucket ARN:</p>
-    /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p>
-    /// <p>Access point ARN:</p>
-    /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p>
-    /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>Access point alias:</p>
-    /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
+    /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note> 
+    /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p> 
+    /// <p>Bucket ARN:</p> 
+    /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p> 
+    /// <p>Access point ARN:</p> 
+    /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p> 
+    /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>Access point alias:</p> 
+    /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
     /// </note>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p> 
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-    pub fn default_storage_class(&self) -> std::option::Option<&str> {
+    pub fn default_storage_class(&self) -> std::option::Option<& str> {
         self.default_storage_class.as_deref()
     }
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that an S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
-    pub fn object_acl(&self) -> std::option::Option<&crate::model::ObjectAcl> {
+    pub fn object_acl(&self) -> std::option::Option<& crate::model::ObjectAcl> {
         self.object_acl.as_ref()
     }
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
-    pub fn client_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn client_list(&self) -> std::option::Option<& [std::string::String]> {
         self.client_list.as_deref()
     }
-    /// <p>The user mapped to anonymous user. Valid options are the following:</p>
-    /// <ul>
-    /// <li> <p> <code>RootSquash</code>: Only root is mapped to anonymous user.</p> </li>
-    /// <li> <p> <code>NoSquash</code>: No one is mapped to anonymous user.</p> </li>
-    /// <li> <p> <code>AllSquash</code>: Everyone is mapped to anonymous user.</p> </li>
+    /// <p>The user mapped to anonymous user. Valid options are the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>RootSquash</code>: Only root is mapped to anonymous user.</p> </li> 
+    /// <li> <p> <code>NoSquash</code>: No one is mapped to anonymous user.</p> </li> 
+    /// <li> <p> <code>AllSquash</code>: Everyone is mapped to anonymous user.</p> </li> 
     /// </ul>
-    pub fn squash(&self) -> std::option::Option<&str> {
+    pub fn squash(&self) -> std::option::Option<& str> {
         self.squash.as_deref()
     }
-    /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
+    /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn read_only(&self) -> std::option::Option<bool> {
         self.read_only
     }
-    /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
+    /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn guess_mime_type_enabled(&self) -> std::option::Option<bool> {
         self.guess_mime_type_enabled
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
-    /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
-    /// </note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note> 
+    /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p> 
+    /// </note> 
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn requester_pays(&self) -> std::option::Option<bool> {
         self.requester_pays
     }
     /// <p>A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The name of the file share. Optional.</p> <note>
-    /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+    /// <p>The name of the file share. Optional.</p> <note> 
+    /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p> 
     /// </note>
-    pub fn file_share_name(&self) -> std::option::Option<&str> {
+    pub fn file_share_name(&self) -> std::option::Option<& str> {
         self.file_share_name.as_deref()
     }
     /// <p>Refresh cache information for the file share.</p>
-    pub fn cache_attributes(&self) -> std::option::Option<&crate::model::CacheAttributes> {
+    pub fn cache_attributes(&self) -> std::option::Option<& crate::model::CacheAttributes> {
         self.cache_attributes.as_ref()
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
-    /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
-    /// </note>
-    /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
-    /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
-    /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note> 
+    /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p> 
+    /// </note> 
+    /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p> 
+    /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p> 
+    /// <p>The following example sets <code>NotificationPolicy</code> off.</p> 
     /// <p> <code>{}</code> </p>
-    pub fn notification_policy(&self) -> std::option::Option<&str> {
+    pub fn notification_policy(&self) -> std::option::Option<& str> {
         self.notification_policy.as_deref()
     }
-    /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p> <note>
-    /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+    /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p> <note> 
+    /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p> 
     /// </note>
-    pub fn vpc_endpoint_dns_name(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_dns_name(&self) -> std::option::Option<& str> {
         self.vpc_endpoint_dns_name.as_deref()
     }
-    /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note>
-    /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+    /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note> 
+    /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p> 
     /// </note>
-    pub fn bucket_region(&self) -> std::option::Option<&str> {
+    pub fn bucket_region(&self) -> std::option::Option<& str> {
         self.bucket_region.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-    pub fn audit_destination_arn(&self) -> std::option::Option<&str> {
+    pub fn audit_destination_arn(&self) -> std::option::Option<& str> {
         self.audit_destination_arn.as_deref()
     }
 }
 /// See [`NfsFileShareInfo`](crate::model::NfsFileShareInfo).
 pub mod nfs_file_share_info {
-
+    
     /// A builder for [`NfsFileShareInfo`](crate::model::NfsFileShareInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6088,20 +5748,13 @@ pub mod nfs_file_share_info {
     }
     impl Builder {
         /// <p>Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for S3 File Gateways.</p>
-        pub fn nfs_file_share_defaults(
-            mut self,
-            input: crate::model::NfsFileShareDefaults,
-        ) -> Self {
+        pub fn nfs_file_share_defaults(mut self, input: crate::model::NfsFileShareDefaults) -> Self {
             self.nfs_file_share_defaults = Some(input);
             self
         }
         /// <p>Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for S3 File Gateways.</p>
-        pub fn set_nfs_file_share_defaults(
-            mut self,
-            input: std::option::Option<crate::model::NfsFileShareDefaults>,
-        ) -> Self {
-            self.nfs_file_share_defaults = input;
-            self
+        pub fn set_nfs_file_share_defaults(mut self, input: std::option::Option<crate::model::NfsFileShareDefaults>) -> Self {
+            self.nfs_file_share_defaults = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the file share.</p>
         pub fn file_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6109,12 +5762,8 @@ pub mod nfs_file_share_info {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-        pub fn set_file_share_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_share_arn = input;
-            self
+        pub fn set_file_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_share_arn = input; self
         }
         /// <p>The ID of the file share.</p>
         pub fn file_share_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6122,27 +5771,19 @@ pub mod nfs_file_share_info {
             self
         }
         /// <p>The ID of the file share.</p>
-        pub fn set_file_share_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_share_id = input;
-            self
+        pub fn set_file_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_share_id = input; self
         }
-        /// <p>The status of the file share.</p>
+        /// <p>The status of the file share.</p> 
         /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
         pub fn file_share_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_share_status = Some(input.into());
             self
         }
-        /// <p>The status of the file share.</p>
+        /// <p>The status of the file share.</p> 
         /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-        pub fn set_file_share_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_share_status = input;
-            self
+        pub fn set_file_share_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_share_status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6151,20 +5792,18 @@ pub mod nfs_file_share_info {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn kms_encrypted(mut self, input: bool) -> Self {
             self.kms_encrypted = Some(input);
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn set_kms_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-            self.kms_encrypted = input;
-            self
+            self.kms_encrypted = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6173,8 +5812,7 @@ pub mod nfs_file_share_info {
         }
         /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key = input;
-            self
+            self.kms_key = input; self
         }
         /// <p>The file share path used by the NFS client to identify the mount point.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6183,8 +5821,7 @@ pub mod nfs_file_share_info {
         }
         /// <p>The file share path used by the NFS client to identify the mount point.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// <p>The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6193,51 +5830,45 @@ pub mod nfs_file_share_info {
         }
         /// <p>The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
-        /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
-        /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
-        /// <p>Bucket ARN:</p>
-        /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p>
-        /// <p>Access point ARN:</p>
-        /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p>
-        /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>Access point alias:</p>
-        /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
+        /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note> 
+        /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p> 
+        /// <p>Bucket ARN:</p> 
+        /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p> 
+        /// <p>Access point ARN:</p> 
+        /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p> 
+        /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+        /// <p>Access point alias:</p> 
+        /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
         /// </note>
         pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.location_arn = Some(input.into());
             self
         }
-        /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>
-        /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
-        /// <p>Bucket ARN:</p>
-        /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p>
-        /// <p>Access point ARN:</p>
-        /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p>
-        /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>Access point alias:</p>
-        /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>
+        /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note> 
+        /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p> 
+        /// <p>Bucket ARN:</p> 
+        /// <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p> 
+        /// <p>Access point ARN:</p> 
+        /// <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p> 
+        /// <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+        /// <p>Access point alias:</p> 
+        /// <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
         /// </note>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p> 
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
         pub fn default_storage_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_storage_class = Some(input.into());
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p> 
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-        pub fn set_default_storage_class(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_storage_class = input;
-            self
+        pub fn set_default_storage_class(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_storage_class = input; self
         }
         /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that an S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
         pub fn object_acl(mut self, input: crate::model::ObjectAcl) -> Self {
@@ -6245,12 +5876,8 @@ pub mod nfs_file_share_info {
             self
         }
         /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that an S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
-        pub fn set_object_acl(
-            mut self,
-            input: std::option::Option<crate::model::ObjectAcl>,
-        ) -> Self {
-            self.object_acl = input;
-            self
+        pub fn set_object_acl(mut self, input: std::option::Option<crate::model::ObjectAcl>) -> Self {
+            self.object_acl = input; self
         }
         /// Appends an item to `client_list`.
         ///
@@ -6259,77 +5886,69 @@ pub mod nfs_file_share_info {
         /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
         pub fn client_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.client_list.unwrap_or_default();
-            v.push(input.into());
-            self.client_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.client_list = Some(v);
+                            self
         }
         /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
-        pub fn set_client_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.client_list = input;
-            self
+        pub fn set_client_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.client_list = input; self
         }
-        /// <p>The user mapped to anonymous user. Valid options are the following:</p>
-        /// <ul>
-        /// <li> <p> <code>RootSquash</code>: Only root is mapped to anonymous user.</p> </li>
-        /// <li> <p> <code>NoSquash</code>: No one is mapped to anonymous user.</p> </li>
-        /// <li> <p> <code>AllSquash</code>: Everyone is mapped to anonymous user.</p> </li>
+        /// <p>The user mapped to anonymous user. Valid options are the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>RootSquash</code>: Only root is mapped to anonymous user.</p> </li> 
+        /// <li> <p> <code>NoSquash</code>: No one is mapped to anonymous user.</p> </li> 
+        /// <li> <p> <code>AllSquash</code>: Everyone is mapped to anonymous user.</p> </li> 
         /// </ul>
         pub fn squash(mut self, input: impl Into<std::string::String>) -> Self {
             self.squash = Some(input.into());
             self
         }
-        /// <p>The user mapped to anonymous user. Valid options are the following:</p>
-        /// <ul>
-        /// <li> <p> <code>RootSquash</code>: Only root is mapped to anonymous user.</p> </li>
-        /// <li> <p> <code>NoSquash</code>: No one is mapped to anonymous user.</p> </li>
-        /// <li> <p> <code>AllSquash</code>: Everyone is mapped to anonymous user.</p> </li>
+        /// <p>The user mapped to anonymous user. Valid options are the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>RootSquash</code>: Only root is mapped to anonymous user.</p> </li> 
+        /// <li> <p> <code>NoSquash</code>: No one is mapped to anonymous user.</p> </li> 
+        /// <li> <p> <code>AllSquash</code>: Everyone is mapped to anonymous user.</p> </li> 
         /// </ul>
         pub fn set_squash(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.squash = input;
-            self
+            self.squash = input; self
         }
-        /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
+        /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn read_only(mut self, input: bool) -> Self {
             self.read_only = Some(input);
             self
         }
-        /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
+        /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
-            self.read_only = input;
-            self
+            self.read_only = input; self
         }
-        /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
+        /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn guess_mime_type_enabled(mut self, input: bool) -> Self {
             self.guess_mime_type_enabled = Some(input);
             self
         }
-        /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
+        /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn set_guess_mime_type_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.guess_mime_type_enabled = input;
-            self
+            self.guess_mime_type_enabled = input; self
         }
-        /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
-        /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
-        /// </note>
+        /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note> 
+        /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p> 
+        /// </note> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn requester_pays(mut self, input: bool) -> Self {
             self.requester_pays = Some(input);
             self
         }
-        /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
-        /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
-        /// </note>
+        /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note> 
+        /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p> 
+        /// </note> 
         /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn set_requester_pays(mut self, input: std::option::Option<bool>) -> Self {
-            self.requester_pays = input;
-            self
+            self.requester_pays = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -6338,34 +5957,26 @@ pub mod nfs_file_share_info {
         /// <p>A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
-        /// <p>The name of the file share. Optional.</p> <note>
-        /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+        /// <p>The name of the file share. Optional.</p> <note> 
+        /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p> 
         /// </note>
         pub fn file_share_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_share_name = Some(input.into());
             self
         }
-        /// <p>The name of the file share. Optional.</p> <note>
-        /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
+        /// <p>The name of the file share. Optional.</p> <note> 
+        /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p> 
         /// </note>
-        pub fn set_file_share_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_share_name = input;
-            self
+        pub fn set_file_share_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_share_name = input; self
         }
         /// <p>Refresh cache information for the file share.</p>
         pub fn cache_attributes(mut self, input: crate::model::CacheAttributes) -> Self {
@@ -6373,71 +5984,55 @@ pub mod nfs_file_share_info {
             self
         }
         /// <p>Refresh cache information for the file share.</p>
-        pub fn set_cache_attributes(
-            mut self,
-            input: std::option::Option<crate::model::CacheAttributes>,
-        ) -> Self {
-            self.cache_attributes = input;
-            self
+        pub fn set_cache_attributes(mut self, input: std::option::Option<crate::model::CacheAttributes>) -> Self {
+            self.cache_attributes = input; self
         }
-        /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
-        /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
-        /// </note>
-        /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
-        /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
-        /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
+        /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note> 
+        /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p> 
+        /// </note> 
+        /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p> 
+        /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p> 
+        /// <p>The following example sets <code>NotificationPolicy</code> off.</p> 
         /// <p> <code>{}</code> </p>
         pub fn notification_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_policy = Some(input.into());
             self
         }
-        /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
-        /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
-        /// </note>
-        /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
-        /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
-        /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
+        /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note> 
+        /// <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p> 
+        /// </note> 
+        /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p> 
+        /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p> 
+        /// <p>The following example sets <code>NotificationPolicy</code> off.</p> 
         /// <p> <code>{}</code> </p>
-        pub fn set_notification_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.notification_policy = input;
-            self
+        pub fn set_notification_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notification_policy = input; self
         }
-        /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p> <note>
-        /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p> <note> 
+        /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p> 
         /// </note>
         pub fn vpc_endpoint_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_endpoint_dns_name = Some(input.into());
             self
         }
-        /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p> <note>
-        /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p> <note> 
+        /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p> 
         /// </note>
-        pub fn set_vpc_endpoint_dns_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpc_endpoint_dns_name = input;
-            self
+        pub fn set_vpc_endpoint_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_endpoint_dns_name = input; self
         }
-        /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note>
-        /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note> 
+        /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p> 
         /// </note>
         pub fn bucket_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_region = Some(input.into());
             self
         }
-        /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note>
-        /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note> 
+        /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p> 
         /// </note>
-        pub fn set_bucket_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bucket_region = input;
-            self
+        pub fn set_bucket_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket_region = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
         pub fn audit_destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6445,43 +6040,66 @@ pub mod nfs_file_share_info {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-        pub fn set_audit_destination_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.audit_destination_arn = input;
-            self
+        pub fn set_audit_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.audit_destination_arn = input; self
         }
         /// Consumes the builder and constructs a [`NfsFileShareInfo`](crate::model::NfsFileShareInfo).
         pub fn build(self) -> crate::model::NfsFileShareInfo {
             crate::model::NfsFileShareInfo {
-                nfs_file_share_defaults: self.nfs_file_share_defaults,
-                file_share_arn: self.file_share_arn,
-                file_share_id: self.file_share_id,
-                file_share_status: self.file_share_status,
-                gateway_arn: self.gateway_arn,
-                kms_encrypted: self.kms_encrypted.unwrap_or_default(),
-                kms_key: self.kms_key,
-                path: self.path,
-                role: self.role,
-                location_arn: self.location_arn,
-                default_storage_class: self.default_storage_class,
-                object_acl: self.object_acl,
-                client_list: self.client_list,
-                squash: self.squash,
-                read_only: self.read_only,
-                guess_mime_type_enabled: self.guess_mime_type_enabled,
-                requester_pays: self.requester_pays,
-                tags: self.tags,
-                file_share_name: self.file_share_name,
-                cache_attributes: self.cache_attributes,
-                notification_policy: self.notification_policy,
-                vpc_endpoint_dns_name: self.vpc_endpoint_dns_name,
-                bucket_region: self.bucket_region,
-                audit_destination_arn: self.audit_destination_arn,
+                nfs_file_share_defaults: self.nfs_file_share_defaults
+                ,
+                file_share_arn: self.file_share_arn
+                ,
+                file_share_id: self.file_share_id
+                ,
+                file_share_status: self.file_share_status
+                ,
+                gateway_arn: self.gateway_arn
+                ,
+                kms_encrypted: self.kms_encrypted
+                    .unwrap_or_default()
+                ,
+                kms_key: self.kms_key
+                ,
+                path: self.path
+                ,
+                role: self.role
+                ,
+                location_arn: self.location_arn
+                ,
+                default_storage_class: self.default_storage_class
+                ,
+                object_acl: self.object_acl
+                ,
+                client_list: self.client_list
+                ,
+                squash: self.squash
+                ,
+                read_only: self.read_only
+                ,
+                guess_mime_type_enabled: self.guess_mime_type_enabled
+                ,
+                requester_pays: self.requester_pays
+                ,
+                tags: self.tags
+                ,
+                file_share_name: self.file_share_name
+                ,
+                cache_attributes: self.cache_attributes
+                ,
+                notification_policy: self.notification_policy
+                ,
+                vpc_endpoint_dns_name: self.vpc_endpoint_dns_name
+                ,
+                bucket_region: self.bucket_region
+                ,
+                audit_destination_arn: self.audit_destination_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl NfsFileShareInfo {
     /// Creates a new builder-style object to manufacture [`NfsFileShareInfo`](crate::model::NfsFileShareInfo).
@@ -6493,12 +6111,12 @@ impl NfsFileShareInfo {
 /// <p>Describes a gateway's network interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkInterface {
+pub struct NetworkInterface  {
     /// <p>The Internet Protocol version 4 (IPv4) address of the interface.</p>
     #[doc(hidden)]
     pub ipv4_address: std::option::Option<std::string::String>,
-    /// <p>The Media Access Control (MAC) address of the interface.</p> <note>
-    /// <p>This is currently unsupported and will not be returned in output.</p>
+    /// <p>The Media Access Control (MAC) address of the interface.</p> <note> 
+    /// <p>This is currently unsupported and will not be returned in output.</p> 
     /// </note>
     #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
@@ -6508,23 +6126,23 @@ pub struct NetworkInterface {
 }
 impl NetworkInterface {
     /// <p>The Internet Protocol version 4 (IPv4) address of the interface.</p>
-    pub fn ipv4_address(&self) -> std::option::Option<&str> {
+    pub fn ipv4_address(&self) -> std::option::Option<& str> {
         self.ipv4_address.as_deref()
     }
-    /// <p>The Media Access Control (MAC) address of the interface.</p> <note>
-    /// <p>This is currently unsupported and will not be returned in output.</p>
+    /// <p>The Media Access Control (MAC) address of the interface.</p> <note> 
+    /// <p>This is currently unsupported and will not be returned in output.</p> 
     /// </note>
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> std::option::Option<& str> {
         self.mac_address.as_deref()
     }
     /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not supported</i>.</p>
-    pub fn ipv6_address(&self) -> std::option::Option<&str> {
+    pub fn ipv6_address(&self) -> std::option::Option<& str> {
         self.ipv6_address.as_deref()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
-
+    
     /// A builder for [`NetworkInterface`](crate::model::NetworkInterface).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6540,22 +6158,20 @@ pub mod network_interface {
         }
         /// <p>The Internet Protocol version 4 (IPv4) address of the interface.</p>
         pub fn set_ipv4_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ipv4_address = input;
-            self
+            self.ipv4_address = input; self
         }
-        /// <p>The Media Access Control (MAC) address of the interface.</p> <note>
-        /// <p>This is currently unsupported and will not be returned in output.</p>
+        /// <p>The Media Access Control (MAC) address of the interface.</p> <note> 
+        /// <p>This is currently unsupported and will not be returned in output.</p> 
         /// </note>
         pub fn mac_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.mac_address = Some(input.into());
             self
         }
-        /// <p>The Media Access Control (MAC) address of the interface.</p> <note>
-        /// <p>This is currently unsupported and will not be returned in output.</p>
+        /// <p>The Media Access Control (MAC) address of the interface.</p> <note> 
+        /// <p>This is currently unsupported and will not be returned in output.</p> 
         /// </note>
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mac_address = input;
-            self
+            self.mac_address = input; self
         }
         /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not supported</i>.</p>
         pub fn ipv6_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6564,18 +6180,22 @@ pub mod network_interface {
         }
         /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not supported</i>.</p>
         pub fn set_ipv6_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ipv6_address = input;
-            self
+            self.ipv6_address = input; self
         }
         /// Consumes the builder and constructs a [`NetworkInterface`](crate::model::NetworkInterface).
         pub fn build(self) -> crate::model::NetworkInterface {
             crate::model::NetworkInterface {
-                ipv4_address: self.ipv4_address,
-                mac_address: self.mac_address,
-                ipv6_address: self.ipv6_address,
+                ipv4_address: self.ipv4_address
+                ,
+                mac_address: self.mac_address
+                ,
+                ipv6_address: self.ipv6_address
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkInterface {
     /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
@@ -6587,7 +6207,7 @@ impl NetworkInterface {
 /// <p>Describes the object returned by <code>DescribeFileSystemAssociations</code> that describes a created file system association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileSystemAssociationInfo {
+pub struct FileSystemAssociationInfo  {
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
     #[doc(hidden)]
     pub file_system_association_arn: std::option::Option<std::string::String>,
@@ -6609,64 +6229,58 @@ pub struct FileSystemAssociationInfo {
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
     #[doc(hidden)]
     pub cache_attributes: std::option::Option<crate::model::CacheAttributes>,
-    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
-    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note> 
+    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p> 
     /// </note>
     #[doc(hidden)]
-    pub endpoint_network_configuration:
-        std::option::Option<crate::model::EndpointNetworkConfiguration>,
+    pub endpoint_network_configuration: std::option::Option<crate::model::EndpointNetworkConfiguration>,
     /// <p>An array containing the FileSystemAssociationStatusDetail data type, which provides detailed information on file system association status.</p>
     #[doc(hidden)]
-    pub file_system_association_status_details:
-        std::option::Option<std::vec::Vec<crate::model::FileSystemAssociationStatusDetail>>,
+    pub file_system_association_status_details: std::option::Option<std::vec::Vec<crate::model::FileSystemAssociationStatusDetail>>,
 }
 impl FileSystemAssociationInfo {
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
-    pub fn file_system_association_arn(&self) -> std::option::Option<&str> {
+    pub fn file_system_association_arn(&self) -> std::option::Option<& str> {
         self.file_system_association_arn.as_deref()
     }
     /// <p>The ARN of the backend Amazon FSx file system used for storing file data. For information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_FileSystem.html">FileSystem</a> in the <i>Amazon FSx API Reference</i>.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
-    pub fn file_system_association_status(&self) -> std::option::Option<&str> {
+    pub fn file_system_association_status(&self) -> std::option::Option<& str> {
         self.file_system_association_status.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
-    pub fn audit_destination_arn(&self) -> std::option::Option<&str> {
+    pub fn audit_destination_arn(&self) -> std::option::Option<& str> {
         self.audit_destination_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a key-value pair.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
-    pub fn cache_attributes(&self) -> std::option::Option<&crate::model::CacheAttributes> {
+    pub fn cache_attributes(&self) -> std::option::Option<& crate::model::CacheAttributes> {
         self.cache_attributes.as_ref()
     }
-    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
-    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note> 
+    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p> 
     /// </note>
-    pub fn endpoint_network_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::EndpointNetworkConfiguration> {
+    pub fn endpoint_network_configuration(&self) -> std::option::Option<& crate::model::EndpointNetworkConfiguration> {
         self.endpoint_network_configuration.as_ref()
     }
     /// <p>An array containing the FileSystemAssociationStatusDetail data type, which provides detailed information on file system association status.</p>
-    pub fn file_system_association_status_details(
-        &self,
-    ) -> std::option::Option<&[crate::model::FileSystemAssociationStatusDetail]> {
+    pub fn file_system_association_status_details(&self) -> std::option::Option<& [crate::model::FileSystemAssociationStatusDetail]> {
         self.file_system_association_status_details.as_deref()
     }
 }
 /// See [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo).
 pub mod file_system_association_info {
-
+    
     /// A builder for [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6677,27 +6291,18 @@ pub mod file_system_association_info {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) cache_attributes: std::option::Option<crate::model::CacheAttributes>,
-        pub(crate) endpoint_network_configuration:
-            std::option::Option<crate::model::EndpointNetworkConfiguration>,
-        pub(crate) file_system_association_status_details:
-            std::option::Option<std::vec::Vec<crate::model::FileSystemAssociationStatusDetail>>,
+        pub(crate) endpoint_network_configuration: std::option::Option<crate::model::EndpointNetworkConfiguration>,
+        pub(crate) file_system_association_status_details: std::option::Option<std::vec::Vec<crate::model::FileSystemAssociationStatusDetail>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
-        pub fn file_system_association_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn file_system_association_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_association_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
-        pub fn set_file_system_association_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_association_arn = input;
-            self
+        pub fn set_file_system_association_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_association_arn = input; self
         }
         /// <p>The ARN of the backend Amazon FSx file system used for storing file data. For information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_FileSystem.html">FileSystem</a> in the <i>Amazon FSx API Reference</i>.</p>
         pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6706,24 +6311,16 @@ pub mod file_system_association_info {
         }
         /// <p>The ARN of the backend Amazon FSx file system used for storing file data. For information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_FileSystem.html">FileSystem</a> in the <i>Amazon FSx API Reference</i>.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_arn = input;
-            self
+            self.location_arn = input; self
         }
         /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
-        pub fn file_system_association_status(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn file_system_association_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_association_status = Some(input.into());
             self
         }
         /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
-        pub fn set_file_system_association_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_association_status = input;
-            self
+        pub fn set_file_system_association_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_association_status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
         pub fn audit_destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6731,12 +6328,8 @@ pub mod file_system_association_info {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
-        pub fn set_audit_destination_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.audit_destination_arn = input;
-            self
+        pub fn set_audit_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.audit_destination_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6745,8 +6338,7 @@ pub mod file_system_association_info {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -6755,17 +6347,13 @@ pub mod file_system_association_info {
         /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a key-value pair.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a key-value pair.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The refresh cache information for the file share or FSx file systems.</p>
         pub fn cache_attributes(mut self, input: crate::model::CacheAttributes) -> Self {
@@ -6773,74 +6361,63 @@ pub mod file_system_association_info {
             self
         }
         /// <p>The refresh cache information for the file share or FSx file systems.</p>
-        pub fn set_cache_attributes(
-            mut self,
-            input: std::option::Option<crate::model::CacheAttributes>,
-        ) -> Self {
-            self.cache_attributes = input;
-            self
+        pub fn set_cache_attributes(mut self, input: std::option::Option<crate::model::CacheAttributes>) -> Self {
+            self.cache_attributes = input; self
         }
-        /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
-        /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
+        /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note> 
+        /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p> 
         /// </note>
-        pub fn endpoint_network_configuration(
-            mut self,
-            input: crate::model::EndpointNetworkConfiguration,
-        ) -> Self {
+        pub fn endpoint_network_configuration(mut self, input: crate::model::EndpointNetworkConfiguration) -> Self {
             self.endpoint_network_configuration = Some(input);
             self
         }
-        /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
-        /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
+        /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note> 
+        /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p> 
         /// </note>
-        pub fn set_endpoint_network_configuration(
-            mut self,
-            input: std::option::Option<crate::model::EndpointNetworkConfiguration>,
-        ) -> Self {
-            self.endpoint_network_configuration = input;
-            self
+        pub fn set_endpoint_network_configuration(mut self, input: std::option::Option<crate::model::EndpointNetworkConfiguration>) -> Self {
+            self.endpoint_network_configuration = input; self
         }
         /// Appends an item to `file_system_association_status_details`.
         ///
         /// To override the contents of this collection use [`set_file_system_association_status_details`](Self::set_file_system_association_status_details).
         ///
         /// <p>An array containing the FileSystemAssociationStatusDetail data type, which provides detailed information on file system association status.</p>
-        pub fn file_system_association_status_details(
-            mut self,
-            input: crate::model::FileSystemAssociationStatusDetail,
-        ) -> Self {
-            let mut v = self
-                .file_system_association_status_details
-                .unwrap_or_default();
-            v.push(input);
-            self.file_system_association_status_details = Some(v);
-            self
+        pub fn file_system_association_status_details(mut self, input: crate::model::FileSystemAssociationStatusDetail) -> Self {
+            let mut v = self.file_system_association_status_details.unwrap_or_default();
+                            v.push(input);
+                            self.file_system_association_status_details = Some(v);
+                            self
         }
         /// <p>An array containing the FileSystemAssociationStatusDetail data type, which provides detailed information on file system association status.</p>
-        pub fn set_file_system_association_status_details(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::FileSystemAssociationStatusDetail>,
-            >,
-        ) -> Self {
-            self.file_system_association_status_details = input;
-            self
+        pub fn set_file_system_association_status_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::FileSystemAssociationStatusDetail>>) -> Self {
+            self.file_system_association_status_details = input; self
         }
         /// Consumes the builder and constructs a [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo).
         pub fn build(self) -> crate::model::FileSystemAssociationInfo {
             crate::model::FileSystemAssociationInfo {
-                file_system_association_arn: self.file_system_association_arn,
-                location_arn: self.location_arn,
-                file_system_association_status: self.file_system_association_status,
-                audit_destination_arn: self.audit_destination_arn,
-                gateway_arn: self.gateway_arn,
-                tags: self.tags,
-                cache_attributes: self.cache_attributes,
-                endpoint_network_configuration: self.endpoint_network_configuration,
-                file_system_association_status_details: self.file_system_association_status_details,
+                file_system_association_arn: self.file_system_association_arn
+                ,
+                location_arn: self.location_arn
+                ,
+                file_system_association_status: self.file_system_association_status
+                ,
+                audit_destination_arn: self.audit_destination_arn
+                ,
+                gateway_arn: self.gateway_arn
+                ,
+                tags: self.tags
+                ,
+                cache_attributes: self.cache_attributes
+                ,
+                endpoint_network_configuration: self.endpoint_network_configuration
+                ,
+                file_system_association_status_details: self.file_system_association_status_details
+                ,
             }
         }
     }
+    
+    
 }
 impl FileSystemAssociationInfo {
     /// Creates a new builder-style object to manufacture [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo).
@@ -6852,20 +6429,20 @@ impl FileSystemAssociationInfo {
 /// <p>Detailed information on file system association status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileSystemAssociationStatusDetail {
+pub struct FileSystemAssociationStatusDetail  {
     /// <p>The error code for a given file system association status.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
 }
 impl FileSystemAssociationStatusDetail {
     /// <p>The error code for a given file system association status.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
 }
 /// See [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail).
 pub mod file_system_association_status_detail {
-
+    
     /// A builder for [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6879,16 +6456,18 @@ pub mod file_system_association_status_detail {
         }
         /// <p>The error code for a given file system association status.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// Consumes the builder and constructs a [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail).
         pub fn build(self) -> crate::model::FileSystemAssociationStatusDetail {
             crate::model::FileSystemAssociationStatusDetail {
-                error_code: self.error_code,
+                error_code: self.error_code
+                ,
             }
         }
     }
+    
+    
 }
 impl FileSystemAssociationStatusDetail {
     /// Creates a new builder-style object to manufacture [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail).
@@ -6900,24 +6479,24 @@ impl FileSystemAssociationStatusDetail {
 /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointNetworkConfiguration {
-    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note>
-    /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
+pub struct EndpointNetworkConfiguration  {
+    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note> 
+    /// <p>If multiple file systems are associated with this gateway, this field is required.</p> 
     /// </note>
     #[doc(hidden)]
     pub ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EndpointNetworkConfiguration {
-    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note>
-    /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
+    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note> 
+    /// <p>If multiple file systems are associated with this gateway, this field is required.</p> 
     /// </note>
-    pub fn ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ip_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.ip_addresses.as_deref()
     }
 }
 /// See [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration).
 pub mod endpoint_network_configuration {
-
+    
     /// A builder for [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6928,32 +6507,31 @@ pub mod endpoint_network_configuration {
         ///
         /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
         ///
-        /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note>
-        /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
+        /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note> 
+        /// <p>If multiple file systems are associated with this gateway, this field is required.</p> 
         /// </note>
         pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ip_addresses.unwrap_or_default();
-            v.push(input.into());
-            self.ip_addresses = Some(v);
-            self
+                            v.push(input.into());
+                            self.ip_addresses = Some(v);
+                            self
         }
-        /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note>
-        /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
+        /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note> 
+        /// <p>If multiple file systems are associated with this gateway, this field is required.</p> 
         /// </note>
-        pub fn set_ip_addresses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ip_addresses = input;
-            self
+        pub fn set_ip_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ip_addresses = input; self
         }
         /// Consumes the builder and constructs a [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration).
         pub fn build(self) -> crate::model::EndpointNetworkConfiguration {
             crate::model::EndpointNetworkConfiguration {
-                ip_addresses: self.ip_addresses,
+                ip_addresses: self.ip_addresses
+                ,
             }
         }
     }
+    
+    
 }
 impl EndpointNetworkConfiguration {
     /// Creates a new builder-style object to manufacture [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration).
@@ -6965,8 +6543,8 @@ impl EndpointNetworkConfiguration {
 /// <p>Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ChapInfo {
-    /// <p>The Amazon Resource Name (ARN) of the volume.</p>
+pub struct ChapInfo  {
+    /// <p>The Amazon Resource Name (ARN) of the volume.</p> 
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
@@ -6981,43 +6559,37 @@ pub struct ChapInfo {
     pub secret_to_authenticate_target: std::option::Option<std::string::String>,
 }
 impl ChapInfo {
-    /// <p>The Amazon Resource Name (ARN) of the volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the volume.</p> 
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p>
-    pub fn secret_to_authenticate_initiator(&self) -> std::option::Option<&str> {
+    pub fn secret_to_authenticate_initiator(&self) -> std::option::Option<& str> {
         self.secret_to_authenticate_initiator.as_deref()
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn initiator_name(&self) -> std::option::Option<&str> {
+    pub fn initiator_name(&self) -> std::option::Option<& str> {
         self.initiator_name.as_deref()
     }
     /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g., Windows client).</p>
-    pub fn secret_to_authenticate_target(&self) -> std::option::Option<&str> {
+    pub fn secret_to_authenticate_target(&self) -> std::option::Option<& str> {
         self.secret_to_authenticate_target.as_deref()
     }
 }
-impl std::fmt::Debug for ChapInfo {
+impl  std::fmt::Debug for ChapInfo  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChapInfo");
         formatter.field("target_arn", &self.target_arn);
-        formatter.field(
-            "secret_to_authenticate_initiator",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("secret_to_authenticate_initiator", &"*** Sensitive Data Redacted ***");
         formatter.field("initiator_name", &self.initiator_name);
-        formatter.field(
-            "secret_to_authenticate_target",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("secret_to_authenticate_target", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 /// See [`ChapInfo`](crate::model::ChapInfo).
 pub mod chap_info {
-
+    
     /// A builder for [`ChapInfo`](crate::model::ChapInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -7027,33 +6599,25 @@ pub mod chap_info {
         pub(crate) secret_to_authenticate_target: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the volume.</p>
+        /// <p>The Amazon Resource Name (ARN) of the volume.</p> 
         /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the volume.</p>
+        /// <p>The Amazon Resource Name (ARN) of the volume.</p> 
         /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_arn = input;
-            self
+            self.target_arn = input; self
         }
         /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p>
-        pub fn secret_to_authenticate_initiator(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn secret_to_authenticate_initiator(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_to_authenticate_initiator = Some(input.into());
             self
         }
         /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p>
-        pub fn set_secret_to_authenticate_initiator(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.secret_to_authenticate_initiator = input;
-            self
+        pub fn set_secret_to_authenticate_initiator(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_to_authenticate_initiator = input; self
         }
         /// <p>The iSCSI initiator that connects to the target.</p>
         pub fn initiator_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7061,36 +6625,29 @@ pub mod chap_info {
             self
         }
         /// <p>The iSCSI initiator that connects to the target.</p>
-        pub fn set_initiator_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.initiator_name = input;
-            self
+        pub fn set_initiator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.initiator_name = input; self
         }
         /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g., Windows client).</p>
-        pub fn secret_to_authenticate_target(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn secret_to_authenticate_target(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_to_authenticate_target = Some(input.into());
             self
         }
         /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g., Windows client).</p>
-        pub fn set_secret_to_authenticate_target(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.secret_to_authenticate_target = input;
-            self
+        pub fn set_secret_to_authenticate_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_to_authenticate_target = input; self
         }
         /// Consumes the builder and constructs a [`ChapInfo`](crate::model::ChapInfo).
         pub fn build(self) -> crate::model::ChapInfo {
             crate::model::ChapInfo {
-                target_arn: self.target_arn,
-                secret_to_authenticate_initiator: self.secret_to_authenticate_initiator,
-                initiator_name: self.initiator_name,
-                secret_to_authenticate_target: self.secret_to_authenticate_target,
+                target_arn: self.target_arn
+                ,
+                secret_to_authenticate_initiator: self.secret_to_authenticate_initiator
+                ,
+                initiator_name: self.initiator_name
+                ,
+                secret_to_authenticate_target: self.secret_to_authenticate_target
+                ,
             }
         }
     }
@@ -7098,18 +6655,14 @@ pub mod chap_info {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("target_arn", &self.target_arn);
-            formatter.field(
-                "secret_to_authenticate_initiator",
-                &"*** Sensitive Data Redacted ***",
-            );
+            formatter.field("secret_to_authenticate_initiator", &"*** Sensitive Data Redacted ***");
             formatter.field("initiator_name", &self.initiator_name);
-            formatter.field(
-                "secret_to_authenticate_target",
-                &"*** Sensitive Data Redacted ***",
-            );
+            formatter.field("secret_to_authenticate_target", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
+    
+    
 }
 impl ChapInfo {
     /// Creates a new builder-style object to manufacture [`ChapInfo`](crate::model::ChapInfo).
@@ -7121,7 +6674,7 @@ impl ChapInfo {
 /// <p>Describes an iSCSI cached volume.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CachediScsiVolume {
+pub struct CachediScsiVolume  {
     /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
     #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
@@ -7152,39 +6705,39 @@ pub struct CachediScsiVolume {
     /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
     #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
-    /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
-    /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p>
+    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note> 
+    /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p> 
+    /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p> 
     /// </note>
     #[doc(hidden)]
     pub volume_used_in_bytes: std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
-    /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
+    /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p> 
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
     #[doc(hidden)]
     pub target_name: std::option::Option<std::string::String>,
 }
 impl CachediScsiVolume {
     /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
-    pub fn volume_arn(&self) -> std::option::Option<&str> {
+    pub fn volume_arn(&self) -> std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
     /// <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>One of the VolumeType enumeration values that describes the type of the volume.</p>
-    pub fn volume_type(&self) -> std::option::Option<&str> {
+    pub fn volume_type(&self) -> std::option::Option<& str> {
         self.volume_type.as_deref()
     }
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
-    pub fn volume_status(&self) -> std::option::Option<&str> {
+    pub fn volume_status(&self) -> std::option::Option<& str> {
         self.volume_status.as_deref()
     }
     /// <p>A value that indicates whether a storage volume is attached to or detached from a gateway. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving your volumes to a different gateway</a>.</p>
-    pub fn volume_attachment_status(&self) -> std::option::Option<&str> {
+    pub fn volume_attachment_status(&self) -> std::option::Option<& str> {
         self.volume_attachment_status.as_deref()
     }
     /// <p>The size, in bytes, of the volume capacity.</p>
@@ -7196,39 +6749,37 @@ impl CachediScsiVolume {
         self.volume_progress
     }
     /// <p>If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not included.</p>
-    pub fn source_snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn source_snapshot_id(&self) -> std::option::Option<& str> {
         self.source_snapshot_id.as_deref()
     }
     /// <p>An <code>VolumeiSCSIAttributes</code> object that represents a collection of iSCSI attributes for one stored volume.</p>
-    pub fn volumei_scsi_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::VolumeiScsiAttributes> {
+    pub fn volumei_scsi_attributes(&self) -> std::option::Option<& crate::model::VolumeiScsiAttributes> {
         self.volumei_scsi_attributes.as_ref()
     }
     /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
-    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
-    /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
-    /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p>
+    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note> 
+    /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p> 
+    /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p> 
     /// </note>
     pub fn volume_used_in_bytes(&self) -> std::option::Option<i64> {
         self.volume_used_in_bytes
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
-    pub fn kms_key(&self) -> std::option::Option<&str> {
+    pub fn kms_key(&self) -> std::option::Option<& str> {
         self.kms_key.as_deref()
     }
-    /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
+    /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p> 
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
-    pub fn target_name(&self) -> std::option::Option<&str> {
+    pub fn target_name(&self) -> std::option::Option<& str> {
         self.target_name.as_deref()
     }
 }
 /// See [`CachediScsiVolume`](crate::model::CachediScsiVolume).
 pub mod cachedi_scsi_volume {
-
+    
     /// A builder for [`CachediScsiVolume`](crate::model::CachediScsiVolume).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7240,8 +6791,7 @@ pub mod cachedi_scsi_volume {
         pub(crate) volume_size_in_bytes: std::option::Option<i64>,
         pub(crate) volume_progress: std::option::Option<f64>,
         pub(crate) source_snapshot_id: std::option::Option<std::string::String>,
-        pub(crate) volumei_scsi_attributes:
-            std::option::Option<crate::model::VolumeiScsiAttributes>,
+        pub(crate) volumei_scsi_attributes: std::option::Option<crate::model::VolumeiScsiAttributes>,
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) volume_used_in_bytes: std::option::Option<i64>,
         pub(crate) kms_key: std::option::Option<std::string::String>,
@@ -7255,8 +6805,7 @@ pub mod cachedi_scsi_volume {
         }
         /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
         pub fn set_volume_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_arn = input;
-            self
+            self.volume_arn = input; self
         }
         /// <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
         pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7265,8 +6814,7 @@ pub mod cachedi_scsi_volume {
         }
         /// <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_id = input;
-            self
+            self.volume_id = input; self
         }
         /// <p>One of the VolumeType enumeration values that describes the type of the volume.</p>
         pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7275,8 +6823,7 @@ pub mod cachedi_scsi_volume {
         }
         /// <p>One of the VolumeType enumeration values that describes the type of the volume.</p>
         pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_type = input;
-            self
+            self.volume_type = input; self
         }
         /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
         pub fn volume_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7284,12 +6831,8 @@ pub mod cachedi_scsi_volume {
             self
         }
         /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
-        pub fn set_volume_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.volume_status = input;
-            self
+        pub fn set_volume_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_status = input; self
         }
         /// <p>A value that indicates whether a storage volume is attached to or detached from a gateway. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving your volumes to a different gateway</a>.</p>
         pub fn volume_attachment_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7297,12 +6840,8 @@ pub mod cachedi_scsi_volume {
             self
         }
         /// <p>A value that indicates whether a storage volume is attached to or detached from a gateway. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving your volumes to a different gateway</a>.</p>
-        pub fn set_volume_attachment_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.volume_attachment_status = input;
-            self
+        pub fn set_volume_attachment_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_attachment_status = input; self
         }
         /// <p>The size, in bytes, of the volume capacity.</p>
         pub fn volume_size_in_bytes(mut self, input: i64) -> Self {
@@ -7311,8 +6850,7 @@ pub mod cachedi_scsi_volume {
         }
         /// <p>The size, in bytes, of the volume capacity.</p>
         pub fn set_volume_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.volume_size_in_bytes = input;
-            self
+            self.volume_size_in_bytes = input; self
         }
         /// <p>Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of data transferred. This field does not appear in the response if the cached volume is not restoring or bootstrapping.</p>
         pub fn volume_progress(mut self, input: f64) -> Self {
@@ -7321,8 +6859,7 @@ pub mod cachedi_scsi_volume {
         }
         /// <p>Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of data transferred. This field does not appear in the response if the cached volume is not restoring or bootstrapping.</p>
         pub fn set_volume_progress(mut self, input: std::option::Option<f64>) -> Self {
-            self.volume_progress = input;
-            self
+            self.volume_progress = input; self
         }
         /// <p>If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not included.</p>
         pub fn source_snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7330,28 +6867,17 @@ pub mod cachedi_scsi_volume {
             self
         }
         /// <p>If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not included.</p>
-        pub fn set_source_snapshot_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_snapshot_id = input;
-            self
+        pub fn set_source_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_snapshot_id = input; self
         }
         /// <p>An <code>VolumeiSCSIAttributes</code> object that represents a collection of iSCSI attributes for one stored volume.</p>
-        pub fn volumei_scsi_attributes(
-            mut self,
-            input: crate::model::VolumeiScsiAttributes,
-        ) -> Self {
+        pub fn volumei_scsi_attributes(mut self, input: crate::model::VolumeiScsiAttributes) -> Self {
             self.volumei_scsi_attributes = Some(input);
             self
         }
         /// <p>An <code>VolumeiSCSIAttributes</code> object that represents a collection of iSCSI attributes for one stored volume.</p>
-        pub fn set_volumei_scsi_attributes(
-            mut self,
-            input: std::option::Option<crate::model::VolumeiScsiAttributes>,
-        ) -> Self {
-            self.volumei_scsi_attributes = input;
-            self
+        pub fn set_volumei_scsi_attributes(mut self, input: std::option::Option<crate::model::VolumeiScsiAttributes>) -> Self {
+            self.volumei_scsi_attributes = input; self
         }
         /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7359,28 +6885,23 @@ pub mod cachedi_scsi_volume {
             self
         }
         /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
-        /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
-        /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
-        /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p>
+        /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note> 
+        /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p> 
+        /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p> 
         /// </note>
         pub fn volume_used_in_bytes(mut self, input: i64) -> Self {
             self.volume_used_in_bytes = Some(input);
             self
         }
-        /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
-        /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
-        /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p>
+        /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note> 
+        /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p> 
+        /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p> 
         /// </note>
         pub fn set_volume_used_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.volume_used_in_bytes = input;
-            self
+            self.volume_used_in_bytes = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7389,40 +6910,54 @@ pub mod cachedi_scsi_volume {
         }
         /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key = input;
-            self
+            self.kms_key = input; self
         }
-        /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
+        /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p> 
         /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
         pub fn target_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_name = Some(input.into());
             self
         }
-        /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
+        /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p> 
         /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
         pub fn set_target_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_name = input;
-            self
+            self.target_name = input; self
         }
         /// Consumes the builder and constructs a [`CachediScsiVolume`](crate::model::CachediScsiVolume).
         pub fn build(self) -> crate::model::CachediScsiVolume {
             crate::model::CachediScsiVolume {
-                volume_arn: self.volume_arn,
-                volume_id: self.volume_id,
-                volume_type: self.volume_type,
-                volume_status: self.volume_status,
-                volume_attachment_status: self.volume_attachment_status,
-                volume_size_in_bytes: self.volume_size_in_bytes.unwrap_or_default(),
-                volume_progress: self.volume_progress,
-                source_snapshot_id: self.source_snapshot_id,
-                volumei_scsi_attributes: self.volumei_scsi_attributes,
-                created_date: self.created_date,
-                volume_used_in_bytes: self.volume_used_in_bytes,
-                kms_key: self.kms_key,
-                target_name: self.target_name,
+                volume_arn: self.volume_arn
+                ,
+                volume_id: self.volume_id
+                ,
+                volume_type: self.volume_type
+                ,
+                volume_status: self.volume_status
+                ,
+                volume_attachment_status: self.volume_attachment_status
+                ,
+                volume_size_in_bytes: self.volume_size_in_bytes
+                    .unwrap_or_default()
+                ,
+                volume_progress: self.volume_progress
+                ,
+                source_snapshot_id: self.source_snapshot_id
+                ,
+                volumei_scsi_attributes: self.volumei_scsi_attributes
+                ,
+                created_date: self.created_date
+                ,
+                volume_used_in_bytes: self.volume_used_in_bytes
+                ,
+                kms_key: self.kms_key
+                ,
+                target_name: self.target_name
+                ,
             }
         }
     }
+    
+    
 }
 impl CachediScsiVolume {
     /// Creates a new builder-style object to manufacture [`CachediScsiVolume`](crate::model::CachediScsiVolume).
@@ -7437,9 +6972,9 @@ impl CachediScsiVolume {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let availabilitymonitorteststatus = unimplemented!();
 /// match availabilitymonitorteststatus {
@@ -7462,22 +6997,14 @@ impl CachediScsiVolume {
 /// Specifically, when `availabilitymonitorteststatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AvailabilityMonitorTestStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AvailabilityMonitorTestStatus {
     #[allow(missing_docs)] // documentation missing in model
     Complete,
@@ -7486,7 +7013,7 @@ pub enum AvailabilityMonitorTestStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AvailabilityMonitorTestStatus {
     fn from(s: &str) -> Self {
@@ -7494,19 +7021,17 @@ impl std::convert::From<&str> for AvailabilityMonitorTestStatus {
             "COMPLETE" => AvailabilityMonitorTestStatus::Complete,
             "FAILED" => AvailabilityMonitorTestStatus::Failed,
             "PENDING" => AvailabilityMonitorTestStatus::Pending,
-            other => AvailabilityMonitorTestStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AvailabilityMonitorTestStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AvailabilityMonitorTestStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AvailabilityMonitorTestStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AvailabilityMonitorTestStatus::from(s))
+                }
+            }
 impl AvailabilityMonitorTestStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7514,12 +7039,14 @@ impl AvailabilityMonitorTestStatus {
             AvailabilityMonitorTestStatus::Complete => "COMPLETE",
             AvailabilityMonitorTestStatus::Failed => "FAILED",
             AvailabilityMonitorTestStatus::Pending => "PENDING",
-            AvailabilityMonitorTestStatus::Unknown(value) => value.as_str(),
+            AvailabilityMonitorTestStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETE", "FAILED", "PENDING"]
+        &[
+            "COMPLETE", "FAILED", "PENDING"
+        ]
     }
 }
 impl AsRef<str> for AvailabilityMonitorTestStatus {
@@ -7527,3 +7054,4 @@ impl AsRef<str> for AvailabilityMonitorTestStatus {
         self.as_str()
     }
 }
+

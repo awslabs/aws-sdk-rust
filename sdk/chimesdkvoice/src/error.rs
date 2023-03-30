@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct ValidateE911AddressError {
     /// Kind of error that occurred.
-    pub kind: ValidateE911AddressErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ValidateE911AddressErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ValidateE911AddressError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ValidateE911AddressErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -34,27 +34,43 @@ pub enum ValidateE911AddressErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ValidateE911AddressError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ValidateE911AddressErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ValidateE911AddressErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ValidateE911AddressErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ValidateE911AddressErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ValidateE911AddressErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ValidateE911AddressErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            ValidateE911AddressErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            ValidateE911AddressErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ValidateE911AddressErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ValidateE911AddressErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ValidateE911AddressErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ValidateE911AddressErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ValidateE911AddressErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ValidateE911AddressErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ValidateE911AddressErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ValidateE911AddressErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -68,107 +84,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ValidateE911AddressError {
 }
 impl ValidateE911AddressError {
     /// Creates a new `ValidateE911AddressError`.
-    pub fn new(kind: ValidateE911AddressErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ValidateE911AddressError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ValidateE911AddressErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ValidateE911AddressError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ValidateE911AddressErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ValidateE911AddressErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ValidateE911AddressError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ValidateE911AddressErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ValidateE911AddressError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ValidateE911AddressErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ValidateE911AddressErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ValidateE911AddressErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ValidateE911AddressErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ValidateE911AddressErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ValidateE911AddressErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ValidateE911AddressErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ValidateE911AddressErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ValidateE911AddressErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, ValidateE911AddressErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `ValidateE911AddressErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ValidateE911AddressErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ValidateE911AddressErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ValidateE911AddressErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ValidateE911AddressErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ValidateE911AddressErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ValidateE911AddressErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ValidateE911AddressErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ValidateE911AddressErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ValidateE911AddressErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ValidateE911AddressErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ValidateE911AddressErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ValidateE911AddressError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ValidateE911AddressErrorKind::BadRequestException(_inner) => Some(_inner),
-            ValidateE911AddressErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ValidateE911AddressErrorKind::NotFoundException(_inner) => Some(_inner),
-            ValidateE911AddressErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ValidateE911AddressErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ValidateE911AddressErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            ValidateE911AddressErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ValidateE911AddressErrorKind::Unhandled(_inner) => Some(_inner),
+            ValidateE911AddressErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ValidateE911AddressErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ValidateE911AddressErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ValidateE911AddressErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ValidateE911AddressErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ValidateE911AddressErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ValidateE911AddressErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ValidateE911AddressErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -176,7 +187,7 @@ impl std::error::Error for ValidateE911AddressError {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnauthorizedClientException {
+pub struct UnauthorizedClientException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -186,21 +197,19 @@ pub struct UnauthorizedClientException {
 }
 impl UnauthorizedClientException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl UnauthorizedClientException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnauthorizedClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnauthorizedClientException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -210,7 +219,7 @@ impl std::fmt::Display for UnauthorizedClientException {
 impl std::error::Error for UnauthorizedClientException {}
 /// See [`UnauthorizedClientException`](crate::error::UnauthorizedClientException).
 pub mod unauthorized_client_exception {
-
+    
     /// A builder for [`UnauthorizedClientException`](crate::error::UnauthorizedClientException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -225,8 +234,7 @@ pub mod unauthorized_client_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -235,17 +243,20 @@ pub mod unauthorized_client_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnauthorizedClientException`](crate::error::UnauthorizedClientException).
         pub fn build(self) -> crate::error::UnauthorizedClientException {
             crate::error::UnauthorizedClientException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnauthorizedClientException {
     /// Creates a new builder-style object to manufacture [`UnauthorizedClientException`](crate::error::UnauthorizedClientException).
@@ -257,7 +268,7 @@ impl UnauthorizedClientException {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottledClientException {
+pub struct ThrottledClientException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -267,21 +278,19 @@ pub struct ThrottledClientException {
 }
 impl ThrottledClientException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl ThrottledClientException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottledClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottledClientException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -291,7 +300,7 @@ impl std::fmt::Display for ThrottledClientException {
 impl std::error::Error for ThrottledClientException {}
 /// See [`ThrottledClientException`](crate::error::ThrottledClientException).
 pub mod throttled_client_exception {
-
+    
     /// A builder for [`ThrottledClientException`](crate::error::ThrottledClientException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -306,8 +315,7 @@ pub mod throttled_client_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -316,17 +324,20 @@ pub mod throttled_client_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ThrottledClientException`](crate::error::ThrottledClientException).
         pub fn build(self) -> crate::error::ThrottledClientException {
             crate::error::ThrottledClientException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottledClientException {
     /// Creates a new builder-style object to manufacture [`ThrottledClientException`](crate::error::ThrottledClientException).
@@ -338,7 +349,7 @@ impl ThrottledClientException {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceUnavailableException {
+pub struct ServiceUnavailableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -348,21 +359,19 @@ pub struct ServiceUnavailableException {
 }
 impl ServiceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl ServiceUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUnavailableException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -372,7 +381,7 @@ impl std::fmt::Display for ServiceUnavailableException {
 impl std::error::Error for ServiceUnavailableException {}
 /// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
 pub mod service_unavailable_exception {
-
+    
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -387,8 +396,7 @@ pub mod service_unavailable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -397,17 +405,20 @@ pub mod service_unavailable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
         pub fn build(self) -> crate::error::ServiceUnavailableException {
             crate::error::ServiceUnavailableException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceUnavailableException {
     /// Creates a new builder-style object to manufacture [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
@@ -419,7 +430,7 @@ impl ServiceUnavailableException {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceFailureException {
+pub struct ServiceFailureException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -429,21 +440,19 @@ pub struct ServiceFailureException {
 }
 impl ServiceFailureException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl ServiceFailureException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceFailureException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -453,7 +462,7 @@ impl std::fmt::Display for ServiceFailureException {
 impl std::error::Error for ServiceFailureException {}
 /// See [`ServiceFailureException`](crate::error::ServiceFailureException).
 pub mod service_failure_exception {
-
+    
     /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -468,8 +477,7 @@ pub mod service_failure_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -478,17 +486,20 @@ pub mod service_failure_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceFailureException`](crate::error::ServiceFailureException).
         pub fn build(self) -> crate::error::ServiceFailureException {
             crate::error::ServiceFailureException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceFailureException {
     /// Creates a new builder-style object to manufacture [`ServiceFailureException`](crate::error::ServiceFailureException).
@@ -500,7 +511,7 @@ impl ServiceFailureException {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotFoundException {
+pub struct NotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -510,21 +521,19 @@ pub struct NotFoundException {
 }
 impl NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl NotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -534,7 +543,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException).
 pub mod not_found_exception {
-
+    
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -549,8 +558,7 @@ pub mod not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -559,17 +567,20 @@ pub mod not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException).
         pub fn build(self) -> crate::error::NotFoundException {
             crate::error::NotFoundException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NotFoundException {
     /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
@@ -581,7 +592,7 @@ impl NotFoundException {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ForbiddenException {
+pub struct ForbiddenException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -591,21 +602,19 @@ pub struct ForbiddenException {
 }
 impl ForbiddenException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl ForbiddenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ForbiddenException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -615,7 +624,7 @@ impl std::fmt::Display for ForbiddenException {
 impl std::error::Error for ForbiddenException {}
 /// See [`ForbiddenException`](crate::error::ForbiddenException).
 pub mod forbidden_exception {
-
+    
     /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -630,8 +639,7 @@ pub mod forbidden_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -640,17 +648,20 @@ pub mod forbidden_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException).
         pub fn build(self) -> crate::error::ForbiddenException {
             crate::error::ForbiddenException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ForbiddenException {
     /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException).
@@ -662,7 +673,7 @@ impl ForbiddenException {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadRequestException {
+pub struct BadRequestException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -672,21 +683,19 @@ pub struct BadRequestException {
 }
 impl BadRequestException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl BadRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -696,7 +705,7 @@ impl std::fmt::Display for BadRequestException {
 impl std::error::Error for BadRequestException {}
 /// See [`BadRequestException`](crate::error::BadRequestException).
 pub mod bad_request_exception {
-
+    
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -711,8 +720,7 @@ pub mod bad_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -721,17 +729,20 @@ pub mod bad_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException).
         pub fn build(self) -> crate::error::BadRequestException {
             crate::error::BadRequestException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BadRequestException {
     /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException).
@@ -745,17 +756,15 @@ impl BadRequestException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateVoiceConnectorGroupError {
     /// Kind of error that occurred.
-    pub kind: UpdateVoiceConnectorGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateVoiceConnectorGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateVoiceConnectorGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -779,32 +788,46 @@ pub enum UpdateVoiceConnectorGroupErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateVoiceConnectorGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateVoiceConnectorGroupErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateVoiceConnectorGroupErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateVoiceConnectorGroupErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateVoiceConnectorGroupErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            UpdateVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) => {
+            UpdateVoiceConnectorGroupErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVoiceConnectorGroupErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVoiceConnectorGroupErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVoiceConnectorGroupErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVoiceConnectorGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            UpdateVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateVoiceConnectorGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -818,119 +841,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateVoiceConnectorGroupErro
 }
 impl UpdateVoiceConnectorGroupError {
     /// Creates a new `UpdateVoiceConnectorGroupError`.
-    pub fn new(kind: UpdateVoiceConnectorGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateVoiceConnectorGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateVoiceConnectorGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateVoiceConnectorGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateVoiceConnectorGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateVoiceConnectorGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateVoiceConnectorGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVoiceConnectorGroupErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateVoiceConnectorGroupErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateVoiceConnectorGroupErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVoiceConnectorGroupErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, UpdateVoiceConnectorGroupErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateVoiceConnectorGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVoiceConnectorGroupErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdateVoiceConnectorGroupErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdateVoiceConnectorGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVoiceConnectorGroupErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, UpdateVoiceConnectorGroupErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateVoiceConnectorGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVoiceConnectorGroupErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, UpdateVoiceConnectorGroupErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `UpdateVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVoiceConnectorGroupErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateVoiceConnectorGroupErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateVoiceConnectorGroupErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVoiceConnectorGroupErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, UpdateVoiceConnectorGroupErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVoiceConnectorGroupErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, UpdateVoiceConnectorGroupErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for UpdateVoiceConnectorGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateVoiceConnectorGroupErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateVoiceConnectorGroupErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateVoiceConnectorGroupErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateVoiceConnectorGroupErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            UpdateVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            UpdateVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UpdateVoiceConnectorGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateVoiceConnectorGroupErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVoiceConnectorGroupErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVoiceConnectorGroupErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVoiceConnectorGroupErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVoiceConnectorGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -938,7 +951,7 @@ impl std::error::Error for UpdateVoiceConnectorGroupError {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -948,21 +961,19 @@ pub struct ConflictException {
 }
 impl ConflictException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -972,7 +983,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
-
+    
     /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -987,8 +998,7 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -997,17 +1007,20 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
@@ -1021,15 +1034,15 @@ impl ConflictException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateVoiceConnectorError {
     /// Kind of error that occurred.
-    pub kind: UpdateVoiceConnectorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateVoiceConnectorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateVoiceConnectorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1051,27 +1064,43 @@ pub enum UpdateVoiceConnectorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateVoiceConnectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateVoiceConnectorErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateVoiceConnectorErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateVoiceConnectorErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateVoiceConnectorErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            UpdateVoiceConnectorErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UpdateVoiceConnectorErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            UpdateVoiceConnectorErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            UpdateVoiceConnectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateVoiceConnectorErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVoiceConnectorErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVoiceConnectorErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVoiceConnectorErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVoiceConnectorErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVoiceConnectorErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVoiceConnectorErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVoiceConnectorErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1085,111 +1114,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateVoiceConnectorError {
 }
 impl UpdateVoiceConnectorError {
     /// Creates a new `UpdateVoiceConnectorError`.
-    pub fn new(kind: UpdateVoiceConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateVoiceConnectorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateVoiceConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateVoiceConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateVoiceConnectorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateVoiceConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateVoiceConnectorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVoiceConnectorErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateVoiceConnectorErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateVoiceConnectorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVoiceConnectorErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdateVoiceConnectorErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdateVoiceConnectorErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVoiceConnectorErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, UpdateVoiceConnectorErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateVoiceConnectorErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVoiceConnectorErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, UpdateVoiceConnectorErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `UpdateVoiceConnectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVoiceConnectorErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateVoiceConnectorErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateVoiceConnectorErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVoiceConnectorErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, UpdateVoiceConnectorErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateVoiceConnectorErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVoiceConnectorErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, UpdateVoiceConnectorErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for UpdateVoiceConnectorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateVoiceConnectorErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateVoiceConnectorErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateVoiceConnectorErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateVoiceConnectorErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            UpdateVoiceConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateVoiceConnectorErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            UpdateVoiceConnectorErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UpdateVoiceConnectorErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateVoiceConnectorErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVoiceConnectorErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVoiceConnectorErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVoiceConnectorErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVoiceConnectorErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVoiceConnectorErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVoiceConnectorErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVoiceConnectorErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1199,15 +1219,15 @@ impl std::error::Error for UpdateVoiceConnectorError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateSipRuleError {
     /// Kind of error that occurred.
-    pub kind: UpdateSipRuleErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateSipRuleErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateSipRuleError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1233,29 +1253,49 @@ pub enum UpdateSipRuleErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSipRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateSipRuleErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateSipRuleErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateSipRuleErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateSipRuleErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateSipRuleErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            UpdateSipRuleErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            UpdateSipRuleErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UpdateSipRuleErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            UpdateSipRuleErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            UpdateSipRuleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateSipRuleErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipRuleErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipRuleErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipRuleErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipRuleErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipRuleErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipRuleErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipRuleErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipRuleErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipRuleErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1269,46 +1309,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateSipRuleError {
 }
 impl UpdateSipRuleError {
     /// Creates a new `UpdateSipRuleError`.
-    pub fn new(kind: UpdateSipRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateSipRuleError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateSipRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateSipRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateSipRuleError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateSipRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateSipRuleErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateSipRuleErrorKind::BadRequestException(_))
@@ -1327,53 +1367,58 @@ impl UpdateSipRuleError {
     }
     /// Returns `true` if the error kind is `UpdateSipRuleErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipRuleErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateSipRuleErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipRuleErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipRuleErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, UpdateSipRuleErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipRuleErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipRuleErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateSipRuleErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipRuleErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipRuleErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, UpdateSipRuleErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipRuleErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipRuleErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, UpdateSipRuleErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for UpdateSipRuleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateSipRuleErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateSipRuleErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateSipRuleErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateSipRuleErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateSipRuleErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            UpdateSipRuleErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            UpdateSipRuleErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateSipRuleErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            UpdateSipRuleErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UpdateSipRuleErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateSipRuleErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipRuleErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipRuleErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipRuleErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipRuleErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipRuleErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipRuleErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipRuleErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipRuleErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipRuleErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1381,7 +1426,7 @@ impl std::error::Error for UpdateSipRuleError {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceLimitExceededException {
+pub struct ResourceLimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -1391,21 +1436,19 @@ pub struct ResourceLimitExceededException {
 }
 impl ResourceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl ResourceLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceLimitExceededException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -1415,7 +1458,7 @@ impl std::fmt::Display for ResourceLimitExceededException {
 impl std::error::Error for ResourceLimitExceededException {}
 /// See [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
 pub mod resource_limit_exceeded_exception {
-
+    
     /// A builder for [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1430,8 +1473,7 @@ pub mod resource_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1440,17 +1482,20 @@ pub mod resource_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
         pub fn build(self) -> crate::error::ResourceLimitExceededException {
             crate::error::ResourceLimitExceededException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceLimitExceededException {
     /// Creates a new builder-style object to manufacture [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
@@ -1464,17 +1509,15 @@ impl ResourceLimitExceededException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateSipMediaApplicationCallError {
     /// Kind of error that occurred.
-    pub kind: UpdateSipMediaApplicationCallErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateSipMediaApplicationCallErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateSipMediaApplicationCallError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateSipMediaApplicationCallErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateSipMediaApplicationCallErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1498,38 +1541,46 @@ pub enum UpdateSipMediaApplicationCallErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSipMediaApplicationCallError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateSipMediaApplicationCallErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateSipMediaApplicationCallErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateSipMediaApplicationCallErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(_inner) => {
+            UpdateSipMediaApplicationCallErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipMediaApplicationCallErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipMediaApplicationCallErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipMediaApplicationCallErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipMediaApplicationCallErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipMediaApplicationCallErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipMediaApplicationCallErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipMediaApplicationCallErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateSipMediaApplicationCallErrorKind::ServiceFailureException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateSipMediaApplicationCallErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateSipMediaApplicationCallErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateSipMediaApplicationCallErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateSipMediaApplicationCallErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1543,130 +1594,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateSipMediaApplicationCall
 }
 impl UpdateSipMediaApplicationCallError {
     /// Creates a new `UpdateSipMediaApplicationCallError`.
-    pub fn new(
-        kind: UpdateSipMediaApplicationCallErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateSipMediaApplicationCallError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateSipMediaApplicationCallErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateSipMediaApplicationCallError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateSipMediaApplicationCallErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateSipMediaApplicationCallErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateSipMediaApplicationCallError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateSipMediaApplicationCallErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateSipMediaApplicationCallError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateSipMediaApplicationCallErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateSipMediaApplicationCallErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipMediaApplicationCallErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateSipMediaApplicationCallErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipMediaApplicationCallErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipMediaApplicationCallErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdateSipMediaApplicationCallErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipMediaApplicationCallErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipMediaApplicationCallErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, UpdateSipMediaApplicationCallErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipMediaApplicationCallErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipMediaApplicationCallErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipMediaApplicationCallErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, UpdateSipMediaApplicationCallErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipMediaApplicationCallErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipMediaApplicationCallErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateSipMediaApplicationCallErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipMediaApplicationCallErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipMediaApplicationCallErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, UpdateSipMediaApplicationCallErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipMediaApplicationCallErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipMediaApplicationCallErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, UpdateSipMediaApplicationCallErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for UpdateSipMediaApplicationCallError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateSipMediaApplicationCallErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateSipMediaApplicationCallErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateSipMediaApplicationCallErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(_inner) => {
+            UpdateSipMediaApplicationCallErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipMediaApplicationCallErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipMediaApplicationCallErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipMediaApplicationCallErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipMediaApplicationCallErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipMediaApplicationCallErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipMediaApplicationCallErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipMediaApplicationCallErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateSipMediaApplicationCallErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            UpdateSipMediaApplicationCallErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            UpdateSipMediaApplicationCallErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            UpdateSipMediaApplicationCallErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            UpdateSipMediaApplicationCallErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1676,17 +1706,15 @@ impl std::error::Error for UpdateSipMediaApplicationCallError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateSipMediaApplicationError {
     /// Kind of error that occurred.
-    pub kind: UpdateSipMediaApplicationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateSipMediaApplicationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateSipMediaApplicationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1710,32 +1738,46 @@ pub enum UpdateSipMediaApplicationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSipMediaApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateSipMediaApplicationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateSipMediaApplicationErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateSipMediaApplicationErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateSipMediaApplicationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateSipMediaApplicationErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            UpdateSipMediaApplicationErrorKind::ServiceUnavailableException(_inner) => {
+            UpdateSipMediaApplicationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipMediaApplicationErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipMediaApplicationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipMediaApplicationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipMediaApplicationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipMediaApplicationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipMediaApplicationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipMediaApplicationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSipMediaApplicationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateSipMediaApplicationErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            UpdateSipMediaApplicationErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateSipMediaApplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1749,119 +1791,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateSipMediaApplicationErro
 }
 impl UpdateSipMediaApplicationError {
     /// Creates a new `UpdateSipMediaApplicationError`.
-    pub fn new(kind: UpdateSipMediaApplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateSipMediaApplicationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateSipMediaApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateSipMediaApplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateSipMediaApplicationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateSipMediaApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateSipMediaApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipMediaApplicationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateSipMediaApplicationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipMediaApplicationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipMediaApplicationErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, UpdateSipMediaApplicationErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipMediaApplicationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipMediaApplicationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdateSipMediaApplicationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipMediaApplicationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipMediaApplicationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, UpdateSipMediaApplicationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipMediaApplicationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipMediaApplicationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, UpdateSipMediaApplicationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipMediaApplicationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipMediaApplicationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateSipMediaApplicationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipMediaApplicationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipMediaApplicationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, UpdateSipMediaApplicationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateSipMediaApplicationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSipMediaApplicationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, UpdateSipMediaApplicationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for UpdateSipMediaApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateSipMediaApplicationErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateSipMediaApplicationErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateSipMediaApplicationErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateSipMediaApplicationErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateSipMediaApplicationErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            UpdateSipMediaApplicationErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateSipMediaApplicationErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            UpdateSipMediaApplicationErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UpdateSipMediaApplicationErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateSipMediaApplicationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipMediaApplicationErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipMediaApplicationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipMediaApplicationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipMediaApplicationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipMediaApplicationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipMediaApplicationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipMediaApplicationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSipMediaApplicationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1871,15 +1903,15 @@ impl std::error::Error for UpdateSipMediaApplicationError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateProxySessionError {
     /// Kind of error that occurred.
-    pub kind: UpdateProxySessionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateProxySessionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateProxySessionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1901,27 +1933,43 @@ pub enum UpdateProxySessionErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateProxySessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateProxySessionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateProxySessionErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateProxySessionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateProxySessionErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            UpdateProxySessionErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UpdateProxySessionErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            UpdateProxySessionErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            UpdateProxySessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateProxySessionErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateProxySessionErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateProxySessionErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateProxySessionErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateProxySessionErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateProxySessionErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateProxySessionErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateProxySessionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1935,107 +1983,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateProxySessionError {
 }
 impl UpdateProxySessionError {
     /// Creates a new `UpdateProxySessionError`.
-    pub fn new(kind: UpdateProxySessionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateProxySessionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateProxySessionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateProxySessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateProxySessionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateProxySessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateProxySessionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateProxySessionErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateProxySessionErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateProxySessionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateProxySessionErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdateProxySessionErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdateProxySessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateProxySessionErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, UpdateProxySessionErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateProxySessionErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateProxySessionErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, UpdateProxySessionErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `UpdateProxySessionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateProxySessionErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateProxySessionErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateProxySessionErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateProxySessionErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, UpdateProxySessionErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateProxySessionErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateProxySessionErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, UpdateProxySessionErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for UpdateProxySessionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateProxySessionErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateProxySessionErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateProxySessionErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateProxySessionErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            UpdateProxySessionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateProxySessionErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            UpdateProxySessionErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UpdateProxySessionErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateProxySessionErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateProxySessionErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateProxySessionErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateProxySessionErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateProxySessionErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateProxySessionErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateProxySessionErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateProxySessionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2045,17 +2088,15 @@ impl std::error::Error for UpdateProxySessionError {
 #[derive(std::fmt::Debug)]
 pub struct UpdatePhoneNumberSettingsError {
     /// Kind of error that occurred.
-    pub kind: UpdatePhoneNumberSettingsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdatePhoneNumberSettingsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdatePhoneNumberSettingsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdatePhoneNumberSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdatePhoneNumberSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2075,30 +2116,40 @@ pub enum UpdatePhoneNumberSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePhoneNumberSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdatePhoneNumberSettingsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdatePhoneNumberSettingsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdatePhoneNumberSettingsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            UpdatePhoneNumberSettingsErrorKind::ServiceUnavailableException(_inner) => {
+            UpdatePhoneNumberSettingsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePhoneNumberSettingsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePhoneNumberSettingsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePhoneNumberSettingsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePhoneNumberSettingsErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePhoneNumberSettingsErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePhoneNumberSettingsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdatePhoneNumberSettingsErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            UpdatePhoneNumberSettingsErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdatePhoneNumberSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2112,103 +2163,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdatePhoneNumberSettingsErro
 }
 impl UpdatePhoneNumberSettingsError {
     /// Creates a new `UpdatePhoneNumberSettingsError`.
-    pub fn new(kind: UpdatePhoneNumberSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdatePhoneNumberSettingsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdatePhoneNumberSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdatePhoneNumberSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdatePhoneNumberSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdatePhoneNumberSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdatePhoneNumberSettingsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdatePhoneNumberSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdatePhoneNumberSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdatePhoneNumberSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdatePhoneNumberSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePhoneNumberSettingsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdatePhoneNumberSettingsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdatePhoneNumberSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePhoneNumberSettingsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdatePhoneNumberSettingsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdatePhoneNumberSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePhoneNumberSettingsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, UpdatePhoneNumberSettingsErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `UpdatePhoneNumberSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePhoneNumberSettingsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdatePhoneNumberSettingsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdatePhoneNumberSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePhoneNumberSettingsErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, UpdatePhoneNumberSettingsErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `UpdatePhoneNumberSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePhoneNumberSettingsErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, UpdatePhoneNumberSettingsErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for UpdatePhoneNumberSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdatePhoneNumberSettingsErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdatePhoneNumberSettingsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdatePhoneNumberSettingsErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            UpdatePhoneNumberSettingsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdatePhoneNumberSettingsErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            UpdatePhoneNumberSettingsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UpdatePhoneNumberSettingsErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdatePhoneNumberSettingsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePhoneNumberSettingsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePhoneNumberSettingsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePhoneNumberSettingsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePhoneNumberSettingsErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePhoneNumberSettingsErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePhoneNumberSettingsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2218,15 +2261,15 @@ impl std::error::Error for UpdatePhoneNumberSettingsError {
 #[derive(std::fmt::Debug)]
 pub struct UpdatePhoneNumberError {
     /// Kind of error that occurred.
-    pub kind: UpdatePhoneNumberErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdatePhoneNumberErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdatePhoneNumberError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdatePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2250,28 +2293,46 @@ pub enum UpdatePhoneNumberErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdatePhoneNumberErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdatePhoneNumberErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdatePhoneNumberErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdatePhoneNumberErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdatePhoneNumberErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            UpdatePhoneNumberErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UpdatePhoneNumberErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            UpdatePhoneNumberErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            UpdatePhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdatePhoneNumberErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePhoneNumberErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePhoneNumberErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePhoneNumberErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePhoneNumberErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePhoneNumberErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePhoneNumberErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePhoneNumberErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePhoneNumberErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2285,52 +2346,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdatePhoneNumberError {
 }
 impl UpdatePhoneNumberError {
     /// Creates a new `UpdatePhoneNumberError`.
-    pub fn new(kind: UpdatePhoneNumberErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdatePhoneNumberError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdatePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdatePhoneNumberError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdatePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdatePhoneNumberErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdatePhoneNumberError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdatePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdatePhoneNumberError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdatePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePhoneNumberErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdatePhoneNumberErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -2338,10 +2396,7 @@ impl UpdatePhoneNumberError {
     }
     /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePhoneNumberErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdatePhoneNumberErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -2349,45 +2404,51 @@ impl UpdatePhoneNumberError {
     }
     /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePhoneNumberErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, UpdatePhoneNumberErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePhoneNumberErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdatePhoneNumberErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePhoneNumberErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, UpdatePhoneNumberErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePhoneNumberErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, UpdatePhoneNumberErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for UpdatePhoneNumberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdatePhoneNumberErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdatePhoneNumberErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdatePhoneNumberErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdatePhoneNumberErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdatePhoneNumberErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            UpdatePhoneNumberErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdatePhoneNumberErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            UpdatePhoneNumberErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UpdatePhoneNumberErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdatePhoneNumberErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePhoneNumberErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePhoneNumberErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePhoneNumberErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePhoneNumberErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePhoneNumberErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePhoneNumberErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePhoneNumberErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePhoneNumberErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2397,15 +2458,15 @@ impl std::error::Error for UpdatePhoneNumberError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateGlobalSettingsError {
     /// Kind of error that occurred.
-    pub kind: UpdateGlobalSettingsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateGlobalSettingsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateGlobalSettingsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateGlobalSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2425,26 +2486,40 @@ pub enum UpdateGlobalSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGlobalSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateGlobalSettingsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateGlobalSettingsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateGlobalSettingsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            UpdateGlobalSettingsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UpdateGlobalSettingsErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            UpdateGlobalSettingsErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            UpdateGlobalSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateGlobalSettingsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalSettingsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalSettingsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalSettingsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalSettingsErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalSettingsErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGlobalSettingsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2458,103 +2533,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateGlobalSettingsError {
 }
 impl UpdateGlobalSettingsError {
     /// Creates a new `UpdateGlobalSettingsError`.
-    pub fn new(kind: UpdateGlobalSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateGlobalSettingsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateGlobalSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateGlobalSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateGlobalSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateGlobalSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateGlobalSettingsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateGlobalSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateGlobalSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateGlobalSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateGlobalSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalSettingsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateGlobalSettingsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateGlobalSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalSettingsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, UpdateGlobalSettingsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `UpdateGlobalSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalSettingsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, UpdateGlobalSettingsErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `UpdateGlobalSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalSettingsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateGlobalSettingsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateGlobalSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalSettingsErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, UpdateGlobalSettingsErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateGlobalSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGlobalSettingsErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, UpdateGlobalSettingsErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for UpdateGlobalSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateGlobalSettingsErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateGlobalSettingsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateGlobalSettingsErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            UpdateGlobalSettingsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateGlobalSettingsErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            UpdateGlobalSettingsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UpdateGlobalSettingsErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateGlobalSettingsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalSettingsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalSettingsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalSettingsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalSettingsErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalSettingsErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGlobalSettingsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2564,17 +2631,15 @@ impl std::error::Error for UpdateGlobalSettingsError {
 #[derive(std::fmt::Debug)]
 pub struct SearchAvailablePhoneNumbersError {
     /// Kind of error that occurred.
-    pub kind: SearchAvailablePhoneNumbersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: SearchAvailablePhoneNumbersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for SearchAvailablePhoneNumbersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: SearchAvailablePhoneNumbersErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: SearchAvailablePhoneNumbersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2596,31 +2661,43 @@ pub enum SearchAvailablePhoneNumbersErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchAvailablePhoneNumbersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SearchAvailablePhoneNumbersErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            SearchAvailablePhoneNumbersErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            SearchAvailablePhoneNumbersErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            SearchAvailablePhoneNumbersErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            SearchAvailablePhoneNumbersErrorKind::ServiceUnavailableException(_inner) => {
+            SearchAvailablePhoneNumbersErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchAvailablePhoneNumbersErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchAvailablePhoneNumbersErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchAvailablePhoneNumbersErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchAvailablePhoneNumbersErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchAvailablePhoneNumbersErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchAvailablePhoneNumbersErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchAvailablePhoneNumbersErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            SearchAvailablePhoneNumbersErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            SearchAvailablePhoneNumbersErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            SearchAvailablePhoneNumbersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2634,115 +2711,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for SearchAvailablePhoneNumbersEr
 }
 impl SearchAvailablePhoneNumbersError {
     /// Creates a new `SearchAvailablePhoneNumbersError`.
-    pub fn new(kind: SearchAvailablePhoneNumbersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `SearchAvailablePhoneNumbersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SearchAvailablePhoneNumbersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `SearchAvailablePhoneNumbersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SearchAvailablePhoneNumbersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: SearchAvailablePhoneNumbersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `SearchAvailablePhoneNumbersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: SearchAvailablePhoneNumbersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `SearchAvailablePhoneNumbersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: SearchAvailablePhoneNumbersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SearchAvailablePhoneNumbersErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, SearchAvailablePhoneNumbersErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SearchAvailablePhoneNumbersErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, SearchAvailablePhoneNumbersErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SearchAvailablePhoneNumbersErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, SearchAvailablePhoneNumbersErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SearchAvailablePhoneNumbersErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, SearchAvailablePhoneNumbersErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SearchAvailablePhoneNumbersErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, SearchAvailablePhoneNumbersErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SearchAvailablePhoneNumbersErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, SearchAvailablePhoneNumbersErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SearchAvailablePhoneNumbersErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, SearchAvailablePhoneNumbersErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for SearchAvailablePhoneNumbersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SearchAvailablePhoneNumbersErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            SearchAvailablePhoneNumbersErrorKind::BadRequestException(_inner) => Some(_inner),
-            SearchAvailablePhoneNumbersErrorKind::ForbiddenException(_inner) => Some(_inner),
-            SearchAvailablePhoneNumbersErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            SearchAvailablePhoneNumbersErrorKind::ServiceUnavailableException(_inner) => {
+            SearchAvailablePhoneNumbersErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            SearchAvailablePhoneNumbersErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            SearchAvailablePhoneNumbersErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            SearchAvailablePhoneNumbersErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            SearchAvailablePhoneNumbersErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            SearchAvailablePhoneNumbersErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            SearchAvailablePhoneNumbersErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            SearchAvailablePhoneNumbersErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            SearchAvailablePhoneNumbersErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            SearchAvailablePhoneNumbersErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            SearchAvailablePhoneNumbersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2750,7 +2814,7 @@ impl std::error::Error for SearchAvailablePhoneNumbersError {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ErrorCode>,
@@ -2760,21 +2824,19 @@ pub struct AccessDeniedException {
 }
 impl AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.code.as_ref()
     }
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -2784,7 +2846,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
-
+    
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2799,8 +2861,7 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2809,17 +2870,20 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
@@ -2833,15 +2897,15 @@ impl AccessDeniedException {
 #[derive(std::fmt::Debug)]
 pub struct RestorePhoneNumberError {
     /// Kind of error that occurred.
-    pub kind: RestorePhoneNumberErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RestorePhoneNumberErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RestorePhoneNumberError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RestorePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2865,28 +2929,46 @@ pub enum RestorePhoneNumberErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestorePhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RestorePhoneNumberErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            RestorePhoneNumberErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            RestorePhoneNumberErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            RestorePhoneNumberErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            RestorePhoneNumberErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            RestorePhoneNumberErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            RestorePhoneNumberErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            RestorePhoneNumberErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            RestorePhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RestorePhoneNumberErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestorePhoneNumberErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestorePhoneNumberErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestorePhoneNumberErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestorePhoneNumberErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestorePhoneNumberErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestorePhoneNumberErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestorePhoneNumberErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestorePhoneNumberErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2900,115 +2982,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for RestorePhoneNumberError {
 }
 impl RestorePhoneNumberError {
     /// Creates a new `RestorePhoneNumberError`.
-    pub fn new(kind: RestorePhoneNumberErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RestorePhoneNumberError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RestorePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RestorePhoneNumberError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RestorePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RestorePhoneNumberErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RestorePhoneNumberError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RestorePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RestorePhoneNumberError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RestorePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RestorePhoneNumberErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestorePhoneNumberErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, RestorePhoneNumberErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `RestorePhoneNumberErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestorePhoneNumberErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, RestorePhoneNumberErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `RestorePhoneNumberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestorePhoneNumberErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, RestorePhoneNumberErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `RestorePhoneNumberErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestorePhoneNumberErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, RestorePhoneNumberErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `RestorePhoneNumberErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestorePhoneNumberErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, RestorePhoneNumberErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `RestorePhoneNumberErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestorePhoneNumberErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, RestorePhoneNumberErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `RestorePhoneNumberErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestorePhoneNumberErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, RestorePhoneNumberErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `RestorePhoneNumberErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestorePhoneNumberErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, RestorePhoneNumberErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for RestorePhoneNumberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RestorePhoneNumberErrorKind::BadRequestException(_inner) => Some(_inner),
-            RestorePhoneNumberErrorKind::ForbiddenException(_inner) => Some(_inner),
-            RestorePhoneNumberErrorKind::NotFoundException(_inner) => Some(_inner),
-            RestorePhoneNumberErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            RestorePhoneNumberErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            RestorePhoneNumberErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            RestorePhoneNumberErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            RestorePhoneNumberErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            RestorePhoneNumberErrorKind::Unhandled(_inner) => Some(_inner),
+            RestorePhoneNumberErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            RestorePhoneNumberErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            RestorePhoneNumberErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RestorePhoneNumberErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            RestorePhoneNumberErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            RestorePhoneNumberErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            RestorePhoneNumberErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            RestorePhoneNumberErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            RestorePhoneNumberErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3018,19 +3094,15 @@ impl std::error::Error for RestorePhoneNumberError {
 #[derive(std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationCredentialsError {
     /// Kind of error that occurred.
-    pub kind: PutVoiceConnectorTerminationCredentialsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutVoiceConnectorTerminationCredentialsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for PutVoiceConnectorTerminationCredentialsError
-{
+impl aws_smithy_http::result::CreateUnhandledError for PutVoiceConnectorTerminationCredentialsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: PutVoiceConnectorTerminationCredentialsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: PutVoiceConnectorTerminationCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3052,41 +3124,43 @@ pub enum PutVoiceConnectorTerminationCredentialsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutVoiceConnectorTerminationCredentialsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_inner) => {
+            PutVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorTerminationCredentialsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            PutVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => _inner.fmt(f),
-            PutVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            PutVoiceConnectorTerminationCredentialsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3100,128 +3174,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutVoiceConnectorTerminationC
 }
 impl PutVoiceConnectorTerminationCredentialsError {
     /// Creates a new `PutVoiceConnectorTerminationCredentialsError`.
-    pub fn new(
-        kind: PutVoiceConnectorTerminationCredentialsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutVoiceConnectorTerminationCredentialsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutVoiceConnectorTerminationCredentialsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutVoiceConnectorTerminationCredentialsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutVoiceConnectorTerminationCredentialsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutVoiceConnectorTerminationCredentialsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutVoiceConnectorTerminationCredentialsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutVoiceConnectorTerminationCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutVoiceConnectorTerminationCredentialsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutVoiceConnectorTerminationCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for PutVoiceConnectorTerminationCredentialsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_inner) => {
+            PutVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorTerminationCredentialsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            PutVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_inner) => {
-                Some(_inner)
-            }
-            PutVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            PutVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_inner) => {
-                Some(_inner)
-            }
-            PutVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => Some(_inner),
-            PutVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            PutVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => Some(_inner),
-            PutVoiceConnectorTerminationCredentialsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3231,17 +3279,15 @@ impl std::error::Error for PutVoiceConnectorTerminationCredentialsError {
 #[derive(std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationError {
     /// Kind of error that occurred.
-    pub kind: PutVoiceConnectorTerminationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutVoiceConnectorTerminationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutVoiceConnectorTerminationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: PutVoiceConnectorTerminationErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: PutVoiceConnectorTerminationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3265,34 +3311,46 @@ pub enum PutVoiceConnectorTerminationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutVoiceConnectorTerminationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutVoiceConnectorTerminationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorTerminationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorTerminationErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorTerminationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorTerminationErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_inner) => {
+            PutVoiceConnectorTerminationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorTerminationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorTerminationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorTerminationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorTerminationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorTerminationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorTerminationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            PutVoiceConnectorTerminationErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorTerminationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3306,123 +3364,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutVoiceConnectorTerminationE
 }
 impl PutVoiceConnectorTerminationError {
     /// Creates a new `PutVoiceConnectorTerminationError`.
-    pub fn new(kind: PutVoiceConnectorTerminationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutVoiceConnectorTerminationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutVoiceConnectorTerminationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutVoiceConnectorTerminationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutVoiceConnectorTerminationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutVoiceConnectorTerminationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutVoiceConnectorTerminationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutVoiceConnectorTerminationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutVoiceConnectorTerminationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutVoiceConnectorTerminationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutVoiceConnectorTerminationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorTerminationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorTerminationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorTerminationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorTerminationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorTerminationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorTerminationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorTerminationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorTerminationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorTerminationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorTerminationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorTerminationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorTerminationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorTerminationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorTerminationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorTerminationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorTerminationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorTerminationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorTerminationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorTerminationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for PutVoiceConnectorTerminationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutVoiceConnectorTerminationErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            PutVoiceConnectorTerminationErrorKind::BadRequestException(_inner) => Some(_inner),
-            PutVoiceConnectorTerminationErrorKind::ForbiddenException(_inner) => Some(_inner),
-            PutVoiceConnectorTerminationErrorKind::NotFoundException(_inner) => Some(_inner),
-            PutVoiceConnectorTerminationErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            PutVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_inner) => {
+            PutVoiceConnectorTerminationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorTerminationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorTerminationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorTerminationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorTerminationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorTerminationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorTerminationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            PutVoiceConnectorTerminationErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            PutVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            PutVoiceConnectorTerminationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3432,19 +3476,15 @@ impl std::error::Error for PutVoiceConnectorTerminationError {
 #[derive(std::fmt::Debug)]
 pub struct PutVoiceConnectorStreamingConfigurationError {
     /// Kind of error that occurred.
-    pub kind: PutVoiceConnectorStreamingConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutVoiceConnectorStreamingConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for PutVoiceConnectorStreamingConfigurationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for PutVoiceConnectorStreamingConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: PutVoiceConnectorStreamingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: PutVoiceConnectorStreamingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3466,41 +3506,43 @@ pub enum PutVoiceConnectorStreamingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutVoiceConnectorStreamingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_inner) => {
+            PutVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorStreamingConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            PutVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => _inner.fmt(f),
-            PutVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            PutVoiceConnectorStreamingConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3514,128 +3556,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutVoiceConnectorStreamingCon
 }
 impl PutVoiceConnectorStreamingConfigurationError {
     /// Creates a new `PutVoiceConnectorStreamingConfigurationError`.
-    pub fn new(
-        kind: PutVoiceConnectorStreamingConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutVoiceConnectorStreamingConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutVoiceConnectorStreamingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutVoiceConnectorStreamingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutVoiceConnectorStreamingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutVoiceConnectorStreamingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutVoiceConnectorStreamingConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutVoiceConnectorStreamingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutVoiceConnectorStreamingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutVoiceConnectorStreamingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for PutVoiceConnectorStreamingConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_inner) => {
+            PutVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorStreamingConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            PutVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_inner) => {
-                Some(_inner)
-            }
-            PutVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            PutVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_inner) => {
-                Some(_inner)
-            }
-            PutVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => Some(_inner),
-            PutVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            PutVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => Some(_inner),
-            PutVoiceConnectorStreamingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3645,15 +3661,15 @@ impl std::error::Error for PutVoiceConnectorStreamingConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct PutVoiceConnectorProxyError {
     /// Kind of error that occurred.
-    pub kind: PutVoiceConnectorProxyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutVoiceConnectorProxyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutVoiceConnectorProxyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PutVoiceConnectorProxyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3677,28 +3693,46 @@ pub enum PutVoiceConnectorProxyErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutVoiceConnectorProxyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutVoiceConnectorProxyErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorProxyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorProxyErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorProxyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorProxyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorProxyErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorProxyErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorProxyErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorProxyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            PutVoiceConnectorProxyErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorProxyErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorProxyErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorProxyErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorProxyErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorProxyErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorProxyErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorProxyErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorProxyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3712,119 +3746,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutVoiceConnectorProxyError {
 }
 impl PutVoiceConnectorProxyError {
     /// Creates a new `PutVoiceConnectorProxyError`.
-    pub fn new(kind: PutVoiceConnectorProxyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutVoiceConnectorProxyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutVoiceConnectorProxyErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutVoiceConnectorProxyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutVoiceConnectorProxyErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutVoiceConnectorProxyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutVoiceConnectorProxyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutVoiceConnectorProxyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutVoiceConnectorProxyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutVoiceConnectorProxyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutVoiceConnectorProxyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorProxyErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorProxyErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorProxyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorProxyErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorProxyErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorProxyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorProxyErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorProxyErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorProxyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorProxyErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorProxyErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorProxyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorProxyErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorProxyErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorProxyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorProxyErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorProxyErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorProxyErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorProxyErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorProxyErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorProxyErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorProxyErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorProxyErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for PutVoiceConnectorProxyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutVoiceConnectorProxyErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            PutVoiceConnectorProxyErrorKind::BadRequestException(_inner) => Some(_inner),
-            PutVoiceConnectorProxyErrorKind::ForbiddenException(_inner) => Some(_inner),
-            PutVoiceConnectorProxyErrorKind::NotFoundException(_inner) => Some(_inner),
-            PutVoiceConnectorProxyErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            PutVoiceConnectorProxyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            PutVoiceConnectorProxyErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            PutVoiceConnectorProxyErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            PutVoiceConnectorProxyErrorKind::Unhandled(_inner) => Some(_inner),
+            PutVoiceConnectorProxyErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorProxyErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorProxyErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorProxyErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorProxyErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorProxyErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorProxyErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorProxyErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorProxyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3834,17 +3858,15 @@ impl std::error::Error for PutVoiceConnectorProxyError {
 #[derive(std::fmt::Debug)]
 pub struct PutVoiceConnectorOriginationError {
     /// Kind of error that occurred.
-    pub kind: PutVoiceConnectorOriginationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutVoiceConnectorOriginationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutVoiceConnectorOriginationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: PutVoiceConnectorOriginationErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: PutVoiceConnectorOriginationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3866,33 +3888,43 @@ pub enum PutVoiceConnectorOriginationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutVoiceConnectorOriginationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutVoiceConnectorOriginationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorOriginationErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorOriginationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorOriginationErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            PutVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_inner) => {
+            PutVoiceConnectorOriginationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorOriginationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorOriginationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorOriginationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorOriginationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorOriginationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            PutVoiceConnectorOriginationErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorOriginationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3906,115 +3938,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutVoiceConnectorOriginationE
 }
 impl PutVoiceConnectorOriginationError {
     /// Creates a new `PutVoiceConnectorOriginationError`.
-    pub fn new(kind: PutVoiceConnectorOriginationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutVoiceConnectorOriginationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutVoiceConnectorOriginationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutVoiceConnectorOriginationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutVoiceConnectorOriginationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutVoiceConnectorOriginationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutVoiceConnectorOriginationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutVoiceConnectorOriginationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutVoiceConnectorOriginationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutVoiceConnectorOriginationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutVoiceConnectorOriginationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorOriginationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorOriginationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorOriginationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorOriginationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorOriginationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorOriginationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorOriginationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorOriginationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorOriginationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorOriginationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorOriginationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorOriginationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorOriginationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorOriginationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorOriginationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorOriginationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for PutVoiceConnectorOriginationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutVoiceConnectorOriginationErrorKind::BadRequestException(_inner) => Some(_inner),
-            PutVoiceConnectorOriginationErrorKind::ForbiddenException(_inner) => Some(_inner),
-            PutVoiceConnectorOriginationErrorKind::NotFoundException(_inner) => Some(_inner),
-            PutVoiceConnectorOriginationErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            PutVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_inner) => {
+            PutVoiceConnectorOriginationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorOriginationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorOriginationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorOriginationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorOriginationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorOriginationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            PutVoiceConnectorOriginationErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            PutVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            PutVoiceConnectorOriginationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4024,17 +4043,15 @@ impl std::error::Error for PutVoiceConnectorOriginationError {
 #[derive(std::fmt::Debug)]
 pub struct PutVoiceConnectorLoggingConfigurationError {
     /// Kind of error that occurred.
-    pub kind: PutVoiceConnectorLoggingConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutVoiceConnectorLoggingConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutVoiceConnectorLoggingConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: PutVoiceConnectorLoggingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: PutVoiceConnectorLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4056,41 +4073,43 @@ pub enum PutVoiceConnectorLoggingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutVoiceConnectorLoggingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutVoiceConnectorLoggingConfigurationErrorKind::BadRequestException(_inner) => {
+            PutVoiceConnectorLoggingConfigurationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorLoggingConfigurationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutVoiceConnectorLoggingConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            PutVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorLoggingConfigurationErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutVoiceConnectorLoggingConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4104,128 +4123,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutVoiceConnectorLoggingConfi
 }
 impl PutVoiceConnectorLoggingConfigurationError {
     /// Creates a new `PutVoiceConnectorLoggingConfigurationError`.
-    pub fn new(
-        kind: PutVoiceConnectorLoggingConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutVoiceConnectorLoggingConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutVoiceConnectorLoggingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutVoiceConnectorLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutVoiceConnectorLoggingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutVoiceConnectorLoggingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutVoiceConnectorLoggingConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutVoiceConnectorLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutVoiceConnectorLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutVoiceConnectorLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorLoggingConfigurationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorLoggingConfigurationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorLoggingConfigurationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorLoggingConfigurationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for PutVoiceConnectorLoggingConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutVoiceConnectorLoggingConfigurationErrorKind::BadRequestException(_inner) => {
+            PutVoiceConnectorLoggingConfigurationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorLoggingConfigurationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutVoiceConnectorLoggingConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            PutVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException(_inner) => {
-                Some(_inner)
-            }
-            PutVoiceConnectorLoggingConfigurationErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            PutVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException(_inner) => {
-                Some(_inner)
-            }
-            PutVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            PutVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            PutVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            PutVoiceConnectorLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4235,19 +4228,15 @@ impl std::error::Error for PutVoiceConnectorLoggingConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct PutVoiceConnectorEmergencyCallingConfigurationError {
     /// Kind of error that occurred.
-    pub kind: PutVoiceConnectorEmergencyCallingConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutVoiceConnectorEmergencyCallingConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for PutVoiceConnectorEmergencyCallingConfigurationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for PutVoiceConnectorEmergencyCallingConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: PutVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: PutVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4269,14 +4258,14 @@ pub enum PutVoiceConnectorEmergencyCallingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutVoiceConnectorEmergencyCallingConfigurationError {
@@ -4309,9 +4298,7 @@ impl std::fmt::Display for PutVoiceConnectorEmergencyCallingConfigurationError {
         }
     }
 }
-impl aws_smithy_types::retry::ProvideErrorKind
-    for PutVoiceConnectorEmergencyCallingConfigurationError
-{
+impl aws_smithy_types::retry::ProvideErrorKind for PutVoiceConnectorEmergencyCallingConfigurationError {
     fn code(&self) -> Option<&str> {
         PutVoiceConnectorEmergencyCallingConfigurationError::code(self)
     }
@@ -4321,101 +4308,73 @@ impl aws_smithy_types::retry::ProvideErrorKind
 }
 impl PutVoiceConnectorEmergencyCallingConfigurationError {
     /// Creates a new `PutVoiceConnectorEmergencyCallingConfigurationError`.
-    pub fn new(
-        kind: PutVoiceConnectorEmergencyCallingConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutVoiceConnectorEmergencyCallingConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutVoiceConnectorEmergencyCallingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutVoiceConnectorEmergencyCallingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutVoiceConnectorEmergencyCallingConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutVoiceConnectorEmergencyCallingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, PutVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for PutVoiceConnectorEmergencyCallingConfigurationError {
@@ -4454,19 +4413,15 @@ impl std::error::Error for PutVoiceConnectorEmergencyCallingConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct PutSipMediaApplicationLoggingConfigurationError {
     /// Kind of error that occurred.
-    pub kind: PutSipMediaApplicationLoggingConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutSipMediaApplicationLoggingConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for PutSipMediaApplicationLoggingConfigurationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for PutSipMediaApplicationLoggingConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: PutSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: PutSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4488,41 +4443,43 @@ pub enum PutSipMediaApplicationLoggingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutSipMediaApplicationLoggingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException(_inner) => {
+            PutSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            PutSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException(
-                _inner,
-            ) => _inner.fmt(f),
-            PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => _inner.fmt(f),
-            PutSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            PutSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            PutSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4536,128 +4493,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutSipMediaApplicationLogging
 }
 impl PutSipMediaApplicationLoggingConfigurationError {
     /// Creates a new `PutSipMediaApplicationLoggingConfigurationError`.
-    pub fn new(
-        kind: PutSipMediaApplicationLoggingConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutSipMediaApplicationLoggingConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutSipMediaApplicationLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutSipMediaApplicationLoggingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutSipMediaApplicationLoggingConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutSipMediaApplicationLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, PutSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, PutSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, PutSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, PutSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, PutSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for PutSipMediaApplicationLoggingConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException(_inner) => {
+            PutSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            PutSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            PutSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            PutSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            PutSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException(_inner) => {
-                Some(_inner)
-            }
-            PutSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException(
-                _inner,
-            ) => Some(_inner),
-            PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => Some(_inner),
-            PutSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException(
-                _inner,
-            ) => Some(_inner),
-            PutSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => Some(_inner),
-            PutSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4667,19 +4598,15 @@ impl std::error::Error for PutSipMediaApplicationLoggingConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct PutSipMediaApplicationAlexaSkillConfigurationError {
     /// Kind of error that occurred.
-    pub kind: PutSipMediaApplicationAlexaSkillConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutSipMediaApplicationAlexaSkillConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for PutSipMediaApplicationAlexaSkillConfigurationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for PutSipMediaApplicationAlexaSkillConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: PutSipMediaApplicationAlexaSkillConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: PutSipMediaApplicationAlexaSkillConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4701,49 +4628,47 @@ pub enum PutSipMediaApplicationAlexaSkillConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutSipMediaApplicationAlexaSkillConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::BadRequestException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceFailureException(
-                _inner,
-            ) => _inner.fmt(f),
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => _inner.fmt(f),
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ThrottledClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => _inner.fmt(f),
+            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
             PutSipMediaApplicationAlexaSkillConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
         }
     }
 }
-impl aws_smithy_types::retry::ProvideErrorKind
-    for PutSipMediaApplicationAlexaSkillConfigurationError
-{
+impl aws_smithy_types::retry::ProvideErrorKind for PutSipMediaApplicationAlexaSkillConfigurationError {
     fn code(&self) -> Option<&str> {
         PutSipMediaApplicationAlexaSkillConfigurationError::code(self)
     }
@@ -4753,127 +4678,99 @@ impl aws_smithy_types::retry::ProvideErrorKind
 }
 impl PutSipMediaApplicationAlexaSkillConfigurationError {
     /// Creates a new `PutSipMediaApplicationAlexaSkillConfigurationError`.
-    pub fn new(
-        kind: PutSipMediaApplicationAlexaSkillConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutSipMediaApplicationAlexaSkillConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutSipMediaApplicationAlexaSkillConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutSipMediaApplicationAlexaSkillConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutSipMediaApplicationAlexaSkillConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutSipMediaApplicationAlexaSkillConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutSipMediaApplicationAlexaSkillConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutSipMediaApplicationAlexaSkillConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutSipMediaApplicationAlexaSkillConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutSipMediaApplicationAlexaSkillConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutSipMediaApplicationAlexaSkillConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, PutSipMediaApplicationAlexaSkillConfigurationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `PutSipMediaApplicationAlexaSkillConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, PutSipMediaApplicationAlexaSkillConfigurationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `PutSipMediaApplicationAlexaSkillConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, PutSipMediaApplicationAlexaSkillConfigurationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for PutSipMediaApplicationAlexaSkillConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::BadRequestException(_inner) => {
-                Some(_inner)
-            }
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ForbiddenException(_inner) => {
-                Some(_inner)
-            }
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceFailureException(
-                _inner,
-            ) => Some(_inner),
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => Some(_inner),
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ThrottledClientException(
-                _inner,
-            ) => Some(_inner),
-            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => Some(_inner),
+            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            PutSipMediaApplicationAlexaSkillConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
             PutSipMediaApplicationAlexaSkillConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
@@ -4886,19 +4783,15 @@ impl std::error::Error for PutSipMediaApplicationAlexaSkillConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct ListVoiceConnectorTerminationCredentialsError {
     /// Kind of error that occurred.
-    pub kind: ListVoiceConnectorTerminationCredentialsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListVoiceConnectorTerminationCredentialsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for ListVoiceConnectorTerminationCredentialsError
-{
+impl aws_smithy_http::result::CreateUnhandledError for ListVoiceConnectorTerminationCredentialsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListVoiceConnectorTerminationCredentialsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ListVoiceConnectorTerminationCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4920,41 +4813,43 @@ pub enum ListVoiceConnectorTerminationCredentialsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVoiceConnectorTerminationCredentialsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_inner) => {
+            ListVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorTerminationCredentialsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => _inner.fmt(f),
-            ListVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            ListVoiceConnectorTerminationCredentialsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4968,128 +4863,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListVoiceConnectorTermination
 }
 impl ListVoiceConnectorTerminationCredentialsError {
     /// Creates a new `ListVoiceConnectorTerminationCredentialsError`.
-    pub fn new(
-        kind: ListVoiceConnectorTerminationCredentialsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListVoiceConnectorTerminationCredentialsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListVoiceConnectorTerminationCredentialsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListVoiceConnectorTerminationCredentialsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListVoiceConnectorTerminationCredentialsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListVoiceConnectorTerminationCredentialsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListVoiceConnectorTerminationCredentialsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListVoiceConnectorTerminationCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListVoiceConnectorTerminationCredentialsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListVoiceConnectorTerminationCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListVoiceConnectorTerminationCredentialsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_inner) => {
+            ListVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorTerminationCredentialsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_inner) => {
-                Some(_inner)
-            }
-            ListVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            ListVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_inner) => {
-                Some(_inner)
-            }
-            ListVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => Some(_inner),
-            ListVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            ListVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => Some(_inner),
-            ListVoiceConnectorTerminationCredentialsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5099,15 +4968,15 @@ impl std::error::Error for ListVoiceConnectorTerminationCredentialsError {
 #[derive(std::fmt::Debug)]
 pub struct ListVoiceConnectorsError {
     /// Kind of error that occurred.
-    pub kind: ListVoiceConnectorsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListVoiceConnectorsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListVoiceConnectorsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListVoiceConnectorsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5127,26 +4996,40 @@ pub enum ListVoiceConnectorsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVoiceConnectorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListVoiceConnectorsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListVoiceConnectorsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListVoiceConnectorsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListVoiceConnectorsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListVoiceConnectorsErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            ListVoiceConnectorsErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            ListVoiceConnectorsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListVoiceConnectorsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorsErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorsErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5160,99 +5043,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListVoiceConnectorsError {
 }
 impl ListVoiceConnectorsError {
     /// Creates a new `ListVoiceConnectorsError`.
-    pub fn new(kind: ListVoiceConnectorsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListVoiceConnectorsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListVoiceConnectorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListVoiceConnectorsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListVoiceConnectorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListVoiceConnectorsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListVoiceConnectorsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListVoiceConnectorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListVoiceConnectorsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListVoiceConnectorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListVoiceConnectorsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListVoiceConnectorsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListVoiceConnectorsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorsErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListVoiceConnectorsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListVoiceConnectorsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorsErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorsErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListVoiceConnectorsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorsErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorsErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListVoiceConnectorsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListVoiceConnectorsErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListVoiceConnectorsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListVoiceConnectorsErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListVoiceConnectorsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListVoiceConnectorsErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            ListVoiceConnectorsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListVoiceConnectorsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListVoiceConnectorsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorsErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorsErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5262,17 +5141,15 @@ impl std::error::Error for ListVoiceConnectorsError {
 #[derive(std::fmt::Debug)]
 pub struct ListVoiceConnectorGroupsError {
     /// Kind of error that occurred.
-    pub kind: ListVoiceConnectorGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListVoiceConnectorGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListVoiceConnectorGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListVoiceConnectorGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListVoiceConnectorGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5292,26 +5169,40 @@ pub enum ListVoiceConnectorGroupsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVoiceConnectorGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListVoiceConnectorGroupsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListVoiceConnectorGroupsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListVoiceConnectorGroupsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListVoiceConnectorGroupsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListVoiceConnectorGroupsErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            ListVoiceConnectorGroupsErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            ListVoiceConnectorGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListVoiceConnectorGroupsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorGroupsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorGroupsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorGroupsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorGroupsErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorGroupsErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVoiceConnectorGroupsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5325,103 +5216,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListVoiceConnectorGroupsError
 }
 impl ListVoiceConnectorGroupsError {
     /// Creates a new `ListVoiceConnectorGroupsError`.
-    pub fn new(kind: ListVoiceConnectorGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListVoiceConnectorGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListVoiceConnectorGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListVoiceConnectorGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListVoiceConnectorGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListVoiceConnectorGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListVoiceConnectorGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListVoiceConnectorGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListVoiceConnectorGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListVoiceConnectorGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListVoiceConnectorGroupsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorGroupsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorGroupsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListVoiceConnectorGroupsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorGroupsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorGroupsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListVoiceConnectorGroupsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorGroupsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorGroupsErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListVoiceConnectorGroupsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorGroupsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorGroupsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListVoiceConnectorGroupsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorGroupsErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorGroupsErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListVoiceConnectorGroupsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVoiceConnectorGroupsErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListVoiceConnectorGroupsErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListVoiceConnectorGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListVoiceConnectorGroupsErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListVoiceConnectorGroupsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListVoiceConnectorGroupsErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListVoiceConnectorGroupsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListVoiceConnectorGroupsErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            ListVoiceConnectorGroupsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListVoiceConnectorGroupsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListVoiceConnectorGroupsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorGroupsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorGroupsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorGroupsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorGroupsErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorGroupsErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListVoiceConnectorGroupsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5431,17 +5314,15 @@ impl std::error::Error for ListVoiceConnectorGroupsError {
 #[derive(std::fmt::Debug)]
 pub struct ListSupportedPhoneNumberCountriesError {
     /// Kind of error that occurred.
-    pub kind: ListSupportedPhoneNumberCountriesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListSupportedPhoneNumberCountriesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListSupportedPhoneNumberCountriesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListSupportedPhoneNumberCountriesErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ListSupportedPhoneNumberCountriesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5463,39 +5344,43 @@ pub enum ListSupportedPhoneNumberCountriesErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSupportedPhoneNumberCountriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSupportedPhoneNumberCountriesErrorKind::AccessDeniedException(_inner) => {
+            ListSupportedPhoneNumberCountriesErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSupportedPhoneNumberCountriesErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSupportedPhoneNumberCountriesErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSupportedPhoneNumberCountriesErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSupportedPhoneNumberCountriesErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSupportedPhoneNumberCountriesErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSupportedPhoneNumberCountriesErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSupportedPhoneNumberCountriesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListSupportedPhoneNumberCountriesErrorKind::BadRequestException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListSupportedPhoneNumberCountriesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListSupportedPhoneNumberCountriesErrorKind::ServiceFailureException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListSupportedPhoneNumberCountriesErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListSupportedPhoneNumberCountriesErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListSupportedPhoneNumberCountriesErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListSupportedPhoneNumberCountriesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5509,124 +5394,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListSupportedPhoneNumberCount
 }
 impl ListSupportedPhoneNumberCountriesError {
     /// Creates a new `ListSupportedPhoneNumberCountriesError`.
-    pub fn new(
-        kind: ListSupportedPhoneNumberCountriesErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListSupportedPhoneNumberCountriesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListSupportedPhoneNumberCountriesErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListSupportedPhoneNumberCountriesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListSupportedPhoneNumberCountriesErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListSupportedPhoneNumberCountriesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListSupportedPhoneNumberCountriesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListSupportedPhoneNumberCountriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListSupportedPhoneNumberCountriesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListSupportedPhoneNumberCountriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSupportedPhoneNumberCountriesErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListSupportedPhoneNumberCountriesErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSupportedPhoneNumberCountriesErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListSupportedPhoneNumberCountriesErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSupportedPhoneNumberCountriesErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListSupportedPhoneNumberCountriesErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSupportedPhoneNumberCountriesErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListSupportedPhoneNumberCountriesErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSupportedPhoneNumberCountriesErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListSupportedPhoneNumberCountriesErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSupportedPhoneNumberCountriesErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListSupportedPhoneNumberCountriesErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSupportedPhoneNumberCountriesErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListSupportedPhoneNumberCountriesErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListSupportedPhoneNumberCountriesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSupportedPhoneNumberCountriesErrorKind::AccessDeniedException(_inner) => {
+            ListSupportedPhoneNumberCountriesErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListSupportedPhoneNumberCountriesErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListSupportedPhoneNumberCountriesErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListSupportedPhoneNumberCountriesErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListSupportedPhoneNumberCountriesErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListSupportedPhoneNumberCountriesErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListSupportedPhoneNumberCountriesErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListSupportedPhoneNumberCountriesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListSupportedPhoneNumberCountriesErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListSupportedPhoneNumberCountriesErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListSupportedPhoneNumberCountriesErrorKind::ServiceFailureException(_inner) => {
-                Some(_inner)
-            }
-            ListSupportedPhoneNumberCountriesErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            ListSupportedPhoneNumberCountriesErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            ListSupportedPhoneNumberCountriesErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            ListSupportedPhoneNumberCountriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5636,15 +5499,15 @@ impl std::error::Error for ListSupportedPhoneNumberCountriesError {
 #[derive(std::fmt::Debug)]
 pub struct ListSipRulesError {
     /// Kind of error that occurred.
-    pub kind: ListSipRulesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListSipRulesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListSipRulesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListSipRulesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5664,26 +5527,40 @@ pub enum ListSipRulesErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSipRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSipRulesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListSipRulesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListSipRulesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListSipRulesErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListSipRulesErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            ListSipRulesErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            ListSipRulesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListSipRulesErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSipRulesErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSipRulesErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSipRulesErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSipRulesErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSipRulesErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSipRulesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5697,46 +5574,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListSipRulesError {
 }
 impl ListSipRulesError {
     /// Creates a new `ListSipRulesError`.
-    pub fn new(kind: ListSipRulesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListSipRulesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListSipRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListSipRulesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListSipRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListSipRulesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListSipRulesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListSipRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListSipRulesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListSipRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListSipRulesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListSipRulesErrorKind::BadRequestException(_))
@@ -5747,43 +5624,45 @@ impl ListSipRulesError {
     }
     /// Returns `true` if the error kind is `ListSipRulesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSipRulesErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListSipRulesErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListSipRulesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSipRulesErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListSipRulesErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListSipRulesErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSipRulesErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListSipRulesErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListSipRulesErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSipRulesErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListSipRulesErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListSipRulesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSipRulesErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListSipRulesErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListSipRulesErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListSipRulesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListSipRulesErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            ListSipRulesErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListSipRulesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListSipRulesErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListSipRulesErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListSipRulesErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListSipRulesErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListSipRulesErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListSipRulesErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListSipRulesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5793,17 +5672,15 @@ impl std::error::Error for ListSipRulesError {
 #[derive(std::fmt::Debug)]
 pub struct ListSipMediaApplicationsError {
     /// Kind of error that occurred.
-    pub kind: ListSipMediaApplicationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListSipMediaApplicationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListSipMediaApplicationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListSipMediaApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListSipMediaApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5823,26 +5700,40 @@ pub enum ListSipMediaApplicationsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSipMediaApplicationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSipMediaApplicationsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListSipMediaApplicationsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListSipMediaApplicationsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListSipMediaApplicationsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListSipMediaApplicationsErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            ListSipMediaApplicationsErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            ListSipMediaApplicationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListSipMediaApplicationsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSipMediaApplicationsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSipMediaApplicationsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSipMediaApplicationsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSipMediaApplicationsErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSipMediaApplicationsErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSipMediaApplicationsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5856,103 +5747,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListSipMediaApplicationsError
 }
 impl ListSipMediaApplicationsError {
     /// Creates a new `ListSipMediaApplicationsError`.
-    pub fn new(kind: ListSipMediaApplicationsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListSipMediaApplicationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListSipMediaApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListSipMediaApplicationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListSipMediaApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListSipMediaApplicationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListSipMediaApplicationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListSipMediaApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListSipMediaApplicationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListSipMediaApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListSipMediaApplicationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSipMediaApplicationsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListSipMediaApplicationsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListSipMediaApplicationsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSipMediaApplicationsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListSipMediaApplicationsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListSipMediaApplicationsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSipMediaApplicationsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListSipMediaApplicationsErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListSipMediaApplicationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSipMediaApplicationsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListSipMediaApplicationsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListSipMediaApplicationsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSipMediaApplicationsErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListSipMediaApplicationsErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListSipMediaApplicationsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSipMediaApplicationsErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListSipMediaApplicationsErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListSipMediaApplicationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSipMediaApplicationsErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListSipMediaApplicationsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListSipMediaApplicationsErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListSipMediaApplicationsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListSipMediaApplicationsErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            ListSipMediaApplicationsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListSipMediaApplicationsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListSipMediaApplicationsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListSipMediaApplicationsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListSipMediaApplicationsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListSipMediaApplicationsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListSipMediaApplicationsErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListSipMediaApplicationsErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListSipMediaApplicationsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5962,15 +5845,15 @@ impl std::error::Error for ListSipMediaApplicationsError {
 #[derive(std::fmt::Debug)]
 pub struct ListProxySessionsError {
     /// Kind of error that occurred.
-    pub kind: ListProxySessionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListProxySessionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListProxySessionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListProxySessionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5992,27 +5875,43 @@ pub enum ListProxySessionsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListProxySessionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListProxySessionsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListProxySessionsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListProxySessionsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListProxySessionsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListProxySessionsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListProxySessionsErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            ListProxySessionsErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            ListProxySessionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListProxySessionsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListProxySessionsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListProxySessionsErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListProxySessionsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListProxySessionsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListProxySessionsErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListProxySessionsErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListProxySessionsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6026,59 +5925,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListProxySessionsError {
 }
 impl ListProxySessionsError {
     /// Creates a new `ListProxySessionsError`.
-    pub fn new(kind: ListProxySessionsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListProxySessionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListProxySessionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListProxySessionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListProxySessionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListProxySessionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListProxySessionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListProxySessionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListProxySessionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListProxySessionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListProxySessionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListProxySessionsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListProxySessionsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListProxySessionsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListProxySessionsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListProxySessionsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListProxySessionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -6086,44 +5979,48 @@ impl ListProxySessionsError {
     }
     /// Returns `true` if the error kind is `ListProxySessionsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListProxySessionsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListProxySessionsErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListProxySessionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListProxySessionsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListProxySessionsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListProxySessionsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListProxySessionsErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListProxySessionsErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListProxySessionsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListProxySessionsErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListProxySessionsErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListProxySessionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListProxySessionsErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListProxySessionsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListProxySessionsErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListProxySessionsErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListProxySessionsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListProxySessionsErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            ListProxySessionsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListProxySessionsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListProxySessionsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListProxySessionsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListProxySessionsErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListProxySessionsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListProxySessionsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListProxySessionsErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListProxySessionsErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListProxySessionsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6133,15 +6030,15 @@ impl std::error::Error for ListProxySessionsError {
 #[derive(std::fmt::Debug)]
 pub struct ListPhoneNumbersError {
     /// Kind of error that occurred.
-    pub kind: ListPhoneNumbersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListPhoneNumbersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListPhoneNumbersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListPhoneNumbersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6163,27 +6060,43 @@ pub enum ListPhoneNumbersErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPhoneNumbersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListPhoneNumbersErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListPhoneNumbersErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListPhoneNumbersErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListPhoneNumbersErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListPhoneNumbersErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListPhoneNumbersErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            ListPhoneNumbersErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            ListPhoneNumbersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListPhoneNumbersErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListPhoneNumbersErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListPhoneNumbersErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListPhoneNumbersErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListPhoneNumbersErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListPhoneNumbersErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListPhoneNumbersErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListPhoneNumbersErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6197,52 +6110,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListPhoneNumbersError {
 }
 impl ListPhoneNumbersError {
     /// Creates a new `ListPhoneNumbersError`.
-    pub fn new(kind: ListPhoneNumbersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListPhoneNumbersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListPhoneNumbersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListPhoneNumbersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListPhoneNumbersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListPhoneNumbersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListPhoneNumbersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListPhoneNumbersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListPhoneNumbersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListPhoneNumbersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListPhoneNumbersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListPhoneNumbersErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListPhoneNumbersErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListPhoneNumbersErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
@@ -6254,44 +6164,48 @@ impl ListPhoneNumbersError {
     }
     /// Returns `true` if the error kind is `ListPhoneNumbersErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListPhoneNumbersErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListPhoneNumbersErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListPhoneNumbersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListPhoneNumbersErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListPhoneNumbersErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListPhoneNumbersErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListPhoneNumbersErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListPhoneNumbersErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListPhoneNumbersErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListPhoneNumbersErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListPhoneNumbersErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListPhoneNumbersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListPhoneNumbersErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListPhoneNumbersErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListPhoneNumbersErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListPhoneNumbersErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListPhoneNumbersErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListPhoneNumbersErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            ListPhoneNumbersErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListPhoneNumbersErrorKind::Unhandled(_inner) => Some(_inner),
+            ListPhoneNumbersErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListPhoneNumbersErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListPhoneNumbersErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListPhoneNumbersErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListPhoneNumbersErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListPhoneNumbersErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListPhoneNumbersErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListPhoneNumbersErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6301,15 +6215,15 @@ impl std::error::Error for ListPhoneNumbersError {
 #[derive(std::fmt::Debug)]
 pub struct ListPhoneNumberOrdersError {
     /// Kind of error that occurred.
-    pub kind: ListPhoneNumberOrdersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListPhoneNumberOrdersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListPhoneNumberOrdersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListPhoneNumberOrdersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6329,26 +6243,40 @@ pub enum ListPhoneNumberOrdersErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPhoneNumberOrdersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListPhoneNumberOrdersErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListPhoneNumberOrdersErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListPhoneNumberOrdersErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListPhoneNumberOrdersErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            ListPhoneNumberOrdersErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            ListPhoneNumberOrdersErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            ListPhoneNumberOrdersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListPhoneNumberOrdersErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListPhoneNumberOrdersErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListPhoneNumberOrdersErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListPhoneNumberOrdersErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListPhoneNumberOrdersErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListPhoneNumberOrdersErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListPhoneNumberOrdersErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6362,103 +6290,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListPhoneNumberOrdersError {
 }
 impl ListPhoneNumberOrdersError {
     /// Creates a new `ListPhoneNumberOrdersError`.
-    pub fn new(kind: ListPhoneNumberOrdersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListPhoneNumberOrdersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListPhoneNumberOrdersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListPhoneNumberOrdersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListPhoneNumberOrdersErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListPhoneNumberOrdersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListPhoneNumberOrdersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListPhoneNumberOrdersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListPhoneNumberOrdersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListPhoneNumberOrdersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListPhoneNumberOrdersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListPhoneNumberOrdersErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListPhoneNumberOrdersErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListPhoneNumberOrdersErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListPhoneNumberOrdersErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListPhoneNumberOrdersErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListPhoneNumberOrdersErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListPhoneNumberOrdersErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListPhoneNumberOrdersErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListPhoneNumberOrdersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListPhoneNumberOrdersErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListPhoneNumberOrdersErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListPhoneNumberOrdersErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListPhoneNumberOrdersErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListPhoneNumberOrdersErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListPhoneNumberOrdersErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListPhoneNumberOrdersErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListPhoneNumberOrdersErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListPhoneNumberOrdersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListPhoneNumberOrdersErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListPhoneNumberOrdersErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListPhoneNumberOrdersErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListPhoneNumberOrdersErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListPhoneNumberOrdersErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            ListPhoneNumberOrdersErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListPhoneNumberOrdersErrorKind::Unhandled(_inner) => Some(_inner),
+            ListPhoneNumberOrdersErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListPhoneNumberOrdersErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListPhoneNumberOrdersErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListPhoneNumberOrdersErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListPhoneNumberOrdersErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListPhoneNumberOrdersErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListPhoneNumberOrdersErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6468,17 +6388,15 @@ impl std::error::Error for ListPhoneNumberOrdersError {
 #[derive(std::fmt::Debug)]
 pub struct ListAvailableVoiceConnectorRegionsError {
     /// Kind of error that occurred.
-    pub kind: ListAvailableVoiceConnectorRegionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListAvailableVoiceConnectorRegionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListAvailableVoiceConnectorRegionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListAvailableVoiceConnectorRegionsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ListAvailableVoiceConnectorRegionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6498,38 +6416,40 @@ pub enum ListAvailableVoiceConnectorRegionsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAvailableVoiceConnectorRegionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAvailableVoiceConnectorRegionsErrorKind::BadRequestException(_inner) => {
+            ListAvailableVoiceConnectorRegionsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAvailableVoiceConnectorRegionsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAvailableVoiceConnectorRegionsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAvailableVoiceConnectorRegionsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAvailableVoiceConnectorRegionsErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAvailableVoiceConnectorRegionsErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAvailableVoiceConnectorRegionsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListAvailableVoiceConnectorRegionsErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListAvailableVoiceConnectorRegionsErrorKind::ServiceFailureException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListAvailableVoiceConnectorRegionsErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListAvailableVoiceConnectorRegionsErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListAvailableVoiceConnectorRegionsErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListAvailableVoiceConnectorRegionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6543,116 +6463,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListAvailableVoiceConnectorRe
 }
 impl ListAvailableVoiceConnectorRegionsError {
     /// Creates a new `ListAvailableVoiceConnectorRegionsError`.
-    pub fn new(
-        kind: ListAvailableVoiceConnectorRegionsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListAvailableVoiceConnectorRegionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListAvailableVoiceConnectorRegionsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListAvailableVoiceConnectorRegionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListAvailableVoiceConnectorRegionsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListAvailableVoiceConnectorRegionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListAvailableVoiceConnectorRegionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListAvailableVoiceConnectorRegionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListAvailableVoiceConnectorRegionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListAvailableVoiceConnectorRegionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListAvailableVoiceConnectorRegionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAvailableVoiceConnectorRegionsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListAvailableVoiceConnectorRegionsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListAvailableVoiceConnectorRegionsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAvailableVoiceConnectorRegionsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListAvailableVoiceConnectorRegionsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListAvailableVoiceConnectorRegionsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAvailableVoiceConnectorRegionsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListAvailableVoiceConnectorRegionsErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `ListAvailableVoiceConnectorRegionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAvailableVoiceConnectorRegionsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ListAvailableVoiceConnectorRegionsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListAvailableVoiceConnectorRegionsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAvailableVoiceConnectorRegionsErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, ListAvailableVoiceConnectorRegionsErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `ListAvailableVoiceConnectorRegionsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAvailableVoiceConnectorRegionsErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, ListAvailableVoiceConnectorRegionsErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for ListAvailableVoiceConnectorRegionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAvailableVoiceConnectorRegionsErrorKind::BadRequestException(_inner) => {
+            ListAvailableVoiceConnectorRegionsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListAvailableVoiceConnectorRegionsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListAvailableVoiceConnectorRegionsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListAvailableVoiceConnectorRegionsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListAvailableVoiceConnectorRegionsErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListAvailableVoiceConnectorRegionsErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListAvailableVoiceConnectorRegionsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListAvailableVoiceConnectorRegionsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListAvailableVoiceConnectorRegionsErrorKind::ServiceFailureException(_inner) => {
-                Some(_inner)
-            }
-            ListAvailableVoiceConnectorRegionsErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            ListAvailableVoiceConnectorRegionsErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            ListAvailableVoiceConnectorRegionsErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            ListAvailableVoiceConnectorRegionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6662,17 +6561,15 @@ impl std::error::Error for ListAvailableVoiceConnectorRegionsError {
 #[derive(std::fmt::Debug)]
 pub struct GetVoiceConnectorTerminationHealthError {
     /// Kind of error that occurred.
-    pub kind: GetVoiceConnectorTerminationHealthErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetVoiceConnectorTerminationHealthErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetVoiceConnectorTerminationHealthError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetVoiceConnectorTerminationHealthErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GetVoiceConnectorTerminationHealthErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6694,39 +6591,43 @@ pub enum GetVoiceConnectorTerminationHealthErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetVoiceConnectorTerminationHealthError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetVoiceConnectorTerminationHealthErrorKind::BadRequestException(_inner) => {
+            GetVoiceConnectorTerminationHealthErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorTerminationHealthErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorTerminationHealthErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorTerminationHealthErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorTerminationHealthErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorTerminationHealthErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorTerminationHealthErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorTerminationHealthErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetVoiceConnectorTerminationHealthErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorTerminationHealthErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorTerminationHealthErrorKind::ServiceFailureException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorTerminationHealthErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorTerminationHealthErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorTerminationHealthErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorTerminationHealthErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6740,124 +6641,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetVoiceConnectorTerminationH
 }
 impl GetVoiceConnectorTerminationHealthError {
     /// Creates a new `GetVoiceConnectorTerminationHealthError`.
-    pub fn new(
-        kind: GetVoiceConnectorTerminationHealthErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetVoiceConnectorTerminationHealthError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetVoiceConnectorTerminationHealthErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetVoiceConnectorTerminationHealthError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetVoiceConnectorTerminationHealthErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetVoiceConnectorTerminationHealthErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorTerminationHealthError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetVoiceConnectorTerminationHealthErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorTerminationHealthError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetVoiceConnectorTerminationHealthErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorTerminationHealthErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorTerminationHealthErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorTerminationHealthErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorTerminationHealthErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorTerminationHealthErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorTerminationHealthErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorTerminationHealthErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorTerminationHealthErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorTerminationHealthErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorTerminationHealthErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorTerminationHealthErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorTerminationHealthErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorTerminationHealthErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorTerminationHealthErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetVoiceConnectorTerminationHealthError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetVoiceConnectorTerminationHealthErrorKind::BadRequestException(_inner) => {
+            GetVoiceConnectorTerminationHealthErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorTerminationHealthErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorTerminationHealthErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorTerminationHealthErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorTerminationHealthErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorTerminationHealthErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorTerminationHealthErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorTerminationHealthErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetVoiceConnectorTerminationHealthErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetVoiceConnectorTerminationHealthErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetVoiceConnectorTerminationHealthErrorKind::ServiceFailureException(_inner) => {
-                Some(_inner)
-            }
-            GetVoiceConnectorTerminationHealthErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            GetVoiceConnectorTerminationHealthErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            GetVoiceConnectorTerminationHealthErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            GetVoiceConnectorTerminationHealthErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6867,17 +6746,15 @@ impl std::error::Error for GetVoiceConnectorTerminationHealthError {
 #[derive(std::fmt::Debug)]
 pub struct GetVoiceConnectorTerminationError {
     /// Kind of error that occurred.
-    pub kind: GetVoiceConnectorTerminationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetVoiceConnectorTerminationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetVoiceConnectorTerminationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetVoiceConnectorTerminationErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: GetVoiceConnectorTerminationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6899,33 +6776,43 @@ pub enum GetVoiceConnectorTerminationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetVoiceConnectorTerminationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetVoiceConnectorTerminationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorTerminationErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorTerminationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorTerminationErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_inner) => {
+            GetVoiceConnectorTerminationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorTerminationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorTerminationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorTerminationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorTerminationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorTerminationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetVoiceConnectorTerminationErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorTerminationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6939,115 +6826,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetVoiceConnectorTerminationE
 }
 impl GetVoiceConnectorTerminationError {
     /// Creates a new `GetVoiceConnectorTerminationError`.
-    pub fn new(kind: GetVoiceConnectorTerminationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetVoiceConnectorTerminationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetVoiceConnectorTerminationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetVoiceConnectorTerminationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetVoiceConnectorTerminationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetVoiceConnectorTerminationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorTerminationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetVoiceConnectorTerminationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorTerminationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetVoiceConnectorTerminationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetVoiceConnectorTerminationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorTerminationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorTerminationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorTerminationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorTerminationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorTerminationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorTerminationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorTerminationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorTerminationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorTerminationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorTerminationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorTerminationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorTerminationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorTerminationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorTerminationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorTerminationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorTerminationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetVoiceConnectorTerminationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetVoiceConnectorTerminationErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetVoiceConnectorTerminationErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetVoiceConnectorTerminationErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetVoiceConnectorTerminationErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_inner) => {
+            GetVoiceConnectorTerminationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorTerminationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorTerminationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorTerminationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorTerminationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorTerminationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetVoiceConnectorTerminationErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            GetVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            GetVoiceConnectorTerminationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7057,19 +6931,15 @@ impl std::error::Error for GetVoiceConnectorTerminationError {
 #[derive(std::fmt::Debug)]
 pub struct GetVoiceConnectorStreamingConfigurationError {
     /// Kind of error that occurred.
-    pub kind: GetVoiceConnectorStreamingConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetVoiceConnectorStreamingConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for GetVoiceConnectorStreamingConfigurationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for GetVoiceConnectorStreamingConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetVoiceConnectorStreamingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GetVoiceConnectorStreamingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7091,41 +6961,43 @@ pub enum GetVoiceConnectorStreamingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetVoiceConnectorStreamingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_inner) => {
+            GetVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorStreamingConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => _inner.fmt(f),
-            GetVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            GetVoiceConnectorStreamingConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7139,128 +7011,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetVoiceConnectorStreamingCon
 }
 impl GetVoiceConnectorStreamingConfigurationError {
     /// Creates a new `GetVoiceConnectorStreamingConfigurationError`.
-    pub fn new(
-        kind: GetVoiceConnectorStreamingConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetVoiceConnectorStreamingConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetVoiceConnectorStreamingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetVoiceConnectorStreamingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetVoiceConnectorStreamingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetVoiceConnectorStreamingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorStreamingConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetVoiceConnectorStreamingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorStreamingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetVoiceConnectorStreamingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetVoiceConnectorStreamingConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_inner) => {
+            GetVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorStreamingConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_inner) => {
-                Some(_inner)
-            }
-            GetVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            GetVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_inner) => {
-                Some(_inner)
-            }
-            GetVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => Some(_inner),
-            GetVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            GetVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => Some(_inner),
-            GetVoiceConnectorStreamingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7270,15 +7116,15 @@ impl std::error::Error for GetVoiceConnectorStreamingConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct GetVoiceConnectorProxyError {
     /// Kind of error that occurred.
-    pub kind: GetVoiceConnectorProxyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetVoiceConnectorProxyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetVoiceConnectorProxyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetVoiceConnectorProxyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7300,27 +7146,43 @@ pub enum GetVoiceConnectorProxyErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetVoiceConnectorProxyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetVoiceConnectorProxyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorProxyErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorProxyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorProxyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorProxyErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorProxyErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorProxyErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorProxyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetVoiceConnectorProxyErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorProxyErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorProxyErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorProxyErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorProxyErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorProxyErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorProxyErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorProxyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7334,111 +7196,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetVoiceConnectorProxyError {
 }
 impl GetVoiceConnectorProxyError {
     /// Creates a new `GetVoiceConnectorProxyError`.
-    pub fn new(kind: GetVoiceConnectorProxyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetVoiceConnectorProxyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetVoiceConnectorProxyErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetVoiceConnectorProxyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetVoiceConnectorProxyErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetVoiceConnectorProxyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorProxyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetVoiceConnectorProxyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorProxyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetVoiceConnectorProxyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetVoiceConnectorProxyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorProxyErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorProxyErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorProxyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorProxyErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorProxyErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorProxyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorProxyErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorProxyErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorProxyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorProxyErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorProxyErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorProxyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorProxyErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorProxyErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorProxyErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorProxyErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorProxyErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorProxyErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorProxyErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorProxyErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetVoiceConnectorProxyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetVoiceConnectorProxyErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetVoiceConnectorProxyErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetVoiceConnectorProxyErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetVoiceConnectorProxyErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetVoiceConnectorProxyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetVoiceConnectorProxyErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            GetVoiceConnectorProxyErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            GetVoiceConnectorProxyErrorKind::Unhandled(_inner) => Some(_inner),
+            GetVoiceConnectorProxyErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorProxyErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorProxyErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorProxyErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorProxyErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorProxyErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorProxyErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorProxyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7448,17 +7301,15 @@ impl std::error::Error for GetVoiceConnectorProxyError {
 #[derive(std::fmt::Debug)]
 pub struct GetVoiceConnectorOriginationError {
     /// Kind of error that occurred.
-    pub kind: GetVoiceConnectorOriginationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetVoiceConnectorOriginationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetVoiceConnectorOriginationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetVoiceConnectorOriginationErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: GetVoiceConnectorOriginationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7480,33 +7331,43 @@ pub enum GetVoiceConnectorOriginationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetVoiceConnectorOriginationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetVoiceConnectorOriginationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorOriginationErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorOriginationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorOriginationErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_inner) => {
+            GetVoiceConnectorOriginationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorOriginationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorOriginationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorOriginationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorOriginationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorOriginationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetVoiceConnectorOriginationErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorOriginationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7520,115 +7381,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetVoiceConnectorOriginationE
 }
 impl GetVoiceConnectorOriginationError {
     /// Creates a new `GetVoiceConnectorOriginationError`.
-    pub fn new(kind: GetVoiceConnectorOriginationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetVoiceConnectorOriginationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetVoiceConnectorOriginationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetVoiceConnectorOriginationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetVoiceConnectorOriginationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetVoiceConnectorOriginationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorOriginationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetVoiceConnectorOriginationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorOriginationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetVoiceConnectorOriginationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetVoiceConnectorOriginationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorOriginationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorOriginationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorOriginationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorOriginationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorOriginationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorOriginationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorOriginationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorOriginationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorOriginationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorOriginationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorOriginationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorOriginationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorOriginationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorOriginationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorOriginationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorOriginationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetVoiceConnectorOriginationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetVoiceConnectorOriginationErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetVoiceConnectorOriginationErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetVoiceConnectorOriginationErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetVoiceConnectorOriginationErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_inner) => {
+            GetVoiceConnectorOriginationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorOriginationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorOriginationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorOriginationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorOriginationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorOriginationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetVoiceConnectorOriginationErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            GetVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            GetVoiceConnectorOriginationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7638,17 +7486,15 @@ impl std::error::Error for GetVoiceConnectorOriginationError {
 #[derive(std::fmt::Debug)]
 pub struct GetVoiceConnectorLoggingConfigurationError {
     /// Kind of error that occurred.
-    pub kind: GetVoiceConnectorLoggingConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetVoiceConnectorLoggingConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetVoiceConnectorLoggingConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetVoiceConnectorLoggingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GetVoiceConnectorLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7670,41 +7516,43 @@ pub enum GetVoiceConnectorLoggingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetVoiceConnectorLoggingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetVoiceConnectorLoggingConfigurationErrorKind::BadRequestException(_inner) => {
+            GetVoiceConnectorLoggingConfigurationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorLoggingConfigurationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorLoggingConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorLoggingConfigurationErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetVoiceConnectorLoggingConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7718,128 +7566,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetVoiceConnectorLoggingConfi
 }
 impl GetVoiceConnectorLoggingConfigurationError {
     /// Creates a new `GetVoiceConnectorLoggingConfigurationError`.
-    pub fn new(
-        kind: GetVoiceConnectorLoggingConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetVoiceConnectorLoggingConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetVoiceConnectorLoggingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetVoiceConnectorLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetVoiceConnectorLoggingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetVoiceConnectorLoggingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorLoggingConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetVoiceConnectorLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetVoiceConnectorLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorLoggingConfigurationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorLoggingConfigurationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorLoggingConfigurationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorLoggingConfigurationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetVoiceConnectorLoggingConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetVoiceConnectorLoggingConfigurationErrorKind::BadRequestException(_inner) => {
+            GetVoiceConnectorLoggingConfigurationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorLoggingConfigurationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorLoggingConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException(_inner) => {
-                Some(_inner)
-            }
-            GetVoiceConnectorLoggingConfigurationErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            GetVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException(_inner) => {
-                Some(_inner)
-            }
-            GetVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            GetVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            GetVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            GetVoiceConnectorLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7849,15 +7671,15 @@ impl std::error::Error for GetVoiceConnectorLoggingConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct GetVoiceConnectorGroupError {
     /// Kind of error that occurred.
-    pub kind: GetVoiceConnectorGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetVoiceConnectorGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetVoiceConnectorGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7879,27 +7701,43 @@ pub enum GetVoiceConnectorGroupErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetVoiceConnectorGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetVoiceConnectorGroupErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorGroupErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorGroupErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetVoiceConnectorGroupErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorGroupErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorGroupErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7913,111 +7751,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetVoiceConnectorGroupError {
 }
 impl GetVoiceConnectorGroupError {
     /// Creates a new `GetVoiceConnectorGroupError`.
-    pub fn new(kind: GetVoiceConnectorGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetVoiceConnectorGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetVoiceConnectorGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetVoiceConnectorGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetVoiceConnectorGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorGroupErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorGroupErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorGroupErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorGroupErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorGroupErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorGroupErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorGroupErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorGroupErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorGroupErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorGroupErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorGroupErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorGroupErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorGroupErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorGroupErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorGroupErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetVoiceConnectorGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetVoiceConnectorGroupErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetVoiceConnectorGroupErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetVoiceConnectorGroupErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            GetVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            GetVoiceConnectorGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            GetVoiceConnectorGroupErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorGroupErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorGroupErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8027,19 +7856,15 @@ impl std::error::Error for GetVoiceConnectorGroupError {
 #[derive(std::fmt::Debug)]
 pub struct GetVoiceConnectorEmergencyCallingConfigurationError {
     /// Kind of error that occurred.
-    pub kind: GetVoiceConnectorEmergencyCallingConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetVoiceConnectorEmergencyCallingConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for GetVoiceConnectorEmergencyCallingConfigurationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for GetVoiceConnectorEmergencyCallingConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GetVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8061,14 +7886,14 @@ pub enum GetVoiceConnectorEmergencyCallingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetVoiceConnectorEmergencyCallingConfigurationError {
@@ -8101,9 +7926,7 @@ impl std::fmt::Display for GetVoiceConnectorEmergencyCallingConfigurationError {
         }
     }
 }
-impl aws_smithy_types::retry::ProvideErrorKind
-    for GetVoiceConnectorEmergencyCallingConfigurationError
-{
+impl aws_smithy_types::retry::ProvideErrorKind for GetVoiceConnectorEmergencyCallingConfigurationError {
     fn code(&self) -> Option<&str> {
         GetVoiceConnectorEmergencyCallingConfigurationError::code(self)
     }
@@ -8113,101 +7936,73 @@ impl aws_smithy_types::retry::ProvideErrorKind
 }
 impl GetVoiceConnectorEmergencyCallingConfigurationError {
     /// Creates a new `GetVoiceConnectorEmergencyCallingConfigurationError`.
-    pub fn new(
-        kind: GetVoiceConnectorEmergencyCallingConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetVoiceConnectorEmergencyCallingConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetVoiceConnectorEmergencyCallingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetVoiceConnectorEmergencyCallingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorEmergencyCallingConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorEmergencyCallingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetVoiceConnectorEmergencyCallingConfigurationError {
@@ -8246,15 +8041,15 @@ impl std::error::Error for GetVoiceConnectorEmergencyCallingConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct GetVoiceConnectorError {
     /// Kind of error that occurred.
-    pub kind: GetVoiceConnectorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetVoiceConnectorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetVoiceConnectorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8276,27 +8071,43 @@ pub enum GetVoiceConnectorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetVoiceConnectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetVoiceConnectorErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            GetVoiceConnectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetVoiceConnectorErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetVoiceConnectorErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8310,59 +8121,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetVoiceConnectorError {
 }
 impl GetVoiceConnectorError {
     /// Creates a new `GetVoiceConnectorError`.
-    pub fn new(kind: GetVoiceConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetVoiceConnectorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetVoiceConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetVoiceConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetVoiceConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetVoiceConnectorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -8370,44 +8175,48 @@ impl GetVoiceConnectorError {
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetVoiceConnectorErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetVoiceConnectorErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetVoiceConnectorErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetVoiceConnectorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetVoiceConnectorErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetVoiceConnectorErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetVoiceConnectorErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetVoiceConnectorErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetVoiceConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetVoiceConnectorErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            GetVoiceConnectorErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            GetVoiceConnectorErrorKind::Unhandled(_inner) => Some(_inner),
+            GetVoiceConnectorErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetVoiceConnectorErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8417,15 +8226,15 @@ impl std::error::Error for GetVoiceConnectorError {
 #[derive(std::fmt::Debug)]
 pub struct GetSipRuleError {
     /// Kind of error that occurred.
-    pub kind: GetSipRuleErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetSipRuleErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetSipRuleError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8447,27 +8256,43 @@ pub enum GetSipRuleErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSipRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSipRuleErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetSipRuleErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetSipRuleErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetSipRuleErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            GetSipRuleErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            GetSipRuleErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            GetSipRuleErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            GetSipRuleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetSipRuleErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipRuleErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipRuleErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipRuleErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipRuleErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipRuleErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipRuleErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipRuleErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8481,46 +8306,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetSipRuleError {
 }
 impl GetSipRuleError {
     /// Creates a new `GetSipRuleError`.
-    pub fn new(kind: GetSipRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetSipRuleError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetSipRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetSipRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetSipRuleError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetSipRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetSipRuleErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetSipRuleErrorKind::BadRequestException(_))
@@ -8539,10 +8364,7 @@ impl GetSipRuleError {
     }
     /// Returns `true` if the error kind is `GetSipRuleErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipRuleErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetSipRuleErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetSipRuleErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
@@ -8550,23 +8372,36 @@ impl GetSipRuleError {
     }
     /// Returns `true` if the error kind is `GetSipRuleErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipRuleErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetSipRuleErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetSipRuleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSipRuleErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetSipRuleErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetSipRuleErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetSipRuleErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetSipRuleErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetSipRuleErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            GetSipRuleErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            GetSipRuleErrorKind::Unhandled(_inner) => Some(_inner),
+            GetSipRuleErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipRuleErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipRuleErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipRuleErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipRuleErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipRuleErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipRuleErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipRuleErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8576,19 +8411,15 @@ impl std::error::Error for GetSipRuleError {
 #[derive(std::fmt::Debug)]
 pub struct GetSipMediaApplicationLoggingConfigurationError {
     /// Kind of error that occurred.
-    pub kind: GetSipMediaApplicationLoggingConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetSipMediaApplicationLoggingConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for GetSipMediaApplicationLoggingConfigurationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for GetSipMediaApplicationLoggingConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GetSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8610,41 +8441,43 @@ pub enum GetSipMediaApplicationLoggingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSipMediaApplicationLoggingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException(_inner) => {
+            GetSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException(
-                _inner,
-            ) => _inner.fmt(f),
-            GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => _inner.fmt(f),
-            GetSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            GetSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            GetSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8658,128 +8491,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetSipMediaApplicationLogging
 }
 impl GetSipMediaApplicationLoggingConfigurationError {
     /// Creates a new `GetSipMediaApplicationLoggingConfigurationError`.
-    pub fn new(
-        kind: GetSipMediaApplicationLoggingConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetSipMediaApplicationLoggingConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetSipMediaApplicationLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetSipMediaApplicationLoggingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetSipMediaApplicationLoggingConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetSipMediaApplicationLoggingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetSipMediaApplicationLoggingConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException(_inner) => {
+            GetSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException(_inner) => {
-                Some(_inner)
-            }
-            GetSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException(
-                _inner,
-            ) => Some(_inner),
-            GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => Some(_inner),
-            GetSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException(
-                _inner,
-            ) => Some(_inner),
-            GetSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => Some(_inner),
-            GetSipMediaApplicationLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8789,19 +8596,15 @@ impl std::error::Error for GetSipMediaApplicationLoggingConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct GetSipMediaApplicationAlexaSkillConfigurationError {
     /// Kind of error that occurred.
-    pub kind: GetSipMediaApplicationAlexaSkillConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetSipMediaApplicationAlexaSkillConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for GetSipMediaApplicationAlexaSkillConfigurationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for GetSipMediaApplicationAlexaSkillConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetSipMediaApplicationAlexaSkillConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GetSipMediaApplicationAlexaSkillConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8823,49 +8626,47 @@ pub enum GetSipMediaApplicationAlexaSkillConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSipMediaApplicationAlexaSkillConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::BadRequestException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceFailureException(
-                _inner,
-            ) => _inner.fmt(f),
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => _inner.fmt(f),
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ThrottledClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => _inner.fmt(f),
+            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
             GetSipMediaApplicationAlexaSkillConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
         }
     }
 }
-impl aws_smithy_types::retry::ProvideErrorKind
-    for GetSipMediaApplicationAlexaSkillConfigurationError
-{
+impl aws_smithy_types::retry::ProvideErrorKind for GetSipMediaApplicationAlexaSkillConfigurationError {
     fn code(&self) -> Option<&str> {
         GetSipMediaApplicationAlexaSkillConfigurationError::code(self)
     }
@@ -8875,127 +8676,99 @@ impl aws_smithy_types::retry::ProvideErrorKind
 }
 impl GetSipMediaApplicationAlexaSkillConfigurationError {
     /// Creates a new `GetSipMediaApplicationAlexaSkillConfigurationError`.
-    pub fn new(
-        kind: GetSipMediaApplicationAlexaSkillConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetSipMediaApplicationAlexaSkillConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetSipMediaApplicationAlexaSkillConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetSipMediaApplicationAlexaSkillConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetSipMediaApplicationAlexaSkillConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetSipMediaApplicationAlexaSkillConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetSipMediaApplicationAlexaSkillConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetSipMediaApplicationAlexaSkillConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetSipMediaApplicationAlexaSkillConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetSipMediaApplicationAlexaSkillConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetSipMediaApplicationAlexaSkillConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationAlexaSkillConfigurationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationAlexaSkillConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationAlexaSkillConfigurationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationAlexaSkillConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationAlexaSkillConfigurationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetSipMediaApplicationAlexaSkillConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::BadRequestException(_inner) => {
-                Some(_inner)
-            }
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ForbiddenException(_inner) => {
-                Some(_inner)
-            }
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceFailureException(
-                _inner,
-            ) => Some(_inner),
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => Some(_inner),
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ThrottledClientException(
-                _inner,
-            ) => Some(_inner),
-            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => Some(_inner),
+            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationAlexaSkillConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
             GetSipMediaApplicationAlexaSkillConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
@@ -9008,15 +8781,15 @@ impl std::error::Error for GetSipMediaApplicationAlexaSkillConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct GetSipMediaApplicationError {
     /// Kind of error that occurred.
-    pub kind: GetSipMediaApplicationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetSipMediaApplicationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetSipMediaApplicationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9038,27 +8811,43 @@ pub enum GetSipMediaApplicationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSipMediaApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSipMediaApplicationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetSipMediaApplicationErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetSipMediaApplicationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetSipMediaApplicationErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            GetSipMediaApplicationErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            GetSipMediaApplicationErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            GetSipMediaApplicationErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            GetSipMediaApplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetSipMediaApplicationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSipMediaApplicationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9072,111 +8861,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetSipMediaApplicationError {
 }
 impl GetSipMediaApplicationError {
     /// Creates a new `GetSipMediaApplicationError`.
-    pub fn new(kind: GetSipMediaApplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetSipMediaApplicationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetSipMediaApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetSipMediaApplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetSipMediaApplicationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetSipMediaApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetSipMediaApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetSipMediaApplicationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSipMediaApplicationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetSipMediaApplicationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetSipMediaApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSipMediaApplicationErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetSipMediaApplicationErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetSipMediaApplicationErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetSipMediaApplicationErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetSipMediaApplicationErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetSipMediaApplicationErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            GetSipMediaApplicationErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            GetSipMediaApplicationErrorKind::Unhandled(_inner) => Some(_inner),
+            GetSipMediaApplicationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetSipMediaApplicationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9186,15 +8966,15 @@ impl std::error::Error for GetSipMediaApplicationError {
 #[derive(std::fmt::Debug)]
 pub struct GetProxySessionError {
     /// Kind of error that occurred.
-    pub kind: GetProxySessionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetProxySessionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetProxySessionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9216,27 +8996,43 @@ pub enum GetProxySessionErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetProxySessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetProxySessionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetProxySessionErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetProxySessionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetProxySessionErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            GetProxySessionErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            GetProxySessionErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            GetProxySessionErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            GetProxySessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetProxySessionErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetProxySessionErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetProxySessionErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetProxySessionErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetProxySessionErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetProxySessionErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetProxySessionErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetProxySessionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9250,46 +9046,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetProxySessionError {
 }
 impl GetProxySessionError {
     /// Creates a new `GetProxySessionError`.
-    pub fn new(kind: GetProxySessionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetProxySessionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetProxySessionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetProxySessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetProxySessionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetProxySessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetProxySessionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetProxySessionErrorKind::BadRequestException(_))
@@ -9304,44 +9100,48 @@ impl GetProxySessionError {
     }
     /// Returns `true` if the error kind is `GetProxySessionErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetProxySessionErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetProxySessionErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetProxySessionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetProxySessionErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetProxySessionErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetProxySessionErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetProxySessionErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetProxySessionErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetProxySessionErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetProxySessionErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetProxySessionErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetProxySessionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetProxySessionErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetProxySessionErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetProxySessionErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetProxySessionErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetProxySessionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetProxySessionErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            GetProxySessionErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            GetProxySessionErrorKind::Unhandled(_inner) => Some(_inner),
+            GetProxySessionErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetProxySessionErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetProxySessionErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetProxySessionErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetProxySessionErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetProxySessionErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetProxySessionErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetProxySessionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9351,15 +9151,15 @@ impl std::error::Error for GetProxySessionError {
 #[derive(std::fmt::Debug)]
 pub struct GetPhoneNumberSettingsError {
     /// Kind of error that occurred.
-    pub kind: GetPhoneNumberSettingsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetPhoneNumberSettingsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetPhoneNumberSettingsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetPhoneNumberSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9379,26 +9179,40 @@ pub enum GetPhoneNumberSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPhoneNumberSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetPhoneNumberSettingsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetPhoneNumberSettingsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetPhoneNumberSettingsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            GetPhoneNumberSettingsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            GetPhoneNumberSettingsErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            GetPhoneNumberSettingsErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            GetPhoneNumberSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetPhoneNumberSettingsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberSettingsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberSettingsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberSettingsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberSettingsErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberSettingsErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberSettingsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9412,103 +9226,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetPhoneNumberSettingsError {
 }
 impl GetPhoneNumberSettingsError {
     /// Creates a new `GetPhoneNumberSettingsError`.
-    pub fn new(kind: GetPhoneNumberSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetPhoneNumberSettingsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetPhoneNumberSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetPhoneNumberSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetPhoneNumberSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetPhoneNumberSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetPhoneNumberSettingsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetPhoneNumberSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetPhoneNumberSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetPhoneNumberSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetPhoneNumberSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberSettingsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberSettingsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetPhoneNumberSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberSettingsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberSettingsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetPhoneNumberSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberSettingsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberSettingsErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetPhoneNumberSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberSettingsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberSettingsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetPhoneNumberSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberSettingsErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberSettingsErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetPhoneNumberSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberSettingsErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberSettingsErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetPhoneNumberSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetPhoneNumberSettingsErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetPhoneNumberSettingsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetPhoneNumberSettingsErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetPhoneNumberSettingsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetPhoneNumberSettingsErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            GetPhoneNumberSettingsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            GetPhoneNumberSettingsErrorKind::Unhandled(_inner) => Some(_inner),
+            GetPhoneNumberSettingsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberSettingsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberSettingsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberSettingsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberSettingsErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberSettingsErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberSettingsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9518,15 +9324,15 @@ impl std::error::Error for GetPhoneNumberSettingsError {
 #[derive(std::fmt::Debug)]
 pub struct GetPhoneNumberOrderError {
     /// Kind of error that occurred.
-    pub kind: GetPhoneNumberOrderErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetPhoneNumberOrderErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetPhoneNumberOrderError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetPhoneNumberOrderErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9548,27 +9354,43 @@ pub enum GetPhoneNumberOrderErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPhoneNumberOrderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetPhoneNumberOrderErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetPhoneNumberOrderErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetPhoneNumberOrderErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetPhoneNumberOrderErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            GetPhoneNumberOrderErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            GetPhoneNumberOrderErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            GetPhoneNumberOrderErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            GetPhoneNumberOrderErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetPhoneNumberOrderErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberOrderErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberOrderErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberOrderErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberOrderErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberOrderErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberOrderErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberOrderErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9582,107 +9404,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetPhoneNumberOrderError {
 }
 impl GetPhoneNumberOrderError {
     /// Creates a new `GetPhoneNumberOrderError`.
-    pub fn new(kind: GetPhoneNumberOrderErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetPhoneNumberOrderError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetPhoneNumberOrderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetPhoneNumberOrderError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetPhoneNumberOrderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetPhoneNumberOrderErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetPhoneNumberOrderError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetPhoneNumberOrderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetPhoneNumberOrderError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetPhoneNumberOrderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetPhoneNumberOrderErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberOrderErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberOrderErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetPhoneNumberOrderErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberOrderErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberOrderErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetPhoneNumberOrderErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberOrderErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberOrderErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetPhoneNumberOrderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberOrderErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberOrderErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetPhoneNumberOrderErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberOrderErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberOrderErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetPhoneNumberOrderErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberOrderErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberOrderErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetPhoneNumberOrderErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberOrderErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberOrderErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetPhoneNumberOrderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetPhoneNumberOrderErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetPhoneNumberOrderErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetPhoneNumberOrderErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetPhoneNumberOrderErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetPhoneNumberOrderErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetPhoneNumberOrderErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            GetPhoneNumberOrderErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            GetPhoneNumberOrderErrorKind::Unhandled(_inner) => Some(_inner),
+            GetPhoneNumberOrderErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberOrderErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberOrderErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberOrderErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberOrderErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberOrderErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberOrderErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberOrderErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9692,15 +9509,15 @@ impl std::error::Error for GetPhoneNumberOrderError {
 #[derive(std::fmt::Debug)]
 pub struct GetPhoneNumberError {
     /// Kind of error that occurred.
-    pub kind: GetPhoneNumberErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetPhoneNumberErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetPhoneNumberError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9722,27 +9539,43 @@ pub enum GetPhoneNumberErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetPhoneNumberErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetPhoneNumberErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetPhoneNumberErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetPhoneNumberErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            GetPhoneNumberErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            GetPhoneNumberErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            GetPhoneNumberErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            GetPhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetPhoneNumberErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPhoneNumberErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9756,46 +9589,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetPhoneNumberError {
 }
 impl GetPhoneNumberError {
     /// Creates a new `GetPhoneNumberError`.
-    pub fn new(kind: GetPhoneNumberErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetPhoneNumberError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetPhoneNumberError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetPhoneNumberErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetPhoneNumberError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetPhoneNumberError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetPhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetPhoneNumberErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetPhoneNumberErrorKind::BadRequestException(_))
@@ -9810,44 +9643,48 @@ impl GetPhoneNumberError {
     }
     /// Returns `true` if the error kind is `GetPhoneNumberErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetPhoneNumberErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetPhoneNumberErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetPhoneNumberErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPhoneNumberErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetPhoneNumberErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetPhoneNumberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetPhoneNumberErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetPhoneNumberErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetPhoneNumberErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetPhoneNumberErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetPhoneNumberErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetPhoneNumberErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            GetPhoneNumberErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            GetPhoneNumberErrorKind::Unhandled(_inner) => Some(_inner),
+            GetPhoneNumberErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetPhoneNumberErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9857,15 +9694,15 @@ impl std::error::Error for GetPhoneNumberError {
 #[derive(std::fmt::Debug)]
 pub struct GetGlobalSettingsError {
     /// Kind of error that occurred.
-    pub kind: GetGlobalSettingsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetGlobalSettingsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetGlobalSettingsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetGlobalSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9885,26 +9722,40 @@ pub enum GetGlobalSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGlobalSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetGlobalSettingsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetGlobalSettingsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetGlobalSettingsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            GetGlobalSettingsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            GetGlobalSettingsErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            GetGlobalSettingsErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            GetGlobalSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetGlobalSettingsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGlobalSettingsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGlobalSettingsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGlobalSettingsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGlobalSettingsErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGlobalSettingsErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGlobalSettingsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9918,99 +9769,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetGlobalSettingsError {
 }
 impl GetGlobalSettingsError {
     /// Creates a new `GetGlobalSettingsError`.
-    pub fn new(kind: GetGlobalSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetGlobalSettingsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetGlobalSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetGlobalSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetGlobalSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetGlobalSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetGlobalSettingsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetGlobalSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetGlobalSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetGlobalSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetGlobalSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGlobalSettingsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetGlobalSettingsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetGlobalSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGlobalSettingsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetGlobalSettingsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetGlobalSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGlobalSettingsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetGlobalSettingsErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetGlobalSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGlobalSettingsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetGlobalSettingsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetGlobalSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGlobalSettingsErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, GetGlobalSettingsErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `GetGlobalSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGlobalSettingsErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, GetGlobalSettingsErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for GetGlobalSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetGlobalSettingsErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetGlobalSettingsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetGlobalSettingsErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetGlobalSettingsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetGlobalSettingsErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            GetGlobalSettingsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            GetGlobalSettingsErrorKind::Unhandled(_inner) => Some(_inner),
+            GetGlobalSettingsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetGlobalSettingsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetGlobalSettingsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetGlobalSettingsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetGlobalSettingsErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetGlobalSettingsErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            GetGlobalSettingsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -10020,19 +9867,15 @@ impl std::error::Error for GetGlobalSettingsError {
 #[derive(std::fmt::Debug)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorGroupError {
     /// Kind of error that occurred.
-    pub kind: DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for DisassociatePhoneNumbersFromVoiceConnectorGroupError
-{
+impl aws_smithy_http::result::CreateUnhandledError for DisassociatePhoneNumbersFromVoiceConnectorGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -10054,14 +9897,14 @@ pub enum DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociatePhoneNumbersFromVoiceConnectorGroupError {
@@ -10094,9 +9937,7 @@ impl std::fmt::Display for DisassociatePhoneNumbersFromVoiceConnectorGroupError 
         }
     }
 }
-impl aws_smithy_types::retry::ProvideErrorKind
-    for DisassociatePhoneNumbersFromVoiceConnectorGroupError
-{
+impl aws_smithy_types::retry::ProvideErrorKind for DisassociatePhoneNumbersFromVoiceConnectorGroupError {
     fn code(&self) -> Option<&str> {
         DisassociatePhoneNumbersFromVoiceConnectorGroupError::code(self)
     }
@@ -10106,105 +9947,73 @@ impl aws_smithy_types::retry::ProvideErrorKind
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorGroupError {
     /// Creates a new `DisassociatePhoneNumbersFromVoiceConnectorGroupError`.
-    pub fn new(
-        kind: DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DisassociatePhoneNumbersFromVoiceConnectorGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DisassociatePhoneNumbersFromVoiceConnectorGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DisassociatePhoneNumbersFromVoiceConnectorGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DisassociatePhoneNumbersFromVoiceConnectorGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ServiceUnavailableException(
-                _
-            )
-        )
+        matches!(&self.kind, DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::UnauthorizedClientException(
-                _
-            )
-        )
+        matches!(&self.kind, DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DisassociatePhoneNumbersFromVoiceConnectorGroupError {
@@ -10243,19 +10052,15 @@ impl std::error::Error for DisassociatePhoneNumbersFromVoiceConnectorGroupError 
 #[derive(std::fmt::Debug)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorError {
     /// Kind of error that occurred.
-    pub kind: DisassociatePhoneNumbersFromVoiceConnectorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DisassociatePhoneNumbersFromVoiceConnectorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for DisassociatePhoneNumbersFromVoiceConnectorError
-{
+impl aws_smithy_http::result::CreateUnhandledError for DisassociatePhoneNumbersFromVoiceConnectorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DisassociatePhoneNumbersFromVoiceConnectorErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DisassociatePhoneNumbersFromVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -10277,41 +10082,43 @@ pub enum DisassociatePhoneNumbersFromVoiceConnectorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociatePhoneNumbersFromVoiceConnectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::BadRequestException(_inner) => {
+            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceFailureException(
-                _inner,
-            ) => _inner.fmt(f),
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => _inner.fmt(f),
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ThrottledClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -10325,128 +10132,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DisassociatePhoneNumbersFromV
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorError {
     /// Creates a new `DisassociatePhoneNumbersFromVoiceConnectorError`.
-    pub fn new(
-        kind: DisassociatePhoneNumbersFromVoiceConnectorErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DisassociatePhoneNumbersFromVoiceConnectorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DisassociatePhoneNumbersFromVoiceConnectorErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DisassociatePhoneNumbersFromVoiceConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DisassociatePhoneNumbersFromVoiceConnectorErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DisassociatePhoneNumbersFromVoiceConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DisassociatePhoneNumbersFromVoiceConnectorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DisassociatePhoneNumbersFromVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DisassociatePhoneNumbersFromVoiceConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DisassociatePhoneNumbersFromVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DisassociatePhoneNumbersFromVoiceConnectorErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DisassociatePhoneNumbersFromVoiceConnectorErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DisassociatePhoneNumbersFromVoiceConnectorErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DisassociatePhoneNumbersFromVoiceConnectorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::BadRequestException(_inner) => {
+            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ForbiddenException(_inner) => {
-                Some(_inner)
-            }
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceFailureException(
-                _inner,
-            ) => Some(_inner),
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => Some(_inner),
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ThrottledClientException(
-                _inner,
-            ) => Some(_inner),
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => Some(_inner),
-            DisassociatePhoneNumbersFromVoiceConnectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10456,19 +10237,15 @@ impl std::error::Error for DisassociatePhoneNumbersFromVoiceConnectorError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteVoiceConnectorTerminationCredentialsError {
     /// Kind of error that occurred.
-    pub kind: DeleteVoiceConnectorTerminationCredentialsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteVoiceConnectorTerminationCredentialsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for DeleteVoiceConnectorTerminationCredentialsError
-{
+impl aws_smithy_http::result::CreateUnhandledError for DeleteVoiceConnectorTerminationCredentialsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteVoiceConnectorTerminationCredentialsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DeleteVoiceConnectorTerminationCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -10490,41 +10267,43 @@ pub enum DeleteVoiceConnectorTerminationCredentialsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVoiceConnectorTerminationCredentialsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_inner) => {
+            DeleteVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorTerminationCredentialsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(
-                _inner,
-            ) => _inner.fmt(f),
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => _inner.fmt(f),
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -10538,128 +10317,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteVoiceConnectorTerminati
 }
 impl DeleteVoiceConnectorTerminationCredentialsError {
     /// Creates a new `DeleteVoiceConnectorTerminationCredentialsError`.
-    pub fn new(
-        kind: DeleteVoiceConnectorTerminationCredentialsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteVoiceConnectorTerminationCredentialsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteVoiceConnectorTerminationCredentialsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteVoiceConnectorTerminationCredentialsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteVoiceConnectorTerminationCredentialsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteVoiceConnectorTerminationCredentialsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteVoiceConnectorTerminationCredentialsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteVoiceConnectorTerminationCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteVoiceConnectorTerminationCredentialsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteVoiceConnectorTerminationCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeleteVoiceConnectorTerminationCredentialsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_inner) => {
+            DeleteVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorTerminationCredentialsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_inner) => {
-                Some(_inner)
-            }
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(
-                _inner,
-            ) => Some(_inner),
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => Some(_inner),
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(
-                _inner,
-            ) => Some(_inner),
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => Some(_inner),
-            DeleteVoiceConnectorTerminationCredentialsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10669,17 +10422,15 @@ impl std::error::Error for DeleteVoiceConnectorTerminationCredentialsError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteVoiceConnectorTerminationError {
     /// Kind of error that occurred.
-    pub kind: DeleteVoiceConnectorTerminationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteVoiceConnectorTerminationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteVoiceConnectorTerminationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteVoiceConnectorTerminationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DeleteVoiceConnectorTerminationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -10701,35 +10452,43 @@ pub enum DeleteVoiceConnectorTerminationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVoiceConnectorTerminationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteVoiceConnectorTerminationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorTerminationErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorTerminationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorTerminationErrorKind::ServiceFailureException(_inner) => {
+            DeleteVoiceConnectorTerminationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorTerminationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorTerminationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorTerminationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorTerminationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorTerminationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteVoiceConnectorTerminationErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteVoiceConnectorTerminationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -10743,122 +10502,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteVoiceConnectorTerminati
 }
 impl DeleteVoiceConnectorTerminationError {
     /// Creates a new `DeleteVoiceConnectorTerminationError`.
-    pub fn new(
-        kind: DeleteVoiceConnectorTerminationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteVoiceConnectorTerminationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteVoiceConnectorTerminationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteVoiceConnectorTerminationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteVoiceConnectorTerminationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteVoiceConnectorTerminationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteVoiceConnectorTerminationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteVoiceConnectorTerminationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteVoiceConnectorTerminationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteVoiceConnectorTerminationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorTerminationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorTerminationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorTerminationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorTerminationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorTerminationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorTerminationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorTerminationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorTerminationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorTerminationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorTerminationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeleteVoiceConnectorTerminationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteVoiceConnectorTerminationErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteVoiceConnectorTerminationErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteVoiceConnectorTerminationErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteVoiceConnectorTerminationErrorKind::ServiceFailureException(_inner) => {
+            DeleteVoiceConnectorTerminationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorTerminationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorTerminationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorTerminationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorTerminationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorTerminationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            DeleteVoiceConnectorTerminationErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            DeleteVoiceConnectorTerminationErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            DeleteVoiceConnectorTerminationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10868,19 +10607,15 @@ impl std::error::Error for DeleteVoiceConnectorTerminationError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteVoiceConnectorStreamingConfigurationError {
     /// Kind of error that occurred.
-    pub kind: DeleteVoiceConnectorStreamingConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteVoiceConnectorStreamingConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for DeleteVoiceConnectorStreamingConfigurationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for DeleteVoiceConnectorStreamingConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteVoiceConnectorStreamingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DeleteVoiceConnectorStreamingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -10902,41 +10637,43 @@ pub enum DeleteVoiceConnectorStreamingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVoiceConnectorStreamingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_inner) => {
+            DeleteVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorStreamingConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(
-                _inner,
-            ) => _inner.fmt(f),
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => _inner.fmt(f),
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -10950,128 +10687,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteVoiceConnectorStreaming
 }
 impl DeleteVoiceConnectorStreamingConfigurationError {
     /// Creates a new `DeleteVoiceConnectorStreamingConfigurationError`.
-    pub fn new(
-        kind: DeleteVoiceConnectorStreamingConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteVoiceConnectorStreamingConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteVoiceConnectorStreamingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteVoiceConnectorStreamingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteVoiceConnectorStreamingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteVoiceConnectorStreamingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteVoiceConnectorStreamingConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteVoiceConnectorStreamingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteVoiceConnectorStreamingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteVoiceConnectorStreamingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeleteVoiceConnectorStreamingConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_inner) => {
+            DeleteVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorStreamingConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_inner) => {
-                Some(_inner)
-            }
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(
-                _inner,
-            ) => Some(_inner),
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => Some(_inner),
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(
-                _inner,
-            ) => Some(_inner),
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => Some(_inner),
-            DeleteVoiceConnectorStreamingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11081,17 +10792,15 @@ impl std::error::Error for DeleteVoiceConnectorStreamingConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteVoiceConnectorProxyError {
     /// Kind of error that occurred.
-    pub kind: DeleteVoiceConnectorProxyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteVoiceConnectorProxyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteVoiceConnectorProxyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteVoiceConnectorProxyErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteVoiceConnectorProxyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -11113,31 +10822,43 @@ pub enum DeleteVoiceConnectorProxyErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVoiceConnectorProxyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteVoiceConnectorProxyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorProxyErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorProxyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorProxyErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorProxyErrorKind::ServiceUnavailableException(_inner) => {
+            DeleteVoiceConnectorProxyErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorProxyErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorProxyErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorProxyErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorProxyErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorProxyErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorProxyErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorProxyErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteVoiceConnectorProxyErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorProxyErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteVoiceConnectorProxyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -11151,111 +10872,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteVoiceConnectorProxyErro
 }
 impl DeleteVoiceConnectorProxyError {
     /// Creates a new `DeleteVoiceConnectorProxyError`.
-    pub fn new(kind: DeleteVoiceConnectorProxyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteVoiceConnectorProxyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteVoiceConnectorProxyErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteVoiceConnectorProxyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteVoiceConnectorProxyErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteVoiceConnectorProxyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteVoiceConnectorProxyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteVoiceConnectorProxyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteVoiceConnectorProxyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteVoiceConnectorProxyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorProxyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorProxyErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorProxyErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorProxyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorProxyErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorProxyErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorProxyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorProxyErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorProxyErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorProxyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorProxyErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorProxyErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorProxyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorProxyErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorProxyErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorProxyErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorProxyErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorProxyErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorProxyErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorProxyErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorProxyErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeleteVoiceConnectorProxyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteVoiceConnectorProxyErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteVoiceConnectorProxyErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteVoiceConnectorProxyErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteVoiceConnectorProxyErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DeleteVoiceConnectorProxyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteVoiceConnectorProxyErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            DeleteVoiceConnectorProxyErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteVoiceConnectorProxyErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteVoiceConnectorProxyErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorProxyErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorProxyErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorProxyErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorProxyErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorProxyErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorProxyErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorProxyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -11265,17 +10977,15 @@ impl std::error::Error for DeleteVoiceConnectorProxyError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteVoiceConnectorOriginationError {
     /// Kind of error that occurred.
-    pub kind: DeleteVoiceConnectorOriginationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteVoiceConnectorOriginationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteVoiceConnectorOriginationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteVoiceConnectorOriginationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DeleteVoiceConnectorOriginationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -11297,35 +11007,43 @@ pub enum DeleteVoiceConnectorOriginationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVoiceConnectorOriginationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteVoiceConnectorOriginationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorOriginationErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorOriginationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorOriginationErrorKind::ServiceFailureException(_inner) => {
+            DeleteVoiceConnectorOriginationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorOriginationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorOriginationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorOriginationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorOriginationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorOriginationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteVoiceConnectorOriginationErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteVoiceConnectorOriginationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -11339,122 +11057,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteVoiceConnectorOriginati
 }
 impl DeleteVoiceConnectorOriginationError {
     /// Creates a new `DeleteVoiceConnectorOriginationError`.
-    pub fn new(
-        kind: DeleteVoiceConnectorOriginationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteVoiceConnectorOriginationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteVoiceConnectorOriginationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteVoiceConnectorOriginationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteVoiceConnectorOriginationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteVoiceConnectorOriginationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteVoiceConnectorOriginationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteVoiceConnectorOriginationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteVoiceConnectorOriginationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteVoiceConnectorOriginationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorOriginationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorOriginationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorOriginationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorOriginationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorOriginationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorOriginationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorOriginationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorOriginationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorOriginationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorOriginationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorOriginationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorOriginationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorOriginationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorOriginationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorOriginationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorOriginationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorOriginationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeleteVoiceConnectorOriginationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteVoiceConnectorOriginationErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteVoiceConnectorOriginationErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteVoiceConnectorOriginationErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteVoiceConnectorOriginationErrorKind::ServiceFailureException(_inner) => {
+            DeleteVoiceConnectorOriginationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorOriginationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorOriginationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorOriginationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorOriginationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorOriginationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            DeleteVoiceConnectorOriginationErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            DeleteVoiceConnectorOriginationErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            DeleteVoiceConnectorOriginationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11464,17 +11162,15 @@ impl std::error::Error for DeleteVoiceConnectorOriginationError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteVoiceConnectorGroupError {
     /// Kind of error that occurred.
-    pub kind: DeleteVoiceConnectorGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteVoiceConnectorGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteVoiceConnectorGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -11498,32 +11194,46 @@ pub enum DeleteVoiceConnectorGroupErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVoiceConnectorGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteVoiceConnectorGroupErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorGroupErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorGroupErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorGroupErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) => {
+            DeleteVoiceConnectorGroupErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorGroupErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorGroupErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorGroupErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteVoiceConnectorGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -11537,119 +11247,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteVoiceConnectorGroupErro
 }
 impl DeleteVoiceConnectorGroupError {
     /// Creates a new `DeleteVoiceConnectorGroupError`.
-    pub fn new(kind: DeleteVoiceConnectorGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteVoiceConnectorGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteVoiceConnectorGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteVoiceConnectorGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteVoiceConnectorGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteVoiceConnectorGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorGroupErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorGroupErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorGroupErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorGroupErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorGroupErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorGroupErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorGroupErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorGroupErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorGroupErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorGroupErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorGroupErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorGroupErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorGroupErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorGroupErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorGroupErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorGroupErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorGroupErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorGroupErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeleteVoiceConnectorGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteVoiceConnectorGroupErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteVoiceConnectorGroupErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteVoiceConnectorGroupErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteVoiceConnectorGroupErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DeleteVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            DeleteVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteVoiceConnectorGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteVoiceConnectorGroupErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorGroupErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorGroupErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorGroupErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -11659,19 +11359,15 @@ impl std::error::Error for DeleteVoiceConnectorGroupError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteVoiceConnectorEmergencyCallingConfigurationError {
     /// Kind of error that occurred.
-    pub kind: DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for DeleteVoiceConnectorEmergencyCallingConfigurationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for DeleteVoiceConnectorEmergencyCallingConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -11693,14 +11389,14 @@ pub enum DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVoiceConnectorEmergencyCallingConfigurationError {
@@ -11733,9 +11429,7 @@ impl std::fmt::Display for DeleteVoiceConnectorEmergencyCallingConfigurationErro
         }
     }
 }
-impl aws_smithy_types::retry::ProvideErrorKind
-    for DeleteVoiceConnectorEmergencyCallingConfigurationError
-{
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteVoiceConnectorEmergencyCallingConfigurationError {
     fn code(&self) -> Option<&str> {
         DeleteVoiceConnectorEmergencyCallingConfigurationError::code(self)
     }
@@ -11745,105 +11439,73 @@ impl aws_smithy_types::retry::ProvideErrorKind
 }
 impl DeleteVoiceConnectorEmergencyCallingConfigurationError {
     /// Creates a new `DeleteVoiceConnectorEmergencyCallingConfigurationError`.
-    pub fn new(
-        kind: DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteVoiceConnectorEmergencyCallingConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteVoiceConnectorEmergencyCallingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteVoiceConnectorEmergencyCallingConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteVoiceConnectorEmergencyCallingConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException(
-                _
-            )
-        )
+        matches!(&self.kind, DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException(
-                _
-            )
-        )
+        matches!(&self.kind, DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeleteVoiceConnectorEmergencyCallingConfigurationError {
@@ -11882,15 +11544,15 @@ impl std::error::Error for DeleteVoiceConnectorEmergencyCallingConfigurationErro
 #[derive(std::fmt::Debug)]
 pub struct DeleteVoiceConnectorError {
     /// Kind of error that occurred.
-    pub kind: DeleteVoiceConnectorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteVoiceConnectorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteVoiceConnectorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -11914,28 +11576,46 @@ pub enum DeleteVoiceConnectorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVoiceConnectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteVoiceConnectorErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            DeleteVoiceConnectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteVoiceConnectorErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVoiceConnectorErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -11949,119 +11629,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteVoiceConnectorError {
 }
 impl DeleteVoiceConnectorError {
     /// Creates a new `DeleteVoiceConnectorError`.
-    pub fn new(kind: DeleteVoiceConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteVoiceConnectorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteVoiceConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteVoiceConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteVoiceConnectorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteVoiceConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteVoiceConnectorErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVoiceConnectorErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeleteVoiceConnectorErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeleteVoiceConnectorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteVoiceConnectorErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteVoiceConnectorErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteVoiceConnectorErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteVoiceConnectorErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteVoiceConnectorErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DeleteVoiceConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteVoiceConnectorErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            DeleteVoiceConnectorErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteVoiceConnectorErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteVoiceConnectorErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVoiceConnectorErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -12071,15 +11741,15 @@ impl std::error::Error for DeleteVoiceConnectorError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteSipRuleError {
     /// Kind of error that occurred.
-    pub kind: DeleteSipRuleErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteSipRuleErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteSipRuleError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -12103,28 +11773,46 @@ pub enum DeleteSipRuleErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSipRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteSipRuleErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteSipRuleErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DeleteSipRuleErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteSipRuleErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteSipRuleErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DeleteSipRuleErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DeleteSipRuleErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            DeleteSipRuleErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            DeleteSipRuleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteSipRuleErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSipRuleErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSipRuleErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSipRuleErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSipRuleErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSipRuleErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSipRuleErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSipRuleErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSipRuleErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -12138,46 +11826,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteSipRuleError {
 }
 impl DeleteSipRuleError {
     /// Creates a new `DeleteSipRuleError`.
-    pub fn new(kind: DeleteSipRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteSipRuleError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteSipRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteSipRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteSipRuleError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteSipRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteSipRuleErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteSipRuleErrorKind::BadRequestException(_))
@@ -12196,45 +11884,51 @@ impl DeleteSipRuleError {
     }
     /// Returns `true` if the error kind is `DeleteSipRuleErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSipRuleErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteSipRuleErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteSipRuleErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSipRuleErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteSipRuleErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteSipRuleErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSipRuleErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeleteSipRuleErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteSipRuleErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSipRuleErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeleteSipRuleErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeleteSipRuleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteSipRuleErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteSipRuleErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteSipRuleErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteSipRuleErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteSipRuleErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DeleteSipRuleErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteSipRuleErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            DeleteSipRuleErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteSipRuleErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteSipRuleErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSipRuleErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSipRuleErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSipRuleErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSipRuleErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSipRuleErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSipRuleErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSipRuleErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSipRuleErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -12244,17 +11938,15 @@ impl std::error::Error for DeleteSipRuleError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteSipMediaApplicationError {
     /// Kind of error that occurred.
-    pub kind: DeleteSipMediaApplicationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteSipMediaApplicationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteSipMediaApplicationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -12278,32 +11970,46 @@ pub enum DeleteSipMediaApplicationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSipMediaApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteSipMediaApplicationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteSipMediaApplicationErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DeleteSipMediaApplicationErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteSipMediaApplicationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteSipMediaApplicationErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DeleteSipMediaApplicationErrorKind::ServiceUnavailableException(_inner) => {
+            DeleteSipMediaApplicationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSipMediaApplicationErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSipMediaApplicationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSipMediaApplicationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSipMediaApplicationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSipMediaApplicationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSipMediaApplicationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSipMediaApplicationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSipMediaApplicationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteSipMediaApplicationErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            DeleteSipMediaApplicationErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteSipMediaApplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -12317,119 +12023,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteSipMediaApplicationErro
 }
 impl DeleteSipMediaApplicationError {
     /// Creates a new `DeleteSipMediaApplicationError`.
-    pub fn new(kind: DeleteSipMediaApplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteSipMediaApplicationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteSipMediaApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteSipMediaApplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteSipMediaApplicationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteSipMediaApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteSipMediaApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSipMediaApplicationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteSipMediaApplicationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteSipMediaApplicationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSipMediaApplicationErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, DeleteSipMediaApplicationErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteSipMediaApplicationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSipMediaApplicationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteSipMediaApplicationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteSipMediaApplicationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSipMediaApplicationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteSipMediaApplicationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteSipMediaApplicationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSipMediaApplicationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteSipMediaApplicationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteSipMediaApplicationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSipMediaApplicationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteSipMediaApplicationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteSipMediaApplicationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSipMediaApplicationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeleteSipMediaApplicationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteSipMediaApplicationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSipMediaApplicationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeleteSipMediaApplicationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeleteSipMediaApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteSipMediaApplicationErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteSipMediaApplicationErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteSipMediaApplicationErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteSipMediaApplicationErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteSipMediaApplicationErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DeleteSipMediaApplicationErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteSipMediaApplicationErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            DeleteSipMediaApplicationErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteSipMediaApplicationErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteSipMediaApplicationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSipMediaApplicationErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSipMediaApplicationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSipMediaApplicationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSipMediaApplicationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSipMediaApplicationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSipMediaApplicationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSipMediaApplicationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSipMediaApplicationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -12439,15 +12135,15 @@ impl std::error::Error for DeleteSipMediaApplicationError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteProxySessionError {
     /// Kind of error that occurred.
-    pub kind: DeleteProxySessionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteProxySessionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteProxySessionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -12469,27 +12165,43 @@ pub enum DeleteProxySessionErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteProxySessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteProxySessionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteProxySessionErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteProxySessionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteProxySessionErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DeleteProxySessionErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DeleteProxySessionErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            DeleteProxySessionErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            DeleteProxySessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteProxySessionErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteProxySessionErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteProxySessionErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteProxySessionErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteProxySessionErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteProxySessionErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteProxySessionErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteProxySessionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -12503,107 +12215,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteProxySessionError {
 }
 impl DeleteProxySessionError {
     /// Creates a new `DeleteProxySessionError`.
-    pub fn new(kind: DeleteProxySessionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteProxySessionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteProxySessionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteProxySessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteProxySessionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteProxySessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteProxySessionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteProxySessionErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteProxySessionErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteProxySessionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteProxySessionErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeleteProxySessionErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeleteProxySessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteProxySessionErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteProxySessionErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteProxySessionErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteProxySessionErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteProxySessionErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteProxySessionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteProxySessionErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteProxySessionErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteProxySessionErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteProxySessionErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeleteProxySessionErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteProxySessionErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteProxySessionErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeleteProxySessionErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeleteProxySessionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteProxySessionErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteProxySessionErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteProxySessionErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteProxySessionErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DeleteProxySessionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteProxySessionErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            DeleteProxySessionErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteProxySessionErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteProxySessionErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteProxySessionErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteProxySessionErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteProxySessionErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteProxySessionErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteProxySessionErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteProxySessionErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteProxySessionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -12613,15 +12320,15 @@ impl std::error::Error for DeleteProxySessionError {
 #[derive(std::fmt::Debug)]
 pub struct DeletePhoneNumberError {
     /// Kind of error that occurred.
-    pub kind: DeletePhoneNumberErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeletePhoneNumberErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeletePhoneNumberError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeletePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -12643,27 +12350,43 @@ pub enum DeletePhoneNumberErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeletePhoneNumberErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeletePhoneNumberErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeletePhoneNumberErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeletePhoneNumberErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DeletePhoneNumberErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            DeletePhoneNumberErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            DeletePhoneNumberErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            DeletePhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeletePhoneNumberErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeletePhoneNumberErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeletePhoneNumberErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeletePhoneNumberErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeletePhoneNumberErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeletePhoneNumberErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeletePhoneNumberErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeletePhoneNumberErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -12677,59 +12400,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeletePhoneNumberError {
 }
 impl DeletePhoneNumberError {
     /// Creates a new `DeletePhoneNumberError`.
-    pub fn new(kind: DeletePhoneNumberErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeletePhoneNumberError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeletePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeletePhoneNumberError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeletePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeletePhoneNumberErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeletePhoneNumberError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeletePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeletePhoneNumberError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeletePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeletePhoneNumberErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeletePhoneNumberErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeletePhoneNumberErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeletePhoneNumberErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeletePhoneNumberErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, DeletePhoneNumberErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `DeletePhoneNumberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -12737,44 +12454,48 @@ impl DeletePhoneNumberError {
     }
     /// Returns `true` if the error kind is `DeletePhoneNumberErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeletePhoneNumberErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeletePhoneNumberErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `DeletePhoneNumberErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeletePhoneNumberErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeletePhoneNumberErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeletePhoneNumberErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeletePhoneNumberErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, DeletePhoneNumberErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `DeletePhoneNumberErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeletePhoneNumberErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, DeletePhoneNumberErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for DeletePhoneNumberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeletePhoneNumberErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeletePhoneNumberErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeletePhoneNumberErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeletePhoneNumberErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DeletePhoneNumberErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeletePhoneNumberErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            DeletePhoneNumberErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeletePhoneNumberErrorKind::Unhandled(_inner) => Some(_inner),
+            DeletePhoneNumberErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeletePhoneNumberErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeletePhoneNumberErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeletePhoneNumberErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeletePhoneNumberErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeletePhoneNumberErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeletePhoneNumberErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeletePhoneNumberErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -12784,17 +12505,15 @@ impl std::error::Error for DeletePhoneNumberError {
 #[derive(std::fmt::Debug)]
 pub struct CreateVoiceConnectorGroupError {
     /// Kind of error that occurred.
-    pub kind: CreateVoiceConnectorGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateVoiceConnectorGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateVoiceConnectorGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: CreateVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -12818,34 +12537,46 @@ pub enum CreateVoiceConnectorGroupErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateVoiceConnectorGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateVoiceConnectorGroupErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateVoiceConnectorGroupErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateVoiceConnectorGroupErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateVoiceConnectorGroupErrorKind::ResourceLimitExceededException(_inner) => {
+            CreateVoiceConnectorGroupErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVoiceConnectorGroupErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVoiceConnectorGroupErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVoiceConnectorGroupErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVoiceConnectorGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            CreateVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            CreateVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateVoiceConnectorGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -12859,121 +12590,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateVoiceConnectorGroupErro
 }
 impl CreateVoiceConnectorGroupError {
     /// Creates a new `CreateVoiceConnectorGroupError`.
-    pub fn new(kind: CreateVoiceConnectorGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateVoiceConnectorGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateVoiceConnectorGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateVoiceConnectorGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateVoiceConnectorGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateVoiceConnectorGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateVoiceConnectorGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVoiceConnectorGroupErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateVoiceConnectorGroupErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateVoiceConnectorGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVoiceConnectorGroupErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateVoiceConnectorGroupErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateVoiceConnectorGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVoiceConnectorGroupErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateVoiceConnectorGroupErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateVoiceConnectorGroupErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVoiceConnectorGroupErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateVoiceConnectorGroupErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateVoiceConnectorGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVoiceConnectorGroupErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, CreateVoiceConnectorGroupErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVoiceConnectorGroupErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateVoiceConnectorGroupErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateVoiceConnectorGroupErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVoiceConnectorGroupErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, CreateVoiceConnectorGroupErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `CreateVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVoiceConnectorGroupErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, CreateVoiceConnectorGroupErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for CreateVoiceConnectorGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateVoiceConnectorGroupErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateVoiceConnectorGroupErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateVoiceConnectorGroupErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateVoiceConnectorGroupErrorKind::ResourceLimitExceededException(_inner) => {
+            CreateVoiceConnectorGroupErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVoiceConnectorGroupErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVoiceConnectorGroupErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVoiceConnectorGroupErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVoiceConnectorGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            CreateVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            CreateVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreateVoiceConnectorGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12983,15 +12702,15 @@ impl std::error::Error for CreateVoiceConnectorGroupError {
 #[derive(std::fmt::Debug)]
 pub struct CreateVoiceConnectorError {
     /// Kind of error that occurred.
-    pub kind: CreateVoiceConnectorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateVoiceConnectorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateVoiceConnectorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -13015,28 +12734,46 @@ pub enum CreateVoiceConnectorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateVoiceConnectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateVoiceConnectorErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateVoiceConnectorErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateVoiceConnectorErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateVoiceConnectorErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            CreateVoiceConnectorErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            CreateVoiceConnectorErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            CreateVoiceConnectorErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            CreateVoiceConnectorErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            CreateVoiceConnectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateVoiceConnectorErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVoiceConnectorErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVoiceConnectorErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVoiceConnectorErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVoiceConnectorErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVoiceConnectorErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVoiceConnectorErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVoiceConnectorErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateVoiceConnectorErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -13050,119 +12787,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateVoiceConnectorError {
 }
 impl CreateVoiceConnectorError {
     /// Creates a new `CreateVoiceConnectorError`.
-    pub fn new(kind: CreateVoiceConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateVoiceConnectorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateVoiceConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateVoiceConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateVoiceConnectorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateVoiceConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateVoiceConnectorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVoiceConnectorErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateVoiceConnectorErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateVoiceConnectorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVoiceConnectorErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateVoiceConnectorErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateVoiceConnectorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVoiceConnectorErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateVoiceConnectorErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateVoiceConnectorErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVoiceConnectorErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateVoiceConnectorErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateVoiceConnectorErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVoiceConnectorErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, CreateVoiceConnectorErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateVoiceConnectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVoiceConnectorErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateVoiceConnectorErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateVoiceConnectorErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVoiceConnectorErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, CreateVoiceConnectorErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `CreateVoiceConnectorErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateVoiceConnectorErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, CreateVoiceConnectorErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for CreateVoiceConnectorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateVoiceConnectorErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateVoiceConnectorErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateVoiceConnectorErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateVoiceConnectorErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            CreateVoiceConnectorErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            CreateVoiceConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateVoiceConnectorErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            CreateVoiceConnectorErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreateVoiceConnectorErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateVoiceConnectorErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVoiceConnectorErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVoiceConnectorErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVoiceConnectorErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVoiceConnectorErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVoiceConnectorErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVoiceConnectorErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVoiceConnectorErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateVoiceConnectorErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -13172,15 +12899,15 @@ impl std::error::Error for CreateVoiceConnectorError {
 #[derive(std::fmt::Debug)]
 pub struct CreateSipRuleError {
     /// Kind of error that occurred.
-    pub kind: CreateSipRuleErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateSipRuleErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateSipRuleError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -13206,29 +12933,49 @@ pub enum CreateSipRuleErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSipRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateSipRuleErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateSipRuleErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateSipRuleErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CreateSipRuleErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateSipRuleErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            CreateSipRuleErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            CreateSipRuleErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            CreateSipRuleErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            CreateSipRuleErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            CreateSipRuleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateSipRuleErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipRuleErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipRuleErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipRuleErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipRuleErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipRuleErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipRuleErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipRuleErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipRuleErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipRuleErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -13242,46 +12989,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateSipRuleError {
 }
 impl CreateSipRuleError {
     /// Creates a new `CreateSipRuleError`.
-    pub fn new(kind: CreateSipRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateSipRuleError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateSipRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateSipRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateSipRuleError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateSipRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateSipRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateSipRuleErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateSipRuleErrorKind::AccessDeniedException(_))
@@ -13300,53 +13047,58 @@ impl CreateSipRuleError {
     }
     /// Returns `true` if the error kind is `CreateSipRuleErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipRuleErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateSipRuleErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateSipRuleErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipRuleErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, CreateSipRuleErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateSipRuleErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipRuleErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateSipRuleErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateSipRuleErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipRuleErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, CreateSipRuleErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `CreateSipRuleErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipRuleErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, CreateSipRuleErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for CreateSipRuleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateSipRuleErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateSipRuleErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateSipRuleErrorKind::ConflictException(_inner) => Some(_inner),
-            CreateSipRuleErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateSipRuleErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            CreateSipRuleErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            CreateSipRuleErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateSipRuleErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            CreateSipRuleErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreateSipRuleErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateSipRuleErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipRuleErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipRuleErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipRuleErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipRuleErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipRuleErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipRuleErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipRuleErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipRuleErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipRuleErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -13356,17 +13108,15 @@ impl std::error::Error for CreateSipRuleError {
 #[derive(std::fmt::Debug)]
 pub struct CreateSipMediaApplicationCallError {
     /// Kind of error that occurred.
-    pub kind: CreateSipMediaApplicationCallErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateSipMediaApplicationCallErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateSipMediaApplicationCallError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateSipMediaApplicationCallErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: CreateSipMediaApplicationCallErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -13390,38 +13140,46 @@ pub enum CreateSipMediaApplicationCallErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSipMediaApplicationCallError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateSipMediaApplicationCallErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateSipMediaApplicationCallErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateSipMediaApplicationCallErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(_inner) => {
+            CreateSipMediaApplicationCallErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationCallErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationCallErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationCallErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationCallErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationCallErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationCallErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationCallErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateSipMediaApplicationCallErrorKind::ServiceFailureException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateSipMediaApplicationCallErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateSipMediaApplicationCallErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateSipMediaApplicationCallErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateSipMediaApplicationCallErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -13435,130 +13193,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateSipMediaApplicationCall
 }
 impl CreateSipMediaApplicationCallError {
     /// Creates a new `CreateSipMediaApplicationCallError`.
-    pub fn new(
-        kind: CreateSipMediaApplicationCallErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateSipMediaApplicationCallError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateSipMediaApplicationCallErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateSipMediaApplicationCallError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateSipMediaApplicationCallErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateSipMediaApplicationCallErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateSipMediaApplicationCallError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateSipMediaApplicationCallErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateSipMediaApplicationCallError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateSipMediaApplicationCallErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationCallErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationCallErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationCallErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationCallErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationCallErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationCallErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationCallErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationCallErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationCallErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationCallErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationCallErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationCallErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationCallErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationCallErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationCallErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationCallErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationCallErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationCallErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationCallErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationCallErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationCallErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationCallErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for CreateSipMediaApplicationCallError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateSipMediaApplicationCallErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateSipMediaApplicationCallErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateSipMediaApplicationCallErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(_inner) => {
+            CreateSipMediaApplicationCallErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationCallErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationCallErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationCallErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationCallErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationCallErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationCallErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationCallErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateSipMediaApplicationCallErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            CreateSipMediaApplicationCallErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            CreateSipMediaApplicationCallErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            CreateSipMediaApplicationCallErrorKind::UnauthorizedClientException(_inner) => {
-                Some(_inner)
-            }
-            CreateSipMediaApplicationCallErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13568,17 +13305,15 @@ impl std::error::Error for CreateSipMediaApplicationCallError {
 #[derive(std::fmt::Debug)]
 pub struct CreateSipMediaApplicationError {
     /// Kind of error that occurred.
-    pub kind: CreateSipMediaApplicationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateSipMediaApplicationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateSipMediaApplicationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: CreateSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -13604,35 +13339,49 @@ pub enum CreateSipMediaApplicationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSipMediaApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateSipMediaApplicationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateSipMediaApplicationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateSipMediaApplicationErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CreateSipMediaApplicationErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateSipMediaApplicationErrorKind::ResourceLimitExceededException(_inner) => {
+            CreateSipMediaApplicationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSipMediaApplicationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateSipMediaApplicationErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            CreateSipMediaApplicationErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateSipMediaApplicationErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            CreateSipMediaApplicationErrorKind::UnauthorizedClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateSipMediaApplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -13646,129 +13395,116 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateSipMediaApplicationErro
 }
 impl CreateSipMediaApplicationError {
     /// Creates a new `CreateSipMediaApplicationError`.
-    pub fn new(kind: CreateSipMediaApplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateSipMediaApplicationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateSipMediaApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateSipMediaApplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateSipMediaApplicationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateSipMediaApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateSipMediaApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSipMediaApplicationErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, CreateSipMediaApplicationErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for CreateSipMediaApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateSipMediaApplicationErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateSipMediaApplicationErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateSipMediaApplicationErrorKind::ConflictException(_inner) => Some(_inner),
-            CreateSipMediaApplicationErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateSipMediaApplicationErrorKind::ResourceLimitExceededException(_inner) => {
+            CreateSipMediaApplicationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSipMediaApplicationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateSipMediaApplicationErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            CreateSipMediaApplicationErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateSipMediaApplicationErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            CreateSipMediaApplicationErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreateSipMediaApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13778,15 +13514,15 @@ impl std::error::Error for CreateSipMediaApplicationError {
 #[derive(std::fmt::Debug)]
 pub struct CreateProxySessionError {
     /// Kind of error that occurred.
-    pub kind: CreateProxySessionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateProxySessionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateProxySessionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -13808,27 +13544,43 @@ pub enum CreateProxySessionErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateProxySessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateProxySessionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateProxySessionErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateProxySessionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            CreateProxySessionErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            CreateProxySessionErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            CreateProxySessionErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            CreateProxySessionErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            CreateProxySessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateProxySessionErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateProxySessionErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateProxySessionErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateProxySessionErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateProxySessionErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateProxySessionErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateProxySessionErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateProxySessionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -13842,107 +13594,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateProxySessionError {
 }
 impl CreateProxySessionError {
     /// Creates a new `CreateProxySessionError`.
-    pub fn new(kind: CreateProxySessionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateProxySessionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateProxySessionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateProxySessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateProxySessionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateProxySessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateProxySessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateProxySessionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateProxySessionErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateProxySessionErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateProxySessionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateProxySessionErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreateProxySessionErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreateProxySessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateProxySessionErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, CreateProxySessionErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateProxySessionErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateProxySessionErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, CreateProxySessionErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateProxySessionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateProxySessionErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreateProxySessionErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreateProxySessionErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateProxySessionErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, CreateProxySessionErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `CreateProxySessionErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateProxySessionErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, CreateProxySessionErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for CreateProxySessionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateProxySessionErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateProxySessionErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateProxySessionErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateProxySessionErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            CreateProxySessionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateProxySessionErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            CreateProxySessionErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreateProxySessionErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateProxySessionErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateProxySessionErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateProxySessionErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateProxySessionErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateProxySessionErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateProxySessionErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateProxySessionErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateProxySessionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -13952,15 +13699,15 @@ impl std::error::Error for CreateProxySessionError {
 #[derive(std::fmt::Debug)]
 pub struct CreatePhoneNumberOrderError {
     /// Kind of error that occurred.
-    pub kind: CreatePhoneNumberOrderErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreatePhoneNumberOrderErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreatePhoneNumberOrderError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreatePhoneNumberOrderErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -13984,30 +13731,46 @@ pub enum CreatePhoneNumberOrderErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePhoneNumberOrderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreatePhoneNumberOrderErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreatePhoneNumberOrderErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreatePhoneNumberOrderErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreatePhoneNumberOrderErrorKind::ResourceLimitExceededException(_inner) => {
+            CreatePhoneNumberOrderErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreatePhoneNumberOrderErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreatePhoneNumberOrderErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreatePhoneNumberOrderErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreatePhoneNumberOrderErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreatePhoneNumberOrderErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreatePhoneNumberOrderErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreatePhoneNumberOrderErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreatePhoneNumberOrderErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreatePhoneNumberOrderErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            CreatePhoneNumberOrderErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            CreatePhoneNumberOrderErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            CreatePhoneNumberOrderErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            CreatePhoneNumberOrderErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -14021,119 +13784,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreatePhoneNumberOrderError {
 }
 impl CreatePhoneNumberOrderError {
     /// Creates a new `CreatePhoneNumberOrderError`.
-    pub fn new(kind: CreatePhoneNumberOrderErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreatePhoneNumberOrderError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreatePhoneNumberOrderErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreatePhoneNumberOrderError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreatePhoneNumberOrderErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreatePhoneNumberOrderErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreatePhoneNumberOrderError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreatePhoneNumberOrderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreatePhoneNumberOrderError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreatePhoneNumberOrderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreatePhoneNumberOrderErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreatePhoneNumberOrderErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreatePhoneNumberOrderErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreatePhoneNumberOrderErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreatePhoneNumberOrderErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreatePhoneNumberOrderErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreatePhoneNumberOrderErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreatePhoneNumberOrderErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, CreatePhoneNumberOrderErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `CreatePhoneNumberOrderErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreatePhoneNumberOrderErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreatePhoneNumberOrderErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreatePhoneNumberOrderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreatePhoneNumberOrderErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, CreatePhoneNumberOrderErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `CreatePhoneNumberOrderErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreatePhoneNumberOrderErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, CreatePhoneNumberOrderErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `CreatePhoneNumberOrderErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreatePhoneNumberOrderErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, CreatePhoneNumberOrderErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `CreatePhoneNumberOrderErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreatePhoneNumberOrderErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, CreatePhoneNumberOrderErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for CreatePhoneNumberOrderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreatePhoneNumberOrderErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreatePhoneNumberOrderErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreatePhoneNumberOrderErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreatePhoneNumberOrderErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            CreatePhoneNumberOrderErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            CreatePhoneNumberOrderErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreatePhoneNumberOrderErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            CreatePhoneNumberOrderErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreatePhoneNumberOrderErrorKind::Unhandled(_inner) => Some(_inner),
+            CreatePhoneNumberOrderErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreatePhoneNumberOrderErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreatePhoneNumberOrderErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreatePhoneNumberOrderErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreatePhoneNumberOrderErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreatePhoneNumberOrderErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            CreatePhoneNumberOrderErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreatePhoneNumberOrderErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreatePhoneNumberOrderErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -14143,15 +13896,15 @@ impl std::error::Error for CreatePhoneNumberOrderError {
 #[derive(std::fmt::Debug)]
 pub struct BatchUpdatePhoneNumberError {
     /// Kind of error that occurred.
-    pub kind: BatchUpdatePhoneNumberErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: BatchUpdatePhoneNumberErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for BatchUpdatePhoneNumberError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: BatchUpdatePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -14173,27 +13926,43 @@ pub enum BatchUpdatePhoneNumberErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchUpdatePhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchUpdatePhoneNumberErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            BatchUpdatePhoneNumberErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            BatchUpdatePhoneNumberErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            BatchUpdatePhoneNumberErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            BatchUpdatePhoneNumberErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            BatchUpdatePhoneNumberErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            BatchUpdatePhoneNumberErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            BatchUpdatePhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            BatchUpdatePhoneNumberErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchUpdatePhoneNumberErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchUpdatePhoneNumberErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchUpdatePhoneNumberErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchUpdatePhoneNumberErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchUpdatePhoneNumberErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchUpdatePhoneNumberErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchUpdatePhoneNumberErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -14207,111 +13976,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchUpdatePhoneNumberError {
 }
 impl BatchUpdatePhoneNumberError {
     /// Creates a new `BatchUpdatePhoneNumberError`.
-    pub fn new(kind: BatchUpdatePhoneNumberErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `BatchUpdatePhoneNumberError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: BatchUpdatePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `BatchUpdatePhoneNumberError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: BatchUpdatePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: BatchUpdatePhoneNumberErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `BatchUpdatePhoneNumberError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: BatchUpdatePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `BatchUpdatePhoneNumberError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: BatchUpdatePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `BatchUpdatePhoneNumberErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchUpdatePhoneNumberErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, BatchUpdatePhoneNumberErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `BatchUpdatePhoneNumberErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchUpdatePhoneNumberErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, BatchUpdatePhoneNumberErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `BatchUpdatePhoneNumberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchUpdatePhoneNumberErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, BatchUpdatePhoneNumberErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `BatchUpdatePhoneNumberErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchUpdatePhoneNumberErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, BatchUpdatePhoneNumberErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `BatchUpdatePhoneNumberErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchUpdatePhoneNumberErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, BatchUpdatePhoneNumberErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `BatchUpdatePhoneNumberErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchUpdatePhoneNumberErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, BatchUpdatePhoneNumberErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `BatchUpdatePhoneNumberErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchUpdatePhoneNumberErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, BatchUpdatePhoneNumberErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for BatchUpdatePhoneNumberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchUpdatePhoneNumberErrorKind::BadRequestException(_inner) => Some(_inner),
-            BatchUpdatePhoneNumberErrorKind::ForbiddenException(_inner) => Some(_inner),
-            BatchUpdatePhoneNumberErrorKind::NotFoundException(_inner) => Some(_inner),
-            BatchUpdatePhoneNumberErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            BatchUpdatePhoneNumberErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            BatchUpdatePhoneNumberErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            BatchUpdatePhoneNumberErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            BatchUpdatePhoneNumberErrorKind::Unhandled(_inner) => Some(_inner),
+            BatchUpdatePhoneNumberErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            BatchUpdatePhoneNumberErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            BatchUpdatePhoneNumberErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            BatchUpdatePhoneNumberErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            BatchUpdatePhoneNumberErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            BatchUpdatePhoneNumberErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            BatchUpdatePhoneNumberErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            BatchUpdatePhoneNumberErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -14321,15 +14081,15 @@ impl std::error::Error for BatchUpdatePhoneNumberError {
 #[derive(std::fmt::Debug)]
 pub struct BatchDeletePhoneNumberError {
     /// Kind of error that occurred.
-    pub kind: BatchDeletePhoneNumberErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: BatchDeletePhoneNumberErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for BatchDeletePhoneNumberError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: BatchDeletePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -14351,27 +14111,43 @@ pub enum BatchDeletePhoneNumberErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDeletePhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchDeletePhoneNumberErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            BatchDeletePhoneNumberErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            BatchDeletePhoneNumberErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            BatchDeletePhoneNumberErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            BatchDeletePhoneNumberErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            BatchDeletePhoneNumberErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
-            BatchDeletePhoneNumberErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
-            BatchDeletePhoneNumberErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            BatchDeletePhoneNumberErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchDeletePhoneNumberErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchDeletePhoneNumberErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchDeletePhoneNumberErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchDeletePhoneNumberErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchDeletePhoneNumberErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchDeletePhoneNumberErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchDeletePhoneNumberErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -14385,111 +14161,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchDeletePhoneNumberError {
 }
 impl BatchDeletePhoneNumberError {
     /// Creates a new `BatchDeletePhoneNumberError`.
-    pub fn new(kind: BatchDeletePhoneNumberErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `BatchDeletePhoneNumberError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: BatchDeletePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `BatchDeletePhoneNumberError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: BatchDeletePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: BatchDeletePhoneNumberErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `BatchDeletePhoneNumberError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: BatchDeletePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `BatchDeletePhoneNumberError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: BatchDeletePhoneNumberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `BatchDeletePhoneNumberErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchDeletePhoneNumberErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, BatchDeletePhoneNumberErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `BatchDeletePhoneNumberErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchDeletePhoneNumberErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, BatchDeletePhoneNumberErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `BatchDeletePhoneNumberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchDeletePhoneNumberErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, BatchDeletePhoneNumberErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `BatchDeletePhoneNumberErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchDeletePhoneNumberErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, BatchDeletePhoneNumberErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `BatchDeletePhoneNumberErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchDeletePhoneNumberErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, BatchDeletePhoneNumberErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `BatchDeletePhoneNumberErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchDeletePhoneNumberErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, BatchDeletePhoneNumberErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `BatchDeletePhoneNumberErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchDeletePhoneNumberErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, BatchDeletePhoneNumberErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for BatchDeletePhoneNumberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchDeletePhoneNumberErrorKind::BadRequestException(_inner) => Some(_inner),
-            BatchDeletePhoneNumberErrorKind::ForbiddenException(_inner) => Some(_inner),
-            BatchDeletePhoneNumberErrorKind::NotFoundException(_inner) => Some(_inner),
-            BatchDeletePhoneNumberErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            BatchDeletePhoneNumberErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            BatchDeletePhoneNumberErrorKind::ThrottledClientException(_inner) => Some(_inner),
-            BatchDeletePhoneNumberErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            BatchDeletePhoneNumberErrorKind::Unhandled(_inner) => Some(_inner),
+            BatchDeletePhoneNumberErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            BatchDeletePhoneNumberErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            BatchDeletePhoneNumberErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            BatchDeletePhoneNumberErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            BatchDeletePhoneNumberErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            BatchDeletePhoneNumberErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            BatchDeletePhoneNumberErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            BatchDeletePhoneNumberErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -14499,19 +14266,15 @@ impl std::error::Error for BatchDeletePhoneNumberError {
 #[derive(std::fmt::Debug)]
 pub struct AssociatePhoneNumbersWithVoiceConnectorGroupError {
     /// Kind of error that occurred.
-    pub kind: AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for AssociatePhoneNumbersWithVoiceConnectorGroupError
-{
+impl aws_smithy_http::result::CreateUnhandledError for AssociatePhoneNumbersWithVoiceConnectorGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -14535,52 +14298,50 @@ pub enum AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociatePhoneNumbersWithVoiceConnectorGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::AccessDeniedException(
-                _inner,
-            ) => _inner.fmt(f),
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::BadRequestException(_inner) => {
-                _inner.fmt(f)
-            }
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceFailureException(
-                _inner,
-            ) => _inner.fmt(f),
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => _inner.fmt(f),
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ThrottledClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => _inner.fmt(f),
+            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
             AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
         }
     }
 }
-impl aws_smithy_types::retry::ProvideErrorKind
-    for AssociatePhoneNumbersWithVoiceConnectorGroupError
-{
+impl aws_smithy_types::retry::ProvideErrorKind for AssociatePhoneNumbersWithVoiceConnectorGroupError {
     fn code(&self) -> Option<&str> {
         AssociatePhoneNumbersWithVoiceConnectorGroupError::code(self)
     }
@@ -14590,137 +14351,106 @@ impl aws_smithy_types::retry::ProvideErrorKind
 }
 impl AssociatePhoneNumbersWithVoiceConnectorGroupError {
     /// Creates a new `AssociatePhoneNumbersWithVoiceConnectorGroupError`.
-    pub fn new(
-        kind: AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AssociatePhoneNumbersWithVoiceConnectorGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AssociatePhoneNumbersWithVoiceConnectorGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AssociatePhoneNumbersWithVoiceConnectorGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AssociatePhoneNumbersWithVoiceConnectorGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for AssociatePhoneNumbersWithVoiceConnectorGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::AccessDeniedException(
-                _inner,
-            ) => Some(_inner),
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::BadRequestException(_inner) => {
-                Some(_inner)
-            }
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ForbiddenException(_inner) => {
-                Some(_inner)
-            }
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceFailureException(
-                _inner,
-            ) => Some(_inner),
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => Some(_inner),
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ThrottledClientException(
-                _inner,
-            ) => Some(_inner),
-            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => Some(_inner),
+            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
             AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
@@ -14733,19 +14463,15 @@ impl std::error::Error for AssociatePhoneNumbersWithVoiceConnectorGroupError {
 #[derive(std::fmt::Debug)]
 pub struct AssociatePhoneNumbersWithVoiceConnectorError {
     /// Kind of error that occurred.
-    pub kind: AssociatePhoneNumbersWithVoiceConnectorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AssociatePhoneNumbersWithVoiceConnectorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for AssociatePhoneNumbersWithVoiceConnectorError
-{
+impl aws_smithy_http::result::CreateUnhandledError for AssociatePhoneNumbersWithVoiceConnectorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AssociatePhoneNumbersWithVoiceConnectorErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: AssociatePhoneNumbersWithVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -14769,44 +14495,46 @@ pub enum AssociatePhoneNumbersWithVoiceConnectorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociatePhoneNumbersWithVoiceConnectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::AccessDeniedException(_inner) => {
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ThrottledClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::UnauthorizedClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::BadRequestException(_inner) => {
-                _inner.fmt(f)
-            }
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ForbiddenException(_inner) => {
-                _inner.fmt(f)
-            }
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceFailureException(_inner) => {
-                _inner.fmt(f)
-            }
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => _inner.fmt(f),
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ThrottledClientException(_inner) => {
-                _inner.fmt(f)
-            }
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -14820,167 +14548,139 @@ impl aws_smithy_types::retry::ProvideErrorKind for AssociatePhoneNumbersWithVoic
 }
 impl AssociatePhoneNumbersWithVoiceConnectorError {
     /// Creates a new `AssociatePhoneNumbersWithVoiceConnectorError`.
-    pub fn new(
-        kind: AssociatePhoneNumbersWithVoiceConnectorErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AssociatePhoneNumbersWithVoiceConnectorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AssociatePhoneNumbersWithVoiceConnectorErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AssociatePhoneNumbersWithVoiceConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AssociatePhoneNumbersWithVoiceConnectorErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AssociatePhoneNumbersWithVoiceConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AssociatePhoneNumbersWithVoiceConnectorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AssociatePhoneNumbersWithVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AssociatePhoneNumbersWithVoiceConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AssociatePhoneNumbersWithVoiceConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, AssociatePhoneNumbersWithVoiceConnectorErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, AssociatePhoneNumbersWithVoiceConnectorErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, AssociatePhoneNumbersWithVoiceConnectorErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, AssociatePhoneNumbersWithVoiceConnectorErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ThrottledClientException(_)
-        )
+        matches!(&self.kind, AssociatePhoneNumbersWithVoiceConnectorErrorKind::ThrottledClientException(_))
     }
     /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::UnauthorizedClientException(_)
-        )
+        matches!(&self.kind, AssociatePhoneNumbersWithVoiceConnectorErrorKind::UnauthorizedClientException(_))
     }
 }
 impl std::error::Error for AssociatePhoneNumbersWithVoiceConnectorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::AccessDeniedException(_inner) => {
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ThrottledClientException(_inner) =>
+            Some(_inner)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::UnauthorizedClientException(_inner) =>
+            Some(_inner)
+            ,
+            AssociatePhoneNumbersWithVoiceConnectorErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::BadRequestException(_inner) => {
-                Some(_inner)
-            }
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ForbiddenException(_inner) => {
-                Some(_inner)
-            }
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceFailureException(_inner) => {
-                Some(_inner)
-            }
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceUnavailableException(
-                _inner,
-            ) => Some(_inner),
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::ThrottledClientException(_inner) => {
-                Some(_inner)
-            }
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::UnauthorizedClientException(
-                _inner,
-            ) => Some(_inner),
-            AssociatePhoneNumbersWithVoiceConnectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

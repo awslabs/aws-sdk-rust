@@ -3,7 +3,7 @@
 /// <p>Returns information about the XML element or attribute that was sanitized in the configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SanitizationWarning {
+pub struct SanitizationWarning  {
     /// <p>The name of the XML attribute that has been sanitized.</p>
     #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
@@ -16,21 +16,21 @@ pub struct SanitizationWarning {
 }
 impl SanitizationWarning {
     /// <p>The name of the XML attribute that has been sanitized.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>The name of the XML element that has been sanitized.</p>
-    pub fn element_name(&self) -> std::option::Option<&str> {
+    pub fn element_name(&self) -> std::option::Option<& str> {
         self.element_name.as_deref()
     }
     /// <p>Required. The reason for which the XML elements or attributes were sanitized.</p>
-    pub fn reason(&self) -> std::option::Option<&crate::model::SanitizationWarningReason> {
+    pub fn reason(&self) -> std::option::Option<& crate::model::SanitizationWarningReason> {
         self.reason.as_ref()
     }
 }
 /// See [`SanitizationWarning`](crate::model::SanitizationWarning).
 pub mod sanitization_warning {
-
+    
     /// A builder for [`SanitizationWarning`](crate::model::SanitizationWarning).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -45,12 +45,8 @@ pub mod sanitization_warning {
             self
         }
         /// <p>The name of the XML attribute that has been sanitized.</p>
-        pub fn set_attribute_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_name = input;
-            self
+        pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_name = input; self
         }
         /// <p>The name of the XML element that has been sanitized.</p>
         pub fn element_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,8 +55,7 @@ pub mod sanitization_warning {
         }
         /// <p>The name of the XML element that has been sanitized.</p>
         pub fn set_element_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.element_name = input;
-            self
+            self.element_name = input; self
         }
         /// <p>Required. The reason for which the XML elements or attributes were sanitized.</p>
         pub fn reason(mut self, input: crate::model::SanitizationWarningReason) -> Self {
@@ -68,22 +63,23 @@ pub mod sanitization_warning {
             self
         }
         /// <p>Required. The reason for which the XML elements or attributes were sanitized.</p>
-        pub fn set_reason(
-            mut self,
-            input: std::option::Option<crate::model::SanitizationWarningReason>,
-        ) -> Self {
-            self.reason = input;
-            self
+        pub fn set_reason(mut self, input: std::option::Option<crate::model::SanitizationWarningReason>) -> Self {
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`SanitizationWarning`](crate::model::SanitizationWarning).
         pub fn build(self) -> crate::model::SanitizationWarning {
             crate::model::SanitizationWarning {
-                attribute_name: self.attribute_name,
-                element_name: self.element_name,
-                reason: self.reason,
+                attribute_name: self.attribute_name
+                ,
+                element_name: self.element_name
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl SanitizationWarning {
     /// Creates a new builder-style object to manufacture [`SanitizationWarning`](crate::model::SanitizationWarning).
@@ -98,9 +94,9 @@ impl SanitizationWarning {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sanitizationwarningreason = unimplemented!();
 /// match sanitizationwarningreason {
@@ -123,22 +119,14 @@ impl SanitizationWarning {
 /// Specifically, when `sanitizationwarningreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SanitizationWarningReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The reason for which the XML elements or attributes were sanitized.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SanitizationWarningReason {
     #[allow(missing_docs)] // documentation missing in model
     DisallowedAttributeRemoved,
@@ -147,47 +135,39 @@ pub enum SanitizationWarningReason {
     #[allow(missing_docs)] // documentation missing in model
     InvalidAttributeValueRemoved,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SanitizationWarningReason {
     fn from(s: &str) -> Self {
         match s {
             "DISALLOWED_ATTRIBUTE_REMOVED" => SanitizationWarningReason::DisallowedAttributeRemoved,
             "DISALLOWED_ELEMENT_REMOVED" => SanitizationWarningReason::DisallowedElementRemoved,
-            "INVALID_ATTRIBUTE_VALUE_REMOVED" => {
-                SanitizationWarningReason::InvalidAttributeValueRemoved
-            }
-            other => SanitizationWarningReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "INVALID_ATTRIBUTE_VALUE_REMOVED" => SanitizationWarningReason::InvalidAttributeValueRemoved,
+            other => SanitizationWarningReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SanitizationWarningReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SanitizationWarningReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SanitizationWarningReason::from(s))
+                }
+            }
 impl SanitizationWarningReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SanitizationWarningReason::DisallowedAttributeRemoved => "DISALLOWED_ATTRIBUTE_REMOVED",
             SanitizationWarningReason::DisallowedElementRemoved => "DISALLOWED_ELEMENT_REMOVED",
-            SanitizationWarningReason::InvalidAttributeValueRemoved => {
-                "INVALID_ATTRIBUTE_VALUE_REMOVED"
-            }
-            SanitizationWarningReason::Unknown(value) => value.as_str(),
+            SanitizationWarningReason::InvalidAttributeValueRemoved => "INVALID_ATTRIBUTE_VALUE_REMOVED",
+            SanitizationWarningReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DISALLOWED_ATTRIBUTE_REMOVED",
-            "DISALLOWED_ELEMENT_REMOVED",
-            "INVALID_ATTRIBUTE_VALUE_REMOVED",
+            "DISALLOWED_ATTRIBUTE_REMOVED", "DISALLOWED_ELEMENT_REMOVED", "INVALID_ATTRIBUTE_VALUE_REMOVED"
         ]
     }
 }
@@ -200,7 +180,7 @@ impl AsRef<str> for SanitizationWarningReason {
 /// <p>Returns information about the specified configuration revision.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigurationRevision {
+pub struct ConfigurationRevision  {
     /// <p>Required. The date and time of the configuration revision.</p>
     #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
@@ -213,11 +193,11 @@ pub struct ConfigurationRevision {
 }
 impl ConfigurationRevision {
     /// <p>Required. The date and time of the configuration revision.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The description of the configuration revision.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Required. The revision number of the configuration.</p>
@@ -227,7 +207,7 @@ impl ConfigurationRevision {
 }
 /// See [`ConfigurationRevision`](crate::model::ConfigurationRevision).
 pub mod configuration_revision {
-
+    
     /// A builder for [`ConfigurationRevision`](crate::model::ConfigurationRevision).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -242,12 +222,8 @@ pub mod configuration_revision {
             self
         }
         /// <p>Required. The date and time of the configuration revision.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// <p>The description of the configuration revision.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -256,8 +232,7 @@ pub mod configuration_revision {
         }
         /// <p>The description of the configuration revision.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Required. The revision number of the configuration.</p>
         pub fn revision(mut self, input: i32) -> Self {
@@ -266,18 +241,23 @@ pub mod configuration_revision {
         }
         /// <p>Required. The revision number of the configuration.</p>
         pub fn set_revision(mut self, input: std::option::Option<i32>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// Consumes the builder and constructs a [`ConfigurationRevision`](crate::model::ConfigurationRevision).
         pub fn build(self) -> crate::model::ConfigurationRevision {
             crate::model::ConfigurationRevision {
-                created: self.created,
-                description: self.description,
-                revision: self.revision.unwrap_or_default(),
+                created: self.created
+                ,
+                description: self.description
+                ,
+                revision: self.revision
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigurationRevision {
     /// Creates a new builder-style object to manufacture [`ConfigurationRevision`](crate::model::ConfigurationRevision).
@@ -289,7 +269,7 @@ impl ConfigurationRevision {
 /// <p>The scheduled time period relative to UTC during which Amazon MQ begins to apply pending updates or patches to the broker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WeeklyStartTime {
+pub struct WeeklyStartTime  {
     /// <p>Required. The day of the week.</p>
     #[doc(hidden)]
     pub day_of_week: std::option::Option<crate::model::DayOfWeek>,
@@ -302,21 +282,21 @@ pub struct WeeklyStartTime {
 }
 impl WeeklyStartTime {
     /// <p>Required. The day of the week.</p>
-    pub fn day_of_week(&self) -> std::option::Option<&crate::model::DayOfWeek> {
+    pub fn day_of_week(&self) -> std::option::Option<& crate::model::DayOfWeek> {
         self.day_of_week.as_ref()
     }
     /// <p>Required. The time, in 24-hour format.</p>
-    pub fn time_of_day(&self) -> std::option::Option<&str> {
+    pub fn time_of_day(&self) -> std::option::Option<& str> {
         self.time_of_day.as_deref()
     }
     /// <p>The time zone, UTC by default, in either the Country/City format, or the UTC offset format.</p>
-    pub fn time_zone(&self) -> std::option::Option<&str> {
+    pub fn time_zone(&self) -> std::option::Option<& str> {
         self.time_zone.as_deref()
     }
 }
 /// See [`WeeklyStartTime`](crate::model::WeeklyStartTime).
 pub mod weekly_start_time {
-
+    
     /// A builder for [`WeeklyStartTime`](crate::model::WeeklyStartTime).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -331,12 +311,8 @@ pub mod weekly_start_time {
             self
         }
         /// <p>Required. The day of the week.</p>
-        pub fn set_day_of_week(
-            mut self,
-            input: std::option::Option<crate::model::DayOfWeek>,
-        ) -> Self {
-            self.day_of_week = input;
-            self
+        pub fn set_day_of_week(mut self, input: std::option::Option<crate::model::DayOfWeek>) -> Self {
+            self.day_of_week = input; self
         }
         /// <p>Required. The time, in 24-hour format.</p>
         pub fn time_of_day(mut self, input: impl Into<std::string::String>) -> Self {
@@ -345,8 +321,7 @@ pub mod weekly_start_time {
         }
         /// <p>Required. The time, in 24-hour format.</p>
         pub fn set_time_of_day(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.time_of_day = input;
-            self
+            self.time_of_day = input; self
         }
         /// <p>The time zone, UTC by default, in either the Country/City format, or the UTC offset format.</p>
         pub fn time_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -355,18 +330,22 @@ pub mod weekly_start_time {
         }
         /// <p>The time zone, UTC by default, in either the Country/City format, or the UTC offset format.</p>
         pub fn set_time_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.time_zone = input;
-            self
+            self.time_zone = input; self
         }
         /// Consumes the builder and constructs a [`WeeklyStartTime`](crate::model::WeeklyStartTime).
         pub fn build(self) -> crate::model::WeeklyStartTime {
             crate::model::WeeklyStartTime {
-                day_of_week: self.day_of_week,
-                time_of_day: self.time_of_day,
-                time_zone: self.time_zone,
+                day_of_week: self.day_of_week
+                ,
+                time_of_day: self.time_of_day
+                ,
+                time_zone: self.time_zone
+                ,
             }
         }
     }
+    
+    
 }
 impl WeeklyStartTime {
     /// Creates a new builder-style object to manufacture [`WeeklyStartTime`](crate::model::WeeklyStartTime).
@@ -381,9 +360,9 @@ impl WeeklyStartTime {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dayofweek = unimplemented!();
 /// match dayofweek {
@@ -410,22 +389,14 @@ impl WeeklyStartTime {
 /// Specifically, when `dayofweek` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DayOfWeek::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DayOfWeek {
     #[allow(missing_docs)] // documentation missing in model
     Friday,
@@ -442,7 +413,7 @@ pub enum DayOfWeek {
     #[allow(missing_docs)] // documentation missing in model
     Wednesday,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DayOfWeek {
     fn from(s: &str) -> Self {
@@ -454,17 +425,17 @@ impl std::convert::From<&str> for DayOfWeek {
             "THURSDAY" => DayOfWeek::Thursday,
             "TUESDAY" => DayOfWeek::Tuesday,
             "WEDNESDAY" => DayOfWeek::Wednesday,
-            other => DayOfWeek::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DayOfWeek::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DayOfWeek {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DayOfWeek::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DayOfWeek::from(s))
+                }
+            }
 impl DayOfWeek {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -476,19 +447,13 @@ impl DayOfWeek {
             DayOfWeek::Thursday => "THURSDAY",
             DayOfWeek::Tuesday => "TUESDAY",
             DayOfWeek::Wednesday => "WEDNESDAY",
-            DayOfWeek::Unknown(value) => value.as_str(),
+            DayOfWeek::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "FRIDAY",
-            "MONDAY",
-            "SATURDAY",
-            "SUNDAY",
-            "THURSDAY",
-            "TUESDAY",
-            "WEDNESDAY",
+            "FRIDAY", "MONDAY", "SATURDAY", "SUNDAY", "THURSDAY", "TUESDAY", "WEDNESDAY"
         ]
     }
 }
@@ -501,7 +466,7 @@ impl AsRef<str> for DayOfWeek {
 /// <p>The list of information about logs to be enabled for the specified broker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Logs {
+pub struct Logs  {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
     #[doc(hidden)]
     pub audit: bool,
@@ -521,7 +486,7 @@ impl Logs {
 }
 /// See [`Logs`](crate::model::Logs).
 pub mod logs {
-
+    
     /// A builder for [`Logs`](crate::model::Logs).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -536,8 +501,7 @@ pub mod logs {
         }
         /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
         pub fn set_audit(mut self, input: std::option::Option<bool>) -> Self {
-            self.audit = input;
-            self
+            self.audit = input; self
         }
         /// <p>Enables general logging.</p>
         pub fn general(mut self, input: bool) -> Self {
@@ -546,17 +510,22 @@ pub mod logs {
         }
         /// <p>Enables general logging.</p>
         pub fn set_general(mut self, input: std::option::Option<bool>) -> Self {
-            self.general = input;
-            self
+            self.general = input; self
         }
         /// Consumes the builder and constructs a [`Logs`](crate::model::Logs).
         pub fn build(self) -> crate::model::Logs {
             crate::model::Logs {
-                audit: self.audit.unwrap_or_default(),
-                general: self.general.unwrap_or_default(),
+                audit: self.audit
+                    .unwrap_or_default()
+                ,
+                general: self.general
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl Logs {
     /// Creates a new builder-style object to manufacture [`Logs`](crate::model::Logs).
@@ -568,7 +537,7 @@ impl Logs {
 /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LdapServerMetadataOutput {
+pub struct LdapServerMetadataOutput  {
     /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
     #[doc(hidden)]
     pub hosts: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -602,19 +571,19 @@ pub struct LdapServerMetadataOutput {
 }
 impl LdapServerMetadataOutput {
     /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
-    pub fn hosts(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn hosts(&self) -> std::option::Option<& [std::string::String]> {
         self.hosts.as_deref()
     }
     /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
-    pub fn role_base(&self) -> std::option::Option<&str> {
+    pub fn role_base(&self) -> std::option::Option<& str> {
         self.role_base.as_deref()
     }
     /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
-    pub fn role_name(&self) -> std::option::Option<&str> {
+    pub fn role_name(&self) -> std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
-    pub fn role_search_matching(&self) -> std::option::Option<&str> {
+    pub fn role_search_matching(&self) -> std::option::Option<& str> {
         self.role_search_matching.as_deref()
     }
     /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
@@ -622,19 +591,19 @@ impl LdapServerMetadataOutput {
         self.role_search_subtree
     }
     /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
-    pub fn service_account_username(&self) -> std::option::Option<&str> {
+    pub fn service_account_username(&self) -> std::option::Option<& str> {
         self.service_account_username.as_deref()
     }
     /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
-    pub fn user_base(&self) -> std::option::Option<&str> {
+    pub fn user_base(&self) -> std::option::Option<& str> {
         self.user_base.as_deref()
     }
     /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
-    pub fn user_role_name(&self) -> std::option::Option<&str> {
+    pub fn user_role_name(&self) -> std::option::Option<& str> {
         self.user_role_name.as_deref()
     }
     /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
-    pub fn user_search_matching(&self) -> std::option::Option<&str> {
+    pub fn user_search_matching(&self) -> std::option::Option<& str> {
         self.user_search_matching.as_deref()
     }
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
@@ -644,7 +613,7 @@ impl LdapServerMetadataOutput {
 }
 /// See [`LdapServerMetadataOutput`](crate::model::LdapServerMetadataOutput).
 pub mod ldap_server_metadata_output {
-
+    
     /// A builder for [`LdapServerMetadataOutput`](crate::model::LdapServerMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -667,17 +636,13 @@ pub mod ldap_server_metadata_output {
         /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
         pub fn hosts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.hosts.unwrap_or_default();
-            v.push(input.into());
-            self.hosts = Some(v);
-            self
+                            v.push(input.into());
+                            self.hosts = Some(v);
+                            self
         }
         /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
-        pub fn set_hosts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.hosts = input;
-            self
+        pub fn set_hosts(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.hosts = input; self
         }
         /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn role_base(mut self, input: impl Into<std::string::String>) -> Self {
@@ -686,8 +651,7 @@ pub mod ldap_server_metadata_output {
         }
         /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn set_role_base(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_base = input;
-            self
+            self.role_base = input; self
         }
         /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -696,8 +660,7 @@ pub mod ldap_server_metadata_output {
         }
         /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_name = input;
-            self
+            self.role_name = input; self
         }
         /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
         pub fn role_search_matching(mut self, input: impl Into<std::string::String>) -> Self {
@@ -705,12 +668,8 @@ pub mod ldap_server_metadata_output {
             self
         }
         /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
-        pub fn set_role_search_matching(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.role_search_matching = input;
-            self
+        pub fn set_role_search_matching(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_search_matching = input; self
         }
         /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
         pub fn role_search_subtree(mut self, input: bool) -> Self {
@@ -719,8 +678,7 @@ pub mod ldap_server_metadata_output {
         }
         /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
         pub fn set_role_search_subtree(mut self, input: std::option::Option<bool>) -> Self {
-            self.role_search_subtree = input;
-            self
+            self.role_search_subtree = input; self
         }
         /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
         pub fn service_account_username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -728,12 +686,8 @@ pub mod ldap_server_metadata_output {
             self
         }
         /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
-        pub fn set_service_account_username(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_account_username = input;
-            self
+        pub fn set_service_account_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_account_username = input; self
         }
         /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn user_base(mut self, input: impl Into<std::string::String>) -> Self {
@@ -742,8 +696,7 @@ pub mod ldap_server_metadata_output {
         }
         /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn set_user_base(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_base = input;
-            self
+            self.user_base = input; self
         }
         /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
         pub fn user_role_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -751,12 +704,8 @@ pub mod ldap_server_metadata_output {
             self
         }
         /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
-        pub fn set_user_role_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.user_role_name = input;
-            self
+        pub fn set_user_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_role_name = input; self
         }
         /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn user_search_matching(mut self, input: impl Into<std::string::String>) -> Self {
@@ -764,12 +713,8 @@ pub mod ldap_server_metadata_output {
             self
         }
         /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
-        pub fn set_user_search_matching(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.user_search_matching = input;
-            self
+        pub fn set_user_search_matching(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_search_matching = input; self
         }
         /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
         pub fn user_search_subtree(mut self, input: bool) -> Self {
@@ -778,25 +723,38 @@ pub mod ldap_server_metadata_output {
         }
         /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
         pub fn set_user_search_subtree(mut self, input: std::option::Option<bool>) -> Self {
-            self.user_search_subtree = input;
-            self
+            self.user_search_subtree = input; self
         }
         /// Consumes the builder and constructs a [`LdapServerMetadataOutput`](crate::model::LdapServerMetadataOutput).
         pub fn build(self) -> crate::model::LdapServerMetadataOutput {
             crate::model::LdapServerMetadataOutput {
-                hosts: self.hosts,
-                role_base: self.role_base,
-                role_name: self.role_name,
-                role_search_matching: self.role_search_matching,
-                role_search_subtree: self.role_search_subtree.unwrap_or_default(),
-                service_account_username: self.service_account_username,
-                user_base: self.user_base,
-                user_role_name: self.user_role_name,
-                user_search_matching: self.user_search_matching,
-                user_search_subtree: self.user_search_subtree.unwrap_or_default(),
+                hosts: self.hosts
+                ,
+                role_base: self.role_base
+                ,
+                role_name: self.role_name
+                ,
+                role_search_matching: self.role_search_matching
+                ,
+                role_search_subtree: self.role_search_subtree
+                    .unwrap_or_default()
+                ,
+                service_account_username: self.service_account_username
+                ,
+                user_base: self.user_base
+                ,
+                user_role_name: self.user_role_name
+                ,
+                user_search_matching: self.user_search_matching
+                ,
+                user_search_subtree: self.user_search_subtree
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl LdapServerMetadataOutput {
     /// Creates a new builder-style object to manufacture [`LdapServerMetadataOutput`](crate::model::LdapServerMetadataOutput).
@@ -810,7 +768,7 @@ impl LdapServerMetadataOutput {
 /// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigurationId {
+pub struct ConfigurationId  {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -820,7 +778,7 @@ pub struct ConfigurationId {
 }
 impl ConfigurationId {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The revision number of the configuration.</p>
@@ -830,7 +788,7 @@ impl ConfigurationId {
 }
 /// See [`ConfigurationId`](crate::model::ConfigurationId).
 pub mod configuration_id {
-
+    
     /// A builder for [`ConfigurationId`](crate::model::ConfigurationId).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -845,8 +803,7 @@ pub mod configuration_id {
         }
         /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The revision number of the configuration.</p>
         pub fn revision(mut self, input: i32) -> Self {
@@ -855,17 +812,21 @@ pub mod configuration_id {
         }
         /// <p>The revision number of the configuration.</p>
         pub fn set_revision(mut self, input: std::option::Option<i32>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// Consumes the builder and constructs a [`ConfigurationId`](crate::model::ConfigurationId).
         pub fn build(self) -> crate::model::ConfigurationId {
             crate::model::ConfigurationId {
-                id: self.id,
-                revision: self.revision.unwrap_or_default(),
+                id: self.id
+                ,
+                revision: self.revision
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigurationId {
     /// Creates a new builder-style object to manufacture [`ConfigurationId`](crate::model::ConfigurationId).
@@ -880,9 +841,9 @@ impl ConfigurationId {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let authenticationstrategy = unimplemented!();
 /// match authenticationstrategy {
@@ -904,60 +865,52 @@ impl ConfigurationId {
 /// Specifically, when `authenticationstrategy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AuthenticationStrategy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AuthenticationStrategy {
     #[allow(missing_docs)] // documentation missing in model
     Ldap,
     #[allow(missing_docs)] // documentation missing in model
     Simple,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AuthenticationStrategy {
     fn from(s: &str) -> Self {
         match s {
             "LDAP" => AuthenticationStrategy::Ldap,
             "SIMPLE" => AuthenticationStrategy::Simple,
-            other => {
-                AuthenticationStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AuthenticationStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AuthenticationStrategy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthenticationStrategy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AuthenticationStrategy::from(s))
+                }
+            }
 impl AuthenticationStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthenticationStrategy::Ldap => "LDAP",
             AuthenticationStrategy::Simple => "SIMPLE",
-            AuthenticationStrategy::Unknown(value) => value.as_str(),
+            AuthenticationStrategy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LDAP", "SIMPLE"]
+        &[
+            "LDAP", "SIMPLE"
+        ]
     }
 }
 impl AsRef<str> for AuthenticationStrategy {
@@ -971,7 +924,7 @@ impl AsRef<str> for AuthenticationStrategy {
 /// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LdapServerMetadataInput {
+pub struct LdapServerMetadataInput  {
     /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
     #[doc(hidden)]
     pub hosts: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1008,19 +961,19 @@ pub struct LdapServerMetadataInput {
 }
 impl LdapServerMetadataInput {
     /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
-    pub fn hosts(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn hosts(&self) -> std::option::Option<& [std::string::String]> {
         self.hosts.as_deref()
     }
     /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
-    pub fn role_base(&self) -> std::option::Option<&str> {
+    pub fn role_base(&self) -> std::option::Option<& str> {
         self.role_base.as_deref()
     }
     /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
-    pub fn role_name(&self) -> std::option::Option<&str> {
+    pub fn role_name(&self) -> std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
-    pub fn role_search_matching(&self) -> std::option::Option<&str> {
+    pub fn role_search_matching(&self) -> std::option::Option<& str> {
         self.role_search_matching.as_deref()
     }
     /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
@@ -1028,23 +981,23 @@ impl LdapServerMetadataInput {
         self.role_search_subtree
     }
     /// <p>Service account password. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
-    pub fn service_account_password(&self) -> std::option::Option<&str> {
+    pub fn service_account_password(&self) -> std::option::Option<& str> {
         self.service_account_password.as_deref()
     }
     /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
-    pub fn service_account_username(&self) -> std::option::Option<&str> {
+    pub fn service_account_username(&self) -> std::option::Option<& str> {
         self.service_account_username.as_deref()
     }
     /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
-    pub fn user_base(&self) -> std::option::Option<&str> {
+    pub fn user_base(&self) -> std::option::Option<& str> {
         self.user_base.as_deref()
     }
     /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
-    pub fn user_role_name(&self) -> std::option::Option<&str> {
+    pub fn user_role_name(&self) -> std::option::Option<& str> {
         self.user_role_name.as_deref()
     }
     /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
-    pub fn user_search_matching(&self) -> std::option::Option<&str> {
+    pub fn user_search_matching(&self) -> std::option::Option<& str> {
         self.user_search_matching.as_deref()
     }
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
@@ -1054,7 +1007,7 @@ impl LdapServerMetadataInput {
 }
 /// See [`LdapServerMetadataInput`](crate::model::LdapServerMetadataInput).
 pub mod ldap_server_metadata_input {
-
+    
     /// A builder for [`LdapServerMetadataInput`](crate::model::LdapServerMetadataInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1078,17 +1031,13 @@ pub mod ldap_server_metadata_input {
         /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
         pub fn hosts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.hosts.unwrap_or_default();
-            v.push(input.into());
-            self.hosts = Some(v);
-            self
+                            v.push(input.into());
+                            self.hosts = Some(v);
+                            self
         }
         /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
-        pub fn set_hosts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.hosts = input;
-            self
+        pub fn set_hosts(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.hosts = input; self
         }
         /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn role_base(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1097,8 +1046,7 @@ pub mod ldap_server_metadata_input {
         }
         /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn set_role_base(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_base = input;
-            self
+            self.role_base = input; self
         }
         /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1107,8 +1055,7 @@ pub mod ldap_server_metadata_input {
         }
         /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_name = input;
-            self
+            self.role_name = input; self
         }
         /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
         pub fn role_search_matching(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1116,12 +1063,8 @@ pub mod ldap_server_metadata_input {
             self
         }
         /// <p>The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.</p>
-        pub fn set_role_search_matching(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.role_search_matching = input;
-            self
+        pub fn set_role_search_matching(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_search_matching = input; self
         }
         /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
         pub fn role_search_subtree(mut self, input: bool) -> Self {
@@ -1130,8 +1073,7 @@ pub mod ldap_server_metadata_input {
         }
         /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
         pub fn set_role_search_subtree(mut self, input: std::option::Option<bool>) -> Self {
-            self.role_search_subtree = input;
-            self
+            self.role_search_subtree = input; self
         }
         /// <p>Service account password. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
         pub fn service_account_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1139,12 +1081,8 @@ pub mod ldap_server_metadata_input {
             self
         }
         /// <p>Service account password. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
-        pub fn set_service_account_password(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_account_password = input;
-            self
+        pub fn set_service_account_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_account_password = input; self
         }
         /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
         pub fn service_account_username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1152,12 +1090,8 @@ pub mod ldap_server_metadata_input {
             self
         }
         /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
-        pub fn set_service_account_username(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_account_username = input;
-            self
+        pub fn set_service_account_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_account_username = input; self
         }
         /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn user_base(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1166,8 +1100,7 @@ pub mod ldap_server_metadata_input {
         }
         /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn set_user_base(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_base = input;
-            self
+            self.user_base = input; self
         }
         /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
         pub fn user_role_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1175,12 +1108,8 @@ pub mod ldap_server_metadata_input {
             self
         }
         /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
-        pub fn set_user_role_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.user_role_name = input;
-            self
+        pub fn set_user_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_role_name = input; self
         }
         /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn user_search_matching(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1188,12 +1117,8 @@ pub mod ldap_server_metadata_input {
             self
         }
         /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
-        pub fn set_user_search_matching(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.user_search_matching = input;
-            self
+        pub fn set_user_search_matching(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_search_matching = input; self
         }
         /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
         pub fn user_search_subtree(mut self, input: bool) -> Self {
@@ -1202,26 +1127,40 @@ pub mod ldap_server_metadata_input {
         }
         /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
         pub fn set_user_search_subtree(mut self, input: std::option::Option<bool>) -> Self {
-            self.user_search_subtree = input;
-            self
+            self.user_search_subtree = input; self
         }
         /// Consumes the builder and constructs a [`LdapServerMetadataInput`](crate::model::LdapServerMetadataInput).
         pub fn build(self) -> crate::model::LdapServerMetadataInput {
             crate::model::LdapServerMetadataInput {
-                hosts: self.hosts,
-                role_base: self.role_base,
-                role_name: self.role_name,
-                role_search_matching: self.role_search_matching,
-                role_search_subtree: self.role_search_subtree.unwrap_or_default(),
-                service_account_password: self.service_account_password,
-                service_account_username: self.service_account_username,
-                user_base: self.user_base,
-                user_role_name: self.user_role_name,
-                user_search_matching: self.user_search_matching,
-                user_search_subtree: self.user_search_subtree.unwrap_or_default(),
+                hosts: self.hosts
+                ,
+                role_base: self.role_base
+                ,
+                role_name: self.role_name
+                ,
+                role_search_matching: self.role_search_matching
+                ,
+                role_search_subtree: self.role_search_subtree
+                    .unwrap_or_default()
+                ,
+                service_account_password: self.service_account_password
+                ,
+                service_account_username: self.service_account_username
+                ,
+                user_base: self.user_base
+                ,
+                user_role_name: self.user_role_name
+                ,
+                user_search_matching: self.user_search_matching
+                ,
+                user_search_subtree: self.user_search_subtree
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl LdapServerMetadataInput {
     /// Creates a new builder-style object to manufacture [`LdapServerMetadataInput`](crate::model::LdapServerMetadataInput).
@@ -1233,7 +1172,7 @@ impl LdapServerMetadataInput {
 /// <p>Returns a list of all broker users. Does not apply to RabbitMQ brokers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserSummary {
+pub struct UserSummary  {
     /// <p>The type of change pending for the broker user.</p>
     #[doc(hidden)]
     pub pending_change: std::option::Option<crate::model::ChangeType>,
@@ -1243,17 +1182,17 @@ pub struct UserSummary {
 }
 impl UserSummary {
     /// <p>The type of change pending for the broker user.</p>
-    pub fn pending_change(&self) -> std::option::Option<&crate::model::ChangeType> {
+    pub fn pending_change(&self) -> std::option::Option<& crate::model::ChangeType> {
         self.pending_change.as_ref()
     }
     /// <p>Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
 }
 /// See [`UserSummary`](crate::model::UserSummary).
 pub mod user_summary {
-
+    
     /// A builder for [`UserSummary`](crate::model::UserSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1267,12 +1206,8 @@ pub mod user_summary {
             self
         }
         /// <p>The type of change pending for the broker user.</p>
-        pub fn set_pending_change(
-            mut self,
-            input: std::option::Option<crate::model::ChangeType>,
-        ) -> Self {
-            self.pending_change = input;
-            self
+        pub fn set_pending_change(mut self, input: std::option::Option<crate::model::ChangeType>) -> Self {
+            self.pending_change = input; self
         }
         /// <p>Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1281,17 +1216,20 @@ pub mod user_summary {
         }
         /// <p>Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.username = input;
-            self
+            self.username = input; self
         }
         /// Consumes the builder and constructs a [`UserSummary`](crate::model::UserSummary).
         pub fn build(self) -> crate::model::UserSummary {
             crate::model::UserSummary {
-                pending_change: self.pending_change,
-                username: self.username,
+                pending_change: self.pending_change
+                ,
+                username: self.username
+                ,
             }
         }
     }
+    
+    
 }
 impl UserSummary {
     /// Creates a new builder-style object to manufacture [`UserSummary`](crate::model::UserSummary).
@@ -1306,9 +1244,9 @@ impl UserSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let changetype = unimplemented!();
 /// match changetype {
@@ -1331,22 +1269,14 @@ impl UserSummary {
 /// Specifically, when `changetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChangeType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The type of change pending for the ActiveMQ user.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChangeType {
     #[allow(missing_docs)] // documentation missing in model
     Create,
@@ -1355,7 +1285,7 @@ pub enum ChangeType {
     #[allow(missing_docs)] // documentation missing in model
     Update,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChangeType {
     fn from(s: &str) -> Self {
@@ -1363,17 +1293,17 @@ impl std::convert::From<&str> for ChangeType {
             "CREATE" => ChangeType::Create,
             "DELETE" => ChangeType::Delete,
             "UPDATE" => ChangeType::Update,
-            other => ChangeType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ChangeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChangeType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChangeType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChangeType::from(s))
+                }
+            }
 impl ChangeType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1381,12 +1311,14 @@ impl ChangeType {
             ChangeType::Create => "CREATE",
             ChangeType::Delete => "DELETE",
             ChangeType::Update => "UPDATE",
-            ChangeType::Unknown(value) => value.as_str(),
+            ChangeType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATE", "DELETE", "UPDATE"]
+        &[
+            "CREATE", "DELETE", "UPDATE"
+        ]
     }
 }
 impl AsRef<str> for ChangeType {
@@ -1398,7 +1330,7 @@ impl AsRef<str> for ChangeType {
 /// <p>Returns information about all configurations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Configuration {
+pub struct Configuration  {
     /// <p>Required. The ARN of the configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1428,65 +1360,58 @@ pub struct Configuration {
     pub name: std::option::Option<std::string::String>,
     /// <p>The list of all tags associated with this configuration.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Configuration {
     /// <p>Required. The ARN of the configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
-    pub fn authentication_strategy(
-        &self,
-    ) -> std::option::Option<&crate::model::AuthenticationStrategy> {
+    pub fn authentication_strategy(&self) -> std::option::Option<& crate::model::AuthenticationStrategy> {
         self.authentication_strategy.as_ref()
     }
     /// <p>Required. The date and time of the configuration revision.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>Required. The description of the configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
-    pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
+    pub fn engine_type(&self) -> std::option::Option<& crate::model::EngineType> {
         self.engine_type.as_ref()
     }
     /// <p>Required. The broker engine's version. For a list of supported engine versions, see, <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Required. The latest revision of the configuration.</p>
-    pub fn latest_revision(&self) -> std::option::Option<&crate::model::ConfigurationRevision> {
+    pub fn latest_revision(&self) -> std::option::Option<& crate::model::ConfigurationRevision> {
         self.latest_revision.as_ref()
     }
     /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The list of all tags associated with this configuration.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`Configuration`](crate::model::Configuration).
 pub mod configuration {
-
+    
     /// A builder for [`Configuration`](crate::model::Configuration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) authentication_strategy:
-            std::option::Option<crate::model::AuthenticationStrategy>,
+        pub(crate) authentication_strategy: std::option::Option<crate::model::AuthenticationStrategy>,
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) engine_type: std::option::Option<crate::model::EngineType>,
@@ -1494,9 +1419,7 @@ pub mod configuration {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Required. The ARN of the configuration.</p>
@@ -1506,24 +1429,16 @@ pub mod configuration {
         }
         /// <p>Required. The ARN of the configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
-        pub fn authentication_strategy(
-            mut self,
-            input: crate::model::AuthenticationStrategy,
-        ) -> Self {
+        pub fn authentication_strategy(mut self, input: crate::model::AuthenticationStrategy) -> Self {
             self.authentication_strategy = Some(input);
             self
         }
         /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
-        pub fn set_authentication_strategy(
-            mut self,
-            input: std::option::Option<crate::model::AuthenticationStrategy>,
-        ) -> Self {
-            self.authentication_strategy = input;
-            self
+        pub fn set_authentication_strategy(mut self, input: std::option::Option<crate::model::AuthenticationStrategy>) -> Self {
+            self.authentication_strategy = input; self
         }
         /// <p>Required. The date and time of the configuration revision.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1531,12 +1446,8 @@ pub mod configuration {
             self
         }
         /// <p>Required. The date and time of the configuration revision.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// <p>Required. The description of the configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1545,8 +1456,7 @@ pub mod configuration {
         }
         /// <p>Required. The description of the configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
         pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
@@ -1554,12 +1464,8 @@ pub mod configuration {
             self
         }
         /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
-        pub fn set_engine_type(
-            mut self,
-            input: std::option::Option<crate::model::EngineType>,
-        ) -> Self {
-            self.engine_type = input;
-            self
+        pub fn set_engine_type(mut self, input: std::option::Option<crate::model::EngineType>) -> Self {
+            self.engine_type = input; self
         }
         /// <p>Required. The broker engine's version. For a list of supported engine versions, see, <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1567,12 +1473,8 @@ pub mod configuration {
             self
         }
         /// <p>Required. The broker engine's version. For a list of supported engine versions, see, <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-        pub fn set_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.engine_version = input;
-            self
+        pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine_version = input; self
         }
         /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1581,8 +1483,7 @@ pub mod configuration {
         }
         /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Required. The latest revision of the configuration.</p>
         pub fn latest_revision(mut self, input: crate::model::ConfigurationRevision) -> Self {
@@ -1590,12 +1491,8 @@ pub mod configuration {
             self
         }
         /// <p>Required. The latest revision of the configuration.</p>
-        pub fn set_latest_revision(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationRevision>,
-        ) -> Self {
-            self.latest_revision = input;
-            self
+        pub fn set_latest_revision(mut self, input: std::option::Option<crate::model::ConfigurationRevision>) -> Self {
+            self.latest_revision = input; self
         }
         /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1604,50 +1501,51 @@ pub mod configuration {
         }
         /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of all tags associated with this configuration.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of all tags associated with this configuration.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`Configuration`](crate::model::Configuration).
         pub fn build(self) -> crate::model::Configuration {
             crate::model::Configuration {
-                arn: self.arn,
-                authentication_strategy: self.authentication_strategy,
-                created: self.created,
-                description: self.description,
-                engine_type: self.engine_type,
-                engine_version: self.engine_version,
-                id: self.id,
-                latest_revision: self.latest_revision,
-                name: self.name,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                authentication_strategy: self.authentication_strategy
+                ,
+                created: self.created
+                ,
+                description: self.description
+                ,
+                engine_type: self.engine_type
+                ,
+                engine_version: self.engine_version
+                ,
+                id: self.id
+                ,
+                latest_revision: self.latest_revision
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl Configuration {
     /// Creates a new builder-style object to manufacture [`Configuration`](crate::model::Configuration).
@@ -1662,9 +1560,9 @@ impl Configuration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let enginetype = unimplemented!();
 /// match enginetype {
@@ -1686,58 +1584,52 @@ impl Configuration {
 /// Specifically, when `enginetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EngineType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The type of broker engine. Amazon MQ supports ActiveMQ and RabbitMQ.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EngineType {
     #[allow(missing_docs)] // documentation missing in model
     Activemq,
     #[allow(missing_docs)] // documentation missing in model
     Rabbitmq,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EngineType {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVEMQ" => EngineType::Activemq,
             "RABBITMQ" => EngineType::Rabbitmq,
-            other => EngineType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EngineType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EngineType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EngineType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EngineType::from(s))
+                }
+            }
 impl EngineType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EngineType::Activemq => "ACTIVEMQ",
             EngineType::Rabbitmq => "RABBITMQ",
-            EngineType::Unknown(value) => value.as_str(),
+            EngineType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVEMQ", "RABBITMQ"]
+        &[
+            "ACTIVEMQ", "RABBITMQ"
+        ]
     }
 }
 impl AsRef<str> for EngineType {
@@ -1749,7 +1641,7 @@ impl AsRef<str> for EngineType {
 /// <p>Returns information about all brokers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BrokerSummary {
+pub struct BrokerSummary  {
     /// <p>The broker's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub broker_arn: std::option::Option<std::string::String>,
@@ -1777,41 +1669,41 @@ pub struct BrokerSummary {
 }
 impl BrokerSummary {
     /// <p>The broker's Amazon Resource Name (ARN).</p>
-    pub fn broker_arn(&self) -> std::option::Option<&str> {
+    pub fn broker_arn(&self) -> std::option::Option<& str> {
         self.broker_arn.as_deref()
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-    pub fn broker_id(&self) -> std::option::Option<&str> {
+    pub fn broker_id(&self) -> std::option::Option<& str> {
         self.broker_id.as_deref()
     }
     /// <p>The broker's name. This value is unique in your AWS account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
-    pub fn broker_name(&self) -> std::option::Option<&str> {
+    pub fn broker_name(&self) -> std::option::Option<& str> {
         self.broker_name.as_deref()
     }
     /// <p>The broker's status.</p>
-    pub fn broker_state(&self) -> std::option::Option<&crate::model::BrokerState> {
+    pub fn broker_state(&self) -> std::option::Option<& crate::model::BrokerState> {
         self.broker_state.as_ref()
     }
     /// <p>The time when the broker was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The broker's deployment mode.</p>
-    pub fn deployment_mode(&self) -> std::option::Option<&crate::model::DeploymentMode> {
+    pub fn deployment_mode(&self) -> std::option::Option<& crate::model::DeploymentMode> {
         self.deployment_mode.as_ref()
     }
     /// <p>The type of broker engine.</p>
-    pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
+    pub fn engine_type(&self) -> std::option::Option<& crate::model::EngineType> {
         self.engine_type.as_ref()
     }
     /// <p>The broker's instance type.</p>
-    pub fn host_instance_type(&self) -> std::option::Option<&str> {
+    pub fn host_instance_type(&self) -> std::option::Option<& str> {
         self.host_instance_type.as_deref()
     }
 }
 /// See [`BrokerSummary`](crate::model::BrokerSummary).
 pub mod broker_summary {
-
+    
     /// A builder for [`BrokerSummary`](crate::model::BrokerSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1832,8 +1724,7 @@ pub mod broker_summary {
         }
         /// <p>The broker's Amazon Resource Name (ARN).</p>
         pub fn set_broker_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.broker_arn = input;
-            self
+            self.broker_arn = input; self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1842,8 +1733,7 @@ pub mod broker_summary {
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn set_broker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.broker_id = input;
-            self
+            self.broker_id = input; self
         }
         /// <p>The broker's name. This value is unique in your AWS account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
         pub fn broker_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1852,8 +1742,7 @@ pub mod broker_summary {
         }
         /// <p>The broker's name. This value is unique in your AWS account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
         pub fn set_broker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.broker_name = input;
-            self
+            self.broker_name = input; self
         }
         /// <p>The broker's status.</p>
         pub fn broker_state(mut self, input: crate::model::BrokerState) -> Self {
@@ -1861,12 +1750,8 @@ pub mod broker_summary {
             self
         }
         /// <p>The broker's status.</p>
-        pub fn set_broker_state(
-            mut self,
-            input: std::option::Option<crate::model::BrokerState>,
-        ) -> Self {
-            self.broker_state = input;
-            self
+        pub fn set_broker_state(mut self, input: std::option::Option<crate::model::BrokerState>) -> Self {
+            self.broker_state = input; self
         }
         /// <p>The time when the broker was created.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1874,12 +1759,8 @@ pub mod broker_summary {
             self
         }
         /// <p>The time when the broker was created.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// <p>The broker's deployment mode.</p>
         pub fn deployment_mode(mut self, input: crate::model::DeploymentMode) -> Self {
@@ -1887,12 +1768,8 @@ pub mod broker_summary {
             self
         }
         /// <p>The broker's deployment mode.</p>
-        pub fn set_deployment_mode(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentMode>,
-        ) -> Self {
-            self.deployment_mode = input;
-            self
+        pub fn set_deployment_mode(mut self, input: std::option::Option<crate::model::DeploymentMode>) -> Self {
+            self.deployment_mode = input; self
         }
         /// <p>The type of broker engine.</p>
         pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
@@ -1900,12 +1777,8 @@ pub mod broker_summary {
             self
         }
         /// <p>The type of broker engine.</p>
-        pub fn set_engine_type(
-            mut self,
-            input: std::option::Option<crate::model::EngineType>,
-        ) -> Self {
-            self.engine_type = input;
-            self
+        pub fn set_engine_type(mut self, input: std::option::Option<crate::model::EngineType>) -> Self {
+            self.engine_type = input; self
         }
         /// <p>The broker's instance type.</p>
         pub fn host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1913,27 +1786,33 @@ pub mod broker_summary {
             self
         }
         /// <p>The broker's instance type.</p>
-        pub fn set_host_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.host_instance_type = input;
-            self
+        pub fn set_host_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host_instance_type = input; self
         }
         /// Consumes the builder and constructs a [`BrokerSummary`](crate::model::BrokerSummary).
         pub fn build(self) -> crate::model::BrokerSummary {
             crate::model::BrokerSummary {
-                broker_arn: self.broker_arn,
-                broker_id: self.broker_id,
-                broker_name: self.broker_name,
-                broker_state: self.broker_state,
-                created: self.created,
-                deployment_mode: self.deployment_mode,
-                engine_type: self.engine_type,
-                host_instance_type: self.host_instance_type,
+                broker_arn: self.broker_arn
+                ,
+                broker_id: self.broker_id
+                ,
+                broker_name: self.broker_name
+                ,
+                broker_state: self.broker_state
+                ,
+                created: self.created
+                ,
+                deployment_mode: self.deployment_mode
+                ,
+                engine_type: self.engine_type
+                ,
+                host_instance_type: self.host_instance_type
+                ,
             }
         }
     }
+    
+    
 }
 impl BrokerSummary {
     /// Creates a new builder-style object to manufacture [`BrokerSummary`](crate::model::BrokerSummary).
@@ -1948,9 +1827,9 @@ impl BrokerSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deploymentmode = unimplemented!();
 /// match deploymentmode {
@@ -1973,22 +1852,14 @@ impl BrokerSummary {
 /// Specifically, when `deploymentmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeploymentMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The broker's deployment mode.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeploymentMode {
     #[allow(missing_docs)] // documentation missing in model
     ActiveStandbyMultiAz,
@@ -1997,7 +1868,7 @@ pub enum DeploymentMode {
     #[allow(missing_docs)] // documentation missing in model
     SingleInstance,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentMode {
     fn from(s: &str) -> Self {
@@ -2005,17 +1876,17 @@ impl std::convert::From<&str> for DeploymentMode {
             "ACTIVE_STANDBY_MULTI_AZ" => DeploymentMode::ActiveStandbyMultiAz,
             "CLUSTER_MULTI_AZ" => DeploymentMode::ClusterMultiAz,
             "SINGLE_INSTANCE" => DeploymentMode::SingleInstance,
-            other => DeploymentMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DeploymentMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeploymentMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeploymentMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeploymentMode::from(s))
+                }
+            }
 impl DeploymentMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2023,15 +1894,13 @@ impl DeploymentMode {
             DeploymentMode::ActiveStandbyMultiAz => "ACTIVE_STANDBY_MULTI_AZ",
             DeploymentMode::ClusterMultiAz => "CLUSTER_MULTI_AZ",
             DeploymentMode::SingleInstance => "SINGLE_INSTANCE",
-            DeploymentMode::Unknown(value) => value.as_str(),
+            DeploymentMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE_STANDBY_MULTI_AZ",
-            "CLUSTER_MULTI_AZ",
-            "SINGLE_INSTANCE",
+            "ACTIVE_STANDBY_MULTI_AZ", "CLUSTER_MULTI_AZ", "SINGLE_INSTANCE"
         ]
     }
 }
@@ -2047,9 +1916,9 @@ impl AsRef<str> for DeploymentMode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let brokerstate = unimplemented!();
 /// match brokerstate {
@@ -2075,22 +1944,14 @@ impl AsRef<str> for DeploymentMode {
 /// Specifically, when `brokerstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BrokerState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The broker's status.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BrokerState {
     #[allow(missing_docs)] // documentation missing in model
     CreationFailed,
@@ -2105,7 +1966,7 @@ pub enum BrokerState {
     #[allow(missing_docs)] // documentation missing in model
     Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BrokerState {
     fn from(s: &str) -> Self {
@@ -2116,17 +1977,17 @@ impl std::convert::From<&str> for BrokerState {
             "DELETION_IN_PROGRESS" => BrokerState::DeletionInProgress,
             "REBOOT_IN_PROGRESS" => BrokerState::RebootInProgress,
             "RUNNING" => BrokerState::Running,
-            other => BrokerState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BrokerState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BrokerState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BrokerState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BrokerState::from(s))
+                }
+            }
 impl BrokerState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2137,18 +1998,13 @@ impl BrokerState {
             BrokerState::DeletionInProgress => "DELETION_IN_PROGRESS",
             BrokerState::RebootInProgress => "REBOOT_IN_PROGRESS",
             BrokerState::Running => "RUNNING",
-            BrokerState::Unknown(value) => value.as_str(),
+            BrokerState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CREATION_FAILED",
-            "CREATION_IN_PROGRESS",
-            "CRITICAL_ACTION_REQUIRED",
-            "DELETION_IN_PROGRESS",
-            "REBOOT_IN_PROGRESS",
-            "RUNNING",
+            "CREATION_FAILED", "CREATION_IN_PROGRESS", "CRITICAL_ACTION_REQUIRED", "DELETION_IN_PROGRESS", "REBOOT_IN_PROGRESS", "RUNNING"
         ]
     }
 }
@@ -2161,7 +2017,7 @@ impl AsRef<str> for BrokerState {
 /// <p>Returns information about the status of the changes pending for the ActiveMQ user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserPendingChanges {
+pub struct UserPendingChanges  {
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     #[doc(hidden)]
     pub console_access: bool,
@@ -2178,17 +2034,17 @@ impl UserPendingChanges {
         self.console_access
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn groups(&self) -> std::option::Option<& [std::string::String]> {
         self.groups.as_deref()
     }
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
-    pub fn pending_change(&self) -> std::option::Option<&crate::model::ChangeType> {
+    pub fn pending_change(&self) -> std::option::Option<& crate::model::ChangeType> {
         self.pending_change.as_ref()
     }
 }
 /// See [`UserPendingChanges`](crate::model::UserPendingChanges).
 pub mod user_pending_changes {
-
+    
     /// A builder for [`UserPendingChanges`](crate::model::UserPendingChanges).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2204,8 +2060,7 @@ pub mod user_pending_changes {
         }
         /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
         pub fn set_console_access(mut self, input: std::option::Option<bool>) -> Self {
-            self.console_access = input;
-            self
+            self.console_access = input; self
         }
         /// Appends an item to `groups`.
         ///
@@ -2214,17 +2069,13 @@ pub mod user_pending_changes {
         /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
         pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
-            self.groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.groups = Some(v);
+                            self
         }
         /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-        pub fn set_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.groups = input;
-            self
+        pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.groups = input; self
         }
         /// <p>Required. The type of change pending for the ActiveMQ user.</p>
         pub fn pending_change(mut self, input: crate::model::ChangeType) -> Self {
@@ -2232,22 +2083,24 @@ pub mod user_pending_changes {
             self
         }
         /// <p>Required. The type of change pending for the ActiveMQ user.</p>
-        pub fn set_pending_change(
-            mut self,
-            input: std::option::Option<crate::model::ChangeType>,
-        ) -> Self {
-            self.pending_change = input;
-            self
+        pub fn set_pending_change(mut self, input: std::option::Option<crate::model::ChangeType>) -> Self {
+            self.pending_change = input; self
         }
         /// Consumes the builder and constructs a [`UserPendingChanges`](crate::model::UserPendingChanges).
         pub fn build(self) -> crate::model::UserPendingChanges {
             crate::model::UserPendingChanges {
-                console_access: self.console_access.unwrap_or_default(),
-                groups: self.groups,
-                pending_change: self.pending_change,
+                console_access: self.console_access
+                    .unwrap_or_default()
+                ,
+                groups: self.groups
+                ,
+                pending_change: self.pending_change
+                ,
             }
         }
     }
+    
+    
 }
 impl UserPendingChanges {
     /// Creates a new builder-style object to manufacture [`UserPendingChanges`](crate::model::UserPendingChanges).
@@ -2259,7 +2112,7 @@ impl UserPendingChanges {
 /// <p>Option for host instance type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BrokerInstanceOption {
+pub struct BrokerInstanceOption  {
     /// <p>The list of available az.</p>
     #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
@@ -2274,55 +2127,49 @@ pub struct BrokerInstanceOption {
     pub storage_type: std::option::Option<crate::model::BrokerStorageType>,
     /// <p>The list of supported deployment modes.</p>
     #[doc(hidden)]
-    pub supported_deployment_modes:
-        std::option::Option<std::vec::Vec<crate::model::DeploymentMode>>,
+    pub supported_deployment_modes: std::option::Option<std::vec::Vec<crate::model::DeploymentMode>>,
     /// <p>The list of supported engine versions.</p>
     #[doc(hidden)]
     pub supported_engine_versions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BrokerInstanceOption {
     /// <p>The list of available az.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[crate::model::AvailabilityZone]> {
+    pub fn availability_zones(&self) -> std::option::Option<& [crate::model::AvailabilityZone]> {
         self.availability_zones.as_deref()
     }
     /// <p>The broker's engine type.</p>
-    pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
+    pub fn engine_type(&self) -> std::option::Option<& crate::model::EngineType> {
         self.engine_type.as_ref()
     }
     /// <p>The broker's instance type.</p>
-    pub fn host_instance_type(&self) -> std::option::Option<&str> {
+    pub fn host_instance_type(&self) -> std::option::Option<& str> {
         self.host_instance_type.as_deref()
     }
     /// <p>The broker's storage type.</p>
-    pub fn storage_type(&self) -> std::option::Option<&crate::model::BrokerStorageType> {
+    pub fn storage_type(&self) -> std::option::Option<& crate::model::BrokerStorageType> {
         self.storage_type.as_ref()
     }
     /// <p>The list of supported deployment modes.</p>
-    pub fn supported_deployment_modes(
-        &self,
-    ) -> std::option::Option<&[crate::model::DeploymentMode]> {
+    pub fn supported_deployment_modes(&self) -> std::option::Option<& [crate::model::DeploymentMode]> {
         self.supported_deployment_modes.as_deref()
     }
     /// <p>The list of supported engine versions.</p>
-    pub fn supported_engine_versions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_engine_versions(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_engine_versions.as_deref()
     }
 }
 /// See [`BrokerInstanceOption`](crate::model::BrokerInstanceOption).
 pub mod broker_instance_option {
-
+    
     /// A builder for [`BrokerInstanceOption`](crate::model::BrokerInstanceOption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) availability_zones:
-            std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
+        pub(crate) availability_zones: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
         pub(crate) engine_type: std::option::Option<crate::model::EngineType>,
         pub(crate) host_instance_type: std::option::Option<std::string::String>,
         pub(crate) storage_type: std::option::Option<crate::model::BrokerStorageType>,
-        pub(crate) supported_deployment_modes:
-            std::option::Option<std::vec::Vec<crate::model::DeploymentMode>>,
-        pub(crate) supported_engine_versions:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) supported_deployment_modes: std::option::Option<std::vec::Vec<crate::model::DeploymentMode>>,
+        pub(crate) supported_engine_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `availability_zones`.
@@ -2332,17 +2179,13 @@ pub mod broker_instance_option {
         /// <p>The list of available az.</p>
         pub fn availability_zones(mut self, input: crate::model::AvailabilityZone) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input);
-            self.availability_zones = Some(v);
-            self
+                            v.push(input);
+                            self.availability_zones = Some(v);
+                            self
         }
         /// <p>The list of available az.</p>
-        pub fn set_availability_zones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
-        ) -> Self {
-            self.availability_zones = input;
-            self
+        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>) -> Self {
+            self.availability_zones = input; self
         }
         /// <p>The broker's engine type.</p>
         pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
@@ -2350,12 +2193,8 @@ pub mod broker_instance_option {
             self
         }
         /// <p>The broker's engine type.</p>
-        pub fn set_engine_type(
-            mut self,
-            input: std::option::Option<crate::model::EngineType>,
-        ) -> Self {
-            self.engine_type = input;
-            self
+        pub fn set_engine_type(mut self, input: std::option::Option<crate::model::EngineType>) -> Self {
+            self.engine_type = input; self
         }
         /// <p>The broker's instance type.</p>
         pub fn host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2363,12 +2202,8 @@ pub mod broker_instance_option {
             self
         }
         /// <p>The broker's instance type.</p>
-        pub fn set_host_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.host_instance_type = input;
-            self
+        pub fn set_host_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host_instance_type = input; self
         }
         /// <p>The broker's storage type.</p>
         pub fn storage_type(mut self, input: crate::model::BrokerStorageType) -> Self {
@@ -2376,12 +2211,8 @@ pub mod broker_instance_option {
             self
         }
         /// <p>The broker's storage type.</p>
-        pub fn set_storage_type(
-            mut self,
-            input: std::option::Option<crate::model::BrokerStorageType>,
-        ) -> Self {
-            self.storage_type = input;
-            self
+        pub fn set_storage_type(mut self, input: std::option::Option<crate::model::BrokerStorageType>) -> Self {
+            self.storage_type = input; self
         }
         /// Appends an item to `supported_deployment_modes`.
         ///
@@ -2390,17 +2221,13 @@ pub mod broker_instance_option {
         /// <p>The list of supported deployment modes.</p>
         pub fn supported_deployment_modes(mut self, input: crate::model::DeploymentMode) -> Self {
             let mut v = self.supported_deployment_modes.unwrap_or_default();
-            v.push(input);
-            self.supported_deployment_modes = Some(v);
-            self
+                            v.push(input);
+                            self.supported_deployment_modes = Some(v);
+                            self
         }
         /// <p>The list of supported deployment modes.</p>
-        pub fn set_supported_deployment_modes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeploymentMode>>,
-        ) -> Self {
-            self.supported_deployment_modes = input;
-            self
+        pub fn set_supported_deployment_modes(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeploymentMode>>) -> Self {
+            self.supported_deployment_modes = input; self
         }
         /// Appends an item to `supported_engine_versions`.
         ///
@@ -2409,30 +2236,34 @@ pub mod broker_instance_option {
         /// <p>The list of supported engine versions.</p>
         pub fn supported_engine_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_engine_versions.unwrap_or_default();
-            v.push(input.into());
-            self.supported_engine_versions = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_engine_versions = Some(v);
+                            self
         }
         /// <p>The list of supported engine versions.</p>
-        pub fn set_supported_engine_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_engine_versions = input;
-            self
+        pub fn set_supported_engine_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_engine_versions = input; self
         }
         /// Consumes the builder and constructs a [`BrokerInstanceOption`](crate::model::BrokerInstanceOption).
         pub fn build(self) -> crate::model::BrokerInstanceOption {
             crate::model::BrokerInstanceOption {
-                availability_zones: self.availability_zones,
-                engine_type: self.engine_type,
-                host_instance_type: self.host_instance_type,
-                storage_type: self.storage_type,
-                supported_deployment_modes: self.supported_deployment_modes,
-                supported_engine_versions: self.supported_engine_versions,
+                availability_zones: self.availability_zones
+                ,
+                engine_type: self.engine_type
+                ,
+                host_instance_type: self.host_instance_type
+                ,
+                storage_type: self.storage_type
+                ,
+                supported_deployment_modes: self.supported_deployment_modes
+                ,
+                supported_engine_versions: self.supported_engine_versions
+                ,
             }
         }
     }
+    
+    
 }
 impl BrokerInstanceOption {
     /// Creates a new builder-style object to manufacture [`BrokerInstanceOption`](crate::model::BrokerInstanceOption).
@@ -2447,9 +2278,9 @@ impl BrokerInstanceOption {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let brokerstoragetype = unimplemented!();
 /// match brokerstoragetype {
@@ -2471,60 +2302,52 @@ impl BrokerInstanceOption {
 /// Specifically, when `brokerstoragetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BrokerStorageType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The broker's storage type.</p> <important><p>EFS is not supported for RabbitMQ engine type.</p></important>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BrokerStorageType {
     #[allow(missing_docs)] // documentation missing in model
     Ebs,
     #[allow(missing_docs)] // documentation missing in model
     Efs,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BrokerStorageType {
     fn from(s: &str) -> Self {
         match s {
             "EBS" => BrokerStorageType::Ebs,
             "EFS" => BrokerStorageType::Efs,
-            other => {
-                BrokerStorageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => BrokerStorageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BrokerStorageType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BrokerStorageType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BrokerStorageType::from(s))
+                }
+            }
 impl BrokerStorageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BrokerStorageType::Ebs => "EBS",
             BrokerStorageType::Efs => "EFS",
-            BrokerStorageType::Unknown(value) => value.as_str(),
+            BrokerStorageType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EBS", "EFS"]
+        &[
+            "EBS", "EFS"
+        ]
     }
 }
 impl AsRef<str> for BrokerStorageType {
@@ -2536,20 +2359,20 @@ impl AsRef<str> for BrokerStorageType {
 /// <p>Name of the availability zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AvailabilityZone {
+pub struct AvailabilityZone  {
     /// <p>Id for the availability zone.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AvailabilityZone {
     /// <p>Id for the availability zone.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
 pub mod availability_zone {
-
+    
     /// A builder for [`AvailabilityZone`](crate::model::AvailabilityZone).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2563,14 +2386,18 @@ pub mod availability_zone {
         }
         /// <p>Id for the availability zone.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`AvailabilityZone`](crate::model::AvailabilityZone).
         pub fn build(self) -> crate::model::AvailabilityZone {
-            crate::model::AvailabilityZone { name: self.name }
+            crate::model::AvailabilityZone {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl AvailabilityZone {
     /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
@@ -2582,7 +2409,7 @@ impl AvailabilityZone {
 /// <p>Types of broker engines.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BrokerEngineType {
+pub struct BrokerEngineType  {
     /// <p>The broker's engine type.</p>
     #[doc(hidden)]
     pub engine_type: std::option::Option<crate::model::EngineType>,
@@ -2592,17 +2419,17 @@ pub struct BrokerEngineType {
 }
 impl BrokerEngineType {
     /// <p>The broker's engine type.</p>
-    pub fn engine_type(&self) -> std::option::Option<&crate::model::EngineType> {
+    pub fn engine_type(&self) -> std::option::Option<& crate::model::EngineType> {
         self.engine_type.as_ref()
     }
     /// <p>The list of engine versions.</p>
-    pub fn engine_versions(&self) -> std::option::Option<&[crate::model::EngineVersion]> {
+    pub fn engine_versions(&self) -> std::option::Option<& [crate::model::EngineVersion]> {
         self.engine_versions.as_deref()
     }
 }
 /// See [`BrokerEngineType`](crate::model::BrokerEngineType).
 pub mod broker_engine_type {
-
+    
     /// A builder for [`BrokerEngineType`](crate::model::BrokerEngineType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2616,12 +2443,8 @@ pub mod broker_engine_type {
             self
         }
         /// <p>The broker's engine type.</p>
-        pub fn set_engine_type(
-            mut self,
-            input: std::option::Option<crate::model::EngineType>,
-        ) -> Self {
-            self.engine_type = input;
-            self
+        pub fn set_engine_type(mut self, input: std::option::Option<crate::model::EngineType>) -> Self {
+            self.engine_type = input; self
         }
         /// Appends an item to `engine_versions`.
         ///
@@ -2630,26 +2453,26 @@ pub mod broker_engine_type {
         /// <p>The list of engine versions.</p>
         pub fn engine_versions(mut self, input: crate::model::EngineVersion) -> Self {
             let mut v = self.engine_versions.unwrap_or_default();
-            v.push(input);
-            self.engine_versions = Some(v);
-            self
+                            v.push(input);
+                            self.engine_versions = Some(v);
+                            self
         }
         /// <p>The list of engine versions.</p>
-        pub fn set_engine_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EngineVersion>>,
-        ) -> Self {
-            self.engine_versions = input;
-            self
+        pub fn set_engine_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::EngineVersion>>) -> Self {
+            self.engine_versions = input; self
         }
         /// Consumes the builder and constructs a [`BrokerEngineType`](crate::model::BrokerEngineType).
         pub fn build(self) -> crate::model::BrokerEngineType {
             crate::model::BrokerEngineType {
-                engine_type: self.engine_type,
-                engine_versions: self.engine_versions,
+                engine_type: self.engine_type
+                ,
+                engine_versions: self.engine_versions
+                ,
             }
         }
     }
+    
+    
 }
 impl BrokerEngineType {
     /// Creates a new builder-style object to manufacture [`BrokerEngineType`](crate::model::BrokerEngineType).
@@ -2661,20 +2484,20 @@ impl BrokerEngineType {
 /// <p>Id of the engine version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EngineVersion {
+pub struct EngineVersion  {
     /// <p>Id for the version.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl EngineVersion {
     /// <p>Id for the version.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`EngineVersion`](crate::model::EngineVersion).
 pub mod engine_version {
-
+    
     /// A builder for [`EngineVersion`](crate::model::EngineVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2688,14 +2511,18 @@ pub mod engine_version {
         }
         /// <p>Id for the version.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`EngineVersion`](crate::model::EngineVersion).
         pub fn build(self) -> crate::model::EngineVersion {
-            crate::model::EngineVersion { name: self.name }
+            crate::model::EngineVersion {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl EngineVersion {
     /// Creates a new builder-style object to manufacture [`EngineVersion`](crate::model::EngineVersion).
@@ -2707,7 +2534,7 @@ impl EngineVersion {
 /// <p>The list of information about logs currently enabled and pending to be deployed for the specified broker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogsSummary {
+pub struct LogsSummary  {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
     #[doc(hidden)]
     pub audit: bool,
@@ -2730,7 +2557,7 @@ impl LogsSummary {
         self.audit
     }
     /// <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
-    pub fn audit_log_group(&self) -> std::option::Option<&str> {
+    pub fn audit_log_group(&self) -> std::option::Option<& str> {
         self.audit_log_group.as_deref()
     }
     /// <p>Enables general logging.</p>
@@ -2738,17 +2565,17 @@ impl LogsSummary {
         self.general
     }
     /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
-    pub fn general_log_group(&self) -> std::option::Option<&str> {
+    pub fn general_log_group(&self) -> std::option::Option<& str> {
         self.general_log_group.as_deref()
     }
     /// <p>The list of information about logs pending to be deployed for the specified broker.</p>
-    pub fn pending(&self) -> std::option::Option<&crate::model::PendingLogs> {
+    pub fn pending(&self) -> std::option::Option<& crate::model::PendingLogs> {
         self.pending.as_ref()
     }
 }
 /// See [`LogsSummary`](crate::model::LogsSummary).
 pub mod logs_summary {
-
+    
     /// A builder for [`LogsSummary`](crate::model::LogsSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2766,8 +2593,7 @@ pub mod logs_summary {
         }
         /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
         pub fn set_audit(mut self, input: std::option::Option<bool>) -> Self {
-            self.audit = input;
-            self
+            self.audit = input; self
         }
         /// <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
         pub fn audit_log_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2775,12 +2601,8 @@ pub mod logs_summary {
             self
         }
         /// <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
-        pub fn set_audit_log_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.audit_log_group = input;
-            self
+        pub fn set_audit_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.audit_log_group = input; self
         }
         /// <p>Enables general logging.</p>
         pub fn general(mut self, input: bool) -> Self {
@@ -2789,8 +2611,7 @@ pub mod logs_summary {
         }
         /// <p>Enables general logging.</p>
         pub fn set_general(mut self, input: std::option::Option<bool>) -> Self {
-            self.general = input;
-            self
+            self.general = input; self
         }
         /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
         pub fn general_log_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2798,12 +2619,8 @@ pub mod logs_summary {
             self
         }
         /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
-        pub fn set_general_log_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.general_log_group = input;
-            self
+        pub fn set_general_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.general_log_group = input; self
         }
         /// <p>The list of information about logs pending to be deployed for the specified broker.</p>
         pub fn pending(mut self, input: crate::model::PendingLogs) -> Self {
@@ -2811,24 +2628,29 @@ pub mod logs_summary {
             self
         }
         /// <p>The list of information about logs pending to be deployed for the specified broker.</p>
-        pub fn set_pending(
-            mut self,
-            input: std::option::Option<crate::model::PendingLogs>,
-        ) -> Self {
-            self.pending = input;
-            self
+        pub fn set_pending(mut self, input: std::option::Option<crate::model::PendingLogs>) -> Self {
+            self.pending = input; self
         }
         /// Consumes the builder and constructs a [`LogsSummary`](crate::model::LogsSummary).
         pub fn build(self) -> crate::model::LogsSummary {
             crate::model::LogsSummary {
-                audit: self.audit.unwrap_or_default(),
-                audit_log_group: self.audit_log_group,
-                general: self.general.unwrap_or_default(),
-                general_log_group: self.general_log_group,
-                pending: self.pending,
+                audit: self.audit
+                    .unwrap_or_default()
+                ,
+                audit_log_group: self.audit_log_group
+                ,
+                general: self.general
+                    .unwrap_or_default()
+                ,
+                general_log_group: self.general_log_group
+                ,
+                pending: self.pending
+                ,
             }
         }
     }
+    
+    
 }
 impl LogsSummary {
     /// Creates a new builder-style object to manufacture [`LogsSummary`](crate::model::LogsSummary).
@@ -2840,7 +2662,7 @@ impl LogsSummary {
 /// <p>The list of information about logs to be enabled for the specified broker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PendingLogs {
+pub struct PendingLogs  {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
     #[doc(hidden)]
     pub audit: bool,
@@ -2860,7 +2682,7 @@ impl PendingLogs {
 }
 /// See [`PendingLogs`](crate::model::PendingLogs).
 pub mod pending_logs {
-
+    
     /// A builder for [`PendingLogs`](crate::model::PendingLogs).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2875,8 +2697,7 @@ pub mod pending_logs {
         }
         /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
         pub fn set_audit(mut self, input: std::option::Option<bool>) -> Self {
-            self.audit = input;
-            self
+            self.audit = input; self
         }
         /// <p>Enables general logging.</p>
         pub fn general(mut self, input: bool) -> Self {
@@ -2885,17 +2706,22 @@ pub mod pending_logs {
         }
         /// <p>Enables general logging.</p>
         pub fn set_general(mut self, input: std::option::Option<bool>) -> Self {
-            self.general = input;
-            self
+            self.general = input; self
         }
         /// Consumes the builder and constructs a [`PendingLogs`](crate::model::PendingLogs).
         pub fn build(self) -> crate::model::PendingLogs {
             crate::model::PendingLogs {
-                audit: self.audit.unwrap_or_default(),
-                general: self.general.unwrap_or_default(),
+                audit: self.audit
+                    .unwrap_or_default()
+                ,
+                general: self.general
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl PendingLogs {
     /// Creates a new builder-style object to manufacture [`PendingLogs`](crate::model::PendingLogs).
@@ -2906,11 +2732,11 @@ impl PendingLogs {
 
 /// <important>
 /// <p>Does not apply to RabbitMQ brokers.</p>
-/// </important>
+/// </important> 
 /// <p>Encryption options for the broker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EncryptionOptions {
+pub struct EncryptionOptions  {
     /// <p>The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -2920,7 +2746,7 @@ pub struct EncryptionOptions {
 }
 impl EncryptionOptions {
     /// <p>The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
@@ -2930,7 +2756,7 @@ impl EncryptionOptions {
 }
 /// See [`EncryptionOptions`](crate::model::EncryptionOptions).
 pub mod encryption_options {
-
+    
     /// A builder for [`EncryptionOptions`](crate::model::EncryptionOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2945,8 +2771,7 @@ pub mod encryption_options {
         }
         /// <p>The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
         pub fn use_aws_owned_key(mut self, input: bool) -> Self {
@@ -2955,17 +2780,21 @@ pub mod encryption_options {
         }
         /// <p>Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
         pub fn set_use_aws_owned_key(mut self, input: std::option::Option<bool>) -> Self {
-            self.use_aws_owned_key = input;
-            self
+            self.use_aws_owned_key = input; self
         }
         /// Consumes the builder and constructs a [`EncryptionOptions`](crate::model::EncryptionOptions).
         pub fn build(self) -> crate::model::EncryptionOptions {
             crate::model::EncryptionOptions {
-                kms_key_id: self.kms_key_id,
-                use_aws_owned_key: self.use_aws_owned_key.unwrap_or_default(),
+                kms_key_id: self.kms_key_id
+                ,
+                use_aws_owned_key: self.use_aws_owned_key
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl EncryptionOptions {
     /// Creates a new builder-style object to manufacture [`EncryptionOptions`](crate::model::EncryptionOptions).
@@ -2977,7 +2806,7 @@ impl EncryptionOptions {
 /// <p>Broker configuration information</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Configurations {
+pub struct Configurations  {
     /// <p>The broker's current configuration.</p>
     #[doc(hidden)]
     pub current: std::option::Option<crate::model::ConfigurationId>,
@@ -2990,21 +2819,21 @@ pub struct Configurations {
 }
 impl Configurations {
     /// <p>The broker's current configuration.</p>
-    pub fn current(&self) -> std::option::Option<&crate::model::ConfigurationId> {
+    pub fn current(&self) -> std::option::Option<& crate::model::ConfigurationId> {
         self.current.as_ref()
     }
     /// <p>The history of configurations applied to the broker.</p>
-    pub fn history(&self) -> std::option::Option<&[crate::model::ConfigurationId]> {
+    pub fn history(&self) -> std::option::Option<& [crate::model::ConfigurationId]> {
         self.history.as_deref()
     }
     /// <p>The broker's pending configuration.</p>
-    pub fn pending(&self) -> std::option::Option<&crate::model::ConfigurationId> {
+    pub fn pending(&self) -> std::option::Option<& crate::model::ConfigurationId> {
         self.pending.as_ref()
     }
 }
 /// See [`Configurations`](crate::model::Configurations).
 pub mod configurations {
-
+    
     /// A builder for [`Configurations`](crate::model::Configurations).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3019,12 +2848,8 @@ pub mod configurations {
             self
         }
         /// <p>The broker's current configuration.</p>
-        pub fn set_current(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationId>,
-        ) -> Self {
-            self.current = input;
-            self
+        pub fn set_current(mut self, input: std::option::Option<crate::model::ConfigurationId>) -> Self {
+            self.current = input; self
         }
         /// Appends an item to `history`.
         ///
@@ -3033,17 +2858,13 @@ pub mod configurations {
         /// <p>The history of configurations applied to the broker.</p>
         pub fn history(mut self, input: crate::model::ConfigurationId) -> Self {
             let mut v = self.history.unwrap_or_default();
-            v.push(input);
-            self.history = Some(v);
-            self
+                            v.push(input);
+                            self.history = Some(v);
+                            self
         }
         /// <p>The history of configurations applied to the broker.</p>
-        pub fn set_history(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConfigurationId>>,
-        ) -> Self {
-            self.history = input;
-            self
+        pub fn set_history(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConfigurationId>>) -> Self {
+            self.history = input; self
         }
         /// <p>The broker's pending configuration.</p>
         pub fn pending(mut self, input: crate::model::ConfigurationId) -> Self {
@@ -3051,22 +2872,23 @@ pub mod configurations {
             self
         }
         /// <p>The broker's pending configuration.</p>
-        pub fn set_pending(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationId>,
-        ) -> Self {
-            self.pending = input;
-            self
+        pub fn set_pending(mut self, input: std::option::Option<crate::model::ConfigurationId>) -> Self {
+            self.pending = input; self
         }
         /// Consumes the builder and constructs a [`Configurations`](crate::model::Configurations).
         pub fn build(self) -> crate::model::Configurations {
             crate::model::Configurations {
-                current: self.current,
-                history: self.history,
-                pending: self.pending,
+                current: self.current
+                ,
+                history: self.history
+                ,
+                pending: self.pending
+                ,
             }
         }
     }
+    
+    
 }
 impl Configurations {
     /// Creates a new builder-style object to manufacture [`Configurations`](crate::model::Configurations).
@@ -3078,7 +2900,7 @@ impl Configurations {
 /// <p>Returns information about all brokers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BrokerInstance {
+pub struct BrokerInstance  {
     /// <p>The brokers web console URL.</p>
     #[doc(hidden)]
     pub console_url: std::option::Option<std::string::String>,
@@ -3091,21 +2913,21 @@ pub struct BrokerInstance {
 }
 impl BrokerInstance {
     /// <p>The brokers web console URL.</p>
-    pub fn console_url(&self) -> std::option::Option<&str> {
+    pub fn console_url(&self) -> std::option::Option<& str> {
         self.console_url.as_deref()
     }
     /// <p>The broker's wire-level protocol endpoints.</p>
-    pub fn endpoints(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn endpoints(&self) -> std::option::Option<& [std::string::String]> {
         self.endpoints.as_deref()
     }
     /// <p>The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> std::option::Option<& str> {
         self.ip_address.as_deref()
     }
 }
 /// See [`BrokerInstance`](crate::model::BrokerInstance).
 pub mod broker_instance {
-
+    
     /// A builder for [`BrokerInstance`](crate::model::BrokerInstance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3121,8 +2943,7 @@ pub mod broker_instance {
         }
         /// <p>The brokers web console URL.</p>
         pub fn set_console_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.console_url = input;
-            self
+            self.console_url = input; self
         }
         /// Appends an item to `endpoints`.
         ///
@@ -3131,17 +2952,13 @@ pub mod broker_instance {
         /// <p>The broker's wire-level protocol endpoints.</p>
         pub fn endpoints(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input.into());
-            self.endpoints = Some(v);
-            self
+                            v.push(input.into());
+                            self.endpoints = Some(v);
+                            self
         }
         /// <p>The broker's wire-level protocol endpoints.</p>
-        pub fn set_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.endpoints = input;
-            self
+        pub fn set_endpoints(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.endpoints = input; self
         }
         /// <p>The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers.</p>
         pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3150,18 +2967,22 @@ pub mod broker_instance {
         }
         /// <p>The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = input;
-            self
+            self.ip_address = input; self
         }
         /// Consumes the builder and constructs a [`BrokerInstance`](crate::model::BrokerInstance).
         pub fn build(self) -> crate::model::BrokerInstance {
             crate::model::BrokerInstance {
-                console_url: self.console_url,
-                endpoints: self.endpoints,
-                ip_address: self.ip_address,
+                console_url: self.console_url
+                ,
+                endpoints: self.endpoints
+                ,
+                ip_address: self.ip_address
+                ,
             }
         }
     }
+    
+    
 }
 impl BrokerInstance {
     /// Creates a new builder-style object to manufacture [`BrokerInstance`](crate::model::BrokerInstance).
@@ -3173,7 +2994,7 @@ impl BrokerInstance {
 /// <p>The action required to resolve a broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionRequired {
+pub struct ActionRequired  {
     /// <p>The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state. You can find instructions by choosing the link for your code from the list of action required codes in <a href="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon MQ action required codes</a>. Each code references a topic with detailed information, instructions, and recommendations for how to resolve the issue and prevent future occurrences.</p>
     #[doc(hidden)]
     pub action_required_code: std::option::Option<std::string::String>,
@@ -3183,17 +3004,17 @@ pub struct ActionRequired {
 }
 impl ActionRequired {
     /// <p>The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state. You can find instructions by choosing the link for your code from the list of action required codes in <a href="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon MQ action required codes</a>. Each code references a topic with detailed information, instructions, and recommendations for how to resolve the issue and prevent future occurrences.</p>
-    pub fn action_required_code(&self) -> std::option::Option<&str> {
+    pub fn action_required_code(&self) -> std::option::Option<& str> {
         self.action_required_code.as_deref()
     }
     /// <p>Information about the action required to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.</p>
-    pub fn action_required_info(&self) -> std::option::Option<&str> {
+    pub fn action_required_info(&self) -> std::option::Option<& str> {
         self.action_required_info.as_deref()
     }
 }
 /// See [`ActionRequired`](crate::model::ActionRequired).
 pub mod action_required {
-
+    
     /// A builder for [`ActionRequired`](crate::model::ActionRequired).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3207,12 +3028,8 @@ pub mod action_required {
             self
         }
         /// <p>The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state. You can find instructions by choosing the link for your code from the list of action required codes in <a href="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon MQ action required codes</a>. Each code references a topic with detailed information, instructions, and recommendations for how to resolve the issue and prevent future occurrences.</p>
-        pub fn set_action_required_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.action_required_code = input;
-            self
+        pub fn set_action_required_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.action_required_code = input; self
         }
         /// <p>Information about the action required to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.</p>
         pub fn action_required_info(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3220,21 +3037,21 @@ pub mod action_required {
             self
         }
         /// <p>Information about the action required to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.</p>
-        pub fn set_action_required_info(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.action_required_info = input;
-            self
+        pub fn set_action_required_info(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.action_required_info = input; self
         }
         /// Consumes the builder and constructs a [`ActionRequired`](crate::model::ActionRequired).
         pub fn build(self) -> crate::model::ActionRequired {
             crate::model::ActionRequired {
-                action_required_code: self.action_required_code,
-                action_required_info: self.action_required_info,
+                action_required_code: self.action_required_code
+                ,
+                action_required_info: self.action_required_info
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionRequired {
     /// Creates a new builder-style object to manufacture [`ActionRequired`](crate::model::ActionRequired).
@@ -3246,7 +3063,7 @@ impl ActionRequired {
 /// <p>A user associated with the broker. For RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct User {
+pub struct User  {
     /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.</p>
     #[doc(hidden)]
     pub console_access: bool,
@@ -3259,7 +3076,7 @@ pub struct User {
     /// <p>important&gt;<title>Amazon MQ for ActiveMQ</title> <para>
     /// For ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
     /// </para></p>/important&gt; <important>
-    /// <title>Amazon MQ for RabbitMQ</title>
+    /// <title>Amazon MQ for RabbitMQ</title> 
     /// <p>For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p>
     /// </important>
     #[doc(hidden)]
@@ -3271,26 +3088,26 @@ impl User {
         self.console_access
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long. Does not apply to RabbitMQ brokers.</p>
-    pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn groups(&self) -> std::option::Option<& [std::string::String]> {
         self.groups.as_deref()
     }
     /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>important&gt;<title>Amazon MQ for ActiveMQ</title> <para>
     /// For ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
     /// </para></p>/important&gt; <important>
-    /// <title>Amazon MQ for RabbitMQ</title>
+    /// <title>Amazon MQ for RabbitMQ</title> 
     /// <p>For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p>
     /// </important>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
 }
 /// See [`User`](crate::model::User).
 pub mod user {
-
+    
     /// A builder for [`User`](crate::model::User).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3307,8 +3124,7 @@ pub mod user {
         }
         /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.</p>
         pub fn set_console_access(mut self, input: std::option::Option<bool>) -> Self {
-            self.console_access = input;
-            self
+            self.console_access = input; self
         }
         /// Appends an item to `groups`.
         ///
@@ -3317,17 +3133,13 @@ pub mod user {
         /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long. Does not apply to RabbitMQ brokers.</p>
         pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
-            self.groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.groups = Some(v);
+                            self
         }
         /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long. Does not apply to RabbitMQ brokers.</p>
-        pub fn set_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.groups = input;
-            self
+        pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.groups = input; self
         }
         /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3336,13 +3148,12 @@ pub mod user {
         }
         /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.password = input;
-            self
+            self.password = input; self
         }
         /// <p>important&gt;<title>Amazon MQ for ActiveMQ</title> <para>
         /// For ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
         /// </para></p>/important&gt; <important>
-        /// <title>Amazon MQ for RabbitMQ</title>
+        /// <title>Amazon MQ for RabbitMQ</title> 
         /// <p>For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p>
         /// </important>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3352,23 +3163,29 @@ pub mod user {
         /// <p>important&gt;<title>Amazon MQ for ActiveMQ</title> <para>
         /// For ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
         /// </para></p>/important&gt; <important>
-        /// <title>Amazon MQ for RabbitMQ</title>
+        /// <title>Amazon MQ for RabbitMQ</title> 
         /// <p>For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p>
         /// </important>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.username = input;
-            self
+            self.username = input; self
         }
         /// Consumes the builder and constructs a [`User`](crate::model::User).
         pub fn build(self) -> crate::model::User {
             crate::model::User {
-                console_access: self.console_access.unwrap_or_default(),
-                groups: self.groups,
-                password: self.password,
-                username: self.username,
+                console_access: self.console_access
+                    .unwrap_or_default()
+                ,
+                groups: self.groups
+                ,
+                password: self.password
+                ,
+                username: self.username
+                ,
             }
         }
     }
+    
+    
 }
 impl User {
     /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
@@ -3376,3 +3193,4 @@ impl User {
         crate::model::user::Builder::default()
     }
 }
+

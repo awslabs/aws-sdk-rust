@@ -12,14 +12,12 @@ pub enum Error {
     /// <p>This exception is thrown when the account is already registered as the CloudTrail delegated administrator.</p>
     AccountRegisteredException(crate::error::AccountRegisteredException),
     /// <p>This exception is thrown when the management account of an organization is registered as the CloudTrail delegated administrator.</p>
-    CannotDelegateManagementAccountException(
-        crate::error::CannotDelegateManagementAccountException,
-    ),
+    CannotDelegateManagementAccountException(crate::error::CannotDelegateManagementAccountException),
     /// <p>This exception is thrown when the specified value of <code>ChannelARN</code> is not valid.</p>
     ChannelArnInvalidException(crate::error::ChannelArnInvalidException),
     /// <p> The specified channel was not found. </p>
     ChannelNotFoundException(crate::error::ChannelNotFoundException),
-    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
+    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p> 
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
@@ -27,15 +25,11 @@ pub enum Error {
     /// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that is in a suspended Amazon Web Services account.</p>
     CloudTrailInvalidClientTokenIdException(crate::error::CloudTrailInvalidClientTokenIdException),
     /// <p>Cannot set a CloudWatch Logs delivery for this region.</p>
-    CloudWatchLogsDeliveryUnavailableException(
-        crate::error::CloudWatchLogsDeliveryUnavailableException,
-    ),
+    CloudWatchLogsDeliveryUnavailableException(crate::error::CloudWatchLogsDeliveryUnavailableException),
     /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>This exception is thrown when the maximum number of CloudTrail delegated administrators is reached.</p>
-    DelegatedAdminAccountLimitExceededException(
-        crate::error::DelegatedAdminAccountLimitExceededException,
-    ),
+    DelegatedAdminAccountLimitExceededException(crate::error::DelegatedAdminAccountLimitExceededException),
     /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
     EventDataStoreArnInvalidException(crate::error::EventDataStoreArnInvalidException),
     /// <p>An event data store with that name already exists.</p>
@@ -47,9 +41,7 @@ pub enum Error {
     /// <p>The specified event data store was not found.</p>
     EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
     /// <p>The event data store cannot be deleted because termination protection is enabled for it.</p>
-    EventDataStoreTerminationProtectedException(
-        crate::error::EventDataStoreTerminationProtectedException,
-    ),
+    EventDataStoreTerminationProtectedException(crate::error::EventDataStoreTerminationProtectedException),
     /// <p> The specified import was not found. </p>
     ImportNotFoundException(crate::error::ImportNotFoundException),
     /// <p>The event data store is inactive.</p>
@@ -59,9 +51,7 @@ pub enum Error {
     /// <p>If you run <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code>.</p>
     InsightNotEnabledException(crate::error::InsightNotEnabledException),
     /// <p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
-    InsufficientDependencyServiceAccessPermissionException(
-        crate::error::InsufficientDependencyServiceAccessPermissionException,
-    ),
+    InsufficientDependencyServiceAccessPermissionException(crate::error::InsufficientDependencyServiceAccessPermissionException),
     /// <p>This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
     InsufficientEncryptionPolicyException(crate::error::InsufficientEncryptionPolicyException),
     /// <p>This exception is thrown when the policy on the S3 bucket is not sufficient.</p>
@@ -69,9 +59,7 @@ pub enum Error {
     /// <p>This exception is thrown when the policy on the Amazon SNS topic is not sufficient.</p>
     InsufficientSnsTopicPolicyException(crate::error::InsufficientSnsTopicPolicyException),
     /// <p>This exception is thrown when the provided CloudWatch Logs log group is not valid.</p>
-    InvalidCloudWatchLogsLogGroupArnException(
-        crate::error::InvalidCloudWatchLogsLogGroupArnException,
-    ),
+    InvalidCloudWatchLogsLogGroupArnException(crate::error::InvalidCloudWatchLogsLogGroupArnException),
     /// <p>This exception is thrown when the provided role is not valid.</p>
     InvalidCloudWatchLogsRoleArnException(crate::error::InvalidCloudWatchLogsRoleArnException),
     /// <p>A date range for the query was specified that is not valid. Be sure that the start time is chronologically before the end time. For more information about writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create or edit a query</a> in the <i>CloudTrail User Guide</i>.</p>
@@ -82,13 +70,13 @@ pub enum Error {
     InvalidEventDataStoreCategoryException(crate::error::InvalidEventDataStoreCategoryException),
     /// <p>The event data store is not in a status that supports the operation.</p>
     InvalidEventDataStoreStatusException(crate::error::InvalidEventDataStoreStatusException),
-    /// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
-    /// <p>You can:</p>
-    /// <ul>
-    /// <li> <p>Specify a valid number of event selectors (1 to 5) for a trail.</p> </li>
-    /// <li> <p>Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of data resources does not exceed 250 across all event selectors for a trail.</p> </li>
-    /// <li> <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p> </li>
-    /// <li> <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p> </li>
+    /// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p> 
+    /// <p>You can:</p> 
+    /// <ul> 
+    /// <li> <p>Specify a valid number of event selectors (1 to 5) for a trail.</p> </li> 
+    /// <li> <p>Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of data resources does not exceed 250 across all event selectors for a trail.</p> </li> 
+    /// <li> <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p> </li> 
+    /// <li> <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p> </li> 
     /// </ul>
     InvalidEventSelectorsException(crate::error::InvalidEventSelectorsException),
     /// <p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>
@@ -125,13 +113,13 @@ pub enum Error {
     InvalidTimeRangeException(crate::error::InvalidTimeRangeException),
     /// <p>Reserved for future use.</p>
     InvalidTokenException(crate::error::InvalidTokenException),
-    /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
-    /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
-    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
-    /// <li> <p>Be between 3 and 128 characters</p> </li>
-    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
-    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+    /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p> 
+    /// <ul> 
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li> 
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li> 
+    /// <li> <p>Be between 3 and 128 characters</p> </li> 
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li> 
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> 
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail or event data store can't be updated.</p>
@@ -148,17 +136,13 @@ pub enum Error {
     /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
     NoManagementAccountSlrExistsException(crate::error::NoManagementAccountSlrExistsException),
     /// <p> This exception is thrown when the account making the request is not the organization's management account. </p>
-    NotOrganizationManagementAccountException(
-        crate::error::NotOrganizationManagementAccountException,
-    ),
+    NotOrganizationManagementAccountException(crate::error::NotOrganizationManagementAccountException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail or event data store.</p>
-    OrganizationNotInAllFeaturesModeException(
-        crate::error::OrganizationNotInAllFeaturesModeException,
-    ),
+    OrganizationNotInAllFeaturesModeException(crate::error::OrganizationNotInAllFeaturesModeException),
     /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>
     OrganizationsNotInUseException(crate::error::OrganizationsNotInUseException),
     /// <p>The query ID does not exist or does not map to a query.</p>
@@ -179,15 +163,15 @@ pub enum Error {
     TrailNotProvidedException(crate::error::TrailNotProvidedException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -264,19 +248,14 @@ impl std::fmt::Display for Error {
             Error::TrailNotFoundException(inner) => inner.fmt(f),
             Error::TrailNotProvidedException(inner) => inner.fmt(f),
             Error::UnsupportedOperationException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddTagsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AddTagsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -284,60 +263,27 @@ where
 impl From<crate::error::AddTagsError> for Error {
     fn from(err: crate::error::AddTagsError) -> Self {
         match err.kind {
-            crate::error::AddTagsErrorKind::CloudTrailArnInvalidException(inner) => {
-                Error::CloudTrailArnInvalidException(inner)
-            }
-            crate::error::AddTagsErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::AddTagsErrorKind::EventDataStoreNotFoundException(inner) => {
-                Error::EventDataStoreNotFoundException(inner)
-            }
-            crate::error::AddTagsErrorKind::InactiveEventDataStoreException(inner) => {
-                Error::InactiveEventDataStoreException(inner)
-            }
-            crate::error::AddTagsErrorKind::InvalidTagParameterException(inner) => {
-                Error::InvalidTagParameterException(inner)
-            }
-            crate::error::AddTagsErrorKind::InvalidTrailNameException(inner) => {
-                Error::InvalidTrailNameException(inner)
-            }
-            crate::error::AddTagsErrorKind::NoManagementAccountSlrExistsException(inner) => {
-                Error::NoManagementAccountSlrExistsException(inner)
-            }
-            crate::error::AddTagsErrorKind::NotOrganizationMasterAccountException(inner) => {
-                Error::NotOrganizationMasterAccountException(inner)
-            }
-            crate::error::AddTagsErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::AddTagsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::AddTagsErrorKind::ResourceTypeNotSupportedException(inner) => {
-                Error::ResourceTypeNotSupportedException(inner)
-            }
-            crate::error::AddTagsErrorKind::TagsLimitExceededException(inner) => {
-                Error::TagsLimitExceededException(inner)
-            }
-            crate::error::AddTagsErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::AddTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::AddTagsErrorKind::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
+            crate::error::AddTagsErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::AddTagsErrorKind::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
+            crate::error::AddTagsErrorKind::InactiveEventDataStoreException(inner) => Error::InactiveEventDataStoreException(inner),
+            crate::error::AddTagsErrorKind::InvalidTagParameterException(inner) => Error::InvalidTagParameterException(inner),
+            crate::error::AddTagsErrorKind::InvalidTrailNameException(inner) => Error::InvalidTrailNameException(inner),
+            crate::error::AddTagsErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
+            crate::error::AddTagsErrorKind::NotOrganizationMasterAccountException(inner) => Error::NotOrganizationMasterAccountException(inner),
+            crate::error::AddTagsErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::AddTagsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::AddTagsErrorKind::ResourceTypeNotSupportedException(inner) => Error::ResourceTypeNotSupportedException(inner),
+            crate::error::AddTagsErrorKind::TagsLimitExceededException(inner) => Error::TagsLimitExceededException(inner),
+            crate::error::AddTagsErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::AddTagsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelQueryError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelQueryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CancelQueryError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -345,54 +291,24 @@ where
 impl From<crate::error::CancelQueryError> for Error {
     fn from(err: crate::error::CancelQueryError) -> Self {
         match err.kind {
-            crate::error::CancelQueryErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CancelQueryErrorKind::EventDataStoreArnInvalidException(inner) => {
-                Error::EventDataStoreArnInvalidException(inner)
-            }
-            crate::error::CancelQueryErrorKind::EventDataStoreNotFoundException(inner) => {
-                Error::EventDataStoreNotFoundException(inner)
-            }
-            crate::error::CancelQueryErrorKind::InactiveEventDataStoreException(inner) => {
-                Error::InactiveEventDataStoreException(inner)
-            }
-            crate::error::CancelQueryErrorKind::InactiveQueryException(inner) => {
-                Error::InactiveQueryException(inner)
-            }
-            crate::error::CancelQueryErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CancelQueryErrorKind::NoManagementAccountSlrExistsException(inner) => {
-                Error::NoManagementAccountSlrExistsException(inner)
-            }
-            crate::error::CancelQueryErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::CancelQueryErrorKind::QueryIdNotFoundException(inner) => {
-                Error::QueryIdNotFoundException(inner)
-            }
-            crate::error::CancelQueryErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::CancelQueryErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CancelQueryErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CancelQueryErrorKind::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
+            crate::error::CancelQueryErrorKind::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
+            crate::error::CancelQueryErrorKind::InactiveEventDataStoreException(inner) => Error::InactiveEventDataStoreException(inner),
+            crate::error::CancelQueryErrorKind::InactiveQueryException(inner) => Error::InactiveQueryException(inner),
+            crate::error::CancelQueryErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::CancelQueryErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
+            crate::error::CancelQueryErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::CancelQueryErrorKind::QueryIdNotFoundException(inner) => Error::QueryIdNotFoundException(inner),
+            crate::error::CancelQueryErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::CancelQueryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateEventDataStoreError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateEventDataStoreError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateEventDataStoreError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateEventDataStoreError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -422,15 +338,10 @@ impl From<crate::error::CreateEventDataStoreError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateTrailError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateTrailError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateTrailError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -473,18 +384,10 @@ impl From<crate::error::CreateTrailError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteEventDataStoreError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteEventDataStoreError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteEventDataStoreError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteEventDataStoreError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -507,15 +410,10 @@ impl From<crate::error::DeleteEventDataStoreError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteTrailError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteTrailError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteTrailError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -537,26 +435,10 @@ impl From<crate::error::DeleteTrailError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DeregisterOrganizationDelegatedAdminError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeregisterOrganizationDelegatedAdminError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeregisterOrganizationDelegatedAdminError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeregisterOrganizationDelegatedAdminError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -578,15 +460,10 @@ impl From<crate::error::DeregisterOrganizationDelegatedAdminError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeQueryError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeQueryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeQueryError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -594,45 +471,22 @@ where
 impl From<crate::error::DescribeQueryError> for Error {
     fn from(err: crate::error::DescribeQueryError) -> Self {
         match err.kind {
-            crate::error::DescribeQueryErrorKind::EventDataStoreArnInvalidException(inner) => {
-                Error::EventDataStoreArnInvalidException(inner)
-            }
-            crate::error::DescribeQueryErrorKind::EventDataStoreNotFoundException(inner) => {
-                Error::EventDataStoreNotFoundException(inner)
-            }
-            crate::error::DescribeQueryErrorKind::InactiveEventDataStoreException(inner) => {
-                Error::InactiveEventDataStoreException(inner)
-            }
-            crate::error::DescribeQueryErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeQueryErrorKind::NoManagementAccountSlrExistsException(inner) => {
-                Error::NoManagementAccountSlrExistsException(inner)
-            }
-            crate::error::DescribeQueryErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::DescribeQueryErrorKind::QueryIdNotFoundException(inner) => {
-                Error::QueryIdNotFoundException(inner)
-            }
-            crate::error::DescribeQueryErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::DescribeQueryErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeQueryErrorKind::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
+            crate::error::DescribeQueryErrorKind::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
+            crate::error::DescribeQueryErrorKind::InactiveEventDataStoreException(inner) => Error::InactiveEventDataStoreException(inner),
+            crate::error::DescribeQueryErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DescribeQueryErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
+            crate::error::DescribeQueryErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::DescribeQueryErrorKind::QueryIdNotFoundException(inner) => Error::QueryIdNotFoundException(inner),
+            crate::error::DescribeQueryErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::DescribeQueryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeTrailsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeTrailsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeTrailsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -640,33 +494,18 @@ where
 impl From<crate::error::DescribeTrailsError> for Error {
     fn from(err: crate::error::DescribeTrailsError) -> Self {
         match err.kind {
-            crate::error::DescribeTrailsErrorKind::InvalidTrailNameException(inner) => {
-                Error::InvalidTrailNameException(inner)
-            }
-            crate::error::DescribeTrailsErrorKind::NoManagementAccountSlrExistsException(inner) => {
-                Error::NoManagementAccountSlrExistsException(inner)
-            }
-            crate::error::DescribeTrailsErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::DescribeTrailsErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::DescribeTrailsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeTrailsErrorKind::InvalidTrailNameException(inner) => Error::InvalidTrailNameException(inner),
+            crate::error::DescribeTrailsErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
+            crate::error::DescribeTrailsErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::DescribeTrailsErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::DescribeTrailsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetChannelError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetChannelError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -674,35 +513,18 @@ where
 impl From<crate::error::GetChannelError> for Error {
     fn from(err: crate::error::GetChannelError) -> Self {
         match err.kind {
-            crate::error::GetChannelErrorKind::ChannelArnInvalidException(inner) => {
-                Error::ChannelArnInvalidException(inner)
-            }
-            crate::error::GetChannelErrorKind::ChannelNotFoundException(inner) => {
-                Error::ChannelNotFoundException(inner)
-            }
-            crate::error::GetChannelErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::GetChannelErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::GetChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetChannelErrorKind::ChannelArnInvalidException(inner) => Error::ChannelArnInvalidException(inner),
+            crate::error::GetChannelErrorKind::ChannelNotFoundException(inner) => Error::ChannelNotFoundException(inner),
+            crate::error::GetChannelErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::GetChannelErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::GetChannelErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEventDataStoreError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetEventDataStoreError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEventDataStoreError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetEventDataStoreError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -710,41 +532,20 @@ where
 impl From<crate::error::GetEventDataStoreError> for Error {
     fn from(err: crate::error::GetEventDataStoreError) -> Self {
         match err.kind {
-            crate::error::GetEventDataStoreErrorKind::EventDataStoreArnInvalidException(inner) => {
-                Error::EventDataStoreArnInvalidException(inner)
-            }
-            crate::error::GetEventDataStoreErrorKind::EventDataStoreNotFoundException(inner) => {
-                Error::EventDataStoreNotFoundException(inner)
-            }
-            crate::error::GetEventDataStoreErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetEventDataStoreErrorKind::NoManagementAccountSlrExistsException(
-                inner,
-            ) => Error::NoManagementAccountSlrExistsException(inner),
-            crate::error::GetEventDataStoreErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::GetEventDataStoreErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::GetEventDataStoreErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetEventDataStoreErrorKind::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
+            crate::error::GetEventDataStoreErrorKind::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
+            crate::error::GetEventDataStoreErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetEventDataStoreErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
+            crate::error::GetEventDataStoreErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::GetEventDataStoreErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::GetEventDataStoreErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEventSelectorsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetEventSelectorsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEventSelectorsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetEventSelectorsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -752,39 +553,20 @@ where
 impl From<crate::error::GetEventSelectorsError> for Error {
     fn from(err: crate::error::GetEventSelectorsError) -> Self {
         match err.kind {
-            crate::error::GetEventSelectorsErrorKind::CloudTrailArnInvalidException(inner) => {
-                Error::CloudTrailArnInvalidException(inner)
-            }
-            crate::error::GetEventSelectorsErrorKind::InvalidTrailNameException(inner) => {
-                Error::InvalidTrailNameException(inner)
-            }
-            crate::error::GetEventSelectorsErrorKind::NoManagementAccountSlrExistsException(
-                inner,
-            ) => Error::NoManagementAccountSlrExistsException(inner),
-            crate::error::GetEventSelectorsErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::GetEventSelectorsErrorKind::TrailNotFoundException(inner) => {
-                Error::TrailNotFoundException(inner)
-            }
-            crate::error::GetEventSelectorsErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::GetEventSelectorsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetEventSelectorsErrorKind::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
+            crate::error::GetEventSelectorsErrorKind::InvalidTrailNameException(inner) => Error::InvalidTrailNameException(inner),
+            crate::error::GetEventSelectorsErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
+            crate::error::GetEventSelectorsErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::GetEventSelectorsErrorKind::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
+            crate::error::GetEventSelectorsErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::GetEventSelectorsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetImportError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetImportError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetImportError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -792,35 +574,18 @@ where
 impl From<crate::error::GetImportError> for Error {
     fn from(err: crate::error::GetImportError) -> Self {
         match err.kind {
-            crate::error::GetImportErrorKind::ImportNotFoundException(inner) => {
-                Error::ImportNotFoundException(inner)
-            }
-            crate::error::GetImportErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetImportErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::GetImportErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::GetImportErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetImportErrorKind::ImportNotFoundException(inner) => Error::ImportNotFoundException(inner),
+            crate::error::GetImportErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetImportErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::GetImportErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::GetImportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInsightSelectorsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetInsightSelectorsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInsightSelectorsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetInsightSelectorsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -828,42 +593,21 @@ where
 impl From<crate::error::GetInsightSelectorsError> for Error {
     fn from(err: crate::error::GetInsightSelectorsError) -> Self {
         match err.kind {
-            crate::error::GetInsightSelectorsErrorKind::CloudTrailArnInvalidException(inner) => {
-                Error::CloudTrailArnInvalidException(inner)
-            }
-            crate::error::GetInsightSelectorsErrorKind::InsightNotEnabledException(inner) => {
-                Error::InsightNotEnabledException(inner)
-            }
-            crate::error::GetInsightSelectorsErrorKind::InvalidTrailNameException(inner) => {
-                Error::InvalidTrailNameException(inner)
-            }
-            crate::error::GetInsightSelectorsErrorKind::NoManagementAccountSlrExistsException(
-                inner,
-            ) => Error::NoManagementAccountSlrExistsException(inner),
-            crate::error::GetInsightSelectorsErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::GetInsightSelectorsErrorKind::TrailNotFoundException(inner) => {
-                Error::TrailNotFoundException(inner)
-            }
-            crate::error::GetInsightSelectorsErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::GetInsightSelectorsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetInsightSelectorsErrorKind::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
+            crate::error::GetInsightSelectorsErrorKind::InsightNotEnabledException(inner) => Error::InsightNotEnabledException(inner),
+            crate::error::GetInsightSelectorsErrorKind::InvalidTrailNameException(inner) => Error::InvalidTrailNameException(inner),
+            crate::error::GetInsightSelectorsErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
+            crate::error::GetInsightSelectorsErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::GetInsightSelectorsErrorKind::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
+            crate::error::GetInsightSelectorsErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::GetInsightSelectorsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetQueryResultsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetQueryResultsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetQueryResultsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -871,54 +615,25 @@ where
 impl From<crate::error::GetQueryResultsError> for Error {
     fn from(err: crate::error::GetQueryResultsError) -> Self {
         match err.kind {
-            crate::error::GetQueryResultsErrorKind::EventDataStoreArnInvalidException(inner) => {
-                Error::EventDataStoreArnInvalidException(inner)
-            }
-            crate::error::GetQueryResultsErrorKind::EventDataStoreNotFoundException(inner) => {
-                Error::EventDataStoreNotFoundException(inner)
-            }
-            crate::error::GetQueryResultsErrorKind::InactiveEventDataStoreException(inner) => {
-                Error::InactiveEventDataStoreException(inner)
-            }
-            crate::error::GetQueryResultsErrorKind::InsufficientEncryptionPolicyException(
-                inner,
-            ) => Error::InsufficientEncryptionPolicyException(inner),
-            crate::error::GetQueryResultsErrorKind::InvalidMaxResultsException(inner) => {
-                Error::InvalidMaxResultsException(inner)
-            }
-            crate::error::GetQueryResultsErrorKind::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::GetQueryResultsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetQueryResultsErrorKind::NoManagementAccountSlrExistsException(
-                inner,
-            ) => Error::NoManagementAccountSlrExistsException(inner),
-            crate::error::GetQueryResultsErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::GetQueryResultsErrorKind::QueryIdNotFoundException(inner) => {
-                Error::QueryIdNotFoundException(inner)
-            }
-            crate::error::GetQueryResultsErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::GetQueryResultsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetQueryResultsErrorKind::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
+            crate::error::GetQueryResultsErrorKind::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
+            crate::error::GetQueryResultsErrorKind::InactiveEventDataStoreException(inner) => Error::InactiveEventDataStoreException(inner),
+            crate::error::GetQueryResultsErrorKind::InsufficientEncryptionPolicyException(inner) => Error::InsufficientEncryptionPolicyException(inner),
+            crate::error::GetQueryResultsErrorKind::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
+            crate::error::GetQueryResultsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::error::GetQueryResultsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetQueryResultsErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
+            crate::error::GetQueryResultsErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::GetQueryResultsErrorKind::QueryIdNotFoundException(inner) => Error::QueryIdNotFoundException(inner),
+            crate::error::GetQueryResultsErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::GetQueryResultsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTrailError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTrailError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetTrailError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -926,36 +641,19 @@ where
 impl From<crate::error::GetTrailError> for Error {
     fn from(err: crate::error::GetTrailError) -> Self {
         match err.kind {
-            crate::error::GetTrailErrorKind::CloudTrailArnInvalidException(inner) => {
-                Error::CloudTrailArnInvalidException(inner)
-            }
-            crate::error::GetTrailErrorKind::InvalidTrailNameException(inner) => {
-                Error::InvalidTrailNameException(inner)
-            }
-            crate::error::GetTrailErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::GetTrailErrorKind::TrailNotFoundException(inner) => {
-                Error::TrailNotFoundException(inner)
-            }
-            crate::error::GetTrailErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::GetTrailErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetTrailErrorKind::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
+            crate::error::GetTrailErrorKind::InvalidTrailNameException(inner) => Error::InvalidTrailNameException(inner),
+            crate::error::GetTrailErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::GetTrailErrorKind::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
+            crate::error::GetTrailErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::GetTrailErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTrailStatusError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTrailStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetTrailStatusError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -963,36 +661,19 @@ where
 impl From<crate::error::GetTrailStatusError> for Error {
     fn from(err: crate::error::GetTrailStatusError) -> Self {
         match err.kind {
-            crate::error::GetTrailStatusErrorKind::CloudTrailArnInvalidException(inner) => {
-                Error::CloudTrailArnInvalidException(inner)
-            }
-            crate::error::GetTrailStatusErrorKind::InvalidTrailNameException(inner) => {
-                Error::InvalidTrailNameException(inner)
-            }
-            crate::error::GetTrailStatusErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::GetTrailStatusErrorKind::TrailNotFoundException(inner) => {
-                Error::TrailNotFoundException(inner)
-            }
-            crate::error::GetTrailStatusErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::GetTrailStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetTrailStatusErrorKind::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
+            crate::error::GetTrailStatusErrorKind::InvalidTrailNameException(inner) => Error::InvalidTrailNameException(inner),
+            crate::error::GetTrailStatusErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::GetTrailStatusErrorKind::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
+            crate::error::GetTrailStatusErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::GetTrailStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListChannelsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListChannelsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListChannelsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1000,32 +681,17 @@ where
 impl From<crate::error::ListChannelsError> for Error {
     fn from(err: crate::error::ListChannelsError) -> Self {
         match err.kind {
-            crate::error::ListChannelsErrorKind::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListChannelsErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::ListChannelsErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::ListChannelsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListChannelsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::error::ListChannelsErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::ListChannelsErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::ListChannelsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListEventDataStoresError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListEventDataStoresError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListEventDataStoresError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListEventDataStoresError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1033,38 +699,19 @@ where
 impl From<crate::error::ListEventDataStoresError> for Error {
     fn from(err: crate::error::ListEventDataStoresError) -> Self {
         match err.kind {
-            crate::error::ListEventDataStoresErrorKind::InvalidMaxResultsException(inner) => {
-                Error::InvalidMaxResultsException(inner)
-            }
-            crate::error::ListEventDataStoresErrorKind::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListEventDataStoresErrorKind::NoManagementAccountSlrExistsException(
-                inner,
-            ) => Error::NoManagementAccountSlrExistsException(inner),
-            crate::error::ListEventDataStoresErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::ListEventDataStoresErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::ListEventDataStoresErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListEventDataStoresErrorKind::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
+            crate::error::ListEventDataStoresErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::error::ListEventDataStoresErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
+            crate::error::ListEventDataStoresErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::ListEventDataStoresErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::ListEventDataStoresErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListImportFailuresError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListImportFailuresError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListImportFailuresError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListImportFailuresError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1072,30 +719,17 @@ where
 impl From<crate::error::ListImportFailuresError> for Error {
     fn from(err: crate::error::ListImportFailuresError) -> Self {
         match err.kind {
-            crate::error::ListImportFailuresErrorKind::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListImportFailuresErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::ListImportFailuresErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::ListImportFailuresErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListImportFailuresErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::error::ListImportFailuresErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::ListImportFailuresErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::ListImportFailuresErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListImportsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListImportsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListImportsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1103,36 +737,19 @@ where
 impl From<crate::error::ListImportsError> for Error {
     fn from(err: crate::error::ListImportsError) -> Self {
         match err.kind {
-            crate::error::ListImportsErrorKind::EventDataStoreArnInvalidException(inner) => {
-                Error::EventDataStoreArnInvalidException(inner)
-            }
-            crate::error::ListImportsErrorKind::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListImportsErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListImportsErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::ListImportsErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::ListImportsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListImportsErrorKind::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
+            crate::error::ListImportsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::error::ListImportsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::ListImportsErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::ListImportsErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::ListImportsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPublicKeysError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPublicKeysError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPublicKeysError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1140,33 +757,18 @@ where
 impl From<crate::error::ListPublicKeysError> for Error {
     fn from(err: crate::error::ListPublicKeysError) -> Self {
         match err.kind {
-            crate::error::ListPublicKeysErrorKind::InvalidTimeRangeException(inner) => {
-                Error::InvalidTimeRangeException(inner)
-            }
-            crate::error::ListPublicKeysErrorKind::InvalidTokenException(inner) => {
-                Error::InvalidTokenException(inner)
-            }
-            crate::error::ListPublicKeysErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::ListPublicKeysErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::ListPublicKeysErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListPublicKeysErrorKind::InvalidTimeRangeException(inner) => Error::InvalidTimeRangeException(inner),
+            crate::error::ListPublicKeysErrorKind::InvalidTokenException(inner) => Error::InvalidTokenException(inner),
+            crate::error::ListPublicKeysErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::ListPublicKeysErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::ListPublicKeysErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListQueriesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListQueriesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListQueriesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1174,54 +776,25 @@ where
 impl From<crate::error::ListQueriesError> for Error {
     fn from(err: crate::error::ListQueriesError) -> Self {
         match err.kind {
-            crate::error::ListQueriesErrorKind::EventDataStoreArnInvalidException(inner) => {
-                Error::EventDataStoreArnInvalidException(inner)
-            }
-            crate::error::ListQueriesErrorKind::EventDataStoreNotFoundException(inner) => {
-                Error::EventDataStoreNotFoundException(inner)
-            }
-            crate::error::ListQueriesErrorKind::InactiveEventDataStoreException(inner) => {
-                Error::InactiveEventDataStoreException(inner)
-            }
-            crate::error::ListQueriesErrorKind::InvalidDateRangeException(inner) => {
-                Error::InvalidDateRangeException(inner)
-            }
-            crate::error::ListQueriesErrorKind::InvalidMaxResultsException(inner) => {
-                Error::InvalidMaxResultsException(inner)
-            }
-            crate::error::ListQueriesErrorKind::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListQueriesErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListQueriesErrorKind::InvalidQueryStatusException(inner) => {
-                Error::InvalidQueryStatusException(inner)
-            }
-            crate::error::ListQueriesErrorKind::NoManagementAccountSlrExistsException(inner) => {
-                Error::NoManagementAccountSlrExistsException(inner)
-            }
-            crate::error::ListQueriesErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::ListQueriesErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::ListQueriesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListQueriesErrorKind::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
+            crate::error::ListQueriesErrorKind::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
+            crate::error::ListQueriesErrorKind::InactiveEventDataStoreException(inner) => Error::InactiveEventDataStoreException(inner),
+            crate::error::ListQueriesErrorKind::InvalidDateRangeException(inner) => Error::InvalidDateRangeException(inner),
+            crate::error::ListQueriesErrorKind::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
+            crate::error::ListQueriesErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::error::ListQueriesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::ListQueriesErrorKind::InvalidQueryStatusException(inner) => Error::InvalidQueryStatusException(inner),
+            crate::error::ListQueriesErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
+            crate::error::ListQueriesErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::ListQueriesErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::ListQueriesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1229,51 +802,24 @@ where
 impl From<crate::error::ListTagsError> for Error {
     fn from(err: crate::error::ListTagsError) -> Self {
         match err.kind {
-            crate::error::ListTagsErrorKind::CloudTrailArnInvalidException(inner) => {
-                Error::CloudTrailArnInvalidException(inner)
-            }
-            crate::error::ListTagsErrorKind::EventDataStoreNotFoundException(inner) => {
-                Error::EventDataStoreNotFoundException(inner)
-            }
-            crate::error::ListTagsErrorKind::InactiveEventDataStoreException(inner) => {
-                Error::InactiveEventDataStoreException(inner)
-            }
-            crate::error::ListTagsErrorKind::InvalidTokenException(inner) => {
-                Error::InvalidTokenException(inner)
-            }
-            crate::error::ListTagsErrorKind::InvalidTrailNameException(inner) => {
-                Error::InvalidTrailNameException(inner)
-            }
-            crate::error::ListTagsErrorKind::NoManagementAccountSlrExistsException(inner) => {
-                Error::NoManagementAccountSlrExistsException(inner)
-            }
-            crate::error::ListTagsErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::ListTagsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListTagsErrorKind::ResourceTypeNotSupportedException(inner) => {
-                Error::ResourceTypeNotSupportedException(inner)
-            }
-            crate::error::ListTagsErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::ListTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsErrorKind::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
+            crate::error::ListTagsErrorKind::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
+            crate::error::ListTagsErrorKind::InactiveEventDataStoreException(inner) => Error::InactiveEventDataStoreException(inner),
+            crate::error::ListTagsErrorKind::InvalidTokenException(inner) => Error::InvalidTokenException(inner),
+            crate::error::ListTagsErrorKind::InvalidTrailNameException(inner) => Error::InvalidTrailNameException(inner),
+            crate::error::ListTagsErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
+            crate::error::ListTagsErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::ListTagsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListTagsErrorKind::ResourceTypeNotSupportedException(inner) => Error::ResourceTypeNotSupportedException(inner),
+            crate::error::ListTagsErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::ListTagsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTrailsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTrailsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTrailsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1281,27 +827,16 @@ where
 impl From<crate::error::ListTrailsError> for Error {
     fn from(err: crate::error::ListTrailsError) -> Self {
         match err.kind {
-            crate::error::ListTrailsErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::ListTrailsErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::ListTrailsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTrailsErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::ListTrailsErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::ListTrailsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::LookupEventsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::LookupEventsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::LookupEventsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1309,44 +844,21 @@ where
 impl From<crate::error::LookupEventsError> for Error {
     fn from(err: crate::error::LookupEventsError) -> Self {
         match err.kind {
-            crate::error::LookupEventsErrorKind::InvalidEventCategoryException(inner) => {
-                Error::InvalidEventCategoryException(inner)
-            }
-            crate::error::LookupEventsErrorKind::InvalidLookupAttributesException(inner) => {
-                Error::InvalidLookupAttributesException(inner)
-            }
-            crate::error::LookupEventsErrorKind::InvalidMaxResultsException(inner) => {
-                Error::InvalidMaxResultsException(inner)
-            }
-            crate::error::LookupEventsErrorKind::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::LookupEventsErrorKind::InvalidTimeRangeException(inner) => {
-                Error::InvalidTimeRangeException(inner)
-            }
-            crate::error::LookupEventsErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::LookupEventsErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::LookupEventsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::LookupEventsErrorKind::InvalidEventCategoryException(inner) => Error::InvalidEventCategoryException(inner),
+            crate::error::LookupEventsErrorKind::InvalidLookupAttributesException(inner) => Error::InvalidLookupAttributesException(inner),
+            crate::error::LookupEventsErrorKind::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
+            crate::error::LookupEventsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::error::LookupEventsErrorKind::InvalidTimeRangeException(inner) => Error::InvalidTimeRangeException(inner),
+            crate::error::LookupEventsErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::LookupEventsErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::LookupEventsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutEventSelectorsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutEventSelectorsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutEventSelectorsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutEventSelectorsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1368,17 +880,10 @@ impl From<crate::error::PutEventSelectorsError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutInsightSelectorsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutInsightSelectorsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutInsightSelectorsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutInsightSelectorsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1386,68 +891,27 @@ where
 impl From<crate::error::PutInsightSelectorsError> for Error {
     fn from(err: crate::error::PutInsightSelectorsError) -> Self {
         match err.kind {
-            crate::error::PutInsightSelectorsErrorKind::CloudTrailArnInvalidException(inner) => {
-                Error::CloudTrailArnInvalidException(inner)
-            }
-            crate::error::PutInsightSelectorsErrorKind::InsufficientEncryptionPolicyException(
-                inner,
-            ) => Error::InsufficientEncryptionPolicyException(inner),
-            crate::error::PutInsightSelectorsErrorKind::InsufficientS3BucketPolicyException(
-                inner,
-            ) => Error::InsufficientS3BucketPolicyException(inner),
-            crate::error::PutInsightSelectorsErrorKind::InvalidHomeRegionException(inner) => {
-                Error::InvalidHomeRegionException(inner)
-            }
-            crate::error::PutInsightSelectorsErrorKind::InvalidInsightSelectorsException(inner) => {
-                Error::InvalidInsightSelectorsException(inner)
-            }
-            crate::error::PutInsightSelectorsErrorKind::InvalidTrailNameException(inner) => {
-                Error::InvalidTrailNameException(inner)
-            }
-            crate::error::PutInsightSelectorsErrorKind::KmsException(inner) => {
-                Error::KmsException(inner)
-            }
-            crate::error::PutInsightSelectorsErrorKind::NoManagementAccountSlrExistsException(
-                inner,
-            ) => Error::NoManagementAccountSlrExistsException(inner),
-            crate::error::PutInsightSelectorsErrorKind::NotOrganizationMasterAccountException(
-                inner,
-            ) => Error::NotOrganizationMasterAccountException(inner),
-            crate::error::PutInsightSelectorsErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::PutInsightSelectorsErrorKind::S3BucketDoesNotExistException(inner) => {
-                Error::S3BucketDoesNotExistException(inner)
-            }
-            crate::error::PutInsightSelectorsErrorKind::TrailNotFoundException(inner) => {
-                Error::TrailNotFoundException(inner)
-            }
-            crate::error::PutInsightSelectorsErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::PutInsightSelectorsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutInsightSelectorsErrorKind::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
+            crate::error::PutInsightSelectorsErrorKind::InsufficientEncryptionPolicyException(inner) => Error::InsufficientEncryptionPolicyException(inner),
+            crate::error::PutInsightSelectorsErrorKind::InsufficientS3BucketPolicyException(inner) => Error::InsufficientS3BucketPolicyException(inner),
+            crate::error::PutInsightSelectorsErrorKind::InvalidHomeRegionException(inner) => Error::InvalidHomeRegionException(inner),
+            crate::error::PutInsightSelectorsErrorKind::InvalidInsightSelectorsException(inner) => Error::InvalidInsightSelectorsException(inner),
+            crate::error::PutInsightSelectorsErrorKind::InvalidTrailNameException(inner) => Error::InvalidTrailNameException(inner),
+            crate::error::PutInsightSelectorsErrorKind::KmsException(inner) => Error::KmsException(inner),
+            crate::error::PutInsightSelectorsErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
+            crate::error::PutInsightSelectorsErrorKind::NotOrganizationMasterAccountException(inner) => Error::NotOrganizationMasterAccountException(inner),
+            crate::error::PutInsightSelectorsErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::PutInsightSelectorsErrorKind::S3BucketDoesNotExistException(inner) => Error::S3BucketDoesNotExistException(inner),
+            crate::error::PutInsightSelectorsErrorKind::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
+            crate::error::PutInsightSelectorsErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::PutInsightSelectorsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<crate::error::RegisterOrganizationDelegatedAdminError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::RegisterOrganizationDelegatedAdminError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterOrganizationDelegatedAdminError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterOrganizationDelegatedAdminError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1471,15 +935,10 @@ impl From<crate::error::RegisterOrganizationDelegatedAdminError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveTagsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RemoveTagsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1487,57 +946,25 @@ where
 impl From<crate::error::RemoveTagsError> for Error {
     fn from(err: crate::error::RemoveTagsError) -> Self {
         match err.kind {
-            crate::error::RemoveTagsErrorKind::CloudTrailArnInvalidException(inner) => {
-                Error::CloudTrailArnInvalidException(inner)
-            }
-            crate::error::RemoveTagsErrorKind::EventDataStoreNotFoundException(inner) => {
-                Error::EventDataStoreNotFoundException(inner)
-            }
-            crate::error::RemoveTagsErrorKind::InactiveEventDataStoreException(inner) => {
-                Error::InactiveEventDataStoreException(inner)
-            }
-            crate::error::RemoveTagsErrorKind::InvalidTagParameterException(inner) => {
-                Error::InvalidTagParameterException(inner)
-            }
-            crate::error::RemoveTagsErrorKind::InvalidTrailNameException(inner) => {
-                Error::InvalidTrailNameException(inner)
-            }
-            crate::error::RemoveTagsErrorKind::NoManagementAccountSlrExistsException(inner) => {
-                Error::NoManagementAccountSlrExistsException(inner)
-            }
-            crate::error::RemoveTagsErrorKind::NotOrganizationMasterAccountException(inner) => {
-                Error::NotOrganizationMasterAccountException(inner)
-            }
-            crate::error::RemoveTagsErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::RemoveTagsErrorKind::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::RemoveTagsErrorKind::ResourceTypeNotSupportedException(inner) => {
-                Error::ResourceTypeNotSupportedException(inner)
-            }
-            crate::error::RemoveTagsErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::RemoveTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RemoveTagsErrorKind::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
+            crate::error::RemoveTagsErrorKind::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
+            crate::error::RemoveTagsErrorKind::InactiveEventDataStoreException(inner) => Error::InactiveEventDataStoreException(inner),
+            crate::error::RemoveTagsErrorKind::InvalidTagParameterException(inner) => Error::InvalidTagParameterException(inner),
+            crate::error::RemoveTagsErrorKind::InvalidTrailNameException(inner) => Error::InvalidTrailNameException(inner),
+            crate::error::RemoveTagsErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
+            crate::error::RemoveTagsErrorKind::NotOrganizationMasterAccountException(inner) => Error::NotOrganizationMasterAccountException(inner),
+            crate::error::RemoveTagsErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::RemoveTagsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::RemoveTagsErrorKind::ResourceTypeNotSupportedException(inner) => Error::ResourceTypeNotSupportedException(inner),
+            crate::error::RemoveTagsErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::RemoveTagsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RestoreEventDataStoreError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RestoreEventDataStoreError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RestoreEventDataStoreError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::RestoreEventDataStoreError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1562,15 +989,10 @@ impl From<crate::error::RestoreEventDataStoreError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartImportError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartImportError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartImportError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1578,54 +1000,25 @@ where
 impl From<crate::error::StartImportError> for Error {
     fn from(err: crate::error::StartImportError) -> Self {
         match err.kind {
-            crate::error::StartImportErrorKind::AccountHasOngoingImportException(inner) => {
-                Error::AccountHasOngoingImportException(inner)
-            }
-            crate::error::StartImportErrorKind::EventDataStoreArnInvalidException(inner) => {
-                Error::EventDataStoreArnInvalidException(inner)
-            }
-            crate::error::StartImportErrorKind::EventDataStoreNotFoundException(inner) => {
-                Error::EventDataStoreNotFoundException(inner)
-            }
-            crate::error::StartImportErrorKind::ImportNotFoundException(inner) => {
-                Error::ImportNotFoundException(inner)
-            }
-            crate::error::StartImportErrorKind::InactiveEventDataStoreException(inner) => {
-                Error::InactiveEventDataStoreException(inner)
-            }
-            crate::error::StartImportErrorKind::InvalidEventDataStoreCategoryException(inner) => {
-                Error::InvalidEventDataStoreCategoryException(inner)
-            }
-            crate::error::StartImportErrorKind::InvalidEventDataStoreStatusException(inner) => {
-                Error::InvalidEventDataStoreStatusException(inner)
-            }
-            crate::error::StartImportErrorKind::InvalidImportSourceException(inner) => {
-                Error::InvalidImportSourceException(inner)
-            }
-            crate::error::StartImportErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StartImportErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::StartImportErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::StartImportErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartImportErrorKind::AccountHasOngoingImportException(inner) => Error::AccountHasOngoingImportException(inner),
+            crate::error::StartImportErrorKind::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
+            crate::error::StartImportErrorKind::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
+            crate::error::StartImportErrorKind::ImportNotFoundException(inner) => Error::ImportNotFoundException(inner),
+            crate::error::StartImportErrorKind::InactiveEventDataStoreException(inner) => Error::InactiveEventDataStoreException(inner),
+            crate::error::StartImportErrorKind::InvalidEventDataStoreCategoryException(inner) => Error::InvalidEventDataStoreCategoryException(inner),
+            crate::error::StartImportErrorKind::InvalidEventDataStoreStatusException(inner) => Error::InvalidEventDataStoreStatusException(inner),
+            crate::error::StartImportErrorKind::InvalidImportSourceException(inner) => Error::InvalidImportSourceException(inner),
+            crate::error::StartImportErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StartImportErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::StartImportErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::StartImportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartLoggingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartLoggingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartLoggingError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1646,15 +1039,10 @@ impl From<crate::error::StartLoggingError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartQueryError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartQueryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartQueryError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1662,63 +1050,28 @@ where
 impl From<crate::error::StartQueryError> for Error {
     fn from(err: crate::error::StartQueryError) -> Self {
         match err.kind {
-            crate::error::StartQueryErrorKind::EventDataStoreArnInvalidException(inner) => {
-                Error::EventDataStoreArnInvalidException(inner)
-            }
-            crate::error::StartQueryErrorKind::EventDataStoreNotFoundException(inner) => {
-                Error::EventDataStoreNotFoundException(inner)
-            }
-            crate::error::StartQueryErrorKind::InactiveEventDataStoreException(inner) => {
-                Error::InactiveEventDataStoreException(inner)
-            }
-            crate::error::StartQueryErrorKind::InsufficientEncryptionPolicyException(inner) => {
-                Error::InsufficientEncryptionPolicyException(inner)
-            }
-            crate::error::StartQueryErrorKind::InsufficientS3BucketPolicyException(inner) => {
-                Error::InsufficientS3BucketPolicyException(inner)
-            }
-            crate::error::StartQueryErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StartQueryErrorKind::InvalidQueryStatementException(inner) => {
-                Error::InvalidQueryStatementException(inner)
-            }
-            crate::error::StartQueryErrorKind::InvalidS3BucketNameException(inner) => {
-                Error::InvalidS3BucketNameException(inner)
-            }
-            crate::error::StartQueryErrorKind::InvalidS3PrefixException(inner) => {
-                Error::InvalidS3PrefixException(inner)
-            }
-            crate::error::StartQueryErrorKind::MaxConcurrentQueriesException(inner) => {
-                Error::MaxConcurrentQueriesException(inner)
-            }
-            crate::error::StartQueryErrorKind::NoManagementAccountSlrExistsException(inner) => {
-                Error::NoManagementAccountSlrExistsException(inner)
-            }
-            crate::error::StartQueryErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::StartQueryErrorKind::S3BucketDoesNotExistException(inner) => {
-                Error::S3BucketDoesNotExistException(inner)
-            }
-            crate::error::StartQueryErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::StartQueryErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartQueryErrorKind::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
+            crate::error::StartQueryErrorKind::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
+            crate::error::StartQueryErrorKind::InactiveEventDataStoreException(inner) => Error::InactiveEventDataStoreException(inner),
+            crate::error::StartQueryErrorKind::InsufficientEncryptionPolicyException(inner) => Error::InsufficientEncryptionPolicyException(inner),
+            crate::error::StartQueryErrorKind::InsufficientS3BucketPolicyException(inner) => Error::InsufficientS3BucketPolicyException(inner),
+            crate::error::StartQueryErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StartQueryErrorKind::InvalidQueryStatementException(inner) => Error::InvalidQueryStatementException(inner),
+            crate::error::StartQueryErrorKind::InvalidS3BucketNameException(inner) => Error::InvalidS3BucketNameException(inner),
+            crate::error::StartQueryErrorKind::InvalidS3PrefixException(inner) => Error::InvalidS3PrefixException(inner),
+            crate::error::StartQueryErrorKind::MaxConcurrentQueriesException(inner) => Error::MaxConcurrentQueriesException(inner),
+            crate::error::StartQueryErrorKind::NoManagementAccountSlrExistsException(inner) => Error::NoManagementAccountSlrExistsException(inner),
+            crate::error::StartQueryErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::StartQueryErrorKind::S3BucketDoesNotExistException(inner) => Error::S3BucketDoesNotExistException(inner),
+            crate::error::StartQueryErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::StartQueryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopImportError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopImportError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StopImportError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1726,33 +1079,18 @@ where
 impl From<crate::error::StopImportError> for Error {
     fn from(err: crate::error::StopImportError) -> Self {
         match err.kind {
-            crate::error::StopImportErrorKind::ImportNotFoundException(inner) => {
-                Error::ImportNotFoundException(inner)
-            }
-            crate::error::StopImportErrorKind::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::StopImportErrorKind::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::StopImportErrorKind::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
-            crate::error::StopImportErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StopImportErrorKind::ImportNotFoundException(inner) => Error::ImportNotFoundException(inner),
+            crate::error::StopImportErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StopImportErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::error::StopImportErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::StopImportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopLoggingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopLoggingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StopLoggingError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1773,18 +1111,10 @@ impl From<crate::error::StopLoggingError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateEventDataStoreError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateEventDataStoreError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateEventDataStoreError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateEventDataStoreError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1814,15 +1144,10 @@ impl From<crate::error::UpdateEventDataStoreError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateTrailError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateTrailError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateTrailError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1866,3 +1191,4 @@ impl From<crate::error::UpdateTrailError> for Error {
     }
 }
 impl std::error::Error for Error {}
+

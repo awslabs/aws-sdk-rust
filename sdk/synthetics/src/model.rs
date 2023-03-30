@@ -3,20 +3,20 @@
 /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArtifactConfigInput {
+pub struct ArtifactConfigInput  {
     /// <p>A structure that contains the configuration of the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3. Artifact encryption functionality is available only for canaries that use Synthetics runtime version syn-nodejs-puppeteer-3.3 or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_artifact_encryption.html">Encrypting canary artifacts</a> </p>
     #[doc(hidden)]
     pub s3_encryption: std::option::Option<crate::model::S3EncryptionConfig>,
 }
 impl ArtifactConfigInput {
     /// <p>A structure that contains the configuration of the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3. Artifact encryption functionality is available only for canaries that use Synthetics runtime version syn-nodejs-puppeteer-3.3 or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_artifact_encryption.html">Encrypting canary artifacts</a> </p>
-    pub fn s3_encryption(&self) -> std::option::Option<&crate::model::S3EncryptionConfig> {
+    pub fn s3_encryption(&self) -> std::option::Option<& crate::model::S3EncryptionConfig> {
         self.s3_encryption.as_ref()
     }
 }
 /// See [`ArtifactConfigInput`](crate::model::ArtifactConfigInput).
 pub mod artifact_config_input {
-
+    
     /// A builder for [`ArtifactConfigInput`](crate::model::ArtifactConfigInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,20 +29,19 @@ pub mod artifact_config_input {
             self
         }
         /// <p>A structure that contains the configuration of the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3. Artifact encryption functionality is available only for canaries that use Synthetics runtime version syn-nodejs-puppeteer-3.3 or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_artifact_encryption.html">Encrypting canary artifacts</a> </p>
-        pub fn set_s3_encryption(
-            mut self,
-            input: std::option::Option<crate::model::S3EncryptionConfig>,
-        ) -> Self {
-            self.s3_encryption = input;
-            self
+        pub fn set_s3_encryption(mut self, input: std::option::Option<crate::model::S3EncryptionConfig>) -> Self {
+            self.s3_encryption = input; self
         }
         /// Consumes the builder and constructs a [`ArtifactConfigInput`](crate::model::ArtifactConfigInput).
         pub fn build(self) -> crate::model::ArtifactConfigInput {
             crate::model::ArtifactConfigInput {
-                s3_encryption: self.s3_encryption,
+                s3_encryption: self.s3_encryption
+                ,
             }
         }
     }
+    
+    
 }
 impl ArtifactConfigInput {
     /// Creates a new builder-style object to manufacture [`ArtifactConfigInput`](crate::model::ArtifactConfigInput).
@@ -51,12 +50,12 @@ impl ArtifactConfigInput {
     }
 }
 
-/// <p>A structure that contains the configuration of encryption-at-rest settings for canary artifacts that the canary uploads to Amazon S3. </p>
+/// <p>A structure that contains the configuration of encryption-at-rest settings for canary artifacts that the canary uploads to Amazon S3. </p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_artifact_encryption.html">Encrypting canary artifacts</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3EncryptionConfig {
-    /// <p> The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code> to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <code>SSE-KMS</code> to use server-side encryption with a customer-managed KMS key.</p>
+pub struct S3EncryptionConfig  {
+    /// <p> The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code> to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <code>SSE-KMS</code> to use server-side encryption with a customer-managed KMS key.</p> 
     /// <p>If you omit this parameter, an Amazon Web Services-managed KMS key is used. </p>
     #[doc(hidden)]
     pub encryption_mode: std::option::Option<crate::model::EncryptionMode>,
@@ -65,19 +64,19 @@ pub struct S3EncryptionConfig {
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl S3EncryptionConfig {
-    /// <p> The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code> to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <code>SSE-KMS</code> to use server-side encryption with a customer-managed KMS key.</p>
+    /// <p> The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code> to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <code>SSE-KMS</code> to use server-side encryption with a customer-managed KMS key.</p> 
     /// <p>If you omit this parameter, an Amazon Web Services-managed KMS key is used. </p>
-    pub fn encryption_mode(&self) -> std::option::Option<&crate::model::EncryptionMode> {
+    pub fn encryption_mode(&self) -> std::option::Option<& crate::model::EncryptionMode> {
         self.encryption_mode.as_ref()
     }
     /// <p>The ARN of the customer-managed KMS key to use, if you specify <code>SSE-KMS</code> for <code>EncryptionMode</code> </p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
 /// See [`S3EncryptionConfig`](crate::model::S3EncryptionConfig).
 pub mod s3_encryption_config {
-
+    
     /// A builder for [`S3EncryptionConfig`](crate::model::S3EncryptionConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -85,20 +84,16 @@ pub mod s3_encryption_config {
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code> to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <code>SSE-KMS</code> to use server-side encryption with a customer-managed KMS key.</p>
+        /// <p> The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code> to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <code>SSE-KMS</code> to use server-side encryption with a customer-managed KMS key.</p> 
         /// <p>If you omit this parameter, an Amazon Web Services-managed KMS key is used. </p>
         pub fn encryption_mode(mut self, input: crate::model::EncryptionMode) -> Self {
             self.encryption_mode = Some(input);
             self
         }
-        /// <p> The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code> to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <code>SSE-KMS</code> to use server-side encryption with a customer-managed KMS key.</p>
+        /// <p> The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code> to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <code>SSE-KMS</code> to use server-side encryption with a customer-managed KMS key.</p> 
         /// <p>If you omit this parameter, an Amazon Web Services-managed KMS key is used. </p>
-        pub fn set_encryption_mode(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionMode>,
-        ) -> Self {
-            self.encryption_mode = input;
-            self
+        pub fn set_encryption_mode(mut self, input: std::option::Option<crate::model::EncryptionMode>) -> Self {
+            self.encryption_mode = input; self
         }
         /// <p>The ARN of the customer-managed KMS key to use, if you specify <code>SSE-KMS</code> for <code>EncryptionMode</code> </p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,17 +102,20 @@ pub mod s3_encryption_config {
         }
         /// <p>The ARN of the customer-managed KMS key to use, if you specify <code>SSE-KMS</code> for <code>EncryptionMode</code> </p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// Consumes the builder and constructs a [`S3EncryptionConfig`](crate::model::S3EncryptionConfig).
         pub fn build(self) -> crate::model::S3EncryptionConfig {
             crate::model::S3EncryptionConfig {
-                encryption_mode: self.encryption_mode,
-                kms_key_arn: self.kms_key_arn,
+                encryption_mode: self.encryption_mode
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl S3EncryptionConfig {
     /// Creates a new builder-style object to manufacture [`S3EncryptionConfig`](crate::model::S3EncryptionConfig).
@@ -132,9 +130,9 @@ impl S3EncryptionConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encryptionmode = unimplemented!();
 /// match encryptionmode {
@@ -156,58 +154,52 @@ impl S3EncryptionConfig {
 /// Specifically, when `encryptionmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncryptionMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EncryptionMode {
     #[allow(missing_docs)] // documentation missing in model
     SseKms,
     #[allow(missing_docs)] // documentation missing in model
     SseS3,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionMode {
     fn from(s: &str) -> Self {
         match s {
             "SSE_KMS" => EncryptionMode::SseKms,
             "SSE_S3" => EncryptionMode::SseS3,
-            other => EncryptionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EncryptionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EncryptionMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncryptionMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EncryptionMode::from(s))
+                }
+            }
 impl EncryptionMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncryptionMode::SseKms => "SSE_KMS",
             EncryptionMode::SseS3 => "SSE_S3",
-            EncryptionMode::Unknown(value) => value.as_str(),
+            EncryptionMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SSE_KMS", "SSE_S3"]
+        &[
+            "SSE_KMS", "SSE_S3"
+        ]
     }
 }
 impl AsRef<str> for EncryptionMode {
@@ -216,11 +208,11 @@ impl AsRef<str> for EncryptionMode {
     }
 }
 
-/// <p>An object that specifies what screenshots to use as a baseline for visual monitoring by this canary. It can optionally also specify parts of the screenshots to ignore during the visual monitoring comparison.</p>
+/// <p>An object that specifies what screenshots to use as a baseline for visual monitoring by this canary. It can optionally also specify parts of the screenshots to ignore during the visual monitoring comparison.</p> 
 /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VisualReferenceInput {
+pub struct VisualReferenceInput  {
     /// <p>An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If there is a screenshot that you don't want to be used for visual monitoring, remove it from this array.</p>
     #[doc(hidden)]
     pub base_screenshots: std::option::Option<std::vec::Vec<crate::model::BaseScreenshot>>,
@@ -230,22 +222,21 @@ pub struct VisualReferenceInput {
 }
 impl VisualReferenceInput {
     /// <p>An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If there is a screenshot that you don't want to be used for visual monitoring, remove it from this array.</p>
-    pub fn base_screenshots(&self) -> std::option::Option<&[crate::model::BaseScreenshot]> {
+    pub fn base_screenshots(&self) -> std::option::Option<& [crate::model::BaseScreenshot]> {
         self.base_screenshots.as_deref()
     }
     /// <p>Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with this canary. Valid values are <code>nextrun</code> to use the screenshots from the next run after this update is made, <code>lastrun</code> to use the screenshots from the most recent run before this update was made, or the value of <code>Id</code> in the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html"> CanaryRun</a> from any past run of this canary.</p>
-    pub fn base_canary_run_id(&self) -> std::option::Option<&str> {
+    pub fn base_canary_run_id(&self) -> std::option::Option<& str> {
         self.base_canary_run_id.as_deref()
     }
 }
 /// See [`VisualReferenceInput`](crate::model::VisualReferenceInput).
 pub mod visual_reference_input {
-
+    
     /// A builder for [`VisualReferenceInput`](crate::model::VisualReferenceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) base_screenshots:
-            std::option::Option<std::vec::Vec<crate::model::BaseScreenshot>>,
+        pub(crate) base_screenshots: std::option::Option<std::vec::Vec<crate::model::BaseScreenshot>>,
         pub(crate) base_canary_run_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -256,17 +247,13 @@ pub mod visual_reference_input {
         /// <p>An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If there is a screenshot that you don't want to be used for visual monitoring, remove it from this array.</p>
         pub fn base_screenshots(mut self, input: crate::model::BaseScreenshot) -> Self {
             let mut v = self.base_screenshots.unwrap_or_default();
-            v.push(input);
-            self.base_screenshots = Some(v);
-            self
+                            v.push(input);
+                            self.base_screenshots = Some(v);
+                            self
         }
         /// <p>An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If there is a screenshot that you don't want to be used for visual monitoring, remove it from this array.</p>
-        pub fn set_base_screenshots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BaseScreenshot>>,
-        ) -> Self {
-            self.base_screenshots = input;
-            self
+        pub fn set_base_screenshots(mut self, input: std::option::Option<std::vec::Vec<crate::model::BaseScreenshot>>) -> Self {
+            self.base_screenshots = input; self
         }
         /// <p>Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with this canary. Valid values are <code>nextrun</code> to use the screenshots from the next run after this update is made, <code>lastrun</code> to use the screenshots from the most recent run before this update was made, or the value of <code>Id</code> in the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html"> CanaryRun</a> from any past run of this canary.</p>
         pub fn base_canary_run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -274,21 +261,21 @@ pub mod visual_reference_input {
             self
         }
         /// <p>Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with this canary. Valid values are <code>nextrun</code> to use the screenshots from the next run after this update is made, <code>lastrun</code> to use the screenshots from the most recent run before this update was made, or the value of <code>Id</code> in the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html"> CanaryRun</a> from any past run of this canary.</p>
-        pub fn set_base_canary_run_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.base_canary_run_id = input;
-            self
+        pub fn set_base_canary_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.base_canary_run_id = input; self
         }
         /// Consumes the builder and constructs a [`VisualReferenceInput`](crate::model::VisualReferenceInput).
         pub fn build(self) -> crate::model::VisualReferenceInput {
             crate::model::VisualReferenceInput {
-                base_screenshots: self.base_screenshots,
-                base_canary_run_id: self.base_canary_run_id,
+                base_screenshots: self.base_screenshots
+                ,
+                base_canary_run_id: self.base_canary_run_id
+                ,
             }
         }
     }
+    
+    
 }
 impl VisualReferenceInput {
     /// Creates a new builder-style object to manufacture [`VisualReferenceInput`](crate::model::VisualReferenceInput).
@@ -300,7 +287,7 @@ impl VisualReferenceInput {
 /// <p>A structure representing a screenshot that is used as a baseline during visual monitoring comparisons made by the canary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BaseScreenshot {
+pub struct BaseScreenshot  {
     /// <p>The name of the screenshot. This is generated the first time the canary is run after the <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.</p>
     #[doc(hidden)]
     pub screenshot_name: std::option::Option<std::string::String>,
@@ -310,17 +297,17 @@ pub struct BaseScreenshot {
 }
 impl BaseScreenshot {
     /// <p>The name of the screenshot. This is generated the first time the canary is run after the <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.</p>
-    pub fn screenshot_name(&self) -> std::option::Option<&str> {
+    pub fn screenshot_name(&self) -> std::option::Option<& str> {
         self.screenshot_name.as_deref()
     }
     /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing or deleting a canary</a> </p>
-    pub fn ignore_coordinates(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ignore_coordinates(&self) -> std::option::Option<& [std::string::String]> {
         self.ignore_coordinates.as_deref()
     }
 }
 /// See [`BaseScreenshot`](crate::model::BaseScreenshot).
 pub mod base_screenshot {
-
+    
     /// A builder for [`BaseScreenshot`](crate::model::BaseScreenshot).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -334,12 +321,8 @@ pub mod base_screenshot {
             self
         }
         /// <p>The name of the screenshot. This is generated the first time the canary is run after the <code>UpdateCanary</code> operation that specified for this canary to perform visual monitoring.</p>
-        pub fn set_screenshot_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.screenshot_name = input;
-            self
+        pub fn set_screenshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.screenshot_name = input; self
         }
         /// Appends an item to `ignore_coordinates`.
         ///
@@ -348,26 +331,26 @@ pub mod base_screenshot {
         /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing or deleting a canary</a> </p>
         pub fn ignore_coordinates(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ignore_coordinates.unwrap_or_default();
-            v.push(input.into());
-            self.ignore_coordinates = Some(v);
-            self
+                            v.push(input.into());
+                            self.ignore_coordinates = Some(v);
+                            self
         }
         /// <p>Coordinates that define the part of a screen to ignore during screenshot comparisons. To obtain the coordinates to use here, use the CloudWatch console to draw the boundaries on the screen. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html"> Editing or deleting a canary</a> </p>
-        pub fn set_ignore_coordinates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ignore_coordinates = input;
-            self
+        pub fn set_ignore_coordinates(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ignore_coordinates = input; self
         }
         /// Consumes the builder and constructs a [`BaseScreenshot`](crate::model::BaseScreenshot).
         pub fn build(self) -> crate::model::BaseScreenshot {
             crate::model::BaseScreenshot {
-                screenshot_name: self.screenshot_name,
-                ignore_coordinates: self.ignore_coordinates,
+                screenshot_name: self.screenshot_name
+                ,
+                ignore_coordinates: self.ignore_coordinates
+                ,
             }
         }
     }
+    
+    
 }
 impl BaseScreenshot {
     /// Creates a new builder-style object to manufacture [`BaseScreenshot`](crate::model::BaseScreenshot).
@@ -379,7 +362,7 @@ impl BaseScreenshot {
 /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfigInput {
+pub struct VpcConfigInput  {
     /// <p>The IDs of the subnets where this canary is to run.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -389,17 +372,17 @@ pub struct VpcConfigInput {
 }
 impl VpcConfigInput {
     /// <p>The IDs of the subnets where this canary is to run.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The IDs of the security groups for this canary.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
 }
 /// See [`VpcConfigInput`](crate::model::VpcConfigInput).
 pub mod vpc_config_input {
-
+    
     /// A builder for [`VpcConfigInput`](crate::model::VpcConfigInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -414,17 +397,13 @@ pub mod vpc_config_input {
         /// <p>The IDs of the subnets where this canary is to run.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>The IDs of the subnets where this canary is to run.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// Appends an item to `security_group_ids`.
         ///
@@ -433,26 +412,26 @@ pub mod vpc_config_input {
         /// <p>The IDs of the security groups for this canary.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_ids = Some(v);
+                            self
         }
         /// <p>The IDs of the security groups for this canary.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
+        pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_ids = input; self
         }
         /// Consumes the builder and constructs a [`VpcConfigInput`](crate::model::VpcConfigInput).
         pub fn build(self) -> crate::model::VpcConfigInput {
             crate::model::VpcConfigInput {
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
+                subnet_ids: self.subnet_ids
+                ,
+                security_group_ids: self.security_group_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcConfigInput {
     /// Creates a new builder-style object to manufacture [`VpcConfigInput`](crate::model::VpcConfigInput).
@@ -464,29 +443,28 @@ impl VpcConfigInput {
 /// <p>A structure that contains input information for a canary run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryRunConfigInput {
-    /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer than the frequency of the runs of this canary.</p>
+pub struct CanaryRunConfigInput  {
+    /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer than the frequency of the runs of this canary.</p> 
     /// <p>If you omit this field, the frequency of the canary is used as this value, up to a maximum of 14 minutes.</p>
     #[doc(hidden)]
     pub timeout_in_seconds: std::option::Option<i32>,
     /// <p>The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of 64.</p>
     #[doc(hidden)]
     pub memory_in_mb: std::option::Option<i32>,
-    /// <p>Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that has X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html"> Canaries and X-Ray tracing</a>.</p>
+    /// <p>Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that has X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html"> Canaries and X-Ray tracing</a>.</p> 
     /// <p>You can enable active tracing only for canaries that use version <code>syn-nodejs-2.0</code> or later for their canary runtime.</p>
     #[doc(hidden)]
     pub active_tracing: std::option::Option<bool>,
-    /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p>
-    /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p>
-    /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p> <important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p> 
+    /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p> 
+    /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p> <important> 
+    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p> 
     /// </important>
     #[doc(hidden)]
-    pub environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CanaryRunConfigInput {
-    /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer than the frequency of the runs of this canary.</p>
+    /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer than the frequency of the runs of this canary.</p> 
     /// <p>If you omit this field, the frequency of the canary is used as this value, up to a maximum of 14 minutes.</p>
     pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.timeout_in_seconds
@@ -495,48 +473,42 @@ impl CanaryRunConfigInput {
     pub fn memory_in_mb(&self) -> std::option::Option<i32> {
         self.memory_in_mb
     }
-    /// <p>Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that has X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html"> Canaries and X-Ray tracing</a>.</p>
+    /// <p>Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that has X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html"> Canaries and X-Ray tracing</a>.</p> 
     /// <p>You can enable active tracing only for canaries that use version <code>syn-nodejs-2.0</code> or later for their canary runtime.</p>
     pub fn active_tracing(&self) -> std::option::Option<bool> {
         self.active_tracing
     }
-    /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p>
-    /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p>
-    /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p> <important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p> 
+    /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p> 
+    /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p> <important> 
+    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p> 
     /// </important>
-    pub fn environment_variables(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn environment_variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.environment_variables.as_ref()
     }
 }
 /// See [`CanaryRunConfigInput`](crate::model::CanaryRunConfigInput).
 pub mod canary_run_config_input {
-
+    
     /// A builder for [`CanaryRunConfigInput`](crate::model::CanaryRunConfigInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_in_seconds: std::option::Option<i32>,
         pub(crate) memory_in_mb: std::option::Option<i32>,
         pub(crate) active_tracing: std::option::Option<bool>,
-        pub(crate) environment_variables: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
-        /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer than the frequency of the runs of this canary.</p>
+        /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer than the frequency of the runs of this canary.</p> 
         /// <p>If you omit this field, the frequency of the canary is used as this value, up to a maximum of 14 minutes.</p>
         pub fn timeout_in_seconds(mut self, input: i32) -> Self {
             self.timeout_in_seconds = Some(input);
             self
         }
-        /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer than the frequency of the runs of this canary.</p>
+        /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer than the frequency of the runs of this canary.</p> 
         /// <p>If you omit this field, the frequency of the canary is used as this value, up to a maximum of 14 minutes.</p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_in_seconds = input;
-            self
+            self.timeout_in_seconds = input; self
         }
         /// <p>The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of 64.</p>
         pub fn memory_in_mb(mut self, input: i32) -> Self {
@@ -545,64 +517,58 @@ pub mod canary_run_config_input {
         }
         /// <p>The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of 64.</p>
         pub fn set_memory_in_mb(mut self, input: std::option::Option<i32>) -> Self {
-            self.memory_in_mb = input;
-            self
+            self.memory_in_mb = input; self
         }
-        /// <p>Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that has X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html"> Canaries and X-Ray tracing</a>.</p>
+        /// <p>Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that has X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html"> Canaries and X-Ray tracing</a>.</p> 
         /// <p>You can enable active tracing only for canaries that use version <code>syn-nodejs-2.0</code> or later for their canary runtime.</p>
         pub fn active_tracing(mut self, input: bool) -> Self {
             self.active_tracing = Some(input);
             self
         }
-        /// <p>Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that has X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html"> Canaries and X-Ray tracing</a>.</p>
+        /// <p>Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that has X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html"> Canaries and X-Ray tracing</a>.</p> 
         /// <p>You can enable active tracing only for canaries that use version <code>syn-nodejs-2.0</code> or later for their canary runtime.</p>
         pub fn set_active_tracing(mut self, input: std::option::Option<bool>) -> Self {
-            self.active_tracing = input;
-            self
+            self.active_tracing = input; self
         }
         /// Adds a key-value pair to `environment_variables`.
         ///
         /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
         ///
-        /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p>
-        /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p>
-        /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p> <important>
-        /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+        /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p> 
+        /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p> 
+        /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p> <important> 
+        /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p> 
         /// </important>
-        pub fn environment_variables(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn environment_variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.environment_variables.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.environment_variables = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.environment_variables = Some(hash_map);
+                            self
         }
-        /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p>
-        /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p>
-        /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p> <important>
-        /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+        /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p> 
+        /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p> 
+        /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p> <important> 
+        /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p> 
         /// </important>
-        pub fn set_environment_variables(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.environment_variables = input;
-            self
+        pub fn set_environment_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.environment_variables = input; self
         }
         /// Consumes the builder and constructs a [`CanaryRunConfigInput`](crate::model::CanaryRunConfigInput).
         pub fn build(self) -> crate::model::CanaryRunConfigInput {
             crate::model::CanaryRunConfigInput {
-                timeout_in_seconds: self.timeout_in_seconds,
-                memory_in_mb: self.memory_in_mb,
-                active_tracing: self.active_tracing,
-                environment_variables: self.environment_variables,
+                timeout_in_seconds: self.timeout_in_seconds
+                ,
+                memory_in_mb: self.memory_in_mb
+                ,
+                active_tracing: self.active_tracing
+                ,
+                environment_variables: self.environment_variables
+                ,
             }
         }
     }
+    
+    
 }
 impl CanaryRunConfigInput {
     /// Creates a new builder-style object to manufacture [`CanaryRunConfigInput`](crate::model::CanaryRunConfigInput).
@@ -614,11 +580,11 @@ impl CanaryRunConfigInput {
 /// <p>This structure specifies how often a canary is to make runs and the date and time when it should stop making runs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryScheduleInput {
-    /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p>
-    /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p>
-    /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p>
-    /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p>
+pub struct CanaryScheduleInput  {
+    /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p> 
+    /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p> 
+    /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p> 
+    /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p> 
     /// <p>Use <code>cron(<i>expression</i>)</code> to specify a cron expression. You can't schedule a canary to wait for more than a year before running. For information about the syntax for cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html"> Scheduling canary runs using cron</a>.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
@@ -627,12 +593,12 @@ pub struct CanaryScheduleInput {
     pub duration_in_seconds: std::option::Option<i64>,
 }
 impl CanaryScheduleInput {
-    /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p>
-    /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p>
-    /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p>
-    /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p>
+    /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p> 
+    /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p> 
+    /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p> 
+    /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p> 
     /// <p>Use <code>cron(<i>expression</i>)</code> to specify a cron expression. You can't schedule a canary to wait for more than a year before running. For information about the syntax for cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html"> Scheduling canary runs using cron</a>.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value. If you specify 0, the canary continues making runs until you stop it. If you omit this field, the default of 0 is used.</p>
@@ -642,7 +608,7 @@ impl CanaryScheduleInput {
 }
 /// See [`CanaryScheduleInput`](crate::model::CanaryScheduleInput).
 pub mod canary_schedule_input {
-
+    
     /// A builder for [`CanaryScheduleInput`](crate::model::CanaryScheduleInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -650,23 +616,22 @@ pub mod canary_schedule_input {
         pub(crate) duration_in_seconds: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p>
-        /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p>
-        /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p>
-        /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p>
+        /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p> 
+        /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p> 
+        /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p> 
+        /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p> 
         /// <p>Use <code>cron(<i>expression</i>)</code> to specify a cron expression. You can't schedule a canary to wait for more than a year before running. For information about the syntax for cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html"> Scheduling canary runs using cron</a>.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
             self
         }
-        /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p>
-        /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p>
-        /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p>
-        /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p>
+        /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p> 
+        /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p> 
+        /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p> 
+        /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p> 
         /// <p>Use <code>cron(<i>expression</i>)</code> to specify a cron expression. You can't schedule a canary to wait for more than a year before running. For information about the syntax for cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html"> Scheduling canary runs using cron</a>.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expression = input;
-            self
+            self.expression = input; self
         }
         /// <p>How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value. If you specify 0, the canary continues making runs until you stop it. If you omit this field, the default of 0 is used.</p>
         pub fn duration_in_seconds(mut self, input: i64) -> Self {
@@ -675,17 +640,20 @@ pub mod canary_schedule_input {
         }
         /// <p>How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value. If you specify 0, the canary continues making runs until you stop it. If you omit this field, the default of 0 is used.</p>
         pub fn set_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.duration_in_seconds = input;
-            self
+            self.duration_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`CanaryScheduleInput`](crate::model::CanaryScheduleInput).
         pub fn build(self) -> crate::model::CanaryScheduleInput {
             crate::model::CanaryScheduleInput {
-                expression: self.expression,
-                duration_in_seconds: self.duration_in_seconds,
+                expression: self.expression
+                ,
+                duration_in_seconds: self.duration_in_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl CanaryScheduleInput {
     /// Creates a new builder-style object to manufacture [`CanaryScheduleInput`](crate::model::CanaryScheduleInput).
@@ -697,7 +665,7 @@ impl CanaryScheduleInput {
 /// <p>Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryCodeInput {
+pub struct CanaryCodeInput  {
     /// <p>If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as the start of the bucket name.</p>
     #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
@@ -707,7 +675,7 @@ pub struct CanaryCodeInput {
     /// <p>The S3 version ID of your script.</p>
     #[doc(hidden)]
     pub s3_version: std::option::Option<std::string::String>,
-    /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 225 Kb.</p>
+    /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 225 Kb.</p> 
     /// <p>For large canary scripts, we recommend that you use an S3 location instead of inputting it directly with this parameter.</p>
     #[doc(hidden)]
     pub zip_file: std::option::Option<aws_smithy_types::Blob>,
@@ -717,30 +685,30 @@ pub struct CanaryCodeInput {
 }
 impl CanaryCodeInput {
     /// <p>If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as the start of the bucket name.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The S3 key of your script. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html">Working with Amazon S3 Objects</a>.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> std::option::Option<& str> {
         self.s3_key.as_deref()
     }
     /// <p>The S3 version ID of your script.</p>
-    pub fn s3_version(&self) -> std::option::Option<&str> {
+    pub fn s3_version(&self) -> std::option::Option<& str> {
         self.s3_version.as_deref()
     }
-    /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 225 Kb.</p>
+    /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 225 Kb.</p> 
     /// <p>For large canary scripts, we recommend that you use an S3 location instead of inputting it directly with this parameter.</p>
-    pub fn zip_file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn zip_file(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.zip_file.as_ref()
     }
     /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
-    pub fn handler(&self) -> std::option::Option<&str> {
+    pub fn handler(&self) -> std::option::Option<& str> {
         self.handler.as_deref()
     }
 }
 /// See [`CanaryCodeInput`](crate::model::CanaryCodeInput).
 pub mod canary_code_input {
-
+    
     /// A builder for [`CanaryCodeInput`](crate::model::CanaryCodeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -758,8 +726,7 @@ pub mod canary_code_input {
         }
         /// <p>If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as the start of the bucket name.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// <p>The S3 key of your script. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html">Working with Amazon S3 Objects</a>.</p>
         pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -768,8 +735,7 @@ pub mod canary_code_input {
         }
         /// <p>The S3 key of your script. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html">Working with Amazon S3 Objects</a>.</p>
         pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_key = input;
-            self
+            self.s3_key = input; self
         }
         /// <p>The S3 version ID of your script.</p>
         pub fn s3_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -778,20 +744,18 @@ pub mod canary_code_input {
         }
         /// <p>The S3 version ID of your script.</p>
         pub fn set_s3_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_version = input;
-            self
+            self.s3_version = input; self
         }
-        /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 225 Kb.</p>
+        /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 225 Kb.</p> 
         /// <p>For large canary scripts, we recommend that you use an S3 location instead of inputting it directly with this parameter.</p>
         pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
             self.zip_file = Some(input);
             self
         }
-        /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 225 Kb.</p>
+        /// <p>If you input your canary script directly into the canary instead of referring to an S3 location, the value of this parameter is the base64-encoded contents of the .zip file that contains the script. It must be smaller than 225 Kb.</p> 
         /// <p>For large canary scripts, we recommend that you use an S3 location instead of inputting it directly with this parameter.</p>
         pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.zip_file = input;
-            self
+            self.zip_file = input; self
         }
         /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
         pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
@@ -800,20 +764,26 @@ pub mod canary_code_input {
         }
         /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
         pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.handler = input;
-            self
+            self.handler = input; self
         }
         /// Consumes the builder and constructs a [`CanaryCodeInput`](crate::model::CanaryCodeInput).
         pub fn build(self) -> crate::model::CanaryCodeInput {
             crate::model::CanaryCodeInput {
-                s3_bucket: self.s3_bucket,
-                s3_key: self.s3_key,
-                s3_version: self.s3_version,
-                zip_file: self.zip_file,
-                handler: self.handler,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_key: self.s3_key
+                ,
+                s3_version: self.s3_version
+                ,
+                zip_file: self.zip_file
+                ,
+                handler: self.handler
+                ,
             }
         }
     }
+    
+    
 }
 impl CanaryCodeInput {
     /// Creates a new builder-style object to manufacture [`CanaryCodeInput`](crate::model::CanaryCodeInput).
@@ -825,7 +795,7 @@ impl CanaryCodeInput {
 /// <p>A structure containing some information about a group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupSummary {
+pub struct GroupSummary  {
     /// <p>The unique ID of the group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -838,21 +808,21 @@ pub struct GroupSummary {
 }
 impl GroupSummary {
     /// <p>The unique ID of the group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`GroupSummary`](crate::model::GroupSummary).
 pub mod group_summary {
-
+    
     /// A builder for [`GroupSummary`](crate::model::GroupSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -868,8 +838,7 @@ pub mod group_summary {
         }
         /// <p>The unique ID of the group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -878,8 +847,7 @@ pub mod group_summary {
         }
         /// <p>The name of the group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN of the group.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -888,18 +856,22 @@ pub mod group_summary {
         }
         /// <p>The ARN of the group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`GroupSummary`](crate::model::GroupSummary).
         pub fn build(self) -> crate::model::GroupSummary {
             crate::model::GroupSummary {
-                id: self.id,
-                name: self.name,
-                arn: self.arn,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GroupSummary {
     /// Creates a new builder-style object to manufacture [`GroupSummary`](crate::model::GroupSummary).
@@ -911,7 +883,7 @@ impl GroupSummary {
 /// <p>This structure contains information about one group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Group {
+pub struct Group  {
     /// <p>The unique ID of the group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -923,8 +895,7 @@ pub struct Group {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The list of key-value pairs that are associated with the canary.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the group was created.</p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -934,45 +905,40 @@ pub struct Group {
 }
 impl Group {
     /// <p>The unique ID of the group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The list of key-value pairs that are associated with the canary.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The date and time that the group was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The date and time that the group was most recently updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
 /// See [`Group`](crate::model::Group).
 pub mod group {
-
+    
     /// A builder for [`Group`](crate::model::Group).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -984,8 +950,7 @@ pub mod group {
         }
         /// <p>The unique ID of the group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -994,8 +959,7 @@ pub mod group {
         }
         /// <p>The name of the group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN of the group.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1004,33 +968,22 @@ pub mod group {
         }
         /// <p>The ARN of the group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of key-value pairs that are associated with the canary.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of key-value pairs that are associated with the canary.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The date and time that the group was created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1038,12 +991,8 @@ pub mod group {
             self
         }
         /// <p>The date and time that the group was created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// <p>The date and time that the group was most recently updated.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1051,25 +1000,29 @@ pub mod group {
             self
         }
         /// <p>The date and time that the group was most recently updated.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`Group`](crate::model::Group).
         pub fn build(self) -> crate::model::Group {
             crate::model::Group {
-                id: self.id,
-                name: self.name,
-                arn: self.arn,
-                tags: self.tags,
-                created_time: self.created_time,
-                last_modified_time: self.last_modified_time,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                tags: self.tags
+                ,
+                created_time: self.created_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Group {
     /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
@@ -1081,7 +1034,7 @@ impl Group {
 /// <p>This structure contains the details about one run of one canary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryRun {
+pub struct CanaryRun  {
     /// <p>A unique ID that identifies this canary run.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1100,29 +1053,29 @@ pub struct CanaryRun {
 }
 impl CanaryRun {
     /// <p>A unique ID that identifies this canary run.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the canary.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of this run.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CanaryRunStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CanaryRunStatus> {
         self.status.as_ref()
     }
     /// <p>A structure that contains the start and end times of this run.</p>
-    pub fn timeline(&self) -> std::option::Option<&crate::model::CanaryRunTimeline> {
+    pub fn timeline(&self) -> std::option::Option<& crate::model::CanaryRunTimeline> {
         self.timeline.as_ref()
     }
     /// <p>The location where the canary stored artifacts from the run. Artifacts include the log file, screenshots, and HAR files.</p>
-    pub fn artifact_s3_location(&self) -> std::option::Option<&str> {
+    pub fn artifact_s3_location(&self) -> std::option::Option<& str> {
         self.artifact_s3_location.as_deref()
     }
 }
 /// See [`CanaryRun`](crate::model::CanaryRun).
 pub mod canary_run {
-
+    
     /// A builder for [`CanaryRun`](crate::model::CanaryRun).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1140,8 +1093,7 @@ pub mod canary_run {
         }
         /// <p>A unique ID that identifies this canary run.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the canary.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1150,8 +1102,7 @@ pub mod canary_run {
         }
         /// <p>The name of the canary.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The status of this run.</p>
         pub fn status(mut self, input: crate::model::CanaryRunStatus) -> Self {
@@ -1159,12 +1110,8 @@ pub mod canary_run {
             self
         }
         /// <p>The status of this run.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CanaryRunStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CanaryRunStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A structure that contains the start and end times of this run.</p>
         pub fn timeline(mut self, input: crate::model::CanaryRunTimeline) -> Self {
@@ -1172,12 +1119,8 @@ pub mod canary_run {
             self
         }
         /// <p>A structure that contains the start and end times of this run.</p>
-        pub fn set_timeline(
-            mut self,
-            input: std::option::Option<crate::model::CanaryRunTimeline>,
-        ) -> Self {
-            self.timeline = input;
-            self
+        pub fn set_timeline(mut self, input: std::option::Option<crate::model::CanaryRunTimeline>) -> Self {
+            self.timeline = input; self
         }
         /// <p>The location where the canary stored artifacts from the run. Artifacts include the log file, screenshots, and HAR files.</p>
         pub fn artifact_s3_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1185,24 +1128,27 @@ pub mod canary_run {
             self
         }
         /// <p>The location where the canary stored artifacts from the run. Artifacts include the log file, screenshots, and HAR files.</p>
-        pub fn set_artifact_s3_location(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.artifact_s3_location = input;
-            self
+        pub fn set_artifact_s3_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.artifact_s3_location = input; self
         }
         /// Consumes the builder and constructs a [`CanaryRun`](crate::model::CanaryRun).
         pub fn build(self) -> crate::model::CanaryRun {
             crate::model::CanaryRun {
-                id: self.id,
-                name: self.name,
-                status: self.status,
-                timeline: self.timeline,
-                artifact_s3_location: self.artifact_s3_location,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                timeline: self.timeline
+                ,
+                artifact_s3_location: self.artifact_s3_location
+                ,
             }
         }
     }
+    
+    
 }
 impl CanaryRun {
     /// Creates a new builder-style object to manufacture [`CanaryRun`](crate::model::CanaryRun).
@@ -1214,7 +1160,7 @@ impl CanaryRun {
 /// <p>This structure contains the start and end times of a single canary run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryRunTimeline {
+pub struct CanaryRunTimeline  {
     /// <p>The start time of the run.</p>
     #[doc(hidden)]
     pub started: std::option::Option<aws_smithy_types::DateTime>,
@@ -1224,17 +1170,17 @@ pub struct CanaryRunTimeline {
 }
 impl CanaryRunTimeline {
     /// <p>The start time of the run.</p>
-    pub fn started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The end time of the run.</p>
-    pub fn completed(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completed.as_ref()
     }
 }
 /// See [`CanaryRunTimeline`](crate::model::CanaryRunTimeline).
 pub mod canary_run_timeline {
-
+    
     /// A builder for [`CanaryRunTimeline`](crate::model::CanaryRunTimeline).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1248,12 +1194,8 @@ pub mod canary_run_timeline {
             self
         }
         /// <p>The start time of the run.</p>
-        pub fn set_started(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.started = input;
-            self
+        pub fn set_started(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.started = input; self
         }
         /// <p>The end time of the run.</p>
         pub fn completed(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1261,21 +1203,21 @@ pub mod canary_run_timeline {
             self
         }
         /// <p>The end time of the run.</p>
-        pub fn set_completed(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completed = input;
-            self
+        pub fn set_completed(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completed = input; self
         }
         /// Consumes the builder and constructs a [`CanaryRunTimeline`](crate::model::CanaryRunTimeline).
         pub fn build(self) -> crate::model::CanaryRunTimeline {
             crate::model::CanaryRunTimeline {
-                started: self.started,
-                completed: self.completed,
+                started: self.started
+                ,
+                completed: self.completed
+                ,
             }
         }
     }
+    
+    
 }
 impl CanaryRunTimeline {
     /// Creates a new builder-style object to manufacture [`CanaryRunTimeline`](crate::model::CanaryRunTimeline).
@@ -1287,7 +1229,7 @@ impl CanaryRunTimeline {
 /// <p>This structure contains the status information about a canary run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryRunStatus {
+pub struct CanaryRunStatus  {
     /// <p>The current state of the run.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::CanaryRunState>,
@@ -1300,23 +1242,21 @@ pub struct CanaryRunStatus {
 }
 impl CanaryRunStatus {
     /// <p>The current state of the run.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::CanaryRunState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::CanaryRunState> {
         self.state.as_ref()
     }
     /// <p>If run of the canary failed, this field contains the reason for the error.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>If this value is <code>CANARY_FAILURE</code>, an exception occurred in the canary code. If this value is <code>EXECUTION_FAILURE</code>, an exception occurred in CloudWatch Synthetics.</p>
-    pub fn state_reason_code(
-        &self,
-    ) -> std::option::Option<&crate::model::CanaryRunStateReasonCode> {
+    pub fn state_reason_code(&self) -> std::option::Option<& crate::model::CanaryRunStateReasonCode> {
         self.state_reason_code.as_ref()
     }
 }
 /// See [`CanaryRunStatus`](crate::model::CanaryRunStatus).
 pub mod canary_run_status {
-
+    
     /// A builder for [`CanaryRunStatus`](crate::model::CanaryRunStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1331,12 +1271,8 @@ pub mod canary_run_status {
             self
         }
         /// <p>The current state of the run.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::CanaryRunState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::CanaryRunState>) -> Self {
+            self.state = input; self
         }
         /// <p>If run of the canary failed, this field contains the reason for the error.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1345,8 +1281,7 @@ pub mod canary_run_status {
         }
         /// <p>If run of the canary failed, this field contains the reason for the error.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>If this value is <code>CANARY_FAILURE</code>, an exception occurred in the canary code. If this value is <code>EXECUTION_FAILURE</code>, an exception occurred in CloudWatch Synthetics.</p>
         pub fn state_reason_code(mut self, input: crate::model::CanaryRunStateReasonCode) -> Self {
@@ -1354,22 +1289,23 @@ pub mod canary_run_status {
             self
         }
         /// <p>If this value is <code>CANARY_FAILURE</code>, an exception occurred in the canary code. If this value is <code>EXECUTION_FAILURE</code>, an exception occurred in CloudWatch Synthetics.</p>
-        pub fn set_state_reason_code(
-            mut self,
-            input: std::option::Option<crate::model::CanaryRunStateReasonCode>,
-        ) -> Self {
-            self.state_reason_code = input;
-            self
+        pub fn set_state_reason_code(mut self, input: std::option::Option<crate::model::CanaryRunStateReasonCode>) -> Self {
+            self.state_reason_code = input; self
         }
         /// Consumes the builder and constructs a [`CanaryRunStatus`](crate::model::CanaryRunStatus).
         pub fn build(self) -> crate::model::CanaryRunStatus {
             crate::model::CanaryRunStatus {
-                state: self.state,
-                state_reason: self.state_reason,
-                state_reason_code: self.state_reason_code,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
+                state_reason_code: self.state_reason_code
+                ,
             }
         }
     }
+    
+    
 }
 impl CanaryRunStatus {
     /// Creates a new builder-style object to manufacture [`CanaryRunStatus`](crate::model::CanaryRunStatus).
@@ -1384,9 +1320,9 @@ impl CanaryRunStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let canaryrunstatereasoncode = unimplemented!();
 /// match canaryrunstatereasoncode {
@@ -1408,60 +1344,52 @@ impl CanaryRunStatus {
 /// Specifically, when `canaryrunstatereasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CanaryRunStateReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CanaryRunStateReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     CanaryFailure,
     #[allow(missing_docs)] // documentation missing in model
     ExecutionFailure,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CanaryRunStateReasonCode {
     fn from(s: &str) -> Self {
         match s {
             "CANARY_FAILURE" => CanaryRunStateReasonCode::CanaryFailure,
             "EXECUTION_FAILURE" => CanaryRunStateReasonCode::ExecutionFailure,
-            other => CanaryRunStateReasonCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CanaryRunStateReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CanaryRunStateReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CanaryRunStateReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CanaryRunStateReasonCode::from(s))
+                }
+            }
 impl CanaryRunStateReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CanaryRunStateReasonCode::CanaryFailure => "CANARY_FAILURE",
             CanaryRunStateReasonCode::ExecutionFailure => "EXECUTION_FAILURE",
-            CanaryRunStateReasonCode::Unknown(value) => value.as_str(),
+            CanaryRunStateReasonCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CANARY_FAILURE", "EXECUTION_FAILURE"]
+        &[
+            "CANARY_FAILURE", "EXECUTION_FAILURE"
+        ]
     }
 }
 impl AsRef<str> for CanaryRunStateReasonCode {
@@ -1476,9 +1404,9 @@ impl AsRef<str> for CanaryRunStateReasonCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let canaryrunstate = unimplemented!();
 /// match canaryrunstate {
@@ -1501,22 +1429,14 @@ impl AsRef<str> for CanaryRunStateReasonCode {
 /// Specifically, when `canaryrunstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CanaryRunState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CanaryRunState {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -1525,7 +1445,7 @@ pub enum CanaryRunState {
     #[allow(missing_docs)] // documentation missing in model
     Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CanaryRunState {
     fn from(s: &str) -> Self {
@@ -1533,17 +1453,17 @@ impl std::convert::From<&str> for CanaryRunState {
             "FAILED" => CanaryRunState::Failed,
             "PASSED" => CanaryRunState::Passed,
             "RUNNING" => CanaryRunState::Running,
-            other => CanaryRunState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CanaryRunState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CanaryRunState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CanaryRunState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CanaryRunState::from(s))
+                }
+            }
 impl CanaryRunState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1551,12 +1471,14 @@ impl CanaryRunState {
             CanaryRunState::Failed => "FAILED",
             CanaryRunState::Passed => "PASSED",
             CanaryRunState::Running => "RUNNING",
-            CanaryRunState::Unknown(value) => value.as_str(),
+            CanaryRunState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "PASSED", "RUNNING"]
+        &[
+            "FAILED", "PASSED", "RUNNING"
+        ]
     }
 }
 impl AsRef<str> for CanaryRunState {
@@ -1568,7 +1490,7 @@ impl AsRef<str> for CanaryRunState {
 /// <p>This structure contains all information about one canary in your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Canary {
+pub struct Canary  {
     /// <p>The unique ID of this canary.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1616,35 +1538,34 @@ pub struct Canary {
     pub visual_reference: std::option::Option<crate::model::VisualReferenceOutput>,
     /// <p>The list of key-value pairs that are associated with the canary.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
     #[doc(hidden)]
     pub artifact_config: std::option::Option<crate::model::ArtifactConfigOutput>,
 }
 impl Canary {
     /// <p>The unique ID of this canary.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the canary.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::CanaryCodeOutput> {
+    pub fn code(&self) -> std::option::Option<& crate::model::CanaryCodeOutput> {
         self.code.as_ref()
     }
     /// <p>The ARN of the IAM role used to run the canary. This role must include <code>lambda.amazonaws.com</code> as a principal in the trust policy.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>A structure that contains information about how often the canary is to run, and when these runs are to stop.</p>
-    pub fn schedule(&self) -> std::option::Option<&crate::model::CanaryScheduleOutput> {
+    pub fn schedule(&self) -> std::option::Option<& crate::model::CanaryScheduleOutput> {
         self.schedule.as_ref()
     }
     /// <p>A structure that contains information about a canary run.</p>
-    pub fn run_config(&self) -> std::option::Option<&crate::model::CanaryRunConfigOutput> {
+    pub fn run_config(&self) -> std::option::Option<& crate::model::CanaryRunConfigOutput> {
         self.run_config.as_ref()
     }
     /// <p>The number of days to retain data about successful runs of this canary.</p>
@@ -1656,48 +1577,45 @@ impl Canary {
         self.failure_retention_period_in_days
     }
     /// <p>A structure that contains information about the canary's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CanaryStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CanaryStatus> {
         self.status.as_ref()
     }
     /// <p>A structure that contains information about when the canary was created, modified, and most recently run.</p>
-    pub fn timeline(&self) -> std::option::Option<&crate::model::CanaryTimeline> {
+    pub fn timeline(&self) -> std::option::Option<& crate::model::CanaryTimeline> {
         self.timeline.as_ref()
     }
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the runs of this canary. Artifacts include the log file, screenshots, and HAR files.</p>
-    pub fn artifact_s3_location(&self) -> std::option::Option<&str> {
+    pub fn artifact_s3_location(&self) -> std::option::Option<& str> {
         self.artifact_s3_location.as_deref()
     }
     /// <p>The ARN of the Lambda function that is used as your canary's engine. For more information about Lambda ARN format, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html">Resources and Conditions for Lambda Actions</a>.</p>
-    pub fn engine_arn(&self) -> std::option::Option<&str> {
+    pub fn engine_arn(&self) -> std::option::Option<& str> {
         self.engine_arn.as_deref()
     }
     /// <p>Specifies the runtime version to use for the canary. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    pub fn runtime_version(&self) -> std::option::Option<&str> {
+    pub fn runtime_version(&self) -> std::option::Option<& str> {
         self.runtime_version.as_deref()
     }
     /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigOutput> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::model::VpcConfigOutput> {
         self.vpc_config.as_ref()
     }
     /// <p>If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary run to use as the baseline for screenshots, and the coordinates of any parts of the screen to ignore during the visual monitoring comparison.</p>
-    pub fn visual_reference(&self) -> std::option::Option<&crate::model::VisualReferenceOutput> {
+    pub fn visual_reference(&self) -> std::option::Option<& crate::model::VisualReferenceOutput> {
         self.visual_reference.as_ref()
     }
     /// <p>The list of key-value pairs that are associated with the canary.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
-    pub fn artifact_config(&self) -> std::option::Option<&crate::model::ArtifactConfigOutput> {
+    pub fn artifact_config(&self) -> std::option::Option<& crate::model::ArtifactConfigOutput> {
         self.artifact_config.as_ref()
     }
 }
 /// See [`Canary`](crate::model::Canary).
 pub mod canary {
-
+    
     /// A builder for [`Canary`](crate::model::Canary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1716,9 +1634,7 @@ pub mod canary {
         pub(crate) runtime_version: std::option::Option<std::string::String>,
         pub(crate) vpc_config: std::option::Option<crate::model::VpcConfigOutput>,
         pub(crate) visual_reference: std::option::Option<crate::model::VisualReferenceOutput>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) artifact_config: std::option::Option<crate::model::ArtifactConfigOutput>,
     }
     impl Builder {
@@ -1729,8 +1645,7 @@ pub mod canary {
         }
         /// <p>The unique ID of this canary.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the canary.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1739,8 +1654,7 @@ pub mod canary {
         }
         /// <p>The name of the canary.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics.</p>
         pub fn code(mut self, input: crate::model::CanaryCodeOutput) -> Self {
@@ -1748,12 +1662,8 @@ pub mod canary {
             self
         }
         /// <p>This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::CanaryCodeOutput>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::CanaryCodeOutput>) -> Self {
+            self.code = input; self
         }
         /// <p>The ARN of the IAM role used to run the canary. This role must include <code>lambda.amazonaws.com</code> as a principal in the trust policy.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1761,12 +1671,8 @@ pub mod canary {
             self
         }
         /// <p>The ARN of the IAM role used to run the canary. This role must include <code>lambda.amazonaws.com</code> as a principal in the trust policy.</p>
-        pub fn set_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_role_arn = input;
-            self
+        pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_role_arn = input; self
         }
         /// <p>A structure that contains information about how often the canary is to run, and when these runs are to stop.</p>
         pub fn schedule(mut self, input: crate::model::CanaryScheduleOutput) -> Self {
@@ -1774,12 +1680,8 @@ pub mod canary {
             self
         }
         /// <p>A structure that contains information about how often the canary is to run, and when these runs are to stop.</p>
-        pub fn set_schedule(
-            mut self,
-            input: std::option::Option<crate::model::CanaryScheduleOutput>,
-        ) -> Self {
-            self.schedule = input;
-            self
+        pub fn set_schedule(mut self, input: std::option::Option<crate::model::CanaryScheduleOutput>) -> Self {
+            self.schedule = input; self
         }
         /// <p>A structure that contains information about a canary run.</p>
         pub fn run_config(mut self, input: crate::model::CanaryRunConfigOutput) -> Self {
@@ -1787,12 +1689,8 @@ pub mod canary {
             self
         }
         /// <p>A structure that contains information about a canary run.</p>
-        pub fn set_run_config(
-            mut self,
-            input: std::option::Option<crate::model::CanaryRunConfigOutput>,
-        ) -> Self {
-            self.run_config = input;
-            self
+        pub fn set_run_config(mut self, input: std::option::Option<crate::model::CanaryRunConfigOutput>) -> Self {
+            self.run_config = input; self
         }
         /// <p>The number of days to retain data about successful runs of this canary.</p>
         pub fn success_retention_period_in_days(mut self, input: i32) -> Self {
@@ -1800,12 +1698,8 @@ pub mod canary {
             self
         }
         /// <p>The number of days to retain data about successful runs of this canary.</p>
-        pub fn set_success_retention_period_in_days(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.success_retention_period_in_days = input;
-            self
+        pub fn set_success_retention_period_in_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.success_retention_period_in_days = input; self
         }
         /// <p>The number of days to retain data about failed runs of this canary.</p>
         pub fn failure_retention_period_in_days(mut self, input: i32) -> Self {
@@ -1813,12 +1707,8 @@ pub mod canary {
             self
         }
         /// <p>The number of days to retain data about failed runs of this canary.</p>
-        pub fn set_failure_retention_period_in_days(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.failure_retention_period_in_days = input;
-            self
+        pub fn set_failure_retention_period_in_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.failure_retention_period_in_days = input; self
         }
         /// <p>A structure that contains information about the canary's status.</p>
         pub fn status(mut self, input: crate::model::CanaryStatus) -> Self {
@@ -1826,12 +1716,8 @@ pub mod canary {
             self
         }
         /// <p>A structure that contains information about the canary's status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CanaryStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CanaryStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A structure that contains information about when the canary was created, modified, and most recently run.</p>
         pub fn timeline(mut self, input: crate::model::CanaryTimeline) -> Self {
@@ -1839,12 +1725,8 @@ pub mod canary {
             self
         }
         /// <p>A structure that contains information about when the canary was created, modified, and most recently run.</p>
-        pub fn set_timeline(
-            mut self,
-            input: std::option::Option<crate::model::CanaryTimeline>,
-        ) -> Self {
-            self.timeline = input;
-            self
+        pub fn set_timeline(mut self, input: std::option::Option<crate::model::CanaryTimeline>) -> Self {
+            self.timeline = input; self
         }
         /// <p>The location in Amazon S3 where Synthetics stores artifacts from the runs of this canary. Artifacts include the log file, screenshots, and HAR files.</p>
         pub fn artifact_s3_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1852,12 +1734,8 @@ pub mod canary {
             self
         }
         /// <p>The location in Amazon S3 where Synthetics stores artifacts from the runs of this canary. Artifacts include the log file, screenshots, and HAR files.</p>
-        pub fn set_artifact_s3_location(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.artifact_s3_location = input;
-            self
+        pub fn set_artifact_s3_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.artifact_s3_location = input; self
         }
         /// <p>The ARN of the Lambda function that is used as your canary's engine. For more information about Lambda ARN format, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html">Resources and Conditions for Lambda Actions</a>.</p>
         pub fn engine_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1866,8 +1744,7 @@ pub mod canary {
         }
         /// <p>The ARN of the Lambda function that is used as your canary's engine. For more information about Lambda ARN format, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html">Resources and Conditions for Lambda Actions</a>.</p>
         pub fn set_engine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.engine_arn = input;
-            self
+            self.engine_arn = input; self
         }
         /// <p>Specifies the runtime version to use for the canary. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
         pub fn runtime_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1875,12 +1752,8 @@ pub mod canary {
             self
         }
         /// <p>Specifies the runtime version to use for the canary. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-        pub fn set_runtime_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.runtime_version = input;
-            self
+        pub fn set_runtime_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.runtime_version = input; self
         }
         /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfigOutput) -> Self {
@@ -1888,12 +1761,8 @@ pub mod canary {
             self
         }
         /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
-        pub fn set_vpc_config(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfigOutput>,
-        ) -> Self {
-            self.vpc_config = input;
-            self
+        pub fn set_vpc_config(mut self, input: std::option::Option<crate::model::VpcConfigOutput>) -> Self {
+            self.vpc_config = input; self
         }
         /// <p>If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary run to use as the baseline for screenshots, and the coordinates of any parts of the screen to ignore during the visual monitoring comparison.</p>
         pub fn visual_reference(mut self, input: crate::model::VisualReferenceOutput) -> Self {
@@ -1901,37 +1770,23 @@ pub mod canary {
             self
         }
         /// <p>If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary run to use as the baseline for screenshots, and the coordinates of any parts of the screen to ignore during the visual monitoring comparison.</p>
-        pub fn set_visual_reference(
-            mut self,
-            input: std::option::Option<crate::model::VisualReferenceOutput>,
-        ) -> Self {
-            self.visual_reference = input;
-            self
+        pub fn set_visual_reference(mut self, input: std::option::Option<crate::model::VisualReferenceOutput>) -> Self {
+            self.visual_reference = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of key-value pairs that are associated with the canary.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of key-value pairs that are associated with the canary.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
         pub fn artifact_config(mut self, input: crate::model::ArtifactConfigOutput) -> Self {
@@ -1939,36 +1794,51 @@ pub mod canary {
             self
         }
         /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
-        pub fn set_artifact_config(
-            mut self,
-            input: std::option::Option<crate::model::ArtifactConfigOutput>,
-        ) -> Self {
-            self.artifact_config = input;
-            self
+        pub fn set_artifact_config(mut self, input: std::option::Option<crate::model::ArtifactConfigOutput>) -> Self {
+            self.artifact_config = input; self
         }
         /// Consumes the builder and constructs a [`Canary`](crate::model::Canary).
         pub fn build(self) -> crate::model::Canary {
             crate::model::Canary {
-                id: self.id,
-                name: self.name,
-                code: self.code,
-                execution_role_arn: self.execution_role_arn,
-                schedule: self.schedule,
-                run_config: self.run_config,
-                success_retention_period_in_days: self.success_retention_period_in_days,
-                failure_retention_period_in_days: self.failure_retention_period_in_days,
-                status: self.status,
-                timeline: self.timeline,
-                artifact_s3_location: self.artifact_s3_location,
-                engine_arn: self.engine_arn,
-                runtime_version: self.runtime_version,
-                vpc_config: self.vpc_config,
-                visual_reference: self.visual_reference,
-                tags: self.tags,
-                artifact_config: self.artifact_config,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                code: self.code
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                schedule: self.schedule
+                ,
+                run_config: self.run_config
+                ,
+                success_retention_period_in_days: self.success_retention_period_in_days
+                ,
+                failure_retention_period_in_days: self.failure_retention_period_in_days
+                ,
+                status: self.status
+                ,
+                timeline: self.timeline
+                ,
+                artifact_s3_location: self.artifact_s3_location
+                ,
+                engine_arn: self.engine_arn
+                ,
+                runtime_version: self.runtime_version
+                ,
+                vpc_config: self.vpc_config
+                ,
+                visual_reference: self.visual_reference
+                ,
+                tags: self.tags
+                ,
+                artifact_config: self.artifact_config
+                ,
             }
         }
     }
+    
+    
 }
 impl Canary {
     /// Creates a new builder-style object to manufacture [`Canary`](crate::model::Canary).
@@ -1980,20 +1850,20 @@ impl Canary {
 /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArtifactConfigOutput {
+pub struct ArtifactConfigOutput  {
     /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3. </p>
     #[doc(hidden)]
     pub s3_encryption: std::option::Option<crate::model::S3EncryptionConfig>,
 }
 impl ArtifactConfigOutput {
     /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3. </p>
-    pub fn s3_encryption(&self) -> std::option::Option<&crate::model::S3EncryptionConfig> {
+    pub fn s3_encryption(&self) -> std::option::Option<& crate::model::S3EncryptionConfig> {
         self.s3_encryption.as_ref()
     }
 }
 /// See [`ArtifactConfigOutput`](crate::model::ArtifactConfigOutput).
 pub mod artifact_config_output {
-
+    
     /// A builder for [`ArtifactConfigOutput`](crate::model::ArtifactConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2006,20 +1876,19 @@ pub mod artifact_config_output {
             self
         }
         /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3. </p>
-        pub fn set_s3_encryption(
-            mut self,
-            input: std::option::Option<crate::model::S3EncryptionConfig>,
-        ) -> Self {
-            self.s3_encryption = input;
-            self
+        pub fn set_s3_encryption(mut self, input: std::option::Option<crate::model::S3EncryptionConfig>) -> Self {
+            self.s3_encryption = input; self
         }
         /// Consumes the builder and constructs a [`ArtifactConfigOutput`](crate::model::ArtifactConfigOutput).
         pub fn build(self) -> crate::model::ArtifactConfigOutput {
             crate::model::ArtifactConfigOutput {
-                s3_encryption: self.s3_encryption,
+                s3_encryption: self.s3_encryption
+                ,
             }
         }
     }
+    
+    
 }
 impl ArtifactConfigOutput {
     /// Creates a new builder-style object to manufacture [`ArtifactConfigOutput`](crate::model::ArtifactConfigOutput).
@@ -2028,11 +1897,11 @@ impl ArtifactConfigOutput {
     }
 }
 
-/// <p>If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary run that is used as the baseline for screenshots, and the coordinates of any parts of those screenshots that are ignored during visual monitoring comparison.</p>
+/// <p>If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary run that is used as the baseline for screenshots, and the coordinates of any parts of those screenshots that are ignored during visual monitoring comparison.</p> 
 /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VisualReferenceOutput {
+pub struct VisualReferenceOutput  {
     /// <p>An array of screenshots that are used as the baseline for comparisons during visual monitoring.</p>
     #[doc(hidden)]
     pub base_screenshots: std::option::Option<std::vec::Vec<crate::model::BaseScreenshot>>,
@@ -2042,22 +1911,21 @@ pub struct VisualReferenceOutput {
 }
 impl VisualReferenceOutput {
     /// <p>An array of screenshots that are used as the baseline for comparisons during visual monitoring.</p>
-    pub fn base_screenshots(&self) -> std::option::Option<&[crate::model::BaseScreenshot]> {
+    pub fn base_screenshots(&self) -> std::option::Option<& [crate::model::BaseScreenshot]> {
         self.base_screenshots.as_deref()
     }
     /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
-    pub fn base_canary_run_id(&self) -> std::option::Option<&str> {
+    pub fn base_canary_run_id(&self) -> std::option::Option<& str> {
         self.base_canary_run_id.as_deref()
     }
 }
 /// See [`VisualReferenceOutput`](crate::model::VisualReferenceOutput).
 pub mod visual_reference_output {
-
+    
     /// A builder for [`VisualReferenceOutput`](crate::model::VisualReferenceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) base_screenshots:
-            std::option::Option<std::vec::Vec<crate::model::BaseScreenshot>>,
+        pub(crate) base_screenshots: std::option::Option<std::vec::Vec<crate::model::BaseScreenshot>>,
         pub(crate) base_canary_run_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2068,17 +1936,13 @@ pub mod visual_reference_output {
         /// <p>An array of screenshots that are used as the baseline for comparisons during visual monitoring.</p>
         pub fn base_screenshots(mut self, input: crate::model::BaseScreenshot) -> Self {
             let mut v = self.base_screenshots.unwrap_or_default();
-            v.push(input);
-            self.base_screenshots = Some(v);
-            self
+                            v.push(input);
+                            self.base_screenshots = Some(v);
+                            self
         }
         /// <p>An array of screenshots that are used as the baseline for comparisons during visual monitoring.</p>
-        pub fn set_base_screenshots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BaseScreenshot>>,
-        ) -> Self {
-            self.base_screenshots = input;
-            self
+        pub fn set_base_screenshots(mut self, input: std::option::Option<std::vec::Vec<crate::model::BaseScreenshot>>) -> Self {
+            self.base_screenshots = input; self
         }
         /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
         pub fn base_canary_run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2086,21 +1950,21 @@ pub mod visual_reference_output {
             self
         }
         /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
-        pub fn set_base_canary_run_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.base_canary_run_id = input;
-            self
+        pub fn set_base_canary_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.base_canary_run_id = input; self
         }
         /// Consumes the builder and constructs a [`VisualReferenceOutput`](crate::model::VisualReferenceOutput).
         pub fn build(self) -> crate::model::VisualReferenceOutput {
             crate::model::VisualReferenceOutput {
-                base_screenshots: self.base_screenshots,
-                base_canary_run_id: self.base_canary_run_id,
+                base_screenshots: self.base_screenshots
+                ,
+                base_canary_run_id: self.base_canary_run_id
+                ,
             }
         }
     }
+    
+    
 }
 impl VisualReferenceOutput {
     /// Creates a new builder-style object to manufacture [`VisualReferenceOutput`](crate::model::VisualReferenceOutput).
@@ -2112,7 +1976,7 @@ impl VisualReferenceOutput {
 /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfigOutput {
+pub struct VpcConfigOutput  {
     /// <p>The IDs of the VPC where this canary is to run.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
@@ -2125,21 +1989,21 @@ pub struct VpcConfigOutput {
 }
 impl VpcConfigOutput {
     /// <p>The IDs of the VPC where this canary is to run.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The IDs of the subnets where this canary is to run.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The IDs of the security groups for this canary.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
 }
 /// See [`VpcConfigOutput`](crate::model::VpcConfigOutput).
 pub mod vpc_config_output {
-
+    
     /// A builder for [`VpcConfigOutput`](crate::model::VpcConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2155,8 +2019,7 @@ pub mod vpc_config_output {
         }
         /// <p>The IDs of the VPC where this canary is to run.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Appends an item to `subnet_ids`.
         ///
@@ -2165,17 +2028,13 @@ pub mod vpc_config_output {
         /// <p>The IDs of the subnets where this canary is to run.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>The IDs of the subnets where this canary is to run.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// Appends an item to `security_group_ids`.
         ///
@@ -2184,27 +2043,28 @@ pub mod vpc_config_output {
         /// <p>The IDs of the security groups for this canary.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_ids = Some(v);
+                            self
         }
         /// <p>The IDs of the security groups for this canary.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
+        pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_ids = input; self
         }
         /// Consumes the builder and constructs a [`VpcConfigOutput`](crate::model::VpcConfigOutput).
         pub fn build(self) -> crate::model::VpcConfigOutput {
             crate::model::VpcConfigOutput {
-                vpc_id: self.vpc_id,
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
+                vpc_id: self.vpc_id
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                security_group_ids: self.security_group_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcConfigOutput {
     /// Creates a new builder-style object to manufacture [`VpcConfigOutput`](crate::model::VpcConfigOutput).
@@ -2216,7 +2076,7 @@ impl VpcConfigOutput {
 /// <p>This structure contains information about when the canary was created and modified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryTimeline {
+pub struct CanaryTimeline  {
     /// <p>The date and time the canary was created.</p>
     #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
@@ -2232,25 +2092,25 @@ pub struct CanaryTimeline {
 }
 impl CanaryTimeline {
     /// <p>The date and time the canary was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time the canary was most recently modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The date and time that the canary's most recent run started.</p>
-    pub fn last_started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_started(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_started.as_ref()
     }
     /// <p>The date and time that the canary's most recent run ended.</p>
-    pub fn last_stopped(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_stopped(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_stopped.as_ref()
     }
 }
 /// See [`CanaryTimeline`](crate::model::CanaryTimeline).
 pub mod canary_timeline {
-
+    
     /// A builder for [`CanaryTimeline`](crate::model::CanaryTimeline).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2266,12 +2126,8 @@ pub mod canary_timeline {
             self
         }
         /// <p>The date and time the canary was created.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// <p>The date and time the canary was most recently modified.</p>
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2279,12 +2135,8 @@ pub mod canary_timeline {
             self
         }
         /// <p>The date and time the canary was most recently modified.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The date and time that the canary's most recent run started.</p>
         pub fn last_started(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2292,12 +2144,8 @@ pub mod canary_timeline {
             self
         }
         /// <p>The date and time that the canary's most recent run started.</p>
-        pub fn set_last_started(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_started = input;
-            self
+        pub fn set_last_started(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_started = input; self
         }
         /// <p>The date and time that the canary's most recent run ended.</p>
         pub fn last_stopped(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2305,23 +2153,25 @@ pub mod canary_timeline {
             self
         }
         /// <p>The date and time that the canary's most recent run ended.</p>
-        pub fn set_last_stopped(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_stopped = input;
-            self
+        pub fn set_last_stopped(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_stopped = input; self
         }
         /// Consumes the builder and constructs a [`CanaryTimeline`](crate::model::CanaryTimeline).
         pub fn build(self) -> crate::model::CanaryTimeline {
             crate::model::CanaryTimeline {
-                created: self.created,
-                last_modified: self.last_modified,
-                last_started: self.last_started,
-                last_stopped: self.last_stopped,
+                created: self.created
+                ,
+                last_modified: self.last_modified
+                ,
+                last_started: self.last_started
+                ,
+                last_stopped: self.last_stopped
+                ,
             }
         }
     }
+    
+    
 }
 impl CanaryTimeline {
     /// Creates a new builder-style object to manufacture [`CanaryTimeline`](crate::model::CanaryTimeline).
@@ -2333,7 +2183,7 @@ impl CanaryTimeline {
 /// <p>A structure that contains the current state of the canary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryStatus {
+pub struct CanaryStatus  {
     /// <p>The current state of the canary.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::CanaryState>,
@@ -2346,21 +2196,21 @@ pub struct CanaryStatus {
 }
 impl CanaryStatus {
     /// <p>The current state of the canary.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::CanaryState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::CanaryState> {
         self.state.as_ref()
     }
     /// <p>If the canary has insufficient permissions to run, this field provides more details.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>If the canary cannot run or has failed, this field displays the reason.</p>
-    pub fn state_reason_code(&self) -> std::option::Option<&crate::model::CanaryStateReasonCode> {
+    pub fn state_reason_code(&self) -> std::option::Option<& crate::model::CanaryStateReasonCode> {
         self.state_reason_code.as_ref()
     }
 }
 /// See [`CanaryStatus`](crate::model::CanaryStatus).
 pub mod canary_status {
-
+    
     /// A builder for [`CanaryStatus`](crate::model::CanaryStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2376,8 +2226,7 @@ pub mod canary_status {
         }
         /// <p>The current state of the canary.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::CanaryState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>If the canary has insufficient permissions to run, this field provides more details.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2386,8 +2235,7 @@ pub mod canary_status {
         }
         /// <p>If the canary has insufficient permissions to run, this field provides more details.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>If the canary cannot run or has failed, this field displays the reason.</p>
         pub fn state_reason_code(mut self, input: crate::model::CanaryStateReasonCode) -> Self {
@@ -2395,22 +2243,23 @@ pub mod canary_status {
             self
         }
         /// <p>If the canary cannot run or has failed, this field displays the reason.</p>
-        pub fn set_state_reason_code(
-            mut self,
-            input: std::option::Option<crate::model::CanaryStateReasonCode>,
-        ) -> Self {
-            self.state_reason_code = input;
-            self
+        pub fn set_state_reason_code(mut self, input: std::option::Option<crate::model::CanaryStateReasonCode>) -> Self {
+            self.state_reason_code = input; self
         }
         /// Consumes the builder and constructs a [`CanaryStatus`](crate::model::CanaryStatus).
         pub fn build(self) -> crate::model::CanaryStatus {
             crate::model::CanaryStatus {
-                state: self.state,
-                state_reason: self.state_reason,
-                state_reason_code: self.state_reason_code,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
+                state_reason_code: self.state_reason_code
+                ,
             }
         }
     }
+    
+    
 }
 impl CanaryStatus {
     /// Creates a new builder-style object to manufacture [`CanaryStatus`](crate::model::CanaryStatus).
@@ -2425,9 +2274,9 @@ impl CanaryStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let canarystatereasoncode = unimplemented!();
 /// match canarystatereasoncode {
@@ -2459,22 +2308,14 @@ impl CanaryStatus {
 /// Specifically, when `canarystatereasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CanaryStateReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CanaryStateReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
@@ -2501,7 +2342,7 @@ pub enum CanaryStateReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     UpdatePending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CanaryStateReasonCode {
     fn from(s: &str) -> Self {
@@ -2518,19 +2359,17 @@ impl std::convert::From<&str> for CanaryStateReasonCode {
             "UPDATE_COMPLETE" => CanaryStateReasonCode::UpdateComplete,
             "UPDATE_IN_PROGRESS" => CanaryStateReasonCode::UpdateInProgress,
             "UPDATE_PENDING" => CanaryStateReasonCode::UpdatePending,
-            other => {
-                CanaryStateReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CanaryStateReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CanaryStateReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CanaryStateReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CanaryStateReasonCode::from(s))
+                }
+            }
 impl CanaryStateReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2547,24 +2386,13 @@ impl CanaryStateReasonCode {
             CanaryStateReasonCode::UpdateComplete => "UPDATE_COMPLETE",
             CanaryStateReasonCode::UpdateInProgress => "UPDATE_IN_PROGRESS",
             CanaryStateReasonCode::UpdatePending => "UPDATE_PENDING",
-            CanaryStateReasonCode::Unknown(value) => value.as_str(),
+            CanaryStateReasonCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CREATE_FAILED",
-            "CREATE_IN_PROGRESS",
-            "CREATE_PENDING",
-            "DELETE_FAILED",
-            "DELETE_IN_PROGRESS",
-            "INVALID_PERMISSIONS",
-            "ROLLBACK_COMPLETE",
-            "ROLLBACK_FAILED",
-            "SYNC_DELETE_IN_PROGRESS",
-            "UPDATE_COMPLETE",
-            "UPDATE_IN_PROGRESS",
-            "UPDATE_PENDING",
+            "CREATE_FAILED", "CREATE_IN_PROGRESS", "CREATE_PENDING", "DELETE_FAILED", "DELETE_IN_PROGRESS", "INVALID_PERMISSIONS", "ROLLBACK_COMPLETE", "ROLLBACK_FAILED", "SYNC_DELETE_IN_PROGRESS", "UPDATE_COMPLETE", "UPDATE_IN_PROGRESS", "UPDATE_PENDING"
         ]
     }
 }
@@ -2580,9 +2408,9 @@ impl AsRef<str> for CanaryStateReasonCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let canarystate = unimplemented!();
 /// match canarystate {
@@ -2611,22 +2439,14 @@ impl AsRef<str> for CanaryStateReasonCode {
 /// Specifically, when `canarystate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CanaryState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CanaryState {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
@@ -2647,7 +2467,7 @@ pub enum CanaryState {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CanaryState {
     fn from(s: &str) -> Self {
@@ -2661,17 +2481,17 @@ impl std::convert::From<&str> for CanaryState {
             "STOPPED" => CanaryState::Stopped,
             "STOPPING" => CanaryState::Stopping,
             "UPDATING" => CanaryState::Updating,
-            other => CanaryState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CanaryState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CanaryState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CanaryState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CanaryState::from(s))
+                }
+            }
 impl CanaryState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2685,14 +2505,13 @@ impl CanaryState {
             CanaryState::Stopped => "STOPPED",
             CanaryState::Stopping => "STOPPING",
             CanaryState::Updating => "UPDATING",
-            CanaryState::Unknown(value) => value.as_str(),
+            CanaryState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CREATING", "DELETING", "ERROR", "READY", "RUNNING", "STARTING", "STOPPED", "STOPPING",
-            "UPDATING",
+            "CREATING", "DELETING", "ERROR", "READY", "RUNNING", "STARTING", "STOPPED", "STOPPING", "UPDATING"
         ]
     }
 }
@@ -2705,7 +2524,7 @@ impl AsRef<str> for CanaryState {
 /// <p>A structure that contains information about a canary run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryRunConfigOutput {
+pub struct CanaryRunConfigOutput  {
     /// <p>How long the canary is allowed to run before it must stop.</p>
     #[doc(hidden)]
     pub timeout_in_seconds: std::option::Option<i32>,
@@ -2732,7 +2551,7 @@ impl CanaryRunConfigOutput {
 }
 /// See [`CanaryRunConfigOutput`](crate::model::CanaryRunConfigOutput).
 pub mod canary_run_config_output {
-
+    
     /// A builder for [`CanaryRunConfigOutput`](crate::model::CanaryRunConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2748,8 +2567,7 @@ pub mod canary_run_config_output {
         }
         /// <p>How long the canary is allowed to run before it must stop.</p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_in_seconds = input;
-            self
+            self.timeout_in_seconds = input; self
         }
         /// <p>The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of 64.</p>
         pub fn memory_in_mb(mut self, input: i32) -> Self {
@@ -2758,8 +2576,7 @@ pub mod canary_run_config_output {
         }
         /// <p>The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of 64.</p>
         pub fn set_memory_in_mb(mut self, input: std::option::Option<i32>) -> Self {
-            self.memory_in_mb = input;
-            self
+            self.memory_in_mb = input; self
         }
         /// <p>Displays whether this canary run used active X-Ray tracing. </p>
         pub fn active_tracing(mut self, input: bool) -> Self {
@@ -2768,18 +2585,22 @@ pub mod canary_run_config_output {
         }
         /// <p>Displays whether this canary run used active X-Ray tracing. </p>
         pub fn set_active_tracing(mut self, input: std::option::Option<bool>) -> Self {
-            self.active_tracing = input;
-            self
+            self.active_tracing = input; self
         }
         /// Consumes the builder and constructs a [`CanaryRunConfigOutput`](crate::model::CanaryRunConfigOutput).
         pub fn build(self) -> crate::model::CanaryRunConfigOutput {
             crate::model::CanaryRunConfigOutput {
-                timeout_in_seconds: self.timeout_in_seconds,
-                memory_in_mb: self.memory_in_mb,
-                active_tracing: self.active_tracing,
+                timeout_in_seconds: self.timeout_in_seconds
+                ,
+                memory_in_mb: self.memory_in_mb
+                ,
+                active_tracing: self.active_tracing
+                ,
             }
         }
     }
+    
+    
 }
 impl CanaryRunConfigOutput {
     /// Creates a new builder-style object to manufacture [`CanaryRunConfigOutput`](crate::model::CanaryRunConfigOutput).
@@ -2791,11 +2612,11 @@ impl CanaryRunConfigOutput {
 /// <p>How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryScheduleOutput {
-    /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p>
-    /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p>
-    /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p>
-    /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p>
+pub struct CanaryScheduleOutput  {
+    /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p> 
+    /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p> 
+    /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p> 
+    /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p> 
     /// <p>Use <code>cron(<i>expression</i>)</code> to specify a cron expression. For information about the syntax for cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html"> Scheduling canary runs using cron</a>.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
@@ -2804,12 +2625,12 @@ pub struct CanaryScheduleOutput {
     pub duration_in_seconds: std::option::Option<i64>,
 }
 impl CanaryScheduleOutput {
-    /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p>
-    /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p>
-    /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p>
-    /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p>
+    /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p> 
+    /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p> 
+    /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p> 
+    /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p> 
     /// <p>Use <code>cron(<i>expression</i>)</code> to specify a cron expression. For information about the syntax for cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html"> Scheduling canary runs using cron</a>.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>How long, in seconds, for the canary to continue making regular runs after it was created. The runs are performed according to the schedule in the <code>Expression</code> value.</p>
@@ -2819,7 +2640,7 @@ impl CanaryScheduleOutput {
 }
 /// See [`CanaryScheduleOutput`](crate::model::CanaryScheduleOutput).
 pub mod canary_schedule_output {
-
+    
     /// A builder for [`CanaryScheduleOutput`](crate::model::CanaryScheduleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2827,23 +2648,22 @@ pub mod canary_schedule_output {
         pub(crate) duration_in_seconds: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p>
-        /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p>
-        /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p>
-        /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p>
+        /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p> 
+        /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p> 
+        /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p> 
+        /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p> 
         /// <p>Use <code>cron(<i>expression</i>)</code> to specify a cron expression. For information about the syntax for cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html"> Scheduling canary runs using cron</a>.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
             self
         }
-        /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p>
-        /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p>
-        /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p>
-        /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p>
+        /// <p>A <code>rate</code> expression or a <code>cron</code> expression that defines how often the canary is to run.</p> 
+        /// <p>For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. </p> 
+        /// <p>For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs it once every hour. You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1 hour)</code>.</p> 
+        /// <p>Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value that causes the canary to run only once when it is started.</p> 
         /// <p>Use <code>cron(<i>expression</i>)</code> to specify a cron expression. For information about the syntax for cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html"> Scheduling canary runs using cron</a>.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expression = input;
-            self
+            self.expression = input; self
         }
         /// <p>How long, in seconds, for the canary to continue making regular runs after it was created. The runs are performed according to the schedule in the <code>Expression</code> value.</p>
         pub fn duration_in_seconds(mut self, input: i64) -> Self {
@@ -2852,17 +2672,20 @@ pub mod canary_schedule_output {
         }
         /// <p>How long, in seconds, for the canary to continue making regular runs after it was created. The runs are performed according to the schedule in the <code>Expression</code> value.</p>
         pub fn set_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.duration_in_seconds = input;
-            self
+            self.duration_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`CanaryScheduleOutput`](crate::model::CanaryScheduleOutput).
         pub fn build(self) -> crate::model::CanaryScheduleOutput {
             crate::model::CanaryScheduleOutput {
-                expression: self.expression,
-                duration_in_seconds: self.duration_in_seconds,
+                expression: self.expression
+                ,
+                duration_in_seconds: self.duration_in_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl CanaryScheduleOutput {
     /// Creates a new builder-style object to manufacture [`CanaryScheduleOutput`](crate::model::CanaryScheduleOutput).
@@ -2874,7 +2697,7 @@ impl CanaryScheduleOutput {
 /// <p>This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryCodeOutput {
+pub struct CanaryCodeOutput  {
     /// <p>The ARN of the Lambda layer where Synthetics stores the canary script code.</p>
     #[doc(hidden)]
     pub source_location_arn: std::option::Option<std::string::String>,
@@ -2884,17 +2707,17 @@ pub struct CanaryCodeOutput {
 }
 impl CanaryCodeOutput {
     /// <p>The ARN of the Lambda layer where Synthetics stores the canary script code.</p>
-    pub fn source_location_arn(&self) -> std::option::Option<&str> {
+    pub fn source_location_arn(&self) -> std::option::Option<& str> {
         self.source_location_arn.as_deref()
     }
     /// <p>The entry point to use for the source code when running the canary.</p>
-    pub fn handler(&self) -> std::option::Option<&str> {
+    pub fn handler(&self) -> std::option::Option<& str> {
         self.handler.as_deref()
     }
 }
 /// See [`CanaryCodeOutput`](crate::model::CanaryCodeOutput).
 pub mod canary_code_output {
-
+    
     /// A builder for [`CanaryCodeOutput`](crate::model::CanaryCodeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2908,12 +2731,8 @@ pub mod canary_code_output {
             self
         }
         /// <p>The ARN of the Lambda layer where Synthetics stores the canary script code.</p>
-        pub fn set_source_location_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_location_arn = input;
-            self
+        pub fn set_source_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_location_arn = input; self
         }
         /// <p>The entry point to use for the source code when running the canary.</p>
         pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2922,17 +2741,20 @@ pub mod canary_code_output {
         }
         /// <p>The entry point to use for the source code when running the canary.</p>
         pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.handler = input;
-            self
+            self.handler = input; self
         }
         /// Consumes the builder and constructs a [`CanaryCodeOutput`](crate::model::CanaryCodeOutput).
         pub fn build(self) -> crate::model::CanaryCodeOutput {
             crate::model::CanaryCodeOutput {
-                source_location_arn: self.source_location_arn,
-                handler: self.handler,
+                source_location_arn: self.source_location_arn
+                ,
+                handler: self.handler
+                ,
             }
         }
     }
+    
+    
 }
 impl CanaryCodeOutput {
     /// Creates a new builder-style object to manufacture [`CanaryCodeOutput`](crate::model::CanaryCodeOutput).
@@ -2944,7 +2766,7 @@ impl CanaryCodeOutput {
 /// <p>This structure contains information about one canary runtime version. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuntimeVersion {
+pub struct RuntimeVersion  {
     /// <p>The name of the runtime version. For a list of valid runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
     #[doc(hidden)]
     pub version_name: std::option::Option<std::string::String>,
@@ -2960,25 +2782,25 @@ pub struct RuntimeVersion {
 }
 impl RuntimeVersion {
     /// <p>The name of the runtime version. For a list of valid runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    pub fn version_name(&self) -> std::option::Option<&str> {
+    pub fn version_name(&self) -> std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>A description of the runtime version, created by Amazon.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date that the runtime version was released.</p>
-    pub fn release_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn release_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.release_date.as_ref()
     }
     /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
-    pub fn deprecation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deprecation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.deprecation_date.as_ref()
     }
 }
 /// See [`RuntimeVersion`](crate::model::RuntimeVersion).
 pub mod runtime_version {
-
+    
     /// A builder for [`RuntimeVersion`](crate::model::RuntimeVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2995,8 +2817,7 @@ pub mod runtime_version {
         }
         /// <p>The name of the runtime version. For a list of valid runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_name = input;
-            self
+            self.version_name = input; self
         }
         /// <p>A description of the runtime version, created by Amazon.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3005,8 +2826,7 @@ pub mod runtime_version {
         }
         /// <p>A description of the runtime version, created by Amazon.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date that the runtime version was released.</p>
         pub fn release_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3014,12 +2834,8 @@ pub mod runtime_version {
             self
         }
         /// <p>The date that the runtime version was released.</p>
-        pub fn set_release_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.release_date = input;
-            self
+        pub fn set_release_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.release_date = input; self
         }
         /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
         pub fn deprecation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3027,23 +2843,25 @@ pub mod runtime_version {
             self
         }
         /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
-        pub fn set_deprecation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.deprecation_date = input;
-            self
+        pub fn set_deprecation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.deprecation_date = input; self
         }
         /// Consumes the builder and constructs a [`RuntimeVersion`](crate::model::RuntimeVersion).
         pub fn build(self) -> crate::model::RuntimeVersion {
             crate::model::RuntimeVersion {
-                version_name: self.version_name,
-                description: self.description,
-                release_date: self.release_date,
-                deprecation_date: self.deprecation_date,
+                version_name: self.version_name
+                ,
+                description: self.description
+                ,
+                release_date: self.release_date
+                ,
+                deprecation_date: self.deprecation_date
+                ,
             }
         }
     }
+    
+    
 }
 impl RuntimeVersion {
     /// Creates a new builder-style object to manufacture [`RuntimeVersion`](crate::model::RuntimeVersion).
@@ -3055,7 +2873,7 @@ impl RuntimeVersion {
 /// <p>This structure contains information about the most recent run of a single canary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryLastRun {
+pub struct CanaryLastRun  {
     /// <p>The name of the canary.</p>
     #[doc(hidden)]
     pub canary_name: std::option::Option<std::string::String>,
@@ -3065,17 +2883,17 @@ pub struct CanaryLastRun {
 }
 impl CanaryLastRun {
     /// <p>The name of the canary.</p>
-    pub fn canary_name(&self) -> std::option::Option<&str> {
+    pub fn canary_name(&self) -> std::option::Option<& str> {
         self.canary_name.as_deref()
     }
     /// <p>The results from this canary's most recent run.</p>
-    pub fn last_run(&self) -> std::option::Option<&crate::model::CanaryRun> {
+    pub fn last_run(&self) -> std::option::Option<& crate::model::CanaryRun> {
         self.last_run.as_ref()
     }
 }
 /// See [`CanaryLastRun`](crate::model::CanaryLastRun).
 pub mod canary_last_run {
-
+    
     /// A builder for [`CanaryLastRun`](crate::model::CanaryLastRun).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3090,8 +2908,7 @@ pub mod canary_last_run {
         }
         /// <p>The name of the canary.</p>
         pub fn set_canary_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.canary_name = input;
-            self
+            self.canary_name = input; self
         }
         /// <p>The results from this canary's most recent run.</p>
         pub fn last_run(mut self, input: crate::model::CanaryRun) -> Self {
@@ -3100,17 +2917,20 @@ pub mod canary_last_run {
         }
         /// <p>The results from this canary's most recent run.</p>
         pub fn set_last_run(mut self, input: std::option::Option<crate::model::CanaryRun>) -> Self {
-            self.last_run = input;
-            self
+            self.last_run = input; self
         }
         /// Consumes the builder and constructs a [`CanaryLastRun`](crate::model::CanaryLastRun).
         pub fn build(self) -> crate::model::CanaryLastRun {
             crate::model::CanaryLastRun {
-                canary_name: self.canary_name,
-                last_run: self.last_run,
+                canary_name: self.canary_name
+                ,
+                last_run: self.last_run
+                ,
             }
         }
     }
+    
+    
 }
 impl CanaryLastRun {
     /// Creates a new builder-style object to manufacture [`CanaryLastRun`](crate::model::CanaryLastRun).
@@ -3118,3 +2938,4 @@ impl CanaryLastRun {
         crate::model::canary_last_run::Builder::default()
     }
 }
+

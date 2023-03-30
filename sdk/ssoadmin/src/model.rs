@@ -3,28 +3,24 @@
 /// <p>Specifies the attributes to add to your attribute-based access control (ABAC) configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceAccessControlAttributeConfiguration {
+pub struct InstanceAccessControlAttributeConfiguration  {
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
     #[doc(hidden)]
-    pub access_control_attributes:
-        std::option::Option<std::vec::Vec<crate::model::AccessControlAttribute>>,
+    pub access_control_attributes: std::option::Option<std::vec::Vec<crate::model::AccessControlAttribute>>,
 }
 impl InstanceAccessControlAttributeConfiguration {
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
-    pub fn access_control_attributes(
-        &self,
-    ) -> std::option::Option<&[crate::model::AccessControlAttribute]> {
+    pub fn access_control_attributes(&self) -> std::option::Option<& [crate::model::AccessControlAttribute]> {
         self.access_control_attributes.as_deref()
     }
 }
 /// See [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration).
 pub mod instance_access_control_attribute_configuration {
-
+    
     /// A builder for [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) access_control_attributes:
-            std::option::Option<std::vec::Vec<crate::model::AccessControlAttribute>>,
+        pub(crate) access_control_attributes: std::option::Option<std::vec::Vec<crate::model::AccessControlAttribute>>,
     }
     impl Builder {
         /// Appends an item to `access_control_attributes`.
@@ -32,30 +28,26 @@ pub mod instance_access_control_attribute_configuration {
         /// To override the contents of this collection use [`set_access_control_attributes`](Self::set_access_control_attributes).
         ///
         /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
-        pub fn access_control_attributes(
-            mut self,
-            input: crate::model::AccessControlAttribute,
-        ) -> Self {
+        pub fn access_control_attributes(mut self, input: crate::model::AccessControlAttribute) -> Self {
             let mut v = self.access_control_attributes.unwrap_or_default();
-            v.push(input);
-            self.access_control_attributes = Some(v);
-            self
+                            v.push(input);
+                            self.access_control_attributes = Some(v);
+                            self
         }
         /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
-        pub fn set_access_control_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccessControlAttribute>>,
-        ) -> Self {
-            self.access_control_attributes = input;
-            self
+        pub fn set_access_control_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccessControlAttribute>>) -> Self {
+            self.access_control_attributes = input; self
         }
         /// Consumes the builder and constructs a [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration).
         pub fn build(self) -> crate::model::InstanceAccessControlAttributeConfiguration {
             crate::model::InstanceAccessControlAttributeConfiguration {
-                access_control_attributes: self.access_control_attributes,
+                access_control_attributes: self.access_control_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceAccessControlAttributeConfiguration {
     /// Creates a new builder-style object to manufacture [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration).
@@ -67,7 +59,7 @@ impl InstanceAccessControlAttributeConfiguration {
 /// <p>These are IAM Identity Center identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permissions policies that determine who can access your AWS resources based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, IAM Identity Center passes the attribute values of the authenticated user into IAM for use in policy evaluation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessControlAttribute {
+pub struct AccessControlAttribute  {
     /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -77,17 +69,17 @@ pub struct AccessControlAttribute {
 }
 impl AccessControlAttribute {
     /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::AccessControlAttributeValue> {
+    pub fn value(&self) -> std::option::Option<& crate::model::AccessControlAttributeValue> {
         self.value.as_ref()
     }
 }
 /// See [`AccessControlAttribute`](crate::model::AccessControlAttribute).
 pub mod access_control_attribute {
-
+    
     /// A builder for [`AccessControlAttribute`](crate::model::AccessControlAttribute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -102,8 +94,7 @@ pub mod access_control_attribute {
         }
         /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value used for mapping a specified attribute to an identity source.</p>
         pub fn value(mut self, input: crate::model::AccessControlAttributeValue) -> Self {
@@ -111,21 +102,21 @@ pub mod access_control_attribute {
             self
         }
         /// <p>The value used for mapping a specified attribute to an identity source.</p>
-        pub fn set_value(
-            mut self,
-            input: std::option::Option<crate::model::AccessControlAttributeValue>,
-        ) -> Self {
-            self.value = input;
-            self
+        pub fn set_value(mut self, input: std::option::Option<crate::model::AccessControlAttributeValue>) -> Self {
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`AccessControlAttribute`](crate::model::AccessControlAttribute).
         pub fn build(self) -> crate::model::AccessControlAttribute {
             crate::model::AccessControlAttribute {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessControlAttribute {
     /// Creates a new builder-style object to manufacture [`AccessControlAttribute`](crate::model::AccessControlAttribute).
@@ -137,20 +128,20 @@ impl AccessControlAttribute {
 /// <p>The value used for mapping a specified attribute to an identity source. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute mappings</a> in the <i>IAM Identity Center User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessControlAttributeValue {
+pub struct AccessControlAttributeValue  {
     /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AccessControlAttributeValue {
     /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
-    pub fn source(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn source(&self) -> std::option::Option<& [std::string::String]> {
         self.source.as_deref()
     }
 }
 /// See [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue).
 pub mod access_control_attribute_value {
-
+    
     /// A builder for [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -164,25 +155,24 @@ pub mod access_control_attribute_value {
         /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source.unwrap_or_default();
-            v.push(input.into());
-            self.source = Some(v);
-            self
+                            v.push(input.into());
+                            self.source = Some(v);
+                            self
         }
         /// <p>The identity source to use when mapping a specified attribute to IAM Identity Center.</p>
-        pub fn set_source(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.source = input;
-            self
+        pub fn set_source(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.source = input; self
         }
         /// Consumes the builder and constructs a [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue).
         pub fn build(self) -> crate::model::AccessControlAttributeValue {
             crate::model::AccessControlAttributeValue {
-                source: self.source,
+                source: self.source
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessControlAttributeValue {
     /// Creates a new builder-style object to manufacture [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue).
@@ -194,7 +184,7 @@ impl AccessControlAttributeValue {
 /// <p>A set of key-value pairs that are used to manage the resource. Tags can only be applied to permission sets and cannot be applied to corresponding roles that IAM Identity Center creates in AWS accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key for the tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -204,17 +194,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key for the tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -229,8 +219,7 @@ pub mod tag {
         }
         /// <p>The key for the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of the tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -239,17 +228,20 @@ pub mod tag {
         }
         /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -258,58 +250,47 @@ impl Tag {
     }
 }
 
-/// <p>Specifies the configuration of the AWS managed or customer managed policy that you want to set as a permissions boundary. Specify either <code>CustomerManagedPolicyReference</code> to use the name and path of a customer managed policy, or <code>ManagedPolicyArn</code> to use the ARN of an AWS managed policy. A permissions boundary represents the maximum permissions that any policy can grant your role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p> <important>
-/// <p>Policies used as permissions boundaries don't provide permissions. You must also attach an IAM policy to the role. To learn how the effective permissions for a role are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON policy evaluation logic</a> in the <i>IAM User Guide</i>.</p>
+/// <p>Specifies the configuration of the AWS managed or customer managed policy that you want to set as a permissions boundary. Specify either <code>CustomerManagedPolicyReference</code> to use the name and path of a customer managed policy, or <code>ManagedPolicyArn</code> to use the ARN of an AWS managed policy. A permissions boundary represents the maximum permissions that any policy can grant your role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p> <important> 
+/// <p>Policies used as permissions boundaries don't provide permissions. You must also attach an IAM policy to the role. To learn how the effective permissions for a role are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON policy evaluation logic</a> in the <i>IAM User Guide</i>.</p> 
 /// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PermissionsBoundary {
+pub struct PermissionsBoundary  {
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
     #[doc(hidden)]
-    pub customer_managed_policy_reference:
-        std::option::Option<crate::model::CustomerManagedPolicyReference>,
+    pub customer_managed_policy_reference: std::option::Option<crate::model::CustomerManagedPolicyReference>,
     /// <p>The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
     #[doc(hidden)]
     pub managed_policy_arn: std::option::Option<std::string::String>,
 }
 impl PermissionsBoundary {
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
-    pub fn customer_managed_policy_reference(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomerManagedPolicyReference> {
+    pub fn customer_managed_policy_reference(&self) -> std::option::Option<& crate::model::CustomerManagedPolicyReference> {
         self.customer_managed_policy_reference.as_ref()
     }
     /// <p>The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
-    pub fn managed_policy_arn(&self) -> std::option::Option<&str> {
+    pub fn managed_policy_arn(&self) -> std::option::Option<& str> {
         self.managed_policy_arn.as_deref()
     }
 }
 /// See [`PermissionsBoundary`](crate::model::PermissionsBoundary).
 pub mod permissions_boundary {
-
+    
     /// A builder for [`PermissionsBoundary`](crate::model::PermissionsBoundary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) customer_managed_policy_reference:
-            std::option::Option<crate::model::CustomerManagedPolicyReference>,
+        pub(crate) customer_managed_policy_reference: std::option::Option<crate::model::CustomerManagedPolicyReference>,
         pub(crate) managed_policy_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
-        pub fn customer_managed_policy_reference(
-            mut self,
-            input: crate::model::CustomerManagedPolicyReference,
-        ) -> Self {
+        pub fn customer_managed_policy_reference(mut self, input: crate::model::CustomerManagedPolicyReference) -> Self {
             self.customer_managed_policy_reference = Some(input);
             self
         }
         /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
-        pub fn set_customer_managed_policy_reference(
-            mut self,
-            input: std::option::Option<crate::model::CustomerManagedPolicyReference>,
-        ) -> Self {
-            self.customer_managed_policy_reference = input;
-            self
+        pub fn set_customer_managed_policy_reference(mut self, input: std::option::Option<crate::model::CustomerManagedPolicyReference>) -> Self {
+            self.customer_managed_policy_reference = input; self
         }
         /// <p>The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
         pub fn managed_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -317,21 +298,21 @@ pub mod permissions_boundary {
             self
         }
         /// <p>The AWS managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
-        pub fn set_managed_policy_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.managed_policy_arn = input;
-            self
+        pub fn set_managed_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.managed_policy_arn = input; self
         }
         /// Consumes the builder and constructs a [`PermissionsBoundary`](crate::model::PermissionsBoundary).
         pub fn build(self) -> crate::model::PermissionsBoundary {
             crate::model::PermissionsBoundary {
-                customer_managed_policy_reference: self.customer_managed_policy_reference,
-                managed_policy_arn: self.managed_policy_arn,
+                customer_managed_policy_reference: self.customer_managed_policy_reference
+                ,
+                managed_policy_arn: self.managed_policy_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PermissionsBoundary {
     /// Creates a new builder-style object to manufacture [`PermissionsBoundary`](crate::model::PermissionsBoundary).
@@ -343,7 +324,7 @@ impl PermissionsBoundary {
 /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomerManagedPolicyReference {
+pub struct CustomerManagedPolicyReference  {
     /// <p>The name of the IAM policy that you have configured in each account where you want to deploy your permission set.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -353,17 +334,17 @@ pub struct CustomerManagedPolicyReference {
 }
 impl CustomerManagedPolicyReference {
     /// <p>The name of the IAM policy that you have configured in each account where you want to deploy your permission set.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
 }
 /// See [`CustomerManagedPolicyReference`](crate::model::CustomerManagedPolicyReference).
 pub mod customer_managed_policy_reference {
-
+    
     /// A builder for [`CustomerManagedPolicyReference`](crate::model::CustomerManagedPolicyReference).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -378,8 +359,7 @@ pub mod customer_managed_policy_reference {
         }
         /// <p>The name of the IAM policy that you have configured in each account where you want to deploy your permission set.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -388,17 +368,20 @@ pub mod customer_managed_policy_reference {
         }
         /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// Consumes the builder and constructs a [`CustomerManagedPolicyReference`](crate::model::CustomerManagedPolicyReference).
         pub fn build(self) -> crate::model::CustomerManagedPolicyReference {
             crate::model::CustomerManagedPolicyReference {
-                name: self.name,
-                path: self.path,
+                name: self.name
+                ,
+                path: self.path
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomerManagedPolicyReference {
     /// Creates a new builder-style object to manufacture [`CustomerManagedPolicyReference`](crate::model::CustomerManagedPolicyReference).
@@ -410,7 +393,7 @@ impl CustomerManagedPolicyReference {
 /// <p>A structure that is used to provide the status of the provisioning operation for a specified permission set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PermissionSetProvisioningStatus {
+pub struct PermissionSetProvisioningStatus  {
     /// <p>The status of the permission set provisioning process.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatusValues>,
@@ -432,33 +415,33 @@ pub struct PermissionSetProvisioningStatus {
 }
 impl PermissionSetProvisioningStatus {
     /// <p>The status of the permission set provisioning process.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StatusValues> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StatusValues> {
         self.status.as_ref()
     }
     /// <p>The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The identifier of the AWS account from which to list the assignments.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ARN of the permission set that is being provisioned. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The message that contains an error or exception in case of an operation failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The date that the permission set was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
 }
 /// See [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus).
 pub mod permission_set_provisioning_status {
-
+    
     /// A builder for [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -476,12 +459,8 @@ pub mod permission_set_provisioning_status {
             self
         }
         /// <p>The status of the permission set provisioning process.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::StatusValues>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusValues>) -> Self {
+            self.status = input; self
         }
         /// <p>The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -490,8 +469,7 @@ pub mod permission_set_provisioning_status {
         }
         /// <p>The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The identifier of the AWS account from which to list the assignments.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -500,8 +478,7 @@ pub mod permission_set_provisioning_status {
         }
         /// <p>The identifier of the AWS account from which to list the assignments.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The ARN of the permission set that is being provisioned. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -509,12 +486,8 @@ pub mod permission_set_provisioning_status {
             self
         }
         /// <p>The ARN of the permission set that is being provisioned. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>The message that contains an error or exception in case of an operation failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -522,12 +495,8 @@ pub mod permission_set_provisioning_status {
             self
         }
         /// <p>The message that contains an error or exception in case of an operation failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>The date that the permission set was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -535,25 +504,29 @@ pub mod permission_set_provisioning_status {
             self
         }
         /// <p>The date that the permission set was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// Consumes the builder and constructs a [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus).
         pub fn build(self) -> crate::model::PermissionSetProvisioningStatus {
             crate::model::PermissionSetProvisioningStatus {
-                status: self.status,
-                request_id: self.request_id,
-                account_id: self.account_id,
-                permission_set_arn: self.permission_set_arn,
-                failure_reason: self.failure_reason,
-                created_date: self.created_date,
+                status: self.status
+                ,
+                request_id: self.request_id
+                ,
+                account_id: self.account_id
+                ,
+                permission_set_arn: self.permission_set_arn
+                ,
+                failure_reason: self.failure_reason
+                ,
+                created_date: self.created_date
+                ,
             }
         }
     }
+    
+    
 }
 impl PermissionSetProvisioningStatus {
     /// Creates a new builder-style object to manufacture [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus).
@@ -568,9 +541,9 @@ impl PermissionSetProvisioningStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let statusvalues = unimplemented!();
 /// match statusvalues {
@@ -593,22 +566,14 @@ impl PermissionSetProvisioningStatus {
 /// Specifically, when `statusvalues` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StatusValues::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StatusValues {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -617,7 +582,7 @@ pub enum StatusValues {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StatusValues {
     fn from(s: &str) -> Self {
@@ -625,17 +590,17 @@ impl std::convert::From<&str> for StatusValues {
             "FAILED" => StatusValues::Failed,
             "IN_PROGRESS" => StatusValues::InProgress,
             "SUCCEEDED" => StatusValues::Succeeded,
-            other => StatusValues::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StatusValues::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StatusValues {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StatusValues::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StatusValues::from(s))
+                }
+            }
 impl StatusValues {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -643,12 +608,14 @@ impl StatusValues {
             StatusValues::Failed => "FAILED",
             StatusValues::InProgress => "IN_PROGRESS",
             StatusValues::Succeeded => "SUCCEEDED",
-            StatusValues::Unknown(value) => value.as_str(),
+            StatusValues::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
+        &[
+            "FAILED", "IN_PROGRESS", "SUCCEEDED"
+        ]
     }
 }
 impl AsRef<str> for StatusValues {
@@ -663,9 +630,9 @@ impl AsRef<str> for StatusValues {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let provisiontargettype = unimplemented!();
 /// match provisiontargettype {
@@ -687,60 +654,52 @@ impl AsRef<str> for StatusValues {
 /// Specifically, when `provisiontargettype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProvisionTargetType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProvisionTargetType {
     #[allow(missing_docs)] // documentation missing in model
     AllProvisionedAccounts,
     #[allow(missing_docs)] // documentation missing in model
     AwsAccount,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProvisionTargetType {
     fn from(s: &str) -> Self {
         match s {
             "ALL_PROVISIONED_ACCOUNTS" => ProvisionTargetType::AllProvisionedAccounts,
             "AWS_ACCOUNT" => ProvisionTargetType::AwsAccount,
-            other => {
-                ProvisionTargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ProvisionTargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProvisionTargetType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProvisionTargetType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProvisionTargetType::from(s))
+                }
+            }
 impl ProvisionTargetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProvisionTargetType::AllProvisionedAccounts => "ALL_PROVISIONED_ACCOUNTS",
             ProvisionTargetType::AwsAccount => "AWS_ACCOUNT",
-            ProvisionTargetType::Unknown(value) => value.as_str(),
+            ProvisionTargetType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL_PROVISIONED_ACCOUNTS", "AWS_ACCOUNT"]
+        &[
+            "ALL_PROVISIONED_ACCOUNTS", "AWS_ACCOUNT"
+        ]
     }
 }
 impl AsRef<str> for ProvisionTargetType {
@@ -755,9 +714,9 @@ impl AsRef<str> for ProvisionTargetType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let provisioningstatus = unimplemented!();
 /// match provisioningstatus {
@@ -779,70 +738,51 @@ impl AsRef<str> for ProvisionTargetType {
 /// Specifically, when `provisioningstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProvisioningStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProvisioningStatus {
     #[allow(missing_docs)] // documentation missing in model
     LatestPermissionSetNotProvisioned,
     #[allow(missing_docs)] // documentation missing in model
     LatestPermissionSetProvisioned,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProvisioningStatus {
     fn from(s: &str) -> Self {
         match s {
-            "LATEST_PERMISSION_SET_NOT_PROVISIONED" => {
-                ProvisioningStatus::LatestPermissionSetNotProvisioned
-            }
-            "LATEST_PERMISSION_SET_PROVISIONED" => {
-                ProvisioningStatus::LatestPermissionSetProvisioned
-            }
-            other => {
-                ProvisioningStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            "LATEST_PERMISSION_SET_NOT_PROVISIONED" => ProvisioningStatus::LatestPermissionSetNotProvisioned,
+            "LATEST_PERMISSION_SET_PROVISIONED" => ProvisioningStatus::LatestPermissionSetProvisioned,
+            other => ProvisioningStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProvisioningStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProvisioningStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProvisioningStatus::from(s))
+                }
+            }
 impl ProvisioningStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ProvisioningStatus::LatestPermissionSetNotProvisioned => {
-                "LATEST_PERMISSION_SET_NOT_PROVISIONED"
-            }
-            ProvisioningStatus::LatestPermissionSetProvisioned => {
-                "LATEST_PERMISSION_SET_PROVISIONED"
-            }
-            ProvisioningStatus::Unknown(value) => value.as_str(),
+            ProvisioningStatus::LatestPermissionSetNotProvisioned => "LATEST_PERMISSION_SET_NOT_PROVISIONED",
+            ProvisioningStatus::LatestPermissionSetProvisioned => "LATEST_PERMISSION_SET_PROVISIONED",
+            ProvisioningStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "LATEST_PERMISSION_SET_NOT_PROVISIONED",
-            "LATEST_PERMISSION_SET_PROVISIONED",
+            "LATEST_PERMISSION_SET_NOT_PROVISIONED", "LATEST_PERMISSION_SET_PROVISIONED"
         ]
     }
 }
@@ -855,7 +795,7 @@ impl AsRef<str> for ProvisioningStatus {
 /// <p>Provides information about the permission set provisioning status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PermissionSetProvisioningStatusMetadata {
+pub struct PermissionSetProvisioningStatusMetadata  {
     /// <p>The status of the permission set provisioning process.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatusValues>,
@@ -868,21 +808,21 @@ pub struct PermissionSetProvisioningStatusMetadata {
 }
 impl PermissionSetProvisioningStatusMetadata {
     /// <p>The status of the permission set provisioning process.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StatusValues> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StatusValues> {
         self.status.as_ref()
     }
     /// <p>The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The date that the permission set was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
 }
 /// See [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata).
 pub mod permission_set_provisioning_status_metadata {
-
+    
     /// A builder for [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -897,12 +837,8 @@ pub mod permission_set_provisioning_status_metadata {
             self
         }
         /// <p>The status of the permission set provisioning process.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::StatusValues>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusValues>) -> Self {
+            self.status = input; self
         }
         /// <p>The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -911,8 +847,7 @@ pub mod permission_set_provisioning_status_metadata {
         }
         /// <p>The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The date that the permission set was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -920,22 +855,23 @@ pub mod permission_set_provisioning_status_metadata {
             self
         }
         /// <p>The date that the permission set was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// Consumes the builder and constructs a [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata).
         pub fn build(self) -> crate::model::PermissionSetProvisioningStatusMetadata {
             crate::model::PermissionSetProvisioningStatusMetadata {
-                status: self.status,
-                request_id: self.request_id,
-                created_date: self.created_date,
+                status: self.status
+                ,
+                request_id: self.request_id
+                ,
+                created_date: self.created_date
+                ,
             }
         }
     }
+    
+    
 }
 impl PermissionSetProvisioningStatusMetadata {
     /// Creates a new builder-style object to manufacture [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata).
@@ -947,20 +883,20 @@ impl PermissionSetProvisioningStatusMetadata {
 /// <p>Filters he operation status list based on the passed attribute value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OperationStatusFilter {
+pub struct OperationStatusFilter  {
     /// <p>Filters the list operations result based on the status attribute.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatusValues>,
 }
 impl OperationStatusFilter {
     /// <p>Filters the list operations result based on the status attribute.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StatusValues> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StatusValues> {
         self.status.as_ref()
     }
 }
 /// See [`OperationStatusFilter`](crate::model::OperationStatusFilter).
 pub mod operation_status_filter {
-
+    
     /// A builder for [`OperationStatusFilter`](crate::model::OperationStatusFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -973,20 +909,19 @@ pub mod operation_status_filter {
             self
         }
         /// <p>Filters the list operations result based on the status attribute.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::StatusValues>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusValues>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`OperationStatusFilter`](crate::model::OperationStatusFilter).
         pub fn build(self) -> crate::model::OperationStatusFilter {
             crate::model::OperationStatusFilter {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl OperationStatusFilter {
     /// Creates a new builder-style object to manufacture [`OperationStatusFilter`](crate::model::OperationStatusFilter).
@@ -998,7 +933,7 @@ impl OperationStatusFilter {
 /// <p>A structure that stores the details of the AWS managed policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachedManagedPolicy {
+pub struct AttachedManagedPolicy  {
     /// <p>The name of the AWS managed policy.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1008,17 +943,17 @@ pub struct AttachedManagedPolicy {
 }
 impl AttachedManagedPolicy {
     /// <p>The name of the AWS managed policy.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the AWS managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy).
 pub mod attached_managed_policy {
-
+    
     /// A builder for [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1033,8 +968,7 @@ pub mod attached_managed_policy {
         }
         /// <p>The name of the AWS managed policy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN of the AWS managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1043,17 +977,20 @@ pub mod attached_managed_policy {
         }
         /// <p>The ARN of the AWS managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy).
         pub fn build(self) -> crate::model::AttachedManagedPolicy {
             crate::model::AttachedManagedPolicy {
-                name: self.name,
-                arn: self.arn,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl AttachedManagedPolicy {
     /// Creates a new builder-style object to manufacture [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy).
@@ -1065,7 +1002,7 @@ impl AttachedManagedPolicy {
 /// <p>Provides information about the IAM Identity Center instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceMetadata {
+pub struct InstanceMetadata  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -1075,17 +1012,17 @@ pub struct InstanceMetadata {
 }
 impl InstanceMetadata {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The identifier of the identity store that is connected to the IAM Identity Center instance.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> std::option::Option<& str> {
         self.identity_store_id.as_deref()
     }
 }
 /// See [`InstanceMetadata`](crate::model::InstanceMetadata).
 pub mod instance_metadata {
-
+    
     /// A builder for [`InstanceMetadata`](crate::model::InstanceMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1100,8 +1037,7 @@ pub mod instance_metadata {
         }
         /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_arn = input;
-            self
+            self.instance_arn = input; self
         }
         /// <p>The identifier of the identity store that is connected to the IAM Identity Center instance.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1109,21 +1045,21 @@ pub mod instance_metadata {
             self
         }
         /// <p>The identifier of the identity store that is connected to the IAM Identity Center instance.</p>
-        pub fn set_identity_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_store_id = input;
-            self
+        pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_store_id = input; self
         }
         /// Consumes the builder and constructs a [`InstanceMetadata`](crate::model::InstanceMetadata).
         pub fn build(self) -> crate::model::InstanceMetadata {
             crate::model::InstanceMetadata {
-                instance_arn: self.instance_arn,
-                identity_store_id: self.identity_store_id,
+                instance_arn: self.instance_arn
+                ,
+                identity_store_id: self.identity_store_id
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceMetadata {
     /// Creates a new builder-style object to manufacture [`InstanceMetadata`](crate::model::InstanceMetadata).
@@ -1132,12 +1068,12 @@ impl InstanceMetadata {
     }
 }
 
-/// <p>The assignment that indicates a principal's limited access to a specified AWS account with a specified permission set.</p> <note>
-/// <p>The term <i>principal</i> here refers to a user or group that is defined in IAM Identity Center.</p>
+/// <p>The assignment that indicates a principal's limited access to a specified AWS account with a specified permission set.</p> <note> 
+/// <p>The term <i>principal</i> here refers to a user or group that is defined in IAM Identity Center.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountAssignment {
+pub struct AccountAssignment  {
     /// <p>The identifier of the AWS account.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -1153,25 +1089,25 @@ pub struct AccountAssignment {
 }
 impl AccountAssignment {
     /// <p>The identifier of the AWS account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn principal_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+    pub fn principal_type(&self) -> std::option::Option<& crate::model::PrincipalType> {
         self.principal_type.as_ref()
     }
     /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
-    pub fn principal_id(&self) -> std::option::Option<&str> {
+    pub fn principal_id(&self) -> std::option::Option<& str> {
         self.principal_id.as_deref()
     }
 }
 /// See [`AccountAssignment`](crate::model::AccountAssignment).
 pub mod account_assignment {
-
+    
     /// A builder for [`AccountAssignment`](crate::model::AccountAssignment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1188,8 +1124,7 @@ pub mod account_assignment {
         }
         /// <p>The identifier of the AWS account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1197,12 +1132,8 @@ pub mod account_assignment {
             self
         }
         /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>The entity type for which the assignment will be created.</p>
         pub fn principal_type(mut self, input: crate::model::PrincipalType) -> Self {
@@ -1210,12 +1141,8 @@ pub mod account_assignment {
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
-        pub fn set_principal_type(
-            mut self,
-            input: std::option::Option<crate::model::PrincipalType>,
-        ) -> Self {
-            self.principal_type = input;
-            self
+        pub fn set_principal_type(mut self, input: std::option::Option<crate::model::PrincipalType>) -> Self {
+            self.principal_type = input; self
         }
         /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1224,19 +1151,24 @@ pub mod account_assignment {
         }
         /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.principal_id = input;
-            self
+            self.principal_id = input; self
         }
         /// Consumes the builder and constructs a [`AccountAssignment`](crate::model::AccountAssignment).
         pub fn build(self) -> crate::model::AccountAssignment {
             crate::model::AccountAssignment {
-                account_id: self.account_id,
-                permission_set_arn: self.permission_set_arn,
-                principal_type: self.principal_type,
-                principal_id: self.principal_id,
+                account_id: self.account_id
+                ,
+                permission_set_arn: self.permission_set_arn
+                ,
+                principal_type: self.principal_type
+                ,
+                principal_id: self.principal_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AccountAssignment {
     /// Creates a new builder-style object to manufacture [`AccountAssignment`](crate::model::AccountAssignment).
@@ -1251,9 +1183,9 @@ impl AccountAssignment {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let principaltype = unimplemented!();
 /// match principaltype {
@@ -1275,58 +1207,52 @@ impl AccountAssignment {
 /// Specifically, when `principaltype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PrincipalType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PrincipalType {
     #[allow(missing_docs)] // documentation missing in model
     Group,
     #[allow(missing_docs)] // documentation missing in model
     User,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PrincipalType {
     fn from(s: &str) -> Self {
         match s {
             "GROUP" => PrincipalType::Group,
             "USER" => PrincipalType::User,
-            other => PrincipalType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PrincipalType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PrincipalType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PrincipalType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PrincipalType::from(s))
+                }
+            }
 impl PrincipalType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PrincipalType::Group => "GROUP",
             PrincipalType::User => "USER",
-            PrincipalType::Unknown(value) => value.as_str(),
+            PrincipalType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GROUP", "USER"]
+        &[
+            "GROUP", "USER"
+        ]
     }
 }
 impl AsRef<str> for PrincipalType {
@@ -1338,7 +1264,7 @@ impl AsRef<str> for PrincipalType {
 /// <p>Provides information about the <code>AccountAssignment</code> creation request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountAssignmentOperationStatusMetadata {
+pub struct AccountAssignmentOperationStatusMetadata  {
     /// <p>The status of the permission set provisioning process.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatusValues>,
@@ -1351,21 +1277,21 @@ pub struct AccountAssignmentOperationStatusMetadata {
 }
 impl AccountAssignmentOperationStatusMetadata {
     /// <p>The status of the permission set provisioning process.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StatusValues> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StatusValues> {
         self.status.as_ref()
     }
     /// <p>The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The date that the permission set was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
 }
 /// See [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata).
 pub mod account_assignment_operation_status_metadata {
-
+    
     /// A builder for [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1380,12 +1306,8 @@ pub mod account_assignment_operation_status_metadata {
             self
         }
         /// <p>The status of the permission set provisioning process.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::StatusValues>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusValues>) -> Self {
+            self.status = input; self
         }
         /// <p>The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1394,8 +1316,7 @@ pub mod account_assignment_operation_status_metadata {
         }
         /// <p>The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The date that the permission set was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1403,22 +1324,23 @@ pub mod account_assignment_operation_status_metadata {
             self
         }
         /// <p>The date that the permission set was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// Consumes the builder and constructs a [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata).
         pub fn build(self) -> crate::model::AccountAssignmentOperationStatusMetadata {
             crate::model::AccountAssignmentOperationStatusMetadata {
-                status: self.status,
-                request_id: self.request_id,
-                created_date: self.created_date,
+                status: self.status
+                ,
+                request_id: self.request_id
+                ,
+                created_date: self.created_date
+                ,
             }
         }
     }
+    
+    
 }
 impl AccountAssignmentOperationStatusMetadata {
     /// Creates a new builder-style object to manufacture [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata).
@@ -1430,7 +1352,7 @@ impl AccountAssignmentOperationStatusMetadata {
 /// <p>An entity that contains IAM policies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PermissionSet {
+pub struct PermissionSet  {
     /// <p>The name of the permission set.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1452,33 +1374,33 @@ pub struct PermissionSet {
 }
 impl PermissionSet {
     /// <p>The name of the permission set.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The description of the <code>PermissionSet</code>.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date that the permission set was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
-    pub fn session_duration(&self) -> std::option::Option<&str> {
+    pub fn session_duration(&self) -> std::option::Option<& str> {
         self.session_duration.as_deref()
     }
     /// <p>Used to redirect users within the application during the federation authentication process.</p>
-    pub fn relay_state(&self) -> std::option::Option<&str> {
+    pub fn relay_state(&self) -> std::option::Option<& str> {
         self.relay_state.as_deref()
     }
 }
 /// See [`PermissionSet`](crate::model::PermissionSet).
 pub mod permission_set {
-
+    
     /// A builder for [`PermissionSet`](crate::model::PermissionSet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1497,8 +1419,7 @@ pub mod permission_set {
         }
         /// <p>The name of the permission set.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1506,12 +1427,8 @@ pub mod permission_set {
             self
         }
         /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>The description of the <code>PermissionSet</code>.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1520,8 +1437,7 @@ pub mod permission_set {
         }
         /// <p>The description of the <code>PermissionSet</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date that the permission set was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1529,12 +1445,8 @@ pub mod permission_set {
             self
         }
         /// <p>The date that the permission set was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
         pub fn session_duration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1542,12 +1454,8 @@ pub mod permission_set {
             self
         }
         /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
-        pub fn set_session_duration(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.session_duration = input;
-            self
+        pub fn set_session_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_duration = input; self
         }
         /// <p>Used to redirect users within the application during the federation authentication process.</p>
         pub fn relay_state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1556,21 +1464,28 @@ pub mod permission_set {
         }
         /// <p>Used to redirect users within the application during the federation authentication process.</p>
         pub fn set_relay_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.relay_state = input;
-            self
+            self.relay_state = input; self
         }
         /// Consumes the builder and constructs a [`PermissionSet`](crate::model::PermissionSet).
         pub fn build(self) -> crate::model::PermissionSet {
             crate::model::PermissionSet {
-                name: self.name,
-                permission_set_arn: self.permission_set_arn,
-                description: self.description,
-                created_date: self.created_date,
-                session_duration: self.session_duration,
-                relay_state: self.relay_state,
+                name: self.name
+                ,
+                permission_set_arn: self.permission_set_arn
+                ,
+                description: self.description
+                ,
+                created_date: self.created_date
+                ,
+                session_duration: self.session_duration
+                ,
+                relay_state: self.relay_state
+                ,
             }
         }
     }
+    
+    
 }
 impl PermissionSet {
     /// Creates a new builder-style object to manufacture [`PermissionSet`](crate::model::PermissionSet).
@@ -1585,9 +1500,9 @@ impl PermissionSet {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instanceaccesscontrolattributeconfigurationstatus = unimplemented!();
 /// match instanceaccesscontrolattributeconfigurationstatus {
@@ -1610,22 +1525,14 @@ impl PermissionSet {
 /// Specifically, when `instanceaccesscontrolattributeconfigurationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceAccessControlAttributeConfigurationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceAccessControlAttributeConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
     CreationFailed,
@@ -1634,44 +1541,40 @@ pub enum InstanceAccessControlAttributeConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceAccessControlAttributeConfigurationStatus {
     fn from(s: &str) -> Self {
         match s {
             "CREATION_FAILED" => InstanceAccessControlAttributeConfigurationStatus::CreationFailed,
-            "CREATION_IN_PROGRESS" => {
-                InstanceAccessControlAttributeConfigurationStatus::CreationInProgress
-            }
+            "CREATION_IN_PROGRESS" => InstanceAccessControlAttributeConfigurationStatus::CreationInProgress,
             "ENABLED" => InstanceAccessControlAttributeConfigurationStatus::Enabled,
-            other => InstanceAccessControlAttributeConfigurationStatus::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => InstanceAccessControlAttributeConfigurationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InstanceAccessControlAttributeConfigurationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceAccessControlAttributeConfigurationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceAccessControlAttributeConfigurationStatus::from(s))
+                }
+            }
 impl InstanceAccessControlAttributeConfigurationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceAccessControlAttributeConfigurationStatus::CreationFailed => "CREATION_FAILED",
-            InstanceAccessControlAttributeConfigurationStatus::CreationInProgress => {
-                "CREATION_IN_PROGRESS"
-            }
+            InstanceAccessControlAttributeConfigurationStatus::CreationInProgress => "CREATION_IN_PROGRESS",
             InstanceAccessControlAttributeConfigurationStatus::Enabled => "ENABLED",
-            InstanceAccessControlAttributeConfigurationStatus::Unknown(value) => value.as_str(),
+            InstanceAccessControlAttributeConfigurationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATION_FAILED", "CREATION_IN_PROGRESS", "ENABLED"]
+        &[
+            "CREATION_FAILED", "CREATION_IN_PROGRESS", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for InstanceAccessControlAttributeConfigurationStatus {
@@ -1683,7 +1586,7 @@ impl AsRef<str> for InstanceAccessControlAttributeConfigurationStatus {
 /// <p>The status of the creation or deletion operation of an assignment that a principal needs to access an account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountAssignmentOperationStatus {
+pub struct AccountAssignmentOperationStatus  {
     /// <p>The status of the permission set provisioning process.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::StatusValues>,
@@ -1714,45 +1617,45 @@ pub struct AccountAssignmentOperationStatus {
 }
 impl AccountAssignmentOperationStatus {
     /// <p>The status of the permission set provisioning process.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StatusValues> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StatusValues> {
         self.status.as_ref()
     }
     /// <p>The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The message that contains an error or exception in case of an operation failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
-    pub fn target_id(&self) -> std::option::Option<&str> {
+    pub fn target_id(&self) -> std::option::Option<& str> {
         self.target_id.as_deref()
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn target_type(&self) -> std::option::Option<&crate::model::TargetType> {
+    pub fn target_type(&self) -> std::option::Option<& crate::model::TargetType> {
         self.target_type.as_ref()
     }
     /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn principal_type(&self) -> std::option::Option<&crate::model::PrincipalType> {
+    pub fn principal_type(&self) -> std::option::Option<& crate::model::PrincipalType> {
         self.principal_type.as_ref()
     }
     /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
-    pub fn principal_id(&self) -> std::option::Option<&str> {
+    pub fn principal_id(&self) -> std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The date that the permission set was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
 }
 /// See [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus).
 pub mod account_assignment_operation_status {
-
+    
     /// A builder for [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1773,12 +1676,8 @@ pub mod account_assignment_operation_status {
             self
         }
         /// <p>The status of the permission set provisioning process.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::StatusValues>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusValues>) -> Self {
+            self.status = input; self
         }
         /// <p>The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1787,8 +1686,7 @@ pub mod account_assignment_operation_status {
         }
         /// <p>The identifier for tracking the request operation that is generated by the universally unique identifier (UUID) workflow.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>The message that contains an error or exception in case of an operation failure.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1796,12 +1694,8 @@ pub mod account_assignment_operation_status {
             self
         }
         /// <p>The message that contains an error or exception in case of an operation failure.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1810,8 +1704,7 @@ pub mod account_assignment_operation_status {
         }
         /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_id = input;
-            self
+            self.target_id = input; self
         }
         /// <p>The entity type for which the assignment will be created.</p>
         pub fn target_type(mut self, input: crate::model::TargetType) -> Self {
@@ -1819,12 +1712,8 @@ pub mod account_assignment_operation_status {
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
-        pub fn set_target_type(
-            mut self,
-            input: std::option::Option<crate::model::TargetType>,
-        ) -> Self {
-            self.target_type = input;
-            self
+        pub fn set_target_type(mut self, input: std::option::Option<crate::model::TargetType>) -> Self {
+            self.target_type = input; self
         }
         /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1832,12 +1721,8 @@ pub mod account_assignment_operation_status {
             self
         }
         /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-        pub fn set_permission_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.permission_set_arn = input;
-            self
+        pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.permission_set_arn = input; self
         }
         /// <p>The entity type for which the assignment will be created.</p>
         pub fn principal_type(mut self, input: crate::model::PrincipalType) -> Self {
@@ -1845,12 +1730,8 @@ pub mod account_assignment_operation_status {
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
-        pub fn set_principal_type(
-            mut self,
-            input: std::option::Option<crate::model::PrincipalType>,
-        ) -> Self {
-            self.principal_type = input;
-            self
+        pub fn set_principal_type(mut self, input: std::option::Option<crate::model::PrincipalType>) -> Self {
+            self.principal_type = input; self
         }
         /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1859,8 +1740,7 @@ pub mod account_assignment_operation_status {
         }
         /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.principal_id = input;
-            self
+            self.principal_id = input; self
         }
         /// <p>The date that the permission set was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1868,28 +1748,35 @@ pub mod account_assignment_operation_status {
             self
         }
         /// <p>The date that the permission set was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// Consumes the builder and constructs a [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus).
         pub fn build(self) -> crate::model::AccountAssignmentOperationStatus {
             crate::model::AccountAssignmentOperationStatus {
-                status: self.status,
-                request_id: self.request_id,
-                failure_reason: self.failure_reason,
-                target_id: self.target_id,
-                target_type: self.target_type,
-                permission_set_arn: self.permission_set_arn,
-                principal_type: self.principal_type,
-                principal_id: self.principal_id,
-                created_date: self.created_date,
+                status: self.status
+                ,
+                request_id: self.request_id
+                ,
+                failure_reason: self.failure_reason
+                ,
+                target_id: self.target_id
+                ,
+                target_type: self.target_type
+                ,
+                permission_set_arn: self.permission_set_arn
+                ,
+                principal_type: self.principal_type
+                ,
+                principal_id: self.principal_id
+                ,
+                created_date: self.created_date
+                ,
             }
         }
     }
+    
+    
 }
 impl AccountAssignmentOperationStatus {
     /// Creates a new builder-style object to manufacture [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus).
@@ -1904,9 +1791,9 @@ impl AccountAssignmentOperationStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let targettype = unimplemented!();
 /// match targettype {
@@ -1927,54 +1814,48 @@ impl AccountAssignmentOperationStatus {
 /// Specifically, when `targettype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TargetType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TargetType {
     #[allow(missing_docs)] // documentation missing in model
     AwsAccount,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TargetType {
     fn from(s: &str) -> Self {
         match s {
             "AWS_ACCOUNT" => TargetType::AwsAccount,
-            other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TargetType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TargetType::from(s))
+                }
+            }
 impl TargetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetType::AwsAccount => "AWS_ACCOUNT",
-            TargetType::Unknown(value) => value.as_str(),
+            TargetType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_ACCOUNT"]
+        &[
+            "AWS_ACCOUNT"
+        ]
     }
 }
 impl AsRef<str> for TargetType {
@@ -1982,3 +1863,4 @@ impl AsRef<str> for TargetType {
         self.as_str()
     }
 }
+

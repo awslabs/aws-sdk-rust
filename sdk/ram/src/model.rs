@@ -3,7 +3,7 @@
 /// <p>Describes a resource share in RAM.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceShare {
+pub struct ResourceShare  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share</p>
     #[doc(hidden)]
     pub resource_share_arn: std::option::Option<std::string::String>,
@@ -31,26 +31,26 @@ pub struct ResourceShare {
     /// <p>The date and time when the resource share was last updated.</p>
     #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates how the resource share was created. Possible values include:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access Management (IAM) resource-based permission policy attached to the resource. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
-    /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
-    /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li>
+    /// <p>Indicates how the resource share was created. Possible values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access Management (IAM) resource-based permission policy attached to the resource. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
+    /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
+    /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub feature_set: std::option::Option<crate::model::ResourceShareFeatureSet>,
 }
 impl ResourceShare {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share</p>
-    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_share_arn(&self) -> std::option::Option<& str> {
         self.resource_share_arn.as_deref()
     }
     /// <p>The name of the resource share.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource share.</p>
-    pub fn owning_account_id(&self) -> std::option::Option<&str> {
+    pub fn owning_account_id(&self) -> std::option::Option<& str> {
         self.owning_account_id.as_deref()
     }
     /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
@@ -58,38 +58,38 @@ impl ResourceShare {
         self.allow_external_principals
     }
     /// <p>The current status of the resource share.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ResourceShareStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ResourceShareStatus> {
         self.status.as_ref()
     }
     /// <p>A message about the status of the resource share.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The tag key and value pairs attached to the resource share.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The date and time when the resource share was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time when the resource share was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
-    /// <p>Indicates how the resource share was created. Possible values include:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access Management (IAM) resource-based permission policy attached to the resource. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
-    /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
-    /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li>
+    /// <p>Indicates how the resource share was created. Possible values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access Management (IAM) resource-based permission policy attached to the resource. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
+    /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
+    /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li> 
     /// </ul>
-    pub fn feature_set(&self) -> std::option::Option<&crate::model::ResourceShareFeatureSet> {
+    pub fn feature_set(&self) -> std::option::Option<& crate::model::ResourceShareFeatureSet> {
         self.feature_set.as_ref()
     }
 }
 /// See [`ResourceShare`](crate::model::ResourceShare).
 pub mod resource_share {
-
+    
     /// A builder for [`ResourceShare`](crate::model::ResourceShare).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -111,12 +111,8 @@ pub mod resource_share {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share</p>
-        pub fn set_resource_share_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_share_arn = input;
-            self
+        pub fn set_resource_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_share_arn = input; self
         }
         /// <p>The name of the resource share.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,8 +121,7 @@ pub mod resource_share {
         }
         /// <p>The name of the resource share.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the Amazon Web Services account that owns the resource share.</p>
         pub fn owning_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,12 +129,8 @@ pub mod resource_share {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the resource share.</p>
-        pub fn set_owning_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owning_account_id = input;
-            self
+        pub fn set_owning_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owning_account_id = input; self
         }
         /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
         pub fn allow_external_principals(mut self, input: bool) -> Self {
@@ -148,8 +139,7 @@ pub mod resource_share {
         }
         /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
         pub fn set_allow_external_principals(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_external_principals = input;
-            self
+            self.allow_external_principals = input; self
         }
         /// <p>The current status of the resource share.</p>
         pub fn status(mut self, input: crate::model::ResourceShareStatus) -> Self {
@@ -157,12 +147,8 @@ pub mod resource_share {
             self
         }
         /// <p>The current status of the resource share.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceShareStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ResourceShareStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A message about the status of the resource share.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -170,12 +156,8 @@ pub mod resource_share {
             self
         }
         /// <p>A message about the status of the resource share.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -184,17 +166,13 @@ pub mod resource_share {
         /// <p>The tag key and value pairs attached to the resource share.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tag key and value pairs attached to the resource share.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The date and time when the resource share was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -202,12 +180,8 @@ pub mod resource_share {
             self
         }
         /// <p>The date and time when the resource share was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The date and time when the resource share was last updated.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -215,52 +189,56 @@ pub mod resource_share {
             self
         }
         /// <p>The date and time when the resource share was last updated.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
-        /// <p>Indicates how the resource share was created. Possible values include:</p>
-        /// <ul>
-        /// <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access Management (IAM) resource-based permission policy attached to the resource. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
-        /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
-        /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li>
+        /// <p>Indicates how the resource share was created. Possible values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access Management (IAM) resource-based permission policy attached to the resource. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
+        /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
+        /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li> 
         /// </ul>
         pub fn feature_set(mut self, input: crate::model::ResourceShareFeatureSet) -> Self {
             self.feature_set = Some(input);
             self
         }
-        /// <p>Indicates how the resource share was created. Possible values include:</p>
-        /// <ul>
-        /// <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access Management (IAM) resource-based permission policy attached to the resource. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
-        /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
-        /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li>
+        /// <p>Indicates how the resource share was created. Possible values include:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an Identity and Access Management (IAM) resource-based permission policy attached to the resource. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
+        /// <li> <p> <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
+        /// <li> <p> <code>STANDARD</code> - Indicates that the resource share was created in RAM using the console or APIs. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs.</p> </li> 
         /// </ul>
-        pub fn set_feature_set(
-            mut self,
-            input: std::option::Option<crate::model::ResourceShareFeatureSet>,
-        ) -> Self {
-            self.feature_set = input;
-            self
+        pub fn set_feature_set(mut self, input: std::option::Option<crate::model::ResourceShareFeatureSet>) -> Self {
+            self.feature_set = input; self
         }
         /// Consumes the builder and constructs a [`ResourceShare`](crate::model::ResourceShare).
         pub fn build(self) -> crate::model::ResourceShare {
             crate::model::ResourceShare {
-                resource_share_arn: self.resource_share_arn,
-                name: self.name,
-                owning_account_id: self.owning_account_id,
-                allow_external_principals: self.allow_external_principals,
-                status: self.status,
-                status_message: self.status_message,
-                tags: self.tags,
-                creation_time: self.creation_time,
-                last_updated_time: self.last_updated_time,
-                feature_set: self.feature_set,
+                resource_share_arn: self.resource_share_arn
+                ,
+                name: self.name
+                ,
+                owning_account_id: self.owning_account_id
+                ,
+                allow_external_principals: self.allow_external_principals
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                tags: self.tags
+                ,
+                creation_time: self.creation_time
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                feature_set: self.feature_set
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceShare {
     /// Creates a new builder-style object to manufacture [`ResourceShare`](crate::model::ResourceShare).
@@ -275,9 +253,9 @@ impl ResourceShare {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcesharefeatureset = unimplemented!();
 /// match resourcesharefeatureset {
@@ -300,22 +278,14 @@ impl ResourceShare {
 /// Specifically, when `resourcesharefeatureset` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceShareFeatureSet::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceShareFeatureSet {
     #[allow(missing_docs)] // documentation missing in model
     CreatedFromPolicy,
@@ -324,7 +294,7 @@ pub enum ResourceShareFeatureSet {
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceShareFeatureSet {
     fn from(s: &str) -> Self {
@@ -332,19 +302,17 @@ impl std::convert::From<&str> for ResourceShareFeatureSet {
             "CREATED_FROM_POLICY" => ResourceShareFeatureSet::CreatedFromPolicy,
             "PROMOTING_TO_STANDARD" => ResourceShareFeatureSet::PromotingToStandard,
             "STANDARD" => ResourceShareFeatureSet::Standard,
-            other => ResourceShareFeatureSet::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceShareFeatureSet::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceShareFeatureSet {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceShareFeatureSet::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceShareFeatureSet::from(s))
+                }
+            }
 impl ResourceShareFeatureSet {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -352,12 +320,14 @@ impl ResourceShareFeatureSet {
             ResourceShareFeatureSet::CreatedFromPolicy => "CREATED_FROM_POLICY",
             ResourceShareFeatureSet::PromotingToStandard => "PROMOTING_TO_STANDARD",
             ResourceShareFeatureSet::Standard => "STANDARD",
-            ResourceShareFeatureSet::Unknown(value) => value.as_str(),
+            ResourceShareFeatureSet::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATED_FROM_POLICY", "PROMOTING_TO_STANDARD", "STANDARD"]
+        &[
+            "CREATED_FROM_POLICY", "PROMOTING_TO_STANDARD", "STANDARD"
+        ]
     }
 }
 impl AsRef<str> for ResourceShareFeatureSet {
@@ -366,11 +336,11 @@ impl AsRef<str> for ResourceShareFeatureSet {
     }
 }
 
-/// <p>A structure containing a tag. A tag is metadata that you can attach to your resources to help organize and categorize them. You can also use them to help you secure your resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
+/// <p>A structure containing a tag. A tag is metadata that you can attach to your resources to help organize and categorize them. You can also use them to help you secure your resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p> 
 /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key, or name, attached to the tag. Every tag must have a key. Key names are case sensitive.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -380,17 +350,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key, or name, attached to the tag. Every tag must have a key. Key names are case sensitive.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The string value attached to the tag. The value can be an empty string. Key values are case sensitive.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -405,8 +375,7 @@ pub mod tag {
         }
         /// <p>The key, or name, attached to the tag. Every tag must have a key. Key names are case sensitive.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The string value attached to the tag. The value can be an empty string. Key values are case sensitive.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -415,17 +384,20 @@ pub mod tag {
         }
         /// <p>The string value attached to the tag. The value can be an empty string. Key values are case sensitive.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -440,9 +412,9 @@ impl Tag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcesharestatus = unimplemented!();
 /// match resourcesharestatus {
@@ -467,22 +439,14 @@ impl Tag {
 /// Specifically, when `resourcesharestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceShareStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceShareStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -495,7 +459,7 @@ pub enum ResourceShareStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceShareStatus {
     fn from(s: &str) -> Self {
@@ -505,19 +469,17 @@ impl std::convert::From<&str> for ResourceShareStatus {
             "DELETING" => ResourceShareStatus::Deleting,
             "FAILED" => ResourceShareStatus::Failed,
             "PENDING" => ResourceShareStatus::Pending,
-            other => {
-                ResourceShareStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceShareStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceShareStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceShareStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceShareStatus::from(s))
+                }
+            }
 impl ResourceShareStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -527,12 +489,14 @@ impl ResourceShareStatus {
             ResourceShareStatus::Deleting => "DELETING",
             ResourceShareStatus::Failed => "FAILED",
             ResourceShareStatus::Pending => "PENDING",
-            ResourceShareStatus::Unknown(value) => value.as_str(),
+            ResourceShareStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETED", "DELETING", "FAILED", "PENDING"]
+        &[
+            "ACTIVE", "DELETED", "DELETING", "FAILED", "PENDING"
+        ]
     }
 }
 impl AsRef<str> for ResourceShareStatus {
@@ -544,7 +508,7 @@ impl AsRef<str> for ResourceShareStatus {
 /// <p>Describes an invitation for an Amazon Web Services account to join a resource share.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceShareInvitation {
+pub struct ResourceShareInvitation  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation.</p>
     #[doc(hidden)]
     pub resource_share_invitation_arn: std::option::Option<std::string::String>,
@@ -569,56 +533,53 @@ pub struct ResourceShareInvitation {
     /// <p>To view the resources associated with a pending resource share invitation, use <code>ListPendingInvitationResources</code>.</p>
     #[deprecated(note = "This member has been deprecated. Use ListPendingInvitationResources.")]
     #[doc(hidden)]
-    pub resource_share_associations:
-        std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
+    pub resource_share_associations: std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the IAM user or role that received the invitation.</p>
     #[doc(hidden)]
     pub receiver_arn: std::option::Option<std::string::String>,
 }
 impl ResourceShareInvitation {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation.</p>
-    pub fn resource_share_invitation_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_share_invitation_arn(&self) -> std::option::Option<& str> {
         self.resource_share_invitation_arn.as_deref()
     }
     /// <p>The name of the resource share.</p>
-    pub fn resource_share_name(&self) -> std::option::Option<&str> {
+    pub fn resource_share_name(&self) -> std::option::Option<& str> {
         self.resource_share_name.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share</p>
-    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_share_arn(&self) -> std::option::Option<& str> {
         self.resource_share_arn.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that sent the invitation.</p>
-    pub fn sender_account_id(&self) -> std::option::Option<&str> {
+    pub fn sender_account_id(&self) -> std::option::Option<& str> {
         self.sender_account_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that received the invitation.</p>
-    pub fn receiver_account_id(&self) -> std::option::Option<&str> {
+    pub fn receiver_account_id(&self) -> std::option::Option<& str> {
         self.receiver_account_id.as_deref()
     }
     /// <p>The date and time when the invitation was sent.</p>
-    pub fn invitation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn invitation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.invitation_timestamp.as_ref()
     }
     /// <p>The current status of the invitation.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ResourceShareInvitationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ResourceShareInvitationStatus> {
         self.status.as_ref()
     }
     /// <p>To view the resources associated with a pending resource share invitation, use <code>ListPendingInvitationResources</code>.</p>
     #[deprecated(note = "This member has been deprecated. Use ListPendingInvitationResources.")]
-    pub fn resource_share_associations(
-        &self,
-    ) -> std::option::Option<&[crate::model::ResourceShareAssociation]> {
+    pub fn resource_share_associations(&self) -> std::option::Option<& [crate::model::ResourceShareAssociation]> {
         self.resource_share_associations.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the IAM user or role that received the invitation.</p>
-    pub fn receiver_arn(&self) -> std::option::Option<&str> {
+    pub fn receiver_arn(&self) -> std::option::Option<& str> {
         self.receiver_arn.as_deref()
     }
 }
 /// See [`ResourceShareInvitation`](crate::model::ResourceShareInvitation).
 pub mod resource_share_invitation {
-
+    
     /// A builder for [`ResourceShareInvitation`](crate::model::ResourceShareInvitation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -629,26 +590,18 @@ pub mod resource_share_invitation {
         pub(crate) receiver_account_id: std::option::Option<std::string::String>,
         pub(crate) invitation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ResourceShareInvitationStatus>,
-        pub(crate) resource_share_associations:
-            std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
+        pub(crate) resource_share_associations: std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
         pub(crate) receiver_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation.</p>
-        pub fn resource_share_invitation_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn resource_share_invitation_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_share_invitation_arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation.</p>
-        pub fn set_resource_share_invitation_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_share_invitation_arn = input;
-            self
+        pub fn set_resource_share_invitation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_share_invitation_arn = input; self
         }
         /// <p>The name of the resource share.</p>
         pub fn resource_share_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -656,12 +609,8 @@ pub mod resource_share_invitation {
             self
         }
         /// <p>The name of the resource share.</p>
-        pub fn set_resource_share_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_share_name = input;
-            self
+        pub fn set_resource_share_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_share_name = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share</p>
         pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -669,12 +618,8 @@ pub mod resource_share_invitation {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share</p>
-        pub fn set_resource_share_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_share_arn = input;
-            self
+        pub fn set_resource_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_share_arn = input; self
         }
         /// <p>The ID of the Amazon Web Services account that sent the invitation.</p>
         pub fn sender_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -682,12 +627,8 @@ pub mod resource_share_invitation {
             self
         }
         /// <p>The ID of the Amazon Web Services account that sent the invitation.</p>
-        pub fn set_sender_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sender_account_id = input;
-            self
+        pub fn set_sender_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sender_account_id = input; self
         }
         /// <p>The ID of the Amazon Web Services account that received the invitation.</p>
         pub fn receiver_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -695,12 +636,8 @@ pub mod resource_share_invitation {
             self
         }
         /// <p>The ID of the Amazon Web Services account that received the invitation.</p>
-        pub fn set_receiver_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.receiver_account_id = input;
-            self
+        pub fn set_receiver_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.receiver_account_id = input; self
         }
         /// <p>The date and time when the invitation was sent.</p>
         pub fn invitation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -708,12 +645,8 @@ pub mod resource_share_invitation {
             self
         }
         /// <p>The date and time when the invitation was sent.</p>
-        pub fn set_invitation_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.invitation_timestamp = input;
-            self
+        pub fn set_invitation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.invitation_timestamp = input; self
         }
         /// <p>The current status of the invitation.</p>
         pub fn status(mut self, input: crate::model::ResourceShareInvitationStatus) -> Self {
@@ -721,12 +654,8 @@ pub mod resource_share_invitation {
             self
         }
         /// <p>The current status of the invitation.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceShareInvitationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ResourceShareInvitationStatus>) -> Self {
+            self.status = input; self
         }
         /// Appends an item to `resource_share_associations`.
         ///
@@ -734,23 +663,16 @@ pub mod resource_share_invitation {
         ///
         /// <p>To view the resources associated with a pending resource share invitation, use <code>ListPendingInvitationResources</code>.</p>
         #[deprecated(note = "This member has been deprecated. Use ListPendingInvitationResources.")]
-        pub fn resource_share_associations(
-            mut self,
-            input: crate::model::ResourceShareAssociation,
-        ) -> Self {
+        pub fn resource_share_associations(mut self, input: crate::model::ResourceShareAssociation) -> Self {
             let mut v = self.resource_share_associations.unwrap_or_default();
-            v.push(input);
-            self.resource_share_associations = Some(v);
-            self
+                            v.push(input);
+                            self.resource_share_associations = Some(v);
+                            self
         }
         /// <p>To view the resources associated with a pending resource share invitation, use <code>ListPendingInvitationResources</code>.</p>
         #[deprecated(note = "This member has been deprecated. Use ListPendingInvitationResources.")]
-        pub fn set_resource_share_associations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
-        ) -> Self {
-            self.resource_share_associations = input;
-            self
+        pub fn set_resource_share_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>) -> Self {
+            self.resource_share_associations = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the IAM user or role that received the invitation.</p>
         pub fn receiver_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -759,24 +681,34 @@ pub mod resource_share_invitation {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the IAM user or role that received the invitation.</p>
         pub fn set_receiver_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.receiver_arn = input;
-            self
+            self.receiver_arn = input; self
         }
         /// Consumes the builder and constructs a [`ResourceShareInvitation`](crate::model::ResourceShareInvitation).
         pub fn build(self) -> crate::model::ResourceShareInvitation {
             crate::model::ResourceShareInvitation {
-                resource_share_invitation_arn: self.resource_share_invitation_arn,
-                resource_share_name: self.resource_share_name,
-                resource_share_arn: self.resource_share_arn,
-                sender_account_id: self.sender_account_id,
-                receiver_account_id: self.receiver_account_id,
-                invitation_timestamp: self.invitation_timestamp,
-                status: self.status,
-                resource_share_associations: self.resource_share_associations,
-                receiver_arn: self.receiver_arn,
+                resource_share_invitation_arn: self.resource_share_invitation_arn
+                ,
+                resource_share_name: self.resource_share_name
+                ,
+                resource_share_arn: self.resource_share_arn
+                ,
+                sender_account_id: self.sender_account_id
+                ,
+                receiver_account_id: self.receiver_account_id
+                ,
+                invitation_timestamp: self.invitation_timestamp
+                ,
+                status: self.status
+                ,
+                resource_share_associations: self.resource_share_associations
+                ,
+                receiver_arn: self.receiver_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceShareInvitation {
     /// Creates a new builder-style object to manufacture [`ResourceShareInvitation`](crate::model::ResourceShareInvitation).
@@ -788,24 +720,24 @@ impl ResourceShareInvitation {
 /// <p>Describes an association with a resource share and either a principal or a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceShareAssociation {
+pub struct ResourceShareAssociation  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share.</p>
     #[doc(hidden)]
     pub resource_share_arn: std::option::Option<std::string::String>,
     /// <p>The name of the resource share.</p>
     #[doc(hidden)]
     pub resource_share_name: std::option::Option<std::string::String>,
-    /// <p>The associated entity. This can be either of the following:</p>
-    /// <ul>
-    /// <li> <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource.</p> </li>
-    /// <li> <p>For principal associations, this is one of the following:</p>
-    /// <ul>
-    /// <li> <p>The ID of an Amazon Web Services account</p> </li>
-    /// <li> <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations</p> </li>
-    /// <li> <p>The ARN of an organizational unit (OU) in Organizations</p> </li>
-    /// <li> <p>The ARN of an IAM role</p> </li>
-    /// <li> <p>The ARN of an IAM user</p> </li>
-    /// </ul> </li>
+    /// <p>The associated entity. This can be either of the following:</p> 
+    /// <ul> 
+    /// <li> <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource.</p> </li> 
+    /// <li> <p>For principal associations, this is one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The ID of an Amazon Web Services account</p> </li> 
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations</p> </li> 
+    /// <li> <p>The ARN of an organizational unit (OU) in Organizations</p> </li> 
+    /// <li> <p>The ARN of an IAM role</p> </li> 
+    /// <li> <p>The ARN of an IAM user</p> </li> 
+    /// </ul> </li> 
     /// </ul>
     #[doc(hidden)]
     pub associated_entity: std::option::Option<std::string::String>,
@@ -830,48 +762,46 @@ pub struct ResourceShareAssociation {
 }
 impl ResourceShareAssociation {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share.</p>
-    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_share_arn(&self) -> std::option::Option<& str> {
         self.resource_share_arn.as_deref()
     }
     /// <p>The name of the resource share.</p>
-    pub fn resource_share_name(&self) -> std::option::Option<&str> {
+    pub fn resource_share_name(&self) -> std::option::Option<& str> {
         self.resource_share_name.as_deref()
     }
-    /// <p>The associated entity. This can be either of the following:</p>
-    /// <ul>
-    /// <li> <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource.</p> </li>
-    /// <li> <p>For principal associations, this is one of the following:</p>
-    /// <ul>
-    /// <li> <p>The ID of an Amazon Web Services account</p> </li>
-    /// <li> <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations</p> </li>
-    /// <li> <p>The ARN of an organizational unit (OU) in Organizations</p> </li>
-    /// <li> <p>The ARN of an IAM role</p> </li>
-    /// <li> <p>The ARN of an IAM user</p> </li>
-    /// </ul> </li>
+    /// <p>The associated entity. This can be either of the following:</p> 
+    /// <ul> 
+    /// <li> <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource.</p> </li> 
+    /// <li> <p>For principal associations, this is one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The ID of an Amazon Web Services account</p> </li> 
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations</p> </li> 
+    /// <li> <p>The ARN of an organizational unit (OU) in Organizations</p> </li> 
+    /// <li> <p>The ARN of an IAM role</p> </li> 
+    /// <li> <p>The ARN of an IAM user</p> </li> 
+    /// </ul> </li> 
     /// </ul>
-    pub fn associated_entity(&self) -> std::option::Option<&str> {
+    pub fn associated_entity(&self) -> std::option::Option<& str> {
         self.associated_entity.as_deref()
     }
     /// <p>The type of entity included in this association.</p>
-    pub fn association_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ResourceShareAssociationType> {
+    pub fn association_type(&self) -> std::option::Option<& crate::model::ResourceShareAssociationType> {
         self.association_type.as_ref()
     }
     /// <p>The current status of the association.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ResourceShareAssociationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ResourceShareAssociationStatus> {
         self.status.as_ref()
     }
     /// <p>A message about the status of the association.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The date and time when the association was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time when the association was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services account that owns the resource share.</p>
@@ -881,15 +811,14 @@ impl ResourceShareAssociation {
 }
 /// See [`ResourceShareAssociation`](crate::model::ResourceShareAssociation).
 pub mod resource_share_association {
-
+    
     /// A builder for [`ResourceShareAssociation`](crate::model::ResourceShareAssociation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
         pub(crate) resource_share_name: std::option::Option<std::string::String>,
         pub(crate) associated_entity: std::option::Option<std::string::String>,
-        pub(crate) association_type:
-            std::option::Option<crate::model::ResourceShareAssociationType>,
+        pub(crate) association_type: std::option::Option<crate::model::ResourceShareAssociationType>,
         pub(crate) status: std::option::Option<crate::model::ResourceShareAssociationStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -903,12 +832,8 @@ pub mod resource_share_association {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share.</p>
-        pub fn set_resource_share_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_share_arn = input;
-            self
+        pub fn set_resource_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_share_arn = input; self
         }
         /// <p>The name of the resource share.</p>
         pub fn resource_share_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -916,63 +841,48 @@ pub mod resource_share_association {
             self
         }
         /// <p>The name of the resource share.</p>
-        pub fn set_resource_share_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_share_name = input;
-            self
+        pub fn set_resource_share_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_share_name = input; self
         }
-        /// <p>The associated entity. This can be either of the following:</p>
-        /// <ul>
-        /// <li> <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource.</p> </li>
-        /// <li> <p>For principal associations, this is one of the following:</p>
-        /// <ul>
-        /// <li> <p>The ID of an Amazon Web Services account</p> </li>
-        /// <li> <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations</p> </li>
-        /// <li> <p>The ARN of an organizational unit (OU) in Organizations</p> </li>
-        /// <li> <p>The ARN of an IAM role</p> </li>
-        /// <li> <p>The ARN of an IAM user</p> </li>
-        /// </ul> </li>
+        /// <p>The associated entity. This can be either of the following:</p> 
+        /// <ul> 
+        /// <li> <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource.</p> </li> 
+        /// <li> <p>For principal associations, this is one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>The ID of an Amazon Web Services account</p> </li> 
+        /// <li> <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations</p> </li> 
+        /// <li> <p>The ARN of an organizational unit (OU) in Organizations</p> </li> 
+        /// <li> <p>The ARN of an IAM role</p> </li> 
+        /// <li> <p>The ARN of an IAM user</p> </li> 
+        /// </ul> </li> 
         /// </ul>
         pub fn associated_entity(mut self, input: impl Into<std::string::String>) -> Self {
             self.associated_entity = Some(input.into());
             self
         }
-        /// <p>The associated entity. This can be either of the following:</p>
-        /// <ul>
-        /// <li> <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource.</p> </li>
-        /// <li> <p>For principal associations, this is one of the following:</p>
-        /// <ul>
-        /// <li> <p>The ID of an Amazon Web Services account</p> </li>
-        /// <li> <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations</p> </li>
-        /// <li> <p>The ARN of an organizational unit (OU) in Organizations</p> </li>
-        /// <li> <p>The ARN of an IAM role</p> </li>
-        /// <li> <p>The ARN of an IAM user</p> </li>
-        /// </ul> </li>
+        /// <p>The associated entity. This can be either of the following:</p> 
+        /// <ul> 
+        /// <li> <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource.</p> </li> 
+        /// <li> <p>For principal associations, this is one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>The ID of an Amazon Web Services account</p> </li> 
+        /// <li> <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations</p> </li> 
+        /// <li> <p>The ARN of an organizational unit (OU) in Organizations</p> </li> 
+        /// <li> <p>The ARN of an IAM role</p> </li> 
+        /// <li> <p>The ARN of an IAM user</p> </li> 
+        /// </ul> </li> 
         /// </ul>
-        pub fn set_associated_entity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.associated_entity = input;
-            self
+        pub fn set_associated_entity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.associated_entity = input; self
         }
         /// <p>The type of entity included in this association.</p>
-        pub fn association_type(
-            mut self,
-            input: crate::model::ResourceShareAssociationType,
-        ) -> Self {
+        pub fn association_type(mut self, input: crate::model::ResourceShareAssociationType) -> Self {
             self.association_type = Some(input);
             self
         }
         /// <p>The type of entity included in this association.</p>
-        pub fn set_association_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceShareAssociationType>,
-        ) -> Self {
-            self.association_type = input;
-            self
+        pub fn set_association_type(mut self, input: std::option::Option<crate::model::ResourceShareAssociationType>) -> Self {
+            self.association_type = input; self
         }
         /// <p>The current status of the association.</p>
         pub fn status(mut self, input: crate::model::ResourceShareAssociationStatus) -> Self {
@@ -980,12 +890,8 @@ pub mod resource_share_association {
             self
         }
         /// <p>The current status of the association.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceShareAssociationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ResourceShareAssociationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A message about the status of the association.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -993,12 +899,8 @@ pub mod resource_share_association {
             self
         }
         /// <p>A message about the status of the association.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The date and time when the association was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1006,12 +908,8 @@ pub mod resource_share_association {
             self
         }
         /// <p>The date and time when the association was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The date and time when the association was last updated.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1019,12 +917,8 @@ pub mod resource_share_association {
             self
         }
         /// <p>The date and time when the association was last updated.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services account that owns the resource share.</p>
         pub fn external(mut self, input: bool) -> Self {
@@ -1033,24 +927,34 @@ pub mod resource_share_association {
         }
         /// <p>Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services account that owns the resource share.</p>
         pub fn set_external(mut self, input: std::option::Option<bool>) -> Self {
-            self.external = input;
-            self
+            self.external = input; self
         }
         /// Consumes the builder and constructs a [`ResourceShareAssociation`](crate::model::ResourceShareAssociation).
         pub fn build(self) -> crate::model::ResourceShareAssociation {
             crate::model::ResourceShareAssociation {
-                resource_share_arn: self.resource_share_arn,
-                resource_share_name: self.resource_share_name,
-                associated_entity: self.associated_entity,
-                association_type: self.association_type,
-                status: self.status,
-                status_message: self.status_message,
-                creation_time: self.creation_time,
-                last_updated_time: self.last_updated_time,
-                external: self.external,
+                resource_share_arn: self.resource_share_arn
+                ,
+                resource_share_name: self.resource_share_name
+                ,
+                associated_entity: self.associated_entity
+                ,
+                association_type: self.association_type
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                creation_time: self.creation_time
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                external: self.external
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceShareAssociation {
     /// Creates a new builder-style object to manufacture [`ResourceShareAssociation`](crate::model::ResourceShareAssociation).
@@ -1065,9 +969,9 @@ impl ResourceShareAssociation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourceshareassociationstatus = unimplemented!();
 /// match resourceshareassociationstatus {
@@ -1092,22 +996,14 @@ impl ResourceShareAssociation {
 /// Specifically, when `resourceshareassociationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceShareAssociationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceShareAssociationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Associated,
@@ -1120,7 +1016,7 @@ pub enum ResourceShareAssociationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceShareAssociationStatus {
     fn from(s: &str) -> Self {
@@ -1130,19 +1026,17 @@ impl std::convert::From<&str> for ResourceShareAssociationStatus {
             "DISASSOCIATED" => ResourceShareAssociationStatus::Disassociated,
             "DISASSOCIATING" => ResourceShareAssociationStatus::Disassociating,
             "FAILED" => ResourceShareAssociationStatus::Failed,
-            other => ResourceShareAssociationStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceShareAssociationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceShareAssociationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceShareAssociationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceShareAssociationStatus::from(s))
+                }
+            }
 impl ResourceShareAssociationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1152,17 +1046,13 @@ impl ResourceShareAssociationStatus {
             ResourceShareAssociationStatus::Disassociated => "DISASSOCIATED",
             ResourceShareAssociationStatus::Disassociating => "DISASSOCIATING",
             ResourceShareAssociationStatus::Failed => "FAILED",
-            ResourceShareAssociationStatus::Unknown(value) => value.as_str(),
+            ResourceShareAssociationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ASSOCIATED",
-            "ASSOCIATING",
-            "DISASSOCIATED",
-            "DISASSOCIATING",
-            "FAILED",
+            "ASSOCIATED", "ASSOCIATING", "DISASSOCIATED", "DISASSOCIATING", "FAILED"
         ]
     }
 }
@@ -1178,9 +1068,9 @@ impl AsRef<str> for ResourceShareAssociationStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourceshareassociationtype = unimplemented!();
 /// match resourceshareassociationtype {
@@ -1202,60 +1092,52 @@ impl AsRef<str> for ResourceShareAssociationStatus {
 /// Specifically, when `resourceshareassociationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceShareAssociationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceShareAssociationType {
     #[allow(missing_docs)] // documentation missing in model
     Principal,
     #[allow(missing_docs)] // documentation missing in model
     Resource,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceShareAssociationType {
     fn from(s: &str) -> Self {
         match s {
             "PRINCIPAL" => ResourceShareAssociationType::Principal,
             "RESOURCE" => ResourceShareAssociationType::Resource,
-            other => ResourceShareAssociationType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceShareAssociationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceShareAssociationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceShareAssociationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceShareAssociationType::from(s))
+                }
+            }
 impl ResourceShareAssociationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceShareAssociationType::Principal => "PRINCIPAL",
             ResourceShareAssociationType::Resource => "RESOURCE",
-            ResourceShareAssociationType::Unknown(value) => value.as_str(),
+            ResourceShareAssociationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRINCIPAL", "RESOURCE"]
+        &[
+            "PRINCIPAL", "RESOURCE"
+        ]
     }
 }
 impl AsRef<str> for ResourceShareAssociationType {
@@ -1270,9 +1152,9 @@ impl AsRef<str> for ResourceShareAssociationType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourceshareinvitationstatus = unimplemented!();
 /// match resourceshareinvitationstatus {
@@ -1296,22 +1178,14 @@ impl AsRef<str> for ResourceShareAssociationType {
 /// Specifically, when `resourceshareinvitationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceShareInvitationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceShareInvitationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Accepted,
@@ -1322,7 +1196,7 @@ pub enum ResourceShareInvitationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Rejected,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceShareInvitationStatus {
     fn from(s: &str) -> Self {
@@ -1331,19 +1205,17 @@ impl std::convert::From<&str> for ResourceShareInvitationStatus {
             "EXPIRED" => ResourceShareInvitationStatus::Expired,
             "PENDING" => ResourceShareInvitationStatus::Pending,
             "REJECTED" => ResourceShareInvitationStatus::Rejected,
-            other => ResourceShareInvitationStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceShareInvitationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceShareInvitationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceShareInvitationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceShareInvitationStatus::from(s))
+                }
+            }
 impl ResourceShareInvitationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1352,12 +1224,14 @@ impl ResourceShareInvitationStatus {
             ResourceShareInvitationStatus::Expired => "EXPIRED",
             ResourceShareInvitationStatus::Pending => "PENDING",
             ResourceShareInvitationStatus::Rejected => "REJECTED",
-            ResourceShareInvitationStatus::Unknown(value) => value.as_str(),
+            ResourceShareInvitationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCEPTED", "EXPIRED", "PENDING", "REJECTED"]
+        &[
+            "ACCEPTED", "EXPIRED", "PENDING", "REJECTED"
+        ]
     }
 }
 impl AsRef<str> for ResourceShareInvitationStatus {
@@ -1369,42 +1243,42 @@ impl AsRef<str> for ResourceShareInvitationStatus {
 /// <p>Information about a shareable resource type and the Amazon Web Services service to which resources of that type belong.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceNameAndResourceType {
+pub struct ServiceNameAndResourceType  {
     /// <p>The type of the resource.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Web Services service to which resources of this type belong.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the scope of visibility of resources of this type:</p>
-    /// <ul>
-    /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
-    /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
+    /// <p>Specifies the scope of visibility of resources of this type:</p> 
+    /// <ul> 
+    /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li> 
+    /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub resource_region_scope: std::option::Option<crate::model::ResourceRegionScope>,
 }
 impl ServiceNameAndResourceType {
     /// <p>The type of the resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The name of the Amazon Web Services service to which resources of this type belong.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
-    /// <p>Specifies the scope of visibility of resources of this type:</p>
-    /// <ul>
-    /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
-    /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
+    /// <p>Specifies the scope of visibility of resources of this type:</p> 
+    /// <ul> 
+    /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li> 
+    /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li> 
     /// </ul>
-    pub fn resource_region_scope(&self) -> std::option::Option<&crate::model::ResourceRegionScope> {
+    pub fn resource_region_scope(&self) -> std::option::Option<& crate::model::ResourceRegionScope> {
         self.resource_region_scope.as_ref()
     }
 }
 /// See [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType).
 pub mod service_name_and_resource_type {
-
+    
     /// A builder for [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1419,12 +1293,8 @@ pub mod service_name_and_resource_type {
             self
         }
         /// <p>The type of the resource.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>The name of the Amazon Web Services service to which resources of this type belong.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1433,39 +1303,39 @@ pub mod service_name_and_resource_type {
         }
         /// <p>The name of the Amazon Web Services service to which resources of this type belong.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_name = input;
-            self
+            self.service_name = input; self
         }
-        /// <p>Specifies the scope of visibility of resources of this type:</p>
-        /// <ul>
-        /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
-        /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
+        /// <p>Specifies the scope of visibility of resources of this type:</p> 
+        /// <ul> 
+        /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li> 
+        /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li> 
         /// </ul>
         pub fn resource_region_scope(mut self, input: crate::model::ResourceRegionScope) -> Self {
             self.resource_region_scope = Some(input);
             self
         }
-        /// <p>Specifies the scope of visibility of resources of this type:</p>
-        /// <ul>
-        /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
-        /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
+        /// <p>Specifies the scope of visibility of resources of this type:</p> 
+        /// <ul> 
+        /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li> 
+        /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li> 
         /// </ul>
-        pub fn set_resource_region_scope(
-            mut self,
-            input: std::option::Option<crate::model::ResourceRegionScope>,
-        ) -> Self {
-            self.resource_region_scope = input;
-            self
+        pub fn set_resource_region_scope(mut self, input: std::option::Option<crate::model::ResourceRegionScope>) -> Self {
+            self.resource_region_scope = input; self
         }
         /// Consumes the builder and constructs a [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType).
         pub fn build(self) -> crate::model::ServiceNameAndResourceType {
             crate::model::ServiceNameAndResourceType {
-                resource_type: self.resource_type,
-                service_name: self.service_name,
-                resource_region_scope: self.resource_region_scope,
+                resource_type: self.resource_type
+                ,
+                service_name: self.service_name
+                ,
+                resource_region_scope: self.resource_region_scope
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceNameAndResourceType {
     /// Creates a new builder-style object to manufacture [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType).
@@ -1480,9 +1350,9 @@ impl ServiceNameAndResourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourceregionscope = unimplemented!();
 /// match resourceregionscope {
@@ -1504,60 +1374,52 @@ impl ServiceNameAndResourceType {
 /// Specifically, when `resourceregionscope` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceRegionScope::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceRegionScope {
     #[allow(missing_docs)] // documentation missing in model
     Global,
     #[allow(missing_docs)] // documentation missing in model
     Regional,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceRegionScope {
     fn from(s: &str) -> Self {
         match s {
             "GLOBAL" => ResourceRegionScope::Global,
             "REGIONAL" => ResourceRegionScope::Regional,
-            other => {
-                ResourceRegionScope::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceRegionScope::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceRegionScope {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceRegionScope::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceRegionScope::from(s))
+                }
+            }
 impl ResourceRegionScope {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceRegionScope::Global => "GLOBAL",
             ResourceRegionScope::Regional => "REGIONAL",
-            ResourceRegionScope::Unknown(value) => value.as_str(),
+            ResourceRegionScope::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GLOBAL", "REGIONAL"]
+        &[
+            "GLOBAL", "REGIONAL"
+        ]
     }
 }
 impl AsRef<str> for ResourceRegionScope {
@@ -1572,9 +1434,9 @@ impl AsRef<str> for ResourceRegionScope {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourceregionscopefilter = unimplemented!();
 /// match resourceregionscopefilter {
@@ -1597,22 +1459,14 @@ impl AsRef<str> for ResourceRegionScope {
 /// Specifically, when `resourceregionscopefilter` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceRegionScopeFilter::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceRegionScopeFilter {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -1621,7 +1475,7 @@ pub enum ResourceRegionScopeFilter {
     #[allow(missing_docs)] // documentation missing in model
     Regional,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceRegionScopeFilter {
     fn from(s: &str) -> Self {
@@ -1629,19 +1483,17 @@ impl std::convert::From<&str> for ResourceRegionScopeFilter {
             "ALL" => ResourceRegionScopeFilter::All,
             "GLOBAL" => ResourceRegionScopeFilter::Global,
             "REGIONAL" => ResourceRegionScopeFilter::Regional,
-            other => ResourceRegionScopeFilter::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceRegionScopeFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceRegionScopeFilter {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceRegionScopeFilter::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceRegionScopeFilter::from(s))
+                }
+            }
 impl ResourceRegionScopeFilter {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1649,12 +1501,14 @@ impl ResourceRegionScopeFilter {
             ResourceRegionScopeFilter::All => "ALL",
             ResourceRegionScopeFilter::Global => "GLOBAL",
             ResourceRegionScopeFilter::Regional => "REGIONAL",
-            ResourceRegionScopeFilter::Unknown(value) => value.as_str(),
+            ResourceRegionScopeFilter::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "GLOBAL", "REGIONAL"]
+        &[
+            "ALL", "GLOBAL", "REGIONAL"
+        ]
     }
 }
 impl AsRef<str> for ResourceRegionScopeFilter {
@@ -1666,7 +1520,7 @@ impl AsRef<str> for ResourceRegionScopeFilter {
 /// <p>Information about an RAM permission that is associated with a resource share and any of its resources of a specified type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceSharePermissionSummary {
+pub struct ResourceSharePermissionSummary  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission you want information about.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1697,11 +1551,11 @@ pub struct ResourceSharePermissionSummary {
 }
 impl ResourceSharePermissionSummary {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission you want information about.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the permission represented in this structure.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Specifies whether the version of the permission represented in this structure is the default version for this permission.</p>
@@ -1709,23 +1563,23 @@ impl ResourceSharePermissionSummary {
         self.default_version
     }
     /// <p>The name of this permission.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of resource to which this permission applies.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The current status of the permission.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time when the permission was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time when the permission was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Specifies whether the version of the permission represented in this structure is the default version for all resources of this resource type.</p>
@@ -1735,7 +1589,7 @@ impl ResourceSharePermissionSummary {
 }
 /// See [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary).
 pub mod resource_share_permission_summary {
-
+    
     /// A builder for [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1757,8 +1611,7 @@ pub mod resource_share_permission_summary {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission you want information about.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The version of the permission represented in this structure.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1767,8 +1620,7 @@ pub mod resource_share_permission_summary {
         }
         /// <p>The version of the permission represented in this structure.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>Specifies whether the version of the permission represented in this structure is the default version for this permission.</p>
         pub fn default_version(mut self, input: bool) -> Self {
@@ -1777,8 +1629,7 @@ pub mod resource_share_permission_summary {
         }
         /// <p>Specifies whether the version of the permission represented in this structure is the default version for this permission.</p>
         pub fn set_default_version(mut self, input: std::option::Option<bool>) -> Self {
-            self.default_version = input;
-            self
+            self.default_version = input; self
         }
         /// <p>The name of this permission.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1787,8 +1638,7 @@ pub mod resource_share_permission_summary {
         }
         /// <p>The name of this permission.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of resource to which this permission applies.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1796,12 +1646,8 @@ pub mod resource_share_permission_summary {
             self
         }
         /// <p>The type of resource to which this permission applies.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>The current status of the permission.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1810,8 +1656,7 @@ pub mod resource_share_permission_summary {
         }
         /// <p>The current status of the permission.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time when the permission was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1819,12 +1664,8 @@ pub mod resource_share_permission_summary {
             self
         }
         /// <p>The date and time when the permission was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The date and time when the permission was last updated.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1832,12 +1673,8 @@ pub mod resource_share_permission_summary {
             self
         }
         /// <p>The date and time when the permission was last updated.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>Specifies whether the version of the permission represented in this structure is the default version for all resources of this resource type.</p>
         pub fn is_resource_type_default(mut self, input: bool) -> Self {
@@ -1846,24 +1683,34 @@ pub mod resource_share_permission_summary {
         }
         /// <p>Specifies whether the version of the permission represented in this structure is the default version for all resources of this resource type.</p>
         pub fn set_is_resource_type_default(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_resource_type_default = input;
-            self
+            self.is_resource_type_default = input; self
         }
         /// Consumes the builder and constructs a [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary).
         pub fn build(self) -> crate::model::ResourceSharePermissionSummary {
             crate::model::ResourceSharePermissionSummary {
-                arn: self.arn,
-                version: self.version,
-                default_version: self.default_version,
-                name: self.name,
-                resource_type: self.resource_type,
-                status: self.status,
-                creation_time: self.creation_time,
-                last_updated_time: self.last_updated_time,
-                is_resource_type_default: self.is_resource_type_default,
+                arn: self.arn
+                ,
+                version: self.version
+                ,
+                default_version: self.default_version
+                ,
+                name: self.name
+                ,
+                resource_type: self.resource_type
+                ,
+                status: self.status
+                ,
+                creation_time: self.creation_time
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                is_resource_type_default: self.is_resource_type_default
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceSharePermissionSummary {
     /// Creates a new builder-style object to manufacture [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary).
@@ -1875,7 +1722,7 @@ impl ResourceSharePermissionSummary {
 /// <p>Describes a resource associated with a resource share in RAM.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1900,59 +1747,59 @@ pub struct Resource {
     /// <p>The date an time when the association was last updated.</p>
     #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies the scope of visibility of this resource:</p>
-    /// <ul>
-    /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
-    /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
+    /// <p>Specifies the scope of visibility of this resource:</p> 
+    /// <ul> 
+    /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li> 
+    /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub resource_region_scope: std::option::Option<crate::model::ResourceRegionScope>,
 }
 impl Resource {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code> </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share this resource is associated with.</p>
-    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_share_arn(&self) -> std::option::Option<& str> {
         self.resource_share_arn.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource group. This value is available only if the resource is part of a resource group.</p>
-    pub fn resource_group_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_group_arn(&self) -> std::option::Option<& str> {
         self.resource_group_arn.as_deref()
     }
     /// <p>The current status of the resource.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ResourceStatus> {
         self.status.as_ref()
     }
     /// <p>A message about the status of the resource.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The date and time when the resource was associated with the resource share.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date an time when the association was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
-    /// <p>Specifies the scope of visibility of this resource:</p>
-    /// <ul>
-    /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
-    /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
+    /// <p>Specifies the scope of visibility of this resource:</p> 
+    /// <ul> 
+    /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li> 
+    /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li> 
     /// </ul>
-    pub fn resource_region_scope(&self) -> std::option::Option<&crate::model::ResourceRegionScope> {
+    pub fn resource_region_scope(&self) -> std::option::Option<& crate::model::ResourceRegionScope> {
         self.resource_region_scope.as_ref()
     }
 }
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
-
+    
     /// A builder for [`Resource`](crate::model::Resource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1974,8 +1821,7 @@ pub mod resource {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code> </p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1984,8 +1830,7 @@ pub mod resource {
         }
         /// <p>The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code> </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share this resource is associated with.</p>
         pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1993,12 +1838,8 @@ pub mod resource {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share this resource is associated with.</p>
-        pub fn set_resource_share_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_share_arn = input;
-            self
+        pub fn set_resource_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_share_arn = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource group. This value is available only if the resource is part of a resource group.</p>
         pub fn resource_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2006,12 +1847,8 @@ pub mod resource {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource group. This value is available only if the resource is part of a resource group.</p>
-        pub fn set_resource_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_group_arn = input;
-            self
+        pub fn set_resource_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_group_arn = input; self
         }
         /// <p>The current status of the resource.</p>
         pub fn status(mut self, input: crate::model::ResourceStatus) -> Self {
@@ -2019,12 +1856,8 @@ pub mod resource {
             self
         }
         /// <p>The current status of the resource.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ResourceStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A message about the status of the resource.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2032,12 +1865,8 @@ pub mod resource {
             self
         }
         /// <p>A message about the status of the resource.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The date and time when the resource was associated with the resource share.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2045,12 +1874,8 @@ pub mod resource {
             self
         }
         /// <p>The date and time when the resource was associated with the resource share.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The date an time when the association was last updated.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2058,49 +1883,52 @@ pub mod resource {
             self
         }
         /// <p>The date an time when the association was last updated.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
-        /// <p>Specifies the scope of visibility of this resource:</p>
-        /// <ul>
-        /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
-        /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
+        /// <p>Specifies the scope of visibility of this resource:</p> 
+        /// <ul> 
+        /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li> 
+        /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li> 
         /// </ul>
         pub fn resource_region_scope(mut self, input: crate::model::ResourceRegionScope) -> Self {
             self.resource_region_scope = Some(input);
             self
         }
-        /// <p>Specifies the scope of visibility of this resource:</p>
-        /// <ul>
-        /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
-        /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
+        /// <p>Specifies the scope of visibility of this resource:</p> 
+        /// <ul> 
+        /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li> 
+        /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li> 
         /// </ul>
-        pub fn set_resource_region_scope(
-            mut self,
-            input: std::option::Option<crate::model::ResourceRegionScope>,
-        ) -> Self {
-            self.resource_region_scope = input;
-            self
+        pub fn set_resource_region_scope(mut self, input: std::option::Option<crate::model::ResourceRegionScope>) -> Self {
+            self.resource_region_scope = input; self
         }
         /// Consumes the builder and constructs a [`Resource`](crate::model::Resource).
         pub fn build(self) -> crate::model::Resource {
             crate::model::Resource {
-                arn: self.arn,
-                r#type: self.r#type,
-                resource_share_arn: self.resource_share_arn,
-                resource_group_arn: self.resource_group_arn,
-                status: self.status,
-                status_message: self.status_message,
-                creation_time: self.creation_time,
-                last_updated_time: self.last_updated_time,
-                resource_region_scope: self.resource_region_scope,
+                arn: self.arn
+                ,
+                r#type: self.r#type
+                ,
+                resource_share_arn: self.resource_share_arn
+                ,
+                resource_group_arn: self.resource_group_arn
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                creation_time: self.creation_time
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                resource_region_scope: self.resource_region_scope
+                ,
             }
         }
     }
+    
+    
 }
 impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
@@ -2115,9 +1943,9 @@ impl Resource {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcestatus = unimplemented!();
 /// match resourcestatus {
@@ -2142,22 +1970,14 @@ impl Resource {
 /// Specifically, when `resourcestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -2170,7 +1990,7 @@ pub enum ResourceStatus {
     #[allow(missing_docs)] // documentation missing in model
     ZonalResourceInaccessible,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceStatus {
     fn from(s: &str) -> Self {
@@ -2180,17 +2000,17 @@ impl std::convert::From<&str> for ResourceStatus {
             "PENDING" => ResourceStatus::Pending,
             "UNAVAILABLE" => ResourceStatus::Unavailable,
             "ZONAL_RESOURCE_INACCESSIBLE" => ResourceStatus::ZonalResourceInaccessible,
-            other => ResourceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceStatus::from(s))
+                }
+            }
 impl ResourceStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2200,17 +2020,13 @@ impl ResourceStatus {
             ResourceStatus::Pending => "PENDING",
             ResourceStatus::Unavailable => "UNAVAILABLE",
             ResourceStatus::ZonalResourceInaccessible => "ZONAL_RESOURCE_INACCESSIBLE",
-            ResourceStatus::Unknown(value) => value.as_str(),
+            ResourceStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AVAILABLE",
-            "LIMIT_EXCEEDED",
-            "PENDING",
-            "UNAVAILABLE",
-            "ZONAL_RESOURCE_INACCESSIBLE",
+            "AVAILABLE", "LIMIT_EXCEEDED", "PENDING", "UNAVAILABLE", "ZONAL_RESOURCE_INACCESSIBLE"
         ]
     }
 }
@@ -2226,9 +2042,9 @@ impl AsRef<str> for ResourceStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourceowner = unimplemented!();
 /// match resourceowner {
@@ -2250,58 +2066,52 @@ impl AsRef<str> for ResourceStatus {
 /// Specifically, when `resourceowner` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceOwner::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `ResourceOwner::Self` has been renamed to `::SelfValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceOwner {
     #[allow(missing_docs)] // documentation missing in model
     OtherAccounts,
     /// _Note: `::Self` has been renamed to `::SelfValue`._
     SelfValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceOwner {
     fn from(s: &str) -> Self {
         match s {
             "OTHER-ACCOUNTS" => ResourceOwner::OtherAccounts,
             "SELF" => ResourceOwner::SelfValue,
-            other => ResourceOwner::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceOwner::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceOwner {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceOwner::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceOwner::from(s))
+                }
+            }
 impl ResourceOwner {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceOwner::OtherAccounts => "OTHER-ACCOUNTS",
             ResourceOwner::SelfValue => "SELF",
-            ResourceOwner::Unknown(value) => value.as_str(),
+            ResourceOwner::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OTHER-ACCOUNTS", "SELF"]
+        &[
+            "OTHER-ACCOUNTS", "SELF"
+        ]
     }
 }
 impl AsRef<str> for ResourceOwner {
@@ -2313,7 +2123,7 @@ impl AsRef<str> for ResourceOwner {
 /// <p>Describes a principal for use with Resource Access Manager.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Principal {
+pub struct Principal  {
     /// <p>The ID of the principal.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2332,19 +2142,19 @@ pub struct Principal {
 }
 impl Principal {
     /// <p>The ID of the principal.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of a resource share the principal is associated with.</p>
-    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_share_arn(&self) -> std::option::Option<& str> {
         self.resource_share_arn.as_deref()
     }
     /// <p>The date and time when the principal was associated with the resource share.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time when the association was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services account that owns the resource share.</p>
@@ -2354,7 +2164,7 @@ impl Principal {
 }
 /// See [`Principal`](crate::model::Principal).
 pub mod principal {
-
+    
     /// A builder for [`Principal`](crate::model::Principal).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2372,8 +2182,7 @@ pub mod principal {
         }
         /// <p>The ID of the principal.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of a resource share the principal is associated with.</p>
         pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2381,12 +2190,8 @@ pub mod principal {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of a resource share the principal is associated with.</p>
-        pub fn set_resource_share_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_share_arn = input;
-            self
+        pub fn set_resource_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_share_arn = input; self
         }
         /// <p>The date and time when the principal was associated with the resource share.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2394,12 +2199,8 @@ pub mod principal {
             self
         }
         /// <p>The date and time when the principal was associated with the resource share.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The date and time when the association was last updated.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2407,12 +2208,8 @@ pub mod principal {
             self
         }
         /// <p>The date and time when the association was last updated.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services account that owns the resource share.</p>
         pub fn external(mut self, input: bool) -> Self {
@@ -2421,20 +2218,26 @@ pub mod principal {
         }
         /// <p>Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services account that owns the resource share.</p>
         pub fn set_external(mut self, input: std::option::Option<bool>) -> Self {
-            self.external = input;
-            self
+            self.external = input; self
         }
         /// Consumes the builder and constructs a [`Principal`](crate::model::Principal).
         pub fn build(self) -> crate::model::Principal {
             crate::model::Principal {
-                id: self.id,
-                resource_share_arn: self.resource_share_arn,
-                creation_time: self.creation_time,
-                last_updated_time: self.last_updated_time,
-                external: self.external,
+                id: self.id
+                ,
+                resource_share_arn: self.resource_share_arn
+                ,
+                creation_time: self.creation_time
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                external: self.external
+                ,
             }
         }
     }
+    
+    
 }
 impl Principal {
     /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal).
@@ -2446,7 +2249,7 @@ impl Principal {
 /// <p>A tag key and optional list of possible values that you can use to filter results for tagged resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagFilter {
+pub struct TagFilter  {
     /// <p>The tag key. This must have a valid string value and can't be empty.</p>
     #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
@@ -2456,17 +2259,17 @@ pub struct TagFilter {
 }
 impl TagFilter {
     /// <p>The tag key. This must have a valid string value and can't be empty.</p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> std::option::Option<& str> {
         self.tag_key.as_deref()
     }
     /// <p>A list of zero or more tag values. If no values are provided, then the filter matches any tag with the specified key, regardless of its value.</p>
-    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_values(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_values.as_deref()
     }
 }
 /// See [`TagFilter`](crate::model::TagFilter).
 pub mod tag_filter {
-
+    
     /// A builder for [`TagFilter`](crate::model::TagFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2481,8 +2284,7 @@ pub mod tag_filter {
         }
         /// <p>The tag key. This must have a valid string value and can't be empty.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tag_key = input;
-            self
+            self.tag_key = input; self
         }
         /// Appends an item to `tag_values`.
         ///
@@ -2491,26 +2293,26 @@ pub mod tag_filter {
         /// <p>A list of zero or more tag values. If no values are provided, then the filter matches any tag with the specified key, regardless of its value.</p>
         pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_values.unwrap_or_default();
-            v.push(input.into());
-            self.tag_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_values = Some(v);
+                            self
         }
         /// <p>A list of zero or more tag values. If no values are provided, then the filter matches any tag with the specified key, regardless of its value.</p>
-        pub fn set_tag_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_values = input;
-            self
+        pub fn set_tag_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_values = input; self
         }
         /// Consumes the builder and constructs a [`TagFilter`](crate::model::TagFilter).
         pub fn build(self) -> crate::model::TagFilter {
             crate::model::TagFilter {
-                tag_key: self.tag_key,
-                tag_values: self.tag_values,
+                tag_key: self.tag_key
+                ,
+                tag_values: self.tag_values
+                ,
             }
         }
     }
+    
+    
 }
 impl TagFilter {
     /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
@@ -2522,7 +2324,7 @@ impl TagFilter {
 /// <p>Information about an RAM permission.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceSharePermissionDetail {
+pub struct ResourceSharePermissionDetail  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of this RAM permission.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2553,11 +2355,11 @@ pub struct ResourceSharePermissionDetail {
 }
 impl ResourceSharePermissionDetail {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of this RAM permission.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the permission represented in this structure.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Specifies whether the version of the permission represented in this structure is the default version for this permission.</p>
@@ -2565,23 +2367,23 @@ impl ResourceSharePermissionDetail {
         self.default_version
     }
     /// <p>The name of this permission.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The resource type to which this permission applies.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or denied access.</p>
-    pub fn permission(&self) -> std::option::Option<&str> {
+    pub fn permission(&self) -> std::option::Option<& str> {
         self.permission.as_deref()
     }
     /// <p>The date and time when the permission was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time when the permission was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Specifies whether the version of the permission represented in this structure is the default version for all resources of this resource type.</p>
@@ -2591,7 +2393,7 @@ impl ResourceSharePermissionDetail {
 }
 /// See [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail).
 pub mod resource_share_permission_detail {
-
+    
     /// A builder for [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2613,8 +2415,7 @@ pub mod resource_share_permission_detail {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of this RAM permission.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The version of the permission represented in this structure.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2623,8 +2424,7 @@ pub mod resource_share_permission_detail {
         }
         /// <p>The version of the permission represented in this structure.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>Specifies whether the version of the permission represented in this structure is the default version for this permission.</p>
         pub fn default_version(mut self, input: bool) -> Self {
@@ -2633,8 +2433,7 @@ pub mod resource_share_permission_detail {
         }
         /// <p>Specifies whether the version of the permission represented in this structure is the default version for this permission.</p>
         pub fn set_default_version(mut self, input: std::option::Option<bool>) -> Self {
-            self.default_version = input;
-            self
+            self.default_version = input; self
         }
         /// <p>The name of this permission.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2643,8 +2442,7 @@ pub mod resource_share_permission_detail {
         }
         /// <p>The name of this permission.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The resource type to which this permission applies.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2652,12 +2450,8 @@ pub mod resource_share_permission_detail {
             self
         }
         /// <p>The resource type to which this permission applies.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or denied access.</p>
         pub fn permission(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2666,8 +2460,7 @@ pub mod resource_share_permission_detail {
         }
         /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or denied access.</p>
         pub fn set_permission(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.permission = input;
-            self
+            self.permission = input; self
         }
         /// <p>The date and time when the permission was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2675,12 +2468,8 @@ pub mod resource_share_permission_detail {
             self
         }
         /// <p>The date and time when the permission was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The date and time when the permission was last updated.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2688,12 +2477,8 @@ pub mod resource_share_permission_detail {
             self
         }
         /// <p>The date and time when the permission was last updated.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>Specifies whether the version of the permission represented in this structure is the default version for all resources of this resource type.</p>
         pub fn is_resource_type_default(mut self, input: bool) -> Self {
@@ -2702,24 +2487,34 @@ pub mod resource_share_permission_detail {
         }
         /// <p>Specifies whether the version of the permission represented in this structure is the default version for all resources of this resource type.</p>
         pub fn set_is_resource_type_default(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_resource_type_default = input;
-            self
+            self.is_resource_type_default = input; self
         }
         /// Consumes the builder and constructs a [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail).
         pub fn build(self) -> crate::model::ResourceSharePermissionDetail {
             crate::model::ResourceSharePermissionDetail {
-                arn: self.arn,
-                version: self.version,
-                default_version: self.default_version,
-                name: self.name,
-                resource_type: self.resource_type,
-                permission: self.permission,
-                creation_time: self.creation_time,
-                last_updated_time: self.last_updated_time,
-                is_resource_type_default: self.is_resource_type_default,
+                arn: self.arn
+                ,
+                version: self.version
+                ,
+                default_version: self.default_version
+                ,
+                name: self.name
+                ,
+                resource_type: self.resource_type
+                ,
+                permission: self.permission
+                ,
+                creation_time: self.creation_time
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                is_resource_type_default: self.is_resource_type_default
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceSharePermissionDetail {
     /// Creates a new builder-style object to manufacture [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail).
@@ -2727,3 +2522,4 @@ impl ResourceSharePermissionDetail {
         crate::model::resource_share_permission_detail::Builder::default()
     }
 }
+

@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWirelessGatewayOutput {}
+pub struct UpdateWirelessGatewayOutput  {
+}
 /// See [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput).
 pub mod update_wireless_gateway_output {
-
+    
     /// A builder for [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput).
         pub fn build(self) -> crate::output::UpdateWirelessGatewayOutput {
-            crate::output::UpdateWirelessGatewayOutput {}
+            crate::output::UpdateWirelessGatewayOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateWirelessGatewayOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput).
@@ -26,19 +31,24 @@ impl UpdateWirelessGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWirelessDeviceOutput {}
+pub struct UpdateWirelessDeviceOutput  {
+}
 /// See [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput).
 pub mod update_wireless_device_output {
-
+    
     /// A builder for [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput).
         pub fn build(self) -> crate::output::UpdateWirelessDeviceOutput {
-            crate::output::UpdateWirelessDeviceOutput {}
+            crate::output::UpdateWirelessDeviceOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateWirelessDeviceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput).
@@ -50,19 +60,24 @@ impl UpdateWirelessDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResourcePositionOutput {}
+pub struct UpdateResourcePositionOutput  {
+}
 /// See [`UpdateResourcePositionOutput`](crate::output::UpdateResourcePositionOutput).
 pub mod update_resource_position_output {
-
+    
     /// A builder for [`UpdateResourcePositionOutput`](crate::output::UpdateResourcePositionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateResourcePositionOutput`](crate::output::UpdateResourcePositionOutput).
         pub fn build(self) -> crate::output::UpdateResourcePositionOutput {
-            crate::output::UpdateResourcePositionOutput {}
+            crate::output::UpdateResourcePositionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateResourcePositionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResourcePositionOutput`](crate::output::UpdateResourcePositionOutput).
@@ -74,19 +89,24 @@ impl UpdateResourcePositionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResourceEventConfigurationOutput {}
+pub struct UpdateResourceEventConfigurationOutput  {
+}
 /// See [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput).
 pub mod update_resource_event_configuration_output {
-
+    
     /// A builder for [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateResourceEventConfigurationOutput {
-            crate::output::UpdateResourceEventConfigurationOutput {}
+            crate::output::UpdateResourceEventConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateResourceEventConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput).
@@ -99,19 +119,24 @@ impl UpdateResourceEventConfigurationOutput {
 #[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePositionOutput {}
+pub struct UpdatePositionOutput  {
+}
 /// See [`UpdatePositionOutput`](crate::output::UpdatePositionOutput).
 pub mod update_position_output {
-
+    
     /// A builder for [`UpdatePositionOutput`](crate::output::UpdatePositionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdatePositionOutput`](crate::output::UpdatePositionOutput).
         pub fn build(self) -> crate::output::UpdatePositionOutput {
-            crate::output::UpdatePositionOutput {}
+            crate::output::UpdatePositionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdatePositionOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePositionOutput`](crate::output::UpdatePositionOutput).
@@ -123,19 +148,24 @@ impl UpdatePositionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePartnerAccountOutput {}
+pub struct UpdatePartnerAccountOutput  {
+}
 /// See [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput).
 pub mod update_partner_account_output {
-
+    
     /// A builder for [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput).
         pub fn build(self) -> crate::output::UpdatePartnerAccountOutput {
-            crate::output::UpdatePartnerAccountOutput {}
+            crate::output::UpdatePartnerAccountOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdatePartnerAccountOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput).
@@ -147,19 +177,24 @@ impl UpdatePartnerAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNetworkAnalyzerConfigurationOutput {}
+pub struct UpdateNetworkAnalyzerConfigurationOutput  {
+}
 /// See [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput).
 pub mod update_network_analyzer_configuration_output {
-
+    
     /// A builder for [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateNetworkAnalyzerConfigurationOutput {
-            crate::output::UpdateNetworkAnalyzerConfigurationOutput {}
+            crate::output::UpdateNetworkAnalyzerConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateNetworkAnalyzerConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput).
@@ -171,19 +206,24 @@ impl UpdateNetworkAnalyzerConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMulticastGroupOutput {}
+pub struct UpdateMulticastGroupOutput  {
+}
 /// See [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput).
 pub mod update_multicast_group_output {
-
+    
     /// A builder for [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput).
         pub fn build(self) -> crate::output::UpdateMulticastGroupOutput {
-            crate::output::UpdateMulticastGroupOutput {}
+            crate::output::UpdateMulticastGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateMulticastGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput).
@@ -195,19 +235,24 @@ impl UpdateMulticastGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLogLevelsByResourceTypesOutput {}
+pub struct UpdateLogLevelsByResourceTypesOutput  {
+}
 /// See [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput).
 pub mod update_log_levels_by_resource_types_output {
-
+    
     /// A builder for [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput).
         pub fn build(self) -> crate::output::UpdateLogLevelsByResourceTypesOutput {
-            crate::output::UpdateLogLevelsByResourceTypesOutput {}
+            crate::output::UpdateLogLevelsByResourceTypesOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateLogLevelsByResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput).
@@ -219,19 +264,24 @@ impl UpdateLogLevelsByResourceTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFuotaTaskOutput {}
+pub struct UpdateFuotaTaskOutput  {
+}
 /// See [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput).
 pub mod update_fuota_task_output {
-
+    
     /// A builder for [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput).
         pub fn build(self) -> crate::output::UpdateFuotaTaskOutput {
-            crate::output::UpdateFuotaTaskOutput {}
+            crate::output::UpdateFuotaTaskOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput).
@@ -243,24 +293,28 @@ impl UpdateFuotaTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEventConfigurationByResourceTypesOutput {}
+pub struct UpdateEventConfigurationByResourceTypesOutput  {
+}
 /// See [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput).
 pub mod update_event_configuration_by_resource_types_output {
-
+    
     /// A builder for [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput).
         pub fn build(self) -> crate::output::UpdateEventConfigurationByResourceTypesOutput {
-            crate::output::UpdateEventConfigurationByResourceTypesOutput {}
+            crate::output::UpdateEventConfigurationByResourceTypesOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateEventConfigurationByResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput).
-    pub fn builder() -> crate::output::update_event_configuration_by_resource_types_output::Builder
-    {
+    pub fn builder() -> crate::output::update_event_configuration_by_resource_types_output::Builder {
         crate::output::update_event_configuration_by_resource_types_output::Builder::default()
     }
 }
@@ -268,19 +322,24 @@ impl UpdateEventConfigurationByResourceTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDestinationOutput {}
+pub struct UpdateDestinationOutput  {
+}
 /// See [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
 pub mod update_destination_output {
-
+    
     /// A builder for [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
         pub fn build(self) -> crate::output::UpdateDestinationOutput {
-            crate::output::UpdateDestinationOutput {}
+            crate::output::UpdateDestinationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateDestinationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
@@ -292,19 +351,24 @@ impl UpdateDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -316,20 +380,20 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestWirelessDeviceOutput {
+pub struct TestWirelessDeviceOutput  {
     /// <p>The result returned by the test.</p>
     #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
 }
 impl TestWirelessDeviceOutput {
     /// <p>The result returned by the test.</p>
-    pub fn result(&self) -> std::option::Option<&str> {
+    pub fn result(&self) -> std::option::Option<& str> {
         self.result.as_deref()
     }
 }
 /// See [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput).
 pub mod test_wireless_device_output {
-
+    
     /// A builder for [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -343,16 +407,18 @@ pub mod test_wireless_device_output {
         }
         /// <p>The result returned by the test.</p>
         pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.result = input;
-            self
+            self.result = input; self
         }
         /// Consumes the builder and constructs a [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput).
         pub fn build(self) -> crate::output::TestWirelessDeviceOutput {
             crate::output::TestWirelessDeviceOutput {
-                result: self.result,
+                result: self.result
+                ,
             }
         }
     }
+    
+    
 }
 impl TestWirelessDeviceOutput {
     /// Creates a new builder-style object to manufacture [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput).
@@ -364,19 +430,24 @@ impl TestWirelessDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -388,19 +459,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartMulticastGroupSessionOutput {}
+pub struct StartMulticastGroupSessionOutput  {
+}
 /// See [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput).
 pub mod start_multicast_group_session_output {
-
+    
     /// A builder for [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput).
         pub fn build(self) -> crate::output::StartMulticastGroupSessionOutput {
-            crate::output::StartMulticastGroupSessionOutput {}
+            crate::output::StartMulticastGroupSessionOutput {
+            }
         }
     }
+    
+    
 }
 impl StartMulticastGroupSessionOutput {
     /// Creates a new builder-style object to manufacture [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput).
@@ -412,19 +488,24 @@ impl StartMulticastGroupSessionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartFuotaTaskOutput {}
+pub struct StartFuotaTaskOutput  {
+}
 /// See [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput).
 pub mod start_fuota_task_output {
-
+    
     /// A builder for [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput).
         pub fn build(self) -> crate::output::StartFuotaTaskOutput {
-            crate::output::StartFuotaTaskOutput {}
+            crate::output::StartFuotaTaskOutput {
+            }
         }
     }
+    
+    
 }
 impl StartFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput).
@@ -436,27 +517,28 @@ impl StartFuotaTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {}
+pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput  {
+}
 /// See [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput).
 pub mod start_bulk_disassociate_wireless_device_from_multicast_group_output {
-
+    
     /// A builder for [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput).
-        pub fn build(
-            self,
-        ) -> crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {
-            crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {}
+        pub fn build(self) -> crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {
+            crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {
     /// Creates a new builder-style object to manufacture [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput).
-    pub fn builder(
-    ) -> crate::output::start_bulk_disassociate_wireless_device_from_multicast_group_output::Builder
-    {
+    pub fn builder() -> crate::output::start_bulk_disassociate_wireless_device_from_multicast_group_output::Builder {
         crate::output::start_bulk_disassociate_wireless_device_from_multicast_group_output::Builder::default()
     }
 }
@@ -464,27 +546,28 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {}
+pub struct StartBulkAssociateWirelessDeviceWithMulticastGroupOutput  {
+}
 /// See [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput).
 pub mod start_bulk_associate_wireless_device_with_multicast_group_output {
-
+    
     /// A builder for [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput).
-        pub fn build(
-            self,
-        ) -> crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
-            crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {}
+        pub fn build(self) -> crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
+            crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
     /// Creates a new builder-style object to manufacture [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput).
-    pub fn builder(
-    ) -> crate::output::start_bulk_associate_wireless_device_with_multicast_group_output::Builder
-    {
+    pub fn builder() -> crate::output::start_bulk_associate_wireless_device_with_multicast_group_output::Builder {
         crate::output::start_bulk_associate_wireless_device_with_multicast_group_output::Builder::default()
     }
 }
@@ -492,20 +575,20 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendDataToWirelessDeviceOutput {
+pub struct SendDataToWirelessDeviceOutput  {
     /// <p>The ID of the message sent to the wireless device.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendDataToWirelessDeviceOutput {
     /// <p>The ID of the message sent to the wireless device.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
 }
 /// See [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput).
 pub mod send_data_to_wireless_device_output {
-
+    
     /// A builder for [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -519,16 +602,18 @@ pub mod send_data_to_wireless_device_output {
         }
         /// <p>The ID of the message sent to the wireless device.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_id = input;
-            self
+            self.message_id = input; self
         }
         /// Consumes the builder and constructs a [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput).
         pub fn build(self) -> crate::output::SendDataToWirelessDeviceOutput {
             crate::output::SendDataToWirelessDeviceOutput {
-                message_id: self.message_id,
+                message_id: self.message_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SendDataToWirelessDeviceOutput {
     /// Creates a new builder-style object to manufacture [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput).
@@ -540,20 +625,20 @@ impl SendDataToWirelessDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendDataToMulticastGroupOutput {
+pub struct SendDataToMulticastGroupOutput  {
     /// <p>ID of a multicast group message.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendDataToMulticastGroupOutput {
     /// <p>ID of a multicast group message.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
 }
 /// See [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput).
 pub mod send_data_to_multicast_group_output {
-
+    
     /// A builder for [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -567,16 +652,18 @@ pub mod send_data_to_multicast_group_output {
         }
         /// <p>ID of a multicast group message.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_id = input;
-            self
+            self.message_id = input; self
         }
         /// Consumes the builder and constructs a [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput).
         pub fn build(self) -> crate::output::SendDataToMulticastGroupOutput {
             crate::output::SendDataToMulticastGroupOutput {
-                message_id: self.message_id,
+                message_id: self.message_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SendDataToMulticastGroupOutput {
     /// Creates a new builder-style object to manufacture [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput).
@@ -588,19 +675,24 @@ impl SendDataToMulticastGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetResourceLogLevelOutput {}
+pub struct ResetResourceLogLevelOutput  {
+}
 /// See [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput).
 pub mod reset_resource_log_level_output {
-
+    
     /// A builder for [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput).
         pub fn build(self) -> crate::output::ResetResourceLogLevelOutput {
-            crate::output::ResetResourceLogLevelOutput {}
+            crate::output::ResetResourceLogLevelOutput {
+            }
         }
     }
+    
+    
 }
 impl ResetResourceLogLevelOutput {
     /// Creates a new builder-style object to manufacture [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput).
@@ -612,19 +704,24 @@ impl ResetResourceLogLevelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetAllResourceLogLevelsOutput {}
+pub struct ResetAllResourceLogLevelsOutput  {
+}
 /// See [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput).
 pub mod reset_all_resource_log_levels_output {
-
+    
     /// A builder for [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput).
         pub fn build(self) -> crate::output::ResetAllResourceLogLevelsOutput {
-            crate::output::ResetAllResourceLogLevelsOutput {}
+            crate::output::ResetAllResourceLogLevelsOutput {
+            }
         }
     }
+    
+    
 }
 impl ResetAllResourceLogLevelsOutput {
     /// Creates a new builder-style object to manufacture [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput).
@@ -636,19 +733,24 @@ impl ResetAllResourceLogLevelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResourceLogLevelOutput {}
+pub struct PutResourceLogLevelOutput  {
+}
 /// See [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput).
 pub mod put_resource_log_level_output {
-
+    
     /// A builder for [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput).
         pub fn build(self) -> crate::output::PutResourceLogLevelOutput {
-            crate::output::PutResourceLogLevelOutput {}
+            crate::output::PutResourceLogLevelOutput {
+            }
         }
     }
+    
+    
 }
 impl PutResourceLogLevelOutput {
     /// Creates a new builder-style object to manufacture [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput).
@@ -661,19 +763,24 @@ impl PutResourceLogLevelOutput {
 #[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPositionConfigurationOutput {}
+pub struct PutPositionConfigurationOutput  {
+}
 /// See [`PutPositionConfigurationOutput`](crate::output::PutPositionConfigurationOutput).
 pub mod put_position_configuration_output {
-
+    
     /// A builder for [`PutPositionConfigurationOutput`](crate::output::PutPositionConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutPositionConfigurationOutput`](crate::output::PutPositionConfigurationOutput).
         pub fn build(self) -> crate::output::PutPositionConfigurationOutput {
-            crate::output::PutPositionConfigurationOutput {}
+            crate::output::PutPositionConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl PutPositionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutPositionConfigurationOutput`](crate::output::PutPositionConfigurationOutput).
@@ -685,36 +792,32 @@ impl PutPositionConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWirelessGatewayTaskDefinitionsOutput {
+pub struct ListWirelessGatewayTaskDefinitionsOutput  {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of task definitions.</p>
     #[doc(hidden)]
-    pub task_definitions:
-        std::option::Option<std::vec::Vec<crate::model::UpdateWirelessGatewayTaskEntry>>,
+    pub task_definitions: std::option::Option<std::vec::Vec<crate::model::UpdateWirelessGatewayTaskEntry>>,
 }
 impl ListWirelessGatewayTaskDefinitionsOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of task definitions.</p>
-    pub fn task_definitions(
-        &self,
-    ) -> std::option::Option<&[crate::model::UpdateWirelessGatewayTaskEntry]> {
+    pub fn task_definitions(&self) -> std::option::Option<& [crate::model::UpdateWirelessGatewayTaskEntry]> {
         self.task_definitions.as_deref()
     }
 }
 /// See [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput).
 pub mod list_wireless_gateway_task_definitions_output {
-
+    
     /// A builder for [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) task_definitions:
-            std::option::Option<std::vec::Vec<crate::model::UpdateWirelessGatewayTaskEntry>>,
+        pub(crate) task_definitions: std::option::Option<std::vec::Vec<crate::model::UpdateWirelessGatewayTaskEntry>>,
     }
     impl Builder {
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -724,39 +827,35 @@ pub mod list_wireless_gateway_task_definitions_output {
         }
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `task_definitions`.
         ///
         /// To override the contents of this collection use [`set_task_definitions`](Self::set_task_definitions).
         ///
         /// <p>The list of task definitions.</p>
-        pub fn task_definitions(
-            mut self,
-            input: crate::model::UpdateWirelessGatewayTaskEntry,
-        ) -> Self {
+        pub fn task_definitions(mut self, input: crate::model::UpdateWirelessGatewayTaskEntry) -> Self {
             let mut v = self.task_definitions.unwrap_or_default();
-            v.push(input);
-            self.task_definitions = Some(v);
-            self
+                            v.push(input);
+                            self.task_definitions = Some(v);
+                            self
         }
         /// <p>The list of task definitions.</p>
-        pub fn set_task_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UpdateWirelessGatewayTaskEntry>>,
-        ) -> Self {
-            self.task_definitions = input;
-            self
+        pub fn set_task_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpdateWirelessGatewayTaskEntry>>) -> Self {
+            self.task_definitions = input; self
         }
         /// Consumes the builder and constructs a [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput).
         pub fn build(self) -> crate::output::ListWirelessGatewayTaskDefinitionsOutput {
             crate::output::ListWirelessGatewayTaskDefinitionsOutput {
-                next_token: self.next_token,
-                task_definitions: self.task_definitions,
+                next_token: self.next_token
+                ,
+                task_definitions: self.task_definitions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWirelessGatewayTaskDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput).
@@ -768,36 +867,32 @@ impl ListWirelessGatewayTaskDefinitionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWirelessGatewaysOutput {
+pub struct ListWirelessGatewaysOutput  {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the wireless gateway.</p>
     #[doc(hidden)]
-    pub wireless_gateway_list:
-        std::option::Option<std::vec::Vec<crate::model::WirelessGatewayStatistics>>,
+    pub wireless_gateway_list: std::option::Option<std::vec::Vec<crate::model::WirelessGatewayStatistics>>,
 }
 impl ListWirelessGatewaysOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the wireless gateway.</p>
-    pub fn wireless_gateway_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::WirelessGatewayStatistics]> {
+    pub fn wireless_gateway_list(&self) -> std::option::Option<& [crate::model::WirelessGatewayStatistics]> {
         self.wireless_gateway_list.as_deref()
     }
 }
 /// See [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput).
 pub mod list_wireless_gateways_output {
-
+    
     /// A builder for [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) wireless_gateway_list:
-            std::option::Option<std::vec::Vec<crate::model::WirelessGatewayStatistics>>,
+        pub(crate) wireless_gateway_list: std::option::Option<std::vec::Vec<crate::model::WirelessGatewayStatistics>>,
     }
     impl Builder {
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -807,39 +902,35 @@ pub mod list_wireless_gateways_output {
         }
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `wireless_gateway_list`.
         ///
         /// To override the contents of this collection use [`set_wireless_gateway_list`](Self::set_wireless_gateway_list).
         ///
         /// <p>The ID of the wireless gateway.</p>
-        pub fn wireless_gateway_list(
-            mut self,
-            input: crate::model::WirelessGatewayStatistics,
-        ) -> Self {
+        pub fn wireless_gateway_list(mut self, input: crate::model::WirelessGatewayStatistics) -> Self {
             let mut v = self.wireless_gateway_list.unwrap_or_default();
-            v.push(input);
-            self.wireless_gateway_list = Some(v);
-            self
+                            v.push(input);
+                            self.wireless_gateway_list = Some(v);
+                            self
         }
         /// <p>The ID of the wireless gateway.</p>
-        pub fn set_wireless_gateway_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WirelessGatewayStatistics>>,
-        ) -> Self {
-            self.wireless_gateway_list = input;
-            self
+        pub fn set_wireless_gateway_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::WirelessGatewayStatistics>>) -> Self {
+            self.wireless_gateway_list = input; self
         }
         /// Consumes the builder and constructs a [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput).
         pub fn build(self) -> crate::output::ListWirelessGatewaysOutput {
             crate::output::ListWirelessGatewaysOutput {
-                next_token: self.next_token,
-                wireless_gateway_list: self.wireless_gateway_list,
+                next_token: self.next_token
+                ,
+                wireless_gateway_list: self.wireless_gateway_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWirelessGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput).
@@ -851,36 +942,32 @@ impl ListWirelessGatewaysOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWirelessDevicesOutput {
+pub struct ListWirelessDevicesOutput  {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the wireless device.</p>
     #[doc(hidden)]
-    pub wireless_device_list:
-        std::option::Option<std::vec::Vec<crate::model::WirelessDeviceStatistics>>,
+    pub wireless_device_list: std::option::Option<std::vec::Vec<crate::model::WirelessDeviceStatistics>>,
 }
 impl ListWirelessDevicesOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the wireless device.</p>
-    pub fn wireless_device_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::WirelessDeviceStatistics]> {
+    pub fn wireless_device_list(&self) -> std::option::Option<& [crate::model::WirelessDeviceStatistics]> {
         self.wireless_device_list.as_deref()
     }
 }
 /// See [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput).
 pub mod list_wireless_devices_output {
-
+    
     /// A builder for [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) wireless_device_list:
-            std::option::Option<std::vec::Vec<crate::model::WirelessDeviceStatistics>>,
+        pub(crate) wireless_device_list: std::option::Option<std::vec::Vec<crate::model::WirelessDeviceStatistics>>,
     }
     impl Builder {
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -890,39 +977,35 @@ pub mod list_wireless_devices_output {
         }
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `wireless_device_list`.
         ///
         /// To override the contents of this collection use [`set_wireless_device_list`](Self::set_wireless_device_list).
         ///
         /// <p>The ID of the wireless device.</p>
-        pub fn wireless_device_list(
-            mut self,
-            input: crate::model::WirelessDeviceStatistics,
-        ) -> Self {
+        pub fn wireless_device_list(mut self, input: crate::model::WirelessDeviceStatistics) -> Self {
             let mut v = self.wireless_device_list.unwrap_or_default();
-            v.push(input);
-            self.wireless_device_list = Some(v);
-            self
+                            v.push(input);
+                            self.wireless_device_list = Some(v);
+                            self
         }
         /// <p>The ID of the wireless device.</p>
-        pub fn set_wireless_device_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WirelessDeviceStatistics>>,
-        ) -> Self {
-            self.wireless_device_list = input;
-            self
+        pub fn set_wireless_device_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::WirelessDeviceStatistics>>) -> Self {
+            self.wireless_device_list = input; self
         }
         /// Consumes the builder and constructs a [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput).
         pub fn build(self) -> crate::output::ListWirelessDevicesOutput {
             crate::output::ListWirelessDevicesOutput {
-                next_token: self.next_token,
-                wireless_device_list: self.wireless_device_list,
+                next_token: self.next_token
+                ,
+                wireless_device_list: self.wireless_device_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWirelessDevicesOutput {
     /// Creates a new builder-style object to manufacture [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput).
@@ -934,20 +1017,20 @@ impl ListWirelessDevicesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -961,23 +1044,24 @@ pub mod list_tags_for_resource_output {
         /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -989,7 +1073,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServiceProfilesOutput {
+pub struct ListServiceProfilesOutput  {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -999,23 +1083,22 @@ pub struct ListServiceProfilesOutput {
 }
 impl ListServiceProfilesOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of service profiles.</p>
-    pub fn service_profile_list(&self) -> std::option::Option<&[crate::model::ServiceProfile]> {
+    pub fn service_profile_list(&self) -> std::option::Option<& [crate::model::ServiceProfile]> {
         self.service_profile_list.as_deref()
     }
 }
 /// See [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput).
 pub mod list_service_profiles_output {
-
+    
     /// A builder for [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) service_profile_list:
-            std::option::Option<std::vec::Vec<crate::model::ServiceProfile>>,
+        pub(crate) service_profile_list: std::option::Option<std::vec::Vec<crate::model::ServiceProfile>>,
     }
     impl Builder {
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -1025,8 +1108,7 @@ pub mod list_service_profiles_output {
         }
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `service_profile_list`.
         ///
@@ -1035,26 +1117,26 @@ pub mod list_service_profiles_output {
         /// <p>The list of service profiles.</p>
         pub fn service_profile_list(mut self, input: crate::model::ServiceProfile) -> Self {
             let mut v = self.service_profile_list.unwrap_or_default();
-            v.push(input);
-            self.service_profile_list = Some(v);
-            self
+                            v.push(input);
+                            self.service_profile_list = Some(v);
+                            self
         }
         /// <p>The list of service profiles.</p>
-        pub fn set_service_profile_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServiceProfile>>,
-        ) -> Self {
-            self.service_profile_list = input;
-            self
+        pub fn set_service_profile_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServiceProfile>>) -> Self {
+            self.service_profile_list = input; self
         }
         /// Consumes the builder and constructs a [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput).
         pub fn build(self) -> crate::output::ListServiceProfilesOutput {
             crate::output::ListServiceProfilesOutput {
-                next_token: self.next_token,
-                service_profile_list: self.service_profile_list,
+                next_token: self.next_token
+                ,
+                service_profile_list: self.service_profile_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListServiceProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput).
@@ -1066,36 +1148,32 @@ impl ListServiceProfilesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListQueuedMessagesOutput {
+pub struct ListQueuedMessagesOutput  {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The messages in the downlink queue.</p>
     #[doc(hidden)]
-    pub downlink_queue_messages_list:
-        std::option::Option<std::vec::Vec<crate::model::DownlinkQueueMessage>>,
+    pub downlink_queue_messages_list: std::option::Option<std::vec::Vec<crate::model::DownlinkQueueMessage>>,
 }
 impl ListQueuedMessagesOutput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The messages in the downlink queue.</p>
-    pub fn downlink_queue_messages_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::DownlinkQueueMessage]> {
+    pub fn downlink_queue_messages_list(&self) -> std::option::Option<& [crate::model::DownlinkQueueMessage]> {
         self.downlink_queue_messages_list.as_deref()
     }
 }
 /// See [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput).
 pub mod list_queued_messages_output {
-
+    
     /// A builder for [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) downlink_queue_messages_list:
-            std::option::Option<std::vec::Vec<crate::model::DownlinkQueueMessage>>,
+        pub(crate) downlink_queue_messages_list: std::option::Option<std::vec::Vec<crate::model::DownlinkQueueMessage>>,
     }
     impl Builder {
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -1105,39 +1183,35 @@ pub mod list_queued_messages_output {
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `downlink_queue_messages_list`.
         ///
         /// To override the contents of this collection use [`set_downlink_queue_messages_list`](Self::set_downlink_queue_messages_list).
         ///
         /// <p>The messages in the downlink queue.</p>
-        pub fn downlink_queue_messages_list(
-            mut self,
-            input: crate::model::DownlinkQueueMessage,
-        ) -> Self {
+        pub fn downlink_queue_messages_list(mut self, input: crate::model::DownlinkQueueMessage) -> Self {
             let mut v = self.downlink_queue_messages_list.unwrap_or_default();
-            v.push(input);
-            self.downlink_queue_messages_list = Some(v);
-            self
+                            v.push(input);
+                            self.downlink_queue_messages_list = Some(v);
+                            self
         }
         /// <p>The messages in the downlink queue.</p>
-        pub fn set_downlink_queue_messages_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DownlinkQueueMessage>>,
-        ) -> Self {
-            self.downlink_queue_messages_list = input;
-            self
+        pub fn set_downlink_queue_messages_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DownlinkQueueMessage>>) -> Self {
+            self.downlink_queue_messages_list = input; self
         }
         /// Consumes the builder and constructs a [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput).
         pub fn build(self) -> crate::output::ListQueuedMessagesOutput {
             crate::output::ListQueuedMessagesOutput {
-                next_token: self.next_token,
-                downlink_queue_messages_list: self.downlink_queue_messages_list,
+                next_token: self.next_token
+                ,
+                downlink_queue_messages_list: self.downlink_queue_messages_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListQueuedMessagesOutput {
     /// Creates a new builder-style object to manufacture [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput).
@@ -1150,35 +1224,31 @@ impl ListQueuedMessagesOutput {
 #[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPositionConfigurationsOutput {
+pub struct ListPositionConfigurationsOutput  {
     /// <p>A list of position configurations.</p>
     #[doc(hidden)]
-    pub position_configuration_list:
-        std::option::Option<std::vec::Vec<crate::model::PositionConfigurationItem>>,
+    pub position_configuration_list: std::option::Option<std::vec::Vec<crate::model::PositionConfigurationItem>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPositionConfigurationsOutput {
     /// <p>A list of position configurations.</p>
-    pub fn position_configuration_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::PositionConfigurationItem]> {
+    pub fn position_configuration_list(&self) -> std::option::Option<& [crate::model::PositionConfigurationItem]> {
         self.position_configuration_list.as_deref()
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPositionConfigurationsOutput`](crate::output::ListPositionConfigurationsOutput).
 pub mod list_position_configurations_output {
-
+    
     /// A builder for [`ListPositionConfigurationsOutput`](crate::output::ListPositionConfigurationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) position_configuration_list:
-            std::option::Option<std::vec::Vec<crate::model::PositionConfigurationItem>>,
+        pub(crate) position_configuration_list: std::option::Option<std::vec::Vec<crate::model::PositionConfigurationItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1187,22 +1257,15 @@ pub mod list_position_configurations_output {
         /// To override the contents of this collection use [`set_position_configuration_list`](Self::set_position_configuration_list).
         ///
         /// <p>A list of position configurations.</p>
-        pub fn position_configuration_list(
-            mut self,
-            input: crate::model::PositionConfigurationItem,
-        ) -> Self {
+        pub fn position_configuration_list(mut self, input: crate::model::PositionConfigurationItem) -> Self {
             let mut v = self.position_configuration_list.unwrap_or_default();
-            v.push(input);
-            self.position_configuration_list = Some(v);
-            self
+                            v.push(input);
+                            self.position_configuration_list = Some(v);
+                            self
         }
         /// <p>A list of position configurations.</p>
-        pub fn set_position_configuration_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PositionConfigurationItem>>,
-        ) -> Self {
-            self.position_configuration_list = input;
-            self
+        pub fn set_position_configuration_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::PositionConfigurationItem>>) -> Self {
+            self.position_configuration_list = input; self
         }
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1211,17 +1274,20 @@ pub mod list_position_configurations_output {
         }
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPositionConfigurationsOutput`](crate::output::ListPositionConfigurationsOutput).
         pub fn build(self) -> crate::output::ListPositionConfigurationsOutput {
             crate::output::ListPositionConfigurationsOutput {
-                position_configuration_list: self.position_configuration_list,
-                next_token: self.next_token,
+                position_configuration_list: self.position_configuration_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPositionConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListPositionConfigurationsOutput`](crate::output::ListPositionConfigurationsOutput).
@@ -1233,36 +1299,32 @@ impl ListPositionConfigurationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPartnerAccountsOutput {
+pub struct ListPartnerAccountsOutput  {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Sidewalk account credentials.</p>
     #[doc(hidden)]
-    pub sidewalk:
-        std::option::Option<std::vec::Vec<crate::model::SidewalkAccountInfoWithFingerprint>>,
+    pub sidewalk: std::option::Option<std::vec::Vec<crate::model::SidewalkAccountInfoWithFingerprint>>,
 }
 impl ListPartnerAccountsOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Sidewalk account credentials.</p>
-    pub fn sidewalk(
-        &self,
-    ) -> std::option::Option<&[crate::model::SidewalkAccountInfoWithFingerprint]> {
+    pub fn sidewalk(&self) -> std::option::Option<& [crate::model::SidewalkAccountInfoWithFingerprint]> {
         self.sidewalk.as_deref()
     }
 }
 /// See [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput).
 pub mod list_partner_accounts_output {
-
+    
     /// A builder for [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) sidewalk:
-            std::option::Option<std::vec::Vec<crate::model::SidewalkAccountInfoWithFingerprint>>,
+        pub(crate) sidewalk: std::option::Option<std::vec::Vec<crate::model::SidewalkAccountInfoWithFingerprint>>,
     }
     impl Builder {
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -1272,8 +1334,7 @@ pub mod list_partner_accounts_output {
         }
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `sidewalk`.
         ///
@@ -1282,28 +1343,26 @@ pub mod list_partner_accounts_output {
         /// <p>The Sidewalk account credentials.</p>
         pub fn sidewalk(mut self, input: crate::model::SidewalkAccountInfoWithFingerprint) -> Self {
             let mut v = self.sidewalk.unwrap_or_default();
-            v.push(input);
-            self.sidewalk = Some(v);
-            self
+                            v.push(input);
+                            self.sidewalk = Some(v);
+                            self
         }
         /// <p>The Sidewalk account credentials.</p>
-        pub fn set_sidewalk(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::SidewalkAccountInfoWithFingerprint>,
-            >,
-        ) -> Self {
-            self.sidewalk = input;
-            self
+        pub fn set_sidewalk(mut self, input: std::option::Option<std::vec::Vec<crate::model::SidewalkAccountInfoWithFingerprint>>) -> Self {
+            self.sidewalk = input; self
         }
         /// Consumes the builder and constructs a [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput).
         pub fn build(self) -> crate::output::ListPartnerAccountsOutput {
             crate::output::ListPartnerAccountsOutput {
-                next_token: self.next_token,
-                sidewalk: self.sidewalk,
+                next_token: self.next_token
+                ,
+                sidewalk: self.sidewalk
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPartnerAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput).
@@ -1315,36 +1374,32 @@ impl ListPartnerAccountsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNetworkAnalyzerConfigurationsOutput {
+pub struct ListNetworkAnalyzerConfigurationsOutput  {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of network analyzer configurations.</p>
     #[doc(hidden)]
-    pub network_analyzer_configuration_list:
-        std::option::Option<std::vec::Vec<crate::model::NetworkAnalyzerConfigurations>>,
+    pub network_analyzer_configuration_list: std::option::Option<std::vec::Vec<crate::model::NetworkAnalyzerConfigurations>>,
 }
 impl ListNetworkAnalyzerConfigurationsOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of network analyzer configurations.</p>
-    pub fn network_analyzer_configuration_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::NetworkAnalyzerConfigurations]> {
+    pub fn network_analyzer_configuration_list(&self) -> std::option::Option<& [crate::model::NetworkAnalyzerConfigurations]> {
         self.network_analyzer_configuration_list.as_deref()
     }
 }
 /// See [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput).
 pub mod list_network_analyzer_configurations_output {
-
+    
     /// A builder for [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) network_analyzer_configuration_list:
-            std::option::Option<std::vec::Vec<crate::model::NetworkAnalyzerConfigurations>>,
+        pub(crate) network_analyzer_configuration_list: std::option::Option<std::vec::Vec<crate::model::NetworkAnalyzerConfigurations>>,
     }
     impl Builder {
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -1354,39 +1409,35 @@ pub mod list_network_analyzer_configurations_output {
         }
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `network_analyzer_configuration_list`.
         ///
         /// To override the contents of this collection use [`set_network_analyzer_configuration_list`](Self::set_network_analyzer_configuration_list).
         ///
         /// <p>The list of network analyzer configurations.</p>
-        pub fn network_analyzer_configuration_list(
-            mut self,
-            input: crate::model::NetworkAnalyzerConfigurations,
-        ) -> Self {
+        pub fn network_analyzer_configuration_list(mut self, input: crate::model::NetworkAnalyzerConfigurations) -> Self {
             let mut v = self.network_analyzer_configuration_list.unwrap_or_default();
-            v.push(input);
-            self.network_analyzer_configuration_list = Some(v);
-            self
+                            v.push(input);
+                            self.network_analyzer_configuration_list = Some(v);
+                            self
         }
         /// <p>The list of network analyzer configurations.</p>
-        pub fn set_network_analyzer_configuration_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NetworkAnalyzerConfigurations>>,
-        ) -> Self {
-            self.network_analyzer_configuration_list = input;
-            self
+        pub fn set_network_analyzer_configuration_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::NetworkAnalyzerConfigurations>>) -> Self {
+            self.network_analyzer_configuration_list = input; self
         }
         /// Consumes the builder and constructs a [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput).
         pub fn build(self) -> crate::output::ListNetworkAnalyzerConfigurationsOutput {
             crate::output::ListNetworkAnalyzerConfigurationsOutput {
-                next_token: self.next_token,
-                network_analyzer_configuration_list: self.network_analyzer_configuration_list,
+                next_token: self.next_token
+                ,
+                network_analyzer_configuration_list: self.network_analyzer_configuration_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListNetworkAnalyzerConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput).
@@ -1398,36 +1449,32 @@ impl ListNetworkAnalyzerConfigurationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMulticastGroupsByFuotaTaskOutput {
+pub struct ListMulticastGroupsByFuotaTaskOutput  {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of multicast groups associated with a FUOTA task.</p>
     #[doc(hidden)]
-    pub multicast_group_list:
-        std::option::Option<std::vec::Vec<crate::model::MulticastGroupByFuotaTask>>,
+    pub multicast_group_list: std::option::Option<std::vec::Vec<crate::model::MulticastGroupByFuotaTask>>,
 }
 impl ListMulticastGroupsByFuotaTaskOutput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of multicast groups associated with a FUOTA task.</p>
-    pub fn multicast_group_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::MulticastGroupByFuotaTask]> {
+    pub fn multicast_group_list(&self) -> std::option::Option<& [crate::model::MulticastGroupByFuotaTask]> {
         self.multicast_group_list.as_deref()
     }
 }
 /// See [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput).
 pub mod list_multicast_groups_by_fuota_task_output {
-
+    
     /// A builder for [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) multicast_group_list:
-            std::option::Option<std::vec::Vec<crate::model::MulticastGroupByFuotaTask>>,
+        pub(crate) multicast_group_list: std::option::Option<std::vec::Vec<crate::model::MulticastGroupByFuotaTask>>,
     }
     impl Builder {
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -1437,39 +1484,35 @@ pub mod list_multicast_groups_by_fuota_task_output {
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `multicast_group_list`.
         ///
         /// To override the contents of this collection use [`set_multicast_group_list`](Self::set_multicast_group_list).
         ///
         /// <p>List of multicast groups associated with a FUOTA task.</p>
-        pub fn multicast_group_list(
-            mut self,
-            input: crate::model::MulticastGroupByFuotaTask,
-        ) -> Self {
+        pub fn multicast_group_list(mut self, input: crate::model::MulticastGroupByFuotaTask) -> Self {
             let mut v = self.multicast_group_list.unwrap_or_default();
-            v.push(input);
-            self.multicast_group_list = Some(v);
-            self
+                            v.push(input);
+                            self.multicast_group_list = Some(v);
+                            self
         }
         /// <p>List of multicast groups associated with a FUOTA task.</p>
-        pub fn set_multicast_group_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MulticastGroupByFuotaTask>>,
-        ) -> Self {
-            self.multicast_group_list = input;
-            self
+        pub fn set_multicast_group_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::MulticastGroupByFuotaTask>>) -> Self {
+            self.multicast_group_list = input; self
         }
         /// Consumes the builder and constructs a [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput).
         pub fn build(self) -> crate::output::ListMulticastGroupsByFuotaTaskOutput {
             crate::output::ListMulticastGroupsByFuotaTaskOutput {
-                next_token: self.next_token,
-                multicast_group_list: self.multicast_group_list,
+                next_token: self.next_token
+                ,
+                multicast_group_list: self.multicast_group_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMulticastGroupsByFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput).
@@ -1481,7 +1524,7 @@ impl ListMulticastGroupsByFuotaTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMulticastGroupsOutput {
+pub struct ListMulticastGroupsOutput  {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1491,23 +1534,22 @@ pub struct ListMulticastGroupsOutput {
 }
 impl ListMulticastGroupsOutput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of multicast groups.</p>
-    pub fn multicast_group_list(&self) -> std::option::Option<&[crate::model::MulticastGroup]> {
+    pub fn multicast_group_list(&self) -> std::option::Option<& [crate::model::MulticastGroup]> {
         self.multicast_group_list.as_deref()
     }
 }
 /// See [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput).
 pub mod list_multicast_groups_output {
-
+    
     /// A builder for [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) multicast_group_list:
-            std::option::Option<std::vec::Vec<crate::model::MulticastGroup>>,
+        pub(crate) multicast_group_list: std::option::Option<std::vec::Vec<crate::model::MulticastGroup>>,
     }
     impl Builder {
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -1517,8 +1559,7 @@ pub mod list_multicast_groups_output {
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `multicast_group_list`.
         ///
@@ -1527,26 +1568,26 @@ pub mod list_multicast_groups_output {
         /// <p>List of multicast groups.</p>
         pub fn multicast_group_list(mut self, input: crate::model::MulticastGroup) -> Self {
             let mut v = self.multicast_group_list.unwrap_or_default();
-            v.push(input);
-            self.multicast_group_list = Some(v);
-            self
+                            v.push(input);
+                            self.multicast_group_list = Some(v);
+                            self
         }
         /// <p>List of multicast groups.</p>
-        pub fn set_multicast_group_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MulticastGroup>>,
-        ) -> Self {
-            self.multicast_group_list = input;
-            self
+        pub fn set_multicast_group_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::MulticastGroup>>) -> Self {
+            self.multicast_group_list = input; self
         }
         /// Consumes the builder and constructs a [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput).
         pub fn build(self) -> crate::output::ListMulticastGroupsOutput {
             crate::output::ListMulticastGroupsOutput {
-                next_token: self.next_token,
-                multicast_group_list: self.multicast_group_list,
+                next_token: self.next_token
+                ,
+                multicast_group_list: self.multicast_group_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMulticastGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput).
@@ -1558,7 +1599,7 @@ impl ListMulticastGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFuotaTasksOutput {
+pub struct ListFuotaTasksOutput  {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1568,17 +1609,17 @@ pub struct ListFuotaTasksOutput {
 }
 impl ListFuotaTasksOutput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
-    pub fn fuota_task_list(&self) -> std::option::Option<&[crate::model::FuotaTask]> {
+    pub fn fuota_task_list(&self) -> std::option::Option<& [crate::model::FuotaTask]> {
         self.fuota_task_list.as_deref()
     }
 }
 /// See [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput).
 pub mod list_fuota_tasks_output {
-
+    
     /// A builder for [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1593,8 +1634,7 @@ pub mod list_fuota_tasks_output {
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `fuota_task_list`.
         ///
@@ -1603,26 +1643,26 @@ pub mod list_fuota_tasks_output {
         /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
         pub fn fuota_task_list(mut self, input: crate::model::FuotaTask) -> Self {
             let mut v = self.fuota_task_list.unwrap_or_default();
-            v.push(input);
-            self.fuota_task_list = Some(v);
-            self
+                            v.push(input);
+                            self.fuota_task_list = Some(v);
+                            self
         }
         /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
-        pub fn set_fuota_task_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FuotaTask>>,
-        ) -> Self {
-            self.fuota_task_list = input;
-            self
+        pub fn set_fuota_task_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::FuotaTask>>) -> Self {
+            self.fuota_task_list = input; self
         }
         /// Consumes the builder and constructs a [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput).
         pub fn build(self) -> crate::output::ListFuotaTasksOutput {
             crate::output::ListFuotaTasksOutput {
-                next_token: self.next_token,
-                fuota_task_list: self.fuota_task_list,
+                next_token: self.next_token
+                ,
+                fuota_task_list: self.fuota_task_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFuotaTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput).
@@ -1634,36 +1674,32 @@ impl ListFuotaTasksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventConfigurationsOutput {
+pub struct ListEventConfigurationsOutput  {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Event configurations of all events for a single resource.</p>
     #[doc(hidden)]
-    pub event_configurations_list:
-        std::option::Option<std::vec::Vec<crate::model::EventConfigurationItem>>,
+    pub event_configurations_list: std::option::Option<std::vec::Vec<crate::model::EventConfigurationItem>>,
 }
 impl ListEventConfigurationsOutput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Event configurations of all events for a single resource.</p>
-    pub fn event_configurations_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::EventConfigurationItem]> {
+    pub fn event_configurations_list(&self) -> std::option::Option<& [crate::model::EventConfigurationItem]> {
         self.event_configurations_list.as_deref()
     }
 }
 /// See [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput).
 pub mod list_event_configurations_output {
-
+    
     /// A builder for [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) event_configurations_list:
-            std::option::Option<std::vec::Vec<crate::model::EventConfigurationItem>>,
+        pub(crate) event_configurations_list: std::option::Option<std::vec::Vec<crate::model::EventConfigurationItem>>,
     }
     impl Builder {
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -1673,39 +1709,35 @@ pub mod list_event_configurations_output {
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `event_configurations_list`.
         ///
         /// To override the contents of this collection use [`set_event_configurations_list`](Self::set_event_configurations_list).
         ///
         /// <p>Event configurations of all events for a single resource.</p>
-        pub fn event_configurations_list(
-            mut self,
-            input: crate::model::EventConfigurationItem,
-        ) -> Self {
+        pub fn event_configurations_list(mut self, input: crate::model::EventConfigurationItem) -> Self {
             let mut v = self.event_configurations_list.unwrap_or_default();
-            v.push(input);
-            self.event_configurations_list = Some(v);
-            self
+                            v.push(input);
+                            self.event_configurations_list = Some(v);
+                            self
         }
         /// <p>Event configurations of all events for a single resource.</p>
-        pub fn set_event_configurations_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventConfigurationItem>>,
-        ) -> Self {
-            self.event_configurations_list = input;
-            self
+        pub fn set_event_configurations_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventConfigurationItem>>) -> Self {
+            self.event_configurations_list = input; self
         }
         /// Consumes the builder and constructs a [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput).
         pub fn build(self) -> crate::output::ListEventConfigurationsOutput {
             crate::output::ListEventConfigurationsOutput {
-                next_token: self.next_token,
-                event_configurations_list: self.event_configurations_list,
+                next_token: self.next_token
+                ,
+                event_configurations_list: self.event_configurations_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEventConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput).
@@ -1717,7 +1749,7 @@ impl ListEventConfigurationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeviceProfilesOutput {
+pub struct ListDeviceProfilesOutput  {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1727,23 +1759,22 @@ pub struct ListDeviceProfilesOutput {
 }
 impl ListDeviceProfilesOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of device profiles.</p>
-    pub fn device_profile_list(&self) -> std::option::Option<&[crate::model::DeviceProfile]> {
+    pub fn device_profile_list(&self) -> std::option::Option<& [crate::model::DeviceProfile]> {
         self.device_profile_list.as_deref()
     }
 }
 /// See [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput).
 pub mod list_device_profiles_output {
-
+    
     /// A builder for [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) device_profile_list:
-            std::option::Option<std::vec::Vec<crate::model::DeviceProfile>>,
+        pub(crate) device_profile_list: std::option::Option<std::vec::Vec<crate::model::DeviceProfile>>,
     }
     impl Builder {
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -1753,8 +1784,7 @@ pub mod list_device_profiles_output {
         }
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `device_profile_list`.
         ///
@@ -1763,26 +1793,26 @@ pub mod list_device_profiles_output {
         /// <p>The list of device profiles.</p>
         pub fn device_profile_list(mut self, input: crate::model::DeviceProfile) -> Self {
             let mut v = self.device_profile_list.unwrap_or_default();
-            v.push(input);
-            self.device_profile_list = Some(v);
-            self
+                            v.push(input);
+                            self.device_profile_list = Some(v);
+                            self
         }
         /// <p>The list of device profiles.</p>
-        pub fn set_device_profile_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeviceProfile>>,
-        ) -> Self {
-            self.device_profile_list = input;
-            self
+        pub fn set_device_profile_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeviceProfile>>) -> Self {
+            self.device_profile_list = input; self
         }
         /// Consumes the builder and constructs a [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput).
         pub fn build(self) -> crate::output::ListDeviceProfilesOutput {
             crate::output::ListDeviceProfilesOutput {
-                next_token: self.next_token,
-                device_profile_list: self.device_profile_list,
+                next_token: self.next_token
+                ,
+                device_profile_list: self.device_profile_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDeviceProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput).
@@ -1794,7 +1824,7 @@ impl ListDeviceProfilesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDestinationsOutput {
+pub struct ListDestinationsOutput  {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1804,17 +1834,17 @@ pub struct ListDestinationsOutput {
 }
 impl ListDestinationsOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of destinations.</p>
-    pub fn destination_list(&self) -> std::option::Option<&[crate::model::Destinations]> {
+    pub fn destination_list(&self) -> std::option::Option<& [crate::model::Destinations]> {
         self.destination_list.as_deref()
     }
 }
 /// See [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
 pub mod list_destinations_output {
-
+    
     /// A builder for [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1829,8 +1859,7 @@ pub mod list_destinations_output {
         }
         /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `destination_list`.
         ///
@@ -1839,26 +1868,26 @@ pub mod list_destinations_output {
         /// <p>The list of destinations.</p>
         pub fn destination_list(mut self, input: crate::model::Destinations) -> Self {
             let mut v = self.destination_list.unwrap_or_default();
-            v.push(input);
-            self.destination_list = Some(v);
-            self
+                            v.push(input);
+                            self.destination_list = Some(v);
+                            self
         }
         /// <p>The list of destinations.</p>
-        pub fn set_destination_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Destinations>>,
-        ) -> Self {
-            self.destination_list = input;
-            self
+        pub fn set_destination_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Destinations>>) -> Self {
+            self.destination_list = input; self
         }
         /// Consumes the builder and constructs a [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
         pub fn build(self) -> crate::output::ListDestinationsOutput {
             crate::output::ListDestinationsOutput {
-                next_token: self.next_token,
-                destination_list: self.destination_list,
+                next_token: self.next_token
+                ,
+                destination_list: self.destination_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDestinationsOutput {
     /// Creates a new builder-style object to manufacture [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
@@ -1870,7 +1899,7 @@ impl ListDestinationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWirelessGatewayTaskDefinitionOutput {
+pub struct GetWirelessGatewayTaskDefinitionOutput  {
     /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
     #[doc(hidden)]
     pub auto_create_tasks: bool,
@@ -1890,21 +1919,21 @@ impl GetWirelessGatewayTaskDefinitionOutput {
         self.auto_create_tasks
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Information about the gateways to update.</p>
-    pub fn update(&self) -> std::option::Option<&crate::model::UpdateWirelessGatewayTaskCreate> {
+    pub fn update(&self) -> std::option::Option<& crate::model::UpdateWirelessGatewayTaskCreate> {
         self.update.as_ref()
     }
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput).
 pub mod get_wireless_gateway_task_definition_output {
-
+    
     /// A builder for [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1921,8 +1950,7 @@ pub mod get_wireless_gateway_task_definition_output {
         }
         /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
         pub fn set_auto_create_tasks(mut self, input: std::option::Option<bool>) -> Self {
-            self.auto_create_tasks = input;
-            self
+            self.auto_create_tasks = input; self
         }
         /// <p>The name of the resource.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1931,8 +1959,7 @@ pub mod get_wireless_gateway_task_definition_output {
         }
         /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Information about the gateways to update.</p>
         pub fn update(mut self, input: crate::model::UpdateWirelessGatewayTaskCreate) -> Self {
@@ -1940,12 +1967,8 @@ pub mod get_wireless_gateway_task_definition_output {
             self
         }
         /// <p>Information about the gateways to update.</p>
-        pub fn set_update(
-            mut self,
-            input: std::option::Option<crate::model::UpdateWirelessGatewayTaskCreate>,
-        ) -> Self {
-            self.update = input;
-            self
+        pub fn set_update(mut self, input: std::option::Option<crate::model::UpdateWirelessGatewayTaskCreate>) -> Self {
+            self.update = input; self
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1954,19 +1977,25 @@ pub mod get_wireless_gateway_task_definition_output {
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput).
         pub fn build(self) -> crate::output::GetWirelessGatewayTaskDefinitionOutput {
             crate::output::GetWirelessGatewayTaskDefinitionOutput {
-                auto_create_tasks: self.auto_create_tasks.unwrap_or_default(),
-                name: self.name,
-                update: self.update,
-                arn: self.arn,
+                auto_create_tasks: self.auto_create_tasks
+                    .unwrap_or_default()
+                ,
+                name: self.name
+                ,
+                update: self.update
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWirelessGatewayTaskDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput).
@@ -1978,7 +2007,7 @@ impl GetWirelessGatewayTaskDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWirelessGatewayTaskOutput {
+pub struct GetWirelessGatewayTaskOutput  {
     /// <p>The ID of the wireless gateway.</p>
     #[doc(hidden)]
     pub wireless_gateway_id: std::option::Option<std::string::String>,
@@ -1997,29 +2026,29 @@ pub struct GetWirelessGatewayTaskOutput {
 }
 impl GetWirelessGatewayTaskOutput {
     /// <p>The ID of the wireless gateway.</p>
-    pub fn wireless_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn wireless_gateway_id(&self) -> std::option::Option<& str> {
         self.wireless_gateway_id.as_deref()
     }
     /// <p>The ID of the WirelessGatewayTask.</p>
-    pub fn wireless_gateway_task_definition_id(&self) -> std::option::Option<&str> {
+    pub fn wireless_gateway_task_definition_id(&self) -> std::option::Option<& str> {
         self.wireless_gateway_task_definition_id.as_deref()
     }
     /// <p>The date and time when the most recent uplink was received.</p>
-    pub fn last_uplink_received_at(&self) -> std::option::Option<&str> {
+    pub fn last_uplink_received_at(&self) -> std::option::Option<& str> {
         self.last_uplink_received_at.as_deref()
     }
     /// <p>The date and time when the task was created.</p>
-    pub fn task_created_at(&self) -> std::option::Option<&str> {
+    pub fn task_created_at(&self) -> std::option::Option<& str> {
         self.task_created_at.as_deref()
     }
     /// <p>The status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::WirelessGatewayTaskStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::WirelessGatewayTaskStatus> {
         self.status.as_ref()
     }
 }
 /// See [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput).
 pub mod get_wireless_gateway_task_output {
-
+    
     /// A builder for [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2036,28 +2065,17 @@ pub mod get_wireless_gateway_task_output {
             self
         }
         /// <p>The ID of the wireless gateway.</p>
-        pub fn set_wireless_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.wireless_gateway_id = input;
-            self
+        pub fn set_wireless_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.wireless_gateway_id = input; self
         }
         /// <p>The ID of the WirelessGatewayTask.</p>
-        pub fn wireless_gateway_task_definition_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn wireless_gateway_task_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.wireless_gateway_task_definition_id = Some(input.into());
             self
         }
         /// <p>The ID of the WirelessGatewayTask.</p>
-        pub fn set_wireless_gateway_task_definition_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.wireless_gateway_task_definition_id = input;
-            self
+        pub fn set_wireless_gateway_task_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.wireless_gateway_task_definition_id = input; self
         }
         /// <p>The date and time when the most recent uplink was received.</p>
         pub fn last_uplink_received_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2065,12 +2083,8 @@ pub mod get_wireless_gateway_task_output {
             self
         }
         /// <p>The date and time when the most recent uplink was received.</p>
-        pub fn set_last_uplink_received_at(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_uplink_received_at = input;
-            self
+        pub fn set_last_uplink_received_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_uplink_received_at = input; self
         }
         /// <p>The date and time when the task was created.</p>
         pub fn task_created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2078,12 +2092,8 @@ pub mod get_wireless_gateway_task_output {
             self
         }
         /// <p>The date and time when the task was created.</p>
-        pub fn set_task_created_at(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.task_created_at = input;
-            self
+        pub fn set_task_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_created_at = input; self
         }
         /// <p>The status of the request.</p>
         pub fn status(mut self, input: crate::model::WirelessGatewayTaskStatus) -> Self {
@@ -2091,24 +2101,27 @@ pub mod get_wireless_gateway_task_output {
             self
         }
         /// <p>The status of the request.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::WirelessGatewayTaskStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::WirelessGatewayTaskStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput).
         pub fn build(self) -> crate::output::GetWirelessGatewayTaskOutput {
             crate::output::GetWirelessGatewayTaskOutput {
-                wireless_gateway_id: self.wireless_gateway_id,
-                wireless_gateway_task_definition_id: self.wireless_gateway_task_definition_id,
-                last_uplink_received_at: self.last_uplink_received_at,
-                task_created_at: self.task_created_at,
-                status: self.status,
+                wireless_gateway_id: self.wireless_gateway_id
+                ,
+                wireless_gateway_task_definition_id: self.wireless_gateway_task_definition_id
+                ,
+                last_uplink_received_at: self.last_uplink_received_at
+                ,
+                task_created_at: self.task_created_at
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWirelessGatewayTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput).
@@ -2120,7 +2133,7 @@ impl GetWirelessGatewayTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWirelessGatewayStatisticsOutput {
+pub struct GetWirelessGatewayStatisticsOutput  {
     /// <p>The ID of the wireless gateway.</p>
     #[doc(hidden)]
     pub wireless_gateway_id: std::option::Option<std::string::String>,
@@ -2133,21 +2146,21 @@ pub struct GetWirelessGatewayStatisticsOutput {
 }
 impl GetWirelessGatewayStatisticsOutput {
     /// <p>The ID of the wireless gateway.</p>
-    pub fn wireless_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn wireless_gateway_id(&self) -> std::option::Option<& str> {
         self.wireless_gateway_id.as_deref()
     }
     /// <p>The date and time when the most recent uplink was received.</p>
-    pub fn last_uplink_received_at(&self) -> std::option::Option<&str> {
+    pub fn last_uplink_received_at(&self) -> std::option::Option<& str> {
         self.last_uplink_received_at.as_deref()
     }
     /// <p>The connection status of the wireless gateway.</p>
-    pub fn connection_status(&self) -> std::option::Option<&crate::model::ConnectionStatus> {
+    pub fn connection_status(&self) -> std::option::Option<& crate::model::ConnectionStatus> {
         self.connection_status.as_ref()
     }
 }
 /// See [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput).
 pub mod get_wireless_gateway_statistics_output {
-
+    
     /// A builder for [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2162,12 +2175,8 @@ pub mod get_wireless_gateway_statistics_output {
             self
         }
         /// <p>The ID of the wireless gateway.</p>
-        pub fn set_wireless_gateway_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.wireless_gateway_id = input;
-            self
+        pub fn set_wireless_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.wireless_gateway_id = input; self
         }
         /// <p>The date and time when the most recent uplink was received.</p>
         pub fn last_uplink_received_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2175,12 +2184,8 @@ pub mod get_wireless_gateway_statistics_output {
             self
         }
         /// <p>The date and time when the most recent uplink was received.</p>
-        pub fn set_last_uplink_received_at(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_uplink_received_at = input;
-            self
+        pub fn set_last_uplink_received_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_uplink_received_at = input; self
         }
         /// <p>The connection status of the wireless gateway.</p>
         pub fn connection_status(mut self, input: crate::model::ConnectionStatus) -> Self {
@@ -2188,22 +2193,23 @@ pub mod get_wireless_gateway_statistics_output {
             self
         }
         /// <p>The connection status of the wireless gateway.</p>
-        pub fn set_connection_status(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionStatus>,
-        ) -> Self {
-            self.connection_status = input;
-            self
+        pub fn set_connection_status(mut self, input: std::option::Option<crate::model::ConnectionStatus>) -> Self {
+            self.connection_status = input; self
         }
         /// Consumes the builder and constructs a [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput).
         pub fn build(self) -> crate::output::GetWirelessGatewayStatisticsOutput {
             crate::output::GetWirelessGatewayStatisticsOutput {
-                wireless_gateway_id: self.wireless_gateway_id,
-                last_uplink_received_at: self.last_uplink_received_at,
-                connection_status: self.connection_status,
+                wireless_gateway_id: self.wireless_gateway_id
+                ,
+                last_uplink_received_at: self.last_uplink_received_at
+                ,
+                connection_status: self.connection_status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWirelessGatewayStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput).
@@ -2215,20 +2221,20 @@ impl GetWirelessGatewayStatisticsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWirelessGatewayFirmwareInformationOutput {
+pub struct GetWirelessGatewayFirmwareInformationOutput  {
     /// <p>Information about the wireless gateway's firmware.</p>
     #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanGatewayCurrentVersion>,
 }
 impl GetWirelessGatewayFirmwareInformationOutput {
     /// <p>Information about the wireless gateway's firmware.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanGatewayCurrentVersion> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanGatewayCurrentVersion> {
         self.lo_ra_wan.as_ref()
     }
 }
 /// See [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput).
 pub mod get_wireless_gateway_firmware_information_output {
-
+    
     /// A builder for [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2241,20 +2247,19 @@ pub mod get_wireless_gateway_firmware_information_output {
             self
         }
         /// <p>Information about the wireless gateway's firmware.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanGatewayCurrentVersion>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanGatewayCurrentVersion>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// Consumes the builder and constructs a [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput).
         pub fn build(self) -> crate::output::GetWirelessGatewayFirmwareInformationOutput {
             crate::output::GetWirelessGatewayFirmwareInformationOutput {
-                lo_ra_wan: self.lo_ra_wan,
+                lo_ra_wan: self.lo_ra_wan
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWirelessGatewayFirmwareInformationOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput).
@@ -2266,7 +2271,7 @@ impl GetWirelessGatewayFirmwareInformationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWirelessGatewayCertificateOutput {
+pub struct GetWirelessGatewayCertificateOutput  {
     /// <p>The ID of the certificate associated with the wireless gateway.</p>
     #[doc(hidden)]
     pub iot_certificate_id: std::option::Option<std::string::String>,
@@ -2276,23 +2281,22 @@ pub struct GetWirelessGatewayCertificateOutput {
 }
 impl GetWirelessGatewayCertificateOutput {
     /// <p>The ID of the certificate associated with the wireless gateway.</p>
-    pub fn iot_certificate_id(&self) -> std::option::Option<&str> {
+    pub fn iot_certificate_id(&self) -> std::option::Option<& str> {
         self.iot_certificate_id.as_deref()
     }
     /// <p>The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer endpoint.</p>
-    pub fn lo_ra_wan_network_server_certificate_id(&self) -> std::option::Option<&str> {
+    pub fn lo_ra_wan_network_server_certificate_id(&self) -> std::option::Option<& str> {
         self.lo_ra_wan_network_server_certificate_id.as_deref()
     }
 }
 /// See [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput).
 pub mod get_wireless_gateway_certificate_output {
-
+    
     /// A builder for [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iot_certificate_id: std::option::Option<std::string::String>,
-        pub(crate) lo_ra_wan_network_server_certificate_id:
-            std::option::Option<std::string::String>,
+        pub(crate) lo_ra_wan_network_server_certificate_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the certificate associated with the wireless gateway.</p>
@@ -2301,38 +2305,30 @@ pub mod get_wireless_gateway_certificate_output {
             self
         }
         /// <p>The ID of the certificate associated with the wireless gateway.</p>
-        pub fn set_iot_certificate_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iot_certificate_id = input;
-            self
+        pub fn set_iot_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iot_certificate_id = input; self
         }
         /// <p>The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer endpoint.</p>
-        pub fn lo_ra_wan_network_server_certificate_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn lo_ra_wan_network_server_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.lo_ra_wan_network_server_certificate_id = Some(input.into());
             self
         }
         /// <p>The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer endpoint.</p>
-        pub fn set_lo_ra_wan_network_server_certificate_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.lo_ra_wan_network_server_certificate_id = input;
-            self
+        pub fn set_lo_ra_wan_network_server_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lo_ra_wan_network_server_certificate_id = input; self
         }
         /// Consumes the builder and constructs a [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput).
         pub fn build(self) -> crate::output::GetWirelessGatewayCertificateOutput {
             crate::output::GetWirelessGatewayCertificateOutput {
-                iot_certificate_id: self.iot_certificate_id,
-                lo_ra_wan_network_server_certificate_id: self
-                    .lo_ra_wan_network_server_certificate_id,
+                iot_certificate_id: self.iot_certificate_id
+                ,
+                lo_ra_wan_network_server_certificate_id: self.lo_ra_wan_network_server_certificate_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWirelessGatewayCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput).
@@ -2344,7 +2340,7 @@ impl GetWirelessGatewayCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWirelessGatewayOutput {
+pub struct GetWirelessGatewayOutput  {
     /// <p>The name of the resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2369,37 +2365,37 @@ pub struct GetWirelessGatewayOutput {
 }
 impl GetWirelessGatewayOutput {
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the wireless gateway.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The description of the resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the wireless gateway.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanGateway> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanGateway> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated with the gateway.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The ARN of the thing associated with the wireless gateway.</p>
-    pub fn thing_arn(&self) -> std::option::Option<&str> {
+    pub fn thing_arn(&self) -> std::option::Option<& str> {
         self.thing_arn.as_deref()
     }
 }
 /// See [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput).
 pub mod get_wireless_gateway_output {
-
+    
     /// A builder for [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2419,8 +2415,7 @@ pub mod get_wireless_gateway_output {
         }
         /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the wireless gateway.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2429,8 +2424,7 @@ pub mod get_wireless_gateway_output {
         }
         /// <p>The ID of the wireless gateway.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The description of the resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2439,8 +2433,7 @@ pub mod get_wireless_gateway_output {
         }
         /// <p>The description of the resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Information about the wireless gateway.</p>
         pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanGateway) -> Self {
@@ -2448,12 +2441,8 @@ pub mod get_wireless_gateway_output {
             self
         }
         /// <p>Information about the wireless gateway.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanGateway>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanGateway>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2462,8 +2451,7 @@ pub mod get_wireless_gateway_output {
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated with the gateway.</p>
         pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2472,8 +2460,7 @@ pub mod get_wireless_gateway_output {
         }
         /// <p>The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated with the gateway.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thing_name = input;
-            self
+            self.thing_name = input; self
         }
         /// <p>The ARN of the thing associated with the wireless gateway.</p>
         pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2482,22 +2469,30 @@ pub mod get_wireless_gateway_output {
         }
         /// <p>The ARN of the thing associated with the wireless gateway.</p>
         pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thing_arn = input;
-            self
+            self.thing_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput).
         pub fn build(self) -> crate::output::GetWirelessGatewayOutput {
             crate::output::GetWirelessGatewayOutput {
-                name: self.name,
-                id: self.id,
-                description: self.description,
-                lo_ra_wan: self.lo_ra_wan,
-                arn: self.arn,
-                thing_name: self.thing_name,
-                thing_arn: self.thing_arn,
+                name: self.name
+                ,
+                id: self.id
+                ,
+                description: self.description
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+                arn: self.arn
+                ,
+                thing_name: self.thing_name
+                ,
+                thing_arn: self.thing_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWirelessGatewayOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput).
@@ -2509,7 +2504,7 @@ impl GetWirelessGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWirelessDeviceStatisticsOutput {
+pub struct GetWirelessDeviceStatisticsOutput  {
     /// <p>The ID of the wireless device.</p>
     #[doc(hidden)]
     pub wireless_device_id: std::option::Option<std::string::String>,
@@ -2525,25 +2520,25 @@ pub struct GetWirelessDeviceStatisticsOutput {
 }
 impl GetWirelessDeviceStatisticsOutput {
     /// <p>The ID of the wireless device.</p>
-    pub fn wireless_device_id(&self) -> std::option::Option<&str> {
+    pub fn wireless_device_id(&self) -> std::option::Option<& str> {
         self.wireless_device_id.as_deref()
     }
     /// <p>The date and time when the most recent uplink was received.</p>
-    pub fn last_uplink_received_at(&self) -> std::option::Option<&str> {
+    pub fn last_uplink_received_at(&self) -> std::option::Option<& str> {
         self.last_uplink_received_at.as_deref()
     }
     /// <p>Information about the wireless device's operations.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanDeviceMetadata> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanDeviceMetadata> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>MetaData for Sidewalk device.</p>
-    pub fn sidewalk(&self) -> std::option::Option<&crate::model::SidewalkDeviceMetadata> {
+    pub fn sidewalk(&self) -> std::option::Option<& crate::model::SidewalkDeviceMetadata> {
         self.sidewalk.as_ref()
     }
 }
 /// See [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput).
 pub mod get_wireless_device_statistics_output {
-
+    
     /// A builder for [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2559,12 +2554,8 @@ pub mod get_wireless_device_statistics_output {
             self
         }
         /// <p>The ID of the wireless device.</p>
-        pub fn set_wireless_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.wireless_device_id = input;
-            self
+        pub fn set_wireless_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.wireless_device_id = input; self
         }
         /// <p>The date and time when the most recent uplink was received.</p>
         pub fn last_uplink_received_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2572,12 +2563,8 @@ pub mod get_wireless_device_statistics_output {
             self
         }
         /// <p>The date and time when the most recent uplink was received.</p>
-        pub fn set_last_uplink_received_at(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_uplink_received_at = input;
-            self
+        pub fn set_last_uplink_received_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_uplink_received_at = input; self
         }
         /// <p>Information about the wireless device's operations.</p>
         pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanDeviceMetadata) -> Self {
@@ -2585,12 +2572,8 @@ pub mod get_wireless_device_statistics_output {
             self
         }
         /// <p>Information about the wireless device's operations.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanDeviceMetadata>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanDeviceMetadata>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// <p>MetaData for Sidewalk device.</p>
         pub fn sidewalk(mut self, input: crate::model::SidewalkDeviceMetadata) -> Self {
@@ -2598,23 +2581,25 @@ pub mod get_wireless_device_statistics_output {
             self
         }
         /// <p>MetaData for Sidewalk device.</p>
-        pub fn set_sidewalk(
-            mut self,
-            input: std::option::Option<crate::model::SidewalkDeviceMetadata>,
-        ) -> Self {
-            self.sidewalk = input;
-            self
+        pub fn set_sidewalk(mut self, input: std::option::Option<crate::model::SidewalkDeviceMetadata>) -> Self {
+            self.sidewalk = input; self
         }
         /// Consumes the builder and constructs a [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput).
         pub fn build(self) -> crate::output::GetWirelessDeviceStatisticsOutput {
             crate::output::GetWirelessDeviceStatisticsOutput {
-                wireless_device_id: self.wireless_device_id,
-                last_uplink_received_at: self.last_uplink_received_at,
-                lo_ra_wan: self.lo_ra_wan,
-                sidewalk: self.sidewalk,
+                wireless_device_id: self.wireless_device_id
+                ,
+                last_uplink_received_at: self.last_uplink_received_at
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+                sidewalk: self.sidewalk
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWirelessDeviceStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput).
@@ -2626,7 +2611,7 @@ impl GetWirelessDeviceStatisticsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWirelessDeviceOutput {
+pub struct GetWirelessDeviceOutput  {
     /// <p>The wireless device type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::WirelessDeviceType>,
@@ -2663,53 +2648,53 @@ pub struct GetWirelessDeviceOutput {
 }
 impl GetWirelessDeviceOutput {
     /// <p>The wireless device type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::WirelessDeviceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::WirelessDeviceType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the destination to which the device is assigned.</p>
-    pub fn destination_name(&self) -> std::option::Option<&str> {
+    pub fn destination_name(&self) -> std::option::Option<& str> {
         self.destination_name.as_deref()
     }
     /// <p>The ID of the wireless device.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the thing associated with the wireless device. The value is empty if a thing isn't associated with the device.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The ARN of the thing associated with the wireless device.</p>
-    pub fn thing_arn(&self) -> std::option::Option<&str> {
+    pub fn thing_arn(&self) -> std::option::Option<& str> {
         self.thing_arn.as_deref()
     }
     /// <p>Information about the wireless device.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanDevice> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanDevice> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>Sidewalk device object.</p>
-    pub fn sidewalk(&self) -> std::option::Option<&crate::model::SidewalkDevice> {
+    pub fn sidewalk(&self) -> std::option::Option<& crate::model::SidewalkDevice> {
         self.sidewalk.as_ref()
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
-    pub fn positioning(&self) -> std::option::Option<&crate::model::PositioningConfigStatus> {
+    pub fn positioning(&self) -> std::option::Option<& crate::model::PositioningConfigStatus> {
         self.positioning.as_ref()
     }
 }
 /// See [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput).
 pub mod get_wireless_device_output {
-
+    
     /// A builder for [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2732,12 +2717,8 @@ pub mod get_wireless_device_output {
             self
         }
         /// <p>The wireless device type.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::WirelessDeviceType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::WirelessDeviceType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The name of the resource.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2746,8 +2727,7 @@ pub mod get_wireless_device_output {
         }
         /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2756,8 +2736,7 @@ pub mod get_wireless_device_output {
         }
         /// <p>The description of the resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The name of the destination to which the device is assigned.</p>
         pub fn destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2765,12 +2744,8 @@ pub mod get_wireless_device_output {
             self
         }
         /// <p>The name of the destination to which the device is assigned.</p>
-        pub fn set_destination_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_name = input;
-            self
+        pub fn set_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_name = input; self
         }
         /// <p>The ID of the wireless device.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2779,8 +2754,7 @@ pub mod get_wireless_device_output {
         }
         /// <p>The ID of the wireless device.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2789,8 +2763,7 @@ pub mod get_wireless_device_output {
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the thing associated with the wireless device. The value is empty if a thing isn't associated with the device.</p>
         pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2799,8 +2772,7 @@ pub mod get_wireless_device_output {
         }
         /// <p>The name of the thing associated with the wireless device. The value is empty if a thing isn't associated with the device.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thing_name = input;
-            self
+            self.thing_name = input; self
         }
         /// <p>The ARN of the thing associated with the wireless device.</p>
         pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2809,8 +2781,7 @@ pub mod get_wireless_device_output {
         }
         /// <p>The ARN of the thing associated with the wireless device.</p>
         pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thing_arn = input;
-            self
+            self.thing_arn = input; self
         }
         /// <p>Information about the wireless device.</p>
         pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanDevice) -> Self {
@@ -2818,12 +2789,8 @@ pub mod get_wireless_device_output {
             self
         }
         /// <p>Information about the wireless device.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanDevice>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanDevice>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// <p>Sidewalk device object.</p>
         pub fn sidewalk(mut self, input: crate::model::SidewalkDevice) -> Self {
@@ -2831,12 +2798,8 @@ pub mod get_wireless_device_output {
             self
         }
         /// <p>Sidewalk device object.</p>
-        pub fn set_sidewalk(
-            mut self,
-            input: std::option::Option<crate::model::SidewalkDevice>,
-        ) -> Self {
-            self.sidewalk = input;
-            self
+        pub fn set_sidewalk(mut self, input: std::option::Option<crate::model::SidewalkDevice>) -> Self {
+            self.sidewalk = input; self
         }
         /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
         pub fn positioning(mut self, input: crate::model::PositioningConfigStatus) -> Self {
@@ -2844,30 +2807,39 @@ pub mod get_wireless_device_output {
             self
         }
         /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
-        pub fn set_positioning(
-            mut self,
-            input: std::option::Option<crate::model::PositioningConfigStatus>,
-        ) -> Self {
-            self.positioning = input;
-            self
+        pub fn set_positioning(mut self, input: std::option::Option<crate::model::PositioningConfigStatus>) -> Self {
+            self.positioning = input; self
         }
         /// Consumes the builder and constructs a [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput).
         pub fn build(self) -> crate::output::GetWirelessDeviceOutput {
             crate::output::GetWirelessDeviceOutput {
-                r#type: self.r#type,
-                name: self.name,
-                description: self.description,
-                destination_name: self.destination_name,
-                id: self.id,
-                arn: self.arn,
-                thing_name: self.thing_name,
-                thing_arn: self.thing_arn,
-                lo_ra_wan: self.lo_ra_wan,
-                sidewalk: self.sidewalk,
-                positioning: self.positioning,
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                destination_name: self.destination_name
+                ,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                thing_name: self.thing_name
+                ,
+                thing_arn: self.thing_arn
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+                sidewalk: self.sidewalk
+                ,
+                positioning: self.positioning
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWirelessDeviceOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput).
@@ -2879,7 +2851,7 @@ impl GetWirelessDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceProfileOutput {
+pub struct GetServiceProfileOutput  {
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2895,25 +2867,25 @@ pub struct GetServiceProfileOutput {
 }
 impl GetServiceProfileOutput {
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the service profile.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Information about the service profile.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanGetServiceProfileInfo> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanGetServiceProfileInfo> {
         self.lo_ra_wan.as_ref()
     }
 }
 /// See [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput).
 pub mod get_service_profile_output {
-
+    
     /// A builder for [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2930,8 +2902,7 @@ pub mod get_service_profile_output {
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the resource.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2940,8 +2911,7 @@ pub mod get_service_profile_output {
         }
         /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the service profile.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2950,8 +2920,7 @@ pub mod get_service_profile_output {
         }
         /// <p>The ID of the service profile.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Information about the service profile.</p>
         pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanGetServiceProfileInfo) -> Self {
@@ -2959,23 +2928,25 @@ pub mod get_service_profile_output {
             self
         }
         /// <p>Information about the service profile.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanGetServiceProfileInfo>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanGetServiceProfileInfo>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// Consumes the builder and constructs a [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput).
         pub fn build(self) -> crate::output::GetServiceProfileOutput {
             crate::output::GetServiceProfileOutput {
-                arn: self.arn,
-                name: self.name,
-                id: self.id,
-                lo_ra_wan: self.lo_ra_wan,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                id: self.id
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
             }
         }
     }
+    
+    
 }
 impl GetServiceProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput).
@@ -2987,7 +2958,7 @@ impl GetServiceProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceEndpointOutput {
+pub struct GetServiceEndpointOutput  {
     /// <p>The endpoint's service type.</p>
     #[doc(hidden)]
     pub service_type: std::option::Option<crate::model::WirelessGatewayServiceType>,
@@ -3000,21 +2971,21 @@ pub struct GetServiceEndpointOutput {
 }
 impl GetServiceEndpointOutput {
     /// <p>The endpoint's service type.</p>
-    pub fn service_type(&self) -> std::option::Option<&crate::model::WirelessGatewayServiceType> {
+    pub fn service_type(&self) -> std::option::Option<& crate::model::WirelessGatewayServiceType> {
         self.service_type.as_ref()
     }
     /// <p>The service endpoint value.</p>
-    pub fn service_endpoint(&self) -> std::option::Option<&str> {
+    pub fn service_endpoint(&self) -> std::option::Option<& str> {
         self.service_endpoint.as_deref()
     }
     /// <p>The Root CA of the server trust certificate.</p>
-    pub fn server_trust(&self) -> std::option::Option<&str> {
+    pub fn server_trust(&self) -> std::option::Option<& str> {
         self.server_trust.as_deref()
     }
 }
 /// See [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput).
 pub mod get_service_endpoint_output {
-
+    
     /// A builder for [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3029,12 +3000,8 @@ pub mod get_service_endpoint_output {
             self
         }
         /// <p>The endpoint's service type.</p>
-        pub fn set_service_type(
-            mut self,
-            input: std::option::Option<crate::model::WirelessGatewayServiceType>,
-        ) -> Self {
-            self.service_type = input;
-            self
+        pub fn set_service_type(mut self, input: std::option::Option<crate::model::WirelessGatewayServiceType>) -> Self {
+            self.service_type = input; self
         }
         /// <p>The service endpoint value.</p>
         pub fn service_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3042,12 +3009,8 @@ pub mod get_service_endpoint_output {
             self
         }
         /// <p>The service endpoint value.</p>
-        pub fn set_service_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_endpoint = input;
-            self
+        pub fn set_service_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_endpoint = input; self
         }
         /// <p>The Root CA of the server trust certificate.</p>
         pub fn server_trust(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3056,18 +3019,22 @@ pub mod get_service_endpoint_output {
         }
         /// <p>The Root CA of the server trust certificate.</p>
         pub fn set_server_trust(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_trust = input;
-            self
+            self.server_trust = input; self
         }
         /// Consumes the builder and constructs a [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput).
         pub fn build(self) -> crate::output::GetServiceEndpointOutput {
             crate::output::GetServiceEndpointOutput {
-                service_type: self.service_type,
-                service_endpoint: self.service_endpoint,
-                server_trust: self.server_trust,
+                service_type: self.service_type
+                ,
+                service_endpoint: self.service_endpoint
+                ,
+                server_trust: self.server_trust
+                ,
             }
         }
     }
+    
+    
 }
 impl GetServiceEndpointOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput).
@@ -3079,20 +3046,20 @@ impl GetServiceEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourcePositionOutput {
+pub struct GetResourcePositionOutput  {
     /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
     #[doc(hidden)]
     pub geo_json_payload: std::option::Option<aws_smithy_types::Blob>,
 }
 impl GetResourcePositionOutput {
     /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
-    pub fn geo_json_payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn geo_json_payload(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.geo_json_payload.as_ref()
     }
 }
 /// See [`GetResourcePositionOutput`](crate::output::GetResourcePositionOutput).
 pub mod get_resource_position_output {
-
+    
     /// A builder for [`GetResourcePositionOutput`](crate::output::GetResourcePositionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3105,20 +3072,19 @@ pub mod get_resource_position_output {
             self
         }
         /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
-        pub fn set_geo_json_payload(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.geo_json_payload = input;
-            self
+        pub fn set_geo_json_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.geo_json_payload = input; self
         }
         /// Consumes the builder and constructs a [`GetResourcePositionOutput`](crate::output::GetResourcePositionOutput).
         pub fn build(self) -> crate::output::GetResourcePositionOutput {
             crate::output::GetResourcePositionOutput {
-                geo_json_payload: self.geo_json_payload,
+                geo_json_payload: self.geo_json_payload
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResourcePositionOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePositionOutput`](crate::output::GetResourcePositionOutput).
@@ -3130,20 +3096,20 @@ impl GetResourcePositionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceLogLevelOutput {
+pub struct GetResourceLogLevelOutput  {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     #[doc(hidden)]
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl GetResourceLogLevelOutput {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    pub fn log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+    pub fn log_level(&self) -> std::option::Option<& crate::model::LogLevel> {
         self.log_level.as_ref()
     }
 }
 /// See [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput).
 pub mod get_resource_log_level_output {
-
+    
     /// A builder for [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3157,16 +3123,18 @@ pub mod get_resource_log_level_output {
         }
         /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
-            self.log_level = input;
-            self
+            self.log_level = input; self
         }
         /// Consumes the builder and constructs a [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput).
         pub fn build(self) -> crate::output::GetResourceLogLevelOutput {
             crate::output::GetResourceLogLevelOutput {
-                log_level: self.log_level,
+                log_level: self.log_level
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResourceLogLevelOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput).
@@ -3178,11 +3146,10 @@ impl GetResourceLogLevelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceEventConfigurationOutput {
+pub struct GetResourceEventConfigurationOutput  {
     /// <p>Event configuration for the device registration state event.</p>
     #[doc(hidden)]
-    pub device_registration_state:
-        std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
+    pub device_registration_state: std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
     /// <p>Event configuration for the proximity event.</p>
     #[doc(hidden)]
     pub proximity: std::option::Option<crate::model::ProximityEventConfiguration>,
@@ -3194,68 +3161,51 @@ pub struct GetResourceEventConfigurationOutput {
     pub connection_status: std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
     /// <p>Event configuration for the message delivery status event.</p>
     #[doc(hidden)]
-    pub message_delivery_status:
-        std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
+    pub message_delivery_status: std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
 }
 impl GetResourceEventConfigurationOutput {
     /// <p>Event configuration for the device registration state event.</p>
-    pub fn device_registration_state(
-        &self,
-    ) -> std::option::Option<&crate::model::DeviceRegistrationStateEventConfiguration> {
+    pub fn device_registration_state(&self) -> std::option::Option<& crate::model::DeviceRegistrationStateEventConfiguration> {
         self.device_registration_state.as_ref()
     }
     /// <p>Event configuration for the proximity event.</p>
-    pub fn proximity(&self) -> std::option::Option<&crate::model::ProximityEventConfiguration> {
+    pub fn proximity(&self) -> std::option::Option<& crate::model::ProximityEventConfiguration> {
         self.proximity.as_ref()
     }
     /// <p>Event configuration for the join event.</p>
-    pub fn join(&self) -> std::option::Option<&crate::model::JoinEventConfiguration> {
+    pub fn join(&self) -> std::option::Option<& crate::model::JoinEventConfiguration> {
         self.join.as_ref()
     }
     /// <p>Event configuration for the connection status event.</p>
-    pub fn connection_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ConnectionStatusEventConfiguration> {
+    pub fn connection_status(&self) -> std::option::Option<& crate::model::ConnectionStatusEventConfiguration> {
         self.connection_status.as_ref()
     }
     /// <p>Event configuration for the message delivery status event.</p>
-    pub fn message_delivery_status(
-        &self,
-    ) -> std::option::Option<&crate::model::MessageDeliveryStatusEventConfiguration> {
+    pub fn message_delivery_status(&self) -> std::option::Option<& crate::model::MessageDeliveryStatusEventConfiguration> {
         self.message_delivery_status.as_ref()
     }
 }
 /// See [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput).
 pub mod get_resource_event_configuration_output {
-
+    
     /// A builder for [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) device_registration_state:
-            std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
+        pub(crate) device_registration_state: std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
         pub(crate) proximity: std::option::Option<crate::model::ProximityEventConfiguration>,
         pub(crate) join: std::option::Option<crate::model::JoinEventConfiguration>,
-        pub(crate) connection_status:
-            std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
-        pub(crate) message_delivery_status:
-            std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
+        pub(crate) connection_status: std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
+        pub(crate) message_delivery_status: std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
     }
     impl Builder {
         /// <p>Event configuration for the device registration state event.</p>
-        pub fn device_registration_state(
-            mut self,
-            input: crate::model::DeviceRegistrationStateEventConfiguration,
-        ) -> Self {
+        pub fn device_registration_state(mut self, input: crate::model::DeviceRegistrationStateEventConfiguration) -> Self {
             self.device_registration_state = Some(input);
             self
         }
         /// <p>Event configuration for the device registration state event.</p>
-        pub fn set_device_registration_state(
-            mut self,
-            input: std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
-        ) -> Self {
-            self.device_registration_state = input;
-            self
+        pub fn set_device_registration_state(mut self, input: std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>) -> Self {
+            self.device_registration_state = input; self
         }
         /// <p>Event configuration for the proximity event.</p>
         pub fn proximity(mut self, input: crate::model::ProximityEventConfiguration) -> Self {
@@ -3263,12 +3213,8 @@ pub mod get_resource_event_configuration_output {
             self
         }
         /// <p>Event configuration for the proximity event.</p>
-        pub fn set_proximity(
-            mut self,
-            input: std::option::Option<crate::model::ProximityEventConfiguration>,
-        ) -> Self {
-            self.proximity = input;
-            self
+        pub fn set_proximity(mut self, input: std::option::Option<crate::model::ProximityEventConfiguration>) -> Self {
+            self.proximity = input; self
         }
         /// <p>Event configuration for the join event.</p>
         pub fn join(mut self, input: crate::model::JoinEventConfiguration) -> Self {
@@ -3276,56 +3222,45 @@ pub mod get_resource_event_configuration_output {
             self
         }
         /// <p>Event configuration for the join event.</p>
-        pub fn set_join(
-            mut self,
-            input: std::option::Option<crate::model::JoinEventConfiguration>,
-        ) -> Self {
-            self.join = input;
-            self
+        pub fn set_join(mut self, input: std::option::Option<crate::model::JoinEventConfiguration>) -> Self {
+            self.join = input; self
         }
         /// <p>Event configuration for the connection status event.</p>
-        pub fn connection_status(
-            mut self,
-            input: crate::model::ConnectionStatusEventConfiguration,
-        ) -> Self {
+        pub fn connection_status(mut self, input: crate::model::ConnectionStatusEventConfiguration) -> Self {
             self.connection_status = Some(input);
             self
         }
         /// <p>Event configuration for the connection status event.</p>
-        pub fn set_connection_status(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
-        ) -> Self {
-            self.connection_status = input;
-            self
+        pub fn set_connection_status(mut self, input: std::option::Option<crate::model::ConnectionStatusEventConfiguration>) -> Self {
+            self.connection_status = input; self
         }
         /// <p>Event configuration for the message delivery status event.</p>
-        pub fn message_delivery_status(
-            mut self,
-            input: crate::model::MessageDeliveryStatusEventConfiguration,
-        ) -> Self {
+        pub fn message_delivery_status(mut self, input: crate::model::MessageDeliveryStatusEventConfiguration) -> Self {
             self.message_delivery_status = Some(input);
             self
         }
         /// <p>Event configuration for the message delivery status event.</p>
-        pub fn set_message_delivery_status(
-            mut self,
-            input: std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
-        ) -> Self {
-            self.message_delivery_status = input;
-            self
+        pub fn set_message_delivery_status(mut self, input: std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>) -> Self {
+            self.message_delivery_status = input; self
         }
         /// Consumes the builder and constructs a [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput).
         pub fn build(self) -> crate::output::GetResourceEventConfigurationOutput {
             crate::output::GetResourceEventConfigurationOutput {
-                device_registration_state: self.device_registration_state,
-                proximity: self.proximity,
-                join: self.join,
-                connection_status: self.connection_status,
-                message_delivery_status: self.message_delivery_status,
+                device_registration_state: self.device_registration_state
+                ,
+                proximity: self.proximity
+                ,
+                join: self.join
+                ,
+                connection_status: self.connection_status
+                ,
+                message_delivery_status: self.message_delivery_status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResourceEventConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput).
@@ -3337,20 +3272,20 @@ impl GetResourceEventConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPositionEstimateOutput {
+pub struct GetPositionEstimateOutput  {
     /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
     #[doc(hidden)]
     pub geo_json_payload: std::option::Option<aws_smithy_types::Blob>,
 }
 impl GetPositionEstimateOutput {
     /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
-    pub fn geo_json_payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn geo_json_payload(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.geo_json_payload.as_ref()
     }
 }
 /// See [`GetPositionEstimateOutput`](crate::output::GetPositionEstimateOutput).
 pub mod get_position_estimate_output {
-
+    
     /// A builder for [`GetPositionEstimateOutput`](crate::output::GetPositionEstimateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3363,20 +3298,19 @@ pub mod get_position_estimate_output {
             self
         }
         /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
-        pub fn set_geo_json_payload(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.geo_json_payload = input;
-            self
+        pub fn set_geo_json_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.geo_json_payload = input; self
         }
         /// Consumes the builder and constructs a [`GetPositionEstimateOutput`](crate::output::GetPositionEstimateOutput).
         pub fn build(self) -> crate::output::GetPositionEstimateOutput {
             crate::output::GetPositionEstimateOutput {
-                geo_json_payload: self.geo_json_payload,
+                geo_json_payload: self.geo_json_payload
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPositionEstimateOutput {
     /// Creates a new builder-style object to manufacture [`GetPositionEstimateOutput`](crate::output::GetPositionEstimateOutput).
@@ -3389,7 +3323,7 @@ impl GetPositionEstimateOutput {
 #[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPositionConfigurationOutput {
+pub struct GetPositionConfigurationOutput  {
     /// <p>The wrapper for the solver configuration details object.</p>
     #[doc(hidden)]
     pub solvers: std::option::Option<crate::model::PositionSolverDetails>,
@@ -3399,17 +3333,17 @@ pub struct GetPositionConfigurationOutput {
 }
 impl GetPositionConfigurationOutput {
     /// <p>The wrapper for the solver configuration details object.</p>
-    pub fn solvers(&self) -> std::option::Option<&crate::model::PositionSolverDetails> {
+    pub fn solvers(&self) -> std::option::Option<& crate::model::PositionSolverDetails> {
         self.solvers.as_ref()
     }
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> std::option::Option<& str> {
         self.destination.as_deref()
     }
 }
 /// See [`GetPositionConfigurationOutput`](crate::output::GetPositionConfigurationOutput).
 pub mod get_position_configuration_output {
-
+    
     /// A builder for [`GetPositionConfigurationOutput`](crate::output::GetPositionConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3423,12 +3357,8 @@ pub mod get_position_configuration_output {
             self
         }
         /// <p>The wrapper for the solver configuration details object.</p>
-        pub fn set_solvers(
-            mut self,
-            input: std::option::Option<crate::model::PositionSolverDetails>,
-        ) -> Self {
-            self.solvers = input;
-            self
+        pub fn set_solvers(mut self, input: std::option::Option<crate::model::PositionSolverDetails>) -> Self {
+            self.solvers = input; self
         }
         /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3437,17 +3367,20 @@ pub mod get_position_configuration_output {
         }
         /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination = input;
-            self
+            self.destination = input; self
         }
         /// Consumes the builder and constructs a [`GetPositionConfigurationOutput`](crate::output::GetPositionConfigurationOutput).
         pub fn build(self) -> crate::output::GetPositionConfigurationOutput {
             crate::output::GetPositionConfigurationOutput {
-                solvers: self.solvers,
-                destination: self.destination,
+                solvers: self.solvers
+                ,
+                destination: self.destination
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPositionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetPositionConfigurationOutput`](crate::output::GetPositionConfigurationOutput).
@@ -3460,7 +3393,7 @@ impl GetPositionConfigurationOutput {
 #[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPositionOutput {
+pub struct GetPositionOutput  {
     /// <p>The position information of the resource.</p>
     #[doc(hidden)]
     pub position: std::option::Option<std::vec::Vec<f32>>,
@@ -3482,33 +3415,33 @@ pub struct GetPositionOutput {
 }
 impl GetPositionOutput {
     /// <p>The position information of the resource.</p>
-    pub fn position(&self) -> std::option::Option<&[f32]> {
+    pub fn position(&self) -> std::option::Option<& [f32]> {
         self.position.as_deref()
     }
     /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
-    pub fn accuracy(&self) -> std::option::Option<&crate::model::Accuracy> {
+    pub fn accuracy(&self) -> std::option::Option<& crate::model::Accuracy> {
         self.accuracy.as_ref()
     }
     /// <p>The type of solver used to identify the position of the resource.</p>
-    pub fn solver_type(&self) -> std::option::Option<&crate::model::PositionSolverType> {
+    pub fn solver_type(&self) -> std::option::Option<& crate::model::PositionSolverType> {
         self.solver_type.as_ref()
     }
     /// <p>The vendor of the positioning solver.</p>
-    pub fn solver_provider(&self) -> std::option::Option<&crate::model::PositionSolverProvider> {
+    pub fn solver_provider(&self) -> std::option::Option<& crate::model::PositionSolverProvider> {
         self.solver_provider.as_ref()
     }
     /// <p>The version of the positioning solver.</p>
-    pub fn solver_version(&self) -> std::option::Option<&str> {
+    pub fn solver_version(&self) -> std::option::Option<& str> {
         self.solver_version.as_deref()
     }
     /// <p>The timestamp at which the device's position was determined.</p>
-    pub fn timestamp(&self) -> std::option::Option<&str> {
+    pub fn timestamp(&self) -> std::option::Option<& str> {
         self.timestamp.as_deref()
     }
 }
 /// See [`GetPositionOutput`](crate::output::GetPositionOutput).
 pub mod get_position_output {
-
+    
     /// A builder for [`GetPositionOutput`](crate::output::GetPositionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3527,14 +3460,13 @@ pub mod get_position_output {
         /// <p>The position information of the resource.</p>
         pub fn position(mut self, input: f32) -> Self {
             let mut v = self.position.unwrap_or_default();
-            v.push(input);
-            self.position = Some(v);
-            self
+                            v.push(input);
+                            self.position = Some(v);
+                            self
         }
         /// <p>The position information of the resource.</p>
         pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f32>>) -> Self {
-            self.position = input;
-            self
+            self.position = input; self
         }
         /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
         pub fn accuracy(mut self, input: crate::model::Accuracy) -> Self {
@@ -3543,8 +3475,7 @@ pub mod get_position_output {
         }
         /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
         pub fn set_accuracy(mut self, input: std::option::Option<crate::model::Accuracy>) -> Self {
-            self.accuracy = input;
-            self
+            self.accuracy = input; self
         }
         /// <p>The type of solver used to identify the position of the resource.</p>
         pub fn solver_type(mut self, input: crate::model::PositionSolverType) -> Self {
@@ -3552,12 +3483,8 @@ pub mod get_position_output {
             self
         }
         /// <p>The type of solver used to identify the position of the resource.</p>
-        pub fn set_solver_type(
-            mut self,
-            input: std::option::Option<crate::model::PositionSolverType>,
-        ) -> Self {
-            self.solver_type = input;
-            self
+        pub fn set_solver_type(mut self, input: std::option::Option<crate::model::PositionSolverType>) -> Self {
+            self.solver_type = input; self
         }
         /// <p>The vendor of the positioning solver.</p>
         pub fn solver_provider(mut self, input: crate::model::PositionSolverProvider) -> Self {
@@ -3565,12 +3492,8 @@ pub mod get_position_output {
             self
         }
         /// <p>The vendor of the positioning solver.</p>
-        pub fn set_solver_provider(
-            mut self,
-            input: std::option::Option<crate::model::PositionSolverProvider>,
-        ) -> Self {
-            self.solver_provider = input;
-            self
+        pub fn set_solver_provider(mut self, input: std::option::Option<crate::model::PositionSolverProvider>) -> Self {
+            self.solver_provider = input; self
         }
         /// <p>The version of the positioning solver.</p>
         pub fn solver_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3578,12 +3501,8 @@ pub mod get_position_output {
             self
         }
         /// <p>The version of the positioning solver.</p>
-        pub fn set_solver_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.solver_version = input;
-            self
+        pub fn set_solver_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.solver_version = input; self
         }
         /// <p>The timestamp at which the device's position was determined.</p>
         pub fn timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3592,21 +3511,28 @@ pub mod get_position_output {
         }
         /// <p>The timestamp at which the device's position was determined.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.timestamp = input;
-            self
+            self.timestamp = input; self
         }
         /// Consumes the builder and constructs a [`GetPositionOutput`](crate::output::GetPositionOutput).
         pub fn build(self) -> crate::output::GetPositionOutput {
             crate::output::GetPositionOutput {
-                position: self.position,
-                accuracy: self.accuracy,
-                solver_type: self.solver_type,
-                solver_provider: self.solver_provider,
-                solver_version: self.solver_version,
-                timestamp: self.timestamp,
+                position: self.position
+                ,
+                accuracy: self.accuracy
+                ,
+                solver_type: self.solver_type
+                ,
+                solver_provider: self.solver_provider
+                ,
+                solver_version: self.solver_version
+                ,
+                timestamp: self.timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPositionOutput {
     /// Creates a new builder-style object to manufacture [`GetPositionOutput`](crate::output::GetPositionOutput).
@@ -3618,7 +3544,7 @@ impl GetPositionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPartnerAccountOutput {
+pub struct GetPartnerAccountOutput  {
     /// <p>The Sidewalk account credentials.</p>
     #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkAccountInfoWithFingerprint>,
@@ -3628,9 +3554,7 @@ pub struct GetPartnerAccountOutput {
 }
 impl GetPartnerAccountOutput {
     /// <p>The Sidewalk account credentials.</p>
-    pub fn sidewalk(
-        &self,
-    ) -> std::option::Option<&crate::model::SidewalkAccountInfoWithFingerprint> {
+    pub fn sidewalk(&self) -> std::option::Option<& crate::model::SidewalkAccountInfoWithFingerprint> {
         self.sidewalk.as_ref()
     }
     /// <p>Whether the partner account is linked to the AWS account.</p>
@@ -3640,7 +3564,7 @@ impl GetPartnerAccountOutput {
 }
 /// See [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput).
 pub mod get_partner_account_output {
-
+    
     /// A builder for [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3654,12 +3578,8 @@ pub mod get_partner_account_output {
             self
         }
         /// <p>The Sidewalk account credentials.</p>
-        pub fn set_sidewalk(
-            mut self,
-            input: std::option::Option<crate::model::SidewalkAccountInfoWithFingerprint>,
-        ) -> Self {
-            self.sidewalk = input;
-            self
+        pub fn set_sidewalk(mut self, input: std::option::Option<crate::model::SidewalkAccountInfoWithFingerprint>) -> Self {
+            self.sidewalk = input; self
         }
         /// <p>Whether the partner account is linked to the AWS account.</p>
         pub fn account_linked(mut self, input: bool) -> Self {
@@ -3668,17 +3588,21 @@ pub mod get_partner_account_output {
         }
         /// <p>Whether the partner account is linked to the AWS account.</p>
         pub fn set_account_linked(mut self, input: std::option::Option<bool>) -> Self {
-            self.account_linked = input;
-            self
+            self.account_linked = input; self
         }
         /// Consumes the builder and constructs a [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput).
         pub fn build(self) -> crate::output::GetPartnerAccountOutput {
             crate::output::GetPartnerAccountOutput {
-                sidewalk: self.sidewalk,
-                account_linked: self.account_linked.unwrap_or_default(),
+                sidewalk: self.sidewalk
+                ,
+                account_linked: self.account_linked
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPartnerAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput).
@@ -3690,7 +3614,7 @@ impl GetPartnerAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetNetworkAnalyzerConfigurationOutput {
+pub struct GetNetworkAnalyzerConfigurationOutput  {
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
     #[doc(hidden)]
     pub trace_content: std::option::Option<crate::model::TraceContent>,
@@ -3712,33 +3636,33 @@ pub struct GetNetworkAnalyzerConfigurationOutput {
 }
 impl GetNetworkAnalyzerConfigurationOutput {
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
-    pub fn trace_content(&self) -> std::option::Option<&crate::model::TraceContent> {
+    pub fn trace_content(&self) -> std::option::Option<& crate::model::TraceContent> {
         self.trace_content.as_ref()
     }
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-    pub fn wireless_devices(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn wireless_devices(&self) -> std::option::Option<& [std::string::String]> {
         self.wireless_devices.as_deref()
     }
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-    pub fn wireless_gateways(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn wireless_gateways(&self) -> std::option::Option<& [std::string::String]> {
         self.wireless_gateways.as_deref()
     }
     /// <p>The description of the new resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name of the new resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput).
 pub mod get_network_analyzer_configuration_output {
-
+    
     /// A builder for [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3756,12 +3680,8 @@ pub mod get_network_analyzer_configuration_output {
             self
         }
         /// <p>Trace content for your wireless gateway and wireless device resources.</p>
-        pub fn set_trace_content(
-            mut self,
-            input: std::option::Option<crate::model::TraceContent>,
-        ) -> Self {
-            self.trace_content = input;
-            self
+        pub fn set_trace_content(mut self, input: std::option::Option<crate::model::TraceContent>) -> Self {
+            self.trace_content = input; self
         }
         /// Appends an item to `wireless_devices`.
         ///
@@ -3770,17 +3690,13 @@ pub mod get_network_analyzer_configuration_output {
         /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
         pub fn wireless_devices(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.wireless_devices.unwrap_or_default();
-            v.push(input.into());
-            self.wireless_devices = Some(v);
-            self
+                            v.push(input.into());
+                            self.wireless_devices = Some(v);
+                            self
         }
         /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-        pub fn set_wireless_devices(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.wireless_devices = input;
-            self
+        pub fn set_wireless_devices(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.wireless_devices = input; self
         }
         /// Appends an item to `wireless_gateways`.
         ///
@@ -3789,17 +3705,13 @@ pub mod get_network_analyzer_configuration_output {
         /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
         pub fn wireless_gateways(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.wireless_gateways.unwrap_or_default();
-            v.push(input.into());
-            self.wireless_gateways = Some(v);
-            self
+                            v.push(input.into());
+                            self.wireless_gateways = Some(v);
+                            self
         }
         /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-        pub fn set_wireless_gateways(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.wireless_gateways = input;
-            self
+        pub fn set_wireless_gateways(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.wireless_gateways = input; self
         }
         /// <p>The description of the new resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3808,8 +3720,7 @@ pub mod get_network_analyzer_configuration_output {
         }
         /// <p>The description of the new resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name of the new resource.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3818,8 +3729,7 @@ pub mod get_network_analyzer_configuration_output {
         }
         /// <p>The Amazon Resource Name of the new resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Name of the network analyzer configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3828,21 +3738,28 @@ pub mod get_network_analyzer_configuration_output {
         }
         /// <p>Name of the network analyzer configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput).
         pub fn build(self) -> crate::output::GetNetworkAnalyzerConfigurationOutput {
             crate::output::GetNetworkAnalyzerConfigurationOutput {
-                trace_content: self.trace_content,
-                wireless_devices: self.wireless_devices,
-                wireless_gateways: self.wireless_gateways,
-                description: self.description,
-                arn: self.arn,
-                name: self.name,
+                trace_content: self.trace_content
+                ,
+                wireless_devices: self.wireless_devices
+                ,
+                wireless_gateways: self.wireless_gateways
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl GetNetworkAnalyzerConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput).
@@ -3854,20 +3771,20 @@ impl GetNetworkAnalyzerConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMulticastGroupSessionOutput {
+pub struct GetMulticastGroupSessionOutput  {
     /// <p>The LoRaWAN information used with the multicast session.</p>
     #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastSession>,
 }
 impl GetMulticastGroupSessionOutput {
     /// <p>The LoRaWAN information used with the multicast session.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanMulticastSession> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanMulticastSession> {
         self.lo_ra_wan.as_ref()
     }
 }
 /// See [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput).
 pub mod get_multicast_group_session_output {
-
+    
     /// A builder for [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3880,20 +3797,19 @@ pub mod get_multicast_group_session_output {
             self
         }
         /// <p>The LoRaWAN information used with the multicast session.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanMulticastSession>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanMulticastSession>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// Consumes the builder and constructs a [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput).
         pub fn build(self) -> crate::output::GetMulticastGroupSessionOutput {
             crate::output::GetMulticastGroupSessionOutput {
-                lo_ra_wan: self.lo_ra_wan,
+                lo_ra_wan: self.lo_ra_wan
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMulticastGroupSessionOutput {
     /// Creates a new builder-style object to manufacture [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput).
@@ -3905,7 +3821,7 @@ impl GetMulticastGroupSessionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMulticastGroupOutput {
+pub struct GetMulticastGroupOutput  {
     /// <p>The arn of the multicast group.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3930,37 +3846,37 @@ pub struct GetMulticastGroupOutput {
 }
 impl GetMulticastGroupOutput {
     /// <p>The arn of the multicast group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the multicast group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the multicast group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the new resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the multicast group.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanMulticastGet> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanMulticastGet> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>Created at timestamp for the resource.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput).
 pub mod get_multicast_group_output {
-
+    
     /// A builder for [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3980,8 +3896,7 @@ pub mod get_multicast_group_output {
         }
         /// <p>The arn of the multicast group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the multicast group.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3990,8 +3905,7 @@ pub mod get_multicast_group_output {
         }
         /// <p>The ID of the multicast group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the multicast group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4000,8 +3914,7 @@ pub mod get_multicast_group_output {
         }
         /// <p>The name of the multicast group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the new resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4010,8 +3923,7 @@ pub mod get_multicast_group_output {
         }
         /// <p>The description of the new resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The status of the multicast group.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4020,8 +3932,7 @@ pub mod get_multicast_group_output {
         }
         /// <p>The status of the multicast group.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
         pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanMulticastGet) -> Self {
@@ -4029,12 +3940,8 @@ pub mod get_multicast_group_output {
             self
         }
         /// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanMulticastGet>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanMulticastGet>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// <p>Created at timestamp for the resource.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4042,26 +3949,31 @@ pub mod get_multicast_group_output {
             self
         }
         /// <p>Created at timestamp for the resource.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput).
         pub fn build(self) -> crate::output::GetMulticastGroupOutput {
             crate::output::GetMulticastGroupOutput {
-                arn: self.arn,
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                status: self.status,
-                lo_ra_wan: self.lo_ra_wan,
-                created_at: self.created_at,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMulticastGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput).
@@ -4073,48 +3985,40 @@ impl GetMulticastGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLogLevelsByResourceTypesOutput {
+pub struct GetLogLevelsByResourceTypesOutput  {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     #[doc(hidden)]
     pub default_log_level: std::option::Option<crate::model::LogLevel>,
     /// <p>The list of wireless gateway log options.</p>
     #[doc(hidden)]
-    pub wireless_gateway_log_options:
-        std::option::Option<std::vec::Vec<crate::model::WirelessGatewayLogOption>>,
+    pub wireless_gateway_log_options: std::option::Option<std::vec::Vec<crate::model::WirelessGatewayLogOption>>,
     /// <p>The list of wireless device log options.</p>
     #[doc(hidden)]
-    pub wireless_device_log_options:
-        std::option::Option<std::vec::Vec<crate::model::WirelessDeviceLogOption>>,
+    pub wireless_device_log_options: std::option::Option<std::vec::Vec<crate::model::WirelessDeviceLogOption>>,
 }
 impl GetLogLevelsByResourceTypesOutput {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    pub fn default_log_level(&self) -> std::option::Option<&crate::model::LogLevel> {
+    pub fn default_log_level(&self) -> std::option::Option<& crate::model::LogLevel> {
         self.default_log_level.as_ref()
     }
     /// <p>The list of wireless gateway log options.</p>
-    pub fn wireless_gateway_log_options(
-        &self,
-    ) -> std::option::Option<&[crate::model::WirelessGatewayLogOption]> {
+    pub fn wireless_gateway_log_options(&self) -> std::option::Option<& [crate::model::WirelessGatewayLogOption]> {
         self.wireless_gateway_log_options.as_deref()
     }
     /// <p>The list of wireless device log options.</p>
-    pub fn wireless_device_log_options(
-        &self,
-    ) -> std::option::Option<&[crate::model::WirelessDeviceLogOption]> {
+    pub fn wireless_device_log_options(&self) -> std::option::Option<& [crate::model::WirelessDeviceLogOption]> {
         self.wireless_device_log_options.as_deref()
     }
 }
 /// See [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput).
 pub mod get_log_levels_by_resource_types_output {
-
+    
     /// A builder for [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_log_level: std::option::Option<crate::model::LogLevel>,
-        pub(crate) wireless_gateway_log_options:
-            std::option::Option<std::vec::Vec<crate::model::WirelessGatewayLogOption>>,
-        pub(crate) wireless_device_log_options:
-            std::option::Option<std::vec::Vec<crate::model::WirelessDeviceLogOption>>,
+        pub(crate) wireless_gateway_log_options: std::option::Option<std::vec::Vec<crate::model::WirelessGatewayLogOption>>,
+        pub(crate) wireless_device_log_options: std::option::Option<std::vec::Vec<crate::model::WirelessDeviceLogOption>>,
     }
     impl Builder {
         /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
@@ -4123,66 +4027,53 @@ pub mod get_log_levels_by_resource_types_output {
             self
         }
         /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-        pub fn set_default_log_level(
-            mut self,
-            input: std::option::Option<crate::model::LogLevel>,
-        ) -> Self {
-            self.default_log_level = input;
-            self
+        pub fn set_default_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
+            self.default_log_level = input; self
         }
         /// Appends an item to `wireless_gateway_log_options`.
         ///
         /// To override the contents of this collection use [`set_wireless_gateway_log_options`](Self::set_wireless_gateway_log_options).
         ///
         /// <p>The list of wireless gateway log options.</p>
-        pub fn wireless_gateway_log_options(
-            mut self,
-            input: crate::model::WirelessGatewayLogOption,
-        ) -> Self {
+        pub fn wireless_gateway_log_options(mut self, input: crate::model::WirelessGatewayLogOption) -> Self {
             let mut v = self.wireless_gateway_log_options.unwrap_or_default();
-            v.push(input);
-            self.wireless_gateway_log_options = Some(v);
-            self
+                            v.push(input);
+                            self.wireless_gateway_log_options = Some(v);
+                            self
         }
         /// <p>The list of wireless gateway log options.</p>
-        pub fn set_wireless_gateway_log_options(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WirelessGatewayLogOption>>,
-        ) -> Self {
-            self.wireless_gateway_log_options = input;
-            self
+        pub fn set_wireless_gateway_log_options(mut self, input: std::option::Option<std::vec::Vec<crate::model::WirelessGatewayLogOption>>) -> Self {
+            self.wireless_gateway_log_options = input; self
         }
         /// Appends an item to `wireless_device_log_options`.
         ///
         /// To override the contents of this collection use [`set_wireless_device_log_options`](Self::set_wireless_device_log_options).
         ///
         /// <p>The list of wireless device log options.</p>
-        pub fn wireless_device_log_options(
-            mut self,
-            input: crate::model::WirelessDeviceLogOption,
-        ) -> Self {
+        pub fn wireless_device_log_options(mut self, input: crate::model::WirelessDeviceLogOption) -> Self {
             let mut v = self.wireless_device_log_options.unwrap_or_default();
-            v.push(input);
-            self.wireless_device_log_options = Some(v);
-            self
+                            v.push(input);
+                            self.wireless_device_log_options = Some(v);
+                            self
         }
         /// <p>The list of wireless device log options.</p>
-        pub fn set_wireless_device_log_options(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WirelessDeviceLogOption>>,
-        ) -> Self {
-            self.wireless_device_log_options = input;
-            self
+        pub fn set_wireless_device_log_options(mut self, input: std::option::Option<std::vec::Vec<crate::model::WirelessDeviceLogOption>>) -> Self {
+            self.wireless_device_log_options = input; self
         }
         /// Consumes the builder and constructs a [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput).
         pub fn build(self) -> crate::output::GetLogLevelsByResourceTypesOutput {
             crate::output::GetLogLevelsByResourceTypesOutput {
-                default_log_level: self.default_log_level,
-                wireless_gateway_log_options: self.wireless_gateway_log_options,
-                wireless_device_log_options: self.wireless_device_log_options,
+                default_log_level: self.default_log_level
+                ,
+                wireless_gateway_log_options: self.wireless_gateway_log_options
+                ,
+                wireless_device_log_options: self.wireless_device_log_options
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLogLevelsByResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput).
@@ -4194,7 +4085,7 @@ impl GetLogLevelsByResourceTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFuotaTaskOutput {
+pub struct GetFuotaTaskOutput  {
     /// <p>The arn of a FUOTA task.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4225,45 +4116,45 @@ pub struct GetFuotaTaskOutput {
 }
 impl GetFuotaTaskOutput {
     /// <p>The arn of a FUOTA task.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of a FUOTA task.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The status of a FUOTA task.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::FuotaTaskStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::FuotaTaskStatus> {
         self.status.as_ref()
     }
     /// <p>The name of a FUOTA task.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the new resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanFuotaTaskGetInfo> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanFuotaTaskGetInfo> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-    pub fn firmware_update_image(&self) -> std::option::Option<&str> {
+    pub fn firmware_update_image(&self) -> std::option::Option<& str> {
         self.firmware_update_image.as_deref()
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-    pub fn firmware_update_role(&self) -> std::option::Option<&str> {
+    pub fn firmware_update_role(&self) -> std::option::Option<& str> {
         self.firmware_update_role.as_deref()
     }
     /// <p>Created at timestamp for the resource.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput).
 pub mod get_fuota_task_output {
-
+    
     /// A builder for [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4285,8 +4176,7 @@ pub mod get_fuota_task_output {
         }
         /// <p>The arn of a FUOTA task.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of a FUOTA task.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4295,8 +4185,7 @@ pub mod get_fuota_task_output {
         }
         /// <p>The ID of a FUOTA task.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The status of a FUOTA task.</p>
         pub fn status(mut self, input: crate::model::FuotaTaskStatus) -> Self {
@@ -4304,12 +4193,8 @@ pub mod get_fuota_task_output {
             self
         }
         /// <p>The status of a FUOTA task.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::FuotaTaskStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::FuotaTaskStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The name of a FUOTA task.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4318,8 +4203,7 @@ pub mod get_fuota_task_output {
         }
         /// <p>The name of a FUOTA task.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the new resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4328,8 +4212,7 @@ pub mod get_fuota_task_output {
         }
         /// <p>The description of the new resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
         pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanFuotaTaskGetInfo) -> Self {
@@ -4337,12 +4220,8 @@ pub mod get_fuota_task_output {
             self
         }
         /// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanFuotaTaskGetInfo>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanFuotaTaskGetInfo>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
         pub fn firmware_update_image(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4350,12 +4229,8 @@ pub mod get_fuota_task_output {
             self
         }
         /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-        pub fn set_firmware_update_image(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.firmware_update_image = input;
-            self
+        pub fn set_firmware_update_image(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.firmware_update_image = input; self
         }
         /// <p>The firmware update role that is to be used with a FUOTA task.</p>
         pub fn firmware_update_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4363,12 +4238,8 @@ pub mod get_fuota_task_output {
             self
         }
         /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-        pub fn set_firmware_update_role(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.firmware_update_role = input;
-            self
+        pub fn set_firmware_update_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.firmware_update_role = input; self
         }
         /// <p>Created at timestamp for the resource.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4376,28 +4247,35 @@ pub mod get_fuota_task_output {
             self
         }
         /// <p>Created at timestamp for the resource.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput).
         pub fn build(self) -> crate::output::GetFuotaTaskOutput {
             crate::output::GetFuotaTaskOutput {
-                arn: self.arn,
-                id: self.id,
-                status: self.status,
-                name: self.name,
-                description: self.description,
-                lo_ra_wan: self.lo_ra_wan,
-                firmware_update_image: self.firmware_update_image,
-                firmware_update_role: self.firmware_update_role,
-                created_at: self.created_at,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                status: self.status
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+                firmware_update_image: self.firmware_update_image
+                ,
+                firmware_update_role: self.firmware_update_role
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput).
@@ -4409,11 +4287,10 @@ impl GetFuotaTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEventConfigurationByResourceTypesOutput {
+pub struct GetEventConfigurationByResourceTypesOutput  {
     /// <p>Resource type event configuration for the device registration state event.</p>
     #[doc(hidden)]
-    pub device_registration_state:
-        std::option::Option<crate::model::DeviceRegistrationStateResourceTypeEventConfiguration>,
+    pub device_registration_state: std::option::Option<crate::model::DeviceRegistrationStateResourceTypeEventConfiguration>,
     /// <p>Resource type event configuration for the proximity event.</p>
     #[doc(hidden)]
     pub proximity: std::option::Option<crate::model::ProximityResourceTypeEventConfiguration>,
@@ -4422,96 +4299,63 @@ pub struct GetEventConfigurationByResourceTypesOutput {
     pub join: std::option::Option<crate::model::JoinResourceTypeEventConfiguration>,
     /// <p>Resource type event configuration for the connection status event.</p>
     #[doc(hidden)]
-    pub connection_status:
-        std::option::Option<crate::model::ConnectionStatusResourceTypeEventConfiguration>,
+    pub connection_status: std::option::Option<crate::model::ConnectionStatusResourceTypeEventConfiguration>,
     /// <p>Resource type event configuration object for the message delivery status event.</p>
     #[doc(hidden)]
-    pub message_delivery_status:
-        std::option::Option<crate::model::MessageDeliveryStatusResourceTypeEventConfiguration>,
+    pub message_delivery_status: std::option::Option<crate::model::MessageDeliveryStatusResourceTypeEventConfiguration>,
 }
 impl GetEventConfigurationByResourceTypesOutput {
     /// <p>Resource type event configuration for the device registration state event.</p>
-    pub fn device_registration_state(
-        &self,
-    ) -> std::option::Option<&crate::model::DeviceRegistrationStateResourceTypeEventConfiguration>
-    {
+    pub fn device_registration_state(&self) -> std::option::Option<& crate::model::DeviceRegistrationStateResourceTypeEventConfiguration> {
         self.device_registration_state.as_ref()
     }
     /// <p>Resource type event configuration for the proximity event.</p>
-    pub fn proximity(
-        &self,
-    ) -> std::option::Option<&crate::model::ProximityResourceTypeEventConfiguration> {
+    pub fn proximity(&self) -> std::option::Option<& crate::model::ProximityResourceTypeEventConfiguration> {
         self.proximity.as_ref()
     }
     /// <p>Resource type event configuration for the join event.</p>
-    pub fn join(&self) -> std::option::Option<&crate::model::JoinResourceTypeEventConfiguration> {
+    pub fn join(&self) -> std::option::Option<& crate::model::JoinResourceTypeEventConfiguration> {
         self.join.as_ref()
     }
     /// <p>Resource type event configuration for the connection status event.</p>
-    pub fn connection_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ConnectionStatusResourceTypeEventConfiguration> {
+    pub fn connection_status(&self) -> std::option::Option<& crate::model::ConnectionStatusResourceTypeEventConfiguration> {
         self.connection_status.as_ref()
     }
     /// <p>Resource type event configuration object for the message delivery status event.</p>
-    pub fn message_delivery_status(
-        &self,
-    ) -> std::option::Option<&crate::model::MessageDeliveryStatusResourceTypeEventConfiguration>
-    {
+    pub fn message_delivery_status(&self) -> std::option::Option<& crate::model::MessageDeliveryStatusResourceTypeEventConfiguration> {
         self.message_delivery_status.as_ref()
     }
 }
 /// See [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput).
 pub mod get_event_configuration_by_resource_types_output {
-
+    
     /// A builder for [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) device_registration_state: std::option::Option<
-            crate::model::DeviceRegistrationStateResourceTypeEventConfiguration,
-        >,
-        pub(crate) proximity:
-            std::option::Option<crate::model::ProximityResourceTypeEventConfiguration>,
+        pub(crate) device_registration_state: std::option::Option<crate::model::DeviceRegistrationStateResourceTypeEventConfiguration>,
+        pub(crate) proximity: std::option::Option<crate::model::ProximityResourceTypeEventConfiguration>,
         pub(crate) join: std::option::Option<crate::model::JoinResourceTypeEventConfiguration>,
-        pub(crate) connection_status:
-            std::option::Option<crate::model::ConnectionStatusResourceTypeEventConfiguration>,
-        pub(crate) message_delivery_status:
-            std::option::Option<crate::model::MessageDeliveryStatusResourceTypeEventConfiguration>,
+        pub(crate) connection_status: std::option::Option<crate::model::ConnectionStatusResourceTypeEventConfiguration>,
+        pub(crate) message_delivery_status: std::option::Option<crate::model::MessageDeliveryStatusResourceTypeEventConfiguration>,
     }
     impl Builder {
         /// <p>Resource type event configuration for the device registration state event.</p>
-        pub fn device_registration_state(
-            mut self,
-            input: crate::model::DeviceRegistrationStateResourceTypeEventConfiguration,
-        ) -> Self {
+        pub fn device_registration_state(mut self, input: crate::model::DeviceRegistrationStateResourceTypeEventConfiguration) -> Self {
             self.device_registration_state = Some(input);
             self
         }
         /// <p>Resource type event configuration for the device registration state event.</p>
-        pub fn set_device_registration_state(
-            mut self,
-            input: std::option::Option<
-                crate::model::DeviceRegistrationStateResourceTypeEventConfiguration,
-            >,
-        ) -> Self {
-            self.device_registration_state = input;
-            self
+        pub fn set_device_registration_state(mut self, input: std::option::Option<crate::model::DeviceRegistrationStateResourceTypeEventConfiguration>) -> Self {
+            self.device_registration_state = input; self
         }
         /// <p>Resource type event configuration for the proximity event.</p>
-        pub fn proximity(
-            mut self,
-            input: crate::model::ProximityResourceTypeEventConfiguration,
-        ) -> Self {
+        pub fn proximity(mut self, input: crate::model::ProximityResourceTypeEventConfiguration) -> Self {
             self.proximity = Some(input);
             self
         }
         /// <p>Resource type event configuration for the proximity event.</p>
-        pub fn set_proximity(
-            mut self,
-            input: std::option::Option<crate::model::ProximityResourceTypeEventConfiguration>,
-        ) -> Self {
-            self.proximity = input;
-            self
+        pub fn set_proximity(mut self, input: std::option::Option<crate::model::ProximityResourceTypeEventConfiguration>) -> Self {
+            self.proximity = input; self
         }
         /// <p>Resource type event configuration for the join event.</p>
         pub fn join(mut self, input: crate::model::JoinResourceTypeEventConfiguration) -> Self {
@@ -4519,60 +4363,45 @@ pub mod get_event_configuration_by_resource_types_output {
             self
         }
         /// <p>Resource type event configuration for the join event.</p>
-        pub fn set_join(
-            mut self,
-            input: std::option::Option<crate::model::JoinResourceTypeEventConfiguration>,
-        ) -> Self {
-            self.join = input;
-            self
+        pub fn set_join(mut self, input: std::option::Option<crate::model::JoinResourceTypeEventConfiguration>) -> Self {
+            self.join = input; self
         }
         /// <p>Resource type event configuration for the connection status event.</p>
-        pub fn connection_status(
-            mut self,
-            input: crate::model::ConnectionStatusResourceTypeEventConfiguration,
-        ) -> Self {
+        pub fn connection_status(mut self, input: crate::model::ConnectionStatusResourceTypeEventConfiguration) -> Self {
             self.connection_status = Some(input);
             self
         }
         /// <p>Resource type event configuration for the connection status event.</p>
-        pub fn set_connection_status(
-            mut self,
-            input: std::option::Option<
-                crate::model::ConnectionStatusResourceTypeEventConfiguration,
-            >,
-        ) -> Self {
-            self.connection_status = input;
-            self
+        pub fn set_connection_status(mut self, input: std::option::Option<crate::model::ConnectionStatusResourceTypeEventConfiguration>) -> Self {
+            self.connection_status = input; self
         }
         /// <p>Resource type event configuration object for the message delivery status event.</p>
-        pub fn message_delivery_status(
-            mut self,
-            input: crate::model::MessageDeliveryStatusResourceTypeEventConfiguration,
-        ) -> Self {
+        pub fn message_delivery_status(mut self, input: crate::model::MessageDeliveryStatusResourceTypeEventConfiguration) -> Self {
             self.message_delivery_status = Some(input);
             self
         }
         /// <p>Resource type event configuration object for the message delivery status event.</p>
-        pub fn set_message_delivery_status(
-            mut self,
-            input: std::option::Option<
-                crate::model::MessageDeliveryStatusResourceTypeEventConfiguration,
-            >,
-        ) -> Self {
-            self.message_delivery_status = input;
-            self
+        pub fn set_message_delivery_status(mut self, input: std::option::Option<crate::model::MessageDeliveryStatusResourceTypeEventConfiguration>) -> Self {
+            self.message_delivery_status = input; self
         }
         /// Consumes the builder and constructs a [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput).
         pub fn build(self) -> crate::output::GetEventConfigurationByResourceTypesOutput {
             crate::output::GetEventConfigurationByResourceTypesOutput {
-                device_registration_state: self.device_registration_state,
-                proximity: self.proximity,
-                join: self.join,
-                connection_status: self.connection_status,
-                message_delivery_status: self.message_delivery_status,
+                device_registration_state: self.device_registration_state
+                ,
+                proximity: self.proximity
+                ,
+                join: self.join
+                ,
+                connection_status: self.connection_status
+                ,
+                message_delivery_status: self.message_delivery_status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEventConfigurationByResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput).
@@ -4584,7 +4413,7 @@ impl GetEventConfigurationByResourceTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeviceProfileOutput {
+pub struct GetDeviceProfileOutput  {
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4600,25 +4429,25 @@ pub struct GetDeviceProfileOutput {
 }
 impl GetDeviceProfileOutput {
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the device profile.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Information about the device profile.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanDeviceProfile> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::model::LoRaWanDeviceProfile> {
         self.lo_ra_wan.as_ref()
     }
 }
 /// See [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput).
 pub mod get_device_profile_output {
-
+    
     /// A builder for [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4635,8 +4464,7 @@ pub mod get_device_profile_output {
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the resource.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4645,8 +4473,7 @@ pub mod get_device_profile_output {
         }
         /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the device profile.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4655,8 +4482,7 @@ pub mod get_device_profile_output {
         }
         /// <p>The ID of the device profile.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Information about the device profile.</p>
         pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanDeviceProfile) -> Self {
@@ -4664,23 +4490,25 @@ pub mod get_device_profile_output {
             self
         }
         /// <p>Information about the device profile.</p>
-        pub fn set_lo_ra_wan(
-            mut self,
-            input: std::option::Option<crate::model::LoRaWanDeviceProfile>,
-        ) -> Self {
-            self.lo_ra_wan = input;
-            self
+        pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::model::LoRaWanDeviceProfile>) -> Self {
+            self.lo_ra_wan = input; self
         }
         /// Consumes the builder and constructs a [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput).
         pub fn build(self) -> crate::output::GetDeviceProfileOutput {
             crate::output::GetDeviceProfileOutput {
-                arn: self.arn,
-                name: self.name,
-                id: self.id,
-                lo_ra_wan: self.lo_ra_wan,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                id: self.id
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeviceProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput).
@@ -4692,7 +4520,7 @@ impl GetDeviceProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDestinationOutput {
+pub struct GetDestinationOutput  {
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4714,33 +4542,33 @@ pub struct GetDestinationOutput {
 }
 impl GetDestinationOutput {
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The rule name or topic rule to send messages to.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>The type of value in <code>Expression</code>.</p>
-    pub fn expression_type(&self) -> std::option::Option<&crate::model::ExpressionType> {
+    pub fn expression_type(&self) -> std::option::Option<& crate::model::ExpressionType> {
         self.expression_type.as_ref()
     }
     /// <p>The description of the resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 /// See [`GetDestinationOutput`](crate::output::GetDestinationOutput).
 pub mod get_destination_output {
-
+    
     /// A builder for [`GetDestinationOutput`](crate::output::GetDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4759,8 +4587,7 @@ pub mod get_destination_output {
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the resource.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4769,8 +4596,7 @@ pub mod get_destination_output {
         }
         /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The rule name or topic rule to send messages to.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4779,8 +4605,7 @@ pub mod get_destination_output {
         }
         /// <p>The rule name or topic rule to send messages to.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expression = input;
-            self
+            self.expression = input; self
         }
         /// <p>The type of value in <code>Expression</code>.</p>
         pub fn expression_type(mut self, input: crate::model::ExpressionType) -> Self {
@@ -4788,12 +4613,8 @@ pub mod get_destination_output {
             self
         }
         /// <p>The type of value in <code>Expression</code>.</p>
-        pub fn set_expression_type(
-            mut self,
-            input: std::option::Option<crate::model::ExpressionType>,
-        ) -> Self {
-            self.expression_type = input;
-            self
+        pub fn set_expression_type(mut self, input: std::option::Option<crate::model::ExpressionType>) -> Self {
+            self.expression_type = input; self
         }
         /// <p>The description of the resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4802,8 +4623,7 @@ pub mod get_destination_output {
         }
         /// <p>The description of the resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ARN of the IAM Role that authorizes the destination.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4812,21 +4632,28 @@ pub mod get_destination_output {
         }
         /// <p>The ARN of the IAM Role that authorizes the destination.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetDestinationOutput`](crate::output::GetDestinationOutput).
         pub fn build(self) -> crate::output::GetDestinationOutput {
             crate::output::GetDestinationOutput {
-                arn: self.arn,
-                name: self.name,
-                expression: self.expression,
-                expression_type: self.expression_type,
-                description: self.description,
-                role_arn: self.role_arn,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                expression: self.expression
+                ,
+                expression_type: self.expression_type
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDestinationOutput {
     /// Creates a new builder-style object to manufacture [`GetDestinationOutput`](crate::output::GetDestinationOutput).
@@ -4838,19 +4665,24 @@ impl GetDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateWirelessGatewayFromThingOutput {}
+pub struct DisassociateWirelessGatewayFromThingOutput  {
+}
 /// See [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput).
 pub mod disassociate_wireless_gateway_from_thing_output {
-
+    
     /// A builder for [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput).
         pub fn build(self) -> crate::output::DisassociateWirelessGatewayFromThingOutput {
-            crate::output::DisassociateWirelessGatewayFromThingOutput {}
+            crate::output::DisassociateWirelessGatewayFromThingOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateWirelessGatewayFromThingOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput).
@@ -4862,24 +4694,28 @@ impl DisassociateWirelessGatewayFromThingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateWirelessGatewayFromCertificateOutput {}
+pub struct DisassociateWirelessGatewayFromCertificateOutput  {
+}
 /// See [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput).
 pub mod disassociate_wireless_gateway_from_certificate_output {
-
+    
     /// A builder for [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput).
         pub fn build(self) -> crate::output::DisassociateWirelessGatewayFromCertificateOutput {
-            crate::output::DisassociateWirelessGatewayFromCertificateOutput {}
+            crate::output::DisassociateWirelessGatewayFromCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateWirelessGatewayFromCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput).
-    pub fn builder() -> crate::output::disassociate_wireless_gateway_from_certificate_output::Builder
-    {
+    pub fn builder() -> crate::output::disassociate_wireless_gateway_from_certificate_output::Builder {
         crate::output::disassociate_wireless_gateway_from_certificate_output::Builder::default()
     }
 }
@@ -4887,19 +4723,24 @@ impl DisassociateWirelessGatewayFromCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateWirelessDeviceFromThingOutput {}
+pub struct DisassociateWirelessDeviceFromThingOutput  {
+}
 /// See [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput).
 pub mod disassociate_wireless_device_from_thing_output {
-
+    
     /// A builder for [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput).
         pub fn build(self) -> crate::output::DisassociateWirelessDeviceFromThingOutput {
-            crate::output::DisassociateWirelessDeviceFromThingOutput {}
+            crate::output::DisassociateWirelessDeviceFromThingOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateWirelessDeviceFromThingOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput).
@@ -4911,24 +4752,28 @@ impl DisassociateWirelessDeviceFromThingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateWirelessDeviceFromMulticastGroupOutput {}
+pub struct DisassociateWirelessDeviceFromMulticastGroupOutput  {
+}
 /// See [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput).
 pub mod disassociate_wireless_device_from_multicast_group_output {
-
+    
     /// A builder for [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput).
         pub fn build(self) -> crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput {
-            crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput {}
+            crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateWirelessDeviceFromMulticastGroupOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput).
-    pub fn builder(
-    ) -> crate::output::disassociate_wireless_device_from_multicast_group_output::Builder {
+    pub fn builder() -> crate::output::disassociate_wireless_device_from_multicast_group_output::Builder {
         crate::output::disassociate_wireless_device_from_multicast_group_output::Builder::default()
     }
 }
@@ -4936,24 +4781,28 @@ impl DisassociateWirelessDeviceFromMulticastGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateWirelessDeviceFromFuotaTaskOutput {}
+pub struct DisassociateWirelessDeviceFromFuotaTaskOutput  {
+}
 /// See [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput).
 pub mod disassociate_wireless_device_from_fuota_task_output {
-
+    
     /// A builder for [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput).
         pub fn build(self) -> crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput {
-            crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput {}
+            crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateWirelessDeviceFromFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput).
-    pub fn builder() -> crate::output::disassociate_wireless_device_from_fuota_task_output::Builder
-    {
+    pub fn builder() -> crate::output::disassociate_wireless_device_from_fuota_task_output::Builder {
         crate::output::disassociate_wireless_device_from_fuota_task_output::Builder::default()
     }
 }
@@ -4961,24 +4810,28 @@ impl DisassociateWirelessDeviceFromFuotaTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateMulticastGroupFromFuotaTaskOutput {}
+pub struct DisassociateMulticastGroupFromFuotaTaskOutput  {
+}
 /// See [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput).
 pub mod disassociate_multicast_group_from_fuota_task_output {
-
+    
     /// A builder for [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput).
         pub fn build(self) -> crate::output::DisassociateMulticastGroupFromFuotaTaskOutput {
-            crate::output::DisassociateMulticastGroupFromFuotaTaskOutput {}
+            crate::output::DisassociateMulticastGroupFromFuotaTaskOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateMulticastGroupFromFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput).
-    pub fn builder() -> crate::output::disassociate_multicast_group_from_fuota_task_output::Builder
-    {
+    pub fn builder() -> crate::output::disassociate_multicast_group_from_fuota_task_output::Builder {
         crate::output::disassociate_multicast_group_from_fuota_task_output::Builder::default()
     }
 }
@@ -4986,24 +4839,28 @@ impl DisassociateMulticastGroupFromFuotaTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateAwsAccountFromPartnerAccountOutput {}
+pub struct DisassociateAwsAccountFromPartnerAccountOutput  {
+}
 /// See [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput).
 pub mod disassociate_aws_account_from_partner_account_output {
-
+    
     /// A builder for [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput).
         pub fn build(self) -> crate::output::DisassociateAwsAccountFromPartnerAccountOutput {
-            crate::output::DisassociateAwsAccountFromPartnerAccountOutput {}
+            crate::output::DisassociateAwsAccountFromPartnerAccountOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateAwsAccountFromPartnerAccountOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput).
-    pub fn builder() -> crate::output::disassociate_aws_account_from_partner_account_output::Builder
-    {
+    pub fn builder() -> crate::output::disassociate_aws_account_from_partner_account_output::Builder {
         crate::output::disassociate_aws_account_from_partner_account_output::Builder::default()
     }
 }
@@ -5011,19 +4868,24 @@ impl DisassociateAwsAccountFromPartnerAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWirelessGatewayTaskDefinitionOutput {}
+pub struct DeleteWirelessGatewayTaskDefinitionOutput  {
+}
 /// See [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput).
 pub mod delete_wireless_gateway_task_definition_output {
-
+    
     /// A builder for [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput).
         pub fn build(self) -> crate::output::DeleteWirelessGatewayTaskDefinitionOutput {
-            crate::output::DeleteWirelessGatewayTaskDefinitionOutput {}
+            crate::output::DeleteWirelessGatewayTaskDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteWirelessGatewayTaskDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput).
@@ -5035,19 +4897,24 @@ impl DeleteWirelessGatewayTaskDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWirelessGatewayTaskOutput {}
+pub struct DeleteWirelessGatewayTaskOutput  {
+}
 /// See [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput).
 pub mod delete_wireless_gateway_task_output {
-
+    
     /// A builder for [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput).
         pub fn build(self) -> crate::output::DeleteWirelessGatewayTaskOutput {
-            crate::output::DeleteWirelessGatewayTaskOutput {}
+            crate::output::DeleteWirelessGatewayTaskOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteWirelessGatewayTaskOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput).
@@ -5059,19 +4926,24 @@ impl DeleteWirelessGatewayTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWirelessGatewayOutput {}
+pub struct DeleteWirelessGatewayOutput  {
+}
 /// See [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput).
 pub mod delete_wireless_gateway_output {
-
+    
     /// A builder for [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput).
         pub fn build(self) -> crate::output::DeleteWirelessGatewayOutput {
-            crate::output::DeleteWirelessGatewayOutput {}
+            crate::output::DeleteWirelessGatewayOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteWirelessGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput).
@@ -5083,19 +4955,24 @@ impl DeleteWirelessGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWirelessDeviceOutput {}
+pub struct DeleteWirelessDeviceOutput  {
+}
 /// See [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput).
 pub mod delete_wireless_device_output {
-
+    
     /// A builder for [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput).
         pub fn build(self) -> crate::output::DeleteWirelessDeviceOutput {
-            crate::output::DeleteWirelessDeviceOutput {}
+            crate::output::DeleteWirelessDeviceOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteWirelessDeviceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput).
@@ -5107,19 +4984,24 @@ impl DeleteWirelessDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceProfileOutput {}
+pub struct DeleteServiceProfileOutput  {
+}
 /// See [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput).
 pub mod delete_service_profile_output {
-
+    
     /// A builder for [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput).
         pub fn build(self) -> crate::output::DeleteServiceProfileOutput {
-            crate::output::DeleteServiceProfileOutput {}
+            crate::output::DeleteServiceProfileOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteServiceProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput).
@@ -5131,19 +5013,24 @@ impl DeleteServiceProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteQueuedMessagesOutput {}
+pub struct DeleteQueuedMessagesOutput  {
+}
 /// See [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput).
 pub mod delete_queued_messages_output {
-
+    
     /// A builder for [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput).
         pub fn build(self) -> crate::output::DeleteQueuedMessagesOutput {
-            crate::output::DeleteQueuedMessagesOutput {}
+            crate::output::DeleteQueuedMessagesOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteQueuedMessagesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput).
@@ -5155,19 +5042,24 @@ impl DeleteQueuedMessagesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNetworkAnalyzerConfigurationOutput {}
+pub struct DeleteNetworkAnalyzerConfigurationOutput  {
+}
 /// See [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput).
 pub mod delete_network_analyzer_configuration_output {
-
+    
     /// A builder for [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteNetworkAnalyzerConfigurationOutput {
-            crate::output::DeleteNetworkAnalyzerConfigurationOutput {}
+            crate::output::DeleteNetworkAnalyzerConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteNetworkAnalyzerConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput).
@@ -5179,19 +5071,24 @@ impl DeleteNetworkAnalyzerConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMulticastGroupOutput {}
+pub struct DeleteMulticastGroupOutput  {
+}
 /// See [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput).
 pub mod delete_multicast_group_output {
-
+    
     /// A builder for [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput).
         pub fn build(self) -> crate::output::DeleteMulticastGroupOutput {
-            crate::output::DeleteMulticastGroupOutput {}
+            crate::output::DeleteMulticastGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteMulticastGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput).
@@ -5203,19 +5100,24 @@ impl DeleteMulticastGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFuotaTaskOutput {}
+pub struct DeleteFuotaTaskOutput  {
+}
 /// See [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput).
 pub mod delete_fuota_task_output {
-
+    
     /// A builder for [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput).
         pub fn build(self) -> crate::output::DeleteFuotaTaskOutput {
-            crate::output::DeleteFuotaTaskOutput {}
+            crate::output::DeleteFuotaTaskOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput).
@@ -5227,19 +5129,24 @@ impl DeleteFuotaTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDeviceProfileOutput {}
+pub struct DeleteDeviceProfileOutput  {
+}
 /// See [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput).
 pub mod delete_device_profile_output {
-
+    
     /// A builder for [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput).
         pub fn build(self) -> crate::output::DeleteDeviceProfileOutput {
-            crate::output::DeleteDeviceProfileOutput {}
+            crate::output::DeleteDeviceProfileOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDeviceProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput).
@@ -5251,19 +5158,24 @@ impl DeleteDeviceProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDestinationOutput {}
+pub struct DeleteDestinationOutput  {
+}
 /// See [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
 pub mod delete_destination_output {
-
+    
     /// A builder for [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
         pub fn build(self) -> crate::output::DeleteDestinationOutput {
-            crate::output::DeleteDestinationOutput {}
+            crate::output::DeleteDestinationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
@@ -5275,7 +5187,7 @@ impl DeleteDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWirelessGatewayTaskDefinitionOutput {
+pub struct CreateWirelessGatewayTaskDefinitionOutput  {
     /// <p>The ID of the new wireless gateway task definition.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -5285,17 +5197,17 @@ pub struct CreateWirelessGatewayTaskDefinitionOutput {
 }
 impl CreateWirelessGatewayTaskDefinitionOutput {
     /// <p>The ID of the new wireless gateway task definition.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput).
 pub mod create_wireless_gateway_task_definition_output {
-
+    
     /// A builder for [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5310,8 +5222,7 @@ pub mod create_wireless_gateway_task_definition_output {
         }
         /// <p>The ID of the new wireless gateway task definition.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5320,17 +5231,20 @@ pub mod create_wireless_gateway_task_definition_output {
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput).
         pub fn build(self) -> crate::output::CreateWirelessGatewayTaskDefinitionOutput {
             crate::output::CreateWirelessGatewayTaskDefinitionOutput {
-                id: self.id,
-                arn: self.arn,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateWirelessGatewayTaskDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput).
@@ -5342,7 +5256,7 @@ impl CreateWirelessGatewayTaskDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWirelessGatewayTaskOutput {
+pub struct CreateWirelessGatewayTaskOutput  {
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
     #[doc(hidden)]
     pub wireless_gateway_task_definition_id: std::option::Option<std::string::String>,
@@ -5352,17 +5266,17 @@ pub struct CreateWirelessGatewayTaskOutput {
 }
 impl CreateWirelessGatewayTaskOutput {
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
-    pub fn wireless_gateway_task_definition_id(&self) -> std::option::Option<&str> {
+    pub fn wireless_gateway_task_definition_id(&self) -> std::option::Option<& str> {
         self.wireless_gateway_task_definition_id.as_deref()
     }
     /// <p>The status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::WirelessGatewayTaskStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::WirelessGatewayTaskStatus> {
         self.status.as_ref()
     }
 }
 /// See [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput).
 pub mod create_wireless_gateway_task_output {
-
+    
     /// A builder for [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5371,20 +5285,13 @@ pub mod create_wireless_gateway_task_output {
     }
     impl Builder {
         /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
-        pub fn wireless_gateway_task_definition_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn wireless_gateway_task_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.wireless_gateway_task_definition_id = Some(input.into());
             self
         }
         /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
-        pub fn set_wireless_gateway_task_definition_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.wireless_gateway_task_definition_id = input;
-            self
+        pub fn set_wireless_gateway_task_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.wireless_gateway_task_definition_id = input; self
         }
         /// <p>The status of the request.</p>
         pub fn status(mut self, input: crate::model::WirelessGatewayTaskStatus) -> Self {
@@ -5392,21 +5299,21 @@ pub mod create_wireless_gateway_task_output {
             self
         }
         /// <p>The status of the request.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::WirelessGatewayTaskStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::WirelessGatewayTaskStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput).
         pub fn build(self) -> crate::output::CreateWirelessGatewayTaskOutput {
             crate::output::CreateWirelessGatewayTaskOutput {
-                wireless_gateway_task_definition_id: self.wireless_gateway_task_definition_id,
-                status: self.status,
+                wireless_gateway_task_definition_id: self.wireless_gateway_task_definition_id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateWirelessGatewayTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput).
@@ -5418,7 +5325,7 @@ impl CreateWirelessGatewayTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWirelessGatewayOutput {
+pub struct CreateWirelessGatewayOutput  {
     /// <p>The Amazon Resource Name of the new resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5428,17 +5335,17 @@ pub struct CreateWirelessGatewayOutput {
 }
 impl CreateWirelessGatewayOutput {
     /// <p>The Amazon Resource Name of the new resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the new wireless gateway.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput).
 pub mod create_wireless_gateway_output {
-
+    
     /// A builder for [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5453,8 +5360,7 @@ pub mod create_wireless_gateway_output {
         }
         /// <p>The Amazon Resource Name of the new resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the new wireless gateway.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5463,17 +5369,20 @@ pub mod create_wireless_gateway_output {
         }
         /// <p>The ID of the new wireless gateway.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput).
         pub fn build(self) -> crate::output::CreateWirelessGatewayOutput {
             crate::output::CreateWirelessGatewayOutput {
-                arn: self.arn,
-                id: self.id,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateWirelessGatewayOutput {
     /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput).
@@ -5485,7 +5394,7 @@ impl CreateWirelessGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWirelessDeviceOutput {
+pub struct CreateWirelessDeviceOutput  {
     /// <p>The Amazon Resource Name of the new resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5495,17 +5404,17 @@ pub struct CreateWirelessDeviceOutput {
 }
 impl CreateWirelessDeviceOutput {
     /// <p>The Amazon Resource Name of the new resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the new wireless device.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput).
 pub mod create_wireless_device_output {
-
+    
     /// A builder for [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5520,8 +5429,7 @@ pub mod create_wireless_device_output {
         }
         /// <p>The Amazon Resource Name of the new resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the new wireless device.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5530,17 +5438,20 @@ pub mod create_wireless_device_output {
         }
         /// <p>The ID of the new wireless device.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput).
         pub fn build(self) -> crate::output::CreateWirelessDeviceOutput {
             crate::output::CreateWirelessDeviceOutput {
-                arn: self.arn,
-                id: self.id,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateWirelessDeviceOutput {
     /// Creates a new builder-style object to manufacture [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput).
@@ -5552,7 +5463,7 @@ impl CreateWirelessDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateServiceProfileOutput {
+pub struct CreateServiceProfileOutput  {
     /// <p>The Amazon Resource Name of the new resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5562,17 +5473,17 @@ pub struct CreateServiceProfileOutput {
 }
 impl CreateServiceProfileOutput {
     /// <p>The Amazon Resource Name of the new resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the new service profile.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput).
 pub mod create_service_profile_output {
-
+    
     /// A builder for [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5587,8 +5498,7 @@ pub mod create_service_profile_output {
         }
         /// <p>The Amazon Resource Name of the new resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the new service profile.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5597,17 +5507,20 @@ pub mod create_service_profile_output {
         }
         /// <p>The ID of the new service profile.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput).
         pub fn build(self) -> crate::output::CreateServiceProfileOutput {
             crate::output::CreateServiceProfileOutput {
-                arn: self.arn,
-                id: self.id,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateServiceProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput).
@@ -5619,7 +5532,7 @@ impl CreateServiceProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNetworkAnalyzerConfigurationOutput {
+pub struct CreateNetworkAnalyzerConfigurationOutput  {
     /// <p>The Amazon Resource Name of the new resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5629,17 +5542,17 @@ pub struct CreateNetworkAnalyzerConfigurationOutput {
 }
 impl CreateNetworkAnalyzerConfigurationOutput {
     /// <p>The Amazon Resource Name of the new resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput).
 pub mod create_network_analyzer_configuration_output {
-
+    
     /// A builder for [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5654,8 +5567,7 @@ pub mod create_network_analyzer_configuration_output {
         }
         /// <p>The Amazon Resource Name of the new resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Name of the network analyzer configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5664,17 +5576,20 @@ pub mod create_network_analyzer_configuration_output {
         }
         /// <p>Name of the network analyzer configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput).
         pub fn build(self) -> crate::output::CreateNetworkAnalyzerConfigurationOutput {
             crate::output::CreateNetworkAnalyzerConfigurationOutput {
-                arn: self.arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateNetworkAnalyzerConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput).
@@ -5686,7 +5601,7 @@ impl CreateNetworkAnalyzerConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMulticastGroupOutput {
+pub struct CreateMulticastGroupOutput  {
     /// <p>The arn of the multicast group.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5696,17 +5611,17 @@ pub struct CreateMulticastGroupOutput {
 }
 impl CreateMulticastGroupOutput {
     /// <p>The arn of the multicast group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the multicast group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput).
 pub mod create_multicast_group_output {
-
+    
     /// A builder for [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5721,8 +5636,7 @@ pub mod create_multicast_group_output {
         }
         /// <p>The arn of the multicast group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the multicast group.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5731,17 +5645,20 @@ pub mod create_multicast_group_output {
         }
         /// <p>The ID of the multicast group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput).
         pub fn build(self) -> crate::output::CreateMulticastGroupOutput {
             crate::output::CreateMulticastGroupOutput {
-                arn: self.arn,
-                id: self.id,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateMulticastGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput).
@@ -5753,7 +5670,7 @@ impl CreateMulticastGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFuotaTaskOutput {
+pub struct CreateFuotaTaskOutput  {
     /// <p>The arn of a FUOTA task.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5763,17 +5680,17 @@ pub struct CreateFuotaTaskOutput {
 }
 impl CreateFuotaTaskOutput {
     /// <p>The arn of a FUOTA task.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of a FUOTA task.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput).
 pub mod create_fuota_task_output {
-
+    
     /// A builder for [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5788,8 +5705,7 @@ pub mod create_fuota_task_output {
         }
         /// <p>The arn of a FUOTA task.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of a FUOTA task.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5798,17 +5714,20 @@ pub mod create_fuota_task_output {
         }
         /// <p>The ID of a FUOTA task.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput).
         pub fn build(self) -> crate::output::CreateFuotaTaskOutput {
             crate::output::CreateFuotaTaskOutput {
-                arn: self.arn,
-                id: self.id,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput).
@@ -5820,7 +5739,7 @@ impl CreateFuotaTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeviceProfileOutput {
+pub struct CreateDeviceProfileOutput  {
     /// <p>The Amazon Resource Name of the new resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5830,17 +5749,17 @@ pub struct CreateDeviceProfileOutput {
 }
 impl CreateDeviceProfileOutput {
     /// <p>The Amazon Resource Name of the new resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the new device profile.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput).
 pub mod create_device_profile_output {
-
+    
     /// A builder for [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5855,8 +5774,7 @@ pub mod create_device_profile_output {
         }
         /// <p>The Amazon Resource Name of the new resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the new device profile.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5865,17 +5783,20 @@ pub mod create_device_profile_output {
         }
         /// <p>The ID of the new device profile.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput).
         pub fn build(self) -> crate::output::CreateDeviceProfileOutput {
             crate::output::CreateDeviceProfileOutput {
-                arn: self.arn,
-                id: self.id,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDeviceProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput).
@@ -5887,7 +5808,7 @@ impl CreateDeviceProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDestinationOutput {
+pub struct CreateDestinationOutput  {
     /// <p>The Amazon Resource Name of the new resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5897,17 +5818,17 @@ pub struct CreateDestinationOutput {
 }
 impl CreateDestinationOutput {
     /// <p>The Amazon Resource Name of the new resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the new resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
 pub mod create_destination_output {
-
+    
     /// A builder for [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5922,8 +5843,7 @@ pub mod create_destination_output {
         }
         /// <p>The Amazon Resource Name of the new resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the new resource.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5932,17 +5852,20 @@ pub mod create_destination_output {
         }
         /// <p>The name of the new resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
         pub fn build(self) -> crate::output::CreateDestinationOutput {
             crate::output::CreateDestinationOutput {
-                arn: self.arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDestinationOutput {
     /// Creates a new builder-style object to manufacture [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
@@ -5954,19 +5877,24 @@ impl CreateDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelMulticastGroupSessionOutput {}
+pub struct CancelMulticastGroupSessionOutput  {
+}
 /// See [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput).
 pub mod cancel_multicast_group_session_output {
-
+    
     /// A builder for [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput).
         pub fn build(self) -> crate::output::CancelMulticastGroupSessionOutput {
-            crate::output::CancelMulticastGroupSessionOutput {}
+            crate::output::CancelMulticastGroupSessionOutput {
+            }
         }
     }
+    
+    
 }
 impl CancelMulticastGroupSessionOutput {
     /// Creates a new builder-style object to manufacture [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput).
@@ -5978,19 +5906,24 @@ impl CancelMulticastGroupSessionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateWirelessGatewayWithThingOutput {}
+pub struct AssociateWirelessGatewayWithThingOutput  {
+}
 /// See [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput).
 pub mod associate_wireless_gateway_with_thing_output {
-
+    
     /// A builder for [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput).
         pub fn build(self) -> crate::output::AssociateWirelessGatewayWithThingOutput {
-            crate::output::AssociateWirelessGatewayWithThingOutput {}
+            crate::output::AssociateWirelessGatewayWithThingOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateWirelessGatewayWithThingOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput).
@@ -6002,20 +5935,20 @@ impl AssociateWirelessGatewayWithThingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateWirelessGatewayWithCertificateOutput {
+pub struct AssociateWirelessGatewayWithCertificateOutput  {
     /// <p>The ID of the certificate associated with the wireless gateway.</p>
     #[doc(hidden)]
     pub iot_certificate_id: std::option::Option<std::string::String>,
 }
 impl AssociateWirelessGatewayWithCertificateOutput {
     /// <p>The ID of the certificate associated with the wireless gateway.</p>
-    pub fn iot_certificate_id(&self) -> std::option::Option<&str> {
+    pub fn iot_certificate_id(&self) -> std::option::Option<& str> {
         self.iot_certificate_id.as_deref()
     }
 }
 /// See [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput).
 pub mod associate_wireless_gateway_with_certificate_output {
-
+    
     /// A builder for [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6028,20 +5961,19 @@ pub mod associate_wireless_gateway_with_certificate_output {
             self
         }
         /// <p>The ID of the certificate associated with the wireless gateway.</p>
-        pub fn set_iot_certificate_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iot_certificate_id = input;
-            self
+        pub fn set_iot_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iot_certificate_id = input; self
         }
         /// Consumes the builder and constructs a [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput).
         pub fn build(self) -> crate::output::AssociateWirelessGatewayWithCertificateOutput {
             crate::output::AssociateWirelessGatewayWithCertificateOutput {
-                iot_certificate_id: self.iot_certificate_id,
+                iot_certificate_id: self.iot_certificate_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateWirelessGatewayWithCertificateOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput).
@@ -6053,19 +5985,24 @@ impl AssociateWirelessGatewayWithCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateWirelessDeviceWithThingOutput {}
+pub struct AssociateWirelessDeviceWithThingOutput  {
+}
 /// See [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput).
 pub mod associate_wireless_device_with_thing_output {
-
+    
     /// A builder for [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput).
         pub fn build(self) -> crate::output::AssociateWirelessDeviceWithThingOutput {
-            crate::output::AssociateWirelessDeviceWithThingOutput {}
+            crate::output::AssociateWirelessDeviceWithThingOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateWirelessDeviceWithThingOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput).
@@ -6077,24 +6014,28 @@ impl AssociateWirelessDeviceWithThingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateWirelessDeviceWithMulticastGroupOutput {}
+pub struct AssociateWirelessDeviceWithMulticastGroupOutput  {
+}
 /// See [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput).
 pub mod associate_wireless_device_with_multicast_group_output {
-
+    
     /// A builder for [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput).
         pub fn build(self) -> crate::output::AssociateWirelessDeviceWithMulticastGroupOutput {
-            crate::output::AssociateWirelessDeviceWithMulticastGroupOutput {}
+            crate::output::AssociateWirelessDeviceWithMulticastGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateWirelessDeviceWithMulticastGroupOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput).
-    pub fn builder() -> crate::output::associate_wireless_device_with_multicast_group_output::Builder
-    {
+    pub fn builder() -> crate::output::associate_wireless_device_with_multicast_group_output::Builder {
         crate::output::associate_wireless_device_with_multicast_group_output::Builder::default()
     }
 }
@@ -6102,19 +6043,24 @@ impl AssociateWirelessDeviceWithMulticastGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateWirelessDeviceWithFuotaTaskOutput {}
+pub struct AssociateWirelessDeviceWithFuotaTaskOutput  {
+}
 /// See [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput).
 pub mod associate_wireless_device_with_fuota_task_output {
-
+    
     /// A builder for [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput).
         pub fn build(self) -> crate::output::AssociateWirelessDeviceWithFuotaTaskOutput {
-            crate::output::AssociateWirelessDeviceWithFuotaTaskOutput {}
+            crate::output::AssociateWirelessDeviceWithFuotaTaskOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateWirelessDeviceWithFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput).
@@ -6126,19 +6072,24 @@ impl AssociateWirelessDeviceWithFuotaTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateMulticastGroupWithFuotaTaskOutput {}
+pub struct AssociateMulticastGroupWithFuotaTaskOutput  {
+}
 /// See [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput).
 pub mod associate_multicast_group_with_fuota_task_output {
-
+    
     /// A builder for [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput).
         pub fn build(self) -> crate::output::AssociateMulticastGroupWithFuotaTaskOutput {
-            crate::output::AssociateMulticastGroupWithFuotaTaskOutput {}
+            crate::output::AssociateMulticastGroupWithFuotaTaskOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateMulticastGroupWithFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput).
@@ -6150,7 +6101,7 @@ impl AssociateMulticastGroupWithFuotaTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateAwsAccountWithPartnerAccountOutput {
+pub struct AssociateAwsAccountWithPartnerAccountOutput  {
     /// <p>The Sidewalk account credentials.</p>
     #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::model::SidewalkAccountInfo>,
@@ -6160,17 +6111,17 @@ pub struct AssociateAwsAccountWithPartnerAccountOutput {
 }
 impl AssociateAwsAccountWithPartnerAccountOutput {
     /// <p>The Sidewalk account credentials.</p>
-    pub fn sidewalk(&self) -> std::option::Option<&crate::model::SidewalkAccountInfo> {
+    pub fn sidewalk(&self) -> std::option::Option<& crate::model::SidewalkAccountInfo> {
         self.sidewalk.as_ref()
     }
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput).
 pub mod associate_aws_account_with_partner_account_output {
-
+    
     /// A builder for [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6184,12 +6135,8 @@ pub mod associate_aws_account_with_partner_account_output {
             self
         }
         /// <p>The Sidewalk account credentials.</p>
-        pub fn set_sidewalk(
-            mut self,
-            input: std::option::Option<crate::model::SidewalkAccountInfo>,
-        ) -> Self {
-            self.sidewalk = input;
-            self
+        pub fn set_sidewalk(mut self, input: std::option::Option<crate::model::SidewalkAccountInfo>) -> Self {
+            self.sidewalk = input; self
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6198,17 +6145,20 @@ pub mod associate_aws_account_with_partner_account_output {
         }
         /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput).
         pub fn build(self) -> crate::output::AssociateAwsAccountWithPartnerAccountOutput {
             crate::output::AssociateAwsAccountWithPartnerAccountOutput {
-                sidewalk: self.sidewalk,
-                arn: self.arn,
+                sidewalk: self.sidewalk
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateAwsAccountWithPartnerAccountOutput {
     /// Creates a new builder-style object to manufacture [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput).
@@ -6216,3 +6166,4 @@ impl AssociateAwsAccountWithPartnerAccountOutput {
         crate::output::associate_aws_account_with_partner_account_output::Builder::default()
     }
 }
+

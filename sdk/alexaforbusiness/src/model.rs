@@ -3,7 +3,7 @@
 /// <p>Updates meeting room settings of a room profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMeetingRoomConfiguration {
+pub struct UpdateMeetingRoomConfiguration  {
     /// <p>Whether room utilization metrics are enabled or not.</p>
     #[doc(hidden)]
     pub room_utilization_metrics_enabled: std::option::Option<bool>,
@@ -23,29 +23,26 @@ impl UpdateMeetingRoomConfiguration {
         self.room_utilization_metrics_enabled
     }
     /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
-    pub fn end_of_meeting_reminder(
-        &self,
-    ) -> std::option::Option<&crate::model::UpdateEndOfMeetingReminder> {
+    pub fn end_of_meeting_reminder(&self) -> std::option::Option<& crate::model::UpdateEndOfMeetingReminder> {
         self.end_of_meeting_reminder.as_ref()
     }
     /// <p>Settings to automatically book an available room available for a configured duration when joining a meeting with Alexa.</p>
-    pub fn instant_booking(&self) -> std::option::Option<&crate::model::UpdateInstantBooking> {
+    pub fn instant_booking(&self) -> std::option::Option<& crate::model::UpdateInstantBooking> {
         self.instant_booking.as_ref()
     }
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
-    pub fn require_check_in(&self) -> std::option::Option<&crate::model::UpdateRequireCheckIn> {
+    pub fn require_check_in(&self) -> std::option::Option<& crate::model::UpdateRequireCheckIn> {
         self.require_check_in.as_ref()
     }
 }
 /// See [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration).
 pub mod update_meeting_room_configuration {
-
+    
     /// A builder for [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_utilization_metrics_enabled: std::option::Option<bool>,
-        pub(crate) end_of_meeting_reminder:
-            std::option::Option<crate::model::UpdateEndOfMeetingReminder>,
+        pub(crate) end_of_meeting_reminder: std::option::Option<crate::model::UpdateEndOfMeetingReminder>,
         pub(crate) instant_booking: std::option::Option<crate::model::UpdateInstantBooking>,
         pub(crate) require_check_in: std::option::Option<crate::model::UpdateRequireCheckIn>,
     }
@@ -56,28 +53,17 @@ pub mod update_meeting_room_configuration {
             self
         }
         /// <p>Whether room utilization metrics are enabled or not.</p>
-        pub fn set_room_utilization_metrics_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.room_utilization_metrics_enabled = input;
-            self
+        pub fn set_room_utilization_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.room_utilization_metrics_enabled = input; self
         }
         /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
-        pub fn end_of_meeting_reminder(
-            mut self,
-            input: crate::model::UpdateEndOfMeetingReminder,
-        ) -> Self {
+        pub fn end_of_meeting_reminder(mut self, input: crate::model::UpdateEndOfMeetingReminder) -> Self {
             self.end_of_meeting_reminder = Some(input);
             self
         }
         /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
-        pub fn set_end_of_meeting_reminder(
-            mut self,
-            input: std::option::Option<crate::model::UpdateEndOfMeetingReminder>,
-        ) -> Self {
-            self.end_of_meeting_reminder = input;
-            self
+        pub fn set_end_of_meeting_reminder(mut self, input: std::option::Option<crate::model::UpdateEndOfMeetingReminder>) -> Self {
+            self.end_of_meeting_reminder = input; self
         }
         /// <p>Settings to automatically book an available room available for a configured duration when joining a meeting with Alexa.</p>
         pub fn instant_booking(mut self, input: crate::model::UpdateInstantBooking) -> Self {
@@ -85,12 +71,8 @@ pub mod update_meeting_room_configuration {
             self
         }
         /// <p>Settings to automatically book an available room available for a configured duration when joining a meeting with Alexa.</p>
-        pub fn set_instant_booking(
-            mut self,
-            input: std::option::Option<crate::model::UpdateInstantBooking>,
-        ) -> Self {
-            self.instant_booking = input;
-            self
+        pub fn set_instant_booking(mut self, input: std::option::Option<crate::model::UpdateInstantBooking>) -> Self {
+            self.instant_booking = input; self
         }
         /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
         pub fn require_check_in(mut self, input: crate::model::UpdateRequireCheckIn) -> Self {
@@ -98,23 +80,25 @@ pub mod update_meeting_room_configuration {
             self
         }
         /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
-        pub fn set_require_check_in(
-            mut self,
-            input: std::option::Option<crate::model::UpdateRequireCheckIn>,
-        ) -> Self {
-            self.require_check_in = input;
-            self
+        pub fn set_require_check_in(mut self, input: std::option::Option<crate::model::UpdateRequireCheckIn>) -> Self {
+            self.require_check_in = input; self
         }
         /// Consumes the builder and constructs a [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration).
         pub fn build(self) -> crate::model::UpdateMeetingRoomConfiguration {
             crate::model::UpdateMeetingRoomConfiguration {
-                room_utilization_metrics_enabled: self.room_utilization_metrics_enabled,
-                end_of_meeting_reminder: self.end_of_meeting_reminder,
-                instant_booking: self.instant_booking,
-                require_check_in: self.require_check_in,
+                room_utilization_metrics_enabled: self.room_utilization_metrics_enabled
+                ,
+                end_of_meeting_reminder: self.end_of_meeting_reminder
+                ,
+                instant_booking: self.instant_booking
+                ,
+                require_check_in: self.require_check_in
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateMeetingRoomConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration).
@@ -126,7 +110,7 @@ impl UpdateMeetingRoomConfiguration {
 /// <p>Updates settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRequireCheckIn {
+pub struct UpdateRequireCheckIn  {
     /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into. </p>
     #[doc(hidden)]
     pub release_after_minutes: std::option::Option<i32>,
@@ -146,7 +130,7 @@ impl UpdateRequireCheckIn {
 }
 /// See [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn).
 pub mod update_require_check_in {
-
+    
     /// A builder for [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -161,8 +145,7 @@ pub mod update_require_check_in {
         }
         /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into. </p>
         pub fn set_release_after_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.release_after_minutes = input;
-            self
+            self.release_after_minutes = input; self
         }
         /// <p>Whether require check in is enabled or not.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -171,17 +154,20 @@ pub mod update_require_check_in {
         }
         /// <p>Whether require check in is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn).
         pub fn build(self) -> crate::model::UpdateRequireCheckIn {
             crate::model::UpdateRequireCheckIn {
-                release_after_minutes: self.release_after_minutes,
-                enabled: self.enabled,
+                release_after_minutes: self.release_after_minutes
+                ,
+                enabled: self.enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRequireCheckIn {
     /// Creates a new builder-style object to manufacture [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn).
@@ -193,7 +179,7 @@ impl UpdateRequireCheckIn {
 /// <p>Updates settings for the instant booking feature that are applied to a room profile. If instant booking is enabled, Alexa automatically reserves a room if it is free when a user joins a meeting with Alexa.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInstantBooking {
+pub struct UpdateInstantBooking  {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     #[doc(hidden)]
     pub duration_in_minutes: std::option::Option<i32>,
@@ -213,7 +199,7 @@ impl UpdateInstantBooking {
 }
 /// See [`UpdateInstantBooking`](crate::model::UpdateInstantBooking).
 pub mod update_instant_booking {
-
+    
     /// A builder for [`UpdateInstantBooking`](crate::model::UpdateInstantBooking).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -228,8 +214,7 @@ pub mod update_instant_booking {
         }
         /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
         pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration_in_minutes = input;
-            self
+            self.duration_in_minutes = input; self
         }
         /// <p>Whether instant booking is enabled or not.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -238,17 +223,20 @@ pub mod update_instant_booking {
         }
         /// <p>Whether instant booking is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Consumes the builder and constructs a [`UpdateInstantBooking`](crate::model::UpdateInstantBooking).
         pub fn build(self) -> crate::model::UpdateInstantBooking {
             crate::model::UpdateInstantBooking {
-                duration_in_minutes: self.duration_in_minutes,
-                enabled: self.enabled,
+                duration_in_minutes: self.duration_in_minutes
+                ,
+                enabled: self.enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateInstantBooking {
     /// Creates a new builder-style object to manufacture [`UpdateInstantBooking`](crate::model::UpdateInstantBooking).
@@ -260,7 +248,7 @@ impl UpdateInstantBooking {
 /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEndOfMeetingReminder {
+pub struct UpdateEndOfMeetingReminder  {
     /// <p>Updates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
     #[doc(hidden)]
     pub reminder_at_minutes: std::option::Option<std::vec::Vec<i32>>,
@@ -273,11 +261,11 @@ pub struct UpdateEndOfMeetingReminder {
 }
 impl UpdateEndOfMeetingReminder {
     /// <p>Updates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
-    pub fn reminder_at_minutes(&self) -> std::option::Option<&[i32]> {
+    pub fn reminder_at_minutes(&self) -> std::option::Option<& [i32]> {
         self.reminder_at_minutes.as_deref()
     }
     /// <p>The type of sound that users hear during the end of meeting reminder. </p>
-    pub fn reminder_type(&self) -> std::option::Option<&crate::model::EndOfMeetingReminderType> {
+    pub fn reminder_type(&self) -> std::option::Option<& crate::model::EndOfMeetingReminderType> {
         self.reminder_type.as_ref()
     }
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
@@ -287,7 +275,7 @@ impl UpdateEndOfMeetingReminder {
 }
 /// See [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder).
 pub mod update_end_of_meeting_reminder {
-
+    
     /// A builder for [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -303,17 +291,13 @@ pub mod update_end_of_meeting_reminder {
         /// <p>Updates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
         pub fn reminder_at_minutes(mut self, input: i32) -> Self {
             let mut v = self.reminder_at_minutes.unwrap_or_default();
-            v.push(input);
-            self.reminder_at_minutes = Some(v);
-            self
+                            v.push(input);
+                            self.reminder_at_minutes = Some(v);
+                            self
         }
         /// <p>Updates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
-        pub fn set_reminder_at_minutes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<i32>>,
-        ) -> Self {
-            self.reminder_at_minutes = input;
-            self
+        pub fn set_reminder_at_minutes(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+            self.reminder_at_minutes = input; self
         }
         /// <p>The type of sound that users hear during the end of meeting reminder. </p>
         pub fn reminder_type(mut self, input: crate::model::EndOfMeetingReminderType) -> Self {
@@ -321,12 +305,8 @@ pub mod update_end_of_meeting_reminder {
             self
         }
         /// <p>The type of sound that users hear during the end of meeting reminder. </p>
-        pub fn set_reminder_type(
-            mut self,
-            input: std::option::Option<crate::model::EndOfMeetingReminderType>,
-        ) -> Self {
-            self.reminder_type = input;
-            self
+        pub fn set_reminder_type(mut self, input: std::option::Option<crate::model::EndOfMeetingReminderType>) -> Self {
+            self.reminder_type = input; self
         }
         /// <p>Whether an end of meeting reminder is enabled or not.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -335,18 +315,22 @@ pub mod update_end_of_meeting_reminder {
         }
         /// <p>Whether an end of meeting reminder is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Consumes the builder and constructs a [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder).
         pub fn build(self) -> crate::model::UpdateEndOfMeetingReminder {
             crate::model::UpdateEndOfMeetingReminder {
-                reminder_at_minutes: self.reminder_at_minutes,
-                reminder_type: self.reminder_type,
-                enabled: self.enabled,
+                reminder_at_minutes: self.reminder_at_minutes
+                ,
+                reminder_type: self.reminder_type
+                ,
+                enabled: self.enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateEndOfMeetingReminder {
     /// Creates a new builder-style object to manufacture [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder).
@@ -361,9 +345,9 @@ impl UpdateEndOfMeetingReminder {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let endofmeetingremindertype = unimplemented!();
 /// match endofmeetingremindertype {
@@ -387,22 +371,14 @@ impl UpdateEndOfMeetingReminder {
 /// Specifically, when `endofmeetingremindertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EndOfMeetingReminderType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EndOfMeetingReminderType {
     #[allow(missing_docs)] // documentation missing in model
     AnnouncementTimeCheck,
@@ -413,50 +389,41 @@ pub enum EndOfMeetingReminderType {
     #[allow(missing_docs)] // documentation missing in model
     Knock,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EndOfMeetingReminderType {
     fn from(s: &str) -> Self {
         match s {
             "ANNOUNCEMENT_TIME_CHECK" => EndOfMeetingReminderType::AnnouncementTimeCheck,
-            "ANNOUNCEMENT_VARIABLE_TIME_LEFT" => {
-                EndOfMeetingReminderType::AnnouncementVariableTimeLeft
-            }
+            "ANNOUNCEMENT_VARIABLE_TIME_LEFT" => EndOfMeetingReminderType::AnnouncementVariableTimeLeft,
             "CHIME" => EndOfMeetingReminderType::Chime,
             "KNOCK" => EndOfMeetingReminderType::Knock,
-            other => EndOfMeetingReminderType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EndOfMeetingReminderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EndOfMeetingReminderType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EndOfMeetingReminderType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EndOfMeetingReminderType::from(s))
+                }
+            }
 impl EndOfMeetingReminderType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EndOfMeetingReminderType::AnnouncementTimeCheck => "ANNOUNCEMENT_TIME_CHECK",
-            EndOfMeetingReminderType::AnnouncementVariableTimeLeft => {
-                "ANNOUNCEMENT_VARIABLE_TIME_LEFT"
-            }
+            EndOfMeetingReminderType::AnnouncementVariableTimeLeft => "ANNOUNCEMENT_VARIABLE_TIME_LEFT",
             EndOfMeetingReminderType::Chime => "CHIME",
             EndOfMeetingReminderType::Knock => "KNOCK",
-            EndOfMeetingReminderType::Unknown(value) => value.as_str(),
+            EndOfMeetingReminderType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ANNOUNCEMENT_TIME_CHECK",
-            "ANNOUNCEMENT_VARIABLE_TIME_LEFT",
-            "CHIME",
-            "KNOCK",
+            "ANNOUNCEMENT_TIME_CHECK", "ANNOUNCEMENT_VARIABLE_TIME_LEFT", "CHIME", "KNOCK"
         ]
     }
 }
@@ -472,9 +439,9 @@ impl AsRef<str> for EndOfMeetingReminderType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let wakeword = unimplemented!();
 /// match wakeword {
@@ -498,22 +465,14 @@ impl AsRef<str> for EndOfMeetingReminderType {
 /// Specifically, when `wakeword` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WakeWord::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WakeWord {
     #[allow(missing_docs)] // documentation missing in model
     Alexa,
@@ -524,7 +483,7 @@ pub enum WakeWord {
     #[allow(missing_docs)] // documentation missing in model
     Echo,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WakeWord {
     fn from(s: &str) -> Self {
@@ -533,17 +492,17 @@ impl std::convert::From<&str> for WakeWord {
             "AMAZON" => WakeWord::Amazon,
             "COMPUTER" => WakeWord::Computer,
             "ECHO" => WakeWord::Echo,
-            other => WakeWord::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => WakeWord::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WakeWord {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WakeWord::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WakeWord::from(s))
+                }
+            }
 impl WakeWord {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -552,12 +511,14 @@ impl WakeWord {
             WakeWord::Amazon => "AMAZON",
             WakeWord::Computer => "COMPUTER",
             WakeWord::Echo => "ECHO",
-            WakeWord::Unknown(value) => value.as_str(),
+            WakeWord::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALEXA", "AMAZON", "COMPUTER", "ECHO"]
+        &[
+            "ALEXA", "AMAZON", "COMPUTER", "ECHO"
+        ]
     }
 }
 impl AsRef<str> for WakeWord {
@@ -572,9 +533,9 @@ impl AsRef<str> for WakeWord {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let temperatureunit = unimplemented!();
 /// match temperatureunit {
@@ -596,58 +557,52 @@ impl AsRef<str> for WakeWord {
 /// Specifically, when `temperatureunit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TemperatureUnit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TemperatureUnit {
     #[allow(missing_docs)] // documentation missing in model
     Celsius,
     #[allow(missing_docs)] // documentation missing in model
     Fahrenheit,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TemperatureUnit {
     fn from(s: &str) -> Self {
         match s {
             "CELSIUS" => TemperatureUnit::Celsius,
             "FAHRENHEIT" => TemperatureUnit::Fahrenheit,
-            other => TemperatureUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TemperatureUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TemperatureUnit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TemperatureUnit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TemperatureUnit::from(s))
+                }
+            }
 impl TemperatureUnit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TemperatureUnit::Celsius => "CELSIUS",
             TemperatureUnit::Fahrenheit => "FAHRENHEIT",
-            TemperatureUnit::Unknown(value) => value.as_str(),
+            TemperatureUnit::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CELSIUS", "FAHRENHEIT"]
+        &[
+            "CELSIUS", "FAHRENHEIT"
+        ]
     }
 }
 impl AsRef<str> for TemperatureUnit {
@@ -662,9 +617,9 @@ impl AsRef<str> for TemperatureUnit {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let distanceunit = unimplemented!();
 /// match distanceunit {
@@ -686,58 +641,52 @@ impl AsRef<str> for TemperatureUnit {
 /// Specifically, when `distanceunit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DistanceUnit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DistanceUnit {
     #[allow(missing_docs)] // documentation missing in model
     Imperial,
     #[allow(missing_docs)] // documentation missing in model
     Metric,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DistanceUnit {
     fn from(s: &str) -> Self {
         match s {
             "IMPERIAL" => DistanceUnit::Imperial,
             "METRIC" => DistanceUnit::Metric,
-            other => DistanceUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DistanceUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DistanceUnit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DistanceUnit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DistanceUnit::from(s))
+                }
+            }
 impl DistanceUnit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DistanceUnit::Imperial => "IMPERIAL",
             DistanceUnit::Metric => "METRIC",
-            DistanceUnit::Unknown(value) => value.as_str(),
+            DistanceUnit::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IMPERIAL", "METRIC"]
+        &[
+            "IMPERIAL", "METRIC"
+        ]
     }
 }
 impl AsRef<str> for DistanceUnit {
@@ -749,7 +698,7 @@ impl AsRef<str> for DistanceUnit {
 /// <p>The SIP address for the contact containing the URI and SIP address type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SipAddress {
+pub struct SipAddress  {
     /// <p>The URI for the SIP address.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
@@ -759,15 +708,15 @@ pub struct SipAddress {
 }
 impl SipAddress {
     /// <p>The URI for the SIP address.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The type of the SIP address.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::SipType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::SipType> {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for SipAddress {
+impl  std::fmt::Debug for SipAddress  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SipAddress");
         formatter.field("uri", &"*** Sensitive Data Redacted ***");
@@ -777,7 +726,7 @@ impl std::fmt::Debug for SipAddress {
 }
 /// See [`SipAddress`](crate::model::SipAddress).
 pub mod sip_address {
-
+    
     /// A builder for [`SipAddress`](crate::model::SipAddress).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -792,8 +741,7 @@ pub mod sip_address {
         }
         /// <p>The URI for the SIP address.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// <p>The type of the SIP address.</p>
         pub fn r#type(mut self, input: crate::model::SipType) -> Self {
@@ -802,14 +750,15 @@ pub mod sip_address {
         }
         /// <p>The type of the SIP address.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::SipType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`SipAddress`](crate::model::SipAddress).
         pub fn build(self) -> crate::model::SipAddress {
             crate::model::SipAddress {
-                uri: self.uri,
-                r#type: self.r#type,
+                uri: self.uri
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
@@ -821,6 +770,8 @@ pub mod sip_address {
             formatter.finish()
         }
     }
+    
+    
 }
 impl SipAddress {
     /// Creates a new builder-style object to manufacture [`SipAddress`](crate::model::SipAddress).
@@ -835,9 +786,9 @@ impl SipAddress {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let siptype = unimplemented!();
 /// match siptype {
@@ -858,53 +809,48 @@ impl SipAddress {
 /// Specifically, when `siptype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SipType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::hash::Hash)]
 pub enum SipType {
     #[allow(missing_docs)] // documentation missing in model
     Work,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SipType {
     fn from(s: &str) -> Self {
         match s {
             "WORK" => SipType::Work,
-            other => SipType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SipType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SipType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SipType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SipType::from(s))
+                }
+            }
 impl SipType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SipType::Work => "WORK",
-            SipType::Unknown(value) => value.as_str(),
+            SipType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["WORK"]
+        &[
+            "WORK"
+        ]
     }
 }
 impl AsRef<str> for SipType {
@@ -913,15 +859,15 @@ impl AsRef<str> for SipType {
     }
 }
 impl std::fmt::Debug for SipType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "*** Sensitive Data Redacted ***")
-    }
-}
+                fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                    write!(f, "*** Sensitive Data Redacted ***")
+                }
+            }
 
 /// <p>The phone number for the contact containing the raw number and phone number type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PhoneNumber {
+pub struct PhoneNumber  {
     /// <p>The raw value of the phone number.</p>
     #[doc(hidden)]
     pub number: std::option::Option<std::string::String>,
@@ -931,15 +877,15 @@ pub struct PhoneNumber {
 }
 impl PhoneNumber {
     /// <p>The raw value of the phone number.</p>
-    pub fn number(&self) -> std::option::Option<&str> {
+    pub fn number(&self) -> std::option::Option<& str> {
         self.number.as_deref()
     }
     /// <p>The type of the phone number.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PhoneNumberType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PhoneNumberType> {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for PhoneNumber {
+impl  std::fmt::Debug for PhoneNumber  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PhoneNumber");
         formatter.field("number", &"*** Sensitive Data Redacted ***");
@@ -949,7 +895,7 @@ impl std::fmt::Debug for PhoneNumber {
 }
 /// See [`PhoneNumber`](crate::model::PhoneNumber).
 pub mod phone_number {
-
+    
     /// A builder for [`PhoneNumber`](crate::model::PhoneNumber).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -964,8 +910,7 @@ pub mod phone_number {
         }
         /// <p>The raw value of the phone number.</p>
         pub fn set_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.number = input;
-            self
+            self.number = input; self
         }
         /// <p>The type of the phone number.</p>
         pub fn r#type(mut self, input: crate::model::PhoneNumberType) -> Self {
@@ -973,18 +918,16 @@ pub mod phone_number {
             self
         }
         /// <p>The type of the phone number.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::PhoneNumberType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::PhoneNumberType>) -> Self {
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`PhoneNumber`](crate::model::PhoneNumber).
         pub fn build(self) -> crate::model::PhoneNumber {
             crate::model::PhoneNumber {
-                number: self.number,
-                r#type: self.r#type,
+                number: self.number
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
@@ -996,6 +939,8 @@ pub mod phone_number {
             formatter.finish()
         }
     }
+    
+    
 }
 impl PhoneNumber {
     /// Creates a new builder-style object to manufacture [`PhoneNumber`](crate::model::PhoneNumber).
@@ -1010,9 +955,9 @@ impl PhoneNumber {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let phonenumbertype = unimplemented!();
 /// match phonenumbertype {
@@ -1035,21 +980,14 @@ impl PhoneNumber {
 /// Specifically, when `phonenumbertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PhoneNumberType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::hash::Hash)]
 pub enum PhoneNumberType {
     #[allow(missing_docs)] // documentation missing in model
     Home,
@@ -1058,7 +996,7 @@ pub enum PhoneNumberType {
     #[allow(missing_docs)] // documentation missing in model
     Work,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PhoneNumberType {
     fn from(s: &str) -> Self {
@@ -1066,17 +1004,17 @@ impl std::convert::From<&str> for PhoneNumberType {
             "HOME" => PhoneNumberType::Home,
             "MOBILE" => PhoneNumberType::Mobile,
             "WORK" => PhoneNumberType::Work,
-            other => PhoneNumberType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PhoneNumberType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PhoneNumberType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PhoneNumberType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PhoneNumberType::from(s))
+                }
+            }
 impl PhoneNumberType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1084,12 +1022,14 @@ impl PhoneNumberType {
             PhoneNumberType::Home => "HOME",
             PhoneNumberType::Mobile => "MOBILE",
             PhoneNumberType::Work => "WORK",
-            PhoneNumberType::Unknown(value) => value.as_str(),
+            PhoneNumberType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HOME", "MOBILE", "WORK"]
+        &[
+            "HOME", "MOBILE", "WORK"
+        ]
     }
 }
 impl AsRef<str> for PhoneNumberType {
@@ -1098,33 +1038,33 @@ impl AsRef<str> for PhoneNumberType {
     }
 }
 impl std::fmt::Debug for PhoneNumberType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "*** Sensitive Data Redacted ***")
-    }
-}
+                fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                    write!(f, "*** Sensitive Data Redacted ***")
+                }
+            }
 
-/// <p>The values that indicate whether a pin is always required (YES), never required (NO), or OPTIONAL.</p>
-/// <ul>
-/// <li> <p>If YES, Alexa will always ask for a meeting pin.</p> </li>
-/// <li> <p>If NO, Alexa will never ask for a meeting pin.</p> </li>
-/// <li> <p>If OPTIONAL, Alexa will ask if you have a meeting pin and if the customer responds with yes, it will ask for the meeting pin.</p> </li>
+/// <p>The values that indicate whether a pin is always required (YES), never required (NO), or OPTIONAL.</p> 
+/// <ul> 
+/// <li> <p>If YES, Alexa will always ask for a meeting pin.</p> </li> 
+/// <li> <p>If NO, Alexa will never ask for a meeting pin.</p> </li> 
+/// <li> <p>If OPTIONAL, Alexa will ask if you have a meeting pin and if the customer responds with yes, it will ask for the meeting pin.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MeetingSetting {
+pub struct MeetingSetting  {
     /// <p>The values that indicate whether the pin is always required.</p>
     #[doc(hidden)]
     pub require_pin: std::option::Option<crate::model::RequirePin>,
 }
 impl MeetingSetting {
     /// <p>The values that indicate whether the pin is always required.</p>
-    pub fn require_pin(&self) -> std::option::Option<&crate::model::RequirePin> {
+    pub fn require_pin(&self) -> std::option::Option<& crate::model::RequirePin> {
         self.require_pin.as_ref()
     }
 }
 /// See [`MeetingSetting`](crate::model::MeetingSetting).
 pub mod meeting_setting {
-
+    
     /// A builder for [`MeetingSetting`](crate::model::MeetingSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1137,20 +1077,19 @@ pub mod meeting_setting {
             self
         }
         /// <p>The values that indicate whether the pin is always required.</p>
-        pub fn set_require_pin(
-            mut self,
-            input: std::option::Option<crate::model::RequirePin>,
-        ) -> Self {
-            self.require_pin = input;
-            self
+        pub fn set_require_pin(mut self, input: std::option::Option<crate::model::RequirePin>) -> Self {
+            self.require_pin = input; self
         }
         /// Consumes the builder and constructs a [`MeetingSetting`](crate::model::MeetingSetting).
         pub fn build(self) -> crate::model::MeetingSetting {
             crate::model::MeetingSetting {
-                require_pin: self.require_pin,
+                require_pin: self.require_pin
+                ,
             }
         }
     }
+    
+    
 }
 impl MeetingSetting {
     /// Creates a new builder-style object to manufacture [`MeetingSetting`](crate::model::MeetingSetting).
@@ -1165,9 +1104,9 @@ impl MeetingSetting {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let requirepin = unimplemented!();
 /// match requirepin {
@@ -1190,22 +1129,14 @@ impl MeetingSetting {
 /// Specifically, when `requirepin` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RequirePin::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RequirePin {
     #[allow(missing_docs)] // documentation missing in model
     No,
@@ -1214,7 +1145,7 @@ pub enum RequirePin {
     #[allow(missing_docs)] // documentation missing in model
     Yes,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RequirePin {
     fn from(s: &str) -> Self {
@@ -1222,17 +1153,17 @@ impl std::convert::From<&str> for RequirePin {
             "NO" => RequirePin::No,
             "OPTIONAL" => RequirePin::Optional,
             "YES" => RequirePin::Yes,
-            other => RequirePin::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RequirePin::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RequirePin {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RequirePin::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RequirePin::from(s))
+                }
+            }
 impl RequirePin {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1240,12 +1171,14 @@ impl RequirePin {
             RequirePin::No => "NO",
             RequirePin::Optional => "OPTIONAL",
             RequirePin::Yes => "YES",
-            RequirePin::Unknown(value) => value.as_str(),
+            RequirePin::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NO", "OPTIONAL", "YES"]
+        &[
+            "NO", "OPTIONAL", "YES"
+        ]
     }
 }
 impl AsRef<str> for RequirePin {
@@ -1257,7 +1190,7 @@ impl AsRef<str> for RequirePin {
 /// <p>The information for public switched telephone network (PSTN) conferencing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PstnDialIn {
+pub struct PstnDialIn  {
     /// <p>The zip code.</p>
     #[doc(hidden)]
     pub country_code: std::option::Option<std::string::String>,
@@ -1273,25 +1206,25 @@ pub struct PstnDialIn {
 }
 impl PstnDialIn {
     /// <p>The zip code.</p>
-    pub fn country_code(&self) -> std::option::Option<&str> {
+    pub fn country_code(&self) -> std::option::Option<& str> {
         self.country_code.as_deref()
     }
     /// <p>The phone number to call to join the conference.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>The delay duration before Alexa enters the conference ID with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
-    pub fn one_click_id_delay(&self) -> std::option::Option<&str> {
+    pub fn one_click_id_delay(&self) -> std::option::Option<& str> {
         self.one_click_id_delay.as_deref()
     }
     /// <p>The delay duration before Alexa enters the conference pin with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
-    pub fn one_click_pin_delay(&self) -> std::option::Option<&str> {
+    pub fn one_click_pin_delay(&self) -> std::option::Option<& str> {
         self.one_click_pin_delay.as_deref()
     }
 }
 /// See [`PstnDialIn`](crate::model::PstnDialIn).
 pub mod pstn_dial_in {
-
+    
     /// A builder for [`PstnDialIn`](crate::model::PstnDialIn).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1308,8 +1241,7 @@ pub mod pstn_dial_in {
         }
         /// <p>The zip code.</p>
         pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country_code = input;
-            self
+            self.country_code = input; self
         }
         /// <p>The phone number to call to join the conference.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1318,8 +1250,7 @@ pub mod pstn_dial_in {
         }
         /// <p>The phone number to call to join the conference.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = input;
-            self
+            self.phone_number = input; self
         }
         /// <p>The delay duration before Alexa enters the conference ID with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
         pub fn one_click_id_delay(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1327,12 +1258,8 @@ pub mod pstn_dial_in {
             self
         }
         /// <p>The delay duration before Alexa enters the conference ID with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
-        pub fn set_one_click_id_delay(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.one_click_id_delay = input;
-            self
+        pub fn set_one_click_id_delay(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.one_click_id_delay = input; self
         }
         /// <p>The delay duration before Alexa enters the conference pin with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
         pub fn one_click_pin_delay(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1340,23 +1267,25 @@ pub mod pstn_dial_in {
             self
         }
         /// <p>The delay duration before Alexa enters the conference pin with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
-        pub fn set_one_click_pin_delay(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.one_click_pin_delay = input;
-            self
+        pub fn set_one_click_pin_delay(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.one_click_pin_delay = input; self
         }
         /// Consumes the builder and constructs a [`PstnDialIn`](crate::model::PstnDialIn).
         pub fn build(self) -> crate::model::PstnDialIn {
             crate::model::PstnDialIn {
-                country_code: self.country_code,
-                phone_number: self.phone_number,
-                one_click_id_delay: self.one_click_id_delay,
-                one_click_pin_delay: self.one_click_pin_delay,
+                country_code: self.country_code
+                ,
+                phone_number: self.phone_number
+                ,
+                one_click_id_delay: self.one_click_id_delay
+                ,
+                one_click_pin_delay: self.one_click_pin_delay
+                ,
             }
         }
     }
+    
+    
 }
 impl PstnDialIn {
     /// Creates a new builder-style object to manufacture [`PstnDialIn`](crate::model::PstnDialIn).
@@ -1368,7 +1297,7 @@ impl PstnDialIn {
 /// <p>The IP endpoint and protocol for calling.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IpDialIn {
+pub struct IpDialIn  {
     /// <p>The IP address.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
@@ -1378,17 +1307,17 @@ pub struct IpDialIn {
 }
 impl IpDialIn {
     /// <p>The IP address.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The protocol, including SIP, SIPS, and H323.</p>
-    pub fn comms_protocol(&self) -> std::option::Option<&crate::model::CommsProtocol> {
+    pub fn comms_protocol(&self) -> std::option::Option<& crate::model::CommsProtocol> {
         self.comms_protocol.as_ref()
     }
 }
 /// See [`IpDialIn`](crate::model::IpDialIn).
 pub mod ip_dial_in {
-
+    
     /// A builder for [`IpDialIn`](crate::model::IpDialIn).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1403,8 +1332,7 @@ pub mod ip_dial_in {
         }
         /// <p>The IP address.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// <p>The protocol, including SIP, SIPS, and H323.</p>
         pub fn comms_protocol(mut self, input: crate::model::CommsProtocol) -> Self {
@@ -1412,21 +1340,21 @@ pub mod ip_dial_in {
             self
         }
         /// <p>The protocol, including SIP, SIPS, and H323.</p>
-        pub fn set_comms_protocol(
-            mut self,
-            input: std::option::Option<crate::model::CommsProtocol>,
-        ) -> Self {
-            self.comms_protocol = input;
-            self
+        pub fn set_comms_protocol(mut self, input: std::option::Option<crate::model::CommsProtocol>) -> Self {
+            self.comms_protocol = input; self
         }
         /// Consumes the builder and constructs a [`IpDialIn`](crate::model::IpDialIn).
         pub fn build(self) -> crate::model::IpDialIn {
             crate::model::IpDialIn {
-                endpoint: self.endpoint,
-                comms_protocol: self.comms_protocol,
+                endpoint: self.endpoint
+                ,
+                comms_protocol: self.comms_protocol
+                ,
             }
         }
     }
+    
+    
 }
 impl IpDialIn {
     /// Creates a new builder-style object to manufacture [`IpDialIn`](crate::model::IpDialIn).
@@ -1441,9 +1369,9 @@ impl IpDialIn {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let commsprotocol = unimplemented!();
 /// match commsprotocol {
@@ -1466,22 +1394,14 @@ impl IpDialIn {
 /// Specifically, when `commsprotocol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CommsProtocol::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CommsProtocol {
     #[allow(missing_docs)] // documentation missing in model
     H323,
@@ -1490,7 +1410,7 @@ pub enum CommsProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Sips,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CommsProtocol {
     fn from(s: &str) -> Self {
@@ -1498,17 +1418,17 @@ impl std::convert::From<&str> for CommsProtocol {
             "H323" => CommsProtocol::H323,
             "SIP" => CommsProtocol::Sip,
             "SIPS" => CommsProtocol::Sips,
-            other => CommsProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CommsProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CommsProtocol {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CommsProtocol::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CommsProtocol::from(s))
+                }
+            }
 impl CommsProtocol {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1516,12 +1436,14 @@ impl CommsProtocol {
             CommsProtocol::H323 => "H323",
             CommsProtocol::Sip => "SIP",
             CommsProtocol::Sips => "SIPS",
-            CommsProtocol::Unknown(value) => value.as_str(),
+            CommsProtocol::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["H323", "SIP", "SIPS"]
+        &[
+            "H323", "SIP", "SIPS"
+        ]
     }
 }
 impl AsRef<str> for CommsProtocol {
@@ -1536,9 +1458,9 @@ impl AsRef<str> for CommsProtocol {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let conferenceprovidertype = unimplemented!();
 /// match conferenceprovidertype {
@@ -1568,22 +1490,14 @@ impl AsRef<str> for CommsProtocol {
 /// Specifically, when `conferenceprovidertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConferenceProviderType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConferenceProviderType {
     #[allow(missing_docs)] // documentation missing in model
     Bluejeans,
@@ -1606,7 +1520,7 @@ pub enum ConferenceProviderType {
     #[allow(missing_docs)] // documentation missing in model
     Zoom,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConferenceProviderType {
     fn from(s: &str) -> Self {
@@ -1621,19 +1535,17 @@ impl std::convert::From<&str> for ConferenceProviderType {
             "SKYPE_FOR_BUSINESS" => ConferenceProviderType::SkypeForBusiness,
             "WEBEX" => ConferenceProviderType::Webex,
             "ZOOM" => ConferenceProviderType::Zoom,
-            other => {
-                ConferenceProviderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ConferenceProviderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConferenceProviderType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConferenceProviderType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConferenceProviderType::from(s))
+                }
+            }
 impl ConferenceProviderType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1648,22 +1560,13 @@ impl ConferenceProviderType {
             ConferenceProviderType::SkypeForBusiness => "SKYPE_FOR_BUSINESS",
             ConferenceProviderType::Webex => "WEBEX",
             ConferenceProviderType::Zoom => "ZOOM",
-            ConferenceProviderType::Unknown(value) => value.as_str(),
+            ConferenceProviderType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BLUEJEANS",
-            "CHIME",
-            "CUSTOM",
-            "FUZE",
-            "GOOGLE_HANGOUTS",
-            "POLYCOM",
-            "RINGCENTRAL",
-            "SKYPE_FOR_BUSINESS",
-            "WEBEX",
-            "ZOOM",
+            "BLUEJEANS", "CHIME", "CUSTOM", "FUZE", "GOOGLE_HANGOUTS", "POLYCOM", "RINGCENTRAL", "SKYPE_FOR_BUSINESS", "WEBEX", "ZOOM"
         ]
     }
 }
@@ -1676,20 +1579,20 @@ impl AsRef<str> for ConferenceProviderType {
 /// <p>The recurrence of the reports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BusinessReportRecurrence {
+pub struct BusinessReportRecurrence  {
     /// <p>The start date.</p>
     #[doc(hidden)]
     pub start_date: std::option::Option<std::string::String>,
 }
 impl BusinessReportRecurrence {
     /// <p>The start date.</p>
-    pub fn start_date(&self) -> std::option::Option<&str> {
+    pub fn start_date(&self) -> std::option::Option<& str> {
         self.start_date.as_deref()
     }
 }
 /// See [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence).
 pub mod business_report_recurrence {
-
+    
     /// A builder for [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1703,16 +1606,18 @@ pub mod business_report_recurrence {
         }
         /// <p>The start date.</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start_date = input;
-            self
+            self.start_date = input; self
         }
         /// Consumes the builder and constructs a [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence).
         pub fn build(self) -> crate::model::BusinessReportRecurrence {
             crate::model::BusinessReportRecurrence {
-                start_date: self.start_date,
+                start_date: self.start_date
+                ,
             }
         }
     }
+    
+    
 }
 impl BusinessReportRecurrence {
     /// Creates a new builder-style object to manufacture [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence).
@@ -1727,9 +1632,9 @@ impl BusinessReportRecurrence {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let businessreportformat = unimplemented!();
 /// match businessreportformat {
@@ -1751,60 +1656,52 @@ impl BusinessReportRecurrence {
 /// Specifically, when `businessreportformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BusinessReportFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BusinessReportFormat {
     #[allow(missing_docs)] // documentation missing in model
     Csv,
     #[allow(missing_docs)] // documentation missing in model
     CsvZip,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BusinessReportFormat {
     fn from(s: &str) -> Self {
         match s {
             "CSV" => BusinessReportFormat::Csv,
             "CSV_ZIP" => BusinessReportFormat::CsvZip,
-            other => {
-                BusinessReportFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => BusinessReportFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BusinessReportFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BusinessReportFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BusinessReportFormat::from(s))
+                }
+            }
 impl BusinessReportFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BusinessReportFormat::Csv => "CSV",
             BusinessReportFormat::CsvZip => "CSV_ZIP",
-            BusinessReportFormat::Unknown(value) => value.as_str(),
+            BusinessReportFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CSV", "CSV_ZIP"]
+        &[
+            "CSV", "CSV_ZIP"
+        ]
     }
 }
 impl AsRef<str> for BusinessReportFormat {
@@ -1816,7 +1713,7 @@ impl AsRef<str> for BusinessReportFormat {
 /// <p>A key-value pair that can be associated with a resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key of a tag. Tag keys are case-sensitive. </p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -1826,17 +1723,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key of a tag. Tag keys are case-sensitive. </p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of a tag. Tag values are case sensitive and can be null.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1851,8 +1748,7 @@ pub mod tag {
         }
         /// <p>The key of a tag. Tag keys are case-sensitive. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of a tag. Tag values are case sensitive and can be null.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1861,17 +1757,20 @@ pub mod tag {
         }
         /// <p>The value of a tag. Tag values are case sensitive and can be null.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -1886,9 +1785,9 @@ impl Tag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let feature = unimplemented!();
 /// match feature {
@@ -1916,22 +1815,14 @@ impl Tag {
 /// Specifically, when `feature` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Feature::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Feature {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -1950,7 +1841,7 @@ pub enum Feature {
     #[allow(missing_docs)] // documentation missing in model
     Volume,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Feature {
     fn from(s: &str) -> Self {
@@ -1963,17 +1854,17 @@ impl std::convert::From<&str> for Feature {
             "SETTINGS" => Feature::Settings,
             "SKILLS" => Feature::Skills,
             "VOLUME" => Feature::Volume,
-            other => Feature::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Feature::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Feature {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Feature::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Feature::from(s))
+                }
+            }
 impl Feature {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1986,20 +1877,13 @@ impl Feature {
             Feature::Settings => "SETTINGS",
             Feature::Skills => "SKILLS",
             Feature::Volume => "VOLUME",
-            Feature::Unknown(value) => value.as_str(),
+            Feature::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ALL",
-            "BLUETOOTH",
-            "LISTS",
-            "NETWORK_PROFILE",
-            "NOTIFICATIONS",
-            "SETTINGS",
-            "SKILLS",
-            "VOLUME",
+            "ALL", "BLUETOOTH", "LISTS", "NETWORK_PROFILE", "NOTIFICATIONS", "SETTINGS", "SKILLS", "VOLUME"
         ]
     }
 }
@@ -2012,7 +1896,7 @@ impl AsRef<str> for Feature {
 /// <p>The content definition. This can contain only one text, SSML, or audio list object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Content {
+pub struct Content  {
     /// <p>The list of text messages.</p>
     #[doc(hidden)]
     pub text_list: std::option::Option<std::vec::Vec<crate::model::Text>>,
@@ -2025,21 +1909,21 @@ pub struct Content {
 }
 impl Content {
     /// <p>The list of text messages.</p>
-    pub fn text_list(&self) -> std::option::Option<&[crate::model::Text]> {
+    pub fn text_list(&self) -> std::option::Option<& [crate::model::Text]> {
         self.text_list.as_deref()
     }
     /// <p>The list of SSML messages.</p>
-    pub fn ssml_list(&self) -> std::option::Option<&[crate::model::Ssml]> {
+    pub fn ssml_list(&self) -> std::option::Option<& [crate::model::Ssml]> {
         self.ssml_list.as_deref()
     }
     /// <p>The list of audio messages.</p>
-    pub fn audio_list(&self) -> std::option::Option<&[crate::model::Audio]> {
+    pub fn audio_list(&self) -> std::option::Option<& [crate::model::Audio]> {
         self.audio_list.as_deref()
     }
 }
 /// See [`Content`](crate::model::Content).
 pub mod content {
-
+    
     /// A builder for [`Content`](crate::model::Content).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2055,17 +1939,13 @@ pub mod content {
         /// <p>The list of text messages.</p>
         pub fn text_list(mut self, input: crate::model::Text) -> Self {
             let mut v = self.text_list.unwrap_or_default();
-            v.push(input);
-            self.text_list = Some(v);
-            self
+                            v.push(input);
+                            self.text_list = Some(v);
+                            self
         }
         /// <p>The list of text messages.</p>
-        pub fn set_text_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Text>>,
-        ) -> Self {
-            self.text_list = input;
-            self
+        pub fn set_text_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Text>>) -> Self {
+            self.text_list = input; self
         }
         /// Appends an item to `ssml_list`.
         ///
@@ -2074,17 +1954,13 @@ pub mod content {
         /// <p>The list of SSML messages.</p>
         pub fn ssml_list(mut self, input: crate::model::Ssml) -> Self {
             let mut v = self.ssml_list.unwrap_or_default();
-            v.push(input);
-            self.ssml_list = Some(v);
-            self
+                            v.push(input);
+                            self.ssml_list = Some(v);
+                            self
         }
         /// <p>The list of SSML messages.</p>
-        pub fn set_ssml_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Ssml>>,
-        ) -> Self {
-            self.ssml_list = input;
-            self
+        pub fn set_ssml_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Ssml>>) -> Self {
+            self.ssml_list = input; self
         }
         /// Appends an item to `audio_list`.
         ///
@@ -2093,27 +1969,28 @@ pub mod content {
         /// <p>The list of audio messages.</p>
         pub fn audio_list(mut self, input: crate::model::Audio) -> Self {
             let mut v = self.audio_list.unwrap_or_default();
-            v.push(input);
-            self.audio_list = Some(v);
-            self
+                            v.push(input);
+                            self.audio_list = Some(v);
+                            self
         }
         /// <p>The list of audio messages.</p>
-        pub fn set_audio_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Audio>>,
-        ) -> Self {
-            self.audio_list = input;
-            self
+        pub fn set_audio_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Audio>>) -> Self {
+            self.audio_list = input; self
         }
         /// Consumes the builder and constructs a [`Content`](crate::model::Content).
         pub fn build(self) -> crate::model::Content {
             crate::model::Content {
-                text_list: self.text_list,
-                ssml_list: self.ssml_list,
-                audio_list: self.audio_list,
+                text_list: self.text_list
+                ,
+                ssml_list: self.ssml_list
+                ,
+                audio_list: self.audio_list
+                ,
             }
         }
     }
+    
+    
 }
 impl Content {
     /// Creates a new builder-style object to manufacture [`Content`](crate::model::Content).
@@ -2122,18 +1999,18 @@ impl Content {
     }
 }
 
-/// <p>The audio message. There is a 1 MB limit on the audio file input and the only supported format is MP3. To convert your MP3 audio files to an Alexa-friendly, </p>
+/// <p>The audio message. There is a 1 MB limit on the audio file input and the only supported format is MP3. To convert your MP3 audio files to an Alexa-friendly, </p> 
 /// <p>required codec version (MPEG version 2) and bit rate (48 kbps), you might use converter software. One option for this is a command-line tool, FFmpeg. For more information, see <a href="https://www.ffmpeg.org/">FFmpeg</a>. The following command converts the provided <input-file>
 /// to an MP3 file that is played in the announcement:
-/// </input-file></p>
-/// <p> <code>ffmpeg -i
+/// </input-file></p> 
+/// <p> <code>ffmpeg -i 
 /// <input-file>
-/// -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000
+/// -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000 
 /// <output-file.mp3></output-file.mp3>
 /// </input-file></code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Audio {
+pub struct Audio  {
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
     #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
@@ -2143,17 +2020,17 @@ pub struct Audio {
 }
 impl Audio {
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
-    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
+    pub fn locale(&self) -> std::option::Option<& crate::model::Locale> {
         self.locale.as_ref()
     }
     /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
 }
 /// See [`Audio`](crate::model::Audio).
 pub mod audio {
-
+    
     /// A builder for [`Audio`](crate::model::Audio).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2168,8 +2045,7 @@ pub mod audio {
         }
         /// <p>The locale of the audio message. Currently, en-US is supported.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
-            self.locale = input;
-            self
+            self.locale = input; self
         }
         /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2178,17 +2054,20 @@ pub mod audio {
         }
         /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// Consumes the builder and constructs a [`Audio`](crate::model::Audio).
         pub fn build(self) -> crate::model::Audio {
             crate::model::Audio {
-                locale: self.locale,
-                location: self.location,
+                locale: self.locale
+                ,
+                location: self.location
+                ,
             }
         }
     }
+    
+    
 }
 impl Audio {
     /// Creates a new builder-style object to manufacture [`Audio`](crate::model::Audio).
@@ -2203,9 +2082,9 @@ impl Audio {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let locale = unimplemented!();
 /// match locale {
@@ -2226,54 +2105,48 @@ impl Audio {
 /// Specifically, when `locale` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Locale::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Locale {
     #[allow(missing_docs)] // documentation missing in model
     EnUs,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Locale {
     fn from(s: &str) -> Self {
         match s {
             "en-US" => Locale::EnUs,
-            other => Locale::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Locale::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Locale {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Locale::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Locale::from(s))
+                }
+            }
 impl Locale {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Locale::EnUs => "en-US",
-            Locale::Unknown(value) => value.as_str(),
+            Locale::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["en-US"]
+        &[
+            "en-US"
+        ]
     }
 }
 impl AsRef<str> for Locale {
@@ -2285,7 +2158,7 @@ impl AsRef<str> for Locale {
 /// <p>The SSML message. For more information, see <a href="https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html">SSML Reference</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ssml {
+pub struct Ssml  {
     /// <p>The locale of the SSML message. Currently, en-US is supported.</p>
     #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
@@ -2295,17 +2168,17 @@ pub struct Ssml {
 }
 impl Ssml {
     /// <p>The locale of the SSML message. Currently, en-US is supported.</p>
-    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
+    pub fn locale(&self) -> std::option::Option<& crate::model::Locale> {
         self.locale.as_ref()
     }
     /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Ssml`](crate::model::Ssml).
 pub mod ssml {
-
+    
     /// A builder for [`Ssml`](crate::model::Ssml).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2320,8 +2193,7 @@ pub mod ssml {
         }
         /// <p>The locale of the SSML message. Currently, en-US is supported.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
-            self.locale = input;
-            self
+            self.locale = input; self
         }
         /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2330,17 +2202,20 @@ pub mod ssml {
         }
         /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Ssml`](crate::model::Ssml).
         pub fn build(self) -> crate::model::Ssml {
             crate::model::Ssml {
-                locale: self.locale,
-                value: self.value,
+                locale: self.locale
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Ssml {
     /// Creates a new builder-style object to manufacture [`Ssml`](crate::model::Ssml).
@@ -2352,7 +2227,7 @@ impl Ssml {
 /// <p>The text message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Text {
+pub struct Text  {
     /// <p>The locale of the text message. Currently, en-US is supported.</p>
     #[doc(hidden)]
     pub locale: std::option::Option<crate::model::Locale>,
@@ -2362,17 +2237,17 @@ pub struct Text {
 }
 impl Text {
     /// <p>The locale of the text message. Currently, en-US is supported.</p>
-    pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
+    pub fn locale(&self) -> std::option::Option<& crate::model::Locale> {
         self.locale.as_ref()
     }
     /// <p>The value of the text message.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Text`](crate::model::Text).
 pub mod text {
-
+    
     /// A builder for [`Text`](crate::model::Text).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2387,8 +2262,7 @@ pub mod text {
         }
         /// <p>The locale of the text message. Currently, en-US is supported.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
-            self.locale = input;
-            self
+            self.locale = input; self
         }
         /// <p>The value of the text message.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2397,17 +2271,20 @@ pub mod text {
         }
         /// <p>The value of the text message.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Text`](crate::model::Text).
         pub fn build(self) -> crate::model::Text {
             crate::model::Text {
-                locale: self.locale,
-                value: self.value,
+                locale: self.locale
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Text {
     /// Creates a new builder-style object to manufacture [`Text`](crate::model::Text).
@@ -2419,7 +2296,7 @@ impl Text {
 /// <p>A filter name and value pair that is used to return a more specific list of results. Filters can be used to match a set of resources by various criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The key of a filter.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -2429,17 +2306,17 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The key of a filter.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The values of a filter.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2454,8 +2331,7 @@ pub mod filter {
         }
         /// <p>The key of a filter.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -2464,26 +2340,26 @@ pub mod filter {
         /// <p>The values of a filter.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The values of a filter.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                key: self.key,
-                values: self.values,
+                key: self.key
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -2495,7 +2371,7 @@ impl Filter {
 /// <p>Information related to a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserData {
+pub struct UserData  {
     /// <p>The ARN of a user.</p>
     #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
@@ -2517,33 +2393,33 @@ pub struct UserData {
 }
 impl UserData {
     /// <p>The ARN of a user.</p>
-    pub fn user_arn(&self) -> std::option::Option<&str> {
+    pub fn user_arn(&self) -> std::option::Option<& str> {
         self.user_arn.as_deref()
     }
     /// <p>The first name of a user.</p>
-    pub fn first_name(&self) -> std::option::Option<&str> {
+    pub fn first_name(&self) -> std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>The last name of a user.</p>
-    pub fn last_name(&self) -> std::option::Option<&str> {
+    pub fn last_name(&self) -> std::option::Option<& str> {
         self.last_name.as_deref()
     }
     /// <p>The email of a user.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The enrollment status of a user.</p>
-    pub fn enrollment_status(&self) -> std::option::Option<&crate::model::EnrollmentStatus> {
+    pub fn enrollment_status(&self) -> std::option::Option<& crate::model::EnrollmentStatus> {
         self.enrollment_status.as_ref()
     }
     /// <p>The enrollment ARN of a user.</p>
-    pub fn enrollment_id(&self) -> std::option::Option<&str> {
+    pub fn enrollment_id(&self) -> std::option::Option<& str> {
         self.enrollment_id.as_deref()
     }
 }
 /// See [`UserData`](crate::model::UserData).
 pub mod user_data {
-
+    
     /// A builder for [`UserData`](crate::model::UserData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2562,8 +2438,7 @@ pub mod user_data {
         }
         /// <p>The ARN of a user.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_arn = input;
-            self
+            self.user_arn = input; self
         }
         /// <p>The first name of a user.</p>
         pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2572,8 +2447,7 @@ pub mod user_data {
         }
         /// <p>The first name of a user.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.first_name = input;
-            self
+            self.first_name = input; self
         }
         /// <p>The last name of a user.</p>
         pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2582,8 +2456,7 @@ pub mod user_data {
         }
         /// <p>The last name of a user.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.last_name = input;
-            self
+            self.last_name = input; self
         }
         /// <p>The email of a user.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2592,8 +2465,7 @@ pub mod user_data {
         }
         /// <p>The email of a user.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.email = input;
-            self
+            self.email = input; self
         }
         /// <p>The enrollment status of a user.</p>
         pub fn enrollment_status(mut self, input: crate::model::EnrollmentStatus) -> Self {
@@ -2601,12 +2473,8 @@ pub mod user_data {
             self
         }
         /// <p>The enrollment status of a user.</p>
-        pub fn set_enrollment_status(
-            mut self,
-            input: std::option::Option<crate::model::EnrollmentStatus>,
-        ) -> Self {
-            self.enrollment_status = input;
-            self
+        pub fn set_enrollment_status(mut self, input: std::option::Option<crate::model::EnrollmentStatus>) -> Self {
+            self.enrollment_status = input; self
         }
         /// <p>The enrollment ARN of a user.</p>
         pub fn enrollment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2614,25 +2482,29 @@ pub mod user_data {
             self
         }
         /// <p>The enrollment ARN of a user.</p>
-        pub fn set_enrollment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.enrollment_id = input;
-            self
+        pub fn set_enrollment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.enrollment_id = input; self
         }
         /// Consumes the builder and constructs a [`UserData`](crate::model::UserData).
         pub fn build(self) -> crate::model::UserData {
             crate::model::UserData {
-                user_arn: self.user_arn,
-                first_name: self.first_name,
-                last_name: self.last_name,
-                email: self.email,
-                enrollment_status: self.enrollment_status,
-                enrollment_id: self.enrollment_id,
+                user_arn: self.user_arn
+                ,
+                first_name: self.first_name
+                ,
+                last_name: self.last_name
+                ,
+                email: self.email
+                ,
+                enrollment_status: self.enrollment_status
+                ,
+                enrollment_id: self.enrollment_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UserData {
     /// Creates a new builder-style object to manufacture [`UserData`](crate::model::UserData).
@@ -2647,9 +2519,9 @@ impl UserData {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let enrollmentstatus = unimplemented!();
 /// match enrollmentstatus {
@@ -2674,22 +2546,14 @@ impl UserData {
 /// Specifically, when `enrollmentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnrollmentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EnrollmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deregistering,
@@ -2702,7 +2566,7 @@ pub enum EnrollmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Registered,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnrollmentStatus {
     fn from(s: &str) -> Self {
@@ -2712,17 +2576,17 @@ impl std::convert::From<&str> for EnrollmentStatus {
             "INITIALIZED" => EnrollmentStatus::Initialized,
             "PENDING" => EnrollmentStatus::Pending,
             "REGISTERED" => EnrollmentStatus::Registered,
-            other => EnrollmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EnrollmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EnrollmentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnrollmentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EnrollmentStatus::from(s))
+                }
+            }
 impl EnrollmentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2732,17 +2596,13 @@ impl EnrollmentStatus {
             EnrollmentStatus::Initialized => "INITIALIZED",
             EnrollmentStatus::Pending => "PENDING",
             EnrollmentStatus::Registered => "REGISTERED",
-            EnrollmentStatus::Unknown(value) => value.as_str(),
+            EnrollmentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DEREGISTERING",
-            "DISASSOCIATING",
-            "INITIALIZED",
-            "PENDING",
-            "REGISTERED",
+            "DEREGISTERING", "DISASSOCIATING", "INITIALIZED", "PENDING", "REGISTERED"
         ]
     }
 }
@@ -2755,7 +2615,7 @@ impl AsRef<str> for EnrollmentStatus {
 /// <p>An object representing a sort criteria. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Sort {
+pub struct Sort  {
     /// <p>The sort key of a sort object.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -2765,17 +2625,17 @@ pub struct Sort {
 }
 impl Sort {
     /// <p>The sort key of a sort object.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The sort value of a sort object.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::SortValue> {
+    pub fn value(&self) -> std::option::Option<& crate::model::SortValue> {
         self.value.as_ref()
     }
 }
 /// See [`Sort`](crate::model::Sort).
 pub mod sort {
-
+    
     /// A builder for [`Sort`](crate::model::Sort).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2790,8 +2650,7 @@ pub mod sort {
         }
         /// <p>The sort key of a sort object.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The sort value of a sort object.</p>
         pub fn value(mut self, input: crate::model::SortValue) -> Self {
@@ -2800,17 +2659,20 @@ pub mod sort {
         }
         /// <p>The sort value of a sort object.</p>
         pub fn set_value(mut self, input: std::option::Option<crate::model::SortValue>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Sort`](crate::model::Sort).
         pub fn build(self) -> crate::model::Sort {
             crate::model::Sort {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Sort {
     /// Creates a new builder-style object to manufacture [`Sort`](crate::model::Sort).
@@ -2825,9 +2687,9 @@ impl Sort {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sortvalue = unimplemented!();
 /// match sortvalue {
@@ -2849,58 +2711,52 @@ impl Sort {
 /// Specifically, when `sortvalue` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SortValue::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SortValue {
     #[allow(missing_docs)] // documentation missing in model
     Asc,
     #[allow(missing_docs)] // documentation missing in model
     Desc,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortValue {
     fn from(s: &str) -> Self {
         match s {
             "ASC" => SortValue::Asc,
             "DESC" => SortValue::Desc,
-            other => SortValue::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SortValue::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SortValue {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SortValue::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SortValue::from(s))
+                }
+            }
 impl SortValue {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortValue::Asc => "ASC",
             SortValue::Desc => "DESC",
-            SortValue::Unknown(value) => value.as_str(),
+            SortValue::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASC", "DESC"]
+        &[
+            "ASC", "DESC"
+        ]
     }
 }
 impl AsRef<str> for SortValue {
@@ -2912,7 +2768,7 @@ impl AsRef<str> for SortValue {
 /// <p>The attributes of a skill group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SkillGroupData {
+pub struct SkillGroupData  {
     /// <p>The skill group ARN of a skill group.</p>
     #[doc(hidden)]
     pub skill_group_arn: std::option::Option<std::string::String>,
@@ -2925,21 +2781,21 @@ pub struct SkillGroupData {
 }
 impl SkillGroupData {
     /// <p>The skill group ARN of a skill group.</p>
-    pub fn skill_group_arn(&self) -> std::option::Option<&str> {
+    pub fn skill_group_arn(&self) -> std::option::Option<& str> {
         self.skill_group_arn.as_deref()
     }
     /// <p>The skill group name of a skill group.</p>
-    pub fn skill_group_name(&self) -> std::option::Option<&str> {
+    pub fn skill_group_name(&self) -> std::option::Option<& str> {
         self.skill_group_name.as_deref()
     }
     /// <p>The description of a skill group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`SkillGroupData`](crate::model::SkillGroupData).
 pub mod skill_group_data {
-
+    
     /// A builder for [`SkillGroupData`](crate::model::SkillGroupData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2954,12 +2810,8 @@ pub mod skill_group_data {
             self
         }
         /// <p>The skill group ARN of a skill group.</p>
-        pub fn set_skill_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.skill_group_arn = input;
-            self
+        pub fn set_skill_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.skill_group_arn = input; self
         }
         /// <p>The skill group name of a skill group.</p>
         pub fn skill_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2967,12 +2819,8 @@ pub mod skill_group_data {
             self
         }
         /// <p>The skill group name of a skill group.</p>
-        pub fn set_skill_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.skill_group_name = input;
-            self
+        pub fn set_skill_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.skill_group_name = input; self
         }
         /// <p>The description of a skill group.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2981,18 +2829,22 @@ pub mod skill_group_data {
         }
         /// <p>The description of a skill group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`SkillGroupData`](crate::model::SkillGroupData).
         pub fn build(self) -> crate::model::SkillGroupData {
             crate::model::SkillGroupData {
-                skill_group_arn: self.skill_group_arn,
-                skill_group_name: self.skill_group_name,
-                description: self.description,
+                skill_group_arn: self.skill_group_arn
+                ,
+                skill_group_name: self.skill_group_name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl SkillGroupData {
     /// Creates a new builder-style object to manufacture [`SkillGroupData`](crate::model::SkillGroupData).
@@ -3004,7 +2856,7 @@ impl SkillGroupData {
 /// <p>The data of a room.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RoomData {
+pub struct RoomData  {
     /// <p>The ARN of a room.</p>
     #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
@@ -3026,33 +2878,33 @@ pub struct RoomData {
 }
 impl RoomData {
     /// <p>The ARN of a room.</p>
-    pub fn room_arn(&self) -> std::option::Option<&str> {
+    pub fn room_arn(&self) -> std::option::Option<& str> {
         self.room_arn.as_deref()
     }
     /// <p>The name of a room.</p>
-    pub fn room_name(&self) -> std::option::Option<&str> {
+    pub fn room_name(&self) -> std::option::Option<& str> {
         self.room_name.as_deref()
     }
     /// <p>The description of a room.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The provider calendar ARN of a room.</p>
-    pub fn provider_calendar_id(&self) -> std::option::Option<&str> {
+    pub fn provider_calendar_id(&self) -> std::option::Option<& str> {
         self.provider_calendar_id.as_deref()
     }
     /// <p>The profile ARN of a room.</p>
-    pub fn profile_arn(&self) -> std::option::Option<&str> {
+    pub fn profile_arn(&self) -> std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
     /// <p>The profile name of a room.</p>
-    pub fn profile_name(&self) -> std::option::Option<&str> {
+    pub fn profile_name(&self) -> std::option::Option<& str> {
         self.profile_name.as_deref()
     }
 }
 /// See [`RoomData`](crate::model::RoomData).
 pub mod room_data {
-
+    
     /// A builder for [`RoomData`](crate::model::RoomData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3071,8 +2923,7 @@ pub mod room_data {
         }
         /// <p>The ARN of a room.</p>
         pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.room_arn = input;
-            self
+            self.room_arn = input; self
         }
         /// <p>The name of a room.</p>
         pub fn room_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3081,8 +2932,7 @@ pub mod room_data {
         }
         /// <p>The name of a room.</p>
         pub fn set_room_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.room_name = input;
-            self
+            self.room_name = input; self
         }
         /// <p>The description of a room.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3091,8 +2941,7 @@ pub mod room_data {
         }
         /// <p>The description of a room.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The provider calendar ARN of a room.</p>
         pub fn provider_calendar_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3100,12 +2949,8 @@ pub mod room_data {
             self
         }
         /// <p>The provider calendar ARN of a room.</p>
-        pub fn set_provider_calendar_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provider_calendar_id = input;
-            self
+        pub fn set_provider_calendar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_calendar_id = input; self
         }
         /// <p>The profile ARN of a room.</p>
         pub fn profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3114,8 +2959,7 @@ pub mod room_data {
         }
         /// <p>The profile ARN of a room.</p>
         pub fn set_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.profile_arn = input;
-            self
+            self.profile_arn = input; self
         }
         /// <p>The profile name of a room.</p>
         pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3124,21 +2968,28 @@ pub mod room_data {
         }
         /// <p>The profile name of a room.</p>
         pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.profile_name = input;
-            self
+            self.profile_name = input; self
         }
         /// Consumes the builder and constructs a [`RoomData`](crate::model::RoomData).
         pub fn build(self) -> crate::model::RoomData {
             crate::model::RoomData {
-                room_arn: self.room_arn,
-                room_name: self.room_name,
-                description: self.description,
-                provider_calendar_id: self.provider_calendar_id,
-                profile_arn: self.profile_arn,
-                profile_name: self.profile_name,
+                room_arn: self.room_arn
+                ,
+                room_name: self.room_name
+                ,
+                description: self.description
+                ,
+                provider_calendar_id: self.provider_calendar_id
+                ,
+                profile_arn: self.profile_arn
+                ,
+                profile_name: self.profile_name
+                ,
             }
         }
     }
+    
+    
 }
 impl RoomData {
     /// Creates a new builder-style object to manufacture [`RoomData`](crate::model::RoomData).
@@ -3150,7 +3001,7 @@ impl RoomData {
 /// <p>The data of a room profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProfileData {
+pub struct ProfileData  {
     /// <p>The ARN of a room profile.</p>
     #[doc(hidden)]
     pub profile_arn: std::option::Option<std::string::String>,
@@ -3181,11 +3032,11 @@ pub struct ProfileData {
 }
 impl ProfileData {
     /// <p>The ARN of a room profile.</p>
-    pub fn profile_arn(&self) -> std::option::Option<&str> {
+    pub fn profile_arn(&self) -> std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
     /// <p>The name of a room profile.</p>
-    pub fn profile_name(&self) -> std::option::Option<&str> {
+    pub fn profile_name(&self) -> std::option::Option<& str> {
         self.profile_name.as_deref()
     }
     /// <p>Retrieves if the profile data is default or not.</p>
@@ -3193,33 +3044,33 @@ impl ProfileData {
         self.is_default
     }
     /// <p>The address of a room profile.</p>
-    pub fn address(&self) -> std::option::Option<&str> {
+    pub fn address(&self) -> std::option::Option<& str> {
         self.address.as_deref()
     }
     /// <p>The time zone of a room profile.</p>
-    pub fn timezone(&self) -> std::option::Option<&str> {
+    pub fn timezone(&self) -> std::option::Option<& str> {
         self.timezone.as_deref()
     }
     /// <p>The distance unit of a room profile.</p>
-    pub fn distance_unit(&self) -> std::option::Option<&crate::model::DistanceUnit> {
+    pub fn distance_unit(&self) -> std::option::Option<& crate::model::DistanceUnit> {
         self.distance_unit.as_ref()
     }
     /// <p>The temperature unit of a room profile.</p>
-    pub fn temperature_unit(&self) -> std::option::Option<&crate::model::TemperatureUnit> {
+    pub fn temperature_unit(&self) -> std::option::Option<& crate::model::TemperatureUnit> {
         self.temperature_unit.as_ref()
     }
     /// <p>The wake word of a room profile.</p>
-    pub fn wake_word(&self) -> std::option::Option<&crate::model::WakeWord> {
+    pub fn wake_word(&self) -> std::option::Option<& crate::model::WakeWord> {
         self.wake_word.as_ref()
     }
     /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
-    pub fn locale(&self) -> std::option::Option<&str> {
+    pub fn locale(&self) -> std::option::Option<& str> {
         self.locale.as_deref()
     }
 }
 /// See [`ProfileData`](crate::model::ProfileData).
 pub mod profile_data {
-
+    
     /// A builder for [`ProfileData`](crate::model::ProfileData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3241,8 +3092,7 @@ pub mod profile_data {
         }
         /// <p>The ARN of a room profile.</p>
         pub fn set_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.profile_arn = input;
-            self
+            self.profile_arn = input; self
         }
         /// <p>The name of a room profile.</p>
         pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3251,8 +3101,7 @@ pub mod profile_data {
         }
         /// <p>The name of a room profile.</p>
         pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.profile_name = input;
-            self
+            self.profile_name = input; self
         }
         /// <p>Retrieves if the profile data is default or not.</p>
         pub fn is_default(mut self, input: bool) -> Self {
@@ -3261,8 +3110,7 @@ pub mod profile_data {
         }
         /// <p>Retrieves if the profile data is default or not.</p>
         pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_default = input;
-            self
+            self.is_default = input; self
         }
         /// <p>The address of a room profile.</p>
         pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3271,8 +3119,7 @@ pub mod profile_data {
         }
         /// <p>The address of a room profile.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address = input;
-            self
+            self.address = input; self
         }
         /// <p>The time zone of a room profile.</p>
         pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3281,8 +3128,7 @@ pub mod profile_data {
         }
         /// <p>The time zone of a room profile.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.timezone = input;
-            self
+            self.timezone = input; self
         }
         /// <p>The distance unit of a room profile.</p>
         pub fn distance_unit(mut self, input: crate::model::DistanceUnit) -> Self {
@@ -3290,12 +3136,8 @@ pub mod profile_data {
             self
         }
         /// <p>The distance unit of a room profile.</p>
-        pub fn set_distance_unit(
-            mut self,
-            input: std::option::Option<crate::model::DistanceUnit>,
-        ) -> Self {
-            self.distance_unit = input;
-            self
+        pub fn set_distance_unit(mut self, input: std::option::Option<crate::model::DistanceUnit>) -> Self {
+            self.distance_unit = input; self
         }
         /// <p>The temperature unit of a room profile.</p>
         pub fn temperature_unit(mut self, input: crate::model::TemperatureUnit) -> Self {
@@ -3303,12 +3145,8 @@ pub mod profile_data {
             self
         }
         /// <p>The temperature unit of a room profile.</p>
-        pub fn set_temperature_unit(
-            mut self,
-            input: std::option::Option<crate::model::TemperatureUnit>,
-        ) -> Self {
-            self.temperature_unit = input;
-            self
+        pub fn set_temperature_unit(mut self, input: std::option::Option<crate::model::TemperatureUnit>) -> Self {
+            self.temperature_unit = input; self
         }
         /// <p>The wake word of a room profile.</p>
         pub fn wake_word(mut self, input: crate::model::WakeWord) -> Self {
@@ -3317,8 +3155,7 @@ pub mod profile_data {
         }
         /// <p>The wake word of a room profile.</p>
         pub fn set_wake_word(mut self, input: std::option::Option<crate::model::WakeWord>) -> Self {
-            self.wake_word = input;
-            self
+            self.wake_word = input; self
         }
         /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
         pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3327,24 +3164,34 @@ pub mod profile_data {
         }
         /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
         pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale = input;
-            self
+            self.locale = input; self
         }
         /// Consumes the builder and constructs a [`ProfileData`](crate::model::ProfileData).
         pub fn build(self) -> crate::model::ProfileData {
             crate::model::ProfileData {
-                profile_arn: self.profile_arn,
-                profile_name: self.profile_name,
-                is_default: self.is_default,
-                address: self.address,
-                timezone: self.timezone,
-                distance_unit: self.distance_unit,
-                temperature_unit: self.temperature_unit,
-                wake_word: self.wake_word,
-                locale: self.locale,
+                profile_arn: self.profile_arn
+                ,
+                profile_name: self.profile_name
+                ,
+                is_default: self.is_default
+                ,
+                address: self.address
+                ,
+                timezone: self.timezone
+                ,
+                distance_unit: self.distance_unit
+                ,
+                temperature_unit: self.temperature_unit
+                ,
+                wake_word: self.wake_word
+                ,
+                locale: self.locale
+                ,
             }
         }
     }
+    
+    
 }
 impl ProfileData {
     /// Creates a new builder-style object to manufacture [`ProfileData`](crate::model::ProfileData).
@@ -3356,7 +3203,7 @@ impl ProfileData {
 /// <p>The data associated with a network profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkProfileData {
+pub struct NetworkProfileData  {
     /// <p>The ARN of the network profile associated with a device.</p>
     #[doc(hidden)]
     pub network_profile_arn: std::option::Option<std::string::String>,
@@ -3381,37 +3228,37 @@ pub struct NetworkProfileData {
 }
 impl NetworkProfileData {
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn network_profile_arn(&self) -> std::option::Option<& str> {
         self.network_profile_arn.as_deref()
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn network_profile_name(&self) -> std::option::Option<&str> {
+    pub fn network_profile_name(&self) -> std::option::Option<& str> {
         self.network_profile_name.as_deref()
     }
     /// <p>Detailed information about a device's network profile.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The SSID of the Wi-Fi network.</p>
-    pub fn ssid(&self) -> std::option::Option<&str> {
+    pub fn ssid(&self) -> std::option::Option<& str> {
         self.ssid.as_deref()
     }
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
-    pub fn security_type(&self) -> std::option::Option<&crate::model::NetworkSecurityType> {
+    pub fn security_type(&self) -> std::option::Option<& crate::model::NetworkSecurityType> {
         self.security_type.as_ref()
     }
     /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
-    pub fn eap_method(&self) -> std::option::Option<&crate::model::NetworkEapMethod> {
+    pub fn eap_method(&self) -> std::option::Option<& crate::model::NetworkEapMethod> {
         self.eap_method.as_ref()
     }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
-    pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
 }
 /// See [`NetworkProfileData`](crate::model::NetworkProfileData).
 pub mod network_profile_data {
-
+    
     /// A builder for [`NetworkProfileData`](crate::model::NetworkProfileData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3430,12 +3277,8 @@ pub mod network_profile_data {
             self
         }
         /// <p>The ARN of the network profile associated with a device.</p>
-        pub fn set_network_profile_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_profile_arn = input;
-            self
+        pub fn set_network_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_profile_arn = input; self
         }
         /// <p>The name of the network profile associated with a device.</p>
         pub fn network_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3443,12 +3286,8 @@ pub mod network_profile_data {
             self
         }
         /// <p>The name of the network profile associated with a device.</p>
-        pub fn set_network_profile_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_profile_name = input;
-            self
+        pub fn set_network_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_profile_name = input; self
         }
         /// <p>Detailed information about a device's network profile.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3457,8 +3296,7 @@ pub mod network_profile_data {
         }
         /// <p>Detailed information about a device's network profile.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The SSID of the Wi-Fi network.</p>
         pub fn ssid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3467,8 +3305,7 @@ pub mod network_profile_data {
         }
         /// <p>The SSID of the Wi-Fi network.</p>
         pub fn set_ssid(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ssid = input;
-            self
+            self.ssid = input; self
         }
         /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
         pub fn security_type(mut self, input: crate::model::NetworkSecurityType) -> Self {
@@ -3476,12 +3313,8 @@ pub mod network_profile_data {
             self
         }
         /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
-        pub fn set_security_type(
-            mut self,
-            input: std::option::Option<crate::model::NetworkSecurityType>,
-        ) -> Self {
-            self.security_type = input;
-            self
+        pub fn set_security_type(mut self, input: std::option::Option<crate::model::NetworkSecurityType>) -> Self {
+            self.security_type = input; self
         }
         /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
         pub fn eap_method(mut self, input: crate::model::NetworkEapMethod) -> Self {
@@ -3489,12 +3322,8 @@ pub mod network_profile_data {
             self
         }
         /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
-        pub fn set_eap_method(
-            mut self,
-            input: std::option::Option<crate::model::NetworkEapMethod>,
-        ) -> Self {
-            self.eap_method = input;
-            self
+        pub fn set_eap_method(mut self, input: std::option::Option<crate::model::NetworkEapMethod>) -> Self {
+            self.eap_method = input; self
         }
         /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3502,26 +3331,31 @@ pub mod network_profile_data {
             self
         }
         /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
-        pub fn set_certificate_authority_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_authority_arn = input;
-            self
+        pub fn set_certificate_authority_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_authority_arn = input; self
         }
         /// Consumes the builder and constructs a [`NetworkProfileData`](crate::model::NetworkProfileData).
         pub fn build(self) -> crate::model::NetworkProfileData {
             crate::model::NetworkProfileData {
-                network_profile_arn: self.network_profile_arn,
-                network_profile_name: self.network_profile_name,
-                description: self.description,
-                ssid: self.ssid,
-                security_type: self.security_type,
-                eap_method: self.eap_method,
-                certificate_authority_arn: self.certificate_authority_arn,
+                network_profile_arn: self.network_profile_arn
+                ,
+                network_profile_name: self.network_profile_name
+                ,
+                description: self.description
+                ,
+                ssid: self.ssid
+                ,
+                security_type: self.security_type
+                ,
+                eap_method: self.eap_method
+                ,
+                certificate_authority_arn: self.certificate_authority_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkProfileData {
     /// Creates a new builder-style object to manufacture [`NetworkProfileData`](crate::model::NetworkProfileData).
@@ -3536,9 +3370,9 @@ impl NetworkProfileData {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networkeapmethod = unimplemented!();
 /// match networkeapmethod {
@@ -3559,54 +3393,48 @@ impl NetworkProfileData {
 /// Specifically, when `networkeapmethod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkEapMethod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NetworkEapMethod {
     #[allow(missing_docs)] // documentation missing in model
     EapTls,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkEapMethod {
     fn from(s: &str) -> Self {
         match s {
             "EAP_TLS" => NetworkEapMethod::EapTls,
-            other => NetworkEapMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => NetworkEapMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NetworkEapMethod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkEapMethod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NetworkEapMethod::from(s))
+                }
+            }
 impl NetworkEapMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkEapMethod::EapTls => "EAP_TLS",
-            NetworkEapMethod::Unknown(value) => value.as_str(),
+            NetworkEapMethod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EAP_TLS"]
+        &[
+            "EAP_TLS"
+        ]
     }
 }
 impl AsRef<str> for NetworkEapMethod {
@@ -3621,9 +3449,9 @@ impl AsRef<str> for NetworkEapMethod {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networksecuritytype = unimplemented!();
 /// match networksecuritytype {
@@ -3648,22 +3476,14 @@ impl AsRef<str> for NetworkEapMethod {
 /// Specifically, when `networksecuritytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkSecurityType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NetworkSecurityType {
     #[allow(missing_docs)] // documentation missing in model
     Open,
@@ -3676,7 +3496,7 @@ pub enum NetworkSecurityType {
     #[allow(missing_docs)] // documentation missing in model
     WpaPsk,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkSecurityType {
     fn from(s: &str) -> Self {
@@ -3686,19 +3506,17 @@ impl std::convert::From<&str> for NetworkSecurityType {
             "WPA2_ENTERPRISE" => NetworkSecurityType::Wpa2Enterprise,
             "WPA2_PSK" => NetworkSecurityType::Wpa2Psk,
             "WPA_PSK" => NetworkSecurityType::WpaPsk,
-            other => {
-                NetworkSecurityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => NetworkSecurityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NetworkSecurityType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkSecurityType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NetworkSecurityType::from(s))
+                }
+            }
 impl NetworkSecurityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3708,12 +3526,14 @@ impl NetworkSecurityType {
             NetworkSecurityType::Wpa2Enterprise => "WPA2_ENTERPRISE",
             NetworkSecurityType::Wpa2Psk => "WPA2_PSK",
             NetworkSecurityType::WpaPsk => "WPA_PSK",
-            NetworkSecurityType::Unknown(value) => value.as_str(),
+            NetworkSecurityType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OPEN", "WEP", "WPA2_ENTERPRISE", "WPA2_PSK", "WPA_PSK"]
+        &[
+            "OPEN", "WEP", "WPA2_ENTERPRISE", "WPA2_PSK", "WPA_PSK"
+        ]
     }
 }
 impl AsRef<str> for NetworkSecurityType {
@@ -3725,7 +3545,7 @@ impl AsRef<str> for NetworkSecurityType {
 /// <p>Device attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceData {
+pub struct DeviceData  {
     /// <p>The ARN of a device.</p>
     #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
@@ -3768,61 +3588,61 @@ pub struct DeviceData {
 }
 impl DeviceData {
     /// <p>The ARN of a device.</p>
-    pub fn device_arn(&self) -> std::option::Option<&str> {
+    pub fn device_arn(&self) -> std::option::Option<& str> {
         self.device_arn.as_deref()
     }
     /// <p>The serial number of a device.</p>
-    pub fn device_serial_number(&self) -> std::option::Option<&str> {
+    pub fn device_serial_number(&self) -> std::option::Option<& str> {
         self.device_serial_number.as_deref()
     }
     /// <p>The type of a device.</p>
-    pub fn device_type(&self) -> std::option::Option<&str> {
+    pub fn device_type(&self) -> std::option::Option<& str> {
         self.device_type.as_deref()
     }
     /// <p>The name of a device.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The software version of a device.</p>
-    pub fn software_version(&self) -> std::option::Option<&str> {
+    pub fn software_version(&self) -> std::option::Option<& str> {
         self.software_version.as_deref()
     }
     /// <p>The MAC address of a device.</p>
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> std::option::Option<& str> {
         self.mac_address.as_deref()
     }
     /// <p>The status of a device.</p>
-    pub fn device_status(&self) -> std::option::Option<&crate::model::DeviceStatus> {
+    pub fn device_status(&self) -> std::option::Option<& crate::model::DeviceStatus> {
         self.device_status.as_ref()
     }
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn network_profile_arn(&self) -> std::option::Option<& str> {
         self.network_profile_arn.as_deref()
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn network_profile_name(&self) -> std::option::Option<&str> {
+    pub fn network_profile_name(&self) -> std::option::Option<& str> {
         self.network_profile_name.as_deref()
     }
     /// <p>The room ARN associated with a device.</p>
-    pub fn room_arn(&self) -> std::option::Option<&str> {
+    pub fn room_arn(&self) -> std::option::Option<& str> {
         self.room_arn.as_deref()
     }
     /// <p>The name of the room associated with a device.</p>
-    pub fn room_name(&self) -> std::option::Option<&str> {
+    pub fn room_name(&self) -> std::option::Option<& str> {
         self.room_name.as_deref()
     }
     /// <p>Detailed information about a device's status.</p>
-    pub fn device_status_info(&self) -> std::option::Option<&crate::model::DeviceStatusInfo> {
+    pub fn device_status_info(&self) -> std::option::Option<& crate::model::DeviceStatusInfo> {
         self.device_status_info.as_ref()
     }
     /// <p>The time (in epoch) when the device data was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
 /// See [`DeviceData`](crate::model::DeviceData).
 pub mod device_data {
-
+    
     /// A builder for [`DeviceData`](crate::model::DeviceData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3848,8 +3668,7 @@ pub mod device_data {
         }
         /// <p>The ARN of a device.</p>
         pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_arn = input;
-            self
+            self.device_arn = input; self
         }
         /// <p>The serial number of a device.</p>
         pub fn device_serial_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3857,12 +3676,8 @@ pub mod device_data {
             self
         }
         /// <p>The serial number of a device.</p>
-        pub fn set_device_serial_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.device_serial_number = input;
-            self
+        pub fn set_device_serial_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_serial_number = input; self
         }
         /// <p>The type of a device.</p>
         pub fn device_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3871,8 +3686,7 @@ pub mod device_data {
         }
         /// <p>The type of a device.</p>
         pub fn set_device_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_type = input;
-            self
+            self.device_type = input; self
         }
         /// <p>The name of a device.</p>
         pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3881,8 +3695,7 @@ pub mod device_data {
         }
         /// <p>The name of a device.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_name = input;
-            self
+            self.device_name = input; self
         }
         /// <p>The software version of a device.</p>
         pub fn software_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3890,12 +3703,8 @@ pub mod device_data {
             self
         }
         /// <p>The software version of a device.</p>
-        pub fn set_software_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.software_version = input;
-            self
+        pub fn set_software_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.software_version = input; self
         }
         /// <p>The MAC address of a device.</p>
         pub fn mac_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3904,8 +3713,7 @@ pub mod device_data {
         }
         /// <p>The MAC address of a device.</p>
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mac_address = input;
-            self
+            self.mac_address = input; self
         }
         /// <p>The status of a device.</p>
         pub fn device_status(mut self, input: crate::model::DeviceStatus) -> Self {
@@ -3913,12 +3721,8 @@ pub mod device_data {
             self
         }
         /// <p>The status of a device.</p>
-        pub fn set_device_status(
-            mut self,
-            input: std::option::Option<crate::model::DeviceStatus>,
-        ) -> Self {
-            self.device_status = input;
-            self
+        pub fn set_device_status(mut self, input: std::option::Option<crate::model::DeviceStatus>) -> Self {
+            self.device_status = input; self
         }
         /// <p>The ARN of the network profile associated with a device.</p>
         pub fn network_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3926,12 +3730,8 @@ pub mod device_data {
             self
         }
         /// <p>The ARN of the network profile associated with a device.</p>
-        pub fn set_network_profile_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_profile_arn = input;
-            self
+        pub fn set_network_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_profile_arn = input; self
         }
         /// <p>The name of the network profile associated with a device.</p>
         pub fn network_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3939,12 +3739,8 @@ pub mod device_data {
             self
         }
         /// <p>The name of the network profile associated with a device.</p>
-        pub fn set_network_profile_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_profile_name = input;
-            self
+        pub fn set_network_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_profile_name = input; self
         }
         /// <p>The room ARN associated with a device.</p>
         pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3953,8 +3749,7 @@ pub mod device_data {
         }
         /// <p>The room ARN associated with a device.</p>
         pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.room_arn = input;
-            self
+            self.room_arn = input; self
         }
         /// <p>The name of the room associated with a device.</p>
         pub fn room_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3963,8 +3758,7 @@ pub mod device_data {
         }
         /// <p>The name of the room associated with a device.</p>
         pub fn set_room_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.room_name = input;
-            self
+            self.room_name = input; self
         }
         /// <p>Detailed information about a device's status.</p>
         pub fn device_status_info(mut self, input: crate::model::DeviceStatusInfo) -> Self {
@@ -3972,12 +3766,8 @@ pub mod device_data {
             self
         }
         /// <p>Detailed information about a device's status.</p>
-        pub fn set_device_status_info(
-            mut self,
-            input: std::option::Option<crate::model::DeviceStatusInfo>,
-        ) -> Self {
-            self.device_status_info = input;
-            self
+        pub fn set_device_status_info(mut self, input: std::option::Option<crate::model::DeviceStatusInfo>) -> Self {
+            self.device_status_info = input; self
         }
         /// <p>The time (in epoch) when the device data was created.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3985,32 +3775,43 @@ pub mod device_data {
             self
         }
         /// <p>The time (in epoch) when the device data was created.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`DeviceData`](crate::model::DeviceData).
         pub fn build(self) -> crate::model::DeviceData {
             crate::model::DeviceData {
-                device_arn: self.device_arn,
-                device_serial_number: self.device_serial_number,
-                device_type: self.device_type,
-                device_name: self.device_name,
-                software_version: self.software_version,
-                mac_address: self.mac_address,
-                device_status: self.device_status,
-                network_profile_arn: self.network_profile_arn,
-                network_profile_name: self.network_profile_name,
-                room_arn: self.room_arn,
-                room_name: self.room_name,
-                device_status_info: self.device_status_info,
-                created_time: self.created_time,
+                device_arn: self.device_arn
+                ,
+                device_serial_number: self.device_serial_number
+                ,
+                device_type: self.device_type
+                ,
+                device_name: self.device_name
+                ,
+                software_version: self.software_version
+                ,
+                mac_address: self.mac_address
+                ,
+                device_status: self.device_status
+                ,
+                network_profile_arn: self.network_profile_arn
+                ,
+                network_profile_name: self.network_profile_name
+                ,
+                room_arn: self.room_arn
+                ,
+                room_name: self.room_name
+                ,
+                device_status_info: self.device_status_info
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceData {
     /// Creates a new builder-style object to manufacture [`DeviceData`](crate::model::DeviceData).
@@ -4022,7 +3823,7 @@ impl DeviceData {
 /// <p>Detailed information about a device's status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceStatusInfo {
+pub struct DeviceStatusInfo  {
     /// <p>One or more device status detail descriptions.</p>
     #[doc(hidden)]
     pub device_status_details: std::option::Option<std::vec::Vec<crate::model::DeviceStatusDetail>>,
@@ -4035,30 +3836,25 @@ pub struct DeviceStatusInfo {
 }
 impl DeviceStatusInfo {
     /// <p>One or more device status detail descriptions.</p>
-    pub fn device_status_details(
-        &self,
-    ) -> std::option::Option<&[crate::model::DeviceStatusDetail]> {
+    pub fn device_status_details(&self) -> std::option::Option<& [crate::model::DeviceStatusDetail]> {
         self.device_status_details.as_deref()
     }
     /// <p>The latest available information about the connection status of a device. </p>
-    pub fn connection_status(&self) -> std::option::Option<&crate::model::ConnectionStatus> {
+    pub fn connection_status(&self) -> std::option::Option<& crate::model::ConnectionStatus> {
         self.connection_status.as_ref()
     }
     /// <p>The time (in epoch) when the device connection status changed.</p>
-    pub fn connection_status_updated_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn connection_status_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.connection_status_updated_time.as_ref()
     }
 }
 /// See [`DeviceStatusInfo`](crate::model::DeviceStatusInfo).
 pub mod device_status_info {
-
+    
     /// A builder for [`DeviceStatusInfo`](crate::model::DeviceStatusInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) device_status_details:
-            std::option::Option<std::vec::Vec<crate::model::DeviceStatusDetail>>,
+        pub(crate) device_status_details: std::option::Option<std::vec::Vec<crate::model::DeviceStatusDetail>>,
         pub(crate) connection_status: std::option::Option<crate::model::ConnectionStatus>,
         pub(crate) connection_status_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -4070,17 +3866,13 @@ pub mod device_status_info {
         /// <p>One or more device status detail descriptions.</p>
         pub fn device_status_details(mut self, input: crate::model::DeviceStatusDetail) -> Self {
             let mut v = self.device_status_details.unwrap_or_default();
-            v.push(input);
-            self.device_status_details = Some(v);
-            self
+                            v.push(input);
+                            self.device_status_details = Some(v);
+                            self
         }
         /// <p>One or more device status detail descriptions.</p>
-        pub fn set_device_status_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeviceStatusDetail>>,
-        ) -> Self {
-            self.device_status_details = input;
-            self
+        pub fn set_device_status_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeviceStatusDetail>>) -> Self {
+            self.device_status_details = input; self
         }
         /// <p>The latest available information about the connection status of a device. </p>
         pub fn connection_status(mut self, input: crate::model::ConnectionStatus) -> Self {
@@ -4088,12 +3880,8 @@ pub mod device_status_info {
             self
         }
         /// <p>The latest available information about the connection status of a device. </p>
-        pub fn set_connection_status(
-            mut self,
-            input: std::option::Option<crate::model::ConnectionStatus>,
-        ) -> Self {
-            self.connection_status = input;
-            self
+        pub fn set_connection_status(mut self, input: std::option::Option<crate::model::ConnectionStatus>) -> Self {
+            self.connection_status = input; self
         }
         /// <p>The time (in epoch) when the device connection status changed.</p>
         pub fn connection_status_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4101,22 +3889,23 @@ pub mod device_status_info {
             self
         }
         /// <p>The time (in epoch) when the device connection status changed.</p>
-        pub fn set_connection_status_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.connection_status_updated_time = input;
-            self
+        pub fn set_connection_status_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.connection_status_updated_time = input; self
         }
         /// Consumes the builder and constructs a [`DeviceStatusInfo`](crate::model::DeviceStatusInfo).
         pub fn build(self) -> crate::model::DeviceStatusInfo {
             crate::model::DeviceStatusInfo {
-                device_status_details: self.device_status_details,
-                connection_status: self.connection_status,
-                connection_status_updated_time: self.connection_status_updated_time,
+                device_status_details: self.device_status_details
+                ,
+                connection_status: self.connection_status
+                ,
+                connection_status_updated_time: self.connection_status_updated_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceStatusInfo {
     /// Creates a new builder-style object to manufacture [`DeviceStatusInfo`](crate::model::DeviceStatusInfo).
@@ -4131,9 +3920,9 @@ impl DeviceStatusInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let connectionstatus = unimplemented!();
 /// match connectionstatus {
@@ -4155,58 +3944,52 @@ impl DeviceStatusInfo {
 /// Specifically, when `connectionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConnectionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConnectionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Offline,
     #[allow(missing_docs)] // documentation missing in model
     Online,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectionStatus {
     fn from(s: &str) -> Self {
         match s {
             "OFFLINE" => ConnectionStatus::Offline,
             "ONLINE" => ConnectionStatus::Online,
-            other => ConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConnectionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConnectionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConnectionStatus::from(s))
+                }
+            }
 impl ConnectionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionStatus::Offline => "OFFLINE",
             ConnectionStatus::Online => "ONLINE",
-            ConnectionStatus::Unknown(value) => value.as_str(),
+            ConnectionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OFFLINE", "ONLINE"]
+        &[
+            "OFFLINE", "ONLINE"
+        ]
     }
 }
 impl AsRef<str> for ConnectionStatus {
@@ -4218,7 +4001,7 @@ impl AsRef<str> for ConnectionStatus {
 /// <p>Details of a device’s status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceStatusDetail {
+pub struct DeviceStatusDetail  {
     /// <p>The list of available features on the device.</p>
     #[doc(hidden)]
     pub feature: std::option::Option<crate::model::Feature>,
@@ -4228,17 +4011,17 @@ pub struct DeviceStatusDetail {
 }
 impl DeviceStatusDetail {
     /// <p>The list of available features on the device.</p>
-    pub fn feature(&self) -> std::option::Option<&crate::model::Feature> {
+    pub fn feature(&self) -> std::option::Option<& crate::model::Feature> {
         self.feature.as_ref()
     }
     /// <p>The device status detail code.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::DeviceStatusDetailCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::DeviceStatusDetailCode> {
         self.code.as_ref()
     }
 }
 /// See [`DeviceStatusDetail`](crate::model::DeviceStatusDetail).
 pub mod device_status_detail {
-
+    
     /// A builder for [`DeviceStatusDetail`](crate::model::DeviceStatusDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4253,8 +4036,7 @@ pub mod device_status_detail {
         }
         /// <p>The list of available features on the device.</p>
         pub fn set_feature(mut self, input: std::option::Option<crate::model::Feature>) -> Self {
-            self.feature = input;
-            self
+            self.feature = input; self
         }
         /// <p>The device status detail code.</p>
         pub fn code(mut self, input: crate::model::DeviceStatusDetailCode) -> Self {
@@ -4262,21 +4044,21 @@ pub mod device_status_detail {
             self
         }
         /// <p>The device status detail code.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::DeviceStatusDetailCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::DeviceStatusDetailCode>) -> Self {
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`DeviceStatusDetail`](crate::model::DeviceStatusDetail).
         pub fn build(self) -> crate::model::DeviceStatusDetail {
             crate::model::DeviceStatusDetail {
-                feature: self.feature,
-                code: self.code,
+                feature: self.feature
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceStatusDetail {
     /// Creates a new builder-style object to manufacture [`DeviceStatusDetail`](crate::model::DeviceStatusDetail).
@@ -4291,9 +4073,9 @@ impl DeviceStatusDetail {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let devicestatusdetailcode = unimplemented!();
 /// match devicestatusdetailcode {
@@ -4330,22 +4112,14 @@ impl DeviceStatusDetail {
 /// Specifically, when `devicestatusdetailcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeviceStatusDetailCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeviceStatusDetailCode {
     #[allow(missing_docs)] // documentation missing in model
     AssociationRejection,
@@ -4382,19 +4156,15 @@ pub enum DeviceStatusDetailCode {
     #[allow(missing_docs)] // documentation missing in model
     UnknownFailure,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeviceStatusDetailCode {
     fn from(s: &str) -> Self {
         match s {
             "ASSOCIATION_REJECTION" => DeviceStatusDetailCode::AssociationRejection,
             "AUTHENTICATION_FAILURE" => DeviceStatusDetailCode::AuthenticationFailure,
-            "CERTIFICATE_AUTHORITY_ACCESS_DENIED" => {
-                DeviceStatusDetailCode::CertificateAuthorityAccessDenied
-            }
-            "CERTIFICATE_ISSUING_LIMIT_EXCEEDED" => {
-                DeviceStatusDetailCode::CertificateIssuingLimitExceeded
-            }
+            "CERTIFICATE_AUTHORITY_ACCESS_DENIED" => DeviceStatusDetailCode::CertificateAuthorityAccessDenied,
+            "CERTIFICATE_ISSUING_LIMIT_EXCEEDED" => DeviceStatusDetailCode::CertificateIssuingLimitExceeded,
             "CREDENTIALS_ACCESS_FAILURE" => DeviceStatusDetailCode::CredentialsAccessFailure,
             "DEVICE_SOFTWARE_UPDATE_NEEDED" => DeviceStatusDetailCode::DeviceSoftwareUpdateNeeded,
             "DEVICE_WAS_OFFLINE" => DeviceStatusDetailCode::DeviceWasOffline,
@@ -4408,31 +4178,25 @@ impl std::convert::From<&str> for DeviceStatusDetailCode {
             "PASSWORD_NOT_FOUND" => DeviceStatusDetailCode::PasswordNotFound,
             "TLS_VERSION_MISMATCH" => DeviceStatusDetailCode::TlsVersionMismatch,
             "UNKNOWN_FAILURE" => DeviceStatusDetailCode::UnknownFailure,
-            other => {
-                DeviceStatusDetailCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DeviceStatusDetailCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeviceStatusDetailCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeviceStatusDetailCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeviceStatusDetailCode::from(s))
+                }
+            }
 impl DeviceStatusDetailCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceStatusDetailCode::AssociationRejection => "ASSOCIATION_REJECTION",
             DeviceStatusDetailCode::AuthenticationFailure => "AUTHENTICATION_FAILURE",
-            DeviceStatusDetailCode::CertificateAuthorityAccessDenied => {
-                "CERTIFICATE_AUTHORITY_ACCESS_DENIED"
-            }
-            DeviceStatusDetailCode::CertificateIssuingLimitExceeded => {
-                "CERTIFICATE_ISSUING_LIMIT_EXCEEDED"
-            }
+            DeviceStatusDetailCode::CertificateAuthorityAccessDenied => "CERTIFICATE_AUTHORITY_ACCESS_DENIED",
+            DeviceStatusDetailCode::CertificateIssuingLimitExceeded => "CERTIFICATE_ISSUING_LIMIT_EXCEEDED",
             DeviceStatusDetailCode::CredentialsAccessFailure => "CREDENTIALS_ACCESS_FAILURE",
             DeviceStatusDetailCode::DeviceSoftwareUpdateNeeded => "DEVICE_SOFTWARE_UPDATE_NEEDED",
             DeviceStatusDetailCode::DeviceWasOffline => "DEVICE_WAS_OFFLINE",
@@ -4446,29 +4210,13 @@ impl DeviceStatusDetailCode {
             DeviceStatusDetailCode::PasswordNotFound => "PASSWORD_NOT_FOUND",
             DeviceStatusDetailCode::TlsVersionMismatch => "TLS_VERSION_MISMATCH",
             DeviceStatusDetailCode::UnknownFailure => "UNKNOWN_FAILURE",
-            DeviceStatusDetailCode::Unknown(value) => value.as_str(),
+            DeviceStatusDetailCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ASSOCIATION_REJECTION",
-            "AUTHENTICATION_FAILURE",
-            "CERTIFICATE_AUTHORITY_ACCESS_DENIED",
-            "CERTIFICATE_ISSUING_LIMIT_EXCEEDED",
-            "CREDENTIALS_ACCESS_FAILURE",
-            "DEVICE_SOFTWARE_UPDATE_NEEDED",
-            "DEVICE_WAS_OFFLINE",
-            "DHCP_FAILURE",
-            "DNS_FAILURE",
-            "INTERNET_UNAVAILABLE",
-            "INVALID_CERTIFICATE_AUTHORITY",
-            "INVALID_PASSWORD_STATE",
-            "NETWORK_PROFILE_NOT_FOUND",
-            "PASSWORD_MANAGER_ACCESS_DENIED",
-            "PASSWORD_NOT_FOUND",
-            "TLS_VERSION_MISMATCH",
-            "UNKNOWN_FAILURE",
+            "ASSOCIATION_REJECTION", "AUTHENTICATION_FAILURE", "CERTIFICATE_AUTHORITY_ACCESS_DENIED", "CERTIFICATE_ISSUING_LIMIT_EXCEEDED", "CREDENTIALS_ACCESS_FAILURE", "DEVICE_SOFTWARE_UPDATE_NEEDED", "DEVICE_WAS_OFFLINE", "DHCP_FAILURE", "DNS_FAILURE", "INTERNET_UNAVAILABLE", "INVALID_CERTIFICATE_AUTHORITY", "INVALID_PASSWORD_STATE", "NETWORK_PROFILE_NOT_FOUND", "PASSWORD_MANAGER_ACCESS_DENIED", "PASSWORD_NOT_FOUND", "TLS_VERSION_MISMATCH", "UNKNOWN_FAILURE"
         ]
     }
 }
@@ -4484,9 +4232,9 @@ impl AsRef<str> for DeviceStatusDetailCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let devicestatus = unimplemented!();
 /// match devicestatus {
@@ -4511,22 +4259,14 @@ impl AsRef<str> for DeviceStatusDetailCode {
 /// Specifically, when `devicestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeviceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeviceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deregistered,
@@ -4539,7 +4279,7 @@ pub enum DeviceStatus {
     #[allow(missing_docs)] // documentation missing in model
     WasOffline,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeviceStatus {
     fn from(s: &str) -> Self {
@@ -4549,17 +4289,17 @@ impl std::convert::From<&str> for DeviceStatus {
             "PENDING" => DeviceStatus::Pending,
             "READY" => DeviceStatus::Ready,
             "WAS_OFFLINE" => DeviceStatus::WasOffline,
-            other => DeviceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DeviceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeviceStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeviceStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeviceStatus::from(s))
+                }
+            }
 impl DeviceStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4569,12 +4309,14 @@ impl DeviceStatus {
             DeviceStatus::Pending => "PENDING",
             DeviceStatus::Ready => "READY",
             DeviceStatus::WasOffline => "WAS_OFFLINE",
-            DeviceStatus::Unknown(value) => value.as_str(),
+            DeviceStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEREGISTERED", "FAILED", "PENDING", "READY", "WAS_OFFLINE"]
+        &[
+            "DEREGISTERED", "FAILED", "PENDING", "READY", "WAS_OFFLINE"
+        ]
     }
 }
 impl AsRef<str> for DeviceStatus {
@@ -4586,7 +4328,7 @@ impl AsRef<str> for DeviceStatus {
 /// <p>Information related to a contact.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ContactData {
+pub struct ContactData  {
     /// <p>The ARN of the contact.</p>
     #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
@@ -4611,35 +4353,35 @@ pub struct ContactData {
 }
 impl ContactData {
     /// <p>The ARN of the contact.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>The name of the contact to display on the console.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The first name of the contact, used to call the contact on the device.</p>
-    pub fn first_name(&self) -> std::option::Option<&str> {
+    pub fn first_name(&self) -> std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>The last name of the contact, used to call the contact on the device.</p>
-    pub fn last_name(&self) -> std::option::Option<&str> {
+    pub fn last_name(&self) -> std::option::Option<& str> {
         self.last_name.as_deref()
     }
     /// <p>The phone number of the contact. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>The list of phone numbers for the contact.</p>
-    pub fn phone_numbers(&self) -> std::option::Option<&[crate::model::PhoneNumber]> {
+    pub fn phone_numbers(&self) -> std::option::Option<& [crate::model::PhoneNumber]> {
         self.phone_numbers.as_deref()
     }
     /// <p>The list of SIP addresses for the contact.</p>
-    pub fn sip_addresses(&self) -> std::option::Option<&[crate::model::SipAddress]> {
+    pub fn sip_addresses(&self) -> std::option::Option<& [crate::model::SipAddress]> {
         self.sip_addresses.as_deref()
     }
 }
-impl std::fmt::Debug for ContactData {
+impl  std::fmt::Debug for ContactData  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ContactData");
         formatter.field("contact_arn", &self.contact_arn);
@@ -4654,7 +4396,7 @@ impl std::fmt::Debug for ContactData {
 }
 /// See [`ContactData`](crate::model::ContactData).
 pub mod contact_data {
-
+    
     /// A builder for [`ContactData`](crate::model::ContactData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4674,8 +4416,7 @@ pub mod contact_data {
         }
         /// <p>The ARN of the contact.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_arn = input;
-            self
+            self.contact_arn = input; self
         }
         /// <p>The name of the contact to display on the console.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4684,8 +4425,7 @@ pub mod contact_data {
         }
         /// <p>The name of the contact to display on the console.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The first name of the contact, used to call the contact on the device.</p>
         pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4694,8 +4434,7 @@ pub mod contact_data {
         }
         /// <p>The first name of the contact, used to call the contact on the device.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.first_name = input;
-            self
+            self.first_name = input; self
         }
         /// <p>The last name of the contact, used to call the contact on the device.</p>
         pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4704,8 +4443,7 @@ pub mod contact_data {
         }
         /// <p>The last name of the contact, used to call the contact on the device.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.last_name = input;
-            self
+            self.last_name = input; self
         }
         /// <p>The phone number of the contact. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4714,8 +4452,7 @@ pub mod contact_data {
         }
         /// <p>The phone number of the contact. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = input;
-            self
+            self.phone_number = input; self
         }
         /// Appends an item to `phone_numbers`.
         ///
@@ -4724,17 +4461,13 @@ pub mod contact_data {
         /// <p>The list of phone numbers for the contact.</p>
         pub fn phone_numbers(mut self, input: crate::model::PhoneNumber) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(input);
-            self.phone_numbers = Some(v);
-            self
+                            v.push(input);
+                            self.phone_numbers = Some(v);
+                            self
         }
         /// <p>The list of phone numbers for the contact.</p>
-        pub fn set_phone_numbers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
-        ) -> Self {
-            self.phone_numbers = input;
-            self
+        pub fn set_phone_numbers(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>) -> Self {
+            self.phone_numbers = input; self
         }
         /// Appends an item to `sip_addresses`.
         ///
@@ -4743,28 +4476,31 @@ pub mod contact_data {
         /// <p>The list of SIP addresses for the contact.</p>
         pub fn sip_addresses(mut self, input: crate::model::SipAddress) -> Self {
             let mut v = self.sip_addresses.unwrap_or_default();
-            v.push(input);
-            self.sip_addresses = Some(v);
-            self
+                            v.push(input);
+                            self.sip_addresses = Some(v);
+                            self
         }
         /// <p>The list of SIP addresses for the contact.</p>
-        pub fn set_sip_addresses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SipAddress>>,
-        ) -> Self {
-            self.sip_addresses = input;
-            self
+        pub fn set_sip_addresses(mut self, input: std::option::Option<std::vec::Vec<crate::model::SipAddress>>) -> Self {
+            self.sip_addresses = input; self
         }
         /// Consumes the builder and constructs a [`ContactData`](crate::model::ContactData).
         pub fn build(self) -> crate::model::ContactData {
             crate::model::ContactData {
-                contact_arn: self.contact_arn,
-                display_name: self.display_name,
-                first_name: self.first_name,
-                last_name: self.last_name,
-                phone_number: self.phone_number,
-                phone_numbers: self.phone_numbers,
-                sip_addresses: self.sip_addresses,
+                contact_arn: self.contact_arn
+                ,
+                display_name: self.display_name
+                ,
+                first_name: self.first_name
+                ,
+                last_name: self.last_name
+                ,
+                phone_number: self.phone_number
+                ,
+                phone_numbers: self.phone_numbers
+                ,
+                sip_addresses: self.sip_addresses
+                ,
             }
         }
     }
@@ -4781,6 +4517,8 @@ pub mod contact_data {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ContactData {
     /// Creates a new builder-style object to manufacture [`ContactData`](crate::model::ContactData).
@@ -4792,7 +4530,7 @@ impl ContactData {
 /// <p>Information related to an address book.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddressBookData {
+pub struct AddressBookData  {
     /// <p>The ARN of the address book.</p>
     #[doc(hidden)]
     pub address_book_arn: std::option::Option<std::string::String>,
@@ -4805,21 +4543,21 @@ pub struct AddressBookData {
 }
 impl AddressBookData {
     /// <p>The ARN of the address book.</p>
-    pub fn address_book_arn(&self) -> std::option::Option<&str> {
+    pub fn address_book_arn(&self) -> std::option::Option<& str> {
         self.address_book_arn.as_deref()
     }
     /// <p>The name of the address book.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the address book.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`AddressBookData`](crate::model::AddressBookData).
 pub mod address_book_data {
-
+    
     /// A builder for [`AddressBookData`](crate::model::AddressBookData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4834,12 +4572,8 @@ pub mod address_book_data {
             self
         }
         /// <p>The ARN of the address book.</p>
-        pub fn set_address_book_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.address_book_arn = input;
-            self
+        pub fn set_address_book_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.address_book_arn = input; self
         }
         /// <p>The name of the address book.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4848,8 +4582,7 @@ pub mod address_book_data {
         }
         /// <p>The name of the address book.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the address book.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4858,18 +4591,22 @@ pub mod address_book_data {
         }
         /// <p>The description of the address book.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`AddressBookData`](crate::model::AddressBookData).
         pub fn build(self) -> crate::model::AddressBookData {
             crate::model::AddressBookData {
-                address_book_arn: self.address_book_arn,
-                name: self.name,
-                description: self.description,
+                address_book_arn: self.address_book_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl AddressBookData {
     /// Creates a new builder-style object to manufacture [`AddressBookData`](crate::model::AddressBookData).
@@ -4881,7 +4618,7 @@ impl AddressBookData {
 /// <p>A skill parameter associated with a room.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RoomSkillParameter {
+pub struct RoomSkillParameter  {
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
     #[doc(hidden)]
     pub parameter_key: std::option::Option<std::string::String>,
@@ -4891,17 +4628,17 @@ pub struct RoomSkillParameter {
 }
 impl RoomSkillParameter {
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
-    pub fn parameter_key(&self) -> std::option::Option<&str> {
+    pub fn parameter_key(&self) -> std::option::Option<& str> {
         self.parameter_key.as_deref()
     }
     /// <p>The parameter value of a room skill parameter.</p>
-    pub fn parameter_value(&self) -> std::option::Option<&str> {
+    pub fn parameter_value(&self) -> std::option::Option<& str> {
         self.parameter_value.as_deref()
     }
 }
 /// See [`RoomSkillParameter`](crate::model::RoomSkillParameter).
 pub mod room_skill_parameter {
-
+    
     /// A builder for [`RoomSkillParameter`](crate::model::RoomSkillParameter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4915,12 +4652,8 @@ pub mod room_skill_parameter {
             self
         }
         /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
-        pub fn set_parameter_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parameter_key = input;
-            self
+        pub fn set_parameter_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameter_key = input; self
         }
         /// <p>The parameter value of a room skill parameter.</p>
         pub fn parameter_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4928,21 +4661,21 @@ pub mod room_skill_parameter {
             self
         }
         /// <p>The parameter value of a room skill parameter.</p>
-        pub fn set_parameter_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parameter_value = input;
-            self
+        pub fn set_parameter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameter_value = input; self
         }
         /// Consumes the builder and constructs a [`RoomSkillParameter`](crate::model::RoomSkillParameter).
         pub fn build(self) -> crate::model::RoomSkillParameter {
             crate::model::RoomSkillParameter {
-                parameter_key: self.parameter_key,
-                parameter_value: self.parameter_value,
+                parameter_key: self.parameter_key
+                ,
+                parameter_value: self.parameter_value
+                ,
             }
         }
     }
+    
+    
 }
 impl RoomSkillParameter {
     /// Creates a new builder-style object to manufacture [`RoomSkillParameter`](crate::model::RoomSkillParameter).
@@ -4954,20 +4687,20 @@ impl RoomSkillParameter {
 /// <p>The default conference provider that is used if no other scheduled meetings are detected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConferencePreference {
+pub struct ConferencePreference  {
     /// <p>The ARN of the default conference provider.</p>
     #[doc(hidden)]
     pub default_conference_provider_arn: std::option::Option<std::string::String>,
 }
 impl ConferencePreference {
     /// <p>The ARN of the default conference provider.</p>
-    pub fn default_conference_provider_arn(&self) -> std::option::Option<&str> {
+    pub fn default_conference_provider_arn(&self) -> std::option::Option<& str> {
         self.default_conference_provider_arn.as_deref()
     }
 }
 /// See [`ConferencePreference`](crate::model::ConferencePreference).
 pub mod conference_preference {
-
+    
     /// A builder for [`ConferencePreference`](crate::model::ConferencePreference).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4975,28 +4708,24 @@ pub mod conference_preference {
     }
     impl Builder {
         /// <p>The ARN of the default conference provider.</p>
-        pub fn default_conference_provider_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn default_conference_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_conference_provider_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the default conference provider.</p>
-        pub fn set_default_conference_provider_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_conference_provider_arn = input;
-            self
+        pub fn set_default_conference_provider_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_conference_provider_arn = input; self
         }
         /// Consumes the builder and constructs a [`ConferencePreference`](crate::model::ConferencePreference).
         pub fn build(self) -> crate::model::ConferencePreference {
             crate::model::ConferencePreference {
-                default_conference_provider_arn: self.default_conference_provider_arn,
+                default_conference_provider_arn: self.default_conference_provider_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ConferencePreference {
     /// Creates a new builder-style object to manufacture [`ConferencePreference`](crate::model::ConferencePreference).
@@ -5008,7 +4737,7 @@ impl ConferencePreference {
 /// <p>A smart home appliance that can connect to a central system. Any domestic device can be a smart appliance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SmartHomeAppliance {
+pub struct SmartHomeAppliance  {
     /// <p>The friendly name of the smart home appliance.</p>
     #[doc(hidden)]
     pub friendly_name: std::option::Option<std::string::String>,
@@ -5021,21 +4750,21 @@ pub struct SmartHomeAppliance {
 }
 impl SmartHomeAppliance {
     /// <p>The friendly name of the smart home appliance.</p>
-    pub fn friendly_name(&self) -> std::option::Option<&str> {
+    pub fn friendly_name(&self) -> std::option::Option<& str> {
         self.friendly_name.as_deref()
     }
     /// <p>The description of the smart home appliance.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the manufacturer of the smart home appliance.</p>
-    pub fn manufacturer_name(&self) -> std::option::Option<&str> {
+    pub fn manufacturer_name(&self) -> std::option::Option<& str> {
         self.manufacturer_name.as_deref()
     }
 }
 /// See [`SmartHomeAppliance`](crate::model::SmartHomeAppliance).
 pub mod smart_home_appliance {
-
+    
     /// A builder for [`SmartHomeAppliance`](crate::model::SmartHomeAppliance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5050,12 +4779,8 @@ pub mod smart_home_appliance {
             self
         }
         /// <p>The friendly name of the smart home appliance.</p>
-        pub fn set_friendly_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.friendly_name = input;
-            self
+        pub fn set_friendly_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.friendly_name = input; self
         }
         /// <p>The description of the smart home appliance.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5064,8 +4789,7 @@ pub mod smart_home_appliance {
         }
         /// <p>The description of the smart home appliance.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The name of the manufacturer of the smart home appliance.</p>
         pub fn manufacturer_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5073,22 +4797,23 @@ pub mod smart_home_appliance {
             self
         }
         /// <p>The name of the manufacturer of the smart home appliance.</p>
-        pub fn set_manufacturer_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.manufacturer_name = input;
-            self
+        pub fn set_manufacturer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.manufacturer_name = input; self
         }
         /// Consumes the builder and constructs a [`SmartHomeAppliance`](crate::model::SmartHomeAppliance).
         pub fn build(self) -> crate::model::SmartHomeAppliance {
             crate::model::SmartHomeAppliance {
-                friendly_name: self.friendly_name,
-                description: self.description,
-                manufacturer_name: self.manufacturer_name,
+                friendly_name: self.friendly_name
+                ,
+                description: self.description
+                ,
+                manufacturer_name: self.manufacturer_name
+                ,
             }
         }
     }
+    
+    
 }
 impl SmartHomeAppliance {
     /// Creates a new builder-style object to manufacture [`SmartHomeAppliance`](crate::model::SmartHomeAppliance).
@@ -5100,7 +4825,7 @@ impl SmartHomeAppliance {
 /// <p>The detailed information about an Alexa skill.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SkillsStoreSkill {
+pub struct SkillsStoreSkill  {
     /// <p>The ARN of the skill.</p>
     #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
@@ -5125,27 +4850,27 @@ pub struct SkillsStoreSkill {
 }
 impl SkillsStoreSkill {
     /// <p>The ARN of the skill.</p>
-    pub fn skill_id(&self) -> std::option::Option<&str> {
+    pub fn skill_id(&self) -> std::option::Option<& str> {
         self.skill_id.as_deref()
     }
     /// <p>The name of the skill.</p>
-    pub fn skill_name(&self) -> std::option::Option<&str> {
+    pub fn skill_name(&self) -> std::option::Option<& str> {
         self.skill_name.as_deref()
     }
     /// <p>Short description about the skill.</p>
-    pub fn short_description(&self) -> std::option::Option<&str> {
+    pub fn short_description(&self) -> std::option::Option<& str> {
         self.short_description.as_deref()
     }
     /// <p>The URL where the skill icon resides.</p>
-    pub fn icon_url(&self) -> std::option::Option<&str> {
+    pub fn icon_url(&self) -> std::option::Option<& str> {
         self.icon_url.as_deref()
     }
     /// <p>Sample utterances that interact with the skill.</p>
-    pub fn sample_utterances(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sample_utterances(&self) -> std::option::Option<& [std::string::String]> {
         self.sample_utterances.as_deref()
     }
     /// <p>Information about the skill.</p>
-    pub fn skill_details(&self) -> std::option::Option<&crate::model::SkillDetails> {
+    pub fn skill_details(&self) -> std::option::Option<& crate::model::SkillDetails> {
         self.skill_details.as_ref()
     }
     /// <p>Linking support for a skill.</p>
@@ -5155,7 +4880,7 @@ impl SkillsStoreSkill {
 }
 /// See [`SkillsStoreSkill`](crate::model::SkillsStoreSkill).
 pub mod skills_store_skill {
-
+    
     /// A builder for [`SkillsStoreSkill`](crate::model::SkillsStoreSkill).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5175,8 +4900,7 @@ pub mod skills_store_skill {
         }
         /// <p>The ARN of the skill.</p>
         pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.skill_id = input;
-            self
+            self.skill_id = input; self
         }
         /// <p>The name of the skill.</p>
         pub fn skill_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5185,8 +4909,7 @@ pub mod skills_store_skill {
         }
         /// <p>The name of the skill.</p>
         pub fn set_skill_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.skill_name = input;
-            self
+            self.skill_name = input; self
         }
         /// <p>Short description about the skill.</p>
         pub fn short_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5194,12 +4917,8 @@ pub mod skills_store_skill {
             self
         }
         /// <p>Short description about the skill.</p>
-        pub fn set_short_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.short_description = input;
-            self
+        pub fn set_short_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.short_description = input; self
         }
         /// <p>The URL where the skill icon resides.</p>
         pub fn icon_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5208,8 +4927,7 @@ pub mod skills_store_skill {
         }
         /// <p>The URL where the skill icon resides.</p>
         pub fn set_icon_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.icon_url = input;
-            self
+            self.icon_url = input; self
         }
         /// Appends an item to `sample_utterances`.
         ///
@@ -5218,17 +4936,13 @@ pub mod skills_store_skill {
         /// <p>Sample utterances that interact with the skill.</p>
         pub fn sample_utterances(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input.into());
-            self.sample_utterances = Some(v);
-            self
+                            v.push(input.into());
+                            self.sample_utterances = Some(v);
+                            self
         }
         /// <p>Sample utterances that interact with the skill.</p>
-        pub fn set_sample_utterances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.sample_utterances = input;
-            self
+        pub fn set_sample_utterances(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.sample_utterances = input; self
         }
         /// <p>Information about the skill.</p>
         pub fn skill_details(mut self, input: crate::model::SkillDetails) -> Self {
@@ -5236,12 +4950,8 @@ pub mod skills_store_skill {
             self
         }
         /// <p>Information about the skill.</p>
-        pub fn set_skill_details(
-            mut self,
-            input: std::option::Option<crate::model::SkillDetails>,
-        ) -> Self {
-            self.skill_details = input;
-            self
+        pub fn set_skill_details(mut self, input: std::option::Option<crate::model::SkillDetails>) -> Self {
+            self.skill_details = input; self
         }
         /// <p>Linking support for a skill.</p>
         pub fn supports_linking(mut self, input: bool) -> Self {
@@ -5250,22 +4960,31 @@ pub mod skills_store_skill {
         }
         /// <p>Linking support for a skill.</p>
         pub fn set_supports_linking(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_linking = input;
-            self
+            self.supports_linking = input; self
         }
         /// Consumes the builder and constructs a [`SkillsStoreSkill`](crate::model::SkillsStoreSkill).
         pub fn build(self) -> crate::model::SkillsStoreSkill {
             crate::model::SkillsStoreSkill {
-                skill_id: self.skill_id,
-                skill_name: self.skill_name,
-                short_description: self.short_description,
-                icon_url: self.icon_url,
-                sample_utterances: self.sample_utterances,
-                skill_details: self.skill_details,
-                supports_linking: self.supports_linking.unwrap_or_default(),
+                skill_id: self.skill_id
+                ,
+                skill_name: self.skill_name
+                ,
+                short_description: self.short_description
+                ,
+                icon_url: self.icon_url
+                ,
+                sample_utterances: self.sample_utterances
+                ,
+                skill_details: self.skill_details
+                ,
+                supports_linking: self.supports_linking
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SkillsStoreSkill {
     /// Creates a new builder-style object to manufacture [`SkillsStoreSkill`](crate::model::SkillsStoreSkill).
@@ -5277,7 +4996,7 @@ impl SkillsStoreSkill {
 /// <p>Granular information about the skill.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SkillDetails {
+pub struct SkillDetails  {
     /// <p>The description of the product.</p>
     #[doc(hidden)]
     pub product_description: std::option::Option<std::string::String>,
@@ -5302,64 +5021,60 @@ pub struct SkillDetails {
     /// <p>The types of skills.</p>
     #[doc(hidden)]
     pub skill_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> <i>This member has been deprecated.</i> </p>
+    /// <p> <i>This member has been deprecated.</i> </p> 
     /// <p>The list of reviews for the skill, including Key and Value pair.</p>
     #[doc(hidden)]
-    pub reviews:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub reviews: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The details about the developer that published the skill.</p>
     #[doc(hidden)]
     pub developer_info: std::option::Option<crate::model::DeveloperInfo>,
 }
 impl SkillDetails {
     /// <p>The description of the product.</p>
-    pub fn product_description(&self) -> std::option::Option<&str> {
+    pub fn product_description(&self) -> std::option::Option<& str> {
         self.product_description.as_deref()
     }
     /// <p>The phrase used to trigger the skill.</p>
-    pub fn invocation_phrase(&self) -> std::option::Option<&str> {
+    pub fn invocation_phrase(&self) -> std::option::Option<& str> {
         self.invocation_phrase.as_deref()
     }
     /// <p>The date when the skill was released.</p>
-    pub fn release_date(&self) -> std::option::Option<&str> {
+    pub fn release_date(&self) -> std::option::Option<& str> {
         self.release_date.as_deref()
     }
     /// <p>The URL of the end user license agreement.</p>
-    pub fn end_user_license_agreement(&self) -> std::option::Option<&str> {
+    pub fn end_user_license_agreement(&self) -> std::option::Option<& str> {
         self.end_user_license_agreement.as_deref()
     }
     /// <p>The generic keywords associated with the skill that can be used to find a skill.</p>
-    pub fn generic_keywords(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn generic_keywords(&self) -> std::option::Option<& [std::string::String]> {
         self.generic_keywords.as_deref()
     }
     /// <p>The details about what the skill supports organized as bullet points.</p>
-    pub fn bullet_points(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn bullet_points(&self) -> std::option::Option<& [std::string::String]> {
         self.bullet_points.as_deref()
     }
     /// <p>The updates added in bullet points.</p>
-    pub fn new_in_this_version_bullet_points(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn new_in_this_version_bullet_points(&self) -> std::option::Option<& [std::string::String]> {
         self.new_in_this_version_bullet_points.as_deref()
     }
     /// <p>The types of skills.</p>
-    pub fn skill_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn skill_types(&self) -> std::option::Option<& [std::string::String]> {
         self.skill_types.as_deref()
     }
-    /// <p> <i>This member has been deprecated.</i> </p>
+    /// <p> <i>This member has been deprecated.</i> </p> 
     /// <p>The list of reviews for the skill, including Key and Value pair.</p>
-    pub fn reviews(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn reviews(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.reviews.as_ref()
     }
     /// <p>The details about the developer that published the skill.</p>
-    pub fn developer_info(&self) -> std::option::Option<&crate::model::DeveloperInfo> {
+    pub fn developer_info(&self) -> std::option::Option<& crate::model::DeveloperInfo> {
         self.developer_info.as_ref()
     }
 }
 /// See [`SkillDetails`](crate::model::SkillDetails).
 pub mod skill_details {
-
+    
     /// A builder for [`SkillDetails`](crate::model::SkillDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5369,12 +5084,9 @@ pub mod skill_details {
         pub(crate) end_user_license_agreement: std::option::Option<std::string::String>,
         pub(crate) generic_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) bullet_points: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) new_in_this_version_bullet_points:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) new_in_this_version_bullet_points: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) skill_types: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) reviews: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) reviews: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) developer_info: std::option::Option<crate::model::DeveloperInfo>,
     }
     impl Builder {
@@ -5384,12 +5096,8 @@ pub mod skill_details {
             self
         }
         /// <p>The description of the product.</p>
-        pub fn set_product_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.product_description = input;
-            self
+        pub fn set_product_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.product_description = input; self
         }
         /// <p>The phrase used to trigger the skill.</p>
         pub fn invocation_phrase(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5397,12 +5105,8 @@ pub mod skill_details {
             self
         }
         /// <p>The phrase used to trigger the skill.</p>
-        pub fn set_invocation_phrase(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.invocation_phrase = input;
-            self
+        pub fn set_invocation_phrase(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.invocation_phrase = input; self
         }
         /// <p>The date when the skill was released.</p>
         pub fn release_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5411,8 +5115,7 @@ pub mod skill_details {
         }
         /// <p>The date when the skill was released.</p>
         pub fn set_release_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.release_date = input;
-            self
+            self.release_date = input; self
         }
         /// <p>The URL of the end user license agreement.</p>
         pub fn end_user_license_agreement(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5420,12 +5123,8 @@ pub mod skill_details {
             self
         }
         /// <p>The URL of the end user license agreement.</p>
-        pub fn set_end_user_license_agreement(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.end_user_license_agreement = input;
-            self
+        pub fn set_end_user_license_agreement(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end_user_license_agreement = input; self
         }
         /// Appends an item to `generic_keywords`.
         ///
@@ -5434,17 +5133,13 @@ pub mod skill_details {
         /// <p>The generic keywords associated with the skill that can be used to find a skill.</p>
         pub fn generic_keywords(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.generic_keywords.unwrap_or_default();
-            v.push(input.into());
-            self.generic_keywords = Some(v);
-            self
+                            v.push(input.into());
+                            self.generic_keywords = Some(v);
+                            self
         }
         /// <p>The generic keywords associated with the skill that can be used to find a skill.</p>
-        pub fn set_generic_keywords(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.generic_keywords = input;
-            self
+        pub fn set_generic_keywords(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.generic_keywords = input; self
         }
         /// Appends an item to `bullet_points`.
         ///
@@ -5453,39 +5148,28 @@ pub mod skill_details {
         /// <p>The details about what the skill supports organized as bullet points.</p>
         pub fn bullet_points(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.bullet_points.unwrap_or_default();
-            v.push(input.into());
-            self.bullet_points = Some(v);
-            self
+                            v.push(input.into());
+                            self.bullet_points = Some(v);
+                            self
         }
         /// <p>The details about what the skill supports organized as bullet points.</p>
-        pub fn set_bullet_points(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.bullet_points = input;
-            self
+        pub fn set_bullet_points(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.bullet_points = input; self
         }
         /// Appends an item to `new_in_this_version_bullet_points`.
         ///
         /// To override the contents of this collection use [`set_new_in_this_version_bullet_points`](Self::set_new_in_this_version_bullet_points).
         ///
         /// <p>The updates added in bullet points.</p>
-        pub fn new_in_this_version_bullet_points(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn new_in_this_version_bullet_points(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.new_in_this_version_bullet_points.unwrap_or_default();
-            v.push(input.into());
-            self.new_in_this_version_bullet_points = Some(v);
-            self
+                            v.push(input.into());
+                            self.new_in_this_version_bullet_points = Some(v);
+                            self
         }
         /// <p>The updates added in bullet points.</p>
-        pub fn set_new_in_this_version_bullet_points(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.new_in_this_version_bullet_points = input;
-            self
+        pub fn set_new_in_this_version_bullet_points(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.new_in_this_version_bullet_points = input; self
         }
         /// Appends an item to `skill_types`.
         ///
@@ -5494,44 +5178,30 @@ pub mod skill_details {
         /// <p>The types of skills.</p>
         pub fn skill_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.skill_types.unwrap_or_default();
-            v.push(input.into());
-            self.skill_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.skill_types = Some(v);
+                            self
         }
         /// <p>The types of skills.</p>
-        pub fn set_skill_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.skill_types = input;
-            self
+        pub fn set_skill_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.skill_types = input; self
         }
         /// Adds a key-value pair to `reviews`.
         ///
         /// To override the contents of this collection use [`set_reviews`](Self::set_reviews).
         ///
-        /// <p> <i>This member has been deprecated.</i> </p>
+        /// <p> <i>This member has been deprecated.</i> </p> 
         /// <p>The list of reviews for the skill, including Key and Value pair.</p>
-        pub fn reviews(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn reviews(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.reviews.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.reviews = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.reviews = Some(hash_map);
+                            self
         }
-        /// <p> <i>This member has been deprecated.</i> </p>
+        /// <p> <i>This member has been deprecated.</i> </p> 
         /// <p>The list of reviews for the skill, including Key and Value pair.</p>
-        pub fn set_reviews(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.reviews = input;
-            self
+        pub fn set_reviews(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.reviews = input; self
         }
         /// <p>The details about the developer that published the skill.</p>
         pub fn developer_info(mut self, input: crate::model::DeveloperInfo) -> Self {
@@ -5539,29 +5209,37 @@ pub mod skill_details {
             self
         }
         /// <p>The details about the developer that published the skill.</p>
-        pub fn set_developer_info(
-            mut self,
-            input: std::option::Option<crate::model::DeveloperInfo>,
-        ) -> Self {
-            self.developer_info = input;
-            self
+        pub fn set_developer_info(mut self, input: std::option::Option<crate::model::DeveloperInfo>) -> Self {
+            self.developer_info = input; self
         }
         /// Consumes the builder and constructs a [`SkillDetails`](crate::model::SkillDetails).
         pub fn build(self) -> crate::model::SkillDetails {
             crate::model::SkillDetails {
-                product_description: self.product_description,
-                invocation_phrase: self.invocation_phrase,
-                release_date: self.release_date,
-                end_user_license_agreement: self.end_user_license_agreement,
-                generic_keywords: self.generic_keywords,
-                bullet_points: self.bullet_points,
-                new_in_this_version_bullet_points: self.new_in_this_version_bullet_points,
-                skill_types: self.skill_types,
-                reviews: self.reviews,
-                developer_info: self.developer_info,
+                product_description: self.product_description
+                ,
+                invocation_phrase: self.invocation_phrase
+                ,
+                release_date: self.release_date
+                ,
+                end_user_license_agreement: self.end_user_license_agreement
+                ,
+                generic_keywords: self.generic_keywords
+                ,
+                bullet_points: self.bullet_points
+                ,
+                new_in_this_version_bullet_points: self.new_in_this_version_bullet_points
+                ,
+                skill_types: self.skill_types
+                ,
+                reviews: self.reviews
+                ,
+                developer_info: self.developer_info
+                ,
             }
         }
     }
+    
+    
 }
 impl SkillDetails {
     /// Creates a new builder-style object to manufacture [`SkillDetails`](crate::model::SkillDetails).
@@ -5573,7 +5251,7 @@ impl SkillDetails {
 /// <p>The details about the developer that published the skill.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeveloperInfo {
+pub struct DeveloperInfo  {
     /// <p>The name of the developer.</p>
     #[doc(hidden)]
     pub developer_name: std::option::Option<std::string::String>,
@@ -5589,25 +5267,25 @@ pub struct DeveloperInfo {
 }
 impl DeveloperInfo {
     /// <p>The name of the developer.</p>
-    pub fn developer_name(&self) -> std::option::Option<&str> {
+    pub fn developer_name(&self) -> std::option::Option<& str> {
         self.developer_name.as_deref()
     }
     /// <p>The URL of the privacy policy.</p>
-    pub fn privacy_policy(&self) -> std::option::Option<&str> {
+    pub fn privacy_policy(&self) -> std::option::Option<& str> {
         self.privacy_policy.as_deref()
     }
     /// <p>The email of the developer.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The website of the developer.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 /// See [`DeveloperInfo`](crate::model::DeveloperInfo).
 pub mod developer_info {
-
+    
     /// A builder for [`DeveloperInfo`](crate::model::DeveloperInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5623,12 +5301,8 @@ pub mod developer_info {
             self
         }
         /// <p>The name of the developer.</p>
-        pub fn set_developer_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.developer_name = input;
-            self
+        pub fn set_developer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.developer_name = input; self
         }
         /// <p>The URL of the privacy policy.</p>
         pub fn privacy_policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5636,12 +5310,8 @@ pub mod developer_info {
             self
         }
         /// <p>The URL of the privacy policy.</p>
-        pub fn set_privacy_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.privacy_policy = input;
-            self
+        pub fn set_privacy_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.privacy_policy = input; self
         }
         /// <p>The email of the developer.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5650,8 +5320,7 @@ pub mod developer_info {
         }
         /// <p>The email of the developer.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.email = input;
-            self
+            self.email = input; self
         }
         /// <p>The website of the developer.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5660,19 +5329,24 @@ pub mod developer_info {
         }
         /// <p>The website of the developer.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Consumes the builder and constructs a [`DeveloperInfo`](crate::model::DeveloperInfo).
         pub fn build(self) -> crate::model::DeveloperInfo {
             crate::model::DeveloperInfo {
-                developer_name: self.developer_name,
-                privacy_policy: self.privacy_policy,
-                email: self.email,
-                url: self.url,
+                developer_name: self.developer_name
+                ,
+                privacy_policy: self.privacy_policy
+                ,
+                email: self.email
+                ,
+                url: self.url
+                ,
             }
         }
     }
+    
+    
 }
 impl DeveloperInfo {
     /// Creates a new builder-style object to manufacture [`DeveloperInfo`](crate::model::DeveloperInfo).
@@ -5684,7 +5358,7 @@ impl DeveloperInfo {
 /// <p>The skill store category that is shown. Alexa skills are assigned a specific skill category during creation, such as News, Social, and Sports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Category {
+pub struct Category  {
     /// <p>The ID of the skill store category.</p>
     #[doc(hidden)]
     pub category_id: std::option::Option<i64>,
@@ -5698,13 +5372,13 @@ impl Category {
         self.category_id
     }
     /// <p>The name of the skill store category.</p>
-    pub fn category_name(&self) -> std::option::Option<&str> {
+    pub fn category_name(&self) -> std::option::Option<& str> {
         self.category_name.as_deref()
     }
 }
 /// See [`Category`](crate::model::Category).
 pub mod category {
-
+    
     /// A builder for [`Category`](crate::model::Category).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5719,8 +5393,7 @@ pub mod category {
         }
         /// <p>The ID of the skill store category.</p>
         pub fn set_category_id(mut self, input: std::option::Option<i64>) -> Self {
-            self.category_id = input;
-            self
+            self.category_id = input; self
         }
         /// <p>The name of the skill store category.</p>
         pub fn category_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5728,21 +5401,21 @@ pub mod category {
             self
         }
         /// <p>The name of the skill store category.</p>
-        pub fn set_category_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.category_name = input;
-            self
+        pub fn set_category_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.category_name = input; self
         }
         /// Consumes the builder and constructs a [`Category`](crate::model::Category).
         pub fn build(self) -> crate::model::Category {
             crate::model::Category {
-                category_id: self.category_id,
-                category_name: self.category_name,
+                category_id: self.category_id
+                ,
+                category_name: self.category_name
+                ,
             }
         }
     }
+    
+    
 }
 impl Category {
     /// Creates a new builder-style object to manufacture [`Category`](crate::model::Category).
@@ -5754,7 +5427,7 @@ impl Category {
 /// <p>The summary of skills.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SkillSummary {
+pub struct SkillSummary  {
     /// <p>The ARN of the skill summary.</p>
     #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
@@ -5773,11 +5446,11 @@ pub struct SkillSummary {
 }
 impl SkillSummary {
     /// <p>The ARN of the skill summary.</p>
-    pub fn skill_id(&self) -> std::option::Option<&str> {
+    pub fn skill_id(&self) -> std::option::Option<& str> {
         self.skill_id.as_deref()
     }
     /// <p>The name of the skill.</p>
-    pub fn skill_name(&self) -> std::option::Option<&str> {
+    pub fn skill_name(&self) -> std::option::Option<& str> {
         self.skill_name.as_deref()
     }
     /// <p>Linking support for a skill.</p>
@@ -5785,17 +5458,17 @@ impl SkillSummary {
         self.supports_linking
     }
     /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be used.</p>
-    pub fn enablement_type(&self) -> std::option::Option<&crate::model::EnablementType> {
+    pub fn enablement_type(&self) -> std::option::Option<& crate::model::EnablementType> {
         self.enablement_type.as_ref()
     }
     /// <p>Whether the skill is publicly available or is a private skill.</p>
-    pub fn skill_type(&self) -> std::option::Option<&crate::model::SkillType> {
+    pub fn skill_type(&self) -> std::option::Option<& crate::model::SkillType> {
         self.skill_type.as_ref()
     }
 }
 /// See [`SkillSummary`](crate::model::SkillSummary).
 pub mod skill_summary {
-
+    
     /// A builder for [`SkillSummary`](crate::model::SkillSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5813,8 +5486,7 @@ pub mod skill_summary {
         }
         /// <p>The ARN of the skill summary.</p>
         pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.skill_id = input;
-            self
+            self.skill_id = input; self
         }
         /// <p>The name of the skill.</p>
         pub fn skill_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5823,8 +5495,7 @@ pub mod skill_summary {
         }
         /// <p>The name of the skill.</p>
         pub fn set_skill_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.skill_name = input;
-            self
+            self.skill_name = input; self
         }
         /// <p>Linking support for a skill.</p>
         pub fn supports_linking(mut self, input: bool) -> Self {
@@ -5833,8 +5504,7 @@ pub mod skill_summary {
         }
         /// <p>Linking support for a skill.</p>
         pub fn set_supports_linking(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_linking = input;
-            self
+            self.supports_linking = input; self
         }
         /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be used.</p>
         pub fn enablement_type(mut self, input: crate::model::EnablementType) -> Self {
@@ -5842,12 +5512,8 @@ pub mod skill_summary {
             self
         }
         /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be used.</p>
-        pub fn set_enablement_type(
-            mut self,
-            input: std::option::Option<crate::model::EnablementType>,
-        ) -> Self {
-            self.enablement_type = input;
-            self
+        pub fn set_enablement_type(mut self, input: std::option::Option<crate::model::EnablementType>) -> Self {
+            self.enablement_type = input; self
         }
         /// <p>Whether the skill is publicly available or is a private skill.</p>
         pub fn skill_type(mut self, input: crate::model::SkillType) -> Self {
@@ -5855,24 +5521,28 @@ pub mod skill_summary {
             self
         }
         /// <p>Whether the skill is publicly available or is a private skill.</p>
-        pub fn set_skill_type(
-            mut self,
-            input: std::option::Option<crate::model::SkillType>,
-        ) -> Self {
-            self.skill_type = input;
-            self
+        pub fn set_skill_type(mut self, input: std::option::Option<crate::model::SkillType>) -> Self {
+            self.skill_type = input; self
         }
         /// Consumes the builder and constructs a [`SkillSummary`](crate::model::SkillSummary).
         pub fn build(self) -> crate::model::SkillSummary {
             crate::model::SkillSummary {
-                skill_id: self.skill_id,
-                skill_name: self.skill_name,
-                supports_linking: self.supports_linking.unwrap_or_default(),
-                enablement_type: self.enablement_type,
-                skill_type: self.skill_type,
+                skill_id: self.skill_id
+                ,
+                skill_name: self.skill_name
+                ,
+                supports_linking: self.supports_linking
+                    .unwrap_or_default()
+                ,
+                enablement_type: self.enablement_type
+                ,
+                skill_type: self.skill_type
+                ,
             }
         }
     }
+    
+    
 }
 impl SkillSummary {
     /// Creates a new builder-style object to manufacture [`SkillSummary`](crate::model::SkillSummary).
@@ -5887,9 +5557,9 @@ impl SkillSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let skilltype = unimplemented!();
 /// match skilltype {
@@ -5911,58 +5581,52 @@ impl SkillSummary {
 /// Specifically, when `skilltype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SkillType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SkillType {
     #[allow(missing_docs)] // documentation missing in model
     Private,
     #[allow(missing_docs)] // documentation missing in model
     Public,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SkillType {
     fn from(s: &str) -> Self {
         match s {
             "PRIVATE" => SkillType::Private,
             "PUBLIC" => SkillType::Public,
-            other => SkillType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SkillType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SkillType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SkillType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SkillType::from(s))
+                }
+            }
 impl SkillType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SkillType::Private => "PRIVATE",
             SkillType::Public => "PUBLIC",
-            SkillType::Unknown(value) => value.as_str(),
+            SkillType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRIVATE", "PUBLIC"]
+        &[
+            "PRIVATE", "PUBLIC"
+        ]
     }
 }
 impl AsRef<str> for SkillType {
@@ -5977,9 +5641,9 @@ impl AsRef<str> for SkillType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let enablementtype = unimplemented!();
 /// match enablementtype {
@@ -6001,58 +5665,52 @@ impl AsRef<str> for SkillType {
 /// Specifically, when `enablementtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnablementType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EnablementType {
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnablementType {
     fn from(s: &str) -> Self {
         match s {
             "ENABLED" => EnablementType::Enabled,
             "PENDING" => EnablementType::Pending,
-            other => EnablementType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EnablementType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EnablementType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnablementType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EnablementType::from(s))
+                }
+            }
 impl EnablementType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnablementType::Enabled => "ENABLED",
             EnablementType::Pending => "PENDING",
-            EnablementType::Unknown(value) => value.as_str(),
+            EnablementType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENABLED", "PENDING"]
+        &[
+            "ENABLED", "PENDING"
+        ]
     }
 }
 impl AsRef<str> for EnablementType {
@@ -6067,9 +5725,9 @@ impl AsRef<str> for EnablementType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let skilltypefilter = unimplemented!();
 /// match skilltypefilter {
@@ -6092,22 +5750,14 @@ impl AsRef<str> for EnablementType {
 /// Specifically, when `skilltypefilter` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SkillTypeFilter::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SkillTypeFilter {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -6116,7 +5766,7 @@ pub enum SkillTypeFilter {
     #[allow(missing_docs)] // documentation missing in model
     Public,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SkillTypeFilter {
     fn from(s: &str) -> Self {
@@ -6124,17 +5774,17 @@ impl std::convert::From<&str> for SkillTypeFilter {
             "ALL" => SkillTypeFilter::All,
             "PRIVATE" => SkillTypeFilter::Private,
             "PUBLIC" => SkillTypeFilter::Public,
-            other => SkillTypeFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SkillTypeFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SkillTypeFilter {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SkillTypeFilter::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SkillTypeFilter::from(s))
+                }
+            }
 impl SkillTypeFilter {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6142,12 +5792,14 @@ impl SkillTypeFilter {
             SkillTypeFilter::All => "ALL",
             SkillTypeFilter::Private => "PRIVATE",
             SkillTypeFilter::Public => "PUBLIC",
-            SkillTypeFilter::Unknown(value) => value.as_str(),
+            SkillTypeFilter::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "PRIVATE", "PUBLIC"]
+        &[
+            "ALL", "PRIVATE", "PUBLIC"
+        ]
     }
 }
 impl AsRef<str> for SkillTypeFilter {
@@ -6162,9 +5814,9 @@ impl AsRef<str> for SkillTypeFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let enablementtypefilter = unimplemented!();
 /// match enablementtypefilter {
@@ -6186,60 +5838,52 @@ impl AsRef<str> for SkillTypeFilter {
 /// Specifically, when `enablementtypefilter` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnablementTypeFilter::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EnablementTypeFilter {
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnablementTypeFilter {
     fn from(s: &str) -> Self {
         match s {
             "ENABLED" => EnablementTypeFilter::Enabled,
             "PENDING" => EnablementTypeFilter::Pending,
-            other => {
-                EnablementTypeFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => EnablementTypeFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EnablementTypeFilter {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnablementTypeFilter::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EnablementTypeFilter::from(s))
+                }
+            }
 impl EnablementTypeFilter {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnablementTypeFilter::Enabled => "ENABLED",
             EnablementTypeFilter::Pending => "PENDING",
-            EnablementTypeFilter::Unknown(value) => value.as_str(),
+            EnablementTypeFilter::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENABLED", "PENDING"]
+        &[
+            "ENABLED", "PENDING"
+        ]
     }
 }
 impl AsRef<str> for EnablementTypeFilter {
@@ -6251,7 +5895,7 @@ impl AsRef<str> for EnablementTypeFilter {
 /// <p>The summary of a gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewaySummary {
+pub struct GatewaySummary  {
     /// <p>The ARN of the gateway.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6270,29 +5914,29 @@ pub struct GatewaySummary {
 }
 impl GatewaySummary {
     /// <p>The ARN of the gateway.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the gateway.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the gateway.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the gateway group that the gateway is associated to.</p>
-    pub fn gateway_group_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_group_arn(&self) -> std::option::Option<& str> {
         self.gateway_group_arn.as_deref()
     }
     /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
-    pub fn software_version(&self) -> std::option::Option<&str> {
+    pub fn software_version(&self) -> std::option::Option<& str> {
         self.software_version.as_deref()
     }
 }
 /// See [`GatewaySummary`](crate::model::GatewaySummary).
 pub mod gateway_summary {
-
+    
     /// A builder for [`GatewaySummary`](crate::model::GatewaySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6310,8 +5954,7 @@ pub mod gateway_summary {
         }
         /// <p>The ARN of the gateway.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the gateway.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6320,8 +5963,7 @@ pub mod gateway_summary {
         }
         /// <p>The name of the gateway.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the gateway.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6330,8 +5972,7 @@ pub mod gateway_summary {
         }
         /// <p>The description of the gateway.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ARN of the gateway group that the gateway is associated to.</p>
         pub fn gateway_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6339,12 +5980,8 @@ pub mod gateway_summary {
             self
         }
         /// <p>The ARN of the gateway group that the gateway is associated to.</p>
-        pub fn set_gateway_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.gateway_group_arn = input;
-            self
+        pub fn set_gateway_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.gateway_group_arn = input; self
         }
         /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
         pub fn software_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6352,24 +5989,27 @@ pub mod gateway_summary {
             self
         }
         /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
-        pub fn set_software_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.software_version = input;
-            self
+        pub fn set_software_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.software_version = input; self
         }
         /// Consumes the builder and constructs a [`GatewaySummary`](crate::model::GatewaySummary).
         pub fn build(self) -> crate::model::GatewaySummary {
             crate::model::GatewaySummary {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                gateway_group_arn: self.gateway_group_arn,
-                software_version: self.software_version,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                gateway_group_arn: self.gateway_group_arn
+                ,
+                software_version: self.software_version
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewaySummary {
     /// Creates a new builder-style object to manufacture [`GatewaySummary`](crate::model::GatewaySummary).
@@ -6381,7 +6021,7 @@ impl GatewaySummary {
 /// <p>The summary of a gateway group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayGroupSummary {
+pub struct GatewayGroupSummary  {
     /// <p>The ARN of the gateway group.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6394,21 +6034,21 @@ pub struct GatewayGroupSummary {
 }
 impl GatewayGroupSummary {
     /// <p>The ARN of the gateway group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the gateway group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the gateway group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`GatewayGroupSummary`](crate::model::GatewayGroupSummary).
 pub mod gateway_group_summary {
-
+    
     /// A builder for [`GatewayGroupSummary`](crate::model::GatewayGroupSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6424,8 +6064,7 @@ pub mod gateway_group_summary {
         }
         /// <p>The ARN of the gateway group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the gateway group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6434,8 +6073,7 @@ pub mod gateway_group_summary {
         }
         /// <p>The name of the gateway group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the gateway group.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6444,18 +6082,22 @@ pub mod gateway_group_summary {
         }
         /// <p>The description of the gateway group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`GatewayGroupSummary`](crate::model::GatewayGroupSummary).
         pub fn build(self) -> crate::model::GatewayGroupSummary {
             crate::model::GatewayGroupSummary {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewayGroupSummary {
     /// Creates a new builder-style object to manufacture [`GatewayGroupSummary`](crate::model::GatewayGroupSummary).
@@ -6467,7 +6109,7 @@ impl GatewayGroupSummary {
 /// <p>The list of device events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceEvent {
+pub struct DeviceEvent  {
     /// <p>The type of device event.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::DeviceEventType>,
@@ -6480,21 +6122,21 @@ pub struct DeviceEvent {
 }
 impl DeviceEvent {
     /// <p>The type of device event.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::DeviceEventType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::DeviceEventType> {
         self.r#type.as_ref()
     }
     /// <p>The value of the event.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The time (in epoch) when the event occurred. </p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
 /// See [`DeviceEvent`](crate::model::DeviceEvent).
 pub mod device_event {
-
+    
     /// A builder for [`DeviceEvent`](crate::model::DeviceEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6509,12 +6151,8 @@ pub mod device_event {
             self
         }
         /// <p>The type of device event.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::DeviceEventType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::DeviceEventType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The value of the event.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6523,8 +6161,7 @@ pub mod device_event {
         }
         /// <p>The value of the event.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>The time (in epoch) when the event occurred. </p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6532,22 +6169,23 @@ pub mod device_event {
             self
         }
         /// <p>The time (in epoch) when the event occurred. </p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         /// Consumes the builder and constructs a [`DeviceEvent`](crate::model::DeviceEvent).
         pub fn build(self) -> crate::model::DeviceEvent {
             crate::model::DeviceEvent {
-                r#type: self.r#type,
-                value: self.value,
-                timestamp: self.timestamp,
+                r#type: self.r#type
+                ,
+                value: self.value
+                ,
+                timestamp: self.timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceEvent {
     /// Creates a new builder-style object to manufacture [`DeviceEvent`](crate::model::DeviceEvent).
@@ -6562,9 +6200,9 @@ impl DeviceEvent {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deviceeventtype = unimplemented!();
 /// match deviceeventtype {
@@ -6586,58 +6224,52 @@ impl DeviceEvent {
 /// Specifically, when `deviceeventtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeviceEventType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeviceEventType {
     #[allow(missing_docs)] // documentation missing in model
     ConnectionStatus,
     #[allow(missing_docs)] // documentation missing in model
     DeviceStatus,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeviceEventType {
     fn from(s: &str) -> Self {
         match s {
             "CONNECTION_STATUS" => DeviceEventType::ConnectionStatus,
             "DEVICE_STATUS" => DeviceEventType::DeviceStatus,
-            other => DeviceEventType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DeviceEventType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeviceEventType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeviceEventType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeviceEventType::from(s))
+                }
+            }
 impl DeviceEventType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceEventType::ConnectionStatus => "CONNECTION_STATUS",
             DeviceEventType::DeviceStatus => "DEVICE_STATUS",
-            DeviceEventType::Unknown(value) => value.as_str(),
+            DeviceEventType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONNECTION_STATUS", "DEVICE_STATUS"]
+        &[
+            "CONNECTION_STATUS", "DEVICE_STATUS"
+        ]
     }
 }
 impl AsRef<str> for DeviceEventType {
@@ -6649,7 +6281,7 @@ impl AsRef<str> for DeviceEventType {
 /// <p>An entity that provides a conferencing solution. Alexa for Business acts as the voice interface and mediator that connects users to their preferred conference provider. Examples of conference providers include Amazon Chime, Zoom, Cisco, and Polycom. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConferenceProvider {
+pub struct ConferenceProvider  {
     /// <p>The ARN of the newly created conference provider.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6671,33 +6303,33 @@ pub struct ConferenceProvider {
 }
 impl ConferenceProvider {
     /// <p>The ARN of the newly created conference provider.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the conference provider.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of conference providers.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ConferenceProviderType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ConferenceProviderType> {
         self.r#type.as_ref()
     }
     /// <p>The IP endpoint and protocol for calling.</p>
-    pub fn ip_dial_in(&self) -> std::option::Option<&crate::model::IpDialIn> {
+    pub fn ip_dial_in(&self) -> std::option::Option<& crate::model::IpDialIn> {
         self.ip_dial_in.as_ref()
     }
     /// <p>The information for PSTN conferencing.</p>
-    pub fn pstn_dial_in(&self) -> std::option::Option<&crate::model::PstnDialIn> {
+    pub fn pstn_dial_in(&self) -> std::option::Option<& crate::model::PstnDialIn> {
         self.pstn_dial_in.as_ref()
     }
     /// <p>The meeting settings for the conference provider.</p>
-    pub fn meeting_setting(&self) -> std::option::Option<&crate::model::MeetingSetting> {
+    pub fn meeting_setting(&self) -> std::option::Option<& crate::model::MeetingSetting> {
         self.meeting_setting.as_ref()
     }
 }
 /// See [`ConferenceProvider`](crate::model::ConferenceProvider).
 pub mod conference_provider {
-
+    
     /// A builder for [`ConferenceProvider`](crate::model::ConferenceProvider).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6716,8 +6348,7 @@ pub mod conference_provider {
         }
         /// <p>The ARN of the newly created conference provider.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the conference provider.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6726,8 +6357,7 @@ pub mod conference_provider {
         }
         /// <p>The name of the conference provider.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of conference providers.</p>
         pub fn r#type(mut self, input: crate::model::ConferenceProviderType) -> Self {
@@ -6735,12 +6365,8 @@ pub mod conference_provider {
             self
         }
         /// <p>The type of conference providers.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::ConferenceProviderType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ConferenceProviderType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The IP endpoint and protocol for calling.</p>
         pub fn ip_dial_in(mut self, input: crate::model::IpDialIn) -> Self {
@@ -6748,12 +6374,8 @@ pub mod conference_provider {
             self
         }
         /// <p>The IP endpoint and protocol for calling.</p>
-        pub fn set_ip_dial_in(
-            mut self,
-            input: std::option::Option<crate::model::IpDialIn>,
-        ) -> Self {
-            self.ip_dial_in = input;
-            self
+        pub fn set_ip_dial_in(mut self, input: std::option::Option<crate::model::IpDialIn>) -> Self {
+            self.ip_dial_in = input; self
         }
         /// <p>The information for PSTN conferencing.</p>
         pub fn pstn_dial_in(mut self, input: crate::model::PstnDialIn) -> Self {
@@ -6761,12 +6383,8 @@ pub mod conference_provider {
             self
         }
         /// <p>The information for PSTN conferencing.</p>
-        pub fn set_pstn_dial_in(
-            mut self,
-            input: std::option::Option<crate::model::PstnDialIn>,
-        ) -> Self {
-            self.pstn_dial_in = input;
-            self
+        pub fn set_pstn_dial_in(mut self, input: std::option::Option<crate::model::PstnDialIn>) -> Self {
+            self.pstn_dial_in = input; self
         }
         /// <p>The meeting settings for the conference provider.</p>
         pub fn meeting_setting(mut self, input: crate::model::MeetingSetting) -> Self {
@@ -6774,25 +6392,29 @@ pub mod conference_provider {
             self
         }
         /// <p>The meeting settings for the conference provider.</p>
-        pub fn set_meeting_setting(
-            mut self,
-            input: std::option::Option<crate::model::MeetingSetting>,
-        ) -> Self {
-            self.meeting_setting = input;
-            self
+        pub fn set_meeting_setting(mut self, input: std::option::Option<crate::model::MeetingSetting>) -> Self {
+            self.meeting_setting = input; self
         }
         /// Consumes the builder and constructs a [`ConferenceProvider`](crate::model::ConferenceProvider).
         pub fn build(self) -> crate::model::ConferenceProvider {
             crate::model::ConferenceProvider {
-                arn: self.arn,
-                name: self.name,
-                r#type: self.r#type,
-                ip_dial_in: self.ip_dial_in,
-                pstn_dial_in: self.pstn_dial_in,
-                meeting_setting: self.meeting_setting,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                ip_dial_in: self.ip_dial_in
+                ,
+                pstn_dial_in: self.pstn_dial_in
+                ,
+                meeting_setting: self.meeting_setting
+                ,
             }
         }
     }
+    
+    
 }
 impl ConferenceProvider {
     /// Creates a new builder-style object to manufacture [`ConferenceProvider`](crate::model::ConferenceProvider).
@@ -6804,7 +6426,7 @@ impl ConferenceProvider {
 /// <p>The schedule of the usage report.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BusinessReportSchedule {
+pub struct BusinessReportSchedule  {
     /// <p>The ARN of the business report schedule.</p>
     #[doc(hidden)]
     pub schedule_arn: std::option::Option<std::string::String>,
@@ -6832,41 +6454,41 @@ pub struct BusinessReportSchedule {
 }
 impl BusinessReportSchedule {
     /// <p>The ARN of the business report schedule.</p>
-    pub fn schedule_arn(&self) -> std::option::Option<&str> {
+    pub fn schedule_arn(&self) -> std::option::Option<& str> {
         self.schedule_arn.as_deref()
     }
     /// <p>The name identifier of the schedule.</p>
-    pub fn schedule_name(&self) -> std::option::Option<&str> {
+    pub fn schedule_name(&self) -> std::option::Option<& str> {
         self.schedule_name.as_deref()
     }
     /// <p>The S3 bucket name of the output reports.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The S3 key where the report is delivered.</p>
-    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_key_prefix(&self) -> std::option::Option<& str> {
         self.s3_key_prefix.as_deref()
     }
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::BusinessReportFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::BusinessReportFormat> {
         self.format.as_ref()
     }
     /// <p>The content range of the reports.</p>
-    pub fn content_range(&self) -> std::option::Option<&crate::model::BusinessReportContentRange> {
+    pub fn content_range(&self) -> std::option::Option<& crate::model::BusinessReportContentRange> {
         self.content_range.as_ref()
     }
     /// <p>The recurrence of the reports.</p>
-    pub fn recurrence(&self) -> std::option::Option<&crate::model::BusinessReportRecurrence> {
+    pub fn recurrence(&self) -> std::option::Option<& crate::model::BusinessReportRecurrence> {
         self.recurrence.as_ref()
     }
     /// <p>The details of the last business report delivery for a specified time interval.</p>
-    pub fn last_business_report(&self) -> std::option::Option<&crate::model::BusinessReport> {
+    pub fn last_business_report(&self) -> std::option::Option<& crate::model::BusinessReport> {
         self.last_business_report.as_ref()
     }
 }
 /// See [`BusinessReportSchedule`](crate::model::BusinessReportSchedule).
 pub mod business_report_schedule {
-
+    
     /// A builder for [`BusinessReportSchedule`](crate::model::BusinessReportSchedule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6887,8 +6509,7 @@ pub mod business_report_schedule {
         }
         /// <p>The ARN of the business report schedule.</p>
         pub fn set_schedule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schedule_arn = input;
-            self
+            self.schedule_arn = input; self
         }
         /// <p>The name identifier of the schedule.</p>
         pub fn schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6896,12 +6517,8 @@ pub mod business_report_schedule {
             self
         }
         /// <p>The name identifier of the schedule.</p>
-        pub fn set_schedule_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schedule_name = input;
-            self
+        pub fn set_schedule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schedule_name = input; self
         }
         /// <p>The S3 bucket name of the output reports.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6909,12 +6526,8 @@ pub mod business_report_schedule {
             self
         }
         /// <p>The S3 bucket name of the output reports.</p>
-        pub fn set_s3_bucket_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_name = input;
-            self
+        pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_name = input; self
         }
         /// <p>The S3 key where the report is delivered.</p>
         pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6922,12 +6535,8 @@ pub mod business_report_schedule {
             self
         }
         /// <p>The S3 key where the report is delivered.</p>
-        pub fn set_s3_key_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_key_prefix = input;
-            self
+        pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_key_prefix = input; self
         }
         /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
         pub fn format(mut self, input: crate::model::BusinessReportFormat) -> Self {
@@ -6935,12 +6544,8 @@ pub mod business_report_schedule {
             self
         }
         /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::BusinessReportFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::BusinessReportFormat>) -> Self {
+            self.format = input; self
         }
         /// <p>The content range of the reports.</p>
         pub fn content_range(mut self, input: crate::model::BusinessReportContentRange) -> Self {
@@ -6948,12 +6553,8 @@ pub mod business_report_schedule {
             self
         }
         /// <p>The content range of the reports.</p>
-        pub fn set_content_range(
-            mut self,
-            input: std::option::Option<crate::model::BusinessReportContentRange>,
-        ) -> Self {
-            self.content_range = input;
-            self
+        pub fn set_content_range(mut self, input: std::option::Option<crate::model::BusinessReportContentRange>) -> Self {
+            self.content_range = input; self
         }
         /// <p>The recurrence of the reports.</p>
         pub fn recurrence(mut self, input: crate::model::BusinessReportRecurrence) -> Self {
@@ -6961,12 +6562,8 @@ pub mod business_report_schedule {
             self
         }
         /// <p>The recurrence of the reports.</p>
-        pub fn set_recurrence(
-            mut self,
-            input: std::option::Option<crate::model::BusinessReportRecurrence>,
-        ) -> Self {
-            self.recurrence = input;
-            self
+        pub fn set_recurrence(mut self, input: std::option::Option<crate::model::BusinessReportRecurrence>) -> Self {
+            self.recurrence = input; self
         }
         /// <p>The details of the last business report delivery for a specified time interval.</p>
         pub fn last_business_report(mut self, input: crate::model::BusinessReport) -> Self {
@@ -6974,27 +6571,33 @@ pub mod business_report_schedule {
             self
         }
         /// <p>The details of the last business report delivery for a specified time interval.</p>
-        pub fn set_last_business_report(
-            mut self,
-            input: std::option::Option<crate::model::BusinessReport>,
-        ) -> Self {
-            self.last_business_report = input;
-            self
+        pub fn set_last_business_report(mut self, input: std::option::Option<crate::model::BusinessReport>) -> Self {
+            self.last_business_report = input; self
         }
         /// Consumes the builder and constructs a [`BusinessReportSchedule`](crate::model::BusinessReportSchedule).
         pub fn build(self) -> crate::model::BusinessReportSchedule {
             crate::model::BusinessReportSchedule {
-                schedule_arn: self.schedule_arn,
-                schedule_name: self.schedule_name,
-                s3_bucket_name: self.s3_bucket_name,
-                s3_key_prefix: self.s3_key_prefix,
-                format: self.format,
-                content_range: self.content_range,
-                recurrence: self.recurrence,
-                last_business_report: self.last_business_report,
+                schedule_arn: self.schedule_arn
+                ,
+                schedule_name: self.schedule_name
+                ,
+                s3_bucket_name: self.s3_bucket_name
+                ,
+                s3_key_prefix: self.s3_key_prefix
+                ,
+                format: self.format
+                ,
+                content_range: self.content_range
+                ,
+                recurrence: self.recurrence
+                ,
+                last_business_report: self.last_business_report
+                ,
             }
         }
     }
+    
+    
 }
 impl BusinessReportSchedule {
     /// Creates a new builder-style object to manufacture [`BusinessReportSchedule`](crate::model::BusinessReportSchedule).
@@ -7006,7 +6609,7 @@ impl BusinessReportSchedule {
 /// <p>Usage report with specified parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BusinessReport {
+pub struct BusinessReport  {
     /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or FAILED).</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::BusinessReportStatus>,
@@ -7025,29 +6628,29 @@ pub struct BusinessReport {
 }
 impl BusinessReport {
     /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or FAILED).</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::BusinessReportStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::BusinessReportStatus> {
         self.status.as_ref()
     }
     /// <p>The failure code.</p>
-    pub fn failure_code(&self) -> std::option::Option<&crate::model::BusinessReportFailureCode> {
+    pub fn failure_code(&self) -> std::option::Option<& crate::model::BusinessReportFailureCode> {
         self.failure_code.as_ref()
     }
     /// <p>The S3 location of the output reports.</p>
-    pub fn s3_location(&self) -> std::option::Option<&crate::model::BusinessReportS3Location> {
+    pub fn s3_location(&self) -> std::option::Option<& crate::model::BusinessReportS3Location> {
         self.s3_location.as_ref()
     }
     /// <p>The time of report delivery.</p>
-    pub fn delivery_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn delivery_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.delivery_time.as_ref()
     }
     /// <p>The download link where a user can download the report.</p>
-    pub fn download_url(&self) -> std::option::Option<&str> {
+    pub fn download_url(&self) -> std::option::Option<& str> {
         self.download_url.as_deref()
     }
 }
 /// See [`BusinessReport`](crate::model::BusinessReport).
 pub mod business_report {
-
+    
     /// A builder for [`BusinessReport`](crate::model::BusinessReport).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7064,12 +6667,8 @@ pub mod business_report {
             self
         }
         /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or FAILED).</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::BusinessReportStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::BusinessReportStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The failure code.</p>
         pub fn failure_code(mut self, input: crate::model::BusinessReportFailureCode) -> Self {
@@ -7077,12 +6676,8 @@ pub mod business_report {
             self
         }
         /// <p>The failure code.</p>
-        pub fn set_failure_code(
-            mut self,
-            input: std::option::Option<crate::model::BusinessReportFailureCode>,
-        ) -> Self {
-            self.failure_code = input;
-            self
+        pub fn set_failure_code(mut self, input: std::option::Option<crate::model::BusinessReportFailureCode>) -> Self {
+            self.failure_code = input; self
         }
         /// <p>The S3 location of the output reports.</p>
         pub fn s3_location(mut self, input: crate::model::BusinessReportS3Location) -> Self {
@@ -7090,12 +6685,8 @@ pub mod business_report {
             self
         }
         /// <p>The S3 location of the output reports.</p>
-        pub fn set_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::BusinessReportS3Location>,
-        ) -> Self {
-            self.s3_location = input;
-            self
+        pub fn set_s3_location(mut self, input: std::option::Option<crate::model::BusinessReportS3Location>) -> Self {
+            self.s3_location = input; self
         }
         /// <p>The time of report delivery.</p>
         pub fn delivery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7103,12 +6694,8 @@ pub mod business_report {
             self
         }
         /// <p>The time of report delivery.</p>
-        pub fn set_delivery_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.delivery_time = input;
-            self
+        pub fn set_delivery_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.delivery_time = input; self
         }
         /// <p>The download link where a user can download the report.</p>
         pub fn download_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7117,20 +6704,26 @@ pub mod business_report {
         }
         /// <p>The download link where a user can download the report.</p>
         pub fn set_download_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.download_url = input;
-            self
+            self.download_url = input; self
         }
         /// Consumes the builder and constructs a [`BusinessReport`](crate::model::BusinessReport).
         pub fn build(self) -> crate::model::BusinessReport {
             crate::model::BusinessReport {
-                status: self.status,
-                failure_code: self.failure_code,
-                s3_location: self.s3_location,
-                delivery_time: self.delivery_time,
-                download_url: self.download_url,
+                status: self.status
+                ,
+                failure_code: self.failure_code
+                ,
+                s3_location: self.s3_location
+                ,
+                delivery_time: self.delivery_time
+                ,
+                download_url: self.download_url
+                ,
             }
         }
     }
+    
+    
 }
 impl BusinessReport {
     /// Creates a new builder-style object to manufacture [`BusinessReport`](crate::model::BusinessReport).
@@ -7142,7 +6735,7 @@ impl BusinessReport {
 /// <p>The S3 location of the output reports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BusinessReportS3Location {
+pub struct BusinessReportS3Location  {
     /// <p>The path of the business report.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
@@ -7152,17 +6745,17 @@ pub struct BusinessReportS3Location {
 }
 impl BusinessReportS3Location {
     /// <p>The path of the business report.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The S3 bucket name of the output reports.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
 }
 /// See [`BusinessReportS3Location`](crate::model::BusinessReportS3Location).
 pub mod business_report_s3_location {
-
+    
     /// A builder for [`BusinessReportS3Location`](crate::model::BusinessReportS3Location).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7177,8 +6770,7 @@ pub mod business_report_s3_location {
         }
         /// <p>The path of the business report.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// <p>The S3 bucket name of the output reports.</p>
         pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7187,17 +6779,20 @@ pub mod business_report_s3_location {
         }
         /// <p>The S3 bucket name of the output reports.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = input;
-            self
+            self.bucket_name = input; self
         }
         /// Consumes the builder and constructs a [`BusinessReportS3Location`](crate::model::BusinessReportS3Location).
         pub fn build(self) -> crate::model::BusinessReportS3Location {
             crate::model::BusinessReportS3Location {
-                path: self.path,
-                bucket_name: self.bucket_name,
+                path: self.path
+                ,
+                bucket_name: self.bucket_name
+                ,
             }
         }
     }
+    
+    
 }
 impl BusinessReportS3Location {
     /// Creates a new builder-style object to manufacture [`BusinessReportS3Location`](crate::model::BusinessReportS3Location).
@@ -7212,9 +6807,9 @@ impl BusinessReportS3Location {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let businessreportfailurecode = unimplemented!();
 /// match businessreportfailurecode {
@@ -7237,22 +6832,14 @@ impl BusinessReportS3Location {
 /// Specifically, when `businessreportfailurecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BusinessReportFailureCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BusinessReportFailureCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -7261,7 +6848,7 @@ pub enum BusinessReportFailureCode {
     #[allow(missing_docs)] // documentation missing in model
     NoSuchBucket,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BusinessReportFailureCode {
     fn from(s: &str) -> Self {
@@ -7269,19 +6856,17 @@ impl std::convert::From<&str> for BusinessReportFailureCode {
             "ACCESS_DENIED" => BusinessReportFailureCode::AccessDenied,
             "INTERNAL_FAILURE" => BusinessReportFailureCode::InternalFailure,
             "NO_SUCH_BUCKET" => BusinessReportFailureCode::NoSuchBucket,
-            other => BusinessReportFailureCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BusinessReportFailureCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BusinessReportFailureCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BusinessReportFailureCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BusinessReportFailureCode::from(s))
+                }
+            }
 impl BusinessReportFailureCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7289,12 +6874,14 @@ impl BusinessReportFailureCode {
             BusinessReportFailureCode::AccessDenied => "ACCESS_DENIED",
             BusinessReportFailureCode::InternalFailure => "INTERNAL_FAILURE",
             BusinessReportFailureCode::NoSuchBucket => "NO_SUCH_BUCKET",
-            BusinessReportFailureCode::Unknown(value) => value.as_str(),
+            BusinessReportFailureCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCESS_DENIED", "INTERNAL_FAILURE", "NO_SUCH_BUCKET"]
+        &[
+            "ACCESS_DENIED", "INTERNAL_FAILURE", "NO_SUCH_BUCKET"
+        ]
     }
 }
 impl AsRef<str> for BusinessReportFailureCode {
@@ -7309,9 +6896,9 @@ impl AsRef<str> for BusinessReportFailureCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let businessreportstatus = unimplemented!();
 /// match businessreportstatus {
@@ -7334,22 +6921,14 @@ impl AsRef<str> for BusinessReportFailureCode {
 /// Specifically, when `businessreportstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BusinessReportStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BusinessReportStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -7358,7 +6937,7 @@ pub enum BusinessReportStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BusinessReportStatus {
     fn from(s: &str) -> Self {
@@ -7366,19 +6945,17 @@ impl std::convert::From<&str> for BusinessReportStatus {
             "FAILED" => BusinessReportStatus::Failed,
             "RUNNING" => BusinessReportStatus::Running,
             "SUCCEEDED" => BusinessReportStatus::Succeeded,
-            other => {
-                BusinessReportStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => BusinessReportStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BusinessReportStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BusinessReportStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BusinessReportStatus::from(s))
+                }
+            }
 impl BusinessReportStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7386,12 +6963,14 @@ impl BusinessReportStatus {
             BusinessReportStatus::Failed => "FAILED",
             BusinessReportStatus::Running => "RUNNING",
             BusinessReportStatus::Succeeded => "SUCCEEDED",
-            BusinessReportStatus::Unknown(value) => value.as_str(),
+            BusinessReportStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "RUNNING", "SUCCEEDED"]
+        &[
+            "FAILED", "RUNNING", "SUCCEEDED"
+        ]
     }
 }
 impl AsRef<str> for BusinessReportStatus {
@@ -7403,20 +6982,20 @@ impl AsRef<str> for BusinessReportStatus {
 /// <p>The content range of the report.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BusinessReportContentRange {
+pub struct BusinessReportContentRange  {
     /// <p>The interval of the content range.</p>
     #[doc(hidden)]
     pub interval: std::option::Option<crate::model::BusinessReportInterval>,
 }
 impl BusinessReportContentRange {
     /// <p>The interval of the content range.</p>
-    pub fn interval(&self) -> std::option::Option<&crate::model::BusinessReportInterval> {
+    pub fn interval(&self) -> std::option::Option<& crate::model::BusinessReportInterval> {
         self.interval.as_ref()
     }
 }
 /// See [`BusinessReportContentRange`](crate::model::BusinessReportContentRange).
 pub mod business_report_content_range {
-
+    
     /// A builder for [`BusinessReportContentRange`](crate::model::BusinessReportContentRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7429,20 +7008,19 @@ pub mod business_report_content_range {
             self
         }
         /// <p>The interval of the content range.</p>
-        pub fn set_interval(
-            mut self,
-            input: std::option::Option<crate::model::BusinessReportInterval>,
-        ) -> Self {
-            self.interval = input;
-            self
+        pub fn set_interval(mut self, input: std::option::Option<crate::model::BusinessReportInterval>) -> Self {
+            self.interval = input; self
         }
         /// Consumes the builder and constructs a [`BusinessReportContentRange`](crate::model::BusinessReportContentRange).
         pub fn build(self) -> crate::model::BusinessReportContentRange {
             crate::model::BusinessReportContentRange {
-                interval: self.interval,
+                interval: self.interval
+                ,
             }
         }
     }
+    
+    
 }
 impl BusinessReportContentRange {
     /// Creates a new builder-style object to manufacture [`BusinessReportContentRange`](crate::model::BusinessReportContentRange).
@@ -7457,9 +7035,9 @@ impl BusinessReportContentRange {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let businessreportinterval = unimplemented!();
 /// match businessreportinterval {
@@ -7482,22 +7060,14 @@ impl BusinessReportContentRange {
 /// Specifically, when `businessreportinterval` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BusinessReportInterval::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BusinessReportInterval {
     #[allow(missing_docs)] // documentation missing in model
     OneDay,
@@ -7506,7 +7076,7 @@ pub enum BusinessReportInterval {
     #[allow(missing_docs)] // documentation missing in model
     ThirtyDays,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BusinessReportInterval {
     fn from(s: &str) -> Self {
@@ -7514,19 +7084,17 @@ impl std::convert::From<&str> for BusinessReportInterval {
             "ONE_DAY" => BusinessReportInterval::OneDay,
             "ONE_WEEK" => BusinessReportInterval::OneWeek,
             "THIRTY_DAYS" => BusinessReportInterval::ThirtyDays,
-            other => {
-                BusinessReportInterval::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => BusinessReportInterval::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BusinessReportInterval {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BusinessReportInterval::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BusinessReportInterval::from(s))
+                }
+            }
 impl BusinessReportInterval {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7534,12 +7102,14 @@ impl BusinessReportInterval {
             BusinessReportInterval::OneDay => "ONE_DAY",
             BusinessReportInterval::OneWeek => "ONE_WEEK",
             BusinessReportInterval::ThirtyDays => "THIRTY_DAYS",
-            BusinessReportInterval::Unknown(value) => value.as_str(),
+            BusinessReportInterval::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ONE_DAY", "ONE_WEEK", "THIRTY_DAYS"]
+        &[
+            "ONE_DAY", "ONE_WEEK", "THIRTY_DAYS"
+        ]
     }
 }
 impl AsRef<str> for BusinessReportInterval {
@@ -7551,7 +7121,7 @@ impl AsRef<str> for BusinessReportInterval {
 /// <p>A skill group with attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SkillGroup {
+pub struct SkillGroup  {
     /// <p>The ARN of a skill group.</p>
     #[doc(hidden)]
     pub skill_group_arn: std::option::Option<std::string::String>,
@@ -7564,21 +7134,21 @@ pub struct SkillGroup {
 }
 impl SkillGroup {
     /// <p>The ARN of a skill group.</p>
-    pub fn skill_group_arn(&self) -> std::option::Option<&str> {
+    pub fn skill_group_arn(&self) -> std::option::Option<& str> {
         self.skill_group_arn.as_deref()
     }
     /// <p>The name of a skill group.</p>
-    pub fn skill_group_name(&self) -> std::option::Option<&str> {
+    pub fn skill_group_name(&self) -> std::option::Option<& str> {
         self.skill_group_name.as_deref()
     }
     /// <p>The description of a skill group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`SkillGroup`](crate::model::SkillGroup).
 pub mod skill_group {
-
+    
     /// A builder for [`SkillGroup`](crate::model::SkillGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7593,12 +7163,8 @@ pub mod skill_group {
             self
         }
         /// <p>The ARN of a skill group.</p>
-        pub fn set_skill_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.skill_group_arn = input;
-            self
+        pub fn set_skill_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.skill_group_arn = input; self
         }
         /// <p>The name of a skill group.</p>
         pub fn skill_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7606,12 +7172,8 @@ pub mod skill_group {
             self
         }
         /// <p>The name of a skill group.</p>
-        pub fn set_skill_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.skill_group_name = input;
-            self
+        pub fn set_skill_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.skill_group_name = input; self
         }
         /// <p>The description of a skill group.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7620,18 +7182,22 @@ pub mod skill_group {
         }
         /// <p>The description of a skill group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`SkillGroup`](crate::model::SkillGroup).
         pub fn build(self) -> crate::model::SkillGroup {
             crate::model::SkillGroup {
-                skill_group_arn: self.skill_group_arn,
-                skill_group_name: self.skill_group_name,
-                description: self.description,
+                skill_group_arn: self.skill_group_arn
+                ,
+                skill_group_name: self.skill_group_name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl SkillGroup {
     /// Creates a new builder-style object to manufacture [`SkillGroup`](crate::model::SkillGroup).
@@ -7643,7 +7209,7 @@ impl SkillGroup {
 /// <p>A room with attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Room {
+pub struct Room  {
     /// <p>The ARN of a room.</p>
     #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
@@ -7662,29 +7228,29 @@ pub struct Room {
 }
 impl Room {
     /// <p>The ARN of a room.</p>
-    pub fn room_arn(&self) -> std::option::Option<&str> {
+    pub fn room_arn(&self) -> std::option::Option<& str> {
         self.room_arn.as_deref()
     }
     /// <p>The name of a room.</p>
-    pub fn room_name(&self) -> std::option::Option<&str> {
+    pub fn room_name(&self) -> std::option::Option<& str> {
         self.room_name.as_deref()
     }
     /// <p>The description of a room.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The provider calendar ARN of a room.</p>
-    pub fn provider_calendar_id(&self) -> std::option::Option<&str> {
+    pub fn provider_calendar_id(&self) -> std::option::Option<& str> {
         self.provider_calendar_id.as_deref()
     }
     /// <p>The profile ARN of a room.</p>
-    pub fn profile_arn(&self) -> std::option::Option<&str> {
+    pub fn profile_arn(&self) -> std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
 }
 /// See [`Room`](crate::model::Room).
 pub mod room {
-
+    
     /// A builder for [`Room`](crate::model::Room).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7702,8 +7268,7 @@ pub mod room {
         }
         /// <p>The ARN of a room.</p>
         pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.room_arn = input;
-            self
+            self.room_arn = input; self
         }
         /// <p>The name of a room.</p>
         pub fn room_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7712,8 +7277,7 @@ pub mod room {
         }
         /// <p>The name of a room.</p>
         pub fn set_room_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.room_name = input;
-            self
+            self.room_name = input; self
         }
         /// <p>The description of a room.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7722,8 +7286,7 @@ pub mod room {
         }
         /// <p>The description of a room.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The provider calendar ARN of a room.</p>
         pub fn provider_calendar_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7731,12 +7294,8 @@ pub mod room {
             self
         }
         /// <p>The provider calendar ARN of a room.</p>
-        pub fn set_provider_calendar_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provider_calendar_id = input;
-            self
+        pub fn set_provider_calendar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.provider_calendar_id = input; self
         }
         /// <p>The profile ARN of a room.</p>
         pub fn profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7745,20 +7304,26 @@ pub mod room {
         }
         /// <p>The profile ARN of a room.</p>
         pub fn set_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.profile_arn = input;
-            self
+            self.profile_arn = input; self
         }
         /// Consumes the builder and constructs a [`Room`](crate::model::Room).
         pub fn build(self) -> crate::model::Room {
             crate::model::Room {
-                room_arn: self.room_arn,
-                room_name: self.room_name,
-                description: self.description,
-                provider_calendar_id: self.provider_calendar_id,
-                profile_arn: self.profile_arn,
+                room_arn: self.room_arn
+                ,
+                room_name: self.room_name
+                ,
+                description: self.description
+                ,
+                provider_calendar_id: self.provider_calendar_id
+                ,
+                profile_arn: self.profile_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Room {
     /// Creates a new builder-style object to manufacture [`Room`](crate::model::Room).
@@ -7770,7 +7335,7 @@ impl Room {
 /// <p>A room profile with attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Profile {
+pub struct Profile  {
     /// <p>The ARN of a room profile.</p>
     #[doc(hidden)]
     pub profile_arn: std::option::Option<std::string::String>,
@@ -7819,11 +7384,11 @@ pub struct Profile {
 }
 impl Profile {
     /// <p>The ARN of a room profile.</p>
-    pub fn profile_arn(&self) -> std::option::Option<&str> {
+    pub fn profile_arn(&self) -> std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
     /// <p>The name of a room profile.</p>
-    pub fn profile_name(&self) -> std::option::Option<&str> {
+    pub fn profile_name(&self) -> std::option::Option<& str> {
         self.profile_name.as_deref()
     }
     /// <p>Retrieves if the profile is default or not.</p>
@@ -7831,27 +7396,27 @@ impl Profile {
         self.is_default
     }
     /// <p>The address of a room profile.</p>
-    pub fn address(&self) -> std::option::Option<&str> {
+    pub fn address(&self) -> std::option::Option<& str> {
         self.address.as_deref()
     }
     /// <p>The time zone of a room profile.</p>
-    pub fn timezone(&self) -> std::option::Option<&str> {
+    pub fn timezone(&self) -> std::option::Option<& str> {
         self.timezone.as_deref()
     }
     /// <p>The distance unit of a room profile.</p>
-    pub fn distance_unit(&self) -> std::option::Option<&crate::model::DistanceUnit> {
+    pub fn distance_unit(&self) -> std::option::Option<& crate::model::DistanceUnit> {
         self.distance_unit.as_ref()
     }
     /// <p>The temperature unit of a room profile.</p>
-    pub fn temperature_unit(&self) -> std::option::Option<&crate::model::TemperatureUnit> {
+    pub fn temperature_unit(&self) -> std::option::Option<& crate::model::TemperatureUnit> {
         self.temperature_unit.as_ref()
     }
     /// <p>The wake word of a room profile.</p>
-    pub fn wake_word(&self) -> std::option::Option<&crate::model::WakeWord> {
+    pub fn wake_word(&self) -> std::option::Option<& crate::model::WakeWord> {
         self.wake_word.as_ref()
     }
     /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
-    pub fn locale(&self) -> std::option::Option<&str> {
+    pub fn locale(&self) -> std::option::Option<& str> {
         self.locale.as_deref()
     }
     /// <p>The setup mode of a room profile.</p>
@@ -7871,19 +7436,17 @@ impl Profile {
         self.data_retention_opt_in
     }
     /// <p>The ARN of the address book.</p>
-    pub fn address_book_arn(&self) -> std::option::Option<&str> {
+    pub fn address_book_arn(&self) -> std::option::Option<& str> {
         self.address_book_arn.as_deref()
     }
     /// <p>Meeting room settings of a room profile.</p>
-    pub fn meeting_room_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::MeetingRoomConfiguration> {
+    pub fn meeting_room_configuration(&self) -> std::option::Option<& crate::model::MeetingRoomConfiguration> {
         self.meeting_room_configuration.as_ref()
     }
 }
 /// See [`Profile`](crate::model::Profile).
 pub mod profile {
-
+    
     /// A builder for [`Profile`](crate::model::Profile).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7901,8 +7464,7 @@ pub mod profile {
         pub(crate) pstn_enabled: std::option::Option<bool>,
         pub(crate) data_retention_opt_in: std::option::Option<bool>,
         pub(crate) address_book_arn: std::option::Option<std::string::String>,
-        pub(crate) meeting_room_configuration:
-            std::option::Option<crate::model::MeetingRoomConfiguration>,
+        pub(crate) meeting_room_configuration: std::option::Option<crate::model::MeetingRoomConfiguration>,
     }
     impl Builder {
         /// <p>The ARN of a room profile.</p>
@@ -7912,8 +7474,7 @@ pub mod profile {
         }
         /// <p>The ARN of a room profile.</p>
         pub fn set_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.profile_arn = input;
-            self
+            self.profile_arn = input; self
         }
         /// <p>The name of a room profile.</p>
         pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7922,8 +7483,7 @@ pub mod profile {
         }
         /// <p>The name of a room profile.</p>
         pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.profile_name = input;
-            self
+            self.profile_name = input; self
         }
         /// <p>Retrieves if the profile is default or not.</p>
         pub fn is_default(mut self, input: bool) -> Self {
@@ -7932,8 +7492,7 @@ pub mod profile {
         }
         /// <p>Retrieves if the profile is default or not.</p>
         pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_default = input;
-            self
+            self.is_default = input; self
         }
         /// <p>The address of a room profile.</p>
         pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7942,8 +7501,7 @@ pub mod profile {
         }
         /// <p>The address of a room profile.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address = input;
-            self
+            self.address = input; self
         }
         /// <p>The time zone of a room profile.</p>
         pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7952,8 +7510,7 @@ pub mod profile {
         }
         /// <p>The time zone of a room profile.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.timezone = input;
-            self
+            self.timezone = input; self
         }
         /// <p>The distance unit of a room profile.</p>
         pub fn distance_unit(mut self, input: crate::model::DistanceUnit) -> Self {
@@ -7961,12 +7518,8 @@ pub mod profile {
             self
         }
         /// <p>The distance unit of a room profile.</p>
-        pub fn set_distance_unit(
-            mut self,
-            input: std::option::Option<crate::model::DistanceUnit>,
-        ) -> Self {
-            self.distance_unit = input;
-            self
+        pub fn set_distance_unit(mut self, input: std::option::Option<crate::model::DistanceUnit>) -> Self {
+            self.distance_unit = input; self
         }
         /// <p>The temperature unit of a room profile.</p>
         pub fn temperature_unit(mut self, input: crate::model::TemperatureUnit) -> Self {
@@ -7974,12 +7527,8 @@ pub mod profile {
             self
         }
         /// <p>The temperature unit of a room profile.</p>
-        pub fn set_temperature_unit(
-            mut self,
-            input: std::option::Option<crate::model::TemperatureUnit>,
-        ) -> Self {
-            self.temperature_unit = input;
-            self
+        pub fn set_temperature_unit(mut self, input: std::option::Option<crate::model::TemperatureUnit>) -> Self {
+            self.temperature_unit = input; self
         }
         /// <p>The wake word of a room profile.</p>
         pub fn wake_word(mut self, input: crate::model::WakeWord) -> Self {
@@ -7988,8 +7537,7 @@ pub mod profile {
         }
         /// <p>The wake word of a room profile.</p>
         pub fn set_wake_word(mut self, input: std::option::Option<crate::model::WakeWord>) -> Self {
-            self.wake_word = input;
-            self
+            self.wake_word = input; self
         }
         /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
         pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7998,8 +7546,7 @@ pub mod profile {
         }
         /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
         pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale = input;
-            self
+            self.locale = input; self
         }
         /// <p>The setup mode of a room profile.</p>
         pub fn setup_mode_disabled(mut self, input: bool) -> Self {
@@ -8008,8 +7555,7 @@ pub mod profile {
         }
         /// <p>The setup mode of a room profile.</p>
         pub fn set_setup_mode_disabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.setup_mode_disabled = input;
-            self
+            self.setup_mode_disabled = input; self
         }
         /// <p>The max volume limit of a room profile.</p>
         pub fn max_volume_limit(mut self, input: i32) -> Self {
@@ -8018,8 +7564,7 @@ pub mod profile {
         }
         /// <p>The max volume limit of a room profile.</p>
         pub fn set_max_volume_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_volume_limit = input;
-            self
+            self.max_volume_limit = input; self
         }
         /// <p>The PSTN setting of a room profile.</p>
         pub fn pstn_enabled(mut self, input: bool) -> Self {
@@ -8028,8 +7573,7 @@ pub mod profile {
         }
         /// <p>The PSTN setting of a room profile.</p>
         pub fn set_pstn_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.pstn_enabled = input;
-            self
+            self.pstn_enabled = input; self
         }
         /// <p>Whether data retention of the profile is enabled.</p>
         pub fn data_retention_opt_in(mut self, input: bool) -> Self {
@@ -8038,8 +7582,7 @@ pub mod profile {
         }
         /// <p>Whether data retention of the profile is enabled.</p>
         pub fn set_data_retention_opt_in(mut self, input: std::option::Option<bool>) -> Self {
-            self.data_retention_opt_in = input;
-            self
+            self.data_retention_opt_in = input; self
         }
         /// <p>The ARN of the address book.</p>
         pub fn address_book_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8047,50 +7590,56 @@ pub mod profile {
             self
         }
         /// <p>The ARN of the address book.</p>
-        pub fn set_address_book_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.address_book_arn = input;
-            self
+        pub fn set_address_book_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.address_book_arn = input; self
         }
         /// <p>Meeting room settings of a room profile.</p>
-        pub fn meeting_room_configuration(
-            mut self,
-            input: crate::model::MeetingRoomConfiguration,
-        ) -> Self {
+        pub fn meeting_room_configuration(mut self, input: crate::model::MeetingRoomConfiguration) -> Self {
             self.meeting_room_configuration = Some(input);
             self
         }
         /// <p>Meeting room settings of a room profile.</p>
-        pub fn set_meeting_room_configuration(
-            mut self,
-            input: std::option::Option<crate::model::MeetingRoomConfiguration>,
-        ) -> Self {
-            self.meeting_room_configuration = input;
-            self
+        pub fn set_meeting_room_configuration(mut self, input: std::option::Option<crate::model::MeetingRoomConfiguration>) -> Self {
+            self.meeting_room_configuration = input; self
         }
         /// Consumes the builder and constructs a [`Profile`](crate::model::Profile).
         pub fn build(self) -> crate::model::Profile {
             crate::model::Profile {
-                profile_arn: self.profile_arn,
-                profile_name: self.profile_name,
-                is_default: self.is_default,
-                address: self.address,
-                timezone: self.timezone,
-                distance_unit: self.distance_unit,
-                temperature_unit: self.temperature_unit,
-                wake_word: self.wake_word,
-                locale: self.locale,
-                setup_mode_disabled: self.setup_mode_disabled,
-                max_volume_limit: self.max_volume_limit,
-                pstn_enabled: self.pstn_enabled,
-                data_retention_opt_in: self.data_retention_opt_in,
-                address_book_arn: self.address_book_arn,
-                meeting_room_configuration: self.meeting_room_configuration,
+                profile_arn: self.profile_arn
+                ,
+                profile_name: self.profile_name
+                ,
+                is_default: self.is_default
+                ,
+                address: self.address
+                ,
+                timezone: self.timezone
+                ,
+                distance_unit: self.distance_unit
+                ,
+                temperature_unit: self.temperature_unit
+                ,
+                wake_word: self.wake_word
+                ,
+                locale: self.locale
+                ,
+                setup_mode_disabled: self.setup_mode_disabled
+                ,
+                max_volume_limit: self.max_volume_limit
+                ,
+                pstn_enabled: self.pstn_enabled
+                ,
+                data_retention_opt_in: self.data_retention_opt_in
+                ,
+                address_book_arn: self.address_book_arn
+                ,
+                meeting_room_configuration: self.meeting_room_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl Profile {
     /// Creates a new builder-style object to manufacture [`Profile`](crate::model::Profile).
@@ -8102,7 +7651,7 @@ impl Profile {
 /// <p>Meeting room settings of a room profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MeetingRoomConfiguration {
+pub struct MeetingRoomConfiguration  {
     /// <p>Whether room utilization metrics are enabled or not.</p>
     #[doc(hidden)]
     pub room_utilization_metrics_enabled: std::option::Option<bool>,
@@ -8122,23 +7671,21 @@ impl MeetingRoomConfiguration {
         self.room_utilization_metrics_enabled
     }
     /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
-    pub fn end_of_meeting_reminder(
-        &self,
-    ) -> std::option::Option<&crate::model::EndOfMeetingReminder> {
+    pub fn end_of_meeting_reminder(&self) -> std::option::Option<& crate::model::EndOfMeetingReminder> {
         self.end_of_meeting_reminder.as_ref()
     }
     /// <p>Settings to automatically book the room if available for a configured duration when joining a meeting with Alexa. </p>
-    pub fn instant_booking(&self) -> std::option::Option<&crate::model::InstantBooking> {
+    pub fn instant_booking(&self) -> std::option::Option<& crate::model::InstantBooking> {
         self.instant_booking.as_ref()
     }
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into. This makes the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
-    pub fn require_check_in(&self) -> std::option::Option<&crate::model::RequireCheckIn> {
+    pub fn require_check_in(&self) -> std::option::Option<& crate::model::RequireCheckIn> {
         self.require_check_in.as_ref()
     }
 }
 /// See [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration).
 pub mod meeting_room_configuration {
-
+    
     /// A builder for [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8154,28 +7701,17 @@ pub mod meeting_room_configuration {
             self
         }
         /// <p>Whether room utilization metrics are enabled or not.</p>
-        pub fn set_room_utilization_metrics_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.room_utilization_metrics_enabled = input;
-            self
+        pub fn set_room_utilization_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.room_utilization_metrics_enabled = input; self
         }
         /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
-        pub fn end_of_meeting_reminder(
-            mut self,
-            input: crate::model::EndOfMeetingReminder,
-        ) -> Self {
+        pub fn end_of_meeting_reminder(mut self, input: crate::model::EndOfMeetingReminder) -> Self {
             self.end_of_meeting_reminder = Some(input);
             self
         }
         /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
-        pub fn set_end_of_meeting_reminder(
-            mut self,
-            input: std::option::Option<crate::model::EndOfMeetingReminder>,
-        ) -> Self {
-            self.end_of_meeting_reminder = input;
-            self
+        pub fn set_end_of_meeting_reminder(mut self, input: std::option::Option<crate::model::EndOfMeetingReminder>) -> Self {
+            self.end_of_meeting_reminder = input; self
         }
         /// <p>Settings to automatically book the room if available for a configured duration when joining a meeting with Alexa. </p>
         pub fn instant_booking(mut self, input: crate::model::InstantBooking) -> Self {
@@ -8183,12 +7719,8 @@ pub mod meeting_room_configuration {
             self
         }
         /// <p>Settings to automatically book the room if available for a configured duration when joining a meeting with Alexa. </p>
-        pub fn set_instant_booking(
-            mut self,
-            input: std::option::Option<crate::model::InstantBooking>,
-        ) -> Self {
-            self.instant_booking = input;
-            self
+        pub fn set_instant_booking(mut self, input: std::option::Option<crate::model::InstantBooking>) -> Self {
+            self.instant_booking = input; self
         }
         /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into. This makes the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
         pub fn require_check_in(mut self, input: crate::model::RequireCheckIn) -> Self {
@@ -8196,23 +7728,25 @@ pub mod meeting_room_configuration {
             self
         }
         /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into. This makes the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
-        pub fn set_require_check_in(
-            mut self,
-            input: std::option::Option<crate::model::RequireCheckIn>,
-        ) -> Self {
-            self.require_check_in = input;
-            self
+        pub fn set_require_check_in(mut self, input: std::option::Option<crate::model::RequireCheckIn>) -> Self {
+            self.require_check_in = input; self
         }
         /// Consumes the builder and constructs a [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration).
         pub fn build(self) -> crate::model::MeetingRoomConfiguration {
             crate::model::MeetingRoomConfiguration {
-                room_utilization_metrics_enabled: self.room_utilization_metrics_enabled,
-                end_of_meeting_reminder: self.end_of_meeting_reminder,
-                instant_booking: self.instant_booking,
-                require_check_in: self.require_check_in,
+                room_utilization_metrics_enabled: self.room_utilization_metrics_enabled
+                ,
+                end_of_meeting_reminder: self.end_of_meeting_reminder
+                ,
+                instant_booking: self.instant_booking
+                ,
+                require_check_in: self.require_check_in
+                ,
             }
         }
     }
+    
+    
 }
 impl MeetingRoomConfiguration {
     /// Creates a new builder-style object to manufacture [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration).
@@ -8224,7 +7758,7 @@ impl MeetingRoomConfiguration {
 /// <p>Settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequireCheckIn {
+pub struct RequireCheckIn  {
     /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into. </p>
     #[doc(hidden)]
     pub release_after_minutes: std::option::Option<i32>,
@@ -8244,7 +7778,7 @@ impl RequireCheckIn {
 }
 /// See [`RequireCheckIn`](crate::model::RequireCheckIn).
 pub mod require_check_in {
-
+    
     /// A builder for [`RequireCheckIn`](crate::model::RequireCheckIn).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8259,8 +7793,7 @@ pub mod require_check_in {
         }
         /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into. </p>
         pub fn set_release_after_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.release_after_minutes = input;
-            self
+            self.release_after_minutes = input; self
         }
         /// <p>Whether require check in is enabled or not.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -8269,17 +7802,20 @@ pub mod require_check_in {
         }
         /// <p>Whether require check in is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Consumes the builder and constructs a [`RequireCheckIn`](crate::model::RequireCheckIn).
         pub fn build(self) -> crate::model::RequireCheckIn {
             crate::model::RequireCheckIn {
-                release_after_minutes: self.release_after_minutes,
-                enabled: self.enabled,
+                release_after_minutes: self.release_after_minutes
+                ,
+                enabled: self.enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl RequireCheckIn {
     /// Creates a new builder-style object to manufacture [`RequireCheckIn`](crate::model::RequireCheckIn).
@@ -8291,7 +7827,7 @@ impl RequireCheckIn {
 /// <p>Settings for the instant booking feature that are applied to a room profile. When users start their meeting with Alexa, Alexa automatically books the room for the configured duration if the room is available.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstantBooking {
+pub struct InstantBooking  {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa. </p>
     #[doc(hidden)]
     pub duration_in_minutes: std::option::Option<i32>,
@@ -8311,7 +7847,7 @@ impl InstantBooking {
 }
 /// See [`InstantBooking`](crate::model::InstantBooking).
 pub mod instant_booking {
-
+    
     /// A builder for [`InstantBooking`](crate::model::InstantBooking).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8326,8 +7862,7 @@ pub mod instant_booking {
         }
         /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa. </p>
         pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration_in_minutes = input;
-            self
+            self.duration_in_minutes = input; self
         }
         /// <p>Whether instant booking is enabled or not.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -8336,17 +7871,20 @@ pub mod instant_booking {
         }
         /// <p>Whether instant booking is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Consumes the builder and constructs a [`InstantBooking`](crate::model::InstantBooking).
         pub fn build(self) -> crate::model::InstantBooking {
             crate::model::InstantBooking {
-                duration_in_minutes: self.duration_in_minutes,
-                enabled: self.enabled,
+                duration_in_minutes: self.duration_in_minutes
+                ,
+                enabled: self.enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl InstantBooking {
     /// Creates a new builder-style object to manufacture [`InstantBooking`](crate::model::InstantBooking).
@@ -8358,7 +7896,7 @@ impl InstantBooking {
 /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndOfMeetingReminder {
+pub struct EndOfMeetingReminder  {
     /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
     #[doc(hidden)]
     pub reminder_at_minutes: std::option::Option<std::vec::Vec<i32>>,
@@ -8371,11 +7909,11 @@ pub struct EndOfMeetingReminder {
 }
 impl EndOfMeetingReminder {
     /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
-    pub fn reminder_at_minutes(&self) -> std::option::Option<&[i32]> {
+    pub fn reminder_at_minutes(&self) -> std::option::Option<& [i32]> {
         self.reminder_at_minutes.as_deref()
     }
     /// <p>The type of sound that users hear during the end of meeting reminder. </p>
-    pub fn reminder_type(&self) -> std::option::Option<&crate::model::EndOfMeetingReminderType> {
+    pub fn reminder_type(&self) -> std::option::Option<& crate::model::EndOfMeetingReminderType> {
         self.reminder_type.as_ref()
     }
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
@@ -8385,7 +7923,7 @@ impl EndOfMeetingReminder {
 }
 /// See [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder).
 pub mod end_of_meeting_reminder {
-
+    
     /// A builder for [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8401,17 +7939,13 @@ pub mod end_of_meeting_reminder {
         /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
         pub fn reminder_at_minutes(mut self, input: i32) -> Self {
             let mut v = self.reminder_at_minutes.unwrap_or_default();
-            v.push(input);
-            self.reminder_at_minutes = Some(v);
-            self
+                            v.push(input);
+                            self.reminder_at_minutes = Some(v);
+                            self
         }
         /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
-        pub fn set_reminder_at_minutes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<i32>>,
-        ) -> Self {
-            self.reminder_at_minutes = input;
-            self
+        pub fn set_reminder_at_minutes(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+            self.reminder_at_minutes = input; self
         }
         /// <p>The type of sound that users hear during the end of meeting reminder. </p>
         pub fn reminder_type(mut self, input: crate::model::EndOfMeetingReminderType) -> Self {
@@ -8419,12 +7953,8 @@ pub mod end_of_meeting_reminder {
             self
         }
         /// <p>The type of sound that users hear during the end of meeting reminder. </p>
-        pub fn set_reminder_type(
-            mut self,
-            input: std::option::Option<crate::model::EndOfMeetingReminderType>,
-        ) -> Self {
-            self.reminder_type = input;
-            self
+        pub fn set_reminder_type(mut self, input: std::option::Option<crate::model::EndOfMeetingReminderType>) -> Self {
+            self.reminder_type = input; self
         }
         /// <p>Whether an end of meeting reminder is enabled or not.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -8433,18 +7963,22 @@ pub mod end_of_meeting_reminder {
         }
         /// <p>Whether an end of meeting reminder is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Consumes the builder and constructs a [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder).
         pub fn build(self) -> crate::model::EndOfMeetingReminder {
             crate::model::EndOfMeetingReminder {
-                reminder_at_minutes: self.reminder_at_minutes,
-                reminder_type: self.reminder_type,
-                enabled: self.enabled,
+                reminder_at_minutes: self.reminder_at_minutes
+                ,
+                reminder_type: self.reminder_type
+                ,
+                enabled: self.enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl EndOfMeetingReminder {
     /// Creates a new builder-style object to manufacture [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder).
@@ -8456,7 +7990,7 @@ impl EndOfMeetingReminder {
 /// <p>The network profile associated with a device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NetworkProfile {
+pub struct NetworkProfile  {
     /// <p>The ARN of the network profile associated with a device.</p>
     #[doc(hidden)]
     pub network_profile_arn: std::option::Option<std::string::String>,
@@ -8490,47 +8024,47 @@ pub struct NetworkProfile {
 }
 impl NetworkProfile {
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn network_profile_arn(&self) -> std::option::Option<& str> {
         self.network_profile_arn.as_deref()
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn network_profile_name(&self) -> std::option::Option<&str> {
+    pub fn network_profile_name(&self) -> std::option::Option<& str> {
         self.network_profile_name.as_deref()
     }
     /// <p>Detailed information about a device's network profile.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The SSID of the Wi-Fi network.</p>
-    pub fn ssid(&self) -> std::option::Option<&str> {
+    pub fn ssid(&self) -> std::option::Option<& str> {
         self.ssid.as_deref()
     }
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
-    pub fn security_type(&self) -> std::option::Option<&crate::model::NetworkSecurityType> {
+    pub fn security_type(&self) -> std::option::Option<& crate::model::NetworkSecurityType> {
         self.security_type.as_ref()
     }
     /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
-    pub fn eap_method(&self) -> std::option::Option<&crate::model::NetworkEapMethod> {
+    pub fn eap_method(&self) -> std::option::Option<& crate::model::NetworkEapMethod> {
         self.eap_method.as_ref()
     }
     /// <p>The current password of the Wi-Fi network.</p>
-    pub fn current_password(&self) -> std::option::Option<&str> {
+    pub fn current_password(&self) -> std::option::Option<& str> {
         self.current_password.as_deref()
     }
     /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
-    pub fn next_password(&self) -> std::option::Option<&str> {
+    pub fn next_password(&self) -> std::option::Option<& str> {
         self.next_password.as_deref()
     }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
-    pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
     /// <p>The root certificates of your authentication server, which is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
-    pub fn trust_anchors(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn trust_anchors(&self) -> std::option::Option<& [std::string::String]> {
         self.trust_anchors.as_deref()
     }
 }
-impl std::fmt::Debug for NetworkProfile {
+impl  std::fmt::Debug for NetworkProfile  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NetworkProfile");
         formatter.field("network_profile_arn", &self.network_profile_arn);
@@ -8548,7 +8082,7 @@ impl std::fmt::Debug for NetworkProfile {
 }
 /// See [`NetworkProfile`](crate::model::NetworkProfile).
 pub mod network_profile {
-
+    
     /// A builder for [`NetworkProfile`](crate::model::NetworkProfile).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -8570,12 +8104,8 @@ pub mod network_profile {
             self
         }
         /// <p>The ARN of the network profile associated with a device.</p>
-        pub fn set_network_profile_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_profile_arn = input;
-            self
+        pub fn set_network_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_profile_arn = input; self
         }
         /// <p>The name of the network profile associated with a device.</p>
         pub fn network_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8583,12 +8113,8 @@ pub mod network_profile {
             self
         }
         /// <p>The name of the network profile associated with a device.</p>
-        pub fn set_network_profile_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_profile_name = input;
-            self
+        pub fn set_network_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_profile_name = input; self
         }
         /// <p>Detailed information about a device's network profile.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8597,8 +8123,7 @@ pub mod network_profile {
         }
         /// <p>Detailed information about a device's network profile.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The SSID of the Wi-Fi network.</p>
         pub fn ssid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8607,8 +8132,7 @@ pub mod network_profile {
         }
         /// <p>The SSID of the Wi-Fi network.</p>
         pub fn set_ssid(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ssid = input;
-            self
+            self.ssid = input; self
         }
         /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
         pub fn security_type(mut self, input: crate::model::NetworkSecurityType) -> Self {
@@ -8616,12 +8140,8 @@ pub mod network_profile {
             self
         }
         /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
-        pub fn set_security_type(
-            mut self,
-            input: std::option::Option<crate::model::NetworkSecurityType>,
-        ) -> Self {
-            self.security_type = input;
-            self
+        pub fn set_security_type(mut self, input: std::option::Option<crate::model::NetworkSecurityType>) -> Self {
+            self.security_type = input; self
         }
         /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
         pub fn eap_method(mut self, input: crate::model::NetworkEapMethod) -> Self {
@@ -8629,12 +8149,8 @@ pub mod network_profile {
             self
         }
         /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
-        pub fn set_eap_method(
-            mut self,
-            input: std::option::Option<crate::model::NetworkEapMethod>,
-        ) -> Self {
-            self.eap_method = input;
-            self
+        pub fn set_eap_method(mut self, input: std::option::Option<crate::model::NetworkEapMethod>) -> Self {
+            self.eap_method = input; self
         }
         /// <p>The current password of the Wi-Fi network.</p>
         pub fn current_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8642,12 +8158,8 @@ pub mod network_profile {
             self
         }
         /// <p>The current password of the Wi-Fi network.</p>
-        pub fn set_current_password(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.current_password = input;
-            self
+        pub fn set_current_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.current_password = input; self
         }
         /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
         pub fn next_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8655,12 +8167,8 @@ pub mod network_profile {
             self
         }
         /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
-        pub fn set_next_password(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_password = input;
-            self
+        pub fn set_next_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_password = input; self
         }
         /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8668,12 +8176,8 @@ pub mod network_profile {
             self
         }
         /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
-        pub fn set_certificate_authority_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_authority_arn = input;
-            self
+        pub fn set_certificate_authority_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_authority_arn = input; self
         }
         /// Appends an item to `trust_anchors`.
         ///
@@ -8682,31 +8186,37 @@ pub mod network_profile {
         /// <p>The root certificates of your authentication server, which is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
         pub fn trust_anchors(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.trust_anchors.unwrap_or_default();
-            v.push(input.into());
-            self.trust_anchors = Some(v);
-            self
+                            v.push(input.into());
+                            self.trust_anchors = Some(v);
+                            self
         }
         /// <p>The root certificates of your authentication server, which is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
-        pub fn set_trust_anchors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.trust_anchors = input;
-            self
+        pub fn set_trust_anchors(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.trust_anchors = input; self
         }
         /// Consumes the builder and constructs a [`NetworkProfile`](crate::model::NetworkProfile).
         pub fn build(self) -> crate::model::NetworkProfile {
             crate::model::NetworkProfile {
-                network_profile_arn: self.network_profile_arn,
-                network_profile_name: self.network_profile_name,
-                description: self.description,
-                ssid: self.ssid,
-                security_type: self.security_type,
-                eap_method: self.eap_method,
-                current_password: self.current_password,
-                next_password: self.next_password,
-                certificate_authority_arn: self.certificate_authority_arn,
-                trust_anchors: self.trust_anchors,
+                network_profile_arn: self.network_profile_arn
+                ,
+                network_profile_name: self.network_profile_name
+                ,
+                description: self.description
+                ,
+                ssid: self.ssid
+                ,
+                security_type: self.security_type
+                ,
+                eap_method: self.eap_method
+                ,
+                current_password: self.current_password
+                ,
+                next_password: self.next_password
+                ,
+                certificate_authority_arn: self.certificate_authority_arn
+                ,
+                trust_anchors: self.trust_anchors
+                ,
             }
         }
     }
@@ -8726,6 +8236,8 @@ pub mod network_profile {
             formatter.finish()
         }
     }
+    
+    
 }
 impl NetworkProfile {
     /// Creates a new builder-style object to manufacture [`NetworkProfile`](crate::model::NetworkProfile).
@@ -8737,7 +8249,7 @@ impl NetworkProfile {
 /// <p>The details of the gateway group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayGroup {
+pub struct GatewayGroup  {
     /// <p>The ARN of the gateway group.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -8750,21 +8262,21 @@ pub struct GatewayGroup {
 }
 impl GatewayGroup {
     /// <p>The ARN of the gateway group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the gateway group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the gateway group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`GatewayGroup`](crate::model::GatewayGroup).
 pub mod gateway_group {
-
+    
     /// A builder for [`GatewayGroup`](crate::model::GatewayGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8780,8 +8292,7 @@ pub mod gateway_group {
         }
         /// <p>The ARN of the gateway group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the gateway group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8790,8 +8301,7 @@ pub mod gateway_group {
         }
         /// <p>The name of the gateway group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the gateway group.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8800,18 +8310,22 @@ pub mod gateway_group {
         }
         /// <p>The description of the gateway group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`GatewayGroup`](crate::model::GatewayGroup).
         pub fn build(self) -> crate::model::GatewayGroup {
             crate::model::GatewayGroup {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewayGroup {
     /// Creates a new builder-style object to manufacture [`GatewayGroup`](crate::model::GatewayGroup).
@@ -8823,7 +8337,7 @@ impl GatewayGroup {
 /// <p>The details of the gateway. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Gateway {
+pub struct Gateway  {
     /// <p>The ARN of the gateway.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -8842,29 +8356,29 @@ pub struct Gateway {
 }
 impl Gateway {
     /// <p>The ARN of the gateway.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the gateway.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the gateway.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the gateway group that the gateway is associated to.</p>
-    pub fn gateway_group_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_group_arn(&self) -> std::option::Option<& str> {
         self.gateway_group_arn.as_deref()
     }
     /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
-    pub fn software_version(&self) -> std::option::Option<&str> {
+    pub fn software_version(&self) -> std::option::Option<& str> {
         self.software_version.as_deref()
     }
 }
 /// See [`Gateway`](crate::model::Gateway).
 pub mod gateway {
-
+    
     /// A builder for [`Gateway`](crate::model::Gateway).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8882,8 +8396,7 @@ pub mod gateway {
         }
         /// <p>The ARN of the gateway.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the gateway.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8892,8 +8405,7 @@ pub mod gateway {
         }
         /// <p>The name of the gateway.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the gateway.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8902,8 +8414,7 @@ pub mod gateway {
         }
         /// <p>The description of the gateway.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ARN of the gateway group that the gateway is associated to.</p>
         pub fn gateway_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8911,12 +8422,8 @@ pub mod gateway {
             self
         }
         /// <p>The ARN of the gateway group that the gateway is associated to.</p>
-        pub fn set_gateway_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.gateway_group_arn = input;
-            self
+        pub fn set_gateway_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.gateway_group_arn = input; self
         }
         /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
         pub fn software_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8924,24 +8431,27 @@ pub mod gateway {
             self
         }
         /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
-        pub fn set_software_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.software_version = input;
-            self
+        pub fn set_software_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.software_version = input; self
         }
         /// Consumes the builder and constructs a [`Gateway`](crate::model::Gateway).
         pub fn build(self) -> crate::model::Gateway {
             crate::model::Gateway {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                gateway_group_arn: self.gateway_group_arn,
-                software_version: self.software_version,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                gateway_group_arn: self.gateway_group_arn
+                ,
+                software_version: self.software_version
+                ,
             }
         }
     }
+    
+    
 }
 impl Gateway {
     /// Creates a new builder-style object to manufacture [`Gateway`](crate::model::Gateway).
@@ -8953,7 +8463,7 @@ impl Gateway {
 /// <p>A device with attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Device {
+pub struct Device  {
     /// <p>The ARN of a device.</p>
     #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
@@ -8987,51 +8497,49 @@ pub struct Device {
 }
 impl Device {
     /// <p>The ARN of a device.</p>
-    pub fn device_arn(&self) -> std::option::Option<&str> {
+    pub fn device_arn(&self) -> std::option::Option<& str> {
         self.device_arn.as_deref()
     }
     /// <p>The serial number of a device.</p>
-    pub fn device_serial_number(&self) -> std::option::Option<&str> {
+    pub fn device_serial_number(&self) -> std::option::Option<& str> {
         self.device_serial_number.as_deref()
     }
     /// <p>The type of a device.</p>
-    pub fn device_type(&self) -> std::option::Option<&str> {
+    pub fn device_type(&self) -> std::option::Option<& str> {
         self.device_type.as_deref()
     }
     /// <p>The name of a device.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The software version of a device.</p>
-    pub fn software_version(&self) -> std::option::Option<&str> {
+    pub fn software_version(&self) -> std::option::Option<& str> {
         self.software_version.as_deref()
     }
     /// <p>The MAC address of a device.</p>
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> std::option::Option<& str> {
         self.mac_address.as_deref()
     }
     /// <p>The room ARN of a device.</p>
-    pub fn room_arn(&self) -> std::option::Option<&str> {
+    pub fn room_arn(&self) -> std::option::Option<& str> {
         self.room_arn.as_deref()
     }
     /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.</p>
-    pub fn device_status(&self) -> std::option::Option<&crate::model::DeviceStatus> {
+    pub fn device_status(&self) -> std::option::Option<& crate::model::DeviceStatus> {
         self.device_status.as_ref()
     }
     /// <p>Detailed information about a device's status.</p>
-    pub fn device_status_info(&self) -> std::option::Option<&crate::model::DeviceStatusInfo> {
+    pub fn device_status_info(&self) -> std::option::Option<& crate::model::DeviceStatusInfo> {
         self.device_status_info.as_ref()
     }
     /// <p>Detailed information about a device's network profile.</p>
-    pub fn network_profile_info(
-        &self,
-    ) -> std::option::Option<&crate::model::DeviceNetworkProfileInfo> {
+    pub fn network_profile_info(&self) -> std::option::Option<& crate::model::DeviceNetworkProfileInfo> {
         self.network_profile_info.as_ref()
     }
 }
 /// See [`Device`](crate::model::Device).
 pub mod device {
-
+    
     /// A builder for [`Device`](crate::model::Device).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9044,8 +8552,7 @@ pub mod device {
         pub(crate) room_arn: std::option::Option<std::string::String>,
         pub(crate) device_status: std::option::Option<crate::model::DeviceStatus>,
         pub(crate) device_status_info: std::option::Option<crate::model::DeviceStatusInfo>,
-        pub(crate) network_profile_info:
-            std::option::Option<crate::model::DeviceNetworkProfileInfo>,
+        pub(crate) network_profile_info: std::option::Option<crate::model::DeviceNetworkProfileInfo>,
     }
     impl Builder {
         /// <p>The ARN of a device.</p>
@@ -9055,8 +8562,7 @@ pub mod device {
         }
         /// <p>The ARN of a device.</p>
         pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_arn = input;
-            self
+            self.device_arn = input; self
         }
         /// <p>The serial number of a device.</p>
         pub fn device_serial_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9064,12 +8570,8 @@ pub mod device {
             self
         }
         /// <p>The serial number of a device.</p>
-        pub fn set_device_serial_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.device_serial_number = input;
-            self
+        pub fn set_device_serial_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_serial_number = input; self
         }
         /// <p>The type of a device.</p>
         pub fn device_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9078,8 +8580,7 @@ pub mod device {
         }
         /// <p>The type of a device.</p>
         pub fn set_device_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_type = input;
-            self
+            self.device_type = input; self
         }
         /// <p>The name of a device.</p>
         pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9088,8 +8589,7 @@ pub mod device {
         }
         /// <p>The name of a device.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_name = input;
-            self
+            self.device_name = input; self
         }
         /// <p>The software version of a device.</p>
         pub fn software_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9097,12 +8597,8 @@ pub mod device {
             self
         }
         /// <p>The software version of a device.</p>
-        pub fn set_software_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.software_version = input;
-            self
+        pub fn set_software_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.software_version = input; self
         }
         /// <p>The MAC address of a device.</p>
         pub fn mac_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9111,8 +8607,7 @@ pub mod device {
         }
         /// <p>The MAC address of a device.</p>
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mac_address = input;
-            self
+            self.mac_address = input; self
         }
         /// <p>The room ARN of a device.</p>
         pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9121,8 +8616,7 @@ pub mod device {
         }
         /// <p>The room ARN of a device.</p>
         pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.room_arn = input;
-            self
+            self.room_arn = input; self
         }
         /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.</p>
         pub fn device_status(mut self, input: crate::model::DeviceStatus) -> Self {
@@ -9130,12 +8624,8 @@ pub mod device {
             self
         }
         /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.</p>
-        pub fn set_device_status(
-            mut self,
-            input: std::option::Option<crate::model::DeviceStatus>,
-        ) -> Self {
-            self.device_status = input;
-            self
+        pub fn set_device_status(mut self, input: std::option::Option<crate::model::DeviceStatus>) -> Self {
+            self.device_status = input; self
         }
         /// <p>Detailed information about a device's status.</p>
         pub fn device_status_info(mut self, input: crate::model::DeviceStatusInfo) -> Self {
@@ -9143,45 +8633,46 @@ pub mod device {
             self
         }
         /// <p>Detailed information about a device's status.</p>
-        pub fn set_device_status_info(
-            mut self,
-            input: std::option::Option<crate::model::DeviceStatusInfo>,
-        ) -> Self {
-            self.device_status_info = input;
-            self
+        pub fn set_device_status_info(mut self, input: std::option::Option<crate::model::DeviceStatusInfo>) -> Self {
+            self.device_status_info = input; self
         }
         /// <p>Detailed information about a device's network profile.</p>
-        pub fn network_profile_info(
-            mut self,
-            input: crate::model::DeviceNetworkProfileInfo,
-        ) -> Self {
+        pub fn network_profile_info(mut self, input: crate::model::DeviceNetworkProfileInfo) -> Self {
             self.network_profile_info = Some(input);
             self
         }
         /// <p>Detailed information about a device's network profile.</p>
-        pub fn set_network_profile_info(
-            mut self,
-            input: std::option::Option<crate::model::DeviceNetworkProfileInfo>,
-        ) -> Self {
-            self.network_profile_info = input;
-            self
+        pub fn set_network_profile_info(mut self, input: std::option::Option<crate::model::DeviceNetworkProfileInfo>) -> Self {
+            self.network_profile_info = input; self
         }
         /// Consumes the builder and constructs a [`Device`](crate::model::Device).
         pub fn build(self) -> crate::model::Device {
             crate::model::Device {
-                device_arn: self.device_arn,
-                device_serial_number: self.device_serial_number,
-                device_type: self.device_type,
-                device_name: self.device_name,
-                software_version: self.software_version,
-                mac_address: self.mac_address,
-                room_arn: self.room_arn,
-                device_status: self.device_status,
-                device_status_info: self.device_status_info,
-                network_profile_info: self.network_profile_info,
+                device_arn: self.device_arn
+                ,
+                device_serial_number: self.device_serial_number
+                ,
+                device_type: self.device_type
+                ,
+                device_name: self.device_name
+                ,
+                software_version: self.software_version
+                ,
+                mac_address: self.mac_address
+                ,
+                room_arn: self.room_arn
+                ,
+                device_status: self.device_status
+                ,
+                device_status_info: self.device_status_info
+                ,
+                network_profile_info: self.network_profile_info
+                ,
             }
         }
     }
+    
+    
 }
 impl Device {
     /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
@@ -9193,7 +8684,7 @@ impl Device {
 /// <p>Detailed information about a device's network profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceNetworkProfileInfo {
+pub struct DeviceNetworkProfileInfo  {
     /// <p>The ARN of the network profile associated with a device.</p>
     #[doc(hidden)]
     pub network_profile_arn: std::option::Option<std::string::String>,
@@ -9206,21 +8697,21 @@ pub struct DeviceNetworkProfileInfo {
 }
 impl DeviceNetworkProfileInfo {
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn network_profile_arn(&self) -> std::option::Option<& str> {
         self.network_profile_arn.as_deref()
     }
     /// <p>The ARN of the certificate associated with a device.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The time (in epoch) when the certificate expires.</p>
-    pub fn certificate_expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn certificate_expiration_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.certificate_expiration_time.as_ref()
     }
 }
 /// See [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo).
 pub mod device_network_profile_info {
-
+    
     /// A builder for [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9235,12 +8726,8 @@ pub mod device_network_profile_info {
             self
         }
         /// <p>The ARN of the network profile associated with a device.</p>
-        pub fn set_network_profile_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_profile_arn = input;
-            self
+        pub fn set_network_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_profile_arn = input; self
         }
         /// <p>The ARN of the certificate associated with a device.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9248,12 +8735,8 @@ pub mod device_network_profile_info {
             self
         }
         /// <p>The ARN of the certificate associated with a device.</p>
-        pub fn set_certificate_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_arn = input;
-            self
+        pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_arn = input; self
         }
         /// <p>The time (in epoch) when the certificate expires.</p>
         pub fn certificate_expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9261,22 +8744,23 @@ pub mod device_network_profile_info {
             self
         }
         /// <p>The time (in epoch) when the certificate expires.</p>
-        pub fn set_certificate_expiration_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.certificate_expiration_time = input;
-            self
+        pub fn set_certificate_expiration_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.certificate_expiration_time = input; self
         }
         /// Consumes the builder and constructs a [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo).
         pub fn build(self) -> crate::model::DeviceNetworkProfileInfo {
             crate::model::DeviceNetworkProfileInfo {
-                network_profile_arn: self.network_profile_arn,
-                certificate_arn: self.certificate_arn,
-                certificate_expiration_time: self.certificate_expiration_time,
+                network_profile_arn: self.network_profile_arn
+                ,
+                certificate_arn: self.certificate_arn
+                ,
+                certificate_expiration_time: self.certificate_expiration_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceNetworkProfileInfo {
     /// Creates a new builder-style object to manufacture [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo).
@@ -9288,7 +8772,7 @@ impl DeviceNetworkProfileInfo {
 /// <p>A contact with attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Contact {
+pub struct Contact  {
     /// <p>The ARN of the contact.</p>
     #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
@@ -9313,35 +8797,35 @@ pub struct Contact {
 }
 impl Contact {
     /// <p>The ARN of the contact.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>The name of the contact to display on the console.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The first name of the contact, used to call the contact on the device.</p>
-    pub fn first_name(&self) -> std::option::Option<&str> {
+    pub fn first_name(&self) -> std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>The last name of the contact, used to call the contact on the device.</p>
-    pub fn last_name(&self) -> std::option::Option<&str> {
+    pub fn last_name(&self) -> std::option::Option<& str> {
         self.last_name.as_deref()
     }
     /// <p>The phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>The list of phone numbers for the contact.</p>
-    pub fn phone_numbers(&self) -> std::option::Option<&[crate::model::PhoneNumber]> {
+    pub fn phone_numbers(&self) -> std::option::Option<& [crate::model::PhoneNumber]> {
         self.phone_numbers.as_deref()
     }
     /// <p>The list of SIP addresses for the contact.</p>
-    pub fn sip_addresses(&self) -> std::option::Option<&[crate::model::SipAddress]> {
+    pub fn sip_addresses(&self) -> std::option::Option<& [crate::model::SipAddress]> {
         self.sip_addresses.as_deref()
     }
 }
-impl std::fmt::Debug for Contact {
+impl  std::fmt::Debug for Contact  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Contact");
         formatter.field("contact_arn", &self.contact_arn);
@@ -9356,7 +8840,7 @@ impl std::fmt::Debug for Contact {
 }
 /// See [`Contact`](crate::model::Contact).
 pub mod contact {
-
+    
     /// A builder for [`Contact`](crate::model::Contact).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -9376,8 +8860,7 @@ pub mod contact {
         }
         /// <p>The ARN of the contact.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_arn = input;
-            self
+            self.contact_arn = input; self
         }
         /// <p>The name of the contact to display on the console.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9386,8 +8869,7 @@ pub mod contact {
         }
         /// <p>The name of the contact to display on the console.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The first name of the contact, used to call the contact on the device.</p>
         pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9396,8 +8878,7 @@ pub mod contact {
         }
         /// <p>The first name of the contact, used to call the contact on the device.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.first_name = input;
-            self
+            self.first_name = input; self
         }
         /// <p>The last name of the contact, used to call the contact on the device.</p>
         pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9406,8 +8887,7 @@ pub mod contact {
         }
         /// <p>The last name of the contact, used to call the contact on the device.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.last_name = input;
-            self
+            self.last_name = input; self
         }
         /// <p>The phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9416,8 +8896,7 @@ pub mod contact {
         }
         /// <p>The phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = input;
-            self
+            self.phone_number = input; self
         }
         /// Appends an item to `phone_numbers`.
         ///
@@ -9426,17 +8905,13 @@ pub mod contact {
         /// <p>The list of phone numbers for the contact.</p>
         pub fn phone_numbers(mut self, input: crate::model::PhoneNumber) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(input);
-            self.phone_numbers = Some(v);
-            self
+                            v.push(input);
+                            self.phone_numbers = Some(v);
+                            self
         }
         /// <p>The list of phone numbers for the contact.</p>
-        pub fn set_phone_numbers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
-        ) -> Self {
-            self.phone_numbers = input;
-            self
+        pub fn set_phone_numbers(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>) -> Self {
+            self.phone_numbers = input; self
         }
         /// Appends an item to `sip_addresses`.
         ///
@@ -9445,28 +8920,31 @@ pub mod contact {
         /// <p>The list of SIP addresses for the contact.</p>
         pub fn sip_addresses(mut self, input: crate::model::SipAddress) -> Self {
             let mut v = self.sip_addresses.unwrap_or_default();
-            v.push(input);
-            self.sip_addresses = Some(v);
-            self
+                            v.push(input);
+                            self.sip_addresses = Some(v);
+                            self
         }
         /// <p>The list of SIP addresses for the contact.</p>
-        pub fn set_sip_addresses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SipAddress>>,
-        ) -> Self {
-            self.sip_addresses = input;
-            self
+        pub fn set_sip_addresses(mut self, input: std::option::Option<std::vec::Vec<crate::model::SipAddress>>) -> Self {
+            self.sip_addresses = input; self
         }
         /// Consumes the builder and constructs a [`Contact`](crate::model::Contact).
         pub fn build(self) -> crate::model::Contact {
             crate::model::Contact {
-                contact_arn: self.contact_arn,
-                display_name: self.display_name,
-                first_name: self.first_name,
-                last_name: self.last_name,
-                phone_number: self.phone_number,
-                phone_numbers: self.phone_numbers,
-                sip_addresses: self.sip_addresses,
+                contact_arn: self.contact_arn
+                ,
+                display_name: self.display_name
+                ,
+                first_name: self.first_name
+                ,
+                last_name: self.last_name
+                ,
+                phone_number: self.phone_number
+                ,
+                phone_numbers: self.phone_numbers
+                ,
+                sip_addresses: self.sip_addresses
+                ,
             }
         }
     }
@@ -9483,6 +8961,8 @@ pub mod contact {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Contact {
     /// Creates a new builder-style object to manufacture [`Contact`](crate::model::Contact).
@@ -9494,7 +8974,7 @@ impl Contact {
 /// <p>An address book with attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddressBook {
+pub struct AddressBook  {
     /// <p>The ARN of the address book.</p>
     #[doc(hidden)]
     pub address_book_arn: std::option::Option<std::string::String>,
@@ -9507,21 +8987,21 @@ pub struct AddressBook {
 }
 impl AddressBook {
     /// <p>The ARN of the address book.</p>
-    pub fn address_book_arn(&self) -> std::option::Option<&str> {
+    pub fn address_book_arn(&self) -> std::option::Option<& str> {
         self.address_book_arn.as_deref()
     }
     /// <p>The name of the address book.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the address book.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`AddressBook`](crate::model::AddressBook).
 pub mod address_book {
-
+    
     /// A builder for [`AddressBook`](crate::model::AddressBook).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9536,12 +9016,8 @@ pub mod address_book {
             self
         }
         /// <p>The ARN of the address book.</p>
-        pub fn set_address_book_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.address_book_arn = input;
-            self
+        pub fn set_address_book_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.address_book_arn = input; self
         }
         /// <p>The name of the address book.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9550,8 +9026,7 @@ pub mod address_book {
         }
         /// <p>The name of the address book.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the address book.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9560,18 +9035,22 @@ pub mod address_book {
         }
         /// <p>The description of the address book.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`AddressBook`](crate::model::AddressBook).
         pub fn build(self) -> crate::model::AddressBook {
             crate::model::AddressBook {
-                address_book_arn: self.address_book_arn,
-                name: self.name,
-                description: self.description,
+                address_book_arn: self.address_book_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl AddressBook {
     /// Creates a new builder-style object to manufacture [`AddressBook`](crate::model::AddressBook).
@@ -9586,9 +9065,9 @@ impl AddressBook {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deviceusagetype = unimplemented!();
 /// match deviceusagetype {
@@ -9609,54 +9088,48 @@ impl AddressBook {
 /// Specifically, when `deviceusagetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeviceUsageType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeviceUsageType {
     #[allow(missing_docs)] // documentation missing in model
     Voice,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeviceUsageType {
     fn from(s: &str) -> Self {
         match s {
             "VOICE" => DeviceUsageType::Voice,
-            other => DeviceUsageType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DeviceUsageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeviceUsageType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeviceUsageType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeviceUsageType::from(s))
+                }
+            }
 impl DeviceUsageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceUsageType::Voice => "VOICE",
-            DeviceUsageType::Unknown(value) => value.as_str(),
+            DeviceUsageType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["VOICE"]
+        &[
+            "VOICE"
+        ]
     }
 }
 impl AsRef<str> for DeviceUsageType {
@@ -9668,7 +9141,7 @@ impl AsRef<str> for DeviceUsageType {
 /// <p>Creates meeting room settings of a room profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMeetingRoomConfiguration {
+pub struct CreateMeetingRoomConfiguration  {
     /// <p>Whether room utilization metrics are enabled or not.</p>
     #[doc(hidden)]
     pub room_utilization_metrics_enabled: std::option::Option<bool>,
@@ -9688,29 +9161,26 @@ impl CreateMeetingRoomConfiguration {
         self.room_utilization_metrics_enabled
     }
     /// <p>Creates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
-    pub fn end_of_meeting_reminder(
-        &self,
-    ) -> std::option::Option<&crate::model::CreateEndOfMeetingReminder> {
+    pub fn end_of_meeting_reminder(&self) -> std::option::Option<& crate::model::CreateEndOfMeetingReminder> {
         self.end_of_meeting_reminder.as_ref()
     }
     /// <p>Settings to automatically book a room for a configured duration if it's free when joining a meeting with Alexa.</p>
-    pub fn instant_booking(&self) -> std::option::Option<&crate::model::CreateInstantBooking> {
+    pub fn instant_booking(&self) -> std::option::Option<& crate::model::CreateInstantBooking> {
         self.instant_booking.as_ref()
     }
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.”</p>
-    pub fn require_check_in(&self) -> std::option::Option<&crate::model::CreateRequireCheckIn> {
+    pub fn require_check_in(&self) -> std::option::Option<& crate::model::CreateRequireCheckIn> {
         self.require_check_in.as_ref()
     }
 }
 /// See [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration).
 pub mod create_meeting_room_configuration {
-
+    
     /// A builder for [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_utilization_metrics_enabled: std::option::Option<bool>,
-        pub(crate) end_of_meeting_reminder:
-            std::option::Option<crate::model::CreateEndOfMeetingReminder>,
+        pub(crate) end_of_meeting_reminder: std::option::Option<crate::model::CreateEndOfMeetingReminder>,
         pub(crate) instant_booking: std::option::Option<crate::model::CreateInstantBooking>,
         pub(crate) require_check_in: std::option::Option<crate::model::CreateRequireCheckIn>,
     }
@@ -9721,28 +9191,17 @@ pub mod create_meeting_room_configuration {
             self
         }
         /// <p>Whether room utilization metrics are enabled or not.</p>
-        pub fn set_room_utilization_metrics_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.room_utilization_metrics_enabled = input;
-            self
+        pub fn set_room_utilization_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.room_utilization_metrics_enabled = input; self
         }
         /// <p>Creates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
-        pub fn end_of_meeting_reminder(
-            mut self,
-            input: crate::model::CreateEndOfMeetingReminder,
-        ) -> Self {
+        pub fn end_of_meeting_reminder(mut self, input: crate::model::CreateEndOfMeetingReminder) -> Self {
             self.end_of_meeting_reminder = Some(input);
             self
         }
         /// <p>Creates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
-        pub fn set_end_of_meeting_reminder(
-            mut self,
-            input: std::option::Option<crate::model::CreateEndOfMeetingReminder>,
-        ) -> Self {
-            self.end_of_meeting_reminder = input;
-            self
+        pub fn set_end_of_meeting_reminder(mut self, input: std::option::Option<crate::model::CreateEndOfMeetingReminder>) -> Self {
+            self.end_of_meeting_reminder = input; self
         }
         /// <p>Settings to automatically book a room for a configured duration if it's free when joining a meeting with Alexa.</p>
         pub fn instant_booking(mut self, input: crate::model::CreateInstantBooking) -> Self {
@@ -9750,12 +9209,8 @@ pub mod create_meeting_room_configuration {
             self
         }
         /// <p>Settings to automatically book a room for a configured duration if it's free when joining a meeting with Alexa.</p>
-        pub fn set_instant_booking(
-            mut self,
-            input: std::option::Option<crate::model::CreateInstantBooking>,
-        ) -> Self {
-            self.instant_booking = input;
-            self
+        pub fn set_instant_booking(mut self, input: std::option::Option<crate::model::CreateInstantBooking>) -> Self {
+            self.instant_booking = input; self
         }
         /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.”</p>
         pub fn require_check_in(mut self, input: crate::model::CreateRequireCheckIn) -> Self {
@@ -9763,23 +9218,25 @@ pub mod create_meeting_room_configuration {
             self
         }
         /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.”</p>
-        pub fn set_require_check_in(
-            mut self,
-            input: std::option::Option<crate::model::CreateRequireCheckIn>,
-        ) -> Self {
-            self.require_check_in = input;
-            self
+        pub fn set_require_check_in(mut self, input: std::option::Option<crate::model::CreateRequireCheckIn>) -> Self {
+            self.require_check_in = input; self
         }
         /// Consumes the builder and constructs a [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration).
         pub fn build(self) -> crate::model::CreateMeetingRoomConfiguration {
             crate::model::CreateMeetingRoomConfiguration {
-                room_utilization_metrics_enabled: self.room_utilization_metrics_enabled,
-                end_of_meeting_reminder: self.end_of_meeting_reminder,
-                instant_booking: self.instant_booking,
-                require_check_in: self.require_check_in,
+                room_utilization_metrics_enabled: self.room_utilization_metrics_enabled
+                ,
+                end_of_meeting_reminder: self.end_of_meeting_reminder
+                ,
+                instant_booking: self.instant_booking
+                ,
+                require_check_in: self.require_check_in
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateMeetingRoomConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration).
@@ -9791,7 +9248,7 @@ impl CreateMeetingRoomConfiguration {
 /// <p>Creates settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRequireCheckIn {
+pub struct CreateRequireCheckIn  {
     /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into.</p>
     #[doc(hidden)]
     pub release_after_minutes: std::option::Option<i32>,
@@ -9811,7 +9268,7 @@ impl CreateRequireCheckIn {
 }
 /// See [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn).
 pub mod create_require_check_in {
-
+    
     /// A builder for [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9826,8 +9283,7 @@ pub mod create_require_check_in {
         }
         /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into.</p>
         pub fn set_release_after_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.release_after_minutes = input;
-            self
+            self.release_after_minutes = input; self
         }
         /// <p>Whether require check in is enabled or not.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -9836,17 +9292,20 @@ pub mod create_require_check_in {
         }
         /// <p>Whether require check in is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Consumes the builder and constructs a [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn).
         pub fn build(self) -> crate::model::CreateRequireCheckIn {
             crate::model::CreateRequireCheckIn {
-                release_after_minutes: self.release_after_minutes,
-                enabled: self.enabled,
+                release_after_minutes: self.release_after_minutes
+                ,
+                enabled: self.enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRequireCheckIn {
     /// Creates a new builder-style object to manufacture [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn).
@@ -9858,7 +9317,7 @@ impl CreateRequireCheckIn {
 /// <p>Creates settings for the instant booking feature that are applied to a room profile. When users start their meeting with Alexa, Alexa automatically books the room for the configured duration if the room is available.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInstantBooking {
+pub struct CreateInstantBooking  {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     #[doc(hidden)]
     pub duration_in_minutes: std::option::Option<i32>,
@@ -9878,7 +9337,7 @@ impl CreateInstantBooking {
 }
 /// See [`CreateInstantBooking`](crate::model::CreateInstantBooking).
 pub mod create_instant_booking {
-
+    
     /// A builder for [`CreateInstantBooking`](crate::model::CreateInstantBooking).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9893,8 +9352,7 @@ pub mod create_instant_booking {
         }
         /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
         pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration_in_minutes = input;
-            self
+            self.duration_in_minutes = input; self
         }
         /// <p>Whether instant booking is enabled or not.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -9903,17 +9361,20 @@ pub mod create_instant_booking {
         }
         /// <p>Whether instant booking is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Consumes the builder and constructs a [`CreateInstantBooking`](crate::model::CreateInstantBooking).
         pub fn build(self) -> crate::model::CreateInstantBooking {
             crate::model::CreateInstantBooking {
-                duration_in_minutes: self.duration_in_minutes,
-                enabled: self.enabled,
+                duration_in_minutes: self.duration_in_minutes
+                ,
+                enabled: self.enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateInstantBooking {
     /// Creates a new builder-style object to manufacture [`CreateInstantBooking`](crate::model::CreateInstantBooking).
@@ -9925,7 +9386,7 @@ impl CreateInstantBooking {
 /// <p>Creates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEndOfMeetingReminder {
+pub struct CreateEndOfMeetingReminder  {
     /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
     #[doc(hidden)]
     pub reminder_at_minutes: std::option::Option<std::vec::Vec<i32>>,
@@ -9938,11 +9399,11 @@ pub struct CreateEndOfMeetingReminder {
 }
 impl CreateEndOfMeetingReminder {
     /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
-    pub fn reminder_at_minutes(&self) -> std::option::Option<&[i32]> {
+    pub fn reminder_at_minutes(&self) -> std::option::Option<& [i32]> {
         self.reminder_at_minutes.as_deref()
     }
     /// <p>The type of sound that users hear during the end of meeting reminder. </p>
-    pub fn reminder_type(&self) -> std::option::Option<&crate::model::EndOfMeetingReminderType> {
+    pub fn reminder_type(&self) -> std::option::Option<& crate::model::EndOfMeetingReminderType> {
         self.reminder_type.as_ref()
     }
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
@@ -9952,7 +9413,7 @@ impl CreateEndOfMeetingReminder {
 }
 /// See [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder).
 pub mod create_end_of_meeting_reminder {
-
+    
     /// A builder for [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9968,17 +9429,13 @@ pub mod create_end_of_meeting_reminder {
         /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
         pub fn reminder_at_minutes(mut self, input: i32) -> Self {
             let mut v = self.reminder_at_minutes.unwrap_or_default();
-            v.push(input);
-            self.reminder_at_minutes = Some(v);
-            self
+                            v.push(input);
+                            self.reminder_at_minutes = Some(v);
+                            self
         }
         /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
-        pub fn set_reminder_at_minutes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<i32>>,
-        ) -> Self {
-            self.reminder_at_minutes = input;
-            self
+        pub fn set_reminder_at_minutes(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+            self.reminder_at_minutes = input; self
         }
         /// <p>The type of sound that users hear during the end of meeting reminder. </p>
         pub fn reminder_type(mut self, input: crate::model::EndOfMeetingReminderType) -> Self {
@@ -9986,12 +9443,8 @@ pub mod create_end_of_meeting_reminder {
             self
         }
         /// <p>The type of sound that users hear during the end of meeting reminder. </p>
-        pub fn set_reminder_type(
-            mut self,
-            input: std::option::Option<crate::model::EndOfMeetingReminderType>,
-        ) -> Self {
-            self.reminder_type = input;
-            self
+        pub fn set_reminder_type(mut self, input: std::option::Option<crate::model::EndOfMeetingReminderType>) -> Self {
+            self.reminder_type = input; self
         }
         /// <p>Whether an end of meeting reminder is enabled or not.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -10000,18 +9453,22 @@ pub mod create_end_of_meeting_reminder {
         }
         /// <p>Whether an end of meeting reminder is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Consumes the builder and constructs a [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder).
         pub fn build(self) -> crate::model::CreateEndOfMeetingReminder {
             crate::model::CreateEndOfMeetingReminder {
-                reminder_at_minutes: self.reminder_at_minutes,
-                reminder_type: self.reminder_type,
-                enabled: self.enabled,
+                reminder_at_minutes: self.reminder_at_minutes
+                ,
+                reminder_type: self.reminder_type
+                ,
+                enabled: self.enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEndOfMeetingReminder {
     /// Creates a new builder-style object to manufacture [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder).
@@ -10019,3 +9476,4 @@ impl CreateEndOfMeetingReminder {
         crate::model::create_end_of_meeting_reminder::Builder::default()
     }
 }
+

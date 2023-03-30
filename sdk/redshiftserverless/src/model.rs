@@ -3,7 +3,7 @@
 /// <p>The collection of computing resources from which an endpoint is created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Workgroup {
+pub struct Workgroup  {
     /// <p>The unique identifier of the workgroup.</p>
     #[doc(hidden)]
     pub workgroup_id: std::option::Option<std::string::String>,
@@ -49,19 +49,19 @@ pub struct Workgroup {
 }
 impl Workgroup {
     /// <p>The unique identifier of the workgroup.</p>
-    pub fn workgroup_id(&self) -> std::option::Option<&str> {
+    pub fn workgroup_id(&self) -> std::option::Option<& str> {
         self.workgroup_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that links to the workgroup.</p>
-    pub fn workgroup_arn(&self) -> std::option::Option<&str> {
+    pub fn workgroup_arn(&self) -> std::option::Option<& str> {
         self.workgroup_arn.as_deref()
     }
     /// <p>The name of the workgroup.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
     /// <p>The namespace the workgroup is associated with.</p>
-    pub fn namespace_name(&self) -> std::option::Option<&str> {
+    pub fn namespace_name(&self) -> std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).</p>
@@ -73,23 +73,23 @@ impl Workgroup {
         self.enhanced_vpc_routing
     }
     /// <p>An array of parameters to set for finer control over a database. The options are <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and <code>max_query_execution_time</code>.</p>
-    pub fn config_parameters(&self) -> std::option::Option<&[crate::model::ConfigParameter]> {
+    pub fn config_parameters(&self) -> std::option::Option<& [crate::model::ConfigParameter]> {
         self.config_parameters.as_deref()
     }
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>An array of subnet IDs the workgroup is associated with.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The status of the workgroup.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::WorkgroupStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::WorkgroupStatus> {
         self.status.as_ref()
     }
     /// <p>The endpoint that is created from the workgroup.</p>
-    pub fn endpoint(&self) -> std::option::Option<&crate::model::Endpoint> {
+    pub fn endpoint(&self) -> std::option::Option<& crate::model::Endpoint> {
         self.endpoint.as_ref()
     }
     /// <p>A value that specifies whether the workgroup can be accessible from a public network</p>
@@ -97,7 +97,7 @@ impl Workgroup {
         self.publicly_accessible
     }
     /// <p>The creation date of the workgroup.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
@@ -107,7 +107,7 @@ impl Workgroup {
 }
 /// See [`Workgroup`](crate::model::Workgroup).
 pub mod workgroup {
-
+    
     /// A builder for [`Workgroup`](crate::model::Workgroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -117,8 +117,7 @@ pub mod workgroup {
         pub(crate) namespace_name: std::option::Option<std::string::String>,
         pub(crate) base_capacity: std::option::Option<i32>,
         pub(crate) enhanced_vpc_routing: std::option::Option<bool>,
-        pub(crate) config_parameters:
-            std::option::Option<std::vec::Vec<crate::model::ConfigParameter>>,
+        pub(crate) config_parameters: std::option::Option<std::vec::Vec<crate::model::ConfigParameter>>,
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) status: std::option::Option<crate::model::WorkgroupStatus>,
@@ -135,8 +134,7 @@ pub mod workgroup {
         }
         /// <p>The unique identifier of the workgroup.</p>
         pub fn set_workgroup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workgroup_id = input;
-            self
+            self.workgroup_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) that links to the workgroup.</p>
         pub fn workgroup_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,12 +142,8 @@ pub mod workgroup {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that links to the workgroup.</p>
-        pub fn set_workgroup_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.workgroup_arn = input;
-            self
+        pub fn set_workgroup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workgroup_arn = input; self
         }
         /// <p>The name of the workgroup.</p>
         pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,12 +151,8 @@ pub mod workgroup {
             self
         }
         /// <p>The name of the workgroup.</p>
-        pub fn set_workgroup_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.workgroup_name = input;
-            self
+        pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workgroup_name = input; self
         }
         /// <p>The namespace the workgroup is associated with.</p>
         pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -170,12 +160,8 @@ pub mod workgroup {
             self
         }
         /// <p>The namespace the workgroup is associated with.</p>
-        pub fn set_namespace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.namespace_name = input;
-            self
+        pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace_name = input; self
         }
         /// <p>The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).</p>
         pub fn base_capacity(mut self, input: i32) -> Self {
@@ -184,8 +170,7 @@ pub mod workgroup {
         }
         /// <p>The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).</p>
         pub fn set_base_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.base_capacity = input;
-            self
+            self.base_capacity = input; self
         }
         /// <p>The value that specifies whether to enable enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.</p>
         pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
@@ -194,8 +179,7 @@ pub mod workgroup {
         }
         /// <p>The value that specifies whether to enable enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.</p>
         pub fn set_enhanced_vpc_routing(mut self, input: std::option::Option<bool>) -> Self {
-            self.enhanced_vpc_routing = input;
-            self
+            self.enhanced_vpc_routing = input; self
         }
         /// Appends an item to `config_parameters`.
         ///
@@ -204,17 +188,13 @@ pub mod workgroup {
         /// <p>An array of parameters to set for finer control over a database. The options are <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and <code>max_query_execution_time</code>.</p>
         pub fn config_parameters(mut self, input: crate::model::ConfigParameter) -> Self {
             let mut v = self.config_parameters.unwrap_or_default();
-            v.push(input);
-            self.config_parameters = Some(v);
-            self
+                            v.push(input);
+                            self.config_parameters = Some(v);
+                            self
         }
         /// <p>An array of parameters to set for finer control over a database. The options are <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and <code>max_query_execution_time</code>.</p>
-        pub fn set_config_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConfigParameter>>,
-        ) -> Self {
-            self.config_parameters = input;
-            self
+        pub fn set_config_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConfigParameter>>) -> Self {
+            self.config_parameters = input; self
         }
         /// Appends an item to `security_group_ids`.
         ///
@@ -223,17 +203,13 @@ pub mod workgroup {
         /// <p>An array of security group IDs to associate with the workgroup.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_ids = Some(v);
+                            self
         }
         /// <p>An array of security group IDs to associate with the workgroup.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
+        pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_ids = input; self
         }
         /// Appends an item to `subnet_ids`.
         ///
@@ -242,17 +218,13 @@ pub mod workgroup {
         /// <p>An array of subnet IDs the workgroup is associated with.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>An array of subnet IDs the workgroup is associated with.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// <p>The status of the workgroup.</p>
         pub fn status(mut self, input: crate::model::WorkgroupStatus) -> Self {
@@ -260,12 +232,8 @@ pub mod workgroup {
             self
         }
         /// <p>The status of the workgroup.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::WorkgroupStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::WorkgroupStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The endpoint that is created from the workgroup.</p>
         pub fn endpoint(mut self, input: crate::model::Endpoint) -> Self {
@@ -274,8 +242,7 @@ pub mod workgroup {
         }
         /// <p>The endpoint that is created from the workgroup.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<crate::model::Endpoint>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// <p>A value that specifies whether the workgroup can be accessible from a public network</p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
@@ -284,8 +251,7 @@ pub mod workgroup {
         }
         /// <p>A value that specifies whether the workgroup can be accessible from a public network</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
-            self.publicly_accessible = input;
-            self
+            self.publicly_accessible = input; self
         }
         /// <p>The creation date of the workgroup.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -293,12 +259,8 @@ pub mod workgroup {
             self
         }
         /// <p>The creation date of the workgroup.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -307,29 +269,44 @@ pub mod workgroup {
         }
         /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// Consumes the builder and constructs a [`Workgroup`](crate::model::Workgroup).
         pub fn build(self) -> crate::model::Workgroup {
             crate::model::Workgroup {
-                workgroup_id: self.workgroup_id,
-                workgroup_arn: self.workgroup_arn,
-                workgroup_name: self.workgroup_name,
-                namespace_name: self.namespace_name,
-                base_capacity: self.base_capacity,
-                enhanced_vpc_routing: self.enhanced_vpc_routing,
-                config_parameters: self.config_parameters,
-                security_group_ids: self.security_group_ids,
-                subnet_ids: self.subnet_ids,
-                status: self.status,
-                endpoint: self.endpoint,
-                publicly_accessible: self.publicly_accessible,
-                creation_date: self.creation_date,
-                port: self.port,
+                workgroup_id: self.workgroup_id
+                ,
+                workgroup_arn: self.workgroup_arn
+                ,
+                workgroup_name: self.workgroup_name
+                ,
+                namespace_name: self.namespace_name
+                ,
+                base_capacity: self.base_capacity
+                ,
+                enhanced_vpc_routing: self.enhanced_vpc_routing
+                ,
+                config_parameters: self.config_parameters
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                status: self.status
+                ,
+                endpoint: self.endpoint
+                ,
+                publicly_accessible: self.publicly_accessible
+                ,
+                creation_date: self.creation_date
+                ,
+                port: self.port
+                ,
             }
         }
     }
+    
+    
 }
 impl Workgroup {
     /// Creates a new builder-style object to manufacture [`Workgroup`](crate::model::Workgroup).
@@ -341,7 +318,7 @@ impl Workgroup {
 /// <p>The VPC endpoint object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Endpoint {
+pub struct Endpoint  {
     /// <p>The DNS address of the VPC endpoint.</p>
     #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
@@ -354,7 +331,7 @@ pub struct Endpoint {
 }
 impl Endpoint {
     /// <p>The DNS address of the VPC endpoint.</p>
-    pub fn address(&self) -> std::option::Option<&str> {
+    pub fn address(&self) -> std::option::Option<& str> {
         self.address.as_deref()
     }
     /// <p>The port that Amazon Redshift Serverless listens on.</p>
@@ -362,13 +339,13 @@ impl Endpoint {
         self.port
     }
     /// <p>An array of <code>VpcEndpoint</code> objects.</p>
-    pub fn vpc_endpoints(&self) -> std::option::Option<&[crate::model::VpcEndpoint]> {
+    pub fn vpc_endpoints(&self) -> std::option::Option<& [crate::model::VpcEndpoint]> {
         self.vpc_endpoints.as_deref()
     }
 }
 /// See [`Endpoint`](crate::model::Endpoint).
 pub mod endpoint {
-
+    
     /// A builder for [`Endpoint`](crate::model::Endpoint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -384,8 +361,7 @@ pub mod endpoint {
         }
         /// <p>The DNS address of the VPC endpoint.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address = input;
-            self
+            self.address = input; self
         }
         /// <p>The port that Amazon Redshift Serverless listens on.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -394,8 +370,7 @@ pub mod endpoint {
         }
         /// <p>The port that Amazon Redshift Serverless listens on.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// Appends an item to `vpc_endpoints`.
         ///
@@ -404,27 +379,28 @@ pub mod endpoint {
         /// <p>An array of <code>VpcEndpoint</code> objects.</p>
         pub fn vpc_endpoints(mut self, input: crate::model::VpcEndpoint) -> Self {
             let mut v = self.vpc_endpoints.unwrap_or_default();
-            v.push(input);
-            self.vpc_endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.vpc_endpoints = Some(v);
+                            self
         }
         /// <p>An array of <code>VpcEndpoint</code> objects.</p>
-        pub fn set_vpc_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>,
-        ) -> Self {
-            self.vpc_endpoints = input;
-            self
+        pub fn set_vpc_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>) -> Self {
+            self.vpc_endpoints = input; self
         }
         /// Consumes the builder and constructs a [`Endpoint`](crate::model::Endpoint).
         pub fn build(self) -> crate::model::Endpoint {
             crate::model::Endpoint {
-                address: self.address,
-                port: self.port,
-                vpc_endpoints: self.vpc_endpoints,
+                address: self.address
+                ,
+                port: self.port
+                ,
+                vpc_endpoints: self.vpc_endpoints
+                ,
             }
         }
     }
+    
+    
 }
 impl Endpoint {
     /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
@@ -436,7 +412,7 @@ impl Endpoint {
 /// <p>The connection endpoint for connecting to Amazon Redshift Serverless through the proxy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcEndpoint {
+pub struct VpcEndpoint  {
     /// <p>The connection endpoint ID for connecting to Amazon Redshift Serverless.</p>
     #[doc(hidden)]
     pub vpc_endpoint_id: std::option::Option<std::string::String>,
@@ -449,28 +425,27 @@ pub struct VpcEndpoint {
 }
 impl VpcEndpoint {
     /// <p>The connection endpoint ID for connecting to Amazon Redshift Serverless.</p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The VPC identifier that the endpoint is associated with.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint.</p>
-    pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
+    pub fn network_interfaces(&self) -> std::option::Option<& [crate::model::NetworkInterface]> {
         self.network_interfaces.as_deref()
     }
 }
 /// See [`VpcEndpoint`](crate::model::VpcEndpoint).
 pub mod vpc_endpoint {
-
+    
     /// A builder for [`VpcEndpoint`](crate::model::VpcEndpoint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
-        pub(crate) network_interfaces:
-            std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
+        pub(crate) network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
     }
     impl Builder {
         /// <p>The connection endpoint ID for connecting to Amazon Redshift Serverless.</p>
@@ -479,12 +454,8 @@ pub mod vpc_endpoint {
             self
         }
         /// <p>The connection endpoint ID for connecting to Amazon Redshift Serverless.</p>
-        pub fn set_vpc_endpoint_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpc_endpoint_id = input;
-            self
+        pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_endpoint_id = input; self
         }
         /// <p>The VPC identifier that the endpoint is associated with.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -493,8 +464,7 @@ pub mod vpc_endpoint {
         }
         /// <p>The VPC identifier that the endpoint is associated with.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Appends an item to `network_interfaces`.
         ///
@@ -503,27 +473,28 @@ pub mod vpc_endpoint {
         /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint.</p>
         pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(input);
-            self.network_interfaces = Some(v);
-            self
+                            v.push(input);
+                            self.network_interfaces = Some(v);
+                            self
         }
         /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint.</p>
-        pub fn set_network_interfaces(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
-        ) -> Self {
-            self.network_interfaces = input;
-            self
+        pub fn set_network_interfaces(mut self, input: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>) -> Self {
+            self.network_interfaces = input; self
         }
         /// Consumes the builder and constructs a [`VpcEndpoint`](crate::model::VpcEndpoint).
         pub fn build(self) -> crate::model::VpcEndpoint {
             crate::model::VpcEndpoint {
-                vpc_endpoint_id: self.vpc_endpoint_id,
-                vpc_id: self.vpc_id,
-                network_interfaces: self.network_interfaces,
+                vpc_endpoint_id: self.vpc_endpoint_id
+                ,
+                vpc_id: self.vpc_id
+                ,
+                network_interfaces: self.network_interfaces
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcEndpoint {
     /// Creates a new builder-style object to manufacture [`VpcEndpoint`](crate::model::VpcEndpoint).
@@ -535,7 +506,7 @@ impl VpcEndpoint {
 /// <p>Contains information about a network interface in an Amazon Redshift Serverless managed VPC endpoint. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkInterface {
+pub struct NetworkInterface  {
     /// <p>The unique identifier of the network interface.</p>
     #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
@@ -551,25 +522,25 @@ pub struct NetworkInterface {
 }
 impl NetworkInterface {
     /// <p>The unique identifier of the network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The unique identifier of the subnet.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
     /// <p>The availability Zone.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
-
+    
     /// A builder for [`NetworkInterface`](crate::model::NetworkInterface).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -585,12 +556,8 @@ pub mod network_interface {
             self
         }
         /// <p>The unique identifier of the network interface.</p>
-        pub fn set_network_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_interface_id = input;
-            self
+        pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_interface_id = input; self
         }
         /// <p>The unique identifier of the subnet.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -599,8 +566,7 @@ pub mod network_interface {
         }
         /// <p>The unique identifier of the subnet.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subnet_id = input;
-            self
+            self.subnet_id = input; self
         }
         /// <p>The IPv4 address of the network interface within the subnet.</p>
         pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -608,12 +574,8 @@ pub mod network_interface {
             self
         }
         /// <p>The IPv4 address of the network interface within the subnet.</p>
-        pub fn set_private_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.private_ip_address = input;
-            self
+        pub fn set_private_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.private_ip_address = input; self
         }
         /// <p>The availability Zone.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -621,23 +583,25 @@ pub mod network_interface {
             self
         }
         /// <p>The availability Zone.</p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// Consumes the builder and constructs a [`NetworkInterface`](crate::model::NetworkInterface).
         pub fn build(self) -> crate::model::NetworkInterface {
             crate::model::NetworkInterface {
-                network_interface_id: self.network_interface_id,
-                subnet_id: self.subnet_id,
-                private_ip_address: self.private_ip_address,
-                availability_zone: self.availability_zone,
+                network_interface_id: self.network_interface_id
+                ,
+                subnet_id: self.subnet_id
+                ,
+                private_ip_address: self.private_ip_address
+                ,
+                availability_zone: self.availability_zone
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkInterface {
     /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
@@ -652,9 +616,9 @@ impl NetworkInterface {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let workgroupstatus = unimplemented!();
 /// match workgroupstatus {
@@ -678,22 +642,14 @@ impl NetworkInterface {
 /// Specifically, when `workgroupstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WorkgroupStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WorkgroupStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -704,7 +660,7 @@ pub enum WorkgroupStatus {
     #[allow(missing_docs)] // documentation missing in model
     Modifying,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WorkgroupStatus {
     fn from(s: &str) -> Self {
@@ -713,17 +669,17 @@ impl std::convert::From<&str> for WorkgroupStatus {
             "CREATING" => WorkgroupStatus::Creating,
             "DELETING" => WorkgroupStatus::Deleting,
             "MODIFYING" => WorkgroupStatus::Modifying,
-            other => WorkgroupStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => WorkgroupStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WorkgroupStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WorkgroupStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WorkgroupStatus::from(s))
+                }
+            }
 impl WorkgroupStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -732,12 +688,14 @@ impl WorkgroupStatus {
             WorkgroupStatus::Creating => "CREATING",
             WorkgroupStatus::Deleting => "DELETING",
             WorkgroupStatus::Modifying => "MODIFYING",
-            WorkgroupStatus::Unknown(value) => value.as_str(),
+            WorkgroupStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "CREATING", "DELETING", "MODIFYING"]
+        &[
+            "AVAILABLE", "CREATING", "DELETING", "MODIFYING"
+        ]
     }
 }
 impl AsRef<str> for WorkgroupStatus {
@@ -749,7 +707,7 @@ impl AsRef<str> for WorkgroupStatus {
 /// <p>An array of key-value pairs to set for advanced control over Amazon Redshift Serverless.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigParameter {
+pub struct ConfigParameter  {
     /// <p>The key of the parameter. The options are <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and <code>max_query_execution_time</code>.</p>
     #[doc(hidden)]
     pub parameter_key: std::option::Option<std::string::String>,
@@ -759,17 +717,17 @@ pub struct ConfigParameter {
 }
 impl ConfigParameter {
     /// <p>The key of the parameter. The options are <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and <code>max_query_execution_time</code>.</p>
-    pub fn parameter_key(&self) -> std::option::Option<&str> {
+    pub fn parameter_key(&self) -> std::option::Option<& str> {
         self.parameter_key.as_deref()
     }
     /// <p>The value of the parameter to set.</p>
-    pub fn parameter_value(&self) -> std::option::Option<&str> {
+    pub fn parameter_value(&self) -> std::option::Option<& str> {
         self.parameter_value.as_deref()
     }
 }
 /// See [`ConfigParameter`](crate::model::ConfigParameter).
 pub mod config_parameter {
-
+    
     /// A builder for [`ConfigParameter`](crate::model::ConfigParameter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -783,12 +741,8 @@ pub mod config_parameter {
             self
         }
         /// <p>The key of the parameter. The options are <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and <code>max_query_execution_time</code>.</p>
-        pub fn set_parameter_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parameter_key = input;
-            self
+        pub fn set_parameter_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameter_key = input; self
         }
         /// <p>The value of the parameter to set.</p>
         pub fn parameter_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -796,21 +750,21 @@ pub mod config_parameter {
             self
         }
         /// <p>The value of the parameter to set.</p>
-        pub fn set_parameter_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parameter_value = input;
-            self
+        pub fn set_parameter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameter_value = input; self
         }
         /// Consumes the builder and constructs a [`ConfigParameter`](crate::model::ConfigParameter).
         pub fn build(self) -> crate::model::ConfigParameter {
             crate::model::ConfigParameter {
-                parameter_key: self.parameter_key,
-                parameter_value: self.parameter_value,
+                parameter_key: self.parameter_key
+                ,
+                parameter_value: self.parameter_value
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigParameter {
     /// Creates a new builder-style object to manufacture [`ConfigParameter`](crate::model::ConfigParameter).
@@ -822,7 +776,7 @@ impl ConfigParameter {
 /// <p>A map of key-value pairs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key to use in the tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -832,17 +786,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key to use in the tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -857,8 +811,7 @@ pub mod tag {
         }
         /// <p>The key to use in the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of the tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -867,17 +820,20 @@ pub mod tag {
         }
         /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -889,7 +845,7 @@ impl Tag {
 /// <p>The usage limit object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UsageLimit {
+pub struct UsageLimit  {
     /// <p>The identifier of the usage limit.</p>
     #[doc(hidden)]
     pub usage_limit_id: std::option::Option<std::string::String>,
@@ -914,19 +870,19 @@ pub struct UsageLimit {
 }
 impl UsageLimit {
     /// <p>The identifier of the usage limit.</p>
-    pub fn usage_limit_id(&self) -> std::option::Option<&str> {
+    pub fn usage_limit_id(&self) -> std::option::Option<& str> {
         self.usage_limit_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the usage limit.</p>
-    pub fn usage_limit_arn(&self) -> std::option::Option<&str> {
+    pub fn usage_limit_arn(&self) -> std::option::Option<& str> {
         self.usage_limit_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the Amazon Redshift Serverless resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The Amazon Redshift Serverless feature to limit.</p>
-    pub fn usage_type(&self) -> std::option::Option<&crate::model::UsageLimitUsageType> {
+    pub fn usage_type(&self) -> std::option::Option<& crate::model::UsageLimitUsageType> {
         self.usage_type.as_ref()
     }
     /// <p>The limit amount. If time-based, this amount is in RPUs consumed per hour. If data-based, this amount is in terabytes (TB). The value must be a positive number.</p>
@@ -934,17 +890,17 @@ impl UsageLimit {
         self.amount
     }
     /// <p>The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.</p>
-    pub fn period(&self) -> std::option::Option<&crate::model::UsageLimitPeriod> {
+    pub fn period(&self) -> std::option::Option<& crate::model::UsageLimitPeriod> {
         self.period.as_ref()
     }
     /// <p>The action that Amazon Redshift Serverless takes when the limit is reached.</p>
-    pub fn breach_action(&self) -> std::option::Option<&crate::model::UsageLimitBreachAction> {
+    pub fn breach_action(&self) -> std::option::Option<& crate::model::UsageLimitBreachAction> {
         self.breach_action.as_ref()
     }
 }
 /// See [`UsageLimit`](crate::model::UsageLimit).
 pub mod usage_limit {
-
+    
     /// A builder for [`UsageLimit`](crate::model::UsageLimit).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -963,12 +919,8 @@ pub mod usage_limit {
             self
         }
         /// <p>The identifier of the usage limit.</p>
-        pub fn set_usage_limit_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.usage_limit_id = input;
-            self
+        pub fn set_usage_limit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.usage_limit_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource associated with the usage limit.</p>
         pub fn usage_limit_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -976,12 +928,8 @@ pub mod usage_limit {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource associated with the usage limit.</p>
-        pub fn set_usage_limit_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.usage_limit_arn = input;
-            self
+        pub fn set_usage_limit_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.usage_limit_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the Amazon Redshift Serverless resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -990,8 +938,7 @@ pub mod usage_limit {
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the Amazon Redshift Serverless resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The Amazon Redshift Serverless feature to limit.</p>
         pub fn usage_type(mut self, input: crate::model::UsageLimitUsageType) -> Self {
@@ -999,12 +946,8 @@ pub mod usage_limit {
             self
         }
         /// <p>The Amazon Redshift Serverless feature to limit.</p>
-        pub fn set_usage_type(
-            mut self,
-            input: std::option::Option<crate::model::UsageLimitUsageType>,
-        ) -> Self {
-            self.usage_type = input;
-            self
+        pub fn set_usage_type(mut self, input: std::option::Option<crate::model::UsageLimitUsageType>) -> Self {
+            self.usage_type = input; self
         }
         /// <p>The limit amount. If time-based, this amount is in RPUs consumed per hour. If data-based, this amount is in terabytes (TB). The value must be a positive number.</p>
         pub fn amount(mut self, input: i64) -> Self {
@@ -1013,8 +956,7 @@ pub mod usage_limit {
         }
         /// <p>The limit amount. If time-based, this amount is in RPUs consumed per hour. If data-based, this amount is in terabytes (TB). The value must be a positive number.</p>
         pub fn set_amount(mut self, input: std::option::Option<i64>) -> Self {
-            self.amount = input;
-            self
+            self.amount = input; self
         }
         /// <p>The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.</p>
         pub fn period(mut self, input: crate::model::UsageLimitPeriod) -> Self {
@@ -1022,12 +964,8 @@ pub mod usage_limit {
             self
         }
         /// <p>The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.</p>
-        pub fn set_period(
-            mut self,
-            input: std::option::Option<crate::model::UsageLimitPeriod>,
-        ) -> Self {
-            self.period = input;
-            self
+        pub fn set_period(mut self, input: std::option::Option<crate::model::UsageLimitPeriod>) -> Self {
+            self.period = input; self
         }
         /// <p>The action that Amazon Redshift Serverless takes when the limit is reached.</p>
         pub fn breach_action(mut self, input: crate::model::UsageLimitBreachAction) -> Self {
@@ -1035,26 +973,31 @@ pub mod usage_limit {
             self
         }
         /// <p>The action that Amazon Redshift Serverless takes when the limit is reached.</p>
-        pub fn set_breach_action(
-            mut self,
-            input: std::option::Option<crate::model::UsageLimitBreachAction>,
-        ) -> Self {
-            self.breach_action = input;
-            self
+        pub fn set_breach_action(mut self, input: std::option::Option<crate::model::UsageLimitBreachAction>) -> Self {
+            self.breach_action = input; self
         }
         /// Consumes the builder and constructs a [`UsageLimit`](crate::model::UsageLimit).
         pub fn build(self) -> crate::model::UsageLimit {
             crate::model::UsageLimit {
-                usage_limit_id: self.usage_limit_id,
-                usage_limit_arn: self.usage_limit_arn,
-                resource_arn: self.resource_arn,
-                usage_type: self.usage_type,
-                amount: self.amount,
-                period: self.period,
-                breach_action: self.breach_action,
+                usage_limit_id: self.usage_limit_id
+                ,
+                usage_limit_arn: self.usage_limit_arn
+                ,
+                resource_arn: self.resource_arn
+                ,
+                usage_type: self.usage_type
+                ,
+                amount: self.amount
+                ,
+                period: self.period
+                ,
+                breach_action: self.breach_action
+                ,
             }
         }
     }
+    
+    
 }
 impl UsageLimit {
     /// Creates a new builder-style object to manufacture [`UsageLimit`](crate::model::UsageLimit).
@@ -1069,9 +1012,9 @@ impl UsageLimit {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let usagelimitbreachaction = unimplemented!();
 /// match usagelimitbreachaction {
@@ -1094,22 +1037,14 @@ impl UsageLimit {
 /// Specifically, when `usagelimitbreachaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UsageLimitBreachAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UsageLimitBreachAction {
     #[allow(missing_docs)] // documentation missing in model
     Deactivate,
@@ -1118,7 +1053,7 @@ pub enum UsageLimitBreachAction {
     #[allow(missing_docs)] // documentation missing in model
     Log,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UsageLimitBreachAction {
     fn from(s: &str) -> Self {
@@ -1126,19 +1061,17 @@ impl std::convert::From<&str> for UsageLimitBreachAction {
             "deactivate" => UsageLimitBreachAction::Deactivate,
             "emit-metric" => UsageLimitBreachAction::EmitMetric,
             "log" => UsageLimitBreachAction::Log,
-            other => {
-                UsageLimitBreachAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => UsageLimitBreachAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UsageLimitBreachAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UsageLimitBreachAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UsageLimitBreachAction::from(s))
+                }
+            }
 impl UsageLimitBreachAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1146,12 +1079,14 @@ impl UsageLimitBreachAction {
             UsageLimitBreachAction::Deactivate => "deactivate",
             UsageLimitBreachAction::EmitMetric => "emit-metric",
             UsageLimitBreachAction::Log => "log",
-            UsageLimitBreachAction::Unknown(value) => value.as_str(),
+            UsageLimitBreachAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["deactivate", "emit-metric", "log"]
+        &[
+            "deactivate", "emit-metric", "log"
+        ]
     }
 }
 impl AsRef<str> for UsageLimitBreachAction {
@@ -1166,9 +1101,9 @@ impl AsRef<str> for UsageLimitBreachAction {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let usagelimitperiod = unimplemented!();
 /// match usagelimitperiod {
@@ -1191,22 +1126,14 @@ impl AsRef<str> for UsageLimitBreachAction {
 /// Specifically, when `usagelimitperiod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UsageLimitPeriod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UsageLimitPeriod {
     #[allow(missing_docs)] // documentation missing in model
     Daily,
@@ -1215,7 +1142,7 @@ pub enum UsageLimitPeriod {
     #[allow(missing_docs)] // documentation missing in model
     Weekly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UsageLimitPeriod {
     fn from(s: &str) -> Self {
@@ -1223,17 +1150,17 @@ impl std::convert::From<&str> for UsageLimitPeriod {
             "daily" => UsageLimitPeriod::Daily,
             "monthly" => UsageLimitPeriod::Monthly,
             "weekly" => UsageLimitPeriod::Weekly,
-            other => UsageLimitPeriod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UsageLimitPeriod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UsageLimitPeriod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UsageLimitPeriod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UsageLimitPeriod::from(s))
+                }
+            }
 impl UsageLimitPeriod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1241,12 +1168,14 @@ impl UsageLimitPeriod {
             UsageLimitPeriod::Daily => "daily",
             UsageLimitPeriod::Monthly => "monthly",
             UsageLimitPeriod::Weekly => "weekly",
-            UsageLimitPeriod::Unknown(value) => value.as_str(),
+            UsageLimitPeriod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["daily", "monthly", "weekly"]
+        &[
+            "daily", "monthly", "weekly"
+        ]
     }
 }
 impl AsRef<str> for UsageLimitPeriod {
@@ -1261,9 +1190,9 @@ impl AsRef<str> for UsageLimitPeriod {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let usagelimitusagetype = unimplemented!();
 /// match usagelimitusagetype {
@@ -1285,60 +1214,52 @@ impl AsRef<str> for UsageLimitPeriod {
 /// Specifically, when `usagelimitusagetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UsageLimitUsageType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UsageLimitUsageType {
     #[allow(missing_docs)] // documentation missing in model
     CrossRegionDatasharing,
     #[allow(missing_docs)] // documentation missing in model
     ServerlessCompute,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UsageLimitUsageType {
     fn from(s: &str) -> Self {
         match s {
             "cross-region-datasharing" => UsageLimitUsageType::CrossRegionDatasharing,
             "serverless-compute" => UsageLimitUsageType::ServerlessCompute,
-            other => {
-                UsageLimitUsageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => UsageLimitUsageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UsageLimitUsageType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UsageLimitUsageType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UsageLimitUsageType::from(s))
+                }
+            }
 impl UsageLimitUsageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UsageLimitUsageType::CrossRegionDatasharing => "cross-region-datasharing",
             UsageLimitUsageType::ServerlessCompute => "serverless-compute",
-            UsageLimitUsageType::Unknown(value) => value.as_str(),
+            UsageLimitUsageType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["cross-region-datasharing", "serverless-compute"]
+        &[
+            "cross-region-datasharing", "serverless-compute"
+        ]
     }
 }
 impl AsRef<str> for UsageLimitUsageType {
@@ -1350,7 +1271,7 @@ impl AsRef<str> for UsageLimitUsageType {
 /// <p>A snapshot object that contains databases.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Snapshot {
+pub struct Snapshot  {
     /// <p>The name of the namepsace.</p>
     #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
@@ -1410,40 +1331,39 @@ pub struct Snapshot {
     pub accounts_with_restore_access: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a provisioned cluster.</p>
     #[doc(hidden)]
-    pub accounts_with_provisioned_restore_access:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub accounts_with_provisioned_restore_access: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Snapshot {
     /// <p>The name of the namepsace.</p>
-    pub fn namespace_name(&self) -> std::option::Option<&str> {
+    pub fn namespace_name(&self) -> std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace the snapshot was created from.</p>
-    pub fn namespace_arn(&self) -> std::option::Option<&str> {
+    pub fn namespace_arn(&self) -> std::option::Option<& str> {
         self.namespace_arn.as_deref()
     }
     /// <p>The name of the snapshot.</p>
-    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The timestamp of when the snapshot was created.</p>
-    pub fn snapshot_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn snapshot_create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.snapshot_create_time.as_ref()
     }
     /// <p>The username of the database within a snapshot.</p>
-    pub fn admin_username(&self) -> std::option::Option<&str> {
+    pub fn admin_username(&self) -> std::option::Option<& str> {
         self.admin_username.as_deref()
     }
     /// <p>The status of the snapshot.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SnapshotStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SnapshotStatus> {
         self.status.as_ref()
     }
     /// <p>The unique identifier of the KMS key used to encrypt the snapshot.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The owner Amazon Web Services; account of the snapshot.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The total size, in megabytes, of how big the snapshot is.</p>
@@ -1479,29 +1399,25 @@ impl Snapshot {
         self.snapshot_remaining_days
     }
     /// <p>The timestamp of when data within the snapshot started getting retained.</p>
-    pub fn snapshot_retention_start_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn snapshot_retention_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.snapshot_retention_start_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot.</p>
-    pub fn snapshot_arn(&self) -> std::option::Option<&str> {
+    pub fn snapshot_arn(&self) -> std::option::Option<& str> {
         self.snapshot_arn.as_deref()
     }
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a namespace.</p>
-    pub fn accounts_with_restore_access(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn accounts_with_restore_access(&self) -> std::option::Option<& [std::string::String]> {
         self.accounts_with_restore_access.as_deref()
     }
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a provisioned cluster.</p>
-    pub fn accounts_with_provisioned_restore_access(
-        &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    pub fn accounts_with_provisioned_restore_access(&self) -> std::option::Option<& [std::string::String]> {
         self.accounts_with_provisioned_restore_access.as_deref()
     }
 }
 /// See [`Snapshot`](crate::model::Snapshot).
 pub mod snapshot {
-
+    
     /// A builder for [`Snapshot`](crate::model::Snapshot).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1523,10 +1439,8 @@ pub mod snapshot {
         pub(crate) snapshot_remaining_days: std::option::Option<i32>,
         pub(crate) snapshot_retention_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) snapshot_arn: std::option::Option<std::string::String>,
-        pub(crate) accounts_with_restore_access:
-            std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) accounts_with_provisioned_restore_access:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) accounts_with_restore_access: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) accounts_with_provisioned_restore_access: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the namepsace.</p>
@@ -1535,12 +1449,8 @@ pub mod snapshot {
             self
         }
         /// <p>The name of the namepsace.</p>
-        pub fn set_namespace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.namespace_name = input;
-            self
+        pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the namespace the snapshot was created from.</p>
         pub fn namespace_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1548,12 +1458,8 @@ pub mod snapshot {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the namespace the snapshot was created from.</p>
-        pub fn set_namespace_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.namespace_arn = input;
-            self
+        pub fn set_namespace_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace_arn = input; self
         }
         /// <p>The name of the snapshot.</p>
         pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1561,12 +1467,8 @@ pub mod snapshot {
             self
         }
         /// <p>The name of the snapshot.</p>
-        pub fn set_snapshot_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_name = input;
-            self
+        pub fn set_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_name = input; self
         }
         /// <p>The timestamp of when the snapshot was created.</p>
         pub fn snapshot_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1574,12 +1476,8 @@ pub mod snapshot {
             self
         }
         /// <p>The timestamp of when the snapshot was created.</p>
-        pub fn set_snapshot_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.snapshot_create_time = input;
-            self
+        pub fn set_snapshot_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.snapshot_create_time = input; self
         }
         /// <p>The username of the database within a snapshot.</p>
         pub fn admin_username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1587,12 +1485,8 @@ pub mod snapshot {
             self
         }
         /// <p>The username of the database within a snapshot.</p>
-        pub fn set_admin_username(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.admin_username = input;
-            self
+        pub fn set_admin_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.admin_username = input; self
         }
         /// <p>The status of the snapshot.</p>
         pub fn status(mut self, input: crate::model::SnapshotStatus) -> Self {
@@ -1600,12 +1494,8 @@ pub mod snapshot {
             self
         }
         /// <p>The status of the snapshot.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SnapshotStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SnapshotStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The unique identifier of the KMS key used to encrypt the snapshot.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1614,8 +1504,7 @@ pub mod snapshot {
         }
         /// <p>The unique identifier of the KMS key used to encrypt the snapshot.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The owner Amazon Web Services; account of the snapshot.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1623,12 +1512,8 @@ pub mod snapshot {
             self
         }
         /// <p>The owner Amazon Web Services; account of the snapshot.</p>
-        pub fn set_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account = input;
-            self
+        pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account = input; self
         }
         /// <p>The total size, in megabytes, of how big the snapshot is.</p>
         pub fn total_backup_size_in_mega_bytes(mut self, input: f64) -> Self {
@@ -1636,12 +1521,8 @@ pub mod snapshot {
             self
         }
         /// <p>The total size, in megabytes, of how big the snapshot is.</p>
-        pub fn set_total_backup_size_in_mega_bytes(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.total_backup_size_in_mega_bytes = input;
-            self
+        pub fn set_total_backup_size_in_mega_bytes(mut self, input: std::option::Option<f64>) -> Self {
+            self.total_backup_size_in_mega_bytes = input; self
         }
         /// <p>The size of the incremental backup in megabytes.</p>
         pub fn actual_incremental_backup_size_in_mega_bytes(mut self, input: f64) -> Self {
@@ -1649,12 +1530,8 @@ pub mod snapshot {
             self
         }
         /// <p>The size of the incremental backup in megabytes.</p>
-        pub fn set_actual_incremental_backup_size_in_mega_bytes(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.actual_incremental_backup_size_in_mega_bytes = input;
-            self
+        pub fn set_actual_incremental_backup_size_in_mega_bytes(mut self, input: std::option::Option<f64>) -> Self {
+            self.actual_incremental_backup_size_in_mega_bytes = input; self
         }
         /// <p>The size in megabytes of the data that has been backed up to a snapshot.</p>
         pub fn backup_progress_in_mega_bytes(mut self, input: f64) -> Self {
@@ -1662,12 +1539,8 @@ pub mod snapshot {
             self
         }
         /// <p>The size in megabytes of the data that has been backed up to a snapshot.</p>
-        pub fn set_backup_progress_in_mega_bytes(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.backup_progress_in_mega_bytes = input;
-            self
+        pub fn set_backup_progress_in_mega_bytes(mut self, input: std::option::Option<f64>) -> Self {
+            self.backup_progress_in_mega_bytes = input; self
         }
         /// <p>The rate at which data is backed up into a snapshot in megabytes per second.</p>
         pub fn current_backup_rate_in_mega_bytes_per_second(mut self, input: f64) -> Self {
@@ -1675,12 +1548,8 @@ pub mod snapshot {
             self
         }
         /// <p>The rate at which data is backed up into a snapshot in megabytes per second.</p>
-        pub fn set_current_backup_rate_in_mega_bytes_per_second(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.current_backup_rate_in_mega_bytes_per_second = input;
-            self
+        pub fn set_current_backup_rate_in_mega_bytes_per_second(mut self, input: std::option::Option<f64>) -> Self {
+            self.current_backup_rate_in_mega_bytes_per_second = input; self
         }
         /// <p>The estimated amount of seconds until the snapshot completes backup.</p>
         pub fn estimated_seconds_to_completion(mut self, input: i64) -> Self {
@@ -1688,12 +1557,8 @@ pub mod snapshot {
             self
         }
         /// <p>The estimated amount of seconds until the snapshot completes backup.</p>
-        pub fn set_estimated_seconds_to_completion(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.estimated_seconds_to_completion = input;
-            self
+        pub fn set_estimated_seconds_to_completion(mut self, input: std::option::Option<i64>) -> Self {
+            self.estimated_seconds_to_completion = input; self
         }
         /// <p>The amount of time it took to back up data into a snapshot.</p>
         pub fn elapsed_time_in_seconds(mut self, input: i64) -> Self {
@@ -1702,8 +1567,7 @@ pub mod snapshot {
         }
         /// <p>The amount of time it took to back up data into a snapshot.</p>
         pub fn set_elapsed_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.elapsed_time_in_seconds = input;
-            self
+            self.elapsed_time_in_seconds = input; self
         }
         /// <p>The period of time, in days, of how long the snapshot is retained.</p>
         pub fn snapshot_retention_period(mut self, input: i32) -> Self {
@@ -1712,8 +1576,7 @@ pub mod snapshot {
         }
         /// <p>The period of time, in days, of how long the snapshot is retained.</p>
         pub fn set_snapshot_retention_period(mut self, input: std::option::Option<i32>) -> Self {
-            self.snapshot_retention_period = input;
-            self
+            self.snapshot_retention_period = input; self
         }
         /// <p>The amount of days until the snapshot is deleted.</p>
         pub fn snapshot_remaining_days(mut self, input: i32) -> Self {
@@ -1722,8 +1585,7 @@ pub mod snapshot {
         }
         /// <p>The amount of days until the snapshot is deleted.</p>
         pub fn set_snapshot_remaining_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.snapshot_remaining_days = input;
-            self
+            self.snapshot_remaining_days = input; self
         }
         /// <p>The timestamp of when data within the snapshot started getting retained.</p>
         pub fn snapshot_retention_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1731,12 +1593,8 @@ pub mod snapshot {
             self
         }
         /// <p>The timestamp of when data within the snapshot started getting retained.</p>
-        pub fn set_snapshot_retention_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.snapshot_retention_start_time = input;
-            self
+        pub fn set_snapshot_retention_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.snapshot_retention_start_time = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot.</p>
         pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1745,84 +1603,86 @@ pub mod snapshot {
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot.</p>
         pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_arn = input;
-            self
+            self.snapshot_arn = input; self
         }
         /// Appends an item to `accounts_with_restore_access`.
         ///
         /// To override the contents of this collection use [`set_accounts_with_restore_access`](Self::set_accounts_with_restore_access).
         ///
         /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a namespace.</p>
-        pub fn accounts_with_restore_access(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn accounts_with_restore_access(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accounts_with_restore_access.unwrap_or_default();
-            v.push(input.into());
-            self.accounts_with_restore_access = Some(v);
-            self
+                            v.push(input.into());
+                            self.accounts_with_restore_access = Some(v);
+                            self
         }
         /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a namespace.</p>
-        pub fn set_accounts_with_restore_access(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.accounts_with_restore_access = input;
-            self
+        pub fn set_accounts_with_restore_access(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.accounts_with_restore_access = input; self
         }
         /// Appends an item to `accounts_with_provisioned_restore_access`.
         ///
         /// To override the contents of this collection use [`set_accounts_with_provisioned_restore_access`](Self::set_accounts_with_provisioned_restore_access).
         ///
         /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a provisioned cluster.</p>
-        pub fn accounts_with_provisioned_restore_access(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            let mut v = self
-                .accounts_with_provisioned_restore_access
-                .unwrap_or_default();
-            v.push(input.into());
-            self.accounts_with_provisioned_restore_access = Some(v);
-            self
+        pub fn accounts_with_provisioned_restore_access(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.accounts_with_provisioned_restore_access.unwrap_or_default();
+                            v.push(input.into());
+                            self.accounts_with_provisioned_restore_access = Some(v);
+                            self
         }
         /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a provisioned cluster.</p>
-        pub fn set_accounts_with_provisioned_restore_access(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.accounts_with_provisioned_restore_access = input;
-            self
+        pub fn set_accounts_with_provisioned_restore_access(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.accounts_with_provisioned_restore_access = input; self
         }
         /// Consumes the builder and constructs a [`Snapshot`](crate::model::Snapshot).
         pub fn build(self) -> crate::model::Snapshot {
             crate::model::Snapshot {
-                namespace_name: self.namespace_name,
-                namespace_arn: self.namespace_arn,
-                snapshot_name: self.snapshot_name,
-                snapshot_create_time: self.snapshot_create_time,
-                admin_username: self.admin_username,
-                status: self.status,
-                kms_key_id: self.kms_key_id,
-                owner_account: self.owner_account,
-                total_backup_size_in_mega_bytes: self.total_backup_size_in_mega_bytes,
-                actual_incremental_backup_size_in_mega_bytes: self
-                    .actual_incremental_backup_size_in_mega_bytes,
-                backup_progress_in_mega_bytes: self.backup_progress_in_mega_bytes,
-                current_backup_rate_in_mega_bytes_per_second: self
-                    .current_backup_rate_in_mega_bytes_per_second,
-                estimated_seconds_to_completion: self.estimated_seconds_to_completion,
-                elapsed_time_in_seconds: self.elapsed_time_in_seconds,
-                snapshot_retention_period: self.snapshot_retention_period,
-                snapshot_remaining_days: self.snapshot_remaining_days,
-                snapshot_retention_start_time: self.snapshot_retention_start_time,
-                snapshot_arn: self.snapshot_arn,
-                accounts_with_restore_access: self.accounts_with_restore_access,
-                accounts_with_provisioned_restore_access: self
-                    .accounts_with_provisioned_restore_access,
+                namespace_name: self.namespace_name
+                ,
+                namespace_arn: self.namespace_arn
+                ,
+                snapshot_name: self.snapshot_name
+                ,
+                snapshot_create_time: self.snapshot_create_time
+                ,
+                admin_username: self.admin_username
+                ,
+                status: self.status
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                owner_account: self.owner_account
+                ,
+                total_backup_size_in_mega_bytes: self.total_backup_size_in_mega_bytes
+                ,
+                actual_incremental_backup_size_in_mega_bytes: self.actual_incremental_backup_size_in_mega_bytes
+                ,
+                backup_progress_in_mega_bytes: self.backup_progress_in_mega_bytes
+                ,
+                current_backup_rate_in_mega_bytes_per_second: self.current_backup_rate_in_mega_bytes_per_second
+                ,
+                estimated_seconds_to_completion: self.estimated_seconds_to_completion
+                ,
+                elapsed_time_in_seconds: self.elapsed_time_in_seconds
+                ,
+                snapshot_retention_period: self.snapshot_retention_period
+                ,
+                snapshot_remaining_days: self.snapshot_remaining_days
+                ,
+                snapshot_retention_start_time: self.snapshot_retention_start_time
+                ,
+                snapshot_arn: self.snapshot_arn
+                ,
+                accounts_with_restore_access: self.accounts_with_restore_access
+                ,
+                accounts_with_provisioned_restore_access: self.accounts_with_provisioned_restore_access
+                ,
             }
         }
     }
+    
+    
 }
 impl Snapshot {
     /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
@@ -1837,9 +1697,9 @@ impl Snapshot {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let snapshotstatus = unimplemented!();
 /// match snapshotstatus {
@@ -1865,22 +1725,14 @@ impl Snapshot {
 /// Specifically, when `snapshotstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SnapshotStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SnapshotStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -1895,7 +1747,7 @@ pub enum SnapshotStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SnapshotStatus {
     fn from(s: &str) -> Self {
@@ -1906,17 +1758,17 @@ impl std::convert::From<&str> for SnapshotStatus {
             "CREATING" => SnapshotStatus::Creating,
             "DELETED" => SnapshotStatus::Deleted,
             "FAILED" => SnapshotStatus::Failed,
-            other => SnapshotStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SnapshotStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SnapshotStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SnapshotStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SnapshotStatus::from(s))
+                }
+            }
 impl SnapshotStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1927,18 +1779,13 @@ impl SnapshotStatus {
             SnapshotStatus::Creating => "CREATING",
             SnapshotStatus::Deleted => "DELETED",
             SnapshotStatus::Failed => "FAILED",
-            SnapshotStatus::Unknown(value) => value.as_str(),
+            SnapshotStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AVAILABLE",
-            "CANCELLED",
-            "COPYING",
-            "CREATING",
-            "DELETED",
-            "FAILED",
+            "AVAILABLE", "CANCELLED", "COPYING", "CREATING", "DELETED", "FAILED"
         ]
     }
 }
@@ -1951,7 +1798,7 @@ impl AsRef<str> for SnapshotStatus {
 /// <p>Contains information about a table restore request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableRestoreStatus {
+pub struct TableRestoreStatus  {
     /// <p>The ID of the RestoreTableFromSnapshot request.</p>
     #[doc(hidden)]
     pub table_restore_request_id: std::option::Option<std::string::String>,
@@ -2000,31 +1847,31 @@ pub struct TableRestoreStatus {
 }
 impl TableRestoreStatus {
     /// <p>The ID of the RestoreTableFromSnapshot request.</p>
-    pub fn table_restore_request_id(&self) -> std::option::Option<&str> {
+    pub fn table_restore_request_id(&self) -> std::option::Option<& str> {
         self.table_restore_request_id.as_deref()
     }
     /// <p>A value that describes the current state of the table restore request. Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
-    pub fn request_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn request_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.request_time.as_ref()
     }
     /// <p>The namespace of the table being restored from.</p>
-    pub fn namespace_name(&self) -> std::option::Option<&str> {
+    pub fn namespace_name(&self) -> std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The name of the workgroup being restored from.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
     /// <p>The name of the snapshot being restored from.</p>
-    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
@@ -2036,33 +1883,33 @@ impl TableRestoreStatus {
         self.total_data_in_mega_bytes
     }
     /// <p>The name of the source database being restored from.</p>
-    pub fn source_database_name(&self) -> std::option::Option<&str> {
+    pub fn source_database_name(&self) -> std::option::Option<& str> {
         self.source_database_name.as_deref()
     }
     /// <p>The name of the source schema being restored from.</p>
-    pub fn source_schema_name(&self) -> std::option::Option<&str> {
+    pub fn source_schema_name(&self) -> std::option::Option<& str> {
         self.source_schema_name.as_deref()
     }
     /// <p>The name of the source table being restored from.</p>
-    pub fn source_table_name(&self) -> std::option::Option<&str> {
+    pub fn source_table_name(&self) -> std::option::Option<& str> {
         self.source_table_name.as_deref()
     }
     /// <p>The name of the database to restore to.</p>
-    pub fn target_database_name(&self) -> std::option::Option<&str> {
+    pub fn target_database_name(&self) -> std::option::Option<& str> {
         self.target_database_name.as_deref()
     }
     /// <p>The name of the schema to restore to.</p>
-    pub fn target_schema_name(&self) -> std::option::Option<&str> {
+    pub fn target_schema_name(&self) -> std::option::Option<& str> {
         self.target_schema_name.as_deref()
     }
     /// <p>The name of the table to create from the restore operation.</p>
-    pub fn new_table_name(&self) -> std::option::Option<&str> {
+    pub fn new_table_name(&self) -> std::option::Option<& str> {
         self.new_table_name.as_deref()
     }
 }
 /// See [`TableRestoreStatus`](crate::model::TableRestoreStatus).
 pub mod table_restore_status {
-
+    
     /// A builder for [`TableRestoreStatus`](crate::model::TableRestoreStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2089,12 +1936,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The ID of the RestoreTableFromSnapshot request.</p>
-        pub fn set_table_restore_request_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.table_restore_request_id = input;
-            self
+        pub fn set_table_restore_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_restore_request_id = input; self
         }
         /// <p>A value that describes the current state of the table restore request. Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2103,8 +1946,7 @@ pub mod table_restore_status {
         }
         /// <p>A value that describes the current state of the table restore request. Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2113,8 +1955,7 @@ pub mod table_restore_status {
         }
         /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
         pub fn request_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2122,12 +1963,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
-        pub fn set_request_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.request_time = input;
-            self
+        pub fn set_request_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.request_time = input; self
         }
         /// <p>The namespace of the table being restored from.</p>
         pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2135,12 +1972,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The namespace of the table being restored from.</p>
-        pub fn set_namespace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.namespace_name = input;
-            self
+        pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace_name = input; self
         }
         /// <p>The name of the workgroup being restored from.</p>
         pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2148,12 +1981,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The name of the workgroup being restored from.</p>
-        pub fn set_workgroup_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.workgroup_name = input;
-            self
+        pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workgroup_name = input; self
         }
         /// <p>The name of the snapshot being restored from.</p>
         pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2161,12 +1990,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The name of the snapshot being restored from.</p>
-        pub fn set_snapshot_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_name = input;
-            self
+        pub fn set_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_name = input; self
         }
         /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
         pub fn progress_in_mega_bytes(mut self, input: i64) -> Self {
@@ -2175,8 +2000,7 @@ pub mod table_restore_status {
         }
         /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
         pub fn set_progress_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.progress_in_mega_bytes = input;
-            self
+            self.progress_in_mega_bytes = input; self
         }
         /// <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
         pub fn total_data_in_mega_bytes(mut self, input: i64) -> Self {
@@ -2185,8 +2009,7 @@ pub mod table_restore_status {
         }
         /// <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
         pub fn set_total_data_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_data_in_mega_bytes = input;
-            self
+            self.total_data_in_mega_bytes = input; self
         }
         /// <p>The name of the source database being restored from.</p>
         pub fn source_database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2194,12 +2017,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The name of the source database being restored from.</p>
-        pub fn set_source_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_database_name = input;
-            self
+        pub fn set_source_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_database_name = input; self
         }
         /// <p>The name of the source schema being restored from.</p>
         pub fn source_schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2207,12 +2026,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The name of the source schema being restored from.</p>
-        pub fn set_source_schema_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_schema_name = input;
-            self
+        pub fn set_source_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_schema_name = input; self
         }
         /// <p>The name of the source table being restored from.</p>
         pub fn source_table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2220,12 +2035,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The name of the source table being restored from.</p>
-        pub fn set_source_table_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_table_name = input;
-            self
+        pub fn set_source_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_table_name = input; self
         }
         /// <p>The name of the database to restore to.</p>
         pub fn target_database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2233,12 +2044,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The name of the database to restore to.</p>
-        pub fn set_target_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_database_name = input;
-            self
+        pub fn set_target_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_database_name = input; self
         }
         /// <p>The name of the schema to restore to.</p>
         pub fn target_schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2246,12 +2053,8 @@ pub mod table_restore_status {
             self
         }
         /// <p>The name of the schema to restore to.</p>
-        pub fn set_target_schema_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_schema_name = input;
-            self
+        pub fn set_target_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_schema_name = input; self
         }
         /// <p>The name of the table to create from the restore operation.</p>
         pub fn new_table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2259,34 +2062,47 @@ pub mod table_restore_status {
             self
         }
         /// <p>The name of the table to create from the restore operation.</p>
-        pub fn set_new_table_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.new_table_name = input;
-            self
+        pub fn set_new_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.new_table_name = input; self
         }
         /// Consumes the builder and constructs a [`TableRestoreStatus`](crate::model::TableRestoreStatus).
         pub fn build(self) -> crate::model::TableRestoreStatus {
             crate::model::TableRestoreStatus {
-                table_restore_request_id: self.table_restore_request_id,
-                status: self.status,
-                message: self.message,
-                request_time: self.request_time,
-                namespace_name: self.namespace_name,
-                workgroup_name: self.workgroup_name,
-                snapshot_name: self.snapshot_name,
-                progress_in_mega_bytes: self.progress_in_mega_bytes,
-                total_data_in_mega_bytes: self.total_data_in_mega_bytes,
-                source_database_name: self.source_database_name,
-                source_schema_name: self.source_schema_name,
-                source_table_name: self.source_table_name,
-                target_database_name: self.target_database_name,
-                target_schema_name: self.target_schema_name,
-                new_table_name: self.new_table_name,
+                table_restore_request_id: self.table_restore_request_id
+                ,
+                status: self.status
+                ,
+                message: self.message
+                ,
+                request_time: self.request_time
+                ,
+                namespace_name: self.namespace_name
+                ,
+                workgroup_name: self.workgroup_name
+                ,
+                snapshot_name: self.snapshot_name
+                ,
+                progress_in_mega_bytes: self.progress_in_mega_bytes
+                ,
+                total_data_in_mega_bytes: self.total_data_in_mega_bytes
+                ,
+                source_database_name: self.source_database_name
+                ,
+                source_schema_name: self.source_schema_name
+                ,
+                source_table_name: self.source_table_name
+                ,
+                target_database_name: self.target_database_name
+                ,
+                target_schema_name: self.target_schema_name
+                ,
+                new_table_name: self.new_table_name
+                ,
             }
         }
     }
+    
+    
 }
 impl TableRestoreStatus {
     /// Creates a new builder-style object to manufacture [`TableRestoreStatus`](crate::model::TableRestoreStatus).
@@ -2298,7 +2114,7 @@ impl TableRestoreStatus {
 /// <p>A collection of database objects and users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Namespace {
+pub struct Namespace  {
     /// <p>The Amazon Resource Name (ARN) associated with a namespace.</p>
     #[doc(hidden)]
     pub namespace_arn: std::option::Option<std::string::String>,
@@ -2335,51 +2151,51 @@ pub struct Namespace {
 }
 impl Namespace {
     /// <p>The Amazon Resource Name (ARN) associated with a namespace.</p>
-    pub fn namespace_arn(&self) -> std::option::Option<&str> {
+    pub fn namespace_arn(&self) -> std::option::Option<& str> {
         self.namespace_arn.as_deref()
     }
     /// <p>The unique identifier of a namespace.</p>
-    pub fn namespace_id(&self) -> std::option::Option<&str> {
+    pub fn namespace_id(&self) -> std::option::Option<& str> {
         self.namespace_id.as_deref()
     }
     /// <p>The name of the namespace. Must be between 3-64 alphanumeric characters in lowercase, and it cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p>
-    pub fn namespace_name(&self) -> std::option::Option<&str> {
+    pub fn namespace_name(&self) -> std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The username of the administrator for the first database created in the namespace.</p>
-    pub fn admin_username(&self) -> std::option::Option<&str> {
+    pub fn admin_username(&self) -> std::option::Option<& str> {
         self.admin_username.as_deref()
     }
     /// <p>The name of the first database created in the namespace.</p>
-    pub fn db_name(&self) -> std::option::Option<&str> {
+    pub fn db_name(&self) -> std::option::Option<& str> {
         self.db_name.as_deref()
     }
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
-    pub fn default_iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn default_iam_role_arn(&self) -> std::option::Option<& str> {
         self.default_iam_role_arn.as_deref()
     }
     /// <p>A list of IAM roles to associate with the namespace.</p>
-    pub fn iam_roles(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn iam_roles(&self) -> std::option::Option<& [std::string::String]> {
         self.iam_roles.as_deref()
     }
     /// <p>The types of logs the namespace can export. Available export types are User log, Connection log, and User activity log.</p>
-    pub fn log_exports(&self) -> std::option::Option<&[crate::model::LogExport]> {
+    pub fn log_exports(&self) -> std::option::Option<& [crate::model::LogExport]> {
         self.log_exports.as_deref()
     }
     /// <p>The status of the namespace.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::NamespaceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::NamespaceStatus> {
         self.status.as_ref()
     }
     /// <p>The date of when the namespace was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
-impl std::fmt::Debug for Namespace {
+impl  std::fmt::Debug for Namespace  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Namespace");
         formatter.field("namespace_arn", &self.namespace_arn);
@@ -2398,7 +2214,7 @@ impl std::fmt::Debug for Namespace {
 }
 /// See [`Namespace`](crate::model::Namespace).
 pub mod namespace {
-
+    
     /// A builder for [`Namespace`](crate::model::Namespace).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2421,12 +2237,8 @@ pub mod namespace {
             self
         }
         /// <p>The Amazon Resource Name (ARN) associated with a namespace.</p>
-        pub fn set_namespace_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.namespace_arn = input;
-            self
+        pub fn set_namespace_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace_arn = input; self
         }
         /// <p>The unique identifier of a namespace.</p>
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2435,8 +2247,7 @@ pub mod namespace {
         }
         /// <p>The unique identifier of a namespace.</p>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace_id = input;
-            self
+            self.namespace_id = input; self
         }
         /// <p>The name of the namespace. Must be between 3-64 alphanumeric characters in lowercase, and it cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p>
         pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2444,12 +2255,8 @@ pub mod namespace {
             self
         }
         /// <p>The name of the namespace. Must be between 3-64 alphanumeric characters in lowercase, and it cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p>
-        pub fn set_namespace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.namespace_name = input;
-            self
+        pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace_name = input; self
         }
         /// <p>The username of the administrator for the first database created in the namespace.</p>
         pub fn admin_username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2457,12 +2264,8 @@ pub mod namespace {
             self
         }
         /// <p>The username of the administrator for the first database created in the namespace.</p>
-        pub fn set_admin_username(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.admin_username = input;
-            self
+        pub fn set_admin_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.admin_username = input; self
         }
         /// <p>The name of the first database created in the namespace.</p>
         pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2471,8 +2274,7 @@ pub mod namespace {
         }
         /// <p>The name of the first database created in the namespace.</p>
         pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.db_name = input;
-            self
+            self.db_name = input; self
         }
         /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2481,8 +2283,7 @@ pub mod namespace {
         }
         /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
         pub fn default_iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2490,12 +2291,8 @@ pub mod namespace {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
-        pub fn set_default_iam_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_iam_role_arn = input;
-            self
+        pub fn set_default_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_iam_role_arn = input; self
         }
         /// Appends an item to `iam_roles`.
         ///
@@ -2504,17 +2301,13 @@ pub mod namespace {
         /// <p>A list of IAM roles to associate with the namespace.</p>
         pub fn iam_roles(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.iam_roles.unwrap_or_default();
-            v.push(input.into());
-            self.iam_roles = Some(v);
-            self
+                            v.push(input.into());
+                            self.iam_roles = Some(v);
+                            self
         }
         /// <p>A list of IAM roles to associate with the namespace.</p>
-        pub fn set_iam_roles(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.iam_roles = input;
-            self
+        pub fn set_iam_roles(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.iam_roles = input; self
         }
         /// Appends an item to `log_exports`.
         ///
@@ -2523,17 +2316,13 @@ pub mod namespace {
         /// <p>The types of logs the namespace can export. Available export types are User log, Connection log, and User activity log.</p>
         pub fn log_exports(mut self, input: crate::model::LogExport) -> Self {
             let mut v = self.log_exports.unwrap_or_default();
-            v.push(input);
-            self.log_exports = Some(v);
-            self
+                            v.push(input);
+                            self.log_exports = Some(v);
+                            self
         }
         /// <p>The types of logs the namespace can export. Available export types are User log, Connection log, and User activity log.</p>
-        pub fn set_log_exports(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LogExport>>,
-        ) -> Self {
-            self.log_exports = input;
-            self
+        pub fn set_log_exports(mut self, input: std::option::Option<std::vec::Vec<crate::model::LogExport>>) -> Self {
+            self.log_exports = input; self
         }
         /// <p>The status of the namespace.</p>
         pub fn status(mut self, input: crate::model::NamespaceStatus) -> Self {
@@ -2541,12 +2330,8 @@ pub mod namespace {
             self
         }
         /// <p>The status of the namespace.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::NamespaceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::NamespaceStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The date of when the namespace was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2554,27 +2339,34 @@ pub mod namespace {
             self
         }
         /// <p>The date of when the namespace was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// Consumes the builder and constructs a [`Namespace`](crate::model::Namespace).
         pub fn build(self) -> crate::model::Namespace {
             crate::model::Namespace {
-                namespace_arn: self.namespace_arn,
-                namespace_id: self.namespace_id,
-                namespace_name: self.namespace_name,
-                admin_username: self.admin_username,
-                db_name: self.db_name,
-                kms_key_id: self.kms_key_id,
-                default_iam_role_arn: self.default_iam_role_arn,
-                iam_roles: self.iam_roles,
-                log_exports: self.log_exports,
-                status: self.status,
-                creation_date: self.creation_date,
+                namespace_arn: self.namespace_arn
+                ,
+                namespace_id: self.namespace_id
+                ,
+                namespace_name: self.namespace_name
+                ,
+                admin_username: self.admin_username
+                ,
+                db_name: self.db_name
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                default_iam_role_arn: self.default_iam_role_arn
+                ,
+                iam_roles: self.iam_roles
+                ,
+                log_exports: self.log_exports
+                ,
+                status: self.status
+                ,
+                creation_date: self.creation_date
+                ,
             }
         }
     }
@@ -2595,6 +2387,8 @@ pub mod namespace {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Namespace {
     /// Creates a new builder-style object to manufacture [`Namespace`](crate::model::Namespace).
@@ -2609,9 +2403,9 @@ impl Namespace {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let namespacestatus = unimplemented!();
 /// match namespacestatus {
@@ -2634,22 +2428,14 @@ impl Namespace {
 /// Specifically, when `namespacestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NamespaceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NamespaceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -2658,7 +2444,7 @@ pub enum NamespaceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Modifying,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NamespaceStatus {
     fn from(s: &str) -> Self {
@@ -2666,17 +2452,17 @@ impl std::convert::From<&str> for NamespaceStatus {
             "AVAILABLE" => NamespaceStatus::Available,
             "DELETING" => NamespaceStatus::Deleting,
             "MODIFYING" => NamespaceStatus::Modifying,
-            other => NamespaceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => NamespaceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NamespaceStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NamespaceStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NamespaceStatus::from(s))
+                }
+            }
 impl NamespaceStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2684,12 +2470,14 @@ impl NamespaceStatus {
             NamespaceStatus::Available => "AVAILABLE",
             NamespaceStatus::Deleting => "DELETING",
             NamespaceStatus::Modifying => "MODIFYING",
-            NamespaceStatus::Unknown(value) => value.as_str(),
+            NamespaceStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "DELETING", "MODIFYING"]
+        &[
+            "AVAILABLE", "DELETING", "MODIFYING"
+        ]
     }
 }
 impl AsRef<str> for NamespaceStatus {
@@ -2704,9 +2492,9 @@ impl AsRef<str> for NamespaceStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let logexport = unimplemented!();
 /// match logexport {
@@ -2729,22 +2517,14 @@ impl AsRef<str> for NamespaceStatus {
 /// Specifically, when `logexport` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LogExport::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LogExport {
     #[allow(missing_docs)] // documentation missing in model
     ConnectionLog,
@@ -2753,7 +2533,7 @@ pub enum LogExport {
     #[allow(missing_docs)] // documentation missing in model
     UserLog,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LogExport {
     fn from(s: &str) -> Self {
@@ -2761,17 +2541,17 @@ impl std::convert::From<&str> for LogExport {
             "connectionlog" => LogExport::ConnectionLog,
             "useractivitylog" => LogExport::UserActivityLog,
             "userlog" => LogExport::UserLog,
-            other => LogExport::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LogExport::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LogExport {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LogExport::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LogExport::from(s))
+                }
+            }
 impl LogExport {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2779,12 +2559,14 @@ impl LogExport {
             LogExport::ConnectionLog => "connectionlog",
             LogExport::UserActivityLog => "useractivitylog",
             LogExport::UserLog => "userlog",
-            LogExport::Unknown(value) => value.as_str(),
+            LogExport::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["connectionlog", "useractivitylog", "userlog"]
+        &[
+            "connectionlog", "useractivitylog", "userlog"
+        ]
     }
 }
 impl AsRef<str> for LogExport {
@@ -2796,7 +2578,7 @@ impl AsRef<str> for LogExport {
 /// <p>The automatically created recovery point of a namespace. Recovery points are created every 30 minutes and kept for 24 hours.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecoveryPoint {
+pub struct RecoveryPoint  {
     /// <p>The unique identifier of the recovery point.</p>
     #[doc(hidden)]
     pub recovery_point_id: std::option::Option<std::string::String>,
@@ -2818,11 +2600,11 @@ pub struct RecoveryPoint {
 }
 impl RecoveryPoint {
     /// <p>The unique identifier of the recovery point.</p>
-    pub fn recovery_point_id(&self) -> std::option::Option<&str> {
+    pub fn recovery_point_id(&self) -> std::option::Option<& str> {
         self.recovery_point_id.as_deref()
     }
     /// <p>The time the recovery point is created.</p>
-    pub fn recovery_point_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn recovery_point_create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.recovery_point_create_time.as_ref()
     }
     /// <p>The total size of the data in the recovery point in megabytes.</p>
@@ -2830,21 +2612,21 @@ impl RecoveryPoint {
         self.total_size_in_mega_bytes
     }
     /// <p>The name of the namespace the recovery point is associated with.</p>
-    pub fn namespace_name(&self) -> std::option::Option<&str> {
+    pub fn namespace_name(&self) -> std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The name of the workgroup the recovery point is associated with.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.</p>
-    pub fn namespace_arn(&self) -> std::option::Option<&str> {
+    pub fn namespace_arn(&self) -> std::option::Option<& str> {
         self.namespace_arn.as_deref()
     }
 }
 /// See [`RecoveryPoint`](crate::model::RecoveryPoint).
 pub mod recovery_point {
-
+    
     /// A builder for [`RecoveryPoint`](crate::model::RecoveryPoint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2862,12 +2644,8 @@ pub mod recovery_point {
             self
         }
         /// <p>The unique identifier of the recovery point.</p>
-        pub fn set_recovery_point_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recovery_point_id = input;
-            self
+        pub fn set_recovery_point_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recovery_point_id = input; self
         }
         /// <p>The time the recovery point is created.</p>
         pub fn recovery_point_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2875,12 +2653,8 @@ pub mod recovery_point {
             self
         }
         /// <p>The time the recovery point is created.</p>
-        pub fn set_recovery_point_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.recovery_point_create_time = input;
-            self
+        pub fn set_recovery_point_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.recovery_point_create_time = input; self
         }
         /// <p>The total size of the data in the recovery point in megabytes.</p>
         pub fn total_size_in_mega_bytes(mut self, input: f64) -> Self {
@@ -2889,8 +2663,7 @@ pub mod recovery_point {
         }
         /// <p>The total size of the data in the recovery point in megabytes.</p>
         pub fn set_total_size_in_mega_bytes(mut self, input: std::option::Option<f64>) -> Self {
-            self.total_size_in_mega_bytes = input;
-            self
+            self.total_size_in_mega_bytes = input; self
         }
         /// <p>The name of the namespace the recovery point is associated with.</p>
         pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2898,12 +2671,8 @@ pub mod recovery_point {
             self
         }
         /// <p>The name of the namespace the recovery point is associated with.</p>
-        pub fn set_namespace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.namespace_name = input;
-            self
+        pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace_name = input; self
         }
         /// <p>The name of the workgroup the recovery point is associated with.</p>
         pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2911,12 +2680,8 @@ pub mod recovery_point {
             self
         }
         /// <p>The name of the workgroup the recovery point is associated with.</p>
-        pub fn set_workgroup_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.workgroup_name = input;
-            self
+        pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workgroup_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.</p>
         pub fn namespace_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2924,25 +2689,29 @@ pub mod recovery_point {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.</p>
-        pub fn set_namespace_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.namespace_arn = input;
-            self
+        pub fn set_namespace_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace_arn = input; self
         }
         /// Consumes the builder and constructs a [`RecoveryPoint`](crate::model::RecoveryPoint).
         pub fn build(self) -> crate::model::RecoveryPoint {
             crate::model::RecoveryPoint {
-                recovery_point_id: self.recovery_point_id,
-                recovery_point_create_time: self.recovery_point_create_time,
-                total_size_in_mega_bytes: self.total_size_in_mega_bytes,
-                namespace_name: self.namespace_name,
-                workgroup_name: self.workgroup_name,
-                namespace_arn: self.namespace_arn,
+                recovery_point_id: self.recovery_point_id
+                ,
+                recovery_point_create_time: self.recovery_point_create_time
+                ,
+                total_size_in_mega_bytes: self.total_size_in_mega_bytes
+                ,
+                namespace_name: self.namespace_name
+                ,
+                workgroup_name: self.workgroup_name
+                ,
+                namespace_arn: self.namespace_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl RecoveryPoint {
     /// Creates a new builder-style object to manufacture [`RecoveryPoint`](crate::model::RecoveryPoint).
@@ -2954,7 +2723,7 @@ impl RecoveryPoint {
 /// <p>Information about an Amazon Redshift Serverless VPC endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointAccess {
+pub struct EndpointAccess  {
     /// <p>The name of the VPC endpoint.</p>
     #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
@@ -2978,8 +2747,7 @@ pub struct EndpointAccess {
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The security groups associated with the endpoint.</p>
     #[doc(hidden)]
-    pub vpc_security_groups:
-        std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
+    pub vpc_security_groups: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
     /// <p>The connection endpoint for connecting to Amazon Redshift Serverless.</p>
     #[doc(hidden)]
     pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
@@ -2989,19 +2757,19 @@ pub struct EndpointAccess {
 }
 impl EndpointAccess {
     /// <p>The name of the VPC endpoint.</p>
-    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
     /// <p>The status of the VPC endpoint.</p>
-    pub fn endpoint_status(&self) -> std::option::Option<&str> {
+    pub fn endpoint_status(&self) -> std::option::Option<& str> {
         self.endpoint_status.as_deref()
     }
     /// <p>The name of the workgroup associated with the endpoint.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
     /// <p>The time that the endpoint was created.</p>
-    pub fn endpoint_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn endpoint_create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.endpoint_create_time.as_ref()
     }
     /// <p>The port number on which Amazon Redshift Serverless accepts incoming connections.</p>
@@ -3009,31 +2777,29 @@ impl EndpointAccess {
         self.port
     }
     /// <p>The DNS address of the endpoint.</p>
-    pub fn address(&self) -> std::option::Option<&str> {
+    pub fn address(&self) -> std::option::Option<& str> {
         self.address.as_deref()
     }
     /// <p>The unique identifier of subnets where Amazon Redshift Serverless choose to deploy the VPC endpoint.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The security groups associated with the endpoint.</p>
-    pub fn vpc_security_groups(
-        &self,
-    ) -> std::option::Option<&[crate::model::VpcSecurityGroupMembership]> {
+    pub fn vpc_security_groups(&self) -> std::option::Option<& [crate::model::VpcSecurityGroupMembership]> {
         self.vpc_security_groups.as_deref()
     }
     /// <p>The connection endpoint for connecting to Amazon Redshift Serverless.</p>
-    pub fn vpc_endpoint(&self) -> std::option::Option<&crate::model::VpcEndpoint> {
+    pub fn vpc_endpoint(&self) -> std::option::Option<& crate::model::VpcEndpoint> {
         self.vpc_endpoint.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint.</p>
-    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
 }
 /// See [`EndpointAccess`](crate::model::EndpointAccess).
 pub mod endpoint_access {
-
+    
     /// A builder for [`EndpointAccess`](crate::model::EndpointAccess).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3044,8 +2810,7 @@ pub mod endpoint_access {
         pub(crate) port: std::option::Option<i32>,
         pub(crate) address: std::option::Option<std::string::String>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) vpc_security_groups:
-            std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
+        pub(crate) vpc_security_groups: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
         pub(crate) vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
     }
@@ -3056,12 +2821,8 @@ pub mod endpoint_access {
             self
         }
         /// <p>The name of the VPC endpoint.</p>
-        pub fn set_endpoint_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.endpoint_name = input;
-            self
+        pub fn set_endpoint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_name = input; self
         }
         /// <p>The status of the VPC endpoint.</p>
         pub fn endpoint_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3069,12 +2830,8 @@ pub mod endpoint_access {
             self
         }
         /// <p>The status of the VPC endpoint.</p>
-        pub fn set_endpoint_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.endpoint_status = input;
-            self
+        pub fn set_endpoint_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_status = input; self
         }
         /// <p>The name of the workgroup associated with the endpoint.</p>
         pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3082,12 +2839,8 @@ pub mod endpoint_access {
             self
         }
         /// <p>The name of the workgroup associated with the endpoint.</p>
-        pub fn set_workgroup_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.workgroup_name = input;
-            self
+        pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workgroup_name = input; self
         }
         /// <p>The time that the endpoint was created.</p>
         pub fn endpoint_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3095,12 +2848,8 @@ pub mod endpoint_access {
             self
         }
         /// <p>The time that the endpoint was created.</p>
-        pub fn set_endpoint_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.endpoint_create_time = input;
-            self
+        pub fn set_endpoint_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.endpoint_create_time = input; self
         }
         /// <p>The port number on which Amazon Redshift Serverless accepts incoming connections.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -3109,8 +2858,7 @@ pub mod endpoint_access {
         }
         /// <p>The port number on which Amazon Redshift Serverless accepts incoming connections.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// <p>The DNS address of the endpoint.</p>
         pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3119,8 +2867,7 @@ pub mod endpoint_access {
         }
         /// <p>The DNS address of the endpoint.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address = input;
-            self
+            self.address = input; self
         }
         /// Appends an item to `subnet_ids`.
         ///
@@ -3129,39 +2876,28 @@ pub mod endpoint_access {
         /// <p>The unique identifier of subnets where Amazon Redshift Serverless choose to deploy the VPC endpoint.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>The unique identifier of subnets where Amazon Redshift Serverless choose to deploy the VPC endpoint.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// Appends an item to `vpc_security_groups`.
         ///
         /// To override the contents of this collection use [`set_vpc_security_groups`](Self::set_vpc_security_groups).
         ///
         /// <p>The security groups associated with the endpoint.</p>
-        pub fn vpc_security_groups(
-            mut self,
-            input: crate::model::VpcSecurityGroupMembership,
-        ) -> Self {
+        pub fn vpc_security_groups(mut self, input: crate::model::VpcSecurityGroupMembership) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input);
-            self.vpc_security_groups = Some(v);
-            self
+                            v.push(input);
+                            self.vpc_security_groups = Some(v);
+                            self
         }
         /// <p>The security groups associated with the endpoint.</p>
-        pub fn set_vpc_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
-        ) -> Self {
-            self.vpc_security_groups = input;
-            self
+        pub fn set_vpc_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>) -> Self {
+            self.vpc_security_groups = input; self
         }
         /// <p>The connection endpoint for connecting to Amazon Redshift Serverless.</p>
         pub fn vpc_endpoint(mut self, input: crate::model::VpcEndpoint) -> Self {
@@ -3169,12 +2905,8 @@ pub mod endpoint_access {
             self
         }
         /// <p>The connection endpoint for connecting to Amazon Redshift Serverless.</p>
-        pub fn set_vpc_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::VpcEndpoint>,
-        ) -> Self {
-            self.vpc_endpoint = input;
-            self
+        pub fn set_vpc_endpoint(mut self, input: std::option::Option<crate::model::VpcEndpoint>) -> Self {
+            self.vpc_endpoint = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the VPC endpoint.</p>
         pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3183,25 +2915,36 @@ pub mod endpoint_access {
         }
         /// <p>The Amazon Resource Name (ARN) of the VPC endpoint.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_arn = input;
-            self
+            self.endpoint_arn = input; self
         }
         /// Consumes the builder and constructs a [`EndpointAccess`](crate::model::EndpointAccess).
         pub fn build(self) -> crate::model::EndpointAccess {
             crate::model::EndpointAccess {
-                endpoint_name: self.endpoint_name,
-                endpoint_status: self.endpoint_status,
-                workgroup_name: self.workgroup_name,
-                endpoint_create_time: self.endpoint_create_time,
-                port: self.port,
-                address: self.address,
-                subnet_ids: self.subnet_ids,
-                vpc_security_groups: self.vpc_security_groups,
-                vpc_endpoint: self.vpc_endpoint,
-                endpoint_arn: self.endpoint_arn,
+                endpoint_name: self.endpoint_name
+                ,
+                endpoint_status: self.endpoint_status
+                ,
+                workgroup_name: self.workgroup_name
+                ,
+                endpoint_create_time: self.endpoint_create_time
+                ,
+                port: self.port
+                ,
+                address: self.address
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                vpc_security_groups: self.vpc_security_groups
+                ,
+                vpc_endpoint: self.vpc_endpoint
+                ,
+                endpoint_arn: self.endpoint_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl EndpointAccess {
     /// Creates a new builder-style object to manufacture [`EndpointAccess`](crate::model::EndpointAccess).
@@ -3213,7 +2956,7 @@ impl EndpointAccess {
 /// <p>Describes the members of a VPC security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcSecurityGroupMembership {
+pub struct VpcSecurityGroupMembership  {
     /// <p>The unique identifier of the VPC security group.</p>
     #[doc(hidden)]
     pub vpc_security_group_id: std::option::Option<std::string::String>,
@@ -3223,17 +2966,17 @@ pub struct VpcSecurityGroupMembership {
 }
 impl VpcSecurityGroupMembership {
     /// <p>The unique identifier of the VPC security group.</p>
-    pub fn vpc_security_group_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_security_group_id(&self) -> std::option::Option<& str> {
         self.vpc_security_group_id.as_deref()
     }
     /// <p>The status of the VPC security group.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
 pub mod vpc_security_group_membership {
-
+    
     /// A builder for [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3247,12 +2990,8 @@ pub mod vpc_security_group_membership {
             self
         }
         /// <p>The unique identifier of the VPC security group.</p>
-        pub fn set_vpc_security_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpc_security_group_id = input;
-            self
+        pub fn set_vpc_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_security_group_id = input; self
         }
         /// <p>The status of the VPC security group.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3261,17 +3000,20 @@ pub mod vpc_security_group_membership {
         }
         /// <p>The status of the VPC security group.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
         pub fn build(self) -> crate::model::VpcSecurityGroupMembership {
             crate::model::VpcSecurityGroupMembership {
-                vpc_security_group_id: self.vpc_security_group_id,
-                status: self.status,
+                vpc_security_group_id: self.vpc_security_group_id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcSecurityGroupMembership {
     /// Creates a new builder-style object to manufacture [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
@@ -3283,7 +3025,7 @@ impl VpcSecurityGroupMembership {
 /// <p>The resource policy object. Currently, you can use policies to share snapshots across Amazon Web Services accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourcePolicy {
+pub struct ResourcePolicy  {
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -3293,17 +3035,17 @@ pub struct ResourcePolicy {
 }
 impl ResourcePolicy {
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The resource policy.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).
 pub mod resource_policy {
-
+    
     /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3318,8 +3060,7 @@ pub mod resource_policy {
         }
         /// <p>The Amazon Resource Name (ARN) of the policy.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The resource policy.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3328,17 +3069,20 @@ pub mod resource_policy {
         }
         /// <p>The resource policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`ResourcePolicy`](crate::model::ResourcePolicy).
         pub fn build(self) -> crate::model::ResourcePolicy {
             crate::model::ResourcePolicy {
-                resource_arn: self.resource_arn,
-                policy: self.policy,
+                resource_arn: self.resource_arn
+                ,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourcePolicy {
     /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
@@ -3346,3 +3090,4 @@ impl ResourcePolicy {
         crate::model::resource_policy::Builder::default()
     }
 }
+

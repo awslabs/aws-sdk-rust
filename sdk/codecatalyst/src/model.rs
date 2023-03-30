@@ -3,7 +3,7 @@
 /// <p>Information about an space.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SpaceSummary {
+pub struct SpaceSummary  {
     /// <p> <i>We need to know what this is and the basic usage information so that third-party developers know how to use this data type.</i> </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,25 +19,25 @@ pub struct SpaceSummary {
 }
 impl SpaceSummary {
     /// <p> <i>We need to know what this is and the basic usage information so that third-party developers know how to use this data type.</i> </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services Region where the space exists.</p>
-    pub fn region_name(&self) -> std::option::Option<&str> {
+    pub fn region_name(&self) -> std::option::Option<& str> {
         self.region_name.as_deref()
     }
     /// <p>The friendly name of the space displayed to users.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the space.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`SpaceSummary`](crate::model::SpaceSummary).
 pub mod space_summary {
-
+    
     /// A builder for [`SpaceSummary`](crate::model::SpaceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -54,8 +54,7 @@ pub mod space_summary {
         }
         /// <p> <i>We need to know what this is and the basic usage information so that third-party developers know how to use this data type.</i> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Web Services Region where the space exists.</p>
         pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +63,7 @@ pub mod space_summary {
         }
         /// <p>The Amazon Web Services Region where the space exists.</p>
         pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region_name = input;
-            self
+            self.region_name = input; self
         }
         /// <p>The friendly name of the space displayed to users.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,8 +72,7 @@ pub mod space_summary {
         }
         /// <p>The friendly name of the space displayed to users.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The description of the space.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,19 +81,24 @@ pub mod space_summary {
         }
         /// <p>The description of the space.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`SpaceSummary`](crate::model::SpaceSummary).
         pub fn build(self) -> crate::model::SpaceSummary {
             crate::model::SpaceSummary {
-                name: self.name,
-                region_name: self.region_name,
-                display_name: self.display_name,
-                description: self.description,
+                name: self.name
+                ,
+                region_name: self.region_name
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl SpaceSummary {
     /// Creates a new builder-style object to manufacture [`SpaceSummary`](crate::model::SpaceSummary).
@@ -108,7 +110,7 @@ impl SpaceSummary {
 /// <p>Information about a project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProjectSummary {
+pub struct ProjectSummary  {
     /// <p>The name of the project in the space.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -121,21 +123,21 @@ pub struct ProjectSummary {
 }
 impl ProjectSummary {
     /// <p>The name of the project in the space.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the project.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`ProjectSummary`](crate::model::ProjectSummary).
 pub mod project_summary {
-
+    
     /// A builder for [`ProjectSummary`](crate::model::ProjectSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -151,8 +153,7 @@ pub mod project_summary {
         }
         /// <p>The name of the project in the space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -161,8 +162,7 @@ pub mod project_summary {
         }
         /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The description of the project.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -171,18 +171,22 @@ pub mod project_summary {
         }
         /// <p>The description of the project.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`ProjectSummary`](crate::model::ProjectSummary).
         pub fn build(self) -> crate::model::ProjectSummary {
             crate::model::ProjectSummary {
-                name: self.name,
-                display_name: self.display_name,
-                description: self.description,
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl ProjectSummary {
     /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
@@ -194,7 +198,7 @@ impl ProjectSummary {
 /// <p>nformation about the filter used to narrow the results returned in a list of projects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProjectListFilter {
+pub struct ProjectListFilter  {
     /// <p>A key that can be used to sort results.</p>
     #[doc(hidden)]
     pub key: std::option::Option<crate::model::FilterKey>,
@@ -207,21 +211,21 @@ pub struct ProjectListFilter {
 }
 impl ProjectListFilter {
     /// <p>A key that can be used to sort results.</p>
-    pub fn key(&self) -> std::option::Option<&crate::model::FilterKey> {
+    pub fn key(&self) -> std::option::Option<& crate::model::FilterKey> {
         self.key.as_ref()
     }
     /// <p>The value of the key.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator used to compare the fields.</p>
-    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> std::option::Option<& crate::model::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
 }
 /// See [`ProjectListFilter`](crate::model::ProjectListFilter).
 pub mod project_list_filter {
-
+    
     /// A builder for [`ProjectListFilter`](crate::model::ProjectListFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -237,8 +241,7 @@ pub mod project_list_filter {
         }
         /// <p>A key that can be used to sort results.</p>
         pub fn set_key(mut self, input: std::option::Option<crate::model::FilterKey>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -247,17 +250,13 @@ pub mod project_list_filter {
         /// <p>The value of the key.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The value of the key.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// <p>The operator used to compare the fields.</p>
         pub fn comparison_operator(mut self, input: crate::model::ComparisonOperator) -> Self {
@@ -265,22 +264,23 @@ pub mod project_list_filter {
             self
         }
         /// <p>The operator used to compare the fields.</p>
-        pub fn set_comparison_operator(
-            mut self,
-            input: std::option::Option<crate::model::ComparisonOperator>,
-        ) -> Self {
-            self.comparison_operator = input;
-            self
+        pub fn set_comparison_operator(mut self, input: std::option::Option<crate::model::ComparisonOperator>) -> Self {
+            self.comparison_operator = input; self
         }
         /// Consumes the builder and constructs a [`ProjectListFilter`](crate::model::ProjectListFilter).
         pub fn build(self) -> crate::model::ProjectListFilter {
             crate::model::ProjectListFilter {
-                key: self.key,
-                values: self.values,
-                comparison_operator: self.comparison_operator,
+                key: self.key
+                ,
+                values: self.values
+                ,
+                comparison_operator: self.comparison_operator
+                ,
             }
         }
     }
+    
+    
 }
 impl ProjectListFilter {
     /// Creates a new builder-style object to manufacture [`ProjectListFilter`](crate::model::ProjectListFilter).
@@ -295,9 +295,9 @@ impl ProjectListFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let comparisonoperator = unimplemented!();
 /// match comparisonoperator {
@@ -322,22 +322,14 @@ impl ProjectListFilter {
 /// Specifically, when `comparisonoperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComparisonOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
     Equals,
@@ -350,7 +342,7 @@ pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
     LessThan,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComparisonOperator {
     fn from(s: &str) -> Self {
@@ -360,19 +352,17 @@ impl std::convert::From<&str> for ComparisonOperator {
             "GT" => ComparisonOperator::GreaterThan,
             "LE" => ComparisonOperator::LessThanOrEquals,
             "LT" => ComparisonOperator::LessThan,
-            other => {
-                ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComparisonOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComparisonOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComparisonOperator::from(s))
+                }
+            }
 impl ComparisonOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -382,12 +372,14 @@ impl ComparisonOperator {
             ComparisonOperator::GreaterThan => "GT",
             ComparisonOperator::LessThanOrEquals => "LE",
             ComparisonOperator::LessThan => "LT",
-            ComparisonOperator::Unknown(value) => value.as_str(),
+            ComparisonOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EQ", "GE", "GT", "LE", "LT"]
+        &[
+            "EQ", "GE", "GT", "LE", "LT"
+        ]
     }
 }
 impl AsRef<str> for ComparisonOperator {
@@ -402,9 +394,9 @@ impl AsRef<str> for ComparisonOperator {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let filterkey = unimplemented!();
 /// match filterkey {
@@ -425,54 +417,48 @@ impl AsRef<str> for ComparisonOperator {
 /// Specifically, when `filterkey` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FilterKey::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FilterKey {
     #[allow(missing_docs)] // documentation missing in model
     HasAccessTo,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FilterKey {
     fn from(s: &str) -> Self {
         match s {
             "hasAccessTo" => FilterKey::HasAccessTo,
-            other => FilterKey::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FilterKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FilterKey {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FilterKey::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FilterKey::from(s))
+                }
+            }
 impl FilterKey {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FilterKey::HasAccessTo => "hasAccessTo",
-            FilterKey::Unknown(value) => value.as_str(),
+            FilterKey::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["hasAccessTo"]
+        &[
+            "hasAccessTo"
+        ]
     }
 }
 impl AsRef<str> for FilterKey {
@@ -484,7 +470,7 @@ impl AsRef<str> for FilterKey {
 /// <p>Information about a source repository returned in a list of source repositories.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSourceRepositoriesItem {
+pub struct ListSourceRepositoriesItem  {
     /// <p>The system-generated unique ID of the source repository.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -503,29 +489,29 @@ pub struct ListSourceRepositoriesItem {
 }
 impl ListSourceRepositoriesItem {
     /// <p>The system-generated unique ID of the source repository.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the source repository.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the repository, if any.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time the source repository was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The time the source repository was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
 /// See [`ListSourceRepositoriesItem`](crate::model::ListSourceRepositoriesItem).
 pub mod list_source_repositories_item {
-
+    
     /// A builder for [`ListSourceRepositoriesItem`](crate::model::ListSourceRepositoriesItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -543,8 +529,7 @@ pub mod list_source_repositories_item {
         }
         /// <p>The system-generated unique ID of the source repository.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the source repository.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -553,8 +538,7 @@ pub mod list_source_repositories_item {
         }
         /// <p>The name of the source repository.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the repository, if any.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -563,8 +547,7 @@ pub mod list_source_repositories_item {
         }
         /// <p>The description of the repository, if any.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The time the source repository was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -572,12 +555,8 @@ pub mod list_source_repositories_item {
             self
         }
         /// <p>The time the source repository was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>The time the source repository was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -585,24 +564,27 @@ pub mod list_source_repositories_item {
             self
         }
         /// <p>The time the source repository was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`ListSourceRepositoriesItem`](crate::model::ListSourceRepositoriesItem).
         pub fn build(self) -> crate::model::ListSourceRepositoriesItem {
             crate::model::ListSourceRepositoriesItem {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                last_updated_time: self.last_updated_time,
-                created_time: self.created_time,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSourceRepositoriesItem {
     /// Creates a new builder-style object to manufacture [`ListSourceRepositoriesItem`](crate::model::ListSourceRepositoriesItem).
@@ -614,7 +596,7 @@ impl ListSourceRepositoriesItem {
 /// <p>Information about a branch of a source repository returned in a list of branches.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSourceRepositoryBranchesItem {
+pub struct ListSourceRepositoryBranchesItem  {
     /// <p>The Git reference name of the branch.</p>
     #[doc(hidden)]
     pub r#ref: std::option::Option<std::string::String>,
@@ -630,25 +612,25 @@ pub struct ListSourceRepositoryBranchesItem {
 }
 impl ListSourceRepositoryBranchesItem {
     /// <p>The Git reference name of the branch.</p>
-    pub fn r#ref(&self) -> std::option::Option<&str> {
+    pub fn r#ref(&self) -> std::option::Option<& str> {
         self.r#ref.as_deref()
     }
     /// <p>The name of the branch.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time the branch was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The commit ID of the tip of the branch at the time of the request, also known as the head commit.</p>
-    pub fn head_commit_id(&self) -> std::option::Option<&str> {
+    pub fn head_commit_id(&self) -> std::option::Option<& str> {
         self.head_commit_id.as_deref()
     }
 }
 /// See [`ListSourceRepositoryBranchesItem`](crate::model::ListSourceRepositoryBranchesItem).
 pub mod list_source_repository_branches_item {
-
+    
     /// A builder for [`ListSourceRepositoryBranchesItem`](crate::model::ListSourceRepositoryBranchesItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -665,8 +647,7 @@ pub mod list_source_repository_branches_item {
         }
         /// <p>The Git reference name of the branch.</p>
         pub fn set_ref(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#ref = input;
-            self
+            self.r#ref = input; self
         }
         /// <p>The name of the branch.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -675,8 +656,7 @@ pub mod list_source_repository_branches_item {
         }
         /// <p>The name of the branch.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The time the branch was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -684,12 +664,8 @@ pub mod list_source_repository_branches_item {
             self
         }
         /// <p>The time the branch was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>The commit ID of the tip of the branch at the time of the request, also known as the head commit.</p>
         pub fn head_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -697,23 +673,25 @@ pub mod list_source_repository_branches_item {
             self
         }
         /// <p>The commit ID of the tip of the branch at the time of the request, also known as the head commit.</p>
-        pub fn set_head_commit_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.head_commit_id = input;
-            self
+        pub fn set_head_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.head_commit_id = input; self
         }
         /// Consumes the builder and constructs a [`ListSourceRepositoryBranchesItem`](crate::model::ListSourceRepositoryBranchesItem).
         pub fn build(self) -> crate::model::ListSourceRepositoryBranchesItem {
             crate::model::ListSourceRepositoryBranchesItem {
-                r#ref: self.r#ref,
-                name: self.name,
-                last_updated_time: self.last_updated_time,
-                head_commit_id: self.head_commit_id,
+                r#ref: self.r#ref
+                ,
+                name: self.name
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                head_commit_id: self.head_commit_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSourceRepositoryBranchesItem {
     /// Creates a new builder-style object to manufacture [`ListSourceRepositoryBranchesItem`](crate::model::ListSourceRepositoryBranchesItem).
@@ -728,9 +706,9 @@ impl ListSourceRepositoryBranchesItem {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let devenvironmentstatus = unimplemented!();
 /// match devenvironmentstatus {
@@ -758,22 +736,14 @@ impl ListSourceRepositoryBranchesItem {
 /// Specifically, when `devenvironmentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DevEnvironmentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DevEnvironmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
@@ -792,7 +762,7 @@ pub enum DevEnvironmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DevEnvironmentStatus {
     fn from(s: &str) -> Self {
@@ -805,19 +775,17 @@ impl std::convert::From<&str> for DevEnvironmentStatus {
             "STARTING" => DevEnvironmentStatus::Starting,
             "STOPPED" => DevEnvironmentStatus::Stopped,
             "STOPPING" => DevEnvironmentStatus::Stopping,
-            other => {
-                DevEnvironmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DevEnvironmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DevEnvironmentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DevEnvironmentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DevEnvironmentStatus::from(s))
+                }
+            }
 impl DevEnvironmentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -830,14 +798,13 @@ impl DevEnvironmentStatus {
             DevEnvironmentStatus::Starting => "STARTING",
             DevEnvironmentStatus::Stopped => "STOPPED",
             DevEnvironmentStatus::Stopping => "STOPPING",
-            DevEnvironmentStatus::Unknown(value) => value.as_str(),
+            DevEnvironmentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DELETED", "DELETING", "FAILED", "PENDING", "RUNNING", "STARTING", "STOPPED",
-            "STOPPING",
+            "DELETED", "DELETING", "FAILED", "PENDING", "RUNNING", "STARTING", "STOPPED", "STOPPING"
         ]
     }
 }
@@ -850,7 +817,7 @@ impl AsRef<str> for DevEnvironmentStatus {
 /// <p>Information about connection details for a Dev Environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DevEnvironmentAccessDetails {
+pub struct DevEnvironmentAccessDetails  {
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
     #[doc(hidden)]
     pub stream_url: std::option::Option<std::string::String>,
@@ -860,15 +827,15 @@ pub struct DevEnvironmentAccessDetails {
 }
 impl DevEnvironmentAccessDetails {
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
-    pub fn stream_url(&self) -> std::option::Option<&str> {
+    pub fn stream_url(&self) -> std::option::Option<& str> {
         self.stream_url.as_deref()
     }
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
-    pub fn token_value(&self) -> std::option::Option<&str> {
+    pub fn token_value(&self) -> std::option::Option<& str> {
         self.token_value.as_deref()
     }
 }
-impl std::fmt::Debug for DevEnvironmentAccessDetails {
+impl  std::fmt::Debug for DevEnvironmentAccessDetails  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DevEnvironmentAccessDetails");
         formatter.field("stream_url", &"*** Sensitive Data Redacted ***");
@@ -878,7 +845,7 @@ impl std::fmt::Debug for DevEnvironmentAccessDetails {
 }
 /// See [`DevEnvironmentAccessDetails`](crate::model::DevEnvironmentAccessDetails).
 pub mod dev_environment_access_details {
-
+    
     /// A builder for [`DevEnvironmentAccessDetails`](crate::model::DevEnvironmentAccessDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -893,8 +860,7 @@ pub mod dev_environment_access_details {
         }
         /// <p>The URL used to send commands to and from the Dev Environment.</p>
         pub fn set_stream_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_url = input;
-            self
+            self.stream_url = input; self
         }
         /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
         pub fn token_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -903,14 +869,15 @@ pub mod dev_environment_access_details {
         }
         /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
         pub fn set_token_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.token_value = input;
-            self
+            self.token_value = input; self
         }
         /// Consumes the builder and constructs a [`DevEnvironmentAccessDetails`](crate::model::DevEnvironmentAccessDetails).
         pub fn build(self) -> crate::model::DevEnvironmentAccessDetails {
             crate::model::DevEnvironmentAccessDetails {
-                stream_url: self.stream_url,
-                token_value: self.token_value,
+                stream_url: self.stream_url
+                ,
+                token_value: self.token_value
+                ,
             }
         }
     }
@@ -922,6 +889,8 @@ pub mod dev_environment_access_details {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DevEnvironmentAccessDetails {
     /// Creates a new builder-style object to manufacture [`DevEnvironmentAccessDetails`](crate::model::DevEnvironmentAccessDetails).
@@ -933,36 +902,32 @@ impl DevEnvironmentAccessDetails {
 /// <p>Information about the configuration of a Dev Environment session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DevEnvironmentSessionConfiguration {
+pub struct DevEnvironmentSessionConfiguration  {
     /// <p>The type of the session.</p>
     #[doc(hidden)]
     pub session_type: std::option::Option<crate::model::DevEnvironmentSessionType>,
     /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
     #[doc(hidden)]
-    pub execute_command_session_configuration:
-        std::option::Option<crate::model::ExecuteCommandSessionConfiguration>,
+    pub execute_command_session_configuration: std::option::Option<crate::model::ExecuteCommandSessionConfiguration>,
 }
 impl DevEnvironmentSessionConfiguration {
     /// <p>The type of the session.</p>
-    pub fn session_type(&self) -> std::option::Option<&crate::model::DevEnvironmentSessionType> {
+    pub fn session_type(&self) -> std::option::Option<& crate::model::DevEnvironmentSessionType> {
         self.session_type.as_ref()
     }
     /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
-    pub fn execute_command_session_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ExecuteCommandSessionConfiguration> {
+    pub fn execute_command_session_configuration(&self) -> std::option::Option<& crate::model::ExecuteCommandSessionConfiguration> {
         self.execute_command_session_configuration.as_ref()
     }
 }
 /// See [`DevEnvironmentSessionConfiguration`](crate::model::DevEnvironmentSessionConfiguration).
 pub mod dev_environment_session_configuration {
-
+    
     /// A builder for [`DevEnvironmentSessionConfiguration`](crate::model::DevEnvironmentSessionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_type: std::option::Option<crate::model::DevEnvironmentSessionType>,
-        pub(crate) execute_command_session_configuration:
-            std::option::Option<crate::model::ExecuteCommandSessionConfiguration>,
+        pub(crate) execute_command_session_configuration: std::option::Option<crate::model::ExecuteCommandSessionConfiguration>,
     }
     impl Builder {
         /// <p>The type of the session.</p>
@@ -971,37 +936,30 @@ pub mod dev_environment_session_configuration {
             self
         }
         /// <p>The type of the session.</p>
-        pub fn set_session_type(
-            mut self,
-            input: std::option::Option<crate::model::DevEnvironmentSessionType>,
-        ) -> Self {
-            self.session_type = input;
-            self
+        pub fn set_session_type(mut self, input: std::option::Option<crate::model::DevEnvironmentSessionType>) -> Self {
+            self.session_type = input; self
         }
         /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
-        pub fn execute_command_session_configuration(
-            mut self,
-            input: crate::model::ExecuteCommandSessionConfiguration,
-        ) -> Self {
+        pub fn execute_command_session_configuration(mut self, input: crate::model::ExecuteCommandSessionConfiguration) -> Self {
             self.execute_command_session_configuration = Some(input);
             self
         }
         /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
-        pub fn set_execute_command_session_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ExecuteCommandSessionConfiguration>,
-        ) -> Self {
-            self.execute_command_session_configuration = input;
-            self
+        pub fn set_execute_command_session_configuration(mut self, input: std::option::Option<crate::model::ExecuteCommandSessionConfiguration>) -> Self {
+            self.execute_command_session_configuration = input; self
         }
         /// Consumes the builder and constructs a [`DevEnvironmentSessionConfiguration`](crate::model::DevEnvironmentSessionConfiguration).
         pub fn build(self) -> crate::model::DevEnvironmentSessionConfiguration {
             crate::model::DevEnvironmentSessionConfiguration {
-                session_type: self.session_type,
-                execute_command_session_configuration: self.execute_command_session_configuration,
+                session_type: self.session_type
+                ,
+                execute_command_session_configuration: self.execute_command_session_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl DevEnvironmentSessionConfiguration {
     /// Creates a new builder-style object to manufacture [`DevEnvironmentSessionConfiguration`](crate::model::DevEnvironmentSessionConfiguration).
@@ -1013,7 +971,7 @@ impl DevEnvironmentSessionConfiguration {
 /// <p>Information about the commands that will be run on a Dev Environment when an SSH session begins.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecuteCommandSessionConfiguration {
+pub struct ExecuteCommandSessionConfiguration  {
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
     #[doc(hidden)]
     pub command: std::option::Option<std::string::String>,
@@ -1023,17 +981,17 @@ pub struct ExecuteCommandSessionConfiguration {
 }
 impl ExecuteCommandSessionConfiguration {
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
-    pub fn command(&self) -> std::option::Option<&str> {
+    pub fn command(&self) -> std::option::Option<& str> {
         self.command.as_deref()
     }
     /// <p>An array of arguments containing arguments and members.</p>
-    pub fn arguments(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn arguments(&self) -> std::option::Option<& [std::string::String]> {
         self.arguments.as_deref()
     }
 }
 /// See [`ExecuteCommandSessionConfiguration`](crate::model::ExecuteCommandSessionConfiguration).
 pub mod execute_command_session_configuration {
-
+    
     /// A builder for [`ExecuteCommandSessionConfiguration`](crate::model::ExecuteCommandSessionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1048,8 +1006,7 @@ pub mod execute_command_session_configuration {
         }
         /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
         pub fn set_command(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.command = input;
-            self
+            self.command = input; self
         }
         /// Appends an item to `arguments`.
         ///
@@ -1058,26 +1015,26 @@ pub mod execute_command_session_configuration {
         /// <p>An array of arguments containing arguments and members.</p>
         pub fn arguments(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.arguments.unwrap_or_default();
-            v.push(input.into());
-            self.arguments = Some(v);
-            self
+                            v.push(input.into());
+                            self.arguments = Some(v);
+                            self
         }
         /// <p>An array of arguments containing arguments and members.</p>
-        pub fn set_arguments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.arguments = input;
-            self
+        pub fn set_arguments(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.arguments = input; self
         }
         /// Consumes the builder and constructs a [`ExecuteCommandSessionConfiguration`](crate::model::ExecuteCommandSessionConfiguration).
         pub fn build(self) -> crate::model::ExecuteCommandSessionConfiguration {
             crate::model::ExecuteCommandSessionConfiguration {
-                command: self.command,
-                arguments: self.arguments,
+                command: self.command
+                ,
+                arguments: self.arguments
+                ,
             }
         }
     }
+    
+    
 }
 impl ExecuteCommandSessionConfiguration {
     /// Creates a new builder-style object to manufacture [`ExecuteCommandSessionConfiguration`](crate::model::ExecuteCommandSessionConfiguration).
@@ -1092,9 +1049,9 @@ impl ExecuteCommandSessionConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let devenvironmentsessiontype = unimplemented!();
 /// match devenvironmentsessiontype {
@@ -1116,60 +1073,52 @@ impl ExecuteCommandSessionConfiguration {
 /// Specifically, when `devenvironmentsessiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DevEnvironmentSessionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DevEnvironmentSessionType {
     #[allow(missing_docs)] // documentation missing in model
     Ssh,
     #[allow(missing_docs)] // documentation missing in model
     Ssm,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DevEnvironmentSessionType {
     fn from(s: &str) -> Self {
         match s {
             "SSH" => DevEnvironmentSessionType::Ssh,
             "SSM" => DevEnvironmentSessionType::Ssm,
-            other => DevEnvironmentSessionType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DevEnvironmentSessionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DevEnvironmentSessionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DevEnvironmentSessionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DevEnvironmentSessionType::from(s))
+                }
+            }
 impl DevEnvironmentSessionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DevEnvironmentSessionType::Ssh => "SSH",
             DevEnvironmentSessionType::Ssm => "SSM",
-            DevEnvironmentSessionType::Unknown(value) => value.as_str(),
+            DevEnvironmentSessionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SSH", "SSM"]
+        &[
+            "SSH", "SSM"
+        ]
     }
 }
 impl AsRef<str> for DevEnvironmentSessionType {
@@ -1184,9 +1133,9 @@ impl AsRef<str> for DevEnvironmentSessionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instancetype = unimplemented!();
 /// match instancetype {
@@ -1210,22 +1159,14 @@ impl AsRef<str> for DevEnvironmentSessionType {
 /// Specifically, when `instancetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     DevStandard1Large,
@@ -1236,7 +1177,7 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     DevStandard1Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceType {
     fn from(s: &str) -> Self {
@@ -1245,17 +1186,17 @@ impl std::convert::From<&str> for InstanceType {
             "dev.standard1.medium" => InstanceType::DevStandard1Medium,
             "dev.standard1.small" => InstanceType::DevStandard1Small,
             "dev.standard1.xlarge" => InstanceType::DevStandard1Xlarge,
-            other => InstanceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => InstanceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InstanceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceType::from(s))
+                }
+            }
 impl InstanceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1264,16 +1205,13 @@ impl InstanceType {
             InstanceType::DevStandard1Medium => "dev.standard1.medium",
             InstanceType::DevStandard1Small => "dev.standard1.small",
             InstanceType::DevStandard1Xlarge => "dev.standard1.xlarge",
-            InstanceType::Unknown(value) => value.as_str(),
+            InstanceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "dev.standard1.large",
-            "dev.standard1.medium",
-            "dev.standard1.small",
-            "dev.standard1.xlarge",
+            "dev.standard1.large", "dev.standard1.medium", "dev.standard1.small", "dev.standard1.xlarge"
         ]
     }
 }
@@ -1286,7 +1224,7 @@ impl AsRef<str> for InstanceType {
 /// <p>Information about the configuration of an integrated development environment (IDE) for a Dev Environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdeConfiguration {
+pub struct IdeConfiguration  {
     /// <p>A link to the IDE runtime image.</p>
     #[doc(hidden)]
     pub runtime: std::option::Option<std::string::String>,
@@ -1296,17 +1234,17 @@ pub struct IdeConfiguration {
 }
 impl IdeConfiguration {
     /// <p>A link to the IDE runtime image.</p>
-    pub fn runtime(&self) -> std::option::Option<&str> {
+    pub fn runtime(&self) -> std::option::Option<& str> {
         self.runtime.as_deref()
     }
     /// <p>The name of the IDE.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`IdeConfiguration`](crate::model::IdeConfiguration).
 pub mod ide_configuration {
-
+    
     /// A builder for [`IdeConfiguration`](crate::model::IdeConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1321,8 +1259,7 @@ pub mod ide_configuration {
         }
         /// <p>A link to the IDE runtime image.</p>
         pub fn set_runtime(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.runtime = input;
-            self
+            self.runtime = input; self
         }
         /// <p>The name of the IDE.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1331,17 +1268,20 @@ pub mod ide_configuration {
         }
         /// <p>The name of the IDE.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`IdeConfiguration`](crate::model::IdeConfiguration).
         pub fn build(self) -> crate::model::IdeConfiguration {
             crate::model::IdeConfiguration {
-                runtime: self.runtime,
-                name: self.name,
+                runtime: self.runtime
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl IdeConfiguration {
     /// Creates a new builder-style object to manufacture [`IdeConfiguration`](crate::model::IdeConfiguration).
@@ -1353,7 +1293,7 @@ impl IdeConfiguration {
 /// <p>Information about a Dev Environment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DevEnvironmentSummary {
+pub struct DevEnvironmentSummary  {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub space_name: std::option::Option<std::string::String>,
@@ -1377,8 +1317,7 @@ pub struct DevEnvironmentSummary {
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>Information about the repositories that will be cloned into the Dev Environment. If no rvalue is specified, no repository is cloned.</p>
     #[doc(hidden)]
-    pub repositories:
-        std::option::Option<std::vec::Vec<crate::model::DevEnvironmentRepositorySummary>>,
+    pub repositories: std::option::Option<std::vec::Vec<crate::model::DevEnvironmentRepositorySummary>>,
     /// <p>The user-specified alias for the Dev Environment.</p>
     #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
@@ -1397,49 +1336,47 @@ pub struct DevEnvironmentSummary {
 }
 impl DevEnvironmentSummary {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<&str> {
+    pub fn space_name(&self) -> std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The system-generated unique ID for the Dev Environment. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The time when the Dev Environment was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
-    pub fn creator_id(&self) -> std::option::Option<&str> {
+    pub fn creator_id(&self) -> std::option::Option<& str> {
         self.creator_id.as_deref()
     }
     /// <p>The status of the Dev Environment. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DevEnvironmentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DevEnvironmentStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the status.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>Information about the repositories that will be cloned into the Dev Environment. If no rvalue is specified, no repository is cloned.</p>
-    pub fn repositories(
-        &self,
-    ) -> std::option::Option<&[crate::model::DevEnvironmentRepositorySummary]> {
+    pub fn repositories(&self) -> std::option::Option<& [crate::model::DevEnvironmentRepositorySummary]> {
         self.repositories.as_deref()
     }
     /// <p>The user-specified alias for the Dev Environment.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
-    pub fn ides(&self) -> std::option::Option<&[crate::model::Ide]> {
+    pub fn ides(&self) -> std::option::Option<& [crate::model::Ide]> {
         self.ides.as_deref()
     }
     /// <p>The Amazon EC2 instace type used for the Dev Environment. </p>
-    pub fn instance_type(&self) -> std::option::Option<&crate::model::InstanceType> {
+    pub fn instance_type(&self) -> std::option::Option<& crate::model::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Dev Environments consume compute minutes when running.</p>
@@ -1447,13 +1384,13 @@ impl DevEnvironmentSummary {
         self.inactivity_timeout_minutes
     }
     /// <p>Information about the configuration of persistent storage for the Dev Environment.</p>
-    pub fn persistent_storage(&self) -> std::option::Option<&crate::model::PersistentStorage> {
+    pub fn persistent_storage(&self) -> std::option::Option<& crate::model::PersistentStorage> {
         self.persistent_storage.as_ref()
     }
 }
 /// See [`DevEnvironmentSummary`](crate::model::DevEnvironmentSummary).
 pub mod dev_environment_summary {
-
+    
     /// A builder for [`DevEnvironmentSummary`](crate::model::DevEnvironmentSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1464,8 +1401,7 @@ pub mod dev_environment_summary {
         pub(crate) creator_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DevEnvironmentStatus>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
-        pub(crate) repositories:
-            std::option::Option<std::vec::Vec<crate::model::DevEnvironmentRepositorySummary>>,
+        pub(crate) repositories: std::option::Option<std::vec::Vec<crate::model::DevEnvironmentRepositorySummary>>,
         pub(crate) alias: std::option::Option<std::string::String>,
         pub(crate) ides: std::option::Option<std::vec::Vec<crate::model::Ide>>,
         pub(crate) instance_type: std::option::Option<crate::model::InstanceType>,
@@ -1480,8 +1416,7 @@ pub mod dev_environment_summary {
         }
         /// <p>The name of the space.</p>
         pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.space_name = input;
-            self
+            self.space_name = input; self
         }
         /// <p>The name of the project in the space.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1490,8 +1425,7 @@ pub mod dev_environment_summary {
         }
         /// <p>The name of the project in the space.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
         /// <p>The system-generated unique ID for the Dev Environment. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1500,8 +1434,7 @@ pub mod dev_environment_summary {
         }
         /// <p>The system-generated unique ID for the Dev Environment. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The time when the Dev Environment was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1509,12 +1442,8 @@ pub mod dev_environment_summary {
             self
         }
         /// <p>The time when the Dev Environment was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
         pub fn creator_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1523,8 +1452,7 @@ pub mod dev_environment_summary {
         }
         /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
         pub fn set_creator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.creator_id = input;
-            self
+            self.creator_id = input; self
         }
         /// <p>The status of the Dev Environment. </p>
         pub fn status(mut self, input: crate::model::DevEnvironmentStatus) -> Self {
@@ -1532,12 +1460,8 @@ pub mod dev_environment_summary {
             self
         }
         /// <p>The status of the Dev Environment. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DevEnvironmentStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DevEnvironmentStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The reason for the status.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1545,36 +1469,23 @@ pub mod dev_environment_summary {
             self
         }
         /// <p>The reason for the status.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// Appends an item to `repositories`.
         ///
         /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
         ///
         /// <p>Information about the repositories that will be cloned into the Dev Environment. If no rvalue is specified, no repository is cloned.</p>
-        pub fn repositories(
-            mut self,
-            input: crate::model::DevEnvironmentRepositorySummary,
-        ) -> Self {
+        pub fn repositories(mut self, input: crate::model::DevEnvironmentRepositorySummary) -> Self {
             let mut v = self.repositories.unwrap_or_default();
-            v.push(input);
-            self.repositories = Some(v);
-            self
+                            v.push(input);
+                            self.repositories = Some(v);
+                            self
         }
         /// <p>Information about the repositories that will be cloned into the Dev Environment. If no rvalue is specified, no repository is cloned.</p>
-        pub fn set_repositories(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DevEnvironmentRepositorySummary>,
-            >,
-        ) -> Self {
-            self.repositories = input;
-            self
+        pub fn set_repositories(mut self, input: std::option::Option<std::vec::Vec<crate::model::DevEnvironmentRepositorySummary>>) -> Self {
+            self.repositories = input; self
         }
         /// <p>The user-specified alias for the Dev Environment.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1583,8 +1494,7 @@ pub mod dev_environment_summary {
         }
         /// <p>The user-specified alias for the Dev Environment.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// Appends an item to `ides`.
         ///
@@ -1593,17 +1503,13 @@ pub mod dev_environment_summary {
         /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
         pub fn ides(mut self, input: crate::model::Ide) -> Self {
             let mut v = self.ides.unwrap_or_default();
-            v.push(input);
-            self.ides = Some(v);
-            self
+                            v.push(input);
+                            self.ides = Some(v);
+                            self
         }
         /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
-        pub fn set_ides(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Ide>>,
-        ) -> Self {
-            self.ides = input;
-            self
+        pub fn set_ides(mut self, input: std::option::Option<std::vec::Vec<crate::model::Ide>>) -> Self {
+            self.ides = input; self
         }
         /// <p>The Amazon EC2 instace type used for the Dev Environment. </p>
         pub fn instance_type(mut self, input: crate::model::InstanceType) -> Self {
@@ -1611,12 +1517,8 @@ pub mod dev_environment_summary {
             self
         }
         /// <p>The Amazon EC2 instace type used for the Dev Environment. </p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<crate::model::InstanceType>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<crate::model::InstanceType>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Dev Environments consume compute minutes when running.</p>
         pub fn inactivity_timeout_minutes(mut self, input: i32) -> Self {
@@ -1625,8 +1527,7 @@ pub mod dev_environment_summary {
         }
         /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Dev Environments consume compute minutes when running.</p>
         pub fn set_inactivity_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.inactivity_timeout_minutes = input;
-            self
+            self.inactivity_timeout_minutes = input; self
         }
         /// <p>Information about the configuration of persistent storage for the Dev Environment.</p>
         pub fn persistent_storage(mut self, input: crate::model::PersistentStorage) -> Self {
@@ -1634,32 +1535,44 @@ pub mod dev_environment_summary {
             self
         }
         /// <p>Information about the configuration of persistent storage for the Dev Environment.</p>
-        pub fn set_persistent_storage(
-            mut self,
-            input: std::option::Option<crate::model::PersistentStorage>,
-        ) -> Self {
-            self.persistent_storage = input;
-            self
+        pub fn set_persistent_storage(mut self, input: std::option::Option<crate::model::PersistentStorage>) -> Self {
+            self.persistent_storage = input; self
         }
         /// Consumes the builder and constructs a [`DevEnvironmentSummary`](crate::model::DevEnvironmentSummary).
         pub fn build(self) -> crate::model::DevEnvironmentSummary {
             crate::model::DevEnvironmentSummary {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                id: self.id,
-                last_updated_time: self.last_updated_time,
-                creator_id: self.creator_id,
-                status: self.status,
-                status_reason: self.status_reason,
-                repositories: self.repositories,
-                alias: self.alias,
-                ides: self.ides,
-                instance_type: self.instance_type,
-                inactivity_timeout_minutes: self.inactivity_timeout_minutes.unwrap_or_default(),
-                persistent_storage: self.persistent_storage,
+                space_name: self.space_name
+                ,
+                project_name: self.project_name
+                ,
+                id: self.id
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                creator_id: self.creator_id
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                repositories: self.repositories
+                ,
+                alias: self.alias
+                ,
+                ides: self.ides
+                ,
+                instance_type: self.instance_type
+                ,
+                inactivity_timeout_minutes: self.inactivity_timeout_minutes
+                    .unwrap_or_default()
+                ,
+                persistent_storage: self.persistent_storage
+                ,
             }
         }
     }
+    
+    
 }
 impl DevEnvironmentSummary {
     /// Creates a new builder-style object to manufacture [`DevEnvironmentSummary`](crate::model::DevEnvironmentSummary).
@@ -1671,16 +1584,16 @@ impl DevEnvironmentSummary {
 /// <p>Information about the persistent storage for a Dev Environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PersistentStorage {
-    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
-    /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
+pub struct PersistentStorage  {
+    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note> 
+    /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p> 
     /// </note>
     #[doc(hidden)]
     pub size_in_gi_b: std::option::Option<i32>,
 }
 impl PersistentStorage {
-    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
-    /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
+    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note> 
+    /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p> 
     /// </note>
     pub fn size_in_gi_b(&self) -> std::option::Option<i32> {
         self.size_in_gi_b
@@ -1688,34 +1601,36 @@ impl PersistentStorage {
 }
 /// See [`PersistentStorage`](crate::model::PersistentStorage).
 pub mod persistent_storage {
-
+    
     /// A builder for [`PersistentStorage`](crate::model::PersistentStorage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_in_gi_b: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
-        /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
+        /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note> 
+        /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p> 
         /// </note>
         pub fn size_in_gi_b(mut self, input: i32) -> Self {
             self.size_in_gi_b = Some(input);
             self
         }
-        /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
-        /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
+        /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note> 
+        /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p> 
         /// </note>
         pub fn set_size_in_gi_b(mut self, input: std::option::Option<i32>) -> Self {
-            self.size_in_gi_b = input;
-            self
+            self.size_in_gi_b = input; self
         }
         /// Consumes the builder and constructs a [`PersistentStorage`](crate::model::PersistentStorage).
         pub fn build(self) -> crate::model::PersistentStorage {
             crate::model::PersistentStorage {
-                size_in_gi_b: self.size_in_gi_b,
+                size_in_gi_b: self.size_in_gi_b
+                ,
             }
         }
     }
+    
+    
 }
 impl PersistentStorage {
     /// Creates a new builder-style object to manufacture [`PersistentStorage`](crate::model::PersistentStorage).
@@ -1727,7 +1642,7 @@ impl PersistentStorage {
 /// <p>Information about an integrated development environment (IDE) used in a Dev Environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ide {
+pub struct Ide  {
     /// <p>A link to the IDE runtime image.</p>
     #[doc(hidden)]
     pub runtime: std::option::Option<std::string::String>,
@@ -1737,17 +1652,17 @@ pub struct Ide {
 }
 impl Ide {
     /// <p>A link to the IDE runtime image.</p>
-    pub fn runtime(&self) -> std::option::Option<&str> {
+    pub fn runtime(&self) -> std::option::Option<& str> {
         self.runtime.as_deref()
     }
     /// <p>The name of the IDE.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`Ide`](crate::model::Ide).
 pub mod ide {
-
+    
     /// A builder for [`Ide`](crate::model::Ide).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1762,8 +1677,7 @@ pub mod ide {
         }
         /// <p>A link to the IDE runtime image.</p>
         pub fn set_runtime(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.runtime = input;
-            self
+            self.runtime = input; self
         }
         /// <p>The name of the IDE.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1772,17 +1686,20 @@ pub mod ide {
         }
         /// <p>The name of the IDE.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`Ide`](crate::model::Ide).
         pub fn build(self) -> crate::model::Ide {
             crate::model::Ide {
-                runtime: self.runtime,
-                name: self.name,
+                runtime: self.runtime
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl Ide {
     /// Creates a new builder-style object to manufacture [`Ide`](crate::model::Ide).
@@ -1794,7 +1711,7 @@ impl Ide {
 /// <p>Information about the source repsitory for a Dev Environment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DevEnvironmentRepositorySummary {
+pub struct DevEnvironmentRepositorySummary  {
     /// <p>The name of the source repository.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -1804,17 +1721,17 @@ pub struct DevEnvironmentRepositorySummary {
 }
 impl DevEnvironmentRepositorySummary {
     /// <p>The name of the source repository.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the branch in a source repository cloned into the Dev Environment. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
 }
 /// See [`DevEnvironmentRepositorySummary`](crate::model::DevEnvironmentRepositorySummary).
 pub mod dev_environment_repository_summary {
-
+    
     /// A builder for [`DevEnvironmentRepositorySummary`](crate::model::DevEnvironmentRepositorySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1828,12 +1745,8 @@ pub mod dev_environment_repository_summary {
             self
         }
         /// <p>The name of the source repository.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The name of the branch in a source repository cloned into the Dev Environment. </p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1842,17 +1755,20 @@ pub mod dev_environment_repository_summary {
         }
         /// <p>The name of the branch in a source repository cloned into the Dev Environment. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// Consumes the builder and constructs a [`DevEnvironmentRepositorySummary`](crate::model::DevEnvironmentRepositorySummary).
         pub fn build(self) -> crate::model::DevEnvironmentRepositorySummary {
             crate::model::DevEnvironmentRepositorySummary {
-                repository_name: self.repository_name,
-                branch_name: self.branch_name,
+                repository_name: self.repository_name
+                ,
+                branch_name: self.branch_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DevEnvironmentRepositorySummary {
     /// Creates a new builder-style object to manufacture [`DevEnvironmentRepositorySummary`](crate::model::DevEnvironmentRepositorySummary).
@@ -1864,7 +1780,7 @@ impl DevEnvironmentRepositorySummary {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p></p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -1877,21 +1793,21 @@ pub struct Filter {
 }
 impl Filter {
     /// <p></p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p></p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
     /// <p></p>
-    pub fn comparison_operator(&self) -> std::option::Option<&str> {
+    pub fn comparison_operator(&self) -> std::option::Option<& str> {
         self.comparison_operator.as_deref()
     }
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1907,8 +1823,7 @@ pub mod filter {
         }
         /// <p></p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -1917,17 +1832,13 @@ pub mod filter {
         /// <p></p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// <p></p>
         pub fn comparison_operator(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1935,22 +1846,23 @@ pub mod filter {
             self
         }
         /// <p></p>
-        pub fn set_comparison_operator(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.comparison_operator = input;
-            self
+        pub fn set_comparison_operator(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comparison_operator = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                key: self.key,
-                values: self.values,
-                comparison_operator: self.comparison_operator,
+                key: self.key
+                ,
+                values: self.values
+                ,
+                comparison_operator: self.comparison_operator
+                ,
             }
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -1962,16 +1874,16 @@ impl Filter {
 /// <p>Information about the configuration of persistent storage for a Dev Environment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PersistentStorageConfiguration {
-    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
-    /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
+pub struct PersistentStorageConfiguration  {
+    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note> 
+    /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p> 
     /// </note>
     #[doc(hidden)]
     pub size_in_gi_b: std::option::Option<i32>,
 }
 impl PersistentStorageConfiguration {
-    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
-    /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
+    /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note> 
+    /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p> 
     /// </note>
     pub fn size_in_gi_b(&self) -> std::option::Option<i32> {
         self.size_in_gi_b
@@ -1979,34 +1891,36 @@ impl PersistentStorageConfiguration {
 }
 /// See [`PersistentStorageConfiguration`](crate::model::PersistentStorageConfiguration).
 pub mod persistent_storage_configuration {
-
+    
     /// A builder for [`PersistentStorageConfiguration`](crate::model::PersistentStorageConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_in_gi_b: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
-        /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
+        /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note> 
+        /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p> 
         /// </note>
         pub fn size_in_gi_b(mut self, input: i32) -> Self {
             self.size_in_gi_b = Some(input);
             self
         }
-        /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
-        /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
+        /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note> 
+        /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p> 
         /// </note>
         pub fn set_size_in_gi_b(mut self, input: std::option::Option<i32>) -> Self {
-            self.size_in_gi_b = input;
-            self
+            self.size_in_gi_b = input; self
         }
         /// Consumes the builder and constructs a [`PersistentStorageConfiguration`](crate::model::PersistentStorageConfiguration).
         pub fn build(self) -> crate::model::PersistentStorageConfiguration {
             crate::model::PersistentStorageConfiguration {
-                size_in_gi_b: self.size_in_gi_b,
+                size_in_gi_b: self.size_in_gi_b
+                ,
             }
         }
     }
+    
+    
 }
 impl PersistentStorageConfiguration {
     /// Creates a new builder-style object to manufacture [`PersistentStorageConfiguration`](crate::model::PersistentStorageConfiguration).
@@ -2018,7 +1932,7 @@ impl PersistentStorageConfiguration {
 /// <p>Information about a repository that will be cloned to a Dev Environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryInput {
+pub struct RepositoryInput  {
     /// <p>The name of the source repository.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -2028,17 +1942,17 @@ pub struct RepositoryInput {
 }
 impl RepositoryInput {
     /// <p>The name of the source repository.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the branch in a source repository.</p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
 }
 /// See [`RepositoryInput`](crate::model::RepositoryInput).
 pub mod repository_input {
-
+    
     /// A builder for [`RepositoryInput`](crate::model::RepositoryInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2052,12 +1966,8 @@ pub mod repository_input {
             self
         }
         /// <p>The name of the source repository.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The name of the branch in a source repository.</p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2066,17 +1976,20 @@ pub mod repository_input {
         }
         /// <p>The name of the branch in a source repository.</p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// Consumes the builder and constructs a [`RepositoryInput`](crate::model::RepositoryInput).
         pub fn build(self) -> crate::model::RepositoryInput {
             crate::model::RepositoryInput {
-                repository_name: self.repository_name,
-                branch_name: self.branch_name,
+                repository_name: self.repository_name
+                ,
+                branch_name: self.branch_name
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositoryInput {
     /// Creates a new builder-style object to manufacture [`RepositoryInput`](crate::model::RepositoryInput).
@@ -2088,7 +2001,7 @@ impl RepositoryInput {
 /// <p>Information about an entry in an event log of Amazon CodeCatalyst activity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventLogEntry {
+pub struct EventLogEntry  {
     /// <p>The system-generated unique ID of the event.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2137,69 +2050,69 @@ pub struct EventLogEntry {
 }
 impl EventLogEntry {
     /// <p>The system-generated unique ID of the event.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the event.</p>
-    pub fn event_name(&self) -> std::option::Option<&str> {
+    pub fn event_name(&self) -> std::option::Option<& str> {
         self.event_name.as_deref()
     }
     /// <p>The type of the event.</p>
-    pub fn event_type(&self) -> std::option::Option<&str> {
+    pub fn event_type(&self) -> std::option::Option<& str> {
         self.event_type.as_deref()
     }
     /// <p>The category for the event.</p>
-    pub fn event_category(&self) -> std::option::Option<&str> {
+    pub fn event_category(&self) -> std::option::Option<& str> {
         self.event_category.as_deref()
     }
     /// <p>The source of the event.</p>
-    pub fn event_source(&self) -> std::option::Option<&str> {
+    pub fn event_source(&self) -> std::option::Option<& str> {
         self.event_source.as_deref()
     }
     /// <p>The time the event took place, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>The type of the event.</p>
-    pub fn operation_type(&self) -> std::option::Option<&crate::model::OperationType> {
+    pub fn operation_type(&self) -> std::option::Option<& crate::model::OperationType> {
         self.operation_type.as_ref()
     }
     /// <p>The system-generated unique ID of the user whose actions are recorded in the event.</p>
-    pub fn user_identity(&self) -> std::option::Option<&crate::model::UserIdentity> {
+    pub fn user_identity(&self) -> std::option::Option<& crate::model::UserIdentity> {
         self.user_identity.as_ref()
     }
     /// <p>Information about the project where the event occurred.</p>
-    pub fn project_information(&self) -> std::option::Option<&crate::model::ProjectInformation> {
+    pub fn project_information(&self) -> std::option::Option<& crate::model::ProjectInformation> {
         self.project_information.as_ref()
     }
     /// <p>The system-generated unique ID of the request.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>Information about the payload of the request.</p>
-    pub fn request_payload(&self) -> std::option::Option<&crate::model::EventPayload> {
+    pub fn request_payload(&self) -> std::option::Option<& crate::model::EventPayload> {
         self.request_payload.as_ref()
     }
     /// <p>Information about the payload of the response, if any.</p>
-    pub fn response_payload(&self) -> std::option::Option<&crate::model::EventPayload> {
+    pub fn response_payload(&self) -> std::option::Option<& crate::model::EventPayload> {
         self.response_payload.as_ref()
     }
     /// <p>The code of the error, if any.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The IP address of the user whose actions are recorded in the event.</p>
-    pub fn source_ip_address(&self) -> std::option::Option<&str> {
+    pub fn source_ip_address(&self) -> std::option::Option<& str> {
         self.source_ip_address.as_deref()
     }
     /// <p></p>
-    pub fn user_agent(&self) -> std::option::Option<&str> {
+    pub fn user_agent(&self) -> std::option::Option<& str> {
         self.user_agent.as_deref()
     }
 }
 /// See [`EventLogEntry`](crate::model::EventLogEntry).
 pub mod event_log_entry {
-
+    
     /// A builder for [`EventLogEntry`](crate::model::EventLogEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2227,8 +2140,7 @@ pub mod event_log_entry {
         }
         /// <p>The system-generated unique ID of the event.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the event.</p>
         pub fn event_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2237,8 +2149,7 @@ pub mod event_log_entry {
         }
         /// <p>The name of the event.</p>
         pub fn set_event_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_name = input;
-            self
+            self.event_name = input; self
         }
         /// <p>The type of the event.</p>
         pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2247,8 +2158,7 @@ pub mod event_log_entry {
         }
         /// <p>The type of the event.</p>
         pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_type = input;
-            self
+            self.event_type = input; self
         }
         /// <p>The category for the event.</p>
         pub fn event_category(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2256,12 +2166,8 @@ pub mod event_log_entry {
             self
         }
         /// <p>The category for the event.</p>
-        pub fn set_event_category(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_category = input;
-            self
+        pub fn set_event_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_category = input; self
         }
         /// <p>The source of the event.</p>
         pub fn event_source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2270,8 +2176,7 @@ pub mod event_log_entry {
         }
         /// <p>The source of the event.</p>
         pub fn set_event_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_source = input;
-            self
+            self.event_source = input; self
         }
         /// <p>The time the event took place, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
         pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2279,12 +2184,8 @@ pub mod event_log_entry {
             self
         }
         /// <p>The time the event took place, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-        pub fn set_event_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.event_time = input;
-            self
+        pub fn set_event_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.event_time = input; self
         }
         /// <p>The type of the event.</p>
         pub fn operation_type(mut self, input: crate::model::OperationType) -> Self {
@@ -2292,12 +2193,8 @@ pub mod event_log_entry {
             self
         }
         /// <p>The type of the event.</p>
-        pub fn set_operation_type(
-            mut self,
-            input: std::option::Option<crate::model::OperationType>,
-        ) -> Self {
-            self.operation_type = input;
-            self
+        pub fn set_operation_type(mut self, input: std::option::Option<crate::model::OperationType>) -> Self {
+            self.operation_type = input; self
         }
         /// <p>The system-generated unique ID of the user whose actions are recorded in the event.</p>
         pub fn user_identity(mut self, input: crate::model::UserIdentity) -> Self {
@@ -2305,12 +2202,8 @@ pub mod event_log_entry {
             self
         }
         /// <p>The system-generated unique ID of the user whose actions are recorded in the event.</p>
-        pub fn set_user_identity(
-            mut self,
-            input: std::option::Option<crate::model::UserIdentity>,
-        ) -> Self {
-            self.user_identity = input;
-            self
+        pub fn set_user_identity(mut self, input: std::option::Option<crate::model::UserIdentity>) -> Self {
+            self.user_identity = input; self
         }
         /// <p>Information about the project where the event occurred.</p>
         pub fn project_information(mut self, input: crate::model::ProjectInformation) -> Self {
@@ -2318,12 +2211,8 @@ pub mod event_log_entry {
             self
         }
         /// <p>Information about the project where the event occurred.</p>
-        pub fn set_project_information(
-            mut self,
-            input: std::option::Option<crate::model::ProjectInformation>,
-        ) -> Self {
-            self.project_information = input;
-            self
+        pub fn set_project_information(mut self, input: std::option::Option<crate::model::ProjectInformation>) -> Self {
+            self.project_information = input; self
         }
         /// <p>The system-generated unique ID of the request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2332,8 +2221,7 @@ pub mod event_log_entry {
         }
         /// <p>The system-generated unique ID of the request.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.request_id = input;
-            self
+            self.request_id = input; self
         }
         /// <p>Information about the payload of the request.</p>
         pub fn request_payload(mut self, input: crate::model::EventPayload) -> Self {
@@ -2341,12 +2229,8 @@ pub mod event_log_entry {
             self
         }
         /// <p>Information about the payload of the request.</p>
-        pub fn set_request_payload(
-            mut self,
-            input: std::option::Option<crate::model::EventPayload>,
-        ) -> Self {
-            self.request_payload = input;
-            self
+        pub fn set_request_payload(mut self, input: std::option::Option<crate::model::EventPayload>) -> Self {
+            self.request_payload = input; self
         }
         /// <p>Information about the payload of the response, if any.</p>
         pub fn response_payload(mut self, input: crate::model::EventPayload) -> Self {
@@ -2354,12 +2238,8 @@ pub mod event_log_entry {
             self
         }
         /// <p>Information about the payload of the response, if any.</p>
-        pub fn set_response_payload(
-            mut self,
-            input: std::option::Option<crate::model::EventPayload>,
-        ) -> Self {
-            self.response_payload = input;
-            self
+        pub fn set_response_payload(mut self, input: std::option::Option<crate::model::EventPayload>) -> Self {
+            self.response_payload = input; self
         }
         /// <p>The code of the error, if any.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2368,8 +2248,7 @@ pub mod event_log_entry {
         }
         /// <p>The code of the error, if any.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>The IP address of the user whose actions are recorded in the event.</p>
         pub fn source_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2377,12 +2256,8 @@ pub mod event_log_entry {
             self
         }
         /// <p>The IP address of the user whose actions are recorded in the event.</p>
-        pub fn set_source_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_ip_address = input;
-            self
+        pub fn set_source_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_ip_address = input; self
         }
         /// <p></p>
         pub fn user_agent(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2391,30 +2266,46 @@ pub mod event_log_entry {
         }
         /// <p></p>
         pub fn set_user_agent(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_agent = input;
-            self
+            self.user_agent = input; self
         }
         /// Consumes the builder and constructs a [`EventLogEntry`](crate::model::EventLogEntry).
         pub fn build(self) -> crate::model::EventLogEntry {
             crate::model::EventLogEntry {
-                id: self.id,
-                event_name: self.event_name,
-                event_type: self.event_type,
-                event_category: self.event_category,
-                event_source: self.event_source,
-                event_time: self.event_time,
-                operation_type: self.operation_type,
-                user_identity: self.user_identity,
-                project_information: self.project_information,
-                request_id: self.request_id,
-                request_payload: self.request_payload,
-                response_payload: self.response_payload,
-                error_code: self.error_code,
-                source_ip_address: self.source_ip_address,
-                user_agent: self.user_agent,
+                id: self.id
+                ,
+                event_name: self.event_name
+                ,
+                event_type: self.event_type
+                ,
+                event_category: self.event_category
+                ,
+                event_source: self.event_source
+                ,
+                event_time: self.event_time
+                ,
+                operation_type: self.operation_type
+                ,
+                user_identity: self.user_identity
+                ,
+                project_information: self.project_information
+                ,
+                request_id: self.request_id
+                ,
+                request_payload: self.request_payload
+                ,
+                response_payload: self.response_payload
+                ,
+                error_code: self.error_code
+                ,
+                source_ip_address: self.source_ip_address
+                ,
+                user_agent: self.user_agent
+                ,
             }
         }
     }
+    
+    
 }
 impl EventLogEntry {
     /// Creates a new builder-style object to manufacture [`EventLogEntry`](crate::model::EventLogEntry).
@@ -2426,7 +2317,7 @@ impl EventLogEntry {
 /// <p>Information about the payload of an event recording Amazon CodeCatalyst activity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventPayload {
+pub struct EventPayload  {
     /// <p>The type of content in the event payload.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
@@ -2436,17 +2327,17 @@ pub struct EventPayload {
 }
 impl EventPayload {
     /// <p>The type of content in the event payload.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The data included in the event payload.</p>
-    pub fn data(&self) -> std::option::Option<&str> {
+    pub fn data(&self) -> std::option::Option<& str> {
         self.data.as_deref()
     }
 }
 /// See [`EventPayload`](crate::model::EventPayload).
 pub mod event_payload {
-
+    
     /// A builder for [`EventPayload`](crate::model::EventPayload).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2461,8 +2352,7 @@ pub mod event_payload {
         }
         /// <p>The type of content in the event payload.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// <p>The data included in the event payload.</p>
         pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2471,17 +2361,20 @@ pub mod event_payload {
         }
         /// <p>The data included in the event payload.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data = input;
-            self
+            self.data = input; self
         }
         /// Consumes the builder and constructs a [`EventPayload`](crate::model::EventPayload).
         pub fn build(self) -> crate::model::EventPayload {
             crate::model::EventPayload {
-                content_type: self.content_type,
-                data: self.data,
+                content_type: self.content_type
+                ,
+                data: self.data
+                ,
             }
         }
     }
+    
+    
 }
 impl EventPayload {
     /// Creates a new builder-style object to manufacture [`EventPayload`](crate::model::EventPayload).
@@ -2493,7 +2386,7 @@ impl EventPayload {
 /// <p>Information about a project in a space.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProjectInformation {
+pub struct ProjectInformation  {
     /// <p>The name of the project in the space.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2503,17 +2396,17 @@ pub struct ProjectInformation {
 }
 impl ProjectInformation {
     /// <p>The name of the project in the space.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The system-generated unique ID of the project.</p>
-    pub fn project_id(&self) -> std::option::Option<&str> {
+    pub fn project_id(&self) -> std::option::Option<& str> {
         self.project_id.as_deref()
     }
 }
 /// See [`ProjectInformation`](crate::model::ProjectInformation).
 pub mod project_information {
-
+    
     /// A builder for [`ProjectInformation`](crate::model::ProjectInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2528,8 +2421,7 @@ pub mod project_information {
         }
         /// <p>The name of the project in the space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The system-generated unique ID of the project.</p>
         pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2538,17 +2430,20 @@ pub mod project_information {
         }
         /// <p>The system-generated unique ID of the project.</p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_id = input;
-            self
+            self.project_id = input; self
         }
         /// Consumes the builder and constructs a [`ProjectInformation`](crate::model::ProjectInformation).
         pub fn build(self) -> crate::model::ProjectInformation {
             crate::model::ProjectInformation {
-                name: self.name,
-                project_id: self.project_id,
+                name: self.name
+                ,
+                project_id: self.project_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ProjectInformation {
     /// Creates a new builder-style object to manufacture [`ProjectInformation`](crate::model::ProjectInformation).
@@ -2560,7 +2455,7 @@ impl ProjectInformation {
 /// <p>Information about a user whose activity is recorded in an event for a space.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserIdentity {
+pub struct UserIdentity  {
     /// <p>The role assigned to the user in a Amazon CodeCatalyst space or project when the event occurred.</p>
     #[doc(hidden)]
     pub user_type: std::option::Option<crate::model::UserType>,
@@ -2576,25 +2471,25 @@ pub struct UserIdentity {
 }
 impl UserIdentity {
     /// <p>The role assigned to the user in a Amazon CodeCatalyst space or project when the event occurred.</p>
-    pub fn user_type(&self) -> std::option::Option<&crate::model::UserType> {
+    pub fn user_type(&self) -> std::option::Option<& crate::model::UserType> {
         self.user_type.as_ref()
     }
     /// <p></p>
-    pub fn principal_id(&self) -> std::option::Option<&str> {
+    pub fn principal_id(&self) -> std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The display name of the user in Amazon CodeCatalyst.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The Amazon Web Services account number of the user in Amazon Web Services, if any.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
 }
 /// See [`UserIdentity`](crate::model::UserIdentity).
 pub mod user_identity {
-
+    
     /// A builder for [`UserIdentity`](crate::model::UserIdentity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2611,8 +2506,7 @@ pub mod user_identity {
         }
         /// <p>The role assigned to the user in a Amazon CodeCatalyst space or project when the event occurred.</p>
         pub fn set_user_type(mut self, input: std::option::Option<crate::model::UserType>) -> Self {
-            self.user_type = input;
-            self
+            self.user_type = input; self
         }
         /// <p></p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2621,8 +2515,7 @@ pub mod user_identity {
         }
         /// <p></p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.principal_id = input;
-            self
+            self.principal_id = input; self
         }
         /// <p>The display name of the user in Amazon CodeCatalyst.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2631,8 +2524,7 @@ pub mod user_identity {
         }
         /// <p>The display name of the user in Amazon CodeCatalyst.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_name = input;
-            self
+            self.user_name = input; self
         }
         /// <p>The Amazon Web Services account number of the user in Amazon Web Services, if any.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2640,23 +2532,25 @@ pub mod user_identity {
             self
         }
         /// <p>The Amazon Web Services account number of the user in Amazon Web Services, if any.</p>
-        pub fn set_aws_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_account_id = input;
-            self
+        pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_account_id = input; self
         }
         /// Consumes the builder and constructs a [`UserIdentity`](crate::model::UserIdentity).
         pub fn build(self) -> crate::model::UserIdentity {
             crate::model::UserIdentity {
-                user_type: self.user_type,
-                principal_id: self.principal_id,
-                user_name: self.user_name,
-                aws_account_id: self.aws_account_id,
+                user_type: self.user_type
+                ,
+                principal_id: self.principal_id
+                ,
+                user_name: self.user_name
+                ,
+                aws_account_id: self.aws_account_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UserIdentity {
     /// Creates a new builder-style object to manufacture [`UserIdentity`](crate::model::UserIdentity).
@@ -2671,9 +2565,9 @@ impl UserIdentity {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let usertype = unimplemented!();
 /// match usertype {
@@ -2696,22 +2590,14 @@ impl UserIdentity {
 /// Specifically, when `usertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UserType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `UserType::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UserType {
     #[allow(missing_docs)] // documentation missing in model
     AwsAccount,
@@ -2720,7 +2606,7 @@ pub enum UserType {
     #[allow(missing_docs)] // documentation missing in model
     User,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UserType {
     fn from(s: &str) -> Self {
@@ -2728,17 +2614,17 @@ impl std::convert::From<&str> for UserType {
             "AWS_ACCOUNT" => UserType::AwsAccount,
             "UNKNOWN" => UserType::UnknownValue,
             "USER" => UserType::User,
-            other => UserType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UserType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UserType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UserType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UserType::from(s))
+                }
+            }
 impl UserType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2746,12 +2632,14 @@ impl UserType {
             UserType::AwsAccount => "AWS_ACCOUNT",
             UserType::UnknownValue => "UNKNOWN",
             UserType::User => "USER",
-            UserType::Unknown(value) => value.as_str(),
+            UserType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_ACCOUNT", "UNKNOWN", "USER"]
+        &[
+            "AWS_ACCOUNT", "UNKNOWN", "USER"
+        ]
     }
 }
 impl AsRef<str> for UserType {
@@ -2766,9 +2654,9 @@ impl AsRef<str> for UserType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let operationtype = unimplemented!();
 /// match operationtype {
@@ -2790,58 +2678,52 @@ impl AsRef<str> for UserType {
 /// Specifically, when `operationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OperationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OperationType {
     #[allow(missing_docs)] // documentation missing in model
     Mutation,
     #[allow(missing_docs)] // documentation missing in model
     Readonly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OperationType {
     fn from(s: &str) -> Self {
         match s {
             "MUTATION" => OperationType::Mutation,
             "READONLY" => OperationType::Readonly,
-            other => OperationType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OperationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OperationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OperationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OperationType::from(s))
+                }
+            }
 impl OperationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OperationType::Mutation => "MUTATION",
             OperationType::Readonly => "READONLY",
-            OperationType::Unknown(value) => value.as_str(),
+            OperationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MUTATION", "READONLY"]
+        &[
+            "MUTATION", "READONLY"
+        ]
     }
 }
 impl AsRef<str> for OperationType {
@@ -2856,9 +2738,9 @@ impl AsRef<str> for OperationType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let catalogactionversionfilerecordtype = unimplemented!();
 /// match catalogactionversionfilerecordtype {
@@ -2880,60 +2762,52 @@ impl AsRef<str> for OperationType {
 /// Specifically, when `catalogactionversionfilerecordtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CatalogActionVersionFileRecordType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CatalogActionVersionFileRecordType {
     #[allow(missing_docs)] // documentation missing in model
     License,
     #[allow(missing_docs)] // documentation missing in model
     Readme,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CatalogActionVersionFileRecordType {
     fn from(s: &str) -> Self {
         match s {
             "LICENSE" => CatalogActionVersionFileRecordType::License,
             "README" => CatalogActionVersionFileRecordType::Readme,
-            other => CatalogActionVersionFileRecordType::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => CatalogActionVersionFileRecordType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CatalogActionVersionFileRecordType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CatalogActionVersionFileRecordType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CatalogActionVersionFileRecordType::from(s))
+                }
+            }
 impl CatalogActionVersionFileRecordType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CatalogActionVersionFileRecordType::License => "LICENSE",
             CatalogActionVersionFileRecordType::Readme => "README",
-            CatalogActionVersionFileRecordType::Unknown(value) => value.as_str(),
+            CatalogActionVersionFileRecordType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LICENSE", "README"]
+        &[
+            "LICENSE", "README"
+        ]
     }
 }
 impl AsRef<str> for CatalogActionVersionFileRecordType {
@@ -2945,7 +2819,7 @@ impl AsRef<str> for CatalogActionVersionFileRecordType {
 /// <p>Information about a specified personal access token (PAT).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessTokenSummary {
+pub struct AccessTokenSummary  {
     /// <p>The system-generated ID of the personal access token.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2958,21 +2832,21 @@ pub struct AccessTokenSummary {
 }
 impl AccessTokenSummary {
     /// <p>The system-generated ID of the personal access token.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The friendly name of the personal access token.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date and time when the personal access token will expire, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn expires_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expires_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expires_time.as_ref()
     }
 }
 /// See [`AccessTokenSummary`](crate::model::AccessTokenSummary).
 pub mod access_token_summary {
-
+    
     /// A builder for [`AccessTokenSummary`](crate::model::AccessTokenSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2988,8 +2862,7 @@ pub mod access_token_summary {
         }
         /// <p>The system-generated ID of the personal access token.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The friendly name of the personal access token.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2998,8 +2871,7 @@ pub mod access_token_summary {
         }
         /// <p>The friendly name of the personal access token.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The date and time when the personal access token will expire, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
         pub fn expires_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3007,22 +2879,23 @@ pub mod access_token_summary {
             self
         }
         /// <p>The date and time when the personal access token will expire, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-        pub fn set_expires_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expires_time = input;
-            self
+        pub fn set_expires_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expires_time = input; self
         }
         /// Consumes the builder and constructs a [`AccessTokenSummary`](crate::model::AccessTokenSummary).
         pub fn build(self) -> crate::model::AccessTokenSummary {
             crate::model::AccessTokenSummary {
-                id: self.id,
-                name: self.name,
-                expires_time: self.expires_time,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                expires_time: self.expires_time
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessTokenSummary {
     /// Creates a new builder-style object to manufacture [`AccessTokenSummary`](crate::model::AccessTokenSummary).
@@ -3034,7 +2907,7 @@ impl AccessTokenSummary {
 /// <p>Information about an email address.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EmailAddress {
+pub struct EmailAddress  {
     /// <p>The email address.</p>
     #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
@@ -3044,7 +2917,7 @@ pub struct EmailAddress {
 }
 impl EmailAddress {
     /// <p>The email address.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>Whether the email address has been verified.</p>
@@ -3054,7 +2927,7 @@ impl EmailAddress {
 }
 /// See [`EmailAddress`](crate::model::EmailAddress).
 pub mod email_address {
-
+    
     /// A builder for [`EmailAddress`](crate::model::EmailAddress).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3069,8 +2942,7 @@ pub mod email_address {
         }
         /// <p>The email address.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.email = input;
-            self
+            self.email = input; self
         }
         /// <p>Whether the email address has been verified.</p>
         pub fn verified(mut self, input: bool) -> Self {
@@ -3079,17 +2951,20 @@ pub mod email_address {
         }
         /// <p>Whether the email address has been verified.</p>
         pub fn set_verified(mut self, input: std::option::Option<bool>) -> Self {
-            self.verified = input;
-            self
+            self.verified = input; self
         }
         /// Consumes the builder and constructs a [`EmailAddress`](crate::model::EmailAddress).
         pub fn build(self) -> crate::model::EmailAddress {
             crate::model::EmailAddress {
-                email: self.email,
-                verified: self.verified,
+                email: self.email
+                ,
+                verified: self.verified
+                ,
             }
         }
     }
+    
+    
 }
 impl EmailAddress {
     /// Creates a new builder-style object to manufacture [`EmailAddress`](crate::model::EmailAddress).
@@ -3097,3 +2972,4 @@ impl EmailAddress {
         crate::model::email_address::Builder::default()
     }
 }
+

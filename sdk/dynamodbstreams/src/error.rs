@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct ListStreamsError {
     /// Kind of error that occurred.
-    pub kind: ListStreamsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListStreamsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListStreamsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListStreamsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -24,22 +24,28 @@ pub enum ListStreamsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListStreamsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListStreamsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ListStreamsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListStreamsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListStreamsErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListStreamsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListStreamsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -53,64 +59,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListStreamsError {
 }
 impl ListStreamsError {
     /// Creates a new `ListStreamsError`.
-    pub fn new(kind: ListStreamsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListStreamsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListStreamsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListStreamsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListStreamsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListStreamsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListStreamsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListStreamsErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `ListStreamsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListStreamsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListStreamsErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for ListStreamsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListStreamsErrorKind::InternalServerError(_inner) => Some(_inner),
-            ListStreamsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListStreamsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListStreamsErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            ListStreamsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListStreamsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -118,22 +127,20 @@ impl std::error::Error for ListStreamsError {
 /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     /// <p>The resource which is being requested does not exist.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -143,7 +150,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -157,16 +164,18 @@ pub mod resource_not_found_exception {
         }
         /// <p>The resource which is being requested does not exist.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -178,22 +187,20 @@ impl ResourceNotFoundException {
 /// <p>An error occurred on the server side.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerError {
+pub struct InternalServerError  {
     /// <p>The server encountered an internal error trying to fulfill the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServerError {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerError")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -203,7 +210,7 @@ impl std::fmt::Display for InternalServerError {
 impl std::error::Error for InternalServerError {}
 /// See [`InternalServerError`](crate::error::InternalServerError).
 pub mod internal_server_error {
-
+    
     /// A builder for [`InternalServerError`](crate::error::InternalServerError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -217,16 +224,18 @@ pub mod internal_server_error {
         }
         /// <p>The server encountered an internal error trying to fulfill the request.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError).
         pub fn build(self) -> crate::error::InternalServerError {
             crate::error::InternalServerError {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServerError {
     /// Creates a new builder-style object to manufacture [`InternalServerError`](crate::error::InternalServerError).
@@ -240,15 +249,15 @@ impl InternalServerError {
 #[derive(std::fmt::Debug)]
 pub struct GetShardIteratorError {
     /// Kind of error that occurred.
-    pub kind: GetShardIteratorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetShardIteratorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetShardIteratorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetShardIteratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -260,30 +269,38 @@ pub enum GetShardIteratorErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The operation attempted to read past the oldest stream record in a shard.</p>
-    /// <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p>
-    /// <ul>
-    /// <li> <p>You request a shard iterator with a sequence number older than the trim point (24 hours).</p> </li>
-    /// <li> <p>You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</p> </li>
+    /// <p>The operation attempted to read past the oldest stream record in a shard.</p> 
+    /// <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p> 
+    /// <ul> 
+    /// <li> <p>You request a shard iterator with a sequence number older than the trim point (24 hours).</p> </li> 
+    /// <li> <p>You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</p> </li> 
     /// </ul>
     TrimmedDataAccessException(crate::error::TrimmedDataAccessException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetShardIteratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetShardIteratorErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            GetShardIteratorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetShardIteratorErrorKind::TrimmedDataAccessException(_inner) => _inner.fmt(f),
-            GetShardIteratorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetShardIteratorErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetShardIteratorErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetShardIteratorErrorKind::TrimmedDataAccessException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetShardIteratorErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -297,103 +314,100 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetShardIteratorError {
 }
 impl GetShardIteratorError {
     /// Creates a new `GetShardIteratorError`.
-    pub fn new(kind: GetShardIteratorErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetShardIteratorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetShardIteratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetShardIteratorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetShardIteratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetShardIteratorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetShardIteratorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetShardIteratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetShardIteratorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetShardIteratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetShardIteratorErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetShardIteratorErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, GetShardIteratorErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `GetShardIteratorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetShardIteratorErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetShardIteratorErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetShardIteratorErrorKind::TrimmedDataAccessException`.
     pub fn is_trimmed_data_access_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetShardIteratorErrorKind::TrimmedDataAccessException(_)
-        )
+        matches!(&self.kind, GetShardIteratorErrorKind::TrimmedDataAccessException(_))
     }
 }
 impl std::error::Error for GetShardIteratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetShardIteratorErrorKind::InternalServerError(_inner) => Some(_inner),
-            GetShardIteratorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetShardIteratorErrorKind::TrimmedDataAccessException(_inner) => Some(_inner),
-            GetShardIteratorErrorKind::Unhandled(_inner) => Some(_inner),
+            GetShardIteratorErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            GetShardIteratorErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetShardIteratorErrorKind::TrimmedDataAccessException(_inner) =>
+            Some(_inner)
+            ,
+            GetShardIteratorErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-/// <p>The operation attempted to read past the oldest stream record in a shard.</p>
-/// <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p>
-/// <ul>
-/// <li> <p>You request a shard iterator with a sequence number older than the trim point (24 hours).</p> </li>
-/// <li> <p>You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</p> </li>
+/// <p>The operation attempted to read past the oldest stream record in a shard.</p> 
+/// <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p> 
+/// <ul> 
+/// <li> <p>You request a shard iterator with a sequence number older than the trim point (24 hours).</p> </li> 
+/// <li> <p>You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrimmedDataAccessException {
+pub struct TrimmedDataAccessException  {
     /// <p>"The data you are trying to access has been trimmed.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TrimmedDataAccessException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TrimmedDataAccessException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TrimmedDataAccessException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -403,7 +417,7 @@ impl std::fmt::Display for TrimmedDataAccessException {
 impl std::error::Error for TrimmedDataAccessException {}
 /// See [`TrimmedDataAccessException`](crate::error::TrimmedDataAccessException).
 pub mod trimmed_data_access_exception {
-
+    
     /// A builder for [`TrimmedDataAccessException`](crate::error::TrimmedDataAccessException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -417,16 +431,18 @@ pub mod trimmed_data_access_exception {
         }
         /// <p>"The data you are trying to access has been trimmed.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TrimmedDataAccessException`](crate::error::TrimmedDataAccessException).
         pub fn build(self) -> crate::error::TrimmedDataAccessException {
             crate::error::TrimmedDataAccessException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TrimmedDataAccessException {
     /// Creates a new builder-style object to manufacture [`TrimmedDataAccessException`](crate::error::TrimmedDataAccessException).
@@ -440,15 +456,15 @@ impl TrimmedDataAccessException {
 #[derive(std::fmt::Debug)]
 pub struct GetRecordsError {
     /// Kind of error that occurred.
-    pub kind: GetRecordsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetRecordsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetRecordsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetRecordsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -460,40 +476,52 @@ pub enum GetRecordsErrorKind {
     ExpiredIteratorException(crate::error::ExpiredIteratorException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+    /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+    /// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+    /// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+    /// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The operation attempted to read past the oldest stream record in a shard.</p>
-    /// <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p>
-    /// <ul>
-    /// <li> <p>You request a shard iterator with a sequence number older than the trim point (24 hours).</p> </li>
-    /// <li> <p>You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</p> </li>
+    /// <p>The operation attempted to read past the oldest stream record in a shard.</p> 
+    /// <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p> 
+    /// <ul> 
+    /// <li> <p>You request a shard iterator with a sequence number older than the trim point (24 hours).</p> </li> 
+    /// <li> <p>You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</p> </li> 
     /// </ul>
     TrimmedDataAccessException(crate::error::TrimmedDataAccessException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRecordsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetRecordsErrorKind::ExpiredIteratorException(_inner) => _inner.fmt(f),
-            GetRecordsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            GetRecordsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            GetRecordsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetRecordsErrorKind::TrimmedDataAccessException(_inner) => _inner.fmt(f),
-            GetRecordsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetRecordsErrorKind::ExpiredIteratorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecordsErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecordsErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecordsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecordsErrorKind::TrimmedDataAccessException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecordsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -507,46 +535,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetRecordsError {
 }
 impl GetRecordsError {
     /// Creates a new `GetRecordsError`.
-    pub fn new(kind: GetRecordsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetRecordsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetRecordsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetRecordsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetRecordsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetRecordsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetRecordsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetRecordsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetRecordsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetRecordsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetRecordsErrorKind::ExpiredIteratorException`.
     pub fn is_expired_iterator_exception(&self) -> bool {
         matches!(&self.kind, GetRecordsErrorKind::ExpiredIteratorException(_))
@@ -561,55 +589,59 @@ impl GetRecordsError {
     }
     /// Returns `true` if the error kind is `GetRecordsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecordsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetRecordsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetRecordsErrorKind::TrimmedDataAccessException`.
     pub fn is_trimmed_data_access_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecordsErrorKind::TrimmedDataAccessException(_)
-        )
+        matches!(&self.kind, GetRecordsErrorKind::TrimmedDataAccessException(_))
     }
 }
 impl std::error::Error for GetRecordsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetRecordsErrorKind::ExpiredIteratorException(_inner) => Some(_inner),
-            GetRecordsErrorKind::InternalServerError(_inner) => Some(_inner),
-            GetRecordsErrorKind::LimitExceededException(_inner) => Some(_inner),
-            GetRecordsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetRecordsErrorKind::TrimmedDataAccessException(_inner) => Some(_inner),
-            GetRecordsErrorKind::Unhandled(_inner) => Some(_inner),
+            GetRecordsErrorKind::ExpiredIteratorException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecordsErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            GetRecordsErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecordsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecordsErrorKind::TrimmedDataAccessException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecordsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-/// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-/// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-/// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p>
-/// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p>
+/// <p>There is no limit to the number of daily on-demand backups that can be taken. </p> 
+/// <p>For most purposes, up to 500 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p> 
+/// <p>When you are creating a table with one or more secondary indexes, you can have up to 250 such requests running at a time. However, if the table or index specifications are complex, then DynamoDB might temporarily reduce the number of concurrent operations.</p> 
+/// <p>When importing into DynamoDB, up to 50 simultaneous import table operations are allowed per account.</p> 
 /// <p>There is a soft account quota of 2,500 tables.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LimitExceededException {
+pub struct LimitExceededException  {
     /// <p>Too many operations for a given subscriber.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -619,7 +651,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException).
 pub mod limit_exceeded_exception {
-
+    
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -633,16 +665,18 @@ pub mod limit_exceeded_exception {
         }
         /// <p>Too many operations for a given subscriber.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
         pub fn build(self) -> crate::error::LimitExceededException {
             crate::error::LimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LimitExceededException {
     /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
@@ -654,22 +688,20 @@ impl LimitExceededException {
 /// <p>The shard iterator has expired and can no longer be used to retrieve stream records. A shard iterator expires 15 minutes after it is retrieved using the <code>GetShardIterator</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExpiredIteratorException {
+pub struct ExpiredIteratorException  {
     /// <p>The provided iterator exceeds the maximum age allowed.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ExpiredIteratorException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ExpiredIteratorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredIteratorException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -679,7 +711,7 @@ impl std::fmt::Display for ExpiredIteratorException {
 impl std::error::Error for ExpiredIteratorException {}
 /// See [`ExpiredIteratorException`](crate::error::ExpiredIteratorException).
 pub mod expired_iterator_exception {
-
+    
     /// A builder for [`ExpiredIteratorException`](crate::error::ExpiredIteratorException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -693,16 +725,18 @@ pub mod expired_iterator_exception {
         }
         /// <p>The provided iterator exceeds the maximum age allowed.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ExpiredIteratorException`](crate::error::ExpiredIteratorException).
         pub fn build(self) -> crate::error::ExpiredIteratorException {
             crate::error::ExpiredIteratorException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ExpiredIteratorException {
     /// Creates a new builder-style object to manufacture [`ExpiredIteratorException`](crate::error::ExpiredIteratorException).
@@ -716,15 +750,15 @@ impl ExpiredIteratorException {
 #[derive(std::fmt::Debug)]
 pub struct DescribeStreamError {
     /// Kind of error that occurred.
-    pub kind: DescribeStreamErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeStreamErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeStreamError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeStreamErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -736,22 +770,28 @@ pub enum DescribeStreamErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeStreamErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeStreamErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DescribeStreamErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeStreamErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeStreamErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeStreamErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -765,93 +805,97 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeStreamError {
 }
 impl DescribeStreamError {
     /// Creates a new `DescribeStreamError`.
-    pub fn new(kind: DescribeStreamErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeStreamError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeStreamError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeStreamErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeStreamError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeStreamError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeStreamErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeStreamErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `DescribeStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeStreamErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeStreamErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeStreamErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeStreamErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeStreamErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeStreamErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DescribeStreamErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeStreamErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

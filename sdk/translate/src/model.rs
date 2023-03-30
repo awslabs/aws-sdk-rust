@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let paralleldatastatus = unimplemented!();
 /// match paralleldatastatus {
@@ -33,22 +33,14 @@
 /// Specifically, when `paralleldatastatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ParallelDataStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ParallelDataStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -61,7 +53,7 @@ pub enum ParallelDataStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ParallelDataStatus {
     fn from(s: &str) -> Self {
@@ -71,19 +63,17 @@ impl std::convert::From<&str> for ParallelDataStatus {
             "DELETING" => ParallelDataStatus::Deleting,
             "FAILED" => ParallelDataStatus::Failed,
             "UPDATING" => ParallelDataStatus::Updating,
-            other => {
-                ParallelDataStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ParallelDataStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ParallelDataStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ParallelDataStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ParallelDataStatus::from(s))
+                }
+            }
 impl ParallelDataStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -93,12 +83,14 @@ impl ParallelDataStatus {
             ParallelDataStatus::Deleting => "DELETING",
             ParallelDataStatus::Failed => "FAILED",
             ParallelDataStatus::Updating => "UPDATING",
-            ParallelDataStatus::Unknown(value) => value.as_str(),
+            ParallelDataStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
+        &[
+            "ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"
+        ]
     }
 }
 impl AsRef<str> for ParallelDataStatus {
@@ -110,7 +102,7 @@ impl AsRef<str> for ParallelDataStatus {
 /// <p>Specifies the format and S3 location of the parallel data input file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParallelDataConfig {
+pub struct ParallelDataConfig  {
     /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
@@ -120,17 +112,17 @@ pub struct ParallelDataConfig {
 }
 impl ParallelDataConfig {
     /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p>The format of the parallel data input file.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::ParallelDataFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::ParallelDataFormat> {
         self.format.as_ref()
     }
 }
 /// See [`ParallelDataConfig`](crate::model::ParallelDataConfig).
 pub mod parallel_data_config {
-
+    
     /// A builder for [`ParallelDataConfig`](crate::model::ParallelDataConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -145,8 +137,7 @@ pub mod parallel_data_config {
         }
         /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_uri = input;
-            self
+            self.s3_uri = input; self
         }
         /// <p>The format of the parallel data input file.</p>
         pub fn format(mut self, input: crate::model::ParallelDataFormat) -> Self {
@@ -154,21 +145,21 @@ pub mod parallel_data_config {
             self
         }
         /// <p>The format of the parallel data input file.</p>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::ParallelDataFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::ParallelDataFormat>) -> Self {
+            self.format = input; self
         }
         /// Consumes the builder and constructs a [`ParallelDataConfig`](crate::model::ParallelDataConfig).
         pub fn build(self) -> crate::model::ParallelDataConfig {
             crate::model::ParallelDataConfig {
-                s3_uri: self.s3_uri,
-                format: self.format,
+                s3_uri: self.s3_uri
+                ,
+                format: self.format
+                ,
             }
         }
     }
+    
+    
 }
 impl ParallelDataConfig {
     /// Creates a new builder-style object to manufacture [`ParallelDataConfig`](crate::model::ParallelDataConfig).
@@ -183,9 +174,9 @@ impl ParallelDataConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let paralleldataformat = unimplemented!();
 /// match paralleldataformat {
@@ -208,22 +199,14 @@ impl ParallelDataConfig {
 /// Specifically, when `paralleldataformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ParallelDataFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ParallelDataFormat {
     #[allow(missing_docs)] // documentation missing in model
     Csv,
@@ -232,7 +215,7 @@ pub enum ParallelDataFormat {
     #[allow(missing_docs)] // documentation missing in model
     Tsv,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ParallelDataFormat {
     fn from(s: &str) -> Self {
@@ -240,19 +223,17 @@ impl std::convert::From<&str> for ParallelDataFormat {
             "CSV" => ParallelDataFormat::Csv,
             "TMX" => ParallelDataFormat::Tmx,
             "TSV" => ParallelDataFormat::Tsv,
-            other => {
-                ParallelDataFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ParallelDataFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ParallelDataFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ParallelDataFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ParallelDataFormat::from(s))
+                }
+            }
 impl ParallelDataFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -260,12 +241,14 @@ impl ParallelDataFormat {
             ParallelDataFormat::Csv => "CSV",
             ParallelDataFormat::Tmx => "TMX",
             ParallelDataFormat::Tsv => "TSV",
-            ParallelDataFormat::Unknown(value) => value.as_str(),
+            ParallelDataFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CSV", "TMX", "TSV"]
+        &[
+            "CSV", "TMX", "TSV"
+        ]
     }
 }
 impl AsRef<str> for ParallelDataFormat {
@@ -277,37 +260,37 @@ impl AsRef<str> for ParallelDataFormat {
 /// <p>Optional settings that configure the translation output. Use these settings for real time translations and asynchronous translation jobs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TranslationSettings {
-    /// <p>You can optionally specify the desired level of formality for translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p>
-    /// <p> If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p>
+pub struct TranslationSettings  {
+    /// <p>You can optionally specify the desired level of formality for translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p> 
+    /// <p> If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p> 
     /// <p>For a list of target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html#customizing-translations-formality-languages">Supported languages</a> in the Amazon Translate Developer Guide.</p>
     #[doc(hidden)]
     pub formality: std::option::Option<crate::model::Formality>,
-    /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p>
-    /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p>
-    /// <p>Amazon Translate doesn't detect profanity in all of its supported languages. For languages that don't support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-profanity.html#customizing-translations-profanity-languages">Unsupported languages</a> in the Amazon Translate Developer Guide.</p>
+    /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p> 
+    /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p> 
+    /// <p>Amazon Translate doesn't detect profanity in all of its supported languages. For languages that don't support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-profanity.html#customizing-translations-profanity-languages">Unsupported languages</a> in the Amazon Translate Developer Guide.</p> 
     /// <p>If you specify multiple target languages for the job, all the target languages must support profanity masking. If any of the target languages don't support profanity masking, the translation job won't mask profanity for any target language.</p>
     #[doc(hidden)]
     pub profanity: std::option::Option<crate::model::Profanity>,
 }
 impl TranslationSettings {
-    /// <p>You can optionally specify the desired level of formality for translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p>
-    /// <p> If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p>
+    /// <p>You can optionally specify the desired level of formality for translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p> 
+    /// <p> If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p> 
     /// <p>For a list of target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html#customizing-translations-formality-languages">Supported languages</a> in the Amazon Translate Developer Guide.</p>
-    pub fn formality(&self) -> std::option::Option<&crate::model::Formality> {
+    pub fn formality(&self) -> std::option::Option<& crate::model::Formality> {
         self.formality.as_ref()
     }
-    /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p>
-    /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p>
-    /// <p>Amazon Translate doesn't detect profanity in all of its supported languages. For languages that don't support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-profanity.html#customizing-translations-profanity-languages">Unsupported languages</a> in the Amazon Translate Developer Guide.</p>
+    /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p> 
+    /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p> 
+    /// <p>Amazon Translate doesn't detect profanity in all of its supported languages. For languages that don't support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-profanity.html#customizing-translations-profanity-languages">Unsupported languages</a> in the Amazon Translate Developer Guide.</p> 
     /// <p>If you specify multiple target languages for the job, all the target languages must support profanity masking. If any of the target languages don't support profanity masking, the translation job won't mask profanity for any target language.</p>
-    pub fn profanity(&self) -> std::option::Option<&crate::model::Profanity> {
+    pub fn profanity(&self) -> std::option::Option<& crate::model::Profanity> {
         self.profanity.as_ref()
     }
 }
 /// See [`TranslationSettings`](crate::model::TranslationSettings).
 pub mod translation_settings {
-
+    
     /// A builder for [`TranslationSettings`](crate::model::TranslationSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -315,50 +298,46 @@ pub mod translation_settings {
         pub(crate) profanity: std::option::Option<crate::model::Profanity>,
     }
     impl Builder {
-        /// <p>You can optionally specify the desired level of formality for translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p>
-        /// <p> If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p>
+        /// <p>You can optionally specify the desired level of formality for translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p> 
+        /// <p> If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p> 
         /// <p>For a list of target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html#customizing-translations-formality-languages">Supported languages</a> in the Amazon Translate Developer Guide.</p>
         pub fn formality(mut self, input: crate::model::Formality) -> Self {
             self.formality = Some(input);
             self
         }
-        /// <p>You can optionally specify the desired level of formality for translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p>
-        /// <p> If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p>
+        /// <p>You can optionally specify the desired level of formality for translations to supported target languages. The formality setting controls the level of formal language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>) in the translation output. You can set the value to informal or formal. If you don't specify a value for formality, or if the target language doesn't support formality, the translation will ignore the formality setting.</p> 
+        /// <p> If you specify multiple target languages for the job, translate ignores the formality setting for any unsupported target language.</p> 
         /// <p>For a list of target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html#customizing-translations-formality-languages">Supported languages</a> in the Amazon Translate Developer Guide.</p>
-        pub fn set_formality(
-            mut self,
-            input: std::option::Option<crate::model::Formality>,
-        ) -> Self {
-            self.formality = input;
-            self
+        pub fn set_formality(mut self, input: std::option::Option<crate::model::Formality>) -> Self {
+            self.formality = input; self
         }
-        /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p>
-        /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p>
-        /// <p>Amazon Translate doesn't detect profanity in all of its supported languages. For languages that don't support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-profanity.html#customizing-translations-profanity-languages">Unsupported languages</a> in the Amazon Translate Developer Guide.</p>
+        /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p> 
+        /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p> 
+        /// <p>Amazon Translate doesn't detect profanity in all of its supported languages. For languages that don't support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-profanity.html#customizing-translations-profanity-languages">Unsupported languages</a> in the Amazon Translate Developer Guide.</p> 
         /// <p>If you specify multiple target languages for the job, all the target languages must support profanity masking. If any of the target languages don't support profanity masking, the translation job won't mask profanity for any target language.</p>
         pub fn profanity(mut self, input: crate::model::Profanity) -> Self {
             self.profanity = Some(input);
             self
         }
-        /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p>
-        /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p>
-        /// <p>Amazon Translate doesn't detect profanity in all of its supported languages. For languages that don't support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-profanity.html#customizing-translations-profanity-languages">Unsupported languages</a> in the Amazon Translate Developer Guide.</p>
+        /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p> 
+        /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p> 
+        /// <p>Amazon Translate doesn't detect profanity in all of its supported languages. For languages that don't support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-profanity.html#customizing-translations-profanity-languages">Unsupported languages</a> in the Amazon Translate Developer Guide.</p> 
         /// <p>If you specify multiple target languages for the job, all the target languages must support profanity masking. If any of the target languages don't support profanity masking, the translation job won't mask profanity for any target language.</p>
-        pub fn set_profanity(
-            mut self,
-            input: std::option::Option<crate::model::Profanity>,
-        ) -> Self {
-            self.profanity = input;
-            self
+        pub fn set_profanity(mut self, input: std::option::Option<crate::model::Profanity>) -> Self {
+            self.profanity = input; self
         }
         /// Consumes the builder and constructs a [`TranslationSettings`](crate::model::TranslationSettings).
         pub fn build(self) -> crate::model::TranslationSettings {
             crate::model::TranslationSettings {
-                formality: self.formality,
-                profanity: self.profanity,
+                formality: self.formality
+                ,
+                profanity: self.profanity
+                ,
             }
         }
     }
+    
+    
 }
 impl TranslationSettings {
     /// Creates a new builder-style object to manufacture [`TranslationSettings`](crate::model::TranslationSettings).
@@ -373,9 +352,9 @@ impl TranslationSettings {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let profanity = unimplemented!();
 /// match profanity {
@@ -396,54 +375,48 @@ impl TranslationSettings {
 /// Specifically, when `profanity` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Profanity::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Profanity {
     #[allow(missing_docs)] // documentation missing in model
     Mask,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Profanity {
     fn from(s: &str) -> Self {
         match s {
             "MASK" => Profanity::Mask,
-            other => Profanity::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Profanity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Profanity {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Profanity::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Profanity::from(s))
+                }
+            }
 impl Profanity {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Profanity::Mask => "MASK",
-            Profanity::Unknown(value) => value.as_str(),
+            Profanity::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MASK"]
+        &[
+            "MASK"
+        ]
     }
 }
 impl AsRef<str> for Profanity {
@@ -458,9 +431,9 @@ impl AsRef<str> for Profanity {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let formality = unimplemented!();
 /// match formality {
@@ -482,58 +455,52 @@ impl AsRef<str> for Profanity {
 /// Specifically, when `formality` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Formality::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Formality {
     #[allow(missing_docs)] // documentation missing in model
     Formal,
     #[allow(missing_docs)] // documentation missing in model
     Informal,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Formality {
     fn from(s: &str) -> Self {
         match s {
             "FORMAL" => Formality::Formal,
             "INFORMAL" => Formality::Informal,
-            other => Formality::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Formality::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Formality {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Formality::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Formality::from(s))
+                }
+            }
 impl Formality {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Formality::Formal => "FORMAL",
             Formality::Informal => "INFORMAL",
-            Formality::Unknown(value) => value.as_str(),
+            Formality::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FORMAL", "INFORMAL"]
+        &[
+            "FORMAL", "INFORMAL"
+        ]
     }
 }
 impl AsRef<str> for Formality {
@@ -545,7 +512,7 @@ impl AsRef<str> for Formality {
 /// <p>The custom terminology applied to the input text by Amazon Translate for the translated text response. This is optional in the response and will only be present if you specified terminology input in the request. Currently, only one terminology can be applied per TranslateText request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppliedTerminology {
+pub struct AppliedTerminology  {
     /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated text response.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -555,17 +522,17 @@ pub struct AppliedTerminology {
 }
 impl AppliedTerminology {
     /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated text response.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
-    pub fn terms(&self) -> std::option::Option<&[crate::model::Term]> {
+    pub fn terms(&self) -> std::option::Option<& [crate::model::Term]> {
         self.terms.as_deref()
     }
 }
 /// See [`AppliedTerminology`](crate::model::AppliedTerminology).
 pub mod applied_terminology {
-
+    
     /// A builder for [`AppliedTerminology`](crate::model::AppliedTerminology).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -580,8 +547,7 @@ pub mod applied_terminology {
         }
         /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated text response.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `terms`.
         ///
@@ -590,26 +556,26 @@ pub mod applied_terminology {
         /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
         pub fn terms(mut self, input: crate::model::Term) -> Self {
             let mut v = self.terms.unwrap_or_default();
-            v.push(input);
-            self.terms = Some(v);
-            self
+                            v.push(input);
+                            self.terms = Some(v);
+                            self
         }
         /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
-        pub fn set_terms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Term>>,
-        ) -> Self {
-            self.terms = input;
-            self
+        pub fn set_terms(mut self, input: std::option::Option<std::vec::Vec<crate::model::Term>>) -> Self {
+            self.terms = input; self
         }
         /// Consumes the builder and constructs a [`AppliedTerminology`](crate::model::AppliedTerminology).
         pub fn build(self) -> crate::model::AppliedTerminology {
             crate::model::AppliedTerminology {
-                name: self.name,
-                terms: self.terms,
+                name: self.name
+                ,
+                terms: self.terms
+                ,
             }
         }
     }
+    
+    
 }
 impl AppliedTerminology {
     /// Creates a new builder-style object to manufacture [`AppliedTerminology`](crate::model::AppliedTerminology).
@@ -621,7 +587,7 @@ impl AppliedTerminology {
 /// <p>The term being translated by the custom terminology.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Term {
+pub struct Term  {
     /// <p>The source text of the term being translated by the custom terminology.</p>
     #[doc(hidden)]
     pub source_text: std::option::Option<std::string::String>,
@@ -631,17 +597,17 @@ pub struct Term {
 }
 impl Term {
     /// <p>The source text of the term being translated by the custom terminology.</p>
-    pub fn source_text(&self) -> std::option::Option<&str> {
+    pub fn source_text(&self) -> std::option::Option<& str> {
         self.source_text.as_deref()
     }
     /// <p>The target text of the term being translated by the custom terminology.</p>
-    pub fn target_text(&self) -> std::option::Option<&str> {
+    pub fn target_text(&self) -> std::option::Option<& str> {
         self.target_text.as_deref()
     }
 }
 /// See [`Term`](crate::model::Term).
 pub mod term {
-
+    
     /// A builder for [`Term`](crate::model::Term).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -656,8 +622,7 @@ pub mod term {
         }
         /// <p>The source text of the term being translated by the custom terminology.</p>
         pub fn set_source_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_text = input;
-            self
+            self.source_text = input; self
         }
         /// <p>The target text of the term being translated by the custom terminology.</p>
         pub fn target_text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -666,17 +631,20 @@ pub mod term {
         }
         /// <p>The target text of the term being translated by the custom terminology.</p>
         pub fn set_target_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_text = input;
-            self
+            self.target_text = input; self
         }
         /// Consumes the builder and constructs a [`Term`](crate::model::Term).
         pub fn build(self) -> crate::model::Term {
             crate::model::Term {
-                source_text: self.source_text,
-                target_text: self.target_text,
+                source_text: self.source_text
+                ,
+                target_text: self.target_text
+                ,
             }
         }
     }
+    
+    
 }
 impl Term {
     /// Creates a new builder-style object to manufacture [`Term`](crate::model::Term).
@@ -688,7 +656,7 @@ impl Term {
 /// <p>A key-value pair that adds as a metadata to a resource used by Amazon Translate. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The initial part of a key-value pair that forms a tag associated with a given resource. </p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -698,17 +666,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The initial part of a key-value pair that forms a tag associated with a given resource. </p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p> The second part of a key-value pair that forms a tag associated with a given resource.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -723,8 +691,7 @@ pub mod tag {
         }
         /// <p>The initial part of a key-value pair that forms a tag associated with a given resource. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p> The second part of a key-value pair that forms a tag associated with a given resource.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -733,17 +700,20 @@ pub mod tag {
         }
         /// <p> The second part of a key-value pair that forms a tag associated with a given resource.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -758,9 +728,9 @@ impl Tag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobstatus = unimplemented!();
 /// match jobstatus {
@@ -787,22 +757,14 @@ impl Tag {
 /// Specifically, when `jobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -819,7 +781,7 @@ pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Submitted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobStatus {
     fn from(s: &str) -> Self {
@@ -831,17 +793,17 @@ impl std::convert::From<&str> for JobStatus {
             "STOPPED" => JobStatus::Stopped,
             "STOP_REQUESTED" => JobStatus::StopRequested,
             "SUBMITTED" => JobStatus::Submitted,
-            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobStatus::from(s))
+                }
+            }
 impl JobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -853,19 +815,13 @@ impl JobStatus {
             JobStatus::Stopped => "STOPPED",
             JobStatus::StopRequested => "STOP_REQUESTED",
             JobStatus::Submitted => "SUBMITTED",
-            JobStatus::Unknown(value) => value.as_str(),
+            JobStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "COMPLETED",
-            "COMPLETED_WITH_ERROR",
-            "FAILED",
-            "IN_PROGRESS",
-            "STOPPED",
-            "STOP_REQUESTED",
-            "SUBMITTED",
+            "COMPLETED", "COMPLETED_WITH_ERROR", "FAILED", "IN_PROGRESS", "STOPPED", "STOP_REQUESTED", "SUBMITTED"
         ]
     }
 }
@@ -878,7 +834,7 @@ impl AsRef<str> for JobStatus {
 /// <p>The output configuration properties for a batch translation job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputDataConfig {
+pub struct OutputDataConfig  {
     /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
@@ -888,17 +844,17 @@ pub struct OutputDataConfig {
 }
 impl OutputDataConfig {
     /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p>The encryption key used to encrypt this object.</p>
-    pub fn encryption_key(&self) -> std::option::Option<&crate::model::EncryptionKey> {
+    pub fn encryption_key(&self) -> std::option::Option<& crate::model::EncryptionKey> {
         self.encryption_key.as_ref()
     }
 }
 /// See [`OutputDataConfig`](crate::model::OutputDataConfig).
 pub mod output_data_config {
-
+    
     /// A builder for [`OutputDataConfig`](crate::model::OutputDataConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -913,8 +869,7 @@ pub mod output_data_config {
         }
         /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_uri = input;
-            self
+            self.s3_uri = input; self
         }
         /// <p>The encryption key used to encrypt this object.</p>
         pub fn encryption_key(mut self, input: crate::model::EncryptionKey) -> Self {
@@ -922,21 +877,21 @@ pub mod output_data_config {
             self
         }
         /// <p>The encryption key used to encrypt this object.</p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionKey>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<crate::model::EncryptionKey>) -> Self {
+            self.encryption_key = input; self
         }
         /// Consumes the builder and constructs a [`OutputDataConfig`](crate::model::OutputDataConfig).
         pub fn build(self) -> crate::model::OutputDataConfig {
             crate::model::OutputDataConfig {
-                s3_uri: self.s3_uri,
-                encryption_key: self.encryption_key,
+                s3_uri: self.s3_uri
+                ,
+                encryption_key: self.encryption_key
+                ,
             }
         }
     }
+    
+    
 }
 impl OutputDataConfig {
     /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::model::OutputDataConfig).
@@ -948,7 +903,7 @@ impl OutputDataConfig {
 /// <p>The encryption key used to encrypt this object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EncryptionKey {
+pub struct EncryptionKey  {
     /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EncryptionKeyType>,
@@ -958,17 +913,17 @@ pub struct EncryptionKey {
 }
 impl EncryptionKey {
     /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::EncryptionKeyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::EncryptionKeyType> {
         self.r#type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`EncryptionKey`](crate::model::EncryptionKey).
 pub mod encryption_key {
-
+    
     /// A builder for [`EncryptionKey`](crate::model::EncryptionKey).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -982,12 +937,8 @@ pub mod encryption_key {
             self
         }
         /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionKeyType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::EncryptionKeyType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -996,17 +947,20 @@ pub mod encryption_key {
         }
         /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`EncryptionKey`](crate::model::EncryptionKey).
         pub fn build(self) -> crate::model::EncryptionKey {
             crate::model::EncryptionKey {
-                r#type: self.r#type,
-                id: self.id,
+                r#type: self.r#type
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl EncryptionKey {
     /// Creates a new builder-style object to manufacture [`EncryptionKey`](crate::model::EncryptionKey).
@@ -1021,9 +975,9 @@ impl EncryptionKey {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encryptionkeytype = unimplemented!();
 /// match encryptionkeytype {
@@ -1044,56 +998,48 @@ impl EncryptionKey {
 /// Specifically, when `encryptionkeytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncryptionKeyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EncryptionKeyType {
     #[allow(missing_docs)] // documentation missing in model
     Kms,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionKeyType {
     fn from(s: &str) -> Self {
         match s {
             "KMS" => EncryptionKeyType::Kms,
-            other => {
-                EncryptionKeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => EncryptionKeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EncryptionKeyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncryptionKeyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EncryptionKeyType::from(s))
+                }
+            }
 impl EncryptionKeyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncryptionKeyType::Kms => "KMS",
-            EncryptionKeyType::Unknown(value) => value.as_str(),
+            EncryptionKeyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KMS"]
+        &[
+            "KMS"
+        ]
     }
 }
 impl AsRef<str> for EncryptionKeyType {
@@ -1105,47 +1051,47 @@ impl AsRef<str> for EncryptionKeyType {
 /// <p>The input configuration properties for requesting a batch translation job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputDataConfig {
+pub struct InputDataConfig  {
     /// <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the folder and all its sub-folders. The folder must be in the same Region as the API endpoint you are calling.</p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
-    /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p>
-    /// <ul>
-    /// <li> <p> <code>text/html</code>: The input data consists of one or more HTML files. Amazon Translate translates only the text that resides in the <code>html</code> element in each file.</p> </li>
-    /// <li> <p> <code>text/plain</code>: The input data consists of one or more unformatted text files. Amazon Translate translates every character in this type of input.</p> </li>
-    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>: The input data consists of one or more Word documents (.docx).</p> </li>
-    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>: The input data consists of one or more PowerPoint Presentation files (.pptx).</p> </li>
-    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The input data consists of one or more Excel Workbook files (.xlsx).</p> </li>
-    /// <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only XLIFF version 1.2.</p> </li>
-    /// </ul> <important>
-    /// <p>If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>. By doing so, you cut costs by limiting the translation to the contents of the <code>html</code> element in each file. Otherwise, if you set this parameter to <code>text/plain</code>, your costs will cover the translation of every character.</p>
+    /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p> 
+    /// <ul> 
+    /// <li> <p> <code>text/html</code>: The input data consists of one or more HTML files. Amazon Translate translates only the text that resides in the <code>html</code> element in each file.</p> </li> 
+    /// <li> <p> <code>text/plain</code>: The input data consists of one or more unformatted text files. Amazon Translate translates every character in this type of input.</p> </li> 
+    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>: The input data consists of one or more Word documents (.docx).</p> </li> 
+    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>: The input data consists of one or more PowerPoint Presentation files (.pptx).</p> </li> 
+    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The input data consists of one or more Excel Workbook files (.xlsx).</p> </li> 
+    /// <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only XLIFF version 1.2.</p> </li> 
+    /// </ul> <important> 
+    /// <p>If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>. By doing so, you cut costs by limiting the translation to the contents of the <code>html</code> element in each file. Otherwise, if you set this parameter to <code>text/plain</code>, your costs will cover the translation of every character.</p> 
     /// </important>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl InputDataConfig {
     /// <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the folder and all its sub-folders. The folder must be in the same Region as the API endpoint you are calling.</p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
-    /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p>
-    /// <ul>
-    /// <li> <p> <code>text/html</code>: The input data consists of one or more HTML files. Amazon Translate translates only the text that resides in the <code>html</code> element in each file.</p> </li>
-    /// <li> <p> <code>text/plain</code>: The input data consists of one or more unformatted text files. Amazon Translate translates every character in this type of input.</p> </li>
-    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>: The input data consists of one or more Word documents (.docx).</p> </li>
-    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>: The input data consists of one or more PowerPoint Presentation files (.pptx).</p> </li>
-    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The input data consists of one or more Excel Workbook files (.xlsx).</p> </li>
-    /// <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only XLIFF version 1.2.</p> </li>
-    /// </ul> <important>
-    /// <p>If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>. By doing so, you cut costs by limiting the translation to the contents of the <code>html</code> element in each file. Otherwise, if you set this parameter to <code>text/plain</code>, your costs will cover the translation of every character.</p>
+    /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p> 
+    /// <ul> 
+    /// <li> <p> <code>text/html</code>: The input data consists of one or more HTML files. Amazon Translate translates only the text that resides in the <code>html</code> element in each file.</p> </li> 
+    /// <li> <p> <code>text/plain</code>: The input data consists of one or more unformatted text files. Amazon Translate translates every character in this type of input.</p> </li> 
+    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>: The input data consists of one or more Word documents (.docx).</p> </li> 
+    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>: The input data consists of one or more PowerPoint Presentation files (.pptx).</p> </li> 
+    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The input data consists of one or more Excel Workbook files (.xlsx).</p> </li> 
+    /// <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only XLIFF version 1.2.</p> </li> 
+    /// </ul> <important> 
+    /// <p>If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>. By doing so, you cut costs by limiting the translation to the contents of the <code>html</code> element in each file. Otherwise, if you set this parameter to <code>text/plain</code>, your costs will cover the translation of every character.</p> 
     /// </important>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
 }
 /// See [`InputDataConfig`](crate::model::InputDataConfig).
 pub mod input_data_config {
-
+    
     /// A builder for [`InputDataConfig`](crate::model::InputDataConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1160,47 +1106,49 @@ pub mod input_data_config {
         }
         /// <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate translates all the files in the folder and all its sub-folders. The folder must be in the same Region as the API endpoint you are calling.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_uri = input;
-            self
+            self.s3_uri = input; self
         }
-        /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p>
-        /// <ul>
-        /// <li> <p> <code>text/html</code>: The input data consists of one or more HTML files. Amazon Translate translates only the text that resides in the <code>html</code> element in each file.</p> </li>
-        /// <li> <p> <code>text/plain</code>: The input data consists of one or more unformatted text files. Amazon Translate translates every character in this type of input.</p> </li>
-        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>: The input data consists of one or more Word documents (.docx).</p> </li>
-        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>: The input data consists of one or more PowerPoint Presentation files (.pptx).</p> </li>
-        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The input data consists of one or more Excel Workbook files (.xlsx).</p> </li>
-        /// <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only XLIFF version 1.2.</p> </li>
-        /// </ul> <important>
-        /// <p>If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>. By doing so, you cut costs by limiting the translation to the contents of the <code>html</code> element in each file. Otherwise, if you set this parameter to <code>text/plain</code>, your costs will cover the translation of every character.</p>
+        /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p> 
+        /// <ul> 
+        /// <li> <p> <code>text/html</code>: The input data consists of one or more HTML files. Amazon Translate translates only the text that resides in the <code>html</code> element in each file.</p> </li> 
+        /// <li> <p> <code>text/plain</code>: The input data consists of one or more unformatted text files. Amazon Translate translates every character in this type of input.</p> </li> 
+        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>: The input data consists of one or more Word documents (.docx).</p> </li> 
+        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>: The input data consists of one or more PowerPoint Presentation files (.pptx).</p> </li> 
+        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The input data consists of one or more Excel Workbook files (.xlsx).</p> </li> 
+        /// <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only XLIFF version 1.2.</p> </li> 
+        /// </ul> <important> 
+        /// <p>If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>. By doing so, you cut costs by limiting the translation to the contents of the <code>html</code> element in each file. Otherwise, if you set this parameter to <code>text/plain</code>, your costs will cover the translation of every character.</p> 
         /// </important>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p>
-        /// <ul>
-        /// <li> <p> <code>text/html</code>: The input data consists of one or more HTML files. Amazon Translate translates only the text that resides in the <code>html</code> element in each file.</p> </li>
-        /// <li> <p> <code>text/plain</code>: The input data consists of one or more unformatted text files. Amazon Translate translates every character in this type of input.</p> </li>
-        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>: The input data consists of one or more Word documents (.docx).</p> </li>
-        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>: The input data consists of one or more PowerPoint Presentation files (.pptx).</p> </li>
-        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The input data consists of one or more Excel Workbook files (.xlsx).</p> </li>
-        /// <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only XLIFF version 1.2.</p> </li>
-        /// </ul> <important>
-        /// <p>If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>. By doing so, you cut costs by limiting the translation to the contents of the <code>html</code> element in each file. Otherwise, if you set this parameter to <code>text/plain</code>, your costs will cover the translation of every character.</p>
+        /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p> 
+        /// <ul> 
+        /// <li> <p> <code>text/html</code>: The input data consists of one or more HTML files. Amazon Translate translates only the text that resides in the <code>html</code> element in each file.</p> </li> 
+        /// <li> <p> <code>text/plain</code>: The input data consists of one or more unformatted text files. Amazon Translate translates every character in this type of input.</p> </li> 
+        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>: The input data consists of one or more Word documents (.docx).</p> </li> 
+        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>: The input data consists of one or more PowerPoint Presentation files (.pptx).</p> </li> 
+        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The input data consists of one or more Excel Workbook files (.xlsx).</p> </li> 
+        /// <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only XLIFF version 1.2.</p> </li> 
+        /// </ul> <important> 
+        /// <p>If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>. By doing so, you cut costs by limiting the translation to the contents of the <code>html</code> element in each file. Otherwise, if you set this parameter to <code>text/plain</code>, your costs will cover the translation of every character.</p> 
         /// </important>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// Consumes the builder and constructs a [`InputDataConfig`](crate::model::InputDataConfig).
         pub fn build(self) -> crate::model::InputDataConfig {
             crate::model::InputDataConfig {
-                s3_uri: self.s3_uri,
-                content_type: self.content_type,
+                s3_uri: self.s3_uri
+                ,
+                content_type: self.content_type
+                ,
             }
         }
     }
+    
+    
 }
 impl InputDataConfig {
     /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig).
@@ -1212,7 +1160,7 @@ impl InputDataConfig {
 /// <p>Provides information about a translation job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TextTranslationJobProperties {
+pub struct TextTranslationJobProperties  {
     /// <p>The ID of the translation job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -1261,69 +1209,69 @@ pub struct TextTranslationJobProperties {
 }
 impl TextTranslationJobProperties {
     /// <p>The ID of the translation job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The user-defined name of the translation job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The status of the translation job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The number of documents successfully and unsuccessfully processed during the translation job.</p>
-    pub fn job_details(&self) -> std::option::Option<&crate::model::JobDetails> {
+    pub fn job_details(&self) -> std::option::Option<& crate::model::JobDetails> {
         self.job_details.as_ref()
     }
     /// <p>The language code of the language of the source text. The language must be a language supported by Amazon Translate.</p>
-    pub fn source_language_code(&self) -> std::option::Option<&str> {
+    pub fn source_language_code(&self) -> std::option::Option<& str> {
         self.source_language_code.as_deref()
     }
     /// <p>The language code of the language of the target text. The language must be a language supported by Amazon Translate.</p>
-    pub fn target_language_codes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_language_codes(&self) -> std::option::Option<& [std::string::String]> {
         self.target_language_codes.as_deref()
     }
     /// <p>A list containing the names of the terminologies applied to a translation job. Only one terminology can be applied per <code>StartTextTranslationJob</code> request at this time.</p>
-    pub fn terminology_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn terminology_names(&self) -> std::option::Option<& [std::string::String]> {
         self.terminology_names.as_deref()
     }
     /// <p>A list containing the names of the parallel data resources applied to the translation job.</p>
-    pub fn parallel_data_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn parallel_data_names(&self) -> std::option::Option<& [std::string::String]> {
         self.parallel_data_names.as_deref()
     }
     /// <p>An explanation of any errors that may have occurred during the translation job.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The time at which the translation job was submitted.</p>
-    pub fn submitted_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn submitted_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.submitted_time.as_ref()
     }
     /// <p>The time at which the translation job ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The input configuration properties that were specified when the job was requested.</p>
-    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+    pub fn input_data_config(&self) -> std::option::Option<& crate::model::InputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>The output configuration properties that were specified when the job was requested.</p>
-    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+    pub fn output_data_config(&self) -> std::option::Option<& crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that granted Amazon Translate read access to the job's input data.</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>Settings that configure the translation output.</p>
-    pub fn settings(&self) -> std::option::Option<&crate::model::TranslationSettings> {
+    pub fn settings(&self) -> std::option::Option<& crate::model::TranslationSettings> {
         self.settings.as_ref()
     }
 }
 /// See [`TextTranslationJobProperties`](crate::model::TextTranslationJobProperties).
 pub mod text_translation_job_properties {
-
+    
     /// A builder for [`TextTranslationJobProperties`](crate::model::TextTranslationJobProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1351,8 +1299,7 @@ pub mod text_translation_job_properties {
         }
         /// <p>The ID of the translation job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The user-defined name of the translation job.</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1361,8 +1308,7 @@ pub mod text_translation_job_properties {
         }
         /// <p>The user-defined name of the translation job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
         /// <p>The status of the translation job.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -1370,12 +1316,8 @@ pub mod text_translation_job_properties {
             self
         }
         /// <p>The status of the translation job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p>The number of documents successfully and unsuccessfully processed during the translation job.</p>
         pub fn job_details(mut self, input: crate::model::JobDetails) -> Self {
@@ -1383,12 +1325,8 @@ pub mod text_translation_job_properties {
             self
         }
         /// <p>The number of documents successfully and unsuccessfully processed during the translation job.</p>
-        pub fn set_job_details(
-            mut self,
-            input: std::option::Option<crate::model::JobDetails>,
-        ) -> Self {
-            self.job_details = input;
-            self
+        pub fn set_job_details(mut self, input: std::option::Option<crate::model::JobDetails>) -> Self {
+            self.job_details = input; self
         }
         /// <p>The language code of the language of the source text. The language must be a language supported by Amazon Translate.</p>
         pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1396,12 +1334,8 @@ pub mod text_translation_job_properties {
             self
         }
         /// <p>The language code of the language of the source text. The language must be a language supported by Amazon Translate.</p>
-        pub fn set_source_language_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_language_code = input;
-            self
+        pub fn set_source_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_language_code = input; self
         }
         /// Appends an item to `target_language_codes`.
         ///
@@ -1410,17 +1344,13 @@ pub mod text_translation_job_properties {
         /// <p>The language code of the language of the target text. The language must be a language supported by Amazon Translate.</p>
         pub fn target_language_codes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_language_codes.unwrap_or_default();
-            v.push(input.into());
-            self.target_language_codes = Some(v);
-            self
+                            v.push(input.into());
+                            self.target_language_codes = Some(v);
+                            self
         }
         /// <p>The language code of the language of the target text. The language must be a language supported by Amazon Translate.</p>
-        pub fn set_target_language_codes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.target_language_codes = input;
-            self
+        pub fn set_target_language_codes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.target_language_codes = input; self
         }
         /// Appends an item to `terminology_names`.
         ///
@@ -1429,17 +1359,13 @@ pub mod text_translation_job_properties {
         /// <p>A list containing the names of the terminologies applied to a translation job. Only one terminology can be applied per <code>StartTextTranslationJob</code> request at this time.</p>
         pub fn terminology_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.terminology_names.unwrap_or_default();
-            v.push(input.into());
-            self.terminology_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.terminology_names = Some(v);
+                            self
         }
         /// <p>A list containing the names of the terminologies applied to a translation job. Only one terminology can be applied per <code>StartTextTranslationJob</code> request at this time.</p>
-        pub fn set_terminology_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.terminology_names = input;
-            self
+        pub fn set_terminology_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.terminology_names = input; self
         }
         /// Appends an item to `parallel_data_names`.
         ///
@@ -1448,17 +1374,13 @@ pub mod text_translation_job_properties {
         /// <p>A list containing the names of the parallel data resources applied to the translation job.</p>
         pub fn parallel_data_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.parallel_data_names.unwrap_or_default();
-            v.push(input.into());
-            self.parallel_data_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.parallel_data_names = Some(v);
+                            self
         }
         /// <p>A list containing the names of the parallel data resources applied to the translation job.</p>
-        pub fn set_parallel_data_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.parallel_data_names = input;
-            self
+        pub fn set_parallel_data_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.parallel_data_names = input; self
         }
         /// <p>An explanation of any errors that may have occurred during the translation job.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1467,8 +1389,7 @@ pub mod text_translation_job_properties {
         }
         /// <p>An explanation of any errors that may have occurred during the translation job.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The time at which the translation job was submitted.</p>
         pub fn submitted_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1476,12 +1397,8 @@ pub mod text_translation_job_properties {
             self
         }
         /// <p>The time at which the translation job was submitted.</p>
-        pub fn set_submitted_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.submitted_time = input;
-            self
+        pub fn set_submitted_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.submitted_time = input; self
         }
         /// <p>The time at which the translation job ended.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1489,12 +1406,8 @@ pub mod text_translation_job_properties {
             self
         }
         /// <p>The time at which the translation job ended.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>The input configuration properties that were specified when the job was requested.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
@@ -1502,12 +1415,8 @@ pub mod text_translation_job_properties {
             self
         }
         /// <p>The input configuration properties that were specified when the job was requested.</p>
-        pub fn set_input_data_config(
-            mut self,
-            input: std::option::Option<crate::model::InputDataConfig>,
-        ) -> Self {
-            self.input_data_config = input;
-            self
+        pub fn set_input_data_config(mut self, input: std::option::Option<crate::model::InputDataConfig>) -> Self {
+            self.input_data_config = input; self
         }
         /// <p>The output configuration properties that were specified when the job was requested.</p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
@@ -1515,12 +1424,8 @@ pub mod text_translation_job_properties {
             self
         }
         /// <p>The output configuration properties that were specified when the job was requested.</p>
-        pub fn set_output_data_config(
-            mut self,
-            input: std::option::Option<crate::model::OutputDataConfig>,
-        ) -> Self {
-            self.output_data_config = input;
-            self
+        pub fn set_output_data_config(mut self, input: std::option::Option<crate::model::OutputDataConfig>) -> Self {
+            self.output_data_config = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that granted Amazon Translate read access to the job's input data.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1528,12 +1433,8 @@ pub mod text_translation_job_properties {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that granted Amazon Translate read access to the job's input data.</p>
-        pub fn set_data_access_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_access_role_arn = input;
-            self
+        pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_access_role_arn = input; self
         }
         /// <p>Settings that configure the translation output.</p>
         pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
@@ -1541,34 +1442,47 @@ pub mod text_translation_job_properties {
             self
         }
         /// <p>Settings that configure the translation output.</p>
-        pub fn set_settings(
-            mut self,
-            input: std::option::Option<crate::model::TranslationSettings>,
-        ) -> Self {
-            self.settings = input;
-            self
+        pub fn set_settings(mut self, input: std::option::Option<crate::model::TranslationSettings>) -> Self {
+            self.settings = input; self
         }
         /// Consumes the builder and constructs a [`TextTranslationJobProperties`](crate::model::TextTranslationJobProperties).
         pub fn build(self) -> crate::model::TextTranslationJobProperties {
             crate::model::TextTranslationJobProperties {
-                job_id: self.job_id,
-                job_name: self.job_name,
-                job_status: self.job_status,
-                job_details: self.job_details,
-                source_language_code: self.source_language_code,
-                target_language_codes: self.target_language_codes,
-                terminology_names: self.terminology_names,
-                parallel_data_names: self.parallel_data_names,
-                message: self.message,
-                submitted_time: self.submitted_time,
-                end_time: self.end_time,
-                input_data_config: self.input_data_config,
-                output_data_config: self.output_data_config,
-                data_access_role_arn: self.data_access_role_arn,
-                settings: self.settings,
+                job_id: self.job_id
+                ,
+                job_name: self.job_name
+                ,
+                job_status: self.job_status
+                ,
+                job_details: self.job_details
+                ,
+                source_language_code: self.source_language_code
+                ,
+                target_language_codes: self.target_language_codes
+                ,
+                terminology_names: self.terminology_names
+                ,
+                parallel_data_names: self.parallel_data_names
+                ,
+                message: self.message
+                ,
+                submitted_time: self.submitted_time
+                ,
+                end_time: self.end_time
+                ,
+                input_data_config: self.input_data_config
+                ,
+                output_data_config: self.output_data_config
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                settings: self.settings
+                ,
             }
         }
     }
+    
+    
 }
 impl TextTranslationJobProperties {
     /// Creates a new builder-style object to manufacture [`TextTranslationJobProperties`](crate::model::TextTranslationJobProperties).
@@ -1580,7 +1494,7 @@ impl TextTranslationJobProperties {
 /// <p>The number of documents successfully and unsuccessfully processed during a translation job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobDetails {
+pub struct JobDetails  {
     /// <p>The number of documents successfully processed during a translation job.</p>
     #[doc(hidden)]
     pub translated_documents_count: std::option::Option<i32>,
@@ -1607,7 +1521,7 @@ impl JobDetails {
 }
 /// See [`JobDetails`](crate::model::JobDetails).
 pub mod job_details {
-
+    
     /// A builder for [`JobDetails`](crate::model::JobDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1623,8 +1537,7 @@ pub mod job_details {
         }
         /// <p>The number of documents successfully processed during a translation job.</p>
         pub fn set_translated_documents_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.translated_documents_count = input;
-            self
+            self.translated_documents_count = input; self
         }
         /// <p>The number of documents that could not be processed during a translation job.</p>
         pub fn documents_with_errors_count(mut self, input: i32) -> Self {
@@ -1633,8 +1546,7 @@ pub mod job_details {
         }
         /// <p>The number of documents that could not be processed during a translation job.</p>
         pub fn set_documents_with_errors_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.documents_with_errors_count = input;
-            self
+            self.documents_with_errors_count = input; self
         }
         /// <p>The number of documents used as input in a translation job.</p>
         pub fn input_documents_count(mut self, input: i32) -> Self {
@@ -1643,18 +1555,22 @@ pub mod job_details {
         }
         /// <p>The number of documents used as input in a translation job.</p>
         pub fn set_input_documents_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.input_documents_count = input;
-            self
+            self.input_documents_count = input; self
         }
         /// Consumes the builder and constructs a [`JobDetails`](crate::model::JobDetails).
         pub fn build(self) -> crate::model::JobDetails {
             crate::model::JobDetails {
-                translated_documents_count: self.translated_documents_count,
-                documents_with_errors_count: self.documents_with_errors_count,
-                input_documents_count: self.input_documents_count,
+                translated_documents_count: self.translated_documents_count
+                ,
+                documents_with_errors_count: self.documents_with_errors_count
+                ,
+                input_documents_count: self.input_documents_count
+                ,
             }
         }
     }
+    
+    
 }
 impl JobDetails {
     /// Creates a new builder-style object to manufacture [`JobDetails`](crate::model::JobDetails).
@@ -1666,7 +1582,7 @@ impl JobDetails {
 /// <p>Provides information for filtering a list of translation jobs. For more information, see <code>ListTextTranslationJobs</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TextTranslationJobFilter {
+pub struct TextTranslationJobFilter  {
     /// <p>Filters the list of jobs by name.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
@@ -1682,25 +1598,25 @@ pub struct TextTranslationJobFilter {
 }
 impl TextTranslationJobFilter {
     /// <p>Filters the list of jobs by name.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>Filters the list of jobs based by job status.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
-    pub fn submitted_before_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn submitted_before_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.submitted_before_time.as_ref()
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
-    pub fn submitted_after_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn submitted_after_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.submitted_after_time.as_ref()
     }
 }
 /// See [`TextTranslationJobFilter`](crate::model::TextTranslationJobFilter).
 pub mod text_translation_job_filter {
-
+    
     /// A builder for [`TextTranslationJobFilter`](crate::model::TextTranslationJobFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1717,8 +1633,7 @@ pub mod text_translation_job_filter {
         }
         /// <p>Filters the list of jobs by name.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
         /// <p>Filters the list of jobs based by job status.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -1726,12 +1641,8 @@ pub mod text_translation_job_filter {
             self
         }
         /// <p>Filters the list of jobs based by job status.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
         pub fn submitted_before_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1739,12 +1650,8 @@ pub mod text_translation_job_filter {
             self
         }
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
-        pub fn set_submitted_before_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.submitted_before_time = input;
-            self
+        pub fn set_submitted_before_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.submitted_before_time = input; self
         }
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
         pub fn submitted_after_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1752,23 +1659,25 @@ pub mod text_translation_job_filter {
             self
         }
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
-        pub fn set_submitted_after_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.submitted_after_time = input;
-            self
+        pub fn set_submitted_after_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.submitted_after_time = input; self
         }
         /// Consumes the builder and constructs a [`TextTranslationJobFilter`](crate::model::TextTranslationJobFilter).
         pub fn build(self) -> crate::model::TextTranslationJobFilter {
             crate::model::TextTranslationJobFilter {
-                job_name: self.job_name,
-                job_status: self.job_status,
-                submitted_before_time: self.submitted_before_time,
-                submitted_after_time: self.submitted_after_time,
+                job_name: self.job_name
+                ,
+                job_status: self.job_status
+                ,
+                submitted_before_time: self.submitted_before_time
+                ,
+                submitted_after_time: self.submitted_after_time
+                ,
             }
         }
     }
+    
+    
 }
 impl TextTranslationJobFilter {
     /// Creates a new builder-style object to manufacture [`TextTranslationJobFilter`](crate::model::TextTranslationJobFilter).
@@ -1780,7 +1689,7 @@ impl TextTranslationJobFilter {
 /// <p>The properties of the custom terminology.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminologyProperties {
+pub struct TerminologyProperties  {
     /// <p>The name of the custom terminology.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1811,20 +1720,20 @@ pub struct TerminologyProperties {
     /// <p>The time at which the custom terminology was last update, based on the timestamp.</p>
     #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p>
-    /// <dl>
+    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p> 
+    /// <dl> 
     /// <dt>
     /// UNI
-    /// </dt>
-    /// <dd>
-    /// <p>The terminology resource has one source language (the first column in a CSV file), and all of its other languages are target languages.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The terminology resource has one source language (the first column in a CSV file), and all of its other languages are target languages.</p> 
+    /// </dd> 
     /// <dt>
     /// MULTI
-    /// </dt>
-    /// <dd>
-    /// <p>Any language in the terminology resource can be the source language.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Any language in the terminology resource can be the source language.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub directionality: std::option::Option<crate::model::Directionality>,
@@ -1840,27 +1749,27 @@ pub struct TerminologyProperties {
 }
 impl TerminologyProperties {
     /// <p>The name of the custom terminology.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the custom terminology properties.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the custom terminology. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The language code for the source text of the translation request for which the custom terminology is being used.</p>
-    pub fn source_language_code(&self) -> std::option::Option<&str> {
+    pub fn source_language_code(&self) -> std::option::Option<& str> {
         self.source_language_code.as_deref()
     }
     /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
-    pub fn target_language_codes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_language_codes(&self) -> std::option::Option<& [std::string::String]> {
         self.target_language_codes.as_deref()
     }
     /// <p>The encryption key for the custom terminology.</p>
-    pub fn encryption_key(&self) -> std::option::Option<&crate::model::EncryptionKey> {
+    pub fn encryption_key(&self) -> std::option::Option<& crate::model::EncryptionKey> {
         self.encryption_key.as_ref()
     }
     /// <p>The size of the file used when importing a custom terminology.</p>
@@ -1872,33 +1781,33 @@ impl TerminologyProperties {
         self.term_count
     }
     /// <p>The time at which the custom terminology was created, based on the timestamp.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which the custom terminology was last update, based on the timestamp.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p>
-    /// <dl>
+    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p> 
+    /// <dl> 
     /// <dt>
     /// UNI
-    /// </dt>
-    /// <dd>
-    /// <p>The terminology resource has one source language (the first column in a CSV file), and all of its other languages are target languages.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The terminology resource has one source language (the first column in a CSV file), and all of its other languages are target languages.</p> 
+    /// </dd> 
     /// <dt>
     /// MULTI
-    /// </dt>
-    /// <dd>
-    /// <p>Any language in the terminology resource can be the source language.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Any language in the terminology resource can be the source language.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn directionality(&self) -> std::option::Option<&crate::model::Directionality> {
+    pub fn directionality(&self) -> std::option::Option<& crate::model::Directionality> {
         self.directionality.as_ref()
     }
     /// <p>Additional information from Amazon Translate about the terminology resource.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The number of terms in the input file that Amazon Translate skipped when you created or updated the terminology resource.</p>
@@ -1906,13 +1815,13 @@ impl TerminologyProperties {
         self.skipped_term_count
     }
     /// <p>The format of the custom terminology input file.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::TerminologyDataFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::TerminologyDataFormat> {
         self.format.as_ref()
     }
 }
 /// See [`TerminologyProperties`](crate::model::TerminologyProperties).
 pub mod terminology_properties {
-
+    
     /// A builder for [`TerminologyProperties`](crate::model::TerminologyProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1939,8 +1848,7 @@ pub mod terminology_properties {
         }
         /// <p>The name of the custom terminology.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the custom terminology properties.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1949,8 +1857,7 @@ pub mod terminology_properties {
         }
         /// <p>The description of the custom terminology properties.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the custom terminology. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1959,8 +1866,7 @@ pub mod terminology_properties {
         }
         /// <p> The Amazon Resource Name (ARN) of the custom terminology. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The language code for the source text of the translation request for which the custom terminology is being used.</p>
         pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1968,12 +1874,8 @@ pub mod terminology_properties {
             self
         }
         /// <p>The language code for the source text of the translation request for which the custom terminology is being used.</p>
-        pub fn set_source_language_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_language_code = input;
-            self
+        pub fn set_source_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_language_code = input; self
         }
         /// Appends an item to `target_language_codes`.
         ///
@@ -1982,17 +1884,13 @@ pub mod terminology_properties {
         /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
         pub fn target_language_codes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_language_codes.unwrap_or_default();
-            v.push(input.into());
-            self.target_language_codes = Some(v);
-            self
+                            v.push(input.into());
+                            self.target_language_codes = Some(v);
+                            self
         }
         /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
-        pub fn set_target_language_codes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.target_language_codes = input;
-            self
+        pub fn set_target_language_codes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.target_language_codes = input; self
         }
         /// <p>The encryption key for the custom terminology.</p>
         pub fn encryption_key(mut self, input: crate::model::EncryptionKey) -> Self {
@@ -2000,12 +1898,8 @@ pub mod terminology_properties {
             self
         }
         /// <p>The encryption key for the custom terminology.</p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionKey>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<crate::model::EncryptionKey>) -> Self {
+            self.encryption_key = input; self
         }
         /// <p>The size of the file used when importing a custom terminology.</p>
         pub fn size_bytes(mut self, input: i32) -> Self {
@@ -2014,8 +1908,7 @@ pub mod terminology_properties {
         }
         /// <p>The size of the file used when importing a custom terminology.</p>
         pub fn set_size_bytes(mut self, input: std::option::Option<i32>) -> Self {
-            self.size_bytes = input;
-            self
+            self.size_bytes = input; self
         }
         /// <p>The number of terms included in the custom terminology.</p>
         pub fn term_count(mut self, input: i32) -> Self {
@@ -2024,8 +1917,7 @@ pub mod terminology_properties {
         }
         /// <p>The number of terms included in the custom terminology.</p>
         pub fn set_term_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.term_count = input;
-            self
+            self.term_count = input; self
         }
         /// <p>The time at which the custom terminology was created, based on the timestamp.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2033,12 +1925,8 @@ pub mod terminology_properties {
             self
         }
         /// <p>The time at which the custom terminology was created, based on the timestamp.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time at which the custom terminology was last update, based on the timestamp.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2046,53 +1934,45 @@ pub mod terminology_properties {
             self
         }
         /// <p>The time at which the custom terminology was last update, based on the timestamp.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
-        /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p>
-        /// <dl>
+        /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p> 
+        /// <dl> 
         /// <dt>
         /// UNI
-        /// </dt>
-        /// <dd>
-        /// <p>The terminology resource has one source language (the first column in a CSV file), and all of its other languages are target languages.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The terminology resource has one source language (the first column in a CSV file), and all of its other languages are target languages.</p> 
+        /// </dd> 
         /// <dt>
         /// MULTI
-        /// </dt>
-        /// <dd>
-        /// <p>Any language in the terminology resource can be the source language.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Any language in the terminology resource can be the source language.</p> 
+        /// </dd> 
         /// </dl>
         pub fn directionality(mut self, input: crate::model::Directionality) -> Self {
             self.directionality = Some(input);
             self
         }
-        /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p>
-        /// <dl>
+        /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p> 
+        /// <dl> 
         /// <dt>
         /// UNI
-        /// </dt>
-        /// <dd>
-        /// <p>The terminology resource has one source language (the first column in a CSV file), and all of its other languages are target languages.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The terminology resource has one source language (the first column in a CSV file), and all of its other languages are target languages.</p> 
+        /// </dd> 
         /// <dt>
         /// MULTI
-        /// </dt>
-        /// <dd>
-        /// <p>Any language in the terminology resource can be the source language.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Any language in the terminology resource can be the source language.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_directionality(
-            mut self,
-            input: std::option::Option<crate::model::Directionality>,
-        ) -> Self {
-            self.directionality = input;
-            self
+        pub fn set_directionality(mut self, input: std::option::Option<crate::model::Directionality>) -> Self {
+            self.directionality = input; self
         }
         /// <p>Additional information from Amazon Translate about the terminology resource.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2101,8 +1981,7 @@ pub mod terminology_properties {
         }
         /// <p>Additional information from Amazon Translate about the terminology resource.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The number of terms in the input file that Amazon Translate skipped when you created or updated the terminology resource.</p>
         pub fn skipped_term_count(mut self, input: i32) -> Self {
@@ -2111,8 +1990,7 @@ pub mod terminology_properties {
         }
         /// <p>The number of terms in the input file that Amazon Translate skipped when you created or updated the terminology resource.</p>
         pub fn set_skipped_term_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.skipped_term_count = input;
-            self
+            self.skipped_term_count = input; self
         }
         /// <p>The format of the custom terminology input file.</p>
         pub fn format(mut self, input: crate::model::TerminologyDataFormat) -> Self {
@@ -2120,33 +1998,45 @@ pub mod terminology_properties {
             self
         }
         /// <p>The format of the custom terminology input file.</p>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::TerminologyDataFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::TerminologyDataFormat>) -> Self {
+            self.format = input; self
         }
         /// Consumes the builder and constructs a [`TerminologyProperties`](crate::model::TerminologyProperties).
         pub fn build(self) -> crate::model::TerminologyProperties {
             crate::model::TerminologyProperties {
-                name: self.name,
-                description: self.description,
-                arn: self.arn,
-                source_language_code: self.source_language_code,
-                target_language_codes: self.target_language_codes,
-                encryption_key: self.encryption_key,
-                size_bytes: self.size_bytes,
-                term_count: self.term_count,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
-                directionality: self.directionality,
-                message: self.message,
-                skipped_term_count: self.skipped_term_count,
-                format: self.format,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                ,
+                source_language_code: self.source_language_code
+                ,
+                target_language_codes: self.target_language_codes
+                ,
+                encryption_key: self.encryption_key
+                ,
+                size_bytes: self.size_bytes
+                ,
+                term_count: self.term_count
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                directionality: self.directionality
+                ,
+                message: self.message
+                ,
+                skipped_term_count: self.skipped_term_count
+                ,
+                format: self.format
+                ,
             }
         }
     }
+    
+    
 }
 impl TerminologyProperties {
     /// Creates a new builder-style object to manufacture [`TerminologyProperties`](crate::model::TerminologyProperties).
@@ -2161,9 +2051,9 @@ impl TerminologyProperties {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let terminologydataformat = unimplemented!();
 /// match terminologydataformat {
@@ -2186,22 +2076,14 @@ impl TerminologyProperties {
 /// Specifically, when `terminologydataformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TerminologyDataFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TerminologyDataFormat {
     #[allow(missing_docs)] // documentation missing in model
     Csv,
@@ -2210,7 +2092,7 @@ pub enum TerminologyDataFormat {
     #[allow(missing_docs)] // documentation missing in model
     Tsv,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TerminologyDataFormat {
     fn from(s: &str) -> Self {
@@ -2218,19 +2100,17 @@ impl std::convert::From<&str> for TerminologyDataFormat {
             "CSV" => TerminologyDataFormat::Csv,
             "TMX" => TerminologyDataFormat::Tmx,
             "TSV" => TerminologyDataFormat::Tsv,
-            other => {
-                TerminologyDataFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => TerminologyDataFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TerminologyDataFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TerminologyDataFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TerminologyDataFormat::from(s))
+                }
+            }
 impl TerminologyDataFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2238,12 +2118,14 @@ impl TerminologyDataFormat {
             TerminologyDataFormat::Csv => "CSV",
             TerminologyDataFormat::Tmx => "TMX",
             TerminologyDataFormat::Tsv => "TSV",
-            TerminologyDataFormat::Unknown(value) => value.as_str(),
+            TerminologyDataFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CSV", "TMX", "TSV"]
+        &[
+            "CSV", "TMX", "TSV"
+        ]
     }
 }
 impl AsRef<str> for TerminologyDataFormat {
@@ -2258,9 +2140,9 @@ impl AsRef<str> for TerminologyDataFormat {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let directionality = unimplemented!();
 /// match directionality {
@@ -2282,58 +2164,52 @@ impl AsRef<str> for TerminologyDataFormat {
 /// Specifically, when `directionality` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Directionality::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Directionality {
     #[allow(missing_docs)] // documentation missing in model
     Multi,
     #[allow(missing_docs)] // documentation missing in model
     Uni,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Directionality {
     fn from(s: &str) -> Self {
         match s {
             "MULTI" => Directionality::Multi,
             "UNI" => Directionality::Uni,
-            other => Directionality::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Directionality::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Directionality {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Directionality::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Directionality::from(s))
+                }
+            }
 impl Directionality {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Directionality::Multi => "MULTI",
             Directionality::Uni => "UNI",
-            Directionality::Unknown(value) => value.as_str(),
+            Directionality::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MULTI", "UNI"]
+        &[
+            "MULTI", "UNI"
+        ]
     }
 }
 impl AsRef<str> for Directionality {
@@ -2345,7 +2221,7 @@ impl AsRef<str> for Directionality {
 /// <p>The properties of a parallel data resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParallelDataProperties {
+pub struct ParallelDataProperties  {
     /// <p>The custom name assigned to the parallel data resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2400,35 +2276,35 @@ pub struct ParallelDataProperties {
 }
 impl ParallelDataProperties {
     /// <p>The custom name assigned to the parallel data resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the parallel data resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The description assigned to the parallel data resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the parallel data resource. When the parallel data is ready for you to use, the status is <code>ACTIVE</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ParallelDataStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ParallelDataStatus> {
         self.status.as_ref()
     }
     /// <p>The source language of the translations in the parallel data file.</p>
-    pub fn source_language_code(&self) -> std::option::Option<&str> {
+    pub fn source_language_code(&self) -> std::option::Option<& str> {
         self.source_language_code.as_deref()
     }
     /// <p>The language codes for the target languages available in the parallel data file. All possible target languages are returned as an array.</p>
-    pub fn target_language_codes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_language_codes(&self) -> std::option::Option<& [std::string::String]> {
         self.target_language_codes.as_deref()
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    pub fn parallel_data_config(&self) -> std::option::Option<&crate::model::ParallelDataConfig> {
+    pub fn parallel_data_config(&self) -> std::option::Option<& crate::model::ParallelDataConfig> {
         self.parallel_data_config.as_ref()
     }
     /// <p>Additional information from Amazon Translate about the parallel data resource. </p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input file. This number includes only the characters in your translation examples. It does not include characters that are used to format your file. For example, if you provided a Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
@@ -2448,31 +2324,29 @@ impl ParallelDataProperties {
         self.skipped_record_count
     }
     /// <p>The encryption key used to encrypt this object.</p>
-    pub fn encryption_key(&self) -> std::option::Option<&crate::model::EncryptionKey> {
+    pub fn encryption_key(&self) -> std::option::Option<& crate::model::EncryptionKey> {
         self.encryption_key.as_ref()
     }
     /// <p>The time at which the parallel data resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which the parallel data resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The status of the most recent update attempt for the parallel data resource.</p>
-    pub fn latest_update_attempt_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ParallelDataStatus> {
+    pub fn latest_update_attempt_status(&self) -> std::option::Option<& crate::model::ParallelDataStatus> {
         self.latest_update_attempt_status.as_ref()
     }
     /// <p>The time that the most recent update was attempted.</p>
-    pub fn latest_update_attempt_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_update_attempt_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.latest_update_attempt_at.as_ref()
     }
 }
 /// See [`ParallelDataProperties`](crate::model::ParallelDataProperties).
 pub mod parallel_data_properties {
-
+    
     /// A builder for [`ParallelDataProperties`](crate::model::ParallelDataProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2491,8 +2365,7 @@ pub mod parallel_data_properties {
         pub(crate) encryption_key: std::option::Option<crate::model::EncryptionKey>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) latest_update_attempt_status:
-            std::option::Option<crate::model::ParallelDataStatus>,
+        pub(crate) latest_update_attempt_status: std::option::Option<crate::model::ParallelDataStatus>,
         pub(crate) latest_update_attempt_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
@@ -2503,8 +2376,7 @@ pub mod parallel_data_properties {
         }
         /// <p>The custom name assigned to the parallel data resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the parallel data resource.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2513,8 +2385,7 @@ pub mod parallel_data_properties {
         }
         /// <p>The Amazon Resource Name (ARN) of the parallel data resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The description assigned to the parallel data resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2523,8 +2394,7 @@ pub mod parallel_data_properties {
         }
         /// <p>The description assigned to the parallel data resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The status of the parallel data resource. When the parallel data is ready for you to use, the status is <code>ACTIVE</code>.</p>
         pub fn status(mut self, input: crate::model::ParallelDataStatus) -> Self {
@@ -2532,12 +2402,8 @@ pub mod parallel_data_properties {
             self
         }
         /// <p>The status of the parallel data resource. When the parallel data is ready for you to use, the status is <code>ACTIVE</code>.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ParallelDataStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ParallelDataStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The source language of the translations in the parallel data file.</p>
         pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2545,12 +2411,8 @@ pub mod parallel_data_properties {
             self
         }
         /// <p>The source language of the translations in the parallel data file.</p>
-        pub fn set_source_language_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_language_code = input;
-            self
+        pub fn set_source_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_language_code = input; self
         }
         /// Appends an item to `target_language_codes`.
         ///
@@ -2559,17 +2421,13 @@ pub mod parallel_data_properties {
         /// <p>The language codes for the target languages available in the parallel data file. All possible target languages are returned as an array.</p>
         pub fn target_language_codes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_language_codes.unwrap_or_default();
-            v.push(input.into());
-            self.target_language_codes = Some(v);
-            self
+                            v.push(input.into());
+                            self.target_language_codes = Some(v);
+                            self
         }
         /// <p>The language codes for the target languages available in the parallel data file. All possible target languages are returned as an array.</p>
-        pub fn set_target_language_codes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.target_language_codes = input;
-            self
+        pub fn set_target_language_codes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.target_language_codes = input; self
         }
         /// <p>Specifies the format and S3 location of the parallel data input file.</p>
         pub fn parallel_data_config(mut self, input: crate::model::ParallelDataConfig) -> Self {
@@ -2577,12 +2435,8 @@ pub mod parallel_data_properties {
             self
         }
         /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-        pub fn set_parallel_data_config(
-            mut self,
-            input: std::option::Option<crate::model::ParallelDataConfig>,
-        ) -> Self {
-            self.parallel_data_config = input;
-            self
+        pub fn set_parallel_data_config(mut self, input: std::option::Option<crate::model::ParallelDataConfig>) -> Self {
+            self.parallel_data_config = input; self
         }
         /// <p>Additional information from Amazon Translate about the parallel data resource. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2591,8 +2445,7 @@ pub mod parallel_data_properties {
         }
         /// <p>Additional information from Amazon Translate about the parallel data resource. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input file. This number includes only the characters in your translation examples. It does not include characters that are used to format your file. For example, if you provided a Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
         pub fn imported_data_size(mut self, input: i64) -> Self {
@@ -2601,8 +2454,7 @@ pub mod parallel_data_properties {
         }
         /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input file. This number includes only the characters in your translation examples. It does not include characters that are used to format your file. For example, if you provided a Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
         pub fn set_imported_data_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.imported_data_size = input;
-            self
+            self.imported_data_size = input; self
         }
         /// <p>The number of records successfully imported from the parallel data input file.</p>
         pub fn imported_record_count(mut self, input: i64) -> Self {
@@ -2611,8 +2463,7 @@ pub mod parallel_data_properties {
         }
         /// <p>The number of records successfully imported from the parallel data input file.</p>
         pub fn set_imported_record_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.imported_record_count = input;
-            self
+            self.imported_record_count = input; self
         }
         /// <p>The number of records unsuccessfully imported from the parallel data input file.</p>
         pub fn failed_record_count(mut self, input: i64) -> Self {
@@ -2621,8 +2472,7 @@ pub mod parallel_data_properties {
         }
         /// <p>The number of records unsuccessfully imported from the parallel data input file.</p>
         pub fn set_failed_record_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.failed_record_count = input;
-            self
+            self.failed_record_count = input; self
         }
         /// <p>The number of items in the input file that Amazon Translate skipped when you created or updated the parallel data resource. For example, Amazon Translate skips empty records, empty target texts, and empty lines.</p>
         pub fn skipped_record_count(mut self, input: i64) -> Self {
@@ -2631,8 +2481,7 @@ pub mod parallel_data_properties {
         }
         /// <p>The number of items in the input file that Amazon Translate skipped when you created or updated the parallel data resource. For example, Amazon Translate skips empty records, empty target texts, and empty lines.</p>
         pub fn set_skipped_record_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.skipped_record_count = input;
-            self
+            self.skipped_record_count = input; self
         }
         /// <p>The encryption key used to encrypt this object.</p>
         pub fn encryption_key(mut self, input: crate::model::EncryptionKey) -> Self {
@@ -2640,12 +2489,8 @@ pub mod parallel_data_properties {
             self
         }
         /// <p>The encryption key used to encrypt this object.</p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionKey>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<crate::model::EncryptionKey>) -> Self {
+            self.encryption_key = input; self
         }
         /// <p>The time at which the parallel data resource was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2653,12 +2498,8 @@ pub mod parallel_data_properties {
             self
         }
         /// <p>The time at which the parallel data resource was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time at which the parallel data resource was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2666,28 +2507,17 @@ pub mod parallel_data_properties {
             self
         }
         /// <p>The time at which the parallel data resource was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// <p>The status of the most recent update attempt for the parallel data resource.</p>
-        pub fn latest_update_attempt_status(
-            mut self,
-            input: crate::model::ParallelDataStatus,
-        ) -> Self {
+        pub fn latest_update_attempt_status(mut self, input: crate::model::ParallelDataStatus) -> Self {
             self.latest_update_attempt_status = Some(input);
             self
         }
         /// <p>The status of the most recent update attempt for the parallel data resource.</p>
-        pub fn set_latest_update_attempt_status(
-            mut self,
-            input: std::option::Option<crate::model::ParallelDataStatus>,
-        ) -> Self {
-            self.latest_update_attempt_status = input;
-            self
+        pub fn set_latest_update_attempt_status(mut self, input: std::option::Option<crate::model::ParallelDataStatus>) -> Self {
+            self.latest_update_attempt_status = input; self
         }
         /// <p>The time that the most recent update was attempted.</p>
         pub fn latest_update_attempt_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2695,36 +2525,51 @@ pub mod parallel_data_properties {
             self
         }
         /// <p>The time that the most recent update was attempted.</p>
-        pub fn set_latest_update_attempt_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.latest_update_attempt_at = input;
-            self
+        pub fn set_latest_update_attempt_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.latest_update_attempt_at = input; self
         }
         /// Consumes the builder and constructs a [`ParallelDataProperties`](crate::model::ParallelDataProperties).
         pub fn build(self) -> crate::model::ParallelDataProperties {
             crate::model::ParallelDataProperties {
-                name: self.name,
-                arn: self.arn,
-                description: self.description,
-                status: self.status,
-                source_language_code: self.source_language_code,
-                target_language_codes: self.target_language_codes,
-                parallel_data_config: self.parallel_data_config,
-                message: self.message,
-                imported_data_size: self.imported_data_size,
-                imported_record_count: self.imported_record_count,
-                failed_record_count: self.failed_record_count,
-                skipped_record_count: self.skipped_record_count,
-                encryption_key: self.encryption_key,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
-                latest_update_attempt_status: self.latest_update_attempt_status,
-                latest_update_attempt_at: self.latest_update_attempt_at,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                source_language_code: self.source_language_code
+                ,
+                target_language_codes: self.target_language_codes
+                ,
+                parallel_data_config: self.parallel_data_config
+                ,
+                message: self.message
+                ,
+                imported_data_size: self.imported_data_size
+                ,
+                imported_record_count: self.imported_record_count
+                ,
+                failed_record_count: self.failed_record_count
+                ,
+                skipped_record_count: self.skipped_record_count
+                ,
+                encryption_key: self.encryption_key
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                latest_update_attempt_status: self.latest_update_attempt_status
+                ,
+                latest_update_attempt_at: self.latest_update_attempt_at
+                ,
             }
         }
     }
+    
+    
 }
 impl ParallelDataProperties {
     /// Creates a new builder-style object to manufacture [`ParallelDataProperties`](crate::model::ParallelDataProperties).
@@ -2739,9 +2584,9 @@ impl ParallelDataProperties {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let displaylanguagecode = unimplemented!();
 /// match displaylanguagecode {
@@ -2771,22 +2616,14 @@ impl ParallelDataProperties {
 /// Specifically, when `displaylanguagecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DisplayLanguageCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DisplayLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     De,
@@ -2809,7 +2646,7 @@ pub enum DisplayLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     ZhTw,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DisplayLanguageCode {
     fn from(s: &str) -> Self {
@@ -2824,19 +2661,17 @@ impl std::convert::From<&str> for DisplayLanguageCode {
             "pt" => DisplayLanguageCode::Pt,
             "zh" => DisplayLanguageCode::Zh,
             "zh-TW" => DisplayLanguageCode::ZhTw,
-            other => {
-                DisplayLanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DisplayLanguageCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DisplayLanguageCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DisplayLanguageCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DisplayLanguageCode::from(s))
+                }
+            }
 impl DisplayLanguageCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2851,13 +2686,13 @@ impl DisplayLanguageCode {
             DisplayLanguageCode::Pt => "pt",
             DisplayLanguageCode::Zh => "zh",
             DisplayLanguageCode::ZhTw => "zh-TW",
-            DisplayLanguageCode::Unknown(value) => value.as_str(),
+            DisplayLanguageCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "de", "en", "es", "fr", "it", "ja", "ko", "pt", "zh", "zh-TW",
+            "de", "en", "es", "fr", "it", "ja", "ko", "pt", "zh", "zh-TW"
         ]
     }
 }
@@ -2870,7 +2705,7 @@ impl AsRef<str> for DisplayLanguageCode {
 /// <p>A supported language.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Language {
+pub struct Language  {
     /// <p>Language name of the supported language.</p>
     #[doc(hidden)]
     pub language_name: std::option::Option<std::string::String>,
@@ -2880,17 +2715,17 @@ pub struct Language {
 }
 impl Language {
     /// <p>Language name of the supported language.</p>
-    pub fn language_name(&self) -> std::option::Option<&str> {
+    pub fn language_name(&self) -> std::option::Option<& str> {
         self.language_name.as_deref()
     }
     /// <p>Language code for the supported language.</p>
-    pub fn language_code(&self) -> std::option::Option<&str> {
+    pub fn language_code(&self) -> std::option::Option<& str> {
         self.language_code.as_deref()
     }
 }
 /// See [`Language`](crate::model::Language).
 pub mod language {
-
+    
     /// A builder for [`Language`](crate::model::Language).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2904,12 +2739,8 @@ pub mod language {
             self
         }
         /// <p>Language name of the supported language.</p>
-        pub fn set_language_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.language_name = input;
-            self
+        pub fn set_language_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.language_name = input; self
         }
         /// <p>Language code for the supported language.</p>
         pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2917,21 +2748,21 @@ pub mod language {
             self
         }
         /// <p>Language code for the supported language.</p>
-        pub fn set_language_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.language_code = input;
-            self
+        pub fn set_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.language_code = input; self
         }
         /// Consumes the builder and constructs a [`Language`](crate::model::Language).
         pub fn build(self) -> crate::model::Language {
             crate::model::Language {
-                language_name: self.language_name,
-                language_code: self.language_code,
+                language_name: self.language_name
+                ,
+                language_code: self.language_code
+                ,
             }
         }
     }
+    
+    
 }
 impl Language {
     /// Creates a new builder-style object to manufacture [`Language`](crate::model::Language).
@@ -2943,35 +2774,35 @@ impl Language {
 /// <p>The location of the custom terminology data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminologyDataLocation {
+pub struct TerminologyDataLocation  {
     /// <p>The repository type for the custom terminology data.</p>
     #[doc(hidden)]
     pub repository_type: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
-    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
-    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important> 
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p> 
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p> 
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p> 
     /// </important>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl TerminologyDataLocation {
     /// <p>The repository type for the custom terminology data.</p>
-    pub fn repository_type(&self) -> std::option::Option<&str> {
+    pub fn repository_type(&self) -> std::option::Option<& str> {
         self.repository_type.as_deref()
     }
-    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
-    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
-    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important> 
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p> 
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p> 
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p> 
     /// </important>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
 }
 /// See [`TerminologyDataLocation`](crate::model::TerminologyDataLocation).
 pub mod terminology_data_location {
-
+    
     /// A builder for [`TerminologyDataLocation`](crate::model::TerminologyDataLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2985,39 +2816,38 @@ pub mod terminology_data_location {
             self
         }
         /// <p>The repository type for the custom terminology data.</p>
-        pub fn set_repository_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_type = input;
-            self
+        pub fn set_repository_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_type = input; self
         }
-        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important>
-        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
-        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
-        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important> 
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p> 
+        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p> 
+        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p> 
         /// </important>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important>
-        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
-        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
-        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration .</p> <important> 
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p> 
+        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p> 
+        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p> 
         /// </important>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// Consumes the builder and constructs a [`TerminologyDataLocation`](crate::model::TerminologyDataLocation).
         pub fn build(self) -> crate::model::TerminologyDataLocation {
             crate::model::TerminologyDataLocation {
-                repository_type: self.repository_type,
-                location: self.location,
+                repository_type: self.repository_type
+                ,
+                location: self.location
+                ,
             }
         }
     }
+    
+    
 }
 impl TerminologyDataLocation {
     /// Creates a new builder-style object to manufacture [`TerminologyDataLocation`](crate::model::TerminologyDataLocation).
@@ -3029,62 +2859,62 @@ impl TerminologyDataLocation {
 /// <p>The data associated with the custom terminology. For information about the custom terminology file, see <a href="https://docs.aws.amazon.com/translate/latest/dg/creating-custom-terminology.html"> Creating a Custom Terminology</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TerminologyData {
+pub struct TerminologyData  {
     /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
     #[doc(hidden)]
     pub file: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The data format of the custom terminology.</p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::model::TerminologyDataFormat>,
-    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
-    /// <dl>
+    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p> 
+    /// <dl> 
     /// <dt>
     /// UNI
-    /// </dt>
-    /// <dd>
-    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p> 
+    /// </dd> 
     /// <dt>
     /// MULTI
-    /// </dt>
-    /// <dd>
-    /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains English and Spanish terms, it can be used for jobs that translate English to Spanish and Spanish to English.</p>
-    /// </dd>
-    /// </dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains English and Spanish terms, it can be used for jobs that translate English to Spanish and Spanish to English.</p> 
+    /// </dd> 
+    /// </dl> 
     /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
     #[doc(hidden)]
     pub directionality: std::option::Option<crate::model::Directionality>,
 }
 impl TerminologyData {
     /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
-    pub fn file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn file(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.file.as_ref()
     }
     /// <p>The data format of the custom terminology.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::TerminologyDataFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::TerminologyDataFormat> {
         self.format.as_ref()
     }
-    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
-    /// <dl>
+    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p> 
+    /// <dl> 
     /// <dt>
     /// UNI
-    /// </dt>
-    /// <dd>
-    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p> 
+    /// </dd> 
     /// <dt>
     /// MULTI
-    /// </dt>
-    /// <dd>
-    /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains English and Spanish terms, it can be used for jobs that translate English to Spanish and Spanish to English.</p>
-    /// </dd>
-    /// </dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains English and Spanish terms, it can be used for jobs that translate English to Spanish and Spanish to English.</p> 
+    /// </dd> 
+    /// </dl> 
     /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
-    pub fn directionality(&self) -> std::option::Option<&crate::model::Directionality> {
+    pub fn directionality(&self) -> std::option::Option<& crate::model::Directionality> {
         self.directionality.as_ref()
     }
 }
-impl std::fmt::Debug for TerminologyData {
+impl  std::fmt::Debug for TerminologyData  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminologyData");
         formatter.field("file", &"*** Sensitive Data Redacted ***");
@@ -3095,7 +2925,7 @@ impl std::fmt::Debug for TerminologyData {
 }
 /// See [`TerminologyData`](crate::model::TerminologyData).
 pub mod terminology_data {
-
+    
     /// A builder for [`TerminologyData`](crate::model::TerminologyData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3111,8 +2941,7 @@ pub mod terminology_data {
         }
         /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
         pub fn set_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.file = input;
-            self
+            self.file = input; self
         }
         /// <p>The data format of the custom terminology.</p>
         pub fn format(mut self, input: crate::model::TerminologyDataFormat) -> Self {
@@ -3120,62 +2949,57 @@ pub mod terminology_data {
             self
         }
         /// <p>The data format of the custom terminology.</p>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::TerminologyDataFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::TerminologyDataFormat>) -> Self {
+            self.format = input; self
         }
-        /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
-        /// <dl>
+        /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p> 
+        /// <dl> 
         /// <dt>
         /// UNI
-        /// </dt>
-        /// <dd>
-        /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p> 
+        /// </dd> 
         /// <dt>
         /// MULTI
-        /// </dt>
-        /// <dd>
-        /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains English and Spanish terms, it can be used for jobs that translate English to Spanish and Spanish to English.</p>
-        /// </dd>
-        /// </dl>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains English and Spanish terms, it can be used for jobs that translate English to Spanish and Spanish to English.</p> 
+        /// </dd> 
+        /// </dl> 
         /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
         pub fn directionality(mut self, input: crate::model::Directionality) -> Self {
             self.directionality = Some(input);
             self
         }
-        /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
-        /// <dl>
+        /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p> 
+        /// <dl> 
         /// <dt>
         /// UNI
-        /// </dt>
-        /// <dd>
-        /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p> 
+        /// </dd> 
         /// <dt>
         /// MULTI
-        /// </dt>
-        /// <dd>
-        /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains English and Spanish terms, it can be used for jobs that translate English to Spanish and Spanish to English.</p>
-        /// </dd>
-        /// </dl>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains English and Spanish terms, it can be used for jobs that translate English to Spanish and Spanish to English.</p> 
+        /// </dd> 
+        /// </dl> 
         /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
-        pub fn set_directionality(
-            mut self,
-            input: std::option::Option<crate::model::Directionality>,
-        ) -> Self {
-            self.directionality = input;
-            self
+        pub fn set_directionality(mut self, input: std::option::Option<crate::model::Directionality>) -> Self {
+            self.directionality = input; self
         }
         /// Consumes the builder and constructs a [`TerminologyData`](crate::model::TerminologyData).
         pub fn build(self) -> crate::model::TerminologyData {
             crate::model::TerminologyData {
-                file: self.file,
-                format: self.format,
-                directionality: self.directionality,
+                file: self.file
+                ,
+                format: self.format
+                ,
+                directionality: self.directionality
+                ,
             }
         }
     }
@@ -3188,6 +3012,8 @@ pub mod terminology_data {
             formatter.finish()
         }
     }
+    
+    
 }
 impl TerminologyData {
     /// Creates a new builder-style object to manufacture [`TerminologyData`](crate::model::TerminologyData).
@@ -3202,9 +3028,9 @@ impl TerminologyData {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mergestrategy = unimplemented!();
 /// match mergestrategy {
@@ -3225,54 +3051,48 @@ impl TerminologyData {
 /// Specifically, when `mergestrategy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MergeStrategy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MergeStrategy {
     #[allow(missing_docs)] // documentation missing in model
     Overwrite,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MergeStrategy {
     fn from(s: &str) -> Self {
         match s {
             "OVERWRITE" => MergeStrategy::Overwrite,
-            other => MergeStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MergeStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MergeStrategy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MergeStrategy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MergeStrategy::from(s))
+                }
+            }
 impl MergeStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MergeStrategy::Overwrite => "OVERWRITE",
-            MergeStrategy::Unknown(value) => value.as_str(),
+            MergeStrategy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OVERWRITE"]
+        &[
+            "OVERWRITE"
+        ]
     }
 }
 impl AsRef<str> for MergeStrategy {
@@ -3284,35 +3104,35 @@ impl AsRef<str> for MergeStrategy {
 /// <p>The location of the most recent parallel data input file that was successfully imported into Amazon Translate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParallelDataDataLocation {
+pub struct ParallelDataDataLocation  {
     /// <p>Describes the repository that contains the parallel data input file.</p>
     #[doc(hidden)]
     pub repository_type: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30-minute expiration.</p> <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
-    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
-    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30-minute expiration.</p> <important> 
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p> 
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p> 
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p> 
     /// </important>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
 }
 impl ParallelDataDataLocation {
     /// <p>Describes the repository that contains the parallel data input file.</p>
-    pub fn repository_type(&self) -> std::option::Option<&str> {
+    pub fn repository_type(&self) -> std::option::Option<& str> {
         self.repository_type.as_deref()
     }
-    /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30-minute expiration.</p> <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
-    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
-    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30-minute expiration.</p> <important> 
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p> 
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p> 
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p> 
     /// </important>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
 }
 /// See [`ParallelDataDataLocation`](crate::model::ParallelDataDataLocation).
 pub mod parallel_data_data_location {
-
+    
     /// A builder for [`ParallelDataDataLocation`](crate::model::ParallelDataDataLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3326,39 +3146,38 @@ pub mod parallel_data_data_location {
             self
         }
         /// <p>Describes the repository that contains the parallel data input file.</p>
-        pub fn set_repository_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_type = input;
-            self
+        pub fn set_repository_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_type = input; self
         }
-        /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30-minute expiration.</p> <important>
-        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
-        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
-        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+        /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30-minute expiration.</p> <important> 
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p> 
+        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p> 
+        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p> 
         /// </important>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30-minute expiration.</p> <important>
-        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
-        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
-        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+        /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30-minute expiration.</p> <important> 
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p> 
+        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p> 
+        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p> 
         /// </important>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// Consumes the builder and constructs a [`ParallelDataDataLocation`](crate::model::ParallelDataDataLocation).
         pub fn build(self) -> crate::model::ParallelDataDataLocation {
             crate::model::ParallelDataDataLocation {
-                repository_type: self.repository_type,
-                location: self.location,
+                repository_type: self.repository_type
+                ,
+                location: self.location
+                ,
             }
         }
     }
+    
+    
 }
 impl ParallelDataDataLocation {
     /// Creates a new builder-style object to manufacture [`ParallelDataDataLocation`](crate::model::ParallelDataDataLocation).
@@ -3366,3 +3185,4 @@ impl ParallelDataDataLocation {
         crate::model::parallel_data_data_location::Builder::default()
     }
 }
+

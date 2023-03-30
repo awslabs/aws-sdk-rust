@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCertificateOptionsOutput {}
+pub struct UpdateCertificateOptionsOutput  {
+}
 /// See [`UpdateCertificateOptionsOutput`](crate::output::UpdateCertificateOptionsOutput).
 pub mod update_certificate_options_output {
-
+    
     /// A builder for [`UpdateCertificateOptionsOutput`](crate::output::UpdateCertificateOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateCertificateOptionsOutput`](crate::output::UpdateCertificateOptionsOutput).
         pub fn build(self) -> crate::output::UpdateCertificateOptionsOutput {
-            crate::output::UpdateCertificateOptionsOutput {}
+            crate::output::UpdateCertificateOptionsOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateCertificateOptionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCertificateOptionsOutput`](crate::output::UpdateCertificateOptionsOutput).
@@ -26,19 +31,24 @@ impl UpdateCertificateOptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResendValidationEmailOutput {}
+pub struct ResendValidationEmailOutput  {
+}
 /// See [`ResendValidationEmailOutput`](crate::output::ResendValidationEmailOutput).
 pub mod resend_validation_email_output {
-
+    
     /// A builder for [`ResendValidationEmailOutput`](crate::output::ResendValidationEmailOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ResendValidationEmailOutput`](crate::output::ResendValidationEmailOutput).
         pub fn build(self) -> crate::output::ResendValidationEmailOutput {
-            crate::output::ResendValidationEmailOutput {}
+            crate::output::ResendValidationEmailOutput {
+            }
         }
     }
+    
+    
 }
 impl ResendValidationEmailOutput {
     /// Creates a new builder-style object to manufacture [`ResendValidationEmailOutput`](crate::output::ResendValidationEmailOutput).
@@ -50,50 +60,49 @@ impl ResendValidationEmailOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestCertificateOutput {
-    /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p>
+pub struct RequestCertificateOutput  {
+    /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p> 
     /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl RequestCertificateOutput {
-    /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p>
+    /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p> 
     /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
 }
 /// See [`RequestCertificateOutput`](crate::output::RequestCertificateOutput).
 pub mod request_certificate_output {
-
+    
     /// A builder for [`RequestCertificateOutput`](crate::output::RequestCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p>
+        /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p> 
         /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
             self
         }
-        /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p>
+        /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p> 
         /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
-        pub fn set_certificate_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_arn = input;
-            self
+        pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_arn = input; self
         }
         /// Consumes the builder and constructs a [`RequestCertificateOutput`](crate::output::RequestCertificateOutput).
         pub fn build(self) -> crate::output::RequestCertificateOutput {
             crate::output::RequestCertificateOutput {
-                certificate_arn: self.certificate_arn,
+                certificate_arn: self.certificate_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl RequestCertificateOutput {
     /// Creates a new builder-style object to manufacture [`RequestCertificateOutput`](crate::output::RequestCertificateOutput).
@@ -105,19 +114,24 @@ impl RequestCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RenewCertificateOutput {}
+pub struct RenewCertificateOutput  {
+}
 /// See [`RenewCertificateOutput`](crate::output::RenewCertificateOutput).
 pub mod renew_certificate_output {
-
+    
     /// A builder for [`RenewCertificateOutput`](crate::output::RenewCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RenewCertificateOutput`](crate::output::RenewCertificateOutput).
         pub fn build(self) -> crate::output::RenewCertificateOutput {
-            crate::output::RenewCertificateOutput {}
+            crate::output::RenewCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl RenewCertificateOutput {
     /// Creates a new builder-style object to manufacture [`RenewCertificateOutput`](crate::output::RenewCertificateOutput).
@@ -129,19 +143,24 @@ impl RenewCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsFromCertificateOutput {}
+pub struct RemoveTagsFromCertificateOutput  {
+}
 /// See [`RemoveTagsFromCertificateOutput`](crate::output::RemoveTagsFromCertificateOutput).
 pub mod remove_tags_from_certificate_output {
-
+    
     /// A builder for [`RemoveTagsFromCertificateOutput`](crate::output::RemoveTagsFromCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsFromCertificateOutput`](crate::output::RemoveTagsFromCertificateOutput).
         pub fn build(self) -> crate::output::RemoveTagsFromCertificateOutput {
-            crate::output::RemoveTagsFromCertificateOutput {}
+            crate::output::RemoveTagsFromCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveTagsFromCertificateOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromCertificateOutput`](crate::output::RemoveTagsFromCertificateOutput).
@@ -153,19 +172,24 @@ impl RemoveTagsFromCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccountConfigurationOutput {}
+pub struct PutAccountConfigurationOutput  {
+}
 /// See [`PutAccountConfigurationOutput`](crate::output::PutAccountConfigurationOutput).
 pub mod put_account_configuration_output {
-
+    
     /// A builder for [`PutAccountConfigurationOutput`](crate::output::PutAccountConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutAccountConfigurationOutput`](crate::output::PutAccountConfigurationOutput).
         pub fn build(self) -> crate::output::PutAccountConfigurationOutput {
-            crate::output::PutAccountConfigurationOutput {}
+            crate::output::PutAccountConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl PutAccountConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutAccountConfigurationOutput`](crate::output::PutAccountConfigurationOutput).
@@ -177,20 +201,20 @@ impl PutAccountConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForCertificateOutput {
+pub struct ListTagsForCertificateOutput  {
     /// <p>The key-value pairs that define the applied tags.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForCertificateOutput {
     /// <p>The key-value pairs that define the applied tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForCertificateOutput`](crate::output::ListTagsForCertificateOutput).
 pub mod list_tags_for_certificate_output {
-
+    
     /// A builder for [`ListTagsForCertificateOutput`](crate::output::ListTagsForCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -204,23 +228,24 @@ pub mod list_tags_for_certificate_output {
         /// <p>The key-value pairs that define the applied tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The key-value pairs that define the applied tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForCertificateOutput`](crate::output::ListTagsForCertificateOutput).
         pub fn build(self) -> crate::output::ListTagsForCertificateOutput {
-            crate::output::ListTagsForCertificateOutput { tags: self.tags }
+            crate::output::ListTagsForCertificateOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForCertificateOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForCertificateOutput`](crate::output::ListTagsForCertificateOutput).
@@ -232,36 +257,32 @@ impl ListTagsForCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCertificatesOutput {
+pub struct ListCertificatesOutput  {
     /// <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of ACM certificates.</p>
     #[doc(hidden)]
-    pub certificate_summary_list:
-        std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
+    pub certificate_summary_list: std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
 }
 impl ListCertificatesOutput {
     /// <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of ACM certificates.</p>
-    pub fn certificate_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::CertificateSummary]> {
+    pub fn certificate_summary_list(&self) -> std::option::Option<& [crate::model::CertificateSummary]> {
         self.certificate_summary_list.as_deref()
     }
 }
 /// See [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
 pub mod list_certificates_output {
-
+    
     /// A builder for [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) certificate_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
+        pub(crate) certificate_summary_list: std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
     }
     impl Builder {
         /// <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
@@ -271,8 +292,7 @@ pub mod list_certificates_output {
         }
         /// <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `certificate_summary_list`.
         ///
@@ -281,26 +301,26 @@ pub mod list_certificates_output {
         /// <p>A list of ACM certificates.</p>
         pub fn certificate_summary_list(mut self, input: crate::model::CertificateSummary) -> Self {
             let mut v = self.certificate_summary_list.unwrap_or_default();
-            v.push(input);
-            self.certificate_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.certificate_summary_list = Some(v);
+                            self
         }
         /// <p>A list of ACM certificates.</p>
-        pub fn set_certificate_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
-        ) -> Self {
-            self.certificate_summary_list = input;
-            self
+        pub fn set_certificate_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>) -> Self {
+            self.certificate_summary_list = input; self
         }
         /// Consumes the builder and constructs a [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
         pub fn build(self) -> crate::output::ListCertificatesOutput {
             crate::output::ListCertificatesOutput {
-                next_token: self.next_token,
-                certificate_summary_list: self.certificate_summary_list,
+                next_token: self.next_token
+                ,
+                certificate_summary_list: self.certificate_summary_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
@@ -312,20 +332,20 @@ impl ListCertificatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportCertificateOutput {
+pub struct ImportCertificateOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported certificate.</p>
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl ImportCertificateOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported certificate.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
 }
 /// See [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
 pub mod import_certificate_output {
-
+    
     /// A builder for [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -338,20 +358,19 @@ pub mod import_certificate_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported certificate.</p>
-        pub fn set_certificate_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_arn = input;
-            self
+        pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_arn = input; self
         }
         /// Consumes the builder and constructs a [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
         pub fn build(self) -> crate::output::ImportCertificateOutput {
             crate::output::ImportCertificateOutput {
-                certificate_arn: self.certificate_arn,
+                certificate_arn: self.certificate_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportCertificateOutput {
     /// Creates a new builder-style object to manufacture [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
@@ -363,7 +382,7 @@ impl ImportCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCertificateOutput {
+pub struct GetCertificateOutput  {
     /// <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
@@ -373,17 +392,17 @@ pub struct GetCertificateOutput {
 }
 impl GetCertificateOutput {
     /// <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
-    pub fn certificate(&self) -> std::option::Option<&str> {
+    pub fn certificate(&self) -> std::option::Option<& str> {
         self.certificate.as_deref()
     }
     /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
-    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+    pub fn certificate_chain(&self) -> std::option::Option<& str> {
         self.certificate_chain.as_deref()
     }
 }
 /// See [`GetCertificateOutput`](crate::output::GetCertificateOutput).
 pub mod get_certificate_output {
-
+    
     /// A builder for [`GetCertificateOutput`](crate::output::GetCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -398,8 +417,7 @@ pub mod get_certificate_output {
         }
         /// <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.certificate = input;
-            self
+            self.certificate = input; self
         }
         /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
         pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -407,21 +425,21 @@ pub mod get_certificate_output {
             self
         }
         /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
-        pub fn set_certificate_chain(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_chain = input;
-            self
+        pub fn set_certificate_chain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_chain = input; self
         }
         /// Consumes the builder and constructs a [`GetCertificateOutput`](crate::output::GetCertificateOutput).
         pub fn build(self) -> crate::output::GetCertificateOutput {
             crate::output::GetCertificateOutput {
-                certificate: self.certificate,
-                certificate_chain: self.certificate_chain,
+                certificate: self.certificate
+                ,
+                certificate_chain: self.certificate_chain
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GetCertificateOutput`](crate::output::GetCertificateOutput).
@@ -433,20 +451,20 @@ impl GetCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccountConfigurationOutput {
+pub struct GetAccountConfigurationOutput  {
     /// <p>Expiration events configuration options associated with the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub expiry_events: std::option::Option<crate::model::ExpiryEventsConfiguration>,
 }
 impl GetAccountConfigurationOutput {
     /// <p>Expiration events configuration options associated with the Amazon Web Services account.</p>
-    pub fn expiry_events(&self) -> std::option::Option<&crate::model::ExpiryEventsConfiguration> {
+    pub fn expiry_events(&self) -> std::option::Option<& crate::model::ExpiryEventsConfiguration> {
         self.expiry_events.as_ref()
     }
 }
 /// See [`GetAccountConfigurationOutput`](crate::output::GetAccountConfigurationOutput).
 pub mod get_account_configuration_output {
-
+    
     /// A builder for [`GetAccountConfigurationOutput`](crate::output::GetAccountConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -459,20 +477,19 @@ pub mod get_account_configuration_output {
             self
         }
         /// <p>Expiration events configuration options associated with the Amazon Web Services account.</p>
-        pub fn set_expiry_events(
-            mut self,
-            input: std::option::Option<crate::model::ExpiryEventsConfiguration>,
-        ) -> Self {
-            self.expiry_events = input;
-            self
+        pub fn set_expiry_events(mut self, input: std::option::Option<crate::model::ExpiryEventsConfiguration>) -> Self {
+            self.expiry_events = input; self
         }
         /// Consumes the builder and constructs a [`GetAccountConfigurationOutput`](crate::output::GetAccountConfigurationOutput).
         pub fn build(self) -> crate::output::GetAccountConfigurationOutput {
             crate::output::GetAccountConfigurationOutput {
-                expiry_events: self.expiry_events,
+                expiry_events: self.expiry_events
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccountConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountConfigurationOutput`](crate::output::GetAccountConfigurationOutput).
@@ -484,7 +501,7 @@ impl GetAccountConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ExportCertificateOutput {
+pub struct ExportCertificateOutput  {
     /// <p>The base64 PEM-encoded certificate.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
@@ -497,19 +514,19 @@ pub struct ExportCertificateOutput {
 }
 impl ExportCertificateOutput {
     /// <p>The base64 PEM-encoded certificate.</p>
-    pub fn certificate(&self) -> std::option::Option<&str> {
+    pub fn certificate(&self) -> std::option::Option<& str> {
         self.certificate.as_deref()
     }
     /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
-    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+    pub fn certificate_chain(&self) -> std::option::Option<& str> {
         self.certificate_chain.as_deref()
     }
     /// <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
-    pub fn private_key(&self) -> std::option::Option<&str> {
+    pub fn private_key(&self) -> std::option::Option<& str> {
         self.private_key.as_deref()
     }
 }
-impl std::fmt::Debug for ExportCertificateOutput {
+impl  std::fmt::Debug for ExportCertificateOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportCertificateOutput");
         formatter.field("certificate", &self.certificate);
@@ -520,7 +537,7 @@ impl std::fmt::Debug for ExportCertificateOutput {
 }
 /// See [`ExportCertificateOutput`](crate::output::ExportCertificateOutput).
 pub mod export_certificate_output {
-
+    
     /// A builder for [`ExportCertificateOutput`](crate::output::ExportCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -536,8 +553,7 @@ pub mod export_certificate_output {
         }
         /// <p>The base64 PEM-encoded certificate.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.certificate = input;
-            self
+            self.certificate = input; self
         }
         /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
         pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -545,12 +561,8 @@ pub mod export_certificate_output {
             self
         }
         /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
-        pub fn set_certificate_chain(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_chain = input;
-            self
+        pub fn set_certificate_chain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_chain = input; self
         }
         /// <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
         pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -559,15 +571,17 @@ pub mod export_certificate_output {
         }
         /// <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
         pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.private_key = input;
-            self
+            self.private_key = input; self
         }
         /// Consumes the builder and constructs a [`ExportCertificateOutput`](crate::output::ExportCertificateOutput).
         pub fn build(self) -> crate::output::ExportCertificateOutput {
             crate::output::ExportCertificateOutput {
-                certificate: self.certificate,
-                certificate_chain: self.certificate_chain,
-                private_key: self.private_key,
+                certificate: self.certificate
+                ,
+                certificate_chain: self.certificate_chain
+                ,
+                private_key: self.private_key
+                ,
             }
         }
     }
@@ -580,6 +594,8 @@ pub mod export_certificate_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ExportCertificateOutput {
     /// Creates a new builder-style object to manufacture [`ExportCertificateOutput`](crate::output::ExportCertificateOutput).
@@ -591,20 +607,20 @@ impl ExportCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCertificateOutput {
+pub struct DescribeCertificateOutput  {
     /// <p>Metadata about an ACM certificate.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::CertificateDetail>,
 }
 impl DescribeCertificateOutput {
     /// <p>Metadata about an ACM certificate.</p>
-    pub fn certificate(&self) -> std::option::Option<&crate::model::CertificateDetail> {
+    pub fn certificate(&self) -> std::option::Option<& crate::model::CertificateDetail> {
         self.certificate.as_ref()
     }
 }
 /// See [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
 pub mod describe_certificate_output {
-
+    
     /// A builder for [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -617,20 +633,19 @@ pub mod describe_certificate_output {
             self
         }
         /// <p>Metadata about an ACM certificate.</p>
-        pub fn set_certificate(
-            mut self,
-            input: std::option::Option<crate::model::CertificateDetail>,
-        ) -> Self {
-            self.certificate = input;
-            self
+        pub fn set_certificate(mut self, input: std::option::Option<crate::model::CertificateDetail>) -> Self {
+            self.certificate = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
         pub fn build(self) -> crate::output::DescribeCertificateOutput {
             crate::output::DescribeCertificateOutput {
-                certificate: self.certificate,
+                certificate: self.certificate
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
@@ -642,19 +657,24 @@ impl DescribeCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCertificateOutput {}
+pub struct DeleteCertificateOutput  {
+}
 /// See [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
 pub mod delete_certificate_output {
-
+    
     /// A builder for [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
         pub fn build(self) -> crate::output::DeleteCertificateOutput {
-            crate::output::DeleteCertificateOutput {}
+            crate::output::DeleteCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
@@ -666,19 +686,24 @@ impl DeleteCertificateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsToCertificateOutput {}
+pub struct AddTagsToCertificateOutput  {
+}
 /// See [`AddTagsToCertificateOutput`](crate::output::AddTagsToCertificateOutput).
 pub mod add_tags_to_certificate_output {
-
+    
     /// A builder for [`AddTagsToCertificateOutput`](crate::output::AddTagsToCertificateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsToCertificateOutput`](crate::output::AddTagsToCertificateOutput).
         pub fn build(self) -> crate::output::AddTagsToCertificateOutput {
-            crate::output::AddTagsToCertificateOutput {}
+            crate::output::AddTagsToCertificateOutput {
+            }
         }
     }
+    
+    
 }
 impl AddTagsToCertificateOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsToCertificateOutput`](crate::output::AddTagsToCertificateOutput).
@@ -686,3 +711,4 @@ impl AddTagsToCertificateOutput {
         crate::output::add_tags_to_certificate_output::Builder::default()
     }
 }
+

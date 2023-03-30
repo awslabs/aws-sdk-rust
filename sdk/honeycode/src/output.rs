@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -26,19 +31,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -50,7 +60,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartTableDataImportJobOutput {
+pub struct StartTableDataImportJobOutput  {
     /// <p> The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request. </p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -60,17 +70,17 @@ pub struct StartTableDataImportJobOutput {
 }
 impl StartTableDataImportJobOutput {
     /// <p> The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p> The status of the import job immediately after submitting the request. </p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::TableDataImportJobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::TableDataImportJobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput).
 pub mod start_table_data_import_job_output {
-
+    
     /// A builder for [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -85,8 +95,7 @@ pub mod start_table_data_import_job_output {
         }
         /// <p> The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p> The status of the import job immediately after submitting the request. </p>
         pub fn job_status(mut self, input: crate::model::TableDataImportJobStatus) -> Self {
@@ -94,21 +103,21 @@ pub mod start_table_data_import_job_output {
             self
         }
         /// <p> The status of the import job immediately after submitting the request. </p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::TableDataImportJobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::TableDataImportJobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput).
         pub fn build(self) -> crate::output::StartTableDataImportJobOutput {
             crate::output::StartTableDataImportJobOutput {
-                job_id: self.job_id,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StartTableDataImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput).
@@ -120,7 +129,7 @@ impl StartTableDataImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryTableRowsOutput {
+pub struct QueryTableRowsOutput  {
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
     #[doc(hidden)]
     pub column_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -136,15 +145,15 @@ pub struct QueryTableRowsOutput {
 }
 impl QueryTableRowsOutput {
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
-    pub fn column_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn column_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.column_ids.as_deref()
     }
     /// <p> The list of rows in the table that match the query filter. </p>
-    pub fn rows(&self) -> std::option::Option<&[crate::model::TableRow]> {
+    pub fn rows(&self) -> std::option::Option<& [crate::model::TableRow]> {
         self.rows.as_deref()
     }
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
@@ -154,7 +163,7 @@ impl QueryTableRowsOutput {
 }
 /// See [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput).
 pub mod query_table_rows_output {
-
+    
     /// A builder for [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -171,17 +180,13 @@ pub mod query_table_rows_output {
         /// <p> The list of columns in the table whose row data is returned in the result. </p>
         pub fn column_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.column_ids.unwrap_or_default();
-            v.push(input.into());
-            self.column_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.column_ids = Some(v);
+                            self
         }
         /// <p> The list of columns in the table whose row data is returned in the result. </p>
-        pub fn set_column_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.column_ids = input;
-            self
+        pub fn set_column_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.column_ids = input; self
         }
         /// Appends an item to `rows`.
         ///
@@ -190,17 +195,13 @@ pub mod query_table_rows_output {
         /// <p> The list of rows in the table that match the query filter. </p>
         pub fn rows(mut self, input: crate::model::TableRow) -> Self {
             let mut v = self.rows.unwrap_or_default();
-            v.push(input);
-            self.rows = Some(v);
-            self
+                            v.push(input);
+                            self.rows = Some(v);
+                            self
         }
         /// <p> The list of rows in the table that match the query filter. </p>
-        pub fn set_rows(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TableRow>>,
-        ) -> Self {
-            self.rows = input;
-            self
+        pub fn set_rows(mut self, input: std::option::Option<std::vec::Vec<crate::model::TableRow>>) -> Self {
+            self.rows = input; self
         }
         /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -209,8 +210,7 @@ pub mod query_table_rows_output {
         }
         /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
         pub fn workbook_cursor(mut self, input: i64) -> Self {
@@ -219,19 +219,25 @@ pub mod query_table_rows_output {
         }
         /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
         pub fn set_workbook_cursor(mut self, input: std::option::Option<i64>) -> Self {
-            self.workbook_cursor = input;
-            self
+            self.workbook_cursor = input; self
         }
         /// Consumes the builder and constructs a [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput).
         pub fn build(self) -> crate::output::QueryTableRowsOutput {
             crate::output::QueryTableRowsOutput {
-                column_ids: self.column_ids,
-                rows: self.rows,
-                next_token: self.next_token,
-                workbook_cursor: self.workbook_cursor.unwrap_or_default(),
+                column_ids: self.column_ids
+                ,
+                rows: self.rows
+                ,
+                next_token: self.next_token
+                ,
+                workbook_cursor: self.workbook_cursor
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl QueryTableRowsOutput {
     /// Creates a new builder-style object to manufacture [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput).
@@ -243,30 +249,24 @@ impl QueryTableRowsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The resource's tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The resource's tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -274,31 +274,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The resource's tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The resource's tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -310,7 +305,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTablesOutput {
+pub struct ListTablesOutput  {
     /// <p> The list of tables in the workbook. </p>
     #[doc(hidden)]
     pub tables: std::option::Option<std::vec::Vec<crate::model::Table>>,
@@ -323,11 +318,11 @@ pub struct ListTablesOutput {
 }
 impl ListTablesOutput {
     /// <p> The list of tables in the workbook. </p>
-    pub fn tables(&self) -> std::option::Option<&[crate::model::Table]> {
+    pub fn tables(&self) -> std::option::Option<& [crate::model::Table]> {
         self.tables.as_deref()
     }
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
@@ -337,7 +332,7 @@ impl ListTablesOutput {
 }
 /// See [`ListTablesOutput`](crate::output::ListTablesOutput).
 pub mod list_tables_output {
-
+    
     /// A builder for [`ListTablesOutput`](crate::output::ListTablesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -353,17 +348,13 @@ pub mod list_tables_output {
         /// <p> The list of tables in the workbook. </p>
         pub fn tables(mut self, input: crate::model::Table) -> Self {
             let mut v = self.tables.unwrap_or_default();
-            v.push(input);
-            self.tables = Some(v);
-            self
+                            v.push(input);
+                            self.tables = Some(v);
+                            self
         }
         /// <p> The list of tables in the workbook. </p>
-        pub fn set_tables(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Table>>,
-        ) -> Self {
-            self.tables = input;
-            self
+        pub fn set_tables(mut self, input: std::option::Option<std::vec::Vec<crate::model::Table>>) -> Self {
+            self.tables = input; self
         }
         /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -372,8 +363,7 @@ pub mod list_tables_output {
         }
         /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
         pub fn workbook_cursor(mut self, input: i64) -> Self {
@@ -382,18 +372,23 @@ pub mod list_tables_output {
         }
         /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
         pub fn set_workbook_cursor(mut self, input: std::option::Option<i64>) -> Self {
-            self.workbook_cursor = input;
-            self
+            self.workbook_cursor = input; self
         }
         /// Consumes the builder and constructs a [`ListTablesOutput`](crate::output::ListTablesOutput).
         pub fn build(self) -> crate::output::ListTablesOutput {
             crate::output::ListTablesOutput {
-                tables: self.tables,
-                next_token: self.next_token,
-                workbook_cursor: self.workbook_cursor.unwrap_or_default(),
+                tables: self.tables
+                ,
+                next_token: self.next_token
+                ,
+                workbook_cursor: self.workbook_cursor
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTablesOutput {
     /// Creates a new builder-style object to manufacture [`ListTablesOutput`](crate::output::ListTablesOutput).
@@ -405,7 +400,7 @@ impl ListTablesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTableRowsOutput {
+pub struct ListTableRowsOutput  {
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
     #[doc(hidden)]
     pub column_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -424,19 +419,19 @@ pub struct ListTableRowsOutput {
 }
 impl ListTableRowsOutput {
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
-    pub fn column_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn column_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.column_ids.as_deref()
     }
     /// <p> The list of rows in the table. Note that this result is paginated, so this list contains a maximum of 100 rows. </p>
-    pub fn rows(&self) -> std::option::Option<&[crate::model::TableRow]> {
+    pub fn rows(&self) -> std::option::Option<& [crate::model::TableRow]> {
         self.rows.as_deref()
     }
     /// <p> The list of row ids included in the request that were not found in the table. </p>
-    pub fn row_ids_not_found(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn row_ids_not_found(&self) -> std::option::Option<& [std::string::String]> {
         self.row_ids_not_found.as_deref()
     }
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
@@ -446,7 +441,7 @@ impl ListTableRowsOutput {
 }
 /// See [`ListTableRowsOutput`](crate::output::ListTableRowsOutput).
 pub mod list_table_rows_output {
-
+    
     /// A builder for [`ListTableRowsOutput`](crate::output::ListTableRowsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -464,17 +459,13 @@ pub mod list_table_rows_output {
         /// <p> The list of columns in the table whose row data is returned in the result. </p>
         pub fn column_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.column_ids.unwrap_or_default();
-            v.push(input.into());
-            self.column_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.column_ids = Some(v);
+                            self
         }
         /// <p> The list of columns in the table whose row data is returned in the result. </p>
-        pub fn set_column_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.column_ids = input;
-            self
+        pub fn set_column_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.column_ids = input; self
         }
         /// Appends an item to `rows`.
         ///
@@ -483,17 +474,13 @@ pub mod list_table_rows_output {
         /// <p> The list of rows in the table. Note that this result is paginated, so this list contains a maximum of 100 rows. </p>
         pub fn rows(mut self, input: crate::model::TableRow) -> Self {
             let mut v = self.rows.unwrap_or_default();
-            v.push(input);
-            self.rows = Some(v);
-            self
+                            v.push(input);
+                            self.rows = Some(v);
+                            self
         }
         /// <p> The list of rows in the table. Note that this result is paginated, so this list contains a maximum of 100 rows. </p>
-        pub fn set_rows(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TableRow>>,
-        ) -> Self {
-            self.rows = input;
-            self
+        pub fn set_rows(mut self, input: std::option::Option<std::vec::Vec<crate::model::TableRow>>) -> Self {
+            self.rows = input; self
         }
         /// Appends an item to `row_ids_not_found`.
         ///
@@ -502,17 +489,13 @@ pub mod list_table_rows_output {
         /// <p> The list of row ids included in the request that were not found in the table. </p>
         pub fn row_ids_not_found(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.row_ids_not_found.unwrap_or_default();
-            v.push(input.into());
-            self.row_ids_not_found = Some(v);
-            self
+                            v.push(input.into());
+                            self.row_ids_not_found = Some(v);
+                            self
         }
         /// <p> The list of row ids included in the request that were not found in the table. </p>
-        pub fn set_row_ids_not_found(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.row_ids_not_found = input;
-            self
+        pub fn set_row_ids_not_found(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.row_ids_not_found = input; self
         }
         /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -521,8 +504,7 @@ pub mod list_table_rows_output {
         }
         /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
         pub fn workbook_cursor(mut self, input: i64) -> Self {
@@ -531,20 +513,27 @@ pub mod list_table_rows_output {
         }
         /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
         pub fn set_workbook_cursor(mut self, input: std::option::Option<i64>) -> Self {
-            self.workbook_cursor = input;
-            self
+            self.workbook_cursor = input; self
         }
         /// Consumes the builder and constructs a [`ListTableRowsOutput`](crate::output::ListTableRowsOutput).
         pub fn build(self) -> crate::output::ListTableRowsOutput {
             crate::output::ListTableRowsOutput {
-                column_ids: self.column_ids,
-                rows: self.rows,
-                row_ids_not_found: self.row_ids_not_found,
-                next_token: self.next_token,
-                workbook_cursor: self.workbook_cursor.unwrap_or_default(),
+                column_ids: self.column_ids
+                ,
+                rows: self.rows
+                ,
+                row_ids_not_found: self.row_ids_not_found
+                ,
+                next_token: self.next_token
+                ,
+                workbook_cursor: self.workbook_cursor
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTableRowsOutput {
     /// Creates a new builder-style object to manufacture [`ListTableRowsOutput`](crate::output::ListTableRowsOutput).
@@ -556,7 +545,7 @@ impl ListTableRowsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTableColumnsOutput {
+pub struct ListTableColumnsOutput  {
     /// <p> The list of columns in the table. </p>
     #[doc(hidden)]
     pub table_columns: std::option::Option<std::vec::Vec<crate::model::TableColumn>>,
@@ -569,11 +558,11 @@ pub struct ListTableColumnsOutput {
 }
 impl ListTableColumnsOutput {
     /// <p> The list of columns in the table. </p>
-    pub fn table_columns(&self) -> std::option::Option<&[crate::model::TableColumn]> {
+    pub fn table_columns(&self) -> std::option::Option<& [crate::model::TableColumn]> {
         self.table_columns.as_deref()
     }
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
@@ -583,7 +572,7 @@ impl ListTableColumnsOutput {
 }
 /// See [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput).
 pub mod list_table_columns_output {
-
+    
     /// A builder for [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -599,17 +588,13 @@ pub mod list_table_columns_output {
         /// <p> The list of columns in the table. </p>
         pub fn table_columns(mut self, input: crate::model::TableColumn) -> Self {
             let mut v = self.table_columns.unwrap_or_default();
-            v.push(input);
-            self.table_columns = Some(v);
-            self
+                            v.push(input);
+                            self.table_columns = Some(v);
+                            self
         }
         /// <p> The list of columns in the table. </p>
-        pub fn set_table_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TableColumn>>,
-        ) -> Self {
-            self.table_columns = input;
-            self
+        pub fn set_table_columns(mut self, input: std::option::Option<std::vec::Vec<crate::model::TableColumn>>) -> Self {
+            self.table_columns = input; self
         }
         /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -618,8 +603,7 @@ pub mod list_table_columns_output {
         }
         /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
         pub fn workbook_cursor(mut self, input: i64) -> Self {
@@ -628,18 +612,23 @@ pub mod list_table_columns_output {
         }
         /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
         pub fn set_workbook_cursor(mut self, input: std::option::Option<i64>) -> Self {
-            self.workbook_cursor = input;
-            self
+            self.workbook_cursor = input; self
         }
         /// Consumes the builder and constructs a [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput).
         pub fn build(self) -> crate::output::ListTableColumnsOutput {
             crate::output::ListTableColumnsOutput {
-                table_columns: self.table_columns,
-                next_token: self.next_token,
-                workbook_cursor: self.workbook_cursor.unwrap_or_default(),
+                table_columns: self.table_columns
+                ,
+                next_token: self.next_token
+                ,
+                workbook_cursor: self.workbook_cursor
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTableColumnsOutput {
     /// Creates a new builder-style object to manufacture [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput).
@@ -651,7 +640,7 @@ impl ListTableColumnsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvokeScreenAutomationOutput {
+pub struct InvokeScreenAutomationOutput  {
     /// <p>The updated workbook cursor after performing the automation action.</p>
     #[doc(hidden)]
     pub workbook_cursor: i64,
@@ -664,7 +653,7 @@ impl InvokeScreenAutomationOutput {
 }
 /// See [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput).
 pub mod invoke_screen_automation_output {
-
+    
     /// A builder for [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -678,16 +667,19 @@ pub mod invoke_screen_automation_output {
         }
         /// <p>The updated workbook cursor after performing the automation action.</p>
         pub fn set_workbook_cursor(mut self, input: std::option::Option<i64>) -> Self {
-            self.workbook_cursor = input;
-            self
+            self.workbook_cursor = input; self
         }
         /// Consumes the builder and constructs a [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput).
         pub fn build(self) -> crate::output::InvokeScreenAutomationOutput {
             crate::output::InvokeScreenAutomationOutput {
-                workbook_cursor: self.workbook_cursor.unwrap_or_default(),
+                workbook_cursor: self.workbook_cursor
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl InvokeScreenAutomationOutput {
     /// Creates a new builder-style object to manufacture [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput).
@@ -699,12 +691,10 @@ impl InvokeScreenAutomationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetScreenDataOutput {
+pub struct GetScreenDataOutput  {
     /// <p>A map of all the rows on the screen keyed by block name.</p>
     #[doc(hidden)]
-    pub results: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ResultSet>,
-    >,
+    pub results: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ResultSet>>,
     /// <p> Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
     #[doc(hidden)]
     pub workbook_cursor: i64,
@@ -714,10 +704,7 @@ pub struct GetScreenDataOutput {
 }
 impl GetScreenDataOutput {
     /// <p>A map of all the rows on the screen keyed by block name.</p>
-    pub fn results(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::ResultSet>>
-    {
+    pub fn results(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ResultSet>> {
         self.results.as_ref()
     }
     /// <p> Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
@@ -725,19 +712,17 @@ impl GetScreenDataOutput {
         self.workbook_cursor
     }
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the query has been loaded. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetScreenDataOutput`](crate::output::GetScreenDataOutput).
 pub mod get_screen_data_output {
-
+    
     /// A builder for [`GetScreenDataOutput`](crate::output::GetScreenDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) results: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ResultSet>,
-        >,
+        pub(crate) results: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ResultSet>>,
         pub(crate) workbook_cursor: std::option::Option<i64>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -747,25 +732,15 @@ pub mod get_screen_data_output {
         /// To override the contents of this collection use [`set_results`](Self::set_results).
         ///
         /// <p>A map of all the rows on the screen keyed by block name.</p>
-        pub fn results(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ResultSet,
-        ) -> Self {
+        pub fn results(mut self, k: impl Into<std::string::String>, v: crate::model::ResultSet) -> Self {
             let mut hash_map = self.results.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.results = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.results = Some(hash_map);
+                            self
         }
         /// <p>A map of all the rows on the screen keyed by block name.</p>
-        pub fn set_results(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ResultSet>,
-            >,
-        ) -> Self {
-            self.results = input;
-            self
+        pub fn set_results(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ResultSet>>) -> Self {
+            self.results = input; self
         }
         /// <p> Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
         pub fn workbook_cursor(mut self, input: i64) -> Self {
@@ -774,8 +749,7 @@ pub mod get_screen_data_output {
         }
         /// <p> Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
         pub fn set_workbook_cursor(mut self, input: std::option::Option<i64>) -> Self {
-            self.workbook_cursor = input;
-            self
+            self.workbook_cursor = input; self
         }
         /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the query has been loaded. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -784,18 +758,23 @@ pub mod get_screen_data_output {
         }
         /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the query has been loaded. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetScreenDataOutput`](crate::output::GetScreenDataOutput).
         pub fn build(self) -> crate::output::GetScreenDataOutput {
             crate::output::GetScreenDataOutput {
-                results: self.results,
-                workbook_cursor: self.workbook_cursor.unwrap_or_default(),
-                next_token: self.next_token,
+                results: self.results
+                ,
+                workbook_cursor: self.workbook_cursor
+                    .unwrap_or_default()
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetScreenDataOutput {
     /// Creates a new builder-style object to manufacture [`GetScreenDataOutput`](crate::output::GetScreenDataOutput).
@@ -807,7 +786,7 @@ impl GetScreenDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTableDataImportJobOutput {
+pub struct DescribeTableDataImportJobOutput  {
     /// <p> The current status of the import job. </p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::TableDataImportJobStatus>,
@@ -823,25 +802,25 @@ pub struct DescribeTableDataImportJobOutput {
 }
 impl DescribeTableDataImportJobOutput {
     /// <p> The current status of the import job. </p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::TableDataImportJobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::TableDataImportJobStatus> {
         self.job_status.as_ref()
     }
     /// <p> A message providing more details about the current status of the import job. </p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p> The metadata about the job that was submitted for import. </p>
-    pub fn job_metadata(&self) -> std::option::Option<&crate::model::TableDataImportJobMetadata> {
+    pub fn job_metadata(&self) -> std::option::Option<& crate::model::TableDataImportJobMetadata> {
         self.job_metadata.as_ref()
     }
     /// <p> If job status is failed, error code to understand reason for the failure. </p>
-    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.error_code.as_ref()
     }
 }
 /// See [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput).
 pub mod describe_table_data_import_job_output {
-
+    
     /// A builder for [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -857,12 +836,8 @@ pub mod describe_table_data_import_job_output {
             self
         }
         /// <p> The current status of the import job. </p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::TableDataImportJobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::TableDataImportJobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p> A message providing more details about the current status of the import job. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -871,8 +846,7 @@ pub mod describe_table_data_import_job_output {
         }
         /// <p> A message providing more details about the current status of the import job. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p> The metadata about the job that was submitted for import. </p>
         pub fn job_metadata(mut self, input: crate::model::TableDataImportJobMetadata) -> Self {
@@ -880,12 +854,8 @@ pub mod describe_table_data_import_job_output {
             self
         }
         /// <p> The metadata about the job that was submitted for import. </p>
-        pub fn set_job_metadata(
-            mut self,
-            input: std::option::Option<crate::model::TableDataImportJobMetadata>,
-        ) -> Self {
-            self.job_metadata = input;
-            self
+        pub fn set_job_metadata(mut self, input: std::option::Option<crate::model::TableDataImportJobMetadata>) -> Self {
+            self.job_metadata = input; self
         }
         /// <p> If job status is failed, error code to understand reason for the failure. </p>
         pub fn error_code(mut self, input: crate::model::ErrorCode) -> Self {
@@ -893,23 +863,25 @@ pub mod describe_table_data_import_job_output {
             self
         }
         /// <p> If job status is failed, error code to understand reason for the failure. </p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::ErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput).
         pub fn build(self) -> crate::output::DescribeTableDataImportJobOutput {
             crate::output::DescribeTableDataImportJobOutput {
-                job_status: self.job_status,
-                message: self.message,
-                job_metadata: self.job_metadata,
-                error_code: self.error_code,
+                job_status: self.job_status
+                ,
+                message: self.message
+                ,
+                job_metadata: self.job_metadata
+                ,
+                error_code: self.error_code
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTableDataImportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput).
@@ -921,12 +893,10 @@ impl DescribeTableDataImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpsertTableRowsOutput {
+pub struct BatchUpsertTableRowsOutput  {
     /// <p> A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected. </p>
     #[doc(hidden)]
-    pub rows: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::UpsertRowsResult>,
-    >,
+    pub rows: std::option::Option<std::collections::HashMap<std::string::String, crate::model::UpsertRowsResult>>,
     /// <p>The updated workbook cursor after updating or appending rows in the table.</p>
     #[doc(hidden)]
     pub workbook_cursor: i64,
@@ -936,11 +906,7 @@ pub struct BatchUpsertTableRowsOutput {
 }
 impl BatchUpsertTableRowsOutput {
     /// <p> A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected. </p>
-    pub fn rows(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::UpsertRowsResult>,
-    > {
+    pub fn rows(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::UpsertRowsResult>> {
         self.rows.as_ref()
     }
     /// <p>The updated workbook cursor after updating or appending rows in the table.</p>
@@ -948,22 +914,19 @@ impl BatchUpsertTableRowsOutput {
         self.workbook_cursor
     }
     /// <p> The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended. </p>
-    pub fn failed_batch_items(&self) -> std::option::Option<&[crate::model::FailedBatchItem]> {
+    pub fn failed_batch_items(&self) -> std::option::Option<& [crate::model::FailedBatchItem]> {
         self.failed_batch_items.as_deref()
     }
 }
 /// See [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput).
 pub mod batch_upsert_table_rows_output {
-
+    
     /// A builder for [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) rows: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::UpsertRowsResult>,
-        >,
+        pub(crate) rows: std::option::Option<std::collections::HashMap<std::string::String, crate::model::UpsertRowsResult>>,
         pub(crate) workbook_cursor: std::option::Option<i64>,
-        pub(crate) failed_batch_items:
-            std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
+        pub(crate) failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
     }
     impl Builder {
         /// Adds a key-value pair to `rows`.
@@ -971,25 +934,15 @@ pub mod batch_upsert_table_rows_output {
         /// To override the contents of this collection use [`set_rows`](Self::set_rows).
         ///
         /// <p> A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected. </p>
-        pub fn rows(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::UpsertRowsResult,
-        ) -> Self {
+        pub fn rows(mut self, k: impl Into<std::string::String>, v: crate::model::UpsertRowsResult) -> Self {
             let mut hash_map = self.rows.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.rows = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.rows = Some(hash_map);
+                            self
         }
         /// <p> A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected. </p>
-        pub fn set_rows(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::UpsertRowsResult>,
-            >,
-        ) -> Self {
-            self.rows = input;
-            self
+        pub fn set_rows(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::UpsertRowsResult>>) -> Self {
+            self.rows = input; self
         }
         /// <p>The updated workbook cursor after updating or appending rows in the table.</p>
         pub fn workbook_cursor(mut self, input: i64) -> Self {
@@ -998,8 +951,7 @@ pub mod batch_upsert_table_rows_output {
         }
         /// <p>The updated workbook cursor after updating or appending rows in the table.</p>
         pub fn set_workbook_cursor(mut self, input: std::option::Option<i64>) -> Self {
-            self.workbook_cursor = input;
-            self
+            self.workbook_cursor = input; self
         }
         /// Appends an item to `failed_batch_items`.
         ///
@@ -1008,27 +960,29 @@ pub mod batch_upsert_table_rows_output {
         /// <p> The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended. </p>
         pub fn failed_batch_items(mut self, input: crate::model::FailedBatchItem) -> Self {
             let mut v = self.failed_batch_items.unwrap_or_default();
-            v.push(input);
-            self.failed_batch_items = Some(v);
-            self
+                            v.push(input);
+                            self.failed_batch_items = Some(v);
+                            self
         }
         /// <p> The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended. </p>
-        pub fn set_failed_batch_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
-        ) -> Self {
-            self.failed_batch_items = input;
-            self
+        pub fn set_failed_batch_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>) -> Self {
+            self.failed_batch_items = input; self
         }
         /// Consumes the builder and constructs a [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput).
         pub fn build(self) -> crate::output::BatchUpsertTableRowsOutput {
             crate::output::BatchUpsertTableRowsOutput {
-                rows: self.rows,
-                workbook_cursor: self.workbook_cursor.unwrap_or_default(),
-                failed_batch_items: self.failed_batch_items,
+                rows: self.rows
+                ,
+                workbook_cursor: self.workbook_cursor
+                    .unwrap_or_default()
+                ,
+                failed_batch_items: self.failed_batch_items
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchUpsertTableRowsOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput).
@@ -1040,7 +994,7 @@ impl BatchUpsertTableRowsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateTableRowsOutput {
+pub struct BatchUpdateTableRowsOutput  {
     /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
     #[doc(hidden)]
     pub workbook_cursor: i64,
@@ -1054,19 +1008,18 @@ impl BatchUpdateTableRowsOutput {
         self.workbook_cursor
     }
     /// <p> The list of batch items in the request that could not be updated in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated. </p>
-    pub fn failed_batch_items(&self) -> std::option::Option<&[crate::model::FailedBatchItem]> {
+    pub fn failed_batch_items(&self) -> std::option::Option<& [crate::model::FailedBatchItem]> {
         self.failed_batch_items.as_deref()
     }
 }
 /// See [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput).
 pub mod batch_update_table_rows_output {
-
+    
     /// A builder for [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_cursor: std::option::Option<i64>,
-        pub(crate) failed_batch_items:
-            std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
+        pub(crate) failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
     }
     impl Builder {
         /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
@@ -1076,8 +1029,7 @@ pub mod batch_update_table_rows_output {
         }
         /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
         pub fn set_workbook_cursor(mut self, input: std::option::Option<i64>) -> Self {
-            self.workbook_cursor = input;
-            self
+            self.workbook_cursor = input; self
         }
         /// Appends an item to `failed_batch_items`.
         ///
@@ -1086,26 +1038,27 @@ pub mod batch_update_table_rows_output {
         /// <p> The list of batch items in the request that could not be updated in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated. </p>
         pub fn failed_batch_items(mut self, input: crate::model::FailedBatchItem) -> Self {
             let mut v = self.failed_batch_items.unwrap_or_default();
-            v.push(input);
-            self.failed_batch_items = Some(v);
-            self
+                            v.push(input);
+                            self.failed_batch_items = Some(v);
+                            self
         }
         /// <p> The list of batch items in the request that could not be updated in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated. </p>
-        pub fn set_failed_batch_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
-        ) -> Self {
-            self.failed_batch_items = input;
-            self
+        pub fn set_failed_batch_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>) -> Self {
+            self.failed_batch_items = input; self
         }
         /// Consumes the builder and constructs a [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput).
         pub fn build(self) -> crate::output::BatchUpdateTableRowsOutput {
             crate::output::BatchUpdateTableRowsOutput {
-                workbook_cursor: self.workbook_cursor.unwrap_or_default(),
-                failed_batch_items: self.failed_batch_items,
+                workbook_cursor: self.workbook_cursor
+                    .unwrap_or_default()
+                ,
+                failed_batch_items: self.failed_batch_items
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchUpdateTableRowsOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput).
@@ -1117,7 +1070,7 @@ impl BatchUpdateTableRowsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteTableRowsOutput {
+pub struct BatchDeleteTableRowsOutput  {
     /// <p>The updated workbook cursor after deleting the rows from the table.</p>
     #[doc(hidden)]
     pub workbook_cursor: i64,
@@ -1131,19 +1084,18 @@ impl BatchDeleteTableRowsOutput {
         self.workbook_cursor
     }
     /// <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
-    pub fn failed_batch_items(&self) -> std::option::Option<&[crate::model::FailedBatchItem]> {
+    pub fn failed_batch_items(&self) -> std::option::Option<& [crate::model::FailedBatchItem]> {
         self.failed_batch_items.as_deref()
     }
 }
 /// See [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput).
 pub mod batch_delete_table_rows_output {
-
+    
     /// A builder for [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_cursor: std::option::Option<i64>,
-        pub(crate) failed_batch_items:
-            std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
+        pub(crate) failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
     }
     impl Builder {
         /// <p>The updated workbook cursor after deleting the rows from the table.</p>
@@ -1153,8 +1105,7 @@ pub mod batch_delete_table_rows_output {
         }
         /// <p>The updated workbook cursor after deleting the rows from the table.</p>
         pub fn set_workbook_cursor(mut self, input: std::option::Option<i64>) -> Self {
-            self.workbook_cursor = input;
-            self
+            self.workbook_cursor = input; self
         }
         /// Appends an item to `failed_batch_items`.
         ///
@@ -1163,26 +1114,27 @@ pub mod batch_delete_table_rows_output {
         /// <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
         pub fn failed_batch_items(mut self, input: crate::model::FailedBatchItem) -> Self {
             let mut v = self.failed_batch_items.unwrap_or_default();
-            v.push(input);
-            self.failed_batch_items = Some(v);
-            self
+                            v.push(input);
+                            self.failed_batch_items = Some(v);
+                            self
         }
         /// <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
-        pub fn set_failed_batch_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
-        ) -> Self {
-            self.failed_batch_items = input;
-            self
+        pub fn set_failed_batch_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>) -> Self {
+            self.failed_batch_items = input; self
         }
         /// Consumes the builder and constructs a [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput).
         pub fn build(self) -> crate::output::BatchDeleteTableRowsOutput {
             crate::output::BatchDeleteTableRowsOutput {
-                workbook_cursor: self.workbook_cursor.unwrap_or_default(),
-                failed_batch_items: self.failed_batch_items,
+                workbook_cursor: self.workbook_cursor
+                    .unwrap_or_default()
+                ,
+                failed_batch_items: self.failed_batch_items
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDeleteTableRowsOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput).
@@ -1194,14 +1146,13 @@ impl BatchDeleteTableRowsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchCreateTableRowsOutput {
+pub struct BatchCreateTableRowsOutput  {
     /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
     #[doc(hidden)]
     pub workbook_cursor: i64,
     /// <p>The map of batch item id to the row id that was created for that item.</p>
     #[doc(hidden)]
-    pub created_rows:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub created_rows: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
     #[doc(hidden)]
     pub failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
@@ -1212,29 +1163,23 @@ impl BatchCreateTableRowsOutput {
         self.workbook_cursor
     }
     /// <p>The map of batch item id to the row id that was created for that item.</p>
-    pub fn created_rows(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn created_rows(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.created_rows.as_ref()
     }
     /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
-    pub fn failed_batch_items(&self) -> std::option::Option<&[crate::model::FailedBatchItem]> {
+    pub fn failed_batch_items(&self) -> std::option::Option<& [crate::model::FailedBatchItem]> {
         self.failed_batch_items.as_deref()
     }
 }
 /// See [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput).
 pub mod batch_create_table_rows_output {
-
+    
     /// A builder for [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_cursor: std::option::Option<i64>,
-        pub(crate) created_rows: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) failed_batch_items:
-            std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
+        pub(crate) created_rows: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
     }
     impl Builder {
         /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
@@ -1244,33 +1189,22 @@ pub mod batch_create_table_rows_output {
         }
         /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
         pub fn set_workbook_cursor(mut self, input: std::option::Option<i64>) -> Self {
-            self.workbook_cursor = input;
-            self
+            self.workbook_cursor = input; self
         }
         /// Adds a key-value pair to `created_rows`.
         ///
         /// To override the contents of this collection use [`set_created_rows`](Self::set_created_rows).
         ///
         /// <p>The map of batch item id to the row id that was created for that item.</p>
-        pub fn created_rows(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn created_rows(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.created_rows.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.created_rows = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.created_rows = Some(hash_map);
+                            self
         }
         /// <p>The map of batch item id to the row id that was created for that item.</p>
-        pub fn set_created_rows(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.created_rows = input;
-            self
+        pub fn set_created_rows(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.created_rows = input; self
         }
         /// Appends an item to `failed_batch_items`.
         ///
@@ -1279,27 +1213,29 @@ pub mod batch_create_table_rows_output {
         /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
         pub fn failed_batch_items(mut self, input: crate::model::FailedBatchItem) -> Self {
             let mut v = self.failed_batch_items.unwrap_or_default();
-            v.push(input);
-            self.failed_batch_items = Some(v);
-            self
+                            v.push(input);
+                            self.failed_batch_items = Some(v);
+                            self
         }
         /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
-        pub fn set_failed_batch_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
-        ) -> Self {
-            self.failed_batch_items = input;
-            self
+        pub fn set_failed_batch_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>) -> Self {
+            self.failed_batch_items = input; self
         }
         /// Consumes the builder and constructs a [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput).
         pub fn build(self) -> crate::output::BatchCreateTableRowsOutput {
             crate::output::BatchCreateTableRowsOutput {
-                workbook_cursor: self.workbook_cursor.unwrap_or_default(),
-                created_rows: self.created_rows,
-                failed_batch_items: self.failed_batch_items,
+                workbook_cursor: self.workbook_cursor
+                    .unwrap_or_default()
+                ,
+                created_rows: self.created_rows
+                ,
+                failed_batch_items: self.failed_batch_items
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchCreateTableRowsOutput {
     /// Creates a new builder-style object to manufacture [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput).
@@ -1307,3 +1243,4 @@ impl BatchCreateTableRowsOutput {
         crate::output::batch_create_table_rows_output::Builder::default()
     }
 }
+

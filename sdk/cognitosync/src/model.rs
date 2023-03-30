@@ -3,7 +3,7 @@
 /// The basic data structure of a dataset.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Record {
+pub struct Record  {
     /// The key for the record.
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -25,11 +25,11 @@ pub struct Record {
 }
 impl Record {
     /// The key for the record.
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// The value for the record.
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// The server sync count for this record.
@@ -37,21 +37,21 @@ impl Record {
         self.sync_count
     }
     /// The date on which the record was last modified.
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// The user/device that made the last change to this record.
-    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
     /// The last modified date of the client device.
-    pub fn device_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn device_last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.device_last_modified_date.as_ref()
     }
 }
 /// See [`Record`](crate::model::Record).
 pub mod record {
-
+    
     /// A builder for [`Record`](crate::model::Record).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -70,8 +70,7 @@ pub mod record {
         }
         /// The key for the record.
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// The value for the record.
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +79,7 @@ pub mod record {
         }
         /// The value for the record.
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// The server sync count for this record.
         pub fn sync_count(mut self, input: i64) -> Self {
@@ -90,8 +88,7 @@ pub mod record {
         }
         /// The server sync count for this record.
         pub fn set_sync_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.sync_count = input;
-            self
+            self.sync_count = input; self
         }
         /// The date on which the record was last modified.
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -99,12 +96,8 @@ pub mod record {
             self
         }
         /// The date on which the record was last modified.
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_date = input; self
         }
         /// The user/device that made the last change to this record.
         pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,12 +105,8 @@ pub mod record {
             self
         }
         /// The user/device that made the last change to this record.
-        pub fn set_last_modified_by(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_by = input;
-            self
+        pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_by = input; self
         }
         /// The last modified date of the client device.
         pub fn device_last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -125,25 +114,29 @@ pub mod record {
             self
         }
         /// The last modified date of the client device.
-        pub fn set_device_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.device_last_modified_date = input;
-            self
+        pub fn set_device_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.device_last_modified_date = input; self
         }
         /// Consumes the builder and constructs a [`Record`](crate::model::Record).
         pub fn build(self) -> crate::model::Record {
             crate::model::Record {
-                key: self.key,
-                value: self.value,
-                sync_count: self.sync_count,
-                last_modified_date: self.last_modified_date,
-                last_modified_by: self.last_modified_by,
-                device_last_modified_date: self.device_last_modified_date,
+                key: self.key
+                ,
+                value: self.value
+                ,
+                sync_count: self.sync_count
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                last_modified_by: self.last_modified_by
+                ,
+                device_last_modified_date: self.device_last_modified_date
+                ,
             }
         }
     }
+    
+    
 }
 impl Record {
     /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
@@ -155,7 +148,7 @@ impl Record {
 /// An update operation for a record.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecordPatch {
+pub struct RecordPatch  {
     /// An operation, either replace or remove.
     #[doc(hidden)]
     pub op: std::option::Option<crate::model::Operation>,
@@ -174,15 +167,15 @@ pub struct RecordPatch {
 }
 impl RecordPatch {
     /// An operation, either replace or remove.
-    pub fn op(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn op(&self) -> std::option::Option<& crate::model::Operation> {
         self.op.as_ref()
     }
     /// The key associated with the record patch.
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// The value associated with the record patch.
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// Last known server sync count for this record. Set to 0 if unknown.
@@ -190,13 +183,13 @@ impl RecordPatch {
         self.sync_count
     }
     /// The last modified date of the client device.
-    pub fn device_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn device_last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.device_last_modified_date.as_ref()
     }
 }
 /// See [`RecordPatch`](crate::model::RecordPatch).
 pub mod record_patch {
-
+    
     /// A builder for [`RecordPatch`](crate::model::RecordPatch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -214,8 +207,7 @@ pub mod record_patch {
         }
         /// An operation, either replace or remove.
         pub fn set_op(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
-            self.op = input;
-            self
+            self.op = input; self
         }
         /// The key associated with the record patch.
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -224,8 +216,7 @@ pub mod record_patch {
         }
         /// The key associated with the record patch.
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// The value associated with the record patch.
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -234,8 +225,7 @@ pub mod record_patch {
         }
         /// The value associated with the record patch.
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Last known server sync count for this record. Set to 0 if unknown.
         pub fn sync_count(mut self, input: i64) -> Self {
@@ -244,8 +234,7 @@ pub mod record_patch {
         }
         /// Last known server sync count for this record. Set to 0 if unknown.
         pub fn set_sync_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.sync_count = input;
-            self
+            self.sync_count = input; self
         }
         /// The last modified date of the client device.
         pub fn device_last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -253,24 +242,27 @@ pub mod record_patch {
             self
         }
         /// The last modified date of the client device.
-        pub fn set_device_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.device_last_modified_date = input;
-            self
+        pub fn set_device_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.device_last_modified_date = input; self
         }
         /// Consumes the builder and constructs a [`RecordPatch`](crate::model::RecordPatch).
         pub fn build(self) -> crate::model::RecordPatch {
             crate::model::RecordPatch {
-                op: self.op,
-                key: self.key,
-                value: self.value,
-                sync_count: self.sync_count,
-                device_last_modified_date: self.device_last_modified_date,
+                op: self.op
+                ,
+                key: self.key
+                ,
+                value: self.value
+                ,
+                sync_count: self.sync_count
+                ,
+                device_last_modified_date: self.device_last_modified_date
+                ,
             }
         }
     }
+    
+    
 }
 impl RecordPatch {
     /// Creates a new builder-style object to manufacture [`RecordPatch`](crate::model::RecordPatch).
@@ -285,9 +277,9 @@ impl RecordPatch {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let operation = unimplemented!();
 /// match operation {
@@ -309,58 +301,52 @@ impl RecordPatch {
 /// Specifically, when `operation` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Operation::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Operation {
     #[allow(missing_docs)] // documentation missing in model
     Remove,
     #[allow(missing_docs)] // documentation missing in model
     Replace,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Operation {
     fn from(s: &str) -> Self {
         match s {
             "remove" => Operation::Remove,
             "replace" => Operation::Replace,
-            other => Operation::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Operation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Operation {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Operation::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Operation::from(s))
+                }
+            }
 impl Operation {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Operation::Remove => "remove",
             Operation::Replace => "replace",
-            Operation::Unknown(value) => value.as_str(),
+            Operation::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["remove", "replace"]
+        &[
+            "remove", "replace"
+        ]
     }
 }
 impl AsRef<str> for Operation {
@@ -372,38 +358,38 @@ impl AsRef<str> for Operation {
 /// Configuration options for configure Cognito streams.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CognitoStreams {
+pub struct CognitoStreams  {
     /// The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool.
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream.
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// Status of the Cognito streams. Valid values are:
-    /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p>
+    /// Status of the Cognito streams. Valid values are: 
+    /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p> 
     /// <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>
     #[doc(hidden)]
     pub streaming_status: std::option::Option<crate::model::StreamingStatus>,
 }
 impl CognitoStreams {
     /// The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool.
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream.
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
-    /// Status of the Cognito streams. Valid values are:
-    /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p>
+    /// Status of the Cognito streams. Valid values are: 
+    /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p> 
     /// <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>
-    pub fn streaming_status(&self) -> std::option::Option<&crate::model::StreamingStatus> {
+    pub fn streaming_status(&self) -> std::option::Option<& crate::model::StreamingStatus> {
         self.streaming_status.as_ref()
     }
 }
 /// See [`CognitoStreams`](crate::model::CognitoStreams).
 pub mod cognito_streams {
-
+    
     /// A builder for [`CognitoStreams`](crate::model::CognitoStreams).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -419,8 +405,7 @@ pub mod cognito_streams {
         }
         /// The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool.
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = input;
-            self
+            self.stream_name = input; self
         }
         /// The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream.
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -429,35 +414,35 @@ pub mod cognito_streams {
         }
         /// The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
-        /// Status of the Cognito streams. Valid values are:
-        /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p>
+        /// Status of the Cognito streams. Valid values are: 
+        /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p> 
         /// <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>
         pub fn streaming_status(mut self, input: crate::model::StreamingStatus) -> Self {
             self.streaming_status = Some(input);
             self
         }
-        /// Status of the Cognito streams. Valid values are:
-        /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p>
+        /// Status of the Cognito streams. Valid values are: 
+        /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p> 
         /// <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>
-        pub fn set_streaming_status(
-            mut self,
-            input: std::option::Option<crate::model::StreamingStatus>,
-        ) -> Self {
-            self.streaming_status = input;
-            self
+        pub fn set_streaming_status(mut self, input: std::option::Option<crate::model::StreamingStatus>) -> Self {
+            self.streaming_status = input; self
         }
         /// Consumes the builder and constructs a [`CognitoStreams`](crate::model::CognitoStreams).
         pub fn build(self) -> crate::model::CognitoStreams {
             crate::model::CognitoStreams {
-                stream_name: self.stream_name,
-                role_arn: self.role_arn,
-                streaming_status: self.streaming_status,
+                stream_name: self.stream_name
+                ,
+                role_arn: self.role_arn
+                ,
+                streaming_status: self.streaming_status
+                ,
             }
         }
     }
+    
+    
 }
 impl CognitoStreams {
     /// Creates a new builder-style object to manufacture [`CognitoStreams`](crate::model::CognitoStreams).
@@ -472,9 +457,9 @@ impl CognitoStreams {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let streamingstatus = unimplemented!();
 /// match streamingstatus {
@@ -496,58 +481,52 @@ impl CognitoStreams {
 /// Specifically, when `streamingstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StreamingStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StreamingStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamingStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => StreamingStatus::Disabled,
             "ENABLED" => StreamingStatus::Enabled,
-            other => StreamingStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StreamingStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StreamingStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StreamingStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StreamingStatus::from(s))
+                }
+            }
 impl StreamingStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamingStatus::Disabled => "DISABLED",
             StreamingStatus::Enabled => "ENABLED",
-            StreamingStatus::Unknown(value) => value.as_str(),
+            StreamingStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for StreamingStatus {
@@ -559,7 +538,7 @@ impl AsRef<str> for StreamingStatus {
 /// <p>Configuration options to be applied to the identity pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PushSync {
+pub struct PushSync  {
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
     #[doc(hidden)]
     pub application_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -569,17 +548,17 @@ pub struct PushSync {
 }
 impl PushSync {
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
-    pub fn application_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn application_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.application_arns.as_deref()
     }
     /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 /// See [`PushSync`](crate::model::PushSync).
 pub mod push_sync {
-
+    
     /// A builder for [`PushSync`](crate::model::PushSync).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -594,17 +573,13 @@ pub mod push_sync {
         /// <p>List of SNS platform application ARNs that could be used by clients.</p>
         pub fn application_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.application_arns.unwrap_or_default();
-            v.push(input.into());
-            self.application_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.application_arns = Some(v);
+                            self
         }
         /// <p>List of SNS platform application ARNs that could be used by clients.</p>
-        pub fn set_application_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.application_arns = input;
-            self
+        pub fn set_application_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.application_arns = input; self
         }
         /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -613,17 +588,20 @@ pub mod push_sync {
         }
         /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Consumes the builder and constructs a [`PushSync`](crate::model::PushSync).
         pub fn build(self) -> crate::model::PushSync {
             crate::model::PushSync {
-                application_arns: self.application_arns,
-                role_arn: self.role_arn,
+                application_arns: self.application_arns
+                ,
+                role_arn: self.role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PushSync {
     /// Creates a new builder-style object to manufacture [`PushSync`](crate::model::PushSync).
@@ -638,9 +616,9 @@ impl PushSync {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let platform = unimplemented!();
 /// match platform {
@@ -664,22 +642,14 @@ impl PushSync {
 /// Specifically, when `platform` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Platform::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Platform {
     #[allow(missing_docs)] // documentation missing in model
     Adm,
@@ -690,7 +660,7 @@ pub enum Platform {
     #[allow(missing_docs)] // documentation missing in model
     Gcm,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Platform {
     fn from(s: &str) -> Self {
@@ -699,17 +669,17 @@ impl std::convert::From<&str> for Platform {
             "APNS" => Platform::Apns,
             "APNS_SANDBOX" => Platform::ApnsSandbox,
             "GCM" => Platform::Gcm,
-            other => Platform::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Platform::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Platform {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Platform::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Platform::from(s))
+                }
+            }
 impl Platform {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -718,12 +688,14 @@ impl Platform {
             Platform::Apns => "APNS",
             Platform::ApnsSandbox => "APNS_SANDBOX",
             Platform::Gcm => "GCM",
-            Platform::Unknown(value) => value.as_str(),
+            Platform::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ADM", "APNS", "APNS_SANDBOX", "GCM"]
+        &[
+            "ADM", "APNS", "APNS_SANDBOX", "GCM"
+        ]
     }
 }
 impl AsRef<str> for Platform {
@@ -735,7 +707,7 @@ impl AsRef<str> for Platform {
 /// Usage information for the identity pool.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdentityPoolUsage {
+pub struct IdentityPoolUsage  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
@@ -751,7 +723,7 @@ pub struct IdentityPoolUsage {
 }
 impl IdentityPoolUsage {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// Number of sync sessions for the identity pool.
@@ -763,13 +735,13 @@ impl IdentityPoolUsage {
         self.data_storage
     }
     /// Date on which the identity pool was last modified.
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
 /// See [`IdentityPoolUsage`](crate::model::IdentityPoolUsage).
 pub mod identity_pool_usage {
-
+    
     /// A builder for [`IdentityPoolUsage`](crate::model::IdentityPoolUsage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -785,12 +757,8 @@ pub mod identity_pool_usage {
             self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// Number of sync sessions for the identity pool.
         pub fn sync_sessions_count(mut self, input: i64) -> Self {
@@ -799,8 +767,7 @@ pub mod identity_pool_usage {
         }
         /// Number of sync sessions for the identity pool.
         pub fn set_sync_sessions_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.sync_sessions_count = input;
-            self
+            self.sync_sessions_count = input; self
         }
         /// Data storage information for the identity pool.
         pub fn data_storage(mut self, input: i64) -> Self {
@@ -809,8 +776,7 @@ pub mod identity_pool_usage {
         }
         /// Data storage information for the identity pool.
         pub fn set_data_storage(mut self, input: std::option::Option<i64>) -> Self {
-            self.data_storage = input;
-            self
+            self.data_storage = input; self
         }
         /// Date on which the identity pool was last modified.
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -818,23 +784,25 @@ pub mod identity_pool_usage {
             self
         }
         /// Date on which the identity pool was last modified.
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_date = input; self
         }
         /// Consumes the builder and constructs a [`IdentityPoolUsage`](crate::model::IdentityPoolUsage).
         pub fn build(self) -> crate::model::IdentityPoolUsage {
             crate::model::IdentityPoolUsage {
-                identity_pool_id: self.identity_pool_id,
-                sync_sessions_count: self.sync_sessions_count,
-                data_storage: self.data_storage,
-                last_modified_date: self.last_modified_date,
+                identity_pool_id: self.identity_pool_id
+                ,
+                sync_sessions_count: self.sync_sessions_count
+                ,
+                data_storage: self.data_storage
+                ,
+                last_modified_date: self.last_modified_date
+                ,
             }
         }
     }
+    
+    
 }
 impl IdentityPoolUsage {
     /// Creates a new builder-style object to manufacture [`IdentityPoolUsage`](crate::model::IdentityPoolUsage).
@@ -846,7 +814,7 @@ impl IdentityPoolUsage {
 /// A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Dataset {
+pub struct Dataset  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
@@ -871,23 +839,23 @@ pub struct Dataset {
 }
 impl Dataset {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// Date on which the dataset was created.
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// Date when the dataset was last modified.
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// The device that made the last change to this dataset.
-    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
     /// Total size in bytes of the records in this dataset.
@@ -901,7 +869,7 @@ impl Dataset {
 }
 /// See [`Dataset`](crate::model::Dataset).
 pub mod dataset {
-
+    
     /// A builder for [`Dataset`](crate::model::Dataset).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -921,8 +889,7 @@ pub mod dataset {
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input;
-            self
+            self.identity_id = input; self
         }
         /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -931,8 +898,7 @@ pub mod dataset {
         }
         /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input;
-            self
+            self.dataset_name = input; self
         }
         /// Date on which the dataset was created.
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -940,12 +906,8 @@ pub mod dataset {
             self
         }
         /// Date on which the dataset was created.
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// Date when the dataset was last modified.
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -953,12 +915,8 @@ pub mod dataset {
             self
         }
         /// Date when the dataset was last modified.
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_date = input; self
         }
         /// The device that made the last change to this dataset.
         pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -966,12 +924,8 @@ pub mod dataset {
             self
         }
         /// The device that made the last change to this dataset.
-        pub fn set_last_modified_by(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_by = input;
-            self
+        pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_by = input; self
         }
         /// Total size in bytes of the records in this dataset.
         pub fn data_storage(mut self, input: i64) -> Self {
@@ -980,8 +934,7 @@ pub mod dataset {
         }
         /// Total size in bytes of the records in this dataset.
         pub fn set_data_storage(mut self, input: std::option::Option<i64>) -> Self {
-            self.data_storage = input;
-            self
+            self.data_storage = input; self
         }
         /// Number of records in this dataset.
         pub fn num_records(mut self, input: i64) -> Self {
@@ -990,22 +943,30 @@ pub mod dataset {
         }
         /// Number of records in this dataset.
         pub fn set_num_records(mut self, input: std::option::Option<i64>) -> Self {
-            self.num_records = input;
-            self
+            self.num_records = input; self
         }
         /// Consumes the builder and constructs a [`Dataset`](crate::model::Dataset).
         pub fn build(self) -> crate::model::Dataset {
             crate::model::Dataset {
-                identity_id: self.identity_id,
-                dataset_name: self.dataset_name,
-                creation_date: self.creation_date,
-                last_modified_date: self.last_modified_date,
-                last_modified_by: self.last_modified_by,
-                data_storage: self.data_storage,
-                num_records: self.num_records,
+                identity_id: self.identity_id
+                ,
+                dataset_name: self.dataset_name
+                ,
+                creation_date: self.creation_date
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                last_modified_by: self.last_modified_by
+                ,
+                data_storage: self.data_storage
+                ,
+                num_records: self.num_records
+                ,
             }
         }
     }
+    
+    
 }
 impl Dataset {
     /// Creates a new builder-style object to manufacture [`Dataset`](crate::model::Dataset).
@@ -1020,9 +981,9 @@ impl Dataset {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let bulkpublishstatus = unimplemented!();
 /// match bulkpublishstatus {
@@ -1046,22 +1007,14 @@ impl Dataset {
 /// Specifically, when `bulkpublishstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BulkPublishStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BulkPublishStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -1072,7 +1025,7 @@ pub enum BulkPublishStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BulkPublishStatus {
     fn from(s: &str) -> Self {
@@ -1081,19 +1034,17 @@ impl std::convert::From<&str> for BulkPublishStatus {
             "IN_PROGRESS" => BulkPublishStatus::InProgress,
             "NOT_STARTED" => BulkPublishStatus::NotStarted,
             "SUCCEEDED" => BulkPublishStatus::Succeeded,
-            other => {
-                BulkPublishStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => BulkPublishStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BulkPublishStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BulkPublishStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BulkPublishStatus::from(s))
+                }
+            }
 impl BulkPublishStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1102,12 +1053,14 @@ impl BulkPublishStatus {
             BulkPublishStatus::InProgress => "IN_PROGRESS",
             BulkPublishStatus::NotStarted => "NOT_STARTED",
             BulkPublishStatus::Succeeded => "SUCCEEDED",
-            BulkPublishStatus::Unknown(value) => value.as_str(),
+            BulkPublishStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "NOT_STARTED", "SUCCEEDED"]
+        &[
+            "FAILED", "IN_PROGRESS", "NOT_STARTED", "SUCCEEDED"
+        ]
     }
 }
 impl AsRef<str> for BulkPublishStatus {
@@ -1119,7 +1072,7 @@ impl AsRef<str> for BulkPublishStatus {
 /// Usage information for the identity.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdentityUsage {
+pub struct IdentityUsage  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
@@ -1138,15 +1091,15 @@ pub struct IdentityUsage {
 }
 impl IdentityUsage {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// Date on which the identity was last modified.
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// Number of datasets for the identity.
@@ -1160,7 +1113,7 @@ impl IdentityUsage {
 }
 /// See [`IdentityUsage`](crate::model::IdentityUsage).
 pub mod identity_usage {
-
+    
     /// A builder for [`IdentityUsage`](crate::model::IdentityUsage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1178,8 +1131,7 @@ pub mod identity_usage {
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity_id = input;
-            self
+            self.identity_id = input; self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1187,12 +1139,8 @@ pub mod identity_usage {
             self
         }
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-        pub fn set_identity_pool_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_pool_id = input;
-            self
+        pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_pool_id = input; self
         }
         /// Date on which the identity was last modified.
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1200,12 +1148,8 @@ pub mod identity_usage {
             self
         }
         /// Date on which the identity was last modified.
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_date = input; self
         }
         /// Number of datasets for the identity.
         pub fn dataset_count(mut self, input: i32) -> Self {
@@ -1214,8 +1158,7 @@ pub mod identity_usage {
         }
         /// Number of datasets for the identity.
         pub fn set_dataset_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.dataset_count = input;
-            self
+            self.dataset_count = input; self
         }
         /// Total data storage for this identity.
         pub fn data_storage(mut self, input: i64) -> Self {
@@ -1224,20 +1167,27 @@ pub mod identity_usage {
         }
         /// Total data storage for this identity.
         pub fn set_data_storage(mut self, input: std::option::Option<i64>) -> Self {
-            self.data_storage = input;
-            self
+            self.data_storage = input; self
         }
         /// Consumes the builder and constructs a [`IdentityUsage`](crate::model::IdentityUsage).
         pub fn build(self) -> crate::model::IdentityUsage {
             crate::model::IdentityUsage {
-                identity_id: self.identity_id,
-                identity_pool_id: self.identity_pool_id,
-                last_modified_date: self.last_modified_date,
-                dataset_count: self.dataset_count.unwrap_or_default(),
-                data_storage: self.data_storage,
+                identity_id: self.identity_id
+                ,
+                identity_pool_id: self.identity_pool_id
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                dataset_count: self.dataset_count
+                    .unwrap_or_default()
+                ,
+                data_storage: self.data_storage
+                ,
             }
         }
     }
+    
+    
 }
 impl IdentityUsage {
     /// Creates a new builder-style object to manufacture [`IdentityUsage`](crate::model::IdentityUsage).
@@ -1245,3 +1195,4 @@ impl IdentityUsage {
         crate::model::identity_usage::Builder::default()
     }
 }
+

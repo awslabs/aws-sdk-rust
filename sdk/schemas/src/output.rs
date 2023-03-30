@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSchemaOutput {
+pub struct UpdateSchemaOutput  {
     /// <p>The description of the schema.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -20,8 +20,7 @@ pub struct UpdateSchemaOutput {
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>Key-value pairs associated with a resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of the schema.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -31,44 +30,41 @@ pub struct UpdateSchemaOutput {
 }
 impl UpdateSchemaOutput {
     /// <p>The description of the schema.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time that schema was modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The ARN of the schema.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The version number of the schema</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     /// <p>Key-value pairs associated with a resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The type of the schema.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The date the schema version was created.</p>
-    pub fn version_created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn version_created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.version_created_date.as_ref()
     }
 }
 /// See [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput).
 pub mod update_schema_output {
-
+    
     /// A builder for [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -77,9 +73,7 @@ pub mod update_schema_output {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
         pub(crate) schema_name: std::option::Option<std::string::String>,
         pub(crate) schema_version: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) version_created_date: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -91,8 +85,7 @@ pub mod update_schema_output {
         }
         /// <p>The description of the schema.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date and time that schema was modified.</p>
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -100,12 +93,8 @@ pub mod update_schema_output {
             self
         }
         /// <p>The date and time that schema was modified.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The ARN of the schema.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,8 +103,7 @@ pub mod update_schema_output {
         }
         /// <p>The ARN of the schema.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_arn = input;
-            self
+            self.schema_arn = input; self
         }
         /// <p>The name of the schema.</p>
         pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,8 +112,7 @@ pub mod update_schema_output {
         }
         /// <p>The name of the schema.</p>
         pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_name = input;
-            self
+            self.schema_name = input; self
         }
         /// <p>The version number of the schema</p>
         pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,37 +120,23 @@ pub mod update_schema_output {
             self
         }
         /// <p>The version number of the schema</p>
-        pub fn set_schema_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schema_version = input;
-            self
+        pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_version = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Key-value pairs associated with a resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Key-value pairs associated with a resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The type of the schema.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -172,8 +145,7 @@ pub mod update_schema_output {
         }
         /// <p>The type of the schema.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The date the schema version was created.</p>
         pub fn version_created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -181,27 +153,33 @@ pub mod update_schema_output {
             self
         }
         /// <p>The date the schema version was created.</p>
-        pub fn set_version_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.version_created_date = input;
-            self
+        pub fn set_version_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.version_created_date = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput).
         pub fn build(self) -> crate::output::UpdateSchemaOutput {
             crate::output::UpdateSchemaOutput {
-                description: self.description,
-                last_modified: self.last_modified,
-                schema_arn: self.schema_arn,
-                schema_name: self.schema_name,
-                schema_version: self.schema_version,
-                tags: self.tags,
-                r#type: self.r#type,
-                version_created_date: self.version_created_date,
+                description: self.description
+                ,
+                last_modified: self.last_modified
+                ,
+                schema_arn: self.schema_arn
+                ,
+                schema_name: self.schema_name
+                ,
+                schema_version: self.schema_version
+                ,
+                tags: self.tags
+                ,
+                r#type: self.r#type
+                ,
+                version_created_date: self.version_created_date
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSchemaOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput).
@@ -213,7 +191,7 @@ impl UpdateSchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRegistryOutput {
+pub struct UpdateRegistryOutput  {
     /// <p>The description of the registry.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -225,42 +203,36 @@ pub struct UpdateRegistryOutput {
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>Tags associated with the registry.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateRegistryOutput {
     /// <p>The description of the registry.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the registry.</p>
-    pub fn registry_arn(&self) -> std::option::Option<&str> {
+    pub fn registry_arn(&self) -> std::option::Option<& str> {
         self.registry_arn.as_deref()
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> std::option::Option<&str> {
+    pub fn registry_name(&self) -> std::option::Option<& str> {
         self.registry_name.as_deref()
     }
     /// <p>Tags associated with the registry.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`UpdateRegistryOutput`](crate::output::UpdateRegistryOutput).
 pub mod update_registry_output {
-
+    
     /// A builder for [`UpdateRegistryOutput`](crate::output::UpdateRegistryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) registry_arn: std::option::Option<std::string::String>,
         pub(crate) registry_name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The description of the registry.</p>
@@ -270,8 +242,7 @@ pub mod update_registry_output {
         }
         /// <p>The description of the registry.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ARN of the registry.</p>
         pub fn registry_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -280,8 +251,7 @@ pub mod update_registry_output {
         }
         /// <p>The ARN of the registry.</p>
         pub fn set_registry_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.registry_arn = input;
-            self
+            self.registry_arn = input; self
         }
         /// <p>The name of the registry.</p>
         pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -289,48 +259,40 @@ pub mod update_registry_output {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn set_registry_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.registry_name = input;
-            self
+        pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registry_name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags associated with the registry.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags associated with the registry.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRegistryOutput`](crate::output::UpdateRegistryOutput).
         pub fn build(self) -> crate::output::UpdateRegistryOutput {
             crate::output::UpdateRegistryOutput {
-                description: self.description,
-                registry_arn: self.registry_arn,
-                registry_name: self.registry_name,
-                tags: self.tags,
+                description: self.description
+                ,
+                registry_arn: self.registry_arn
+                ,
+                registry_name: self.registry_name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRegistryOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRegistryOutput`](crate::output::UpdateRegistryOutput).
@@ -342,7 +304,7 @@ impl UpdateRegistryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDiscovererOutput {
+pub struct UpdateDiscovererOutput  {
     /// <p>The description of the discoverer.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -363,28 +325,27 @@ pub struct UpdateDiscovererOutput {
     pub cross_account: bool,
     /// <p>Tags associated with the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateDiscovererOutput {
     /// <p>The description of the discoverer.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the discoverer.</p>
-    pub fn discoverer_arn(&self) -> std::option::Option<&str> {
+    pub fn discoverer_arn(&self) -> std::option::Option<& str> {
         self.discoverer_arn.as_deref()
     }
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+    pub fn discoverer_id(&self) -> std::option::Option<& str> {
         self.discoverer_id.as_deref()
     }
     /// <p>The ARN of the event bus.</p>
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The state of the discoverer.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::DiscovererState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::DiscovererState> {
         self.state.as_ref()
     }
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
@@ -392,16 +353,13 @@ impl UpdateDiscovererOutput {
         self.cross_account
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`UpdateDiscovererOutput`](crate::output::UpdateDiscovererOutput).
 pub mod update_discoverer_output {
-
+    
     /// A builder for [`UpdateDiscovererOutput`](crate::output::UpdateDiscovererOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -411,9 +369,7 @@ pub mod update_discoverer_output {
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::DiscovererState>,
         pub(crate) cross_account: std::option::Option<bool>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The description of the discoverer.</p>
@@ -423,8 +379,7 @@ pub mod update_discoverer_output {
         }
         /// <p>The description of the discoverer.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ARN of the discoverer.</p>
         pub fn discoverer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -432,12 +387,8 @@ pub mod update_discoverer_output {
             self
         }
         /// <p>The ARN of the discoverer.</p>
-        pub fn set_discoverer_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.discoverer_arn = input;
-            self
+        pub fn set_discoverer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.discoverer_arn = input; self
         }
         /// <p>The ID of the discoverer.</p>
         pub fn discoverer_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -445,12 +396,8 @@ pub mod update_discoverer_output {
             self
         }
         /// <p>The ID of the discoverer.</p>
-        pub fn set_discoverer_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.discoverer_id = input;
-            self
+        pub fn set_discoverer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.discoverer_id = input; self
         }
         /// <p>The ARN of the event bus.</p>
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -459,8 +406,7 @@ pub mod update_discoverer_output {
         }
         /// <p>The ARN of the event bus.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = input;
-            self
+            self.source_arn = input; self
         }
         /// <p>The state of the discoverer.</p>
         pub fn state(mut self, input: crate::model::DiscovererState) -> Self {
@@ -468,12 +414,8 @@ pub mod update_discoverer_output {
             self
         }
         /// <p>The state of the discoverer.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::DiscovererState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::DiscovererState>) -> Self {
+            self.state = input; self
         }
         /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
         pub fn cross_account(mut self, input: bool) -> Self {
@@ -482,47 +424,46 @@ pub mod update_discoverer_output {
         }
         /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
         pub fn set_cross_account(mut self, input: std::option::Option<bool>) -> Self {
-            self.cross_account = input;
-            self
+            self.cross_account = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags associated with the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags associated with the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDiscovererOutput`](crate::output::UpdateDiscovererOutput).
         pub fn build(self) -> crate::output::UpdateDiscovererOutput {
             crate::output::UpdateDiscovererOutput {
-                description: self.description,
-                discoverer_arn: self.discoverer_arn,
-                discoverer_id: self.discoverer_id,
-                source_arn: self.source_arn,
-                state: self.state,
-                cross_account: self.cross_account.unwrap_or_default(),
-                tags: self.tags,
+                description: self.description
+                ,
+                discoverer_arn: self.discoverer_arn
+                ,
+                discoverer_id: self.discoverer_id
+                ,
+                source_arn: self.source_arn
+                ,
+                state: self.state
+                ,
+                cross_account: self.cross_account
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDiscovererOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDiscovererOutput`](crate::output::UpdateDiscovererOutput).
@@ -534,19 +475,24 @@ impl UpdateDiscovererOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -558,19 +504,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -582,7 +533,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDiscovererOutput {
+pub struct StopDiscovererOutput  {
     /// <p>The ID of the discoverer.</p>
     #[doc(hidden)]
     pub discoverer_id: std::option::Option<std::string::String>,
@@ -592,17 +543,17 @@ pub struct StopDiscovererOutput {
 }
 impl StopDiscovererOutput {
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+    pub fn discoverer_id(&self) -> std::option::Option<& str> {
         self.discoverer_id.as_deref()
     }
     /// <p>The state of the discoverer.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::DiscovererState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::DiscovererState> {
         self.state.as_ref()
     }
 }
 /// See [`StopDiscovererOutput`](crate::output::StopDiscovererOutput).
 pub mod stop_discoverer_output {
-
+    
     /// A builder for [`StopDiscovererOutput`](crate::output::StopDiscovererOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -616,12 +567,8 @@ pub mod stop_discoverer_output {
             self
         }
         /// <p>The ID of the discoverer.</p>
-        pub fn set_discoverer_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.discoverer_id = input;
-            self
+        pub fn set_discoverer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.discoverer_id = input; self
         }
         /// <p>The state of the discoverer.</p>
         pub fn state(mut self, input: crate::model::DiscovererState) -> Self {
@@ -629,21 +576,21 @@ pub mod stop_discoverer_output {
             self
         }
         /// <p>The state of the discoverer.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::DiscovererState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::DiscovererState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`StopDiscovererOutput`](crate::output::StopDiscovererOutput).
         pub fn build(self) -> crate::output::StopDiscovererOutput {
             crate::output::StopDiscovererOutput {
-                discoverer_id: self.discoverer_id,
-                state: self.state,
+                discoverer_id: self.discoverer_id
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl StopDiscovererOutput {
     /// Creates a new builder-style object to manufacture [`StopDiscovererOutput`](crate::output::StopDiscovererOutput).
@@ -655,7 +602,7 @@ impl StopDiscovererOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDiscovererOutput {
+pub struct StartDiscovererOutput  {
     /// <p>The ID of the discoverer.</p>
     #[doc(hidden)]
     pub discoverer_id: std::option::Option<std::string::String>,
@@ -665,17 +612,17 @@ pub struct StartDiscovererOutput {
 }
 impl StartDiscovererOutput {
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+    pub fn discoverer_id(&self) -> std::option::Option<& str> {
         self.discoverer_id.as_deref()
     }
     /// <p>The state of the discoverer.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::DiscovererState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::DiscovererState> {
         self.state.as_ref()
     }
 }
 /// See [`StartDiscovererOutput`](crate::output::StartDiscovererOutput).
 pub mod start_discoverer_output {
-
+    
     /// A builder for [`StartDiscovererOutput`](crate::output::StartDiscovererOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -689,12 +636,8 @@ pub mod start_discoverer_output {
             self
         }
         /// <p>The ID of the discoverer.</p>
-        pub fn set_discoverer_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.discoverer_id = input;
-            self
+        pub fn set_discoverer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.discoverer_id = input; self
         }
         /// <p>The state of the discoverer.</p>
         pub fn state(mut self, input: crate::model::DiscovererState) -> Self {
@@ -702,21 +645,21 @@ pub mod start_discoverer_output {
             self
         }
         /// <p>The state of the discoverer.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::DiscovererState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::DiscovererState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`StartDiscovererOutput`](crate::output::StartDiscovererOutput).
         pub fn build(self) -> crate::output::StartDiscovererOutput {
             crate::output::StartDiscovererOutput {
-                discoverer_id: self.discoverer_id,
-                state: self.state,
+                discoverer_id: self.discoverer_id
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl StartDiscovererOutput {
     /// Creates a new builder-style object to manufacture [`StartDiscovererOutput`](crate::output::StartDiscovererOutput).
@@ -728,7 +671,7 @@ impl StartDiscovererOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchSchemasOutput {
+pub struct SearchSchemasOutput  {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -738,17 +681,17 @@ pub struct SearchSchemasOutput {
 }
 impl SearchSchemasOutput {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of SearchSchemaSummary information.</p>
-    pub fn schemas(&self) -> std::option::Option<&[crate::model::SearchSchemaSummary]> {
+    pub fn schemas(&self) -> std::option::Option<& [crate::model::SearchSchemaSummary]> {
         self.schemas.as_deref()
     }
 }
 /// See [`SearchSchemasOutput`](crate::output::SearchSchemasOutput).
 pub mod search_schemas_output {
-
+    
     /// A builder for [`SearchSchemasOutput`](crate::output::SearchSchemasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -763,8 +706,7 @@ pub mod search_schemas_output {
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `schemas`.
         ///
@@ -773,26 +715,26 @@ pub mod search_schemas_output {
         /// <p>An array of SearchSchemaSummary information.</p>
         pub fn schemas(mut self, input: crate::model::SearchSchemaSummary) -> Self {
             let mut v = self.schemas.unwrap_or_default();
-            v.push(input);
-            self.schemas = Some(v);
-            self
+                            v.push(input);
+                            self.schemas = Some(v);
+                            self
         }
         /// <p>An array of SearchSchemaSummary information.</p>
-        pub fn set_schemas(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SearchSchemaSummary>>,
-        ) -> Self {
-            self.schemas = input;
-            self
+        pub fn set_schemas(mut self, input: std::option::Option<std::vec::Vec<crate::model::SearchSchemaSummary>>) -> Self {
+            self.schemas = input; self
         }
         /// Consumes the builder and constructs a [`SearchSchemasOutput`](crate::output::SearchSchemasOutput).
         pub fn build(self) -> crate::output::SearchSchemasOutput {
             crate::output::SearchSchemasOutput {
-                next_token: self.next_token,
-                schemas: self.schemas,
+                next_token: self.next_token
+                ,
+                schemas: self.schemas
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchSchemasOutput {
     /// Creates a new builder-style object to manufacture [`SearchSchemasOutput`](crate::output::SearchSchemasOutput).
@@ -804,7 +746,7 @@ impl SearchSchemasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResourcePolicyOutput {
+pub struct PutResourcePolicyOutput  {
     /// <p>The resource-based policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
@@ -814,17 +756,17 @@ pub struct PutResourcePolicyOutput {
 }
 impl PutResourcePolicyOutput {
     /// <p>The resource-based policy.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>The revision ID of the policy.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
 pub mod put_resource_policy_output {
-
+    
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -839,8 +781,7 @@ pub mod put_resource_policy_output {
         }
         /// <p>The resource-based policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// <p>The revision ID of the policy.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -849,17 +790,20 @@ pub mod put_resource_policy_output {
         }
         /// <p>The revision ID of the policy.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
         pub fn build(self) -> crate::output::PutResourcePolicyOutput {
             crate::output::PutResourcePolicyOutput {
-                policy: self.policy,
-                revision_id: self.revision_id,
+                policy: self.policy
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl PutResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
@@ -871,7 +815,7 @@ impl PutResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutCodeBindingOutput {
+pub struct PutCodeBindingOutput  {
     /// <p>The time and date that the code binding was created.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -887,25 +831,25 @@ pub struct PutCodeBindingOutput {
 }
 impl PutCodeBindingOutput {
     /// <p>The time and date that the code binding was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time that code bindings were modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The version number of the schema.</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     /// <p>The current status of code binding generation.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CodeGenerationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CodeGenerationStatus> {
         self.status.as_ref()
     }
 }
 /// See [`PutCodeBindingOutput`](crate::output::PutCodeBindingOutput).
 pub mod put_code_binding_output {
-
+    
     /// A builder for [`PutCodeBindingOutput`](crate::output::PutCodeBindingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -921,12 +865,8 @@ pub mod put_code_binding_output {
             self
         }
         /// <p>The time and date that the code binding was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The date and time that code bindings were modified.</p>
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -934,12 +874,8 @@ pub mod put_code_binding_output {
             self
         }
         /// <p>The date and time that code bindings were modified.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The version number of the schema.</p>
         pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -947,12 +883,8 @@ pub mod put_code_binding_output {
             self
         }
         /// <p>The version number of the schema.</p>
-        pub fn set_schema_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schema_version = input;
-            self
+        pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_version = input; self
         }
         /// <p>The current status of code binding generation.</p>
         pub fn status(mut self, input: crate::model::CodeGenerationStatus) -> Self {
@@ -960,23 +892,25 @@ pub mod put_code_binding_output {
             self
         }
         /// <p>The current status of code binding generation.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CodeGenerationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CodeGenerationStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`PutCodeBindingOutput`](crate::output::PutCodeBindingOutput).
         pub fn build(self) -> crate::output::PutCodeBindingOutput {
             crate::output::PutCodeBindingOutput {
-                creation_date: self.creation_date,
-                last_modified: self.last_modified,
-                schema_version: self.schema_version,
-                status: self.status,
+                creation_date: self.creation_date
+                ,
+                last_modified: self.last_modified
+                ,
+                schema_version: self.schema_version
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl PutCodeBindingOutput {
     /// Creates a new builder-style object to manufacture [`PutCodeBindingOutput`](crate::output::PutCodeBindingOutput).
@@ -988,30 +922,24 @@ impl PutCodeBindingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>Key-value pairs associated with a resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Key-value pairs associated with a resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -1019,31 +947,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Key-value pairs associated with a resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Key-value pairs associated with a resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1055,7 +978,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSchemaVersionsOutput {
+pub struct ListSchemaVersionsOutput  {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1065,23 +988,22 @@ pub struct ListSchemaVersionsOutput {
 }
 impl ListSchemaVersionsOutput {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of schema version summaries.</p>
-    pub fn schema_versions(&self) -> std::option::Option<&[crate::model::SchemaVersionSummary]> {
+    pub fn schema_versions(&self) -> std::option::Option<& [crate::model::SchemaVersionSummary]> {
         self.schema_versions.as_deref()
     }
 }
 /// See [`ListSchemaVersionsOutput`](crate::output::ListSchemaVersionsOutput).
 pub mod list_schema_versions_output {
-
+    
     /// A builder for [`ListSchemaVersionsOutput`](crate::output::ListSchemaVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) schema_versions:
-            std::option::Option<std::vec::Vec<crate::model::SchemaVersionSummary>>,
+        pub(crate) schema_versions: std::option::Option<std::vec::Vec<crate::model::SchemaVersionSummary>>,
     }
     impl Builder {
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
@@ -1091,8 +1013,7 @@ pub mod list_schema_versions_output {
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `schema_versions`.
         ///
@@ -1101,26 +1022,26 @@ pub mod list_schema_versions_output {
         /// <p>An array of schema version summaries.</p>
         pub fn schema_versions(mut self, input: crate::model::SchemaVersionSummary) -> Self {
             let mut v = self.schema_versions.unwrap_or_default();
-            v.push(input);
-            self.schema_versions = Some(v);
-            self
+                            v.push(input);
+                            self.schema_versions = Some(v);
+                            self
         }
         /// <p>An array of schema version summaries.</p>
-        pub fn set_schema_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SchemaVersionSummary>>,
-        ) -> Self {
-            self.schema_versions = input;
-            self
+        pub fn set_schema_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::SchemaVersionSummary>>) -> Self {
+            self.schema_versions = input; self
         }
         /// Consumes the builder and constructs a [`ListSchemaVersionsOutput`](crate::output::ListSchemaVersionsOutput).
         pub fn build(self) -> crate::output::ListSchemaVersionsOutput {
             crate::output::ListSchemaVersionsOutput {
-                next_token: self.next_token,
-                schema_versions: self.schema_versions,
+                next_token: self.next_token
+                ,
+                schema_versions: self.schema_versions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSchemaVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSchemaVersionsOutput`](crate::output::ListSchemaVersionsOutput).
@@ -1132,7 +1053,7 @@ impl ListSchemaVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSchemasOutput {
+pub struct ListSchemasOutput  {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1142,17 +1063,17 @@ pub struct ListSchemasOutput {
 }
 impl ListSchemasOutput {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of schema summaries.</p>
-    pub fn schemas(&self) -> std::option::Option<&[crate::model::SchemaSummary]> {
+    pub fn schemas(&self) -> std::option::Option<& [crate::model::SchemaSummary]> {
         self.schemas.as_deref()
     }
 }
 /// See [`ListSchemasOutput`](crate::output::ListSchemasOutput).
 pub mod list_schemas_output {
-
+    
     /// A builder for [`ListSchemasOutput`](crate::output::ListSchemasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1167,8 +1088,7 @@ pub mod list_schemas_output {
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `schemas`.
         ///
@@ -1177,26 +1097,26 @@ pub mod list_schemas_output {
         /// <p>An array of schema summaries.</p>
         pub fn schemas(mut self, input: crate::model::SchemaSummary) -> Self {
             let mut v = self.schemas.unwrap_or_default();
-            v.push(input);
-            self.schemas = Some(v);
-            self
+                            v.push(input);
+                            self.schemas = Some(v);
+                            self
         }
         /// <p>An array of schema summaries.</p>
-        pub fn set_schemas(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SchemaSummary>>,
-        ) -> Self {
-            self.schemas = input;
-            self
+        pub fn set_schemas(mut self, input: std::option::Option<std::vec::Vec<crate::model::SchemaSummary>>) -> Self {
+            self.schemas = input; self
         }
         /// Consumes the builder and constructs a [`ListSchemasOutput`](crate::output::ListSchemasOutput).
         pub fn build(self) -> crate::output::ListSchemasOutput {
             crate::output::ListSchemasOutput {
-                next_token: self.next_token,
-                schemas: self.schemas,
+                next_token: self.next_token
+                ,
+                schemas: self.schemas
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSchemasOutput {
     /// Creates a new builder-style object to manufacture [`ListSchemasOutput`](crate::output::ListSchemasOutput).
@@ -1208,7 +1128,7 @@ impl ListSchemasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRegistriesOutput {
+pub struct ListRegistriesOutput  {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1218,17 +1138,17 @@ pub struct ListRegistriesOutput {
 }
 impl ListRegistriesOutput {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of registry summaries.</p>
-    pub fn registries(&self) -> std::option::Option<&[crate::model::RegistrySummary]> {
+    pub fn registries(&self) -> std::option::Option<& [crate::model::RegistrySummary]> {
         self.registries.as_deref()
     }
 }
 /// See [`ListRegistriesOutput`](crate::output::ListRegistriesOutput).
 pub mod list_registries_output {
-
+    
     /// A builder for [`ListRegistriesOutput`](crate::output::ListRegistriesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1243,8 +1163,7 @@ pub mod list_registries_output {
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `registries`.
         ///
@@ -1253,26 +1172,26 @@ pub mod list_registries_output {
         /// <p>An array of registry summaries.</p>
         pub fn registries(mut self, input: crate::model::RegistrySummary) -> Self {
             let mut v = self.registries.unwrap_or_default();
-            v.push(input);
-            self.registries = Some(v);
-            self
+                            v.push(input);
+                            self.registries = Some(v);
+                            self
         }
         /// <p>An array of registry summaries.</p>
-        pub fn set_registries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RegistrySummary>>,
-        ) -> Self {
-            self.registries = input;
-            self
+        pub fn set_registries(mut self, input: std::option::Option<std::vec::Vec<crate::model::RegistrySummary>>) -> Self {
+            self.registries = input; self
         }
         /// Consumes the builder and constructs a [`ListRegistriesOutput`](crate::output::ListRegistriesOutput).
         pub fn build(self) -> crate::output::ListRegistriesOutput {
             crate::output::ListRegistriesOutput {
-                next_token: self.next_token,
-                registries: self.registries,
+                next_token: self.next_token
+                ,
+                registries: self.registries
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRegistriesOutput {
     /// Creates a new builder-style object to manufacture [`ListRegistriesOutput`](crate::output::ListRegistriesOutput).
@@ -1284,7 +1203,7 @@ impl ListRegistriesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDiscoverersOutput {
+pub struct ListDiscoverersOutput  {
     /// <p>An array of DiscovererSummary information.</p>
     #[doc(hidden)]
     pub discoverers: std::option::Option<std::vec::Vec<crate::model::DiscovererSummary>>,
@@ -1294,17 +1213,17 @@ pub struct ListDiscoverersOutput {
 }
 impl ListDiscoverersOutput {
     /// <p>An array of DiscovererSummary information.</p>
-    pub fn discoverers(&self) -> std::option::Option<&[crate::model::DiscovererSummary]> {
+    pub fn discoverers(&self) -> std::option::Option<& [crate::model::DiscovererSummary]> {
         self.discoverers.as_deref()
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDiscoverersOutput`](crate::output::ListDiscoverersOutput).
 pub mod list_discoverers_output {
-
+    
     /// A builder for [`ListDiscoverersOutput`](crate::output::ListDiscoverersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1319,17 +1238,13 @@ pub mod list_discoverers_output {
         /// <p>An array of DiscovererSummary information.</p>
         pub fn discoverers(mut self, input: crate::model::DiscovererSummary) -> Self {
             let mut v = self.discoverers.unwrap_or_default();
-            v.push(input);
-            self.discoverers = Some(v);
-            self
+                            v.push(input);
+                            self.discoverers = Some(v);
+                            self
         }
         /// <p>An array of DiscovererSummary information.</p>
-        pub fn set_discoverers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DiscovererSummary>>,
-        ) -> Self {
-            self.discoverers = input;
-            self
+        pub fn set_discoverers(mut self, input: std::option::Option<std::vec::Vec<crate::model::DiscovererSummary>>) -> Self {
+            self.discoverers = input; self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1338,17 +1253,20 @@ pub mod list_discoverers_output {
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDiscoverersOutput`](crate::output::ListDiscoverersOutput).
         pub fn build(self) -> crate::output::ListDiscoverersOutput {
             crate::output::ListDiscoverersOutput {
-                discoverers: self.discoverers,
-                next_token: self.next_token,
+                discoverers: self.discoverers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDiscoverersOutput {
     /// Creates a new builder-style object to manufacture [`ListDiscoverersOutput`](crate::output::ListDiscoverersOutput).
@@ -1360,7 +1278,7 @@ impl ListDiscoverersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourcePolicyOutput {
+pub struct GetResourcePolicyOutput  {
     /// <p>The resource-based policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
@@ -1370,17 +1288,17 @@ pub struct GetResourcePolicyOutput {
 }
 impl GetResourcePolicyOutput {
     /// <p>The resource-based policy.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>The revision ID.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
 pub mod get_resource_policy_output {
-
+    
     /// A builder for [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1395,8 +1313,7 @@ pub mod get_resource_policy_output {
         }
         /// <p>The resource-based policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// <p>The revision ID.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1405,17 +1322,20 @@ pub mod get_resource_policy_output {
         }
         /// <p>The revision ID.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
         pub fn build(self) -> crate::output::GetResourcePolicyOutput {
             crate::output::GetResourcePolicyOutput {
-                policy: self.policy,
-                revision_id: self.revision_id,
+                policy: self.policy
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
@@ -1427,20 +1347,20 @@ impl GetResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDiscoveredSchemaOutput {
+pub struct GetDiscoveredSchemaOutput  {
     /// <p>The source of the schema definition.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
 }
 impl GetDiscoveredSchemaOutput {
     /// <p>The source of the schema definition.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
 }
 /// See [`GetDiscoveredSchemaOutput`](crate::output::GetDiscoveredSchemaOutput).
 pub mod get_discovered_schema_output {
-
+    
     /// A builder for [`GetDiscoveredSchemaOutput`](crate::output::GetDiscoveredSchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1454,16 +1374,18 @@ pub mod get_discovered_schema_output {
         }
         /// <p>The source of the schema definition.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// Consumes the builder and constructs a [`GetDiscoveredSchemaOutput`](crate::output::GetDiscoveredSchemaOutput).
         pub fn build(self) -> crate::output::GetDiscoveredSchemaOutput {
             crate::output::GetDiscoveredSchemaOutput {
-                content: self.content,
+                content: self.content
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDiscoveredSchemaOutput {
     /// Creates a new builder-style object to manufacture [`GetDiscoveredSchemaOutput`](crate::output::GetDiscoveredSchemaOutput).
@@ -1475,20 +1397,20 @@ impl GetDiscoveredSchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCodeBindingSourceOutput {
+pub struct GetCodeBindingSourceOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub body: std::option::Option<aws_smithy_types::Blob>,
 }
 impl GetCodeBindingSourceOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn body(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.body.as_ref()
     }
 }
 /// See [`GetCodeBindingSourceOutput`](crate::output::GetCodeBindingSourceOutput).
 pub mod get_code_binding_source_output {
-
+    
     /// A builder for [`GetCodeBindingSourceOutput`](crate::output::GetCodeBindingSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1502,14 +1424,18 @@ pub mod get_code_binding_source_output {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_body(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.body = input;
-            self
+            self.body = input; self
         }
         /// Consumes the builder and constructs a [`GetCodeBindingSourceOutput`](crate::output::GetCodeBindingSourceOutput).
         pub fn build(self) -> crate::output::GetCodeBindingSourceOutput {
-            crate::output::GetCodeBindingSourceOutput { body: self.body }
+            crate::output::GetCodeBindingSourceOutput {
+                body: self.body
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetCodeBindingSourceOutput {
     /// Creates a new builder-style object to manufacture [`GetCodeBindingSourceOutput`](crate::output::GetCodeBindingSourceOutput).
@@ -1521,7 +1447,7 @@ impl GetCodeBindingSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportSchemaOutput {
+pub struct ExportSchemaOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
@@ -1540,29 +1466,29 @@ pub struct ExportSchemaOutput {
 }
 impl ExportSchemaOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 /// See [`ExportSchemaOutput`](crate::output::ExportSchemaOutput).
 pub mod export_schema_output {
-
+    
     /// A builder for [`ExportSchemaOutput`](crate::output::ExportSchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1580,8 +1506,7 @@ pub mod export_schema_output {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1590,8 +1515,7 @@ pub mod export_schema_output {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_arn = input;
-            self
+            self.schema_arn = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1600,8 +1524,7 @@ pub mod export_schema_output {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_name = input;
-            self
+            self.schema_name = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1609,12 +1532,8 @@ pub mod export_schema_output {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_schema_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schema_version = input;
-            self
+        pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_version = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1623,20 +1542,26 @@ pub mod export_schema_output {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`ExportSchemaOutput`](crate::output::ExportSchemaOutput).
         pub fn build(self) -> crate::output::ExportSchemaOutput {
             crate::output::ExportSchemaOutput {
-                content: self.content,
-                schema_arn: self.schema_arn,
-                schema_name: self.schema_name,
-                schema_version: self.schema_version,
-                r#type: self.r#type,
+                content: self.content
+                ,
+                schema_arn: self.schema_arn
+                ,
+                schema_name: self.schema_name
+                ,
+                schema_version: self.schema_version
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportSchemaOutput {
     /// Creates a new builder-style object to manufacture [`ExportSchemaOutput`](crate::output::ExportSchemaOutput).
@@ -1648,7 +1573,7 @@ impl ExportSchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSchemaOutput {
+pub struct DescribeSchemaOutput  {
     /// <p>The source of the schema definition.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
@@ -1669,8 +1594,7 @@ pub struct DescribeSchemaOutput {
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>Tags associated with the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of the schema.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -1680,48 +1604,45 @@ pub struct DescribeSchemaOutput {
 }
 impl DescribeSchemaOutput {
     /// <p>The source of the schema definition.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The description of the schema.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time that schema was modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The ARN of the schema.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The version number of the schema</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The type of the schema.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The date the schema version was created.</p>
-    pub fn version_created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn version_created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.version_created_date.as_ref()
     }
 }
 /// See [`DescribeSchemaOutput`](crate::output::DescribeSchemaOutput).
 pub mod describe_schema_output {
-
+    
     /// A builder for [`DescribeSchemaOutput`](crate::output::DescribeSchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1731,9 +1652,7 @@ pub mod describe_schema_output {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
         pub(crate) schema_name: std::option::Option<std::string::String>,
         pub(crate) schema_version: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) version_created_date: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -1745,8 +1664,7 @@ pub mod describe_schema_output {
         }
         /// <p>The source of the schema definition.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// <p>The description of the schema.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1755,8 +1673,7 @@ pub mod describe_schema_output {
         }
         /// <p>The description of the schema.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date and time that schema was modified.</p>
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1764,12 +1681,8 @@ pub mod describe_schema_output {
             self
         }
         /// <p>The date and time that schema was modified.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The ARN of the schema.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1778,8 +1691,7 @@ pub mod describe_schema_output {
         }
         /// <p>The ARN of the schema.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_arn = input;
-            self
+            self.schema_arn = input; self
         }
         /// <p>The name of the schema.</p>
         pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1788,8 +1700,7 @@ pub mod describe_schema_output {
         }
         /// <p>The name of the schema.</p>
         pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_name = input;
-            self
+            self.schema_name = input; self
         }
         /// <p>The version number of the schema</p>
         pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1797,37 +1708,23 @@ pub mod describe_schema_output {
             self
         }
         /// <p>The version number of the schema</p>
-        pub fn set_schema_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schema_version = input;
-            self
+        pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_version = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags associated with the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags associated with the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The type of the schema.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1836,8 +1733,7 @@ pub mod describe_schema_output {
         }
         /// <p>The type of the schema.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The date the schema version was created.</p>
         pub fn version_created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1845,28 +1741,35 @@ pub mod describe_schema_output {
             self
         }
         /// <p>The date the schema version was created.</p>
-        pub fn set_version_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.version_created_date = input;
-            self
+        pub fn set_version_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.version_created_date = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSchemaOutput`](crate::output::DescribeSchemaOutput).
         pub fn build(self) -> crate::output::DescribeSchemaOutput {
             crate::output::DescribeSchemaOutput {
-                content: self.content,
-                description: self.description,
-                last_modified: self.last_modified,
-                schema_arn: self.schema_arn,
-                schema_name: self.schema_name,
-                schema_version: self.schema_version,
-                tags: self.tags,
-                r#type: self.r#type,
-                version_created_date: self.version_created_date,
+                content: self.content
+                ,
+                description: self.description
+                ,
+                last_modified: self.last_modified
+                ,
+                schema_arn: self.schema_arn
+                ,
+                schema_name: self.schema_name
+                ,
+                schema_version: self.schema_version
+                ,
+                tags: self.tags
+                ,
+                r#type: self.r#type
+                ,
+                version_created_date: self.version_created_date
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSchemaOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSchemaOutput`](crate::output::DescribeSchemaOutput).
@@ -1878,7 +1781,7 @@ impl DescribeSchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRegistryOutput {
+pub struct DescribeRegistryOutput  {
     /// <p>The description of the registry.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -1890,42 +1793,36 @@ pub struct DescribeRegistryOutput {
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>Tags associated with the registry.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DescribeRegistryOutput {
     /// <p>The description of the registry.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the registry.</p>
-    pub fn registry_arn(&self) -> std::option::Option<&str> {
+    pub fn registry_arn(&self) -> std::option::Option<& str> {
         self.registry_arn.as_deref()
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> std::option::Option<&str> {
+    pub fn registry_name(&self) -> std::option::Option<& str> {
         self.registry_name.as_deref()
     }
     /// <p>Tags associated with the registry.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput).
 pub mod describe_registry_output {
-
+    
     /// A builder for [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) registry_arn: std::option::Option<std::string::String>,
         pub(crate) registry_name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The description of the registry.</p>
@@ -1935,8 +1832,7 @@ pub mod describe_registry_output {
         }
         /// <p>The description of the registry.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ARN of the registry.</p>
         pub fn registry_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1945,8 +1841,7 @@ pub mod describe_registry_output {
         }
         /// <p>The ARN of the registry.</p>
         pub fn set_registry_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.registry_arn = input;
-            self
+            self.registry_arn = input; self
         }
         /// <p>The name of the registry.</p>
         pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1954,48 +1849,40 @@ pub mod describe_registry_output {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn set_registry_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.registry_name = input;
-            self
+        pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registry_name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags associated with the registry.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags associated with the registry.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput).
         pub fn build(self) -> crate::output::DescribeRegistryOutput {
             crate::output::DescribeRegistryOutput {
-                description: self.description,
-                registry_arn: self.registry_arn,
-                registry_name: self.registry_name,
-                tags: self.tags,
+                description: self.description
+                ,
+                registry_arn: self.registry_arn
+                ,
+                registry_name: self.registry_name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeRegistryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput).
@@ -2007,7 +1894,7 @@ impl DescribeRegistryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDiscovererOutput {
+pub struct DescribeDiscovererOutput  {
     /// <p>The description of the discoverer.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -2028,28 +1915,27 @@ pub struct DescribeDiscovererOutput {
     pub cross_account: bool,
     /// <p>Tags associated with the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DescribeDiscovererOutput {
     /// <p>The description of the discoverer.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the discoverer.</p>
-    pub fn discoverer_arn(&self) -> std::option::Option<&str> {
+    pub fn discoverer_arn(&self) -> std::option::Option<& str> {
         self.discoverer_arn.as_deref()
     }
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+    pub fn discoverer_id(&self) -> std::option::Option<& str> {
         self.discoverer_id.as_deref()
     }
     /// <p>The ARN of the event bus.</p>
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The state of the discoverer.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::DiscovererState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::DiscovererState> {
         self.state.as_ref()
     }
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
@@ -2057,16 +1943,13 @@ impl DescribeDiscovererOutput {
         self.cross_account
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DescribeDiscovererOutput`](crate::output::DescribeDiscovererOutput).
 pub mod describe_discoverer_output {
-
+    
     /// A builder for [`DescribeDiscovererOutput`](crate::output::DescribeDiscovererOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2076,9 +1959,7 @@ pub mod describe_discoverer_output {
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::DiscovererState>,
         pub(crate) cross_account: std::option::Option<bool>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The description of the discoverer.</p>
@@ -2088,8 +1969,7 @@ pub mod describe_discoverer_output {
         }
         /// <p>The description of the discoverer.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ARN of the discoverer.</p>
         pub fn discoverer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2097,12 +1977,8 @@ pub mod describe_discoverer_output {
             self
         }
         /// <p>The ARN of the discoverer.</p>
-        pub fn set_discoverer_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.discoverer_arn = input;
-            self
+        pub fn set_discoverer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.discoverer_arn = input; self
         }
         /// <p>The ID of the discoverer.</p>
         pub fn discoverer_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2110,12 +1986,8 @@ pub mod describe_discoverer_output {
             self
         }
         /// <p>The ID of the discoverer.</p>
-        pub fn set_discoverer_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.discoverer_id = input;
-            self
+        pub fn set_discoverer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.discoverer_id = input; self
         }
         /// <p>The ARN of the event bus.</p>
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2124,8 +1996,7 @@ pub mod describe_discoverer_output {
         }
         /// <p>The ARN of the event bus.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = input;
-            self
+            self.source_arn = input; self
         }
         /// <p>The state of the discoverer.</p>
         pub fn state(mut self, input: crate::model::DiscovererState) -> Self {
@@ -2133,12 +2004,8 @@ pub mod describe_discoverer_output {
             self
         }
         /// <p>The state of the discoverer.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::DiscovererState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::DiscovererState>) -> Self {
+            self.state = input; self
         }
         /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
         pub fn cross_account(mut self, input: bool) -> Self {
@@ -2147,47 +2014,46 @@ pub mod describe_discoverer_output {
         }
         /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
         pub fn set_cross_account(mut self, input: std::option::Option<bool>) -> Self {
-            self.cross_account = input;
-            self
+            self.cross_account = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags associated with the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags associated with the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDiscovererOutput`](crate::output::DescribeDiscovererOutput).
         pub fn build(self) -> crate::output::DescribeDiscovererOutput {
             crate::output::DescribeDiscovererOutput {
-                description: self.description,
-                discoverer_arn: self.discoverer_arn,
-                discoverer_id: self.discoverer_id,
-                source_arn: self.source_arn,
-                state: self.state,
-                cross_account: self.cross_account.unwrap_or_default(),
-                tags: self.tags,
+                description: self.description
+                ,
+                discoverer_arn: self.discoverer_arn
+                ,
+                discoverer_id: self.discoverer_id
+                ,
+                source_arn: self.source_arn
+                ,
+                state: self.state
+                ,
+                cross_account: self.cross_account
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDiscovererOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDiscovererOutput`](crate::output::DescribeDiscovererOutput).
@@ -2199,7 +2065,7 @@ impl DescribeDiscovererOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCodeBindingOutput {
+pub struct DescribeCodeBindingOutput  {
     /// <p>The time and date that the code binding was created.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -2215,25 +2081,25 @@ pub struct DescribeCodeBindingOutput {
 }
 impl DescribeCodeBindingOutput {
     /// <p>The time and date that the code binding was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time that code bindings were modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The version number of the schema.</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     /// <p>The current status of code binding generation.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::CodeGenerationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::CodeGenerationStatus> {
         self.status.as_ref()
     }
 }
 /// See [`DescribeCodeBindingOutput`](crate::output::DescribeCodeBindingOutput).
 pub mod describe_code_binding_output {
-
+    
     /// A builder for [`DescribeCodeBindingOutput`](crate::output::DescribeCodeBindingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2249,12 +2115,8 @@ pub mod describe_code_binding_output {
             self
         }
         /// <p>The time and date that the code binding was created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The date and time that code bindings were modified.</p>
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2262,12 +2124,8 @@ pub mod describe_code_binding_output {
             self
         }
         /// <p>The date and time that code bindings were modified.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The version number of the schema.</p>
         pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2275,12 +2133,8 @@ pub mod describe_code_binding_output {
             self
         }
         /// <p>The version number of the schema.</p>
-        pub fn set_schema_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schema_version = input;
-            self
+        pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_version = input; self
         }
         /// <p>The current status of code binding generation.</p>
         pub fn status(mut self, input: crate::model::CodeGenerationStatus) -> Self {
@@ -2288,23 +2142,25 @@ pub mod describe_code_binding_output {
             self
         }
         /// <p>The current status of code binding generation.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::CodeGenerationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::CodeGenerationStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCodeBindingOutput`](crate::output::DescribeCodeBindingOutput).
         pub fn build(self) -> crate::output::DescribeCodeBindingOutput {
             crate::output::DescribeCodeBindingOutput {
-                creation_date: self.creation_date,
-                last_modified: self.last_modified,
-                schema_version: self.schema_version,
-                status: self.status,
+                creation_date: self.creation_date
+                ,
+                last_modified: self.last_modified
+                ,
+                schema_version: self.schema_version
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCodeBindingOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCodeBindingOutput`](crate::output::DescribeCodeBindingOutput).
@@ -2316,19 +2172,24 @@ impl DescribeCodeBindingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSchemaVersionOutput {}
+pub struct DeleteSchemaVersionOutput  {
+}
 /// See [`DeleteSchemaVersionOutput`](crate::output::DeleteSchemaVersionOutput).
 pub mod delete_schema_version_output {
-
+    
     /// A builder for [`DeleteSchemaVersionOutput`](crate::output::DeleteSchemaVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSchemaVersionOutput`](crate::output::DeleteSchemaVersionOutput).
         pub fn build(self) -> crate::output::DeleteSchemaVersionOutput {
-            crate::output::DeleteSchemaVersionOutput {}
+            crate::output::DeleteSchemaVersionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSchemaVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSchemaVersionOutput`](crate::output::DeleteSchemaVersionOutput).
@@ -2340,19 +2201,24 @@ impl DeleteSchemaVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSchemaOutput {}
+pub struct DeleteSchemaOutput  {
+}
 /// See [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput).
 pub mod delete_schema_output {
-
+    
     /// A builder for [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput).
         pub fn build(self) -> crate::output::DeleteSchemaOutput {
-            crate::output::DeleteSchemaOutput {}
+            crate::output::DeleteSchemaOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSchemaOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput).
@@ -2364,19 +2230,24 @@ impl DeleteSchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcePolicyOutput {}
+pub struct DeleteResourcePolicyOutput  {
+}
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
 pub mod delete_resource_policy_output {
-
+    
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
         pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
-            crate::output::DeleteResourcePolicyOutput {}
+            crate::output::DeleteResourcePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
@@ -2388,19 +2259,24 @@ impl DeleteResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRegistryOutput {}
+pub struct DeleteRegistryOutput  {
+}
 /// See [`DeleteRegistryOutput`](crate::output::DeleteRegistryOutput).
 pub mod delete_registry_output {
-
+    
     /// A builder for [`DeleteRegistryOutput`](crate::output::DeleteRegistryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRegistryOutput`](crate::output::DeleteRegistryOutput).
         pub fn build(self) -> crate::output::DeleteRegistryOutput {
-            crate::output::DeleteRegistryOutput {}
+            crate::output::DeleteRegistryOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteRegistryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRegistryOutput`](crate::output::DeleteRegistryOutput).
@@ -2412,19 +2288,24 @@ impl DeleteRegistryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDiscovererOutput {}
+pub struct DeleteDiscovererOutput  {
+}
 /// See [`DeleteDiscovererOutput`](crate::output::DeleteDiscovererOutput).
 pub mod delete_discoverer_output {
-
+    
     /// A builder for [`DeleteDiscovererOutput`](crate::output::DeleteDiscovererOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDiscovererOutput`](crate::output::DeleteDiscovererOutput).
         pub fn build(self) -> crate::output::DeleteDiscovererOutput {
-            crate::output::DeleteDiscovererOutput {}
+            crate::output::DeleteDiscovererOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDiscovererOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDiscovererOutput`](crate::output::DeleteDiscovererOutput).
@@ -2436,7 +2317,7 @@ impl DeleteDiscovererOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSchemaOutput {
+pub struct CreateSchemaOutput  {
     /// <p>The description of the schema.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -2454,8 +2335,7 @@ pub struct CreateSchemaOutput {
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>Key-value pairs associated with a resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of the schema.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -2465,44 +2345,41 @@ pub struct CreateSchemaOutput {
 }
 impl CreateSchemaOutput {
     /// <p>The description of the schema.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time that schema was modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The ARN of the schema.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The version number of the schema</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     /// <p>Key-value pairs associated with a resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The type of the schema.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The date the schema version was created.</p>
-    pub fn version_created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn version_created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.version_created_date.as_ref()
     }
 }
 /// See [`CreateSchemaOutput`](crate::output::CreateSchemaOutput).
 pub mod create_schema_output {
-
+    
     /// A builder for [`CreateSchemaOutput`](crate::output::CreateSchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2511,9 +2388,7 @@ pub mod create_schema_output {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
         pub(crate) schema_name: std::option::Option<std::string::String>,
         pub(crate) schema_version: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) version_created_date: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -2525,8 +2400,7 @@ pub mod create_schema_output {
         }
         /// <p>The description of the schema.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date and time that schema was modified.</p>
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2534,12 +2408,8 @@ pub mod create_schema_output {
             self
         }
         /// <p>The date and time that schema was modified.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The ARN of the schema.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2548,8 +2418,7 @@ pub mod create_schema_output {
         }
         /// <p>The ARN of the schema.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_arn = input;
-            self
+            self.schema_arn = input; self
         }
         /// <p>The name of the schema.</p>
         pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2558,8 +2427,7 @@ pub mod create_schema_output {
         }
         /// <p>The name of the schema.</p>
         pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_name = input;
-            self
+            self.schema_name = input; self
         }
         /// <p>The version number of the schema</p>
         pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2567,37 +2435,23 @@ pub mod create_schema_output {
             self
         }
         /// <p>The version number of the schema</p>
-        pub fn set_schema_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schema_version = input;
-            self
+        pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_version = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Key-value pairs associated with a resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Key-value pairs associated with a resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The type of the schema.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2606,8 +2460,7 @@ pub mod create_schema_output {
         }
         /// <p>The type of the schema.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The date the schema version was created.</p>
         pub fn version_created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2615,27 +2468,33 @@ pub mod create_schema_output {
             self
         }
         /// <p>The date the schema version was created.</p>
-        pub fn set_version_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.version_created_date = input;
-            self
+        pub fn set_version_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.version_created_date = input; self
         }
         /// Consumes the builder and constructs a [`CreateSchemaOutput`](crate::output::CreateSchemaOutput).
         pub fn build(self) -> crate::output::CreateSchemaOutput {
             crate::output::CreateSchemaOutput {
-                description: self.description,
-                last_modified: self.last_modified,
-                schema_arn: self.schema_arn,
-                schema_name: self.schema_name,
-                schema_version: self.schema_version,
-                tags: self.tags,
-                r#type: self.r#type,
-                version_created_date: self.version_created_date,
+                description: self.description
+                ,
+                last_modified: self.last_modified
+                ,
+                schema_arn: self.schema_arn
+                ,
+                schema_name: self.schema_name
+                ,
+                schema_version: self.schema_version
+                ,
+                tags: self.tags
+                ,
+                r#type: self.r#type
+                ,
+                version_created_date: self.version_created_date
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSchemaOutput {
     /// Creates a new builder-style object to manufacture [`CreateSchemaOutput`](crate::output::CreateSchemaOutput).
@@ -2647,7 +2506,7 @@ impl CreateSchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRegistryOutput {
+pub struct CreateRegistryOutput  {
     /// <p>The description of the registry.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -2659,42 +2518,36 @@ pub struct CreateRegistryOutput {
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>Tags associated with the registry.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateRegistryOutput {
     /// <p>The description of the registry.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the registry.</p>
-    pub fn registry_arn(&self) -> std::option::Option<&str> {
+    pub fn registry_arn(&self) -> std::option::Option<& str> {
         self.registry_arn.as_deref()
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> std::option::Option<&str> {
+    pub fn registry_name(&self) -> std::option::Option<& str> {
         self.registry_name.as_deref()
     }
     /// <p>Tags associated with the registry.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateRegistryOutput`](crate::output::CreateRegistryOutput).
 pub mod create_registry_output {
-
+    
     /// A builder for [`CreateRegistryOutput`](crate::output::CreateRegistryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) registry_arn: std::option::Option<std::string::String>,
         pub(crate) registry_name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The description of the registry.</p>
@@ -2704,8 +2557,7 @@ pub mod create_registry_output {
         }
         /// <p>The description of the registry.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ARN of the registry.</p>
         pub fn registry_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2714,8 +2566,7 @@ pub mod create_registry_output {
         }
         /// <p>The ARN of the registry.</p>
         pub fn set_registry_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.registry_arn = input;
-            self
+            self.registry_arn = input; self
         }
         /// <p>The name of the registry.</p>
         pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2723,48 +2574,40 @@ pub mod create_registry_output {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn set_registry_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.registry_name = input;
-            self
+        pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registry_name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags associated with the registry.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags associated with the registry.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateRegistryOutput`](crate::output::CreateRegistryOutput).
         pub fn build(self) -> crate::output::CreateRegistryOutput {
             crate::output::CreateRegistryOutput {
-                description: self.description,
-                registry_arn: self.registry_arn,
-                registry_name: self.registry_name,
-                tags: self.tags,
+                description: self.description
+                ,
+                registry_arn: self.registry_arn
+                ,
+                registry_name: self.registry_name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRegistryOutput {
     /// Creates a new builder-style object to manufacture [`CreateRegistryOutput`](crate::output::CreateRegistryOutput).
@@ -2776,7 +2619,7 @@ impl CreateRegistryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDiscovererOutput {
+pub struct CreateDiscovererOutput  {
     /// <p>The description of the discoverer.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -2797,28 +2640,27 @@ pub struct CreateDiscovererOutput {
     pub cross_account: bool,
     /// <p>Tags associated with the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateDiscovererOutput {
     /// <p>The description of the discoverer.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the discoverer.</p>
-    pub fn discoverer_arn(&self) -> std::option::Option<&str> {
+    pub fn discoverer_arn(&self) -> std::option::Option<& str> {
         self.discoverer_arn.as_deref()
     }
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+    pub fn discoverer_id(&self) -> std::option::Option<& str> {
         self.discoverer_id.as_deref()
     }
     /// <p>The ARN of the event bus.</p>
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The state of the discoverer.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::DiscovererState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::DiscovererState> {
         self.state.as_ref()
     }
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
@@ -2826,16 +2668,13 @@ impl CreateDiscovererOutput {
         self.cross_account
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateDiscovererOutput`](crate::output::CreateDiscovererOutput).
 pub mod create_discoverer_output {
-
+    
     /// A builder for [`CreateDiscovererOutput`](crate::output::CreateDiscovererOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2845,9 +2684,7 @@ pub mod create_discoverer_output {
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::DiscovererState>,
         pub(crate) cross_account: std::option::Option<bool>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The description of the discoverer.</p>
@@ -2857,8 +2694,7 @@ pub mod create_discoverer_output {
         }
         /// <p>The description of the discoverer.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ARN of the discoverer.</p>
         pub fn discoverer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2866,12 +2702,8 @@ pub mod create_discoverer_output {
             self
         }
         /// <p>The ARN of the discoverer.</p>
-        pub fn set_discoverer_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.discoverer_arn = input;
-            self
+        pub fn set_discoverer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.discoverer_arn = input; self
         }
         /// <p>The ID of the discoverer.</p>
         pub fn discoverer_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2879,12 +2711,8 @@ pub mod create_discoverer_output {
             self
         }
         /// <p>The ID of the discoverer.</p>
-        pub fn set_discoverer_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.discoverer_id = input;
-            self
+        pub fn set_discoverer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.discoverer_id = input; self
         }
         /// <p>The ARN of the event bus.</p>
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2893,8 +2721,7 @@ pub mod create_discoverer_output {
         }
         /// <p>The ARN of the event bus.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = input;
-            self
+            self.source_arn = input; self
         }
         /// <p>The state of the discoverer.</p>
         pub fn state(mut self, input: crate::model::DiscovererState) -> Self {
@@ -2902,12 +2729,8 @@ pub mod create_discoverer_output {
             self
         }
         /// <p>The state of the discoverer.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::DiscovererState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::DiscovererState>) -> Self {
+            self.state = input; self
         }
         /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
         pub fn cross_account(mut self, input: bool) -> Self {
@@ -2916,47 +2739,46 @@ pub mod create_discoverer_output {
         }
         /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
         pub fn set_cross_account(mut self, input: std::option::Option<bool>) -> Self {
-            self.cross_account = input;
-            self
+            self.cross_account = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags associated with the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags associated with the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateDiscovererOutput`](crate::output::CreateDiscovererOutput).
         pub fn build(self) -> crate::output::CreateDiscovererOutput {
             crate::output::CreateDiscovererOutput {
-                description: self.description,
-                discoverer_arn: self.discoverer_arn,
-                discoverer_id: self.discoverer_id,
-                source_arn: self.source_arn,
-                state: self.state,
-                cross_account: self.cross_account.unwrap_or_default(),
-                tags: self.tags,
+                description: self.description
+                ,
+                discoverer_arn: self.discoverer_arn
+                ,
+                discoverer_id: self.discoverer_id
+                ,
+                source_arn: self.source_arn
+                ,
+                state: self.state
+                ,
+                cross_account: self.cross_account
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDiscovererOutput {
     /// Creates a new builder-style object to manufacture [`CreateDiscovererOutput`](crate::output::CreateDiscovererOutput).
@@ -2964,3 +2786,4 @@ impl CreateDiscovererOutput {
         crate::output::create_discoverer_output::Builder::default()
     }
 }
+

@@ -3,7 +3,7 @@
 /// Represents the output of a ListWorkspaces operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkspacesOutput {
+pub struct ListWorkspacesOutput  {
     /// The list of existing workspaces, including those undergoing creation or deletion.
     #[doc(hidden)]
     pub workspaces: std::option::Option<std::vec::Vec<crate::model::WorkspaceSummary>>,
@@ -13,17 +13,17 @@ pub struct ListWorkspacesOutput {
 }
 impl ListWorkspacesOutput {
     /// The list of existing workspaces, including those undergoing creation or deletion.
-    pub fn workspaces(&self) -> std::option::Option<&[crate::model::WorkspaceSummary]> {
+    pub fn workspaces(&self) -> std::option::Option<& [crate::model::WorkspaceSummary]> {
         self.workspaces.as_deref()
     }
     /// Pagination token to use when requesting the next page in this list.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput).
 pub mod list_workspaces_output {
-
+    
     /// A builder for [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,17 +38,13 @@ pub mod list_workspaces_output {
         /// The list of existing workspaces, including those undergoing creation or deletion.
         pub fn workspaces(mut self, input: crate::model::WorkspaceSummary) -> Self {
             let mut v = self.workspaces.unwrap_or_default();
-            v.push(input);
-            self.workspaces = Some(v);
-            self
+                            v.push(input);
+                            self.workspaces = Some(v);
+                            self
         }
         /// The list of existing workspaces, including those undergoing creation or deletion.
-        pub fn set_workspaces(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WorkspaceSummary>>,
-        ) -> Self {
-            self.workspaces = input;
-            self
+        pub fn set_workspaces(mut self, input: std::option::Option<std::vec::Vec<crate::model::WorkspaceSummary>>) -> Self {
+            self.workspaces = input; self
         }
         /// Pagination token to use when requesting the next page in this list.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,17 +53,20 @@ pub mod list_workspaces_output {
         }
         /// Pagination token to use when requesting the next page in this list.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput).
         pub fn build(self) -> crate::output::ListWorkspacesOutput {
             crate::output::ListWorkspacesOutput {
-                workspaces: self.workspaces,
-                next_token: self.next_token,
+                workspaces: self.workspaces
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWorkspacesOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput).
@@ -79,7 +78,7 @@ impl ListWorkspacesOutput {
 /// Represents the output of a CreateWorkspace operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkspaceOutput {
+pub struct CreateWorkspaceOutput  {
     /// The generated ID of the workspace that was just created.
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
@@ -91,42 +90,36 @@ pub struct CreateWorkspaceOutput {
     pub status: std::option::Option<crate::model::WorkspaceStatus>,
     /// The tags of this workspace.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateWorkspaceOutput {
     /// The generated ID of the workspace that was just created.
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// The ARN of the workspace that was just created.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The status of the workspace that was just created (usually CREATING).
-    pub fn status(&self) -> std::option::Option<&crate::model::WorkspaceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::WorkspaceStatus> {
         self.status.as_ref()
     }
     /// The tags of this workspace.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput).
 pub mod create_workspace_output {
-
+    
     /// A builder for [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorkspaceStatus>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The generated ID of the workspace that was just created.
@@ -136,8 +129,7 @@ pub mod create_workspace_output {
         }
         /// The generated ID of the workspace that was just created.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workspace_id = input;
-            self
+            self.workspace_id = input; self
         }
         /// The ARN of the workspace that was just created.
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,8 +138,7 @@ pub mod create_workspace_output {
         }
         /// The ARN of the workspace that was just created.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The status of the workspace that was just created (usually CREATING).
         pub fn status(mut self, input: crate::model::WorkspaceStatus) -> Self {
@@ -155,48 +146,40 @@ pub mod create_workspace_output {
             self
         }
         /// The status of the workspace that was just created (usually CREATING).
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::WorkspaceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::WorkspaceStatus>) -> Self {
+            self.status = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// The tags of this workspace.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// The tags of this workspace.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput).
         pub fn build(self) -> crate::output::CreateWorkspaceOutput {
             crate::output::CreateWorkspaceOutput {
-                workspace_id: self.workspace_id,
-                arn: self.arn,
-                status: self.status,
-                tags: self.tags,
+                workspace_id: self.workspace_id
+                ,
+                arn: self.arn
+                ,
+                status: self.status
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateWorkspaceOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput).
@@ -208,19 +191,24 @@ impl CreateWorkspaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkspaceOutput {}
+pub struct DeleteWorkspaceOutput  {
+}
 /// See [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
 pub mod delete_workspace_output {
-
+    
     /// A builder for [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
         pub fn build(self) -> crate::output::DeleteWorkspaceOutput {
-            crate::output::DeleteWorkspaceOutput {}
+            crate::output::DeleteWorkspaceOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteWorkspaceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
@@ -232,19 +220,24 @@ impl DeleteWorkspaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkspaceAliasOutput {}
+pub struct UpdateWorkspaceAliasOutput  {
+}
 /// See [`UpdateWorkspaceAliasOutput`](crate::output::UpdateWorkspaceAliasOutput).
 pub mod update_workspace_alias_output {
-
+    
     /// A builder for [`UpdateWorkspaceAliasOutput`](crate::output::UpdateWorkspaceAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateWorkspaceAliasOutput`](crate::output::UpdateWorkspaceAliasOutput).
         pub fn build(self) -> crate::output::UpdateWorkspaceAliasOutput {
-            crate::output::UpdateWorkspaceAliasOutput {}
+            crate::output::UpdateWorkspaceAliasOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateWorkspaceAliasOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceAliasOutput`](crate::output::UpdateWorkspaceAliasOutput).
@@ -256,20 +249,20 @@ impl UpdateWorkspaceAliasOutput {
 /// Represents the output of a DescribeWorkspace operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkspaceOutput {
+pub struct DescribeWorkspaceOutput  {
     /// The properties of the selected workspace.
     #[doc(hidden)]
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
 }
 impl DescribeWorkspaceOutput {
     /// The properties of the selected workspace.
-    pub fn workspace(&self) -> std::option::Option<&crate::model::WorkspaceDescription> {
+    pub fn workspace(&self) -> std::option::Option<& crate::model::WorkspaceDescription> {
         self.workspace.as_ref()
     }
 }
 /// See [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput).
 pub mod describe_workspace_output {
-
+    
     /// A builder for [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -282,20 +275,19 @@ pub mod describe_workspace_output {
             self
         }
         /// The properties of the selected workspace.
-        pub fn set_workspace(
-            mut self,
-            input: std::option::Option<crate::model::WorkspaceDescription>,
-        ) -> Self {
-            self.workspace = input;
-            self
+        pub fn set_workspace(mut self, input: std::option::Option<crate::model::WorkspaceDescription>) -> Self {
+            self.workspace = input; self
         }
         /// Consumes the builder and constructs a [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput).
         pub fn build(self) -> crate::output::DescribeWorkspaceOutput {
             crate::output::DescribeWorkspaceOutput {
-                workspace: self.workspace,
+                workspace: self.workspace
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeWorkspaceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput).
@@ -307,35 +299,31 @@ impl DescribeWorkspaceOutput {
 /// Represents the output of a ListRuleGroupsNamespaces operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRuleGroupsNamespacesOutput {
+pub struct ListRuleGroupsNamespacesOutput  {
     /// The list of the selected rule groups namespaces.
     #[doc(hidden)]
-    pub rule_groups_namespaces:
-        std::option::Option<std::vec::Vec<crate::model::RuleGroupsNamespaceSummary>>,
+    pub rule_groups_namespaces: std::option::Option<std::vec::Vec<crate::model::RuleGroupsNamespaceSummary>>,
     /// Pagination token to use when requesting the next page in this list.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRuleGroupsNamespacesOutput {
     /// The list of the selected rule groups namespaces.
-    pub fn rule_groups_namespaces(
-        &self,
-    ) -> std::option::Option<&[crate::model::RuleGroupsNamespaceSummary]> {
+    pub fn rule_groups_namespaces(&self) -> std::option::Option<& [crate::model::RuleGroupsNamespaceSummary]> {
         self.rule_groups_namespaces.as_deref()
     }
     /// Pagination token to use when requesting the next page in this list.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRuleGroupsNamespacesOutput`](crate::output::ListRuleGroupsNamespacesOutput).
 pub mod list_rule_groups_namespaces_output {
-
+    
     /// A builder for [`ListRuleGroupsNamespacesOutput`](crate::output::ListRuleGroupsNamespacesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) rule_groups_namespaces:
-            std::option::Option<std::vec::Vec<crate::model::RuleGroupsNamespaceSummary>>,
+        pub(crate) rule_groups_namespaces: std::option::Option<std::vec::Vec<crate::model::RuleGroupsNamespaceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -344,22 +332,15 @@ pub mod list_rule_groups_namespaces_output {
         /// To override the contents of this collection use [`set_rule_groups_namespaces`](Self::set_rule_groups_namespaces).
         ///
         /// The list of the selected rule groups namespaces.
-        pub fn rule_groups_namespaces(
-            mut self,
-            input: crate::model::RuleGroupsNamespaceSummary,
-        ) -> Self {
+        pub fn rule_groups_namespaces(mut self, input: crate::model::RuleGroupsNamespaceSummary) -> Self {
             let mut v = self.rule_groups_namespaces.unwrap_or_default();
-            v.push(input);
-            self.rule_groups_namespaces = Some(v);
-            self
+                            v.push(input);
+                            self.rule_groups_namespaces = Some(v);
+                            self
         }
         /// The list of the selected rule groups namespaces.
-        pub fn set_rule_groups_namespaces(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RuleGroupsNamespaceSummary>>,
-        ) -> Self {
-            self.rule_groups_namespaces = input;
-            self
+        pub fn set_rule_groups_namespaces(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuleGroupsNamespaceSummary>>) -> Self {
+            self.rule_groups_namespaces = input; self
         }
         /// Pagination token to use when requesting the next page in this list.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -368,17 +349,20 @@ pub mod list_rule_groups_namespaces_output {
         }
         /// Pagination token to use when requesting the next page in this list.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRuleGroupsNamespacesOutput`](crate::output::ListRuleGroupsNamespacesOutput).
         pub fn build(self) -> crate::output::ListRuleGroupsNamespacesOutput {
             crate::output::ListRuleGroupsNamespacesOutput {
-                rule_groups_namespaces: self.rule_groups_namespaces,
-                next_token: self.next_token,
+                rule_groups_namespaces: self.rule_groups_namespaces
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRuleGroupsNamespacesOutput {
     /// Creates a new builder-style object to manufacture [`ListRuleGroupsNamespacesOutput`](crate::output::ListRuleGroupsNamespacesOutput).
@@ -390,7 +374,7 @@ impl ListRuleGroupsNamespacesOutput {
 /// Represents the output of a CreateRuleGroupsNamespace operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRuleGroupsNamespaceOutput {
+pub struct CreateRuleGroupsNamespaceOutput  {
     /// The rule groups namespace name.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -402,42 +386,36 @@ pub struct CreateRuleGroupsNamespaceOutput {
     pub status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
     /// The tags of this rule groups namespace.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateRuleGroupsNamespaceOutput {
     /// The rule groups namespace name.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The status of rule groups namespace.
-    pub fn status(&self) -> std::option::Option<&crate::model::RuleGroupsNamespaceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RuleGroupsNamespaceStatus> {
         self.status.as_ref()
     }
     /// The tags of this rule groups namespace.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateRuleGroupsNamespaceOutput`](crate::output::CreateRuleGroupsNamespaceOutput).
 pub mod create_rule_groups_namespace_output {
-
+    
     /// A builder for [`CreateRuleGroupsNamespaceOutput`](crate::output::CreateRuleGroupsNamespaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The rule groups namespace name.
@@ -447,8 +425,7 @@ pub mod create_rule_groups_namespace_output {
         }
         /// The rule groups namespace name.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The Amazon Resource Name (ARN) of this rule groups namespace.
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -457,8 +434,7 @@ pub mod create_rule_groups_namespace_output {
         }
         /// The Amazon Resource Name (ARN) of this rule groups namespace.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The status of rule groups namespace.
         pub fn status(mut self, input: crate::model::RuleGroupsNamespaceStatus) -> Self {
@@ -466,48 +442,40 @@ pub mod create_rule_groups_namespace_output {
             self
         }
         /// The status of rule groups namespace.
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::RuleGroupsNamespaceStatus>) -> Self {
+            self.status = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// The tags of this rule groups namespace.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// The tags of this rule groups namespace.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateRuleGroupsNamespaceOutput`](crate::output::CreateRuleGroupsNamespaceOutput).
         pub fn build(self) -> crate::output::CreateRuleGroupsNamespaceOutput {
             crate::output::CreateRuleGroupsNamespaceOutput {
-                name: self.name,
-                arn: self.arn,
-                status: self.status,
-                tags: self.tags,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                status: self.status
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRuleGroupsNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`CreateRuleGroupsNamespaceOutput`](crate::output::CreateRuleGroupsNamespaceOutput).
@@ -519,19 +487,24 @@ impl CreateRuleGroupsNamespaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRuleGroupsNamespaceOutput {}
+pub struct DeleteRuleGroupsNamespaceOutput  {
+}
 /// See [`DeleteRuleGroupsNamespaceOutput`](crate::output::DeleteRuleGroupsNamespaceOutput).
 pub mod delete_rule_groups_namespace_output {
-
+    
     /// A builder for [`DeleteRuleGroupsNamespaceOutput`](crate::output::DeleteRuleGroupsNamespaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRuleGroupsNamespaceOutput`](crate::output::DeleteRuleGroupsNamespaceOutput).
         pub fn build(self) -> crate::output::DeleteRuleGroupsNamespaceOutput {
-            crate::output::DeleteRuleGroupsNamespaceOutput {}
+            crate::output::DeleteRuleGroupsNamespaceOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteRuleGroupsNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRuleGroupsNamespaceOutput`](crate::output::DeleteRuleGroupsNamespaceOutput).
@@ -543,7 +516,7 @@ impl DeleteRuleGroupsNamespaceOutput {
 /// Represents the output of a PutRuleGroupsNamespace operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRuleGroupsNamespaceOutput {
+pub struct PutRuleGroupsNamespaceOutput  {
     /// The rule groups namespace name.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -555,42 +528,36 @@ pub struct PutRuleGroupsNamespaceOutput {
     pub status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
     /// The tags of this rule groups namespace.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PutRuleGroupsNamespaceOutput {
     /// The rule groups namespace name.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The status of rule groups namespace.
-    pub fn status(&self) -> std::option::Option<&crate::model::RuleGroupsNamespaceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RuleGroupsNamespaceStatus> {
         self.status.as_ref()
     }
     /// The tags of this rule groups namespace.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`PutRuleGroupsNamespaceOutput`](crate::output::PutRuleGroupsNamespaceOutput).
 pub mod put_rule_groups_namespace_output {
-
+    
     /// A builder for [`PutRuleGroupsNamespaceOutput`](crate::output::PutRuleGroupsNamespaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The rule groups namespace name.
@@ -600,8 +567,7 @@ pub mod put_rule_groups_namespace_output {
         }
         /// The rule groups namespace name.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// The Amazon Resource Name (ARN) of this rule groups namespace.
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -610,8 +576,7 @@ pub mod put_rule_groups_namespace_output {
         }
         /// The Amazon Resource Name (ARN) of this rule groups namespace.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The status of rule groups namespace.
         pub fn status(mut self, input: crate::model::RuleGroupsNamespaceStatus) -> Self {
@@ -619,48 +584,40 @@ pub mod put_rule_groups_namespace_output {
             self
         }
         /// The status of rule groups namespace.
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::RuleGroupsNamespaceStatus>) -> Self {
+            self.status = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// The tags of this rule groups namespace.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// The tags of this rule groups namespace.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`PutRuleGroupsNamespaceOutput`](crate::output::PutRuleGroupsNamespaceOutput).
         pub fn build(self) -> crate::output::PutRuleGroupsNamespaceOutput {
             crate::output::PutRuleGroupsNamespaceOutput {
-                name: self.name,
-                arn: self.arn,
-                status: self.status,
-                tags: self.tags,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                status: self.status
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl PutRuleGroupsNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`PutRuleGroupsNamespaceOutput`](crate::output::PutRuleGroupsNamespaceOutput).
@@ -672,52 +629,45 @@ impl PutRuleGroupsNamespaceOutput {
 /// Represents the output of a DescribeRuleGroupsNamespace operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRuleGroupsNamespaceOutput {
+pub struct DescribeRuleGroupsNamespaceOutput  {
     /// The selected rule groups namespace.
     #[doc(hidden)]
     pub rule_groups_namespace: std::option::Option<crate::model::RuleGroupsNamespaceDescription>,
 }
 impl DescribeRuleGroupsNamespaceOutput {
     /// The selected rule groups namespace.
-    pub fn rule_groups_namespace(
-        &self,
-    ) -> std::option::Option<&crate::model::RuleGroupsNamespaceDescription> {
+    pub fn rule_groups_namespace(&self) -> std::option::Option<& crate::model::RuleGroupsNamespaceDescription> {
         self.rule_groups_namespace.as_ref()
     }
 }
 /// See [`DescribeRuleGroupsNamespaceOutput`](crate::output::DescribeRuleGroupsNamespaceOutput).
 pub mod describe_rule_groups_namespace_output {
-
+    
     /// A builder for [`DescribeRuleGroupsNamespaceOutput`](crate::output::DescribeRuleGroupsNamespaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) rule_groups_namespace:
-            std::option::Option<crate::model::RuleGroupsNamespaceDescription>,
+        pub(crate) rule_groups_namespace: std::option::Option<crate::model::RuleGroupsNamespaceDescription>,
     }
     impl Builder {
         /// The selected rule groups namespace.
-        pub fn rule_groups_namespace(
-            mut self,
-            input: crate::model::RuleGroupsNamespaceDescription,
-        ) -> Self {
+        pub fn rule_groups_namespace(mut self, input: crate::model::RuleGroupsNamespaceDescription) -> Self {
             self.rule_groups_namespace = Some(input);
             self
         }
         /// The selected rule groups namespace.
-        pub fn set_rule_groups_namespace(
-            mut self,
-            input: std::option::Option<crate::model::RuleGroupsNamespaceDescription>,
-        ) -> Self {
-            self.rule_groups_namespace = input;
-            self
+        pub fn set_rule_groups_namespace(mut self, input: std::option::Option<crate::model::RuleGroupsNamespaceDescription>) -> Self {
+            self.rule_groups_namespace = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRuleGroupsNamespaceOutput`](crate::output::DescribeRuleGroupsNamespaceOutput).
         pub fn build(self) -> crate::output::DescribeRuleGroupsNamespaceOutput {
             crate::output::DescribeRuleGroupsNamespaceOutput {
-                rule_groups_namespace: self.rule_groups_namespace,
+                rule_groups_namespace: self.rule_groups_namespace
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeRuleGroupsNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRuleGroupsNamespaceOutput`](crate::output::DescribeRuleGroupsNamespaceOutput).
@@ -729,20 +679,20 @@ impl DescribeRuleGroupsNamespaceOutput {
 /// Represents the output of a CreateLoggingConfiguration operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLoggingConfigurationOutput {
+pub struct CreateLoggingConfigurationOutput  {
     /// The status of the logging configuration.
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::LoggingConfigurationStatus>,
 }
 impl CreateLoggingConfigurationOutput {
     /// The status of the logging configuration.
-    pub fn status(&self) -> std::option::Option<&crate::model::LoggingConfigurationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::LoggingConfigurationStatus> {
         self.status.as_ref()
     }
 }
 /// See [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput).
 pub mod create_logging_configuration_output {
-
+    
     /// A builder for [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -755,20 +705,19 @@ pub mod create_logging_configuration_output {
             self
         }
         /// The status of the logging configuration.
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::LoggingConfigurationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::LoggingConfigurationStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::CreateLoggingConfigurationOutput {
             crate::output::CreateLoggingConfigurationOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput).
@@ -780,19 +729,24 @@ impl CreateLoggingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoggingConfigurationOutput {}
+pub struct DeleteLoggingConfigurationOutput  {
+}
 /// See [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
 pub mod delete_logging_configuration_output {
-
+    
     /// A builder for [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteLoggingConfigurationOutput {
-            crate::output::DeleteLoggingConfigurationOutput {}
+            crate::output::DeleteLoggingConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
@@ -804,20 +758,20 @@ impl DeleteLoggingConfigurationOutput {
 /// Represents the output of an UpdateLoggingConfiguration operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLoggingConfigurationOutput {
+pub struct UpdateLoggingConfigurationOutput  {
     /// The status of the logging configuration.
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::LoggingConfigurationStatus>,
 }
 impl UpdateLoggingConfigurationOutput {
     /// The status of the logging configuration.
-    pub fn status(&self) -> std::option::Option<&crate::model::LoggingConfigurationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::LoggingConfigurationStatus> {
         self.status.as_ref()
     }
 }
 /// See [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
 pub mod update_logging_configuration_output {
-
+    
     /// A builder for [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -830,20 +784,19 @@ pub mod update_logging_configuration_output {
             self
         }
         /// The status of the logging configuration.
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::LoggingConfigurationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::LoggingConfigurationStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateLoggingConfigurationOutput {
             crate::output::UpdateLoggingConfigurationOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
@@ -855,52 +808,45 @@ impl UpdateLoggingConfigurationOutput {
 /// Represents the output of a DescribeLoggingConfiguration operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLoggingConfigurationOutput {
+pub struct DescribeLoggingConfigurationOutput  {
     /// Metadata object containing information about the logging configuration of a workspace.
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfigurationMetadata>,
 }
 impl DescribeLoggingConfigurationOutput {
     /// Metadata object containing information about the logging configuration of a workspace.
-    pub fn logging_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::LoggingConfigurationMetadata> {
+    pub fn logging_configuration(&self) -> std::option::Option<& crate::model::LoggingConfigurationMetadata> {
         self.logging_configuration.as_ref()
     }
 }
 /// See [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
 pub mod describe_logging_configuration_output {
-
+    
     /// A builder for [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) logging_configuration:
-            std::option::Option<crate::model::LoggingConfigurationMetadata>,
+        pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfigurationMetadata>,
     }
     impl Builder {
         /// Metadata object containing information about the logging configuration of a workspace.
-        pub fn logging_configuration(
-            mut self,
-            input: crate::model::LoggingConfigurationMetadata,
-        ) -> Self {
+        pub fn logging_configuration(mut self, input: crate::model::LoggingConfigurationMetadata) -> Self {
             self.logging_configuration = Some(input);
             self
         }
         /// Metadata object containing information about the logging configuration of a workspace.
-        pub fn set_logging_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LoggingConfigurationMetadata>,
-        ) -> Self {
-            self.logging_configuration = input;
-            self
+        pub fn set_logging_configuration(mut self, input: std::option::Option<crate::model::LoggingConfigurationMetadata>) -> Self {
+            self.logging_configuration = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeLoggingConfigurationOutput {
             crate::output::DescribeLoggingConfigurationOutput {
-                logging_configuration: self.logging_configuration,
+                logging_configuration: self.logging_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
@@ -912,20 +858,20 @@ impl DescribeLoggingConfigurationOutput {
 /// Represents the output of a CreateAlertManagerDefinition operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAlertManagerDefinitionOutput {
+pub struct CreateAlertManagerDefinitionOutput  {
     /// The status of alert manager definition.
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
 }
 impl CreateAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
-    pub fn status(&self) -> std::option::Option<&crate::model::AlertManagerDefinitionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AlertManagerDefinitionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`CreateAlertManagerDefinitionOutput`](crate::output::CreateAlertManagerDefinitionOutput).
 pub mod create_alert_manager_definition_output {
-
+    
     /// A builder for [`CreateAlertManagerDefinitionOutput`](crate::output::CreateAlertManagerDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -938,20 +884,19 @@ pub mod create_alert_manager_definition_output {
             self
         }
         /// The status of alert manager definition.
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AlertManagerDefinitionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateAlertManagerDefinitionOutput`](crate::output::CreateAlertManagerDefinitionOutput).
         pub fn build(self) -> crate::output::CreateAlertManagerDefinitionOutput {
             crate::output::CreateAlertManagerDefinitionOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAlertManagerDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`CreateAlertManagerDefinitionOutput`](crate::output::CreateAlertManagerDefinitionOutput).
@@ -963,19 +908,24 @@ impl CreateAlertManagerDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAlertManagerDefinitionOutput {}
+pub struct DeleteAlertManagerDefinitionOutput  {
+}
 /// See [`DeleteAlertManagerDefinitionOutput`](crate::output::DeleteAlertManagerDefinitionOutput).
 pub mod delete_alert_manager_definition_output {
-
+    
     /// A builder for [`DeleteAlertManagerDefinitionOutput`](crate::output::DeleteAlertManagerDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAlertManagerDefinitionOutput`](crate::output::DeleteAlertManagerDefinitionOutput).
         pub fn build(self) -> crate::output::DeleteAlertManagerDefinitionOutput {
-            crate::output::DeleteAlertManagerDefinitionOutput {}
+            crate::output::DeleteAlertManagerDefinitionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAlertManagerDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAlertManagerDefinitionOutput`](crate::output::DeleteAlertManagerDefinitionOutput).
@@ -987,20 +937,20 @@ impl DeleteAlertManagerDefinitionOutput {
 /// Represents the output of a PutAlertManagerDefinition operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAlertManagerDefinitionOutput {
+pub struct PutAlertManagerDefinitionOutput  {
     /// The status of alert manager definition.
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
 }
 impl PutAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
-    pub fn status(&self) -> std::option::Option<&crate::model::AlertManagerDefinitionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AlertManagerDefinitionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`PutAlertManagerDefinitionOutput`](crate::output::PutAlertManagerDefinitionOutput).
 pub mod put_alert_manager_definition_output {
-
+    
     /// A builder for [`PutAlertManagerDefinitionOutput`](crate::output::PutAlertManagerDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1013,20 +963,19 @@ pub mod put_alert_manager_definition_output {
             self
         }
         /// The status of alert manager definition.
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AlertManagerDefinitionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`PutAlertManagerDefinitionOutput`](crate::output::PutAlertManagerDefinitionOutput).
         pub fn build(self) -> crate::output::PutAlertManagerDefinitionOutput {
             crate::output::PutAlertManagerDefinitionOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl PutAlertManagerDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`PutAlertManagerDefinitionOutput`](crate::output::PutAlertManagerDefinitionOutput).
@@ -1038,53 +987,45 @@ impl PutAlertManagerDefinitionOutput {
 /// Represents the output of a DescribeAlertManagerDefinition operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAlertManagerDefinitionOutput {
+pub struct DescribeAlertManagerDefinitionOutput  {
     /// The properties of the selected workspace's alert manager definition.
     #[doc(hidden)]
-    pub alert_manager_definition:
-        std::option::Option<crate::model::AlertManagerDefinitionDescription>,
+    pub alert_manager_definition: std::option::Option<crate::model::AlertManagerDefinitionDescription>,
 }
 impl DescribeAlertManagerDefinitionOutput {
     /// The properties of the selected workspace's alert manager definition.
-    pub fn alert_manager_definition(
-        &self,
-    ) -> std::option::Option<&crate::model::AlertManagerDefinitionDescription> {
+    pub fn alert_manager_definition(&self) -> std::option::Option<& crate::model::AlertManagerDefinitionDescription> {
         self.alert_manager_definition.as_ref()
     }
 }
 /// See [`DescribeAlertManagerDefinitionOutput`](crate::output::DescribeAlertManagerDefinitionOutput).
 pub mod describe_alert_manager_definition_output {
-
+    
     /// A builder for [`DescribeAlertManagerDefinitionOutput`](crate::output::DescribeAlertManagerDefinitionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) alert_manager_definition:
-            std::option::Option<crate::model::AlertManagerDefinitionDescription>,
+        pub(crate) alert_manager_definition: std::option::Option<crate::model::AlertManagerDefinitionDescription>,
     }
     impl Builder {
         /// The properties of the selected workspace's alert manager definition.
-        pub fn alert_manager_definition(
-            mut self,
-            input: crate::model::AlertManagerDefinitionDescription,
-        ) -> Self {
+        pub fn alert_manager_definition(mut self, input: crate::model::AlertManagerDefinitionDescription) -> Self {
             self.alert_manager_definition = Some(input);
             self
         }
         /// The properties of the selected workspace's alert manager definition.
-        pub fn set_alert_manager_definition(
-            mut self,
-            input: std::option::Option<crate::model::AlertManagerDefinitionDescription>,
-        ) -> Self {
-            self.alert_manager_definition = input;
-            self
+        pub fn set_alert_manager_definition(mut self, input: std::option::Option<crate::model::AlertManagerDefinitionDescription>) -> Self {
+            self.alert_manager_definition = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAlertManagerDefinitionOutput`](crate::output::DescribeAlertManagerDefinitionOutput).
         pub fn build(self) -> crate::output::DescribeAlertManagerDefinitionOutput {
             crate::output::DescribeAlertManagerDefinitionOutput {
-                alert_manager_definition: self.alert_manager_definition,
+                alert_manager_definition: self.alert_manager_definition
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAlertManagerDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAlertManagerDefinitionOutput`](crate::output::DescribeAlertManagerDefinitionOutput).
@@ -1096,19 +1037,24 @@ impl DescribeAlertManagerDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1120,19 +1066,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1144,30 +1095,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// The list of tags assigned to the resource.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// The list of tags assigned to the resource.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -1175,31 +1120,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// The list of tags assigned to the resource.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// The list of tags assigned to the resource.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1207,3 +1147,4 @@ impl ListTagsForResourceOutput {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
+

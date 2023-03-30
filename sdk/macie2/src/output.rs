@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSensitivityInspectionTemplateOutput {}
+pub struct UpdateSensitivityInspectionTemplateOutput  {
+}
 /// See [`UpdateSensitivityInspectionTemplateOutput`](crate::output::UpdateSensitivityInspectionTemplateOutput).
 pub mod update_sensitivity_inspection_template_output {
-
+    
     /// A builder for [`UpdateSensitivityInspectionTemplateOutput`](crate::output::UpdateSensitivityInspectionTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateSensitivityInspectionTemplateOutput`](crate::output::UpdateSensitivityInspectionTemplateOutput).
         pub fn build(self) -> crate::output::UpdateSensitivityInspectionTemplateOutput {
-            crate::output::UpdateSensitivityInspectionTemplateOutput {}
+            crate::output::UpdateSensitivityInspectionTemplateOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateSensitivityInspectionTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSensitivityInspectionTemplateOutput`](crate::output::UpdateSensitivityInspectionTemplateOutput).
@@ -26,20 +31,20 @@ impl UpdateSensitivityInspectionTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRevealConfigurationOutput {
+pub struct UpdateRevealConfigurationOutput  {
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::RevealConfiguration>,
 }
 impl UpdateRevealConfigurationOutput {
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::model::RevealConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::RevealConfiguration> {
         self.configuration.as_ref()
     }
 }
 /// See [`UpdateRevealConfigurationOutput`](crate::output::UpdateRevealConfigurationOutput).
 pub mod update_reveal_configuration_output {
-
+    
     /// A builder for [`UpdateRevealConfigurationOutput`](crate::output::UpdateRevealConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -52,20 +57,19 @@ pub mod update_reveal_configuration_output {
             self
         }
         /// <p>The new configuration settings and the status of the configuration for the account.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::RevealConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::RevealConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRevealConfigurationOutput`](crate::output::UpdateRevealConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateRevealConfigurationOutput {
             crate::output::UpdateRevealConfigurationOutput {
-                configuration: self.configuration,
+                configuration: self.configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRevealConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRevealConfigurationOutput`](crate::output::UpdateRevealConfigurationOutput).
@@ -77,19 +81,24 @@ impl UpdateRevealConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResourceProfileDetectionsOutput {}
+pub struct UpdateResourceProfileDetectionsOutput  {
+}
 /// See [`UpdateResourceProfileDetectionsOutput`](crate::output::UpdateResourceProfileDetectionsOutput).
 pub mod update_resource_profile_detections_output {
-
+    
     /// A builder for [`UpdateResourceProfileDetectionsOutput`](crate::output::UpdateResourceProfileDetectionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateResourceProfileDetectionsOutput`](crate::output::UpdateResourceProfileDetectionsOutput).
         pub fn build(self) -> crate::output::UpdateResourceProfileDetectionsOutput {
-            crate::output::UpdateResourceProfileDetectionsOutput {}
+            crate::output::UpdateResourceProfileDetectionsOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateResourceProfileDetectionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceProfileDetectionsOutput`](crate::output::UpdateResourceProfileDetectionsOutput).
@@ -101,19 +110,24 @@ impl UpdateResourceProfileDetectionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResourceProfileOutput {}
+pub struct UpdateResourceProfileOutput  {
+}
 /// See [`UpdateResourceProfileOutput`](crate::output::UpdateResourceProfileOutput).
 pub mod update_resource_profile_output {
-
+    
     /// A builder for [`UpdateResourceProfileOutput`](crate::output::UpdateResourceProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateResourceProfileOutput`](crate::output::UpdateResourceProfileOutput).
         pub fn build(self) -> crate::output::UpdateResourceProfileOutput {
-            crate::output::UpdateResourceProfileOutput {}
+            crate::output::UpdateResourceProfileOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateResourceProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceProfileOutput`](crate::output::UpdateResourceProfileOutput).
@@ -125,19 +139,24 @@ impl UpdateResourceProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateOrganizationConfigurationOutput {}
+pub struct UpdateOrganizationConfigurationOutput  {
+}
 /// See [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput).
 pub mod update_organization_configuration_output {
-
+    
     /// A builder for [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateOrganizationConfigurationOutput {
-            crate::output::UpdateOrganizationConfigurationOutput {}
+            crate::output::UpdateOrganizationConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateOrganizationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput).
@@ -149,19 +168,24 @@ impl UpdateOrganizationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMemberSessionOutput {}
+pub struct UpdateMemberSessionOutput  {
+}
 /// See [`UpdateMemberSessionOutput`](crate::output::UpdateMemberSessionOutput).
 pub mod update_member_session_output {
-
+    
     /// A builder for [`UpdateMemberSessionOutput`](crate::output::UpdateMemberSessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateMemberSessionOutput`](crate::output::UpdateMemberSessionOutput).
         pub fn build(self) -> crate::output::UpdateMemberSessionOutput {
-            crate::output::UpdateMemberSessionOutput {}
+            crate::output::UpdateMemberSessionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateMemberSessionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMemberSessionOutput`](crate::output::UpdateMemberSessionOutput).
@@ -173,19 +197,24 @@ impl UpdateMemberSessionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMacieSessionOutput {}
+pub struct UpdateMacieSessionOutput  {
+}
 /// See [`UpdateMacieSessionOutput`](crate::output::UpdateMacieSessionOutput).
 pub mod update_macie_session_output {
-
+    
     /// A builder for [`UpdateMacieSessionOutput`](crate::output::UpdateMacieSessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateMacieSessionOutput`](crate::output::UpdateMacieSessionOutput).
         pub fn build(self) -> crate::output::UpdateMacieSessionOutput {
-            crate::output::UpdateMacieSessionOutput {}
+            crate::output::UpdateMacieSessionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateMacieSessionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMacieSessionOutput`](crate::output::UpdateMacieSessionOutput).
@@ -197,7 +226,7 @@ impl UpdateMacieSessionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFindingsFilterOutput {
+pub struct UpdateFindingsFilterOutput  {
     /// <p>The Amazon Resource Name (ARN) of the filter that was updated.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -207,17 +236,17 @@ pub struct UpdateFindingsFilterOutput {
 }
 impl UpdateFindingsFilterOutput {
     /// <p>The Amazon Resource Name (ARN) of the filter that was updated.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The unique identifier for the filter that was updated.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`UpdateFindingsFilterOutput`](crate::output::UpdateFindingsFilterOutput).
 pub mod update_findings_filter_output {
-
+    
     /// A builder for [`UpdateFindingsFilterOutput`](crate::output::UpdateFindingsFilterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -232,8 +261,7 @@ pub mod update_findings_filter_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the filter that was updated.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The unique identifier for the filter that was updated.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -242,17 +270,20 @@ pub mod update_findings_filter_output {
         }
         /// <p>The unique identifier for the filter that was updated.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFindingsFilterOutput`](crate::output::UpdateFindingsFilterOutput).
         pub fn build(self) -> crate::output::UpdateFindingsFilterOutput {
             crate::output::UpdateFindingsFilterOutput {
-                arn: self.arn,
-                id: self.id,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFindingsFilterOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFindingsFilterOutput`](crate::output::UpdateFindingsFilterOutput).
@@ -264,19 +295,24 @@ impl UpdateFindingsFilterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateClassificationScopeOutput {}
+pub struct UpdateClassificationScopeOutput  {
+}
 /// See [`UpdateClassificationScopeOutput`](crate::output::UpdateClassificationScopeOutput).
 pub mod update_classification_scope_output {
-
+    
     /// A builder for [`UpdateClassificationScopeOutput`](crate::output::UpdateClassificationScopeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateClassificationScopeOutput`](crate::output::UpdateClassificationScopeOutput).
         pub fn build(self) -> crate::output::UpdateClassificationScopeOutput {
-            crate::output::UpdateClassificationScopeOutput {}
+            crate::output::UpdateClassificationScopeOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateClassificationScopeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateClassificationScopeOutput`](crate::output::UpdateClassificationScopeOutput).
@@ -288,19 +324,24 @@ impl UpdateClassificationScopeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateClassificationJobOutput {}
+pub struct UpdateClassificationJobOutput  {
+}
 /// See [`UpdateClassificationJobOutput`](crate::output::UpdateClassificationJobOutput).
 pub mod update_classification_job_output {
-
+    
     /// A builder for [`UpdateClassificationJobOutput`](crate::output::UpdateClassificationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateClassificationJobOutput`](crate::output::UpdateClassificationJobOutput).
         pub fn build(self) -> crate::output::UpdateClassificationJobOutput {
-            crate::output::UpdateClassificationJobOutput {}
+            crate::output::UpdateClassificationJobOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateClassificationJobOutput {
     /// Creates a new builder-style object to manufacture [`UpdateClassificationJobOutput`](crate::output::UpdateClassificationJobOutput).
@@ -312,19 +353,24 @@ impl UpdateClassificationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAutomatedDiscoveryConfigurationOutput {}
+pub struct UpdateAutomatedDiscoveryConfigurationOutput  {
+}
 /// See [`UpdateAutomatedDiscoveryConfigurationOutput`](crate::output::UpdateAutomatedDiscoveryConfigurationOutput).
 pub mod update_automated_discovery_configuration_output {
-
+    
     /// A builder for [`UpdateAutomatedDiscoveryConfigurationOutput`](crate::output::UpdateAutomatedDiscoveryConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAutomatedDiscoveryConfigurationOutput`](crate::output::UpdateAutomatedDiscoveryConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateAutomatedDiscoveryConfigurationOutput {
-            crate::output::UpdateAutomatedDiscoveryConfigurationOutput {}
+            crate::output::UpdateAutomatedDiscoveryConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateAutomatedDiscoveryConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAutomatedDiscoveryConfigurationOutput`](crate::output::UpdateAutomatedDiscoveryConfigurationOutput).
@@ -336,7 +382,7 @@ impl UpdateAutomatedDiscoveryConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAllowListOutput {
+pub struct UpdateAllowListOutput  {
     /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -346,17 +392,17 @@ pub struct UpdateAllowListOutput {
 }
 impl UpdateAllowListOutput {
     /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The unique identifier for the allow list.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`UpdateAllowListOutput`](crate::output::UpdateAllowListOutput).
 pub mod update_allow_list_output {
-
+    
     /// A builder for [`UpdateAllowListOutput`](crate::output::UpdateAllowListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -371,8 +417,7 @@ pub mod update_allow_list_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The unique identifier for the allow list.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -381,17 +426,20 @@ pub mod update_allow_list_output {
         }
         /// <p>The unique identifier for the allow list.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAllowListOutput`](crate::output::UpdateAllowListOutput).
         pub fn build(self) -> crate::output::UpdateAllowListOutput {
             crate::output::UpdateAllowListOutput {
-                arn: self.arn,
-                id: self.id,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAllowListOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAllowListOutput`](crate::output::UpdateAllowListOutput).
@@ -403,19 +451,24 @@ impl UpdateAllowListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -427,7 +480,7 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestCustomDataIdentifierOutput {
+pub struct TestCustomDataIdentifierOutput  {
     /// <p>The number of occurrences of sample text that matched the criteria specified by the custom data identifier.</p>
     #[doc(hidden)]
     pub match_count: i32,
@@ -440,7 +493,7 @@ impl TestCustomDataIdentifierOutput {
 }
 /// See [`TestCustomDataIdentifierOutput`](crate::output::TestCustomDataIdentifierOutput).
 pub mod test_custom_data_identifier_output {
-
+    
     /// A builder for [`TestCustomDataIdentifierOutput`](crate::output::TestCustomDataIdentifierOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -454,16 +507,19 @@ pub mod test_custom_data_identifier_output {
         }
         /// <p>The number of occurrences of sample text that matched the criteria specified by the custom data identifier.</p>
         pub fn set_match_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.match_count = input;
-            self
+            self.match_count = input; self
         }
         /// Consumes the builder and constructs a [`TestCustomDataIdentifierOutput`](crate::output::TestCustomDataIdentifierOutput).
         pub fn build(self) -> crate::output::TestCustomDataIdentifierOutput {
             crate::output::TestCustomDataIdentifierOutput {
-                match_count: self.match_count.unwrap_or_default(),
+                match_count: self.match_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl TestCustomDataIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`TestCustomDataIdentifierOutput`](crate::output::TestCustomDataIdentifierOutput).
@@ -475,19 +531,24 @@ impl TestCustomDataIdentifierOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -499,7 +560,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchResourcesOutput {
+pub struct SearchResourcesOutput  {
     /// <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
     #[doc(hidden)]
     pub matching_resources: std::option::Option<std::vec::Vec<crate::model::MatchingResource>>,
@@ -509,22 +570,21 @@ pub struct SearchResourcesOutput {
 }
 impl SearchResourcesOutput {
     /// <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
-    pub fn matching_resources(&self) -> std::option::Option<&[crate::model::MatchingResource]> {
+    pub fn matching_resources(&self) -> std::option::Option<& [crate::model::MatchingResource]> {
         self.matching_resources.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`SearchResourcesOutput`](crate::output::SearchResourcesOutput).
 pub mod search_resources_output {
-
+    
     /// A builder for [`SearchResourcesOutput`](crate::output::SearchResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) matching_resources:
-            std::option::Option<std::vec::Vec<crate::model::MatchingResource>>,
+        pub(crate) matching_resources: std::option::Option<std::vec::Vec<crate::model::MatchingResource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -535,17 +595,13 @@ pub mod search_resources_output {
         /// <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
         pub fn matching_resources(mut self, input: crate::model::MatchingResource) -> Self {
             let mut v = self.matching_resources.unwrap_or_default();
-            v.push(input);
-            self.matching_resources = Some(v);
-            self
+                            v.push(input);
+                            self.matching_resources = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
-        pub fn set_matching_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MatchingResource>>,
-        ) -> Self {
-            self.matching_resources = input;
-            self
+        pub fn set_matching_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::MatchingResource>>) -> Self {
+            self.matching_resources = input; self
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -554,17 +610,20 @@ pub mod search_resources_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`SearchResourcesOutput`](crate::output::SearchResourcesOutput).
         pub fn build(self) -> crate::output::SearchResourcesOutput {
             crate::output::SearchResourcesOutput {
-                matching_resources: self.matching_resources,
-                next_token: self.next_token,
+                matching_resources: self.matching_resources
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchResourcesOutput {
     /// Creates a new builder-style object to manufacture [`SearchResourcesOutput`](crate::output::SearchResourcesOutput).
@@ -576,19 +635,24 @@ impl SearchResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutFindingsPublicationConfigurationOutput {}
+pub struct PutFindingsPublicationConfigurationOutput  {
+}
 /// See [`PutFindingsPublicationConfigurationOutput`](crate::output::PutFindingsPublicationConfigurationOutput).
 pub mod put_findings_publication_configuration_output {
-
+    
     /// A builder for [`PutFindingsPublicationConfigurationOutput`](crate::output::PutFindingsPublicationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutFindingsPublicationConfigurationOutput`](crate::output::PutFindingsPublicationConfigurationOutput).
         pub fn build(self) -> crate::output::PutFindingsPublicationConfigurationOutput {
-            crate::output::PutFindingsPublicationConfigurationOutput {}
+            crate::output::PutFindingsPublicationConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl PutFindingsPublicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutFindingsPublicationConfigurationOutput`](crate::output::PutFindingsPublicationConfigurationOutput).
@@ -600,52 +664,45 @@ impl PutFindingsPublicationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutClassificationExportConfigurationOutput {
+pub struct PutClassificationExportConfigurationOutput  {
     /// <p>The location where the data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ClassificationExportConfiguration>,
 }
 impl PutClassificationExportConfigurationOutput {
     /// <p>The location where the data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
-    pub fn configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ClassificationExportConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::ClassificationExportConfiguration> {
         self.configuration.as_ref()
     }
 }
 /// See [`PutClassificationExportConfigurationOutput`](crate::output::PutClassificationExportConfigurationOutput).
 pub mod put_classification_export_configuration_output {
-
+    
     /// A builder for [`PutClassificationExportConfigurationOutput`](crate::output::PutClassificationExportConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) configuration:
-            std::option::Option<crate::model::ClassificationExportConfiguration>,
+        pub(crate) configuration: std::option::Option<crate::model::ClassificationExportConfiguration>,
     }
     impl Builder {
         /// <p>The location where the data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
-        pub fn configuration(
-            mut self,
-            input: crate::model::ClassificationExportConfiguration,
-        ) -> Self {
+        pub fn configuration(mut self, input: crate::model::ClassificationExportConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
         /// <p>The location where the data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ClassificationExportConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::ClassificationExportConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`PutClassificationExportConfigurationOutput`](crate::output::PutClassificationExportConfigurationOutput).
         pub fn build(self) -> crate::output::PutClassificationExportConfigurationOutput {
             crate::output::PutClassificationExportConfigurationOutput {
-                configuration: self.configuration,
+                configuration: self.configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl PutClassificationExportConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutClassificationExportConfigurationOutput`](crate::output::PutClassificationExportConfigurationOutput).
@@ -657,30 +714,24 @@ impl PutClassificationExportConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -688,31 +739,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -724,36 +770,32 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSensitivityInspectionTemplatesOutput {
+pub struct ListSensitivityInspectionTemplatesOutput  {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
     #[doc(hidden)]
-    pub sensitivity_inspection_templates:
-        std::option::Option<std::vec::Vec<crate::model::SensitivityInspectionTemplatesEntry>>,
+    pub sensitivity_inspection_templates: std::option::Option<std::vec::Vec<crate::model::SensitivityInspectionTemplatesEntry>>,
 }
 impl ListSensitivityInspectionTemplatesOutput {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
-    pub fn sensitivity_inspection_templates(
-        &self,
-    ) -> std::option::Option<&[crate::model::SensitivityInspectionTemplatesEntry]> {
+    pub fn sensitivity_inspection_templates(&self) -> std::option::Option<& [crate::model::SensitivityInspectionTemplatesEntry]> {
         self.sensitivity_inspection_templates.as_deref()
     }
 }
 /// See [`ListSensitivityInspectionTemplatesOutput`](crate::output::ListSensitivityInspectionTemplatesOutput).
 pub mod list_sensitivity_inspection_templates_output {
-
+    
     /// A builder for [`ListSensitivityInspectionTemplatesOutput`](crate::output::ListSensitivityInspectionTemplatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) sensitivity_inspection_templates:
-            std::option::Option<std::vec::Vec<crate::model::SensitivityInspectionTemplatesEntry>>,
+        pub(crate) sensitivity_inspection_templates: std::option::Option<std::vec::Vec<crate::model::SensitivityInspectionTemplatesEntry>>,
     }
     impl Builder {
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -763,41 +805,35 @@ pub mod list_sensitivity_inspection_templates_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `sensitivity_inspection_templates`.
         ///
         /// To override the contents of this collection use [`set_sensitivity_inspection_templates`](Self::set_sensitivity_inspection_templates).
         ///
         /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
-        pub fn sensitivity_inspection_templates(
-            mut self,
-            input: crate::model::SensitivityInspectionTemplatesEntry,
-        ) -> Self {
+        pub fn sensitivity_inspection_templates(mut self, input: crate::model::SensitivityInspectionTemplatesEntry) -> Self {
             let mut v = self.sensitivity_inspection_templates.unwrap_or_default();
-            v.push(input);
-            self.sensitivity_inspection_templates = Some(v);
-            self
+                            v.push(input);
+                            self.sensitivity_inspection_templates = Some(v);
+                            self
         }
         /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
-        pub fn set_sensitivity_inspection_templates(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::SensitivityInspectionTemplatesEntry>,
-            >,
-        ) -> Self {
-            self.sensitivity_inspection_templates = input;
-            self
+        pub fn set_sensitivity_inspection_templates(mut self, input: std::option::Option<std::vec::Vec<crate::model::SensitivityInspectionTemplatesEntry>>) -> Self {
+            self.sensitivity_inspection_templates = input; self
         }
         /// Consumes the builder and constructs a [`ListSensitivityInspectionTemplatesOutput`](crate::output::ListSensitivityInspectionTemplatesOutput).
         pub fn build(self) -> crate::output::ListSensitivityInspectionTemplatesOutput {
             crate::output::ListSensitivityInspectionTemplatesOutput {
-                next_token: self.next_token,
-                sensitivity_inspection_templates: self.sensitivity_inspection_templates,
+                next_token: self.next_token
+                ,
+                sensitivity_inspection_templates: self.sensitivity_inspection_templates
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSensitivityInspectionTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListSensitivityInspectionTemplatesOutput`](crate::output::ListSensitivityInspectionTemplatesOutput).
@@ -809,7 +845,7 @@ impl ListSensitivityInspectionTemplatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourceProfileDetectionsOutput {
+pub struct ListResourceProfileDetectionsOutput  {
     /// <p>An array of objects, one for each type of sensitive data that Amazon Macie found in the bucket. Each object reports the number of occurrences of the specified type and provides information about the custom data identifier or managed data identifier that detected the data.</p>
     #[doc(hidden)]
     pub detections: std::option::Option<std::vec::Vec<crate::model::Detection>>,
@@ -819,17 +855,17 @@ pub struct ListResourceProfileDetectionsOutput {
 }
 impl ListResourceProfileDetectionsOutput {
     /// <p>An array of objects, one for each type of sensitive data that Amazon Macie found in the bucket. Each object reports the number of occurrences of the specified type and provides information about the custom data identifier or managed data identifier that detected the data.</p>
-    pub fn detections(&self) -> std::option::Option<&[crate::model::Detection]> {
+    pub fn detections(&self) -> std::option::Option<& [crate::model::Detection]> {
         self.detections.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListResourceProfileDetectionsOutput`](crate::output::ListResourceProfileDetectionsOutput).
 pub mod list_resource_profile_detections_output {
-
+    
     /// A builder for [`ListResourceProfileDetectionsOutput`](crate::output::ListResourceProfileDetectionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -844,17 +880,13 @@ pub mod list_resource_profile_detections_output {
         /// <p>An array of objects, one for each type of sensitive data that Amazon Macie found in the bucket. Each object reports the number of occurrences of the specified type and provides information about the custom data identifier or managed data identifier that detected the data.</p>
         pub fn detections(mut self, input: crate::model::Detection) -> Self {
             let mut v = self.detections.unwrap_or_default();
-            v.push(input);
-            self.detections = Some(v);
-            self
+                            v.push(input);
+                            self.detections = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each type of sensitive data that Amazon Macie found in the bucket. Each object reports the number of occurrences of the specified type and provides information about the custom data identifier or managed data identifier that detected the data.</p>
-        pub fn set_detections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Detection>>,
-        ) -> Self {
-            self.detections = input;
-            self
+        pub fn set_detections(mut self, input: std::option::Option<std::vec::Vec<crate::model::Detection>>) -> Self {
+            self.detections = input; self
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -863,17 +895,20 @@ pub mod list_resource_profile_detections_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListResourceProfileDetectionsOutput`](crate::output::ListResourceProfileDetectionsOutput).
         pub fn build(self) -> crate::output::ListResourceProfileDetectionsOutput {
             crate::output::ListResourceProfileDetectionsOutput {
-                detections: self.detections,
-                next_token: self.next_token,
+                detections: self.detections
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResourceProfileDetectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceProfileDetectionsOutput`](crate::output::ListResourceProfileDetectionsOutput).
@@ -885,7 +920,7 @@ impl ListResourceProfileDetectionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourceProfileArtifactsOutput {
+pub struct ListResourceProfileArtifactsOutput  {
     /// <p>An array of objects, one for each S3 object that Amazon Macie selected for analysis.</p>
     #[doc(hidden)]
     pub artifacts: std::option::Option<std::vec::Vec<crate::model::ResourceProfileArtifact>>,
@@ -895,22 +930,21 @@ pub struct ListResourceProfileArtifactsOutput {
 }
 impl ListResourceProfileArtifactsOutput {
     /// <p>An array of objects, one for each S3 object that Amazon Macie selected for analysis.</p>
-    pub fn artifacts(&self) -> std::option::Option<&[crate::model::ResourceProfileArtifact]> {
+    pub fn artifacts(&self) -> std::option::Option<& [crate::model::ResourceProfileArtifact]> {
         self.artifacts.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListResourceProfileArtifactsOutput`](crate::output::ListResourceProfileArtifactsOutput).
 pub mod list_resource_profile_artifacts_output {
-
+    
     /// A builder for [`ListResourceProfileArtifactsOutput`](crate::output::ListResourceProfileArtifactsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) artifacts:
-            std::option::Option<std::vec::Vec<crate::model::ResourceProfileArtifact>>,
+        pub(crate) artifacts: std::option::Option<std::vec::Vec<crate::model::ResourceProfileArtifact>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -921,17 +955,13 @@ pub mod list_resource_profile_artifacts_output {
         /// <p>An array of objects, one for each S3 object that Amazon Macie selected for analysis.</p>
         pub fn artifacts(mut self, input: crate::model::ResourceProfileArtifact) -> Self {
             let mut v = self.artifacts.unwrap_or_default();
-            v.push(input);
-            self.artifacts = Some(v);
-            self
+                            v.push(input);
+                            self.artifacts = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each S3 object that Amazon Macie selected for analysis.</p>
-        pub fn set_artifacts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceProfileArtifact>>,
-        ) -> Self {
-            self.artifacts = input;
-            self
+        pub fn set_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceProfileArtifact>>) -> Self {
+            self.artifacts = input; self
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -940,17 +970,20 @@ pub mod list_resource_profile_artifacts_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListResourceProfileArtifactsOutput`](crate::output::ListResourceProfileArtifactsOutput).
         pub fn build(self) -> crate::output::ListResourceProfileArtifactsOutput {
             crate::output::ListResourceProfileArtifactsOutput {
-                artifacts: self.artifacts,
-                next_token: self.next_token,
+                artifacts: self.artifacts
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResourceProfileArtifactsOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceProfileArtifactsOutput`](crate::output::ListResourceProfileArtifactsOutput).
@@ -962,7 +995,7 @@ impl ListResourceProfileArtifactsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOrganizationAdminAccountsOutput {
+pub struct ListOrganizationAdminAccountsOutput  {
     /// <p>An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of these accounts can have a status of ENABLED.</p>
     #[doc(hidden)]
     pub admin_accounts: std::option::Option<std::vec::Vec<crate::model::AdminAccount>>,
@@ -972,17 +1005,17 @@ pub struct ListOrganizationAdminAccountsOutput {
 }
 impl ListOrganizationAdminAccountsOutput {
     /// <p>An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of these accounts can have a status of ENABLED.</p>
-    pub fn admin_accounts(&self) -> std::option::Option<&[crate::model::AdminAccount]> {
+    pub fn admin_accounts(&self) -> std::option::Option<& [crate::model::AdminAccount]> {
         self.admin_accounts.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListOrganizationAdminAccountsOutput`](crate::output::ListOrganizationAdminAccountsOutput).
 pub mod list_organization_admin_accounts_output {
-
+    
     /// A builder for [`ListOrganizationAdminAccountsOutput`](crate::output::ListOrganizationAdminAccountsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -997,17 +1030,13 @@ pub mod list_organization_admin_accounts_output {
         /// <p>An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of these accounts can have a status of ENABLED.</p>
         pub fn admin_accounts(mut self, input: crate::model::AdminAccount) -> Self {
             let mut v = self.admin_accounts.unwrap_or_default();
-            v.push(input);
-            self.admin_accounts = Some(v);
-            self
+                            v.push(input);
+                            self.admin_accounts = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of these accounts can have a status of ENABLED.</p>
-        pub fn set_admin_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AdminAccount>>,
-        ) -> Self {
-            self.admin_accounts = input;
-            self
+        pub fn set_admin_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::AdminAccount>>) -> Self {
+            self.admin_accounts = input; self
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1016,17 +1045,20 @@ pub mod list_organization_admin_accounts_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListOrganizationAdminAccountsOutput`](crate::output::ListOrganizationAdminAccountsOutput).
         pub fn build(self) -> crate::output::ListOrganizationAdminAccountsOutput {
             crate::output::ListOrganizationAdminAccountsOutput {
-                admin_accounts: self.admin_accounts,
-                next_token: self.next_token,
+                admin_accounts: self.admin_accounts
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOrganizationAdminAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationAdminAccountsOutput`](crate::output::ListOrganizationAdminAccountsOutput).
@@ -1038,7 +1070,7 @@ impl ListOrganizationAdminAccountsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMembersOutput {
+pub struct ListMembersOutput  {
     /// <p>An array of objects, one for each account that's associated with the administrator account and matches the criteria specified in the request.</p>
     #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
@@ -1048,17 +1080,17 @@ pub struct ListMembersOutput {
 }
 impl ListMembersOutput {
     /// <p>An array of objects, one for each account that's associated with the administrator account and matches the criteria specified in the request.</p>
-    pub fn members(&self) -> std::option::Option<&[crate::model::Member]> {
+    pub fn members(&self) -> std::option::Option<& [crate::model::Member]> {
         self.members.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListMembersOutput`](crate::output::ListMembersOutput).
 pub mod list_members_output {
-
+    
     /// A builder for [`ListMembersOutput`](crate::output::ListMembersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1073,17 +1105,13 @@ pub mod list_members_output {
         /// <p>An array of objects, one for each account that's associated with the administrator account and matches the criteria specified in the request.</p>
         pub fn members(mut self, input: crate::model::Member) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input);
-            self.members = Some(v);
-            self
+                            v.push(input);
+                            self.members = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each account that's associated with the administrator account and matches the criteria specified in the request.</p>
-        pub fn set_members(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Member>>,
-        ) -> Self {
-            self.members = input;
-            self
+        pub fn set_members(mut self, input: std::option::Option<std::vec::Vec<crate::model::Member>>) -> Self {
+            self.members = input; self
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1092,17 +1120,20 @@ pub mod list_members_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListMembersOutput`](crate::output::ListMembersOutput).
         pub fn build(self) -> crate::output::ListMembersOutput {
             crate::output::ListMembersOutput {
-                members: self.members,
-                next_token: self.next_token,
+                members: self.members
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMembersOutput {
     /// Creates a new builder-style object to manufacture [`ListMembersOutput`](crate::output::ListMembersOutput).
@@ -1114,7 +1145,7 @@ impl ListMembersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListManagedDataIdentifiersOutput {
+pub struct ListManagedDataIdentifiersOutput  {
     /// <p>An array of objects, one for each managed data identifier.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ManagedDataIdentifierSummary>>,
@@ -1124,22 +1155,21 @@ pub struct ListManagedDataIdentifiersOutput {
 }
 impl ListManagedDataIdentifiersOutput {
     /// <p>An array of objects, one for each managed data identifier.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ManagedDataIdentifierSummary]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ManagedDataIdentifierSummary]> {
         self.items.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListManagedDataIdentifiersOutput`](crate::output::ListManagedDataIdentifiersOutput).
 pub mod list_managed_data_identifiers_output {
-
+    
     /// A builder for [`ListManagedDataIdentifiersOutput`](crate::output::ListManagedDataIdentifiersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) items:
-            std::option::Option<std::vec::Vec<crate::model::ManagedDataIdentifierSummary>>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ManagedDataIdentifierSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1150,17 +1180,13 @@ pub mod list_managed_data_identifiers_output {
         /// <p>An array of objects, one for each managed data identifier.</p>
         pub fn items(mut self, input: crate::model::ManagedDataIdentifierSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each managed data identifier.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ManagedDataIdentifierSummary>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ManagedDataIdentifierSummary>>) -> Self {
+            self.items = input; self
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1169,17 +1195,20 @@ pub mod list_managed_data_identifiers_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListManagedDataIdentifiersOutput`](crate::output::ListManagedDataIdentifiersOutput).
         pub fn build(self) -> crate::output::ListManagedDataIdentifiersOutput {
             crate::output::ListManagedDataIdentifiersOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListManagedDataIdentifiersOutput {
     /// Creates a new builder-style object to manufacture [`ListManagedDataIdentifiersOutput`](crate::output::ListManagedDataIdentifiersOutput).
@@ -1191,7 +1220,7 @@ impl ListManagedDataIdentifiersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInvitationsOutput {
+pub struct ListInvitationsOutput  {
     /// <p>An array of objects, one for each invitation that was received by the account.</p>
     #[doc(hidden)]
     pub invitations: std::option::Option<std::vec::Vec<crate::model::Invitation>>,
@@ -1201,17 +1230,17 @@ pub struct ListInvitationsOutput {
 }
 impl ListInvitationsOutput {
     /// <p>An array of objects, one for each invitation that was received by the account.</p>
-    pub fn invitations(&self) -> std::option::Option<&[crate::model::Invitation]> {
+    pub fn invitations(&self) -> std::option::Option<& [crate::model::Invitation]> {
         self.invitations.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListInvitationsOutput`](crate::output::ListInvitationsOutput).
 pub mod list_invitations_output {
-
+    
     /// A builder for [`ListInvitationsOutput`](crate::output::ListInvitationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1226,17 +1255,13 @@ pub mod list_invitations_output {
         /// <p>An array of objects, one for each invitation that was received by the account.</p>
         pub fn invitations(mut self, input: crate::model::Invitation) -> Self {
             let mut v = self.invitations.unwrap_or_default();
-            v.push(input);
-            self.invitations = Some(v);
-            self
+                            v.push(input);
+                            self.invitations = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each invitation that was received by the account.</p>
-        pub fn set_invitations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Invitation>>,
-        ) -> Self {
-            self.invitations = input;
-            self
+        pub fn set_invitations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Invitation>>) -> Self {
+            self.invitations = input; self
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1245,17 +1270,20 @@ pub mod list_invitations_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListInvitationsOutput`](crate::output::ListInvitationsOutput).
         pub fn build(self) -> crate::output::ListInvitationsOutput {
             crate::output::ListInvitationsOutput {
-                invitations: self.invitations,
-                next_token: self.next_token,
+                invitations: self.invitations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInvitationsOutput {
     /// Creates a new builder-style object to manufacture [`ListInvitationsOutput`](crate::output::ListInvitationsOutput).
@@ -1267,35 +1295,31 @@ impl ListInvitationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFindingsFiltersOutput {
+pub struct ListFindingsFiltersOutput  {
     /// <p>An array of objects, one for each filter that's associated with the account.</p>
     #[doc(hidden)]
-    pub findings_filter_list_items:
-        std::option::Option<std::vec::Vec<crate::model::FindingsFilterListItem>>,
+    pub findings_filter_list_items: std::option::Option<std::vec::Vec<crate::model::FindingsFilterListItem>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingsFiltersOutput {
     /// <p>An array of objects, one for each filter that's associated with the account.</p>
-    pub fn findings_filter_list_items(
-        &self,
-    ) -> std::option::Option<&[crate::model::FindingsFilterListItem]> {
+    pub fn findings_filter_list_items(&self) -> std::option::Option<& [crate::model::FindingsFilterListItem]> {
         self.findings_filter_list_items.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFindingsFiltersOutput`](crate::output::ListFindingsFiltersOutput).
 pub mod list_findings_filters_output {
-
+    
     /// A builder for [`ListFindingsFiltersOutput`](crate::output::ListFindingsFiltersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) findings_filter_list_items:
-            std::option::Option<std::vec::Vec<crate::model::FindingsFilterListItem>>,
+        pub(crate) findings_filter_list_items: std::option::Option<std::vec::Vec<crate::model::FindingsFilterListItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1304,22 +1328,15 @@ pub mod list_findings_filters_output {
         /// To override the contents of this collection use [`set_findings_filter_list_items`](Self::set_findings_filter_list_items).
         ///
         /// <p>An array of objects, one for each filter that's associated with the account.</p>
-        pub fn findings_filter_list_items(
-            mut self,
-            input: crate::model::FindingsFilterListItem,
-        ) -> Self {
+        pub fn findings_filter_list_items(mut self, input: crate::model::FindingsFilterListItem) -> Self {
             let mut v = self.findings_filter_list_items.unwrap_or_default();
-            v.push(input);
-            self.findings_filter_list_items = Some(v);
-            self
+                            v.push(input);
+                            self.findings_filter_list_items = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each filter that's associated with the account.</p>
-        pub fn set_findings_filter_list_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FindingsFilterListItem>>,
-        ) -> Self {
-            self.findings_filter_list_items = input;
-            self
+        pub fn set_findings_filter_list_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::FindingsFilterListItem>>) -> Self {
+            self.findings_filter_list_items = input; self
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1328,17 +1345,20 @@ pub mod list_findings_filters_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFindingsFiltersOutput`](crate::output::ListFindingsFiltersOutput).
         pub fn build(self) -> crate::output::ListFindingsFiltersOutput {
             crate::output::ListFindingsFiltersOutput {
-                findings_filter_list_items: self.findings_filter_list_items,
-                next_token: self.next_token,
+                findings_filter_list_items: self.findings_filter_list_items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFindingsFiltersOutput {
     /// Creates a new builder-style object to manufacture [`ListFindingsFiltersOutput`](crate::output::ListFindingsFiltersOutput).
@@ -1350,7 +1370,7 @@ impl ListFindingsFiltersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFindingsOutput {
+pub struct ListFindingsOutput  {
     /// <p>An array of strings, where each string is the unique identifier for a finding that matches the filter criteria specified in the request.</p>
     #[doc(hidden)]
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1360,17 +1380,17 @@ pub struct ListFindingsOutput {
 }
 impl ListFindingsOutput {
     /// <p>An array of strings, where each string is the unique identifier for a finding that matches the filter criteria specified in the request.</p>
-    pub fn finding_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn finding_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.finding_ids.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFindingsOutput`](crate::output::ListFindingsOutput).
 pub mod list_findings_output {
-
+    
     /// A builder for [`ListFindingsOutput`](crate::output::ListFindingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1385,17 +1405,13 @@ pub mod list_findings_output {
         /// <p>An array of strings, where each string is the unique identifier for a finding that matches the filter criteria specified in the request.</p>
         pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.finding_ids.unwrap_or_default();
-            v.push(input.into());
-            self.finding_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.finding_ids = Some(v);
+                            self
         }
         /// <p>An array of strings, where each string is the unique identifier for a finding that matches the filter criteria specified in the request.</p>
-        pub fn set_finding_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.finding_ids = input;
-            self
+        pub fn set_finding_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.finding_ids = input; self
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1404,17 +1420,20 @@ pub mod list_findings_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFindingsOutput`](crate::output::ListFindingsOutput).
         pub fn build(self) -> crate::output::ListFindingsOutput {
             crate::output::ListFindingsOutput {
-                finding_ids: self.finding_ids,
-                next_token: self.next_token,
+                finding_ids: self.finding_ids
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFindingsOutput {
     /// Creates a new builder-style object to manufacture [`ListFindingsOutput`](crate::output::ListFindingsOutput).
@@ -1426,7 +1445,7 @@ impl ListFindingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomDataIdentifiersOutput {
+pub struct ListCustomDataIdentifiersOutput  {
     /// <p>An array of objects, one for each custom data identifier.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::CustomDataIdentifierSummary>>,
@@ -1436,22 +1455,21 @@ pub struct ListCustomDataIdentifiersOutput {
 }
 impl ListCustomDataIdentifiersOutput {
     /// <p>An array of objects, one for each custom data identifier.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::CustomDataIdentifierSummary]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::CustomDataIdentifierSummary]> {
         self.items.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCustomDataIdentifiersOutput`](crate::output::ListCustomDataIdentifiersOutput).
 pub mod list_custom_data_identifiers_output {
-
+    
     /// A builder for [`ListCustomDataIdentifiersOutput`](crate::output::ListCustomDataIdentifiersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) items:
-            std::option::Option<std::vec::Vec<crate::model::CustomDataIdentifierSummary>>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::CustomDataIdentifierSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1462,17 +1480,13 @@ pub mod list_custom_data_identifiers_output {
         /// <p>An array of objects, one for each custom data identifier.</p>
         pub fn items(mut self, input: crate::model::CustomDataIdentifierSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each custom data identifier.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CustomDataIdentifierSummary>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::CustomDataIdentifierSummary>>) -> Self {
+            self.items = input; self
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1481,17 +1495,20 @@ pub mod list_custom_data_identifiers_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCustomDataIdentifiersOutput`](crate::output::ListCustomDataIdentifiersOutput).
         pub fn build(self) -> crate::output::ListCustomDataIdentifiersOutput {
             crate::output::ListCustomDataIdentifiersOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCustomDataIdentifiersOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomDataIdentifiersOutput`](crate::output::ListCustomDataIdentifiersOutput).
@@ -1503,35 +1520,31 @@ impl ListCustomDataIdentifiersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListClassificationScopesOutput {
+pub struct ListClassificationScopesOutput  {
     /// <p>An array that specifies the unique identifier and name of the classification scope for the account.</p>
     #[doc(hidden)]
-    pub classification_scopes:
-        std::option::Option<std::vec::Vec<crate::model::ClassificationScopeSummary>>,
+    pub classification_scopes: std::option::Option<std::vec::Vec<crate::model::ClassificationScopeSummary>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClassificationScopesOutput {
     /// <p>An array that specifies the unique identifier and name of the classification scope for the account.</p>
-    pub fn classification_scopes(
-        &self,
-    ) -> std::option::Option<&[crate::model::ClassificationScopeSummary]> {
+    pub fn classification_scopes(&self) -> std::option::Option<& [crate::model::ClassificationScopeSummary]> {
         self.classification_scopes.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListClassificationScopesOutput`](crate::output::ListClassificationScopesOutput).
 pub mod list_classification_scopes_output {
-
+    
     /// A builder for [`ListClassificationScopesOutput`](crate::output::ListClassificationScopesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) classification_scopes:
-            std::option::Option<std::vec::Vec<crate::model::ClassificationScopeSummary>>,
+        pub(crate) classification_scopes: std::option::Option<std::vec::Vec<crate::model::ClassificationScopeSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1540,22 +1553,15 @@ pub mod list_classification_scopes_output {
         /// To override the contents of this collection use [`set_classification_scopes`](Self::set_classification_scopes).
         ///
         /// <p>An array that specifies the unique identifier and name of the classification scope for the account.</p>
-        pub fn classification_scopes(
-            mut self,
-            input: crate::model::ClassificationScopeSummary,
-        ) -> Self {
+        pub fn classification_scopes(mut self, input: crate::model::ClassificationScopeSummary) -> Self {
             let mut v = self.classification_scopes.unwrap_or_default();
-            v.push(input);
-            self.classification_scopes = Some(v);
-            self
+                            v.push(input);
+                            self.classification_scopes = Some(v);
+                            self
         }
         /// <p>An array that specifies the unique identifier and name of the classification scope for the account.</p>
-        pub fn set_classification_scopes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ClassificationScopeSummary>>,
-        ) -> Self {
-            self.classification_scopes = input;
-            self
+        pub fn set_classification_scopes(mut self, input: std::option::Option<std::vec::Vec<crate::model::ClassificationScopeSummary>>) -> Self {
+            self.classification_scopes = input; self
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1564,17 +1570,20 @@ pub mod list_classification_scopes_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListClassificationScopesOutput`](crate::output::ListClassificationScopesOutput).
         pub fn build(self) -> crate::output::ListClassificationScopesOutput {
             crate::output::ListClassificationScopesOutput {
-                classification_scopes: self.classification_scopes,
-                next_token: self.next_token,
+                classification_scopes: self.classification_scopes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListClassificationScopesOutput {
     /// Creates a new builder-style object to manufacture [`ListClassificationScopesOutput`](crate::output::ListClassificationScopesOutput).
@@ -1586,7 +1595,7 @@ impl ListClassificationScopesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListClassificationJobsOutput {
+pub struct ListClassificationJobsOutput  {
     /// <p>An array of objects, one for each job that matches the filter criteria specified in the request.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
@@ -1596,17 +1605,17 @@ pub struct ListClassificationJobsOutput {
 }
 impl ListClassificationJobsOutput {
     /// <p>An array of objects, one for each job that matches the filter criteria specified in the request.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::JobSummary]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::JobSummary]> {
         self.items.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListClassificationJobsOutput`](crate::output::ListClassificationJobsOutput).
 pub mod list_classification_jobs_output {
-
+    
     /// A builder for [`ListClassificationJobsOutput`](crate::output::ListClassificationJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1621,17 +1630,13 @@ pub mod list_classification_jobs_output {
         /// <p>An array of objects, one for each job that matches the filter criteria specified in the request.</p>
         pub fn items(mut self, input: crate::model::JobSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each job that matches the filter criteria specified in the request.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobSummary>>) -> Self {
+            self.items = input; self
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1640,17 +1645,20 @@ pub mod list_classification_jobs_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListClassificationJobsOutput`](crate::output::ListClassificationJobsOutput).
         pub fn build(self) -> crate::output::ListClassificationJobsOutput {
             crate::output::ListClassificationJobsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListClassificationJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListClassificationJobsOutput`](crate::output::ListClassificationJobsOutput).
@@ -1662,7 +1670,7 @@ impl ListClassificationJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAllowListsOutput {
+pub struct ListAllowListsOutput  {
     /// <p>An array of objects, one for each allow list.</p>
     #[doc(hidden)]
     pub allow_lists: std::option::Option<std::vec::Vec<crate::model::AllowListSummary>>,
@@ -1672,17 +1680,17 @@ pub struct ListAllowListsOutput {
 }
 impl ListAllowListsOutput {
     /// <p>An array of objects, one for each allow list.</p>
-    pub fn allow_lists(&self) -> std::option::Option<&[crate::model::AllowListSummary]> {
+    pub fn allow_lists(&self) -> std::option::Option<& [crate::model::AllowListSummary]> {
         self.allow_lists.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAllowListsOutput`](crate::output::ListAllowListsOutput).
 pub mod list_allow_lists_output {
-
+    
     /// A builder for [`ListAllowListsOutput`](crate::output::ListAllowListsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1697,17 +1705,13 @@ pub mod list_allow_lists_output {
         /// <p>An array of objects, one for each allow list.</p>
         pub fn allow_lists(mut self, input: crate::model::AllowListSummary) -> Self {
             let mut v = self.allow_lists.unwrap_or_default();
-            v.push(input);
-            self.allow_lists = Some(v);
-            self
+                            v.push(input);
+                            self.allow_lists = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each allow list.</p>
-        pub fn set_allow_lists(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AllowListSummary>>,
-        ) -> Self {
-            self.allow_lists = input;
-            self
+        pub fn set_allow_lists(mut self, input: std::option::Option<std::vec::Vec<crate::model::AllowListSummary>>) -> Self {
+            self.allow_lists = input; self
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1716,17 +1720,20 @@ pub mod list_allow_lists_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAllowListsOutput`](crate::output::ListAllowListsOutput).
         pub fn build(self) -> crate::output::ListAllowListsOutput {
             crate::output::ListAllowListsOutput {
-                allow_lists: self.allow_lists,
-                next_token: self.next_token,
+                allow_lists: self.allow_lists
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAllowListsOutput {
     /// Creates a new builder-style object to manufacture [`ListAllowListsOutput`](crate::output::ListAllowListsOutput).
@@ -1738,7 +1745,7 @@ impl ListAllowListsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUsageTotalsOutput {
+pub struct GetUsageTotalsOutput  {
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
     #[doc(hidden)]
     pub time_range: std::option::Option<crate::model::TimeRange>,
@@ -1748,17 +1755,17 @@ pub struct GetUsageTotalsOutput {
 }
 impl GetUsageTotalsOutput {
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
-    pub fn time_range(&self) -> std::option::Option<&crate::model::TimeRange> {
+    pub fn time_range(&self) -> std::option::Option<& crate::model::TimeRange> {
         self.time_range.as_ref()
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
-    pub fn usage_totals(&self) -> std::option::Option<&[crate::model::UsageTotal]> {
+    pub fn usage_totals(&self) -> std::option::Option<& [crate::model::UsageTotal]> {
         self.usage_totals.as_deref()
     }
 }
 /// See [`GetUsageTotalsOutput`](crate::output::GetUsageTotalsOutput).
 pub mod get_usage_totals_output {
-
+    
     /// A builder for [`GetUsageTotalsOutput`](crate::output::GetUsageTotalsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1772,12 +1779,8 @@ pub mod get_usage_totals_output {
             self
         }
         /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
-        pub fn set_time_range(
-            mut self,
-            input: std::option::Option<crate::model::TimeRange>,
-        ) -> Self {
-            self.time_range = input;
-            self
+        pub fn set_time_range(mut self, input: std::option::Option<crate::model::TimeRange>) -> Self {
+            self.time_range = input; self
         }
         /// Appends an item to `usage_totals`.
         ///
@@ -1786,26 +1789,26 @@ pub mod get_usage_totals_output {
         /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
         pub fn usage_totals(mut self, input: crate::model::UsageTotal) -> Self {
             let mut v = self.usage_totals.unwrap_or_default();
-            v.push(input);
-            self.usage_totals = Some(v);
-            self
+                            v.push(input);
+                            self.usage_totals = Some(v);
+                            self
         }
         /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
-        pub fn set_usage_totals(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UsageTotal>>,
-        ) -> Self {
-            self.usage_totals = input;
-            self
+        pub fn set_usage_totals(mut self, input: std::option::Option<std::vec::Vec<crate::model::UsageTotal>>) -> Self {
+            self.usage_totals = input; self
         }
         /// Consumes the builder and constructs a [`GetUsageTotalsOutput`](crate::output::GetUsageTotalsOutput).
         pub fn build(self) -> crate::output::GetUsageTotalsOutput {
             crate::output::GetUsageTotalsOutput {
-                time_range: self.time_range,
-                usage_totals: self.usage_totals,
+                time_range: self.time_range
+                ,
+                usage_totals: self.usage_totals
+                ,
             }
         }
     }
+    
+    
 }
 impl GetUsageTotalsOutput {
     /// Creates a new builder-style object to manufacture [`GetUsageTotalsOutput`](crate::output::GetUsageTotalsOutput).
@@ -1817,7 +1820,7 @@ impl GetUsageTotalsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUsageStatisticsOutput {
+pub struct GetUsageStatisticsOutput  {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1830,21 +1833,21 @@ pub struct GetUsageStatisticsOutput {
 }
 impl GetUsageStatisticsOutput {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
-    pub fn records(&self) -> std::option::Option<&[crate::model::UsageRecord]> {
+    pub fn records(&self) -> std::option::Option<& [crate::model::UsageRecord]> {
         self.records.as_deref()
     }
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
-    pub fn time_range(&self) -> std::option::Option<&crate::model::TimeRange> {
+    pub fn time_range(&self) -> std::option::Option<& crate::model::TimeRange> {
         self.time_range.as_ref()
     }
 }
 /// See [`GetUsageStatisticsOutput`](crate::output::GetUsageStatisticsOutput).
 pub mod get_usage_statistics_output {
-
+    
     /// A builder for [`GetUsageStatisticsOutput`](crate::output::GetUsageStatisticsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1860,8 +1863,7 @@ pub mod get_usage_statistics_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `records`.
         ///
@@ -1870,17 +1872,13 @@ pub mod get_usage_statistics_output {
         /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
         pub fn records(mut self, input: crate::model::UsageRecord) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input);
-            self.records = Some(v);
-            self
+                            v.push(input);
+                            self.records = Some(v);
+                            self
         }
         /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
-        pub fn set_records(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
-        ) -> Self {
-            self.records = input;
-            self
+        pub fn set_records(mut self, input: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>) -> Self {
+            self.records = input; self
         }
         /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
         pub fn time_range(mut self, input: crate::model::TimeRange) -> Self {
@@ -1888,22 +1886,23 @@ pub mod get_usage_statistics_output {
             self
         }
         /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
-        pub fn set_time_range(
-            mut self,
-            input: std::option::Option<crate::model::TimeRange>,
-        ) -> Self {
-            self.time_range = input;
-            self
+        pub fn set_time_range(mut self, input: std::option::Option<crate::model::TimeRange>) -> Self {
+            self.time_range = input; self
         }
         /// Consumes the builder and constructs a [`GetUsageStatisticsOutput`](crate::output::GetUsageStatisticsOutput).
         pub fn build(self) -> crate::output::GetUsageStatisticsOutput {
             crate::output::GetUsageStatisticsOutput {
-                next_token: self.next_token,
-                records: self.records,
-                time_range: self.time_range,
+                next_token: self.next_token
+                ,
+                records: self.records
+                ,
+                time_range: self.time_range
+                ,
             }
         }
     }
+    
+    
 }
 impl GetUsageStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetUsageStatisticsOutput`](crate::output::GetUsageStatisticsOutput).
@@ -1915,7 +1914,7 @@ impl GetUsageStatisticsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSensitivityInspectionTemplateOutput {
+pub struct GetSensitivityInspectionTemplateOutput  {
     /// <p>The custom description of the template.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -1934,41 +1933,35 @@ pub struct GetSensitivityInspectionTemplateOutput {
 }
 impl GetSensitivityInspectionTemplateOutput {
     /// <p>The custom description of the template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
-    pub fn excludes(
-        &self,
-    ) -> std::option::Option<&crate::model::SensitivityInspectionTemplateExcludes> {
+    pub fn excludes(&self) -> std::option::Option<& crate::model::SensitivityInspectionTemplateExcludes> {
         self.excludes.as_ref()
     }
     /// <p>The allow lists, custom data identifiers, and managed data identifiers that are included (used) when analyzing data.</p>
-    pub fn includes(
-        &self,
-    ) -> std::option::Option<&crate::model::SensitivityInspectionTemplateIncludes> {
+    pub fn includes(&self) -> std::option::Option<& crate::model::SensitivityInspectionTemplateIncludes> {
         self.includes.as_ref()
     }
     /// <p>The name of the template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier for the template.</p>
-    pub fn sensitivity_inspection_template_id(&self) -> std::option::Option<&str> {
+    pub fn sensitivity_inspection_template_id(&self) -> std::option::Option<& str> {
         self.sensitivity_inspection_template_id.as_deref()
     }
 }
 /// See [`GetSensitivityInspectionTemplateOutput`](crate::output::GetSensitivityInspectionTemplateOutput).
 pub mod get_sensitivity_inspection_template_output {
-
+    
     /// A builder for [`GetSensitivityInspectionTemplateOutput`](crate::output::GetSensitivityInspectionTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) excludes:
-            std::option::Option<crate::model::SensitivityInspectionTemplateExcludes>,
-        pub(crate) includes:
-            std::option::Option<crate::model::SensitivityInspectionTemplateIncludes>,
+        pub(crate) excludes: std::option::Option<crate::model::SensitivityInspectionTemplateExcludes>,
+        pub(crate) includes: std::option::Option<crate::model::SensitivityInspectionTemplateIncludes>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) sensitivity_inspection_template_id: std::option::Option<std::string::String>,
     }
@@ -1980,40 +1973,25 @@ pub mod get_sensitivity_inspection_template_output {
         }
         /// <p>The custom description of the template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
-        pub fn excludes(
-            mut self,
-            input: crate::model::SensitivityInspectionTemplateExcludes,
-        ) -> Self {
+        pub fn excludes(mut self, input: crate::model::SensitivityInspectionTemplateExcludes) -> Self {
             self.excludes = Some(input);
             self
         }
         /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
-        pub fn set_excludes(
-            mut self,
-            input: std::option::Option<crate::model::SensitivityInspectionTemplateExcludes>,
-        ) -> Self {
-            self.excludes = input;
-            self
+        pub fn set_excludes(mut self, input: std::option::Option<crate::model::SensitivityInspectionTemplateExcludes>) -> Self {
+            self.excludes = input; self
         }
         /// <p>The allow lists, custom data identifiers, and managed data identifiers that are included (used) when analyzing data.</p>
-        pub fn includes(
-            mut self,
-            input: crate::model::SensitivityInspectionTemplateIncludes,
-        ) -> Self {
+        pub fn includes(mut self, input: crate::model::SensitivityInspectionTemplateIncludes) -> Self {
             self.includes = Some(input);
             self
         }
         /// <p>The allow lists, custom data identifiers, and managed data identifiers that are included (used) when analyzing data.</p>
-        pub fn set_includes(
-            mut self,
-            input: std::option::Option<crate::model::SensitivityInspectionTemplateIncludes>,
-        ) -> Self {
-            self.includes = input;
-            self
+        pub fn set_includes(mut self, input: std::option::Option<crate::model::SensitivityInspectionTemplateIncludes>) -> Self {
+            self.includes = input; self
         }
         /// <p>The name of the template.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2022,36 +2000,35 @@ pub mod get_sensitivity_inspection_template_output {
         }
         /// <p>The name of the template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The unique identifier for the template.</p>
-        pub fn sensitivity_inspection_template_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn sensitivity_inspection_template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.sensitivity_inspection_template_id = Some(input.into());
             self
         }
         /// <p>The unique identifier for the template.</p>
-        pub fn set_sensitivity_inspection_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sensitivity_inspection_template_id = input;
-            self
+        pub fn set_sensitivity_inspection_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sensitivity_inspection_template_id = input; self
         }
         /// Consumes the builder and constructs a [`GetSensitivityInspectionTemplateOutput`](crate::output::GetSensitivityInspectionTemplateOutput).
         pub fn build(self) -> crate::output::GetSensitivityInspectionTemplateOutput {
             crate::output::GetSensitivityInspectionTemplateOutput {
-                description: self.description,
-                excludes: self.excludes,
-                includes: self.includes,
-                name: self.name,
-                sensitivity_inspection_template_id: self.sensitivity_inspection_template_id,
+                description: self.description
+                ,
+                excludes: self.excludes
+                ,
+                includes: self.includes
+                ,
+                name: self.name
+                ,
+                sensitivity_inspection_template_id: self.sensitivity_inspection_template_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSensitivityInspectionTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetSensitivityInspectionTemplateOutput`](crate::output::GetSensitivityInspectionTemplateOutput).
@@ -2063,49 +2040,48 @@ impl GetSensitivityInspectionTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSensitiveDataOccurrencesAvailabilityOutput {
+pub struct GetSensitiveDataOccurrencesAvailabilityOutput  {
     /// <p>Specifies whether occurrences of sensitive data can be retrieved for the finding. Possible values are: AVAILABLE, the sensitive data can be retrieved; and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::AvailabilityCode>,
-    /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>
+    /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p> 
     /// <ul>
-    /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
-    /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
-    /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Macie created the finding.</p></li>
-    /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>
+    /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li> 
+    /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li> 
+    /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Macie created the finding.</p></li> 
+    /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li> 
     /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
-    /// </ul>
+    /// </ul> 
     /// <p>This value is null if sensitive data can be retrieved for the finding.</p>
     #[doc(hidden)]
     pub reasons: std::option::Option<std::vec::Vec<crate::model::UnavailabilityReasonCode>>,
 }
 impl GetSensitiveDataOccurrencesAvailabilityOutput {
     /// <p>Specifies whether occurrences of sensitive data can be retrieved for the finding. Possible values are: AVAILABLE, the sensitive data can be retrieved; and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::AvailabilityCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::AvailabilityCode> {
         self.code.as_ref()
     }
-    /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>
+    /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p> 
     /// <ul>
-    /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
-    /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
-    /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Macie created the finding.</p></li>
-    /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>
+    /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li> 
+    /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li> 
+    /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Macie created the finding.</p></li> 
+    /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li> 
     /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
-    /// </ul>
+    /// </ul> 
     /// <p>This value is null if sensitive data can be retrieved for the finding.</p>
-    pub fn reasons(&self) -> std::option::Option<&[crate::model::UnavailabilityReasonCode]> {
+    pub fn reasons(&self) -> std::option::Option<& [crate::model::UnavailabilityReasonCode]> {
         self.reasons.as_deref()
     }
 }
 /// See [`GetSensitiveDataOccurrencesAvailabilityOutput`](crate::output::GetSensitiveDataOccurrencesAvailabilityOutput).
 pub mod get_sensitive_data_occurrences_availability_output {
-
+    
     /// A builder for [`GetSensitiveDataOccurrencesAvailabilityOutput`](crate::output::GetSensitiveDataOccurrencesAvailabilityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::AvailabilityCode>,
-        pub(crate) reasons:
-            std::option::Option<std::vec::Vec<crate::model::UnavailabilityReasonCode>>,
+        pub(crate) reasons: std::option::Option<std::vec::Vec<crate::model::UnavailabilityReasonCode>>,
     }
     impl Builder {
         /// <p>Specifies whether occurrences of sensitive data can be retrieved for the finding. Possible values are: AVAILABLE, the sensitive data can be retrieved; and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
@@ -2114,56 +2090,52 @@ pub mod get_sensitive_data_occurrences_availability_output {
             self
         }
         /// <p>Specifies whether occurrences of sensitive data can be retrieved for the finding. Possible values are: AVAILABLE, the sensitive data can be retrieved; and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::AvailabilityCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::AvailabilityCode>) -> Self {
+            self.code = input; self
         }
         /// Appends an item to `reasons`.
         ///
         /// To override the contents of this collection use [`set_reasons`](Self::set_reasons).
         ///
-        /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>
+        /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p> 
         /// <ul>
-        /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
-        /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
-        /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Macie created the finding.</p></li>
-        /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>
+        /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li> 
+        /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li> 
+        /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Macie created the finding.</p></li> 
+        /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li> 
         /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
-        /// </ul>
+        /// </ul> 
         /// <p>This value is null if sensitive data can be retrieved for the finding.</p>
         pub fn reasons(mut self, input: crate::model::UnavailabilityReasonCode) -> Self {
             let mut v = self.reasons.unwrap_or_default();
-            v.push(input);
-            self.reasons = Some(v);
-            self
+                            v.push(input);
+                            self.reasons = Some(v);
+                            self
         }
-        /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>
+        /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p> 
         /// <ul>
-        /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
-        /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
-        /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Macie created the finding.</p></li>
-        /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>
+        /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li> 
+        /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li> 
+        /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Macie created the finding.</p></li> 
+        /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li> 
         /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
-        /// </ul>
+        /// </ul> 
         /// <p>This value is null if sensitive data can be retrieved for the finding.</p>
-        pub fn set_reasons(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UnavailabilityReasonCode>>,
-        ) -> Self {
-            self.reasons = input;
-            self
+        pub fn set_reasons(mut self, input: std::option::Option<std::vec::Vec<crate::model::UnavailabilityReasonCode>>) -> Self {
+            self.reasons = input; self
         }
         /// Consumes the builder and constructs a [`GetSensitiveDataOccurrencesAvailabilityOutput`](crate::output::GetSensitiveDataOccurrencesAvailabilityOutput).
         pub fn build(self) -> crate::output::GetSensitiveDataOccurrencesAvailabilityOutput {
             crate::output::GetSensitiveDataOccurrencesAvailabilityOutput {
-                code: self.code,
-                reasons: self.reasons,
+                code: self.code
+                ,
+                reasons: self.reasons
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSensitiveDataOccurrencesAvailabilityOutput {
     /// Creates a new builder-style object to manufacture [`GetSensitiveDataOccurrencesAvailabilityOutput`](crate::output::GetSensitiveDataOccurrencesAvailabilityOutput).
@@ -2175,22 +2147,17 @@ impl GetSensitiveDataOccurrencesAvailabilityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSensitiveDataOccurrencesOutput {
+pub struct GetSensitiveDataOccurrencesOutput  {
     /// <p>If an error occurred when Amazon Macie attempted to retrieve occurrences of sensitive data reported by the finding, a description of the error that occurred. This value is null if the status (status) of the request is PROCESSING or SUCCESS.</p>
     #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
     /// <p>A map that specifies 1-100 types of sensitive data reported by the finding and, for each type, 1-10 occurrences of sensitive data.</p>
     #[doc(hidden)]
-    pub sensitive_data_occurrences: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::DetectedDataDetails>,
-        >,
-    >,
-    /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
+    pub sensitive_data_occurrences: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::DetectedDataDetails>>>,
+    /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p> 
     /// <ul>
-    /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
-    /// <li><p>PROCESSING - Macie is processing the request.</p></li>
+    /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li> 
+    /// <li><p>PROCESSING - Macie is processing the request.</p></li> 
     /// <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
     /// </ul>
     #[doc(hidden)]
@@ -2198,43 +2165,31 @@ pub struct GetSensitiveDataOccurrencesOutput {
 }
 impl GetSensitiveDataOccurrencesOutput {
     /// <p>If an error occurred when Amazon Macie attempted to retrieve occurrences of sensitive data reported by the finding, a description of the error that occurred. This value is null if the status (status) of the request is PROCESSING or SUCCESS.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>A map that specifies 1-100 types of sensitive data reported by the finding and, for each type, 1-10 occurrences of sensitive data.</p>
-    pub fn sensitive_data_occurrences(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::DetectedDataDetails>,
-        >,
-    > {
+    pub fn sensitive_data_occurrences(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::DetectedDataDetails>>> {
         self.sensitive_data_occurrences.as_ref()
     }
-    /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
+    /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p> 
     /// <ul>
-    /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
-    /// <li><p>PROCESSING - Macie is processing the request.</p></li>
+    /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li> 
+    /// <li><p>PROCESSING - Macie is processing the request.</p></li> 
     /// <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::RevealRequestStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RevealRequestStatus> {
         self.status.as_ref()
     }
 }
 /// See [`GetSensitiveDataOccurrencesOutput`](crate::output::GetSensitiveDataOccurrencesOutput).
 pub mod get_sensitive_data_occurrences_output {
-
+    
     /// A builder for [`GetSensitiveDataOccurrencesOutput`](crate::output::GetSensitiveDataOccurrencesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
-        pub(crate) sensitive_data_occurrences: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::DetectedDataDetails>,
-            >,
-        >,
+        pub(crate) sensitive_data_occurrences: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::DetectedDataDetails>>>,
         pub(crate) status: std::option::Option<crate::model::RevealRequestStatus>,
     }
     impl Builder {
@@ -2245,69 +2200,56 @@ pub mod get_sensitive_data_occurrences_output {
         }
         /// <p>If an error occurred when Amazon Macie attempted to retrieve occurrences of sensitive data reported by the finding, a description of the error that occurred. This value is null if the status (status) of the request is PROCESSING or SUCCESS.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// Adds a key-value pair to `sensitive_data_occurrences`.
         ///
         /// To override the contents of this collection use [`set_sensitive_data_occurrences`](Self::set_sensitive_data_occurrences).
         ///
         /// <p>A map that specifies 1-100 types of sensitive data reported by the finding and, for each type, 1-10 occurrences of sensitive data.</p>
-        pub fn sensitive_data_occurrences(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::DetectedDataDetails>,
-        ) -> Self {
+        pub fn sensitive_data_occurrences(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::DetectedDataDetails>) -> Self {
             let mut hash_map = self.sensitive_data_occurrences.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.sensitive_data_occurrences = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.sensitive_data_occurrences = Some(hash_map);
+                            self
         }
         /// <p>A map that specifies 1-100 types of sensitive data reported by the finding and, for each type, 1-10 occurrences of sensitive data.</p>
-        pub fn set_sensitive_data_occurrences(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::DetectedDataDetails>,
-                >,
-            >,
-        ) -> Self {
-            self.sensitive_data_occurrences = input;
-            self
+        pub fn set_sensitive_data_occurrences(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::DetectedDataDetails>>>) -> Self {
+            self.sensitive_data_occurrences = input; self
         }
-        /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
+        /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p> 
         /// <ul>
-        /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
-        /// <li><p>PROCESSING - Macie is processing the request.</p></li>
+        /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li> 
+        /// <li><p>PROCESSING - Macie is processing the request.</p></li> 
         /// <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
         /// </ul>
         pub fn status(mut self, input: crate::model::RevealRequestStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
+        /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p> 
         /// <ul>
-        /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
-        /// <li><p>PROCESSING - Macie is processing the request.</p></li>
+        /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li> 
+        /// <li><p>PROCESSING - Macie is processing the request.</p></li> 
         /// <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::RevealRequestStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::RevealRequestStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`GetSensitiveDataOccurrencesOutput`](crate::output::GetSensitiveDataOccurrencesOutput).
         pub fn build(self) -> crate::output::GetSensitiveDataOccurrencesOutput {
             crate::output::GetSensitiveDataOccurrencesOutput {
-                error: self.error,
-                sensitive_data_occurrences: self.sensitive_data_occurrences,
-                status: self.status,
+                error: self.error
+                ,
+                sensitive_data_occurrences: self.sensitive_data_occurrences
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSensitiveDataOccurrencesOutput {
     /// Creates a new builder-style object to manufacture [`GetSensitiveDataOccurrencesOutput`](crate::output::GetSensitiveDataOccurrencesOutput).
@@ -2319,20 +2261,20 @@ impl GetSensitiveDataOccurrencesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRevealConfigurationOutput {
+pub struct GetRevealConfigurationOutput  {
     /// <p>The current configuration settings and the status of the configuration for the account.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::RevealConfiguration>,
 }
 impl GetRevealConfigurationOutput {
     /// <p>The current configuration settings and the status of the configuration for the account.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::model::RevealConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::RevealConfiguration> {
         self.configuration.as_ref()
     }
 }
 /// See [`GetRevealConfigurationOutput`](crate::output::GetRevealConfigurationOutput).
 pub mod get_reveal_configuration_output {
-
+    
     /// A builder for [`GetRevealConfigurationOutput`](crate::output::GetRevealConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2345,20 +2287,19 @@ pub mod get_reveal_configuration_output {
             self
         }
         /// <p>The current configuration settings and the status of the configuration for the account.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::RevealConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::RevealConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`GetRevealConfigurationOutput`](crate::output::GetRevealConfigurationOutput).
         pub fn build(self) -> crate::output::GetRevealConfigurationOutput {
             crate::output::GetRevealConfigurationOutput {
-                configuration: self.configuration,
+                configuration: self.configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRevealConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetRevealConfigurationOutput`](crate::output::GetRevealConfigurationOutput).
@@ -2370,7 +2311,7 @@ impl GetRevealConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceProfileOutput {
+pub struct GetResourceProfileOutput  {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently recalculated sensitive data discovery statistics and details for the bucket. If the bucket's sensitivity score is calculated automatically, this includes the score.</p>
     #[doc(hidden)]
     pub profile_updated_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -2386,7 +2327,7 @@ pub struct GetResourceProfileOutput {
 }
 impl GetResourceProfileOutput {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently recalculated sensitive data discovery statistics and details for the bucket. If the bucket's sensitivity score is calculated automatically, this includes the score.</p>
-    pub fn profile_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn profile_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.profile_updated_at.as_ref()
     }
     /// <p>The current sensitivity score for the bucket, ranging from&nbsp;-1&nbsp;(no analysis due to an error) to&nbsp;100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
@@ -2398,13 +2339,13 @@ impl GetResourceProfileOutput {
         self.sensitivity_score_overridden
     }
     /// <p>The sensitive data discovery statistics for the bucket. The statistics capture the results of automated sensitive data discovery activities that Amazon Macie has performed for the bucket.</p>
-    pub fn statistics(&self) -> std::option::Option<&crate::model::ResourceStatistics> {
+    pub fn statistics(&self) -> std::option::Option<& crate::model::ResourceStatistics> {
         self.statistics.as_ref()
     }
 }
 /// See [`GetResourceProfileOutput`](crate::output::GetResourceProfileOutput).
 pub mod get_resource_profile_output {
-
+    
     /// A builder for [`GetResourceProfileOutput`](crate::output::GetResourceProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2420,12 +2361,8 @@ pub mod get_resource_profile_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently recalculated sensitive data discovery statistics and details for the bucket. If the bucket's sensitivity score is calculated automatically, this includes the score.</p>
-        pub fn set_profile_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.profile_updated_at = input;
-            self
+        pub fn set_profile_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.profile_updated_at = input; self
         }
         /// <p>The current sensitivity score for the bucket, ranging from&nbsp;-1&nbsp;(no analysis due to an error) to&nbsp;100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
         pub fn sensitivity_score(mut self, input: i32) -> Self {
@@ -2434,8 +2371,7 @@ pub mod get_resource_profile_output {
         }
         /// <p>The current sensitivity score for the bucket, ranging from&nbsp;-1&nbsp;(no analysis due to an error) to&nbsp;100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
         pub fn set_sensitivity_score(mut self, input: std::option::Option<i32>) -> Self {
-            self.sensitivity_score = input;
-            self
+            self.sensitivity_score = input; self
         }
         /// <p>Specifies whether the bucket's current sensitivity score was set manually. If this value is true, the score was manually changed to 100. If this value is false, the score was calculated automatically by Amazon Macie.</p>
         pub fn sensitivity_score_overridden(mut self, input: bool) -> Self {
@@ -2443,12 +2379,8 @@ pub mod get_resource_profile_output {
             self
         }
         /// <p>Specifies whether the bucket's current sensitivity score was set manually. If this value is true, the score was manually changed to 100. If this value is false, the score was calculated automatically by Amazon Macie.</p>
-        pub fn set_sensitivity_score_overridden(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.sensitivity_score_overridden = input;
-            self
+        pub fn set_sensitivity_score_overridden(mut self, input: std::option::Option<bool>) -> Self {
+            self.sensitivity_score_overridden = input; self
         }
         /// <p>The sensitive data discovery statistics for the bucket. The statistics capture the results of automated sensitive data discovery activities that Amazon Macie has performed for the bucket.</p>
         pub fn statistics(mut self, input: crate::model::ResourceStatistics) -> Self {
@@ -2456,23 +2388,27 @@ pub mod get_resource_profile_output {
             self
         }
         /// <p>The sensitive data discovery statistics for the bucket. The statistics capture the results of automated sensitive data discovery activities that Amazon Macie has performed for the bucket.</p>
-        pub fn set_statistics(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatistics>,
-        ) -> Self {
-            self.statistics = input;
-            self
+        pub fn set_statistics(mut self, input: std::option::Option<crate::model::ResourceStatistics>) -> Self {
+            self.statistics = input; self
         }
         /// Consumes the builder and constructs a [`GetResourceProfileOutput`](crate::output::GetResourceProfileOutput).
         pub fn build(self) -> crate::output::GetResourceProfileOutput {
             crate::output::GetResourceProfileOutput {
-                profile_updated_at: self.profile_updated_at,
-                sensitivity_score: self.sensitivity_score.unwrap_or_default(),
-                sensitivity_score_overridden: self.sensitivity_score_overridden.unwrap_or_default(),
-                statistics: self.statistics,
+                profile_updated_at: self.profile_updated_at
+                ,
+                sensitivity_score: self.sensitivity_score
+                    .unwrap_or_default()
+                ,
+                sensitivity_score_overridden: self.sensitivity_score_overridden
+                    .unwrap_or_default()
+                ,
+                statistics: self.statistics
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResourceProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceProfileOutput`](crate::output::GetResourceProfileOutput).
@@ -2484,7 +2420,7 @@ impl GetResourceProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMemberOutput {
+pub struct GetMemberOutput  {
     /// <p>The Amazon Web Services account ID for the account.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -2508,56 +2444,52 @@ pub struct GetMemberOutput {
     pub relationship_status: std::option::Option<crate::model::RelationshipStatus>,
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetMemberOutput {
     /// <p>The Amazon Web Services account ID for the account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID for the administrator account.</p>
-    pub fn administrator_account_id(&self) -> std::option::Option<&str> {
+    pub fn administrator_account_id(&self) -> std::option::Option<& str> {
         self.administrator_account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the account.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The email address for the account.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
-    pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn invited_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.invited_at.as_ref()
     }
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
-    pub fn master_account_id(&self) -> std::option::Option<&str> {
+    pub fn master_account_id(&self) -> std::option::Option<& str> {
         self.master_account_id.as_deref()
     }
     /// <p>The current status of the relationship between the account and the administrator account.</p>
-    pub fn relationship_status(&self) -> std::option::Option<&crate::model::RelationshipStatus> {
+    pub fn relationship_status(&self) -> std::option::Option<& crate::model::RelationshipStatus> {
         self.relationship_status.as_ref()
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`GetMemberOutput`](crate::output::GetMemberOutput).
 pub mod get_member_output {
-
+    
     /// A builder for [`GetMemberOutput`](crate::output::GetMemberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2568,9 +2500,7 @@ pub mod get_member_output {
         pub(crate) invited_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) master_account_id: std::option::Option<std::string::String>,
         pub(crate) relationship_status: std::option::Option<crate::model::RelationshipStatus>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
@@ -2581,8 +2511,7 @@ pub mod get_member_output {
         }
         /// <p>The Amazon Web Services account ID for the account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The Amazon Web Services account ID for the administrator account.</p>
         pub fn administrator_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2590,12 +2519,8 @@ pub mod get_member_output {
             self
         }
         /// <p>The Amazon Web Services account ID for the administrator account.</p>
-        pub fn set_administrator_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.administrator_account_id = input;
-            self
+        pub fn set_administrator_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.administrator_account_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the account.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2604,8 +2529,7 @@ pub mod get_member_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the account.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The email address for the account.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2614,8 +2538,7 @@ pub mod get_member_output {
         }
         /// <p>The email address for the account.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.email = input;
-            self
+            self.email = input; self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
         pub fn invited_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2623,12 +2546,8 @@ pub mod get_member_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
-        pub fn set_invited_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.invited_at = input;
-            self
+        pub fn set_invited_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.invited_at = input; self
         }
         /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
         pub fn master_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2636,12 +2555,8 @@ pub mod get_member_output {
             self
         }
         /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
-        pub fn set_master_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.master_account_id = input;
-            self
+        pub fn set_master_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_account_id = input; self
         }
         /// <p>The current status of the relationship between the account and the administrator account.</p>
         pub fn relationship_status(mut self, input: crate::model::RelationshipStatus) -> Self {
@@ -2649,37 +2564,23 @@ pub mod get_member_output {
             self
         }
         /// <p>The current status of the relationship between the account and the administrator account.</p>
-        pub fn set_relationship_status(
-            mut self,
-            input: std::option::Option<crate::model::RelationshipStatus>,
-        ) -> Self {
-            self.relationship_status = input;
-            self
+        pub fn set_relationship_status(mut self, input: std::option::Option<crate::model::RelationshipStatus>) -> Self {
+            self.relationship_status = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2687,28 +2588,35 @@ pub mod get_member_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`GetMemberOutput`](crate::output::GetMemberOutput).
         pub fn build(self) -> crate::output::GetMemberOutput {
             crate::output::GetMemberOutput {
-                account_id: self.account_id,
-                administrator_account_id: self.administrator_account_id,
-                arn: self.arn,
-                email: self.email,
-                invited_at: self.invited_at,
-                master_account_id: self.master_account_id,
-                relationship_status: self.relationship_status,
-                tags: self.tags,
-                updated_at: self.updated_at,
+                account_id: self.account_id
+                ,
+                administrator_account_id: self.administrator_account_id
+                ,
+                arn: self.arn
+                ,
+                email: self.email
+                ,
+                invited_at: self.invited_at
+                ,
+                master_account_id: self.master_account_id
+                ,
+                relationship_status: self.relationship_status
+                ,
+                tags: self.tags
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMemberOutput {
     /// Creates a new builder-style object to manufacture [`GetMemberOutput`](crate::output::GetMemberOutput).
@@ -2720,20 +2628,20 @@ impl GetMemberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMasterAccountOutput {
+pub struct GetMasterAccountOutput  {
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
     #[doc(hidden)]
     pub master: std::option::Option<crate::model::Invitation>,
 }
 impl GetMasterAccountOutput {
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
-    pub fn master(&self) -> std::option::Option<&crate::model::Invitation> {
+    pub fn master(&self) -> std::option::Option<& crate::model::Invitation> {
         self.master.as_ref()
     }
 }
 /// See [`GetMasterAccountOutput`](crate::output::GetMasterAccountOutput).
 pub mod get_master_account_output {
-
+    
     /// A builder for [`GetMasterAccountOutput`](crate::output::GetMasterAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2747,16 +2655,18 @@ pub mod get_master_account_output {
         }
         /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
         pub fn set_master(mut self, input: std::option::Option<crate::model::Invitation>) -> Self {
-            self.master = input;
-            self
+            self.master = input; self
         }
         /// Consumes the builder and constructs a [`GetMasterAccountOutput`](crate::output::GetMasterAccountOutput).
         pub fn build(self) -> crate::output::GetMasterAccountOutput {
             crate::output::GetMasterAccountOutput {
-                master: self.master,
+                master: self.master
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMasterAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetMasterAccountOutput`](crate::output::GetMasterAccountOutput).
@@ -2768,7 +2678,7 @@ impl GetMasterAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMacieSessionOutput {
+pub struct GetMacieSessionOutput  {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie account was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -2787,37 +2697,34 @@ pub struct GetMacieSessionOutput {
 }
 impl GetMacieSessionOutput {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie account was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
-    pub fn finding_publishing_frequency(
-        &self,
-    ) -> std::option::Option<&crate::model::FindingPublishingFrequency> {
+    pub fn finding_publishing_frequency(&self) -> std::option::Option<& crate::model::FindingPublishingFrequency> {
         self.finding_publishing_frequency.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
-    pub fn service_role(&self) -> std::option::Option<&str> {
+    pub fn service_role(&self) -> std::option::Option<& str> {
         self.service_role.as_deref()
     }
     /// <p>The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::MacieStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MacieStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`GetMacieSessionOutput`](crate::output::GetMacieSessionOutput).
 pub mod get_macie_session_output {
-
+    
     /// A builder for [`GetMacieSessionOutput`](crate::output::GetMacieSessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) finding_publishing_frequency:
-            std::option::Option<crate::model::FindingPublishingFrequency>,
+        pub(crate) finding_publishing_frequency: std::option::Option<crate::model::FindingPublishingFrequency>,
         pub(crate) service_role: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::MacieStatus>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -2829,28 +2736,17 @@ pub mod get_macie_session_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie account was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
-        pub fn finding_publishing_frequency(
-            mut self,
-            input: crate::model::FindingPublishingFrequency,
-        ) -> Self {
+        pub fn finding_publishing_frequency(mut self, input: crate::model::FindingPublishingFrequency) -> Self {
             self.finding_publishing_frequency = Some(input);
             self
         }
         /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
-        pub fn set_finding_publishing_frequency(
-            mut self,
-            input: std::option::Option<crate::model::FindingPublishingFrequency>,
-        ) -> Self {
-            self.finding_publishing_frequency = input;
-            self
+        pub fn set_finding_publishing_frequency(mut self, input: std::option::Option<crate::model::FindingPublishingFrequency>) -> Self {
+            self.finding_publishing_frequency = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2859,8 +2755,7 @@ pub mod get_macie_session_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_role = input;
-            self
+            self.service_role = input; self
         }
         /// <p>The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
         pub fn status(mut self, input: crate::model::MacieStatus) -> Self {
@@ -2869,8 +2764,7 @@ pub mod get_macie_session_output {
         }
         /// <p>The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::MacieStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2878,24 +2772,27 @@ pub mod get_macie_session_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`GetMacieSessionOutput`](crate::output::GetMacieSessionOutput).
         pub fn build(self) -> crate::output::GetMacieSessionOutput {
             crate::output::GetMacieSessionOutput {
-                created_at: self.created_at,
-                finding_publishing_frequency: self.finding_publishing_frequency,
-                service_role: self.service_role,
-                status: self.status,
-                updated_at: self.updated_at,
+                created_at: self.created_at
+                ,
+                finding_publishing_frequency: self.finding_publishing_frequency
+                ,
+                service_role: self.service_role
+                ,
+                status: self.status
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMacieSessionOutput {
     /// Creates a new builder-style object to manufacture [`GetMacieSessionOutput`](crate::output::GetMacieSessionOutput).
@@ -2907,7 +2804,7 @@ impl GetMacieSessionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInvitationsCountOutput {
+pub struct GetInvitationsCountOutput  {
     /// <p>The total number of invitations that were received by the account, not including the currently accepted invitation.</p>
     #[doc(hidden)]
     pub invitations_count: i64,
@@ -2920,7 +2817,7 @@ impl GetInvitationsCountOutput {
 }
 /// See [`GetInvitationsCountOutput`](crate::output::GetInvitationsCountOutput).
 pub mod get_invitations_count_output {
-
+    
     /// A builder for [`GetInvitationsCountOutput`](crate::output::GetInvitationsCountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2934,16 +2831,19 @@ pub mod get_invitations_count_output {
         }
         /// <p>The total number of invitations that were received by the account, not including the currently accepted invitation.</p>
         pub fn set_invitations_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.invitations_count = input;
-            self
+            self.invitations_count = input; self
         }
         /// Consumes the builder and constructs a [`GetInvitationsCountOutput`](crate::output::GetInvitationsCountOutput).
         pub fn build(self) -> crate::output::GetInvitationsCountOutput {
             crate::output::GetInvitationsCountOutput {
-                invitations_count: self.invitations_count.unwrap_or_default(),
+                invitations_count: self.invitations_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInvitationsCountOutput {
     /// Creates a new builder-style object to manufacture [`GetInvitationsCountOutput`](crate::output::GetInvitationsCountOutput).
@@ -2955,20 +2855,20 @@ impl GetInvitationsCountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingStatisticsOutput {
+pub struct GetFindingStatisticsOutput  {
     /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
     #[doc(hidden)]
     pub counts_by_group: std::option::Option<std::vec::Vec<crate::model::GroupCount>>,
 }
 impl GetFindingStatisticsOutput {
     /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
-    pub fn counts_by_group(&self) -> std::option::Option<&[crate::model::GroupCount]> {
+    pub fn counts_by_group(&self) -> std::option::Option<& [crate::model::GroupCount]> {
         self.counts_by_group.as_deref()
     }
 }
 /// See [`GetFindingStatisticsOutput`](crate::output::GetFindingStatisticsOutput).
 pub mod get_finding_statistics_output {
-
+    
     /// A builder for [`GetFindingStatisticsOutput`](crate::output::GetFindingStatisticsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2982,25 +2882,24 @@ pub mod get_finding_statistics_output {
         /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
         pub fn counts_by_group(mut self, input: crate::model::GroupCount) -> Self {
             let mut v = self.counts_by_group.unwrap_or_default();
-            v.push(input);
-            self.counts_by_group = Some(v);
-            self
+                            v.push(input);
+                            self.counts_by_group = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
-        pub fn set_counts_by_group(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GroupCount>>,
-        ) -> Self {
-            self.counts_by_group = input;
-            self
+        pub fn set_counts_by_group(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroupCount>>) -> Self {
+            self.counts_by_group = input; self
         }
         /// Consumes the builder and constructs a [`GetFindingStatisticsOutput`](crate::output::GetFindingStatisticsOutput).
         pub fn build(self) -> crate::output::GetFindingStatisticsOutput {
             crate::output::GetFindingStatisticsOutput {
-                counts_by_group: self.counts_by_group,
+                counts_by_group: self.counts_by_group
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFindingStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingStatisticsOutput`](crate::output::GetFindingStatisticsOutput).
@@ -3012,52 +2911,45 @@ impl GetFindingStatisticsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingsPublicationConfigurationOutput {
+pub struct GetFindingsPublicationConfigurationOutput  {
     /// <p>The configuration settings that determine which findings are published to Security Hub.</p>
     #[doc(hidden)]
     pub security_hub_configuration: std::option::Option<crate::model::SecurityHubConfiguration>,
 }
 impl GetFindingsPublicationConfigurationOutput {
     /// <p>The configuration settings that determine which findings are published to Security Hub.</p>
-    pub fn security_hub_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::SecurityHubConfiguration> {
+    pub fn security_hub_configuration(&self) -> std::option::Option<& crate::model::SecurityHubConfiguration> {
         self.security_hub_configuration.as_ref()
     }
 }
 /// See [`GetFindingsPublicationConfigurationOutput`](crate::output::GetFindingsPublicationConfigurationOutput).
 pub mod get_findings_publication_configuration_output {
-
+    
     /// A builder for [`GetFindingsPublicationConfigurationOutput`](crate::output::GetFindingsPublicationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) security_hub_configuration:
-            std::option::Option<crate::model::SecurityHubConfiguration>,
+        pub(crate) security_hub_configuration: std::option::Option<crate::model::SecurityHubConfiguration>,
     }
     impl Builder {
         /// <p>The configuration settings that determine which findings are published to Security Hub.</p>
-        pub fn security_hub_configuration(
-            mut self,
-            input: crate::model::SecurityHubConfiguration,
-        ) -> Self {
+        pub fn security_hub_configuration(mut self, input: crate::model::SecurityHubConfiguration) -> Self {
             self.security_hub_configuration = Some(input);
             self
         }
         /// <p>The configuration settings that determine which findings are published to Security Hub.</p>
-        pub fn set_security_hub_configuration(
-            mut self,
-            input: std::option::Option<crate::model::SecurityHubConfiguration>,
-        ) -> Self {
-            self.security_hub_configuration = input;
-            self
+        pub fn set_security_hub_configuration(mut self, input: std::option::Option<crate::model::SecurityHubConfiguration>) -> Self {
+            self.security_hub_configuration = input; self
         }
         /// Consumes the builder and constructs a [`GetFindingsPublicationConfigurationOutput`](crate::output::GetFindingsPublicationConfigurationOutput).
         pub fn build(self) -> crate::output::GetFindingsPublicationConfigurationOutput {
             crate::output::GetFindingsPublicationConfigurationOutput {
-                security_hub_configuration: self.security_hub_configuration,
+                security_hub_configuration: self.security_hub_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFindingsPublicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingsPublicationConfigurationOutput`](crate::output::GetFindingsPublicationConfigurationOutput).
@@ -3069,7 +2961,7 @@ impl GetFindingsPublicationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingsFilterOutput {
+pub struct GetFindingsFilterOutput  {
     /// <p>The action that's performed on findings that match the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::FindingsFilterAction>,
@@ -3093,32 +2985,31 @@ pub struct GetFindingsFilterOutput {
     pub position: i32,
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetFindingsFilterOutput {
     /// <p>The action that's performed on findings that match the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::FindingsFilterAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::FindingsFilterAction> {
         self.action.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the filter.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The custom description of the filter.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The criteria that's used to filter findings.</p>
-    pub fn finding_criteria(&self) -> std::option::Option<&crate::model::FindingCriteria> {
+    pub fn finding_criteria(&self) -> std::option::Option<& crate::model::FindingCriteria> {
         self.finding_criteria.as_ref()
     }
     /// <p>The unique identifier for the filter.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The custom name of the filter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
@@ -3126,16 +3017,13 @@ impl GetFindingsFilterOutput {
         self.position
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetFindingsFilterOutput`](crate::output::GetFindingsFilterOutput).
 pub mod get_findings_filter_output {
-
+    
     /// A builder for [`GetFindingsFilterOutput`](crate::output::GetFindingsFilterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3146,9 +3034,7 @@ pub mod get_findings_filter_output {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) position: std::option::Option<i32>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The action that's performed on findings that match the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
@@ -3157,12 +3043,8 @@ pub mod get_findings_filter_output {
             self
         }
         /// <p>The action that's performed on findings that match the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::FindingsFilterAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::FindingsFilterAction>) -> Self {
+            self.action = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the filter.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3171,8 +3053,7 @@ pub mod get_findings_filter_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the filter.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The custom description of the filter.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3181,8 +3062,7 @@ pub mod get_findings_filter_output {
         }
         /// <p>The custom description of the filter.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The criteria that's used to filter findings.</p>
         pub fn finding_criteria(mut self, input: crate::model::FindingCriteria) -> Self {
@@ -3190,12 +3070,8 @@ pub mod get_findings_filter_output {
             self
         }
         /// <p>The criteria that's used to filter findings.</p>
-        pub fn set_finding_criteria(
-            mut self,
-            input: std::option::Option<crate::model::FindingCriteria>,
-        ) -> Self {
-            self.finding_criteria = input;
-            self
+        pub fn set_finding_criteria(mut self, input: std::option::Option<crate::model::FindingCriteria>) -> Self {
+            self.finding_criteria = input; self
         }
         /// <p>The unique identifier for the filter.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3204,8 +3080,7 @@ pub mod get_findings_filter_output {
         }
         /// <p>The unique identifier for the filter.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The custom name of the filter.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3214,8 +3089,7 @@ pub mod get_findings_filter_output {
         }
         /// <p>The custom name of the filter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
         pub fn position(mut self, input: i32) -> Self {
@@ -3224,48 +3098,48 @@ pub mod get_findings_filter_output {
         }
         /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
         pub fn set_position(mut self, input: std::option::Option<i32>) -> Self {
-            self.position = input;
-            self
+            self.position = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetFindingsFilterOutput`](crate::output::GetFindingsFilterOutput).
         pub fn build(self) -> crate::output::GetFindingsFilterOutput {
             crate::output::GetFindingsFilterOutput {
-                action: self.action,
-                arn: self.arn,
-                description: self.description,
-                finding_criteria: self.finding_criteria,
-                id: self.id,
-                name: self.name,
-                position: self.position.unwrap_or_default(),
-                tags: self.tags,
+                action: self.action
+                ,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                finding_criteria: self.finding_criteria
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                position: self.position
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFindingsFilterOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingsFilterOutput`](crate::output::GetFindingsFilterOutput).
@@ -3277,20 +3151,20 @@ impl GetFindingsFilterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingsOutput {
+pub struct GetFindingsOutput  {
     /// <p>An array of objects, one for each finding that matches the criteria specified in the request.</p>
     #[doc(hidden)]
     pub findings: std::option::Option<std::vec::Vec<crate::model::Finding>>,
 }
 impl GetFindingsOutput {
     /// <p>An array of objects, one for each finding that matches the criteria specified in the request.</p>
-    pub fn findings(&self) -> std::option::Option<&[crate::model::Finding]> {
+    pub fn findings(&self) -> std::option::Option<& [crate::model::Finding]> {
         self.findings.as_deref()
     }
 }
 /// See [`GetFindingsOutput`](crate::output::GetFindingsOutput).
 pub mod get_findings_output {
-
+    
     /// A builder for [`GetFindingsOutput`](crate::output::GetFindingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3304,25 +3178,24 @@ pub mod get_findings_output {
         /// <p>An array of objects, one for each finding that matches the criteria specified in the request.</p>
         pub fn findings(mut self, input: crate::model::Finding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input);
-            self.findings = Some(v);
-            self
+                            v.push(input);
+                            self.findings = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each finding that matches the criteria specified in the request.</p>
-        pub fn set_findings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Finding>>,
-        ) -> Self {
-            self.findings = input;
-            self
+        pub fn set_findings(mut self, input: std::option::Option<std::vec::Vec<crate::model::Finding>>) -> Self {
+            self.findings = input; self
         }
         /// Consumes the builder and constructs a [`GetFindingsOutput`](crate::output::GetFindingsOutput).
         pub fn build(self) -> crate::output::GetFindingsOutput {
             crate::output::GetFindingsOutput {
-                findings: self.findings,
+                findings: self.findings
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFindingsOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingsOutput`](crate::output::GetFindingsOutput).
@@ -3334,7 +3207,7 @@ impl GetFindingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCustomDataIdentifierOutput {
+pub struct GetCustomDataIdentifierOutput  {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3370,16 +3243,15 @@ pub struct GetCustomDataIdentifierOutput {
     pub severity_levels: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetCustomDataIdentifierOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
@@ -3387,19 +3259,19 @@ impl GetCustomDataIdentifierOutput {
         self.deleted
     }
     /// <p>The custom description of the custom data identifier.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier for the custom data identifier.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
-    pub fn ignore_words(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ignore_words(&self) -> std::option::Option<& [std::string::String]> {
         self.ignore_words.as_deref()
     }
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
-    pub fn keywords(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn keywords(&self) -> std::option::Option<& [std::string::String]> {
         self.keywords.as_deref()
     }
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
@@ -3407,28 +3279,25 @@ impl GetCustomDataIdentifierOutput {
         self.maximum_match_distance
     }
     /// <p>The custom name of the custom data identifier.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
-    pub fn regex(&self) -> std::option::Option<&str> {
+    pub fn regex(&self) -> std::option::Option<& str> {
         self.regex.as_deref()
     }
     /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-    pub fn severity_levels(&self) -> std::option::Option<&[crate::model::SeverityLevel]> {
+    pub fn severity_levels(&self) -> std::option::Option<& [crate::model::SeverityLevel]> {
         self.severity_levels.as_deref()
     }
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetCustomDataIdentifierOutput`](crate::output::GetCustomDataIdentifierOutput).
 pub mod get_custom_data_identifier_output {
-
+    
     /// A builder for [`GetCustomDataIdentifierOutput`](crate::output::GetCustomDataIdentifierOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3443,9 +3312,7 @@ pub mod get_custom_data_identifier_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) regex: std::option::Option<std::string::String>,
         pub(crate) severity_levels: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
@@ -3455,8 +3322,7 @@ pub mod get_custom_data_identifier_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3464,12 +3330,8 @@ pub mod get_custom_data_identifier_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
         pub fn deleted(mut self, input: bool) -> Self {
@@ -3478,8 +3340,7 @@ pub mod get_custom_data_identifier_output {
         }
         /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
         pub fn set_deleted(mut self, input: std::option::Option<bool>) -> Self {
-            self.deleted = input;
-            self
+            self.deleted = input; self
         }
         /// <p>The custom description of the custom data identifier.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3488,8 +3349,7 @@ pub mod get_custom_data_identifier_output {
         }
         /// <p>The custom description of the custom data identifier.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The unique identifier for the custom data identifier.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3498,8 +3358,7 @@ pub mod get_custom_data_identifier_output {
         }
         /// <p>The unique identifier for the custom data identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Appends an item to `ignore_words`.
         ///
@@ -3508,17 +3367,13 @@ pub mod get_custom_data_identifier_output {
         /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
         pub fn ignore_words(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ignore_words.unwrap_or_default();
-            v.push(input.into());
-            self.ignore_words = Some(v);
-            self
+                            v.push(input.into());
+                            self.ignore_words = Some(v);
+                            self
         }
         /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
-        pub fn set_ignore_words(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ignore_words = input;
-            self
+        pub fn set_ignore_words(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ignore_words = input; self
         }
         /// Appends an item to `keywords`.
         ///
@@ -3527,17 +3382,13 @@ pub mod get_custom_data_identifier_output {
         /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
         pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.keywords.unwrap_or_default();
-            v.push(input.into());
-            self.keywords = Some(v);
-            self
+                            v.push(input.into());
+                            self.keywords = Some(v);
+                            self
         }
         /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
-        pub fn set_keywords(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.keywords = input;
-            self
+        pub fn set_keywords(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.keywords = input; self
         }
         /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
         pub fn maximum_match_distance(mut self, input: i32) -> Self {
@@ -3546,8 +3397,7 @@ pub mod get_custom_data_identifier_output {
         }
         /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
         pub fn set_maximum_match_distance(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_match_distance = input;
-            self
+            self.maximum_match_distance = input; self
         }
         /// <p>The custom name of the custom data identifier.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3556,8 +3406,7 @@ pub mod get_custom_data_identifier_output {
         }
         /// <p>The custom name of the custom data identifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
         pub fn regex(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3566,8 +3415,7 @@ pub mod get_custom_data_identifier_output {
         }
         /// <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
         pub fn set_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.regex = input;
-            self
+            self.regex = input; self
         }
         /// Appends an item to `severity_levels`.
         ///
@@ -3576,61 +3424,63 @@ pub mod get_custom_data_identifier_output {
         /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
         pub fn severity_levels(mut self, input: crate::model::SeverityLevel) -> Self {
             let mut v = self.severity_levels.unwrap_or_default();
-            v.push(input);
-            self.severity_levels = Some(v);
-            self
+                            v.push(input);
+                            self.severity_levels = Some(v);
+                            self
         }
         /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-        pub fn set_severity_levels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
-        ) -> Self {
-            self.severity_levels = input;
-            self
+        pub fn set_severity_levels(mut self, input: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>) -> Self {
+            self.severity_levels = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetCustomDataIdentifierOutput`](crate::output::GetCustomDataIdentifierOutput).
         pub fn build(self) -> crate::output::GetCustomDataIdentifierOutput {
             crate::output::GetCustomDataIdentifierOutput {
-                arn: self.arn,
-                created_at: self.created_at,
-                deleted: self.deleted.unwrap_or_default(),
-                description: self.description,
-                id: self.id,
-                ignore_words: self.ignore_words,
-                keywords: self.keywords,
-                maximum_match_distance: self.maximum_match_distance.unwrap_or_default(),
-                name: self.name,
-                regex: self.regex,
-                severity_levels: self.severity_levels,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                deleted: self.deleted
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                id: self.id
+                ,
+                ignore_words: self.ignore_words
+                ,
+                keywords: self.keywords
+                ,
+                maximum_match_distance: self.maximum_match_distance
+                    .unwrap_or_default()
+                ,
+                name: self.name
+                ,
+                regex: self.regex
+                ,
+                severity_levels: self.severity_levels
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCustomDataIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`GetCustomDataIdentifierOutput`](crate::output::GetCustomDataIdentifierOutput).
@@ -3642,7 +3492,7 @@ impl GetCustomDataIdentifierOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetClassificationScopeOutput {
+pub struct GetClassificationScopeOutput  {
     /// <p>The unique identifier for the classification scope.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3655,21 +3505,21 @@ pub struct GetClassificationScopeOutput {
 }
 impl GetClassificationScopeOutput {
     /// <p>The unique identifier for the classification scope.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the classification scope.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
-    pub fn s3(&self) -> std::option::Option<&crate::model::S3ClassificationScope> {
+    pub fn s3(&self) -> std::option::Option<& crate::model::S3ClassificationScope> {
         self.s3.as_ref()
     }
 }
 /// See [`GetClassificationScopeOutput`](crate::output::GetClassificationScopeOutput).
 pub mod get_classification_scope_output {
-
+    
     /// A builder for [`GetClassificationScopeOutput`](crate::output::GetClassificationScopeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3685,8 +3535,7 @@ pub mod get_classification_scope_output {
         }
         /// <p>The unique identifier for the classification scope.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the classification scope.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3695,8 +3544,7 @@ pub mod get_classification_scope_output {
         }
         /// <p>The name of the classification scope.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
         pub fn s3(mut self, input: crate::model::S3ClassificationScope) -> Self {
@@ -3704,22 +3552,23 @@ pub mod get_classification_scope_output {
             self
         }
         /// <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
-        pub fn set_s3(
-            mut self,
-            input: std::option::Option<crate::model::S3ClassificationScope>,
-        ) -> Self {
-            self.s3 = input;
-            self
+        pub fn set_s3(mut self, input: std::option::Option<crate::model::S3ClassificationScope>) -> Self {
+            self.s3 = input; self
         }
         /// Consumes the builder and constructs a [`GetClassificationScopeOutput`](crate::output::GetClassificationScopeOutput).
         pub fn build(self) -> crate::output::GetClassificationScopeOutput {
             crate::output::GetClassificationScopeOutput {
-                id: self.id,
-                name: self.name,
-                s3: self.s3,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                s3: self.s3
+                ,
             }
         }
     }
+    
+    
 }
 impl GetClassificationScopeOutput {
     /// Creates a new builder-style object to manufacture [`GetClassificationScopeOutput`](crate::output::GetClassificationScopeOutput).
@@ -3731,52 +3580,45 @@ impl GetClassificationScopeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetClassificationExportConfigurationOutput {
+pub struct GetClassificationExportConfigurationOutput  {
     /// <p>The location where data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ClassificationExportConfiguration>,
 }
 impl GetClassificationExportConfigurationOutput {
     /// <p>The location where data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
-    pub fn configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ClassificationExportConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::ClassificationExportConfiguration> {
         self.configuration.as_ref()
     }
 }
 /// See [`GetClassificationExportConfigurationOutput`](crate::output::GetClassificationExportConfigurationOutput).
 pub mod get_classification_export_configuration_output {
-
+    
     /// A builder for [`GetClassificationExportConfigurationOutput`](crate::output::GetClassificationExportConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) configuration:
-            std::option::Option<crate::model::ClassificationExportConfiguration>,
+        pub(crate) configuration: std::option::Option<crate::model::ClassificationExportConfiguration>,
     }
     impl Builder {
         /// <p>The location where data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
-        pub fn configuration(
-            mut self,
-            input: crate::model::ClassificationExportConfiguration,
-        ) -> Self {
+        pub fn configuration(mut self, input: crate::model::ClassificationExportConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
         /// <p>The location where data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ClassificationExportConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::ClassificationExportConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`GetClassificationExportConfigurationOutput`](crate::output::GetClassificationExportConfigurationOutput).
         pub fn build(self) -> crate::output::GetClassificationExportConfigurationOutput {
             crate::output::GetClassificationExportConfigurationOutput {
-                configuration: self.configuration,
+                configuration: self.configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl GetClassificationExportConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetClassificationExportConfigurationOutput`](crate::output::GetClassificationExportConfigurationOutput).
@@ -3788,34 +3630,29 @@ impl GetClassificationExportConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketStatisticsOutput {
+pub struct GetBucketStatisticsOutput  {
     /// <p>The total number of buckets.</p>
     #[doc(hidden)]
     pub bucket_count: i64,
     /// <p>The total number of buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
     #[doc(hidden)]
-    pub bucket_count_by_effective_permission:
-        std::option::Option<crate::model::BucketCountByEffectivePermission>,
+    pub bucket_count_by_effective_permission: std::option::Option<crate::model::BucketCountByEffectivePermission>,
     /// <p>The total number of buckets that use certain types of server-side encryption to encrypt new objects by default. This object also reports the total number of buckets that don't encrypt new objects by default.</p>
     #[doc(hidden)]
-    pub bucket_count_by_encryption_type:
-        std::option::Option<crate::model::BucketCountByEncryptionType>,
+    pub bucket_count_by_encryption_type: std::option::Option<crate::model::BucketCountByEncryptionType>,
     /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are uploaded to the buckets.</p>
     #[doc(hidden)]
-    pub bucket_count_by_object_encryption_requirement:
-        std::option::Option<crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads>,
+    pub bucket_count_by_object_encryption_requirement: std::option::Option<crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads>,
     /// <p>The total number of buckets that are or aren't shared with another Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub bucket_count_by_shared_access_type:
-        std::option::Option<crate::model::BucketCountBySharedAccessType>,
+    pub bucket_count_by_shared_access_type: std::option::Option<crate::model::BucketCountBySharedAccessType>,
     /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
     #[doc(hidden)]
-    pub bucket_statistics_by_sensitivity:
-        std::option::Option<crate::model::BucketStatisticsBySensitivity>,
+    pub bucket_statistics_by_sensitivity: std::option::Option<crate::model::BucketStatisticsBySensitivity>,
     /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     #[doc(hidden)]
     pub classifiable_object_count: i64,
-    /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+    /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p> 
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
     #[doc(hidden)]
     pub classifiable_size_in_bytes: i64,
@@ -3825,11 +3662,11 @@ pub struct GetBucketStatisticsOutput {
     /// <p>The total number of objects in the buckets.</p>
     #[doc(hidden)]
     pub object_count: i64,
-    /// <p>The total storage size, in bytes, of the buckets.</p>
+    /// <p>The total storage size, in bytes, of the buckets.</p> 
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
     #[doc(hidden)]
     pub size_in_bytes: i64,
-    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
+    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p> 
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
     #[doc(hidden)]
     pub size_in_bytes_compressed: i64,
@@ -3838,8 +3675,7 @@ pub struct GetBucketStatisticsOutput {
     pub unclassifiable_object_count: std::option::Option<crate::model::ObjectLevelStatistics>,
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     #[doc(hidden)]
-    pub unclassifiable_object_size_in_bytes:
-        std::option::Option<crate::model::ObjectLevelStatistics>,
+    pub unclassifiable_object_size_in_bytes: std::option::Option<crate::model::ObjectLevelStatistics>,
 }
 impl GetBucketStatisticsOutput {
     /// <p>The total number of buckets.</p>
@@ -3847,102 +3683,81 @@ impl GetBucketStatisticsOutput {
         self.bucket_count
     }
     /// <p>The total number of buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
-    pub fn bucket_count_by_effective_permission(
-        &self,
-    ) -> std::option::Option<&crate::model::BucketCountByEffectivePermission> {
+    pub fn bucket_count_by_effective_permission(&self) -> std::option::Option<& crate::model::BucketCountByEffectivePermission> {
         self.bucket_count_by_effective_permission.as_ref()
     }
     /// <p>The total number of buckets that use certain types of server-side encryption to encrypt new objects by default. This object also reports the total number of buckets that don't encrypt new objects by default.</p>
-    pub fn bucket_count_by_encryption_type(
-        &self,
-    ) -> std::option::Option<&crate::model::BucketCountByEncryptionType> {
+    pub fn bucket_count_by_encryption_type(&self) -> std::option::Option<& crate::model::BucketCountByEncryptionType> {
         self.bucket_count_by_encryption_type.as_ref()
     }
     /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are uploaded to the buckets.</p>
-    pub fn bucket_count_by_object_encryption_requirement(
-        &self,
-    ) -> std::option::Option<&crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads> {
+    pub fn bucket_count_by_object_encryption_requirement(&self) -> std::option::Option<& crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads> {
         self.bucket_count_by_object_encryption_requirement.as_ref()
     }
     /// <p>The total number of buckets that are or aren't shared with another Amazon Web Services account.</p>
-    pub fn bucket_count_by_shared_access_type(
-        &self,
-    ) -> std::option::Option<&crate::model::BucketCountBySharedAccessType> {
+    pub fn bucket_count_by_shared_access_type(&self) -> std::option::Option<& crate::model::BucketCountBySharedAccessType> {
         self.bucket_count_by_shared_access_type.as_ref()
     }
     /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
-    pub fn bucket_statistics_by_sensitivity(
-        &self,
-    ) -> std::option::Option<&crate::model::BucketStatisticsBySensitivity> {
+    pub fn bucket_statistics_by_sensitivity(&self) -> std::option::Option<& crate::model::BucketStatisticsBySensitivity> {
         self.bucket_statistics_by_sensitivity.as_ref()
     }
     /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     pub fn classifiable_object_count(&self) -> i64 {
         self.classifiable_object_count
     }
-    /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+    /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p> 
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
     pub fn classifiable_size_in_bytes(&self) -> i64 {
         self.classifiable_size_in_bytes
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The total number of objects in the buckets.</p>
     pub fn object_count(&self) -> i64 {
         self.object_count
     }
-    /// <p>The total storage size, in bytes, of the buckets.</p>
+    /// <p>The total storage size, in bytes, of the buckets.</p> 
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
     pub fn size_in_bytes(&self) -> i64 {
         self.size_in_bytes
     }
-    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
+    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p> 
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
     pub fn size_in_bytes_compressed(&self) -> i64 {
         self.size_in_bytes_compressed
     }
     /// <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
-    pub fn unclassifiable_object_count(
-        &self,
-    ) -> std::option::Option<&crate::model::ObjectLevelStatistics> {
+    pub fn unclassifiable_object_count(&self) -> std::option::Option<& crate::model::ObjectLevelStatistics> {
         self.unclassifiable_object_count.as_ref()
     }
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
-    pub fn unclassifiable_object_size_in_bytes(
-        &self,
-    ) -> std::option::Option<&crate::model::ObjectLevelStatistics> {
+    pub fn unclassifiable_object_size_in_bytes(&self) -> std::option::Option<& crate::model::ObjectLevelStatistics> {
         self.unclassifiable_object_size_in_bytes.as_ref()
     }
 }
 /// See [`GetBucketStatisticsOutput`](crate::output::GetBucketStatisticsOutput).
 pub mod get_bucket_statistics_output {
-
+    
     /// A builder for [`GetBucketStatisticsOutput`](crate::output::GetBucketStatisticsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_count: std::option::Option<i64>,
-        pub(crate) bucket_count_by_effective_permission:
-            std::option::Option<crate::model::BucketCountByEffectivePermission>,
-        pub(crate) bucket_count_by_encryption_type:
-            std::option::Option<crate::model::BucketCountByEncryptionType>,
-        pub(crate) bucket_count_by_object_encryption_requirement:
-            std::option::Option<crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads>,
-        pub(crate) bucket_count_by_shared_access_type:
-            std::option::Option<crate::model::BucketCountBySharedAccessType>,
-        pub(crate) bucket_statistics_by_sensitivity:
-            std::option::Option<crate::model::BucketStatisticsBySensitivity>,
+        pub(crate) bucket_count_by_effective_permission: std::option::Option<crate::model::BucketCountByEffectivePermission>,
+        pub(crate) bucket_count_by_encryption_type: std::option::Option<crate::model::BucketCountByEncryptionType>,
+        pub(crate) bucket_count_by_object_encryption_requirement: std::option::Option<crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads>,
+        pub(crate) bucket_count_by_shared_access_type: std::option::Option<crate::model::BucketCountBySharedAccessType>,
+        pub(crate) bucket_statistics_by_sensitivity: std::option::Option<crate::model::BucketStatisticsBySensitivity>,
         pub(crate) classifiable_object_count: std::option::Option<i64>,
         pub(crate) classifiable_size_in_bytes: std::option::Option<i64>,
         pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) object_count: std::option::Option<i64>,
         pub(crate) size_in_bytes: std::option::Option<i64>,
         pub(crate) size_in_bytes_compressed: std::option::Option<i64>,
-        pub(crate) unclassifiable_object_count:
-            std::option::Option<crate::model::ObjectLevelStatistics>,
-        pub(crate) unclassifiable_object_size_in_bytes:
-            std::option::Option<crate::model::ObjectLevelStatistics>,
+        pub(crate) unclassifiable_object_count: std::option::Option<crate::model::ObjectLevelStatistics>,
+        pub(crate) unclassifiable_object_size_in_bytes: std::option::Option<crate::model::ObjectLevelStatistics>,
     }
     impl Builder {
         /// <p>The total number of buckets.</p>
@@ -3952,90 +3767,52 @@ pub mod get_bucket_statistics_output {
         }
         /// <p>The total number of buckets.</p>
         pub fn set_bucket_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.bucket_count = input;
-            self
+            self.bucket_count = input; self
         }
         /// <p>The total number of buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
-        pub fn bucket_count_by_effective_permission(
-            mut self,
-            input: crate::model::BucketCountByEffectivePermission,
-        ) -> Self {
+        pub fn bucket_count_by_effective_permission(mut self, input: crate::model::BucketCountByEffectivePermission) -> Self {
             self.bucket_count_by_effective_permission = Some(input);
             self
         }
         /// <p>The total number of buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
-        pub fn set_bucket_count_by_effective_permission(
-            mut self,
-            input: std::option::Option<crate::model::BucketCountByEffectivePermission>,
-        ) -> Self {
-            self.bucket_count_by_effective_permission = input;
-            self
+        pub fn set_bucket_count_by_effective_permission(mut self, input: std::option::Option<crate::model::BucketCountByEffectivePermission>) -> Self {
+            self.bucket_count_by_effective_permission = input; self
         }
         /// <p>The total number of buckets that use certain types of server-side encryption to encrypt new objects by default. This object also reports the total number of buckets that don't encrypt new objects by default.</p>
-        pub fn bucket_count_by_encryption_type(
-            mut self,
-            input: crate::model::BucketCountByEncryptionType,
-        ) -> Self {
+        pub fn bucket_count_by_encryption_type(mut self, input: crate::model::BucketCountByEncryptionType) -> Self {
             self.bucket_count_by_encryption_type = Some(input);
             self
         }
         /// <p>The total number of buckets that use certain types of server-side encryption to encrypt new objects by default. This object also reports the total number of buckets that don't encrypt new objects by default.</p>
-        pub fn set_bucket_count_by_encryption_type(
-            mut self,
-            input: std::option::Option<crate::model::BucketCountByEncryptionType>,
-        ) -> Self {
-            self.bucket_count_by_encryption_type = input;
-            self
+        pub fn set_bucket_count_by_encryption_type(mut self, input: std::option::Option<crate::model::BucketCountByEncryptionType>) -> Self {
+            self.bucket_count_by_encryption_type = input; self
         }
         /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are uploaded to the buckets.</p>
-        pub fn bucket_count_by_object_encryption_requirement(
-            mut self,
-            input: crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads,
-        ) -> Self {
+        pub fn bucket_count_by_object_encryption_requirement(mut self, input: crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads) -> Self {
             self.bucket_count_by_object_encryption_requirement = Some(input);
             self
         }
         /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are uploaded to the buckets.</p>
-        pub fn set_bucket_count_by_object_encryption_requirement(
-            mut self,
-            input: std::option::Option<
-                crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads,
-            >,
-        ) -> Self {
-            self.bucket_count_by_object_encryption_requirement = input;
-            self
+        pub fn set_bucket_count_by_object_encryption_requirement(mut self, input: std::option::Option<crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads>) -> Self {
+            self.bucket_count_by_object_encryption_requirement = input; self
         }
         /// <p>The total number of buckets that are or aren't shared with another Amazon Web Services account.</p>
-        pub fn bucket_count_by_shared_access_type(
-            mut self,
-            input: crate::model::BucketCountBySharedAccessType,
-        ) -> Self {
+        pub fn bucket_count_by_shared_access_type(mut self, input: crate::model::BucketCountBySharedAccessType) -> Self {
             self.bucket_count_by_shared_access_type = Some(input);
             self
         }
         /// <p>The total number of buckets that are or aren't shared with another Amazon Web Services account.</p>
-        pub fn set_bucket_count_by_shared_access_type(
-            mut self,
-            input: std::option::Option<crate::model::BucketCountBySharedAccessType>,
-        ) -> Self {
-            self.bucket_count_by_shared_access_type = input;
-            self
+        pub fn set_bucket_count_by_shared_access_type(mut self, input: std::option::Option<crate::model::BucketCountBySharedAccessType>) -> Self {
+            self.bucket_count_by_shared_access_type = input; self
         }
         /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
-        pub fn bucket_statistics_by_sensitivity(
-            mut self,
-            input: crate::model::BucketStatisticsBySensitivity,
-        ) -> Self {
+        pub fn bucket_statistics_by_sensitivity(mut self, input: crate::model::BucketStatisticsBySensitivity) -> Self {
             self.bucket_statistics_by_sensitivity = Some(input);
             self
         }
         /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
-        pub fn set_bucket_statistics_by_sensitivity(
-            mut self,
-            input: std::option::Option<crate::model::BucketStatisticsBySensitivity>,
-        ) -> Self {
-            self.bucket_statistics_by_sensitivity = input;
-            self
+        pub fn set_bucket_statistics_by_sensitivity(mut self, input: std::option::Option<crate::model::BucketStatisticsBySensitivity>) -> Self {
+            self.bucket_statistics_by_sensitivity = input; self
         }
         /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
         pub fn classifiable_object_count(mut self, input: i64) -> Self {
@@ -4044,20 +3821,18 @@ pub mod get_bucket_statistics_output {
         }
         /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
         pub fn set_classifiable_object_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.classifiable_object_count = input;
-            self
+            self.classifiable_object_count = input; self
         }
-        /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+        /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p> 
         /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
         pub fn classifiable_size_in_bytes(mut self, input: i64) -> Self {
             self.classifiable_size_in_bytes = Some(input);
             self
         }
-        /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+        /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p> 
         /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
         pub fn set_classifiable_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.classifiable_size_in_bytes = input;
-            self
+            self.classifiable_size_in_bytes = input; self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
         pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4065,12 +3840,8 @@ pub mod get_bucket_statistics_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
-        pub fn set_last_updated(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated = input;
-            self
+        pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated = input; self
         }
         /// <p>The total number of objects in the buckets.</p>
         pub fn object_count(mut self, input: i64) -> Self {
@@ -4079,86 +3850,90 @@ pub mod get_bucket_statistics_output {
         }
         /// <p>The total number of objects in the buckets.</p>
         pub fn set_object_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.object_count = input;
-            self
+            self.object_count = input; self
         }
-        /// <p>The total storage size, in bytes, of the buckets.</p>
+        /// <p>The total storage size, in bytes, of the buckets.</p> 
         /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
         pub fn size_in_bytes(mut self, input: i64) -> Self {
             self.size_in_bytes = Some(input);
             self
         }
-        /// <p>The total storage size, in bytes, of the buckets.</p>
+        /// <p>The total storage size, in bytes, of the buckets.</p> 
         /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
         pub fn set_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.size_in_bytes = input;
-            self
+            self.size_in_bytes = input; self
         }
-        /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
+        /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p> 
         /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
         pub fn size_in_bytes_compressed(mut self, input: i64) -> Self {
             self.size_in_bytes_compressed = Some(input);
             self
         }
-        /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
+        /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p> 
         /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
         pub fn set_size_in_bytes_compressed(mut self, input: std::option::Option<i64>) -> Self {
-            self.size_in_bytes_compressed = input;
-            self
+            self.size_in_bytes_compressed = input; self
         }
         /// <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
-        pub fn unclassifiable_object_count(
-            mut self,
-            input: crate::model::ObjectLevelStatistics,
-        ) -> Self {
+        pub fn unclassifiable_object_count(mut self, input: crate::model::ObjectLevelStatistics) -> Self {
             self.unclassifiable_object_count = Some(input);
             self
         }
         /// <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
-        pub fn set_unclassifiable_object_count(
-            mut self,
-            input: std::option::Option<crate::model::ObjectLevelStatistics>,
-        ) -> Self {
-            self.unclassifiable_object_count = input;
-            self
+        pub fn set_unclassifiable_object_count(mut self, input: std::option::Option<crate::model::ObjectLevelStatistics>) -> Self {
+            self.unclassifiable_object_count = input; self
         }
         /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
-        pub fn unclassifiable_object_size_in_bytes(
-            mut self,
-            input: crate::model::ObjectLevelStatistics,
-        ) -> Self {
+        pub fn unclassifiable_object_size_in_bytes(mut self, input: crate::model::ObjectLevelStatistics) -> Self {
             self.unclassifiable_object_size_in_bytes = Some(input);
             self
         }
         /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
-        pub fn set_unclassifiable_object_size_in_bytes(
-            mut self,
-            input: std::option::Option<crate::model::ObjectLevelStatistics>,
-        ) -> Self {
-            self.unclassifiable_object_size_in_bytes = input;
-            self
+        pub fn set_unclassifiable_object_size_in_bytes(mut self, input: std::option::Option<crate::model::ObjectLevelStatistics>) -> Self {
+            self.unclassifiable_object_size_in_bytes = input; self
         }
         /// Consumes the builder and constructs a [`GetBucketStatisticsOutput`](crate::output::GetBucketStatisticsOutput).
         pub fn build(self) -> crate::output::GetBucketStatisticsOutput {
             crate::output::GetBucketStatisticsOutput {
-                bucket_count: self.bucket_count.unwrap_or_default(),
-                bucket_count_by_effective_permission: self.bucket_count_by_effective_permission,
-                bucket_count_by_encryption_type: self.bucket_count_by_encryption_type,
-                bucket_count_by_object_encryption_requirement: self
-                    .bucket_count_by_object_encryption_requirement,
-                bucket_count_by_shared_access_type: self.bucket_count_by_shared_access_type,
-                bucket_statistics_by_sensitivity: self.bucket_statistics_by_sensitivity,
-                classifiable_object_count: self.classifiable_object_count.unwrap_or_default(),
-                classifiable_size_in_bytes: self.classifiable_size_in_bytes.unwrap_or_default(),
-                last_updated: self.last_updated,
-                object_count: self.object_count.unwrap_or_default(),
-                size_in_bytes: self.size_in_bytes.unwrap_or_default(),
-                size_in_bytes_compressed: self.size_in_bytes_compressed.unwrap_or_default(),
-                unclassifiable_object_count: self.unclassifiable_object_count,
-                unclassifiable_object_size_in_bytes: self.unclassifiable_object_size_in_bytes,
+                bucket_count: self.bucket_count
+                    .unwrap_or_default()
+                ,
+                bucket_count_by_effective_permission: self.bucket_count_by_effective_permission
+                ,
+                bucket_count_by_encryption_type: self.bucket_count_by_encryption_type
+                ,
+                bucket_count_by_object_encryption_requirement: self.bucket_count_by_object_encryption_requirement
+                ,
+                bucket_count_by_shared_access_type: self.bucket_count_by_shared_access_type
+                ,
+                bucket_statistics_by_sensitivity: self.bucket_statistics_by_sensitivity
+                ,
+                classifiable_object_count: self.classifiable_object_count
+                    .unwrap_or_default()
+                ,
+                classifiable_size_in_bytes: self.classifiable_size_in_bytes
+                    .unwrap_or_default()
+                ,
+                last_updated: self.last_updated
+                ,
+                object_count: self.object_count
+                    .unwrap_or_default()
+                ,
+                size_in_bytes: self.size_in_bytes
+                    .unwrap_or_default()
+                ,
+                size_in_bytes_compressed: self.size_in_bytes_compressed
+                    .unwrap_or_default()
+                ,
+                unclassifiable_object_count: self.unclassifiable_object_count
+                ,
+                unclassifiable_object_size_in_bytes: self.unclassifiable_object_size_in_bytes
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBucketStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketStatisticsOutput`](crate::output::GetBucketStatisticsOutput).
@@ -4170,7 +3945,7 @@ impl GetBucketStatisticsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAutomatedDiscoveryConfigurationOutput {
+pub struct GetAutomatedDiscoveryConfigurationOutput  {
     /// <p>The unique identifier for the classification scope that's used when performing automated sensitive data discovery for the account. The classification scope specifies S3 buckets to exclude from automated sensitive data discovery.</p>
     #[doc(hidden)]
     pub classification_scope_id: std::option::Option<std::string::String>,
@@ -4192,33 +3967,33 @@ pub struct GetAutomatedDiscoveryConfigurationOutput {
 }
 impl GetAutomatedDiscoveryConfigurationOutput {
     /// <p>The unique identifier for the classification scope that's used when performing automated sensitive data discovery for the account. The classification scope specifies S3 buckets to exclude from automated sensitive data discovery.</p>
-    pub fn classification_scope_id(&self) -> std::option::Option<&str> {
+    pub fn classification_scope_id(&self) -> std::option::Option<& str> {
         self.classification_scope_id.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently disabled for the account. This value is null if automated sensitive data discovery wasn't enabled and subsequently disabled for the account.</p>
-    pub fn disabled_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn disabled_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.disabled_at.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was initially enabled for the account. This value is null if automated sensitive data discovery has never been enabled for the account.</p>
-    pub fn first_enabled_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn first_enabled_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.first_enabled_at.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently enabled or disabled for the account.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The unique identifier for the sensitivity inspection template that's used when performing automated sensitive data discovery for the account. The template specifies which allow lists, custom data identifiers, and managed data identifiers to use when analyzing data.</p>
-    pub fn sensitivity_inspection_template_id(&self) -> std::option::Option<&str> {
+    pub fn sensitivity_inspection_template_id(&self) -> std::option::Option<& str> {
         self.sensitivity_inspection_template_id.as_deref()
     }
     /// <p>The current status of the automated sensitive data discovery configuration for the account. Possible values are: ENABLED, use the specified settings to perform automated sensitive data discovery activities for the account; and, DISABLED, don't perform automated sensitive data discovery activities for the account.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AutomatedDiscoveryStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AutomatedDiscoveryStatus> {
         self.status.as_ref()
     }
 }
 /// See [`GetAutomatedDiscoveryConfigurationOutput`](crate::output::GetAutomatedDiscoveryConfigurationOutput).
 pub mod get_automated_discovery_configuration_output {
-
+    
     /// A builder for [`GetAutomatedDiscoveryConfigurationOutput`](crate::output::GetAutomatedDiscoveryConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4236,12 +4011,8 @@ pub mod get_automated_discovery_configuration_output {
             self
         }
         /// <p>The unique identifier for the classification scope that's used when performing automated sensitive data discovery for the account. The classification scope specifies S3 buckets to exclude from automated sensitive data discovery.</p>
-        pub fn set_classification_scope_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.classification_scope_id = input;
-            self
+        pub fn set_classification_scope_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.classification_scope_id = input; self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently disabled for the account. This value is null if automated sensitive data discovery wasn't enabled and subsequently disabled for the account.</p>
         pub fn disabled_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4249,12 +4020,8 @@ pub mod get_automated_discovery_configuration_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently disabled for the account. This value is null if automated sensitive data discovery wasn't enabled and subsequently disabled for the account.</p>
-        pub fn set_disabled_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.disabled_at = input;
-            self
+        pub fn set_disabled_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.disabled_at = input; self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was initially enabled for the account. This value is null if automated sensitive data discovery has never been enabled for the account.</p>
         pub fn first_enabled_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4262,12 +4029,8 @@ pub mod get_automated_discovery_configuration_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was initially enabled for the account. This value is null if automated sensitive data discovery has never been enabled for the account.</p>
-        pub fn set_first_enabled_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.first_enabled_at = input;
-            self
+        pub fn set_first_enabled_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.first_enabled_at = input; self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently enabled or disabled for the account.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4275,28 +4038,17 @@ pub mod get_automated_discovery_configuration_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently enabled or disabled for the account.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// <p>The unique identifier for the sensitivity inspection template that's used when performing automated sensitive data discovery for the account. The template specifies which allow lists, custom data identifiers, and managed data identifiers to use when analyzing data.</p>
-        pub fn sensitivity_inspection_template_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn sensitivity_inspection_template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.sensitivity_inspection_template_id = Some(input.into());
             self
         }
         /// <p>The unique identifier for the sensitivity inspection template that's used when performing automated sensitive data discovery for the account. The template specifies which allow lists, custom data identifiers, and managed data identifiers to use when analyzing data.</p>
-        pub fn set_sensitivity_inspection_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sensitivity_inspection_template_id = input;
-            self
+        pub fn set_sensitivity_inspection_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sensitivity_inspection_template_id = input; self
         }
         /// <p>The current status of the automated sensitive data discovery configuration for the account. Possible values are: ENABLED, use the specified settings to perform automated sensitive data discovery activities for the account; and, DISABLED, don't perform automated sensitive data discovery activities for the account.</p>
         pub fn status(mut self, input: crate::model::AutomatedDiscoveryStatus) -> Self {
@@ -4304,25 +4056,29 @@ pub mod get_automated_discovery_configuration_output {
             self
         }
         /// <p>The current status of the automated sensitive data discovery configuration for the account. Possible values are: ENABLED, use the specified settings to perform automated sensitive data discovery activities for the account; and, DISABLED, don't perform automated sensitive data discovery activities for the account.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AutomatedDiscoveryStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AutomatedDiscoveryStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`GetAutomatedDiscoveryConfigurationOutput`](crate::output::GetAutomatedDiscoveryConfigurationOutput).
         pub fn build(self) -> crate::output::GetAutomatedDiscoveryConfigurationOutput {
             crate::output::GetAutomatedDiscoveryConfigurationOutput {
-                classification_scope_id: self.classification_scope_id,
-                disabled_at: self.disabled_at,
-                first_enabled_at: self.first_enabled_at,
-                last_updated_at: self.last_updated_at,
-                sensitivity_inspection_template_id: self.sensitivity_inspection_template_id,
-                status: self.status,
+                classification_scope_id: self.classification_scope_id
+                ,
+                disabled_at: self.disabled_at
+                ,
+                first_enabled_at: self.first_enabled_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                sensitivity_inspection_template_id: self.sensitivity_inspection_template_id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAutomatedDiscoveryConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetAutomatedDiscoveryConfigurationOutput`](crate::output::GetAutomatedDiscoveryConfigurationOutput).
@@ -4334,7 +4090,7 @@ impl GetAutomatedDiscoveryConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAllowListOutput {
+pub struct GetAllowListOutput  {
     /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4358,56 +4114,52 @@ pub struct GetAllowListOutput {
     pub status: std::option::Option<crate::model::AllowListStatus>,
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the allow list.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetAllowListOutput {
     /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list was created in Amazon Macie.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
-    pub fn criteria(&self) -> std::option::Option<&crate::model::AllowListCriteria> {
+    pub fn criteria(&self) -> std::option::Option<& crate::model::AllowListCriteria> {
         self.criteria.as_ref()
     }
     /// <p>The custom description of the allow list.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier for the allow list.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The custom name of the allow list.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the allow list, which indicates whether Amazon Macie can access and use the list's criteria.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AllowListStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AllowListStatus> {
         self.status.as_ref()
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the allow list.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`GetAllowListOutput`](crate::output::GetAllowListOutput).
 pub mod get_allow_list_output {
-
+    
     /// A builder for [`GetAllowListOutput`](crate::output::GetAllowListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4418,9 +4170,7 @@ pub mod get_allow_list_output {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::AllowListStatus>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
@@ -4431,8 +4181,7 @@ pub mod get_allow_list_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list was created in Amazon Macie.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4440,12 +4189,8 @@ pub mod get_allow_list_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list was created in Amazon Macie.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
         pub fn criteria(mut self, input: crate::model::AllowListCriteria) -> Self {
@@ -4453,12 +4198,8 @@ pub mod get_allow_list_output {
             self
         }
         /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
-        pub fn set_criteria(
-            mut self,
-            input: std::option::Option<crate::model::AllowListCriteria>,
-        ) -> Self {
-            self.criteria = input;
-            self
+        pub fn set_criteria(mut self, input: std::option::Option<crate::model::AllowListCriteria>) -> Self {
+            self.criteria = input; self
         }
         /// <p>The custom description of the allow list.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4467,8 +4208,7 @@ pub mod get_allow_list_output {
         }
         /// <p>The custom description of the allow list.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The unique identifier for the allow list.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4477,8 +4217,7 @@ pub mod get_allow_list_output {
         }
         /// <p>The unique identifier for the allow list.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The custom name of the allow list.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4487,8 +4226,7 @@ pub mod get_allow_list_output {
         }
         /// <p>The custom name of the allow list.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status of the allow list, which indicates whether Amazon Macie can access and use the list's criteria.</p>
         pub fn status(mut self, input: crate::model::AllowListStatus) -> Self {
@@ -4496,37 +4234,23 @@ pub mod get_allow_list_output {
             self
         }
         /// <p>The current status of the allow list, which indicates whether Amazon Macie can access and use the list's criteria.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AllowListStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AllowListStatus>) -> Self {
+            self.status = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the allow list.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the allow list.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4534,28 +4258,35 @@ pub mod get_allow_list_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the allow list's settings were most recently changed in Amazon Macie.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`GetAllowListOutput`](crate::output::GetAllowListOutput).
         pub fn build(self) -> crate::output::GetAllowListOutput {
             crate::output::GetAllowListOutput {
-                arn: self.arn,
-                created_at: self.created_at,
-                criteria: self.criteria,
-                description: self.description,
-                id: self.id,
-                name: self.name,
-                status: self.status,
-                tags: self.tags,
-                updated_at: self.updated_at,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                criteria: self.criteria
+                ,
+                description: self.description
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                tags: self.tags
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAllowListOutput {
     /// Creates a new builder-style object to manufacture [`GetAllowListOutput`](crate::output::GetAllowListOutput).
@@ -4567,20 +4298,20 @@ impl GetAllowListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAdministratorAccountOutput {
+pub struct GetAdministratorAccountOutput  {
     /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
     #[doc(hidden)]
     pub administrator: std::option::Option<crate::model::Invitation>,
 }
 impl GetAdministratorAccountOutput {
     /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
-    pub fn administrator(&self) -> std::option::Option<&crate::model::Invitation> {
+    pub fn administrator(&self) -> std::option::Option<& crate::model::Invitation> {
         self.administrator.as_ref()
     }
 }
 /// See [`GetAdministratorAccountOutput`](crate::output::GetAdministratorAccountOutput).
 pub mod get_administrator_account_output {
-
+    
     /// A builder for [`GetAdministratorAccountOutput`](crate::output::GetAdministratorAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4593,20 +4324,19 @@ pub mod get_administrator_account_output {
             self
         }
         /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
-        pub fn set_administrator(
-            mut self,
-            input: std::option::Option<crate::model::Invitation>,
-        ) -> Self {
-            self.administrator = input;
-            self
+        pub fn set_administrator(mut self, input: std::option::Option<crate::model::Invitation>) -> Self {
+            self.administrator = input; self
         }
         /// Consumes the builder and constructs a [`GetAdministratorAccountOutput`](crate::output::GetAdministratorAccountOutput).
         pub fn build(self) -> crate::output::GetAdministratorAccountOutput {
             crate::output::GetAdministratorAccountOutput {
-                administrator: self.administrator,
+                administrator: self.administrator
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAdministratorAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetAdministratorAccountOutput`](crate::output::GetAdministratorAccountOutput).
@@ -4618,19 +4348,24 @@ impl GetAdministratorAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableOrganizationAdminAccountOutput {}
+pub struct EnableOrganizationAdminAccountOutput  {
+}
 /// See [`EnableOrganizationAdminAccountOutput`](crate::output::EnableOrganizationAdminAccountOutput).
 pub mod enable_organization_admin_account_output {
-
+    
     /// A builder for [`EnableOrganizationAdminAccountOutput`](crate::output::EnableOrganizationAdminAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`EnableOrganizationAdminAccountOutput`](crate::output::EnableOrganizationAdminAccountOutput).
         pub fn build(self) -> crate::output::EnableOrganizationAdminAccountOutput {
-            crate::output::EnableOrganizationAdminAccountOutput {}
+            crate::output::EnableOrganizationAdminAccountOutput {
+            }
         }
     }
+    
+    
 }
 impl EnableOrganizationAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`EnableOrganizationAdminAccountOutput`](crate::output::EnableOrganizationAdminAccountOutput).
@@ -4642,19 +4377,24 @@ impl EnableOrganizationAdminAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableMacieOutput {}
+pub struct EnableMacieOutput  {
+}
 /// See [`EnableMacieOutput`](crate::output::EnableMacieOutput).
 pub mod enable_macie_output {
-
+    
     /// A builder for [`EnableMacieOutput`](crate::output::EnableMacieOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`EnableMacieOutput`](crate::output::EnableMacieOutput).
         pub fn build(self) -> crate::output::EnableMacieOutput {
-            crate::output::EnableMacieOutput {}
+            crate::output::EnableMacieOutput {
+            }
         }
     }
+    
+    
 }
 impl EnableMacieOutput {
     /// Creates a new builder-style object to manufacture [`EnableMacieOutput`](crate::output::EnableMacieOutput).
@@ -4666,19 +4406,24 @@ impl EnableMacieOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateMemberOutput {}
+pub struct DisassociateMemberOutput  {
+}
 /// See [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput).
 pub mod disassociate_member_output {
-
+    
     /// A builder for [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput).
         pub fn build(self) -> crate::output::DisassociateMemberOutput {
-            crate::output::DisassociateMemberOutput {}
+            crate::output::DisassociateMemberOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateMemberOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput).
@@ -4690,19 +4435,24 @@ impl DisassociateMemberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateFromMasterAccountOutput {}
+pub struct DisassociateFromMasterAccountOutput  {
+}
 /// See [`DisassociateFromMasterAccountOutput`](crate::output::DisassociateFromMasterAccountOutput).
 pub mod disassociate_from_master_account_output {
-
+    
     /// A builder for [`DisassociateFromMasterAccountOutput`](crate::output::DisassociateFromMasterAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateFromMasterAccountOutput`](crate::output::DisassociateFromMasterAccountOutput).
         pub fn build(self) -> crate::output::DisassociateFromMasterAccountOutput {
-            crate::output::DisassociateFromMasterAccountOutput {}
+            crate::output::DisassociateFromMasterAccountOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateFromMasterAccountOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateFromMasterAccountOutput`](crate::output::DisassociateFromMasterAccountOutput).
@@ -4714,19 +4464,24 @@ impl DisassociateFromMasterAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateFromAdministratorAccountOutput {}
+pub struct DisassociateFromAdministratorAccountOutput  {
+}
 /// See [`DisassociateFromAdministratorAccountOutput`](crate::output::DisassociateFromAdministratorAccountOutput).
 pub mod disassociate_from_administrator_account_output {
-
+    
     /// A builder for [`DisassociateFromAdministratorAccountOutput`](crate::output::DisassociateFromAdministratorAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateFromAdministratorAccountOutput`](crate::output::DisassociateFromAdministratorAccountOutput).
         pub fn build(self) -> crate::output::DisassociateFromAdministratorAccountOutput {
-            crate::output::DisassociateFromAdministratorAccountOutput {}
+            crate::output::DisassociateFromAdministratorAccountOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateFromAdministratorAccountOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateFromAdministratorAccountOutput`](crate::output::DisassociateFromAdministratorAccountOutput).
@@ -4738,19 +4493,24 @@ impl DisassociateFromAdministratorAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableOrganizationAdminAccountOutput {}
+pub struct DisableOrganizationAdminAccountOutput  {
+}
 /// See [`DisableOrganizationAdminAccountOutput`](crate::output::DisableOrganizationAdminAccountOutput).
 pub mod disable_organization_admin_account_output {
-
+    
     /// A builder for [`DisableOrganizationAdminAccountOutput`](crate::output::DisableOrganizationAdminAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisableOrganizationAdminAccountOutput`](crate::output::DisableOrganizationAdminAccountOutput).
         pub fn build(self) -> crate::output::DisableOrganizationAdminAccountOutput {
-            crate::output::DisableOrganizationAdminAccountOutput {}
+            crate::output::DisableOrganizationAdminAccountOutput {
+            }
         }
     }
+    
+    
 }
 impl DisableOrganizationAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`DisableOrganizationAdminAccountOutput`](crate::output::DisableOrganizationAdminAccountOutput).
@@ -4762,19 +4522,24 @@ impl DisableOrganizationAdminAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableMacieOutput {}
+pub struct DisableMacieOutput  {
+}
 /// See [`DisableMacieOutput`](crate::output::DisableMacieOutput).
 pub mod disable_macie_output {
-
+    
     /// A builder for [`DisableMacieOutput`](crate::output::DisableMacieOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisableMacieOutput`](crate::output::DisableMacieOutput).
         pub fn build(self) -> crate::output::DisableMacieOutput {
-            crate::output::DisableMacieOutput {}
+            crate::output::DisableMacieOutput {
+            }
         }
     }
+    
+    
 }
 impl DisableMacieOutput {
     /// Creates a new builder-style object to manufacture [`DisableMacieOutput`](crate::output::DisableMacieOutput).
@@ -4786,7 +4551,7 @@ impl DisableMacieOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrganizationConfigurationOutput {
+pub struct DescribeOrganizationConfigurationOutput  {
     /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
     #[doc(hidden)]
     pub auto_enable: bool,
@@ -4806,7 +4571,7 @@ impl DescribeOrganizationConfigurationOutput {
 }
 /// See [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput).
 pub mod describe_organization_configuration_output {
-
+    
     /// A builder for [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4821,8 +4586,7 @@ pub mod describe_organization_configuration_output {
         }
         /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
         pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
-            self.auto_enable = input;
-            self
+            self.auto_enable = input; self
         }
         /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
         pub fn max_account_limit_reached(mut self, input: bool) -> Self {
@@ -4831,17 +4595,22 @@ pub mod describe_organization_configuration_output {
         }
         /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
         pub fn set_max_account_limit_reached(mut self, input: std::option::Option<bool>) -> Self {
-            self.max_account_limit_reached = input;
-            self
+            self.max_account_limit_reached = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeOrganizationConfigurationOutput {
             crate::output::DescribeOrganizationConfigurationOutput {
-                auto_enable: self.auto_enable.unwrap_or_default(),
-                max_account_limit_reached: self.max_account_limit_reached.unwrap_or_default(),
+                auto_enable: self.auto_enable
+                    .unwrap_or_default()
+                ,
+                max_account_limit_reached: self.max_account_limit_reached
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeOrganizationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput).
@@ -4853,7 +4622,7 @@ impl DescribeOrganizationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClassificationJobOutput {
+pub struct DescribeClassificationJobOutput  {
     /// <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
     #[doc(hidden)]
     pub allow_list_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4878,20 +4647,20 @@ pub struct DescribeClassificationJobOutput {
     /// <p>The unique identifier for the job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The current status of the job. Possible values are:</p>
+    /// <p>The current status of the job. Possible values are:</p> 
     /// <ul>
-    /// <li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li>
-    /// <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li>
-    /// <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li>
-    /// <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li>
-    /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li>
+    /// <li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> 
+    /// <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> 
+    /// <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> 
+    /// <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> 
+    /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> 
     /// <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
-    /// <p>The schedule for running the job. Possible values are:</p>
+    /// <p>The schedule for running the job. Possible values are:</p> 
     /// <ul>
-    /// <li><p>ONE_TIME - The job runs only once.</p></li>
+    /// <li><p>ONE_TIME - The job runs only once.</p></li> 
     /// <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li>
     /// </ul>
     #[doc(hidden)]
@@ -4905,17 +4674,16 @@ pub struct DescribeClassificationJobOutput {
     /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
     #[doc(hidden)]
     pub managed_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p>
+    /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p> 
     /// <ul>
-    /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li>
-    /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
-    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li> 
+    /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> 
+    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> 
     /// <li><p>NONE - Don't use any managed data identifiers.</p></li>
-    /// </ul>
+    /// </ul> 
     /// <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
     #[doc(hidden)]
-    pub managed_data_identifier_selector:
-        std::option::Option<crate::model::ManagedDataIdentifierSelector>,
+    pub managed_data_identifier_selector: std::option::Option<crate::model::ManagedDataIdentifierSelector>,
     /// <p>The custom name of the job.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4933,31 +4701,30 @@ pub struct DescribeClassificationJobOutput {
     pub statistics: std::option::Option<crate::model::Statistics>,
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
     #[doc(hidden)]
     pub user_paused_details: std::option::Option<crate::model::UserPausedDetails>,
 }
 impl DescribeClassificationJobOutput {
     /// <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
-    pub fn allow_list_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allow_list_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.allow_list_ids.as_deref()
     }
     /// <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This value is null if the job uses only managed data identifiers to analyze data.</p>
-    pub fn custom_data_identifier_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn custom_data_identifier_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.custom_data_identifier_ids.as_deref()
     }
     /// <p>The custom description of the job.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects immediately after the job was created (true). If you configured the job to analyze only those objects that were created or changed after the job was created and before the job's first scheduled run, this value is false. This value is also false for a one-time job.</p>
@@ -4965,64 +4732,62 @@ impl DescribeClassificationJobOutput {
         self.initial_run
     }
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> std::option::Option<& str> {
         self.job_arn.as_deref()
     }
     /// <p>The unique identifier for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>The current status of the job. Possible values are:</p>
+    /// <p>The current status of the job. Possible values are:</p> 
     /// <ul>
-    /// <li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li>
-    /// <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li>
-    /// <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li>
-    /// <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li>
-    /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li>
+    /// <li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> 
+    /// <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> 
+    /// <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> 
+    /// <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> 
+    /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> 
     /// <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
     /// </ul>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>The schedule for running the job. Possible values are:</p>
+    /// <p>The schedule for running the job. Possible values are:</p> 
     /// <ul>
-    /// <li><p>ONE_TIME - The job runs only once.</p></li>
+    /// <li><p>ONE_TIME - The job runs only once.</p></li> 
     /// <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li>
     /// </ul>
-    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+    pub fn job_type(&self) -> std::option::Option<& crate::model::JobType> {
         self.job_type.as_ref()
     }
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
-    pub fn last_run_error_status(&self) -> std::option::Option<&crate::model::LastRunErrorStatus> {
+    pub fn last_run_error_status(&self) -> std::option::Option<& crate::model::LastRunErrorStatus> {
         self.last_run_error_status.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.</p>
-    pub fn last_run_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_run_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_run_time.as_ref()
     }
     /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
-    pub fn managed_data_identifier_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn managed_data_identifier_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.managed_data_identifier_ids.as_deref()
     }
-    /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p>
+    /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p> 
     /// <ul>
-    /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li>
-    /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
-    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li> 
+    /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> 
+    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> 
     /// <li><p>NONE - Don't use any managed data identifiers.</p></li>
-    /// </ul>
+    /// </ul> 
     /// <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
-    pub fn managed_data_identifier_selector(
-        &self,
-    ) -> std::option::Option<&crate::model::ManagedDataIdentifierSelector> {
+    pub fn managed_data_identifier_selector(&self) -> std::option::Option<& crate::model::ManagedDataIdentifierSelector> {
         self.managed_data_identifier_selector.as_ref()
     }
     /// <p>The custom name of the job.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
-    pub fn s3_job_definition(&self) -> std::option::Option<&crate::model::S3JobDefinition> {
+    pub fn s3_job_definition(&self) -> std::option::Option<& crate::model::S3JobDefinition> {
         self.s3_job_definition.as_ref()
     }
     /// <p>The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.</p>
@@ -5030,36 +4795,32 @@ impl DescribeClassificationJobOutput {
         self.sampling_percentage
     }
     /// <p>The recurrence pattern for running the job. This value is null if the job is configured to run only once.</p>
-    pub fn schedule_frequency(&self) -> std::option::Option<&crate::model::JobScheduleFrequency> {
+    pub fn schedule_frequency(&self) -> std::option::Option<& crate::model::JobScheduleFrequency> {
         self.schedule_frequency.as_ref()
     }
     /// <p>The number of times that the job has run and processing statistics for the job's current run.</p>
-    pub fn statistics(&self) -> std::option::Option<&crate::model::Statistics> {
+    pub fn statistics(&self) -> std::option::Option<& crate::model::Statistics> {
         self.statistics.as_ref()
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
-    pub fn user_paused_details(&self) -> std::option::Option<&crate::model::UserPausedDetails> {
+    pub fn user_paused_details(&self) -> std::option::Option<& crate::model::UserPausedDetails> {
         self.user_paused_details.as_ref()
     }
 }
 /// See [`DescribeClassificationJobOutput`](crate::output::DescribeClassificationJobOutput).
 pub mod describe_classification_job_output {
-
+    
     /// A builder for [`DescribeClassificationJobOutput`](crate::output::DescribeClassificationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_list_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) custom_data_identifier_ids:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) custom_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) initial_run: std::option::Option<bool>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
@@ -5068,18 +4829,14 @@ pub mod describe_classification_job_output {
         pub(crate) job_type: std::option::Option<crate::model::JobType>,
         pub(crate) last_run_error_status: std::option::Option<crate::model::LastRunErrorStatus>,
         pub(crate) last_run_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) managed_data_identifier_ids:
-            std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) managed_data_identifier_selector:
-            std::option::Option<crate::model::ManagedDataIdentifierSelector>,
+        pub(crate) managed_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) managed_data_identifier_selector: std::option::Option<crate::model::ManagedDataIdentifierSelector>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) s3_job_definition: std::option::Option<crate::model::S3JobDefinition>,
         pub(crate) sampling_percentage: std::option::Option<i32>,
         pub(crate) schedule_frequency: std::option::Option<crate::model::JobScheduleFrequency>,
         pub(crate) statistics: std::option::Option<crate::model::Statistics>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) user_paused_details: std::option::Option<crate::model::UserPausedDetails>,
     }
     impl Builder {
@@ -5090,17 +4847,13 @@ pub mod describe_classification_job_output {
         /// <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
         pub fn allow_list_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allow_list_ids.unwrap_or_default();
-            v.push(input.into());
-            self.allow_list_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.allow_list_ids = Some(v);
+                            self
         }
         /// <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
-        pub fn set_allow_list_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.allow_list_ids = input;
-            self
+        pub fn set_allow_list_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.allow_list_ids = input; self
         }
         /// <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5109,8 +4862,7 @@ pub mod describe_classification_job_output {
         }
         /// <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5118,12 +4870,8 @@ pub mod describe_classification_job_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Appends an item to `custom_data_identifier_ids`.
         ///
@@ -5132,17 +4880,13 @@ pub mod describe_classification_job_output {
         /// <p>An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This value is null if the job uses only managed data identifiers to analyze data.</p>
         pub fn custom_data_identifier_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.custom_data_identifier_ids.unwrap_or_default();
-            v.push(input.into());
-            self.custom_data_identifier_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.custom_data_identifier_ids = Some(v);
+                            self
         }
         /// <p>An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This value is null if the job uses only managed data identifiers to analyze data.</p>
-        pub fn set_custom_data_identifier_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.custom_data_identifier_ids = input;
-            self
+        pub fn set_custom_data_identifier_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.custom_data_identifier_ids = input; self
         }
         /// <p>The custom description of the job.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5151,8 +4895,7 @@ pub mod describe_classification_job_output {
         }
         /// <p>The custom description of the job.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects immediately after the job was created (true). If you configured the job to analyze only those objects that were created or changed after the job was created and before the job's first scheduled run, this value is false. This value is also false for a one-time job.</p>
         pub fn initial_run(mut self, input: bool) -> Self {
@@ -5161,8 +4904,7 @@ pub mod describe_classification_job_output {
         }
         /// <p>For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects immediately after the job was created (true). If you configured the job to analyze only those objects that were created or changed after the job was created and before the job's first scheduled run, this value is false. This value is also false for a one-time job.</p>
         pub fn set_initial_run(mut self, input: std::option::Option<bool>) -> Self {
-            self.initial_run = input;
-            self
+            self.initial_run = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the job.</p>
         pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5171,8 +4913,7 @@ pub mod describe_classification_job_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the job.</p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_arn = input;
-            self
+            self.job_arn = input; self
         }
         /// <p>The unique identifier for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5181,55 +4922,49 @@ pub mod describe_classification_job_output {
         }
         /// <p>The unique identifier for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
-        /// <p>The current status of the job. Possible values are:</p>
+        /// <p>The current status of the job. Possible values are:</p> 
         /// <ul>
-        /// <li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li>
-        /// <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li>
-        /// <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li>
-        /// <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li>
-        /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li>
+        /// <li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> 
+        /// <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> 
+        /// <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> 
+        /// <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> 
+        /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> 
         /// <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
         /// </ul>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>The current status of the job. Possible values are:</p>
+        /// <p>The current status of the job. Possible values are:</p> 
         /// <ul>
-        /// <li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li>
-        /// <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li>
-        /// <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li>
-        /// <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li>
-        /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li>
+        /// <li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> 
+        /// <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> 
+        /// <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> 
+        /// <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> 
+        /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> 
         /// <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
         /// </ul>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
-        /// <p>The schedule for running the job. Possible values are:</p>
+        /// <p>The schedule for running the job. Possible values are:</p> 
         /// <ul>
-        /// <li><p>ONE_TIME - The job runs only once.</p></li>
+        /// <li><p>ONE_TIME - The job runs only once.</p></li> 
         /// <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li>
         /// </ul>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
             self.job_type = Some(input);
             self
         }
-        /// <p>The schedule for running the job. Possible values are:</p>
+        /// <p>The schedule for running the job. Possible values are:</p> 
         /// <ul>
-        /// <li><p>ONE_TIME - The job runs only once.</p></li>
+        /// <li><p>ONE_TIME - The job runs only once.</p></li> 
         /// <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li>
         /// </ul>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
-            self.job_type = input;
-            self
+            self.job_type = input; self
         }
         /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
         pub fn last_run_error_status(mut self, input: crate::model::LastRunErrorStatus) -> Self {
@@ -5237,12 +4972,8 @@ pub mod describe_classification_job_output {
             self
         }
         /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
-        pub fn set_last_run_error_status(
-            mut self,
-            input: std::option::Option<crate::model::LastRunErrorStatus>,
-        ) -> Self {
-            self.last_run_error_status = input;
-            self
+        pub fn set_last_run_error_status(mut self, input: std::option::Option<crate::model::LastRunErrorStatus>) -> Self {
+            self.last_run_error_status = input; self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.</p>
         pub fn last_run_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5250,64 +4981,46 @@ pub mod describe_classification_job_output {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.</p>
-        pub fn set_last_run_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_run_time = input;
-            self
+        pub fn set_last_run_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_run_time = input; self
         }
         /// Appends an item to `managed_data_identifier_ids`.
         ///
         /// To override the contents of this collection use [`set_managed_data_identifier_ids`](Self::set_managed_data_identifier_ids).
         ///
         /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
-        pub fn managed_data_identifier_ids(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn managed_data_identifier_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.managed_data_identifier_ids.unwrap_or_default();
-            v.push(input.into());
-            self.managed_data_identifier_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.managed_data_identifier_ids = Some(v);
+                            self
         }
         /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
-        pub fn set_managed_data_identifier_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.managed_data_identifier_ids = input;
-            self
+        pub fn set_managed_data_identifier_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.managed_data_identifier_ids = input; self
         }
-        /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p>
+        /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p> 
         /// <ul>
-        /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li>
-        /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
-        /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+        /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li> 
+        /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> 
+        /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> 
         /// <li><p>NONE - Don't use any managed data identifiers.</p></li>
-        /// </ul>
+        /// </ul> 
         /// <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
-        pub fn managed_data_identifier_selector(
-            mut self,
-            input: crate::model::ManagedDataIdentifierSelector,
-        ) -> Self {
+        pub fn managed_data_identifier_selector(mut self, input: crate::model::ManagedDataIdentifierSelector) -> Self {
             self.managed_data_identifier_selector = Some(input);
             self
         }
-        /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p>
+        /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p> 
         /// <ul>
-        /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li>
-        /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
-        /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+        /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li> 
+        /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> 
+        /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> 
         /// <li><p>NONE - Don't use any managed data identifiers.</p></li>
-        /// </ul>
+        /// </ul> 
         /// <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
-        pub fn set_managed_data_identifier_selector(
-            mut self,
-            input: std::option::Option<crate::model::ManagedDataIdentifierSelector>,
-        ) -> Self {
-            self.managed_data_identifier_selector = input;
-            self
+        pub fn set_managed_data_identifier_selector(mut self, input: std::option::Option<crate::model::ManagedDataIdentifierSelector>) -> Self {
+            self.managed_data_identifier_selector = input; self
         }
         /// <p>The custom name of the job.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5316,8 +5029,7 @@ pub mod describe_classification_job_output {
         }
         /// <p>The custom name of the job.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
         pub fn s3_job_definition(mut self, input: crate::model::S3JobDefinition) -> Self {
@@ -5325,12 +5037,8 @@ pub mod describe_classification_job_output {
             self
         }
         /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
-        pub fn set_s3_job_definition(
-            mut self,
-            input: std::option::Option<crate::model::S3JobDefinition>,
-        ) -> Self {
-            self.s3_job_definition = input;
-            self
+        pub fn set_s3_job_definition(mut self, input: std::option::Option<crate::model::S3JobDefinition>) -> Self {
+            self.s3_job_definition = input; self
         }
         /// <p>The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.</p>
         pub fn sampling_percentage(mut self, input: i32) -> Self {
@@ -5339,8 +5047,7 @@ pub mod describe_classification_job_output {
         }
         /// <p>The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.</p>
         pub fn set_sampling_percentage(mut self, input: std::option::Option<i32>) -> Self {
-            self.sampling_percentage = input;
-            self
+            self.sampling_percentage = input; self
         }
         /// <p>The recurrence pattern for running the job. This value is null if the job is configured to run only once.</p>
         pub fn schedule_frequency(mut self, input: crate::model::JobScheduleFrequency) -> Self {
@@ -5348,12 +5055,8 @@ pub mod describe_classification_job_output {
             self
         }
         /// <p>The recurrence pattern for running the job. This value is null if the job is configured to run only once.</p>
-        pub fn set_schedule_frequency(
-            mut self,
-            input: std::option::Option<crate::model::JobScheduleFrequency>,
-        ) -> Self {
-            self.schedule_frequency = input;
-            self
+        pub fn set_schedule_frequency(mut self, input: std::option::Option<crate::model::JobScheduleFrequency>) -> Self {
+            self.schedule_frequency = input; self
         }
         /// <p>The number of times that the job has run and processing statistics for the job's current run.</p>
         pub fn statistics(mut self, input: crate::model::Statistics) -> Self {
@@ -5361,37 +5064,23 @@ pub mod describe_classification_job_output {
             self
         }
         /// <p>The number of times that the job has run and processing statistics for the job's current run.</p>
-        pub fn set_statistics(
-            mut self,
-            input: std::option::Option<crate::model::Statistics>,
-        ) -> Self {
-            self.statistics = input;
-            self
+        pub fn set_statistics(mut self, input: std::option::Option<crate::model::Statistics>) -> Self {
+            self.statistics = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
         pub fn user_paused_details(mut self, input: crate::model::UserPausedDetails) -> Self {
@@ -5399,40 +5088,61 @@ pub mod describe_classification_job_output {
             self
         }
         /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
-        pub fn set_user_paused_details(
-            mut self,
-            input: std::option::Option<crate::model::UserPausedDetails>,
-        ) -> Self {
-            self.user_paused_details = input;
-            self
+        pub fn set_user_paused_details(mut self, input: std::option::Option<crate::model::UserPausedDetails>) -> Self {
+            self.user_paused_details = input; self
         }
         /// Consumes the builder and constructs a [`DescribeClassificationJobOutput`](crate::output::DescribeClassificationJobOutput).
         pub fn build(self) -> crate::output::DescribeClassificationJobOutput {
             crate::output::DescribeClassificationJobOutput {
-                allow_list_ids: self.allow_list_ids,
-                client_token: self.client_token,
-                created_at: self.created_at,
-                custom_data_identifier_ids: self.custom_data_identifier_ids,
-                description: self.description,
-                initial_run: self.initial_run.unwrap_or_default(),
-                job_arn: self.job_arn,
-                job_id: self.job_id,
-                job_status: self.job_status,
-                job_type: self.job_type,
-                last_run_error_status: self.last_run_error_status,
-                last_run_time: self.last_run_time,
-                managed_data_identifier_ids: self.managed_data_identifier_ids,
-                managed_data_identifier_selector: self.managed_data_identifier_selector,
-                name: self.name,
-                s3_job_definition: self.s3_job_definition,
-                sampling_percentage: self.sampling_percentage.unwrap_or_default(),
-                schedule_frequency: self.schedule_frequency,
-                statistics: self.statistics,
-                tags: self.tags,
-                user_paused_details: self.user_paused_details,
+                allow_list_ids: self.allow_list_ids
+                ,
+                client_token: self.client_token
+                ,
+                created_at: self.created_at
+                ,
+                custom_data_identifier_ids: self.custom_data_identifier_ids
+                ,
+                description: self.description
+                ,
+                initial_run: self.initial_run
+                    .unwrap_or_default()
+                ,
+                job_arn: self.job_arn
+                ,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
+                job_type: self.job_type
+                ,
+                last_run_error_status: self.last_run_error_status
+                ,
+                last_run_time: self.last_run_time
+                ,
+                managed_data_identifier_ids: self.managed_data_identifier_ids
+                ,
+                managed_data_identifier_selector: self.managed_data_identifier_selector
+                ,
+                name: self.name
+                ,
+                s3_job_definition: self.s3_job_definition
+                ,
+                sampling_percentage: self.sampling_percentage
+                    .unwrap_or_default()
+                ,
+                schedule_frequency: self.schedule_frequency
+                ,
+                statistics: self.statistics
+                ,
+                tags: self.tags
+                ,
+                user_paused_details: self.user_paused_details
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeClassificationJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClassificationJobOutput`](crate::output::DescribeClassificationJobOutput).
@@ -5444,7 +5154,7 @@ impl DescribeClassificationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBucketsOutput {
+pub struct DescribeBucketsOutput  {
     /// <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
     #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<crate::model::BucketMetadata>>,
@@ -5454,17 +5164,17 @@ pub struct DescribeBucketsOutput {
 }
 impl DescribeBucketsOutput {
     /// <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
-    pub fn buckets(&self) -> std::option::Option<&[crate::model::BucketMetadata]> {
+    pub fn buckets(&self) -> std::option::Option<& [crate::model::BucketMetadata]> {
         self.buckets.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeBucketsOutput`](crate::output::DescribeBucketsOutput).
 pub mod describe_buckets_output {
-
+    
     /// A builder for [`DescribeBucketsOutput`](crate::output::DescribeBucketsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5479,17 +5189,13 @@ pub mod describe_buckets_output {
         /// <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
         pub fn buckets(mut self, input: crate::model::BucketMetadata) -> Self {
             let mut v = self.buckets.unwrap_or_default();
-            v.push(input);
-            self.buckets = Some(v);
-            self
+                            v.push(input);
+                            self.buckets = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
-        pub fn set_buckets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BucketMetadata>>,
-        ) -> Self {
-            self.buckets = input;
-            self
+        pub fn set_buckets(mut self, input: std::option::Option<std::vec::Vec<crate::model::BucketMetadata>>) -> Self {
+            self.buckets = input; self
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5498,17 +5204,20 @@ pub mod describe_buckets_output {
         }
         /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBucketsOutput`](crate::output::DescribeBucketsOutput).
         pub fn build(self) -> crate::output::DescribeBucketsOutput {
             crate::output::DescribeBucketsOutput {
-                buckets: self.buckets,
-                next_token: self.next_token,
+                buckets: self.buckets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBucketsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBucketsOutput`](crate::output::DescribeBucketsOutput).
@@ -5520,19 +5229,24 @@ impl DescribeBucketsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMemberOutput {}
+pub struct DeleteMemberOutput  {
+}
 /// See [`DeleteMemberOutput`](crate::output::DeleteMemberOutput).
 pub mod delete_member_output {
-
+    
     /// A builder for [`DeleteMemberOutput`](crate::output::DeleteMemberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMemberOutput`](crate::output::DeleteMemberOutput).
         pub fn build(self) -> crate::output::DeleteMemberOutput {
-            crate::output::DeleteMemberOutput {}
+            crate::output::DeleteMemberOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteMemberOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMemberOutput`](crate::output::DeleteMemberOutput).
@@ -5544,25 +5258,24 @@ impl DeleteMemberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInvitationsOutput {
+pub struct DeleteInvitationsOutput  {
     /// <p>An array of objects, one for each account whose invitation hasn't been deleted. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
     #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl DeleteInvitationsOutput {
     /// <p>An array of objects, one for each account whose invitation hasn't been deleted. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
-    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+    pub fn unprocessed_accounts(&self) -> std::option::Option<& [crate::model::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
 }
 /// See [`DeleteInvitationsOutput`](crate::output::DeleteInvitationsOutput).
 pub mod delete_invitations_output {
-
+    
     /// A builder for [`DeleteInvitationsOutput`](crate::output::DeleteInvitationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) unprocessed_accounts:
-            std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+        pub(crate) unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
     }
     impl Builder {
         /// Appends an item to `unprocessed_accounts`.
@@ -5572,25 +5285,24 @@ pub mod delete_invitations_output {
         /// <p>An array of objects, one for each account whose invitation hasn't been deleted. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
         pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input);
-            self.unprocessed_accounts = Some(v);
-            self
+                            v.push(input);
+                            self.unprocessed_accounts = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each account whose invitation hasn't been deleted. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
-        pub fn set_unprocessed_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
-        ) -> Self {
-            self.unprocessed_accounts = input;
-            self
+        pub fn set_unprocessed_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>) -> Self {
+            self.unprocessed_accounts = input; self
         }
         /// Consumes the builder and constructs a [`DeleteInvitationsOutput`](crate::output::DeleteInvitationsOutput).
         pub fn build(self) -> crate::output::DeleteInvitationsOutput {
             crate::output::DeleteInvitationsOutput {
-                unprocessed_accounts: self.unprocessed_accounts,
+                unprocessed_accounts: self.unprocessed_accounts
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteInvitationsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInvitationsOutput`](crate::output::DeleteInvitationsOutput).
@@ -5602,19 +5314,24 @@ impl DeleteInvitationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFindingsFilterOutput {}
+pub struct DeleteFindingsFilterOutput  {
+}
 /// See [`DeleteFindingsFilterOutput`](crate::output::DeleteFindingsFilterOutput).
 pub mod delete_findings_filter_output {
-
+    
     /// A builder for [`DeleteFindingsFilterOutput`](crate::output::DeleteFindingsFilterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFindingsFilterOutput`](crate::output::DeleteFindingsFilterOutput).
         pub fn build(self) -> crate::output::DeleteFindingsFilterOutput {
-            crate::output::DeleteFindingsFilterOutput {}
+            crate::output::DeleteFindingsFilterOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFindingsFilterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFindingsFilterOutput`](crate::output::DeleteFindingsFilterOutput).
@@ -5626,19 +5343,24 @@ impl DeleteFindingsFilterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomDataIdentifierOutput {}
+pub struct DeleteCustomDataIdentifierOutput  {
+}
 /// See [`DeleteCustomDataIdentifierOutput`](crate::output::DeleteCustomDataIdentifierOutput).
 pub mod delete_custom_data_identifier_output {
-
+    
     /// A builder for [`DeleteCustomDataIdentifierOutput`](crate::output::DeleteCustomDataIdentifierOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCustomDataIdentifierOutput`](crate::output::DeleteCustomDataIdentifierOutput).
         pub fn build(self) -> crate::output::DeleteCustomDataIdentifierOutput {
-            crate::output::DeleteCustomDataIdentifierOutput {}
+            crate::output::DeleteCustomDataIdentifierOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCustomDataIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomDataIdentifierOutput`](crate::output::DeleteCustomDataIdentifierOutput).
@@ -5650,19 +5372,24 @@ impl DeleteCustomDataIdentifierOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAllowListOutput {}
+pub struct DeleteAllowListOutput  {
+}
 /// See [`DeleteAllowListOutput`](crate::output::DeleteAllowListOutput).
 pub mod delete_allow_list_output {
-
+    
     /// A builder for [`DeleteAllowListOutput`](crate::output::DeleteAllowListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAllowListOutput`](crate::output::DeleteAllowListOutput).
         pub fn build(self) -> crate::output::DeleteAllowListOutput {
-            crate::output::DeleteAllowListOutput {}
+            crate::output::DeleteAllowListOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAllowListOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAllowListOutput`](crate::output::DeleteAllowListOutput).
@@ -5674,25 +5401,24 @@ impl DeleteAllowListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeclineInvitationsOutput {
+pub struct DeclineInvitationsOutput  {
     /// <p>An array of objects, one for each account whose invitation hasn't been declined. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
     #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl DeclineInvitationsOutput {
     /// <p>An array of objects, one for each account whose invitation hasn't been declined. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
-    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+    pub fn unprocessed_accounts(&self) -> std::option::Option<& [crate::model::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
 }
 /// See [`DeclineInvitationsOutput`](crate::output::DeclineInvitationsOutput).
 pub mod decline_invitations_output {
-
+    
     /// A builder for [`DeclineInvitationsOutput`](crate::output::DeclineInvitationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) unprocessed_accounts:
-            std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+        pub(crate) unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
     }
     impl Builder {
         /// Appends an item to `unprocessed_accounts`.
@@ -5702,25 +5428,24 @@ pub mod decline_invitations_output {
         /// <p>An array of objects, one for each account whose invitation hasn't been declined. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
         pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input);
-            self.unprocessed_accounts = Some(v);
-            self
+                            v.push(input);
+                            self.unprocessed_accounts = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each account whose invitation hasn't been declined. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
-        pub fn set_unprocessed_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
-        ) -> Self {
-            self.unprocessed_accounts = input;
-            self
+        pub fn set_unprocessed_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>) -> Self {
+            self.unprocessed_accounts = input; self
         }
         /// Consumes the builder and constructs a [`DeclineInvitationsOutput`](crate::output::DeclineInvitationsOutput).
         pub fn build(self) -> crate::output::DeclineInvitationsOutput {
             crate::output::DeclineInvitationsOutput {
-                unprocessed_accounts: self.unprocessed_accounts,
+                unprocessed_accounts: self.unprocessed_accounts
+                ,
             }
         }
     }
+    
+    
 }
 impl DeclineInvitationsOutput {
     /// Creates a new builder-style object to manufacture [`DeclineInvitationsOutput`](crate::output::DeclineInvitationsOutput).
@@ -5732,19 +5457,24 @@ impl DeclineInvitationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSampleFindingsOutput {}
+pub struct CreateSampleFindingsOutput  {
+}
 /// See [`CreateSampleFindingsOutput`](crate::output::CreateSampleFindingsOutput).
 pub mod create_sample_findings_output {
-
+    
     /// A builder for [`CreateSampleFindingsOutput`](crate::output::CreateSampleFindingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateSampleFindingsOutput`](crate::output::CreateSampleFindingsOutput).
         pub fn build(self) -> crate::output::CreateSampleFindingsOutput {
-            crate::output::CreateSampleFindingsOutput {}
+            crate::output::CreateSampleFindingsOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateSampleFindingsOutput {
     /// Creates a new builder-style object to manufacture [`CreateSampleFindingsOutput`](crate::output::CreateSampleFindingsOutput).
@@ -5756,20 +5486,20 @@ impl CreateSampleFindingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMemberOutput {
+pub struct CreateMemberOutput  {
     /// <p>The Amazon Resource Name (ARN) of the account that was associated with the administrator account.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateMemberOutput {
     /// <p>The Amazon Resource Name (ARN) of the account that was associated with the administrator account.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`CreateMemberOutput`](crate::output::CreateMemberOutput).
 pub mod create_member_output {
-
+    
     /// A builder for [`CreateMemberOutput`](crate::output::CreateMemberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5783,14 +5513,18 @@ pub mod create_member_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the account that was associated with the administrator account.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateMemberOutput`](crate::output::CreateMemberOutput).
         pub fn build(self) -> crate::output::CreateMemberOutput {
-            crate::output::CreateMemberOutput { arn: self.arn }
+            crate::output::CreateMemberOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateMemberOutput {
     /// Creates a new builder-style object to manufacture [`CreateMemberOutput`](crate::output::CreateMemberOutput).
@@ -5802,25 +5536,24 @@ impl CreateMemberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInvitationsOutput {
+pub struct CreateInvitationsOutput  {
     /// <p>An array of objects, one for each account whose invitation hasn't been processed. Each object identifies the account and explains why the invitation hasn't been processed for the account.</p>
     #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl CreateInvitationsOutput {
     /// <p>An array of objects, one for each account whose invitation hasn't been processed. Each object identifies the account and explains why the invitation hasn't been processed for the account.</p>
-    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+    pub fn unprocessed_accounts(&self) -> std::option::Option<& [crate::model::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
 }
 /// See [`CreateInvitationsOutput`](crate::output::CreateInvitationsOutput).
 pub mod create_invitations_output {
-
+    
     /// A builder for [`CreateInvitationsOutput`](crate::output::CreateInvitationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) unprocessed_accounts:
-            std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+        pub(crate) unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
     }
     impl Builder {
         /// Appends an item to `unprocessed_accounts`.
@@ -5830,25 +5563,24 @@ pub mod create_invitations_output {
         /// <p>An array of objects, one for each account whose invitation hasn't been processed. Each object identifies the account and explains why the invitation hasn't been processed for the account.</p>
         pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input);
-            self.unprocessed_accounts = Some(v);
-            self
+                            v.push(input);
+                            self.unprocessed_accounts = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each account whose invitation hasn't been processed. Each object identifies the account and explains why the invitation hasn't been processed for the account.</p>
-        pub fn set_unprocessed_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
-        ) -> Self {
-            self.unprocessed_accounts = input;
-            self
+        pub fn set_unprocessed_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>) -> Self {
+            self.unprocessed_accounts = input; self
         }
         /// Consumes the builder and constructs a [`CreateInvitationsOutput`](crate::output::CreateInvitationsOutput).
         pub fn build(self) -> crate::output::CreateInvitationsOutput {
             crate::output::CreateInvitationsOutput {
-                unprocessed_accounts: self.unprocessed_accounts,
+                unprocessed_accounts: self.unprocessed_accounts
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateInvitationsOutput {
     /// Creates a new builder-style object to manufacture [`CreateInvitationsOutput`](crate::output::CreateInvitationsOutput).
@@ -5860,7 +5592,7 @@ impl CreateInvitationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFindingsFilterOutput {
+pub struct CreateFindingsFilterOutput  {
     /// <p>The Amazon Resource Name (ARN) of the filter that was created.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5870,17 +5602,17 @@ pub struct CreateFindingsFilterOutput {
 }
 impl CreateFindingsFilterOutput {
     /// <p>The Amazon Resource Name (ARN) of the filter that was created.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The unique identifier for the filter that was created.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`CreateFindingsFilterOutput`](crate::output::CreateFindingsFilterOutput).
 pub mod create_findings_filter_output {
-
+    
     /// A builder for [`CreateFindingsFilterOutput`](crate::output::CreateFindingsFilterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5895,8 +5627,7 @@ pub mod create_findings_filter_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the filter that was created.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The unique identifier for the filter that was created.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5905,17 +5636,20 @@ pub mod create_findings_filter_output {
         }
         /// <p>The unique identifier for the filter that was created.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`CreateFindingsFilterOutput`](crate::output::CreateFindingsFilterOutput).
         pub fn build(self) -> crate::output::CreateFindingsFilterOutput {
             crate::output::CreateFindingsFilterOutput {
-                arn: self.arn,
-                id: self.id,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFindingsFilterOutput {
     /// Creates a new builder-style object to manufacture [`CreateFindingsFilterOutput`](crate::output::CreateFindingsFilterOutput).
@@ -5927,20 +5661,20 @@ impl CreateFindingsFilterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCustomDataIdentifierOutput {
+pub struct CreateCustomDataIdentifierOutput  {
     /// <p>The unique identifier for the custom data identifier that was created.</p>
     #[doc(hidden)]
     pub custom_data_identifier_id: std::option::Option<std::string::String>,
 }
 impl CreateCustomDataIdentifierOutput {
     /// <p>The unique identifier for the custom data identifier that was created.</p>
-    pub fn custom_data_identifier_id(&self) -> std::option::Option<&str> {
+    pub fn custom_data_identifier_id(&self) -> std::option::Option<& str> {
         self.custom_data_identifier_id.as_deref()
     }
 }
 /// See [`CreateCustomDataIdentifierOutput`](crate::output::CreateCustomDataIdentifierOutput).
 pub mod create_custom_data_identifier_output {
-
+    
     /// A builder for [`CreateCustomDataIdentifierOutput`](crate::output::CreateCustomDataIdentifierOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5953,20 +5687,19 @@ pub mod create_custom_data_identifier_output {
             self
         }
         /// <p>The unique identifier for the custom data identifier that was created.</p>
-        pub fn set_custom_data_identifier_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_data_identifier_id = input;
-            self
+        pub fn set_custom_data_identifier_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_data_identifier_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateCustomDataIdentifierOutput`](crate::output::CreateCustomDataIdentifierOutput).
         pub fn build(self) -> crate::output::CreateCustomDataIdentifierOutput {
             crate::output::CreateCustomDataIdentifierOutput {
-                custom_data_identifier_id: self.custom_data_identifier_id,
+                custom_data_identifier_id: self.custom_data_identifier_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCustomDataIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomDataIdentifierOutput`](crate::output::CreateCustomDataIdentifierOutput).
@@ -5978,7 +5711,7 @@ impl CreateCustomDataIdentifierOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateClassificationJobOutput {
+pub struct CreateClassificationJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
@@ -5988,17 +5721,17 @@ pub struct CreateClassificationJobOutput {
 }
 impl CreateClassificationJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> std::option::Option<& str> {
         self.job_arn.as_deref()
     }
     /// <p>The unique identifier for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`CreateClassificationJobOutput`](crate::output::CreateClassificationJobOutput).
 pub mod create_classification_job_output {
-
+    
     /// A builder for [`CreateClassificationJobOutput`](crate::output::CreateClassificationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6013,8 +5746,7 @@ pub mod create_classification_job_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the job.</p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_arn = input;
-            self
+            self.job_arn = input; self
         }
         /// <p>The unique identifier for the job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6023,17 +5755,20 @@ pub mod create_classification_job_output {
         }
         /// <p>The unique identifier for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateClassificationJobOutput`](crate::output::CreateClassificationJobOutput).
         pub fn build(self) -> crate::output::CreateClassificationJobOutput {
             crate::output::CreateClassificationJobOutput {
-                job_arn: self.job_arn,
-                job_id: self.job_id,
+                job_arn: self.job_arn
+                ,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateClassificationJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateClassificationJobOutput`](crate::output::CreateClassificationJobOutput).
@@ -6045,7 +5780,7 @@ impl CreateClassificationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAllowListOutput {
+pub struct CreateAllowListOutput  {
     /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6055,17 +5790,17 @@ pub struct CreateAllowListOutput {
 }
 impl CreateAllowListOutput {
     /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The unique identifier for the allow list.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`CreateAllowListOutput`](crate::output::CreateAllowListOutput).
 pub mod create_allow_list_output {
-
+    
     /// A builder for [`CreateAllowListOutput`](crate::output::CreateAllowListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6080,8 +5815,7 @@ pub mod create_allow_list_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The unique identifier for the allow list.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6090,17 +5824,20 @@ pub mod create_allow_list_output {
         }
         /// <p>The unique identifier for the allow list.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`CreateAllowListOutput`](crate::output::CreateAllowListOutput).
         pub fn build(self) -> crate::output::CreateAllowListOutput {
             crate::output::CreateAllowListOutput {
-                arn: self.arn,
-                id: self.id,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAllowListOutput {
     /// Creates a new builder-style object to manufacture [`CreateAllowListOutput`](crate::output::CreateAllowListOutput).
@@ -6112,37 +5849,32 @@ impl CreateAllowListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetCustomDataIdentifiersOutput {
+pub struct BatchGetCustomDataIdentifiersOutput  {
     /// <p>An array of objects, one for each custom data identifier that matches the criteria specified in the request.</p>
     #[doc(hidden)]
-    pub custom_data_identifiers:
-        std::option::Option<std::vec::Vec<crate::model::BatchGetCustomDataIdentifierSummary>>,
+    pub custom_data_identifiers: std::option::Option<std::vec::Vec<crate::model::BatchGetCustomDataIdentifierSummary>>,
     /// <p>An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but doesn't correlate to an existing custom data identifier.</p>
     #[doc(hidden)]
     pub not_found_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetCustomDataIdentifiersOutput {
     /// <p>An array of objects, one for each custom data identifier that matches the criteria specified in the request.</p>
-    pub fn custom_data_identifiers(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchGetCustomDataIdentifierSummary]> {
+    pub fn custom_data_identifiers(&self) -> std::option::Option<& [crate::model::BatchGetCustomDataIdentifierSummary]> {
         self.custom_data_identifiers.as_deref()
     }
     /// <p>An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but doesn't correlate to an existing custom data identifier.</p>
-    pub fn not_found_identifier_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_found_identifier_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.not_found_identifier_ids.as_deref()
     }
 }
 /// See [`BatchGetCustomDataIdentifiersOutput`](crate::output::BatchGetCustomDataIdentifiersOutput).
 pub mod batch_get_custom_data_identifiers_output {
-
+    
     /// A builder for [`BatchGetCustomDataIdentifiersOutput`](crate::output::BatchGetCustomDataIdentifiersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) custom_data_identifiers:
-            std::option::Option<std::vec::Vec<crate::model::BatchGetCustomDataIdentifierSummary>>,
-        pub(crate) not_found_identifier_ids:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) custom_data_identifiers: std::option::Option<std::vec::Vec<crate::model::BatchGetCustomDataIdentifierSummary>>,
+        pub(crate) not_found_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `custom_data_identifiers`.
@@ -6150,24 +5882,15 @@ pub mod batch_get_custom_data_identifiers_output {
         /// To override the contents of this collection use [`set_custom_data_identifiers`](Self::set_custom_data_identifiers).
         ///
         /// <p>An array of objects, one for each custom data identifier that matches the criteria specified in the request.</p>
-        pub fn custom_data_identifiers(
-            mut self,
-            input: crate::model::BatchGetCustomDataIdentifierSummary,
-        ) -> Self {
+        pub fn custom_data_identifiers(mut self, input: crate::model::BatchGetCustomDataIdentifierSummary) -> Self {
             let mut v = self.custom_data_identifiers.unwrap_or_default();
-            v.push(input);
-            self.custom_data_identifiers = Some(v);
-            self
+                            v.push(input);
+                            self.custom_data_identifiers = Some(v);
+                            self
         }
         /// <p>An array of objects, one for each custom data identifier that matches the criteria specified in the request.</p>
-        pub fn set_custom_data_identifiers(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchGetCustomDataIdentifierSummary>,
-            >,
-        ) -> Self {
-            self.custom_data_identifiers = input;
-            self
+        pub fn set_custom_data_identifiers(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetCustomDataIdentifierSummary>>) -> Self {
+            self.custom_data_identifiers = input; self
         }
         /// Appends an item to `not_found_identifier_ids`.
         ///
@@ -6176,26 +5899,26 @@ pub mod batch_get_custom_data_identifiers_output {
         /// <p>An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but doesn't correlate to an existing custom data identifier.</p>
         pub fn not_found_identifier_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_found_identifier_ids.unwrap_or_default();
-            v.push(input.into());
-            self.not_found_identifier_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.not_found_identifier_ids = Some(v);
+                            self
         }
         /// <p>An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but doesn't correlate to an existing custom data identifier.</p>
-        pub fn set_not_found_identifier_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.not_found_identifier_ids = input;
-            self
+        pub fn set_not_found_identifier_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.not_found_identifier_ids = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetCustomDataIdentifiersOutput`](crate::output::BatchGetCustomDataIdentifiersOutput).
         pub fn build(self) -> crate::output::BatchGetCustomDataIdentifiersOutput {
             crate::output::BatchGetCustomDataIdentifiersOutput {
-                custom_data_identifiers: self.custom_data_identifiers,
-                not_found_identifier_ids: self.not_found_identifier_ids,
+                custom_data_identifiers: self.custom_data_identifiers
+                ,
+                not_found_identifier_ids: self.not_found_identifier_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetCustomDataIdentifiersOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetCustomDataIdentifiersOutput`](crate::output::BatchGetCustomDataIdentifiersOutput).
@@ -6207,19 +5930,24 @@ impl BatchGetCustomDataIdentifiersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptInvitationOutput {}
+pub struct AcceptInvitationOutput  {
+}
 /// See [`AcceptInvitationOutput`](crate::output::AcceptInvitationOutput).
 pub mod accept_invitation_output {
-
+    
     /// A builder for [`AcceptInvitationOutput`](crate::output::AcceptInvitationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AcceptInvitationOutput`](crate::output::AcceptInvitationOutput).
         pub fn build(self) -> crate::output::AcceptInvitationOutput {
-            crate::output::AcceptInvitationOutput {}
+            crate::output::AcceptInvitationOutput {
+            }
         }
     }
+    
+    
 }
 impl AcceptInvitationOutput {
     /// Creates a new builder-style object to manufacture [`AcceptInvitationOutput`](crate::output::AcceptInvitationOutput).
@@ -6227,3 +5955,4 @@ impl AcceptInvitationOutput {
         crate::output::accept_invitation_output::Builder::default()
     }
 }
+

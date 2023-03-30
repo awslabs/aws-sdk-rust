@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateDeploymentGroupError {
     /// Kind of error that occurred.
-    pub kind: UpdateDeploymentGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateDeploymentGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateDeploymentGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -36,13 +36,13 @@ pub enum UpdateDeploymentGroupErrorKind {
     DeploymentGroupNameRequiredException(crate::error::DeploymentGroupNameRequiredException),
     /// <p> The Amazon ECS service is associated with more than one deployment groups. An Amazon ECS service can be associated with only one deployment group. </p>
     EcsServiceMappingLimitExceededException(crate::error::EcsServiceMappingLimitExceededException),
-    /// <p>The format of the alarm configuration is invalid. Possible causes include:</p>
-    /// <ul>
-    /// <li> <p>The alarm list is null.</p> </li>
-    /// <li> <p>The alarm object is null.</p> </li>
-    /// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li>
-    /// <li> <p>Two alarms with the same name have been specified.</p> </li>
-    /// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li>
+    /// <p>The format of the alarm configuration is invalid. Possible causes include:</p> 
+    /// <ul> 
+    /// <li> <p>The alarm list is null.</p> </li> 
+    /// <li> <p>The alarm object is null.</p> </li> 
+    /// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li> 
+    /// <li> <p>Two alarms with the same name have been specified.</p> </li> 
+    /// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li> 
     /// </ul>
     InvalidAlarmConfigException(crate::error::InvalidAlarmConfigException),
     /// <p>The application name was specified in an invalid format.</p>
@@ -52,9 +52,7 @@ pub enum UpdateDeploymentGroupErrorKind {
     /// <p>The Auto Scaling group was specified in an invalid format or does not exist.</p>
     InvalidAutoScalingGroupException(crate::error::InvalidAutoScalingGroupException),
     /// <p>The configuration for the blue/green deployment group was provided in an invalid format. For information about deployment configuration format, see <code>CreateDeploymentConfig</code>.</p>
-    InvalidBlueGreenDeploymentConfigurationException(
-        crate::error::InvalidBlueGreenDeploymentConfigurationException,
-    ),
+    InvalidBlueGreenDeploymentConfigurationException(crate::error::InvalidBlueGreenDeploymentConfigurationException),
     /// <p>The deployment configuration name was specified in an invalid format.</p>
     InvalidDeploymentConfigNameException(crate::error::InvalidDeploymentConfigNameException),
     /// <p>The deployment group name was specified in an invalid format.</p>
@@ -72,9 +70,7 @@ pub enum UpdateDeploymentGroupErrorKind {
     /// <p>An invalid load balancer name, or no load balancer name, was specified.</p>
     InvalidLoadBalancerInfoException(crate::error::InvalidLoadBalancerInfoException),
     /// <p>A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet, but only one of these data types can be used in a single call.</p>
-    InvalidOnPremisesTagCombinationException(
-        crate::error::InvalidOnPremisesTagCombinationException,
-    ),
+    InvalidOnPremisesTagCombinationException(crate::error::InvalidOnPremisesTagCombinationException),
     /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.</p>
     InvalidRoleException(crate::error::InvalidRoleException),
     /// <p>The tag was specified in an invalid format.</p>
@@ -82,9 +78,7 @@ pub enum UpdateDeploymentGroupErrorKind {
     /// <p> A target group pair associated with this deployment is not valid. </p>
     InvalidTargetGroupPairException(crate::error::InvalidTargetGroupPairException),
     /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
-    InvalidTrafficRoutingConfigurationException(
-        crate::error::InvalidTrafficRoutingConfigurationException,
-    ),
+    InvalidTrafficRoutingConfigurationException(crate::error::InvalidTrafficRoutingConfigurationException),
     /// <p>The trigger was specified in an invalid format.</p>
     InvalidTriggerConfigException(crate::error::InvalidTriggerConfigException),
     /// <p>The limit for lifecycle hooks was exceeded.</p>
@@ -95,95 +89,115 @@ pub enum UpdateDeploymentGroupErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The maximum allowed number of triggers was exceeded.</p>
     TriggerTargetsLimitExceededException(crate::error::TriggerTargetsLimitExceededException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDeploymentGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateDeploymentGroupErrorKind::AlarmsLimitExceededException(_inner) => _inner.fmt(f),
-            UpdateDeploymentGroupErrorKind::ApplicationDoesNotExistException(_inner) => {
+            UpdateDeploymentGroupErrorKind::AlarmsLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::ApplicationDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidAlarmConfigException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidAutoScalingGroupException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidDeploymentStyleException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidEc2TagCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidEc2TagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidEcsServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidInputException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidRoleException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidTargetGroupPairException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidTriggerConfigException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::LifecycleHookLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::TagSetListLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDeploymentGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateDeploymentGroupErrorKind::ApplicationNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidAlarmConfigException(_inner) => _inner.fmt(f),
-            UpdateDeploymentGroupErrorKind::InvalidApplicationNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidAutoScalingGroupException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException(
-                _inner,
-            ) => _inner.fmt(f),
-            UpdateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidDeploymentStyleException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidEc2TagCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidEc2TagException(_inner) => _inner.fmt(f),
-            UpdateDeploymentGroupErrorKind::InvalidEcsServiceException(_inner) => _inner.fmt(f),
-            UpdateDeploymentGroupErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
-            UpdateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidRoleException(_inner) => _inner.fmt(f),
-            UpdateDeploymentGroupErrorKind::InvalidTagException(_inner) => _inner.fmt(f),
-            UpdateDeploymentGroupErrorKind::InvalidTargetGroupPairException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidTriggerConfigException(_inner) => _inner.fmt(f),
-            UpdateDeploymentGroupErrorKind::LifecycleHookLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::TagSetListLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            UpdateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDeploymentGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -197,341 +211,270 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateDeploymentGroupError {
 }
 impl UpdateDeploymentGroupError {
     /// Creates a new `UpdateDeploymentGroupError`.
-    pub fn new(kind: UpdateDeploymentGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateDeploymentGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateDeploymentGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateDeploymentGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateDeploymentGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateDeploymentGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::AlarmsLimitExceededException`.
     pub fn is_alarms_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::AlarmsLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::AlarmsLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::ApplicationDoesNotExistException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::ApplicationDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException`.
     pub fn is_deployment_config_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException`.
     pub fn is_deployment_group_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException`.
     pub fn is_deployment_group_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException`.
     pub fn is_deployment_group_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException`.
     pub fn is_ecs_service_mapping_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidAlarmConfigException`.
     pub fn is_invalid_alarm_config_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidAlarmConfigException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidAlarmConfigException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidApplicationNameException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException`.
     pub fn is_invalid_auto_rollback_config_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidAutoScalingGroupException`.
     pub fn is_invalid_auto_scaling_group_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidAutoScalingGroupException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidAutoScalingGroupException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException`.
     pub fn is_invalid_blue_green_deployment_configuration_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException`.
     pub fn is_invalid_deployment_config_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException`.
     pub fn is_invalid_deployment_group_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidDeploymentStyleException`.
     pub fn is_invalid_deployment_style_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidDeploymentStyleException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidDeploymentStyleException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidEc2TagCombinationException`.
     pub fn is_invalid_ec2_tag_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidEc2TagCombinationException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidEc2TagCombinationException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidEc2TagException`.
     pub fn is_invalid_ec2_tag_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidEc2TagException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidEc2TagException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidEcsServiceException`.
     pub fn is_invalid_ecs_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidEcsServiceException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidEcsServiceException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidInputException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidInputException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException`.
     pub fn is_invalid_load_balancer_info_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException`.
     pub fn is_invalid_on_premises_tag_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidRoleException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidRoleException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidTagException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidTagException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidTargetGroupPairException`.
     pub fn is_invalid_target_group_pair_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidTargetGroupPairException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidTargetGroupPairException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException`.
     pub fn is_invalid_traffic_routing_configuration_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidTriggerConfigException`.
     pub fn is_invalid_trigger_config_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::InvalidTriggerConfigException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::InvalidTriggerConfigException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::LifecycleHookLimitExceededException`.
     pub fn is_lifecycle_hook_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::LifecycleHookLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::LifecycleHookLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::TagSetListLimitExceededException`.
     pub fn is_tag_set_list_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::TagSetListLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::TagSetListLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException`.
     pub fn is_trigger_targets_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException(_))
     }
 }
 impl std::error::Error for UpdateDeploymentGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateDeploymentGroupErrorKind::AlarmsLimitExceededException(_inner) => Some(_inner),
-            UpdateDeploymentGroupErrorKind::ApplicationDoesNotExistException(_inner) => {
+            UpdateDeploymentGroupErrorKind::AlarmsLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::ApplicationDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidAlarmConfigException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidAutoScalingGroupException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidDeploymentStyleException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidEc2TagCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidEc2TagException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidEcsServiceException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidInputException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidRoleException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidTagException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidTargetGroupPairException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::InvalidTriggerConfigException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::LifecycleHookLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::TagSetListLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDeploymentGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateDeploymentGroupErrorKind::ApplicationNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidAlarmConfigException(_inner) => Some(_inner),
-            UpdateDeploymentGroupErrorKind::InvalidApplicationNameException(_inner) => Some(_inner),
-            UpdateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidAutoScalingGroupException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException(
-                _inner,
-            ) => Some(_inner),
-            UpdateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidDeploymentStyleException(_inner) => Some(_inner),
-            UpdateDeploymentGroupErrorKind::InvalidEc2TagCombinationException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidEc2TagException(_inner) => Some(_inner),
-            UpdateDeploymentGroupErrorKind::InvalidEcsServiceException(_inner) => Some(_inner),
-            UpdateDeploymentGroupErrorKind::InvalidInputException(_inner) => Some(_inner),
-            UpdateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidRoleException(_inner) => Some(_inner),
-            UpdateDeploymentGroupErrorKind::InvalidTagException(_inner) => Some(_inner),
-            UpdateDeploymentGroupErrorKind::InvalidTargetGroupPairException(_inner) => Some(_inner),
-            UpdateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::InvalidTriggerConfigException(_inner) => Some(_inner),
-            UpdateDeploymentGroupErrorKind::LifecycleHookLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::TagSetListLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDeploymentGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -539,22 +482,20 @@ impl std::error::Error for UpdateDeploymentGroupError {
 /// <p>The maximum allowed number of triggers was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TriggerTargetsLimitExceededException {
+pub struct TriggerTargetsLimitExceededException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TriggerTargetsLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TriggerTargetsLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TriggerTargetsLimitExceededException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -564,7 +505,7 @@ impl std::fmt::Display for TriggerTargetsLimitExceededException {
 impl std::error::Error for TriggerTargetsLimitExceededException {}
 /// See [`TriggerTargetsLimitExceededException`](crate::error::TriggerTargetsLimitExceededException).
 pub mod trigger_targets_limit_exceeded_exception {
-
+    
     /// A builder for [`TriggerTargetsLimitExceededException`](crate::error::TriggerTargetsLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -578,16 +519,18 @@ pub mod trigger_targets_limit_exceeded_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TriggerTargetsLimitExceededException`](crate::error::TriggerTargetsLimitExceededException).
         pub fn build(self) -> crate::error::TriggerTargetsLimitExceededException {
             crate::error::TriggerTargetsLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TriggerTargetsLimitExceededException {
     /// Creates a new builder-style object to manufacture [`TriggerTargetsLimitExceededException`](crate::error::TriggerTargetsLimitExceededException).
@@ -599,22 +542,20 @@ impl TriggerTargetsLimitExceededException {
 /// <p>An API function was called too frequently.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -624,7 +565,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException).
 pub mod throttling_exception {
-
+    
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -638,16 +579,18 @@ pub mod throttling_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
         pub fn build(self) -> crate::error::ThrottlingException {
             crate::error::ThrottlingException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
@@ -659,22 +602,20 @@ impl ThrottlingException {
 /// <p>The number of tag groups included in the tag set list exceeded the maximum allowed limit of 3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagSetListLimitExceededException {
+pub struct TagSetListLimitExceededException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TagSetListLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TagSetListLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagSetListLimitExceededException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -684,7 +625,7 @@ impl std::fmt::Display for TagSetListLimitExceededException {
 impl std::error::Error for TagSetListLimitExceededException {}
 /// See [`TagSetListLimitExceededException`](crate::error::TagSetListLimitExceededException).
 pub mod tag_set_list_limit_exceeded_exception {
-
+    
     /// A builder for [`TagSetListLimitExceededException`](crate::error::TagSetListLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -698,16 +639,18 @@ pub mod tag_set_list_limit_exceeded_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TagSetListLimitExceededException`](crate::error::TagSetListLimitExceededException).
         pub fn build(self) -> crate::error::TagSetListLimitExceededException {
             crate::error::TagSetListLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TagSetListLimitExceededException {
     /// Creates a new builder-style object to manufacture [`TagSetListLimitExceededException`](crate::error::TagSetListLimitExceededException).
@@ -719,22 +662,20 @@ impl TagSetListLimitExceededException {
 /// <p>The limit for lifecycle hooks was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifecycleHookLimitExceededException {
+pub struct LifecycleHookLimitExceededException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LifecycleHookLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LifecycleHookLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LifecycleHookLimitExceededException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -744,7 +685,7 @@ impl std::fmt::Display for LifecycleHookLimitExceededException {
 impl std::error::Error for LifecycleHookLimitExceededException {}
 /// See [`LifecycleHookLimitExceededException`](crate::error::LifecycleHookLimitExceededException).
 pub mod lifecycle_hook_limit_exceeded_exception {
-
+    
     /// A builder for [`LifecycleHookLimitExceededException`](crate::error::LifecycleHookLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -758,16 +699,18 @@ pub mod lifecycle_hook_limit_exceeded_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LifecycleHookLimitExceededException`](crate::error::LifecycleHookLimitExceededException).
         pub fn build(self) -> crate::error::LifecycleHookLimitExceededException {
             crate::error::LifecycleHookLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LifecycleHookLimitExceededException {
     /// Creates a new builder-style object to manufacture [`LifecycleHookLimitExceededException`](crate::error::LifecycleHookLimitExceededException).
@@ -779,22 +722,20 @@ impl LifecycleHookLimitExceededException {
 /// <p>The trigger was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidTriggerConfigException {
+pub struct InvalidTriggerConfigException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidTriggerConfigException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidTriggerConfigException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTriggerConfigException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -804,7 +745,7 @@ impl std::fmt::Display for InvalidTriggerConfigException {
 impl std::error::Error for InvalidTriggerConfigException {}
 /// See [`InvalidTriggerConfigException`](crate::error::InvalidTriggerConfigException).
 pub mod invalid_trigger_config_exception {
-
+    
     /// A builder for [`InvalidTriggerConfigException`](crate::error::InvalidTriggerConfigException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -818,16 +759,18 @@ pub mod invalid_trigger_config_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidTriggerConfigException`](crate::error::InvalidTriggerConfigException).
         pub fn build(self) -> crate::error::InvalidTriggerConfigException {
             crate::error::InvalidTriggerConfigException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidTriggerConfigException {
     /// Creates a new builder-style object to manufacture [`InvalidTriggerConfigException`](crate::error::InvalidTriggerConfigException).
@@ -839,22 +782,20 @@ impl InvalidTriggerConfigException {
 /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidTrafficRoutingConfigurationException {
+pub struct InvalidTrafficRoutingConfigurationException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidTrafficRoutingConfigurationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidTrafficRoutingConfigurationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTrafficRoutingConfigurationException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -864,7 +805,7 @@ impl std::fmt::Display for InvalidTrafficRoutingConfigurationException {
 impl std::error::Error for InvalidTrafficRoutingConfigurationException {}
 /// See [`InvalidTrafficRoutingConfigurationException`](crate::error::InvalidTrafficRoutingConfigurationException).
 pub mod invalid_traffic_routing_configuration_exception {
-
+    
     /// A builder for [`InvalidTrafficRoutingConfigurationException`](crate::error::InvalidTrafficRoutingConfigurationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -878,16 +819,18 @@ pub mod invalid_traffic_routing_configuration_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidTrafficRoutingConfigurationException`](crate::error::InvalidTrafficRoutingConfigurationException).
         pub fn build(self) -> crate::error::InvalidTrafficRoutingConfigurationException {
             crate::error::InvalidTrafficRoutingConfigurationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidTrafficRoutingConfigurationException {
     /// Creates a new builder-style object to manufacture [`InvalidTrafficRoutingConfigurationException`](crate::error::InvalidTrafficRoutingConfigurationException).
@@ -899,22 +842,20 @@ impl InvalidTrafficRoutingConfigurationException {
 /// <p> A target group pair associated with this deployment is not valid. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidTargetGroupPairException {
+pub struct InvalidTargetGroupPairException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidTargetGroupPairException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidTargetGroupPairException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTargetGroupPairException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -924,7 +865,7 @@ impl std::fmt::Display for InvalidTargetGroupPairException {
 impl std::error::Error for InvalidTargetGroupPairException {}
 /// See [`InvalidTargetGroupPairException`](crate::error::InvalidTargetGroupPairException).
 pub mod invalid_target_group_pair_exception {
-
+    
     /// A builder for [`InvalidTargetGroupPairException`](crate::error::InvalidTargetGroupPairException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -938,16 +879,18 @@ pub mod invalid_target_group_pair_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidTargetGroupPairException`](crate::error::InvalidTargetGroupPairException).
         pub fn build(self) -> crate::error::InvalidTargetGroupPairException {
             crate::error::InvalidTargetGroupPairException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidTargetGroupPairException {
     /// Creates a new builder-style object to manufacture [`InvalidTargetGroupPairException`](crate::error::InvalidTargetGroupPairException).
@@ -959,22 +902,20 @@ impl InvalidTargetGroupPairException {
 /// <p>The tag was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidTagException {
+pub struct InvalidTagException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidTagException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidTagException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTagException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -984,7 +925,7 @@ impl std::fmt::Display for InvalidTagException {
 impl std::error::Error for InvalidTagException {}
 /// See [`InvalidTagException`](crate::error::InvalidTagException).
 pub mod invalid_tag_exception {
-
+    
     /// A builder for [`InvalidTagException`](crate::error::InvalidTagException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -998,16 +939,18 @@ pub mod invalid_tag_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidTagException`](crate::error::InvalidTagException).
         pub fn build(self) -> crate::error::InvalidTagException {
             crate::error::InvalidTagException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidTagException {
     /// Creates a new builder-style object to manufacture [`InvalidTagException`](crate::error::InvalidTagException).
@@ -1019,22 +962,20 @@ impl InvalidTagException {
 /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidRoleException {
+pub struct InvalidRoleException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidRoleException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidRoleException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRoleException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -1044,7 +985,7 @@ impl std::fmt::Display for InvalidRoleException {
 impl std::error::Error for InvalidRoleException {}
 /// See [`InvalidRoleException`](crate::error::InvalidRoleException).
 pub mod invalid_role_exception {
-
+    
     /// A builder for [`InvalidRoleException`](crate::error::InvalidRoleException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1058,16 +999,18 @@ pub mod invalid_role_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidRoleException`](crate::error::InvalidRoleException).
         pub fn build(self) -> crate::error::InvalidRoleException {
             crate::error::InvalidRoleException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidRoleException {
     /// Creates a new builder-style object to manufacture [`InvalidRoleException`](crate::error::InvalidRoleException).
@@ -1079,22 +1022,20 @@ impl InvalidRoleException {
 /// <p>A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet, but only one of these data types can be used in a single call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidOnPremisesTagCombinationException {
+pub struct InvalidOnPremisesTagCombinationException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidOnPremisesTagCombinationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidOnPremisesTagCombinationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOnPremisesTagCombinationException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -1104,7 +1045,7 @@ impl std::fmt::Display for InvalidOnPremisesTagCombinationException {
 impl std::error::Error for InvalidOnPremisesTagCombinationException {}
 /// See [`InvalidOnPremisesTagCombinationException`](crate::error::InvalidOnPremisesTagCombinationException).
 pub mod invalid_on_premises_tag_combination_exception {
-
+    
     /// A builder for [`InvalidOnPremisesTagCombinationException`](crate::error::InvalidOnPremisesTagCombinationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1118,16 +1059,18 @@ pub mod invalid_on_premises_tag_combination_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidOnPremisesTagCombinationException`](crate::error::InvalidOnPremisesTagCombinationException).
         pub fn build(self) -> crate::error::InvalidOnPremisesTagCombinationException {
             crate::error::InvalidOnPremisesTagCombinationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidOnPremisesTagCombinationException {
     /// Creates a new builder-style object to manufacture [`InvalidOnPremisesTagCombinationException`](crate::error::InvalidOnPremisesTagCombinationException).
@@ -1139,22 +1082,20 @@ impl InvalidOnPremisesTagCombinationException {
 /// <p>An invalid load balancer name, or no load balancer name, was specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidLoadBalancerInfoException {
+pub struct InvalidLoadBalancerInfoException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidLoadBalancerInfoException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidLoadBalancerInfoException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLoadBalancerInfoException")?;
         if let Some(inner_11) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_11)?;
             }
         }
@@ -1164,7 +1105,7 @@ impl std::fmt::Display for InvalidLoadBalancerInfoException {
 impl std::error::Error for InvalidLoadBalancerInfoException {}
 /// See [`InvalidLoadBalancerInfoException`](crate::error::InvalidLoadBalancerInfoException).
 pub mod invalid_load_balancer_info_exception {
-
+    
     /// A builder for [`InvalidLoadBalancerInfoException`](crate::error::InvalidLoadBalancerInfoException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1178,16 +1119,18 @@ pub mod invalid_load_balancer_info_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidLoadBalancerInfoException`](crate::error::InvalidLoadBalancerInfoException).
         pub fn build(self) -> crate::error::InvalidLoadBalancerInfoException {
             crate::error::InvalidLoadBalancerInfoException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidLoadBalancerInfoException {
     /// Creates a new builder-style object to manufacture [`InvalidLoadBalancerInfoException`](crate::error::InvalidLoadBalancerInfoException).
@@ -1199,22 +1142,20 @@ impl InvalidLoadBalancerInfoException {
 /// <p>The input was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidInputException {
+pub struct InvalidInputException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidInputException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidInputException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidInputException")?;
         if let Some(inner_12) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_12)?;
             }
         }
@@ -1224,7 +1165,7 @@ impl std::fmt::Display for InvalidInputException {
 impl std::error::Error for InvalidInputException {}
 /// See [`InvalidInputException`](crate::error::InvalidInputException).
 pub mod invalid_input_exception {
-
+    
     /// A builder for [`InvalidInputException`](crate::error::InvalidInputException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1238,16 +1179,18 @@ pub mod invalid_input_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidInputException`](crate::error::InvalidInputException).
         pub fn build(self) -> crate::error::InvalidInputException {
             crate::error::InvalidInputException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidInputException {
     /// Creates a new builder-style object to manufacture [`InvalidInputException`](crate::error::InvalidInputException).
@@ -1259,22 +1202,20 @@ impl InvalidInputException {
 /// <p> The Amazon ECS service identifier is not valid. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidEcsServiceException {
+pub struct InvalidEcsServiceException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidEcsServiceException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidEcsServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEcsServiceException [InvalidECSServiceException]")?;
         if let Some(inner_13) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_13)?;
             }
         }
@@ -1284,7 +1225,7 @@ impl std::fmt::Display for InvalidEcsServiceException {
 impl std::error::Error for InvalidEcsServiceException {}
 /// See [`InvalidEcsServiceException`](crate::error::InvalidEcsServiceException).
 pub mod invalid_ecs_service_exception {
-
+    
     /// A builder for [`InvalidEcsServiceException`](crate::error::InvalidEcsServiceException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1298,16 +1239,18 @@ pub mod invalid_ecs_service_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidEcsServiceException`](crate::error::InvalidEcsServiceException).
         pub fn build(self) -> crate::error::InvalidEcsServiceException {
             crate::error::InvalidEcsServiceException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidEcsServiceException {
     /// Creates a new builder-style object to manufacture [`InvalidEcsServiceException`](crate::error::InvalidEcsServiceException).
@@ -1319,22 +1262,20 @@ impl InvalidEcsServiceException {
 /// <p>The tag was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidEc2TagException {
+pub struct InvalidEc2TagException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidEc2TagException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidEc2TagException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEc2TagException [InvalidEC2TagException]")?;
         if let Some(inner_14) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_14)?;
             }
         }
@@ -1344,7 +1285,7 @@ impl std::fmt::Display for InvalidEc2TagException {
 impl std::error::Error for InvalidEc2TagException {}
 /// See [`InvalidEc2TagException`](crate::error::InvalidEc2TagException).
 pub mod invalid_ec2_tag_exception {
-
+    
     /// A builder for [`InvalidEc2TagException`](crate::error::InvalidEc2TagException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1358,16 +1299,18 @@ pub mod invalid_ec2_tag_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidEc2TagException`](crate::error::InvalidEc2TagException).
         pub fn build(self) -> crate::error::InvalidEc2TagException {
             crate::error::InvalidEc2TagException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidEc2TagException {
     /// Creates a new builder-style object to manufacture [`InvalidEc2TagException`](crate::error::InvalidEc2TagException).
@@ -1379,25 +1322,20 @@ impl InvalidEc2TagException {
 /// <p>A call was submitted that specified both Ec2TagFilters and Ec2TagSet, but only one of these data types can be used in a single call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidEc2TagCombinationException {
+pub struct InvalidEc2TagCombinationException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidEc2TagCombinationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidEc2TagCombinationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "InvalidEc2TagCombinationException [InvalidEC2TagCombinationException]"
-        )?;
+        write!(f, "InvalidEc2TagCombinationException [InvalidEC2TagCombinationException]")?;
         if let Some(inner_15) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_15)?;
             }
         }
@@ -1407,7 +1345,7 @@ impl std::fmt::Display for InvalidEc2TagCombinationException {
 impl std::error::Error for InvalidEc2TagCombinationException {}
 /// See [`InvalidEc2TagCombinationException`](crate::error::InvalidEc2TagCombinationException).
 pub mod invalid_ec2_tag_combination_exception {
-
+    
     /// A builder for [`InvalidEc2TagCombinationException`](crate::error::InvalidEc2TagCombinationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1421,16 +1359,18 @@ pub mod invalid_ec2_tag_combination_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidEc2TagCombinationException`](crate::error::InvalidEc2TagCombinationException).
         pub fn build(self) -> crate::error::InvalidEc2TagCombinationException {
             crate::error::InvalidEc2TagCombinationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidEc2TagCombinationException {
     /// Creates a new builder-style object to manufacture [`InvalidEc2TagCombinationException`](crate::error::InvalidEc2TagCombinationException).
@@ -1442,22 +1382,20 @@ impl InvalidEc2TagCombinationException {
 /// <p>An invalid deployment style was specified. Valid deployment types include "IN_PLACE" and "BLUE_GREEN." Valid deployment options include "WITH_TRAFFIC_CONTROL" and "WITHOUT_TRAFFIC_CONTROL."</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidDeploymentStyleException {
+pub struct InvalidDeploymentStyleException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidDeploymentStyleException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidDeploymentStyleException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDeploymentStyleException")?;
         if let Some(inner_16) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_16)?;
             }
         }
@@ -1467,7 +1405,7 @@ impl std::fmt::Display for InvalidDeploymentStyleException {
 impl std::error::Error for InvalidDeploymentStyleException {}
 /// See [`InvalidDeploymentStyleException`](crate::error::InvalidDeploymentStyleException).
 pub mod invalid_deployment_style_exception {
-
+    
     /// A builder for [`InvalidDeploymentStyleException`](crate::error::InvalidDeploymentStyleException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1481,16 +1419,18 @@ pub mod invalid_deployment_style_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidDeploymentStyleException`](crate::error::InvalidDeploymentStyleException).
         pub fn build(self) -> crate::error::InvalidDeploymentStyleException {
             crate::error::InvalidDeploymentStyleException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidDeploymentStyleException {
     /// Creates a new builder-style object to manufacture [`InvalidDeploymentStyleException`](crate::error::InvalidDeploymentStyleException).
@@ -1502,22 +1442,20 @@ impl InvalidDeploymentStyleException {
 /// <p>The deployment group name was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidDeploymentGroupNameException {
+pub struct InvalidDeploymentGroupNameException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidDeploymentGroupNameException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidDeploymentGroupNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDeploymentGroupNameException")?;
         if let Some(inner_17) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_17)?;
             }
         }
@@ -1527,7 +1465,7 @@ impl std::fmt::Display for InvalidDeploymentGroupNameException {
 impl std::error::Error for InvalidDeploymentGroupNameException {}
 /// See [`InvalidDeploymentGroupNameException`](crate::error::InvalidDeploymentGroupNameException).
 pub mod invalid_deployment_group_name_exception {
-
+    
     /// A builder for [`InvalidDeploymentGroupNameException`](crate::error::InvalidDeploymentGroupNameException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1541,16 +1479,18 @@ pub mod invalid_deployment_group_name_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidDeploymentGroupNameException`](crate::error::InvalidDeploymentGroupNameException).
         pub fn build(self) -> crate::error::InvalidDeploymentGroupNameException {
             crate::error::InvalidDeploymentGroupNameException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidDeploymentGroupNameException {
     /// Creates a new builder-style object to manufacture [`InvalidDeploymentGroupNameException`](crate::error::InvalidDeploymentGroupNameException).
@@ -1562,22 +1502,20 @@ impl InvalidDeploymentGroupNameException {
 /// <p>The deployment configuration name was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidDeploymentConfigNameException {
+pub struct InvalidDeploymentConfigNameException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidDeploymentConfigNameException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidDeploymentConfigNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDeploymentConfigNameException")?;
         if let Some(inner_18) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_18)?;
             }
         }
@@ -1587,7 +1525,7 @@ impl std::fmt::Display for InvalidDeploymentConfigNameException {
 impl std::error::Error for InvalidDeploymentConfigNameException {}
 /// See [`InvalidDeploymentConfigNameException`](crate::error::InvalidDeploymentConfigNameException).
 pub mod invalid_deployment_config_name_exception {
-
+    
     /// A builder for [`InvalidDeploymentConfigNameException`](crate::error::InvalidDeploymentConfigNameException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1601,16 +1539,18 @@ pub mod invalid_deployment_config_name_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidDeploymentConfigNameException`](crate::error::InvalidDeploymentConfigNameException).
         pub fn build(self) -> crate::error::InvalidDeploymentConfigNameException {
             crate::error::InvalidDeploymentConfigNameException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidDeploymentConfigNameException {
     /// Creates a new builder-style object to manufacture [`InvalidDeploymentConfigNameException`](crate::error::InvalidDeploymentConfigNameException).
@@ -1622,22 +1562,20 @@ impl InvalidDeploymentConfigNameException {
 /// <p>The configuration for the blue/green deployment group was provided in an invalid format. For information about deployment configuration format, see <code>CreateDeploymentConfig</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidBlueGreenDeploymentConfigurationException {
+pub struct InvalidBlueGreenDeploymentConfigurationException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidBlueGreenDeploymentConfigurationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidBlueGreenDeploymentConfigurationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidBlueGreenDeploymentConfigurationException")?;
         if let Some(inner_19) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_19)?;
             }
         }
@@ -1647,7 +1585,7 @@ impl std::fmt::Display for InvalidBlueGreenDeploymentConfigurationException {
 impl std::error::Error for InvalidBlueGreenDeploymentConfigurationException {}
 /// See [`InvalidBlueGreenDeploymentConfigurationException`](crate::error::InvalidBlueGreenDeploymentConfigurationException).
 pub mod invalid_blue_green_deployment_configuration_exception {
-
+    
     /// A builder for [`InvalidBlueGreenDeploymentConfigurationException`](crate::error::InvalidBlueGreenDeploymentConfigurationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1661,21 +1599,22 @@ pub mod invalid_blue_green_deployment_configuration_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidBlueGreenDeploymentConfigurationException`](crate::error::InvalidBlueGreenDeploymentConfigurationException).
         pub fn build(self) -> crate::error::InvalidBlueGreenDeploymentConfigurationException {
             crate::error::InvalidBlueGreenDeploymentConfigurationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidBlueGreenDeploymentConfigurationException {
     /// Creates a new builder-style object to manufacture [`InvalidBlueGreenDeploymentConfigurationException`](crate::error::InvalidBlueGreenDeploymentConfigurationException).
-    pub fn builder() -> crate::error::invalid_blue_green_deployment_configuration_exception::Builder
-    {
+    pub fn builder() -> crate::error::invalid_blue_green_deployment_configuration_exception::Builder {
         crate::error::invalid_blue_green_deployment_configuration_exception::Builder::default()
     }
 }
@@ -1683,22 +1622,20 @@ impl InvalidBlueGreenDeploymentConfigurationException {
 /// <p>The Auto Scaling group was specified in an invalid format or does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidAutoScalingGroupException {
+pub struct InvalidAutoScalingGroupException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidAutoScalingGroupException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidAutoScalingGroupException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAutoScalingGroupException")?;
         if let Some(inner_20) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_20)?;
             }
         }
@@ -1708,7 +1645,7 @@ impl std::fmt::Display for InvalidAutoScalingGroupException {
 impl std::error::Error for InvalidAutoScalingGroupException {}
 /// See [`InvalidAutoScalingGroupException`](crate::error::InvalidAutoScalingGroupException).
 pub mod invalid_auto_scaling_group_exception {
-
+    
     /// A builder for [`InvalidAutoScalingGroupException`](crate::error::InvalidAutoScalingGroupException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1722,16 +1659,18 @@ pub mod invalid_auto_scaling_group_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidAutoScalingGroupException`](crate::error::InvalidAutoScalingGroupException).
         pub fn build(self) -> crate::error::InvalidAutoScalingGroupException {
             crate::error::InvalidAutoScalingGroupException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidAutoScalingGroupException {
     /// Creates a new builder-style object to manufacture [`InvalidAutoScalingGroupException`](crate::error::InvalidAutoScalingGroupException).
@@ -1743,22 +1682,20 @@ impl InvalidAutoScalingGroupException {
 /// <p>The automatic rollback configuration was specified in an invalid format. For example, automatic rollback is enabled, but an invalid triggering event type or no event types were listed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidAutoRollbackConfigException {
+pub struct InvalidAutoRollbackConfigException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidAutoRollbackConfigException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidAutoRollbackConfigException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAutoRollbackConfigException")?;
         if let Some(inner_21) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_21)?;
             }
         }
@@ -1768,7 +1705,7 @@ impl std::fmt::Display for InvalidAutoRollbackConfigException {
 impl std::error::Error for InvalidAutoRollbackConfigException {}
 /// See [`InvalidAutoRollbackConfigException`](crate::error::InvalidAutoRollbackConfigException).
 pub mod invalid_auto_rollback_config_exception {
-
+    
     /// A builder for [`InvalidAutoRollbackConfigException`](crate::error::InvalidAutoRollbackConfigException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1782,16 +1719,18 @@ pub mod invalid_auto_rollback_config_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidAutoRollbackConfigException`](crate::error::InvalidAutoRollbackConfigException).
         pub fn build(self) -> crate::error::InvalidAutoRollbackConfigException {
             crate::error::InvalidAutoRollbackConfigException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidAutoRollbackConfigException {
     /// Creates a new builder-style object to manufacture [`InvalidAutoRollbackConfigException`](crate::error::InvalidAutoRollbackConfigException).
@@ -1803,22 +1742,20 @@ impl InvalidAutoRollbackConfigException {
 /// <p>The application name was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidApplicationNameException {
+pub struct InvalidApplicationNameException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidApplicationNameException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidApplicationNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidApplicationNameException")?;
         if let Some(inner_22) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_22)?;
             }
         }
@@ -1828,7 +1765,7 @@ impl std::fmt::Display for InvalidApplicationNameException {
 impl std::error::Error for InvalidApplicationNameException {}
 /// See [`InvalidApplicationNameException`](crate::error::InvalidApplicationNameException).
 pub mod invalid_application_name_exception {
-
+    
     /// A builder for [`InvalidApplicationNameException`](crate::error::InvalidApplicationNameException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1842,16 +1779,18 @@ pub mod invalid_application_name_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidApplicationNameException`](crate::error::InvalidApplicationNameException).
         pub fn build(self) -> crate::error::InvalidApplicationNameException {
             crate::error::InvalidApplicationNameException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidApplicationNameException {
     /// Creates a new builder-style object to manufacture [`InvalidApplicationNameException`](crate::error::InvalidApplicationNameException).
@@ -1860,32 +1799,30 @@ impl InvalidApplicationNameException {
     }
 }
 
-/// <p>The format of the alarm configuration is invalid. Possible causes include:</p>
-/// <ul>
-/// <li> <p>The alarm list is null.</p> </li>
-/// <li> <p>The alarm object is null.</p> </li>
-/// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li>
-/// <li> <p>Two alarms with the same name have been specified.</p> </li>
-/// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li>
+/// <p>The format of the alarm configuration is invalid. Possible causes include:</p> 
+/// <ul> 
+/// <li> <p>The alarm list is null.</p> </li> 
+/// <li> <p>The alarm object is null.</p> </li> 
+/// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li> 
+/// <li> <p>Two alarms with the same name have been specified.</p> </li> 
+/// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidAlarmConfigException {
+pub struct InvalidAlarmConfigException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidAlarmConfigException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidAlarmConfigException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAlarmConfigException")?;
         if let Some(inner_23) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_23)?;
             }
         }
@@ -1895,7 +1832,7 @@ impl std::fmt::Display for InvalidAlarmConfigException {
 impl std::error::Error for InvalidAlarmConfigException {}
 /// See [`InvalidAlarmConfigException`](crate::error::InvalidAlarmConfigException).
 pub mod invalid_alarm_config_exception {
-
+    
     /// A builder for [`InvalidAlarmConfigException`](crate::error::InvalidAlarmConfigException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1909,16 +1846,18 @@ pub mod invalid_alarm_config_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidAlarmConfigException`](crate::error::InvalidAlarmConfigException).
         pub fn build(self) -> crate::error::InvalidAlarmConfigException {
             crate::error::InvalidAlarmConfigException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidAlarmConfigException {
     /// Creates a new builder-style object to manufacture [`InvalidAlarmConfigException`](crate::error::InvalidAlarmConfigException).
@@ -1930,25 +1869,20 @@ impl InvalidAlarmConfigException {
 /// <p> The Amazon ECS service is associated with more than one deployment groups. An Amazon ECS service can be associated with only one deployment group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcsServiceMappingLimitExceededException {
+pub struct EcsServiceMappingLimitExceededException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EcsServiceMappingLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for EcsServiceMappingLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "EcsServiceMappingLimitExceededException [ECSServiceMappingLimitExceededException]"
-        )?;
+        write!(f, "EcsServiceMappingLimitExceededException [ECSServiceMappingLimitExceededException]")?;
         if let Some(inner_24) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_24)?;
             }
         }
@@ -1958,7 +1892,7 @@ impl std::fmt::Display for EcsServiceMappingLimitExceededException {
 impl std::error::Error for EcsServiceMappingLimitExceededException {}
 /// See [`EcsServiceMappingLimitExceededException`](crate::error::EcsServiceMappingLimitExceededException).
 pub mod ecs_service_mapping_limit_exceeded_exception {
-
+    
     /// A builder for [`EcsServiceMappingLimitExceededException`](crate::error::EcsServiceMappingLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1972,16 +1906,18 @@ pub mod ecs_service_mapping_limit_exceeded_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`EcsServiceMappingLimitExceededException`](crate::error::EcsServiceMappingLimitExceededException).
         pub fn build(self) -> crate::error::EcsServiceMappingLimitExceededException {
             crate::error::EcsServiceMappingLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl EcsServiceMappingLimitExceededException {
     /// Creates a new builder-style object to manufacture [`EcsServiceMappingLimitExceededException`](crate::error::EcsServiceMappingLimitExceededException).
@@ -1993,22 +1929,20 @@ impl EcsServiceMappingLimitExceededException {
 /// <p>The deployment group name was not specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentGroupNameRequiredException {
+pub struct DeploymentGroupNameRequiredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentGroupNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentGroupNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentGroupNameRequiredException")?;
         if let Some(inner_25) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_25)?;
             }
         }
@@ -2018,7 +1952,7 @@ impl std::fmt::Display for DeploymentGroupNameRequiredException {
 impl std::error::Error for DeploymentGroupNameRequiredException {}
 /// See [`DeploymentGroupNameRequiredException`](crate::error::DeploymentGroupNameRequiredException).
 pub mod deployment_group_name_required_exception {
-
+    
     /// A builder for [`DeploymentGroupNameRequiredException`](crate::error::DeploymentGroupNameRequiredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2032,16 +1966,18 @@ pub mod deployment_group_name_required_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentGroupNameRequiredException`](crate::error::DeploymentGroupNameRequiredException).
         pub fn build(self) -> crate::error::DeploymentGroupNameRequiredException {
             crate::error::DeploymentGroupNameRequiredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentGroupNameRequiredException {
     /// Creates a new builder-style object to manufacture [`DeploymentGroupNameRequiredException`](crate::error::DeploymentGroupNameRequiredException).
@@ -2053,22 +1989,20 @@ impl DeploymentGroupNameRequiredException {
 /// <p>The named deployment group with the IAM user or Amazon Web Services account does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentGroupDoesNotExistException {
+pub struct DeploymentGroupDoesNotExistException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentGroupDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentGroupDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentGroupDoesNotExistException")?;
         if let Some(inner_26) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_26)?;
             }
         }
@@ -2078,7 +2012,7 @@ impl std::fmt::Display for DeploymentGroupDoesNotExistException {
 impl std::error::Error for DeploymentGroupDoesNotExistException {}
 /// See [`DeploymentGroupDoesNotExistException`](crate::error::DeploymentGroupDoesNotExistException).
 pub mod deployment_group_does_not_exist_exception {
-
+    
     /// A builder for [`DeploymentGroupDoesNotExistException`](crate::error::DeploymentGroupDoesNotExistException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2092,16 +2026,18 @@ pub mod deployment_group_does_not_exist_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentGroupDoesNotExistException`](crate::error::DeploymentGroupDoesNotExistException).
         pub fn build(self) -> crate::error::DeploymentGroupDoesNotExistException {
             crate::error::DeploymentGroupDoesNotExistException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentGroupDoesNotExistException {
     /// Creates a new builder-style object to manufacture [`DeploymentGroupDoesNotExistException`](crate::error::DeploymentGroupDoesNotExistException).
@@ -2113,22 +2049,20 @@ impl DeploymentGroupDoesNotExistException {
 /// <p>A deployment group with the specified name with the IAM user or Amazon Web Services account already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentGroupAlreadyExistsException {
+pub struct DeploymentGroupAlreadyExistsException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentGroupAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentGroupAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentGroupAlreadyExistsException")?;
         if let Some(inner_27) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_27)?;
             }
         }
@@ -2138,7 +2072,7 @@ impl std::fmt::Display for DeploymentGroupAlreadyExistsException {
 impl std::error::Error for DeploymentGroupAlreadyExistsException {}
 /// See [`DeploymentGroupAlreadyExistsException`](crate::error::DeploymentGroupAlreadyExistsException).
 pub mod deployment_group_already_exists_exception {
-
+    
     /// A builder for [`DeploymentGroupAlreadyExistsException`](crate::error::DeploymentGroupAlreadyExistsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2152,16 +2086,18 @@ pub mod deployment_group_already_exists_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentGroupAlreadyExistsException`](crate::error::DeploymentGroupAlreadyExistsException).
         pub fn build(self) -> crate::error::DeploymentGroupAlreadyExistsException {
             crate::error::DeploymentGroupAlreadyExistsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentGroupAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`DeploymentGroupAlreadyExistsException`](crate::error::DeploymentGroupAlreadyExistsException).
@@ -2173,22 +2109,20 @@ impl DeploymentGroupAlreadyExistsException {
 /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentConfigDoesNotExistException {
+pub struct DeploymentConfigDoesNotExistException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentConfigDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentConfigDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentConfigDoesNotExistException")?;
         if let Some(inner_28) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_28)?;
             }
         }
@@ -2198,7 +2132,7 @@ impl std::fmt::Display for DeploymentConfigDoesNotExistException {
 impl std::error::Error for DeploymentConfigDoesNotExistException {}
 /// See [`DeploymentConfigDoesNotExistException`](crate::error::DeploymentConfigDoesNotExistException).
 pub mod deployment_config_does_not_exist_exception {
-
+    
     /// A builder for [`DeploymentConfigDoesNotExistException`](crate::error::DeploymentConfigDoesNotExistException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2212,16 +2146,18 @@ pub mod deployment_config_does_not_exist_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentConfigDoesNotExistException`](crate::error::DeploymentConfigDoesNotExistException).
         pub fn build(self) -> crate::error::DeploymentConfigDoesNotExistException {
             crate::error::DeploymentConfigDoesNotExistException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentConfigDoesNotExistException {
     /// Creates a new builder-style object to manufacture [`DeploymentConfigDoesNotExistException`](crate::error::DeploymentConfigDoesNotExistException).
@@ -2233,22 +2169,20 @@ impl DeploymentConfigDoesNotExistException {
 /// <p>The minimum number of required application names was not specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationNameRequiredException {
+pub struct ApplicationNameRequiredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ApplicationNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ApplicationNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApplicationNameRequiredException")?;
         if let Some(inner_29) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_29)?;
             }
         }
@@ -2258,7 +2192,7 @@ impl std::fmt::Display for ApplicationNameRequiredException {
 impl std::error::Error for ApplicationNameRequiredException {}
 /// See [`ApplicationNameRequiredException`](crate::error::ApplicationNameRequiredException).
 pub mod application_name_required_exception {
-
+    
     /// A builder for [`ApplicationNameRequiredException`](crate::error::ApplicationNameRequiredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2272,16 +2206,18 @@ pub mod application_name_required_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationNameRequiredException`](crate::error::ApplicationNameRequiredException).
         pub fn build(self) -> crate::error::ApplicationNameRequiredException {
             crate::error::ApplicationNameRequiredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationNameRequiredException {
     /// Creates a new builder-style object to manufacture [`ApplicationNameRequiredException`](crate::error::ApplicationNameRequiredException).
@@ -2293,22 +2229,20 @@ impl ApplicationNameRequiredException {
 /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationDoesNotExistException {
+pub struct ApplicationDoesNotExistException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ApplicationDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ApplicationDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApplicationDoesNotExistException")?;
         if let Some(inner_30) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_30)?;
             }
         }
@@ -2318,7 +2252,7 @@ impl std::fmt::Display for ApplicationDoesNotExistException {
 impl std::error::Error for ApplicationDoesNotExistException {}
 /// See [`ApplicationDoesNotExistException`](crate::error::ApplicationDoesNotExistException).
 pub mod application_does_not_exist_exception {
-
+    
     /// A builder for [`ApplicationDoesNotExistException`](crate::error::ApplicationDoesNotExistException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2332,16 +2266,18 @@ pub mod application_does_not_exist_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationDoesNotExistException`](crate::error::ApplicationDoesNotExistException).
         pub fn build(self) -> crate::error::ApplicationDoesNotExistException {
             crate::error::ApplicationDoesNotExistException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationDoesNotExistException {
     /// Creates a new builder-style object to manufacture [`ApplicationDoesNotExistException`](crate::error::ApplicationDoesNotExistException).
@@ -2353,22 +2289,20 @@ impl ApplicationDoesNotExistException {
 /// <p>The maximum number of alarms for a deployment group (10) was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlarmsLimitExceededException {
+pub struct AlarmsLimitExceededException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AlarmsLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AlarmsLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AlarmsLimitExceededException")?;
         if let Some(inner_31) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_31)?;
             }
         }
@@ -2378,7 +2312,7 @@ impl std::fmt::Display for AlarmsLimitExceededException {
 impl std::error::Error for AlarmsLimitExceededException {}
 /// See [`AlarmsLimitExceededException`](crate::error::AlarmsLimitExceededException).
 pub mod alarms_limit_exceeded_exception {
-
+    
     /// A builder for [`AlarmsLimitExceededException`](crate::error::AlarmsLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2392,16 +2326,18 @@ pub mod alarms_limit_exceeded_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AlarmsLimitExceededException`](crate::error::AlarmsLimitExceededException).
         pub fn build(self) -> crate::error::AlarmsLimitExceededException {
             crate::error::AlarmsLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AlarmsLimitExceededException {
     /// Creates a new builder-style object to manufacture [`AlarmsLimitExceededException`](crate::error::AlarmsLimitExceededException).
@@ -2415,15 +2351,15 @@ impl AlarmsLimitExceededException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateApplicationError {
     /// Kind of error that occurred.
-    pub kind: UpdateApplicationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateApplicationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateApplicationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2439,24 +2375,34 @@ pub enum UpdateApplicationErrorKind {
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
     /// <p>The application name was specified in an invalid format.</p>
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateApplicationErrorKind::ApplicationAlreadyExistsException(_inner) => _inner.fmt(f),
-            UpdateApplicationErrorKind::ApplicationDoesNotExistException(_inner) => _inner.fmt(f),
-            UpdateApplicationErrorKind::ApplicationNameRequiredException(_inner) => _inner.fmt(f),
-            UpdateApplicationErrorKind::InvalidApplicationNameException(_inner) => _inner.fmt(f),
-            UpdateApplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateApplicationErrorKind::ApplicationAlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateApplicationErrorKind::ApplicationDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateApplicationErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateApplicationErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateApplicationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2470,83 +2416,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateApplicationError {
 }
 impl UpdateApplicationError {
     /// Creates a new `UpdateApplicationError`.
-    pub fn new(kind: UpdateApplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateApplicationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateApplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateApplicationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateApplicationErrorKind::ApplicationAlreadyExistsException`.
     pub fn is_application_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateApplicationErrorKind::ApplicationAlreadyExistsException(_)
-        )
+        matches!(&self.kind, UpdateApplicationErrorKind::ApplicationAlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `UpdateApplicationErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateApplicationErrorKind::ApplicationDoesNotExistException(_)
-        )
+        matches!(&self.kind, UpdateApplicationErrorKind::ApplicationDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `UpdateApplicationErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateApplicationErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, UpdateApplicationErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `UpdateApplicationErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateApplicationErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, UpdateApplicationErrorKind::InvalidApplicationNameException(_))
     }
 }
 impl std::error::Error for UpdateApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateApplicationErrorKind::ApplicationAlreadyExistsException(_inner) => Some(_inner),
-            UpdateApplicationErrorKind::ApplicationDoesNotExistException(_inner) => Some(_inner),
-            UpdateApplicationErrorKind::ApplicationNameRequiredException(_inner) => Some(_inner),
-            UpdateApplicationErrorKind::InvalidApplicationNameException(_inner) => Some(_inner),
-            UpdateApplicationErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateApplicationErrorKind::ApplicationAlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateApplicationErrorKind::ApplicationDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateApplicationErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateApplicationErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateApplicationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2554,22 +2498,20 @@ impl std::error::Error for UpdateApplicationError {
 /// <p>An application with the specified name with the IAM user or Amazon Web Services account already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationAlreadyExistsException {
+pub struct ApplicationAlreadyExistsException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ApplicationAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ApplicationAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApplicationAlreadyExistsException")?;
         if let Some(inner_32) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_32)?;
             }
         }
@@ -2579,7 +2521,7 @@ impl std::fmt::Display for ApplicationAlreadyExistsException {
 impl std::error::Error for ApplicationAlreadyExistsException {}
 /// See [`ApplicationAlreadyExistsException`](crate::error::ApplicationAlreadyExistsException).
 pub mod application_already_exists_exception {
-
+    
     /// A builder for [`ApplicationAlreadyExistsException`](crate::error::ApplicationAlreadyExistsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2593,16 +2535,18 @@ pub mod application_already_exists_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationAlreadyExistsException`](crate::error::ApplicationAlreadyExistsException).
         pub fn build(self) -> crate::error::ApplicationAlreadyExistsException {
             crate::error::ApplicationAlreadyExistsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`ApplicationAlreadyExistsException`](crate::error::ApplicationAlreadyExistsException).
@@ -2616,15 +2560,15 @@ impl ApplicationAlreadyExistsException {
 #[derive(std::fmt::Debug)]
 pub struct UntagResourceError {
     /// Kind of error that occurred.
-    pub kind: UntagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2648,28 +2592,46 @@ pub enum UntagResourceErrorKind {
     ResourceArnRequiredException(crate::error::ResourceArnRequiredException),
     /// <p>A tag was not specified.</p>
     TagRequiredException(crate::error::TagRequiredException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::ApplicationDoesNotExistException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ArnNotSupportedException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::DeploymentConfigDoesNotExistException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::DeploymentGroupDoesNotExistException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::InvalidTagsToAddException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ResourceArnRequiredException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::TagRequiredException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ApplicationDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ArnNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::DeploymentConfigDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::DeploymentGroupDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::InvalidTagsToAddException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ResourceArnRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::TagRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2683,73 +2645,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
 }
 impl UntagResourceError {
     /// Creates a new `UntagResourceError`.
-    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ApplicationDoesNotExistException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ApplicationDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ArnNotSupportedException`.
     pub fn is_arn_not_supported_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ArnNotSupportedException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ArnNotSupportedException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::DeploymentConfigDoesNotExistException`.
     pub fn is_deployment_config_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::DeploymentConfigDoesNotExistException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::DeploymentConfigDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::DeploymentGroupDoesNotExistException`.
     pub fn is_deployment_group_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::DeploymentGroupDoesNotExistException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::DeploymentGroupDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -2757,17 +2707,11 @@ impl UntagResourceError {
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidTagsToAddException`.
     pub fn is_invalid_tags_to_add_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::InvalidTagsToAddException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::InvalidTagsToAddException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceArnRequiredException`.
     pub fn is_resource_arn_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ResourceArnRequiredException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ResourceArnRequiredException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::TagRequiredException`.
     pub fn is_tag_required_exception(&self) -> bool {
@@ -2777,15 +2721,33 @@ impl UntagResourceError {
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::ApplicationDoesNotExistException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ArnNotSupportedException(_inner) => Some(_inner),
-            UntagResourceErrorKind::DeploymentConfigDoesNotExistException(_inner) => Some(_inner),
-            UntagResourceErrorKind::DeploymentGroupDoesNotExistException(_inner) => Some(_inner),
-            UntagResourceErrorKind::InvalidArnException(_inner) => Some(_inner),
-            UntagResourceErrorKind::InvalidTagsToAddException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ResourceArnRequiredException(_inner) => Some(_inner),
-            UntagResourceErrorKind::TagRequiredException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagResourceErrorKind::ApplicationDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ArnNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::DeploymentConfigDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::DeploymentGroupDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::InvalidTagsToAddException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ResourceArnRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::TagRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2793,22 +2755,20 @@ impl std::error::Error for UntagResourceError {
 /// <p>A tag was not specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagRequiredException {
+pub struct TagRequiredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TagRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TagRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagRequiredException")?;
         if let Some(inner_33) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_33)?;
             }
         }
@@ -2818,7 +2778,7 @@ impl std::fmt::Display for TagRequiredException {
 impl std::error::Error for TagRequiredException {}
 /// See [`TagRequiredException`](crate::error::TagRequiredException).
 pub mod tag_required_exception {
-
+    
     /// A builder for [`TagRequiredException`](crate::error::TagRequiredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2832,16 +2792,18 @@ pub mod tag_required_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TagRequiredException`](crate::error::TagRequiredException).
         pub fn build(self) -> crate::error::TagRequiredException {
             crate::error::TagRequiredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TagRequiredException {
     /// Creates a new builder-style object to manufacture [`TagRequiredException`](crate::error::TagRequiredException).
@@ -2853,22 +2815,20 @@ impl TagRequiredException {
 /// <p> The ARN of a resource is required, but was not found. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceArnRequiredException {
+pub struct ResourceArnRequiredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceArnRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceArnRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceArnRequiredException")?;
         if let Some(inner_34) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_34)?;
             }
         }
@@ -2878,7 +2838,7 @@ impl std::fmt::Display for ResourceArnRequiredException {
 impl std::error::Error for ResourceArnRequiredException {}
 /// See [`ResourceArnRequiredException`](crate::error::ResourceArnRequiredException).
 pub mod resource_arn_required_exception {
-
+    
     /// A builder for [`ResourceArnRequiredException`](crate::error::ResourceArnRequiredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2892,16 +2852,18 @@ pub mod resource_arn_required_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceArnRequiredException`](crate::error::ResourceArnRequiredException).
         pub fn build(self) -> crate::error::ResourceArnRequiredException {
             crate::error::ResourceArnRequiredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceArnRequiredException {
     /// Creates a new builder-style object to manufacture [`ResourceArnRequiredException`](crate::error::ResourceArnRequiredException).
@@ -2913,22 +2875,20 @@ impl ResourceArnRequiredException {
 /// <p> The specified tags are not valid. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidTagsToAddException {
+pub struct InvalidTagsToAddException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidTagsToAddException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidTagsToAddException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTagsToAddException")?;
         if let Some(inner_35) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_35)?;
             }
         }
@@ -2938,7 +2898,7 @@ impl std::fmt::Display for InvalidTagsToAddException {
 impl std::error::Error for InvalidTagsToAddException {}
 /// See [`InvalidTagsToAddException`](crate::error::InvalidTagsToAddException).
 pub mod invalid_tags_to_add_exception {
-
+    
     /// A builder for [`InvalidTagsToAddException`](crate::error::InvalidTagsToAddException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2952,16 +2912,18 @@ pub mod invalid_tags_to_add_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidTagsToAddException`](crate::error::InvalidTagsToAddException).
         pub fn build(self) -> crate::error::InvalidTagsToAddException {
             crate::error::InvalidTagsToAddException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidTagsToAddException {
     /// Creates a new builder-style object to manufacture [`InvalidTagsToAddException`](crate::error::InvalidTagsToAddException).
@@ -2973,22 +2935,20 @@ impl InvalidTagsToAddException {
 /// <p> The specified ARN is not in a valid format. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidArnException {
+pub struct InvalidArnException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidArnException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidArnException")?;
         if let Some(inner_36) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_36)?;
             }
         }
@@ -2998,7 +2958,7 @@ impl std::fmt::Display for InvalidArnException {
 impl std::error::Error for InvalidArnException {}
 /// See [`InvalidArnException`](crate::error::InvalidArnException).
 pub mod invalid_arn_exception {
-
+    
     /// A builder for [`InvalidArnException`](crate::error::InvalidArnException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3012,16 +2972,18 @@ pub mod invalid_arn_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidArnException`](crate::error::InvalidArnException).
         pub fn build(self) -> crate::error::InvalidArnException {
             crate::error::InvalidArnException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidArnException {
     /// Creates a new builder-style object to manufacture [`InvalidArnException`](crate::error::InvalidArnException).
@@ -3033,22 +2995,20 @@ impl InvalidArnException {
 /// <p> The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArnNotSupportedException {
+pub struct ArnNotSupportedException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ArnNotSupportedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ArnNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ArnNotSupportedException")?;
         if let Some(inner_37) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_37)?;
             }
         }
@@ -3058,7 +3018,7 @@ impl std::fmt::Display for ArnNotSupportedException {
 impl std::error::Error for ArnNotSupportedException {}
 /// See [`ArnNotSupportedException`](crate::error::ArnNotSupportedException).
 pub mod arn_not_supported_exception {
-
+    
     /// A builder for [`ArnNotSupportedException`](crate::error::ArnNotSupportedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3072,16 +3032,18 @@ pub mod arn_not_supported_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ArnNotSupportedException`](crate::error::ArnNotSupportedException).
         pub fn build(self) -> crate::error::ArnNotSupportedException {
             crate::error::ArnNotSupportedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ArnNotSupportedException {
     /// Creates a new builder-style object to manufacture [`ArnNotSupportedException`](crate::error::ArnNotSupportedException).
@@ -3095,15 +3057,15 @@ impl ArnNotSupportedException {
 #[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     /// Kind of error that occurred.
-    pub kind: TagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3127,28 +3089,46 @@ pub enum TagResourceErrorKind {
     ResourceArnRequiredException(crate::error::ResourceArnRequiredException),
     /// <p>A tag was not specified.</p>
     TagRequiredException(crate::error::TagRequiredException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::ApplicationDoesNotExistException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ArnNotSupportedException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::DeploymentConfigDoesNotExistException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::DeploymentGroupDoesNotExistException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::InvalidTagsToAddException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ResourceArnRequiredException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::TagRequiredException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ApplicationDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ArnNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::DeploymentConfigDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::DeploymentGroupDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::InvalidTagsToAddException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ResourceArnRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::TagRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3162,73 +3142,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
 }
 impl TagResourceError {
     /// Creates a new `TagResourceError`.
-    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::ApplicationDoesNotExistException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::ApplicationDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ArnNotSupportedException`.
     pub fn is_arn_not_supported_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::ArnNotSupportedException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::ArnNotSupportedException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::DeploymentConfigDoesNotExistException`.
     pub fn is_deployment_config_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::DeploymentConfigDoesNotExistException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::DeploymentConfigDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::DeploymentGroupDoesNotExistException`.
     pub fn is_deployment_group_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::DeploymentGroupDoesNotExistException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::DeploymentGroupDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -3236,17 +3204,11 @@ impl TagResourceError {
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidTagsToAddException`.
     pub fn is_invalid_tags_to_add_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::InvalidTagsToAddException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::InvalidTagsToAddException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceArnRequiredException`.
     pub fn is_resource_arn_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::ResourceArnRequiredException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::ResourceArnRequiredException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::TagRequiredException`.
     pub fn is_tag_required_exception(&self) -> bool {
@@ -3256,15 +3218,33 @@ impl TagResourceError {
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::ApplicationDoesNotExistException(_inner) => Some(_inner),
-            TagResourceErrorKind::ArnNotSupportedException(_inner) => Some(_inner),
-            TagResourceErrorKind::DeploymentConfigDoesNotExistException(_inner) => Some(_inner),
-            TagResourceErrorKind::DeploymentGroupDoesNotExistException(_inner) => Some(_inner),
-            TagResourceErrorKind::InvalidArnException(_inner) => Some(_inner),
-            TagResourceErrorKind::InvalidTagsToAddException(_inner) => Some(_inner),
-            TagResourceErrorKind::ResourceArnRequiredException(_inner) => Some(_inner),
-            TagResourceErrorKind::TagRequiredException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            TagResourceErrorKind::ApplicationDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ArnNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::DeploymentConfigDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::DeploymentGroupDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::InvalidTagsToAddException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ResourceArnRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::TagRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3274,15 +3254,15 @@ impl std::error::Error for TagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct StopDeploymentError {
     /// Kind of error that occurred.
-    pub kind: StopDeploymentErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StopDeploymentErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StopDeploymentError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StopDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3301,31 +3281,41 @@ pub enum StopDeploymentErrorKind {
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
     /// <p>A call was submitted that is not supported for the specified deployment type.</p>
-    UnsupportedActionForDeploymentTypeException(
-        crate::error::UnsupportedActionForDeploymentTypeException,
-    ),
-    ///
+    UnsupportedActionForDeploymentTypeException(crate::error::UnsupportedActionForDeploymentTypeException),
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StopDeploymentErrorKind::DeploymentAlreadyCompletedException(_inner) => _inner.fmt(f),
-            StopDeploymentErrorKind::DeploymentDoesNotExistException(_inner) => _inner.fmt(f),
-            StopDeploymentErrorKind::DeploymentGroupDoesNotExistException(_inner) => _inner.fmt(f),
-            StopDeploymentErrorKind::DeploymentIdRequiredException(_inner) => _inner.fmt(f),
-            StopDeploymentErrorKind::InvalidDeploymentIdException(_inner) => _inner.fmt(f),
-            StopDeploymentErrorKind::UnsupportedActionForDeploymentTypeException(_inner) => {
+            StopDeploymentErrorKind::DeploymentAlreadyCompletedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopDeploymentErrorKind::DeploymentDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopDeploymentErrorKind::DeploymentGroupDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopDeploymentErrorKind::DeploymentIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopDeploymentErrorKind::InvalidDeploymentIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopDeploymentErrorKind::UnsupportedActionForDeploymentTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopDeploymentErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            StopDeploymentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3339,101 +3329,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for StopDeploymentError {
 }
 impl StopDeploymentError {
     /// Creates a new `StopDeploymentError`.
-    pub fn new(kind: StopDeploymentErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StopDeploymentError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StopDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StopDeploymentError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StopDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StopDeploymentErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StopDeploymentError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StopDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StopDeploymentError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StopDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StopDeploymentErrorKind::DeploymentAlreadyCompletedException`.
     pub fn is_deployment_already_completed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopDeploymentErrorKind::DeploymentAlreadyCompletedException(_)
-        )
+        matches!(&self.kind, StopDeploymentErrorKind::DeploymentAlreadyCompletedException(_))
     }
     /// Returns `true` if the error kind is `StopDeploymentErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopDeploymentErrorKind::DeploymentDoesNotExistException(_)
-        )
+        matches!(&self.kind, StopDeploymentErrorKind::DeploymentDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `StopDeploymentErrorKind::DeploymentGroupDoesNotExistException`.
     pub fn is_deployment_group_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopDeploymentErrorKind::DeploymentGroupDoesNotExistException(_)
-        )
+        matches!(&self.kind, StopDeploymentErrorKind::DeploymentGroupDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `StopDeploymentErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopDeploymentErrorKind::DeploymentIdRequiredException(_)
-        )
+        matches!(&self.kind, StopDeploymentErrorKind::DeploymentIdRequiredException(_))
     }
     /// Returns `true` if the error kind is `StopDeploymentErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopDeploymentErrorKind::InvalidDeploymentIdException(_)
-        )
+        matches!(&self.kind, StopDeploymentErrorKind::InvalidDeploymentIdException(_))
     }
     /// Returns `true` if the error kind is `StopDeploymentErrorKind::UnsupportedActionForDeploymentTypeException`.
     pub fn is_unsupported_action_for_deployment_type_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopDeploymentErrorKind::UnsupportedActionForDeploymentTypeException(_)
-        )
+        matches!(&self.kind, StopDeploymentErrorKind::UnsupportedActionForDeploymentTypeException(_))
     }
 }
 impl std::error::Error for StopDeploymentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StopDeploymentErrorKind::DeploymentAlreadyCompletedException(_inner) => Some(_inner),
-            StopDeploymentErrorKind::DeploymentDoesNotExistException(_inner) => Some(_inner),
-            StopDeploymentErrorKind::DeploymentGroupDoesNotExistException(_inner) => Some(_inner),
-            StopDeploymentErrorKind::DeploymentIdRequiredException(_inner) => Some(_inner),
-            StopDeploymentErrorKind::InvalidDeploymentIdException(_inner) => Some(_inner),
-            StopDeploymentErrorKind::UnsupportedActionForDeploymentTypeException(_inner) => {
+            StopDeploymentErrorKind::DeploymentAlreadyCompletedException(_inner) =>
+            Some(_inner)
+            ,
+            StopDeploymentErrorKind::DeploymentDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            StopDeploymentErrorKind::DeploymentGroupDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            StopDeploymentErrorKind::DeploymentIdRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            StopDeploymentErrorKind::InvalidDeploymentIdException(_inner) =>
+            Some(_inner)
+            ,
+            StopDeploymentErrorKind::UnsupportedActionForDeploymentTypeException(_inner) =>
+            Some(_inner)
+            ,
+            StopDeploymentErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            StopDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3441,22 +3425,20 @@ impl std::error::Error for StopDeploymentError {
 /// <p>A call was submitted that is not supported for the specified deployment type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedActionForDeploymentTypeException {
+pub struct UnsupportedActionForDeploymentTypeException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnsupportedActionForDeploymentTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnsupportedActionForDeploymentTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedActionForDeploymentTypeException")?;
         if let Some(inner_38) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_38)?;
             }
         }
@@ -3466,7 +3448,7 @@ impl std::fmt::Display for UnsupportedActionForDeploymentTypeException {
 impl std::error::Error for UnsupportedActionForDeploymentTypeException {}
 /// See [`UnsupportedActionForDeploymentTypeException`](crate::error::UnsupportedActionForDeploymentTypeException).
 pub mod unsupported_action_for_deployment_type_exception {
-
+    
     /// A builder for [`UnsupportedActionForDeploymentTypeException`](crate::error::UnsupportedActionForDeploymentTypeException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3480,16 +3462,18 @@ pub mod unsupported_action_for_deployment_type_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnsupportedActionForDeploymentTypeException`](crate::error::UnsupportedActionForDeploymentTypeException).
         pub fn build(self) -> crate::error::UnsupportedActionForDeploymentTypeException {
             crate::error::UnsupportedActionForDeploymentTypeException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnsupportedActionForDeploymentTypeException {
     /// Creates a new builder-style object to manufacture [`UnsupportedActionForDeploymentTypeException`](crate::error::UnsupportedActionForDeploymentTypeException).
@@ -3501,22 +3485,20 @@ impl UnsupportedActionForDeploymentTypeException {
 /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidDeploymentIdException {
+pub struct InvalidDeploymentIdException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidDeploymentIdException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidDeploymentIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDeploymentIdException")?;
         if let Some(inner_39) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_39)?;
             }
         }
@@ -3526,7 +3508,7 @@ impl std::fmt::Display for InvalidDeploymentIdException {
 impl std::error::Error for InvalidDeploymentIdException {}
 /// See [`InvalidDeploymentIdException`](crate::error::InvalidDeploymentIdException).
 pub mod invalid_deployment_id_exception {
-
+    
     /// A builder for [`InvalidDeploymentIdException`](crate::error::InvalidDeploymentIdException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3540,16 +3522,18 @@ pub mod invalid_deployment_id_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidDeploymentIdException`](crate::error::InvalidDeploymentIdException).
         pub fn build(self) -> crate::error::InvalidDeploymentIdException {
             crate::error::InvalidDeploymentIdException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidDeploymentIdException {
     /// Creates a new builder-style object to manufacture [`InvalidDeploymentIdException`](crate::error::InvalidDeploymentIdException).
@@ -3561,22 +3545,20 @@ impl InvalidDeploymentIdException {
 /// <p>At least one deployment ID must be specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentIdRequiredException {
+pub struct DeploymentIdRequiredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentIdRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentIdRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentIdRequiredException")?;
         if let Some(inner_40) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_40)?;
             }
         }
@@ -3586,7 +3568,7 @@ impl std::fmt::Display for DeploymentIdRequiredException {
 impl std::error::Error for DeploymentIdRequiredException {}
 /// See [`DeploymentIdRequiredException`](crate::error::DeploymentIdRequiredException).
 pub mod deployment_id_required_exception {
-
+    
     /// A builder for [`DeploymentIdRequiredException`](crate::error::DeploymentIdRequiredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3600,16 +3582,18 @@ pub mod deployment_id_required_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentIdRequiredException`](crate::error::DeploymentIdRequiredException).
         pub fn build(self) -> crate::error::DeploymentIdRequiredException {
             crate::error::DeploymentIdRequiredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentIdRequiredException {
     /// Creates a new builder-style object to manufacture [`DeploymentIdRequiredException`](crate::error::DeploymentIdRequiredException).
@@ -3621,22 +3605,20 @@ impl DeploymentIdRequiredException {
 /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentDoesNotExistException {
+pub struct DeploymentDoesNotExistException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentDoesNotExistException")?;
         if let Some(inner_41) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_41)?;
             }
         }
@@ -3646,7 +3628,7 @@ impl std::fmt::Display for DeploymentDoesNotExistException {
 impl std::error::Error for DeploymentDoesNotExistException {}
 /// See [`DeploymentDoesNotExistException`](crate::error::DeploymentDoesNotExistException).
 pub mod deployment_does_not_exist_exception {
-
+    
     /// A builder for [`DeploymentDoesNotExistException`](crate::error::DeploymentDoesNotExistException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3660,16 +3642,18 @@ pub mod deployment_does_not_exist_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentDoesNotExistException`](crate::error::DeploymentDoesNotExistException).
         pub fn build(self) -> crate::error::DeploymentDoesNotExistException {
             crate::error::DeploymentDoesNotExistException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentDoesNotExistException {
     /// Creates a new builder-style object to manufacture [`DeploymentDoesNotExistException`](crate::error::DeploymentDoesNotExistException).
@@ -3681,22 +3665,20 @@ impl DeploymentDoesNotExistException {
 /// <p>The deployment is already complete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentAlreadyCompletedException {
+pub struct DeploymentAlreadyCompletedException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentAlreadyCompletedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentAlreadyCompletedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentAlreadyCompletedException")?;
         if let Some(inner_42) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_42)?;
             }
         }
@@ -3706,7 +3688,7 @@ impl std::fmt::Display for DeploymentAlreadyCompletedException {
 impl std::error::Error for DeploymentAlreadyCompletedException {}
 /// See [`DeploymentAlreadyCompletedException`](crate::error::DeploymentAlreadyCompletedException).
 pub mod deployment_already_completed_exception {
-
+    
     /// A builder for [`DeploymentAlreadyCompletedException`](crate::error::DeploymentAlreadyCompletedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3720,16 +3702,18 @@ pub mod deployment_already_completed_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentAlreadyCompletedException`](crate::error::DeploymentAlreadyCompletedException).
         pub fn build(self) -> crate::error::DeploymentAlreadyCompletedException {
             crate::error::DeploymentAlreadyCompletedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentAlreadyCompletedException {
     /// Creates a new builder-style object to manufacture [`DeploymentAlreadyCompletedException`](crate::error::DeploymentAlreadyCompletedException).
@@ -3743,17 +3727,15 @@ impl DeploymentAlreadyCompletedException {
 #[derive(std::fmt::Debug)]
 pub struct SkipWaitTimeForInstanceTerminationError {
     /// Kind of error that occurred.
-    pub kind: SkipWaitTimeForInstanceTerminationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: SkipWaitTimeForInstanceTerminationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for SkipWaitTimeForInstanceTerminationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: SkipWaitTimeForInstanceTerminationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: SkipWaitTimeForInstanceTerminationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3772,17 +3754,15 @@ pub enum SkipWaitTimeForInstanceTerminationErrorKind {
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
     /// <p>A call was submitted that is not supported for the specified deployment type.</p>
-    UnsupportedActionForDeploymentTypeException(
-        crate::error::UnsupportedActionForDeploymentTypeException,
-    ),
-    ///
+    UnsupportedActionForDeploymentTypeException(crate::error::UnsupportedActionForDeploymentTypeException),
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SkipWaitTimeForInstanceTerminationError {
@@ -3822,87 +3802,65 @@ impl aws_smithy_types::retry::ProvideErrorKind for SkipWaitTimeForInstanceTermin
 }
 impl SkipWaitTimeForInstanceTerminationError {
     /// Creates a new `SkipWaitTimeForInstanceTerminationError`.
-    pub fn new(
-        kind: SkipWaitTimeForInstanceTerminationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `SkipWaitTimeForInstanceTerminationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SkipWaitTimeForInstanceTerminationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `SkipWaitTimeForInstanceTerminationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SkipWaitTimeForInstanceTerminationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: SkipWaitTimeForInstanceTerminationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `SkipWaitTimeForInstanceTerminationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: SkipWaitTimeForInstanceTerminationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `SkipWaitTimeForInstanceTerminationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: SkipWaitTimeForInstanceTerminationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::DeploymentAlreadyCompletedException`.
     pub fn is_deployment_already_completed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SkipWaitTimeForInstanceTerminationErrorKind::DeploymentAlreadyCompletedException(_)
-        )
+        matches!(&self.kind, SkipWaitTimeForInstanceTerminationErrorKind::DeploymentAlreadyCompletedException(_))
     }
     /// Returns `true` if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SkipWaitTimeForInstanceTerminationErrorKind::DeploymentDoesNotExistException(_)
-        )
+        matches!(&self.kind, SkipWaitTimeForInstanceTerminationErrorKind::DeploymentDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SkipWaitTimeForInstanceTerminationErrorKind::DeploymentIdRequiredException(_)
-        )
+        matches!(&self.kind, SkipWaitTimeForInstanceTerminationErrorKind::DeploymentIdRequiredException(_))
     }
     /// Returns `true` if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::DeploymentNotStartedException`.
     pub fn is_deployment_not_started_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SkipWaitTimeForInstanceTerminationErrorKind::DeploymentNotStartedException(_)
-        )
+        matches!(&self.kind, SkipWaitTimeForInstanceTerminationErrorKind::DeploymentNotStartedException(_))
     }
     /// Returns `true` if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SkipWaitTimeForInstanceTerminationErrorKind::InvalidDeploymentIdException(_)
-        )
+        matches!(&self.kind, SkipWaitTimeForInstanceTerminationErrorKind::InvalidDeploymentIdException(_))
     }
     /// Returns `true` if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::UnsupportedActionForDeploymentTypeException`.
     pub fn is_unsupported_action_for_deployment_type_exception(&self) -> bool {
@@ -3940,22 +3898,20 @@ impl std::error::Error for SkipWaitTimeForInstanceTerminationError {
 /// <p>The specified deployment has not started.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentNotStartedException {
+pub struct DeploymentNotStartedException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentNotStartedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentNotStartedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentNotStartedException")?;
         if let Some(inner_43) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_43)?;
             }
         }
@@ -3965,7 +3921,7 @@ impl std::fmt::Display for DeploymentNotStartedException {
 impl std::error::Error for DeploymentNotStartedException {}
 /// See [`DeploymentNotStartedException`](crate::error::DeploymentNotStartedException).
 pub mod deployment_not_started_exception {
-
+    
     /// A builder for [`DeploymentNotStartedException`](crate::error::DeploymentNotStartedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3979,16 +3935,18 @@ pub mod deployment_not_started_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentNotStartedException`](crate::error::DeploymentNotStartedException).
         pub fn build(self) -> crate::error::DeploymentNotStartedException {
             crate::error::DeploymentNotStartedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentNotStartedException {
     /// Creates a new builder-style object to manufacture [`DeploymentNotStartedException`](crate::error::DeploymentNotStartedException).
@@ -4002,17 +3960,15 @@ impl DeploymentNotStartedException {
 #[derive(std::fmt::Debug)]
 pub struct RemoveTagsFromOnPremisesInstancesError {
     /// Kind of error that occurred.
-    pub kind: RemoveTagsFromOnPremisesInstancesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RemoveTagsFromOnPremisesInstancesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RemoveTagsFromOnPremisesInstancesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: RemoveTagsFromOnPremisesInstancesErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: RemoveTagsFromOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4034,41 +3990,43 @@ pub enum RemoveTagsFromOnPremisesInstancesErrorKind {
     TagLimitExceededException(crate::error::TagLimitExceededException),
     /// <p>A tag was not specified.</p>
     TagRequiredException(crate::error::TagRequiredException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveTagsFromOnPremisesInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemoveTagsFromOnPremisesInstancesErrorKind::InstanceLimitExceededException(_inner) => {
+            RemoveTagsFromOnPremisesInstancesErrorKind::InstanceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNotRegisteredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromOnPremisesInstancesErrorKind::InvalidInstanceNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromOnPremisesInstancesErrorKind::InvalidTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromOnPremisesInstancesErrorKind::TagLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromOnPremisesInstancesErrorKind::TagRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveTagsFromOnPremisesInstancesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNotRegisteredException(_inner) => {
-                _inner.fmt(f)
-            }
-            RemoveTagsFromOnPremisesInstancesErrorKind::InvalidInstanceNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            RemoveTagsFromOnPremisesInstancesErrorKind::InvalidTagException(_inner) => {
-                _inner.fmt(f)
-            }
-            RemoveTagsFromOnPremisesInstancesErrorKind::TagLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            RemoveTagsFromOnPremisesInstancesErrorKind::TagRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            RemoveTagsFromOnPremisesInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4082,126 +4040,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for RemoveTagsFromOnPremisesInsta
 }
 impl RemoveTagsFromOnPremisesInstancesError {
     /// Creates a new `RemoveTagsFromOnPremisesInstancesError`.
-    pub fn new(
-        kind: RemoveTagsFromOnPremisesInstancesErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RemoveTagsFromOnPremisesInstancesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RemoveTagsFromOnPremisesInstancesErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RemoveTagsFromOnPremisesInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RemoveTagsFromOnPremisesInstancesErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RemoveTagsFromOnPremisesInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RemoveTagsFromOnPremisesInstancesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RemoveTagsFromOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RemoveTagsFromOnPremisesInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RemoveTagsFromOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::InstanceLimitExceededException`.
     pub fn is_instance_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromOnPremisesInstancesErrorKind::InstanceLimitExceededException(_)
-        )
+        matches!(&self.kind, RemoveTagsFromOnPremisesInstancesErrorKind::InstanceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNameRequiredException`.
     pub fn is_instance_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNameRequiredException(_)
-        )
+        matches!(&self.kind, RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNotRegisteredException`.
     pub fn is_instance_not_registered_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNotRegisteredException(_)
-        )
+        matches!(&self.kind, RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNotRegisteredException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromOnPremisesInstancesErrorKind::InvalidInstanceNameException(_)
-        )
+        matches!(&self.kind, RemoveTagsFromOnPremisesInstancesErrorKind::InvalidInstanceNameException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromOnPremisesInstancesErrorKind::InvalidTagException(_)
-        )
+        matches!(&self.kind, RemoveTagsFromOnPremisesInstancesErrorKind::InvalidTagException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::TagLimitExceededException`.
     pub fn is_tag_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromOnPremisesInstancesErrorKind::TagLimitExceededException(_)
-        )
+        matches!(&self.kind, RemoveTagsFromOnPremisesInstancesErrorKind::TagLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::TagRequiredException`.
     pub fn is_tag_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveTagsFromOnPremisesInstancesErrorKind::TagRequiredException(_)
-        )
+        matches!(&self.kind, RemoveTagsFromOnPremisesInstancesErrorKind::TagRequiredException(_))
     }
 }
 impl std::error::Error for RemoveTagsFromOnPremisesInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemoveTagsFromOnPremisesInstancesErrorKind::InstanceLimitExceededException(_inner) => {
+            RemoveTagsFromOnPremisesInstancesErrorKind::InstanceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNotRegisteredException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromOnPremisesInstancesErrorKind::InvalidInstanceNameException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromOnPremisesInstancesErrorKind::InvalidTagException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromOnPremisesInstancesErrorKind::TagLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromOnPremisesInstancesErrorKind::TagRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveTagsFromOnPremisesInstancesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNotRegisteredException(_inner) => {
-                Some(_inner)
-            }
-            RemoveTagsFromOnPremisesInstancesErrorKind::InvalidInstanceNameException(_inner) => {
-                Some(_inner)
-            }
-            RemoveTagsFromOnPremisesInstancesErrorKind::InvalidTagException(_inner) => Some(_inner),
-            RemoveTagsFromOnPremisesInstancesErrorKind::TagLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            RemoveTagsFromOnPremisesInstancesErrorKind::TagRequiredException(_inner) => {
-                Some(_inner)
-            }
-            RemoveTagsFromOnPremisesInstancesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4209,22 +4143,20 @@ impl std::error::Error for RemoveTagsFromOnPremisesInstancesError {
 /// <p>The maximum allowed number of tags was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagLimitExceededException {
+pub struct TagLimitExceededException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TagLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TagLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagLimitExceededException")?;
         if let Some(inner_44) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_44)?;
             }
         }
@@ -4234,7 +4166,7 @@ impl std::fmt::Display for TagLimitExceededException {
 impl std::error::Error for TagLimitExceededException {}
 /// See [`TagLimitExceededException`](crate::error::TagLimitExceededException).
 pub mod tag_limit_exceeded_exception {
-
+    
     /// A builder for [`TagLimitExceededException`](crate::error::TagLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4248,16 +4180,18 @@ pub mod tag_limit_exceeded_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TagLimitExceededException`](crate::error::TagLimitExceededException).
         pub fn build(self) -> crate::error::TagLimitExceededException {
             crate::error::TagLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TagLimitExceededException {
     /// Creates a new builder-style object to manufacture [`TagLimitExceededException`](crate::error::TagLimitExceededException).
@@ -4269,22 +4203,20 @@ impl TagLimitExceededException {
 /// <p>The on-premises instance name was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidInstanceNameException {
+pub struct InvalidInstanceNameException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidInstanceNameException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidInstanceNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidInstanceNameException")?;
         if let Some(inner_45) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_45)?;
             }
         }
@@ -4294,7 +4226,7 @@ impl std::fmt::Display for InvalidInstanceNameException {
 impl std::error::Error for InvalidInstanceNameException {}
 /// See [`InvalidInstanceNameException`](crate::error::InvalidInstanceNameException).
 pub mod invalid_instance_name_exception {
-
+    
     /// A builder for [`InvalidInstanceNameException`](crate::error::InvalidInstanceNameException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4308,16 +4240,18 @@ pub mod invalid_instance_name_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidInstanceNameException`](crate::error::InvalidInstanceNameException).
         pub fn build(self) -> crate::error::InvalidInstanceNameException {
             crate::error::InvalidInstanceNameException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidInstanceNameException {
     /// Creates a new builder-style object to manufacture [`InvalidInstanceNameException`](crate::error::InvalidInstanceNameException).
@@ -4329,22 +4263,20 @@ impl InvalidInstanceNameException {
 /// <p>The specified on-premises instance is not registered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceNotRegisteredException {
+pub struct InstanceNotRegisteredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InstanceNotRegisteredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InstanceNotRegisteredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InstanceNotRegisteredException")?;
         if let Some(inner_46) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_46)?;
             }
         }
@@ -4354,7 +4286,7 @@ impl std::fmt::Display for InstanceNotRegisteredException {
 impl std::error::Error for InstanceNotRegisteredException {}
 /// See [`InstanceNotRegisteredException`](crate::error::InstanceNotRegisteredException).
 pub mod instance_not_registered_exception {
-
+    
     /// A builder for [`InstanceNotRegisteredException`](crate::error::InstanceNotRegisteredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4368,16 +4300,18 @@ pub mod instance_not_registered_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InstanceNotRegisteredException`](crate::error::InstanceNotRegisteredException).
         pub fn build(self) -> crate::error::InstanceNotRegisteredException {
             crate::error::InstanceNotRegisteredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceNotRegisteredException {
     /// Creates a new builder-style object to manufacture [`InstanceNotRegisteredException`](crate::error::InstanceNotRegisteredException).
@@ -4389,22 +4323,20 @@ impl InstanceNotRegisteredException {
 /// <p>An on-premises instance name was not specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceNameRequiredException {
+pub struct InstanceNameRequiredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InstanceNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InstanceNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InstanceNameRequiredException")?;
         if let Some(inner_47) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_47)?;
             }
         }
@@ -4414,7 +4346,7 @@ impl std::fmt::Display for InstanceNameRequiredException {
 impl std::error::Error for InstanceNameRequiredException {}
 /// See [`InstanceNameRequiredException`](crate::error::InstanceNameRequiredException).
 pub mod instance_name_required_exception {
-
+    
     /// A builder for [`InstanceNameRequiredException`](crate::error::InstanceNameRequiredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4428,16 +4360,18 @@ pub mod instance_name_required_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InstanceNameRequiredException`](crate::error::InstanceNameRequiredException).
         pub fn build(self) -> crate::error::InstanceNameRequiredException {
             crate::error::InstanceNameRequiredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceNameRequiredException {
     /// Creates a new builder-style object to manufacture [`InstanceNameRequiredException`](crate::error::InstanceNameRequiredException).
@@ -4449,22 +4383,20 @@ impl InstanceNameRequiredException {
 /// <p>The maximum number of allowed on-premises instances in a single call was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceLimitExceededException {
+pub struct InstanceLimitExceededException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InstanceLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InstanceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InstanceLimitExceededException")?;
         if let Some(inner_48) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_48)?;
             }
         }
@@ -4474,7 +4406,7 @@ impl std::fmt::Display for InstanceLimitExceededException {
 impl std::error::Error for InstanceLimitExceededException {}
 /// See [`InstanceLimitExceededException`](crate::error::InstanceLimitExceededException).
 pub mod instance_limit_exceeded_exception {
-
+    
     /// A builder for [`InstanceLimitExceededException`](crate::error::InstanceLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4488,16 +4420,18 @@ pub mod instance_limit_exceeded_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InstanceLimitExceededException`](crate::error::InstanceLimitExceededException).
         pub fn build(self) -> crate::error::InstanceLimitExceededException {
             crate::error::InstanceLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceLimitExceededException {
     /// Creates a new builder-style object to manufacture [`InstanceLimitExceededException`](crate::error::InstanceLimitExceededException).
@@ -4511,17 +4445,15 @@ impl InstanceLimitExceededException {
 #[derive(std::fmt::Debug)]
 pub struct RegisterOnPremisesInstanceError {
     /// Kind of error that occurred.
-    pub kind: RegisterOnPremisesInstanceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RegisterOnPremisesInstanceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RegisterOnPremisesInstanceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: RegisterOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: RegisterOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4549,48 +4481,52 @@ pub enum RegisterOnPremisesInstanceErrorKind {
     InvalidInstanceNameException(crate::error::InvalidInstanceNameException),
     /// <p>Both an IAM user ARN and an IAM session ARN were included in the request. Use only one ARN type.</p>
     MultipleIamArnsProvidedException(crate::error::MultipleIamArnsProvidedException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterOnPremisesInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RegisterOnPremisesInstanceErrorKind::IamArnRequiredException(_inner) => _inner.fmt(f),
-            RegisterOnPremisesInstanceErrorKind::IamSessionArnAlreadyRegisteredException(
-                _inner,
-            ) => _inner.fmt(f),
-            RegisterOnPremisesInstanceErrorKind::IamUserArnAlreadyRegisteredException(_inner) => {
+            RegisterOnPremisesInstanceErrorKind::IamArnRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOnPremisesInstanceErrorKind::IamSessionArnAlreadyRegisteredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOnPremisesInstanceErrorKind::IamUserArnAlreadyRegisteredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOnPremisesInstanceErrorKind::IamUserArnRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOnPremisesInstanceErrorKind::InstanceNameAlreadyRegisteredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOnPremisesInstanceErrorKind::InvalidIamSessionArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOnPremisesInstanceErrorKind::InvalidIamUserArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOnPremisesInstanceErrorKind::MultipleIamArnsProvidedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterOnPremisesInstanceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            RegisterOnPremisesInstanceErrorKind::IamUserArnRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterOnPremisesInstanceErrorKind::InstanceNameAlreadyRegisteredException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterOnPremisesInstanceErrorKind::InvalidIamSessionArnException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterOnPremisesInstanceErrorKind::InvalidIamUserArnException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterOnPremisesInstanceErrorKind::MultipleIamArnsProvidedException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterOnPremisesInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4604,151 +4540,123 @@ impl aws_smithy_types::retry::ProvideErrorKind for RegisterOnPremisesInstanceErr
 }
 impl RegisterOnPremisesInstanceError {
     /// Creates a new `RegisterOnPremisesInstanceError`.
-    pub fn new(kind: RegisterOnPremisesInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RegisterOnPremisesInstanceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RegisterOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RegisterOnPremisesInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RegisterOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RegisterOnPremisesInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RegisterOnPremisesInstanceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RegisterOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RegisterOnPremisesInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RegisterOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::IamArnRequiredException`.
     pub fn is_iam_arn_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterOnPremisesInstanceErrorKind::IamArnRequiredException(_)
-        )
+        matches!(&self.kind, RegisterOnPremisesInstanceErrorKind::IamArnRequiredException(_))
     }
     /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::IamSessionArnAlreadyRegisteredException`.
     pub fn is_iam_session_arn_already_registered_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterOnPremisesInstanceErrorKind::IamSessionArnAlreadyRegisteredException(_)
-        )
+        matches!(&self.kind, RegisterOnPremisesInstanceErrorKind::IamSessionArnAlreadyRegisteredException(_))
     }
     /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::IamUserArnAlreadyRegisteredException`.
     pub fn is_iam_user_arn_already_registered_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterOnPremisesInstanceErrorKind::IamUserArnAlreadyRegisteredException(_)
-        )
+        matches!(&self.kind, RegisterOnPremisesInstanceErrorKind::IamUserArnAlreadyRegisteredException(_))
     }
     /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::IamUserArnRequiredException`.
     pub fn is_iam_user_arn_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterOnPremisesInstanceErrorKind::IamUserArnRequiredException(_)
-        )
+        matches!(&self.kind, RegisterOnPremisesInstanceErrorKind::IamUserArnRequiredException(_))
     }
     /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::InstanceNameAlreadyRegisteredException`.
     pub fn is_instance_name_already_registered_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterOnPremisesInstanceErrorKind::InstanceNameAlreadyRegisteredException(_)
-        )
+        matches!(&self.kind, RegisterOnPremisesInstanceErrorKind::InstanceNameAlreadyRegisteredException(_))
     }
     /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::InstanceNameRequiredException`.
     pub fn is_instance_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(_)
-        )
+        matches!(&self.kind, RegisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::InvalidIamSessionArnException`.
     pub fn is_invalid_iam_session_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterOnPremisesInstanceErrorKind::InvalidIamSessionArnException(_)
-        )
+        matches!(&self.kind, RegisterOnPremisesInstanceErrorKind::InvalidIamSessionArnException(_))
     }
     /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::InvalidIamUserArnException`.
     pub fn is_invalid_iam_user_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterOnPremisesInstanceErrorKind::InvalidIamUserArnException(_)
-        )
+        matches!(&self.kind, RegisterOnPremisesInstanceErrorKind::InvalidIamUserArnException(_))
     }
     /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(_)
-        )
+        matches!(&self.kind, RegisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(_))
     }
     /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::MultipleIamArnsProvidedException`.
     pub fn is_multiple_iam_arns_provided_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterOnPremisesInstanceErrorKind::MultipleIamArnsProvidedException(_)
-        )
+        matches!(&self.kind, RegisterOnPremisesInstanceErrorKind::MultipleIamArnsProvidedException(_))
     }
 }
 impl std::error::Error for RegisterOnPremisesInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RegisterOnPremisesInstanceErrorKind::IamArnRequiredException(_inner) => Some(_inner),
-            RegisterOnPremisesInstanceErrorKind::IamSessionArnAlreadyRegisteredException(
-                _inner,
-            ) => Some(_inner),
-            RegisterOnPremisesInstanceErrorKind::IamUserArnAlreadyRegisteredException(_inner) => {
+            RegisterOnPremisesInstanceErrorKind::IamArnRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOnPremisesInstanceErrorKind::IamSessionArnAlreadyRegisteredException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOnPremisesInstanceErrorKind::IamUserArnAlreadyRegisteredException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOnPremisesInstanceErrorKind::IamUserArnRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOnPremisesInstanceErrorKind::InstanceNameAlreadyRegisteredException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOnPremisesInstanceErrorKind::InvalidIamSessionArnException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOnPremisesInstanceErrorKind::InvalidIamUserArnException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOnPremisesInstanceErrorKind::MultipleIamArnsProvidedException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterOnPremisesInstanceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            RegisterOnPremisesInstanceErrorKind::IamUserArnRequiredException(_inner) => {
-                Some(_inner)
-            }
-            RegisterOnPremisesInstanceErrorKind::InstanceNameAlreadyRegisteredException(_inner) => {
-                Some(_inner)
-            }
-            RegisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            RegisterOnPremisesInstanceErrorKind::InvalidIamSessionArnException(_inner) => {
-                Some(_inner)
-            }
-            RegisterOnPremisesInstanceErrorKind::InvalidIamUserArnException(_inner) => Some(_inner),
-            RegisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(_inner) => {
-                Some(_inner)
-            }
-            RegisterOnPremisesInstanceErrorKind::MultipleIamArnsProvidedException(_inner) => {
-                Some(_inner)
-            }
-            RegisterOnPremisesInstanceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4756,22 +4664,20 @@ impl std::error::Error for RegisterOnPremisesInstanceError {
 /// <p>Both an IAM user ARN and an IAM session ARN were included in the request. Use only one ARN type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MultipleIamArnsProvidedException {
+pub struct MultipleIamArnsProvidedException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl MultipleIamArnsProvidedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for MultipleIamArnsProvidedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MultipleIamArnsProvidedException")?;
         if let Some(inner_49) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_49)?;
             }
         }
@@ -4781,7 +4687,7 @@ impl std::fmt::Display for MultipleIamArnsProvidedException {
 impl std::error::Error for MultipleIamArnsProvidedException {}
 /// See [`MultipleIamArnsProvidedException`](crate::error::MultipleIamArnsProvidedException).
 pub mod multiple_iam_arns_provided_exception {
-
+    
     /// A builder for [`MultipleIamArnsProvidedException`](crate::error::MultipleIamArnsProvidedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4795,16 +4701,18 @@ pub mod multiple_iam_arns_provided_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`MultipleIamArnsProvidedException`](crate::error::MultipleIamArnsProvidedException).
         pub fn build(self) -> crate::error::MultipleIamArnsProvidedException {
             crate::error::MultipleIamArnsProvidedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl MultipleIamArnsProvidedException {
     /// Creates a new builder-style object to manufacture [`MultipleIamArnsProvidedException`](crate::error::MultipleIamArnsProvidedException).
@@ -4816,22 +4724,20 @@ impl MultipleIamArnsProvidedException {
 /// <p>The IAM user ARN was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidIamUserArnException {
+pub struct InvalidIamUserArnException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidIamUserArnException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidIamUserArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidIamUserArnException")?;
         if let Some(inner_50) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_50)?;
             }
         }
@@ -4841,7 +4747,7 @@ impl std::fmt::Display for InvalidIamUserArnException {
 impl std::error::Error for InvalidIamUserArnException {}
 /// See [`InvalidIamUserArnException`](crate::error::InvalidIamUserArnException).
 pub mod invalid_iam_user_arn_exception {
-
+    
     /// A builder for [`InvalidIamUserArnException`](crate::error::InvalidIamUserArnException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4855,16 +4761,18 @@ pub mod invalid_iam_user_arn_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidIamUserArnException`](crate::error::InvalidIamUserArnException).
         pub fn build(self) -> crate::error::InvalidIamUserArnException {
             crate::error::InvalidIamUserArnException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidIamUserArnException {
     /// Creates a new builder-style object to manufacture [`InvalidIamUserArnException`](crate::error::InvalidIamUserArnException).
@@ -4876,22 +4784,20 @@ impl InvalidIamUserArnException {
 /// <p>The IAM session ARN was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidIamSessionArnException {
+pub struct InvalidIamSessionArnException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidIamSessionArnException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidIamSessionArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidIamSessionArnException")?;
         if let Some(inner_51) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_51)?;
             }
         }
@@ -4901,7 +4807,7 @@ impl std::fmt::Display for InvalidIamSessionArnException {
 impl std::error::Error for InvalidIamSessionArnException {}
 /// See [`InvalidIamSessionArnException`](crate::error::InvalidIamSessionArnException).
 pub mod invalid_iam_session_arn_exception {
-
+    
     /// A builder for [`InvalidIamSessionArnException`](crate::error::InvalidIamSessionArnException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4915,16 +4821,18 @@ pub mod invalid_iam_session_arn_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidIamSessionArnException`](crate::error::InvalidIamSessionArnException).
         pub fn build(self) -> crate::error::InvalidIamSessionArnException {
             crate::error::InvalidIamSessionArnException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidIamSessionArnException {
     /// Creates a new builder-style object to manufacture [`InvalidIamSessionArnException`](crate::error::InvalidIamSessionArnException).
@@ -4936,22 +4844,20 @@ impl InvalidIamSessionArnException {
 /// <p>The specified on-premises instance name is already registered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceNameAlreadyRegisteredException {
+pub struct InstanceNameAlreadyRegisteredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InstanceNameAlreadyRegisteredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InstanceNameAlreadyRegisteredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InstanceNameAlreadyRegisteredException")?;
         if let Some(inner_52) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_52)?;
             }
         }
@@ -4961,7 +4867,7 @@ impl std::fmt::Display for InstanceNameAlreadyRegisteredException {
 impl std::error::Error for InstanceNameAlreadyRegisteredException {}
 /// See [`InstanceNameAlreadyRegisteredException`](crate::error::InstanceNameAlreadyRegisteredException).
 pub mod instance_name_already_registered_exception {
-
+    
     /// A builder for [`InstanceNameAlreadyRegisteredException`](crate::error::InstanceNameAlreadyRegisteredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4975,16 +4881,18 @@ pub mod instance_name_already_registered_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InstanceNameAlreadyRegisteredException`](crate::error::InstanceNameAlreadyRegisteredException).
         pub fn build(self) -> crate::error::InstanceNameAlreadyRegisteredException {
             crate::error::InstanceNameAlreadyRegisteredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceNameAlreadyRegisteredException {
     /// Creates a new builder-style object to manufacture [`InstanceNameAlreadyRegisteredException`](crate::error::InstanceNameAlreadyRegisteredException).
@@ -4996,22 +4904,20 @@ impl InstanceNameAlreadyRegisteredException {
 /// <p>An IAM user ARN was not specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IamUserArnRequiredException {
+pub struct IamUserArnRequiredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl IamUserArnRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for IamUserArnRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IamUserArnRequiredException")?;
         if let Some(inner_53) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_53)?;
             }
         }
@@ -5021,7 +4927,7 @@ impl std::fmt::Display for IamUserArnRequiredException {
 impl std::error::Error for IamUserArnRequiredException {}
 /// See [`IamUserArnRequiredException`](crate::error::IamUserArnRequiredException).
 pub mod iam_user_arn_required_exception {
-
+    
     /// A builder for [`IamUserArnRequiredException`](crate::error::IamUserArnRequiredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5035,16 +4941,18 @@ pub mod iam_user_arn_required_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`IamUserArnRequiredException`](crate::error::IamUserArnRequiredException).
         pub fn build(self) -> crate::error::IamUserArnRequiredException {
             crate::error::IamUserArnRequiredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl IamUserArnRequiredException {
     /// Creates a new builder-style object to manufacture [`IamUserArnRequiredException`](crate::error::IamUserArnRequiredException).
@@ -5056,22 +4964,20 @@ impl IamUserArnRequiredException {
 /// <p>The specified IAM user ARN is already registered with an on-premises instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IamUserArnAlreadyRegisteredException {
+pub struct IamUserArnAlreadyRegisteredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl IamUserArnAlreadyRegisteredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for IamUserArnAlreadyRegisteredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IamUserArnAlreadyRegisteredException")?;
         if let Some(inner_54) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_54)?;
             }
         }
@@ -5081,7 +4987,7 @@ impl std::fmt::Display for IamUserArnAlreadyRegisteredException {
 impl std::error::Error for IamUserArnAlreadyRegisteredException {}
 /// See [`IamUserArnAlreadyRegisteredException`](crate::error::IamUserArnAlreadyRegisteredException).
 pub mod iam_user_arn_already_registered_exception {
-
+    
     /// A builder for [`IamUserArnAlreadyRegisteredException`](crate::error::IamUserArnAlreadyRegisteredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5095,16 +5001,18 @@ pub mod iam_user_arn_already_registered_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`IamUserArnAlreadyRegisteredException`](crate::error::IamUserArnAlreadyRegisteredException).
         pub fn build(self) -> crate::error::IamUserArnAlreadyRegisteredException {
             crate::error::IamUserArnAlreadyRegisteredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl IamUserArnAlreadyRegisteredException {
     /// Creates a new builder-style object to manufacture [`IamUserArnAlreadyRegisteredException`](crate::error::IamUserArnAlreadyRegisteredException).
@@ -5116,22 +5024,20 @@ impl IamUserArnAlreadyRegisteredException {
 /// <p>The request included an IAM session ARN that has already been used to register a different instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IamSessionArnAlreadyRegisteredException {
+pub struct IamSessionArnAlreadyRegisteredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl IamSessionArnAlreadyRegisteredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for IamSessionArnAlreadyRegisteredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IamSessionArnAlreadyRegisteredException")?;
         if let Some(inner_55) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_55)?;
             }
         }
@@ -5141,7 +5047,7 @@ impl std::fmt::Display for IamSessionArnAlreadyRegisteredException {
 impl std::error::Error for IamSessionArnAlreadyRegisteredException {}
 /// See [`IamSessionArnAlreadyRegisteredException`](crate::error::IamSessionArnAlreadyRegisteredException).
 pub mod iam_session_arn_already_registered_exception {
-
+    
     /// A builder for [`IamSessionArnAlreadyRegisteredException`](crate::error::IamSessionArnAlreadyRegisteredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5155,16 +5061,18 @@ pub mod iam_session_arn_already_registered_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`IamSessionArnAlreadyRegisteredException`](crate::error::IamSessionArnAlreadyRegisteredException).
         pub fn build(self) -> crate::error::IamSessionArnAlreadyRegisteredException {
             crate::error::IamSessionArnAlreadyRegisteredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl IamSessionArnAlreadyRegisteredException {
     /// Creates a new builder-style object to manufacture [`IamSessionArnAlreadyRegisteredException`](crate::error::IamSessionArnAlreadyRegisteredException).
@@ -5176,22 +5084,20 @@ impl IamSessionArnAlreadyRegisteredException {
 /// <p>No IAM ARN was included in the request. You must use an IAM session ARN or IAM user ARN in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IamArnRequiredException {
+pub struct IamArnRequiredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl IamArnRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for IamArnRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IamArnRequiredException")?;
         if let Some(inner_56) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_56)?;
             }
         }
@@ -5201,7 +5107,7 @@ impl std::fmt::Display for IamArnRequiredException {
 impl std::error::Error for IamArnRequiredException {}
 /// See [`IamArnRequiredException`](crate::error::IamArnRequiredException).
 pub mod iam_arn_required_exception {
-
+    
     /// A builder for [`IamArnRequiredException`](crate::error::IamArnRequiredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5215,16 +5121,18 @@ pub mod iam_arn_required_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`IamArnRequiredException`](crate::error::IamArnRequiredException).
         pub fn build(self) -> crate::error::IamArnRequiredException {
             crate::error::IamArnRequiredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl IamArnRequiredException {
     /// Creates a new builder-style object to manufacture [`IamArnRequiredException`](crate::error::IamArnRequiredException).
@@ -5238,17 +5146,15 @@ impl IamArnRequiredException {
 #[derive(std::fmt::Debug)]
 pub struct RegisterApplicationRevisionError {
     /// Kind of error that occurred.
-    pub kind: RegisterApplicationRevisionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RegisterApplicationRevisionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RegisterApplicationRevisionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: RegisterApplicationRevisionErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: RegisterApplicationRevisionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5268,36 +5174,40 @@ pub enum RegisterApplicationRevisionErrorKind {
     InvalidRevisionException(crate::error::InvalidRevisionException),
     /// <p>The revision ID was not specified.</p>
     RevisionRequiredException(crate::error::RevisionRequiredException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterApplicationRevisionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RegisterApplicationRevisionErrorKind::ApplicationDoesNotExistException(_inner) => {
+            RegisterApplicationRevisionErrorKind::ApplicationDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterApplicationRevisionErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterApplicationRevisionErrorKind::DescriptionTooLongException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterApplicationRevisionErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterApplicationRevisionErrorKind::InvalidRevisionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterApplicationRevisionErrorKind::RevisionRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterApplicationRevisionErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            RegisterApplicationRevisionErrorKind::ApplicationNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterApplicationRevisionErrorKind::DescriptionTooLongException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterApplicationRevisionErrorKind::InvalidApplicationNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterApplicationRevisionErrorKind::InvalidRevisionException(_inner) => _inner.fmt(f),
-            RegisterApplicationRevisionErrorKind::RevisionRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterApplicationRevisionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5311,111 +5221,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for RegisterApplicationRevisionEr
 }
 impl RegisterApplicationRevisionError {
     /// Creates a new `RegisterApplicationRevisionError`.
-    pub fn new(kind: RegisterApplicationRevisionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RegisterApplicationRevisionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RegisterApplicationRevisionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RegisterApplicationRevisionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RegisterApplicationRevisionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RegisterApplicationRevisionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RegisterApplicationRevisionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RegisterApplicationRevisionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RegisterApplicationRevisionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RegisterApplicationRevisionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RegisterApplicationRevisionErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterApplicationRevisionErrorKind::ApplicationDoesNotExistException(_)
-        )
+        matches!(&self.kind, RegisterApplicationRevisionErrorKind::ApplicationDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `RegisterApplicationRevisionErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterApplicationRevisionErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, RegisterApplicationRevisionErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `RegisterApplicationRevisionErrorKind::DescriptionTooLongException`.
     pub fn is_description_too_long_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterApplicationRevisionErrorKind::DescriptionTooLongException(_)
-        )
+        matches!(&self.kind, RegisterApplicationRevisionErrorKind::DescriptionTooLongException(_))
     }
     /// Returns `true` if the error kind is `RegisterApplicationRevisionErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterApplicationRevisionErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, RegisterApplicationRevisionErrorKind::InvalidApplicationNameException(_))
     }
     /// Returns `true` if the error kind is `RegisterApplicationRevisionErrorKind::InvalidRevisionException`.
     pub fn is_invalid_revision_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterApplicationRevisionErrorKind::InvalidRevisionException(_)
-        )
+        matches!(&self.kind, RegisterApplicationRevisionErrorKind::InvalidRevisionException(_))
     }
     /// Returns `true` if the error kind is `RegisterApplicationRevisionErrorKind::RevisionRequiredException`.
     pub fn is_revision_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterApplicationRevisionErrorKind::RevisionRequiredException(_)
-        )
+        matches!(&self.kind, RegisterApplicationRevisionErrorKind::RevisionRequiredException(_))
     }
 }
 impl std::error::Error for RegisterApplicationRevisionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RegisterApplicationRevisionErrorKind::ApplicationDoesNotExistException(_inner) => {
+            RegisterApplicationRevisionErrorKind::ApplicationDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterApplicationRevisionErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterApplicationRevisionErrorKind::DescriptionTooLongException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterApplicationRevisionErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterApplicationRevisionErrorKind::InvalidRevisionException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterApplicationRevisionErrorKind::RevisionRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterApplicationRevisionErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            RegisterApplicationRevisionErrorKind::ApplicationNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            RegisterApplicationRevisionErrorKind::DescriptionTooLongException(_inner) => {
-                Some(_inner)
-            }
-            RegisterApplicationRevisionErrorKind::InvalidApplicationNameException(_inner) => {
-                Some(_inner)
-            }
-            RegisterApplicationRevisionErrorKind::InvalidRevisionException(_inner) => Some(_inner),
-            RegisterApplicationRevisionErrorKind::RevisionRequiredException(_inner) => Some(_inner),
-            RegisterApplicationRevisionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5423,22 +5317,20 @@ impl std::error::Error for RegisterApplicationRevisionError {
 /// <p>The revision ID was not specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevisionRequiredException {
+pub struct RevisionRequiredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RevisionRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for RevisionRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RevisionRequiredException")?;
         if let Some(inner_57) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_57)?;
             }
         }
@@ -5448,7 +5340,7 @@ impl std::fmt::Display for RevisionRequiredException {
 impl std::error::Error for RevisionRequiredException {}
 /// See [`RevisionRequiredException`](crate::error::RevisionRequiredException).
 pub mod revision_required_exception {
-
+    
     /// A builder for [`RevisionRequiredException`](crate::error::RevisionRequiredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5462,16 +5354,18 @@ pub mod revision_required_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`RevisionRequiredException`](crate::error::RevisionRequiredException).
         pub fn build(self) -> crate::error::RevisionRequiredException {
             crate::error::RevisionRequiredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl RevisionRequiredException {
     /// Creates a new builder-style object to manufacture [`RevisionRequiredException`](crate::error::RevisionRequiredException).
@@ -5483,22 +5377,20 @@ impl RevisionRequiredException {
 /// <p>The revision was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidRevisionException {
+pub struct InvalidRevisionException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidRevisionException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidRevisionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRevisionException")?;
         if let Some(inner_58) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_58)?;
             }
         }
@@ -5508,7 +5400,7 @@ impl std::fmt::Display for InvalidRevisionException {
 impl std::error::Error for InvalidRevisionException {}
 /// See [`InvalidRevisionException`](crate::error::InvalidRevisionException).
 pub mod invalid_revision_exception {
-
+    
     /// A builder for [`InvalidRevisionException`](crate::error::InvalidRevisionException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5522,16 +5414,18 @@ pub mod invalid_revision_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidRevisionException`](crate::error::InvalidRevisionException).
         pub fn build(self) -> crate::error::InvalidRevisionException {
             crate::error::InvalidRevisionException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidRevisionException {
     /// Creates a new builder-style object to manufacture [`InvalidRevisionException`](crate::error::InvalidRevisionException).
@@ -5543,22 +5437,20 @@ impl InvalidRevisionException {
 /// <p>The description is too long.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescriptionTooLongException {
+pub struct DescriptionTooLongException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DescriptionTooLongException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DescriptionTooLongException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DescriptionTooLongException")?;
         if let Some(inner_59) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_59)?;
             }
         }
@@ -5568,7 +5460,7 @@ impl std::fmt::Display for DescriptionTooLongException {
 impl std::error::Error for DescriptionTooLongException {}
 /// See [`DescriptionTooLongException`](crate::error::DescriptionTooLongException).
 pub mod description_too_long_exception {
-
+    
     /// A builder for [`DescriptionTooLongException`](crate::error::DescriptionTooLongException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5582,16 +5474,18 @@ pub mod description_too_long_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DescriptionTooLongException`](crate::error::DescriptionTooLongException).
         pub fn build(self) -> crate::error::DescriptionTooLongException {
             crate::error::DescriptionTooLongException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DescriptionTooLongException {
     /// Creates a new builder-style object to manufacture [`DescriptionTooLongException`](crate::error::DescriptionTooLongException).
@@ -5605,17 +5499,15 @@ impl DescriptionTooLongException {
 #[derive(std::fmt::Debug)]
 pub struct PutLifecycleEventHookExecutionStatusError {
     /// Kind of error that occurred.
-    pub kind: PutLifecycleEventHookExecutionStatusErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutLifecycleEventHookExecutionStatusErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutLifecycleEventHookExecutionStatusError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: PutLifecycleEventHookExecutionStatusErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: PutLifecycleEventHookExecutionStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5630,27 +5522,21 @@ pub enum PutLifecycleEventHookExecutionStatusErrorKind {
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
     /// <p>A lifecycle event hook is invalid. Review the <code>hooks</code> section in your AppSpec file to ensure the lifecycle events and <code>hooks</code> functions are valid.</p>
-    InvalidLifecycleEventHookExecutionIdException(
-        crate::error::InvalidLifecycleEventHookExecutionIdException,
-    ),
+    InvalidLifecycleEventHookExecutionIdException(crate::error::InvalidLifecycleEventHookExecutionIdException),
     /// <p>The result of a Lambda validation function that verifies a lifecycle event is invalid. It should return <code>Succeeded</code> or <code>Failed</code>.</p>
-    InvalidLifecycleEventHookExecutionStatusException(
-        crate::error::InvalidLifecycleEventHookExecutionStatusException,
-    ),
+    InvalidLifecycleEventHookExecutionStatusException(crate::error::InvalidLifecycleEventHookExecutionStatusException),
     /// <p>An attempt to return the status of an already completed lifecycle event occurred.</p>
     LifecycleEventAlreadyCompletedException(crate::error::LifecycleEventAlreadyCompletedException),
     /// <p>A call was submitted that is not supported for the specified deployment type.</p>
-    UnsupportedActionForDeploymentTypeException(
-        crate::error::UnsupportedActionForDeploymentTypeException,
-    ),
-    ///
+    UnsupportedActionForDeploymentTypeException(crate::error::UnsupportedActionForDeploymentTypeException),
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutLifecycleEventHookExecutionStatusError {
@@ -5693,73 +5579,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutLifecycleEventHookExecutio
 }
 impl PutLifecycleEventHookExecutionStatusError {
     /// Creates a new `PutLifecycleEventHookExecutionStatusError`.
-    pub fn new(
-        kind: PutLifecycleEventHookExecutionStatusErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutLifecycleEventHookExecutionStatusError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutLifecycleEventHookExecutionStatusErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutLifecycleEventHookExecutionStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutLifecycleEventHookExecutionStatusErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutLifecycleEventHookExecutionStatusErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutLifecycleEventHookExecutionStatusError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutLifecycleEventHookExecutionStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutLifecycleEventHookExecutionStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutLifecycleEventHookExecutionStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLifecycleEventHookExecutionStatusErrorKind::DeploymentDoesNotExistException(_)
-        )
+        matches!(&self.kind, PutLifecycleEventHookExecutionStatusErrorKind::DeploymentDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLifecycleEventHookExecutionStatusErrorKind::DeploymentIdRequiredException(_)
-        )
+        matches!(&self.kind, PutLifecycleEventHookExecutionStatusErrorKind::DeploymentIdRequiredException(_))
     }
     /// Returns `true` if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLifecycleEventHookExecutionStatusErrorKind::InvalidDeploymentIdException(_)
-        )
+        matches!(&self.kind, PutLifecycleEventHookExecutionStatusErrorKind::InvalidDeploymentIdException(_))
     }
     /// Returns `true` if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::InvalidLifecycleEventHookExecutionIdException`.
     pub fn is_invalid_lifecycle_event_hook_execution_id_exception(&self) -> bool {
@@ -5771,12 +5641,7 @@ impl PutLifecycleEventHookExecutionStatusError {
     }
     /// Returns `true` if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::LifecycleEventAlreadyCompletedException`.
     pub fn is_lifecycle_event_already_completed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLifecycleEventHookExecutionStatusErrorKind::LifecycleEventAlreadyCompletedException(
-                _
-            )
-        )
+        matches!(&self.kind, PutLifecycleEventHookExecutionStatusErrorKind::LifecycleEventAlreadyCompletedException(_))
     }
     /// Returns `true` if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::UnsupportedActionForDeploymentTypeException`.
     pub fn is_unsupported_action_for_deployment_type_exception(&self) -> bool {
@@ -5817,22 +5682,20 @@ impl std::error::Error for PutLifecycleEventHookExecutionStatusError {
 /// <p>An attempt to return the status of an already completed lifecycle event occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifecycleEventAlreadyCompletedException {
+pub struct LifecycleEventAlreadyCompletedException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LifecycleEventAlreadyCompletedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LifecycleEventAlreadyCompletedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LifecycleEventAlreadyCompletedException")?;
         if let Some(inner_60) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_60)?;
             }
         }
@@ -5842,7 +5705,7 @@ impl std::fmt::Display for LifecycleEventAlreadyCompletedException {
 impl std::error::Error for LifecycleEventAlreadyCompletedException {}
 /// See [`LifecycleEventAlreadyCompletedException`](crate::error::LifecycleEventAlreadyCompletedException).
 pub mod lifecycle_event_already_completed_exception {
-
+    
     /// A builder for [`LifecycleEventAlreadyCompletedException`](crate::error::LifecycleEventAlreadyCompletedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5856,16 +5719,18 @@ pub mod lifecycle_event_already_completed_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LifecycleEventAlreadyCompletedException`](crate::error::LifecycleEventAlreadyCompletedException).
         pub fn build(self) -> crate::error::LifecycleEventAlreadyCompletedException {
             crate::error::LifecycleEventAlreadyCompletedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LifecycleEventAlreadyCompletedException {
     /// Creates a new builder-style object to manufacture [`LifecycleEventAlreadyCompletedException`](crate::error::LifecycleEventAlreadyCompletedException).
@@ -5877,22 +5742,20 @@ impl LifecycleEventAlreadyCompletedException {
 /// <p>The result of a Lambda validation function that verifies a lifecycle event is invalid. It should return <code>Succeeded</code> or <code>Failed</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidLifecycleEventHookExecutionStatusException {
+pub struct InvalidLifecycleEventHookExecutionStatusException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidLifecycleEventHookExecutionStatusException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidLifecycleEventHookExecutionStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLifecycleEventHookExecutionStatusException")?;
         if let Some(inner_61) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_61)?;
             }
         }
@@ -5902,7 +5765,7 @@ impl std::fmt::Display for InvalidLifecycleEventHookExecutionStatusException {
 impl std::error::Error for InvalidLifecycleEventHookExecutionStatusException {}
 /// See [`InvalidLifecycleEventHookExecutionStatusException`](crate::error::InvalidLifecycleEventHookExecutionStatusException).
 pub mod invalid_lifecycle_event_hook_execution_status_exception {
-
+    
     /// A builder for [`InvalidLifecycleEventHookExecutionStatusException`](crate::error::InvalidLifecycleEventHookExecutionStatusException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5916,21 +5779,22 @@ pub mod invalid_lifecycle_event_hook_execution_status_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidLifecycleEventHookExecutionStatusException`](crate::error::InvalidLifecycleEventHookExecutionStatusException).
         pub fn build(self) -> crate::error::InvalidLifecycleEventHookExecutionStatusException {
             crate::error::InvalidLifecycleEventHookExecutionStatusException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidLifecycleEventHookExecutionStatusException {
     /// Creates a new builder-style object to manufacture [`InvalidLifecycleEventHookExecutionStatusException`](crate::error::InvalidLifecycleEventHookExecutionStatusException).
-    pub fn builder(
-    ) -> crate::error::invalid_lifecycle_event_hook_execution_status_exception::Builder {
+    pub fn builder() -> crate::error::invalid_lifecycle_event_hook_execution_status_exception::Builder {
         crate::error::invalid_lifecycle_event_hook_execution_status_exception::Builder::default()
     }
 }
@@ -5938,22 +5802,20 @@ impl InvalidLifecycleEventHookExecutionStatusException {
 /// <p>A lifecycle event hook is invalid. Review the <code>hooks</code> section in your AppSpec file to ensure the lifecycle events and <code>hooks</code> functions are valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidLifecycleEventHookExecutionIdException {
+pub struct InvalidLifecycleEventHookExecutionIdException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidLifecycleEventHookExecutionIdException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidLifecycleEventHookExecutionIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLifecycleEventHookExecutionIdException")?;
         if let Some(inner_62) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_62)?;
             }
         }
@@ -5963,7 +5825,7 @@ impl std::fmt::Display for InvalidLifecycleEventHookExecutionIdException {
 impl std::error::Error for InvalidLifecycleEventHookExecutionIdException {}
 /// See [`InvalidLifecycleEventHookExecutionIdException`](crate::error::InvalidLifecycleEventHookExecutionIdException).
 pub mod invalid_lifecycle_event_hook_execution_id_exception {
-
+    
     /// A builder for [`InvalidLifecycleEventHookExecutionIdException`](crate::error::InvalidLifecycleEventHookExecutionIdException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5977,16 +5839,18 @@ pub mod invalid_lifecycle_event_hook_execution_id_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidLifecycleEventHookExecutionIdException`](crate::error::InvalidLifecycleEventHookExecutionIdException).
         pub fn build(self) -> crate::error::InvalidLifecycleEventHookExecutionIdException {
             crate::error::InvalidLifecycleEventHookExecutionIdException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidLifecycleEventHookExecutionIdException {
     /// Creates a new builder-style object to manufacture [`InvalidLifecycleEventHookExecutionIdException`](crate::error::InvalidLifecycleEventHookExecutionIdException).
@@ -6000,15 +5864,15 @@ impl InvalidLifecycleEventHookExecutionIdException {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsForResourceError {
     /// Kind of error that occurred.
-    pub kind: ListTagsForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6022,23 +5886,31 @@ pub enum ListTagsForResourceErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p> The ARN of a resource is required, but was not found. </p>
     ResourceArnRequiredException(crate::error::ResourceArnRequiredException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::ArnNotSupportedException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ResourceArnRequiredException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ArnNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ResourceArnRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6052,75 +5924,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
 }
 impl ListTagsForResourceError {
     /// Creates a new `ListTagsForResourceError`.
-    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ArnNotSupportedException`.
     pub fn is_arn_not_supported_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ArnNotSupportedException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ArnNotSupportedException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceArnRequiredException`.
     pub fn is_resource_arn_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ResourceArnRequiredException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ResourceArnRequiredException(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::ArnNotSupportedException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::InvalidArnException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ResourceArnRequiredException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ArnNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ResourceArnRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6130,15 +6001,15 @@ impl std::error::Error for ListTagsForResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ListOnPremisesInstancesError {
     /// Kind of error that occurred.
-    pub kind: ListOnPremisesInstancesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListOnPremisesInstancesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListOnPremisesInstancesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6152,25 +6023,31 @@ pub enum ListOnPremisesInstancesErrorKind {
     InvalidRegistrationStatusException(crate::error::InvalidRegistrationStatusException),
     /// <p>The tag filter was specified in an invalid format.</p>
     InvalidTagFilterException(crate::error::InvalidTagFilterException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListOnPremisesInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListOnPremisesInstancesErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            ListOnPremisesInstancesErrorKind::InvalidRegistrationStatusException(_inner) => {
+            ListOnPremisesInstancesErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListOnPremisesInstancesErrorKind::InvalidRegistrationStatusException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListOnPremisesInstancesErrorKind::InvalidTagFilterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListOnPremisesInstancesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListOnPremisesInstancesErrorKind::InvalidTagFilterException(_inner) => _inner.fmt(f),
-            ListOnPremisesInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6184,81 +6061,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListOnPremisesInstancesError 
 }
 impl ListOnPremisesInstancesError {
     /// Creates a new `ListOnPremisesInstancesError`.
-    pub fn new(kind: ListOnPremisesInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListOnPremisesInstancesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListOnPremisesInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListOnPremisesInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListOnPremisesInstancesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListOnPremisesInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListOnPremisesInstancesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListOnPremisesInstancesErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListOnPremisesInstancesErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `ListOnPremisesInstancesErrorKind::InvalidRegistrationStatusException`.
     pub fn is_invalid_registration_status_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListOnPremisesInstancesErrorKind::InvalidRegistrationStatusException(_)
-        )
+        matches!(&self.kind, ListOnPremisesInstancesErrorKind::InvalidRegistrationStatusException(_))
     }
     /// Returns `true` if the error kind is `ListOnPremisesInstancesErrorKind::InvalidTagFilterException`.
     pub fn is_invalid_tag_filter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListOnPremisesInstancesErrorKind::InvalidTagFilterException(_)
-        )
+        matches!(&self.kind, ListOnPremisesInstancesErrorKind::InvalidTagFilterException(_))
     }
 }
 impl std::error::Error for ListOnPremisesInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListOnPremisesInstancesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListOnPremisesInstancesErrorKind::InvalidRegistrationStatusException(_inner) => {
+            ListOnPremisesInstancesErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListOnPremisesInstancesErrorKind::InvalidRegistrationStatusException(_inner) =>
+            Some(_inner)
+            ,
+            ListOnPremisesInstancesErrorKind::InvalidTagFilterException(_inner) =>
+            Some(_inner)
+            ,
+            ListOnPremisesInstancesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListOnPremisesInstancesErrorKind::InvalidTagFilterException(_inner) => Some(_inner),
-            ListOnPremisesInstancesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6266,22 +6136,20 @@ impl std::error::Error for ListOnPremisesInstancesError {
 /// <p>The tag filter was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidTagFilterException {
+pub struct InvalidTagFilterException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidTagFilterException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidTagFilterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTagFilterException")?;
         if let Some(inner_63) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_63)?;
             }
         }
@@ -6291,7 +6159,7 @@ impl std::fmt::Display for InvalidTagFilterException {
 impl std::error::Error for InvalidTagFilterException {}
 /// See [`InvalidTagFilterException`](crate::error::InvalidTagFilterException).
 pub mod invalid_tag_filter_exception {
-
+    
     /// A builder for [`InvalidTagFilterException`](crate::error::InvalidTagFilterException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6305,16 +6173,18 @@ pub mod invalid_tag_filter_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidTagFilterException`](crate::error::InvalidTagFilterException).
         pub fn build(self) -> crate::error::InvalidTagFilterException {
             crate::error::InvalidTagFilterException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidTagFilterException {
     /// Creates a new builder-style object to manufacture [`InvalidTagFilterException`](crate::error::InvalidTagFilterException).
@@ -6326,22 +6196,20 @@ impl InvalidTagFilterException {
 /// <p>The registration status was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidRegistrationStatusException {
+pub struct InvalidRegistrationStatusException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidRegistrationStatusException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidRegistrationStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRegistrationStatusException")?;
         if let Some(inner_64) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_64)?;
             }
         }
@@ -6351,7 +6219,7 @@ impl std::fmt::Display for InvalidRegistrationStatusException {
 impl std::error::Error for InvalidRegistrationStatusException {}
 /// See [`InvalidRegistrationStatusException`](crate::error::InvalidRegistrationStatusException).
 pub mod invalid_registration_status_exception {
-
+    
     /// A builder for [`InvalidRegistrationStatusException`](crate::error::InvalidRegistrationStatusException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6365,16 +6233,18 @@ pub mod invalid_registration_status_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidRegistrationStatusException`](crate::error::InvalidRegistrationStatusException).
         pub fn build(self) -> crate::error::InvalidRegistrationStatusException {
             crate::error::InvalidRegistrationStatusException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidRegistrationStatusException {
     /// Creates a new builder-style object to manufacture [`InvalidRegistrationStatusException`](crate::error::InvalidRegistrationStatusException).
@@ -6386,22 +6256,20 @@ impl InvalidRegistrationStatusException {
 /// <p>The next token was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidNextTokenException {
+pub struct InvalidNextTokenException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidNextTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextTokenException")?;
         if let Some(inner_65) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_65)?;
             }
         }
@@ -6411,7 +6279,7 @@ impl std::fmt::Display for InvalidNextTokenException {
 impl std::error::Error for InvalidNextTokenException {}
 /// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
 pub mod invalid_next_token_exception {
-
+    
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6425,16 +6293,18 @@ pub mod invalid_next_token_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
         pub fn build(self) -> crate::error::InvalidNextTokenException {
             crate::error::InvalidNextTokenException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidNextTokenException {
     /// Creates a new builder-style object to manufacture [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
@@ -6448,17 +6318,15 @@ impl InvalidNextTokenException {
 #[derive(std::fmt::Debug)]
 pub struct ListGitHubAccountTokenNamesError {
     /// Kind of error that occurred.
-    pub kind: ListGitHubAccountTokenNamesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListGitHubAccountTokenNamesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListGitHubAccountTokenNamesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListGitHubAccountTokenNamesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListGitHubAccountTokenNamesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6472,29 +6340,31 @@ pub enum ListGitHubAccountTokenNamesErrorKind {
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The specified resource could not be validated.</p>
     ResourceValidationException(crate::error::ResourceValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGitHubAccountTokenNamesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListGitHubAccountTokenNamesErrorKind::InvalidNextTokenException(_inner) => {
+            ListGitHubAccountTokenNamesErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGitHubAccountTokenNamesErrorKind::OperationNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGitHubAccountTokenNamesErrorKind::ResourceValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGitHubAccountTokenNamesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListGitHubAccountTokenNamesErrorKind::OperationNotSupportedException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListGitHubAccountTokenNamesErrorKind::ResourceValidationException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListGitHubAccountTokenNamesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6508,83 +6378,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListGitHubAccountTokenNamesEr
 }
 impl ListGitHubAccountTokenNamesError {
     /// Creates a new `ListGitHubAccountTokenNamesError`.
-    pub fn new(kind: ListGitHubAccountTokenNamesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListGitHubAccountTokenNamesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListGitHubAccountTokenNamesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListGitHubAccountTokenNamesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListGitHubAccountTokenNamesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListGitHubAccountTokenNamesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListGitHubAccountTokenNamesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListGitHubAccountTokenNamesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListGitHubAccountTokenNamesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListGitHubAccountTokenNamesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListGitHubAccountTokenNamesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGitHubAccountTokenNamesErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListGitHubAccountTokenNamesErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `ListGitHubAccountTokenNamesErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGitHubAccountTokenNamesErrorKind::OperationNotSupportedException(_)
-        )
+        matches!(&self.kind, ListGitHubAccountTokenNamesErrorKind::OperationNotSupportedException(_))
     }
     /// Returns `true` if the error kind is `ListGitHubAccountTokenNamesErrorKind::ResourceValidationException`.
     pub fn is_resource_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGitHubAccountTokenNamesErrorKind::ResourceValidationException(_)
-        )
+        matches!(&self.kind, ListGitHubAccountTokenNamesErrorKind::ResourceValidationException(_))
     }
 }
 impl std::error::Error for ListGitHubAccountTokenNamesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListGitHubAccountTokenNamesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListGitHubAccountTokenNamesErrorKind::OperationNotSupportedException(_inner) => {
+            ListGitHubAccountTokenNamesErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListGitHubAccountTokenNamesErrorKind::OperationNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            ListGitHubAccountTokenNamesErrorKind::ResourceValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListGitHubAccountTokenNamesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListGitHubAccountTokenNamesErrorKind::ResourceValidationException(_inner) => {
-                Some(_inner)
-            }
-            ListGitHubAccountTokenNamesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6592,22 +6453,20 @@ impl std::error::Error for ListGitHubAccountTokenNamesError {
 /// <p>The specified resource could not be validated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceValidationException {
+pub struct ResourceValidationException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceValidationException")?;
         if let Some(inner_66) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_66)?;
             }
         }
@@ -6617,7 +6476,7 @@ impl std::fmt::Display for ResourceValidationException {
 impl std::error::Error for ResourceValidationException {}
 /// See [`ResourceValidationException`](crate::error::ResourceValidationException).
 pub mod resource_validation_exception {
-
+    
     /// A builder for [`ResourceValidationException`](crate::error::ResourceValidationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6631,16 +6490,18 @@ pub mod resource_validation_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceValidationException`](crate::error::ResourceValidationException).
         pub fn build(self) -> crate::error::ResourceValidationException {
             crate::error::ResourceValidationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceValidationException {
     /// Creates a new builder-style object to manufacture [`ResourceValidationException`](crate::error::ResourceValidationException).
@@ -6652,22 +6513,20 @@ impl ResourceValidationException {
 /// <p>The API used does not support the deployment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OperationNotSupportedException {
+pub struct OperationNotSupportedException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl OperationNotSupportedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for OperationNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OperationNotSupportedException")?;
         if let Some(inner_67) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_67)?;
             }
         }
@@ -6677,7 +6536,7 @@ impl std::fmt::Display for OperationNotSupportedException {
 impl std::error::Error for OperationNotSupportedException {}
 /// See [`OperationNotSupportedException`](crate::error::OperationNotSupportedException).
 pub mod operation_not_supported_exception {
-
+    
     /// A builder for [`OperationNotSupportedException`](crate::error::OperationNotSupportedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6691,16 +6550,18 @@ pub mod operation_not_supported_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`OperationNotSupportedException`](crate::error::OperationNotSupportedException).
         pub fn build(self) -> crate::error::OperationNotSupportedException {
             crate::error::OperationNotSupportedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl OperationNotSupportedException {
     /// Creates a new builder-style object to manufacture [`OperationNotSupportedException`](crate::error::OperationNotSupportedException).
@@ -6714,15 +6575,15 @@ impl OperationNotSupportedException {
 #[derive(std::fmt::Debug)]
 pub struct ListDeploymentTargetsError {
     /// Kind of error that occurred.
-    pub kind: ListDeploymentTargetsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListDeploymentTargetsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListDeploymentTargetsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListDeploymentTargetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6746,32 +6607,46 @@ pub enum ListDeploymentTargetsErrorKind {
     InvalidInstanceTypeException(crate::error::InvalidInstanceTypeException),
     /// <p>The next token was specified in an invalid format.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDeploymentTargetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListDeploymentTargetsErrorKind::DeploymentDoesNotExistException(_inner) => {
+            ListDeploymentTargetsErrorKind::DeploymentDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentTargetsErrorKind::DeploymentIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentTargetsErrorKind::DeploymentNotStartedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentTargetsErrorKind::InvalidDeploymentIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentTargetsErrorKind::InvalidDeploymentInstanceTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentTargetsErrorKind::InvalidInstanceStatusException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentTargetsErrorKind::InvalidInstanceTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentTargetsErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentTargetsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListDeploymentTargetsErrorKind::DeploymentIdRequiredException(_inner) => _inner.fmt(f),
-            ListDeploymentTargetsErrorKind::DeploymentNotStartedException(_inner) => _inner.fmt(f),
-            ListDeploymentTargetsErrorKind::InvalidDeploymentIdException(_inner) => _inner.fmt(f),
-            ListDeploymentTargetsErrorKind::InvalidDeploymentInstanceTypeException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListDeploymentTargetsErrorKind::InvalidInstanceStatusException(_inner) => _inner.fmt(f),
-            ListDeploymentTargetsErrorKind::InvalidInstanceTypeException(_inner) => _inner.fmt(f),
-            ListDeploymentTargetsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            ListDeploymentTargetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6785,121 +6660,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListDeploymentTargetsError {
 }
 impl ListDeploymentTargetsError {
     /// Creates a new `ListDeploymentTargetsError`.
-    pub fn new(kind: ListDeploymentTargetsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListDeploymentTargetsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListDeploymentTargetsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListDeploymentTargetsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListDeploymentTargetsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListDeploymentTargetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListDeploymentTargetsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListDeploymentTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListDeploymentTargetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListDeploymentTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListDeploymentTargetsErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentTargetsErrorKind::DeploymentDoesNotExistException(_)
-        )
+        matches!(&self.kind, ListDeploymentTargetsErrorKind::DeploymentDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentTargetsErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentTargetsErrorKind::DeploymentIdRequiredException(_)
-        )
+        matches!(&self.kind, ListDeploymentTargetsErrorKind::DeploymentIdRequiredException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentTargetsErrorKind::DeploymentNotStartedException`.
     pub fn is_deployment_not_started_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentTargetsErrorKind::DeploymentNotStartedException(_)
-        )
+        matches!(&self.kind, ListDeploymentTargetsErrorKind::DeploymentNotStartedException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentTargetsErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentTargetsErrorKind::InvalidDeploymentIdException(_)
-        )
+        matches!(&self.kind, ListDeploymentTargetsErrorKind::InvalidDeploymentIdException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentTargetsErrorKind::InvalidDeploymentInstanceTypeException`.
     pub fn is_invalid_deployment_instance_type_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentTargetsErrorKind::InvalidDeploymentInstanceTypeException(_)
-        )
+        matches!(&self.kind, ListDeploymentTargetsErrorKind::InvalidDeploymentInstanceTypeException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentTargetsErrorKind::InvalidInstanceStatusException`.
     pub fn is_invalid_instance_status_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentTargetsErrorKind::InvalidInstanceStatusException(_)
-        )
+        matches!(&self.kind, ListDeploymentTargetsErrorKind::InvalidInstanceStatusException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentTargetsErrorKind::InvalidInstanceTypeException`.
     pub fn is_invalid_instance_type_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentTargetsErrorKind::InvalidInstanceTypeException(_)
-        )
+        matches!(&self.kind, ListDeploymentTargetsErrorKind::InvalidInstanceTypeException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentTargetsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentTargetsErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListDeploymentTargetsErrorKind::InvalidNextTokenException(_))
     }
 }
 impl std::error::Error for ListDeploymentTargetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListDeploymentTargetsErrorKind::DeploymentDoesNotExistException(_inner) => Some(_inner),
-            ListDeploymentTargetsErrorKind::DeploymentIdRequiredException(_inner) => Some(_inner),
-            ListDeploymentTargetsErrorKind::DeploymentNotStartedException(_inner) => Some(_inner),
-            ListDeploymentTargetsErrorKind::InvalidDeploymentIdException(_inner) => Some(_inner),
-            ListDeploymentTargetsErrorKind::InvalidDeploymentInstanceTypeException(_inner) => {
+            ListDeploymentTargetsErrorKind::DeploymentDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentTargetsErrorKind::DeploymentIdRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentTargetsErrorKind::DeploymentNotStartedException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentTargetsErrorKind::InvalidDeploymentIdException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentTargetsErrorKind::InvalidDeploymentInstanceTypeException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentTargetsErrorKind::InvalidInstanceStatusException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentTargetsErrorKind::InvalidInstanceTypeException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentTargetsErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentTargetsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListDeploymentTargetsErrorKind::InvalidInstanceStatusException(_inner) => Some(_inner),
-            ListDeploymentTargetsErrorKind::InvalidInstanceTypeException(_inner) => Some(_inner),
-            ListDeploymentTargetsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListDeploymentTargetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6907,22 +6770,20 @@ impl std::error::Error for ListDeploymentTargetsError {
 /// <p>An invalid instance type was specified for instances in a blue/green deployment. Valid values include "Blue" for an original environment and "Green" for a replacement environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidInstanceTypeException {
+pub struct InvalidInstanceTypeException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidInstanceTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidInstanceTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidInstanceTypeException")?;
         if let Some(inner_68) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_68)?;
             }
         }
@@ -6932,7 +6793,7 @@ impl std::fmt::Display for InvalidInstanceTypeException {
 impl std::error::Error for InvalidInstanceTypeException {}
 /// See [`InvalidInstanceTypeException`](crate::error::InvalidInstanceTypeException).
 pub mod invalid_instance_type_exception {
-
+    
     /// A builder for [`InvalidInstanceTypeException`](crate::error::InvalidInstanceTypeException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6946,16 +6807,18 @@ pub mod invalid_instance_type_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidInstanceTypeException`](crate::error::InvalidInstanceTypeException).
         pub fn build(self) -> crate::error::InvalidInstanceTypeException {
             crate::error::InvalidInstanceTypeException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidInstanceTypeException {
     /// Creates a new builder-style object to manufacture [`InvalidInstanceTypeException`](crate::error::InvalidInstanceTypeException).
@@ -6967,22 +6830,20 @@ impl InvalidInstanceTypeException {
 /// <p>The specified instance status does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidInstanceStatusException {
+pub struct InvalidInstanceStatusException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidInstanceStatusException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidInstanceStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidInstanceStatusException")?;
         if let Some(inner_69) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_69)?;
             }
         }
@@ -6992,7 +6853,7 @@ impl std::fmt::Display for InvalidInstanceStatusException {
 impl std::error::Error for InvalidInstanceStatusException {}
 /// See [`InvalidInstanceStatusException`](crate::error::InvalidInstanceStatusException).
 pub mod invalid_instance_status_exception {
-
+    
     /// A builder for [`InvalidInstanceStatusException`](crate::error::InvalidInstanceStatusException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7006,16 +6867,18 @@ pub mod invalid_instance_status_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidInstanceStatusException`](crate::error::InvalidInstanceStatusException).
         pub fn build(self) -> crate::error::InvalidInstanceStatusException {
             crate::error::InvalidInstanceStatusException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidInstanceStatusException {
     /// Creates a new builder-style object to manufacture [`InvalidInstanceStatusException`](crate::error::InvalidInstanceStatusException).
@@ -7027,22 +6890,20 @@ impl InvalidInstanceStatusException {
 /// <p>An instance type was specified for an in-place deployment. Instance types are supported for blue/green deployments only.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidDeploymentInstanceTypeException {
+pub struct InvalidDeploymentInstanceTypeException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidDeploymentInstanceTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidDeploymentInstanceTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDeploymentInstanceTypeException")?;
         if let Some(inner_70) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_70)?;
             }
         }
@@ -7052,7 +6913,7 @@ impl std::fmt::Display for InvalidDeploymentInstanceTypeException {
 impl std::error::Error for InvalidDeploymentInstanceTypeException {}
 /// See [`InvalidDeploymentInstanceTypeException`](crate::error::InvalidDeploymentInstanceTypeException).
 pub mod invalid_deployment_instance_type_exception {
-
+    
     /// A builder for [`InvalidDeploymentInstanceTypeException`](crate::error::InvalidDeploymentInstanceTypeException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7066,16 +6927,18 @@ pub mod invalid_deployment_instance_type_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidDeploymentInstanceTypeException`](crate::error::InvalidDeploymentInstanceTypeException).
         pub fn build(self) -> crate::error::InvalidDeploymentInstanceTypeException {
             crate::error::InvalidDeploymentInstanceTypeException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidDeploymentInstanceTypeException {
     /// Creates a new builder-style object to manufacture [`InvalidDeploymentInstanceTypeException`](crate::error::InvalidDeploymentInstanceTypeException).
@@ -7089,15 +6952,15 @@ impl InvalidDeploymentInstanceTypeException {
 #[derive(std::fmt::Debug)]
 pub struct ListDeploymentsError {
     /// Kind of error that occurred.
-    pub kind: ListDeploymentsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListDeploymentsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListDeploymentsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7127,31 +6990,55 @@ pub enum ListDeploymentsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The specified time range was specified in an invalid format.</p>
     InvalidTimeRangeException(crate::error::InvalidTimeRangeException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDeploymentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListDeploymentsErrorKind::ApplicationDoesNotExistException(_inner) => _inner.fmt(f),
-            ListDeploymentsErrorKind::ApplicationNameRequiredException(_inner) => _inner.fmt(f),
-            ListDeploymentsErrorKind::DeploymentGroupDoesNotExistException(_inner) => _inner.fmt(f),
-            ListDeploymentsErrorKind::DeploymentGroupNameRequiredException(_inner) => _inner.fmt(f),
-            ListDeploymentsErrorKind::InvalidApplicationNameException(_inner) => _inner.fmt(f),
-            ListDeploymentsErrorKind::InvalidDeploymentGroupNameException(_inner) => _inner.fmt(f),
-            ListDeploymentsErrorKind::InvalidDeploymentStatusException(_inner) => _inner.fmt(f),
-            ListDeploymentsErrorKind::InvalidExternalIdException(_inner) => _inner.fmt(f),
-            ListDeploymentsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
-            ListDeploymentsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            ListDeploymentsErrorKind::InvalidTimeRangeException(_inner) => _inner.fmt(f),
-            ListDeploymentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListDeploymentsErrorKind::ApplicationDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentsErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentsErrorKind::DeploymentGroupDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentsErrorKind::DeploymentGroupNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentsErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentsErrorKind::InvalidDeploymentGroupNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentsErrorKind::InvalidDeploymentStatusException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentsErrorKind::InvalidExternalIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentsErrorKind::InvalidInputException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentsErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentsErrorKind::InvalidTimeRangeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7165,139 +7052,130 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListDeploymentsError {
 }
 impl ListDeploymentsError {
     /// Creates a new `ListDeploymentsError`.
-    pub fn new(kind: ListDeploymentsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListDeploymentsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListDeploymentsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListDeploymentsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListDeploymentsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListDeploymentsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListDeploymentsErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentsErrorKind::ApplicationDoesNotExistException(_)
-        )
+        matches!(&self.kind, ListDeploymentsErrorKind::ApplicationDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentsErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentsErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, ListDeploymentsErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentsErrorKind::DeploymentGroupDoesNotExistException`.
     pub fn is_deployment_group_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentsErrorKind::DeploymentGroupDoesNotExistException(_)
-        )
+        matches!(&self.kind, ListDeploymentsErrorKind::DeploymentGroupDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentsErrorKind::DeploymentGroupNameRequiredException`.
     pub fn is_deployment_group_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentsErrorKind::DeploymentGroupNameRequiredException(_)
-        )
+        matches!(&self.kind, ListDeploymentsErrorKind::DeploymentGroupNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentsErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentsErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, ListDeploymentsErrorKind::InvalidApplicationNameException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentsErrorKind::InvalidDeploymentGroupNameException`.
     pub fn is_invalid_deployment_group_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentsErrorKind::InvalidDeploymentGroupNameException(_)
-        )
+        matches!(&self.kind, ListDeploymentsErrorKind::InvalidDeploymentGroupNameException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentsErrorKind::InvalidDeploymentStatusException`.
     pub fn is_invalid_deployment_status_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentsErrorKind::InvalidDeploymentStatusException(_)
-        )
+        matches!(&self.kind, ListDeploymentsErrorKind::InvalidDeploymentStatusException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentsErrorKind::InvalidExternalIdException`.
     pub fn is_invalid_external_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentsErrorKind::InvalidExternalIdException(_)
-        )
+        matches!(&self.kind, ListDeploymentsErrorKind::InvalidExternalIdException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentsErrorKind::InvalidInputException(_)
-        )
+        matches!(&self.kind, ListDeploymentsErrorKind::InvalidInputException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentsErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListDeploymentsErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentsErrorKind::InvalidTimeRangeException`.
     pub fn is_invalid_time_range_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentsErrorKind::InvalidTimeRangeException(_)
-        )
+        matches!(&self.kind, ListDeploymentsErrorKind::InvalidTimeRangeException(_))
     }
 }
 impl std::error::Error for ListDeploymentsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListDeploymentsErrorKind::ApplicationDoesNotExistException(_inner) => Some(_inner),
-            ListDeploymentsErrorKind::ApplicationNameRequiredException(_inner) => Some(_inner),
-            ListDeploymentsErrorKind::DeploymentGroupDoesNotExistException(_inner) => Some(_inner),
-            ListDeploymentsErrorKind::DeploymentGroupNameRequiredException(_inner) => Some(_inner),
-            ListDeploymentsErrorKind::InvalidApplicationNameException(_inner) => Some(_inner),
-            ListDeploymentsErrorKind::InvalidDeploymentGroupNameException(_inner) => Some(_inner),
-            ListDeploymentsErrorKind::InvalidDeploymentStatusException(_inner) => Some(_inner),
-            ListDeploymentsErrorKind::InvalidExternalIdException(_inner) => Some(_inner),
-            ListDeploymentsErrorKind::InvalidInputException(_inner) => Some(_inner),
-            ListDeploymentsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListDeploymentsErrorKind::InvalidTimeRangeException(_inner) => Some(_inner),
-            ListDeploymentsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListDeploymentsErrorKind::ApplicationDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentsErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentsErrorKind::DeploymentGroupDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentsErrorKind::DeploymentGroupNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentsErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentsErrorKind::InvalidDeploymentGroupNameException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentsErrorKind::InvalidDeploymentStatusException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentsErrorKind::InvalidExternalIdException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentsErrorKind::InvalidInputException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentsErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentsErrorKind::InvalidTimeRangeException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7305,22 +7183,20 @@ impl std::error::Error for ListDeploymentsError {
 /// <p>The specified time range was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidTimeRangeException {
+pub struct InvalidTimeRangeException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidTimeRangeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidTimeRangeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTimeRangeException")?;
         if let Some(inner_71) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_71)?;
             }
         }
@@ -7330,7 +7206,7 @@ impl std::fmt::Display for InvalidTimeRangeException {
 impl std::error::Error for InvalidTimeRangeException {}
 /// See [`InvalidTimeRangeException`](crate::error::InvalidTimeRangeException).
 pub mod invalid_time_range_exception {
-
+    
     /// A builder for [`InvalidTimeRangeException`](crate::error::InvalidTimeRangeException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7344,16 +7220,18 @@ pub mod invalid_time_range_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidTimeRangeException`](crate::error::InvalidTimeRangeException).
         pub fn build(self) -> crate::error::InvalidTimeRangeException {
             crate::error::InvalidTimeRangeException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidTimeRangeException {
     /// Creates a new builder-style object to manufacture [`InvalidTimeRangeException`](crate::error::InvalidTimeRangeException).
@@ -7365,22 +7243,20 @@ impl InvalidTimeRangeException {
 /// <p>The external ID was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidExternalIdException {
+pub struct InvalidExternalIdException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidExternalIdException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidExternalIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidExternalIdException")?;
         if let Some(inner_72) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_72)?;
             }
         }
@@ -7390,7 +7266,7 @@ impl std::fmt::Display for InvalidExternalIdException {
 impl std::error::Error for InvalidExternalIdException {}
 /// See [`InvalidExternalIdException`](crate::error::InvalidExternalIdException).
 pub mod invalid_external_id_exception {
-
+    
     /// A builder for [`InvalidExternalIdException`](crate::error::InvalidExternalIdException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7404,16 +7280,18 @@ pub mod invalid_external_id_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidExternalIdException`](crate::error::InvalidExternalIdException).
         pub fn build(self) -> crate::error::InvalidExternalIdException {
             crate::error::InvalidExternalIdException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidExternalIdException {
     /// Creates a new builder-style object to manufacture [`InvalidExternalIdException`](crate::error::InvalidExternalIdException).
@@ -7425,22 +7303,20 @@ impl InvalidExternalIdException {
 /// <p>The specified deployment status doesn't exist or cannot be determined.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidDeploymentStatusException {
+pub struct InvalidDeploymentStatusException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidDeploymentStatusException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidDeploymentStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDeploymentStatusException")?;
         if let Some(inner_73) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_73)?;
             }
         }
@@ -7450,7 +7326,7 @@ impl std::fmt::Display for InvalidDeploymentStatusException {
 impl std::error::Error for InvalidDeploymentStatusException {}
 /// See [`InvalidDeploymentStatusException`](crate::error::InvalidDeploymentStatusException).
 pub mod invalid_deployment_status_exception {
-
+    
     /// A builder for [`InvalidDeploymentStatusException`](crate::error::InvalidDeploymentStatusException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7464,16 +7340,18 @@ pub mod invalid_deployment_status_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidDeploymentStatusException`](crate::error::InvalidDeploymentStatusException).
         pub fn build(self) -> crate::error::InvalidDeploymentStatusException {
             crate::error::InvalidDeploymentStatusException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidDeploymentStatusException {
     /// Creates a new builder-style object to manufacture [`InvalidDeploymentStatusException`](crate::error::InvalidDeploymentStatusException).
@@ -7487,15 +7365,15 @@ impl InvalidDeploymentStatusException {
 #[derive(std::fmt::Debug)]
 pub struct ListDeploymentInstancesError {
     /// Kind of error that occurred.
-    pub kind: ListDeploymentInstancesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListDeploymentInstancesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListDeploymentInstancesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListDeploymentInstancesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7523,44 +7401,52 @@ pub enum ListDeploymentInstancesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p> The target filter name is invalid. </p>
     InvalidTargetFilterNameException(crate::error::InvalidTargetFilterNameException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDeploymentInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListDeploymentInstancesErrorKind::DeploymentDoesNotExistException(_inner) => {
+            ListDeploymentInstancesErrorKind::DeploymentDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentInstancesErrorKind::DeploymentIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentInstancesErrorKind::DeploymentNotStartedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentInstancesErrorKind::InvalidComputePlatformException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentInstancesErrorKind::InvalidDeploymentIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentInstancesErrorKind::InvalidDeploymentInstanceTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentInstancesErrorKind::InvalidInstanceStatusException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentInstancesErrorKind::InvalidInstanceTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentInstancesErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentInstancesErrorKind::InvalidTargetFilterNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentInstancesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListDeploymentInstancesErrorKind::DeploymentIdRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListDeploymentInstancesErrorKind::DeploymentNotStartedException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListDeploymentInstancesErrorKind::InvalidComputePlatformException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListDeploymentInstancesErrorKind::InvalidDeploymentIdException(_inner) => _inner.fmt(f),
-            ListDeploymentInstancesErrorKind::InvalidDeploymentInstanceTypeException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListDeploymentInstancesErrorKind::InvalidInstanceStatusException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListDeploymentInstancesErrorKind::InvalidInstanceTypeException(_inner) => _inner.fmt(f),
-            ListDeploymentInstancesErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            ListDeploymentInstancesErrorKind::InvalidTargetFilterNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListDeploymentInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7574,145 +7460,123 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListDeploymentInstancesError 
 }
 impl ListDeploymentInstancesError {
     /// Creates a new `ListDeploymentInstancesError`.
-    pub fn new(kind: ListDeploymentInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListDeploymentInstancesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListDeploymentInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListDeploymentInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListDeploymentInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListDeploymentInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListDeploymentInstancesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListDeploymentInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListDeploymentInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListDeploymentInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentInstancesErrorKind::DeploymentDoesNotExistException(_)
-        )
+        matches!(&self.kind, ListDeploymentInstancesErrorKind::DeploymentDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentInstancesErrorKind::DeploymentIdRequiredException(_)
-        )
+        matches!(&self.kind, ListDeploymentInstancesErrorKind::DeploymentIdRequiredException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::DeploymentNotStartedException`.
     pub fn is_deployment_not_started_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentInstancesErrorKind::DeploymentNotStartedException(_)
-        )
+        matches!(&self.kind, ListDeploymentInstancesErrorKind::DeploymentNotStartedException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::InvalidComputePlatformException`.
     pub fn is_invalid_compute_platform_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentInstancesErrorKind::InvalidComputePlatformException(_)
-        )
+        matches!(&self.kind, ListDeploymentInstancesErrorKind::InvalidComputePlatformException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentInstancesErrorKind::InvalidDeploymentIdException(_)
-        )
+        matches!(&self.kind, ListDeploymentInstancesErrorKind::InvalidDeploymentIdException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::InvalidDeploymentInstanceTypeException`.
     pub fn is_invalid_deployment_instance_type_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentInstancesErrorKind::InvalidDeploymentInstanceTypeException(_)
-        )
+        matches!(&self.kind, ListDeploymentInstancesErrorKind::InvalidDeploymentInstanceTypeException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::InvalidInstanceStatusException`.
     pub fn is_invalid_instance_status_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentInstancesErrorKind::InvalidInstanceStatusException(_)
-        )
+        matches!(&self.kind, ListDeploymentInstancesErrorKind::InvalidInstanceStatusException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::InvalidInstanceTypeException`.
     pub fn is_invalid_instance_type_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentInstancesErrorKind::InvalidInstanceTypeException(_)
-        )
+        matches!(&self.kind, ListDeploymentInstancesErrorKind::InvalidInstanceTypeException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentInstancesErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListDeploymentInstancesErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::InvalidTargetFilterNameException`.
     pub fn is_invalid_target_filter_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentInstancesErrorKind::InvalidTargetFilterNameException(_)
-        )
+        matches!(&self.kind, ListDeploymentInstancesErrorKind::InvalidTargetFilterNameException(_))
     }
 }
 impl std::error::Error for ListDeploymentInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListDeploymentInstancesErrorKind::DeploymentDoesNotExistException(_inner) => {
+            ListDeploymentInstancesErrorKind::DeploymentDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentInstancesErrorKind::DeploymentIdRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentInstancesErrorKind::DeploymentNotStartedException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentInstancesErrorKind::InvalidComputePlatformException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentInstancesErrorKind::InvalidDeploymentIdException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentInstancesErrorKind::InvalidDeploymentInstanceTypeException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentInstancesErrorKind::InvalidInstanceStatusException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentInstancesErrorKind::InvalidInstanceTypeException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentInstancesErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentInstancesErrorKind::InvalidTargetFilterNameException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentInstancesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListDeploymentInstancesErrorKind::DeploymentIdRequiredException(_inner) => Some(_inner),
-            ListDeploymentInstancesErrorKind::DeploymentNotStartedException(_inner) => Some(_inner),
-            ListDeploymentInstancesErrorKind::InvalidComputePlatformException(_inner) => {
-                Some(_inner)
-            }
-            ListDeploymentInstancesErrorKind::InvalidDeploymentIdException(_inner) => Some(_inner),
-            ListDeploymentInstancesErrorKind::InvalidDeploymentInstanceTypeException(_inner) => {
-                Some(_inner)
-            }
-            ListDeploymentInstancesErrorKind::InvalidInstanceStatusException(_inner) => {
-                Some(_inner)
-            }
-            ListDeploymentInstancesErrorKind::InvalidInstanceTypeException(_inner) => Some(_inner),
-            ListDeploymentInstancesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListDeploymentInstancesErrorKind::InvalidTargetFilterNameException(_inner) => {
-                Some(_inner)
-            }
-            ListDeploymentInstancesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7720,22 +7584,20 @@ impl std::error::Error for ListDeploymentInstancesError {
 /// <p> The target filter name is invalid. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidTargetFilterNameException {
+pub struct InvalidTargetFilterNameException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidTargetFilterNameException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidTargetFilterNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTargetFilterNameException")?;
         if let Some(inner_74) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_74)?;
             }
         }
@@ -7745,7 +7607,7 @@ impl std::fmt::Display for InvalidTargetFilterNameException {
 impl std::error::Error for InvalidTargetFilterNameException {}
 /// See [`InvalidTargetFilterNameException`](crate::error::InvalidTargetFilterNameException).
 pub mod invalid_target_filter_name_exception {
-
+    
     /// A builder for [`InvalidTargetFilterNameException`](crate::error::InvalidTargetFilterNameException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7759,16 +7621,18 @@ pub mod invalid_target_filter_name_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidTargetFilterNameException`](crate::error::InvalidTargetFilterNameException).
         pub fn build(self) -> crate::error::InvalidTargetFilterNameException {
             crate::error::InvalidTargetFilterNameException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidTargetFilterNameException {
     /// Creates a new builder-style object to manufacture [`InvalidTargetFilterNameException`](crate::error::InvalidTargetFilterNameException).
@@ -7780,22 +7644,20 @@ impl InvalidTargetFilterNameException {
 /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidComputePlatformException {
+pub struct InvalidComputePlatformException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidComputePlatformException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidComputePlatformException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidComputePlatformException")?;
         if let Some(inner_75) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_75)?;
             }
         }
@@ -7805,7 +7667,7 @@ impl std::fmt::Display for InvalidComputePlatformException {
 impl std::error::Error for InvalidComputePlatformException {}
 /// See [`InvalidComputePlatformException`](crate::error::InvalidComputePlatformException).
 pub mod invalid_compute_platform_exception {
-
+    
     /// A builder for [`InvalidComputePlatformException`](crate::error::InvalidComputePlatformException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7819,16 +7681,18 @@ pub mod invalid_compute_platform_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidComputePlatformException`](crate::error::InvalidComputePlatformException).
         pub fn build(self) -> crate::error::InvalidComputePlatformException {
             crate::error::InvalidComputePlatformException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidComputePlatformException {
     /// Creates a new builder-style object to manufacture [`InvalidComputePlatformException`](crate::error::InvalidComputePlatformException).
@@ -7842,15 +7706,15 @@ impl InvalidComputePlatformException {
 #[derive(std::fmt::Debug)]
 pub struct ListDeploymentGroupsError {
     /// Kind of error that occurred.
-    pub kind: ListDeploymentGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListDeploymentGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListDeploymentGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListDeploymentGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7866,28 +7730,34 @@ pub enum ListDeploymentGroupsErrorKind {
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
     /// <p>The next token was specified in an invalid format.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDeploymentGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListDeploymentGroupsErrorKind::ApplicationDoesNotExistException(_inner) => {
+            ListDeploymentGroupsErrorKind::ApplicationDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentGroupsErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentGroupsErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentGroupsErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentGroupsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListDeploymentGroupsErrorKind::ApplicationNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListDeploymentGroupsErrorKind::InvalidApplicationNameException(_inner) => _inner.fmt(f),
-            ListDeploymentGroupsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            ListDeploymentGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7901,87 +7771,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListDeploymentGroupsError {
 }
 impl ListDeploymentGroupsError {
     /// Creates a new `ListDeploymentGroupsError`.
-    pub fn new(kind: ListDeploymentGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListDeploymentGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListDeploymentGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListDeploymentGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListDeploymentGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListDeploymentGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListDeploymentGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListDeploymentGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListDeploymentGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListDeploymentGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListDeploymentGroupsErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentGroupsErrorKind::ApplicationDoesNotExistException(_)
-        )
+        matches!(&self.kind, ListDeploymentGroupsErrorKind::ApplicationDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentGroupsErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentGroupsErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, ListDeploymentGroupsErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentGroupsErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentGroupsErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, ListDeploymentGroupsErrorKind::InvalidApplicationNameException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentGroupsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentGroupsErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListDeploymentGroupsErrorKind::InvalidNextTokenException(_))
     }
 }
 impl std::error::Error for ListDeploymentGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListDeploymentGroupsErrorKind::ApplicationDoesNotExistException(_inner) => Some(_inner),
-            ListDeploymentGroupsErrorKind::ApplicationNameRequiredException(_inner) => Some(_inner),
-            ListDeploymentGroupsErrorKind::InvalidApplicationNameException(_inner) => Some(_inner),
-            ListDeploymentGroupsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListDeploymentGroupsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListDeploymentGroupsErrorKind::ApplicationDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentGroupsErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentGroupsErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentGroupsErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentGroupsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7991,15 +7855,15 @@ impl std::error::Error for ListDeploymentGroupsError {
 #[derive(std::fmt::Debug)]
 pub struct ListDeploymentConfigsError {
     /// Kind of error that occurred.
-    pub kind: ListDeploymentConfigsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListDeploymentConfigsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListDeploymentConfigsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListDeploymentConfigsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8009,21 +7873,25 @@ impl aws_smithy_http::result::CreateUnhandledError for ListDeploymentConfigsErro
 pub enum ListDeploymentConfigsErrorKind {
     /// <p>The next token was specified in an invalid format.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDeploymentConfigsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListDeploymentConfigsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            ListDeploymentConfigsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListDeploymentConfigsErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDeploymentConfigsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8037,63 +7905,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListDeploymentConfigsError {
 }
 impl ListDeploymentConfigsError {
     /// Creates a new `ListDeploymentConfigsError`.
-    pub fn new(kind: ListDeploymentConfigsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListDeploymentConfigsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListDeploymentConfigsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListDeploymentConfigsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListDeploymentConfigsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListDeploymentConfigsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListDeploymentConfigsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListDeploymentConfigsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListDeploymentConfigsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListDeploymentConfigsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListDeploymentConfigsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDeploymentConfigsErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListDeploymentConfigsErrorKind::InvalidNextTokenException(_))
     }
 }
 impl std::error::Error for ListDeploymentConfigsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListDeploymentConfigsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListDeploymentConfigsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListDeploymentConfigsErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListDeploymentConfigsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8103,15 +7968,15 @@ impl std::error::Error for ListDeploymentConfigsError {
 #[derive(std::fmt::Debug)]
 pub struct ListApplicationsError {
     /// Kind of error that occurred.
-    pub kind: ListApplicationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListApplicationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListApplicationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8121,21 +7986,25 @@ impl aws_smithy_http::result::CreateUnhandledError for ListApplicationsError {
 pub enum ListApplicationsErrorKind {
     /// <p>The next token was specified in an invalid format.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListApplicationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListApplicationsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            ListApplicationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListApplicationsErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListApplicationsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8149,59 +8018,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListApplicationsError {
 }
 impl ListApplicationsError {
     /// Creates a new `ListApplicationsError`.
-    pub fn new(kind: ListApplicationsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListApplicationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListApplicationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListApplicationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListApplicationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListApplicationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListApplicationsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListApplicationsErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListApplicationsErrorKind::InvalidNextTokenException(_))
     }
 }
 impl std::error::Error for ListApplicationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListApplicationsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListApplicationsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListApplicationsErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListApplicationsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8211,17 +8081,15 @@ impl std::error::Error for ListApplicationsError {
 #[derive(std::fmt::Debug)]
 pub struct ListApplicationRevisionsError {
     /// Kind of error that occurred.
-    pub kind: ListApplicationRevisionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListApplicationRevisionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListApplicationRevisionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListApplicationRevisionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListApplicationRevisionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8249,44 +8117,52 @@ pub enum ListApplicationRevisionsErrorKind {
     InvalidSortByException(crate::error::InvalidSortByException),
     /// <p>The sort order was specified in an invalid format.</p>
     InvalidSortOrderException(crate::error::InvalidSortOrderException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListApplicationRevisionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListApplicationRevisionsErrorKind::ApplicationDoesNotExistException(_inner) => {
+            ListApplicationRevisionsErrorKind::ApplicationDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListApplicationRevisionsErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListApplicationRevisionsErrorKind::BucketNameFilterRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListApplicationRevisionsErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListApplicationRevisionsErrorKind::InvalidBucketNameFilterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListApplicationRevisionsErrorKind::InvalidDeployedStateFilterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListApplicationRevisionsErrorKind::InvalidKeyPrefixFilterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListApplicationRevisionsErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListApplicationRevisionsErrorKind::InvalidSortByException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListApplicationRevisionsErrorKind::InvalidSortOrderException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListApplicationRevisionsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListApplicationRevisionsErrorKind::ApplicationNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListApplicationRevisionsErrorKind::BucketNameFilterRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListApplicationRevisionsErrorKind::InvalidApplicationNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListApplicationRevisionsErrorKind::InvalidBucketNameFilterException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListApplicationRevisionsErrorKind::InvalidDeployedStateFilterException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListApplicationRevisionsErrorKind::InvalidKeyPrefixFilterException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListApplicationRevisionsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            ListApplicationRevisionsErrorKind::InvalidSortByException(_inner) => _inner.fmt(f),
-            ListApplicationRevisionsErrorKind::InvalidSortOrderException(_inner) => _inner.fmt(f),
-            ListApplicationRevisionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8300,149 +8176,123 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListApplicationRevisionsError
 }
 impl ListApplicationRevisionsError {
     /// Creates a new `ListApplicationRevisionsError`.
-    pub fn new(kind: ListApplicationRevisionsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListApplicationRevisionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListApplicationRevisionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListApplicationRevisionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListApplicationRevisionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListApplicationRevisionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListApplicationRevisionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListApplicationRevisionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListApplicationRevisionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListApplicationRevisionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListApplicationRevisionsErrorKind::ApplicationDoesNotExistException(_)
-        )
+        matches!(&self.kind, ListApplicationRevisionsErrorKind::ApplicationDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListApplicationRevisionsErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, ListApplicationRevisionsErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::BucketNameFilterRequiredException`.
     pub fn is_bucket_name_filter_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListApplicationRevisionsErrorKind::BucketNameFilterRequiredException(_)
-        )
+        matches!(&self.kind, ListApplicationRevisionsErrorKind::BucketNameFilterRequiredException(_))
     }
     /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListApplicationRevisionsErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, ListApplicationRevisionsErrorKind::InvalidApplicationNameException(_))
     }
     /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::InvalidBucketNameFilterException`.
     pub fn is_invalid_bucket_name_filter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListApplicationRevisionsErrorKind::InvalidBucketNameFilterException(_)
-        )
+        matches!(&self.kind, ListApplicationRevisionsErrorKind::InvalidBucketNameFilterException(_))
     }
     /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::InvalidDeployedStateFilterException`.
     pub fn is_invalid_deployed_state_filter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListApplicationRevisionsErrorKind::InvalidDeployedStateFilterException(_)
-        )
+        matches!(&self.kind, ListApplicationRevisionsErrorKind::InvalidDeployedStateFilterException(_))
     }
     /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::InvalidKeyPrefixFilterException`.
     pub fn is_invalid_key_prefix_filter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListApplicationRevisionsErrorKind::InvalidKeyPrefixFilterException(_)
-        )
+        matches!(&self.kind, ListApplicationRevisionsErrorKind::InvalidKeyPrefixFilterException(_))
     }
     /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListApplicationRevisionsErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListApplicationRevisionsErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::InvalidSortByException`.
     pub fn is_invalid_sort_by_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListApplicationRevisionsErrorKind::InvalidSortByException(_)
-        )
+        matches!(&self.kind, ListApplicationRevisionsErrorKind::InvalidSortByException(_))
     }
     /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::InvalidSortOrderException`.
     pub fn is_invalid_sort_order_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListApplicationRevisionsErrorKind::InvalidSortOrderException(_)
-        )
+        matches!(&self.kind, ListApplicationRevisionsErrorKind::InvalidSortOrderException(_))
     }
 }
 impl std::error::Error for ListApplicationRevisionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListApplicationRevisionsErrorKind::ApplicationDoesNotExistException(_inner) => {
+            ListApplicationRevisionsErrorKind::ApplicationDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            ListApplicationRevisionsErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            ListApplicationRevisionsErrorKind::BucketNameFilterRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            ListApplicationRevisionsErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            ListApplicationRevisionsErrorKind::InvalidBucketNameFilterException(_inner) =>
+            Some(_inner)
+            ,
+            ListApplicationRevisionsErrorKind::InvalidDeployedStateFilterException(_inner) =>
+            Some(_inner)
+            ,
+            ListApplicationRevisionsErrorKind::InvalidKeyPrefixFilterException(_inner) =>
+            Some(_inner)
+            ,
+            ListApplicationRevisionsErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListApplicationRevisionsErrorKind::InvalidSortByException(_inner) =>
+            Some(_inner)
+            ,
+            ListApplicationRevisionsErrorKind::InvalidSortOrderException(_inner) =>
+            Some(_inner)
+            ,
+            ListApplicationRevisionsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListApplicationRevisionsErrorKind::ApplicationNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            ListApplicationRevisionsErrorKind::BucketNameFilterRequiredException(_inner) => {
-                Some(_inner)
-            }
-            ListApplicationRevisionsErrorKind::InvalidApplicationNameException(_inner) => {
-                Some(_inner)
-            }
-            ListApplicationRevisionsErrorKind::InvalidBucketNameFilterException(_inner) => {
-                Some(_inner)
-            }
-            ListApplicationRevisionsErrorKind::InvalidDeployedStateFilterException(_inner) => {
-                Some(_inner)
-            }
-            ListApplicationRevisionsErrorKind::InvalidKeyPrefixFilterException(_inner) => {
-                Some(_inner)
-            }
-            ListApplicationRevisionsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListApplicationRevisionsErrorKind::InvalidSortByException(_inner) => Some(_inner),
-            ListApplicationRevisionsErrorKind::InvalidSortOrderException(_inner) => Some(_inner),
-            ListApplicationRevisionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8450,22 +8300,20 @@ impl std::error::Error for ListApplicationRevisionsError {
 /// <p>The sort order was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSortOrderException {
+pub struct InvalidSortOrderException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidSortOrderException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidSortOrderException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSortOrderException")?;
         if let Some(inner_76) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_76)?;
             }
         }
@@ -8475,7 +8323,7 @@ impl std::fmt::Display for InvalidSortOrderException {
 impl std::error::Error for InvalidSortOrderException {}
 /// See [`InvalidSortOrderException`](crate::error::InvalidSortOrderException).
 pub mod invalid_sort_order_exception {
-
+    
     /// A builder for [`InvalidSortOrderException`](crate::error::InvalidSortOrderException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8489,16 +8337,18 @@ pub mod invalid_sort_order_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidSortOrderException`](crate::error::InvalidSortOrderException).
         pub fn build(self) -> crate::error::InvalidSortOrderException {
             crate::error::InvalidSortOrderException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidSortOrderException {
     /// Creates a new builder-style object to manufacture [`InvalidSortOrderException`](crate::error::InvalidSortOrderException).
@@ -8510,22 +8360,20 @@ impl InvalidSortOrderException {
 /// <p>The column name to sort by is either not present or was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSortByException {
+pub struct InvalidSortByException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidSortByException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidSortByException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSortByException")?;
         if let Some(inner_77) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_77)?;
             }
         }
@@ -8535,7 +8383,7 @@ impl std::fmt::Display for InvalidSortByException {
 impl std::error::Error for InvalidSortByException {}
 /// See [`InvalidSortByException`](crate::error::InvalidSortByException).
 pub mod invalid_sort_by_exception {
-
+    
     /// A builder for [`InvalidSortByException`](crate::error::InvalidSortByException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8549,16 +8397,18 @@ pub mod invalid_sort_by_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidSortByException`](crate::error::InvalidSortByException).
         pub fn build(self) -> crate::error::InvalidSortByException {
             crate::error::InvalidSortByException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidSortByException {
     /// Creates a new builder-style object to manufacture [`InvalidSortByException`](crate::error::InvalidSortByException).
@@ -8570,22 +8420,20 @@ impl InvalidSortByException {
 /// <p>The specified key prefix filter was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidKeyPrefixFilterException {
+pub struct InvalidKeyPrefixFilterException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidKeyPrefixFilterException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidKeyPrefixFilterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidKeyPrefixFilterException")?;
         if let Some(inner_78) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_78)?;
             }
         }
@@ -8595,7 +8443,7 @@ impl std::fmt::Display for InvalidKeyPrefixFilterException {
 impl std::error::Error for InvalidKeyPrefixFilterException {}
 /// See [`InvalidKeyPrefixFilterException`](crate::error::InvalidKeyPrefixFilterException).
 pub mod invalid_key_prefix_filter_exception {
-
+    
     /// A builder for [`InvalidKeyPrefixFilterException`](crate::error::InvalidKeyPrefixFilterException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8609,16 +8457,18 @@ pub mod invalid_key_prefix_filter_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidKeyPrefixFilterException`](crate::error::InvalidKeyPrefixFilterException).
         pub fn build(self) -> crate::error::InvalidKeyPrefixFilterException {
             crate::error::InvalidKeyPrefixFilterException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidKeyPrefixFilterException {
     /// Creates a new builder-style object to manufacture [`InvalidKeyPrefixFilterException`](crate::error::InvalidKeyPrefixFilterException).
@@ -8630,22 +8480,20 @@ impl InvalidKeyPrefixFilterException {
 /// <p>The deployed state filter was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidDeployedStateFilterException {
+pub struct InvalidDeployedStateFilterException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidDeployedStateFilterException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidDeployedStateFilterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDeployedStateFilterException")?;
         if let Some(inner_79) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_79)?;
             }
         }
@@ -8655,7 +8503,7 @@ impl std::fmt::Display for InvalidDeployedStateFilterException {
 impl std::error::Error for InvalidDeployedStateFilterException {}
 /// See [`InvalidDeployedStateFilterException`](crate::error::InvalidDeployedStateFilterException).
 pub mod invalid_deployed_state_filter_exception {
-
+    
     /// A builder for [`InvalidDeployedStateFilterException`](crate::error::InvalidDeployedStateFilterException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8669,16 +8517,18 @@ pub mod invalid_deployed_state_filter_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidDeployedStateFilterException`](crate::error::InvalidDeployedStateFilterException).
         pub fn build(self) -> crate::error::InvalidDeployedStateFilterException {
             crate::error::InvalidDeployedStateFilterException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidDeployedStateFilterException {
     /// Creates a new builder-style object to manufacture [`InvalidDeployedStateFilterException`](crate::error::InvalidDeployedStateFilterException).
@@ -8690,22 +8540,20 @@ impl InvalidDeployedStateFilterException {
 /// <p>The bucket name either doesn't exist or was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidBucketNameFilterException {
+pub struct InvalidBucketNameFilterException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidBucketNameFilterException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidBucketNameFilterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidBucketNameFilterException")?;
         if let Some(inner_80) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_80)?;
             }
         }
@@ -8715,7 +8563,7 @@ impl std::fmt::Display for InvalidBucketNameFilterException {
 impl std::error::Error for InvalidBucketNameFilterException {}
 /// See [`InvalidBucketNameFilterException`](crate::error::InvalidBucketNameFilterException).
 pub mod invalid_bucket_name_filter_exception {
-
+    
     /// A builder for [`InvalidBucketNameFilterException`](crate::error::InvalidBucketNameFilterException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8729,16 +8577,18 @@ pub mod invalid_bucket_name_filter_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidBucketNameFilterException`](crate::error::InvalidBucketNameFilterException).
         pub fn build(self) -> crate::error::InvalidBucketNameFilterException {
             crate::error::InvalidBucketNameFilterException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidBucketNameFilterException {
     /// Creates a new builder-style object to manufacture [`InvalidBucketNameFilterException`](crate::error::InvalidBucketNameFilterException).
@@ -8750,22 +8600,20 @@ impl InvalidBucketNameFilterException {
 /// <p>A bucket name is required, but was not provided.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BucketNameFilterRequiredException {
+pub struct BucketNameFilterRequiredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BucketNameFilterRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for BucketNameFilterRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BucketNameFilterRequiredException")?;
         if let Some(inner_81) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_81)?;
             }
         }
@@ -8775,7 +8623,7 @@ impl std::fmt::Display for BucketNameFilterRequiredException {
 impl std::error::Error for BucketNameFilterRequiredException {}
 /// See [`BucketNameFilterRequiredException`](crate::error::BucketNameFilterRequiredException).
 pub mod bucket_name_filter_required_exception {
-
+    
     /// A builder for [`BucketNameFilterRequiredException`](crate::error::BucketNameFilterRequiredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8789,16 +8637,18 @@ pub mod bucket_name_filter_required_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BucketNameFilterRequiredException`](crate::error::BucketNameFilterRequiredException).
         pub fn build(self) -> crate::error::BucketNameFilterRequiredException {
             crate::error::BucketNameFilterRequiredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BucketNameFilterRequiredException {
     /// Creates a new builder-style object to manufacture [`BucketNameFilterRequiredException`](crate::error::BucketNameFilterRequiredException).
@@ -8812,15 +8662,15 @@ impl BucketNameFilterRequiredException {
 #[derive(std::fmt::Debug)]
 pub struct GetOnPremisesInstanceError {
     /// Kind of error that occurred.
-    pub kind: GetOnPremisesInstanceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetOnPremisesInstanceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetOnPremisesInstanceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8834,23 +8684,31 @@ pub enum GetOnPremisesInstanceErrorKind {
     InstanceNotRegisteredException(crate::error::InstanceNotRegisteredException),
     /// <p>The on-premises instance name was specified in an invalid format.</p>
     InvalidInstanceNameException(crate::error::InvalidInstanceNameException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetOnPremisesInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetOnPremisesInstanceErrorKind::InstanceNameRequiredException(_inner) => _inner.fmt(f),
-            GetOnPremisesInstanceErrorKind::InstanceNotRegisteredException(_inner) => _inner.fmt(f),
-            GetOnPremisesInstanceErrorKind::InvalidInstanceNameException(_inner) => _inner.fmt(f),
-            GetOnPremisesInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetOnPremisesInstanceErrorKind::InstanceNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetOnPremisesInstanceErrorKind::InstanceNotRegisteredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetOnPremisesInstanceErrorKind::InvalidInstanceNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetOnPremisesInstanceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8864,79 +8722,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetOnPremisesInstanceError {
 }
 impl GetOnPremisesInstanceError {
     /// Creates a new `GetOnPremisesInstanceError`.
-    pub fn new(kind: GetOnPremisesInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetOnPremisesInstanceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetOnPremisesInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetOnPremisesInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetOnPremisesInstanceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetOnPremisesInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetOnPremisesInstanceErrorKind::InstanceNameRequiredException`.
     pub fn is_instance_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetOnPremisesInstanceErrorKind::InstanceNameRequiredException(_)
-        )
+        matches!(&self.kind, GetOnPremisesInstanceErrorKind::InstanceNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetOnPremisesInstanceErrorKind::InstanceNotRegisteredException`.
     pub fn is_instance_not_registered_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetOnPremisesInstanceErrorKind::InstanceNotRegisteredException(_)
-        )
+        matches!(&self.kind, GetOnPremisesInstanceErrorKind::InstanceNotRegisteredException(_))
     }
     /// Returns `true` if the error kind is `GetOnPremisesInstanceErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetOnPremisesInstanceErrorKind::InvalidInstanceNameException(_)
-        )
+        matches!(&self.kind, GetOnPremisesInstanceErrorKind::InvalidInstanceNameException(_))
     }
 }
 impl std::error::Error for GetOnPremisesInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetOnPremisesInstanceErrorKind::InstanceNameRequiredException(_inner) => Some(_inner),
-            GetOnPremisesInstanceErrorKind::InstanceNotRegisteredException(_inner) => Some(_inner),
-            GetOnPremisesInstanceErrorKind::InvalidInstanceNameException(_inner) => Some(_inner),
-            GetOnPremisesInstanceErrorKind::Unhandled(_inner) => Some(_inner),
+            GetOnPremisesInstanceErrorKind::InstanceNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetOnPremisesInstanceErrorKind::InstanceNotRegisteredException(_inner) =>
+            Some(_inner)
+            ,
+            GetOnPremisesInstanceErrorKind::InvalidInstanceNameException(_inner) =>
+            Some(_inner)
+            ,
+            GetOnPremisesInstanceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8946,15 +8799,15 @@ impl std::error::Error for GetOnPremisesInstanceError {
 #[derive(std::fmt::Debug)]
 pub struct GetDeploymentTargetError {
     /// Kind of error that occurred.
-    pub kind: GetDeploymentTargetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetDeploymentTargetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetDeploymentTargetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetDeploymentTargetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8978,34 +8831,46 @@ pub enum GetDeploymentTargetErrorKind {
     InvalidDeploymentTargetIdException(crate::error::InvalidDeploymentTargetIdException),
     /// <p>The on-premises instance name was specified in an invalid format.</p>
     InvalidInstanceNameException(crate::error::InvalidInstanceNameException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDeploymentTargetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDeploymentTargetErrorKind::DeploymentDoesNotExistException(_inner) => _inner.fmt(f),
-            GetDeploymentTargetErrorKind::DeploymentIdRequiredException(_inner) => _inner.fmt(f),
-            GetDeploymentTargetErrorKind::DeploymentNotStartedException(_inner) => _inner.fmt(f),
-            GetDeploymentTargetErrorKind::DeploymentTargetDoesNotExistException(_inner) => {
+            GetDeploymentTargetErrorKind::DeploymentDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentTargetErrorKind::DeploymentIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentTargetErrorKind::DeploymentNotStartedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentTargetErrorKind::DeploymentTargetDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentTargetErrorKind::DeploymentTargetIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentTargetErrorKind::InvalidDeploymentIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentTargetErrorKind::InvalidDeploymentTargetIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentTargetErrorKind::InvalidInstanceNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentTargetErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetDeploymentTargetErrorKind::DeploymentTargetIdRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetDeploymentTargetErrorKind::InvalidDeploymentIdException(_inner) => _inner.fmt(f),
-            GetDeploymentTargetErrorKind::InvalidDeploymentTargetIdException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetDeploymentTargetErrorKind::InvalidInstanceNameException(_inner) => _inner.fmt(f),
-            GetDeploymentTargetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -9019,121 +8884,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetDeploymentTargetError {
 }
 impl GetDeploymentTargetError {
     /// Creates a new `GetDeploymentTargetError`.
-    pub fn new(kind: GetDeploymentTargetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetDeploymentTargetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetDeploymentTargetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetDeploymentTargetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetDeploymentTargetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetDeploymentTargetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetDeploymentTargetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetDeploymentTargetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetDeploymentTargetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetDeploymentTargetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetDeploymentTargetErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentTargetErrorKind::DeploymentDoesNotExistException(_)
-        )
+        matches!(&self.kind, GetDeploymentTargetErrorKind::DeploymentDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentTargetErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentTargetErrorKind::DeploymentIdRequiredException(_)
-        )
+        matches!(&self.kind, GetDeploymentTargetErrorKind::DeploymentIdRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentTargetErrorKind::DeploymentNotStartedException`.
     pub fn is_deployment_not_started_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentTargetErrorKind::DeploymentNotStartedException(_)
-        )
+        matches!(&self.kind, GetDeploymentTargetErrorKind::DeploymentNotStartedException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentTargetErrorKind::DeploymentTargetDoesNotExistException`.
     pub fn is_deployment_target_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentTargetErrorKind::DeploymentTargetDoesNotExistException(_)
-        )
+        matches!(&self.kind, GetDeploymentTargetErrorKind::DeploymentTargetDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentTargetErrorKind::DeploymentTargetIdRequiredException`.
     pub fn is_deployment_target_id_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentTargetErrorKind::DeploymentTargetIdRequiredException(_)
-        )
+        matches!(&self.kind, GetDeploymentTargetErrorKind::DeploymentTargetIdRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentTargetErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentTargetErrorKind::InvalidDeploymentIdException(_)
-        )
+        matches!(&self.kind, GetDeploymentTargetErrorKind::InvalidDeploymentIdException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentTargetErrorKind::InvalidDeploymentTargetIdException`.
     pub fn is_invalid_deployment_target_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentTargetErrorKind::InvalidDeploymentTargetIdException(_)
-        )
+        matches!(&self.kind, GetDeploymentTargetErrorKind::InvalidDeploymentTargetIdException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentTargetErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentTargetErrorKind::InvalidInstanceNameException(_)
-        )
+        matches!(&self.kind, GetDeploymentTargetErrorKind::InvalidInstanceNameException(_))
     }
 }
 impl std::error::Error for GetDeploymentTargetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDeploymentTargetErrorKind::DeploymentDoesNotExistException(_inner) => Some(_inner),
-            GetDeploymentTargetErrorKind::DeploymentIdRequiredException(_inner) => Some(_inner),
-            GetDeploymentTargetErrorKind::DeploymentNotStartedException(_inner) => Some(_inner),
-            GetDeploymentTargetErrorKind::DeploymentTargetDoesNotExistException(_inner) => {
+            GetDeploymentTargetErrorKind::DeploymentDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentTargetErrorKind::DeploymentIdRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentTargetErrorKind::DeploymentNotStartedException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentTargetErrorKind::DeploymentTargetDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentTargetErrorKind::DeploymentTargetIdRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentTargetErrorKind::InvalidDeploymentIdException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentTargetErrorKind::InvalidDeploymentTargetIdException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentTargetErrorKind::InvalidInstanceNameException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentTargetErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetDeploymentTargetErrorKind::DeploymentTargetIdRequiredException(_inner) => {
-                Some(_inner)
-            }
-            GetDeploymentTargetErrorKind::InvalidDeploymentIdException(_inner) => Some(_inner),
-            GetDeploymentTargetErrorKind::InvalidDeploymentTargetIdException(_inner) => {
-                Some(_inner)
-            }
-            GetDeploymentTargetErrorKind::InvalidInstanceNameException(_inner) => Some(_inner),
-            GetDeploymentTargetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9141,22 +8994,20 @@ impl std::error::Error for GetDeploymentTargetError {
 /// <p> The target ID provided was not valid. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidDeploymentTargetIdException {
+pub struct InvalidDeploymentTargetIdException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidDeploymentTargetIdException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidDeploymentTargetIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDeploymentTargetIdException")?;
         if let Some(inner_82) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_82)?;
             }
         }
@@ -9166,7 +9017,7 @@ impl std::fmt::Display for InvalidDeploymentTargetIdException {
 impl std::error::Error for InvalidDeploymentTargetIdException {}
 /// See [`InvalidDeploymentTargetIdException`](crate::error::InvalidDeploymentTargetIdException).
 pub mod invalid_deployment_target_id_exception {
-
+    
     /// A builder for [`InvalidDeploymentTargetIdException`](crate::error::InvalidDeploymentTargetIdException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9180,16 +9031,18 @@ pub mod invalid_deployment_target_id_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidDeploymentTargetIdException`](crate::error::InvalidDeploymentTargetIdException).
         pub fn build(self) -> crate::error::InvalidDeploymentTargetIdException {
             crate::error::InvalidDeploymentTargetIdException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidDeploymentTargetIdException {
     /// Creates a new builder-style object to manufacture [`InvalidDeploymentTargetIdException`](crate::error::InvalidDeploymentTargetIdException).
@@ -9201,22 +9054,20 @@ impl InvalidDeploymentTargetIdException {
 /// <p> A deployment target ID was not provided. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentTargetIdRequiredException {
+pub struct DeploymentTargetIdRequiredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentTargetIdRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentTargetIdRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentTargetIdRequiredException")?;
         if let Some(inner_83) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_83)?;
             }
         }
@@ -9226,7 +9077,7 @@ impl std::fmt::Display for DeploymentTargetIdRequiredException {
 impl std::error::Error for DeploymentTargetIdRequiredException {}
 /// See [`DeploymentTargetIdRequiredException`](crate::error::DeploymentTargetIdRequiredException).
 pub mod deployment_target_id_required_exception {
-
+    
     /// A builder for [`DeploymentTargetIdRequiredException`](crate::error::DeploymentTargetIdRequiredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9240,16 +9091,18 @@ pub mod deployment_target_id_required_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentTargetIdRequiredException`](crate::error::DeploymentTargetIdRequiredException).
         pub fn build(self) -> crate::error::DeploymentTargetIdRequiredException {
             crate::error::DeploymentTargetIdRequiredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentTargetIdRequiredException {
     /// Creates a new builder-style object to manufacture [`DeploymentTargetIdRequiredException`](crate::error::DeploymentTargetIdRequiredException).
@@ -9261,22 +9114,20 @@ impl DeploymentTargetIdRequiredException {
 /// <p> The provided target ID does not belong to the attempted deployment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentTargetDoesNotExistException {
+pub struct DeploymentTargetDoesNotExistException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentTargetDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentTargetDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentTargetDoesNotExistException")?;
         if let Some(inner_84) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_84)?;
             }
         }
@@ -9286,7 +9137,7 @@ impl std::fmt::Display for DeploymentTargetDoesNotExistException {
 impl std::error::Error for DeploymentTargetDoesNotExistException {}
 /// See [`DeploymentTargetDoesNotExistException`](crate::error::DeploymentTargetDoesNotExistException).
 pub mod deployment_target_does_not_exist_exception {
-
+    
     /// A builder for [`DeploymentTargetDoesNotExistException`](crate::error::DeploymentTargetDoesNotExistException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9300,16 +9151,18 @@ pub mod deployment_target_does_not_exist_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentTargetDoesNotExistException`](crate::error::DeploymentTargetDoesNotExistException).
         pub fn build(self) -> crate::error::DeploymentTargetDoesNotExistException {
             crate::error::DeploymentTargetDoesNotExistException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentTargetDoesNotExistException {
     /// Creates a new builder-style object to manufacture [`DeploymentTargetDoesNotExistException`](crate::error::DeploymentTargetDoesNotExistException).
@@ -9323,15 +9176,15 @@ impl DeploymentTargetDoesNotExistException {
 #[derive(std::fmt::Debug)]
 pub struct GetDeploymentInstanceError {
     /// Kind of error that occurred.
-    pub kind: GetDeploymentInstanceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetDeploymentInstanceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetDeploymentInstanceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetDeploymentInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9344,14 +9197,10 @@ pub enum GetDeploymentInstanceErrorKind {
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
     /// <p>The specified instance does not exist in the deployment group.</p>
-    #[deprecated(
-        note = "This exception is deprecated, use DeploymentTargetDoesNotExistException instead."
-    )]
+    #[deprecated(note = "This exception is deprecated, use DeploymentTargetDoesNotExistException instead.")]
     InstanceDoesNotExistException(crate::error::InstanceDoesNotExistException),
     /// <p>The instance ID was not specified.</p>
-    #[deprecated(
-        note = "This exception is deprecated, use DeploymentTargetIdRequiredException instead."
-    )]
+    #[deprecated(note = "This exception is deprecated, use DeploymentTargetIdRequiredException instead.")]
     InstanceIdRequiredException(crate::error::InstanceIdRequiredException),
     /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
     InvalidComputePlatformException(crate::error::InvalidComputePlatformException),
@@ -9359,31 +9208,43 @@ pub enum GetDeploymentInstanceErrorKind {
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
     /// <p>The on-premises instance name was specified in an invalid format.</p>
     InvalidInstanceNameException(crate::error::InvalidInstanceNameException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDeploymentInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDeploymentInstanceErrorKind::DeploymentDoesNotExistException(_inner) => {
+            GetDeploymentInstanceErrorKind::DeploymentDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentInstanceErrorKind::DeploymentIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentInstanceErrorKind::InstanceDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentInstanceErrorKind::InstanceIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentInstanceErrorKind::InvalidComputePlatformException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentInstanceErrorKind::InvalidDeploymentIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentInstanceErrorKind::InvalidInstanceNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentInstanceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetDeploymentInstanceErrorKind::DeploymentIdRequiredException(_inner) => _inner.fmt(f),
-            GetDeploymentInstanceErrorKind::InstanceDoesNotExistException(_inner) => _inner.fmt(f),
-            GetDeploymentInstanceErrorKind::InstanceIdRequiredException(_inner) => _inner.fmt(f),
-            GetDeploymentInstanceErrorKind::InvalidComputePlatformException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetDeploymentInstanceErrorKind::InvalidDeploymentIdException(_inner) => _inner.fmt(f),
-            GetDeploymentInstanceErrorKind::InvalidInstanceNameException(_inner) => _inner.fmt(f),
-            GetDeploymentInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -9397,137 +9258,124 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetDeploymentInstanceError {
 }
 impl GetDeploymentInstanceError {
     /// Creates a new `GetDeploymentInstanceError`.
-    pub fn new(kind: GetDeploymentInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetDeploymentInstanceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetDeploymentInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetDeploymentInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetDeploymentInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetDeploymentInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetDeploymentInstanceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetDeploymentInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetDeploymentInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetDeploymentInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetDeploymentInstanceErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentInstanceErrorKind::DeploymentDoesNotExistException(_)
-        )
+        matches!(&self.kind, GetDeploymentInstanceErrorKind::DeploymentDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentInstanceErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentInstanceErrorKind::DeploymentIdRequiredException(_)
-        )
+        matches!(&self.kind, GetDeploymentInstanceErrorKind::DeploymentIdRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentInstanceErrorKind::InstanceDoesNotExistException`.
     pub fn is_instance_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentInstanceErrorKind::InstanceDoesNotExistException(_)
-        )
+        matches!(&self.kind, GetDeploymentInstanceErrorKind::InstanceDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentInstanceErrorKind::InstanceIdRequiredException`.
     pub fn is_instance_id_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentInstanceErrorKind::InstanceIdRequiredException(_)
-        )
+        matches!(&self.kind, GetDeploymentInstanceErrorKind::InstanceIdRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentInstanceErrorKind::InvalidComputePlatformException`.
     pub fn is_invalid_compute_platform_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentInstanceErrorKind::InvalidComputePlatformException(_)
-        )
+        matches!(&self.kind, GetDeploymentInstanceErrorKind::InvalidComputePlatformException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentInstanceErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentInstanceErrorKind::InvalidDeploymentIdException(_)
-        )
+        matches!(&self.kind, GetDeploymentInstanceErrorKind::InvalidDeploymentIdException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentInstanceErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentInstanceErrorKind::InvalidInstanceNameException(_)
-        )
+        matches!(&self.kind, GetDeploymentInstanceErrorKind::InvalidInstanceNameException(_))
     }
 }
 impl std::error::Error for GetDeploymentInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDeploymentInstanceErrorKind::DeploymentDoesNotExistException(_inner) => Some(_inner),
-            GetDeploymentInstanceErrorKind::DeploymentIdRequiredException(_inner) => Some(_inner),
-            GetDeploymentInstanceErrorKind::InstanceDoesNotExistException(_inner) => Some(_inner),
-            GetDeploymentInstanceErrorKind::InstanceIdRequiredException(_inner) => Some(_inner),
-            GetDeploymentInstanceErrorKind::InvalidComputePlatformException(_inner) => Some(_inner),
-            GetDeploymentInstanceErrorKind::InvalidDeploymentIdException(_inner) => Some(_inner),
-            GetDeploymentInstanceErrorKind::InvalidInstanceNameException(_inner) => Some(_inner),
-            GetDeploymentInstanceErrorKind::Unhandled(_inner) => Some(_inner),
+            GetDeploymentInstanceErrorKind::DeploymentDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentInstanceErrorKind::DeploymentIdRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentInstanceErrorKind::InstanceDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentInstanceErrorKind::InstanceIdRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentInstanceErrorKind::InvalidComputePlatformException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentInstanceErrorKind::InvalidDeploymentIdException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentInstanceErrorKind::InvalidInstanceNameException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentInstanceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
 /// <p>The instance ID was not specified.</p>
-#[deprecated(
-    note = "This exception is deprecated, use DeploymentTargetIdRequiredException instead."
-)]
+#[deprecated(note = "This exception is deprecated, use DeploymentTargetIdRequiredException instead.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceIdRequiredException {
+pub struct InstanceIdRequiredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InstanceIdRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InstanceIdRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InstanceIdRequiredException")?;
         if let Some(inner_85) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_85)?;
             }
         }
@@ -9537,7 +9385,7 @@ impl std::fmt::Display for InstanceIdRequiredException {
 impl std::error::Error for InstanceIdRequiredException {}
 /// See [`InstanceIdRequiredException`](crate::error::InstanceIdRequiredException).
 pub mod instance_id_required_exception {
-
+    
     /// A builder for [`InstanceIdRequiredException`](crate::error::InstanceIdRequiredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9551,16 +9399,18 @@ pub mod instance_id_required_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InstanceIdRequiredException`](crate::error::InstanceIdRequiredException).
         pub fn build(self) -> crate::error::InstanceIdRequiredException {
             crate::error::InstanceIdRequiredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceIdRequiredException {
     /// Creates a new builder-style object to manufacture [`InstanceIdRequiredException`](crate::error::InstanceIdRequiredException).
@@ -9570,27 +9420,23 @@ impl InstanceIdRequiredException {
 }
 
 /// <p>The specified instance does not exist in the deployment group.</p>
-#[deprecated(
-    note = "This exception is deprecated, use DeploymentTargetDoesNotExistException instead."
-)]
+#[deprecated(note = "This exception is deprecated, use DeploymentTargetDoesNotExistException instead.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceDoesNotExistException {
+pub struct InstanceDoesNotExistException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InstanceDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InstanceDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InstanceDoesNotExistException")?;
         if let Some(inner_86) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_86)?;
             }
         }
@@ -9600,7 +9446,7 @@ impl std::fmt::Display for InstanceDoesNotExistException {
 impl std::error::Error for InstanceDoesNotExistException {}
 /// See [`InstanceDoesNotExistException`](crate::error::InstanceDoesNotExistException).
 pub mod instance_does_not_exist_exception {
-
+    
     /// A builder for [`InstanceDoesNotExistException`](crate::error::InstanceDoesNotExistException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9614,16 +9460,18 @@ pub mod instance_does_not_exist_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InstanceDoesNotExistException`](crate::error::InstanceDoesNotExistException).
         pub fn build(self) -> crate::error::InstanceDoesNotExistException {
             crate::error::InstanceDoesNotExistException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceDoesNotExistException {
     /// Creates a new builder-style object to manufacture [`InstanceDoesNotExistException`](crate::error::InstanceDoesNotExistException).
@@ -9637,15 +9485,15 @@ impl InstanceDoesNotExistException {
 #[derive(std::fmt::Debug)]
 pub struct GetDeploymentGroupError {
     /// Kind of error that occurred.
-    pub kind: GetDeploymentGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetDeploymentGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetDeploymentGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9667,35 +9515,43 @@ pub enum GetDeploymentGroupErrorKind {
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
     /// <p>The deployment group name was specified in an invalid format.</p>
     InvalidDeploymentGroupNameException(crate::error::InvalidDeploymentGroupNameException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDeploymentGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDeploymentGroupErrorKind::ApplicationDoesNotExistException(_inner) => _inner.fmt(f),
-            GetDeploymentGroupErrorKind::ApplicationNameRequiredException(_inner) => _inner.fmt(f),
-            GetDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_inner) => {
+            GetDeploymentGroupErrorKind::ApplicationDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentGroupErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentGroupErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetDeploymentGroupErrorKind::InvalidApplicationNameException(_inner) => _inner.fmt(f),
-            GetDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetDeploymentGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -9709,115 +9565,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetDeploymentGroupError {
 }
 impl GetDeploymentGroupError {
     /// Creates a new `GetDeploymentGroupError`.
-    pub fn new(kind: GetDeploymentGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetDeploymentGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetDeploymentGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetDeploymentGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetDeploymentGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetDeploymentGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetDeploymentGroupErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentGroupErrorKind::ApplicationDoesNotExistException(_)
-        )
+        matches!(&self.kind, GetDeploymentGroupErrorKind::ApplicationDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentGroupErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentGroupErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, GetDeploymentGroupErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException`.
     pub fn is_deployment_config_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_)
-        )
+        matches!(&self.kind, GetDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException`.
     pub fn is_deployment_group_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException(_)
-        )
+        matches!(&self.kind, GetDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentGroupErrorKind::DeploymentGroupNameRequiredException`.
     pub fn is_deployment_group_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_)
-        )
+        matches!(&self.kind, GetDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentGroupErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentGroupErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, GetDeploymentGroupErrorKind::InvalidApplicationNameException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentGroupErrorKind::InvalidDeploymentGroupNameException`.
     pub fn is_invalid_deployment_group_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_)
-        )
+        matches!(&self.kind, GetDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_))
     }
 }
 impl std::error::Error for GetDeploymentGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDeploymentGroupErrorKind::ApplicationDoesNotExistException(_inner) => Some(_inner),
-            GetDeploymentGroupErrorKind::ApplicationNameRequiredException(_inner) => Some(_inner),
-            GetDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_inner) => {
+            GetDeploymentGroupErrorKind::ApplicationDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentGroupErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentGroupErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException(_inner) => {
-                Some(_inner)
-            }
-            GetDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            GetDeploymentGroupErrorKind::InvalidApplicationNameException(_inner) => Some(_inner),
-            GetDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_inner) => {
-                Some(_inner)
-            }
-            GetDeploymentGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9827,15 +9670,15 @@ impl std::error::Error for GetDeploymentGroupError {
 #[derive(std::fmt::Debug)]
 pub struct GetDeploymentConfigError {
     /// Kind of error that occurred.
-    pub kind: GetDeploymentConfigErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetDeploymentConfigErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetDeploymentConfigError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetDeploymentConfigErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9851,30 +9694,34 @@ pub enum GetDeploymentConfigErrorKind {
     InvalidComputePlatformException(crate::error::InvalidComputePlatformException),
     /// <p>The deployment configuration name was specified in an invalid format.</p>
     InvalidDeploymentConfigNameException(crate::error::InvalidDeploymentConfigNameException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDeploymentConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDeploymentConfigErrorKind::DeploymentConfigDoesNotExistException(_inner) => {
+            GetDeploymentConfigErrorKind::DeploymentConfigDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentConfigErrorKind::InvalidComputePlatformException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentConfigErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetDeploymentConfigErrorKind::InvalidComputePlatformException(_inner) => _inner.fmt(f),
-            GetDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetDeploymentConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -9888,89 +9735,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetDeploymentConfigError {
 }
 impl GetDeploymentConfigError {
     /// Creates a new `GetDeploymentConfigError`.
-    pub fn new(kind: GetDeploymentConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetDeploymentConfigError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetDeploymentConfigErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetDeploymentConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetDeploymentConfigErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetDeploymentConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetDeploymentConfigError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetDeploymentConfigErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetDeploymentConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetDeploymentConfigErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetDeploymentConfigErrorKind::DeploymentConfigDoesNotExistException`.
     pub fn is_deployment_config_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentConfigErrorKind::DeploymentConfigDoesNotExistException(_)
-        )
+        matches!(&self.kind, GetDeploymentConfigErrorKind::DeploymentConfigDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentConfigErrorKind::DeploymentConfigNameRequiredException`.
     pub fn is_deployment_config_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_)
-        )
+        matches!(&self.kind, GetDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentConfigErrorKind::InvalidComputePlatformException`.
     pub fn is_invalid_compute_platform_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentConfigErrorKind::InvalidComputePlatformException(_)
-        )
+        matches!(&self.kind, GetDeploymentConfigErrorKind::InvalidComputePlatformException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentConfigErrorKind::InvalidDeploymentConfigNameException`.
     pub fn is_invalid_deployment_config_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_)
-        )
+        matches!(&self.kind, GetDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_))
     }
 }
 impl std::error::Error for GetDeploymentConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDeploymentConfigErrorKind::DeploymentConfigDoesNotExistException(_inner) => {
+            GetDeploymentConfigErrorKind::DeploymentConfigDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentConfigErrorKind::InvalidComputePlatformException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentConfigErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            GetDeploymentConfigErrorKind::InvalidComputePlatformException(_inner) => Some(_inner),
-            GetDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_inner) => {
-                Some(_inner)
-            }
-            GetDeploymentConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9978,22 +9817,20 @@ impl std::error::Error for GetDeploymentConfigError {
 /// <p>The deployment configuration name was not specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentConfigNameRequiredException {
+pub struct DeploymentConfigNameRequiredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentConfigNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentConfigNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentConfigNameRequiredException")?;
         if let Some(inner_87) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_87)?;
             }
         }
@@ -10003,7 +9840,7 @@ impl std::fmt::Display for DeploymentConfigNameRequiredException {
 impl std::error::Error for DeploymentConfigNameRequiredException {}
 /// See [`DeploymentConfigNameRequiredException`](crate::error::DeploymentConfigNameRequiredException).
 pub mod deployment_config_name_required_exception {
-
+    
     /// A builder for [`DeploymentConfigNameRequiredException`](crate::error::DeploymentConfigNameRequiredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10017,16 +9854,18 @@ pub mod deployment_config_name_required_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentConfigNameRequiredException`](crate::error::DeploymentConfigNameRequiredException).
         pub fn build(self) -> crate::error::DeploymentConfigNameRequiredException {
             crate::error::DeploymentConfigNameRequiredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentConfigNameRequiredException {
     /// Creates a new builder-style object to manufacture [`DeploymentConfigNameRequiredException`](crate::error::DeploymentConfigNameRequiredException).
@@ -10040,15 +9879,15 @@ impl DeploymentConfigNameRequiredException {
 #[derive(std::fmt::Debug)]
 pub struct GetDeploymentError {
     /// Kind of error that occurred.
-    pub kind: GetDeploymentErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetDeploymentErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetDeploymentError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -10062,23 +9901,31 @@ pub enum GetDeploymentErrorKind {
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDeploymentErrorKind::DeploymentDoesNotExistException(_inner) => _inner.fmt(f),
-            GetDeploymentErrorKind::DeploymentIdRequiredException(_inner) => _inner.fmt(f),
-            GetDeploymentErrorKind::InvalidDeploymentIdException(_inner) => _inner.fmt(f),
-            GetDeploymentErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetDeploymentErrorKind::DeploymentDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentErrorKind::DeploymentIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentErrorKind::InvalidDeploymentIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDeploymentErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -10092,75 +9939,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetDeploymentError {
 }
 impl GetDeploymentError {
     /// Creates a new `GetDeploymentError`.
-    pub fn new(kind: GetDeploymentErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetDeploymentError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetDeploymentError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetDeploymentErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetDeploymentError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetDeploymentError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetDeploymentErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentErrorKind::DeploymentDoesNotExistException(_)
-        )
+        matches!(&self.kind, GetDeploymentErrorKind::DeploymentDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentErrorKind::DeploymentIdRequiredException(_)
-        )
+        matches!(&self.kind, GetDeploymentErrorKind::DeploymentIdRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetDeploymentErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDeploymentErrorKind::InvalidDeploymentIdException(_)
-        )
+        matches!(&self.kind, GetDeploymentErrorKind::InvalidDeploymentIdException(_))
     }
 }
 impl std::error::Error for GetDeploymentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDeploymentErrorKind::DeploymentDoesNotExistException(_inner) => Some(_inner),
-            GetDeploymentErrorKind::DeploymentIdRequiredException(_inner) => Some(_inner),
-            GetDeploymentErrorKind::InvalidDeploymentIdException(_inner) => Some(_inner),
-            GetDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
+            GetDeploymentErrorKind::DeploymentDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentErrorKind::DeploymentIdRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentErrorKind::InvalidDeploymentIdException(_inner) =>
+            Some(_inner)
+            ,
+            GetDeploymentErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -10170,15 +10016,15 @@ impl std::error::Error for GetDeploymentError {
 #[derive(std::fmt::Debug)]
 pub struct GetApplicationRevisionError {
     /// Kind of error that occurred.
-    pub kind: GetApplicationRevisionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetApplicationRevisionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetApplicationRevisionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetApplicationRevisionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -10198,32 +10044,40 @@ pub enum GetApplicationRevisionErrorKind {
     RevisionDoesNotExistException(crate::error::RevisionDoesNotExistException),
     /// <p>The revision ID was not specified.</p>
     RevisionRequiredException(crate::error::RevisionRequiredException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetApplicationRevisionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetApplicationRevisionErrorKind::ApplicationDoesNotExistException(_inner) => {
+            GetApplicationRevisionErrorKind::ApplicationDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetApplicationRevisionErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetApplicationRevisionErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetApplicationRevisionErrorKind::InvalidRevisionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetApplicationRevisionErrorKind::RevisionDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetApplicationRevisionErrorKind::RevisionRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetApplicationRevisionErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetApplicationRevisionErrorKind::ApplicationNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetApplicationRevisionErrorKind::InvalidApplicationNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetApplicationRevisionErrorKind::InvalidRevisionException(_inner) => _inner.fmt(f),
-            GetApplicationRevisionErrorKind::RevisionDoesNotExistException(_inner) => _inner.fmt(f),
-            GetApplicationRevisionErrorKind::RevisionRequiredException(_inner) => _inner.fmt(f),
-            GetApplicationRevisionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -10237,109 +10091,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetApplicationRevisionError {
 }
 impl GetApplicationRevisionError {
     /// Creates a new `GetApplicationRevisionError`.
-    pub fn new(kind: GetApplicationRevisionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetApplicationRevisionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetApplicationRevisionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetApplicationRevisionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetApplicationRevisionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetApplicationRevisionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetApplicationRevisionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetApplicationRevisionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetApplicationRevisionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetApplicationRevisionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetApplicationRevisionErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetApplicationRevisionErrorKind::ApplicationDoesNotExistException(_)
-        )
+        matches!(&self.kind, GetApplicationRevisionErrorKind::ApplicationDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `GetApplicationRevisionErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetApplicationRevisionErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, GetApplicationRevisionErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetApplicationRevisionErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetApplicationRevisionErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, GetApplicationRevisionErrorKind::InvalidApplicationNameException(_))
     }
     /// Returns `true` if the error kind is `GetApplicationRevisionErrorKind::InvalidRevisionException`.
     pub fn is_invalid_revision_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetApplicationRevisionErrorKind::InvalidRevisionException(_)
-        )
+        matches!(&self.kind, GetApplicationRevisionErrorKind::InvalidRevisionException(_))
     }
     /// Returns `true` if the error kind is `GetApplicationRevisionErrorKind::RevisionDoesNotExistException`.
     pub fn is_revision_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetApplicationRevisionErrorKind::RevisionDoesNotExistException(_)
-        )
+        matches!(&self.kind, GetApplicationRevisionErrorKind::RevisionDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `GetApplicationRevisionErrorKind::RevisionRequiredException`.
     pub fn is_revision_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetApplicationRevisionErrorKind::RevisionRequiredException(_)
-        )
+        matches!(&self.kind, GetApplicationRevisionErrorKind::RevisionRequiredException(_))
     }
 }
 impl std::error::Error for GetApplicationRevisionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetApplicationRevisionErrorKind::ApplicationDoesNotExistException(_inner) => {
+            GetApplicationRevisionErrorKind::ApplicationDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            GetApplicationRevisionErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetApplicationRevisionErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            GetApplicationRevisionErrorKind::InvalidRevisionException(_inner) =>
+            Some(_inner)
+            ,
+            GetApplicationRevisionErrorKind::RevisionDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            GetApplicationRevisionErrorKind::RevisionRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetApplicationRevisionErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetApplicationRevisionErrorKind::ApplicationNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            GetApplicationRevisionErrorKind::InvalidApplicationNameException(_inner) => {
-                Some(_inner)
-            }
-            GetApplicationRevisionErrorKind::InvalidRevisionException(_inner) => Some(_inner),
-            GetApplicationRevisionErrorKind::RevisionDoesNotExistException(_inner) => Some(_inner),
-            GetApplicationRevisionErrorKind::RevisionRequiredException(_inner) => Some(_inner),
-            GetApplicationRevisionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10347,22 +10187,20 @@ impl std::error::Error for GetApplicationRevisionError {
 /// <p>The named revision does not exist with the IAM user or Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevisionDoesNotExistException {
+pub struct RevisionDoesNotExistException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RevisionDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for RevisionDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RevisionDoesNotExistException")?;
         if let Some(inner_88) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_88)?;
             }
         }
@@ -10372,7 +10210,7 @@ impl std::fmt::Display for RevisionDoesNotExistException {
 impl std::error::Error for RevisionDoesNotExistException {}
 /// See [`RevisionDoesNotExistException`](crate::error::RevisionDoesNotExistException).
 pub mod revision_does_not_exist_exception {
-
+    
     /// A builder for [`RevisionDoesNotExistException`](crate::error::RevisionDoesNotExistException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10386,16 +10224,18 @@ pub mod revision_does_not_exist_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`RevisionDoesNotExistException`](crate::error::RevisionDoesNotExistException).
         pub fn build(self) -> crate::error::RevisionDoesNotExistException {
             crate::error::RevisionDoesNotExistException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl RevisionDoesNotExistException {
     /// Creates a new builder-style object to manufacture [`RevisionDoesNotExistException`](crate::error::RevisionDoesNotExistException).
@@ -10409,15 +10249,15 @@ impl RevisionDoesNotExistException {
 #[derive(std::fmt::Debug)]
 pub struct GetApplicationError {
     /// Kind of error that occurred.
-    pub kind: GetApplicationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetApplicationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetApplicationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetApplicationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -10431,23 +10271,31 @@ pub enum GetApplicationErrorKind {
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
     /// <p>The application name was specified in an invalid format.</p>
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetApplicationErrorKind::ApplicationDoesNotExistException(_inner) => _inner.fmt(f),
-            GetApplicationErrorKind::ApplicationNameRequiredException(_inner) => _inner.fmt(f),
-            GetApplicationErrorKind::InvalidApplicationNameException(_inner) => _inner.fmt(f),
-            GetApplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetApplicationErrorKind::ApplicationDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetApplicationErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetApplicationErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetApplicationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -10461,75 +10309,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetApplicationError {
 }
 impl GetApplicationError {
     /// Creates a new `GetApplicationError`.
-    pub fn new(kind: GetApplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetApplicationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetApplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetApplicationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetApplicationErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetApplicationErrorKind::ApplicationDoesNotExistException(_)
-        )
+        matches!(&self.kind, GetApplicationErrorKind::ApplicationDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `GetApplicationErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetApplicationErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, GetApplicationErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetApplicationErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetApplicationErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, GetApplicationErrorKind::InvalidApplicationNameException(_))
     }
 }
 impl std::error::Error for GetApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetApplicationErrorKind::ApplicationDoesNotExistException(_inner) => Some(_inner),
-            GetApplicationErrorKind::ApplicationNameRequiredException(_inner) => Some(_inner),
-            GetApplicationErrorKind::InvalidApplicationNameException(_inner) => Some(_inner),
-            GetApplicationErrorKind::Unhandled(_inner) => Some(_inner),
+            GetApplicationErrorKind::ApplicationDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            GetApplicationErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetApplicationErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            GetApplicationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -10539,17 +10386,15 @@ impl std::error::Error for GetApplicationError {
 #[derive(std::fmt::Debug)]
 pub struct DeregisterOnPremisesInstanceError {
     /// Kind of error that occurred.
-    pub kind: DeregisterOnPremisesInstanceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeregisterOnPremisesInstanceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeregisterOnPremisesInstanceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeregisterOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeregisterOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -10561,26 +10406,28 @@ pub enum DeregisterOnPremisesInstanceErrorKind {
     InstanceNameRequiredException(crate::error::InstanceNameRequiredException),
     /// <p>The on-premises instance name was specified in an invalid format.</p>
     InvalidInstanceNameException(crate::error::InvalidInstanceNameException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeregisterOnPremisesInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeregisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(_inner) => {
+            DeregisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeregisterOnPremisesInstanceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeregisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeregisterOnPremisesInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -10594,75 +10441,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeregisterOnPremisesInstanceE
 }
 impl DeregisterOnPremisesInstanceError {
     /// Creates a new `DeregisterOnPremisesInstanceError`.
-    pub fn new(kind: DeregisterOnPremisesInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeregisterOnPremisesInstanceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeregisterOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeregisterOnPremisesInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeregisterOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeregisterOnPremisesInstanceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeregisterOnPremisesInstanceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeregisterOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeregisterOnPremisesInstanceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeregisterOnPremisesInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeregisterOnPremisesInstanceErrorKind::InstanceNameRequiredException`.
     pub fn is_instance_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(_)
-        )
+        matches!(&self.kind, DeregisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `DeregisterOnPremisesInstanceErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeregisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(_)
-        )
+        matches!(&self.kind, DeregisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(_))
     }
 }
 impl std::error::Error for DeregisterOnPremisesInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeregisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(_inner) => {
+            DeregisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(_inner) =>
+            Some(_inner)
+            ,
+            DeregisterOnPremisesInstanceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeregisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(_inner) => {
-                Some(_inner)
-            }
-            DeregisterOnPremisesInstanceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10672,17 +10511,15 @@ impl std::error::Error for DeregisterOnPremisesInstanceError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteResourcesByExternalIdError {
     /// Kind of error that occurred.
-    pub kind: DeleteResourcesByExternalIdErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteResourcesByExternalIdErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteResourcesByExternalIdError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteResourcesByExternalIdErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteResourcesByExternalIdErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -10690,20 +10527,22 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteResourcesByExternal
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourcesByExternalIdErrorKind {
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteResourcesByExternalIdError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteResourcesByExternalIdErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteResourcesByExternalIdErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -10717,55 +10556,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteResourcesByExternalIdEr
 }
 impl DeleteResourcesByExternalIdError {
     /// Creates a new `DeleteResourcesByExternalIdError`.
-    pub fn new(kind: DeleteResourcesByExternalIdErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteResourcesByExternalIdError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteResourcesByExternalIdErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteResourcesByExternalIdError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteResourcesByExternalIdErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteResourcesByExternalIdErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteResourcesByExternalIdError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteResourcesByExternalIdErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteResourcesByExternalIdError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteResourcesByExternalIdErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
 }
 impl std::error::Error for DeleteResourcesByExternalIdError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteResourcesByExternalIdErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteResourcesByExternalIdErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -10775,17 +10612,15 @@ impl std::error::Error for DeleteResourcesByExternalIdError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteGitHubAccountTokenError {
     /// Kind of error that occurred.
-    pub kind: DeleteGitHubAccountTokenErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteGitHubAccountTokenErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteGitHubAccountTokenError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteGitHubAccountTokenErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteGitHubAccountTokenErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -10803,33 +10638,37 @@ pub enum DeleteGitHubAccountTokenErrorKind {
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The specified resource could not be validated.</p>
     ResourceValidationException(crate::error::ResourceValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGitHubAccountTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenDoesNotExistException(_inner) => {
+            DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGitHubAccountTokenErrorKind::InvalidGitHubAccountTokenNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGitHubAccountTokenErrorKind::OperationNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGitHubAccountTokenErrorKind::ResourceValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGitHubAccountTokenErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteGitHubAccountTokenErrorKind::InvalidGitHubAccountTokenNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteGitHubAccountTokenErrorKind::OperationNotSupportedException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteGitHubAccountTokenErrorKind::ResourceValidationException(_inner) => _inner.fmt(f),
-            DeleteGitHubAccountTokenErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -10843,103 +10682,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteGitHubAccountTokenError
 }
 impl DeleteGitHubAccountTokenError {
     /// Creates a new `DeleteGitHubAccountTokenError`.
-    pub fn new(kind: DeleteGitHubAccountTokenErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteGitHubAccountTokenError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteGitHubAccountTokenErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteGitHubAccountTokenError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteGitHubAccountTokenErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteGitHubAccountTokenErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteGitHubAccountTokenError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteGitHubAccountTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteGitHubAccountTokenError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteGitHubAccountTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenDoesNotExistException`.
     pub fn is_git_hub_account_token_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenDoesNotExistException(_)
-        )
+        matches!(&self.kind, DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenNameRequiredException`.
     pub fn is_git_hub_account_token_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenNameRequiredException(_)
-        )
+        matches!(&self.kind, DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `DeleteGitHubAccountTokenErrorKind::InvalidGitHubAccountTokenNameException`.
     pub fn is_invalid_git_hub_account_token_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGitHubAccountTokenErrorKind::InvalidGitHubAccountTokenNameException(_)
-        )
+        matches!(&self.kind, DeleteGitHubAccountTokenErrorKind::InvalidGitHubAccountTokenNameException(_))
     }
     /// Returns `true` if the error kind is `DeleteGitHubAccountTokenErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGitHubAccountTokenErrorKind::OperationNotSupportedException(_)
-        )
+        matches!(&self.kind, DeleteGitHubAccountTokenErrorKind::OperationNotSupportedException(_))
     }
     /// Returns `true` if the error kind is `DeleteGitHubAccountTokenErrorKind::ResourceValidationException`.
     pub fn is_resource_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGitHubAccountTokenErrorKind::ResourceValidationException(_)
-        )
+        matches!(&self.kind, DeleteGitHubAccountTokenErrorKind::ResourceValidationException(_))
     }
 }
 impl std::error::Error for DeleteGitHubAccountTokenError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenDoesNotExistException(_inner) => {
+            DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGitHubAccountTokenErrorKind::InvalidGitHubAccountTokenNameException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGitHubAccountTokenErrorKind::OperationNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGitHubAccountTokenErrorKind::ResourceValidationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGitHubAccountTokenErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            DeleteGitHubAccountTokenErrorKind::InvalidGitHubAccountTokenNameException(_inner) => {
-                Some(_inner)
-            }
-            DeleteGitHubAccountTokenErrorKind::OperationNotSupportedException(_inner) => {
-                Some(_inner)
-            }
-            DeleteGitHubAccountTokenErrorKind::ResourceValidationException(_inner) => Some(_inner),
-            DeleteGitHubAccountTokenErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10947,22 +10771,20 @@ impl std::error::Error for DeleteGitHubAccountTokenError {
 /// <p>The format of the specified GitHub account connection name is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidGitHubAccountTokenNameException {
+pub struct InvalidGitHubAccountTokenNameException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidGitHubAccountTokenNameException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidGitHubAccountTokenNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidGitHubAccountTokenNameException")?;
         if let Some(inner_89) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_89)?;
             }
         }
@@ -10972,7 +10794,7 @@ impl std::fmt::Display for InvalidGitHubAccountTokenNameException {
 impl std::error::Error for InvalidGitHubAccountTokenNameException {}
 /// See [`InvalidGitHubAccountTokenNameException`](crate::error::InvalidGitHubAccountTokenNameException).
 pub mod invalid_git_hub_account_token_name_exception {
-
+    
     /// A builder for [`InvalidGitHubAccountTokenNameException`](crate::error::InvalidGitHubAccountTokenNameException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10986,16 +10808,18 @@ pub mod invalid_git_hub_account_token_name_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidGitHubAccountTokenNameException`](crate::error::InvalidGitHubAccountTokenNameException).
         pub fn build(self) -> crate::error::InvalidGitHubAccountTokenNameException {
             crate::error::InvalidGitHubAccountTokenNameException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidGitHubAccountTokenNameException {
     /// Creates a new builder-style object to manufacture [`InvalidGitHubAccountTokenNameException`](crate::error::InvalidGitHubAccountTokenNameException).
@@ -11007,22 +10831,20 @@ impl InvalidGitHubAccountTokenNameException {
 /// <p>The call is missing a required GitHub account connection name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GitHubAccountTokenNameRequiredException {
+pub struct GitHubAccountTokenNameRequiredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl GitHubAccountTokenNameRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for GitHubAccountTokenNameRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GitHubAccountTokenNameRequiredException")?;
         if let Some(inner_90) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_90)?;
             }
         }
@@ -11032,7 +10854,7 @@ impl std::fmt::Display for GitHubAccountTokenNameRequiredException {
 impl std::error::Error for GitHubAccountTokenNameRequiredException {}
 /// See [`GitHubAccountTokenNameRequiredException`](crate::error::GitHubAccountTokenNameRequiredException).
 pub mod git_hub_account_token_name_required_exception {
-
+    
     /// A builder for [`GitHubAccountTokenNameRequiredException`](crate::error::GitHubAccountTokenNameRequiredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11046,16 +10868,18 @@ pub mod git_hub_account_token_name_required_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`GitHubAccountTokenNameRequiredException`](crate::error::GitHubAccountTokenNameRequiredException).
         pub fn build(self) -> crate::error::GitHubAccountTokenNameRequiredException {
             crate::error::GitHubAccountTokenNameRequiredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl GitHubAccountTokenNameRequiredException {
     /// Creates a new builder-style object to manufacture [`GitHubAccountTokenNameRequiredException`](crate::error::GitHubAccountTokenNameRequiredException).
@@ -11067,22 +10891,20 @@ impl GitHubAccountTokenNameRequiredException {
 /// <p>No GitHub account connection exists with the named specified in the call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GitHubAccountTokenDoesNotExistException {
+pub struct GitHubAccountTokenDoesNotExistException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl GitHubAccountTokenDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for GitHubAccountTokenDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GitHubAccountTokenDoesNotExistException")?;
         if let Some(inner_91) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_91)?;
             }
         }
@@ -11092,7 +10914,7 @@ impl std::fmt::Display for GitHubAccountTokenDoesNotExistException {
 impl std::error::Error for GitHubAccountTokenDoesNotExistException {}
 /// See [`GitHubAccountTokenDoesNotExistException`](crate::error::GitHubAccountTokenDoesNotExistException).
 pub mod git_hub_account_token_does_not_exist_exception {
-
+    
     /// A builder for [`GitHubAccountTokenDoesNotExistException`](crate::error::GitHubAccountTokenDoesNotExistException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11106,16 +10928,18 @@ pub mod git_hub_account_token_does_not_exist_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`GitHubAccountTokenDoesNotExistException`](crate::error::GitHubAccountTokenDoesNotExistException).
         pub fn build(self) -> crate::error::GitHubAccountTokenDoesNotExistException {
             crate::error::GitHubAccountTokenDoesNotExistException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl GitHubAccountTokenDoesNotExistException {
     /// Creates a new builder-style object to manufacture [`GitHubAccountTokenDoesNotExistException`](crate::error::GitHubAccountTokenDoesNotExistException).
@@ -11129,15 +10953,15 @@ impl GitHubAccountTokenDoesNotExistException {
 #[derive(std::fmt::Debug)]
 pub struct DeleteDeploymentGroupError {
     /// Kind of error that occurred.
-    pub kind: DeleteDeploymentGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteDeploymentGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteDeploymentGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -11155,33 +10979,37 @@ pub enum DeleteDeploymentGroupErrorKind {
     InvalidDeploymentGroupNameException(crate::error::InvalidDeploymentGroupNameException),
     /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.</p>
     InvalidRoleException(crate::error::InvalidRoleException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDeploymentGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDeploymentGroupErrorKind::ApplicationNameRequiredException(_inner) => {
+            DeleteDeploymentGroupErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDeploymentGroupErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDeploymentGroupErrorKind::InvalidRoleException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDeploymentGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteDeploymentGroupErrorKind::InvalidApplicationNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteDeploymentGroupErrorKind::InvalidRoleException(_inner) => _inner.fmt(f),
-            DeleteDeploymentGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -11195,101 +11023,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteDeploymentGroupError {
 }
 impl DeleteDeploymentGroupError {
     /// Creates a new `DeleteDeploymentGroupError`.
-    pub fn new(kind: DeleteDeploymentGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteDeploymentGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteDeploymentGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteDeploymentGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteDeploymentGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteDeploymentGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteDeploymentGroupErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteDeploymentGroupErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, DeleteDeploymentGroupErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `DeleteDeploymentGroupErrorKind::DeploymentGroupNameRequiredException`.
     pub fn is_deployment_group_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_)
-        )
+        matches!(&self.kind, DeleteDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `DeleteDeploymentGroupErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteDeploymentGroupErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, DeleteDeploymentGroupErrorKind::InvalidApplicationNameException(_))
     }
     /// Returns `true` if the error kind is `DeleteDeploymentGroupErrorKind::InvalidDeploymentGroupNameException`.
     pub fn is_invalid_deployment_group_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_)
-        )
+        matches!(&self.kind, DeleteDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_))
     }
     /// Returns `true` if the error kind is `DeleteDeploymentGroupErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteDeploymentGroupErrorKind::InvalidRoleException(_)
-        )
+        matches!(&self.kind, DeleteDeploymentGroupErrorKind::InvalidRoleException(_))
     }
 }
 impl std::error::Error for DeleteDeploymentGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDeploymentGroupErrorKind::ApplicationNameRequiredException(_inner) => {
+            DeleteDeploymentGroupErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDeploymentGroupErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDeploymentGroupErrorKind::InvalidRoleException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDeploymentGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            DeleteDeploymentGroupErrorKind::InvalidApplicationNameException(_inner) => Some(_inner),
-            DeleteDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_inner) => {
-                Some(_inner)
-            }
-            DeleteDeploymentGroupErrorKind::InvalidRoleException(_inner) => Some(_inner),
-            DeleteDeploymentGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11299,15 +11114,15 @@ impl std::error::Error for DeleteDeploymentGroupError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteDeploymentConfigError {
     /// Kind of error that occurred.
-    pub kind: DeleteDeploymentConfigErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteDeploymentConfigErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteDeploymentConfigError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteDeploymentConfigErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -11323,30 +11138,34 @@ pub enum DeleteDeploymentConfigErrorKind {
     InvalidDeploymentConfigNameException(crate::error::InvalidDeploymentConfigNameException),
     /// <p>An invalid operation was detected.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDeploymentConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDeploymentConfigErrorKind::DeploymentConfigInUseException(_inner) => {
+            DeleteDeploymentConfigErrorKind::DeploymentConfigInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDeploymentConfigErrorKind::InvalidOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDeploymentConfigErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteDeploymentConfigErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
-            DeleteDeploymentConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -11360,91 +11179,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteDeploymentConfigError {
 }
 impl DeleteDeploymentConfigError {
     /// Creates a new `DeleteDeploymentConfigError`.
-    pub fn new(kind: DeleteDeploymentConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteDeploymentConfigError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteDeploymentConfigErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteDeploymentConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteDeploymentConfigErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteDeploymentConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteDeploymentConfigError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteDeploymentConfigErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteDeploymentConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteDeploymentConfigErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteDeploymentConfigErrorKind::DeploymentConfigInUseException`.
     pub fn is_deployment_config_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteDeploymentConfigErrorKind::DeploymentConfigInUseException(_)
-        )
+        matches!(&self.kind, DeleteDeploymentConfigErrorKind::DeploymentConfigInUseException(_))
     }
     /// Returns `true` if the error kind is `DeleteDeploymentConfigErrorKind::DeploymentConfigNameRequiredException`.
     pub fn is_deployment_config_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_)
-        )
+        matches!(&self.kind, DeleteDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `DeleteDeploymentConfigErrorKind::InvalidDeploymentConfigNameException`.
     pub fn is_invalid_deployment_config_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_)
-        )
+        matches!(&self.kind, DeleteDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_))
     }
     /// Returns `true` if the error kind is `DeleteDeploymentConfigErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteDeploymentConfigErrorKind::InvalidOperationException(_)
-        )
+        matches!(&self.kind, DeleteDeploymentConfigErrorKind::InvalidOperationException(_))
     }
 }
 impl std::error::Error for DeleteDeploymentConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDeploymentConfigErrorKind::DeploymentConfigInUseException(_inner) => Some(_inner),
-            DeleteDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_inner) => {
+            DeleteDeploymentConfigErrorKind::DeploymentConfigInUseException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDeploymentConfigErrorKind::InvalidOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDeploymentConfigErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_inner) => {
-                Some(_inner)
-            }
-            DeleteDeploymentConfigErrorKind::InvalidOperationException(_inner) => Some(_inner),
-            DeleteDeploymentConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11452,22 +11261,20 @@ impl std::error::Error for DeleteDeploymentConfigError {
 /// <p>An invalid operation was detected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidOperationException {
+pub struct InvalidOperationException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOperationException")?;
         if let Some(inner_92) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_92)?;
             }
         }
@@ -11477,7 +11284,7 @@ impl std::fmt::Display for InvalidOperationException {
 impl std::error::Error for InvalidOperationException {}
 /// See [`InvalidOperationException`](crate::error::InvalidOperationException).
 pub mod invalid_operation_exception {
-
+    
     /// A builder for [`InvalidOperationException`](crate::error::InvalidOperationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11491,16 +11298,18 @@ pub mod invalid_operation_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidOperationException`](crate::error::InvalidOperationException).
         pub fn build(self) -> crate::error::InvalidOperationException {
             crate::error::InvalidOperationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidOperationException {
     /// Creates a new builder-style object to manufacture [`InvalidOperationException`](crate::error::InvalidOperationException).
@@ -11512,22 +11321,20 @@ impl InvalidOperationException {
 /// <p>The deployment configuration is still in use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentConfigInUseException {
+pub struct DeploymentConfigInUseException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentConfigInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentConfigInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentConfigInUseException")?;
         if let Some(inner_93) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_93)?;
             }
         }
@@ -11537,7 +11344,7 @@ impl std::fmt::Display for DeploymentConfigInUseException {
 impl std::error::Error for DeploymentConfigInUseException {}
 /// See [`DeploymentConfigInUseException`](crate::error::DeploymentConfigInUseException).
 pub mod deployment_config_in_use_exception {
-
+    
     /// A builder for [`DeploymentConfigInUseException`](crate::error::DeploymentConfigInUseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11551,16 +11358,18 @@ pub mod deployment_config_in_use_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentConfigInUseException`](crate::error::DeploymentConfigInUseException).
         pub fn build(self) -> crate::error::DeploymentConfigInUseException {
             crate::error::DeploymentConfigInUseException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentConfigInUseException {
     /// Creates a new builder-style object to manufacture [`DeploymentConfigInUseException`](crate::error::DeploymentConfigInUseException).
@@ -11574,15 +11383,15 @@ impl DeploymentConfigInUseException {
 #[derive(std::fmt::Debug)]
 pub struct DeleteApplicationError {
     /// Kind of error that occurred.
-    pub kind: DeleteApplicationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteApplicationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteApplicationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteApplicationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -11596,23 +11405,31 @@ pub enum DeleteApplicationErrorKind {
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
     /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.</p>
     InvalidRoleException(crate::error::InvalidRoleException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteApplicationErrorKind::ApplicationNameRequiredException(_inner) => _inner.fmt(f),
-            DeleteApplicationErrorKind::InvalidApplicationNameException(_inner) => _inner.fmt(f),
-            DeleteApplicationErrorKind::InvalidRoleException(_inner) => _inner.fmt(f),
-            DeleteApplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteApplicationErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteApplicationErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteApplicationErrorKind::InvalidRoleException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteApplicationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -11626,75 +11443,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteApplicationError {
 }
 impl DeleteApplicationError {
     /// Creates a new `DeleteApplicationError`.
-    pub fn new(kind: DeleteApplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteApplicationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteApplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteApplicationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteApplicationErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteApplicationErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, DeleteApplicationErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `DeleteApplicationErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteApplicationErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, DeleteApplicationErrorKind::InvalidApplicationNameException(_))
     }
     /// Returns `true` if the error kind is `DeleteApplicationErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteApplicationErrorKind::InvalidRoleException(_)
-        )
+        matches!(&self.kind, DeleteApplicationErrorKind::InvalidRoleException(_))
     }
 }
 impl std::error::Error for DeleteApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteApplicationErrorKind::ApplicationNameRequiredException(_inner) => Some(_inner),
-            DeleteApplicationErrorKind::InvalidApplicationNameException(_inner) => Some(_inner),
-            DeleteApplicationErrorKind::InvalidRoleException(_inner) => Some(_inner),
-            DeleteApplicationErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteApplicationErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteApplicationErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteApplicationErrorKind::InvalidRoleException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteApplicationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -11704,15 +11520,15 @@ impl std::error::Error for DeleteApplicationError {
 #[derive(std::fmt::Debug)]
 pub struct CreateDeploymentGroupError {
     /// Kind of error that occurred.
-    pub kind: CreateDeploymentGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateDeploymentGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateDeploymentGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -11736,13 +11552,13 @@ pub enum CreateDeploymentGroupErrorKind {
     DeploymentGroupNameRequiredException(crate::error::DeploymentGroupNameRequiredException),
     /// <p> The Amazon ECS service is associated with more than one deployment groups. An Amazon ECS service can be associated with only one deployment group. </p>
     EcsServiceMappingLimitExceededException(crate::error::EcsServiceMappingLimitExceededException),
-    /// <p>The format of the alarm configuration is invalid. Possible causes include:</p>
-    /// <ul>
-    /// <li> <p>The alarm list is null.</p> </li>
-    /// <li> <p>The alarm object is null.</p> </li>
-    /// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li>
-    /// <li> <p>Two alarms with the same name have been specified.</p> </li>
-    /// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li>
+    /// <p>The format of the alarm configuration is invalid. Possible causes include:</p> 
+    /// <ul> 
+    /// <li> <p>The alarm list is null.</p> </li> 
+    /// <li> <p>The alarm object is null.</p> </li> 
+    /// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li> 
+    /// <li> <p>Two alarms with the same name have been specified.</p> </li> 
+    /// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li> 
     /// </ul>
     InvalidAlarmConfigException(crate::error::InvalidAlarmConfigException),
     /// <p>The application name was specified in an invalid format.</p>
@@ -11752,9 +11568,7 @@ pub enum CreateDeploymentGroupErrorKind {
     /// <p>The Auto Scaling group was specified in an invalid format or does not exist.</p>
     InvalidAutoScalingGroupException(crate::error::InvalidAutoScalingGroupException),
     /// <p>The configuration for the blue/green deployment group was provided in an invalid format. For information about deployment configuration format, see <code>CreateDeploymentConfig</code>.</p>
-    InvalidBlueGreenDeploymentConfigurationException(
-        crate::error::InvalidBlueGreenDeploymentConfigurationException,
-    ),
+    InvalidBlueGreenDeploymentConfigurationException(crate::error::InvalidBlueGreenDeploymentConfigurationException),
     /// <p>The deployment configuration name was specified in an invalid format.</p>
     InvalidDeploymentConfigNameException(crate::error::InvalidDeploymentConfigNameException),
     /// <p>The deployment group name was specified in an invalid format.</p>
@@ -11772,9 +11586,7 @@ pub enum CreateDeploymentGroupErrorKind {
     /// <p>An invalid load balancer name, or no load balancer name, was specified.</p>
     InvalidLoadBalancerInfoException(crate::error::InvalidLoadBalancerInfoException),
     /// <p>A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet, but only one of these data types can be used in a single call.</p>
-    InvalidOnPremisesTagCombinationException(
-        crate::error::InvalidOnPremisesTagCombinationException,
-    ),
+    InvalidOnPremisesTagCombinationException(crate::error::InvalidOnPremisesTagCombinationException),
     /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.</p>
     InvalidRoleException(crate::error::InvalidRoleException),
     /// <p>The tag was specified in an invalid format.</p>
@@ -11784,9 +11596,7 @@ pub enum CreateDeploymentGroupErrorKind {
     /// <p> A target group pair associated with this deployment is not valid. </p>
     InvalidTargetGroupPairException(crate::error::InvalidTargetGroupPairException),
     /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
-    InvalidTrafficRoutingConfigurationException(
-        crate::error::InvalidTrafficRoutingConfigurationException,
-    ),
+    InvalidTrafficRoutingConfigurationException(crate::error::InvalidTrafficRoutingConfigurationException),
     /// <p>The trigger was specified in an invalid format.</p>
     InvalidTriggerConfigException(crate::error::InvalidTriggerConfigException),
     /// <p>The limit for lifecycle hooks was exceeded.</p>
@@ -11799,97 +11609,121 @@ pub enum CreateDeploymentGroupErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The maximum allowed number of triggers was exceeded.</p>
     TriggerTargetsLimitExceededException(crate::error::TriggerTargetsLimitExceededException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDeploymentGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDeploymentGroupErrorKind::AlarmsLimitExceededException(_inner) => _inner.fmt(f),
-            CreateDeploymentGroupErrorKind::ApplicationDoesNotExistException(_inner) => {
+            CreateDeploymentGroupErrorKind::AlarmsLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::ApplicationDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::DeploymentGroupLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidAlarmConfigException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidAutoScalingGroupException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidDeploymentStyleException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidEc2TagCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidEc2TagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidEcsServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidInputException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidRoleException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidTagsToAddException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidTargetGroupPairException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidTriggerConfigException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::LifecycleHookLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::RoleRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::TagSetListLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentGroupErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDeploymentGroupErrorKind::ApplicationNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::DeploymentGroupLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::InvalidAlarmConfigException(_inner) => _inner.fmt(f),
-            CreateDeploymentGroupErrorKind::InvalidApplicationNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::InvalidAutoScalingGroupException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException(
-                _inner,
-            ) => _inner.fmt(f),
-            CreateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::InvalidDeploymentStyleException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::InvalidEc2TagCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::InvalidEc2TagException(_inner) => _inner.fmt(f),
-            CreateDeploymentGroupErrorKind::InvalidEcsServiceException(_inner) => _inner.fmt(f),
-            CreateDeploymentGroupErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
-            CreateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::InvalidRoleException(_inner) => _inner.fmt(f),
-            CreateDeploymentGroupErrorKind::InvalidTagException(_inner) => _inner.fmt(f),
-            CreateDeploymentGroupErrorKind::InvalidTagsToAddException(_inner) => _inner.fmt(f),
-            CreateDeploymentGroupErrorKind::InvalidTargetGroupPairException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::InvalidTriggerConfigException(_inner) => _inner.fmt(f),
-            CreateDeploymentGroupErrorKind::LifecycleHookLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::RoleRequiredException(_inner) => _inner.fmt(f),
-            CreateDeploymentGroupErrorKind::TagSetListLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            CreateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -11903,357 +11737,284 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateDeploymentGroupError {
 }
 impl CreateDeploymentGroupError {
     /// Creates a new `CreateDeploymentGroupError`.
-    pub fn new(kind: CreateDeploymentGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateDeploymentGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateDeploymentGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateDeploymentGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateDeploymentGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateDeploymentGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateDeploymentGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::AlarmsLimitExceededException`.
     pub fn is_alarms_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::AlarmsLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::AlarmsLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::ApplicationDoesNotExistException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::ApplicationDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException`.
     pub fn is_deployment_config_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException`.
     pub fn is_deployment_group_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::DeploymentGroupLimitExceededException`.
     pub fn is_deployment_group_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::DeploymentGroupLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::DeploymentGroupLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException`.
     pub fn is_deployment_group_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException`.
     pub fn is_ecs_service_mapping_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidAlarmConfigException`.
     pub fn is_invalid_alarm_config_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidAlarmConfigException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidAlarmConfigException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidApplicationNameException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException`.
     pub fn is_invalid_auto_rollback_config_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidAutoScalingGroupException`.
     pub fn is_invalid_auto_scaling_group_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidAutoScalingGroupException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidAutoScalingGroupException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException`.
     pub fn is_invalid_blue_green_deployment_configuration_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException`.
     pub fn is_invalid_deployment_config_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException`.
     pub fn is_invalid_deployment_group_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidDeploymentStyleException`.
     pub fn is_invalid_deployment_style_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidDeploymentStyleException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidDeploymentStyleException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidEc2TagCombinationException`.
     pub fn is_invalid_ec2_tag_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidEc2TagCombinationException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidEc2TagCombinationException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidEc2TagException`.
     pub fn is_invalid_ec2_tag_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidEc2TagException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidEc2TagException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidEcsServiceException`.
     pub fn is_invalid_ecs_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidEcsServiceException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidEcsServiceException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidInputException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidInputException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException`.
     pub fn is_invalid_load_balancer_info_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException`.
     pub fn is_invalid_on_premises_tag_combination_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidRoleException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidRoleException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidTagException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidTagException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidTagsToAddException`.
     pub fn is_invalid_tags_to_add_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidTagsToAddException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidTagsToAddException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidTargetGroupPairException`.
     pub fn is_invalid_target_group_pair_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidTargetGroupPairException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidTargetGroupPairException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException`.
     pub fn is_invalid_traffic_routing_configuration_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidTriggerConfigException`.
     pub fn is_invalid_trigger_config_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::InvalidTriggerConfigException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::InvalidTriggerConfigException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::LifecycleHookLimitExceededException`.
     pub fn is_lifecycle_hook_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::LifecycleHookLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::LifecycleHookLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::RoleRequiredException`.
     pub fn is_role_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::RoleRequiredException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::RoleRequiredException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::TagSetListLimitExceededException`.
     pub fn is_tag_set_list_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::TagSetListLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::TagSetListLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException`.
     pub fn is_trigger_targets_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException(_))
     }
 }
 impl std::error::Error for CreateDeploymentGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDeploymentGroupErrorKind::AlarmsLimitExceededException(_inner) => Some(_inner),
-            CreateDeploymentGroupErrorKind::ApplicationDoesNotExistException(_inner) => {
+            CreateDeploymentGroupErrorKind::AlarmsLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::ApplicationDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::DeploymentGroupLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidAlarmConfigException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidAutoScalingGroupException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidDeploymentStyleException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidEc2TagCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidEc2TagException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidEcsServiceException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidInputException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidRoleException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidTagException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidTagsToAddException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidTargetGroupPairException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::InvalidTriggerConfigException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::LifecycleHookLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::RoleRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::TagSetListLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentGroupErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateDeploymentGroupErrorKind::ApplicationNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::DeploymentGroupLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::InvalidAlarmConfigException(_inner) => Some(_inner),
-            CreateDeploymentGroupErrorKind::InvalidApplicationNameException(_inner) => Some(_inner),
-            CreateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::InvalidAutoScalingGroupException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException(
-                _inner,
-            ) => Some(_inner),
-            CreateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::InvalidDeploymentStyleException(_inner) => Some(_inner),
-            CreateDeploymentGroupErrorKind::InvalidEc2TagCombinationException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::InvalidEc2TagException(_inner) => Some(_inner),
-            CreateDeploymentGroupErrorKind::InvalidEcsServiceException(_inner) => Some(_inner),
-            CreateDeploymentGroupErrorKind::InvalidInputException(_inner) => Some(_inner),
-            CreateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::InvalidRoleException(_inner) => Some(_inner),
-            CreateDeploymentGroupErrorKind::InvalidTagException(_inner) => Some(_inner),
-            CreateDeploymentGroupErrorKind::InvalidTagsToAddException(_inner) => Some(_inner),
-            CreateDeploymentGroupErrorKind::InvalidTargetGroupPairException(_inner) => Some(_inner),
-            CreateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::InvalidTriggerConfigException(_inner) => Some(_inner),
-            CreateDeploymentGroupErrorKind::LifecycleHookLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::RoleRequiredException(_inner) => Some(_inner),
-            CreateDeploymentGroupErrorKind::TagSetListLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12261,22 +12022,20 @@ impl std::error::Error for CreateDeploymentGroupError {
 /// <p>The role ID was not specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RoleRequiredException {
+pub struct RoleRequiredException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RoleRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for RoleRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RoleRequiredException")?;
         if let Some(inner_94) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_94)?;
             }
         }
@@ -12286,7 +12045,7 @@ impl std::fmt::Display for RoleRequiredException {
 impl std::error::Error for RoleRequiredException {}
 /// See [`RoleRequiredException`](crate::error::RoleRequiredException).
 pub mod role_required_exception {
-
+    
     /// A builder for [`RoleRequiredException`](crate::error::RoleRequiredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12300,16 +12059,18 @@ pub mod role_required_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`RoleRequiredException`](crate::error::RoleRequiredException).
         pub fn build(self) -> crate::error::RoleRequiredException {
             crate::error::RoleRequiredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl RoleRequiredException {
     /// Creates a new builder-style object to manufacture [`RoleRequiredException`](crate::error::RoleRequiredException).
@@ -12321,22 +12082,20 @@ impl RoleRequiredException {
 /// <p> The deployment groups limit was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentGroupLimitExceededException {
+pub struct DeploymentGroupLimitExceededException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentGroupLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentGroupLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentGroupLimitExceededException")?;
         if let Some(inner_95) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_95)?;
             }
         }
@@ -12346,7 +12105,7 @@ impl std::fmt::Display for DeploymentGroupLimitExceededException {
 impl std::error::Error for DeploymentGroupLimitExceededException {}
 /// See [`DeploymentGroupLimitExceededException`](crate::error::DeploymentGroupLimitExceededException).
 pub mod deployment_group_limit_exceeded_exception {
-
+    
     /// A builder for [`DeploymentGroupLimitExceededException`](crate::error::DeploymentGroupLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12360,16 +12119,18 @@ pub mod deployment_group_limit_exceeded_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentGroupLimitExceededException`](crate::error::DeploymentGroupLimitExceededException).
         pub fn build(self) -> crate::error::DeploymentGroupLimitExceededException {
             crate::error::DeploymentGroupLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentGroupLimitExceededException {
     /// Creates a new builder-style object to manufacture [`DeploymentGroupLimitExceededException`](crate::error::DeploymentGroupLimitExceededException).
@@ -12383,15 +12144,15 @@ impl DeploymentGroupLimitExceededException {
 #[derive(std::fmt::Debug)]
 pub struct CreateDeploymentConfigError {
     /// Kind of error that occurred.
-    pub kind: CreateDeploymentConfigErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateDeploymentConfigErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateDeploymentConfigError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateDeploymentConfigErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -12412,44 +12173,44 @@ pub enum CreateDeploymentConfigErrorKind {
     /// <p>The minimum healthy instance value was specified in an invalid format.</p>
     InvalidMinimumHealthyHostValueException(crate::error::InvalidMinimumHealthyHostValueException),
     /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
-    InvalidTrafficRoutingConfigurationException(
-        crate::error::InvalidTrafficRoutingConfigurationException,
-    ),
-    ///
+    InvalidTrafficRoutingConfigurationException(crate::error::InvalidTrafficRoutingConfigurationException),
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDeploymentConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDeploymentConfigErrorKind::DeploymentConfigAlreadyExistsException(_inner) => {
+            CreateDeploymentConfigErrorKind::DeploymentConfigAlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentConfigErrorKind::DeploymentConfigLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentConfigErrorKind::InvalidComputePlatformException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentConfigErrorKind::InvalidMinimumHealthyHostValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentConfigErrorKind::InvalidTrafficRoutingConfigurationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentConfigErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDeploymentConfigErrorKind::DeploymentConfigLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentConfigErrorKind::InvalidComputePlatformException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentConfigErrorKind::InvalidMinimumHealthyHostValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentConfigErrorKind::InvalidTrafficRoutingConfigurationException(
-                _inner,
-            ) => _inner.fmt(f),
-            CreateDeploymentConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -12463,125 +12224,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateDeploymentConfigError {
 }
 impl CreateDeploymentConfigError {
     /// Creates a new `CreateDeploymentConfigError`.
-    pub fn new(kind: CreateDeploymentConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateDeploymentConfigError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateDeploymentConfigErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateDeploymentConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateDeploymentConfigErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateDeploymentConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateDeploymentConfigError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateDeploymentConfigErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateDeploymentConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateDeploymentConfigErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateDeploymentConfigErrorKind::DeploymentConfigAlreadyExistsException`.
     pub fn is_deployment_config_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentConfigErrorKind::DeploymentConfigAlreadyExistsException(_)
-        )
+        matches!(&self.kind, CreateDeploymentConfigErrorKind::DeploymentConfigAlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentConfigErrorKind::DeploymentConfigLimitExceededException`.
     pub fn is_deployment_config_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentConfigErrorKind::DeploymentConfigLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateDeploymentConfigErrorKind::DeploymentConfigLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentConfigErrorKind::DeploymentConfigNameRequiredException`.
     pub fn is_deployment_config_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_)
-        )
+        matches!(&self.kind, CreateDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentConfigErrorKind::InvalidComputePlatformException`.
     pub fn is_invalid_compute_platform_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentConfigErrorKind::InvalidComputePlatformException(_)
-        )
+        matches!(&self.kind, CreateDeploymentConfigErrorKind::InvalidComputePlatformException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentConfigErrorKind::InvalidDeploymentConfigNameException`.
     pub fn is_invalid_deployment_config_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_)
-        )
+        matches!(&self.kind, CreateDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentConfigErrorKind::InvalidMinimumHealthyHostValueException`.
     pub fn is_invalid_minimum_healthy_host_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentConfigErrorKind::InvalidMinimumHealthyHostValueException(_)
-        )
+        matches!(&self.kind, CreateDeploymentConfigErrorKind::InvalidMinimumHealthyHostValueException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentConfigErrorKind::InvalidTrafficRoutingConfigurationException`.
     pub fn is_invalid_traffic_routing_configuration_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentConfigErrorKind::InvalidTrafficRoutingConfigurationException(_)
-        )
+        matches!(&self.kind, CreateDeploymentConfigErrorKind::InvalidTrafficRoutingConfigurationException(_))
     }
 }
 impl std::error::Error for CreateDeploymentConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDeploymentConfigErrorKind::DeploymentConfigAlreadyExistsException(_inner) => {
+            CreateDeploymentConfigErrorKind::DeploymentConfigAlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentConfigErrorKind::DeploymentConfigLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentConfigErrorKind::InvalidComputePlatformException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentConfigErrorKind::InvalidMinimumHealthyHostValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentConfigErrorKind::InvalidTrafficRoutingConfigurationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentConfigErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateDeploymentConfigErrorKind::DeploymentConfigLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentConfigErrorKind::InvalidComputePlatformException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentConfigErrorKind::InvalidMinimumHealthyHostValueException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentConfigErrorKind::InvalidTrafficRoutingConfigurationException(
-                _inner,
-            ) => Some(_inner),
-            CreateDeploymentConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12589,22 +12327,20 @@ impl std::error::Error for CreateDeploymentConfigError {
 /// <p>The minimum healthy instance value was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidMinimumHealthyHostValueException {
+pub struct InvalidMinimumHealthyHostValueException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidMinimumHealthyHostValueException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidMinimumHealthyHostValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMinimumHealthyHostValueException")?;
         if let Some(inner_96) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_96)?;
             }
         }
@@ -12614,7 +12350,7 @@ impl std::fmt::Display for InvalidMinimumHealthyHostValueException {
 impl std::error::Error for InvalidMinimumHealthyHostValueException {}
 /// See [`InvalidMinimumHealthyHostValueException`](crate::error::InvalidMinimumHealthyHostValueException).
 pub mod invalid_minimum_healthy_host_value_exception {
-
+    
     /// A builder for [`InvalidMinimumHealthyHostValueException`](crate::error::InvalidMinimumHealthyHostValueException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12628,16 +12364,18 @@ pub mod invalid_minimum_healthy_host_value_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidMinimumHealthyHostValueException`](crate::error::InvalidMinimumHealthyHostValueException).
         pub fn build(self) -> crate::error::InvalidMinimumHealthyHostValueException {
             crate::error::InvalidMinimumHealthyHostValueException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidMinimumHealthyHostValueException {
     /// Creates a new builder-style object to manufacture [`InvalidMinimumHealthyHostValueException`](crate::error::InvalidMinimumHealthyHostValueException).
@@ -12649,22 +12387,20 @@ impl InvalidMinimumHealthyHostValueException {
 /// <p>The deployment configurations limit was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentConfigLimitExceededException {
+pub struct DeploymentConfigLimitExceededException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentConfigLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentConfigLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentConfigLimitExceededException")?;
         if let Some(inner_97) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_97)?;
             }
         }
@@ -12674,7 +12410,7 @@ impl std::fmt::Display for DeploymentConfigLimitExceededException {
 impl std::error::Error for DeploymentConfigLimitExceededException {}
 /// See [`DeploymentConfigLimitExceededException`](crate::error::DeploymentConfigLimitExceededException).
 pub mod deployment_config_limit_exceeded_exception {
-
+    
     /// A builder for [`DeploymentConfigLimitExceededException`](crate::error::DeploymentConfigLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12688,16 +12424,18 @@ pub mod deployment_config_limit_exceeded_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentConfigLimitExceededException`](crate::error::DeploymentConfigLimitExceededException).
         pub fn build(self) -> crate::error::DeploymentConfigLimitExceededException {
             crate::error::DeploymentConfigLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentConfigLimitExceededException {
     /// Creates a new builder-style object to manufacture [`DeploymentConfigLimitExceededException`](crate::error::DeploymentConfigLimitExceededException).
@@ -12709,22 +12447,20 @@ impl DeploymentConfigLimitExceededException {
 /// <p>A deployment configuration with the specified name with the IAM user or Amazon Web Services account already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentConfigAlreadyExistsException {
+pub struct DeploymentConfigAlreadyExistsException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentConfigAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentConfigAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentConfigAlreadyExistsException")?;
         if let Some(inner_98) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_98)?;
             }
         }
@@ -12734,7 +12470,7 @@ impl std::fmt::Display for DeploymentConfigAlreadyExistsException {
 impl std::error::Error for DeploymentConfigAlreadyExistsException {}
 /// See [`DeploymentConfigAlreadyExistsException`](crate::error::DeploymentConfigAlreadyExistsException).
 pub mod deployment_config_already_exists_exception {
-
+    
     /// A builder for [`DeploymentConfigAlreadyExistsException`](crate::error::DeploymentConfigAlreadyExistsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12748,16 +12484,18 @@ pub mod deployment_config_already_exists_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentConfigAlreadyExistsException`](crate::error::DeploymentConfigAlreadyExistsException).
         pub fn build(self) -> crate::error::DeploymentConfigAlreadyExistsException {
             crate::error::DeploymentConfigAlreadyExistsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentConfigAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`DeploymentConfigAlreadyExistsException`](crate::error::DeploymentConfigAlreadyExistsException).
@@ -12771,15 +12509,15 @@ impl DeploymentConfigAlreadyExistsException {
 #[derive(std::fmt::Debug)]
 pub struct CreateDeploymentError {
     /// Kind of error that occurred.
-    pub kind: CreateDeploymentErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateDeploymentErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateDeploymentError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -12803,13 +12541,13 @@ pub enum CreateDeploymentErrorKind {
     DeploymentLimitExceededException(crate::error::DeploymentLimitExceededException),
     /// <p>The description is too long.</p>
     DescriptionTooLongException(crate::error::DescriptionTooLongException),
-    /// <p>The format of the alarm configuration is invalid. Possible causes include:</p>
-    /// <ul>
-    /// <li> <p>The alarm list is null.</p> </li>
-    /// <li> <p>The alarm object is null.</p> </li>
-    /// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li>
-    /// <li> <p>Two alarms with the same name have been specified.</p> </li>
-    /// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li>
+    /// <p>The format of the alarm configuration is invalid. Possible causes include:</p> 
+    /// <ul> 
+    /// <li> <p>The alarm list is null.</p> </li> 
+    /// <li> <p>The alarm object is null.</p> </li> 
+    /// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li> 
+    /// <li> <p>Two alarms with the same name have been specified.</p> </li> 
+    /// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li> 
     /// </ul>
     InvalidAlarmConfigException(crate::error::InvalidAlarmConfigException),
     /// <p>The application name was specified in an invalid format.</p>
@@ -12827,91 +12565,125 @@ pub enum CreateDeploymentErrorKind {
     /// <p>The GitHub token is not valid.</p>
     InvalidGitHubAccountTokenException(crate::error::InvalidGitHubAccountTokenException),
     /// <p>The IgnoreApplicationStopFailures value is invalid. For Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
-    InvalidIgnoreApplicationStopFailuresValueException(
-        crate::error::InvalidIgnoreApplicationStopFailuresValueException,
-    ),
+    InvalidIgnoreApplicationStopFailuresValueException(crate::error::InvalidIgnoreApplicationStopFailuresValueException),
     /// <p>An invalid load balancer name, or no load balancer name, was specified.</p>
     InvalidLoadBalancerInfoException(crate::error::InvalidLoadBalancerInfoException),
     /// <p>The revision was specified in an invalid format.</p>
     InvalidRevisionException(crate::error::InvalidRevisionException),
     /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.</p>
     InvalidRoleException(crate::error::InvalidRoleException),
-    /// <p>The target instance configuration is invalid. Possible causes include:</p>
-    /// <ul>
-    /// <li> <p>Configuration data for target instances was entered for an in-place deployment.</p> </li>
-    /// <li> <p>The limit of 10 tags for a tag type was exceeded.</p> </li>
-    /// <li> <p>The combined length of the tag names exceeded the limit. </p> </li>
-    /// <li> <p>A specified tag is not currently applied to any instances.</p> </li>
+    /// <p>The target instance configuration is invalid. Possible causes include:</p> 
+    /// <ul> 
+    /// <li> <p>Configuration data for target instances was entered for an in-place deployment.</p> </li> 
+    /// <li> <p>The limit of 10 tags for a tag type was exceeded.</p> </li> 
+    /// <li> <p>The combined length of the tag names exceeded the limit. </p> </li> 
+    /// <li> <p>A specified tag is not currently applied to any instances.</p> </li> 
     /// </ul>
     InvalidTargetInstancesException(crate::error::InvalidTargetInstancesException),
     /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
-    InvalidTrafficRoutingConfigurationException(
-        crate::error::InvalidTrafficRoutingConfigurationException,
-    ),
+    InvalidTrafficRoutingConfigurationException(crate::error::InvalidTrafficRoutingConfigurationException),
     /// <p>The UpdateOutdatedInstancesOnly value is invalid. For Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
-    InvalidUpdateOutdatedInstancesOnlyValueException(
-        crate::error::InvalidUpdateOutdatedInstancesOnlyValueException,
-    ),
+    InvalidUpdateOutdatedInstancesOnlyValueException(crate::error::InvalidUpdateOutdatedInstancesOnlyValueException),
     /// <p>The named revision does not exist with the IAM user or Amazon Web Services account.</p>
     RevisionDoesNotExistException(crate::error::RevisionDoesNotExistException),
     /// <p>The revision ID was not specified.</p>
     RevisionRequiredException(crate::error::RevisionRequiredException),
     /// <p>An API function was called too frequently.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDeploymentErrorKind::AlarmsLimitExceededException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::ApplicationDoesNotExistException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::ApplicationNameRequiredException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::DeploymentConfigDoesNotExistException(_inner) => {
+            CreateDeploymentErrorKind::AlarmsLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::ApplicationDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::DeploymentConfigDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::DeploymentGroupDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::DeploymentGroupNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::DeploymentLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::DescriptionTooLongException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::InvalidAlarmConfigException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::InvalidAutoRollbackConfigException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::InvalidAutoScalingGroupException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::InvalidDeploymentConfigNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::InvalidDeploymentGroupNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::InvalidFileExistsBehaviorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::InvalidGitHubAccountTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::InvalidIgnoreApplicationStopFailuresValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::InvalidLoadBalancerInfoException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::InvalidRevisionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::InvalidRoleException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::InvalidTargetInstancesException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::InvalidTrafficRoutingConfigurationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::InvalidUpdateOutdatedInstancesOnlyValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::RevisionDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::RevisionRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDeploymentErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDeploymentErrorKind::DeploymentGroupDoesNotExistException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentErrorKind::DeploymentGroupNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentErrorKind::DeploymentLimitExceededException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::DescriptionTooLongException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::InvalidAlarmConfigException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::InvalidApplicationNameException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::InvalidAutoRollbackConfigException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::InvalidAutoScalingGroupException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::InvalidDeploymentConfigNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentErrorKind::InvalidDeploymentGroupNameException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::InvalidFileExistsBehaviorException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::InvalidGitHubAccountTokenException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::InvalidIgnoreApplicationStopFailuresValueException(
-                _inner,
-            ) => _inner.fmt(f),
-            CreateDeploymentErrorKind::InvalidLoadBalancerInfoException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::InvalidRevisionException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::InvalidRoleException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::InvalidTargetInstancesException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::InvalidTrafficRoutingConfigurationException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentErrorKind::InvalidUpdateOutdatedInstancesOnlyValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDeploymentErrorKind::RevisionDoesNotExistException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::RevisionRequiredException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -12925,267 +12697,235 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateDeploymentError {
 }
 impl CreateDeploymentError {
     /// Creates a new `CreateDeploymentError`.
-    pub fn new(kind: CreateDeploymentErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateDeploymentError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateDeploymentError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateDeploymentErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateDeploymentError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateDeploymentError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::AlarmsLimitExceededException`.
     pub fn is_alarms_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::AlarmsLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::AlarmsLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::ApplicationDoesNotExistException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::ApplicationDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::DeploymentConfigDoesNotExistException`.
     pub fn is_deployment_config_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::DeploymentConfigDoesNotExistException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::DeploymentConfigDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::DeploymentGroupDoesNotExistException`.
     pub fn is_deployment_group_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::DeploymentGroupDoesNotExistException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::DeploymentGroupDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::DeploymentGroupNameRequiredException`.
     pub fn is_deployment_group_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::DeploymentGroupNameRequiredException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::DeploymentGroupNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::DeploymentLimitExceededException`.
     pub fn is_deployment_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::DeploymentLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::DeploymentLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::DescriptionTooLongException`.
     pub fn is_description_too_long_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::DescriptionTooLongException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::DescriptionTooLongException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidAlarmConfigException`.
     pub fn is_invalid_alarm_config_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::InvalidAlarmConfigException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::InvalidAlarmConfigException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::InvalidApplicationNameException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidAutoRollbackConfigException`.
     pub fn is_invalid_auto_rollback_config_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::InvalidAutoRollbackConfigException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::InvalidAutoRollbackConfigException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidAutoScalingGroupException`.
     pub fn is_invalid_auto_scaling_group_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::InvalidAutoScalingGroupException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::InvalidAutoScalingGroupException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidDeploymentConfigNameException`.
     pub fn is_invalid_deployment_config_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::InvalidDeploymentConfigNameException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::InvalidDeploymentConfigNameException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidDeploymentGroupNameException`.
     pub fn is_invalid_deployment_group_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::InvalidDeploymentGroupNameException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::InvalidDeploymentGroupNameException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidFileExistsBehaviorException`.
     pub fn is_invalid_file_exists_behavior_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::InvalidFileExistsBehaviorException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::InvalidFileExistsBehaviorException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidGitHubAccountTokenException`.
     pub fn is_invalid_git_hub_account_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::InvalidGitHubAccountTokenException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::InvalidGitHubAccountTokenException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidIgnoreApplicationStopFailuresValueException`.
     pub fn is_invalid_ignore_application_stop_failures_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::InvalidIgnoreApplicationStopFailuresValueException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::InvalidIgnoreApplicationStopFailuresValueException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidLoadBalancerInfoException`.
     pub fn is_invalid_load_balancer_info_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::InvalidLoadBalancerInfoException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::InvalidLoadBalancerInfoException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidRevisionException`.
     pub fn is_invalid_revision_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::InvalidRevisionException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::InvalidRevisionException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::InvalidRoleException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::InvalidRoleException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidTargetInstancesException`.
     pub fn is_invalid_target_instances_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::InvalidTargetInstancesException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::InvalidTargetInstancesException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidTrafficRoutingConfigurationException`.
     pub fn is_invalid_traffic_routing_configuration_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::InvalidTrafficRoutingConfigurationException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::InvalidTrafficRoutingConfigurationException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidUpdateOutdatedInstancesOnlyValueException`.
     pub fn is_invalid_update_outdated_instances_only_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::InvalidUpdateOutdatedInstancesOnlyValueException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::InvalidUpdateOutdatedInstancesOnlyValueException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::RevisionDoesNotExistException`.
     pub fn is_revision_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::RevisionDoesNotExistException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::RevisionDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::RevisionRequiredException`.
     pub fn is_revision_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::RevisionRequiredException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::RevisionRequiredException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDeploymentErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, CreateDeploymentErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for CreateDeploymentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDeploymentErrorKind::AlarmsLimitExceededException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::ApplicationDoesNotExistException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::ApplicationNameRequiredException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::DeploymentConfigDoesNotExistException(_inner) => {
+            CreateDeploymentErrorKind::AlarmsLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::ApplicationDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::DeploymentConfigDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::DeploymentGroupDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::DeploymentGroupNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::DeploymentLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::DescriptionTooLongException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::InvalidAlarmConfigException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::InvalidAutoRollbackConfigException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::InvalidAutoScalingGroupException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::InvalidDeploymentConfigNameException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::InvalidDeploymentGroupNameException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::InvalidFileExistsBehaviorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::InvalidGitHubAccountTokenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::InvalidIgnoreApplicationStopFailuresValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::InvalidLoadBalancerInfoException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::InvalidRevisionException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::InvalidRoleException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::InvalidTargetInstancesException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::InvalidTrafficRoutingConfigurationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::InvalidUpdateOutdatedInstancesOnlyValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::RevisionDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::RevisionRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDeploymentErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateDeploymentErrorKind::DeploymentGroupDoesNotExistException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::DeploymentGroupNameRequiredException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::DeploymentLimitExceededException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::DescriptionTooLongException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::InvalidAlarmConfigException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::InvalidApplicationNameException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::InvalidAutoRollbackConfigException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::InvalidAutoScalingGroupException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::InvalidDeploymentConfigNameException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::InvalidDeploymentGroupNameException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::InvalidFileExistsBehaviorException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::InvalidGitHubAccountTokenException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::InvalidIgnoreApplicationStopFailuresValueException(
-                _inner,
-            ) => Some(_inner),
-            CreateDeploymentErrorKind::InvalidLoadBalancerInfoException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::InvalidRevisionException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::InvalidRoleException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::InvalidTargetInstancesException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::InvalidTrafficRoutingConfigurationException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentErrorKind::InvalidUpdateOutdatedInstancesOnlyValueException(_inner) => {
-                Some(_inner)
-            }
-            CreateDeploymentErrorKind::RevisionDoesNotExistException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::RevisionRequiredException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13193,22 +12933,20 @@ impl std::error::Error for CreateDeploymentError {
 /// <p>The UpdateOutdatedInstancesOnly value is invalid. For Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidUpdateOutdatedInstancesOnlyValueException {
+pub struct InvalidUpdateOutdatedInstancesOnlyValueException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidUpdateOutdatedInstancesOnlyValueException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidUpdateOutdatedInstancesOnlyValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidUpdateOutdatedInstancesOnlyValueException")?;
         if let Some(inner_99) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_99)?;
             }
         }
@@ -13218,7 +12956,7 @@ impl std::fmt::Display for InvalidUpdateOutdatedInstancesOnlyValueException {
 impl std::error::Error for InvalidUpdateOutdatedInstancesOnlyValueException {}
 /// See [`InvalidUpdateOutdatedInstancesOnlyValueException`](crate::error::InvalidUpdateOutdatedInstancesOnlyValueException).
 pub mod invalid_update_outdated_instances_only_value_exception {
-
+    
     /// A builder for [`InvalidUpdateOutdatedInstancesOnlyValueException`](crate::error::InvalidUpdateOutdatedInstancesOnlyValueException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13232,50 +12970,49 @@ pub mod invalid_update_outdated_instances_only_value_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidUpdateOutdatedInstancesOnlyValueException`](crate::error::InvalidUpdateOutdatedInstancesOnlyValueException).
         pub fn build(self) -> crate::error::InvalidUpdateOutdatedInstancesOnlyValueException {
             crate::error::InvalidUpdateOutdatedInstancesOnlyValueException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidUpdateOutdatedInstancesOnlyValueException {
     /// Creates a new builder-style object to manufacture [`InvalidUpdateOutdatedInstancesOnlyValueException`](crate::error::InvalidUpdateOutdatedInstancesOnlyValueException).
-    pub fn builder() -> crate::error::invalid_update_outdated_instances_only_value_exception::Builder
-    {
+    pub fn builder() -> crate::error::invalid_update_outdated_instances_only_value_exception::Builder {
         crate::error::invalid_update_outdated_instances_only_value_exception::Builder::default()
     }
 }
 
-/// <p>The target instance configuration is invalid. Possible causes include:</p>
-/// <ul>
-/// <li> <p>Configuration data for target instances was entered for an in-place deployment.</p> </li>
-/// <li> <p>The limit of 10 tags for a tag type was exceeded.</p> </li>
-/// <li> <p>The combined length of the tag names exceeded the limit. </p> </li>
-/// <li> <p>A specified tag is not currently applied to any instances.</p> </li>
+/// <p>The target instance configuration is invalid. Possible causes include:</p> 
+/// <ul> 
+/// <li> <p>Configuration data for target instances was entered for an in-place deployment.</p> </li> 
+/// <li> <p>The limit of 10 tags for a tag type was exceeded.</p> </li> 
+/// <li> <p>The combined length of the tag names exceeded the limit. </p> </li> 
+/// <li> <p>A specified tag is not currently applied to any instances.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidTargetInstancesException {
+pub struct InvalidTargetInstancesException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidTargetInstancesException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidTargetInstancesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTargetInstancesException")?;
         if let Some(inner_100) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_100)?;
             }
         }
@@ -13285,7 +13022,7 @@ impl std::fmt::Display for InvalidTargetInstancesException {
 impl std::error::Error for InvalidTargetInstancesException {}
 /// See [`InvalidTargetInstancesException`](crate::error::InvalidTargetInstancesException).
 pub mod invalid_target_instances_exception {
-
+    
     /// A builder for [`InvalidTargetInstancesException`](crate::error::InvalidTargetInstancesException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13299,16 +13036,18 @@ pub mod invalid_target_instances_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidTargetInstancesException`](crate::error::InvalidTargetInstancesException).
         pub fn build(self) -> crate::error::InvalidTargetInstancesException {
             crate::error::InvalidTargetInstancesException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidTargetInstancesException {
     /// Creates a new builder-style object to manufacture [`InvalidTargetInstancesException`](crate::error::InvalidTargetInstancesException).
@@ -13320,22 +13059,20 @@ impl InvalidTargetInstancesException {
 /// <p>The IgnoreApplicationStopFailures value is invalid. For Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidIgnoreApplicationStopFailuresValueException {
+pub struct InvalidIgnoreApplicationStopFailuresValueException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidIgnoreApplicationStopFailuresValueException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidIgnoreApplicationStopFailuresValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidIgnoreApplicationStopFailuresValueException")?;
         if let Some(inner_101) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_101)?;
             }
         }
@@ -13345,7 +13082,7 @@ impl std::fmt::Display for InvalidIgnoreApplicationStopFailuresValueException {
 impl std::error::Error for InvalidIgnoreApplicationStopFailuresValueException {}
 /// See [`InvalidIgnoreApplicationStopFailuresValueException`](crate::error::InvalidIgnoreApplicationStopFailuresValueException).
 pub mod invalid_ignore_application_stop_failures_value_exception {
-
+    
     /// A builder for [`InvalidIgnoreApplicationStopFailuresValueException`](crate::error::InvalidIgnoreApplicationStopFailuresValueException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13359,21 +13096,22 @@ pub mod invalid_ignore_application_stop_failures_value_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidIgnoreApplicationStopFailuresValueException`](crate::error::InvalidIgnoreApplicationStopFailuresValueException).
         pub fn build(self) -> crate::error::InvalidIgnoreApplicationStopFailuresValueException {
             crate::error::InvalidIgnoreApplicationStopFailuresValueException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidIgnoreApplicationStopFailuresValueException {
     /// Creates a new builder-style object to manufacture [`InvalidIgnoreApplicationStopFailuresValueException`](crate::error::InvalidIgnoreApplicationStopFailuresValueException).
-    pub fn builder(
-    ) -> crate::error::invalid_ignore_application_stop_failures_value_exception::Builder {
+    pub fn builder() -> crate::error::invalid_ignore_application_stop_failures_value_exception::Builder {
         crate::error::invalid_ignore_application_stop_failures_value_exception::Builder::default()
     }
 }
@@ -13381,22 +13119,20 @@ impl InvalidIgnoreApplicationStopFailuresValueException {
 /// <p>The GitHub token is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidGitHubAccountTokenException {
+pub struct InvalidGitHubAccountTokenException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidGitHubAccountTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidGitHubAccountTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidGitHubAccountTokenException")?;
         if let Some(inner_102) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_102)?;
             }
         }
@@ -13406,7 +13142,7 @@ impl std::fmt::Display for InvalidGitHubAccountTokenException {
 impl std::error::Error for InvalidGitHubAccountTokenException {}
 /// See [`InvalidGitHubAccountTokenException`](crate::error::InvalidGitHubAccountTokenException).
 pub mod invalid_git_hub_account_token_exception {
-
+    
     /// A builder for [`InvalidGitHubAccountTokenException`](crate::error::InvalidGitHubAccountTokenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13420,16 +13156,18 @@ pub mod invalid_git_hub_account_token_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidGitHubAccountTokenException`](crate::error::InvalidGitHubAccountTokenException).
         pub fn build(self) -> crate::error::InvalidGitHubAccountTokenException {
             crate::error::InvalidGitHubAccountTokenException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidGitHubAccountTokenException {
     /// Creates a new builder-style object to manufacture [`InvalidGitHubAccountTokenException`](crate::error::InvalidGitHubAccountTokenException).
@@ -13441,22 +13179,20 @@ impl InvalidGitHubAccountTokenException {
 /// <p>An invalid fileExistsBehavior option was specified to determine how CodeDeploy handles files or directories that already exist in a deployment target location, but weren't part of the previous successful deployment. Valid values include "DISALLOW," "OVERWRITE," and "RETAIN."</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidFileExistsBehaviorException {
+pub struct InvalidFileExistsBehaviorException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidFileExistsBehaviorException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidFileExistsBehaviorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidFileExistsBehaviorException")?;
         if let Some(inner_103) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_103)?;
             }
         }
@@ -13466,7 +13202,7 @@ impl std::fmt::Display for InvalidFileExistsBehaviorException {
 impl std::error::Error for InvalidFileExistsBehaviorException {}
 /// See [`InvalidFileExistsBehaviorException`](crate::error::InvalidFileExistsBehaviorException).
 pub mod invalid_file_exists_behavior_exception {
-
+    
     /// A builder for [`InvalidFileExistsBehaviorException`](crate::error::InvalidFileExistsBehaviorException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13480,16 +13216,18 @@ pub mod invalid_file_exists_behavior_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidFileExistsBehaviorException`](crate::error::InvalidFileExistsBehaviorException).
         pub fn build(self) -> crate::error::InvalidFileExistsBehaviorException {
             crate::error::InvalidFileExistsBehaviorException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidFileExistsBehaviorException {
     /// Creates a new builder-style object to manufacture [`InvalidFileExistsBehaviorException`](crate::error::InvalidFileExistsBehaviorException).
@@ -13501,22 +13239,20 @@ impl InvalidFileExistsBehaviorException {
 /// <p>The number of allowed deployments was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentLimitExceededException {
+pub struct DeploymentLimitExceededException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentLimitExceededException")?;
         if let Some(inner_104) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_104)?;
             }
         }
@@ -13526,7 +13262,7 @@ impl std::fmt::Display for DeploymentLimitExceededException {
 impl std::error::Error for DeploymentLimitExceededException {}
 /// See [`DeploymentLimitExceededException`](crate::error::DeploymentLimitExceededException).
 pub mod deployment_limit_exceeded_exception {
-
+    
     /// A builder for [`DeploymentLimitExceededException`](crate::error::DeploymentLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13540,16 +13276,18 @@ pub mod deployment_limit_exceeded_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentLimitExceededException`](crate::error::DeploymentLimitExceededException).
         pub fn build(self) -> crate::error::DeploymentLimitExceededException {
             crate::error::DeploymentLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentLimitExceededException {
     /// Creates a new builder-style object to manufacture [`DeploymentLimitExceededException`](crate::error::DeploymentLimitExceededException).
@@ -13563,15 +13301,15 @@ impl DeploymentLimitExceededException {
 #[derive(std::fmt::Debug)]
 pub struct CreateApplicationError {
     /// Kind of error that occurred.
-    pub kind: CreateApplicationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateApplicationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateApplicationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -13591,26 +13329,40 @@ pub enum CreateApplicationErrorKind {
     InvalidComputePlatformException(crate::error::InvalidComputePlatformException),
     /// <p> The specified tags are not valid. </p>
     InvalidTagsToAddException(crate::error::InvalidTagsToAddException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateApplicationErrorKind::ApplicationAlreadyExistsException(_inner) => _inner.fmt(f),
-            CreateApplicationErrorKind::ApplicationLimitExceededException(_inner) => _inner.fmt(f),
-            CreateApplicationErrorKind::ApplicationNameRequiredException(_inner) => _inner.fmt(f),
-            CreateApplicationErrorKind::InvalidApplicationNameException(_inner) => _inner.fmt(f),
-            CreateApplicationErrorKind::InvalidComputePlatformException(_inner) => _inner.fmt(f),
-            CreateApplicationErrorKind::InvalidTagsToAddException(_inner) => _inner.fmt(f),
-            CreateApplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateApplicationErrorKind::ApplicationAlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateApplicationErrorKind::ApplicationLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateApplicationErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateApplicationErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateApplicationErrorKind::InvalidComputePlatformException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateApplicationErrorKind::InvalidTagsToAddException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateApplicationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -13624,99 +13376,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateApplicationError {
 }
 impl CreateApplicationError {
     /// Creates a new `CreateApplicationError`.
-    pub fn new(kind: CreateApplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateApplicationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateApplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateApplicationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateApplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateApplicationErrorKind::ApplicationAlreadyExistsException`.
     pub fn is_application_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateApplicationErrorKind::ApplicationAlreadyExistsException(_)
-        )
+        matches!(&self.kind, CreateApplicationErrorKind::ApplicationAlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `CreateApplicationErrorKind::ApplicationLimitExceededException`.
     pub fn is_application_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateApplicationErrorKind::ApplicationLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateApplicationErrorKind::ApplicationLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateApplicationErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateApplicationErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, CreateApplicationErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `CreateApplicationErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateApplicationErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, CreateApplicationErrorKind::InvalidApplicationNameException(_))
     }
     /// Returns `true` if the error kind is `CreateApplicationErrorKind::InvalidComputePlatformException`.
     pub fn is_invalid_compute_platform_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateApplicationErrorKind::InvalidComputePlatformException(_)
-        )
+        matches!(&self.kind, CreateApplicationErrorKind::InvalidComputePlatformException(_))
     }
     /// Returns `true` if the error kind is `CreateApplicationErrorKind::InvalidTagsToAddException`.
     pub fn is_invalid_tags_to_add_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateApplicationErrorKind::InvalidTagsToAddException(_)
-        )
+        matches!(&self.kind, CreateApplicationErrorKind::InvalidTagsToAddException(_))
     }
 }
 impl std::error::Error for CreateApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateApplicationErrorKind::ApplicationAlreadyExistsException(_inner) => Some(_inner),
-            CreateApplicationErrorKind::ApplicationLimitExceededException(_inner) => Some(_inner),
-            CreateApplicationErrorKind::ApplicationNameRequiredException(_inner) => Some(_inner),
-            CreateApplicationErrorKind::InvalidApplicationNameException(_inner) => Some(_inner),
-            CreateApplicationErrorKind::InvalidComputePlatformException(_inner) => Some(_inner),
-            CreateApplicationErrorKind::InvalidTagsToAddException(_inner) => Some(_inner),
-            CreateApplicationErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateApplicationErrorKind::ApplicationAlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateApplicationErrorKind::ApplicationLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateApplicationErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            CreateApplicationErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            CreateApplicationErrorKind::InvalidComputePlatformException(_inner) =>
+            Some(_inner)
+            ,
+            CreateApplicationErrorKind::InvalidTagsToAddException(_inner) =>
+            Some(_inner)
+            ,
+            CreateApplicationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -13724,22 +13472,20 @@ impl std::error::Error for CreateApplicationError {
 /// <p>More applications were attempted to be created than are allowed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationLimitExceededException {
+pub struct ApplicationLimitExceededException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ApplicationLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ApplicationLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApplicationLimitExceededException")?;
         if let Some(inner_105) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_105)?;
             }
         }
@@ -13749,7 +13495,7 @@ impl std::fmt::Display for ApplicationLimitExceededException {
 impl std::error::Error for ApplicationLimitExceededException {}
 /// See [`ApplicationLimitExceededException`](crate::error::ApplicationLimitExceededException).
 pub mod application_limit_exceeded_exception {
-
+    
     /// A builder for [`ApplicationLimitExceededException`](crate::error::ApplicationLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13763,16 +13509,18 @@ pub mod application_limit_exceeded_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationLimitExceededException`](crate::error::ApplicationLimitExceededException).
         pub fn build(self) -> crate::error::ApplicationLimitExceededException {
             crate::error::ApplicationLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationLimitExceededException {
     /// Creates a new builder-style object to manufacture [`ApplicationLimitExceededException`](crate::error::ApplicationLimitExceededException).
@@ -13786,15 +13534,15 @@ impl ApplicationLimitExceededException {
 #[derive(std::fmt::Debug)]
 pub struct ContinueDeploymentError {
     /// Kind of error that occurred.
-    pub kind: ContinueDeploymentErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ContinueDeploymentErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ContinueDeploymentError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ContinueDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -13817,39 +13565,47 @@ pub enum ContinueDeploymentErrorKind {
     /// <p> The wait type is invalid. </p>
     InvalidDeploymentWaitTypeException(crate::error::InvalidDeploymentWaitTypeException),
     /// <p>A call was submitted that is not supported for the specified deployment type.</p>
-    UnsupportedActionForDeploymentTypeException(
-        crate::error::UnsupportedActionForDeploymentTypeException,
-    ),
-    ///
+    UnsupportedActionForDeploymentTypeException(crate::error::UnsupportedActionForDeploymentTypeException),
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ContinueDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ContinueDeploymentErrorKind::DeploymentAlreadyCompletedException(_inner) => {
+            ContinueDeploymentErrorKind::DeploymentAlreadyCompletedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ContinueDeploymentErrorKind::DeploymentDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ContinueDeploymentErrorKind::DeploymentIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ContinueDeploymentErrorKind::DeploymentIsNotInReadyStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ContinueDeploymentErrorKind::InvalidDeploymentIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ContinueDeploymentErrorKind::InvalidDeploymentStatusException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ContinueDeploymentErrorKind::InvalidDeploymentWaitTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ContinueDeploymentErrorKind::UnsupportedActionForDeploymentTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ContinueDeploymentErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ContinueDeploymentErrorKind::DeploymentDoesNotExistException(_inner) => _inner.fmt(f),
-            ContinueDeploymentErrorKind::DeploymentIdRequiredException(_inner) => _inner.fmt(f),
-            ContinueDeploymentErrorKind::DeploymentIsNotInReadyStateException(_inner) => {
-                _inner.fmt(f)
-            }
-            ContinueDeploymentErrorKind::InvalidDeploymentIdException(_inner) => _inner.fmt(f),
-            ContinueDeploymentErrorKind::InvalidDeploymentStatusException(_inner) => _inner.fmt(f),
-            ContinueDeploymentErrorKind::InvalidDeploymentWaitTypeException(_inner) => {
-                _inner.fmt(f)
-            }
-            ContinueDeploymentErrorKind::UnsupportedActionForDeploymentTypeException(_inner) => {
-                _inner.fmt(f)
-            }
-            ContinueDeploymentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -13863,121 +13619,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for ContinueDeploymentError {
 }
 impl ContinueDeploymentError {
     /// Creates a new `ContinueDeploymentError`.
-    pub fn new(kind: ContinueDeploymentErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ContinueDeploymentError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ContinueDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ContinueDeploymentError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ContinueDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ContinueDeploymentErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ContinueDeploymentError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ContinueDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ContinueDeploymentError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ContinueDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ContinueDeploymentErrorKind::DeploymentAlreadyCompletedException`.
     pub fn is_deployment_already_completed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ContinueDeploymentErrorKind::DeploymentAlreadyCompletedException(_)
-        )
+        matches!(&self.kind, ContinueDeploymentErrorKind::DeploymentAlreadyCompletedException(_))
     }
     /// Returns `true` if the error kind is `ContinueDeploymentErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ContinueDeploymentErrorKind::DeploymentDoesNotExistException(_)
-        )
+        matches!(&self.kind, ContinueDeploymentErrorKind::DeploymentDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `ContinueDeploymentErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ContinueDeploymentErrorKind::DeploymentIdRequiredException(_)
-        )
+        matches!(&self.kind, ContinueDeploymentErrorKind::DeploymentIdRequiredException(_))
     }
     /// Returns `true` if the error kind is `ContinueDeploymentErrorKind::DeploymentIsNotInReadyStateException`.
     pub fn is_deployment_is_not_in_ready_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ContinueDeploymentErrorKind::DeploymentIsNotInReadyStateException(_)
-        )
+        matches!(&self.kind, ContinueDeploymentErrorKind::DeploymentIsNotInReadyStateException(_))
     }
     /// Returns `true` if the error kind is `ContinueDeploymentErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ContinueDeploymentErrorKind::InvalidDeploymentIdException(_)
-        )
+        matches!(&self.kind, ContinueDeploymentErrorKind::InvalidDeploymentIdException(_))
     }
     /// Returns `true` if the error kind is `ContinueDeploymentErrorKind::InvalidDeploymentStatusException`.
     pub fn is_invalid_deployment_status_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ContinueDeploymentErrorKind::InvalidDeploymentStatusException(_)
-        )
+        matches!(&self.kind, ContinueDeploymentErrorKind::InvalidDeploymentStatusException(_))
     }
     /// Returns `true` if the error kind is `ContinueDeploymentErrorKind::InvalidDeploymentWaitTypeException`.
     pub fn is_invalid_deployment_wait_type_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ContinueDeploymentErrorKind::InvalidDeploymentWaitTypeException(_)
-        )
+        matches!(&self.kind, ContinueDeploymentErrorKind::InvalidDeploymentWaitTypeException(_))
     }
     /// Returns `true` if the error kind is `ContinueDeploymentErrorKind::UnsupportedActionForDeploymentTypeException`.
     pub fn is_unsupported_action_for_deployment_type_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ContinueDeploymentErrorKind::UnsupportedActionForDeploymentTypeException(_)
-        )
+        matches!(&self.kind, ContinueDeploymentErrorKind::UnsupportedActionForDeploymentTypeException(_))
     }
 }
 impl std::error::Error for ContinueDeploymentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ContinueDeploymentErrorKind::DeploymentAlreadyCompletedException(_inner) => {
+            ContinueDeploymentErrorKind::DeploymentAlreadyCompletedException(_inner) =>
+            Some(_inner)
+            ,
+            ContinueDeploymentErrorKind::DeploymentDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            ContinueDeploymentErrorKind::DeploymentIdRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            ContinueDeploymentErrorKind::DeploymentIsNotInReadyStateException(_inner) =>
+            Some(_inner)
+            ,
+            ContinueDeploymentErrorKind::InvalidDeploymentIdException(_inner) =>
+            Some(_inner)
+            ,
+            ContinueDeploymentErrorKind::InvalidDeploymentStatusException(_inner) =>
+            Some(_inner)
+            ,
+            ContinueDeploymentErrorKind::InvalidDeploymentWaitTypeException(_inner) =>
+            Some(_inner)
+            ,
+            ContinueDeploymentErrorKind::UnsupportedActionForDeploymentTypeException(_inner) =>
+            Some(_inner)
+            ,
+            ContinueDeploymentErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ContinueDeploymentErrorKind::DeploymentDoesNotExistException(_inner) => Some(_inner),
-            ContinueDeploymentErrorKind::DeploymentIdRequiredException(_inner) => Some(_inner),
-            ContinueDeploymentErrorKind::DeploymentIsNotInReadyStateException(_inner) => {
-                Some(_inner)
-            }
-            ContinueDeploymentErrorKind::InvalidDeploymentIdException(_inner) => Some(_inner),
-            ContinueDeploymentErrorKind::InvalidDeploymentStatusException(_inner) => Some(_inner),
-            ContinueDeploymentErrorKind::InvalidDeploymentWaitTypeException(_inner) => Some(_inner),
-            ContinueDeploymentErrorKind::UnsupportedActionForDeploymentTypeException(_inner) => {
-                Some(_inner)
-            }
-            ContinueDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13985,22 +13729,20 @@ impl std::error::Error for ContinueDeploymentError {
 /// <p> The wait type is invalid. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidDeploymentWaitTypeException {
+pub struct InvalidDeploymentWaitTypeException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidDeploymentWaitTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidDeploymentWaitTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDeploymentWaitTypeException")?;
         if let Some(inner_106) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_106)?;
             }
         }
@@ -14010,7 +13752,7 @@ impl std::fmt::Display for InvalidDeploymentWaitTypeException {
 impl std::error::Error for InvalidDeploymentWaitTypeException {}
 /// See [`InvalidDeploymentWaitTypeException`](crate::error::InvalidDeploymentWaitTypeException).
 pub mod invalid_deployment_wait_type_exception {
-
+    
     /// A builder for [`InvalidDeploymentWaitTypeException`](crate::error::InvalidDeploymentWaitTypeException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14024,16 +13766,18 @@ pub mod invalid_deployment_wait_type_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidDeploymentWaitTypeException`](crate::error::InvalidDeploymentWaitTypeException).
         pub fn build(self) -> crate::error::InvalidDeploymentWaitTypeException {
             crate::error::InvalidDeploymentWaitTypeException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidDeploymentWaitTypeException {
     /// Creates a new builder-style object to manufacture [`InvalidDeploymentWaitTypeException`](crate::error::InvalidDeploymentWaitTypeException).
@@ -14045,22 +13789,20 @@ impl InvalidDeploymentWaitTypeException {
 /// <p>The deployment does not have a status of Ready and can't continue yet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentIsNotInReadyStateException {
+pub struct DeploymentIsNotInReadyStateException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentIsNotInReadyStateException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentIsNotInReadyStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentIsNotInReadyStateException")?;
         if let Some(inner_107) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_107)?;
             }
         }
@@ -14070,7 +13812,7 @@ impl std::fmt::Display for DeploymentIsNotInReadyStateException {
 impl std::error::Error for DeploymentIsNotInReadyStateException {}
 /// See [`DeploymentIsNotInReadyStateException`](crate::error::DeploymentIsNotInReadyStateException).
 pub mod deployment_is_not_in_ready_state_exception {
-
+    
     /// A builder for [`DeploymentIsNotInReadyStateException`](crate::error::DeploymentIsNotInReadyStateException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14084,16 +13826,18 @@ pub mod deployment_is_not_in_ready_state_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentIsNotInReadyStateException`](crate::error::DeploymentIsNotInReadyStateException).
         pub fn build(self) -> crate::error::DeploymentIsNotInReadyStateException {
             crate::error::DeploymentIsNotInReadyStateException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentIsNotInReadyStateException {
     /// Creates a new builder-style object to manufacture [`DeploymentIsNotInReadyStateException`](crate::error::DeploymentIsNotInReadyStateException).
@@ -14107,17 +13851,15 @@ impl DeploymentIsNotInReadyStateException {
 #[derive(std::fmt::Debug)]
 pub struct BatchGetOnPremisesInstancesError {
     /// Kind of error that occurred.
-    pub kind: BatchGetOnPremisesInstancesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: BatchGetOnPremisesInstancesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for BatchGetOnPremisesInstancesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: BatchGetOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: BatchGetOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -14131,29 +13873,31 @@ pub enum BatchGetOnPremisesInstancesErrorKind {
     InstanceNameRequiredException(crate::error::InstanceNameRequiredException),
     /// <p>The on-premises instance name was specified in an invalid format.</p>
     InvalidInstanceNameException(crate::error::InvalidInstanceNameException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetOnPremisesInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchGetOnPremisesInstancesErrorKind::BatchLimitExceededException(_inner) => {
+            BatchGetOnPremisesInstancesErrorKind::BatchLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetOnPremisesInstancesErrorKind::InstanceNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetOnPremisesInstancesErrorKind::InvalidInstanceNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetOnPremisesInstancesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            BatchGetOnPremisesInstancesErrorKind::InstanceNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetOnPremisesInstancesErrorKind::InvalidInstanceNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetOnPremisesInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -14167,85 +13911,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchGetOnPremisesInstancesEr
 }
 impl BatchGetOnPremisesInstancesError {
     /// Creates a new `BatchGetOnPremisesInstancesError`.
-    pub fn new(kind: BatchGetOnPremisesInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `BatchGetOnPremisesInstancesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: BatchGetOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `BatchGetOnPremisesInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: BatchGetOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: BatchGetOnPremisesInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `BatchGetOnPremisesInstancesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: BatchGetOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `BatchGetOnPremisesInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: BatchGetOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `BatchGetOnPremisesInstancesErrorKind::BatchLimitExceededException`.
     pub fn is_batch_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetOnPremisesInstancesErrorKind::BatchLimitExceededException(_)
-        )
+        matches!(&self.kind, BatchGetOnPremisesInstancesErrorKind::BatchLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `BatchGetOnPremisesInstancesErrorKind::InstanceNameRequiredException`.
     pub fn is_instance_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetOnPremisesInstancesErrorKind::InstanceNameRequiredException(_)
-        )
+        matches!(&self.kind, BatchGetOnPremisesInstancesErrorKind::InstanceNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `BatchGetOnPremisesInstancesErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetOnPremisesInstancesErrorKind::InvalidInstanceNameException(_)
-        )
+        matches!(&self.kind, BatchGetOnPremisesInstancesErrorKind::InvalidInstanceNameException(_))
     }
 }
 impl std::error::Error for BatchGetOnPremisesInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchGetOnPremisesInstancesErrorKind::BatchLimitExceededException(_inner) => {
+            BatchGetOnPremisesInstancesErrorKind::BatchLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetOnPremisesInstancesErrorKind::InstanceNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetOnPremisesInstancesErrorKind::InvalidInstanceNameException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetOnPremisesInstancesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            BatchGetOnPremisesInstancesErrorKind::InstanceNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetOnPremisesInstancesErrorKind::InvalidInstanceNameException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetOnPremisesInstancesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14253,22 +13986,20 @@ impl std::error::Error for BatchGetOnPremisesInstancesError {
 /// <p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchLimitExceededException {
+pub struct BatchLimitExceededException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BatchLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for BatchLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BatchLimitExceededException")?;
         if let Some(inner_108) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_108)?;
             }
         }
@@ -14278,7 +14009,7 @@ impl std::fmt::Display for BatchLimitExceededException {
 impl std::error::Error for BatchLimitExceededException {}
 /// See [`BatchLimitExceededException`](crate::error::BatchLimitExceededException).
 pub mod batch_limit_exceeded_exception {
-
+    
     /// A builder for [`BatchLimitExceededException`](crate::error::BatchLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14292,16 +14023,18 @@ pub mod batch_limit_exceeded_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BatchLimitExceededException`](crate::error::BatchLimitExceededException).
         pub fn build(self) -> crate::error::BatchLimitExceededException {
             crate::error::BatchLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchLimitExceededException {
     /// Creates a new builder-style object to manufacture [`BatchLimitExceededException`](crate::error::BatchLimitExceededException).
@@ -14315,17 +14048,15 @@ impl BatchLimitExceededException {
 #[derive(std::fmt::Debug)]
 pub struct BatchGetDeploymentTargetsError {
     /// Kind of error that occurred.
-    pub kind: BatchGetDeploymentTargetsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: BatchGetDeploymentTargetsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for BatchGetDeploymentTargetsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: BatchGetDeploymentTargetsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: BatchGetDeploymentTargetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -14344,59 +14075,57 @@ pub enum BatchGetDeploymentTargetsErrorKind {
     /// <p> A deployment target ID was not provided. </p>
     DeploymentTargetIdRequiredException(crate::error::DeploymentTargetIdRequiredException),
     /// <p> The maximum number of targets that can be associated with an Amazon ECS or Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments. </p>
-    DeploymentTargetListSizeExceededException(
-        crate::error::DeploymentTargetListSizeExceededException,
-    ),
+    DeploymentTargetListSizeExceededException(crate::error::DeploymentTargetListSizeExceededException),
     /// <p>The specified instance does not exist in the deployment group.</p>
-    #[deprecated(
-        note = "This exception is deprecated, use DeploymentTargetDoesNotExistException instead."
-    )]
+    #[deprecated(note = "This exception is deprecated, use DeploymentTargetDoesNotExistException instead.")]
     InstanceDoesNotExistException(crate::error::InstanceDoesNotExistException),
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
     /// <p> The target ID provided was not valid. </p>
     InvalidDeploymentTargetIdException(crate::error::InvalidDeploymentTargetIdException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetDeploymentTargetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchGetDeploymentTargetsErrorKind::DeploymentDoesNotExistException(_inner) => {
+            BatchGetDeploymentTargetsErrorKind::DeploymentDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentTargetsErrorKind::DeploymentIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentTargetsErrorKind::DeploymentNotStartedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentTargetsErrorKind::DeploymentTargetDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentTargetsErrorKind::DeploymentTargetIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentTargetsErrorKind::DeploymentTargetListSizeExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentTargetsErrorKind::InstanceDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentTargetsErrorKind::InvalidDeploymentIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentTargetsErrorKind::InvalidDeploymentTargetIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentTargetsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            BatchGetDeploymentTargetsErrorKind::DeploymentIdRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentTargetsErrorKind::DeploymentNotStartedException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentTargetsErrorKind::DeploymentTargetDoesNotExistException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentTargetsErrorKind::DeploymentTargetIdRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentTargetsErrorKind::DeploymentTargetListSizeExceededException(
-                _inner,
-            ) => _inner.fmt(f),
-            BatchGetDeploymentTargetsErrorKind::InstanceDoesNotExistException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentTargetsErrorKind::InvalidDeploymentIdException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentTargetsErrorKind::InvalidDeploymentTargetIdException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentTargetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -14410,145 +14139,116 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchGetDeploymentTargetsErro
 }
 impl BatchGetDeploymentTargetsError {
     /// Creates a new `BatchGetDeploymentTargetsError`.
-    pub fn new(kind: BatchGetDeploymentTargetsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `BatchGetDeploymentTargetsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: BatchGetDeploymentTargetsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `BatchGetDeploymentTargetsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: BatchGetDeploymentTargetsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: BatchGetDeploymentTargetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `BatchGetDeploymentTargetsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: BatchGetDeploymentTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `BatchGetDeploymentTargetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: BatchGetDeploymentTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentTargetsErrorKind::DeploymentDoesNotExistException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentTargetsErrorKind::DeploymentDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentTargetsErrorKind::DeploymentIdRequiredException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentTargetsErrorKind::DeploymentIdRequiredException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentNotStartedException`.
     pub fn is_deployment_not_started_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentTargetsErrorKind::DeploymentNotStartedException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentTargetsErrorKind::DeploymentNotStartedException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentTargetDoesNotExistException`.
     pub fn is_deployment_target_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentTargetsErrorKind::DeploymentTargetDoesNotExistException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentTargetsErrorKind::DeploymentTargetDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentTargetIdRequiredException`.
     pub fn is_deployment_target_id_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentTargetsErrorKind::DeploymentTargetIdRequiredException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentTargetsErrorKind::DeploymentTargetIdRequiredException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentTargetListSizeExceededException`.
     pub fn is_deployment_target_list_size_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentTargetsErrorKind::DeploymentTargetListSizeExceededException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentTargetsErrorKind::DeploymentTargetListSizeExceededException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::InstanceDoesNotExistException`.
     pub fn is_instance_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentTargetsErrorKind::InstanceDoesNotExistException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentTargetsErrorKind::InstanceDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentTargetsErrorKind::InvalidDeploymentIdException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentTargetsErrorKind::InvalidDeploymentIdException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::InvalidDeploymentTargetIdException`.
     pub fn is_invalid_deployment_target_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentTargetsErrorKind::InvalidDeploymentTargetIdException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentTargetsErrorKind::InvalidDeploymentTargetIdException(_))
     }
 }
 impl std::error::Error for BatchGetDeploymentTargetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchGetDeploymentTargetsErrorKind::DeploymentDoesNotExistException(_inner) => {
+            BatchGetDeploymentTargetsErrorKind::DeploymentDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentTargetsErrorKind::DeploymentIdRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentTargetsErrorKind::DeploymentNotStartedException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentTargetsErrorKind::DeploymentTargetDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentTargetsErrorKind::DeploymentTargetIdRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentTargetsErrorKind::DeploymentTargetListSizeExceededException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentTargetsErrorKind::InstanceDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentTargetsErrorKind::InvalidDeploymentIdException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentTargetsErrorKind::InvalidDeploymentTargetIdException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentTargetsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            BatchGetDeploymentTargetsErrorKind::DeploymentIdRequiredException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentTargetsErrorKind::DeploymentNotStartedException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentTargetsErrorKind::DeploymentTargetDoesNotExistException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentTargetsErrorKind::DeploymentTargetIdRequiredException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentTargetsErrorKind::DeploymentTargetListSizeExceededException(
-                _inner,
-            ) => Some(_inner),
-            BatchGetDeploymentTargetsErrorKind::InstanceDoesNotExistException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentTargetsErrorKind::InvalidDeploymentIdException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentTargetsErrorKind::InvalidDeploymentTargetIdException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentTargetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14556,22 +14256,20 @@ impl std::error::Error for BatchGetDeploymentTargetsError {
 /// <p> The maximum number of targets that can be associated with an Amazon ECS or Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentTargetListSizeExceededException {
+pub struct DeploymentTargetListSizeExceededException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DeploymentTargetListSizeExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentTargetListSizeExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentTargetListSizeExceededException")?;
         if let Some(inner_109) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_109)?;
             }
         }
@@ -14581,7 +14279,7 @@ impl std::fmt::Display for DeploymentTargetListSizeExceededException {
 impl std::error::Error for DeploymentTargetListSizeExceededException {}
 /// See [`DeploymentTargetListSizeExceededException`](crate::error::DeploymentTargetListSizeExceededException).
 pub mod deployment_target_list_size_exceeded_exception {
-
+    
     /// A builder for [`DeploymentTargetListSizeExceededException`](crate::error::DeploymentTargetListSizeExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -14595,16 +14293,18 @@ pub mod deployment_target_list_size_exceeded_exception {
         }
         /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentTargetListSizeExceededException`](crate::error::DeploymentTargetListSizeExceededException).
         pub fn build(self) -> crate::error::DeploymentTargetListSizeExceededException {
             crate::error::DeploymentTargetListSizeExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentTargetListSizeExceededException {
     /// Creates a new builder-style object to manufacture [`DeploymentTargetListSizeExceededException`](crate::error::DeploymentTargetListSizeExceededException).
@@ -14618,15 +14318,15 @@ impl DeploymentTargetListSizeExceededException {
 #[derive(std::fmt::Debug)]
 pub struct BatchGetDeploymentsError {
     /// Kind of error that occurred.
-    pub kind: BatchGetDeploymentsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: BatchGetDeploymentsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for BatchGetDeploymentsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: BatchGetDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -14640,23 +14340,31 @@ pub enum BatchGetDeploymentsErrorKind {
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetDeploymentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchGetDeploymentsErrorKind::BatchLimitExceededException(_inner) => _inner.fmt(f),
-            BatchGetDeploymentsErrorKind::DeploymentIdRequiredException(_inner) => _inner.fmt(f),
-            BatchGetDeploymentsErrorKind::InvalidDeploymentIdException(_inner) => _inner.fmt(f),
-            BatchGetDeploymentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            BatchGetDeploymentsErrorKind::BatchLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentsErrorKind::DeploymentIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentsErrorKind::InvalidDeploymentIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -14670,75 +14378,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchGetDeploymentsError {
 }
 impl BatchGetDeploymentsError {
     /// Creates a new `BatchGetDeploymentsError`.
-    pub fn new(kind: BatchGetDeploymentsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `BatchGetDeploymentsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: BatchGetDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `BatchGetDeploymentsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: BatchGetDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: BatchGetDeploymentsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `BatchGetDeploymentsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: BatchGetDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `BatchGetDeploymentsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: BatchGetDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `BatchGetDeploymentsErrorKind::BatchLimitExceededException`.
     pub fn is_batch_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentsErrorKind::BatchLimitExceededException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentsErrorKind::BatchLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentsErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentsErrorKind::DeploymentIdRequiredException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentsErrorKind::DeploymentIdRequiredException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentsErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentsErrorKind::InvalidDeploymentIdException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentsErrorKind::InvalidDeploymentIdException(_))
     }
 }
 impl std::error::Error for BatchGetDeploymentsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchGetDeploymentsErrorKind::BatchLimitExceededException(_inner) => Some(_inner),
-            BatchGetDeploymentsErrorKind::DeploymentIdRequiredException(_inner) => Some(_inner),
-            BatchGetDeploymentsErrorKind::InvalidDeploymentIdException(_inner) => Some(_inner),
-            BatchGetDeploymentsErrorKind::Unhandled(_inner) => Some(_inner),
+            BatchGetDeploymentsErrorKind::BatchLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentsErrorKind::DeploymentIdRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentsErrorKind::InvalidDeploymentIdException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -14748,17 +14455,15 @@ impl std::error::Error for BatchGetDeploymentsError {
 #[derive(std::fmt::Debug)]
 pub struct BatchGetDeploymentInstancesError {
     /// Kind of error that occurred.
-    pub kind: BatchGetDeploymentInstancesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: BatchGetDeploymentInstancesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for BatchGetDeploymentInstancesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: BatchGetDeploymentInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: BatchGetDeploymentInstancesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -14773,9 +14478,7 @@ pub enum BatchGetDeploymentInstancesErrorKind {
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
     /// <p>The instance ID was not specified.</p>
-    #[deprecated(
-        note = "This exception is deprecated, use DeploymentTargetIdRequiredException instead."
-    )]
+    #[deprecated(note = "This exception is deprecated, use DeploymentTargetIdRequiredException instead.")]
     InstanceIdRequiredException(crate::error::InstanceIdRequiredException),
     /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
     InvalidComputePlatformException(crate::error::InvalidComputePlatformException),
@@ -14783,41 +14486,43 @@ pub enum BatchGetDeploymentInstancesErrorKind {
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
     /// <p>The on-premises instance name was specified in an invalid format.</p>
     InvalidInstanceNameException(crate::error::InvalidInstanceNameException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetDeploymentInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchGetDeploymentInstancesErrorKind::BatchLimitExceededException(_inner) => {
+            BatchGetDeploymentInstancesErrorKind::BatchLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentInstancesErrorKind::DeploymentDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentInstancesErrorKind::DeploymentIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentInstancesErrorKind::InstanceIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentInstancesErrorKind::InvalidComputePlatformException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentInstancesErrorKind::InvalidDeploymentIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentInstancesErrorKind::InvalidInstanceNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentInstancesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            BatchGetDeploymentInstancesErrorKind::DeploymentDoesNotExistException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentInstancesErrorKind::DeploymentIdRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentInstancesErrorKind::InstanceIdRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentInstancesErrorKind::InvalidComputePlatformException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentInstancesErrorKind::InvalidDeploymentIdException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentInstancesErrorKind::InvalidInstanceNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -14831,125 +14536,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchGetDeploymentInstancesEr
 }
 impl BatchGetDeploymentInstancesError {
     /// Creates a new `BatchGetDeploymentInstancesError`.
-    pub fn new(kind: BatchGetDeploymentInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `BatchGetDeploymentInstancesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: BatchGetDeploymentInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `BatchGetDeploymentInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: BatchGetDeploymentInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: BatchGetDeploymentInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `BatchGetDeploymentInstancesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: BatchGetDeploymentInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `BatchGetDeploymentInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: BatchGetDeploymentInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `BatchGetDeploymentInstancesErrorKind::BatchLimitExceededException`.
     pub fn is_batch_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentInstancesErrorKind::BatchLimitExceededException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentInstancesErrorKind::BatchLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentInstancesErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentInstancesErrorKind::DeploymentDoesNotExistException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentInstancesErrorKind::DeploymentDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentInstancesErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentInstancesErrorKind::DeploymentIdRequiredException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentInstancesErrorKind::DeploymentIdRequiredException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentInstancesErrorKind::InstanceIdRequiredException`.
     pub fn is_instance_id_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentInstancesErrorKind::InstanceIdRequiredException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentInstancesErrorKind::InstanceIdRequiredException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentInstancesErrorKind::InvalidComputePlatformException`.
     pub fn is_invalid_compute_platform_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentInstancesErrorKind::InvalidComputePlatformException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentInstancesErrorKind::InvalidComputePlatformException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentInstancesErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentInstancesErrorKind::InvalidDeploymentIdException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentInstancesErrorKind::InvalidDeploymentIdException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentInstancesErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentInstancesErrorKind::InvalidInstanceNameException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentInstancesErrorKind::InvalidInstanceNameException(_))
     }
 }
 impl std::error::Error for BatchGetDeploymentInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchGetDeploymentInstancesErrorKind::BatchLimitExceededException(_inner) => {
+            BatchGetDeploymentInstancesErrorKind::BatchLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentInstancesErrorKind::DeploymentDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentInstancesErrorKind::DeploymentIdRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentInstancesErrorKind::InstanceIdRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentInstancesErrorKind::InvalidComputePlatformException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentInstancesErrorKind::InvalidDeploymentIdException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentInstancesErrorKind::InvalidInstanceNameException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentInstancesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            BatchGetDeploymentInstancesErrorKind::DeploymentDoesNotExistException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentInstancesErrorKind::DeploymentIdRequiredException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentInstancesErrorKind::InstanceIdRequiredException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentInstancesErrorKind::InvalidComputePlatformException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentInstancesErrorKind::InvalidDeploymentIdException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentInstancesErrorKind::InvalidInstanceNameException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentInstancesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14959,17 +14641,15 @@ impl std::error::Error for BatchGetDeploymentInstancesError {
 #[derive(std::fmt::Debug)]
 pub struct BatchGetDeploymentGroupsError {
     /// Kind of error that occurred.
-    pub kind: BatchGetDeploymentGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: BatchGetDeploymentGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for BatchGetDeploymentGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: BatchGetDeploymentGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: BatchGetDeploymentGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -14991,39 +14671,43 @@ pub enum BatchGetDeploymentGroupsErrorKind {
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
     /// <p>The deployment group name was specified in an invalid format.</p>
     InvalidDeploymentGroupNameException(crate::error::InvalidDeploymentGroupNameException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetDeploymentGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchGetDeploymentGroupsErrorKind::ApplicationDoesNotExistException(_inner) => {
+            BatchGetDeploymentGroupsErrorKind::ApplicationDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentGroupsErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentGroupsErrorKind::BatchLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentGroupsErrorKind::DeploymentConfigDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentGroupsErrorKind::DeploymentGroupNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentGroupsErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentGroupsErrorKind::InvalidDeploymentGroupNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetDeploymentGroupsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            BatchGetDeploymentGroupsErrorKind::ApplicationNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentGroupsErrorKind::BatchLimitExceededException(_inner) => _inner.fmt(f),
-            BatchGetDeploymentGroupsErrorKind::DeploymentConfigDoesNotExistException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentGroupsErrorKind::DeploymentGroupNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentGroupsErrorKind::InvalidApplicationNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentGroupsErrorKind::InvalidDeploymentGroupNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetDeploymentGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -15037,123 +14721,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchGetDeploymentGroupsError
 }
 impl BatchGetDeploymentGroupsError {
     /// Creates a new `BatchGetDeploymentGroupsError`.
-    pub fn new(kind: BatchGetDeploymentGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `BatchGetDeploymentGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: BatchGetDeploymentGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `BatchGetDeploymentGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: BatchGetDeploymentGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: BatchGetDeploymentGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `BatchGetDeploymentGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: BatchGetDeploymentGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `BatchGetDeploymentGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: BatchGetDeploymentGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `BatchGetDeploymentGroupsErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentGroupsErrorKind::ApplicationDoesNotExistException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentGroupsErrorKind::ApplicationDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentGroupsErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentGroupsErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentGroupsErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentGroupsErrorKind::BatchLimitExceededException`.
     pub fn is_batch_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentGroupsErrorKind::BatchLimitExceededException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentGroupsErrorKind::BatchLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentGroupsErrorKind::DeploymentConfigDoesNotExistException`.
     pub fn is_deployment_config_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentGroupsErrorKind::DeploymentConfigDoesNotExistException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentGroupsErrorKind::DeploymentConfigDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentGroupsErrorKind::DeploymentGroupNameRequiredException`.
     pub fn is_deployment_group_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentGroupsErrorKind::DeploymentGroupNameRequiredException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentGroupsErrorKind::DeploymentGroupNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentGroupsErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentGroupsErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentGroupsErrorKind::InvalidApplicationNameException(_))
     }
     /// Returns `true` if the error kind is `BatchGetDeploymentGroupsErrorKind::InvalidDeploymentGroupNameException`.
     pub fn is_invalid_deployment_group_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetDeploymentGroupsErrorKind::InvalidDeploymentGroupNameException(_)
-        )
+        matches!(&self.kind, BatchGetDeploymentGroupsErrorKind::InvalidDeploymentGroupNameException(_))
     }
 }
 impl std::error::Error for BatchGetDeploymentGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchGetDeploymentGroupsErrorKind::ApplicationDoesNotExistException(_inner) => {
+            BatchGetDeploymentGroupsErrorKind::ApplicationDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentGroupsErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentGroupsErrorKind::BatchLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentGroupsErrorKind::DeploymentConfigDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentGroupsErrorKind::DeploymentGroupNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentGroupsErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentGroupsErrorKind::InvalidDeploymentGroupNameException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetDeploymentGroupsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            BatchGetDeploymentGroupsErrorKind::ApplicationNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentGroupsErrorKind::BatchLimitExceededException(_inner) => Some(_inner),
-            BatchGetDeploymentGroupsErrorKind::DeploymentConfigDoesNotExistException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentGroupsErrorKind::DeploymentGroupNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentGroupsErrorKind::InvalidApplicationNameException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentGroupsErrorKind::InvalidDeploymentGroupNameException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetDeploymentGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15163,15 +14826,15 @@ impl std::error::Error for BatchGetDeploymentGroupsError {
 #[derive(std::fmt::Debug)]
 pub struct BatchGetApplicationsError {
     /// Kind of error that occurred.
-    pub kind: BatchGetApplicationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: BatchGetApplicationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for BatchGetApplicationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: BatchGetApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -15187,28 +14850,34 @@ pub enum BatchGetApplicationsErrorKind {
     BatchLimitExceededException(crate::error::BatchLimitExceededException),
     /// <p>The application name was specified in an invalid format.</p>
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetApplicationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchGetApplicationsErrorKind::ApplicationDoesNotExistException(_inner) => {
+            BatchGetApplicationsErrorKind::ApplicationDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetApplicationsErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetApplicationsErrorKind::BatchLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetApplicationsErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetApplicationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            BatchGetApplicationsErrorKind::ApplicationNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetApplicationsErrorKind::BatchLimitExceededException(_inner) => _inner.fmt(f),
-            BatchGetApplicationsErrorKind::InvalidApplicationNameException(_inner) => _inner.fmt(f),
-            BatchGetApplicationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -15222,87 +14891,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchGetApplicationsError {
 }
 impl BatchGetApplicationsError {
     /// Creates a new `BatchGetApplicationsError`.
-    pub fn new(kind: BatchGetApplicationsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `BatchGetApplicationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: BatchGetApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `BatchGetApplicationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: BatchGetApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: BatchGetApplicationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `BatchGetApplicationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: BatchGetApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `BatchGetApplicationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: BatchGetApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `BatchGetApplicationsErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetApplicationsErrorKind::ApplicationDoesNotExistException(_)
-        )
+        matches!(&self.kind, BatchGetApplicationsErrorKind::ApplicationDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `BatchGetApplicationsErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetApplicationsErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, BatchGetApplicationsErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `BatchGetApplicationsErrorKind::BatchLimitExceededException`.
     pub fn is_batch_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetApplicationsErrorKind::BatchLimitExceededException(_)
-        )
+        matches!(&self.kind, BatchGetApplicationsErrorKind::BatchLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `BatchGetApplicationsErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetApplicationsErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, BatchGetApplicationsErrorKind::InvalidApplicationNameException(_))
     }
 }
 impl std::error::Error for BatchGetApplicationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchGetApplicationsErrorKind::ApplicationDoesNotExistException(_inner) => Some(_inner),
-            BatchGetApplicationsErrorKind::ApplicationNameRequiredException(_inner) => Some(_inner),
-            BatchGetApplicationsErrorKind::BatchLimitExceededException(_inner) => Some(_inner),
-            BatchGetApplicationsErrorKind::InvalidApplicationNameException(_inner) => Some(_inner),
-            BatchGetApplicationsErrorKind::Unhandled(_inner) => Some(_inner),
+            BatchGetApplicationsErrorKind::ApplicationDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetApplicationsErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetApplicationsErrorKind::BatchLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetApplicationsErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetApplicationsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -15312,17 +14975,15 @@ impl std::error::Error for BatchGetApplicationsError {
 #[derive(std::fmt::Debug)]
 pub struct BatchGetApplicationRevisionsError {
     /// Kind of error that occurred.
-    pub kind: BatchGetApplicationRevisionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: BatchGetApplicationRevisionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for BatchGetApplicationRevisionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: BatchGetApplicationRevisionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: BatchGetApplicationRevisionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -15342,38 +15003,40 @@ pub enum BatchGetApplicationRevisionsErrorKind {
     InvalidRevisionException(crate::error::InvalidRevisionException),
     /// <p>The revision ID was not specified.</p>
     RevisionRequiredException(crate::error::RevisionRequiredException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetApplicationRevisionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BatchGetApplicationRevisionsErrorKind::ApplicationDoesNotExistException(_inner) => {
+            BatchGetApplicationRevisionsErrorKind::ApplicationDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetApplicationRevisionsErrorKind::ApplicationNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetApplicationRevisionsErrorKind::BatchLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetApplicationRevisionsErrorKind::InvalidApplicationNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetApplicationRevisionsErrorKind::InvalidRevisionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetApplicationRevisionsErrorKind::RevisionRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            BatchGetApplicationRevisionsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            BatchGetApplicationRevisionsErrorKind::ApplicationNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetApplicationRevisionsErrorKind::BatchLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetApplicationRevisionsErrorKind::InvalidApplicationNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetApplicationRevisionsErrorKind::InvalidRevisionException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetApplicationRevisionsErrorKind::RevisionRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            BatchGetApplicationRevisionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -15387,113 +15050,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for BatchGetApplicationRevisionsE
 }
 impl BatchGetApplicationRevisionsError {
     /// Creates a new `BatchGetApplicationRevisionsError`.
-    pub fn new(kind: BatchGetApplicationRevisionsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `BatchGetApplicationRevisionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: BatchGetApplicationRevisionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `BatchGetApplicationRevisionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: BatchGetApplicationRevisionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: BatchGetApplicationRevisionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `BatchGetApplicationRevisionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: BatchGetApplicationRevisionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `BatchGetApplicationRevisionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: BatchGetApplicationRevisionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `BatchGetApplicationRevisionsErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetApplicationRevisionsErrorKind::ApplicationDoesNotExistException(_)
-        )
+        matches!(&self.kind, BatchGetApplicationRevisionsErrorKind::ApplicationDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `BatchGetApplicationRevisionsErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetApplicationRevisionsErrorKind::ApplicationNameRequiredException(_)
-        )
+        matches!(&self.kind, BatchGetApplicationRevisionsErrorKind::ApplicationNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `BatchGetApplicationRevisionsErrorKind::BatchLimitExceededException`.
     pub fn is_batch_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetApplicationRevisionsErrorKind::BatchLimitExceededException(_)
-        )
+        matches!(&self.kind, BatchGetApplicationRevisionsErrorKind::BatchLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `BatchGetApplicationRevisionsErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetApplicationRevisionsErrorKind::InvalidApplicationNameException(_)
-        )
+        matches!(&self.kind, BatchGetApplicationRevisionsErrorKind::InvalidApplicationNameException(_))
     }
     /// Returns `true` if the error kind is `BatchGetApplicationRevisionsErrorKind::InvalidRevisionException`.
     pub fn is_invalid_revision_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetApplicationRevisionsErrorKind::InvalidRevisionException(_)
-        )
+        matches!(&self.kind, BatchGetApplicationRevisionsErrorKind::InvalidRevisionException(_))
     }
     /// Returns `true` if the error kind is `BatchGetApplicationRevisionsErrorKind::RevisionRequiredException`.
     pub fn is_revision_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            BatchGetApplicationRevisionsErrorKind::RevisionRequiredException(_)
-        )
+        matches!(&self.kind, BatchGetApplicationRevisionsErrorKind::RevisionRequiredException(_))
     }
 }
 impl std::error::Error for BatchGetApplicationRevisionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BatchGetApplicationRevisionsErrorKind::ApplicationDoesNotExistException(_inner) => {
+            BatchGetApplicationRevisionsErrorKind::ApplicationDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetApplicationRevisionsErrorKind::ApplicationNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetApplicationRevisionsErrorKind::BatchLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetApplicationRevisionsErrorKind::InvalidApplicationNameException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetApplicationRevisionsErrorKind::InvalidRevisionException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetApplicationRevisionsErrorKind::RevisionRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            BatchGetApplicationRevisionsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            BatchGetApplicationRevisionsErrorKind::ApplicationNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetApplicationRevisionsErrorKind::BatchLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetApplicationRevisionsErrorKind::InvalidApplicationNameException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetApplicationRevisionsErrorKind::InvalidRevisionException(_inner) => Some(_inner),
-            BatchGetApplicationRevisionsErrorKind::RevisionRequiredException(_inner) => {
-                Some(_inner)
-            }
-            BatchGetApplicationRevisionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15503,17 +15148,15 @@ impl std::error::Error for BatchGetApplicationRevisionsError {
 #[derive(std::fmt::Debug)]
 pub struct AddTagsToOnPremisesInstancesError {
     /// Kind of error that occurred.
-    pub kind: AddTagsToOnPremisesInstancesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AddTagsToOnPremisesInstancesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AddTagsToOnPremisesInstancesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AddTagsToOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: AddTagsToOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -15535,37 +15178,43 @@ pub enum AddTagsToOnPremisesInstancesErrorKind {
     TagLimitExceededException(crate::error::TagLimitExceededException),
     /// <p>A tag was not specified.</p>
     TagRequiredException(crate::error::TagRequiredException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddTagsToOnPremisesInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddTagsToOnPremisesInstancesErrorKind::InstanceLimitExceededException(_inner) => {
+            AddTagsToOnPremisesInstancesErrorKind::InstanceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToOnPremisesInstancesErrorKind::InstanceNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToOnPremisesInstancesErrorKind::InstanceNotRegisteredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToOnPremisesInstancesErrorKind::InvalidInstanceNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToOnPremisesInstancesErrorKind::InvalidTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToOnPremisesInstancesErrorKind::TagLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToOnPremisesInstancesErrorKind::TagRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddTagsToOnPremisesInstancesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AddTagsToOnPremisesInstancesErrorKind::InstanceNameRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            AddTagsToOnPremisesInstancesErrorKind::InstanceNotRegisteredException(_inner) => {
-                _inner.fmt(f)
-            }
-            AddTagsToOnPremisesInstancesErrorKind::InvalidInstanceNameException(_inner) => {
-                _inner.fmt(f)
-            }
-            AddTagsToOnPremisesInstancesErrorKind::InvalidTagException(_inner) => _inner.fmt(f),
-            AddTagsToOnPremisesInstancesErrorKind::TagLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            AddTagsToOnPremisesInstancesErrorKind::TagRequiredException(_inner) => _inner.fmt(f),
-            AddTagsToOnPremisesInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -15579,150 +15228,132 @@ impl aws_smithy_types::retry::ProvideErrorKind for AddTagsToOnPremisesInstancesE
 }
 impl AddTagsToOnPremisesInstancesError {
     /// Creates a new `AddTagsToOnPremisesInstancesError`.
-    pub fn new(kind: AddTagsToOnPremisesInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AddTagsToOnPremisesInstancesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AddTagsToOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AddTagsToOnPremisesInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AddTagsToOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AddTagsToOnPremisesInstancesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AddTagsToOnPremisesInstancesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AddTagsToOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AddTagsToOnPremisesInstancesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AddTagsToOnPremisesInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AddTagsToOnPremisesInstancesErrorKind::InstanceLimitExceededException`.
     pub fn is_instance_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToOnPremisesInstancesErrorKind::InstanceLimitExceededException(_)
-        )
+        matches!(&self.kind, AddTagsToOnPremisesInstancesErrorKind::InstanceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `AddTagsToOnPremisesInstancesErrorKind::InstanceNameRequiredException`.
     pub fn is_instance_name_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToOnPremisesInstancesErrorKind::InstanceNameRequiredException(_)
-        )
+        matches!(&self.kind, AddTagsToOnPremisesInstancesErrorKind::InstanceNameRequiredException(_))
     }
     /// Returns `true` if the error kind is `AddTagsToOnPremisesInstancesErrorKind::InstanceNotRegisteredException`.
     pub fn is_instance_not_registered_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToOnPremisesInstancesErrorKind::InstanceNotRegisteredException(_)
-        )
+        matches!(&self.kind, AddTagsToOnPremisesInstancesErrorKind::InstanceNotRegisteredException(_))
     }
     /// Returns `true` if the error kind is `AddTagsToOnPremisesInstancesErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToOnPremisesInstancesErrorKind::InvalidInstanceNameException(_)
-        )
+        matches!(&self.kind, AddTagsToOnPremisesInstancesErrorKind::InvalidInstanceNameException(_))
     }
     /// Returns `true` if the error kind is `AddTagsToOnPremisesInstancesErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToOnPremisesInstancesErrorKind::InvalidTagException(_)
-        )
+        matches!(&self.kind, AddTagsToOnPremisesInstancesErrorKind::InvalidTagException(_))
     }
     /// Returns `true` if the error kind is `AddTagsToOnPremisesInstancesErrorKind::TagLimitExceededException`.
     pub fn is_tag_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToOnPremisesInstancesErrorKind::TagLimitExceededException(_)
-        )
+        matches!(&self.kind, AddTagsToOnPremisesInstancesErrorKind::TagLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `AddTagsToOnPremisesInstancesErrorKind::TagRequiredException`.
     pub fn is_tag_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddTagsToOnPremisesInstancesErrorKind::TagRequiredException(_)
-        )
+        matches!(&self.kind, AddTagsToOnPremisesInstancesErrorKind::TagRequiredException(_))
     }
 }
 impl std::error::Error for AddTagsToOnPremisesInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddTagsToOnPremisesInstancesErrorKind::InstanceLimitExceededException(_inner) => {
+            AddTagsToOnPremisesInstancesErrorKind::InstanceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToOnPremisesInstancesErrorKind::InstanceNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToOnPremisesInstancesErrorKind::InstanceNotRegisteredException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToOnPremisesInstancesErrorKind::InvalidInstanceNameException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToOnPremisesInstancesErrorKind::InvalidTagException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToOnPremisesInstancesErrorKind::TagLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToOnPremisesInstancesErrorKind::TagRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            AddTagsToOnPremisesInstancesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            AddTagsToOnPremisesInstancesErrorKind::InstanceNameRequiredException(_inner) => {
-                Some(_inner)
-            }
-            AddTagsToOnPremisesInstancesErrorKind::InstanceNotRegisteredException(_inner) => {
-                Some(_inner)
-            }
-            AddTagsToOnPremisesInstancesErrorKind::InvalidInstanceNameException(_inner) => {
-                Some(_inner)
-            }
-            AddTagsToOnPremisesInstancesErrorKind::InvalidTagException(_inner) => Some(_inner),
-            AddTagsToOnPremisesInstancesErrorKind::TagLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            AddTagsToOnPremisesInstancesErrorKind::TagRequiredException(_inner) => Some(_inner),
-            AddTagsToOnPremisesInstancesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

@@ -3,7 +3,7 @@
 /// Details about the error.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorDetail {
+pub struct ErrorDetail  {
     /// A detailed error code.
     #[doc(hidden)]
     pub detailed_error_code: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ErrorDetail {
 }
 impl ErrorDetail {
     /// A detailed error code.
-    pub fn detailed_error_code(&self) -> std::option::Option<&str> {
+    pub fn detailed_error_code(&self) -> std::option::Option<& str> {
         self.detailed_error_code.as_deref()
     }
     /// A detailed error message.
-    pub fn detailed_error_message(&self) -> std::option::Option<&str> {
+    pub fn detailed_error_message(&self) -> std::option::Option<& str> {
         self.detailed_error_message.as_deref()
     }
 }
 /// See [`ErrorDetail`](crate::model::ErrorDetail).
 pub mod error_detail {
-
+    
     /// A builder for [`ErrorDetail`](crate::model::ErrorDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,12 +37,8 @@ pub mod error_detail {
             self
         }
         /// A detailed error code.
-        pub fn set_detailed_error_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detailed_error_code = input;
-            self
+        pub fn set_detailed_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detailed_error_code = input; self
         }
         /// A detailed error message.
         pub fn detailed_error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,21 +46,21 @@ pub mod error_detail {
             self
         }
         /// A detailed error message.
-        pub fn set_detailed_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detailed_error_message = input;
-            self
+        pub fn set_detailed_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detailed_error_message = input; self
         }
         /// Consumes the builder and constructs a [`ErrorDetail`](crate::model::ErrorDetail).
         pub fn build(self) -> crate::model::ErrorDetail {
             crate::model::ErrorDetail {
-                detailed_error_code: self.detailed_error_code,
-                detailed_error_message: self.detailed_error_message,
+                detailed_error_code: self.detailed_error_code
+                ,
+                detailed_error_message: self.detailed_error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl ErrorDetail {
     /// Creates a new builder-style object to manufacture [`ErrorDetail`](crate::model::ErrorDetail).
@@ -76,20 +72,20 @@ impl ErrorDetail {
 /// Configuration settings for running telemetry.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TelemetryConfigurationUpdate {
+pub struct TelemetryConfigurationUpdate  {
     /// Configure telemetry to be on or off.
     #[doc(hidden)]
     pub telemetry: std::option::Option<crate::model::Telemetry>,
 }
 impl TelemetryConfigurationUpdate {
     /// Configure telemetry to be on or off.
-    pub fn telemetry(&self) -> std::option::Option<&crate::model::Telemetry> {
+    pub fn telemetry(&self) -> std::option::Option<& crate::model::Telemetry> {
         self.telemetry.as_ref()
     }
 }
 /// See [`TelemetryConfigurationUpdate`](crate::model::TelemetryConfigurationUpdate).
 pub mod telemetry_configuration_update {
-
+    
     /// A builder for [`TelemetryConfigurationUpdate`](crate::model::TelemetryConfigurationUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -102,20 +98,19 @@ pub mod telemetry_configuration_update {
             self
         }
         /// Configure telemetry to be on or off.
-        pub fn set_telemetry(
-            mut self,
-            input: std::option::Option<crate::model::Telemetry>,
-        ) -> Self {
-            self.telemetry = input;
-            self
+        pub fn set_telemetry(mut self, input: std::option::Option<crate::model::Telemetry>) -> Self {
+            self.telemetry = input; self
         }
         /// Consumes the builder and constructs a [`TelemetryConfigurationUpdate`](crate::model::TelemetryConfigurationUpdate).
         pub fn build(self) -> crate::model::TelemetryConfigurationUpdate {
             crate::model::TelemetryConfigurationUpdate {
-                telemetry: self.telemetry,
+                telemetry: self.telemetry
+                ,
             }
         }
     }
+    
+    
 }
 impl TelemetryConfigurationUpdate {
     /// Creates a new builder-style object to manufacture [`TelemetryConfigurationUpdate`](crate::model::TelemetryConfigurationUpdate).
@@ -130,9 +125,9 @@ impl TelemetryConfigurationUpdate {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let telemetry = unimplemented!();
 /// match telemetry {
@@ -154,58 +149,52 @@ impl TelemetryConfigurationUpdate {
 /// Specifically, when `telemetry` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Telemetry::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Telemetry {
     #[allow(missing_docs)] // documentation missing in model
     Off,
     #[allow(missing_docs)] // documentation missing in model
     On,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Telemetry {
     fn from(s: &str) -> Self {
         match s {
             "Off" => Telemetry::Off,
             "On" => Telemetry::On,
-            other => Telemetry::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Telemetry::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Telemetry {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Telemetry::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Telemetry::from(s))
+                }
+            }
 impl Telemetry {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Telemetry::Off => "Off",
             Telemetry::On => "On",
-            Telemetry::Unknown(value) => value.as_str(),
+            Telemetry::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Off", "On"]
+        &[
+            "Off", "On"
+        ]
     }
 }
 impl AsRef<str> for Telemetry {
@@ -217,7 +206,7 @@ impl AsRef<str> for Telemetry {
 /// Information about a Greengrass core's connectivity.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectivityInfo {
+pub struct ConnectivityInfo  {
     /// The endpoint for the Greengrass core. Can be an IP address or DNS.
     #[doc(hidden)]
     pub host_address: std::option::Option<std::string::String>,
@@ -233,15 +222,15 @@ pub struct ConnectivityInfo {
 }
 impl ConnectivityInfo {
     /// The endpoint for the Greengrass core. Can be an IP address or DNS.
-    pub fn host_address(&self) -> std::option::Option<&str> {
+    pub fn host_address(&self) -> std::option::Option<& str> {
         self.host_address.as_deref()
     }
     /// The ID of the connectivity information.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Metadata for this endpoint.
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// The port of the Greengrass core. Usually 8883.
@@ -251,7 +240,7 @@ impl ConnectivityInfo {
 }
 /// See [`ConnectivityInfo`](crate::model::ConnectivityInfo).
 pub mod connectivity_info {
-
+    
     /// A builder for [`ConnectivityInfo`](crate::model::ConnectivityInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -268,8 +257,7 @@ pub mod connectivity_info {
         }
         /// The endpoint for the Greengrass core. Can be an IP address or DNS.
         pub fn set_host_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.host_address = input;
-            self
+            self.host_address = input; self
         }
         /// The ID of the connectivity information.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -278,8 +266,7 @@ pub mod connectivity_info {
         }
         /// The ID of the connectivity information.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Metadata for this endpoint.
         pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -288,8 +275,7 @@ pub mod connectivity_info {
         }
         /// Metadata for this endpoint.
         pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metadata = input;
-            self
+            self.metadata = input; self
         }
         /// The port of the Greengrass core. Usually 8883.
         pub fn port_number(mut self, input: i32) -> Self {
@@ -298,19 +284,25 @@ pub mod connectivity_info {
         }
         /// The port of the Greengrass core. Usually 8883.
         pub fn set_port_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.port_number = input;
-            self
+            self.port_number = input; self
         }
         /// Consumes the builder and constructs a [`ConnectivityInfo`](crate::model::ConnectivityInfo).
         pub fn build(self) -> crate::model::ConnectivityInfo {
             crate::model::ConnectivityInfo {
-                host_address: self.host_address,
-                id: self.id,
-                metadata: self.metadata,
-                port_number: self.port_number.unwrap_or_default(),
+                host_address: self.host_address
+                ,
+                id: self.id
+                ,
+                metadata: self.metadata
+                ,
+                port_number: self.port_number
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ConnectivityInfo {
     /// Creates a new builder-style object to manufacture [`ConnectivityInfo`](crate::model::ConnectivityInfo).
@@ -322,7 +314,7 @@ impl ConnectivityInfo {
 /// Information about a version.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VersionInformation {
+pub struct VersionInformation  {
     /// The ARN of the version.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -338,25 +330,25 @@ pub struct VersionInformation {
 }
 impl VersionInformation {
     /// The ARN of the version.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the parent definition that the version is associated with.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the version.
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`VersionInformation`](crate::model::VersionInformation).
 pub mod version_information {
-
+    
     /// A builder for [`VersionInformation`](crate::model::VersionInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -373,8 +365,7 @@ pub mod version_information {
         }
         /// The ARN of the version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -382,12 +373,8 @@ pub mod version_information {
             self
         }
         /// The time, in milliseconds since the epoch, when the version was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -396,8 +383,7 @@ pub mod version_information {
         }
         /// The ID of the parent definition that the version is associated with.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The ID of the version.
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -406,19 +392,24 @@ pub mod version_information {
         }
         /// The ID of the version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`VersionInformation`](crate::model::VersionInformation).
         pub fn build(self) -> crate::model::VersionInformation {
             crate::model::VersionInformation {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                version: self.version,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl VersionInformation {
     /// Creates a new builder-style object to manufacture [`VersionInformation`](crate::model::VersionInformation).
@@ -430,7 +421,7 @@ impl VersionInformation {
 /// Information about a definition.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefinitionInformation {
+pub struct DefinitionInformation  {
     /// The ARN of the definition.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -454,49 +445,45 @@ pub struct DefinitionInformation {
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) attached to the resource arn.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DefinitionInformation {
     /// The ARN of the definition.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the definition.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the definition.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the definition.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Tag(s) attached to the resource arn.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DefinitionInformation`](crate::model::DefinitionInformation).
 pub mod definition_information {
-
+    
     /// A builder for [`DefinitionInformation`](crate::model::DefinitionInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -507,9 +494,7 @@ pub mod definition_information {
         pub(crate) latest_version: std::option::Option<std::string::String>,
         pub(crate) latest_version_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the definition.
@@ -519,8 +504,7 @@ pub mod definition_information {
         }
         /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -528,12 +512,8 @@ pub mod definition_information {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the definition.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -542,8 +522,7 @@ pub mod definition_information {
         }
         /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -551,12 +530,8 @@ pub mod definition_information {
             self
         }
         /// The time, in milliseconds since the epoch, when the definition was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the definition.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -564,12 +539,8 @@ pub mod definition_information {
             self
         }
         /// The ID of the latest version associated with the definition.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the definition.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -577,12 +548,8 @@ pub mod definition_information {
             self
         }
         /// The ARN of the latest version associated with the definition.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the definition.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -591,48 +558,47 @@ pub mod definition_information {
         }
         /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// Tag(s) attached to the resource arn.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// Tag(s) attached to the resource arn.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DefinitionInformation`](crate::model::DefinitionInformation).
         pub fn build(self) -> crate::model::DefinitionInformation {
             crate::model::DefinitionInformation {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DefinitionInformation {
     /// Creates a new builder-style object to manufacture [`DefinitionInformation`](crate::model::DefinitionInformation).
@@ -644,7 +610,7 @@ impl DefinitionInformation {
 /// Information about a group.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupInformation {
+pub struct GroupInformation  {
     /// The ARN of the group.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -669,37 +635,37 @@ pub struct GroupInformation {
 }
 impl GroupInformation {
     /// The ARN of the group.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the group was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the group.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the group was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the group.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> std::option::Option<& str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the group.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> std::option::Option<& str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the group.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`GroupInformation`](crate::model::GroupInformation).
 pub mod group_information {
-
+    
     /// A builder for [`GroupInformation`](crate::model::GroupInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -719,8 +685,7 @@ pub mod group_information {
         }
         /// The ARN of the group.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The time, in milliseconds since the epoch, when the group was created.
         pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -728,12 +693,8 @@ pub mod group_information {
             self
         }
         /// The time, in milliseconds since the epoch, when the group was created.
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// The ID of the group.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -742,8 +703,7 @@ pub mod group_information {
         }
         /// The ID of the group.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The time, in milliseconds since the epoch, when the group was last updated.
         pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -751,12 +711,8 @@ pub mod group_information {
             self
         }
         /// The time, in milliseconds since the epoch, when the group was last updated.
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// The ID of the latest version associated with the group.
         pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -764,12 +720,8 @@ pub mod group_information {
             self
         }
         /// The ID of the latest version associated with the group.
-        pub fn set_latest_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version = input;
-            self
+        pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version = input; self
         }
         /// The ARN of the latest version associated with the group.
         pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -777,12 +729,8 @@ pub mod group_information {
             self
         }
         /// The ARN of the latest version associated with the group.
-        pub fn set_latest_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.latest_version_arn = input;
-            self
+        pub fn set_latest_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.latest_version_arn = input; self
         }
         /// The name of the group.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -791,22 +739,30 @@ pub mod group_information {
         }
         /// The name of the group.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`GroupInformation`](crate::model::GroupInformation).
         pub fn build(self) -> crate::model::GroupInformation {
             crate::model::GroupInformation {
-                arn: self.arn,
-                creation_timestamp: self.creation_timestamp,
-                id: self.id,
-                last_updated_timestamp: self.last_updated_timestamp,
-                latest_version: self.latest_version,
-                latest_version_arn: self.latest_version_arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                id: self.id
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                latest_version: self.latest_version
+                ,
+                latest_version_arn: self.latest_version_arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl GroupInformation {
     /// Creates a new builder-style object to manufacture [`GroupInformation`](crate::model::GroupInformation).
@@ -818,7 +774,7 @@ impl GroupInformation {
 /// Information about a certificate authority for a group.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupCertificateAuthorityProperties {
+pub struct GroupCertificateAuthorityProperties  {
     /// The ARN of the certificate authority for the group.
     #[doc(hidden)]
     pub group_certificate_authority_arn: std::option::Option<std::string::String>,
@@ -828,17 +784,17 @@ pub struct GroupCertificateAuthorityProperties {
 }
 impl GroupCertificateAuthorityProperties {
     /// The ARN of the certificate authority for the group.
-    pub fn group_certificate_authority_arn(&self) -> std::option::Option<&str> {
+    pub fn group_certificate_authority_arn(&self) -> std::option::Option<& str> {
         self.group_certificate_authority_arn.as_deref()
     }
     /// The ID of the certificate authority for the group.
-    pub fn group_certificate_authority_id(&self) -> std::option::Option<&str> {
+    pub fn group_certificate_authority_id(&self) -> std::option::Option<& str> {
         self.group_certificate_authority_id.as_deref()
     }
 }
 /// See [`GroupCertificateAuthorityProperties`](crate::model::GroupCertificateAuthorityProperties).
 pub mod group_certificate_authority_properties {
-
+    
     /// A builder for [`GroupCertificateAuthorityProperties`](crate::model::GroupCertificateAuthorityProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -847,45 +803,35 @@ pub mod group_certificate_authority_properties {
     }
     impl Builder {
         /// The ARN of the certificate authority for the group.
-        pub fn group_certificate_authority_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn group_certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_certificate_authority_arn = Some(input.into());
             self
         }
         /// The ARN of the certificate authority for the group.
-        pub fn set_group_certificate_authority_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.group_certificate_authority_arn = input;
-            self
+        pub fn set_group_certificate_authority_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_certificate_authority_arn = input; self
         }
         /// The ID of the certificate authority for the group.
-        pub fn group_certificate_authority_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn group_certificate_authority_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_certificate_authority_id = Some(input.into());
             self
         }
         /// The ID of the certificate authority for the group.
-        pub fn set_group_certificate_authority_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.group_certificate_authority_id = input;
-            self
+        pub fn set_group_certificate_authority_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_certificate_authority_id = input; self
         }
         /// Consumes the builder and constructs a [`GroupCertificateAuthorityProperties`](crate::model::GroupCertificateAuthorityProperties).
         pub fn build(self) -> crate::model::GroupCertificateAuthorityProperties {
             crate::model::GroupCertificateAuthorityProperties {
-                group_certificate_authority_arn: self.group_certificate_authority_arn,
-                group_certificate_authority_id: self.group_certificate_authority_id,
+                group_certificate_authority_arn: self.group_certificate_authority_arn
+                ,
+                group_certificate_authority_id: self.group_certificate_authority_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GroupCertificateAuthorityProperties {
     /// Creates a new builder-style object to manufacture [`GroupCertificateAuthorityProperties`](crate::model::GroupCertificateAuthorityProperties).
@@ -897,7 +843,7 @@ impl GroupCertificateAuthorityProperties {
 /// Information about a deployment.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Deployment {
+pub struct Deployment  {
     /// The time, in milliseconds since the epoch, when the deployment was created.
     #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
@@ -916,29 +862,29 @@ pub struct Deployment {
 }
 impl Deployment {
     /// The time, in milliseconds since the epoch, when the deployment was created.
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// The ARN of the deployment.
-    pub fn deployment_arn(&self) -> std::option::Option<&str> {
+    pub fn deployment_arn(&self) -> std::option::Option<& str> {
         self.deployment_arn.as_deref()
     }
     /// The ID of the deployment.
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// The type of the deployment.
-    pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentType> {
+    pub fn deployment_type(&self) -> std::option::Option<& crate::model::DeploymentType> {
         self.deployment_type.as_ref()
     }
     /// The ARN of the group for this deployment.
-    pub fn group_arn(&self) -> std::option::Option<&str> {
+    pub fn group_arn(&self) -> std::option::Option<& str> {
         self.group_arn.as_deref()
     }
 }
 /// See [`Deployment`](crate::model::Deployment).
 pub mod deployment {
-
+    
     /// A builder for [`Deployment`](crate::model::Deployment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -956,8 +902,7 @@ pub mod deployment {
         }
         /// The time, in milliseconds since the epoch, when the deployment was created.
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
         /// The ARN of the deployment.
         pub fn deployment_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -965,12 +910,8 @@ pub mod deployment {
             self
         }
         /// The ARN of the deployment.
-        pub fn set_deployment_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_arn = input;
-            self
+        pub fn set_deployment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_arn = input; self
         }
         /// The ID of the deployment.
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -978,12 +919,8 @@ pub mod deployment {
             self
         }
         /// The ID of the deployment.
-        pub fn set_deployment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_id = input;
-            self
+        pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_id = input; self
         }
         /// The type of the deployment.
         pub fn deployment_type(mut self, input: crate::model::DeploymentType) -> Self {
@@ -991,12 +928,8 @@ pub mod deployment {
             self
         }
         /// The type of the deployment.
-        pub fn set_deployment_type(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentType>,
-        ) -> Self {
-            self.deployment_type = input;
-            self
+        pub fn set_deployment_type(mut self, input: std::option::Option<crate::model::DeploymentType>) -> Self {
+            self.deployment_type = input; self
         }
         /// The ARN of the group for this deployment.
         pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1005,20 +938,26 @@ pub mod deployment {
         }
         /// The ARN of the group for this deployment.
         pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_arn = input;
-            self
+            self.group_arn = input; self
         }
         /// Consumes the builder and constructs a [`Deployment`](crate::model::Deployment).
         pub fn build(self) -> crate::model::Deployment {
             crate::model::Deployment {
-                created_at: self.created_at,
-                deployment_arn: self.deployment_arn,
-                deployment_id: self.deployment_id,
-                deployment_type: self.deployment_type,
-                group_arn: self.group_arn,
+                created_at: self.created_at
+                ,
+                deployment_arn: self.deployment_arn
+                ,
+                deployment_id: self.deployment_id
+                ,
+                deployment_type: self.deployment_type
+                ,
+                group_arn: self.group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Deployment {
     /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
@@ -1033,9 +972,9 @@ impl Deployment {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deploymenttype = unimplemented!();
 /// match deploymenttype {
@@ -1059,22 +998,14 @@ impl Deployment {
 /// Specifically, when `deploymenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeploymentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeploymentType {
     #[allow(missing_docs)] // documentation missing in model
     ForceResetDeployment,
@@ -1085,7 +1016,7 @@ pub enum DeploymentType {
     #[allow(missing_docs)] // documentation missing in model
     ResetDeployment,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentType {
     fn from(s: &str) -> Self {
@@ -1094,17 +1025,17 @@ impl std::convert::From<&str> for DeploymentType {
             "NewDeployment" => DeploymentType::NewDeployment,
             "Redeployment" => DeploymentType::Redeployment,
             "ResetDeployment" => DeploymentType::ResetDeployment,
-            other => DeploymentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DeploymentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeploymentType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeploymentType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeploymentType::from(s))
+                }
+            }
 impl DeploymentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1113,16 +1044,13 @@ impl DeploymentType {
             DeploymentType::NewDeployment => "NewDeployment",
             DeploymentType::Redeployment => "Redeployment",
             DeploymentType::ResetDeployment => "ResetDeployment",
-            DeploymentType::Unknown(value) => value.as_str(),
+            DeploymentType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ForceResetDeployment",
-            "NewDeployment",
-            "Redeployment",
-            "ResetDeployment",
+            "ForceResetDeployment", "NewDeployment", "Redeployment", "ResetDeployment"
         ]
     }
 }
@@ -1135,7 +1063,7 @@ impl AsRef<str> for DeploymentType {
 /// Information about a bulk deployment. You cannot start a new bulk deployment while another one is still running or in a non-terminal state.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BulkDeployment {
+pub struct BulkDeployment  {
     /// The ARN of the bulk deployment.
     #[doc(hidden)]
     pub bulk_deployment_arn: std::option::Option<std::string::String>,
@@ -1148,21 +1076,21 @@ pub struct BulkDeployment {
 }
 impl BulkDeployment {
     /// The ARN of the bulk deployment.
-    pub fn bulk_deployment_arn(&self) -> std::option::Option<&str> {
+    pub fn bulk_deployment_arn(&self) -> std::option::Option<& str> {
         self.bulk_deployment_arn.as_deref()
     }
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(&self) -> std::option::Option<&str> {
+    pub fn bulk_deployment_id(&self) -> std::option::Option<& str> {
         self.bulk_deployment_id.as_deref()
     }
     /// The time, in ISO format, when the deployment was created.
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
 }
 /// See [`BulkDeployment`](crate::model::BulkDeployment).
 pub mod bulk_deployment {
-
+    
     /// A builder for [`BulkDeployment`](crate::model::BulkDeployment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1177,12 +1105,8 @@ pub mod bulk_deployment {
             self
         }
         /// The ARN of the bulk deployment.
-        pub fn set_bulk_deployment_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bulk_deployment_arn = input;
-            self
+        pub fn set_bulk_deployment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bulk_deployment_arn = input; self
         }
         /// The ID of the bulk deployment.
         pub fn bulk_deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1190,12 +1114,8 @@ pub mod bulk_deployment {
             self
         }
         /// The ID of the bulk deployment.
-        pub fn set_bulk_deployment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bulk_deployment_id = input;
-            self
+        pub fn set_bulk_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bulk_deployment_id = input; self
         }
         /// The time, in ISO format, when the deployment was created.
         pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1204,18 +1124,22 @@ pub mod bulk_deployment {
         }
         /// The time, in ISO format, when the deployment was created.
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`BulkDeployment`](crate::model::BulkDeployment).
         pub fn build(self) -> crate::model::BulkDeployment {
             crate::model::BulkDeployment {
-                bulk_deployment_arn: self.bulk_deployment_arn,
-                bulk_deployment_id: self.bulk_deployment_id,
-                created_at: self.created_at,
+                bulk_deployment_arn: self.bulk_deployment_arn
+                ,
+                bulk_deployment_id: self.bulk_deployment_id
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl BulkDeployment {
     /// Creates a new builder-style object to manufacture [`BulkDeployment`](crate::model::BulkDeployment).
@@ -1227,7 +1151,7 @@ impl BulkDeployment {
 /// Information about an individual group deployment in a bulk deployment operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BulkDeploymentResult {
+pub struct BulkDeploymentResult  {
     /// The time, in ISO format, when the deployment was created.
     #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
@@ -1255,41 +1179,41 @@ pub struct BulkDeploymentResult {
 }
 impl BulkDeploymentResult {
     /// The time, in ISO format, when the deployment was created.
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// The ARN of the group deployment.
-    pub fn deployment_arn(&self) -> std::option::Option<&str> {
+    pub fn deployment_arn(&self) -> std::option::Option<& str> {
         self.deployment_arn.as_deref()
     }
     /// The ID of the group deployment.
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
-    pub fn deployment_status(&self) -> std::option::Option<&str> {
+    pub fn deployment_status(&self) -> std::option::Option<& str> {
         self.deployment_status.as_deref()
     }
     /// The type of the deployment.
-    pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentType> {
+    pub fn deployment_type(&self) -> std::option::Option<& crate::model::DeploymentType> {
         self.deployment_type.as_ref()
     }
     /// Details about the error.
-    pub fn error_details(&self) -> std::option::Option<&[crate::model::ErrorDetail]> {
+    pub fn error_details(&self) -> std::option::Option<& [crate::model::ErrorDetail]> {
         self.error_details.as_deref()
     }
     /// The error message for a failed deployment
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// The ARN of the Greengrass group.
-    pub fn group_arn(&self) -> std::option::Option<&str> {
+    pub fn group_arn(&self) -> std::option::Option<& str> {
         self.group_arn.as_deref()
     }
 }
 /// See [`BulkDeploymentResult`](crate::model::BulkDeploymentResult).
 pub mod bulk_deployment_result {
-
+    
     /// A builder for [`BulkDeploymentResult`](crate::model::BulkDeploymentResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1310,8 +1234,7 @@ pub mod bulk_deployment_result {
         }
         /// The time, in ISO format, when the deployment was created.
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
         /// The ARN of the group deployment.
         pub fn deployment_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1319,12 +1242,8 @@ pub mod bulk_deployment_result {
             self
         }
         /// The ARN of the group deployment.
-        pub fn set_deployment_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_arn = input;
-            self
+        pub fn set_deployment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_arn = input; self
         }
         /// The ID of the group deployment.
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1332,12 +1251,8 @@ pub mod bulk_deployment_result {
             self
         }
         /// The ID of the group deployment.
-        pub fn set_deployment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_id = input;
-            self
+        pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_id = input; self
         }
         /// The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
         pub fn deployment_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1345,12 +1260,8 @@ pub mod bulk_deployment_result {
             self
         }
         /// The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
-        pub fn set_deployment_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_status = input;
-            self
+        pub fn set_deployment_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_status = input; self
         }
         /// The type of the deployment.
         pub fn deployment_type(mut self, input: crate::model::DeploymentType) -> Self {
@@ -1358,12 +1269,8 @@ pub mod bulk_deployment_result {
             self
         }
         /// The type of the deployment.
-        pub fn set_deployment_type(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentType>,
-        ) -> Self {
-            self.deployment_type = input;
-            self
+        pub fn set_deployment_type(mut self, input: std::option::Option<crate::model::DeploymentType>) -> Self {
+            self.deployment_type = input; self
         }
         /// Appends an item to `error_details`.
         ///
@@ -1372,17 +1279,13 @@ pub mod bulk_deployment_result {
         /// Details about the error.
         pub fn error_details(mut self, input: crate::model::ErrorDetail) -> Self {
             let mut v = self.error_details.unwrap_or_default();
-            v.push(input);
-            self.error_details = Some(v);
-            self
+                            v.push(input);
+                            self.error_details = Some(v);
+                            self
         }
         /// Details about the error.
-        pub fn set_error_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
-        ) -> Self {
-            self.error_details = input;
-            self
+        pub fn set_error_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>) -> Self {
+            self.error_details = input; self
         }
         /// The error message for a failed deployment
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1390,12 +1293,8 @@ pub mod bulk_deployment_result {
             self
         }
         /// The error message for a failed deployment
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// The ARN of the Greengrass group.
         pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1404,23 +1303,32 @@ pub mod bulk_deployment_result {
         }
         /// The ARN of the Greengrass group.
         pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_arn = input;
-            self
+            self.group_arn = input; self
         }
         /// Consumes the builder and constructs a [`BulkDeploymentResult`](crate::model::BulkDeploymentResult).
         pub fn build(self) -> crate::model::BulkDeploymentResult {
             crate::model::BulkDeploymentResult {
-                created_at: self.created_at,
-                deployment_arn: self.deployment_arn,
-                deployment_id: self.deployment_id,
-                deployment_status: self.deployment_status,
-                deployment_type: self.deployment_type,
-                error_details: self.error_details,
-                error_message: self.error_message,
-                group_arn: self.group_arn,
+                created_at: self.created_at
+                ,
+                deployment_arn: self.deployment_arn
+                ,
+                deployment_id: self.deployment_id
+                ,
+                deployment_status: self.deployment_status
+                ,
+                deployment_type: self.deployment_type
+                ,
+                error_details: self.error_details
+                ,
+                error_message: self.error_message
+                ,
+                group_arn: self.group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl BulkDeploymentResult {
     /// Creates a new builder-style object to manufacture [`BulkDeploymentResult`](crate::model::BulkDeploymentResult).
@@ -1432,52 +1340,45 @@ impl BulkDeploymentResult {
 /// Runtime configuration for a thing.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuntimeConfiguration {
+pub struct RuntimeConfiguration  {
     /// Configuration for telemetry service.
     #[doc(hidden)]
     pub telemetry_configuration: std::option::Option<crate::model::TelemetryConfiguration>,
 }
 impl RuntimeConfiguration {
     /// Configuration for telemetry service.
-    pub fn telemetry_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::TelemetryConfiguration> {
+    pub fn telemetry_configuration(&self) -> std::option::Option<& crate::model::TelemetryConfiguration> {
         self.telemetry_configuration.as_ref()
     }
 }
 /// See [`RuntimeConfiguration`](crate::model::RuntimeConfiguration).
 pub mod runtime_configuration {
-
+    
     /// A builder for [`RuntimeConfiguration`](crate::model::RuntimeConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) telemetry_configuration:
-            std::option::Option<crate::model::TelemetryConfiguration>,
+        pub(crate) telemetry_configuration: std::option::Option<crate::model::TelemetryConfiguration>,
     }
     impl Builder {
         /// Configuration for telemetry service.
-        pub fn telemetry_configuration(
-            mut self,
-            input: crate::model::TelemetryConfiguration,
-        ) -> Self {
+        pub fn telemetry_configuration(mut self, input: crate::model::TelemetryConfiguration) -> Self {
             self.telemetry_configuration = Some(input);
             self
         }
         /// Configuration for telemetry service.
-        pub fn set_telemetry_configuration(
-            mut self,
-            input: std::option::Option<crate::model::TelemetryConfiguration>,
-        ) -> Self {
-            self.telemetry_configuration = input;
-            self
+        pub fn set_telemetry_configuration(mut self, input: std::option::Option<crate::model::TelemetryConfiguration>) -> Self {
+            self.telemetry_configuration = input; self
         }
         /// Consumes the builder and constructs a [`RuntimeConfiguration`](crate::model::RuntimeConfiguration).
         pub fn build(self) -> crate::model::RuntimeConfiguration {
             crate::model::RuntimeConfiguration {
-                telemetry_configuration: self.telemetry_configuration,
+                telemetry_configuration: self.telemetry_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl RuntimeConfiguration {
     /// Creates a new builder-style object to manufacture [`RuntimeConfiguration`](crate::model::RuntimeConfiguration).
@@ -1489,7 +1390,7 @@ impl RuntimeConfiguration {
 /// Configuration settings for running telemetry.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TelemetryConfiguration {
+pub struct TelemetryConfiguration  {
     /// Synchronization status of the device reported configuration with the desired configuration.
     #[doc(hidden)]
     pub configuration_sync_status: std::option::Option<crate::model::ConfigurationSyncStatus>,
@@ -1499,42 +1400,32 @@ pub struct TelemetryConfiguration {
 }
 impl TelemetryConfiguration {
     /// Synchronization status of the device reported configuration with the desired configuration.
-    pub fn configuration_sync_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ConfigurationSyncStatus> {
+    pub fn configuration_sync_status(&self) -> std::option::Option<& crate::model::ConfigurationSyncStatus> {
         self.configuration_sync_status.as_ref()
     }
     /// Configure telemetry to be on or off.
-    pub fn telemetry(&self) -> std::option::Option<&crate::model::Telemetry> {
+    pub fn telemetry(&self) -> std::option::Option<& crate::model::Telemetry> {
         self.telemetry.as_ref()
     }
 }
 /// See [`TelemetryConfiguration`](crate::model::TelemetryConfiguration).
 pub mod telemetry_configuration {
-
+    
     /// A builder for [`TelemetryConfiguration`](crate::model::TelemetryConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) configuration_sync_status:
-            std::option::Option<crate::model::ConfigurationSyncStatus>,
+        pub(crate) configuration_sync_status: std::option::Option<crate::model::ConfigurationSyncStatus>,
         pub(crate) telemetry: std::option::Option<crate::model::Telemetry>,
     }
     impl Builder {
         /// Synchronization status of the device reported configuration with the desired configuration.
-        pub fn configuration_sync_status(
-            mut self,
-            input: crate::model::ConfigurationSyncStatus,
-        ) -> Self {
+        pub fn configuration_sync_status(mut self, input: crate::model::ConfigurationSyncStatus) -> Self {
             self.configuration_sync_status = Some(input);
             self
         }
         /// Synchronization status of the device reported configuration with the desired configuration.
-        pub fn set_configuration_sync_status(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationSyncStatus>,
-        ) -> Self {
-            self.configuration_sync_status = input;
-            self
+        pub fn set_configuration_sync_status(mut self, input: std::option::Option<crate::model::ConfigurationSyncStatus>) -> Self {
+            self.configuration_sync_status = input; self
         }
         /// Configure telemetry to be on or off.
         pub fn telemetry(mut self, input: crate::model::Telemetry) -> Self {
@@ -1542,21 +1433,21 @@ pub mod telemetry_configuration {
             self
         }
         /// Configure telemetry to be on or off.
-        pub fn set_telemetry(
-            mut self,
-            input: std::option::Option<crate::model::Telemetry>,
-        ) -> Self {
-            self.telemetry = input;
-            self
+        pub fn set_telemetry(mut self, input: std::option::Option<crate::model::Telemetry>) -> Self {
+            self.telemetry = input; self
         }
         /// Consumes the builder and constructs a [`TelemetryConfiguration`](crate::model::TelemetryConfiguration).
         pub fn build(self) -> crate::model::TelemetryConfiguration {
             crate::model::TelemetryConfiguration {
-                configuration_sync_status: self.configuration_sync_status,
-                telemetry: self.telemetry,
+                configuration_sync_status: self.configuration_sync_status
+                ,
+                telemetry: self.telemetry
+                ,
             }
         }
     }
+    
+    
 }
 impl TelemetryConfiguration {
     /// Creates a new builder-style object to manufacture [`TelemetryConfiguration`](crate::model::TelemetryConfiguration).
@@ -1571,9 +1462,9 @@ impl TelemetryConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let configurationsyncstatus = unimplemented!();
 /// match configurationsyncstatus {
@@ -1595,60 +1486,52 @@ impl TelemetryConfiguration {
 /// Specifically, when `configurationsyncstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfigurationSyncStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConfigurationSyncStatus {
     #[allow(missing_docs)] // documentation missing in model
     InSync,
     #[allow(missing_docs)] // documentation missing in model
     OutOfSync,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfigurationSyncStatus {
     fn from(s: &str) -> Self {
         match s {
             "InSync" => ConfigurationSyncStatus::InSync,
             "OutOfSync" => ConfigurationSyncStatus::OutOfSync,
-            other => ConfigurationSyncStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConfigurationSyncStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConfigurationSyncStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConfigurationSyncStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConfigurationSyncStatus::from(s))
+                }
+            }
 impl ConfigurationSyncStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfigurationSyncStatus::InSync => "InSync",
             ConfigurationSyncStatus::OutOfSync => "OutOfSync",
-            ConfigurationSyncStatus::Unknown(value) => value.as_str(),
+            ConfigurationSyncStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["InSync", "OutOfSync"]
+        &[
+            "InSync", "OutOfSync"
+        ]
     }
 }
 impl AsRef<str> for ConfigurationSyncStatus {
@@ -1660,20 +1543,20 @@ impl AsRef<str> for ConfigurationSyncStatus {
 /// Information about a subscription definition version.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubscriptionDefinitionVersion {
+pub struct SubscriptionDefinitionVersion  {
     /// A list of subscriptions.
     #[doc(hidden)]
     pub subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
 }
 impl SubscriptionDefinitionVersion {
     /// A list of subscriptions.
-    pub fn subscriptions(&self) -> std::option::Option<&[crate::model::Subscription]> {
+    pub fn subscriptions(&self) -> std::option::Option<& [crate::model::Subscription]> {
         self.subscriptions.as_deref()
     }
 }
 /// See [`SubscriptionDefinitionVersion`](crate::model::SubscriptionDefinitionVersion).
 pub mod subscription_definition_version {
-
+    
     /// A builder for [`SubscriptionDefinitionVersion`](crate::model::SubscriptionDefinitionVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1687,25 +1570,24 @@ pub mod subscription_definition_version {
         /// A list of subscriptions.
         pub fn subscriptions(mut self, input: crate::model::Subscription) -> Self {
             let mut v = self.subscriptions.unwrap_or_default();
-            v.push(input);
-            self.subscriptions = Some(v);
-            self
+                            v.push(input);
+                            self.subscriptions = Some(v);
+                            self
         }
         /// A list of subscriptions.
-        pub fn set_subscriptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
-        ) -> Self {
-            self.subscriptions = input;
-            self
+        pub fn set_subscriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Subscription>>) -> Self {
+            self.subscriptions = input; self
         }
         /// Consumes the builder and constructs a [`SubscriptionDefinitionVersion`](crate::model::SubscriptionDefinitionVersion).
         pub fn build(self) -> crate::model::SubscriptionDefinitionVersion {
             crate::model::SubscriptionDefinitionVersion {
-                subscriptions: self.subscriptions,
+                subscriptions: self.subscriptions
+                ,
             }
         }
     }
+    
+    
 }
 impl SubscriptionDefinitionVersion {
     /// Creates a new builder-style object to manufacture [`SubscriptionDefinitionVersion`](crate::model::SubscriptionDefinitionVersion).
@@ -1717,7 +1599,7 @@ impl SubscriptionDefinitionVersion {
 /// Information about a subscription.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Subscription {
+pub struct Subscription  {
     /// A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1733,25 +1615,25 @@ pub struct Subscription {
 }
 impl Subscription {
     /// A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The source of the subscription. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
     /// The MQTT topic used to route the message.
-    pub fn subject(&self) -> std::option::Option<&str> {
+    pub fn subject(&self) -> std::option::Option<& str> {
         self.subject.as_deref()
     }
     /// Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> std::option::Option<& str> {
         self.target.as_deref()
     }
 }
 /// See [`Subscription`](crate::model::Subscription).
 pub mod subscription {
-
+    
     /// A builder for [`Subscription`](crate::model::Subscription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1768,8 +1650,7 @@ pub mod subscription {
         }
         /// A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The source of the subscription. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1778,8 +1659,7 @@ pub mod subscription {
         }
         /// The source of the subscription. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// The MQTT topic used to route the message.
         pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1788,8 +1668,7 @@ pub mod subscription {
         }
         /// The MQTT topic used to route the message.
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subject = input;
-            self
+            self.subject = input; self
         }
         /// Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
         pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1798,19 +1677,24 @@ pub mod subscription {
         }
         /// Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target = input;
-            self
+            self.target = input; self
         }
         /// Consumes the builder and constructs a [`Subscription`](crate::model::Subscription).
         pub fn build(self) -> crate::model::Subscription {
             crate::model::Subscription {
-                id: self.id,
-                source: self.source,
-                subject: self.subject,
-                target: self.target,
+                id: self.id
+                ,
+                source: self.source
+                ,
+                subject: self.subject
+                ,
+                target: self.target
+                ,
             }
         }
     }
+    
+    
 }
 impl Subscription {
     /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
@@ -1822,20 +1706,20 @@ impl Subscription {
 /// Information about a resource definition version.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceDefinitionVersion {
+pub struct ResourceDefinitionVersion  {
     /// A list of resources.
     #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
 }
 impl ResourceDefinitionVersion {
     /// A list of resources.
-    pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
+    pub fn resources(&self) -> std::option::Option<& [crate::model::Resource]> {
         self.resources.as_deref()
     }
 }
 /// See [`ResourceDefinitionVersion`](crate::model::ResourceDefinitionVersion).
 pub mod resource_definition_version {
-
+    
     /// A builder for [`ResourceDefinitionVersion`](crate::model::ResourceDefinitionVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1849,25 +1733,24 @@ pub mod resource_definition_version {
         /// A list of resources.
         pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input);
-            self.resources = Some(v);
-            self
+                            v.push(input);
+                            self.resources = Some(v);
+                            self
         }
         /// A list of resources.
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::Resource>>) -> Self {
+            self.resources = input; self
         }
         /// Consumes the builder and constructs a [`ResourceDefinitionVersion`](crate::model::ResourceDefinitionVersion).
         pub fn build(self) -> crate::model::ResourceDefinitionVersion {
             crate::model::ResourceDefinitionVersion {
-                resources: self.resources,
+                resources: self.resources
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceDefinitionVersion {
     /// Creates a new builder-style object to manufacture [`ResourceDefinitionVersion`](crate::model::ResourceDefinitionVersion).
@@ -1879,7 +1762,7 @@ impl ResourceDefinitionVersion {
 /// Information about a resource.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1892,30 +1775,27 @@ pub struct Resource {
 }
 impl Resource {
     /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// A container of data for all resource types.
-    pub fn resource_data_container(
-        &self,
-    ) -> std::option::Option<&crate::model::ResourceDataContainer> {
+    pub fn resource_data_container(&self) -> std::option::Option<& crate::model::ResourceDataContainer> {
         self.resource_data_container.as_ref()
     }
 }
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
-
+    
     /// A builder for [`Resource`](crate::model::Resource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) resource_data_container:
-            std::option::Option<crate::model::ResourceDataContainer>,
+        pub(crate) resource_data_container: std::option::Option<crate::model::ResourceDataContainer>,
     }
     impl Builder {
         /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
@@ -1925,8 +1805,7 @@ pub mod resource {
         }
         /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1935,34 +1814,31 @@ pub mod resource {
         }
         /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// A container of data for all resource types.
-        pub fn resource_data_container(
-            mut self,
-            input: crate::model::ResourceDataContainer,
-        ) -> Self {
+        pub fn resource_data_container(mut self, input: crate::model::ResourceDataContainer) -> Self {
             self.resource_data_container = Some(input);
             self
         }
         /// A container of data for all resource types.
-        pub fn set_resource_data_container(
-            mut self,
-            input: std::option::Option<crate::model::ResourceDataContainer>,
-        ) -> Self {
-            self.resource_data_container = input;
-            self
+        pub fn set_resource_data_container(mut self, input: std::option::Option<crate::model::ResourceDataContainer>) -> Self {
+            self.resource_data_container = input; self
         }
         /// Consumes the builder and constructs a [`Resource`](crate::model::Resource).
         pub fn build(self) -> crate::model::Resource {
             crate::model::Resource {
-                id: self.id,
-                name: self.name,
-                resource_data_container: self.resource_data_container,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                resource_data_container: self.resource_data_container
+                ,
             }
         }
     }
+    
+    
 }
 impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
@@ -1974,7 +1850,7 @@ impl Resource {
 /// A container for resource data. The container takes only one of the following supported resource data types: ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'', ''S3MachineLearningModelResourceData'', ''SecretsManagerSecretResourceData''.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceDataContainer {
+pub struct ResourceDataContainer  {
     /// Attributes that define the local device resource.
     #[doc(hidden)]
     pub local_device_resource_data: std::option::Option<crate::model::LocalDeviceResourceData>,
@@ -1983,161 +1859,112 @@ pub struct ResourceDataContainer {
     pub local_volume_resource_data: std::option::Option<crate::model::LocalVolumeResourceData>,
     /// Attributes that define an Amazon S3 machine learning resource.
     #[doc(hidden)]
-    pub s3_machine_learning_model_resource_data:
-        std::option::Option<crate::model::S3MachineLearningModelResourceData>,
+    pub s3_machine_learning_model_resource_data: std::option::Option<crate::model::S3MachineLearningModelResourceData>,
     /// Attributes that define an Amazon SageMaker machine learning resource.
     #[doc(hidden)]
-    pub sage_maker_machine_learning_model_resource_data:
-        std::option::Option<crate::model::SageMakerMachineLearningModelResourceData>,
+    pub sage_maker_machine_learning_model_resource_data: std::option::Option<crate::model::SageMakerMachineLearningModelResourceData>,
     /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
     #[doc(hidden)]
-    pub secrets_manager_secret_resource_data:
-        std::option::Option<crate::model::SecretsManagerSecretResourceData>,
+    pub secrets_manager_secret_resource_data: std::option::Option<crate::model::SecretsManagerSecretResourceData>,
 }
 impl ResourceDataContainer {
     /// Attributes that define the local device resource.
-    pub fn local_device_resource_data(
-        &self,
-    ) -> std::option::Option<&crate::model::LocalDeviceResourceData> {
+    pub fn local_device_resource_data(&self) -> std::option::Option<& crate::model::LocalDeviceResourceData> {
         self.local_device_resource_data.as_ref()
     }
     /// Attributes that define the local volume resource.
-    pub fn local_volume_resource_data(
-        &self,
-    ) -> std::option::Option<&crate::model::LocalVolumeResourceData> {
+    pub fn local_volume_resource_data(&self) -> std::option::Option<& crate::model::LocalVolumeResourceData> {
         self.local_volume_resource_data.as_ref()
     }
     /// Attributes that define an Amazon S3 machine learning resource.
-    pub fn s3_machine_learning_model_resource_data(
-        &self,
-    ) -> std::option::Option<&crate::model::S3MachineLearningModelResourceData> {
+    pub fn s3_machine_learning_model_resource_data(&self) -> std::option::Option<& crate::model::S3MachineLearningModelResourceData> {
         self.s3_machine_learning_model_resource_data.as_ref()
     }
     /// Attributes that define an Amazon SageMaker machine learning resource.
-    pub fn sage_maker_machine_learning_model_resource_data(
-        &self,
-    ) -> std::option::Option<&crate::model::SageMakerMachineLearningModelResourceData> {
-        self.sage_maker_machine_learning_model_resource_data
-            .as_ref()
+    pub fn sage_maker_machine_learning_model_resource_data(&self) -> std::option::Option<& crate::model::SageMakerMachineLearningModelResourceData> {
+        self.sage_maker_machine_learning_model_resource_data.as_ref()
     }
     /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
-    pub fn secrets_manager_secret_resource_data(
-        &self,
-    ) -> std::option::Option<&crate::model::SecretsManagerSecretResourceData> {
+    pub fn secrets_manager_secret_resource_data(&self) -> std::option::Option<& crate::model::SecretsManagerSecretResourceData> {
         self.secrets_manager_secret_resource_data.as_ref()
     }
 }
 /// See [`ResourceDataContainer`](crate::model::ResourceDataContainer).
 pub mod resource_data_container {
-
+    
     /// A builder for [`ResourceDataContainer`](crate::model::ResourceDataContainer).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) local_device_resource_data:
-            std::option::Option<crate::model::LocalDeviceResourceData>,
-        pub(crate) local_volume_resource_data:
-            std::option::Option<crate::model::LocalVolumeResourceData>,
-        pub(crate) s3_machine_learning_model_resource_data:
-            std::option::Option<crate::model::S3MachineLearningModelResourceData>,
-        pub(crate) sage_maker_machine_learning_model_resource_data:
-            std::option::Option<crate::model::SageMakerMachineLearningModelResourceData>,
-        pub(crate) secrets_manager_secret_resource_data:
-            std::option::Option<crate::model::SecretsManagerSecretResourceData>,
+        pub(crate) local_device_resource_data: std::option::Option<crate::model::LocalDeviceResourceData>,
+        pub(crate) local_volume_resource_data: std::option::Option<crate::model::LocalVolumeResourceData>,
+        pub(crate) s3_machine_learning_model_resource_data: std::option::Option<crate::model::S3MachineLearningModelResourceData>,
+        pub(crate) sage_maker_machine_learning_model_resource_data: std::option::Option<crate::model::SageMakerMachineLearningModelResourceData>,
+        pub(crate) secrets_manager_secret_resource_data: std::option::Option<crate::model::SecretsManagerSecretResourceData>,
     }
     impl Builder {
         /// Attributes that define the local device resource.
-        pub fn local_device_resource_data(
-            mut self,
-            input: crate::model::LocalDeviceResourceData,
-        ) -> Self {
+        pub fn local_device_resource_data(mut self, input: crate::model::LocalDeviceResourceData) -> Self {
             self.local_device_resource_data = Some(input);
             self
         }
         /// Attributes that define the local device resource.
-        pub fn set_local_device_resource_data(
-            mut self,
-            input: std::option::Option<crate::model::LocalDeviceResourceData>,
-        ) -> Self {
-            self.local_device_resource_data = input;
-            self
+        pub fn set_local_device_resource_data(mut self, input: std::option::Option<crate::model::LocalDeviceResourceData>) -> Self {
+            self.local_device_resource_data = input; self
         }
         /// Attributes that define the local volume resource.
-        pub fn local_volume_resource_data(
-            mut self,
-            input: crate::model::LocalVolumeResourceData,
-        ) -> Self {
+        pub fn local_volume_resource_data(mut self, input: crate::model::LocalVolumeResourceData) -> Self {
             self.local_volume_resource_data = Some(input);
             self
         }
         /// Attributes that define the local volume resource.
-        pub fn set_local_volume_resource_data(
-            mut self,
-            input: std::option::Option<crate::model::LocalVolumeResourceData>,
-        ) -> Self {
-            self.local_volume_resource_data = input;
-            self
+        pub fn set_local_volume_resource_data(mut self, input: std::option::Option<crate::model::LocalVolumeResourceData>) -> Self {
+            self.local_volume_resource_data = input; self
         }
         /// Attributes that define an Amazon S3 machine learning resource.
-        pub fn s3_machine_learning_model_resource_data(
-            mut self,
-            input: crate::model::S3MachineLearningModelResourceData,
-        ) -> Self {
+        pub fn s3_machine_learning_model_resource_data(mut self, input: crate::model::S3MachineLearningModelResourceData) -> Self {
             self.s3_machine_learning_model_resource_data = Some(input);
             self
         }
         /// Attributes that define an Amazon S3 machine learning resource.
-        pub fn set_s3_machine_learning_model_resource_data(
-            mut self,
-            input: std::option::Option<crate::model::S3MachineLearningModelResourceData>,
-        ) -> Self {
-            self.s3_machine_learning_model_resource_data = input;
-            self
+        pub fn set_s3_machine_learning_model_resource_data(mut self, input: std::option::Option<crate::model::S3MachineLearningModelResourceData>) -> Self {
+            self.s3_machine_learning_model_resource_data = input; self
         }
         /// Attributes that define an Amazon SageMaker machine learning resource.
-        pub fn sage_maker_machine_learning_model_resource_data(
-            mut self,
-            input: crate::model::SageMakerMachineLearningModelResourceData,
-        ) -> Self {
+        pub fn sage_maker_machine_learning_model_resource_data(mut self, input: crate::model::SageMakerMachineLearningModelResourceData) -> Self {
             self.sage_maker_machine_learning_model_resource_data = Some(input);
             self
         }
         /// Attributes that define an Amazon SageMaker machine learning resource.
-        pub fn set_sage_maker_machine_learning_model_resource_data(
-            mut self,
-            input: std::option::Option<crate::model::SageMakerMachineLearningModelResourceData>,
-        ) -> Self {
-            self.sage_maker_machine_learning_model_resource_data = input;
-            self
+        pub fn set_sage_maker_machine_learning_model_resource_data(mut self, input: std::option::Option<crate::model::SageMakerMachineLearningModelResourceData>) -> Self {
+            self.sage_maker_machine_learning_model_resource_data = input; self
         }
         /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
-        pub fn secrets_manager_secret_resource_data(
-            mut self,
-            input: crate::model::SecretsManagerSecretResourceData,
-        ) -> Self {
+        pub fn secrets_manager_secret_resource_data(mut self, input: crate::model::SecretsManagerSecretResourceData) -> Self {
             self.secrets_manager_secret_resource_data = Some(input);
             self
         }
         /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
-        pub fn set_secrets_manager_secret_resource_data(
-            mut self,
-            input: std::option::Option<crate::model::SecretsManagerSecretResourceData>,
-        ) -> Self {
-            self.secrets_manager_secret_resource_data = input;
-            self
+        pub fn set_secrets_manager_secret_resource_data(mut self, input: std::option::Option<crate::model::SecretsManagerSecretResourceData>) -> Self {
+            self.secrets_manager_secret_resource_data = input; self
         }
         /// Consumes the builder and constructs a [`ResourceDataContainer`](crate::model::ResourceDataContainer).
         pub fn build(self) -> crate::model::ResourceDataContainer {
             crate::model::ResourceDataContainer {
-                local_device_resource_data: self.local_device_resource_data,
-                local_volume_resource_data: self.local_volume_resource_data,
-                s3_machine_learning_model_resource_data: self
-                    .s3_machine_learning_model_resource_data,
-                sage_maker_machine_learning_model_resource_data: self
-                    .sage_maker_machine_learning_model_resource_data,
-                secrets_manager_secret_resource_data: self.secrets_manager_secret_resource_data,
+                local_device_resource_data: self.local_device_resource_data
+                ,
+                local_volume_resource_data: self.local_volume_resource_data
+                ,
+                s3_machine_learning_model_resource_data: self.s3_machine_learning_model_resource_data
+                ,
+                sage_maker_machine_learning_model_resource_data: self.sage_maker_machine_learning_model_resource_data
+                ,
+                secrets_manager_secret_resource_data: self.secrets_manager_secret_resource_data
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceDataContainer {
     /// Creates a new builder-style object to manufacture [`ResourceDataContainer`](crate::model::ResourceDataContainer).
@@ -2149,36 +1976,32 @@ impl ResourceDataContainer {
 /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager. AWS IoT Greengrass stores a local, encrypted copy of the secret on the Greengrass core, where it can be securely accessed by connectors and Lambda functions.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecretsManagerSecretResourceData {
+pub struct SecretsManagerSecretResourceData  {
     /// The ARN of the Secrets Manager secret to make available on the core. The value of the secret's latest version (represented by the ''AWSCURRENT'' staging label) is included by default.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
     #[doc(hidden)]
-    pub additional_staging_labels_to_download:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub additional_staging_labels_to_download: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SecretsManagerSecretResourceData {
     /// The ARN of the Secrets Manager secret to make available on the core. The value of the secret's latest version (represented by the ''AWSCURRENT'' staging label) is included by default.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
-    pub fn additional_staging_labels_to_download(
-        &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    pub fn additional_staging_labels_to_download(&self) -> std::option::Option<& [std::string::String]> {
         self.additional_staging_labels_to_download.as_deref()
     }
 }
 /// See [`SecretsManagerSecretResourceData`](crate::model::SecretsManagerSecretResourceData).
 pub mod secrets_manager_secret_resource_data {
-
+    
     /// A builder for [`SecretsManagerSecretResourceData`](crate::model::SecretsManagerSecretResourceData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) additional_staging_labels_to_download:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) additional_staging_labels_to_download: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// The ARN of the Secrets Manager secret to make available on the core. The value of the secret's latest version (represented by the ''AWSCURRENT'' staging label) is included by default.
@@ -2188,41 +2011,35 @@ pub mod secrets_manager_secret_resource_data {
         }
         /// The ARN of the Secrets Manager secret to make available on the core. The value of the secret's latest version (represented by the ''AWSCURRENT'' staging label) is included by default.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `additional_staging_labels_to_download`.
         ///
         /// To override the contents of this collection use [`set_additional_staging_labels_to_download`](Self::set_additional_staging_labels_to_download).
         ///
         /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
-        pub fn additional_staging_labels_to_download(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            let mut v = self
-                .additional_staging_labels_to_download
-                .unwrap_or_default();
-            v.push(input.into());
-            self.additional_staging_labels_to_download = Some(v);
-            self
+        pub fn additional_staging_labels_to_download(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.additional_staging_labels_to_download.unwrap_or_default();
+                            v.push(input.into());
+                            self.additional_staging_labels_to_download = Some(v);
+                            self
         }
         /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
-        pub fn set_additional_staging_labels_to_download(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.additional_staging_labels_to_download = input;
-            self
+        pub fn set_additional_staging_labels_to_download(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.additional_staging_labels_to_download = input; self
         }
         /// Consumes the builder and constructs a [`SecretsManagerSecretResourceData`](crate::model::SecretsManagerSecretResourceData).
         pub fn build(self) -> crate::model::SecretsManagerSecretResourceData {
             crate::model::SecretsManagerSecretResourceData {
-                arn: self.arn,
-                additional_staging_labels_to_download: self.additional_staging_labels_to_download,
+                arn: self.arn
+                ,
+                additional_staging_labels_to_download: self.additional_staging_labels_to_download
+                ,
             }
         }
     }
+    
+    
 }
 impl SecretsManagerSecretResourceData {
     /// Creates a new builder-style object to manufacture [`SecretsManagerSecretResourceData`](crate::model::SecretsManagerSecretResourceData).
@@ -2234,7 +2051,7 @@ impl SecretsManagerSecretResourceData {
 /// Attributes that define an Amazon SageMaker machine learning resource.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SageMakerMachineLearningModelResourceData {
+pub struct SageMakerMachineLearningModelResourceData  {
     /// The absolute local path of the resource inside the Lambda environment.
     #[doc(hidden)]
     pub destination_path: std::option::Option<std::string::String>,
@@ -2247,23 +2064,21 @@ pub struct SageMakerMachineLearningModelResourceData {
 }
 impl SageMakerMachineLearningModelResourceData {
     /// The absolute local path of the resource inside the Lambda environment.
-    pub fn destination_path(&self) -> std::option::Option<&str> {
+    pub fn destination_path(&self) -> std::option::Option<& str> {
         self.destination_path.as_deref()
     }
     /// The owner setting for downloaded machine learning resources.
-    pub fn owner_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::ResourceDownloadOwnerSetting> {
+    pub fn owner_setting(&self) -> std::option::Option<& crate::model::ResourceDownloadOwnerSetting> {
         self.owner_setting.as_ref()
     }
     /// The ARN of the Amazon SageMaker training job that represents the source model.
-    pub fn sage_maker_job_arn(&self) -> std::option::Option<&str> {
+    pub fn sage_maker_job_arn(&self) -> std::option::Option<& str> {
         self.sage_maker_job_arn.as_deref()
     }
 }
 /// See [`SageMakerMachineLearningModelResourceData`](crate::model::SageMakerMachineLearningModelResourceData).
 pub mod sage_maker_machine_learning_model_resource_data {
-
+    
     /// A builder for [`SageMakerMachineLearningModelResourceData`](crate::model::SageMakerMachineLearningModelResourceData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2278,12 +2093,8 @@ pub mod sage_maker_machine_learning_model_resource_data {
             self
         }
         /// The absolute local path of the resource inside the Lambda environment.
-        pub fn set_destination_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_path = input;
-            self
+        pub fn set_destination_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_path = input; self
         }
         /// The owner setting for downloaded machine learning resources.
         pub fn owner_setting(mut self, input: crate::model::ResourceDownloadOwnerSetting) -> Self {
@@ -2291,12 +2102,8 @@ pub mod sage_maker_machine_learning_model_resource_data {
             self
         }
         /// The owner setting for downloaded machine learning resources.
-        pub fn set_owner_setting(
-            mut self,
-            input: std::option::Option<crate::model::ResourceDownloadOwnerSetting>,
-        ) -> Self {
-            self.owner_setting = input;
-            self
+        pub fn set_owner_setting(mut self, input: std::option::Option<crate::model::ResourceDownloadOwnerSetting>) -> Self {
+            self.owner_setting = input; self
         }
         /// The ARN of the Amazon SageMaker training job that represents the source model.
         pub fn sage_maker_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2304,22 +2111,23 @@ pub mod sage_maker_machine_learning_model_resource_data {
             self
         }
         /// The ARN of the Amazon SageMaker training job that represents the source model.
-        pub fn set_sage_maker_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sage_maker_job_arn = input;
-            self
+        pub fn set_sage_maker_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sage_maker_job_arn = input; self
         }
         /// Consumes the builder and constructs a [`SageMakerMachineLearningModelResourceData`](crate::model::SageMakerMachineLearningModelResourceData).
         pub fn build(self) -> crate::model::SageMakerMachineLearningModelResourceData {
             crate::model::SageMakerMachineLearningModelResourceData {
-                destination_path: self.destination_path,
-                owner_setting: self.owner_setting,
-                sage_maker_job_arn: self.sage_maker_job_arn,
+                destination_path: self.destination_path
+                ,
+                owner_setting: self.owner_setting
+                ,
+                sage_maker_job_arn: self.sage_maker_job_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl SageMakerMachineLearningModelResourceData {
     /// Creates a new builder-style object to manufacture [`SageMakerMachineLearningModelResourceData`](crate::model::SageMakerMachineLearningModelResourceData).
@@ -2331,7 +2139,7 @@ impl SageMakerMachineLearningModelResourceData {
 /// The owner setting for downloaded machine learning resources.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceDownloadOwnerSetting {
+pub struct ResourceDownloadOwnerSetting  {
     /// The group owner of the resource. This is the name of an existing Linux OS group on the system or a GID. The group's permissions are added to the Lambda process.
     #[doc(hidden)]
     pub group_owner: std::option::Option<std::string::String>,
@@ -2341,17 +2149,17 @@ pub struct ResourceDownloadOwnerSetting {
 }
 impl ResourceDownloadOwnerSetting {
     /// The group owner of the resource. This is the name of an existing Linux OS group on the system or a GID. The group's permissions are added to the Lambda process.
-    pub fn group_owner(&self) -> std::option::Option<&str> {
+    pub fn group_owner(&self) -> std::option::Option<& str> {
         self.group_owner.as_deref()
     }
     /// The permissions that the group owner has to the resource. Valid values are ''rw'' (read/write) or ''ro'' (read-only).
-    pub fn group_permission(&self) -> std::option::Option<&crate::model::Permission> {
+    pub fn group_permission(&self) -> std::option::Option<& crate::model::Permission> {
         self.group_permission.as_ref()
     }
 }
 /// See [`ResourceDownloadOwnerSetting`](crate::model::ResourceDownloadOwnerSetting).
 pub mod resource_download_owner_setting {
-
+    
     /// A builder for [`ResourceDownloadOwnerSetting`](crate::model::ResourceDownloadOwnerSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2366,8 +2174,7 @@ pub mod resource_download_owner_setting {
         }
         /// The group owner of the resource. This is the name of an existing Linux OS group on the system or a GID. The group's permissions are added to the Lambda process.
         pub fn set_group_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_owner = input;
-            self
+            self.group_owner = input; self
         }
         /// The permissions that the group owner has to the resource. Valid values are ''rw'' (read/write) or ''ro'' (read-only).
         pub fn group_permission(mut self, input: crate::model::Permission) -> Self {
@@ -2375,21 +2182,21 @@ pub mod resource_download_owner_setting {
             self
         }
         /// The permissions that the group owner has to the resource. Valid values are ''rw'' (read/write) or ''ro'' (read-only).
-        pub fn set_group_permission(
-            mut self,
-            input: std::option::Option<crate::model::Permission>,
-        ) -> Self {
-            self.group_permission = input;
-            self
+        pub fn set_group_permission(mut self, input: std::option::Option<crate::model::Permission>) -> Self {
+            self.group_permission = input; self
         }
         /// Consumes the builder and constructs a [`ResourceDownloadOwnerSetting`](crate::model::ResourceDownloadOwnerSetting).
         pub fn build(self) -> crate::model::ResourceDownloadOwnerSetting {
             crate::model::ResourceDownloadOwnerSetting {
-                group_owner: self.group_owner,
-                group_permission: self.group_permission,
+                group_owner: self.group_owner
+                ,
+                group_permission: self.group_permission
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceDownloadOwnerSetting {
     /// Creates a new builder-style object to manufacture [`ResourceDownloadOwnerSetting`](crate::model::ResourceDownloadOwnerSetting).
@@ -2404,9 +2211,9 @@ impl ResourceDownloadOwnerSetting {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let permission = unimplemented!();
 /// match permission {
@@ -2428,58 +2235,52 @@ impl ResourceDownloadOwnerSetting {
 /// Specifically, when `permission` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Permission::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// The type of permission a function has to access a resource.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Permission {
     #[allow(missing_docs)] // documentation missing in model
     Ro,
     #[allow(missing_docs)] // documentation missing in model
     Rw,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Permission {
     fn from(s: &str) -> Self {
         match s {
             "ro" => Permission::Ro,
             "rw" => Permission::Rw,
-            other => Permission::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Permission::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Permission {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Permission::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Permission::from(s))
+                }
+            }
 impl Permission {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Permission::Ro => "ro",
             Permission::Rw => "rw",
-            Permission::Unknown(value) => value.as_str(),
+            Permission::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ro", "rw"]
+        &[
+            "ro", "rw"
+        ]
     }
 }
 impl AsRef<str> for Permission {
@@ -2491,7 +2292,7 @@ impl AsRef<str> for Permission {
 /// Attributes that define an Amazon S3 machine learning resource.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3MachineLearningModelResourceData {
+pub struct S3MachineLearningModelResourceData  {
     /// The absolute local path of the resource inside the Lambda environment.
     #[doc(hidden)]
     pub destination_path: std::option::Option<std::string::String>,
@@ -2504,23 +2305,21 @@ pub struct S3MachineLearningModelResourceData {
 }
 impl S3MachineLearningModelResourceData {
     /// The absolute local path of the resource inside the Lambda environment.
-    pub fn destination_path(&self) -> std::option::Option<&str> {
+    pub fn destination_path(&self) -> std::option::Option<& str> {
         self.destination_path.as_deref()
     }
     /// The owner setting for downloaded machine learning resources.
-    pub fn owner_setting(
-        &self,
-    ) -> std::option::Option<&crate::model::ResourceDownloadOwnerSetting> {
+    pub fn owner_setting(&self) -> std::option::Option<& crate::model::ResourceDownloadOwnerSetting> {
         self.owner_setting.as_ref()
     }
     /// The URI of the source model in an S3 bucket. The model package must be in tar.gz or .zip format.
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
 }
 /// See [`S3MachineLearningModelResourceData`](crate::model::S3MachineLearningModelResourceData).
 pub mod s3_machine_learning_model_resource_data {
-
+    
     /// A builder for [`S3MachineLearningModelResourceData`](crate::model::S3MachineLearningModelResourceData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2535,12 +2334,8 @@ pub mod s3_machine_learning_model_resource_data {
             self
         }
         /// The absolute local path of the resource inside the Lambda environment.
-        pub fn set_destination_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_path = input;
-            self
+        pub fn set_destination_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_path = input; self
         }
         /// The owner setting for downloaded machine learning resources.
         pub fn owner_setting(mut self, input: crate::model::ResourceDownloadOwnerSetting) -> Self {
@@ -2548,12 +2343,8 @@ pub mod s3_machine_learning_model_resource_data {
             self
         }
         /// The owner setting for downloaded machine learning resources.
-        pub fn set_owner_setting(
-            mut self,
-            input: std::option::Option<crate::model::ResourceDownloadOwnerSetting>,
-        ) -> Self {
-            self.owner_setting = input;
-            self
+        pub fn set_owner_setting(mut self, input: std::option::Option<crate::model::ResourceDownloadOwnerSetting>) -> Self {
+            self.owner_setting = input; self
         }
         /// The URI of the source model in an S3 bucket. The model package must be in tar.gz or .zip format.
         pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2562,18 +2353,22 @@ pub mod s3_machine_learning_model_resource_data {
         }
         /// The URI of the source model in an S3 bucket. The model package must be in tar.gz or .zip format.
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_uri = input;
-            self
+            self.s3_uri = input; self
         }
         /// Consumes the builder and constructs a [`S3MachineLearningModelResourceData`](crate::model::S3MachineLearningModelResourceData).
         pub fn build(self) -> crate::model::S3MachineLearningModelResourceData {
             crate::model::S3MachineLearningModelResourceData {
-                destination_path: self.destination_path,
-                owner_setting: self.owner_setting,
-                s3_uri: self.s3_uri,
+                destination_path: self.destination_path
+                ,
+                owner_setting: self.owner_setting
+                ,
+                s3_uri: self.s3_uri
+                ,
             }
         }
     }
+    
+    
 }
 impl S3MachineLearningModelResourceData {
     /// Creates a new builder-style object to manufacture [`S3MachineLearningModelResourceData`](crate::model::S3MachineLearningModelResourceData).
@@ -2585,7 +2380,7 @@ impl S3MachineLearningModelResourceData {
 /// Attributes that define a local volume resource.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LocalVolumeResourceData {
+pub struct LocalVolumeResourceData  {
     /// The absolute local path of the resource inside the Lambda environment.
     #[doc(hidden)]
     pub destination_path: std::option::Option<std::string::String>,
@@ -2598,21 +2393,21 @@ pub struct LocalVolumeResourceData {
 }
 impl LocalVolumeResourceData {
     /// The absolute local path of the resource inside the Lambda environment.
-    pub fn destination_path(&self) -> std::option::Option<&str> {
+    pub fn destination_path(&self) -> std::option::Option<& str> {
         self.destination_path.as_deref()
     }
     /// Allows you to configure additional group privileges for the Lambda process. This field is optional.
-    pub fn group_owner_setting(&self) -> std::option::Option<&crate::model::GroupOwnerSetting> {
+    pub fn group_owner_setting(&self) -> std::option::Option<& crate::model::GroupOwnerSetting> {
         self.group_owner_setting.as_ref()
     }
     /// The local absolute path of the volume resource on the host. The source path for a volume resource type cannot start with ''/sys''.
-    pub fn source_path(&self) -> std::option::Option<&str> {
+    pub fn source_path(&self) -> std::option::Option<& str> {
         self.source_path.as_deref()
     }
 }
 /// See [`LocalVolumeResourceData`](crate::model::LocalVolumeResourceData).
 pub mod local_volume_resource_data {
-
+    
     /// A builder for [`LocalVolumeResourceData`](crate::model::LocalVolumeResourceData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2627,12 +2422,8 @@ pub mod local_volume_resource_data {
             self
         }
         /// The absolute local path of the resource inside the Lambda environment.
-        pub fn set_destination_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_path = input;
-            self
+        pub fn set_destination_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_path = input; self
         }
         /// Allows you to configure additional group privileges for the Lambda process. This field is optional.
         pub fn group_owner_setting(mut self, input: crate::model::GroupOwnerSetting) -> Self {
@@ -2640,12 +2431,8 @@ pub mod local_volume_resource_data {
             self
         }
         /// Allows you to configure additional group privileges for the Lambda process. This field is optional.
-        pub fn set_group_owner_setting(
-            mut self,
-            input: std::option::Option<crate::model::GroupOwnerSetting>,
-        ) -> Self {
-            self.group_owner_setting = input;
-            self
+        pub fn set_group_owner_setting(mut self, input: std::option::Option<crate::model::GroupOwnerSetting>) -> Self {
+            self.group_owner_setting = input; self
         }
         /// The local absolute path of the volume resource on the host. The source path for a volume resource type cannot start with ''/sys''.
         pub fn source_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2654,18 +2441,22 @@ pub mod local_volume_resource_data {
         }
         /// The local absolute path of the volume resource on the host. The source path for a volume resource type cannot start with ''/sys''.
         pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_path = input;
-            self
+            self.source_path = input; self
         }
         /// Consumes the builder and constructs a [`LocalVolumeResourceData`](crate::model::LocalVolumeResourceData).
         pub fn build(self) -> crate::model::LocalVolumeResourceData {
             crate::model::LocalVolumeResourceData {
-                destination_path: self.destination_path,
-                group_owner_setting: self.group_owner_setting,
-                source_path: self.source_path,
+                destination_path: self.destination_path
+                ,
+                group_owner_setting: self.group_owner_setting
+                ,
+                source_path: self.source_path
+                ,
             }
         }
     }
+    
+    
 }
 impl LocalVolumeResourceData {
     /// Creates a new builder-style object to manufacture [`LocalVolumeResourceData`](crate::model::LocalVolumeResourceData).
@@ -2677,7 +2468,7 @@ impl LocalVolumeResourceData {
 /// Group owner related settings for local resources.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupOwnerSetting {
+pub struct GroupOwnerSetting  {
     /// If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
     #[doc(hidden)]
     pub auto_add_group_owner: bool,
@@ -2691,13 +2482,13 @@ impl GroupOwnerSetting {
         self.auto_add_group_owner
     }
     /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
-    pub fn group_owner(&self) -> std::option::Option<&str> {
+    pub fn group_owner(&self) -> std::option::Option<& str> {
         self.group_owner.as_deref()
     }
 }
 /// See [`GroupOwnerSetting`](crate::model::GroupOwnerSetting).
 pub mod group_owner_setting {
-
+    
     /// A builder for [`GroupOwnerSetting`](crate::model::GroupOwnerSetting).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2712,8 +2503,7 @@ pub mod group_owner_setting {
         }
         /// If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
         pub fn set_auto_add_group_owner(mut self, input: std::option::Option<bool>) -> Self {
-            self.auto_add_group_owner = input;
-            self
+            self.auto_add_group_owner = input; self
         }
         /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
         pub fn group_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2722,17 +2512,21 @@ pub mod group_owner_setting {
         }
         /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
         pub fn set_group_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_owner = input;
-            self
+            self.group_owner = input; self
         }
         /// Consumes the builder and constructs a [`GroupOwnerSetting`](crate::model::GroupOwnerSetting).
         pub fn build(self) -> crate::model::GroupOwnerSetting {
             crate::model::GroupOwnerSetting {
-                auto_add_group_owner: self.auto_add_group_owner.unwrap_or_default(),
-                group_owner: self.group_owner,
+                auto_add_group_owner: self.auto_add_group_owner
+                    .unwrap_or_default()
+                ,
+                group_owner: self.group_owner
+                ,
             }
         }
     }
+    
+    
 }
 impl GroupOwnerSetting {
     /// Creates a new builder-style object to manufacture [`GroupOwnerSetting`](crate::model::GroupOwnerSetting).
@@ -2744,7 +2538,7 @@ impl GroupOwnerSetting {
 /// Attributes that define a local device resource.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LocalDeviceResourceData {
+pub struct LocalDeviceResourceData  {
     /// Group/owner related settings for local resources.
     #[doc(hidden)]
     pub group_owner_setting: std::option::Option<crate::model::GroupOwnerSetting>,
@@ -2754,17 +2548,17 @@ pub struct LocalDeviceResourceData {
 }
 impl LocalDeviceResourceData {
     /// Group/owner related settings for local resources.
-    pub fn group_owner_setting(&self) -> std::option::Option<&crate::model::GroupOwnerSetting> {
+    pub fn group_owner_setting(&self) -> std::option::Option<& crate::model::GroupOwnerSetting> {
         self.group_owner_setting.as_ref()
     }
     /// The local absolute path of the device resource. The source path for a device resource can refer only to a character device or block device under ''/dev''.
-    pub fn source_path(&self) -> std::option::Option<&str> {
+    pub fn source_path(&self) -> std::option::Option<& str> {
         self.source_path.as_deref()
     }
 }
 /// See [`LocalDeviceResourceData`](crate::model::LocalDeviceResourceData).
 pub mod local_device_resource_data {
-
+    
     /// A builder for [`LocalDeviceResourceData`](crate::model::LocalDeviceResourceData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2778,12 +2572,8 @@ pub mod local_device_resource_data {
             self
         }
         /// Group/owner related settings for local resources.
-        pub fn set_group_owner_setting(
-            mut self,
-            input: std::option::Option<crate::model::GroupOwnerSetting>,
-        ) -> Self {
-            self.group_owner_setting = input;
-            self
+        pub fn set_group_owner_setting(mut self, input: std::option::Option<crate::model::GroupOwnerSetting>) -> Self {
+            self.group_owner_setting = input; self
         }
         /// The local absolute path of the device resource. The source path for a device resource can refer only to a character device or block device under ''/dev''.
         pub fn source_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2792,17 +2582,20 @@ pub mod local_device_resource_data {
         }
         /// The local absolute path of the device resource. The source path for a device resource can refer only to a character device or block device under ''/dev''.
         pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_path = input;
-            self
+            self.source_path = input; self
         }
         /// Consumes the builder and constructs a [`LocalDeviceResourceData`](crate::model::LocalDeviceResourceData).
         pub fn build(self) -> crate::model::LocalDeviceResourceData {
             crate::model::LocalDeviceResourceData {
-                group_owner_setting: self.group_owner_setting,
-                source_path: self.source_path,
+                group_owner_setting: self.group_owner_setting
+                ,
+                source_path: self.source_path
+                ,
             }
         }
     }
+    
+    
 }
 impl LocalDeviceResourceData {
     /// Creates a new builder-style object to manufacture [`LocalDeviceResourceData`](crate::model::LocalDeviceResourceData).
@@ -2814,20 +2607,20 @@ impl LocalDeviceResourceData {
 /// Information about a logger definition version.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggerDefinitionVersion {
+pub struct LoggerDefinitionVersion  {
     /// A list of loggers.
     #[doc(hidden)]
     pub loggers: std::option::Option<std::vec::Vec<crate::model::Logger>>,
 }
 impl LoggerDefinitionVersion {
     /// A list of loggers.
-    pub fn loggers(&self) -> std::option::Option<&[crate::model::Logger]> {
+    pub fn loggers(&self) -> std::option::Option<& [crate::model::Logger]> {
         self.loggers.as_deref()
     }
 }
 /// See [`LoggerDefinitionVersion`](crate::model::LoggerDefinitionVersion).
 pub mod logger_definition_version {
-
+    
     /// A builder for [`LoggerDefinitionVersion`](crate::model::LoggerDefinitionVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2841,25 +2634,24 @@ pub mod logger_definition_version {
         /// A list of loggers.
         pub fn loggers(mut self, input: crate::model::Logger) -> Self {
             let mut v = self.loggers.unwrap_or_default();
-            v.push(input);
-            self.loggers = Some(v);
-            self
+                            v.push(input);
+                            self.loggers = Some(v);
+                            self
         }
         /// A list of loggers.
-        pub fn set_loggers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Logger>>,
-        ) -> Self {
-            self.loggers = input;
-            self
+        pub fn set_loggers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Logger>>) -> Self {
+            self.loggers = input; self
         }
         /// Consumes the builder and constructs a [`LoggerDefinitionVersion`](crate::model::LoggerDefinitionVersion).
         pub fn build(self) -> crate::model::LoggerDefinitionVersion {
             crate::model::LoggerDefinitionVersion {
-                loggers: self.loggers,
+                loggers: self.loggers
+                ,
             }
         }
     }
+    
+    
 }
 impl LoggerDefinitionVersion {
     /// Creates a new builder-style object to manufacture [`LoggerDefinitionVersion`](crate::model::LoggerDefinitionVersion).
@@ -2871,7 +2663,7 @@ impl LoggerDefinitionVersion {
 /// Information about a logger
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Logger {
+pub struct Logger  {
     /// The component that will be subject to logging.
     #[doc(hidden)]
     pub component: std::option::Option<crate::model::LoggerComponent>,
@@ -2890,15 +2682,15 @@ pub struct Logger {
 }
 impl Logger {
     /// The component that will be subject to logging.
-    pub fn component(&self) -> std::option::Option<&crate::model::LoggerComponent> {
+    pub fn component(&self) -> std::option::Option<& crate::model::LoggerComponent> {
         self.component.as_ref()
     }
     /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The level of the logs.
-    pub fn level(&self) -> std::option::Option<&crate::model::LoggerLevel> {
+    pub fn level(&self) -> std::option::Option<& crate::model::LoggerLevel> {
         self.level.as_ref()
     }
     /// The amount of file space, in KB, to use if the local file system is used for logging purposes.
@@ -2906,13 +2698,13 @@ impl Logger {
         self.space
     }
     /// The type of log output which will be used.
-    pub fn r#type(&self) -> std::option::Option<&crate::model::LoggerType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::LoggerType> {
         self.r#type.as_ref()
     }
 }
 /// See [`Logger`](crate::model::Logger).
 pub mod logger {
-
+    
     /// A builder for [`Logger`](crate::model::Logger).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2929,12 +2721,8 @@ pub mod logger {
             self
         }
         /// The component that will be subject to logging.
-        pub fn set_component(
-            mut self,
-            input: std::option::Option<crate::model::LoggerComponent>,
-        ) -> Self {
-            self.component = input;
-            self
+        pub fn set_component(mut self, input: std::option::Option<crate::model::LoggerComponent>) -> Self {
+            self.component = input; self
         }
         /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2943,8 +2731,7 @@ pub mod logger {
         }
         /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The level of the logs.
         pub fn level(mut self, input: crate::model::LoggerLevel) -> Self {
@@ -2953,8 +2740,7 @@ pub mod logger {
         }
         /// The level of the logs.
         pub fn set_level(mut self, input: std::option::Option<crate::model::LoggerLevel>) -> Self {
-            self.level = input;
-            self
+            self.level = input; self
         }
         /// The amount of file space, in KB, to use if the local file system is used for logging purposes.
         pub fn space(mut self, input: i32) -> Self {
@@ -2963,8 +2749,7 @@ pub mod logger {
         }
         /// The amount of file space, in KB, to use if the local file system is used for logging purposes.
         pub fn set_space(mut self, input: std::option::Option<i32>) -> Self {
-            self.space = input;
-            self
+            self.space = input; self
         }
         /// The type of log output which will be used.
         pub fn r#type(mut self, input: crate::model::LoggerType) -> Self {
@@ -2973,20 +2758,27 @@ pub mod logger {
         }
         /// The type of log output which will be used.
         pub fn set_type(mut self, input: std::option::Option<crate::model::LoggerType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`Logger`](crate::model::Logger).
         pub fn build(self) -> crate::model::Logger {
             crate::model::Logger {
-                component: self.component,
-                id: self.id,
-                level: self.level,
-                space: self.space.unwrap_or_default(),
-                r#type: self.r#type,
+                component: self.component
+                ,
+                id: self.id
+                ,
+                level: self.level
+                ,
+                space: self.space
+                    .unwrap_or_default()
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl Logger {
     /// Creates a new builder-style object to manufacture [`Logger`](crate::model::Logger).
@@ -3001,9 +2793,9 @@ impl Logger {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let loggertype = unimplemented!();
 /// match loggertype {
@@ -3025,58 +2817,52 @@ impl Logger {
 /// Specifically, when `loggertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LoggerType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LoggerType {
     #[allow(missing_docs)] // documentation missing in model
     AwsCloudWatch,
     #[allow(missing_docs)] // documentation missing in model
     FileSystem,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LoggerType {
     fn from(s: &str) -> Self {
         match s {
             "AWSCloudWatch" => LoggerType::AwsCloudWatch,
             "FileSystem" => LoggerType::FileSystem,
-            other => LoggerType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LoggerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LoggerType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LoggerType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LoggerType::from(s))
+                }
+            }
 impl LoggerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoggerType::AwsCloudWatch => "AWSCloudWatch",
             LoggerType::FileSystem => "FileSystem",
-            LoggerType::Unknown(value) => value.as_str(),
+            LoggerType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWSCloudWatch", "FileSystem"]
+        &[
+            "AWSCloudWatch", "FileSystem"
+        ]
     }
 }
 impl AsRef<str> for LoggerType {
@@ -3091,9 +2877,9 @@ impl AsRef<str> for LoggerType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let loggerlevel = unimplemented!();
 /// match loggerlevel {
@@ -3118,22 +2904,14 @@ impl AsRef<str> for LoggerType {
 /// Specifically, when `loggerlevel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LoggerLevel::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LoggerLevel {
     #[allow(missing_docs)] // documentation missing in model
     Debug,
@@ -3146,7 +2924,7 @@ pub enum LoggerLevel {
     #[allow(missing_docs)] // documentation missing in model
     Warn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LoggerLevel {
     fn from(s: &str) -> Self {
@@ -3156,17 +2934,17 @@ impl std::convert::From<&str> for LoggerLevel {
             "FATAL" => LoggerLevel::Fatal,
             "INFO" => LoggerLevel::Info,
             "WARN" => LoggerLevel::Warn,
-            other => LoggerLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LoggerLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LoggerLevel {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LoggerLevel::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LoggerLevel::from(s))
+                }
+            }
 impl LoggerLevel {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3176,12 +2954,14 @@ impl LoggerLevel {
             LoggerLevel::Fatal => "FATAL",
             LoggerLevel::Info => "INFO",
             LoggerLevel::Warn => "WARN",
-            LoggerLevel::Unknown(value) => value.as_str(),
+            LoggerLevel::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEBUG", "ERROR", "FATAL", "INFO", "WARN"]
+        &[
+            "DEBUG", "ERROR", "FATAL", "INFO", "WARN"
+        ]
     }
 }
 impl AsRef<str> for LoggerLevel {
@@ -3196,9 +2976,9 @@ impl AsRef<str> for LoggerLevel {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let loggercomponent = unimplemented!();
 /// match loggercomponent {
@@ -3220,58 +3000,52 @@ impl AsRef<str> for LoggerLevel {
 /// Specifically, when `loggercomponent` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LoggerComponent::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LoggerComponent {
     #[allow(missing_docs)] // documentation missing in model
     GreengrassSystem,
     #[allow(missing_docs)] // documentation missing in model
     Lambda,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LoggerComponent {
     fn from(s: &str) -> Self {
         match s {
             "GreengrassSystem" => LoggerComponent::GreengrassSystem,
             "Lambda" => LoggerComponent::Lambda,
-            other => LoggerComponent::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LoggerComponent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LoggerComponent {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LoggerComponent::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LoggerComponent::from(s))
+                }
+            }
 impl LoggerComponent {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoggerComponent::GreengrassSystem => "GreengrassSystem",
             LoggerComponent::Lambda => "Lambda",
-            LoggerComponent::Unknown(value) => value.as_str(),
+            LoggerComponent::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GreengrassSystem", "Lambda"]
+        &[
+            "GreengrassSystem", "Lambda"
+        ]
     }
 }
 impl AsRef<str> for LoggerComponent {
@@ -3283,7 +3057,7 @@ impl AsRef<str> for LoggerComponent {
 /// Information about a group version.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupVersion {
+pub struct GroupVersion  {
     /// The ARN of the connector definition version for this group.
     #[doc(hidden)]
     pub connector_definition_version_arn: std::option::Option<std::string::String>,
@@ -3308,37 +3082,37 @@ pub struct GroupVersion {
 }
 impl GroupVersion {
     /// The ARN of the connector definition version for this group.
-    pub fn connector_definition_version_arn(&self) -> std::option::Option<&str> {
+    pub fn connector_definition_version_arn(&self) -> std::option::Option<& str> {
         self.connector_definition_version_arn.as_deref()
     }
     /// The ARN of the core definition version for this group.
-    pub fn core_definition_version_arn(&self) -> std::option::Option<&str> {
+    pub fn core_definition_version_arn(&self) -> std::option::Option<& str> {
         self.core_definition_version_arn.as_deref()
     }
     /// The ARN of the device definition version for this group.
-    pub fn device_definition_version_arn(&self) -> std::option::Option<&str> {
+    pub fn device_definition_version_arn(&self) -> std::option::Option<& str> {
         self.device_definition_version_arn.as_deref()
     }
     /// The ARN of the function definition version for this group.
-    pub fn function_definition_version_arn(&self) -> std::option::Option<&str> {
+    pub fn function_definition_version_arn(&self) -> std::option::Option<& str> {
         self.function_definition_version_arn.as_deref()
     }
     /// The ARN of the logger definition version for this group.
-    pub fn logger_definition_version_arn(&self) -> std::option::Option<&str> {
+    pub fn logger_definition_version_arn(&self) -> std::option::Option<& str> {
         self.logger_definition_version_arn.as_deref()
     }
     /// The ARN of the resource definition version for this group.
-    pub fn resource_definition_version_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_definition_version_arn(&self) -> std::option::Option<& str> {
         self.resource_definition_version_arn.as_deref()
     }
     /// The ARN of the subscription definition version for this group.
-    pub fn subscription_definition_version_arn(&self) -> std::option::Option<&str> {
+    pub fn subscription_definition_version_arn(&self) -> std::option::Option<& str> {
         self.subscription_definition_version_arn.as_deref()
     }
 }
 /// See [`GroupVersion`](crate::model::GroupVersion).
 pub mod group_version {
-
+    
     /// A builder for [`GroupVersion`](crate::model::GroupVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3352,130 +3126,90 @@ pub mod group_version {
     }
     impl Builder {
         /// The ARN of the connector definition version for this group.
-        pub fn connector_definition_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn connector_definition_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_definition_version_arn = Some(input.into());
             self
         }
         /// The ARN of the connector definition version for this group.
-        pub fn set_connector_definition_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connector_definition_version_arn = input;
-            self
+        pub fn set_connector_definition_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_definition_version_arn = input; self
         }
         /// The ARN of the core definition version for this group.
-        pub fn core_definition_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn core_definition_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.core_definition_version_arn = Some(input.into());
             self
         }
         /// The ARN of the core definition version for this group.
-        pub fn set_core_definition_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.core_definition_version_arn = input;
-            self
+        pub fn set_core_definition_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.core_definition_version_arn = input; self
         }
         /// The ARN of the device definition version for this group.
-        pub fn device_definition_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn device_definition_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.device_definition_version_arn = Some(input.into());
             self
         }
         /// The ARN of the device definition version for this group.
-        pub fn set_device_definition_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.device_definition_version_arn = input;
-            self
+        pub fn set_device_definition_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_definition_version_arn = input; self
         }
         /// The ARN of the function definition version for this group.
-        pub fn function_definition_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn function_definition_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_definition_version_arn = Some(input.into());
             self
         }
         /// The ARN of the function definition version for this group.
-        pub fn set_function_definition_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_definition_version_arn = input;
-            self
+        pub fn set_function_definition_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_definition_version_arn = input; self
         }
         /// The ARN of the logger definition version for this group.
-        pub fn logger_definition_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn logger_definition_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.logger_definition_version_arn = Some(input.into());
             self
         }
         /// The ARN of the logger definition version for this group.
-        pub fn set_logger_definition_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.logger_definition_version_arn = input;
-            self
+        pub fn set_logger_definition_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logger_definition_version_arn = input; self
         }
         /// The ARN of the resource definition version for this group.
-        pub fn resource_definition_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn resource_definition_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_definition_version_arn = Some(input.into());
             self
         }
         /// The ARN of the resource definition version for this group.
-        pub fn set_resource_definition_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_definition_version_arn = input;
-            self
+        pub fn set_resource_definition_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_definition_version_arn = input; self
         }
         /// The ARN of the subscription definition version for this group.
-        pub fn subscription_definition_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn subscription_definition_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.subscription_definition_version_arn = Some(input.into());
             self
         }
         /// The ARN of the subscription definition version for this group.
-        pub fn set_subscription_definition_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscription_definition_version_arn = input;
-            self
+        pub fn set_subscription_definition_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscription_definition_version_arn = input; self
         }
         /// Consumes the builder and constructs a [`GroupVersion`](crate::model::GroupVersion).
         pub fn build(self) -> crate::model::GroupVersion {
             crate::model::GroupVersion {
-                connector_definition_version_arn: self.connector_definition_version_arn,
-                core_definition_version_arn: self.core_definition_version_arn,
-                device_definition_version_arn: self.device_definition_version_arn,
-                function_definition_version_arn: self.function_definition_version_arn,
-                logger_definition_version_arn: self.logger_definition_version_arn,
-                resource_definition_version_arn: self.resource_definition_version_arn,
-                subscription_definition_version_arn: self.subscription_definition_version_arn,
+                connector_definition_version_arn: self.connector_definition_version_arn
+                ,
+                core_definition_version_arn: self.core_definition_version_arn
+                ,
+                device_definition_version_arn: self.device_definition_version_arn
+                ,
+                function_definition_version_arn: self.function_definition_version_arn
+                ,
+                logger_definition_version_arn: self.logger_definition_version_arn
+                ,
+                resource_definition_version_arn: self.resource_definition_version_arn
+                ,
+                subscription_definition_version_arn: self.subscription_definition_version_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GroupVersion {
     /// Creates a new builder-style object to manufacture [`GroupVersion`](crate::model::GroupVersion).
@@ -3487,7 +3221,7 @@ impl GroupVersion {
 /// Information about a function definition version.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionDefinitionVersion {
+pub struct FunctionDefinitionVersion  {
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
     #[doc(hidden)]
     pub default_config: std::option::Option<crate::model::FunctionDefaultConfig>,
@@ -3497,17 +3231,17 @@ pub struct FunctionDefinitionVersion {
 }
 impl FunctionDefinitionVersion {
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
-    pub fn default_config(&self) -> std::option::Option<&crate::model::FunctionDefaultConfig> {
+    pub fn default_config(&self) -> std::option::Option<& crate::model::FunctionDefaultConfig> {
         self.default_config.as_ref()
     }
     /// A list of Lambda functions in this function definition version.
-    pub fn functions(&self) -> std::option::Option<&[crate::model::Function]> {
+    pub fn functions(&self) -> std::option::Option<& [crate::model::Function]> {
         self.functions.as_deref()
     }
 }
 /// See [`FunctionDefinitionVersion`](crate::model::FunctionDefinitionVersion).
 pub mod function_definition_version {
-
+    
     /// A builder for [`FunctionDefinitionVersion`](crate::model::FunctionDefinitionVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3521,12 +3255,8 @@ pub mod function_definition_version {
             self
         }
         /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
-        pub fn set_default_config(
-            mut self,
-            input: std::option::Option<crate::model::FunctionDefaultConfig>,
-        ) -> Self {
-            self.default_config = input;
-            self
+        pub fn set_default_config(mut self, input: std::option::Option<crate::model::FunctionDefaultConfig>) -> Self {
+            self.default_config = input; self
         }
         /// Appends an item to `functions`.
         ///
@@ -3535,26 +3265,26 @@ pub mod function_definition_version {
         /// A list of Lambda functions in this function definition version.
         pub fn functions(mut self, input: crate::model::Function) -> Self {
             let mut v = self.functions.unwrap_or_default();
-            v.push(input);
-            self.functions = Some(v);
-            self
+                            v.push(input);
+                            self.functions = Some(v);
+                            self
         }
         /// A list of Lambda functions in this function definition version.
-        pub fn set_functions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Function>>,
-        ) -> Self {
-            self.functions = input;
-            self
+        pub fn set_functions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Function>>) -> Self {
+            self.functions = input; self
         }
         /// Consumes the builder and constructs a [`FunctionDefinitionVersion`](crate::model::FunctionDefinitionVersion).
         pub fn build(self) -> crate::model::FunctionDefinitionVersion {
             crate::model::FunctionDefinitionVersion {
-                default_config: self.default_config,
-                functions: self.functions,
+                default_config: self.default_config
+                ,
+                functions: self.functions
+                ,
             }
         }
     }
+    
+    
 }
 impl FunctionDefinitionVersion {
     /// Creates a new builder-style object to manufacture [`FunctionDefinitionVersion`](crate::model::FunctionDefinitionVersion).
@@ -3566,7 +3296,7 @@ impl FunctionDefinitionVersion {
 /// Information about a Lambda function.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Function {
+pub struct Function  {
     /// The ARN of the Lambda function.
     #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
@@ -3579,23 +3309,21 @@ pub struct Function {
 }
 impl Function {
     /// The ARN of the Lambda function.
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// The configuration of the Lambda function.
-    pub fn function_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::FunctionConfiguration> {
+    pub fn function_configuration(&self) -> std::option::Option<& crate::model::FunctionConfiguration> {
         self.function_configuration.as_ref()
     }
     /// A descriptive or arbitrary ID for the function. This value must be unique within the function definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`Function`](crate::model::Function).
 pub mod function {
-
+    
     /// A builder for [`Function`](crate::model::Function).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3611,24 +3339,16 @@ pub mod function {
         }
         /// The ARN of the Lambda function.
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// The configuration of the Lambda function.
-        pub fn function_configuration(
-            mut self,
-            input: crate::model::FunctionConfiguration,
-        ) -> Self {
+        pub fn function_configuration(mut self, input: crate::model::FunctionConfiguration) -> Self {
             self.function_configuration = Some(input);
             self
         }
         /// The configuration of the Lambda function.
-        pub fn set_function_configuration(
-            mut self,
-            input: std::option::Option<crate::model::FunctionConfiguration>,
-        ) -> Self {
-            self.function_configuration = input;
-            self
+        pub fn set_function_configuration(mut self, input: std::option::Option<crate::model::FunctionConfiguration>) -> Self {
+            self.function_configuration = input; self
         }
         /// A descriptive or arbitrary ID for the function. This value must be unique within the function definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3637,18 +3357,22 @@ pub mod function {
         }
         /// A descriptive or arbitrary ID for the function. This value must be unique within the function definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`Function`](crate::model::Function).
         pub fn build(self) -> crate::model::Function {
             crate::model::Function {
-                function_arn: self.function_arn,
-                function_configuration: self.function_configuration,
-                id: self.id,
+                function_arn: self.function_arn
+                ,
+                function_configuration: self.function_configuration
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl Function {
     /// Creates a new builder-style object to manufacture [`Function`](crate::model::Function).
@@ -3660,7 +3384,7 @@ impl Function {
 /// The configuration of the Lambda function.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionConfiguration {
+pub struct FunctionConfiguration  {
     /// The expected encoding type of the input payload for the function. The default is ''json''.
     #[doc(hidden)]
     pub encoding_type: std::option::Option<crate::model::EncodingType>,
@@ -3688,21 +3412,19 @@ pub struct FunctionConfiguration {
 }
 impl FunctionConfiguration {
     /// The expected encoding type of the input payload for the function. The default is ''json''.
-    pub fn encoding_type(&self) -> std::option::Option<&crate::model::EncodingType> {
+    pub fn encoding_type(&self) -> std::option::Option<& crate::model::EncodingType> {
         self.encoding_type.as_ref()
     }
     /// The environment configuration of the function.
-    pub fn environment(
-        &self,
-    ) -> std::option::Option<&crate::model::FunctionConfigurationEnvironment> {
+    pub fn environment(&self) -> std::option::Option<& crate::model::FunctionConfigurationEnvironment> {
         self.environment.as_ref()
     }
     /// The execution arguments.
-    pub fn exec_args(&self) -> std::option::Option<&str> {
+    pub fn exec_args(&self) -> std::option::Option<& str> {
         self.exec_args.as_deref()
     }
     /// The name of the function executable.
-    pub fn executable(&self) -> std::option::Option<&str> {
+    pub fn executable(&self) -> std::option::Option<& str> {
         self.executable.as_deref()
     }
     /// The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when you run the Lambda function without containerization.
@@ -3718,13 +3440,13 @@ impl FunctionConfiguration {
         self.timeout
     }
     /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
-    pub fn function_runtime_override(&self) -> std::option::Option<&str> {
+    pub fn function_runtime_override(&self) -> std::option::Option<& str> {
         self.function_runtime_override.as_deref()
     }
 }
 /// See [`FunctionConfiguration`](crate::model::FunctionConfiguration).
 pub mod function_configuration {
-
+    
     /// A builder for [`FunctionConfiguration`](crate::model::FunctionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3744,28 +3466,17 @@ pub mod function_configuration {
             self
         }
         /// The expected encoding type of the input payload for the function. The default is ''json''.
-        pub fn set_encoding_type(
-            mut self,
-            input: std::option::Option<crate::model::EncodingType>,
-        ) -> Self {
-            self.encoding_type = input;
-            self
+        pub fn set_encoding_type(mut self, input: std::option::Option<crate::model::EncodingType>) -> Self {
+            self.encoding_type = input; self
         }
         /// The environment configuration of the function.
-        pub fn environment(
-            mut self,
-            input: crate::model::FunctionConfigurationEnvironment,
-        ) -> Self {
+        pub fn environment(mut self, input: crate::model::FunctionConfigurationEnvironment) -> Self {
             self.environment = Some(input);
             self
         }
         /// The environment configuration of the function.
-        pub fn set_environment(
-            mut self,
-            input: std::option::Option<crate::model::FunctionConfigurationEnvironment>,
-        ) -> Self {
-            self.environment = input;
-            self
+        pub fn set_environment(mut self, input: std::option::Option<crate::model::FunctionConfigurationEnvironment>) -> Self {
+            self.environment = input; self
         }
         /// The execution arguments.
         pub fn exec_args(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3774,8 +3485,7 @@ pub mod function_configuration {
         }
         /// The execution arguments.
         pub fn set_exec_args(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.exec_args = input;
-            self
+            self.exec_args = input; self
         }
         /// The name of the function executable.
         pub fn executable(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3784,8 +3494,7 @@ pub mod function_configuration {
         }
         /// The name of the function executable.
         pub fn set_executable(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.executable = input;
-            self
+            self.executable = input; self
         }
         /// The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when you run the Lambda function without containerization.
         pub fn memory_size(mut self, input: i32) -> Self {
@@ -3794,8 +3503,7 @@ pub mod function_configuration {
         }
         /// The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when you run the Lambda function without containerization.
         pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.memory_size = input;
-            self
+            self.memory_size = input; self
         }
         /// True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
         pub fn pinned(mut self, input: bool) -> Self {
@@ -3804,8 +3512,7 @@ pub mod function_configuration {
         }
         /// True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
         pub fn set_pinned(mut self, input: std::option::Option<bool>) -> Self {
-            self.pinned = input;
-            self
+            self.pinned = input; self
         }
         /// The allowed function execution time, after which Lambda should terminate the function. This timeout still applies to pinned Lambda functions for each request.
         pub fn timeout(mut self, input: i32) -> Self {
@@ -3814,8 +3521,7 @@ pub mod function_configuration {
         }
         /// The allowed function execution time, after which Lambda should terminate the function. This timeout still applies to pinned Lambda functions for each request.
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout = input;
-            self
+            self.timeout = input; self
         }
         /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
         pub fn function_runtime_override(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3823,27 +3529,36 @@ pub mod function_configuration {
             self
         }
         /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
-        pub fn set_function_runtime_override(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_runtime_override = input;
-            self
+        pub fn set_function_runtime_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_runtime_override = input; self
         }
         /// Consumes the builder and constructs a [`FunctionConfiguration`](crate::model::FunctionConfiguration).
         pub fn build(self) -> crate::model::FunctionConfiguration {
             crate::model::FunctionConfiguration {
-                encoding_type: self.encoding_type,
-                environment: self.environment,
-                exec_args: self.exec_args,
-                executable: self.executable,
-                memory_size: self.memory_size.unwrap_or_default(),
-                pinned: self.pinned.unwrap_or_default(),
-                timeout: self.timeout.unwrap_or_default(),
-                function_runtime_override: self.function_runtime_override,
+                encoding_type: self.encoding_type
+                ,
+                environment: self.environment
+                ,
+                exec_args: self.exec_args
+                ,
+                executable: self.executable
+                ,
+                memory_size: self.memory_size
+                    .unwrap_or_default()
+                ,
+                pinned: self.pinned
+                    .unwrap_or_default()
+                ,
+                timeout: self.timeout
+                    .unwrap_or_default()
+                ,
+                function_runtime_override: self.function_runtime_override
+                ,
             }
         }
     }
+    
+    
 }
 impl FunctionConfiguration {
     /// Creates a new builder-style object to manufacture [`FunctionConfiguration`](crate::model::FunctionConfiguration).
@@ -3855,7 +3570,7 @@ impl FunctionConfiguration {
 /// The environment configuration of the function.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionConfigurationEnvironment {
+pub struct FunctionConfigurationEnvironment  {
     /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
     #[doc(hidden)]
     pub access_sysfs: bool,
@@ -3864,12 +3579,10 @@ pub struct FunctionConfigurationEnvironment {
     pub execution: std::option::Option<crate::model::FunctionExecutionConfig>,
     /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
     #[doc(hidden)]
-    pub resource_access_policies:
-        std::option::Option<std::vec::Vec<crate::model::ResourceAccessPolicy>>,
+    pub resource_access_policies: std::option::Option<std::vec::Vec<crate::model::ResourceAccessPolicy>>,
     /// Environment variables for the Lambda function's configuration.
     #[doc(hidden)]
-    pub variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl FunctionConfigurationEnvironment {
     /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
@@ -3877,36 +3590,28 @@ impl FunctionConfigurationEnvironment {
         self.access_sysfs
     }
     /// Configuration related to executing the Lambda function
-    pub fn execution(&self) -> std::option::Option<&crate::model::FunctionExecutionConfig> {
+    pub fn execution(&self) -> std::option::Option<& crate::model::FunctionExecutionConfig> {
         self.execution.as_ref()
     }
     /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
-    pub fn resource_access_policies(
-        &self,
-    ) -> std::option::Option<&[crate::model::ResourceAccessPolicy]> {
+    pub fn resource_access_policies(&self) -> std::option::Option<& [crate::model::ResourceAccessPolicy]> {
         self.resource_access_policies.as_deref()
     }
     /// Environment variables for the Lambda function's configuration.
-    pub fn variables(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.variables.as_ref()
     }
 }
 /// See [`FunctionConfigurationEnvironment`](crate::model::FunctionConfigurationEnvironment).
 pub mod function_configuration_environment {
-
+    
     /// A builder for [`FunctionConfigurationEnvironment`](crate::model::FunctionConfigurationEnvironment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_sysfs: std::option::Option<bool>,
         pub(crate) execution: std::option::Option<crate::model::FunctionExecutionConfig>,
-        pub(crate) resource_access_policies:
-            std::option::Option<std::vec::Vec<crate::model::ResourceAccessPolicy>>,
-        pub(crate) variables: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) resource_access_policies: std::option::Option<std::vec::Vec<crate::model::ResourceAccessPolicy>>,
+        pub(crate) variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
@@ -3916,8 +3621,7 @@ pub mod function_configuration_environment {
         }
         /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
         pub fn set_access_sysfs(mut self, input: std::option::Option<bool>) -> Self {
-            self.access_sysfs = input;
-            self
+            self.access_sysfs = input; self
         }
         /// Configuration related to executing the Lambda function
         pub fn execution(mut self, input: crate::model::FunctionExecutionConfig) -> Self {
@@ -3925,70 +3629,56 @@ pub mod function_configuration_environment {
             self
         }
         /// Configuration related to executing the Lambda function
-        pub fn set_execution(
-            mut self,
-            input: std::option::Option<crate::model::FunctionExecutionConfig>,
-        ) -> Self {
-            self.execution = input;
-            self
+        pub fn set_execution(mut self, input: std::option::Option<crate::model::FunctionExecutionConfig>) -> Self {
+            self.execution = input; self
         }
         /// Appends an item to `resource_access_policies`.
         ///
         /// To override the contents of this collection use [`set_resource_access_policies`](Self::set_resource_access_policies).
         ///
         /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
-        pub fn resource_access_policies(
-            mut self,
-            input: crate::model::ResourceAccessPolicy,
-        ) -> Self {
+        pub fn resource_access_policies(mut self, input: crate::model::ResourceAccessPolicy) -> Self {
             let mut v = self.resource_access_policies.unwrap_or_default();
-            v.push(input);
-            self.resource_access_policies = Some(v);
-            self
+                            v.push(input);
+                            self.resource_access_policies = Some(v);
+                            self
         }
         /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
-        pub fn set_resource_access_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceAccessPolicy>>,
-        ) -> Self {
-            self.resource_access_policies = input;
-            self
+        pub fn set_resource_access_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceAccessPolicy>>) -> Self {
+            self.resource_access_policies = input; self
         }
         /// Adds a key-value pair to `variables`.
         ///
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
         /// Environment variables for the Lambda function's configuration.
-        pub fn variables(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.variables.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.variables = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.variables = Some(hash_map);
+                            self
         }
         /// Environment variables for the Lambda function's configuration.
-        pub fn set_variables(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.variables = input;
-            self
+        pub fn set_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.variables = input; self
         }
         /// Consumes the builder and constructs a [`FunctionConfigurationEnvironment`](crate::model::FunctionConfigurationEnvironment).
         pub fn build(self) -> crate::model::FunctionConfigurationEnvironment {
             crate::model::FunctionConfigurationEnvironment {
-                access_sysfs: self.access_sysfs.unwrap_or_default(),
-                execution: self.execution,
-                resource_access_policies: self.resource_access_policies,
-                variables: self.variables,
+                access_sysfs: self.access_sysfs
+                    .unwrap_or_default()
+                ,
+                execution: self.execution
+                ,
+                resource_access_policies: self.resource_access_policies
+                ,
+                variables: self.variables
+                ,
             }
         }
     }
+    
+    
 }
 impl FunctionConfigurationEnvironment {
     /// Creates a new builder-style object to manufacture [`FunctionConfigurationEnvironment`](crate::model::FunctionConfigurationEnvironment).
@@ -4000,7 +3690,7 @@ impl FunctionConfigurationEnvironment {
 /// A policy used by the function to access a resource.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceAccessPolicy {
+pub struct ResourceAccessPolicy  {
     /// The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro'' (read-only).
     #[doc(hidden)]
     pub permission: std::option::Option<crate::model::Permission>,
@@ -4010,17 +3700,17 @@ pub struct ResourceAccessPolicy {
 }
 impl ResourceAccessPolicy {
     /// The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro'' (read-only).
-    pub fn permission(&self) -> std::option::Option<&crate::model::Permission> {
+    pub fn permission(&self) -> std::option::Option<& crate::model::Permission> {
         self.permission.as_ref()
     }
     /// The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
 /// See [`ResourceAccessPolicy`](crate::model::ResourceAccessPolicy).
 pub mod resource_access_policy {
-
+    
     /// A builder for [`ResourceAccessPolicy`](crate::model::ResourceAccessPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4034,12 +3724,8 @@ pub mod resource_access_policy {
             self
         }
         /// The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro'' (read-only).
-        pub fn set_permission(
-            mut self,
-            input: std::option::Option<crate::model::Permission>,
-        ) -> Self {
-            self.permission = input;
-            self
+        pub fn set_permission(mut self, input: std::option::Option<crate::model::Permission>) -> Self {
+            self.permission = input; self
         }
         /// The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4048,17 +3734,20 @@ pub mod resource_access_policy {
         }
         /// The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// Consumes the builder and constructs a [`ResourceAccessPolicy`](crate::model::ResourceAccessPolicy).
         pub fn build(self) -> crate::model::ResourceAccessPolicy {
             crate::model::ResourceAccessPolicy {
-                permission: self.permission,
-                resource_id: self.resource_id,
+                permission: self.permission
+                ,
+                resource_id: self.resource_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceAccessPolicy {
     /// Creates a new builder-style object to manufacture [`ResourceAccessPolicy`](crate::model::ResourceAccessPolicy).
@@ -4070,7 +3759,7 @@ impl ResourceAccessPolicy {
 /// Configuration information that specifies how a Lambda function runs.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionExecutionConfig {
+pub struct FunctionExecutionConfig  {
     /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
     #[doc(hidden)]
     pub isolation_mode: std::option::Option<crate::model::FunctionIsolationMode>,
@@ -4080,17 +3769,17 @@ pub struct FunctionExecutionConfig {
 }
 impl FunctionExecutionConfig {
     /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
-    pub fn isolation_mode(&self) -> std::option::Option<&crate::model::FunctionIsolationMode> {
+    pub fn isolation_mode(&self) -> std::option::Option<& crate::model::FunctionIsolationMode> {
         self.isolation_mode.as_ref()
     }
     /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
-    pub fn run_as(&self) -> std::option::Option<&crate::model::FunctionRunAsConfig> {
+    pub fn run_as(&self) -> std::option::Option<& crate::model::FunctionRunAsConfig> {
         self.run_as.as_ref()
     }
 }
 /// See [`FunctionExecutionConfig`](crate::model::FunctionExecutionConfig).
 pub mod function_execution_config {
-
+    
     /// A builder for [`FunctionExecutionConfig`](crate::model::FunctionExecutionConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4104,12 +3793,8 @@ pub mod function_execution_config {
             self
         }
         /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
-        pub fn set_isolation_mode(
-            mut self,
-            input: std::option::Option<crate::model::FunctionIsolationMode>,
-        ) -> Self {
-            self.isolation_mode = input;
-            self
+        pub fn set_isolation_mode(mut self, input: std::option::Option<crate::model::FunctionIsolationMode>) -> Self {
+            self.isolation_mode = input; self
         }
         /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
         pub fn run_as(mut self, input: crate::model::FunctionRunAsConfig) -> Self {
@@ -4117,21 +3802,21 @@ pub mod function_execution_config {
             self
         }
         /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
-        pub fn set_run_as(
-            mut self,
-            input: std::option::Option<crate::model::FunctionRunAsConfig>,
-        ) -> Self {
-            self.run_as = input;
-            self
+        pub fn set_run_as(mut self, input: std::option::Option<crate::model::FunctionRunAsConfig>) -> Self {
+            self.run_as = input; self
         }
         /// Consumes the builder and constructs a [`FunctionExecutionConfig`](crate::model::FunctionExecutionConfig).
         pub fn build(self) -> crate::model::FunctionExecutionConfig {
             crate::model::FunctionExecutionConfig {
-                isolation_mode: self.isolation_mode,
-                run_as: self.run_as,
+                isolation_mode: self.isolation_mode
+                ,
+                run_as: self.run_as
+                ,
             }
         }
     }
+    
+    
 }
 impl FunctionExecutionConfig {
     /// Creates a new builder-style object to manufacture [`FunctionExecutionConfig`](crate::model::FunctionExecutionConfig).
@@ -4143,7 +3828,7 @@ impl FunctionExecutionConfig {
 /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionRunAsConfig {
+pub struct FunctionRunAsConfig  {
     /// The group ID whose permissions are used to run a Lambda function.
     #[doc(hidden)]
     pub gid: i32,
@@ -4163,7 +3848,7 @@ impl FunctionRunAsConfig {
 }
 /// See [`FunctionRunAsConfig`](crate::model::FunctionRunAsConfig).
 pub mod function_run_as_config {
-
+    
     /// A builder for [`FunctionRunAsConfig`](crate::model::FunctionRunAsConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4178,8 +3863,7 @@ pub mod function_run_as_config {
         }
         /// The group ID whose permissions are used to run a Lambda function.
         pub fn set_gid(mut self, input: std::option::Option<i32>) -> Self {
-            self.gid = input;
-            self
+            self.gid = input; self
         }
         /// The user ID whose permissions are used to run a Lambda function.
         pub fn uid(mut self, input: i32) -> Self {
@@ -4188,17 +3872,22 @@ pub mod function_run_as_config {
         }
         /// The user ID whose permissions are used to run a Lambda function.
         pub fn set_uid(mut self, input: std::option::Option<i32>) -> Self {
-            self.uid = input;
-            self
+            self.uid = input; self
         }
         /// Consumes the builder and constructs a [`FunctionRunAsConfig`](crate::model::FunctionRunAsConfig).
         pub fn build(self) -> crate::model::FunctionRunAsConfig {
             crate::model::FunctionRunAsConfig {
-                gid: self.gid.unwrap_or_default(),
-                uid: self.uid.unwrap_or_default(),
+                gid: self.gid
+                    .unwrap_or_default()
+                ,
+                uid: self.uid
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl FunctionRunAsConfig {
     /// Creates a new builder-style object to manufacture [`FunctionRunAsConfig`](crate::model::FunctionRunAsConfig).
@@ -4213,9 +3902,9 @@ impl FunctionRunAsConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let functionisolationmode = unimplemented!();
 /// match functionisolationmode {
@@ -4237,60 +3926,52 @@ impl FunctionRunAsConfig {
 /// Specifically, when `functionisolationmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FunctionIsolationMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FunctionIsolationMode {
     #[allow(missing_docs)] // documentation missing in model
     GreengrassContainer,
     #[allow(missing_docs)] // documentation missing in model
     NoContainer,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FunctionIsolationMode {
     fn from(s: &str) -> Self {
         match s {
             "GreengrassContainer" => FunctionIsolationMode::GreengrassContainer,
             "NoContainer" => FunctionIsolationMode::NoContainer,
-            other => {
-                FunctionIsolationMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FunctionIsolationMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FunctionIsolationMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FunctionIsolationMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FunctionIsolationMode::from(s))
+                }
+            }
 impl FunctionIsolationMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FunctionIsolationMode::GreengrassContainer => "GreengrassContainer",
             FunctionIsolationMode::NoContainer => "NoContainer",
-            FunctionIsolationMode::Unknown(value) => value.as_str(),
+            FunctionIsolationMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GreengrassContainer", "NoContainer"]
+        &[
+            "GreengrassContainer", "NoContainer"
+        ]
     }
 }
 impl AsRef<str> for FunctionIsolationMode {
@@ -4305,9 +3986,9 @@ impl AsRef<str> for FunctionIsolationMode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encodingtype = unimplemented!();
 /// match encodingtype {
@@ -4329,58 +4010,52 @@ impl AsRef<str> for FunctionIsolationMode {
 /// Specifically, when `encodingtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncodingType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EncodingType {
     #[allow(missing_docs)] // documentation missing in model
     Binary,
     #[allow(missing_docs)] // documentation missing in model
     Json,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncodingType {
     fn from(s: &str) -> Self {
         match s {
             "binary" => EncodingType::Binary,
             "json" => EncodingType::Json,
-            other => EncodingType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EncodingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EncodingType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncodingType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EncodingType::from(s))
+                }
+            }
 impl EncodingType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncodingType::Binary => "binary",
             EncodingType::Json => "json",
-            EncodingType::Unknown(value) => value.as_str(),
+            EncodingType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["binary", "json"]
+        &[
+            "binary", "json"
+        ]
     }
 }
 impl AsRef<str> for EncodingType {
@@ -4392,20 +4067,20 @@ impl AsRef<str> for EncodingType {
 /// The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionDefaultConfig {
+pub struct FunctionDefaultConfig  {
     /// Configuration information that specifies how a Lambda function runs.
     #[doc(hidden)]
     pub execution: std::option::Option<crate::model::FunctionDefaultExecutionConfig>,
 }
 impl FunctionDefaultConfig {
     /// Configuration information that specifies how a Lambda function runs.
-    pub fn execution(&self) -> std::option::Option<&crate::model::FunctionDefaultExecutionConfig> {
+    pub fn execution(&self) -> std::option::Option<& crate::model::FunctionDefaultExecutionConfig> {
         self.execution.as_ref()
     }
 }
 /// See [`FunctionDefaultConfig`](crate::model::FunctionDefaultConfig).
 pub mod function_default_config {
-
+    
     /// A builder for [`FunctionDefaultConfig`](crate::model::FunctionDefaultConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4418,20 +4093,19 @@ pub mod function_default_config {
             self
         }
         /// Configuration information that specifies how a Lambda function runs.
-        pub fn set_execution(
-            mut self,
-            input: std::option::Option<crate::model::FunctionDefaultExecutionConfig>,
-        ) -> Self {
-            self.execution = input;
-            self
+        pub fn set_execution(mut self, input: std::option::Option<crate::model::FunctionDefaultExecutionConfig>) -> Self {
+            self.execution = input; self
         }
         /// Consumes the builder and constructs a [`FunctionDefaultConfig`](crate::model::FunctionDefaultConfig).
         pub fn build(self) -> crate::model::FunctionDefaultConfig {
             crate::model::FunctionDefaultConfig {
-                execution: self.execution,
+                execution: self.execution
+                ,
             }
         }
     }
+    
+    
 }
 impl FunctionDefaultConfig {
     /// Creates a new builder-style object to manufacture [`FunctionDefaultConfig`](crate::model::FunctionDefaultConfig).
@@ -4443,7 +4117,7 @@ impl FunctionDefaultConfig {
 /// Configuration information that specifies how a Lambda function runs.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionDefaultExecutionConfig {
+pub struct FunctionDefaultExecutionConfig  {
     /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
     #[doc(hidden)]
     pub isolation_mode: std::option::Option<crate::model::FunctionIsolationMode>,
@@ -4453,17 +4127,17 @@ pub struct FunctionDefaultExecutionConfig {
 }
 impl FunctionDefaultExecutionConfig {
     /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
-    pub fn isolation_mode(&self) -> std::option::Option<&crate::model::FunctionIsolationMode> {
+    pub fn isolation_mode(&self) -> std::option::Option<& crate::model::FunctionIsolationMode> {
         self.isolation_mode.as_ref()
     }
     /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
-    pub fn run_as(&self) -> std::option::Option<&crate::model::FunctionRunAsConfig> {
+    pub fn run_as(&self) -> std::option::Option<& crate::model::FunctionRunAsConfig> {
         self.run_as.as_ref()
     }
 }
 /// See [`FunctionDefaultExecutionConfig`](crate::model::FunctionDefaultExecutionConfig).
 pub mod function_default_execution_config {
-
+    
     /// A builder for [`FunctionDefaultExecutionConfig`](crate::model::FunctionDefaultExecutionConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4477,12 +4151,8 @@ pub mod function_default_execution_config {
             self
         }
         /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
-        pub fn set_isolation_mode(
-            mut self,
-            input: std::option::Option<crate::model::FunctionIsolationMode>,
-        ) -> Self {
-            self.isolation_mode = input;
-            self
+        pub fn set_isolation_mode(mut self, input: std::option::Option<crate::model::FunctionIsolationMode>) -> Self {
+            self.isolation_mode = input; self
         }
         /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
         pub fn run_as(mut self, input: crate::model::FunctionRunAsConfig) -> Self {
@@ -4490,21 +4160,21 @@ pub mod function_default_execution_config {
             self
         }
         /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
-        pub fn set_run_as(
-            mut self,
-            input: std::option::Option<crate::model::FunctionRunAsConfig>,
-        ) -> Self {
-            self.run_as = input;
-            self
+        pub fn set_run_as(mut self, input: std::option::Option<crate::model::FunctionRunAsConfig>) -> Self {
+            self.run_as = input; self
         }
         /// Consumes the builder and constructs a [`FunctionDefaultExecutionConfig`](crate::model::FunctionDefaultExecutionConfig).
         pub fn build(self) -> crate::model::FunctionDefaultExecutionConfig {
             crate::model::FunctionDefaultExecutionConfig {
-                isolation_mode: self.isolation_mode,
-                run_as: self.run_as,
+                isolation_mode: self.isolation_mode
+                ,
+                run_as: self.run_as
+                ,
             }
         }
     }
+    
+    
 }
 impl FunctionDefaultExecutionConfig {
     /// Creates a new builder-style object to manufacture [`FunctionDefaultExecutionConfig`](crate::model::FunctionDefaultExecutionConfig).
@@ -4516,20 +4186,20 @@ impl FunctionDefaultExecutionConfig {
 /// Information about a device definition version.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceDefinitionVersion {
+pub struct DeviceDefinitionVersion  {
     /// A list of devices in the definition version.
     #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
 }
 impl DeviceDefinitionVersion {
     /// A list of devices in the definition version.
-    pub fn devices(&self) -> std::option::Option<&[crate::model::Device]> {
+    pub fn devices(&self) -> std::option::Option<& [crate::model::Device]> {
         self.devices.as_deref()
     }
 }
 /// See [`DeviceDefinitionVersion`](crate::model::DeviceDefinitionVersion).
 pub mod device_definition_version {
-
+    
     /// A builder for [`DeviceDefinitionVersion`](crate::model::DeviceDefinitionVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4543,25 +4213,24 @@ pub mod device_definition_version {
         /// A list of devices in the definition version.
         pub fn devices(mut self, input: crate::model::Device) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input);
-            self.devices = Some(v);
-            self
+                            v.push(input);
+                            self.devices = Some(v);
+                            self
         }
         /// A list of devices in the definition version.
-        pub fn set_devices(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Device>>,
-        ) -> Self {
-            self.devices = input;
-            self
+        pub fn set_devices(mut self, input: std::option::Option<std::vec::Vec<crate::model::Device>>) -> Self {
+            self.devices = input; self
         }
         /// Consumes the builder and constructs a [`DeviceDefinitionVersion`](crate::model::DeviceDefinitionVersion).
         pub fn build(self) -> crate::model::DeviceDefinitionVersion {
             crate::model::DeviceDefinitionVersion {
-                devices: self.devices,
+                devices: self.devices
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceDefinitionVersion {
     /// Creates a new builder-style object to manufacture [`DeviceDefinitionVersion`](crate::model::DeviceDefinitionVersion).
@@ -4573,7 +4242,7 @@ impl DeviceDefinitionVersion {
 /// Information about a device.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Device {
+pub struct Device  {
     /// The ARN of the certificate associated with the device.
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
@@ -4589,11 +4258,11 @@ pub struct Device {
 }
 impl Device {
     /// The ARN of the certificate associated with the device.
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// If true, the device's local shadow will be automatically synced with the cloud.
@@ -4601,13 +4270,13 @@ impl Device {
         self.sync_shadow
     }
     /// The thing ARN of the device.
-    pub fn thing_arn(&self) -> std::option::Option<&str> {
+    pub fn thing_arn(&self) -> std::option::Option<& str> {
         self.thing_arn.as_deref()
     }
 }
 /// See [`Device`](crate::model::Device).
 pub mod device {
-
+    
     /// A builder for [`Device`](crate::model::Device).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4623,12 +4292,8 @@ pub mod device {
             self
         }
         /// The ARN of the certificate associated with the device.
-        pub fn set_certificate_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_arn = input;
-            self
+        pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_arn = input; self
         }
         /// A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4637,8 +4302,7 @@ pub mod device {
         }
         /// A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// If true, the device's local shadow will be automatically synced with the cloud.
         pub fn sync_shadow(mut self, input: bool) -> Self {
@@ -4647,8 +4311,7 @@ pub mod device {
         }
         /// If true, the device's local shadow will be automatically synced with the cloud.
         pub fn set_sync_shadow(mut self, input: std::option::Option<bool>) -> Self {
-            self.sync_shadow = input;
-            self
+            self.sync_shadow = input; self
         }
         /// The thing ARN of the device.
         pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4657,19 +4320,25 @@ pub mod device {
         }
         /// The thing ARN of the device.
         pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thing_arn = input;
-            self
+            self.thing_arn = input; self
         }
         /// Consumes the builder and constructs a [`Device`](crate::model::Device).
         pub fn build(self) -> crate::model::Device {
             crate::model::Device {
-                certificate_arn: self.certificate_arn,
-                id: self.id,
-                sync_shadow: self.sync_shadow.unwrap_or_default(),
-                thing_arn: self.thing_arn,
+                certificate_arn: self.certificate_arn
+                ,
+                id: self.id
+                ,
+                sync_shadow: self.sync_shadow
+                    .unwrap_or_default()
+                ,
+                thing_arn: self.thing_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Device {
     /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
@@ -4681,20 +4350,20 @@ impl Device {
 /// Information about a core definition version.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CoreDefinitionVersion {
+pub struct CoreDefinitionVersion  {
     /// A list of cores in the core definition version.
     #[doc(hidden)]
     pub cores: std::option::Option<std::vec::Vec<crate::model::Core>>,
 }
 impl CoreDefinitionVersion {
     /// A list of cores in the core definition version.
-    pub fn cores(&self) -> std::option::Option<&[crate::model::Core]> {
+    pub fn cores(&self) -> std::option::Option<& [crate::model::Core]> {
         self.cores.as_deref()
     }
 }
 /// See [`CoreDefinitionVersion`](crate::model::CoreDefinitionVersion).
 pub mod core_definition_version {
-
+    
     /// A builder for [`CoreDefinitionVersion`](crate::model::CoreDefinitionVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4708,23 +4377,24 @@ pub mod core_definition_version {
         /// A list of cores in the core definition version.
         pub fn cores(mut self, input: crate::model::Core) -> Self {
             let mut v = self.cores.unwrap_or_default();
-            v.push(input);
-            self.cores = Some(v);
-            self
+                            v.push(input);
+                            self.cores = Some(v);
+                            self
         }
         /// A list of cores in the core definition version.
-        pub fn set_cores(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Core>>,
-        ) -> Self {
-            self.cores = input;
-            self
+        pub fn set_cores(mut self, input: std::option::Option<std::vec::Vec<crate::model::Core>>) -> Self {
+            self.cores = input; self
         }
         /// Consumes the builder and constructs a [`CoreDefinitionVersion`](crate::model::CoreDefinitionVersion).
         pub fn build(self) -> crate::model::CoreDefinitionVersion {
-            crate::model::CoreDefinitionVersion { cores: self.cores }
+            crate::model::CoreDefinitionVersion {
+                cores: self.cores
+                ,
+            }
         }
     }
+    
+    
 }
 impl CoreDefinitionVersion {
     /// Creates a new builder-style object to manufacture [`CoreDefinitionVersion`](crate::model::CoreDefinitionVersion).
@@ -4736,7 +4406,7 @@ impl CoreDefinitionVersion {
 /// Information about a core.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Core {
+pub struct Core  {
     /// The ARN of the certificate associated with the core.
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
@@ -4752,11 +4422,11 @@ pub struct Core {
 }
 impl Core {
     /// The ARN of the certificate associated with the core.
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// A descriptive or arbitrary ID for the core. This value must be unique within the core definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// If true, the core's local shadow is automatically synced with the cloud.
@@ -4764,13 +4434,13 @@ impl Core {
         self.sync_shadow
     }
     /// The ARN of the thing which is the core.
-    pub fn thing_arn(&self) -> std::option::Option<&str> {
+    pub fn thing_arn(&self) -> std::option::Option<& str> {
         self.thing_arn.as_deref()
     }
 }
 /// See [`Core`](crate::model::Core).
 pub mod core {
-
+    
     /// A builder for [`Core`](crate::model::Core).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4786,12 +4456,8 @@ pub mod core {
             self
         }
         /// The ARN of the certificate associated with the core.
-        pub fn set_certificate_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_arn = input;
-            self
+        pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_arn = input; self
         }
         /// A descriptive or arbitrary ID for the core. This value must be unique within the core definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4800,8 +4466,7 @@ pub mod core {
         }
         /// A descriptive or arbitrary ID for the core. This value must be unique within the core definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// If true, the core's local shadow is automatically synced with the cloud.
         pub fn sync_shadow(mut self, input: bool) -> Self {
@@ -4810,8 +4475,7 @@ pub mod core {
         }
         /// If true, the core's local shadow is automatically synced with the cloud.
         pub fn set_sync_shadow(mut self, input: std::option::Option<bool>) -> Self {
-            self.sync_shadow = input;
-            self
+            self.sync_shadow = input; self
         }
         /// The ARN of the thing which is the core.
         pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4820,19 +4484,25 @@ pub mod core {
         }
         /// The ARN of the thing which is the core.
         pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thing_arn = input;
-            self
+            self.thing_arn = input; self
         }
         /// Consumes the builder and constructs a [`Core`](crate::model::Core).
         pub fn build(self) -> crate::model::Core {
             crate::model::Core {
-                certificate_arn: self.certificate_arn,
-                id: self.id,
-                sync_shadow: self.sync_shadow.unwrap_or_default(),
-                thing_arn: self.thing_arn,
+                certificate_arn: self.certificate_arn
+                ,
+                id: self.id
+                ,
+                sync_shadow: self.sync_shadow
+                    .unwrap_or_default()
+                ,
+                thing_arn: self.thing_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Core {
     /// Creates a new builder-style object to manufacture [`Core`](crate::model::Core).
@@ -4844,20 +4514,20 @@ impl Core {
 /// Information about the connector definition version, which is a container for connectors.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectorDefinitionVersion {
+pub struct ConnectorDefinitionVersion  {
     /// A list of references to connectors in this version, with their corresponding configuration settings.
     #[doc(hidden)]
     pub connectors: std::option::Option<std::vec::Vec<crate::model::Connector>>,
 }
 impl ConnectorDefinitionVersion {
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    pub fn connectors(&self) -> std::option::Option<&[crate::model::Connector]> {
+    pub fn connectors(&self) -> std::option::Option<& [crate::model::Connector]> {
         self.connectors.as_deref()
     }
 }
 /// See [`ConnectorDefinitionVersion`](crate::model::ConnectorDefinitionVersion).
 pub mod connector_definition_version {
-
+    
     /// A builder for [`ConnectorDefinitionVersion`](crate::model::ConnectorDefinitionVersion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4871,25 +4541,24 @@ pub mod connector_definition_version {
         /// A list of references to connectors in this version, with their corresponding configuration settings.
         pub fn connectors(mut self, input: crate::model::Connector) -> Self {
             let mut v = self.connectors.unwrap_or_default();
-            v.push(input);
-            self.connectors = Some(v);
-            self
+                            v.push(input);
+                            self.connectors = Some(v);
+                            self
         }
         /// A list of references to connectors in this version, with their corresponding configuration settings.
-        pub fn set_connectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Connector>>,
-        ) -> Self {
-            self.connectors = input;
-            self
+        pub fn set_connectors(mut self, input: std::option::Option<std::vec::Vec<crate::model::Connector>>) -> Self {
+            self.connectors = input; self
         }
         /// Consumes the builder and constructs a [`ConnectorDefinitionVersion`](crate::model::ConnectorDefinitionVersion).
         pub fn build(self) -> crate::model::ConnectorDefinitionVersion {
             crate::model::ConnectorDefinitionVersion {
-                connectors: self.connectors,
+                connectors: self.connectors
+                ,
             }
         }
     }
+    
+    
 }
 impl ConnectorDefinitionVersion {
     /// Creates a new builder-style object to manufacture [`ConnectorDefinitionVersion`](crate::model::ConnectorDefinitionVersion).
@@ -4901,7 +4570,7 @@ impl ConnectorDefinitionVersion {
 /// Information about a connector. Connectors run on the Greengrass core and contain built-in integration with local infrastructure, device protocols, AWS, and other cloud services.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Connector {
+pub struct Connector  {
     /// The ARN of the connector.
     #[doc(hidden)]
     pub connector_arn: std::option::Option<std::string::String>,
@@ -4910,37 +4579,31 @@ pub struct Connector {
     pub id: std::option::Option<std::string::String>,
     /// The parameters or configuration that the connector uses.
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Connector {
     /// The ARN of the connector.
-    pub fn connector_arn(&self) -> std::option::Option<&str> {
+    pub fn connector_arn(&self) -> std::option::Option<& str> {
         self.connector_arn.as_deref()
     }
     /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern [a-zA-Z0-9:_-]+.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The parameters or configuration that the connector uses.
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
 }
 /// See [`Connector`](crate::model::Connector).
 pub mod connector {
-
+    
     /// A builder for [`Connector`](crate::model::Connector).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_arn: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The ARN of the connector.
@@ -4949,12 +4612,8 @@ pub mod connector {
             self
         }
         /// The ARN of the connector.
-        pub fn set_connector_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connector_arn = input;
-            self
+        pub fn set_connector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_arn = input; self
         }
         /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern [a-zA-Z0-9:_-]+.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4963,43 +4622,37 @@ pub mod connector {
         }
         /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern [a-zA-Z0-9:_-]+.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// The parameters or configuration that the connector uses.
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// The parameters or configuration that the connector uses.
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`Connector`](crate::model::Connector).
         pub fn build(self) -> crate::model::Connector {
             crate::model::Connector {
-                connector_arn: self.connector_arn,
-                id: self.id,
-                parameters: self.parameters,
+                connector_arn: self.connector_arn
+                ,
+                id: self.id
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl Connector {
     /// Creates a new builder-style object to manufacture [`Connector`](crate::model::Connector).
@@ -5014,9 +4667,9 @@ impl Connector {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let bulkdeploymentstatus = unimplemented!();
 /// match bulkdeploymentstatus {
@@ -5042,22 +4695,14 @@ impl Connector {
 /// Specifically, when `bulkdeploymentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BulkDeploymentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// The current status of the bulk deployment.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BulkDeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -5072,7 +4717,7 @@ pub enum BulkDeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BulkDeploymentStatus {
     fn from(s: &str) -> Self {
@@ -5083,19 +4728,17 @@ impl std::convert::From<&str> for BulkDeploymentStatus {
             "Running" => BulkDeploymentStatus::Running,
             "Stopped" => BulkDeploymentStatus::Stopped,
             "Stopping" => BulkDeploymentStatus::Stopping,
-            other => {
-                BulkDeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => BulkDeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BulkDeploymentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BulkDeploymentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BulkDeploymentStatus::from(s))
+                }
+            }
 impl BulkDeploymentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5106,18 +4749,13 @@ impl BulkDeploymentStatus {
             BulkDeploymentStatus::Running => "Running",
             BulkDeploymentStatus::Stopped => "Stopped",
             BulkDeploymentStatus::Stopping => "Stopping",
-            BulkDeploymentStatus::Unknown(value) => value.as_str(),
+            BulkDeploymentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Completed",
-            "Failed",
-            "Initializing",
-            "Running",
-            "Stopped",
-            "Stopping",
+            "Completed", "Failed", "Initializing", "Running", "Stopped", "Stopping"
         ]
     }
 }
@@ -5130,7 +4768,7 @@ impl AsRef<str> for BulkDeploymentStatus {
 /// Relevant metrics on input records processed during bulk deployment.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BulkDeploymentMetrics {
+pub struct BulkDeploymentMetrics  {
     /// The total number of records that returned a non-retryable error. For example, this can occur if a group record from the input file uses an invalid format or specifies a nonexistent group version, or if the execution role doesn't grant permission to deploy a group or group version.
     #[doc(hidden)]
     pub invalid_input_records: i32,
@@ -5157,7 +4795,7 @@ impl BulkDeploymentMetrics {
 }
 /// See [`BulkDeploymentMetrics`](crate::model::BulkDeploymentMetrics).
 pub mod bulk_deployment_metrics {
-
+    
     /// A builder for [`BulkDeploymentMetrics`](crate::model::BulkDeploymentMetrics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5173,8 +4811,7 @@ pub mod bulk_deployment_metrics {
         }
         /// The total number of records that returned a non-retryable error. For example, this can occur if a group record from the input file uses an invalid format or specifies a nonexistent group version, or if the execution role doesn't grant permission to deploy a group or group version.
         pub fn set_invalid_input_records(mut self, input: std::option::Option<i32>) -> Self {
-            self.invalid_input_records = input;
-            self
+            self.invalid_input_records = input; self
         }
         /// The total number of group records from the input file that have been processed so far, or attempted.
         pub fn records_processed(mut self, input: i32) -> Self {
@@ -5183,8 +4820,7 @@ pub mod bulk_deployment_metrics {
         }
         /// The total number of group records from the input file that have been processed so far, or attempted.
         pub fn set_records_processed(mut self, input: std::option::Option<i32>) -> Self {
-            self.records_processed = input;
-            self
+            self.records_processed = input; self
         }
         /// The total number of deployment attempts that returned a retryable error. For example, a retry is triggered if the attempt to deploy a group returns a throttling error. ''StartBulkDeployment'' retries a group deployment up to five times.
         pub fn retry_attempts(mut self, input: i32) -> Self {
@@ -5193,18 +4829,25 @@ pub mod bulk_deployment_metrics {
         }
         /// The total number of deployment attempts that returned a retryable error. For example, a retry is triggered if the attempt to deploy a group returns a throttling error. ''StartBulkDeployment'' retries a group deployment up to five times.
         pub fn set_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.retry_attempts = input;
-            self
+            self.retry_attempts = input; self
         }
         /// Consumes the builder and constructs a [`BulkDeploymentMetrics`](crate::model::BulkDeploymentMetrics).
         pub fn build(self) -> crate::model::BulkDeploymentMetrics {
             crate::model::BulkDeploymentMetrics {
-                invalid_input_records: self.invalid_input_records.unwrap_or_default(),
-                records_processed: self.records_processed.unwrap_or_default(),
-                retry_attempts: self.retry_attempts.unwrap_or_default(),
+                invalid_input_records: self.invalid_input_records
+                    .unwrap_or_default()
+                ,
+                records_processed: self.records_processed
+                    .unwrap_or_default()
+                ,
+                retry_attempts: self.retry_attempts
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl BulkDeploymentMetrics {
     /// Creates a new builder-style object to manufacture [`BulkDeploymentMetrics`](crate::model::BulkDeploymentMetrics).
@@ -5219,9 +4862,9 @@ impl BulkDeploymentMetrics {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let updatetargetsoperatingsystem = unimplemented!();
 /// match updatetargetsoperatingsystem {
@@ -5245,22 +4888,14 @@ impl BulkDeploymentMetrics {
 /// Specifically, when `updatetargetsoperatingsystem` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateTargetsOperatingSystem::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// The operating system of the cores which are the targets of an update.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UpdateTargetsOperatingSystem {
     #[allow(missing_docs)] // documentation missing in model
     AmazonLinux,
@@ -5271,7 +4906,7 @@ pub enum UpdateTargetsOperatingSystem {
     #[allow(missing_docs)] // documentation missing in model
     Ubuntu,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateTargetsOperatingSystem {
     fn from(s: &str) -> Self {
@@ -5280,19 +4915,17 @@ impl std::convert::From<&str> for UpdateTargetsOperatingSystem {
             "openwrt" => UpdateTargetsOperatingSystem::Openwrt,
             "raspbian" => UpdateTargetsOperatingSystem::Raspbian,
             "ubuntu" => UpdateTargetsOperatingSystem::Ubuntu,
-            other => UpdateTargetsOperatingSystem::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => UpdateTargetsOperatingSystem::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UpdateTargetsOperatingSystem {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateTargetsOperatingSystem::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UpdateTargetsOperatingSystem::from(s))
+                }
+            }
 impl UpdateTargetsOperatingSystem {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5301,12 +4934,14 @@ impl UpdateTargetsOperatingSystem {
             UpdateTargetsOperatingSystem::Openwrt => "openwrt",
             UpdateTargetsOperatingSystem::Raspbian => "raspbian",
             UpdateTargetsOperatingSystem::Ubuntu => "ubuntu",
-            UpdateTargetsOperatingSystem::Unknown(value) => value.as_str(),
+            UpdateTargetsOperatingSystem::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["amazon_linux", "openwrt", "raspbian", "ubuntu"]
+        &[
+            "amazon_linux", "openwrt", "raspbian", "ubuntu"
+        ]
     }
 }
 impl AsRef<str> for UpdateTargetsOperatingSystem {
@@ -5321,9 +4956,9 @@ impl AsRef<str> for UpdateTargetsOperatingSystem {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let updatetargetsarchitecture = unimplemented!();
 /// match updatetargetsarchitecture {
@@ -5347,22 +4982,14 @@ impl AsRef<str> for UpdateTargetsOperatingSystem {
 /// Specifically, when `updatetargetsarchitecture` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateTargetsArchitecture::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// The architecture of the cores which are the targets of an update.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UpdateTargetsArchitecture {
     #[allow(missing_docs)] // documentation missing in model
     Aarch64,
@@ -5373,7 +5000,7 @@ pub enum UpdateTargetsArchitecture {
     #[allow(missing_docs)] // documentation missing in model
     X8664,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateTargetsArchitecture {
     fn from(s: &str) -> Self {
@@ -5382,19 +5009,17 @@ impl std::convert::From<&str> for UpdateTargetsArchitecture {
             "armv6l" => UpdateTargetsArchitecture::Armv6l,
             "armv7l" => UpdateTargetsArchitecture::Armv7l,
             "x86_64" => UpdateTargetsArchitecture::X8664,
-            other => UpdateTargetsArchitecture::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => UpdateTargetsArchitecture::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UpdateTargetsArchitecture {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateTargetsArchitecture::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UpdateTargetsArchitecture::from(s))
+                }
+            }
 impl UpdateTargetsArchitecture {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5403,12 +5028,14 @@ impl UpdateTargetsArchitecture {
             UpdateTargetsArchitecture::Armv6l => "armv6l",
             UpdateTargetsArchitecture::Armv7l => "armv7l",
             UpdateTargetsArchitecture::X8664 => "x86_64",
-            UpdateTargetsArchitecture::Unknown(value) => value.as_str(),
+            UpdateTargetsArchitecture::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["aarch64", "armv6l", "armv7l", "x86_64"]
+        &[
+            "aarch64", "armv6l", "armv7l", "x86_64"
+        ]
     }
 }
 impl AsRef<str> for UpdateTargetsArchitecture {
@@ -5423,9 +5050,9 @@ impl AsRef<str> for UpdateTargetsArchitecture {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let updateagentloglevel = unimplemented!();
 /// match updateagentloglevel {
@@ -5453,22 +5080,14 @@ impl AsRef<str> for UpdateTargetsArchitecture {
 /// Specifically, when `updateagentloglevel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateAgentLogLevel::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// The minimum level of log statements that should be logged by the OTA Agent during an update.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UpdateAgentLogLevel {
     #[allow(missing_docs)] // documentation missing in model
     Debug,
@@ -5487,7 +5106,7 @@ pub enum UpdateAgentLogLevel {
     #[allow(missing_docs)] // documentation missing in model
     Warn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateAgentLogLevel {
     fn from(s: &str) -> Self {
@@ -5500,19 +5119,17 @@ impl std::convert::From<&str> for UpdateAgentLogLevel {
             "TRACE" => UpdateAgentLogLevel::Trace,
             "VERBOSE" => UpdateAgentLogLevel::Verbose,
             "WARN" => UpdateAgentLogLevel::Warn,
-            other => {
-                UpdateAgentLogLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => UpdateAgentLogLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UpdateAgentLogLevel {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateAgentLogLevel::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UpdateAgentLogLevel::from(s))
+                }
+            }
 impl UpdateAgentLogLevel {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5525,13 +5142,13 @@ impl UpdateAgentLogLevel {
             UpdateAgentLogLevel::Trace => "TRACE",
             UpdateAgentLogLevel::Verbose => "VERBOSE",
             UpdateAgentLogLevel::Warn => "WARN",
-            UpdateAgentLogLevel::Unknown(value) => value.as_str(),
+            UpdateAgentLogLevel::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DEBUG", "ERROR", "FATAL", "INFO", "NONE", "TRACE", "VERBOSE", "WARN",
+            "DEBUG", "ERROR", "FATAL", "INFO", "NONE", "TRACE", "VERBOSE", "WARN"
         ]
     }
 }
@@ -5547,9 +5164,9 @@ impl AsRef<str> for UpdateAgentLogLevel {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let softwaretoupdate = unimplemented!();
 /// match softwaretoupdate {
@@ -5571,58 +5188,52 @@ impl AsRef<str> for UpdateAgentLogLevel {
 /// Specifically, when `softwaretoupdate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SoftwareToUpdate::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// The piece of software on the Greengrass core that will be updated.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SoftwareToUpdate {
     #[allow(missing_docs)] // documentation missing in model
     Core,
     #[allow(missing_docs)] // documentation missing in model
     OtaAgent,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SoftwareToUpdate {
     fn from(s: &str) -> Self {
         match s {
             "core" => SoftwareToUpdate::Core,
             "ota_agent" => SoftwareToUpdate::OtaAgent,
-            other => SoftwareToUpdate::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SoftwareToUpdate::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SoftwareToUpdate {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SoftwareToUpdate::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SoftwareToUpdate::from(s))
+                }
+            }
 impl SoftwareToUpdate {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SoftwareToUpdate::Core => "core",
             SoftwareToUpdate::OtaAgent => "ota_agent",
-            SoftwareToUpdate::Unknown(value) => value.as_str(),
+            SoftwareToUpdate::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["core", "ota_agent"]
+        &[
+            "core", "ota_agent"
+        ]
     }
 }
 impl AsRef<str> for SoftwareToUpdate {
@@ -5630,3 +5241,4 @@ impl AsRef<str> for SoftwareToUpdate {
         self.as_str()
     }
 }
+

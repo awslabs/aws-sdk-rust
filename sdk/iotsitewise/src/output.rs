@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProjectOutput {}
+pub struct UpdateProjectOutput  {
+}
 /// See [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
 pub mod update_project_output {
-
+    
     /// A builder for [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
         pub fn build(self) -> crate::output::UpdateProjectOutput {
-            crate::output::UpdateProjectOutput {}
+            crate::output::UpdateProjectOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateProjectOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
@@ -26,20 +31,20 @@ impl UpdateProjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePortalOutput {
+pub struct UpdatePortalOutput  {
     /// <p>The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     #[doc(hidden)]
     pub portal_status: std::option::Option<crate::model::PortalStatus>,
 }
 impl UpdatePortalOutput {
     /// <p>The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn portal_status(&self) -> std::option::Option<&crate::model::PortalStatus> {
+    pub fn portal_status(&self) -> std::option::Option<& crate::model::PortalStatus> {
         self.portal_status.as_ref()
     }
 }
 /// See [`UpdatePortalOutput`](crate::output::UpdatePortalOutput).
 pub mod update_portal_output {
-
+    
     /// A builder for [`UpdatePortalOutput`](crate::output::UpdatePortalOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -52,20 +57,19 @@ pub mod update_portal_output {
             self
         }
         /// <p>The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
-        pub fn set_portal_status(
-            mut self,
-            input: std::option::Option<crate::model::PortalStatus>,
-        ) -> Self {
-            self.portal_status = input;
-            self
+        pub fn set_portal_status(mut self, input: std::option::Option<crate::model::PortalStatus>) -> Self {
+            self.portal_status = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePortalOutput`](crate::output::UpdatePortalOutput).
         pub fn build(self) -> crate::output::UpdatePortalOutput {
             crate::output::UpdatePortalOutput {
-                portal_status: self.portal_status,
+                portal_status: self.portal_status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePortalOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePortalOutput`](crate::output::UpdatePortalOutput).
@@ -77,41 +81,39 @@ impl UpdatePortalOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGatewayCapabilityConfigurationOutput {
+pub struct UpdateGatewayCapabilityConfigurationOutput  {
     /// <p>The namespace of the gateway capability.</p>
     #[doc(hidden)]
     pub capability_namespace: std::option::Option<std::string::String>,
-    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
-    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
-    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
-    /// </ul>
+    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> 
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> 
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> 
+    /// </ul> 
     /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
     #[doc(hidden)]
     pub capability_sync_status: std::option::Option<crate::model::CapabilitySyncStatus>,
 }
 impl UpdateGatewayCapabilityConfigurationOutput {
     /// <p>The namespace of the gateway capability.</p>
-    pub fn capability_namespace(&self) -> std::option::Option<&str> {
+    pub fn capability_namespace(&self) -> std::option::Option<& str> {
         self.capability_namespace.as_deref()
     }
-    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
-    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
-    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
-    /// </ul>
+    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> 
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> 
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> 
+    /// </ul> 
     /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
-    pub fn capability_sync_status(
-        &self,
-    ) -> std::option::Option<&crate::model::CapabilitySyncStatus> {
+    pub fn capability_sync_status(&self) -> std::option::Option<& crate::model::CapabilitySyncStatus> {
         self.capability_sync_status.as_ref()
     }
 }
 /// See [`UpdateGatewayCapabilityConfigurationOutput`](crate::output::UpdateGatewayCapabilityConfigurationOutput).
 pub mod update_gateway_capability_configuration_output {
-
+    
     /// A builder for [`UpdateGatewayCapabilityConfigurationOutput`](crate::output::UpdateGatewayCapabilityConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -125,46 +127,42 @@ pub mod update_gateway_capability_configuration_output {
             self
         }
         /// <p>The namespace of the gateway capability.</p>
-        pub fn set_capability_namespace(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.capability_namespace = input;
-            self
+        pub fn set_capability_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.capability_namespace = input; self
         }
-        /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
-        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
-        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
-        /// </ul>
+        /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> 
+        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> 
+        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> 
+        /// </ul> 
         /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
         pub fn capability_sync_status(mut self, input: crate::model::CapabilitySyncStatus) -> Self {
             self.capability_sync_status = Some(input);
             self
         }
-        /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
-        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
-        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
-        /// </ul>
+        /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> 
+        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> 
+        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> 
+        /// </ul> 
         /// <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
-        pub fn set_capability_sync_status(
-            mut self,
-            input: std::option::Option<crate::model::CapabilitySyncStatus>,
-        ) -> Self {
-            self.capability_sync_status = input;
-            self
+        pub fn set_capability_sync_status(mut self, input: std::option::Option<crate::model::CapabilitySyncStatus>) -> Self {
+            self.capability_sync_status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGatewayCapabilityConfigurationOutput`](crate::output::UpdateGatewayCapabilityConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateGatewayCapabilityConfigurationOutput {
             crate::output::UpdateGatewayCapabilityConfigurationOutput {
-                capability_namespace: self.capability_namespace,
-                capability_sync_status: self.capability_sync_status,
+                capability_namespace: self.capability_namespace
+                ,
+                capability_sync_status: self.capability_sync_status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateGatewayCapabilityConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGatewayCapabilityConfigurationOutput`](crate::output::UpdateGatewayCapabilityConfigurationOutput).
@@ -176,19 +174,24 @@ impl UpdateGatewayCapabilityConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGatewayOutput {}
+pub struct UpdateGatewayOutput  {
+}
 /// See [`UpdateGatewayOutput`](crate::output::UpdateGatewayOutput).
 pub mod update_gateway_output {
-
+    
     /// A builder for [`UpdateGatewayOutput`](crate::output::UpdateGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateGatewayOutput`](crate::output::UpdateGatewayOutput).
         pub fn build(self) -> crate::output::UpdateGatewayOutput {
-            crate::output::UpdateGatewayOutput {}
+            crate::output::UpdateGatewayOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateGatewayOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGatewayOutput`](crate::output::UpdateGatewayOutput).
@@ -200,19 +203,24 @@ impl UpdateGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDashboardOutput {}
+pub struct UpdateDashboardOutput  {
+}
 /// See [`UpdateDashboardOutput`](crate::output::UpdateDashboardOutput).
 pub mod update_dashboard_output {
-
+    
     /// A builder for [`UpdateDashboardOutput`](crate::output::UpdateDashboardOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDashboardOutput`](crate::output::UpdateDashboardOutput).
         pub fn build(self) -> crate::output::UpdateDashboardOutput {
-            crate::output::UpdateDashboardOutput {}
+            crate::output::UpdateDashboardOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateDashboardOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDashboardOutput`](crate::output::UpdateDashboardOutput).
@@ -224,19 +232,24 @@ impl UpdateDashboardOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAssetPropertyOutput {}
+pub struct UpdateAssetPropertyOutput  {
+}
 /// See [`UpdateAssetPropertyOutput`](crate::output::UpdateAssetPropertyOutput).
 pub mod update_asset_property_output {
-
+    
     /// A builder for [`UpdateAssetPropertyOutput`](crate::output::UpdateAssetPropertyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAssetPropertyOutput`](crate::output::UpdateAssetPropertyOutput).
         pub fn build(self) -> crate::output::UpdateAssetPropertyOutput {
-            crate::output::UpdateAssetPropertyOutput {}
+            crate::output::UpdateAssetPropertyOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateAssetPropertyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssetPropertyOutput`](crate::output::UpdateAssetPropertyOutput).
@@ -248,20 +261,20 @@ impl UpdateAssetPropertyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAssetModelOutput {
+pub struct UpdateAssetModelOutput  {
     /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     #[doc(hidden)]
     pub asset_model_status: std::option::Option<crate::model::AssetModelStatus>,
 }
 impl UpdateAssetModelOutput {
     /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn asset_model_status(&self) -> std::option::Option<&crate::model::AssetModelStatus> {
+    pub fn asset_model_status(&self) -> std::option::Option<& crate::model::AssetModelStatus> {
         self.asset_model_status.as_ref()
     }
 }
 /// See [`UpdateAssetModelOutput`](crate::output::UpdateAssetModelOutput).
 pub mod update_asset_model_output {
-
+    
     /// A builder for [`UpdateAssetModelOutput`](crate::output::UpdateAssetModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -274,20 +287,19 @@ pub mod update_asset_model_output {
             self
         }
         /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
-        pub fn set_asset_model_status(
-            mut self,
-            input: std::option::Option<crate::model::AssetModelStatus>,
-        ) -> Self {
-            self.asset_model_status = input;
-            self
+        pub fn set_asset_model_status(mut self, input: std::option::Option<crate::model::AssetModelStatus>) -> Self {
+            self.asset_model_status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAssetModelOutput`](crate::output::UpdateAssetModelOutput).
         pub fn build(self) -> crate::output::UpdateAssetModelOutput {
             crate::output::UpdateAssetModelOutput {
-                asset_model_status: self.asset_model_status,
+                asset_model_status: self.asset_model_status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAssetModelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssetModelOutput`](crate::output::UpdateAssetModelOutput).
@@ -299,20 +311,20 @@ impl UpdateAssetModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAssetOutput {
+pub struct UpdateAssetOutput  {
     /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     #[doc(hidden)]
     pub asset_status: std::option::Option<crate::model::AssetStatus>,
 }
 impl UpdateAssetOutput {
     /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn asset_status(&self) -> std::option::Option<&crate::model::AssetStatus> {
+    pub fn asset_status(&self) -> std::option::Option<& crate::model::AssetStatus> {
         self.asset_status.as_ref()
     }
 }
 /// See [`UpdateAssetOutput`](crate::output::UpdateAssetOutput).
 pub mod update_asset_output {
-
+    
     /// A builder for [`UpdateAssetOutput`](crate::output::UpdateAssetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -325,20 +337,19 @@ pub mod update_asset_output {
             self
         }
         /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
-        pub fn set_asset_status(
-            mut self,
-            input: std::option::Option<crate::model::AssetStatus>,
-        ) -> Self {
-            self.asset_status = input;
-            self
+        pub fn set_asset_status(mut self, input: std::option::Option<crate::model::AssetStatus>) -> Self {
+            self.asset_status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAssetOutput`](crate::output::UpdateAssetOutput).
         pub fn build(self) -> crate::output::UpdateAssetOutput {
             crate::output::UpdateAssetOutput {
-                asset_status: self.asset_status,
+                asset_status: self.asset_status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAssetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssetOutput`](crate::output::UpdateAssetOutput).
@@ -350,19 +361,24 @@ impl UpdateAssetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAccessPolicyOutput {}
+pub struct UpdateAccessPolicyOutput  {
+}
 /// See [`UpdateAccessPolicyOutput`](crate::output::UpdateAccessPolicyOutput).
 pub mod update_access_policy_output {
-
+    
     /// A builder for [`UpdateAccessPolicyOutput`](crate::output::UpdateAccessPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAccessPolicyOutput`](crate::output::UpdateAccessPolicyOutput).
         pub fn build(self) -> crate::output::UpdateAccessPolicyOutput {
-            crate::output::UpdateAccessPolicyOutput {}
+            crate::output::UpdateAccessPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccessPolicyOutput`](crate::output::UpdateAccessPolicyOutput).
@@ -374,19 +390,24 @@ impl UpdateAccessPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -398,19 +419,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -422,28 +448,27 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutStorageConfigurationOutput {
-    /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
-    /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
+pub struct PutStorageConfigurationOutput  {
+    /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li> 
+    /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub storage_type: std::option::Option<crate::model::StorageType>,
     /// <p>Contains information about the storage destination.</p>
     #[doc(hidden)]
     pub multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
-    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
-    /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-    /// </important> </li>
-    /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
-    /// </ul>
+    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important> 
+    /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p> 
+    /// </important> </li> 
+    /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
-    pub disassociated_data_storage:
-        std::option::Option<crate::model::DisassociatedDataStorageState>,
+    pub disassociated_data_storage: std::option::Option<crate::model::DisassociatedDataStorageState>,
     /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
     #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
@@ -452,74 +477,67 @@ pub struct PutStorageConfigurationOutput {
     pub configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
 }
 impl PutStorageConfigurationOutput {
-    /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
-    /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
+    /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li> 
+    /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li> 
     /// </ul>
-    pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
+    pub fn storage_type(&self) -> std::option::Option<& crate::model::StorageType> {
         self.storage_type.as_ref()
     }
     /// <p>Contains information about the storage destination.</p>
-    pub fn multi_layer_storage(&self) -> std::option::Option<&crate::model::MultiLayerStorage> {
+    pub fn multi_layer_storage(&self) -> std::option::Option<& crate::model::MultiLayerStorage> {
         self.multi_layer_storage.as_ref()
     }
-    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
-    /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-    /// </important> </li>
-    /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
-    /// </ul>
+    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important> 
+    /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p> 
+    /// </important> </li> 
+    /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn disassociated_data_storage(
-        &self,
-    ) -> std::option::Option<&crate::model::DisassociatedDataStorageState> {
+    pub fn disassociated_data_storage(&self) -> std::option::Option<& crate::model::DisassociatedDataStorageState> {
         self.disassociated_data_storage.as_ref()
     }
     /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
-    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+    pub fn retention_period(&self) -> std::option::Option<& crate::model::RetentionPeriod> {
         self.retention_period.as_ref()
     }
     /// <p>Contains current status information for the configuration.</p>
-    pub fn configuration_status(&self) -> std::option::Option<&crate::model::ConfigurationStatus> {
+    pub fn configuration_status(&self) -> std::option::Option<& crate::model::ConfigurationStatus> {
         self.configuration_status.as_ref()
     }
 }
 /// See [`PutStorageConfigurationOutput`](crate::output::PutStorageConfigurationOutput).
 pub mod put_storage_configuration_output {
-
+    
     /// A builder for [`PutStorageConfigurationOutput`](crate::output::PutStorageConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_type: std::option::Option<crate::model::StorageType>,
         pub(crate) multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
-        pub(crate) disassociated_data_storage:
-            std::option::Option<crate::model::DisassociatedDataStorageState>,
+        pub(crate) disassociated_data_storage: std::option::Option<crate::model::DisassociatedDataStorageState>,
         pub(crate) retention_period: std::option::Option<crate::model::RetentionPeriod>,
         pub(crate) configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
     }
     impl Builder {
-        /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
-        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
+        /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li> 
+        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li> 
         /// </ul>
         pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
             self.storage_type = Some(input);
             self
         }
-        /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
-        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
+        /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li> 
+        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li> 
         /// </ul>
-        pub fn set_storage_type(
-            mut self,
-            input: std::option::Option<crate::model::StorageType>,
-        ) -> Self {
-            self.storage_type = input;
-            self
+        pub fn set_storage_type(mut self, input: std::option::Option<crate::model::StorageType>) -> Self {
+            self.storage_type = input; self
         }
         /// <p>Contains information about the storage destination.</p>
         pub fn multi_layer_storage(mut self, input: crate::model::MultiLayerStorage) -> Self {
@@ -527,42 +545,31 @@ pub mod put_storage_configuration_output {
             self
         }
         /// <p>Contains information about the storage destination.</p>
-        pub fn set_multi_layer_storage(
-            mut self,
-            input: std::option::Option<crate::model::MultiLayerStorage>,
-        ) -> Self {
-            self.multi_layer_storage = input;
-            self
+        pub fn set_multi_layer_storage(mut self, input: std::option::Option<crate::model::MultiLayerStorage>) -> Self {
+            self.multi_layer_storage = input; self
         }
-        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
-        /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-        /// </important> </li>
-        /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
-        /// </ul>
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important> 
+        /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p> 
+        /// </important> </li> 
+        /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li> 
+        /// </ul> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn disassociated_data_storage(
-            mut self,
-            input: crate::model::DisassociatedDataStorageState,
-        ) -> Self {
+        pub fn disassociated_data_storage(mut self, input: crate::model::DisassociatedDataStorageState) -> Self {
             self.disassociated_data_storage = Some(input);
             self
         }
-        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
-        /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-        /// </important> </li>
-        /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
-        /// </ul>
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important> 
+        /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p> 
+        /// </important> </li> 
+        /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li> 
+        /// </ul> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn set_disassociated_data_storage(
-            mut self,
-            input: std::option::Option<crate::model::DisassociatedDataStorageState>,
-        ) -> Self {
-            self.disassociated_data_storage = input;
-            self
+        pub fn set_disassociated_data_storage(mut self, input: std::option::Option<crate::model::DisassociatedDataStorageState>) -> Self {
+            self.disassociated_data_storage = input; self
         }
         /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
@@ -570,12 +577,8 @@ pub mod put_storage_configuration_output {
             self
         }
         /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
-        pub fn set_retention_period(
-            mut self,
-            input: std::option::Option<crate::model::RetentionPeriod>,
-        ) -> Self {
-            self.retention_period = input;
-            self
+        pub fn set_retention_period(mut self, input: std::option::Option<crate::model::RetentionPeriod>) -> Self {
+            self.retention_period = input; self
         }
         /// <p>Contains current status information for the configuration.</p>
         pub fn configuration_status(mut self, input: crate::model::ConfigurationStatus) -> Self {
@@ -583,24 +586,27 @@ pub mod put_storage_configuration_output {
             self
         }
         /// <p>Contains current status information for the configuration.</p>
-        pub fn set_configuration_status(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationStatus>,
-        ) -> Self {
-            self.configuration_status = input;
-            self
+        pub fn set_configuration_status(mut self, input: std::option::Option<crate::model::ConfigurationStatus>) -> Self {
+            self.configuration_status = input; self
         }
         /// Consumes the builder and constructs a [`PutStorageConfigurationOutput`](crate::output::PutStorageConfigurationOutput).
         pub fn build(self) -> crate::output::PutStorageConfigurationOutput {
             crate::output::PutStorageConfigurationOutput {
-                storage_type: self.storage_type,
-                multi_layer_storage: self.multi_layer_storage,
-                disassociated_data_storage: self.disassociated_data_storage,
-                retention_period: self.retention_period,
-                configuration_status: self.configuration_status,
+                storage_type: self.storage_type
+                ,
+                multi_layer_storage: self.multi_layer_storage
+                ,
+                disassociated_data_storage: self.disassociated_data_storage
+                ,
+                retention_period: self.retention_period
+                ,
+                configuration_status: self.configuration_status
+                ,
             }
         }
     }
+    
+    
 }
 impl PutStorageConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutStorageConfigurationOutput`](crate::output::PutStorageConfigurationOutput).
@@ -612,19 +618,24 @@ impl PutStorageConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutLoggingOptionsOutput {}
+pub struct PutLoggingOptionsOutput  {
+}
 /// See [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput).
 pub mod put_logging_options_output {
-
+    
     /// A builder for [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput).
         pub fn build(self) -> crate::output::PutLoggingOptionsOutput {
-            crate::output::PutLoggingOptionsOutput {}
+            crate::output::PutLoggingOptionsOutput {
+            }
         }
     }
+    
+    
 }
 impl PutLoggingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput).
@@ -636,7 +647,7 @@ impl PutLoggingOptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDefaultEncryptionConfigurationOutput {
+pub struct PutDefaultEncryptionConfigurationOutput  {
     /// <p>The type of encryption used for the encryption configuration.</p>
     #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
@@ -649,21 +660,21 @@ pub struct PutDefaultEncryptionConfigurationOutput {
 }
 impl PutDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
-    pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+    pub fn encryption_type(&self) -> std::option::Option<& crate::model::EncryptionType> {
         self.encryption_type.as_ref()
     }
     /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
-    pub fn configuration_status(&self) -> std::option::Option<&crate::model::ConfigurationStatus> {
+    pub fn configuration_status(&self) -> std::option::Option<& crate::model::ConfigurationStatus> {
         self.configuration_status.as_ref()
     }
 }
 /// See [`PutDefaultEncryptionConfigurationOutput`](crate::output::PutDefaultEncryptionConfigurationOutput).
 pub mod put_default_encryption_configuration_output {
-
+    
     /// A builder for [`PutDefaultEncryptionConfigurationOutput`](crate::output::PutDefaultEncryptionConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -678,12 +689,8 @@ pub mod put_default_encryption_configuration_output {
             self
         }
         /// <p>The type of encryption used for the encryption configuration.</p>
-        pub fn set_encryption_type(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionType>,
-        ) -> Self {
-            self.encryption_type = input;
-            self
+        pub fn set_encryption_type(mut self, input: std::option::Option<crate::model::EncryptionType>) -> Self {
+            self.encryption_type = input; self
         }
         /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -692,8 +699,7 @@ pub mod put_default_encryption_configuration_output {
         }
         /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
         pub fn configuration_status(mut self, input: crate::model::ConfigurationStatus) -> Self {
@@ -701,22 +707,23 @@ pub mod put_default_encryption_configuration_output {
             self
         }
         /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
-        pub fn set_configuration_status(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationStatus>,
-        ) -> Self {
-            self.configuration_status = input;
-            self
+        pub fn set_configuration_status(mut self, input: std::option::Option<crate::model::ConfigurationStatus>) -> Self {
+            self.configuration_status = input; self
         }
         /// Consumes the builder and constructs a [`PutDefaultEncryptionConfigurationOutput`](crate::output::PutDefaultEncryptionConfigurationOutput).
         pub fn build(self) -> crate::output::PutDefaultEncryptionConfigurationOutput {
             crate::output::PutDefaultEncryptionConfigurationOutput {
-                encryption_type: self.encryption_type,
-                kms_key_arn: self.kms_key_arn,
-                configuration_status: self.configuration_status,
+                encryption_type: self.encryption_type
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                configuration_status: self.configuration_status
+                ,
             }
         }
     }
+    
+    
 }
 impl PutDefaultEncryptionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutDefaultEncryptionConfigurationOutput`](crate::output::PutDefaultEncryptionConfigurationOutput).
@@ -728,7 +735,7 @@ impl PutDefaultEncryptionConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTimeSeriesOutput {
+pub struct ListTimeSeriesOutput  {
     /// <p>One or more time series summaries to list.</p>
     #[doc(hidden)]
     pub time_series_summaries: std::option::Option<std::vec::Vec<crate::model::TimeSeriesSummary>>,
@@ -738,22 +745,21 @@ pub struct ListTimeSeriesOutput {
 }
 impl ListTimeSeriesOutput {
     /// <p>One or more time series summaries to list.</p>
-    pub fn time_series_summaries(&self) -> std::option::Option<&[crate::model::TimeSeriesSummary]> {
+    pub fn time_series_summaries(&self) -> std::option::Option<& [crate::model::TimeSeriesSummary]> {
         self.time_series_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTimeSeriesOutput`](crate::output::ListTimeSeriesOutput).
 pub mod list_time_series_output {
-
+    
     /// A builder for [`ListTimeSeriesOutput`](crate::output::ListTimeSeriesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) time_series_summaries:
-            std::option::Option<std::vec::Vec<crate::model::TimeSeriesSummary>>,
+        pub(crate) time_series_summaries: std::option::Option<std::vec::Vec<crate::model::TimeSeriesSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -764,17 +770,13 @@ pub mod list_time_series_output {
         /// <p>One or more time series summaries to list.</p>
         pub fn time_series_summaries(mut self, input: crate::model::TimeSeriesSummary) -> Self {
             let mut v = self.time_series_summaries.unwrap_or_default();
-            v.push(input);
-            self.time_series_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.time_series_summaries = Some(v);
+                            self
         }
         /// <p>One or more time series summaries to list.</p>
-        pub fn set_time_series_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TimeSeriesSummary>>,
-        ) -> Self {
-            self.time_series_summaries = input;
-            self
+        pub fn set_time_series_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::TimeSeriesSummary>>) -> Self {
+            self.time_series_summaries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -783,17 +785,20 @@ pub mod list_time_series_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTimeSeriesOutput`](crate::output::ListTimeSeriesOutput).
         pub fn build(self) -> crate::output::ListTimeSeriesOutput {
             crate::output::ListTimeSeriesOutput {
-                time_series_summaries: self.time_series_summaries,
-                next_token: self.next_token,
+                time_series_summaries: self.time_series_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTimeSeriesOutput {
     /// Creates a new builder-style object to manufacture [`ListTimeSeriesOutput`](crate::output::ListTimeSeriesOutput).
@@ -805,30 +810,24 @@ impl ListTimeSeriesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -836,31 +835,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -872,7 +866,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProjectsOutput {
+pub struct ListProjectsOutput  {
     /// <p>A list that summarizes each project in the portal.</p>
     #[doc(hidden)]
     pub project_summaries: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
@@ -882,22 +876,21 @@ pub struct ListProjectsOutput {
 }
 impl ListProjectsOutput {
     /// <p>A list that summarizes each project in the portal.</p>
-    pub fn project_summaries(&self) -> std::option::Option<&[crate::model::ProjectSummary]> {
+    pub fn project_summaries(&self) -> std::option::Option<& [crate::model::ProjectSummary]> {
         self.project_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListProjectsOutput`](crate::output::ListProjectsOutput).
 pub mod list_projects_output {
-
+    
     /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) project_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
+        pub(crate) project_summaries: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -908,17 +901,13 @@ pub mod list_projects_output {
         /// <p>A list that summarizes each project in the portal.</p>
         pub fn project_summaries(mut self, input: crate::model::ProjectSummary) -> Self {
             let mut v = self.project_summaries.unwrap_or_default();
-            v.push(input);
-            self.project_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.project_summaries = Some(v);
+                            self
         }
         /// <p>A list that summarizes each project in the portal.</p>
-        pub fn set_project_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
-        ) -> Self {
-            self.project_summaries = input;
-            self
+        pub fn set_project_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>) -> Self {
+            self.project_summaries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -927,17 +916,20 @@ pub mod list_projects_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProjectsOutput`](crate::output::ListProjectsOutput).
         pub fn build(self) -> crate::output::ListProjectsOutput {
             crate::output::ListProjectsOutput {
-                project_summaries: self.project_summaries,
-                next_token: self.next_token,
+                project_summaries: self.project_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProjectsOutput {
     /// Creates a new builder-style object to manufacture [`ListProjectsOutput`](crate::output::ListProjectsOutput).
@@ -949,7 +941,7 @@ impl ListProjectsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProjectAssetsOutput {
+pub struct ListProjectAssetsOutput  {
     /// <p>A list that contains the IDs of each asset associated with the project.</p>
     #[doc(hidden)]
     pub asset_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -959,17 +951,17 @@ pub struct ListProjectAssetsOutput {
 }
 impl ListProjectAssetsOutput {
     /// <p>A list that contains the IDs of each asset associated with the project.</p>
-    pub fn asset_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn asset_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.asset_ids.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListProjectAssetsOutput`](crate::output::ListProjectAssetsOutput).
 pub mod list_project_assets_output {
-
+    
     /// A builder for [`ListProjectAssetsOutput`](crate::output::ListProjectAssetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -984,17 +976,13 @@ pub mod list_project_assets_output {
         /// <p>A list that contains the IDs of each asset associated with the project.</p>
         pub fn asset_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.asset_ids.unwrap_or_default();
-            v.push(input.into());
-            self.asset_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.asset_ids = Some(v);
+                            self
         }
         /// <p>A list that contains the IDs of each asset associated with the project.</p>
-        pub fn set_asset_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.asset_ids = input;
-            self
+        pub fn set_asset_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.asset_ids = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1003,17 +991,20 @@ pub mod list_project_assets_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProjectAssetsOutput`](crate::output::ListProjectAssetsOutput).
         pub fn build(self) -> crate::output::ListProjectAssetsOutput {
             crate::output::ListProjectAssetsOutput {
-                asset_ids: self.asset_ids,
-                next_token: self.next_token,
+                asset_ids: self.asset_ids
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProjectAssetsOutput {
     /// Creates a new builder-style object to manufacture [`ListProjectAssetsOutput`](crate::output::ListProjectAssetsOutput).
@@ -1025,7 +1016,7 @@ impl ListProjectAssetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPortalsOutput {
+pub struct ListPortalsOutput  {
     /// <p>A list that summarizes each portal.</p>
     #[doc(hidden)]
     pub portal_summaries: std::option::Option<std::vec::Vec<crate::model::PortalSummary>>,
@@ -1035,22 +1026,21 @@ pub struct ListPortalsOutput {
 }
 impl ListPortalsOutput {
     /// <p>A list that summarizes each portal.</p>
-    pub fn portal_summaries(&self) -> std::option::Option<&[crate::model::PortalSummary]> {
+    pub fn portal_summaries(&self) -> std::option::Option<& [crate::model::PortalSummary]> {
         self.portal_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPortalsOutput`](crate::output::ListPortalsOutput).
 pub mod list_portals_output {
-
+    
     /// A builder for [`ListPortalsOutput`](crate::output::ListPortalsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) portal_summaries:
-            std::option::Option<std::vec::Vec<crate::model::PortalSummary>>,
+        pub(crate) portal_summaries: std::option::Option<std::vec::Vec<crate::model::PortalSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1061,17 +1051,13 @@ pub mod list_portals_output {
         /// <p>A list that summarizes each portal.</p>
         pub fn portal_summaries(mut self, input: crate::model::PortalSummary) -> Self {
             let mut v = self.portal_summaries.unwrap_or_default();
-            v.push(input);
-            self.portal_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.portal_summaries = Some(v);
+                            self
         }
         /// <p>A list that summarizes each portal.</p>
-        pub fn set_portal_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PortalSummary>>,
-        ) -> Self {
-            self.portal_summaries = input;
-            self
+        pub fn set_portal_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::PortalSummary>>) -> Self {
+            self.portal_summaries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1080,17 +1066,20 @@ pub mod list_portals_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPortalsOutput`](crate::output::ListPortalsOutput).
         pub fn build(self) -> crate::output::ListPortalsOutput {
             crate::output::ListPortalsOutput {
-                portal_summaries: self.portal_summaries,
-                next_token: self.next_token,
+                portal_summaries: self.portal_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPortalsOutput {
     /// Creates a new builder-style object to manufacture [`ListPortalsOutput`](crate::output::ListPortalsOutput).
@@ -1102,7 +1091,7 @@ impl ListPortalsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGatewaysOutput {
+pub struct ListGatewaysOutput  {
     /// <p>A list that summarizes each gateway.</p>
     #[doc(hidden)]
     pub gateway_summaries: std::option::Option<std::vec::Vec<crate::model::GatewaySummary>>,
@@ -1112,22 +1101,21 @@ pub struct ListGatewaysOutput {
 }
 impl ListGatewaysOutput {
     /// <p>A list that summarizes each gateway.</p>
-    pub fn gateway_summaries(&self) -> std::option::Option<&[crate::model::GatewaySummary]> {
+    pub fn gateway_summaries(&self) -> std::option::Option<& [crate::model::GatewaySummary]> {
         self.gateway_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
 pub mod list_gateways_output {
-
+    
     /// A builder for [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) gateway_summaries:
-            std::option::Option<std::vec::Vec<crate::model::GatewaySummary>>,
+        pub(crate) gateway_summaries: std::option::Option<std::vec::Vec<crate::model::GatewaySummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1138,17 +1126,13 @@ pub mod list_gateways_output {
         /// <p>A list that summarizes each gateway.</p>
         pub fn gateway_summaries(mut self, input: crate::model::GatewaySummary) -> Self {
             let mut v = self.gateway_summaries.unwrap_or_default();
-            v.push(input);
-            self.gateway_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.gateway_summaries = Some(v);
+                            self
         }
         /// <p>A list that summarizes each gateway.</p>
-        pub fn set_gateway_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GatewaySummary>>,
-        ) -> Self {
-            self.gateway_summaries = input;
-            self
+        pub fn set_gateway_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::GatewaySummary>>) -> Self {
+            self.gateway_summaries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1157,17 +1141,20 @@ pub mod list_gateways_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
         pub fn build(self) -> crate::output::ListGatewaysOutput {
             crate::output::ListGatewaysOutput {
-                gateway_summaries: self.gateway_summaries,
-                next_token: self.next_token,
+                gateway_summaries: self.gateway_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
@@ -1179,7 +1166,7 @@ impl ListGatewaysOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDashboardsOutput {
+pub struct ListDashboardsOutput  {
     /// <p>A list that summarizes each dashboard in the project.</p>
     #[doc(hidden)]
     pub dashboard_summaries: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
@@ -1189,22 +1176,21 @@ pub struct ListDashboardsOutput {
 }
 impl ListDashboardsOutput {
     /// <p>A list that summarizes each dashboard in the project.</p>
-    pub fn dashboard_summaries(&self) -> std::option::Option<&[crate::model::DashboardSummary]> {
+    pub fn dashboard_summaries(&self) -> std::option::Option<& [crate::model::DashboardSummary]> {
         self.dashboard_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDashboardsOutput`](crate::output::ListDashboardsOutput).
 pub mod list_dashboards_output {
-
+    
     /// A builder for [`ListDashboardsOutput`](crate::output::ListDashboardsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) dashboard_summaries:
-            std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
+        pub(crate) dashboard_summaries: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1215,17 +1201,13 @@ pub mod list_dashboards_output {
         /// <p>A list that summarizes each dashboard in the project.</p>
         pub fn dashboard_summaries(mut self, input: crate::model::DashboardSummary) -> Self {
             let mut v = self.dashboard_summaries.unwrap_or_default();
-            v.push(input);
-            self.dashboard_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.dashboard_summaries = Some(v);
+                            self
         }
         /// <p>A list that summarizes each dashboard in the project.</p>
-        pub fn set_dashboard_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
-        ) -> Self {
-            self.dashboard_summaries = input;
-            self
+        pub fn set_dashboard_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>) -> Self {
+            self.dashboard_summaries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1234,17 +1216,20 @@ pub mod list_dashboards_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDashboardsOutput`](crate::output::ListDashboardsOutput).
         pub fn build(self) -> crate::output::ListDashboardsOutput {
             crate::output::ListDashboardsOutput {
-                dashboard_summaries: self.dashboard_summaries,
-                next_token: self.next_token,
+                dashboard_summaries: self.dashboard_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDashboardsOutput {
     /// Creates a new builder-style object to manufacture [`ListDashboardsOutput`](crate::output::ListDashboardsOutput).
@@ -1256,7 +1241,7 @@ impl ListDashboardsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBulkImportJobsOutput {
+pub struct ListBulkImportJobsOutput  {
     /// <p>One or more job summaries to list.</p>
     #[doc(hidden)]
     pub job_summaries: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
@@ -1266,17 +1251,17 @@ pub struct ListBulkImportJobsOutput {
 }
 impl ListBulkImportJobsOutput {
     /// <p>One or more job summaries to list.</p>
-    pub fn job_summaries(&self) -> std::option::Option<&[crate::model::JobSummary]> {
+    pub fn job_summaries(&self) -> std::option::Option<& [crate::model::JobSummary]> {
         self.job_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListBulkImportJobsOutput`](crate::output::ListBulkImportJobsOutput).
 pub mod list_bulk_import_jobs_output {
-
+    
     /// A builder for [`ListBulkImportJobsOutput`](crate::output::ListBulkImportJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1291,17 +1276,13 @@ pub mod list_bulk_import_jobs_output {
         /// <p>One or more job summaries to list.</p>
         pub fn job_summaries(mut self, input: crate::model::JobSummary) -> Self {
             let mut v = self.job_summaries.unwrap_or_default();
-            v.push(input);
-            self.job_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.job_summaries = Some(v);
+                            self
         }
         /// <p>One or more job summaries to list.</p>
-        pub fn set_job_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
-        ) -> Self {
-            self.job_summaries = input;
-            self
+        pub fn set_job_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobSummary>>) -> Self {
+            self.job_summaries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1310,17 +1291,20 @@ pub mod list_bulk_import_jobs_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListBulkImportJobsOutput`](crate::output::ListBulkImportJobsOutput).
         pub fn build(self) -> crate::output::ListBulkImportJobsOutput {
             crate::output::ListBulkImportJobsOutput {
-                job_summaries: self.job_summaries,
-                next_token: self.next_token,
+                job_summaries: self.job_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBulkImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListBulkImportJobsOutput`](crate::output::ListBulkImportJobsOutput).
@@ -1332,7 +1316,7 @@ impl ListBulkImportJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssociatedAssetsOutput {
+pub struct ListAssociatedAssetsOutput  {
     /// <p>A list that summarizes the associated assets.</p>
     #[doc(hidden)]
     pub asset_summaries: std::option::Option<std::vec::Vec<crate::model::AssociatedAssetsSummary>>,
@@ -1342,22 +1326,21 @@ pub struct ListAssociatedAssetsOutput {
 }
 impl ListAssociatedAssetsOutput {
     /// <p>A list that summarizes the associated assets.</p>
-    pub fn asset_summaries(&self) -> std::option::Option<&[crate::model::AssociatedAssetsSummary]> {
+    pub fn asset_summaries(&self) -> std::option::Option<& [crate::model::AssociatedAssetsSummary]> {
         self.asset_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAssociatedAssetsOutput`](crate::output::ListAssociatedAssetsOutput).
 pub mod list_associated_assets_output {
-
+    
     /// A builder for [`ListAssociatedAssetsOutput`](crate::output::ListAssociatedAssetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) asset_summaries:
-            std::option::Option<std::vec::Vec<crate::model::AssociatedAssetsSummary>>,
+        pub(crate) asset_summaries: std::option::Option<std::vec::Vec<crate::model::AssociatedAssetsSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1368,17 +1351,13 @@ pub mod list_associated_assets_output {
         /// <p>A list that summarizes the associated assets.</p>
         pub fn asset_summaries(mut self, input: crate::model::AssociatedAssetsSummary) -> Self {
             let mut v = self.asset_summaries.unwrap_or_default();
-            v.push(input);
-            self.asset_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.asset_summaries = Some(v);
+                            self
         }
         /// <p>A list that summarizes the associated assets.</p>
-        pub fn set_asset_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssociatedAssetsSummary>>,
-        ) -> Self {
-            self.asset_summaries = input;
-            self
+        pub fn set_asset_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssociatedAssetsSummary>>) -> Self {
+            self.asset_summaries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1387,17 +1366,20 @@ pub mod list_associated_assets_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAssociatedAssetsOutput`](crate::output::ListAssociatedAssetsOutput).
         pub fn build(self) -> crate::output::ListAssociatedAssetsOutput {
             crate::output::ListAssociatedAssetsOutput {
-                asset_summaries: self.asset_summaries,
-                next_token: self.next_token,
+                asset_summaries: self.asset_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAssociatedAssetsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedAssetsOutput`](crate::output::ListAssociatedAssetsOutput).
@@ -1409,7 +1391,7 @@ impl ListAssociatedAssetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssetsOutput {
+pub struct ListAssetsOutput  {
     /// <p>A list that summarizes each asset.</p>
     #[doc(hidden)]
     pub asset_summaries: std::option::Option<std::vec::Vec<crate::model::AssetSummary>>,
@@ -1419,17 +1401,17 @@ pub struct ListAssetsOutput {
 }
 impl ListAssetsOutput {
     /// <p>A list that summarizes each asset.</p>
-    pub fn asset_summaries(&self) -> std::option::Option<&[crate::model::AssetSummary]> {
+    pub fn asset_summaries(&self) -> std::option::Option<& [crate::model::AssetSummary]> {
         self.asset_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAssetsOutput`](crate::output::ListAssetsOutput).
 pub mod list_assets_output {
-
+    
     /// A builder for [`ListAssetsOutput`](crate::output::ListAssetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1444,17 +1426,13 @@ pub mod list_assets_output {
         /// <p>A list that summarizes each asset.</p>
         pub fn asset_summaries(mut self, input: crate::model::AssetSummary) -> Self {
             let mut v = self.asset_summaries.unwrap_or_default();
-            v.push(input);
-            self.asset_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.asset_summaries = Some(v);
+                            self
         }
         /// <p>A list that summarizes each asset.</p>
-        pub fn set_asset_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetSummary>>,
-        ) -> Self {
-            self.asset_summaries = input;
-            self
+        pub fn set_asset_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetSummary>>) -> Self {
+            self.asset_summaries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1463,17 +1441,20 @@ pub mod list_assets_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAssetsOutput`](crate::output::ListAssetsOutput).
         pub fn build(self) -> crate::output::ListAssetsOutput {
             crate::output::ListAssetsOutput {
-                asset_summaries: self.asset_summaries,
-                next_token: self.next_token,
+                asset_summaries: self.asset_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAssetsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssetsOutput`](crate::output::ListAssetsOutput).
@@ -1485,35 +1466,31 @@ impl ListAssetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssetRelationshipsOutput {
+pub struct ListAssetRelationshipsOutput  {
     /// <p>A list that summarizes each asset relationship.</p>
     #[doc(hidden)]
-    pub asset_relationship_summaries:
-        std::option::Option<std::vec::Vec<crate::model::AssetRelationshipSummary>>,
+    pub asset_relationship_summaries: std::option::Option<std::vec::Vec<crate::model::AssetRelationshipSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssetRelationshipsOutput {
     /// <p>A list that summarizes each asset relationship.</p>
-    pub fn asset_relationship_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssetRelationshipSummary]> {
+    pub fn asset_relationship_summaries(&self) -> std::option::Option<& [crate::model::AssetRelationshipSummary]> {
         self.asset_relationship_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAssetRelationshipsOutput`](crate::output::ListAssetRelationshipsOutput).
 pub mod list_asset_relationships_output {
-
+    
     /// A builder for [`ListAssetRelationshipsOutput`](crate::output::ListAssetRelationshipsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) asset_relationship_summaries:
-            std::option::Option<std::vec::Vec<crate::model::AssetRelationshipSummary>>,
+        pub(crate) asset_relationship_summaries: std::option::Option<std::vec::Vec<crate::model::AssetRelationshipSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1522,22 +1499,15 @@ pub mod list_asset_relationships_output {
         /// To override the contents of this collection use [`set_asset_relationship_summaries`](Self::set_asset_relationship_summaries).
         ///
         /// <p>A list that summarizes each asset relationship.</p>
-        pub fn asset_relationship_summaries(
-            mut self,
-            input: crate::model::AssetRelationshipSummary,
-        ) -> Self {
+        pub fn asset_relationship_summaries(mut self, input: crate::model::AssetRelationshipSummary) -> Self {
             let mut v = self.asset_relationship_summaries.unwrap_or_default();
-            v.push(input);
-            self.asset_relationship_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.asset_relationship_summaries = Some(v);
+                            self
         }
         /// <p>A list that summarizes each asset relationship.</p>
-        pub fn set_asset_relationship_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetRelationshipSummary>>,
-        ) -> Self {
-            self.asset_relationship_summaries = input;
-            self
+        pub fn set_asset_relationship_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetRelationshipSummary>>) -> Self {
+            self.asset_relationship_summaries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1546,17 +1516,20 @@ pub mod list_asset_relationships_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAssetRelationshipsOutput`](crate::output::ListAssetRelationshipsOutput).
         pub fn build(self) -> crate::output::ListAssetRelationshipsOutput {
             crate::output::ListAssetRelationshipsOutput {
-                asset_relationship_summaries: self.asset_relationship_summaries,
-                next_token: self.next_token,
+                asset_relationship_summaries: self.asset_relationship_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAssetRelationshipsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssetRelationshipsOutput`](crate::output::ListAssetRelationshipsOutput).
@@ -1568,35 +1541,31 @@ impl ListAssetRelationshipsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssetPropertiesOutput {
+pub struct ListAssetPropertiesOutput  {
     /// <p>A list that summarizes the properties associated with the specified asset.</p>
     #[doc(hidden)]
-    pub asset_property_summaries:
-        std::option::Option<std::vec::Vec<crate::model::AssetPropertySummary>>,
+    pub asset_property_summaries: std::option::Option<std::vec::Vec<crate::model::AssetPropertySummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssetPropertiesOutput {
     /// <p>A list that summarizes the properties associated with the specified asset.</p>
-    pub fn asset_property_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssetPropertySummary]> {
+    pub fn asset_property_summaries(&self) -> std::option::Option<& [crate::model::AssetPropertySummary]> {
         self.asset_property_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAssetPropertiesOutput`](crate::output::ListAssetPropertiesOutput).
 pub mod list_asset_properties_output {
-
+    
     /// A builder for [`ListAssetPropertiesOutput`](crate::output::ListAssetPropertiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) asset_property_summaries:
-            std::option::Option<std::vec::Vec<crate::model::AssetPropertySummary>>,
+        pub(crate) asset_property_summaries: std::option::Option<std::vec::Vec<crate::model::AssetPropertySummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1605,22 +1574,15 @@ pub mod list_asset_properties_output {
         /// To override the contents of this collection use [`set_asset_property_summaries`](Self::set_asset_property_summaries).
         ///
         /// <p>A list that summarizes the properties associated with the specified asset.</p>
-        pub fn asset_property_summaries(
-            mut self,
-            input: crate::model::AssetPropertySummary,
-        ) -> Self {
+        pub fn asset_property_summaries(mut self, input: crate::model::AssetPropertySummary) -> Self {
             let mut v = self.asset_property_summaries.unwrap_or_default();
-            v.push(input);
-            self.asset_property_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.asset_property_summaries = Some(v);
+                            self
         }
         /// <p>A list that summarizes the properties associated with the specified asset.</p>
-        pub fn set_asset_property_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetPropertySummary>>,
-        ) -> Self {
-            self.asset_property_summaries = input;
-            self
+        pub fn set_asset_property_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetPropertySummary>>) -> Self {
+            self.asset_property_summaries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1629,17 +1591,20 @@ pub mod list_asset_properties_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAssetPropertiesOutput`](crate::output::ListAssetPropertiesOutput).
         pub fn build(self) -> crate::output::ListAssetPropertiesOutput {
             crate::output::ListAssetPropertiesOutput {
-                asset_property_summaries: self.asset_property_summaries,
-                next_token: self.next_token,
+                asset_property_summaries: self.asset_property_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAssetPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`ListAssetPropertiesOutput`](crate::output::ListAssetPropertiesOutput).
@@ -1651,7 +1616,7 @@ impl ListAssetPropertiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssetModelsOutput {
+pub struct ListAssetModelsOutput  {
     /// <p>A list that summarizes each asset model.</p>
     #[doc(hidden)]
     pub asset_model_summaries: std::option::Option<std::vec::Vec<crate::model::AssetModelSummary>>,
@@ -1661,22 +1626,21 @@ pub struct ListAssetModelsOutput {
 }
 impl ListAssetModelsOutput {
     /// <p>A list that summarizes each asset model.</p>
-    pub fn asset_model_summaries(&self) -> std::option::Option<&[crate::model::AssetModelSummary]> {
+    pub fn asset_model_summaries(&self) -> std::option::Option<& [crate::model::AssetModelSummary]> {
         self.asset_model_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAssetModelsOutput`](crate::output::ListAssetModelsOutput).
 pub mod list_asset_models_output {
-
+    
     /// A builder for [`ListAssetModelsOutput`](crate::output::ListAssetModelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) asset_model_summaries:
-            std::option::Option<std::vec::Vec<crate::model::AssetModelSummary>>,
+        pub(crate) asset_model_summaries: std::option::Option<std::vec::Vec<crate::model::AssetModelSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1687,17 +1651,13 @@ pub mod list_asset_models_output {
         /// <p>A list that summarizes each asset model.</p>
         pub fn asset_model_summaries(mut self, input: crate::model::AssetModelSummary) -> Self {
             let mut v = self.asset_model_summaries.unwrap_or_default();
-            v.push(input);
-            self.asset_model_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.asset_model_summaries = Some(v);
+                            self
         }
         /// <p>A list that summarizes each asset model.</p>
-        pub fn set_asset_model_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetModelSummary>>,
-        ) -> Self {
-            self.asset_model_summaries = input;
-            self
+        pub fn set_asset_model_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetModelSummary>>) -> Self {
+            self.asset_model_summaries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1706,17 +1666,20 @@ pub mod list_asset_models_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAssetModelsOutput`](crate::output::ListAssetModelsOutput).
         pub fn build(self) -> crate::output::ListAssetModelsOutput {
             crate::output::ListAssetModelsOutput {
-                asset_model_summaries: self.asset_model_summaries,
-                next_token: self.next_token,
+                asset_model_summaries: self.asset_model_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAssetModelsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssetModelsOutput`](crate::output::ListAssetModelsOutput).
@@ -1728,35 +1691,31 @@ impl ListAssetModelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssetModelPropertiesOutput {
+pub struct ListAssetModelPropertiesOutput  {
     /// <p>A list that summarizes the properties associated with the specified asset model.</p>
     #[doc(hidden)]
-    pub asset_model_property_summaries:
-        std::option::Option<std::vec::Vec<crate::model::AssetModelPropertySummary>>,
+    pub asset_model_property_summaries: std::option::Option<std::vec::Vec<crate::model::AssetModelPropertySummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssetModelPropertiesOutput {
     /// <p>A list that summarizes the properties associated with the specified asset model.</p>
-    pub fn asset_model_property_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssetModelPropertySummary]> {
+    pub fn asset_model_property_summaries(&self) -> std::option::Option<& [crate::model::AssetModelPropertySummary]> {
         self.asset_model_property_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAssetModelPropertiesOutput`](crate::output::ListAssetModelPropertiesOutput).
 pub mod list_asset_model_properties_output {
-
+    
     /// A builder for [`ListAssetModelPropertiesOutput`](crate::output::ListAssetModelPropertiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) asset_model_property_summaries:
-            std::option::Option<std::vec::Vec<crate::model::AssetModelPropertySummary>>,
+        pub(crate) asset_model_property_summaries: std::option::Option<std::vec::Vec<crate::model::AssetModelPropertySummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1765,22 +1724,15 @@ pub mod list_asset_model_properties_output {
         /// To override the contents of this collection use [`set_asset_model_property_summaries`](Self::set_asset_model_property_summaries).
         ///
         /// <p>A list that summarizes the properties associated with the specified asset model.</p>
-        pub fn asset_model_property_summaries(
-            mut self,
-            input: crate::model::AssetModelPropertySummary,
-        ) -> Self {
+        pub fn asset_model_property_summaries(mut self, input: crate::model::AssetModelPropertySummary) -> Self {
             let mut v = self.asset_model_property_summaries.unwrap_or_default();
-            v.push(input);
-            self.asset_model_property_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.asset_model_property_summaries = Some(v);
+                            self
         }
         /// <p>A list that summarizes the properties associated with the specified asset model.</p>
-        pub fn set_asset_model_property_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetModelPropertySummary>>,
-        ) -> Self {
-            self.asset_model_property_summaries = input;
-            self
+        pub fn set_asset_model_property_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetModelPropertySummary>>) -> Self {
+            self.asset_model_property_summaries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1789,17 +1741,20 @@ pub mod list_asset_model_properties_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAssetModelPropertiesOutput`](crate::output::ListAssetModelPropertiesOutput).
         pub fn build(self) -> crate::output::ListAssetModelPropertiesOutput {
             crate::output::ListAssetModelPropertiesOutput {
-                asset_model_property_summaries: self.asset_model_property_summaries,
-                next_token: self.next_token,
+                asset_model_property_summaries: self.asset_model_property_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAssetModelPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`ListAssetModelPropertiesOutput`](crate::output::ListAssetModelPropertiesOutput).
@@ -1811,35 +1766,31 @@ impl ListAssetModelPropertiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccessPoliciesOutput {
+pub struct ListAccessPoliciesOutput  {
     /// <p>A list that summarizes each access policy.</p>
     #[doc(hidden)]
-    pub access_policy_summaries:
-        std::option::Option<std::vec::Vec<crate::model::AccessPolicySummary>>,
+    pub access_policy_summaries: std::option::Option<std::vec::Vec<crate::model::AccessPolicySummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccessPoliciesOutput {
     /// <p>A list that summarizes each access policy.</p>
-    pub fn access_policy_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::AccessPolicySummary]> {
+    pub fn access_policy_summaries(&self) -> std::option::Option<& [crate::model::AccessPolicySummary]> {
         self.access_policy_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAccessPoliciesOutput`](crate::output::ListAccessPoliciesOutput).
 pub mod list_access_policies_output {
-
+    
     /// A builder for [`ListAccessPoliciesOutput`](crate::output::ListAccessPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) access_policy_summaries:
-            std::option::Option<std::vec::Vec<crate::model::AccessPolicySummary>>,
+        pub(crate) access_policy_summaries: std::option::Option<std::vec::Vec<crate::model::AccessPolicySummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1850,17 +1801,13 @@ pub mod list_access_policies_output {
         /// <p>A list that summarizes each access policy.</p>
         pub fn access_policy_summaries(mut self, input: crate::model::AccessPolicySummary) -> Self {
             let mut v = self.access_policy_summaries.unwrap_or_default();
-            v.push(input);
-            self.access_policy_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.access_policy_summaries = Some(v);
+                            self
         }
         /// <p>A list that summarizes each access policy.</p>
-        pub fn set_access_policy_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccessPolicySummary>>,
-        ) -> Self {
-            self.access_policy_summaries = input;
-            self
+        pub fn set_access_policy_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccessPolicySummary>>) -> Self {
+            self.access_policy_summaries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1869,17 +1816,20 @@ pub mod list_access_policies_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAccessPoliciesOutput`](crate::output::ListAccessPoliciesOutput).
         pub fn build(self) -> crate::output::ListAccessPoliciesOutput {
             crate::output::ListAccessPoliciesOutput {
-                access_policy_summaries: self.access_policy_summaries,
-                next_token: self.next_token,
+                access_policy_summaries: self.access_policy_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAccessPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessPoliciesOutput`](crate::output::ListAccessPoliciesOutput).
@@ -1891,35 +1841,31 @@ impl ListAccessPoliciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInterpolatedAssetPropertyValuesOutput {
+pub struct GetInterpolatedAssetPropertyValuesOutput  {
     /// <p>The requested interpolated values.</p>
     #[doc(hidden)]
-    pub interpolated_asset_property_values:
-        std::option::Option<std::vec::Vec<crate::model::InterpolatedAssetPropertyValue>>,
+    pub interpolated_asset_property_values: std::option::Option<std::vec::Vec<crate::model::InterpolatedAssetPropertyValue>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInterpolatedAssetPropertyValuesOutput {
     /// <p>The requested interpolated values.</p>
-    pub fn interpolated_asset_property_values(
-        &self,
-    ) -> std::option::Option<&[crate::model::InterpolatedAssetPropertyValue]> {
+    pub fn interpolated_asset_property_values(&self) -> std::option::Option<& [crate::model::InterpolatedAssetPropertyValue]> {
         self.interpolated_asset_property_values.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetInterpolatedAssetPropertyValuesOutput`](crate::output::GetInterpolatedAssetPropertyValuesOutput).
 pub mod get_interpolated_asset_property_values_output {
-
+    
     /// A builder for [`GetInterpolatedAssetPropertyValuesOutput`](crate::output::GetInterpolatedAssetPropertyValuesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) interpolated_asset_property_values:
-            std::option::Option<std::vec::Vec<crate::model::InterpolatedAssetPropertyValue>>,
+        pub(crate) interpolated_asset_property_values: std::option::Option<std::vec::Vec<crate::model::InterpolatedAssetPropertyValue>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1928,22 +1874,15 @@ pub mod get_interpolated_asset_property_values_output {
         /// To override the contents of this collection use [`set_interpolated_asset_property_values`](Self::set_interpolated_asset_property_values).
         ///
         /// <p>The requested interpolated values.</p>
-        pub fn interpolated_asset_property_values(
-            mut self,
-            input: crate::model::InterpolatedAssetPropertyValue,
-        ) -> Self {
+        pub fn interpolated_asset_property_values(mut self, input: crate::model::InterpolatedAssetPropertyValue) -> Self {
             let mut v = self.interpolated_asset_property_values.unwrap_or_default();
-            v.push(input);
-            self.interpolated_asset_property_values = Some(v);
-            self
+                            v.push(input);
+                            self.interpolated_asset_property_values = Some(v);
+                            self
         }
         /// <p>The requested interpolated values.</p>
-        pub fn set_interpolated_asset_property_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InterpolatedAssetPropertyValue>>,
-        ) -> Self {
-            self.interpolated_asset_property_values = input;
-            self
+        pub fn set_interpolated_asset_property_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::InterpolatedAssetPropertyValue>>) -> Self {
+            self.interpolated_asset_property_values = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1952,17 +1891,20 @@ pub mod get_interpolated_asset_property_values_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetInterpolatedAssetPropertyValuesOutput`](crate::output::GetInterpolatedAssetPropertyValuesOutput).
         pub fn build(self) -> crate::output::GetInterpolatedAssetPropertyValuesOutput {
             crate::output::GetInterpolatedAssetPropertyValuesOutput {
-                interpolated_asset_property_values: self.interpolated_asset_property_values,
-                next_token: self.next_token,
+                interpolated_asset_property_values: self.interpolated_asset_property_values
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInterpolatedAssetPropertyValuesOutput {
     /// Creates a new builder-style object to manufacture [`GetInterpolatedAssetPropertyValuesOutput`](crate::output::GetInterpolatedAssetPropertyValuesOutput).
@@ -1974,35 +1916,31 @@ impl GetInterpolatedAssetPropertyValuesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssetPropertyValueHistoryOutput {
+pub struct GetAssetPropertyValueHistoryOutput  {
     /// <p>The asset property's value history.</p>
     #[doc(hidden)]
-    pub asset_property_value_history:
-        std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
+    pub asset_property_value_history: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAssetPropertyValueHistoryOutput {
     /// <p>The asset property's value history.</p>
-    pub fn asset_property_value_history(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssetPropertyValue]> {
+    pub fn asset_property_value_history(&self) -> std::option::Option<& [crate::model::AssetPropertyValue]> {
         self.asset_property_value_history.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetAssetPropertyValueHistoryOutput`](crate::output::GetAssetPropertyValueHistoryOutput).
 pub mod get_asset_property_value_history_output {
-
+    
     /// A builder for [`GetAssetPropertyValueHistoryOutput`](crate::output::GetAssetPropertyValueHistoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) asset_property_value_history:
-            std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
+        pub(crate) asset_property_value_history: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2011,22 +1949,15 @@ pub mod get_asset_property_value_history_output {
         /// To override the contents of this collection use [`set_asset_property_value_history`](Self::set_asset_property_value_history).
         ///
         /// <p>The asset property's value history.</p>
-        pub fn asset_property_value_history(
-            mut self,
-            input: crate::model::AssetPropertyValue,
-        ) -> Self {
+        pub fn asset_property_value_history(mut self, input: crate::model::AssetPropertyValue) -> Self {
             let mut v = self.asset_property_value_history.unwrap_or_default();
-            v.push(input);
-            self.asset_property_value_history = Some(v);
-            self
+                            v.push(input);
+                            self.asset_property_value_history = Some(v);
+                            self
         }
         /// <p>The asset property's value history.</p>
-        pub fn set_asset_property_value_history(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
-        ) -> Self {
-            self.asset_property_value_history = input;
-            self
+        pub fn set_asset_property_value_history(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>) -> Self {
+            self.asset_property_value_history = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2035,17 +1966,20 @@ pub mod get_asset_property_value_history_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetAssetPropertyValueHistoryOutput`](crate::output::GetAssetPropertyValueHistoryOutput).
         pub fn build(self) -> crate::output::GetAssetPropertyValueHistoryOutput {
             crate::output::GetAssetPropertyValueHistoryOutput {
-                asset_property_value_history: self.asset_property_value_history,
-                next_token: self.next_token,
+                asset_property_value_history: self.asset_property_value_history
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAssetPropertyValueHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetAssetPropertyValueHistoryOutput`](crate::output::GetAssetPropertyValueHistoryOutput).
@@ -2057,20 +1991,20 @@ impl GetAssetPropertyValueHistoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssetPropertyValueOutput {
+pub struct GetAssetPropertyValueOutput  {
     /// <p>The current asset property value.</p>
     #[doc(hidden)]
     pub property_value: std::option::Option<crate::model::AssetPropertyValue>,
 }
 impl GetAssetPropertyValueOutput {
     /// <p>The current asset property value.</p>
-    pub fn property_value(&self) -> std::option::Option<&crate::model::AssetPropertyValue> {
+    pub fn property_value(&self) -> std::option::Option<& crate::model::AssetPropertyValue> {
         self.property_value.as_ref()
     }
 }
 /// See [`GetAssetPropertyValueOutput`](crate::output::GetAssetPropertyValueOutput).
 pub mod get_asset_property_value_output {
-
+    
     /// A builder for [`GetAssetPropertyValueOutput`](crate::output::GetAssetPropertyValueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2083,20 +2017,19 @@ pub mod get_asset_property_value_output {
             self
         }
         /// <p>The current asset property value.</p>
-        pub fn set_property_value(
-            mut self,
-            input: std::option::Option<crate::model::AssetPropertyValue>,
-        ) -> Self {
-            self.property_value = input;
-            self
+        pub fn set_property_value(mut self, input: std::option::Option<crate::model::AssetPropertyValue>) -> Self {
+            self.property_value = input; self
         }
         /// Consumes the builder and constructs a [`GetAssetPropertyValueOutput`](crate::output::GetAssetPropertyValueOutput).
         pub fn build(self) -> crate::output::GetAssetPropertyValueOutput {
             crate::output::GetAssetPropertyValueOutput {
-                property_value: self.property_value,
+                property_value: self.property_value
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAssetPropertyValueOutput {
     /// Creates a new builder-style object to manufacture [`GetAssetPropertyValueOutput`](crate::output::GetAssetPropertyValueOutput).
@@ -2108,7 +2041,7 @@ impl GetAssetPropertyValueOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssetPropertyAggregatesOutput {
+pub struct GetAssetPropertyAggregatesOutput  {
     /// <p>The requested aggregated values.</p>
     #[doc(hidden)]
     pub aggregated_values: std::option::Option<std::vec::Vec<crate::model::AggregatedValue>>,
@@ -2118,22 +2051,21 @@ pub struct GetAssetPropertyAggregatesOutput {
 }
 impl GetAssetPropertyAggregatesOutput {
     /// <p>The requested aggregated values.</p>
-    pub fn aggregated_values(&self) -> std::option::Option<&[crate::model::AggregatedValue]> {
+    pub fn aggregated_values(&self) -> std::option::Option<& [crate::model::AggregatedValue]> {
         self.aggregated_values.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetAssetPropertyAggregatesOutput`](crate::output::GetAssetPropertyAggregatesOutput).
 pub mod get_asset_property_aggregates_output {
-
+    
     /// A builder for [`GetAssetPropertyAggregatesOutput`](crate::output::GetAssetPropertyAggregatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) aggregated_values:
-            std::option::Option<std::vec::Vec<crate::model::AggregatedValue>>,
+        pub(crate) aggregated_values: std::option::Option<std::vec::Vec<crate::model::AggregatedValue>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2144,17 +2076,13 @@ pub mod get_asset_property_aggregates_output {
         /// <p>The requested aggregated values.</p>
         pub fn aggregated_values(mut self, input: crate::model::AggregatedValue) -> Self {
             let mut v = self.aggregated_values.unwrap_or_default();
-            v.push(input);
-            self.aggregated_values = Some(v);
-            self
+                            v.push(input);
+                            self.aggregated_values = Some(v);
+                            self
         }
         /// <p>The requested aggregated values.</p>
-        pub fn set_aggregated_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AggregatedValue>>,
-        ) -> Self {
-            self.aggregated_values = input;
-            self
+        pub fn set_aggregated_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::AggregatedValue>>) -> Self {
+            self.aggregated_values = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2163,17 +2091,20 @@ pub mod get_asset_property_aggregates_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetAssetPropertyAggregatesOutput`](crate::output::GetAssetPropertyAggregatesOutput).
         pub fn build(self) -> crate::output::GetAssetPropertyAggregatesOutput {
             crate::output::GetAssetPropertyAggregatesOutput {
-                aggregated_values: self.aggregated_values,
-                next_token: self.next_token,
+                aggregated_values: self.aggregated_values
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAssetPropertyAggregatesOutput {
     /// Creates a new builder-style object to manufacture [`GetAssetPropertyAggregatesOutput`](crate::output::GetAssetPropertyAggregatesOutput).
@@ -2185,24 +2116,28 @@ impl GetAssetPropertyAggregatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateTimeSeriesFromAssetPropertyOutput {}
+pub struct DisassociateTimeSeriesFromAssetPropertyOutput  {
+}
 /// See [`DisassociateTimeSeriesFromAssetPropertyOutput`](crate::output::DisassociateTimeSeriesFromAssetPropertyOutput).
 pub mod disassociate_time_series_from_asset_property_output {
-
+    
     /// A builder for [`DisassociateTimeSeriesFromAssetPropertyOutput`](crate::output::DisassociateTimeSeriesFromAssetPropertyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateTimeSeriesFromAssetPropertyOutput`](crate::output::DisassociateTimeSeriesFromAssetPropertyOutput).
         pub fn build(self) -> crate::output::DisassociateTimeSeriesFromAssetPropertyOutput {
-            crate::output::DisassociateTimeSeriesFromAssetPropertyOutput {}
+            crate::output::DisassociateTimeSeriesFromAssetPropertyOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateTimeSeriesFromAssetPropertyOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateTimeSeriesFromAssetPropertyOutput`](crate::output::DisassociateTimeSeriesFromAssetPropertyOutput).
-    pub fn builder() -> crate::output::disassociate_time_series_from_asset_property_output::Builder
-    {
+    pub fn builder() -> crate::output::disassociate_time_series_from_asset_property_output::Builder {
         crate::output::disassociate_time_series_from_asset_property_output::Builder::default()
     }
 }
@@ -2210,19 +2145,24 @@ impl DisassociateTimeSeriesFromAssetPropertyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateAssetsOutput {}
+pub struct DisassociateAssetsOutput  {
+}
 /// See [`DisassociateAssetsOutput`](crate::output::DisassociateAssetsOutput).
 pub mod disassociate_assets_output {
-
+    
     /// A builder for [`DisassociateAssetsOutput`](crate::output::DisassociateAssetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateAssetsOutput`](crate::output::DisassociateAssetsOutput).
         pub fn build(self) -> crate::output::DisassociateAssetsOutput {
-            crate::output::DisassociateAssetsOutput {}
+            crate::output::DisassociateAssetsOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateAssetsOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateAssetsOutput`](crate::output::DisassociateAssetsOutput).
@@ -2234,7 +2174,7 @@ impl DisassociateAssetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTimeSeriesOutput {
+pub struct DescribeTimeSeriesOutput  {
     /// <p>The ID of the asset in which the asset property was created.</p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
@@ -2247,11 +2187,11 @@ pub struct DescribeTimeSeriesOutput {
     /// <p>The ID of the time series.</p>
     #[doc(hidden)]
     pub time_series_id: std::option::Option<std::string::String>,
-    /// <p>The data type of the time series.</p>
+    /// <p>The data type of the time series.</p> 
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
     #[doc(hidden)]
     pub data_type: std::option::Option<crate::model::PropertyDataType>,
-    /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+    /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p> 
     /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
     #[doc(hidden)]
     pub data_type_spec: std::option::Option<std::string::String>,
@@ -2264,43 +2204,43 @@ pub struct DescribeTimeSeriesOutput {
 }
 impl DescribeTimeSeriesOutput {
     /// <p>The ID of the asset in which the asset property was created.</p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property.</p>
-    pub fn property_id(&self) -> std::option::Option<&str> {
+    pub fn property_id(&self) -> std::option::Option<& str> {
         self.property_id.as_deref()
     }
     /// <p>The alias that identifies the time series.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The ID of the time series.</p>
-    pub fn time_series_id(&self) -> std::option::Option<&str> {
+    pub fn time_series_id(&self) -> std::option::Option<& str> {
         self.time_series_id.as_deref()
     }
-    /// <p>The data type of the time series.</p>
+    /// <p>The data type of the time series.</p> 
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::PropertyDataType> {
         self.data_type.as_ref()
     }
-    /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+    /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p> 
     /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
-    pub fn data_type_spec(&self) -> std::option::Option<&str> {
+    pub fn data_type_spec(&self) -> std::option::Option<& str> {
         self.data_type_spec.as_deref()
     }
     /// <p>The date that the time series was created, in Unix epoch time.</p>
-    pub fn time_series_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn time_series_creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.time_series_creation_date.as_ref()
     }
     /// <p>The date that the time series was last updated, in Unix epoch time.</p>
-    pub fn time_series_last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn time_series_last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.time_series_last_update_date.as_ref()
     }
 }
 /// See [`DescribeTimeSeriesOutput`](crate::output::DescribeTimeSeriesOutput).
 pub mod describe_time_series_output {
-
+    
     /// A builder for [`DescribeTimeSeriesOutput`](crate::output::DescribeTimeSeriesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2321,8 +2261,7 @@ pub mod describe_time_series_output {
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
         pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset_id = input;
-            self
+            self.asset_id = input; self
         }
         /// <p>The ID of the asset property.</p>
         pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2331,8 +2270,7 @@ pub mod describe_time_series_output {
         }
         /// <p>The ID of the asset property.</p>
         pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.property_id = input;
-            self
+            self.property_id = input; self
         }
         /// <p>The alias that identifies the time series.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2341,8 +2279,7 @@ pub mod describe_time_series_output {
         }
         /// <p>The alias that identifies the time series.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// <p>The ID of the time series.</p>
         pub fn time_series_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2350,42 +2287,30 @@ pub mod describe_time_series_output {
             self
         }
         /// <p>The ID of the time series.</p>
-        pub fn set_time_series_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.time_series_id = input;
-            self
+        pub fn set_time_series_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.time_series_id = input; self
         }
-        /// <p>The data type of the time series.</p>
+        /// <p>The data type of the time series.</p> 
         /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
         pub fn data_type(mut self, input: crate::model::PropertyDataType) -> Self {
             self.data_type = Some(input);
             self
         }
-        /// <p>The data type of the time series.</p>
+        /// <p>The data type of the time series.</p> 
         /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
-        pub fn set_data_type(
-            mut self,
-            input: std::option::Option<crate::model::PropertyDataType>,
-        ) -> Self {
-            self.data_type = input;
-            self
+        pub fn set_data_type(mut self, input: std::option::Option<crate::model::PropertyDataType>) -> Self {
+            self.data_type = input; self
         }
-        /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+        /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p> 
         /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
         pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_type_spec = Some(input.into());
             self
         }
-        /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+        /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p> 
         /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
-        pub fn set_data_type_spec(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_type_spec = input;
-            self
+        pub fn set_data_type_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_type_spec = input; self
         }
         /// <p>The date that the time series was created, in Unix epoch time.</p>
         pub fn time_series_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2393,12 +2318,8 @@ pub mod describe_time_series_output {
             self
         }
         /// <p>The date that the time series was created, in Unix epoch time.</p>
-        pub fn set_time_series_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.time_series_creation_date = input;
-            self
+        pub fn set_time_series_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.time_series_creation_date = input; self
         }
         /// <p>The date that the time series was last updated, in Unix epoch time.</p>
         pub fn time_series_last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2406,27 +2327,33 @@ pub mod describe_time_series_output {
             self
         }
         /// <p>The date that the time series was last updated, in Unix epoch time.</p>
-        pub fn set_time_series_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.time_series_last_update_date = input;
-            self
+        pub fn set_time_series_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.time_series_last_update_date = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTimeSeriesOutput`](crate::output::DescribeTimeSeriesOutput).
         pub fn build(self) -> crate::output::DescribeTimeSeriesOutput {
             crate::output::DescribeTimeSeriesOutput {
-                asset_id: self.asset_id,
-                property_id: self.property_id,
-                alias: self.alias,
-                time_series_id: self.time_series_id,
-                data_type: self.data_type,
-                data_type_spec: self.data_type_spec,
-                time_series_creation_date: self.time_series_creation_date,
-                time_series_last_update_date: self.time_series_last_update_date,
+                asset_id: self.asset_id
+                ,
+                property_id: self.property_id
+                ,
+                alias: self.alias
+                ,
+                time_series_id: self.time_series_id
+                ,
+                data_type: self.data_type
+                ,
+                data_type_spec: self.data_type_spec
+                ,
+                time_series_creation_date: self.time_series_creation_date
+                ,
+                time_series_last_update_date: self.time_series_last_update_date
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTimeSeriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTimeSeriesOutput`](crate::output::DescribeTimeSeriesOutput).
@@ -2438,28 +2365,27 @@ impl DescribeTimeSeriesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStorageConfigurationOutput {
-    /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
-    /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
+pub struct DescribeStorageConfigurationOutput  {
+    /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li> 
+    /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub storage_type: std::option::Option<crate::model::StorageType>,
     /// <p>Contains information about the storage destination.</p>
     #[doc(hidden)]
     pub multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
-    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
-    /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-    /// </important> </li>
-    /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
-    /// </ul>
+    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important> 
+    /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p> 
+    /// </important> </li> 
+    /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
-    pub disassociated_data_storage:
-        std::option::Option<crate::model::DisassociatedDataStorageState>,
+    pub disassociated_data_storage: std::option::Option<crate::model::DisassociatedDataStorageState>,
     /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
     #[doc(hidden)]
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
@@ -2471,79 +2397,72 @@ pub struct DescribeStorageConfigurationOutput {
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeStorageConfigurationOutput {
-    /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
-    /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
+    /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li> 
+    /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li> 
     /// </ul>
-    pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
+    pub fn storage_type(&self) -> std::option::Option<& crate::model::StorageType> {
         self.storage_type.as_ref()
     }
     /// <p>Contains information about the storage destination.</p>
-    pub fn multi_layer_storage(&self) -> std::option::Option<&crate::model::MultiLayerStorage> {
+    pub fn multi_layer_storage(&self) -> std::option::Option<& crate::model::MultiLayerStorage> {
         self.multi_layer_storage.as_ref()
     }
-    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
-    /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-    /// </important> </li>
-    /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
-    /// </ul>
+    /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important> 
+    /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p> 
+    /// </important> </li> 
+    /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn disassociated_data_storage(
-        &self,
-    ) -> std::option::Option<&crate::model::DisassociatedDataStorageState> {
+    pub fn disassociated_data_storage(&self) -> std::option::Option<& crate::model::DisassociatedDataStorageState> {
         self.disassociated_data_storage.as_ref()
     }
     /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
-    pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
+    pub fn retention_period(&self) -> std::option::Option<& crate::model::RetentionPeriod> {
         self.retention_period.as_ref()
     }
     /// <p>Contains current status information for the configuration.</p>
-    pub fn configuration_status(&self) -> std::option::Option<&crate::model::ConfigurationStatus> {
+    pub fn configuration_status(&self) -> std::option::Option<& crate::model::ConfigurationStatus> {
         self.configuration_status.as_ref()
     }
     /// <p>The date the storage configuration was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
 }
 /// See [`DescribeStorageConfigurationOutput`](crate::output::DescribeStorageConfigurationOutput).
 pub mod describe_storage_configuration_output {
-
+    
     /// A builder for [`DescribeStorageConfigurationOutput`](crate::output::DescribeStorageConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_type: std::option::Option<crate::model::StorageType>,
         pub(crate) multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
-        pub(crate) disassociated_data_storage:
-            std::option::Option<crate::model::DisassociatedDataStorageState>,
+        pub(crate) disassociated_data_storage: std::option::Option<crate::model::DisassociatedDataStorageState>,
         pub(crate) retention_period: std::option::Option<crate::model::RetentionPeriod>,
         pub(crate) configuration_status: std::option::Option<crate::model::ConfigurationStatus>,
         pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
-        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
+        /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li> 
+        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li> 
         /// </ul>
         pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
             self.storage_type = Some(input);
             self
         }
-        /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
-        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
+        /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li> 
+        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li> 
         /// </ul>
-        pub fn set_storage_type(
-            mut self,
-            input: std::option::Option<crate::model::StorageType>,
-        ) -> Self {
-            self.storage_type = input;
-            self
+        pub fn set_storage_type(mut self, input: std::option::Option<crate::model::StorageType>) -> Self {
+            self.storage_type = input; self
         }
         /// <p>Contains information about the storage destination.</p>
         pub fn multi_layer_storage(mut self, input: crate::model::MultiLayerStorage) -> Self {
@@ -2551,42 +2470,31 @@ pub mod describe_storage_configuration_output {
             self
         }
         /// <p>Contains information about the storage destination.</p>
-        pub fn set_multi_layer_storage(
-            mut self,
-            input: std::option::Option<crate::model::MultiLayerStorage>,
-        ) -> Self {
-            self.multi_layer_storage = input;
-            self
+        pub fn set_multi_layer_storage(mut self, input: std::option::Option<crate::model::MultiLayerStorage>) -> Self {
+            self.multi_layer_storage = input; self
         }
-        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
-        /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-        /// </important> </li>
-        /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
-        /// </ul>
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important> 
+        /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p> 
+        /// </important> </li> 
+        /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li> 
+        /// </ul> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn disassociated_data_storage(
-            mut self,
-            input: crate::model::DisassociatedDataStorageState,
-        ) -> Self {
+        pub fn disassociated_data_storage(mut self, input: crate::model::DisassociatedDataStorageState) -> Self {
             self.disassociated_data_storage = Some(input);
             self
         }
-        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
-        /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-        /// </important> </li>
-        /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
-        /// </ul>
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important> 
+        /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p> 
+        /// </important> </li> 
+        /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li> 
+        /// </ul> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn set_disassociated_data_storage(
-            mut self,
-            input: std::option::Option<crate::model::DisassociatedDataStorageState>,
-        ) -> Self {
-            self.disassociated_data_storage = input;
-            self
+        pub fn set_disassociated_data_storage(mut self, input: std::option::Option<crate::model::DisassociatedDataStorageState>) -> Self {
+            self.disassociated_data_storage = input; self
         }
         /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
@@ -2594,12 +2502,8 @@ pub mod describe_storage_configuration_output {
             self
         }
         /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
-        pub fn set_retention_period(
-            mut self,
-            input: std::option::Option<crate::model::RetentionPeriod>,
-        ) -> Self {
-            self.retention_period = input;
-            self
+        pub fn set_retention_period(mut self, input: std::option::Option<crate::model::RetentionPeriod>) -> Self {
+            self.retention_period = input; self
         }
         /// <p>Contains current status information for the configuration.</p>
         pub fn configuration_status(mut self, input: crate::model::ConfigurationStatus) -> Self {
@@ -2607,12 +2511,8 @@ pub mod describe_storage_configuration_output {
             self
         }
         /// <p>Contains current status information for the configuration.</p>
-        pub fn set_configuration_status(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationStatus>,
-        ) -> Self {
-            self.configuration_status = input;
-            self
+        pub fn set_configuration_status(mut self, input: std::option::Option<crate::model::ConfigurationStatus>) -> Self {
+            self.configuration_status = input; self
         }
         /// <p>The date the storage configuration was last updated, in Unix epoch time.</p>
         pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2620,25 +2520,29 @@ pub mod describe_storage_configuration_output {
             self
         }
         /// <p>The date the storage configuration was last updated, in Unix epoch time.</p>
-        pub fn set_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_date = input;
-            self
+        pub fn set_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_date = input; self
         }
         /// Consumes the builder and constructs a [`DescribeStorageConfigurationOutput`](crate::output::DescribeStorageConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeStorageConfigurationOutput {
             crate::output::DescribeStorageConfigurationOutput {
-                storage_type: self.storage_type,
-                multi_layer_storage: self.multi_layer_storage,
-                disassociated_data_storage: self.disassociated_data_storage,
-                retention_period: self.retention_period,
-                configuration_status: self.configuration_status,
-                last_update_date: self.last_update_date,
+                storage_type: self.storage_type
+                ,
+                multi_layer_storage: self.multi_layer_storage
+                ,
+                disassociated_data_storage: self.disassociated_data_storage
+                ,
+                retention_period: self.retention_period
+                ,
+                configuration_status: self.configuration_status
+                ,
+                last_update_date: self.last_update_date
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeStorageConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageConfigurationOutput`](crate::output::DescribeStorageConfigurationOutput).
@@ -2650,11 +2554,11 @@ impl DescribeStorageConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProjectOutput {
+pub struct DescribeProjectOutput  {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
     #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
@@ -2676,38 +2580,38 @@ pub struct DescribeProjectOutput {
 }
 impl DescribeProjectOutput {
     /// <p>The ID of the project.</p>
-    pub fn project_id(&self) -> std::option::Option<&str> {
+    pub fn project_id(&self) -> std::option::Option<& str> {
         self.project_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
-    pub fn project_arn(&self) -> std::option::Option<&str> {
+    pub fn project_arn(&self) -> std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>The name of the project.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The ID of the portal that the project is in.</p>
-    pub fn portal_id(&self) -> std::option::Option<&str> {
+    pub fn portal_id(&self) -> std::option::Option<& str> {
         self.portal_id.as_deref()
     }
     /// <p>The project's description.</p>
-    pub fn project_description(&self) -> std::option::Option<&str> {
+    pub fn project_description(&self) -> std::option::Option<& str> {
         self.project_description.as_deref()
     }
     /// <p>The date the project was created, in Unix epoch time.</p>
-    pub fn project_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn project_creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.project_creation_date.as_ref()
     }
     /// <p>The date the project was last updated, in Unix epoch time.</p>
-    pub fn project_last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn project_last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.project_last_update_date.as_ref()
     }
 }
 /// See [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
 pub mod describe_project_output {
-
+    
     /// A builder for [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2727,20 +2631,18 @@ pub mod describe_project_output {
         }
         /// <p>The ID of the project.</p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_id = input;
-            self
+            self.project_id = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_arn = input;
-            self
+            self.project_arn = input; self
         }
         /// <p>The name of the project.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2749,8 +2651,7 @@ pub mod describe_project_output {
         }
         /// <p>The name of the project.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
         /// <p>The ID of the portal that the project is in.</p>
         pub fn portal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2759,8 +2660,7 @@ pub mod describe_project_output {
         }
         /// <p>The ID of the portal that the project is in.</p>
         pub fn set_portal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.portal_id = input;
-            self
+            self.portal_id = input; self
         }
         /// <p>The project's description.</p>
         pub fn project_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2768,12 +2668,8 @@ pub mod describe_project_output {
             self
         }
         /// <p>The project's description.</p>
-        pub fn set_project_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.project_description = input;
-            self
+        pub fn set_project_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_description = input; self
         }
         /// <p>The date the project was created, in Unix epoch time.</p>
         pub fn project_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2781,12 +2677,8 @@ pub mod describe_project_output {
             self
         }
         /// <p>The date the project was created, in Unix epoch time.</p>
-        pub fn set_project_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.project_creation_date = input;
-            self
+        pub fn set_project_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.project_creation_date = input; self
         }
         /// <p>The date the project was last updated, in Unix epoch time.</p>
         pub fn project_last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2794,26 +2686,31 @@ pub mod describe_project_output {
             self
         }
         /// <p>The date the project was last updated, in Unix epoch time.</p>
-        pub fn set_project_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.project_last_update_date = input;
-            self
+        pub fn set_project_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.project_last_update_date = input; self
         }
         /// Consumes the builder and constructs a [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
         pub fn build(self) -> crate::output::DescribeProjectOutput {
             crate::output::DescribeProjectOutput {
-                project_id: self.project_id,
-                project_arn: self.project_arn,
-                project_name: self.project_name,
-                portal_id: self.portal_id,
-                project_description: self.project_description,
-                project_creation_date: self.project_creation_date,
-                project_last_update_date: self.project_last_update_date,
+                project_id: self.project_id
+                ,
+                project_arn: self.project_arn
+                ,
+                project_name: self.project_name
+                ,
+                portal_id: self.portal_id
+                ,
+                project_description: self.project_description
+                ,
+                project_creation_date: self.project_creation_date
+                ,
+                project_last_update_date: self.project_last_update_date
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeProjectOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
@@ -2825,11 +2722,11 @@ impl DescribeProjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePortalOutput {
+pub struct DescribePortalOutput  {
     /// <p>The ID of the portal.</p>
     #[doc(hidden)]
     pub portal_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
     #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
@@ -2875,70 +2772,70 @@ pub struct DescribePortalOutput {
 }
 impl DescribePortalOutput {
     /// <p>The ID of the portal.</p>
-    pub fn portal_id(&self) -> std::option::Option<&str> {
+    pub fn portal_id(&self) -> std::option::Option<& str> {
         self.portal_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
-    pub fn portal_arn(&self) -> std::option::Option<&str> {
+    pub fn portal_arn(&self) -> std::option::Option<& str> {
         self.portal_arn.as_deref()
     }
     /// <p>The name of the portal.</p>
-    pub fn portal_name(&self) -> std::option::Option<&str> {
+    pub fn portal_name(&self) -> std::option::Option<& str> {
         self.portal_name.as_deref()
     }
     /// <p>The portal's description.</p>
-    pub fn portal_description(&self) -> std::option::Option<&str> {
+    pub fn portal_description(&self) -> std::option::Option<& str> {
         self.portal_description.as_deref()
     }
     /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
-    pub fn portal_client_id(&self) -> std::option::Option<&str> {
+    pub fn portal_client_id(&self) -> std::option::Option<& str> {
         self.portal_client_id.as_deref()
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-    pub fn portal_start_url(&self) -> std::option::Option<&str> {
+    pub fn portal_start_url(&self) -> std::option::Option<& str> {
         self.portal_start_url.as_deref()
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    pub fn portal_contact_email(&self) -> std::option::Option<&str> {
+    pub fn portal_contact_email(&self) -> std::option::Option<& str> {
         self.portal_contact_email.as_deref()
     }
     /// <p>The current status of the portal, which contains a state and any error message.</p>
-    pub fn portal_status(&self) -> std::option::Option<&crate::model::PortalStatus> {
+    pub fn portal_status(&self) -> std::option::Option<& crate::model::PortalStatus> {
         self.portal_status.as_ref()
     }
     /// <p>The date the portal was created, in Unix epoch time.</p>
-    pub fn portal_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn portal_creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.portal_creation_date.as_ref()
     }
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
-    pub fn portal_last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn portal_last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.portal_last_update_date.as_ref()
     }
     /// <p>The portal's logo image, which is available at a URL.</p>
-    pub fn portal_logo_image_location(&self) -> std::option::Option<&crate::model::ImageLocation> {
+    pub fn portal_logo_image_location(&self) -> std::option::Option<& crate::model::ImageLocation> {
         self.portal_logo_image_location.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The service to use to authenticate users to the portal.</p>
-    pub fn portal_auth_mode(&self) -> std::option::Option<&crate::model::AuthMode> {
+    pub fn portal_auth_mode(&self) -> std::option::Option<& crate::model::AuthMode> {
         self.portal_auth_mode.as_ref()
     }
     /// <p>The email address that sends alarm notifications.</p>
-    pub fn notification_sender_email(&self) -> std::option::Option<&str> {
+    pub fn notification_sender_email(&self) -> std::option::Option<& str> {
         self.notification_sender_email.as_deref()
     }
     /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.</p>
-    pub fn alarms(&self) -> std::option::Option<&crate::model::Alarms> {
+    pub fn alarms(&self) -> std::option::Option<& crate::model::Alarms> {
         self.alarms.as_ref()
     }
 }
 /// See [`DescribePortalOutput`](crate::output::DescribePortalOutput).
 pub mod describe_portal_output {
-
+    
     /// A builder for [`DescribePortalOutput`](crate::output::DescribePortalOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2966,20 +2863,18 @@ pub mod describe_portal_output {
         }
         /// <p>The ID of the portal.</p>
         pub fn set_portal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.portal_id = input;
-            self
+            self.portal_id = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
         pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
         pub fn set_portal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.portal_arn = input;
-            self
+            self.portal_arn = input; self
         }
         /// <p>The name of the portal.</p>
         pub fn portal_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2988,8 +2883,7 @@ pub mod describe_portal_output {
         }
         /// <p>The name of the portal.</p>
         pub fn set_portal_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.portal_name = input;
-            self
+            self.portal_name = input; self
         }
         /// <p>The portal's description.</p>
         pub fn portal_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2997,12 +2891,8 @@ pub mod describe_portal_output {
             self
         }
         /// <p>The portal's description.</p>
-        pub fn set_portal_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.portal_description = input;
-            self
+        pub fn set_portal_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.portal_description = input; self
         }
         /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
         pub fn portal_client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3010,12 +2900,8 @@ pub mod describe_portal_output {
             self
         }
         /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
-        pub fn set_portal_client_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.portal_client_id = input;
-            self
+        pub fn set_portal_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.portal_client_id = input; self
         }
         /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn portal_start_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3023,12 +2909,8 @@ pub mod describe_portal_output {
             self
         }
         /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-        pub fn set_portal_start_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.portal_start_url = input;
-            self
+        pub fn set_portal_start_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.portal_start_url = input; self
         }
         /// <p>The Amazon Web Services administrator's contact email address.</p>
         pub fn portal_contact_email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3036,12 +2918,8 @@ pub mod describe_portal_output {
             self
         }
         /// <p>The Amazon Web Services administrator's contact email address.</p>
-        pub fn set_portal_contact_email(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.portal_contact_email = input;
-            self
+        pub fn set_portal_contact_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.portal_contact_email = input; self
         }
         /// <p>The current status of the portal, which contains a state and any error message.</p>
         pub fn portal_status(mut self, input: crate::model::PortalStatus) -> Self {
@@ -3049,12 +2927,8 @@ pub mod describe_portal_output {
             self
         }
         /// <p>The current status of the portal, which contains a state and any error message.</p>
-        pub fn set_portal_status(
-            mut self,
-            input: std::option::Option<crate::model::PortalStatus>,
-        ) -> Self {
-            self.portal_status = input;
-            self
+        pub fn set_portal_status(mut self, input: std::option::Option<crate::model::PortalStatus>) -> Self {
+            self.portal_status = input; self
         }
         /// <p>The date the portal was created, in Unix epoch time.</p>
         pub fn portal_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3062,12 +2936,8 @@ pub mod describe_portal_output {
             self
         }
         /// <p>The date the portal was created, in Unix epoch time.</p>
-        pub fn set_portal_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.portal_creation_date = input;
-            self
+        pub fn set_portal_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.portal_creation_date = input; self
         }
         /// <p>The date the portal was last updated, in Unix epoch time.</p>
         pub fn portal_last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3075,12 +2945,8 @@ pub mod describe_portal_output {
             self
         }
         /// <p>The date the portal was last updated, in Unix epoch time.</p>
-        pub fn set_portal_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.portal_last_update_date = input;
-            self
+        pub fn set_portal_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.portal_last_update_date = input; self
         }
         /// <p>The portal's logo image, which is available at a URL.</p>
         pub fn portal_logo_image_location(mut self, input: crate::model::ImageLocation) -> Self {
@@ -3088,12 +2954,8 @@ pub mod describe_portal_output {
             self
         }
         /// <p>The portal's logo image, which is available at a URL.</p>
-        pub fn set_portal_logo_image_location(
-            mut self,
-            input: std::option::Option<crate::model::ImageLocation>,
-        ) -> Self {
-            self.portal_logo_image_location = input;
-            self
+        pub fn set_portal_logo_image_location(mut self, input: std::option::Option<crate::model::ImageLocation>) -> Self {
+            self.portal_logo_image_location = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3102,8 +2964,7 @@ pub mod describe_portal_output {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The service to use to authenticate users to the portal.</p>
         pub fn portal_auth_mode(mut self, input: crate::model::AuthMode) -> Self {
@@ -3111,12 +2972,8 @@ pub mod describe_portal_output {
             self
         }
         /// <p>The service to use to authenticate users to the portal.</p>
-        pub fn set_portal_auth_mode(
-            mut self,
-            input: std::option::Option<crate::model::AuthMode>,
-        ) -> Self {
-            self.portal_auth_mode = input;
-            self
+        pub fn set_portal_auth_mode(mut self, input: std::option::Option<crate::model::AuthMode>) -> Self {
+            self.portal_auth_mode = input; self
         }
         /// <p>The email address that sends alarm notifications.</p>
         pub fn notification_sender_email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3124,12 +2981,8 @@ pub mod describe_portal_output {
             self
         }
         /// <p>The email address that sends alarm notifications.</p>
-        pub fn set_notification_sender_email(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.notification_sender_email = input;
-            self
+        pub fn set_notification_sender_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.notification_sender_email = input; self
         }
         /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.</p>
         pub fn alarms(mut self, input: crate::model::Alarms) -> Self {
@@ -3138,30 +2991,46 @@ pub mod describe_portal_output {
         }
         /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.</p>
         pub fn set_alarms(mut self, input: std::option::Option<crate::model::Alarms>) -> Self {
-            self.alarms = input;
-            self
+            self.alarms = input; self
         }
         /// Consumes the builder and constructs a [`DescribePortalOutput`](crate::output::DescribePortalOutput).
         pub fn build(self) -> crate::output::DescribePortalOutput {
             crate::output::DescribePortalOutput {
-                portal_id: self.portal_id,
-                portal_arn: self.portal_arn,
-                portal_name: self.portal_name,
-                portal_description: self.portal_description,
-                portal_client_id: self.portal_client_id,
-                portal_start_url: self.portal_start_url,
-                portal_contact_email: self.portal_contact_email,
-                portal_status: self.portal_status,
-                portal_creation_date: self.portal_creation_date,
-                portal_last_update_date: self.portal_last_update_date,
-                portal_logo_image_location: self.portal_logo_image_location,
-                role_arn: self.role_arn,
-                portal_auth_mode: self.portal_auth_mode,
-                notification_sender_email: self.notification_sender_email,
-                alarms: self.alarms,
+                portal_id: self.portal_id
+                ,
+                portal_arn: self.portal_arn
+                ,
+                portal_name: self.portal_name
+                ,
+                portal_description: self.portal_description
+                ,
+                portal_client_id: self.portal_client_id
+                ,
+                portal_start_url: self.portal_start_url
+                ,
+                portal_contact_email: self.portal_contact_email
+                ,
+                portal_status: self.portal_status
+                ,
+                portal_creation_date: self.portal_creation_date
+                ,
+                portal_last_update_date: self.portal_last_update_date
+                ,
+                portal_logo_image_location: self.portal_logo_image_location
+                ,
+                role_arn: self.role_arn
+                ,
+                portal_auth_mode: self.portal_auth_mode
+                ,
+                notification_sender_email: self.notification_sender_email
+                ,
+                alarms: self.alarms
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePortalOutput {
     /// Creates a new builder-style object to manufacture [`DescribePortalOutput`](crate::output::DescribePortalOutput).
@@ -3173,20 +3042,20 @@ impl DescribePortalOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLoggingOptionsOutput {
+pub struct DescribeLoggingOptionsOutput  {
     /// <p>The current logging options.</p>
     #[doc(hidden)]
     pub logging_options: std::option::Option<crate::model::LoggingOptions>,
 }
 impl DescribeLoggingOptionsOutput {
     /// <p>The current logging options.</p>
-    pub fn logging_options(&self) -> std::option::Option<&crate::model::LoggingOptions> {
+    pub fn logging_options(&self) -> std::option::Option<& crate::model::LoggingOptions> {
         self.logging_options.as_ref()
     }
 }
 /// See [`DescribeLoggingOptionsOutput`](crate::output::DescribeLoggingOptionsOutput).
 pub mod describe_logging_options_output {
-
+    
     /// A builder for [`DescribeLoggingOptionsOutput`](crate::output::DescribeLoggingOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3199,20 +3068,19 @@ pub mod describe_logging_options_output {
             self
         }
         /// <p>The current logging options.</p>
-        pub fn set_logging_options(
-            mut self,
-            input: std::option::Option<crate::model::LoggingOptions>,
-        ) -> Self {
-            self.logging_options = input;
-            self
+        pub fn set_logging_options(mut self, input: std::option::Option<crate::model::LoggingOptions>) -> Self {
+            self.logging_options = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLoggingOptionsOutput`](crate::output::DescribeLoggingOptionsOutput).
         pub fn build(self) -> crate::output::DescribeLoggingOptionsOutput {
             crate::output::DescribeLoggingOptionsOutput {
-                logging_options: self.logging_options,
+                logging_options: self.logging_options
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLoggingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoggingOptionsOutput`](crate::output::DescribeLoggingOptionsOutput).
@@ -3224,7 +3092,7 @@ impl DescribeLoggingOptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGatewayCapabilityConfigurationOutput {
+pub struct DescribeGatewayCapabilityConfigurationOutput  {
     /// <p>The ID of the gateway that defines the capability configuration.</p>
     #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
@@ -3234,43 +3102,41 @@ pub struct DescribeGatewayCapabilityConfigurationOutput {
     /// <p>The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
     pub capability_configuration: std::option::Option<std::string::String>,
-    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
-    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
-    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
+    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> 
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> 
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub capability_sync_status: std::option::Option<crate::model::CapabilitySyncStatus>,
 }
 impl DescribeGatewayCapabilityConfigurationOutput {
     /// <p>The ID of the gateway that defines the capability configuration.</p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>The namespace of the gateway capability.</p>
-    pub fn capability_namespace(&self) -> std::option::Option<&str> {
+    pub fn capability_namespace(&self) -> std::option::Option<& str> {
         self.capability_namespace.as_deref()
     }
     /// <p>The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn capability_configuration(&self) -> std::option::Option<&str> {
+    pub fn capability_configuration(&self) -> std::option::Option<& str> {
         self.capability_configuration.as_deref()
     }
-    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
-    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
-    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
+    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> 
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> 
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> 
     /// </ul>
-    pub fn capability_sync_status(
-        &self,
-    ) -> std::option::Option<&crate::model::CapabilitySyncStatus> {
+    pub fn capability_sync_status(&self) -> std::option::Option<& crate::model::CapabilitySyncStatus> {
         self.capability_sync_status.as_ref()
     }
 }
 /// See [`DescribeGatewayCapabilityConfigurationOutput`](crate::output::DescribeGatewayCapabilityConfigurationOutput).
 pub mod describe_gateway_capability_configuration_output {
-
+    
     /// A builder for [`DescribeGatewayCapabilityConfigurationOutput`](crate::output::DescribeGatewayCapabilityConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3287,8 +3153,7 @@ pub mod describe_gateway_capability_configuration_output {
         }
         /// <p>The ID of the gateway that defines the capability configuration.</p>
         pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_id = input;
-            self
+            self.gateway_id = input; self
         }
         /// <p>The namespace of the gateway capability.</p>
         pub fn capability_namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3296,12 +3161,8 @@ pub mod describe_gateway_capability_configuration_output {
             self
         }
         /// <p>The namespace of the gateway capability.</p>
-        pub fn set_capability_namespace(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.capability_namespace = input;
-            self
+        pub fn set_capability_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.capability_namespace = input; self
         }
         /// <p>The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn capability_configuration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3309,46 +3170,44 @@ pub mod describe_gateway_capability_configuration_output {
             self
         }
         /// <p>The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn set_capability_configuration(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.capability_configuration = input;
-            self
+        pub fn set_capability_configuration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.capability_configuration = input; self
         }
-        /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
-        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
-        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
+        /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> 
+        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> 
+        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> 
         /// </ul>
         pub fn capability_sync_status(mut self, input: crate::model::CapabilitySyncStatus) -> Self {
             self.capability_sync_status = Some(input);
             self
         }
-        /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
-        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
-        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
+        /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li> 
+        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li> 
+        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li> 
         /// </ul>
-        pub fn set_capability_sync_status(
-            mut self,
-            input: std::option::Option<crate::model::CapabilitySyncStatus>,
-        ) -> Self {
-            self.capability_sync_status = input;
-            self
+        pub fn set_capability_sync_status(mut self, input: std::option::Option<crate::model::CapabilitySyncStatus>) -> Self {
+            self.capability_sync_status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGatewayCapabilityConfigurationOutput`](crate::output::DescribeGatewayCapabilityConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeGatewayCapabilityConfigurationOutput {
             crate::output::DescribeGatewayCapabilityConfigurationOutput {
-                gateway_id: self.gateway_id,
-                capability_namespace: self.capability_namespace,
-                capability_configuration: self.capability_configuration,
-                capability_sync_status: self.capability_sync_status,
+                gateway_id: self.gateway_id
+                ,
+                capability_namespace: self.capability_namespace
+                ,
+                capability_configuration: self.capability_configuration
+                ,
+                capability_sync_status: self.capability_sync_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGatewayCapabilityConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGatewayCapabilityConfigurationOutput`](crate::output::DescribeGatewayCapabilityConfigurationOutput).
@@ -3360,14 +3219,14 @@ impl DescribeGatewayCapabilityConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGatewayOutput {
+pub struct DescribeGatewayOutput  {
     /// <p>The ID of the gateway device.</p>
     #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The name of the gateway.</p>
     #[doc(hidden)]
     pub gateway_name: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -3376,8 +3235,7 @@ pub struct DescribeGatewayOutput {
     pub gateway_platform: std::option::Option<crate::model::GatewayPlatform>,
     /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
     #[doc(hidden)]
-    pub gateway_capability_summaries:
-        std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
+    pub gateway_capability_summaries: std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
     /// <p>The date the gateway was created, in Unix epoch time.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -3387,40 +3245,38 @@ pub struct DescribeGatewayOutput {
 }
 impl DescribeGatewayOutput {
     /// <p>The ID of the gateway device.</p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>The name of the gateway.</p>
-    pub fn gateway_name(&self) -> std::option::Option<&str> {
+    pub fn gateway_name(&self) -> std::option::Option<& str> {
         self.gateway_name.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The gateway's platform.</p>
-    pub fn gateway_platform(&self) -> std::option::Option<&crate::model::GatewayPlatform> {
+    pub fn gateway_platform(&self) -> std::option::Option<& crate::model::GatewayPlatform> {
         self.gateway_platform.as_ref()
     }
     /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
-    pub fn gateway_capability_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::GatewayCapabilitySummary]> {
+    pub fn gateway_capability_summaries(&self) -> std::option::Option<& [crate::model::GatewayCapabilitySummary]> {
         self.gateway_capability_summaries.as_deref()
     }
     /// <p>The date the gateway was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the gateway was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
 }
 /// See [`DescribeGatewayOutput`](crate::output::DescribeGatewayOutput).
 pub mod describe_gateway_output {
-
+    
     /// A builder for [`DescribeGatewayOutput`](crate::output::DescribeGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3428,8 +3284,7 @@ pub mod describe_gateway_output {
         pub(crate) gateway_name: std::option::Option<std::string::String>,
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) gateway_platform: std::option::Option<crate::model::GatewayPlatform>,
-        pub(crate) gateway_capability_summaries:
-            std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
+        pub(crate) gateway_capability_summaries: std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -3441,8 +3296,7 @@ pub mod describe_gateway_output {
         }
         /// <p>The ID of the gateway device.</p>
         pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_id = input;
-            self
+            self.gateway_id = input; self
         }
         /// <p>The name of the gateway.</p>
         pub fn gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3451,20 +3305,18 @@ pub mod describe_gateway_output {
         }
         /// <p>The name of the gateway.</p>
         pub fn set_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_name = input;
-            self
+            self.gateway_name = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// <p>The gateway's platform.</p>
         pub fn gateway_platform(mut self, input: crate::model::GatewayPlatform) -> Self {
@@ -3472,34 +3324,23 @@ pub mod describe_gateway_output {
             self
         }
         /// <p>The gateway's platform.</p>
-        pub fn set_gateway_platform(
-            mut self,
-            input: std::option::Option<crate::model::GatewayPlatform>,
-        ) -> Self {
-            self.gateway_platform = input;
-            self
+        pub fn set_gateway_platform(mut self, input: std::option::Option<crate::model::GatewayPlatform>) -> Self {
+            self.gateway_platform = input; self
         }
         /// Appends an item to `gateway_capability_summaries`.
         ///
         /// To override the contents of this collection use [`set_gateway_capability_summaries`](Self::set_gateway_capability_summaries).
         ///
         /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
-        pub fn gateway_capability_summaries(
-            mut self,
-            input: crate::model::GatewayCapabilitySummary,
-        ) -> Self {
+        pub fn gateway_capability_summaries(mut self, input: crate::model::GatewayCapabilitySummary) -> Self {
             let mut v = self.gateway_capability_summaries.unwrap_or_default();
-            v.push(input);
-            self.gateway_capability_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.gateway_capability_summaries = Some(v);
+                            self
         }
         /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
-        pub fn set_gateway_capability_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
-        ) -> Self {
-            self.gateway_capability_summaries = input;
-            self
+        pub fn set_gateway_capability_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>) -> Self {
+            self.gateway_capability_summaries = input; self
         }
         /// <p>The date the gateway was created, in Unix epoch time.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3507,12 +3348,8 @@ pub mod describe_gateway_output {
             self
         }
         /// <p>The date the gateway was created, in Unix epoch time.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The date the gateway was last updated, in Unix epoch time.</p>
         pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3520,26 +3357,31 @@ pub mod describe_gateway_output {
             self
         }
         /// <p>The date the gateway was last updated, in Unix epoch time.</p>
-        pub fn set_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_date = input;
-            self
+        pub fn set_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_date = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGatewayOutput`](crate::output::DescribeGatewayOutput).
         pub fn build(self) -> crate::output::DescribeGatewayOutput {
             crate::output::DescribeGatewayOutput {
-                gateway_id: self.gateway_id,
-                gateway_name: self.gateway_name,
-                gateway_arn: self.gateway_arn,
-                gateway_platform: self.gateway_platform,
-                gateway_capability_summaries: self.gateway_capability_summaries,
-                creation_date: self.creation_date,
-                last_update_date: self.last_update_date,
+                gateway_id: self.gateway_id
+                ,
+                gateway_name: self.gateway_name
+                ,
+                gateway_arn: self.gateway_arn
+                ,
+                gateway_platform: self.gateway_platform
+                ,
+                gateway_capability_summaries: self.gateway_capability_summaries
+                ,
+                creation_date: self.creation_date
+                ,
+                last_update_date: self.last_update_date
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGatewayOutput`](crate::output::DescribeGatewayOutput).
@@ -3551,7 +3393,7 @@ impl DescribeGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDefaultEncryptionConfigurationOutput {
+pub struct DescribeDefaultEncryptionConfigurationOutput  {
     /// <p>The type of encryption used for the encryption configuration.</p>
     #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
@@ -3564,21 +3406,21 @@ pub struct DescribeDefaultEncryptionConfigurationOutput {
 }
 impl DescribeDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
-    pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+    pub fn encryption_type(&self) -> std::option::Option<& crate::model::EncryptionType> {
         self.encryption_type.as_ref()
     }
     /// <p>The key ARN of the customer managed key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there's an error, it also contains the <code>ErrorDetails</code>.</p>
-    pub fn configuration_status(&self) -> std::option::Option<&crate::model::ConfigurationStatus> {
+    pub fn configuration_status(&self) -> std::option::Option<& crate::model::ConfigurationStatus> {
         self.configuration_status.as_ref()
     }
 }
 /// See [`DescribeDefaultEncryptionConfigurationOutput`](crate::output::DescribeDefaultEncryptionConfigurationOutput).
 pub mod describe_default_encryption_configuration_output {
-
+    
     /// A builder for [`DescribeDefaultEncryptionConfigurationOutput`](crate::output::DescribeDefaultEncryptionConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3593,12 +3435,8 @@ pub mod describe_default_encryption_configuration_output {
             self
         }
         /// <p>The type of encryption used for the encryption configuration.</p>
-        pub fn set_encryption_type(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionType>,
-        ) -> Self {
-            self.encryption_type = input;
-            self
+        pub fn set_encryption_type(mut self, input: std::option::Option<crate::model::EncryptionType>) -> Self {
+            self.encryption_type = input; self
         }
         /// <p>The key ARN of the customer managed key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3607,8 +3445,7 @@ pub mod describe_default_encryption_configuration_output {
         }
         /// <p>The key ARN of the customer managed key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there's an error, it also contains the <code>ErrorDetails</code>.</p>
         pub fn configuration_status(mut self, input: crate::model::ConfigurationStatus) -> Self {
@@ -3616,22 +3453,23 @@ pub mod describe_default_encryption_configuration_output {
             self
         }
         /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there's an error, it also contains the <code>ErrorDetails</code>.</p>
-        pub fn set_configuration_status(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationStatus>,
-        ) -> Self {
-            self.configuration_status = input;
-            self
+        pub fn set_configuration_status(mut self, input: std::option::Option<crate::model::ConfigurationStatus>) -> Self {
+            self.configuration_status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDefaultEncryptionConfigurationOutput`](crate::output::DescribeDefaultEncryptionConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeDefaultEncryptionConfigurationOutput {
             crate::output::DescribeDefaultEncryptionConfigurationOutput {
-                encryption_type: self.encryption_type,
-                kms_key_arn: self.kms_key_arn,
-                configuration_status: self.configuration_status,
+                encryption_type: self.encryption_type
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                configuration_status: self.configuration_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDefaultEncryptionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDefaultEncryptionConfigurationOutput`](crate::output::DescribeDefaultEncryptionConfigurationOutput).
@@ -3643,11 +3481,11 @@ impl DescribeDefaultEncryptionConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDashboardOutput {
+pub struct DescribeDashboardOutput  {
     /// <p>The ID of the dashboard.</p>
     #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
     #[doc(hidden)]
     pub dashboard_arn: std::option::Option<std::string::String>,
@@ -3672,42 +3510,42 @@ pub struct DescribeDashboardOutput {
 }
 impl DescribeDashboardOutput {
     /// <p>The ID of the dashboard.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
-    pub fn dashboard_arn(&self) -> std::option::Option<&str> {
+    pub fn dashboard_arn(&self) -> std::option::Option<& str> {
         self.dashboard_arn.as_deref()
     }
     /// <p>The name of the dashboard.</p>
-    pub fn dashboard_name(&self) -> std::option::Option<&str> {
+    pub fn dashboard_name(&self) -> std::option::Option<& str> {
         self.dashboard_name.as_deref()
     }
     /// <p>The ID of the project that the dashboard is in.</p>
-    pub fn project_id(&self) -> std::option::Option<&str> {
+    pub fn project_id(&self) -> std::option::Option<& str> {
         self.project_id.as_deref()
     }
     /// <p>The dashboard's description.</p>
-    pub fn dashboard_description(&self) -> std::option::Option<&str> {
+    pub fn dashboard_description(&self) -> std::option::Option<& str> {
         self.dashboard_description.as_deref()
     }
     /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn dashboard_definition(&self) -> std::option::Option<&str> {
+    pub fn dashboard_definition(&self) -> std::option::Option<& str> {
         self.dashboard_definition.as_deref()
     }
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
-    pub fn dashboard_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn dashboard_creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.dashboard_creation_date.as_ref()
     }
     /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
-    pub fn dashboard_last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn dashboard_last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.dashboard_last_update_date.as_ref()
     }
 }
 /// See [`DescribeDashboardOutput`](crate::output::DescribeDashboardOutput).
 pub mod describe_dashboard_output {
-
+    
     /// A builder for [`DescribeDashboardOutput`](crate::output::DescribeDashboardOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3728,23 +3566,18 @@ pub mod describe_dashboard_output {
         }
         /// <p>The ID of the dashboard.</p>
         pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dashboard_id = input;
-            self
+            self.dashboard_id = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
         pub fn dashboard_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dashboard_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
-        pub fn set_dashboard_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dashboard_arn = input;
-            self
+        pub fn set_dashboard_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_arn = input; self
         }
         /// <p>The name of the dashboard.</p>
         pub fn dashboard_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3752,12 +3585,8 @@ pub mod describe_dashboard_output {
             self
         }
         /// <p>The name of the dashboard.</p>
-        pub fn set_dashboard_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dashboard_name = input;
-            self
+        pub fn set_dashboard_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_name = input; self
         }
         /// <p>The ID of the project that the dashboard is in.</p>
         pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3766,8 +3595,7 @@ pub mod describe_dashboard_output {
         }
         /// <p>The ID of the project that the dashboard is in.</p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_id = input;
-            self
+            self.project_id = input; self
         }
         /// <p>The dashboard's description.</p>
         pub fn dashboard_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3775,12 +3603,8 @@ pub mod describe_dashboard_output {
             self
         }
         /// <p>The dashboard's description.</p>
-        pub fn set_dashboard_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dashboard_description = input;
-            self
+        pub fn set_dashboard_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_description = input; self
         }
         /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn dashboard_definition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3788,12 +3612,8 @@ pub mod describe_dashboard_output {
             self
         }
         /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn set_dashboard_definition(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dashboard_definition = input;
-            self
+        pub fn set_dashboard_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_definition = input; self
         }
         /// <p>The date the dashboard was created, in Unix epoch time.</p>
         pub fn dashboard_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3801,12 +3621,8 @@ pub mod describe_dashboard_output {
             self
         }
         /// <p>The date the dashboard was created, in Unix epoch time.</p>
-        pub fn set_dashboard_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.dashboard_creation_date = input;
-            self
+        pub fn set_dashboard_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.dashboard_creation_date = input; self
         }
         /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
         pub fn dashboard_last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3814,27 +3630,33 @@ pub mod describe_dashboard_output {
             self
         }
         /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
-        pub fn set_dashboard_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.dashboard_last_update_date = input;
-            self
+        pub fn set_dashboard_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.dashboard_last_update_date = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDashboardOutput`](crate::output::DescribeDashboardOutput).
         pub fn build(self) -> crate::output::DescribeDashboardOutput {
             crate::output::DescribeDashboardOutput {
-                dashboard_id: self.dashboard_id,
-                dashboard_arn: self.dashboard_arn,
-                dashboard_name: self.dashboard_name,
-                project_id: self.project_id,
-                dashboard_description: self.dashboard_description,
-                dashboard_definition: self.dashboard_definition,
-                dashboard_creation_date: self.dashboard_creation_date,
-                dashboard_last_update_date: self.dashboard_last_update_date,
+                dashboard_id: self.dashboard_id
+                ,
+                dashboard_arn: self.dashboard_arn
+                ,
+                dashboard_name: self.dashboard_name
+                ,
+                project_id: self.project_id
+                ,
+                dashboard_description: self.dashboard_description
+                ,
+                dashboard_definition: self.dashboard_definition
+                ,
+                dashboard_creation_date: self.dashboard_creation_date
+                ,
+                dashboard_last_update_date: self.dashboard_last_update_date
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDashboardOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardOutput`](crate::output::DescribeDashboardOutput).
@@ -3846,21 +3668,21 @@ impl DescribeDashboardOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBulkImportJobOutput {
+pub struct DescribeBulkImportJobOutput  {
     /// <p>The ID of the job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The unique name that helps identify the job request.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The status of the bulk import job can be one of following values.</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
-    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
-    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
-    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <p>The status of the bulk import job can be one of following values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> 
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
@@ -3885,53 +3707,53 @@ pub struct DescribeBulkImportJobOutput {
 }
 impl DescribeBulkImportJobOutput {
     /// <p>The ID of the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The unique name that helps identify the job request.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
-    /// <p>The status of the bulk import job can be one of following values.</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
-    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
-    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
-    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <p>The status of the bulk import job can be one of following values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> 
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
     /// </ul>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
-    pub fn job_role_arn(&self) -> std::option::Option<&str> {
+    pub fn job_role_arn(&self) -> std::option::Option<& str> {
         self.job_role_arn.as_deref()
     }
     /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
-    pub fn files(&self) -> std::option::Option<&[crate::model::File]> {
+    pub fn files(&self) -> std::option::Option<& [crate::model::File]> {
         self.files.as_deref()
     }
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
-    pub fn error_report_location(&self) -> std::option::Option<&crate::model::ErrorReportLocation> {
+    pub fn error_report_location(&self) -> std::option::Option<& crate::model::ErrorReportLocation> {
         self.error_report_location.as_ref()
     }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
-    pub fn job_configuration(&self) -> std::option::Option<&crate::model::JobConfiguration> {
+    pub fn job_configuration(&self) -> std::option::Option<& crate::model::JobConfiguration> {
         self.job_configuration.as_ref()
     }
     /// <p>The date the job was created, in Unix epoch TIME.</p>
-    pub fn job_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn job_creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.job_creation_date.as_ref()
     }
     /// <p>The date the job was last updated, in Unix epoch time.</p>
-    pub fn job_last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn job_last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.job_last_update_date.as_ref()
     }
 }
 /// See [`DescribeBulkImportJobOutput`](crate::output::DescribeBulkImportJobOutput).
 pub mod describe_bulk_import_job_output {
-
+    
     /// A builder for [`DescribeBulkImportJobOutput`](crate::output::DescribeBulkImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3953,8 +3775,7 @@ pub mod describe_bulk_import_job_output {
         }
         /// <p>The ID of the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The unique name that helps identify the job request.</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3963,37 +3784,32 @@ pub mod describe_bulk_import_job_output {
         }
         /// <p>The unique name that helps identify the job request.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
-        /// <p>The status of the bulk import job can be one of following values.</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
-        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
-        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
-        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
-        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
-        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// <p>The status of the bulk import job can be one of following values.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> 
+        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> 
+        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> 
+        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
+        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
         /// </ul>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>The status of the bulk import job can be one of following values.</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
-        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
-        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
-        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
-        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
-        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// <p>The status of the bulk import job can be one of following values.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> 
+        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> 
+        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> 
+        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
+        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
         /// </ul>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
         pub fn job_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4002,8 +3818,7 @@ pub mod describe_bulk_import_job_output {
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
         pub fn set_job_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_role_arn = input;
-            self
+            self.job_role_arn = input; self
         }
         /// Appends an item to `files`.
         ///
@@ -4012,17 +3827,13 @@ pub mod describe_bulk_import_job_output {
         /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
         pub fn files(mut self, input: crate::model::File) -> Self {
             let mut v = self.files.unwrap_or_default();
-            v.push(input);
-            self.files = Some(v);
-            self
+                            v.push(input);
+                            self.files = Some(v);
+                            self
         }
         /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
-        pub fn set_files(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::File>>,
-        ) -> Self {
-            self.files = input;
-            self
+        pub fn set_files(mut self, input: std::option::Option<std::vec::Vec<crate::model::File>>) -> Self {
+            self.files = input; self
         }
         /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
         pub fn error_report_location(mut self, input: crate::model::ErrorReportLocation) -> Self {
@@ -4030,12 +3841,8 @@ pub mod describe_bulk_import_job_output {
             self
         }
         /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
-        pub fn set_error_report_location(
-            mut self,
-            input: std::option::Option<crate::model::ErrorReportLocation>,
-        ) -> Self {
-            self.error_report_location = input;
-            self
+        pub fn set_error_report_location(mut self, input: std::option::Option<crate::model::ErrorReportLocation>) -> Self {
+            self.error_report_location = input; self
         }
         /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
         pub fn job_configuration(mut self, input: crate::model::JobConfiguration) -> Self {
@@ -4043,12 +3850,8 @@ pub mod describe_bulk_import_job_output {
             self
         }
         /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
-        pub fn set_job_configuration(
-            mut self,
-            input: std::option::Option<crate::model::JobConfiguration>,
-        ) -> Self {
-            self.job_configuration = input;
-            self
+        pub fn set_job_configuration(mut self, input: std::option::Option<crate::model::JobConfiguration>) -> Self {
+            self.job_configuration = input; self
         }
         /// <p>The date the job was created, in Unix epoch TIME.</p>
         pub fn job_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4056,12 +3859,8 @@ pub mod describe_bulk_import_job_output {
             self
         }
         /// <p>The date the job was created, in Unix epoch TIME.</p>
-        pub fn set_job_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.job_creation_date = input;
-            self
+        pub fn set_job_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.job_creation_date = input; self
         }
         /// <p>The date the job was last updated, in Unix epoch time.</p>
         pub fn job_last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4069,28 +3868,35 @@ pub mod describe_bulk_import_job_output {
             self
         }
         /// <p>The date the job was last updated, in Unix epoch time.</p>
-        pub fn set_job_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.job_last_update_date = input;
-            self
+        pub fn set_job_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.job_last_update_date = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBulkImportJobOutput`](crate::output::DescribeBulkImportJobOutput).
         pub fn build(self) -> crate::output::DescribeBulkImportJobOutput {
             crate::output::DescribeBulkImportJobOutput {
-                job_id: self.job_id,
-                job_name: self.job_name,
-                job_status: self.job_status,
-                job_role_arn: self.job_role_arn,
-                files: self.files,
-                error_report_location: self.error_report_location,
-                job_configuration: self.job_configuration,
-                job_creation_date: self.job_creation_date,
-                job_last_update_date: self.job_last_update_date,
+                job_id: self.job_id
+                ,
+                job_name: self.job_name
+                ,
+                job_status: self.job_status
+                ,
+                job_role_arn: self.job_role_arn
+                ,
+                files: self.files
+                ,
+                error_report_location: self.error_report_location
+                ,
+                job_configuration: self.job_configuration
+                ,
+                job_creation_date: self.job_creation_date
+                ,
+                job_last_update_date: self.job_last_update_date
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBulkImportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBulkImportJobOutput`](crate::output::DescribeBulkImportJobOutput).
@@ -4102,7 +3908,7 @@ impl DescribeBulkImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAssetPropertyOutput {
+pub struct DescribeAssetPropertyOutput  {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
@@ -4112,7 +3918,7 @@ pub struct DescribeAssetPropertyOutput {
     /// <p>The ID of the asset model.</p>
     #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
-    /// <p>The asset property's definition, alias, and notification state.</p>
+    /// <p>The asset property's definition, alias, and notification state.</p> 
     /// <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
     #[doc(hidden)]
     pub asset_property: std::option::Option<crate::model::Property>,
@@ -4122,30 +3928,30 @@ pub struct DescribeAssetPropertyOutput {
 }
 impl DescribeAssetPropertyOutput {
     /// <p>The ID of the asset.</p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The name of the asset.</p>
-    pub fn asset_name(&self) -> std::option::Option<&str> {
+    pub fn asset_name(&self) -> std::option::Option<& str> {
         self.asset_name.as_deref()
     }
     /// <p>The ID of the asset model.</p>
-    pub fn asset_model_id(&self) -> std::option::Option<&str> {
+    pub fn asset_model_id(&self) -> std::option::Option<& str> {
         self.asset_model_id.as_deref()
     }
-    /// <p>The asset property's definition, alias, and notification state.</p>
+    /// <p>The asset property's definition, alias, and notification state.</p> 
     /// <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
-    pub fn asset_property(&self) -> std::option::Option<&crate::model::Property> {
+    pub fn asset_property(&self) -> std::option::Option<& crate::model::Property> {
         self.asset_property.as_ref()
     }
     /// <p>The composite asset model that declares this asset property, if this asset property exists in a composite model.</p>
-    pub fn composite_model(&self) -> std::option::Option<&crate::model::CompositeModelProperty> {
+    pub fn composite_model(&self) -> std::option::Option<& crate::model::CompositeModelProperty> {
         self.composite_model.as_ref()
     }
 }
 /// See [`DescribeAssetPropertyOutput`](crate::output::DescribeAssetPropertyOutput).
 pub mod describe_asset_property_output {
-
+    
     /// A builder for [`DescribeAssetPropertyOutput`](crate::output::DescribeAssetPropertyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4163,8 +3969,7 @@ pub mod describe_asset_property_output {
         }
         /// <p>The ID of the asset.</p>
         pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset_id = input;
-            self
+            self.asset_id = input; self
         }
         /// <p>The name of the asset.</p>
         pub fn asset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4173,8 +3978,7 @@ pub mod describe_asset_property_output {
         }
         /// <p>The name of the asset.</p>
         pub fn set_asset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset_name = input;
-            self
+            self.asset_name = input; self
         }
         /// <p>The ID of the asset model.</p>
         pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4182,27 +3986,19 @@ pub mod describe_asset_property_output {
             self
         }
         /// <p>The ID of the asset model.</p>
-        pub fn set_asset_model_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.asset_model_id = input;
-            self
+        pub fn set_asset_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_model_id = input; self
         }
-        /// <p>The asset property's definition, alias, and notification state.</p>
+        /// <p>The asset property's definition, alias, and notification state.</p> 
         /// <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
         pub fn asset_property(mut self, input: crate::model::Property) -> Self {
             self.asset_property = Some(input);
             self
         }
-        /// <p>The asset property's definition, alias, and notification state.</p>
+        /// <p>The asset property's definition, alias, and notification state.</p> 
         /// <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
-        pub fn set_asset_property(
-            mut self,
-            input: std::option::Option<crate::model::Property>,
-        ) -> Self {
-            self.asset_property = input;
-            self
+        pub fn set_asset_property(mut self, input: std::option::Option<crate::model::Property>) -> Self {
+            self.asset_property = input; self
         }
         /// <p>The composite asset model that declares this asset property, if this asset property exists in a composite model.</p>
         pub fn composite_model(mut self, input: crate::model::CompositeModelProperty) -> Self {
@@ -4210,24 +4006,27 @@ pub mod describe_asset_property_output {
             self
         }
         /// <p>The composite asset model that declares this asset property, if this asset property exists in a composite model.</p>
-        pub fn set_composite_model(
-            mut self,
-            input: std::option::Option<crate::model::CompositeModelProperty>,
-        ) -> Self {
-            self.composite_model = input;
-            self
+        pub fn set_composite_model(mut self, input: std::option::Option<crate::model::CompositeModelProperty>) -> Self {
+            self.composite_model = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAssetPropertyOutput`](crate::output::DescribeAssetPropertyOutput).
         pub fn build(self) -> crate::output::DescribeAssetPropertyOutput {
             crate::output::DescribeAssetPropertyOutput {
-                asset_id: self.asset_id,
-                asset_name: self.asset_name,
-                asset_model_id: self.asset_model_id,
-                asset_property: self.asset_property,
-                composite_model: self.composite_model,
+                asset_id: self.asset_id
+                ,
+                asset_name: self.asset_name
+                ,
+                asset_model_id: self.asset_model_id
+                ,
+                asset_property: self.asset_property
+                ,
+                composite_model: self.composite_model
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAssetPropertyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssetPropertyOutput`](crate::output::DescribeAssetPropertyOutput).
@@ -4239,11 +4038,11 @@ impl DescribeAssetPropertyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAssetModelOutput {
+pub struct DescribeAssetModelOutput  {
     /// <p>The ID of the asset model.</p>
     #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     #[doc(hidden)]
     pub asset_model_arn: std::option::Option<std::string::String>,
@@ -4253,19 +4052,16 @@ pub struct DescribeAssetModelOutput {
     /// <p>The asset model's description.</p>
     #[doc(hidden)]
     pub asset_model_description: std::option::Option<std::string::String>,
-    /// <p>The list of asset properties for the asset model.</p>
+    /// <p>The list of asset properties for the asset model.</p> 
     /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetModelCompositeModels</code> object.</p>
     #[doc(hidden)]
-    pub asset_model_properties:
-        std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
+    pub asset_model_properties: std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
     /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child asset relationships for an asset model.</p>
     #[doc(hidden)]
-    pub asset_model_hierarchies:
-        std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchy>>,
+    pub asset_model_hierarchies: std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchy>>,
     /// <p>The list of composite asset models for the asset model.</p>
     #[doc(hidden)]
-    pub asset_model_composite_models:
-        std::option::Option<std::vec::Vec<crate::model::AssetModelCompositeModel>>,
+    pub asset_model_composite_models: std::option::Option<std::vec::Vec<crate::model::AssetModelCompositeModel>>,
     /// <p>The date the asset model was created, in Unix epoch time.</p>
     #[doc(hidden)]
     pub asset_model_creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -4278,57 +4074,51 @@ pub struct DescribeAssetModelOutput {
 }
 impl DescribeAssetModelOutput {
     /// <p>The ID of the asset model.</p>
-    pub fn asset_model_id(&self) -> std::option::Option<&str> {
+    pub fn asset_model_id(&self) -> std::option::Option<& str> {
         self.asset_model_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
-    pub fn asset_model_arn(&self) -> std::option::Option<&str> {
+    pub fn asset_model_arn(&self) -> std::option::Option<& str> {
         self.asset_model_arn.as_deref()
     }
     /// <p>The name of the asset model.</p>
-    pub fn asset_model_name(&self) -> std::option::Option<&str> {
+    pub fn asset_model_name(&self) -> std::option::Option<& str> {
         self.asset_model_name.as_deref()
     }
     /// <p>The asset model's description.</p>
-    pub fn asset_model_description(&self) -> std::option::Option<&str> {
+    pub fn asset_model_description(&self) -> std::option::Option<& str> {
         self.asset_model_description.as_deref()
     }
-    /// <p>The list of asset properties for the asset model.</p>
+    /// <p>The list of asset properties for the asset model.</p> 
     /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetModelCompositeModels</code> object.</p>
-    pub fn asset_model_properties(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssetModelProperty]> {
+    pub fn asset_model_properties(&self) -> std::option::Option<& [crate::model::AssetModelProperty]> {
         self.asset_model_properties.as_deref()
     }
     /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child asset relationships for an asset model.</p>
-    pub fn asset_model_hierarchies(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssetModelHierarchy]> {
+    pub fn asset_model_hierarchies(&self) -> std::option::Option<& [crate::model::AssetModelHierarchy]> {
         self.asset_model_hierarchies.as_deref()
     }
     /// <p>The list of composite asset models for the asset model.</p>
-    pub fn asset_model_composite_models(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssetModelCompositeModel]> {
+    pub fn asset_model_composite_models(&self) -> std::option::Option<& [crate::model::AssetModelCompositeModel]> {
         self.asset_model_composite_models.as_deref()
     }
     /// <p>The date the asset model was created, in Unix epoch time.</p>
-    pub fn asset_model_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn asset_model_creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.asset_model_creation_date.as_ref()
     }
     /// <p>The date the asset model was last updated, in Unix epoch time.</p>
-    pub fn asset_model_last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn asset_model_last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.asset_model_last_update_date.as_ref()
     }
     /// <p>The current status of the asset model, which contains a state and any error message.</p>
-    pub fn asset_model_status(&self) -> std::option::Option<&crate::model::AssetModelStatus> {
+    pub fn asset_model_status(&self) -> std::option::Option<& crate::model::AssetModelStatus> {
         self.asset_model_status.as_ref()
     }
 }
 /// See [`DescribeAssetModelOutput`](crate::output::DescribeAssetModelOutput).
 pub mod describe_asset_model_output {
-
+    
     /// A builder for [`DescribeAssetModelOutput`](crate::output::DescribeAssetModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4336,12 +4126,9 @@ pub mod describe_asset_model_output {
         pub(crate) asset_model_arn: std::option::Option<std::string::String>,
         pub(crate) asset_model_name: std::option::Option<std::string::String>,
         pub(crate) asset_model_description: std::option::Option<std::string::String>,
-        pub(crate) asset_model_properties:
-            std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
-        pub(crate) asset_model_hierarchies:
-            std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchy>>,
-        pub(crate) asset_model_composite_models:
-            std::option::Option<std::vec::Vec<crate::model::AssetModelCompositeModel>>,
+        pub(crate) asset_model_properties: std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
+        pub(crate) asset_model_hierarchies: std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchy>>,
+        pub(crate) asset_model_composite_models: std::option::Option<std::vec::Vec<crate::model::AssetModelCompositeModel>>,
         pub(crate) asset_model_creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) asset_model_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) asset_model_status: std::option::Option<crate::model::AssetModelStatus>,
@@ -4353,27 +4140,19 @@ pub mod describe_asset_model_output {
             self
         }
         /// <p>The ID of the asset model.</p>
-        pub fn set_asset_model_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.asset_model_id = input;
-            self
+        pub fn set_asset_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_model_id = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
         pub fn asset_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_model_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
-        pub fn set_asset_model_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.asset_model_arn = input;
-            self
+        pub fn set_asset_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_model_arn = input; self
         }
         /// <p>The name of the asset model.</p>
         pub fn asset_model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4381,12 +4160,8 @@ pub mod describe_asset_model_output {
             self
         }
         /// <p>The name of the asset model.</p>
-        pub fn set_asset_model_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.asset_model_name = input;
-            self
+        pub fn set_asset_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_model_name = input; self
         }
         /// <p>The asset model's description.</p>
         pub fn asset_model_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4394,33 +4169,25 @@ pub mod describe_asset_model_output {
             self
         }
         /// <p>The asset model's description.</p>
-        pub fn set_asset_model_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.asset_model_description = input;
-            self
+        pub fn set_asset_model_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_model_description = input; self
         }
         /// Appends an item to `asset_model_properties`.
         ///
         /// To override the contents of this collection use [`set_asset_model_properties`](Self::set_asset_model_properties).
         ///
-        /// <p>The list of asset properties for the asset model.</p>
+        /// <p>The list of asset properties for the asset model.</p> 
         /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetModelCompositeModels</code> object.</p>
         pub fn asset_model_properties(mut self, input: crate::model::AssetModelProperty) -> Self {
             let mut v = self.asset_model_properties.unwrap_or_default();
-            v.push(input);
-            self.asset_model_properties = Some(v);
-            self
+                            v.push(input);
+                            self.asset_model_properties = Some(v);
+                            self
         }
-        /// <p>The list of asset properties for the asset model.</p>
+        /// <p>The list of asset properties for the asset model.</p> 
         /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetModelCompositeModels</code> object.</p>
-        pub fn set_asset_model_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
-        ) -> Self {
-            self.asset_model_properties = input;
-            self
+        pub fn set_asset_model_properties(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>) -> Self {
+            self.asset_model_properties = input; self
         }
         /// Appends an item to `asset_model_hierarchies`.
         ///
@@ -4429,39 +4196,28 @@ pub mod describe_asset_model_output {
         /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child asset relationships for an asset model.</p>
         pub fn asset_model_hierarchies(mut self, input: crate::model::AssetModelHierarchy) -> Self {
             let mut v = self.asset_model_hierarchies.unwrap_or_default();
-            v.push(input);
-            self.asset_model_hierarchies = Some(v);
-            self
+                            v.push(input);
+                            self.asset_model_hierarchies = Some(v);
+                            self
         }
         /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child asset relationships for an asset model.</p>
-        pub fn set_asset_model_hierarchies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchy>>,
-        ) -> Self {
-            self.asset_model_hierarchies = input;
-            self
+        pub fn set_asset_model_hierarchies(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchy>>) -> Self {
+            self.asset_model_hierarchies = input; self
         }
         /// Appends an item to `asset_model_composite_models`.
         ///
         /// To override the contents of this collection use [`set_asset_model_composite_models`](Self::set_asset_model_composite_models).
         ///
         /// <p>The list of composite asset models for the asset model.</p>
-        pub fn asset_model_composite_models(
-            mut self,
-            input: crate::model::AssetModelCompositeModel,
-        ) -> Self {
+        pub fn asset_model_composite_models(mut self, input: crate::model::AssetModelCompositeModel) -> Self {
             let mut v = self.asset_model_composite_models.unwrap_or_default();
-            v.push(input);
-            self.asset_model_composite_models = Some(v);
-            self
+                            v.push(input);
+                            self.asset_model_composite_models = Some(v);
+                            self
         }
         /// <p>The list of composite asset models for the asset model.</p>
-        pub fn set_asset_model_composite_models(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetModelCompositeModel>>,
-        ) -> Self {
-            self.asset_model_composite_models = input;
-            self
+        pub fn set_asset_model_composite_models(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetModelCompositeModel>>) -> Self {
+            self.asset_model_composite_models = input; self
         }
         /// <p>The date the asset model was created, in Unix epoch time.</p>
         pub fn asset_model_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4469,12 +4225,8 @@ pub mod describe_asset_model_output {
             self
         }
         /// <p>The date the asset model was created, in Unix epoch time.</p>
-        pub fn set_asset_model_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.asset_model_creation_date = input;
-            self
+        pub fn set_asset_model_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.asset_model_creation_date = input; self
         }
         /// <p>The date the asset model was last updated, in Unix epoch time.</p>
         pub fn asset_model_last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4482,12 +4234,8 @@ pub mod describe_asset_model_output {
             self
         }
         /// <p>The date the asset model was last updated, in Unix epoch time.</p>
-        pub fn set_asset_model_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.asset_model_last_update_date = input;
-            self
+        pub fn set_asset_model_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.asset_model_last_update_date = input; self
         }
         /// <p>The current status of the asset model, which contains a state and any error message.</p>
         pub fn asset_model_status(mut self, input: crate::model::AssetModelStatus) -> Self {
@@ -4495,29 +4243,37 @@ pub mod describe_asset_model_output {
             self
         }
         /// <p>The current status of the asset model, which contains a state and any error message.</p>
-        pub fn set_asset_model_status(
-            mut self,
-            input: std::option::Option<crate::model::AssetModelStatus>,
-        ) -> Self {
-            self.asset_model_status = input;
-            self
+        pub fn set_asset_model_status(mut self, input: std::option::Option<crate::model::AssetModelStatus>) -> Self {
+            self.asset_model_status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAssetModelOutput`](crate::output::DescribeAssetModelOutput).
         pub fn build(self) -> crate::output::DescribeAssetModelOutput {
             crate::output::DescribeAssetModelOutput {
-                asset_model_id: self.asset_model_id,
-                asset_model_arn: self.asset_model_arn,
-                asset_model_name: self.asset_model_name,
-                asset_model_description: self.asset_model_description,
-                asset_model_properties: self.asset_model_properties,
-                asset_model_hierarchies: self.asset_model_hierarchies,
-                asset_model_composite_models: self.asset_model_composite_models,
-                asset_model_creation_date: self.asset_model_creation_date,
-                asset_model_last_update_date: self.asset_model_last_update_date,
-                asset_model_status: self.asset_model_status,
+                asset_model_id: self.asset_model_id
+                ,
+                asset_model_arn: self.asset_model_arn
+                ,
+                asset_model_name: self.asset_model_name
+                ,
+                asset_model_description: self.asset_model_description
+                ,
+                asset_model_properties: self.asset_model_properties
+                ,
+                asset_model_hierarchies: self.asset_model_hierarchies
+                ,
+                asset_model_composite_models: self.asset_model_composite_models
+                ,
+                asset_model_creation_date: self.asset_model_creation_date
+                ,
+                asset_model_last_update_date: self.asset_model_last_update_date
+                ,
+                asset_model_status: self.asset_model_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAssetModelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssetModelOutput`](crate::output::DescribeAssetModelOutput).
@@ -4529,11 +4285,11 @@ impl DescribeAssetModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAssetOutput {
+pub struct DescribeAssetOutput  {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
     #[doc(hidden)]
     pub asset_arn: std::option::Option<std::string::String>,
@@ -4543,7 +4299,7 @@ pub struct DescribeAssetOutput {
     /// <p>The ID of the asset model that was used to create the asset.</p>
     #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
-    /// <p>The list of asset properties for the asset.</p>
+    /// <p>The list of asset properties for the asset.</p> 
     /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetCompositeModels</code> object.</p>
     #[doc(hidden)]
     pub asset_properties: std::option::Option<std::vec::Vec<crate::model::AssetProperty>>,
@@ -4552,8 +4308,7 @@ pub struct DescribeAssetOutput {
     pub asset_hierarchies: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
     /// <p>The composite models for the asset.</p>
     #[doc(hidden)]
-    pub asset_composite_models:
-        std::option::Option<std::vec::Vec<crate::model::AssetCompositeModel>>,
+    pub asset_composite_models: std::option::Option<std::vec::Vec<crate::model::AssetCompositeModel>>,
     /// <p>The date the asset was created, in Unix epoch time.</p>
     #[doc(hidden)]
     pub asset_creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -4569,57 +4324,55 @@ pub struct DescribeAssetOutput {
 }
 impl DescribeAssetOutput {
     /// <p>The ID of the asset.</p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> std::option::Option<& str> {
         self.asset_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
-    pub fn asset_arn(&self) -> std::option::Option<&str> {
+    pub fn asset_arn(&self) -> std::option::Option<& str> {
         self.asset_arn.as_deref()
     }
     /// <p>The name of the asset.</p>
-    pub fn asset_name(&self) -> std::option::Option<&str> {
+    pub fn asset_name(&self) -> std::option::Option<& str> {
         self.asset_name.as_deref()
     }
     /// <p>The ID of the asset model that was used to create the asset.</p>
-    pub fn asset_model_id(&self) -> std::option::Option<&str> {
+    pub fn asset_model_id(&self) -> std::option::Option<& str> {
         self.asset_model_id.as_deref()
     }
-    /// <p>The list of asset properties for the asset.</p>
+    /// <p>The list of asset properties for the asset.</p> 
     /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetCompositeModels</code> object.</p>
-    pub fn asset_properties(&self) -> std::option::Option<&[crate::model::AssetProperty]> {
+    pub fn asset_properties(&self) -> std::option::Option<& [crate::model::AssetProperty]> {
         self.asset_properties.as_deref()
     }
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-    pub fn asset_hierarchies(&self) -> std::option::Option<&[crate::model::AssetHierarchy]> {
+    pub fn asset_hierarchies(&self) -> std::option::Option<& [crate::model::AssetHierarchy]> {
         self.asset_hierarchies.as_deref()
     }
     /// <p>The composite models for the asset.</p>
-    pub fn asset_composite_models(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssetCompositeModel]> {
+    pub fn asset_composite_models(&self) -> std::option::Option<& [crate::model::AssetCompositeModel]> {
         self.asset_composite_models.as_deref()
     }
     /// <p>The date the asset was created, in Unix epoch time.</p>
-    pub fn asset_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn asset_creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.asset_creation_date.as_ref()
     }
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
-    pub fn asset_last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn asset_last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.asset_last_update_date.as_ref()
     }
     /// <p>The current status of the asset, which contains a state and any error message.</p>
-    pub fn asset_status(&self) -> std::option::Option<&crate::model::AssetStatus> {
+    pub fn asset_status(&self) -> std::option::Option<& crate::model::AssetStatus> {
         self.asset_status.as_ref()
     }
     /// <p>A description for the asset.</p>
-    pub fn asset_description(&self) -> std::option::Option<&str> {
+    pub fn asset_description(&self) -> std::option::Option<& str> {
         self.asset_description.as_deref()
     }
 }
 /// See [`DescribeAssetOutput`](crate::output::DescribeAssetOutput).
 pub mod describe_asset_output {
-
+    
     /// A builder for [`DescribeAssetOutput`](crate::output::DescribeAssetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4627,12 +4380,9 @@ pub mod describe_asset_output {
         pub(crate) asset_arn: std::option::Option<std::string::String>,
         pub(crate) asset_name: std::option::Option<std::string::String>,
         pub(crate) asset_model_id: std::option::Option<std::string::String>,
-        pub(crate) asset_properties:
-            std::option::Option<std::vec::Vec<crate::model::AssetProperty>>,
-        pub(crate) asset_hierarchies:
-            std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
-        pub(crate) asset_composite_models:
-            std::option::Option<std::vec::Vec<crate::model::AssetCompositeModel>>,
+        pub(crate) asset_properties: std::option::Option<std::vec::Vec<crate::model::AssetProperty>>,
+        pub(crate) asset_hierarchies: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
+        pub(crate) asset_composite_models: std::option::Option<std::vec::Vec<crate::model::AssetCompositeModel>>,
         pub(crate) asset_creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) asset_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) asset_status: std::option::Option<crate::model::AssetStatus>,
@@ -4646,20 +4396,18 @@ pub mod describe_asset_output {
         }
         /// <p>The ID of the asset.</p>
         pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset_id = input;
-            self
+            self.asset_id = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
         pub fn asset_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
         pub fn set_asset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset_arn = input;
-            self
+            self.asset_arn = input; self
         }
         /// <p>The name of the asset.</p>
         pub fn asset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4668,8 +4416,7 @@ pub mod describe_asset_output {
         }
         /// <p>The name of the asset.</p>
         pub fn set_asset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset_name = input;
-            self
+            self.asset_name = input; self
         }
         /// <p>The ID of the asset model that was used to create the asset.</p>
         pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4677,33 +4424,25 @@ pub mod describe_asset_output {
             self
         }
         /// <p>The ID of the asset model that was used to create the asset.</p>
-        pub fn set_asset_model_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.asset_model_id = input;
-            self
+        pub fn set_asset_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_model_id = input; self
         }
         /// Appends an item to `asset_properties`.
         ///
         /// To override the contents of this collection use [`set_asset_properties`](Self::set_asset_properties).
         ///
-        /// <p>The list of asset properties for the asset.</p>
+        /// <p>The list of asset properties for the asset.</p> 
         /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetCompositeModels</code> object.</p>
         pub fn asset_properties(mut self, input: crate::model::AssetProperty) -> Self {
             let mut v = self.asset_properties.unwrap_or_default();
-            v.push(input);
-            self.asset_properties = Some(v);
-            self
+                            v.push(input);
+                            self.asset_properties = Some(v);
+                            self
         }
-        /// <p>The list of asset properties for the asset.</p>
+        /// <p>The list of asset properties for the asset.</p> 
         /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetCompositeModels</code> object.</p>
-        pub fn set_asset_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetProperty>>,
-        ) -> Self {
-            self.asset_properties = input;
-            self
+        pub fn set_asset_properties(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetProperty>>) -> Self {
+            self.asset_properties = input; self
         }
         /// Appends an item to `asset_hierarchies`.
         ///
@@ -4712,17 +4451,13 @@ pub mod describe_asset_output {
         /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
         pub fn asset_hierarchies(mut self, input: crate::model::AssetHierarchy) -> Self {
             let mut v = self.asset_hierarchies.unwrap_or_default();
-            v.push(input);
-            self.asset_hierarchies = Some(v);
-            self
+                            v.push(input);
+                            self.asset_hierarchies = Some(v);
+                            self
         }
         /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-        pub fn set_asset_hierarchies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>,
-        ) -> Self {
-            self.asset_hierarchies = input;
-            self
+        pub fn set_asset_hierarchies(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetHierarchy>>) -> Self {
+            self.asset_hierarchies = input; self
         }
         /// Appends an item to `asset_composite_models`.
         ///
@@ -4731,17 +4466,13 @@ pub mod describe_asset_output {
         /// <p>The composite models for the asset.</p>
         pub fn asset_composite_models(mut self, input: crate::model::AssetCompositeModel) -> Self {
             let mut v = self.asset_composite_models.unwrap_or_default();
-            v.push(input);
-            self.asset_composite_models = Some(v);
-            self
+                            v.push(input);
+                            self.asset_composite_models = Some(v);
+                            self
         }
         /// <p>The composite models for the asset.</p>
-        pub fn set_asset_composite_models(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetCompositeModel>>,
-        ) -> Self {
-            self.asset_composite_models = input;
-            self
+        pub fn set_asset_composite_models(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetCompositeModel>>) -> Self {
+            self.asset_composite_models = input; self
         }
         /// <p>The date the asset was created, in Unix epoch time.</p>
         pub fn asset_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4749,12 +4480,8 @@ pub mod describe_asset_output {
             self
         }
         /// <p>The date the asset was created, in Unix epoch time.</p>
-        pub fn set_asset_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.asset_creation_date = input;
-            self
+        pub fn set_asset_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.asset_creation_date = input; self
         }
         /// <p>The date the asset was last updated, in Unix epoch time.</p>
         pub fn asset_last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4762,12 +4489,8 @@ pub mod describe_asset_output {
             self
         }
         /// <p>The date the asset was last updated, in Unix epoch time.</p>
-        pub fn set_asset_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.asset_last_update_date = input;
-            self
+        pub fn set_asset_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.asset_last_update_date = input; self
         }
         /// <p>The current status of the asset, which contains a state and any error message.</p>
         pub fn asset_status(mut self, input: crate::model::AssetStatus) -> Self {
@@ -4775,12 +4498,8 @@ pub mod describe_asset_output {
             self
         }
         /// <p>The current status of the asset, which contains a state and any error message.</p>
-        pub fn set_asset_status(
-            mut self,
-            input: std::option::Option<crate::model::AssetStatus>,
-        ) -> Self {
-            self.asset_status = input;
-            self
+        pub fn set_asset_status(mut self, input: std::option::Option<crate::model::AssetStatus>) -> Self {
+            self.asset_status = input; self
         }
         /// <p>A description for the asset.</p>
         pub fn asset_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4788,30 +4507,39 @@ pub mod describe_asset_output {
             self
         }
         /// <p>A description for the asset.</p>
-        pub fn set_asset_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.asset_description = input;
-            self
+        pub fn set_asset_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_description = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAssetOutput`](crate::output::DescribeAssetOutput).
         pub fn build(self) -> crate::output::DescribeAssetOutput {
             crate::output::DescribeAssetOutput {
-                asset_id: self.asset_id,
-                asset_arn: self.asset_arn,
-                asset_name: self.asset_name,
-                asset_model_id: self.asset_model_id,
-                asset_properties: self.asset_properties,
-                asset_hierarchies: self.asset_hierarchies,
-                asset_composite_models: self.asset_composite_models,
-                asset_creation_date: self.asset_creation_date,
-                asset_last_update_date: self.asset_last_update_date,
-                asset_status: self.asset_status,
-                asset_description: self.asset_description,
+                asset_id: self.asset_id
+                ,
+                asset_arn: self.asset_arn
+                ,
+                asset_name: self.asset_name
+                ,
+                asset_model_id: self.asset_model_id
+                ,
+                asset_properties: self.asset_properties
+                ,
+                asset_hierarchies: self.asset_hierarchies
+                ,
+                asset_composite_models: self.asset_composite_models
+                ,
+                asset_creation_date: self.asset_creation_date
+                ,
+                asset_last_update_date: self.asset_last_update_date
+                ,
+                asset_status: self.asset_status
+                ,
+                asset_description: self.asset_description
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAssetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssetOutput`](crate::output::DescribeAssetOutput).
@@ -4823,11 +4551,11 @@ impl DescribeAssetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccessPolicyOutput {
+pub struct DescribeAccessPolicyOutput  {
     /// <p>The ID of the access policy.</p>
     #[doc(hidden)]
     pub access_policy_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
     #[doc(hidden)]
     pub access_policy_arn: std::option::Option<std::string::String>,
@@ -4849,40 +4577,38 @@ pub struct DescribeAccessPolicyOutput {
 }
 impl DescribeAccessPolicyOutput {
     /// <p>The ID of the access policy.</p>
-    pub fn access_policy_id(&self) -> std::option::Option<&str> {
+    pub fn access_policy_id(&self) -> std::option::Option<& str> {
         self.access_policy_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
-    pub fn access_policy_arn(&self) -> std::option::Option<&str> {
+    pub fn access_policy_arn(&self) -> std::option::Option<& str> {
         self.access_policy_arn.as_deref()
     }
     /// <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy applies.</p>
-    pub fn access_policy_identity(&self) -> std::option::Option<&crate::model::Identity> {
+    pub fn access_policy_identity(&self) -> std::option::Option<& crate::model::Identity> {
         self.access_policy_identity.as_ref()
     }
     /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.</p>
-    pub fn access_policy_resource(&self) -> std::option::Option<&crate::model::Resource> {
+    pub fn access_policy_resource(&self) -> std::option::Option<& crate::model::Resource> {
         self.access_policy_resource.as_ref()
     }
     /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    pub fn access_policy_permission(&self) -> std::option::Option<&crate::model::Permission> {
+    pub fn access_policy_permission(&self) -> std::option::Option<& crate::model::Permission> {
         self.access_policy_permission.as_ref()
     }
     /// <p>The date the access policy was created, in Unix epoch time.</p>
-    pub fn access_policy_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn access_policy_creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.access_policy_creation_date.as_ref()
     }
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
-    pub fn access_policy_last_update_date(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn access_policy_last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.access_policy_last_update_date.as_ref()
     }
 }
 /// See [`DescribeAccessPolicyOutput`](crate::output::DescribeAccessPolicyOutput).
 pub mod describe_access_policy_output {
-
+    
     /// A builder for [`DescribeAccessPolicyOutput`](crate::output::DescribeAccessPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4901,27 +4627,19 @@ pub mod describe_access_policy_output {
             self
         }
         /// <p>The ID of the access policy.</p>
-        pub fn set_access_policy_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_policy_id = input;
-            self
+        pub fn set_access_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_policy_id = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
         pub fn access_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_policy_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
-        pub fn set_access_policy_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_policy_arn = input;
-            self
+        pub fn set_access_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_policy_arn = input; self
         }
         /// <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy applies.</p>
         pub fn access_policy_identity(mut self, input: crate::model::Identity) -> Self {
@@ -4929,12 +4647,8 @@ pub mod describe_access_policy_output {
             self
         }
         /// <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM user) to which this access policy applies.</p>
-        pub fn set_access_policy_identity(
-            mut self,
-            input: std::option::Option<crate::model::Identity>,
-        ) -> Self {
-            self.access_policy_identity = input;
-            self
+        pub fn set_access_policy_identity(mut self, input: std::option::Option<crate::model::Identity>) -> Self {
+            self.access_policy_identity = input; self
         }
         /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.</p>
         pub fn access_policy_resource(mut self, input: crate::model::Resource) -> Self {
@@ -4942,12 +4656,8 @@ pub mod describe_access_policy_output {
             self
         }
         /// <p>The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.</p>
-        pub fn set_access_policy_resource(
-            mut self,
-            input: std::option::Option<crate::model::Resource>,
-        ) -> Self {
-            self.access_policy_resource = input;
-            self
+        pub fn set_access_policy_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
+            self.access_policy_resource = input; self
         }
         /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
         pub fn access_policy_permission(mut self, input: crate::model::Permission) -> Self {
@@ -4955,12 +4665,8 @@ pub mod describe_access_policy_output {
             self
         }
         /// <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-        pub fn set_access_policy_permission(
-            mut self,
-            input: std::option::Option<crate::model::Permission>,
-        ) -> Self {
-            self.access_policy_permission = input;
-            self
+        pub fn set_access_policy_permission(mut self, input: std::option::Option<crate::model::Permission>) -> Self {
+            self.access_policy_permission = input; self
         }
         /// <p>The date the access policy was created, in Unix epoch time.</p>
         pub fn access_policy_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4968,12 +4674,8 @@ pub mod describe_access_policy_output {
             self
         }
         /// <p>The date the access policy was created, in Unix epoch time.</p>
-        pub fn set_access_policy_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.access_policy_creation_date = input;
-            self
+        pub fn set_access_policy_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.access_policy_creation_date = input; self
         }
         /// <p>The date the access policy was last updated, in Unix epoch time.</p>
         pub fn access_policy_last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4981,26 +4683,31 @@ pub mod describe_access_policy_output {
             self
         }
         /// <p>The date the access policy was last updated, in Unix epoch time.</p>
-        pub fn set_access_policy_last_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.access_policy_last_update_date = input;
-            self
+        pub fn set_access_policy_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.access_policy_last_update_date = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccessPolicyOutput`](crate::output::DescribeAccessPolicyOutput).
         pub fn build(self) -> crate::output::DescribeAccessPolicyOutput {
             crate::output::DescribeAccessPolicyOutput {
-                access_policy_id: self.access_policy_id,
-                access_policy_arn: self.access_policy_arn,
-                access_policy_identity: self.access_policy_identity,
-                access_policy_resource: self.access_policy_resource,
-                access_policy_permission: self.access_policy_permission,
-                access_policy_creation_date: self.access_policy_creation_date,
-                access_policy_last_update_date: self.access_policy_last_update_date,
+                access_policy_id: self.access_policy_id
+                ,
+                access_policy_arn: self.access_policy_arn
+                ,
+                access_policy_identity: self.access_policy_identity
+                ,
+                access_policy_resource: self.access_policy_resource
+                ,
+                access_policy_permission: self.access_policy_permission
+                ,
+                access_policy_creation_date: self.access_policy_creation_date
+                ,
+                access_policy_last_update_date: self.access_policy_last_update_date
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccessPolicyOutput`](crate::output::DescribeAccessPolicyOutput).
@@ -5012,19 +4719,24 @@ impl DescribeAccessPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTimeSeriesOutput {}
+pub struct DeleteTimeSeriesOutput  {
+}
 /// See [`DeleteTimeSeriesOutput`](crate::output::DeleteTimeSeriesOutput).
 pub mod delete_time_series_output {
-
+    
     /// A builder for [`DeleteTimeSeriesOutput`](crate::output::DeleteTimeSeriesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTimeSeriesOutput`](crate::output::DeleteTimeSeriesOutput).
         pub fn build(self) -> crate::output::DeleteTimeSeriesOutput {
-            crate::output::DeleteTimeSeriesOutput {}
+            crate::output::DeleteTimeSeriesOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteTimeSeriesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTimeSeriesOutput`](crate::output::DeleteTimeSeriesOutput).
@@ -5036,19 +4748,24 @@ impl DeleteTimeSeriesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProjectOutput {}
+pub struct DeleteProjectOutput  {
+}
 /// See [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
 pub mod delete_project_output {
-
+    
     /// A builder for [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
         pub fn build(self) -> crate::output::DeleteProjectOutput {
-            crate::output::DeleteProjectOutput {}
+            crate::output::DeleteProjectOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteProjectOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
@@ -5060,20 +4777,20 @@ impl DeleteProjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePortalOutput {
+pub struct DeletePortalOutput  {
     /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     #[doc(hidden)]
     pub portal_status: std::option::Option<crate::model::PortalStatus>,
 }
 impl DeletePortalOutput {
     /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
-    pub fn portal_status(&self) -> std::option::Option<&crate::model::PortalStatus> {
+    pub fn portal_status(&self) -> std::option::Option<& crate::model::PortalStatus> {
         self.portal_status.as_ref()
     }
 }
 /// See [`DeletePortalOutput`](crate::output::DeletePortalOutput).
 pub mod delete_portal_output {
-
+    
     /// A builder for [`DeletePortalOutput`](crate::output::DeletePortalOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5086,20 +4803,19 @@ pub mod delete_portal_output {
             self
         }
         /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
-        pub fn set_portal_status(
-            mut self,
-            input: std::option::Option<crate::model::PortalStatus>,
-        ) -> Self {
-            self.portal_status = input;
-            self
+        pub fn set_portal_status(mut self, input: std::option::Option<crate::model::PortalStatus>) -> Self {
+            self.portal_status = input; self
         }
         /// Consumes the builder and constructs a [`DeletePortalOutput`](crate::output::DeletePortalOutput).
         pub fn build(self) -> crate::output::DeletePortalOutput {
             crate::output::DeletePortalOutput {
-                portal_status: self.portal_status,
+                portal_status: self.portal_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeletePortalOutput {
     /// Creates a new builder-style object to manufacture [`DeletePortalOutput`](crate::output::DeletePortalOutput).
@@ -5111,19 +4827,24 @@ impl DeletePortalOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGatewayOutput {}
+pub struct DeleteGatewayOutput  {
+}
 /// See [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
 pub mod delete_gateway_output {
-
+    
     /// A builder for [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
         pub fn build(self) -> crate::output::DeleteGatewayOutput {
-            crate::output::DeleteGatewayOutput {}
+            crate::output::DeleteGatewayOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
@@ -5135,19 +4856,24 @@ impl DeleteGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDashboardOutput {}
+pub struct DeleteDashboardOutput  {
+}
 /// See [`DeleteDashboardOutput`](crate::output::DeleteDashboardOutput).
 pub mod delete_dashboard_output {
-
+    
     /// A builder for [`DeleteDashboardOutput`](crate::output::DeleteDashboardOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDashboardOutput`](crate::output::DeleteDashboardOutput).
         pub fn build(self) -> crate::output::DeleteDashboardOutput {
-            crate::output::DeleteDashboardOutput {}
+            crate::output::DeleteDashboardOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDashboardOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDashboardOutput`](crate::output::DeleteDashboardOutput).
@@ -5159,20 +4885,20 @@ impl DeleteDashboardOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAssetModelOutput {
+pub struct DeleteAssetModelOutput  {
     /// <p>The status of the asset model, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     #[doc(hidden)]
     pub asset_model_status: std::option::Option<crate::model::AssetModelStatus>,
 }
 impl DeleteAssetModelOutput {
     /// <p>The status of the asset model, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
-    pub fn asset_model_status(&self) -> std::option::Option<&crate::model::AssetModelStatus> {
+    pub fn asset_model_status(&self) -> std::option::Option<& crate::model::AssetModelStatus> {
         self.asset_model_status.as_ref()
     }
 }
 /// See [`DeleteAssetModelOutput`](crate::output::DeleteAssetModelOutput).
 pub mod delete_asset_model_output {
-
+    
     /// A builder for [`DeleteAssetModelOutput`](crate::output::DeleteAssetModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5185,20 +4911,19 @@ pub mod delete_asset_model_output {
             self
         }
         /// <p>The status of the asset model, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
-        pub fn set_asset_model_status(
-            mut self,
-            input: std::option::Option<crate::model::AssetModelStatus>,
-        ) -> Self {
-            self.asset_model_status = input;
-            self
+        pub fn set_asset_model_status(mut self, input: std::option::Option<crate::model::AssetModelStatus>) -> Self {
+            self.asset_model_status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAssetModelOutput`](crate::output::DeleteAssetModelOutput).
         pub fn build(self) -> crate::output::DeleteAssetModelOutput {
             crate::output::DeleteAssetModelOutput {
-                asset_model_status: self.asset_model_status,
+                asset_model_status: self.asset_model_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteAssetModelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAssetModelOutput`](crate::output::DeleteAssetModelOutput).
@@ -5210,20 +4935,20 @@ impl DeleteAssetModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAssetOutput {
+pub struct DeleteAssetOutput  {
     /// <p>The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     #[doc(hidden)]
     pub asset_status: std::option::Option<crate::model::AssetStatus>,
 }
 impl DeleteAssetOutput {
     /// <p>The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
-    pub fn asset_status(&self) -> std::option::Option<&crate::model::AssetStatus> {
+    pub fn asset_status(&self) -> std::option::Option<& crate::model::AssetStatus> {
         self.asset_status.as_ref()
     }
 }
 /// See [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
 pub mod delete_asset_output {
-
+    
     /// A builder for [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5236,20 +4961,19 @@ pub mod delete_asset_output {
             self
         }
         /// <p>The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
-        pub fn set_asset_status(
-            mut self,
-            input: std::option::Option<crate::model::AssetStatus>,
-        ) -> Self {
-            self.asset_status = input;
-            self
+        pub fn set_asset_status(mut self, input: std::option::Option<crate::model::AssetStatus>) -> Self {
+            self.asset_status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
         pub fn build(self) -> crate::output::DeleteAssetOutput {
             crate::output::DeleteAssetOutput {
-                asset_status: self.asset_status,
+                asset_status: self.asset_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteAssetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
@@ -5261,19 +4985,24 @@ impl DeleteAssetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccessPolicyOutput {}
+pub struct DeleteAccessPolicyOutput  {
+}
 /// See [`DeleteAccessPolicyOutput`](crate::output::DeleteAccessPolicyOutput).
 pub mod delete_access_policy_output {
-
+    
     /// A builder for [`DeleteAccessPolicyOutput`](crate::output::DeleteAccessPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccessPolicyOutput`](crate::output::DeleteAccessPolicyOutput).
         pub fn build(self) -> crate::output::DeleteAccessPolicyOutput {
-            crate::output::DeleteAccessPolicyOutput {}
+            crate::output::DeleteAccessPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPolicyOutput`](crate::output::DeleteAccessPolicyOutput).
@@ -5285,29 +5014,29 @@ impl DeleteAccessPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProjectOutput {
+pub struct CreateProjectOutput  {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
     #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl CreateProjectOutput {
     /// <p>The ID of the project.</p>
-    pub fn project_id(&self) -> std::option::Option<&str> {
+    pub fn project_id(&self) -> std::option::Option<& str> {
         self.project_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
-    pub fn project_arn(&self) -> std::option::Option<&str> {
+    pub fn project_arn(&self) -> std::option::Option<& str> {
         self.project_arn.as_deref()
     }
 }
 /// See [`CreateProjectOutput`](crate::output::CreateProjectOutput).
 pub mod create_project_output {
-
+    
     /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5322,29 +5051,31 @@ pub mod create_project_output {
         }
         /// <p>The ID of the project.</p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_id = input;
-            self
+            self.project_id = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_arn = input;
-            self
+            self.project_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateProjectOutput`](crate::output::CreateProjectOutput).
         pub fn build(self) -> crate::output::CreateProjectOutput {
             crate::output::CreateProjectOutput {
-                project_id: self.project_id,
-                project_arn: self.project_arn,
+                project_id: self.project_id
+                ,
+                project_arn: self.project_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateProjectOutput {
     /// Creates a new builder-style object to manufacture [`CreateProjectOutput`](crate::output::CreateProjectOutput).
@@ -5356,11 +5087,11 @@ impl CreateProjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePortalOutput {
+pub struct CreatePortalOutput  {
     /// <p>The ID of the created portal.</p>
     #[doc(hidden)]
     pub portal_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
     #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
@@ -5376,30 +5107,30 @@ pub struct CreatePortalOutput {
 }
 impl CreatePortalOutput {
     /// <p>The ID of the created portal.</p>
-    pub fn portal_id(&self) -> std::option::Option<&str> {
+    pub fn portal_id(&self) -> std::option::Option<& str> {
         self.portal_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
-    pub fn portal_arn(&self) -> std::option::Option<&str> {
+    pub fn portal_arn(&self) -> std::option::Option<& str> {
         self.portal_arn.as_deref()
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-    pub fn portal_start_url(&self) -> std::option::Option<&str> {
+    pub fn portal_start_url(&self) -> std::option::Option<& str> {
         self.portal_start_url.as_deref()
     }
     /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn portal_status(&self) -> std::option::Option<&crate::model::PortalStatus> {
+    pub fn portal_status(&self) -> std::option::Option<& crate::model::PortalStatus> {
         self.portal_status.as_ref()
     }
     /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
-    pub fn sso_application_id(&self) -> std::option::Option<&str> {
+    pub fn sso_application_id(&self) -> std::option::Option<& str> {
         self.sso_application_id.as_deref()
     }
 }
 /// See [`CreatePortalOutput`](crate::output::CreatePortalOutput).
 pub mod create_portal_output {
-
+    
     /// A builder for [`CreatePortalOutput`](crate::output::CreatePortalOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5417,20 +5148,18 @@ pub mod create_portal_output {
         }
         /// <p>The ID of the created portal.</p>
         pub fn set_portal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.portal_id = input;
-            self
+            self.portal_id = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
         pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
         pub fn set_portal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.portal_arn = input;
-            self
+            self.portal_arn = input; self
         }
         /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn portal_start_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5438,12 +5167,8 @@ pub mod create_portal_output {
             self
         }
         /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-        pub fn set_portal_start_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.portal_start_url = input;
-            self
+        pub fn set_portal_start_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.portal_start_url = input; self
         }
         /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
         pub fn portal_status(mut self, input: crate::model::PortalStatus) -> Self {
@@ -5451,12 +5176,8 @@ pub mod create_portal_output {
             self
         }
         /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
-        pub fn set_portal_status(
-            mut self,
-            input: std::option::Option<crate::model::PortalStatus>,
-        ) -> Self {
-            self.portal_status = input;
-            self
+        pub fn set_portal_status(mut self, input: std::option::Option<crate::model::PortalStatus>) -> Self {
+            self.portal_status = input; self
         }
         /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
         pub fn sso_application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5464,24 +5185,27 @@ pub mod create_portal_output {
             self
         }
         /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
-        pub fn set_sso_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sso_application_id = input;
-            self
+        pub fn set_sso_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sso_application_id = input; self
         }
         /// Consumes the builder and constructs a [`CreatePortalOutput`](crate::output::CreatePortalOutput).
         pub fn build(self) -> crate::output::CreatePortalOutput {
             crate::output::CreatePortalOutput {
-                portal_id: self.portal_id,
-                portal_arn: self.portal_arn,
-                portal_start_url: self.portal_start_url,
-                portal_status: self.portal_status,
-                sso_application_id: self.sso_application_id,
+                portal_id: self.portal_id
+                ,
+                portal_arn: self.portal_arn
+                ,
+                portal_start_url: self.portal_start_url
+                ,
+                portal_status: self.portal_status
+                ,
+                sso_application_id: self.sso_application_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePortalOutput {
     /// Creates a new builder-style object to manufacture [`CreatePortalOutput`](crate::output::CreatePortalOutput).
@@ -5493,29 +5217,29 @@ impl CreatePortalOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGatewayOutput {
+pub struct CreateGatewayOutput  {
     /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
     #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl CreateGatewayOutput {
     /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 /// See [`CreateGatewayOutput`](crate::output::CreateGatewayOutput).
 pub mod create_gateway_output {
-
+    
     /// A builder for [`CreateGatewayOutput`](crate::output::CreateGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5530,29 +5254,31 @@ pub mod create_gateway_output {
         }
         /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
         pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_id = input;
-            self
+            self.gateway_id = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.gateway_arn = input;
-            self
+            self.gateway_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateGatewayOutput`](crate::output::CreateGatewayOutput).
         pub fn build(self) -> crate::output::CreateGatewayOutput {
             crate::output::CreateGatewayOutput {
-                gateway_id: self.gateway_id,
-                gateway_arn: self.gateway_arn,
+                gateway_id: self.gateway_id
+                ,
+                gateway_arn: self.gateway_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGatewayOutput {
     /// Creates a new builder-style object to manufacture [`CreateGatewayOutput`](crate::output::CreateGatewayOutput).
@@ -5564,29 +5290,29 @@ impl CreateGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDashboardOutput {
+pub struct CreateDashboardOutput  {
     /// <p>The ID of the dashboard.</p>
     #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
     #[doc(hidden)]
     pub dashboard_arn: std::option::Option<std::string::String>,
 }
 impl CreateDashboardOutput {
     /// <p>The ID of the dashboard.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
-    pub fn dashboard_arn(&self) -> std::option::Option<&str> {
+    pub fn dashboard_arn(&self) -> std::option::Option<& str> {
         self.dashboard_arn.as_deref()
     }
 }
 /// See [`CreateDashboardOutput`](crate::output::CreateDashboardOutput).
 pub mod create_dashboard_output {
-
+    
     /// A builder for [`CreateDashboardOutput`](crate::output::CreateDashboardOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5601,32 +5327,31 @@ pub mod create_dashboard_output {
         }
         /// <p>The ID of the dashboard.</p>
         pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dashboard_id = input;
-            self
+            self.dashboard_id = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
         pub fn dashboard_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dashboard_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
-        pub fn set_dashboard_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dashboard_arn = input;
-            self
+        pub fn set_dashboard_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateDashboardOutput`](crate::output::CreateDashboardOutput).
         pub fn build(self) -> crate::output::CreateDashboardOutput {
             crate::output::CreateDashboardOutput {
-                dashboard_id: self.dashboard_id,
-                dashboard_arn: self.dashboard_arn,
+                dashboard_id: self.dashboard_id
+                ,
+                dashboard_arn: self.dashboard_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDashboardOutput {
     /// Creates a new builder-style object to manufacture [`CreateDashboardOutput`](crate::output::CreateDashboardOutput).
@@ -5638,50 +5363,50 @@ impl CreateDashboardOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBulkImportJobOutput {
+pub struct CreateBulkImportJobOutput  {
     /// <p>The ID of the job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The unique name that helps identify the job request.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The status of the bulk import job can be one of following values.</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
-    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
-    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
-    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <p>The status of the bulk import job can be one of following values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> 
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl CreateBulkImportJobOutput {
     /// <p>The ID of the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The unique name that helps identify the job request.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
-    /// <p>The status of the bulk import job can be one of following values.</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
-    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
-    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
-    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <p>The status of the bulk import job can be one of following values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> 
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
     /// </ul>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`CreateBulkImportJobOutput`](crate::output::CreateBulkImportJobOutput).
 pub mod create_bulk_import_job_output {
-
+    
     /// A builder for [`CreateBulkImportJobOutput`](crate::output::CreateBulkImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5697,8 +5422,7 @@ pub mod create_bulk_import_job_output {
         }
         /// <p>The ID of the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The unique name that helps identify the job request.</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5707,47 +5431,47 @@ pub mod create_bulk_import_job_output {
         }
         /// <p>The unique name that helps identify the job request.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
-        /// <p>The status of the bulk import job can be one of following values.</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
-        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
-        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
-        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
-        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
-        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// <p>The status of the bulk import job can be one of following values.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> 
+        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> 
+        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> 
+        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
+        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
         /// </ul>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>The status of the bulk import job can be one of following values.</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
-        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
-        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
-        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
-        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
-        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// <p>The status of the bulk import job can be one of following values.</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> 
+        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> 
+        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> 
+        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
+        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
         /// </ul>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`CreateBulkImportJobOutput`](crate::output::CreateBulkImportJobOutput).
         pub fn build(self) -> crate::output::CreateBulkImportJobOutput {
             crate::output::CreateBulkImportJobOutput {
-                job_id: self.job_id,
-                job_name: self.job_name,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_name: self.job_name
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBulkImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateBulkImportJobOutput`](crate::output::CreateBulkImportJobOutput).
@@ -5759,11 +5483,11 @@ impl CreateBulkImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAssetModelOutput {
+pub struct CreateAssetModelOutput  {
     /// <p>The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
     #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     #[doc(hidden)]
     pub asset_model_arn: std::option::Option<std::string::String>,
@@ -5773,22 +5497,22 @@ pub struct CreateAssetModelOutput {
 }
 impl CreateAssetModelOutput {
     /// <p>The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
-    pub fn asset_model_id(&self) -> std::option::Option<&str> {
+    pub fn asset_model_id(&self) -> std::option::Option<& str> {
         self.asset_model_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
-    pub fn asset_model_arn(&self) -> std::option::Option<&str> {
+    pub fn asset_model_arn(&self) -> std::option::Option<& str> {
         self.asset_model_arn.as_deref()
     }
     /// <p>The status of the asset model, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn asset_model_status(&self) -> std::option::Option<&crate::model::AssetModelStatus> {
+    pub fn asset_model_status(&self) -> std::option::Option<& crate::model::AssetModelStatus> {
         self.asset_model_status.as_ref()
     }
 }
 /// See [`CreateAssetModelOutput`](crate::output::CreateAssetModelOutput).
 pub mod create_asset_model_output {
-
+    
     /// A builder for [`CreateAssetModelOutput`](crate::output::CreateAssetModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5803,27 +5527,19 @@ pub mod create_asset_model_output {
             self
         }
         /// <p>The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
-        pub fn set_asset_model_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.asset_model_id = input;
-            self
+        pub fn set_asset_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_model_id = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
         pub fn asset_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_model_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
-        pub fn set_asset_model_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.asset_model_arn = input;
-            self
+        pub fn set_asset_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_model_arn = input; self
         }
         /// <p>The status of the asset model, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
         pub fn asset_model_status(mut self, input: crate::model::AssetModelStatus) -> Self {
@@ -5831,22 +5547,23 @@ pub mod create_asset_model_output {
             self
         }
         /// <p>The status of the asset model, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
-        pub fn set_asset_model_status(
-            mut self,
-            input: std::option::Option<crate::model::AssetModelStatus>,
-        ) -> Self {
-            self.asset_model_status = input;
-            self
+        pub fn set_asset_model_status(mut self, input: std::option::Option<crate::model::AssetModelStatus>) -> Self {
+            self.asset_model_status = input; self
         }
         /// Consumes the builder and constructs a [`CreateAssetModelOutput`](crate::output::CreateAssetModelOutput).
         pub fn build(self) -> crate::output::CreateAssetModelOutput {
             crate::output::CreateAssetModelOutput {
-                asset_model_id: self.asset_model_id,
-                asset_model_arn: self.asset_model_arn,
-                asset_model_status: self.asset_model_status,
+                asset_model_id: self.asset_model_id
+                ,
+                asset_model_arn: self.asset_model_arn
+                ,
+                asset_model_status: self.asset_model_status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAssetModelOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssetModelOutput`](crate::output::CreateAssetModelOutput).
@@ -5858,11 +5575,11 @@ impl CreateAssetModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAssetOutput {
+pub struct CreateAssetOutput  {
     /// <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise APIs.</p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
     #[doc(hidden)]
     pub asset_arn: std::option::Option<std::string::String>,
@@ -5872,22 +5589,22 @@ pub struct CreateAssetOutput {
 }
 impl CreateAssetOutput {
     /// <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise APIs.</p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> std::option::Option<& str> {
         self.asset_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
-    pub fn asset_arn(&self) -> std::option::Option<&str> {
+    pub fn asset_arn(&self) -> std::option::Option<& str> {
         self.asset_arn.as_deref()
     }
     /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn asset_status(&self) -> std::option::Option<&crate::model::AssetStatus> {
+    pub fn asset_status(&self) -> std::option::Option<& crate::model::AssetStatus> {
         self.asset_status.as_ref()
     }
 }
 /// See [`CreateAssetOutput`](crate::output::CreateAssetOutput).
 pub mod create_asset_output {
-
+    
     /// A builder for [`CreateAssetOutput`](crate::output::CreateAssetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5903,20 +5620,18 @@ pub mod create_asset_output {
         }
         /// <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise APIs.</p>
         pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset_id = input;
-            self
+            self.asset_id = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
         pub fn asset_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
         pub fn set_asset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.asset_arn = input;
-            self
+            self.asset_arn = input; self
         }
         /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
         pub fn asset_status(mut self, input: crate::model::AssetStatus) -> Self {
@@ -5924,22 +5639,23 @@ pub mod create_asset_output {
             self
         }
         /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
-        pub fn set_asset_status(
-            mut self,
-            input: std::option::Option<crate::model::AssetStatus>,
-        ) -> Self {
-            self.asset_status = input;
-            self
+        pub fn set_asset_status(mut self, input: std::option::Option<crate::model::AssetStatus>) -> Self {
+            self.asset_status = input; self
         }
         /// Consumes the builder and constructs a [`CreateAssetOutput`](crate::output::CreateAssetOutput).
         pub fn build(self) -> crate::output::CreateAssetOutput {
             crate::output::CreateAssetOutput {
-                asset_id: self.asset_id,
-                asset_arn: self.asset_arn,
-                asset_status: self.asset_status,
+                asset_id: self.asset_id
+                ,
+                asset_arn: self.asset_arn
+                ,
+                asset_status: self.asset_status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAssetOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssetOutput`](crate::output::CreateAssetOutput).
@@ -5951,29 +5667,29 @@ impl CreateAssetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccessPolicyOutput {
+pub struct CreateAccessPolicyOutput  {
     /// <p>The ID of the access policy.</p>
     #[doc(hidden)]
     pub access_policy_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
     #[doc(hidden)]
     pub access_policy_arn: std::option::Option<std::string::String>,
 }
 impl CreateAccessPolicyOutput {
     /// <p>The ID of the access policy.</p>
-    pub fn access_policy_id(&self) -> std::option::Option<&str> {
+    pub fn access_policy_id(&self) -> std::option::Option<& str> {
         self.access_policy_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p> 
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
-    pub fn access_policy_arn(&self) -> std::option::Option<&str> {
+    pub fn access_policy_arn(&self) -> std::option::Option<& str> {
         self.access_policy_arn.as_deref()
     }
 }
 /// See [`CreateAccessPolicyOutput`](crate::output::CreateAccessPolicyOutput).
 pub mod create_access_policy_output {
-
+    
     /// A builder for [`CreateAccessPolicyOutput`](crate::output::CreateAccessPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5987,36 +5703,32 @@ pub mod create_access_policy_output {
             self
         }
         /// <p>The ID of the access policy.</p>
-        pub fn set_access_policy_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_policy_id = input;
-            self
+        pub fn set_access_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_policy_id = input; self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
         pub fn access_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_policy_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p> 
         /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
-        pub fn set_access_policy_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_policy_arn = input;
-            self
+        pub fn set_access_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_policy_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateAccessPolicyOutput`](crate::output::CreateAccessPolicyOutput).
         pub fn build(self) -> crate::output::CreateAccessPolicyOutput {
             crate::output::CreateAccessPolicyOutput {
-                access_policy_id: self.access_policy_id,
-                access_policy_arn: self.access_policy_arn,
+                access_policy_id: self.access_policy_id
+                ,
+                access_policy_arn: self.access_policy_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPolicyOutput`](crate::output::CreateAccessPolicyOutput).
@@ -6028,28 +5740,24 @@ impl CreateAccessPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutAssetPropertyValueOutput {
+pub struct BatchPutAssetPropertyValueOutput  {
     /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
     #[doc(hidden)]
-    pub error_entries:
-        std::option::Option<std::vec::Vec<crate::model::BatchPutAssetPropertyErrorEntry>>,
+    pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchPutAssetPropertyErrorEntry>>,
 }
 impl BatchPutAssetPropertyValueOutput {
     /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-    pub fn error_entries(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchPutAssetPropertyErrorEntry]> {
+    pub fn error_entries(&self) -> std::option::Option<& [crate::model::BatchPutAssetPropertyErrorEntry]> {
         self.error_entries.as_deref()
     }
 }
 /// See [`BatchPutAssetPropertyValueOutput`](crate::output::BatchPutAssetPropertyValueOutput).
 pub mod batch_put_asset_property_value_output {
-
+    
     /// A builder for [`BatchPutAssetPropertyValueOutput`](crate::output::BatchPutAssetPropertyValueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) error_entries:
-            std::option::Option<std::vec::Vec<crate::model::BatchPutAssetPropertyErrorEntry>>,
+        pub(crate) error_entries: std::option::Option<std::vec::Vec<crate::model::BatchPutAssetPropertyErrorEntry>>,
     }
     impl Builder {
         /// Appends an item to `error_entries`.
@@ -6057,32 +5765,26 @@ pub mod batch_put_asset_property_value_output {
         /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
         ///
         /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-        pub fn error_entries(
-            mut self,
-            input: crate::model::BatchPutAssetPropertyErrorEntry,
-        ) -> Self {
+        pub fn error_entries(mut self, input: crate::model::BatchPutAssetPropertyErrorEntry) -> Self {
             let mut v = self.error_entries.unwrap_or_default();
-            v.push(input);
-            self.error_entries = Some(v);
-            self
+                            v.push(input);
+                            self.error_entries = Some(v);
+                            self
         }
         /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-        pub fn set_error_entries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchPutAssetPropertyErrorEntry>,
-            >,
-        ) -> Self {
-            self.error_entries = input;
-            self
+        pub fn set_error_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchPutAssetPropertyErrorEntry>>) -> Self {
+            self.error_entries = input; self
         }
         /// Consumes the builder and constructs a [`BatchPutAssetPropertyValueOutput`](crate::output::BatchPutAssetPropertyValueOutput).
         pub fn build(self) -> crate::output::BatchPutAssetPropertyValueOutput {
             crate::output::BatchPutAssetPropertyValueOutput {
-                error_entries: self.error_entries,
+                error_entries: self.error_entries
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchPutAssetPropertyValueOutput {
     /// Creates a new builder-style object to manufacture [`BatchPutAssetPropertyValueOutput`](crate::output::BatchPutAssetPropertyValueOutput).
@@ -6094,65 +5796,47 @@ impl BatchPutAssetPropertyValueOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueHistoryOutput {
+pub struct BatchGetAssetPropertyValueHistoryOutput  {
     /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
     #[doc(hidden)]
-    pub error_entries: std::option::Option<
-        std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryErrorEntry>,
-    >,
+    pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryErrorEntry>>,
     /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
     #[doc(hidden)]
-    pub success_entries: std::option::Option<
-        std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySuccessEntry>,
-    >,
+    pub success_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySuccessEntry>>,
     /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
     #[doc(hidden)]
-    pub skipped_entries: std::option::Option<
-        std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySkippedEntry>,
-    >,
+    pub skipped_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySkippedEntry>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchGetAssetPropertyValueHistoryOutput {
     /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-    pub fn error_entries(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyValueHistoryErrorEntry]> {
+    pub fn error_entries(&self) -> std::option::Option<& [crate::model::BatchGetAssetPropertyValueHistoryErrorEntry]> {
         self.error_entries.as_deref()
     }
     /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
-    pub fn success_entries(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyValueHistorySuccessEntry]> {
+    pub fn success_entries(&self) -> std::option::Option<& [crate::model::BatchGetAssetPropertyValueHistorySuccessEntry]> {
         self.success_entries.as_deref()
     }
     /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
-    pub fn skipped_entries(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyValueHistorySkippedEntry]> {
+    pub fn skipped_entries(&self) -> std::option::Option<& [crate::model::BatchGetAssetPropertyValueHistorySkippedEntry]> {
         self.skipped_entries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchGetAssetPropertyValueHistoryOutput`](crate::output::BatchGetAssetPropertyValueHistoryOutput).
 pub mod batch_get_asset_property_value_history_output {
-
+    
     /// A builder for [`BatchGetAssetPropertyValueHistoryOutput`](crate::output::BatchGetAssetPropertyValueHistoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) error_entries: std::option::Option<
-            std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryErrorEntry>,
-        >,
-        pub(crate) success_entries: std::option::Option<
-            std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySuccessEntry>,
-        >,
-        pub(crate) skipped_entries: std::option::Option<
-            std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySkippedEntry>,
-        >,
+        pub(crate) error_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryErrorEntry>>,
+        pub(crate) success_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySuccessEntry>>,
+        pub(crate) skipped_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySkippedEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6161,72 +5845,45 @@ pub mod batch_get_asset_property_value_history_output {
         /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
         ///
         /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-        pub fn error_entries(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyValueHistoryErrorEntry,
-        ) -> Self {
+        pub fn error_entries(mut self, input: crate::model::BatchGetAssetPropertyValueHistoryErrorEntry) -> Self {
             let mut v = self.error_entries.unwrap_or_default();
-            v.push(input);
-            self.error_entries = Some(v);
-            self
+                            v.push(input);
+                            self.error_entries = Some(v);
+                            self
         }
         /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-        pub fn set_error_entries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryErrorEntry>,
-            >,
-        ) -> Self {
-            self.error_entries = input;
-            self
+        pub fn set_error_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryErrorEntry>>) -> Self {
+            self.error_entries = input; self
         }
         /// Appends an item to `success_entries`.
         ///
         /// To override the contents of this collection use [`set_success_entries`](Self::set_success_entries).
         ///
         /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
-        pub fn success_entries(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyValueHistorySuccessEntry,
-        ) -> Self {
+        pub fn success_entries(mut self, input: crate::model::BatchGetAssetPropertyValueHistorySuccessEntry) -> Self {
             let mut v = self.success_entries.unwrap_or_default();
-            v.push(input);
-            self.success_entries = Some(v);
-            self
+                            v.push(input);
+                            self.success_entries = Some(v);
+                            self
         }
         /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
-        pub fn set_success_entries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySuccessEntry>,
-            >,
-        ) -> Self {
-            self.success_entries = input;
-            self
+        pub fn set_success_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySuccessEntry>>) -> Self {
+            self.success_entries = input; self
         }
         /// Appends an item to `skipped_entries`.
         ///
         /// To override the contents of this collection use [`set_skipped_entries`](Self::set_skipped_entries).
         ///
         /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
-        pub fn skipped_entries(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyValueHistorySkippedEntry,
-        ) -> Self {
+        pub fn skipped_entries(mut self, input: crate::model::BatchGetAssetPropertyValueHistorySkippedEntry) -> Self {
             let mut v = self.skipped_entries.unwrap_or_default();
-            v.push(input);
-            self.skipped_entries = Some(v);
-            self
+                            v.push(input);
+                            self.skipped_entries = Some(v);
+                            self
         }
         /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
-        pub fn set_skipped_entries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySkippedEntry>,
-            >,
-        ) -> Self {
-            self.skipped_entries = input;
-            self
+        pub fn set_skipped_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistorySkippedEntry>>) -> Self {
+            self.skipped_entries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6235,19 +5892,24 @@ pub mod batch_get_asset_property_value_history_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistoryOutput`](crate::output::BatchGetAssetPropertyValueHistoryOutput).
         pub fn build(self) -> crate::output::BatchGetAssetPropertyValueHistoryOutput {
             crate::output::BatchGetAssetPropertyValueHistoryOutput {
-                error_entries: self.error_entries,
-                success_entries: self.success_entries,
-                skipped_entries: self.skipped_entries,
-                next_token: self.next_token,
+                error_entries: self.error_entries
+                ,
+                success_entries: self.success_entries
+                ,
+                skipped_entries: self.skipped_entries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyValueHistoryOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryOutput`](crate::output::BatchGetAssetPropertyValueHistoryOutput).
@@ -6259,61 +5921,47 @@ impl BatchGetAssetPropertyValueHistoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueOutput {
+pub struct BatchGetAssetPropertyValueOutput  {
     /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
     #[doc(hidden)]
-    pub error_entries:
-        std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueErrorEntry>>,
+    pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueErrorEntry>>,
     /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
     #[doc(hidden)]
-    pub success_entries:
-        std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueSuccessEntry>>,
+    pub success_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueSuccessEntry>>,
     /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
     #[doc(hidden)]
-    pub skipped_entries:
-        std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueSkippedEntry>>,
+    pub skipped_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueSkippedEntry>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchGetAssetPropertyValueOutput {
     /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-    pub fn error_entries(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyValueErrorEntry]> {
+    pub fn error_entries(&self) -> std::option::Option<& [crate::model::BatchGetAssetPropertyValueErrorEntry]> {
         self.error_entries.as_deref()
     }
     /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
-    pub fn success_entries(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyValueSuccessEntry]> {
+    pub fn success_entries(&self) -> std::option::Option<& [crate::model::BatchGetAssetPropertyValueSuccessEntry]> {
         self.success_entries.as_deref()
     }
     /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
-    pub fn skipped_entries(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyValueSkippedEntry]> {
+    pub fn skipped_entries(&self) -> std::option::Option<& [crate::model::BatchGetAssetPropertyValueSkippedEntry]> {
         self.skipped_entries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchGetAssetPropertyValueOutput`](crate::output::BatchGetAssetPropertyValueOutput).
 pub mod batch_get_asset_property_value_output {
-
+    
     /// A builder for [`BatchGetAssetPropertyValueOutput`](crate::output::BatchGetAssetPropertyValueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) error_entries:
-            std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueErrorEntry>>,
-        pub(crate) success_entries: std::option::Option<
-            std::vec::Vec<crate::model::BatchGetAssetPropertyValueSuccessEntry>,
-        >,
-        pub(crate) skipped_entries: std::option::Option<
-            std::vec::Vec<crate::model::BatchGetAssetPropertyValueSkippedEntry>,
-        >,
+        pub(crate) error_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueErrorEntry>>,
+        pub(crate) success_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueSuccessEntry>>,
+        pub(crate) skipped_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueSkippedEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6322,72 +5970,45 @@ pub mod batch_get_asset_property_value_output {
         /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
         ///
         /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-        pub fn error_entries(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyValueErrorEntry,
-        ) -> Self {
+        pub fn error_entries(mut self, input: crate::model::BatchGetAssetPropertyValueErrorEntry) -> Self {
             let mut v = self.error_entries.unwrap_or_default();
-            v.push(input);
-            self.error_entries = Some(v);
-            self
+                            v.push(input);
+                            self.error_entries = Some(v);
+                            self
         }
         /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-        pub fn set_error_entries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchGetAssetPropertyValueErrorEntry>,
-            >,
-        ) -> Self {
-            self.error_entries = input;
-            self
+        pub fn set_error_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueErrorEntry>>) -> Self {
+            self.error_entries = input; self
         }
         /// Appends an item to `success_entries`.
         ///
         /// To override the contents of this collection use [`set_success_entries`](Self::set_success_entries).
         ///
         /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
-        pub fn success_entries(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyValueSuccessEntry,
-        ) -> Self {
+        pub fn success_entries(mut self, input: crate::model::BatchGetAssetPropertyValueSuccessEntry) -> Self {
             let mut v = self.success_entries.unwrap_or_default();
-            v.push(input);
-            self.success_entries = Some(v);
-            self
+                            v.push(input);
+                            self.success_entries = Some(v);
+                            self
         }
         /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
-        pub fn set_success_entries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchGetAssetPropertyValueSuccessEntry>,
-            >,
-        ) -> Self {
-            self.success_entries = input;
-            self
+        pub fn set_success_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueSuccessEntry>>) -> Self {
+            self.success_entries = input; self
         }
         /// Appends an item to `skipped_entries`.
         ///
         /// To override the contents of this collection use [`set_skipped_entries`](Self::set_skipped_entries).
         ///
         /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
-        pub fn skipped_entries(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyValueSkippedEntry,
-        ) -> Self {
+        pub fn skipped_entries(mut self, input: crate::model::BatchGetAssetPropertyValueSkippedEntry) -> Self {
             let mut v = self.skipped_entries.unwrap_or_default();
-            v.push(input);
-            self.skipped_entries = Some(v);
-            self
+                            v.push(input);
+                            self.skipped_entries = Some(v);
+                            self
         }
         /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
-        pub fn set_skipped_entries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchGetAssetPropertyValueSkippedEntry>,
-            >,
-        ) -> Self {
-            self.skipped_entries = input;
-            self
+        pub fn set_skipped_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueSkippedEntry>>) -> Self {
+            self.skipped_entries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6396,19 +6017,24 @@ pub mod batch_get_asset_property_value_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueOutput`](crate::output::BatchGetAssetPropertyValueOutput).
         pub fn build(self) -> crate::output::BatchGetAssetPropertyValueOutput {
             crate::output::BatchGetAssetPropertyValueOutput {
-                error_entries: self.error_entries,
-                success_entries: self.success_entries,
-                skipped_entries: self.skipped_entries,
-                next_token: self.next_token,
+                error_entries: self.error_entries
+                ,
+                success_entries: self.success_entries
+                ,
+                skipped_entries: self.skipped_entries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyValueOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueOutput`](crate::output::BatchGetAssetPropertyValueOutput).
@@ -6420,64 +6046,47 @@ impl BatchGetAssetPropertyValueOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyAggregatesOutput {
+pub struct BatchGetAssetPropertyAggregatesOutput  {
     /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
     #[doc(hidden)]
-    pub error_entries:
-        std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesErrorEntry>>,
+    pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesErrorEntry>>,
     /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
     #[doc(hidden)]
-    pub success_entries: std::option::Option<
-        std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSuccessEntry>,
-    >,
+    pub success_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSuccessEntry>>,
     /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
     #[doc(hidden)]
-    pub skipped_entries: std::option::Option<
-        std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSkippedEntry>,
-    >,
+    pub skipped_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSkippedEntry>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchGetAssetPropertyAggregatesOutput {
     /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-    pub fn error_entries(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyAggregatesErrorEntry]> {
+    pub fn error_entries(&self) -> std::option::Option<& [crate::model::BatchGetAssetPropertyAggregatesErrorEntry]> {
         self.error_entries.as_deref()
     }
     /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
-    pub fn success_entries(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyAggregatesSuccessEntry]> {
+    pub fn success_entries(&self) -> std::option::Option<& [crate::model::BatchGetAssetPropertyAggregatesSuccessEntry]> {
         self.success_entries.as_deref()
     }
     /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
-    pub fn skipped_entries(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchGetAssetPropertyAggregatesSkippedEntry]> {
+    pub fn skipped_entries(&self) -> std::option::Option<& [crate::model::BatchGetAssetPropertyAggregatesSkippedEntry]> {
         self.skipped_entries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchGetAssetPropertyAggregatesOutput`](crate::output::BatchGetAssetPropertyAggregatesOutput).
 pub mod batch_get_asset_property_aggregates_output {
-
+    
     /// A builder for [`BatchGetAssetPropertyAggregatesOutput`](crate::output::BatchGetAssetPropertyAggregatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) error_entries: std::option::Option<
-            std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesErrorEntry>,
-        >,
-        pub(crate) success_entries: std::option::Option<
-            std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSuccessEntry>,
-        >,
-        pub(crate) skipped_entries: std::option::Option<
-            std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSkippedEntry>,
-        >,
+        pub(crate) error_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesErrorEntry>>,
+        pub(crate) success_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSuccessEntry>>,
+        pub(crate) skipped_entries: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSkippedEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6486,72 +6095,45 @@ pub mod batch_get_asset_property_aggregates_output {
         /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
         ///
         /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-        pub fn error_entries(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyAggregatesErrorEntry,
-        ) -> Self {
+        pub fn error_entries(mut self, input: crate::model::BatchGetAssetPropertyAggregatesErrorEntry) -> Self {
             let mut v = self.error_entries.unwrap_or_default();
-            v.push(input);
-            self.error_entries = Some(v);
-            self
+                            v.push(input);
+                            self.error_entries = Some(v);
+                            self
         }
         /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-        pub fn set_error_entries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesErrorEntry>,
-            >,
-        ) -> Self {
-            self.error_entries = input;
-            self
+        pub fn set_error_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesErrorEntry>>) -> Self {
+            self.error_entries = input; self
         }
         /// Appends an item to `success_entries`.
         ///
         /// To override the contents of this collection use [`set_success_entries`](Self::set_success_entries).
         ///
         /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
-        pub fn success_entries(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyAggregatesSuccessEntry,
-        ) -> Self {
+        pub fn success_entries(mut self, input: crate::model::BatchGetAssetPropertyAggregatesSuccessEntry) -> Self {
             let mut v = self.success_entries.unwrap_or_default();
-            v.push(input);
-            self.success_entries = Some(v);
-            self
+                            v.push(input);
+                            self.success_entries = Some(v);
+                            self
         }
         /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
-        pub fn set_success_entries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSuccessEntry>,
-            >,
-        ) -> Self {
-            self.success_entries = input;
-            self
+        pub fn set_success_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSuccessEntry>>) -> Self {
+            self.success_entries = input; self
         }
         /// Appends an item to `skipped_entries`.
         ///
         /// To override the contents of this collection use [`set_skipped_entries`](Self::set_skipped_entries).
         ///
         /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
-        pub fn skipped_entries(
-            mut self,
-            input: crate::model::BatchGetAssetPropertyAggregatesSkippedEntry,
-        ) -> Self {
+        pub fn skipped_entries(mut self, input: crate::model::BatchGetAssetPropertyAggregatesSkippedEntry) -> Self {
             let mut v = self.skipped_entries.unwrap_or_default();
-            v.push(input);
-            self.skipped_entries = Some(v);
-            self
+                            v.push(input);
+                            self.skipped_entries = Some(v);
+                            self
         }
         /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
-        pub fn set_skipped_entries(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSkippedEntry>,
-            >,
-        ) -> Self {
-            self.skipped_entries = input;
-            self
+        pub fn set_skipped_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSkippedEntry>>) -> Self {
+            self.skipped_entries = input; self
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6560,19 +6142,24 @@ pub mod batch_get_asset_property_aggregates_output {
         }
         /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesOutput`](crate::output::BatchGetAssetPropertyAggregatesOutput).
         pub fn build(self) -> crate::output::BatchGetAssetPropertyAggregatesOutput {
             crate::output::BatchGetAssetPropertyAggregatesOutput {
-                error_entries: self.error_entries,
-                success_entries: self.success_entries,
-                skipped_entries: self.skipped_entries,
-                next_token: self.next_token,
+                error_entries: self.error_entries
+                ,
+                success_entries: self.success_entries
+                ,
+                skipped_entries: self.skipped_entries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetAssetPropertyAggregatesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesOutput`](crate::output::BatchGetAssetPropertyAggregatesOutput).
@@ -6584,20 +6171,20 @@ impl BatchGetAssetPropertyAggregatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDisassociateProjectAssetsOutput {
+pub struct BatchDisassociateProjectAssetsOutput  {
     /// <p>A list of associated error information, if any.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::AssetErrorDetails>>,
 }
 impl BatchDisassociateProjectAssetsOutput {
     /// <p>A list of associated error information, if any.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::AssetErrorDetails]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::AssetErrorDetails]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchDisassociateProjectAssetsOutput`](crate::output::BatchDisassociateProjectAssetsOutput).
 pub mod batch_disassociate_project_assets_output {
-
+    
     /// A builder for [`BatchDisassociateProjectAssetsOutput`](crate::output::BatchDisassociateProjectAssetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6611,25 +6198,24 @@ pub mod batch_disassociate_project_assets_output {
         /// <p>A list of associated error information, if any.</p>
         pub fn errors(mut self, input: crate::model::AssetErrorDetails) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>A list of associated error information, if any.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetErrorDetails>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetErrorDetails>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchDisassociateProjectAssetsOutput`](crate::output::BatchDisassociateProjectAssetsOutput).
         pub fn build(self) -> crate::output::BatchDisassociateProjectAssetsOutput {
             crate::output::BatchDisassociateProjectAssetsOutput {
-                errors: self.errors,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDisassociateProjectAssetsOutput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateProjectAssetsOutput`](crate::output::BatchDisassociateProjectAssetsOutput).
@@ -6641,20 +6227,20 @@ impl BatchDisassociateProjectAssetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAssociateProjectAssetsOutput {
+pub struct BatchAssociateProjectAssetsOutput  {
     /// <p>A list of associated error information, if any.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::AssetErrorDetails>>,
 }
 impl BatchAssociateProjectAssetsOutput {
     /// <p>A list of associated error information, if any.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::AssetErrorDetails]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::AssetErrorDetails]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchAssociateProjectAssetsOutput`](crate::output::BatchAssociateProjectAssetsOutput).
 pub mod batch_associate_project_assets_output {
-
+    
     /// A builder for [`BatchAssociateProjectAssetsOutput`](crate::output::BatchAssociateProjectAssetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6668,25 +6254,24 @@ pub mod batch_associate_project_assets_output {
         /// <p>A list of associated error information, if any.</p>
         pub fn errors(mut self, input: crate::model::AssetErrorDetails) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>A list of associated error information, if any.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetErrorDetails>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetErrorDetails>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchAssociateProjectAssetsOutput`](crate::output::BatchAssociateProjectAssetsOutput).
         pub fn build(self) -> crate::output::BatchAssociateProjectAssetsOutput {
             crate::output::BatchAssociateProjectAssetsOutput {
-                errors: self.errors,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchAssociateProjectAssetsOutput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateProjectAssetsOutput`](crate::output::BatchAssociateProjectAssetsOutput).
@@ -6698,19 +6283,24 @@ impl BatchAssociateProjectAssetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateTimeSeriesToAssetPropertyOutput {}
+pub struct AssociateTimeSeriesToAssetPropertyOutput  {
+}
 /// See [`AssociateTimeSeriesToAssetPropertyOutput`](crate::output::AssociateTimeSeriesToAssetPropertyOutput).
 pub mod associate_time_series_to_asset_property_output {
-
+    
     /// A builder for [`AssociateTimeSeriesToAssetPropertyOutput`](crate::output::AssociateTimeSeriesToAssetPropertyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateTimeSeriesToAssetPropertyOutput`](crate::output::AssociateTimeSeriesToAssetPropertyOutput).
         pub fn build(self) -> crate::output::AssociateTimeSeriesToAssetPropertyOutput {
-            crate::output::AssociateTimeSeriesToAssetPropertyOutput {}
+            crate::output::AssociateTimeSeriesToAssetPropertyOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateTimeSeriesToAssetPropertyOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTimeSeriesToAssetPropertyOutput`](crate::output::AssociateTimeSeriesToAssetPropertyOutput).
@@ -6722,19 +6312,24 @@ impl AssociateTimeSeriesToAssetPropertyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateAssetsOutput {}
+pub struct AssociateAssetsOutput  {
+}
 /// See [`AssociateAssetsOutput`](crate::output::AssociateAssetsOutput).
 pub mod associate_assets_output {
-
+    
     /// A builder for [`AssociateAssetsOutput`](crate::output::AssociateAssetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateAssetsOutput`](crate::output::AssociateAssetsOutput).
         pub fn build(self) -> crate::output::AssociateAssetsOutput {
-            crate::output::AssociateAssetsOutput {}
+            crate::output::AssociateAssetsOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateAssetsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateAssetsOutput`](crate::output::AssociateAssetsOutput).
@@ -6742,3 +6337,4 @@ impl AssociateAssetsOutput {
         crate::output::associate_assets_output::Builder::default()
     }
 }
+

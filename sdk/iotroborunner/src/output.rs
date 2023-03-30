@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSiteOutput {}
+pub struct DeleteSiteOutput  {
+}
 /// See [`DeleteSiteOutput`](crate::output::DeleteSiteOutput).
 pub mod delete_site_output {
-
+    
     /// A builder for [`DeleteSiteOutput`](crate::output::DeleteSiteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSiteOutput`](crate::output::DeleteSiteOutput).
         pub fn build(self) -> crate::output::DeleteSiteOutput {
-            crate::output::DeleteSiteOutput {}
+            crate::output::DeleteSiteOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSiteOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSiteOutput`](crate::output::DeleteSiteOutput).
@@ -26,7 +31,7 @@ impl DeleteSiteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSitesOutput {
+pub struct ListSitesOutput  {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -36,17 +41,17 @@ pub struct ListSitesOutput {
 }
 impl ListSitesOutput {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// List of facilities.
-    pub fn sites(&self) -> std::option::Option<&[crate::model::Site]> {
+    pub fn sites(&self) -> std::option::Option<& [crate::model::Site]> {
         self.sites.as_deref()
     }
 }
 /// See [`ListSitesOutput`](crate::output::ListSitesOutput).
 pub mod list_sites_output {
-
+    
     /// A builder for [`ListSitesOutput`](crate::output::ListSitesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -61,8 +66,7 @@ pub mod list_sites_output {
         }
         /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `sites`.
         ///
@@ -71,26 +75,26 @@ pub mod list_sites_output {
         /// List of facilities.
         pub fn sites(mut self, input: crate::model::Site) -> Self {
             let mut v = self.sites.unwrap_or_default();
-            v.push(input);
-            self.sites = Some(v);
-            self
+                            v.push(input);
+                            self.sites = Some(v);
+                            self
         }
         /// List of facilities.
-        pub fn set_sites(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Site>>,
-        ) -> Self {
-            self.sites = input;
-            self
+        pub fn set_sites(mut self, input: std::option::Option<std::vec::Vec<crate::model::Site>>) -> Self {
+            self.sites = input; self
         }
         /// Consumes the builder and constructs a [`ListSitesOutput`](crate::output::ListSitesOutput).
         pub fn build(self) -> crate::output::ListSitesOutput {
             crate::output::ListSitesOutput {
-                next_token: self.next_token,
-                sites: self.sites,
+                next_token: self.next_token
+                ,
+                sites: self.sites
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSitesOutput {
     /// Creates a new builder-style object to manufacture [`ListSitesOutput`](crate::output::ListSitesOutput).
@@ -102,7 +106,7 @@ impl ListSitesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSiteOutput {
+pub struct CreateSiteOutput  {
     /// Site ARN.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -118,25 +122,25 @@ pub struct CreateSiteOutput {
 }
 impl CreateSiteOutput {
     /// Site ARN.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Filters access by the site's identifier
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Timestamp at which the resource was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`CreateSiteOutput`](crate::output::CreateSiteOutput).
 pub mod create_site_output {
-
+    
     /// A builder for [`CreateSiteOutput`](crate::output::CreateSiteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -153,8 +157,7 @@ pub mod create_site_output {
         }
         /// Site ARN.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Filters access by the site's identifier
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -163,8 +166,7 @@ pub mod create_site_output {
         }
         /// Filters access by the site's identifier
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Timestamp at which the resource was created.
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -172,12 +174,8 @@ pub mod create_site_output {
             self
         }
         /// Timestamp at which the resource was created.
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Timestamp at which the resource was last updated.
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -185,23 +183,25 @@ pub mod create_site_output {
             self
         }
         /// Timestamp at which the resource was last updated.
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`CreateSiteOutput`](crate::output::CreateSiteOutput).
         pub fn build(self) -> crate::output::CreateSiteOutput {
             crate::output::CreateSiteOutput {
-                arn: self.arn,
-                id: self.id,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSiteOutput {
     /// Creates a new builder-style object to manufacture [`CreateSiteOutput`](crate::output::CreateSiteOutput).
@@ -213,7 +213,7 @@ impl CreateSiteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSiteOutput {
+pub struct UpdateSiteOutput  {
     /// Site ARN.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -235,33 +235,33 @@ pub struct UpdateSiteOutput {
 }
 impl UpdateSiteOutput {
     /// Site ARN.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Filters access by the site's identifier
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-    pub fn country_code(&self) -> std::option::Option<&str> {
+    pub fn country_code(&self) -> std::option::Option<& str> {
         self.country_code.as_deref()
     }
     /// A high-level description of the site.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`UpdateSiteOutput`](crate::output::UpdateSiteOutput).
 pub mod update_site_output {
-
+    
     /// A builder for [`UpdateSiteOutput`](crate::output::UpdateSiteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -280,8 +280,7 @@ pub mod update_site_output {
         }
         /// Site ARN.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Filters access by the site's identifier
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -290,8 +289,7 @@ pub mod update_site_output {
         }
         /// Filters access by the site's identifier
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Human friendly name of the resource.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -300,8 +298,7 @@ pub mod update_site_output {
         }
         /// Human friendly name of the resource.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
         pub fn country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -310,8 +307,7 @@ pub mod update_site_output {
         }
         /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
         pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country_code = input;
-            self
+            self.country_code = input; self
         }
         /// A high-level description of the site.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -320,8 +316,7 @@ pub mod update_site_output {
         }
         /// A high-level description of the site.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Timestamp at which the resource was last updated.
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -329,25 +324,29 @@ pub mod update_site_output {
             self
         }
         /// Timestamp at which the resource was last updated.
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSiteOutput`](crate::output::UpdateSiteOutput).
         pub fn build(self) -> crate::output::UpdateSiteOutput {
             crate::output::UpdateSiteOutput {
-                arn: self.arn,
-                id: self.id,
-                name: self.name,
-                country_code: self.country_code,
-                description: self.description,
-                updated_at: self.updated_at,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                country_code: self.country_code
+                ,
+                description: self.description
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSiteOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSiteOutput`](crate::output::UpdateSiteOutput).
@@ -359,7 +358,7 @@ impl UpdateSiteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSiteOutput {
+pub struct GetSiteOutput  {
     /// Site ARN.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -384,37 +383,37 @@ pub struct GetSiteOutput {
 }
 impl GetSiteOutput {
     /// Site ARN.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Filters access by the site's identifier
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-    pub fn country_code(&self) -> std::option::Option<&str> {
+    pub fn country_code(&self) -> std::option::Option<& str> {
         self.country_code.as_deref()
     }
     /// A high-level description of the site.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Timestamp at which the resource was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`GetSiteOutput`](crate::output::GetSiteOutput).
 pub mod get_site_output {
-
+    
     /// A builder for [`GetSiteOutput`](crate::output::GetSiteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -434,8 +433,7 @@ pub mod get_site_output {
         }
         /// Site ARN.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Filters access by the site's identifier
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -444,8 +442,7 @@ pub mod get_site_output {
         }
         /// Filters access by the site's identifier
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Human friendly name of the resource.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -454,8 +451,7 @@ pub mod get_site_output {
         }
         /// Human friendly name of the resource.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
         pub fn country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -464,8 +460,7 @@ pub mod get_site_output {
         }
         /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
         pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country_code = input;
-            self
+            self.country_code = input; self
         }
         /// A high-level description of the site.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -474,8 +469,7 @@ pub mod get_site_output {
         }
         /// A high-level description of the site.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Timestamp at which the resource was created.
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -483,12 +477,8 @@ pub mod get_site_output {
             self
         }
         /// Timestamp at which the resource was created.
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Timestamp at which the resource was last updated.
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -496,26 +486,31 @@ pub mod get_site_output {
             self
         }
         /// Timestamp at which the resource was last updated.
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`GetSiteOutput`](crate::output::GetSiteOutput).
         pub fn build(self) -> crate::output::GetSiteOutput {
             crate::output::GetSiteOutput {
-                arn: self.arn,
-                id: self.id,
-                name: self.name,
-                country_code: self.country_code,
-                description: self.description,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                country_code: self.country_code
+                ,
+                description: self.description
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSiteOutput {
     /// Creates a new builder-style object to manufacture [`GetSiteOutput`](crate::output::GetSiteOutput).
@@ -527,7 +522,7 @@ impl GetSiteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkerFleetsOutput {
+pub struct ListWorkerFleetsOutput  {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -537,17 +532,17 @@ pub struct ListWorkerFleetsOutput {
 }
 impl ListWorkerFleetsOutput {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// List of worker fleets.
-    pub fn worker_fleets(&self) -> std::option::Option<&[crate::model::WorkerFleet]> {
+    pub fn worker_fleets(&self) -> std::option::Option<& [crate::model::WorkerFleet]> {
         self.worker_fleets.as_deref()
     }
 }
 /// See [`ListWorkerFleetsOutput`](crate::output::ListWorkerFleetsOutput).
 pub mod list_worker_fleets_output {
-
+    
     /// A builder for [`ListWorkerFleetsOutput`](crate::output::ListWorkerFleetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -562,8 +557,7 @@ pub mod list_worker_fleets_output {
         }
         /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `worker_fleets`.
         ///
@@ -572,26 +566,26 @@ pub mod list_worker_fleets_output {
         /// List of worker fleets.
         pub fn worker_fleets(mut self, input: crate::model::WorkerFleet) -> Self {
             let mut v = self.worker_fleets.unwrap_or_default();
-            v.push(input);
-            self.worker_fleets = Some(v);
-            self
+                            v.push(input);
+                            self.worker_fleets = Some(v);
+                            self
         }
         /// List of worker fleets.
-        pub fn set_worker_fleets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WorkerFleet>>,
-        ) -> Self {
-            self.worker_fleets = input;
-            self
+        pub fn set_worker_fleets(mut self, input: std::option::Option<std::vec::Vec<crate::model::WorkerFleet>>) -> Self {
+            self.worker_fleets = input; self
         }
         /// Consumes the builder and constructs a [`ListWorkerFleetsOutput`](crate::output::ListWorkerFleetsOutput).
         pub fn build(self) -> crate::output::ListWorkerFleetsOutput {
             crate::output::ListWorkerFleetsOutput {
-                next_token: self.next_token,
-                worker_fleets: self.worker_fleets,
+                next_token: self.next_token
+                ,
+                worker_fleets: self.worker_fleets
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWorkerFleetsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkerFleetsOutput`](crate::output::ListWorkerFleetsOutput).
@@ -603,7 +597,7 @@ impl ListWorkerFleetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkerFleetOutput {
+pub struct CreateWorkerFleetOutput  {
     /// Full ARN of the worker fleet.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -619,25 +613,25 @@ pub struct CreateWorkerFleetOutput {
 }
 impl CreateWorkerFleetOutput {
     /// Full ARN of the worker fleet.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Filters access by the worker fleet's identifier
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Timestamp at which the resource was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`CreateWorkerFleetOutput`](crate::output::CreateWorkerFleetOutput).
 pub mod create_worker_fleet_output {
-
+    
     /// A builder for [`CreateWorkerFleetOutput`](crate::output::CreateWorkerFleetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -654,8 +648,7 @@ pub mod create_worker_fleet_output {
         }
         /// Full ARN of the worker fleet.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Filters access by the worker fleet's identifier
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -664,8 +657,7 @@ pub mod create_worker_fleet_output {
         }
         /// Filters access by the worker fleet's identifier
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Timestamp at which the resource was created.
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -673,12 +665,8 @@ pub mod create_worker_fleet_output {
             self
         }
         /// Timestamp at which the resource was created.
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Timestamp at which the resource was last updated.
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -686,23 +674,25 @@ pub mod create_worker_fleet_output {
             self
         }
         /// Timestamp at which the resource was last updated.
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`CreateWorkerFleetOutput`](crate::output::CreateWorkerFleetOutput).
         pub fn build(self) -> crate::output::CreateWorkerFleetOutput {
             crate::output::CreateWorkerFleetOutput {
-                arn: self.arn,
-                id: self.id,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateWorkerFleetOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkerFleetOutput`](crate::output::CreateWorkerFleetOutput).
@@ -714,19 +704,24 @@ impl CreateWorkerFleetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDestinationOutput {}
+pub struct DeleteDestinationOutput  {
+}
 /// See [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
 pub mod delete_destination_output {
-
+    
     /// A builder for [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
         pub fn build(self) -> crate::output::DeleteDestinationOutput {
-            crate::output::DeleteDestinationOutput {}
+            crate::output::DeleteDestinationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
@@ -738,7 +733,7 @@ impl DeleteDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDestinationsOutput {
+pub struct ListDestinationsOutput  {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -748,17 +743,17 @@ pub struct ListDestinationsOutput {
 }
 impl ListDestinationsOutput {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// List of destinations.
-    pub fn destinations(&self) -> std::option::Option<&[crate::model::Destination]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::model::Destination]> {
         self.destinations.as_deref()
     }
 }
 /// See [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
 pub mod list_destinations_output {
-
+    
     /// A builder for [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -773,8 +768,7 @@ pub mod list_destinations_output {
         }
         /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `destinations`.
         ///
@@ -783,26 +777,26 @@ pub mod list_destinations_output {
         /// List of destinations.
         pub fn destinations(mut self, input: crate::model::Destination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input);
-            self.destinations = Some(v);
-            self
+                            v.push(input);
+                            self.destinations = Some(v);
+                            self
         }
         /// List of destinations.
-        pub fn set_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Destination>>,
-        ) -> Self {
-            self.destinations = input;
-            self
+        pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Destination>>) -> Self {
+            self.destinations = input; self
         }
         /// Consumes the builder and constructs a [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
         pub fn build(self) -> crate::output::ListDestinationsOutput {
             crate::output::ListDestinationsOutput {
-                next_token: self.next_token,
-                destinations: self.destinations,
+                next_token: self.next_token
+                ,
+                destinations: self.destinations
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDestinationsOutput {
     /// Creates a new builder-style object to manufacture [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
@@ -814,7 +808,7 @@ impl ListDestinationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDestinationOutput {
+pub struct CreateDestinationOutput  {
     /// Destination ARN.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -833,29 +827,29 @@ pub struct CreateDestinationOutput {
 }
 impl CreateDestinationOutput {
     /// Destination ARN.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Filters access by the destination's identifier
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Timestamp at which the resource was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// State of the destination.
-    pub fn state(&self) -> std::option::Option<&crate::model::DestinationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::DestinationState> {
         self.state.as_ref()
     }
 }
 /// See [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
 pub mod create_destination_output {
-
+    
     /// A builder for [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -873,8 +867,7 @@ pub mod create_destination_output {
         }
         /// Destination ARN.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Filters access by the destination's identifier
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -883,8 +876,7 @@ pub mod create_destination_output {
         }
         /// Filters access by the destination's identifier
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Timestamp at which the resource was created.
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -892,12 +884,8 @@ pub mod create_destination_output {
             self
         }
         /// Timestamp at which the resource was created.
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Timestamp at which the resource was last updated.
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -905,12 +893,8 @@ pub mod create_destination_output {
             self
         }
         /// Timestamp at which the resource was last updated.
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// State of the destination.
         pub fn state(mut self, input: crate::model::DestinationState) -> Self {
@@ -918,24 +902,27 @@ pub mod create_destination_output {
             self
         }
         /// State of the destination.
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::DestinationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::DestinationState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
         pub fn build(self) -> crate::output::CreateDestinationOutput {
             crate::output::CreateDestinationOutput {
-                arn: self.arn,
-                id: self.id,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                state: self.state,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDestinationOutput {
     /// Creates a new builder-style object to manufacture [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
@@ -947,7 +934,7 @@ impl CreateDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDestinationOutput {
+pub struct UpdateDestinationOutput  {
     /// Destination ARN.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -969,33 +956,33 @@ pub struct UpdateDestinationOutput {
 }
 impl UpdateDestinationOutput {
     /// Destination ARN.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Filters access by the destination's identifier
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// State of the destination.
-    pub fn state(&self) -> std::option::Option<&crate::model::DestinationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::DestinationState> {
         self.state.as_ref()
     }
     /// JSON document containing additional fixed properties regarding the destination
-    pub fn additional_fixed_properties(&self) -> std::option::Option<&str> {
+    pub fn additional_fixed_properties(&self) -> std::option::Option<& str> {
         self.additional_fixed_properties.as_deref()
     }
 }
 /// See [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
 pub mod update_destination_output {
-
+    
     /// A builder for [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1014,8 +1001,7 @@ pub mod update_destination_output {
         }
         /// Destination ARN.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Filters access by the destination's identifier
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1024,8 +1010,7 @@ pub mod update_destination_output {
         }
         /// Filters access by the destination's identifier
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Human friendly name of the resource.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1034,8 +1019,7 @@ pub mod update_destination_output {
         }
         /// Human friendly name of the resource.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Timestamp at which the resource was last updated.
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1043,12 +1027,8 @@ pub mod update_destination_output {
             self
         }
         /// Timestamp at which the resource was last updated.
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// State of the destination.
         pub fn state(mut self, input: crate::model::DestinationState) -> Self {
@@ -1056,41 +1036,38 @@ pub mod update_destination_output {
             self
         }
         /// State of the destination.
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::DestinationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::DestinationState>) -> Self {
+            self.state = input; self
         }
         /// JSON document containing additional fixed properties regarding the destination
-        pub fn additional_fixed_properties(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn additional_fixed_properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.additional_fixed_properties = Some(input.into());
             self
         }
         /// JSON document containing additional fixed properties regarding the destination
-        pub fn set_additional_fixed_properties(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.additional_fixed_properties = input;
-            self
+        pub fn set_additional_fixed_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.additional_fixed_properties = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
         pub fn build(self) -> crate::output::UpdateDestinationOutput {
             crate::output::UpdateDestinationOutput {
-                arn: self.arn,
-                id: self.id,
-                name: self.name,
-                updated_at: self.updated_at,
-                state: self.state,
-                additional_fixed_properties: self.additional_fixed_properties,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                updated_at: self.updated_at
+                ,
+                state: self.state
+                ,
+                additional_fixed_properties: self.additional_fixed_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDestinationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
@@ -1102,7 +1079,7 @@ impl UpdateDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDestinationOutput {
+pub struct GetDestinationOutput  {
     /// Destination ARN.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1130,41 +1107,41 @@ pub struct GetDestinationOutput {
 }
 impl GetDestinationOutput {
     /// Destination ARN.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Filters access by the destination's identifier
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Site ARN.
-    pub fn site(&self) -> std::option::Option<&str> {
+    pub fn site(&self) -> std::option::Option<& str> {
         self.site.as_deref()
     }
     /// Timestamp at which the resource was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// State of the destination.
-    pub fn state(&self) -> std::option::Option<&crate::model::DestinationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::DestinationState> {
         self.state.as_ref()
     }
     /// JSON document containing additional fixed properties regarding the destination
-    pub fn additional_fixed_properties(&self) -> std::option::Option<&str> {
+    pub fn additional_fixed_properties(&self) -> std::option::Option<& str> {
         self.additional_fixed_properties.as_deref()
     }
 }
 /// See [`GetDestinationOutput`](crate::output::GetDestinationOutput).
 pub mod get_destination_output {
-
+    
     /// A builder for [`GetDestinationOutput`](crate::output::GetDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1185,8 +1162,7 @@ pub mod get_destination_output {
         }
         /// Destination ARN.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Filters access by the destination's identifier
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1195,8 +1171,7 @@ pub mod get_destination_output {
         }
         /// Filters access by the destination's identifier
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Human friendly name of the resource.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1205,8 +1180,7 @@ pub mod get_destination_output {
         }
         /// Human friendly name of the resource.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Site ARN.
         pub fn site(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1215,8 +1189,7 @@ pub mod get_destination_output {
         }
         /// Site ARN.
         pub fn set_site(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.site = input;
-            self
+            self.site = input; self
         }
         /// Timestamp at which the resource was created.
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1224,12 +1197,8 @@ pub mod get_destination_output {
             self
         }
         /// Timestamp at which the resource was created.
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Timestamp at which the resource was last updated.
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1237,12 +1206,8 @@ pub mod get_destination_output {
             self
         }
         /// Timestamp at which the resource was last updated.
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// State of the destination.
         pub fn state(mut self, input: crate::model::DestinationState) -> Self {
@@ -1250,43 +1215,42 @@ pub mod get_destination_output {
             self
         }
         /// State of the destination.
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::DestinationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::DestinationState>) -> Self {
+            self.state = input; self
         }
         /// JSON document containing additional fixed properties regarding the destination
-        pub fn additional_fixed_properties(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn additional_fixed_properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.additional_fixed_properties = Some(input.into());
             self
         }
         /// JSON document containing additional fixed properties regarding the destination
-        pub fn set_additional_fixed_properties(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.additional_fixed_properties = input;
-            self
+        pub fn set_additional_fixed_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.additional_fixed_properties = input; self
         }
         /// Consumes the builder and constructs a [`GetDestinationOutput`](crate::output::GetDestinationOutput).
         pub fn build(self) -> crate::output::GetDestinationOutput {
             crate::output::GetDestinationOutput {
-                arn: self.arn,
-                id: self.id,
-                name: self.name,
-                site: self.site,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                state: self.state,
-                additional_fixed_properties: self.additional_fixed_properties,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                site: self.site
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                state: self.state
+                ,
+                additional_fixed_properties: self.additional_fixed_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDestinationOutput {
     /// Creates a new builder-style object to manufacture [`GetDestinationOutput`](crate::output::GetDestinationOutput).
@@ -1298,7 +1262,7 @@ impl GetDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkerFleetOutput {
+pub struct UpdateWorkerFleetOutput  {
     /// Full ARN of the worker fleet.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1317,29 +1281,29 @@ pub struct UpdateWorkerFleetOutput {
 }
 impl UpdateWorkerFleetOutput {
     /// Full ARN of the worker fleet.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Filters access by the worker fleet's identifier
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
-    pub fn additional_fixed_properties(&self) -> std::option::Option<&str> {
+    pub fn additional_fixed_properties(&self) -> std::option::Option<& str> {
         self.additional_fixed_properties.as_deref()
     }
 }
 /// See [`UpdateWorkerFleetOutput`](crate::output::UpdateWorkerFleetOutput).
 pub mod update_worker_fleet_output {
-
+    
     /// A builder for [`UpdateWorkerFleetOutput`](crate::output::UpdateWorkerFleetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1357,8 +1321,7 @@ pub mod update_worker_fleet_output {
         }
         /// Full ARN of the worker fleet.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Filters access by the worker fleet's identifier
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1367,8 +1330,7 @@ pub mod update_worker_fleet_output {
         }
         /// Filters access by the worker fleet's identifier
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Human friendly name of the resource.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1377,8 +1339,7 @@ pub mod update_worker_fleet_output {
         }
         /// Human friendly name of the resource.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Timestamp at which the resource was last updated.
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1386,40 +1347,36 @@ pub mod update_worker_fleet_output {
             self
         }
         /// Timestamp at which the resource was last updated.
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// JSON blob containing additional fixed properties regarding the worker fleet
-        pub fn additional_fixed_properties(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn additional_fixed_properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.additional_fixed_properties = Some(input.into());
             self
         }
         /// JSON blob containing additional fixed properties regarding the worker fleet
-        pub fn set_additional_fixed_properties(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.additional_fixed_properties = input;
-            self
+        pub fn set_additional_fixed_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.additional_fixed_properties = input; self
         }
         /// Consumes the builder and constructs a [`UpdateWorkerFleetOutput`](crate::output::UpdateWorkerFleetOutput).
         pub fn build(self) -> crate::output::UpdateWorkerFleetOutput {
             crate::output::UpdateWorkerFleetOutput {
-                arn: self.arn,
-                id: self.id,
-                name: self.name,
-                updated_at: self.updated_at,
-                additional_fixed_properties: self.additional_fixed_properties,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                updated_at: self.updated_at
+                ,
+                additional_fixed_properties: self.additional_fixed_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateWorkerFleetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkerFleetOutput`](crate::output::UpdateWorkerFleetOutput).
@@ -1431,7 +1388,7 @@ impl UpdateWorkerFleetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkerOutput {
+pub struct UpdateWorkerOutput  {
     /// Full ARN of the worker.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1465,49 +1422,49 @@ pub struct UpdateWorkerOutput {
 }
 impl UpdateWorkerOutput {
     /// Full ARN of the worker.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Filters access by the workers identifier
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Full ARN of the worker fleet.
-    pub fn fleet(&self) -> std::option::Option<&str> {
+    pub fn fleet(&self) -> std::option::Option<& str> {
         self.fleet.as_deref()
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-    pub fn additional_transient_properties(&self) -> std::option::Option<&str> {
+    pub fn additional_transient_properties(&self) -> std::option::Option<& str> {
         self.additional_transient_properties.as_deref()
     }
     /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-    pub fn additional_fixed_properties(&self) -> std::option::Option<&str> {
+    pub fn additional_fixed_properties(&self) -> std::option::Option<& str> {
         self.additional_fixed_properties.as_deref()
     }
     /// Worker orientation measured in units clockwise from north.
-    pub fn orientation(&self) -> std::option::Option<&crate::model::Orientation> {
+    pub fn orientation(&self) -> std::option::Option<& crate::model::Orientation> {
         self.orientation.as_ref()
     }
     /// Properties of the worker that are provided by the vendor FMS.
-    pub fn vendor_properties(&self) -> std::option::Option<&crate::model::VendorProperties> {
+    pub fn vendor_properties(&self) -> std::option::Option<& crate::model::VendorProperties> {
         self.vendor_properties.as_ref()
     }
     /// Supported coordinates for worker position.
-    pub fn position(&self) -> std::option::Option<&crate::model::PositionCoordinates> {
+    pub fn position(&self) -> std::option::Option<& crate::model::PositionCoordinates> {
         self.position.as_ref()
     }
 }
 /// See [`UpdateWorkerOutput`](crate::output::UpdateWorkerOutput).
 pub mod update_worker_output {
-
+    
     /// A builder for [`UpdateWorkerOutput`](crate::output::UpdateWorkerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1530,8 +1487,7 @@ pub mod update_worker_output {
         }
         /// Full ARN of the worker.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Filters access by the workers identifier
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1540,8 +1496,7 @@ pub mod update_worker_output {
         }
         /// Filters access by the workers identifier
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Full ARN of the worker fleet.
         pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1550,8 +1505,7 @@ pub mod update_worker_output {
         }
         /// Full ARN of the worker fleet.
         pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet = input;
-            self
+            self.fleet = input; self
         }
         /// Timestamp at which the resource was last updated.
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1559,12 +1513,8 @@ pub mod update_worker_output {
             self
         }
         /// Timestamp at which the resource was last updated.
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Human friendly name of the resource.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1573,40 +1523,25 @@ pub mod update_worker_output {
         }
         /// Human friendly name of the resource.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-        pub fn additional_transient_properties(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn additional_transient_properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.additional_transient_properties = Some(input.into());
             self
         }
         /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-        pub fn set_additional_transient_properties(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.additional_transient_properties = input;
-            self
+        pub fn set_additional_transient_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.additional_transient_properties = input; self
         }
         /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-        pub fn additional_fixed_properties(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn additional_fixed_properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.additional_fixed_properties = Some(input.into());
             self
         }
         /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-        pub fn set_additional_fixed_properties(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.additional_fixed_properties = input;
-            self
+        pub fn set_additional_fixed_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.additional_fixed_properties = input; self
         }
         /// Worker orientation measured in units clockwise from north.
         pub fn orientation(mut self, input: crate::model::Orientation) -> Self {
@@ -1614,12 +1549,8 @@ pub mod update_worker_output {
             self
         }
         /// Worker orientation measured in units clockwise from north.
-        pub fn set_orientation(
-            mut self,
-            input: std::option::Option<crate::model::Orientation>,
-        ) -> Self {
-            self.orientation = input;
-            self
+        pub fn set_orientation(mut self, input: std::option::Option<crate::model::Orientation>) -> Self {
+            self.orientation = input; self
         }
         /// Properties of the worker that are provided by the vendor FMS.
         pub fn vendor_properties(mut self, input: crate::model::VendorProperties) -> Self {
@@ -1627,12 +1558,8 @@ pub mod update_worker_output {
             self
         }
         /// Properties of the worker that are provided by the vendor FMS.
-        pub fn set_vendor_properties(
-            mut self,
-            input: std::option::Option<crate::model::VendorProperties>,
-        ) -> Self {
-            self.vendor_properties = input;
-            self
+        pub fn set_vendor_properties(mut self, input: std::option::Option<crate::model::VendorProperties>) -> Self {
+            self.vendor_properties = input; self
         }
         /// Supported coordinates for worker position.
         pub fn position(mut self, input: crate::model::PositionCoordinates) -> Self {
@@ -1640,29 +1567,37 @@ pub mod update_worker_output {
             self
         }
         /// Supported coordinates for worker position.
-        pub fn set_position(
-            mut self,
-            input: std::option::Option<crate::model::PositionCoordinates>,
-        ) -> Self {
-            self.position = input;
-            self
+        pub fn set_position(mut self, input: std::option::Option<crate::model::PositionCoordinates>) -> Self {
+            self.position = input; self
         }
         /// Consumes the builder and constructs a [`UpdateWorkerOutput`](crate::output::UpdateWorkerOutput).
         pub fn build(self) -> crate::output::UpdateWorkerOutput {
             crate::output::UpdateWorkerOutput {
-                arn: self.arn,
-                id: self.id,
-                fleet: self.fleet,
-                updated_at: self.updated_at,
-                name: self.name,
-                additional_transient_properties: self.additional_transient_properties,
-                additional_fixed_properties: self.additional_fixed_properties,
-                orientation: self.orientation,
-                vendor_properties: self.vendor_properties,
-                position: self.position,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                fleet: self.fleet
+                ,
+                updated_at: self.updated_at
+                ,
+                name: self.name
+                ,
+                additional_transient_properties: self.additional_transient_properties
+                ,
+                additional_fixed_properties: self.additional_fixed_properties
+                ,
+                orientation: self.orientation
+                ,
+                vendor_properties: self.vendor_properties
+                ,
+                position: self.position
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateWorkerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkerOutput`](crate::output::UpdateWorkerOutput).
@@ -1674,7 +1609,7 @@ impl UpdateWorkerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkersOutput {
+pub struct ListWorkersOutput  {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1684,17 +1619,17 @@ pub struct ListWorkersOutput {
 }
 impl ListWorkersOutput {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// List of workers.
-    pub fn workers(&self) -> std::option::Option<&[crate::model::Worker]> {
+    pub fn workers(&self) -> std::option::Option<& [crate::model::Worker]> {
         self.workers.as_deref()
     }
 }
 /// See [`ListWorkersOutput`](crate::output::ListWorkersOutput).
 pub mod list_workers_output {
-
+    
     /// A builder for [`ListWorkersOutput`](crate::output::ListWorkersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1709,8 +1644,7 @@ pub mod list_workers_output {
         }
         /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `workers`.
         ///
@@ -1719,26 +1653,26 @@ pub mod list_workers_output {
         /// List of workers.
         pub fn workers(mut self, input: crate::model::Worker) -> Self {
             let mut v = self.workers.unwrap_or_default();
-            v.push(input);
-            self.workers = Some(v);
-            self
+                            v.push(input);
+                            self.workers = Some(v);
+                            self
         }
         /// List of workers.
-        pub fn set_workers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Worker>>,
-        ) -> Self {
-            self.workers = input;
-            self
+        pub fn set_workers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Worker>>) -> Self {
+            self.workers = input; self
         }
         /// Consumes the builder and constructs a [`ListWorkersOutput`](crate::output::ListWorkersOutput).
         pub fn build(self) -> crate::output::ListWorkersOutput {
             crate::output::ListWorkersOutput {
-                next_token: self.next_token,
-                workers: self.workers,
+                next_token: self.next_token
+                ,
+                workers: self.workers
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWorkersOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkersOutput`](crate::output::ListWorkersOutput).
@@ -1750,7 +1684,7 @@ impl ListWorkersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkerFleetOutput {
+pub struct GetWorkerFleetOutput  {
     /// Filters access by the worker fleet's identifier
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1775,37 +1709,37 @@ pub struct GetWorkerFleetOutput {
 }
 impl GetWorkerFleetOutput {
     /// Filters access by the worker fleet's identifier
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Full ARN of the worker fleet.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Site ARN.
-    pub fn site(&self) -> std::option::Option<&str> {
+    pub fn site(&self) -> std::option::Option<& str> {
         self.site.as_deref()
     }
     /// Timestamp at which the resource was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
-    pub fn additional_fixed_properties(&self) -> std::option::Option<&str> {
+    pub fn additional_fixed_properties(&self) -> std::option::Option<& str> {
         self.additional_fixed_properties.as_deref()
     }
 }
 /// See [`GetWorkerFleetOutput`](crate::output::GetWorkerFleetOutput).
 pub mod get_worker_fleet_output {
-
+    
     /// A builder for [`GetWorkerFleetOutput`](crate::output::GetWorkerFleetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1825,8 +1759,7 @@ pub mod get_worker_fleet_output {
         }
         /// Filters access by the worker fleet's identifier
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Full ARN of the worker fleet.
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1835,8 +1768,7 @@ pub mod get_worker_fleet_output {
         }
         /// Full ARN of the worker fleet.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Human friendly name of the resource.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1845,8 +1777,7 @@ pub mod get_worker_fleet_output {
         }
         /// Human friendly name of the resource.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Site ARN.
         pub fn site(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1855,8 +1786,7 @@ pub mod get_worker_fleet_output {
         }
         /// Site ARN.
         pub fn set_site(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.site = input;
-            self
+            self.site = input; self
         }
         /// Timestamp at which the resource was created.
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1864,12 +1794,8 @@ pub mod get_worker_fleet_output {
             self
         }
         /// Timestamp at which the resource was created.
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Timestamp at which the resource was last updated.
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1877,42 +1803,40 @@ pub mod get_worker_fleet_output {
             self
         }
         /// Timestamp at which the resource was last updated.
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// JSON blob containing additional fixed properties regarding the worker fleet
-        pub fn additional_fixed_properties(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn additional_fixed_properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.additional_fixed_properties = Some(input.into());
             self
         }
         /// JSON blob containing additional fixed properties regarding the worker fleet
-        pub fn set_additional_fixed_properties(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.additional_fixed_properties = input;
-            self
+        pub fn set_additional_fixed_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.additional_fixed_properties = input; self
         }
         /// Consumes the builder and constructs a [`GetWorkerFleetOutput`](crate::output::GetWorkerFleetOutput).
         pub fn build(self) -> crate::output::GetWorkerFleetOutput {
             crate::output::GetWorkerFleetOutput {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                site: self.site,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                additional_fixed_properties: self.additional_fixed_properties,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                site: self.site
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                additional_fixed_properties: self.additional_fixed_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWorkerFleetOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkerFleetOutput`](crate::output::GetWorkerFleetOutput).
@@ -1924,7 +1848,7 @@ impl GetWorkerFleetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkerOutput {
+pub struct GetWorkerOutput  {
     /// Full ARN of the worker.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1964,57 +1888,57 @@ pub struct GetWorkerOutput {
 }
 impl GetWorkerOutput {
     /// Full ARN of the worker.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Filters access by the workers identifier
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Full ARN of the worker fleet.
-    pub fn fleet(&self) -> std::option::Option<&str> {
+    pub fn fleet(&self) -> std::option::Option<& str> {
         self.fleet.as_deref()
     }
     /// Site ARN.
-    pub fn site(&self) -> std::option::Option<&str> {
+    pub fn site(&self) -> std::option::Option<& str> {
         self.site.as_deref()
     }
     /// Timestamp at which the resource was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-    pub fn additional_transient_properties(&self) -> std::option::Option<&str> {
+    pub fn additional_transient_properties(&self) -> std::option::Option<& str> {
         self.additional_transient_properties.as_deref()
     }
     /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-    pub fn additional_fixed_properties(&self) -> std::option::Option<&str> {
+    pub fn additional_fixed_properties(&self) -> std::option::Option<& str> {
         self.additional_fixed_properties.as_deref()
     }
     /// Properties of the worker that are provided by the vendor FMS.
-    pub fn vendor_properties(&self) -> std::option::Option<&crate::model::VendorProperties> {
+    pub fn vendor_properties(&self) -> std::option::Option<& crate::model::VendorProperties> {
         self.vendor_properties.as_ref()
     }
     /// Supported coordinates for worker position.
-    pub fn position(&self) -> std::option::Option<&crate::model::PositionCoordinates> {
+    pub fn position(&self) -> std::option::Option<& crate::model::PositionCoordinates> {
         self.position.as_ref()
     }
     /// Worker orientation measured in units clockwise from north.
-    pub fn orientation(&self) -> std::option::Option<&crate::model::Orientation> {
+    pub fn orientation(&self) -> std::option::Option<& crate::model::Orientation> {
         self.orientation.as_ref()
     }
 }
 /// See [`GetWorkerOutput`](crate::output::GetWorkerOutput).
 pub mod get_worker_output {
-
+    
     /// A builder for [`GetWorkerOutput`](crate::output::GetWorkerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2039,8 +1963,7 @@ pub mod get_worker_output {
         }
         /// Full ARN of the worker.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Filters access by the workers identifier
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2049,8 +1972,7 @@ pub mod get_worker_output {
         }
         /// Filters access by the workers identifier
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Full ARN of the worker fleet.
         pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2059,8 +1981,7 @@ pub mod get_worker_output {
         }
         /// Full ARN of the worker fleet.
         pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet = input;
-            self
+            self.fleet = input; self
         }
         /// Site ARN.
         pub fn site(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2069,8 +1990,7 @@ pub mod get_worker_output {
         }
         /// Site ARN.
         pub fn set_site(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.site = input;
-            self
+            self.site = input; self
         }
         /// Timestamp at which the resource was created.
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2078,12 +1998,8 @@ pub mod get_worker_output {
             self
         }
         /// Timestamp at which the resource was created.
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Timestamp at which the resource was last updated.
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2091,12 +2007,8 @@ pub mod get_worker_output {
             self
         }
         /// Timestamp at which the resource was last updated.
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Human friendly name of the resource.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2105,40 +2017,25 @@ pub mod get_worker_output {
         }
         /// Human friendly name of the resource.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-        pub fn additional_transient_properties(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn additional_transient_properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.additional_transient_properties = Some(input.into());
             self
         }
         /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-        pub fn set_additional_transient_properties(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.additional_transient_properties = input;
-            self
+        pub fn set_additional_transient_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.additional_transient_properties = input; self
         }
         /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-        pub fn additional_fixed_properties(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn additional_fixed_properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.additional_fixed_properties = Some(input.into());
             self
         }
         /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-        pub fn set_additional_fixed_properties(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.additional_fixed_properties = input;
-            self
+        pub fn set_additional_fixed_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.additional_fixed_properties = input; self
         }
         /// Properties of the worker that are provided by the vendor FMS.
         pub fn vendor_properties(mut self, input: crate::model::VendorProperties) -> Self {
@@ -2146,12 +2043,8 @@ pub mod get_worker_output {
             self
         }
         /// Properties of the worker that are provided by the vendor FMS.
-        pub fn set_vendor_properties(
-            mut self,
-            input: std::option::Option<crate::model::VendorProperties>,
-        ) -> Self {
-            self.vendor_properties = input;
-            self
+        pub fn set_vendor_properties(mut self, input: std::option::Option<crate::model::VendorProperties>) -> Self {
+            self.vendor_properties = input; self
         }
         /// Supported coordinates for worker position.
         pub fn position(mut self, input: crate::model::PositionCoordinates) -> Self {
@@ -2159,12 +2052,8 @@ pub mod get_worker_output {
             self
         }
         /// Supported coordinates for worker position.
-        pub fn set_position(
-            mut self,
-            input: std::option::Option<crate::model::PositionCoordinates>,
-        ) -> Self {
-            self.position = input;
-            self
+        pub fn set_position(mut self, input: std::option::Option<crate::model::PositionCoordinates>) -> Self {
+            self.position = input; self
         }
         /// Worker orientation measured in units clockwise from north.
         pub fn orientation(mut self, input: crate::model::Orientation) -> Self {
@@ -2172,31 +2061,41 @@ pub mod get_worker_output {
             self
         }
         /// Worker orientation measured in units clockwise from north.
-        pub fn set_orientation(
-            mut self,
-            input: std::option::Option<crate::model::Orientation>,
-        ) -> Self {
-            self.orientation = input;
-            self
+        pub fn set_orientation(mut self, input: std::option::Option<crate::model::Orientation>) -> Self {
+            self.orientation = input; self
         }
         /// Consumes the builder and constructs a [`GetWorkerOutput`](crate::output::GetWorkerOutput).
         pub fn build(self) -> crate::output::GetWorkerOutput {
             crate::output::GetWorkerOutput {
-                arn: self.arn,
-                id: self.id,
-                fleet: self.fleet,
-                site: self.site,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                name: self.name,
-                additional_transient_properties: self.additional_transient_properties,
-                additional_fixed_properties: self.additional_fixed_properties,
-                vendor_properties: self.vendor_properties,
-                position: self.position,
-                orientation: self.orientation,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                fleet: self.fleet
+                ,
+                site: self.site
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                name: self.name
+                ,
+                additional_transient_properties: self.additional_transient_properties
+                ,
+                additional_fixed_properties: self.additional_fixed_properties
+                ,
+                vendor_properties: self.vendor_properties
+                ,
+                position: self.position
+                ,
+                orientation: self.orientation
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWorkerOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkerOutput`](crate::output::GetWorkerOutput).
@@ -2208,19 +2107,24 @@ impl GetWorkerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkerFleetOutput {}
+pub struct DeleteWorkerFleetOutput  {
+}
 /// See [`DeleteWorkerFleetOutput`](crate::output::DeleteWorkerFleetOutput).
 pub mod delete_worker_fleet_output {
-
+    
     /// A builder for [`DeleteWorkerFleetOutput`](crate::output::DeleteWorkerFleetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWorkerFleetOutput`](crate::output::DeleteWorkerFleetOutput).
         pub fn build(self) -> crate::output::DeleteWorkerFleetOutput {
-            crate::output::DeleteWorkerFleetOutput {}
+            crate::output::DeleteWorkerFleetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteWorkerFleetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkerFleetOutput`](crate::output::DeleteWorkerFleetOutput).
@@ -2232,19 +2136,24 @@ impl DeleteWorkerFleetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkerOutput {}
+pub struct DeleteWorkerOutput  {
+}
 /// See [`DeleteWorkerOutput`](crate::output::DeleteWorkerOutput).
 pub mod delete_worker_output {
-
+    
     /// A builder for [`DeleteWorkerOutput`](crate::output::DeleteWorkerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWorkerOutput`](crate::output::DeleteWorkerOutput).
         pub fn build(self) -> crate::output::DeleteWorkerOutput {
-            crate::output::DeleteWorkerOutput {}
+            crate::output::DeleteWorkerOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteWorkerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkerOutput`](crate::output::DeleteWorkerOutput).
@@ -2256,7 +2165,7 @@ impl DeleteWorkerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkerOutput {
+pub struct CreateWorkerOutput  {
     /// Full ARN of the worker.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2275,29 +2184,29 @@ pub struct CreateWorkerOutput {
 }
 impl CreateWorkerOutput {
     /// Full ARN of the worker.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Filters access by the workers identifier
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Timestamp at which the resource was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// Site ARN.
-    pub fn site(&self) -> std::option::Option<&str> {
+    pub fn site(&self) -> std::option::Option<& str> {
         self.site.as_deref()
     }
 }
 /// See [`CreateWorkerOutput`](crate::output::CreateWorkerOutput).
 pub mod create_worker_output {
-
+    
     /// A builder for [`CreateWorkerOutput`](crate::output::CreateWorkerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2315,8 +2224,7 @@ pub mod create_worker_output {
         }
         /// Full ARN of the worker.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Filters access by the workers identifier
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2325,8 +2233,7 @@ pub mod create_worker_output {
         }
         /// Filters access by the workers identifier
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Timestamp at which the resource was created.
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2334,12 +2241,8 @@ pub mod create_worker_output {
             self
         }
         /// Timestamp at which the resource was created.
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Timestamp at which the resource was last updated.
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2347,12 +2250,8 @@ pub mod create_worker_output {
             self
         }
         /// Timestamp at which the resource was last updated.
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Site ARN.
         pub fn site(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2361,20 +2260,26 @@ pub mod create_worker_output {
         }
         /// Site ARN.
         pub fn set_site(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.site = input;
-            self
+            self.site = input; self
         }
         /// Consumes the builder and constructs a [`CreateWorkerOutput`](crate::output::CreateWorkerOutput).
         pub fn build(self) -> crate::output::CreateWorkerOutput {
             crate::output::CreateWorkerOutput {
-                arn: self.arn,
-                id: self.id,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                site: self.site,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                site: self.site
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateWorkerOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkerOutput`](crate::output::CreateWorkerOutput).
@@ -2382,3 +2287,4 @@ impl CreateWorkerOutput {
         crate::output::create_worker_output::Builder::default()
     }
 }
+

@@ -3,20 +3,20 @@
 /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamModeDetails {
+pub struct StreamModeDetails  {
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
     #[doc(hidden)]
     pub stream_mode: std::option::Option<crate::model::StreamMode>,
 }
 impl StreamModeDetails {
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    pub fn stream_mode(&self) -> std::option::Option<&crate::model::StreamMode> {
+    pub fn stream_mode(&self) -> std::option::Option<& crate::model::StreamMode> {
         self.stream_mode.as_ref()
     }
 }
 /// See [`StreamModeDetails`](crate::model::StreamModeDetails).
 pub mod stream_mode_details {
-
+    
     /// A builder for [`StreamModeDetails`](crate::model::StreamModeDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,20 +29,19 @@ pub mod stream_mode_details {
             self
         }
         /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-        pub fn set_stream_mode(
-            mut self,
-            input: std::option::Option<crate::model::StreamMode>,
-        ) -> Self {
-            self.stream_mode = input;
-            self
+        pub fn set_stream_mode(mut self, input: std::option::Option<crate::model::StreamMode>) -> Self {
+            self.stream_mode = input; self
         }
         /// Consumes the builder and constructs a [`StreamModeDetails`](crate::model::StreamModeDetails).
         pub fn build(self) -> crate::model::StreamModeDetails {
             crate::model::StreamModeDetails {
-                stream_mode: self.stream_mode,
+                stream_mode: self.stream_mode
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamModeDetails {
     /// Creates a new builder-style object to manufacture [`StreamModeDetails`](crate::model::StreamModeDetails).
@@ -57,9 +56,9 @@ impl StreamModeDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let streammode = unimplemented!();
 /// match streammode {
@@ -81,58 +80,52 @@ impl StreamModeDetails {
 /// Specifically, when `streammode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StreamMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StreamMode {
     #[allow(missing_docs)] // documentation missing in model
     OnDemand,
     #[allow(missing_docs)] // documentation missing in model
     Provisioned,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamMode {
     fn from(s: &str) -> Self {
         match s {
             "ON_DEMAND" => StreamMode::OnDemand,
             "PROVISIONED" => StreamMode::Provisioned,
-            other => StreamMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StreamMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StreamMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StreamMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StreamMode::from(s))
+                }
+            }
 impl StreamMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamMode::OnDemand => "ON_DEMAND",
             StreamMode::Provisioned => "PROVISIONED",
-            StreamMode::Unknown(value) => value.as_str(),
+            StreamMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ON_DEMAND", "PROVISIONED"]
+        &[
+            "ON_DEMAND", "PROVISIONED"
+        ]
     }
 }
 impl AsRef<str> for StreamMode {
@@ -147,9 +140,9 @@ impl AsRef<str> for StreamMode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let scalingtype = unimplemented!();
 /// match scalingtype {
@@ -170,54 +163,48 @@ impl AsRef<str> for StreamMode {
 /// Specifically, when `scalingtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScalingType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ScalingType {
     #[allow(missing_docs)] // documentation missing in model
     UniformScaling,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScalingType {
     fn from(s: &str) -> Self {
         match s {
             "UNIFORM_SCALING" => ScalingType::UniformScaling,
-            other => ScalingType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ScalingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ScalingType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScalingType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ScalingType::from(s))
+                }
+            }
 impl ScalingType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScalingType::UniformScaling => "UNIFORM_SCALING",
-            ScalingType::Unknown(value) => value.as_str(),
+            ScalingType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["UNIFORM_SCALING"]
+        &[
+            "UNIFORM_SCALING"
+        ]
     }
 }
 impl AsRef<str> for ScalingType {
@@ -232,9 +219,9 @@ impl AsRef<str> for ScalingType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encryptiontype = unimplemented!();
 /// match encryptiontype {
@@ -256,58 +243,52 @@ impl AsRef<str> for ScalingType {
 /// Specifically, when `encryptiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncryptionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EncryptionType {
     #[allow(missing_docs)] // documentation missing in model
     Kms,
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionType {
     fn from(s: &str) -> Self {
         match s {
             "KMS" => EncryptionType::Kms,
             "NONE" => EncryptionType::None,
-            other => EncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EncryptionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncryptionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EncryptionType::from(s))
+                }
+            }
 impl EncryptionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncryptionType::Kms => "KMS",
             EncryptionType::None => "NONE",
-            EncryptionType::Unknown(value) => value.as_str(),
+            EncryptionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KMS", "NONE"]
+        &[
+            "KMS", "NONE"
+        ]
     }
 }
 impl AsRef<str> for EncryptionType {
@@ -319,11 +300,11 @@ impl AsRef<str> for EncryptionType {
 /// <p>An object that represents the details of the consumer you registered. This type of object is returned by <code>RegisterStreamConsumer</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Consumer {
+pub struct Consumer  {
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
     #[doc(hidden)]
     pub consumer_name: std::option::Option<std::string::String>,
-    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
+    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p> 
     /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
     #[doc(hidden)]
     pub consumer_arn: std::option::Option<std::string::String>,
@@ -336,26 +317,26 @@ pub struct Consumer {
 }
 impl Consumer {
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
-    pub fn consumer_name(&self) -> std::option::Option<&str> {
+    pub fn consumer_name(&self) -> std::option::Option<& str> {
         self.consumer_name.as_deref()
     }
-    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
+    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p> 
     /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
-    pub fn consumer_arn(&self) -> std::option::Option<&str> {
+    pub fn consumer_arn(&self) -> std::option::Option<& str> {
         self.consumer_arn.as_deref()
     }
     /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
-    pub fn consumer_status(&self) -> std::option::Option<&crate::model::ConsumerStatus> {
+    pub fn consumer_status(&self) -> std::option::Option<& crate::model::ConsumerStatus> {
         self.consumer_status.as_ref()
     }
     /// <p></p>
-    pub fn consumer_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn consumer_creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.consumer_creation_timestamp.as_ref()
     }
 }
 /// See [`Consumer`](crate::model::Consumer).
 pub mod consumer {
-
+    
     /// A builder for [`Consumer`](crate::model::Consumer).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -371,24 +352,19 @@ pub mod consumer {
             self
         }
         /// <p>The name of the consumer is something you choose when you register the consumer.</p>
-        pub fn set_consumer_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.consumer_name = input;
-            self
+        pub fn set_consumer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.consumer_name = input; self
         }
-        /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
+        /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p> 
         /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
         pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.consumer_arn = Some(input.into());
             self
         }
-        /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
+        /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p> 
         /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
         pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.consumer_arn = input;
-            self
+            self.consumer_arn = input; self
         }
         /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
         pub fn consumer_status(mut self, input: crate::model::ConsumerStatus) -> Self {
@@ -396,12 +372,8 @@ pub mod consumer {
             self
         }
         /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
-        pub fn set_consumer_status(
-            mut self,
-            input: std::option::Option<crate::model::ConsumerStatus>,
-        ) -> Self {
-            self.consumer_status = input;
-            self
+        pub fn set_consumer_status(mut self, input: std::option::Option<crate::model::ConsumerStatus>) -> Self {
+            self.consumer_status = input; self
         }
         /// <p></p>
         pub fn consumer_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -409,23 +381,25 @@ pub mod consumer {
             self
         }
         /// <p></p>
-        pub fn set_consumer_creation_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.consumer_creation_timestamp = input;
-            self
+        pub fn set_consumer_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.consumer_creation_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`Consumer`](crate::model::Consumer).
         pub fn build(self) -> crate::model::Consumer {
             crate::model::Consumer {
-                consumer_name: self.consumer_name,
-                consumer_arn: self.consumer_arn,
-                consumer_status: self.consumer_status,
-                consumer_creation_timestamp: self.consumer_creation_timestamp,
+                consumer_name: self.consumer_name
+                ,
+                consumer_arn: self.consumer_arn
+                ,
+                consumer_status: self.consumer_status
+                ,
+                consumer_creation_timestamp: self.consumer_creation_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl Consumer {
     /// Creates a new builder-style object to manufacture [`Consumer`](crate::model::Consumer).
@@ -440,9 +414,9 @@ impl Consumer {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let consumerstatus = unimplemented!();
 /// match consumerstatus {
@@ -465,22 +439,14 @@ impl Consumer {
 /// Specifically, when `consumerstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConsumerStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConsumerStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -489,7 +455,7 @@ pub enum ConsumerStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConsumerStatus {
     fn from(s: &str) -> Self {
@@ -497,17 +463,17 @@ impl std::convert::From<&str> for ConsumerStatus {
             "ACTIVE" => ConsumerStatus::Active,
             "CREATING" => ConsumerStatus::Creating,
             "DELETING" => ConsumerStatus::Deleting,
-            other => ConsumerStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ConsumerStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConsumerStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConsumerStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConsumerStatus::from(s))
+                }
+            }
 impl ConsumerStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -515,12 +481,14 @@ impl ConsumerStatus {
             ConsumerStatus::Active => "ACTIVE",
             ConsumerStatus::Creating => "CREATING",
             ConsumerStatus::Deleting => "DELETING",
-            ConsumerStatus::Unknown(value) => value.as_str(),
+            ConsumerStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING"]
+        &[
+            "ACTIVE", "CREATING", "DELETING"
+        ]
     }
 }
 impl AsRef<str> for ConsumerStatus {
@@ -532,7 +500,7 @@ impl AsRef<str> for ConsumerStatus {
 /// <p>Represents the result of an individual record from a <code>PutRecords</code> request. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to the stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRecordsResultEntry {
+pub struct PutRecordsResultEntry  {
     /// <p>The sequence number for an individual record result.</p>
     #[doc(hidden)]
     pub sequence_number: std::option::Option<std::string::String>,
@@ -548,25 +516,25 @@ pub struct PutRecordsResultEntry {
 }
 impl PutRecordsResultEntry {
     /// <p>The sequence number for an individual record result.</p>
-    pub fn sequence_number(&self) -> std::option::Option<&str> {
+    pub fn sequence_number(&self) -> std::option::Option<& str> {
         self.sequence_number.as_deref()
     }
     /// <p>The shard ID for an individual record result.</p>
-    pub fn shard_id(&self) -> std::option::Option<&str> {
+    pub fn shard_id(&self) -> std::option::Option<& str> {
         self.shard_id.as_deref()
     }
     /// <p>The error code for an individual record result. <code>ErrorCodes</code> can be either <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message for an individual record result. An <code>ErrorCode</code> value of <code>ProvisionedThroughputExceededException</code> has an error message that includes the account ID, stream name, and shard ID. An <code>ErrorCode</code> value of <code>InternalFailure</code> has the error message <code>"Internal Service Failure"</code>.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`PutRecordsResultEntry`](crate::model::PutRecordsResultEntry).
 pub mod put_records_result_entry {
-
+    
     /// A builder for [`PutRecordsResultEntry`](crate::model::PutRecordsResultEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -582,12 +550,8 @@ pub mod put_records_result_entry {
             self
         }
         /// <p>The sequence number for an individual record result.</p>
-        pub fn set_sequence_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sequence_number = input;
-            self
+        pub fn set_sequence_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sequence_number = input; self
         }
         /// <p>The shard ID for an individual record result.</p>
         pub fn shard_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -596,8 +560,7 @@ pub mod put_records_result_entry {
         }
         /// <p>The shard ID for an individual record result.</p>
         pub fn set_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.shard_id = input;
-            self
+            self.shard_id = input; self
         }
         /// <p>The error code for an individual record result. <code>ErrorCodes</code> can be either <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -606,8 +569,7 @@ pub mod put_records_result_entry {
         }
         /// <p>The error code for an individual record result. <code>ErrorCodes</code> can be either <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>The error message for an individual record result. An <code>ErrorCode</code> value of <code>ProvisionedThroughputExceededException</code> has an error message that includes the account ID, stream name, and shard ID. An <code>ErrorCode</code> value of <code>InternalFailure</code> has the error message <code>"Internal Service Failure"</code>.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -615,23 +577,25 @@ pub mod put_records_result_entry {
             self
         }
         /// <p>The error message for an individual record result. An <code>ErrorCode</code> value of <code>ProvisionedThroughputExceededException</code> has an error message that includes the account ID, stream name, and shard ID. An <code>ErrorCode</code> value of <code>InternalFailure</code> has the error message <code>"Internal Service Failure"</code>.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`PutRecordsResultEntry`](crate::model::PutRecordsResultEntry).
         pub fn build(self) -> crate::model::PutRecordsResultEntry {
             crate::model::PutRecordsResultEntry {
-                sequence_number: self.sequence_number,
-                shard_id: self.shard_id,
-                error_code: self.error_code,
-                error_message: self.error_message,
+                sequence_number: self.sequence_number
+                ,
+                shard_id: self.shard_id
+                ,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl PutRecordsResultEntry {
     /// Creates a new builder-style object to manufacture [`PutRecordsResultEntry`](crate::model::PutRecordsResultEntry).
@@ -643,7 +607,7 @@ impl PutRecordsResultEntry {
 /// <p>Represents the output for <code>PutRecords</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRecordsRequestEntry {
+pub struct PutRecordsRequestEntry  {
     /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
     #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
@@ -656,21 +620,21 @@ pub struct PutRecordsRequestEntry {
 }
 impl PutRecordsRequestEntry {
     /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
-    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn data(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// <p>The hash value used to determine explicitly the shard that the data record is assigned to by overriding the partition key hash.</p>
-    pub fn explicit_hash_key(&self) -> std::option::Option<&str> {
+    pub fn explicit_hash_key(&self) -> std::option::Option<& str> {
         self.explicit_hash_key.as_deref()
     }
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
-    pub fn partition_key(&self) -> std::option::Option<&str> {
+    pub fn partition_key(&self) -> std::option::Option<& str> {
         self.partition_key.as_deref()
     }
 }
 /// See [`PutRecordsRequestEntry`](crate::model::PutRecordsRequestEntry).
 pub mod put_records_request_entry {
-
+    
     /// A builder for [`PutRecordsRequestEntry`](crate::model::PutRecordsRequestEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -686,8 +650,7 @@ pub mod put_records_request_entry {
         }
         /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
         pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.data = input;
-            self
+            self.data = input; self
         }
         /// <p>The hash value used to determine explicitly the shard that the data record is assigned to by overriding the partition key hash.</p>
         pub fn explicit_hash_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -695,12 +658,8 @@ pub mod put_records_request_entry {
             self
         }
         /// <p>The hash value used to determine explicitly the shard that the data record is assigned to by overriding the partition key hash.</p>
-        pub fn set_explicit_hash_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.explicit_hash_key = input;
-            self
+        pub fn set_explicit_hash_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.explicit_hash_key = input; self
         }
         /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
         pub fn partition_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -708,22 +667,23 @@ pub mod put_records_request_entry {
             self
         }
         /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
-        pub fn set_partition_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.partition_key = input;
-            self
+        pub fn set_partition_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.partition_key = input; self
         }
         /// Consumes the builder and constructs a [`PutRecordsRequestEntry`](crate::model::PutRecordsRequestEntry).
         pub fn build(self) -> crate::model::PutRecordsRequestEntry {
             crate::model::PutRecordsRequestEntry {
-                data: self.data,
-                explicit_hash_key: self.explicit_hash_key,
-                partition_key: self.partition_key,
+                data: self.data
+                ,
+                explicit_hash_key: self.explicit_hash_key
+                ,
+                partition_key: self.partition_key
+                ,
             }
         }
     }
+    
+    
 }
 impl PutRecordsRequestEntry {
     /// Creates a new builder-style object to manufacture [`PutRecordsRequestEntry`](crate::model::PutRecordsRequestEntry).
@@ -735,7 +695,7 @@ impl PutRecordsRequestEntry {
 /// <p>Metadata assigned to the stream, consisting of a key-value pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -745,17 +705,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>An optional string, typically used to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -770,8 +730,7 @@ pub mod tag {
         }
         /// <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>An optional string, typically used to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -780,17 +739,20 @@ pub mod tag {
         }
         /// <p>An optional string, typically used to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -802,7 +764,7 @@ impl Tag {
 /// <p>The summary of a stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamSummary {
+pub struct StreamSummary  {
     /// <p>The name of a stream.</p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
@@ -821,29 +783,29 @@ pub struct StreamSummary {
 }
 impl StreamSummary {
     /// <p>The name of a stream.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The status of the stream.</p>
-    pub fn stream_status(&self) -> std::option::Option<&crate::model::StreamStatus> {
+    pub fn stream_status(&self) -> std::option::Option<& crate::model::StreamStatus> {
         self.stream_status.as_ref()
     }
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    pub fn stream_mode_details(&self) -> std::option::Option<&crate::model::StreamModeDetails> {
+    pub fn stream_mode_details(&self) -> std::option::Option<& crate::model::StreamModeDetails> {
         self.stream_mode_details.as_ref()
     }
     /// <p>The timestamp at which the stream was created.</p>
-    pub fn stream_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stream_creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stream_creation_timestamp.as_ref()
     }
 }
 /// See [`StreamSummary`](crate::model::StreamSummary).
 pub mod stream_summary {
-
+    
     /// A builder for [`StreamSummary`](crate::model::StreamSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -861,8 +823,7 @@ pub mod stream_summary {
         }
         /// <p>The name of a stream.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = input;
-            self
+            self.stream_name = input; self
         }
         /// <p>The ARN of the stream.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -871,8 +832,7 @@ pub mod stream_summary {
         }
         /// <p>The ARN of the stream.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = input;
-            self
+            self.stream_arn = input; self
         }
         /// <p>The status of the stream.</p>
         pub fn stream_status(mut self, input: crate::model::StreamStatus) -> Self {
@@ -880,12 +840,8 @@ pub mod stream_summary {
             self
         }
         /// <p>The status of the stream.</p>
-        pub fn set_stream_status(
-            mut self,
-            input: std::option::Option<crate::model::StreamStatus>,
-        ) -> Self {
-            self.stream_status = input;
-            self
+        pub fn set_stream_status(mut self, input: std::option::Option<crate::model::StreamStatus>) -> Self {
+            self.stream_status = input; self
         }
         /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
         pub fn stream_mode_details(mut self, input: crate::model::StreamModeDetails) -> Self {
@@ -893,12 +849,8 @@ pub mod stream_summary {
             self
         }
         /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-        pub fn set_stream_mode_details(
-            mut self,
-            input: std::option::Option<crate::model::StreamModeDetails>,
-        ) -> Self {
-            self.stream_mode_details = input;
-            self
+        pub fn set_stream_mode_details(mut self, input: std::option::Option<crate::model::StreamModeDetails>) -> Self {
+            self.stream_mode_details = input; self
         }
         /// <p>The timestamp at which the stream was created.</p>
         pub fn stream_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -906,24 +858,27 @@ pub mod stream_summary {
             self
         }
         /// <p>The timestamp at which the stream was created.</p>
-        pub fn set_stream_creation_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.stream_creation_timestamp = input;
-            self
+        pub fn set_stream_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.stream_creation_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`StreamSummary`](crate::model::StreamSummary).
         pub fn build(self) -> crate::model::StreamSummary {
             crate::model::StreamSummary {
-                stream_name: self.stream_name,
-                stream_arn: self.stream_arn,
-                stream_status: self.stream_status,
-                stream_mode_details: self.stream_mode_details,
-                stream_creation_timestamp: self.stream_creation_timestamp,
+                stream_name: self.stream_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+                stream_status: self.stream_status
+                ,
+                stream_mode_details: self.stream_mode_details
+                ,
+                stream_creation_timestamp: self.stream_creation_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamSummary {
     /// Creates a new builder-style object to manufacture [`StreamSummary`](crate::model::StreamSummary).
@@ -938,9 +893,9 @@ impl StreamSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let streamstatus = unimplemented!();
 /// match streamstatus {
@@ -964,22 +919,14 @@ impl StreamSummary {
 /// Specifically, when `streamstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StreamStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StreamStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -990,7 +937,7 @@ pub enum StreamStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamStatus {
     fn from(s: &str) -> Self {
@@ -999,17 +946,17 @@ impl std::convert::From<&str> for StreamStatus {
             "CREATING" => StreamStatus::Creating,
             "DELETING" => StreamStatus::Deleting,
             "UPDATING" => StreamStatus::Updating,
-            other => StreamStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StreamStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StreamStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StreamStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StreamStatus::from(s))
+                }
+            }
 impl StreamStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1018,12 +965,14 @@ impl StreamStatus {
             StreamStatus::Creating => "CREATING",
             StreamStatus::Deleting => "DELETING",
             StreamStatus::Updating => "UPDATING",
-            StreamStatus::Unknown(value) => value.as_str(),
+            StreamStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "UPDATING"]
+        &[
+            "ACTIVE", "CREATING", "DELETING", "UPDATING"
+        ]
     }
 }
 impl AsRef<str> for StreamStatus {
@@ -1035,7 +984,7 @@ impl AsRef<str> for StreamStatus {
 /// <p>A uniquely identified group of data records in a Kinesis data stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Shard {
+pub struct Shard  {
     /// <p>The unique identifier of the shard within the stream.</p>
     #[doc(hidden)]
     pub shard_id: std::option::Option<std::string::String>,
@@ -1054,29 +1003,29 @@ pub struct Shard {
 }
 impl Shard {
     /// <p>The unique identifier of the shard within the stream.</p>
-    pub fn shard_id(&self) -> std::option::Option<&str> {
+    pub fn shard_id(&self) -> std::option::Option<& str> {
         self.shard_id.as_deref()
     }
     /// <p>The shard ID of the shard's parent.</p>
-    pub fn parent_shard_id(&self) -> std::option::Option<&str> {
+    pub fn parent_shard_id(&self) -> std::option::Option<& str> {
         self.parent_shard_id.as_deref()
     }
     /// <p>The shard ID of the shard adjacent to the shard's parent.</p>
-    pub fn adjacent_parent_shard_id(&self) -> std::option::Option<&str> {
+    pub fn adjacent_parent_shard_id(&self) -> std::option::Option<& str> {
         self.adjacent_parent_shard_id.as_deref()
     }
     /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
-    pub fn hash_key_range(&self) -> std::option::Option<&crate::model::HashKeyRange> {
+    pub fn hash_key_range(&self) -> std::option::Option<& crate::model::HashKeyRange> {
         self.hash_key_range.as_ref()
     }
     /// <p>The range of possible sequence numbers for the shard.</p>
-    pub fn sequence_number_range(&self) -> std::option::Option<&crate::model::SequenceNumberRange> {
+    pub fn sequence_number_range(&self) -> std::option::Option<& crate::model::SequenceNumberRange> {
         self.sequence_number_range.as_ref()
     }
 }
 /// See [`Shard`](crate::model::Shard).
 pub mod shard {
-
+    
     /// A builder for [`Shard`](crate::model::Shard).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1094,8 +1043,7 @@ pub mod shard {
         }
         /// <p>The unique identifier of the shard within the stream.</p>
         pub fn set_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.shard_id = input;
-            self
+            self.shard_id = input; self
         }
         /// <p>The shard ID of the shard's parent.</p>
         pub fn parent_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1103,12 +1051,8 @@ pub mod shard {
             self
         }
         /// <p>The shard ID of the shard's parent.</p>
-        pub fn set_parent_shard_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_shard_id = input;
-            self
+        pub fn set_parent_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_shard_id = input; self
         }
         /// <p>The shard ID of the shard adjacent to the shard's parent.</p>
         pub fn adjacent_parent_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1116,12 +1060,8 @@ pub mod shard {
             self
         }
         /// <p>The shard ID of the shard adjacent to the shard's parent.</p>
-        pub fn set_adjacent_parent_shard_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.adjacent_parent_shard_id = input;
-            self
+        pub fn set_adjacent_parent_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.adjacent_parent_shard_id = input; self
         }
         /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
         pub fn hash_key_range(mut self, input: crate::model::HashKeyRange) -> Self {
@@ -1129,12 +1069,8 @@ pub mod shard {
             self
         }
         /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
-        pub fn set_hash_key_range(
-            mut self,
-            input: std::option::Option<crate::model::HashKeyRange>,
-        ) -> Self {
-            self.hash_key_range = input;
-            self
+        pub fn set_hash_key_range(mut self, input: std::option::Option<crate::model::HashKeyRange>) -> Self {
+            self.hash_key_range = input; self
         }
         /// <p>The range of possible sequence numbers for the shard.</p>
         pub fn sequence_number_range(mut self, input: crate::model::SequenceNumberRange) -> Self {
@@ -1142,24 +1078,27 @@ pub mod shard {
             self
         }
         /// <p>The range of possible sequence numbers for the shard.</p>
-        pub fn set_sequence_number_range(
-            mut self,
-            input: std::option::Option<crate::model::SequenceNumberRange>,
-        ) -> Self {
-            self.sequence_number_range = input;
-            self
+        pub fn set_sequence_number_range(mut self, input: std::option::Option<crate::model::SequenceNumberRange>) -> Self {
+            self.sequence_number_range = input; self
         }
         /// Consumes the builder and constructs a [`Shard`](crate::model::Shard).
         pub fn build(self) -> crate::model::Shard {
             crate::model::Shard {
-                shard_id: self.shard_id,
-                parent_shard_id: self.parent_shard_id,
-                adjacent_parent_shard_id: self.adjacent_parent_shard_id,
-                hash_key_range: self.hash_key_range,
-                sequence_number_range: self.sequence_number_range,
+                shard_id: self.shard_id
+                ,
+                parent_shard_id: self.parent_shard_id
+                ,
+                adjacent_parent_shard_id: self.adjacent_parent_shard_id
+                ,
+                hash_key_range: self.hash_key_range
+                ,
+                sequence_number_range: self.sequence_number_range
+                ,
             }
         }
     }
+    
+    
 }
 impl Shard {
     /// Creates a new builder-style object to manufacture [`Shard`](crate::model::Shard).
@@ -1171,7 +1110,7 @@ impl Shard {
 /// <p>The range of possible sequence numbers for the shard.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SequenceNumberRange {
+pub struct SequenceNumberRange  {
     /// <p>The starting sequence number for the range.</p>
     #[doc(hidden)]
     pub starting_sequence_number: std::option::Option<std::string::String>,
@@ -1181,17 +1120,17 @@ pub struct SequenceNumberRange {
 }
 impl SequenceNumberRange {
     /// <p>The starting sequence number for the range.</p>
-    pub fn starting_sequence_number(&self) -> std::option::Option<&str> {
+    pub fn starting_sequence_number(&self) -> std::option::Option<& str> {
         self.starting_sequence_number.as_deref()
     }
     /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
-    pub fn ending_sequence_number(&self) -> std::option::Option<&str> {
+    pub fn ending_sequence_number(&self) -> std::option::Option<& str> {
         self.ending_sequence_number.as_deref()
     }
 }
 /// See [`SequenceNumberRange`](crate::model::SequenceNumberRange).
 pub mod sequence_number_range {
-
+    
     /// A builder for [`SequenceNumberRange`](crate::model::SequenceNumberRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1205,12 +1144,8 @@ pub mod sequence_number_range {
             self
         }
         /// <p>The starting sequence number for the range.</p>
-        pub fn set_starting_sequence_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.starting_sequence_number = input;
-            self
+        pub fn set_starting_sequence_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.starting_sequence_number = input; self
         }
         /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
         pub fn ending_sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1218,21 +1153,21 @@ pub mod sequence_number_range {
             self
         }
         /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
-        pub fn set_ending_sequence_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ending_sequence_number = input;
-            self
+        pub fn set_ending_sequence_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ending_sequence_number = input; self
         }
         /// Consumes the builder and constructs a [`SequenceNumberRange`](crate::model::SequenceNumberRange).
         pub fn build(self) -> crate::model::SequenceNumberRange {
             crate::model::SequenceNumberRange {
-                starting_sequence_number: self.starting_sequence_number,
-                ending_sequence_number: self.ending_sequence_number,
+                starting_sequence_number: self.starting_sequence_number
+                ,
+                ending_sequence_number: self.ending_sequence_number
+                ,
             }
         }
     }
+    
+    
 }
 impl SequenceNumberRange {
     /// Creates a new builder-style object to manufacture [`SequenceNumberRange`](crate::model::SequenceNumberRange).
@@ -1244,7 +1179,7 @@ impl SequenceNumberRange {
 /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HashKeyRange {
+pub struct HashKeyRange  {
     /// <p>The starting hash key of the hash key range.</p>
     #[doc(hidden)]
     pub starting_hash_key: std::option::Option<std::string::String>,
@@ -1254,17 +1189,17 @@ pub struct HashKeyRange {
 }
 impl HashKeyRange {
     /// <p>The starting hash key of the hash key range.</p>
-    pub fn starting_hash_key(&self) -> std::option::Option<&str> {
+    pub fn starting_hash_key(&self) -> std::option::Option<& str> {
         self.starting_hash_key.as_deref()
     }
     /// <p>The ending hash key of the hash key range.</p>
-    pub fn ending_hash_key(&self) -> std::option::Option<&str> {
+    pub fn ending_hash_key(&self) -> std::option::Option<& str> {
         self.ending_hash_key.as_deref()
     }
 }
 /// See [`HashKeyRange`](crate::model::HashKeyRange).
 pub mod hash_key_range {
-
+    
     /// A builder for [`HashKeyRange`](crate::model::HashKeyRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1278,12 +1213,8 @@ pub mod hash_key_range {
             self
         }
         /// <p>The starting hash key of the hash key range.</p>
-        pub fn set_starting_hash_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.starting_hash_key = input;
-            self
+        pub fn set_starting_hash_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.starting_hash_key = input; self
         }
         /// <p>The ending hash key of the hash key range.</p>
         pub fn ending_hash_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1291,21 +1222,21 @@ pub mod hash_key_range {
             self
         }
         /// <p>The ending hash key of the hash key range.</p>
-        pub fn set_ending_hash_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ending_hash_key = input;
-            self
+        pub fn set_ending_hash_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ending_hash_key = input; self
         }
         /// Consumes the builder and constructs a [`HashKeyRange`](crate::model::HashKeyRange).
         pub fn build(self) -> crate::model::HashKeyRange {
             crate::model::HashKeyRange {
-                starting_hash_key: self.starting_hash_key,
-                ending_hash_key: self.ending_hash_key,
+                starting_hash_key: self.starting_hash_key
+                ,
+                ending_hash_key: self.ending_hash_key
+                ,
             }
         }
     }
+    
+    
 }
 impl HashKeyRange {
     /// Creates a new builder-style object to manufacture [`HashKeyRange`](crate::model::HashKeyRange).
@@ -1317,16 +1248,16 @@ impl HashKeyRange {
 /// <p>The request parameter used to filter out the response of the <code>ListShards</code> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ShardFilter {
-    /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p>
-    /// <p>You can specify the following valid values: </p>
-    /// <ul>
-    /// <li> <p> <code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided. </p> </li>
-    /// <li> <p> <code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p> </li>
-    /// <li> <p> <code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p> </li>
-    /// <li> <p> <code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p> </li>
-    /// <li> <p> <code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open. </p> </li>
-    /// <li> <p> <code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p> </li>
+pub struct ShardFilter  {
+    /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p> 
+    /// <p>You can specify the following valid values: </p> 
+    /// <ul> 
+    /// <li> <p> <code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided. </p> </li> 
+    /// <li> <p> <code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p> </li> 
+    /// <li> <p> <code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p> </li> 
+    /// <li> <p> <code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p> </li> 
+    /// <li> <p> <code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open. </p> </li> 
+    /// <li> <p> <code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ShardFilterType>,
@@ -1338,31 +1269,31 @@ pub struct ShardFilter {
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ShardFilter {
-    /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p>
-    /// <p>You can specify the following valid values: </p>
-    /// <ul>
-    /// <li> <p> <code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided. </p> </li>
-    /// <li> <p> <code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p> </li>
-    /// <li> <p> <code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p> </li>
-    /// <li> <p> <code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p> </li>
-    /// <li> <p> <code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open. </p> </li>
-    /// <li> <p> <code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p> </li>
+    /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p> 
+    /// <p>You can specify the following valid values: </p> 
+    /// <ul> 
+    /// <li> <p> <code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided. </p> </li> 
+    /// <li> <p> <code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p> </li> 
+    /// <li> <p> <code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p> </li> 
+    /// <li> <p> <code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p> </li> 
+    /// <li> <p> <code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open. </p> </li> 
+    /// <li> <p> <code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ShardFilterType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ShardFilterType> {
         self.r#type.as_ref()
     }
     /// <p>The exclusive start <code>shardID</code> speified in the <code>ShardFilter</code> parameter. This property can only be used if the <code>AFTER_SHARD_ID</code> shard type is specified.</p>
-    pub fn shard_id(&self) -> std::option::Option<&str> {
+    pub fn shard_id(&self) -> std::option::Option<& str> {
         self.shard_id.as_deref()
     }
     /// <p>The timestamps specified in the <code>ShardFilter</code> parameter. A timestamp is a Unix epoch date with precision in milliseconds. For example, 2016-04-04T19:58:46.480-00:00 or 1459799926.480. This property can only be used if <code>FROM_TIMESTAMP</code> or <code>AT_TIMESTAMP</code> shard types are specified.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
 /// See [`ShardFilter`](crate::model::ShardFilter).
 pub mod shard_filter {
-
+    
     /// A builder for [`ShardFilter`](crate::model::ShardFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1371,36 +1302,32 @@ pub mod shard_filter {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p>
-        /// <p>You can specify the following valid values: </p>
-        /// <ul>
-        /// <li> <p> <code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided. </p> </li>
-        /// <li> <p> <code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p> </li>
-        /// <li> <p> <code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p> </li>
-        /// <li> <p> <code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p> </li>
-        /// <li> <p> <code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open. </p> </li>
-        /// <li> <p> <code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p> </li>
+        /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p> 
+        /// <p>You can specify the following valid values: </p> 
+        /// <ul> 
+        /// <li> <p> <code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided. </p> </li> 
+        /// <li> <p> <code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p> </li> 
+        /// <li> <p> <code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p> </li> 
+        /// <li> <p> <code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p> </li> 
+        /// <li> <p> <code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open. </p> </li> 
+        /// <li> <p> <code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ShardFilterType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p>
-        /// <p>You can specify the following valid values: </p>
-        /// <ul>
-        /// <li> <p> <code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided. </p> </li>
-        /// <li> <p> <code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p> </li>
-        /// <li> <p> <code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p> </li>
-        /// <li> <p> <code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p> </li>
-        /// <li> <p> <code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open. </p> </li>
-        /// <li> <p> <code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p> </li>
+        /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p> 
+        /// <p>You can specify the following valid values: </p> 
+        /// <ul> 
+        /// <li> <p> <code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided. </p> </li> 
+        /// <li> <p> <code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p> </li> 
+        /// <li> <p> <code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p> </li> 
+        /// <li> <p> <code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p> </li> 
+        /// <li> <p> <code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open. </p> </li> 
+        /// <li> <p> <code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p> </li> 
         /// </ul>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::ShardFilterType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ShardFilterType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The exclusive start <code>shardID</code> speified in the <code>ShardFilter</code> parameter. This property can only be used if the <code>AFTER_SHARD_ID</code> shard type is specified.</p>
         pub fn shard_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1409,8 +1336,7 @@ pub mod shard_filter {
         }
         /// <p>The exclusive start <code>shardID</code> speified in the <code>ShardFilter</code> parameter. This property can only be used if the <code>AFTER_SHARD_ID</code> shard type is specified.</p>
         pub fn set_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.shard_id = input;
-            self
+            self.shard_id = input; self
         }
         /// <p>The timestamps specified in the <code>ShardFilter</code> parameter. A timestamp is a Unix epoch date with precision in milliseconds. For example, 2016-04-04T19:58:46.480-00:00 or 1459799926.480. This property can only be used if <code>FROM_TIMESTAMP</code> or <code>AT_TIMESTAMP</code> shard types are specified.</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1418,22 +1344,23 @@ pub mod shard_filter {
             self
         }
         /// <p>The timestamps specified in the <code>ShardFilter</code> parameter. A timestamp is a Unix epoch date with precision in milliseconds. For example, 2016-04-04T19:58:46.480-00:00 or 1459799926.480. This property can only be used if <code>FROM_TIMESTAMP</code> or <code>AT_TIMESTAMP</code> shard types are specified.</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         /// Consumes the builder and constructs a [`ShardFilter`](crate::model::ShardFilter).
         pub fn build(self) -> crate::model::ShardFilter {
             crate::model::ShardFilter {
-                r#type: self.r#type,
-                shard_id: self.shard_id,
-                timestamp: self.timestamp,
+                r#type: self.r#type
+                ,
+                shard_id: self.shard_id
+                ,
+                timestamp: self.timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl ShardFilter {
     /// Creates a new builder-style object to manufacture [`ShardFilter`](crate::model::ShardFilter).
@@ -1448,9 +1375,9 @@ impl ShardFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let shardfiltertype = unimplemented!();
 /// match shardfiltertype {
@@ -1476,22 +1403,14 @@ impl ShardFilter {
 /// Specifically, when `shardfiltertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ShardFilterType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ShardFilterType {
     #[allow(missing_docs)] // documentation missing in model
     AfterShardId,
@@ -1506,7 +1425,7 @@ pub enum ShardFilterType {
     #[allow(missing_docs)] // documentation missing in model
     FromTrimHorizon,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ShardFilterType {
     fn from(s: &str) -> Self {
@@ -1517,17 +1436,17 @@ impl std::convert::From<&str> for ShardFilterType {
             "AT_TRIM_HORIZON" => ShardFilterType::AtTrimHorizon,
             "FROM_TIMESTAMP" => ShardFilterType::FromTimestamp,
             "FROM_TRIM_HORIZON" => ShardFilterType::FromTrimHorizon,
-            other => ShardFilterType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ShardFilterType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ShardFilterType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ShardFilterType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ShardFilterType::from(s))
+                }
+            }
 impl ShardFilterType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1538,18 +1457,13 @@ impl ShardFilterType {
             ShardFilterType::AtTrimHorizon => "AT_TRIM_HORIZON",
             ShardFilterType::FromTimestamp => "FROM_TIMESTAMP",
             ShardFilterType::FromTrimHorizon => "FROM_TRIM_HORIZON",
-            ShardFilterType::Unknown(value) => value.as_str(),
+            ShardFilterType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AFTER_SHARD_ID",
-            "AT_LATEST",
-            "AT_TIMESTAMP",
-            "AT_TRIM_HORIZON",
-            "FROM_TIMESTAMP",
-            "FROM_TRIM_HORIZON",
+            "AFTER_SHARD_ID", "AT_LATEST", "AT_TIMESTAMP", "AT_TRIM_HORIZON", "FROM_TIMESTAMP", "FROM_TRIM_HORIZON"
         ]
     }
 }
@@ -1565,9 +1479,9 @@ impl AsRef<str> for ShardFilterType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sharditeratortype = unimplemented!();
 /// match sharditeratortype {
@@ -1592,22 +1506,14 @@ impl AsRef<str> for ShardFilterType {
 /// Specifically, when `sharditeratortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ShardIteratorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ShardIteratorType {
     #[allow(missing_docs)] // documentation missing in model
     AfterSequenceNumber,
@@ -1620,7 +1526,7 @@ pub enum ShardIteratorType {
     #[allow(missing_docs)] // documentation missing in model
     TrimHorizon,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ShardIteratorType {
     fn from(s: &str) -> Self {
@@ -1630,19 +1536,17 @@ impl std::convert::From<&str> for ShardIteratorType {
             "AT_TIMESTAMP" => ShardIteratorType::AtTimestamp,
             "LATEST" => ShardIteratorType::Latest,
             "TRIM_HORIZON" => ShardIteratorType::TrimHorizon,
-            other => {
-                ShardIteratorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ShardIteratorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ShardIteratorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ShardIteratorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ShardIteratorType::from(s))
+                }
+            }
 impl ShardIteratorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1652,17 +1556,13 @@ impl ShardIteratorType {
             ShardIteratorType::AtTimestamp => "AT_TIMESTAMP",
             ShardIteratorType::Latest => "LATEST",
             ShardIteratorType::TrimHorizon => "TRIM_HORIZON",
-            ShardIteratorType::Unknown(value) => value.as_str(),
+            ShardIteratorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AFTER_SEQUENCE_NUMBER",
-            "AT_SEQUENCE_NUMBER",
-            "AT_TIMESTAMP",
-            "LATEST",
-            "TRIM_HORIZON",
+            "AFTER_SEQUENCE_NUMBER", "AT_SEQUENCE_NUMBER", "AT_TIMESTAMP", "LATEST", "TRIM_HORIZON"
         ]
     }
 }
@@ -1675,7 +1575,7 @@ impl AsRef<str> for ShardIteratorType {
 /// <p>Output parameter of the GetRecords API. The existing child shard of the current shard.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChildShard {
+pub struct ChildShard  {
     /// <p>The shard ID of the existing child shard of the current shard.</p>
     #[doc(hidden)]
     pub shard_id: std::option::Option<std::string::String>,
@@ -1688,21 +1588,21 @@ pub struct ChildShard {
 }
 impl ChildShard {
     /// <p>The shard ID of the existing child shard of the current shard.</p>
-    pub fn shard_id(&self) -> std::option::Option<&str> {
+    pub fn shard_id(&self) -> std::option::Option<& str> {
         self.shard_id.as_deref()
     }
     /// <p>The current shard that is the parent of the existing child shard.</p>
-    pub fn parent_shards(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn parent_shards(&self) -> std::option::Option<& [std::string::String]> {
         self.parent_shards.as_deref()
     }
     /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
-    pub fn hash_key_range(&self) -> std::option::Option<&crate::model::HashKeyRange> {
+    pub fn hash_key_range(&self) -> std::option::Option<& crate::model::HashKeyRange> {
         self.hash_key_range.as_ref()
     }
 }
 /// See [`ChildShard`](crate::model::ChildShard).
 pub mod child_shard {
-
+    
     /// A builder for [`ChildShard`](crate::model::ChildShard).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1718,8 +1618,7 @@ pub mod child_shard {
         }
         /// <p>The shard ID of the existing child shard of the current shard.</p>
         pub fn set_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.shard_id = input;
-            self
+            self.shard_id = input; self
         }
         /// Appends an item to `parent_shards`.
         ///
@@ -1728,17 +1627,13 @@ pub mod child_shard {
         /// <p>The current shard that is the parent of the existing child shard.</p>
         pub fn parent_shards(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.parent_shards.unwrap_or_default();
-            v.push(input.into());
-            self.parent_shards = Some(v);
-            self
+                            v.push(input.into());
+                            self.parent_shards = Some(v);
+                            self
         }
         /// <p>The current shard that is the parent of the existing child shard.</p>
-        pub fn set_parent_shards(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.parent_shards = input;
-            self
+        pub fn set_parent_shards(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.parent_shards = input; self
         }
         /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
         pub fn hash_key_range(mut self, input: crate::model::HashKeyRange) -> Self {
@@ -1746,22 +1641,23 @@ pub mod child_shard {
             self
         }
         /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
-        pub fn set_hash_key_range(
-            mut self,
-            input: std::option::Option<crate::model::HashKeyRange>,
-        ) -> Self {
-            self.hash_key_range = input;
-            self
+        pub fn set_hash_key_range(mut self, input: std::option::Option<crate::model::HashKeyRange>) -> Self {
+            self.hash_key_range = input; self
         }
         /// Consumes the builder and constructs a [`ChildShard`](crate::model::ChildShard).
         pub fn build(self) -> crate::model::ChildShard {
             crate::model::ChildShard {
-                shard_id: self.shard_id,
-                parent_shards: self.parent_shards,
-                hash_key_range: self.hash_key_range,
+                shard_id: self.shard_id
+                ,
+                parent_shards: self.parent_shards
+                ,
+                hash_key_range: self.hash_key_range
+                ,
             }
         }
     }
+    
+    
 }
 impl ChildShard {
     /// Creates a new builder-style object to manufacture [`ChildShard`](crate::model::ChildShard).
@@ -1773,7 +1669,7 @@ impl ChildShard {
 /// <p>The unit of data of the Kinesis data stream, which is composed of a sequence number, a partition key, and a data blob.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Record {
+pub struct Record  {
     /// <p>The unique identifier of the record within its shard.</p>
     #[doc(hidden)]
     pub sequence_number: std::option::Option<std::string::String>,
@@ -1786,45 +1682,43 @@ pub struct Record {
     /// <p>Identifies which shard in the stream the data record is assigned to.</p>
     #[doc(hidden)]
     pub partition_key: std::option::Option<std::string::String>,
-    /// <p>The encryption type used on the record. This parameter can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
-    /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
+    /// <p>The encryption type used on the record. This parameter can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> 
+    /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
 }
 impl Record {
     /// <p>The unique identifier of the record within its shard.</p>
-    pub fn sequence_number(&self) -> std::option::Option<&str> {
+    pub fn sequence_number(&self) -> std::option::Option<& str> {
         self.sequence_number.as_deref()
     }
     /// <p>The approximate time that the record was inserted into the stream.</p>
-    pub fn approximate_arrival_timestamp(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn approximate_arrival_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.approximate_arrival_timestamp.as_ref()
     }
     /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
-    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn data(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// <p>Identifies which shard in the stream the data record is assigned to.</p>
-    pub fn partition_key(&self) -> std::option::Option<&str> {
+    pub fn partition_key(&self) -> std::option::Option<& str> {
         self.partition_key.as_deref()
     }
-    /// <p>The encryption type used on the record. This parameter can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
-    /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
+    /// <p>The encryption type used on the record. This parameter can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> 
+    /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li> 
     /// </ul>
-    pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+    pub fn encryption_type(&self) -> std::option::Option<& crate::model::EncryptionType> {
         self.encryption_type.as_ref()
     }
 }
 /// See [`Record`](crate::model::Record).
 pub mod record {
-
+    
     /// A builder for [`Record`](crate::model::Record).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1841,12 +1735,8 @@ pub mod record {
             self
         }
         /// <p>The unique identifier of the record within its shard.</p>
-        pub fn set_sequence_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sequence_number = input;
-            self
+        pub fn set_sequence_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sequence_number = input; self
         }
         /// <p>The approximate time that the record was inserted into the stream.</p>
         pub fn approximate_arrival_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1854,12 +1744,8 @@ pub mod record {
             self
         }
         /// <p>The approximate time that the record was inserted into the stream.</p>
-        pub fn set_approximate_arrival_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.approximate_arrival_timestamp = input;
-            self
+        pub fn set_approximate_arrival_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.approximate_arrival_timestamp = input; self
         }
         /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
         pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -1868,8 +1754,7 @@ pub mod record {
         }
         /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
         pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.data = input;
-            self
+            self.data = input; self
         }
         /// <p>Identifies which shard in the stream the data record is assigned to.</p>
         pub fn partition_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1877,45 +1762,44 @@ pub mod record {
             self
         }
         /// <p>Identifies which shard in the stream the data record is assigned to.</p>
-        pub fn set_partition_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.partition_key = input;
-            self
+        pub fn set_partition_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.partition_key = input; self
         }
-        /// <p>The encryption type used on the record. This parameter can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
-        /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
+        /// <p>The encryption type used on the record. This parameter can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> 
+        /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li> 
         /// </ul>
         pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
             self.encryption_type = Some(input);
             self
         }
-        /// <p>The encryption type used on the record. This parameter can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
-        /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
+        /// <p>The encryption type used on the record. This parameter can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> 
+        /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li> 
         /// </ul>
-        pub fn set_encryption_type(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionType>,
-        ) -> Self {
-            self.encryption_type = input;
-            self
+        pub fn set_encryption_type(mut self, input: std::option::Option<crate::model::EncryptionType>) -> Self {
+            self.encryption_type = input; self
         }
         /// Consumes the builder and constructs a [`Record`](crate::model::Record).
         pub fn build(self) -> crate::model::Record {
             crate::model::Record {
-                sequence_number: self.sequence_number,
-                approximate_arrival_timestamp: self.approximate_arrival_timestamp,
-                data: self.data,
-                partition_key: self.partition_key,
-                encryption_type: self.encryption_type,
+                sequence_number: self.sequence_number
+                ,
+                approximate_arrival_timestamp: self.approximate_arrival_timestamp
+                ,
+                data: self.data
+                ,
+                partition_key: self.partition_key
+                ,
+                encryption_type: self.encryption_type
+                ,
             }
         }
     }
+    
+    
 }
 impl Record {
     /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
@@ -1930,9 +1814,9 @@ impl Record {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let metricsname = unimplemented!();
 /// match metricsname {
@@ -1960,22 +1844,14 @@ impl Record {
 /// Specifically, when `metricsname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MetricsName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MetricsName {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -1994,7 +1870,7 @@ pub enum MetricsName {
     #[allow(missing_docs)] // documentation missing in model
     WriteProvisionedThroughputExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MetricsName {
     fn from(s: &str) -> Self {
@@ -2007,17 +1883,17 @@ impl std::convert::From<&str> for MetricsName {
             "OutgoingRecords" => MetricsName::OutgoingRecords,
             "ReadProvisionedThroughputExceeded" => MetricsName::ReadProvisionedThroughputExceeded,
             "WriteProvisionedThroughputExceeded" => MetricsName::WriteProvisionedThroughputExceeded,
-            other => MetricsName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MetricsName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MetricsName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MetricsName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MetricsName::from(s))
+                }
+            }
 impl MetricsName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2030,20 +1906,13 @@ impl MetricsName {
             MetricsName::OutgoingRecords => "OutgoingRecords",
             MetricsName::ReadProvisionedThroughputExceeded => "ReadProvisionedThroughputExceeded",
             MetricsName::WriteProvisionedThroughputExceeded => "WriteProvisionedThroughputExceeded",
-            MetricsName::Unknown(value) => value.as_str(),
+            MetricsName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ALL",
-            "IncomingBytes",
-            "IncomingRecords",
-            "IteratorAgeMilliseconds",
-            "OutgoingBytes",
-            "OutgoingRecords",
-            "ReadProvisionedThroughputExceeded",
-            "WriteProvisionedThroughputExceeded",
+            "ALL", "IncomingBytes", "IncomingRecords", "IteratorAgeMilliseconds", "OutgoingBytes", "OutgoingRecords", "ReadProvisionedThroughputExceeded", "WriteProvisionedThroughputExceeded"
         ]
     }
 }
@@ -2056,19 +1925,19 @@ impl AsRef<str> for MetricsName {
 /// <p>Represents the output for <code>DescribeStreamSummary</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamDescriptionSummary {
+pub struct StreamDescriptionSummary  {
     /// <p>The name of the stream being described.</p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
     #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
-    /// <p>The current status of the stream being described. The stream status is one of the following states:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li>
+    /// <p>The current status of the stream being described. The stream status is one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> 
+    /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li> 
+    /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li> 
+    /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub stream_status: std::option::Option<crate::model::StreamStatus>,
@@ -2084,20 +1953,20 @@ pub struct StreamDescriptionSummary {
     /// <p>Represents the current enhanced monitoring settings of the stream.</p>
     #[doc(hidden)]
     pub enhanced_monitoring: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
-    /// <p>The encryption type used. This value is one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>KMS</code> </p> </li>
-    /// <li> <p> <code>NONE</code> </p> </li>
+    /// <p>The encryption type used. This value is one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>KMS</code> </p> </li> 
+    /// <li> <p> <code>NONE</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
-    /// <ul>
-    /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
-    /// <li> <p>Alias ARN example: <code> arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
-    /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
-    /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
-    /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
+    /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p> 
+    /// <ul> 
+    /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li> 
+    /// <li> <p>Alias ARN example: <code> arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li> 
+    /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li> 
+    /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li> 
+    /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
@@ -2110,25 +1979,25 @@ pub struct StreamDescriptionSummary {
 }
 impl StreamDescriptionSummary {
     /// <p>The name of the stream being described.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
-    /// <p>The current status of the stream being described. The stream status is one of the following states:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li>
+    /// <p>The current status of the stream being described. The stream status is one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> 
+    /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li> 
+    /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li> 
+    /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li> 
     /// </ul>
-    pub fn stream_status(&self) -> std::option::Option<&crate::model::StreamStatus> {
+    pub fn stream_status(&self) -> std::option::Option<& crate::model::StreamStatus> {
         self.stream_status.as_ref()
     }
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> ycapacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    pub fn stream_mode_details(&self) -> std::option::Option<&crate::model::StreamModeDetails> {
+    pub fn stream_mode_details(&self) -> std::option::Option<& crate::model::StreamModeDetails> {
         self.stream_mode_details.as_ref()
     }
     /// <p>The current retention period, in hours.</p>
@@ -2136,30 +2005,30 @@ impl StreamDescriptionSummary {
         self.retention_period_hours
     }
     /// <p>The approximate time that the stream was created.</p>
-    pub fn stream_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stream_creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stream_creation_timestamp.as_ref()
     }
     /// <p>Represents the current enhanced monitoring settings of the stream.</p>
-    pub fn enhanced_monitoring(&self) -> std::option::Option<&[crate::model::EnhancedMetrics]> {
+    pub fn enhanced_monitoring(&self) -> std::option::Option<& [crate::model::EnhancedMetrics]> {
         self.enhanced_monitoring.as_deref()
     }
-    /// <p>The encryption type used. This value is one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>KMS</code> </p> </li>
-    /// <li> <p> <code>NONE</code> </p> </li>
+    /// <p>The encryption type used. This value is one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>KMS</code> </p> </li> 
+    /// <li> <p> <code>NONE</code> </p> </li> 
     /// </ul>
-    pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+    pub fn encryption_type(&self) -> std::option::Option<& crate::model::EncryptionType> {
         self.encryption_type.as_ref()
     }
-    /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
-    /// <ul>
-    /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
-    /// <li> <p>Alias ARN example: <code> arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
-    /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
-    /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
-    /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
+    /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p> 
+    /// <ul> 
+    /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li> 
+    /// <li> <p>Alias ARN example: <code> arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li> 
+    /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li> 
+    /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li> 
+    /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> 
     /// </ul>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The number of open shards in the stream.</p>
@@ -2173,7 +2042,7 @@ impl StreamDescriptionSummary {
 }
 /// See [`StreamDescriptionSummary`](crate::model::StreamDescriptionSummary).
 pub mod stream_description_summary {
-
+    
     /// A builder for [`StreamDescriptionSummary`](crate::model::StreamDescriptionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2183,8 +2052,7 @@ pub mod stream_description_summary {
         pub(crate) stream_mode_details: std::option::Option<crate::model::StreamModeDetails>,
         pub(crate) retention_period_hours: std::option::Option<i32>,
         pub(crate) stream_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) enhanced_monitoring:
-            std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
+        pub(crate) enhanced_monitoring: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) open_shard_count: std::option::Option<i32>,
@@ -2198,8 +2066,7 @@ pub mod stream_description_summary {
         }
         /// <p>The name of the stream being described.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = input;
-            self
+            self.stream_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2208,33 +2075,28 @@ pub mod stream_description_summary {
         }
         /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = input;
-            self
+            self.stream_arn = input; self
         }
-        /// <p>The current status of the stream being described. The stream status is one of the following states:</p>
-        /// <ul>
-        /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li>
-        /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li>
-        /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li>
-        /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li>
+        /// <p>The current status of the stream being described. The stream status is one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> 
+        /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li> 
+        /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li> 
+        /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li> 
         /// </ul>
         pub fn stream_status(mut self, input: crate::model::StreamStatus) -> Self {
             self.stream_status = Some(input);
             self
         }
-        /// <p>The current status of the stream being described. The stream status is one of the following states:</p>
-        /// <ul>
-        /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li>
-        /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li>
-        /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li>
-        /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li>
+        /// <p>The current status of the stream being described. The stream status is one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> 
+        /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li> 
+        /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li> 
+        /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li> 
         /// </ul>
-        pub fn set_stream_status(
-            mut self,
-            input: std::option::Option<crate::model::StreamStatus>,
-        ) -> Self {
-            self.stream_status = input;
-            self
+        pub fn set_stream_status(mut self, input: std::option::Option<crate::model::StreamStatus>) -> Self {
+            self.stream_status = input; self
         }
         /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> ycapacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
         pub fn stream_mode_details(mut self, input: crate::model::StreamModeDetails) -> Self {
@@ -2242,12 +2104,8 @@ pub mod stream_description_summary {
             self
         }
         /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> ycapacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-        pub fn set_stream_mode_details(
-            mut self,
-            input: std::option::Option<crate::model::StreamModeDetails>,
-        ) -> Self {
-            self.stream_mode_details = input;
-            self
+        pub fn set_stream_mode_details(mut self, input: std::option::Option<crate::model::StreamModeDetails>) -> Self {
+            self.stream_mode_details = input; self
         }
         /// <p>The current retention period, in hours.</p>
         pub fn retention_period_hours(mut self, input: i32) -> Self {
@@ -2256,8 +2114,7 @@ pub mod stream_description_summary {
         }
         /// <p>The current retention period, in hours.</p>
         pub fn set_retention_period_hours(mut self, input: std::option::Option<i32>) -> Self {
-            self.retention_period_hours = input;
-            self
+            self.retention_period_hours = input; self
         }
         /// <p>The approximate time that the stream was created.</p>
         pub fn stream_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2265,12 +2122,8 @@ pub mod stream_description_summary {
             self
         }
         /// <p>The approximate time that the stream was created.</p>
-        pub fn set_stream_creation_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.stream_creation_timestamp = input;
-            self
+        pub fn set_stream_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.stream_creation_timestamp = input; self
         }
         /// Appends an item to `enhanced_monitoring`.
         ///
@@ -2279,62 +2132,53 @@ pub mod stream_description_summary {
         /// <p>Represents the current enhanced monitoring settings of the stream.</p>
         pub fn enhanced_monitoring(mut self, input: crate::model::EnhancedMetrics) -> Self {
             let mut v = self.enhanced_monitoring.unwrap_or_default();
-            v.push(input);
-            self.enhanced_monitoring = Some(v);
-            self
+                            v.push(input);
+                            self.enhanced_monitoring = Some(v);
+                            self
         }
         /// <p>Represents the current enhanced monitoring settings of the stream.</p>
-        pub fn set_enhanced_monitoring(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
-        ) -> Self {
-            self.enhanced_monitoring = input;
-            self
+        pub fn set_enhanced_monitoring(mut self, input: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>) -> Self {
+            self.enhanced_monitoring = input; self
         }
-        /// <p>The encryption type used. This value is one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>KMS</code> </p> </li>
-        /// <li> <p> <code>NONE</code> </p> </li>
+        /// <p>The encryption type used. This value is one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>KMS</code> </p> </li> 
+        /// <li> <p> <code>NONE</code> </p> </li> 
         /// </ul>
         pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
             self.encryption_type = Some(input);
             self
         }
-        /// <p>The encryption type used. This value is one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>KMS</code> </p> </li>
-        /// <li> <p> <code>NONE</code> </p> </li>
+        /// <p>The encryption type used. This value is one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>KMS</code> </p> </li> 
+        /// <li> <p> <code>NONE</code> </p> </li> 
         /// </ul>
-        pub fn set_encryption_type(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionType>,
-        ) -> Self {
-            self.encryption_type = input;
-            self
+        pub fn set_encryption_type(mut self, input: std::option::Option<crate::model::EncryptionType>) -> Self {
+            self.encryption_type = input; self
         }
-        /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
-        /// <ul>
-        /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
-        /// <li> <p>Alias ARN example: <code> arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
-        /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
-        /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
-        /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
+        /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p> 
+        /// <ul> 
+        /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li> 
+        /// <li> <p>Alias ARN example: <code> arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li> 
+        /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li> 
+        /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li> 
+        /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> 
         /// </ul>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
         }
-        /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
-        /// <ul>
-        /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
-        /// <li> <p>Alias ARN example: <code> arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
-        /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
-        /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
-        /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
+        /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p> 
+        /// <ul> 
+        /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li> 
+        /// <li> <p>Alias ARN example: <code> arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li> 
+        /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li> 
+        /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li> 
+        /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> 
         /// </ul>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_id = input;
-            self
+            self.key_id = input; self
         }
         /// <p>The number of open shards in the stream.</p>
         pub fn open_shard_count(mut self, input: i32) -> Self {
@@ -2343,8 +2187,7 @@ pub mod stream_description_summary {
         }
         /// <p>The number of open shards in the stream.</p>
         pub fn set_open_shard_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.open_shard_count = input;
-            self
+            self.open_shard_count = input; self
         }
         /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
         pub fn consumer_count(mut self, input: i32) -> Self {
@@ -2353,26 +2196,38 @@ pub mod stream_description_summary {
         }
         /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
         pub fn set_consumer_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.consumer_count = input;
-            self
+            self.consumer_count = input; self
         }
         /// Consumes the builder and constructs a [`StreamDescriptionSummary`](crate::model::StreamDescriptionSummary).
         pub fn build(self) -> crate::model::StreamDescriptionSummary {
             crate::model::StreamDescriptionSummary {
-                stream_name: self.stream_name,
-                stream_arn: self.stream_arn,
-                stream_status: self.stream_status,
-                stream_mode_details: self.stream_mode_details,
-                retention_period_hours: self.retention_period_hours,
-                stream_creation_timestamp: self.stream_creation_timestamp,
-                enhanced_monitoring: self.enhanced_monitoring,
-                encryption_type: self.encryption_type,
-                key_id: self.key_id,
-                open_shard_count: self.open_shard_count,
-                consumer_count: self.consumer_count,
+                stream_name: self.stream_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+                stream_status: self.stream_status
+                ,
+                stream_mode_details: self.stream_mode_details
+                ,
+                retention_period_hours: self.retention_period_hours
+                ,
+                stream_creation_timestamp: self.stream_creation_timestamp
+                ,
+                enhanced_monitoring: self.enhanced_monitoring
+                ,
+                encryption_type: self.encryption_type
+                ,
+                key_id: self.key_id
+                ,
+                open_shard_count: self.open_shard_count
+                ,
+                consumer_count: self.consumer_count
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamDescriptionSummary {
     /// Creates a new builder-style object to manufacture [`StreamDescriptionSummary`](crate::model::StreamDescriptionSummary).
@@ -2384,101 +2239,99 @@ impl StreamDescriptionSummary {
 /// <p>Represents enhanced metrics types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnhancedMetrics {
-    /// <p>List of shard-level metrics.</p>
-    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enhances every metric.</p>
-    /// <ul>
-    /// <li> <p> <code>IncomingBytes</code> </p> </li>
-    /// <li> <p> <code>IncomingRecords</code> </p> </li>
-    /// <li> <p> <code>OutgoingBytes</code> </p> </li>
-    /// <li> <p> <code>OutgoingRecords</code> </p> </li>
-    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li>
-    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li>
-    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li>
-    /// <li> <p> <code>ALL</code> </p> </li>
-    /// </ul>
+pub struct EnhancedMetrics  {
+    /// <p>List of shard-level metrics.</p> 
+    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enhances every metric.</p> 
+    /// <ul> 
+    /// <li> <p> <code>IncomingBytes</code> </p> </li> 
+    /// <li> <p> <code>IncomingRecords</code> </p> </li> 
+    /// <li> <p> <code>OutgoingBytes</code> </p> </li> 
+    /// <li> <p> <code>OutgoingRecords</code> </p> </li> 
+    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> 
+    /// <li> <p> <code>ALL</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     #[doc(hidden)]
     pub shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
 }
 impl EnhancedMetrics {
-    /// <p>List of shard-level metrics.</p>
-    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enhances every metric.</p>
-    /// <ul>
-    /// <li> <p> <code>IncomingBytes</code> </p> </li>
-    /// <li> <p> <code>IncomingRecords</code> </p> </li>
-    /// <li> <p> <code>OutgoingBytes</code> </p> </li>
-    /// <li> <p> <code>OutgoingRecords</code> </p> </li>
-    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li>
-    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li>
-    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li>
-    /// <li> <p> <code>ALL</code> </p> </li>
-    /// </ul>
+    /// <p>List of shard-level metrics.</p> 
+    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enhances every metric.</p> 
+    /// <ul> 
+    /// <li> <p> <code>IncomingBytes</code> </p> </li> 
+    /// <li> <p> <code>IncomingRecords</code> </p> </li> 
+    /// <li> <p> <code>OutgoingBytes</code> </p> </li> 
+    /// <li> <p> <code>OutgoingRecords</code> </p> </li> 
+    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> 
+    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> 
+    /// <li> <p> <code>ALL</code> </p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    pub fn shard_level_metrics(&self) -> std::option::Option<&[crate::model::MetricsName]> {
+    pub fn shard_level_metrics(&self) -> std::option::Option<& [crate::model::MetricsName]> {
         self.shard_level_metrics.as_deref()
     }
 }
 /// See [`EnhancedMetrics`](crate::model::EnhancedMetrics).
 pub mod enhanced_metrics {
-
+    
     /// A builder for [`EnhancedMetrics`](crate::model::EnhancedMetrics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) shard_level_metrics:
-            std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+        pub(crate) shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
     }
     impl Builder {
         /// Appends an item to `shard_level_metrics`.
         ///
         /// To override the contents of this collection use [`set_shard_level_metrics`](Self::set_shard_level_metrics).
         ///
-        /// <p>List of shard-level metrics.</p>
-        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enhances every metric.</p>
-        /// <ul>
-        /// <li> <p> <code>IncomingBytes</code> </p> </li>
-        /// <li> <p> <code>IncomingRecords</code> </p> </li>
-        /// <li> <p> <code>OutgoingBytes</code> </p> </li>
-        /// <li> <p> <code>OutgoingRecords</code> </p> </li>
-        /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li>
-        /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li>
-        /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li>
-        /// <li> <p> <code>ALL</code> </p> </li>
-        /// </ul>
+        /// <p>List of shard-level metrics.</p> 
+        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enhances every metric.</p> 
+        /// <ul> 
+        /// <li> <p> <code>IncomingBytes</code> </p> </li> 
+        /// <li> <p> <code>IncomingRecords</code> </p> </li> 
+        /// <li> <p> <code>OutgoingBytes</code> </p> </li> 
+        /// <li> <p> <code>OutgoingRecords</code> </p> </li> 
+        /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> 
+        /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> 
+        /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> 
+        /// <li> <p> <code>ALL</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
         pub fn shard_level_metrics(mut self, input: crate::model::MetricsName) -> Self {
             let mut v = self.shard_level_metrics.unwrap_or_default();
-            v.push(input);
-            self.shard_level_metrics = Some(v);
-            self
+                            v.push(input);
+                            self.shard_level_metrics = Some(v);
+                            self
         }
-        /// <p>List of shard-level metrics.</p>
-        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enhances every metric.</p>
-        /// <ul>
-        /// <li> <p> <code>IncomingBytes</code> </p> </li>
-        /// <li> <p> <code>IncomingRecords</code> </p> </li>
-        /// <li> <p> <code>OutgoingBytes</code> </p> </li>
-        /// <li> <p> <code>OutgoingRecords</code> </p> </li>
-        /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li>
-        /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li>
-        /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li>
-        /// <li> <p> <code>ALL</code> </p> </li>
-        /// </ul>
+        /// <p>List of shard-level metrics.</p> 
+        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enhances every metric.</p> 
+        /// <ul> 
+        /// <li> <p> <code>IncomingBytes</code> </p> </li> 
+        /// <li> <p> <code>IncomingRecords</code> </p> </li> 
+        /// <li> <p> <code>OutgoingBytes</code> </p> </li> 
+        /// <li> <p> <code>OutgoingRecords</code> </p> </li> 
+        /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> 
+        /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> 
+        /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> 
+        /// <li> <p> <code>ALL</code> </p> </li> 
+        /// </ul> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-        pub fn set_shard_level_metrics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
-        ) -> Self {
-            self.shard_level_metrics = input;
-            self
+        pub fn set_shard_level_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricsName>>) -> Self {
+            self.shard_level_metrics = input; self
         }
         /// Consumes the builder and constructs a [`EnhancedMetrics`](crate::model::EnhancedMetrics).
         pub fn build(self) -> crate::model::EnhancedMetrics {
             crate::model::EnhancedMetrics {
-                shard_level_metrics: self.shard_level_metrics,
+                shard_level_metrics: self.shard_level_metrics
+                ,
             }
         }
     }
+    
+    
 }
 impl EnhancedMetrics {
     /// Creates a new builder-style object to manufacture [`EnhancedMetrics`](crate::model::EnhancedMetrics).
@@ -2490,11 +2343,11 @@ impl EnhancedMetrics {
 /// <p>An object that represents the details of a registered consumer. This type of object is returned by <code>DescribeStreamConsumer</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConsumerDescription {
+pub struct ConsumerDescription  {
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
     #[doc(hidden)]
     pub consumer_name: std::option::Option<std::string::String>,
-    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
+    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p> 
     /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
     #[doc(hidden)]
     pub consumer_arn: std::option::Option<std::string::String>,
@@ -2510,30 +2363,30 @@ pub struct ConsumerDescription {
 }
 impl ConsumerDescription {
     /// <p>The name of the consumer is something you choose when you register the consumer.</p>
-    pub fn consumer_name(&self) -> std::option::Option<&str> {
+    pub fn consumer_name(&self) -> std::option::Option<& str> {
         self.consumer_name.as_deref()
     }
-    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
+    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p> 
     /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
-    pub fn consumer_arn(&self) -> std::option::Option<&str> {
+    pub fn consumer_arn(&self) -> std::option::Option<& str> {
         self.consumer_arn.as_deref()
     }
     /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
-    pub fn consumer_status(&self) -> std::option::Option<&crate::model::ConsumerStatus> {
+    pub fn consumer_status(&self) -> std::option::Option<& crate::model::ConsumerStatus> {
         self.consumer_status.as_ref()
     }
     /// <p></p>
-    pub fn consumer_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn consumer_creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.consumer_creation_timestamp.as_ref()
     }
     /// <p>The ARN of the stream with which you registered the consumer.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
 /// See [`ConsumerDescription`](crate::model::ConsumerDescription).
 pub mod consumer_description {
-
+    
     /// A builder for [`ConsumerDescription`](crate::model::ConsumerDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2550,24 +2403,19 @@ pub mod consumer_description {
             self
         }
         /// <p>The name of the consumer is something you choose when you register the consumer.</p>
-        pub fn set_consumer_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.consumer_name = input;
-            self
+        pub fn set_consumer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.consumer_name = input; self
         }
-        /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
+        /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p> 
         /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
         pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.consumer_arn = Some(input.into());
             self
         }
-        /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
+        /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p> 
         /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
         pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.consumer_arn = input;
-            self
+            self.consumer_arn = input; self
         }
         /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
         pub fn consumer_status(mut self, input: crate::model::ConsumerStatus) -> Self {
@@ -2575,12 +2423,8 @@ pub mod consumer_description {
             self
         }
         /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
-        pub fn set_consumer_status(
-            mut self,
-            input: std::option::Option<crate::model::ConsumerStatus>,
-        ) -> Self {
-            self.consumer_status = input;
-            self
+        pub fn set_consumer_status(mut self, input: std::option::Option<crate::model::ConsumerStatus>) -> Self {
+            self.consumer_status = input; self
         }
         /// <p></p>
         pub fn consumer_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2588,12 +2432,8 @@ pub mod consumer_description {
             self
         }
         /// <p></p>
-        pub fn set_consumer_creation_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.consumer_creation_timestamp = input;
-            self
+        pub fn set_consumer_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.consumer_creation_timestamp = input; self
         }
         /// <p>The ARN of the stream with which you registered the consumer.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2602,20 +2442,26 @@ pub mod consumer_description {
         }
         /// <p>The ARN of the stream with which you registered the consumer.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = input;
-            self
+            self.stream_arn = input; self
         }
         /// Consumes the builder and constructs a [`ConsumerDescription`](crate::model::ConsumerDescription).
         pub fn build(self) -> crate::model::ConsumerDescription {
             crate::model::ConsumerDescription {
-                consumer_name: self.consumer_name,
-                consumer_arn: self.consumer_arn,
-                consumer_status: self.consumer_status,
-                consumer_creation_timestamp: self.consumer_creation_timestamp,
-                stream_arn: self.stream_arn,
+                consumer_name: self.consumer_name
+                ,
+                consumer_arn: self.consumer_arn
+                ,
+                consumer_status: self.consumer_status
+                ,
+                consumer_creation_timestamp: self.consumer_creation_timestamp
+                ,
+                stream_arn: self.stream_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ConsumerDescription {
     /// Creates a new builder-style object to manufacture [`ConsumerDescription`](crate::model::ConsumerDescription).
@@ -2627,19 +2473,19 @@ impl ConsumerDescription {
 /// <p>Represents the output for <code>DescribeStream</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamDescription {
+pub struct StreamDescription  {
     /// <p>The name of the stream being described.</p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
     #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
-    /// <p>The current status of the stream being described. The stream status is one of the following states:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li>
+    /// <p>The current status of the stream being described. The stream status is one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> 
+    /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li> 
+    /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li> 
+    /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub stream_status: std::option::Option<crate::model::StreamStatus>,
@@ -2661,49 +2507,49 @@ pub struct StreamDescription {
     /// <p>Represents the current enhanced monitoring settings of the stream.</p>
     #[doc(hidden)]
     pub enhanced_monitoring: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
-    /// <p>The server-side encryption type used on the stream. This parameter can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
-    /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
+    /// <p>The server-side encryption type used on the stream. This parameter can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> 
+    /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
-    /// <ul>
-    /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
-    /// <li> <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
-    /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
-    /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
-    /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
+    /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p> 
+    /// <ul> 
+    /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li> 
+    /// <li> <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li> 
+    /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li> 
+    /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li> 
+    /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl StreamDescription {
     /// <p>The name of the stream being described.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
-    /// <p>The current status of the stream being described. The stream status is one of the following states:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li>
+    /// <p>The current status of the stream being described. The stream status is one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> 
+    /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li> 
+    /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li> 
+    /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li> 
     /// </ul>
-    pub fn stream_status(&self) -> std::option::Option<&crate::model::StreamStatus> {
+    pub fn stream_status(&self) -> std::option::Option<& crate::model::StreamStatus> {
         self.stream_status.as_ref()
     }
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    pub fn stream_mode_details(&self) -> std::option::Option<&crate::model::StreamModeDetails> {
+    pub fn stream_mode_details(&self) -> std::option::Option<& crate::model::StreamModeDetails> {
         self.stream_mode_details.as_ref()
     }
     /// <p>The shards that comprise the stream.</p>
-    pub fn shards(&self) -> std::option::Option<&[crate::model::Shard]> {
+    pub fn shards(&self) -> std::option::Option<& [crate::model::Shard]> {
         self.shards.as_deref()
     }
     /// <p>If set to <code>true</code>, more shards in the stream are available to describe.</p>
@@ -2715,36 +2561,36 @@ impl StreamDescription {
         self.retention_period_hours
     }
     /// <p>The approximate time that the stream was created.</p>
-    pub fn stream_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stream_creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stream_creation_timestamp.as_ref()
     }
     /// <p>Represents the current enhanced monitoring settings of the stream.</p>
-    pub fn enhanced_monitoring(&self) -> std::option::Option<&[crate::model::EnhancedMetrics]> {
+    pub fn enhanced_monitoring(&self) -> std::option::Option<& [crate::model::EnhancedMetrics]> {
         self.enhanced_monitoring.as_deref()
     }
-    /// <p>The server-side encryption type used on the stream. This parameter can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
-    /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
+    /// <p>The server-side encryption type used on the stream. This parameter can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> 
+    /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li> 
     /// </ul>
-    pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+    pub fn encryption_type(&self) -> std::option::Option<& crate::model::EncryptionType> {
         self.encryption_type.as_ref()
     }
-    /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
-    /// <ul>
-    /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
-    /// <li> <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
-    /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
-    /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
-    /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
+    /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p> 
+    /// <ul> 
+    /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li> 
+    /// <li> <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li> 
+    /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li> 
+    /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li> 
+    /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> 
     /// </ul>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> std::option::Option<& str> {
         self.key_id.as_deref()
     }
 }
 /// See [`StreamDescription`](crate::model::StreamDescription).
 pub mod stream_description {
-
+    
     /// A builder for [`StreamDescription`](crate::model::StreamDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2756,8 +2602,7 @@ pub mod stream_description {
         pub(crate) has_more_shards: std::option::Option<bool>,
         pub(crate) retention_period_hours: std::option::Option<i32>,
         pub(crate) stream_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) enhanced_monitoring:
-            std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
+        pub(crate) enhanced_monitoring: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
@@ -2769,8 +2614,7 @@ pub mod stream_description {
         }
         /// <p>The name of the stream being described.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = input;
-            self
+            self.stream_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2779,33 +2623,28 @@ pub mod stream_description {
         }
         /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = input;
-            self
+            self.stream_arn = input; self
         }
-        /// <p>The current status of the stream being described. The stream status is one of the following states:</p>
-        /// <ul>
-        /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li>
-        /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li>
-        /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li>
-        /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li>
+        /// <p>The current status of the stream being described. The stream status is one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> 
+        /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li> 
+        /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li> 
+        /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li> 
         /// </ul>
         pub fn stream_status(mut self, input: crate::model::StreamStatus) -> Self {
             self.stream_status = Some(input);
             self
         }
-        /// <p>The current status of the stream being described. The stream status is one of the following states:</p>
-        /// <ul>
-        /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li>
-        /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li>
-        /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li>
-        /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li>
+        /// <p>The current status of the stream being described. The stream status is one of the following states:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> 
+        /// <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> </li> 
+        /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li> 
+        /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li> 
         /// </ul>
-        pub fn set_stream_status(
-            mut self,
-            input: std::option::Option<crate::model::StreamStatus>,
-        ) -> Self {
-            self.stream_status = input;
-            self
+        pub fn set_stream_status(mut self, input: std::option::Option<crate::model::StreamStatus>) -> Self {
+            self.stream_status = input; self
         }
         /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
         pub fn stream_mode_details(mut self, input: crate::model::StreamModeDetails) -> Self {
@@ -2813,12 +2652,8 @@ pub mod stream_description {
             self
         }
         /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-        pub fn set_stream_mode_details(
-            mut self,
-            input: std::option::Option<crate::model::StreamModeDetails>,
-        ) -> Self {
-            self.stream_mode_details = input;
-            self
+        pub fn set_stream_mode_details(mut self, input: std::option::Option<crate::model::StreamModeDetails>) -> Self {
+            self.stream_mode_details = input; self
         }
         /// Appends an item to `shards`.
         ///
@@ -2827,17 +2662,13 @@ pub mod stream_description {
         /// <p>The shards that comprise the stream.</p>
         pub fn shards(mut self, input: crate::model::Shard) -> Self {
             let mut v = self.shards.unwrap_or_default();
-            v.push(input);
-            self.shards = Some(v);
-            self
+                            v.push(input);
+                            self.shards = Some(v);
+                            self
         }
         /// <p>The shards that comprise the stream.</p>
-        pub fn set_shards(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Shard>>,
-        ) -> Self {
-            self.shards = input;
-            self
+        pub fn set_shards(mut self, input: std::option::Option<std::vec::Vec<crate::model::Shard>>) -> Self {
+            self.shards = input; self
         }
         /// <p>If set to <code>true</code>, more shards in the stream are available to describe.</p>
         pub fn has_more_shards(mut self, input: bool) -> Self {
@@ -2846,8 +2677,7 @@ pub mod stream_description {
         }
         /// <p>If set to <code>true</code>, more shards in the stream are available to describe.</p>
         pub fn set_has_more_shards(mut self, input: std::option::Option<bool>) -> Self {
-            self.has_more_shards = input;
-            self
+            self.has_more_shards = input; self
         }
         /// <p>The current retention period, in hours. Minimum value of 24. Maximum value of 168.</p>
         pub fn retention_period_hours(mut self, input: i32) -> Self {
@@ -2856,8 +2686,7 @@ pub mod stream_description {
         }
         /// <p>The current retention period, in hours. Minimum value of 24. Maximum value of 168.</p>
         pub fn set_retention_period_hours(mut self, input: std::option::Option<i32>) -> Self {
-            self.retention_period_hours = input;
-            self
+            self.retention_period_hours = input; self
         }
         /// <p>The approximate time that the stream was created.</p>
         pub fn stream_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2865,12 +2694,8 @@ pub mod stream_description {
             self
         }
         /// <p>The approximate time that the stream was created.</p>
-        pub fn set_stream_creation_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.stream_creation_timestamp = input;
-            self
+        pub fn set_stream_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.stream_creation_timestamp = input; self
         }
         /// Appends an item to `enhanced_monitoring`.
         ///
@@ -2879,80 +2704,84 @@ pub mod stream_description {
         /// <p>Represents the current enhanced monitoring settings of the stream.</p>
         pub fn enhanced_monitoring(mut self, input: crate::model::EnhancedMetrics) -> Self {
             let mut v = self.enhanced_monitoring.unwrap_or_default();
-            v.push(input);
-            self.enhanced_monitoring = Some(v);
-            self
+                            v.push(input);
+                            self.enhanced_monitoring = Some(v);
+                            self
         }
         /// <p>Represents the current enhanced monitoring settings of the stream.</p>
-        pub fn set_enhanced_monitoring(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
-        ) -> Self {
-            self.enhanced_monitoring = input;
-            self
+        pub fn set_enhanced_monitoring(mut self, input: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>) -> Self {
+            self.enhanced_monitoring = input; self
         }
-        /// <p>The server-side encryption type used on the stream. This parameter can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
-        /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
+        /// <p>The server-side encryption type used on the stream. This parameter can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> 
+        /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li> 
         /// </ul>
         pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
             self.encryption_type = Some(input);
             self
         }
-        /// <p>The server-side encryption type used on the stream. This parameter can be one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
-        /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
+        /// <p>The server-side encryption type used on the stream. This parameter can be one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> 
+        /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li> 
         /// </ul>
-        pub fn set_encryption_type(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionType>,
-        ) -> Self {
-            self.encryption_type = input;
-            self
+        pub fn set_encryption_type(mut self, input: std::option::Option<crate::model::EncryptionType>) -> Self {
+            self.encryption_type = input; self
         }
-        /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
-        /// <ul>
-        /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
-        /// <li> <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
-        /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
-        /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
-        /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
+        /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p> 
+        /// <ul> 
+        /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li> 
+        /// <li> <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li> 
+        /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li> 
+        /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li> 
+        /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> 
         /// </ul>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
         }
-        /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
-        /// <ul>
-        /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
-        /// <li> <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
-        /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
-        /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
-        /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
+        /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p> 
+        /// <ul> 
+        /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li> 
+        /// <li> <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li> 
+        /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li> 
+        /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li> 
+        /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> 
         /// </ul>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_id = input;
-            self
+            self.key_id = input; self
         }
         /// Consumes the builder and constructs a [`StreamDescription`](crate::model::StreamDescription).
         pub fn build(self) -> crate::model::StreamDescription {
             crate::model::StreamDescription {
-                stream_name: self.stream_name,
-                stream_arn: self.stream_arn,
-                stream_status: self.stream_status,
-                stream_mode_details: self.stream_mode_details,
-                shards: self.shards,
-                has_more_shards: self.has_more_shards,
-                retention_period_hours: self.retention_period_hours,
-                stream_creation_timestamp: self.stream_creation_timestamp,
-                enhanced_monitoring: self.enhanced_monitoring,
-                encryption_type: self.encryption_type,
-                key_id: self.key_id,
+                stream_name: self.stream_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+                stream_status: self.stream_status
+                ,
+                stream_mode_details: self.stream_mode_details
+                ,
+                shards: self.shards
+                ,
+                has_more_shards: self.has_more_shards
+                ,
+                retention_period_hours: self.retention_period_hours
+                ,
+                stream_creation_timestamp: self.stream_creation_timestamp
+                ,
+                enhanced_monitoring: self.enhanced_monitoring
+                ,
+                encryption_type: self.encryption_type
+                ,
+                key_id: self.key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamDescription {
     /// Creates a new builder-style object to manufacture [`StreamDescription`](crate::model::StreamDescription).
@@ -2960,3 +2789,4 @@ impl StreamDescription {
         crate::model::stream_description::Builder::default()
     }
 }
+

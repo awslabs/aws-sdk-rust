@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct StartLendingAnalysisError {
     /// Kind of error that occurred.
-    pub kind: StartLendingAnalysisErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StartLendingAnalysisErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartLendingAnalysisError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StartLendingAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -44,36 +44,58 @@ pub enum StartLendingAnalysisErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartLendingAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartLendingAnalysisErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            StartLendingAnalysisErrorKind::BadDocumentException(_inner) => _inner.fmt(f),
-            StartLendingAnalysisErrorKind::DocumentTooLargeException(_inner) => _inner.fmt(f),
-            StartLendingAnalysisErrorKind::IdempotentParameterMismatchException(_inner) => {
+            StartLendingAnalysisErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartLendingAnalysisErrorKind::BadDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartLendingAnalysisErrorKind::DocumentTooLargeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartLendingAnalysisErrorKind::IdempotentParameterMismatchException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartLendingAnalysisErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartLendingAnalysisErrorKind::InvalidKmsKeyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartLendingAnalysisErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartLendingAnalysisErrorKind::InvalidS3ObjectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartLendingAnalysisErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartLendingAnalysisErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartLendingAnalysisErrorKind::UnsupportedDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartLendingAnalysisErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            StartLendingAnalysisErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            StartLendingAnalysisErrorKind::InvalidKmsKeyException(_inner) => _inner.fmt(f),
-            StartLendingAnalysisErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            StartLendingAnalysisErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
-            StartLendingAnalysisErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            StartLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            StartLendingAnalysisErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            StartLendingAnalysisErrorKind::UnsupportedDocumentException(_inner) => _inner.fmt(f),
-            StartLendingAnalysisErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -87,155 +109,137 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartLendingAnalysisError {
 }
 impl StartLendingAnalysisError {
     /// Creates a new `StartLendingAnalysisError`.
-    pub fn new(kind: StartLendingAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StartLendingAnalysisError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StartLendingAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StartLendingAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StartLendingAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StartLendingAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StartLendingAnalysisError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StartLendingAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StartLendingAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StartLendingAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartLendingAnalysisErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, StartLendingAnalysisErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::BadDocumentException`.
     pub fn is_bad_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartLendingAnalysisErrorKind::BadDocumentException(_)
-        )
+        matches!(&self.kind, StartLendingAnalysisErrorKind::BadDocumentException(_))
     }
     /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::DocumentTooLargeException`.
     pub fn is_document_too_large_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartLendingAnalysisErrorKind::DocumentTooLargeException(_)
-        )
+        matches!(&self.kind, StartLendingAnalysisErrorKind::DocumentTooLargeException(_))
     }
     /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartLendingAnalysisErrorKind::IdempotentParameterMismatchException(_)
-        )
+        matches!(&self.kind, StartLendingAnalysisErrorKind::IdempotentParameterMismatchException(_))
     }
     /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartLendingAnalysisErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, StartLendingAnalysisErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::InvalidKmsKeyException`.
     pub fn is_invalid_kms_key_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartLendingAnalysisErrorKind::InvalidKmsKeyException(_)
-        )
+        matches!(&self.kind, StartLendingAnalysisErrorKind::InvalidKmsKeyException(_))
     }
     /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartLendingAnalysisErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, StartLendingAnalysisErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartLendingAnalysisErrorKind::InvalidS3ObjectException(_)
-        )
+        matches!(&self.kind, StartLendingAnalysisErrorKind::InvalidS3ObjectException(_))
     }
     /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartLendingAnalysisErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, StartLendingAnalysisErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, StartLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartLendingAnalysisErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, StartLendingAnalysisErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `StartLendingAnalysisErrorKind::UnsupportedDocumentException`.
     pub fn is_unsupported_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartLendingAnalysisErrorKind::UnsupportedDocumentException(_)
-        )
+        matches!(&self.kind, StartLendingAnalysisErrorKind::UnsupportedDocumentException(_))
     }
 }
 impl std::error::Error for StartLendingAnalysisError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartLendingAnalysisErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            StartLendingAnalysisErrorKind::BadDocumentException(_inner) => Some(_inner),
-            StartLendingAnalysisErrorKind::DocumentTooLargeException(_inner) => Some(_inner),
-            StartLendingAnalysisErrorKind::IdempotentParameterMismatchException(_inner) => {
+            StartLendingAnalysisErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            StartLendingAnalysisErrorKind::BadDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            StartLendingAnalysisErrorKind::DocumentTooLargeException(_inner) =>
+            Some(_inner)
+            ,
+            StartLendingAnalysisErrorKind::IdempotentParameterMismatchException(_inner) =>
+            Some(_inner)
+            ,
+            StartLendingAnalysisErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            StartLendingAnalysisErrorKind::InvalidKmsKeyException(_inner) =>
+            Some(_inner)
+            ,
+            StartLendingAnalysisErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            StartLendingAnalysisErrorKind::InvalidS3ObjectException(_inner) =>
+            Some(_inner)
+            ,
+            StartLendingAnalysisErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            StartLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            StartLendingAnalysisErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            StartLendingAnalysisErrorKind::UnsupportedDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            StartLendingAnalysisErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            StartLendingAnalysisErrorKind::InternalServerError(_inner) => Some(_inner),
-            StartLendingAnalysisErrorKind::InvalidKmsKeyException(_inner) => Some(_inner),
-            StartLendingAnalysisErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            StartLendingAnalysisErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
-            StartLendingAnalysisErrorKind::LimitExceededException(_inner) => Some(_inner),
-            StartLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
-                Some(_inner)
-            }
-            StartLendingAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartLendingAnalysisErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
-            StartLendingAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -243,7 +247,7 @@ impl std::error::Error for StartLendingAnalysisError {
 /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedDocumentException {
+pub struct UnsupportedDocumentException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -253,21 +257,19 @@ pub struct UnsupportedDocumentException {
 }
 impl UnsupportedDocumentException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl UnsupportedDocumentException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnsupportedDocumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedDocumentException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -277,7 +279,7 @@ impl std::fmt::Display for UnsupportedDocumentException {
 impl std::error::Error for UnsupportedDocumentException {}
 /// See [`UnsupportedDocumentException`](crate::error::UnsupportedDocumentException).
 pub mod unsupported_document_exception {
-
+    
     /// A builder for [`UnsupportedDocumentException`](crate::error::UnsupportedDocumentException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -292,8 +294,7 @@ pub mod unsupported_document_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -302,17 +303,20 @@ pub mod unsupported_document_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`UnsupportedDocumentException`](crate::error::UnsupportedDocumentException).
         pub fn build(self) -> crate::error::UnsupportedDocumentException {
             crate::error::UnsupportedDocumentException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl UnsupportedDocumentException {
     /// Creates a new builder-style object to manufacture [`UnsupportedDocumentException`](crate::error::UnsupportedDocumentException).
@@ -324,7 +328,7 @@ impl UnsupportedDocumentException {
 /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -334,21 +338,19 @@ pub struct ThrottlingException {
 }
 impl ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -358,7 +360,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException).
 pub mod throttling_exception {
-
+    
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -373,8 +375,7 @@ pub mod throttling_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -383,17 +384,20 @@ pub mod throttling_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
         pub fn build(self) -> crate::error::ThrottlingException {
             crate::error::ThrottlingException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
@@ -405,7 +409,7 @@ impl ThrottlingException {
 /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionedThroughputExceededException {
+pub struct ProvisionedThroughputExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -415,21 +419,19 @@ pub struct ProvisionedThroughputExceededException {
 }
 impl ProvisionedThroughputExceededException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl ProvisionedThroughputExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ProvisionedThroughputExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ProvisionedThroughputExceededException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -439,7 +441,7 @@ impl std::fmt::Display for ProvisionedThroughputExceededException {
 impl std::error::Error for ProvisionedThroughputExceededException {}
 /// See [`ProvisionedThroughputExceededException`](crate::error::ProvisionedThroughputExceededException).
 pub mod provisioned_throughput_exceeded_exception {
-
+    
     /// A builder for [`ProvisionedThroughputExceededException`](crate::error::ProvisionedThroughputExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -454,8 +456,7 @@ pub mod provisioned_throughput_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -464,17 +465,20 @@ pub mod provisioned_throughput_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`ProvisionedThroughputExceededException`](crate::error::ProvisionedThroughputExceededException).
         pub fn build(self) -> crate::error::ProvisionedThroughputExceededException {
             crate::error::ProvisionedThroughputExceededException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl ProvisionedThroughputExceededException {
     /// Creates a new builder-style object to manufacture [`ProvisionedThroughputExceededException`](crate::error::ProvisionedThroughputExceededException).
@@ -486,7 +490,7 @@ impl ProvisionedThroughputExceededException {
 /// <p>An Amazon Textract service limit was exceeded. For example, if you start too many asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>, for example) raise a LimitExceededException exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Textract service limit. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LimitExceededException {
+pub struct LimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -496,21 +500,19 @@ pub struct LimitExceededException {
 }
 impl LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -520,7 +522,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException).
 pub mod limit_exceeded_exception {
-
+    
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -535,8 +537,7 @@ pub mod limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -545,17 +546,20 @@ pub mod limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
         pub fn build(self) -> crate::error::LimitExceededException {
             crate::error::LimitExceededException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl LimitExceededException {
     /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
@@ -567,7 +571,7 @@ impl LimitExceededException {
 /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidS3ObjectException {
+pub struct InvalidS3ObjectException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -577,21 +581,19 @@ pub struct InvalidS3ObjectException {
 }
 impl InvalidS3ObjectException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl InvalidS3ObjectException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidS3ObjectException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidS3ObjectException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -601,7 +603,7 @@ impl std::fmt::Display for InvalidS3ObjectException {
 impl std::error::Error for InvalidS3ObjectException {}
 /// See [`InvalidS3ObjectException`](crate::error::InvalidS3ObjectException).
 pub mod invalid_s3_object_exception {
-
+    
     /// A builder for [`InvalidS3ObjectException`](crate::error::InvalidS3ObjectException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -616,8 +618,7 @@ pub mod invalid_s3_object_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -626,17 +627,20 @@ pub mod invalid_s3_object_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`InvalidS3ObjectException`](crate::error::InvalidS3ObjectException).
         pub fn build(self) -> crate::error::InvalidS3ObjectException {
             crate::error::InvalidS3ObjectException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidS3ObjectException {
     /// Creates a new builder-style object to manufacture [`InvalidS3ObjectException`](crate::error::InvalidS3ObjectException).
@@ -648,7 +652,7 @@ impl InvalidS3ObjectException {
 /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidParameterException {
+pub struct InvalidParameterException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -658,21 +662,19 @@ pub struct InvalidParameterException {
 }
 impl InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -682,7 +684,7 @@ impl std::fmt::Display for InvalidParameterException {
 impl std::error::Error for InvalidParameterException {}
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException).
 pub mod invalid_parameter_exception {
-
+    
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -697,8 +699,7 @@ pub mod invalid_parameter_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -707,17 +708,20 @@ pub mod invalid_parameter_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`InvalidParameterException`](crate::error::InvalidParameterException).
         pub fn build(self) -> crate::error::InvalidParameterException {
             crate::error::InvalidParameterException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidParameterException {
     /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException).
@@ -729,7 +733,7 @@ impl InvalidParameterException {
 /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidKmsKeyException {
+pub struct InvalidKmsKeyException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -739,21 +743,19 @@ pub struct InvalidKmsKeyException {
 }
 impl InvalidKmsKeyException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl InvalidKmsKeyException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidKmsKeyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidKmsKeyException [InvalidKMSKeyException]")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -763,7 +765,7 @@ impl std::fmt::Display for InvalidKmsKeyException {
 impl std::error::Error for InvalidKmsKeyException {}
 /// See [`InvalidKmsKeyException`](crate::error::InvalidKmsKeyException).
 pub mod invalid_kms_key_exception {
-
+    
     /// A builder for [`InvalidKmsKeyException`](crate::error::InvalidKmsKeyException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -778,8 +780,7 @@ pub mod invalid_kms_key_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -788,17 +789,20 @@ pub mod invalid_kms_key_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`InvalidKmsKeyException`](crate::error::InvalidKmsKeyException).
         pub fn build(self) -> crate::error::InvalidKmsKeyException {
             crate::error::InvalidKmsKeyException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidKmsKeyException {
     /// Creates a new builder-style object to manufacture [`InvalidKmsKeyException`](crate::error::InvalidKmsKeyException).
@@ -810,7 +814,7 @@ impl InvalidKmsKeyException {
 /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerError {
+pub struct InternalServerError  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -820,21 +824,19 @@ pub struct InternalServerError {
 }
 impl InternalServerError {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl InternalServerError {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerError")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -844,7 +846,7 @@ impl std::fmt::Display for InternalServerError {
 impl std::error::Error for InternalServerError {}
 /// See [`InternalServerError`](crate::error::InternalServerError).
 pub mod internal_server_error {
-
+    
     /// A builder for [`InternalServerError`](crate::error::InternalServerError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -859,8 +861,7 @@ pub mod internal_server_error {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -869,17 +870,20 @@ pub mod internal_server_error {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError).
         pub fn build(self) -> crate::error::InternalServerError {
             crate::error::InternalServerError {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServerError {
     /// Creates a new builder-style object to manufacture [`InternalServerError`](crate::error::InternalServerError).
@@ -891,7 +895,7 @@ impl InternalServerError {
 /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdempotentParameterMismatchException {
+pub struct IdempotentParameterMismatchException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -901,21 +905,19 @@ pub struct IdempotentParameterMismatchException {
 }
 impl IdempotentParameterMismatchException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl IdempotentParameterMismatchException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for IdempotentParameterMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IdempotentParameterMismatchException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -925,7 +927,7 @@ impl std::fmt::Display for IdempotentParameterMismatchException {
 impl std::error::Error for IdempotentParameterMismatchException {}
 /// See [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
 pub mod idempotent_parameter_mismatch_exception {
-
+    
     /// A builder for [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -940,8 +942,7 @@ pub mod idempotent_parameter_mismatch_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -950,17 +951,20 @@ pub mod idempotent_parameter_mismatch_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
         pub fn build(self) -> crate::error::IdempotentParameterMismatchException {
             crate::error::IdempotentParameterMismatchException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl IdempotentParameterMismatchException {
     /// Creates a new builder-style object to manufacture [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
@@ -972,7 +976,7 @@ impl IdempotentParameterMismatchException {
 /// <p>The document can't be processed because it's too large. The maximum document size for synchronous operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentTooLargeException {
+pub struct DocumentTooLargeException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -982,21 +986,19 @@ pub struct DocumentTooLargeException {
 }
 impl DocumentTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl DocumentTooLargeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DocumentTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DocumentTooLargeException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -1006,7 +1008,7 @@ impl std::fmt::Display for DocumentTooLargeException {
 impl std::error::Error for DocumentTooLargeException {}
 /// See [`DocumentTooLargeException`](crate::error::DocumentTooLargeException).
 pub mod document_too_large_exception {
-
+    
     /// A builder for [`DocumentTooLargeException`](crate::error::DocumentTooLargeException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1021,8 +1023,7 @@ pub mod document_too_large_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1031,17 +1032,20 @@ pub mod document_too_large_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`DocumentTooLargeException`](crate::error::DocumentTooLargeException).
         pub fn build(self) -> crate::error::DocumentTooLargeException {
             crate::error::DocumentTooLargeException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl DocumentTooLargeException {
     /// Creates a new builder-style object to manufacture [`DocumentTooLargeException`](crate::error::DocumentTooLargeException).
@@ -1053,7 +1057,7 @@ impl DocumentTooLargeException {
 /// <p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <code>limits</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadDocumentException {
+pub struct BadDocumentException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -1063,21 +1067,19 @@ pub struct BadDocumentException {
 }
 impl BadDocumentException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl BadDocumentException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for BadDocumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadDocumentException")?;
         if let Some(inner_11) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_11)?;
             }
         }
@@ -1087,7 +1089,7 @@ impl std::fmt::Display for BadDocumentException {
 impl std::error::Error for BadDocumentException {}
 /// See [`BadDocumentException`](crate::error::BadDocumentException).
 pub mod bad_document_exception {
-
+    
     /// A builder for [`BadDocumentException`](crate::error::BadDocumentException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1102,8 +1104,7 @@ pub mod bad_document_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1112,17 +1113,20 @@ pub mod bad_document_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`BadDocumentException`](crate::error::BadDocumentException).
         pub fn build(self) -> crate::error::BadDocumentException {
             crate::error::BadDocumentException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl BadDocumentException {
     /// Creates a new builder-style object to manufacture [`BadDocumentException`](crate::error::BadDocumentException).
@@ -1134,7 +1138,7 @@ impl BadDocumentException {
 /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -1144,21 +1148,19 @@ pub struct AccessDeniedException {
 }
 impl AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_12) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_12)?;
             }
         }
@@ -1168,7 +1170,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
-
+    
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1183,8 +1185,7 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1193,17 +1194,20 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
@@ -1217,15 +1221,15 @@ impl AccessDeniedException {
 #[derive(std::fmt::Debug)]
 pub struct StartExpenseAnalysisError {
     /// Kind of error that occurred.
-    pub kind: StartExpenseAnalysisErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StartExpenseAnalysisErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartExpenseAnalysisError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StartExpenseAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1257,36 +1261,58 @@ pub enum StartExpenseAnalysisErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartExpenseAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartExpenseAnalysisErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            StartExpenseAnalysisErrorKind::BadDocumentException(_inner) => _inner.fmt(f),
-            StartExpenseAnalysisErrorKind::DocumentTooLargeException(_inner) => _inner.fmt(f),
-            StartExpenseAnalysisErrorKind::IdempotentParameterMismatchException(_inner) => {
+            StartExpenseAnalysisErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartExpenseAnalysisErrorKind::BadDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartExpenseAnalysisErrorKind::DocumentTooLargeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartExpenseAnalysisErrorKind::IdempotentParameterMismatchException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartExpenseAnalysisErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartExpenseAnalysisErrorKind::InvalidKmsKeyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartExpenseAnalysisErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartExpenseAnalysisErrorKind::InvalidS3ObjectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartExpenseAnalysisErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartExpenseAnalysisErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartExpenseAnalysisErrorKind::UnsupportedDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartExpenseAnalysisErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            StartExpenseAnalysisErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            StartExpenseAnalysisErrorKind::InvalidKmsKeyException(_inner) => _inner.fmt(f),
-            StartExpenseAnalysisErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            StartExpenseAnalysisErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
-            StartExpenseAnalysisErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            StartExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            StartExpenseAnalysisErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            StartExpenseAnalysisErrorKind::UnsupportedDocumentException(_inner) => _inner.fmt(f),
-            StartExpenseAnalysisErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1300,155 +1326,137 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartExpenseAnalysisError {
 }
 impl StartExpenseAnalysisError {
     /// Creates a new `StartExpenseAnalysisError`.
-    pub fn new(kind: StartExpenseAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StartExpenseAnalysisError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StartExpenseAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StartExpenseAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StartExpenseAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StartExpenseAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StartExpenseAnalysisError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StartExpenseAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StartExpenseAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StartExpenseAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartExpenseAnalysisErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, StartExpenseAnalysisErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::BadDocumentException`.
     pub fn is_bad_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartExpenseAnalysisErrorKind::BadDocumentException(_)
-        )
+        matches!(&self.kind, StartExpenseAnalysisErrorKind::BadDocumentException(_))
     }
     /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::DocumentTooLargeException`.
     pub fn is_document_too_large_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartExpenseAnalysisErrorKind::DocumentTooLargeException(_)
-        )
+        matches!(&self.kind, StartExpenseAnalysisErrorKind::DocumentTooLargeException(_))
     }
     /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartExpenseAnalysisErrorKind::IdempotentParameterMismatchException(_)
-        )
+        matches!(&self.kind, StartExpenseAnalysisErrorKind::IdempotentParameterMismatchException(_))
     }
     /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartExpenseAnalysisErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, StartExpenseAnalysisErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::InvalidKmsKeyException`.
     pub fn is_invalid_kms_key_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartExpenseAnalysisErrorKind::InvalidKmsKeyException(_)
-        )
+        matches!(&self.kind, StartExpenseAnalysisErrorKind::InvalidKmsKeyException(_))
     }
     /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartExpenseAnalysisErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, StartExpenseAnalysisErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartExpenseAnalysisErrorKind::InvalidS3ObjectException(_)
-        )
+        matches!(&self.kind, StartExpenseAnalysisErrorKind::InvalidS3ObjectException(_))
     }
     /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartExpenseAnalysisErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, StartExpenseAnalysisErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, StartExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartExpenseAnalysisErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, StartExpenseAnalysisErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `StartExpenseAnalysisErrorKind::UnsupportedDocumentException`.
     pub fn is_unsupported_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartExpenseAnalysisErrorKind::UnsupportedDocumentException(_)
-        )
+        matches!(&self.kind, StartExpenseAnalysisErrorKind::UnsupportedDocumentException(_))
     }
 }
 impl std::error::Error for StartExpenseAnalysisError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartExpenseAnalysisErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            StartExpenseAnalysisErrorKind::BadDocumentException(_inner) => Some(_inner),
-            StartExpenseAnalysisErrorKind::DocumentTooLargeException(_inner) => Some(_inner),
-            StartExpenseAnalysisErrorKind::IdempotentParameterMismatchException(_inner) => {
+            StartExpenseAnalysisErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            StartExpenseAnalysisErrorKind::BadDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            StartExpenseAnalysisErrorKind::DocumentTooLargeException(_inner) =>
+            Some(_inner)
+            ,
+            StartExpenseAnalysisErrorKind::IdempotentParameterMismatchException(_inner) =>
+            Some(_inner)
+            ,
+            StartExpenseAnalysisErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            StartExpenseAnalysisErrorKind::InvalidKmsKeyException(_inner) =>
+            Some(_inner)
+            ,
+            StartExpenseAnalysisErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            StartExpenseAnalysisErrorKind::InvalidS3ObjectException(_inner) =>
+            Some(_inner)
+            ,
+            StartExpenseAnalysisErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            StartExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            StartExpenseAnalysisErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            StartExpenseAnalysisErrorKind::UnsupportedDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            StartExpenseAnalysisErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            StartExpenseAnalysisErrorKind::InternalServerError(_inner) => Some(_inner),
-            StartExpenseAnalysisErrorKind::InvalidKmsKeyException(_inner) => Some(_inner),
-            StartExpenseAnalysisErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            StartExpenseAnalysisErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
-            StartExpenseAnalysisErrorKind::LimitExceededException(_inner) => Some(_inner),
-            StartExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
-                Some(_inner)
-            }
-            StartExpenseAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartExpenseAnalysisErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
-            StartExpenseAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1458,17 +1466,15 @@ impl std::error::Error for StartExpenseAnalysisError {
 #[derive(std::fmt::Debug)]
 pub struct StartDocumentTextDetectionError {
     /// Kind of error that occurred.
-    pub kind: StartDocumentTextDetectionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StartDocumentTextDetectionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartDocumentTextDetectionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: StartDocumentTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: StartDocumentTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1500,38 +1506,58 @@ pub enum StartDocumentTextDetectionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartDocumentTextDetectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartDocumentTextDetectionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            StartDocumentTextDetectionErrorKind::BadDocumentException(_inner) => _inner.fmt(f),
-            StartDocumentTextDetectionErrorKind::DocumentTooLargeException(_inner) => _inner.fmt(f),
-            StartDocumentTextDetectionErrorKind::IdempotentParameterMismatchException(_inner) => {
+            StartDocumentTextDetectionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentTextDetectionErrorKind::BadDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentTextDetectionErrorKind::DocumentTooLargeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentTextDetectionErrorKind::IdempotentParameterMismatchException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentTextDetectionErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentTextDetectionErrorKind::InvalidKmsKeyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentTextDetectionErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentTextDetectionErrorKind::InvalidS3ObjectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentTextDetectionErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentTextDetectionErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentTextDetectionErrorKind::UnsupportedDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentTextDetectionErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            StartDocumentTextDetectionErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            StartDocumentTextDetectionErrorKind::InvalidKmsKeyException(_inner) => _inner.fmt(f),
-            StartDocumentTextDetectionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            StartDocumentTextDetectionErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
-            StartDocumentTextDetectionErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            StartDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            StartDocumentTextDetectionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            StartDocumentTextDetectionErrorKind::UnsupportedDocumentException(_inner) => {
-                _inner.fmt(f)
-            }
-            StartDocumentTextDetectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1545,157 +1571,137 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartDocumentTextDetectionErr
 }
 impl StartDocumentTextDetectionError {
     /// Creates a new `StartDocumentTextDetectionError`.
-    pub fn new(kind: StartDocumentTextDetectionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StartDocumentTextDetectionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StartDocumentTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StartDocumentTextDetectionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StartDocumentTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StartDocumentTextDetectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StartDocumentTextDetectionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StartDocumentTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StartDocumentTextDetectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StartDocumentTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentTextDetectionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, StartDocumentTextDetectionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::BadDocumentException`.
     pub fn is_bad_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentTextDetectionErrorKind::BadDocumentException(_)
-        )
+        matches!(&self.kind, StartDocumentTextDetectionErrorKind::BadDocumentException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::DocumentTooLargeException`.
     pub fn is_document_too_large_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentTextDetectionErrorKind::DocumentTooLargeException(_)
-        )
+        matches!(&self.kind, StartDocumentTextDetectionErrorKind::DocumentTooLargeException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentTextDetectionErrorKind::IdempotentParameterMismatchException(_)
-        )
+        matches!(&self.kind, StartDocumentTextDetectionErrorKind::IdempotentParameterMismatchException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentTextDetectionErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, StartDocumentTextDetectionErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::InvalidKmsKeyException`.
     pub fn is_invalid_kms_key_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentTextDetectionErrorKind::InvalidKmsKeyException(_)
-        )
+        matches!(&self.kind, StartDocumentTextDetectionErrorKind::InvalidKmsKeyException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentTextDetectionErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, StartDocumentTextDetectionErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentTextDetectionErrorKind::InvalidS3ObjectException(_)
-        )
+        matches!(&self.kind, StartDocumentTextDetectionErrorKind::InvalidS3ObjectException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentTextDetectionErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, StartDocumentTextDetectionErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, StartDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentTextDetectionErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, StartDocumentTextDetectionErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentTextDetectionErrorKind::UnsupportedDocumentException`.
     pub fn is_unsupported_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentTextDetectionErrorKind::UnsupportedDocumentException(_)
-        )
+        matches!(&self.kind, StartDocumentTextDetectionErrorKind::UnsupportedDocumentException(_))
     }
 }
 impl std::error::Error for StartDocumentTextDetectionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartDocumentTextDetectionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            StartDocumentTextDetectionErrorKind::BadDocumentException(_inner) => Some(_inner),
-            StartDocumentTextDetectionErrorKind::DocumentTooLargeException(_inner) => Some(_inner),
-            StartDocumentTextDetectionErrorKind::IdempotentParameterMismatchException(_inner) => {
+            StartDocumentTextDetectionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentTextDetectionErrorKind::BadDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentTextDetectionErrorKind::DocumentTooLargeException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentTextDetectionErrorKind::IdempotentParameterMismatchException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentTextDetectionErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentTextDetectionErrorKind::InvalidKmsKeyException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentTextDetectionErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentTextDetectionErrorKind::InvalidS3ObjectException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentTextDetectionErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentTextDetectionErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentTextDetectionErrorKind::UnsupportedDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentTextDetectionErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            StartDocumentTextDetectionErrorKind::InternalServerError(_inner) => Some(_inner),
-            StartDocumentTextDetectionErrorKind::InvalidKmsKeyException(_inner) => Some(_inner),
-            StartDocumentTextDetectionErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            StartDocumentTextDetectionErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
-            StartDocumentTextDetectionErrorKind::LimitExceededException(_inner) => Some(_inner),
-            StartDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(_inner) => {
-                Some(_inner)
-            }
-            StartDocumentTextDetectionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartDocumentTextDetectionErrorKind::UnsupportedDocumentException(_inner) => {
-                Some(_inner)
-            }
-            StartDocumentTextDetectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1705,15 +1711,15 @@ impl std::error::Error for StartDocumentTextDetectionError {
 #[derive(std::fmt::Debug)]
 pub struct StartDocumentAnalysisError {
     /// Kind of error that occurred.
-    pub kind: StartDocumentAnalysisErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StartDocumentAnalysisErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartDocumentAnalysisError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StartDocumentAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1745,36 +1751,58 @@ pub enum StartDocumentAnalysisErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartDocumentAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartDocumentAnalysisErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            StartDocumentAnalysisErrorKind::BadDocumentException(_inner) => _inner.fmt(f),
-            StartDocumentAnalysisErrorKind::DocumentTooLargeException(_inner) => _inner.fmt(f),
-            StartDocumentAnalysisErrorKind::IdempotentParameterMismatchException(_inner) => {
+            StartDocumentAnalysisErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentAnalysisErrorKind::BadDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentAnalysisErrorKind::DocumentTooLargeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentAnalysisErrorKind::IdempotentParameterMismatchException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentAnalysisErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentAnalysisErrorKind::InvalidKmsKeyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentAnalysisErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentAnalysisErrorKind::InvalidS3ObjectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentAnalysisErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentAnalysisErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentAnalysisErrorKind::UnsupportedDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartDocumentAnalysisErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            StartDocumentAnalysisErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            StartDocumentAnalysisErrorKind::InvalidKmsKeyException(_inner) => _inner.fmt(f),
-            StartDocumentAnalysisErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            StartDocumentAnalysisErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
-            StartDocumentAnalysisErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            StartDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            StartDocumentAnalysisErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            StartDocumentAnalysisErrorKind::UnsupportedDocumentException(_inner) => _inner.fmt(f),
-            StartDocumentAnalysisErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1788,155 +1816,137 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartDocumentAnalysisError {
 }
 impl StartDocumentAnalysisError {
     /// Creates a new `StartDocumentAnalysisError`.
-    pub fn new(kind: StartDocumentAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StartDocumentAnalysisError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StartDocumentAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StartDocumentAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StartDocumentAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StartDocumentAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StartDocumentAnalysisError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StartDocumentAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StartDocumentAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StartDocumentAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentAnalysisErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, StartDocumentAnalysisErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::BadDocumentException`.
     pub fn is_bad_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentAnalysisErrorKind::BadDocumentException(_)
-        )
+        matches!(&self.kind, StartDocumentAnalysisErrorKind::BadDocumentException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::DocumentTooLargeException`.
     pub fn is_document_too_large_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentAnalysisErrorKind::DocumentTooLargeException(_)
-        )
+        matches!(&self.kind, StartDocumentAnalysisErrorKind::DocumentTooLargeException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentAnalysisErrorKind::IdempotentParameterMismatchException(_)
-        )
+        matches!(&self.kind, StartDocumentAnalysisErrorKind::IdempotentParameterMismatchException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentAnalysisErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, StartDocumentAnalysisErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::InvalidKmsKeyException`.
     pub fn is_invalid_kms_key_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentAnalysisErrorKind::InvalidKmsKeyException(_)
-        )
+        matches!(&self.kind, StartDocumentAnalysisErrorKind::InvalidKmsKeyException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentAnalysisErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, StartDocumentAnalysisErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentAnalysisErrorKind::InvalidS3ObjectException(_)
-        )
+        matches!(&self.kind, StartDocumentAnalysisErrorKind::InvalidS3ObjectException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentAnalysisErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, StartDocumentAnalysisErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, StartDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentAnalysisErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, StartDocumentAnalysisErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `StartDocumentAnalysisErrorKind::UnsupportedDocumentException`.
     pub fn is_unsupported_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartDocumentAnalysisErrorKind::UnsupportedDocumentException(_)
-        )
+        matches!(&self.kind, StartDocumentAnalysisErrorKind::UnsupportedDocumentException(_))
     }
 }
 impl std::error::Error for StartDocumentAnalysisError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartDocumentAnalysisErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            StartDocumentAnalysisErrorKind::BadDocumentException(_inner) => Some(_inner),
-            StartDocumentAnalysisErrorKind::DocumentTooLargeException(_inner) => Some(_inner),
-            StartDocumentAnalysisErrorKind::IdempotentParameterMismatchException(_inner) => {
+            StartDocumentAnalysisErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentAnalysisErrorKind::BadDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentAnalysisErrorKind::DocumentTooLargeException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentAnalysisErrorKind::IdempotentParameterMismatchException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentAnalysisErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentAnalysisErrorKind::InvalidKmsKeyException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentAnalysisErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentAnalysisErrorKind::InvalidS3ObjectException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentAnalysisErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentAnalysisErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentAnalysisErrorKind::UnsupportedDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            StartDocumentAnalysisErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            StartDocumentAnalysisErrorKind::InternalServerError(_inner) => Some(_inner),
-            StartDocumentAnalysisErrorKind::InvalidKmsKeyException(_inner) => Some(_inner),
-            StartDocumentAnalysisErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            StartDocumentAnalysisErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
-            StartDocumentAnalysisErrorKind::LimitExceededException(_inner) => Some(_inner),
-            StartDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
-                Some(_inner)
-            }
-            StartDocumentAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartDocumentAnalysisErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
-            StartDocumentAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1946,17 +1956,15 @@ impl std::error::Error for StartDocumentAnalysisError {
 #[derive(std::fmt::Debug)]
 pub struct GetLendingAnalysisSummaryError {
     /// Kind of error that occurred.
-    pub kind: GetLendingAnalysisSummaryErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetLendingAnalysisSummaryErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetLendingAnalysisSummaryError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetLendingAnalysisSummaryErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: GetLendingAnalysisSummaryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1980,30 +1988,46 @@ pub enum GetLendingAnalysisSummaryErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLendingAnalysisSummaryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetLendingAnalysisSummaryErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetLendingAnalysisSummaryErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            GetLendingAnalysisSummaryErrorKind::InvalidJobIdException(_inner) => _inner.fmt(f),
-            GetLendingAnalysisSummaryErrorKind::InvalidKmsKeyException(_inner) => _inner.fmt(f),
-            GetLendingAnalysisSummaryErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            GetLendingAnalysisSummaryErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
-            GetLendingAnalysisSummaryErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            GetLendingAnalysisSummaryErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLendingAnalysisSummaryErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLendingAnalysisSummaryErrorKind::InvalidJobIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLendingAnalysisSummaryErrorKind::InvalidKmsKeyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLendingAnalysisSummaryErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLendingAnalysisSummaryErrorKind::InvalidS3ObjectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLendingAnalysisSummaryErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLendingAnalysisSummaryErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLendingAnalysisSummaryErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetLendingAnalysisSummaryErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetLendingAnalysisSummaryErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2017,121 +2041,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetLendingAnalysisSummaryErro
 }
 impl GetLendingAnalysisSummaryError {
     /// Creates a new `GetLendingAnalysisSummaryError`.
-    pub fn new(kind: GetLendingAnalysisSummaryErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetLendingAnalysisSummaryError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetLendingAnalysisSummaryErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetLendingAnalysisSummaryError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetLendingAnalysisSummaryErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetLendingAnalysisSummaryErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetLendingAnalysisSummaryError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetLendingAnalysisSummaryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetLendingAnalysisSummaryError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetLendingAnalysisSummaryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetLendingAnalysisSummaryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLendingAnalysisSummaryErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetLendingAnalysisSummaryErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetLendingAnalysisSummaryErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLendingAnalysisSummaryErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, GetLendingAnalysisSummaryErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `GetLendingAnalysisSummaryErrorKind::InvalidJobIdException`.
     pub fn is_invalid_job_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLendingAnalysisSummaryErrorKind::InvalidJobIdException(_)
-        )
+        matches!(&self.kind, GetLendingAnalysisSummaryErrorKind::InvalidJobIdException(_))
     }
     /// Returns `true` if the error kind is `GetLendingAnalysisSummaryErrorKind::InvalidKmsKeyException`.
     pub fn is_invalid_kms_key_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLendingAnalysisSummaryErrorKind::InvalidKmsKeyException(_)
-        )
+        matches!(&self.kind, GetLendingAnalysisSummaryErrorKind::InvalidKmsKeyException(_))
     }
     /// Returns `true` if the error kind is `GetLendingAnalysisSummaryErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLendingAnalysisSummaryErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, GetLendingAnalysisSummaryErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetLendingAnalysisSummaryErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLendingAnalysisSummaryErrorKind::InvalidS3ObjectException(_)
-        )
+        matches!(&self.kind, GetLendingAnalysisSummaryErrorKind::InvalidS3ObjectException(_))
     }
     /// Returns `true` if the error kind is `GetLendingAnalysisSummaryErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLendingAnalysisSummaryErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, GetLendingAnalysisSummaryErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `GetLendingAnalysisSummaryErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLendingAnalysisSummaryErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetLendingAnalysisSummaryErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetLendingAnalysisSummaryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetLendingAnalysisSummaryErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetLendingAnalysisSummaryErrorKind::InternalServerError(_inner) => Some(_inner),
-            GetLendingAnalysisSummaryErrorKind::InvalidJobIdException(_inner) => Some(_inner),
-            GetLendingAnalysisSummaryErrorKind::InvalidKmsKeyException(_inner) => Some(_inner),
-            GetLendingAnalysisSummaryErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            GetLendingAnalysisSummaryErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
-            GetLendingAnalysisSummaryErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            GetLendingAnalysisSummaryErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetLendingAnalysisSummaryErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            GetLendingAnalysisSummaryErrorKind::InvalidJobIdException(_inner) =>
+            Some(_inner)
+            ,
+            GetLendingAnalysisSummaryErrorKind::InvalidKmsKeyException(_inner) =>
+            Some(_inner)
+            ,
+            GetLendingAnalysisSummaryErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetLendingAnalysisSummaryErrorKind::InvalidS3ObjectException(_inner) =>
+            Some(_inner)
+            ,
+            GetLendingAnalysisSummaryErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetLendingAnalysisSummaryErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetLendingAnalysisSummaryErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetLendingAnalysisSummaryErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetLendingAnalysisSummaryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2139,7 +2151,7 @@ impl std::error::Error for GetLendingAnalysisSummaryError {
 /// <p>An invalid job identifier was passed to an asynchronous analysis operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidJobIdException {
+pub struct InvalidJobIdException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -2149,21 +2161,19 @@ pub struct InvalidJobIdException {
 }
 impl InvalidJobIdException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl InvalidJobIdException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidJobIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidJobIdException")?;
         if let Some(inner_13) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_13)?;
             }
         }
@@ -2173,7 +2183,7 @@ impl std::fmt::Display for InvalidJobIdException {
 impl std::error::Error for InvalidJobIdException {}
 /// See [`InvalidJobIdException`](crate::error::InvalidJobIdException).
 pub mod invalid_job_id_exception {
-
+    
     /// A builder for [`InvalidJobIdException`](crate::error::InvalidJobIdException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2188,8 +2198,7 @@ pub mod invalid_job_id_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2198,17 +2207,20 @@ pub mod invalid_job_id_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`InvalidJobIdException`](crate::error::InvalidJobIdException).
         pub fn build(self) -> crate::error::InvalidJobIdException {
             crate::error::InvalidJobIdException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidJobIdException {
     /// Creates a new builder-style object to manufacture [`InvalidJobIdException`](crate::error::InvalidJobIdException).
@@ -2222,15 +2234,15 @@ impl InvalidJobIdException {
 #[derive(std::fmt::Debug)]
 pub struct GetLendingAnalysisError {
     /// Kind of error that occurred.
-    pub kind: GetLendingAnalysisErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetLendingAnalysisErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetLendingAnalysisError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetLendingAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2254,30 +2266,46 @@ pub enum GetLendingAnalysisErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLendingAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetLendingAnalysisErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetLendingAnalysisErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            GetLendingAnalysisErrorKind::InvalidJobIdException(_inner) => _inner.fmt(f),
-            GetLendingAnalysisErrorKind::InvalidKmsKeyException(_inner) => _inner.fmt(f),
-            GetLendingAnalysisErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            GetLendingAnalysisErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
-            GetLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            GetLendingAnalysisErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLendingAnalysisErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLendingAnalysisErrorKind::InvalidJobIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLendingAnalysisErrorKind::InvalidKmsKeyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLendingAnalysisErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLendingAnalysisErrorKind::InvalidS3ObjectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLendingAnalysisErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLendingAnalysisErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetLendingAnalysisErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetLendingAnalysisErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2291,117 +2319,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetLendingAnalysisError {
 }
 impl GetLendingAnalysisError {
     /// Creates a new `GetLendingAnalysisError`.
-    pub fn new(kind: GetLendingAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetLendingAnalysisError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetLendingAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetLendingAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetLendingAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetLendingAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetLendingAnalysisError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetLendingAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetLendingAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetLendingAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetLendingAnalysisErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLendingAnalysisErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetLendingAnalysisErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetLendingAnalysisErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLendingAnalysisErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, GetLendingAnalysisErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `GetLendingAnalysisErrorKind::InvalidJobIdException`.
     pub fn is_invalid_job_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLendingAnalysisErrorKind::InvalidJobIdException(_)
-        )
+        matches!(&self.kind, GetLendingAnalysisErrorKind::InvalidJobIdException(_))
     }
     /// Returns `true` if the error kind is `GetLendingAnalysisErrorKind::InvalidKmsKeyException`.
     pub fn is_invalid_kms_key_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLendingAnalysisErrorKind::InvalidKmsKeyException(_)
-        )
+        matches!(&self.kind, GetLendingAnalysisErrorKind::InvalidKmsKeyException(_))
     }
     /// Returns `true` if the error kind is `GetLendingAnalysisErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLendingAnalysisErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, GetLendingAnalysisErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetLendingAnalysisErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLendingAnalysisErrorKind::InvalidS3ObjectException(_)
-        )
+        matches!(&self.kind, GetLendingAnalysisErrorKind::InvalidS3ObjectException(_))
     }
     /// Returns `true` if the error kind is `GetLendingAnalysisErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, GetLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `GetLendingAnalysisErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLendingAnalysisErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetLendingAnalysisErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetLendingAnalysisError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetLendingAnalysisErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetLendingAnalysisErrorKind::InternalServerError(_inner) => Some(_inner),
-            GetLendingAnalysisErrorKind::InvalidJobIdException(_inner) => Some(_inner),
-            GetLendingAnalysisErrorKind::InvalidKmsKeyException(_inner) => Some(_inner),
-            GetLendingAnalysisErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            GetLendingAnalysisErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
-            GetLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            GetLendingAnalysisErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetLendingAnalysisErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            GetLendingAnalysisErrorKind::InvalidJobIdException(_inner) =>
+            Some(_inner)
+            ,
+            GetLendingAnalysisErrorKind::InvalidKmsKeyException(_inner) =>
+            Some(_inner)
+            ,
+            GetLendingAnalysisErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetLendingAnalysisErrorKind::InvalidS3ObjectException(_inner) =>
+            Some(_inner)
+            ,
+            GetLendingAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetLendingAnalysisErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetLendingAnalysisErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetLendingAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetLendingAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2411,15 +2431,15 @@ impl std::error::Error for GetLendingAnalysisError {
 #[derive(std::fmt::Debug)]
 pub struct GetExpenseAnalysisError {
     /// Kind of error that occurred.
-    pub kind: GetExpenseAnalysisErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetExpenseAnalysisErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetExpenseAnalysisError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetExpenseAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2443,30 +2463,46 @@ pub enum GetExpenseAnalysisErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetExpenseAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetExpenseAnalysisErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetExpenseAnalysisErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            GetExpenseAnalysisErrorKind::InvalidJobIdException(_inner) => _inner.fmt(f),
-            GetExpenseAnalysisErrorKind::InvalidKmsKeyException(_inner) => _inner.fmt(f),
-            GetExpenseAnalysisErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            GetExpenseAnalysisErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
-            GetExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            GetExpenseAnalysisErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetExpenseAnalysisErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetExpenseAnalysisErrorKind::InvalidJobIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetExpenseAnalysisErrorKind::InvalidKmsKeyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetExpenseAnalysisErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetExpenseAnalysisErrorKind::InvalidS3ObjectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetExpenseAnalysisErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetExpenseAnalysisErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetExpenseAnalysisErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetExpenseAnalysisErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2480,117 +2516,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetExpenseAnalysisError {
 }
 impl GetExpenseAnalysisError {
     /// Creates a new `GetExpenseAnalysisError`.
-    pub fn new(kind: GetExpenseAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetExpenseAnalysisError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetExpenseAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetExpenseAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetExpenseAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetExpenseAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetExpenseAnalysisError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetExpenseAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetExpenseAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetExpenseAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetExpenseAnalysisErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetExpenseAnalysisErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetExpenseAnalysisErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetExpenseAnalysisErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetExpenseAnalysisErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, GetExpenseAnalysisErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `GetExpenseAnalysisErrorKind::InvalidJobIdException`.
     pub fn is_invalid_job_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetExpenseAnalysisErrorKind::InvalidJobIdException(_)
-        )
+        matches!(&self.kind, GetExpenseAnalysisErrorKind::InvalidJobIdException(_))
     }
     /// Returns `true` if the error kind is `GetExpenseAnalysisErrorKind::InvalidKmsKeyException`.
     pub fn is_invalid_kms_key_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetExpenseAnalysisErrorKind::InvalidKmsKeyException(_)
-        )
+        matches!(&self.kind, GetExpenseAnalysisErrorKind::InvalidKmsKeyException(_))
     }
     /// Returns `true` if the error kind is `GetExpenseAnalysisErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetExpenseAnalysisErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, GetExpenseAnalysisErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetExpenseAnalysisErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetExpenseAnalysisErrorKind::InvalidS3ObjectException(_)
-        )
+        matches!(&self.kind, GetExpenseAnalysisErrorKind::InvalidS3ObjectException(_))
     }
     /// Returns `true` if the error kind is `GetExpenseAnalysisErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, GetExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `GetExpenseAnalysisErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetExpenseAnalysisErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetExpenseAnalysisErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetExpenseAnalysisError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetExpenseAnalysisErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetExpenseAnalysisErrorKind::InternalServerError(_inner) => Some(_inner),
-            GetExpenseAnalysisErrorKind::InvalidJobIdException(_inner) => Some(_inner),
-            GetExpenseAnalysisErrorKind::InvalidKmsKeyException(_inner) => Some(_inner),
-            GetExpenseAnalysisErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            GetExpenseAnalysisErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
-            GetExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            GetExpenseAnalysisErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetExpenseAnalysisErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            GetExpenseAnalysisErrorKind::InvalidJobIdException(_inner) =>
+            Some(_inner)
+            ,
+            GetExpenseAnalysisErrorKind::InvalidKmsKeyException(_inner) =>
+            Some(_inner)
+            ,
+            GetExpenseAnalysisErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetExpenseAnalysisErrorKind::InvalidS3ObjectException(_inner) =>
+            Some(_inner)
+            ,
+            GetExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetExpenseAnalysisErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetExpenseAnalysisErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetExpenseAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetExpenseAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2600,17 +2628,15 @@ impl std::error::Error for GetExpenseAnalysisError {
 #[derive(std::fmt::Debug)]
 pub struct GetDocumentTextDetectionError {
     /// Kind of error that occurred.
-    pub kind: GetDocumentTextDetectionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetDocumentTextDetectionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetDocumentTextDetectionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetDocumentTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: GetDocumentTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2634,30 +2660,46 @@ pub enum GetDocumentTextDetectionErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDocumentTextDetectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDocumentTextDetectionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetDocumentTextDetectionErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            GetDocumentTextDetectionErrorKind::InvalidJobIdException(_inner) => _inner.fmt(f),
-            GetDocumentTextDetectionErrorKind::InvalidKmsKeyException(_inner) => _inner.fmt(f),
-            GetDocumentTextDetectionErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            GetDocumentTextDetectionErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
-            GetDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            GetDocumentTextDetectionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDocumentTextDetectionErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDocumentTextDetectionErrorKind::InvalidJobIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDocumentTextDetectionErrorKind::InvalidKmsKeyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDocumentTextDetectionErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDocumentTextDetectionErrorKind::InvalidS3ObjectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDocumentTextDetectionErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDocumentTextDetectionErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetDocumentTextDetectionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetDocumentTextDetectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2671,121 +2713,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetDocumentTextDetectionError
 }
 impl GetDocumentTextDetectionError {
     /// Creates a new `GetDocumentTextDetectionError`.
-    pub fn new(kind: GetDocumentTextDetectionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetDocumentTextDetectionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetDocumentTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetDocumentTextDetectionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetDocumentTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetDocumentTextDetectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetDocumentTextDetectionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetDocumentTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetDocumentTextDetectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetDocumentTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetDocumentTextDetectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDocumentTextDetectionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetDocumentTextDetectionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetDocumentTextDetectionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDocumentTextDetectionErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, GetDocumentTextDetectionErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `GetDocumentTextDetectionErrorKind::InvalidJobIdException`.
     pub fn is_invalid_job_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDocumentTextDetectionErrorKind::InvalidJobIdException(_)
-        )
+        matches!(&self.kind, GetDocumentTextDetectionErrorKind::InvalidJobIdException(_))
     }
     /// Returns `true` if the error kind is `GetDocumentTextDetectionErrorKind::InvalidKmsKeyException`.
     pub fn is_invalid_kms_key_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDocumentTextDetectionErrorKind::InvalidKmsKeyException(_)
-        )
+        matches!(&self.kind, GetDocumentTextDetectionErrorKind::InvalidKmsKeyException(_))
     }
     /// Returns `true` if the error kind is `GetDocumentTextDetectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDocumentTextDetectionErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, GetDocumentTextDetectionErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetDocumentTextDetectionErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDocumentTextDetectionErrorKind::InvalidS3ObjectException(_)
-        )
+        matches!(&self.kind, GetDocumentTextDetectionErrorKind::InvalidS3ObjectException(_))
     }
     /// Returns `true` if the error kind is `GetDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, GetDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `GetDocumentTextDetectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDocumentTextDetectionErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetDocumentTextDetectionErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetDocumentTextDetectionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDocumentTextDetectionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetDocumentTextDetectionErrorKind::InternalServerError(_inner) => Some(_inner),
-            GetDocumentTextDetectionErrorKind::InvalidJobIdException(_inner) => Some(_inner),
-            GetDocumentTextDetectionErrorKind::InvalidKmsKeyException(_inner) => Some(_inner),
-            GetDocumentTextDetectionErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            GetDocumentTextDetectionErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
-            GetDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            GetDocumentTextDetectionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetDocumentTextDetectionErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            GetDocumentTextDetectionErrorKind::InvalidJobIdException(_inner) =>
+            Some(_inner)
+            ,
+            GetDocumentTextDetectionErrorKind::InvalidKmsKeyException(_inner) =>
+            Some(_inner)
+            ,
+            GetDocumentTextDetectionErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetDocumentTextDetectionErrorKind::InvalidS3ObjectException(_inner) =>
+            Some(_inner)
+            ,
+            GetDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetDocumentTextDetectionErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetDocumentTextDetectionErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetDocumentTextDetectionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetDocumentTextDetectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2795,15 +2825,15 @@ impl std::error::Error for GetDocumentTextDetectionError {
 #[derive(std::fmt::Debug)]
 pub struct GetDocumentAnalysisError {
     /// Kind of error that occurred.
-    pub kind: GetDocumentAnalysisErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetDocumentAnalysisErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetDocumentAnalysisError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetDocumentAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2827,30 +2857,46 @@ pub enum GetDocumentAnalysisErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDocumentAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDocumentAnalysisErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetDocumentAnalysisErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            GetDocumentAnalysisErrorKind::InvalidJobIdException(_inner) => _inner.fmt(f),
-            GetDocumentAnalysisErrorKind::InvalidKmsKeyException(_inner) => _inner.fmt(f),
-            GetDocumentAnalysisErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            GetDocumentAnalysisErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
-            GetDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            GetDocumentAnalysisErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDocumentAnalysisErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDocumentAnalysisErrorKind::InvalidJobIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDocumentAnalysisErrorKind::InvalidKmsKeyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDocumentAnalysisErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDocumentAnalysisErrorKind::InvalidS3ObjectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDocumentAnalysisErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetDocumentAnalysisErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetDocumentAnalysisErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetDocumentAnalysisErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2864,117 +2910,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetDocumentAnalysisError {
 }
 impl GetDocumentAnalysisError {
     /// Creates a new `GetDocumentAnalysisError`.
-    pub fn new(kind: GetDocumentAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetDocumentAnalysisError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetDocumentAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetDocumentAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetDocumentAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetDocumentAnalysisErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetDocumentAnalysisError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetDocumentAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetDocumentAnalysisError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetDocumentAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetDocumentAnalysisErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDocumentAnalysisErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetDocumentAnalysisErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetDocumentAnalysisErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDocumentAnalysisErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, GetDocumentAnalysisErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `GetDocumentAnalysisErrorKind::InvalidJobIdException`.
     pub fn is_invalid_job_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDocumentAnalysisErrorKind::InvalidJobIdException(_)
-        )
+        matches!(&self.kind, GetDocumentAnalysisErrorKind::InvalidJobIdException(_))
     }
     /// Returns `true` if the error kind is `GetDocumentAnalysisErrorKind::InvalidKmsKeyException`.
     pub fn is_invalid_kms_key_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDocumentAnalysisErrorKind::InvalidKmsKeyException(_)
-        )
+        matches!(&self.kind, GetDocumentAnalysisErrorKind::InvalidKmsKeyException(_))
     }
     /// Returns `true` if the error kind is `GetDocumentAnalysisErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDocumentAnalysisErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, GetDocumentAnalysisErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetDocumentAnalysisErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDocumentAnalysisErrorKind::InvalidS3ObjectException(_)
-        )
+        matches!(&self.kind, GetDocumentAnalysisErrorKind::InvalidS3ObjectException(_))
     }
     /// Returns `true` if the error kind is `GetDocumentAnalysisErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, GetDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `GetDocumentAnalysisErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDocumentAnalysisErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetDocumentAnalysisErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetDocumentAnalysisError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDocumentAnalysisErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetDocumentAnalysisErrorKind::InternalServerError(_inner) => Some(_inner),
-            GetDocumentAnalysisErrorKind::InvalidJobIdException(_inner) => Some(_inner),
-            GetDocumentAnalysisErrorKind::InvalidKmsKeyException(_inner) => Some(_inner),
-            GetDocumentAnalysisErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            GetDocumentAnalysisErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
-            GetDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            GetDocumentAnalysisErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetDocumentAnalysisErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            GetDocumentAnalysisErrorKind::InvalidJobIdException(_inner) =>
+            Some(_inner)
+            ,
+            GetDocumentAnalysisErrorKind::InvalidKmsKeyException(_inner) =>
+            Some(_inner)
+            ,
+            GetDocumentAnalysisErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            GetDocumentAnalysisErrorKind::InvalidS3ObjectException(_inner) =>
+            Some(_inner)
+            ,
+            GetDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetDocumentAnalysisErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetDocumentAnalysisErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetDocumentAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetDocumentAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2984,15 +3022,15 @@ impl std::error::Error for GetDocumentAnalysisError {
 #[derive(std::fmt::Debug)]
 pub struct DetectDocumentTextError {
     /// Kind of error that occurred.
-    pub kind: DetectDocumentTextErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DetectDocumentTextErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DetectDocumentTextError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DetectDocumentTextErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3018,31 +3056,49 @@ pub enum DetectDocumentTextErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetectDocumentTextError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DetectDocumentTextErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DetectDocumentTextErrorKind::BadDocumentException(_inner) => _inner.fmt(f),
-            DetectDocumentTextErrorKind::DocumentTooLargeException(_inner) => _inner.fmt(f),
-            DetectDocumentTextErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DetectDocumentTextErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            DetectDocumentTextErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
-            DetectDocumentTextErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            DetectDocumentTextErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DetectDocumentTextErrorKind::BadDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DetectDocumentTextErrorKind::DocumentTooLargeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DetectDocumentTextErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            DetectDocumentTextErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DetectDocumentTextErrorKind::InvalidS3ObjectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DetectDocumentTextErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DetectDocumentTextErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DetectDocumentTextErrorKind::UnsupportedDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DetectDocumentTextErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DetectDocumentTextErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DetectDocumentTextErrorKind::UnsupportedDocumentException(_inner) => _inner.fmt(f),
-            DetectDocumentTextErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3056,125 +3112,116 @@ impl aws_smithy_types::retry::ProvideErrorKind for DetectDocumentTextError {
 }
 impl DetectDocumentTextError {
     /// Creates a new `DetectDocumentTextError`.
-    pub fn new(kind: DetectDocumentTextErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DetectDocumentTextError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DetectDocumentTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DetectDocumentTextError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DetectDocumentTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DetectDocumentTextErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DetectDocumentTextError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DetectDocumentTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DetectDocumentTextError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DetectDocumentTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DetectDocumentTextErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DetectDocumentTextErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::BadDocumentException`.
     pub fn is_bad_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DetectDocumentTextErrorKind::BadDocumentException(_)
-        )
+        matches!(&self.kind, DetectDocumentTextErrorKind::BadDocumentException(_))
     }
     /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::DocumentTooLargeException`.
     pub fn is_document_too_large_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DetectDocumentTextErrorKind::DocumentTooLargeException(_)
-        )
+        matches!(&self.kind, DetectDocumentTextErrorKind::DocumentTooLargeException(_))
     }
     /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
-        matches!(
-            &self.kind,
-            DetectDocumentTextErrorKind::InternalServerError(_)
-        )
+        matches!(&self.kind, DetectDocumentTextErrorKind::InternalServerError(_))
     }
     /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DetectDocumentTextErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, DetectDocumentTextErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DetectDocumentTextErrorKind::InvalidS3ObjectException(_)
-        )
+        matches!(&self.kind, DetectDocumentTextErrorKind::InvalidS3ObjectException(_))
     }
     /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DetectDocumentTextErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, DetectDocumentTextErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DetectDocumentTextErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DetectDocumentTextErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `DetectDocumentTextErrorKind::UnsupportedDocumentException`.
     pub fn is_unsupported_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DetectDocumentTextErrorKind::UnsupportedDocumentException(_)
-        )
+        matches!(&self.kind, DetectDocumentTextErrorKind::UnsupportedDocumentException(_))
     }
 }
 impl std::error::Error for DetectDocumentTextError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DetectDocumentTextErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DetectDocumentTextErrorKind::BadDocumentException(_inner) => Some(_inner),
-            DetectDocumentTextErrorKind::DocumentTooLargeException(_inner) => Some(_inner),
-            DetectDocumentTextErrorKind::InternalServerError(_inner) => Some(_inner),
-            DetectDocumentTextErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            DetectDocumentTextErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
-            DetectDocumentTextErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            DetectDocumentTextErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DetectDocumentTextErrorKind::BadDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            DetectDocumentTextErrorKind::DocumentTooLargeException(_inner) =>
+            Some(_inner)
+            ,
+            DetectDocumentTextErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            DetectDocumentTextErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DetectDocumentTextErrorKind::InvalidS3ObjectException(_inner) =>
+            Some(_inner)
+            ,
+            DetectDocumentTextErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DetectDocumentTextErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DetectDocumentTextErrorKind::UnsupportedDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            DetectDocumentTextErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DetectDocumentTextErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DetectDocumentTextErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
-            DetectDocumentTextErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3184,15 +3231,15 @@ impl std::error::Error for DetectDocumentTextError {
 #[derive(std::fmt::Debug)]
 pub struct AnalyzeIDError {
     /// Kind of error that occurred.
-    pub kind: AnalyzeIDErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AnalyzeIDErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AnalyzeIDError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: AnalyzeIDErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3218,29 +3265,49 @@ pub enum AnalyzeIDErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AnalyzeIDError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AnalyzeIDErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            AnalyzeIDErrorKind::BadDocumentException(_inner) => _inner.fmt(f),
-            AnalyzeIDErrorKind::DocumentTooLargeException(_inner) => _inner.fmt(f),
-            AnalyzeIDErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            AnalyzeIDErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            AnalyzeIDErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
-            AnalyzeIDErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
-            AnalyzeIDErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            AnalyzeIDErrorKind::UnsupportedDocumentException(_inner) => _inner.fmt(f),
-            AnalyzeIDErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            AnalyzeIDErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeIDErrorKind::BadDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeIDErrorKind::DocumentTooLargeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeIDErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeIDErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeIDErrorKind::InvalidS3ObjectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeIDErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeIDErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeIDErrorKind::UnsupportedDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeIDErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3254,46 +3321,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for AnalyzeIDError {
 }
 impl AnalyzeIDError {
     /// Creates a new `AnalyzeIDError`.
-    pub fn new(kind: AnalyzeIDErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AnalyzeIDError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AnalyzeIDErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AnalyzeIDError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AnalyzeIDErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AnalyzeIDErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AnalyzeIDError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AnalyzeIDErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AnalyzeIDError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AnalyzeIDErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AnalyzeIDErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, AnalyzeIDErrorKind::AccessDeniedException(_))
@@ -3320,10 +3387,7 @@ impl AnalyzeIDError {
     }
     /// Returns `true` if the error kind is `AnalyzeIDErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AnalyzeIDErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, AnalyzeIDErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `AnalyzeIDErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -3331,25 +3395,42 @@ impl AnalyzeIDError {
     }
     /// Returns `true` if the error kind is `AnalyzeIDErrorKind::UnsupportedDocumentException`.
     pub fn is_unsupported_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AnalyzeIDErrorKind::UnsupportedDocumentException(_)
-        )
+        matches!(&self.kind, AnalyzeIDErrorKind::UnsupportedDocumentException(_))
     }
 }
 impl std::error::Error for AnalyzeIDError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AnalyzeIDErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            AnalyzeIDErrorKind::BadDocumentException(_inner) => Some(_inner),
-            AnalyzeIDErrorKind::DocumentTooLargeException(_inner) => Some(_inner),
-            AnalyzeIDErrorKind::InternalServerError(_inner) => Some(_inner),
-            AnalyzeIDErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            AnalyzeIDErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
-            AnalyzeIDErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
-            AnalyzeIDErrorKind::ThrottlingException(_inner) => Some(_inner),
-            AnalyzeIDErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
-            AnalyzeIDErrorKind::Unhandled(_inner) => Some(_inner),
+            AnalyzeIDErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeIDErrorKind::BadDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeIDErrorKind::DocumentTooLargeException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeIDErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeIDErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeIDErrorKind::InvalidS3ObjectException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeIDErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeIDErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeIDErrorKind::UnsupportedDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeIDErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3359,15 +3440,15 @@ impl std::error::Error for AnalyzeIDError {
 #[derive(std::fmt::Debug)]
 pub struct AnalyzeExpenseError {
     /// Kind of error that occurred.
-    pub kind: AnalyzeExpenseErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AnalyzeExpenseErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AnalyzeExpenseError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: AnalyzeExpenseErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3393,31 +3474,49 @@ pub enum AnalyzeExpenseErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AnalyzeExpenseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AnalyzeExpenseErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            AnalyzeExpenseErrorKind::BadDocumentException(_inner) => _inner.fmt(f),
-            AnalyzeExpenseErrorKind::DocumentTooLargeException(_inner) => _inner.fmt(f),
-            AnalyzeExpenseErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            AnalyzeExpenseErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            AnalyzeExpenseErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
-            AnalyzeExpenseErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            AnalyzeExpenseErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeExpenseErrorKind::BadDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeExpenseErrorKind::DocumentTooLargeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeExpenseErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeExpenseErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeExpenseErrorKind::InvalidS3ObjectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeExpenseErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeExpenseErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeExpenseErrorKind::UnsupportedDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeExpenseErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AnalyzeExpenseErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            AnalyzeExpenseErrorKind::UnsupportedDocumentException(_inner) => _inner.fmt(f),
-            AnalyzeExpenseErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3431,52 +3530,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for AnalyzeExpenseError {
 }
 impl AnalyzeExpenseError {
     /// Creates a new `AnalyzeExpenseError`.
-    pub fn new(kind: AnalyzeExpenseErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AnalyzeExpenseError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AnalyzeExpenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AnalyzeExpenseError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AnalyzeExpenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AnalyzeExpenseErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AnalyzeExpenseError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AnalyzeExpenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AnalyzeExpenseError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AnalyzeExpenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AnalyzeExpenseErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, AnalyzeExpenseErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::BadDocumentException`.
     pub fn is_bad_document_exception(&self) -> bool {
@@ -3484,10 +3580,7 @@ impl AnalyzeExpenseError {
     }
     /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::DocumentTooLargeException`.
     pub fn is_document_too_large_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AnalyzeExpenseErrorKind::DocumentTooLargeException(_)
-        )
+        matches!(&self.kind, AnalyzeExpenseErrorKind::DocumentTooLargeException(_))
     }
     /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
@@ -3495,24 +3588,15 @@ impl AnalyzeExpenseError {
     }
     /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AnalyzeExpenseErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, AnalyzeExpenseErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AnalyzeExpenseErrorKind::InvalidS3ObjectException(_)
-        )
+        matches!(&self.kind, AnalyzeExpenseErrorKind::InvalidS3ObjectException(_))
     }
     /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AnalyzeExpenseErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, AnalyzeExpenseErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -3520,25 +3604,42 @@ impl AnalyzeExpenseError {
     }
     /// Returns `true` if the error kind is `AnalyzeExpenseErrorKind::UnsupportedDocumentException`.
     pub fn is_unsupported_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AnalyzeExpenseErrorKind::UnsupportedDocumentException(_)
-        )
+        matches!(&self.kind, AnalyzeExpenseErrorKind::UnsupportedDocumentException(_))
     }
 }
 impl std::error::Error for AnalyzeExpenseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AnalyzeExpenseErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            AnalyzeExpenseErrorKind::BadDocumentException(_inner) => Some(_inner),
-            AnalyzeExpenseErrorKind::DocumentTooLargeException(_inner) => Some(_inner),
-            AnalyzeExpenseErrorKind::InternalServerError(_inner) => Some(_inner),
-            AnalyzeExpenseErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            AnalyzeExpenseErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
-            AnalyzeExpenseErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
-            AnalyzeExpenseErrorKind::ThrottlingException(_inner) => Some(_inner),
-            AnalyzeExpenseErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
-            AnalyzeExpenseErrorKind::Unhandled(_inner) => Some(_inner),
+            AnalyzeExpenseErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeExpenseErrorKind::BadDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeExpenseErrorKind::DocumentTooLargeException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeExpenseErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeExpenseErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeExpenseErrorKind::InvalidS3ObjectException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeExpenseErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeExpenseErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeExpenseErrorKind::UnsupportedDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeExpenseErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3548,15 +3649,15 @@ impl std::error::Error for AnalyzeExpenseError {
 #[derive(std::fmt::Debug)]
 pub struct AnalyzeDocumentError {
     /// Kind of error that occurred.
-    pub kind: AnalyzeDocumentErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AnalyzeDocumentErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AnalyzeDocumentError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: AnalyzeDocumentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3584,32 +3685,52 @@ pub enum AnalyzeDocumentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AnalyzeDocumentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AnalyzeDocumentErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            AnalyzeDocumentErrorKind::BadDocumentException(_inner) => _inner.fmt(f),
-            AnalyzeDocumentErrorKind::DocumentTooLargeException(_inner) => _inner.fmt(f),
-            AnalyzeDocumentErrorKind::HumanLoopQuotaExceededException(_inner) => _inner.fmt(f),
-            AnalyzeDocumentErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            AnalyzeDocumentErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
-            AnalyzeDocumentErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
-            AnalyzeDocumentErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            AnalyzeDocumentErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeDocumentErrorKind::BadDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeDocumentErrorKind::DocumentTooLargeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeDocumentErrorKind::HumanLoopQuotaExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeDocumentErrorKind::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeDocumentErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeDocumentErrorKind::InvalidS3ObjectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeDocumentErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeDocumentErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeDocumentErrorKind::UnsupportedDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AnalyzeDocumentErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AnalyzeDocumentErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            AnalyzeDocumentErrorKind::UnsupportedDocumentException(_inner) => _inner.fmt(f),
-            AnalyzeDocumentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3623,73 +3744,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for AnalyzeDocumentError {
 }
 impl AnalyzeDocumentError {
     /// Creates a new `AnalyzeDocumentError`.
-    pub fn new(kind: AnalyzeDocumentErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AnalyzeDocumentError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AnalyzeDocumentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AnalyzeDocumentError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AnalyzeDocumentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AnalyzeDocumentErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AnalyzeDocumentError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AnalyzeDocumentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AnalyzeDocumentError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AnalyzeDocumentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AnalyzeDocumentErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, AnalyzeDocumentErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::BadDocumentException`.
     pub fn is_bad_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AnalyzeDocumentErrorKind::BadDocumentException(_)
-        )
+        matches!(&self.kind, AnalyzeDocumentErrorKind::BadDocumentException(_))
     }
     /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::DocumentTooLargeException`.
     pub fn is_document_too_large_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AnalyzeDocumentErrorKind::DocumentTooLargeException(_)
-        )
+        matches!(&self.kind, AnalyzeDocumentErrorKind::DocumentTooLargeException(_))
     }
     /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::HumanLoopQuotaExceededException`.
     pub fn is_human_loop_quota_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AnalyzeDocumentErrorKind::HumanLoopQuotaExceededException(_)
-        )
+        matches!(&self.kind, AnalyzeDocumentErrorKind::HumanLoopQuotaExceededException(_))
     }
     /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
@@ -3697,24 +3806,15 @@ impl AnalyzeDocumentError {
     }
     /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AnalyzeDocumentErrorKind::InvalidParameterException(_)
-        )
+        matches!(&self.kind, AnalyzeDocumentErrorKind::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AnalyzeDocumentErrorKind::InvalidS3ObjectException(_)
-        )
+        matches!(&self.kind, AnalyzeDocumentErrorKind::InvalidS3ObjectException(_))
     }
     /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AnalyzeDocumentErrorKind::ProvisionedThroughputExceededException(_)
-        )
+        matches!(&self.kind, AnalyzeDocumentErrorKind::ProvisionedThroughputExceededException(_))
     }
     /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -3722,28 +3822,45 @@ impl AnalyzeDocumentError {
     }
     /// Returns `true` if the error kind is `AnalyzeDocumentErrorKind::UnsupportedDocumentException`.
     pub fn is_unsupported_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AnalyzeDocumentErrorKind::UnsupportedDocumentException(_)
-        )
+        matches!(&self.kind, AnalyzeDocumentErrorKind::UnsupportedDocumentException(_))
     }
 }
 impl std::error::Error for AnalyzeDocumentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AnalyzeDocumentErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            AnalyzeDocumentErrorKind::BadDocumentException(_inner) => Some(_inner),
-            AnalyzeDocumentErrorKind::DocumentTooLargeException(_inner) => Some(_inner),
-            AnalyzeDocumentErrorKind::HumanLoopQuotaExceededException(_inner) => Some(_inner),
-            AnalyzeDocumentErrorKind::InternalServerError(_inner) => Some(_inner),
-            AnalyzeDocumentErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            AnalyzeDocumentErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
-            AnalyzeDocumentErrorKind::ProvisionedThroughputExceededException(_inner) => {
+            AnalyzeDocumentErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeDocumentErrorKind::BadDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeDocumentErrorKind::DocumentTooLargeException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeDocumentErrorKind::HumanLoopQuotaExceededException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeDocumentErrorKind::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeDocumentErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeDocumentErrorKind::InvalidS3ObjectException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeDocumentErrorKind::ProvisionedThroughputExceededException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeDocumentErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeDocumentErrorKind::UnsupportedDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            AnalyzeDocumentErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            AnalyzeDocumentErrorKind::ThrottlingException(_inner) => Some(_inner),
-            AnalyzeDocumentErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
-            AnalyzeDocumentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3751,7 +3868,7 @@ impl std::error::Error for AnalyzeDocumentError {
 /// <p>Indicates you have exceeded the maximum number of active human in the loop workflows available</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HumanLoopQuotaExceededException {
+pub struct HumanLoopQuotaExceededException  {
     /// <p>The resource type.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
@@ -3770,33 +3887,31 @@ pub struct HumanLoopQuotaExceededException {
 }
 impl HumanLoopQuotaExceededException {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The quota code.</p>
-    pub fn quota_code(&self) -> std::option::Option<&str> {
+    pub fn quota_code(&self) -> std::option::Option<& str> {
         self.quota_code.as_deref()
     }
     /// <p>The service code.</p>
-    pub fn service_code(&self) -> std::option::Option<&str> {
+    pub fn service_code(&self) -> std::option::Option<& str> {
         self.service_code.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl HumanLoopQuotaExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for HumanLoopQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HumanLoopQuotaExceededException")?;
         if let Some(inner_14) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_14)?;
             }
         }
@@ -3806,7 +3921,7 @@ impl std::fmt::Display for HumanLoopQuotaExceededException {
 impl std::error::Error for HumanLoopQuotaExceededException {}
 /// See [`HumanLoopQuotaExceededException`](crate::error::HumanLoopQuotaExceededException).
 pub mod human_loop_quota_exceeded_exception {
-
+    
     /// A builder for [`HumanLoopQuotaExceededException`](crate::error::HumanLoopQuotaExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3823,12 +3938,8 @@ pub mod human_loop_quota_exceeded_exception {
             self
         }
         /// <p>The resource type.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>The quota code.</p>
         pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3837,8 +3948,7 @@ pub mod human_loop_quota_exceeded_exception {
         }
         /// <p>The quota code.</p>
         pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.quota_code = input;
-            self
+            self.quota_code = input; self
         }
         /// <p>The service code.</p>
         pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3847,8 +3957,7 @@ pub mod human_loop_quota_exceeded_exception {
         }
         /// <p>The service code.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_code = input;
-            self
+            self.service_code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3857,8 +3966,7 @@ pub mod human_loop_quota_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3867,20 +3975,26 @@ pub mod human_loop_quota_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`HumanLoopQuotaExceededException`](crate::error::HumanLoopQuotaExceededException).
         pub fn build(self) -> crate::error::HumanLoopQuotaExceededException {
             crate::error::HumanLoopQuotaExceededException {
-                resource_type: self.resource_type,
-                quota_code: self.quota_code,
-                service_code: self.service_code,
-                message: self.message,
-                code: self.code,
+                resource_type: self.resource_type
+                ,
+                quota_code: self.quota_code
+                ,
+                service_code: self.service_code
+                ,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl HumanLoopQuotaExceededException {
     /// Creates a new builder-style object to manufacture [`HumanLoopQuotaExceededException`](crate::error::HumanLoopQuotaExceededException).
@@ -3889,31 +4003,32 @@ impl HumanLoopQuotaExceededException {
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

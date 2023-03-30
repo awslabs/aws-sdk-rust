@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationSettingsOutput {
+pub struct UpdateApplicationSettingsOutput  {
     /// <p>The update message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct UpdateApplicationSettingsOutput {
 }
 impl UpdateApplicationSettingsOutput {
     /// <p>The update message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The IDs of the operations.</p>
-    pub fn operation_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn operation_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.operation_ids.as_deref()
     }
 }
 /// See [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput).
 pub mod update_application_settings_output {
-
+    
     /// A builder for [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,8 +37,7 @@ pub mod update_application_settings_output {
         }
         /// <p>The update message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Appends an item to `operation_ids`.
         ///
@@ -47,26 +46,26 @@ pub mod update_application_settings_output {
         /// <p>The IDs of the operations.</p>
         pub fn operation_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.operation_ids.unwrap_or_default();
-            v.push(input.into());
-            self.operation_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.operation_ids = Some(v);
+                            self
         }
         /// <p>The IDs of the operations.</p>
-        pub fn set_operation_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.operation_ids = input;
-            self
+        pub fn set_operation_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.operation_ids = input; self
         }
         /// Consumes the builder and constructs a [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput).
         pub fn build(self) -> crate::output::UpdateApplicationSettingsOutput {
             crate::output::UpdateApplicationSettingsOutput {
-                message: self.message,
-                operation_ids: self.operation_ids,
+                message: self.message
+                ,
+                operation_ids: self.operation_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateApplicationSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput).
@@ -78,19 +77,24 @@ impl UpdateApplicationSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -102,19 +106,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -126,7 +135,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterApplicationOutput {
+pub struct RegisterApplicationOutput  {
     /// <p>The application registered with AWS Systems Manager for SAP.</p>
     #[doc(hidden)]
     pub application: std::option::Option<crate::model::Application>,
@@ -136,17 +145,17 @@ pub struct RegisterApplicationOutput {
 }
 impl RegisterApplicationOutput {
     /// <p>The application registered with AWS Systems Manager for SAP.</p>
-    pub fn application(&self) -> std::option::Option<&crate::model::Application> {
+    pub fn application(&self) -> std::option::Option<& crate::model::Application> {
         self.application.as_ref()
     }
     /// <p>The ID of the operation.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 /// See [`RegisterApplicationOutput`](crate::output::RegisterApplicationOutput).
 pub mod register_application_output {
-
+    
     /// A builder for [`RegisterApplicationOutput`](crate::output::RegisterApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -160,12 +169,8 @@ pub mod register_application_output {
             self
         }
         /// <p>The application registered with AWS Systems Manager for SAP.</p>
-        pub fn set_application(
-            mut self,
-            input: std::option::Option<crate::model::Application>,
-        ) -> Self {
-            self.application = input;
-            self
+        pub fn set_application(mut self, input: std::option::Option<crate::model::Application>) -> Self {
+            self.application = input; self
         }
         /// <p>The ID of the operation.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,17 +179,20 @@ pub mod register_application_output {
         }
         /// <p>The ID of the operation.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// Consumes the builder and constructs a [`RegisterApplicationOutput`](crate::output::RegisterApplicationOutput).
         pub fn build(self) -> crate::output::RegisterApplicationOutput {
             crate::output::RegisterApplicationOutput {
-                application: self.application,
-                operation_id: self.operation_id,
+                application: self.application
+                ,
+                operation_id: self.operation_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterApplicationOutput {
     /// Creates a new builder-style object to manufacture [`RegisterApplicationOutput`](crate::output::RegisterApplicationOutput).
@@ -196,20 +204,20 @@ impl RegisterApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResourcePermissionOutput {
+pub struct PutResourcePermissionOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutResourcePermissionOutput {
     /// <p></p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`PutResourcePermissionOutput`](crate::output::PutResourcePermissionOutput).
 pub mod put_resource_permission_output {
-
+    
     /// A builder for [`PutResourcePermissionOutput`](crate::output::PutResourcePermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -223,16 +231,18 @@ pub mod put_resource_permission_output {
         }
         /// <p></p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`PutResourcePermissionOutput`](crate::output::PutResourcePermissionOutput).
         pub fn build(self) -> crate::output::PutResourcePermissionOutput {
             crate::output::PutResourcePermissionOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl PutResourcePermissionOutput {
     /// Creates a new builder-style object to manufacture [`PutResourcePermissionOutput`](crate::output::PutResourcePermissionOutput).
@@ -244,30 +254,24 @@ impl PutResourcePermissionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p></p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p></p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -275,31 +279,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p></p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -311,7 +310,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOperationsOutput {
+pub struct ListOperationsOutput  {
     /// <p>List of operations performed by AWS Systems Manager for SAP.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -321,17 +320,17 @@ pub struct ListOperationsOutput {
 }
 impl ListOperationsOutput {
     /// <p>List of operations performed by AWS Systems Manager for SAP.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::Operation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::Operation]> {
         self.operations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListOperationsOutput`](crate::output::ListOperationsOutput).
 pub mod list_operations_output {
-
+    
     /// A builder for [`ListOperationsOutput`](crate::output::ListOperationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -346,17 +345,13 @@ pub mod list_operations_output {
         /// <p>List of operations performed by AWS Systems Manager for SAP.</p>
         pub fn operations(mut self, input: crate::model::Operation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>List of operations performed by AWS Systems Manager for SAP.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Operation>>) -> Self {
+            self.operations = input; self
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -365,17 +360,20 @@ pub mod list_operations_output {
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListOperationsOutput`](crate::output::ListOperationsOutput).
         pub fn build(self) -> crate::output::ListOperationsOutput {
             crate::output::ListOperationsOutput {
-                operations: self.operations,
-                next_token: self.next_token,
+                operations: self.operations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOperationsOutput {
     /// Creates a new builder-style object to manufacture [`ListOperationsOutput`](crate::output::ListOperationsOutput).
@@ -387,7 +385,7 @@ impl ListOperationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDatabasesOutput {
+pub struct ListDatabasesOutput  {
     /// <p>The SAP HANA databases of an application.</p>
     #[doc(hidden)]
     pub databases: std::option::Option<std::vec::Vec<crate::model::DatabaseSummary>>,
@@ -397,17 +395,17 @@ pub struct ListDatabasesOutput {
 }
 impl ListDatabasesOutput {
     /// <p>The SAP HANA databases of an application.</p>
-    pub fn databases(&self) -> std::option::Option<&[crate::model::DatabaseSummary]> {
+    pub fn databases(&self) -> std::option::Option<& [crate::model::DatabaseSummary]> {
         self.databases.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
 pub mod list_databases_output {
-
+    
     /// A builder for [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -422,17 +420,13 @@ pub mod list_databases_output {
         /// <p>The SAP HANA databases of an application.</p>
         pub fn databases(mut self, input: crate::model::DatabaseSummary) -> Self {
             let mut v = self.databases.unwrap_or_default();
-            v.push(input);
-            self.databases = Some(v);
-            self
+                            v.push(input);
+                            self.databases = Some(v);
+                            self
         }
         /// <p>The SAP HANA databases of an application.</p>
-        pub fn set_databases(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DatabaseSummary>>,
-        ) -> Self {
-            self.databases = input;
-            self
+        pub fn set_databases(mut self, input: std::option::Option<std::vec::Vec<crate::model::DatabaseSummary>>) -> Self {
+            self.databases = input; self
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -441,17 +435,20 @@ pub mod list_databases_output {
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
         pub fn build(self) -> crate::output::ListDatabasesOutput {
             crate::output::ListDatabasesOutput {
-                databases: self.databases,
-                next_token: self.next_token,
+                databases: self.databases
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDatabasesOutput {
     /// Creates a new builder-style object to manufacture [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
@@ -463,7 +460,7 @@ impl ListDatabasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListComponentsOutput {
+pub struct ListComponentsOutput  {
     /// <p>List of components registered with AWS System Manager for SAP.</p>
     #[doc(hidden)]
     pub components: std::option::Option<std::vec::Vec<crate::model::ComponentSummary>>,
@@ -473,17 +470,17 @@ pub struct ListComponentsOutput {
 }
 impl ListComponentsOutput {
     /// <p>List of components registered with AWS System Manager for SAP.</p>
-    pub fn components(&self) -> std::option::Option<&[crate::model::ComponentSummary]> {
+    pub fn components(&self) -> std::option::Option<& [crate::model::ComponentSummary]> {
         self.components.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListComponentsOutput`](crate::output::ListComponentsOutput).
 pub mod list_components_output {
-
+    
     /// A builder for [`ListComponentsOutput`](crate::output::ListComponentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -498,17 +495,13 @@ pub mod list_components_output {
         /// <p>List of components registered with AWS System Manager for SAP.</p>
         pub fn components(mut self, input: crate::model::ComponentSummary) -> Self {
             let mut v = self.components.unwrap_or_default();
-            v.push(input);
-            self.components = Some(v);
-            self
+                            v.push(input);
+                            self.components = Some(v);
+                            self
         }
         /// <p>List of components registered with AWS System Manager for SAP.</p>
-        pub fn set_components(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentSummary>>,
-        ) -> Self {
-            self.components = input;
-            self
+        pub fn set_components(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentSummary>>) -> Self {
+            self.components = input; self
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -517,17 +510,20 @@ pub mod list_components_output {
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListComponentsOutput`](crate::output::ListComponentsOutput).
         pub fn build(self) -> crate::output::ListComponentsOutput {
             crate::output::ListComponentsOutput {
-                components: self.components,
-                next_token: self.next_token,
+                components: self.components
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ListComponentsOutput`](crate::output::ListComponentsOutput).
@@ -539,7 +535,7 @@ impl ListComponentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationsOutput {
+pub struct ListApplicationsOutput  {
     /// <p>The applications registered with AWS Systems Manager for SAP.</p>
     #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
@@ -549,22 +545,21 @@ pub struct ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// <p>The applications registered with AWS Systems Manager for SAP.</p>
-    pub fn applications(&self) -> std::option::Option<&[crate::model::ApplicationSummary]> {
+    pub fn applications(&self) -> std::option::Option<& [crate::model::ApplicationSummary]> {
         self.applications.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
 pub mod list_applications_output {
-
+    
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) applications:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
+        pub(crate) applications: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -575,17 +570,13 @@ pub mod list_applications_output {
         /// <p>The applications registered with AWS Systems Manager for SAP.</p>
         pub fn applications(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input);
-            self.applications = Some(v);
-            self
+                            v.push(input);
+                            self.applications = Some(v);
+                            self
         }
         /// <p>The applications registered with AWS Systems Manager for SAP.</p>
-        pub fn set_applications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
-        ) -> Self {
-            self.applications = input;
-            self
+        pub fn set_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>) -> Self {
+            self.applications = input; self
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -594,17 +585,20 @@ pub mod list_applications_output {
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
         pub fn build(self) -> crate::output::ListApplicationsOutput {
             crate::output::ListApplicationsOutput {
-                applications: self.applications,
-                next_token: self.next_token,
+                applications: self.applications
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
@@ -616,20 +610,20 @@ impl ListApplicationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourcePermissionOutput {
+pub struct GetResourcePermissionOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetResourcePermissionOutput {
     /// <p></p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`GetResourcePermissionOutput`](crate::output::GetResourcePermissionOutput).
 pub mod get_resource_permission_output {
-
+    
     /// A builder for [`GetResourcePermissionOutput`](crate::output::GetResourcePermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -643,16 +637,18 @@ pub mod get_resource_permission_output {
         }
         /// <p></p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GetResourcePermissionOutput`](crate::output::GetResourcePermissionOutput).
         pub fn build(self) -> crate::output::GetResourcePermissionOutput {
             crate::output::GetResourcePermissionOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResourcePermissionOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePermissionOutput`](crate::output::GetResourcePermissionOutput).
@@ -664,20 +660,20 @@ impl GetResourcePermissionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOperationOutput {
+pub struct GetOperationOutput  {
     /// <p>Returns the details of an operation.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
 }
 impl GetOperationOutput {
     /// <p>Returns the details of an operation.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
 }
 /// See [`GetOperationOutput`](crate::output::GetOperationOutput).
 pub mod get_operation_output {
-
+    
     /// A builder for [`GetOperationOutput`](crate::output::GetOperationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -690,20 +686,19 @@ pub mod get_operation_output {
             self
         }
         /// <p>Returns the details of an operation.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
         /// Consumes the builder and constructs a [`GetOperationOutput`](crate::output::GetOperationOutput).
         pub fn build(self) -> crate::output::GetOperationOutput {
             crate::output::GetOperationOutput {
-                operation: self.operation,
+                operation: self.operation
+                ,
             }
         }
     }
+    
+    
 }
 impl GetOperationOutput {
     /// Creates a new builder-style object to manufacture [`GetOperationOutput`](crate::output::GetOperationOutput).
@@ -715,38 +710,32 @@ impl GetOperationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDatabaseOutput {
+pub struct GetDatabaseOutput  {
     /// <p>The SAP HANA database of an application registered with AWS Systems Manager for SAP.</p>
     #[doc(hidden)]
     pub database: std::option::Option<crate::model::Database>,
     /// <p>The tags of a database.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetDatabaseOutput {
     /// <p>The SAP HANA database of an application registered with AWS Systems Manager for SAP.</p>
-    pub fn database(&self) -> std::option::Option<&crate::model::Database> {
+    pub fn database(&self) -> std::option::Option<& crate::model::Database> {
         self.database.as_ref()
     }
     /// <p>The tags of a database.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetDatabaseOutput`](crate::output::GetDatabaseOutput).
 pub mod get_database_output {
-
+    
     /// A builder for [`GetDatabaseOutput`](crate::output::GetDatabaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database: std::option::Option<crate::model::Database>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The SAP HANA database of an application registered with AWS Systems Manager for SAP.</p>
@@ -756,42 +745,35 @@ pub mod get_database_output {
         }
         /// <p>The SAP HANA database of an application registered with AWS Systems Manager for SAP.</p>
         pub fn set_database(mut self, input: std::option::Option<crate::model::Database>) -> Self {
-            self.database = input;
-            self
+            self.database = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of a database.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags of a database.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetDatabaseOutput`](crate::output::GetDatabaseOutput).
         pub fn build(self) -> crate::output::GetDatabaseOutput {
             crate::output::GetDatabaseOutput {
-                database: self.database,
-                tags: self.tags,
+                database: self.database
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`GetDatabaseOutput`](crate::output::GetDatabaseOutput).
@@ -803,20 +785,20 @@ impl GetDatabaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetComponentOutput {
+pub struct GetComponentOutput  {
     /// <p>The component of an application registered with AWS Systems Manager for SAP.</p>
     #[doc(hidden)]
     pub component: std::option::Option<crate::model::Component>,
 }
 impl GetComponentOutput {
     /// <p>The component of an application registered with AWS Systems Manager for SAP.</p>
-    pub fn component(&self) -> std::option::Option<&crate::model::Component> {
+    pub fn component(&self) -> std::option::Option<& crate::model::Component> {
         self.component.as_ref()
     }
 }
 /// See [`GetComponentOutput`](crate::output::GetComponentOutput).
 pub mod get_component_output {
-
+    
     /// A builder for [`GetComponentOutput`](crate::output::GetComponentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -829,20 +811,19 @@ pub mod get_component_output {
             self
         }
         /// <p>The component of an application registered with AWS Systems Manager for SAP.</p>
-        pub fn set_component(
-            mut self,
-            input: std::option::Option<crate::model::Component>,
-        ) -> Self {
-            self.component = input;
-            self
+        pub fn set_component(mut self, input: std::option::Option<crate::model::Component>) -> Self {
+            self.component = input; self
         }
         /// Consumes the builder and constructs a [`GetComponentOutput`](crate::output::GetComponentOutput).
         pub fn build(self) -> crate::output::GetComponentOutput {
             crate::output::GetComponentOutput {
-                component: self.component,
+                component: self.component
+                ,
             }
         }
     }
+    
+    
 }
 impl GetComponentOutput {
     /// Creates a new builder-style object to manufacture [`GetComponentOutput`](crate::output::GetComponentOutput).
@@ -854,38 +835,32 @@ impl GetComponentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationOutput {
+pub struct GetApplicationOutput  {
     /// <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
     #[doc(hidden)]
     pub application: std::option::Option<crate::model::Application>,
     /// <p>The tags of a registered application.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetApplicationOutput {
     /// <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
-    pub fn application(&self) -> std::option::Option<&crate::model::Application> {
+    pub fn application(&self) -> std::option::Option<& crate::model::Application> {
         self.application.as_ref()
     }
     /// <p>The tags of a registered application.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetApplicationOutput`](crate::output::GetApplicationOutput).
 pub mod get_application_output {
-
+    
     /// A builder for [`GetApplicationOutput`](crate::output::GetApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<crate::model::Application>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
@@ -894,46 +869,36 @@ pub mod get_application_output {
             self
         }
         /// <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
-        pub fn set_application(
-            mut self,
-            input: std::option::Option<crate::model::Application>,
-        ) -> Self {
-            self.application = input;
-            self
+        pub fn set_application(mut self, input: std::option::Option<crate::model::Application>) -> Self {
+            self.application = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of a registered application.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags of a registered application.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetApplicationOutput`](crate::output::GetApplicationOutput).
         pub fn build(self) -> crate::output::GetApplicationOutput {
             crate::output::GetApplicationOutput {
-                application: self.application,
-                tags: self.tags,
+                application: self.application
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetApplicationOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationOutput`](crate::output::GetApplicationOutput).
@@ -945,19 +910,24 @@ impl GetApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterApplicationOutput {}
+pub struct DeregisterApplicationOutput  {
+}
 /// See [`DeregisterApplicationOutput`](crate::output::DeregisterApplicationOutput).
 pub mod deregister_application_output {
-
+    
     /// A builder for [`DeregisterApplicationOutput`](crate::output::DeregisterApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterApplicationOutput`](crate::output::DeregisterApplicationOutput).
         pub fn build(self) -> crate::output::DeregisterApplicationOutput {
-            crate::output::DeregisterApplicationOutput {}
+            crate::output::DeregisterApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeregisterApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterApplicationOutput`](crate::output::DeregisterApplicationOutput).
@@ -969,20 +939,20 @@ impl DeregisterApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcePermissionOutput {
+pub struct DeleteResourcePermissionOutput  {
     /// <p>The policy that removes permissions on the target database.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePermissionOutput {
     /// <p>The policy that removes permissions on the target database.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`DeleteResourcePermissionOutput`](crate::output::DeleteResourcePermissionOutput).
 pub mod delete_resource_permission_output {
-
+    
     /// A builder for [`DeleteResourcePermissionOutput`](crate::output::DeleteResourcePermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -996,16 +966,18 @@ pub mod delete_resource_permission_output {
         }
         /// <p>The policy that removes permissions on the target database.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`DeleteResourcePermissionOutput`](crate::output::DeleteResourcePermissionOutput).
         pub fn build(self) -> crate::output::DeleteResourcePermissionOutput {
             crate::output::DeleteResourcePermissionOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteResourcePermissionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePermissionOutput`](crate::output::DeleteResourcePermissionOutput).
@@ -1013,3 +985,4 @@ impl DeleteResourcePermissionOutput {
         crate::output::delete_resource_permission_output::Builder::default()
     }
 }
+
